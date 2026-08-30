@@ -14,12 +14,19 @@
 7dtd-reference/
 |-- README.md
 |-- README.zh-CN.md
+|-- .env.example
 |-- metadata.json
 |-- assets/
+|-- runtime.manifest.json
+|-- decompile.manifest.json
 |   `-- Sprites/
 |-- scripts/
 |   |-- Set-DecompiledTargetFramework.ps1
 |   |-- Verify-Reference.ps1
+|   |-- Get-ServerVersion.ps1
+|   |-- Update-Reference.ps1
+|   |-- Update-ReferenceRuntime.ps1
+|   |-- New-RuntimeManifest.ps1
 |   `-- New-ReferenceRelease.ps1
 |-- server-decompiled/
 `-- runtime/

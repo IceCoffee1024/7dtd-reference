@@ -16,9 +16,19 @@ Historical versions are stored as immutable Git hosting Release assets.
 7dtd-reference/
 |-- README.md
 |-- README.zh-CN.md
+|-- .env.example
 |-- metadata.json
+|-- runtime.manifest.json
+|-- decompile.manifest.json
 |-- assets/
 |-- scripts/
+|   |-- Set-DecompiledTargetFramework.ps1
+|   |-- Verify-Reference.ps1
+|   |-- Get-ServerVersion.ps1
+|   |-- Update-Reference.ps1
+|   |-- Update-ReferenceRuntime.ps1
+|   |-- New-RuntimeManifest.ps1
+|   `-- New-ReferenceRelease.ps1
 |-- server-decompiled/
 `-- runtime/
     |-- 7DaysToDieServer_Data/
