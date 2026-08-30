@@ -1,6 +1,6 @@
 [CmdletBinding(SupportsShouldProcess = $true)]
 param(
-    [Parameter(Mandatory)] [string]$Version,
+    [Parameter()] [string]$Version,
     [Parameter()] [string]$GameBuild,
     [Parameter()] [string]$ServerRoot,
     [Parameter()] [string]$DnSpyConsolePath,
@@ -26,7 +26,15 @@ $envValues = Read-DotEnv (Join-Path $root '.env')
 if ([string]::IsNullOrWhiteSpace($ServerRoot) -and $envValues.ContainsKey('SEVEN_DAYS_SERVER_ROOT')) { $ServerRoot = $envValues.SEVEN_DAYS_SERVER_ROOT }
 if ([string]::IsNullOrWhiteSpace($DnSpyConsolePath) -and $envValues.ContainsKey('DNSPY_CONSOLE_PATH')) { $DnSpyConsolePath = $envValues.DNSPY_CONSOLE_PATH }
 if ([string]::IsNullOrWhiteSpace($ServerRoot)) { throw 'ServerRoot is required. Set SEVEN_DAYS_SERVER_ROOT in .env or pass -ServerRoot.' }
+if (-not (Test-Path -LiteralPath $ServerRoot -PathType Container)) {
+    throw "Server path '$ServerRoot' does not exist or is not accessible. Verify the SMB share and use a complete quoted UNC path, for example '\\server\share\folder'."
+}
 $source = (Resolve-Path -LiteralPath $ServerRoot).Path
+if ([string]::IsNullOrWhiteSpace($Version)) {
+    $versionInfo = & (Join-Path $PSScriptRoot 'Get-ServerVersion.ps1') -ServerRoot $source -Json | ConvertFrom-Json
+    $Version = $versionInfo.version
+    Write-Host "Detected server version $Version from $($versionInfo.source)."
+}
 $metadataPath = Join-Path $root 'metadata.json'
 $metadata = Get-Content -LiteralPath $metadataPath -Raw | ConvertFrom-Json
 if (-not $SkipReleasePrompt) {

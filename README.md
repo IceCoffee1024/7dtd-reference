@@ -282,3 +282,15 @@ pwsh ./scripts/Update-Reference.ps1 -Version v3.1.0-b1 -GameBuild '3.1.0 build 1
 
 After review, create and upload the Release with the commands above, then
 commit and push the generated source and metadata.
+
+`Get-ServerVersion.ps1` detects the version from `7DaysToDieServer.exe` or
+`7DaysToDie.exe` file metadata, then falls back to `Assembly-CSharp.dll`. The
+unified script performs this detection when `-Version` is omitted; pass a
+version explicitly when the executable metadata has no build number.
+
+For SMB input, use a complete quoted UNC path and verify that the share is
+readable first:
+
+```powershell
+pwsh ./scripts/Get-ServerVersion.ps1 -ServerRoot '\\server\share\7dtd'
+```
