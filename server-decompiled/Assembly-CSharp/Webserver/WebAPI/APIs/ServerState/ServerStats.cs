@@ -6,11 +6,11 @@ using Webserver.LiveData;
 
 namespace Webserver.WebAPI.APIs.ServerState
 {
-	// Token: 0x02001AB9 RID: 6841
+	// Token: 0x02001AE0 RID: 6880
 	[Preserve]
 	public class ServerStats : AbsRestApi
 	{
-		// Token: 0x0600CD81 RID: 52609 RVA: 0x004AFE00 File Offset: 0x004AE000
+		// Token: 0x0600CF0A RID: 53002 RVA: 0x004B61F4 File Offset: 0x004B43F4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void HandleRestGet(RequestContext _context)
 		{
@@ -32,31 +32,31 @@ namespace Webserver.WebAPI.APIs.ServerState
 			AbsRestApi.SendEnvelopedResult(_context, ref jsonWriter, HttpStatusCode.OK, null, null, null);
 		}
 
-		// Token: 0x0600CD82 RID: 52610 RVA: 0x004AEB65 File Offset: 0x004ACD65
+		// Token: 0x0600CF0B RID: 53003 RVA: 0x004B4F59 File Offset: 0x004B3159
 		public override int DefaultPermissionLevel()
 		{
 			return 2000;
 		}
 
-		// Token: 0x0600CD83 RID: 52611 RVA: 0x004A91E8 File Offset: 0x004A73E8
+		// Token: 0x0600CF0C RID: 53004 RVA: 0x004AF5DC File Offset: 0x004AD7DC
 		public ServerStats()
 			: base(null)
 		{
 		}
 
-		// Token: 0x04009BF1 RID: 39921
+		// Token: 0x04009D22 RID: 40226
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyGameTime = JsonWriter.GetEncodedPropertyNameWithBeginObject("gameTime");
 
-		// Token: 0x04009BF2 RID: 39922
+		// Token: 0x04009D23 RID: 40227
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyPlayers = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("players");
 
-		// Token: 0x04009BF3 RID: 39923
+		// Token: 0x04009D24 RID: 40228
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyHostiles = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("hostiles");
 
-		// Token: 0x04009BF4 RID: 39924
+		// Token: 0x04009D25 RID: 40229
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyAnimals = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("animals");
 	}

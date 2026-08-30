@@ -6,11 +6,11 @@ using Platform;
 using Platform.XBL.Save.Storage;
 using UnityEngine;
 
-// Token: 0x0200147D RID: 5245
+// Token: 0x02001498 RID: 5272
 public class SaveInfoProvider
 {
-	// Token: 0x17001333 RID: 4915
-	// (get) Token: 0x0600A465 RID: 42085 RVA: 0x003D3490 File Offset: 0x003D1690
+	// Token: 0x1700136C RID: 4972
+	// (get) Token: 0x0600A562 RID: 42338 RVA: 0x003D87D4 File Offset: 0x003D69D4
 	public static SaveInfoProvider Instance
 	{
 		get
@@ -23,8 +23,8 @@ public class SaveInfoProvider
 		}
 	}
 
-	// Token: 0x17001334 RID: 4916
-	// (get) Token: 0x0600A466 RID: 42086 RVA: 0x003D34A8 File Offset: 0x003D16A8
+	// Token: 0x1700136D RID: 4973
+	// (get) Token: 0x0600A563 RID: 42339 RVA: 0x003D87EC File Offset: 0x003D69EC
 	public static bool DataLimitEnabled
 	{
 		get
@@ -33,21 +33,21 @@ public class SaveInfoProvider
 		}
 	}
 
-	// Token: 0x0600A467 RID: 42087 RVA: 0x003D34B4 File Offset: 0x003D16B4
+	// Token: 0x0600A564 RID: 42340 RVA: 0x003D87F8 File Offset: 0x003D69F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetWorldEntryKey(string worldName, string fullPath)
 	{
 		return worldName.ToLowerInvariant() + "_" + GameIO.GetNormalizedPath(fullPath);
 	}
 
-	// Token: 0x0600A468 RID: 42088 RVA: 0x003D34CC File Offset: 0x003D16CC
+	// Token: 0x0600A565 RID: 42341 RVA: 0x003D8810 File Offset: 0x003D6A10
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetWorldEntryKey(string key)
 	{
 		return key.ToLowerInvariant();
 	}
 
-	// Token: 0x0600A469 RID: 42089 RVA: 0x003D34D4 File Offset: 0x003D16D4
+	// Token: 0x0600A566 RID: 42342 RVA: 0x003D8818 File Offset: 0x003D6A18
 	public static string GetWorldEntryKey(string worldName, UserDataStorageType userStorageType)
 	{
 		if (string.IsNullOrEmpty(worldName))
@@ -64,15 +64,15 @@ public class SaveInfoProvider
 		return SaveInfoProvider.GetWorldEntryKey(worldName, location.FullPath);
 	}
 
-	// Token: 0x0600A46A RID: 42090 RVA: 0x003D3526 File Offset: 0x003D1726
+	// Token: 0x0600A567 RID: 42343 RVA: 0x003D886A File Offset: 0x003D6A6A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetLocalSaveEntryKey(string worldName, string saveName, UserDataStorageType saveStorage)
 	{
 		return string.Format("{0}/{1}_{2}", worldName, saveName, saveStorage).ToLowerInvariant();
 	}
 
-	// Token: 0x17001335 RID: 4917
-	// (get) Token: 0x0600A46B RID: 42091 RVA: 0x003D353F File Offset: 0x003D173F
+	// Token: 0x1700136E RID: 4974
+	// (get) Token: 0x0600A568 RID: 42344 RVA: 0x003D8883 File Offset: 0x003D6A83
 	public IReadOnlyCollection<SaveInfoProvider.WorldEntryInfo> WorldEntryInfos
 	{
 		get
@@ -82,8 +82,8 @@ public class SaveInfoProvider
 		}
 	}
 
-	// Token: 0x17001336 RID: 4918
-	// (get) Token: 0x0600A46C RID: 42092 RVA: 0x003D354D File Offset: 0x003D174D
+	// Token: 0x1700136F RID: 4975
+	// (get) Token: 0x0600A569 RID: 42345 RVA: 0x003D8891 File Offset: 0x003D6A91
 	public IReadOnlyCollection<SaveInfoProvider.SaveEntryInfo> SaveEntryInfos
 	{
 		get
@@ -93,8 +93,8 @@ public class SaveInfoProvider
 		}
 	}
 
-	// Token: 0x17001337 RID: 4919
-	// (get) Token: 0x0600A46D RID: 42093 RVA: 0x003D355B File Offset: 0x003D175B
+	// Token: 0x17001370 RID: 4976
+	// (get) Token: 0x0600A56A RID: 42346 RVA: 0x003D889F File Offset: 0x003D6A9F
 	public long TotalUsedBytes
 	{
 		get
@@ -104,8 +104,8 @@ public class SaveInfoProvider
 		}
 	}
 
-	// Token: 0x17001338 RID: 4920
-	// (get) Token: 0x0600A46E RID: 42094 RVA: 0x003D3569 File Offset: 0x003D1769
+	// Token: 0x17001371 RID: 4977
+	// (get) Token: 0x0600A56B RID: 42347 RVA: 0x003D88AD File Offset: 0x003D6AAD
 	public long TotalAllowanceBytes
 	{
 		get
@@ -115,8 +115,8 @@ public class SaveInfoProvider
 		}
 	}
 
-	// Token: 0x17001339 RID: 4921
-	// (get) Token: 0x0600A46F RID: 42095 RVA: 0x003D3577 File Offset: 0x003D1777
+	// Token: 0x17001372 RID: 4978
+	// (get) Token: 0x0600A56C RID: 42348 RVA: 0x003D88BB File Offset: 0x003D6ABB
 	public long TotalAvailableBytes
 	{
 		get
@@ -126,13 +126,13 @@ public class SaveInfoProvider
 		}
 	}
 
-	// Token: 0x0600A470 RID: 42096 RVA: 0x003D358C File Offset: 0x003D178C
+	// Token: 0x0600A56D RID: 42349 RVA: 0x003D88D0 File Offset: 0x003D6AD0
 	public void SetDirty()
 	{
 		this.isDirty = true;
 	}
 
-	// Token: 0x0600A471 RID: 42097 RVA: 0x003D3598 File Offset: 0x003D1798
+	// Token: 0x0600A56E RID: 42350 RVA: 0x003D88DC File Offset: 0x003D6ADC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static long GetPlatformReservedSizeBytes(SaveDataSizes sizes)
 	{
@@ -144,7 +144,7 @@ public class SaveInfoProvider
 		return 5242880L;
 	}
 
-	// Token: 0x0600A472 RID: 42098 RVA: 0x003D35E0 File Offset: 0x003D17E0
+	// Token: 0x0600A56F RID: 42351 RVA: 0x003D8924 File Offset: 0x003D6B24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RefreshIfDirty()
 	{
@@ -208,7 +208,7 @@ public class SaveInfoProvider
 		this.totalAllowanceBytes = -1L;
 	}
 
-	// Token: 0x0600A473 RID: 42099 RVA: 0x003D3840 File Offset: 0x003D1A40
+	// Token: 0x0600A570 RID: 42352 RVA: 0x003D8B84 File Offset: 0x003D6D84
 	public void ClearResources()
 	{
 		this.worldEntryInfosByWorldKey.Clear();
@@ -222,7 +222,7 @@ public class SaveInfoProvider
 		this.isDirty = true;
 	}
 
-	// Token: 0x0600A474 RID: 42100 RVA: 0x003D38AC File Offset: 0x003D1AAC
+	// Token: 0x0600A571 RID: 42353 RVA: 0x003D8BF0 File Offset: 0x003D6DF0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ProcessLocalWorlds()
 	{
@@ -273,7 +273,7 @@ public class SaveInfoProvider
 		}
 	}
 
-	// Token: 0x0600A475 RID: 42101 RVA: 0x003D3A64 File Offset: 0x003D1C64
+	// Token: 0x0600A572 RID: 42354 RVA: 0x003D8DA8 File Offset: 0x003D6FA8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ProcessLocalWorldSaves()
 	{
@@ -284,7 +284,7 @@ public class SaveInfoProvider
 		this.ProcessLocalWorldSaves(UserDataStorageType.DeviceLocal);
 	}
 
-	// Token: 0x0600A476 RID: 42102 RVA: 0x003D3A88 File Offset: 0x003D1C88
+	// Token: 0x0600A573 RID: 42355 RVA: 0x003D8DCC File Offset: 0x003D6FCC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ProcessLocalWorldSaves(UserDataStorageType storageType)
 	{
@@ -381,7 +381,7 @@ public class SaveInfoProvider
 		}
 	}
 
-	// Token: 0x0600A477 RID: 42103 RVA: 0x003D3D5C File Offset: 0x003D1F5C
+	// Token: 0x0600A574 RID: 42356 RVA: 0x003D90A0 File Offset: 0x003D72A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ProcessSaveEntry(SaveInfoProvider.WorldEntryInfo worldEntryInfo, SdDirectoryInfo curSaveFolder, UserDataStorageType storageType)
 	{
@@ -438,7 +438,7 @@ public class SaveInfoProvider
 		this.ProcessPlayerEntries(saveEntryInfo);
 	}
 
-	// Token: 0x0600A478 RID: 42104 RVA: 0x003D3FA8 File Offset: 0x003D21A8
+	// Token: 0x0600A575 RID: 42357 RVA: 0x003D92EC File Offset: 0x003D74EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ProcessPlayerEntries(SaveInfoProvider.SaveEntryInfo saveEntryInfo)
 	{
@@ -517,7 +517,7 @@ public class SaveInfoProvider
 		this.fileNameKeysToPlayerInfos.Clear();
 	}
 
-	// Token: 0x0600A479 RID: 42105 RVA: 0x003D4220 File Offset: 0x003D2420
+	// Token: 0x0600A576 RID: 42358 RVA: 0x003D9564 File Offset: 0x003D7764
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ProcessRemoteWorldSaves()
 	{
@@ -528,7 +528,7 @@ public class SaveInfoProvider
 		this.ProcessRemoteWorldSaves(UserDataStorageType.DeviceLocal);
 	}
 
-	// Token: 0x0600A47A RID: 42106 RVA: 0x003D4244 File Offset: 0x003D2444
+	// Token: 0x0600A577 RID: 42359 RVA: 0x003D9588 File Offset: 0x003D7788
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ProcessRemoteWorldSaves(UserDataStorageType storageType)
 	{
@@ -616,7 +616,7 @@ public class SaveInfoProvider
 		}
 	}
 
-	// Token: 0x0600A47B RID: 42107 RVA: 0x003D4594 File Offset: 0x003D2794
+	// Token: 0x0600A578 RID: 42360 RVA: 0x003D98D8 File Offset: 0x003D7AD8
 	public bool TryGetLocalSaveEntry(string worldName, string saveName, UserDataStorageType storage, out SaveInfoProvider.SaveEntryInfo saveEntryInfo)
 	{
 		this.RefreshIfDirty();
@@ -624,21 +624,21 @@ public class SaveInfoProvider
 		return this.saveEntryInfosBySaveKey.TryGetValue(localSaveEntryKey, out saveEntryInfo);
 	}
 
-	// Token: 0x0600A47C RID: 42108 RVA: 0x003D45BE File Offset: 0x003D27BE
+	// Token: 0x0600A579 RID: 42361 RVA: 0x003D9902 File Offset: 0x003D7B02
 	public bool TryGetRemoteSaveEntry(string guid, out SaveInfoProvider.SaveEntryInfo saveEntryInfo)
 	{
 		this.RefreshIfDirty();
 		return this.remoteSaveEntryInfosByGuid.TryGetValue(guid, out saveEntryInfo);
 	}
 
-	// Token: 0x0600A47D RID: 42109 RVA: 0x003D45D3 File Offset: 0x003D27D3
+	// Token: 0x0600A57A RID: 42362 RVA: 0x003D9917 File Offset: 0x003D7B17
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string NormalizePath(string path)
 	{
 		return Path.GetFullPath(path);
 	}
 
-	// Token: 0x0600A47E RID: 42110 RVA: 0x003D45DB File Offset: 0x003D27DB
+	// Token: 0x0600A57B RID: 42363 RVA: 0x003D991F File Offset: 0x003D7B1F
 	public void SetDirectoryProtected(string path, bool isProtected)
 	{
 		if (isProtected)
@@ -649,100 +649,100 @@ public class SaveInfoProvider
 		this.protectedDirectories.Remove(this.NormalizePath(path));
 	}
 
-	// Token: 0x0600A47F RID: 42111 RVA: 0x003D4607 File Offset: 0x003D2807
+	// Token: 0x0600A57C RID: 42364 RVA: 0x003D994B File Offset: 0x003D7B4B
 	public bool IsDirectoryProtected(string path)
 	{
 		return this.protectedDirectories.Contains(this.NormalizePath(path));
 	}
 
-	// Token: 0x04007A53 RID: 31315
+	// Token: 0x04007B2C RID: 31532
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const long BytesPerMB = 1048576L;
 
-	// Token: 0x04007A54 RID: 31316
+	// Token: 0x04007B2D RID: 31533
 	public static readonly string RemoteWorldsLabel = "[" + Localization.Get("xuiDmRemoteWorlds", false, null) + "] ";
 
-	// Token: 0x04007A55 RID: 31317
+	// Token: 0x04007B2E RID: 31534
 	public static readonly string RemoteWorldsType = Localization.Get("xuiDmRemote", false, null);
 
-	// Token: 0x04007A56 RID: 31318
+	// Token: 0x04007B2F RID: 31535
 	public static readonly string DeletedWorldsType = Localization.Get("xuiDmDeleted", false, null);
 
-	// Token: 0x04007A57 RID: 31319
+	// Token: 0x04007B30 RID: 31536
 	public static readonly string ConflictedWorldsType = Localization.Get("xuiDmConflicted", false, null);
 
-	// Token: 0x04007A58 RID: 31320
+	// Token: 0x04007B31 RID: 31537
 	public static readonly List<string> HideableWorlds = new List<string> { "Empty", "Playtesting" };
 
-	// Token: 0x04007A59 RID: 31321
+	// Token: 0x04007B32 RID: 31538
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static SaveInfoProvider instance;
 
-	// Token: 0x04007A5A RID: 31322
+	// Token: 0x04007B33 RID: 31539
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, SaveInfoProvider.WorldEntryInfo> worldEntryInfosByWorldKey = new Dictionary<string, SaveInfoProvider.WorldEntryInfo>();
 
-	// Token: 0x04007A5B RID: 31323
+	// Token: 0x04007B34 RID: 31540
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, SaveInfoProvider.WorldEntryInfo> deletedWorlds = new Dictionary<string, SaveInfoProvider.WorldEntryInfo>();
 
-	// Token: 0x04007A5C RID: 31324
+	// Token: 0x04007B35 RID: 31541
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, SaveInfoProvider.WorldEntryInfo> conflictedWorlds = new Dictionary<string, SaveInfoProvider.WorldEntryInfo>();
 
-	// Token: 0x04007A5D RID: 31325
+	// Token: 0x04007B36 RID: 31542
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, SaveInfoProvider.SaveEntryInfo> saveEntryInfosBySaveKey = new Dictionary<string, SaveInfoProvider.SaveEntryInfo>();
 
-	// Token: 0x04007A5E RID: 31326
+	// Token: 0x04007B37 RID: 31543
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, SaveInfoProvider.SaveEntryInfo> remoteSaveEntryInfosByGuid = new Dictionary<string, SaveInfoProvider.SaveEntryInfo>();
 
-	// Token: 0x04007A5F RID: 31327
+	// Token: 0x04007B38 RID: 31544
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<SaveInfoProvider.WorldEntryInfo> worldEntryInfos = new List<SaveInfoProvider.WorldEntryInfo>();
 
-	// Token: 0x04007A60 RID: 31328
+	// Token: 0x04007B39 RID: 31545
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<SaveInfoProvider.SaveEntryInfo> saveEntryInfos = new List<SaveInfoProvider.SaveEntryInfo>();
 
-	// Token: 0x04007A61 RID: 31329
+	// Token: 0x04007B3A RID: 31546
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<string> protectedDirectories = new HashSet<string>();
 
-	// Token: 0x04007A62 RID: 31330
+	// Token: 0x04007B3B RID: 31547
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long localSavesSum;
 
-	// Token: 0x04007A63 RID: 31331
+	// Token: 0x04007B3C RID: 31548
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long remoteSavesSum;
 
-	// Token: 0x04007A64 RID: 31332
+	// Token: 0x04007B3D RID: 31549
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long worldsSum;
 
-	// Token: 0x04007A65 RID: 31333
+	// Token: 0x04007B3E RID: 31550
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long totalUsedBytes;
 
-	// Token: 0x04007A66 RID: 31334
+	// Token: 0x04007B3F RID: 31551
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long totalAllowanceBytes;
 
-	// Token: 0x04007A67 RID: 31335
+	// Token: 0x04007B40 RID: 31552
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isDirty = true;
 
-	// Token: 0x04007A68 RID: 31336
+	// Token: 0x04007B41 RID: 31553
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, SaveInfoProvider.PlayerEntryInfo> fileNameKeysToPlayerInfos = new Dictionary<string, SaveInfoProvider.PlayerEntryInfo>();
 
-	// Token: 0x0200147E RID: 5246
+	// Token: 0x02001499 RID: 5273
 	public struct SaveSizeInfo
 	{
-		// Token: 0x1700133A RID: 4922
-		// (get) Token: 0x0600A482 RID: 42114 RVA: 0x003D471C File Offset: 0x003D291C
+		// Token: 0x17001373 RID: 4979
+		// (get) Token: 0x0600A57F RID: 42367 RVA: 0x003D9A60 File Offset: 0x003D7C60
 		public long ReportedSize
 		{
 			get
@@ -755,8 +755,8 @@ public class SaveInfoProvider
 			}
 		}
 
-		// Token: 0x1700133B RID: 4923
-		// (get) Token: 0x0600A483 RID: 42115 RVA: 0x003D473B File Offset: 0x003D293B
+		// Token: 0x17001374 RID: 4980
+		// (get) Token: 0x0600A580 RID: 42368 RVA: 0x003D9A7F File Offset: 0x003D7C7F
 		public long MaxSize
 		{
 			get
@@ -765,8 +765,8 @@ public class SaveInfoProvider
 			}
 		}
 
-		// Token: 0x1700133C RID: 4924
-		// (get) Token: 0x0600A484 RID: 42116 RVA: 0x003D474E File Offset: 0x003D294E
+		// Token: 0x17001375 RID: 4981
+		// (get) Token: 0x0600A581 RID: 42369 RVA: 0x003D9A92 File Offset: 0x003D7C92
 		public bool UsesDataLimit
 		{
 			get
@@ -775,8 +775,8 @@ public class SaveInfoProvider
 			}
 		}
 
-		// Token: 0x1700133D RID: 4925
-		// (get) Token: 0x0600A485 RID: 42117 RVA: 0x003D475B File Offset: 0x003D295B
+		// Token: 0x17001376 RID: 4982
+		// (get) Token: 0x0600A582 RID: 42370 RVA: 0x003D9A9F File Offset: 0x003D7C9F
 		public bool Archivable
 		{
 			get
@@ -785,24 +785,24 @@ public class SaveInfoProvider
 			}
 		}
 
-		// Token: 0x04007A69 RID: 31337
+		// Token: 0x04007B42 RID: 31554
 		public UserDataStorageType StorageType;
 
-		// Token: 0x04007A6A RID: 31338
+		// Token: 0x04007B43 RID: 31555
 		public long BytesOnDisk;
 
-		// Token: 0x04007A6B RID: 31339
+		// Token: 0x04007B44 RID: 31556
 		public long BytesReserved;
 
-		// Token: 0x04007A6C RID: 31340
+		// Token: 0x04007B45 RID: 31557
 		public bool IsArchived;
 	}
 
-	// Token: 0x0200147F RID: 5247
+	// Token: 0x0200149A RID: 5274
 	public class WorldEntryInfo : IComparable
 	{
-		// Token: 0x1700133E RID: 4926
-		// (get) Token: 0x0600A486 RID: 42118 RVA: 0x003D4778 File Offset: 0x003D2978
+		// Token: 0x17001377 RID: 4983
+		// (get) Token: 0x0600A583 RID: 42371 RVA: 0x003D9ABC File Offset: 0x003D7CBC
 		public bool UsesDataLimit
 		{
 			get
@@ -811,8 +811,8 @@ public class SaveInfoProvider
 			}
 		}
 
-		// Token: 0x1700133F RID: 4927
-		// (get) Token: 0x0600A487 RID: 42119 RVA: 0x003D478C File Offset: 0x003D298C
+		// Token: 0x17001378 RID: 4984
+		// (get) Token: 0x0600A584 RID: 42372 RVA: 0x003D9AD0 File Offset: 0x003D7CD0
 		public string DisplayName
 		{
 			get
@@ -825,13 +825,13 @@ public class SaveInfoProvider
 			}
 		}
 
-		// Token: 0x0600A488 RID: 42120 RVA: 0x003D47E4 File Offset: 0x003D29E4
+		// Token: 0x0600A585 RID: 42373 RVA: 0x003D9B28 File Offset: 0x003D7D28
 		public bool ShouldBeMovedWithSave(UserDataStorageType targetSaveStorage)
 		{
 			return targetSaveStorage.UsesDataLimit() && this.Moveable && targetSaveStorage != this.Location.StorageType;
 		}
 
-		// Token: 0x0600A489 RID: 42121 RVA: 0x003D480C File Offset: 0x003D2A0C
+		// Token: 0x0600A586 RID: 42374 RVA: 0x003D9B50 File Offset: 0x003D7D50
 		public int CompareTo(object obj)
 		{
 			SaveInfoProvider.WorldEntryInfo worldEntryInfo = obj as SaveInfoProvider.WorldEntryInfo;
@@ -842,57 +842,57 @@ public class SaveInfoProvider
 			return 1;
 		}
 
-		// Token: 0x04007A6D RID: 31341
+		// Token: 0x04007B46 RID: 31558
 		public string WorldKey;
 
-		// Token: 0x04007A6E RID: 31342
+		// Token: 0x04007B47 RID: 31559
 		public string Name;
 
-		// Token: 0x04007A6F RID: 31343
+		// Token: 0x04007B48 RID: 31560
 		public string Type;
 
-		// Token: 0x04007A70 RID: 31344
+		// Token: 0x04007B49 RID: 31561
 		public PathAbstractions.AbstractedLocation Location;
 
-		// Token: 0x04007A71 RID: 31345
+		// Token: 0x04007B4A RID: 31562
 		public bool Deletable;
 
-		// Token: 0x04007A72 RID: 31346
+		// Token: 0x04007B4B RID: 31563
 		public bool Moveable;
 
-		// Token: 0x04007A73 RID: 31347
+		// Token: 0x04007B4C RID: 31564
 		public long WorldDataSize;
 
-		// Token: 0x04007A74 RID: 31348
+		// Token: 0x04007B4D RID: 31565
 		public VersionInformation Version;
 
-		// Token: 0x04007A75 RID: 31349
+		// Token: 0x04007B4E RID: 31566
 		public Vector2i? WorldSize;
 
-		// Token: 0x04007A76 RID: 31350
+		// Token: 0x04007B4F RID: 31567
 		public long SaveDataSizeForLimit;
 
-		// Token: 0x04007A77 RID: 31351
+		// Token: 0x04007B50 RID: 31568
 		public long SaveDataSizeTotal;
 
-		// Token: 0x04007A78 RID: 31352
+		// Token: 0x04007B51 RID: 31569
 		public int SaveDataCount;
 
-		// Token: 0x04007A79 RID: 31353
+		// Token: 0x04007B52 RID: 31570
 		public long BarStartOffset;
 
-		// Token: 0x04007A7A RID: 31354
+		// Token: 0x04007B53 RID: 31571
 		public bool HideIfEmpty;
 
-		// Token: 0x04007A7B RID: 31355
+		// Token: 0x04007B54 RID: 31572
 		public readonly List<SaveInfoProvider.SaveEntryInfo> SaveEntryInfos = new List<SaveInfoProvider.SaveEntryInfo>();
 	}
 
-	// Token: 0x02001480 RID: 5248
+	// Token: 0x0200149B RID: 5275
 	public class SaveEntryInfo : IComparable
 	{
-		// Token: 0x17001340 RID: 4928
-		// (get) Token: 0x0600A48B RID: 42123 RVA: 0x003D484A File Offset: 0x003D2A4A
+		// Token: 0x17001379 RID: 4985
+		// (get) Token: 0x0600A588 RID: 42376 RVA: 0x003D9B8E File Offset: 0x003D7D8E
 		public string DisplayName
 		{
 			get
@@ -905,7 +905,7 @@ public class SaveInfoProvider
 			}
 		}
 
-		// Token: 0x0600A48C RID: 42124 RVA: 0x003D4884 File Offset: 0x003D2A84
+		// Token: 0x0600A589 RID: 42377 RVA: 0x003D9BC8 File Offset: 0x003D7DC8
 		public int CompareTo(object obj)
 		{
 			SaveInfoProvider.SaveEntryInfo saveEntryInfo = obj as SaveInfoProvider.SaveEntryInfo;
@@ -921,39 +921,39 @@ public class SaveInfoProvider
 			return num;
 		}
 
-		// Token: 0x04007A7C RID: 31356
+		// Token: 0x04007B55 RID: 31573
 		public string Name;
 
-		// Token: 0x04007A7D RID: 31357
+		// Token: 0x04007B56 RID: 31574
 		public UserDataStorageType StorageType;
 
-		// Token: 0x04007A7E RID: 31358
+		// Token: 0x04007B57 RID: 31575
 		public string SaveDir;
 
-		// Token: 0x04007A7F RID: 31359
+		// Token: 0x04007B58 RID: 31576
 		public SaveInfoProvider.SaveSizeInfo SizeInfo;
 
-		// Token: 0x04007A80 RID: 31360
+		// Token: 0x04007B59 RID: 31577
 		public long BarStartOffset;
 
-		// Token: 0x04007A81 RID: 31361
+		// Token: 0x04007B5A RID: 31578
 		public SaveInfoProvider.WorldEntryInfo WorldEntry;
 
-		// Token: 0x04007A82 RID: 31362
+		// Token: 0x04007B5B RID: 31579
 		public DateTime LastSaved;
 
-		// Token: 0x04007A83 RID: 31363
+		// Token: 0x04007B5C RID: 31580
 		public VersionInformation Version;
 
-		// Token: 0x04007A84 RID: 31364
+		// Token: 0x04007B5D RID: 31581
 		public readonly List<SaveInfoProvider.PlayerEntryInfo> PlayerEntryInfos = new List<SaveInfoProvider.PlayerEntryInfo>();
 	}
 
-	// Token: 0x02001481 RID: 5249
+	// Token: 0x0200149C RID: 5276
 	public class PlayerEntryInfo : IComparable
 	{
-		// Token: 0x17001341 RID: 4929
-		// (get) Token: 0x0600A48E RID: 42126 RVA: 0x003D48D8 File Offset: 0x003D2AD8
+		// Token: 0x1700137A RID: 4986
+		// (get) Token: 0x0600A58B RID: 42379 RVA: 0x003D9C1C File Offset: 0x003D7E1C
 		public string PlatformName
 		{
 			get
@@ -963,8 +963,8 @@ public class SaveInfoProvider
 			}
 		}
 
-		// Token: 0x17001342 RID: 4930
-		// (get) Token: 0x0600A48F RID: 42127 RVA: 0x003D4900 File Offset: 0x003D2B00
+		// Token: 0x1700137B RID: 4987
+		// (get) Token: 0x0600A58C RID: 42380 RVA: 0x003D9C44 File Offset: 0x003D7E44
 		public IPlatformUserData PlatformUserData
 		{
 			get
@@ -982,7 +982,7 @@ public class SaveInfoProvider
 			}
 		}
 
-		// Token: 0x0600A490 RID: 42128 RVA: 0x003D494C File Offset: 0x003D2B4C
+		// Token: 0x0600A58D RID: 42381 RVA: 0x003D9C90 File Offset: 0x003D7E90
 		public int CompareTo(object obj)
 		{
 			SaveInfoProvider.PlayerEntryInfo playerEntryInfo = obj as SaveInfoProvider.PlayerEntryInfo;
@@ -998,61 +998,61 @@ public class SaveInfoProvider
 			return num;
 		}
 
-		// Token: 0x04007A85 RID: 31365
+		// Token: 0x04007B5E RID: 31582
 		public string Id;
 
-		// Token: 0x04007A86 RID: 31366
+		// Token: 0x04007B5F RID: 31583
 		public string CachedName;
 
-		// Token: 0x04007A87 RID: 31367
+		// Token: 0x04007B60 RID: 31584
 		public PlatformUserIdentifierAbs PrimaryUserId;
 
-		// Token: 0x04007A88 RID: 31368
+		// Token: 0x04007B61 RID: 31585
 		public PlatformUserIdentifierAbs NativeUserId;
 
-		// Token: 0x04007A89 RID: 31369
+		// Token: 0x04007B62 RID: 31586
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatformUserData platformUserData;
 
-		// Token: 0x04007A8A RID: 31370
+		// Token: 0x04007B63 RID: 31587
 		public long Size;
 
-		// Token: 0x04007A8B RID: 31371
+		// Token: 0x04007B64 RID: 31588
 		public long BarStartOffset;
 
-		// Token: 0x04007A8C RID: 31372
+		// Token: 0x04007B65 RID: 31589
 		public SaveInfoProvider.SaveEntryInfo SaveEntry;
 
-		// Token: 0x04007A8D RID: 31373
+		// Token: 0x04007B66 RID: 31590
 		public DateTime LastPlayed;
 
-		// Token: 0x04007A8E RID: 31374
+		// Token: 0x04007B67 RID: 31591
 		public int PlayerLevel;
 
-		// Token: 0x04007A8F RID: 31375
+		// Token: 0x04007B68 RID: 31592
 		public float DistanceWalked;
 	}
 
-	// Token: 0x02001482 RID: 5250
+	// Token: 0x0200149D RID: 5277
 	public class PlayerEntryInfoPlatformDataResolver
 	{
-		// Token: 0x17001343 RID: 4931
-		// (get) Token: 0x0600A492 RID: 42130 RVA: 0x003D498D File Offset: 0x003D2B8D
-		// (set) Token: 0x0600A493 RID: 42131 RVA: 0x003D4995 File Offset: 0x003D2B95
+		// Token: 0x1700137C RID: 4988
+		// (get) Token: 0x0600A58F RID: 42383 RVA: 0x003D9CD1 File Offset: 0x003D7ED1
+		// (set) Token: 0x0600A590 RID: 42384 RVA: 0x003D9CD9 File Offset: 0x003D7ED9
 		public bool IsComplete
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x0600A494 RID: 42132 RVA: 0x003D499E File Offset: 0x003D2B9E
+		// Token: 0x0600A591 RID: 42385 RVA: 0x003D9CE2 File Offset: 0x003D7EE2
 		[PublicizedFrom(EAccessModifier.Private)]
 		public PlayerEntryInfoPlatformDataResolver(List<SaveInfoProvider.PlayerEntryInfo> playerEntries)
 		{
 			this.pendingPlayerEntries = playerEntries;
 		}
 
-		// Token: 0x0600A495 RID: 42133 RVA: 0x003D49B0 File Offset: 0x003D2BB0
+		// Token: 0x0600A592 RID: 42386 RVA: 0x003D9CF4 File Offset: 0x003D7EF4
 		public static SaveInfoProvider.PlayerEntryInfoPlatformDataResolver StartNew(IEnumerable<SaveInfoProvider.PlayerEntryInfo> playerEntries)
 		{
 			List<SaveInfoProvider.PlayerEntryInfo> list = new List<SaveInfoProvider.PlayerEntryInfo>();
@@ -1085,7 +1085,7 @@ public class SaveInfoProvider
 			return playerEntryInfoPlatformDataResolver;
 		}
 
-		// Token: 0x0600A496 RID: 42134 RVA: 0x003D4A54 File Offset: 0x003D2C54
+		// Token: 0x0600A593 RID: 42387 RVA: 0x003D9D98 File Offset: 0x003D7F98
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator ResolveUserData(List<IPlatformUserData> resolvingPlatformData)
 		{
@@ -1095,7 +1095,7 @@ public class SaveInfoProvider
 			yield break;
 		}
 
-		// Token: 0x04007A90 RID: 31376
+		// Token: 0x04007B69 RID: 31593
 		public readonly List<SaveInfoProvider.PlayerEntryInfo> pendingPlayerEntries;
 	}
 }

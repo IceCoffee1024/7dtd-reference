@@ -3,18 +3,18 @@ using UnityEngine.Scripting;
 
 namespace Twitch
 {
-	// Token: 0x02001834 RID: 6196
+	// Token: 0x0200185A RID: 6234
 	[Preserve]
 	public class TwitchRequirementHasBuff : BaseTwitchRequirement
 	{
-		// Token: 0x0600BF10 RID: 48912 RVA: 0x0046E9D0 File Offset: 0x0046CBD0
+		// Token: 0x0600C095 RID: 49301 RVA: 0x0047476C File Offset: 0x0047296C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
 			this.BuffList = this.BuffName.Split(',', StringSplitOptions.None);
 		}
 
-		// Token: 0x0600BF11 RID: 48913 RVA: 0x0046E9E8 File Offset: 0x0046CBE8
+		// Token: 0x0600C096 RID: 49302 RVA: 0x00474784 File Offset: 0x00472984
 		public override bool CanPerform(Entity entity)
 		{
 			EntityPlayer entityPlayer = entity as EntityPlayer;
@@ -32,7 +32,7 @@ namespace Twitch
 			return false;
 		}
 
-		// Token: 0x0600BF12 RID: 48914 RVA: 0x0046EA28 File Offset: 0x0046CC28
+		// Token: 0x0600C097 RID: 49303 RVA: 0x004747C4 File Offset: 0x004729C4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool CheckBuff(EntityPlayer player, string buffName)
 		{
@@ -43,22 +43,22 @@ namespace Twitch
 			return this.Invert;
 		}
 
-		// Token: 0x0600BF13 RID: 48915 RVA: 0x0046EA48 File Offset: 0x0046CC48
+		// Token: 0x0600C098 RID: 49304 RVA: 0x004747E4 File Offset: 0x004729E4
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseString(TwitchRequirementHasBuff.PropBuffName, ref this.BuffName);
 		}
 
-		// Token: 0x04009021 RID: 36897
+		// Token: 0x0400913D RID: 37181
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string BuffName = "";
 
-		// Token: 0x04009022 RID: 36898
+		// Token: 0x0400913E RID: 37182
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string[] BuffList;
 
-		// Token: 0x04009023 RID: 36899
+		// Token: 0x0400913F RID: 37183
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropBuffName = "buff_name";
 	}

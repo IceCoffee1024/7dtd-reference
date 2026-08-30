@@ -2,10 +2,10 @@
 using System.Globalization;
 using UnityEngine;
 
-// Token: 0x02000AD6 RID: 2774
+// Token: 0x02000AE8 RID: 2792
 public class EntitySpawnerClass
 {
-	// Token: 0x060052CA RID: 21194 RVA: 0x001FA7C0 File Offset: 0x001F89C0
+	// Token: 0x06005352 RID: 21330 RVA: 0x001FD430 File Offset: 0x001FB630
 	public void Init()
 	{
 		if (!this.Properties.Values.ContainsKey(EntitySpawnerClass.PropEntityGroupName))
@@ -103,120 +103,120 @@ public class EntitySpawnerClass
 		}
 	}
 
-	// Token: 0x060052CB RID: 21195 RVA: 0x001FAC3C File Offset: 0x001F8E3C
+	// Token: 0x06005353 RID: 21331 RVA: 0x001FD8AC File Offset: 0x001FBAAC
 	public static void Cleanup()
 	{
 		EntitySpawnerClass.list.Clear();
 	}
 
-	// Token: 0x04004062 RID: 16482
+	// Token: 0x040040F8 RID: 16632
 	public static string PropStartSound = "StartSound";
 
-	// Token: 0x04004063 RID: 16483
+	// Token: 0x040040F9 RID: 16633
 	public static string PropStartText = "StartText";
 
-	// Token: 0x04004064 RID: 16484
+	// Token: 0x040040FA RID: 16634
 	public static string PropEntityGroupName = "EntityGroupName";
 
-	// Token: 0x04004065 RID: 16485
+	// Token: 0x040040FB RID: 16635
 	public static string PropTime = "Time";
 
-	// Token: 0x04004066 RID: 16486
+	// Token: 0x040040FC RID: 16636
 	public static string PropDelayBetweenSpawns = "DelayBetweenSpawns";
 
-	// Token: 0x04004067 RID: 16487
+	// Token: 0x040040FD RID: 16637
 	public static string PropTotalAlive = "TotalAlive";
 
-	// Token: 0x04004068 RID: 16488
+	// Token: 0x040040FE RID: 16638
 	public static string PropTotalPerWave = "TotalPerWave";
 
-	// Token: 0x04004069 RID: 16489
+	// Token: 0x040040FF RID: 16639
 	public static string PropDelayToNextWave = "DelayToNextWave";
 
-	// Token: 0x0400406A RID: 16490
+	// Token: 0x04004100 RID: 16640
 	public static string PropAttackPlayerAtOnce = "AttackPlayerAtOnce";
 
-	// Token: 0x0400406B RID: 16491
+	// Token: 0x04004101 RID: 16641
 	public static string PropNumberOfWaves = "NumberOfWaves";
 
-	// Token: 0x0400406C RID: 16492
+	// Token: 0x04004102 RID: 16642
 	public static string PropTerritorial = "Territorial";
 
-	// Token: 0x0400406D RID: 16493
+	// Token: 0x04004103 RID: 16643
 	public static string PropTerritorialRange = "TerritorialRange";
 
-	// Token: 0x0400406E RID: 16494
+	// Token: 0x04004104 RID: 16644
 	public static string PropSpawnOnGround = "SpawnOnGround";
 
-	// Token: 0x0400406F RID: 16495
+	// Token: 0x04004105 RID: 16645
 	public static string PropIgnoreTrigger = "IgnoreTrigger";
 
-	// Token: 0x04004070 RID: 16496
+	// Token: 0x04004106 RID: 16646
 	public static string PropResetToday = "ResetToday";
 
-	// Token: 0x04004071 RID: 16497
+	// Token: 0x04004107 RID: 16647
 	public static string PropDaysToRespawnIfPlayerLeft = "DaysToRespawnIfPlayerLeft";
 
-	// Token: 0x04004072 RID: 16498
+	// Token: 0x04004108 RID: 16648
 	public static DictionarySave<string, EntitySpawnerClassForDay> list = new DictionarySave<string, EntitySpawnerClassForDay>();
 
-	// Token: 0x04004073 RID: 16499
+	// Token: 0x04004109 RID: 16649
 	public static EntitySpawnerClass DefaultClassName;
 
-	// Token: 0x04004074 RID: 16500
+	// Token: 0x0400410A RID: 16650
 	public DynamicProperties Properties = new DynamicProperties();
 
-	// Token: 0x04004075 RID: 16501
+	// Token: 0x0400410B RID: 16651
 	public string name;
 
-	// Token: 0x04004076 RID: 16502
+	// Token: 0x0400410C RID: 16652
 	public string entityGroupName;
 
-	// Token: 0x04004077 RID: 16503
+	// Token: 0x0400410D RID: 16653
 	public EDaytime spawnAtTimeOfDay;
 
-	// Token: 0x04004078 RID: 16504
+	// Token: 0x0400410E RID: 16654
 	public float delayBetweenSpawns;
 
-	// Token: 0x04004079 RID: 16505
+	// Token: 0x0400410F RID: 16655
 	public int totalAlive;
 
-	// Token: 0x0400407A RID: 16506
+	// Token: 0x04004110 RID: 16656
 	public float delayToNextWave;
 
-	// Token: 0x0400407B RID: 16507
+	// Token: 0x04004111 RID: 16657
 	public int totalPerWaveMin;
 
-	// Token: 0x0400407C RID: 16508
+	// Token: 0x04004112 RID: 16658
 	public int totalPerWaveMax;
 
-	// Token: 0x0400407D RID: 16509
+	// Token: 0x04004113 RID: 16659
 	public int numberOfWaves;
 
-	// Token: 0x0400407E RID: 16510
+	// Token: 0x04004114 RID: 16660
 	public bool bAttackPlayerImmediately;
 
-	// Token: 0x0400407F RID: 16511
+	// Token: 0x04004115 RID: 16661
 	public bool bSpawnOnGround;
 
-	// Token: 0x04004080 RID: 16512
+	// Token: 0x04004116 RID: 16662
 	public bool bIgnoreTrigger;
 
-	// Token: 0x04004081 RID: 16513
+	// Token: 0x04004117 RID: 16663
 	public bool bTerritorial;
 
-	// Token: 0x04004082 RID: 16514
+	// Token: 0x04004118 RID: 16664
 	public int territorialRange;
 
-	// Token: 0x04004083 RID: 16515
+	// Token: 0x04004119 RID: 16665
 	public bool bPropResetToday;
 
-	// Token: 0x04004084 RID: 16516
+	// Token: 0x0400411A RID: 16666
 	public int daysToRespawnIfPlayerLeft;
 
-	// Token: 0x04004085 RID: 16517
+	// Token: 0x0400411B RID: 16667
 	public string startSound;
 
-	// Token: 0x04004086 RID: 16518
+	// Token: 0x0400411C RID: 16668
 	public string startText;
 }

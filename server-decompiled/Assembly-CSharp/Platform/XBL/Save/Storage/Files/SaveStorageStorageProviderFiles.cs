@@ -5,24 +5,24 @@ using Unity.XGamingRuntime.Interop;
 
 namespace Platform.XBL.Save.Storage.Files
 {
-	// Token: 0x02001C2B RID: 7211
+	// Token: 0x02001C52 RID: 7250
 	public sealed class SaveStorageStorageProviderFiles : ISaveStorageProvider, IDisposable
 	{
-		// Token: 0x0600D54A RID: 54602 RVA: 0x004CEDFC File Offset: 0x004CCFFC
+		// Token: 0x0600D6DA RID: 55002 RVA: 0x004D5220 File Offset: 0x004D3420
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void LogInfo(string text)
 		{
 			Log.Out("[XBL: SaveStorageStorageProviderFiles] " + text);
 		}
 
-		// Token: 0x0600D54B RID: 54603 RVA: 0x004CEE0E File Offset: 0x004CD00E
+		// Token: 0x0600D6DB RID: 55003 RVA: 0x004D5232 File Offset: 0x004D3432
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void LogError(string text)
 		{
 			Log.Error("[XBL: SaveStorageStorageProviderFiles] " + text);
 		}
 
-		// Token: 0x0600D54C RID: 54604 RVA: 0x004CEE20 File Offset: 0x004CD020
+		// Token: 0x0600D6DC RID: 55004 RVA: 0x004D5244 File Offset: 0x004D3444
 		public void Dispose()
 		{
 			SaveStorageStorageContainerFiles rootSaveStorageContainer = this.m_rootSaveStorageContainer;
@@ -45,8 +45,8 @@ namespace Platform.XBL.Save.Storage.Files
 			this.m_isDisposed = true;
 		}
 
-		// Token: 0x17001A2C RID: 6700
-		// (get) Token: 0x0600D54D RID: 54605 RVA: 0x004CEE87 File Offset: 0x004CD087
+		// Token: 0x17001A9E RID: 6814
+		// (get) Token: 0x0600D6DD RID: 55005 RVA: 0x004D52AB File Offset: 0x004D34AB
 		public SizeTracker SizeTracker
 		{
 			get
@@ -55,8 +55,8 @@ namespace Platform.XBL.Save.Storage.Files
 			}
 		}
 
-		// Token: 0x17001A2D RID: 6701
-		// (get) Token: 0x0600D54E RID: 54606 RVA: 0x004CEE8F File Offset: 0x004CD08F
+		// Token: 0x17001A9F RID: 6815
+		// (get) Token: 0x0600D6DE RID: 55006 RVA: 0x004D52B3 File Offset: 0x004D34B3
 		public ISaveStorageContainer RootSaveStorageContainer
 		{
 			get
@@ -65,7 +65,7 @@ namespace Platform.XBL.Save.Storage.Files
 			}
 		}
 
-		// Token: 0x0600D54F RID: 54607 RVA: 0x004CEE98 File Offset: 0x004CD098
+		// Token: 0x0600D6DF RID: 55007 RVA: 0x004D52BC File Offset: 0x004D34BC
 		public void InitializeAsync(IPlatform owner, long maxSizeBytes, SingleThreadTaskScheduler taskScheduler, OnGameSaveProviderStatusChanged statusChanged)
 		{
 			this.m_api = (XblPlatformApi)owner.Api;
@@ -76,7 +76,7 @@ namespace Platform.XBL.Save.Storage.Files
 			SDK.XGameSaveFilesGetFolderWithUiAsync(this.m_userClient.UserHandle, this.m_api.SCID, new XGameSaveFilesGetFolderWithUiCompleted(this.OnGameSaveFilesGetFolderWithUiCompleted));
 		}
 
-		// Token: 0x0600D550 RID: 54608 RVA: 0x004CEF05 File Offset: 0x004CD105
+		// Token: 0x0600D6E0 RID: 55008 RVA: 0x004D5329 File Offset: 0x004D3529
 		public void Flush(bool waitForFlush)
 		{
 			SaveStorageStorageContainerFiles rootSaveStorageContainer = this.m_rootSaveStorageContainer;
@@ -87,7 +87,7 @@ namespace Platform.XBL.Save.Storage.Files
 			rootSaveStorageContainer.Flush(waitForFlush);
 		}
 
-		// Token: 0x0600D551 RID: 54609 RVA: 0x004CEF18 File Offset: 0x004CD118
+		// Token: 0x0600D6E1 RID: 55009 RVA: 0x004D533C File Offset: 0x004D353C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void GetRemainingQuotaAsync(SizeTrackerGetRemainingQuotaCompleted completionRoutine)
 		{
@@ -99,7 +99,7 @@ namespace Platform.XBL.Save.Storage.Files
 			});
 		}
 
-		// Token: 0x0600D552 RID: 54610 RVA: 0x004CEF54 File Offset: 0x004CD154
+		// Token: 0x0600D6E2 RID: 55010 RVA: 0x004D5378 File Offset: 0x004D3578
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnGameSaveFilesGetFolderWithUiCompleted(int hr, string folderResult)
 		{
@@ -127,7 +127,7 @@ namespace Platform.XBL.Save.Storage.Files
 			this.m_statusChanged(ESaveGameProviderStatus.PermanentError);
 		}
 
-		// Token: 0x0600D553 RID: 54611 RVA: 0x004CF020 File Offset: 0x004CD220
+		// Token: 0x0600D6E3 RID: 55011 RVA: 0x004D5444 File Offset: 0x004D3644
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnGameSaveDirectoryReady()
 		{
@@ -137,39 +137,39 @@ namespace Platform.XBL.Save.Storage.Files
 			this.m_statusChanged(ESaveGameProviderStatus.Ok);
 		}
 
-		// Token: 0x0400A257 RID: 41559
+		// Token: 0x0400A388 RID: 41864
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XblPlatformApi m_api;
 
-		// Token: 0x0400A258 RID: 41560
+		// Token: 0x0400A389 RID: 41865
 		[PublicizedFrom(EAccessModifier.Private)]
 		public User m_userClient;
 
-		// Token: 0x0400A259 RID: 41561
+		// Token: 0x0400A38A RID: 41866
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SingleThreadTaskScheduler m_taskScheduler;
 
-		// Token: 0x0400A25A RID: 41562
+		// Token: 0x0400A38B RID: 41867
 		[PublicizedFrom(EAccessModifier.Private)]
 		public OnGameSaveProviderStatusChanged m_statusChanged;
 
-		// Token: 0x0400A25B RID: 41563
+		// Token: 0x0400A38C RID: 41868
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string m_gameSaveDirectory;
 
-		// Token: 0x0400A25C RID: 41564
+		// Token: 0x0400A38D RID: 41869
 		[PublicizedFrom(EAccessModifier.Private)]
 		public long m_maxSizeBytes;
 
-		// Token: 0x0400A25D RID: 41565
+		// Token: 0x0400A38E RID: 41870
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SizeTracker m_sizeTracker;
 
-		// Token: 0x0400A25E RID: 41566
+		// Token: 0x0400A38F RID: 41871
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SaveStorageStorageContainerFiles m_rootSaveStorageContainer;
 
-		// Token: 0x0400A25F RID: 41567
+		// Token: 0x0400A390 RID: 41872
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool m_isDisposed;
 	}

@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020007EA RID: 2026
+// Token: 0x020007F5 RID: 2037
 [Preserve]
 public class NetPackageExplosionInitiate : NetPackage
 {
-	// Token: 0x06003BB9 RID: 15289 RVA: 0x0017ECDD File Offset: 0x0017CEDD
+	// Token: 0x06003C18 RID: 15384 RVA: 0x001810B5 File Offset: 0x0017F2B5
 	public NetPackageExplosionInitiate Setup(Vector3 _worldPos, Vector3i _blockPos, Quaternion _rotation, ExplosionData _explosionData, int _entityId, float _delay, bool _bRemoveBlockAtExplPosition, ItemValue _itemValueExplosive)
 	{
 		this.worldPos = _worldPos;
@@ -20,7 +20,7 @@ public class NetPackageExplosionInitiate : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003BBA RID: 15290 RVA: 0x0017ED20 File Offset: 0x0017CF20
+	// Token: 0x06003C19 RID: 15385 RVA: 0x001810F8 File Offset: 0x0017F2F8
 	public override void read(PooledBinaryReader _br)
 	{
 		this.worldPos = StreamUtils.ReadVector3(_br);
@@ -38,7 +38,7 @@ public class NetPackageExplosionInitiate : NetPackage
 		}
 	}
 
-	// Token: 0x06003BBB RID: 15291 RVA: 0x0017EDB0 File Offset: 0x0017CFB0
+	// Token: 0x06003C1A RID: 15386 RVA: 0x00181188 File Offset: 0x0017F388
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -58,7 +58,7 @@ public class NetPackageExplosionInitiate : NetPackage
 		}
 	}
 
-	// Token: 0x06003BBC RID: 15292 RVA: 0x0017EE50 File Offset: 0x0017D050
+	// Token: 0x06003C1B RID: 15387 RVA: 0x00181228 File Offset: 0x0017F428
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -68,8 +68,8 @@ public class NetPackageExplosionInitiate : NetPackage
 		_world.GetGameManager().ExplosionServer(this.worldPos, this.blockPos, this.rotation, this.explosionData, this.entityId, this.delay, this.bRemoveBlockAtExplPosition, this.itemValueExplosive);
 	}
 
-	// Token: 0x17000632 RID: 1586
-	// (get) Token: 0x06003BBD RID: 15293 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x1700063D RID: 1597
+	// (get) Token: 0x06003C1C RID: 15388 RVA: 0x00020021 File Offset: 0x0001E221
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -78,41 +78,41 @@ public class NetPackageExplosionInitiate : NetPackage
 		}
 	}
 
-	// Token: 0x06003BBE RID: 15294 RVA: 0x001758DA File Offset: 0x00173ADA
+	// Token: 0x06003C1D RID: 15389 RVA: 0x00177B5A File Offset: 0x00175D5A
 	public override int GetLength()
 	{
 		return 70;
 	}
 
-	// Token: 0x0400305A RID: 12378
+	// Token: 0x040030D9 RID: 12505
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 worldPos;
 
-	// Token: 0x0400305B RID: 12379
+	// Token: 0x040030DA RID: 12506
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i blockPos;
 
-	// Token: 0x0400305C RID: 12380
+	// Token: 0x040030DB RID: 12507
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Quaternion rotation;
 
-	// Token: 0x0400305D RID: 12381
+	// Token: 0x040030DC RID: 12508
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ExplosionData explosionData;
 
-	// Token: 0x0400305E RID: 12382
+	// Token: 0x040030DD RID: 12509
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x0400305F RID: 12383
+	// Token: 0x040030DE RID: 12510
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float delay;
 
-	// Token: 0x04003060 RID: 12384
+	// Token: 0x040030DF RID: 12511
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bRemoveBlockAtExplPosition;
 
-	// Token: 0x04003061 RID: 12385
+	// Token: 0x040030E0 RID: 12512
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue itemValueExplosive;
 }

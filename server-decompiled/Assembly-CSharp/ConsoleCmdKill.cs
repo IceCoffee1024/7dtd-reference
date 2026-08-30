@@ -2,32 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200022E RID: 558
+// Token: 0x02000231 RID: 561
 [Preserve]
 public class ConsoleCmdKill : ConsoleCmdAbstract
 {
-	// Token: 0x060010E2 RID: 4322 RVA: 0x0006B451 File Offset: 0x00069651
+	// Token: 0x060010EE RID: 4334 RVA: 0x0006B9ED File Offset: 0x00069BED
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "kill" };
 	}
 
-	// Token: 0x060010E3 RID: 4323 RVA: 0x0006B461 File Offset: 0x00069661
+	// Token: 0x060010EF RID: 4335 RVA: 0x0006B9FD File Offset: 0x00069BFD
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Kill a given entity";
 	}
 
-	// Token: 0x060010E4 RID: 4324 RVA: 0x0006B468 File Offset: 0x00069668
+	// Token: 0x060010F0 RID: 4336 RVA: 0x0006BA04 File Offset: 0x00069C04
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Kill a given entity.\nUsage:\n   1. kill <entity id>\n   2. kill <player name / steam id>\n1. can be used to kill any entity that can be killed (zombies, players).\n2. can only be used to kill players.";
 	}
 
-	// Token: 0x060010E5 RID: 4325 RVA: 0x0006B470 File Offset: 0x00069670
+	// Token: 0x060010F1 RID: 4337 RVA: 0x0006BA0C File Offset: 0x00069C0C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count != 1)

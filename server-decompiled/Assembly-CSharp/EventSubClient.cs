@@ -9,15 +9,15 @@ using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UnityEngine.Networking;
 
-// Token: 0x02000C75 RID: 3189
+// Token: 0x02000C87 RID: 3207
 public class EventSubClient
 {
 	// Token: 0x1400008A RID: 138
-	// (add) Token: 0x06006204 RID: 25092 RVA: 0x00269DF8 File Offset: 0x00267FF8
-	// (remove) Token: 0x06006205 RID: 25093 RVA: 0x00269E30 File Offset: 0x00268030
+	// (add) Token: 0x0600628F RID: 25231 RVA: 0x0026CCD0 File Offset: 0x0026AED0
+	// (remove) Token: 0x06006290 RID: 25232 RVA: 0x0026CD08 File Offset: 0x0026AF08
 	public event Action<JObject> OnEventReceived;
 
-	// Token: 0x06006206 RID: 25094 RVA: 0x00269E65 File Offset: 0x00268065
+	// Token: 0x06006291 RID: 25233 RVA: 0x0026CD3D File Offset: 0x0026AF3D
 	public EventSubClient(string broadcasterID, string accessToken, string clientId)
 	{
 		this.broadcasterUserID = broadcasterID;
@@ -25,7 +25,7 @@ public class EventSubClient
 		this.clientId = clientId;
 	}
 
-	// Token: 0x06006207 RID: 25095 RVA: 0x00269EA0 File Offset: 0x002680A0
+	// Token: 0x06006292 RID: 25234 RVA: 0x0026CD78 File Offset: 0x0026AF78
 	public void Connect()
 	{
 		if (this.isRunning)
@@ -39,7 +39,7 @@ public class EventSubClient
 		this.receiveCoroutine = GameManager.Instance.StartCoroutine(this.ReceiveLoopCoroutine());
 	}
 
-	// Token: 0x06006208 RID: 25096 RVA: 0x00269F03 File Offset: 0x00268103
+	// Token: 0x06006293 RID: 25235 RVA: 0x0026CDDB File Offset: 0x0026AFDB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator ReceiveLoopCoroutine()
 	{
@@ -81,7 +81,7 @@ public class EventSubClient
 		yield break;
 	}
 
-	// Token: 0x06006209 RID: 25097 RVA: 0x00269F14 File Offset: 0x00268114
+	// Token: 0x06006294 RID: 25236 RVA: 0x0026CDEC File Offset: 0x0026AFEC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleMessage(string json)
 	{
@@ -156,7 +156,7 @@ public class EventSubClient
 		}
 	}
 
-	// Token: 0x0600620A RID: 25098 RVA: 0x0026A071 File Offset: 0x00268271
+	// Token: 0x06006295 RID: 25237 RVA: 0x0026CF49 File Offset: 0x0026B149
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator SubscribeToEvents()
 	{
@@ -171,7 +171,7 @@ public class EventSubClient
 		yield break;
 	}
 
-	// Token: 0x0600620B RID: 25099 RVA: 0x0026A080 File Offset: 0x00268280
+	// Token: 0x06006296 RID: 25238 RVA: 0x0026CF58 File Offset: 0x0026B158
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator CreateEventSubSubscription(string eventType)
 	{
@@ -215,7 +215,7 @@ public class EventSubClient
 		yield break;
 	}
 
-	// Token: 0x0600620C RID: 25100 RVA: 0x0026A098 File Offset: 0x00268298
+	// Token: 0x06006297 RID: 25239 RVA: 0x0026CF70 File Offset: 0x0026B170
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Reconnect(string newUrl)
 	{
@@ -231,7 +231,7 @@ public class EventSubClient
 		this.receiveCoroutine = GameManager.Instance.StartCoroutine(this.ReceiveLoopCoroutine());
 	}
 
-	// Token: 0x0600620D RID: 25101 RVA: 0x0026A104 File Offset: 0x00268304
+	// Token: 0x06006298 RID: 25240 RVA: 0x0026CFDC File Offset: 0x0026B1DC
 	public void Disconnect()
 	{
 		if (!this.isRunning)
@@ -250,7 +250,7 @@ public class EventSubClient
 		Log.Out("Disconnected from Twitch EventSub WebSocket");
 	}
 
-	// Token: 0x0600620E RID: 25102 RVA: 0x0026A170 File Offset: 0x00268370
+	// Token: 0x06006299 RID: 25241 RVA: 0x0026D048 File Offset: 0x0026B248
 	public void Cleanup()
 	{
 		if (this.cleanedUp)
@@ -267,39 +267,39 @@ public class EventSubClient
 		Log.Out("EventSubClient resources cleaned up.");
 	}
 
-	// Token: 0x04004C0D RID: 19469
+	// Token: 0x04004CAA RID: 19626
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ClientWebSocket ws;
 
-	// Token: 0x04004C0E RID: 19470
+	// Token: 0x04004CAB RID: 19627
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Uri twitchWsUri = new Uri("wss://eventsub.wss.twitch.tv/ws");
 
-	// Token: 0x04004C0F RID: 19471
+	// Token: 0x04004CAC RID: 19628
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Coroutine receiveCoroutine;
 
-	// Token: 0x04004C10 RID: 19472
+	// Token: 0x04004CAD RID: 19629
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isRunning;
 
-	// Token: 0x04004C11 RID: 19473
+	// Token: 0x04004CAE RID: 19630
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string sessionID = string.Empty;
 
-	// Token: 0x04004C12 RID: 19474
+	// Token: 0x04004CAF RID: 19631
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string broadcasterUserID;
 
-	// Token: 0x04004C13 RID: 19475
+	// Token: 0x04004CB0 RID: 19632
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string accessToken;
 
-	// Token: 0x04004C14 RID: 19476
+	// Token: 0x04004CB1 RID: 19633
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string clientId;
 
-	// Token: 0x04004C15 RID: 19477
+	// Token: 0x04004CB2 RID: 19634
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool cleanedUp;
 }

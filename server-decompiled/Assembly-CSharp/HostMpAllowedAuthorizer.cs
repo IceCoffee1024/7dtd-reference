@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000778 RID: 1912
+// Token: 0x02000782 RID: 1922
 [Preserve]
 public class HostMpAllowedAuthorizer : AuthorizerAbs
 {
-	// Token: 0x170005B9 RID: 1465
-	// (get) Token: 0x060038F8 RID: 14584 RVA: 0x0017576E File Offset: 0x0017396E
+	// Token: 0x170005C3 RID: 1475
+	// (get) Token: 0x06003950 RID: 14672 RVA: 0x001779EE File Offset: 0x00175BEE
 	public override int Order
 	{
 		get
@@ -15,8 +15,8 @@ public class HostMpAllowedAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005BA RID: 1466
-	// (get) Token: 0x060038F9 RID: 14585 RVA: 0x00175772 File Offset: 0x00173972
+	// Token: 0x170005C4 RID: 1476
+	// (get) Token: 0x06003951 RID: 14673 RVA: 0x001779F2 File Offset: 0x00175BF2
 	public override string AuthorizerName
 	{
 		get
@@ -25,8 +25,8 @@ public class HostMpAllowedAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005BB RID: 1467
-	// (get) Token: 0x060038FA RID: 14586 RVA: 0x0001FF1E File Offset: 0x0001E11E
+	// Token: 0x170005C5 RID: 1477
+	// (get) Token: 0x06003952 RID: 14674 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
 	public override string StateLocalizationKey
 	{
 		get
@@ -35,7 +35,7 @@ public class HostMpAllowedAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x060038FB RID: 14587 RVA: 0x0017577C File Offset: 0x0017397C
+	// Token: 0x06003953 RID: 14675 RVA: 0x001779FC File Offset: 0x00175BFC
 	public override ValueTuple<EAuthorizerSyncResult, GameUtils.KickPlayerData?> Authorize(ClientInfo _clientInfo)
 	{
 		if (!PermissionsManager.IsMultiplayerAllowed() || !PermissionsManager.CanHostMultiplayer())

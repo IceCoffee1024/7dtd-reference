@@ -4,7 +4,7 @@ using UnityEngine;
 // Token: 0x020000AC RID: 172
 public class AnimatorThrownWeaponHolsterState : StateMachineBehaviour
 {
-	// Token: 0x06000346 RID: 838 RVA: 0x0001857C File Offset: 0x0001677C
+	// Token: 0x06000346 RID: 838 RVA: 0x00018600 File Offset: 0x00016800
 	public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 		EntityPlayerLocal componentInParent = animator.GetComponentInParent<EntityPlayerLocal>();

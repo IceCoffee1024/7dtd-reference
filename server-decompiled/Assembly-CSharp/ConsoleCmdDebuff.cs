@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000203 RID: 515
+// Token: 0x02000205 RID: 517
 [Preserve]
 public class ConsoleCmdDebuff : ConsoleCmdAbstract
 {
 	// Token: 0x1700015E RID: 350
-	// (get) Token: 0x06000FC0 RID: 4032 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// (get) Token: 0x06000FCB RID: 4043 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -18,7 +18,7 @@ public class ConsoleCmdDebuff : ConsoleCmdAbstract
 	}
 
 	// Token: 0x1700015F RID: 351
-	// (get) Token: 0x06000FC1 RID: 4033 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// (get) Token: 0x06000FCC RID: 4044 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -27,14 +27,14 @@ public class ConsoleCmdDebuff : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000FC2 RID: 4034 RVA: 0x00065B6B File Offset: 0x00063D6B
+	// Token: 0x06000FCD RID: 4045 RVA: 0x000660B3 File Offset: 0x000642B3
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "debuff" };
 	}
 
-	// Token: 0x06000FC3 RID: 4035 RVA: 0x00065B7C File Offset: 0x00063D7C
+	// Token: 0x06000FCE RID: 4046 RVA: 0x000660C4 File Offset: 0x000642C4
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (!_senderInfo.IsLocalGame)
@@ -63,7 +63,7 @@ public class ConsoleCmdDebuff : ConsoleCmdAbstract
 		primaryPlayer.Buffs.RemoveBuff(_params[0], -1, true);
 	}
 
-	// Token: 0x06000FC4 RID: 4036 RVA: 0x00065C38 File Offset: 0x00063E38
+	// Token: 0x06000FCF RID: 4047 RVA: 0x00066180 File Offset: 0x00064380
 	public static void PrintActiveBuffNames(EntityPlayer _player)
 	{
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Active buffs:");
@@ -84,7 +84,7 @@ public class ConsoleCmdDebuff : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000FC5 RID: 4037 RVA: 0x00065D20 File Offset: 0x00063F20
+	// Token: 0x06000FD0 RID: 4048 RVA: 0x00066268 File Offset: 0x00064468
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

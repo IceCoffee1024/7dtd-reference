@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020010BD RID: 4285
+// Token: 0x020010D6 RID: 4310
 [Preserve]
 public class XUiC_WorkstationToolGrid : XUiC_WorkstationGrid
 {
-	// Token: 0x140000E1 RID: 225
-	// (add) Token: 0x06008852 RID: 34898 RVA: 0x00340CC4 File Offset: 0x0033EEC4
-	// (remove) Token: 0x06008853 RID: 34899 RVA: 0x00340CFC File Offset: 0x0033EEFC
+	// Token: 0x140000E2 RID: 226
+	// (add) Token: 0x06008944 RID: 35140 RVA: 0x003454E8 File Offset: 0x003436E8
+	// (remove) Token: 0x06008945 RID: 35141 RVA: 0x00345520 File Offset: 0x00343720
 	public event XuiEvent_WorkstationItemsChanged OnWorkstationToolsChanged;
 
-	// Token: 0x06008854 RID: 34900 RVA: 0x00340D34 File Offset: 0x0033EF34
+	// Token: 0x06008946 RID: 35142 RVA: 0x00345558 File Offset: 0x00343758
 	public override void Init()
 	{
 		base.Init();
@@ -30,7 +30,7 @@ public class XUiC_WorkstationToolGrid : XUiC_WorkstationGrid
 		}
 	}
 
-	// Token: 0x06008855 RID: 34901 RVA: 0x00340DC4 File Offset: 0x0033EFC4
+	// Token: 0x06008947 RID: 35143 RVA: 0x003455E8 File Offset: 0x003437E8
 	public override bool HasRequirement(Recipe recipe)
 	{
 		if (recipe == null)
@@ -52,7 +52,7 @@ public class XUiC_WorkstationToolGrid : XUiC_WorkstationGrid
 		return false;
 	}
 
-	// Token: 0x06008856 RID: 34902 RVA: 0x00340E10 File Offset: 0x0033F010
+	// Token: 0x06008948 RID: 35144 RVA: 0x00345634 File Offset: 0x00343834
 	public void SetToolLocks(bool locked)
 	{
 		if (locked != this.isLocked)
@@ -65,7 +65,7 @@ public class XUiC_WorkstationToolGrid : XUiC_WorkstationGrid
 		}
 	}
 
-	// Token: 0x06008857 RID: 34903 RVA: 0x00340E4E File Offset: 0x0033F04E
+	// Token: 0x06008949 RID: 35145 RVA: 0x00345672 File Offset: 0x00343872
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateBackend(ItemStack[] stackList)
 	{
@@ -74,7 +74,7 @@ public class XUiC_WorkstationToolGrid : XUiC_WorkstationGrid
 		this.windowGroup.Controller.SetAllChildrenDirty();
 	}
 
-	// Token: 0x06008858 RID: 34904 RVA: 0x00340E74 File Offset: 0x0033F074
+	// Token: 0x0600894A RID: 35146 RVA: 0x00345698 File Offset: 0x00343898
 	public override bool ParseAttribute(string name, string value)
 	{
 		bool flag = base.ParseAttribute(name, value);
@@ -97,7 +97,7 @@ public class XUiC_WorkstationToolGrid : XUiC_WorkstationGrid
 		return flag;
 	}
 
-	// Token: 0x06008859 RID: 34905 RVA: 0x00340EC8 File Offset: 0x0033F0C8
+	// Token: 0x0600894B RID: 35147 RVA: 0x003456EC File Offset: 0x003438EC
 	public bool TryAddTool(ItemClass newItemClass, ItemStack newItemStack)
 	{
 		if (!this.requiredToolsOnly || this.isLocked)
@@ -116,7 +116,7 @@ public class XUiC_WorkstationToolGrid : XUiC_WorkstationGrid
 		return newItemStack.count == 0;
 	}
 
-	// Token: 0x0600885A RID: 34906 RVA: 0x00340F1F File Offset: 0x0033F11F
+	// Token: 0x0600894C RID: 35148 RVA: 0x00345743 File Offset: 0x00343943
 	public override void HandleSlotChangedEvent(int slotNumber, ItemStack stack)
 	{
 		base.HandleSlotChangedEvent(slotNumber, stack);
@@ -126,29 +126,29 @@ public class XUiC_WorkstationToolGrid : XUiC_WorkstationGrid
 		}
 	}
 
-	// Token: 0x0600885B RID: 34907 RVA: 0x00340F3C File Offset: 0x0033F13C
+	// Token: 0x0600894D RID: 35149 RVA: 0x00345760 File Offset: 0x00343960
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.xui.CurrentWorkstationToolGrid = this;
 	}
 
-	// Token: 0x0600885C RID: 34908 RVA: 0x00340F50 File Offset: 0x0033F150
+	// Token: 0x0600894E RID: 35150 RVA: 0x00345774 File Offset: 0x00343974
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.xui.CurrentWorkstationToolGrid = null;
 	}
 
-	// Token: 0x04006547 RID: 25927
+	// Token: 0x0400660E RID: 26126
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isLocked;
 
-	// Token: 0x04006548 RID: 25928
+	// Token: 0x0400660F RID: 26127
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string requiredTools = "";
 
-	// Token: 0x04006549 RID: 25929
+	// Token: 0x04006610 RID: 26128
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool requiredToolsOnly;
 }

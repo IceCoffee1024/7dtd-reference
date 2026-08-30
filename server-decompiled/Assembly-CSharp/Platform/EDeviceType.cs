@@ -2,14 +2,14 @@
 
 namespace Platform
 {
-	// Token: 0x02001B24 RID: 6948
+	// Token: 0x02001B4B RID: 6987
 	public enum EDeviceType
 	{
-		// Token: 0x04009F09 RID: 40713
+		// Token: 0x0400A03A RID: 41018
 		Unknown,
-		// Token: 0x04009F0A RID: 40714
+		// Token: 0x0400A03B RID: 41019
 		PC,
-		// Token: 0x04009F0B RID: 40715
+		// Token: 0x0400A03C RID: 41020
 		Console
 	}
 }

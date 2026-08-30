@@ -3,11 +3,11 @@ using System.Runtime.CompilerServices;
 
 namespace PrefabVolumes
 {
-	// Token: 0x02001894 RID: 6292
+	// Token: 0x020018BA RID: 6330
 	public abstract class PrefabVolumeAbs
 	{
-		// Token: 0x17001792 RID: 6034
-		// (get) Token: 0x0600C1D8 RID: 49624 RVA: 0x0047D281 File Offset: 0x0047B481
+		// Token: 0x17001804 RID: 6148
+		// (get) Token: 0x0600C35F RID: 50015 RVA: 0x004833AD File Offset: 0x004815AD
 		public bool Used
 		{
 			get
@@ -16,9 +16,9 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x17001793 RID: 6035
-		// (get) Token: 0x0600C1D9 RID: 49625 RVA: 0x0047D289 File Offset: 0x0047B489
-		// (set) Token: 0x0600C1DA RID: 49626 RVA: 0x0047D291 File Offset: 0x0047B491
+		// Token: 0x17001805 RID: 6149
+		// (get) Token: 0x0600C360 RID: 50016 RVA: 0x004833B5 File Offset: 0x004815B5
+		// (set) Token: 0x0600C361 RID: 50017 RVA: 0x004833BD File Offset: 0x004815BD
 		public virtual Vector3i startPos
 		{
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -32,9 +32,9 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x17001794 RID: 6036
-		// (get) Token: 0x0600C1DB RID: 49627 RVA: 0x0047D29A File Offset: 0x0047B49A
-		// (set) Token: 0x0600C1DC RID: 49628 RVA: 0x0047D2A2 File Offset: 0x0047B4A2
+		// Token: 0x17001806 RID: 6150
+		// (get) Token: 0x0600C362 RID: 50018 RVA: 0x004833C6 File Offset: 0x004815C6
+		// (set) Token: 0x0600C363 RID: 50019 RVA: 0x004833CE File Offset: 0x004815CE
 		public virtual Vector3i size
 		{
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -48,15 +48,15 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x17001795 RID: 6037
-		// (get) Token: 0x0600C1DD RID: 49629
+		// Token: 0x17001807 RID: 6151
+		// (get) Token: 0x0600C364 RID: 50020
 		public abstract PrefabVolumeAbs.EVolumeType VolumeType { get; }
 
-		// Token: 0x17001796 RID: 6038
-		// (get) Token: 0x0600C1DE RID: 49630
+		// Token: 0x17001808 RID: 6152
+		// (get) Token: 0x0600C365 RID: 50021
 		public abstract int SerializedSize { get; }
 
-		// Token: 0x0600C1DF RID: 49631 RVA: 0x0047D2AB File Offset: 0x0047B4AB
+		// Token: 0x0600C366 RID: 50022 RVA: 0x004833D7 File Offset: 0x004815D7
 		public void Use(Vector3i _startPos, Vector3i _size)
 		{
 			this.used = true;
@@ -64,7 +64,7 @@ namespace PrefabVolumes
 			this.size = _size;
 		}
 
-		// Token: 0x0600C1E0 RID: 49632 RVA: 0x0047D2C4 File Offset: 0x0047B4C4
+		// Token: 0x0600C367 RID: 50023 RVA: 0x004833F0 File Offset: 0x004815F0
 		public virtual void Reset()
 		{
 			this.used = false;
@@ -72,13 +72,13 @@ namespace PrefabVolumes
 			this.size = default(Vector3i);
 		}
 
-		// Token: 0x0600C1E1 RID: 49633 RVA: 0x0047D2F6 File Offset: 0x0047B4F6
+		// Token: 0x0600C368 RID: 50024 RVA: 0x00483422 File Offset: 0x00481622
 		public void MarkUnused()
 		{
 			this.used = false;
 		}
 
-		// Token: 0x0600C1E2 RID: 49634 RVA: 0x0047D2FF File Offset: 0x0047B4FF
+		// Token: 0x0600C369 RID: 50025 RVA: 0x0048342B File Offset: 0x0048162B
 		public virtual void Read(PooledBinaryReader _br)
 		{
 			this.used = _br.ReadBoolean();
@@ -86,7 +86,7 @@ namespace PrefabVolumes
 			this.size = StreamUtils.ReadVector3i(_br);
 		}
 
-		// Token: 0x0600C1E3 RID: 49635 RVA: 0x0047D325 File Offset: 0x0047B525
+		// Token: 0x0600C36A RID: 50026 RVA: 0x00483451 File Offset: 0x00481651
 		public virtual void Write(PooledBinaryWriter _bw)
 		{
 			_bw.Write(this.Used);
@@ -94,7 +94,7 @@ namespace PrefabVolumes
 			StreamUtils.Write(_bw, this.size);
 		}
 
-		// Token: 0x0600C1E4 RID: 49636 RVA: 0x0047D34C File Offset: 0x0047B54C
+		// Token: 0x0600C36B RID: 50027 RVA: 0x00483478 File Offset: 0x00481678
 		public virtual void RotateY(bool _bLeft, Vector3i _prefabSize)
 		{
 			Vector3i size = this.size;
@@ -123,13 +123,13 @@ namespace PrefabVolumes
 			this.size = size;
 		}
 
-		// Token: 0x0600C1E5 RID: 49637 RVA: 0x0047D457 File Offset: 0x0047B657
+		// Token: 0x0600C36C RID: 50028 RVA: 0x00483583 File Offset: 0x00481783
 		public void Move(Vector3i _moveVector)
 		{
 			this.startPos += _moveVector;
 		}
 
-		// Token: 0x0600C1E6 RID: 49638 RVA: 0x0047D46C File Offset: 0x0047B66C
+		// Token: 0x0600C36D RID: 50029 RVA: 0x00483598 File Offset: 0x00481798
 		public void Resize(int _dTop, int _dBottom, int _dNorth, int _dSouth, int _dEast, int _dWest, bool _allowXBelow1 = false, bool _allowYBelow1 = false, bool _allowZBelow1 = false)
 		{
 			Vector3i vector3i = this.size;
@@ -150,13 +150,13 @@ namespace PrefabVolumes
 			this.size = vector3i;
 		}
 
-		// Token: 0x0600C1E7 RID: 49639
+		// Token: 0x0600C36E RID: 50030
 		public abstract PrefabVolumeAbs Clone();
 
-		// Token: 0x0600C1E8 RID: 49640
+		// Token: 0x0600C36F RID: 50031
 		public abstract void CopyValues(PrefabVolumeAbs _target, bool _nonBasicOnly = false);
 
-		// Token: 0x0600C1E9 RID: 49641 RVA: 0x0047D520 File Offset: 0x0047B720
+		// Token: 0x0600C370 RID: 50032 RVA: 0x0048364C File Offset: 0x0048184C
 		public static PrefabVolumeAbs CreateByType(PrefabVolumeAbs.EVolumeType _volumeType)
 		{
 			PrefabVolumeAbs prefabVolumeAbs;
@@ -186,38 +186,38 @@ namespace PrefabVolumes
 			return prefabVolumeAbs;
 		}
 
-		// Token: 0x0600C1EA RID: 49642 RVA: 0x0000640C File Offset: 0x0000460C
+		// Token: 0x0600C371 RID: 50033 RVA: 0x0000640C File Offset: 0x0000460C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public PrefabVolumeAbs()
 		{
 		}
 
-		// Token: 0x040092C4 RID: 37572
+		// Token: 0x040093ED RID: 37869
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool used;
 
-		// Token: 0x040092C5 RID: 37573
+		// Token: 0x040093EE RID: 37870
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public Vector3i startPosInternal;
 
-		// Token: 0x040092C6 RID: 37574
+		// Token: 0x040093EF RID: 37871
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public Vector3i sizeInternal;
 
-		// Token: 0x02001895 RID: 6293
+		// Token: 0x020018BB RID: 6331
 		public enum EVolumeType : byte
 		{
-			// Token: 0x040092C8 RID: 37576
+			// Token: 0x040093F1 RID: 37873
 			Sleeper,
-			// Token: 0x040092C9 RID: 37577
+			// Token: 0x040093F2 RID: 37874
 			Teleport,
-			// Token: 0x040092CA RID: 37578
+			// Token: 0x040093F3 RID: 37875
 			Info,
-			// Token: 0x040092CB RID: 37579
+			// Token: 0x040093F4 RID: 37876
 			Wall,
-			// Token: 0x040092CC RID: 37580
+			// Token: 0x040093F5 RID: 37877
 			Trigger,
-			// Token: 0x040092CD RID: 37581
+			// Token: 0x040093F6 RID: 37878
 			Marker
 		}
 	}

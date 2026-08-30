@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x0200193F RID: 6463
+	// Token: 0x02001965 RID: 6501
 	[Preserve]
 	public class ActionAddXP : ActionBaseClientAction
 	{
-		// Token: 0x0600C678 RID: 50808 RVA: 0x0048F224 File Offset: 0x0048D424
+		// Token: 0x0600C7FF RID: 51199 RVA: 0x00495570 File Offset: 0x00493770
 		public override void OnClientPerform(Entity target)
 		{
 			EntityPlayer entityPlayer = target as EntityPlayer;
@@ -22,14 +22,14 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C679 RID: 50809 RVA: 0x0048F27A File Offset: 0x0048D47A
+		// Token: 0x0600C800 RID: 51200 RVA: 0x004955C6 File Offset: 0x004937C6
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseString(ActionAddXP.PropXPAmount, ref this.xpAmountText);
 		}
 
-		// Token: 0x0600C67A RID: 50810 RVA: 0x0048F294 File Offset: 0x0048D494
+		// Token: 0x0600C801 RID: 51201 RVA: 0x004955E0 File Offset: 0x004937E0
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -39,15 +39,15 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x0400959D RID: 38301
+		// Token: 0x040096C6 RID: 38598
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string xpAmountText;
 
-		// Token: 0x0400959E RID: 38302
+		// Token: 0x040096C7 RID: 38599
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int xpAmount;
 
-		// Token: 0x0400959F RID: 38303
+		// Token: 0x040096C8 RID: 38600
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropXPAmount = "xp_amount";
 	}

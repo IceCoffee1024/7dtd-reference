@@ -2,10 +2,10 @@
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.Mathematics;
 
-// Token: 0x02000CBB RID: 3259
+// Token: 0x02000CCD RID: 3277
 public struct WaterNeighborCacheNative
 {
-	// Token: 0x0600641B RID: 25627 RVA: 0x002728B8 File Offset: 0x00270AB8
+	// Token: 0x060064A7 RID: 25767 RVA: 0x002757B4 File Offset: 0x002739B4
 	public static WaterNeighborCacheNative InitializeCache(UnsafeParallelHashMap<ChunkKey, WaterDataHandle> _handles)
 	{
 		return new WaterNeighborCacheNative
@@ -14,14 +14,14 @@ public struct WaterNeighborCacheNative
 		};
 	}
 
-	// Token: 0x0600641C RID: 25628 RVA: 0x002728D6 File Offset: 0x00270AD6
+	// Token: 0x060064A8 RID: 25768 RVA: 0x002757D2 File Offset: 0x002739D2
 	public void SetChunk(ChunkKey _chunk)
 	{
 		this.chunkKey = _chunk;
 		this.center = this.waterDataHandles[_chunk];
 	}
 
-	// Token: 0x0600641D RID: 25629 RVA: 0x002728F1 File Offset: 0x00270AF1
+	// Token: 0x060064A9 RID: 25769 RVA: 0x002757ED File Offset: 0x002739ED
 	public void SetVoxel(int _x, int _y, int _z)
 	{
 		this.voxelX = _x;
@@ -29,7 +29,7 @@ public struct WaterNeighborCacheNative
 		this.voxelZ = _z;
 	}
 
-	// Token: 0x0600641E RID: 25630 RVA: 0x00272908 File Offset: 0x00270B08
+	// Token: 0x060064AA RID: 25770 RVA: 0x00275804 File Offset: 0x00273A04
 	public bool TryGetNeighbor(int2 _xzOffset, out ChunkKey _chunkKey, out WaterDataHandle _dataHandle, out int _x, out int _y, out int _z)
 	{
 		_x = this.voxelX + _xzOffset.x;
@@ -57,34 +57,34 @@ public struct WaterNeighborCacheNative
 		return false;
 	}
 
-	// Token: 0x04004D9D RID: 19869
+	// Token: 0x04004E3B RID: 20027
 	public static readonly int2 X_NEG = new int2(-1, 0);
 
-	// Token: 0x04004D9E RID: 19870
+	// Token: 0x04004E3C RID: 20028
 	public static readonly int2 X_POS = new int2(1, 0);
 
-	// Token: 0x04004D9F RID: 19871
+	// Token: 0x04004E3D RID: 20029
 	public static readonly int2 Z_NEG = new int2(0, -1);
 
-	// Token: 0x04004DA0 RID: 19872
+	// Token: 0x04004E3E RID: 20030
 	public static readonly int2 Z_POS = new int2(0, 1);
 
-	// Token: 0x04004DA1 RID: 19873
+	// Token: 0x04004E3F RID: 20031
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UnsafeParallelHashMap<ChunkKey, WaterDataHandle> waterDataHandles;
 
-	// Token: 0x04004DA2 RID: 19874
+	// Token: 0x04004E40 RID: 20032
 	public ChunkKey chunkKey;
 
-	// Token: 0x04004DA3 RID: 19875
+	// Token: 0x04004E41 RID: 20033
 	public int voxelX;
 
-	// Token: 0x04004DA4 RID: 19876
+	// Token: 0x04004E42 RID: 20034
 	public int voxelY;
 
-	// Token: 0x04004DA5 RID: 19877
+	// Token: 0x04004E43 RID: 20035
 	public int voxelZ;
 
-	// Token: 0x04004DA6 RID: 19878
+	// Token: 0x04004E44 RID: 20036
 	public WaterDataHandle center;
 }

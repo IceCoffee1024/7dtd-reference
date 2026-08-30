@@ -1,39 +1,50 @@
 ﻿using System;
 
-// Token: 0x02000AC8 RID: 2760
+// Token: 0x02000AD9 RID: 2777
 public class BiomeSpawnEntityGroupData
 {
-	// Token: 0x06005299 RID: 21145 RVA: 0x001F96F4 File Offset: 0x001F78F4
-	public BiomeSpawnEntityGroupData(int _idHash, int _maxCount, int[] _respawndelay, EDaytime _daytime, bool _isAnimal)
+	// Token: 0x0600531F RID: 21279 RVA: 0x001FC18C File Offset: 0x001FA38C
+	public BiomeSpawnEntityGroupData(int _idHash, int _maxCount, int[] _respawndelay, EDaytime _daytime, BiomeSpawnEntityGroupData.eType _type)
 	{
 		this.idHash = _idHash;
 		this.maxCount = _maxCount;
 		this.daytime = _daytime;
 		this.respawnDelayInWorldTime = _respawndelay;
-		this.isAnimal = _isAnimal;
+		this.type = _type;
 	}
 
-	// Token: 0x04004031 RID: 16433
+	// Token: 0x040040C2 RID: 16578
 	public int idHash;
 
-	// Token: 0x04004032 RID: 16434
+	// Token: 0x040040C3 RID: 16579
 	public string entityGroupName;
 
-	// Token: 0x04004033 RID: 16435
+	// Token: 0x040040C4 RID: 16580
 	public int maxCount;
 
-	// Token: 0x04004034 RID: 16436
+	// Token: 0x040040C5 RID: 16581
 	public int[] respawnDelayInWorldTime;
 
-	// Token: 0x04004035 RID: 16437
+	// Token: 0x040040C6 RID: 16582
 	public EDaytime daytime;
 
-	// Token: 0x04004036 RID: 16438
+	// Token: 0x040040C7 RID: 16583
 	public FastTags<TagGroup.Poi> POITags;
 
-	// Token: 0x04004037 RID: 16439
+	// Token: 0x040040C8 RID: 16584
 	public FastTags<TagGroup.Poi> noPOITags;
 
-	// Token: 0x04004038 RID: 16440
-	public bool isAnimal;
+	// Token: 0x040040C9 RID: 16585
+	public BiomeSpawnEntityGroupData.eType type;
+
+	// Token: 0x02000ADA RID: 2778
+	public enum eType
+	{
+		// Token: 0x040040CB RID: 16587
+		Normal,
+		// Token: 0x040040CC RID: 16588
+		Animal,
+		// Token: 0x040040CD RID: 16589
+		Rare
+	}
 }

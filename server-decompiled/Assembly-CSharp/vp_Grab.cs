@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020015C4 RID: 5572
+// Token: 0x020015DF RID: 5599
 [RequireComponent(typeof(Rigidbody))]
 public class vp_Grab : vp_Interactable
 {
-	// Token: 0x0600ADD2 RID: 44498 RVA: 0x0040D118 File Offset: 0x0040B318
+	// Token: 0x0600AECF RID: 44751 RVA: 0x00412458 File Offset: 0x00410658
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Start()
 	{
@@ -26,7 +26,7 @@ public class vp_Grab : vp_Interactable
 		this.m_InteractManager = global::UnityEngine.Object.FindAnyObjectByType<vp_FPInteractManager>();
 	}
 
-	// Token: 0x0600ADD3 RID: 44499 RVA: 0x0040D1A9 File Offset: 0x0040B3A9
+	// Token: 0x0600AED0 RID: 44752 RVA: 0x004124E9 File Offset: 0x004106E9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void FixedUpdate()
 	{
@@ -41,7 +41,7 @@ public class vp_Grab : vp_Interactable
 		this.DampenForces();
 	}
 
-	// Token: 0x0600ADD4 RID: 44500 RVA: 0x0040D1E5 File Offset: 0x0040B3E5
+	// Token: 0x0600AED1 RID: 44753 RVA: 0x00412525 File Offset: 0x00410725
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Update()
 	{
@@ -52,7 +52,7 @@ public class vp_Grab : vp_Interactable
 		this.UpdateInput();
 	}
 
-	// Token: 0x0600ADD5 RID: 44501 RVA: 0x0040D20C File Offset: 0x0040B40C
+	// Token: 0x0600AED2 RID: 44754 RVA: 0x0041254C File Offset: 0x0041074C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void UpdateInput()
 	{
@@ -70,7 +70,7 @@ public class vp_Grab : vp_Interactable
 		}
 	}
 
-	// Token: 0x0600ADD6 RID: 44502 RVA: 0x0040D2C8 File Offset: 0x0040B4C8
+	// Token: 0x0600AED3 RID: 44755 RVA: 0x00412608 File Offset: 0x00410808
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void UpdateShake()
 	{
@@ -78,7 +78,7 @@ public class vp_Grab : vp_Interactable
 		this.m_Transform.localEulerAngles += this.m_CurrentShake;
 	}
 
-	// Token: 0x0600ADD7 RID: 44503 RVA: 0x0040D304 File Offset: 0x0040B504
+	// Token: 0x0600AED4 RID: 44756 RVA: 0x00412644 File Offset: 0x00410844
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void UpdatePosition()
 	{
@@ -89,7 +89,7 @@ public class vp_Grab : vp_Interactable
 		this.m_Transform.position = Vector3.Lerp(this.m_Transform.position, this.m_Camera.Transform.position - this.m_CurrentSwayForce + this.m_Camera.Transform.right * this.m_TempCarryingOffset.x + this.m_Camera.Transform.up * this.m_Transform.localScale.y * (this.m_TempCarryingOffset.y + this.m_CurrentShake.y * 0.5f) + this.m_Camera.Transform.forward * this.m_TempCarryingOffset.z, (this.m_FetchProgress < 1f) ? this.m_FetchProgress : (Time.deltaTime * (this.Stiffness * 60f)));
 	}
 
-	// Token: 0x0600ADD8 RID: 44504 RVA: 0x0040D510 File Offset: 0x0040B710
+	// Token: 0x0600AED5 RID: 44757 RVA: 0x00412850 File Offset: 0x00410A50
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void UpdateRotation()
 	{
@@ -112,7 +112,7 @@ public class vp_Grab : vp_Interactable
 		this.m_Transform.localRotation = Quaternion.Slerp(localRotation2, Quaternion.Euler(this.m_CurrentHoldAngle + this.m_CurrentShake * 50f), Time.deltaTime * (this.Stiffness * 60f));
 	}
 
-	// Token: 0x0600ADD9 RID: 44505 RVA: 0x0040D6E4 File Offset: 0x0040B8E4
+	// Token: 0x0600AED6 RID: 44758 RVA: 0x00412A24 File Offset: 0x00410C24
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void UpdateBurden()
 	{
@@ -123,7 +123,7 @@ public class vp_Grab : vp_Interactable
 		this.m_Player.MotorThrottle.Set(this.m_Player.MotorThrottle.Get() * (1f - Mathf.Clamp01(this.Burden)));
 	}
 
-	// Token: 0x0600ADDA RID: 44506 RVA: 0x0040D73F File Offset: 0x0040B93F
+	// Token: 0x0600AED7 RID: 44759 RVA: 0x00412A7F File Offset: 0x00410C7F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void DampenForces()
 	{
@@ -132,7 +132,7 @@ public class vp_Grab : vp_Interactable
 		this.m_CurrentFootstepForce *= 0.9f;
 	}
 
-	// Token: 0x0600ADDB RID: 44507 RVA: 0x0040D780 File Offset: 0x0040B980
+	// Token: 0x0600AED8 RID: 44760 RVA: 0x00412AC0 File Offset: 0x00410CC0
 	public override bool TryInteract(vp_FPPlayerEventHandler player)
 	{
 		if (this.m_Player == null)
@@ -188,7 +188,7 @@ public class vp_Grab : vp_Interactable
 		return true;
 	}
 
-	// Token: 0x0600ADDC RID: 44508 RVA: 0x0040D8CC File Offset: 0x0040BACC
+	// Token: 0x0600AED9 RID: 44761 RVA: 0x00412C0C File Offset: 0x00410E0C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void StartGrab()
 	{
@@ -225,7 +225,7 @@ public class vp_Grab : vp_Interactable
 		this.m_IsGrabbed = true;
 	}
 
-	// Token: 0x0600ADDD RID: 44509 RVA: 0x0040DA80 File Offset: 0x0040BC80
+	// Token: 0x0600AEDA RID: 44762 RVA: 0x00412DC0 File Offset: 0x00410FC0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void StopGrab()
 	{
@@ -283,7 +283,7 @@ public class vp_Grab : vp_Interactable
 		}, null);
 	}
 
-	// Token: 0x0600ADDE RID: 44510 RVA: 0x0040DDC6 File Offset: 0x0040BFC6
+	// Token: 0x0600AEDB RID: 44763 RVA: 0x00413106 File Offset: 0x00411306
 	public override void FinishInteraction()
 	{
 		if (this.m_IsGrabbed)
@@ -292,7 +292,7 @@ public class vp_Grab : vp_Interactable
 		}
 	}
 
-	// Token: 0x0600ADDF RID: 44511 RVA: 0x0040DDD6 File Offset: 0x0040BFD6
+	// Token: 0x0600AEDC RID: 44764 RVA: 0x00413116 File Offset: 0x00411316
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual IEnumerator Fetch()
 	{
@@ -314,7 +314,7 @@ public class vp_Grab : vp_Interactable
 		yield break;
 	}
 
-	// Token: 0x0600ADE0 RID: 44512 RVA: 0x0040DDE8 File Offset: 0x0040BFE8
+	// Token: 0x0600AEDD RID: 44765 RVA: 0x00413128 File Offset: 0x00411328
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnCollisionEnter(Collision col)
 	{
@@ -331,7 +331,7 @@ public class vp_Grab : vp_Interactable
 		}, this.m_DisableAngleSwayTimer);
 	}
 
-	// Token: 0x0600ADE1 RID: 44513 RVA: 0x0040DE4C File Offset: 0x0040C04C
+	// Token: 0x0600AEDE RID: 44766 RVA: 0x0041318C File Offset: 0x0041138C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnCollisionStay(Collision col)
 	{
@@ -369,28 +369,28 @@ public class vp_Grab : vp_Interactable
 		}
 	}
 
-	// Token: 0x0600ADE2 RID: 44514 RVA: 0x0040DFB7 File Offset: 0x0040C1B7
+	// Token: 0x0600AEDF RID: 44767 RVA: 0x004132F7 File Offset: 0x004114F7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnCollisionExit()
 	{
 		this.m_CurrentHoldAngle = this.m_Transform.localEulerAngles;
 	}
 
-	// Token: 0x0600ADE3 RID: 44515 RVA: 0x0040DFCA File Offset: 0x0040C1CA
+	// Token: 0x0600AEE0 RID: 44768 RVA: 0x0041330A File Offset: 0x0041150A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Footstep()
 	{
 		this.m_CurrentFootstepForce += this.FootstepForce;
 	}
 
-	// Token: 0x0600ADE4 RID: 44516 RVA: 0x0040DFDF File Offset: 0x0040C1DF
+	// Token: 0x0600AEE1 RID: 44769 RVA: 0x0041331F File Offset: 0x0041151F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnMessage_FallImpact(float impact)
 	{
 		this.m_CurrentSwayForce.y = this.m_CurrentSwayForce.y + impact * this.Kneeling;
 	}
 
-	// Token: 0x0600ADE5 RID: 44517 RVA: 0x0040DFF8 File Offset: 0x0040C1F8
+	// Token: 0x0600AEE2 RID: 44770 RVA: 0x00413338 File Offset: 0x00411538
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnStop_SetWeapon()
 	{
@@ -400,7 +400,7 @@ public class vp_Grab : vp_Interactable
 		}
 	}
 
-	// Token: 0x0600ADE6 RID: 44518 RVA: 0x0040E018 File Offset: 0x0040C218
+	// Token: 0x0600AEE3 RID: 44771 RVA: 0x00413358 File Offset: 0x00411558
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool CanStart_SetWeapon()
 	{
@@ -408,163 +408,163 @@ public class vp_Grab : vp_Interactable
 		return !this.m_IsGrabbed || num == 0;
 	}
 
-	// Token: 0x0400819A RID: 33178
+	// Token: 0x04008273 RID: 33395
 	public string OnGrabText = "";
 
-	// Token: 0x0400819B RID: 33179
+	// Token: 0x04008274 RID: 33396
 	public Texture GrabStateCrosshair;
 
-	// Token: 0x0400819C RID: 33180
+	// Token: 0x04008275 RID: 33397
 	public float FootstepForce = 0.015f;
 
-	// Token: 0x0400819D RID: 33181
+	// Token: 0x04008276 RID: 33398
 	public float Kneeling = 5f;
 
-	// Token: 0x0400819E RID: 33182
+	// Token: 0x04008277 RID: 33399
 	public float Stiffness = 0.5f;
 
-	// Token: 0x0400819F RID: 33183
+	// Token: 0x04008278 RID: 33400
 	public float ShakeSpeed = 0.1f;
 
-	// Token: 0x040081A0 RID: 33184
+	// Token: 0x04008279 RID: 33401
 	public Vector3 ShakeAmplitude = Vector3.one;
 
-	// Token: 0x040081A1 RID: 33185
+	// Token: 0x0400827A RID: 33402
 	public float ThrowStrength = 6f;
 
-	// Token: 0x040081A2 RID: 33186
+	// Token: 0x0400827B RID: 33403
 	public bool AllowThrowRotation = true;
 
-	// Token: 0x040081A3 RID: 33187
+	// Token: 0x0400827C RID: 33404
 	public float Burden;
 
-	// Token: 0x040081A4 RID: 33188
+	// Token: 0x0400827D RID: 33405
 	public int MaxCollisionCount = 20;
 
-	// Token: 0x040081A5 RID: 33189
+	// Token: 0x0400827E RID: 33406
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_CurrentShake = Vector3.zero;
 
-	// Token: 0x040081A6 RID: 33190
+	// Token: 0x0400827F RID: 33407
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_CurrentRotationSway = Vector3.zero;
 
-	// Token: 0x040081A7 RID: 33191
+	// Token: 0x04008280 RID: 33408
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector2 m_CurrentMouseMove;
 
-	// Token: 0x040081A8 RID: 33192
+	// Token: 0x04008281 RID: 33409
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_CurrentSwayForce;
 
-	// Token: 0x040081A9 RID: 33193
+	// Token: 0x04008282 RID: 33410
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_CurrentSwayTorque;
 
-	// Token: 0x040081AA RID: 33194
+	// Token: 0x04008283 RID: 33411
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_CurrentFootstepForce;
 
-	// Token: 0x040081AB RID: 33195
+	// Token: 0x04008284 RID: 33412
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_CurrentHoldAngle = Vector3.one;
 
-	// Token: 0x040081AC RID: 33196
+	// Token: 0x04008285 RID: 33413
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Collider m_LastExternalCollider;
 
-	// Token: 0x040081AD RID: 33197
+	// Token: 0x04008286 RID: 33414
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public int m_CollisionCount;
 
-	// Token: 0x040081AE RID: 33198
+	// Token: 0x04008287 RID: 33415
 	public Vector3 CarryingOffset = new Vector3(0f, -0.5f, 1.5f);
 
-	// Token: 0x040081AF RID: 33199
+	// Token: 0x04008288 RID: 33416
 	public float CameraPitchDownLimit;
 
-	// Token: 0x040081B0 RID: 33200
+	// Token: 0x04008289 RID: 33417
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_TempCarryingOffset = Vector3.zero;
 
-	// Token: 0x040081B1 RID: 33201
+	// Token: 0x0400828A RID: 33418
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_IsFetching;
 
-	// Token: 0x040081B2 RID: 33202
+	// Token: 0x0400828B RID: 33419
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float duration;
 
-	// Token: 0x040081B3 RID: 33203
+	// Token: 0x0400828C RID: 33420
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_FetchProgress;
 
-	// Token: 0x040081B4 RID: 33204
+	// Token: 0x0400828D RID: 33421
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_FPInteractManager m_InteractManager;
 
-	// Token: 0x040081B5 RID: 33205
+	// Token: 0x0400828E RID: 33422
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AudioSource m_Audio;
 
-	// Token: 0x040081B6 RID: 33206
+	// Token: 0x0400828F RID: 33423
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public int m_LastWeaponEquipped;
 
-	// Token: 0x040081B7 RID: 33207
+	// Token: 0x04008290 RID: 33424
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_IsGrabbed;
 
-	// Token: 0x040081B8 RID: 33208
+	// Token: 0x04008291 RID: 33425
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_OriginalPitchDownLimit;
 
-	// Token: 0x040081B9 RID: 33209
+	// Token: 0x04008292 RID: 33426
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_DefaultGravity;
 
-	// Token: 0x040081BA RID: 33210
+	// Token: 0x04008293 RID: 33427
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_DefaultDrag;
 
-	// Token: 0x040081BB RID: 33211
+	// Token: 0x04008294 RID: 33428
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_DefaultAngularDrag;
 
-	// Token: 0x040081BC RID: 33212
+	// Token: 0x04008295 RID: 33429
 	public Vector2 SoundsPitch = new Vector2(1f, 1.5f);
 
-	// Token: 0x040081BD RID: 33213
+	// Token: 0x04008296 RID: 33430
 	public List<AudioClip> GrabSounds = new List<AudioClip>();
 
-	// Token: 0x040081BE RID: 33214
+	// Token: 0x04008297 RID: 33431
 	public List<AudioClip> DropSounds = new List<AudioClip>();
 
-	// Token: 0x040081BF RID: 33215
+	// Token: 0x04008298 RID: 33432
 	public List<AudioClip> ThrowSounds = new List<AudioClip>();
 
-	// Token: 0x040081C0 RID: 33216
+	// Token: 0x04008299 RID: 33433
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Timer.Handle m_DisableAngleSwayTimer = new vp_Timer.Handle();

@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001987 RID: 6535
+	// Token: 0x020019AD RID: 6573
 	[Preserve]
 	public class ActionResetPlayerData : ActionBaseClientAction
 	{
-		// Token: 0x0600C7B7 RID: 51127 RVA: 0x004977D4 File Offset: 0x004959D4
+		// Token: 0x0600C93E RID: 51518 RVA: 0x0049DB18 File Offset: 0x0049BD18
 		public override void OnClientPerform(Entity target)
 		{
 			EntityPlayerLocal entityPlayerLocal = target as EntityPlayerLocal;
@@ -17,6 +17,7 @@ namespace GameEvent.SequenceActions
 				GameManager instance = GameManager.Instance;
 				if (this.removeQuests)
 				{
+					entityPlayerLocal.Buffs.RemoveCustomVar("IntroComplete");
 					entityPlayerLocal.QuestJournal.Clear();
 				}
 				if (this.removeBackpack)
@@ -34,8 +35,8 @@ namespace GameEvent.SequenceActions
 					entityPlayerLocal.Progression.ExpToNextLevel = entityPlayerLocal.Progression.GetExpForNextLevel();
 					entityPlayerLocal.Progression.SkillPoints = entityPlayerLocal.QuestJournal.GetRewardedSkillPoints();
 					entityPlayerLocal.Progression.ExpDeficit = 0;
-					entityPlayerLocal.Buffs.SetCustomVar("$PlayerLevelBonus", 0f, true, CVarOperation.set);
-					entityPlayerLocal.Buffs.SetCustomVar("$LastPlayerLevel", 1f, true, CVarOperation.set);
+					entityPlayerLocal.Buffs.SetCustomVar("$PlayerLevelBonus", 0f, true, CVarOperation.set, false);
+					entityPlayerLocal.Buffs.SetCustomVar("$LastPlayerLevel", 1f, true, CVarOperation.set, false);
 				}
 				if (this.resetStats)
 				{
@@ -100,7 +101,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C7B8 RID: 51128 RVA: 0x00497A9C File Offset: 0x00495C9C
+		// Token: 0x0600C93F RID: 51519 RVA: 0x0049DDF4 File Offset: 0x0049BFF4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnServerPerform(Entity target)
 		{
@@ -133,8 +134,8 @@ namespace GameEvent.SequenceActions
 					entityPlayer.Progression.ExpToNextLevel = entityPlayer.Progression.GetExpForNextLevel();
 					entityPlayer.Progression.SkillPoints = entityPlayer.QuestJournal.GetRewardedSkillPoints();
 					entityPlayer.Progression.ExpDeficit = 0;
-					entityPlayer.Buffs.SetCustomVar("$PlayerLevelBonus", 0f, true, CVarOperation.set);
-					entityPlayer.Buffs.SetCustomVar("$LastPlayerLevel", 1f, true, CVarOperation.set);
+					entityPlayer.Buffs.SetCustomVar("$PlayerLevelBonus", 0f, true, CVarOperation.set, false);
+					entityPlayer.Buffs.SetCustomVar("$LastPlayerLevel", 1f, true, CVarOperation.set, false);
 				}
 				if (this.resetStats)
 				{
@@ -192,7 +193,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C7B9 RID: 51129 RVA: 0x00497D80 File Offset: 0x00495F80
+		// Token: 0x0600C940 RID: 51520 RVA: 0x0049E0D8 File Offset: 0x0049C2D8
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -208,7 +209,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseBool(ActionResetPlayerData.PropResetStats, ref this.resetStats);
 		}
 
-		// Token: 0x0600C7BA RID: 51130 RVA: 0x00497E40 File Offset: 0x00496040
+		// Token: 0x0600C941 RID: 51521 RVA: 0x0049E198 File Offset: 0x0049C398
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -228,83 +229,83 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x0400974A RID: 38730
+		// Token: 0x04009873 RID: 39027
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool resetLevels;
 
-		// Token: 0x0400974B RID: 38731
+		// Token: 0x04009874 RID: 39028
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool removeLandclaims;
 
-		// Token: 0x0400974C RID: 38732
+		// Token: 0x04009875 RID: 39029
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool removeSleepingBag;
 
-		// Token: 0x0400974D RID: 38733
+		// Token: 0x04009876 RID: 39030
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool resetSkills;
 
-		// Token: 0x0400974E RID: 38734
+		// Token: 0x04009877 RID: 39031
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool removeBooks;
 
-		// Token: 0x0400974F RID: 38735
+		// Token: 0x04009878 RID: 39032
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool removeCrafting;
 
-		// Token: 0x04009750 RID: 38736
+		// Token: 0x04009879 RID: 39033
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool removeQuests;
 
-		// Token: 0x04009751 RID: 38737
+		// Token: 0x0400987A RID: 39034
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool removeChallenges;
 
-		// Token: 0x04009752 RID: 38738
+		// Token: 0x0400987B RID: 39035
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool removeBackpack;
 
-		// Token: 0x04009753 RID: 38739
+		// Token: 0x0400987C RID: 39036
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool resetStats;
 
-		// Token: 0x04009754 RID: 38740
+		// Token: 0x0400987D RID: 39037
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropResetLevels = "reset_levels";
 
-		// Token: 0x04009755 RID: 38741
+		// Token: 0x0400987E RID: 39038
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropResetSkills = "reset_skills";
 
-		// Token: 0x04009756 RID: 38742
+		// Token: 0x0400987F RID: 39039
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropRemoveLandClaims = "remove_landclaims";
 
-		// Token: 0x04009757 RID: 38743
+		// Token: 0x04009880 RID: 39040
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropRemoveSleepingBag = "remove_bedroll";
 
-		// Token: 0x04009758 RID: 38744
+		// Token: 0x04009881 RID: 39041
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropRemoveBooks = "reset_books";
 
-		// Token: 0x04009759 RID: 38745
+		// Token: 0x04009882 RID: 39042
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropRemoveCrafting = "reset_crafting";
 
-		// Token: 0x0400975A RID: 38746
+		// Token: 0x04009883 RID: 39043
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropRemoveQuests = "remove_quests";
 
-		// Token: 0x0400975B RID: 38747
+		// Token: 0x04009884 RID: 39044
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropRemoveChallenges = "remove_challenges";
 
-		// Token: 0x0400975C RID: 38748
+		// Token: 0x04009885 RID: 39045
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropRemoveBackpack = "remove_backpack";
 
-		// Token: 0x0400975D RID: 38749
+		// Token: 0x04009886 RID: 39046
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropResetStats = "reset_stats";
 	}

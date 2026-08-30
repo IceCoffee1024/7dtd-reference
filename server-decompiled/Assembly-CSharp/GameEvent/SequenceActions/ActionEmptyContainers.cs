@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019C8 RID: 6600
+	// Token: 0x020019EF RID: 6639
 	[Preserve]
 	public class ActionEmptyContainers : ActionBaseContainersAction
 	{
-		// Token: 0x0600C8EF RID: 51439 RVA: 0x0049CE9C File Offset: 0x0049B09C
+		// Token: 0x0600CA78 RID: 51832 RVA: 0x004A3290 File Offset: 0x004A1490
 		public override bool CheckValidTileEntity(TileEntity te, out bool isEmpty)
 		{
 			TileEntityType tileEntityType = te.GetTileEntityType();
@@ -79,7 +79,7 @@ namespace GameEvent.SequenceActions
 			return false;
 		}
 
-		// Token: 0x0600C8F0 RID: 51440 RVA: 0x0049CFBC File Offset: 0x0049B1BC
+		// Token: 0x0600CA79 RID: 51833 RVA: 0x004A33B0 File Offset: 0x004A15B0
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override bool HandleContainerAction(List<TileEntity> tileEntityList)
 		{
@@ -178,7 +178,7 @@ namespace GameEvent.SequenceActions
 			return flag;
 		}
 
-		// Token: 0x0600C8F1 RID: 51441 RVA: 0x0049D200 File Offset: 0x0049B400
+		// Token: 0x0600CA7A RID: 51834 RVA: 0x004A35F4 File Offset: 0x004A17F4
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -188,7 +188,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseBool(ActionEmptyContainers.PropIncludeTools, ref this.includeTools);
 		}
 
-		// Token: 0x0600C8F2 RID: 51442 RVA: 0x0049D258 File Offset: 0x0049B458
+		// Token: 0x0600CA7B RID: 51835 RVA: 0x004A364C File Offset: 0x004A184C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -206,35 +206,35 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x0400988B RID: 39051
+		// Token: 0x040099BC RID: 39356
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool includeInputs;
 
-		// Token: 0x0400988C RID: 39052
+		// Token: 0x040099BD RID: 39357
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool includeOutputs;
 
-		// Token: 0x0400988D RID: 39053
+		// Token: 0x040099BE RID: 39358
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool includeFuel;
 
-		// Token: 0x0400988E RID: 39054
+		// Token: 0x040099BF RID: 39359
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool includeTools;
 
-		// Token: 0x0400988F RID: 39055
+		// Token: 0x040099C0 RID: 39360
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropIncludeInputs = "include_inputs";
 
-		// Token: 0x04009890 RID: 39056
+		// Token: 0x040099C1 RID: 39361
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropIncludeOutputs = "include_outputs";
 
-		// Token: 0x04009891 RID: 39057
+		// Token: 0x040099C2 RID: 39362
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropIncludeFuel = "include_fuel";
 
-		// Token: 0x04009892 RID: 39058
+		// Token: 0x040099C3 RID: 39363
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropIncludeTools = "include_tools";
 	}

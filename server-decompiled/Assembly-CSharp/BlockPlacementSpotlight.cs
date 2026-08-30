@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020000F9 RID: 249
+// Token: 0x020000FA RID: 250
 [Preserve]
 public class BlockPlacementSpotlight : BlockPlacement
 {
-	// Token: 0x06000636 RID: 1590 RVA: 0x0002C494 File Offset: 0x0002A694
+	// Token: 0x06000640 RID: 1600 RVA: 0x0002C750 File Offset: 0x0002A950
 	public override BlockPlacement.Result OnPlaceBlock(BlockPlacement.EnumPlacement _placement, BlockPlacement.EnumRotationMode _mode, int _localRot, WorldBase _world, BlockValue _blockValue, PropTransform _propTransform, HitInfoDetails _hitInfo, Vector3 _entityPos)
 	{
 		if (_mode != BlockPlacement.EnumRotationMode.Auto)

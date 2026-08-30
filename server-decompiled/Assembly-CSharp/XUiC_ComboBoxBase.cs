@@ -4,23 +4,23 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E5F RID: 3679
+// Token: 0x02000E74 RID: 3700
 [global::UnityEngine.Scripting.Preserve]
 public abstract class XUiC_ComboBoxBase : XUiController
 {
-	// Token: 0x140000A8 RID: 168
-	// (add) Token: 0x06007199 RID: 29081 RVA: 0x002B78D4 File Offset: 0x002B5AD4
-	// (remove) Token: 0x0600719A RID: 29082 RVA: 0x002B790C File Offset: 0x002B5B0C
+	// Token: 0x140000A9 RID: 169
+	// (add) Token: 0x06007239 RID: 29241 RVA: 0x002BADF8 File Offset: 0x002B8FF8
+	// (remove) Token: 0x0600723A RID: 29242 RVA: 0x002BAE30 File Offset: 0x002B9030
 	public event XUiC_ComboBoxBase.XUiEvent_GenericValueChanged OnValueChangedGeneric;
 
-	// Token: 0x140000A9 RID: 169
-	// (add) Token: 0x0600719B RID: 29083 RVA: 0x002B7944 File Offset: 0x002B5B44
-	// (remove) Token: 0x0600719C RID: 29084 RVA: 0x002B797C File Offset: 0x002B5B7C
+	// Token: 0x140000AA RID: 170
+	// (add) Token: 0x0600723B RID: 29243 RVA: 0x002BAE68 File Offset: 0x002B9068
+	// (remove) Token: 0x0600723C RID: 29244 RVA: 0x002BAEA0 File Offset: 0x002B90A0
 	public event XUiC_ComboBoxBase.XUiEvent_HoveredStateChanged OnHoveredStateChanged;
 
-	// Token: 0x17000CF1 RID: 3313
-	// (get) Token: 0x0600719D RID: 29085 RVA: 0x002B79B1 File Offset: 0x002B5BB1
-	// (set) Token: 0x0600719E RID: 29086 RVA: 0x002B79B9 File Offset: 0x002B5BB9
+	// Token: 0x17000D0A RID: 3338
+	// (get) Token: 0x0600723D RID: 29245 RVA: 0x002BAED5 File Offset: 0x002B90D5
+	// (set) Token: 0x0600723E RID: 29246 RVA: 0x002BAEDD File Offset: 0x002B90DD
 	[XuiXmlAttribute("combo_enabled", false)]
 	[XuiXmlBinding("combo_enabled")]
 	public bool Enabled
@@ -40,9 +40,9 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x17000CF2 RID: 3314
-	// (get) Token: 0x0600719F RID: 29087 RVA: 0x002B79D3 File Offset: 0x002B5BD3
-	// (set) Token: 0x060071A0 RID: 29088 RVA: 0x002B79DB File Offset: 0x002B5BDB
+	// Token: 0x17000D0B RID: 3339
+	// (get) Token: 0x0600723F RID: 29247 RVA: 0x002BAEF7 File Offset: 0x002B90F7
+	// (set) Token: 0x06007240 RID: 29248 RVA: 0x002BAEFF File Offset: 0x002B90FF
 	[XuiXmlBinding("show_buttons")]
 	public bool ShowButtons
 	{
@@ -61,9 +61,9 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x17000CF3 RID: 3315
-	// (get) Token: 0x060071A1 RID: 29089 RVA: 0x002B79F5 File Offset: 0x002B5BF5
-	// (set) Token: 0x060071A2 RID: 29090 RVA: 0x002B79FD File Offset: 0x002B5BFD
+	// Token: 0x17000D0C RID: 3340
+	// (get) Token: 0x06007241 RID: 29249 RVA: 0x002BAF19 File Offset: 0x002B9119
+	// (set) Token: 0x06007242 RID: 29250 RVA: 0x002BAF21 File Offset: 0x002B9121
 	public Color TextColor
 	{
 		get
@@ -81,24 +81,24 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x17000CF4 RID: 3316
-	// (get) Token: 0x060071A3 RID: 29091
-	// (set) Token: 0x060071A4 RID: 29092
+	// Token: 0x17000D0D RID: 3341
+	// (get) Token: 0x06007243 RID: 29251
+	// (set) Token: 0x06007244 RID: 29252
 	public abstract long ValueGeneric { get; set; }
 
-	// Token: 0x17000CF5 RID: 3317
-	// (get) Token: 0x060071A5 RID: 29093
-	// (set) Token: 0x060071A6 RID: 29094
+	// Token: 0x17000D0E RID: 3342
+	// (get) Token: 0x06007245 RID: 29253
+	// (set) Token: 0x06007246 RID: 29254
 	public abstract long ValueMinGeneric { get; set; }
 
-	// Token: 0x17000CF6 RID: 3318
-	// (get) Token: 0x060071A7 RID: 29095
-	// (set) Token: 0x060071A8 RID: 29096
+	// Token: 0x17000D0F RID: 3343
+	// (get) Token: 0x06007247 RID: 29255
+	// (set) Token: 0x06007248 RID: 29256
 	public abstract long ValueMaxGeneric { get; set; }
 
-	// Token: 0x17000CF7 RID: 3319
-	// (get) Token: 0x060071A9 RID: 29097 RVA: 0x002B7A1C File Offset: 0x002B5C1C
-	// (set) Token: 0x060071AA RID: 29098 RVA: 0x002B7A24 File Offset: 0x002B5C24
+	// Token: 0x17000D10 RID: 3344
+	// (get) Token: 0x06007249 RID: 29257 RVA: 0x002BAF40 File Offset: 0x002B9140
+	// (set) Token: 0x0600724A RID: 29258 RVA: 0x002BAF48 File Offset: 0x002B9148
 	[XuiXmlAttribute("scroll_by_increment", false)]
 	public bool ScrollByIncrement
 	{
@@ -108,9 +108,9 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		set;
 	}
 
-	// Token: 0x17000CF8 RID: 3320
-	// (get) Token: 0x060071AB RID: 29099 RVA: 0x002B7A2D File Offset: 0x002B5C2D
-	// (set) Token: 0x060071AC RID: 29100 RVA: 0x002B7A35 File Offset: 0x002B5C35
+	// Token: 0x17000D11 RID: 3345
+	// (get) Token: 0x0600724B RID: 29259 RVA: 0x002BAF51 File Offset: 0x002B9151
+	// (set) Token: 0x0600724C RID: 29260 RVA: 0x002BAF59 File Offset: 0x002B9159
 	[XuiXmlAttribute("enabled_color", false)]
 	public Color ColorEnabled
 	{
@@ -131,9 +131,9 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x17000CF9 RID: 3321
-	// (get) Token: 0x060071AD RID: 29101 RVA: 0x002B7A54 File Offset: 0x002B5C54
-	// (set) Token: 0x060071AE RID: 29102 RVA: 0x002B7A5C File Offset: 0x002B5C5C
+	// Token: 0x17000D12 RID: 3346
+	// (get) Token: 0x0600724D RID: 29261 RVA: 0x002BAF78 File Offset: 0x002B9178
+	// (set) Token: 0x0600724E RID: 29262 RVA: 0x002BAF80 File Offset: 0x002B9180
 	[XuiXmlAttribute("disabled_color", false)]
 	public Color ColorDisabled
 	{
@@ -154,9 +154,9 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x17000CFA RID: 3322
-	// (get) Token: 0x060071AF RID: 29103 RVA: 0x002B7A7B File Offset: 0x002B5C7B
-	// (set) Token: 0x060071B0 RID: 29104 RVA: 0x002B7A83 File Offset: 0x002B5C83
+	// Token: 0x17000D13 RID: 3347
+	// (get) Token: 0x0600724F RID: 29263 RVA: 0x002BAF9F File Offset: 0x002B919F
+	// (set) Token: 0x06007250 RID: 29264 RVA: 0x002BAFA7 File Offset: 0x002B91A7
 	[XuiXmlAttribute("bg_color", false)]
 	[XuiXmlBinding("bgcolor")]
 	public Color ColorBg
@@ -178,9 +178,9 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x17000CFB RID: 3323
-	// (get) Token: 0x060071B1 RID: 29105 RVA: 0x002B7AA2 File Offset: 0x002B5CA2
-	// (set) Token: 0x060071B2 RID: 29106 RVA: 0x002B7AAA File Offset: 0x002B5CAA
+	// Token: 0x17000D14 RID: 3348
+	// (get) Token: 0x06007251 RID: 29265 RVA: 0x002BAFC6 File Offset: 0x002B91C6
+	// (set) Token: 0x06007252 RID: 29266 RVA: 0x002BAFCE File Offset: 0x002B91CE
 	[XuiXmlAttribute("enabled_fill_color", false)]
 	public Color ColorFillEnabled
 	{
@@ -201,9 +201,9 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x17000CFC RID: 3324
-	// (get) Token: 0x060071B3 RID: 29107 RVA: 0x002B7AC9 File Offset: 0x002B5CC9
-	// (set) Token: 0x060071B4 RID: 29108 RVA: 0x002B7AD1 File Offset: 0x002B5CD1
+	// Token: 0x17000D15 RID: 3349
+	// (get) Token: 0x06007253 RID: 29267 RVA: 0x002BAFED File Offset: 0x002B91ED
+	// (set) Token: 0x06007254 RID: 29268 RVA: 0x002BAFF5 File Offset: 0x002B91F5
 	[XuiXmlAttribute("disabled_fill_color", false)]
 	public Color ColorFillDisabled
 	{
@@ -224,9 +224,9 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x17000CFD RID: 3325
-	// (get) Token: 0x060071B5 RID: 29109 RVA: 0x002B7AF0 File Offset: 0x002B5CF0
-	// (set) Token: 0x060071B6 RID: 29110 RVA: 0x002B7AF8 File Offset: 0x002B5CF8
+	// Token: 0x17000D16 RID: 3350
+	// (get) Token: 0x06007255 RID: 29269 RVA: 0x002BB014 File Offset: 0x002B9214
+	// (set) Token: 0x06007256 RID: 29270 RVA: 0x002BB01C File Offset: 0x002B921C
 	[XuiXmlAttribute("index_markers", false)]
 	public bool IndexMarkers
 	{
@@ -236,25 +236,25 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		set;
 	}
 
-	// Token: 0x17000CFE RID: 3326
-	// (get) Token: 0x060071B7 RID: 29111
+	// Token: 0x17000D17 RID: 3351
+	// (get) Token: 0x06007257 RID: 29271
 	public abstract int IndexElementCount
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
 		get;
 	}
 
-	// Token: 0x17000CFF RID: 3327
-	// (get) Token: 0x060071B8 RID: 29112
+	// Token: 0x17000D18 RID: 3352
+	// (get) Token: 0x06007258 RID: 29272
 	public abstract int IndexMarkerIndex
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
 		get;
 	}
 
-	// Token: 0x17000D00 RID: 3328
-	// (get) Token: 0x060071B9 RID: 29113 RVA: 0x002B7B01 File Offset: 0x002B5D01
-	// (set) Token: 0x060071BA RID: 29114 RVA: 0x002B7B09 File Offset: 0x002B5D09
+	// Token: 0x17000D19 RID: 3353
+	// (get) Token: 0x06007259 RID: 29273 RVA: 0x002BB025 File Offset: 0x002B9225
+	// (set) Token: 0x0600725A RID: 29274 RVA: 0x002BB02D File Offset: 0x002B922D
 	[XuiXmlAttribute("index_marker_spacing", false)]
 	public int IndexMarkerSpacing
 	{
@@ -264,8 +264,8 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		set;
 	} = 5;
 
-	// Token: 0x17000D01 RID: 3329
-	// (get) Token: 0x060071BB RID: 29115 RVA: 0x002B7B12 File Offset: 0x002B5D12
+	// Token: 0x17000D1A RID: 3354
+	// (get) Token: 0x0600725B RID: 29275 RVA: 0x002BB036 File Offset: 0x002B9236
 	[XuiXmlBinding("usesmarkers")]
 	public virtual bool UsesIndexMarkers
 	{
@@ -276,9 +276,9 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x17000D02 RID: 3330
-	// (get) Token: 0x060071BC RID: 29116 RVA: 0x002B7B3F File Offset: 0x002B5D3F
-	// (set) Token: 0x060071BD RID: 29117 RVA: 0x002B7B47 File Offset: 0x002B5D47
+	// Token: 0x17000D1B RID: 3355
+	// (get) Token: 0x0600725C RID: 29276 RVA: 0x002BB063 File Offset: 0x002B9263
+	// (set) Token: 0x0600725D RID: 29277 RVA: 0x002BB06B File Offset: 0x002B926B
 	[XuiXmlAttribute("gamepad_default_hover_control", false)]
 	public bool GamepadDefaultHoverControl
 	{
@@ -288,9 +288,9 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		set;
 	}
 
-	// Token: 0x17000D03 RID: 3331
-	// (get) Token: 0x060071BE RID: 29118 RVA: 0x002B7B50 File Offset: 0x002B5D50
-	// (set) Token: 0x060071BF RID: 29119 RVA: 0x002B7B58 File Offset: 0x002B5D58
+	// Token: 0x17000D1C RID: 3356
+	// (get) Token: 0x0600725E RID: 29278 RVA: 0x002BB074 File Offset: 0x002B9274
+	// (set) Token: 0x0600725F RID: 29279 RVA: 0x002BB07C File Offset: 0x002B927C
 	[XuiXmlAttribute("gamepad_decrease", false)]
 	public PlayerAction GamepadDecreaseShortcut
 	{
@@ -300,9 +300,9 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		set;
 	}
 
-	// Token: 0x17000D04 RID: 3332
-	// (get) Token: 0x060071C0 RID: 29120 RVA: 0x002B7B61 File Offset: 0x002B5D61
-	// (set) Token: 0x060071C1 RID: 29121 RVA: 0x002B7B69 File Offset: 0x002B5D69
+	// Token: 0x17000D1D RID: 3357
+	// (get) Token: 0x06007260 RID: 29280 RVA: 0x002BB085 File Offset: 0x002B9285
+	// (set) Token: 0x06007261 RID: 29281 RVA: 0x002BB08D File Offset: 0x002B928D
 	[XuiXmlAttribute("gamepad_increase", false)]
 	public PlayerAction GamepadIncreaseShortcut
 	{
@@ -312,9 +312,9 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		set;
 	}
 
-	// Token: 0x17000D05 RID: 3333
-	// (get) Token: 0x060071C2 RID: 29122 RVA: 0x002B7B72 File Offset: 0x002B5D72
-	// (set) Token: 0x060071C3 RID: 29123 RVA: 0x002B7B7A File Offset: 0x002B5D7A
+	// Token: 0x17000D1E RID: 3358
+	// (get) Token: 0x06007262 RID: 29282 RVA: 0x002BB096 File Offset: 0x002B9296
+	// (set) Token: 0x06007263 RID: 29283 RVA: 0x002BB09E File Offset: 0x002B929E
 	[XuiXmlAttribute("gamepad_shortcuts_hoveronly", false)]
 	public bool GamepadShortcutsHoverOnly
 	{
@@ -324,9 +324,9 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		set;
 	}
 
-	// Token: 0x17000D06 RID: 3334
-	// (get) Token: 0x060071C4 RID: 29124 RVA: 0x002B7B83 File Offset: 0x002B5D83
-	// (set) Token: 0x060071C5 RID: 29125 RVA: 0x002B7B95 File Offset: 0x002B5D95
+	// Token: 0x17000D1F RID: 3359
+	// (get) Token: 0x06007264 RID: 29284 RVA: 0x002BB0A7 File Offset: 0x002B92A7
+	// (set) Token: 0x06007265 RID: 29285 RVA: 0x002BB0B9 File Offset: 0x002B92B9
 	[XuiXmlBinding("valuetext")]
 	public string ValueText
 	{
@@ -347,9 +347,9 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x17000D07 RID: 3335
-	// (get) Token: 0x060071C6 RID: 29126 RVA: 0x002B7BB4 File Offset: 0x002B5DB4
-	// (set) Token: 0x060071C7 RID: 29127 RVA: 0x002B7BBC File Offset: 0x002B5DBC
+	// Token: 0x17000D20 RID: 3360
+	// (get) Token: 0x06007266 RID: 29286 RVA: 0x002BB0D8 File Offset: 0x002B92D8
+	// (set) Token: 0x06007267 RID: 29287 RVA: 0x002BB0E0 File Offset: 0x002B92E0
 	public string ValueTextOverride
 	{
 		get
@@ -363,9 +363,9 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x17000D08 RID: 3336
-	// (get) Token: 0x060071C8 RID: 29128 RVA: 0x002B7BCC File Offset: 0x002B5DCC
-	// (set) Token: 0x060071C9 RID: 29129 RVA: 0x002B7BDA File Offset: 0x002B5DDA
+	// Token: 0x17000D21 RID: 3361
+	// (get) Token: 0x06007268 RID: 29288 RVA: 0x002BB0F0 File Offset: 0x002B92F0
+	// (set) Token: 0x06007269 RID: 29289 RVA: 0x002BB0FE File Offset: 0x002B92FE
 	[XuiXmlAttribute("segment_count", false)]
 	[XuiXmlBinding("segmentcount")]
 	public int SegmentedFillCount
@@ -385,9 +385,9 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x17000D09 RID: 3337
-	// (get) Token: 0x060071CA RID: 29130 RVA: 0x002B7BF4 File Offset: 0x002B5DF4
-	// (set) Token: 0x060071CB RID: 29131 RVA: 0x002B7BFC File Offset: 0x002B5DFC
+	// Token: 0x17000D22 RID: 3362
+	// (get) Token: 0x0600726A RID: 29290 RVA: 0x002BB118 File Offset: 0x002B9318
+	// (set) Token: 0x0600726B RID: 29291 RVA: 0x002BB120 File Offset: 0x002B9320
 	[XuiXmlBinding("cbx_is_hovered")]
 	public bool IsOver
 	{
@@ -408,14 +408,14 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x17000D0A RID: 3338
-	// (get) Token: 0x060071CC RID: 29132
-	// (set) Token: 0x060071CD RID: 29133
+	// Token: 0x17000D23 RID: 3363
+	// (get) Token: 0x0600726C RID: 29292
+	// (set) Token: 0x0600726D RID: 29293
 	[XuiXmlBinding("fillvalue")]
 	public abstract double RelativeValue { get; set; }
 
-	// Token: 0x17000D0B RID: 3339
-	// (get) Token: 0x060071CE RID: 29134 RVA: 0x002B7C16 File Offset: 0x002B5E16
+	// Token: 0x17000D24 RID: 3364
+	// (get) Token: 0x0600726E RID: 29294 RVA: 0x002BB13A File Offset: 0x002B933A
 	[XuiXmlBinding("valuecolor")]
 	public Color ValueColor
 	{
@@ -430,8 +430,8 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x17000D0C RID: 3340
-	// (get) Token: 0x060071CF RID: 29135 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x17000D25 RID: 3365
+	// (get) Token: 0x0600726F RID: 29295 RVA: 0x00010E62 File Offset: 0x0000F062
 	[XuiXmlBinding("isnumber")]
 	public virtual bool IsNumber
 	{
@@ -442,8 +442,8 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x17000D0D RID: 3341
-	// (get) Token: 0x060071D0 RID: 29136 RVA: 0x002B7C2D File Offset: 0x002B5E2D
+	// Token: 0x17000D26 RID: 3366
+	// (get) Token: 0x06007270 RID: 29296 RVA: 0x002BB151 File Offset: 0x002B9351
 	[XuiXmlBinding("fillcolor")]
 	public Color FillColor
 	{
@@ -458,8 +458,8 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x17000D0E RID: 3342
-	// (get) Token: 0x060071D1 RID: 29137 RVA: 0x002B7C44 File Offset: 0x002B5E44
+	// Token: 0x17000D27 RID: 3367
+	// (get) Token: 0x06007271 RID: 29297 RVA: 0x002BB168 File Offset: 0x002B9368
 	[XuiXmlBinding("hascontrollershortcuts")]
 	public bool HasControllerShortcuts
 	{
@@ -470,8 +470,8 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x17000D0F RID: 3343
-	// (get) Token: 0x060071D2 RID: 29138 RVA: 0x002B7C59 File Offset: 0x002B5E59
+	// Token: 0x17000D28 RID: 3368
+	// (get) Token: 0x06007272 RID: 29298 RVA: 0x002BB17D File Offset: 0x002B937D
 	[XuiXmlBinding("can_backward")]
 	public bool CanBackward
 	{
@@ -482,8 +482,8 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x17000D10 RID: 3344
-	// (get) Token: 0x060071D3 RID: 29139 RVA: 0x002B7C80 File Offset: 0x002B5E80
+	// Token: 0x17000D29 RID: 3369
+	// (get) Token: 0x06007273 RID: 29299 RVA: 0x002BB1A4 File Offset: 0x002B93A4
 	[XuiXmlBinding("can_forward")]
 	public bool CanForward
 	{
@@ -494,7 +494,7 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x060071D4 RID: 29140 RVA: 0x002B7CA8 File Offset: 0x002B5EA8
+	// Token: 0x06007274 RID: 29300 RVA: 0x002BB1CC File Offset: 0x002B93CC
 	public override void Init()
 	{
 		base.Init();
@@ -538,7 +538,7 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x060071D5 RID: 29141 RVA: 0x002B7DE0 File Offset: 0x002B5FE0
+	// Token: 0x06007275 RID: 29301 RVA: 0x002BB304 File Offset: 0x002B9504
 	public override void OnOpen()
 	{
 		this.IsDirty = true;
@@ -549,7 +549,7 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x060071D6 RID: 29142 RVA: 0x002B7E07 File Offset: 0x002B6007
+	// Token: 0x06007276 RID: 29302 RVA: 0x002BB32B File Offset: 0x002B952B
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -564,7 +564,7 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x060071D7 RID: 29143 RVA: 0x002B7E30 File Offset: 0x002B6030
+	// Token: 0x06007277 RID: 29303 RVA: 0x002BB354 File Offset: 0x002B9554
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -594,7 +594,7 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x060071D8 RID: 29144 RVA: 0x002B7F65 File Offset: 0x002B6165
+	// Token: 0x06007278 RID: 29304 RVA: 0x002BB489 File Offset: 0x002B9689
 	[XuiXmlAttribute("value_wrap", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeValueWrap(string _value)
@@ -605,11 +605,11 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x060071D9 RID: 29145
+	// Token: 0x06007279 RID: 29305
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract void UpdateLabel();
 
-	// Token: 0x060071DA RID: 29146 RVA: 0x002B7F84 File Offset: 0x002B6184
+	// Token: 0x0600727A RID: 29306 RVA: 0x002BB4A8 File Offset: 0x002B96A8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void UpdateIndexMarkerStates()
 	{
@@ -627,7 +627,7 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x060071DB RID: 29147 RVA: 0x002B8004 File Offset: 0x002B6204
+	// Token: 0x0600727B RID: 29307 RVA: 0x002BB528 File Offset: 0x002B9728
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void UpdateIndexMarkerPositions()
 	{
@@ -661,7 +661,7 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x060071DC RID: 29148 RVA: 0x002B8114 File Offset: 0x002B6314
+	// Token: 0x0600727C RID: 29308 RVA: 0x002BB638 File Offset: 0x002B9838
 	[XuiBindEvent("OnHover", "forwardButton")]
 	[XuiBindEvent("OnHover", "backButton")]
 	[PublicizedFrom(EAccessModifier.Private)]
@@ -676,7 +676,7 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		onHoveredStateChanged(this, this.isOver, this.isOverAnyPart);
 	}
 
-	// Token: 0x060071DD RID: 29149 RVA: 0x002B813A File Offset: 0x002B633A
+	// Token: 0x0600727D RID: 29309 RVA: 0x002BB65E File Offset: 0x002B985E
 	[XuiBindEvent("OnPress", "backButton")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BackButton_OnPress(XUiController _sender, int _mouseButton)
@@ -684,7 +684,7 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		this.TryPageDown();
 	}
 
-	// Token: 0x060071DE RID: 29150 RVA: 0x002B8143 File Offset: 0x002B6343
+	// Token: 0x0600727E RID: 29310 RVA: 0x002BB667 File Offset: 0x002B9867
 	[XuiBindEvent("OnPress", "forwardButton")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ForwardButton_OnPress(XUiController _sender, int _mouseButton)
@@ -692,7 +692,7 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		this.TryPageUp();
 	}
 
-	// Token: 0x060071DF RID: 29151 RVA: 0x002B814C File Offset: 0x002B634C
+	// Token: 0x0600727F RID: 29311 RVA: 0x002BB670 File Offset: 0x002B9870
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool PageUpAction()
 	{
@@ -704,7 +704,7 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		return flag;
 	}
 
-	// Token: 0x060071E0 RID: 29152 RVA: 0x002B8174 File Offset: 0x002B6374
+	// Token: 0x06007280 RID: 29312 RVA: 0x002BB698 File Offset: 0x002B9898
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool PageDownAction()
 	{
@@ -716,27 +716,27 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		return flag;
 	}
 
-	// Token: 0x060071E1 RID: 29153
+	// Token: 0x06007281 RID: 29313
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract void BackPressed();
 
-	// Token: 0x060071E2 RID: 29154
+	// Token: 0x06007282 RID: 29314
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract void ForwardPressed();
 
-	// Token: 0x060071E3 RID: 29155
+	// Token: 0x06007283 RID: 29315
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract bool isMax();
 
-	// Token: 0x060071E4 RID: 29156
+	// Token: 0x06007284 RID: 29316
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract bool isMin();
 
-	// Token: 0x060071E5 RID: 29157
+	// Token: 0x06007285 RID: 29317
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract bool isEmpty();
 
-	// Token: 0x060071E6 RID: 29158 RVA: 0x002B819C File Offset: 0x002B639C
+	// Token: 0x06007286 RID: 29318 RVA: 0x002BB6C0 File Offset: 0x002B98C0
 	[XuiBindEvent("OnPress", "clickable")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void pressEvent(XUiController _sender, int _mouseButton)
@@ -755,7 +755,7 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		this.setRelativeValue(num);
 	}
 
-	// Token: 0x060071E7 RID: 29159 RVA: 0x002B8204 File Offset: 0x002B6404
+	// Token: 0x06007287 RID: 29319 RVA: 0x002BB728 File Offset: 0x002B9928
 	[XuiBindEvent("OnScroll", "clickable")]
 	public void ScrollEvent(XUiController _sender, float _delta)
 	{
@@ -782,7 +782,7 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x060071E8 RID: 29160 RVA: 0x002B8254 File Offset: 0x002B6454
+	// Token: 0x06007288 RID: 29320 RVA: 0x002BB778 File Offset: 0x002B9978
 	[XuiBindEvent("OnHover", "clickable")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void hoverEvent(XUiController _sender, bool _isOver)
@@ -817,7 +817,7 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x060071E9 RID: 29161 RVA: 0x002B82DA File Offset: 0x002B64DA
+	// Token: 0x06007289 RID: 29321 RVA: 0x002BB7FE File Offset: 0x002B99FE
 	[XuiBindEvent("OnDrag", "clickable")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void dragEvent(XUiController _sender, EDragType _dragType, Vector2 _mousePositionDelta)
@@ -832,7 +832,7 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		}
 	}
 
-	// Token: 0x060071EA RID: 29162 RVA: 0x002B82FD File Offset: 0x002B64FD
+	// Token: 0x0600728A RID: 29322 RVA: 0x002BB821 File Offset: 0x002B9A21
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void invokeValueChangedGeneric()
 	{
@@ -844,130 +844,130 @@ public abstract class XUiC_ComboBoxBase : XUiController
 		onValueChangedGeneric(this);
 	}
 
-	// Token: 0x060071EB RID: 29163
+	// Token: 0x0600728B RID: 29323
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract void incrementalChangeValue(double _value);
 
-	// Token: 0x060071EC RID: 29164
+	// Token: 0x0600728C RID: 29324
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract bool TryPageUp();
 
-	// Token: 0x060071ED RID: 29165
+	// Token: 0x0600728D RID: 29325
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract bool TryPageDown();
 
-	// Token: 0x060071EE RID: 29166
+	// Token: 0x0600728E RID: 29326
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract void setRelativeValue(float _value);
 
-	// Token: 0x060071EF RID: 29167 RVA: 0x002B8310 File Offset: 0x002B6510
+	// Token: 0x0600728F RID: 29327 RVA: 0x002BB834 File Offset: 0x002B9A34
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_ComboBoxBase()
 	{
 	}
 
-	// Token: 0x0400554B RID: 21835
+	// Token: 0x040055EF RID: 21999
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool enabled = true;
 
-	// Token: 0x0400554C RID: 21836
+	// Token: 0x040055F0 RID: 22000
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showButtons = true;
 
-	// Token: 0x0400554D RID: 21837
+	// Token: 0x040055F1 RID: 22001
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool Wrap = true;
 
-	// Token: 0x0400554F RID: 21839
+	// Token: 0x040055F3 RID: 22003
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color colorIndexMarkerActive = Color.white;
 
-	// Token: 0x04005550 RID: 21840
+	// Token: 0x040055F4 RID: 22004
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color colorIndexMarkerInactive = Color.grey;
 
-	// Token: 0x04005551 RID: 21841
+	// Token: 0x040055F5 RID: 22005
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color colorIndexMarkerDisabledActive = Color.white;
 
-	// Token: 0x04005553 RID: 21843
+	// Token: 0x040055F7 RID: 22007
 	[XuiBindComponent("indexMarkers.", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Sprite[] indexMarkerSprites;
 
-	// Token: 0x04005554 RID: 21844
+	// Token: 0x040055F8 RID: 22008
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int indexMarkersSetupBefore;
 
-	// Token: 0x0400555A RID: 21850
+	// Token: 0x040055FE RID: 22014
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string valueText = "";
 
-	// Token: 0x0400555B RID: 21851
+	// Token: 0x040055FF RID: 22015
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string valueTextOverride;
 
-	// Token: 0x0400555C RID: 21852
+	// Token: 0x04005600 RID: 22016
 	[XuiBindComponent("fill", true)]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly XUiV_Sprite sprFill;
 
-	// Token: 0x0400555D RID: 21853
+	// Token: 0x04005601 RID: 22017
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int segmentedFillCount = 1;
 
-	// Token: 0x0400555E RID: 21854
+	// Token: 0x04005602 RID: 22018
 	[XuiBindComponent("directvalue", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiController clickable;
 
-	// Token: 0x0400555F RID: 21855
+	// Token: 0x04005603 RID: 22019
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isOver;
 
-	// Token: 0x04005560 RID: 21856
+	// Token: 0x04005604 RID: 22020
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isOverAnyPart;
 
-	// Token: 0x04005561 RID: 21857
+	// Token: 0x04005605 RID: 22021
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isDragging;
 
-	// Token: 0x04005562 RID: 21858
+	// Token: 0x04005606 RID: 22022
 	[XuiBindComponent("forward", false)]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly XUiController forwardButton;
 
-	// Token: 0x04005563 RID: 21859
+	// Token: 0x04005607 RID: 22023
 	[XuiBindComponent("back", false)]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly XUiController backButton;
 
-	// Token: 0x04005564 RID: 21860
+	// Token: 0x04005608 RID: 22024
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color colorEnabled;
 
-	// Token: 0x04005565 RID: 21861
+	// Token: 0x04005609 RID: 22025
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color colorDisabled;
 
-	// Token: 0x04005566 RID: 21862
+	// Token: 0x0400560A RID: 22026
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color colorBg;
 
-	// Token: 0x04005567 RID: 21863
+	// Token: 0x0400560B RID: 22027
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color colorFillEnabled;
 
-	// Token: 0x04005568 RID: 21864
+	// Token: 0x0400560C RID: 22028
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color colorFillDisabled;
 
-	// Token: 0x02000E60 RID: 3680
-	// (Invoke) Token: 0x060071F1 RID: 29169
+	// Token: 0x02000E75 RID: 3701
+	// (Invoke) Token: 0x06007291 RID: 29329
 	public delegate void XUiEvent_GenericValueChanged(XUiController _sender);
 
-	// Token: 0x02000E61 RID: 3681
-	// (Invoke) Token: 0x060071F5 RID: 29173
+	// Token: 0x02000E76 RID: 3702
+	// (Invoke) Token: 0x06007295 RID: 29333
 	public delegate void XUiEvent_HoveredStateChanged(XUiController _sender, bool _isOverMainArea, bool _isOverAnyPart);
 }

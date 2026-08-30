@@ -4,10 +4,10 @@ using MusicUtils.Enums;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A46 RID: 6726
+	// Token: 0x02001A6D RID: 6765
 	public interface IConfigurable
 	{
-		// Token: 0x0600CB52 RID: 52050
+		// Token: 0x0600CCDB RID: 52443
 		void SetConfiguration(IList<PlacementType> _placements);
 	}
 }

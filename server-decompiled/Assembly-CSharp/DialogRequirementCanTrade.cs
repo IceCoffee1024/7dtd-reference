@@ -2,12 +2,12 @@
 using SandboxOptions;
 using UnityEngine.Scripting;
 
-// Token: 0x020002F1 RID: 753
+// Token: 0x020002F5 RID: 757
 [Preserve]
 public class DialogRequirementCanTrade : BaseDialogRequirement
 {
-	// Token: 0x1700026F RID: 623
-	// (get) Token: 0x06001595 RID: 5525 RVA: 0x00080B22 File Offset: 0x0007ED22
+	// Token: 0x17000270 RID: 624
+	// (get) Token: 0x060015A8 RID: 5544 RVA: 0x000811D6 File Offset: 0x0007F3D6
 	public override BaseDialogRequirement.RequirementTypes RequirementType
 	{
 		get
@@ -16,7 +16,7 @@ public class DialogRequirementCanTrade : BaseDialogRequirement
 		}
 	}
 
-	// Token: 0x06001596 RID: 5526 RVA: 0x00080B26 File Offset: 0x0007ED26
+	// Token: 0x060015A9 RID: 5545 RVA: 0x000811DA File Offset: 0x0007F3DA
 	public override bool CheckRequirement(EntityPlayer player, EntityNPC talkingTo)
 	{
 		return SandboxOptionManager.GetBool(global::SandboxOptions.SandboxOptions.TradersEnabled);

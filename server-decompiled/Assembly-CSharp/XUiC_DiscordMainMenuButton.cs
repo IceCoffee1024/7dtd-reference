@@ -2,11 +2,11 @@
 using InControl;
 using UnityEngine.Scripting;
 
-// Token: 0x0200034A RID: 842
+// Token: 0x0200034E RID: 846
 [UnityEngine.Scripting.Preserve]
 public class XUiC_DiscordMainMenuButton : XUiController
 {
-	// Token: 0x06001862 RID: 6242 RVA: 0x0008A9D4 File Offset: 0x00088BD4
+	// Token: 0x0600187F RID: 6271 RVA: 0x0008B114 File Offset: 0x00089314
 	public override void Init()
 	{
 		base.Init();
@@ -21,7 +21,7 @@ public class XUiC_DiscordMainMenuButton : XUiController
 		}
 	}
 
-	// Token: 0x06001863 RID: 6243 RVA: 0x0008AA20 File Offset: 0x00088C20
+	// Token: 0x06001880 RID: 6272 RVA: 0x0008B160 File Offset: 0x00089360
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -30,21 +30,21 @@ public class XUiC_DiscordMainMenuButton : XUiController
 		this.discordPendingActionsUpdate(DiscordManager.Instance.GetPendingActionsCount());
 	}
 
-	// Token: 0x06001864 RID: 6244 RVA: 0x0008AA6F File Offset: 0x00088C6F
+	// Token: 0x06001881 RID: 6273 RVA: 0x0008B1AF File Offset: 0x000893AF
 	public override void OnClose()
 	{
 		this.clearEvents();
 		base.OnClose();
 	}
 
-	// Token: 0x06001865 RID: 6245 RVA: 0x0008AA7D File Offset: 0x00088C7D
+	// Token: 0x06001882 RID: 6274 RVA: 0x0008B1BD File Offset: 0x000893BD
 	public override void Cleanup()
 	{
 		this.clearEvents();
 		base.Cleanup();
 	}
 
-	// Token: 0x06001866 RID: 6246 RVA: 0x0008AA8C File Offset: 0x00088C8C
+	// Token: 0x06001883 RID: 6275 RVA: 0x0008B1CC File Offset: 0x000893CC
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -90,7 +90,7 @@ public class XUiC_DiscordMainMenuButton : XUiController
 		}
 	}
 
-	// Token: 0x06001867 RID: 6247 RVA: 0x0008AB2D File Offset: 0x00088D2D
+	// Token: 0x06001884 RID: 6276 RVA: 0x0008B26D File Offset: 0x0008946D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void toggleWindow()
 	{
@@ -102,7 +102,7 @@ public class XUiC_DiscordMainMenuButton : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06001868 RID: 6248 RVA: 0x0008AB4D File Offset: 0x00088D4D
+	// Token: 0x06001885 RID: 6277 RVA: 0x0008B28D File Offset: 0x0008948D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void clearEvents()
 	{
@@ -110,14 +110,14 @@ public class XUiC_DiscordMainMenuButton : XUiController
 		DiscordManager.Instance.PendingActionsUpdate -= this.discordPendingActionsUpdate;
 	}
 
-	// Token: 0x06001869 RID: 6249 RVA: 0x0008AB7B File Offset: 0x00088D7B
+	// Token: 0x06001886 RID: 6278 RVA: 0x0008B2BB File Offset: 0x000894BB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void discordStatusChanged(DiscordManager.EDiscordStatus _status)
 	{
 		base.RefreshBindings();
 	}
 
-	// Token: 0x0600186A RID: 6250 RVA: 0x0008AB83 File Offset: 0x00088D83
+	// Token: 0x06001887 RID: 6279 RVA: 0x0008B2C3 File Offset: 0x000894C3
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void discordPendingActionsUpdate(int _pendingActionsCount)
 	{
@@ -125,7 +125,7 @@ public class XUiC_DiscordMainMenuButton : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x0600186B RID: 6251 RVA: 0x0008AB94 File Offset: 0x00088D94
+	// Token: 0x06001888 RID: 6280 RVA: 0x0008B2D4 File Offset: 0x000894D4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -153,7 +153,7 @@ public class XUiC_DiscordMainMenuButton : XUiController
 		return true;
 	}
 
-	// Token: 0x04000FA3 RID: 4003
+	// Token: 0x04000FB8 RID: 4024
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int pendingActions;
 }

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Xml.Linq;
 
-// Token: 0x02000AA4 RID: 2724
+// Token: 0x02000AB5 RID: 2741
 public static class SignLibraryMigrations
 {
-	// Token: 0x060051BA RID: 20922 RVA: 0x001F331C File Offset: 0x001F151C
+	// Token: 0x06005240 RID: 21056 RVA: 0x001F5DB4 File Offset: 0x001F3FB4
 	public static XElement Migrate(XElement root, int fromVersion, int toVersion)
 	{
 		if (toVersion != fromVersion + 1)
@@ -24,7 +24,7 @@ public static class SignLibraryMigrations
 		return xelement;
 	}
 
-	// Token: 0x060051BB RID: 20923 RVA: 0x001F33B0 File Offset: 0x001F15B0
+	// Token: 0x06005241 RID: 21057 RVA: 0x001F5E48 File Offset: 0x001F4048
 	public static bool CanMigrate(int fromVersion, int toVersion)
 	{
 		for (int i = fromVersion; i < toVersion; i++)
@@ -37,7 +37,7 @@ public static class SignLibraryMigrations
 		return true;
 	}
 
-	// Token: 0x060051BC RID: 20924 RVA: 0x001F33DC File Offset: 0x001F15DC
+	// Token: 0x06005242 RID: 21058 RVA: 0x001F5E74 File Offset: 0x001F4074
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static XElement VisitLayers(XElement root, Action<XElement, string> visitor)
 	{
@@ -48,14 +48,14 @@ public static class SignLibraryMigrations
 		return root;
 	}
 
-	// Token: 0x060051BD RID: 20925 RVA: 0x001290F5 File Offset: 0x001272F5
+	// Token: 0x06005243 RID: 21059 RVA: 0x0012A165 File Offset: 0x00128365
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static XElement MigrateV0ToV1(XElement root)
 	{
 		return root;
 	}
 
-	// Token: 0x060051BE RID: 20926 RVA: 0x001F343C File Offset: 0x001F163C
+	// Token: 0x06005244 RID: 21060 RVA: 0x001F5ED4 File Offset: 0x001F40D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static XElement MigrateV1ToV2(XElement root)
 	{
@@ -69,7 +69,7 @@ public static class SignLibraryMigrations
 		});
 	}
 
-	// Token: 0x060051C0 RID: 20928 RVA: 0x001F3498 File Offset: 0x001F1698
+	// Token: 0x06005246 RID: 21062 RVA: 0x001F5F30 File Offset: 0x001F4130
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void <VisitLayers>g__ProcessLayers|4_0(IEnumerable<XElement> layers, Action<XElement, string> visitor)
@@ -85,7 +85,7 @@ public static class SignLibraryMigrations
 		}
 	}
 
-	// Token: 0x04003F3B RID: 16187
+	// Token: 0x04003FCC RID: 16332
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<int, SignLibraryMigrations.MigrationFunc> Migrations = new Dictionary<int, SignLibraryMigrations.MigrationFunc>
 	{
@@ -99,7 +99,7 @@ public static class SignLibraryMigrations
 		}
 	};
 
-	// Token: 0x02000AA5 RID: 2725
-	// (Invoke) Token: 0x060051C2 RID: 20930
+	// Token: 0x02000AB6 RID: 2742
+	// (Invoke) Token: 0x06005248 RID: 21064
 	public delegate XElement MigrationFunc(XElement root);
 }

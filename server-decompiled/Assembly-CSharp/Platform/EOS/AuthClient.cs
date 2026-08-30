@@ -4,11 +4,11 @@ using Epic.OnlineServices.Connect;
 
 namespace Platform.EOS
 {
-	// Token: 0x02001CBF RID: 7359
+	// Token: 0x02001CE6 RID: 7398
 	public class AuthClient : IAuthenticationClient
 	{
-		// Token: 0x17001AF6 RID: 6902
-		// (get) Token: 0x0600DA05 RID: 55813 RVA: 0x004E1539 File Offset: 0x004DF739
+		// Token: 0x17001B68 RID: 7016
+		// (get) Token: 0x0600DBA0 RID: 56224 RVA: 0x004E7B4D File Offset: 0x004E5D4D
 		public ConnectInterface connectInterface
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -18,13 +18,13 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DA06 RID: 55814 RVA: 0x004E1550 File Offset: 0x004DF750
+		// Token: 0x0600DBA1 RID: 56225 RVA: 0x004E7B64 File Offset: 0x004E5D64
 		public void Init(IPlatform _owner)
 		{
 			this.owner = _owner;
 		}
 
-		// Token: 0x0600DA07 RID: 55815 RVA: 0x004E155C File Offset: 0x004DF75C
+		// Token: 0x0600DBA2 RID: 56226 RVA: 0x004E7B70 File Offset: 0x004E5D70
 		public string GetAuthTicket()
 		{
 			EosHelpers.AssertMainThread("ACl.Get");
@@ -43,7 +43,7 @@ namespace Platform.EOS
 			return (idToken != null) ? idToken.GetValueOrDefault().JsonWebToken : null;
 		}
 
-		// Token: 0x0600DA08 RID: 55816 RVA: 0x004E1618 File Offset: 0x004DF818
+		// Token: 0x0600DBA3 RID: 56227 RVA: 0x004E7C2C File Offset: 0x004E5E2C
 		public void AuthenticateServer(ClientAuthenticateServerContext _context)
 		{
 			AuthClient.<>c__DisplayClass5_0 CS$<>8__locals1 = new AuthClient.<>c__DisplayClass5_0();
@@ -89,12 +89,12 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DA09 RID: 55817 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DBA4 RID: 56228 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Destroy()
 		{
 		}
 
-		// Token: 0x0400A4C7 RID: 42183
+		// Token: 0x0400A5FA RID: 42490
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform owner;
 	}

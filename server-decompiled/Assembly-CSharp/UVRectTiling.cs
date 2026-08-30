@@ -4,10 +4,10 @@ using System.Xml;
 using System.Xml.Linq;
 using UnityEngine;
 
-// Token: 0x020014AB RID: 5291
+// Token: 0x020014C6 RID: 5318
 public struct UVRectTiling
 {
-	// Token: 0x0600A608 RID: 42504 RVA: 0x003DCA4C File Offset: 0x003DAC4C
+	// Token: 0x0600A705 RID: 42757 RVA: 0x003E1D8C File Offset: 0x003DFF8C
 	public override string ToString()
 	{
 		return string.Concat(new string[]
@@ -38,7 +38,7 @@ public struct UVRectTiling
 		});
 	}
 
-	// Token: 0x0600A609 RID: 42505 RVA: 0x003DCB90 File Offset: 0x003DAD90
+	// Token: 0x0600A706 RID: 42758 RVA: 0x003E1ED0 File Offset: 0x003E00D0
 	public void ToXML(XmlElement _elem)
 	{
 		_elem.SetAttrib("x", this.uv.x.ToCultureInvariantString());
@@ -59,7 +59,7 @@ public struct UVRectTiling
 		_elem.SetAttrib("index", this.index.ToString());
 	}
 
-	// Token: 0x0600A60A RID: 42506 RVA: 0x003DCCCC File Offset: 0x003DAECC
+	// Token: 0x0600A707 RID: 42759 RVA: 0x003E200C File Offset: 0x003E020C
 	public void FromXML(XElement _element)
 	{
 		this.uv.x = StringParsers.ParseFloat(_element.GetAttribute("x"), 0, -1, NumberStyles.Any);
@@ -77,33 +77,33 @@ public struct UVRectTiling
 		this.index = (_element.HasAttribute("index") ? int.Parse(_element.GetAttribute("index")) : 0);
 	}
 
-	// Token: 0x04007B1E RID: 31518
+	// Token: 0x04007BF7 RID: 31735
 	public static UVRectTiling Empty;
 
-	// Token: 0x04007B1F RID: 31519
+	// Token: 0x04007BF8 RID: 31736
 	public Rect uv;
 
-	// Token: 0x04007B20 RID: 31520
+	// Token: 0x04007BF9 RID: 31737
 	public int blockW;
 
-	// Token: 0x04007B21 RID: 31521
+	// Token: 0x04007BFA RID: 31738
 	public int blockH;
 
-	// Token: 0x04007B22 RID: 31522
+	// Token: 0x04007BFB RID: 31739
 	public bool bSwitchUV;
 
-	// Token: 0x04007B23 RID: 31523
+	// Token: 0x04007BFC RID: 31740
 	public bool bGlobalUV;
 
-	// Token: 0x04007B24 RID: 31524
+	// Token: 0x04007BFD RID: 31741
 	public Color color;
 
-	// Token: 0x04007B25 RID: 31525
+	// Token: 0x04007BFE RID: 31742
 	public int index;
 
-	// Token: 0x04007B26 RID: 31526
+	// Token: 0x04007BFF RID: 31743
 	public MaterialBlock material;
 
-	// Token: 0x04007B27 RID: 31527
+	// Token: 0x04007C00 RID: 31744
 	public string textureName;
 }

@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F34 RID: 3892
+// Token: 0x02000F4B RID: 3915
 [Preserve]
 public class XUiC_IngredientList : XUiController
 {
-	// Token: 0x17000E3C RID: 3644
-	// (get) Token: 0x06007A42 RID: 31298 RVA: 0x002E2090 File Offset: 0x002E0290
-	// (set) Token: 0x06007A43 RID: 31299 RVA: 0x002E2098 File Offset: 0x002E0298
+	// Token: 0x17000E57 RID: 3671
+	// (get) Token: 0x06007AFB RID: 31483 RVA: 0x002E6044 File Offset: 0x002E4244
+	// (set) Token: 0x06007AFC RID: 31484 RVA: 0x002E604C File Offset: 0x002E424C
 	public Recipe Recipe
 	{
 		get
@@ -22,9 +22,9 @@ public class XUiC_IngredientList : XUiController
 		}
 	}
 
-	// Token: 0x17000E3D RID: 3645
-	// (get) Token: 0x06007A44 RID: 31300 RVA: 0x002E20A8 File Offset: 0x002E02A8
-	// (set) Token: 0x06007A45 RID: 31301 RVA: 0x002E20B0 File Offset: 0x002E02B0
+	// Token: 0x17000E58 RID: 3672
+	// (get) Token: 0x06007AFD RID: 31485 RVA: 0x002E605C File Offset: 0x002E425C
+	// (set) Token: 0x06007AFE RID: 31486 RVA: 0x002E6064 File Offset: 0x002E4264
 	public int CraftingTier
 	{
 		get
@@ -38,7 +38,7 @@ public class XUiC_IngredientList : XUiController
 		}
 	}
 
-	// Token: 0x06007A46 RID: 31302 RVA: 0x002E20C0 File Offset: 0x002E02C0
+	// Token: 0x06007AFF RID: 31487 RVA: 0x002E6074 File Offset: 0x002E4274
 	public override void Init()
 	{
 		base.Init();
@@ -53,7 +53,7 @@ public class XUiC_IngredientList : XUiController
 		}
 	}
 
-	// Token: 0x06007A47 RID: 31303 RVA: 0x002E20FE File Offset: 0x002E02FE
+	// Token: 0x06007B00 RID: 31488 RVA: 0x002E60B2 File Offset: 0x002E42B2
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -61,7 +61,7 @@ public class XUiC_IngredientList : XUiController
 		this.xui.PlayerInventory.OnToolbeltItemsChanged += this.PlayerInventory_OnToolbeltItemsChanged;
 	}
 
-	// Token: 0x06007A48 RID: 31304 RVA: 0x002E213E File Offset: 0x002E033E
+	// Token: 0x06007B01 RID: 31489 RVA: 0x002E60F2 File Offset: 0x002E42F2
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -69,21 +69,21 @@ public class XUiC_IngredientList : XUiController
 		this.xui.PlayerInventory.OnToolbeltItemsChanged -= this.PlayerInventory_OnToolbeltItemsChanged;
 	}
 
-	// Token: 0x06007A49 RID: 31305 RVA: 0x0008A069 File Offset: 0x00088269
+	// Token: 0x06007B02 RID: 31490 RVA: 0x0008A715 File Offset: 0x00088915
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlayerInventory_OnToolbeltItemsChanged()
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007A4A RID: 31306 RVA: 0x0008A069 File Offset: 0x00088269
+	// Token: 0x06007B03 RID: 31491 RVA: 0x0008A715 File Offset: 0x00088915
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlayerInventory_OnBackpackItemsChanged()
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007A4B RID: 31307 RVA: 0x002E2180 File Offset: 0x002E0380
+	// Token: 0x06007B04 RID: 31492 RVA: 0x002E6134 File Offset: 0x002E4334
 	public override void Update(float _dt)
 	{
 		if (this.IsDirty)
@@ -136,15 +136,15 @@ public class XUiC_IngredientList : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x04005A5C RID: 23132
+	// Token: 0x04005B0F RID: 23311
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Recipe recipe;
 
-	// Token: 0x04005A5D RID: 23133
+	// Token: 0x04005B10 RID: 23312
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiController> ingredientEntries = new List<XUiController>();
 
-	// Token: 0x04005A5E RID: 23134
+	// Token: 0x04005B11 RID: 23313
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int craftingTier = -1;
 }

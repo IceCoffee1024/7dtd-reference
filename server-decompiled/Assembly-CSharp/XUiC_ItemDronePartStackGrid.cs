@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F13 RID: 3859
+// Token: 0x02000F2A RID: 3882
 [Preserve]
 public class XUiC_ItemDronePartStackGrid : XUiC_ItemPartStackGrid
 {
-	// Token: 0x17000E23 RID: 3619
-	// (get) Token: 0x06007921 RID: 31009 RVA: 0x002DA456 File Offset: 0x002D8656
-	// (set) Token: 0x06007922 RID: 31010 RVA: 0x002DA45E File Offset: 0x002D865E
+	// Token: 0x17000E3E RID: 3646
+	// (get) Token: 0x060079DA RID: 31194 RVA: 0x002DE40A File Offset: 0x002DC60A
+	// (set) Token: 0x060079DB RID: 31195 RVA: 0x002DE412 File Offset: 0x002DC612
 	public EntityDrone CurrentVehicle { get; set; }
 
-	// Token: 0x06007923 RID: 31011 RVA: 0x002DA468 File Offset: 0x002D8668
+	// Token: 0x060079DC RID: 31196 RVA: 0x002DE41C File Offset: 0x002DC61C
 	public override void Init()
 	{
 		base.Init();

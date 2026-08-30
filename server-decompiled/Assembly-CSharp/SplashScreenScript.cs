@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 
-// Token: 0x020012BB RID: 4795
+// Token: 0x020012D5 RID: 4821
 public class SplashScreenScript : MonoBehaviour
 {
-	// Token: 0x0600981E RID: 38942 RVA: 0x0039B5AC File Offset: 0x003997AC
+	// Token: 0x06009919 RID: 39193 RVA: 0x003A07FC File Offset: 0x0039E9FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Awake()
 	{
@@ -34,7 +34,7 @@ public class SplashScreenScript : MonoBehaviour
 		this.videoPlayer.Prepare();
 	}
 
-	// Token: 0x0600981F RID: 38943 RVA: 0x0039B682 File Offset: 0x00399882
+	// Token: 0x0600991A RID: 39194 RVA: 0x003A08D2 File Offset: 0x0039EAD2
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Update()
 	{
@@ -44,14 +44,14 @@ public class SplashScreenScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009820 RID: 38944 RVA: 0x0039B6AA File Offset: 0x003998AA
+	// Token: 0x0600991B RID: 39195 RVA: 0x003A08FA File Offset: 0x0039EAFA
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnVideoPrepared(VideoPlayer player)
 	{
 		base.StartCoroutine(this.DelayVideoRoutine());
 	}
 
-	// Token: 0x06009821 RID: 38945 RVA: 0x0039B6B9 File Offset: 0x003998B9
+	// Token: 0x0600991C RID: 39196 RVA: 0x003A0909 File Offset: 0x0039EB09
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator DelayVideoRoutine()
 	{
@@ -60,14 +60,14 @@ public class SplashScreenScript : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06009822 RID: 38946 RVA: 0x0039B6C8 File Offset: 0x003998C8
+	// Token: 0x0600991D RID: 39197 RVA: 0x003A0918 File Offset: 0x0039EB18
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnVideoFinished(VideoPlayer player)
 	{
 		this.videoFinished = true;
 	}
 
-	// Token: 0x06009823 RID: 38947 RVA: 0x0039B6D1 File Offset: 0x003998D1
+	// Token: 0x0600991E RID: 39198 RVA: 0x003A0921 File Offset: 0x0039EB21
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnVideoErrorReceived(VideoPlayer player, string message)
 	{
@@ -75,7 +75,7 @@ public class SplashScreenScript : MonoBehaviour
 		this.videoFinished = true;
 	}
 
-	// Token: 0x06009824 RID: 38948 RVA: 0x0039B6EA File Offset: 0x003998EA
+	// Token: 0x0600991F RID: 39199 RVA: 0x003A093A File Offset: 0x0039EB3A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnGUI()
 	{
@@ -83,21 +83,21 @@ public class SplashScreenScript : MonoBehaviour
 		GUILayout.Label("Test", Array.Empty<GUILayoutOption>());
 	}
 
-	// Token: 0x04007244 RID: 29252
+	// Token: 0x0400731B RID: 29467
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly string MainSceneName = "SceneGame";
 
-	// Token: 0x04007245 RID: 29253
+	// Token: 0x0400731C RID: 29468
 	public Transform wdwSplashScreen;
 
-	// Token: 0x04007246 RID: 29254
+	// Token: 0x0400731D RID: 29469
 	public UILabel labelEaWarning;
 
-	// Token: 0x04007247 RID: 29255
+	// Token: 0x0400731E RID: 29470
 	public VideoPlayer videoPlayer;
 
-	// Token: 0x04007248 RID: 29256
+	// Token: 0x0400731F RID: 29471
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool videoFinished;

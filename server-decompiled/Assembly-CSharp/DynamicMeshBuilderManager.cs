@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using System.Threading;
 
-// Token: 0x0200035B RID: 859
+// Token: 0x0200035F RID: 863
 public class DynamicMeshBuilderManager
 {
-	// Token: 0x060018E1 RID: 6369 RVA: 0x0008C5FF File Offset: 0x0008A7FF
+	// Token: 0x060018FE RID: 6398 RVA: 0x0008CD3F File Offset: 0x0008AF3F
 	public static DynamicMeshBuilderManager GetOrCreate()
 	{
 		return DynamicMeshBuilderManager.Instance ?? new DynamicMeshBuilderManager();
 	}
 
-	// Token: 0x060018E2 RID: 6370 RVA: 0x0008C60F File Offset: 0x0008A80F
+	// Token: 0x060018FF RID: 6399 RVA: 0x0008CD4F File Offset: 0x0008AF4F
 	public DynamicMeshBuilderManager()
 	{
 		DynamicMeshBuilderManager.Instance = this;
 	}
 
-	// Token: 0x060018E3 RID: 6371 RVA: 0x0008C634 File Offset: 0x0008A834
+	// Token: 0x06001900 RID: 6400 RVA: 0x0008CD74 File Offset: 0x0008AF74
 	public void StartThreads()
 	{
 		Log.Out("Starting builder threads: " + DynamicMeshBuilderManager.MaxBuilderThreads.ToString());
@@ -31,7 +31,7 @@ public class DynamicMeshBuilderManager
 		}
 	}
 
-	// Token: 0x060018E4 RID: 6372 RVA: 0x0008C6B8 File Offset: 0x0008A8B8
+	// Token: 0x06001901 RID: 6401 RVA: 0x0008CDF8 File Offset: 0x0008AFF8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DynamicMeshChunkProcessor AddBuilder()
 	{
@@ -43,7 +43,7 @@ public class DynamicMeshBuilderManager
 		return dynamicMeshChunkProcessor;
 	}
 
-	// Token: 0x060018E5 RID: 6373 RVA: 0x0008C6F8 File Offset: 0x0008A8F8
+	// Token: 0x06001902 RID: 6402 RVA: 0x0008CE38 File Offset: 0x0008B038
 	public void MainThreadRunJobs()
 	{
 		foreach (DynamicMeshChunkProcessor dynamicMeshChunkProcessor in this.BuilderThreads)
@@ -55,14 +55,14 @@ public class DynamicMeshBuilderManager
 		}
 	}
 
-	// Token: 0x060018E6 RID: 6374 RVA: 0x0008C750 File Offset: 0x0008A950
+	// Token: 0x06001903 RID: 6403 RVA: 0x0008CE90 File Offset: 0x0008B090
 	public void SetNewLimit(int limit)
 	{
 		DynamicMeshBuilderManager.MaxBuilderThreads = limit;
 		this.StartThreads();
 	}
 
-	// Token: 0x060018E7 RID: 6375 RVA: 0x0008C760 File Offset: 0x0008A960
+	// Token: 0x06001904 RID: 6404 RVA: 0x0008CEA0 File Offset: 0x0008B0A0
 	public void StopThreads(bool forceStop)
 	{
 		foreach (DynamicMeshChunkProcessor dynamicMeshChunkProcessor in this.BuilderThreads)
@@ -71,7 +71,7 @@ public class DynamicMeshBuilderManager
 		}
 	}
 
-	// Token: 0x060018E8 RID: 6376 RVA: 0x0008C7B4 File Offset: 0x0008A9B4
+	// Token: 0x06001905 RID: 6405 RVA: 0x0008CEF4 File Offset: 0x0008B0F4
 	public DynamicMeshChunkProcessor GetRegionBuilder(bool useAllThreads)
 	{
 		if (!Monitor.TryEnter(this._lock, 1))
@@ -101,7 +101,7 @@ public class DynamicMeshBuilderManager
 		return dynamicMeshChunkProcessor;
 	}
 
-	// Token: 0x060018E9 RID: 6377 RVA: 0x0008C844 File Offset: 0x0008AA44
+	// Token: 0x06001906 RID: 6406 RVA: 0x0008CF84 File Offset: 0x0008B184
 	public DynamicMeshChunkProcessor GetNextBuilder()
 	{
 		if (!Monitor.TryEnter(this._lock, 1))
@@ -126,8 +126,8 @@ public class DynamicMeshBuilderManager
 		return dynamicMeshChunkProcessor;
 	}
 
-	// Token: 0x170002F3 RID: 755
-	// (get) Token: 0x060018EA RID: 6378 RVA: 0x0008C8E8 File Offset: 0x0008AAE8
+	// Token: 0x170002F7 RID: 759
+	// (get) Token: 0x06001907 RID: 6407 RVA: 0x0008D028 File Offset: 0x0008B228
 	public bool HasThreadAvailable
 	{
 		get
@@ -136,7 +136,7 @@ public class DynamicMeshBuilderManager
 		}
 	}
 
-	// Token: 0x060018EB RID: 6379 RVA: 0x0008C8F4 File Offset: 0x0008AAF4
+	// Token: 0x06001908 RID: 6408 RVA: 0x0008D034 File Offset: 0x0008B234
 	public int AddItemForExport(DynamicMeshItem item, bool isPrimary)
 	{
 		DynamicMeshChunkProcessor nextBuilder = this.GetNextBuilder();
@@ -151,7 +151,7 @@ public class DynamicMeshBuilderManager
 		return nextBuilder.AddNewItem(item, isPrimary);
 	}
 
-	// Token: 0x060018EC RID: 6380 RVA: 0x0008C924 File Offset: 0x0008AB24
+	// Token: 0x06001909 RID: 6409 RVA: 0x0008D064 File Offset: 0x0008B264
 	public int AddItemForMeshGeneration(DynamicMeshItem item, bool isPrimary)
 	{
 		DynamicMeshChunkProcessor nextBuilder = this.GetNextBuilder();
@@ -167,7 +167,7 @@ public class DynamicMeshBuilderManager
 		return nextBuilder.AddItemForMeshGeneration(item, isPrimary);
 	}
 
-	// Token: 0x060018ED RID: 6381 RVA: 0x0008C960 File Offset: 0x0008AB60
+	// Token: 0x0600190A RID: 6410 RVA: 0x0008D0A0 File Offset: 0x0008B2A0
 	public int AddItemForPreview(DynamicMeshItem item, ChunkPreviewData previewData)
 	{
 		DynamicMeshChunkProcessor nextBuilder = this.GetNextBuilder();
@@ -178,7 +178,7 @@ public class DynamicMeshBuilderManager
 		return nextBuilder.AddItemForMeshPreview(item, previewData);
 	}
 
-	// Token: 0x060018EE RID: 6382 RVA: 0x0008C984 File Offset: 0x0008AB84
+	// Token: 0x0600190B RID: 6411 RVA: 0x0008D0C4 File Offset: 0x0008B2C4
 	public int RegenerateRegion(DynamicMeshThread.ThreadRegion region, bool useAllThreads)
 	{
 		DynamicMeshChunkProcessor regionBuilder = this.GetRegionBuilder(useAllThreads);
@@ -190,7 +190,7 @@ public class DynamicMeshBuilderManager
 		return regionBuilder.AddRegenerateRegion(region);
 	}
 
-	// Token: 0x060018EF RID: 6383 RVA: 0x0008C9B4 File Offset: 0x0008ABB4
+	// Token: 0x0600190C RID: 6412 RVA: 0x0008D0F4 File Offset: 0x0008B2F4
 	public void CheckBuilders()
 	{
 		for (int i = this.BuilderThreads.Count - 1; i >= 0; i--)
@@ -218,7 +218,7 @@ public class DynamicMeshBuilderManager
 		}
 	}
 
-	// Token: 0x060018F0 RID: 6384 RVA: 0x0008CA44 File Offset: 0x0008AC44
+	// Token: 0x0600190D RID: 6413 RVA: 0x0008D184 File Offset: 0x0008B384
 	public void CheckPreviews()
 	{
 		for (int i = this.BuilderThreads.Count - 1; i >= 0; i--)
@@ -236,7 +236,7 @@ public class DynamicMeshBuilderManager
 		}
 	}
 
-	// Token: 0x060018F1 RID: 6385 RVA: 0x0008CA98 File Offset: 0x0008AC98
+	// Token: 0x0600190E RID: 6414 RVA: 0x0008D1D8 File Offset: 0x0008B3D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleResult(DynamicMeshChunkProcessor builder)
 	{
@@ -311,24 +311,24 @@ public class DynamicMeshBuilderManager
 		builder.ResetAfterJob();
 	}
 
-	// Token: 0x04000FDC RID: 4060
+	// Token: 0x04000FF1 RID: 4081
 	public static DynamicMeshBuilderManager Instance;
 
-	// Token: 0x04000FDD RID: 4061
+	// Token: 0x04000FF2 RID: 4082
 	public static int MaxBuilderThreads = 1;
 
-	// Token: 0x04000FDE RID: 4062
+	// Token: 0x04000FF3 RID: 4083
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int ThreadId = 1;
 
-	// Token: 0x04000FDF RID: 4063
+	// Token: 0x04000FF4 RID: 4084
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const double MaxInactiveTime = 10.0;
 
-	// Token: 0x04000FE0 RID: 4064
+	// Token: 0x04000FF5 RID: 4085
 	public List<DynamicMeshChunkProcessor> BuilderThreads = new List<DynamicMeshChunkProcessor>();
 
-	// Token: 0x04000FE1 RID: 4065
+	// Token: 0x04000FF6 RID: 4086
 	[PublicizedFrom(EAccessModifier.Private)]
 	public object _lock = new object();
 }

@@ -1,16 +1,16 @@
 ﻿using System;
 
-// Token: 0x02000AD4 RID: 2772
+// Token: 0x02000AE6 RID: 2790
 public enum EnumSpawnerSource
 {
-	// Token: 0x04004059 RID: 16473
+	// Token: 0x040040EF RID: 16623
 	Unknown,
-	// Token: 0x0400405A RID: 16474
+	// Token: 0x040040F0 RID: 16624
 	Biome,
-	// Token: 0x0400405B RID: 16475
+	// Token: 0x040040F1 RID: 16625
 	StaticSpawner,
-	// Token: 0x0400405C RID: 16476
+	// Token: 0x040040F2 RID: 16626
 	Dynamic,
-	// Token: 0x0400405D RID: 16477
+	// Token: 0x040040F3 RID: 16627
 	Delete
 }

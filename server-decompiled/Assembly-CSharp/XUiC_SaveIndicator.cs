@@ -2,11 +2,11 @@
 using System.Diagnostics;
 using UnityEngine.Scripting;
 
-// Token: 0x02001005 RID: 4101
+// Token: 0x0200101E RID: 4126
 [Preserve]
 public class XUiC_SaveIndicator : XUiController
 {
-	// Token: 0x0600817E RID: 33150 RVA: 0x00313864 File Offset: 0x00311A64
+	// Token: 0x06008270 RID: 33392 RVA: 0x0031808C File Offset: 0x0031628C
 	public override void Init()
 	{
 		base.Init();
@@ -17,7 +17,7 @@ public class XUiC_SaveIndicator : XUiController
 		this.xui.SaveIndicator = this;
 	}
 
-	// Token: 0x0600817F RID: 33151 RVA: 0x003138C8 File Offset: 0x00311AC8
+	// Token: 0x06008271 RID: 33393 RVA: 0x003180F0 File Offset: 0x003162F0
 	public override void Cleanup()
 	{
 		base.Cleanup();
@@ -30,14 +30,14 @@ public class XUiC_SaveIndicator : XUiController
 		this.xui.SaveIndicator = null;
 	}
 
-	// Token: 0x06008180 RID: 33152 RVA: 0x00313924 File Offset: 0x00311B24
+	// Token: 0x06008272 RID: 33394 RVA: 0x0031814C File Offset: 0x0031634C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnCommitStarted()
 	{
 		this.m_commitInProgress = true;
 	}
 
-	// Token: 0x06008181 RID: 33153 RVA: 0x0031392D File Offset: 0x00311B2D
+	// Token: 0x06008273 RID: 33395 RVA: 0x00318155 File Offset: 0x00316355
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnCommitFinished()
 	{
@@ -45,7 +45,7 @@ public class XUiC_SaveIndicator : XUiController
 		this.m_commitInProgress = false;
 	}
 
-	// Token: 0x06008182 RID: 33154 RVA: 0x00313944 File Offset: 0x00311B44
+	// Token: 0x06008274 RID: 33396 RVA: 0x0031816C File Offset: 0x0031636C
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -57,7 +57,7 @@ public class XUiC_SaveIndicator : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06008183 RID: 33155 RVA: 0x003139B1 File Offset: 0x00311BB1
+	// Token: 0x06008275 RID: 33397 RVA: 0x003181D9 File Offset: 0x003163D9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -69,23 +69,23 @@ public class XUiC_SaveIndicator : XUiController
 		return base.GetBindingValueInternal(ref _value, _bindingName);
 	}
 
-	// Token: 0x04005FD1 RID: 24529
+	// Token: 0x04006098 RID: 24728
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly TimeSpan TailDuration = TimeSpan.FromSeconds(2.0);
 
-	// Token: 0x04005FD2 RID: 24530
+	// Token: 0x04006099 RID: 24729
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ISaveDataManager m_saveDataManager;
 
-	// Token: 0x04005FD3 RID: 24531
+	// Token: 0x0400609A RID: 24730
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Stopwatch m_tailTimer;
 
-	// Token: 0x04005FD4 RID: 24532
+	// Token: 0x0400609B RID: 24731
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool m_commitInProgress;
 
-	// Token: 0x04005FD5 RID: 24533
+	// Token: 0x0400609C RID: 24732
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool shouldShow;
 }

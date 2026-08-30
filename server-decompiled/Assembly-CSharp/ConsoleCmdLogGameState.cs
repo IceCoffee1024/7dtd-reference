@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000237 RID: 567
+// Token: 0x0200023B RID: 571
 [Preserve]
 public class ConsoleCmdLogGameState : ConsoleCmdAbstract
 {
-	// Token: 0x06001113 RID: 4371 RVA: 0x0006C3D4 File Offset: 0x0006A5D4
+	// Token: 0x06001125 RID: 4389 RVA: 0x0006CA31 File Offset: 0x0006AC31
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "loggamestate", "lgs" };
 	}
 
-	// Token: 0x170001AF RID: 431
-	// (get) Token: 0x06001114 RID: 4372 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x170001B0 RID: 432
+	// (get) Token: 0x06001126 RID: 4390 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -24,21 +24,21 @@ public class ConsoleCmdLogGameState : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001115 RID: 4373 RVA: 0x0006C3EC File Offset: 0x0006A5EC
+	// Token: 0x06001127 RID: 4391 RVA: 0x0006CA49 File Offset: 0x0006AC49
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Log the current state of the game";
 	}
 
-	// Token: 0x06001116 RID: 4374 RVA: 0x0006C3F3 File Offset: 0x0006A5F3
+	// Token: 0x06001128 RID: 4392 RVA: 0x0006CA50 File Offset: 0x0006AC50
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Writes information on the current state of the game (like memory usage,\nentities) to the log file. The section will use the message parameter\nin its header.\nUsage:\n   loggamestate <message> [true/false]\nMessage is a string that will be included in the header of the generated\nlog section. The optional boolean parameter specifies if this command\nshould be run on the client (true) instead of the server (false) which\nis the default.";
 	}
 
-	// Token: 0x06001117 RID: 4375 RVA: 0x0006C3FC File Offset: 0x0006A5FC
+	// Token: 0x06001129 RID: 4393 RVA: 0x0006CA58 File Offset: 0x0006AC58
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count < 1 || _params.Count > 2)
@@ -86,7 +86,7 @@ public class ConsoleCmdLogGameState : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001118 RID: 4376 RVA: 0x0006C53C File Offset: 0x0006A73C
+	// Token: 0x0600112A RID: 4394 RVA: 0x0006CB98 File Offset: 0x0006AD98
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WriteGeneric()
 	{
@@ -110,7 +110,7 @@ public class ConsoleCmdLogGameState : ConsoleCmdAbstract
 		});
 	}
 
-	// Token: 0x06001119 RID: 4377 RVA: 0x0006C6A0 File Offset: 0x0006A8A0
+	// Token: 0x0600112B RID: 4395 RVA: 0x0006CCFC File Offset: 0x0006AEFC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WriteCounts()
 	{
@@ -134,7 +134,7 @@ public class ConsoleCmdLogGameState : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600111A RID: 4378 RVA: 0x0006C84C File Offset: 0x0006AA4C
+	// Token: 0x0600112C RID: 4396 RVA: 0x0006CEA8 File Offset: 0x0006B0A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WriteEntities()
 	{
@@ -159,7 +159,7 @@ public class ConsoleCmdLogGameState : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600111B RID: 4379 RVA: 0x0006C930 File Offset: 0x0006AB30
+	// Token: 0x0600112D RID: 4397 RVA: 0x0006CF8C File Offset: 0x0006B18C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WritePlayers()
 	{
@@ -195,7 +195,7 @@ public class ConsoleCmdLogGameState : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600111C RID: 4380 RVA: 0x0006CAB0 File Offset: 0x0006ACB0
+	// Token: 0x0600112E RID: 4398 RVA: 0x0006D10C File Offset: 0x0006B30C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WriteThreads()
 	{
@@ -211,7 +211,7 @@ public class ConsoleCmdLogGameState : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600111D RID: 4381 RVA: 0x0006CB30 File Offset: 0x0006AD30
+	// Token: 0x0600112F RID: 4399 RVA: 0x0006D18C File Offset: 0x0006B38C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WriteUnityObjects()
 	{
@@ -239,7 +239,7 @@ public class ConsoleCmdLogGameState : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600111E RID: 4382 RVA: 0x0006CC04 File Offset: 0x0006AE04
+	// Token: 0x06001130 RID: 4400 RVA: 0x0006D260 File Offset: 0x0006B460
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WriteGameObjects()
 	{
@@ -255,7 +255,7 @@ public class ConsoleCmdLogGameState : ConsoleCmdAbstract
 		this.PrintGameObjectHierarchy(hierarchyElement, 0, "");
 	}
 
-	// Token: 0x0600111F RID: 4383 RVA: 0x0006CC78 File Offset: 0x0006AE78
+	// Token: 0x06001131 RID: 4401 RVA: 0x0006D2D4 File Offset: 0x0006B4D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int TraverseScene(ConsoleCmdLogGameState.HierarchyElement _parent, GameObject _go)
 	{
@@ -269,7 +269,7 @@ public class ConsoleCmdLogGameState : ConsoleCmdAbstract
 		return hierarchyElement.childCount + 1;
 	}
 
-	// Token: 0x06001120 RID: 4384 RVA: 0x0006CD0C File Offset: 0x0006AF0C
+	// Token: 0x06001132 RID: 4402 RVA: 0x0006D368 File Offset: 0x0006B568
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PrintGameObjectHierarchy(ConsoleCmdLogGameState.HierarchyElement _he, int _indentation, string _prefix)
 	{
@@ -297,7 +297,7 @@ public class ConsoleCmdLogGameState : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001121 RID: 4385 RVA: 0x0006CDC7 File Offset: 0x0006AFC7
+	// Token: 0x06001133 RID: 4403 RVA: 0x0006D423 File Offset: 0x0006B623
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WriteHeader(string _message)
 	{
@@ -306,7 +306,7 @@ public class ConsoleCmdLogGameState : ConsoleCmdAbstract
 		Console.Out.WriteLine("WRITING GAME STATE: " + _message);
 	}
 
-	// Token: 0x06001122 RID: 4386 RVA: 0x0006CDF7 File Offset: 0x0006AFF7
+	// Token: 0x06001134 RID: 4404 RVA: 0x0006D453 File Offset: 0x0006B653
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WriteFooter(string _message)
 	{
@@ -316,7 +316,7 @@ public class ConsoleCmdLogGameState : ConsoleCmdAbstract
 		Console.Out.WriteLine();
 	}
 
-	// Token: 0x06001123 RID: 4387 RVA: 0x0006CE31 File Offset: 0x0006B031
+	// Token: 0x06001135 RID: 4405 RVA: 0x0006D48D File Offset: 0x0006B68D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void newSection(string _sectionName)
 	{
@@ -326,61 +326,61 @@ public class ConsoleCmdLogGameState : ConsoleCmdAbstract
 		Console.Out.WriteLine();
 	}
 
-	// Token: 0x06001124 RID: 4388 RVA: 0x0006CE6B File Offset: 0x0006B06B
+	// Token: 0x06001136 RID: 4406 RVA: 0x0006D4C7 File Offset: 0x0006B6C7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void print(string _format, params object[] _args)
 	{
 		Console.Out.Write(string.Format(_format, _args));
 	}
 
-	// Token: 0x06001125 RID: 4389 RVA: 0x0006CE7E File Offset: 0x0006B07E
+	// Token: 0x06001137 RID: 4407 RVA: 0x0006D4DA File Offset: 0x0006B6DA
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void printLine(string _format, params object[] _args)
 	{
 		Console.Out.WriteLine(string.Format(_format, _args));
 	}
 
-	// Token: 0x04000CBD RID: 3261
+	// Token: 0x04000CCE RID: 3278
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<int, string> prefixPerLevel = new Dictionary<int, string>();
 
-	// Token: 0x04000CBE RID: 3262
+	// Token: 0x04000CCF RID: 3279
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string indentationNormal = "   |  ";
 
-	// Token: 0x04000CBF RID: 3263
+	// Token: 0x04000CD0 RID: 3280
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string indentationLastLevel = "   +- ";
 
-	// Token: 0x04000CC0 RID: 3264
+	// Token: 0x04000CD1 RID: 3281
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string startEndSep = new string('*', 100);
 
-	// Token: 0x04000CC1 RID: 3265
+	// Token: 0x04000CD2 RID: 3282
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string sectionSep = new string('-', 50);
 
-	// Token: 0x02000238 RID: 568
+	// Token: 0x0200023C RID: 572
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class HierarchyElement
 	{
-		// Token: 0x06001128 RID: 4392 RVA: 0x0006CED6 File Offset: 0x0006B0D6
+		// Token: 0x0600113A RID: 4410 RVA: 0x0006D532 File Offset: 0x0006B732
 		public HierarchyElement(string _name, bool _active)
 		{
 			this.name = _name;
 			this.active = _active;
 		}
 
-		// Token: 0x04000CC2 RID: 3266
+		// Token: 0x04000CD3 RID: 3283
 		public string name;
 
-		// Token: 0x04000CC3 RID: 3267
+		// Token: 0x04000CD4 RID: 3284
 		public bool active;
 
-		// Token: 0x04000CC4 RID: 3268
+		// Token: 0x04000CD5 RID: 3285
 		public int childCount;
 
-		// Token: 0x04000CC5 RID: 3269
+		// Token: 0x04000CD6 RID: 3286
 		public List<ConsoleCmdLogGameState.HierarchyElement> children = new List<ConsoleCmdLogGameState.HierarchyElement>();
 	}
 }

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x0200028A RID: 650
+// Token: 0x0200028E RID: 654
 [Preserve]
 public class ConsoleCmdShowChunkData : ConsoleCmdAbstract
 {
-	// Token: 0x17000208 RID: 520
-	// (get) Token: 0x06001310 RID: 4880 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000209 RID: 521
+	// (get) Token: 0x06001322 RID: 4898 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -17,8 +17,8 @@ public class ConsoleCmdShowChunkData : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x17000209 RID: 521
-	// (get) Token: 0x06001311 RID: 4881 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// Token: 0x1700020A RID: 522
+	// (get) Token: 0x06001323 RID: 4899 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -27,8 +27,8 @@ public class ConsoleCmdShowChunkData : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x1700020A RID: 522
-	// (get) Token: 0x06001312 RID: 4882 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// Token: 0x1700020B RID: 523
+	// (get) Token: 0x06001324 RID: 4900 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -37,14 +37,14 @@ public class ConsoleCmdShowChunkData : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001313 RID: 4883 RVA: 0x000756A3 File Offset: 0x000738A3
+	// Token: 0x06001325 RID: 4901 RVA: 0x00075CFF File Offset: 0x00073EFF
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "showchunkdata", "sc" };
 	}
 
-	// Token: 0x06001314 RID: 4884 RVA: 0x000756BC File Offset: 0x000738BC
+	// Token: 0x06001326 RID: 4902 RVA: 0x00075D18 File Offset: 0x00073F18
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		foreach (KeyValuePair<int, EntityPlayer> keyValuePair in GameManager.Instance.World.Players.dict)
@@ -88,7 +88,7 @@ public class ConsoleCmdShowChunkData : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001315 RID: 4885 RVA: 0x00075930 File Offset: 0x00073B30
+	// Token: 0x06001327 RID: 4903 RVA: 0x00075F8C File Offset: 0x0007418C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using Platform;
 
-// Token: 0x02000129 RID: 297
+// Token: 0x0200012A RID: 298
 public class BlockLimitTracker
 {
-	// Token: 0x060007E0 RID: 2016 RVA: 0x00037E00 File Offset: 0x00036000
+	// Token: 0x060007EA RID: 2026 RVA: 0x00038060 File Offset: 0x00036260
 	public static void Init()
 	{
 		BlockLimitTracker.instance = new BlockLimitTracker();
@@ -16,7 +16,7 @@ public class BlockLimitTracker
 		}
 	}
 
-	// Token: 0x060007E1 RID: 2017 RVA: 0x00037E22 File Offset: 0x00036022
+	// Token: 0x060007EB RID: 2027 RVA: 0x00038082 File Offset: 0x00036282
 	public BlockLimitTracker()
 	{
 		this.poweredBlockTracker = new BlockTracker(10000);
@@ -24,7 +24,7 @@ public class BlockLimitTracker
 		this.clientAmounts = new List<int>();
 	}
 
-	// Token: 0x060007E2 RID: 2018 RVA: 0x00037E58 File Offset: 0x00036058
+	// Token: 0x060007EC RID: 2028 RVA: 0x000380B8 File Offset: 0x000362B8
 	public bool CanAddBlock(BlockValue _blockValue, Vector3i _blockPosition, out eSetBlockResponse _response)
 	{
 		_response = eSetBlockResponse.Success;
@@ -56,7 +56,7 @@ public class BlockLimitTracker
 		return true;
 	}
 
-	// Token: 0x060007E3 RID: 2019 RVA: 0x00037EF8 File Offset: 0x000360F8
+	// Token: 0x060007ED RID: 2029 RVA: 0x00038158 File Offset: 0x00036358
 	public void TryAddTrackedBlock(BlockValue _blockValue, Vector3i _blockPosition, int _entityId)
 	{
 		if (_entityId == -1)
@@ -109,7 +109,7 @@ public class BlockLimitTracker
 		}
 	}
 
-	// Token: 0x060007E4 RID: 2020 RVA: 0x00038054 File Offset: 0x00036254
+	// Token: 0x060007EE RID: 2030 RVA: 0x000382B4 File Offset: 0x000364B4
 	public void TryRemoveOrReplaceBlock(BlockValue _oldBlockValue, BlockValue _newBlockValue, Vector3i _blockPosition)
 	{
 		if (_oldBlockValue.Block.isMultiBlock && _oldBlockValue.ischild)
@@ -156,7 +156,7 @@ public class BlockLimitTracker
 		}
 	}
 
-	// Token: 0x060007E5 RID: 2021 RVA: 0x00038190 File Offset: 0x00036390
+	// Token: 0x060007EF RID: 2031 RVA: 0x000383F0 File Offset: 0x000365F0
 	public void ServerUpdateClients()
 	{
 		if (this.clientAmounts.Count == 0 || this.clientAmounts[0] != this.poweredBlockTracker.blockLocations.Count || this.clientAmounts[1] != this.playerStorageTracker.blockLocations.Count)
@@ -168,7 +168,7 @@ public class BlockLimitTracker
 		}
 	}
 
-	// Token: 0x060007E6 RID: 2022 RVA: 0x00038254 File Offset: 0x00036454
+	// Token: 0x060007F0 RID: 2032 RVA: 0x000384B4 File Offset: 0x000366B4
 	public void UpdateClientAmounts(List<int> _amounts)
 	{
 		if (_amounts.Count != 2)
@@ -180,7 +180,7 @@ public class BlockLimitTracker
 		this.playerStorageTracker.clientAmount = _amounts[1];
 	}
 
-	// Token: 0x060007E7 RID: 2023 RVA: 0x0003828E File Offset: 0x0003648E
+	// Token: 0x060007F1 RID: 2033 RVA: 0x000384EE File Offset: 0x000366EE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ClearAll()
 	{
@@ -188,7 +188,7 @@ public class BlockLimitTracker
 		this.playerStorageTracker.Clear();
 	}
 
-	// Token: 0x060007E8 RID: 2024 RVA: 0x000382A6 File Offset: 0x000364A6
+	// Token: 0x060007F2 RID: 2034 RVA: 0x00038506 File Offset: 0x00036706
 	public static void Cleanup()
 	{
 		if (BlockLimitTracker.instance != null)
@@ -199,7 +199,7 @@ public class BlockLimitTracker
 		}
 	}
 
-	// Token: 0x060007E9 RID: 2025 RVA: 0x000382CC File Offset: 0x000364CC
+	// Token: 0x060007F3 RID: 2035 RVA: 0x0003852C File Offset: 0x0003672C
 	public void Load()
 	{
 		string text = string.Format("{0}/{1}", GameIO.GetSaveGameDir(), "blockLimits.dat");
@@ -235,7 +235,7 @@ public class BlockLimitTracker
 		}
 	}
 
-	// Token: 0x060007EA RID: 2026 RVA: 0x000383EC File Offset: 0x000365EC
+	// Token: 0x060007F4 RID: 2036 RVA: 0x0003864C File Offset: 0x0003684C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void read(PooledBinaryReader _reader)
 	{
@@ -249,7 +249,7 @@ public class BlockLimitTracker
 		this.playerStorageTracker.Read(_reader);
 	}
 
-	// Token: 0x060007EB RID: 2027 RVA: 0x00038420 File Offset: 0x00036620
+	// Token: 0x060007F5 RID: 2037 RVA: 0x00038680 File Offset: 0x00036880
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TriggerSave()
 	{
@@ -259,7 +259,7 @@ public class BlockLimitTracker
 		}
 	}
 
-	// Token: 0x060007EC RID: 2028 RVA: 0x00038440 File Offset: 0x00036640
+	// Token: 0x060007F6 RID: 2038 RVA: 0x000386A0 File Offset: 0x000368A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Save()
 	{
@@ -275,7 +275,7 @@ public class BlockLimitTracker
 		}
 	}
 
-	// Token: 0x060007ED RID: 2029 RVA: 0x000384D8 File Offset: 0x000366D8
+	// Token: 0x060007F7 RID: 2039 RVA: 0x00038738 File Offset: 0x00036938
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int SaveThread(ThreadManager.ThreadInfo _threadInfo)
 	{
@@ -291,7 +291,7 @@ public class BlockLimitTracker
 		return -1;
 	}
 
-	// Token: 0x060007EE RID: 2030 RVA: 0x00038544 File Offset: 0x00036744
+	// Token: 0x060007F8 RID: 2040 RVA: 0x000387A4 File Offset: 0x000369A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void write(PooledBinaryWriter _writer)
 	{
@@ -300,42 +300,42 @@ public class BlockLimitTracker
 		this.playerStorageTracker.Write(_writer);
 	}
 
-	// Token: 0x0400091F RID: 2335
+	// Token: 0x04000921 RID: 2337
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cVersion = 1;
 
-	// Token: 0x04000920 RID: 2336
+	// Token: 0x04000922 RID: 2338
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cMaxPowerBlocks = 10000;
 
-	// Token: 0x04000921 RID: 2337
+	// Token: 0x04000923 RID: 2339
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cMaxPlayerStorageBlocks = 10000;
 
-	// Token: 0x04000922 RID: 2338
-	public static BlockLimitTracker instance;
-
-	// Token: 0x04000923 RID: 2339
-	[PublicizedFrom(EAccessModifier.Private)]
-	public BlockTracker poweredBlockTracker;
-
 	// Token: 0x04000924 RID: 2340
-	[PublicizedFrom(EAccessModifier.Private)]
-	public BlockTracker playerStorageTracker;
+	public static BlockLimitTracker instance;
 
 	// Token: 0x04000925 RID: 2341
 	[PublicizedFrom(EAccessModifier.Private)]
-	public ThreadManager.ThreadInfo saveThread;
+	public BlockTracker poweredBlockTracker;
 
 	// Token: 0x04000926 RID: 2342
 	[PublicizedFrom(EAccessModifier.Private)]
-	public List<int> clientAmounts;
+	public BlockTracker playerStorageTracker;
 
 	// Token: 0x04000927 RID: 2343
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const string cNameKey = "blockLimits";
+	public ThreadManager.ThreadInfo saveThread;
 
 	// Token: 0x04000928 RID: 2344
+	[PublicizedFrom(EAccessModifier.Private)]
+	public List<int> clientAmounts;
+
+	// Token: 0x04000929 RID: 2345
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const string cNameKey = "blockLimits";
+
+	// Token: 0x0400092A RID: 2346
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cThreadKey = "blockLimitSaveData";
 }

@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using Platform;
 
-// Token: 0x02000B3A RID: 2874
+// Token: 0x02000B4C RID: 2892
 public interface IMapChunkDatabase
 {
-	// Token: 0x06005737 RID: 22327
+	// Token: 0x060057BF RID: 22463
 	void Clear();
 
-	// Token: 0x06005738 RID: 22328
+	// Token: 0x060057C0 RID: 22464
 	ushort[] GetMapColors(long _chunkKey);
 
-	// Token: 0x06005739 RID: 22329 RVA: 0x00215898 File Offset: 0x00213A98
+	// Token: 0x060057C1 RID: 22465 RVA: 0x002185B4 File Offset: 0x002167B4
 	void Add(Vector3i _chunkPos, World _world)
 	{
 		int num = (_world.IsEditor() ? 7 : 4);
@@ -29,34 +29,34 @@ public interface IMapChunkDatabase
 		}
 	}
 
-	// Token: 0x0600573A RID: 22330
+	// Token: 0x060057C2 RID: 22466
 	void Add(int _chunkX, int _chunkZ, ushort[] _mapColors);
 
-	// Token: 0x0600573B RID: 22331
+	// Token: 0x060057C3 RID: 22467
 	void Add(List<int> _chunks, List<ushort[]> _mapPieces);
 
-	// Token: 0x0600573C RID: 22332
+	// Token: 0x060057C4 RID: 22468
 	bool Contains(long _chunkKey);
 
-	// Token: 0x0600573D RID: 22333
+	// Token: 0x060057C5 RID: 22469
 	bool IsNetworkDataAvail();
 
-	// Token: 0x0600573E RID: 22334
+	// Token: 0x060057C6 RID: 22470
 	void ResetNetworkDataAvail();
 
-	// Token: 0x0600573F RID: 22335
+	// Token: 0x060057C7 RID: 22471
 	NetPackage GetMapChunkPackagesToSend();
 
-	// Token: 0x06005740 RID: 22336
+	// Token: 0x060057C8 RID: 22472
 	void LoadAsync(ThreadManager.TaskInfo _taskInfo);
 
-	// Token: 0x06005741 RID: 22337
+	// Token: 0x060057C9 RID: 22473
 	void SaveAsync(ThreadManager.TaskInfo _taskInfo);
 
-	// Token: 0x06005742 RID: 22338
+	// Token: 0x060057CA RID: 22474
 	void SetClientMapMiddlePosition(Vector2i _pos);
 
-	// Token: 0x06005743 RID: 22339 RVA: 0x00215914 File Offset: 0x00213B14
+	// Token: 0x060057CB RID: 22475 RVA: 0x00218630 File Offset: 0x00216830
 	public static bool TryCreateOrLoad(int _entityId, out IMapChunkDatabase _mapDatabase, Func<IMapChunkDatabase.DirectoryPlayerId> _parameterSupplier)
 	{
 		if ((DeviceFlag.XBoxSeriesS | DeviceFlag.XBoxSeriesX | DeviceFlag.PS5).IsCurrent())
@@ -107,19 +107,19 @@ public interface IMapChunkDatabase
 		return true;
 	}
 
-	// Token: 0x06005744 RID: 22340 RVA: 0x002159FC File Offset: 0x00213BFC
+	// Token: 0x060057CC RID: 22476 RVA: 0x00218718 File Offset: 0x00216918
 	public static int ToChunkDBKey(long _worldChunkKey)
 	{
 		return IMapChunkDatabase.ToChunkDBKey(WorldChunkCache.extractX(_worldChunkKey), WorldChunkCache.extractZ(_worldChunkKey));
 	}
 
-	// Token: 0x06005745 RID: 22341 RVA: 0x00215A0F File Offset: 0x00213C0F
+	// Token: 0x060057CD RID: 22477 RVA: 0x0021872B File Offset: 0x0021692B
 	public static int ToChunkDBKey(int _chunkX, int _chunkZ)
 	{
 		return ((_chunkZ & 65535) << 16) | (_chunkX & 65535);
 	}
 
-	// Token: 0x06005746 RID: 22342 RVA: 0x00215A23 File Offset: 0x00213C23
+	// Token: 0x060057CE RID: 22478 RVA: 0x0021873F File Offset: 0x0021693F
 	public static void FromChunkDBKey(int _chunkDBKey, out int _chunkX, out int _chunkZ)
 	{
 		_chunkX = _chunkDBKey & 65535;
@@ -134,20 +134,20 @@ public interface IMapChunkDatabase
 		}
 	}
 
-	// Token: 0x02000B3B RID: 2875
+	// Token: 0x02000B4D RID: 2893
 	public class DirectoryPlayerId
 	{
-		// Token: 0x06005747 RID: 22343 RVA: 0x00215A60 File Offset: 0x00213C60
+		// Token: 0x060057CF RID: 22479 RVA: 0x0021877C File Offset: 0x0021697C
 		public DirectoryPlayerId(string _dir, string _file)
 		{
 			this.file = _file;
 			this.dir = _dir;
 		}
 
-		// Token: 0x0400432D RID: 17197
+		// Token: 0x040043C8 RID: 17352
 		public string file;
 
-		// Token: 0x0400432E RID: 17198
+		// Token: 0x040043C9 RID: 17353
 		public string dir;
 	}
 }

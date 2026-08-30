@@ -2,32 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020001E2 RID: 482
+// Token: 0x020001E4 RID: 484
 [Preserve]
 public class ConsoleCmdAIDirectorSpawnHorde : ConsoleCmdAbstract
 {
-	// Token: 0x06000EE3 RID: 3811 RVA: 0x00060B72 File Offset: 0x0005ED72
+	// Token: 0x06000EEE RID: 3822 RVA: 0x000610BA File Offset: 0x0005F2BA
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "spawnwandering", "spawnw" };
 	}
 
-	// Token: 0x06000EE4 RID: 3812 RVA: 0x00060B8A File Offset: 0x0005ED8A
+	// Token: 0x06000EEF RID: 3823 RVA: 0x000610D2 File Offset: 0x0005F2D2
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Spawn wandering entities";
 	}
 
-	// Token: 0x06000EE5 RID: 3813 RVA: 0x00060B91 File Offset: 0x0005ED91
+	// Token: 0x06000EF0 RID: 3824 RVA: 0x000610D9 File Offset: 0x0005F2D9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Commands:\nb - bandits\nh - horde";
 	}
 
-	// Token: 0x06000EE6 RID: 3814 RVA: 0x00060B98 File Offset: 0x0005ED98
+	// Token: 0x06000EF1 RID: 3825 RVA: 0x000610E0 File Offset: 0x0005F2E0
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 0)

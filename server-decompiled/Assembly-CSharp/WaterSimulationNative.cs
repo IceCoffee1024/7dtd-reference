@@ -8,29 +8,29 @@ using Unity.Jobs;
 using Unity.Jobs.LowLevel.Unsafe;
 using UnityEngine;
 
-// Token: 0x02000CBE RID: 3262
+// Token: 0x02000CD0 RID: 3280
 public class WaterSimulationNative
 {
-	// Token: 0x17000A70 RID: 2672
-	// (get) Token: 0x0600642A RID: 25642 RVA: 0x00273406 File Offset: 0x00271606
-	// (set) Token: 0x0600642B RID: 25643 RVA: 0x0027340D File Offset: 0x0027160D
+	// Token: 0x17000A83 RID: 2691
+	// (get) Token: 0x060064B6 RID: 25782 RVA: 0x00276302 File Offset: 0x00274502
+	// (set) Token: 0x060064B7 RID: 25783 RVA: 0x00276309 File Offset: 0x00274509
 	public static WaterSimulationNative Instance
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	} = new WaterSimulationNative();
 
-	// Token: 0x17000A71 RID: 2673
-	// (get) Token: 0x0600642C RID: 25644 RVA: 0x00273415 File Offset: 0x00271615
-	// (set) Token: 0x0600642D RID: 25645 RVA: 0x0027341D File Offset: 0x0027161D
+	// Token: 0x17000A84 RID: 2692
+	// (get) Token: 0x060064B8 RID: 25784 RVA: 0x00276311 File Offset: 0x00274511
+	// (set) Token: 0x060064B9 RID: 25785 RVA: 0x00276319 File Offset: 0x00274519
 	public bool IsInitialized
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000A72 RID: 2674
-	// (get) Token: 0x0600642E RID: 25646 RVA: 0x00273426 File Offset: 0x00271626
+	// Token: 0x17000A85 RID: 2693
+	// (get) Token: 0x060064BA RID: 25786 RVA: 0x00276322 File Offset: 0x00274522
 	public bool IsPaused
 	{
 		get
@@ -39,7 +39,7 @@ public class WaterSimulationNative
 		}
 	}
 
-	// Token: 0x0600642F RID: 25647 RVA: 0x00273430 File Offset: 0x00271630
+	// Token: 0x060064BB RID: 25787 RVA: 0x0027632C File Offset: 0x0027452C
 	public void Init(ChunkCluster _cc)
 	{
 		this.changeApplier = new WaterSimulationApplyChanges(_cc);
@@ -63,7 +63,7 @@ public class WaterSimulationNative
 		this.isPaused = false;
 	}
 
-	// Token: 0x06006430 RID: 25648 RVA: 0x002734E8 File Offset: 0x002716E8
+	// Token: 0x060064BC RID: 25788 RVA: 0x002763E4 File Offset: 0x002745E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsChunkInWorldBounds(Chunk _c)
 	{
@@ -73,7 +73,7 @@ public class WaterSimulationNative
 		return _c.X * 16 >= vector3i.x && _c.X * 16 < vector3i2.x && _c.Z * 16 >= vector3i.z && _c.Z * 16 < vector3i2.z;
 	}
 
-	// Token: 0x06006431 RID: 25649 RVA: 0x00273550 File Offset: 0x00271750
+	// Token: 0x060064BD RID: 25789 RVA: 0x0027644C File Offset: 0x0027464C
 	public void InitializeChunk(Chunk _c)
 	{
 		if (!this.IsInitialized)
@@ -105,7 +105,7 @@ public class WaterSimulationNative
 		_c.AssignWaterSimHandle(new WaterSimulationNative.ChunkHandle(this, _c));
 	}
 
-	// Token: 0x06006432 RID: 25650 RVA: 0x002735E4 File Offset: 0x002717E4
+	// Token: 0x060064BE RID: 25790 RVA: 0x002764E0 File Offset: 0x002746E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CopyInitializedChunksToNative()
 	{
@@ -133,7 +133,7 @@ public class WaterSimulationNative
 		}
 	}
 
-	// Token: 0x06006433 RID: 25651 RVA: 0x00273678 File Offset: 0x00271878
+	// Token: 0x060064BF RID: 25791 RVA: 0x00276574 File Offset: 0x00274774
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ProcessPendingRemoves()
 	{
@@ -151,13 +151,13 @@ public class WaterSimulationNative
 		}
 	}
 
-	// Token: 0x06006434 RID: 25652 RVA: 0x002736D9 File Offset: 0x002718D9
+	// Token: 0x060064C0 RID: 25792 RVA: 0x002765D5 File Offset: 0x002747D5
 	public void SetPaused(bool _isPaused)
 	{
 		this.isPaused = _isPaused;
 	}
 
-	// Token: 0x06006435 RID: 25653 RVA: 0x002736E2 File Offset: 0x002718E2
+	// Token: 0x060064C1 RID: 25793 RVA: 0x002765DE File Offset: 0x002747DE
 	public void Step()
 	{
 		if (!this.isPaused)
@@ -170,7 +170,7 @@ public class WaterSimulationNative
 		this.isPaused = true;
 	}
 
-	// Token: 0x06006436 RID: 25654 RVA: 0x00273708 File Offset: 0x00271908
+	// Token: 0x060064C2 RID: 25794 RVA: 0x00276604 File Offset: 0x00274804
 	public unsafe void Update()
 	{
 		if (!this.IsInitialized)
@@ -261,7 +261,7 @@ public class WaterSimulationNative
 		WaterStatsProfiler.SampleTick(waterStats);
 	}
 
-	// Token: 0x06006437 RID: 25655 RVA: 0x002739F8 File Offset: 0x00271BF8
+	// Token: 0x060064C3 RID: 25795 RVA: 0x002768F4 File Offset: 0x00274AF4
 	public void Clear()
 	{
 		if (!this.IsInitialized)
@@ -284,7 +284,7 @@ public class WaterSimulationNative
 		this.modifiedChunks.Clear();
 	}
 
-	// Token: 0x06006438 RID: 25656 RVA: 0x00273AB8 File Offset: 0x00271CB8
+	// Token: 0x060064C4 RID: 25796 RVA: 0x002769B4 File Offset: 0x00274BB4
 	public void Cleanup()
 	{
 		WaterSimulationApplyChanges waterSimulationApplyChanges = this.changeApplier;
@@ -324,7 +324,7 @@ public class WaterSimulationNative
 		this.IsInitialized = false;
 	}
 
-	// Token: 0x06006439 RID: 25657 RVA: 0x00273BB0 File Offset: 0x00271DB0
+	// Token: 0x060064C5 RID: 25797 RVA: 0x00276AAC File Offset: 0x00274CAC
 	public string GetMemoryStats()
 	{
 		int count = this.usedHandles.Count;
@@ -359,7 +359,7 @@ public class WaterSimulationNative
 		});
 	}
 
-	// Token: 0x0600643A RID: 25658 RVA: 0x00273D78 File Offset: 0x00271F78
+	// Token: 0x060064C6 RID: 25798 RVA: 0x00276C74 File Offset: 0x00274E74
 	public string GetMemoryStatsDetailed()
 	{
 		StringBuilder stringBuilder = new StringBuilder();
@@ -371,64 +371,64 @@ public class WaterSimulationNative
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x04004DB4 RID: 19892
+	// Token: 0x04004E52 RID: 20050
 	public bool ShouldEnable = true;
 
-	// Token: 0x04004DB6 RID: 19894
+	// Token: 0x04004E54 RID: 20052
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isPaused;
 
-	// Token: 0x04004DB7 RID: 19895
+	// Token: 0x04004E55 RID: 20053
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<ChunkKey, NativeSafeHandle<WaterDataHandle>> usedHandles = new Dictionary<ChunkKey, NativeSafeHandle<WaterDataHandle>>();
 
-	// Token: 0x04004DB8 RID: 19896
+	// Token: 0x04004E56 RID: 20054
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ConcurrentQueue<NativeSafeHandle<WaterDataHandle>> freeHandles = new ConcurrentQueue<NativeSafeHandle<WaterDataHandle>>();
 
-	// Token: 0x04004DB9 RID: 19897
+	// Token: 0x04004E57 RID: 20055
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ConcurrentQueue<WaterSimulationNative.HandleInitRequest> newInitializedHandles = new ConcurrentQueue<WaterSimulationNative.HandleInitRequest>();
 
-	// Token: 0x04004DBA RID: 19898
+	// Token: 0x04004E58 RID: 20056
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ConcurrentQueue<ChunkKey> handlesToRemove = new ConcurrentQueue<ChunkKey>();
 
-	// Token: 0x04004DBB RID: 19899
+	// Token: 0x04004E59 RID: 20057
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UnsafeParallelHashSet<ChunkKey> activeHandles;
 
-	// Token: 0x04004DBC RID: 19900
+	// Token: 0x04004E5A RID: 20058
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UnsafeParallelHashMap<ChunkKey, WaterDataHandle> waterDataHandles;
 
-	// Token: 0x04004DBD RID: 19901
+	// Token: 0x04004E5B RID: 20059
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UnsafeParallelHashSet<ChunkKey> modifiedChunks;
 
-	// Token: 0x04004DBE RID: 19902
+	// Token: 0x04004E5C RID: 20060
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GroundWaterHeightMap groundWaterHeightMap;
 
-	// Token: 0x04004DBF RID: 19903
+	// Token: 0x04004E5D RID: 20061
 	public WaterSimulationApplyChanges changeApplier;
 
-	// Token: 0x02000CBF RID: 3263
+	// Token: 0x02000CD1 RID: 3281
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct HandleInitRequest
 	{
-		// Token: 0x04004DC0 RID: 19904
+		// Token: 0x04004E5E RID: 20062
 		public ChunkKey chunkKey;
 
-		// Token: 0x04004DC1 RID: 19905
+		// Token: 0x04004E5F RID: 20063
 		public NativeSafeHandle<WaterDataHandle> safeHandle;
 	}
 
-	// Token: 0x02000CC0 RID: 3264
+	// Token: 0x02000CD2 RID: 3282
 	public struct ChunkHandle
 	{
-		// Token: 0x17000A73 RID: 2675
-		// (get) Token: 0x0600643D RID: 25661 RVA: 0x00273E6B File Offset: 0x0027206B
+		// Token: 0x17000A86 RID: 2694
+		// (get) Token: 0x060064C9 RID: 25801 RVA: 0x00276D67 File Offset: 0x00274F67
 		public bool IsValid
 		{
 			get
@@ -437,14 +437,14 @@ public class WaterSimulationNative
 			}
 		}
 
-		// Token: 0x0600643E RID: 25662 RVA: 0x00273E76 File Offset: 0x00272076
+		// Token: 0x060064CA RID: 25802 RVA: 0x00276D72 File Offset: 0x00274F72
 		public ChunkHandle(WaterSimulationNative _sim, Chunk _chunk)
 		{
 			this.sim = _sim;
 			this.chunkKey = new ChunkKey(_chunk);
 		}
 
-		// Token: 0x0600643F RID: 25663 RVA: 0x00273E8C File Offset: 0x0027208C
+		// Token: 0x060064CB RID: 25803 RVA: 0x00276D88 File Offset: 0x00274F88
 		public void SetWaterMass(int _x, int _y, int _z, int _mass)
 		{
 			if (!this.IsValid)
@@ -460,7 +460,7 @@ public class WaterSimulationNative
 			}
 		}
 
-		// Token: 0x06006440 RID: 25664 RVA: 0x00273EE8 File Offset: 0x002720E8
+		// Token: 0x060064CC RID: 25804 RVA: 0x00276DE4 File Offset: 0x00274FE4
 		public void SetVoxelSolid(int _x, int _y, int _z, BlockFaceFlag _flags)
 		{
 			if (!this.IsValid)
@@ -478,7 +478,7 @@ public class WaterSimulationNative
 			}
 		}
 
-		// Token: 0x06006441 RID: 25665 RVA: 0x00273F34 File Offset: 0x00272134
+		// Token: 0x060064CD RID: 25805 RVA: 0x00276E30 File Offset: 0x00275030
 		public void WakeNeighbours(int _x, int _y, int _z)
 		{
 			if (!this.IsValid)
@@ -493,7 +493,7 @@ public class WaterSimulationNative
 			this.sim.modifiedChunks.Add(this.chunkKey);
 		}
 
-		// Token: 0x06006442 RID: 25666 RVA: 0x00273F85 File Offset: 0x00272185
+		// Token: 0x060064CE RID: 25806 RVA: 0x00276E81 File Offset: 0x00275081
 		public void Reset()
 		{
 			if (this.IsValid && this.sim.IsInitialized)
@@ -504,11 +504,11 @@ public class WaterSimulationNative
 			this.chunkKey = default(ChunkKey);
 		}
 
-		// Token: 0x04004DC2 RID: 19906
+		// Token: 0x04004E60 RID: 20064
 		[PublicizedFrom(EAccessModifier.Private)]
 		public WaterSimulationNative sim;
 
-		// Token: 0x04004DC3 RID: 19907
+		// Token: 0x04004E61 RID: 20065
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ChunkKey chunkKey;
 	}

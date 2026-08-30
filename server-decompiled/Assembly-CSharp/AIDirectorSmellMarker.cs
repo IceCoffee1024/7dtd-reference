@@ -2,17 +2,17 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000419 RID: 1049
+// Token: 0x0200041D RID: 1053
 [Preserve]
 public sealed class AIDirectorSmellMarker : IAIDirectorMarker, IMemoryPoolableObject
 {
-	// Token: 0x0600205E RID: 8286 RVA: 0x000C3968 File Offset: 0x000C1B68
+	// Token: 0x0600207B RID: 8315 RVA: 0x000C4104 File Offset: 0x000C2304
 	public void Reference()
 	{
 		this.m_refCount++;
 	}
 
-	// Token: 0x0600205F RID: 8287 RVA: 0x000C3978 File Offset: 0x000C1B78
+	// Token: 0x0600207C RID: 8316 RVA: 0x000C4114 File Offset: 0x000C2314
 	public bool Release()
 	{
 		int num = this.m_refCount - 1;
@@ -26,18 +26,18 @@ public sealed class AIDirectorSmellMarker : IAIDirectorMarker, IMemoryPoolableOb
 		return false;
 	}
 
-	// Token: 0x06002060 RID: 8288 RVA: 0x000C39AC File Offset: 0x000C1BAC
+	// Token: 0x0600207D RID: 8317 RVA: 0x000C4148 File Offset: 0x000C2348
 	public void Reset()
 	{
 		this.m_playerState = null;
 	}
 
-	// Token: 0x06002061 RID: 8289 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600207E RID: 8318 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Cleanup()
 	{
 	}
 
-	// Token: 0x06002062 RID: 8290 RVA: 0x000C39B8 File Offset: 0x000C1BB8
+	// Token: 0x0600207F RID: 8319 RVA: 0x000C4154 File Offset: 0x000C2354
 	public void Tick(double dt)
 	{
 		this.m_ttl -= dt;
@@ -59,8 +59,8 @@ public sealed class AIDirectorSmellMarker : IAIDirectorMarker, IMemoryPoolableOb
 		this.m_effectiveStrength = this.m_strength * (1.0 - this.m_time / this.m_lifetime);
 	}
 
-	// Token: 0x170003C4 RID: 964
-	// (get) Token: 0x06002063 RID: 8291 RVA: 0x000C3AA4 File Offset: 0x000C1CA4
+	// Token: 0x170003C8 RID: 968
+	// (get) Token: 0x06002080 RID: 8320 RVA: 0x000C4240 File Offset: 0x000C2440
 	public EntityPlayer Player
 	{
 		get
@@ -73,7 +73,7 @@ public sealed class AIDirectorSmellMarker : IAIDirectorMarker, IMemoryPoolableOb
 		}
 	}
 
-	// Token: 0x06002064 RID: 8292 RVA: 0x000C3ABC File Offset: 0x000C1CBC
+	// Token: 0x06002081 RID: 8321 RVA: 0x000C4258 File Offset: 0x000C2458
 	public double IntensityForPosition(Vector3 position)
 	{
 		double num = (double)(this.m_pos - position).magnitude;
@@ -89,8 +89,8 @@ public sealed class AIDirectorSmellMarker : IAIDirectorMarker, IMemoryPoolableOb
 		return this.m_effectiveStrength * num2;
 	}
 
-	// Token: 0x170003C5 RID: 965
-	// (get) Token: 0x06002065 RID: 8293 RVA: 0x000C3B16 File Offset: 0x000C1D16
+	// Token: 0x170003C9 RID: 969
+	// (get) Token: 0x06002082 RID: 8322 RVA: 0x000C42B2 File Offset: 0x000C24B2
 	public Vector3 Position
 	{
 		get
@@ -99,8 +99,8 @@ public sealed class AIDirectorSmellMarker : IAIDirectorMarker, IMemoryPoolableOb
 		}
 	}
 
-	// Token: 0x170003C6 RID: 966
-	// (get) Token: 0x06002066 RID: 8294 RVA: 0x000C3B1E File Offset: 0x000C1D1E
+	// Token: 0x170003CA RID: 970
+	// (get) Token: 0x06002083 RID: 8323 RVA: 0x000C42BA File Offset: 0x000C24BA
 	public Vector3 TargetPosition
 	{
 		get
@@ -109,8 +109,8 @@ public sealed class AIDirectorSmellMarker : IAIDirectorMarker, IMemoryPoolableOb
 		}
 	}
 
-	// Token: 0x170003C7 RID: 967
-	// (get) Token: 0x06002067 RID: 8295 RVA: 0x000C3B26 File Offset: 0x000C1D26
+	// Token: 0x170003CB RID: 971
+	// (get) Token: 0x06002084 RID: 8324 RVA: 0x000C42C2 File Offset: 0x000C24C2
 	public bool Valid
 	{
 		get
@@ -119,8 +119,8 @@ public sealed class AIDirectorSmellMarker : IAIDirectorMarker, IMemoryPoolableOb
 		}
 	}
 
-	// Token: 0x170003C8 RID: 968
-	// (get) Token: 0x06002068 RID: 8296 RVA: 0x000C3B59 File Offset: 0x000C1D59
+	// Token: 0x170003CC RID: 972
+	// (get) Token: 0x06002085 RID: 8325 RVA: 0x000C42F5 File Offset: 0x000C24F5
 	public float MaxRadius
 	{
 		get
@@ -129,8 +129,8 @@ public sealed class AIDirectorSmellMarker : IAIDirectorMarker, IMemoryPoolableOb
 		}
 	}
 
-	// Token: 0x170003C9 RID: 969
-	// (get) Token: 0x06002069 RID: 8297 RVA: 0x000C3B62 File Offset: 0x000C1D62
+	// Token: 0x170003CD RID: 973
+	// (get) Token: 0x06002086 RID: 8326 RVA: 0x000C42FE File Offset: 0x000C24FE
 	public float Radius
 	{
 		get
@@ -139,8 +139,8 @@ public sealed class AIDirectorSmellMarker : IAIDirectorMarker, IMemoryPoolableOb
 		}
 	}
 
-	// Token: 0x170003CA RID: 970
-	// (get) Token: 0x0600206A RID: 8298 RVA: 0x000C3B6B File Offset: 0x000C1D6B
+	// Token: 0x170003CE RID: 974
+	// (get) Token: 0x06002087 RID: 8327 RVA: 0x000C4307 File Offset: 0x000C2507
 	public float TimeToLive
 	{
 		get
@@ -149,8 +149,8 @@ public sealed class AIDirectorSmellMarker : IAIDirectorMarker, IMemoryPoolableOb
 		}
 	}
 
-	// Token: 0x170003CB RID: 971
-	// (get) Token: 0x0600206B RID: 8299 RVA: 0x000C3B74 File Offset: 0x000C1D74
+	// Token: 0x170003CF RID: 975
+	// (get) Token: 0x06002088 RID: 8328 RVA: 0x000C4310 File Offset: 0x000C2510
 	public float ValidTime
 	{
 		get
@@ -159,8 +159,8 @@ public sealed class AIDirectorSmellMarker : IAIDirectorMarker, IMemoryPoolableOb
 		}
 	}
 
-	// Token: 0x170003CC RID: 972
-	// (get) Token: 0x0600206C RID: 8300 RVA: 0x000C3B7D File Offset: 0x000C1D7D
+	// Token: 0x170003D0 RID: 976
+	// (get) Token: 0x06002089 RID: 8329 RVA: 0x000C4319 File Offset: 0x000C2519
 	public float Speed
 	{
 		get
@@ -169,8 +169,8 @@ public sealed class AIDirectorSmellMarker : IAIDirectorMarker, IMemoryPoolableOb
 		}
 	}
 
-	// Token: 0x170003CD RID: 973
-	// (get) Token: 0x0600206D RID: 8301 RVA: 0x000C3B86 File Offset: 0x000C1D86
+	// Token: 0x170003D1 RID: 977
+	// (get) Token: 0x0600208A RID: 8330 RVA: 0x000C4322 File Offset: 0x000C2522
 	public int Priority
 	{
 		get
@@ -179,8 +179,8 @@ public sealed class AIDirectorSmellMarker : IAIDirectorMarker, IMemoryPoolableOb
 		}
 	}
 
-	// Token: 0x170003CE RID: 974
-	// (get) Token: 0x0600206E RID: 8302 RVA: 0x000C3B8E File Offset: 0x000C1D8E
+	// Token: 0x170003D2 RID: 978
+	// (get) Token: 0x0600208B RID: 8331 RVA: 0x000C432A File Offset: 0x000C252A
 	public bool InterruptsNonPlayerAttack
 	{
 		get
@@ -189,8 +189,8 @@ public sealed class AIDirectorSmellMarker : IAIDirectorMarker, IMemoryPoolableOb
 		}
 	}
 
-	// Token: 0x170003CF RID: 975
-	// (get) Token: 0x0600206F RID: 8303 RVA: 0x000C3B96 File Offset: 0x000C1D96
+	// Token: 0x170003D3 RID: 979
+	// (get) Token: 0x0600208C RID: 8332 RVA: 0x000C4332 File Offset: 0x000C2532
 	public bool IsDistraction
 	{
 		get
@@ -199,13 +199,13 @@ public sealed class AIDirectorSmellMarker : IAIDirectorMarker, IMemoryPoolableOb
 		}
 	}
 
-	// Token: 0x06002070 RID: 8304 RVA: 0x0001FF1E File Offset: 0x0001E11E
+	// Token: 0x0600208D RID: 8333 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
 	public static AIDirectorSmellMarker Allocate(AIDirectorPlayerState ps, Vector3 position, Vector3 targetPosition, double radius, double strength, double speed, int priority, double ttl, bool interruptsNonPlayerAttack, bool isDistraction)
 	{
 		return null;
 	}
 
-	// Token: 0x06002071 RID: 8305 RVA: 0x000C3BA0 File Offset: 0x000C1DA0
+	// Token: 0x0600208E RID: 8334 RVA: 0x000C433C File Offset: 0x000C253C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AIDirectorSmellMarker Construct(AIDirectorPlayerState ps, Vector3 position, Vector3 targetPosition, double radius, double strength, double speed, int priority, double ttl, bool interruptsNonPlayerAttack, bool isDistraction)
 	{
@@ -235,74 +235,74 @@ public sealed class AIDirectorSmellMarker : IAIDirectorMarker, IMemoryPoolableOb
 		return this;
 	}
 
-	// Token: 0x0400161B RID: 5659
+	// Token: 0x04001630 RID: 5680
 	public const int kMax = 256;
 
-	// Token: 0x0400161C RID: 5660
+	// Token: 0x04001631 RID: 5681
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static MemoryPooledObject<AIDirectorSmellMarker> s_pool = new MemoryPooledObject<AIDirectorSmellMarker>(256);
 
-	// Token: 0x0400161D RID: 5661
+	// Token: 0x04001632 RID: 5682
 	[PublicizedFrom(EAccessModifier.Private)]
 	public double m_radius;
 
-	// Token: 0x0400161E RID: 5662
+	// Token: 0x04001633 RID: 5683
 	[PublicizedFrom(EAccessModifier.Private)]
 	public double m_strength;
 
-	// Token: 0x0400161F RID: 5663
+	// Token: 0x04001634 RID: 5684
 	[PublicizedFrom(EAccessModifier.Private)]
 	public double m_speed;
 
-	// Token: 0x04001620 RID: 5664
+	// Token: 0x04001635 RID: 5685
 	[PublicizedFrom(EAccessModifier.Private)]
 	public double m_ttl;
 
-	// Token: 0x04001621 RID: 5665
+	// Token: 0x04001636 RID: 5686
 	[PublicizedFrom(EAccessModifier.Private)]
 	public double m_validTime;
 
-	// Token: 0x04001622 RID: 5666
+	// Token: 0x04001637 RID: 5687
 	[PublicizedFrom(EAccessModifier.Private)]
 	public double m_time;
 
-	// Token: 0x04001623 RID: 5667
+	// Token: 0x04001638 RID: 5688
 	[PublicizedFrom(EAccessModifier.Private)]
 	public double m_lifetime;
 
-	// Token: 0x04001624 RID: 5668
+	// Token: 0x04001639 RID: 5689
 	[PublicizedFrom(EAccessModifier.Private)]
 	public double m_effectiveRadius;
 
-	// Token: 0x04001625 RID: 5669
+	// Token: 0x0400163A RID: 5690
 	[PublicizedFrom(EAccessModifier.Private)]
 	public double m_effectiveStrength;
 
-	// Token: 0x04001626 RID: 5670
+	// Token: 0x0400163B RID: 5691
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_priority;
 
-	// Token: 0x04001627 RID: 5671
+	// Token: 0x0400163C RID: 5692
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_refCount;
 
-	// Token: 0x04001628 RID: 5672
+	// Token: 0x0400163D RID: 5693
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 m_pos;
 
-	// Token: 0x04001629 RID: 5673
+	// Token: 0x0400163E RID: 5694
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 m_targetPos;
 
-	// Token: 0x0400162A RID: 5674
+	// Token: 0x0400163F RID: 5695
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AIDirectorPlayerState m_playerState;
 
-	// Token: 0x0400162B RID: 5675
+	// Token: 0x04001640 RID: 5696
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool m_interruptsNonPlayerAttack;
 
-	// Token: 0x0400162C RID: 5676
+	// Token: 0x04001641 RID: 5697
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool m_isDistraction;
 }

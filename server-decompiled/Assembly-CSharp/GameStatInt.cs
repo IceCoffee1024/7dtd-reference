@@ -2,11 +2,11 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006AC RID: 1708
+// Token: 0x020006B6 RID: 1718
 [Preserve]
 public class GameStatInt : TargetedCompareRequirementBase
 {
-	// Token: 0x06003564 RID: 13668 RVA: 0x001600CC File Offset: 0x0015E2CC
+	// Token: 0x060035BA RID: 13754 RVA: 0x001622A4 File Offset: 0x001604A4
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -21,7 +21,7 @@ public class GameStatInt : TargetedCompareRequirementBase
 		return RequirementBase.compareValues((float)@int, this.operation, this.value);
 	}
 
-	// Token: 0x06003565 RID: 13669 RVA: 0x00160124 File Offset: 0x0015E324
+	// Token: 0x060035BB RID: 13755 RVA: 0x001622FC File Offset: 0x001604FC
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -33,7 +33,7 @@ public class GameStatInt : TargetedCompareRequirementBase
 		return flag;
 	}
 
-	// Token: 0x04002AF4 RID: 10996
+	// Token: 0x04002B68 RID: 11112
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public EnumGameStats GameStat = EnumGameStats.AnimalCount;
 }

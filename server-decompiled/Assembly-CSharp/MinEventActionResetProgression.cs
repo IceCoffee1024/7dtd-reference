@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006E3 RID: 1763
+// Token: 0x020006ED RID: 1773
 [Preserve]
 public class MinEventActionResetProgression : MinEventActionTargetedBase
 {
-	// Token: 0x06003631 RID: 13873 RVA: 0x00166414 File Offset: 0x00164614
+	// Token: 0x06003687 RID: 13959 RVA: 0x001685EC File Offset: 0x001667EC
 	public override void Execute(MinEventParams _params)
 	{
 		EntityPlayerLocal entityPlayerLocal = this.targets[0] as EntityPlayerLocal;
@@ -38,7 +38,7 @@ public class MinEventActionResetProgression : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x06003632 RID: 13874 RVA: 0x00166520 File Offset: 0x00164720
+	// Token: 0x06003688 RID: 13960 RVA: 0x001686F8 File Offset: 0x001668F8
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -74,19 +74,19 @@ public class MinEventActionResetProgression : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002B97 RID: 11159
+	// Token: 0x04002C0B RID: 11275
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool resetLevels;
 
-	// Token: 0x04002B98 RID: 11160
+	// Token: 0x04002C0C RID: 11276
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool resetSkills;
 
-	// Token: 0x04002B99 RID: 11161
+	// Token: 0x04002C0D RID: 11277
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool removeBooks;
 
-	// Token: 0x04002B9A RID: 11162
+	// Token: 0x04002C0E RID: 11278
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool removeCrafting;
 }

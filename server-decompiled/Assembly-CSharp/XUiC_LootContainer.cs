@@ -1,38 +1,38 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F63 RID: 3939
+// Token: 0x02000F7C RID: 3964
 [Preserve]
 public class XUiC_LootContainer : XUiC_ItemStackGrid, ITileEntityChangedListener
 {
-	// Token: 0x17000E72 RID: 3698
-	// (get) Token: 0x06007C22 RID: 31778 RVA: 0x002EFF61 File Offset: 0x002EE161
-	// (set) Token: 0x06007C23 RID: 31779 RVA: 0x002EFF69 File Offset: 0x002EE169
+	// Token: 0x17000EAB RID: 3755
+	// (get) Token: 0x06007D14 RID: 32020 RVA: 0x002F4735 File Offset: 0x002F2935
+	// (set) Token: 0x06007D15 RID: 32021 RVA: 0x002F473D File Offset: 0x002F293D
 	public Vector2i GridCellSize
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06007C24 RID: 31780 RVA: 0x002EFF72 File Offset: 0x002EE172
+	// Token: 0x06007D16 RID: 32022 RVA: 0x002F4746 File Offset: 0x002F2946
 	public override ItemStack[] GetSlots()
 	{
 		return this.localTileEntity.items;
 	}
 
-	// Token: 0x06007C25 RID: 31781 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06007D17 RID: 32023 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateBackend(ItemStack[] _stackList)
 	{
 	}
 
-	// Token: 0x06007C26 RID: 31782 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06007D18 RID: 32024 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SetStacks(ItemStack[] _stackList)
 	{
 	}
 
-	// Token: 0x06007C27 RID: 31783 RVA: 0x002EFF80 File Offset: 0x002EE180
+	// Token: 0x06007D19 RID: 32025 RVA: 0x002F4754 File Offset: 0x002F2954
 	public void SetSlots(ITileEntityLootable _lootContainer, ItemStack[] _stackList)
 	{
 		if (_stackList == null)
@@ -69,7 +69,7 @@ public class XUiC_LootContainer : XUiC_ItemStackGrid, ITileEntityChangedListener
 		this.windowGroup.Controller.SetAllChildrenDirty();
 	}
 
-	// Token: 0x06007C28 RID: 31784 RVA: 0x002F00A8 File Offset: 0x002EE2A8
+	// Token: 0x06007D1A RID: 32026 RVA: 0x002F487C File Offset: 0x002F2A7C
 	public override void Init()
 	{
 		base.Init();
@@ -77,14 +77,14 @@ public class XUiC_LootContainer : XUiC_ItemStackGrid, ITileEntityChangedListener
 		this.GridCellSize = new Vector2i(xuiV_Grid.CellWidth, xuiV_Grid.CellHeight);
 	}
 
-	// Token: 0x06007C29 RID: 31785 RVA: 0x002F00DE File Offset: 0x002EE2DE
+	// Token: 0x06007D1B RID: 32027 RVA: 0x002F48B2 File Offset: 0x002F2AB2
 	public void HandleLootSlotChangedEvent(int _slotNumber, ItemStack _stack)
 	{
 		this.localTileEntity.UpdateSlot(_slotNumber, _stack);
 		this.localTileEntity.SetModified();
 	}
 
-	// Token: 0x06007C2A RID: 31786 RVA: 0x002F00F8 File Offset: 0x002EE2F8
+	// Token: 0x06007D1C RID: 32028 RVA: 0x002F48CC File Offset: 0x002F2ACC
 	public void OnTileEntityChanged(ITileEntity _te)
 	{
 		ItemStack[] slots = this.GetSlots();
@@ -97,7 +97,7 @@ public class XUiC_LootContainer : XUiC_ItemStackGrid, ITileEntityChangedListener
 		}
 	}
 
-	// Token: 0x06007C2B RID: 31787 RVA: 0x002F0150 File Offset: 0x002EE350
+	// Token: 0x06007D1D RID: 32029 RVA: 0x002F4924 File Offset: 0x002F2B24
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -110,7 +110,7 @@ public class XUiC_LootContainer : XUiC_ItemStackGrid, ITileEntityChangedListener
 		QuestEventManager.Current.OpenedContainer(this.localTileEntity.ToWorldPos(), this.localTileEntity);
 	}
 
-	// Token: 0x06007C2C RID: 31788 RVA: 0x002F01CC File Offset: 0x002EE3CC
+	// Token: 0x06007D1E RID: 32030 RVA: 0x002F49A0 File Offset: 0x002F2BA0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LocalTileEntity_Destroyed(ITileEntity _te)
 	{
@@ -125,7 +125,7 @@ public class XUiC_LootContainer : XUiC_ItemStackGrid, ITileEntityChangedListener
 		}
 	}
 
-	// Token: 0x06007C2D RID: 31789 RVA: 0x002F021C File Offset: 0x002EE41C
+	// Token: 0x06007D1F RID: 32031 RVA: 0x002F49F0 File Offset: 0x002F2BF0
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -142,7 +142,7 @@ public class XUiC_LootContainer : XUiC_ItemStackGrid, ITileEntityChangedListener
 		}
 	}
 
-	// Token: 0x04005BE6 RID: 23526
+	// Token: 0x04005CAD RID: 23725
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ITileEntityLootable localTileEntity;
 }

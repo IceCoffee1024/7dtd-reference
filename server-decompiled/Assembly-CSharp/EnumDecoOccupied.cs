@@ -1,24 +1,24 @@
 ﻿using System;
 
-// Token: 0x02000C01 RID: 3073
+// Token: 0x02000C13 RID: 3091
 public enum EnumDecoOccupied : byte
 {
-	// Token: 0x0400489E RID: 18590
+	// Token: 0x0400493B RID: 18747
 	Free,
-	// Token: 0x0400489F RID: 18591
+	// Token: 0x0400493C RID: 18748
 	SmallSlope,
-	// Token: 0x040048A0 RID: 18592
+	// Token: 0x0400493D RID: 18749
 	Stop_BigDeco,
-	// Token: 0x040048A1 RID: 18593
+	// Token: 0x0400493E RID: 18750
 	Perimeter,
-	// Token: 0x040048A2 RID: 18594
+	// Token: 0x0400493F RID: 18751
 	Stop_AnyDeco,
-	// Token: 0x040048A3 RID: 18595
+	// Token: 0x04004940 RID: 18752
 	Deco,
-	// Token: 0x040048A4 RID: 18596
+	// Token: 0x04004941 RID: 18753
 	POI,
-	// Token: 0x040048A5 RID: 18597
+	// Token: 0x04004942 RID: 18754
 	BigSlope,
-	// Token: 0x040048A6 RID: 18598
+	// Token: 0x04004943 RID: 18755
 	NoneAllowed
 }

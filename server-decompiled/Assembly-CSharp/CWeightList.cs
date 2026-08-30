@@ -2,19 +2,19 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x020012B0 RID: 4784
+// Token: 0x020012CA RID: 4810
 [PublicizedFrom(EAccessModifier.Internal)]
 public class CWeightList
 {
-	// Token: 0x06009780 RID: 38784 RVA: 0x00399020 File Offset: 0x00397220
+	// Token: 0x0600987B RID: 39035 RVA: 0x0039E264 File Offset: 0x0039C464
 	public CWeightList()
 	{
 		this.weights = new ArrayList();
 	}
 
-	// Token: 0x040071D9 RID: 29145
+	// Token: 0x040072B0 RID: 29360
 	public Transform transform;
 
-	// Token: 0x040071DA RID: 29146
+	// Token: 0x040072B1 RID: 29361
 	public ArrayList weights;
 }

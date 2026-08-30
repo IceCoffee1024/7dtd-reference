@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Token: 0x02000745 RID: 1861
+// Token: 0x0200074F RID: 1871
 public class NavObject
 {
-	// Token: 0x1700057B RID: 1403
-	// (get) Token: 0x0600376F RID: 14191 RVA: 0x0016CB90 File Offset: 0x0016AD90
+	// Token: 0x17000584 RID: 1412
+	// (get) Token: 0x060037C5 RID: 14277 RVA: 0x0016EDAC File Offset: 0x0016CFAC
 	public string DisplayName
 	{
 		get
@@ -24,9 +24,9 @@ public class NavObject
 		}
 	}
 
-	// Token: 0x1700057C RID: 1404
-	// (get) Token: 0x06003770 RID: 14192 RVA: 0x0016CBC7 File Offset: 0x0016ADC7
-	// (set) Token: 0x06003771 RID: 14193 RVA: 0x0016CBCF File Offset: 0x0016ADCF
+	// Token: 0x17000585 RID: 1413
+	// (get) Token: 0x060037C6 RID: 14278 RVA: 0x0016EDE3 File Offset: 0x0016CFE3
+	// (set) Token: 0x060037C7 RID: 14279 RVA: 0x0016EDEB File Offset: 0x0016CFEB
 	public Transform TrackedTransform
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -41,9 +41,9 @@ public class NavObject
 		}
 	}
 
-	// Token: 0x1700057D RID: 1405
-	// (get) Token: 0x06003772 RID: 14194 RVA: 0x0016CBDF File Offset: 0x0016ADDF
-	// (set) Token: 0x06003773 RID: 14195 RVA: 0x0016CBE7 File Offset: 0x0016ADE7
+	// Token: 0x17000586 RID: 1414
+	// (get) Token: 0x060037C8 RID: 14280 RVA: 0x0016EDFB File Offset: 0x0016CFFB
+	// (set) Token: 0x060037C9 RID: 14281 RVA: 0x0016EE03 File Offset: 0x0016D003
 	public Vector3 TrackedPosition
 	{
 		get
@@ -57,9 +57,9 @@ public class NavObject
 		}
 	}
 
-	// Token: 0x1700057E RID: 1406
-	// (get) Token: 0x06003774 RID: 14196 RVA: 0x0016CBF7 File Offset: 0x0016ADF7
-	// (set) Token: 0x06003775 RID: 14197 RVA: 0x0016CBFF File Offset: 0x0016ADFF
+	// Token: 0x17000587 RID: 1415
+	// (get) Token: 0x060037CA RID: 14282 RVA: 0x0016EE13 File Offset: 0x0016D013
+	// (set) Token: 0x060037CB RID: 14283 RVA: 0x0016EE1B File Offset: 0x0016D01B
 	public Entity TrackedEntity
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -76,8 +76,8 @@ public class NavObject
 		}
 	}
 
-	// Token: 0x1700057F RID: 1407
-	// (get) Token: 0x06003776 RID: 14198 RVA: 0x0016CC36 File Offset: 0x0016AE36
+	// Token: 0x17000588 RID: 1416
+	// (get) Token: 0x060037CC RID: 14284 RVA: 0x0016EE52 File Offset: 0x0016D052
 	public NavObjectMapSettings CurrentMapSettings
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -92,8 +92,8 @@ public class NavObject
 		}
 	}
 
-	// Token: 0x17000580 RID: 1408
-	// (get) Token: 0x06003777 RID: 14199 RVA: 0x0016CC4F File Offset: 0x0016AE4F
+	// Token: 0x17000589 RID: 1417
+	// (get) Token: 0x060037CD RID: 14285 RVA: 0x0016EE6B File Offset: 0x0016D06B
 	public NavObjectCompassSettings CurrentCompassSettings
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -108,8 +108,8 @@ public class NavObject
 		}
 	}
 
-	// Token: 0x17000581 RID: 1409
-	// (get) Token: 0x06003778 RID: 14200 RVA: 0x0016CC68 File Offset: 0x0016AE68
+	// Token: 0x1700058A RID: 1418
+	// (get) Token: 0x060037CE RID: 14286 RVA: 0x0016EE84 File Offset: 0x0016D084
 	public NavObjectScreenSettings CurrentScreenSettings
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -124,8 +124,8 @@ public class NavObject
 		}
 	}
 
-	// Token: 0x17000582 RID: 1410
-	// (get) Token: 0x06003779 RID: 14201 RVA: 0x0016CC81 File Offset: 0x0016AE81
+	// Token: 0x1700058B RID: 1419
+	// (get) Token: 0x060037CF RID: 14287 RVA: 0x0016EE9D File Offset: 0x0016D09D
 	public bool HasOnScreen
 	{
 		get
@@ -134,8 +134,8 @@ public class NavObject
 		}
 	}
 
-	// Token: 0x17000583 RID: 1411
-	// (get) Token: 0x0600377A RID: 14202 RVA: 0x0016CC8C File Offset: 0x0016AE8C
+	// Token: 0x1700058C RID: 1420
+	// (get) Token: 0x060037D0 RID: 14288 RVA: 0x0016EEA8 File Offset: 0x0016D0A8
 	public Vector3 Rotation
 	{
 		get
@@ -152,25 +152,25 @@ public class NavObject
 		}
 	}
 
-	// Token: 0x0600377B RID: 14203 RVA: 0x0016CCE4 File Offset: 0x0016AEE4
+	// Token: 0x060037D1 RID: 14289 RVA: 0x0016EF00 File Offset: 0x0016D100
 	public bool IsTrackedTransform(Transform transform)
 	{
 		return this.TrackType == NavObject.TrackTypes.Transform && this.trackedTransform == transform;
 	}
 
-	// Token: 0x0600377C RID: 14204 RVA: 0x0016CCFD File Offset: 0x0016AEFD
+	// Token: 0x060037D2 RID: 14290 RVA: 0x0016EF19 File Offset: 0x0016D119
 	public bool IsTrackedPosition(Vector3 position)
 	{
 		return this.TrackType == NavObject.TrackTypes.Position && this.trackedPosition == position;
 	}
 
-	// Token: 0x0600377D RID: 14205 RVA: 0x0016CD16 File Offset: 0x0016AF16
+	// Token: 0x060037D3 RID: 14291 RVA: 0x0016EF32 File Offset: 0x0016D132
 	public bool IsTrackedEntity(Entity entity)
 	{
 		return this.TrackType == NavObject.TrackTypes.Entity && this.trackedEntity == entity;
 	}
 
-	// Token: 0x0600377E RID: 14206 RVA: 0x0016CD30 File Offset: 0x0016AF30
+	// Token: 0x060037D4 RID: 14292 RVA: 0x0016EF4C File Offset: 0x0016D14C
 	public bool IsValidPlayer(EntityPlayerLocal player, NavObjectClass navObjectClass)
 	{
 		if (this.ForceDisabled)
@@ -204,7 +204,7 @@ public class NavObject
 		return flag;
 	}
 
-	// Token: 0x0600377F RID: 14207 RVA: 0x0016CE1C File Offset: 0x0016B01C
+	// Token: 0x060037D5 RID: 14293 RVA: 0x0016F038 File Offset: 0x0016D238
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsValidEntity(EntityPlayerLocal player, Entity entity, NavObjectClass navObjectClass)
 	{
@@ -275,7 +275,7 @@ public class NavObject
 		return true;
 	}
 
-	// Token: 0x06003780 RID: 14208 RVA: 0x0016D0CB File Offset: 0x0016B2CB
+	// Token: 0x060037D6 RID: 14294 RVA: 0x0016F2E7 File Offset: 0x0016D4E7
 	public void AddNavObjectClass(NavObjectClass navClass)
 	{
 		if (!this.NavObjectClassList.Contains(navClass))
@@ -284,7 +284,7 @@ public class NavObject
 		}
 	}
 
-	// Token: 0x06003781 RID: 14209 RVA: 0x0016D0E8 File Offset: 0x0016B2E8
+	// Token: 0x060037D7 RID: 14295 RVA: 0x0016F304 File Offset: 0x0016D504
 	public bool RemoveNavObjectClass(NavObjectClass navClass)
 	{
 		this.NavObjectClassList.Remove(navClass);
@@ -296,7 +296,7 @@ public class NavObject
 		return false;
 	}
 
-	// Token: 0x06003782 RID: 14210 RVA: 0x0016D114 File Offset: 0x0016B314
+	// Token: 0x060037D8 RID: 14296 RVA: 0x0016F330 File Offset: 0x0016D530
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetupEntityOptions()
 	{
@@ -308,7 +308,7 @@ public class NavObject
 		this.OverrideSpriteName = "";
 	}
 
-	// Token: 0x06003783 RID: 14211 RVA: 0x0016D174 File Offset: 0x0016B374
+	// Token: 0x060037D9 RID: 14297 RVA: 0x0016F390 File Offset: 0x0016D590
 	public bool IsValid()
 	{
 		if (this.TrackType == NavObject.TrackTypes.Transform && this.TrackedTransform == null)
@@ -322,7 +322,7 @@ public class NavObject
 		return this.TrackType > NavObject.TrackTypes.None;
 	}
 
-	// Token: 0x06003784 RID: 14212 RVA: 0x0016D1C8 File Offset: 0x0016B3C8
+	// Token: 0x060037DA RID: 14298 RVA: 0x0016F3E4 File Offset: 0x0016D5E4
 	public Vector3 GetPosition()
 	{
 		switch (this.TrackType)
@@ -338,7 +338,7 @@ public class NavObject
 		}
 	}
 
-	// Token: 0x06003785 RID: 14213 RVA: 0x0016D22C File Offset: 0x0016B42C
+	// Token: 0x060037DB RID: 14299 RVA: 0x0016F448 File Offset: 0x0016D648
 	public float GetMaxDistance(NavObjectSettings settings, EntityPlayer player)
 	{
 		if (this.TrackType == NavObject.TrackTypes.Entity && this.NavObjectClass.RequirementType == NavObjectClass.RequirementTypes.Tracking && settings.MaxDistance == -1f)
@@ -348,7 +348,7 @@ public class NavObject
 		return settings.MaxDistance;
 	}
 
-	// Token: 0x06003786 RID: 14214 RVA: 0x0016D287 File Offset: 0x0016B487
+	// Token: 0x060037DC RID: 14300 RVA: 0x0016F4A3 File Offset: 0x0016D6A3
 	public string GetSpriteName(NavObjectSettings settings)
 	{
 		if (!this.NavObjectClass.UseOverrideIcon)
@@ -358,14 +358,14 @@ public class NavObject
 		return this.OverrideSpriteName;
 	}
 
-	// Token: 0x06003787 RID: 14215 RVA: 0x0016D2A4 File Offset: 0x0016B4A4
+	// Token: 0x060037DD RID: 14301 RVA: 0x0016F4C0 File Offset: 0x0016D6C0
 	public NavObject(string className)
 	{
 		this.Key = NavObject.nextKey++;
 		this.SetupNavObjectClass(className);
 	}
 
-	// Token: 0x06003788 RID: 14216 RVA: 0x0016D2F8 File Offset: 0x0016B4F8
+	// Token: 0x060037DE RID: 14302 RVA: 0x0016F514 File Offset: 0x0016D714
 	public void Reset(string className)
 	{
 		this.UseOverrideColor = false;
@@ -381,7 +381,7 @@ public class NavObject
 		this.TrackType = NavObject.TrackTypes.None;
 	}
 
-	// Token: 0x06003789 RID: 14217 RVA: 0x0016D360 File Offset: 0x0016B560
+	// Token: 0x060037DF RID: 14303 RVA: 0x0016F57C File Offset: 0x0016D77C
 	public void SetupNavObjectClass(string className)
 	{
 		this.NavObjectClassList.Clear();
@@ -414,7 +414,7 @@ public class NavObject
 		this.NavObjectClass = this.NavObjectClassList[0];
 	}
 
-	// Token: 0x0600378A RID: 14218 RVA: 0x0016D414 File Offset: 0x0016B614
+	// Token: 0x060037E0 RID: 14304 RVA: 0x0016F630 File Offset: 0x0016D830
 	public void HandleActiveNavClass(EntityPlayerLocal localPlayer)
 	{
 		if (this.NavObjectClassList != null && this.NavObjectClassList.Count > 0)
@@ -435,14 +435,14 @@ public class NavObject
 		}
 	}
 
-	// Token: 0x0600378B RID: 14219 RVA: 0x0016D498 File Offset: 0x0016B698
+	// Token: 0x060037E1 RID: 14305 RVA: 0x0016F6B4 File Offset: 0x0016D8B4
 	public virtual float GetCompassIconScale(float _distance)
 	{
 		float num = 1f - _distance / this.CurrentCompassSettings.MaxScaleDistance;
 		return Mathf.Lerp(this.CurrentCompassSettings.MinCompassIconScale, this.CurrentCompassSettings.MaxCompassIconScale, num);
 	}
 
-	// Token: 0x0600378C RID: 14220 RVA: 0x0016D4D8 File Offset: 0x0016B6D8
+	// Token: 0x060037E2 RID: 14306 RVA: 0x0016F6F4 File Offset: 0x0016D8F4
 	public override string ToString()
 	{
 		string text = "";
@@ -468,100 +468,100 @@ public class NavObject
 		return string.Format(text2, array);
 	}
 
-	// Token: 0x04002D42 RID: 11586
+	// Token: 0x04002DBA RID: 11706
 	public static Vector3 InvalidPos = new Vector3(-99999f, -99999f, -99999f);
 
-	// Token: 0x04002D43 RID: 11587
+	// Token: 0x04002DBB RID: 11707
 	public List<NavObjectClass> NavObjectClassList = new List<NavObjectClass>();
 
-	// Token: 0x04002D44 RID: 11588
+	// Token: 0x04002DBC RID: 11708
 	public NavObjectClass NavObjectClass;
 
-	// Token: 0x04002D45 RID: 11589
+	// Token: 0x04002DBD RID: 11709
 	public NavObject.TrackTypes TrackType;
 
-	// Token: 0x04002D46 RID: 11590
+	// Token: 0x04002DBE RID: 11710
 	public bool IsActive = true;
 
-	// Token: 0x04002D47 RID: 11591
+	// Token: 0x04002DBF RID: 11711
 	public bool ForceDisabled;
 
-	// Token: 0x04002D48 RID: 11592
+	// Token: 0x04002DC0 RID: 11712
 	public int EntityID;
 
-	// Token: 0x04002D49 RID: 11593
+	// Token: 0x04002DC1 RID: 11713
 	public Entity OwnerEntity;
 
-	// Token: 0x04002D4A RID: 11594
+	// Token: 0x04002DC2 RID: 11714
 	public string name;
 
-	// Token: 0x04002D4B RID: 11595
+	// Token: 0x04002DC3 RID: 11715
 	public bool usingLocalizationId;
 
-	// Token: 0x04002D4C RID: 11596
+	// Token: 0x04002DC4 RID: 11716
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string localizedName;
 
-	// Token: 0x04002D4D RID: 11597
+	// Token: 0x04002DC5 RID: 11717
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform trackedTransform;
 
-	// Token: 0x04002D4E RID: 11598
+	// Token: 0x04002DC6 RID: 11718
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 trackedPosition;
 
-	// Token: 0x04002D4F RID: 11599
+	// Token: 0x04002DC7 RID: 11719
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Entity trackedEntity;
 
-	// Token: 0x04002D50 RID: 11600
+	// Token: 0x04002DC8 RID: 11720
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasOnScreen;
 
-	// Token: 0x04002D51 RID: 11601
+	// Token: 0x04002DC9 RID: 11721
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int nextKey;
 
-	// Token: 0x04002D52 RID: 11602
+	// Token: 0x04002DCA RID: 11722
 	public int Key;
 
-	// Token: 0x04002D53 RID: 11603
+	// Token: 0x04002DCB RID: 11723
 	public float ExtraData;
 
-	// Token: 0x04002D54 RID: 11604
+	// Token: 0x04002DCC RID: 11724
 	public bool IsTracked;
 
-	// Token: 0x04002D55 RID: 11605
+	// Token: 0x04002DCD RID: 11725
 	public bool hiddenOnCompass = true;
 
-	// Token: 0x04002D56 RID: 11606
+	// Token: 0x04002DCE RID: 11726
 	public string HiddenDisplayName;
 
-	// Token: 0x04002D57 RID: 11607
+	// Token: 0x04002DCF RID: 11727
 	public bool hiddenOnMap;
 
-	// Token: 0x04002D58 RID: 11608
+	// Token: 0x04002DD0 RID: 11728
 	public string OverrideSpriteName = "";
 
-	// Token: 0x04002D59 RID: 11609
+	// Token: 0x04002DD1 RID: 11729
 	public bool UseOverrideColor;
 
-	// Token: 0x04002D5A RID: 11610
+	// Token: 0x04002DD2 RID: 11730
 	public bool UseOverrideFontColor;
 
-	// Token: 0x04002D5B RID: 11611
+	// Token: 0x04002DD3 RID: 11731
 	public Color OverrideColor;
 
-	// Token: 0x02000746 RID: 1862
+	// Token: 0x02000750 RID: 1872
 	public enum TrackTypes
 	{
-		// Token: 0x04002D5D RID: 11613
+		// Token: 0x04002DD5 RID: 11733
 		None,
-		// Token: 0x04002D5E RID: 11614
+		// Token: 0x04002DD6 RID: 11734
 		Transform,
-		// Token: 0x04002D5F RID: 11615
+		// Token: 0x04002DD7 RID: 11735
 		Position,
-		// Token: 0x04002D60 RID: 11616
+		// Token: 0x04002DD8 RID: 11736
 		Entity
 	}
 }

@@ -2,28 +2,28 @@
 
 namespace UAI
 {
-	// Token: 0x0200174E RID: 5966
+	// Token: 0x02001774 RID: 6004
 	public enum CurveType
 	{
-		// Token: 0x04008A8D RID: 35469
+		// Token: 0x04008BA9 RID: 35753
 		Constant,
-		// Token: 0x04008A8E RID: 35470
+		// Token: 0x04008BAA RID: 35754
 		Linear,
-		// Token: 0x04008A8F RID: 35471
+		// Token: 0x04008BAB RID: 35755
 		Quadratic,
-		// Token: 0x04008A90 RID: 35472
+		// Token: 0x04008BAC RID: 35756
 		Logistic,
-		// Token: 0x04008A91 RID: 35473
+		// Token: 0x04008BAD RID: 35757
 		Logit,
-		// Token: 0x04008A92 RID: 35474
+		// Token: 0x04008BAE RID: 35758
 		Threshold,
-		// Token: 0x04008A93 RID: 35475
+		// Token: 0x04008BAF RID: 35759
 		Sine,
-		// Token: 0x04008A94 RID: 35476
+		// Token: 0x04008BB0 RID: 35760
 		Parabolic,
-		// Token: 0x04008A95 RID: 35477
+		// Token: 0x04008BB1 RID: 35761
 		NormalDistribution,
-		// Token: 0x04008A96 RID: 35478
+		// Token: 0x04008BB2 RID: 35762
 		Bounce
 	}
 }

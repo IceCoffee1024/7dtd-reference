@@ -4,11 +4,11 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000403 RID: 1027
+// Token: 0x02000407 RID: 1031
 [Preserve]
 public class AIDirectorBloodMoonComponent : AIDirectorComponent
 {
-	// Token: 0x06001FC6 RID: 8134 RVA: 0x000C0874 File Offset: 0x000BEA74
+	// Token: 0x06001FE3 RID: 8163 RVA: 0x000C0FE0 File Offset: 0x000BF1E0
 	public override void InitNewGame()
 	{
 		base.InitNewGame();
@@ -18,7 +18,7 @@ public class AIDirectorBloodMoonComponent : AIDirectorComponent
 		this.ComputeDawnAndDuskTimes();
 	}
 
-	// Token: 0x06001FC7 RID: 8135 RVA: 0x000C08B8 File Offset: 0x000BEAB8
+	// Token: 0x06001FE4 RID: 8164 RVA: 0x000C1024 File Offset: 0x000BF224
 	public override void Tick(double _dt)
 	{
 		base.Tick(_dt);
@@ -82,8 +82,8 @@ public class AIDirectorBloodMoonComponent : AIDirectorComponent
 		}
 	}
 
-	// Token: 0x170003B4 RID: 948
-	// (get) Token: 0x06001FC8 RID: 8136 RVA: 0x000C0A78 File Offset: 0x000BEC78
+	// Token: 0x170003B8 RID: 952
+	// (get) Token: 0x06001FE5 RID: 8165 RVA: 0x000C11E4 File Offset: 0x000BF3E4
 	public bool BloodMoonActive
 	{
 		get
@@ -92,7 +92,7 @@ public class AIDirectorBloodMoonComponent : AIDirectorComponent
 		}
 	}
 
-	// Token: 0x06001FC9 RID: 8137 RVA: 0x000C0A80 File Offset: 0x000BEC80
+	// Token: 0x06001FE6 RID: 8166 RVA: 0x000C11EC File Offset: 0x000BF3EC
 	public bool SetForToday(bool _keepNextDay)
 	{
 		int num = GameUtils.WorldTimeToDays(this.Director.World.worldTime);
@@ -108,7 +108,7 @@ public class AIDirectorBloodMoonComponent : AIDirectorComponent
 		return true;
 	}
 
-	// Token: 0x06001FCA RID: 8138 RVA: 0x000C0AC8 File Offset: 0x000BECC8
+	// Token: 0x06001FE7 RID: 8167 RVA: 0x000C1234 File Offset: 0x000BF434
 	public override void Read(BinaryReader _stream, int _version)
 	{
 		base.Read(_stream, _version);
@@ -132,7 +132,7 @@ public class AIDirectorBloodMoonComponent : AIDirectorComponent
 		this.ComputeDawnAndDuskTimes();
 	}
 
-	// Token: 0x06001FCB RID: 8139 RVA: 0x000C0B2A File Offset: 0x000BED2A
+	// Token: 0x06001FE8 RID: 8168 RVA: 0x000C1296 File Offset: 0x000BF496
 	public override void Write(BinaryWriter _stream)
 	{
 		base.Write(_stream);
@@ -142,13 +142,13 @@ public class AIDirectorBloodMoonComponent : AIDirectorComponent
 		_stream.Write((short)AIDirectorBloodMoonComponent.BloodMoonRange);
 	}
 
-	// Token: 0x06001FCC RID: 8140 RVA: 0x000C0B63 File Offset: 0x000BED63
+	// Token: 0x06001FE9 RID: 8169 RVA: 0x000C12CF File Offset: 0x000BF4CF
 	public void AddPlayer(EntityPlayer _player)
 	{
 		this.players.Add(_player);
 	}
 
-	// Token: 0x06001FCD RID: 8141 RVA: 0x000C0B74 File Offset: 0x000BED74
+	// Token: 0x06001FEA RID: 8170 RVA: 0x000C12E0 File Offset: 0x000BF4E0
 	public void RemovePlayer(EntityPlayer _player)
 	{
 		if (this.players.Remove(_player))
@@ -160,7 +160,7 @@ public class AIDirectorBloodMoonComponent : AIDirectorComponent
 		}
 	}
 
-	// Token: 0x06001FCE RID: 8142 RVA: 0x000C0BB8 File Offset: 0x000BEDB8
+	// Token: 0x06001FEB RID: 8171 RVA: 0x000C1324 File Offset: 0x000BF524
 	public void TimeChanged(bool isSeek = false)
 	{
 		if (this.isBloodMoon && !this.IsBloodMoonTime(this.Director.World.worldTime))
@@ -173,7 +173,7 @@ public class AIDirectorBloodMoonComponent : AIDirectorComponent
 		}
 	}
 
-	// Token: 0x06001FCF RID: 8143 RVA: 0x000C0C34 File Offset: 0x000BEE34
+	// Token: 0x06001FEC RID: 8172 RVA: 0x000C13A0 File Offset: 0x000BF5A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void StartBloodMoon()
 	{
@@ -196,7 +196,7 @@ public class AIDirectorBloodMoonComponent : AIDirectorComponent
 		}
 	}
 
-	// Token: 0x06001FD0 RID: 8144 RVA: 0x000C0CFC File Offset: 0x000BEEFC
+	// Token: 0x06001FED RID: 8173 RVA: 0x000C1468 File Offset: 0x000BF668
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void EndBloodMoon()
 	{
@@ -227,7 +227,7 @@ public class AIDirectorBloodMoonComponent : AIDirectorComponent
 		}
 	}
 
-	// Token: 0x06001FD1 RID: 8145 RVA: 0x000C0DCC File Offset: 0x000BEFCC
+	// Token: 0x06001FEE RID: 8174 RVA: 0x000C1538 File Offset: 0x000BF738
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ClearParties()
 	{
@@ -239,7 +239,7 @@ public class AIDirectorBloodMoonComponent : AIDirectorComponent
 		}
 	}
 
-	// Token: 0x06001FD2 RID: 8146 RVA: 0x000C0E14 File Offset: 0x000BF014
+	// Token: 0x06001FEF RID: 8175 RVA: 0x000C1580 File Offset: 0x000BF780
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AddPlayerToParty(EntityPlayer _player)
 	{
@@ -266,14 +266,14 @@ public class AIDirectorBloodMoonComponent : AIDirectorComponent
 		}
 	}
 
-	// Token: 0x06001FD3 RID: 8147 RVA: 0x000C0E9C File Offset: 0x000BF09C
+	// Token: 0x06001FF0 RID: 8176 RVA: 0x000C1608 File Offset: 0x000BF808
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CreateNewParty(EntityPlayer _player)
 	{
 		this.parties.Add(new AIDirectorBloodMoonParty(_player, this, AIDirectorBloodMoonComponent.BloodMoonEnemyCount));
 	}
 
-	// Token: 0x06001FD4 RID: 8148 RVA: 0x000C0EB8 File Offset: 0x000BF0B8
+	// Token: 0x06001FF1 RID: 8177 RVA: 0x000C1624 File Offset: 0x000BF824
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ComputeDawnAndDuskTimes()
 	{
@@ -282,14 +282,14 @@ public class AIDirectorBloodMoonComponent : AIDirectorComponent
 		this.dawnHour = valueTuple.Item2;
 	}
 
-	// Token: 0x06001FD5 RID: 8149 RVA: 0x000C0EEA File Offset: 0x000BF0EA
+	// Token: 0x06001FF2 RID: 8178 RVA: 0x000C1656 File Offset: 0x000BF856
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsBloodMoonTime(ulong worldTime)
 	{
 		return GameUtils.IsBloodMoonTime(worldTime, new ValueTuple<int, int>(this.duskHour, this.dawnHour), this.bmDay);
 	}
 
-	// Token: 0x06001FD6 RID: 8150 RVA: 0x000C0F0C File Offset: 0x000BF10C
+	// Token: 0x06001FF3 RID: 8179 RVA: 0x000C1678 File Offset: 0x000BF878
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CalcNextDay(bool isSeek = false)
 	{
@@ -327,7 +327,7 @@ public class AIDirectorBloodMoonComponent : AIDirectorComponent
 		this.SetDay(num);
 	}
 
-	// Token: 0x06001FD7 RID: 8151 RVA: 0x000C0FD0 File Offset: 0x000BF1D0
+	// Token: 0x06001FF4 RID: 8180 RVA: 0x000C173C File Offset: 0x000BF93C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetDay(int day)
 	{
@@ -348,69 +348,69 @@ public class AIDirectorBloodMoonComponent : AIDirectorComponent
 		}
 	}
 
-	// Token: 0x06001FD8 RID: 8152 RVA: 0x000C105C File Offset: 0x000BF25C
+	// Token: 0x06001FF5 RID: 8181 RVA: 0x000C17C8 File Offset: 0x000BF9C8
 	public void LogBM(string format, params object[] args)
 	{
 		format = string.Format("{0} BM {1}", Time.frameCount, format);
 		Log.Warning(format, args);
 	}
 
-	// Token: 0x04001584 RID: 5508
+	// Token: 0x04001599 RID: 5529
 	public const int cPartyEnemyMax = 30;
 
-	// Token: 0x04001585 RID: 5509
+	// Token: 0x0400159A RID: 5530
 	public const int cTimeStayAfterDeathScale = 3;
 
-	// Token: 0x04001586 RID: 5510
+	// Token: 0x0400159B RID: 5531
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cSpawnDelay = 1f;
 
-	// Token: 0x04001587 RID: 5511
+	// Token: 0x0400159C RID: 5532
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int bmDay;
 
-	// Token: 0x04001588 RID: 5512
+	// Token: 0x0400159D RID: 5533
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int bmDayLast;
 
-	// Token: 0x04001589 RID: 5513
+	// Token: 0x0400159E RID: 5534
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int bmDayNextOverride;
 
-	// Token: 0x0400158A RID: 5514
+	// Token: 0x0400159F RID: 5535
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int dawnHour;
 
-	// Token: 0x0400158B RID: 5515
+	// Token: 0x040015A0 RID: 5536
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int duskHour;
 
-	// Token: 0x0400158C RID: 5516
+	// Token: 0x040015A1 RID: 5537
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int nextParty;
 
-	// Token: 0x0400158D RID: 5517
+	// Token: 0x040015A2 RID: 5538
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float delay;
 
-	// Token: 0x0400158E RID: 5518
+	// Token: 0x040015A3 RID: 5539
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isBloodMoon;
 
-	// Token: 0x0400158F RID: 5519
+	// Token: 0x040015A4 RID: 5540
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<AIDirectorBloodMoonParty> parties = new List<AIDirectorBloodMoonParty>();
 
-	// Token: 0x04001590 RID: 5520
+	// Token: 0x040015A5 RID: 5541
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<EntityPlayer> players = new List<EntityPlayer>();
 
-	// Token: 0x04001591 RID: 5521
+	// Token: 0x040015A6 RID: 5542
 	public static int BloodMoonFrequency;
 
-	// Token: 0x04001592 RID: 5522
+	// Token: 0x040015A7 RID: 5543
 	public static int BloodMoonRange;
 
-	// Token: 0x04001593 RID: 5523
+	// Token: 0x040015A8 RID: 5544
 	public static int BloodMoonEnemyCount;
 }

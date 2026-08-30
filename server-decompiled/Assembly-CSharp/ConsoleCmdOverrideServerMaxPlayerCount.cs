@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200024C RID: 588
+// Token: 0x02000250 RID: 592
 [Preserve]
 public class ConsoleCmdOverrideServerMaxPlayerCount : ConsoleCmdAbstract
 {
-	// Token: 0x170001C8 RID: 456
-	// (get) Token: 0x06001198 RID: 4504 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x170001C9 RID: 457
+	// (get) Token: 0x060011AA RID: 4522 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -16,21 +16,21 @@ public class ConsoleCmdOverrideServerMaxPlayerCount : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001199 RID: 4505 RVA: 0x0006EBF6 File Offset: 0x0006CDF6
+	// Token: 0x060011AB RID: 4523 RVA: 0x0006F252 File Offset: 0x0006D452
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "overridemaxplayercount" };
 	}
 
-	// Token: 0x0600119A RID: 4506 RVA: 0x0006EC06 File Offset: 0x0006CE06
+	// Token: 0x060011AC RID: 4524 RVA: 0x0006F262 File Offset: 0x0006D462
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Override Max Server Player Count";
 	}
 
-	// Token: 0x0600119B RID: 4507 RVA: 0x0006EC10 File Offset: 0x0006CE10
+	// Token: 0x060011AD RID: 4525 RVA: 0x0006F26C File Offset: 0x0006D46C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		int num;

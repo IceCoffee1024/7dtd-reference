@@ -2,53 +2,53 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000AD7 RID: 2775
+// Token: 0x02000AE9 RID: 2793
 public sealed class GameStageDefinition
 {
-	// Token: 0x060052CE RID: 21198 RVA: 0x001FAD13 File Offset: 0x001F8F13
+	// Token: 0x06005356 RID: 21334 RVA: 0x001FD983 File Offset: 0x001FBB83
 	public GameStageDefinition(string _name)
 	{
 		this.name = _name;
 	}
 
-	// Token: 0x060052CF RID: 21199 RVA: 0x001FAD2D File Offset: 0x001F8F2D
+	// Token: 0x06005357 RID: 21335 RVA: 0x001FD99D File Offset: 0x001FBB9D
 	public static void AddGameStage(GameStageDefinition gameStage)
 	{
 		gameStage.SortStages();
 		GameStageDefinition.gameStages.Add(gameStage.name, gameStage);
 	}
 
-	// Token: 0x060052D0 RID: 21200 RVA: 0x001FAD46 File Offset: 0x001F8F46
+	// Token: 0x06005358 RID: 21336 RVA: 0x001FD9B6 File Offset: 0x001FBBB6
 	public static GameStageDefinition GetGameStage(string name)
 	{
 		return GameStageDefinition.gameStages[name];
 	}
 
-	// Token: 0x060052D1 RID: 21201 RVA: 0x001FAD53 File Offset: 0x001F8F53
+	// Token: 0x06005359 RID: 21337 RVA: 0x001FD9C3 File Offset: 0x001FBBC3
 	public static bool TryGetGameStage(string name, out GameStageDefinition definition)
 	{
 		return GameStageDefinition.gameStages.TryGetValue(name, out definition);
 	}
 
-	// Token: 0x060052D2 RID: 21202 RVA: 0x001FAD61 File Offset: 0x001F8F61
+	// Token: 0x0600535A RID: 21338 RVA: 0x001FD9D1 File Offset: 0x001FBBD1
 	public static void Clear()
 	{
 		GameStageDefinition.gameStages.Clear();
 	}
 
-	// Token: 0x060052D3 RID: 21203 RVA: 0x001FAD6D File Offset: 0x001F8F6D
+	// Token: 0x0600535B RID: 21339 RVA: 0x001FD9DD File Offset: 0x001FBBDD
 	public void AddStage(GameStageDefinition.Stage stage)
 	{
 		this.stages.Add(stage);
 	}
 
-	// Token: 0x060052D4 RID: 21204 RVA: 0x001FAD7B File Offset: 0x001F8F7B
+	// Token: 0x0600535C RID: 21340 RVA: 0x001FD9EB File Offset: 0x001FBBEB
 	public void SortStages()
 	{
 		this.stages.Sort((GameStageDefinition.Stage x, GameStageDefinition.Stage y) => x.stageNum.CompareTo(y.stageNum));
 	}
 
-	// Token: 0x060052D5 RID: 21205 RVA: 0x001FADA8 File Offset: 0x001F8FA8
+	// Token: 0x0600535D RID: 21341 RVA: 0x001FDA18 File Offset: 0x001FBC18
 	public GameStageDefinition.Stage GetStage(int stage)
 	{
 		if (this.stages.Count < 1)
@@ -64,7 +64,7 @@ public sealed class GameStageDefinition
 		return this.stages[num];
 	}
 
-	// Token: 0x060052D6 RID: 21206 RVA: 0x001FAE28 File Offset: 0x001F9028
+	// Token: 0x0600535E RID: 21342 RVA: 0x001FDA98 File Offset: 0x001FBC98
 	public static int GetBoundIndex<T>(IList<T> sortedList, Func<T, bool> f)
 	{
 		int num = 0;
@@ -88,7 +88,7 @@ public sealed class GameStageDefinition
 		return num;
 	}
 
-	// Token: 0x060052D7 RID: 21207 RVA: 0x001FAE7C File Offset: 0x001F907C
+	// Token: 0x0600535F RID: 21343 RVA: 0x001FDAEC File Offset: 0x001FBCEC
 	public static int CalcPartyLevel(List<int> playerGameStages)
 	{
 		float num = 0f;
@@ -102,7 +102,7 @@ public sealed class GameStageDefinition
 		return Mathf.FloorToInt(num);
 	}
 
-	// Token: 0x060052D8 RID: 21208 RVA: 0x001FAECC File Offset: 0x001F90CC
+	// Token: 0x06005360 RID: 21344 RVA: 0x001FDB3C File Offset: 0x001FBD3C
 	public static int CalcGameStageAround(EntityPlayer player)
 	{
 		List<EntityPlayer> list = new List<EntityPlayer>();
@@ -119,60 +119,60 @@ public sealed class GameStageDefinition
 		return GameStageDefinition.CalcPartyLevel(list2);
 	}
 
-	// Token: 0x04004087 RID: 16519
+	// Token: 0x0400411D RID: 16669
 	public static float DifficultyBonus = 1f;
 
-	// Token: 0x04004088 RID: 16520
+	// Token: 0x0400411E RID: 16670
 	public static float StartingWeight = 1f;
 
-	// Token: 0x04004089 RID: 16521
+	// Token: 0x0400411F RID: 16671
 	public static float DiminishingReturns = 0.5f;
 
-	// Token: 0x0400408A RID: 16522
+	// Token: 0x04004120 RID: 16672
 	public static long DaysAliveChangeWhenKilled = 2L;
 
-	// Token: 0x0400408B RID: 16523
+	// Token: 0x04004121 RID: 16673
 	public static int LootBonusEvery;
 
-	// Token: 0x0400408C RID: 16524
+	// Token: 0x04004122 RID: 16674
 	public static int LootBonusMaxCount;
 
-	// Token: 0x0400408D RID: 16525
+	// Token: 0x04004123 RID: 16675
 	public static float LootBonusScale;
 
-	// Token: 0x0400408E RID: 16526
+	// Token: 0x04004124 RID: 16676
 	public static int LootWanderingBonusEvery;
 
-	// Token: 0x0400408F RID: 16527
+	// Token: 0x04004125 RID: 16677
 	public static float LootWanderingBonusScale;
 
-	// Token: 0x04004090 RID: 16528
+	// Token: 0x04004126 RID: 16678
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<string, GameStageDefinition> gameStages = new Dictionary<string, GameStageDefinition>();
 
-	// Token: 0x04004091 RID: 16529
+	// Token: 0x04004127 RID: 16679
 	public string name;
 
-	// Token: 0x04004092 RID: 16530
+	// Token: 0x04004128 RID: 16680
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<GameStageDefinition.Stage> stages = new List<GameStageDefinition.Stage>();
 
-	// Token: 0x02000AD8 RID: 2776
+	// Token: 0x02000AEA RID: 2794
 	public class Stage
 	{
-		// Token: 0x060052DA RID: 21210 RVA: 0x001FAF66 File Offset: 0x001F9166
+		// Token: 0x06005362 RID: 21346 RVA: 0x001FDBD6 File Offset: 0x001FBDD6
 		public Stage(int _stageNum)
 		{
 			this.stageNum = _stageNum;
 		}
 
-		// Token: 0x060052DB RID: 21211 RVA: 0x001FAF80 File Offset: 0x001F9180
+		// Token: 0x06005363 RID: 21347 RVA: 0x001FDBF0 File Offset: 0x001FBDF0
 		public void AddSpawnGroup(GameStageDefinition.SpawnGroup spawn)
 		{
 			this.spawnGroups.Add(spawn);
 		}
 
-		// Token: 0x060052DC RID: 21212 RVA: 0x001FAF8E File Offset: 0x001F918E
+		// Token: 0x06005364 RID: 21348 RVA: 0x001FDBFE File Offset: 0x001FBDFE
 		public GameStageDefinition.SpawnGroup GetSpawnGroup(int index)
 		{
 			if (index >= 0 && index < this.spawnGroups.Count)
@@ -182,8 +182,8 @@ public sealed class GameStageDefinition
 			return null;
 		}
 
-		// Token: 0x170008F6 RID: 2294
-		// (get) Token: 0x060052DD RID: 21213 RVA: 0x001FAFB0 File Offset: 0x001F91B0
+		// Token: 0x17000908 RID: 2312
+		// (get) Token: 0x06005365 RID: 21349 RVA: 0x001FDC20 File Offset: 0x001FBE20
 		public int Count
 		{
 			get
@@ -192,18 +192,18 @@ public sealed class GameStageDefinition
 			}
 		}
 
-		// Token: 0x04004093 RID: 16531
+		// Token: 0x04004129 RID: 16681
 		public readonly int stageNum;
 
-		// Token: 0x04004094 RID: 16532
+		// Token: 0x0400412A RID: 16682
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly List<GameStageDefinition.SpawnGroup> spawnGroups = new List<GameStageDefinition.SpawnGroup>();
 	}
 
-	// Token: 0x02000AD9 RID: 2777
+	// Token: 0x02000AEB RID: 2795
 	public class SpawnGroup
 	{
-		// Token: 0x060052DE RID: 21214 RVA: 0x001FAFBD File Offset: 0x001F91BD
+		// Token: 0x06005366 RID: 21350 RVA: 0x001FDC2D File Offset: 0x001FBE2D
 		public SpawnGroup(string _groupName, int _spawnCount, int _maxAlive, int _interval, int _duration)
 		{
 			this.groupName = _groupName;
@@ -213,19 +213,19 @@ public sealed class GameStageDefinition
 			this.duration = (ushort)_duration;
 		}
 
-		// Token: 0x04004095 RID: 16533
+		// Token: 0x0400412B RID: 16683
 		public readonly string groupName;
 
-		// Token: 0x04004096 RID: 16534
+		// Token: 0x0400412C RID: 16684
 		public readonly ushort spawnCount;
 
-		// Token: 0x04004097 RID: 16535
+		// Token: 0x0400412D RID: 16685
 		public readonly ushort maxAlive;
 
-		// Token: 0x04004098 RID: 16536
+		// Token: 0x0400412E RID: 16686
 		public readonly ushort interval;
 
-		// Token: 0x04004099 RID: 16537
+		// Token: 0x0400412F RID: 16687
 		public readonly ushort duration;
 	}
 }

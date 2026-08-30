@@ -6,10 +6,10 @@ using UnityEngine;
 
 namespace Platform
 {
-	// Token: 0x02001BC8 RID: 7112
+	// Token: 0x02001BEF RID: 7151
 	public class PlayerInputManager
 	{
-		// Token: 0x0600D311 RID: 54033 RVA: 0x004C4D50 File Offset: 0x004C2F50
+		// Token: 0x0600D49F RID: 54431 RVA: 0x004CB144 File Offset: 0x004C9344
 		public PlayerInputManager()
 		{
 			Log.Out("Starting PlayerInputManager...");
@@ -103,7 +103,7 @@ namespace Platform
 			this.CurrentInputStyle = this.defaultInputStyle;
 		}
 
-		// Token: 0x0600D312 RID: 54034 RVA: 0x004C500C File Offset: 0x004C320C
+		// Token: 0x0600D4A0 RID: 54432 RVA: 0x004CB400 File Offset: 0x004C9600
 		public void Update()
 		{
 			BindingSourceType bindingSourceType;
@@ -167,7 +167,7 @@ namespace Platform
 			onLastInputStyleChanged(this.CurrentInputStyle);
 		}
 
-		// Token: 0x0600D313 RID: 54035 RVA: 0x004C518A File Offset: 0x004C338A
+		// Token: 0x0600D4A1 RID: 54433 RVA: 0x004CB57E File Offset: 0x004C977E
 		public void ForceInputStyleChange()
 		{
 			Action<PlayerInputManager.InputStyle> onLastInputStyleChanged = this.OnLastInputStyleChanged;
@@ -178,14 +178,14 @@ namespace Platform
 			onLastInputStyleChanged(this.CurrentInputStyle);
 		}
 
-		// Token: 0x14000129 RID: 297
-		// (add) Token: 0x0600D314 RID: 54036 RVA: 0x004C51A4 File Offset: 0x004C33A4
-		// (remove) Token: 0x0600D315 RID: 54037 RVA: 0x004C51DC File Offset: 0x004C33DC
+		// Token: 0x1400012A RID: 298
+		// (add) Token: 0x0600D4A2 RID: 54434 RVA: 0x004CB598 File Offset: 0x004C9798
+		// (remove) Token: 0x0600D4A3 RID: 54435 RVA: 0x004CB5D0 File Offset: 0x004C97D0
 		public event Action<PlayerInputManager.InputStyle> OnLastInputStyleChanged;
 
-		// Token: 0x170019F1 RID: 6641
-		// (get) Token: 0x0600D316 RID: 54038 RVA: 0x004C5211 File Offset: 0x004C3411
-		// (set) Token: 0x0600D317 RID: 54039 RVA: 0x004C5219 File Offset: 0x004C3419
+		// Token: 0x17001A63 RID: 6755
+		// (get) Token: 0x0600D4A4 RID: 54436 RVA: 0x004CB605 File Offset: 0x004C9805
+		// (set) Token: 0x0600D4A5 RID: 54437 RVA: 0x004CB60D File Offset: 0x004C980D
 		public PlayerInputManager.InputStyle CurrentInputStyle
 		{
 			get
@@ -203,9 +203,9 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x170019F2 RID: 6642
-		// (get) Token: 0x0600D318 RID: 54040 RVA: 0x004C5231 File Offset: 0x004C3431
-		// (set) Token: 0x0600D319 RID: 54041 RVA: 0x004C524F File Offset: 0x004C344F
+		// Token: 0x17001A64 RID: 6756
+		// (get) Token: 0x0600D4A6 RID: 54438 RVA: 0x004CB625 File Offset: 0x004C9825
+		// (set) Token: 0x0600D4A7 RID: 54439 RVA: 0x004CB643 File Offset: 0x004C9843
 		public PlayerInputManager.InputStyle CurrentControllerInputStyle
 		{
 			get
@@ -227,11 +227,11 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x170019F3 RID: 6643
-		// (get) Token: 0x0600D31A RID: 54042 RVA: 0x004C5258 File Offset: 0x004C3458
+		// Token: 0x17001A65 RID: 6757
+		// (get) Token: 0x0600D4A8 RID: 54440 RVA: 0x004CB64C File Offset: 0x004C984C
 		public ReadOnlyCollection<PlayerActionsBase> ActionSets { get; }
 
-		// Token: 0x0600D31B RID: 54043 RVA: 0x004C5260 File Offset: 0x004C3460
+		// Token: 0x0600D4A9 RID: 54441 RVA: 0x004CB654 File Offset: 0x004C9854
 		[PublicizedFrom(EAccessModifier.Private)]
 		public InputDevice LastActiveInputDevice(out BindingSourceType lastBindingSource)
 		{
@@ -258,7 +258,7 @@ namespace Platform
 			return InputDevice.Null;
 		}
 
-		// Token: 0x0600D31C RID: 54044 RVA: 0x004C52DC File Offset: 0x004C34DC
+		// Token: 0x0600D4AA RID: 54442 RVA: 0x004CB6D0 File Offset: 0x004C98D0
 		public void ResetInputStyleUsage()
 		{
 			for (int i = 0; i < this.inputStylesUsedMinutes.Length; i++)
@@ -268,7 +268,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600D31D RID: 54045 RVA: 0x004C5314 File Offset: 0x004C3514
+		// Token: 0x0600D4AB RID: 54443 RVA: 0x004CB708 File Offset: 0x004C9908
 		public PlayerInputManager.InputStyle MostUsedInputStyle()
 		{
 			if (this.CurrentInputStyle != PlayerInputManager.InputStyle.Undefined)
@@ -290,7 +290,7 @@ namespace Platform
 			return inputStyle;
 		}
 
-		// Token: 0x0600D31E RID: 54046 RVA: 0x004C538C File Offset: 0x004C358C
+		// Token: 0x0600D4AC RID: 54444 RVA: 0x004CB780 File Offset: 0x004C9980
 		public PlayerActionsBase GetActionSetForName(string _name)
 		{
 			foreach (PlayerActionsBase playerActionsBase in this.ActionSets)
@@ -303,11 +303,11 @@ namespace Platform
 			return null;
 		}
 
-		// Token: 0x170019F4 RID: 6644
-		// (get) Token: 0x0600D31F RID: 54047 RVA: 0x004C53E8 File Offset: 0x004C35E8
+		// Token: 0x17001A66 RID: 6758
+		// (get) Token: 0x0600D4AD RID: 54445 RVA: 0x004CB7DC File Offset: 0x004C99DC
 		public PlayerActionsLocal PrimaryPlayer { get; }
 
-		// Token: 0x0600D320 RID: 54048 RVA: 0x004C53F0 File Offset: 0x004C35F0
+		// Token: 0x0600D4AE RID: 54446 RVA: 0x004CB7E4 File Offset: 0x004C99E4
 		public void LoadActionSetsFromStrings(IList<string> actionSets)
 		{
 			if (this.ActionSets.Count != actionSets.Count)
@@ -321,7 +321,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600D321 RID: 54049 RVA: 0x004C547C File Offset: 0x004C367C
+		// Token: 0x0600D4AF RID: 54447 RVA: 0x004CB870 File Offset: 0x004C9A70
 		public static PlayerInputManager.InputStyle InputStyleFromSelectedIconStyle()
 		{
 			PlayerInputManager.ControllerIconStyle @int = (PlayerInputManager.ControllerIconStyle)GamePrefs.GetInt(EnumGamePrefs.OptionsControllerIconStyle);
@@ -352,76 +352,76 @@ namespace Platform
 			return inputStyle2.GetValueOrDefault();
 		}
 
-		// Token: 0x0400A081 RID: 41089
+		// Token: 0x0400A1B2 RID: 41394
 		[PublicizedFrom(EAccessModifier.Private)]
 		public PlayerInputManager.InputStyle defaultInputStyle = PlayerInputManager.InputStyle.Keyboard;
 
-		// Token: 0x0400A082 RID: 41090
+		// Token: 0x0400A1B3 RID: 41395
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool firstInputDetected;
 
-		// Token: 0x0400A083 RID: 41091
+		// Token: 0x0400A1B4 RID: 41396
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly float[] inputStylesUsedMinutes = new float[4];
 
-		// Token: 0x0400A084 RID: 41092
+		// Token: 0x0400A1B5 RID: 41397
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float lastInputStyleSwitchTime;
 
-		// Token: 0x0400A086 RID: 41094
+		// Token: 0x0400A1B7 RID: 41399
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string lastInputDeviceName;
 
-		// Token: 0x0400A087 RID: 41095
+		// Token: 0x0400A1B8 RID: 41400
 		[PublicizedFrom(EAccessModifier.Private)]
 		public InputDevice lastInputDevice;
 
-		// Token: 0x0400A088 RID: 41096
+		// Token: 0x0400A1B9 RID: 41401
 		[PublicizedFrom(EAccessModifier.Private)]
 		public InputDevice newInputDevice;
 
-		// Token: 0x0400A089 RID: 41097
+		// Token: 0x0400A1BA RID: 41402
 		[PublicizedFrom(EAccessModifier.Private)]
 		public BindingSourceType lastBindingSource;
 
-		// Token: 0x0400A08A RID: 41098
+		// Token: 0x0400A1BB RID: 41403
 		[PublicizedFrom(EAccessModifier.Private)]
 		public PlayerInputManager.InputStyle _currentInputStyle;
 
-		// Token: 0x0400A08B RID: 41099
+		// Token: 0x0400A1BC RID: 41404
 		[PublicizedFrom(EAccessModifier.Private)]
 		public PlayerInputManager.InputStyle _currentControllerInputStyle = PlayerInputManager.InputStyle.XB1;
 
-		// Token: 0x0400A08D RID: 41101
+		// Token: 0x0400A1BE RID: 41406
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly List<PlayerActionsBase> actionSets = new List<PlayerActionsBase>();
 
-		// Token: 0x0400A08F RID: 41103
+		// Token: 0x0400A1C0 RID: 41408
 		public readonly ActionSetManager ActionSetManager = new ActionSetManager();
 
-		// Token: 0x02001BC9 RID: 7113
+		// Token: 0x02001BF0 RID: 7152
 		public enum InputStyle
 		{
-			// Token: 0x0400A091 RID: 41105
+			// Token: 0x0400A1C2 RID: 41410
 			Undefined,
-			// Token: 0x0400A092 RID: 41106
+			// Token: 0x0400A1C3 RID: 41411
 			Keyboard,
-			// Token: 0x0400A093 RID: 41107
+			// Token: 0x0400A1C4 RID: 41412
 			PS4,
-			// Token: 0x0400A094 RID: 41108
+			// Token: 0x0400A1C5 RID: 41413
 			XB1,
-			// Token: 0x0400A095 RID: 41109
+			// Token: 0x0400A1C6 RID: 41414
 			Count
 		}
 
-		// Token: 0x02001BCA RID: 7114
+		// Token: 0x02001BF1 RID: 7153
 		public enum ControllerIconStyle
 		{
-			// Token: 0x0400A097 RID: 41111
+			// Token: 0x0400A1C8 RID: 41416
 			Automatic,
-			// Token: 0x0400A098 RID: 41112
+			// Token: 0x0400A1C9 RID: 41417
 			Xbox,
-			// Token: 0x0400A099 RID: 41113
+			// Token: 0x0400A1CA RID: 41418
 			Playstation
 		}
 	}

@@ -1,6 +1,6 @@
 ﻿using System;
 
-// Token: 0x020014EC RID: 5356
+// Token: 0x02001507 RID: 5383
 [AttributeUsage(AttributeTargets.Class, Inherited = false)]
 public class XmlPatchMethodsClassAttribute : Attribute
 {

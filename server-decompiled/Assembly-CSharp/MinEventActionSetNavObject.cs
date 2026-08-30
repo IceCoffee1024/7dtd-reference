@@ -2,11 +2,11 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006E8 RID: 1768
+// Token: 0x020006F2 RID: 1778
 [Preserve]
 public class MinEventActionSetNavObject : MinEventActionTargetedBase
 {
-	// Token: 0x06003645 RID: 13893 RVA: 0x00166844 File Offset: 0x00164A44
+	// Token: 0x0600369B RID: 13979 RVA: 0x00168A1C File Offset: 0x00166C1C
 	public override void Execute(MinEventParams _params)
 	{
 		if (this.navObjectName == "")
@@ -27,7 +27,7 @@ public class MinEventActionSetNavObject : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x06003646 RID: 13894 RVA: 0x001668E0 File Offset: 0x00164AE0
+	// Token: 0x0600369C RID: 13980 RVA: 0x00168AB8 File Offset: 0x00166CB8
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -63,23 +63,23 @@ public class MinEventActionSetNavObject : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002BA2 RID: 11170
+	// Token: 0x04002C16 RID: 11286
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string navObjectName = "";
 
-	// Token: 0x04002BA3 RID: 11171
+	// Token: 0x04002C17 RID: 11287
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string overrideSprite = "";
 
-	// Token: 0x04002BA4 RID: 11172
+	// Token: 0x04002C18 RID: 11288
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string overrideText = "";
 
-	// Token: 0x04002BA5 RID: 11173
+	// Token: 0x04002C19 RID: 11289
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string cvarToText = "";
 
-	// Token: 0x04002BA6 RID: 11174
+	// Token: 0x04002C1A RID: 11290
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isAdd = true;
 }

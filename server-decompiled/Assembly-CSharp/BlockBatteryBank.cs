@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000143 RID: 323
+// Token: 0x02000144 RID: 324
 [Preserve]
 public class BlockBatteryBank : BlockPowerSource
 {
-	// Token: 0x060008DF RID: 2271 RVA: 0x0003E68B File Offset: 0x0003C88B
+	// Token: 0x060008E9 RID: 2281 RVA: 0x0003E8EB File Offset: 0x0003CAEB
 	public override TileEntityPowerSource CreateTileEntity(Chunk chunk)
 	{
 		if (this.slotItem == null)
@@ -19,7 +19,7 @@ public class BlockBatteryBank : BlockPowerSource
 		};
 	}
 
-	// Token: 0x060008E0 RID: 2272 RVA: 0x0003E6C0 File Offset: 0x0003C8C0
+	// Token: 0x060008EA RID: 2282 RVA: 0x0003E920 File Offset: 0x0003CB20
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string GetPowerSourceIcon()
 	{

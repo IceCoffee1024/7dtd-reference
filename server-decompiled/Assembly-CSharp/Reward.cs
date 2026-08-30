@@ -1,24 +1,24 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-// Token: 0x02000C74 RID: 3188
+// Token: 0x02000C86 RID: 3206
 public class Reward
 {
-	// Token: 0x17000A15 RID: 2581
-	// (get) Token: 0x060061FD RID: 25085 RVA: 0x00269DA5 File Offset: 0x00267FA5
-	// (set) Token: 0x060061FE RID: 25086 RVA: 0x00269DAD File Offset: 0x00267FAD
+	// Token: 0x17000A28 RID: 2600
+	// (get) Token: 0x06006288 RID: 25224 RVA: 0x0026CC7D File Offset: 0x0026AE7D
+	// (set) Token: 0x06006289 RID: 25225 RVA: 0x0026CC85 File Offset: 0x0026AE85
 	[JsonProperty("id")]
 	public string Id { get; set; } = "";
 
-	// Token: 0x17000A16 RID: 2582
-	// (get) Token: 0x060061FF RID: 25087 RVA: 0x00269DB6 File Offset: 0x00267FB6
-	// (set) Token: 0x06006200 RID: 25088 RVA: 0x00269DBE File Offset: 0x00267FBE
+	// Token: 0x17000A29 RID: 2601
+	// (get) Token: 0x0600628A RID: 25226 RVA: 0x0026CC8E File Offset: 0x0026AE8E
+	// (set) Token: 0x0600628B RID: 25227 RVA: 0x0026CC96 File Offset: 0x0026AE96
 	[JsonProperty("title")]
 	public string Title { get; set; } = "";
 
-	// Token: 0x17000A17 RID: 2583
-	// (get) Token: 0x06006201 RID: 25089 RVA: 0x00269DC7 File Offset: 0x00267FC7
-	// (set) Token: 0x06006202 RID: 25090 RVA: 0x00269DCF File Offset: 0x00267FCF
+	// Token: 0x17000A2A RID: 2602
+	// (get) Token: 0x0600628C RID: 25228 RVA: 0x0026CC9F File Offset: 0x0026AE9F
+	// (set) Token: 0x0600628D RID: 25229 RVA: 0x0026CCA7 File Offset: 0x0026AEA7
 	[JsonProperty("cost")]
 	public int Cost { get; set; }
 }

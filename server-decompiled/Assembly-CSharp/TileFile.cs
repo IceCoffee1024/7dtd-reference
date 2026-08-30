@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
-// Token: 0x02000BBE RID: 3006
+// Token: 0x02000BD0 RID: 3024
 public class TileFile<[IsUnmanaged] T> : IDisposable where T : struct, ValueType
 {
-	// Token: 0x06005A9B RID: 23195 RVA: 0x0022D841 File Offset: 0x0022BA41
+	// Token: 0x06005B23 RID: 23331 RVA: 0x002305A9 File Offset: 0x0022E7A9
 	public TileFile(FileBackedArray<T> _fileBackedArray, int _tileWidth, int _tileCountWidth, int _tileCountHeight)
 	{
 		this.fba = _fileBackedArray;
@@ -14,13 +14,13 @@ public class TileFile<[IsUnmanaged] T> : IDisposable where T : struct, ValueType
 		this.dataLength = this.tileWidth * this.tileWidth;
 	}
 
-	// Token: 0x06005A9C RID: 23196 RVA: 0x0022D879 File Offset: 0x0022BA79
+	// Token: 0x06005B24 RID: 23332 RVA: 0x002305E1 File Offset: 0x0022E7E1
 	public bool IsInDatabase(int _tileX, int _tileZ)
 	{
 		return _tileX >= 0 && _tileX < this.tileCountWidth && _tileZ >= 0 && _tileZ < this.tileCountHeight;
 	}
 
-	// Token: 0x06005A9D RID: 23197 RVA: 0x0022D898 File Offset: 0x0022BA98
+	// Token: 0x06005B25 RID: 23333 RVA: 0x00230600 File Offset: 0x0022E800
 	public unsafe void LoadTile(int _tileX, int _tileZ, ref T[,] _tile)
 	{
 		if (_tile == null)
@@ -47,29 +47,29 @@ public class TileFile<[IsUnmanaged] T> : IDisposable where T : struct, ValueType
 		}
 	}
 
-	// Token: 0x06005A9E RID: 23198 RVA: 0x0022D940 File Offset: 0x0022BB40
+	// Token: 0x06005B26 RID: 23334 RVA: 0x002306A8 File Offset: 0x0022E8A8
 	public void Dispose()
 	{
 		this.fba.Dispose();
 	}
 
-	// Token: 0x04004622 RID: 17954
+	// Token: 0x040046BE RID: 18110
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FileBackedArray<T> fba;
 
-	// Token: 0x04004623 RID: 17955
+	// Token: 0x040046BF RID: 18111
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int tileWidth;
 
-	// Token: 0x04004624 RID: 17956
+	// Token: 0x040046C0 RID: 18112
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int tileCountWidth;
 
-	// Token: 0x04004625 RID: 17957
+	// Token: 0x040046C1 RID: 18113
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int tileCountHeight;
 
-	// Token: 0x04004626 RID: 17958
+	// Token: 0x040046C2 RID: 18114
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int dataLength;
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 
-// Token: 0x02000E7E RID: 3710
+// Token: 0x02000E93 RID: 3731
 public class XUiC_SelectableEntry : XUiController
 {
-	// Token: 0x17000D74 RID: 3444
-	// (get) Token: 0x06007381 RID: 29569 RVA: 0x002BBE9B File Offset: 0x002BA09B
-	// (set) Token: 0x06007382 RID: 29570 RVA: 0x002BBEA4 File Offset: 0x002BA0A4
+	// Token: 0x17000D8D RID: 3469
+	// (get) Token: 0x06007421 RID: 29729 RVA: 0x002BF3C7 File Offset: 0x002BD5C7
+	// (set) Token: 0x06007422 RID: 29730 RVA: 0x002BF3D0 File Offset: 0x002BD5D0
 	public bool IsSelected
 	{
 		get
@@ -37,13 +37,13 @@ public class XUiC_SelectableEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007383 RID: 29571 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06007423 RID: 29731 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void SelectedChanged(bool _isSelected)
 	{
 	}
 
-	// Token: 0x040055D4 RID: 21972
+	// Token: 0x04005678 RID: 22136
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isSelected;
 }

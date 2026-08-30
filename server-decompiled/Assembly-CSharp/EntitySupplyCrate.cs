@@ -4,12 +4,12 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020004D2 RID: 1234
+// Token: 0x020004D7 RID: 1239
 [Preserve]
 public class EntitySupplyCrate : EntityAlive
 {
-	// Token: 0x1700047A RID: 1146
-	// (get) Token: 0x06002814 RID: 10260 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x1700047E RID: 1150
+	// (get) Token: 0x0600283E RID: 10302 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsValidAimAssistSnapTarget
 	{
 		get
@@ -18,7 +18,7 @@ public class EntitySupplyCrate : EntityAlive
 		}
 	}
 
-	// Token: 0x06002815 RID: 10261 RVA: 0x000F8B6D File Offset: 0x000F6D6D
+	// Token: 0x0600283F RID: 10303 RVA: 0x000F9B79 File Offset: 0x000F7D79
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -26,7 +26,7 @@ public class EntitySupplyCrate : EntityAlive
 		this.hasAI = false;
 	}
 
-	// Token: 0x06002816 RID: 10262 RVA: 0x000F8B7C File Offset: 0x000F6D7C
+	// Token: 0x06002840 RID: 10304 RVA: 0x000F9B88 File Offset: 0x000F7D88
 	public override void PostInit()
 	{
 		base.PostInit();
@@ -48,14 +48,14 @@ public class EntitySupplyCrate : EntityAlive
 		}
 	}
 
-	// Token: 0x06002817 RID: 10263 RVA: 0x000F8BEB File Offset: 0x000F6DEB
+	// Token: 0x06002841 RID: 10305 RVA: 0x000F9BF7 File Offset: 0x000F7DF7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void InitLocalActivationCommands(Action<EntityActivationCommand> _addCallback)
 	{
 		_addCallback(new EntityActivationCommand("search", "search", null, null));
 	}
 
-	// Token: 0x06002818 RID: 10264 RVA: 0x000F8C04 File Offset: 0x000F6E04
+	// Token: 0x06002842 RID: 10306 RVA: 0x000F9C10 File Offset: 0x000F7E10
 	public override bool AllowActivationCommand(ReadOnlySpan<char> _commandName, EntityPlayerLocal _playerFocusing)
 	{
 		if (base.CommandIs(_commandName, "search"))
@@ -65,7 +65,7 @@ public class EntitySupplyCrate : EntityAlive
 		return base.AllowActivationCommand(_commandName, _playerFocusing);
 	}
 
-	// Token: 0x06002819 RID: 10265 RVA: 0x000F8C30 File Offset: 0x000F6E30
+	// Token: 0x06002843 RID: 10307 RVA: 0x000F9C3C File Offset: 0x000F7E3C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnEntityActivated(EntityActivationCommand _command, EntityPlayerLocal _playerFocusing)
 	{
@@ -75,7 +75,7 @@ public class EntitySupplyCrate : EntityAlive
 		}
 	}
 
-	// Token: 0x0600281A RID: 10266 RVA: 0x000F8C6C File Offset: 0x000F6E6C
+	// Token: 0x06002844 RID: 10308 RVA: 0x000F9C78 File Offset: 0x000F7E78
 	public override string GetActivationText()
 	{
 		if (this.bag == null)
@@ -112,7 +112,7 @@ public class EntitySupplyCrate : EntityAlive
 		return string.Format(Localization.Get("lootTooltipTouched", false, null), text, text2);
 	}
 
-	// Token: 0x0600281B RID: 10267 RVA: 0x000F8D48 File Offset: 0x000F6F48
+	// Token: 0x06002845 RID: 10309 RVA: 0x000F9D54 File Offset: 0x000F7F54
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void HandleNavObject()
 	{
@@ -131,7 +131,7 @@ public class EntitySupplyCrate : EntityAlive
 		}
 	}
 
-	// Token: 0x0600281C RID: 10268 RVA: 0x000F8E35 File Offset: 0x000F7035
+	// Token: 0x06002846 RID: 10310 RVA: 0x000F9E41 File Offset: 0x000F8041
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Start()
 	{
@@ -139,7 +139,7 @@ public class EntitySupplyCrate : EntityAlive
 		this.startRotY = this.rotation.y;
 	}
 
-	// Token: 0x0600281D RID: 10269 RVA: 0x000F8E4E File Offset: 0x000F704E
+	// Token: 0x06002847 RID: 10311 RVA: 0x000F9E5A File Offset: 0x000F805A
 	public override void OnEntityUnload()
 	{
 		base.OnEntityUnload();
@@ -149,25 +149,25 @@ public class EntitySupplyCrate : EntityAlive
 		}
 	}
 
-	// Token: 0x0600281E RID: 10270 RVA: 0x000F8E8A File Offset: 0x000F708A
+	// Token: 0x06002848 RID: 10312 RVA: 0x000F9E96 File Offset: 0x000F8096
 	public override EnumMapObjectType GetMapObjectType()
 	{
 		return EnumMapObjectType.SupplyDrop;
 	}
 
-	// Token: 0x0600281F RID: 10271 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002849 RID: 10313 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void SetMotionMultiplier(float _motionMultiplier)
 	{
 	}
 
-	// Token: 0x06002820 RID: 10272 RVA: 0x000F8E8E File Offset: 0x000F708E
+	// Token: 0x0600284A RID: 10314 RVA: 0x000F9E9A File Offset: 0x000F809A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void fallHitGround(float _v, Vector3 _fallMotion)
 	{
 		base.fallHitGround(Mathf.Min(_v, 5f), new Vector3(_fallMotion.x, Mathf.Max(-0.75f, _fallMotion.y), _fallMotion.z));
 	}
 
-	// Token: 0x06002821 RID: 10273 RVA: 0x000F8EC4 File Offset: 0x000F70C4
+	// Token: 0x0600284B RID: 10315 RVA: 0x000F9ED0 File Offset: 0x000F80D0
 	public override void MoveEntityHeaded(Vector3 _direction, bool _isDirAbsolute)
 	{
 		base.MoveEntityHeaded(_direction, _isDirAbsolute);
@@ -181,13 +181,13 @@ public class EntitySupplyCrate : EntityAlive
 		}
 	}
 
-	// Token: 0x06002822 RID: 10274 RVA: 0x000F8F32 File Offset: 0x000F7132
+	// Token: 0x0600284C RID: 10316 RVA: 0x000F9F3E File Offset: 0x000F813E
 	public bool RequiresChunkObserver()
 	{
 		return !this.onGround || this.isSmokeOn;
 	}
 
-	// Token: 0x06002823 RID: 10275 RVA: 0x000F8F44 File Offset: 0x000F7144
+	// Token: 0x0600284D RID: 10317 RVA: 0x000F9F50 File Offset: 0x000F8150
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ValidateResources()
 	{
@@ -201,7 +201,7 @@ public class EntitySupplyCrate : EntityAlive
 		}
 	}
 
-	// Token: 0x06002824 RID: 10276 RVA: 0x000F8F9C File Offset: 0x000F719C
+	// Token: 0x0600284E RID: 10318 RVA: 0x000F9FA8 File Offset: 0x000F81A8
 	public override void OnUpdateEntity()
 	{
 		base.OnUpdateEntity();
@@ -239,13 +239,13 @@ public class EntitySupplyCrate : EntityAlive
 		this.wasOnGround = this.onGround;
 	}
 
-	// Token: 0x06002825 RID: 10277 RVA: 0x000F90DC File Offset: 0x000F72DC
+	// Token: 0x0600284F RID: 10319 RVA: 0x000FA0E8 File Offset: 0x000F82E8
 	public override bool CanUpdateEntity()
 	{
 		return this.isEntityRemote || base.CanUpdateEntity();
 	}
 
-	// Token: 0x06002826 RID: 10278 RVA: 0x000F90F0 File Offset: 0x000F72F0
+	// Token: 0x06002850 RID: 10320 RVA: 0x000FA0FC File Offset: 0x000F82FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Update()
 	{
@@ -262,7 +262,7 @@ public class EntitySupplyCrate : EntityAlive
 		}
 	}
 
-	// Token: 0x06002827 RID: 10279 RVA: 0x000F9170 File Offset: 0x000F7370
+	// Token: 0x06002851 RID: 10321 RVA: 0x000FA17C File Offset: 0x000F837C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void StopSmokeAndLights()
 	{
@@ -286,40 +286,40 @@ public class EntitySupplyCrate : EntityAlive
 		}
 	}
 
-	// Token: 0x06002828 RID: 10280 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002852 RID: 10322 RVA: 0x00010E62 File Offset: 0x0000F062
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isRadiationSensitive()
 	{
 		return false;
 	}
 
-	// Token: 0x06002829 RID: 10281 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002853 RID: 10323 RVA: 0x00010E62 File Offset: 0x0000F062
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool canDespawn()
 	{
 		return false;
 	}
 
-	// Token: 0x0600282A RID: 10282 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x06002854 RID: 10324 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsSavedToFile()
 	{
 		return true;
 	}
 
-	// Token: 0x0600282B RID: 10283 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002855 RID: 10325 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool CanCollideWithBlocks()
 	{
 		return false;
 	}
 
-	// Token: 0x0600282C RID: 10284 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002856 RID: 10326 RVA: 0x00010E62 File Offset: 0x0000F062
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isGameMessageOnDeath()
 	{
 		return false;
 	}
 
-	// Token: 0x0600282D RID: 10285 RVA: 0x000F9224 File Offset: 0x000F7424
+	// Token: 0x06002857 RID: 10327 RVA: 0x000FA230 File Offset: 0x000F8430
 	public override void OnEntityDeath()
 	{
 		base.OnEntityDeath();
@@ -331,19 +331,19 @@ public class EntitySupplyCrate : EntityAlive
 		}
 	}
 
-	// Token: 0x0600282E RID: 10286 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002858 RID: 10328 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool CanBePushed()
 	{
 		return false;
 	}
 
-	// Token: 0x0600282F RID: 10287 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002859 RID: 10329 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool CanCollideWith(Entity _other)
 	{
 		return false;
 	}
 
-	// Token: 0x06002830 RID: 10288 RVA: 0x000F928F File Offset: 0x000F748F
+	// Token: 0x0600285A RID: 10330 RVA: 0x000FA29B File Offset: 0x000F849B
 	public override void Read(byte _version, BinaryReader _br)
 	{
 		base.Read(_version, _br);
@@ -355,7 +355,7 @@ public class EntitySupplyCrate : EntityAlive
 		}
 	}
 
-	// Token: 0x06002831 RID: 10289 RVA: 0x000F92C2 File Offset: 0x000F74C2
+	// Token: 0x0600285B RID: 10331 RVA: 0x000FA2CE File Offset: 0x000F84CE
 	public override void Write(BinaryWriter _bw, bool _bNetworkWrite)
 	{
 		base.Write(_bw, _bNetworkWrite);
@@ -364,44 +364,44 @@ public class EntitySupplyCrate : EntityAlive
 		_bw.Write(this.showParachuteInTicks);
 	}
 
-	// Token: 0x04001E18 RID: 7704
+	// Token: 0x04001E47 RID: 7751
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float startRotY;
 
-	// Token: 0x04001E19 RID: 7705
+	// Token: 0x04001E48 RID: 7752
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public new bool wasOnGround;
 
-	// Token: 0x04001E1A RID: 7706
+	// Token: 0x04001E49 RID: 7753
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int showParachuteInTicks;
 
-	// Token: 0x04001E1B RID: 7707
+	// Token: 0x04001E4A RID: 7754
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int closeParachuteInTicks;
 
-	// Token: 0x04001E1C RID: 7708
+	// Token: 0x04001E4B RID: 7755
 	public bool isSmokeOn = true;
 
-	// Token: 0x04001E1D RID: 7709
+	// Token: 0x04001E4C RID: 7756
 	public float smokeTimeAfterLanding = 240f;
 
-	// Token: 0x04001E1E RID: 7710
+	// Token: 0x04001E4D RID: 7757
 	public float smokeTimeOnGround;
 
-	// Token: 0x04001E1F RID: 7711
+	// Token: 0x04001E4E RID: 7758
 	public float smokeTimer;
 
-	// Token: 0x04001E20 RID: 7712
+	// Token: 0x04001E4F RID: 7759
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform crateT;
 
-	// Token: 0x04001E21 RID: 7713
+	// Token: 0x04001E50 RID: 7760
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform parachuteT;

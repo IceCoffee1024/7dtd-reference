@@ -4,10 +4,10 @@ using System.IO;
 using Noemax.GZip;
 using UnityEngine.Profiling;
 
-// Token: 0x02000768 RID: 1896
+// Token: 0x02000772 RID: 1906
 public abstract class NetConnectionAbs : INetConnection
 {
-	// Token: 0x0600385F RID: 14431 RVA: 0x001718E8 File Offset: 0x0016FAE8
+	// Token: 0x060038B7 RID: 14519 RVA: 0x00173B68 File Offset: 0x00171D68
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public NetConnectionAbs(int _channel, ClientInfo _clientInfo, INetworkClient _netClient, string _uniqueId)
 	{
@@ -20,13 +20,13 @@ public abstract class NetConnectionAbs : INetConnection
 		NetPackageLogger.BeginLog(this.isServer);
 	}
 
-	// Token: 0x06003860 RID: 14432 RVA: 0x0017198D File Offset: 0x0016FB8D
+	// Token: 0x060038B8 RID: 14520 RVA: 0x00173C0D File Offset: 0x00171E0D
 	public void SetEncryptionModule(IEncryptionModule _module)
 	{
 		this.encryptionModule = _module;
 	}
 
-	// Token: 0x06003861 RID: 14433 RVA: 0x00171998 File Offset: 0x0016FB98
+	// Token: 0x060038B9 RID: 14521 RVA: 0x00173C18 File Offset: 0x00171E18
 	public virtual void Disconnect(bool _kick)
 	{
 		if (!this.bDisconnected)
@@ -41,13 +41,13 @@ public abstract class NetConnectionAbs : INetConnection
 		}
 	}
 
-	// Token: 0x06003862 RID: 14434 RVA: 0x001719E6 File Offset: 0x0016FBE6
+	// Token: 0x060038BA RID: 14522 RVA: 0x00173C66 File Offset: 0x00171E66
 	public virtual bool IsDisconnected()
 	{
 		return this.bDisconnected;
 	}
 
-	// Token: 0x06003863 RID: 14435 RVA: 0x001719F0 File Offset: 0x0016FBF0
+	// Token: 0x060038BB RID: 14523 RVA: 0x00173C70 File Offset: 0x00171E70
 	public virtual void GetPackages(List<NetPackage> _dstBuf)
 	{
 		_dstBuf.Clear();
@@ -63,7 +63,7 @@ public abstract class NetConnectionAbs : INetConnection
 		}
 	}
 
-	// Token: 0x06003864 RID: 14436 RVA: 0x00171A58 File Offset: 0x0016FC58
+	// Token: 0x060038BC RID: 14524 RVA: 0x00173CD8 File Offset: 0x00171ED8
 	public virtual void AddToSendQueue(List<NetPackage> _packages)
 	{
 		for (int i = 0; i < _packages.Count; i++)
@@ -72,20 +72,20 @@ public abstract class NetConnectionAbs : INetConnection
 		}
 	}
 
-	// Token: 0x06003865 RID: 14437 RVA: 0x00171A83 File Offset: 0x0016FC83
+	// Token: 0x060038BD RID: 14525 RVA: 0x00173D03 File Offset: 0x00171F03
 	public virtual void UpgradeToFullConnection()
 	{
 		this.InitStreams(true);
 		this.allowCompression = true;
 	}
 
-	// Token: 0x06003866 RID: 14438 RVA: 0x00171A93 File Offset: 0x0016FC93
+	// Token: 0x060038BE RID: 14526 RVA: 0x00173D13 File Offset: 0x00171F13
 	public virtual NetConnectionStatistics GetStats()
 	{
 		return this.stats;
 	}
 
-	// Token: 0x06003867 RID: 14439 RVA: 0x00171A9C File Offset: 0x0016FC9C
+	// Token: 0x060038BF RID: 14527 RVA: 0x00173D1C File Offset: 0x00171F1C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool Compress(bool _compress, MemoryStream _uncompressedSourceStream, DeflateOutputStream _zipTargetStream, MemoryStream _compressedTargetStream, byte[] _copyBuffer, int _packageCount)
 	{
@@ -115,7 +115,7 @@ public abstract class NetConnectionAbs : INetConnection
 		return _compress;
 	}
 
-	// Token: 0x06003868 RID: 14440 RVA: 0x00171B3C File Offset: 0x0016FD3C
+	// Token: 0x060038C0 RID: 14528 RVA: 0x00173DBC File Offset: 0x00171FBC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool Decompress(bool _compressed, MemoryStream _uncompressedTargetStream, DeflateInputStream _unzipSourceStream, byte[] _copyBuffer)
 	{
@@ -137,21 +137,21 @@ public abstract class NetConnectionAbs : INetConnection
 		return _compressed;
 	}
 
-	// Token: 0x06003869 RID: 14441 RVA: 0x00171B88 File Offset: 0x0016FD88
+	// Token: 0x060038C1 RID: 14529 RVA: 0x00173E08 File Offset: 0x00172008
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool EnableEncryptData()
 	{
 		return this.encryptionModule != null && (this.isServer || NetConnectionAbs.encryptedStreamReceived);
 	}
 
-	// Token: 0x0600386A RID: 14442 RVA: 0x00171BA3 File Offset: 0x0016FDA3
+	// Token: 0x060038C2 RID: 14530 RVA: 0x00173E23 File Offset: 0x00172023
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool ExpectEncryptedData()
 	{
 		return this.encryptionModule != null && this.isServer && this.cInfo.loginDone;
 	}
 
-	// Token: 0x0600386B RID: 14443 RVA: 0x00171BC4 File Offset: 0x0016FDC4
+	// Token: 0x060038C3 RID: 14531 RVA: 0x00173E44 File Offset: 0x00172044
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool Encrypt(MemoryStream _stream)
 	{
@@ -164,7 +164,7 @@ public abstract class NetConnectionAbs : INetConnection
 		return false;
 	}
 
-	// Token: 0x0600386C RID: 14444 RVA: 0x00171BEC File Offset: 0x0016FDEC
+	// Token: 0x060038C4 RID: 14532 RVA: 0x00173E6C File Offset: 0x0017206C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool Decrypt(bool _bEncrypted, MemoryStream _stream)
 	{
@@ -194,84 +194,84 @@ public abstract class NetConnectionAbs : INetConnection
 		return false;
 	}
 
-	// Token: 0x0600386D RID: 14445 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060038C5 RID: 14533 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void FlushSendQueue()
 	{
 	}
 
-	// Token: 0x0600386E RID: 14446
+	// Token: 0x060038C6 RID: 14534
 	public abstract void AddToSendQueue(NetPackage _package);
 
-	// Token: 0x0600386F RID: 14447
+	// Token: 0x060038C7 RID: 14535
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract void InitStreams(bool _full);
 
-	// Token: 0x06003870 RID: 14448
+	// Token: 0x060038C8 RID: 14536
 	public abstract void AppendToReaderStream(byte[] _data, int _size);
 
-	// Token: 0x04002E0D RID: 11789
+	// Token: 0x04002E86 RID: 11910
 	public const int PROCESSING_BUFFER_SIZE = 2097152;
 
-	// Token: 0x04002E0E RID: 11790
+	// Token: 0x04002E87 RID: 11911
 	public const int COMPRESSED_BUFFER_SIZE = 2097152;
 
-	// Token: 0x04002E0F RID: 11791
+	// Token: 0x04002E88 RID: 11912
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public const int PREAUTH_BUFFER_SIZE = 32768;
 
-	// Token: 0x04002E10 RID: 11792
+	// Token: 0x04002E89 RID: 11913
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly int channel;
 
-	// Token: 0x04002E11 RID: 11793
+	// Token: 0x04002E8A RID: 11914
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly ClientInfo cInfo;
 
-	// Token: 0x04002E12 RID: 11794
+	// Token: 0x04002E8B RID: 11915
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly INetworkClient netClient;
 
-	// Token: 0x04002E13 RID: 11795
+	// Token: 0x04002E8C RID: 11916
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly bool isServer;
 
-	// Token: 0x04002E14 RID: 11796
+	// Token: 0x04002E8D RID: 11917
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEncryptionModule encryptionModule;
 
-	// Token: 0x04002E15 RID: 11797
+	// Token: 0x04002E8E RID: 11918
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly string connectionIdentifier;
 
-	// Token: 0x04002E16 RID: 11798
+	// Token: 0x04002E8F RID: 11919
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool fullConnection;
 
-	// Token: 0x04002E17 RID: 11799
+	// Token: 0x04002E90 RID: 11920
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool allowCompression;
 
-	// Token: 0x04002E18 RID: 11800
+	// Token: 0x04002E91 RID: 11921
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static bool encryptedStreamReceived;
 
-	// Token: 0x04002E19 RID: 11801
+	// Token: 0x04002E92 RID: 11922
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public volatile bool bDisconnected;
 
-	// Token: 0x04002E1A RID: 11802
+	// Token: 0x04002E93 RID: 11923
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly NetConnectionStatistics stats = new NetConnectionStatistics();
 
-	// Token: 0x04002E1B RID: 11803
+	// Token: 0x04002E94 RID: 11924
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly List<NetPackage> receivedPackages = new List<NetPackage>();
 
-	// Token: 0x04002E1C RID: 11804
+	// Token: 0x04002E95 RID: 11925
 	[PublicizedFrom(EAccessModifier.Private)]
 	public CustomSampler threadSamplerEncrypt = CustomSampler.Create("Encrypt", false);
 
-	// Token: 0x04002E1D RID: 11805
+	// Token: 0x04002E96 RID: 11926
 	[PublicizedFrom(EAccessModifier.Private)]
 	public CustomSampler threadSamplerDecrypt = CustomSampler.Create("Decrypt", false);
 }

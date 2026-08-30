@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001025 RID: 4133
+// Token: 0x0200103E RID: 4158
 [Preserve]
 public class XUiC_SignNoiseSettings : XUiC_SignLayerSettings
 {
-	// Token: 0x06008315 RID: 33557 RVA: 0x0031F79C File Offset: 0x0031D99C
+	// Token: 0x06008407 RID: 33799 RVA: 0x00323FC4 File Offset: 0x003221C4
 	public override void Init()
 	{
 		base.Init();
@@ -46,7 +46,7 @@ public class XUiC_SignNoiseSettings : XUiC_SignLayerSettings
 		base.SetDefaultValue("cbxFade", noiseSignLayer.fade);
 	}
 
-	// Token: 0x06008316 RID: 33558 RVA: 0x0031F96C File Offset: 0x0031DB6C
+	// Token: 0x06008408 RID: 33800 RVA: 0x00324194 File Offset: 0x00322394
 	public override void SetLayer(SignData.SignLayer layer)
 	{
 		this.currentLayer = layer as SignData.NoiseSignLayer;
@@ -69,7 +69,7 @@ public class XUiC_SignNoiseSettings : XUiC_SignLayerSettings
 		this.cbxFade.Value = (double)this.currentLayer.fade;
 	}
 
-	// Token: 0x06008317 RID: 33559 RVA: 0x0031FAC0 File Offset: 0x0031DCC0
+	// Token: 0x06008409 RID: 33801 RVA: 0x003242E8 File Offset: 0x003224E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnValueChangedGeneric(string _changeDescription)
 	{
@@ -95,39 +95,39 @@ public class XUiC_SignNoiseSettings : XUiC_SignLayerSettings
 		onLayerSettingsChanged();
 	}
 
-	// Token: 0x04006121 RID: 24865
+	// Token: 0x040061E8 RID: 25064
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxInt cbxSeed;
 
-	// Token: 0x04006122 RID: 24866
+	// Token: 0x040061E9 RID: 25065
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxInt cbxDetail;
 
-	// Token: 0x04006123 RID: 24867
+	// Token: 0x040061EA RID: 25066
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxSoftness;
 
-	// Token: 0x04006124 RID: 24868
+	// Token: 0x040061EB RID: 25067
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxDilate;
 
-	// Token: 0x04006125 RID: 24869
+	// Token: 0x040061EC RID: 25068
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxFade;
 
-	// Token: 0x04006126 RID: 24870
+	// Token: 0x040061ED RID: 25069
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignData.NoiseSignLayer currentLayer;
 
-	// Token: 0x04006127 RID: 24871
+	// Token: 0x040061EE RID: 25070
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float defaultMaxSoftness;
 
-	// Token: 0x04006128 RID: 24872
+	// Token: 0x040061EF RID: 25071
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float defaultMinDilate;
 
-	// Token: 0x04006129 RID: 24873
+	// Token: 0x040061F0 RID: 25072
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float defaultMaxDilate;
 }

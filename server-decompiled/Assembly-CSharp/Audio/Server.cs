@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace Audio
 {
-	// Token: 0x02001AFD RID: 6909
+	// Token: 0x02001B24 RID: 6948
 	public class Server : IDisposable
 	{
-		// Token: 0x0600CF01 RID: 52993 RVA: 0x004BA5F8 File Offset: 0x004B87F8
+		// Token: 0x0600D08A RID: 53386 RVA: 0x004C09EC File Offset: 0x004BEBEC
 		public void Play(Entity playOnEntity, string soundGroupName, float _occlusion, bool signalOnly = false, float volumeScale = 1f)
 		{
 			if (GameManager.IsDedicatedServer && playOnEntity != null)
@@ -27,7 +27,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600CF02 RID: 52994 RVA: 0x004BA6A4 File Offset: 0x004B88A4
+		// Token: 0x0600D08B RID: 53387 RVA: 0x004C0A98 File Offset: 0x004BEC98
 		public void Play(Vector3 position, string soundGroupName, float _occlusion, int entityId = -1, float volumeScale = 1f)
 		{
 			if (GameManager.IsDedicatedServer)
@@ -44,7 +44,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600CF03 RID: 52995 RVA: 0x004BA738 File Offset: 0x004B8938
+		// Token: 0x0600D08C RID: 53388 RVA: 0x004C0B2C File Offset: 0x004BED2C
 		public void Stop(int playOnEntityId, string soundGroupName)
 		{
 			foreach (KeyValuePair<int, Client> keyValuePair in this.m_players)
@@ -53,7 +53,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600CF04 RID: 52996 RVA: 0x004BA794 File Offset: 0x004B8994
+		// Token: 0x0600D08D RID: 53389 RVA: 0x004C0B88 File Offset: 0x004BED88
 		public void Stop(Vector3 position, string soundGroupName)
 		{
 			foreach (KeyValuePair<int, Client> keyValuePair in this.m_players)
@@ -62,13 +62,13 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600CF05 RID: 52997 RVA: 0x004BA7F0 File Offset: 0x004B89F0
+		// Token: 0x0600D08E RID: 53390 RVA: 0x004C0BE4 File Offset: 0x004BEDE4
 		public void AttachLocalPlayer(EntityPlayerLocal localPlayer)
 		{
 			this.m_localPlayer = localPlayer;
 		}
 
-		// Token: 0x0600CF06 RID: 52998 RVA: 0x004BA7FC File Offset: 0x004B89FC
+		// Token: 0x0600D08F RID: 53391 RVA: 0x004C0BF0 File Offset: 0x004BEDF0
 		public void EntityAddedToWorld(Entity entity, World world)
 		{
 			if (entity is EntityPlayer && (this.m_localPlayer == null || entity.entityId != this.m_localPlayer.entityId))
@@ -84,7 +84,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600CF07 RID: 52999 RVA: 0x004BA888 File Offset: 0x004B8A88
+		// Token: 0x0600D090 RID: 53392 RVA: 0x004C0C7C File Offset: 0x004BEE7C
 		public void EntityRemovedFromWorld(Entity entity, World world)
 		{
 			Client client;
@@ -95,7 +95,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600CF08 RID: 53000 RVA: 0x004BA8C4 File Offset: 0x004B8AC4
+		// Token: 0x0600D091 RID: 53393 RVA: 0x004C0CB8 File Offset: 0x004BEEB8
 		public void Dispose()
 		{
 			foreach (KeyValuePair<int, Client> keyValuePair in this.m_players)
@@ -106,11 +106,11 @@ namespace Audio
 			this.m_localPlayer = null;
 		}
 
-		// Token: 0x04009DB6 RID: 40374
+		// Token: 0x04009EE7 RID: 40679
 		[PublicizedFrom(EAccessModifier.Private)]
 		public EntityPlayerLocal m_localPlayer;
 
-		// Token: 0x04009DB7 RID: 40375
+		// Token: 0x04009EE8 RID: 40680
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<int, Client> m_players = new Dictionary<int, Client>();
 	}

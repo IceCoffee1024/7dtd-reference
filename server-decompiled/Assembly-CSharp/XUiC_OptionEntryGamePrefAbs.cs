@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D83 RID: 3459
+// Token: 0x02000D97 RID: 3479
 [Preserve]
 public abstract class XUiC_OptionEntryGamePrefAbs : XUiC_OptionEntryComboAbs
 {
-	// Token: 0x17000B38 RID: 2872
-	// (get) Token: 0x06006930 RID: 26928 RVA: 0x00296283 File Offset: 0x00294483
+	// Token: 0x17000B50 RID: 2896
+	// (get) Token: 0x060069CC RID: 27084 RVA: 0x002993D7 File Offset: 0x002975D7
 	public EnumGamePrefs? GamePref
 	{
 		get
@@ -15,27 +15,27 @@ public abstract class XUiC_OptionEntryGamePrefAbs : XUiC_OptionEntryComboAbs
 		}
 	}
 
-	// Token: 0x17000B39 RID: 2873
-	// (get) Token: 0x06006931 RID: 26929
+	// Token: 0x17000B51 RID: 2897
+	// (get) Token: 0x060069CD RID: 27085
 	public abstract GamePrefs.EnumType expectedPrefType
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
 		get;
 	}
 
-	// Token: 0x17000B3A RID: 2874
-	// (get) Token: 0x06006932 RID: 26930
-	// (set) Token: 0x06006933 RID: 26931
+	// Token: 0x17000B52 RID: 2898
+	// (get) Token: 0x060069CE RID: 27086
+	// (set) Token: 0x060069CF RID: 27087
 	public abstract object SelectedValue { get; set; }
 
-	// Token: 0x06006934 RID: 26932 RVA: 0x0029628B File Offset: 0x0029448B
+	// Token: 0x060069D0 RID: 27088 RVA: 0x002993DF File Offset: 0x002975DF
 	public override void Init()
 	{
 		base.Init();
 		this.parseGamePref();
 	}
 
-	// Token: 0x06006935 RID: 26933 RVA: 0x0029629C File Offset: 0x0029449C
+	// Token: 0x060069D1 RID: 27089 RVA: 0x002993F0 File Offset: 0x002975F0
 	public sealed override void ApplySelection()
 	{
 		if (this.gamePref == null)
@@ -51,11 +51,11 @@ public abstract class XUiC_OptionEntryGamePrefAbs : XUiC_OptionEntryComboAbs
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006936 RID: 26934
+	// Token: 0x060069D2 RID: 27090
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract void applySelectionInternal();
 
-	// Token: 0x06006937 RID: 26935 RVA: 0x002962F4 File Offset: 0x002944F4
+	// Token: 0x060069D3 RID: 27091 RVA: 0x00299448 File Offset: 0x00297648
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void parseGamePref()
 	{
@@ -99,16 +99,16 @@ public abstract class XUiC_OptionEntryGamePrefAbs : XUiC_OptionEntryComboAbs
 		this.gamePref = new EnumGamePrefs?(enumGamePrefs);
 	}
 
-	// Token: 0x06006938 RID: 26936 RVA: 0x00296420 File Offset: 0x00294620
+	// Token: 0x060069D4 RID: 27092 RVA: 0x00299574 File Offset: 0x00297774
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_OptionEntryGamePrefAbs()
 	{
 	}
 
-	// Token: 0x04005081 RID: 20609
+	// Token: 0x04005123 RID: 20771
 	public Func<bool> DoSaveOverride;
 
-	// Token: 0x04005082 RID: 20610
+	// Token: 0x04005124 RID: 20772
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public EnumGamePrefs? gamePref;
 }

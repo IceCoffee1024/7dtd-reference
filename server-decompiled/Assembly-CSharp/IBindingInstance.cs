@@ -1,11 +1,11 @@
 ﻿using System;
 
-// Token: 0x020010D8 RID: 4312
+// Token: 0x020010F1 RID: 4337
 public interface IBindingInstance
 {
-	// Token: 0x060088DD RID: 35037
+	// Token: 0x060089CF RID: 35279
 	void RefreshValue();
 
-	// Token: 0x040065C2 RID: 26050
+	// Token: 0x04006689 RID: 26249
 	public const char CvarFormatSplitChar = ':';
 }

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x020001DD RID: 477
+// Token: 0x020001DF RID: 479
 [Preserve]
 public class ConsoleCmdAdmin : ConsoleCmdAbstract
 {
-	// Token: 0x06000EC4 RID: 3780 RVA: 0x0005FE3F File Offset: 0x0005E03F
+	// Token: 0x06000ECF RID: 3791 RVA: 0x00060387 File Offset: 0x0005E587
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -15,7 +15,7 @@ public class ConsoleCmdAdmin : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000136 RID: 310
-	// (get) Token: 0x06000EC5 RID: 3781 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// (get) Token: 0x06000ED0 RID: 3792 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -25,7 +25,7 @@ public class ConsoleCmdAdmin : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000137 RID: 311
-	// (get) Token: 0x06000EC6 RID: 3782 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// (get) Token: 0x06000ED1 RID: 3793 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -34,21 +34,21 @@ public class ConsoleCmdAdmin : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000EC7 RID: 3783 RVA: 0x0005FE53 File Offset: 0x0005E053
+	// Token: 0x06000ED2 RID: 3794 RVA: 0x0006039B File Offset: 0x0005E59B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Manage user permission levels";
 	}
 
-	// Token: 0x06000EC8 RID: 3784 RVA: 0x0005FE5A File Offset: 0x0005E05A
+	// Token: 0x06000ED3 RID: 3795 RVA: 0x000603A2 File Offset: 0x0005E5A2
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Set/get user permission levels. A level of 0 is maximum permission,\nusers without an explicitly set permission have a permission level of 1000.\nUsage:\n   admin add <name / entity id / platform + platform user id> <level> [displayname]\n   admin remove <name / entity / platform + platform user id>\n   admin addgroup <steam id> <level regular> <level mods> [displayname]\n   admin removegroup <steam id>\n   admin list\nTo use the add/remove sub commands with a name or entity ID the player has\nto be online, the variant with platform and platform ID can be used for currently offline\nusers too.\nDisplayname can be used to put a descriptive name to the ban list in addition\nto the user's platform ID. If used on an online user the player name is used by default.\nWhen adding groups you set two permission levels: The 'regular' level applies to\nnormal members of the group, the 'mods' level applies to moderators / officers of\nthe group.";
 	}
 
-	// Token: 0x06000EC9 RID: 3785 RVA: 0x0005FE64 File Offset: 0x0005E064
+	// Token: 0x06000ED4 RID: 3796 RVA: 0x000603AC File Offset: 0x0005E5AC
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (GameManager.Instance.adminTools == null)
@@ -88,7 +88,7 @@ public class ConsoleCmdAdmin : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Invalid sub command \"" + _params[0] + "\".");
 	}
 
-	// Token: 0x06000ECA RID: 3786 RVA: 0x0005FF40 File Offset: 0x0005E140
+	// Token: 0x06000ED5 RID: 3797 RVA: 0x00060488 File Offset: 0x0005E688
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteAdd(List<string> _params)
 	{
@@ -122,7 +122,7 @@ public class ConsoleCmdAdmin : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output(string.Format("{0} added with permission level of {1}.", platformUserIdentifierAbs, num));
 	}
 
-	// Token: 0x06000ECB RID: 3787 RVA: 0x00060020 File Offset: 0x0005E220
+	// Token: 0x06000ED6 RID: 3798 RVA: 0x00060568 File Offset: 0x0005E768
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteRemove(List<string> _params)
 	{
@@ -145,7 +145,7 @@ public class ConsoleCmdAdmin : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output(string.Format("{0} was not on permissions list.", platformUserIdentifierAbs));
 	}
 
-	// Token: 0x06000ECC RID: 3788 RVA: 0x000600B8 File Offset: 0x0005E2B8
+	// Token: 0x06000ED7 RID: 3799 RVA: 0x00060600 File Offset: 0x0005E800
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteAddGroup(List<string> _params)
 	{
@@ -180,7 +180,7 @@ public class ConsoleCmdAdmin : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output(string.Format("Group {0} added with permission level of {1} for regulars, {2} for moderators.", _params[1], num, num2));
 	}
 
-	// Token: 0x06000ECD RID: 3789 RVA: 0x000601E8 File Offset: 0x0005E3E8
+	// Token: 0x06000ED8 RID: 3800 RVA: 0x00060730 File Offset: 0x0005E930
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteRemoveGroup(List<string> _params)
 	{
@@ -202,7 +202,7 @@ public class ConsoleCmdAdmin : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Group " + _params[1] + " was not on permissions list.");
 	}
 
-	// Token: 0x06000ECE RID: 3790 RVA: 0x000602B4 File Offset: 0x0005E4B4
+	// Token: 0x06000ED9 RID: 3801 RVA: 0x000607FC File Offset: 0x0005E9FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteList()
 	{

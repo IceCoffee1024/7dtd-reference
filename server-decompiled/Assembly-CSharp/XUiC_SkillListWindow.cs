@@ -2,11 +2,11 @@
 using GUI_2;
 using UnityEngine.Scripting;
 
-// Token: 0x02001049 RID: 4169
+// Token: 0x02001062 RID: 4194
 [Preserve]
 public class XUiC_SkillListWindow : XUiController
 {
-	// Token: 0x0600846C RID: 33900 RVA: 0x003288DC File Offset: 0x00326ADC
+	// Token: 0x0600855E RID: 34142 RVA: 0x0032D104 File Offset: 0x0032B304
 	public override void Init()
 	{
 		base.Init();
@@ -26,7 +26,7 @@ public class XUiC_SkillListWindow : XUiController
 		this.skillList.SkillListWindow = this;
 	}
 
-	// Token: 0x0600846D RID: 33901 RVA: 0x0032899F File Offset: 0x00326B9F
+	// Token: 0x0600855F RID: 34143 RVA: 0x0032D1C7 File Offset: 0x0032B3C7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CategoryList_CategoryChanged(XUiC_CategoryEntry _categoryEntry)
 	{
@@ -36,7 +36,7 @@ public class XUiC_SkillListWindow : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x0600846E RID: 33902 RVA: 0x003289D0 File Offset: 0x00326BD0
+	// Token: 0x06008560 RID: 34144 RVA: 0x0032D1F8 File Offset: 0x0032B3F8
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -45,14 +45,14 @@ public class XUiC_SkillListWindow : XUiController
 		this.xui.CalloutWindow.EnableCallouts(XUiC_GamepadCalloutWindow.CalloutType.MenuShortcuts, 0f);
 	}
 
-	// Token: 0x0600846F RID: 33903 RVA: 0x00328A21 File Offset: 0x00326C21
+	// Token: 0x06008561 RID: 34145 RVA: 0x0032D249 File Offset: 0x0032B449
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.xui.CalloutWindow.ClearCallouts(XUiC_GamepadCalloutWindow.CalloutType.MenuShortcuts);
 	}
 
-	// Token: 0x06008470 RID: 33904 RVA: 0x00328A3C File Offset: 0x00326C3C
+	// Token: 0x06008562 RID: 34146 RVA: 0x0032D264 File Offset: 0x0032B464
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -169,51 +169,51 @@ public class XUiC_SkillListWindow : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x0400623B RID: 25147
+	// Token: 0x04006302 RID: 25346
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string totalItems = "";
 
-	// Token: 0x0400623C RID: 25148
+	// Token: 0x04006303 RID: 25347
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int count;
 
-	// Token: 0x0400623D RID: 25149
+	// Token: 0x04006304 RID: 25348
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string categoryName = "Intellect";
 
-	// Token: 0x0400623E RID: 25150
+	// Token: 0x04006305 RID: 25349
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string categoryIcon = "";
 
-	// Token: 0x0400623F RID: 25151
+	// Token: 0x04006306 RID: 25350
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string pointsAvailable;
 
-	// Token: 0x04006240 RID: 25152
+	// Token: 0x04006307 RID: 25351
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string skillsTitle = "";
 
-	// Token: 0x04006241 RID: 25153
+	// Token: 0x04006308 RID: 25352
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string booksTitle = "";
 
-	// Token: 0x04006242 RID: 25154
+	// Token: 0x04006309 RID: 25353
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string craftingTitle;
 
-	// Token: 0x04006243 RID: 25155
+	// Token: 0x0400630A RID: 25354
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CategoryList categoryList;
 
-	// Token: 0x04006244 RID: 25156
+	// Token: 0x0400630B RID: 25355
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SkillList skillList;
 
-	// Token: 0x04006245 RID: 25157
+	// Token: 0x0400630C RID: 25356
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string, int> totalSkillsFormatter = new CachedStringFormatter<string, int>((string _s, int _i) => string.Format(_s, _i));
 
-	// Token: 0x04006246 RID: 25158
+	// Token: 0x0400630D RID: 25357
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string, int> skillPointsAvailableFormatter = new CachedStringFormatter<string, int>((string _s, int _i) => string.Format("{0} {1}", _s, _i));
 }

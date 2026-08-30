@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020015B7 RID: 5559
+// Token: 0x020015D2 RID: 5586
 public class vp_Remover : MonoBehaviour
 {
-	// Token: 0x0600AD86 RID: 44422 RVA: 0x0040B3BD File Offset: 0x004095BD
+	// Token: 0x0600AE83 RID: 44675 RVA: 0x004106FD File Offset: 0x0040E8FD
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
@@ -14,17 +14,17 @@ public class vp_Remover : MonoBehaviour
 		}, this.m_DestroyTimer);
 	}
 
-	// Token: 0x0600AD87 RID: 44423 RVA: 0x0040B3E6 File Offset: 0x004095E6
+	// Token: 0x0600AE84 RID: 44676 RVA: 0x00410726 File Offset: 0x0040E926
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDisable()
 	{
 		this.m_DestroyTimer.Cancel();
 	}
 
-	// Token: 0x04008141 RID: 33089
+	// Token: 0x0400821A RID: 33306
 	public float LifeTime = 10f;
 
-	// Token: 0x04008142 RID: 33090
+	// Token: 0x0400821B RID: 33307
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Timer.Handle m_DestroyTimer = new vp_Timer.Handle();

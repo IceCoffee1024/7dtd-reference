@@ -2,25 +2,25 @@
 using System.Collections.Generic;
 using System.IO;
 
-// Token: 0x020002D8 RID: 728
+// Token: 0x020002DC RID: 732
 public class Recipe
 {
-	// Token: 0x1700024E RID: 590
-	// (get) Token: 0x0600150A RID: 5386 RVA: 0x0007EDAF File Offset: 0x0007CFAF
-	// (set) Token: 0x0600150B RID: 5387 RVA: 0x0007EDB7 File Offset: 0x0007CFB7
+	// Token: 0x1700024F RID: 591
+	// (get) Token: 0x0600151D RID: 5405 RVA: 0x0007F46B File Offset: 0x0007D66B
+	// (set) Token: 0x0600151E RID: 5406 RVA: 0x0007F473 File Offset: 0x0007D673
 	public bool IsLearnable
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x0600150C RID: 5388 RVA: 0x0007EDC0 File Offset: 0x0007CFC0
+	// Token: 0x0600151F RID: 5407 RVA: 0x0007F47C File Offset: 0x0007D67C
 	public List<ItemStack> GetIngredientsSummedUp()
 	{
 		return this.ingredients;
 	}
 
-	// Token: 0x0600150E RID: 5390 RVA: 0x0007EDF8 File Offset: 0x0007CFF8
+	// Token: 0x06001521 RID: 5409 RVA: 0x0007F4B4 File Offset: 0x0007D6B4
 	public void Init()
 	{
 		float num = 0f;
@@ -49,7 +49,7 @@ public class Recipe
 		this.IsLearnable = this.tags.Test_AnySet(Recipe.LearnableRecipe);
 	}
 
-	// Token: 0x0600150F RID: 5391 RVA: 0x0007EECC File Offset: 0x0007D0CC
+	// Token: 0x06001522 RID: 5410 RVA: 0x0007F588 File Offset: 0x0007D788
 	public void AddIngredient(ItemValue _itemValue, int _count)
 	{
 		for (int i = 0; i < this.ingredients.Count - 1; i++)
@@ -63,13 +63,13 @@ public class Recipe
 		this.ingredients.Add(new ItemStack(_itemValue, _count));
 	}
 
-	// Token: 0x06001510 RID: 5392 RVA: 0x0007EF3B File Offset: 0x0007D13B
+	// Token: 0x06001523 RID: 5411 RVA: 0x0007F5F7 File Offset: 0x0007D7F7
 	public void AddIngredients(List<ItemStack> _items)
 	{
 		this.ingredients.AddRange(_items);
 	}
 
-	// Token: 0x06001511 RID: 5393 RVA: 0x0007EF4C File Offset: 0x0007D14C
+	// Token: 0x06001524 RID: 5412 RVA: 0x0007F608 File Offset: 0x0007D808
 	public string GetName()
 	{
 		ItemClass forId = ItemClass.GetForId(this.itemValueType);
@@ -80,7 +80,7 @@ public class Recipe
 		return forId.GetItemName();
 	}
 
-	// Token: 0x06001512 RID: 5394 RVA: 0x0007EF74 File Offset: 0x0007D174
+	// Token: 0x06001525 RID: 5413 RVA: 0x0007F630 File Offset: 0x0007D830
 	public string GetIcon()
 	{
 		ItemClass forId = ItemClass.GetForId(this.itemValueType);
@@ -91,7 +91,7 @@ public class Recipe
 		return forId.GetIconName();
 	}
 
-	// Token: 0x06001513 RID: 5395 RVA: 0x0007EF9C File Offset: 0x0007D19C
+	// Token: 0x06001526 RID: 5414 RVA: 0x0007F658 File Offset: 0x0007D858
 	public bool CanCraft(IList<ItemStack> _itemStack, EntityAlive _ea = null, int _craftingTier = -1)
 	{
 		this.craftingTier = this.GetCraftingTier((EntityPlayer)_ea);
@@ -132,7 +132,7 @@ public class Recipe
 		return true;
 	}
 
-	// Token: 0x06001514 RID: 5396 RVA: 0x0007F0C8 File Offset: 0x0007D2C8
+	// Token: 0x06001527 RID: 5415 RVA: 0x0007F784 File Offset: 0x0007D984
 	public bool CanCraftAny(IList<ItemStack> _itemStack, EntityAlive _ea = null)
 	{
 		for (int i = this.GetCraftingTier((EntityPlayer)_ea); i >= 0; i--)
@@ -180,13 +180,13 @@ public class Recipe
 		return false;
 	}
 
-	// Token: 0x06001515 RID: 5397 RVA: 0x0007F210 File Offset: 0x0007D410
+	// Token: 0x06001528 RID: 5416 RVA: 0x0007F8CC File Offset: 0x0007DACC
 	public bool IsUnlocked(EntityPlayer _ep)
 	{
 		return !XUiM_Recipes.CraftingProgression || !this.IsLearnable || EffectManager.GetValue(PassiveEffects.RecipeTagUnlocked, null, _ep.GetCVar(this.GetName()), _ep, null, this.tags, true, true, true, true, true, 1, true, false) > 0f;
 	}
 
-	// Token: 0x06001516 RID: 5398 RVA: 0x0007F25C File Offset: 0x0007D45C
+	// Token: 0x06001529 RID: 5417 RVA: 0x0007F918 File Offset: 0x0007DB18
 	public int GetCraftingTier(EntityPlayer _ep)
 	{
 		if (!XUiM_Recipes.CraftingProgression)
@@ -196,13 +196,13 @@ public class Recipe
 		return (int)EffectManager.GetValue(PassiveEffects.CraftingTier, null, 1f, _ep, this, this.tags, true, true, true, true, true, 1, true, false);
 	}
 
-	// Token: 0x06001517 RID: 5399 RVA: 0x0007F290 File Offset: 0x0007D490
+	// Token: 0x0600152A RID: 5418 RVA: 0x0007F94C File Offset: 0x0007DB4C
 	public ItemClass GetOutputItemClass()
 	{
 		return ItemClass.GetForId(this.itemValueType);
 	}
 
-	// Token: 0x06001518 RID: 5400 RVA: 0x0007F2A0 File Offset: 0x0007D4A0
+	// Token: 0x0600152B RID: 5419 RVA: 0x0007F95C File Offset: 0x0007DB5C
 	public bool ContainsIngredients(ItemValue[] _items)
 	{
 		for (int i = 0; i < this.ingredients.Count; i++)
@@ -218,13 +218,13 @@ public class Recipe
 		return false;
 	}
 
-	// Token: 0x06001519 RID: 5401 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x0600152C RID: 5420 RVA: 0x00010E62 File Offset: 0x0000F062
 	public bool CanBeCraftedWith(Dictionary<ItemValue, int> _items)
 	{
 		return false;
 	}
 
-	// Token: 0x0600151A RID: 5402 RVA: 0x0007F2F4 File Offset: 0x0007D4F4
+	// Token: 0x0600152D RID: 5421 RVA: 0x0007F9B0 File Offset: 0x0007DBB0
 	public void Write(BinaryWriter _bw)
 	{
 		_bw.Write(this.Version);
@@ -241,7 +241,7 @@ public class Recipe
 		}
 	}
 
-	// Token: 0x0600151B RID: 5403 RVA: 0x0007F398 File Offset: 0x0007D598
+	// Token: 0x0600152E RID: 5422 RVA: 0x0007FA54 File Offset: 0x0007DC54
 	public static Recipe Read(BinaryReader _br)
 	{
 		_br.ReadUInt16();
@@ -261,13 +261,13 @@ public class Recipe
 		return recipe;
 	}
 
-	// Token: 0x0600151C RID: 5404 RVA: 0x0007F430 File Offset: 0x0007D630
+	// Token: 0x0600152F RID: 5423 RVA: 0x0007FAEC File Offset: 0x0007DCEC
 	public override string ToString()
 	{
 		return string.Format("[Recipe: " + this.GetName() + "]", Array.Empty<object>());
 	}
 
-	// Token: 0x0600151D RID: 5405 RVA: 0x0007F451 File Offset: 0x0007D651
+	// Token: 0x06001530 RID: 5424 RVA: 0x0007FB0D File Offset: 0x0007DD0D
 	public void ModifyValue(PassiveEffects _passiveEffect, ref float _base_val, ref float _perc_val, FastTags<TagGroup.Global> tags, int _craftingTier = 1)
 	{
 		if (this.Effects != null)
@@ -276,76 +276,76 @@ public class Recipe
 		}
 	}
 
-	// Token: 0x04000E08 RID: 3592
+	// Token: 0x04000E19 RID: 3609
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ushort Version = 1;
 
-	// Token: 0x04000E09 RID: 3593
+	// Token: 0x04000E1A RID: 3610
 	public static FastTags<TagGroup.Global> MaterialBased = FastTags<TagGroup.Global>.Parse("materialbased");
 
-	// Token: 0x04000E0A RID: 3594
+	// Token: 0x04000E1B RID: 3611
 	public static FastTags<TagGroup.Global> LearnableRecipe = FastTags<TagGroup.Global>.Parse("learnable");
 
-	// Token: 0x04000E0B RID: 3595
+	// Token: 0x04000E1C RID: 3612
 	public int itemValueType;
 
-	// Token: 0x04000E0C RID: 3596
+	// Token: 0x04000E1D RID: 3613
 	public int count;
 
-	// Token: 0x04000E0D RID: 3597
+	// Token: 0x04000E1E RID: 3614
 	public List<ItemStack> ingredients = new List<ItemStack>();
 
-	// Token: 0x04000E0E RID: 3598
+	// Token: 0x04000E1F RID: 3615
 	public bool wildcardForgeCategory;
 
-	// Token: 0x04000E0F RID: 3599
+	// Token: 0x04000E20 RID: 3616
 	public bool wildcardCampfireCategory;
 
-	// Token: 0x04000E10 RID: 3600
+	// Token: 0x04000E21 RID: 3617
 	public bool materialBasedRecipe;
 
-	// Token: 0x04000E11 RID: 3601
+	// Token: 0x04000E22 RID: 3618
 	public int craftingToolType;
 
-	// Token: 0x04000E12 RID: 3602
+	// Token: 0x04000E23 RID: 3619
 	public float craftingTime;
 
-	// Token: 0x04000E13 RID: 3603
+	// Token: 0x04000E24 RID: 3620
 	public string craftingArea;
 
-	// Token: 0x04000E14 RID: 3604
+	// Token: 0x04000E25 RID: 3621
 	public string tooltip;
 
-	// Token: 0x04000E15 RID: 3605
+	// Token: 0x04000E26 RID: 3622
 	public int unlockExpGain;
 
-	// Token: 0x04000E16 RID: 3606
+	// Token: 0x04000E27 RID: 3623
 	public int craftExpGain;
 
-	// Token: 0x04000E17 RID: 3607
+	// Token: 0x04000E28 RID: 3624
 	public bool UseIngredientModifier = true;
 
-	// Token: 0x04000E18 RID: 3608
+	// Token: 0x04000E29 RID: 3625
 	public FastTags<TagGroup.Global> tags;
 
-	// Token: 0x04000E19 RID: 3609
+	// Token: 0x04000E2A RID: 3626
 	public bool IsTrackable = true;
 
-	// Token: 0x04000E1A RID: 3610
+	// Token: 0x04000E2B RID: 3627
 	public bool isQuest;
 
-	// Token: 0x04000E1B RID: 3611
+	// Token: 0x04000E2C RID: 3628
 	public bool isChallenge;
 
-	// Token: 0x04000E1C RID: 3612
+	// Token: 0x04000E2D RID: 3629
 	public bool IsTracked;
 
-	// Token: 0x04000E1D RID: 3613
+	// Token: 0x04000E2E RID: 3630
 	public bool IsScrap;
 
-	// Token: 0x04000E1E RID: 3614
+	// Token: 0x04000E2F RID: 3631
 	public int craftingTier = -1;
 
-	// Token: 0x04000E1F RID: 3615
+	// Token: 0x04000E30 RID: 3632
 	public MinEffectController Effects;
 }

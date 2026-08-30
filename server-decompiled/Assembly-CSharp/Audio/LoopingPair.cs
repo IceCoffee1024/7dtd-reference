@@ -2,13 +2,13 @@
 
 namespace Audio
 {
-	// Token: 0x02001AEF RID: 6895
+	// Token: 0x02001B16 RID: 6934
 	public struct LoopingPair
 	{
-		// Token: 0x04009D5D RID: 40285
+		// Token: 0x04009E8E RID: 40590
 		public SourceGameObjectPair sgoBegin;
 
-		// Token: 0x04009D5E RID: 40286
+		// Token: 0x04009E8F RID: 40591
 		public SourceGameObjectPair sgoLoop;
 	}
 }

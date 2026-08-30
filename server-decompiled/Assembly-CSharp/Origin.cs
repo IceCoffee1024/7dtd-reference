@@ -4,10 +4,10 @@ using Audio;
 using Unity.Collections;
 using UnityEngine;
 
-// Token: 0x0200128F RID: 4751
+// Token: 0x020012A9 RID: 4777
 public class Origin : MonoBehaviour
 {
-	// Token: 0x06009699 RID: 38553 RVA: 0x0038C640 File Offset: 0x0038A840
+	// Token: 0x06009794 RID: 38804 RVA: 0x0039179C File Offset: 0x0038F99C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
@@ -18,27 +18,27 @@ public class Origin : MonoBehaviour
 		this.physicsCheckT = base.transform.GetChild(0);
 	}
 
-	// Token: 0x0600969A RID: 38554 RVA: 0x0038C692 File Offset: 0x0038A892
+	// Token: 0x06009795 RID: 38805 RVA: 0x003917EE File Offset: 0x0038F9EE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDestroy()
 	{
 		this.particles.Dispose();
 	}
 
-	// Token: 0x0600969B RID: 38555 RVA: 0x0038C69F File Offset: 0x0038A89F
+	// Token: 0x06009796 RID: 38806 RVA: 0x003917FB File Offset: 0x0038F9FB
 	public static void Cleanup()
 	{
 		Origin.position = Vector3.zero;
 		Shader.SetGlobalVector("_OriginPos", Origin.position);
 	}
 
-	// Token: 0x0600969C RID: 38556 RVA: 0x0038C6BF File Offset: 0x0038A8BF
+	// Token: 0x06009797 RID: 38807 RVA: 0x0039181B File Offset: 0x0038FA1B
 	public static void Add(Transform _t, int _level)
 	{
 		Origin.RepositionObjects.Add(new Origin.TransformLevel(_t, _level));
 	}
 
-	// Token: 0x0600969D RID: 38557 RVA: 0x0038C6D4 File Offset: 0x0038A8D4
+	// Token: 0x06009798 RID: 38808 RVA: 0x00391830 File Offset: 0x0038FA30
 	public static void Remove(Transform _t)
 	{
 		for (int i = Origin.RepositionObjects.Count - 1; i >= 0; i--)
@@ -50,7 +50,7 @@ public class Origin : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600969E RID: 38558 RVA: 0x0038C71B File Offset: 0x0038A91B
+	// Token: 0x06009799 RID: 38809 RVA: 0x00391877 File Offset: 0x0038FA77
 	public void Reposition(Vector3 _newOrigin)
 	{
 		this.DoReposition(_newOrigin);
@@ -59,7 +59,7 @@ public class Origin : MonoBehaviour
 		Physics.simulationMode = SimulationMode.FixedUpdate;
 	}
 
-	// Token: 0x0600969F RID: 38559 RVA: 0x0038C73C File Offset: 0x0038A93C
+	// Token: 0x0600979A RID: 38810 RVA: 0x00391898 File Offset: 0x0038FA98
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DoReposition(Vector3 _newOrigin)
 	{
@@ -132,7 +132,7 @@ public class Origin : MonoBehaviour
 		originChanged(_newOrigin);
 	}
 
-	// Token: 0x060096A0 RID: 38560 RVA: 0x0038C954 File Offset: 0x0038AB54
+	// Token: 0x0600979B RID: 38811 RVA: 0x00391AB0 File Offset: 0x0038FCB0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RepositionParticles(Vector3 _deltaV)
 	{
@@ -168,7 +168,7 @@ public class Origin : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060096A1 RID: 38561 RVA: 0x0038CA74 File Offset: 0x0038AC74
+	// Token: 0x0600979C RID: 38812 RVA: 0x00391BD0 File Offset: 0x0038FDD0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void RepositionTransform(Vector3 _deltaV, Transform _t, int _level)
 	{
@@ -197,7 +197,7 @@ public class Origin : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060096A2 RID: 38562 RVA: 0x0038CAF0 File Offset: 0x0038ACF0
+	// Token: 0x0600979D RID: 38813 RVA: 0x00391C4C File Offset: 0x0038FE4C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FixedUpdate()
 	{
@@ -303,7 +303,7 @@ public class Origin : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060096A3 RID: 38563 RVA: 0x0038CDB0 File Offset: 0x0038AFB0
+	// Token: 0x0600979E RID: 38814 RVA: 0x00391F0C File Offset: 0x0039010C
 	public void UpdateLocalPlayer(EntityPlayerLocal player)
 	{
 		if (!this.isAuto)
@@ -316,87 +316,87 @@ public class Origin : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040070C0 RID: 28864
+	// Token: 0x04007195 RID: 29077
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cAutoRepositionDistanceSq = 67600f;
 
-	// Token: 0x040070C1 RID: 28865
+	// Token: 0x04007196 RID: 29078
 	public static Origin Instance;
 
-	// Token: 0x040070C2 RID: 28866
+	// Token: 0x04007197 RID: 29079
 	public static Action<Vector3> OriginChanged;
 
-	// Token: 0x040070C3 RID: 28867
+	// Token: 0x04007198 RID: 29080
 	public static Vector3 position;
 
-	// Token: 0x040070C4 RID: 28868
+	// Token: 0x04007199 RID: 29081
 	public bool isAuto;
 
-	// Token: 0x040070C5 RID: 28869
+	// Token: 0x0400719A RID: 29082
 	public Vector3 OriginPos;
 
-	// Token: 0x040070C6 RID: 28870
+	// Token: 0x0400719B RID: 29083
 	[Tooltip("Force a move every x seconds")]
 	public float timedMove;
 
-	// Token: 0x040070C7 RID: 28871
+	// Token: 0x0400719C RID: 29084
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float timedMoveTime;
 
-	// Token: 0x040070C8 RID: 28872
+	// Token: 0x0400719D RID: 29085
 	public Vector3 timedMoveDistance = new Vector3(16f, 0f, 0f);
 
-	// Token: 0x040070C9 RID: 28873
+	// Token: 0x0400719E RID: 29086
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int timedMoveCount;
 
-	// Token: 0x040070CA RID: 28874
+	// Token: 0x0400719F RID: 29087
 	public Vector3 MoveOriginTo;
 
-	// Token: 0x040070CB RID: 28875
+	// Token: 0x040071A0 RID: 29088
 	public bool isMoveOriginNow;
 
-	// Token: 0x040070CC RID: 28876
+	// Token: 0x040071A1 RID: 29089
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly List<Origin.TransformLevel> RepositionObjects = new List<Origin.TransformLevel>();
 
-	// Token: 0x040070CD RID: 28877
+	// Token: 0x040071A2 RID: 29090
 	public static List<Transform> particleSystemTs = new List<Transform>();
 
-	// Token: 0x040070CE RID: 28878
+	// Token: 0x040071A3 RID: 29091
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<ParticleSystem> particleSystems = new List<ParticleSystem>();
 
-	// Token: 0x040070CF RID: 28879
+	// Token: 0x040071A4 RID: 29092
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public NativeArray<ParticleSystem.Particle> particles;
 
-	// Token: 0x040070D0 RID: 28880
+	// Token: 0x040071A5 RID: 29093
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform physicsCheckT;
 
-	// Token: 0x040070D1 RID: 28881
+	// Token: 0x040071A6 RID: 29094
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 physicsCheckPos;
 
-	// Token: 0x040070D2 RID: 28882
+	// Token: 0x040071A7 RID: 29095
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int checkRepositionDelay = -1;
 
-	// Token: 0x02001290 RID: 4752
+	// Token: 0x020012AA RID: 4778
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct TransformLevel
 	{
-		// Token: 0x060096A6 RID: 38566 RVA: 0x0038CE43 File Offset: 0x0038B043
+		// Token: 0x060097A1 RID: 38817 RVA: 0x00391F9F File Offset: 0x0039019F
 		public TransformLevel(Transform _transform, int _level)
 		{
 			this.transform = _transform;
@@ -404,13 +404,13 @@ public class Origin : MonoBehaviour
 			this.name = this.transform.name;
 		}
 
-		// Token: 0x040070D3 RID: 28883
+		// Token: 0x040071A8 RID: 29096
 		public readonly Transform transform;
 
-		// Token: 0x040070D4 RID: 28884
+		// Token: 0x040071A9 RID: 29097
 		public readonly int level;
 
-		// Token: 0x040070D5 RID: 28885
+		// Token: 0x040071AA RID: 29098
 		public readonly string name;
 	}
 }

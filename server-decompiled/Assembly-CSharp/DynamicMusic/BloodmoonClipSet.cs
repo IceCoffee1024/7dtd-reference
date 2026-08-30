@@ -5,17 +5,17 @@ using UnityEngine.Scripting;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A19 RID: 6681
+	// Token: 0x02001A40 RID: 6720
 	[Preserve]
 	public class BloodmoonClipSet : LayeredContent
 	{
-		// Token: 0x0600CA52 RID: 51794 RVA: 0x004A18D0 File Offset: 0x0049FAD0
+		// Token: 0x0600CBDB RID: 52187 RVA: 0x004A7CC4 File Offset: 0x004A5EC4
 		public override float GetSample(PlacementType _placement, int _idx, params float[] _params)
 		{
 			return this.clips[_placement].GetSample(_idx, _params);
 		}
 
-		// Token: 0x0600CA53 RID: 51795 RVA: 0x004A18E8 File Offset: 0x0049FAE8
+		// Token: 0x0600CBDC RID: 52188 RVA: 0x004A7CDC File Offset: 0x004A5EDC
 		public override void ParseFromXml(XElement _xmlNode)
 		{
 			base.ParseFromXml(_xmlNode);

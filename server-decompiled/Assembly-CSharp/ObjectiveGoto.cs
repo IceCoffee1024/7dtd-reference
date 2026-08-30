@@ -4,12 +4,12 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000989 RID: 2441
+// Token: 0x0200099A RID: 2458
 [Preserve]
 public class ObjectiveGoto : BaseObjective
 {
-	// Token: 0x1700078E RID: 1934
-	// (get) Token: 0x060047B6 RID: 18358 RVA: 0x00046C7A File Offset: 0x00044E7A
+	// Token: 0x170007A0 RID: 1952
+	// (get) Token: 0x0600483C RID: 18492 RVA: 0x00046EDA File Offset: 0x000450DA
 	public override BaseObjective.ObjectiveValueTypes ObjectiveValueType
 	{
 		get
@@ -18,8 +18,8 @@ public class ObjectiveGoto : BaseObjective
 		}
 	}
 
-	// Token: 0x1700078F RID: 1935
-	// (get) Token: 0x060047B7 RID: 18359 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x170007A1 RID: 1953
+	// (get) Token: 0x0600483D RID: 18493 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool NeedsNPCSetPosition
 	{
 		get
@@ -28,7 +28,7 @@ public class ObjectiveGoto : BaseObjective
 		}
 	}
 
-	// Token: 0x060047B8 RID: 18360 RVA: 0x001C12B0 File Offset: 0x001BF4B0
+	// Token: 0x0600483E RID: 18494 RVA: 0x001C3AA4 File Offset: 0x001C1CA4
 	public override void SetupObjective()
 	{
 		if (this.ID == "trader")
@@ -44,8 +44,8 @@ public class ObjectiveGoto : BaseObjective
 		}
 	}
 
-	// Token: 0x17000790 RID: 1936
-	// (get) Token: 0x060047B9 RID: 18361 RVA: 0x001BE8E8 File Offset: 0x001BCAE8
+	// Token: 0x170007A2 RID: 1954
+	// (get) Token: 0x0600483F RID: 18495 RVA: 0x001C10DC File Offset: 0x001BF2DC
 	public override bool UpdateUI
 	{
 		get
@@ -54,8 +54,8 @@ public class ObjectiveGoto : BaseObjective
 		}
 	}
 
-	// Token: 0x17000791 RID: 1937
-	// (get) Token: 0x060047BA RID: 18362 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x170007A3 RID: 1955
+	// (get) Token: 0x06004840 RID: 18496 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool useUpdateLoop
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -65,15 +65,15 @@ public class ObjectiveGoto : BaseObjective
 		}
 	}
 
-	// Token: 0x060047BB RID: 18363 RVA: 0x001BE8F6 File Offset: 0x001BCAF6
+	// Token: 0x06004841 RID: 18497 RVA: 0x001C10EA File Offset: 0x001BF2EA
 	public override void SetupDisplay()
 	{
 		base.Description = this.keyword;
 		this.StatusText = "";
 	}
 
-	// Token: 0x17000792 RID: 1938
-	// (get) Token: 0x060047BC RID: 18364 RVA: 0x001C1340 File Offset: 0x001BF540
+	// Token: 0x170007A4 RID: 1956
+	// (get) Token: 0x06004842 RID: 18498 RVA: 0x001C3B34 File Offset: 0x001C1D34
 	public override string StatusText
 	{
 		get
@@ -98,7 +98,7 @@ public class ObjectiveGoto : BaseObjective
 		}
 	}
 
-	// Token: 0x060047BD RID: 18365 RVA: 0x001C13C1 File Offset: 0x001BF5C1
+	// Token: 0x06004843 RID: 18499 RVA: 0x001C3BB5 File Offset: 0x001C1DB5
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void SetupIcon()
 	{
@@ -108,13 +108,13 @@ public class ObjectiveGoto : BaseObjective
 		}
 	}
 
-	// Token: 0x060047BE RID: 18366 RVA: 0x001C13E0 File Offset: 0x001BF5E0
+	// Token: 0x06004844 RID: 18500 RVA: 0x001C3BD4 File Offset: 0x001C1DD4
 	public override bool SetupPosition(EntityNPC ownerNPC = null, EntityPlayer player = null, List<Vector2> usedPOILocations = null, int entityIDforQuests = -1)
 	{
 		return this.GetPosition(ownerNPC, player, usedPOILocations, entityIDforQuests) != Vector3.zero;
 	}
 
-	// Token: 0x060047BF RID: 18367 RVA: 0x001C13F8 File Offset: 0x001BF5F8
+	// Token: 0x06004845 RID: 18501 RVA: 0x001C3BEC File Offset: 0x001C1DEC
 	public override void SetPosition(Vector3 POIPosition, Vector3 POISize)
 	{
 		if (POISize.x > POISize.z)
@@ -131,7 +131,7 @@ public class ObjectiveGoto : BaseObjective
 		base.OwnerQuest.Position = this.position;
 	}
 
-	// Token: 0x060047C0 RID: 18368 RVA: 0x001C1468 File Offset: 0x001BF668
+	// Token: 0x06004846 RID: 18502 RVA: 0x001C3C5C File Offset: 0x001C1E5C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector3 GetMidPOIPosition(Vector3 poiPosition, Vector3 poiSize)
 	{
@@ -141,7 +141,7 @@ public class ObjectiveGoto : BaseObjective
 		return new Vector3((float)num, (float)num3, (float)num2);
 	}
 
-	// Token: 0x060047C1 RID: 18369 RVA: 0x001C14C4 File Offset: 0x001BF6C4
+	// Token: 0x06004847 RID: 18503 RVA: 0x001C3CB8 File Offset: 0x001C1EB8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual Vector3 GetPosition(EntityNPC ownerNPC = null, EntityPlayer entityPlayer = null, List<Vector2> usedPOILocations = null, int entityIDforQuests = -1)
 	{
@@ -228,7 +228,7 @@ public class ObjectiveGoto : BaseObjective
 		return Vector3.zero;
 	}
 
-	// Token: 0x060047C2 RID: 18370 RVA: 0x001C192C File Offset: 0x001BFB2C
+	// Token: 0x06004848 RID: 18504 RVA: 0x001C4120 File Offset: 0x001C2320
 	public void FinalizePoint(Vector3 POIPosition, Vector3 POISize)
 	{
 		if (POISize.x > POISize.z)
@@ -251,7 +251,7 @@ public class ObjectiveGoto : BaseObjective
 		base.CurrentValue = 2;
 	}
 
-	// Token: 0x060047C3 RID: 18371 RVA: 0x001C1A08 File Offset: 0x001BFC08
+	// Token: 0x06004849 RID: 18505 RVA: 0x001C41FC File Offset: 0x001C23FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateState_NeedSetup()
 	{
@@ -268,7 +268,7 @@ public class ObjectiveGoto : BaseObjective
 		this.poiNotFound = true;
 	}
 
-	// Token: 0x060047C4 RID: 18372 RVA: 0x001C1A6C File Offset: 0x001BFC6C
+	// Token: 0x0600484A RID: 18506 RVA: 0x001C4260 File Offset: 0x001C2460
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateState_Update()
 	{
@@ -294,7 +294,7 @@ public class ObjectiveGoto : BaseObjective
 		}
 	}
 
-	// Token: 0x060047C5 RID: 18373 RVA: 0x001C1B68 File Offset: 0x001BFD68
+	// Token: 0x0600484B RID: 18507 RVA: 0x001C435C File Offset: 0x001C255C
 	public override void Refresh()
 	{
 		bool flag = base.CurrentValue == 3;
@@ -305,7 +305,7 @@ public class ObjectiveGoto : BaseObjective
 		}
 	}
 
-	// Token: 0x060047C6 RID: 18374 RVA: 0x001C1BA0 File Offset: 0x001BFDA0
+	// Token: 0x0600484C RID: 18508 RVA: 0x001C4394 File Offset: 0x001C2594
 	public override BaseObjective Clone()
 	{
 		ObjectiveGoto objectiveGoto = new ObjectiveGoto();
@@ -313,7 +313,7 @@ public class ObjectiveGoto : BaseObjective
 		return objectiveGoto;
 	}
 
-	// Token: 0x060047C7 RID: 18375 RVA: 0x001C1BBC File Offset: 0x001BFDBC
+	// Token: 0x0600484D RID: 18509 RVA: 0x001C43B0 File Offset: 0x001C25B0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CopyValues(BaseObjective objective)
 	{
@@ -326,14 +326,14 @@ public class ObjectiveGoto : BaseObjective
 		objectiveGoto.allowCurrentPoi = this.allowCurrentPoi;
 	}
 
-	// Token: 0x060047C8 RID: 18376 RVA: 0x001C1C11 File Offset: 0x001BFE11
+	// Token: 0x0600484E RID: 18510 RVA: 0x001C4405 File Offset: 0x001C2605
 	public override bool SetLocation(Vector3 pos, Vector3 size)
 	{
 		this.FinalizePoint(pos, size);
 		return true;
 	}
 
-	// Token: 0x060047C9 RID: 18377 RVA: 0x001C1C1C File Offset: 0x001BFE1C
+	// Token: 0x0600484F RID: 18511 RVA: 0x001C4410 File Offset: 0x001C2610
 	public override void ParseProperties(DynamicProperties properties)
 	{
 		base.ParseProperties(properties);
@@ -352,7 +352,7 @@ public class ObjectiveGoto : BaseObjective
 		properties.ParseString(ObjectiveGoto.PropLocationName, ref this.locationName);
 	}
 
-	// Token: 0x060047CA RID: 18378 RVA: 0x001C1CE4 File Offset: 0x001BFEE4
+	// Token: 0x06004850 RID: 18512 RVA: 0x001C44D8 File Offset: 0x001C26D8
 	public override void HandleCompleted()
 	{
 		Vector3 vector;
@@ -362,7 +362,7 @@ public class ObjectiveGoto : BaseObjective
 		}
 	}
 
-	// Token: 0x060047CB RID: 18379 RVA: 0x001C1D3C File Offset: 0x001BFF3C
+	// Token: 0x06004851 RID: 18513 RVA: 0x001C4530 File Offset: 0x001C2730
 	public override string ParseBinding(string bindingName)
 	{
 		string id = this.ID;
@@ -438,69 +438,69 @@ public class ObjectiveGoto : BaseObjective
 		}
 	}
 
-	// Token: 0x04003919 RID: 14617
+	// Token: 0x040039AA RID: 14762
 	public static string PropAllowCurrentPOI = "allow_current_poi";
 
-	// Token: 0x0400391A RID: 14618
+	// Token: 0x040039AB RID: 14763
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool allowCurrentPoi;
 
-	// Token: 0x0400391B RID: 14619
+	// Token: 0x040039AC RID: 14764
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool positionSet;
 
-	// Token: 0x0400391C RID: 14620
+	// Token: 0x040039AD RID: 14765
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float distance = 20f;
 
-	// Token: 0x0400391D RID: 14621
+	// Token: 0x040039AE RID: 14766
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float distanceOffset;
 
-	// Token: 0x0400391E RID: 14622
+	// Token: 0x040039AF RID: 14767
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float currentDistance;
 
-	// Token: 0x0400391F RID: 14623
+	// Token: 0x040039B0 RID: 14768
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector3 position;
 
-	// Token: 0x04003920 RID: 14624
+	// Token: 0x040039B1 RID: 14769
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string icon = "ui_game_symbol_quest";
 
-	// Token: 0x04003921 RID: 14625
+	// Token: 0x040039B2 RID: 14770
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string locationVariable = "gotolocation";
 
-	// Token: 0x04003922 RID: 14626
+	// Token: 0x040039B3 RID: 14771
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public BiomeFilterTypes biomeFilterType = BiomeFilterTypes.SameBiome;
 
-	// Token: 0x04003923 RID: 14627
+	// Token: 0x040039B4 RID: 14772
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string biomeFilter = "";
 
-	// Token: 0x04003924 RID: 14628
+	// Token: 0x040039B5 RID: 14773
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string locationName = "";
 
-	// Token: 0x04003925 RID: 14629
+	// Token: 0x040039B6 RID: 14774
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool poiNotFound;
 
-	// Token: 0x04003926 RID: 14630
+	// Token: 0x040039B7 RID: 14775
 	public static string PropLocation = "location_tag";
 
-	// Token: 0x04003927 RID: 14631
+	// Token: 0x040039B8 RID: 14776
 	public static string PropDistance = "distance";
 
-	// Token: 0x04003928 RID: 14632
+	// Token: 0x040039B9 RID: 14777
 	public static string PropBiomeFilterType = "biome_filter_type";
 
-	// Token: 0x04003929 RID: 14633
+	// Token: 0x040039BA RID: 14778
 	public static string PropBiomeFilter = "biome_filter";
 
-	// Token: 0x0400392A RID: 14634
+	// Token: 0x040039BB RID: 14779
 	public static string PropLocationName = "location_name";
 }

@@ -6,31 +6,31 @@ using Platform;
 using SandboxOptions;
 using UnityEngine;
 
-// Token: 0x0200076E RID: 1902
+// Token: 0x02000778 RID: 1912
 public class GameServerInfo
 {
 	// Token: 0x14000044 RID: 68
-	// (add) Token: 0x06003894 RID: 14484 RVA: 0x00173DF8 File Offset: 0x00171FF8
-	// (remove) Token: 0x06003895 RID: 14485 RVA: 0x00173E30 File Offset: 0x00172030
+	// (add) Token: 0x060038EC RID: 14572 RVA: 0x00176078 File Offset: 0x00174278
+	// (remove) Token: 0x060038ED RID: 14573 RVA: 0x001760B0 File Offset: 0x001742B0
 	public event Action<GameServerInfo> OnChangedAny;
 
 	// Token: 0x14000045 RID: 69
-	// (add) Token: 0x06003896 RID: 14486 RVA: 0x00173E68 File Offset: 0x00172068
-	// (remove) Token: 0x06003897 RID: 14487 RVA: 0x00173EA0 File Offset: 0x001720A0
+	// (add) Token: 0x060038EE RID: 14574 RVA: 0x001760E8 File Offset: 0x001742E8
+	// (remove) Token: 0x060038EF RID: 14575 RVA: 0x00176120 File Offset: 0x00174320
 	public event Action<GameServerInfo, GameInfoString> OnChangedString;
 
 	// Token: 0x14000046 RID: 70
-	// (add) Token: 0x06003898 RID: 14488 RVA: 0x00173ED8 File Offset: 0x001720D8
-	// (remove) Token: 0x06003899 RID: 14489 RVA: 0x00173F10 File Offset: 0x00172110
+	// (add) Token: 0x060038F0 RID: 14576 RVA: 0x00176158 File Offset: 0x00174358
+	// (remove) Token: 0x060038F1 RID: 14577 RVA: 0x00176190 File Offset: 0x00174390
 	public event Action<GameServerInfo, GameInfoInt> OnChangedInt;
 
 	// Token: 0x14000047 RID: 71
-	// (add) Token: 0x0600389A RID: 14490 RVA: 0x00173F48 File Offset: 0x00172148
-	// (remove) Token: 0x0600389B RID: 14491 RVA: 0x00173F80 File Offset: 0x00172180
+	// (add) Token: 0x060038F2 RID: 14578 RVA: 0x001761C8 File Offset: 0x001743C8
+	// (remove) Token: 0x060038F3 RID: 14579 RVA: 0x00176200 File Offset: 0x00174400
 	public event Action<GameServerInfo, GameInfoBool> OnChangedBool;
 
-	// Token: 0x17000596 RID: 1430
-	// (get) Token: 0x0600389C RID: 14492 RVA: 0x00173FB5 File Offset: 0x001721B5
+	// Token: 0x170005A0 RID: 1440
+	// (get) Token: 0x060038F4 RID: 14580 RVA: 0x00176235 File Offset: 0x00174435
 	public bool IsValid
 	{
 		get
@@ -39,8 +39,8 @@ public class GameServerInfo
 		}
 	}
 
-	// Token: 0x17000597 RID: 1431
-	// (get) Token: 0x0600389D RID: 14493 RVA: 0x00173FC0 File Offset: 0x001721C0
+	// Token: 0x170005A1 RID: 1441
+	// (get) Token: 0x060038F5 RID: 14581 RVA: 0x00176240 File Offset: 0x00174440
 	public bool IsDedicated
 	{
 		get
@@ -49,8 +49,8 @@ public class GameServerInfo
 		}
 	}
 
-	// Token: 0x17000598 RID: 1432
-	// (get) Token: 0x0600389E RID: 14494 RVA: 0x00173FC9 File Offset: 0x001721C9
+	// Token: 0x170005A2 RID: 1442
+	// (get) Token: 0x060038F6 RID: 14582 RVA: 0x00176249 File Offset: 0x00174449
 	public bool IsDedicatedStock
 	{
 		get
@@ -59,8 +59,8 @@ public class GameServerInfo
 		}
 	}
 
-	// Token: 0x17000599 RID: 1433
-	// (get) Token: 0x0600389F RID: 14495 RVA: 0x00173FEA File Offset: 0x001721EA
+	// Token: 0x170005A3 RID: 1443
+	// (get) Token: 0x060038F7 RID: 14583 RVA: 0x0017626A File Offset: 0x0017446A
 	public bool IsDedicatedModded
 	{
 		get
@@ -69,8 +69,8 @@ public class GameServerInfo
 		}
 	}
 
-	// Token: 0x1700059A RID: 1434
-	// (get) Token: 0x060038A0 RID: 14496 RVA: 0x00173FFF File Offset: 0x001721FF
+	// Token: 0x170005A4 RID: 1444
+	// (get) Token: 0x060038F8 RID: 14584 RVA: 0x0017627F File Offset: 0x0017447F
 	public bool IsPeerToPeer
 	{
 		get
@@ -79,8 +79,8 @@ public class GameServerInfo
 		}
 	}
 
-	// Token: 0x1700059B RID: 1435
-	// (get) Token: 0x060038A1 RID: 14497 RVA: 0x00174015 File Offset: 0x00172215
+	// Token: 0x170005A5 RID: 1445
+	// (get) Token: 0x060038F9 RID: 14585 RVA: 0x00176295 File Offset: 0x00174495
 	public bool AllowsCrossplay
 	{
 		get
@@ -89,8 +89,8 @@ public class GameServerInfo
 		}
 	}
 
-	// Token: 0x1700059C RID: 1436
-	// (get) Token: 0x060038A2 RID: 14498 RVA: 0x0017401F File Offset: 0x0017221F
+	// Token: 0x170005A6 RID: 1446
+	// (get) Token: 0x060038FA RID: 14586 RVA: 0x0017629F File Offset: 0x0017449F
 	public bool EACEnabled
 	{
 		get
@@ -99,8 +99,8 @@ public class GameServerInfo
 		}
 	}
 
-	// Token: 0x1700059D RID: 1437
-	// (get) Token: 0x060038A3 RID: 14499 RVA: 0x00174028 File Offset: 0x00172228
+	// Token: 0x170005A7 RID: 1447
+	// (get) Token: 0x060038FB RID: 14587 RVA: 0x001762A8 File Offset: 0x001744A8
 	public bool IgnoresSanctions
 	{
 		get
@@ -109,8 +109,8 @@ public class GameServerInfo
 		}
 	}
 
-	// Token: 0x1700059E RID: 1438
-	// (get) Token: 0x060038A4 RID: 14500 RVA: 0x00174034 File Offset: 0x00172234
+	// Token: 0x170005A8 RID: 1448
+	// (get) Token: 0x060038FC RID: 14588 RVA: 0x001762B4 File Offset: 0x001744B4
 	public EPlayGroup PlayGroup
 	{
 		get
@@ -124,9 +124,9 @@ public class GameServerInfo
 		}
 	}
 
-	// Token: 0x1700059F RID: 1439
-	// (get) Token: 0x060038A5 RID: 14501 RVA: 0x00174056 File Offset: 0x00172256
-	// (set) Token: 0x060038A6 RID: 14502 RVA: 0x0017405E File Offset: 0x0017225E
+	// Token: 0x170005A9 RID: 1449
+	// (get) Token: 0x060038FD RID: 14589 RVA: 0x001762D6 File Offset: 0x001744D6
+	// (set) Token: 0x060038FE RID: 14590 RVA: 0x001762DE File Offset: 0x001744DE
 	public bool IsFriends
 	{
 		get
@@ -148,8 +148,8 @@ public class GameServerInfo
 		}
 	}
 
-	// Token: 0x170005A0 RID: 1440
-	// (get) Token: 0x060038A7 RID: 14503 RVA: 0x00174081 File Offset: 0x00172281
+	// Token: 0x170005AA RID: 1450
+	// (get) Token: 0x060038FF RID: 14591 RVA: 0x00176301 File Offset: 0x00174501
 	public bool IsFavoriteHistory
 	{
 		get
@@ -158,9 +158,9 @@ public class GameServerInfo
 		}
 	}
 
-	// Token: 0x170005A1 RID: 1441
-	// (get) Token: 0x060038A8 RID: 14504 RVA: 0x00174093 File Offset: 0x00172293
-	// (set) Token: 0x060038A9 RID: 14505 RVA: 0x0017409B File Offset: 0x0017229B
+	// Token: 0x170005AB RID: 1451
+	// (get) Token: 0x06003900 RID: 14592 RVA: 0x00176313 File Offset: 0x00174513
+	// (set) Token: 0x06003901 RID: 14593 RVA: 0x0017631B File Offset: 0x0017451B
 	public bool IsFavorite
 	{
 		get
@@ -182,8 +182,8 @@ public class GameServerInfo
 		}
 	}
 
-	// Token: 0x170005A2 RID: 1442
-	// (get) Token: 0x060038AA RID: 14506 RVA: 0x001740BE File Offset: 0x001722BE
+	// Token: 0x170005AC RID: 1452
+	// (get) Token: 0x06003902 RID: 14594 RVA: 0x0017633E File Offset: 0x0017453E
 	public bool IsHistory
 	{
 		get
@@ -192,9 +192,9 @@ public class GameServerInfo
 		}
 	}
 
-	// Token: 0x170005A3 RID: 1443
-	// (get) Token: 0x060038AB RID: 14507 RVA: 0x001740C9 File Offset: 0x001722C9
-	// (set) Token: 0x060038AC RID: 14508 RVA: 0x001740D1 File Offset: 0x001722D1
+	// Token: 0x170005AD RID: 1453
+	// (get) Token: 0x06003903 RID: 14595 RVA: 0x00176349 File Offset: 0x00174549
+	// (set) Token: 0x06003904 RID: 14596 RVA: 0x00176351 File Offset: 0x00174551
 	public int LastPlayedLinux
 	{
 		get
@@ -216,9 +216,9 @@ public class GameServerInfo
 		}
 	}
 
-	// Token: 0x170005A4 RID: 1444
-	// (get) Token: 0x060038AD RID: 14509 RVA: 0x001740F4 File Offset: 0x001722F4
-	// (set) Token: 0x060038AE RID: 14510 RVA: 0x001740FC File Offset: 0x001722FC
+	// Token: 0x170005AE RID: 1454
+	// (get) Token: 0x06003905 RID: 14597 RVA: 0x00176374 File Offset: 0x00174574
+	// (set) Token: 0x06003906 RID: 14598 RVA: 0x0017637C File Offset: 0x0017457C
 	public bool IsLAN
 	{
 		get
@@ -240,9 +240,9 @@ public class GameServerInfo
 		}
 	}
 
-	// Token: 0x170005A5 RID: 1445
-	// (get) Token: 0x060038AF RID: 14511 RVA: 0x0017411F File Offset: 0x0017231F
-	// (set) Token: 0x060038B0 RID: 14512 RVA: 0x00174127 File Offset: 0x00172327
+	// Token: 0x170005AF RID: 1455
+	// (get) Token: 0x06003907 RID: 14599 RVA: 0x0017639F File Offset: 0x0017459F
+	// (set) Token: 0x06003908 RID: 14600 RVA: 0x001763A7 File Offset: 0x001745A7
 	public bool IsLobby
 	{
 		get
@@ -264,9 +264,9 @@ public class GameServerInfo
 		}
 	}
 
-	// Token: 0x170005A6 RID: 1446
-	// (get) Token: 0x060038B1 RID: 14513 RVA: 0x0017414A File Offset: 0x0017234A
-	// (set) Token: 0x060038B2 RID: 14514 RVA: 0x00174152 File Offset: 0x00172352
+	// Token: 0x170005B0 RID: 1456
+	// (get) Token: 0x06003909 RID: 14601 RVA: 0x001763CA File Offset: 0x001745CA
+	// (set) Token: 0x0600390A RID: 14602 RVA: 0x001763D2 File Offset: 0x001745D2
 	public bool IsNoResponse
 	{
 		get
@@ -288,8 +288,8 @@ public class GameServerInfo
 		}
 	}
 
-	// Token: 0x170005A7 RID: 1447
-	// (get) Token: 0x060038B3 RID: 14515 RVA: 0x00174175 File Offset: 0x00172375
+	// Token: 0x170005B1 RID: 1457
+	// (get) Token: 0x0600390B RID: 14603 RVA: 0x001763F5 File Offset: 0x001745F5
 	public VersionInformation Version
 	{
 		get
@@ -298,8 +298,8 @@ public class GameServerInfo
 		}
 	}
 
-	// Token: 0x170005A8 RID: 1448
-	// (get) Token: 0x060038B4 RID: 14516 RVA: 0x0017417D File Offset: 0x0017237D
+	// Token: 0x170005B2 RID: 1458
+	// (get) Token: 0x0600390C RID: 14604 RVA: 0x001763FD File Offset: 0x001745FD
 	public bool IsCompatibleVersion
 	{
 		get
@@ -308,7 +308,7 @@ public class GameServerInfo
 		}
 	}
 
-	// Token: 0x060038B5 RID: 14517 RVA: 0x001741A0 File Offset: 0x001723A0
+	// Token: 0x0600390D RID: 14605 RVA: 0x00176420 File Offset: 0x00174620
 	public GameServerInfo()
 	{
 		this.OnChangedAny += this.RefreshServerDisplayTexts;
@@ -317,7 +317,7 @@ public class GameServerInfo
 		this.Bools = new ReadOnlyDictionary<GameInfoBool, bool>(this.tableBools);
 	}
 
-	// Token: 0x060038B6 RID: 14518 RVA: 0x00174270 File Offset: 0x00172470
+	// Token: 0x0600390E RID: 14606 RVA: 0x001764F0 File Offset: 0x001746F0
 	public GameServerInfo(GameServerInfo _gsi)
 	{
 		foreach (KeyValuePair<GameInfoString, string> keyValuePair in _gsi.tableStrings)
@@ -343,7 +343,7 @@ public class GameServerInfo
 		this.OnChangedAny += this.RefreshServerDisplayTexts;
 	}
 
-	// Token: 0x060038B7 RID: 14519 RVA: 0x0017445C File Offset: 0x0017265C
+	// Token: 0x0600390F RID: 14607 RVA: 0x001766DC File Offset: 0x001748DC
 	public GameServerInfo(string _serverInfoString)
 	{
 		if (_serverInfoString.Length == 0)
@@ -355,7 +355,7 @@ public class GameServerInfo
 		this.OnChangedAny += this.RefreshServerDisplayTexts;
 	}
 
-	// Token: 0x060038B8 RID: 14520 RVA: 0x00174510 File Offset: 0x00172710
+	// Token: 0x06003910 RID: 14608 RVA: 0x00176790 File Offset: 0x00174990
 	public void Merge(GameServerInfo _gameServerInfo, EServerRelationType _source)
 	{
 		this.isFriends |= _gameServerInfo.IsFriends;
@@ -385,7 +385,7 @@ public class GameServerInfo
 		}
 	}
 
-	// Token: 0x060038B9 RID: 14521 RVA: 0x00174670 File Offset: 0x00172870
+	// Token: 0x06003911 RID: 14609 RVA: 0x001768F0 File Offset: 0x00174AF0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BuildInfoFromString(string _serverInfoString)
 	{
@@ -410,7 +410,7 @@ public class GameServerInfo
 		this.RefreshServerDisplayTexts(this);
 	}
 
-	// Token: 0x060038BA RID: 14522 RVA: 0x001746F8 File Offset: 0x001728F8
+	// Token: 0x06003912 RID: 14610 RVA: 0x00176978 File Offset: 0x00174B78
 	public bool ParseAny(string _key, string _value)
 	{
 		bool flag;
@@ -448,7 +448,7 @@ public class GameServerInfo
 		return flag;
 	}
 
-	// Token: 0x060038BB RID: 14523 RVA: 0x001747BC File Offset: 0x001729BC
+	// Token: 0x06003913 RID: 14611 RVA: 0x00176A3C File Offset: 0x00174C3C
 	public bool Parse(string _key, string _value)
 	{
 		GameInfoString gameInfoString;
@@ -460,7 +460,7 @@ public class GameServerInfo
 		return false;
 	}
 
-	// Token: 0x060038BC RID: 14524 RVA: 0x001747E4 File Offset: 0x001729E4
+	// Token: 0x06003914 RID: 14612 RVA: 0x00176A64 File Offset: 0x00174C64
 	public bool Parse(string _key, int _value)
 	{
 		GameInfoInt gameInfoInt;
@@ -472,7 +472,7 @@ public class GameServerInfo
 		return false;
 	}
 
-	// Token: 0x060038BD RID: 14525 RVA: 0x0017480C File Offset: 0x00172A0C
+	// Token: 0x06003915 RID: 14613 RVA: 0x00176A8C File Offset: 0x00174C8C
 	public bool Parse(string _key, bool _value)
 	{
 		GameInfoBool gameInfoBool;
@@ -484,7 +484,7 @@ public class GameServerInfo
 		return false;
 	}
 
-	// Token: 0x060038BE RID: 14526 RVA: 0x00174834 File Offset: 0x00172A34
+	// Token: 0x06003916 RID: 14614 RVA: 0x00176AB4 File Offset: 0x00174CB4
 	public void SetValue(GameInfoString _key, string _value)
 	{
 		if (_value == null)
@@ -523,7 +523,7 @@ public class GameServerInfo
 		onChangedAny(this);
 	}
 
-	// Token: 0x060038BF RID: 14527 RVA: 0x001748EC File Offset: 0x00172AEC
+	// Token: 0x06003917 RID: 14615 RVA: 0x00176B6C File Offset: 0x00174D6C
 	public string GetValue(GameInfoString _key)
 	{
 		string text;
@@ -534,7 +534,7 @@ public class GameServerInfo
 		return text.Replace('^', ':').Replace('*', ';');
 	}
 
-	// Token: 0x060038C0 RID: 14528 RVA: 0x00174924 File Offset: 0x00172B24
+	// Token: 0x06003918 RID: 14616 RVA: 0x00176BA4 File Offset: 0x00174DA4
 	public void SetValue(GameInfoInt _key, int _value)
 	{
 		if (_key != GameInfoInt.Ping || !this.tableInts.ContainsKey(GameInfoInt.Ping) || _value >= 0)
@@ -560,7 +560,7 @@ public class GameServerInfo
 		onChangedAny(this);
 	}
 
-	// Token: 0x060038C1 RID: 14529 RVA: 0x0017499C File Offset: 0x00172B9C
+	// Token: 0x06003919 RID: 14617 RVA: 0x00176C1C File Offset: 0x00174E1C
 	public int GetValue(GameInfoInt _key)
 	{
 		int num;
@@ -571,7 +571,7 @@ public class GameServerInfo
 		return num;
 	}
 
-	// Token: 0x060038C2 RID: 14530 RVA: 0x001749BC File Offset: 0x00172BBC
+	// Token: 0x0600391A RID: 14618 RVA: 0x00176C3C File Offset: 0x00174E3C
 	public void SetValue(GameInfoBool _key, bool _value)
 	{
 		this.tableBools[_key] = _value;
@@ -590,20 +590,20 @@ public class GameServerInfo
 		onChangedAny(this);
 	}
 
-	// Token: 0x060038C3 RID: 14531 RVA: 0x00174A08 File Offset: 0x00172C08
+	// Token: 0x0600391B RID: 14619 RVA: 0x00176C88 File Offset: 0x00174E88
 	public bool GetValue(GameInfoBool _key)
 	{
 		bool flag;
 		return this.tableBools.TryGetValue(_key, out flag) && flag;
 	}
 
-	// Token: 0x060038C4 RID: 14532 RVA: 0x00174A25 File Offset: 0x00172C25
+	// Token: 0x0600391C RID: 14620 RVA: 0x00176CA5 File Offset: 0x00174EA5
 	public override string ToString()
 	{
 		return this.ToString(false);
 	}
 
-	// Token: 0x060038C5 RID: 14533 RVA: 0x00174A30 File Offset: 0x00172C30
+	// Token: 0x0600391D RID: 14621 RVA: 0x00176CB0 File Offset: 0x00174EB0
 	public string ToString(bool _lineBreaks)
 	{
 		if ((!_lineBreaks && this.cachedToString == null) || (_lineBreaks && this.cachedToStringLineBreaks == null))
@@ -663,7 +663,7 @@ public class GameServerInfo
 		return this.cachedToStringLineBreaks;
 	}
 
-	// Token: 0x060038C6 RID: 14534 RVA: 0x00174C30 File Offset: 0x00172E30
+	// Token: 0x0600391E RID: 14622 RVA: 0x00176EB0 File Offset: 0x001750B0
 	public override int GetHashCode()
 	{
 		if (this.hashcode == -9223372036854775808L)
@@ -674,7 +674,7 @@ public class GameServerInfo
 		return (int)this.hashcode;
 	}
 
-	// Token: 0x060038C7 RID: 14535 RVA: 0x00174C80 File Offset: 0x00172E80
+	// Token: 0x0600391F RID: 14623 RVA: 0x00176F00 File Offset: 0x00175100
 	public override bool Equals(object _obj)
 	{
 		if (_obj == null)
@@ -685,13 +685,13 @@ public class GameServerInfo
 		return this.Equals(gameServerInfo);
 	}
 
-	// Token: 0x060038C8 RID: 14536 RVA: 0x00174CA0 File Offset: 0x00172EA0
+	// Token: 0x06003920 RID: 14624 RVA: 0x00176F20 File Offset: 0x00175120
 	public bool Equals(GameServerInfo _p)
 	{
 		return _p != null && this.GetValue(GameInfoString.IP) == _p.GetValue(GameInfoString.IP) && this.GetValue(GameInfoInt.Port) == _p.GetValue(GameInfoInt.Port);
 	}
 
-	// Token: 0x060038C9 RID: 14537 RVA: 0x00174CD0 File Offset: 0x00172ED0
+	// Token: 0x06003921 RID: 14625 RVA: 0x00176F50 File Offset: 0x00175150
 	public void UpdateGameTimePlayers(ulong _time, int _players)
 	{
 		float unscaledTime = Time.unscaledTime;
@@ -714,7 +714,7 @@ public class GameServerInfo
 		}
 	}
 
-	// Token: 0x060038CA RID: 14538 RVA: 0x00174D58 File Offset: 0x00172F58
+	// Token: 0x06003922 RID: 14626 RVA: 0x00176FD8 File Offset: 0x001751D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RefreshServerDisplayTexts(GameServerInfo gsi)
 	{
@@ -751,7 +751,7 @@ public class GameServerInfo
 		}
 	}
 
-	// Token: 0x060038CB RID: 14539 RVA: 0x00174E97 File Offset: 0x00173097
+	// Token: 0x06003923 RID: 14627 RVA: 0x00177117 File Offset: 0x00175317
 	public void ClearOnChanged()
 	{
 		this.OnChangedAny = null;
@@ -760,25 +760,25 @@ public class GameServerInfo
 		this.OnChangedBool = null;
 	}
 
-	// Token: 0x060038CC RID: 14540 RVA: 0x00174EB5 File Offset: 0x001730B5
+	// Token: 0x06003924 RID: 14628 RVA: 0x00177135 File Offset: 0x00175335
 	public static bool IsSearchable(GameInfoString _gameInfoKey)
 	{
 		return GameServerInfo.SearchableStringInfosSet.Contains(_gameInfoKey);
 	}
 
-	// Token: 0x060038CD RID: 14541 RVA: 0x00174EC2 File Offset: 0x001730C2
+	// Token: 0x06003925 RID: 14629 RVA: 0x00177142 File Offset: 0x00175342
 	public static bool IsSearchable(GameInfoInt _gameInfoKey)
 	{
 		return GameServerInfo.IntInfosInGameTagsSet.Contains(_gameInfoKey);
 	}
 
-	// Token: 0x060038CE RID: 14542 RVA: 0x00174ECF File Offset: 0x001730CF
+	// Token: 0x06003926 RID: 14630 RVA: 0x0017714F File Offset: 0x0017534F
 	public static bool IsSearchable(GameInfoBool _gameInfoKey)
 	{
 		return GameServerInfo.BoolInfosInGameTagsSet.Contains(_gameInfoKey);
 	}
 
-	// Token: 0x060038CF RID: 14543 RVA: 0x00174EDC File Offset: 0x001730DC
+	// Token: 0x06003927 RID: 14631 RVA: 0x0017715C File Offset: 0x0017535C
 	public static GameServerInfo BuildGameServerInfo()
 	{
 		GameServerInfo gameServerInfo = new GameServerInfo();
@@ -895,13 +895,13 @@ public class GameServerInfo
 		return gameServerInfo;
 	}
 
-	// Token: 0x060038D0 RID: 14544 RVA: 0x0017550D File Offset: 0x0017370D
+	// Token: 0x06003928 RID: 14632 RVA: 0x0017778D File Offset: 0x0017598D
 	public static void PrepareLocalServerInfo()
 	{
 		SingletonMonoBehaviour<ConnectionManager>.Instance.LocalServerInfo = GameServerInfo.BuildGameServerInfo();
 	}
 
-	// Token: 0x060038D1 RID: 14545 RVA: 0x00175520 File Offset: 0x00173720
+	// Token: 0x06003929 RID: 14633 RVA: 0x001777A0 File Offset: 0x001759A0
 	public static void SetLocalServerWorldInfo()
 	{
 		SingletonMonoBehaviour<ConnectionManager>.Instance.LocalServerInfo.SetValue(GameInfoInt.CurrentServerTime, (int)GameManager.Instance.World.worldTime);
@@ -912,99 +912,99 @@ public class GameServerInfo
 		SingletonMonoBehaviour<ConnectionManager>.Instance.LocalServerInfo.SetValue(GameInfoInt.WorldSize, vector3i3.x);
 	}
 
-	// Token: 0x04002E5D RID: 11869
+	// Token: 0x04002ED6 RID: 11990
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly DateTime UnixEpoch = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
 
-	// Token: 0x04002E5E RID: 11870
+	// Token: 0x04002ED7 RID: 11991
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<GameInfoString, string> tableStrings = new EnumDictionary<GameInfoString, string>();
 
-	// Token: 0x04002E5F RID: 11871
+	// Token: 0x04002ED8 RID: 11992
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<GameInfoInt, int> tableInts = new EnumDictionary<GameInfoInt, int>();
 
-	// Token: 0x04002E60 RID: 11872
+	// Token: 0x04002ED9 RID: 11993
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<GameInfoBool, bool> tableBools = new EnumDictionary<GameInfoBool, bool>();
 
-	// Token: 0x04002E61 RID: 11873
+	// Token: 0x04002EDA RID: 11994
 	public readonly ReadOnlyDictionary<GameInfoString, string> Strings;
 
-	// Token: 0x04002E62 RID: 11874
+	// Token: 0x04002EDB RID: 11995
 	public readonly ReadOnlyDictionary<GameInfoInt, int> Ints;
 
-	// Token: 0x04002E63 RID: 11875
+	// Token: 0x04002EDC RID: 11996
 	public readonly ReadOnlyDictionary<GameInfoBool, bool> Bools;
 
-	// Token: 0x04002E64 RID: 11876
+	// Token: 0x04002EDD RID: 11997
 	public AuthoredText ServerDisplayName = new AuthoredText();
 
-	// Token: 0x04002E65 RID: 11877
+	// Token: 0x04002EDE RID: 11998
 	public AuthoredText ServerWorldName = new AuthoredText();
 
-	// Token: 0x04002E66 RID: 11878
+	// Token: 0x04002EDF RID: 11999
 	public AuthoredText ServerDescription = new AuthoredText();
 
-	// Token: 0x04002E67 RID: 11879
+	// Token: 0x04002EE0 RID: 12000
 	public AuthoredText ServerURL = new AuthoredText();
 
-	// Token: 0x04002E68 RID: 11880
+	// Token: 0x04002EE1 RID: 12001
 	public AuthoredText ServerLoginConfirmationText = new AuthoredText();
 
-	// Token: 0x04002E69 RID: 11881
+	// Token: 0x04002EE2 RID: 12002
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isBroken;
 
-	// Token: 0x04002E6A RID: 11882
+	// Token: 0x04002EE3 RID: 12003
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isFriends;
 
-	// Token: 0x04002E6B RID: 11883
+	// Token: 0x04002EE4 RID: 12004
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isFavorite;
 
-	// Token: 0x04002E6C RID: 11884
+	// Token: 0x04002EE5 RID: 12005
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lastPlayed;
 
-	// Token: 0x04002E6D RID: 11885
+	// Token: 0x04002EE6 RID: 12006
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isLan;
 
-	// Token: 0x04002E6E RID: 11886
+	// Token: 0x04002EE7 RID: 12007
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isLobby;
 
-	// Token: 0x04002E6F RID: 11887
+	// Token: 0x04002EE8 RID: 12008
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isNoResponse;
 
-	// Token: 0x04002E70 RID: 11888
+	// Token: 0x04002EE9 RID: 12009
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long hashcode = long.MinValue;
 
-	// Token: 0x04002E71 RID: 11889
+	// Token: 0x04002EEA RID: 12010
 	[PublicizedFrom(EAccessModifier.Private)]
 	public VersionInformation version = new VersionInformation(VersionInformation.EGameReleaseType.Alpha, -1, -1, -1);
 
-	// Token: 0x04002E76 RID: 11894
+	// Token: 0x04002EEF RID: 12015
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float timeLastWorldTimeUpdate;
 
-	// Token: 0x04002E77 RID: 11895
+	// Token: 0x04002EF0 RID: 12016
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly char[] whiteSpaceChars = new char[] { ' ', '\r', '\n', '\t' };
 
-	// Token: 0x04002E78 RID: 11896
+	// Token: 0x04002EF1 RID: 12017
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string cachedToString;
 
-	// Token: 0x04002E79 RID: 11897
+	// Token: 0x04002EF2 RID: 12018
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string cachedToStringLineBreaks;
 
-	// Token: 0x04002E7A RID: 11898
+	// Token: 0x04002EF3 RID: 12019
 	public static readonly GameInfoString[] SearchableStringInfos = new GameInfoString[]
 	{
 		GameInfoString.LevelName,
@@ -1019,7 +1019,7 @@ public class GameServerInfo
 		GameInfoString.SandboxCode
 	};
 
-	// Token: 0x04002E7B RID: 11899
+	// Token: 0x04002EF4 RID: 12020
 	public static readonly GameInfoInt[] IntInfosInGameTags = new GameInfoInt[]
 	{
 		GameInfoInt.DayNightLength,
@@ -1069,7 +1069,7 @@ public class GameServerInfo
 		GameInfoInt.JarRefund
 	};
 
-	// Token: 0x04002E7C RID: 11900
+	// Token: 0x04002EF5 RID: 12021
 	public static readonly GameInfoBool[] BoolInfosInGameTags = new GameInfoBool[]
 	{
 		GameInfoBool.IsDedicated,
@@ -1087,40 +1087,40 @@ public class GameServerInfo
 		GameInfoBool.BiomeProgression
 	};
 
-	// Token: 0x04002E7D RID: 11901
+	// Token: 0x04002EF6 RID: 12022
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly HashSet<GameInfoString> SearchableStringInfosSet = new HashSet<GameInfoString>(GameServerInfo.SearchableStringInfos);
 
-	// Token: 0x04002E7E RID: 11902
+	// Token: 0x04002EF7 RID: 12023
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly HashSet<GameInfoInt> IntInfosInGameTagsSet = new HashSet<GameInfoInt>(GameServerInfo.IntInfosInGameTags);
 
-	// Token: 0x04002E7F RID: 11903
+	// Token: 0x04002EF8 RID: 12024
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly HashSet<GameInfoBool> BoolInfosInGameTagsSet = new HashSet<GameInfoBool>(GameServerInfo.BoolInfosInGameTags);
 
-	// Token: 0x0200076F RID: 1903
+	// Token: 0x02000779 RID: 1913
 	public class UniqueIdEqualityComparer : IEqualityComparer<GameServerInfo>
 	{
-		// Token: 0x060038D3 RID: 14547 RVA: 0x0000640C File Offset: 0x0000460C
+		// Token: 0x0600392B RID: 14635 RVA: 0x0000640C File Offset: 0x0000460C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public UniqueIdEqualityComparer()
 		{
 		}
 
-		// Token: 0x060038D4 RID: 14548 RVA: 0x0017562F File Offset: 0x0017382F
+		// Token: 0x0600392C RID: 14636 RVA: 0x001778AF File Offset: 0x00175AAF
 		public bool Equals(GameServerInfo _x, GameServerInfo _y)
 		{
 			return _x == _y || (_x != null && _y != null && _x.GetValue(GameInfoString.UniqueId) == _y.GetValue(GameInfoString.UniqueId));
 		}
 
-		// Token: 0x060038D5 RID: 14549 RVA: 0x00175654 File Offset: 0x00173854
+		// Token: 0x0600392D RID: 14637 RVA: 0x001778D4 File Offset: 0x00175AD4
 		public int GetHashCode(GameServerInfo _obj)
 		{
 			return _obj.GetValue(GameInfoString.UniqueId).GetHashCode();
 		}
 
-		// Token: 0x04002E80 RID: 11904
+		// Token: 0x04002EF9 RID: 12025
 		public static readonly GameServerInfo.UniqueIdEqualityComparer Instance = new GameServerInfo.UniqueIdEqualityComparer();
 	}
 }

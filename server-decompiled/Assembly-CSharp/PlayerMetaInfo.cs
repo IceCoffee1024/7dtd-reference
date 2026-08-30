@@ -3,10 +3,10 @@ using System.Xml;
 using System.Xml.Linq;
 using UnityEngine;
 
-// Token: 0x02000D66 RID: 3430
+// Token: 0x02000D7A RID: 3450
 public struct PlayerMetaInfo
 {
-	// Token: 0x06006829 RID: 26665 RVA: 0x00292AB1 File Offset: 0x00290CB1
+	// Token: 0x060068C5 RID: 26821 RVA: 0x00295C05 File Offset: 0x00293E05
 	public PlayerMetaInfo(PlatformUserIdentifierAbs _nativeId, string _name, int _level, float _distanceWalked)
 	{
 		this.NativeId = _nativeId;
@@ -15,7 +15,7 @@ public struct PlayerMetaInfo
 		this.DistanceWalked = _distanceWalked;
 	}
 
-	// Token: 0x0600682A RID: 26666 RVA: 0x00292AD0 File Offset: 0x00290CD0
+	// Token: 0x060068C6 RID: 26822 RVA: 0x00295C24 File Offset: 0x00293E24
 	public static bool TryRead(string _filePath, out PlayerMetaInfo _playerMetaInfo)
 	{
 		if (!SdFile.Exists(_filePath))
@@ -87,7 +87,7 @@ public struct PlayerMetaInfo
 		return flag;
 	}
 
-	// Token: 0x0600682B RID: 26667 RVA: 0x00292C90 File Offset: 0x00290E90
+	// Token: 0x060068C7 RID: 26823 RVA: 0x00295DE4 File Offset: 0x00293FE4
 	public void Write(string _filePath)
 	{
 		XmlDocument xmlDocument = new XmlDocument();
@@ -106,7 +106,7 @@ public struct PlayerMetaInfo
 		xmlDocument.SdSave(_filePath);
 	}
 
-	// Token: 0x0600682C RID: 26668 RVA: 0x00292D24 File Offset: 0x00290F24
+	// Token: 0x060068C8 RID: 26824 RVA: 0x00295E78 File Offset: 0x00294078
 	public static PlayerMetaInfo FromStream(PooledBinaryReader _reader)
 	{
 		PlatformUserIdentifierAbs platformUserIdentifierAbs = null;
@@ -124,7 +124,7 @@ public struct PlayerMetaInfo
 		return new PlayerMetaInfo(platformUserIdentifierAbs, text, num, num2);
 	}
 
-	// Token: 0x0600682D RID: 26669 RVA: 0x00292D6C File Offset: 0x00290F6C
+	// Token: 0x060068C9 RID: 26825 RVA: 0x00295EC0 File Offset: 0x002940C0
 	public void Write(PooledBinaryWriter _writer)
 	{
 		bool flag = this.NativeId != null;
@@ -143,34 +143,34 @@ public struct PlayerMetaInfo
 		_writer.Write(this.DistanceWalked);
 	}
 
-	// Token: 0x04004FCC RID: 20428
+	// Token: 0x0400506E RID: 20590
 	public const string Ext = "meta";
 
-	// Token: 0x04004FCD RID: 20429
+	// Token: 0x0400506F RID: 20591
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string NativeIdAttr = "nativeid";
 
-	// Token: 0x04004FCE RID: 20430
+	// Token: 0x04005070 RID: 20592
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string NameAttr = "name";
 
-	// Token: 0x04004FCF RID: 20431
+	// Token: 0x04005071 RID: 20593
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string LevelAttr = "level";
 
-	// Token: 0x04004FD0 RID: 20432
+	// Token: 0x04005072 RID: 20594
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string DistanceWalkedAttr = "distanceWalked";
 
-	// Token: 0x04004FD1 RID: 20433
+	// Token: 0x04005073 RID: 20595
 	public readonly PlatformUserIdentifierAbs NativeId;
 
-	// Token: 0x04004FD2 RID: 20434
+	// Token: 0x04005074 RID: 20596
 	public readonly string Name;
 
-	// Token: 0x04004FD3 RID: 20435
+	// Token: 0x04005075 RID: 20597
 	public readonly int Level;
 
-	// Token: 0x04004FD4 RID: 20436
+	// Token: 0x04005076 RID: 20598
 	public readonly float DistanceWalked;
 }

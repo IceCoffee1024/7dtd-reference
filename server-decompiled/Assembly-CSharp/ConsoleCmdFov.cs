@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000217 RID: 535
+// Token: 0x02000219 RID: 537
 [Preserve]
 public class ConsoleCmdFov : ConsoleCmdAbstract
 {
-	// Token: 0x06001042 RID: 4162 RVA: 0x00066FD8 File Offset: 0x000651D8
+	// Token: 0x0600104D RID: 4173 RVA: 0x00067520 File Offset: 0x00065720
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -14,7 +14,7 @@ public class ConsoleCmdFov : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000182 RID: 386
-	// (get) Token: 0x06001043 RID: 4163 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// (get) Token: 0x0600104E RID: 4174 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -23,21 +23,21 @@ public class ConsoleCmdFov : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001044 RID: 4164 RVA: 0x00066FE8 File Offset: 0x000651E8
+	// Token: 0x0600104F RID: 4175 RVA: 0x00067530 File Offset: 0x00065730
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Camera field of view";
 	}
 
-	// Token: 0x06001045 RID: 4165 RVA: 0x00031E8B File Offset: 0x0003008B
+	// Token: 0x06001050 RID: 4176 RVA: 0x00032147 File Offset: 0x00030347
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "";
 	}
 
-	// Token: 0x06001046 RID: 4166 RVA: 0x00066FF0 File Offset: 0x000651F0
+	// Token: 0x06001051 RID: 4177 RVA: 0x00067538 File Offset: 0x00065738
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		int num;

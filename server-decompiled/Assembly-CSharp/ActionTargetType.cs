@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x0200051F RID: 1311
+// Token: 0x02000524 RID: 1316
 public enum ActionTargetType : byte
 {
-	// Token: 0x040020F3 RID: 8435
+	// Token: 0x04002122 RID: 8482
 	None,
-	// Token: 0x040020F4 RID: 8436
+	// Token: 0x04002123 RID: 8483
 	Position,
-	// Token: 0x040020F5 RID: 8437
+	// Token: 0x04002124 RID: 8484
 	BlockValueRef
 }

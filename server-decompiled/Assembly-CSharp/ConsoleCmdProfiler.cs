@@ -4,19 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200026B RID: 619
+// Token: 0x0200026F RID: 623
 [Preserve]
 public class ConsoleCmdProfiler : ConsoleCmdAbstract
 {
-	// Token: 0x06001263 RID: 4707 RVA: 0x00073759 File Offset: 0x00071959
+	// Token: 0x06001275 RID: 4725 RVA: 0x00073DB5 File Offset: 0x00071FB5
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "profiler" };
 	}
 
-	// Token: 0x170001E5 RID: 485
-	// (get) Token: 0x06001264 RID: 4708 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x170001E6 RID: 486
+	// (get) Token: 0x06001276 RID: 4726 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -25,8 +25,8 @@ public class ConsoleCmdProfiler : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x170001E6 RID: 486
-	// (get) Token: 0x06001265 RID: 4709 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x170001E7 RID: 487
+	// (get) Token: 0x06001277 RID: 4727 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -35,14 +35,14 @@ public class ConsoleCmdProfiler : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001266 RID: 4710 RVA: 0x00031E8B File Offset: 0x0003008B
+	// Token: 0x06001278 RID: 4728 RVA: 0x00032147 File Offset: 0x00030347
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "";
 	}
 
-	// Token: 0x06001267 RID: 4711 RVA: 0x0007376C File Offset: 0x0007196C
+	// Token: 0x06001279 RID: 4729 RVA: 0x00073DC8 File Offset: 0x00071FC8
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 0)
@@ -89,7 +89,7 @@ public class ConsoleCmdProfiler : ConsoleCmdAbstract
 		Log.Out(ProfilerUtils.GetAvailableMetricsCsv());
 	}
 
-	// Token: 0x06001268 RID: 4712 RVA: 0x0007383B File Offset: 0x00071A3B
+	// Token: 0x0600127A RID: 4730 RVA: 0x00073E97 File Offset: 0x00072097
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitMemoryMetrics()
 	{
@@ -100,14 +100,14 @@ public class ConsoleCmdProfiler : ConsoleCmdAbstract
 		this.memMetrics = ProfilerCaptureUtils.CreateMemoryProfiler();
 	}
 
-	// Token: 0x06001269 RID: 4713 RVA: 0x0007385B File Offset: 0x00071A5B
+	// Token: 0x0600127B RID: 4731 RVA: 0x00073EB7 File Offset: 0x000720B7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LogCsv(ProfilingMetricCapture _metrics)
 	{
 		ThreadManager.StartCoroutine(this.LogCsvNextFrame(_metrics));
 	}
 
-	// Token: 0x0600126A RID: 4714 RVA: 0x0007386A File Offset: 0x00071A6A
+	// Token: 0x0600127C RID: 4732 RVA: 0x00073EC6 File Offset: 0x000720C6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator LogCsvNextFrame(ProfilingMetricCapture _metrics)
 	{
@@ -118,14 +118,14 @@ public class ConsoleCmdProfiler : ConsoleCmdAbstract
 		yield break;
 	}
 
-	// Token: 0x0600126B RID: 4715 RVA: 0x00073879 File Offset: 0x00071A79
+	// Token: 0x0600127D RID: 4733 RVA: 0x00073ED5 File Offset: 0x000720D5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LogPretty(ProfilingMetricCapture _metrics)
 	{
 		ThreadManager.StartCoroutine(this.LogPrettyNextFrame(_metrics));
 	}
 
-	// Token: 0x0600126C RID: 4716 RVA: 0x00073888 File Offset: 0x00071A88
+	// Token: 0x0600127E RID: 4734 RVA: 0x00073EE4 File Offset: 0x000720E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator LogPrettyNextFrame(ProfilingMetricCapture _metrics)
 	{
@@ -135,14 +135,14 @@ public class ConsoleCmdProfiler : ConsoleCmdAbstract
 		yield break;
 	}
 
-	// Token: 0x0600126D RID: 4717 RVA: 0x00073897 File Offset: 0x00071A97
+	// Token: 0x0600127F RID: 4735 RVA: 0x00073EF3 File Offset: 0x000720F3
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Utilities for collection profiling data from a variety of sources";
 	}
 
-	// Token: 0x04000D30 RID: 3376
+	// Token: 0x04000D41 RID: 3393
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ProfilingMetricCapture memMetrics;
 }

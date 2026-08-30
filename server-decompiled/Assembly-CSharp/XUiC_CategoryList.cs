@@ -4,23 +4,23 @@ using Challenges;
 using Twitch;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EC0 RID: 3776
+// Token: 0x02000ED5 RID: 3797
 [Preserve]
 public class XUiC_CategoryList : XUiController
 {
-	// Token: 0x140000CD RID: 205
-	// (add) Token: 0x06007658 RID: 30296 RVA: 0x002C6E54 File Offset: 0x002C5054
-	// (remove) Token: 0x06007659 RID: 30297 RVA: 0x002C6E8C File Offset: 0x002C508C
+	// Token: 0x140000CE RID: 206
+	// (add) Token: 0x060076F9 RID: 30457 RVA: 0x002CA378 File Offset: 0x002C8578
+	// (remove) Token: 0x060076FA RID: 30458 RVA: 0x002CA3B0 File Offset: 0x002C85B0
 	public event XUiEvent_CategoryChangedEventHandler CategoryChanged;
 
-	// Token: 0x140000CE RID: 206
-	// (add) Token: 0x0600765A RID: 30298 RVA: 0x002C6EC4 File Offset: 0x002C50C4
-	// (remove) Token: 0x0600765B RID: 30299 RVA: 0x002C6EFC File Offset: 0x002C50FC
+	// Token: 0x140000CF RID: 207
+	// (add) Token: 0x060076FB RID: 30459 RVA: 0x002CA3E8 File Offset: 0x002C85E8
+	// (remove) Token: 0x060076FC RID: 30460 RVA: 0x002CA420 File Offset: 0x002C8620
 	public event XUiEvent_CategoryChangedEventHandler CategoryClickChanged;
 
-	// Token: 0x17000DE7 RID: 3559
-	// (get) Token: 0x0600765C RID: 30300 RVA: 0x002C6F31 File Offset: 0x002C5131
-	// (set) Token: 0x0600765D RID: 30301 RVA: 0x002C6F3C File Offset: 0x002C513C
+	// Token: 0x17000E01 RID: 3585
+	// (get) Token: 0x060076FD RID: 30461 RVA: 0x002CA455 File Offset: 0x002C8655
+	// (set) Token: 0x060076FE RID: 30462 RVA: 0x002CA460 File Offset: 0x002C8660
 	public XUiC_CategoryEntry CurrentCategory
 	{
 		get
@@ -43,8 +43,8 @@ public class XUiC_CategoryList : XUiController
 		}
 	}
 
-	// Token: 0x17000DE8 RID: 3560
-	// (get) Token: 0x0600765E RID: 30302 RVA: 0x002C6F96 File Offset: 0x002C5196
+	// Token: 0x17000E02 RID: 3586
+	// (get) Token: 0x060076FF RID: 30463 RVA: 0x002CA4BA File Offset: 0x002C86BA
 	public int MaxCategories
 	{
 		get
@@ -53,7 +53,7 @@ public class XUiC_CategoryList : XUiController
 		}
 	}
 
-	// Token: 0x0600765F RID: 30303 RVA: 0x002C6FA4 File Offset: 0x002C51A4
+	// Token: 0x06007700 RID: 30464 RVA: 0x002CA4C8 File Offset: 0x002C86C8
 	public override void Init()
 	{
 		base.Init();
@@ -64,7 +64,7 @@ public class XUiC_CategoryList : XUiController
 		}
 	}
 
-	// Token: 0x06007660 RID: 30304 RVA: 0x002C6FEC File Offset: 0x002C51EC
+	// Token: 0x06007701 RID: 30465 RVA: 0x002CA510 File Offset: 0x002C8710
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -89,7 +89,7 @@ public class XUiC_CategoryList : XUiController
 		}
 	}
 
-	// Token: 0x06007661 RID: 30305 RVA: 0x002C7074 File Offset: 0x002C5274
+	// Token: 0x06007702 RID: 30466 RVA: 0x002CA598 File Offset: 0x002C8798
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void HandleCategoryChanged()
 	{
@@ -106,7 +106,7 @@ public class XUiC_CategoryList : XUiController
 		categoryClickChanged(this.CurrentCategory);
 	}
 
-	// Token: 0x06007662 RID: 30306 RVA: 0x002C70A4 File Offset: 0x002C52A4
+	// Token: 0x06007703 RID: 30467 RVA: 0x002CA5C8 File Offset: 0x002C87C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CategoryEntry GetCategoryByName(string _category, out int _index)
 	{
@@ -122,7 +122,7 @@ public class XUiC_CategoryList : XUiController
 		return null;
 	}
 
-	// Token: 0x06007663 RID: 30307 RVA: 0x002C70F4 File Offset: 0x002C52F4
+	// Token: 0x06007704 RID: 30468 RVA: 0x002CA618 File Offset: 0x002C8818
 	public XUiC_CategoryEntry GetCategoryByIndex(int _index)
 	{
 		if (_index >= this.CategoryButtons.Count)
@@ -132,7 +132,7 @@ public class XUiC_CategoryList : XUiController
 		return this.CategoryButtons[_index];
 	}
 
-	// Token: 0x06007664 RID: 30308 RVA: 0x002C7112 File Offset: 0x002C5312
+	// Token: 0x06007705 RID: 30469 RVA: 0x002CA636 File Offset: 0x002C8836
 	public void SetCategoryToFirst()
 	{
 		this.CurrentCategory = this.CategoryButtons[0];
@@ -144,7 +144,7 @@ public class XUiC_CategoryList : XUiController
 		categoryChanged(this.CurrentCategory);
 	}
 
-	// Token: 0x06007665 RID: 30309 RVA: 0x002C713C File Offset: 0x002C533C
+	// Token: 0x06007706 RID: 30470 RVA: 0x002CA660 File Offset: 0x002C8860
 	public void SetCategory(string _category)
 	{
 		int num;
@@ -162,7 +162,7 @@ public class XUiC_CategoryList : XUiController
 		categoryChanged(this.CurrentCategory);
 	}
 
-	// Token: 0x06007666 RID: 30310 RVA: 0x002C717C File Offset: 0x002C537C
+	// Token: 0x06007707 RID: 30471 RVA: 0x002CA6A0 File Offset: 0x002C88A0
 	public bool TrySetCategory(string _category)
 	{
 		int num;
@@ -180,7 +180,7 @@ public class XUiC_CategoryList : XUiController
 		return true;
 	}
 
-	// Token: 0x06007667 RID: 30311 RVA: 0x002C71B8 File Offset: 0x002C53B8
+	// Token: 0x06007708 RID: 30472 RVA: 0x002CA6DC File Offset: 0x002C88DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void IncrementCategory(int _offset)
 	{
@@ -205,7 +205,7 @@ public class XUiC_CategoryList : XUiController
 		}
 	}
 
-	// Token: 0x06007668 RID: 30312 RVA: 0x002C727C File Offset: 0x002C547C
+	// Token: 0x06007709 RID: 30473 RVA: 0x002CA7A0 File Offset: 0x002C89A0
 	public void SetCategoryEmpty(int _index)
 	{
 		XUiC_CategoryEntry xuiC_CategoryEntry = this.CategoryButtons[_index];
@@ -214,7 +214,7 @@ public class XUiC_CategoryList : XUiController
 		xuiC_CategoryEntry.ViewComponent.IsNavigatable = false;
 	}
 
-	// Token: 0x06007669 RID: 30313 RVA: 0x002C72CC File Offset: 0x002C54CC
+	// Token: 0x0600770A RID: 30474 RVA: 0x002CA7F0 File Offset: 0x002C89F0
 	public void SetCategoryEntry(int _index, string _categoryName, string _spriteName, string _displayName = null)
 	{
 		XUiC_CategoryEntry xuiC_CategoryEntry = this.CategoryButtons[_index];
@@ -227,7 +227,7 @@ public class XUiC_CategoryList : XUiController
 		xuiC_CategoryEntry.ViewComponent.DisabledToolTip = null;
 	}
 
-	// Token: 0x0600766A RID: 30314 RVA: 0x002C7338 File Offset: 0x002C5538
+	// Token: 0x0600770B RID: 30475 RVA: 0x002CA85C File Offset: 0x002C8A5C
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -237,7 +237,7 @@ public class XUiC_CategoryList : XUiController
 		}
 	}
 
-	// Token: 0x0600766B RID: 30315 RVA: 0x002C735E File Offset: 0x002C555E
+	// Token: 0x0600770C RID: 30476 RVA: 0x002CA882 File Offset: 0x002C8A82
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -247,7 +247,7 @@ public class XUiC_CategoryList : XUiController
 		}
 	}
 
-	// Token: 0x0600766C RID: 30316 RVA: 0x002C7380 File Offset: 0x002C5580
+	// Token: 0x0600770D RID: 30477 RVA: 0x002CA8A4 File Offset: 0x002C8AA4
 	public override bool ParseAttribute(string _name, string _value)
 	{
 		if (_name == "allow_unselect")
@@ -268,7 +268,7 @@ public class XUiC_CategoryList : XUiController
 		return true;
 	}
 
-	// Token: 0x0600766D RID: 30317 RVA: 0x002C73F4 File Offset: 0x002C55F4
+	// Token: 0x0600770E RID: 30478 RVA: 0x002CA918 File Offset: 0x002C8B18
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -287,7 +287,7 @@ public class XUiC_CategoryList : XUiController
 		return true;
 	}
 
-	// Token: 0x0600766E RID: 30318 RVA: 0x002C7464 File Offset: 0x002C5664
+	// Token: 0x0600770F RID: 30479 RVA: 0x002CA988 File Offset: 0x002C8B88
 	public bool SetupCategoriesByWorkstation(string _workstation)
 	{
 		if (this.currentWorkstation != _workstation)
@@ -331,7 +331,7 @@ public class XUiC_CategoryList : XUiController
 		return false;
 	}
 
-	// Token: 0x0600766F RID: 30319 RVA: 0x002C75D8 File Offset: 0x002C57D8
+	// Token: 0x06007710 RID: 30480 RVA: 0x002CAAFC File Offset: 0x002C8CFC
 	public bool SetupCategoriesBasedOnItems(List<TraderData.Entry> _entries, int _traderStage)
 	{
 		if (_entries == null)
@@ -385,7 +385,7 @@ public class XUiC_CategoryList : XUiController
 		return true;
 	}
 
-	// Token: 0x06007670 RID: 30320 RVA: 0x002C7788 File Offset: 0x002C5988
+	// Token: 0x06007711 RID: 30481 RVA: 0x002CACAC File Offset: 0x002C8EAC
 	public bool SetupCategoriesBasedOnTwitchCategories(List<TwitchActionManager.ActionCategory> _items)
 	{
 		List<string> list = new List<string>();
@@ -407,7 +407,7 @@ public class XUiC_CategoryList : XUiController
 		return true;
 	}
 
-	// Token: 0x06007671 RID: 30321 RVA: 0x002C783C File Offset: 0x002C5A3C
+	// Token: 0x06007712 RID: 30482 RVA: 0x002CAD60 File Offset: 0x002C8F60
 	public bool SetupCategoriesBasedOnTwitchActions(List<TwitchAction> _items)
 	{
 		List<string> list = new List<string>();
@@ -445,7 +445,7 @@ public class XUiC_CategoryList : XUiController
 		return true;
 	}
 
-	// Token: 0x06007672 RID: 30322 RVA: 0x002C7990 File Offset: 0x002C5B90
+	// Token: 0x06007713 RID: 30483 RVA: 0x002CAEB4 File Offset: 0x002C90B4
 	public bool SetupCategoriesBasedOnTwitchVoteCategories(List<TwitchVoteType> _items)
 	{
 		List<string> list = new List<string>();
@@ -467,7 +467,7 @@ public class XUiC_CategoryList : XUiController
 		return true;
 	}
 
-	// Token: 0x06007673 RID: 30323 RVA: 0x002C7A44 File Offset: 0x002C5C44
+	// Token: 0x06007714 RID: 30484 RVA: 0x002CAF68 File Offset: 0x002C9168
 	public bool SetupCategoriesBasedOnGameEventCategories(List<GameEventManager.Category> _items)
 	{
 		List<string> list = new List<string>();
@@ -489,7 +489,7 @@ public class XUiC_CategoryList : XUiController
 		return true;
 	}
 
-	// Token: 0x06007674 RID: 30324 RVA: 0x002C7AF8 File Offset: 0x002C5CF8
+	// Token: 0x06007715 RID: 30485 RVA: 0x002CB01C File Offset: 0x002C921C
 	public bool SetupCategoriesBasedOnChallengeCategories(List<ChallengeCategory> _items)
 	{
 		List<string> list = new List<string>();
@@ -510,28 +510,28 @@ public class XUiC_CategoryList : XUiController
 		return true;
 	}
 
-	// Token: 0x04005737 RID: 22327
+	// Token: 0x040057DC RID: 22492
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string currentWorkstation = "*";
 
-	// Token: 0x0400573A RID: 22330
+	// Token: 0x040057DF RID: 22495
 	public readonly List<XUiC_CategoryEntry> CategoryButtons = new List<XUiC_CategoryEntry>();
 
-	// Token: 0x0400573B RID: 22331
+	// Token: 0x040057E0 RID: 22496
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int currentIndex;
 
-	// Token: 0x0400573C RID: 22332
+	// Token: 0x040057E1 RID: 22497
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CategoryEntry currentCategory;
 
-	// Token: 0x0400573D RID: 22333
+	// Token: 0x040057E2 RID: 22498
 	public bool AllowUnselect;
 
-	// Token: 0x0400573E RID: 22334
+	// Token: 0x040057E3 RID: 22499
 	public bool AllowKeyPaging = true;
 
-	// Token: 0x0400573F RID: 22335
+	// Token: 0x040057E4 RID: 22500
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool HideGamepadCallouts;
 }

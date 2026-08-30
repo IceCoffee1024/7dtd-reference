@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007CE RID: 1998
+// Token: 0x020007D9 RID: 2009
 [Preserve]
 public class NetPackageEntityAliveFlags : NetPackageEntityTargeted
 {
-	// Token: 0x06003B13 RID: 15123 RVA: 0x0017C9B0 File Offset: 0x0017ABB0
+	// Token: 0x06003B72 RID: 15218 RVA: 0x0017ED88 File Offset: 0x0017CF88
 	public NetPackageEntityAliveFlags Setup(EntityAlive _entity)
 	{
 		base.Setup(_entity.entityId);
@@ -45,21 +45,21 @@ public class NetPackageEntityAliveFlags : NetPackageEntityTargeted
 		return this;
 	}
 
-	// Token: 0x06003B14 RID: 15124 RVA: 0x0017CAA2 File Offset: 0x0017ACA2
+	// Token: 0x06003B73 RID: 15219 RVA: 0x0017EE7A File Offset: 0x0017D07A
 	public override void read(PooledBinaryReader _reader)
 	{
 		base.read(_reader);
 		this.flags = _reader.ReadUInt16();
 	}
 
-	// Token: 0x06003B15 RID: 15125 RVA: 0x0017CAB7 File Offset: 0x0017ACB7
+	// Token: 0x06003B74 RID: 15220 RVA: 0x0017EE8F File Offset: 0x0017D08F
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
 		_writer.Write(this.flags);
 	}
 
-	// Token: 0x06003B16 RID: 15126 RVA: 0x0017CACC File Offset: 0x0017ACCC
+	// Token: 0x06003B75 RID: 15221 RVA: 0x0017EEA4 File Offset: 0x0017D0A4
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -91,53 +91,53 @@ public class NetPackageEntityAliveFlags : NetPackageEntityTargeted
 		}
 	}
 
-	// Token: 0x06003B17 RID: 15127 RVA: 0x00175819 File Offset: 0x00173A19
+	// Token: 0x06003B76 RID: 15222 RVA: 0x00177A99 File Offset: 0x00175C99
 	public override int GetLength()
 	{
 		return 60;
 	}
 
-	// Token: 0x04002FF7 RID: 12279
+	// Token: 0x04003076 RID: 12406
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cFApproachingEnemy = 1;
 
-	// Token: 0x04002FF8 RID: 12280
+	// Token: 0x04003077 RID: 12407
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cFApproachingPlayer = 2;
 
-	// Token: 0x04002FF9 RID: 12281
+	// Token: 0x04003078 RID: 12408
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cFAimingGun = 4;
 
-	// Token: 0x04002FFA RID: 12282
+	// Token: 0x04003079 RID: 12409
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cFSpawned = 8;
 
-	// Token: 0x04002FFB RID: 12283
+	// Token: 0x0400307A RID: 12410
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cFJumping = 16;
 
-	// Token: 0x04002FFC RID: 12284
+	// Token: 0x0400307B RID: 12411
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cFIsBreakingBlocks = 32;
 
-	// Token: 0x04002FFD RID: 12285
+	// Token: 0x0400307C RID: 12412
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cFIsAlert = 64;
 
-	// Token: 0x04002FFE RID: 12286
+	// Token: 0x0400307D RID: 12413
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cFIsFlashlightOn = 128;
 
-	// Token: 0x04002FFF RID: 12287
+	// Token: 0x0400307E RID: 12414
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cFIsGodMode = 256;
 
-	// Token: 0x04003000 RID: 12288
+	// Token: 0x0400307F RID: 12415
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cFCrouching = 512;
 
-	// Token: 0x04003001 RID: 12289
+	// Token: 0x04003080 RID: 12416
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ushort flags;
 }

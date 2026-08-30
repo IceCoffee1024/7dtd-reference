@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200041C RID: 1052
+// Token: 0x02000420 RID: 1056
 [Preserve]
 public class AIHordeSpawner
 {
-	// Token: 0x06002087 RID: 8327 RVA: 0x000C40D2 File Offset: 0x000C22D2
+	// Token: 0x060020A4 RID: 8356 RVA: 0x000C486E File Offset: 0x000C2A6E
 	public AIHordeSpawner(World _world, string _spawnerDefinition, Vector3 _targetPos, float _playerSearchBounds)
 	{
 		this.world = _world;
@@ -16,7 +16,7 @@ public class AIHordeSpawner
 		this.targetPos = _targetPos;
 	}
 
-	// Token: 0x06002088 RID: 8328 RVA: 0x000C4108 File Offset: 0x000C2308
+	// Token: 0x060020A5 RID: 8357 RVA: 0x000C48A4 File Offset: 0x000C2AA4
 	public bool Tick(double _dt)
 	{
 		if (this.world.GetPlayers().Count == 0 || !AIDirector.CanSpawn(1f))
@@ -62,7 +62,13 @@ public class AIHordeSpawner
 		{
 			return false;
 		}
-		EntityEnemy entityEnemy = (EntityEnemy)EntityFactory.CreateEntity(EntityGroups.GetRandomFromGroup(this.spawner.spawnGroupName, ref this.lastClassId, null), vector);
+		int randomEntityFromGroupMaxTier = EntityGroups.GetRandomEntityFromGroupMaxTier(this.spawner.spawnGroupName, EntityFactory.MaxEntityTier, ref this.lastClassId, true, false, null);
+		if (randomEntityFromGroupMaxTier == -1)
+		{
+			Log.Warning(string.Format("Could not spawn an entity from group {0} within Sandbox Options Max Tier Limit {1}.", this.spawner.spawnGroupName, EntityFactory.MaxEntityTier));
+			return false;
+		}
+		EntityEnemy entityEnemy = (EntityEnemy)EntityFactory.CreateEntity(randomEntityFromGroupMaxTier, vector);
 		Log.Out("Screamer spawned {0} from {1}", new object[]
 		{
 			entityEnemy.EntityName,
@@ -79,8 +85,8 @@ public class AIHordeSpawner
 		return false;
 	}
 
-	// Token: 0x170003D3 RID: 979
-	// (get) Token: 0x06002089 RID: 8329 RVA: 0x000C4361 File Offset: 0x000C2561
+	// Token: 0x170003D7 RID: 983
+	// (get) Token: 0x060020A6 RID: 8358 RVA: 0x000C4B35 File Offset: 0x000C2D35
 	public bool isSpawning
 	{
 		get
@@ -89,7 +95,7 @@ public class AIHordeSpawner
 		}
 	}
 
-	// Token: 0x0600208A RID: 8330 RVA: 0x000C4370 File Offset: 0x000C2570
+	// Token: 0x060020A7 RID: 8359 RVA: 0x000C4B44 File Offset: 0x000C2D44
 	public void Cleanup()
 	{
 		for (int i = 0; i < this.hordeList.Count; i++)
@@ -101,37 +107,37 @@ public class AIHordeSpawner
 		this.hordeList.Clear();
 	}
 
-	// Token: 0x04001633 RID: 5683
+	// Token: 0x04001648 RID: 5704
 	public Vector3 targetPos;
 
-	// Token: 0x04001634 RID: 5684
+	// Token: 0x04001649 RID: 5705
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AIDirectorGameStagePartySpawner spawner;
 
-	// Token: 0x04001635 RID: 5685
+	// Token: 0x0400164A RID: 5706
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lastClassId;
 
-	// Token: 0x04001636 RID: 5686
+	// Token: 0x0400164B RID: 5707
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<EntityEnemy> hordeList = new List<EntityEnemy>();
 
-	// Token: 0x04001637 RID: 5687
+	// Token: 0x0400164C RID: 5708
 	[PublicizedFrom(EAccessModifier.Private)]
 	public World world;
 
-	// Token: 0x04001638 RID: 5688
+	// Token: 0x0400164D RID: 5709
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float playerSearchBounds;
 
-	// Token: 0x04001639 RID: 5689
+	// Token: 0x0400164E RID: 5710
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isInited;
 
-	// Token: 0x0400163A RID: 5690
+	// Token: 0x0400164F RID: 5711
 	public int numToSpawn;
 
-	// Token: 0x0400163B RID: 5691
+	// Token: 0x04001650 RID: 5712
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int numSpawned;
 }

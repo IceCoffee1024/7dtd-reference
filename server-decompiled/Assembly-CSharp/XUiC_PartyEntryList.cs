@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F8C RID: 3980
+// Token: 0x02000FA5 RID: 4005
 [Preserve]
 public class XUiC_PartyEntryList : XUiController
 {
-	// Token: 0x06007D85 RID: 32133 RVA: 0x002FAD40 File Offset: 0x002F8F40
+	// Token: 0x06007E77 RID: 32375 RVA: 0x002FF514 File Offset: 0x002FD714
 	public override void Init()
 	{
 		base.Init();
@@ -17,7 +17,7 @@ public class XUiC_PartyEntryList : XUiController
 		}
 	}
 
-	// Token: 0x06007D86 RID: 32134 RVA: 0x002FAD78 File Offset: 0x002F8F78
+	// Token: 0x06007E78 RID: 32376 RVA: 0x002FF54C File Offset: 0x002FD74C
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -34,21 +34,21 @@ public class XUiC_PartyEntryList : XUiController
 		}
 	}
 
-	// Token: 0x06007D87 RID: 32135 RVA: 0x002FAE25 File Offset: 0x002F9025
+	// Token: 0x06007E79 RID: 32377 RVA: 0x002FF5F9 File Offset: 0x002FD7F9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Party_PartyLeaderChanged(Party _affectedParty, EntityPlayer _player)
 	{
 		this.RefreshPartyList();
 	}
 
-	// Token: 0x06007D88 RID: 32136 RVA: 0x002FAE25 File Offset: 0x002F9025
+	// Token: 0x06007E7A RID: 32378 RVA: 0x002FF5F9 File Offset: 0x002FD7F9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Party_PartyMemberChanged(EntityPlayer _player)
 	{
 		this.RefreshPartyList();
 	}
 
-	// Token: 0x06007D89 RID: 32137 RVA: 0x002FAE30 File Offset: 0x002F9030
+	// Token: 0x06007E7B RID: 32379 RVA: 0x002FF604 File Offset: 0x002FD804
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void EntityPlayer_PartyJoined(Party _affectedParty, EntityPlayer _player)
 	{
@@ -65,7 +65,7 @@ public class XUiC_PartyEntryList : XUiController
 		}
 	}
 
-	// Token: 0x06007D8A RID: 32138 RVA: 0x002FAEEC File Offset: 0x002F90EC
+	// Token: 0x06007E7C RID: 32380 RVA: 0x002FF6C0 File Offset: 0x002FD8C0
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -81,7 +81,7 @@ public class XUiC_PartyEntryList : XUiController
 		}
 	}
 
-	// Token: 0x06007D8B RID: 32139 RVA: 0x002FAF94 File Offset: 0x002F9194
+	// Token: 0x06007E7D RID: 32381 RVA: 0x002FF768 File Offset: 0x002FD968
 	public void RefreshPartyList()
 	{
 		EntityPlayer entityPlayer = this.xui.playerUI.entityPlayer;
@@ -114,7 +114,7 @@ public class XUiC_PartyEntryList : XUiController
 		}
 	}
 
-	// Token: 0x04005D00 RID: 23808
+	// Token: 0x04005DC7 RID: 24007
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<XUiC_PartyEntry> entryList = new List<XUiC_PartyEntry>();
 }

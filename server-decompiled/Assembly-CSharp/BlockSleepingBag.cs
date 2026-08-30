@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x0200014D RID: 333
+// Token: 0x0200014E RID: 334
 [Preserve]
 public class BlockSleepingBag : BlockSiblingRemove
 {
-	// Token: 0x0600092D RID: 2349 RVA: 0x0004014C File Offset: 0x0003E34C
+	// Token: 0x06000937 RID: 2359 RVA: 0x000403AC File Offset: 0x0003E5AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i rotationToAddVector(int _rotation)
 	{
@@ -26,7 +26,7 @@ public class BlockSleepingBag : BlockSiblingRemove
 		}
 	}
 
-	// Token: 0x0600092E RID: 2350 RVA: 0x0004019C File Offset: 0x0003E39C
+	// Token: 0x06000938 RID: 2360 RVA: 0x000403FC File Offset: 0x0003E5FC
 	public override bool CanPlaceBlockAt(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool _bOmitCollideCheck = false)
 	{
 		if (!base.CanPlaceBlockAt(_world, _blockPos, _blockValue, _bOmitCollideCheck))
@@ -49,7 +49,7 @@ public class BlockSleepingBag : BlockSiblingRemove
 		return !block3.isair && !block4.isair && block3.Block.blockMaterial.StabilitySupport && block4.Block.blockMaterial.StabilitySupport;
 	}
 
-	// Token: 0x0600092F RID: 2351 RVA: 0x00040280 File Offset: 0x0003E480
+	// Token: 0x06000939 RID: 2361 RVA: 0x000404E0 File Offset: 0x0003E6E0
 	public override void PlaceBlock(WorldBase _world, BlockPlacement.Result _bpResult, EntityAlive _ea)
 	{
 		base.PlaceBlock(_world, _bpResult, _ea);
@@ -71,7 +71,7 @@ public class BlockSleepingBag : BlockSiblingRemove
 		}
 	}
 
-	// Token: 0x06000930 RID: 2352 RVA: 0x0004031C File Offset: 0x0003E51C
+	// Token: 0x0600093A RID: 2362 RVA: 0x0004057C File Offset: 0x0003E77C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlatformUserIdentifierAbs GetOwningPlayer(Vector3i _blockPos, out bool _ownedByOtherPlayer)
 	{
@@ -87,7 +87,7 @@ public class BlockSleepingBag : BlockSiblingRemove
 		return null;
 	}
 
-	// Token: 0x06000931 RID: 2353 RVA: 0x000403A8 File Offset: 0x0003E5A8
+	// Token: 0x0600093B RID: 2363 RVA: 0x00040608 File Offset: 0x0003E808
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		bool flag;
@@ -99,7 +99,7 @@ public class BlockSleepingBag : BlockSiblingRemove
 		return string.Format(Localization.Get("sleepingBagOwnership", false, null), this.GetLocalizedBlockName(), GameUtils.SafeStringFormat(GameManager.Instance.GetPersistentPlayerList().GetPlayerData(owningPlayer).PlayerName.DisplayName));
 	}
 
-	// Token: 0x06000932 RID: 2354 RVA: 0x00040404 File Offset: 0x0003E604
+	// Token: 0x0600093C RID: 2364 RVA: 0x00040664 File Offset: 0x0003E864
 	public override bool OnBlockActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		bool flag;

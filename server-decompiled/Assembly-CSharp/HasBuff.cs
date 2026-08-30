@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x0200067C RID: 1660
+// Token: 0x02000686 RID: 1670
 [Preserve]
 public class HasBuff : TargetedCompareRequirementBase
 {
-	// Token: 0x060034C8 RID: 13512 RVA: 0x0015DDE4 File Offset: 0x0015BFE4
+	// Token: 0x0600351E RID: 13598 RVA: 0x0015FFC0 File Offset: 0x0015E1C0
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -25,7 +25,7 @@ public class HasBuff : TargetedCompareRequirementBase
 		return this.invert;
 	}
 
-	// Token: 0x060034C9 RID: 13513 RVA: 0x0015DE3C File Offset: 0x0015C03C
+	// Token: 0x0600351F RID: 13599 RVA: 0x00160018 File Offset: 0x0015E218
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -37,13 +37,13 @@ public class HasBuff : TargetedCompareRequirementBase
 		return flag;
 	}
 
-	// Token: 0x060034CA RID: 13514 RVA: 0x0015DE89 File Offset: 0x0015C089
+	// Token: 0x06003520 RID: 13600 RVA: 0x00160065 File Offset: 0x0015E265
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("Target does {0}have buff '{1}(0)'", this.invert ? "NOT " : "", this.buffNames));
 	}
 
-	// Token: 0x04002ACE RID: 10958
+	// Token: 0x04002B42 RID: 11074
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string[] buffNames;
 }

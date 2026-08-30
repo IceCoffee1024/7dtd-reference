@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020012AF RID: 4783
+// Token: 0x020012C9 RID: 4809
 [PublicizedFrom(EAccessModifier.Internal)]
 public class CVertexWeight
 {
-	// Token: 0x0600977F RID: 38783 RVA: 0x00399003 File Offset: 0x00397203
+	// Token: 0x0600987A RID: 39034 RVA: 0x0039E247 File Offset: 0x0039C447
 	public CVertexWeight(int i, Vector3 p, float w)
 	{
 		this.index = i;
@@ -13,12 +13,12 @@ public class CVertexWeight
 		this.weight = w;
 	}
 
-	// Token: 0x040071D6 RID: 29142
+	// Token: 0x040072AD RID: 29357
 	public int index;
 
-	// Token: 0x040071D7 RID: 29143
+	// Token: 0x040072AE RID: 29358
 	public Vector3 localPosition;
 
-	// Token: 0x040071D8 RID: 29144
+	// Token: 0x040072AF RID: 29359
 	public float weight;
 }

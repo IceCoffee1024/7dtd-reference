@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020004F3 RID: 1267
+// Token: 0x020004F8 RID: 1272
 public class PlayerEquippedSlots : MonoBehaviour
 {
-	// Token: 0x06002979 RID: 10617 RVA: 0x00104CC2 File Offset: 0x00102EC2
+	// Token: 0x060029A3 RID: 10659 RVA: 0x00105CCE File Offset: 0x00103ECE
 	public void Init(Transform outfit)
 	{
 		this.outfitXF = outfit;
@@ -15,7 +15,7 @@ public class PlayerEquippedSlots : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600297A RID: 10618 RVA: 0x00104CE0 File Offset: 0x00102EE0
+	// Token: 0x060029A4 RID: 10660 RVA: 0x00105CEC File Offset: 0x00103EEC
 	public void ListParts()
 	{
 		int count = this.parts.Count;
@@ -25,7 +25,7 @@ public class PlayerEquippedSlots : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600297B RID: 10619 RVA: 0x00104D1C File Offset: 0x00102F1C
+	// Token: 0x060029A5 RID: 10661 RVA: 0x00105D28 File Offset: 0x00103F28
 	public void ListEquipment()
 	{
 		int count = this.equippedParts.Count;
@@ -35,7 +35,7 @@ public class PlayerEquippedSlots : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600297C RID: 10620 RVA: 0x00104D58 File Offset: 0x00102F58
+	// Token: 0x060029A6 RID: 10662 RVA: 0x00105D64 File Offset: 0x00103F64
 	public bool IsEquipped(string partName)
 	{
 		int count = this.equippedParts.Count;
@@ -49,7 +49,7 @@ public class PlayerEquippedSlots : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x0600297D RID: 10621 RVA: 0x00104D9C File Offset: 0x00102F9C
+	// Token: 0x060029A7 RID: 10663 RVA: 0x00105DA8 File Offset: 0x00103FA8
 	public bool Equip(string partName)
 	{
 		if (this.IsEquipped(partName))
@@ -74,7 +74,7 @@ public class PlayerEquippedSlots : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x0600297E RID: 10622 RVA: 0x00104E24 File Offset: 0x00103024
+	// Token: 0x060029A8 RID: 10664 RVA: 0x00105E30 File Offset: 0x00104030
 	public bool UnEquip(string partName)
 	{
 		int count = this.equippedParts.Count;
@@ -92,7 +92,7 @@ public class PlayerEquippedSlots : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x0600297F RID: 10623 RVA: 0x00104E94 File Offset: 0x00103094
+	// Token: 0x060029A9 RID: 10665 RVA: 0x00105EA0 File Offset: 0x001040A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void _RunRules()
 	{
@@ -145,14 +145,14 @@ public class PlayerEquippedSlots : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002980 RID: 10624 RVA: 0x00104FFD File Offset: 0x001031FD
+	// Token: 0x060029AA RID: 10666 RVA: 0x00106009 File Offset: 0x00104209
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform _GetNAOutfit()
 	{
 		return this.outfitXF;
 	}
 
-	// Token: 0x06002981 RID: 10625 RVA: 0x00105008 File Offset: 0x00103208
+	// Token: 0x060029AB RID: 10667 RVA: 0x00106014 File Offset: 0x00104214
 	public void _EnableNASubmesh(string submeshName, bool enable)
 	{
 		Transform transform = this._GetNAOutfit();
@@ -175,7 +175,7 @@ public class PlayerEquippedSlots : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002982 RID: 10626 RVA: 0x00105074 File Offset: 0x00103274
+	// Token: 0x060029AC RID: 10668 RVA: 0x00106080 File Offset: 0x00104280
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void _DisableAllNASubmeshes()
 	{
@@ -195,30 +195,30 @@ public class PlayerEquippedSlots : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001F68 RID: 8040
+	// Token: 0x04001F97 RID: 8087
 	public List<PlayerEquippedSlots.PartInfo> parts;
 
-	// Token: 0x04001F69 RID: 8041
+	// Token: 0x04001F98 RID: 8088
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<PlayerEquippedSlots.EquippedPart> equippedParts = new List<PlayerEquippedSlots.EquippedPart>();
 
-	// Token: 0x04001F6A RID: 8042
+	// Token: 0x04001F99 RID: 8089
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform outfitXF;
 
-	// Token: 0x020004F4 RID: 1268
+	// Token: 0x020004F9 RID: 1273
 	[Serializable]
 	public class PartInfo
 	{
-		// Token: 0x06002984 RID: 10628 RVA: 0x001050DE File Offset: 0x001032DE
+		// Token: 0x060029AE RID: 10670 RVA: 0x001060EA File Offset: 0x001042EA
 		public bool IsInSlot(string slotReference)
 		{
 			return PlayerEquippedSlots.PartInfo.RefMatchesSlot(slotReference, this.slot);
 		}
 
-		// Token: 0x06002985 RID: 10629 RVA: 0x001050EC File Offset: 0x001032EC
+		// Token: 0x060029AF RID: 10671 RVA: 0x001060F8 File Offset: 0x001042F8
 		public static bool RefMatchesSlot(string slotReference, string slotName)
 		{
 			int num = slotReference.IndexOf("*");
@@ -229,30 +229,30 @@ public class PlayerEquippedSlots : MonoBehaviour
 			return string.Compare(slotReference, 0, slotName, 0, num) == 0;
 		}
 
-		// Token: 0x04001F6B RID: 8043
+		// Token: 0x04001F9A RID: 8090
 		public string name;
 
-		// Token: 0x04001F6C RID: 8044
+		// Token: 0x04001F9B RID: 8091
 		public string slot;
 
-		// Token: 0x04001F6D RID: 8045
+		// Token: 0x04001F9C RID: 8092
 		public string rule;
 	}
 
-	// Token: 0x020004F5 RID: 1269
+	// Token: 0x020004FA RID: 1274
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class EquippedPart
 	{
-		// Token: 0x04001F6E RID: 8046
+		// Token: 0x04001F9D RID: 8093
 		public string name;
 
-		// Token: 0x04001F6F RID: 8047
+		// Token: 0x04001F9E RID: 8094
 		public PlayerEquippedSlots.PartInfo partInfo;
 
-		// Token: 0x04001F70 RID: 8048
+		// Token: 0x04001F9F RID: 8095
 		public bool wasShowing;
 
-		// Token: 0x04001F71 RID: 8049
+		// Token: 0x04001FA0 RID: 8096
 		public bool isShowing;
 	}
 }

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000C1A RID: 3098
+// Token: 0x02000C2C RID: 3116
 public class DistantChunkMap
 {
-	// Token: 0x06005E5F RID: 24159 RVA: 0x0025021C File Offset: 0x0024E41C
+	// Token: 0x06005EE9 RID: 24297 RVA: 0x002530CC File Offset: 0x002512CC
 	public DistantChunkMap(Vector2 _worldSize, float[] _ResRadius, float[] _ChunkWidth, int[] _ChunkResolution, int[] _ColliderResolution, int[] _ChunkDataListResLevel, int _LayerId, DelegateGetTerrainHeight _TGHeightFunc, WorldCreationData _wcd, GameObject _ParentGameObject, Vector3[] ChunkExtraShiftVector)
 	{
 		this.WorldSize = _worldSize;
@@ -113,7 +113,7 @@ public class DistantChunkMap
 		this.setArrayMaxSize();
 	}
 
-	// Token: 0x06005E60 RID: 24160 RVA: 0x002508DC File Offset: 0x0024EADC
+	// Token: 0x06005EEA RID: 24298 RVA: 0x0025378C File Offset: 0x0025198C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setArrayMaxSize()
 	{
@@ -156,7 +156,7 @@ public class DistantChunkMap
 		this.MaxNbChunkEdgeToNextResLevel = array[5];
 	}
 
-	// Token: 0x06005E61 RID: 24161 RVA: 0x00250A4C File Offset: 0x0024EC4C
+	// Token: 0x06005EEB RID: 24299 RVA: 0x002538FC File Offset: 0x00251AFC
 	public void SetChunkTrigger(int _ResLevel)
 	{
 		DistantChunkMapInfo distantChunkMapInfo = this.ChunkMapInfoArray[_ResLevel];
@@ -581,7 +581,7 @@ public class DistantChunkMap
 		}
 	}
 
-	// Token: 0x06005E62 RID: 24162 RVA: 0x00252C50 File Offset: 0x00250E50
+	// Token: 0x06005EEC RID: 24300 RVA: 0x00255B00 File Offset: 0x00253D00
 	public int FindOutsideFromChunk(Vector2 _CurrentPosVec, int _Reslevel)
 	{
 		Vector2 vector = default(Vector2);
@@ -606,7 +606,7 @@ public class DistantChunkMap
 		return -1;
 	}
 
-	// Token: 0x06005E63 RID: 24163 RVA: 0x00252D54 File Offset: 0x00250F54
+	// Token: 0x06005EED RID: 24301 RVA: 0x00255C04 File Offset: 0x00253E04
 	public void UpdatePlayerPos(int _ResLevel, int _AreaId)
 	{
 		DistantChunkMapInfo distantChunkMapInfo = this.ChunkMapInfoArray[_ResLevel];
@@ -653,7 +653,7 @@ public class DistantChunkMap
 		}
 	}
 
-	// Token: 0x06005E64 RID: 24164 RVA: 0x00252FD0 File Offset: 0x002511D0
+	// Token: 0x06005EEE RID: 24302 RVA: 0x00255E80 File Offset: 0x00254080
 	public DistantChunkPosData ComputeChunkPos(int _ResLevel, int _NbResLevel, float _LowerResRadius, float _UpperResRadius, float _ChunkWidth)
 	{
 		List<Vector2i> list = new List<Vector2i>();
@@ -713,7 +713,7 @@ public class DistantChunkMap
 		return distantChunkPosData;
 	}
 
-	// Token: 0x06005E65 RID: 24165 RVA: 0x002531CC File Offset: 0x002513CC
+	// Token: 0x06005EEF RID: 24303 RVA: 0x0025607C File Offset: 0x0025427C
 	public DistantChunkPosData ComputeChunkPos(int _PosX, int _PosZ, int _ResLevel)
 	{
 		List<Vector2i> list = new List<Vector2i>();
@@ -801,7 +801,7 @@ public class DistantChunkMap
 		return distantChunkPosData;
 	}
 
-	// Token: 0x06005E66 RID: 24166 RVA: 0x002536DC File Offset: 0x002518DC
+	// Token: 0x06005EF0 RID: 24304 RVA: 0x0025658C File Offset: 0x0025478C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DistantChunkBasicMesh CreateBaseDataMesh(DistantChunkMapInfo _ChunkMapInfo)
 	{
@@ -842,7 +842,7 @@ public class DistantChunkMap
 		return distantChunkBasicMesh;
 	}
 
-	// Token: 0x06005E67 RID: 24167 RVA: 0x00253854 File Offset: 0x00251A54
+	// Token: 0x06005EF1 RID: 24305 RVA: 0x00256704 File Offset: 0x00254904
 	public static DistantChunkBasicMesh CreateBaseDataCollider(float _ChunkWidth, int _ChunkResolution)
 	{
 		DistantChunkBasicMesh distantChunkBasicMesh = new DistantChunkBasicMesh();
@@ -876,7 +876,7 @@ public class DistantChunkMap
 		return distantChunkBasicMesh;
 	}
 
-	// Token: 0x06005E68 RID: 24168 RVA: 0x0025397C File Offset: 0x00251B7C
+	// Token: 0x06005EF2 RID: 24306 RVA: 0x0025682C File Offset: 0x00254A2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DistantChunkBasicMesh createBaseDataMeshFold(DistantChunkMapInfo _ChunkMapInfo)
 	{
@@ -957,54 +957,54 @@ public class DistantChunkMap
 		return distantChunkBasicMesh;
 	}
 
-	// Token: 0x040049A4 RID: 18852
+	// Token: 0x04004A41 RID: 19009
 	public static Vector3 cShiftTerrainVector = new Vector3(0.5f, 0.5f, 0.5f);
 
-	// Token: 0x040049A5 RID: 18853
+	// Token: 0x04004A42 RID: 19010
 	public const float Epsilon = 1E-05f;
 
-	// Token: 0x040049A6 RID: 18854
+	// Token: 0x04004A43 RID: 19011
 	public Vector2 WorldSize;
 
-	// Token: 0x040049A7 RID: 18855
+	// Token: 0x04004A44 RID: 19012
 	public Vector2 TerrainOrigin;
 
-	// Token: 0x040049A8 RID: 18856
+	// Token: 0x04004A45 RID: 19013
 	public int NbResLevel;
 
-	// Token: 0x040049A9 RID: 18857
+	// Token: 0x04004A46 RID: 19014
 	public int TotNbOfChunk;
 
-	// Token: 0x040049AA RID: 18858
+	// Token: 0x04004A47 RID: 19015
 	public int LayerId;
 
-	// Token: 0x040049AB RID: 18859
+	// Token: 0x04004A48 RID: 19016
 	public static DelegateGetTerrainHeight TGHeightFunc;
 
-	// Token: 0x040049AC RID: 18860
+	// Token: 0x04004A49 RID: 19017
 	public WorldCreationData wcd;
 
-	// Token: 0x040049AD RID: 18861
+	// Token: 0x04004A4A RID: 19018
 	public GameObject ParentGameObject;
 
-	// Token: 0x040049AE RID: 18862
+	// Token: 0x04004A4B RID: 19019
 	public int MaxNbChunkToDelete;
 
-	// Token: 0x040049AF RID: 18863
+	// Token: 0x04004A4C RID: 19020
 	public int MaxNbChunkToAdd;
 
-	// Token: 0x040049B0 RID: 18864
+	// Token: 0x04004A4D RID: 19021
 	public int MaxNbChunkToConvDel;
 
-	// Token: 0x040049B1 RID: 18865
+	// Token: 0x04004A4E RID: 19022
 	public int MaxNbChunkToConvAdd;
 
-	// Token: 0x040049B2 RID: 18866
+	// Token: 0x04004A4F RID: 19023
 	public int MaxNbChunkEdgeToOwnResLevel;
 
-	// Token: 0x040049B3 RID: 18867
+	// Token: 0x04004A50 RID: 19024
 	public int MaxNbChunkEdgeToNextResLevel;
 
-	// Token: 0x040049B4 RID: 18868
+	// Token: 0x04004A51 RID: 19025
 	public DistantChunkMapInfo[] ChunkMapInfoArray;
 }

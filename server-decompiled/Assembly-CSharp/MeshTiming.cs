@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x020003BD RID: 957
+// Token: 0x020003C1 RID: 961
 public class MeshTiming
 {
-	// Token: 0x06001CB0 RID: 7344 RVA: 0x000AD860 File Offset: 0x000ABA60
+	// Token: 0x06001CCD RID: 7373 RVA: 0x000ADFA0 File Offset: 0x000AC1A0
 	public string Details()
 	{
 		double num = this.CopyVerts + this.CopyUv + this.CopyUv2 + this.CopyUv3 + this.CopyUv4 + this.CopyColours + this.CopyTriangles + this.CopyNormals + this.CopyTangents + this.UploadMesh + this.NormalRecalc;
@@ -14,8 +14,8 @@ public class MeshTiming
 		});
 	}
 
-	// Token: 0x17000364 RID: 868
-	// (get) Token: 0x06001CB1 RID: 7345 RVA: 0x000AD971 File Offset: 0x000ABB71
+	// Token: 0x17000368 RID: 872
+	// (get) Token: 0x06001CCE RID: 7374 RVA: 0x000AE0B1 File Offset: 0x000AC2B1
 	public double time
 	{
 		get
@@ -24,51 +24,51 @@ public class MeshTiming
 		}
 	}
 
-	// Token: 0x06001CB2 RID: 7346 RVA: 0x000AD97C File Offset: 0x000ABB7C
+	// Token: 0x06001CCF RID: 7375 RVA: 0x000AE0BC File Offset: 0x000AC2BC
 	public double GetTime()
 	{
 		return (DateTime.Now - this.Start).TotalMilliseconds;
 	}
 
-	// Token: 0x06001CB3 RID: 7347 RVA: 0x000AD9A1 File Offset: 0x000ABBA1
+	// Token: 0x06001CD0 RID: 7376 RVA: 0x000AE0E1 File Offset: 0x000AC2E1
 	public void Reset()
 	{
 		this.Start = DateTime.Now;
 	}
 
-	// Token: 0x040012AE RID: 4782
+	// Token: 0x040012C3 RID: 4803
 	public double CopyVerts;
 
-	// Token: 0x040012AF RID: 4783
+	// Token: 0x040012C4 RID: 4804
 	public double CopyUv;
 
-	// Token: 0x040012B0 RID: 4784
+	// Token: 0x040012C5 RID: 4805
 	public double CopyUv2;
 
-	// Token: 0x040012B1 RID: 4785
+	// Token: 0x040012C6 RID: 4806
 	public double CopyUv3;
 
-	// Token: 0x040012B2 RID: 4786
+	// Token: 0x040012C7 RID: 4807
 	public double CopyUv4;
 
-	// Token: 0x040012B3 RID: 4787
+	// Token: 0x040012C8 RID: 4808
 	public double CopyColours;
 
-	// Token: 0x040012B4 RID: 4788
+	// Token: 0x040012C9 RID: 4809
 	public double CopyTriangles;
 
-	// Token: 0x040012B5 RID: 4789
+	// Token: 0x040012CA RID: 4810
 	public double CopyNormals;
 
-	// Token: 0x040012B6 RID: 4790
+	// Token: 0x040012CB RID: 4811
 	public double CopyTangents;
 
-	// Token: 0x040012B7 RID: 4791
+	// Token: 0x040012CC RID: 4812
 	public double UploadMesh;
 
-	// Token: 0x040012B8 RID: 4792
+	// Token: 0x040012CD RID: 4813
 	public double NormalRecalc;
 
-	// Token: 0x040012B9 RID: 4793
+	// Token: 0x040012CE RID: 4814
 	public DateTime Start;
 }

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 
-// Token: 0x020013C0 RID: 5056
+// Token: 0x020013DB RID: 5083
 public static class DictionaryExtension
 {
-	// Token: 0x06009EA1 RID: 40609 RVA: 0x003BC4B0 File Offset: 0x003BA6B0
+	// Token: 0x06009F9E RID: 40862 RVA: 0x003C17F4 File Offset: 0x003BF9F4
 	public static void RemoveAll<TKey, TValue>(this IDictionary<TKey, TValue> dic, Func<TValue, bool> predicate)
 	{
 		foreach (TKey tkey in dic.Keys.Where<TKey>((TKey k) => predicate(dic[k])).ToList<TKey>())
@@ -14,7 +14,7 @@ public static class DictionaryExtension
 		}
 	}
 
-	// Token: 0x06009EA2 RID: 40610 RVA: 0x003BC538 File Offset: 0x003BA738
+	// Token: 0x06009F9F RID: 40863 RVA: 0x003C187C File Offset: 0x003BFA7C
 	public static void RemoveAll<TKey, TValue>(this IDictionary<TKey, TValue> dic, Func<TKey, bool> predicate)
 	{
 		foreach (TKey tkey in dic.Keys.Where<TKey>((TKey k) => predicate(k)).ToList<TKey>())
@@ -23,7 +23,7 @@ public static class DictionaryExtension
 		}
 	}
 
-	// Token: 0x06009EA3 RID: 40611 RVA: 0x003BC5B0 File Offset: 0x003BA7B0
+	// Token: 0x06009FA0 RID: 40864 RVA: 0x003C18F4 File Offset: 0x003BFAF4
 	public static void CopyTo<TKey, TValue>(this IDictionary<TKey, TValue> _src, IDictionary<TKey, TValue> _dest, bool _overwriteExisting = false)
 	{
 		if (_overwriteExisting)
@@ -44,7 +44,7 @@ public static class DictionaryExtension
 		}
 	}
 
-	// Token: 0x06009EA4 RID: 40612 RVA: 0x003BC64C File Offset: 0x003BA84C
+	// Token: 0x06009FA1 RID: 40865 RVA: 0x003C1990 File Offset: 0x003BFB90
 	public static void CopyKeysTo<TKey, TValue>(this IDictionary<TKey, TValue> _src, ICollection<TKey> _dest)
 	{
 		foreach (KeyValuePair<TKey, TValue> keyValuePair in _src)
@@ -53,7 +53,7 @@ public static class DictionaryExtension
 		}
 	}
 
-	// Token: 0x06009EA5 RID: 40613 RVA: 0x003BC69C File Offset: 0x003BA89C
+	// Token: 0x06009FA2 RID: 40866 RVA: 0x003C19E0 File Offset: 0x003BFBE0
 	public static void CopyKeysTo<TKey, TValue>(this IDictionary<TKey, TValue> _src, TKey[] _dest)
 	{
 		if (_dest.Length != _src.Count)
@@ -67,7 +67,7 @@ public static class DictionaryExtension
 		}
 	}
 
-	// Token: 0x06009EA6 RID: 40614 RVA: 0x003BC70C File Offset: 0x003BA90C
+	// Token: 0x06009FA3 RID: 40867 RVA: 0x003C1A50 File Offset: 0x003BFC50
 	public static void CopyValuesTo<TKey, TValue>(this IDictionary<TKey, TValue> _src, IList<TValue> _dest)
 	{
 		foreach (KeyValuePair<TKey, TValue> keyValuePair in _src)
@@ -76,7 +76,7 @@ public static class DictionaryExtension
 		}
 	}
 
-	// Token: 0x06009EA7 RID: 40615 RVA: 0x003BC75C File Offset: 0x003BA95C
+	// Token: 0x06009FA4 RID: 40868 RVA: 0x003C1AA0 File Offset: 0x003BFCA0
 	public static void CopyValuesTo<TKey, TValue>(this IDictionary<TKey, TValue> _src, TValue[] _dest)
 	{
 		if (_dest.Length != _src.Count)
@@ -90,7 +90,7 @@ public static class DictionaryExtension
 		}
 	}
 
-	// Token: 0x06009EA8 RID: 40616 RVA: 0x003BC7CC File Offset: 0x003BA9CC
+	// Token: 0x06009FA5 RID: 40869 RVA: 0x003C1B10 File Offset: 0x003BFD10
 	public static bool ValuesEquals<TKey, TValue>(this IDictionary<TKey, TValue> _src, IDictionary<TKey, TValue> _other)
 	{
 		if (_src.Count != _other.Count)

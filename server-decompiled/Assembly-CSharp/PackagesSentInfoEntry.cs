@@ -1,27 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x0200078E RID: 1934
+// Token: 0x02000798 RID: 1944
 public class PackagesSentInfoEntry
 {
-	// Token: 0x04002F0D RID: 12045
+	// Token: 0x04002F86 RID: 12166
 	public List<NetPackageInfo> packages;
 
-	// Token: 0x04002F0E RID: 12046
+	// Token: 0x04002F87 RID: 12167
 	public int count;
 
-	// Token: 0x04002F0F RID: 12047
+	// Token: 0x04002F88 RID: 12168
 	public long uncompressedSize;
 
-	// Token: 0x04002F10 RID: 12048
+	// Token: 0x04002F89 RID: 12169
 	public long compressedSize;
 
-	// Token: 0x04002F11 RID: 12049
+	// Token: 0x04002F8A RID: 12170
 	public bool bCompressed;
 
-	// Token: 0x04002F12 RID: 12050
+	// Token: 0x04002F8B RID: 12171
 	public float timestamp;
 
-	// Token: 0x04002F13 RID: 12051
+	// Token: 0x04002F8C RID: 12172
 	public string client;
 }

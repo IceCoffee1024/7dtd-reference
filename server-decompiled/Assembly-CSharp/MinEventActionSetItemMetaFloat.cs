@@ -3,11 +3,11 @@ using System.Globalization;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006FC RID: 1788
+// Token: 0x02000706 RID: 1798
 [Preserve]
 public class MinEventActionSetItemMetaFloat : MinEventActionBase
 {
-	// Token: 0x06003684 RID: 13956 RVA: 0x00167EE8 File Offset: 0x001660E8
+	// Token: 0x060036DA RID: 14042 RVA: 0x0016A0C0 File Offset: 0x001682C0
 	public override void Execute(MinEventParams _params)
 	{
 		ItemValue itemValue = _params.ItemValue;
@@ -35,13 +35,13 @@ public class MinEventActionSetItemMetaFloat : MinEventActionBase
 		}
 	}
 
-	// Token: 0x06003685 RID: 13957 RVA: 0x00167F84 File Offset: 0x00166184
+	// Token: 0x060036DB RID: 14043 RVA: 0x0016A15C File Offset: 0x0016835C
 	public override bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
 	{
 		return base.CanExecute(_eventType, _params) && !string.IsNullOrEmpty(this.metaKey);
 	}
 
-	// Token: 0x06003686 RID: 13958 RVA: 0x00167FA4 File Offset: 0x001661A4
+	// Token: 0x060036DC RID: 14044 RVA: 0x0016A17C File Offset: 0x0016837C
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -67,15 +67,15 @@ public class MinEventActionSetItemMetaFloat : MinEventActionBase
 		return flag;
 	}
 
-	// Token: 0x04002BD3 RID: 11219
+	// Token: 0x04002C47 RID: 11335
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float change;
 
-	// Token: 0x04002BD4 RID: 11220
+	// Token: 0x04002C48 RID: 11336
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool relative = true;
 
-	// Token: 0x04002BD5 RID: 11221
+	// Token: 0x04002C49 RID: 11337
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string metaKey;
 }

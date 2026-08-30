@@ -3,11 +3,11 @@ using System.Globalization;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006DC RID: 1756
+// Token: 0x020006E6 RID: 1766
 [Preserve]
 public class MinEventActionGiveExp : MinEventActionTargetedBase
 {
-	// Token: 0x0600360A RID: 13834 RVA: 0x00165840 File Offset: 0x00163A40
+	// Token: 0x06003660 RID: 13920 RVA: 0x00167A18 File Offset: 0x00165C18
 	public override void Execute(MinEventParams _params)
 	{
 		if (this.targets == null)
@@ -26,13 +26,13 @@ public class MinEventActionGiveExp : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x0600360B RID: 13835 RVA: 0x001658E6 File Offset: 0x00163AE6
+	// Token: 0x06003661 RID: 13921 RVA: 0x00167ABE File Offset: 0x00165CBE
 	public override bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
 	{
 		return base.CanExecute(_eventType, _params) && (this.cvarRef || this.exp > 0);
 	}
 
-	// Token: 0x0600360C RID: 13836 RVA: 0x00165908 File Offset: 0x00163B08
+	// Token: 0x06003662 RID: 13922 RVA: 0x00167AE0 File Offset: 0x00165CE0
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -55,15 +55,15 @@ public class MinEventActionGiveExp : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002B7D RID: 11133
+	// Token: 0x04002BF1 RID: 11249
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int exp = -1;
 
-	// Token: 0x04002B7E RID: 11134
+	// Token: 0x04002BF2 RID: 11250
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool cvarRef;
 
-	// Token: 0x04002B7F RID: 11135
+	// Token: 0x04002BF3 RID: 11251
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string refCvarName;
 }

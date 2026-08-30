@@ -2,19 +2,19 @@
 
 namespace Platform
 {
-	// Token: 0x02001B34 RID: 6964
+	// Token: 0x02001B5B RID: 7003
 	public interface IAuthenticationClient
 	{
-		// Token: 0x0600D047 RID: 53319
+		// Token: 0x0600D1D0 RID: 53712
 		void Init(IPlatform _owner);
 
-		// Token: 0x0600D048 RID: 53320
+		// Token: 0x0600D1D1 RID: 53713
 		string GetAuthTicket();
 
-		// Token: 0x0600D049 RID: 53321
+		// Token: 0x0600D1D2 RID: 53714
 		void AuthenticateServer(ClientAuthenticateServerContext _context);
 
-		// Token: 0x0600D04A RID: 53322
+		// Token: 0x0600D1D3 RID: 53715
 		void Destroy();
 	}
 }

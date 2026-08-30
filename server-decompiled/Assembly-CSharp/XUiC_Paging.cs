@@ -3,13 +3,13 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E7C RID: 3708
+// Token: 0x02000E91 RID: 3729
 [Preserve]
 public class XUiC_Paging : XUiController
 {
-	// Token: 0x17000D6A RID: 3434
-	// (get) Token: 0x06007356 RID: 29526 RVA: 0x002BB72E File Offset: 0x002B992E
-	// (set) Token: 0x06007357 RID: 29527 RVA: 0x002BB736 File Offset: 0x002B9936
+	// Token: 0x17000D83 RID: 3459
+	// (get) Token: 0x060073F6 RID: 29686 RVA: 0x002BEC5A File Offset: 0x002BCE5A
+	// (set) Token: 0x060073F7 RID: 29687 RVA: 0x002BEC62 File Offset: 0x002BCE62
 	public int CurrentPageNumber
 	{
 		get
@@ -28,8 +28,8 @@ public class XUiC_Paging : XUiController
 		}
 	}
 
-	// Token: 0x17000D6B RID: 3435
-	// (get) Token: 0x06007358 RID: 29528 RVA: 0x002BB75F File Offset: 0x002B995F
+	// Token: 0x17000D84 RID: 3460
+	// (get) Token: 0x060073F8 RID: 29688 RVA: 0x002BEC8B File Offset: 0x002BCE8B
 	[XuiXmlBinding("pagenumber")]
 	public int CurrentPageNumberNatural
 	{
@@ -39,9 +39,9 @@ public class XUiC_Paging : XUiController
 		}
 	}
 
-	// Token: 0x17000D6C RID: 3436
-	// (get) Token: 0x06007359 RID: 29529 RVA: 0x002BB769 File Offset: 0x002B9969
-	// (set) Token: 0x0600735A RID: 29530 RVA: 0x002BB774 File Offset: 0x002B9974
+	// Token: 0x17000D85 RID: 3461
+	// (get) Token: 0x060073F9 RID: 29689 RVA: 0x002BEC95 File Offset: 0x002BCE95
+	// (set) Token: 0x060073FA RID: 29690 RVA: 0x002BECA0 File Offset: 0x002BCEA0
 	public int LastPageNumber
 	{
 		get
@@ -69,8 +69,8 @@ public class XUiC_Paging : XUiController
 		}
 	}
 
-	// Token: 0x17000D6D RID: 3437
-	// (get) Token: 0x0600735B RID: 29531 RVA: 0x002BB7C3 File Offset: 0x002B99C3
+	// Token: 0x17000D86 RID: 3462
+	// (get) Token: 0x060073FB RID: 29691 RVA: 0x002BECEF File Offset: 0x002BCEEF
 	[XuiXmlBinding("maxpagenumber")]
 	public int LastPageNumberNatural
 	{
@@ -80,9 +80,9 @@ public class XUiC_Paging : XUiController
 		}
 	}
 
-	// Token: 0x17000D6E RID: 3438
-	// (get) Token: 0x0600735C RID: 29532 RVA: 0x002BB7CD File Offset: 0x002B99CD
-	// (set) Token: 0x0600735D RID: 29533 RVA: 0x002BB7D5 File Offset: 0x002B99D5
+	// Token: 0x17000D87 RID: 3463
+	// (get) Token: 0x060073FC RID: 29692 RVA: 0x002BECF9 File Offset: 0x002BCEF9
+	// (set) Token: 0x060073FD RID: 29693 RVA: 0x002BED01 File Offset: 0x002BCF01
 	[XuiXmlBinding("over_content_area")]
 	public bool ControllerOverContentArea
 	{
@@ -101,38 +101,38 @@ public class XUiC_Paging : XUiController
 		}
 	}
 
-	// Token: 0x17000D6F RID: 3439
-	// (get) Token: 0x0600735E RID: 29534 RVA: 0x002BB7EF File Offset: 0x002B99EF
-	// (set) Token: 0x0600735F RID: 29535 RVA: 0x002BB7F7 File Offset: 0x002B99F7
+	// Token: 0x17000D88 RID: 3464
+	// (get) Token: 0x060073FE RID: 29694 RVA: 0x002BED1B File Offset: 0x002BCF1B
+	// (set) Token: 0x060073FF RID: 29695 RVA: 0x002BED23 File Offset: 0x002BCF23
 	[XuiXmlAttribute("show_max_page", false)]
 	[XuiXmlBinding("showmaxpage")]
 	public bool ShowMaxPage { get; set; }
 
-	// Token: 0x17000D70 RID: 3440
-	// (get) Token: 0x06007360 RID: 29536 RVA: 0x002BB800 File Offset: 0x002B9A00
-	// (set) Token: 0x06007361 RID: 29537 RVA: 0x002BB808 File Offset: 0x002B9A08
+	// Token: 0x17000D89 RID: 3465
+	// (get) Token: 0x06007400 RID: 29696 RVA: 0x002BED2C File Offset: 0x002BCF2C
+	// (set) Token: 0x06007401 RID: 29697 RVA: 0x002BED34 File Offset: 0x002BCF34
 	[XuiXmlAttribute("separator", false)]
 	[XuiXmlBinding("separator")]
 	public string Separator { get; set; } = "/";
 
-	// Token: 0x17000D71 RID: 3441
-	// (get) Token: 0x06007362 RID: 29538 RVA: 0x002BB811 File Offset: 0x002B9A11
-	// (set) Token: 0x06007363 RID: 29539 RVA: 0x002BB819 File Offset: 0x002B9A19
+	// Token: 0x17000D8A RID: 3466
+	// (get) Token: 0x06007402 RID: 29698 RVA: 0x002BED3D File Offset: 0x002BCF3D
+	// (set) Token: 0x06007403 RID: 29699 RVA: 0x002BED45 File Offset: 0x002BCF45
 	[XuiXmlAttribute("contents_parent", false)]
 	public string ContentParentName { get; set; }
 
-	// Token: 0x17000D72 RID: 3442
-	// (get) Token: 0x06007364 RID: 29540 RVA: 0x002BB822 File Offset: 0x002B9A22
-	// (set) Token: 0x06007365 RID: 29541 RVA: 0x002BB82A File Offset: 0x002B9A2A
+	// Token: 0x17000D8B RID: 3467
+	// (get) Token: 0x06007404 RID: 29700 RVA: 0x002BED4E File Offset: 0x002BCF4E
+	// (set) Token: 0x06007405 RID: 29701 RVA: 0x002BED56 File Offset: 0x002BCF56
 	[XuiXmlAttribute("hotkeys_enabled", false)]
 	public bool HotkeysEnabled { get; set; } = true;
 
-	// Token: 0x140000B3 RID: 179
-	// (add) Token: 0x06007366 RID: 29542 RVA: 0x002BB834 File Offset: 0x002B9A34
-	// (remove) Token: 0x06007367 RID: 29543 RVA: 0x002BB86C File Offset: 0x002B9A6C
+	// Token: 0x140000B4 RID: 180
+	// (add) Token: 0x06007406 RID: 29702 RVA: 0x002BED60 File Offset: 0x002BCF60
+	// (remove) Token: 0x06007407 RID: 29703 RVA: 0x002BED98 File Offset: 0x002BCF98
 	public event XUiEvent_PageChangedEventHandler OnPageChanged;
 
-	// Token: 0x06007368 RID: 29544 RVA: 0x002BB8A4 File Offset: 0x002B9AA4
+	// Token: 0x06007408 RID: 29704 RVA: 0x002BEDD0 File Offset: 0x002BCFD0
 	public override void Init()
 	{
 		base.Init();
@@ -175,7 +175,7 @@ public class XUiC_Paging : XUiController
 		this.CurrentPageNumber = 0;
 	}
 
-	// Token: 0x06007369 RID: 29545 RVA: 0x002BB98C File Offset: 0x002B9B8C
+	// Token: 0x06007409 RID: 29705 RVA: 0x002BEEB8 File Offset: 0x002BD0B8
 	public bool PageUp()
 	{
 		if (this.CurrentPageNumber >= this.LastPageNumber)
@@ -192,7 +192,7 @@ public class XUiC_Paging : XUiController
 		return true;
 	}
 
-	// Token: 0x0600736A RID: 29546 RVA: 0x002BB9CC File Offset: 0x002B9BCC
+	// Token: 0x0600740A RID: 29706 RVA: 0x002BEEF8 File Offset: 0x002BD0F8
 	public bool PageDown()
 	{
 		if (this.CurrentPageNumber <= 0)
@@ -209,37 +209,37 @@ public class XUiC_Paging : XUiController
 		return true;
 	}
 
-	// Token: 0x0600736B RID: 29547 RVA: 0x002BBA06 File Offset: 0x002B9C06
+	// Token: 0x0600740B RID: 29707 RVA: 0x002BEF32 File Offset: 0x002BD132
 	public int GetPage()
 	{
 		return this.CurrentPageNumber;
 	}
 
-	// Token: 0x0600736C RID: 29548 RVA: 0x002BBA0E File Offset: 0x002B9C0E
+	// Token: 0x0600740C RID: 29708 RVA: 0x002BEF3A File Offset: 0x002BD13A
 	public void SetPage(int _page)
 	{
 		this.CurrentPageNumber = _page;
 	}
 
-	// Token: 0x0600736D RID: 29549 RVA: 0x002BBA17 File Offset: 0x002B9C17
+	// Token: 0x0600740D RID: 29709 RVA: 0x002BEF43 File Offset: 0x002BD143
 	public int GetLastPage()
 	{
 		return this.LastPageNumber;
 	}
 
-	// Token: 0x0600736E RID: 29550 RVA: 0x002BBA1F File Offset: 0x002B9C1F
+	// Token: 0x0600740E RID: 29710 RVA: 0x002BEF4B File Offset: 0x002BD14B
 	public void SetLastPageByElementsAndPageLength(int _elementCount, int _pageLength)
 	{
 		this.LastPageNumber = Math.Max(0, Mathf.CeilToInt((float)_elementCount / (float)_pageLength) - 1);
 	}
 
-	// Token: 0x0600736F RID: 29551 RVA: 0x002BBA39 File Offset: 0x002B9C39
+	// Token: 0x0600740F RID: 29711 RVA: 0x002BEF65 File Offset: 0x002BD165
 	public void Reset()
 	{
 		this.CurrentPageNumber = 0;
 	}
 
-	// Token: 0x06007370 RID: 29552 RVA: 0x002BBA42 File Offset: 0x002B9C42
+	// Token: 0x06007410 RID: 29712 RVA: 0x002BEF6E File Offset: 0x002BD16E
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -251,7 +251,7 @@ public class XUiC_Paging : XUiController
 		base.handleDirtyUpdateDefault();
 	}
 
-	// Token: 0x06007371 RID: 29553 RVA: 0x002BBA80 File Offset: 0x002B9C80
+	// Token: 0x06007411 RID: 29713 RVA: 0x002BEFAC File Offset: 0x002BD1AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool updateControllerState()
 	{
@@ -271,39 +271,39 @@ public class XUiC_Paging : XUiController
 		return !flag && this.contentsParent != null && this.HotkeysEnabled && !XUiC_Paging.IsOverPagingOverrideElement && this.xui.playerUI.CursorController.CurrentTarget != null && this.xui.playerUI.CursorController.CurrentTarget.Controller.IsSelfOrChildOf(this.contentsParent);
 	}
 
-	// Token: 0x040055C1 RID: 21953
+	// Token: 0x04005665 RID: 22117
 	public static bool IsOverPagingOverrideElement;
 
-	// Token: 0x040055C2 RID: 21954
+	// Token: 0x04005666 RID: 22118
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int currentPageNumber;
 
-	// Token: 0x040055C3 RID: 21955
+	// Token: 0x04005667 RID: 22119
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool controllerOverContentArea;
 
-	// Token: 0x040055C9 RID: 21961
+	// Token: 0x0400566D RID: 22125
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Func<bool> handlePageDownAction;
 
-	// Token: 0x040055CA RID: 21962
+	// Token: 0x0400566E RID: 22126
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Func<bool> handlePageUpAction;
 
-	// Token: 0x040055CB RID: 21963
+	// Token: 0x0400566F RID: 22127
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lastPageNumber;
 
-	// Token: 0x040055CC RID: 21964
+	// Token: 0x04005670 RID: 22128
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController contentsParent;
 
-	// Token: 0x040055CD RID: 21965
+	// Token: 0x04005671 RID: 22129
 	[XuiBindComponent("pageUp", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiController btnPageUp;
 
-	// Token: 0x040055CE RID: 21966
+	// Token: 0x04005672 RID: 22130
 	[XuiBindComponent("pageDown", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiController btnPageDown;

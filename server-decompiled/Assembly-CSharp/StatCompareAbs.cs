@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Xml.Linq;
 
-// Token: 0x02000664 RID: 1636
+// Token: 0x0200066D RID: 1645
 public abstract class StatCompareAbs : TargetedCompareRequirementBase
 {
-	// Token: 0x17000552 RID: 1362
-	// (get) Token: 0x0600348D RID: 13453 RVA: 0x0015CF94 File Offset: 0x0015B194
+	// Token: 0x1700055B RID: 1371
+	// (get) Token: 0x060034E0 RID: 13536 RVA: 0x0015F104 File Offset: 0x0015D304
 	public EntityStats Stats
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -25,16 +25,16 @@ public abstract class StatCompareAbs : TargetedCompareRequirementBase
 		}
 	}
 
-	// Token: 0x0600348E RID: 13454 RVA: 0x0015CFD4 File Offset: 0x0015B1D4
+	// Token: 0x060034E1 RID: 13537 RVA: 0x0015F144 File Offset: 0x0015D344
 	public override bool IsValid(MinEventParams _params)
 	{
 		return base.IsValid(_params) && this.Compare(_params);
 	}
 
-	// Token: 0x0600348F RID: 13455
+	// Token: 0x060034E2 RID: 13538
 	public abstract bool Compare(MinEventParams _params);
 
-	// Token: 0x06003490 RID: 13456 RVA: 0x0015CFE8 File Offset: 0x0015B1E8
+	// Token: 0x060034E3 RID: 13539 RVA: 0x0015F158 File Offset: 0x0015D358
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("stat '{1}' {0} {2} {3}", new object[]
@@ -46,7 +46,7 @@ public abstract class StatCompareAbs : TargetedCompareRequirementBase
 		}));
 	}
 
-	// Token: 0x06003491 RID: 13457 RVA: 0x0015D050 File Offset: 0x0015B250
+	// Token: 0x060034E4 RID: 13540 RVA: 0x0015F1C0 File Offset: 0x0015D3C0
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -67,45 +67,45 @@ public abstract class StatCompareAbs : TargetedCompareRequirementBase
 		return flag;
 	}
 
-	// Token: 0x06003492 RID: 13458 RVA: 0x0015CC6F File Offset: 0x0015AE6F
+	// Token: 0x060034E5 RID: 13541 RVA: 0x0015EDDF File Offset: 0x0015CFDF
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public StatCompareAbs()
 	{
 	}
 
-	// Token: 0x04002AB7 RID: 10935
+	// Token: 0x04002B2B RID: 11051
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public StatCompareAbs.StatTypes stat;
 
-	// Token: 0x04002AB8 RID: 10936
+	// Token: 0x04002B2C RID: 11052
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public StatCompareAbs.StatSample sample;
 
-	// Token: 0x02000665 RID: 1637
+	// Token: 0x0200066E RID: 1646
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public enum StatTypes
 	{
-		// Token: 0x04002ABA RID: 10938
+		// Token: 0x04002B2E RID: 11054
 		None,
-		// Token: 0x04002ABB RID: 10939
+		// Token: 0x04002B2F RID: 11055
 		Health,
-		// Token: 0x04002ABC RID: 10940
+		// Token: 0x04002B30 RID: 11056
 		Stamina,
-		// Token: 0x04002ABD RID: 10941
+		// Token: 0x04002B31 RID: 11057
 		Food,
-		// Token: 0x04002ABE RID: 10942
+		// Token: 0x04002B32 RID: 11058
 		Water,
-		// Token: 0x04002ABF RID: 10943
+		// Token: 0x04002B33 RID: 11059
 		Armor
 	}
 
-	// Token: 0x02000666 RID: 1638
+	// Token: 0x0200066F RID: 1647
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public enum StatSample
 	{
-		// Token: 0x04002AC1 RID: 10945
+		// Token: 0x04002B35 RID: 11061
 		Current,
-		// Token: 0x04002AC2 RID: 10946
+		// Token: 0x04002B36 RID: 11062
 		StartOfFrame
 	}
 }

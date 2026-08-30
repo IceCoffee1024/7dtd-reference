@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F17 RID: 3863
+// Token: 0x02000F2E RID: 3886
 [Preserve]
 public class XUiC_EditorStat : XUiController
 {
-	// Token: 0x17000E25 RID: 3621
-	// (get) Token: 0x0600793A RID: 31034 RVA: 0x002DAA39 File Offset: 0x002D8C39
+	// Token: 0x17000E40 RID: 3648
+	// (get) Token: 0x060079F3 RID: 31219 RVA: 0x002DE9ED File Offset: 0x002DCBED
 	public bool hasPrefabLoaded
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -17,8 +17,8 @@ public class XUiC_EditorStat : XUiController
 		}
 	}
 
-	// Token: 0x17000E26 RID: 3622
-	// (get) Token: 0x0600793B RID: 31035 RVA: 0x002DAA6F File Offset: 0x002D8C6F
+	// Token: 0x17000E41 RID: 3649
+	// (get) Token: 0x060079F4 RID: 31220 RVA: 0x002DEA23 File Offset: 0x002DCC23
 	public Prefab selectedPrefab
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -38,8 +38,8 @@ public class XUiC_EditorStat : XUiController
 		}
 	}
 
-	// Token: 0x17000E27 RID: 3623
-	// (get) Token: 0x0600793C RID: 31036 RVA: 0x002DAA91 File Offset: 0x002D8C91
+	// Token: 0x17000E42 RID: 3650
+	// (get) Token: 0x060079F5 RID: 31221 RVA: 0x002DEA45 File Offset: 0x002DCC45
 	public bool hasPrefabSelected
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -49,9 +49,9 @@ public class XUiC_EditorStat : XUiController
 		}
 	}
 
-	// Token: 0x17000E28 RID: 3624
-	// (get) Token: 0x0600793D RID: 31037 RVA: 0x002DAA9C File Offset: 0x002D8C9C
-	// (set) Token: 0x0600793E RID: 31038 RVA: 0x002DAAA3 File Offset: 0x002D8CA3
+	// Token: 0x17000E43 RID: 3651
+	// (get) Token: 0x060079F6 RID: 31222 RVA: 0x002DEA50 File Offset: 0x002DCC50
+	// (set) Token: 0x060079F7 RID: 31223 RVA: 0x002DEA57 File Offset: 0x002DCC57
 	public static WorldStats ManualStats
 	{
 		get
@@ -65,14 +65,14 @@ public class XUiC_EditorStat : XUiController
 		}
 	}
 
-	// Token: 0x0600793F RID: 31039 RVA: 0x00292E8D File Offset: 0x0029108D
+	// Token: 0x060079F8 RID: 31224 RVA: 0x00295FE1 File Offset: 0x002941E1
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007940 RID: 31040 RVA: 0x002DAAB8 File Offset: 0x002D8CB8
+	// Token: 0x060079F9 RID: 31225 RVA: 0x002DEA6C File Offset: 0x002DCC6C
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -110,7 +110,7 @@ public class XUiC_EditorStat : XUiController
 		}
 	}
 
-	// Token: 0x06007941 RID: 31041 RVA: 0x002DABF8 File Offset: 0x002D8DF8
+	// Token: 0x060079FA RID: 31226 RVA: 0x002DEBAC File Offset: 0x002DCDAC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int countBlockEntities(Transform _t)
 	{
@@ -130,7 +130,7 @@ public class XUiC_EditorStat : XUiController
 		return num;
 	}
 
-	// Token: 0x06007942 RID: 31042 RVA: 0x002DAC48 File Offset: 0x002D8E48
+	// Token: 0x060079FB RID: 31227 RVA: 0x002DEBFC File Offset: 0x002DCDFC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -384,119 +384,119 @@ public class XUiC_EditorStat : XUiController
 		return base.GetBindingValueInternal(ref _value, _bindingName);
 	}
 
-	// Token: 0x04005961 RID: 22881
+	// Token: 0x04005A14 RID: 23060
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lastDirtyTime;
 
-	// Token: 0x04005962 RID: 22882
+	// Token: 0x04005A15 RID: 23061
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasLootStat;
 
-	// Token: 0x04005963 RID: 22883
+	// Token: 0x04005A16 RID: 23062
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lootContainers;
 
-	// Token: 0x04005964 RID: 22884
+	// Token: 0x04005A17 RID: 23063
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int fetchLootContainers;
 
-	// Token: 0x04005965 RID: 22885
+	// Token: 0x04005A18 RID: 23064
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int restorePowerNodes;
 
-	// Token: 0x04005966 RID: 22886
+	// Token: 0x04005A19 RID: 23065
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasBlockEntitiesStat;
 
-	// Token: 0x04005967 RID: 22887
+	// Token: 0x04005A1A RID: 23066
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int totalBlockEntities;
 
-	// Token: 0x04005968 RID: 22888
+	// Token: 0x04005A1B RID: 23067
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasSelection;
 
-	// Token: 0x04005969 RID: 22889
+	// Token: 0x04005A1C RID: 23068
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i selectionSize;
 
-	// Token: 0x0400596A RID: 22890
+	// Token: 0x04005A1D RID: 23069
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int DC_AVERAGE_FRAMES = 20;
 
-	// Token: 0x0400596B RID: 22891
+	// Token: 0x04005A1E RID: 23070
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int[] drawcallsBuf = new int[20];
 
-	// Token: 0x0400596C RID: 22892
+	// Token: 0x04005A1F RID: 23071
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int drawcallsBufIndex;
 
-	// Token: 0x0400596D RID: 22893
+	// Token: 0x04005A20 RID: 23072
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int drawcallsSum;
 
-	// Token: 0x0400596E RID: 22894
+	// Token: 0x04005A21 RID: 23073
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static WorldStats manualStats;
 
-	// Token: 0x0400596F RID: 22895
+	// Token: 0x04005A22 RID: 23074
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DateTime ManualStatsUpdateTime;
 
-	// Token: 0x04005970 RID: 22896
+	// Token: 0x04005A23 RID: 23075
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<Vector3i> prefabSizeFormatter = new CachedStringFormatter<Vector3i>((Vector3i _i) => _i.ToString());
 
-	// Token: 0x04005971 RID: 22897
+	// Token: 0x04005A24 RID: 23076
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<Vector3i> selectionSizeFormatter = new CachedStringFormatter<Vector3i>((Vector3i _i) => _i.ToString());
 
-	// Token: 0x04005972 RID: 22898
+	// Token: 0x04005A25 RID: 23077
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt lootFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x04005973 RID: 22899
+	// Token: 0x04005A26 RID: 23078
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt fetchlootFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x04005974 RID: 22900
+	// Token: 0x04005A27 RID: 23079
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt restorepowerFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x04005975 RID: 22901
+	// Token: 0x04005A28 RID: 23080
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt blockentitiesFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x04005976 RID: 22902
+	// Token: 0x04005A29 RID: 23081
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<int> vertsFormatter = new CachedStringFormatter<int>((int _i) => ((double)_i).FormatNumberWithMetricPrefix(true, 3));
 
-	// Token: 0x04005977 RID: 22903
+	// Token: 0x04005A2A RID: 23082
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<int> trisFormatter = new CachedStringFormatter<int>((int _i) => ((double)_i).FormatNumberWithMetricPrefix(true, 3));
 
-	// Token: 0x04005978 RID: 22904
+	// Token: 0x04005A2B RID: 23083
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt batchesFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x04005979 RID: 22905
+	// Token: 0x04005A2C RID: 23084
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt statsVertsFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x0400597A RID: 22906
+	// Token: 0x04005A2D RID: 23085
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt statsTrisFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x0400597B RID: 22907
+	// Token: 0x04005A2E RID: 23086
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<DateTime> statsManualUpdateTimeFormatter = new CachedStringFormatter<DateTime>((DateTime _dt) => _dt.ToString(Utils.StandardCulture));
 
-	// Token: 0x0400597C RID: 22908
+	// Token: 0x04005A2F RID: 23087
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt statsManualVertsFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x0400597D RID: 22909
+	// Token: 0x04005A30 RID: 23088
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt statsManualTrisFormatter = new CachedStringFormatterInt();
 }

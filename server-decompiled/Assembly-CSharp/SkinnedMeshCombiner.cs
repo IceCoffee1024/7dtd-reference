@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020012B1 RID: 4785
+// Token: 0x020012CB RID: 4811
 public class SkinnedMeshCombiner : MonoBehaviour
 {
-	// Token: 0x06009781 RID: 38785 RVA: 0x00399033 File Offset: 0x00397233
+	// Token: 0x0600987C RID: 39036 RVA: 0x0039E277 File Offset: 0x0039C477
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Start()
 	{
 		SkinnedMeshCombiner.CombineMeshes(base.transform);
 	}
 
-	// Token: 0x06009782 RID: 38786 RVA: 0x00399040 File Offset: 0x00397240
+	// Token: 0x0600987D RID: 39037 RVA: 0x0039E284 File Offset: 0x0039C484
 	public static void CombineMeshes(Transform _transform)
 	{
 		List<Vector3> list = new List<Vector3>();

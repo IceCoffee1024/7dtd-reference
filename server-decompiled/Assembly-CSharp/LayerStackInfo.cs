@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000A7F RID: 2687
+// Token: 0x02000A90 RID: 2704
 public struct LayerStackInfo
 {
-	// Token: 0x0600512C RID: 20780 RVA: 0x001EF916 File Offset: 0x001EDB16
+	// Token: 0x060051B2 RID: 20914 RVA: 0x001F23AE File Offset: 0x001F05AE
 	public LayerStackInfo(int startCompStackIndex, int startUVStackIndex)
 	{
 		this.GroupDepth = 0;
@@ -11,12 +11,12 @@ public struct LayerStackInfo
 		this.MaxUVStackIndex = startUVStackIndex;
 	}
 
-	// Token: 0x04003E54 RID: 15956
+	// Token: 0x04003EE5 RID: 16101
 	public int GroupDepth;
 
-	// Token: 0x04003E55 RID: 15957
+	// Token: 0x04003EE6 RID: 16102
 	public int MaxCompStackIndex;
 
-	// Token: 0x04003E56 RID: 15958
+	// Token: 0x04003EE7 RID: 16103
 	public int MaxUVStackIndex;
 }

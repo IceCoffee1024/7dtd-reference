@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace UniLinq
 {
-	// Token: 0x02001793 RID: 6035
+	// Token: 0x020017B9 RID: 6073
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public class QuickSort<TElement>
 	{
-		// Token: 0x0600BB5A RID: 47962 RVA: 0x00459914 File Offset: 0x00457B14
+		// Token: 0x0600BCDD RID: 48349 RVA: 0x0045F68C File Offset: 0x0045D88C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public QuickSort(IEnumerable<TElement> source, SortContext<TElement> context)
 		{
@@ -21,7 +21,7 @@ namespace UniLinq
 			this.context = context;
 		}
 
-		// Token: 0x0600BB5B RID: 47963 RVA: 0x00459990 File Offset: 0x00457B90
+		// Token: 0x0600BCDE RID: 48350 RVA: 0x0045F708 File Offset: 0x0045D908
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static int[] CreateIndexes(int length)
 		{
@@ -33,7 +33,7 @@ namespace UniLinq
 			return array;
 		}
 
-		// Token: 0x0600BB5C RID: 47964 RVA: 0x004599B5 File Offset: 0x00457BB5
+		// Token: 0x0600BCDF RID: 48351 RVA: 0x0045F72D File Offset: 0x0045D92D
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void PerformSort()
 		{
@@ -45,7 +45,7 @@ namespace UniLinq
 			Array.Sort<int>(this.indexes, this.context);
 		}
 
-		// Token: 0x0600BB5D RID: 47965 RVA: 0x004599E5 File Offset: 0x00457BE5
+		// Token: 0x0600BCE0 RID: 48352 RVA: 0x0045F75D File Offset: 0x0045D95D
 		public static IEnumerable<TElement> Sort(IEnumerable<TElement> source, SortContext<TElement> context)
 		{
 			QuickSort<TElement> sorter = new QuickSort<TElement>(source, context);
@@ -59,15 +59,15 @@ namespace UniLinq
 			yield break;
 		}
 
-		// Token: 0x04008C2A RID: 35882
+		// Token: 0x04008D46 RID: 36166
 		[PublicizedFrom(EAccessModifier.Private)]
 		public TElement[] elements;
 
-		// Token: 0x04008C2B RID: 35883
+		// Token: 0x04008D47 RID: 36167
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int[] indexes;
 
-		// Token: 0x04008C2C RID: 35884
+		// Token: 0x04008D48 RID: 36168
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SortContext<TElement> context;
 	}

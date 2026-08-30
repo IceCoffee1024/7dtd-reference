@@ -1,21 +1,21 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E63 RID: 3683
+// Token: 0x02000E78 RID: 3704
 [Preserve]
 public abstract class XUiC_ComboBox<TValue> : XUiC_ComboBoxBase
 {
-	// Token: 0x140000AA RID: 170
-	// (add) Token: 0x060071FB RID: 29179 RVA: 0x002B838C File Offset: 0x002B658C
-	// (remove) Token: 0x060071FC RID: 29180 RVA: 0x002B83C4 File Offset: 0x002B65C4
+	// Token: 0x140000AB RID: 171
+	// (add) Token: 0x0600729B RID: 29339 RVA: 0x002BB8B0 File Offset: 0x002B9AB0
+	// (remove) Token: 0x0600729C RID: 29340 RVA: 0x002BB8E8 File Offset: 0x002B9AE8
 	public event XUiC_ComboBox<TValue>.XUiEvent_ValueChanged OnValueChanged;
 
-	// Token: 0x17000D11 RID: 3345
-	// (get) Token: 0x060071FD RID: 29181
-	// (set) Token: 0x060071FE RID: 29182
+	// Token: 0x17000D2A RID: 3370
+	// (get) Token: 0x0600729D RID: 29341
+	// (set) Token: 0x0600729E RID: 29342
 	public abstract TValue Value { get; set; }
 
-	// Token: 0x060071FF RID: 29183 RVA: 0x002B83F9 File Offset: 0x002B65F9
+	// Token: 0x0600729F RID: 29343 RVA: 0x002BB91D File Offset: 0x002B9B1D
 	public void TriggerValueChangedEvent(TValue _oldVal)
 	{
 		base.UpdateIndexMarkerStates();
@@ -28,7 +28,7 @@ public abstract class XUiC_ComboBox<TValue> : XUiC_ComboBoxBase
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007200 RID: 29184 RVA: 0x002B8428 File Offset: 0x002B6628
+	// Token: 0x060072A0 RID: 29344 RVA: 0x002BB94C File Offset: 0x002B9B4C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool TryPageUp()
 	{
@@ -48,7 +48,7 @@ public abstract class XUiC_ComboBox<TValue> : XUiC_ComboBoxBase
 		return flag;
 	}
 
-	// Token: 0x06007201 RID: 29185 RVA: 0x002B8474 File Offset: 0x002B6674
+	// Token: 0x060072A1 RID: 29345 RVA: 0x002BB998 File Offset: 0x002B9B98
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool TryPageDown()
 	{
@@ -68,7 +68,7 @@ public abstract class XUiC_ComboBox<TValue> : XUiC_ComboBoxBase
 		return flag;
 	}
 
-	// Token: 0x06007202 RID: 29186 RVA: 0x002B84C0 File Offset: 0x002B66C0
+	// Token: 0x060072A2 RID: 29346 RVA: 0x002BB9E4 File Offset: 0x002B9BE4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void setRelativeValue(float _value)
 	{
@@ -86,28 +86,28 @@ public abstract class XUiC_ComboBox<TValue> : XUiC_ComboBoxBase
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007203 RID: 29187
+	// Token: 0x060072A3 RID: 29347
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract bool isDifferentValue(TValue _oldVal, TValue _currentValue);
 
-	// Token: 0x06007204 RID: 29188 RVA: 0x002B8508 File Offset: 0x002B6708
+	// Token: 0x060072A4 RID: 29348 RVA: 0x002BBA2C File Offset: 0x002B9C2C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_ComboBox()
 	{
 	}
 
-	// Token: 0x0400556C RID: 21868
+	// Token: 0x04005610 RID: 22032
 	public XUiC_ComboBox<TValue>.CustomValueFormatterDelegate CustomValueFormatter;
 
-	// Token: 0x0400556D RID: 21869
+	// Token: 0x04005611 RID: 22033
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public TValue currentValue;
 
-	// Token: 0x02000E64 RID: 3684
-	// (Invoke) Token: 0x06007206 RID: 29190
+	// Token: 0x02000E79 RID: 3705
+	// (Invoke) Token: 0x060072A6 RID: 29350
 	public delegate void XUiEvent_ValueChanged(XUiController _sender, TValue _oldValue, TValue _newValue);
 
-	// Token: 0x02000E65 RID: 3685
-	// (Invoke) Token: 0x0600720A RID: 29194
+	// Token: 0x02000E7A RID: 3706
+	// (Invoke) Token: 0x060072AA RID: 29354
 	public delegate string CustomValueFormatterDelegate(TValue _value);
 }

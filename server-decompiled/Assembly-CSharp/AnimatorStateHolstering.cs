@@ -4,7 +4,7 @@ using UnityEngine;
 // Token: 0x020000A5 RID: 165
 public class AnimatorStateHolstering : StateMachineBehaviour
 {
-	// Token: 0x06000335 RID: 821 RVA: 0x000183E0 File Offset: 0x000165E0
+	// Token: 0x06000335 RID: 821 RVA: 0x00018464 File Offset: 0x00016664
 	public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 		EntityAlive componentInParent = animator.GetComponentInParent<EntityAlive>();

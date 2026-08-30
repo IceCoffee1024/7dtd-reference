@@ -2,23 +2,23 @@
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x02001714 RID: 5908
+	// Token: 0x0200173A RID: 5946
 	public class TownshipShared
 	{
-		// Token: 0x0600B779 RID: 46969 RVA: 0x00446D18 File Offset: 0x00444F18
+		// Token: 0x0600B8FC RID: 47356 RVA: 0x0044CA90 File Offset: 0x0044AC90
 		public TownshipShared(WorldBuilder _worldBuilder)
 		{
 			this.worldBuilder = _worldBuilder;
 		}
 
-		// Token: 0x0400891F RID: 35103
+		// Token: 0x04008A3B RID: 35387
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly WorldBuilder worldBuilder;
 
-		// Token: 0x04008920 RID: 35104
+		// Token: 0x04008A3C RID: 35388
 		public int NextId;
 
-		// Token: 0x04008921 RID: 35105
+		// Token: 0x04008A3D RID: 35389
 		public readonly Vector2i[] dir4way = new Vector2i[]
 		{
 			new Vector2i(0, 1),

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020001F0 RID: 496
+// Token: 0x020001F2 RID: 498
 [Preserve]
 public class ConsoleCmdCensor : ConsoleCmdAbstract
 {
 	// Token: 0x1700014C RID: 332
-	// (get) Token: 0x06000F54 RID: 3924 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// (get) Token: 0x06000F5F RID: 3935 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -16,14 +16,14 @@ public class ConsoleCmdCensor : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F55 RID: 3925 RVA: 0x0006365B File Offset: 0x0006185B
+	// Token: 0x06000F60 RID: 3936 RVA: 0x00063BA3 File Offset: 0x00061DA3
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "testCensor", "tcc" };
 	}
 
-	// Token: 0x06000F56 RID: 3926 RVA: 0x00063673 File Offset: 0x00061873
+	// Token: 0x06000F61 RID: 3937 RVA: 0x00063BBB File Offset: 0x00061DBB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
@@ -31,7 +31,7 @@ public class ConsoleCmdCensor : ConsoleCmdAbstract
 	}
 
 	// Token: 0x1700014D RID: 333
-	// (get) Token: 0x06000F57 RID: 3927 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// (get) Token: 0x06000F62 RID: 3938 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -40,7 +40,7 @@ public class ConsoleCmdCensor : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F58 RID: 3928 RVA: 0x0006367A File Offset: 0x0006187A
+	// Token: 0x06000F63 RID: 3939 RVA: 0x00063BC2 File Offset: 0x00061DC2
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (!GamePrefs.GetBool(EnumGamePrefs.DebugMenuEnabled))

@@ -5,14 +5,14 @@ using UnityEngine;
 // Token: 0x020000E2 RID: 226
 public class DismemberedPart
 {
-	// Token: 0x060005BB RID: 1467 RVA: 0x000294A7 File Offset: 0x000276A7
+	// Token: 0x060005BC RID: 1468 RVA: 0x0002956B File Offset: 0x0002776B
 	public void SetDetachedTransform(Transform _detach, Transform _group)
 	{
 		this.detachT = _detach;
 		this.detachRenderer = _group.GetComponentInChildren<MeshRenderer>();
 	}
 
-	// Token: 0x060005BC RID: 1468 RVA: 0x000294BC File Offset: 0x000276BC
+	// Token: 0x060005BD RID: 1469 RVA: 0x00029580 File Offset: 0x00027780
 	public void FadeDetached(float value)
 	{
 		if (this.detachRenderer)
@@ -35,7 +35,7 @@ public class DismemberedPart
 		}
 	}
 
-	// Token: 0x060005BD RID: 1469 RVA: 0x00029554 File Offset: 0x00027754
+	// Token: 0x060005BE RID: 1470 RVA: 0x00029618 File Offset: 0x00027818
 	public DismemberedPart(DismemberedPartData _data, uint _bodyDamageFlag, EnumDamageTypes _damageType)
 	{
 		this.Data = _data;
@@ -44,7 +44,7 @@ public class DismemberedPart
 	}
 
 	// Token: 0x17000061 RID: 97
-	// (get) Token: 0x060005BE RID: 1470 RVA: 0x000295A8 File Offset: 0x000277A8
+	// (get) Token: 0x060005BF RID: 1471 RVA: 0x0002966C File Offset: 0x0002786C
 	public string prefabPath
 	{
 		get
@@ -53,7 +53,7 @@ public class DismemberedPart
 		}
 	}
 
-	// Token: 0x060005BF RID: 1471 RVA: 0x000295B8 File Offset: 0x000277B8
+	// Token: 0x060005C0 RID: 1472 RVA: 0x0002967C File Offset: 0x0002787C
 	public void Update()
 	{
 		this.elapsedTime += Time.deltaTime;
@@ -83,7 +83,7 @@ public class DismemberedPart
 		}
 	}
 
-	// Token: 0x060005C0 RID: 1472 RVA: 0x000296C2 File Offset: 0x000278C2
+	// Token: 0x060005C1 RID: 1473 RVA: 0x00029786 File Offset: 0x00027986
 	public void Hide()
 	{
 		if (this.prefabT)
@@ -92,7 +92,7 @@ public class DismemberedPart
 		}
 	}
 
-	// Token: 0x060005C1 RID: 1473 RVA: 0x000296E2 File Offset: 0x000278E2
+	// Token: 0x060005C2 RID: 1474 RVA: 0x000297A6 File Offset: 0x000279A6
 	public void CleanupDetached()
 	{
 		if (this.detachT)

@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x02000AA7 RID: 2727
+// Token: 0x02000AB8 RID: 2744
 public class SignRenderer : MonoBehaviour
 {
-	// Token: 0x170008D9 RID: 2265
-	// (get) Token: 0x060051C8 RID: 20936 RVA: 0x001F355F File Offset: 0x001F175F
+	// Token: 0x170008EB RID: 2283
+	// (get) Token: 0x0600524E RID: 21070 RVA: 0x001F5FF7 File Offset: 0x001F41F7
 	public Renderer Renderer
 	{
 		get
@@ -15,8 +15,8 @@ public class SignRenderer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170008DA RID: 2266
-	// (get) Token: 0x060051C9 RID: 20937 RVA: 0x001F3567 File Offset: 0x001F1767
+	// Token: 0x170008EC RID: 2284
+	// (get) Token: 0x0600524F RID: 21071 RVA: 0x001F5FFF File Offset: 0x001F41FF
 	public bool IsDecal
 	{
 		get
@@ -25,7 +25,7 @@ public class SignRenderer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060051CA RID: 20938 RVA: 0x001F356F File Offset: 0x001F176F
+	// Token: 0x06005250 RID: 21072 RVA: 0x001F6007 File Offset: 0x001F4207
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
@@ -35,7 +35,7 @@ public class SignRenderer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060051CB RID: 20939 RVA: 0x001F3590 File Offset: 0x001F1790
+	// Token: 0x06005251 RID: 21073 RVA: 0x001F6028 File Offset: 0x001F4228
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDisable()
 	{
@@ -45,7 +45,7 @@ public class SignRenderer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060051CC RID: 20940 RVA: 0x001F35AC File Offset: 0x001F17AC
+	// Token: 0x06005252 RID: 21074 RVA: 0x001F6044 File Offset: 0x001F4244
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool InitializeAlphaBlendDecal()
 	{
@@ -73,7 +73,7 @@ public class SignRenderer : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x060051CD RID: 20941 RVA: 0x001F3653 File Offset: 0x001F1853
+	// Token: 0x06005253 RID: 21075 RVA: 0x001F60EB File Offset: 0x001F42EB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TeardownDecalIfNeeded()
 	{
@@ -81,7 +81,7 @@ public class SignRenderer : MonoBehaviour
 		this.RemoveDecalCommandBuffer();
 	}
 
-	// Token: 0x060051CE RID: 20942 RVA: 0x001F3668 File Offset: 0x001F1868
+	// Token: 0x06005254 RID: 21076 RVA: 0x001F6100 File Offset: 0x001F4300
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BuildDecalCommandBuffer()
 	{
@@ -101,7 +101,7 @@ public class SignRenderer : MonoBehaviour
 		this.targetCamera.AddCommandBuffer(CameraEvent.BeforeLighting, this.decalCommandBuffer);
 	}
 
-	// Token: 0x060051CF RID: 20943 RVA: 0x001F3720 File Offset: 0x001F1920
+	// Token: 0x06005255 RID: 21077 RVA: 0x001F61B8 File Offset: 0x001F43B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RemoveDecalCommandBuffer()
 	{
@@ -117,7 +117,7 @@ public class SignRenderer : MonoBehaviour
 		this.decalCommandBuffer = null;
 	}
 
-	// Token: 0x060051D0 RID: 20944 RVA: 0x001F376D File Offset: 0x001F196D
+	// Token: 0x06005256 RID: 21078 RVA: 0x001F6205 File Offset: 0x001F4405
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetRenderingOn()
 	{
@@ -127,7 +127,7 @@ public class SignRenderer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060051D1 RID: 20945 RVA: 0x001F378C File Offset: 0x001F198C
+	// Token: 0x06005257 RID: 21079 RVA: 0x001F6224 File Offset: 0x001F4424
 	public void SetRenderParameters(MaterialPropertyBlock mpb, SignCanvas.SignBlendMode blendMode = SignCanvas.SignBlendMode.Cutout, Camera alphaBlendCamera = null)
 	{
 		this.renderer.SetPropertyBlock(mpb);
@@ -152,47 +152,47 @@ public class SignRenderer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04003F3E RID: 16190
+	// Token: 0x04003FCF RID: 16335
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MeshRenderer renderer;
 
-	// Token: 0x04003F3F RID: 16191
+	// Token: 0x04003FD0 RID: 16336
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Camera targetCamera;
 
-	// Token: 0x04003F40 RID: 16192
+	// Token: 0x04003FD1 RID: 16337
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public SignCanvas.SignBlendMode signBlendMode;
 
-	// Token: 0x04003F41 RID: 16193
+	// Token: 0x04003FD2 RID: 16338
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public CommandBuffer decalCommandBuffer;
 
-	// Token: 0x04003F42 RID: 16194
+	// Token: 0x04003FD3 RID: 16339
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Material signMaterial;
 
-	// Token: 0x04003F43 RID: 16195
+	// Token: 0x04003FD4 RID: 16340
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isDecal;
 
-	// Token: 0x04003F44 RID: 16196
+	// Token: 0x04003FD5 RID: 16341
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const string cAlphaBlendedSignMaterialPath = "@:Entities/Crafting/Materials/sign_decal.mat";
 
-	// Token: 0x04003F45 RID: 16197
+	// Token: 0x04003FD6 RID: 16342
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const CameraEvent cTargetEvent = CameraEvent.BeforeLighting;
 
-	// Token: 0x04003F46 RID: 16198
+	// Token: 0x04003FD7 RID: 16343
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Camera alphaBlendCamera;

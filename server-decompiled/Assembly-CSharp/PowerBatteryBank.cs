@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020008FC RID: 2300
+// Token: 0x02000908 RID: 2312
 public class PowerBatteryBank : PowerSource
 {
-	// Token: 0x17000701 RID: 1793
-	// (get) Token: 0x06004283 RID: 17027 RVA: 0x0005FC95 File Offset: 0x0005DE95
+	// Token: 0x1700070D RID: 1805
+	// (get) Token: 0x060042E8 RID: 17128 RVA: 0x000601DD File Offset: 0x0005E3DD
 	public override PowerItem.PowerItemTypes PowerItemType
 	{
 		get
@@ -14,8 +14,8 @@ public class PowerBatteryBank : PowerSource
 		}
 	}
 
-	// Token: 0x17000702 RID: 1794
-	// (get) Token: 0x06004284 RID: 17028 RVA: 0x0019FCBB File Offset: 0x0019DEBB
+	// Token: 0x1700070E RID: 1806
+	// (get) Token: 0x060042E9 RID: 17129 RVA: 0x001A1D93 File Offset: 0x0019FF93
 	public override string OnSound
 	{
 		get
@@ -24,8 +24,8 @@ public class PowerBatteryBank : PowerSource
 		}
 	}
 
-	// Token: 0x17000703 RID: 1795
-	// (get) Token: 0x06004285 RID: 17029 RVA: 0x0019FCC2 File Offset: 0x0019DEC2
+	// Token: 0x1700070F RID: 1807
+	// (get) Token: 0x060042EA RID: 17130 RVA: 0x001A1D9A File Offset: 0x0019FF9A
 	public override string OffSound
 	{
 		get
@@ -34,14 +34,14 @@ public class PowerBatteryBank : PowerSource
 		}
 	}
 
-	// Token: 0x06004287 RID: 17031 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x060042EC RID: 17132 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool CanParent(PowerItem parent)
 	{
 		return true;
 	}
 
-	// Token: 0x17000704 RID: 1796
-	// (get) Token: 0x06004288 RID: 17032 RVA: 0x0019FCD1 File Offset: 0x0019DED1
+	// Token: 0x17000710 RID: 1808
+	// (get) Token: 0x060042ED RID: 17133 RVA: 0x001A1DA9 File Offset: 0x0019FFA9
 	public override bool IsPowered
 	{
 		get
@@ -50,8 +50,8 @@ public class PowerBatteryBank : PowerSource
 		}
 	}
 
-	// Token: 0x17000705 RID: 1797
-	// (get) Token: 0x06004289 RID: 17033 RVA: 0x0019FCE4 File Offset: 0x0019DEE4
+	// Token: 0x17000711 RID: 1809
+	// (get) Token: 0x060042EE RID: 17134 RVA: 0x001A1DBC File Offset: 0x0019FFBC
 	public bool ParentPowering
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -78,7 +78,7 @@ public class PowerBatteryBank : PowerSource
 		}
 	}
 
-	// Token: 0x0600428A RID: 17034 RVA: 0x0019FD7B File Offset: 0x0019DF7B
+	// Token: 0x060042EF RID: 17135 RVA: 0x001A1E53 File Offset: 0x001A0053
 	public override void Update()
 	{
 		if (this.Parent != null && this.LastPowerReceived > 0)
@@ -92,7 +92,7 @@ public class PowerBatteryBank : PowerSource
 		base.Update();
 	}
 
-	// Token: 0x0600428B RID: 17035 RVA: 0x0019FDB4 File Offset: 0x0019DFB4
+	// Token: 0x060042F0 RID: 17136 RVA: 0x001A1E8C File Offset: 0x001A008C
 	public override void HandleSendPower()
 	{
 		if (base.IsOn && !this.ParentPowering)
@@ -135,7 +135,7 @@ public class PowerBatteryBank : PowerSource
 		}
 	}
 
-	// Token: 0x0600428C RID: 17036 RVA: 0x0019FEC4 File Offset: 0x0019E0C4
+	// Token: 0x060042F1 RID: 17137 RVA: 0x001A1F9C File Offset: 0x001A019C
 	public override void HandlePowerReceived(ref ushort power)
 	{
 		this.LastPowerUsed = 0;
@@ -171,7 +171,7 @@ public class PowerBatteryBank : PowerSource
 		}
 	}
 
-	// Token: 0x0600428D RID: 17037 RVA: 0x0019FF84 File Offset: 0x0019E184
+	// Token: 0x060042F2 RID: 17138 RVA: 0x001A205C File Offset: 0x001A025C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void AddPowerToBatteries(int power)
 	{
@@ -202,7 +202,7 @@ public class PowerBatteryBank : PowerSource
 		}
 	}
 
-	// Token: 0x0600428E RID: 17038 RVA: 0x001A0034 File Offset: 0x0019E234
+	// Token: 0x060042F3 RID: 17139 RVA: 0x001A210C File Offset: 0x001A030C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void TickPowerGeneration()
 	{
@@ -224,13 +224,13 @@ public class PowerBatteryBank : PowerSource
 		}
 	}
 
-	// Token: 0x0600428F RID: 17039 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x060042F4 RID: 17140 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool PowerChildren()
 	{
 		return true;
 	}
 
-	// Token: 0x06004290 RID: 17040 RVA: 0x001A00E0 File Offset: 0x0019E2E0
+	// Token: 0x060042F5 RID: 17141 RVA: 0x001A21B8 File Offset: 0x001A03B8
 	public override void HandlePowerUpdate(bool isOn)
 	{
 		if (this.Parent != null && this.LastPowerReceived > 0 && this.PowerChildren())
@@ -242,7 +242,7 @@ public class PowerBatteryBank : PowerSource
 		}
 	}
 
-	// Token: 0x06004291 RID: 17041 RVA: 0x001A0130 File Offset: 0x0019E330
+	// Token: 0x060042F6 RID: 17142 RVA: 0x001A2208 File Offset: 0x001A0408
 	public override void HandleDisconnect()
 	{
 		if (this.isPowered)
@@ -263,7 +263,7 @@ public class PowerBatteryBank : PowerSource
 		}
 	}
 
-	// Token: 0x06004292 RID: 17042 RVA: 0x001A01A4 File Offset: 0x0019E3A4
+	// Token: 0x060042F7 RID: 17143 RVA: 0x001A227C File Offset: 0x001A047C
 	public override void SetValuesFromBlock()
 	{
 		base.SetValuesFromBlock();
@@ -286,18 +286,18 @@ public class PowerBatteryBank : PowerSource
 		}
 	}
 
-	// Token: 0x0400359D RID: 13725
+	// Token: 0x0400361E RID: 13854
 	public ushort LastInputAmount;
 
-	// Token: 0x0400359E RID: 13726
+	// Token: 0x0400361F RID: 13855
 	public ushort LastPowerReceived;
 
-	// Token: 0x0400359F RID: 13727
+	// Token: 0x04003620 RID: 13856
 	public ushort InputPerTick;
 
-	// Token: 0x040035A0 RID: 13728
+	// Token: 0x04003621 RID: 13857
 	public ushort ChargePerInput;
 
-	// Token: 0x040035A1 RID: 13729
+	// Token: 0x04003622 RID: 13858
 	public ushort OutputPerCharge;
 }

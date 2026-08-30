@@ -5,11 +5,11 @@ using Unity.Collections.LowLevel.Unsafe;
 using Unity.Jobs;
 using Unity.Mathematics;
 
-// Token: 0x02000CBD RID: 3261
+// Token: 0x02000CCF RID: 3279
 [BurstCompile(CompileSynchronously = true)]
 public struct WaterSimulationCalcFlows : IJobParallelFor
 {
-	// Token: 0x06006423 RID: 25635 RVA: 0x00272C80 File Offset: 0x00270E80
+	// Token: 0x060064AF RID: 25775 RVA: 0x00275B7C File Offset: 0x00273D7C
 	public void Execute(int chunkIndex)
 	{
 		ChunkKey chunkKey = this.processingChunks[chunkIndex];
@@ -19,7 +19,7 @@ public struct WaterSimulationCalcFlows : IJobParallelFor
 		this.waterStats[chunkIndex] = this.stats;
 	}
 
-	// Token: 0x06006424 RID: 25636 RVA: 0x00272CD8 File Offset: 0x00270ED8
+	// Token: 0x060064B0 RID: 25776 RVA: 0x00275BD4 File Offset: 0x00273DD4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ProcessFlows(ChunkKey chunkKey)
 	{
@@ -92,7 +92,7 @@ public struct WaterSimulationCalcFlows : IJobParallelFor
 		}
 	}
 
-	// Token: 0x06006425 RID: 25637 RVA: 0x00272F88 File Offset: 0x00271188
+	// Token: 0x060064B1 RID: 25777 RVA: 0x00275E84 File Offset: 0x00274084
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int ProcessFlowBelow(WaterDataHandle _chunkData, int _voxelIndex, int _x, int _y, int _z, int _mass)
 	{
@@ -129,7 +129,7 @@ public struct WaterSimulationCalcFlows : IJobParallelFor
 		return 0;
 	}
 
-	// Token: 0x06006426 RID: 25638 RVA: 0x00273060 File Offset: 0x00271260
+	// Token: 0x060064B2 RID: 25778 RVA: 0x00275F5C File Offset: 0x0027415C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int ProcessOverfull(WaterDataHandle _chunkData, int _voxelIndex, int _x, int _y, int _z, int _mass)
 	{
@@ -163,7 +163,7 @@ public struct WaterSimulationCalcFlows : IJobParallelFor
 		return 0;
 	}
 
-	// Token: 0x06006427 RID: 25639 RVA: 0x00273120 File Offset: 0x00271320
+	// Token: 0x060064B3 RID: 25779 RVA: 0x0027601C File Offset: 0x0027421C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int ProcessFlowSide(ChunkKey _chunkKey, WaterDataHandle _chunkData, int _voxelIndex, int _mass, int2 _xzOffset)
 	{
@@ -231,7 +231,7 @@ public struct WaterSimulationCalcFlows : IJobParallelFor
 		return 0;
 	}
 
-	// Token: 0x06006428 RID: 25640 RVA: 0x002732B8 File Offset: 0x002714B8
+	// Token: 0x060064B4 RID: 25780 RVA: 0x002761B4 File Offset: 0x002743B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int ProcessGroundWaterFlowSide(ChunkKey _chunkKey, WaterVoxelState _fromVoxelState, int _mass, int2 _xzOffset)
 	{
@@ -276,7 +276,7 @@ public struct WaterSimulationCalcFlows : IJobParallelFor
 		return 0;
 	}
 
-	// Token: 0x06006429 RID: 25641 RVA: 0x002733A4 File Offset: 0x002715A4
+	// Token: 0x060064B5 RID: 25781 RVA: 0x002762A0 File Offset: 0x002744A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryGetMass(WaterDataHandle _chunkData, int _x, int _y, int _z, out int _mass)
 	{
@@ -295,20 +295,20 @@ public struct WaterSimulationCalcFlows : IJobParallelFor
 		return !_chunkData.voxelState.Get(_x, _y, _z).IsSolid();
 	}
 
-	// Token: 0x04004DAE RID: 19886
+	// Token: 0x04004E4C RID: 20044
 	public NativeArray<ChunkKey> processingChunks;
 
-	// Token: 0x04004DAF RID: 19887
+	// Token: 0x04004E4D RID: 20045
 	public NativeArray<WaterStats> waterStats;
 
-	// Token: 0x04004DB0 RID: 19888
+	// Token: 0x04004E4E RID: 20046
 	public UnsafeParallelHashMap<ChunkKey, WaterDataHandle> waterDataHandles;
 
-	// Token: 0x04004DB1 RID: 19889
+	// Token: 0x04004E4F RID: 20047
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WaterStats stats;
 
-	// Token: 0x04004DB2 RID: 19890
+	// Token: 0x04004E50 RID: 20048
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WaterNeighborCacheNative neighborCache;
 }

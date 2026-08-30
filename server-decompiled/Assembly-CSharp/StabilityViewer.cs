@@ -5,10 +5,10 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020012BD RID: 4797
+// Token: 0x020012D7 RID: 4823
 public class StabilityViewer
 {
-	// Token: 0x0600982D RID: 38957 RVA: 0x0039B794 File Offset: 0x00399994
+	// Token: 0x06009928 RID: 39208 RVA: 0x003A09E4 File Offset: 0x0039EBE4
 	public StabilityViewer()
 	{
 		StabilityViewer.displayObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
@@ -40,8 +40,8 @@ public class StabilityViewer
 		this.CalculatedStability = false;
 	}
 
-	// Token: 0x170011EC RID: 4588
-	// (get) Token: 0x0600982E RID: 38958 RVA: 0x002DFFBD File Offset: 0x002DE1BD
+	// Token: 0x17001225 RID: 4645
+	// (get) Token: 0x06009929 RID: 39209 RVA: 0x002E3F71 File Offset: 0x002E2171
 	public ChunkCluster ChunkCluster0
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -59,7 +59,7 @@ public class StabilityViewer
 		}
 	}
 
-	// Token: 0x0600982F RID: 38959 RVA: 0x0039B8C8 File Offset: 0x00399AC8
+	// Token: 0x0600992A RID: 39210 RVA: 0x003A0B18 File Offset: 0x0039ED18
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RecalcStability()
 	{
@@ -90,7 +90,7 @@ public class StabilityViewer
 		}
 	}
 
-	// Token: 0x06009830 RID: 38960 RVA: 0x0039BA00 File Offset: 0x00399C00
+	// Token: 0x0600992B RID: 39211 RVA: 0x003A0C50 File Offset: 0x0039EE50
 	public static GameObject GetBlock(float stability)
 	{
 		GameObject gameObject = global::UnityEngine.Object.Instantiate<GameObject>(StabilityViewer.displayObject);
@@ -117,13 +117,13 @@ public class StabilityViewer
 		return gameObject;
 	}
 
-	// Token: 0x06009831 RID: 38961 RVA: 0x0039BAA4 File Offset: 0x00399CA4
+	// Token: 0x0600992C RID: 39212 RVA: 0x003A0CF4 File Offset: 0x0039EEF4
 	public void OnDestroy()
 	{
 		this.Clear();
 	}
 
-	// Token: 0x06009832 RID: 38962 RVA: 0x0039BAAC File Offset: 0x00399CAC
+	// Token: 0x0600992D RID: 39213 RVA: 0x003A0CFC File Offset: 0x0039EEFC
 	public void Clear()
 	{
 		StabilityViewer.TotalIterations = 0;
@@ -139,7 +139,7 @@ public class StabilityViewer
 		this.CalculatedStability = false;
 	}
 
-	// Token: 0x06009833 RID: 38963 RVA: 0x0039BB14 File Offset: 0x00399D14
+	// Token: 0x0600992E RID: 39214 RVA: 0x003A0D64 File Offset: 0x0039EF64
 	public void StartSearch(int _asynCount = 100)
 	{
 		this.startedSearch = true;
@@ -153,7 +153,7 @@ public class StabilityViewer
 		this.updateDisplayTimer = 0f;
 	}
 
-	// Token: 0x06009834 RID: 38964 RVA: 0x0039BB8C File Offset: 0x00399D8C
+	// Token: 0x0600992F RID: 39215 RVA: 0x003A0DDC File Offset: 0x0039EFDC
 	public void Update()
 	{
 		if (Time.time > this.updateDisplayTimer + 3f)
@@ -284,108 +284,108 @@ public class StabilityViewer
 		}
 	}
 
-	// Token: 0x0400724C RID: 29260
+	// Token: 0x04007323 RID: 29475
 	public static Dictionary<Vector3i, GameObject> boxes = new Dictionary<Vector3i, GameObject>();
 
-	// Token: 0x0400724D RID: 29261
+	// Token: 0x04007324 RID: 29476
 	public static List<Vector3i> buildingChunks = new List<Vector3i>();
 
-	// Token: 0x0400724E RID: 29262
+	// Token: 0x04007325 RID: 29477
 	public bool worldIsReady;
 
-	// Token: 0x0400724F RID: 29263
+	// Token: 0x04007326 RID: 29478
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i startPos;
 
-	// Token: 0x04007250 RID: 29264
+	// Token: 0x04007327 RID: 29479
 	public static List<Material> materials = new List<Material>();
 
-	// Token: 0x04007251 RID: 29265
+	// Token: 0x04007328 RID: 29480
 	public static GameObject displayObject = null;
 
-	// Token: 0x04007252 RID: 29266
+	// Token: 0x04007329 RID: 29481
 	public static GameObject StabilityViewBoxes = null;
 
-	// Token: 0x04007253 RID: 29267
+	// Token: 0x0400732A RID: 29482
 	public static Material stabilityMtrl = null;
 
-	// Token: 0x04007254 RID: 29268
+	// Token: 0x0400732B RID: 29483
 	public static int numMaterials = 7;
 
-	// Token: 0x04007255 RID: 29269
+	// Token: 0x0400732C RID: 29484
 	public static bool bGatheringChunks = false;
 
-	// Token: 0x04007256 RID: 29270
+	// Token: 0x0400732D RID: 29485
 	public static int TotalIterations = 0;
 
-	// Token: 0x04007257 RID: 29271
+	// Token: 0x0400732E RID: 29486
 	public static int GetBlocks = 0;
 
-	// Token: 0x04007258 RID: 29272
+	// Token: 0x0400732F RID: 29487
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Text debugText;
 
-	// Token: 0x04007259 RID: 29273
+	// Token: 0x04007330 RID: 29488
 	public int searchSizeXZ = 5;
 
-	// Token: 0x0400725A RID: 29274
+	// Token: 0x04007331 RID: 29489
 	public int searchSizeY = 2;
 
-	// Token: 0x0400725B RID: 29275
+	// Token: 0x04007332 RID: 29490
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i currSearch;
 
-	// Token: 0x0400725C RID: 29276
+	// Token: 0x04007333 RID: 29491
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int asynCount = 100;
 
-	// Token: 0x0400725D RID: 29277
+	// Token: 0x04007334 RID: 29492
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float totalTimer;
 
-	// Token: 0x0400725E RID: 29278
+	// Token: 0x04007335 RID: 29493
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float prevTotalTimer;
 
-	// Token: 0x0400725F RID: 29279
+	// Token: 0x04007336 RID: 29494
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float updateDisplayTimer;
 
-	// Token: 0x04007260 RID: 29280
+	// Token: 0x04007337 RID: 29495
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float totalTime;
 
-	// Token: 0x04007261 RID: 29281
+	// Token: 0x04007338 RID: 29496
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject textGo;
 
-	// Token: 0x04007262 RID: 29282
+	// Token: 0x04007339 RID: 29497
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Camera mainCam;
 
-	// Token: 0x04007263 RID: 29283
+	// Token: 0x0400733A RID: 29498
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool startedSearch;
 
-	// Token: 0x04007264 RID: 29284
+	// Token: 0x0400733B RID: 29499
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool flipFlop;
 
-	// Token: 0x04007265 RID: 29285
+	// Token: 0x0400733C RID: 29500
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool CalculatedStability;
 
-	// Token: 0x020012BE RID: 4798
+	// Token: 0x020012D8 RID: 4824
 	public class BuildStabilityBlocks
 	{
-		// Token: 0x06009836 RID: 38966 RVA: 0x0039C08D File Offset: 0x0039A28D
+		// Token: 0x06009931 RID: 39217 RVA: 0x003A12DD File Offset: 0x0039F4DD
 		public BuildStabilityBlocks(Vector3i _startPos)
 		{
 			this.startPos = _startPos;
 			GameManager.Instance.StartCoroutine(this.RegisterWhenDone());
 		}
 
-		// Token: 0x06009837 RID: 38967 RVA: 0x0039C0AD File Offset: 0x0039A2AD
+		// Token: 0x06009932 RID: 39218 RVA: 0x003A12FD File Offset: 0x0039F4FD
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator RegisterWhenDone()
 		{
@@ -596,7 +596,7 @@ public class StabilityViewer
 			yield break;
 		}
 
-		// Token: 0x04007266 RID: 29286
+		// Token: 0x0400733D RID: 29501
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector3i startPos;
 	}

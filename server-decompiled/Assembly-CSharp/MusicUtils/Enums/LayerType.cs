@@ -2,20 +2,20 @@
 
 namespace MusicUtils.Enums
 {
-	// Token: 0x020019F3 RID: 6643
+	// Token: 0x02001A1A RID: 6682
 	public enum LayerType : byte
 	{
-		// Token: 0x0400992F RID: 39215
+		// Token: 0x04009A60 RID: 39520
 		Primary,
-		// Token: 0x04009930 RID: 39216
+		// Token: 0x04009A61 RID: 39521
 		PrimaryPairable1,
-		// Token: 0x04009931 RID: 39217
+		// Token: 0x04009A62 RID: 39522
 		PrimarySupporting,
-		// Token: 0x04009932 RID: 39218
+		// Token: 0x04009A63 RID: 39523
 		Secondary,
-		// Token: 0x04009933 RID: 39219
+		// Token: 0x04009A64 RID: 39524
 		LongEffects,
-		// Token: 0x04009934 RID: 39220
+		// Token: 0x04009A65 RID: 39525
 		ShortEffects
 	}
 }

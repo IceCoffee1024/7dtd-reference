@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
-// Token: 0x02001490 RID: 5264
+// Token: 0x020014AB RID: 5291
 public sealed class StateHistory<T> : IEnumerable<T>, IEnumerable
 {
-	// Token: 0x0600A4F0 RID: 42224 RVA: 0x003D6394 File Offset: 0x003D4594
+	// Token: 0x0600A5ED RID: 42477 RVA: 0x003DB6D4 File Offset: 0x003D98D4
 	public StateHistory(int max, bool preventConsecutiveDuplicates = false, bool preventDuplicates = false)
 	{
 		this.m_states = new T[max];
@@ -17,8 +17,8 @@ public sealed class StateHistory<T> : IEnumerable<T>, IEnumerable
 		this.m_size = 0;
 	}
 
-	// Token: 0x1700134C RID: 4940
-	// (get) Token: 0x0600A4F1 RID: 42225 RVA: 0x003D63E0 File Offset: 0x003D45E0
+	// Token: 0x17001385 RID: 4997
+	// (get) Token: 0x0600A5EE RID: 42478 RVA: 0x003DB720 File Offset: 0x003D9920
 	public T Current
 	{
 		get
@@ -31,8 +31,8 @@ public sealed class StateHistory<T> : IEnumerable<T>, IEnumerable
 		}
 	}
 
-	// Token: 0x1700134D RID: 4941
-	// (get) Token: 0x0600A4F2 RID: 42226 RVA: 0x003D6411 File Offset: 0x003D4611
+	// Token: 0x17001386 RID: 4998
+	// (get) Token: 0x0600A5EF RID: 42479 RVA: 0x003DB751 File Offset: 0x003D9951
 	public int Length
 	{
 		get
@@ -41,7 +41,7 @@ public sealed class StateHistory<T> : IEnumerable<T>, IEnumerable
 		}
 	}
 
-	// Token: 0x0600A4F3 RID: 42227 RVA: 0x003D641C File Offset: 0x003D461C
+	// Token: 0x0600A5F0 RID: 42480 RVA: 0x003DB75C File Offset: 0x003D995C
 	public void Add(T state)
 	{
 		if (this.m_preventDuplicates && this.m_statesSet.Contains(state))
@@ -75,7 +75,7 @@ public sealed class StateHistory<T> : IEnumerable<T>, IEnumerable
 		statesSet2.Add(state);
 	}
 
-	// Token: 0x0600A4F4 RID: 42228 RVA: 0x003D64F8 File Offset: 0x003D46F8
+	// Token: 0x0600A5F1 RID: 42481 RVA: 0x003DB838 File Offset: 0x003D9A38
 	public void Clear()
 	{
 		for (int i = 0; i < this.m_states.Length; i++)
@@ -91,7 +91,7 @@ public sealed class StateHistory<T> : IEnumerable<T>, IEnumerable
 		this.m_size = 0;
 	}
 
-	// Token: 0x0600A4F5 RID: 42229 RVA: 0x003D654C File Offset: 0x003D474C
+	// Token: 0x0600A5F2 RID: 42482 RVA: 0x003DB88C File Offset: 0x003D9A8C
 	public IEnumerator<T> GetEnumerator()
 	{
 		int num2;
@@ -108,14 +108,14 @@ public sealed class StateHistory<T> : IEnumerable<T>, IEnumerable
 		yield break;
 	}
 
-	// Token: 0x0600A4F6 RID: 42230 RVA: 0x003D655B File Offset: 0x003D475B
+	// Token: 0x0600A5F3 RID: 42483 RVA: 0x003DB89B File Offset: 0x003D9A9B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator System.Collections.IEnumerable.GetEnumerator()
 	{
 		return this.GetEnumerator();
 	}
 
-	// Token: 0x0600A4F7 RID: 42231 RVA: 0x003D6564 File Offset: 0x003D4764
+	// Token: 0x0600A5F4 RID: 42484 RVA: 0x003DB8A4 File Offset: 0x003D9AA4
 	public override string ToString()
 	{
 		if (this.m_size <= 0)
@@ -134,27 +134,27 @@ public sealed class StateHistory<T> : IEnumerable<T>, IEnumerable
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x04007ABD RID: 31421
+	// Token: 0x04007B96 RID: 31638
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly T[] m_states;
 
-	// Token: 0x04007ABE RID: 31422
+	// Token: 0x04007B97 RID: 31639
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly HashSet<T> m_statesSet;
 
-	// Token: 0x04007ABF RID: 31423
+	// Token: 0x04007B98 RID: 31640
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly bool m_preventConsecutiveDuplicates;
 
-	// Token: 0x04007AC0 RID: 31424
+	// Token: 0x04007B99 RID: 31641
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly bool m_preventDuplicates;
 
-	// Token: 0x04007AC1 RID: 31425
+	// Token: 0x04007B9A RID: 31642
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_index;
 
-	// Token: 0x04007AC2 RID: 31426
+	// Token: 0x04007B9B RID: 31643
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_size;
 }

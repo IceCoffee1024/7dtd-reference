@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000242 RID: 578
+// Token: 0x02000246 RID: 582
 [Preserve]
 public class ConsoleCmdMemCl : ConsoleCmdMem
 {
-	// Token: 0x170001BA RID: 442
-	// (get) Token: 0x0600115E RID: 4446 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x170001BB RID: 443
+	// (get) Token: 0x06001170 RID: 4464 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -15,8 +15,8 @@ public class ConsoleCmdMemCl : ConsoleCmdMem
 		}
 	}
 
-	// Token: 0x170001BB RID: 443
-	// (get) Token: 0x0600115F RID: 4447 RVA: 0x0006110A File Offset: 0x0005F30A
+	// Token: 0x170001BC RID: 444
+	// (get) Token: 0x06001171 RID: 4465 RVA: 0x00061652 File Offset: 0x0005F852
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -25,14 +25,14 @@ public class ConsoleCmdMemCl : ConsoleCmdMem
 		}
 	}
 
-	// Token: 0x06001160 RID: 4448 RVA: 0x0006E4B5 File Offset: 0x0006C6B5
+	// Token: 0x06001172 RID: 4466 RVA: 0x0006EB11 File Offset: 0x0006CD11
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "memcl" };
 	}
 
-	// Token: 0x06001161 RID: 4449 RVA: 0x0006E4C5 File Offset: 0x0006C6C5
+	// Token: 0x06001173 RID: 4467 RVA: 0x0006EB21 File Offset: 0x0006CD21
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020002E3 RID: 739
+// Token: 0x020002E7 RID: 743
 [Preserve]
 public class DialogActionTrader : BaseDialogAction
 {
-	// Token: 0x1700025D RID: 605
-	// (get) Token: 0x0600154D RID: 5453 RVA: 0x0007FE9C File Offset: 0x0007E09C
+	// Token: 0x1700025E RID: 606
+	// (get) Token: 0x06001560 RID: 5472 RVA: 0x00080550 File Offset: 0x0007E750
 	public override BaseDialogAction.ActionTypes ActionType
 	{
 		get
@@ -15,7 +15,7 @@ public class DialogActionTrader : BaseDialogAction
 		}
 	}
 
-	// Token: 0x0600154E RID: 5454 RVA: 0x0007FEA0 File Offset: 0x0007E0A0
+	// Token: 0x06001561 RID: 5473 RVA: 0x00080554 File Offset: 0x0007E754
 	public override void PerformAction(EntityPlayer player)
 	{
 		LocalPlayerUI uiforPlayer = LocalPlayerUI.GetUIForPlayer(player as EntityPlayerLocal);
@@ -80,7 +80,7 @@ public class DialogActionTrader : BaseDialogAction
 		}
 	}
 
-	// Token: 0x04000E4B RID: 3659
+	// Token: 0x04000E5C RID: 3676
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string name = "";
 }

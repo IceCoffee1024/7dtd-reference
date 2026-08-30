@@ -3,10 +3,10 @@ using System.Xml;
 
 namespace ICSharpCode.WpfDesign.XamlDom
 {
-	// Token: 0x0200160F RID: 5647
+	// Token: 0x0200162A RID: 5674
 	public class PositionXmlDocumentType : XmlDocumentType, IXmlLineInfo
 	{
-		// Token: 0x0600B15D RID: 45405 RVA: 0x00422BD7 File Offset: 0x00420DD7
+		// Token: 0x0600B25A RID: 45658 RVA: 0x00427F17 File Offset: 0x00426117
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public PositionXmlDocumentType(string name, string publicId, string systemId, string internalSubset, XmlDocument doc, IXmlLineInfo lineInfo)
 			: base(name, publicId, systemId, internalSubset, doc)
@@ -19,14 +19,14 @@ namespace ICSharpCode.WpfDesign.XamlDom
 			}
 		}
 
-		// Token: 0x0600B15E RID: 45406 RVA: 0x00422C0B File Offset: 0x00420E0B
+		// Token: 0x0600B25B RID: 45659 RVA: 0x00427F4B File Offset: 0x0042614B
 		public bool HasLineInfo()
 		{
 			return this.hasLineInfo;
 		}
 
-		// Token: 0x170014BA RID: 5306
-		// (get) Token: 0x0600B15F RID: 45407 RVA: 0x00422C13 File Offset: 0x00420E13
+		// Token: 0x170014F3 RID: 5363
+		// (get) Token: 0x0600B25C RID: 45660 RVA: 0x00427F53 File Offset: 0x00426153
 		public int LineNumber
 		{
 			get
@@ -35,8 +35,8 @@ namespace ICSharpCode.WpfDesign.XamlDom
 			}
 		}
 
-		// Token: 0x170014BB RID: 5307
-		// (get) Token: 0x0600B160 RID: 45408 RVA: 0x00422C1B File Offset: 0x00420E1B
+		// Token: 0x170014F4 RID: 5364
+		// (get) Token: 0x0600B25D RID: 45661 RVA: 0x00427F5B File Offset: 0x0042615B
 		public int LinePosition
 		{
 			get
@@ -45,15 +45,15 @@ namespace ICSharpCode.WpfDesign.XamlDom
 			}
 		}
 
-		// Token: 0x0400852E RID: 34094
+		// Token: 0x04008607 RID: 34311
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int lineNumber;
 
-		// Token: 0x0400852F RID: 34095
+		// Token: 0x04008608 RID: 34312
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int linePosition;
 
-		// Token: 0x04008530 RID: 34096
+		// Token: 0x04008609 RID: 34313
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool hasLineInfo;
 	}

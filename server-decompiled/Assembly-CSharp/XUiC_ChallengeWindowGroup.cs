@@ -2,24 +2,24 @@
 using GUI_2;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EC8 RID: 3784
+// Token: 0x02000EDD RID: 3805
 [Preserve]
 public class XUiC_ChallengeWindowGroup : XUiController
 {
-	// Token: 0x060076C2 RID: 30402 RVA: 0x002CA1A4 File Offset: 0x002C83A4
+	// Token: 0x06007763 RID: 30563 RVA: 0x002CD6C8 File Offset: 0x002CB8C8
 	public override void Init()
 	{
 		base.Init();
 		this.descriptionWindow = base.GetChildByType<XUiC_ChallengeEntryDescriptionWindow>();
 	}
 
-	// Token: 0x060076C3 RID: 30403 RVA: 0x002CA1B8 File Offset: 0x002C83B8
+	// Token: 0x06007764 RID: 30564 RVA: 0x002CD6DC File Offset: 0x002CB8DC
 	public void SetEntry(XUiC_ChallengeEntry je)
 	{
 		this.descriptionWindow.SetChallenge(je);
 	}
 
-	// Token: 0x060076C4 RID: 30404 RVA: 0x002CA1C8 File Offset: 0x002C83C8
+	// Token: 0x06007765 RID: 30565 RVA: 0x002CD6EC File Offset: 0x002CB8EC
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -33,7 +33,7 @@ public class XUiC_ChallengeWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x060076C5 RID: 30405 RVA: 0x002CA234 File Offset: 0x002C8434
+	// Token: 0x06007766 RID: 30566 RVA: 0x002CD758 File Offset: 0x002CB958
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -51,7 +51,7 @@ public class XUiC_ChallengeWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x060076C6 RID: 30406 RVA: 0x002CA309 File Offset: 0x002C8509
+	// Token: 0x06007767 RID: 30567 RVA: 0x002CD82D File Offset: 0x002CBA2D
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -59,7 +59,7 @@ public class XUiC_ChallengeWindowGroup : XUiController
 		this.xui.playerUI.windowManager.Close("windowpaging");
 	}
 
-	// Token: 0x0400577A RID: 22394
+	// Token: 0x0400581F RID: 22559
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ChallengeEntryDescriptionWindow descriptionWindow;
 }

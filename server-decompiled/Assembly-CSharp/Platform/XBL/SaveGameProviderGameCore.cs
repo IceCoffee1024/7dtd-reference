@@ -11,16 +11,16 @@ using Unity.XGamingRuntime;
 
 namespace Platform.XBL
 {
-	// Token: 0x02001BD5 RID: 7125
+	// Token: 0x02001BFC RID: 7164
 	public class SaveGameProviderGameCore : IPlatformSaveGameProvider, IPlatformSaveGameIOProvider
 	{
-		// Token: 0x0600D340 RID: 54080 RVA: 0x004C5BD4 File Offset: 0x004C3DD4
+		// Token: 0x0600D4CE RID: 54478 RVA: 0x004CBFC8 File Offset: 0x004CA1C8
 		public SaveGameProviderGameCore(long maxStorageSizeBytes = 1073741824L)
 		{
 			this.m_maxStorageSizeBytes = maxStorageSizeBytes;
 		}
 
-		// Token: 0x0600D341 RID: 54081 RVA: 0x004C5BEE File Offset: 0x004C3DEE
+		// Token: 0x0600D4CF RID: 54479 RVA: 0x004CBFE2 File Offset: 0x004CA1E2
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnUserHandleReady(XUserHandle userHandle)
 		{
@@ -40,7 +40,7 @@ namespace Platform.XBL
 			this.InitializeSaveStorageProvider();
 		}
 
-		// Token: 0x0600D342 RID: 54082 RVA: 0x004C5C30 File Offset: 0x004C3E30
+		// Token: 0x0600D4D0 RID: 54480 RVA: 0x004CC024 File Offset: 0x004CA224
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void InitializeSaveStorageProvider()
 		{
@@ -50,7 +50,7 @@ namespace Platform.XBL
 			this.m_saveStorageProvider.InitializeAsync(this.m_owner, this.m_maxStorageSizeBytes, this.m_taskScheduler, new OnGameSaveProviderStatusChanged(this.OnGameSaveProviderStatusChanged));
 		}
 
-		// Token: 0x0600D343 RID: 54083 RVA: 0x004C5C94 File Offset: 0x004C3E94
+		// Token: 0x0600D4D1 RID: 54481 RVA: 0x004CC088 File Offset: 0x004CA288
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnGameSaveProviderStatusChanged(ESaveGameProviderStatus status)
 		{
@@ -74,7 +74,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D344 RID: 54084 RVA: 0x004C5D10 File Offset: 0x004C3F10
+		// Token: 0x0600D4D2 RID: 54482 RVA: 0x004CC104 File Offset: 0x004CA304
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnGameSaveProviderReady()
 		{
@@ -82,7 +82,7 @@ namespace Platform.XBL
 			this.ResumeIO();
 		}
 
-		// Token: 0x0600D345 RID: 54085 RVA: 0x004C5D3C File Offset: 0x004C3F3C
+		// Token: 0x0600D4D3 RID: 54483 RVA: 0x004CC130 File Offset: 0x004CA330
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnApplicationStateChanged(ApplicationState newstate)
 		{
@@ -99,14 +99,14 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D346 RID: 54086 RVA: 0x004C5D6E File Offset: 0x004C3F6E
+		// Token: 0x0600D4D4 RID: 54484 RVA: 0x004CC162 File Offset: 0x004CA362
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnSuspend()
 		{
 			this.PauseIO();
 		}
 
-		// Token: 0x0600D347 RID: 54087 RVA: 0x004C5D78 File Offset: 0x004C3F78
+		// Token: 0x0600D4D5 RID: 54485 RVA: 0x004CC16C File Offset: 0x004CA36C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnResume()
 		{
@@ -130,7 +130,7 @@ namespace Platform.XBL
 			this.InitializeSaveStorageProvider();
 		}
 
-		// Token: 0x0600D348 RID: 54088 RVA: 0x004C5DDC File Offset: 0x004C3FDC
+		// Token: 0x0600D4D6 RID: 54486 RVA: 0x004CC1D0 File Offset: 0x004CA3D0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void PauseIO()
 		{
@@ -151,7 +151,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D349 RID: 54089 RVA: 0x004C5E35 File Offset: 0x004C4035
+		// Token: 0x0600D4D7 RID: 54487 RVA: 0x004CC229 File Offset: 0x004CA429
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ResumeIO()
 		{
@@ -163,7 +163,7 @@ namespace Platform.XBL
 			this.m_paused = false;
 		}
 
-		// Token: 0x0600D34A RID: 54090 RVA: 0x004C5E51 File Offset: 0x004C4051
+		// Token: 0x0600D4D8 RID: 54488 RVA: 0x004CC245 File Offset: 0x004CA445
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SaveGameProviderGameCore.OperationScope CreateOperationScope(string debugIdentifier)
 		{
@@ -177,7 +177,7 @@ namespace Platform.XBL
 			return new SaveGameProviderGameCore.OperationScope(this);
 		}
 
-		// Token: 0x0600D34B RID: 54091 RVA: 0x004C5E72 File Offset: 0x004C4072
+		// Token: 0x0600D4D9 RID: 54489 RVA: 0x004CC266 File Offset: 0x004CA466
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void GetSaveContainerAndRelativePath(SaveDataManagedPath path, out SaveContainer saveContainer, out string relativePath)
 		{
@@ -185,28 +185,28 @@ namespace Platform.XBL
 			relativePath = path.PathRelativeToRoot;
 		}
 
-		// Token: 0x0600D34C RID: 54092 RVA: 0x004C5E84 File Offset: 0x004C4084
+		// Token: 0x0600D4DA RID: 54490 RVA: 0x004CC278 File Offset: 0x004CA478
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void LogInfo(string text)
 		{
 			Log.Out("[XBL: SaveGameProvider] " + text);
 		}
 
-		// Token: 0x0600D34D RID: 54093 RVA: 0x004C5E96 File Offset: 0x004C4096
+		// Token: 0x0600D4DB RID: 54491 RVA: 0x004CC28A File Offset: 0x004CA48A
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void LogWarning(string text)
 		{
 			Log.Warning("[XBL: SaveGameProvider] " + text);
 		}
 
-		// Token: 0x0600D34E RID: 54094 RVA: 0x004C5EA8 File Offset: 0x004C40A8
+		// Token: 0x0600D4DC RID: 54492 RVA: 0x004CC29C File Offset: 0x004CA49C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void LogError(string text)
 		{
 			Log.Error("[XBL: SaveGameProvider] " + text);
 		}
 
-		// Token: 0x0600D34F RID: 54095 RVA: 0x004C5E84 File Offset: 0x004C4084
+		// Token: 0x0600D4DD RID: 54493 RVA: 0x004CC278 File Offset: 0x004CA478
 		[Conditional("DEBUG_SAVE_DATA_MANAGER")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void LogTrace(string text)
@@ -214,27 +214,27 @@ namespace Platform.XBL
 			Log.Out("[XBL: SaveGameProvider] " + text);
 		}
 
-		// Token: 0x170019F6 RID: 6646
-		// (get) Token: 0x0600D350 RID: 54096 RVA: 0x004C5EBA File Offset: 0x004C40BA
-		// (set) Token: 0x0600D351 RID: 54097 RVA: 0x004C5EC2 File Offset: 0x004C40C2
+		// Token: 0x17001A68 RID: 6760
+		// (get) Token: 0x0600D4DE RID: 54494 RVA: 0x004CC2AE File Offset: 0x004CA4AE
+		// (set) Token: 0x0600D4DF RID: 54495 RVA: 0x004CC2B6 File Offset: 0x004CA4B6
 		public ESaveGameProviderStatus Status
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x170019F7 RID: 6647
-		// (get) Token: 0x0600D352 RID: 54098 RVA: 0x004C5ECB File Offset: 0x004C40CB
-		// (set) Token: 0x0600D353 RID: 54099 RVA: 0x004C5ED3 File Offset: 0x004C40D3
+		// Token: 0x17001A69 RID: 6761
+		// (get) Token: 0x0600D4E0 RID: 54496 RVA: 0x004CC2BF File Offset: 0x004CA4BF
+		// (set) Token: 0x0600D4E1 RID: 54497 RVA: 0x004CC2C7 File Offset: 0x004CA4C7
 		public IPlatformSaveGameIOProvider Cache
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x1400012A RID: 298
-		// (add) Token: 0x0600D354 RID: 54100 RVA: 0x004C5EDC File Offset: 0x004C40DC
-		// (remove) Token: 0x0600D355 RID: 54101 RVA: 0x004C5F3C File Offset: 0x004C413C
+		// Token: 0x1400012B RID: 299
+		// (add) Token: 0x0600D4E2 RID: 54498 RVA: 0x004CC2D0 File Offset: 0x004CA4D0
+		// (remove) Token: 0x0600D4E3 RID: 54499 RVA: 0x004CC330 File Offset: 0x004CA530
 		public event Action Initialized
 		{
 			add
@@ -259,7 +259,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D356 RID: 54102 RVA: 0x004C5F90 File Offset: 0x004C4190
+		// Token: 0x0600D4E4 RID: 54500 RVA: 0x004CC384 File Offset: 0x004CA584
 		public void Init(IPlatform _owner)
 		{
 			this.PauseIO();
@@ -272,7 +272,7 @@ namespace Platform.XBL
 			this.Cache = new SaveGameIOProviderFixedRoot(GameIO.GetNormalizedPath(GameIO.GetDeviceLocalUserGameDataDir()) + "Cache");
 		}
 
-		// Token: 0x0600D357 RID: 54103 RVA: 0x004C6030 File Offset: 0x004C4230
+		// Token: 0x0600D4E5 RID: 54501 RVA: 0x004CC424 File Offset: 0x004CA624
 		public void Destroy()
 		{
 			if (this.m_rootSaveContainer != null)
@@ -305,25 +305,25 @@ namespace Platform.XBL
 			this.m_taskScheduler = null;
 		}
 
-		// Token: 0x0600D358 RID: 54104 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x0600D4E6 RID: 54502 RVA: 0x00010E62 File Offset: 0x0000F062
 		public bool ShouldBackup()
 		{
 			return false;
 		}
 
-		// Token: 0x0600D359 RID: 54105 RVA: 0x004C60DA File Offset: 0x004C42DA
+		// Token: 0x0600D4E7 RID: 54503 RVA: 0x004CC4CE File Offset: 0x004CA6CE
 		public bool ShouldCommit()
 		{
 			return !this.m_paused;
 		}
 
-		// Token: 0x0600D35A RID: 54106 RVA: 0x004C60E5 File Offset: 0x004C42E5
+		// Token: 0x0600D4E8 RID: 54504 RVA: 0x004CC4D9 File Offset: 0x004CA6D9
 		public double GetCommitProgress()
 		{
 			return 1.0;
 		}
 
-		// Token: 0x0600D35B RID: 54107 RVA: 0x004C60F0 File Offset: 0x004C42F0
+		// Token: 0x0600D4E9 RID: 54505 RVA: 0x004CC4E4 File Offset: 0x004CA6E4
 		public void Flush(bool waitForFlush)
 		{
 			ISaveStorageProvider saveStorageProvider = this.m_saveStorageProvider;
@@ -334,13 +334,13 @@ namespace Platform.XBL
 			saveStorageProvider.Flush(waitForFlush);
 		}
 
-		// Token: 0x0600D35C RID: 54108 RVA: 0x0001FF5D File Offset: 0x0001E15D
+		// Token: 0x0600D4EA RID: 54506 RVA: 0x00020021 File Offset: 0x0001E221
 		public bool ShouldLimitSize()
 		{
 			return true;
 		}
 
-		// Token: 0x0600D35D RID: 54109 RVA: 0x004C6104 File Offset: 0x004C4304
+		// Token: 0x0600D4EB RID: 54507 RVA: 0x004CC4F8 File Offset: 0x004CA6F8
 		public void UpdateSizes()
 		{
 			using (this.CreateOperationScope("UpdateSizes"))
@@ -349,7 +349,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D35E RID: 54110 RVA: 0x004C6150 File Offset: 0x004C4350
+		// Token: 0x0600D4EC RID: 54508 RVA: 0x004CC544 File Offset: 0x004CA744
 		public SaveDataSizes GetSizes()
 		{
 			SaveDataSizes sizes;
@@ -360,7 +360,7 @@ namespace Platform.XBL
 			return sizes;
 		}
 
-		// Token: 0x0600D35F RID: 54111 RVA: 0x004C619C File Offset: 0x004C439C
+		// Token: 0x0600D4ED RID: 54509 RVA: 0x004CC590 File Offset: 0x004CA790
 		public void ManagedFileRead(SaveDataManagedPath path, Stream dest)
 		{
 			using (this.CreateOperationScope("ManagedFileRead"))
@@ -372,7 +372,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D360 RID: 54112 RVA: 0x004C61F0 File Offset: 0x004C43F0
+		// Token: 0x0600D4EE RID: 54510 RVA: 0x004CC5E4 File Offset: 0x004CA7E4
 		public void ManagedFileWrite(SaveDataManagedPath path, Stream src)
 		{
 			using (this.CreateOperationScope("ManagedFileWrite"))
@@ -384,7 +384,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D361 RID: 54113 RVA: 0x004C6244 File Offset: 0x004C4444
+		// Token: 0x0600D4EF RID: 54511 RVA: 0x004CC638 File Offset: 0x004CA838
 		public void ManagedFileCopy(SaveDataManagedPath sourceFileName, SaveDataManagedPath destFileName, bool overwrite = false)
 		{
 			using (this.CreateOperationScope("ManagedFileCopy"))
@@ -408,7 +408,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D362 RID: 54114 RVA: 0x004C62FC File Offset: 0x004C44FC
+		// Token: 0x0600D4F0 RID: 54512 RVA: 0x004CC6F0 File Offset: 0x004CA8F0
 		public void ManagedFileDelete(SaveDataManagedPath path)
 		{
 			using (this.CreateOperationScope("ManagedFileDelete"))
@@ -420,7 +420,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D363 RID: 54115 RVA: 0x004C634C File Offset: 0x004C454C
+		// Token: 0x0600D4F1 RID: 54513 RVA: 0x004CC740 File Offset: 0x004CA940
 		public bool ManagedFileExists(SaveDataManagedPath path)
 		{
 			bool flag;
@@ -434,7 +434,7 @@ namespace Platform.XBL
 			return flag;
 		}
 
-		// Token: 0x0600D364 RID: 54116 RVA: 0x004C63A0 File Offset: 0x004C45A0
+		// Token: 0x0600D4F2 RID: 54514 RVA: 0x004CC794 File Offset: 0x004CA994
 		public DateTime ManagedFileGetLastWriteTimeUtc(SaveDataManagedPath path)
 		{
 			DateTime lastWriteTimeUtc;
@@ -448,7 +448,7 @@ namespace Platform.XBL
 			return lastWriteTimeUtc;
 		}
 
-		// Token: 0x0600D365 RID: 54117 RVA: 0x004C63F4 File Offset: 0x004C45F4
+		// Token: 0x0600D4F3 RID: 54515 RVA: 0x004CC7E8 File Offset: 0x004CA9E8
 		public void ManagedFileMove(SaveDataManagedPath sourceFileName, SaveDataManagedPath destFileName)
 		{
 			using (this.CreateOperationScope("ManagedFileMove"))
@@ -475,7 +475,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D366 RID: 54118 RVA: 0x004C648C File Offset: 0x004C468C
+		// Token: 0x0600D4F4 RID: 54516 RVA: 0x004CC880 File Offset: 0x004CAA80
 		public SdDirectoryInfo ManagedDirectoryCreateDirectory(SaveDataManagedPath path)
 		{
 			SdDirectoryInfo sdDirectoryInfo;
@@ -490,7 +490,7 @@ namespace Platform.XBL
 			return sdDirectoryInfo;
 		}
 
-		// Token: 0x0600D367 RID: 54119 RVA: 0x004C64EC File Offset: 0x004C46EC
+		// Token: 0x0600D4F5 RID: 54517 RVA: 0x004CC8E0 File Offset: 0x004CAAE0
 		public DateTime ManagedDirectoryGetLastWriteTimeUtc(SaveDataManagedPath path)
 		{
 			DateTime lastWriteTimeUtc;
@@ -504,7 +504,7 @@ namespace Platform.XBL
 			return lastWriteTimeUtc;
 		}
 
-		// Token: 0x0600D368 RID: 54120 RVA: 0x004C6540 File Offset: 0x004C4740
+		// Token: 0x0600D4F6 RID: 54518 RVA: 0x004CC934 File Offset: 0x004CAB34
 		public bool ManagedDirectoryExists(SaveDataManagedPath path)
 		{
 			bool flag;
@@ -518,7 +518,7 @@ namespace Platform.XBL
 			return flag;
 		}
 
-		// Token: 0x0600D369 RID: 54121 RVA: 0x004C6594 File Offset: 0x004C4794
+		// Token: 0x0600D4F7 RID: 54519 RVA: 0x004CC988 File Offset: 0x004CAB88
 		public IEnumerable<SaveDataManagedPath> ManagedDirectoryEnumerateDirectories(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 		{
 			IEnumerable<SaveDataManagedPath> enumerable;
@@ -529,7 +529,7 @@ namespace Platform.XBL
 			return enumerable;
 		}
 
-		// Token: 0x0600D36A RID: 54122 RVA: 0x004C65E0 File Offset: 0x004C47E0
+		// Token: 0x0600D4F8 RID: 54520 RVA: 0x004CC9D4 File Offset: 0x004CABD4
 		public IEnumerable<SaveDataManagedPath> ManagedDirectoryEnumerateFiles(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 		{
 			IEnumerable<SaveDataManagedPath> enumerable;
@@ -540,7 +540,7 @@ namespace Platform.XBL
 			return enumerable;
 		}
 
-		// Token: 0x0600D36B RID: 54123 RVA: 0x004C662C File Offset: 0x004C482C
+		// Token: 0x0600D4F9 RID: 54521 RVA: 0x004CCA20 File Offset: 0x004CAC20
 		public IEnumerable<SaveDataManagedPath> ManagedDirectoryEnumerateFileSystemEntries(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 		{
 			IEnumerable<SaveDataManagedPath> enumerable;
@@ -551,7 +551,7 @@ namespace Platform.XBL
 			return enumerable;
 		}
 
-		// Token: 0x0600D36C RID: 54124 RVA: 0x004C6678 File Offset: 0x004C4878
+		// Token: 0x0600D4FA RID: 54522 RVA: 0x004CCA6C File Offset: 0x004CAC6C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerable<SaveDataManagedPath> ManagedDirectoryEnumerateInternal(SaveDataManagedPath path, string searchPattern, SearchOption searchOption, bool includeDirectories, bool includeFiles)
 		{
@@ -562,7 +562,7 @@ namespace Platform.XBL
 			return SaveGameProviderHelper.GetManagedPathsFromBaseAndSubPaths(path, text, enumerable);
 		}
 
-		// Token: 0x0600D36D RID: 54125 RVA: 0x004C66AC File Offset: 0x004C48AC
+		// Token: 0x0600D4FB RID: 54523 RVA: 0x004CCAA0 File Offset: 0x004CACA0
 		public void ManagedDirectoryDelete(SaveDataManagedPath path, bool recursive)
 		{
 			using (this.CreateOperationScope("ManagedDirectoryDelete"))
@@ -574,7 +574,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D36E RID: 54126 RVA: 0x004C6700 File Offset: 0x004C4900
+		// Token: 0x0600D4FC RID: 54524 RVA: 0x004CCAF4 File Offset: 0x004CACF4
 		public long ManagedFileInfoLength(SaveDataManagedPath path)
 		{
 			long num;
@@ -588,7 +588,7 @@ namespace Platform.XBL
 			return num;
 		}
 
-		// Token: 0x0600D36F RID: 54127 RVA: 0x004C6754 File Offset: 0x004C4954
+		// Token: 0x0600D4FD RID: 54525 RVA: 0x004CCB48 File Offset: 0x004CAD48
 		public IEnumerable<SdDirectoryInfo> ManagedDirectoryInfoEnumerateDirectories(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 		{
 			IEnumerable<SdDirectoryInfo> enumerable;
@@ -600,7 +600,7 @@ namespace Platform.XBL
 			return enumerable;
 		}
 
-		// Token: 0x0600D370 RID: 54128 RVA: 0x004C67C4 File Offset: 0x004C49C4
+		// Token: 0x0600D4FE RID: 54526 RVA: 0x004CCBB8 File Offset: 0x004CADB8
 		public IEnumerable<SdFileInfo> ManagedDirectoryInfoEnumerateFiles(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 		{
 			IEnumerable<SdFileInfo> enumerable;
@@ -612,7 +612,7 @@ namespace Platform.XBL
 			return enumerable;
 		}
 
-		// Token: 0x0600D371 RID: 54129 RVA: 0x004C6834 File Offset: 0x004C4A34
+		// Token: 0x0600D4FF RID: 54527 RVA: 0x004CCC28 File Offset: 0x004CAE28
 		public IEnumerable<SdFileSystemInfo> ManagedDirectoryInfoEnumerateFileSystemInfos(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 		{
 			IEnumerable<SdFileSystemInfo> enumerable;
@@ -634,72 +634,72 @@ namespace Platform.XBL
 			return enumerable;
 		}
 
-		// Token: 0x0400A0BA RID: 41146
+		// Token: 0x0400A1EB RID: 41451
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SingleThreadTaskScheduler m_taskScheduler;
 
-		// Token: 0x0400A0BB RID: 41147
+		// Token: 0x0400A1EC RID: 41452
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Action m_initializedDelegate;
 
-		// Token: 0x0400A0BC RID: 41148
+		// Token: 0x0400A1ED RID: 41453
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly object m_initializedDelegateLock = new object();
 
-		// Token: 0x0400A0BD RID: 41149
+		// Token: 0x0400A1EE RID: 41454
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform m_owner;
 
-		// Token: 0x0400A0BE RID: 41150
+		// Token: 0x0400A1EF RID: 41455
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IApplicationStateController m_appState;
 
-		// Token: 0x0400A0BF RID: 41151
+		// Token: 0x0400A1F0 RID: 41456
 		[PublicizedFrom(EAccessModifier.Private)]
 		public User m_userClient;
 
-		// Token: 0x0400A0C0 RID: 41152
+		// Token: 0x0400A1F1 RID: 41457
 		[PublicizedFrom(EAccessModifier.Private)]
 		public long m_maxStorageSizeBytes;
 
-		// Token: 0x0400A0C1 RID: 41153
+		// Token: 0x0400A1F2 RID: 41458
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ISaveStorageProvider m_saveStorageProvider;
 
-		// Token: 0x0400A0C2 RID: 41154
+		// Token: 0x0400A1F3 RID: 41459
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool m_suspended;
 
-		// Token: 0x0400A0C3 RID: 41155
+		// Token: 0x0400A1F4 RID: 41460
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool m_paused;
 
-		// Token: 0x0400A0C4 RID: 41156
+		// Token: 0x0400A1F5 RID: 41461
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int m_operations;
 
-		// Token: 0x0400A0C5 RID: 41157
+		// Token: 0x0400A1F6 RID: 41462
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SaveContainer m_rootSaveContainer;
 
-		// Token: 0x02001BD6 RID: 7126
+		// Token: 0x02001BFD RID: 7165
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly struct OperationScope : IDisposable
 		{
-			// Token: 0x0600D372 RID: 54130 RVA: 0x004C68B8 File Offset: 0x004C4AB8
+			// Token: 0x0600D500 RID: 54528 RVA: 0x004CCCAC File Offset: 0x004CAEAC
 			public OperationScope(SaveGameProviderGameCore provider)
 			{
 				this.m_provider = provider;
 				Interlocked.Increment(ref this.m_provider.m_operations);
 			}
 
-			// Token: 0x0600D373 RID: 54131 RVA: 0x004C68D2 File Offset: 0x004C4AD2
+			// Token: 0x0600D501 RID: 54529 RVA: 0x004CCCC6 File Offset: 0x004CAEC6
 			public void Dispose()
 			{
 				Interlocked.Decrement(ref this.m_provider.m_operations);
 			}
 
-			// Token: 0x0400A0C8 RID: 41160
+			// Token: 0x0400A1F9 RID: 41465
 			[PublicizedFrom(EAccessModifier.Private)]
 			public readonly SaveGameProviderGameCore m_provider;
 		}

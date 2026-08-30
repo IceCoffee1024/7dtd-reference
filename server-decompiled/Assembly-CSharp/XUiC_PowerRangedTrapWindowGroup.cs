@@ -3,11 +3,11 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F9F RID: 3999
+// Token: 0x02000FB8 RID: 4024
 [Preserve]
 public class XUiC_PowerRangedTrapWindowGroup : XUiController
 {
-	// Token: 0x06007E37 RID: 32311 RVA: 0x002FF0C0 File Offset: 0x002FD2C0
+	// Token: 0x06007F29 RID: 32553 RVA: 0x00303894 File Offset: 0x00301A94
 	public override void Init()
 	{
 		base.Init();
@@ -36,9 +36,9 @@ public class XUiC_PowerRangedTrapWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x17000E9F RID: 3743
-	// (get) Token: 0x06007E38 RID: 32312 RVA: 0x002FF154 File Offset: 0x002FD354
-	// (set) Token: 0x06007E39 RID: 32313 RVA: 0x002FF15C File Offset: 0x002FD35C
+	// Token: 0x17000ED8 RID: 3800
+	// (get) Token: 0x06007F2A RID: 32554 RVA: 0x00303928 File Offset: 0x00301B28
+	// (set) Token: 0x06007F2B RID: 32555 RVA: 0x00303930 File Offset: 0x00301B30
 	public TileEntityPoweredRangedTrap TileEntity
 	{
 		get
@@ -57,7 +57,7 @@ public class XUiC_PowerRangedTrapWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06007E3A RID: 32314 RVA: 0x002FF1B4 File Offset: 0x002FD3B4
+	// Token: 0x06007F2C RID: 32556 RVA: 0x00303988 File Offset: 0x00301B88
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -85,7 +85,7 @@ public class XUiC_PowerRangedTrapWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06007E3B RID: 32315 RVA: 0x002FF294 File Offset: 0x002FD494
+	// Token: 0x06007F2D RID: 32557 RVA: 0x00303A68 File Offset: 0x00301C68
 	public override void OnOpen()
 	{
 		if (base.ViewComponent != null && !base.ViewComponent.IsVisible)
@@ -113,7 +113,7 @@ public class XUiC_PowerRangedTrapWindowGroup : XUiController
 		this.TileEntity.Destroyed += this.TileEntity_Destroyed;
 	}
 
-	// Token: 0x06007E3C RID: 32316 RVA: 0x002FF3C4 File Offset: 0x002FD5C4
+	// Token: 0x06007F2E RID: 32558 RVA: 0x00303B98 File Offset: 0x00301D98
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -127,7 +127,7 @@ public class XUiC_PowerRangedTrapWindowGroup : XUiController
 		this.TileEntity.Destroyed -= this.TileEntity_Destroyed;
 	}
 
-	// Token: 0x06007E3D RID: 32317 RVA: 0x002FF438 File Offset: 0x002FD638
+	// Token: 0x06007F2F RID: 32559 RVA: 0x00303C0C File Offset: 0x00301E0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TileEntity_Destroyed(ITileEntity te)
 	{
@@ -146,34 +146,34 @@ public class XUiC_PowerRangedTrapWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x04005D86 RID: 23942
+	// Token: 0x04005E4D RID: 24141
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_WindowNonPagingHeader nonPagingHeader;
 
-	// Token: 0x04005D87 RID: 23943
+	// Token: 0x04005E4E RID: 24142
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_PowerRangedTrapOptions optionsWindow;
 
-	// Token: 0x04005D88 RID: 23944
+	// Token: 0x04005E4F RID: 24143
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_PowerRangedAmmoSlots ammoWindow;
 
-	// Token: 0x04005D89 RID: 23945
+	// Token: 0x04005E50 RID: 24144
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CameraWindow cameraWindowPreview;
 
-	// Token: 0x04005D8A RID: 23946
+	// Token: 0x04005E51 RID: 24145
 	public static string ID = "powerrangedtrap";
 
-	// Token: 0x04005D8B RID: 23947
+	// Token: 0x04005E52 RID: 24146
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool activeKeyDown;
 
-	// Token: 0x04005D8C RID: 23948
+	// Token: 0x04005E53 RID: 24147
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool wasReleased;
 
-	// Token: 0x04005D8D RID: 23949
+	// Token: 0x04005E54 RID: 24148
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileEntityPoweredRangedTrap tileEntity;
 }

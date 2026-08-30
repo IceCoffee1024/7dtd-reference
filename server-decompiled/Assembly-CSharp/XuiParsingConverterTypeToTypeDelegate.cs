@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x020010F4 RID: 4340
-// (Invoke) Token: 0x0600897B RID: 35195
+// Token: 0x0200110D RID: 4365
+// (Invoke) Token: 0x06008A6D RID: 35437
 public delegate bool XuiParsingConverterTypeToTypeDelegate(object _inputValue, out object _parsedValue);

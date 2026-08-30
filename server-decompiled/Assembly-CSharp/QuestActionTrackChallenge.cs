@@ -2,16 +2,16 @@
 using Challenges;
 using UnityEngine.Scripting;
 
-// Token: 0x0200095E RID: 2398
+// Token: 0x0200096F RID: 2415
 [Preserve]
 public class QuestActionTrackChallenge : BaseQuestAction
 {
-	// Token: 0x06004635 RID: 17973 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060046BB RID: 18107 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void SetupAction()
 	{
 	}
 
-	// Token: 0x06004636 RID: 17974 RVA: 0x001BC45C File Offset: 0x001BA65C
+	// Token: 0x060046BC RID: 18108 RVA: 0x001BEC50 File Offset: 0x001BCE50
 	public override void PerformAction(Quest ownerQuest)
 	{
 		EntityPlayerLocal ownerPlayer = ownerQuest.OwnerJournal.OwnerPlayer;
@@ -26,7 +26,7 @@ public class QuestActionTrackChallenge : BaseQuestAction
 		}
 	}
 
-	// Token: 0x06004637 RID: 17975 RVA: 0x001BC4F0 File Offset: 0x001BA6F0
+	// Token: 0x060046BD RID: 18109 RVA: 0x001BECE4 File Offset: 0x001BCEE4
 	public override BaseQuestAction Clone()
 	{
 		QuestActionTrackChallenge questActionTrackChallenge = new QuestActionTrackChallenge();
@@ -34,14 +34,14 @@ public class QuestActionTrackChallenge : BaseQuestAction
 		return questActionTrackChallenge;
 	}
 
-	// Token: 0x06004638 RID: 17976 RVA: 0x001BC50B File Offset: 0x001BA70B
+	// Token: 0x060046BE RID: 18110 RVA: 0x001BECFF File Offset: 0x001BCEFF
 	public override void ParseProperties(DynamicProperties properties)
 	{
 		base.ParseProperties(properties);
 		properties.ParseString(QuestActionTrackChallenge.PropChallenge, ref this.ID);
 	}
 
-	// Token: 0x04003856 RID: 14422
+	// Token: 0x040038E7 RID: 14567
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropChallenge = "challenge";
 }

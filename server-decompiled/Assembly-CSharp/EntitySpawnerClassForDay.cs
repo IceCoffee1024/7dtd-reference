@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000AD5 RID: 2773
+// Token: 0x02000AE7 RID: 2791
 public class EntitySpawnerClassForDay
 {
-	// Token: 0x060052C6 RID: 21190 RVA: 0x001FA66C File Offset: 0x001F886C
+	// Token: 0x0600534E RID: 21326 RVA: 0x001FD2DC File Offset: 0x001FB4DC
 	public void AddForDay(int _day, EntitySpawnerClass _class)
 	{
 		if (_day != 0 && this.days.Count == 0)
@@ -18,7 +18,7 @@ public class EntitySpawnerClassForDay
 		this.days[_day] = _class;
 	}
 
-	// Token: 0x060052C7 RID: 21191 RVA: 0x001FA6C0 File Offset: 0x001F88C0
+	// Token: 0x0600534F RID: 21327 RVA: 0x001FD330 File Offset: 0x001FB530
 	public EntitySpawnerClass Day(int _day)
 	{
 		if (this.days.Count == 0)
@@ -55,22 +55,22 @@ public class EntitySpawnerClassForDay
 		return this.days[_day];
 	}
 
-	// Token: 0x060052C8 RID: 21192 RVA: 0x001FA79E File Offset: 0x001F899E
+	// Token: 0x06005350 RID: 21328 RVA: 0x001FD40E File Offset: 0x001FB60E
 	public int Count()
 	{
 		return this.days.Count;
 	}
 
-	// Token: 0x0400405E RID: 16478
+	// Token: 0x040040F4 RID: 16628
 	public bool bDynamicSpawner;
 
-	// Token: 0x0400405F RID: 16479
+	// Token: 0x040040F5 RID: 16629
 	public bool bWrapDays;
 
-	// Token: 0x04004060 RID: 16480
+	// Token: 0x040040F6 RID: 16630
 	public bool bClampDays;
 
-	// Token: 0x04004061 RID: 16481
+	// Token: 0x040040F7 RID: 16631
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<EntitySpawnerClass> days = new List<EntitySpawnerClass>();
 }

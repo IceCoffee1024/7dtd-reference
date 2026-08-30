@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000167 RID: 359
+// Token: 0x02000168 RID: 360
 [Preserve]
 public class BlockVendingMachine : Block
 {
-	// Token: 0x06000A27 RID: 2599 RVA: 0x00043C68 File Offset: 0x00041E68
+	// Token: 0x06000A31 RID: 2609 RVA: 0x00043EC8 File Offset: 0x000420C8
 	public BlockVendingMachine()
 	{
 		this.HasTileEntity = true;
 	}
 
-	// Token: 0x06000A28 RID: 2600 RVA: 0x00043CF4 File Offset: 0x00041EF4
+	// Token: 0x06000A32 RID: 2610 RVA: 0x00043F54 File Offset: 0x00042154
 	public override void Init()
 	{
 		base.Init();
@@ -24,7 +24,7 @@ public class BlockVendingMachine : Block
 		int.TryParse(base.Properties.Values[BlockVendingMachine.PropTraderID], out this.traderID);
 	}
 
-	// Token: 0x06000A29 RID: 2601 RVA: 0x00043D5C File Offset: 0x00041F5C
+	// Token: 0x06000A33 RID: 2611 RVA: 0x00043FBC File Offset: 0x000421BC
 	public override void PlaceBlock(WorldBase _world, BlockPlacement.Result _result, EntityAlive _ea)
 	{
 		base.PlaceBlock(_world, _result, _ea);
@@ -39,7 +39,7 @@ public class BlockVendingMachine : Block
 		}
 	}
 
-	// Token: 0x06000A2A RID: 2602 RVA: 0x00043DFC File Offset: 0x00041FFC
+	// Token: 0x06000A34 RID: 2612 RVA: 0x0004405C File Offset: 0x0004225C
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		TileEntityVendingMachine tileEntityVendingMachine = _world.GetTileEntity(_blockPos) as TileEntityVendingMachine;
@@ -78,13 +78,13 @@ public class BlockVendingMachine : Block
 		return string.Format(Localization.Get("vendingMachineActivate", false, null), text, text2);
 	}
 
-	// Token: 0x06000A2B RID: 2603 RVA: 0x00043FB5 File Offset: 0x000421B5
+	// Token: 0x06000A35 RID: 2613 RVA: 0x00044215 File Offset: 0x00042415
 	public override bool HasBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		return _world.GetTileEntity(_blockPos) is TileEntityVendingMachine;
 	}
 
-	// Token: 0x06000A2C RID: 2604 RVA: 0x00043FC8 File Offset: 0x000421C8
+	// Token: 0x06000A36 RID: 2614 RVA: 0x00044228 File Offset: 0x00042428
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		TileEntityVendingMachine tileEntityVendingMachine = _world.GetTileEntity(_blockPos) as TileEntityVendingMachine;
@@ -110,7 +110,7 @@ public class BlockVendingMachine : Block
 		return this.cmds;
 	}
 
-	// Token: 0x06000A2D RID: 2605 RVA: 0x000440D0 File Offset: 0x000422D0
+	// Token: 0x06000A37 RID: 2615 RVA: 0x00044330 File Offset: 0x00042530
 	public override void OnBlockAdded(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -137,7 +137,7 @@ public class BlockVendingMachine : Block
 		}
 	}
 
-	// Token: 0x06000A2E RID: 2606 RVA: 0x0004415C File Offset: 0x0004235C
+	// Token: 0x06000A38 RID: 2616 RVA: 0x000443BC File Offset: 0x000425BC
 	public override void OnBlockRemoved(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockRemoved(world, _chunk, _blockPos, _blockValue);
@@ -157,14 +157,14 @@ public class BlockVendingMachine : Block
 		_chunk.RemoveTileEntityAt<TileEntityVendingMachine>((World)world, World.toBlock(_blockPos));
 	}
 
-	// Token: 0x06000A2F RID: 2607 RVA: 0x000441CD File Offset: 0x000423CD
+	// Token: 0x06000A39 RID: 2617 RVA: 0x0004442D File Offset: 0x0004262D
 	public override Block.DestroyedResult OnBlockDestroyedBy(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _entityId, bool _bUseHarvestTool)
 	{
 		TileEntityVendingMachine tileEntityVendingMachine = _world.GetTileEntity(_bvRef) as TileEntityVendingMachine;
 		return Block.DestroyedResult.Downgrade;
 	}
 
-	// Token: 0x06000A30 RID: 2608 RVA: 0x000441E0 File Offset: 0x000423E0
+	// Token: 0x06000A3A RID: 2618 RVA: 0x00044440 File Offset: 0x00042640
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_blockValue.ischild)
@@ -210,7 +210,7 @@ public class BlockVendingMachine : Block
 		return false;
 	}
 
-	// Token: 0x06000A31 RID: 2609 RVA: 0x00044308 File Offset: 0x00042508
+	// Token: 0x06000A3B RID: 2619 RVA: 0x00044568 File Offset: 0x00042768
 	public override bool OnBlockActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_world.GetBlock(_blockPos.x, _blockPos.y - 1, _blockPos.z).Block.HasTag(BlockTags.Door))
@@ -228,7 +228,7 @@ public class BlockVendingMachine : Block
 		return true;
 	}
 
-	// Token: 0x06000A32 RID: 2610 RVA: 0x00044398 File Offset: 0x00042598
+	// Token: 0x06000A3C RID: 2620 RVA: 0x000445F8 File Offset: 0x000427F8
 	public override int OnBlockDamaged(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _damagePoints, int _entityIdThatDamaged, ItemActionAttack.AttackHitInfo _attackHitInfo, bool _bUseHarvestTool, bool _bBypassMaxDamage, int _recDepth = 0)
 	{
 		if (_damagePoints > 0 && base.Properties.Values.ContainsKey("Buff"))
@@ -262,19 +262,19 @@ public class BlockVendingMachine : Block
 		return base.OnBlockDamaged(_world, _bvRef, _blockValue, _damagePoints, _entityIdThatDamaged, _attackHitInfo, _bUseHarvestTool, _bBypassMaxDamage, _recDepth);
 	}
 
-	// Token: 0x04000A16 RID: 2582
+	// Token: 0x04000A18 RID: 2584
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropTraderID = "TraderID";
 
-	// Token: 0x04000A17 RID: 2583
+	// Token: 0x04000A19 RID: 2585
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int traderID;
 
-	// Token: 0x04000A18 RID: 2584
+	// Token: 0x04000A1A RID: 2586
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<int> buffActions;
 
-	// Token: 0x04000A19 RID: 2585
+	// Token: 0x04000A1B RID: 2587
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new BlockActivationCommand[] cmds = new BlockActivationCommand[]
 	{

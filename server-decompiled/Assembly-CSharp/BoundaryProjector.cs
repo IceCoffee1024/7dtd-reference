@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001344 RID: 4932
+// Token: 0x0200135E RID: 4958
 public class BoundaryProjector : MonoBehaviour
 {
-	// Token: 0x06009B57 RID: 39767 RVA: 0x003AADC4 File Offset: 0x003A8FC4
+	// Token: 0x06009C52 RID: 40018 RVA: 0x003B006C File Offset: 0x003AE26C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
@@ -21,13 +21,13 @@ public class BoundaryProjector : MonoBehaviour
 		this.SetupProjectors();
 	}
 
-	// Token: 0x06009B58 RID: 39768 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009C53 RID: 40019 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void SetupProjectors()
 	{
 	}
 
-	// Token: 0x06009B59 RID: 39769 RVA: 0x003AAE18 File Offset: 0x003A9018
+	// Token: 0x06009C54 RID: 40020 RVA: 0x003B00C0 File Offset: 0x003AE2C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -67,7 +67,7 @@ public class BoundaryProjector : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009B5A RID: 39770 RVA: 0x003AB008 File Offset: 0x003A9208
+	// Token: 0x06009C55 RID: 40021 RVA: 0x003B02B0 File Offset: 0x003AE4B0
 	public void SetRadius(int projectorID, float size)
 	{
 		if (projectorID < this.ProjectorList.Count && this.ProjectorList[projectorID] != null)
@@ -82,7 +82,7 @@ public class BoundaryProjector : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009B5B RID: 39771 RVA: 0x003AB0A0 File Offset: 0x003A92A0
+	// Token: 0x06009C56 RID: 40022 RVA: 0x003B0348 File Offset: 0x003AE548
 	public void SetAlpha(int projectorID, float alpha)
 	{
 		if (projectorID < this.ProjectorList.Count && this.ProjectorList[projectorID] != null)
@@ -92,7 +92,7 @@ public class BoundaryProjector : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009B5C RID: 39772 RVA: 0x003AB118 File Offset: 0x003A9318
+	// Token: 0x06009C57 RID: 40023 RVA: 0x003B03C0 File Offset: 0x003AE5C0
 	public void SetGlow(int projectorID, bool isGlowing)
 	{
 		if (projectorID < this.ProjectorList.Count && this.ProjectorList[projectorID] != null)
@@ -102,7 +102,7 @@ public class BoundaryProjector : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009B5D RID: 39773 RVA: 0x003AB174 File Offset: 0x003A9374
+	// Token: 0x06009C58 RID: 40024 RVA: 0x003B041C File Offset: 0x003AE61C
 	public void SetAutoRotate(int projectorID, bool autoRotate, float rotateSpeed)
 	{
 		if (projectorID < this.ProjectorList.Count && this.ProjectorList[projectorID] != null)
@@ -112,7 +112,7 @@ public class BoundaryProjector : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009B5E RID: 39774 RVA: 0x003AB1CB File Offset: 0x003A93CB
+	// Token: 0x06009C59 RID: 40025 RVA: 0x003B0473 File Offset: 0x003AE673
 	public void SetMoveToPosition(Vector3 vNew)
 	{
 		if (base.transform.position.y == -999f)
@@ -123,45 +123,45 @@ public class BoundaryProjector : MonoBehaviour
 		this.targetPos = vNew;
 	}
 
-	// Token: 0x04007536 RID: 30006
+	// Token: 0x0400760E RID: 30222
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public List<BoundaryProjector.ProjectorEntry> ProjectorList = new List<BoundaryProjector.ProjectorEntry>();
 
-	// Token: 0x04007537 RID: 30007
+	// Token: 0x0400760F RID: 30223
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public static Vector3 invalidPos = new Vector3(-999f, -999f, -999f);
 
-	// Token: 0x04007538 RID: 30008
+	// Token: 0x04007610 RID: 30224
 	public Vector3 targetPos = BoundaryProjector.invalidPos;
 
-	// Token: 0x04007539 RID: 30009
+	// Token: 0x04007611 RID: 30225
 	public bool IsInitialized;
 
-	// Token: 0x02001345 RID: 4933
+	// Token: 0x0200135F RID: 4959
 	public class ProjectorEntry
 	{
-		// Token: 0x0400753A RID: 30010
+		// Token: 0x04007612 RID: 30226
 		public BoundaryProjector.ProjectorEffectData EffectData;
 
-		// Token: 0x0400753B RID: 30011
+		// Token: 0x04007613 RID: 30227
 		public Projector Projector;
 	}
 
-	// Token: 0x02001346 RID: 4934
+	// Token: 0x02001360 RID: 4960
 	public class ProjectorEffectData
 	{
-		// Token: 0x0400753C RID: 30012
+		// Token: 0x04007614 RID: 30228
 		public bool AutoRotate;
 
-		// Token: 0x0400753D RID: 30013
+		// Token: 0x04007615 RID: 30229
 		public float RotationSpeed;
 
-		// Token: 0x0400753E RID: 30014
+		// Token: 0x04007616 RID: 30230
 		public bool IsGlowing;
 
-		// Token: 0x0400753F RID: 30015
+		// Token: 0x04007617 RID: 30231
 		public float targetRadius = -1f;
 	}
 }

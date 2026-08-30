@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005A6 RID: 1446
+// Token: 0x020005AB RID: 1451
 [Preserve]
 public class ItemActionDumpWater : ItemAction
 {
-	// Token: 0x06002F4A RID: 12106 RVA: 0x0012E3FA File Offset: 0x0012C5FA
+	// Token: 0x06002F78 RID: 12152 RVA: 0x0012F46A File Offset: 0x0012D66A
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -16,13 +16,13 @@ public class ItemActionDumpWater : ItemAction
 		}
 	}
 
-	// Token: 0x06002F4B RID: 12107 RVA: 0x0012E42B File Offset: 0x0012C62B
+	// Token: 0x06002F79 RID: 12153 RVA: 0x0012F49B File Offset: 0x0012D69B
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionDumpWater.DumpWaterActionData(_invData, _indexInEntityOfAction);
 	}
 
-	// Token: 0x06002F4C RID: 12108 RVA: 0x0012E434 File Offset: 0x0012C634
+	// Token: 0x06002F7A RID: 12154 RVA: 0x0012F4A4 File Offset: 0x0012D6A4
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		if (!_bReleased)
@@ -74,7 +74,7 @@ public class ItemActionDumpWater : ItemAction
 		}
 	}
 
-	// Token: 0x06002F4D RID: 12109 RVA: 0x0012E5C0 File Offset: 0x0012C7C0
+	// Token: 0x06002F7B RID: 12155 RVA: 0x0012F630 File Offset: 0x0012D830
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryFindDumpPosition(WorldRayHitInfo hitInfo, out Vector3i blockPos)
 	{
@@ -126,13 +126,13 @@ public class ItemActionDumpWater : ItemAction
 		return WaterUtils.CanWaterFlowThrough(GameManager.Instance.World.GetBlock(blockPos));
 	}
 
-	// Token: 0x06002F4E RID: 12110 RVA: 0x00129614 File Offset: 0x00127814
+	// Token: 0x06002F7C RID: 12156 RVA: 0x0012A684 File Offset: 0x00128884
 	public override bool IsActionRunning(ItemActionData _actionData)
 	{
 		return _actionData.lastUseTime != 0f && Time.time - _actionData.lastUseTime < this.Delay;
 	}
 
-	// Token: 0x06002F4F RID: 12111 RVA: 0x0012E734 File Offset: 0x0012C934
+	// Token: 0x06002F7D RID: 12157 RVA: 0x0012F7A4 File Offset: 0x0012D9A4
 	public override void OnHoldingUpdate(ItemActionData _actionData)
 	{
 		if (_actionData.lastUseTime == 0f || this.IsActionRunning(_actionData))
@@ -159,25 +159,25 @@ public class ItemActionDumpWater : ItemAction
 		}
 	}
 
-	// Token: 0x0400249E RID: 9374
+	// Token: 0x040024D2 RID: 9426
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string PropChangeItemTo = "Change_item_to";
 
-	// Token: 0x0400249F RID: 9375
+	// Token: 0x040024D3 RID: 9427
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string changeItemToItem;
 
-	// Token: 0x020005A7 RID: 1447
+	// Token: 0x020005AC RID: 1452
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class DumpWaterActionData : ItemActionAttackData
 	{
-		// Token: 0x06002F51 RID: 12113 RVA: 0x00129694 File Offset: 0x00127894
+		// Token: 0x06002F7F RID: 12159 RVA: 0x0012A704 File Offset: 0x00128904
 		public DumpWaterActionData(ItemInventoryData _invData, int _indexInEntityOfAction)
 			: base(_invData, _indexInEntityOfAction)
 		{
 		}
 
-		// Token: 0x040024A0 RID: 9376
+		// Token: 0x040024D4 RID: 9428
 		public Vector3i targetPosition;
 	}
 }

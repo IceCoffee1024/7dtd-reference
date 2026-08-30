@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x020014F5 RID: 5365
+// Token: 0x02001510 RID: 5392
 public class SimplexNoise
 {
-	// Token: 0x0600A89E RID: 43166 RVA: 0x003EEF44 File Offset: 0x003ED144
+	// Token: 0x0600A99B RID: 43419 RVA: 0x003F4284 File Offset: 0x003F2484
 	public static float noise(float x, float y, float z)
 	{
 		SimplexNoise.s = (x + y + z) * 0.33333334f;
@@ -20,7 +20,7 @@ public class SimplexNoise
 		return SimplexNoise.K(num) + SimplexNoise.K(3 - num - num2) + SimplexNoise.K(num2) + SimplexNoise.K(0);
 	}
 
-	// Token: 0x0600A89F RID: 43167 RVA: 0x003EF083 File Offset: 0x003ED283
+	// Token: 0x0600A99C RID: 43420 RVA: 0x003F43C3 File Offset: 0x003F25C3
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int fastfloor(float n)
 	{
@@ -31,7 +31,7 @@ public class SimplexNoise
 		return (int)n;
 	}
 
-	// Token: 0x0600A8A0 RID: 43168 RVA: 0x003EF094 File Offset: 0x003ED294
+	// Token: 0x0600A99D RID: 43421 RVA: 0x003F43D4 File Offset: 0x003F25D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float K(int a)
 	{
@@ -61,68 +61,68 @@ public class SimplexNoise
 		return 8f * num4 * num4 * (num11 + ((num10 == 0) ? (num12 + num13) : ((num9 == 0) ? num12 : num13)));
 	}
 
-	// Token: 0x0600A8A1 RID: 43169 RVA: 0x003EF218 File Offset: 0x003ED418
+	// Token: 0x0600A99E RID: 43422 RVA: 0x003F4558 File Offset: 0x003F2758
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int shuffle(int i, int j, int k)
 	{
 		return SimplexNoise.b(i, j, k, 0) + SimplexNoise.b(j, k, i, 1) + SimplexNoise.b(k, i, j, 2) + SimplexNoise.b(i, j, k, 3) + SimplexNoise.b(j, k, i, 4) + SimplexNoise.b(k, i, j, 5) + SimplexNoise.b(i, j, k, 6) + SimplexNoise.b(j, k, i, 7);
 	}
 
-	// Token: 0x0600A8A2 RID: 43170 RVA: 0x003EF274 File Offset: 0x003ED474
+	// Token: 0x0600A99F RID: 43423 RVA: 0x003F45B4 File Offset: 0x003F27B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int b(int i, int j, int k, int B)
 	{
 		return SimplexNoise.T[(SimplexNoise.b(i, B) << 2) | (SimplexNoise.b(j, B) << 1) | SimplexNoise.b(k, B)];
 	}
 
-	// Token: 0x0600A8A3 RID: 43171 RVA: 0x003EF297 File Offset: 0x003ED497
+	// Token: 0x0600A9A0 RID: 43424 RVA: 0x003F45D7 File Offset: 0x003F27D7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int b(int N, int B)
 	{
 		return (N >> B) & 1;
 	}
 
-	// Token: 0x04007CC8 RID: 31944
+	// Token: 0x04007DA1 RID: 32161
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int i;
 
-	// Token: 0x04007CC9 RID: 31945
+	// Token: 0x04007DA2 RID: 32162
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int j;
 
-	// Token: 0x04007CCA RID: 31946
+	// Token: 0x04007DA3 RID: 32163
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int k;
 
-	// Token: 0x04007CCB RID: 31947
+	// Token: 0x04007DA4 RID: 32164
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int[] A = new int[3];
 
-	// Token: 0x04007CCC RID: 31948
+	// Token: 0x04007DA5 RID: 32165
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float u;
 
-	// Token: 0x04007CCD RID: 31949
+	// Token: 0x04007DA6 RID: 32166
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float v;
 
-	// Token: 0x04007CCE RID: 31950
+	// Token: 0x04007DA7 RID: 32167
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float w;
 
-	// Token: 0x04007CCF RID: 31951
+	// Token: 0x04007DA8 RID: 32168
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float s;
 
-	// Token: 0x04007CD0 RID: 31952
+	// Token: 0x04007DA9 RID: 32169
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float onethird = 0.33333334f;
 
-	// Token: 0x04007CD1 RID: 31953
+	// Token: 0x04007DAA RID: 32170
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float onesixth = 0.16666667f;
 
-	// Token: 0x04007CD2 RID: 31954
+	// Token: 0x04007DAB RID: 32171
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int[] T = new int[] { 21, 56, 50, 44, 13, 19, 7, 42 };
 }

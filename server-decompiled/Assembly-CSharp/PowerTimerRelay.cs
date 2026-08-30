@@ -3,11 +3,11 @@ using System.IO;
 using Audio;
 using UnityEngine;
 
-// Token: 0x02000908 RID: 2312
+// Token: 0x02000914 RID: 2324
 public class PowerTimerRelay : PowerTrigger
 {
-	// Token: 0x1700071C RID: 1820
-	// (get) Token: 0x06004305 RID: 17157 RVA: 0x0007FE9C File Offset: 0x0007E09C
+	// Token: 0x17000728 RID: 1832
+	// (get) Token: 0x0600436A RID: 17258 RVA: 0x00080550 File Offset: 0x0007E750
 	public override PowerItem.PowerItemTypes PowerItemType
 	{
 		get
@@ -16,9 +16,9 @@ public class PowerTimerRelay : PowerTrigger
 		}
 	}
 
-	// Token: 0x1700071D RID: 1821
-	// (get) Token: 0x06004306 RID: 17158 RVA: 0x001A1E8B File Offset: 0x001A008B
-	// (set) Token: 0x06004307 RID: 17159 RVA: 0x001A1E94 File Offset: 0x001A0094
+	// Token: 0x17000729 RID: 1833
+	// (get) Token: 0x0600436B RID: 17259 RVA: 0x001A3F63 File Offset: 0x001A2163
+	// (set) Token: 0x0600436C RID: 17260 RVA: 0x001A3F6C File Offset: 0x001A216C
 	public byte StartTime
 	{
 		get
@@ -34,9 +34,9 @@ public class PowerTimerRelay : PowerTrigger
 		}
 	}
 
-	// Token: 0x1700071E RID: 1822
-	// (get) Token: 0x06004308 RID: 17160 RVA: 0x001A1ED2 File Offset: 0x001A00D2
-	// (set) Token: 0x06004309 RID: 17161 RVA: 0x001A1EDC File Offset: 0x001A00DC
+	// Token: 0x1700072A RID: 1834
+	// (get) Token: 0x0600436D RID: 17261 RVA: 0x001A3FAA File Offset: 0x001A21AA
+	// (set) Token: 0x0600436E RID: 17262 RVA: 0x001A3FB4 File Offset: 0x001A21B4
 	public byte EndTime
 	{
 		get
@@ -52,16 +52,16 @@ public class PowerTimerRelay : PowerTrigger
 		}
 	}
 
-	// Token: 0x0600430A RID: 17162 RVA: 0x001A1F1A File Offset: 0x001A011A
+	// Token: 0x0600436F RID: 17263 RVA: 0x001A3FF2 File Offset: 0x001A21F2
 	public PowerTimerRelay()
 	{
 		this.StartTime = 0;
 		this.EndTime = 24;
 	}
 
-	// Token: 0x1700071F RID: 1823
-	// (get) Token: 0x0600430B RID: 17163 RVA: 0x001A1F39 File Offset: 0x001A0139
-	// (set) Token: 0x0600430C RID: 17164 RVA: 0x001A1F44 File Offset: 0x001A0144
+	// Token: 0x1700072B RID: 1835
+	// (get) Token: 0x06004370 RID: 17264 RVA: 0x001A4011 File Offset: 0x001A2211
+	// (set) Token: 0x06004371 RID: 17265 RVA: 0x001A401C File Offset: 0x001A221C
 	public override bool IsTriggered
 	{
 		get
@@ -93,13 +93,13 @@ public class PowerTimerRelay : PowerTrigger
 		}
 	}
 
-	// Token: 0x0600430D RID: 17165 RVA: 0x001A1FD5 File Offset: 0x001A01D5
+	// Token: 0x06004372 RID: 17266 RVA: 0x001A40AD File Offset: 0x001A22AD
 	public override bool PowerChildren()
 	{
 		return this.IsTriggered;
 	}
 
-	// Token: 0x0600430E RID: 17166 RVA: 0x001A1FE0 File Offset: 0x001A01E0
+	// Token: 0x06004373 RID: 17267 RVA: 0x001A40B8 File Offset: 0x001A22B8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CheckForActiveChange()
 	{
@@ -120,7 +120,7 @@ public class PowerTimerRelay : PowerTrigger
 		}
 	}
 
-	// Token: 0x0600430F RID: 17167 RVA: 0x001A206B File Offset: 0x001A026B
+	// Token: 0x06004374 RID: 17268 RVA: 0x001A4143 File Offset: 0x001A2343
 	public override void CachedUpdateCall()
 	{
 		if (Time.time > this.updateTime)
@@ -130,7 +130,7 @@ public class PowerTimerRelay : PowerTrigger
 		}
 	}
 
-	// Token: 0x06004310 RID: 17168 RVA: 0x001A2094 File Offset: 0x001A0294
+	// Token: 0x06004375 RID: 17269 RVA: 0x001A416C File Offset: 0x001A236C
 	public override void HandlePowerReceived(ref ushort power)
 	{
 		ushort num = (ushort)Mathf.Min((int)this.RequiredPower, (int)power);
@@ -155,7 +155,7 @@ public class PowerTimerRelay : PowerTrigger
 		}
 	}
 
-	// Token: 0x06004311 RID: 17169 RVA: 0x001A2118 File Offset: 0x001A0318
+	// Token: 0x06004376 RID: 17270 RVA: 0x001A41F0 File Offset: 0x001A23F0
 	public override void HandlePowerUpdate(bool parentIsOn)
 	{
 		if (this.TileEntity != null)
@@ -170,7 +170,7 @@ public class PowerTimerRelay : PowerTrigger
 		this.hasChangesLocal = true;
 	}
 
-	// Token: 0x06004312 RID: 17170 RVA: 0x001A218D File Offset: 0x001A038D
+	// Token: 0x06004377 RID: 17271 RVA: 0x001A4265 File Offset: 0x001A2465
 	public override void read(BinaryReader _br, byte _version)
 	{
 		base.read(_br, _version);
@@ -178,7 +178,7 @@ public class PowerTimerRelay : PowerTrigger
 		this.EndTime = _br.ReadByte();
 	}
 
-	// Token: 0x06004313 RID: 17171 RVA: 0x001A21AF File Offset: 0x001A03AF
+	// Token: 0x06004378 RID: 17272 RVA: 0x001A4287 File Offset: 0x001A2487
 	public override void write(BinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -186,23 +186,23 @@ public class PowerTimerRelay : PowerTrigger
 		_bw.Write(this.EndTime);
 	}
 
-	// Token: 0x040035E7 RID: 13799
+	// Token: 0x04003668 RID: 13928
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte startTime;
 
-	// Token: 0x040035E8 RID: 13800
+	// Token: 0x04003669 RID: 13929
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte endTime = 12;
 
-	// Token: 0x040035E9 RID: 13801
+	// Token: 0x0400366A RID: 13930
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong startTimeInTicks;
 
-	// Token: 0x040035EA RID: 13802
+	// Token: 0x0400366B RID: 13931
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong endTimeInTicks;
 
-	// Token: 0x040035EB RID: 13803
+	// Token: 0x0400366C RID: 13932
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float updateTime;
 }

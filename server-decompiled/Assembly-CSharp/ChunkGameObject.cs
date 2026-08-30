@@ -4,16 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x02000B0F RID: 2831
+// Token: 0x02000B21 RID: 2849
 public class ChunkGameObject : MonoBehaviour
 {
-	// Token: 0x06005591 RID: 21905 RVA: 0x0020B983 File Offset: 0x00209B83
+	// Token: 0x06005619 RID: 22041 RVA: 0x0020E69F File Offset: 0x0020C89F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ChunkGameObject()
 	{
 	}
 
-	// Token: 0x06005592 RID: 21906 RVA: 0x0020B9A4 File Offset: 0x00209BA4
+	// Token: 0x0600561A RID: 22042 RVA: 0x0020E6C0 File Offset: 0x0020C8C0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Awake()
 	{
@@ -21,13 +21,13 @@ public class ChunkGameObject : MonoBehaviour
 		this.blockEntitiesParentT.SetParent(base.transform, false);
 	}
 
-	// Token: 0x06005593 RID: 21907 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600561B RID: 22043 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnEnable()
 	{
 	}
 
-	// Token: 0x06005594 RID: 21908 RVA: 0x0020B9CD File Offset: 0x00209BCD
+	// Token: 0x0600561C RID: 22044 RVA: 0x0020E6E9 File Offset: 0x0020C8E9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnDisable()
 	{
@@ -42,7 +42,7 @@ public class ChunkGameObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06005595 RID: 21909 RVA: 0x0020BA00 File Offset: 0x00209C00
+	// Token: 0x0600561D RID: 22045 RVA: 0x0020E71C File Offset: 0x0020C91C
 	public void SetStatic(bool _bStatic)
 	{
 		for (int i = 0; i < this.layers.Length; i++)
@@ -65,13 +65,13 @@ public class ChunkGameObject : MonoBehaviour
 		base.transform.gameObject.isStatic = _bStatic;
 	}
 
-	// Token: 0x06005596 RID: 21910 RVA: 0x0020BAB3 File Offset: 0x00209CB3
+	// Token: 0x0600561E RID: 22046 RVA: 0x0020E7CF File Offset: 0x0020C9CF
 	public Chunk GetChunk()
 	{
 		return this.chunk;
 	}
 
-	// Token: 0x06005597 RID: 21911 RVA: 0x0020BABC File Offset: 0x00209CBC
+	// Token: 0x0600561F RID: 22047 RVA: 0x0020E7D8 File Offset: 0x0020C9D8
 	public void SetChunk(Chunk _chunk, ChunkCluster _chunkCluster)
 	{
 		if (this.chunk != null && this.chunk != _chunk)
@@ -110,7 +110,7 @@ public class ChunkGameObject : MonoBehaviour
 		this.RemoveWallVolumes();
 	}
 
-	// Token: 0x06005598 RID: 21912 RVA: 0x0020BC24 File Offset: 0x00209E24
+	// Token: 0x06005620 RID: 22048 RVA: 0x0020E940 File Offset: 0x0020CB40
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RemoveWallVolumes()
 	{
@@ -120,7 +120,7 @@ public class ChunkGameObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06005599 RID: 21913 RVA: 0x0020BC43 File Offset: 0x00209E43
+	// Token: 0x06005621 RID: 22049 RVA: 0x0020E95F File Offset: 0x0020CB5F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator HandleWallVolumes(Chunk _chunk, ChunkCluster _chunkCluster)
 	{
@@ -156,7 +156,7 @@ public class ChunkGameObject : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x0600559A RID: 21914 RVA: 0x0020BC60 File Offset: 0x00209E60
+	// Token: 0x06005622 RID: 22050 RVA: 0x0020E97C File Offset: 0x0020CB7C
 	public int StartCopyMeshLayer()
 	{
 		this.currentlyCopiedMeshIdx = 0;
@@ -196,7 +196,7 @@ public class ChunkGameObject : MonoBehaviour
 		return this.vml.idx;
 	}
 
-	// Token: 0x0600559B RID: 21915 RVA: 0x0020BD70 File Offset: 0x00209F70
+	// Token: 0x06005623 RID: 22051 RVA: 0x0020EA8C File Offset: 0x0020CC8C
 	public void EndCopyMeshLayer()
 	{
 		if (this.vml == null)
@@ -213,7 +213,7 @@ public class ChunkGameObject : MonoBehaviour
 		this.vml = null;
 	}
 
-	// Token: 0x0600559C RID: 21916 RVA: 0x0020BDC8 File Offset: 0x00209FC8
+	// Token: 0x06005624 RID: 22052 RVA: 0x0020EAE4 File Offset: 0x0020CCE4
 	public bool CreateFromChunkNext(out int _startIdx, out int _endIdx, out int _triangles, out int _colliderTriangles)
 	{
 		this.nextMS.ResetAndRestart();
@@ -242,7 +242,7 @@ public class ChunkGameObject : MonoBehaviour
 		return this.currentlyCopiedMeshIdx < MeshDescription.meshes.Length;
 	}
 
-	// Token: 0x0600559D RID: 21917 RVA: 0x0020BE84 File Offset: 0x0020A084
+	// Token: 0x06005625 RID: 22053 RVA: 0x0020EBA0 File Offset: 0x0020CDA0
 	public void CreateMeshAll(out int triangles, out int colliderTriangles)
 	{
 		triangles = 0;
@@ -260,7 +260,7 @@ public class ChunkGameObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600559E RID: 21918 RVA: 0x0020BEE4 File Offset: 0x0020A0E4
+	// Token: 0x06005626 RID: 22054 RVA: 0x0020EC00 File Offset: 0x0020CE00
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int copyToMesh(int _meshIdx)
 	{
@@ -284,7 +284,7 @@ public class ChunkGameObject : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x0600559F RID: 21919 RVA: 0x0020BF50 File Offset: 0x0020A150
+	// Token: 0x06005627 RID: 22055 RVA: 0x0020EC6C File Offset: 0x0020CE6C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int copyToColliders(int _meshIdx)
 	{
@@ -313,7 +313,7 @@ public class ChunkGameObject : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x060055A0 RID: 21920 RVA: 0x0020BFD4 File Offset: 0x0020A1D4
+	// Token: 0x06005628 RID: 22056 RVA: 0x0020ECF0 File Offset: 0x0020CEF0
 	public void Cleanup()
 	{
 		base.gameObject.SetActive(false);
@@ -338,7 +338,7 @@ public class ChunkGameObject : MonoBehaviour
 		this.RemoveWallVolumes();
 	}
 
-	// Token: 0x060055A1 RID: 21921 RVA: 0x0020C07C File Offset: 0x0020A27C
+	// Token: 0x06005629 RID: 22057 RVA: 0x0020ED98 File Offset: 0x0020CF98
 	public void CheckLODs(int _limitToMesh = -1)
 	{
 		if (this.chunk == null)
@@ -420,7 +420,7 @@ public class ChunkGameObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060055A2 RID: 21922 RVA: 0x0020C258 File Offset: 0x0020A458
+	// Token: 0x0600562A RID: 22058 RVA: 0x0020EF74 File Offset: 0x0020D174
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetLOD(int _meshIdx, int _lodLevel)
 	{
@@ -454,55 +454,55 @@ public class ChunkGameObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060055A3 RID: 21923 RVA: 0x0020C2EE File Offset: 0x0020A4EE
+	// Token: 0x0600562B RID: 22059 RVA: 0x0020F00A File Offset: 0x0020D20A
 	public ChunkGameObjectLayer GetLayer(int _layer)
 	{
 		return this.layers[_layer];
 	}
 
-	// Token: 0x040041F2 RID: 16882
+	// Token: 0x0400428D RID: 17037
 	public Transform blockEntitiesParentT;
 
-	// Token: 0x040041F3 RID: 16883
+	// Token: 0x0400428E RID: 17038
 	public static int InstanceCount;
 
-	// Token: 0x040041F4 RID: 16884
+	// Token: 0x0400428F RID: 17039
 	public Chunk chunk;
 
-	// Token: 0x040041F5 RID: 16885
+	// Token: 0x04004290 RID: 17040
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public ChunkCluster chunkCluster;
 
-	// Token: 0x040041F6 RID: 16886
+	// Token: 0x04004291 RID: 17041
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly ChunkGameObjectLayer[] layers = new ChunkGameObjectLayer[16];
 
-	// Token: 0x040041F7 RID: 16887
+	// Token: 0x04004292 RID: 17042
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public VoxelMeshLayer vml;
 
-	// Token: 0x040041F8 RID: 16888
+	// Token: 0x04004293 RID: 17043
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int currentlyCopiedMeshIdx;
 
-	// Token: 0x040041F9 RID: 16889
+	// Token: 0x04004294 RID: 17044
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isCopyCollidersThisCall;
 
-	// Token: 0x040041FA RID: 16890
+	// Token: 0x04004295 RID: 17045
 	public Transform wallVolumesParentT;
 
-	// Token: 0x040041FB RID: 16891
+	// Token: 0x04004296 RID: 17046
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GameObject[] wallVolumes;
 
-	// Token: 0x040041FC RID: 16892
+	// Token: 0x04004297 RID: 17047
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public MicroStopwatch nextMS = new MicroStopwatch(false);

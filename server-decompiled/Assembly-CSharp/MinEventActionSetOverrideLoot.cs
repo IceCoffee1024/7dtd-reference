@@ -2,11 +2,11 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006F0 RID: 1776
+// Token: 0x020006FA RID: 1786
 [Preserve]
 public class MinEventActionSetOverrideLoot : MinEventActionTargetedBase
 {
-	// Token: 0x0600365D RID: 13917 RVA: 0x00166EB4 File Offset: 0x001650B4
+	// Token: 0x060036B3 RID: 14003 RVA: 0x0016908C File Offset: 0x0016728C
 	public override void Execute(MinEventParams _params)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -34,7 +34,7 @@ public class MinEventActionSetOverrideLoot : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x0600365E RID: 13918 RVA: 0x00166F60 File Offset: 0x00165160
+	// Token: 0x060036B4 RID: 14004 RVA: 0x00169138 File Offset: 0x00167338
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -46,7 +46,7 @@ public class MinEventActionSetOverrideLoot : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002BB1 RID: 11185
+	// Token: 0x04002C25 RID: 11301
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string altLoot = "";
 }

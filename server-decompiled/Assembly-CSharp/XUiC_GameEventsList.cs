@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F20 RID: 3872
+// Token: 0x02000F37 RID: 3895
 [Preserve]
 public class XUiC_GameEventsList : XUiC_List<XUiC_GameEventsList.GameEventEntry>
 {
-	// Token: 0x17000E32 RID: 3634
-	// (get) Token: 0x0600799F RID: 31135 RVA: 0x002DDBF3 File Offset: 0x002DBDF3
-	// (set) Token: 0x060079A0 RID: 31136 RVA: 0x002DDBFB File Offset: 0x002DBDFB
+	// Token: 0x17000E4D RID: 3661
+	// (get) Token: 0x06007A58 RID: 31320 RVA: 0x002E1BA7 File Offset: 0x002DFDA7
+	// (set) Token: 0x06007A59 RID: 31321 RVA: 0x002E1BAF File Offset: 0x002DFDAF
 	public string Category
 	{
 		get
@@ -22,7 +22,7 @@ public class XUiC_GameEventsList : XUiC_List<XUiC_GameEventsList.GameEventEntry>
 		}
 	}
 
-	// Token: 0x060079A1 RID: 31137 RVA: 0x002DDC0C File Offset: 0x002DBE0C
+	// Token: 0x06007A5A RID: 31322 RVA: 0x002E1BC0 File Offset: 0x002DFDC0
 	public override void RebuildList(bool _resetFilter = false)
 	{
 		this.allEntries.Clear();
@@ -37,7 +37,7 @@ public class XUiC_GameEventsList : XUiC_List<XUiC_GameEventsList.GameEventEntry>
 		base.RebuildList(_resetFilter);
 	}
 
-	// Token: 0x060079A2 RID: 31138 RVA: 0x002DDCD4 File Offset: 0x002DBED4
+	// Token: 0x06007A5B RID: 31323 RVA: 0x002E1C88 File Offset: 0x002DFE88
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -47,21 +47,21 @@ public class XUiC_GameEventsList : XUiC_List<XUiC_GameEventsList.GameEventEntry>
 		}
 	}
 
-	// Token: 0x040059CA RID: 22986
+	// Token: 0x04005A7D RID: 23165
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string category = "";
 
-	// Token: 0x02000F21 RID: 3873
+	// Token: 0x02000F38 RID: 3896
 	[Preserve]
 	public class GameEventEntry : XUiListEntry<XUiC_GameEventsList.GameEventEntry>
 	{
-		// Token: 0x060079A4 RID: 31140 RVA: 0x002DDD03 File Offset: 0x002DBF03
+		// Token: 0x06007A5D RID: 31325 RVA: 0x002E1CB7 File Offset: 0x002DFEB7
 		public GameEventEntry(string _name)
 		{
 			this.name = _name;
 		}
 
-		// Token: 0x060079A5 RID: 31141 RVA: 0x002DDD12 File Offset: 0x002DBF12
+		// Token: 0x06007A5E RID: 31326 RVA: 0x002E1CC6 File Offset: 0x002DFEC6
 		public override int CompareTo(XUiC_GameEventsList.GameEventEntry _otherEntry)
 		{
 			if (_otherEntry == null)
@@ -71,25 +71,25 @@ public class XUiC_GameEventsList : XUiC_List<XUiC_GameEventsList.GameEventEntry>
 			return string.Compare(this.name, _otherEntry.name, StringComparison.OrdinalIgnoreCase);
 		}
 
-		// Token: 0x060079A6 RID: 31142 RVA: 0x002DDD2B File Offset: 0x002DBF2B
+		// Token: 0x06007A5F RID: 31327 RVA: 0x002E1CDF File Offset: 0x002DFEDF
 		public override bool MatchesSearch(string _searchString)
 		{
 			return this.name.IndexOf(_searchString, StringComparison.OrdinalIgnoreCase) >= 0;
 		}
 
-		// Token: 0x040059CB RID: 22987
+		// Token: 0x04005A7E RID: 23166
 		public readonly string name;
 
-		// Token: 0x040059CC RID: 22988
+		// Token: 0x04005A7F RID: 23167
 		public readonly string camelCase;
 	}
 
-	// Token: 0x02000F22 RID: 3874
+	// Token: 0x02000F39 RID: 3897
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class EntryController : XUiC_List<XUiC_GameEventsList.GameEventEntry>.XUiC_ListEntry
 	{
-		// Token: 0x060079A7 RID: 31143 RVA: 0x002DDD40 File Offset: 0x002DBF40
+		// Token: 0x06007A60 RID: 31328 RVA: 0x002E1CF4 File Offset: 0x002DFEF4
 		[XuiXmlBinding("name")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingName()

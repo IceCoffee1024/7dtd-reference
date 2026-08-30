@@ -2,20 +2,20 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005FA RID: 1530
+// Token: 0x02000601 RID: 1537
 [Preserve]
 public class ItemClassWaterContainer : ItemClass
 {
-	// Token: 0x17000518 RID: 1304
-	// (get) Token: 0x060031D9 RID: 12761 RVA: 0x00143F8C File Offset: 0x0014218C
-	// (set) Token: 0x060031DA RID: 12762 RVA: 0x00143F94 File Offset: 0x00142194
+	// Token: 0x17000521 RID: 1313
+	// (get) Token: 0x06003228 RID: 12840 RVA: 0x00145DD0 File Offset: 0x00143FD0
+	// (set) Token: 0x06003229 RID: 12841 RVA: 0x00145DD8 File Offset: 0x00143FD8
 	public int MaxMass
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x060031DB RID: 12763 RVA: 0x00143FA0 File Offset: 0x001421A0
+	// Token: 0x0600322A RID: 12842 RVA: 0x00145DE4 File Offset: 0x00143FE4
 	public override void Init()
 	{
 		base.Init();
@@ -26,21 +26,21 @@ public class ItemClassWaterContainer : ItemClass
 		this.initialFillRatio = Mathf.Clamp(this.initialFillRatio, 0f, 1f);
 	}
 
-	// Token: 0x060031DC RID: 12764 RVA: 0x00144015 File Offset: 0x00142215
+	// Token: 0x0600322B RID: 12843 RVA: 0x00145E59 File Offset: 0x00144059
 	public override int GetInitialMetadata(ItemValue _itemValue)
 	{
 		return (int)((float)this.MaxMass * this.initialFillRatio);
 	}
 
-	// Token: 0x04002743 RID: 10051
+	// Token: 0x040027A6 RID: 10150
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string PropWaterCapacity = "WaterCapacity";
 
-	// Token: 0x04002744 RID: 10052
+	// Token: 0x040027A7 RID: 10151
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string PropInitFillRatio = "InitialFillRatio";
 
-	// Token: 0x04002746 RID: 10054
+	// Token: 0x040027A9 RID: 10153
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float initialFillRatio;
 }

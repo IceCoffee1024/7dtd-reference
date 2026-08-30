@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine.Scripting;
 
-// Token: 0x020001FB RID: 507
+// Token: 0x020001FD RID: 509
 [Preserve]
 public class ConsoleCmdConfig : ConsoleCmdAbstract
 {
 	// Token: 0x17000158 RID: 344
-	// (get) Token: 0x06000F91 RID: 3985 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// (get) Token: 0x06000F9C RID: 3996 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -17,28 +17,28 @@ public class ConsoleCmdConfig : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F92 RID: 3986 RVA: 0x00065018 File Offset: 0x00063218
+	// Token: 0x06000F9D RID: 3997 RVA: 0x00065560 File Offset: 0x00063760
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "config" };
 	}
 
-	// Token: 0x06000F93 RID: 3987 RVA: 0x00065028 File Offset: 0x00063228
+	// Token: 0x06000F9E RID: 3998 RVA: 0x00065570 File Offset: 0x00063770
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Import/export config data from/to external file";
 	}
 
-	// Token: 0x06000F94 RID: 3988 RVA: 0x0006502F File Offset: 0x0006322F
+	// Token: 0x06000F9F RID: 3999 RVA: 0x00065577 File Offset: 0x00063777
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Imports/exports config data from/to external file\nUsage:\n   config import [filename]\n   config export [filename]\n";
 	}
 
-	// Token: 0x06000F95 RID: 3989 RVA: 0x00065038 File Offset: 0x00063238
+	// Token: 0x06000FA0 RID: 4000 RVA: 0x00065580 File Offset: 0x00063780
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		try

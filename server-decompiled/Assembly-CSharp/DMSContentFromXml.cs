@@ -5,10 +5,10 @@ using System.Xml.Linq;
 using DynamicMusic;
 using MusicUtils.Enums;
 
-// Token: 0x02000CF2 RID: 3314
+// Token: 0x02000D04 RID: 3332
 public class DMSContentFromXml
 {
-	// Token: 0x06006548 RID: 25928 RVA: 0x0027A89F File Offset: 0x00278A9F
+	// Token: 0x060065D4 RID: 26068 RVA: 0x0027D793 File Offset: 0x0027B993
 	public static IEnumerator Load(XmlFile _xmlFile)
 	{
 		XElement root = _xmlFile.XmlDoc.Root;

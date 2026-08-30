@@ -1,53 +1,53 @@
 ﻿using System;
 
-// Token: 0x0200096A RID: 2410
+// Token: 0x0200097B RID: 2427
 public abstract class BaseObjectiveModifier
 {
-	// Token: 0x17000768 RID: 1896
-	// (get) Token: 0x06004670 RID: 18032 RVA: 0x001BCB9F File Offset: 0x001BAD9F
-	// (set) Token: 0x06004671 RID: 18033 RVA: 0x001BCBA7 File Offset: 0x001BADA7
+	// Token: 0x1700077A RID: 1914
+	// (get) Token: 0x060046F6 RID: 18166 RVA: 0x001BF393 File Offset: 0x001BD593
+	// (set) Token: 0x060046F7 RID: 18167 RVA: 0x001BF39B File Offset: 0x001BD59B
 	public BaseObjective OwnerObjective { get; set; }
 
-	// Token: 0x06004672 RID: 18034 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x060046F8 RID: 18168 RVA: 0x0000640C File Offset: 0x0000460C
 	public BaseObjectiveModifier()
 	{
 	}
 
-	// Token: 0x06004673 RID: 18035 RVA: 0x001BCBB0 File Offset: 0x001BADB0
+	// Token: 0x060046F9 RID: 18169 RVA: 0x001BF3A4 File Offset: 0x001BD5A4
 	public void HandleAddHooks()
 	{
 		this.AddHooks();
 	}
 
-	// Token: 0x06004674 RID: 18036 RVA: 0x001BCBB8 File Offset: 0x001BADB8
+	// Token: 0x060046FA RID: 18170 RVA: 0x001BF3AC File Offset: 0x001BD5AC
 	public void HandleRemoveHooks()
 	{
 		this.RemoveHooks();
 	}
 
-	// Token: 0x06004675 RID: 18037 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060046FB RID: 18171 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void AddHooks()
 	{
 	}
 
-	// Token: 0x06004676 RID: 18038 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060046FC RID: 18172 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void RemoveHooks()
 	{
 	}
 
-	// Token: 0x06004677 RID: 18039 RVA: 0x0001FF1E File Offset: 0x0001E11E
+	// Token: 0x060046FD RID: 18173 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
 	public virtual BaseObjectiveModifier Clone()
 	{
 		return null;
 	}
 
-	// Token: 0x06004678 RID: 18040 RVA: 0x001BCBC0 File Offset: 0x001BADC0
+	// Token: 0x060046FE RID: 18174 RVA: 0x001BF3B4 File Offset: 0x001BD5B4
 	public virtual void ParseProperties(DynamicProperties properties)
 	{
 		this.Properties = properties;
 		this.OwnerObjective.OwnerQuestClass.HandleVariablesForProperties(properties);
 	}
 
-	// Token: 0x0400386E RID: 14446
+	// Token: 0x040038FF RID: 14591
 	public DynamicProperties Properties;
 }

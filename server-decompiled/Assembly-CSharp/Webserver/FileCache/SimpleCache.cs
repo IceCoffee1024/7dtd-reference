@@ -4,10 +4,10 @@ using System.IO;
 
 namespace Webserver.FileCache
 {
-	// Token: 0x02001AE4 RID: 6884
+	// Token: 0x02001B0B RID: 6923
 	public class SimpleCache : AbstractCache
 	{
-		// Token: 0x0600CE7B RID: 52859 RVA: 0x004B53C0 File Offset: 0x004B35C0
+		// Token: 0x0600D004 RID: 53252 RVA: 0x004BB7B4 File Offset: 0x004B99B4
 		public override byte[] GetFileContent(string _filename)
 		{
 			try
@@ -36,7 +36,7 @@ namespace Webserver.FileCache
 			return null;
 		}
 
-		// Token: 0x0600CE7C RID: 52860 RVA: 0x004B5458 File Offset: 0x004B3658
+		// Token: 0x0600D005 RID: 53253 RVA: 0x004BB84C File Offset: 0x004B9A4C
 		public override ValueTuple<int, int> Invalidate()
 		{
 			ValueTuple<int, int> valueTuple = new ValueTuple<int, int>(0, 0);
@@ -57,7 +57,7 @@ namespace Webserver.FileCache
 			return valueTuple;
 		}
 
-		// Token: 0x04009CC0 RID: 40128
+		// Token: 0x04009DF1 RID: 40433
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<string, byte[]> fileCache = new Dictionary<string, byte[]>();
 	}

@@ -5,42 +5,42 @@ using Platform;
 using UnityEngine;
 using UnityStandardAssets.ImageEffects;
 
-// Token: 0x020011BB RID: 4539
+// Token: 0x020011D7 RID: 4567
 public static class GameOptionsManager
 {
-	// Token: 0x140000F3 RID: 243
-	// (add) Token: 0x06009126 RID: 37158 RVA: 0x0036BAEC File Offset: 0x00369CEC
-	// (remove) Token: 0x06009127 RID: 37159 RVA: 0x0036BB20 File Offset: 0x00369D20
+	// Token: 0x140000F4 RID: 244
+	// (add) Token: 0x0600922A RID: 37418 RVA: 0x00370D98 File Offset: 0x0036EF98
+	// (remove) Token: 0x0600922B RID: 37419 RVA: 0x00370DCC File Offset: 0x0036EFCC
 	public static event Action<int, int> ResolutionChanged;
 
-	// Token: 0x140000F4 RID: 244
-	// (add) Token: 0x06009128 RID: 37160 RVA: 0x0036BB54 File Offset: 0x00369D54
-	// (remove) Token: 0x06009129 RID: 37161 RVA: 0x0036BB88 File Offset: 0x00369D88
+	// Token: 0x140000F5 RID: 245
+	// (add) Token: 0x0600922C RID: 37420 RVA: 0x00370E00 File Offset: 0x0036F000
+	// (remove) Token: 0x0600922D RID: 37421 RVA: 0x00370E34 File Offset: 0x0036F034
 	public static event Action<int> TextureQualityChanged;
 
-	// Token: 0x140000F5 RID: 245
-	// (add) Token: 0x0600912A RID: 37162 RVA: 0x0036BBBC File Offset: 0x00369DBC
-	// (remove) Token: 0x0600912B RID: 37163 RVA: 0x0036BBF0 File Offset: 0x00369DF0
+	// Token: 0x140000F6 RID: 246
+	// (add) Token: 0x0600922E RID: 37422 RVA: 0x00370E68 File Offset: 0x0036F068
+	// (remove) Token: 0x0600922F RID: 37423 RVA: 0x00370E9C File Offset: 0x0036F09C
 	public static event Action<int> TextureFilterChanged;
 
-	// Token: 0x140000F6 RID: 246
-	// (add) Token: 0x0600912C RID: 37164 RVA: 0x0036BC24 File Offset: 0x00369E24
-	// (remove) Token: 0x0600912D RID: 37165 RVA: 0x0036BC58 File Offset: 0x00369E58
+	// Token: 0x140000F7 RID: 247
+	// (add) Token: 0x06009230 RID: 37424 RVA: 0x00370ED0 File Offset: 0x0036F0D0
+	// (remove) Token: 0x06009231 RID: 37425 RVA: 0x00370F04 File Offset: 0x0036F104
 	public static event Action<int> ShadowDistanceChanged;
 
-	// Token: 0x140000F7 RID: 247
-	// (add) Token: 0x0600912E RID: 37166 RVA: 0x0036BC8C File Offset: 0x00369E8C
-	// (remove) Token: 0x0600912F RID: 37167 RVA: 0x0036BCC0 File Offset: 0x00369EC0
+	// Token: 0x140000F8 RID: 248
+	// (add) Token: 0x06009232 RID: 37426 RVA: 0x00370F38 File Offset: 0x0036F138
+	// (remove) Token: 0x06009233 RID: 37427 RVA: 0x00370F6C File Offset: 0x0036F16C
 	public static event Action OnGameOptionsApplied;
 
-	// Token: 0x06009130 RID: 37168 RVA: 0x0036BCF4 File Offset: 0x00369EF4
+	// Token: 0x06009234 RID: 37428 RVA: 0x00370FA0 File Offset: 0x0036F1A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	static GameOptionsManager()
 	{
 		GameOptionsManager.initQualityPresets();
 	}
 
-	// Token: 0x06009131 RID: 37169 RVA: 0x0036BDCF File Offset: 0x00369FCF
+	// Token: 0x06009235 RID: 37429 RVA: 0x0037107B File Offset: 0x0036F27B
 	public static void ValidateGamePrefs()
 	{
 		GamePrefs.OnGamePrefChanged += GameOptionsManager.OnGamePrefChanged;
@@ -51,7 +51,7 @@ public static class GameOptionsManager
 		GameOptionsManager.ValidateShadowDistance();
 	}
 
-	// Token: 0x06009132 RID: 37170 RVA: 0x0036BDFC File Offset: 0x00369FFC
+	// Token: 0x06009236 RID: 37430 RVA: 0x003710A8 File Offset: 0x0036F2A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void OnGamePrefChanged(EnumGamePrefs _pref)
 	{
@@ -116,7 +116,7 @@ public static class GameOptionsManager
 		}
 	}
 
-	// Token: 0x06009133 RID: 37171 RVA: 0x0036BE98 File Offset: 0x0036A098
+	// Token: 0x06009237 RID: 37431 RVA: 0x00371144 File Offset: 0x0036F344
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ValidateFoV()
 	{
@@ -132,7 +132,7 @@ public static class GameOptionsManager
 		}
 	}
 
-	// Token: 0x06009134 RID: 37172 RVA: 0x0036BED8 File Offset: 0x0036A0D8
+	// Token: 0x06009238 RID: 37432 RVA: 0x00371184 File Offset: 0x0036F384
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ValidateFoV3P()
 	{
@@ -148,7 +148,7 @@ public static class GameOptionsManager
 		}
 	}
 
-	// Token: 0x06009135 RID: 37173 RVA: 0x0036BF1F File Offset: 0x0036A11F
+	// Token: 0x06009239 RID: 37433 RVA: 0x003711CB File Offset: 0x0036F3CB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ValidateTreeDistance()
 	{
@@ -158,7 +158,7 @@ public static class GameOptionsManager
 		}
 	}
 
-	// Token: 0x06009136 RID: 37174 RVA: 0x0036BF3C File Offset: 0x0036A13C
+	// Token: 0x0600923A RID: 37434 RVA: 0x003711E8 File Offset: 0x0036F3E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ValidateHudSize()
 	{
@@ -174,7 +174,7 @@ public static class GameOptionsManager
 		}
 	}
 
-	// Token: 0x06009137 RID: 37175 RVA: 0x0036BF8D File Offset: 0x0036A18D
+	// Token: 0x0600923B RID: 37435 RVA: 0x00371239 File Offset: 0x0036F439
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void UpdateMumblePositionalAudioState()
 	{
@@ -186,7 +186,7 @@ public static class GameOptionsManager
 		MumblePositionalAudio.Destroy();
 	}
 
-	// Token: 0x06009138 RID: 37176 RVA: 0x0036BFA8 File Offset: 0x0036A1A8
+	// Token: 0x0600923C RID: 37436 RVA: 0x00371254 File Offset: 0x0036F454
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ValidateShadowDistance()
 	{
@@ -197,7 +197,7 @@ public static class GameOptionsManager
 		}
 	}
 
-	// Token: 0x06009139 RID: 37177 RVA: 0x0036BFD0 File Offset: 0x0036A1D0
+	// Token: 0x0600923D RID: 37437 RVA: 0x0037127C File Offset: 0x0036F47C
 	public static void ApplyAllOptions(LocalPlayerUI _playerUi)
 	{
 		QualitySettings.antiAliasing = 0;
@@ -224,7 +224,7 @@ public static class GameOptionsManager
 		onGameOptionsApplied();
 	}
 
-	// Token: 0x0600913A RID: 37178 RVA: 0x0036C090 File Offset: 0x0036A290
+	// Token: 0x0600923E RID: 37438 RVA: 0x0037133C File Offset: 0x0036F53C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ApplyScreenResolution()
 	{
@@ -245,7 +245,7 @@ public static class GameOptionsManager
 		GameOptionsManager.SetResolution(item, item2, item3);
 	}
 
-	// Token: 0x0600913B RID: 37179 RVA: 0x0036C13C File Offset: 0x0036A33C
+	// Token: 0x0600923F RID: 37439 RVA: 0x003713E8 File Offset: 0x0036F5E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ApplyShadowQuality()
 	{
@@ -312,7 +312,7 @@ public static class GameOptionsManager
 		}
 	}
 
-	// Token: 0x0600913C RID: 37180 RVA: 0x0036C294 File Offset: 0x0036A494
+	// Token: 0x06009240 RID: 37440 RVA: 0x00371540 File Offset: 0x0036F740
 	public static float GetLODBias()
 	{
 		int @int = GamePrefs.GetInt(EnumGamePrefs.OptionsGfxObjQuality);
@@ -333,7 +333,7 @@ public static class GameOptionsManager
 		}
 	}
 
-	// Token: 0x0600913D RID: 37181 RVA: 0x0036C2EC File Offset: 0x0036A4EC
+	// Token: 0x06009241 RID: 37441 RVA: 0x00371598 File Offset: 0x0036F798
 	public static void CheckResolution()
 	{
 		if (GameOptionsManager.screenExclusiveCheckDelay > 0 && --GameOptionsManager.screenExclusiveCheckDelay == 0)
@@ -351,7 +351,7 @@ public static class GameOptionsManager
 		}
 	}
 
-	// Token: 0x0600913E RID: 37182 RVA: 0x0036C36C File Offset: 0x0036A56C
+	// Token: 0x06009242 RID: 37442 RVA: 0x00371618 File Offset: 0x0036F818
 	public static void SetResolution(int _width, int _height, FullScreenMode _fullscreen = FullScreenMode.Windowed)
 	{
 		if (Screen.width == _width && Screen.height == _height && Screen.fullScreenMode == _fullscreen)
@@ -379,7 +379,7 @@ public static class GameOptionsManager
 		}
 	}
 
-	// Token: 0x0600913F RID: 37183 RVA: 0x0036C470 File Offset: 0x0036A670
+	// Token: 0x06009243 RID: 37443 RVA: 0x0037171C File Offset: 0x0036F91C
 	public static int GetTextureQuality(int _overrideValue = -1)
 	{
 		if (_overrideValue != -1)
@@ -394,13 +394,13 @@ public static class GameOptionsManager
 		return Utils.FastMax(num, GameOptionsManager.CalcTextureQualityMin());
 	}
 
-	// Token: 0x06009140 RID: 37184 RVA: 0x0036C4A5 File Offset: 0x0036A6A5
+	// Token: 0x06009244 RID: 37444 RVA: 0x00371751 File Offset: 0x0036F951
 	public static int CalcTextureQualityMin()
 	{
 		return GameOptionsPlatforms.CalcTextureQualityMin();
 	}
 
-	// Token: 0x06009141 RID: 37185 RVA: 0x0036C4AC File Offset: 0x0036A6AC
+	// Token: 0x06009245 RID: 37445 RVA: 0x00371758 File Offset: 0x0036F958
 	public static void ApplyTextureQuality(int _overrideValue = -1)
 	{
 		int textureQuality = GameOptionsManager.GetTextureQuality(_overrideValue);
@@ -431,13 +431,13 @@ public static class GameOptionsManager
 		Log.Out("Texture quality is set to " + GameRenderManager.TextureMipmapLimit.ToString());
 	}
 
-	// Token: 0x06009142 RID: 37186 RVA: 0x0036C541 File Offset: 0x0036A741
+	// Token: 0x06009246 RID: 37446 RVA: 0x003717ED File Offset: 0x0036F9ED
 	public static int GetTextureFilter()
 	{
 		return GameOptionsPlatforms.ApplyTextureFilterLimit(GamePrefs.GetInt(EnumGamePrefs.OptionsGfxTexFilter));
 	}
 
-	// Token: 0x06009143 RID: 37187 RVA: 0x0036C554 File Offset: 0x0036A754
+	// Token: 0x06009247 RID: 37447 RVA: 0x00371800 File Offset: 0x0036FA00
 	public static void ApplyTextureFilter()
 	{
 		int textureFilter = GameOptionsManager.GetTextureFilter();
@@ -453,7 +453,7 @@ public static class GameOptionsManager
 		});
 	}
 
-	// Token: 0x06009144 RID: 37188 RVA: 0x0036C5B4 File Offset: 0x0036A7B4
+	// Token: 0x06009248 RID: 37448 RVA: 0x00371860 File Offset: 0x0036FA60
 	public static void ApplyCameraOptions(EntityPlayerLocal _playerLocal = null)
 	{
 		bool flag = false;
@@ -490,7 +490,7 @@ public static class GameOptionsManager
 		}
 	}
 
-	// Token: 0x06009145 RID: 37189 RVA: 0x0036C674 File Offset: 0x0036A874
+	// Token: 0x06009249 RID: 37449 RVA: 0x00371920 File Offset: 0x0036FB20
 	public static void ApplyTerrainOptions()
 	{
 		int @int = GamePrefs.GetInt(EnumGamePrefs.OptionsGfxTerrainQuality);
@@ -520,7 +520,7 @@ public static class GameOptionsManager
 		Log.Out("ApplyTerrainOptions {0}", new object[] { @int });
 	}
 
-	// Token: 0x06009146 RID: 37190 RVA: 0x0036C708 File Offset: 0x0036A908
+	// Token: 0x0600924A RID: 37450 RVA: 0x003719B4 File Offset: 0x0036FBB4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void initQualityPresets()
 	{
@@ -595,7 +595,7 @@ public static class GameOptionsManager
 		GameOptionsManager.QualityPresets[EnumGamePrefs.OptionsGfxFSRPreset] = new List<object> { null, null, null, null, null, null, 0, null, 2 };
 	}
 
-	// Token: 0x06009147 RID: 37191 RVA: 0x0036D2DC File Offset: 0x0036B4DC
+	// Token: 0x0600924B RID: 37451 RVA: 0x00372588 File Offset: 0x00370788
 	public static void SetGraphicsQuality()
 	{
 		int @int = GamePrefs.GetInt(EnumGamePrefs.OptionsGfxQualityPreset);
@@ -630,7 +630,7 @@ public static class GameOptionsManager
 		}
 	}
 
-	// Token: 0x06009148 RID: 37192 RVA: 0x0036D3C4 File Offset: 0x0036B5C4
+	// Token: 0x0600924C RID: 37452 RVA: 0x00372670 File Offset: 0x00370870
 	public static double GetUiSizeLimit(double _aspectRation)
 	{
 		int num = 0;
@@ -641,14 +641,14 @@ public static class GameOptionsManager
 		return GameOptionsManager.uiScaleLimits[num].Item2;
 	}
 
-	// Token: 0x06009149 RID: 37193 RVA: 0x0036D3FC File Offset: 0x0036B5FC
+	// Token: 0x0600924D RID: 37453 RVA: 0x003726A8 File Offset: 0x003708A8
 	public static double GetUiSizeLimit()
 	{
 		Vector2i currentScreenSize = GameOptionsManager.CurrentScreenSize;
 		return GameOptionsManager.GetUiSizeLimit((double)currentScreenSize.x / (double)currentScreenSize.y);
 	}
 
-	// Token: 0x0600914A RID: 37194 RVA: 0x0036D424 File Offset: 0x0036B624
+	// Token: 0x0600924E RID: 37454 RVA: 0x003726D0 File Offset: 0x003708D0
 	public static float GetActiveUiScale()
 	{
 		float num = (float)GameOptionsManager.GetUiSizeLimit();
@@ -656,8 +656,8 @@ public static class GameOptionsManager
 		return Utils.FastMin(num, @float);
 	}
 
-	// Token: 0x17001137 RID: 4407
-	// (get) Token: 0x0600914B RID: 37195 RVA: 0x0036D448 File Offset: 0x0036B648
+	// Token: 0x17001172 RID: 4466
+	// (get) Token: 0x0600924F RID: 37455 RVA: 0x003726F4 File Offset: 0x003708F4
 	public static Vector2i CurrentScreenSize
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -667,26 +667,26 @@ public static class GameOptionsManager
 		}
 	}
 
-	// Token: 0x04006B2B RID: 27435
+	// Token: 0x04006C03 RID: 27651
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int screenWidth;
 
-	// Token: 0x04006B2C RID: 27436
+	// Token: 0x04006C04 RID: 27652
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int screenHeight;
 
-	// Token: 0x04006B2D RID: 27437
+	// Token: 0x04006C05 RID: 27653
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int screenExclusiveCheckDelay;
 
-	// Token: 0x04006B2E RID: 27438
+	// Token: 0x04006C06 RID: 27654
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cScreenExclusiveFrameWait = 10;
 
-	// Token: 0x04006B30 RID: 27440
+	// Token: 0x04006C08 RID: 27656
 	public static readonly EnumDictionary<EnumGamePrefs, List<object>> QualityPresets = new EnumDictionary<EnumGamePrefs, List<object>>();
 
-	// Token: 0x04006B31 RID: 27441
+	// Token: 0x04006C09 RID: 27657
 	[TupleElementNames(new string[] { "aspectLimit", "scaleLimit" })]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ValueTuple<double, double>[] uiScaleLimits = new ValueTuple<double, double>[]

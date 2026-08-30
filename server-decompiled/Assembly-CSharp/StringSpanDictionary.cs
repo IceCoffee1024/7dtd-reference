@@ -2,30 +2,30 @@
 using System.Collections;
 using System.Collections.Generic;
 
-// Token: 0x020014A5 RID: 5285
+// Token: 0x020014C0 RID: 5312
 public class StringSpanDictionary<T> : IDictionary<string, T>, ICollection<KeyValuePair<string, T>>, IEnumerable<KeyValuePair<string, T>>, IEnumerable, IReadOnlyDictionary<string, T>, IReadOnlyCollection<KeyValuePair<string, T>>
 {
-	// Token: 0x0600A5D8 RID: 42456 RVA: 0x003DBB5C File Offset: 0x003D9D5C
+	// Token: 0x0600A6D5 RID: 42709 RVA: 0x003E0E9C File Offset: 0x003DF09C
 	public StringSpanDictionary()
 		: this(new Dictionary<string, T>())
 	{
 	}
 
-	// Token: 0x0600A5D9 RID: 42457 RVA: 0x003DBB69 File Offset: 0x003D9D69
+	// Token: 0x0600A6D6 RID: 42710 RVA: 0x003E0EA9 File Offset: 0x003DF0A9
 	public StringSpanDictionary(IDictionary<string, T> dict)
 	{
 		this.m_dict = dict;
 		this.m_hashToKeys = new Dictionary<int, List<string>>();
 	}
 
-	// Token: 0x0600A5DA RID: 42458 RVA: 0x003DBB83 File Offset: 0x003D9D83
+	// Token: 0x0600A6D7 RID: 42711 RVA: 0x003E0EC3 File Offset: 0x003DF0C3
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int GenerateHash(StringSpan key)
 	{
 		return key.GetHashCode();
 	}
 
-	// Token: 0x0600A5DB RID: 42459 RVA: 0x003DBB94 File Offset: 0x003D9D94
+	// Token: 0x0600A6D8 RID: 42712 RVA: 0x003E0ED4 File Offset: 0x003DF0D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AddHash(string key)
 	{
@@ -49,7 +49,7 @@ public class StringSpanDictionary<T> : IDictionary<string, T>, ICollection<KeyVa
 		list.Add(key);
 	}
 
-	// Token: 0x0600A5DC RID: 42460 RVA: 0x003DBC1C File Offset: 0x003D9E1C
+	// Token: 0x0600A6D9 RID: 42713 RVA: 0x003E0F5C File Offset: 0x003DF15C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RemoveHash(string key)
 	{
@@ -67,7 +67,7 @@ public class StringSpanDictionary<T> : IDictionary<string, T>, ICollection<KeyVa
 		this.m_hashToKeys.Remove(num);
 	}
 
-	// Token: 0x0600A5DD RID: 42461 RVA: 0x003DBC68 File Offset: 0x003D9E68
+	// Token: 0x0600A6DA RID: 42714 RVA: 0x003E0FA8 File Offset: 0x003DF1A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryGetStringFromHashedKeys(StringSpan spanKey, out string stringKey)
 	{
@@ -90,7 +90,7 @@ public class StringSpanDictionary<T> : IDictionary<string, T>, ICollection<KeyVa
 		return false;
 	}
 
-	// Token: 0x0600A5DE RID: 42462 RVA: 0x003DBCE8 File Offset: 0x003D9EE8
+	// Token: 0x0600A6DB RID: 42715 RVA: 0x003E1028 File Offset: 0x003DF228
 	public void Add(StringSpan key, T value)
 	{
 		string text;
@@ -102,21 +102,21 @@ public class StringSpanDictionary<T> : IDictionary<string, T>, ICollection<KeyVa
 		this.Add(text, value);
 	}
 
-	// Token: 0x0600A5DF RID: 42463 RVA: 0x003DBD20 File Offset: 0x003D9F20
+	// Token: 0x0600A6DC RID: 42716 RVA: 0x003E1060 File Offset: 0x003DF260
 	public bool ContainsKey(StringSpan key)
 	{
 		string text;
 		return this.TryGetStringFromHashedKeys(key, out text) && this.ContainsKey(text);
 	}
 
-	// Token: 0x0600A5E0 RID: 42464 RVA: 0x003DBD44 File Offset: 0x003D9F44
+	// Token: 0x0600A6DD RID: 42717 RVA: 0x003E1084 File Offset: 0x003DF284
 	public bool Remove(StringSpan key)
 	{
 		string text;
 		return this.TryGetStringFromHashedKeys(key, out text) && this.Remove(text);
 	}
 
-	// Token: 0x0600A5E1 RID: 42465 RVA: 0x003DBD68 File Offset: 0x003D9F68
+	// Token: 0x0600A6DE RID: 42718 RVA: 0x003E10A8 File Offset: 0x003DF2A8
 	public bool TryGetValue(StringSpan key, out T value)
 	{
 		string text;
@@ -128,7 +128,7 @@ public class StringSpanDictionary<T> : IDictionary<string, T>, ICollection<KeyVa
 		return this.TryGetValue(text, out value);
 	}
 
-	// Token: 0x17001356 RID: 4950
+	// Token: 0x1700138F RID: 5007
 	public T this[StringSpan key]
 	{
 		get
@@ -152,47 +152,47 @@ public class StringSpanDictionary<T> : IDictionary<string, T>, ICollection<KeyVa
 		}
 	}
 
-	// Token: 0x0600A5E4 RID: 42468 RVA: 0x003DBDF1 File Offset: 0x003D9FF1
+	// Token: 0x0600A6E1 RID: 42721 RVA: 0x003E1131 File Offset: 0x003DF331
 	public IEnumerator<KeyValuePair<string, T>> GetEnumerator()
 	{
 		return this.m_dict.GetEnumerator();
 	}
 
-	// Token: 0x0600A5E5 RID: 42469 RVA: 0x003DBDF1 File Offset: 0x003D9FF1
+	// Token: 0x0600A6E2 RID: 42722 RVA: 0x003E1131 File Offset: 0x003DF331
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator System.Collections.IEnumerable.GetEnumerator()
 	{
 		return this.m_dict.GetEnumerator();
 	}
 
-	// Token: 0x0600A5E6 RID: 42470 RVA: 0x003DBDFE File Offset: 0x003D9FFE
+	// Token: 0x0600A6E3 RID: 42723 RVA: 0x003E113E File Offset: 0x003DF33E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String,T>>.Add(KeyValuePair<string, T> item)
 	{
 		this.Add(item.Key, item.Value);
 	}
 
-	// Token: 0x0600A5E7 RID: 42471 RVA: 0x003DBE14 File Offset: 0x003DA014
+	// Token: 0x0600A6E4 RID: 42724 RVA: 0x003E1154 File Offset: 0x003DF354
 	public void Clear()
 	{
 		this.m_dict.Clear();
 		this.m_hashToKeys.Clear();
 	}
 
-	// Token: 0x0600A5E8 RID: 42472 RVA: 0x003DBE2C File Offset: 0x003DA02C
+	// Token: 0x0600A6E5 RID: 42725 RVA: 0x003E116C File Offset: 0x003DF36C
 	public bool Contains(KeyValuePair<string, T> item)
 	{
 		return this.m_dict.Contains(item);
 	}
 
-	// Token: 0x0600A5E9 RID: 42473 RVA: 0x003DBE3A File Offset: 0x003DA03A
+	// Token: 0x0600A6E6 RID: 42726 RVA: 0x003E117A File Offset: 0x003DF37A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String,T>>.CopyTo(KeyValuePair<string, T>[] array, int arrayIndex)
 	{
 		this.m_dict.CopyTo(array, arrayIndex);
 	}
 
-	// Token: 0x0600A5EA RID: 42474 RVA: 0x003DBE49 File Offset: 0x003DA049
+	// Token: 0x0600A6E7 RID: 42727 RVA: 0x003E1189 File Offset: 0x003DF389
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String,T>>.Remove(KeyValuePair<string, T> item)
 	{
@@ -204,8 +204,8 @@ public class StringSpanDictionary<T> : IDictionary<string, T>, ICollection<KeyVa
 		return flag;
 	}
 
-	// Token: 0x17001357 RID: 4951
-	// (get) Token: 0x0600A5EB RID: 42475 RVA: 0x003DBE78 File Offset: 0x003DA078
+	// Token: 0x17001390 RID: 5008
+	// (get) Token: 0x0600A6E8 RID: 42728 RVA: 0x003E11B8 File Offset: 0x003DF3B8
 	public int Count
 	{
 		get
@@ -214,8 +214,8 @@ public class StringSpanDictionary<T> : IDictionary<string, T>, ICollection<KeyVa
 		}
 	}
 
-	// Token: 0x17001358 RID: 4952
-	// (get) Token: 0x0600A5EC RID: 42476 RVA: 0x003DBE85 File Offset: 0x003DA085
+	// Token: 0x17001391 RID: 5009
+	// (get) Token: 0x0600A6E9 RID: 42729 RVA: 0x003E11C5 File Offset: 0x003DF3C5
 	public bool System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String,T>>.IsReadOnly
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -225,20 +225,20 @@ public class StringSpanDictionary<T> : IDictionary<string, T>, ICollection<KeyVa
 		}
 	}
 
-	// Token: 0x0600A5ED RID: 42477 RVA: 0x003DBE92 File Offset: 0x003DA092
+	// Token: 0x0600A6EA RID: 42730 RVA: 0x003E11D2 File Offset: 0x003DF3D2
 	public void Add(string key, T value)
 	{
 		this.m_dict.Add(key, value);
 		this.AddHash(key);
 	}
 
-	// Token: 0x0600A5EE RID: 42478 RVA: 0x003DBEA8 File Offset: 0x003DA0A8
+	// Token: 0x0600A6EB RID: 42731 RVA: 0x003E11E8 File Offset: 0x003DF3E8
 	public bool ContainsKey(string key)
 	{
 		return this.m_dict.ContainsKey(key);
 	}
 
-	// Token: 0x0600A5EF RID: 42479 RVA: 0x003DBEB6 File Offset: 0x003DA0B6
+	// Token: 0x0600A6EC RID: 42732 RVA: 0x003E11F6 File Offset: 0x003DF3F6
 	public bool Remove(string key)
 	{
 		bool flag = this.m_dict.Remove(key);
@@ -249,13 +249,13 @@ public class StringSpanDictionary<T> : IDictionary<string, T>, ICollection<KeyVa
 		return flag;
 	}
 
-	// Token: 0x0600A5F0 RID: 42480 RVA: 0x003DBED9 File Offset: 0x003DA0D9
+	// Token: 0x0600A6ED RID: 42733 RVA: 0x003E1219 File Offset: 0x003DF419
 	public bool TryGetValue(string key, out T value)
 	{
 		return this.m_dict.TryGetValue(key, out value);
 	}
 
-	// Token: 0x17001359 RID: 4953
+	// Token: 0x17001392 RID: 5010
 	public T this[string key]
 	{
 		get
@@ -269,8 +269,8 @@ public class StringSpanDictionary<T> : IDictionary<string, T>, ICollection<KeyVa
 		}
 	}
 
-	// Token: 0x1700135A RID: 4954
-	// (get) Token: 0x0600A5F3 RID: 42483 RVA: 0x003DBF0C File Offset: 0x003DA10C
+	// Token: 0x17001393 RID: 5011
+	// (get) Token: 0x0600A6F0 RID: 42736 RVA: 0x003E124C File Offset: 0x003DF44C
 	public ICollection<string> Keys
 	{
 		get
@@ -279,8 +279,8 @@ public class StringSpanDictionary<T> : IDictionary<string, T>, ICollection<KeyVa
 		}
 	}
 
-	// Token: 0x1700135B RID: 4955
-	// (get) Token: 0x0600A5F4 RID: 42484 RVA: 0x003DBF19 File Offset: 0x003DA119
+	// Token: 0x17001394 RID: 5012
+	// (get) Token: 0x0600A6F1 RID: 42737 RVA: 0x003E1259 File Offset: 0x003DF459
 	public ICollection<T> Values
 	{
 		get
@@ -289,8 +289,8 @@ public class StringSpanDictionary<T> : IDictionary<string, T>, ICollection<KeyVa
 		}
 	}
 
-	// Token: 0x1700135C RID: 4956
-	// (get) Token: 0x0600A5F5 RID: 42485 RVA: 0x003DBF0C File Offset: 0x003DA10C
+	// Token: 0x17001395 RID: 5013
+	// (get) Token: 0x0600A6F2 RID: 42738 RVA: 0x003E124C File Offset: 0x003DF44C
 	public IEnumerable<string> System.Collections.Generic.IReadOnlyDictionary<System.String,T>.Keys
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -300,8 +300,8 @@ public class StringSpanDictionary<T> : IDictionary<string, T>, ICollection<KeyVa
 		}
 	}
 
-	// Token: 0x1700135D RID: 4957
-	// (get) Token: 0x0600A5F6 RID: 42486 RVA: 0x003DBF19 File Offset: 0x003DA119
+	// Token: 0x17001396 RID: 5014
+	// (get) Token: 0x0600A6F3 RID: 42739 RVA: 0x003E1259 File Offset: 0x003DF459
 	public IEnumerable<T> System.Collections.Generic.IReadOnlyDictionary<System.String,T>.Values
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -311,11 +311,11 @@ public class StringSpanDictionary<T> : IDictionary<string, T>, ICollection<KeyVa
 		}
 	}
 
-	// Token: 0x04007B01 RID: 31489
+	// Token: 0x04007BDA RID: 31706
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly IDictionary<string, T> m_dict;
 
-	// Token: 0x04007B02 RID: 31490
+	// Token: 0x04007BDB RID: 31707
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<int, List<string>> m_hashToKeys;
 }

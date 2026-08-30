@@ -5,13 +5,13 @@ using UnityEngine;
 // Token: 0x020000DD RID: 221
 public class DismembermentManager
 {
-	// Token: 0x06000596 RID: 1430 RVA: 0x00027EBB File Offset: 0x000260BB
+	// Token: 0x06000597 RID: 1431 RVA: 0x00027F7F File Offset: 0x0002617F
 	public static string GetAssetBundlePath(string prefabPath)
 	{
 		return "@:Entities/Zombies/" + prefabPath + ".prefab";
 	}
 
-	// Token: 0x06000597 RID: 1431 RVA: 0x00027ED0 File Offset: 0x000260D0
+	// Token: 0x06000598 RID: 1432 RVA: 0x00027F94 File Offset: 0x00026194
 	public static bool IsDefaultGib(string matName)
 	{
 		for (int i = 0; i < DismembermentManager.DefaultBundleGibs.Length; i++)
@@ -25,7 +25,7 @@ public class DismembermentManager
 	}
 
 	// Token: 0x1700005B RID: 91
-	// (get) Token: 0x06000598 RID: 1432 RVA: 0x00027F04 File Offset: 0x00026104
+	// (get) Token: 0x06000599 RID: 1433 RVA: 0x00027FC8 File Offset: 0x000261C8
 	public Material GibCapsMaterial
 	{
 		get
@@ -49,7 +49,7 @@ public class DismembermentManager
 	}
 
 	// Token: 0x1700005C RID: 92
-	// (get) Token: 0x06000599 RID: 1433 RVA: 0x00027F94 File Offset: 0x00026194
+	// (get) Token: 0x0600059A RID: 1434 RVA: 0x00028058 File Offset: 0x00026258
 	public Material GibCapsRadMaterial
 	{
 		get
@@ -72,7 +72,7 @@ public class DismembermentManager
 		}
 	}
 
-	// Token: 0x0600059A RID: 1434 RVA: 0x00028022 File Offset: 0x00026222
+	// Token: 0x0600059B RID: 1435 RVA: 0x000280E6 File Offset: 0x000262E6
 	public static Texture GetShaderTexture(Material _mat)
 	{
 		if (_mat.HasTexture("_ZombieColor"))
@@ -86,7 +86,7 @@ public class DismembermentManager
 		return null;
 	}
 
-	// Token: 0x0600059B RID: 1435 RVA: 0x00028057 File Offset: 0x00026257
+	// Token: 0x0600059C RID: 1436 RVA: 0x0002811B File Offset: 0x0002631B
 	public static void SetShaderTexture(Material _mat, Texture _altColor)
 	{
 		if (_mat.HasTexture("_ZombieColor"))
@@ -100,7 +100,7 @@ public class DismembermentManager
 	}
 
 	// Token: 0x1700005D RID: 93
-	// (get) Token: 0x0600059C RID: 1436 RVA: 0x0002808B File Offset: 0x0002628B
+	// (get) Token: 0x0600059D RID: 1437 RVA: 0x0002814F File Offset: 0x0002634F
 	public static DismembermentManager Instance
 	{
 		get
@@ -109,7 +109,7 @@ public class DismembermentManager
 		}
 	}
 
-	// Token: 0x0600059E RID: 1438 RVA: 0x000280A5 File Offset: 0x000262A5
+	// Token: 0x0600059F RID: 1439 RVA: 0x00028169 File Offset: 0x00026369
 	public static void Init()
 	{
 		DismembermentManager.instance = new DismembermentManager();
@@ -119,7 +119,7 @@ public class DismembermentManager
 		}
 	}
 
-	// Token: 0x0600059F RID: 1439 RVA: 0x000280C4 File Offset: 0x000262C4
+	// Token: 0x060005A0 RID: 1440 RVA: 0x00028188 File Offset: 0x00026388
 	public static void Cleanup()
 	{
 		if (DismembermentManager.instance != null)
@@ -133,13 +133,13 @@ public class DismembermentManager
 		}
 	}
 
-	// Token: 0x060005A0 RID: 1440 RVA: 0x00028106 File Offset: 0x00026306
+	// Token: 0x060005A1 RID: 1441 RVA: 0x000281CA File Offset: 0x000263CA
 	public void AddPart(DismemberedPart part)
 	{
 		this.parts.Add(part);
 	}
 
-	// Token: 0x060005A1 RID: 1441 RVA: 0x00028114 File Offset: 0x00026314
+	// Token: 0x060005A2 RID: 1442 RVA: 0x000281D8 File Offset: 0x000263D8
 	public void Update()
 	{
 		for (int i = 0; i < this.parts.Count; i++)
@@ -163,7 +163,7 @@ public class DismembermentManager
 		}
 	}
 
-	// Token: 0x060005A2 RID: 1442 RVA: 0x000281A4 File Offset: 0x000263A4
+	// Token: 0x060005A3 RID: 1443 RVA: 0x00028268 File Offset: 0x00026468
 	public static float GetImpactForce(ItemClass ic, float strength)
 	{
 		if (ic != null)
@@ -184,7 +184,7 @@ public class DismembermentManager
 		return 1f;
 	}
 
-	// Token: 0x060005A3 RID: 1443 RVA: 0x00028218 File Offset: 0x00026418
+	// Token: 0x060005A4 RID: 1444 RVA: 0x000282DC File Offset: 0x000264DC
 	public static EnumBodyPartHit GetBodyPartHit(uint bodyDamageFlag)
 	{
 		if (bodyDamageFlag == 1U)
@@ -226,7 +226,7 @@ public class DismembermentManager
 		return EnumBodyPartHit.None;
 	}
 
-	// Token: 0x060005A4 RID: 1444 RVA: 0x00028278 File Offset: 0x00026478
+	// Token: 0x060005A5 RID: 1445 RVA: 0x0002833C File Offset: 0x0002653C
 	public static EnumBodyPartHit GetBodyPartHit(string _propKey)
 	{
 		if (_propKey.ContainsCaseInsensitive("L_HeadGore"))
@@ -268,7 +268,7 @@ public class DismembermentManager
 		return EnumBodyPartHit.None;
 	}
 
-	// Token: 0x060005A5 RID: 1445 RVA: 0x0002831C File Offset: 0x0002651C
+	// Token: 0x060005A6 RID: 1446 RVA: 0x000283E0 File Offset: 0x000265E0
 	public static string GetDamageTag(EnumDamageTypes _damageType, bool lastHitRanged)
 	{
 		if (_damageType == EnumDamageTypes.Piercing && lastHitRanged)
@@ -289,13 +289,13 @@ public class DismembermentManager
 		return null;
 	}
 
-	// Token: 0x060005A6 RID: 1446 RVA: 0x0002836C File Offset: 0x0002656C
+	// Token: 0x060005A7 RID: 1447 RVA: 0x00028430 File Offset: 0x00026630
 	public static DismemberedPartData DismemberPart(uint bodyDamageFlag, EnumDamageTypes damageType, EntityAlive _entity, bool isBiped, bool useLegacy = false)
 	{
 		return DismembermentManager.dismemberPart(DismembermentManager.GetBodyPartHit(bodyDamageFlag), damageType, _entity, isBiped, useLegacy);
 	}
 
-	// Token: 0x060005A7 RID: 1447 RVA: 0x00028380 File Offset: 0x00026580
+	// Token: 0x060005A8 RID: 1448 RVA: 0x00028444 File Offset: 0x00026644
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DismemberedPartData dismemberPart(EnumBodyPartHit partHit, EnumDamageTypes damageType, EntityAlive _entity, bool isBiped, bool useLegacy = false)
 	{
@@ -381,7 +381,7 @@ public class DismembermentManager
 		return dismemberedPartData;
 	}
 
-	// Token: 0x060005A8 RID: 1448 RVA: 0x0002867C File Offset: 0x0002687C
+	// Token: 0x060005A9 RID: 1449 RVA: 0x00028740 File Offset: 0x00026940
 	public static void ActivateDetachable(Transform rootT, string targetPart)
 	{
 		Transform transform = rootT;
@@ -398,7 +398,7 @@ public class DismembermentManager
 		}
 	}
 
-	// Token: 0x060005A9 RID: 1449 RVA: 0x000286D4 File Offset: 0x000268D4
+	// Token: 0x060005AA RID: 1450 RVA: 0x00028798 File Offset: 0x00026998
 	public static DismemberedPartData GetPartData(EntityAlive _entity)
 	{
 		string[] dismemberedPart = DismembermentManager.getDismemberedPart(_entity.bodyDamage.bodyPartHit, true);
@@ -431,7 +431,7 @@ public class DismembermentManager
 		return null;
 	}
 
-	// Token: 0x060005AA RID: 1450 RVA: 0x000287D1 File Offset: 0x000269D1
+	// Token: 0x060005AB RID: 1451 RVA: 0x00028895 File Offset: 0x00026A95
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool hasDismemberedPart(EnumBodyPartHit part, bool isBiped = true)
 	{
@@ -442,7 +442,7 @@ public class DismembermentManager
 		return DismembermentManager.QuadrupedDismemberments.ContainsKey(part);
 	}
 
-	// Token: 0x060005AB RID: 1451 RVA: 0x000287F0 File Offset: 0x000269F0
+	// Token: 0x060005AC RID: 1452 RVA: 0x000288B4 File Offset: 0x00026AB4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string[] getDismemberedPart(EnumBodyPartHit part, bool isBiped = true)
 	{
@@ -458,7 +458,7 @@ public class DismembermentManager
 		return array;
 	}
 
-	// Token: 0x060005AC RID: 1452 RVA: 0x00028824 File Offset: 0x00026A24
+	// Token: 0x060005AD RID: 1453 RVA: 0x000288E8 File Offset: 0x00026AE8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void readString(string rawString, DismemberedPartData data)
 	{
@@ -668,7 +668,7 @@ public class DismembermentManager
 		}
 	}
 
-	// Token: 0x060005AD RID: 1453 RVA: 0x00028DB4 File Offset: 0x00026FB4
+	// Token: 0x060005AE RID: 1454 RVA: 0x00028E78 File Offset: 0x00027078
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DismemberedPartData readRandomPart(string[] prefabs, string[] data, string tag)
 	{
@@ -710,7 +710,7 @@ public class DismembermentManager
 		return null;
 	}
 
-	// Token: 0x060005AE RID: 1454 RVA: 0x00028EA8 File Offset: 0x000270A8
+	// Token: 0x060005AF RID: 1455 RVA: 0x00028F6C File Offset: 0x0002716C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DismemberedPartData readPart(string[] data)
 	{
@@ -741,7 +741,7 @@ public class DismembermentManager
 		return null;
 	}
 
-	// Token: 0x060005AF RID: 1455 RVA: 0x00028F38 File Offset: 0x00027138
+	// Token: 0x060005B0 RID: 1456 RVA: 0x00028FFC File Offset: 0x000271FC
 	public static void SpawnParticleEffect(ParticleEffect _pe, int _entityId = -1)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -756,7 +756,7 @@ public class DismembermentManager
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackageParticleEffect>().Setup(_pe, _entityId, false, false), false);
 	}
 
-	// Token: 0x060005B0 RID: 1456 RVA: 0x00028FB0 File Offset: 0x000271B0
+	// Token: 0x060005B1 RID: 1457 RVA: 0x00029074 File Offset: 0x00027274
 	public static void AddDebugArmObjects(Transform partT, Transform parentT)
 	{
 		if (partT && parentT && partT.name.ContainsCaseInsensitive("arm"))

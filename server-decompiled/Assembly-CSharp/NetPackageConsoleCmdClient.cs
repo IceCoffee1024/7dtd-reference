@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020007B5 RID: 1973
+// Token: 0x020007C0 RID: 1984
 [Preserve]
 public class NetPackageConsoleCmdClient : NetPackage
 {
-	// Token: 0x06003A87 RID: 14983 RVA: 0x0017ACCD File Offset: 0x00178ECD
+	// Token: 0x06003AE6 RID: 15078 RVA: 0x0017D003 File Offset: 0x0017B203
 	public NetPackageConsoleCmdClient Setup(List<string> _lines, bool _bExecute)
 	{
 		this.lines = _lines;
@@ -14,7 +14,7 @@ public class NetPackageConsoleCmdClient : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003A88 RID: 14984 RVA: 0x0017ACDE File Offset: 0x00178EDE
+	// Token: 0x06003AE7 RID: 15079 RVA: 0x0017D014 File Offset: 0x0017B214
 	public NetPackageConsoleCmdClient Setup(string _line, bool _bExecute)
 	{
 		this.lines = new List<string> { _line };
@@ -22,7 +22,7 @@ public class NetPackageConsoleCmdClient : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003A89 RID: 14985 RVA: 0x0017ACFC File Offset: 0x00178EFC
+	// Token: 0x06003AE8 RID: 15080 RVA: 0x0017D030 File Offset: 0x0017B230
 	public override void read(PooledBinaryReader _br)
 	{
 		int num = _br.ReadInt32();
@@ -34,7 +34,7 @@ public class NetPackageConsoleCmdClient : NetPackage
 		this.bExecute = _br.ReadBoolean();
 	}
 
-	// Token: 0x06003A8A RID: 14986 RVA: 0x0017AD48 File Offset: 0x00178F48
+	// Token: 0x06003AE9 RID: 15081 RVA: 0x0017D07C File Offset: 0x0017B27C
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -46,7 +46,7 @@ public class NetPackageConsoleCmdClient : NetPackage
 		_bw.Write(this.bExecute);
 	}
 
-	// Token: 0x06003A8B RID: 14987 RVA: 0x0017ADA1 File Offset: 0x00178FA1
+	// Token: 0x06003AEA RID: 15082 RVA: 0x0017D0D5 File Offset: 0x0017B2D5
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -61,8 +61,8 @@ public class NetPackageConsoleCmdClient : NetPackage
 		GUIWindowConsole.AddLines(this.lines);
 	}
 
-	// Token: 0x17000612 RID: 1554
-	// (get) Token: 0x06003A8C RID: 14988 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x1700061D RID: 1565
+	// (get) Token: 0x06003AEB RID: 15083 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -71,17 +71,17 @@ public class NetPackageConsoleCmdClient : NetPackage
 		}
 	}
 
-	// Token: 0x06003A8D RID: 14989 RVA: 0x0017A89E File Offset: 0x00178A9E
+	// Token: 0x06003AEC RID: 15084 RVA: 0x0017CB1E File Offset: 0x0017AD1E
 	public override int GetLength()
 	{
 		return 40;
 	}
 
-	// Token: 0x04002F91 RID: 12177
+	// Token: 0x0400300C RID: 12300
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<string> lines;
 
-	// Token: 0x04002F92 RID: 12178
+	// Token: 0x0400300D RID: 12301
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bExecute;
 }

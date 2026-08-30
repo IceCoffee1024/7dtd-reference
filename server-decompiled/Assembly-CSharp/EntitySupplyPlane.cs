@@ -3,24 +3,24 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020004D3 RID: 1235
+// Token: 0x020004D8 RID: 1240
 [Preserve]
 public class EntitySupplyPlane : Entity
 {
-	// Token: 0x06002833 RID: 10291 RVA: 0x000EB2D9 File Offset: 0x000E94D9
+	// Token: 0x0600285D RID: 10333 RVA: 0x000EBF2D File Offset: 0x000EA12D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
 		base.Awake();
 	}
 
-	// Token: 0x06002834 RID: 10292 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x0600285E RID: 10334 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsDeadIfOutOfWorld()
 	{
 		return false;
 	}
 
-	// Token: 0x06002835 RID: 10293 RVA: 0x000F930A File Offset: 0x000F750A
+	// Token: 0x0600285F RID: 10335 RVA: 0x000FA316 File Offset: 0x000F8516
 	public void SetDirectionToFly(Vector3 _directionToFly, int _ticksToFly)
 	{
 		this.ticksToFly = _ticksToFly;
@@ -28,7 +28,7 @@ public class EntitySupplyPlane : Entity
 		this.IsMovementReplicated = false;
 	}
 
-	// Token: 0x06002836 RID: 10294 RVA: 0x000F932C File Offset: 0x000F752C
+	// Token: 0x06002860 RID: 10336 RVA: 0x000FA338 File Offset: 0x000F8538
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MoveBoundsInsideFrustrum(Transform _parentT)
 	{
@@ -42,7 +42,7 @@ public class EntitySupplyPlane : Entity
 		this.planeMesh.bounds = new Bounds(zero, vector);
 	}
 
-	// Token: 0x06002837 RID: 10295 RVA: 0x000F9398 File Offset: 0x000F7598
+	// Token: 0x06002861 RID: 10337 RVA: 0x000FA3A4 File Offset: 0x000F85A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateFarDraw()
 	{
@@ -65,7 +65,7 @@ public class EntitySupplyPlane : Entity
 		this.MoveBoundsInsideFrustrum(base.transform);
 	}
 
-	// Token: 0x06002838 RID: 10296 RVA: 0x000F9414 File Offset: 0x000F7614
+	// Token: 0x06002862 RID: 10338 RVA: 0x000FA420 File Offset: 0x000F8620
 	public override void OnUpdatePosition(float _partialTicks)
 	{
 		base.OnUpdatePosition(_partialTicks);
@@ -89,39 +89,39 @@ public class EntitySupplyPlane : Entity
 		base.SetAirBorne(true);
 	}
 
-	// Token: 0x06002839 RID: 10297 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002863 RID: 10339 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsSavedToFile()
 	{
 		return false;
 	}
 
-	// Token: 0x0600283A RID: 10298 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002864 RID: 10340 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool CanCollideWithBlocks()
 	{
 		return false;
 	}
 
-	// Token: 0x04001E22 RID: 7714
+	// Token: 0x04001E51 RID: 7761
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int ticksToFly;
 
-	// Token: 0x04001E23 RID: 7715
+	// Token: 0x04001E52 RID: 7762
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isPlayedSound;
 
-	// Token: 0x04001E24 RID: 7716
+	// Token: 0x04001E53 RID: 7763
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Camera mainCamera;
 
-	// Token: 0x04001E25 RID: 7717
+	// Token: 0x04001E54 RID: 7764
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public MeshFilter planeMF;
 
-	// Token: 0x04001E26 RID: 7718
+	// Token: 0x04001E55 RID: 7765
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Mesh planeMesh;

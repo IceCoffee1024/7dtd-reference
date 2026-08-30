@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DF2 RID: 3570
+// Token: 0x02000E07 RID: 3591
 [Preserve]
 public class XUiC_EditingToolsPoiEditor : XUiC_EditingToolsDialogBase
 {
-	// Token: 0x06006D5E RID: 27998 RVA: 0x002A7878 File Offset: 0x002A5A78
+	// Token: 0x06006DFE RID: 28158 RVA: 0x002AAD8C File Offset: 0x002A8F8C
 	[XuiBindEvent("OnPress", "btnStart")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnStart_OnPressed(XUiController _sender, int _mouseButton)
@@ -14,14 +14,14 @@ public class XUiC_EditingToolsPoiEditor : XUiC_EditingToolsDialogBase
 		GameUtils.StartSinglePrefabEditingWithMessage(null);
 	}
 
-	// Token: 0x06006D5F RID: 27999 RVA: 0x002A789C File Offset: 0x002A5A9C
+	// Token: 0x06006DFF RID: 28159 RVA: 0x002AADB0 File Offset: 0x002A8FB0
 	public override void Init()
 	{
 		base.Init();
 		XUiC_EditingToolsPoiEditor.ID = this.windowGroup.Id;
 	}
 
-	// Token: 0x06006D60 RID: 28000 RVA: 0x002A78B4 File Offset: 0x002A5AB4
+	// Token: 0x06006E00 RID: 28160 RVA: 0x002AADC8 File Offset: 0x002A8FC8
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -31,10 +31,10 @@ public class XUiC_EditingToolsPoiEditor : XUiC_EditingToolsDialogBase
 		}
 	}
 
-	// Token: 0x04005309 RID: 21257
+	// Token: 0x040053AC RID: 21420
 	public static string ID = "";
 
-	// Token: 0x0400530A RID: 21258
+	// Token: 0x040053AD RID: 21421
 	[XuiBindComponent("btnStart", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnStart;

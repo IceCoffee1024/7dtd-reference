@@ -1,20 +1,20 @@
 ﻿using System;
 
-// Token: 0x0200116F RID: 4463
+// Token: 0x02001189 RID: 4489
 public static class AddressableFolders
 {
-	// Token: 0x04006879 RID: 26745
+	// Token: 0x04006948 RID: 26952
 	public static readonly string RootDir = GameIO.GetApplicationPath();
 
-	// Token: 0x0400687A RID: 26746
+	// Token: 0x04006949 RID: 26953
 	public const string BlockTextures = "BlockTextureAtlases";
 
-	// Token: 0x0400687B RID: 26747
+	// Token: 0x0400694A RID: 26954
 	public const string BlockTexturesAssets = "Assets/AssetBundles/BlockTextureAtlases";
 
-	// Token: 0x0400687C RID: 26748
+	// Token: 0x0400694B RID: 26955
 	public const string TerrainTextures = "TerrainTextures";
 
-	// Token: 0x0400687D RID: 26749
+	// Token: 0x0400694C RID: 26956
 	public const string TerrainTexturesAssets = "Assets/AssetBundles/TerrainTextures";
 }

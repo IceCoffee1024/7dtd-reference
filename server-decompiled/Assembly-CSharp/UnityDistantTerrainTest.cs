@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000BC5 RID: 3013
+// Token: 0x02000BD7 RID: 3031
 public class UnityDistantTerrainTest
 {
-	// Token: 0x06005ABF RID: 23231 RVA: 0x0022FEF6 File Offset: 0x0022E0F6
+	// Token: 0x06005B48 RID: 23368 RVA: 0x00232C12 File Offset: 0x00230E12
 	public static void Create()
 	{
 		UnityDistantTerrainTest.Instance = new UnityDistantTerrainTest();
 	}
 
-	// Token: 0x06005AC0 RID: 23232 RVA: 0x0022FF04 File Offset: 0x0022E104
+	// Token: 0x06005B49 RID: 23369 RVA: 0x00232C20 File Offset: 0x00230E20
 	public void LoadTerrain()
 	{
 		if (!this.parentObj)
@@ -46,7 +46,7 @@ public class UnityDistantTerrainTest
 		this.unityTerrain.Init(this.parentObj, config, num, this.TerrainMaterial, this.WaterMaterial, this.WaterChunks16x16Width, this.WaterChunks16x16, tileArea, null, null, null);
 	}
 
-	// Token: 0x06005AC1 RID: 23233 RVA: 0x002300A4 File Offset: 0x0022E2A4
+	// Token: 0x06005B4A RID: 23370 RVA: 0x00232DC0 File Offset: 0x00230FC0
 	public ITileArea<float[,]> LoadTerrainHeightTiles(TileAreaConfig _config, IBackedArray<ushort> _rawHeightMap, int _heightMapWidth, int _heightMapHeight, int _sliceAtPix)
 	{
 		if (PlatformOptimizations.FileBackedTerrainTiles)
@@ -58,7 +58,7 @@ public class UnityDistantTerrainTest
 		return new TileArea<float[,]>(_config, array);
 	}
 
-	// Token: 0x06005AC2 RID: 23234 RVA: 0x002300E1 File Offset: 0x0022E2E1
+	// Token: 0x06005B4B RID: 23371 RVA: 0x00232DFD File Offset: 0x00230FFD
 	public void FrameUpdate(EntityPlayerLocal _player)
 	{
 		if (this.unityTerrain != null)
@@ -67,7 +67,7 @@ public class UnityDistantTerrainTest
 		}
 	}
 
-	// Token: 0x06005AC3 RID: 23235 RVA: 0x002300F7 File Offset: 0x0022E2F7
+	// Token: 0x06005B4C RID: 23372 RVA: 0x00232E13 File Offset: 0x00231013
 	public void OnChunkVisible(int _chunkX, int _chunkZ, bool _visible)
 	{
 		if (this.unityTerrain != null)
@@ -76,7 +76,7 @@ public class UnityDistantTerrainTest
 		}
 	}
 
-	// Token: 0x06005AC4 RID: 23236 RVA: 0x0023010F File Offset: 0x0022E30F
+	// Token: 0x06005B4D RID: 23373 RVA: 0x00232E2B File Offset: 0x0023102B
 	public void Cleanup()
 	{
 		if (this.unityTerrain != null)
@@ -87,40 +87,40 @@ public class UnityDistantTerrainTest
 		global::UnityEngine.Object.Destroy(this.parentObj);
 	}
 
-	// Token: 0x04004669 RID: 18025
+	// Token: 0x04004705 RID: 18181
 	public const string cGameObjectName = "DistantUnityTerrain";
 
-	// Token: 0x0400466A RID: 18026
+	// Token: 0x04004706 RID: 18182
 	public static UnityDistantTerrainTest Instance;
 
-	// Token: 0x0400466B RID: 18027
+	// Token: 0x04004707 RID: 18183
 	public UnityDistantTerrain unityTerrain;
 
-	// Token: 0x0400466C RID: 18028
+	// Token: 0x04004708 RID: 18184
 	public IBackedArray<ushort> HeightMap;
 
-	// Token: 0x0400466D RID: 18029
+	// Token: 0x04004709 RID: 18185
 	public int hmWidth = 6144;
 
-	// Token: 0x0400466E RID: 18030
+	// Token: 0x0400470A RID: 18186
 	public int hmHeight = 6144;
 
-	// Token: 0x0400466F RID: 18031
+	// Token: 0x0400470B RID: 18187
 	public Material TerrainMaterial;
 
-	// Token: 0x04004670 RID: 18032
+	// Token: 0x0400470C RID: 18188
 	public Material WaterMaterial;
 
-	// Token: 0x04004671 RID: 18033
+	// Token: 0x0400470D RID: 18189
 	public int WaterChunks16x16Width;
 
-	// Token: 0x04004672 RID: 18034
+	// Token: 0x0400470E RID: 18190
 	public byte[] WaterChunks16x16;
 
-	// Token: 0x04004673 RID: 18035
+	// Token: 0x0400470F RID: 18191
 	public GameObject parentObj;
 
-	// Token: 0x04004674 RID: 18036
+	// Token: 0x04004710 RID: 18192
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cTileSize = 512;
 }

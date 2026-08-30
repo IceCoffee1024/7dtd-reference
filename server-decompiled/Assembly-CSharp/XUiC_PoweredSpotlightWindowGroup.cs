@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F9C RID: 3996
+// Token: 0x02000FB5 RID: 4021
 [Preserve]
 public class XUiC_PoweredSpotlightWindowGroup : XUiC_PoweredGenericWindowGroup
 {
-	// Token: 0x06007E0F RID: 32271 RVA: 0x002FE490 File Offset: 0x002FC690
+	// Token: 0x06007F01 RID: 32513 RVA: 0x00302C64 File Offset: 0x00300E64
 	public override void Init()
 	{
 		base.Init();
@@ -23,7 +23,7 @@ public class XUiC_PoweredSpotlightWindowGroup : XUiC_PoweredGenericWindowGroup
 		}
 	}
 
-	// Token: 0x06007E10 RID: 32272 RVA: 0x002FE4EC File Offset: 0x002FC6EC
+	// Token: 0x06007F02 RID: 32514 RVA: 0x00302CC0 File Offset: 0x00300EC0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void setupWindowTileEntities()
 	{
@@ -34,7 +34,7 @@ public class XUiC_PoweredSpotlightWindowGroup : XUiC_PoweredGenericWindowGroup
 		}
 	}
 
-	// Token: 0x06007E11 RID: 32273 RVA: 0x002FE510 File Offset: 0x002FC710
+	// Token: 0x06007F03 RID: 32515 RVA: 0x00302CE4 File Offset: 0x00300EE4
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -47,14 +47,14 @@ public class XUiC_PoweredSpotlightWindowGroup : XUiC_PoweredGenericWindowGroup
 		base.TileEntity.Destroyed += this.TileEntity_Destroyed;
 	}
 
-	// Token: 0x06007E12 RID: 32274 RVA: 0x002FE588 File Offset: 0x002FC788
+	// Token: 0x06007F04 RID: 32516 RVA: 0x00302D5C File Offset: 0x00300F5C
 	public override void OnClose()
 	{
 		base.TileEntity.Destroyed -= this.TileEntity_Destroyed;
 		base.OnClose();
 	}
 
-	// Token: 0x06007E13 RID: 32275 RVA: 0x002FE5A8 File Offset: 0x002FC7A8
+	// Token: 0x06007F05 RID: 32517 RVA: 0x00302D7C File Offset: 0x00300F7C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TileEntity_Destroyed(ITileEntity te)
 	{
@@ -73,14 +73,14 @@ public class XUiC_PoweredSpotlightWindowGroup : XUiC_PoweredGenericWindowGroup
 		}
 	}
 
-	// Token: 0x04005D6F RID: 23919
+	// Token: 0x04005E36 RID: 24118
 	public static string ID = "powerspotlight";
 
-	// Token: 0x04005D70 RID: 23920
+	// Token: 0x04005E37 RID: 24119
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_WindowNonPagingHeader nonPagingHeader;
 
-	// Token: 0x04005D71 RID: 23921
+	// Token: 0x04005E38 RID: 24120
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CameraWindow cameraWindowPreview;
 }

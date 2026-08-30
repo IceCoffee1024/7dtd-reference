@@ -3,18 +3,18 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x0200197F RID: 6527
+	// Token: 0x020019A5 RID: 6565
 	[Preserve]
 	public class ActionRemoveBuffsByTag : ActionBaseTargetAction
 	{
-		// Token: 0x0600C78A RID: 51082 RVA: 0x0049686F File Offset: 0x00494A6F
+		// Token: 0x0600C911 RID: 51473 RVA: 0x0049CBB3 File Offset: 0x0049ADB3
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
 			this.tags = FastTags<TagGroup.Global>.Parse(this.buffTag);
 		}
 
-		// Token: 0x0600C78B RID: 51083 RVA: 0x00496884 File Offset: 0x00494A84
+		// Token: 0x0600C912 RID: 51474 RVA: 0x0049CBC8 File Offset: 0x0049ADC8
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			EntityAlive entityAlive = target as EntityAlive;
@@ -25,7 +25,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C78C RID: 51084 RVA: 0x004968B3 File Offset: 0x00494AB3
+		// Token: 0x0600C913 RID: 51475 RVA: 0x0049CBF7 File Offset: 0x0049ADF7
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -35,7 +35,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C78D RID: 51085 RVA: 0x004968E4 File Offset: 0x00494AE4
+		// Token: 0x0600C914 RID: 51476 RVA: 0x0049CC28 File Offset: 0x0049AE28
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -47,15 +47,15 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009726 RID: 38694
+		// Token: 0x0400984F RID: 38991
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string buffTag = "";
 
-		// Token: 0x04009727 RID: 38695
+		// Token: 0x04009850 RID: 38992
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public FastTags<TagGroup.Global> tags;
 
-		// Token: 0x04009728 RID: 38696
+		// Token: 0x04009851 RID: 38993
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropBuffTags = "buff_tag";
 	}

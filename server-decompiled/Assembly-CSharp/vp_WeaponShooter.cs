@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020015FB RID: 5627
+// Token: 0x02001616 RID: 5654
 public class vp_WeaponShooter : vp_Shooter
 {
-	// Token: 0x17001497 RID: 5271
-	// (get) Token: 0x0600B0C8 RID: 45256 RVA: 0x0041FFD8 File Offset: 0x0041E1D8
+	// Token: 0x170014D0 RID: 5328
+	// (get) Token: 0x0600B1C5 RID: 45509 RVA: 0x00425318 File Offset: 0x00423518
 	public vp_PlayerEventHandler Player
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -19,8 +19,8 @@ public class vp_WeaponShooter : vp_Shooter
 		}
 	}
 
-	// Token: 0x17001498 RID: 5272
-	// (get) Token: 0x0600B0C9 RID: 45257 RVA: 0x0042000D File Offset: 0x0041E20D
+	// Token: 0x170014D1 RID: 5329
+	// (get) Token: 0x0600B1C6 RID: 45510 RVA: 0x0042534D File Offset: 0x0042354D
 	public vp_Weapon Weapon
 	{
 		get
@@ -33,7 +33,7 @@ public class vp_WeaponShooter : vp_Shooter
 		}
 	}
 
-	// Token: 0x0600B0CA RID: 45258 RVA: 0x00420034 File Offset: 0x0041E234
+	// Token: 0x0600B1C7 RID: 45511 RVA: 0x00425374 File Offset: 0x00423574
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -66,14 +66,14 @@ public class vp_WeaponShooter : vp_Shooter
 		this.ProjectileSpawnDelay = Mathf.Min(this.ProjectileSpawnDelay, this.ProjectileFiringRate - 0.1f);
 	}
 
-	// Token: 0x0600B0CB RID: 45259 RVA: 0x00420102 File Offset: 0x0041E302
+	// Token: 0x0600B1C8 RID: 45512 RVA: 0x00425442 File Offset: 0x00423642
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Start()
 	{
 		base.Start();
 	}
 
-	// Token: 0x0600B0CC RID: 45260 RVA: 0x0042010C File Offset: 0x0041E30C
+	// Token: 0x0600B1C9 RID: 45513 RVA: 0x0042544C File Offset: 0x0042364C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void LateUpdate()
 	{
@@ -93,7 +93,7 @@ public class vp_WeaponShooter : vp_Shooter
 		base.LateUpdate();
 	}
 
-	// Token: 0x0600B0CD RID: 45261 RVA: 0x00420180 File Offset: 0x0041E380
+	// Token: 0x0600B1CA RID: 45514 RVA: 0x004254C0 File Offset: 0x004236C0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Fire()
 	{
@@ -117,7 +117,7 @@ public class vp_WeaponShooter : vp_Shooter
 		base.Fire();
 	}
 
-	// Token: 0x0600B0CE RID: 45262 RVA: 0x00420214 File Offset: 0x0041E414
+	// Token: 0x0600B1CB RID: 45515 RVA: 0x00425554 File Offset: 0x00423754
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void ShowMuzzleFlash()
 	{
@@ -142,7 +142,7 @@ public class vp_WeaponShooter : vp_Shooter
 		base.ShowMuzzleFlash();
 	}
 
-	// Token: 0x0600B0CF RID: 45263 RVA: 0x0042031C File Offset: 0x0041E51C
+	// Token: 0x0600B1CC RID: 45516 RVA: 0x0042565C File Offset: 0x0042385C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void ApplyRecoil()
 	{
@@ -154,7 +154,7 @@ public class vp_WeaponShooter : vp_Shooter
 		this.Weapon.AddForce2(this.MotionPositionRecoil, Vector3.Scale(this.MotionRotationRecoil, Vector3.one + Vector3.back) + ((global::UnityEngine.Random.value < 0.5f) ? Vector3.forward : Vector3.back) * global::UnityEngine.Random.Range(this.MotionRotationRecoil.z * this.MotionRotationRecoilDeadZone, this.MotionRotationRecoil.z));
 	}
 
-	// Token: 0x0600B0D0 RID: 45264 RVA: 0x004203C4 File Offset: 0x0041E5C4
+	// Token: 0x0600B1CD RID: 45517 RVA: 0x00425704 File Offset: 0x00423904
 	public virtual void DryFire()
 	{
 		if (base.Audio != null)
@@ -167,13 +167,13 @@ public class vp_WeaponShooter : vp_Shooter
 		this.Weapon.AddForce2(this.MotionPositionRecoil * this.MotionDryFireRecoil, this.MotionRotationRecoil * this.MotionDryFireRecoil);
 	}
 
-	// Token: 0x0600B0D1 RID: 45265 RVA: 0x00420443 File Offset: 0x0041E643
+	// Token: 0x0600B1CE RID: 45518 RVA: 0x00425783 File Offset: 0x00423983
 	public void OnMessage_DryFire()
 	{
 		this.DryFire();
 	}
 
-	// Token: 0x0600B0D2 RID: 45266 RVA: 0x0042044B File Offset: 0x0041E64B
+	// Token: 0x0600B1CF RID: 45519 RVA: 0x0042578B File Offset: 0x0042398B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnStop_Attack()
 	{
@@ -185,7 +185,7 @@ public class vp_WeaponShooter : vp_Shooter
 		this.DisableFiring(this.ProjectileTapFiringRate - (Time.time - this.m_LastFireTime));
 	}
 
-	// Token: 0x0600B0D3 RID: 45267 RVA: 0x0042047A File Offset: 0x0041E67A
+	// Token: 0x0600B1D0 RID: 45520 RVA: 0x004257BA File Offset: 0x004239BA
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool OnAttempt_Fire()
 	{
@@ -202,66 +202,66 @@ public class vp_WeaponShooter : vp_Shooter
 		return true;
 	}
 
-	// Token: 0x040084B6 RID: 33974
+	// Token: 0x0400858F RID: 34191
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Weapon m_Weapon;
 
-	// Token: 0x040084B7 RID: 33975
+	// Token: 0x04008590 RID: 34192
 	public float ProjectileTapFiringRate = 0.1f;
 
-	// Token: 0x040084B8 RID: 33976
+	// Token: 0x04008591 RID: 34193
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_LastFireTime;
 
-	// Token: 0x040084B9 RID: 33977
+	// Token: 0x04008592 RID: 34194
 	public Vector3 MotionPositionRecoil = new Vector3(0f, 0f, -0.035f);
 
-	// Token: 0x040084BA RID: 33978
+	// Token: 0x04008593 RID: 34195
 	public Vector3 MotionRotationRecoil = new Vector3(-10f, 0f, 0f);
 
-	// Token: 0x040084BB RID: 33979
+	// Token: 0x04008594 RID: 34196
 	public float MotionRotationRecoilDeadZone = 0.5f;
 
-	// Token: 0x040084BC RID: 33980
+	// Token: 0x04008595 RID: 34197
 	public float MotionDryFireRecoil = -0.1f;
 
-	// Token: 0x040084BD RID: 33981
+	// Token: 0x04008596 RID: 34198
 	public float MotionRecoilDelay;
 
-	// Token: 0x040084BE RID: 33982
+	// Token: 0x04008597 RID: 34199
 	public float MuzzleFlashFirstShotMaxDeviation = 180f;
 
-	// Token: 0x040084BF RID: 33983
+	// Token: 0x04008598 RID: 34200
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_WeaponWasInAttackStateLastFrame;
 
-	// Token: 0x040084C0 RID: 33984
+	// Token: 0x04008599 RID: 34201
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_MuzzleFlashWeaponAngle;
 
-	// Token: 0x040084C1 RID: 33985
+	// Token: 0x0400859A RID: 34202
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_MuzzleFlashFireAngle;
 
-	// Token: 0x040084C2 RID: 33986
+	// Token: 0x0400859B RID: 34203
 	public AudioClip SoundDryFire;
 
-	// Token: 0x040084C3 RID: 33987
+	// Token: 0x0400859C RID: 34204
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Quaternion m_MuzzlePointRotation = Quaternion.identity;
 
-	// Token: 0x040084C4 RID: 33988
+	// Token: 0x0400859D RID: 34205
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_3rdPersonFiredThisFrame;
 
-	// Token: 0x040084C5 RID: 33989
+	// Token: 0x0400859E RID: 34206
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_PlayerEventHandler m_Player;

@@ -4,17 +4,17 @@ using GamePath;
 using RaycastPathing;
 using UnityEngine;
 
-// Token: 0x02000438 RID: 1080
+// Token: 0x0200043C RID: 1084
 public class EAIDroneItemTask : EAIItemTask
 {
-	// Token: 0x06002125 RID: 8485 RVA: 0x000C7FF7 File Offset: 0x000C61F7
+	// Token: 0x06002142 RID: 8514 RVA: 0x000C8803 File Offset: 0x000C6A03
 	public override void Init(EntityAlive _theEntity)
 	{
 		base.Init(_theEntity);
 		this.drone = _theEntity as EntityDrone;
 	}
 
-	// Token: 0x06002126 RID: 8486 RVA: 0x000C800C File Offset: 0x000C620C
+	// Token: 0x06002143 RID: 8515 RVA: 0x000C8818 File Offset: 0x000C6A18
 	public override void SetData(Dictionary<string, string> data)
 	{
 		base.SetData(data);
@@ -25,19 +25,19 @@ public class EAIDroneItemTask : EAIItemTask
 		base.GetData(data, "fleeDist", ref this.fleeDist);
 	}
 
-	// Token: 0x06002127 RID: 8487 RVA: 0x000C8074 File Offset: 0x000C6274
+	// Token: 0x06002144 RID: 8516 RVA: 0x000C8880 File Offset: 0x000C6A80
 	public override bool CanExecute()
 	{
 		return this.drone && PathFinderThread.Instance != null && base.CanExecute();
 	}
 
-	// Token: 0x06002128 RID: 8488 RVA: 0x000C8094 File Offset: 0x000C6294
+	// Token: 0x06002145 RID: 8517 RVA: 0x000C88A0 File Offset: 0x000C6AA0
 	public override bool Continue()
 	{
 		return this.drone && base.Continue();
 	}
 
-	// Token: 0x06002129 RID: 8489 RVA: 0x000C80AC File Offset: 0x000C62AC
+	// Token: 0x06002146 RID: 8518 RVA: 0x000C88B8 File Offset: 0x000C6AB8
 	public override void Update()
 	{
 		if (!this.drone)
@@ -71,13 +71,13 @@ public class EAIDroneItemTask : EAIItemTask
 		}
 	}
 
-	// Token: 0x0600212A RID: 8490 RVA: 0x000C8163 File Offset: 0x000C6363
+	// Token: 0x06002147 RID: 8519 RVA: 0x000C896F File Offset: 0x000C6B6F
 	public override void Reset()
 	{
 		base.Reset();
 	}
 
-	// Token: 0x0600212B RID: 8491 RVA: 0x000C816B File Offset: 0x000C636B
+	// Token: 0x06002148 RID: 8520 RVA: 0x000C8977 File Offset: 0x000C6B77
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnAttackEnter()
 	{
@@ -85,14 +85,14 @@ public class EAIDroneItemTask : EAIItemTask
 		this.drone.GetInstalledWeapon(this.ItemKey).PlayBark();
 	}
 
-	// Token: 0x0600212C RID: 8492 RVA: 0x000C818F File Offset: 0x000C638F
+	// Token: 0x06002149 RID: 8521 RVA: 0x000C899B File Offset: 0x000C6B9B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnAttackAction()
 	{
 		this.attackExitTimer = this.attackExitTime;
 	}
 
-	// Token: 0x0600212D RID: 8493 RVA: 0x000C81A0 File Offset: 0x000C63A0
+	// Token: 0x0600214A RID: 8522 RVA: 0x000C89AC File Offset: 0x000C6BAC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnAttackExit()
 	{
@@ -106,28 +106,28 @@ public class EAIDroneItemTask : EAIItemTask
 		this.drone.SetState((this.drone.OrderState == EntityDrone.Orders.Stay) ? EntityDrone.State.Sentry : EntityDrone.State.Idle, true);
 	}
 
-	// Token: 0x0600212E RID: 8494 RVA: 0x000C8214 File Offset: 0x000C6414
+	// Token: 0x0600214B RID: 8523 RVA: 0x000C8A20 File Offset: 0x000C6C20
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool GetPath(Vector3 seekPos, float seekDist, float pointRadius, bool debugDraw = false, float duration = 0f)
 	{
 		return EntityDrone.GetPath(this.currentPath, this.drone, this.drone.position, seekPos, this.drone.SpeedFlying, this, seekDist, pointRadius, debugDraw, duration);
 	}
 
-	// Token: 0x0600212F RID: 8495 RVA: 0x000C8255 File Offset: 0x000C6455
+	// Token: 0x0600214C RID: 8524 RVA: 0x000C8A61 File Offset: 0x000C6C61
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector3[] GetGroupPositions(EntityAlive target, float dist, bool debugDraw = false, float duration = 0f)
 	{
 		return EntityDrone.GetGroupPositions(target, dist, debugDraw, duration);
 	}
 
-	// Token: 0x06002130 RID: 8496 RVA: 0x000C8261 File Offset: 0x000C6461
+	// Token: 0x0600214D RID: 8525 RVA: 0x000C8A6D File Offset: 0x000C6C6D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool IsPositionBlocked(Vector3 start, Vector3 end, int layerMask = 1073807360, bool debugDraw = false, float duration = 0f)
 	{
 		return EntityDrone.IsPositionBlocked(start, end, layerMask, debugDraw, 0f);
 	}
 
-	// Token: 0x06002131 RID: 8497 RVA: 0x000C8272 File Offset: 0x000C6472
+	// Token: 0x0600214E RID: 8526 RVA: 0x000C8A7E File Offset: 0x000C6C7E
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void ClearPath()
 	{
@@ -135,7 +135,7 @@ public class EAIDroneItemTask : EAIItemTask
 		this.drone.OnPathInterupted();
 	}
 
-	// Token: 0x06002132 RID: 8498 RVA: 0x000C828C File Offset: 0x000C648C
+	// Token: 0x0600214F RID: 8527 RVA: 0x000C8A98 File Offset: 0x000C6C98
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void FollowPlannedPath(float speed, float pointRadius = 0.1f, bool debugDraw = false, float duration = 0f)
 	{
@@ -168,7 +168,7 @@ public class EAIDroneItemTask : EAIItemTask
 		}
 	}
 
-	// Token: 0x06002133 RID: 8499 RVA: 0x000C83D4 File Offset: 0x000C65D4
+	// Token: 0x06002150 RID: 8528 RVA: 0x000C8BE0 File Offset: 0x000C6DE0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool DoMoveIntoAtkPos(EntityAlive avaliableTarget, float seekDist, Vector3 seekForward, float pointRadius, bool debugDraw = false, float duration = 0f)
 	{
@@ -220,7 +220,7 @@ public class EAIDroneItemTask : EAIItemTask
 		return false;
 	}
 
-	// Token: 0x06002134 RID: 8500 RVA: 0x000C85C0 File Offset: 0x000C67C0
+	// Token: 0x06002151 RID: 8529 RVA: 0x000C8DCC File Offset: 0x000C6FCC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool DoFleeFromTargetEntity(EntityAlive avaliableTarget, float seekDist, float pointRadius, bool debugDraw = false, float duration = 0f)
 	{
@@ -261,55 +261,55 @@ public class EAIDroneItemTask : EAIItemTask
 		return false;
 	}
 
-	// Token: 0x040016C1 RID: 5825
+	// Token: 0x040016D6 RID: 5846
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public EntityDrone drone;
 
-	// Token: 0x040016C2 RID: 5826
+	// Token: 0x040016D7 RID: 5847
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public List<Vector3> currentPath = new List<Vector3>();
 
-	// Token: 0x040016C3 RID: 5827
+	// Token: 0x040016D8 RID: 5848
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector3 currentPathTarget;
 
-	// Token: 0x040016C4 RID: 5828
+	// Token: 0x040016D9 RID: 5849
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector3 currentPathDest;
 
-	// Token: 0x040016C5 RID: 5829
+	// Token: 0x040016DA RID: 5850
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool weaponDischarged;
 
-	// Token: 0x040016C6 RID: 5830
+	// Token: 0x040016DB RID: 5851
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float attackEnterTime;
 
-	// Token: 0x040016C7 RID: 5831
+	// Token: 0x040016DC RID: 5852
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float actionTime;
 
-	// Token: 0x040016C8 RID: 5832
+	// Token: 0x040016DD RID: 5853
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float attackExitTime;
 
-	// Token: 0x040016C9 RID: 5833
+	// Token: 0x040016DE RID: 5854
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float attackEnterTimer;
 
-	// Token: 0x040016CA RID: 5834
+	// Token: 0x040016DF RID: 5855
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float actionTimer;
 
-	// Token: 0x040016CB RID: 5835
+	// Token: 0x040016E0 RID: 5856
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float attackExitTimer;
 
-	// Token: 0x040016CC RID: 5836
+	// Token: 0x040016E1 RID: 5857
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float fleeDist;
 
-	// Token: 0x040016CD RID: 5837
+	// Token: 0x040016E2 RID: 5858
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityDrone.PathTracker pathTracker = new EntityDrone.PathTracker();
 }

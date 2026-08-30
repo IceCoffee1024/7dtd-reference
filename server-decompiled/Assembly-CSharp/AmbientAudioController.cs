@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 public class AmbientAudioController : IGamePrefsChangedListener
 {
 	// Token: 0x17000048 RID: 72
-	// (get) Token: 0x06000351 RID: 849 RVA: 0x000186FA File Offset: 0x000168FA
+	// (get) Token: 0x06000351 RID: 849 RVA: 0x0001877E File Offset: 0x0001697E
 	public static AmbientAudioController Instance
 	{
 		get
@@ -19,14 +19,14 @@ public class AmbientAudioController : IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06000352 RID: 850 RVA: 0x00018712 File Offset: 0x00016912
+	// Token: 0x06000352 RID: 850 RVA: 0x00018796 File Offset: 0x00016996
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AmbientAudioController()
 	{
 		GamePrefs.AddChangeListener(this);
 	}
 
-	// Token: 0x06000354 RID: 852 RVA: 0x0001876D File Offset: 0x0001696D
+	// Token: 0x06000354 RID: 852 RVA: 0x000187F1 File Offset: 0x000169F1
 	public void SetAmbientVolume(float _val)
 	{
 		if (AmbientAudioController.master)
@@ -35,7 +35,7 @@ public class AmbientAudioController : IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06000355 RID: 853 RVA: 0x00018796 File Offset: 0x00016996
+	// Token: 0x06000355 RID: 853 RVA: 0x0001881A File Offset: 0x00016A1A
 	public void OnGamePrefChanged(EnumGamePrefs _enum)
 	{
 		if (_enum == EnumGamePrefs.OptionsAmbientVolumeLevel)

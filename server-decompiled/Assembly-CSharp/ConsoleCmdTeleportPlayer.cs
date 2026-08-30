@@ -4,12 +4,12 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020002A8 RID: 680
+// Token: 0x020002AC RID: 684
 [Preserve]
 public class ConsoleCmdTeleportPlayer : ConsoleCmdTeleportsAbs
 {
-	// Token: 0x17000222 RID: 546
-	// (get) Token: 0x060013B6 RID: 5046 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// Token: 0x17000223 RID: 547
+	// (get) Token: 0x060013C8 RID: 5064 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -18,28 +18,28 @@ public class ConsoleCmdTeleportPlayer : ConsoleCmdTeleportsAbs
 		}
 	}
 
-	// Token: 0x060013B7 RID: 5047 RVA: 0x00078329 File Offset: 0x00076529
+	// Token: 0x060013C9 RID: 5065 RVA: 0x00078985 File Offset: 0x00076B85
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Teleport a given player";
 	}
 
-	// Token: 0x060013B8 RID: 5048 RVA: 0x00078330 File Offset: 0x00076530
+	// Token: 0x060013CA RID: 5066 RVA: 0x0007898C File Offset: 0x00076B8C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Usage:\n  1. teleportplayer <user id / player name / entity id> <x> <y> <z> [view direction]\n  2. teleportplayer <user id / player name / entity id> <target user id / player name / entity id>\n1. Teleports the player given by his UserID, player name or entity id (as given by e.g. \"lpi\")\n   to the specified location. Use y = -1 to spawn on ground. Optional argument view direction\n   allows you to speify a direction you want to look in after teleporting. This can be either\n   of n, ne, e, se, s, sw, w, nw or north, northeast, etc.\n2. As 1, but destination given by another (online) player";
 	}
 
-	// Token: 0x060013B9 RID: 5049 RVA: 0x00078337 File Offset: 0x00076537
+	// Token: 0x060013CB RID: 5067 RVA: 0x00078993 File Offset: 0x00076B93
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "teleportplayer", "tele" };
 	}
 
-	// Token: 0x060013BA RID: 5050 RVA: 0x00078350 File Offset: 0x00076550
+	// Token: 0x060013CC RID: 5068 RVA: 0x000789AC File Offset: 0x00076BAC
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count != 2 && _params.Count != 4 && _params.Count != 5)

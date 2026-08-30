@@ -3,80 +3,80 @@ using System.Globalization;
 using System.Text;
 using UnityEngine;
 
-// Token: 0x0200149A RID: 5274
+// Token: 0x020014B5 RID: 5301
 public class StringParsersTests
 {
-	// Token: 0x0600A57D RID: 42365 RVA: 0x003DA496 File Offset: 0x003D8696
+	// Token: 0x0600A67A RID: 42618 RVA: 0x003DF7D6 File Offset: 0x003DD9D6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool P8S(string _in, out sbyte _out)
 	{
 		return StringParsers.TryParseSInt8(_in, out _out);
 	}
 
-	// Token: 0x0600A57E RID: 42366 RVA: 0x003DA49F File Offset: 0x003D869F
+	// Token: 0x0600A67B RID: 42619 RVA: 0x003DF7DF File Offset: 0x003DD9DF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool P8Us(string _in, out byte _out)
 	{
 		return StringParsers.TryParseUInt8(_in, out _out);
 	}
 
-	// Token: 0x0600A57F RID: 42367 RVA: 0x003DA4A8 File Offset: 0x003D86A8
+	// Token: 0x0600A67C RID: 42620 RVA: 0x003DF7E8 File Offset: 0x003DD9E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool P16S(string _in, out short _out)
 	{
 		return StringParsers.TryParseSInt16(_in, out _out);
 	}
 
-	// Token: 0x0600A580 RID: 42368 RVA: 0x003DA4B1 File Offset: 0x003D86B1
+	// Token: 0x0600A67D RID: 42621 RVA: 0x003DF7F1 File Offset: 0x003DD9F1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool P16Us(string _in, out ushort _out)
 	{
 		return StringParsers.TryParseUInt16(_in, out _out);
 	}
 
-	// Token: 0x0600A581 RID: 42369 RVA: 0x003DA4BA File Offset: 0x003D86BA
+	// Token: 0x0600A67E RID: 42622 RVA: 0x003DF7FA File Offset: 0x003DD9FA
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool P32S(string _in, out int _out)
 	{
 		return StringParsers.TryParseSInt32(_in, out _out);
 	}
 
-	// Token: 0x0600A582 RID: 42370 RVA: 0x003DA4C3 File Offset: 0x003D86C3
+	// Token: 0x0600A67F RID: 42623 RVA: 0x003DF803 File Offset: 0x003DDA03
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool P32Us(string _in, out uint _out)
 	{
 		return StringParsers.TryParseUInt32(_in, out _out);
 	}
 
-	// Token: 0x0600A583 RID: 42371 RVA: 0x003DA4CC File Offset: 0x003D86CC
+	// Token: 0x0600A680 RID: 42624 RVA: 0x003DF80C File Offset: 0x003DDA0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool P64S(string _in, out long _out)
 	{
 		return StringParsers.TryParseSInt64(_in, out _out);
 	}
 
-	// Token: 0x0600A584 RID: 42372 RVA: 0x003DA4D5 File Offset: 0x003D86D5
+	// Token: 0x0600A681 RID: 42625 RVA: 0x003DF815 File Offset: 0x003DDA15
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool P64Us(string _in, out ulong _out)
 	{
 		return StringParsers.TryParseUInt64(_in, out _out);
 	}
 
-	// Token: 0x0600A585 RID: 42373 RVA: 0x003DA4DE File Offset: 0x003D86DE
+	// Token: 0x0600A682 RID: 42626 RVA: 0x003DF81E File Offset: 0x003DDA1E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool PB(string _in, out bool _out)
 	{
 		return StringParsers.TryParseBool(_in, out _out);
 	}
 
-	// Token: 0x0600A586 RID: 42374 RVA: 0x003DA4E7 File Offset: 0x003D86E7
+	// Token: 0x0600A683 RID: 42627 RVA: 0x003DF827 File Offset: 0x003DDA27
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector3i PV3i(string _in)
 	{
 		return StringParsers.ParseVector3i(_in, 0, -1, false);
 	}
 
-	// Token: 0x0600A587 RID: 42375 RVA: 0x003DA4F4 File Offset: 0x003D86F4
+	// Token: 0x0600A684 RID: 42628 RVA: 0x003DF834 File Offset: 0x003DDA34
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector2 PV2old(string _s)
 	{
@@ -88,7 +88,7 @@ public class StringParsersTests
 		return new Vector2(float.Parse(array[0], NumberStyles.Any, CultureInfo.InvariantCulture), float.Parse(array[1], NumberStyles.Any, CultureInfo.InvariantCulture));
 	}
 
-	// Token: 0x0600A588 RID: 42376 RVA: 0x003DA540 File Offset: 0x003D8740
+	// Token: 0x0600A685 RID: 42629 RVA: 0x003DF880 File Offset: 0x003DDA80
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector3 PV3old(string _s)
 	{
@@ -100,7 +100,7 @@ public class StringParsersTests
 		return new Vector3(float.Parse(array[0], NumberStyles.Any, CultureInfo.InvariantCulture), float.Parse(array[1], NumberStyles.Any, CultureInfo.InvariantCulture), float.Parse(array[2], NumberStyles.Any, CultureInfo.InvariantCulture));
 	}
 
-	// Token: 0x0600A589 RID: 42377 RVA: 0x003DA5A0 File Offset: 0x003D87A0
+	// Token: 0x0600A686 RID: 42630 RVA: 0x003DF8E0 File Offset: 0x003DDAE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector2d PV2dOld(string _s)
 	{
@@ -112,7 +112,7 @@ public class StringParsersTests
 		return new Vector2d(double.Parse(array[0], NumberStyles.Any, CultureInfo.InvariantCulture), double.Parse(array[1], NumberStyles.Any, CultureInfo.InvariantCulture));
 	}
 
-	// Token: 0x0600A58A RID: 42378 RVA: 0x003DA5EC File Offset: 0x003D87EC
+	// Token: 0x0600A687 RID: 42631 RVA: 0x003DF92C File Offset: 0x003DDB2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector3d PV3dOld(string _s)
 	{
@@ -124,7 +124,7 @@ public class StringParsersTests
 		return new Vector3d(double.Parse(array[0], NumberStyles.Any, CultureInfo.InvariantCulture), double.Parse(array[1], NumberStyles.Any, CultureInfo.InvariantCulture), double.Parse(array[2], NumberStyles.Any, CultureInfo.InvariantCulture));
 	}
 
-	// Token: 0x0600A58B RID: 42379 RVA: 0x003DA64C File Offset: 0x003D884C
+	// Token: 0x0600A688 RID: 42632 RVA: 0x003DF98C File Offset: 0x003DDB8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector2i PV2iOld(string _s)
 	{
@@ -136,7 +136,7 @@ public class StringParsersTests
 		return new Vector2i(int.Parse(array[0]), int.Parse(array[1]));
 	}
 
-	// Token: 0x0600A58C RID: 42380 RVA: 0x003DA684 File Offset: 0x003D8884
+	// Token: 0x0600A689 RID: 42633 RVA: 0x003DF9C4 File Offset: 0x003DDBC4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector3i PV3iOld(string _s)
 	{
@@ -148,21 +148,21 @@ public class StringParsersTests
 		return new Vector3i(int.Parse(array[0]), int.Parse(array[1]), int.Parse(array[2]));
 	}
 
-	// Token: 0x0600A58D RID: 42381 RVA: 0x003DA6C4 File Offset: 0x003D88C4
+	// Token: 0x0600A68A RID: 42634 RVA: 0x003DFA04 File Offset: 0x003DDC04
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static TEnum PEnumOld<TEnum>(string _s) where TEnum : struct, IConvertible
 	{
 		return (TEnum)((object)Enum.Parse(typeof(TEnum), _s));
 	}
 
-	// Token: 0x0600A58E RID: 42382 RVA: 0x003DA6DB File Offset: 0x003D88DB
+	// Token: 0x0600A68B RID: 42635 RVA: 0x003DFA1B File Offset: 0x003DDC1B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static TEnum PEnumNew<TEnum>(string _s) where TEnum : struct, IConvertible
 	{
 		return EnumUtils.Parse<TEnum>(_s, false);
 	}
 
-	// Token: 0x0600A58F RID: 42383 RVA: 0x003DA6E4 File Offset: 0x003D88E4
+	// Token: 0x0600A68C RID: 42636 RVA: 0x003DFA24 File Offset: 0x003DDC24
 	public static void RunTests()
 	{
 		int num = 10000;
@@ -300,30 +300,30 @@ public class StringParsersTests
 		SdFile.WriteAllText("E:\\parsing_enums.txt", stringBuilder4.ToString());
 	}
 
-	// Token: 0x0200149B RID: 5275
-	// (Invoke) Token: 0x0600A592 RID: 42386
+	// Token: 0x020014B6 RID: 5302
+	// (Invoke) Token: 0x0600A68F RID: 42639
 	[PublicizedFrom(EAccessModifier.Private)]
 	public delegate T ParseFunc<T>(string _in);
 
-	// Token: 0x0200149C RID: 5276
-	// (Invoke) Token: 0x0600A596 RID: 42390
+	// Token: 0x020014B7 RID: 5303
+	// (Invoke) Token: 0x0600A693 RID: 42643
 	[PublicizedFrom(EAccessModifier.Private)]
 	public delegate bool TryParseFunc<T>(string _in, out T _out);
 
-	// Token: 0x0200149D RID: 5277
+	// Token: 0x020014B8 RID: 5304
 	[PublicizedFrom(EAccessModifier.Private)]
 	public abstract class TestClassBase<TOut> where TOut : struct
 	{
-		// Token: 0x0600A599 RID: 42393 RVA: 0x003DAF5C File Offset: 0x003D915C
+		// Token: 0x0600A696 RID: 42646 RVA: 0x003E029C File Offset: 0x003DE49C
 		public TestClassBase(string _testName)
 		{
 			this.testName = _testName;
 		}
 
-		// Token: 0x0600A59A RID: 42394
+		// Token: 0x0600A697 RID: 42647
 		public abstract void RunTests(string[] _testValues, int _runCount);
 
-		// Token: 0x0600A59B RID: 42395 RVA: 0x003DAF6C File Offset: 0x003D916C
+		// Token: 0x0600A698 RID: 42648 RVA: 0x003E02AC File Offset: 0x003DE4AC
 		public StringBuilder GetResults()
 		{
 			int num = 0;
@@ -354,36 +354,36 @@ public class StringParsersTests
 			return stringBuilder;
 		}
 
-		// Token: 0x04007AE3 RID: 31459
+		// Token: 0x04007BBC RID: 31676
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public readonly string testName;
 
-		// Token: 0x04007AE4 RID: 31460
+		// Token: 0x04007BBD RID: 31677
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string[] inputValues;
 
-		// Token: 0x04007AE5 RID: 31461
+		// Token: 0x04007BBE RID: 31678
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool[] monoOk;
 
-		// Token: 0x04007AE6 RID: 31462
+		// Token: 0x04007BBF RID: 31679
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool[] customOk;
 
-		// Token: 0x04007AE7 RID: 31463
+		// Token: 0x04007BC0 RID: 31680
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public TOut[] monoValue;
 
-		// Token: 0x04007AE8 RID: 31464
+		// Token: 0x04007BC1 RID: 31681
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public TOut[] customValue;
 	}
 
-	// Token: 0x0200149E RID: 5278
+	// Token: 0x020014B9 RID: 5305
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class TestClassParse<TOut> : StringParsersTests.TestClassBase<TOut> where TOut : struct
 	{
-		// Token: 0x0600A59C RID: 42396 RVA: 0x003DB0C8 File Offset: 0x003D92C8
+		// Token: 0x0600A699 RID: 42649 RVA: 0x003E0408 File Offset: 0x003DE608
 		public TestClassParse(string _testName, StringParsersTests.ParseFunc<TOut> _monoFunc, StringParsersTests.ParseFunc<TOut> _customFunc)
 			: base(_testName)
 		{
@@ -391,7 +391,7 @@ public class StringParsersTests
 			this.customFunc = _customFunc;
 		}
 
-		// Token: 0x0600A59D RID: 42397 RVA: 0x003DB0E0 File Offset: 0x003D92E0
+		// Token: 0x0600A69A RID: 42650 RVA: 0x003E0420 File Offset: 0x003DE620
 		public override void RunTests(string[] _testValues, int _runCount)
 		{
 			this.inputValues = _testValues;
@@ -435,20 +435,20 @@ public class StringParsersTests
 			}
 		}
 
-		// Token: 0x04007AE9 RID: 31465
+		// Token: 0x04007BC2 RID: 31682
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public readonly StringParsersTests.ParseFunc<TOut> monoFunc;
 
-		// Token: 0x04007AEA RID: 31466
+		// Token: 0x04007BC3 RID: 31683
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public readonly StringParsersTests.ParseFunc<TOut> customFunc;
 	}
 
-	// Token: 0x0200149F RID: 5279
+	// Token: 0x020014BA RID: 5306
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class TestClassTryParse<TOut> : StringParsersTests.TestClassBase<TOut> where TOut : struct
 	{
-		// Token: 0x0600A59E RID: 42398 RVA: 0x003DB21C File Offset: 0x003D941C
+		// Token: 0x0600A69B RID: 42651 RVA: 0x003E055C File Offset: 0x003DE75C
 		public TestClassTryParse(string _testName, StringParsersTests.TryParseFunc<TOut> _monoFunc, StringParsersTests.TryParseFunc<TOut> _customFunc)
 			: base(_testName)
 		{
@@ -456,7 +456,7 @@ public class StringParsersTests
 			this.customFunc = _customFunc;
 		}
 
-		// Token: 0x0600A59F RID: 42399 RVA: 0x003DB234 File Offset: 0x003D9434
+		// Token: 0x0600A69C RID: 42652 RVA: 0x003E0574 File Offset: 0x003DE774
 		public override void RunTests(string[] _testValues, int _runCount)
 		{
 			this.inputValues = _testValues;
@@ -481,11 +481,11 @@ public class StringParsersTests
 			}
 		}
 
-		// Token: 0x04007AEB RID: 31467
+		// Token: 0x04007BC4 RID: 31684
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly StringParsersTests.TryParseFunc<TOut> monoFunc;
 
-		// Token: 0x04007AEC RID: 31468
+		// Token: 0x04007BC5 RID: 31685
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly StringParsersTests.TryParseFunc<TOut> customFunc;
 	}

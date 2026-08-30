@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine;
 
-// Token: 0x02000C96 RID: 3222
+// Token: 0x02000CA8 RID: 3240
 public class Vehicle
 {
-	// Token: 0x17000A38 RID: 2616
-	// (get) Token: 0x060062C1 RID: 25281 RVA: 0x0026D10C File Offset: 0x0026B30C
+	// Token: 0x17000A4B RID: 2635
+	// (get) Token: 0x0600634C RID: 25420 RVA: 0x0026FFE4 File Offset: 0x0026E1E4
 	public Vector2 CameraDistance
 	{
 		get
@@ -16,8 +16,8 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x17000A39 RID: 2617
-	// (get) Token: 0x060062C2 RID: 25282 RVA: 0x0026D114 File Offset: 0x0026B314
+	// Token: 0x17000A4C RID: 2636
+	// (get) Token: 0x0600634D RID: 25421 RVA: 0x0026FFEC File Offset: 0x0026E1EC
 	public Vector2 CameraTurnRate
 	{
 		get
@@ -26,8 +26,8 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x17000A3A RID: 2618
-	// (get) Token: 0x060062C3 RID: 25283 RVA: 0x0026D11C File Offset: 0x0026B31C
+	// Token: 0x17000A4D RID: 2637
+	// (get) Token: 0x0600634E RID: 25422 RVA: 0x0026FFF4 File Offset: 0x0026E1F4
 	public float BrakeTorque
 	{
 		get
@@ -36,8 +36,8 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x17000A3B RID: 2619
-	// (get) Token: 0x060062C4 RID: 25284 RVA: 0x0026D124 File Offset: 0x0026B324
+	// Token: 0x17000A4E RID: 2638
+	// (get) Token: 0x0600634F RID: 25423 RVA: 0x0026FFFC File Offset: 0x0026E1FC
 	public float SteerAngleMax
 	{
 		get
@@ -46,8 +46,8 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x17000A3C RID: 2620
-	// (get) Token: 0x060062C5 RID: 25285 RVA: 0x0026D12C File Offset: 0x0026B32C
+	// Token: 0x17000A4F RID: 2639
+	// (get) Token: 0x06006350 RID: 25424 RVA: 0x00270004 File Offset: 0x0026E204
 	public float SteerRate
 	{
 		get
@@ -56,8 +56,8 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x17000A3D RID: 2621
-	// (get) Token: 0x060062C6 RID: 25286 RVA: 0x0026D134 File Offset: 0x0026B334
+	// Token: 0x17000A50 RID: 2640
+	// (get) Token: 0x06006351 RID: 25425 RVA: 0x0027000C File Offset: 0x0026E20C
 	public float SteerCenteringRate
 	{
 		get
@@ -66,8 +66,8 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x17000A3E RID: 2622
-	// (get) Token: 0x060062C7 RID: 25287 RVA: 0x0026D13C File Offset: 0x0026B33C
+	// Token: 0x17000A51 RID: 2641
+	// (get) Token: 0x06006352 RID: 25426 RVA: 0x00270014 File Offset: 0x0026E214
 	public float TiltAngleMax
 	{
 		get
@@ -76,8 +76,8 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x17000A3F RID: 2623
-	// (get) Token: 0x060062C8 RID: 25288 RVA: 0x0026D144 File Offset: 0x0026B344
+	// Token: 0x17000A52 RID: 2642
+	// (get) Token: 0x06006353 RID: 25427 RVA: 0x0027001C File Offset: 0x0026E21C
 	public float TiltThreshold
 	{
 		get
@@ -86,8 +86,8 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x17000A40 RID: 2624
-	// (get) Token: 0x060062C9 RID: 25289 RVA: 0x0026D14C File Offset: 0x0026B34C
+	// Token: 0x17000A53 RID: 2643
+	// (get) Token: 0x06006354 RID: 25428 RVA: 0x00270024 File Offset: 0x0026E224
 	public float TiltDampening
 	{
 		get
@@ -96,8 +96,8 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x17000A41 RID: 2625
-	// (get) Token: 0x060062CA RID: 25290 RVA: 0x0026D154 File Offset: 0x0026B354
+	// Token: 0x17000A54 RID: 2644
+	// (get) Token: 0x06006355 RID: 25429 RVA: 0x0027002C File Offset: 0x0026E22C
 	public float TiltDampenThreshold
 	{
 		get
@@ -106,8 +106,8 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x17000A42 RID: 2626
-	// (get) Token: 0x060062CB RID: 25291 RVA: 0x0026D15C File Offset: 0x0026B35C
+	// Token: 0x17000A55 RID: 2645
+	// (get) Token: 0x06006356 RID: 25430 RVA: 0x00270034 File Offset: 0x0026E234
 	public float TiltUpForce
 	{
 		get
@@ -116,8 +116,8 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x17000A43 RID: 2627
-	// (get) Token: 0x060062CC RID: 25292 RVA: 0x0026D164 File Offset: 0x0026B364
+	// Token: 0x17000A56 RID: 2646
+	// (get) Token: 0x06006357 RID: 25431 RVA: 0x0027003C File Offset: 0x0026E23C
 	public Vector2 HopForce
 	{
 		get
@@ -126,8 +126,8 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x17000A44 RID: 2628
-	// (get) Token: 0x060062CD RID: 25293 RVA: 0x0026D16C File Offset: 0x0026B36C
+	// Token: 0x17000A57 RID: 2647
+	// (get) Token: 0x06006358 RID: 25432 RVA: 0x00270044 File Offset: 0x0026E244
 	public float UpAngleMax
 	{
 		get
@@ -136,8 +136,8 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x17000A45 RID: 2629
-	// (get) Token: 0x060062CE RID: 25294 RVA: 0x0026D174 File Offset: 0x0026B374
+	// Token: 0x17000A58 RID: 2648
+	// (get) Token: 0x06006359 RID: 25433 RVA: 0x0027004C File Offset: 0x0026E24C
 	public float UpForce
 	{
 		get
@@ -146,8 +146,8 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x17000A46 RID: 2630
-	// (get) Token: 0x060062CF RID: 25295 RVA: 0x0026D17C File Offset: 0x0026B37C
+	// Token: 0x17000A59 RID: 2649
+	// (get) Token: 0x0600635A RID: 25434 RVA: 0x00270054 File Offset: 0x0026E254
 	public float UnstickForce
 	{
 		get
@@ -156,8 +156,8 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x17000A47 RID: 2631
-	// (get) Token: 0x060062D0 RID: 25296 RVA: 0x0026D184 File Offset: 0x0026B384
+	// Token: 0x17000A5A RID: 2650
+	// (get) Token: 0x0600635B RID: 25435 RVA: 0x0027005C File Offset: 0x0026E25C
 	public float MaxPossibleSpeed
 	{
 		get
@@ -166,9 +166,9 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x17000A48 RID: 2632
-	// (get) Token: 0x060062D1 RID: 25297 RVA: 0x0026D18C File Offset: 0x0026B38C
-	// (set) Token: 0x060062D2 RID: 25298 RVA: 0x0026D194 File Offset: 0x0026B394
+	// Token: 0x17000A5B RID: 2651
+	// (get) Token: 0x0600635C RID: 25436 RVA: 0x00270064 File Offset: 0x0026E264
+	// (set) Token: 0x0600635D RID: 25437 RVA: 0x0027006C File Offset: 0x0026E26C
 	public PlatformUserIdentifierAbs OwnerId
 	{
 		get
@@ -188,7 +188,7 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x060062D3 RID: 25299 RVA: 0x0026D1D8 File Offset: 0x0026B3D8
+	// Token: 0x0600635E RID: 25438 RVA: 0x002700B0 File Offset: 0x0026E2B0
 	public Vehicle(string _vehicleName, EntityVehicle _entity)
 	{
 		this.vehicleName = _vehicleName.ToLower();
@@ -207,7 +207,7 @@ public class Vehicle
 		this.CreateParts();
 	}
 
-	// Token: 0x060062D4 RID: 25300 RVA: 0x0026D3AC File Offset: 0x0026B5AC
+	// Token: 0x0600635F RID: 25439 RVA: 0x00270290 File Offset: 0x0026E490
 	public void MakeItemValue()
 	{
 		string name = this.GetName();
@@ -221,7 +221,7 @@ public class Vehicle
 		this.SetItemValue(this.itemValue);
 	}
 
-	// Token: 0x060062D5 RID: 25301 RVA: 0x0026D400 File Offset: 0x0026B600
+	// Token: 0x06006360 RID: 25440 RVA: 0x002702E4 File Offset: 0x0026E4E4
 	public void SetItemValue(ItemValue _itemValue)
 	{
 		this.itemValue = _itemValue;
@@ -245,7 +245,7 @@ public class Vehicle
 		this.SetSeats();
 	}
 
-	// Token: 0x060062D6 RID: 25302 RVA: 0x0026D4CC File Offset: 0x0026B6CC
+	// Token: 0x06006361 RID: 25441 RVA: 0x002703B0 File Offset: 0x0026E5B0
 	public void SetItemValueMods(ItemValue _itemValue)
 	{
 		ItemValue itemValue = _itemValue.Clone();
@@ -257,7 +257,7 @@ public class Vehicle
 		this.SetSeats();
 	}
 
-	// Token: 0x060062D7 RID: 25303 RVA: 0x0026D51C File Offset: 0x0026B71C
+	// Token: 0x06006362 RID: 25442 RVA: 0x00270400 File Offset: 0x0026E600
 	public void SetColors()
 	{
 		Color white = Color.white;
@@ -271,7 +271,7 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x060062D8 RID: 25304 RVA: 0x0026D59C File Offset: 0x0026B79C
+	// Token: 0x06006363 RID: 25443 RVA: 0x00270480 File Offset: 0x0026E680
 	public void SetSeats()
 	{
 		int num = (int)EffectManager.GetValue(PassiveEffects.VehicleSeats, this.itemValue, 0f, null, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false);
@@ -298,7 +298,7 @@ public class Vehicle
 		this.entity.SetAttachMaxCount(num2);
 	}
 
-	// Token: 0x060062D9 RID: 25305 RVA: 0x0026D640 File Offset: 0x0026B840
+	// Token: 0x06006364 RID: 25444 RVA: 0x00270524 File Offset: 0x0026E724
 	public int GetSeatPose(int _seatIndex)
 	{
 		DynamicProperties dynamicProperties;
@@ -313,7 +313,7 @@ public class Vehicle
 		return 0;
 	}
 
-	// Token: 0x060062DA RID: 25306 RVA: 0x0026D698 File Offset: 0x0026B898
+	// Token: 0x06006365 RID: 25445 RVA: 0x0027057C File Offset: 0x0026E77C
 	public ItemValue GetUpdatedItemValue()
 	{
 		this.itemValue.UseTimes = (float)((int)this.entity.Stats.Health.BaseMax - this.entity.Health);
@@ -321,13 +321,13 @@ public class Vehicle
 		return this.itemValue;
 	}
 
-	// Token: 0x060062DB RID: 25307 RVA: 0x0026D6F1 File Offset: 0x0026B8F1
+	// Token: 0x06006366 RID: 25446 RVA: 0x002705D5 File Offset: 0x0026E7D5
 	public void LoadItems(ItemStack[] _items)
 	{
 		this.SetItemValue(_items[0].itemValue);
 	}
 
-	// Token: 0x060062DC RID: 25308 RVA: 0x0026D701 File Offset: 0x0026B901
+	// Token: 0x06006367 RID: 25447 RVA: 0x002705E5 File Offset: 0x0026E7E5
 	public ItemStack[] GetItems()
 	{
 		return new ItemStack[]
@@ -336,7 +336,7 @@ public class Vehicle
 		};
 	}
 
-	// Token: 0x060062DD RID: 25309 RVA: 0x0026D718 File Offset: 0x0026B918
+	// Token: 0x06006368 RID: 25448 RVA: 0x002705FC File Offset: 0x0026E7FC
 	public void Update(float _deltaTime)
 	{
 		this.UpdateEffects(_deltaTime);
@@ -350,13 +350,13 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x060062DE RID: 25310 RVA: 0x0026D773 File Offset: 0x0026B973
+	// Token: 0x06006369 RID: 25449 RVA: 0x00270657 File Offset: 0x0026E857
 	public void UpdateSimulation()
 	{
 		this.FireEvent(Vehicle.Event.SimulationUpdate);
 	}
 
-	// Token: 0x060062DF RID: 25311 RVA: 0x0026D77C File Offset: 0x0026B97C
+	// Token: 0x0600636A RID: 25450 RVA: 0x00270660 File Offset: 0x0026E860
 	public void FireEvent(Vehicle.Event _event)
 	{
 		for (int i = 0; i < this.vehicleParts.Count; i++)
@@ -365,7 +365,7 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x060062E0 RID: 25312 RVA: 0x0026D7B8 File Offset: 0x0026B9B8
+	// Token: 0x0600636B RID: 25451 RVA: 0x0027069C File Offset: 0x0026E89C
 	public void FireEvent(VehiclePart.Event _event, VehiclePart _fromPart, float _arg)
 	{
 		for (int i = 0; i < this.vehicleParts.Count; i++)
@@ -374,7 +374,7 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x060062E1 RID: 25313 RVA: 0x0026D7EF File Offset: 0x0026B9EF
+	// Token: 0x0600636C RID: 25452 RVA: 0x002706D3 File Offset: 0x0026E8D3
 	public void SetupProperties()
 	{
 		if (!Vehicle.PropertyMap.TryGetValue(this.vehicleName, out this.Properties))
@@ -383,7 +383,7 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x060062E2 RID: 25314 RVA: 0x0026D824 File Offset: 0x0026BA24
+	// Token: 0x0600636D RID: 25453 RVA: 0x00270708 File Offset: 0x0026E908
 	public DynamicProperties GetPropertiesForClass(string className)
 	{
 		if (this.Properties == null)
@@ -395,7 +395,7 @@ public class Vehicle
 		return dynamicProperties;
 	}
 
-	// Token: 0x060062E3 RID: 25315 RVA: 0x0026D850 File Offset: 0x0026BA50
+	// Token: 0x0600636E RID: 25454 RVA: 0x00270734 File Offset: 0x0026E934
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ParseGeneralProperties(DynamicProperties properties)
 	{
@@ -421,9 +421,10 @@ public class Vehicle
 		properties.ParseVec("waterLift_y_depth_force", ref this.WaterLiftY, ref this.WaterLiftDepth, ref this.WaterLiftForce);
 		properties.ParseFloat("wheelPtlScale", ref this.WheelPtlScale);
 		properties.ParseString("recipeName", ref this.RecipeName);
+		properties.ParseString("honkEvent", ref this.onHonkEvent);
 	}
 
-	// Token: 0x060062E4 RID: 25316 RVA: 0x0026DA18 File Offset: 0x0026BC18
+	// Token: 0x0600636F RID: 25455 RVA: 0x0027090C File Offset: 0x0026EB0C
 	public void OnXMLChanged()
 	{
 		this.SetupProperties();
@@ -444,13 +445,13 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x060062E5 RID: 25317 RVA: 0x0026DAA0 File Offset: 0x0026BCA0
+	// Token: 0x06006370 RID: 25456 RVA: 0x00270994 File Offset: 0x0026EB94
 	public void TriggerUpdateEffects()
 	{
 		this.effectUpdateDelay = 0f;
 	}
 
-	// Token: 0x060062E6 RID: 25318 RVA: 0x0026DAAD File Offset: 0x0026BCAD
+	// Token: 0x06006371 RID: 25457 RVA: 0x002709A1 File Offset: 0x0026EBA1
 	public void UpdateEffects(float _deltaTime)
 	{
 		this.effectUpdateDelay -= _deltaTime;
@@ -463,7 +464,7 @@ public class Vehicle
 		this.CalcEffects();
 	}
 
-	// Token: 0x060062E7 RID: 25319 RVA: 0x0026DAE4 File Offset: 0x0026BCE4
+	// Token: 0x06006372 RID: 25458 RVA: 0x002709D8 File Offset: 0x0026EBD8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CalcEffects()
 	{
@@ -480,7 +481,7 @@ public class Vehicle
 		this.EffectVelocityMaxPer = EffectManager.GetValue(PassiveEffects.VehicleVelocityMaxPer, this.itemValue, 1f, entityAlive, null, entityTags, true, true, true, true, true, 1, true, false);
 	}
 
-	// Token: 0x060062E8 RID: 25320 RVA: 0x0026DC68 File Offset: 0x0026BE68
+	// Token: 0x06006373 RID: 25459 RVA: 0x00270B5C File Offset: 0x0026ED5C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CalcMods()
 	{
@@ -513,7 +514,7 @@ public class Vehicle
 		this.entity.UpdateContainerSize(false);
 	}
 
-	// Token: 0x060062E9 RID: 25321 RVA: 0x0026DD2C File Offset: 0x0026BF2C
+	// Token: 0x06006374 RID: 25460 RVA: 0x00270C20 File Offset: 0x0026EE20
 	public void CreateParts()
 	{
 		DynamicProperties properties = this.Properties;
@@ -550,7 +551,7 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x060062EA RID: 25322 RVA: 0x0026DE58 File Offset: 0x0026C058
+	// Token: 0x06006375 RID: 25461 RVA: 0x00270D4C File Offset: 0x0026EF4C
 	public VehiclePart FindPart(string _tag)
 	{
 		for (int i = 0; i < this.vehicleParts.Count; i++)
@@ -563,7 +564,7 @@ public class Vehicle
 		return null;
 	}
 
-	// Token: 0x060062EB RID: 25323 RVA: 0x0026DEA4 File Offset: 0x0026C0A4
+	// Token: 0x06006376 RID: 25462 RVA: 0x00270D98 File Offset: 0x0026EF98
 	public string GetPartProperty(string _tag, string _propertyName)
 	{
 		VehiclePart vehiclePart = this.FindPart(_tag);
@@ -574,13 +575,13 @@ public class Vehicle
 		return vehiclePart.GetProperty(_propertyName);
 	}
 
-	// Token: 0x060062EC RID: 25324 RVA: 0x0026DEC9 File Offset: 0x0026C0C9
+	// Token: 0x06006377 RID: 25463 RVA: 0x00270DBD File Offset: 0x0026EFBD
 	public List<VehiclePart> GetParts()
 	{
 		return this.vehicleParts;
 	}
 
-	// Token: 0x060062ED RID: 25325 RVA: 0x0026DED4 File Offset: 0x0026C0D4
+	// Token: 0x06006378 RID: 25464 RVA: 0x00270DC8 File Offset: 0x0026EFC8
 	public static void SetupPreview(Transform rootT)
 	{
 		Transform transform = rootT.Find("Physics");
@@ -595,25 +596,25 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x060062EE RID: 25326 RVA: 0x0026DF23 File Offset: 0x0026C123
+	// Token: 0x06006379 RID: 25465 RVA: 0x00270E17 File Offset: 0x0026F017
 	public Transform GetMeshTransform()
 	{
 		return this.meshT;
 	}
 
-	// Token: 0x060062EF RID: 25327 RVA: 0x0026DF2B File Offset: 0x0026C12B
+	// Token: 0x0600637A RID: 25466 RVA: 0x00270E1F File Offset: 0x0026F01F
 	public string GetName()
 	{
 		return this.vehicleName;
 	}
 
-	// Token: 0x060062F0 RID: 25328 RVA: 0x0026DF33 File Offset: 0x0026C133
+	// Token: 0x0600637B RID: 25467 RVA: 0x00270E27 File Offset: 0x0026F027
 	public static void Cleanup()
 	{
 		Vehicle.PropertyMap = new Dictionary<string, DynamicProperties>();
 	}
 
-	// Token: 0x060062F1 RID: 25329 RVA: 0x0026DF3F File Offset: 0x0026C13F
+	// Token: 0x0600637C RID: 25468 RVA: 0x00270E33 File Offset: 0x0026F033
 	public string GetFuelItem()
 	{
 		if (this.HasEnginePart())
@@ -623,7 +624,7 @@ public class Vehicle
 		return "";
 	}
 
-	// Token: 0x060062F2 RID: 25330 RVA: 0x0026DF54 File Offset: 0x0026C154
+	// Token: 0x0600637D RID: 25469 RVA: 0x00270E48 File Offset: 0x0026F048
 	public float GetFuelPercent()
 	{
 		for (int i = 0; i < this.vehicleParts.Count; i++)
@@ -641,7 +642,7 @@ public class Vehicle
 		return 0f;
 	}
 
-	// Token: 0x060062F3 RID: 25331 RVA: 0x0026DFC8 File Offset: 0x0026C1C8
+	// Token: 0x0600637E RID: 25470 RVA: 0x00270EBC File Offset: 0x0026F0BC
 	public float GetFuelLevel()
 	{
 		for (int i = 0; i < this.vehicleParts.Count; i++)
@@ -654,7 +655,7 @@ public class Vehicle
 		return 0f;
 	}
 
-	// Token: 0x060062F4 RID: 25332 RVA: 0x0026E02C File Offset: 0x0026C22C
+	// Token: 0x0600637F RID: 25471 RVA: 0x00270F20 File Offset: 0x0026F120
 	public float GetMaxFuelLevel()
 	{
 		for (int i = 0; i < this.vehicleParts.Count; i++)
@@ -667,7 +668,7 @@ public class Vehicle
 		return 0f;
 	}
 
-	// Token: 0x060062F5 RID: 25333 RVA: 0x0026E090 File Offset: 0x0026C290
+	// Token: 0x06006380 RID: 25472 RVA: 0x00270F84 File Offset: 0x0026F184
 	public void SetFuelLevel(float _fuelLevel)
 	{
 		for (int i = 0; i < this.vehicleParts.Count; i++)
@@ -680,18 +681,18 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x060062F6 RID: 25334 RVA: 0x0003D066 File Offset: 0x0003B266
+	// Token: 0x06006381 RID: 25473 RVA: 0x0003D2C6 File Offset: 0x0003B4C6
 	public float GetBatteryLevel()
 	{
 		return 0f;
 	}
 
-	// Token: 0x060062F7 RID: 25335 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06006382 RID: 25474 RVA: 0x000027FC File Offset: 0x000009FC
 	public void SetBatteryLevel(float _amount)
 	{
 	}
 
-	// Token: 0x060062F8 RID: 25336 RVA: 0x0026E0F0 File Offset: 0x0026C2F0
+	// Token: 0x06006383 RID: 25475 RVA: 0x00270FE4 File Offset: 0x0026F1E4
 	public void AddFuel(float _fuelLevel)
 	{
 		for (int i = 0; i < this.vehicleParts.Count; i++)
@@ -704,13 +705,13 @@ public class Vehicle
 		}
 	}
 
-	// Token: 0x060062F9 RID: 25337 RVA: 0x0026E14D File Offset: 0x0026C34D
+	// Token: 0x06006384 RID: 25476 RVA: 0x00271041 File Offset: 0x0026F241
 	public int GetRepairAmountNeeded()
 	{
 		return this.GetMaxHealth() - this.entity.Health;
 	}
 
-	// Token: 0x060062FA RID: 25338 RVA: 0x0026E164 File Offset: 0x0026C364
+	// Token: 0x06006385 RID: 25477 RVA: 0x00271058 File Offset: 0x0026F258
 	public void RepairParts(int _add, float _percent)
 	{
 		int num = _add + (int)((float)this.GetMaxHealth() * _percent);
@@ -718,67 +719,73 @@ public class Vehicle
 		this.entity.Health += num;
 	}
 
-	// Token: 0x060062FB RID: 25339 RVA: 0x0026E19E File Offset: 0x0026C39E
+	// Token: 0x06006386 RID: 25478 RVA: 0x00271092 File Offset: 0x0026F292
 	public bool IsDriveable()
 	{
 		return this.HasSteering();
 	}
 
-	// Token: 0x060062FC RID: 25340 RVA: 0x0026E1A6 File Offset: 0x0026C3A6
+	// Token: 0x06006387 RID: 25479 RVA: 0x0027109A File Offset: 0x0026F29A
 	public bool HasEnginePart()
 	{
 		return this.FindPart("engine") != null;
 	}
 
-	// Token: 0x060062FD RID: 25341 RVA: 0x0003D066 File Offset: 0x0003B266
+	// Token: 0x06006388 RID: 25480 RVA: 0x0003D2C6 File Offset: 0x0003B4C6
 	public float GetEngineQualityPercent()
 	{
 		return 0f;
 	}
 
-	// Token: 0x060062FE RID: 25342 RVA: 0x0026E1B6 File Offset: 0x0026C3B6
+	// Token: 0x06006389 RID: 25481 RVA: 0x002710AA File Offset: 0x0026F2AA
 	public bool HasStorage()
 	{
 		return this.FindPart("storage") != null;
 	}
 
-	// Token: 0x060062FF RID: 25343 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x0600638A RID: 25482 RVA: 0x00020021 File Offset: 0x0001E221
 	public bool HasSteering()
 	{
 		return true;
 	}
 
-	// Token: 0x06006300 RID: 25344 RVA: 0x0026E1C6 File Offset: 0x0026C3C6
+	// Token: 0x0600638B RID: 25483 RVA: 0x002710BA File Offset: 0x0026F2BA
 	public bool IsSteeringBroken()
 	{
 		return !this.HasSteering() || this.FindPart("handlebars").IsBroken();
 	}
 
-	// Token: 0x06006301 RID: 25345 RVA: 0x0026E1E2 File Offset: 0x0026C3E2
+	// Token: 0x0600638C RID: 25484 RVA: 0x002710D6 File Offset: 0x0026F2D6
 	public bool HasLock()
 	{
 		return this.FindPart("lock") != null;
 	}
 
-	// Token: 0x06006302 RID: 25346 RVA: 0x0026E1F2 File Offset: 0x0026C3F2
+	// Token: 0x0600638D RID: 25485 RVA: 0x002710E6 File Offset: 0x0026F2E6
 	public bool IsLockBroken()
 	{
 		return this.FindPart("lock").GetHealthPercentage() == 0f;
 	}
 
-	// Token: 0x06006303 RID: 25347 RVA: 0x0026E20B File Offset: 0x0026C40B
+	// Token: 0x0600638E RID: 25486 RVA: 0x002710FF File Offset: 0x0026F2FF
 	public string GetHornSoundName()
 	{
 		return this.Properties.GetString("hornSound");
 	}
 
-	// Token: 0x06006304 RID: 25348 RVA: 0x0026E21D File Offset: 0x0026C41D
+	// Token: 0x0600638F RID: 25487 RVA: 0x00271111 File Offset: 0x0026F311
+	public string GetHornEventName()
+	{
+		return this.onHonkEvent;
+	}
+
+	// Token: 0x06006390 RID: 25488 RVA: 0x00271119 File Offset: 0x0026F319
 	public bool HasHorn()
 	{
 		return this.GetHornSoundName().Length > 0;
 	}
 
-	// Token: 0x06006305 RID: 25349 RVA: 0x0026E230 File Offset: 0x0026C430
+	// Token: 0x06006391 RID: 25489 RVA: 0x0027112C File Offset: 0x0026F32C
 	public List<IKController.Target> GetIKTargets(int slot)
 	{
 		List<IKController.Target> list = new List<IKController.Target>();
@@ -807,7 +814,7 @@ public class Vehicle
 		return list;
 	}
 
-	// Token: 0x06006306 RID: 25350 RVA: 0x0026E2B8 File Offset: 0x0026C4B8
+	// Token: 0x06006392 RID: 25490 RVA: 0x002711B4 File Offset: 0x0026F3B4
 	public List<string> GetParticleTransformPaths()
 	{
 		List<string> list = new List<string>();
@@ -822,13 +829,13 @@ public class Vehicle
 		return list;
 	}
 
-	// Token: 0x06006307 RID: 25351 RVA: 0x0026E30D File Offset: 0x0026C50D
+	// Token: 0x06006393 RID: 25491 RVA: 0x00271209 File Offset: 0x0026F409
 	public int GetVehicleQuality()
 	{
 		return (int)this.itemValue.Quality;
 	}
 
-	// Token: 0x06006308 RID: 25352 RVA: 0x0026E31C File Offset: 0x0026C51C
+	// Token: 0x06006394 RID: 25492 RVA: 0x00271218 File Offset: 0x0026F418
 	public int GetHealth()
 	{
 		int health = this.entity.Health;
@@ -839,31 +846,31 @@ public class Vehicle
 		return health;
 	}
 
-	// Token: 0x06006309 RID: 25353 RVA: 0x0026E33C File Offset: 0x0026C53C
+	// Token: 0x06006395 RID: 25493 RVA: 0x00271238 File Offset: 0x0026F438
 	public int GetMaxHealth()
 	{
 		return this.entity.GetMaxHealth();
 	}
 
-	// Token: 0x0600630A RID: 25354 RVA: 0x0026E349 File Offset: 0x0026C549
+	// Token: 0x06006396 RID: 25494 RVA: 0x00271245 File Offset: 0x0026F445
 	public float GetHealthPercent()
 	{
 		return (float)this.GetHealth() / (float)this.entity.GetMaxHealth();
 	}
 
-	// Token: 0x0600630B RID: 25355 RVA: 0x0026E35F File Offset: 0x0026C55F
+	// Token: 0x06006397 RID: 25495 RVA: 0x0027125B File Offset: 0x0026F45B
 	public float GetPlayerDamagePercent()
 	{
 		return 0.1f;
 	}
 
-	// Token: 0x0600630C RID: 25356 RVA: 0x0014A743 File Offset: 0x00148943
+	// Token: 0x06006398 RID: 25496 RVA: 0x0014C85F File Offset: 0x0014AA5F
 	public float GetNoise()
 	{
 		return 0.5f;
 	}
 
-	// Token: 0x0600630D RID: 25357 RVA: 0x0026E368 File Offset: 0x0026C568
+	// Token: 0x06006399 RID: 25497 RVA: 0x00271264 File Offset: 0x0026F464
 	public void SetLocked(bool isLocked, EntityPlayerLocal player)
 	{
 		if (player == null)
@@ -881,229 +888,232 @@ public class Vehicle
 		this.PasswordHash = string.Empty;
 	}
 
-	// Token: 0x04004C9D RID: 19613
+	// Token: 0x04004D3A RID: 19770
 	public static Dictionary<string, DynamicProperties> PropertyMap;
 
-	// Token: 0x04004C9E RID: 19614
+	// Token: 0x04004D3B RID: 19771
 	public DynamicProperties Properties;
 
-	// Token: 0x04004C9F RID: 19615
+	// Token: 0x04004D3C RID: 19772
 	public ItemValue itemValue;
 
-	// Token: 0x04004CA0 RID: 19616
+	// Token: 0x04004D3D RID: 19773
 	public List<PlatformUserIdentifierAbs> AllowedUsers;
 
-	// Token: 0x04004CA1 RID: 19617
+	// Token: 0x04004D3E RID: 19774
 	public string PasswordHash = string.Empty;
 
-	// Token: 0x04004CA2 RID: 19618
+	// Token: 0x04004D3F RID: 19775
 	public EntityVehicle entity;
 
-	// Token: 0x04004CA3 RID: 19619
+	// Token: 0x04004D40 RID: 19776
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlatformUserIdentifierAbs m_ownerId;
 
-	// Token: 0x04004CA4 RID: 19620
+	// Token: 0x04004D41 RID: 19777
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string vehicleName;
 
-	// Token: 0x04004CA5 RID: 19621
+	// Token: 0x04004D42 RID: 19778
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<VehiclePart> vehicleParts;
 
-	// Token: 0x04004CA6 RID: 19622
+	// Token: 0x04004D43 RID: 19779
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform meshT;
 
-	// Token: 0x04004CA7 RID: 19623
+	// Token: 0x04004D44 RID: 19780
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 cameraDistance = new Vector2(1f, 1f);
 
-	// Token: 0x04004CA8 RID: 19624
+	// Token: 0x04004D45 RID: 19781
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 cameraTurnRate = new Vector2(1f, 1f);
 
-	// Token: 0x04004CA9 RID: 19625
+	// Token: 0x04004D46 RID: 19782
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float upAngleMax = 70f;
 
-	// Token: 0x04004CAA RID: 19626
+	// Token: 0x04004D47 RID: 19783
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float upForce = 5f;
 
-	// Token: 0x04004CAB RID: 19627
+	// Token: 0x04004D48 RID: 19784
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float steerAngleMax = 25f;
 
-	// Token: 0x04004CAC RID: 19628
+	// Token: 0x04004D49 RID: 19785
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float steerRate = 130f;
 
-	// Token: 0x04004CAD RID: 19629
+	// Token: 0x04004D4A RID: 19786
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float steerCenteringRate = 90f;
 
-	// Token: 0x04004CAE RID: 19630
+	// Token: 0x04004D4B RID: 19787
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float tiltAngleMax = 20f;
 
-	// Token: 0x04004CAF RID: 19631
+	// Token: 0x04004D4C RID: 19788
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float tiltThreshold = 3f;
 
-	// Token: 0x04004CB0 RID: 19632
+	// Token: 0x04004D4D RID: 19789
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float tiltDampening = 0.22f;
 
-	// Token: 0x04004CB1 RID: 19633
+	// Token: 0x04004D4E RID: 19790
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float tiltDampenThreshold = 8f;
 
-	// Token: 0x04004CB2 RID: 19634
+	// Token: 0x04004D4F RID: 19791
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float tiltUpForce = 5f;
 
-	// Token: 0x04004CB3 RID: 19635
+	// Token: 0x04004D50 RID: 19792
 	public float MotorTorqueForward = 300f;
 
-	// Token: 0x04004CB4 RID: 19636
+	// Token: 0x04004D51 RID: 19793
 	public float MotorTorqueBackward = 300f;
 
-	// Token: 0x04004CB5 RID: 19637
+	// Token: 0x04004D52 RID: 19794
 	public float MotorTorqueTurboForward;
 
-	// Token: 0x04004CB6 RID: 19638
+	// Token: 0x04004D53 RID: 19795
 	public float MotorTorqueTurboBackward;
 
-	// Token: 0x04004CB7 RID: 19639
+	// Token: 0x04004D54 RID: 19796
 	public float VelocityMaxForward = 10f;
 
-	// Token: 0x04004CB8 RID: 19640
+	// Token: 0x04004D55 RID: 19797
 	public float VelocityMaxBackward = 10f;
 
-	// Token: 0x04004CB9 RID: 19641
+	// Token: 0x04004D56 RID: 19798
 	public float VelocityMaxTurboForward = 10f;
 
-	// Token: 0x04004CBA RID: 19642
+	// Token: 0x04004D57 RID: 19799
 	public float VelocityMaxTurboBackward = 10f;
 
-	// Token: 0x04004CBB RID: 19643
+	// Token: 0x04004D58 RID: 19800
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float brakeTorque = 4000f;
 
-	// Token: 0x04004CBC RID: 19644
+	// Token: 0x04004D59 RID: 19801
 	public bool CanTurbo = true;
 
-	// Token: 0x04004CBD RID: 19645
+	// Token: 0x04004D5A RID: 19802
 	public bool IsTurbo;
 
-	// Token: 0x04004CBE RID: 19646
+	// Token: 0x04004D5B RID: 19803
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 hopForce;
 
-	// Token: 0x04004CBF RID: 19647
+	// Token: 0x04004D5C RID: 19804
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float unstickForce = 1f;
 
-	// Token: 0x04004CC0 RID: 19648
+	// Token: 0x04004D5D RID: 19805
+	public string onHonkEvent = "";
+
+	// Token: 0x04004D5E RID: 19806
 	public float AirDragVelScale = 0.997f;
 
-	// Token: 0x04004CC1 RID: 19649
+	// Token: 0x04004D5F RID: 19807
 	public float AirDragAngVelScale = 1f;
 
-	// Token: 0x04004CC2 RID: 19650
+	// Token: 0x04004D60 RID: 19808
 	public float WaterDragY;
 
-	// Token: 0x04004CC3 RID: 19651
+	// Token: 0x04004D61 RID: 19809
 	public float WaterDragVelScale = 1f;
 
-	// Token: 0x04004CC4 RID: 19652
+	// Token: 0x04004D62 RID: 19810
 	public float WaterDragVelMaxScale = 1f;
 
-	// Token: 0x04004CC5 RID: 19653
+	// Token: 0x04004D63 RID: 19811
 	public float WaterLiftY;
 
-	// Token: 0x04004CC6 RID: 19654
+	// Token: 0x04004D64 RID: 19812
 	public float WaterLiftDepth;
 
-	// Token: 0x04004CC7 RID: 19655
+	// Token: 0x04004D65 RID: 19813
 	public float WaterLiftForce;
 
-	// Token: 0x04004CC8 RID: 19656
+	// Token: 0x04004D66 RID: 19814
 	public float WheelPtlScale;
 
-	// Token: 0x04004CC9 RID: 19657
+	// Token: 0x04004D67 RID: 19815
 	public float CurrentForwardVelocity;
 
-	// Token: 0x04004CCA RID: 19658
+	// Token: 0x04004D68 RID: 19816
 	public bool CurrentIsAccel;
 
-	// Token: 0x04004CCB RID: 19659
+	// Token: 0x04004D69 RID: 19817
 	public bool CurrentIsBreak;
 
-	// Token: 0x04004CCC RID: 19660
+	// Token: 0x04004D6A RID: 19818
 	public float CurrentMotorTorquePercent;
 
-	// Token: 0x04004CCD RID: 19661
+	// Token: 0x04004D6B RID: 19819
 	public float CurrentSteeringPercent;
 
-	// Token: 0x04004CCE RID: 19662
+	// Token: 0x04004D6C RID: 19820
 	public Vector3 CurrentVelocity;
 
-	// Token: 0x04004CCF RID: 19663
+	// Token: 0x04004D6D RID: 19821
 	public string RecipeName;
 
-	// Token: 0x04004CD0 RID: 19664
+	// Token: 0x04004D6E RID: 19822
 	public Material mainEmissiveMat;
 
-	// Token: 0x04004CD1 RID: 19665
+	// Token: 0x04004D6F RID: 19823
 	public float EffectEntityDamagePer;
 
-	// Token: 0x04004CD2 RID: 19666
+	// Token: 0x04004D70 RID: 19824
 	public float EffectBlockDamagePer;
 
-	// Token: 0x04004CD3 RID: 19667
+	// Token: 0x04004D71 RID: 19825
 	public float EffectSelfDamagePer;
 
-	// Token: 0x04004CD4 RID: 19668
+	// Token: 0x04004D72 RID: 19826
 	public float EffectStrongSelfDamagePer;
 
-	// Token: 0x04004CD5 RID: 19669
+	// Token: 0x04004D73 RID: 19827
 	public float EffectLightIntensity;
 
-	// Token: 0x04004CD6 RID: 19670
+	// Token: 0x04004D74 RID: 19828
 	public float EffectFuelMaxPer = 1f;
 
-	// Token: 0x04004CD7 RID: 19671
+	// Token: 0x04004D75 RID: 19829
 	public float EffectFuelUsePer;
 
-	// Token: 0x04004CD8 RID: 19672
+	// Token: 0x04004D76 RID: 19830
 	public float EffectMotorTorquePer;
 
-	// Token: 0x04004CD9 RID: 19673
+	// Token: 0x04004D77 RID: 19831
 	public float EffectVelocityMaxPer;
 
-	// Token: 0x04004CDA RID: 19674
+	// Token: 0x04004D78 RID: 19832
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float effectUpdateDelay;
 
-	// Token: 0x04004CDB RID: 19675
+	// Token: 0x04004D79 RID: 19833
 	public FastTags<TagGroup.Global> ModTags;
 
-	// Token: 0x02000C97 RID: 3223
+	// Token: 0x02000CA9 RID: 3241
 	public enum Event
 	{
-		// Token: 0x04004CDD RID: 19677
+		// Token: 0x04004D7B RID: 19835
 		Start,
-		// Token: 0x04004CDE RID: 19678
+		// Token: 0x04004D7C RID: 19836
 		Started,
-		// Token: 0x04004CDF RID: 19679
+		// Token: 0x04004D7D RID: 19837
 		Stop,
-		// Token: 0x04004CE0 RID: 19680
+		// Token: 0x04004D7E RID: 19838
 		Stopped,
-		// Token: 0x04004CE1 RID: 19681
+		// Token: 0x04004D7F RID: 19839
 		SimulationUpdate,
-		// Token: 0x04004CE2 RID: 19682
+		// Token: 0x04004D80 RID: 19840
 		HealthChanged
 	}
 }

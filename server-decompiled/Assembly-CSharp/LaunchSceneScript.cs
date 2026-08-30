@@ -3,10 +3,10 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Token: 0x02001230 RID: 4656
+// Token: 0x0200124C RID: 4684
 public class LaunchSceneScript : MonoBehaviour
 {
-	// Token: 0x0600940D RID: 37901 RVA: 0x0037E9BA File Offset: 0x0037CBBA
+	// Token: 0x06009511 RID: 38161 RVA: 0x00383CCA File Offset: 0x00381ECA
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
@@ -14,7 +14,7 @@ public class LaunchSceneScript : MonoBehaviour
 		base.StartCoroutine(this.GoToNextSceneCo());
 	}
 
-	// Token: 0x0600940E RID: 37902 RVA: 0x0037E9CF File Offset: 0x0037CBCF
+	// Token: 0x06009512 RID: 38162 RVA: 0x00383CDF File Offset: 0x00381EDF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator GoToNextSceneCo()
 	{
@@ -52,20 +52,20 @@ public class LaunchSceneScript : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x04006EDB RID: 28379
+	// Token: 0x04006FB4 RID: 28596
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const string MainSceneName = "SceneGame";
 
-	// Token: 0x04006EDC RID: 28380
+	// Token: 0x04006FB5 RID: 28597
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const string SplashSceneName = "SceneSplash";
 
-	// Token: 0x04006EDD RID: 28381
+	// Token: 0x04006FB6 RID: 28598
 	public UIPanel fadeInUIPanel;
 
-	// Token: 0x04006EDE RID: 28382
+	// Token: 0x04006FB7 RID: 28599
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float fadeInDuration = 0.6f;

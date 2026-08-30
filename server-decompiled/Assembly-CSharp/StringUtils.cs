@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Globalization;
 
-// Token: 0x020014A6 RID: 5286
+// Token: 0x020014C1 RID: 5313
 public static class StringUtils
 {
-	// Token: 0x0600A5F7 RID: 42487 RVA: 0x003DBF26 File Offset: 0x003DA126
+	// Token: 0x0600A6F4 RID: 42740 RVA: 0x003E1266 File Offset: 0x003DF466
 	[PublicizedFrom(EAccessModifier.Private)]
 	static StringUtils()
 	{
@@ -12,7 +12,7 @@ public static class StringUtils
 		StringUtils.OnLanguageSelected(Localization.RequestedLanguage);
 	}
 
-	// Token: 0x0600A5F8 RID: 42488 RVA: 0x003DBF54 File Offset: 0x003DA154
+	// Token: 0x0600A6F5 RID: 42741 RVA: 0x003E1294 File Offset: 0x003DF494
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void OnLanguageSelected(string _lang)
 	{
@@ -39,19 +39,19 @@ public static class StringUtils
 		}
 	}
 
-	// Token: 0x0600A5F9 RID: 42489 RVA: 0x003DC000 File Offset: 0x003DA200
+	// Token: 0x0600A6F6 RID: 42742 RVA: 0x003E1340 File Offset: 0x003DF540
 	public static string ToLowerWithUserLocale(this string _value)
 	{
 		return StringUtils.textInfo.ToLower(_value);
 	}
 
-	// Token: 0x0600A5FA RID: 42490 RVA: 0x003DC00D File Offset: 0x003DA20D
+	// Token: 0x0600A6F7 RID: 42743 RVA: 0x003E134D File Offset: 0x003DF54D
 	public static string ToUpperWithUserLocale(this string _value)
 	{
 		return StringUtils.textInfo.ToUpper(_value);
 	}
 
-	// Token: 0x04007B03 RID: 31491
+	// Token: 0x04007BDC RID: 31708
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static TextInfo textInfo = Utils.StandardCulture.TextInfo;
 }

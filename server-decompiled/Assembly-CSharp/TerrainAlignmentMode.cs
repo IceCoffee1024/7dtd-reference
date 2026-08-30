@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x02000101 RID: 257
+// Token: 0x02000102 RID: 258
 public enum TerrainAlignmentMode
 {
-	// Token: 0x040006F7 RID: 1783
-	None,
-	// Token: 0x040006F8 RID: 1784
-	Vehicle,
 	// Token: 0x040006F9 RID: 1785
+	None,
+	// Token: 0x040006FA RID: 1786
+	Vehicle,
+	// Token: 0x040006FB RID: 1787
 	Flat
 }

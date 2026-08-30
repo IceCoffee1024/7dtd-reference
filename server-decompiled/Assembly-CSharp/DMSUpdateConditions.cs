@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x020003C0 RID: 960
+// Token: 0x020003C4 RID: 964
 public struct DMSUpdateConditions
 {
-	// Token: 0x17000377 RID: 887
-	// (set) Token: 0x06001CE4 RID: 7396 RVA: 0x000AE40F File Offset: 0x000AC60F
+	// Token: 0x1700037B RID: 891
+	// (set) Token: 0x06001D01 RID: 7425 RVA: 0x000AEB4F File Offset: 0x000ACD4F
 	public bool DoesPlayerExist
 	{
 		set
@@ -13,8 +13,8 @@ public struct DMSUpdateConditions
 		}
 	}
 
-	// Token: 0x17000378 RID: 888
-	// (set) Token: 0x06001CE5 RID: 7397 RVA: 0x000AE41D File Offset: 0x000AC61D
+	// Token: 0x1700037C RID: 892
+	// (set) Token: 0x06001D02 RID: 7426 RVA: 0x000AEB5D File Offset: 0x000ACD5D
 	public bool IsGameUnPaused
 	{
 		set
@@ -23,8 +23,8 @@ public struct DMSUpdateConditions
 		}
 	}
 
-	// Token: 0x17000379 RID: 889
-	// (set) Token: 0x06001CE6 RID: 7398 RVA: 0x000AE428 File Offset: 0x000AC628
+	// Token: 0x1700037D RID: 893
+	// (set) Token: 0x06001D03 RID: 7427 RVA: 0x000AEB68 File Offset: 0x000ACD68
 	public bool IsDMSInitialized
 	{
 		set
@@ -33,8 +33,8 @@ public struct DMSUpdateConditions
 		}
 	}
 
-	// Token: 0x1700037A RID: 890
-	// (set) Token: 0x06001CE7 RID: 7399 RVA: 0x000AE433 File Offset: 0x000AC633
+	// Token: 0x1700037E RID: 894
+	// (set) Token: 0x06001D04 RID: 7428 RVA: 0x000AEB73 File Offset: 0x000ACD73
 	public bool IsDMSEnabled
 	{
 		set
@@ -43,8 +43,8 @@ public struct DMSUpdateConditions
 		}
 	}
 
-	// Token: 0x1700037B RID: 891
-	// (get) Token: 0x06001CE8 RID: 7400 RVA: 0x000AE43E File Offset: 0x000AC63E
+	// Token: 0x1700037F RID: 895
+	// (get) Token: 0x06001D05 RID: 7429 RVA: 0x000AEB7E File Offset: 0x000ACD7E
 	public bool CanUpdate
 	{
 		get
@@ -53,7 +53,7 @@ public struct DMSUpdateConditions
 		}
 	}
 
-	// Token: 0x06001CE9 RID: 7401 RVA: 0x000AE44D File Offset: 0x000AC64D
+	// Token: 0x06001D06 RID: 7430 RVA: 0x000AEB8D File Offset: 0x000ACD8D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetBoolHolder(bool _value, byte _place)
 	{
@@ -65,7 +65,7 @@ public struct DMSUpdateConditions
 		this.BoolHolder &= ~_place;
 	}
 
-	// Token: 0x040012D6 RID: 4822
+	// Token: 0x040012EB RID: 4843
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte BoolHolder;
 }

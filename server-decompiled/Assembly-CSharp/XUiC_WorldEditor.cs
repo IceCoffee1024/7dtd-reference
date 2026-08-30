@@ -2,12 +2,12 @@
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E37 RID: 3639
+// Token: 0x02000E4C RID: 3660
 [Preserve]
 public class XUiC_WorldEditor : XUiC_EditingToolsDialogBase
 {
-	// Token: 0x17000CA3 RID: 3235
-	// (get) Token: 0x06007000 RID: 28672 RVA: 0x002B1BF4 File Offset: 0x002AFDF4
+	// Token: 0x17000CBC RID: 3260
+	// (get) Token: 0x060070A0 RID: 28832 RVA: 0x002B5118 File Offset: 0x002B3318
 	[XuiXmlBinding("startable")]
 	public bool Startable
 	{
@@ -19,14 +19,14 @@ public class XUiC_WorldEditor : XUiC_EditingToolsDialogBase
 		}
 	}
 
-	// Token: 0x06007001 RID: 28673 RVA: 0x002B1C0D File Offset: 0x002AFE0D
+	// Token: 0x060070A1 RID: 28833 RVA: 0x002B5131 File Offset: 0x002B3331
 	public override void Init()
 	{
 		base.Init();
 		XUiC_WorldEditor.ID = base.WindowGroup.Id;
 	}
 
-	// Token: 0x06007002 RID: 28674 RVA: 0x002B1C28 File Offset: 0x002AFE28
+	// Token: 0x060070A2 RID: 28834 RVA: 0x002B514C File Offset: 0x002B334C
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -38,7 +38,7 @@ public class XUiC_WorldEditor : XUiC_EditingToolsDialogBase
 		}
 	}
 
-	// Token: 0x06007003 RID: 28675 RVA: 0x002B1C88 File Offset: 0x002AFE88
+	// Token: 0x060070A3 RID: 28835 RVA: 0x002B51AC File Offset: 0x002B33AC
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -49,7 +49,7 @@ public class XUiC_WorldEditor : XUiC_EditingToolsDialogBase
 		}
 	}
 
-	// Token: 0x06007004 RID: 28676 RVA: 0x0008A069 File Offset: 0x00088269
+	// Token: 0x060070A4 RID: 28836 RVA: 0x0008A715 File Offset: 0x00088915
 	[XuiBindEvent("SelectionChanged", "worldList")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WorldList_SelectionChanged(XUiC_List<XUiC_WorldList.WorldListEntry> _list, XUiC_WorldList.WorldListEntry _previousEntry, XUiC_WorldList.WorldListEntry _newEntry)
@@ -57,7 +57,7 @@ public class XUiC_WorldEditor : XUiC_EditingToolsDialogBase
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007005 RID: 28677 RVA: 0x002B1CEF File Offset: 0x002AFEEF
+	// Token: 0x060070A5 RID: 28837 RVA: 0x002B5213 File Offset: 0x002B3413
 	[XuiBindEvent("ListEntryDoubleClicked", "worldList")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WorldList_OnEntryDoubleClicked(XUiC_List<XUiC_WorldList.WorldListEntry> _list, XUiC_WorldList.WorldListEntry _entry)
@@ -68,7 +68,7 @@ public class XUiC_WorldEditor : XUiC_EditingToolsDialogBase
 		}
 	}
 
-	// Token: 0x06007006 RID: 28678 RVA: 0x002B1D07 File Offset: 0x002AFF07
+	// Token: 0x060070A6 RID: 28838 RVA: 0x002B522B File Offset: 0x002B342B
 	[XuiBindEvent("OnPress", "btnDataManagement")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnDataManagement_OnPressed(XUiController _sender, int _mouseButton)
@@ -76,7 +76,7 @@ public class XUiC_WorldEditor : XUiC_EditingToolsDialogBase
 		XUiC_DataManagement.OpenDataManagementWindow(this, new Action(this.OnDataManagementWindowClosed));
 	}
 
-	// Token: 0x06007007 RID: 28679 RVA: 0x002B1D1B File Offset: 0x002AFF1B
+	// Token: 0x060070A7 RID: 28839 RVA: 0x002B523F File Offset: 0x002B343F
 	[XuiBindEvent("OnPress", "btnCreate")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnCreateManagement_OnPressed(XUiController _sender, int _mouseButton)
@@ -84,14 +84,14 @@ public class XUiC_WorldEditor : XUiC_EditingToolsDialogBase
 		XUiC_WorldEditorCreateWorld.Open(this);
 	}
 
-	// Token: 0x06007008 RID: 28680 RVA: 0x002B1D23 File Offset: 0x002AFF23
+	// Token: 0x060070A8 RID: 28840 RVA: 0x002B5247 File Offset: 0x002B3447
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDataManagementWindowClosed()
 	{
 		this.worldList.RebuildList(false);
 	}
 
-	// Token: 0x06007009 RID: 28681 RVA: 0x002B1D34 File Offset: 0x002AFF34
+	// Token: 0x060070A9 RID: 28841 RVA: 0x002B5258 File Offset: 0x002B3458
 	[XuiBindEvent("OnPress", "btnStart")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnStart_OnPressed(XUiController _sender, int _mouseButton)
@@ -132,7 +132,7 @@ public class XUiC_WorldEditor : XUiC_EditingToolsDialogBase
 		}, false, true, false);
 	}
 
-	// Token: 0x0600700A RID: 28682 RVA: 0x002B1E6C File Offset: 0x002B006C
+	// Token: 0x060070AA RID: 28842 RVA: 0x002B5390 File Offset: 0x002B3590
 	public void StartEditor()
 	{
 		GamePrefs.Set(EnumGamePrefs.GameMode, GameModeEditWorld.TypeName);
@@ -146,43 +146,43 @@ public class XUiC_WorldEditor : XUiC_EditingToolsDialogBase
 		}
 	}
 
-	// Token: 0x0600700B RID: 28683 RVA: 0x002B1EDC File Offset: 0x002B00DC
+	// Token: 0x060070AB RID: 28843 RVA: 0x002B5400 File Offset: 0x002B3600
 	public static PathAbstractions.AbstractedLocation LocationForNewWorld(string _name)
 	{
 		PathAbstractions.EAbstractedLocationType eabstractedLocationType = PathAbstractions.EAbstractedLocationType.UserDataPath;
 		return PathAbstractions.WorldsSearchPaths.BuildLocation(eabstractedLocationType, null, _name, null, new UserDataStorageType?(UserDataStorageType.DeviceLocal)).Value;
 	}
 
-	// Token: 0x0600700C RID: 28684 RVA: 0x001A6B9C File Offset: 0x001A4D9C
+	// Token: 0x060070AC RID: 28844 RVA: 0x001A9170 File Offset: 0x001A7370
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool canSaveWorldIn(PathAbstractions.AbstractedLocation _location)
 	{
 		return _location.Type != PathAbstractions.EAbstractedLocationType.GameData;
 	}
 
-	// Token: 0x04005468 RID: 21608
+	// Token: 0x0400550C RID: 21772
 	public static string ID = "";
 
-	// Token: 0x04005469 RID: 21609
+	// Token: 0x0400550D RID: 21773
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const UserDataStorageType AllowedUserDataStorageType = UserDataStorageType.DeviceLocal;
 
-	// Token: 0x0400546A RID: 21610
+	// Token: 0x0400550E RID: 21774
 	[XuiBindComponent("btnDataManagement", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnDataManagement;
 
-	// Token: 0x0400546B RID: 21611
+	// Token: 0x0400550F RID: 21775
 	[XuiBindComponent("btnStart", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnStart;
 
-	// Token: 0x0400546C RID: 21612
+	// Token: 0x04005510 RID: 21776
 	[XuiBindComponent("btnCreate", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnCreate;
 
-	// Token: 0x0400546D RID: 21613
+	// Token: 0x04005511 RID: 21777
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_WorldList worldList;

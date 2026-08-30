@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001146 RID: 4422
+// Token: 0x0200115F RID: 4447
 public class XUiV_ScrollView : XUiV_Panel
 {
-	// Token: 0x1700109D RID: 4253
-	// (get) Token: 0x06008CE2 RID: 36066 RVA: 0x00353AC7 File Offset: 0x00351CC7
-	// (set) Token: 0x06008CE3 RID: 36067 RVA: 0x00353ACF File Offset: 0x00351CCF
+	// Token: 0x170010D6 RID: 4310
+	// (get) Token: 0x06008DD4 RID: 36308 RVA: 0x00358303 File Offset: 0x00356503
+	// (set) Token: 0x06008DD5 RID: 36309 RVA: 0x0035830B File Offset: 0x0035650B
 	[XuiXmlAttribute("movement", false)]
 	public UIScrollView.Movement Movement
 	{
@@ -26,9 +26,9 @@ public class XUiV_ScrollView : XUiV_Panel
 		}
 	}
 
-	// Token: 0x1700109E RID: 4254
-	// (get) Token: 0x06008CE4 RID: 36068 RVA: 0x00353AE8 File Offset: 0x00351CE8
-	// (set) Token: 0x06008CE5 RID: 36069 RVA: 0x00353AF0 File Offset: 0x00351CF0
+	// Token: 0x170010D7 RID: 4311
+	// (get) Token: 0x06008DD6 RID: 36310 RVA: 0x00358324 File Offset: 0x00356524
+	// (set) Token: 0x06008DD7 RID: 36311 RVA: 0x0035832C File Offset: 0x0035652C
 	[XuiXmlAttribute("drageffect", false)]
 	public UIScrollView.DragEffect DragEffect
 	{
@@ -47,9 +47,9 @@ public class XUiV_ScrollView : XUiV_Panel
 		}
 	}
 
-	// Token: 0x1700109F RID: 4255
-	// (get) Token: 0x06008CE6 RID: 36070 RVA: 0x00353B09 File Offset: 0x00351D09
-	// (set) Token: 0x06008CE7 RID: 36071 RVA: 0x00353B11 File Offset: 0x00351D11
+	// Token: 0x170010D8 RID: 4312
+	// (get) Token: 0x06008DD8 RID: 36312 RVA: 0x00358345 File Offset: 0x00356545
+	// (set) Token: 0x06008DD9 RID: 36313 RVA: 0x0035834D File Offset: 0x0035654D
 	[XuiXmlAttribute("scrollfactor", false)]
 	public float ScrollFactor
 	{
@@ -68,9 +68,9 @@ public class XUiV_ScrollView : XUiV_Panel
 		}
 	}
 
-	// Token: 0x170010A0 RID: 4256
-	// (get) Token: 0x06008CE8 RID: 36072 RVA: 0x00353B2F File Offset: 0x00351D2F
-	// (set) Token: 0x06008CE9 RID: 36073 RVA: 0x00353B37 File Offset: 0x00351D37
+	// Token: 0x170010D9 RID: 4313
+	// (get) Token: 0x06008DDA RID: 36314 RVA: 0x0035836B File Offset: 0x0035656B
+	// (set) Token: 0x06008DDB RID: 36315 RVA: 0x00358373 File Offset: 0x00356573
 	[XuiXmlAttribute("scrollwithoutfocus", false)]
 	public bool ScrollWithoutFocus
 	{
@@ -89,13 +89,13 @@ public class XUiV_ScrollView : XUiV_Panel
 		}
 	}
 
-	// Token: 0x06008CEA RID: 36074 RVA: 0x00353B50 File Offset: 0x00351D50
+	// Token: 0x06008DDC RID: 36316 RVA: 0x0035838C File Offset: 0x0035658C
 	public XUiV_ScrollView(XUi _xui, string _id)
 		: base(_xui, _id)
 	{
 	}
 
-	// Token: 0x06008CEB RID: 36075 RVA: 0x00353B6C File Offset: 0x00351D6C
+	// Token: 0x06008DDD RID: 36317 RVA: 0x003583A8 File Offset: 0x003565A8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void createComponents(GameObject _go)
 	{
@@ -103,7 +103,7 @@ public class XUiV_ScrollView : XUiV_Panel
 		_go.AddComponent<UIScrollView>();
 	}
 
-	// Token: 0x06008CEC RID: 36076 RVA: 0x00353B7C File Offset: 0x00351D7C
+	// Token: 0x06008DDE RID: 36318 RVA: 0x003583B8 File Offset: 0x003565B8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void captureComponents()
 	{
@@ -111,7 +111,7 @@ public class XUiV_ScrollView : XUiV_Panel
 		this.scrollView = this.uiTransform.gameObject.GetComponent<UIScrollView>();
 	}
 
-	// Token: 0x06008CED RID: 36077 RVA: 0x00353B9C File Offset: 0x00351D9C
+	// Token: 0x06008DDF RID: 36319 RVA: 0x003583D8 File Offset: 0x003565D8
 	public override void InitView()
 	{
 		base.InitView();
@@ -120,14 +120,14 @@ public class XUiV_ScrollView : XUiV_Panel
 		base.SetDirty();
 	}
 
-	// Token: 0x06008CEE RID: 36078 RVA: 0x00353BE8 File Offset: 0x00351DE8
+	// Token: 0x06008DE0 RID: 36320 RVA: 0x00358424 File Offset: 0x00356624
 	public override void Cleanup()
 	{
 		base.Cleanup();
 		this.xui.OnBuilt -= this.OnXuiLoadDone;
 	}
 
-	// Token: 0x06008CEF RID: 36079 RVA: 0x00353C08 File Offset: 0x00351E08
+	// Token: 0x06008DE1 RID: 36321 RVA: 0x00358444 File Offset: 0x00356644
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnXuiLoadDone()
 	{
@@ -142,7 +142,7 @@ public class XUiV_ScrollView : XUiV_Panel
 		xuiV_ScrollBar.Connect(new XUiEvent_OnScrollEventHandler(this.OnScrolled));
 	}
 
-	// Token: 0x06008CF0 RID: 36080 RVA: 0x00353C70 File Offset: 0x00351E70
+	// Token: 0x06008DE2 RID: 36322 RVA: 0x003584AC File Offset: 0x003566AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void applyScrollEventToChildren(XUiController _controller)
 	{
@@ -154,14 +154,14 @@ public class XUiV_ScrollView : XUiV_Panel
 		}
 	}
 
-	// Token: 0x06008CF1 RID: 36081 RVA: 0x00353CE4 File Offset: 0x00351EE4
+	// Token: 0x06008DE3 RID: 36323 RVA: 0x00358520 File Offset: 0x00356720
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 		this.controllerScroll(Time.unscaledDeltaTime);
 	}
 
-	// Token: 0x06008CF2 RID: 36082 RVA: 0x00353CF8 File Offset: 0x00351EF8
+	// Token: 0x06008DE4 RID: 36324 RVA: 0x00358534 File Offset: 0x00356734
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void controllerScroll(float _dt)
 	{
@@ -202,7 +202,7 @@ public class XUiV_ScrollView : XUiV_Panel
 		}
 	}
 
-	// Token: 0x06008CF3 RID: 36083 RVA: 0x00353DFC File Offset: 0x00351FFC
+	// Token: 0x06008DE5 RID: 36325 RVA: 0x00358638 File Offset: 0x00356838
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateData()
 	{
@@ -237,14 +237,14 @@ public class XUiV_ScrollView : XUiV_Panel
 		base.updateData();
 	}
 
-	// Token: 0x06008CF4 RID: 36084 RVA: 0x00353EE8 File Offset: 0x003520E8
+	// Token: 0x06008DE6 RID: 36326 RVA: 0x00358724 File Offset: 0x00356924
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.ResetPosition();
 	}
 
-	// Token: 0x06008CF5 RID: 36085 RVA: 0x00353EF6 File Offset: 0x003520F6
+	// Token: 0x06008DE7 RID: 36327 RVA: 0x00358732 File Offset: 0x00356932
 	public override void OnVisibilityChanged(bool _visibleInScene)
 	{
 		base.OnVisibilityChanged(_visibleInScene);
@@ -254,7 +254,7 @@ public class XUiV_ScrollView : XUiV_Panel
 		}
 	}
 
-	// Token: 0x06008CF6 RID: 36086 RVA: 0x00353F08 File Offset: 0x00352108
+	// Token: 0x06008DE8 RID: 36328 RVA: 0x00358744 File Offset: 0x00356944
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnScrolled(XUiController _sender, float _delta)
 	{
@@ -265,19 +265,19 @@ public class XUiV_ScrollView : XUiV_Panel
 		this.scrollView.Scroll(_delta);
 	}
 
-	// Token: 0x06008CF7 RID: 36087 RVA: 0x00353F1E File Offset: 0x0035211E
+	// Token: 0x06008DE9 RID: 36329 RVA: 0x0035875A File Offset: 0x0035695A
 	public void ResetPosition()
 	{
 		this.scrollView.ResetPosition();
 	}
 
-	// Token: 0x06008CF8 RID: 36088 RVA: 0x00353F2B File Offset: 0x0035212B
+	// Token: 0x06008DEA RID: 36330 RVA: 0x00358767 File Offset: 0x00356967
 	public void UpdatePosition()
 	{
 		this.scrollView.UpdatePosition();
 	}
 
-	// Token: 0x06008CF9 RID: 36089 RVA: 0x00353F38 File Offset: 0x00352138
+	// Token: 0x06008DEB RID: 36331 RVA: 0x00358774 File Offset: 0x00356974
 	public void MakeVisible(XUiView _viewComponent)
 	{
 		if (_viewComponent == null)
@@ -288,7 +288,7 @@ public class XUiV_ScrollView : XUiV_Panel
 		this.MakeVisible(worldCorners);
 	}
 
-	// Token: 0x06008CFA RID: 36090 RVA: 0x00353F58 File Offset: 0x00352158
+	// Token: 0x06008DEC RID: 36332 RVA: 0x00358794 File Offset: 0x00356994
 	public void MakeVisible(IList<Vector3> _worldCorners)
 	{
 		if (_worldCorners == null || _worldCorners.Count < 4)
@@ -334,7 +334,7 @@ public class XUiV_ScrollView : XUiV_Panel
 		this.panel.clipOffset = clipOffset;
 	}
 
-	// Token: 0x06008CFB RID: 36091 RVA: 0x0035411C File Offset: 0x0035231C
+	// Token: 0x06008DED RID: 36333 RVA: 0x00358958 File Offset: 0x00356B58
 	public void CenterOn(XUiView _target)
 	{
 		if (_target == null)
@@ -363,27 +363,27 @@ public class XUiV_ScrollView : XUiV_Panel
 		this.panel.clipOffset = clipOffset;
 	}
 
-	// Token: 0x04006767 RID: 26471
+	// Token: 0x04006831 RID: 26673
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UIScrollView scrollView;
 
-	// Token: 0x04006768 RID: 26472
+	// Token: 0x04006832 RID: 26674
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_ScrollBar scrollBar;
 
-	// Token: 0x04006769 RID: 26473
+	// Token: 0x04006833 RID: 26675
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UIScrollView.Movement movement = UIScrollView.Movement.Vertical;
 
-	// Token: 0x0400676A RID: 26474
+	// Token: 0x04006834 RID: 26676
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UIScrollView.DragEffect dragEffect;
 
-	// Token: 0x0400676B RID: 26475
+	// Token: 0x04006835 RID: 26677
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float scrollFactor = 2f;
 
-	// Token: 0x0400676C RID: 26476
+	// Token: 0x04006836 RID: 26678
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool scrollWithoutFocus;
 }

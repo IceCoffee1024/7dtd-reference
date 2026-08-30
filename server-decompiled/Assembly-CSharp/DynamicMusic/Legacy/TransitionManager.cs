@@ -5,11 +5,11 @@ using UnityEngine.Audio;
 
 namespace DynamicMusic.Legacy
 {
-	// Token: 0x02001A73 RID: 6771
+	// Token: 0x02001A9A RID: 6810
 	public class TransitionManager : IGamePrefsChangedListener
 	{
-		// Token: 0x170018E9 RID: 6377
-		// (get) Token: 0x0600CC14 RID: 52244 RVA: 0x004A6005 File Offset: 0x004A4205
+		// Token: 0x1700195B RID: 6491
+		// (get) Token: 0x0600CD9D RID: 52637 RVA: 0x004AC3F9 File Offset: 0x004AA5F9
 		public float MasterParam
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -23,7 +23,7 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x0600CC15 RID: 52245 RVA: 0x004A602C File Offset: 0x004A422C
+		// Token: 0x0600CD9E RID: 52638 RVA: 0x004AC420 File Offset: 0x004AA620
 		public static void Init(DynamicMusicManager _dynamicMusicManager)
 		{
 			_dynamicMusicManager.TransitionManager = new TransitionManager();
@@ -34,7 +34,7 @@ namespace DynamicMusic.Legacy
 			GamePrefs.AddChangeListener(_dynamicMusicManager.TransitionManager);
 		}
 
-		// Token: 0x0600CC16 RID: 52246 RVA: 0x004A60A8 File Offset: 0x004A42A8
+		// Token: 0x0600CD9F RID: 52639 RVA: 0x004AC49C File Offset: 0x004AA69C
 		public void Tick()
 		{
 			if (TransitionManager.Master == null)
@@ -58,7 +58,7 @@ namespace DynamicMusic.Legacy
 			TransitionManager.Master.SetFloat("dmsVol", TransitionManager.currentEventDMSLogVolume = TransitionManager.DmsEventRangeVolumeCurve.GetMixerValue(this.dynamicMusicManager.DistanceFromDeadWindow));
 		}
 
-		// Token: 0x0600CC17 RID: 52247 RVA: 0x004A61A8 File Offset: 0x004A43A8
+		// Token: 0x0600CDA0 RID: 52640 RVA: 0x004AC59C File Offset: 0x004AA79C
 		public static void SetDynamicMusicVolume(float _value)
 		{
 			if (TransitionManager.Master != null)
@@ -69,7 +69,7 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x0600CC18 RID: 52248 RVA: 0x004A6217 File Offset: 0x004A4417
+		// Token: 0x0600CDA1 RID: 52641 RVA: 0x004AC60B File Offset: 0x004AA80B
 		public static void ApplyPauseFilter()
 		{
 			if (TransitionManager.Master != null)
@@ -78,7 +78,7 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x0600CC19 RID: 52249 RVA: 0x004A623B File Offset: 0x004A443B
+		// Token: 0x0600CDA2 RID: 52642 RVA: 0x004AC62F File Offset: 0x004AA82F
 		public static void RemovePauseFilter()
 		{
 			if (TransitionManager.Master != null)
@@ -87,7 +87,7 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x0600CC1A RID: 52250 RVA: 0x004A625F File Offset: 0x004A445F
+		// Token: 0x0600CDA3 RID: 52643 RVA: 0x004AC653 File Offset: 0x004AA853
 		public void OnGamePrefChanged(EnumGamePrefs _enum)
 		{
 			if (_enum == EnumGamePrefs.OptionsMusicVolumeLevel)
@@ -96,31 +96,31 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x04009A96 RID: 39574
+		// Token: 0x04009BC7 RID: 39879
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DynamicMusicManager dynamicMusicManager;
 
-		// Token: 0x04009A97 RID: 39575
+		// Token: 0x04009BC8 RID: 39880
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static AudioMixer Master;
 
-		// Token: 0x04009A98 RID: 39576
+		// Token: 0x04009BC9 RID: 39881
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static LogarithmicCurve DmsAbsoluteVolumeCurve;
 
-		// Token: 0x04009A99 RID: 39577
+		// Token: 0x04009BCA RID: 39882
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static LogarithmicCurve DmsEventRangeVolumeCurve;
 
-		// Token: 0x04009A9A RID: 39578
+		// Token: 0x04009BCB RID: 39883
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly float dawnDuskFadeTime = 0.16666667f;
 
-		// Token: 0x04009A9B RID: 39579
+		// Token: 0x04009BCC RID: 39884
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static float currentAbsoluteDMSLogVolume;
 
-		// Token: 0x04009A9C RID: 39580
+		// Token: 0x04009BCD RID: 39885
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static float currentEventDMSLogVolume;
 	}

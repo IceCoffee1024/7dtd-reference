@@ -1,11 +1,11 @@
 ﻿using System;
 
-// Token: 0x020015FE RID: 5630
+// Token: 0x02001619 RID: 5657
 public class vp_Gameplay
 {
-	// Token: 0x170014A3 RID: 5283
-	// (get) Token: 0x0600B0F2 RID: 45298 RVA: 0x00420B6B File Offset: 0x0041ED6B
-	// (set) Token: 0x0600B0F3 RID: 45299 RVA: 0x00420B7B File Offset: 0x0041ED7B
+	// Token: 0x170014DC RID: 5340
+	// (get) Token: 0x0600B1EF RID: 45551 RVA: 0x00425EAB File Offset: 0x004240AB
+	// (set) Token: 0x0600B1F0 RID: 45552 RVA: 0x00425EBB File Offset: 0x004240BB
 	public static bool isMaster
 	{
 		get
@@ -22,10 +22,10 @@ public class vp_Gameplay
 		}
 	}
 
-	// Token: 0x040084D3 RID: 34003
+	// Token: 0x040085AC RID: 34220
 	public static bool isMultiplayer = false;
 
-	// Token: 0x040084D4 RID: 34004
+	// Token: 0x040085AD RID: 34221
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static bool m_IsMaster = true;
 }

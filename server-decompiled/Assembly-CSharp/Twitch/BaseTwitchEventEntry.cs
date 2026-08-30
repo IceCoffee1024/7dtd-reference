@@ -2,22 +2,22 @@
 
 namespace Twitch
 {
-	// Token: 0x02001805 RID: 6149
+	// Token: 0x0200182B RID: 6187
 	public class BaseTwitchEventEntry
 	{
-		// Token: 0x0600BD90 RID: 48528 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x0600BF15 RID: 48917 RVA: 0x00010E62 File Offset: 0x0000F062
 		public virtual bool IsValid(int amount = -1, string name = "", TwitchSubEventEntry.SubTierTypes subTier = TwitchSubEventEntry.SubTierTypes.Any)
 		{
 			return false;
 		}
 
-		// Token: 0x0600BD91 RID: 48529 RVA: 0x004630E2 File Offset: 0x004612E2
+		// Token: 0x0600BF16 RID: 48918 RVA: 0x00468E7E File Offset: 0x0046707E
 		public virtual string Description(TwitchEventActionEntry entry)
 		{
 			return string.Format("{0}({1})", this.EventTitle, entry.Count);
 		}
 
-		// Token: 0x0600BD92 RID: 48530 RVA: 0x00463100 File Offset: 0x00461300
+		// Token: 0x0600BF17 RID: 48919 RVA: 0x00468E9C File Offset: 0x0046709C
 		public virtual void HandleInstant(string username, TwitchManager tm)
 		{
 			if (this.PimpPotAdd > 0)
@@ -45,7 +45,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BD93 RID: 48531 RVA: 0x004631B8 File Offset: 0x004613B8
+		// Token: 0x0600BF18 RID: 48920 RVA: 0x00468F54 File Offset: 0x00467154
 		public virtual bool HandleEvent(string username, TwitchManager tm)
 		{
 			if (this.EventName == "")
@@ -87,63 +87,63 @@ namespace Twitch
 			return false;
 		}
 
-		// Token: 0x04008E5B RID: 36443
+		// Token: 0x04008F77 RID: 36727
 		public string EventName = "";
 
-		// Token: 0x04008E5C RID: 36444
+		// Token: 0x04008F78 RID: 36728
 		public string EventTitle = "";
 
-		// Token: 0x04008E5D RID: 36445
+		// Token: 0x04008F79 RID: 36729
 		public bool SafeAllowed = true;
 
-		// Token: 0x04008E5E RID: 36446
+		// Token: 0x04008F7A RID: 36730
 		public bool StartingCooldownAllowed;
 
-		// Token: 0x04008E5F RID: 36447
+		// Token: 0x04008F7B RID: 36731
 		public bool CooldownAllowed = true;
 
-		// Token: 0x04008E60 RID: 36448
+		// Token: 0x04008F7C RID: 36732
 		public bool VoteEventAllowed = true;
 
-		// Token: 0x04008E61 RID: 36449
+		// Token: 0x04008F7D RID: 36733
 		public bool RewardsBitPot;
 
-		// Token: 0x04008E62 RID: 36450
+		// Token: 0x04008F7E RID: 36734
 		public int PPAmount;
 
-		// Token: 0x04008E63 RID: 36451
+		// Token: 0x04008F7F RID: 36735
 		public int SPAmount;
 
-		// Token: 0x04008E64 RID: 36452
+		// Token: 0x04008F80 RID: 36736
 		public int PimpPotAdd;
 
-		// Token: 0x04008E65 RID: 36453
+		// Token: 0x04008F81 RID: 36737
 		public int BitPotAdd;
 
-		// Token: 0x04008E66 RID: 36454
+		// Token: 0x04008F82 RID: 36738
 		public int CooldownAdd;
 
-		// Token: 0x04008E67 RID: 36455
+		// Token: 0x04008F83 RID: 36739
 		public BaseTwitchEventEntry.EventTypes EventType;
 
-		// Token: 0x02001806 RID: 6150
+		// Token: 0x0200182C RID: 6188
 		public enum EventTypes
 		{
-			// Token: 0x04008E69 RID: 36457
+			// Token: 0x04008F85 RID: 36741
 			Bits,
-			// Token: 0x04008E6A RID: 36458
+			// Token: 0x04008F86 RID: 36742
 			Subs,
-			// Token: 0x04008E6B RID: 36459
+			// Token: 0x04008F87 RID: 36743
 			GiftSubs,
-			// Token: 0x04008E6C RID: 36460
+			// Token: 0x04008F88 RID: 36744
 			Raid,
-			// Token: 0x04008E6D RID: 36461
+			// Token: 0x04008F89 RID: 36745
 			Charity,
-			// Token: 0x04008E6E RID: 36462
+			// Token: 0x04008F8A RID: 36746
 			ChannelPoints,
-			// Token: 0x04008E6F RID: 36463
+			// Token: 0x04008F8B RID: 36747
 			HypeTrain,
-			// Token: 0x04008E70 RID: 36464
+			// Token: 0x04008F8C RID: 36748
 			CreatorGoal
 		}
 	}

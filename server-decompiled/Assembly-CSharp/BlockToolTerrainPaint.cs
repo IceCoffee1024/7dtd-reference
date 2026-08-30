@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020001C0 RID: 448
+// Token: 0x020001C2 RID: 450
 public class BlockToolTerrainPaint : IBlockTool
 {
-	// Token: 0x06000DBC RID: 3516 RVA: 0x0005AA95 File Offset: 0x00058C95
+	// Token: 0x06000DC7 RID: 3527 RVA: 0x0005AF15 File Offset: 0x00059115
 	public BlockToolTerrainPaint(BlockTools.Brush _brush, NguiWdwTerrainEditor _parentWindow)
 	{
 		this.brush = _brush;
@@ -14,12 +14,12 @@ public class BlockToolTerrainPaint : IBlockTool
 		this.paintBlock = BlockValue.Air;
 	}
 
-	// Token: 0x06000DBD RID: 3517 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000DC8 RID: 3528 RVA: 0x000027FC File Offset: 0x000009FC
 	public void CheckSpecialKeys(Event ev, PlayerActionsLocal _playerAction)
 	{
 	}
 
-	// Token: 0x06000DBE RID: 3518 RVA: 0x0005AAC8 File Offset: 0x00058CC8
+	// Token: 0x06000DC9 RID: 3529 RVA: 0x0005AF48 File Offset: 0x00059148
 	public void CheckKeys(ItemInventoryData _data, WorldRayHitInfo _hitInfo, PlayerActionsLocal _playerAction)
 	{
 		if (_data == null || _data.actionData == null || _data.actionData[0] == null)
@@ -52,19 +52,19 @@ public class BlockToolTerrainPaint : IBlockTool
 		_data.world.SetBlocksRPC(this.blockChanges);
 	}
 
-	// Token: 0x06000DBF RID: 3519 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000DCA RID: 3530 RVA: 0x00010E62 File Offset: 0x0000F062
 	public bool ConsumeScrollWheel(ItemInventoryData _data, float _scrollWheelInput, PlayerActionsLocal _playerInput)
 	{
 		return false;
 	}
 
-	// Token: 0x06000DC0 RID: 3520 RVA: 0x00031E8B File Offset: 0x0003008B
+	// Token: 0x06000DCB RID: 3531 RVA: 0x00032147 File Offset: 0x00030347
 	public string GetDebugOutput()
 	{
 		return "";
 	}
 
-	// Token: 0x06000DC1 RID: 3521 RVA: 0x0005AC12 File Offset: 0x00058E12
+	// Token: 0x06000DCC RID: 3532 RVA: 0x0005B092 File Offset: 0x00059292
 	public virtual bool ExecuteAttackAction(ItemInventoryData _data, bool _bReleased, PlayerActionsLocal _playerAction)
 	{
 		this.isButtonDown = true;
@@ -72,7 +72,7 @@ public class BlockToolTerrainPaint : IBlockTool
 		return true;
 	}
 
-	// Token: 0x06000DC2 RID: 3522 RVA: 0x0005AC12 File Offset: 0x00058E12
+	// Token: 0x06000DCD RID: 3533 RVA: 0x0005B092 File Offset: 0x00059292
 	public bool ExecuteUseAction(ItemInventoryData _data, bool _bReleased, PlayerActionsLocal _playerAction)
 	{
 		this.isButtonDown = true;
@@ -80,7 +80,7 @@ public class BlockToolTerrainPaint : IBlockTool
 		return true;
 	}
 
-	// Token: 0x06000DC3 RID: 3523 RVA: 0x0005AC24 File Offset: 0x00058E24
+	// Token: 0x06000DCE RID: 3534 RVA: 0x0005B0A4 File Offset: 0x000592A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public sbyte[] GetLocalDensityMap(WorldBase _world, Vector3i blockTargetPos, Vector3i[] localArea)
 	{
@@ -92,33 +92,33 @@ public class BlockToolTerrainPaint : IBlockTool
 		return array;
 	}
 
-	// Token: 0x06000DC4 RID: 3524 RVA: 0x0005AA8E File Offset: 0x00058C8E
+	// Token: 0x06000DCF RID: 3535 RVA: 0x0005AF0E File Offset: 0x0005910E
 	public override string ToString()
 	{
 		return "Dig/Place Terrain";
 	}
 
-	// Token: 0x04000BDE RID: 3038
+	// Token: 0x04000BEB RID: 3051
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockTools.Brush brush;
 
-	// Token: 0x04000BDF RID: 3039
+	// Token: 0x04000BEC RID: 3052
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NguiWdwTerrainEditor parentWindow;
 
-	// Token: 0x04000BE0 RID: 3040
+	// Token: 0x04000BED RID: 3053
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemInventoryData lastData;
 
-	// Token: 0x04000BE1 RID: 3041
+	// Token: 0x04000BEE RID: 3054
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isButtonDown;
 
-	// Token: 0x04000BE2 RID: 3042
+	// Token: 0x04000BEF RID: 3055
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<BlockChangeInfo> blockChanges = new List<BlockChangeInfo>();
 
-	// Token: 0x04000BE3 RID: 3043
+	// Token: 0x04000BF0 RID: 3056
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockValue paintBlock;
 }

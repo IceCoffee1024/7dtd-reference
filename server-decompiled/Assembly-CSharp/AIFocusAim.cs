@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000440 RID: 1088
+// Token: 0x02000444 RID: 1092
 public readonly struct AIFocusAim : IFocusTarget
 {
-	// Token: 0x06002142 RID: 8514 RVA: 0x000C8952 File Offset: 0x000C6B52
+	// Token: 0x0600215F RID: 8543 RVA: 0x000C915E File Offset: 0x000C735E
 	public AIFocusAim(Entity target, AIAimFocusOffset targetOffset)
 	{
 		this.Target = target;
@@ -12,7 +12,7 @@ public readonly struct AIFocusAim : IFocusTarget
 		this.ConditionDistance = default(AIFocusConditionDistance);
 	}
 
-	// Token: 0x06002143 RID: 8515 RVA: 0x000C8970 File Offset: 0x000C6B70
+	// Token: 0x06002160 RID: 8544 RVA: 0x000C917C File Offset: 0x000C737C
 	public static bool GetActiveFocus(Entity theEntity, AIFocus<AIFocusAim> focus, out Vector3 activeFocus)
 	{
 		Vector3 position = theEntity.position;
@@ -44,12 +44,12 @@ public readonly struct AIFocusAim : IFocusTarget
 		return false;
 	}
 
-	// Token: 0x040016E2 RID: 5858
+	// Token: 0x040016F7 RID: 5879
 	public readonly Entity Target;
 
-	// Token: 0x040016E3 RID: 5859
+	// Token: 0x040016F8 RID: 5880
 	public readonly AIAimFocusOffset TargetOffset;
 
-	// Token: 0x040016E4 RID: 5860
+	// Token: 0x040016F9 RID: 5881
 	public readonly AIFocusConditionDistance ConditionDistance;
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000689 RID: 1673
+// Token: 0x02000693 RID: 1683
 public class CompareLightLevel : TargetedCompareRequirementBase
 {
-	// Token: 0x060034F3 RID: 13555 RVA: 0x0015E7E4 File Offset: 0x0015C9E4
+	// Token: 0x06003549 RID: 13641 RVA: 0x001609BC File Offset: 0x0015EBBC
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -22,7 +22,7 @@ public class CompareLightLevel : TargetedCompareRequirementBase
 		return !RequirementBase.compareValues(this.target.GetLightBrightness(), this.operation, this.value);
 	}
 
-	// Token: 0x060034F4 RID: 13556 RVA: 0x0015E850 File Offset: 0x0015CA50
+	// Token: 0x0600354A RID: 13642 RVA: 0x00160A28 File Offset: 0x0015EC28
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("light level '{0}'% {1}{2} {3}", new object[]

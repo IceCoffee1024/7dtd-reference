@@ -2,54 +2,54 @@
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A01 RID: 6657
+	// Token: 0x02001A28 RID: 6696
 	public abstract class ContentPlayer : IPlayable
 	{
-		// Token: 0x1700185A RID: 6234
-		// (get) Token: 0x0600C9AF RID: 51631 RVA: 0x0049F9EB File Offset: 0x0049DBEB
-		// (set) Token: 0x0600C9B0 RID: 51632 RVA: 0x0049F9F3 File Offset: 0x0049DBF3
+		// Token: 0x170018CC RID: 6348
+		// (get) Token: 0x0600CB38 RID: 52024 RVA: 0x004A5DDF File Offset: 0x004A3FDF
+		// (set) Token: 0x0600CB39 RID: 52025 RVA: 0x004A5DE7 File Offset: 0x004A3FE7
 		public virtual float Volume { get; set; } = 1f;
 
-		// Token: 0x1700185B RID: 6235
-		// (get) Token: 0x0600C9B1 RID: 51633 RVA: 0x0049F9FC File Offset: 0x0049DBFC
-		// (set) Token: 0x0600C9B2 RID: 51634 RVA: 0x0049FA04 File Offset: 0x0049DC04
+		// Token: 0x170018CD RID: 6349
+		// (get) Token: 0x0600CB3A RID: 52026 RVA: 0x004A5DF0 File Offset: 0x004A3FF0
+		// (set) Token: 0x0600CB3B RID: 52027 RVA: 0x004A5DF8 File Offset: 0x004A3FF8
 		public virtual bool IsDone
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x1700185C RID: 6236
-		// (get) Token: 0x0600C9B3 RID: 51635 RVA: 0x0049FA0D File Offset: 0x0049DC0D
-		// (set) Token: 0x0600C9B4 RID: 51636 RVA: 0x0049FA15 File Offset: 0x0049DC15
+		// Token: 0x170018CE RID: 6350
+		// (get) Token: 0x0600CB3C RID: 52028 RVA: 0x004A5E01 File Offset: 0x004A4001
+		// (set) Token: 0x0600CB3D RID: 52029 RVA: 0x004A5E09 File Offset: 0x004A4009
 		public virtual bool IsPaused
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x1700185D RID: 6237
-		// (get) Token: 0x0600C9B5 RID: 51637 RVA: 0x0049FA1E File Offset: 0x0049DC1E
-		// (set) Token: 0x0600C9B6 RID: 51638 RVA: 0x0049FA26 File Offset: 0x0049DC26
+		// Token: 0x170018CF RID: 6351
+		// (get) Token: 0x0600CB3E RID: 52030 RVA: 0x004A5E12 File Offset: 0x004A4012
+		// (set) Token: 0x0600CB3F RID: 52031 RVA: 0x004A5E1A File Offset: 0x004A401A
 		public virtual bool IsPlaying
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x1700185E RID: 6238
-		// (get) Token: 0x0600C9B7 RID: 51639 RVA: 0x0049FA2F File Offset: 0x0049DC2F
-		// (set) Token: 0x0600C9B8 RID: 51640 RVA: 0x0049FA37 File Offset: 0x0049DC37
+		// Token: 0x170018D0 RID: 6352
+		// (get) Token: 0x0600CB40 RID: 52032 RVA: 0x004A5E23 File Offset: 0x004A4023
+		// (set) Token: 0x0600CB41 RID: 52033 RVA: 0x004A5E2B File Offset: 0x004A402B
 		public virtual bool IsReady
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x0600C9B9 RID: 51641
+		// Token: 0x0600CB42 RID: 52034
 		public abstract void Init();
 
-		// Token: 0x0600C9BA RID: 51642 RVA: 0x0049FA40 File Offset: 0x0049DC40
+		// Token: 0x0600CB43 RID: 52035 RVA: 0x004A5E34 File Offset: 0x004A4034
 		public virtual void Play()
 		{
 			this.IsDone = false;
@@ -57,21 +57,21 @@ namespace DynamicMusic
 			this.IsPaused = false;
 		}
 
-		// Token: 0x0600C9BB RID: 51643 RVA: 0x0049FA57 File Offset: 0x0049DC57
+		// Token: 0x0600CB44 RID: 52036 RVA: 0x004A5E4B File Offset: 0x004A404B
 		public virtual void Pause()
 		{
 			this.IsPlaying = false;
 			this.IsPaused = true;
 		}
 
-		// Token: 0x0600C9BC RID: 51644 RVA: 0x0049FA67 File Offset: 0x0049DC67
+		// Token: 0x0600CB45 RID: 52037 RVA: 0x004A5E5B File Offset: 0x004A405B
 		public virtual void UnPause()
 		{
 			this.IsPlaying = true;
 			this.IsPaused = false;
 		}
 
-		// Token: 0x0600C9BD RID: 51645 RVA: 0x0049FA77 File Offset: 0x0049DC77
+		// Token: 0x0600CB46 RID: 52038 RVA: 0x004A5E6B File Offset: 0x004A406B
 		public virtual void Stop()
 		{
 			this.IsDone = true;
@@ -79,7 +79,7 @@ namespace DynamicMusic
 			this.IsPaused = false;
 		}
 
-		// Token: 0x0600C9BE RID: 51646 RVA: 0x0049FA8E File Offset: 0x0049DC8E
+		// Token: 0x0600CB47 RID: 52039 RVA: 0x004A5E82 File Offset: 0x004A4082
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ContentPlayer()
 		{

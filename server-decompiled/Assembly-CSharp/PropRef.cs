@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x02000190 RID: 400
+// Token: 0x02000192 RID: 402
 public struct PropRef : IEquatable<PropRef>
 {
-	// Token: 0x06000C2A RID: 3114 RVA: 0x0004C24C File Offset: 0x0004A44C
+	// Token: 0x06000C35 RID: 3125 RVA: 0x0004C664 File Offset: 0x0004A864
 	public static PropRef Read(BinaryReader br)
 	{
 		return new PropRef
@@ -14,26 +14,26 @@ public struct PropRef : IEquatable<PropRef>
 		};
 	}
 
-	// Token: 0x06000C2B RID: 3115 RVA: 0x0004C27C File Offset: 0x0004A47C
+	// Token: 0x06000C36 RID: 3126 RVA: 0x0004C694 File Offset: 0x0004A894
 	public readonly void Write(BinaryWriter bw)
 	{
 		StreamUtils.Write(bw, this.ChunkPos);
 		bw.Write(this.PropId);
 	}
 
-	// Token: 0x06000C2C RID: 3116 RVA: 0x0004C296 File Offset: 0x0004A496
+	// Token: 0x06000C37 RID: 3127 RVA: 0x0004C6AE File Offset: 0x0004A8AE
 	public override string ToString()
 	{
 		return string.Format("ChunkPos=({0}), PropId={1}", this.ChunkPos, this.PropId);
 	}
 
-	// Token: 0x06000C2D RID: 3117 RVA: 0x0004C2B8 File Offset: 0x0004A4B8
+	// Token: 0x06000C38 RID: 3128 RVA: 0x0004C6D0 File Offset: 0x0004A8D0
 	public bool Equals(PropRef other)
 	{
 		return this.ChunkPos.Equals(other.ChunkPos) && this.PropId == other.PropId;
 	}
 
-	// Token: 0x06000C2E RID: 3118 RVA: 0x0004C2E0 File Offset: 0x0004A4E0
+	// Token: 0x06000C39 RID: 3129 RVA: 0x0004C6F8 File Offset: 0x0004A8F8
 	public override bool Equals(object obj)
 	{
 		if (obj is PropRef)
@@ -44,34 +44,34 @@ public struct PropRef : IEquatable<PropRef>
 		return false;
 	}
 
-	// Token: 0x06000C2F RID: 3119 RVA: 0x0004C305 File Offset: 0x0004A505
+	// Token: 0x06000C3A RID: 3130 RVA: 0x0004C71D File Offset: 0x0004A91D
 	public override int GetHashCode()
 	{
 		return HashCode.Combine<Vector2i, int>(this.ChunkPos, this.PropId);
 	}
 
-	// Token: 0x06000C30 RID: 3120 RVA: 0x0004C318 File Offset: 0x0004A518
+	// Token: 0x06000C3B RID: 3131 RVA: 0x0004C730 File Offset: 0x0004A930
 	public static bool operator ==(PropRef left, PropRef right)
 	{
 		return left.Equals(right);
 	}
 
-	// Token: 0x06000C31 RID: 3121 RVA: 0x0004C322 File Offset: 0x0004A522
+	// Token: 0x06000C3C RID: 3132 RVA: 0x0004C73A File Offset: 0x0004A93A
 	public static bool operator !=(PropRef left, PropRef right)
 	{
 		return !left.Equals(right);
 	}
 
-	// Token: 0x04000B01 RID: 2817
+	// Token: 0x04000B0E RID: 2830
 	public static readonly PropRef Default = new PropRef
 	{
 		ChunkPos = Vector2i.zero,
 		PropId = 0
 	};
 
-	// Token: 0x04000B02 RID: 2818
+	// Token: 0x04000B0F RID: 2831
 	public Vector2i ChunkPos;
 
-	// Token: 0x04000B03 RID: 2819
+	// Token: 0x04000B10 RID: 2832
 	public int PropId;
 }

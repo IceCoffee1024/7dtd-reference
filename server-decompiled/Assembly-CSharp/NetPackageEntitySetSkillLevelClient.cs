@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007C8 RID: 1992
+// Token: 0x020007D3 RID: 2003
 [Preserve]
 public class NetPackageEntitySetSkillLevelClient : NetPackage
 {
-	// Token: 0x1700061E RID: 1566
-	// (get) Token: 0x06003AF2 RID: 15090 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x17000629 RID: 1577
+	// (get) Token: 0x06003B51 RID: 15185 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,7 +15,7 @@ public class NetPackageEntitySetSkillLevelClient : NetPackage
 		}
 	}
 
-	// Token: 0x06003AF3 RID: 15091 RVA: 0x0017C66F File Offset: 0x0017A86F
+	// Token: 0x06003B52 RID: 15186 RVA: 0x0017EA47 File Offset: 0x0017CC47
 	public NetPackageEntitySetSkillLevelClient Setup(int _entityId, string _skill, int _level)
 	{
 		this.entityId = _entityId;
@@ -24,7 +24,7 @@ public class NetPackageEntitySetSkillLevelClient : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003AF4 RID: 15092 RVA: 0x0017C687 File Offset: 0x0017A887
+	// Token: 0x06003B53 RID: 15187 RVA: 0x0017EA5F File Offset: 0x0017CC5F
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.entityId = _reader.ReadInt32();
@@ -32,7 +32,7 @@ public class NetPackageEntitySetSkillLevelClient : NetPackage
 		this.level = _reader.ReadInt32();
 	}
 
-	// Token: 0x06003AF5 RID: 15093 RVA: 0x0017C6AD File Offset: 0x0017A8AD
+	// Token: 0x06003B54 RID: 15188 RVA: 0x0017EA85 File Offset: 0x0017CC85
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -41,7 +41,7 @@ public class NetPackageEntitySetSkillLevelClient : NetPackage
 		_writer.Write(this.level);
 	}
 
-	// Token: 0x06003AF6 RID: 15094 RVA: 0x0017C6DC File Offset: 0x0017A8DC
+	// Token: 0x06003B55 RID: 15189 RVA: 0x0017EAB4 File Offset: 0x0017CCB4
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -55,21 +55,21 @@ public class NetPackageEntitySetSkillLevelClient : NetPackage
 		}
 	}
 
-	// Token: 0x06003AF7 RID: 15095 RVA: 0x00080B69 File Offset: 0x0007ED69
+	// Token: 0x06003B56 RID: 15190 RVA: 0x0008121D File Offset: 0x0007F41D
 	public override int GetLength()
 	{
 		return 8;
 	}
 
-	// Token: 0x04002FED RID: 12269
+	// Token: 0x0400306C RID: 12396
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int entityId;
 
-	// Token: 0x04002FEE RID: 12270
+	// Token: 0x0400306D RID: 12397
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string skill;
 
-	// Token: 0x04002FEF RID: 12271
+	// Token: 0x0400306E RID: 12398
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int level;
 }

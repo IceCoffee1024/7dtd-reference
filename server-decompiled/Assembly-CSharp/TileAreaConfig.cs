@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000BB8 RID: 3000
+// Token: 0x02000BCA RID: 3018
 public struct TileAreaConfig
 {
-	// Token: 0x06005A81 RID: 23169 RVA: 0x0022D3A8 File Offset: 0x0022B5A8
+	// Token: 0x06005B09 RID: 23305 RVA: 0x00230110 File Offset: 0x0022E310
 	public void checkCoordinates(ref int _tileX, ref int _tileZ)
 	{
 		Vector2i vector2i = this.tileEnd - this.tileStart + new Vector2i(1, 1);
@@ -50,18 +50,18 @@ public struct TileAreaConfig
 		_tileZ = this.tileStart.y;
 	}
 
-	// Token: 0x04004615 RID: 17941
+	// Token: 0x040046B1 RID: 18097
 	public Vector2i tileStart;
 
-	// Token: 0x04004616 RID: 17942
+	// Token: 0x040046B2 RID: 18098
 	public Vector2i tileEnd;
 
-	// Token: 0x04004617 RID: 17943
+	// Token: 0x040046B3 RID: 18099
 	public int tileSizeInWorldUnits;
 
-	// Token: 0x04004618 RID: 17944
+	// Token: 0x040046B4 RID: 18100
 	public bool bWrapAroundX;
 
-	// Token: 0x04004619 RID: 17945
+	// Token: 0x040046B5 RID: 18101
 	public bool bWrapAroundZ;
 }

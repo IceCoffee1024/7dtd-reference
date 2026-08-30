@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EEC RID: 3820
+// Token: 0x02000F03 RID: 3843
 [Preserve]
 public class XUiC_ContainerStandardControls : XUiController
 {
-	// Token: 0x17000E03 RID: 3587
-	// (get) Token: 0x060077CB RID: 30667 RVA: 0x002D3FEB File Offset: 0x002D21EB
-	// (set) Token: 0x060077CC RID: 30668 RVA: 0x002D3FFE File Offset: 0x002D21FE
+	// Token: 0x17000E1D RID: 3613
+	// (get) Token: 0x06007883 RID: 30851 RVA: 0x002D7F77 File Offset: 0x002D6177
+	// (set) Token: 0x06007884 RID: 30852 RVA: 0x002D7F8A File Offset: 0x002D618A
 	public PackedBoolArray LockedSlots
 	{
 		get
@@ -30,7 +30,7 @@ public class XUiC_ContainerStandardControls : XUiController
 		}
 	}
 
-	// Token: 0x060077CD RID: 30669 RVA: 0x002D4014 File Offset: 0x002D2214
+	// Token: 0x06007885 RID: 30853 RVA: 0x002D7FA0 File Offset: 0x002D61A0
 	public override void Init()
 	{
 		base.Init();
@@ -94,7 +94,7 @@ public class XUiC_ContainerStandardControls : XUiController
 		}
 	}
 
-	// Token: 0x060077CE RID: 30670 RVA: 0x002D415F File Offset: 0x002D235F
+	// Token: 0x06007886 RID: 30854 RVA: 0x002D80EB File Offset: 0x002D62EB
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -106,7 +106,7 @@ public class XUiC_ContainerStandardControls : XUiController
 		applyLockedSlotStates(this.LockedSlots);
 	}
 
-	// Token: 0x060077CF RID: 30671 RVA: 0x002D417D File Offset: 0x002D237D
+	// Token: 0x06007887 RID: 30855 RVA: 0x002D8109 File Offset: 0x002D6309
 	public void Sort()
 	{
 		Action<XUiC_ContainerStandardControls> updateLockedSlotStates = this.UpdateLockedSlotStates;
@@ -122,7 +122,7 @@ public class XUiC_ContainerStandardControls : XUiController
 		sortPressed(this.LockedSlots);
 	}
 
-	// Token: 0x060077D0 RID: 30672 RVA: 0x002D41A8 File Offset: 0x002D23A8
+	// Token: 0x06007888 RID: 30856 RVA: 0x002D8134 File Offset: 0x002D6334
 	public void MoveAll()
 	{
 		Action<XUiC_ContainerStandardControls> updateLockedSlotStates = this.UpdateLockedSlotStates;
@@ -147,7 +147,7 @@ public class XUiC_ContainerStandardControls : XUiController
 		}
 	}
 
-	// Token: 0x060077D1 RID: 30673 RVA: 0x002D4214 File Offset: 0x002D2414
+	// Token: 0x06007889 RID: 30857 RVA: 0x002D81A0 File Offset: 0x002D63A0
 	public void MoveFillAndSmart()
 	{
 		Action<XUiC_ContainerStandardControls> updateLockedSlotStates = this.UpdateLockedSlotStates;
@@ -164,7 +164,7 @@ public class XUiC_ContainerStandardControls : XUiController
 		}
 	}
 
-	// Token: 0x060077D2 RID: 30674 RVA: 0x002D4260 File Offset: 0x002D2460
+	// Token: 0x0600788A RID: 30858 RVA: 0x002D81EC File Offset: 0x002D63EC
 	public void MoveFillStacks()
 	{
 		Action<XUiC_ContainerStandardControls> updateLockedSlotStates = this.UpdateLockedSlotStates;
@@ -181,7 +181,7 @@ public class XUiC_ContainerStandardControls : XUiController
 		}
 	}
 
-	// Token: 0x060077D3 RID: 30675 RVA: 0x002D42AC File Offset: 0x002D24AC
+	// Token: 0x0600788B RID: 30859 RVA: 0x002D8238 File Offset: 0x002D6438
 	public void MoveSmart()
 	{
 		Action<XUiC_ContainerStandardControls> updateLockedSlotStates = this.UpdateLockedSlotStates;
@@ -198,7 +198,7 @@ public class XUiC_ContainerStandardControls : XUiController
 		}
 	}
 
-	// Token: 0x060077D4 RID: 30676 RVA: 0x002D42F5 File Offset: 0x002D24F5
+	// Token: 0x0600788C RID: 30860 RVA: 0x002D8281 File Offset: 0x002D6481
 	public void ToggleLockMode()
 	{
 		Action<XUiC_ContainerStandardControls> updateLockedSlotStates = this.UpdateLockedSlotStates;
@@ -214,7 +214,7 @@ public class XUiC_ContainerStandardControls : XUiController
 		lockModeToggled();
 	}
 
-	// Token: 0x060077D5 RID: 30677 RVA: 0x002D4319 File Offset: 0x002D2519
+	// Token: 0x0600788D RID: 30861 RVA: 0x002D82A5 File Offset: 0x002D64A5
 	public void LockModeChanged(bool _state)
 	{
 		if (this.lockModeButtonColorTweener != null)
@@ -223,7 +223,7 @@ public class XUiC_ContainerStandardControls : XUiController
 		}
 	}
 
-	// Token: 0x060077D6 RID: 30678 RVA: 0x002D4335 File Offset: 0x002D2535
+	// Token: 0x0600788E RID: 30862 RVA: 0x002D82C1 File Offset: 0x002D64C1
 	public override bool ParseAttribute(string _name, string _value)
 	{
 		if (_name == "move_start_bottom_left")
@@ -234,42 +234,42 @@ public class XUiC_ContainerStandardControls : XUiController
 		return base.ParseAttribute(_name, _value);
 	}
 
-	// Token: 0x0400586E RID: 22638
+	// Token: 0x04005920 RID: 22816
 	public Func<PackedBoolArray> GetLockedSlotsFromStorage;
 
-	// Token: 0x0400586F RID: 22639
+	// Token: 0x04005921 RID: 22817
 	public Action<PackedBoolArray> SetLockedSlotsToStorage;
 
-	// Token: 0x04005870 RID: 22640
+	// Token: 0x04005922 RID: 22818
 	public Action<PackedBoolArray> ApplyLockedSlotStates;
 
-	// Token: 0x04005871 RID: 22641
+	// Token: 0x04005923 RID: 22819
 	public Action<XUiC_ContainerStandardControls> UpdateLockedSlotStates;
 
-	// Token: 0x04005872 RID: 22642
+	// Token: 0x04005924 RID: 22820
 	public Action<PackedBoolArray> SortPressed;
 
-	// Token: 0x04005873 RID: 22643
+	// Token: 0x04005925 RID: 22821
 	public Action LockModeToggled;
 
-	// Token: 0x04005874 RID: 22644
+	// Token: 0x04005926 RID: 22822
 	public XUiC_ContainerStandardControls.MoveAllowedDelegate MoveAllowed;
 
-	// Token: 0x04005875 RID: 22645
+	// Token: 0x04005927 RID: 22823
 	public Action<bool, bool> MoveAllDone;
 
-	// Token: 0x04005876 RID: 22646
+	// Token: 0x04005928 RID: 22824
 	public bool MoveStartBottomRight;
 
-	// Token: 0x04005877 RID: 22647
+	// Token: 0x04005929 RID: 22825
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool LockModeEnabled;
 
-	// Token: 0x04005878 RID: 22648
+	// Token: 0x0400592A RID: 22826
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TweenColor lockModeButtonColorTweener;
 
-	// Token: 0x02000EED RID: 3821
-	// (Invoke) Token: 0x060077DF RID: 30687
+	// Token: 0x02000F04 RID: 3844
+	// (Invoke) Token: 0x06007897 RID: 30871
 	public delegate bool MoveAllowedDelegate(out XUiController _parentWindow, out XUiC_ItemStackGrid _sourceGrid, out IInventory _destinationInventory);
 }

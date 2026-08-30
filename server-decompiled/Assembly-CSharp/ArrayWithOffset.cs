@@ -1,20 +1,20 @@
 ﻿using System;
 
-// Token: 0x02001369 RID: 4969
+// Token: 0x02001383 RID: 4995
 public class ArrayWithOffset<T>
 {
-	// Token: 0x06009CA6 RID: 40102 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x06009DA1 RID: 40353 RVA: 0x0000640C File Offset: 0x0000460C
 	public ArrayWithOffset()
 	{
 	}
 
-	// Token: 0x06009CA7 RID: 40103 RVA: 0x003B3E3A File Offset: 0x003B203A
+	// Token: 0x06009DA2 RID: 40354 RVA: 0x003B90EE File Offset: 0x003B72EE
 	public ArrayWithOffset(int _dimX, int _dimY)
 		: this(_dimX, _dimY, 0, 0)
 	{
 	}
 
-	// Token: 0x06009CA8 RID: 40104 RVA: 0x003B3E48 File Offset: 0x003B2048
+	// Token: 0x06009DA3 RID: 40355 RVA: 0x003B90FC File Offset: 0x003B72FC
 	public ArrayWithOffset(int _dimX, int _dimY, int _addXOffs, int _addYOffs)
 	{
 		this.DimX = _dimX;
@@ -28,7 +28,7 @@ public class ArrayWithOffset<T>
 		this.addYOffs = _addYOffs + this.sizeXHalf;
 	}
 
-	// Token: 0x17001265 RID: 4709
+	// Token: 0x1700129E RID: 4766
 	public virtual T this[int _x, int _y]
 	{
 		get
@@ -41,13 +41,13 @@ public class ArrayWithOffset<T>
 		}
 	}
 
-	// Token: 0x06009CAB RID: 40107 RVA: 0x003B3F1E File Offset: 0x003B211E
+	// Token: 0x06009DA6 RID: 40358 RVA: 0x003B91D2 File Offset: 0x003B73D2
 	public bool Contains(int _x, int _y)
 	{
 		return _x >= this.MinPos.x && _y >= this.MinPos.y && _x < this.MaxPos.x && _y < this.MaxPos.y;
 	}
 
-	// Token: 0x06009CAC RID: 40108 RVA: 0x003B3F5C File Offset: 0x003B215C
+	// Token: 0x06009DA7 RID: 40359 RVA: 0x003B9210 File Offset: 0x003B7410
 	public void CopyInto(ArrayWithOffset<T> _other)
 	{
 		for (int i = 0; i < this.data.GetLength(0); i++)
@@ -59,35 +59,35 @@ public class ArrayWithOffset<T>
 		}
 	}
 
-	// Token: 0x040076D5 RID: 30421
+	// Token: 0x040077AD RID: 30637
 	[PublicizedFrom(EAccessModifier.Private)]
 	public T[,] data;
 
-	// Token: 0x040076D6 RID: 30422
+	// Token: 0x040077AE RID: 30638
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int sizeXHalf;
 
-	// Token: 0x040076D7 RID: 30423
+	// Token: 0x040077AF RID: 30639
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int sizeYHalf;
 
-	// Token: 0x040076D8 RID: 30424
+	// Token: 0x040077B0 RID: 30640
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int addXOffs;
 
-	// Token: 0x040076D9 RID: 30425
+	// Token: 0x040077B1 RID: 30641
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int addYOffs;
 
-	// Token: 0x040076DA RID: 30426
+	// Token: 0x040077B2 RID: 30642
 	public int DimX;
 
-	// Token: 0x040076DB RID: 30427
+	// Token: 0x040077B3 RID: 30643
 	public int DimY;
 
-	// Token: 0x040076DC RID: 30428
+	// Token: 0x040077B4 RID: 30644
 	public Vector2i MinPos;
 
-	// Token: 0x040076DD RID: 30429
+	// Token: 0x040077B5 RID: 30645
 	public Vector2i MaxPos;
 }

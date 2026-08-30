@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020006D1 RID: 1745
+// Token: 0x020006DB RID: 1755
 [Preserve]
 public class MinEventActionLogItemData : MinEventActionBase
 {
-	// Token: 0x060035E5 RID: 13797 RVA: 0x001642D4 File Offset: 0x001624D4
+	// Token: 0x0600363B RID: 13883 RVA: 0x001664AC File Offset: 0x001646AC
 	public override void Execute(MinEventParams _params)
 	{
 		if (_params.Self.inventory.holdingItem == null)
@@ -19,7 +19,7 @@ public class MinEventActionLogItemData : MinEventActionBase
 		});
 	}
 
-	// Token: 0x04002B59 RID: 11097
+	// Token: 0x04002BCD RID: 11213
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string message;
 }

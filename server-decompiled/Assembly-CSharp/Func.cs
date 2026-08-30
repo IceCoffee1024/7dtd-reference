@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x02001398 RID: 5016
-// (Invoke) Token: 0x06009DDF RID: 40415
+// Token: 0x020013B3 RID: 5043
+// (Invoke) Token: 0x06009EDC RID: 40668
 public delegate TRes Func<T1, T2, T3, T4, T5, TRes>(T1 _v1, T2 _v2, T3 _v3, T4 _v4, T5 _v5);

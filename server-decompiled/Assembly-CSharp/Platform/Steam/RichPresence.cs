@@ -3,15 +3,15 @@ using Steamworks;
 
 namespace Platform.Steam
 {
-	// Token: 0x02001C79 RID: 7289
+	// Token: 0x02001CA0 RID: 7328
 	public class RichPresence : IRichPresence
 	{
-		// Token: 0x0600D7C2 RID: 55234 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600D954 RID: 55636 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Init(IPlatform _owner)
 		{
 		}
 
-		// Token: 0x0600D7C3 RID: 55235 RVA: 0x004D9DD0 File Offset: 0x004D7FD0
+		// Token: 0x0600D955 RID: 55637 RVA: 0x004E02EC File Offset: 0x004DE4EC
 		public void UpdateRichPresence(IRichPresence.PresenceStates state)
 		{
 			World world = GameManager.Instance.World;
@@ -188,35 +188,35 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0400A3B2 RID: 41906
+		// Token: 0x0400A4E4 RID: 42212
 		[PublicizedFrom(EAccessModifier.Private)]
 		public EntityPlayerLocal localPlayer;
 
-		// Token: 0x0400A3B3 RID: 41907
+		// Token: 0x0400A4E5 RID: 42213
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string currentTimeOfDay = "";
 
-		// Token: 0x0400A3B4 RID: 41908
+		// Token: 0x0400A4E6 RID: 42214
 		[PublicizedFrom(EAccessModifier.Private)]
 		public BiomeDefinition currentBiome;
 
-		// Token: 0x0400A3B5 RID: 41909
+		// Token: 0x0400A4E7 RID: 42215
 		[PublicizedFrom(EAccessModifier.Private)]
 		public PrefabInstance currentPrefab;
 
-		// Token: 0x0400A3B6 RID: 41910
+		// Token: 0x0400A4E8 RID: 42216
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool currentIndoors;
 
-		// Token: 0x0400A3B7 RID: 41911
+		// Token: 0x0400A4E9 RID: 42217
 		[PublicizedFrom(EAccessModifier.Private)]
 		public EntityVehicle currentDriving;
 
-		// Token: 0x0400A3B8 RID: 41912
+		// Token: 0x0400A4EA RID: 42218
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Quest currentQuest;
 
-		// Token: 0x0400A3B9 RID: 41913
+		// Token: 0x0400A4EB RID: 42219
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool currentBloodmoon;
 	}

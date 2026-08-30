@@ -1,14 +1,14 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02001021 RID: 4129
+// Token: 0x0200103A RID: 4154
 [Preserve]
 public abstract class XUiC_SignLayerSettings : XUiController
 {
-	// Token: 0x060082EC RID: 33516
+	// Token: 0x060083DE RID: 33758
 	public abstract void SetLayer(SignData.SignLayer layer);
 
-	// Token: 0x060082ED RID: 33517 RVA: 0x0031E488 File Offset: 0x0031C688
+	// Token: 0x060083DF RID: 33759 RVA: 0x00322CB0 File Offset: 0x00320EB0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void SetDefaultValue(string id, object value)
 	{
@@ -19,15 +19,15 @@ public abstract class XUiC_SignLayerSettings : XUiController
 		}
 	}
 
-	// Token: 0x060082EE RID: 33518 RVA: 0x00088DE1 File Offset: 0x00086FE1
+	// Token: 0x060083E0 RID: 33760 RVA: 0x00089481 File Offset: 0x00087681
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_SignLayerSettings()
 	{
 	}
 
-	// Token: 0x04006101 RID: 24833
+	// Token: 0x040061C8 RID: 25032
 	public Action<string, bool> OnPreLayerSettingsChanged;
 
-	// Token: 0x04006102 RID: 24834
+	// Token: 0x040061C9 RID: 25033
 	public Action OnLayerSettingsChanged;
 }

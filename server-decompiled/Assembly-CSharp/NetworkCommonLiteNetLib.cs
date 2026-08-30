@@ -2,10 +2,10 @@
 using System.Text;
 using LiteNetLib;
 
-// Token: 0x0200087D RID: 2173
+// Token: 0x02000889 RID: 2185
 public static class NetworkCommonLiteNetLib
 {
-	// Token: 0x06003F44 RID: 16196 RVA: 0x0018C9CD File Offset: 0x0018ABCD
+	// Token: 0x06003FA9 RID: 16297 RVA: 0x0018EA9D File Offset: 0x0018CC9D
 	public static bool InitConfig(NetManager _manager)
 	{
 		_manager.UnsyncedEvents = true;
@@ -20,7 +20,7 @@ public static class NetworkCommonLiteNetLib
 		return true;
 	}
 
-	// Token: 0x06003F45 RID: 16197 RVA: 0x0018CA04 File Offset: 0x0018AC04
+	// Token: 0x06003FAA RID: 16298 RVA: 0x0018EAD4 File Offset: 0x0018CCD4
 	public static byte[] CreateRejectMessage(string _customText)
 	{
 		int byteCount = Encoding.UTF8.GetByteCount(_customText);
@@ -30,29 +30,29 @@ public static class NetworkCommonLiteNetLib
 		return array;
 	}
 
-	// Token: 0x040032CE RID: 13006
+	// Token: 0x0400334F RID: 13135
 	public const int PORT_OFFSET = 2;
 
-	// Token: 0x040032CF RID: 13007
+	// Token: 0x04003350 RID: 13136
 	public const int MTU_OVERRIDE = 1024;
 
-	// Token: 0x040032D0 RID: 13008
+	// Token: 0x04003351 RID: 13137
 	public const byte ChallengePackageChannelId = 202;
 
-	// Token: 0x0200087E RID: 2174
+	// Token: 0x0200088A RID: 2186
 	public enum EAdditionalDisconnectCause : byte
 	{
-		// Token: 0x040032D2 RID: 13010
+		// Token: 0x04003353 RID: 13139
 		InvalidPassword,
-		// Token: 0x040032D3 RID: 13011
+		// Token: 0x04003354 RID: 13140
 		RateLimit,
-		// Token: 0x040032D4 RID: 13012
+		// Token: 0x04003355 RID: 13141
 		PendingConnection,
-		// Token: 0x040032D5 RID: 13013
+		// Token: 0x04003356 RID: 13142
 		ServerShutdown,
-		// Token: 0x040032D6 RID: 13014
+		// Token: 0x04003357 RID: 13143
 		ClientSideDisconnect,
-		// Token: 0x040032D7 RID: 13015
+		// Token: 0x04003358 RID: 13144
 		Other = 255
 	}
 }

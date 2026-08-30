@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200045E RID: 1118
+// Token: 0x02000462 RID: 1122
 public class TokenManager
 {
-	// Token: 0x060021ED RID: 8685 RVA: 0x000CD304 File Offset: 0x000CB504
+	// Token: 0x0600220A RID: 8714 RVA: 0x000CDAA0 File Offset: 0x000CBCA0
 	public AITokenClaim TryClaimToken(EntityAlive claimer, AITokenType tokenType, EntityAlive target, float claimTimeout, AIClaimTokenFlags claimTokenFlags = AIClaimTokenFlags.None)
 	{
 		if (claimer == null || target == null)
@@ -84,7 +84,7 @@ public class TokenManager
 		return AITokenClaim.NoneAvailable;
 	}
 
-	// Token: 0x060021EE RID: 8686 RVA: 0x000CD4D4 File Offset: 0x000CB6D4
+	// Token: 0x0600220B RID: 8715 RVA: 0x000CDC70 File Offset: 0x000CBE70
 	public void ReleaseClaimToken(AITokenType tokenType, EntityAlive claimer, EntityAlive target)
 	{
 		TokenManager.EntityTokenState entityTokenState;
@@ -103,7 +103,7 @@ public class TokenManager
 		}
 	}
 
-	// Token: 0x060021EF RID: 8687 RVA: 0x000CD58C File Offset: 0x000CB78C
+	// Token: 0x0600220C RID: 8716 RVA: 0x000CDD28 File Offset: 0x000CBF28
 	public bool HasClaimToken(AITokenType tokenType, EntityAlive claimer, EntityAlive target)
 	{
 		TokenManager.EntityTokenState entityTokenState;
@@ -122,23 +122,23 @@ public class TokenManager
 		return false;
 	}
 
-	// Token: 0x170003E5 RID: 997
-	// (get) Token: 0x060021F0 RID: 8688 RVA: 0x000CD618 File Offset: 0x000CB818
-	// (set) Token: 0x060021F1 RID: 8689 RVA: 0x000CD61F File Offset: 0x000CB81F
+	// Token: 0x170003E9 RID: 1001
+	// (get) Token: 0x0600220D RID: 8717 RVA: 0x000CDDB4 File Offset: 0x000CBFB4
+	// (set) Token: 0x0600220E RID: 8718 RVA: 0x000CDDBB File Offset: 0x000CBFBB
 	public static TokenManager Instance
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x060021F2 RID: 8690 RVA: 0x000CD627 File Offset: 0x000CB827
+	// Token: 0x0600220F RID: 8719 RVA: 0x000CDDC3 File Offset: 0x000CBFC3
 	public static void Init()
 	{
 		TokenManager.Instance = new TokenManager();
 		TokenManager.Instance.Load();
 	}
 
-	// Token: 0x060021F3 RID: 8691 RVA: 0x000CD63D File Offset: 0x000CB83D
+	// Token: 0x06002210 RID: 8720 RVA: 0x000CDDD9 File Offset: 0x000CBFD9
 	public static void Cleanup()
 	{
 		TokenManager instance = TokenManager.Instance;
@@ -149,18 +149,18 @@ public class TokenManager
 		TokenManager.Instance = null;
 	}
 
-	// Token: 0x060021F4 RID: 8692 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002211 RID: 8721 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Clear()
 	{
 	}
 
-	// Token: 0x060021F5 RID: 8693 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002212 RID: 8722 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Load()
 	{
 	}
 
-	// Token: 0x060021F6 RID: 8694 RVA: 0x000CD65C File Offset: 0x000CB85C
+	// Token: 0x06002213 RID: 8723 RVA: 0x000CDDF8 File Offset: 0x000CBFF8
 	public void Update()
 	{
 		using (new ProfilerScope("TokenManager"))
@@ -205,38 +205,38 @@ public class TokenManager
 		}
 	}
 
-	// Token: 0x0400177B RID: 6011
+	// Token: 0x04001791 RID: 6033
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Stack<EntityAlive> deadEntities = new Stack<EntityAlive>();
 
-	// Token: 0x0400177C RID: 6012
+	// Token: 0x04001792 RID: 6034
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<TokenManager.TokenRequester> deadRequesters = new List<TokenManager.TokenRequester>();
 
-	// Token: 0x0400177E RID: 6014
+	// Token: 0x04001794 RID: 6036
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<EntityAlive, TokenManager.EntityTokenState> EntityTokenStates = new Dictionary<EntityAlive, TokenManager.EntityTokenState>();
 
-	// Token: 0x0200045F RID: 1119
+	// Token: 0x02000463 RID: 1123
 	public class TokenRequester
 	{
-		// Token: 0x0400177F RID: 6015
+		// Token: 0x04001795 RID: 6037
 		public EntityAlive Entity;
 
-		// Token: 0x04001780 RID: 6016
+		// Token: 0x04001796 RID: 6038
 		public double WorldTimeExpireRequest;
 
-		// Token: 0x04001781 RID: 6017
+		// Token: 0x04001797 RID: 6039
 		public double WorldTimeExpireClaim;
 
-		// Token: 0x04001782 RID: 6018
+		// Token: 0x04001798 RID: 6040
 		public double WorldTimeLastToken;
 	}
 
-	// Token: 0x02000460 RID: 1120
+	// Token: 0x02000464 RID: 1124
 	public struct TokenState
 	{
-		// Token: 0x060021FA RID: 8698 RVA: 0x000CD865 File Offset: 0x000CBA65
+		// Token: 0x06002217 RID: 8727 RVA: 0x000CE001 File Offset: 0x000CC201
 		public TokenState(int maxClaims)
 		{
 			this.MaxClaims = maxClaims;
@@ -244,21 +244,21 @@ public class TokenManager
 			this.Requesters = new Queue<TokenManager.TokenRequester>();
 		}
 
-		// Token: 0x04001783 RID: 6019
+		// Token: 0x04001799 RID: 6041
 		public readonly int MaxClaims;
 
-		// Token: 0x04001784 RID: 6020
+		// Token: 0x0400179A RID: 6042
 		public readonly HashSet<TokenManager.TokenRequester> Claims;
 
-		// Token: 0x04001785 RID: 6021
+		// Token: 0x0400179B RID: 6043
 		public readonly Queue<TokenManager.TokenRequester> Requesters;
 	}
 
-	// Token: 0x02000461 RID: 1121
+	// Token: 0x02000465 RID: 1125
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class EntityTokenState
 	{
-		// Token: 0x060021FB RID: 8699 RVA: 0x000CD884 File Offset: 0x000CBA84
+		// Token: 0x06002218 RID: 8728 RVA: 0x000CE020 File Offset: 0x000CC220
 		public EntityTokenState(EntityAlive entity)
 		{
 			this.Entity = entity;
@@ -277,10 +277,10 @@ public class TokenManager
 			}
 		}
 
-		// Token: 0x04001786 RID: 6022
+		// Token: 0x0400179C RID: 6044
 		public readonly EntityAlive Entity;
 
-		// Token: 0x04001787 RID: 6023
+		// Token: 0x0400179D RID: 6045
 		public readonly TokenManager.TokenState[] TokenStates = new TokenManager.TokenState[Enum.GetValues(typeof(AITokenType)).Length];
 	}
 }

@@ -1,52 +1,52 @@
 ﻿using System;
 
-// Token: 0x02000C52 RID: 3154
+// Token: 0x02000C64 RID: 3172
 public enum TileEntityType : byte
 {
-	// Token: 0x04004B06 RID: 19206
+	// Token: 0x04004BA3 RID: 19363
 	None,
-	// Token: 0x04004B07 RID: 19207
+	// Token: 0x04004BA4 RID: 19364
 	Collector = 3,
-	// Token: 0x04004B08 RID: 19208
+	// Token: 0x04004BA5 RID: 19365
 	VendingMachine = 7,
-	// Token: 0x04004B09 RID: 19209
+	// Token: 0x04004BA6 RID: 19366
 	Forge,
-	// Token: 0x04004B0A RID: 19210
+	// Token: 0x04004BA7 RID: 19367
 	Campfire,
-	// Token: 0x04004B0B RID: 19211
+	// Token: 0x04004BA8 RID: 19368
 	Workstation = 12,
-	// Token: 0x04004B0C RID: 19212
+	// Token: 0x04004BA9 RID: 19369
 	Powered = 15,
-	// Token: 0x04004B0D RID: 19213
+	// Token: 0x04004BAA RID: 19370
 	PowerSource,
-	// Token: 0x04004B0E RID: 19214
+	// Token: 0x04004BAB RID: 19371
 	PowerRangeTrap,
-	// Token: 0x04004B0F RID: 19215
+	// Token: 0x04004BAC RID: 19372
 	Light,
-	// Token: 0x04004B10 RID: 19216
+	// Token: 0x04004BAD RID: 19373
 	Trigger,
-	// Token: 0x04004B11 RID: 19217
+	// Token: 0x04004BAE RID: 19374
 	Sleeper,
-	// Token: 0x04004B12 RID: 19218
+	// Token: 0x04004BAF RID: 19375
 	PowerMeleeTrap,
-	// Token: 0x04004B13 RID: 19219
+	// Token: 0x04004BB0 RID: 19376
 	Composite = 25,
-	// Token: 0x04004B14 RID: 19220
+	// Token: 0x04004BB1 RID: 19377
 	Taskboard = 27,
-	// Token: 0x04004B15 RID: 19221
+	// Token: 0x04004BB2 RID: 19378
 	LandClaim = 4,
-	// Token: 0x04004B16 RID: 19222
+	// Token: 0x04004BB3 RID: 19379
 	Loot,
-	// Token: 0x04004B17 RID: 19223
+	// Token: 0x04004BB4 RID: 19380
 	Trader,
-	// Token: 0x04004B18 RID: 19224
+	// Token: 0x04004BB5 RID: 19381
 	SecureLoot = 10,
-	// Token: 0x04004B19 RID: 19225
+	// Token: 0x04004BB6 RID: 19382
 	SecureDoor,
-	// Token: 0x04004B1A RID: 19226
+	// Token: 0x04004BB7 RID: 19383
 	Sign = 13,
-	// Token: 0x04004B1B RID: 19227
+	// Token: 0x04004BB8 RID: 19384
 	GoreBlock,
-	// Token: 0x04004B1C RID: 19228
+	// Token: 0x04004BB9 RID: 19385
 	SecureLootSigned = 22
 }

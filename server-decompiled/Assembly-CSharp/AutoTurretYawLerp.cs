@@ -2,16 +2,16 @@
 using System.Globalization;
 using UnityEngine;
 
-// Token: 0x020003C9 RID: 969
+// Token: 0x020003CD RID: 973
 public class AutoTurretYawLerp : MonoBehaviour
 {
-	// Token: 0x1700038A RID: 906
-	// (get) Token: 0x06001D42 RID: 7490 RVA: 0x000B0B54 File Offset: 0x000AED54
-	// (set) Token: 0x06001D43 RID: 7491 RVA: 0x000B0B5C File Offset: 0x000AED5C
+	// Token: 0x1700038E RID: 910
+	// (get) Token: 0x06001D5F RID: 7519 RVA: 0x000B1294 File Offset: 0x000AF494
+	// (set) Token: 0x06001D60 RID: 7520 RVA: 0x000B129C File Offset: 0x000AF49C
 	public float Yaw { get; set; }
 
-	// Token: 0x1700038B RID: 907
-	// (get) Token: 0x06001D44 RID: 7492 RVA: 0x000B0B68 File Offset: 0x000AED68
+	// Token: 0x1700038F RID: 911
+	// (get) Token: 0x06001D61 RID: 7521 RVA: 0x000B12A8 File Offset: 0x000AF4A8
 	public float CurrentYaw
 	{
 		get
@@ -20,16 +20,16 @@ public class AutoTurretYawLerp : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700038C RID: 908
-	// (get) Token: 0x06001D45 RID: 7493 RVA: 0x000B0B99 File Offset: 0x000AED99
-	// (set) Token: 0x06001D46 RID: 7494 RVA: 0x000B0BA1 File Offset: 0x000AEDA1
+	// Token: 0x17000390 RID: 912
+	// (get) Token: 0x06001D62 RID: 7522 RVA: 0x000B12D9 File Offset: 0x000AF4D9
+	// (set) Token: 0x06001D63 RID: 7523 RVA: 0x000B12E1 File Offset: 0x000AF4E1
 	public bool IsTurning
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06001D47 RID: 7495 RVA: 0x000B0BAC File Offset: 0x000AEDAC
+	// Token: 0x06001D64 RID: 7524 RVA: 0x000B12EC File Offset: 0x000AF4EC
 	public void Init(DynamicProperties _properties)
 	{
 		if (_properties.Values.ContainsKey("TurnSpeed"))
@@ -42,20 +42,20 @@ public class AutoTurretYawLerp : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D48 RID: 7496 RVA: 0x000B0C21 File Offset: 0x000AEE21
+	// Token: 0x06001D65 RID: 7525 RVA: 0x000B1361 File Offset: 0x000AF561
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
 		this.myTransform = base.transform;
 	}
 
-	// Token: 0x06001D49 RID: 7497 RVA: 0x000B0C2F File Offset: 0x000AEE2F
+	// Token: 0x06001D66 RID: 7526 RVA: 0x000B136F File Offset: 0x000AF56F
 	public void SetYaw()
 	{
 		this.myTransform.localRotation = Quaternion.Euler(this.BaseRotation.x, this.BaseRotation.y + this.Yaw, this.BaseRotation.z);
 	}
 
-	// Token: 0x06001D4A RID: 7498 RVA: 0x000B0C6C File Offset: 0x000AEE6C
+	// Token: 0x06001D67 RID: 7527 RVA: 0x000B13AC File Offset: 0x000AF5AC
 	public void UpdateYaw()
 	{
 		float num = Mathf.LerpAngle(this.myTransform.localRotation.eulerAngles.y, this.BaseRotation.y + this.Yaw, Time.deltaTime * (this.IdleScan ? this.idleDegreesPerSecond : this.degreesPerSecond));
@@ -63,23 +63,23 @@ public class AutoTurretYawLerp : MonoBehaviour
 		this.IsTurning = (int)num != (int)((this.BaseRotation.y + this.Yaw) * 100f);
 	}
 
-	// Token: 0x0400133B RID: 4923
+	// Token: 0x04001350 RID: 4944
 	public Vector3 BaseRotation = Vector3.zero;
 
-	// Token: 0x0400133D RID: 4925
+	// Token: 0x04001352 RID: 4946
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float degreesPerSecond = 11.25f;
 
-	// Token: 0x0400133E RID: 4926
+	// Token: 0x04001353 RID: 4947
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float idleDegreesPerSecond = 0.5f;
 
-	// Token: 0x0400133F RID: 4927
+	// Token: 0x04001354 RID: 4948
 	public bool IdleScan;
 
-	// Token: 0x04001340 RID: 4928
+	// Token: 0x04001355 RID: 4949
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform myTransform;

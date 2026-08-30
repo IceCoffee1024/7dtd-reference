@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x02000683 RID: 1667
+// Token: 0x0200068D RID: 1677
 [Preserve]
 public class ProgressionLevel : TargetedCompareRequirementBase
 {
-	// Token: 0x060034E0 RID: 13536 RVA: 0x0015E45C File Offset: 0x0015C65C
+	// Token: 0x06003536 RID: 13622 RVA: 0x00160634 File Offset: 0x0015E834
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -29,7 +29,7 @@ public class ProgressionLevel : TargetedCompareRequirementBase
 		return false;
 	}
 
-	// Token: 0x060034E1 RID: 13537 RVA: 0x0015E4F8 File Offset: 0x0015C6F8
+	// Token: 0x06003537 RID: 13623 RVA: 0x001606D0 File Offset: 0x0015E8D0
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("'{1}' level {0} {2} {3}", new object[]
@@ -41,7 +41,7 @@ public class ProgressionLevel : TargetedCompareRequirementBase
 		}));
 	}
 
-	// Token: 0x060034E2 RID: 13538 RVA: 0x0015E558 File Offset: 0x0015C758
+	// Token: 0x06003538 RID: 13624 RVA: 0x00160730 File Offset: 0x0015E930
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -54,15 +54,15 @@ public class ProgressionLevel : TargetedCompareRequirementBase
 		return flag;
 	}
 
-	// Token: 0x04002AD7 RID: 10967
+	// Token: 0x04002B4B RID: 11083
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string progressionName = string.Empty;
 
-	// Token: 0x04002AD8 RID: 10968
+	// Token: 0x04002B4C RID: 11084
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int progressionId;
 
-	// Token: 0x04002AD9 RID: 10969
+	// Token: 0x04002B4D RID: 11085
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ProgressionValue pv;
 }

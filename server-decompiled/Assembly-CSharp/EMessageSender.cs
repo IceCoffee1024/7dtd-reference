@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x020007AC RID: 1964
+// Token: 0x020007B6 RID: 1974
 public enum EMessageSender
 {
-	// Token: 0x04002F74 RID: 12148
+	// Token: 0x04002FED RID: 12269
 	None,
-	// Token: 0x04002F75 RID: 12149
+	// Token: 0x04002FEE RID: 12270
 	Server,
-	// Token: 0x04002F76 RID: 12150
+	// Token: 0x04002FEF RID: 12271
 	SenderIdAsPlayer
 }

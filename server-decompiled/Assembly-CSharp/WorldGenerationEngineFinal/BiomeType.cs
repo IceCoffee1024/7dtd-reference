@@ -2,24 +2,24 @@
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x02001749 RID: 5961
+	// Token: 0x0200176F RID: 5999
 	public enum BiomeType : byte
 	{
-		// Token: 0x04008A74 RID: 35444
+		// Token: 0x04008B90 RID: 35728
 		forest,
-		// Token: 0x04008A75 RID: 35445
+		// Token: 0x04008B91 RID: 35729
 		burntForest,
-		// Token: 0x04008A76 RID: 35446
+		// Token: 0x04008B92 RID: 35730
 		desert,
-		// Token: 0x04008A77 RID: 35447
+		// Token: 0x04008B93 RID: 35731
 		snow,
-		// Token: 0x04008A78 RID: 35448
+		// Token: 0x04008B94 RID: 35732
 		wasteland,
-		// Token: 0x04008A79 RID: 35449
+		// Token: 0x04008B95 RID: 35733
 		count,
-		// Token: 0x04008A7A RID: 35450
+		// Token: 0x04008B96 RID: 35734
 		waterDebug,
-		// Token: 0x04008A7B RID: 35451
+		// Token: 0x04008B97 RID: 35735
 		none = 255
 	}
 }

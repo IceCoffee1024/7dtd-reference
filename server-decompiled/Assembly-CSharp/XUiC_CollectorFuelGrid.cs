@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EE1 RID: 3809
+// Token: 0x02000EF6 RID: 3830
 [Preserve]
 public class XUiC_CollectorFuelGrid : XUiC_VariableHeightGrid, ITileEntityChangedListener
 {
-	// Token: 0x17000DFA RID: 3578
-	// (get) Token: 0x06007777 RID: 30583 RVA: 0x002D0964 File Offset: 0x002CEB64
+	// Token: 0x17000E14 RID: 3604
+	// (get) Token: 0x06007819 RID: 30745 RVA: 0x002D3FE8 File Offset: 0x002D21E8
 	public override XUiC_ItemStack.StackLocationTypes StackLocation
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -21,7 +21,7 @@ public class XUiC_CollectorFuelGrid : XUiC_VariableHeightGrid, ITileEntityChange
 		}
 	}
 
-	// Token: 0x06007778 RID: 30584 RVA: 0x002D0984 File Offset: 0x002CEB84
+	// Token: 0x0600781A RID: 30746 RVA: 0x002D4008 File Offset: 0x002D2208
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -38,7 +38,7 @@ public class XUiC_CollectorFuelGrid : XUiC_VariableHeightGrid, ITileEntityChange
 		this.xui.currentCollectorCatalystGrid = this;
 	}
 
-	// Token: 0x06007779 RID: 30585 RVA: 0x002D09C0 File Offset: 0x002CEBC0
+	// Token: 0x0600781B RID: 30747 RVA: 0x002D4044 File Offset: 0x002D2244
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -55,7 +55,7 @@ public class XUiC_CollectorFuelGrid : XUiC_VariableHeightGrid, ITileEntityChange
 		this.xui.currentCollectorCatalystGrid = null;
 	}
 
-	// Token: 0x0600777A RID: 30586 RVA: 0x002D09FC File Offset: 0x002CEBFC
+	// Token: 0x0600781C RID: 30748 RVA: 0x002D4080 File Offset: 0x002D2280
 	public override bool ParseAttribute(string _name, string _value)
 	{
 		bool flag;
@@ -74,7 +74,7 @@ public class XUiC_CollectorFuelGrid : XUiC_VariableHeightGrid, ITileEntityChange
 		return flag;
 	}
 
-	// Token: 0x0600777B RID: 30587 RVA: 0x002D0A3C File Offset: 0x002CEC3C
+	// Token: 0x0600781D RID: 30749 RVA: 0x002D40C0 File Offset: 0x002D22C0
 	public bool TryAddFuel(ItemClass newItemClass, ItemStack newItemStack)
 	{
 		string text = "";
@@ -136,7 +136,7 @@ public class XUiC_CollectorFuelGrid : XUiC_VariableHeightGrid, ITileEntityChange
 		return newItemStack.count == 0;
 	}
 
-	// Token: 0x0600777C RID: 30588 RVA: 0x002D0B78 File Offset: 0x002CED78
+	// Token: 0x0600781E RID: 30750 RVA: 0x002D41FC File Offset: 0x002D23FC
 	public override void Init()
 	{
 		base.Init();
@@ -153,7 +153,7 @@ public class XUiC_CollectorFuelGrid : XUiC_VariableHeightGrid, ITileEntityChange
 		}
 	}
 
-	// Token: 0x0600777D RID: 30589 RVA: 0x002D0C14 File Offset: 0x002CEE14
+	// Token: 0x0600781F RID: 30751 RVA: 0x002D4298 File Offset: 0x002D2498
 	public void SetTileEntity(TileEntityCollector te)
 	{
 		this.tileEntity = te;
@@ -192,7 +192,25 @@ public class XUiC_CollectorFuelGrid : XUiC_VariableHeightGrid, ITileEntityChange
 		}
 	}
 
-	// Token: 0x0600777E RID: 30590 RVA: 0x002D0D20 File Offset: 0x002CEF20
+	// Token: 0x06007820 RID: 30752 RVA: 0x002D43A4 File Offset: 0x002D25A4
+	public int GetHeight()
+	{
+		if (this.tileEntity != null)
+		{
+			XUiC_CollectorFuelGrid.FuelBehavior fuelBehavior = this.fuelBehavior;
+			if (fuelBehavior == XUiC_CollectorFuelGrid.FuelBehavior.Fuel)
+			{
+				return this.tileEntity.FuelGridHeight;
+			}
+			if (fuelBehavior == XUiC_CollectorFuelGrid.FuelBehavior.Catalyst)
+			{
+				return this.tileEntity.CatalystGridHeight;
+			}
+		}
+		return 0;
+	}
+
+	// Token: 0x06007821 RID: 30753 RVA: 0x002D43E4 File Offset: 0x002D25E4
 	public void OnTileEntityChanged(ITileEntity te)
 	{
 		TileEntityCollector tileEntityCollector = te as TileEntityCollector;
@@ -214,7 +232,7 @@ public class XUiC_CollectorFuelGrid : XUiC_VariableHeightGrid, ITileEntityChange
 		}
 	}
 
-	// Token: 0x0600777F RID: 30591 RVA: 0x002D0D80 File Offset: 0x002CEF80
+	// Token: 0x06007822 RID: 30754 RVA: 0x002D4444 File Offset: 0x002D2644
 	public override void HandleSlotChangedEvent(int slotNumber, ItemStack stack)
 	{
 		ItemStack[] uislots = this.getUISlots();
@@ -244,7 +262,7 @@ public class XUiC_CollectorFuelGrid : XUiC_VariableHeightGrid, ITileEntityChange
 		}
 	}
 
-	// Token: 0x06007780 RID: 30592 RVA: 0x002D0E10 File Offset: 0x002CF010
+	// Token: 0x06007823 RID: 30755 RVA: 0x002D44D4 File Offset: 0x002D26D4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateBackend(ItemStack[] stackList)
 	{
@@ -265,7 +283,7 @@ public class XUiC_CollectorFuelGrid : XUiC_VariableHeightGrid, ITileEntityChange
 		this.windowGroup.Controller.SetAllChildrenDirty();
 	}
 
-	// Token: 0x06007781 RID: 30593 RVA: 0x002D0E69 File Offset: 0x002CF069
+	// Token: 0x06007824 RID: 30756 RVA: 0x002D452D File Offset: 0x002D272D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -277,33 +295,36 @@ public class XUiC_CollectorFuelGrid : XUiC_VariableHeightGrid, ITileEntityChange
 		return base.GetBindingValueInternal(ref _value, _bindingName);
 	}
 
-	// Token: 0x0400582D RID: 22573
+	// Token: 0x040058D3 RID: 22739
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public new TileEntityCollector tileEntity;
 
-	// Token: 0x0400582E RID: 22574
+	// Token: 0x040058D4 RID: 22740
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public BlockCollector blockCollector;
 
-	// Token: 0x0400582F RID: 22575
+	// Token: 0x040058D5 RID: 22741
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CollectorFuelGrid.FuelBehavior fuelBehavior;
 
-	// Token: 0x04005830 RID: 22576
+	// Token: 0x040058D6 RID: 22742
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite[] previewSprites;
 
-	// Token: 0x04005831 RID: 22577
+	// Token: 0x040058D7 RID: 22743
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int collectorFuelGridLength;
 
-	// Token: 0x02000EE2 RID: 3810
+	// Token: 0x040058D8 RID: 22744
+	public XUiC_CollectorFuelWindow Owner;
+
+	// Token: 0x02000EF7 RID: 3831
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum FuelBehavior
 	{
-		// Token: 0x04005833 RID: 22579
+		// Token: 0x040058DA RID: 22746
 		Fuel,
-		// Token: 0x04005834 RID: 22580
+		// Token: 0x040058DB RID: 22747
 		Catalyst
 	}
 }

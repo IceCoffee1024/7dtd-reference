@@ -1,35 +1,35 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000C37 RID: 3127
+// Token: 0x02000C49 RID: 3145
 public abstract class TerrainGeneratorWithBiomeResource : ITerrainGenerator
 {
-	// Token: 0x06005F32 RID: 24370 RVA: 0x0025A08B File Offset: 0x0025828B
+	// Token: 0x06005FBC RID: 24508 RVA: 0x0025CF3B File Offset: 0x0025B13B
 	public virtual void Init(World _world, IBiomeProvider _biomeProvider, int _seed)
 	{
 		this.biomeProvider = _biomeProvider;
 		this.perlinNoise = new PerlinNoise(_seed);
 	}
 
-	// Token: 0x06005F33 RID: 24371
+	// Token: 0x06005FBD RID: 24509
 	public abstract byte GetTerrainHeightByteAt(int _xWorld, int _zWorld);
 
-	// Token: 0x06005F34 RID: 24372 RVA: 0x0003D066 File Offset: 0x0003B266
+	// Token: 0x06005FBE RID: 24510 RVA: 0x0003D2C6 File Offset: 0x0003B4C6
 	public virtual float GetTerrainHeightAt(int x, int z)
 	{
 		return 0f;
 	}
 
-	// Token: 0x06005F35 RID: 24373 RVA: 0x0010653E File Offset: 0x0010473E
+	// Token: 0x06005FBF RID: 24511 RVA: 0x0010757A File Offset: 0x0010577A
 	public virtual Vector3 GetTerrainNormalAt(int _xWorld, int _zWorld, BiomeDefinition _bd, float _biomeIntensity)
 	{
 		return Vector3.up;
 	}
 
-	// Token: 0x06005F36 RID: 24374
+	// Token: 0x06005FC0 RID: 24512
 	public abstract sbyte GetDensityAt(int _xWorld, int _yWorld, int _zWorld, BiomeDefinition _bd, float _biomeIntensity);
 
-	// Token: 0x06005F37 RID: 24375 RVA: 0x0025A0A0 File Offset: 0x002582A0
+	// Token: 0x06005FC1 RID: 24513 RVA: 0x0025CF50 File Offset: 0x0025B150
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void fillDensityInBlock(Chunk _chunk, int _x, int _y, int _z, BlockValue _bv)
 	{
@@ -37,13 +37,13 @@ public abstract class TerrainGeneratorWithBiomeResource : ITerrainGenerator
 		_chunk.SetDensity(_x, _y, _z, b);
 	}
 
-	// Token: 0x06005F38 RID: 24376 RVA: 0x0025A0D8 File Offset: 0x002582D8
+	// Token: 0x06005FC2 RID: 24514 RVA: 0x0025CF88 File Offset: 0x0025B188
 	public virtual void GenerateTerrain(World _world, Chunk _chunk, GameRandom _random)
 	{
 		this.GenerateTerrain(_world, _chunk, _random, Vector3i.zero, Vector3i.zero, false, false);
 	}
 
-	// Token: 0x06005F39 RID: 24377 RVA: 0x0025A0F0 File Offset: 0x002582F0
+	// Token: 0x06005FC3 RID: 24515 RVA: 0x0025CFA0 File Offset: 0x0025B1A0
 	public virtual void GenerateTerrain(World _world, Chunk _chunk, GameRandom _random, Vector3i _areaStart, Vector3i _areaSize, bool _bFillEmptyBlocks, bool _isReset)
 	{
 		int num = 0;
@@ -182,17 +182,17 @@ public abstract class TerrainGeneratorWithBiomeResource : ITerrainGenerator
 		}
 	}
 
-	// Token: 0x06005F3A RID: 24378 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x06005FC4 RID: 24516 RVA: 0x0000640C File Offset: 0x0000460C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public TerrainGeneratorWithBiomeResource()
 	{
 	}
 
-	// Token: 0x04004A61 RID: 19041
+	// Token: 0x04004AFE RID: 19198
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IBiomeProvider biomeProvider;
 
-	// Token: 0x04004A62 RID: 19042
+	// Token: 0x04004AFF RID: 19199
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PerlinNoise perlinNoise;
 }

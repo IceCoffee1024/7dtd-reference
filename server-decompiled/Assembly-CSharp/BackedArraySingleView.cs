@@ -4,10 +4,10 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using UnityEngine;
 
-// Token: 0x02001372 RID: 4978
+// Token: 0x0200138C RID: 5004
 public sealed class BackedArraySingleView<[IsUnmanaged] T> : IBackedArrayView<T>, IDisposable where T : struct, ValueType
 {
-	// Token: 0x06009CD1 RID: 40145 RVA: 0x003B46D0 File Offset: 0x003B28D0
+	// Token: 0x06009DCC RID: 40396 RVA: 0x003B9984 File Offset: 0x003B7B84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BackedArraySingleView<T>.View CreateView()
 	{
@@ -20,7 +20,7 @@ public sealed class BackedArraySingleView<[IsUnmanaged] T> : IBackedArrayView<T>
 		return view;
 	}
 
-	// Token: 0x06009CD2 RID: 40146 RVA: 0x003B471C File Offset: 0x003B291C
+	// Token: 0x06009DCD RID: 40397 RVA: 0x003B99D0 File Offset: 0x003B7BD0
 	public BackedArraySingleView(IBackedArray<T> array, BackedArrayHandleMode mode, int viewLength = 0)
 	{
 		this.m_array = array;
@@ -38,7 +38,7 @@ public sealed class BackedArraySingleView<[IsUnmanaged] T> : IBackedArrayView<T>
 		this.m_views = new ThreadLocal<BackedArraySingleView<T>.View>(new Func<BackedArraySingleView<T>.View>(this.CreateView), true);
 	}
 
-	// Token: 0x06009CD3 RID: 40147 RVA: 0x003B479C File Offset: 0x003B299C
+	// Token: 0x06009DCE RID: 40398 RVA: 0x003B9A50 File Offset: 0x003B7C50
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Dispose(bool disposing)
 	{
@@ -60,21 +60,21 @@ public sealed class BackedArraySingleView<[IsUnmanaged] T> : IBackedArrayView<T>
 		this.m_array = null;
 	}
 
-	// Token: 0x06009CD4 RID: 40148 RVA: 0x003B481C File Offset: 0x003B2A1C
+	// Token: 0x06009DCF RID: 40399 RVA: 0x003B9AD0 File Offset: 0x003B7CD0
 	public void Dispose()
 	{
 		this.Dispose(true);
 		GC.SuppressFinalize(this);
 	}
 
-	// Token: 0x06009CD5 RID: 40149 RVA: 0x003B482C File Offset: 0x003B2A2C
+	// Token: 0x06009DD0 RID: 40400 RVA: 0x003B9AE0 File Offset: 0x003B7CE0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ~BackedArraySingleView()
 	{
 		this.Dispose(false);
 	}
 
-	// Token: 0x06009CD6 RID: 40150 RVA: 0x003B485C File Offset: 0x003B2A5C
+	// Token: 0x06009DD1 RID: 40401 RVA: 0x003B9B10 File Offset: 0x003B7D10
 	[Conditional("DEVELOPMENT_BUILD")]
 	[Conditional("UNITY_EDITOR")]
 	[PublicizedFrom(EAccessModifier.Private)]
@@ -86,14 +86,14 @@ public sealed class BackedArraySingleView<[IsUnmanaged] T> : IBackedArrayView<T>
 		}
 	}
 
-	// Token: 0x06009CD7 RID: 40151 RVA: 0x003B4871 File Offset: 0x003B2A71
+	// Token: 0x06009DD2 RID: 40402 RVA: 0x003B9B25 File Offset: 0x003B7D25
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsDisposed()
 	{
 		return this.m_array == null;
 	}
 
-	// Token: 0x06009CD8 RID: 40152 RVA: 0x003B487C File Offset: 0x003B2A7C
+	// Token: 0x06009DD3 RID: 40403 RVA: 0x003B9B30 File Offset: 0x003B7D30
 	[Conditional("DEVELOPMENT_BUILD")]
 	[Conditional("UNITY_EDITOR")]
 	[PublicizedFrom(EAccessModifier.Private)]
@@ -105,8 +105,8 @@ public sealed class BackedArraySingleView<[IsUnmanaged] T> : IBackedArrayView<T>
 		}
 	}
 
-	// Token: 0x17001270 RID: 4720
-	// (get) Token: 0x06009CD9 RID: 40153 RVA: 0x003B4896 File Offset: 0x003B2A96
+	// Token: 0x170012A9 RID: 4777
+	// (get) Token: 0x06009DD4 RID: 40404 RVA: 0x003B9B4A File Offset: 0x003B7D4A
 	public int Length
 	{
 		get
@@ -115,8 +115,8 @@ public sealed class BackedArraySingleView<[IsUnmanaged] T> : IBackedArrayView<T>
 		}
 	}
 
-	// Token: 0x17001271 RID: 4721
-	// (get) Token: 0x06009CDA RID: 40154 RVA: 0x003B489E File Offset: 0x003B2A9E
+	// Token: 0x170012AA RID: 4778
+	// (get) Token: 0x06009DD5 RID: 40405 RVA: 0x003B9B52 File Offset: 0x003B7D52
 	public BackedArrayHandleMode Mode
 	{
 		get
@@ -125,7 +125,7 @@ public sealed class BackedArraySingleView<[IsUnmanaged] T> : IBackedArrayView<T>
 		}
 	}
 
-	// Token: 0x17001272 RID: 4722
+	// Token: 0x170012AB RID: 4779
 	public T this[int i]
 	{
 		get
@@ -138,7 +138,7 @@ public sealed class BackedArraySingleView<[IsUnmanaged] T> : IBackedArrayView<T>
 		}
 	}
 
-	// Token: 0x06009CDD RID: 40157 RVA: 0x003B48D0 File Offset: 0x003B2AD0
+	// Token: 0x06009DD8 RID: 40408 RVA: 0x003B9B84 File Offset: 0x003B7D84
 	public void Flush()
 	{
 		foreach (BackedArraySingleView<T>.View view in this.m_views.Values)
@@ -147,51 +147,51 @@ public sealed class BackedArraySingleView<[IsUnmanaged] T> : IBackedArrayView<T>
 		}
 	}
 
-	// Token: 0x06009CDE RID: 40158 RVA: 0x003B4924 File Offset: 0x003B2B24
+	// Token: 0x06009DD9 RID: 40409 RVA: 0x003B9BD8 File Offset: 0x003B7DD8
 	public static int GetDefaultViewLength(int length)
 	{
 		return Mathf.NextPowerOfTwo(4 * (int)Math.Sqrt((double)length));
 	}
 
-	// Token: 0x040076F3 RID: 30451
+	// Token: 0x040077CB RID: 30667
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IBackedArray<T> m_array;
 
-	// Token: 0x040076F4 RID: 30452
+	// Token: 0x040077CC RID: 30668
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int m_length;
 
-	// Token: 0x040076F5 RID: 30453
+	// Token: 0x040077CD RID: 30669
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly BackedArrayHandleMode m_mode;
 
-	// Token: 0x040076F6 RID: 30454
+	// Token: 0x040077CE RID: 30670
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int m_viewLength;
 
-	// Token: 0x040076F7 RID: 30455
+	// Token: 0x040077CF RID: 30671
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ThreadLocal<BackedArraySingleView<T>.View> m_views;
 
-	// Token: 0x040076F8 RID: 30456
+	// Token: 0x040077D0 RID: 30672
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_viewCount;
 
-	// Token: 0x040076F9 RID: 30457
+	// Token: 0x040077D1 RID: 30673
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int VIEW_COUNT_WARNING_THRESHOLD = 16;
 
-	// Token: 0x02001373 RID: 4979
+	// Token: 0x0200138D RID: 5005
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class View : IDisposable
 	{
-		// Token: 0x06009CDF RID: 40159 RVA: 0x003B4935 File Offset: 0x003B2B35
+		// Token: 0x06009DDA RID: 40410 RVA: 0x003B9BE9 File Offset: 0x003B7DE9
 		public View(BackedArraySingleView<T> backedArraySingleView)
 		{
 			this.m_backedArraySingleView = backedArraySingleView;
 		}
 
-		// Token: 0x06009CE0 RID: 40160 RVA: 0x003B4950 File Offset: 0x003B2B50
+		// Token: 0x06009DDB RID: 40411 RVA: 0x003B9C04 File Offset: 0x003B7E04
 		public void Cache(int offset)
 		{
 			if (this.m_start <= offset && offset < this.m_end)
@@ -233,7 +233,7 @@ public sealed class BackedArraySingleView<[IsUnmanaged] T> : IBackedArrayView<T>
 			this.m_end = offset + viewLength;
 		}
 
-		// Token: 0x17001273 RID: 4723
+		// Token: 0x170012AC RID: 4780
 		public unsafe T this[int i]
 		{
 			get
@@ -248,21 +248,21 @@ public sealed class BackedArraySingleView<[IsUnmanaged] T> : IBackedArrayView<T>
 			}
 		}
 
-		// Token: 0x06009CE3 RID: 40163 RVA: 0x003B4A94 File Offset: 0x003B2C94
+		// Token: 0x06009DDE RID: 40414 RVA: 0x003B9D48 File Offset: 0x003B7F48
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ~View()
 		{
 			this.Dispose(false);
 		}
 
-		// Token: 0x06009CE4 RID: 40164 RVA: 0x003B4AC4 File Offset: 0x003B2CC4
+		// Token: 0x06009DDF RID: 40415 RVA: 0x003B9D78 File Offset: 0x003B7F78
 		public void Dispose()
 		{
 			this.Dispose(true);
 			GC.SuppressFinalize(this);
 		}
 
-		// Token: 0x06009CE5 RID: 40165 RVA: 0x003B4AD4 File Offset: 0x003B2CD4
+		// Token: 0x06009DE0 RID: 40416 RVA: 0x003B9D88 File Offset: 0x003B7F88
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Dispose(bool isDisposing)
 		{
@@ -285,23 +285,23 @@ public sealed class BackedArraySingleView<[IsUnmanaged] T> : IBackedArrayView<T>
 			}
 		}
 
-		// Token: 0x040076FA RID: 30458
+		// Token: 0x040077D2 RID: 30674
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly BackedArraySingleView<T> m_backedArraySingleView;
 
-		// Token: 0x040076FB RID: 30459
+		// Token: 0x040077D3 RID: 30675
 		public IBackedArrayHandle m_handle;
 
-		// Token: 0x040076FC RID: 30460
+		// Token: 0x040077D4 RID: 30676
 		public unsafe T* m_ptr;
 
-		// Token: 0x040076FD RID: 30461
+		// Token: 0x040077D5 RID: 30677
 		public int m_start;
 
-		// Token: 0x040076FE RID: 30462
+		// Token: 0x040077D6 RID: 30678
 		public int m_end;
 
-		// Token: 0x040076FF RID: 30463
+		// Token: 0x040077D7 RID: 30679
 		[PublicizedFrom(EAccessModifier.Private)]
 		public object m_disposeLock = new object();
 	}

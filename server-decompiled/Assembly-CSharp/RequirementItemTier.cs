@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000681 RID: 1665
+// Token: 0x0200068B RID: 1675
 [Preserve]
 public class RequirementItemTier : RequirementBase
 {
-	// Token: 0x060034D9 RID: 13529 RVA: 0x0015E264 File Offset: 0x0015C464
+	// Token: 0x0600352F RID: 13615 RVA: 0x00160440 File Offset: 0x0015E640
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -24,7 +24,7 @@ public class RequirementItemTier : RequirementBase
 		return !RequirementBase.compareValues((float)_params.ItemValue.Quality, this.operation, this.value);
 	}
 
-	// Token: 0x060034DA RID: 13530 RVA: 0x0015E2CC File Offset: 0x0015C4CC
+	// Token: 0x06003530 RID: 13616 RVA: 0x001604A8 File Offset: 0x0015E6A8
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("Item tier {0}{1} {2}", this.invert ? "NOT " : "", this.operation.ToStringCached<RequirementBase.OperationTypes>(), this.value.ToCultureInvariantString()));

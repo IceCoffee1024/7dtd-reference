@@ -9,12 +9,12 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200024D RID: 589
+// Token: 0x02000251 RID: 593
 [Preserve]
 public class ConsoleCmdPathTest : ConsoleCmdAbstract
 {
-	// Token: 0x170001C9 RID: 457
-	// (get) Token: 0x0600119D RID: 4509 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x170001CA RID: 458
+	// (get) Token: 0x060011AF RID: 4527 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -23,8 +23,8 @@ public class ConsoleCmdPathTest : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x170001CA RID: 458
-	// (get) Token: 0x0600119E RID: 4510 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// Token: 0x170001CB RID: 459
+	// (get) Token: 0x060011B0 RID: 4528 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -33,14 +33,14 @@ public class ConsoleCmdPathTest : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600119F RID: 4511 RVA: 0x0006EC5C File Offset: 0x0006CE5C
+	// Token: 0x060011B1 RID: 4529 RVA: 0x0006F2B8 File Offset: 0x0006D4B8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "pathtest" };
 	}
 
-	// Token: 0x060011A0 RID: 4512 RVA: 0x0006EC6C File Offset: 0x0006CE6C
+	// Token: 0x060011B2 RID: 4530 RVA: 0x0006F2C8 File Offset: 0x0006D4C8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
@@ -52,7 +52,7 @@ public class ConsoleCmdPathTest : ConsoleCmdAbstract
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x060011A1 RID: 4513 RVA: 0x0006ECA8 File Offset: 0x0006CEA8
+	// Token: 0x060011B3 RID: 4531 RVA: 0x0006F304 File Offset: 0x0006D504
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (GameManager.IsDedicatedServer)
@@ -99,7 +99,7 @@ public class ConsoleCmdPathTest : ConsoleCmdAbstract
 		this.executionsCoroutine = GameManager.Instance.StartCoroutine(this.ExecutePathTestCoroutine());
 	}
 
-	// Token: 0x060011A2 RID: 4514 RVA: 0x0006EE00 File Offset: 0x0006D000
+	// Token: 0x060011B4 RID: 4532 RVA: 0x0006F45C File Offset: 0x0006D65C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator ExecutePathTestCoroutine()
 	{
@@ -205,34 +205,34 @@ public class ConsoleCmdPathTest : ConsoleCmdAbstract
 		yield break;
 	}
 
-	// Token: 0x060011A3 RID: 4515 RVA: 0x0006EE0F File Offset: 0x0006D00F
+	// Token: 0x060011B5 RID: 4533 RVA: 0x0006F46B File Offset: 0x0006D66B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "enable a path testing utility mode";
 	}
 
-	// Token: 0x04000CD9 RID: 3289
+	// Token: 0x04000CEA RID: 3306
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Coroutine executionsCoroutine;
 
-	// Token: 0x04000CDA RID: 3290
+	// Token: 0x04000CEB RID: 3307
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EAIPathTest aiPathTest;
 
-	// Token: 0x04000CDB RID: 3291
+	// Token: 0x04000CEC RID: 3308
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool recalculatePath = true;
 
-	// Token: 0x04000CDC RID: 3292
+	// Token: 0x04000CED RID: 3309
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool canBreakBlocks = false;
 
-	// Token: 0x04000CDD RID: 3293
+	// Token: 0x04000CEE RID: 3310
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool canClimbLadders = false;
 
-	// Token: 0x04000CDE RID: 3294
+	// Token: 0x04000CEF RID: 3311
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool canClimbWalls = false;
 }

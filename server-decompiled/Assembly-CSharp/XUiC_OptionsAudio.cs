@@ -5,11 +5,11 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D8A RID: 3466
+// Token: 0x02000D9E RID: 3486
 [Preserve]
 public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 {
-	// Token: 0x06006992 RID: 27026 RVA: 0x002970BC File Offset: 0x002952BC
+	// Token: 0x06006A2E RID: 27182 RVA: 0x0029A210 File Offset: 0x00298410
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void updateVoiceDeviceList(XUiC_ComboBoxList<IPartyVoice.VoiceAudioDevice> _combo, IEnumerable<IPartyVoice.VoiceAudioDevice> _devices)
 	{
@@ -25,7 +25,7 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x06006993 RID: 27027 RVA: 0x002970F8 File Offset: 0x002952F8
+	// Token: 0x06006A2F RID: 27183 RVA: 0x0029A24C File Offset: 0x0029844C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void updateVoiceDeviceSelection(XUiC_ComboBoxList<IPartyVoice.VoiceAudioDevice> _combo, string _activeDeviceIdentifier)
 	{
@@ -53,7 +53,7 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		_combo.SelectedIndex = num;
 	}
 
-	// Token: 0x06006994 RID: 27028 RVA: 0x002971A8 File Offset: 0x002953A8
+	// Token: 0x06006A30 RID: 27184 RVA: 0x0029A2FC File Offset: 0x002984FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void initEosVoiceDeviceOptions()
 	{
@@ -129,13 +129,13 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		};
 	}
 
-	// Token: 0x14000093 RID: 147
-	// (add) Token: 0x06006995 RID: 27029 RVA: 0x002972EC File Offset: 0x002954EC
-	// (remove) Token: 0x06006996 RID: 27030 RVA: 0x00297320 File Offset: 0x00295520
+	// Token: 0x14000094 RID: 148
+	// (add) Token: 0x06006A31 RID: 27185 RVA: 0x0029A440 File Offset: 0x00298640
+	// (remove) Token: 0x06006A32 RID: 27186 RVA: 0x0029A474 File Offset: 0x00298674
 	public static event Action OnSettingsChanged;
 
-	// Token: 0x17000B57 RID: 2903
-	// (get) Token: 0x06006997 RID: 27031 RVA: 0x00297353 File Offset: 0x00295553
+	// Token: 0x17000B6F RID: 2927
+	// (get) Token: 0x06006A33 RID: 27187 RVA: 0x0029A4A7 File Offset: 0x002986A7
 	[XuiXmlBinding("voiceavailable")]
 	public bool VoiceAvailable
 	{
@@ -146,8 +146,8 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000B58 RID: 2904
-	// (get) Token: 0x06006998 RID: 27032 RVA: 0x0026F54B File Offset: 0x0026D74B
+	// Token: 0x17000B70 RID: 2928
+	// (get) Token: 0x06006A34 RID: 27188 RVA: 0x00272447 File Offset: 0x00270647
 	[XuiXmlBinding("commsallowed")]
 	public bool IsCommunicationAllowed
 	{
@@ -158,8 +158,8 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000B59 RID: 2905
-	// (get) Token: 0x06006999 RID: 27033 RVA: 0x00297375 File Offset: 0x00295575
+	// Token: 0x17000B71 RID: 2929
+	// (get) Token: 0x06006A35 RID: 27189 RVA: 0x0029A4C9 File Offset: 0x002986C9
 	[XuiXmlBinding("multiplayerallowed")]
 	public bool MultiplayerAllowed
 	{
@@ -169,7 +169,7 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x0600699A RID: 27034 RVA: 0x0029737C File Offset: 0x0029557C
+	// Token: 0x06006A36 RID: 27190 RVA: 0x0029A4D0 File Offset: 0x002986D0
 	public override void Init()
 	{
 		base.Init();
@@ -178,7 +178,7 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		this.initDiscordVoiceDeviceOptions();
 	}
 
-	// Token: 0x0600699B RID: 27035 RVA: 0x002973A0 File Offset: 0x002955A0
+	// Token: 0x06006A37 RID: 27191 RVA: 0x0029A4F4 File Offset: 0x002986F4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void afterChangesSaved()
 	{
@@ -192,21 +192,21 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		onSettingsChanged();
 	}
 
-	// Token: 0x0600699C RID: 27036 RVA: 0x002973BD File Offset: 0x002955BD
+	// Token: 0x06006A38 RID: 27192 RVA: 0x0029A511 File Offset: 0x00298711
 	public override void OnOpen()
 	{
 		this.onOpenDiscord();
 		base.OnOpen();
 	}
 
-	// Token: 0x0600699D RID: 27037 RVA: 0x002973CB File Offset: 0x002955CB
+	// Token: 0x06006A39 RID: 27193 RVA: 0x0029A51F File Offset: 0x0029871F
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.onCloseDiscord();
 	}
 
-	// Token: 0x0600699E RID: 27038 RVA: 0x002973D9 File Offset: 0x002955D9
+	// Token: 0x06006A3A RID: 27194 RVA: 0x0029A52D File Offset: 0x0029872D
 	public void SetActiveTab(string _tabKey)
 	{
 		XUiC_TabSelector tabSelector = this.TabSelector;
@@ -217,7 +217,7 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		tabSelector.SelectTabByName(_tabKey);
 	}
 
-	// Token: 0x0600699F RID: 27039 RVA: 0x002973EC File Offset: 0x002955EC
+	// Token: 0x06006A3B RID: 27195 RVA: 0x0029A540 File Offset: 0x00298740
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void initDiscordVoiceDeviceOptions()
 	{
@@ -301,7 +301,7 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		};
 	}
 
-	// Token: 0x060069A0 RID: 27040 RVA: 0x0029752E File Offset: 0x0029572E
+	// Token: 0x06006A3C RID: 27196 RVA: 0x0029A682 File Offset: 0x00298882
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void discordVoiceDeviceListChanged(DiscordManager.AudioDeviceConfig _inOutConfig)
 	{
@@ -310,8 +310,8 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		XUiC_OptionsAudio.updateVoiceDeviceSelection(xuiC_ComboBoxList, _inOutConfig.ActiveAudioDevice);
 	}
 
-	// Token: 0x17000B5A RID: 2906
-	// (get) Token: 0x060069A1 RID: 27041 RVA: 0x00297562 File Offset: 0x00295762
+	// Token: 0x17000B72 RID: 2930
+	// (get) Token: 0x06006A3D RID: 27197 RVA: 0x0029A6B6 File Offset: 0x002988B6
 	[XuiXmlBinding("discord_ptt")]
 	public bool DiscordVoiceButtonMode
 	{
@@ -322,8 +322,8 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000B5B RID: 2907
-	// (get) Token: 0x060069A2 RID: 27042 RVA: 0x00297575 File Offset: 0x00295775
+	// Token: 0x17000B73 RID: 2931
+	// (get) Token: 0x06006A3E RID: 27198 RVA: 0x0029A6C9 File Offset: 0x002988C9
 	[XuiXmlBinding("discord_enabled")]
 	public bool DiscordEnabled
 	{
@@ -333,8 +333,8 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000B5C RID: 2908
-	// (get) Token: 0x060069A3 RID: 27043 RVA: 0x00297589 File Offset: 0x00295789
+	// Token: 0x17000B74 RID: 2932
+	// (get) Token: 0x06006A3F RID: 27199 RVA: 0x0029A6DD File Offset: 0x002988DD
 	[XuiXmlBinding("discordinitialized")]
 	public bool DiscordInitialized
 	{
@@ -344,8 +344,8 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000B5D RID: 2909
-	// (get) Token: 0x060069A4 RID: 27044 RVA: 0x00297595 File Offset: 0x00295795
+	// Token: 0x17000B75 RID: 2933
+	// (get) Token: 0x06006A40 RID: 27200 RVA: 0x0029A6E9 File Offset: 0x002988E9
 	[XuiXmlBinding("discord_is_ready")]
 	public bool DiscordReady
 	{
@@ -355,8 +355,8 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000B5E RID: 2910
-	// (get) Token: 0x060069A5 RID: 27045 RVA: 0x00089F54 File Offset: 0x00088154
+	// Token: 0x17000B76 RID: 2934
+	// (get) Token: 0x06006A41 RID: 27201 RVA: 0x0008A602 File Offset: 0x00088802
 	[XuiXmlBinding("discord_supports_full_accounts")]
 	public bool DiscordSupportsFullAccounts
 	{
@@ -366,8 +366,8 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000B5F RID: 2911
-	// (get) Token: 0x060069A6 RID: 27046 RVA: 0x00089F5B File Offset: 0x0008815B
+	// Token: 0x17000B77 RID: 2935
+	// (get) Token: 0x06006A42 RID: 27202 RVA: 0x0008A609 File Offset: 0x00088809
 	[XuiXmlBinding("discord_supports_provisional_accounts")]
 	public bool DiscordSupportsProvisionalAccounts
 	{
@@ -377,8 +377,8 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000B60 RID: 2912
-	// (get) Token: 0x060069A7 RID: 27047 RVA: 0x002975A1 File Offset: 0x002957A1
+	// Token: 0x17000B78 RID: 2936
+	// (get) Token: 0x06006A43 RID: 27203 RVA: 0x0029A6F5 File Offset: 0x002988F5
 	[XuiXmlBinding("discordaccountlinked")]
 	public bool DiscordAccountLinked
 	{
@@ -389,8 +389,8 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000B61 RID: 2913
-	// (get) Token: 0x060069A8 RID: 27048 RVA: 0x002975BC File Offset: 0x002957BC
+	// Token: 0x17000B79 RID: 2937
+	// (get) Token: 0x06006A44 RID: 27204 RVA: 0x0029A710 File Offset: 0x00298910
 	[XuiXmlBinding("discord_vad_threshold_manual")]
 	public bool DiscordVoiceVadThresholdManual
 	{
@@ -400,8 +400,8 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000B62 RID: 2914
-	// (get) Token: 0x060069A9 RID: 27049 RVA: 0x002975D0 File Offset: 0x002957D0
+	// Token: 0x17000B7A RID: 2938
+	// (get) Token: 0x06006A45 RID: 27205 RVA: 0x0029A724 File Offset: 0x00298924
 	[XuiXmlBinding("discord_in_call")]
 	public bool DiscordInCall
 	{
@@ -411,8 +411,8 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000B63 RID: 2915
-	// (get) Token: 0x060069AA RID: 27050 RVA: 0x002975DF File Offset: 0x002957DF
+	// Token: 0x17000B7B RID: 2939
+	// (get) Token: 0x06006A46 RID: 27206 RVA: 0x0029A733 File Offset: 0x00298933
 	[XuiXmlBinding("discord_is_speaking")]
 	public bool DiscordIsSpeaking
 	{
@@ -423,7 +423,7 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x060069AB RID: 27051 RVA: 0x002975FB File Offset: 0x002957FB
+	// Token: 0x06006A47 RID: 27207 RVA: 0x0029A74F File Offset: 0x0029894F
 	[XuiBindEvent("OnPress", "btnDiscordInitialize")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnDiscordInitializeOnPress(XUiController _sender, int _mouseButton)
@@ -435,7 +435,7 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		DiscordManager.Instance.AuthManager.AutoLogin();
 	}
 
-	// Token: 0x060069AC RID: 27052 RVA: 0x00297622 File Offset: 0x00295822
+	// Token: 0x06006A48 RID: 27208 RVA: 0x0029A776 File Offset: 0x00298976
 	[XuiBindEvent("OnPress", "btnDiscordLinkAccount")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnDiscordLinkAccountOnPress(XUiController _sender, int _mouseButton)
@@ -447,7 +447,7 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		DiscordManager.Instance.AuthManager.LoginDiscordUser();
 	}
 
-	// Token: 0x060069AD RID: 27053 RVA: 0x0029764F File Offset: 0x0029584F
+	// Token: 0x06006A49 RID: 27209 RVA: 0x0029A7A3 File Offset: 0x002989A3
 	[XuiBindEvent("OnPress", "btnDiscordUnlinkAccount")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnDiscordUnlinkAccountOnPress(XUiController _sender, int _mouseButton)
@@ -459,7 +459,7 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		DiscordManager.Instance.AuthManager.UnmergeAccount();
 	}
 
-	// Token: 0x060069AE RID: 27054 RVA: 0x0029767C File Offset: 0x0029587C
+	// Token: 0x06006A4A RID: 27210 RVA: 0x0029A7D0 File Offset: 0x002989D0
 	[XuiBindEvent("OnPress", "btnDiscordManageSocialSettings")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnDiscordManageSocialSettingsOnPress(XUiController _sender, int _mouseButton)
@@ -467,7 +467,7 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		DiscordManager.Instance.OpenDiscordSocialSettings();
 	}
 
-	// Token: 0x060069AF RID: 27055 RVA: 0x00297688 File Offset: 0x00295888
+	// Token: 0x06006A4B RID: 27211 RVA: 0x0029A7DC File Offset: 0x002989DC
 	[XuiBindEvent("OnPress", "btnDiscordManageBlockedUsers")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnDiscordManageBlockedUsersOnPress(XUiController _sender, int _mouseButton)
@@ -476,28 +476,28 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		this.xui.playerUI.windowManager.Open(window, false);
 	}
 
-	// Token: 0x060069B0 RID: 27056 RVA: 0x002976C7 File Offset: 0x002958C7
+	// Token: 0x06006A4C RID: 27212 RVA: 0x0029A81B File Offset: 0x00298A1B
 	public void OpenAtTab(string _tabName)
 	{
 		this.xui.playerUI.windowManager.Open(this.windowGroup, true);
 		this.SetActiveTab(_tabName);
 	}
 
-	// Token: 0x060069B1 RID: 27057 RVA: 0x0008AB7B File Offset: 0x00088D7B
+	// Token: 0x06006A4D RID: 27213 RVA: 0x0008B2BB File Offset: 0x000894BB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void discordStatusChanged(DiscordManager.EDiscordStatus _status)
 	{
 		base.RefreshBindings();
 	}
 
-	// Token: 0x060069B2 RID: 27058 RVA: 0x0008AB7B File Offset: 0x00088D7B
+	// Token: 0x06006A4E RID: 27214 RVA: 0x0008B2BB File Offset: 0x000894BB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void discordLocalUserChanged(bool _loggedIn)
 	{
 		base.RefreshBindings();
 	}
 
-	// Token: 0x060069B3 RID: 27059 RVA: 0x002976EC File Offset: 0x002958EC
+	// Token: 0x06006A4F RID: 27215 RVA: 0x0029A840 File Offset: 0x00298A40
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void discordVoiceStateChanged(bool _self, ulong _userId)
 	{
@@ -508,7 +508,7 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		base.RefreshBindings();
 	}
 
-	// Token: 0x060069B4 RID: 27060 RVA: 0x002976F8 File Offset: 0x002958F8
+	// Token: 0x06006A50 RID: 27216 RVA: 0x0029A84C File Offset: 0x00298A4C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void applyDiscordDisabledChanged()
 	{
@@ -525,7 +525,7 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		base.RefreshBindings();
 	}
 
-	// Token: 0x060069B5 RID: 27061 RVA: 0x0029775C File Offset: 0x0029595C
+	// Token: 0x06006A51 RID: 27217 RVA: 0x0029A8B0 File Offset: 0x00298AB0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onOpenDiscord()
 	{
@@ -536,7 +536,7 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		instance.VoiceStateChanged += this.discordVoiceStateChanged;
 	}
 
-	// Token: 0x060069B6 RID: 27062 RVA: 0x002977B8 File Offset: 0x002959B8
+	// Token: 0x06006A52 RID: 27218 RVA: 0x0029A90C File Offset: 0x00298B0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onCloseDiscord()
 	{
@@ -547,7 +547,7 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		instance.VoiceStateChanged -= this.discordVoiceStateChanged;
 	}
 
-	// Token: 0x060069C5 RID: 27077 RVA: 0x002979A4 File Offset: 0x00295BA4
+	// Token: 0x06006A61 RID: 27233 RVA: 0x0029AAF8 File Offset: 0x00298CF8
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void <initEosVoiceDeviceOptions>g__UpdateVoiceDeviceLists|9_12()
@@ -569,90 +569,90 @@ public class XUiC_OptionsAudio : XUiC_OptionsDialogBase
 		XUiC_OptionsAudio.updateVoiceDeviceList(this.comboVoiceInputDevice, item);
 	}
 
-	// Token: 0x04005090 RID: 20624
+	// Token: 0x04005132 RID: 20786
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly IPartyVoice.VoiceAudioDevice noDeviceEntry = new IPartyVoice.VoiceAudioDeviceNotFound();
 
-	// Token: 0x04005091 RID: 20625
+	// Token: 0x04005133 RID: 20787
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly IPartyVoice.VoiceAudioDevice defaultDeviceEntry = new IPartyVoice.VoiceAudioDeviceDefault();
 
-	// Token: 0x04005092 RID: 20626
+	// Token: 0x04005134 RID: 20788
 	[XuiBindComponent("OptionVoiceOutputDevice", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_OptionEntryCustom optionVoiceOutputDevice;
 
-	// Token: 0x04005093 RID: 20627
+	// Token: 0x04005135 RID: 20789
 	[XuiBindComponent("VoiceOutputDevice", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<IPartyVoice.VoiceAudioDevice> comboVoiceOutputDevice;
 
-	// Token: 0x04005094 RID: 20628
+	// Token: 0x04005136 RID: 20790
 	[XuiBindComponent("OptionVoiceInputDevice", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_OptionEntryCustom optionVoiceInputDevice;
 
-	// Token: 0x04005095 RID: 20629
+	// Token: 0x04005137 RID: 20791
 	[XuiBindComponent("VoiceInputDevice", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<IPartyVoice.VoiceAudioDevice> comboVoiceInputDevice;
 
-	// Token: 0x04005096 RID: 20630
+	// Token: 0x04005138 RID: 20792
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lastDeviceListUpdateFrame;
 
-	// Token: 0x04005097 RID: 20631
+	// Token: 0x04005139 RID: 20793
 	public static string ID = "";
 
-	// Token: 0x04005099 RID: 20633
+	// Token: 0x0400513B RID: 20795
 	public const string DiscordTabName = "xuiOptionsAudioDiscord";
 
-	// Token: 0x0400509A RID: 20634
+	// Token: 0x0400513C RID: 20796
 	[XuiBindComponent("OptionDiscordOutputDevice", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_OptionEntryCustom optionDiscordOutputDevice;
 
-	// Token: 0x0400509B RID: 20635
+	// Token: 0x0400513D RID: 20797
 	[XuiBindComponent("DiscordOutputDevice", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<IPartyVoice.VoiceAudioDevice> comboDiscordOutputDevice;
 
-	// Token: 0x0400509C RID: 20636
+	// Token: 0x0400513E RID: 20798
 	[XuiBindComponent("OptionDiscordInputDevice", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_OptionEntryCustom optionDiscordInputDevice;
 
-	// Token: 0x0400509D RID: 20637
+	// Token: 0x0400513F RID: 20799
 	[XuiBindComponent("DiscordInputDevice", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<IPartyVoice.VoiceAudioDevice> comboDiscordInputDevice;
 
-	// Token: 0x0400509E RID: 20638
+	// Token: 0x04005140 RID: 20800
 	[XuiBindComponent("OptionDiscordVoiceButtonMode", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_OptionEntryGamePrefBool optionDiscordVoiceButtonMode;
 
-	// Token: 0x0400509F RID: 20639
+	// Token: 0x04005141 RID: 20801
 	[XuiBindComponent("btnDiscordInitialize", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnDiscordInitialize;
 
-	// Token: 0x040050A0 RID: 20640
+	// Token: 0x04005142 RID: 20802
 	[XuiBindComponent("btnDiscordLinkAccount", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnDiscordLinkAccount;
 
-	// Token: 0x040050A1 RID: 20641
+	// Token: 0x04005143 RID: 20803
 	[XuiBindComponent("btnDiscordUnlinkAccount", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnDiscordUnlinkAccount;
 
-	// Token: 0x040050A2 RID: 20642
+	// Token: 0x04005144 RID: 20804
 	[XuiBindComponent("btnDiscordManageSocialSettings", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnDiscordManageSocialSettings;
 
-	// Token: 0x040050A3 RID: 20643
+	// Token: 0x04005145 RID: 20805
 	[XuiBindComponent("btnDiscordManageBlockedUsers", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnDiscordManageBlockedUsers;

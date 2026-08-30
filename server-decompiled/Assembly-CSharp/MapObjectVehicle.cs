@@ -1,28 +1,28 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000632 RID: 1586
+// Token: 0x0200063B RID: 1595
 public class MapObjectVehicle : MapObject
 {
-	// Token: 0x06003378 RID: 13176 RVA: 0x0014AA7E File Offset: 0x00148C7E
+	// Token: 0x060033CB RID: 13259 RVA: 0x0014CB9A File Offset: 0x0014AD9A
 	public MapObjectVehicle(Entity _entity)
 		: base(EnumMapObjectType.Entity, Vector3.zero, (long)_entity.entityId, _entity, false)
 	{
 	}
 
-	// Token: 0x06003379 RID: 13177 RVA: 0x0014AA95 File Offset: 0x00148C95
+	// Token: 0x060033CC RID: 13260 RVA: 0x0014CBB1 File Offset: 0x0014ADB1
 	public MapObjectVehicle(MapObjectVehicle _other)
 		: base(EnumMapObjectType.Entity, _other.position, (long)_other.entity.entityId, _other.entity, false)
 	{
 	}
 
-	// Token: 0x0600337A RID: 13178 RVA: 0x0014B335 File Offset: 0x00149535
+	// Token: 0x060033CD RID: 13261 RVA: 0x0014D451 File Offset: 0x0014B651
 	public override bool IsOnCompass()
 	{
 		return !(this.entity as EntityVehicle).HasDriver;
 	}
 
-	// Token: 0x0600337B RID: 13179 RVA: 0x0014B34A File Offset: 0x0014954A
+	// Token: 0x060033CE RID: 13262 RVA: 0x0014D466 File Offset: 0x0014B666
 	public override string GetCompassIcon()
 	{
 		if (this.type == EnumMapObjectType.Entity && this.entity != null)
@@ -32,7 +32,7 @@ public class MapObjectVehicle : MapObject
 		return null;
 	}
 
-	// Token: 0x0600337C RID: 13180 RVA: 0x0004E076 File Offset: 0x0004C276
+	// Token: 0x060033CF RID: 13263 RVA: 0x0004E48E File Offset: 0x0004C68E
 	public override Vector3 GetRotation()
 	{
 		return Vector3.zero;

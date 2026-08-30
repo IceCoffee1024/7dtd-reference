@@ -6,13 +6,13 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x020018E9 RID: 6377
+	// Token: 0x0200190F RID: 6415
 	[Preserve]
 	public class ChallengeObjectiveTime : BaseChallengeObjective
 	{
-		// Token: 0x17001815 RID: 6165
-		// (get) Token: 0x0600C49C RID: 50332 RVA: 0x00487B5B File Offset: 0x00485D5B
-		// (set) Token: 0x0600C49D RID: 50333 RVA: 0x00487B63 File Offset: 0x00485D63
+		// Token: 0x17001887 RID: 6279
+		// (get) Token: 0x0600C623 RID: 50723 RVA: 0x0048DEA7 File Offset: 0x0048C0A7
+		// (set) Token: 0x0600C624 RID: 50724 RVA: 0x0048DEAF File Offset: 0x0048C0AF
 		public float CurrentTime
 		{
 			get
@@ -26,8 +26,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x17001816 RID: 6166
-		// (get) Token: 0x0600C49E RID: 50334 RVA: 0x0004A832 File Offset: 0x00048A32
+		// Token: 0x17001888 RID: 6280
+		// (get) Token: 0x0600C625 RID: 50725 RVA: 0x0004AC4A File Offset: 0x00048E4A
 		public override ChallengeObjectiveType ObjectiveType
 		{
 			get
@@ -36,8 +36,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x17001817 RID: 6167
-		// (get) Token: 0x0600C49F RID: 50335 RVA: 0x00487B74 File Offset: 0x00485D74
+		// Token: 0x17001889 RID: 6281
+		// (get) Token: 0x0600C626 RID: 50726 RVA: 0x0048DEC0 File Offset: 0x0048C0C0
 		public override string DescriptionText
 		{
 			get
@@ -50,8 +50,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x17001818 RID: 6168
-		// (get) Token: 0x0600C4A0 RID: 50336 RVA: 0x00487BD4 File Offset: 0x00485DD4
+		// Token: 0x1700188A RID: 6282
+		// (get) Token: 0x0600C627 RID: 50727 RVA: 0x0048DF20 File Offset: 0x0048C120
 		public override string StatusText
 		{
 			get
@@ -64,8 +64,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x17001819 RID: 6169
-		// (get) Token: 0x0600C4A1 RID: 50337 RVA: 0x00487C45 File Offset: 0x00485E45
+		// Token: 0x1700188B RID: 6283
+		// (get) Token: 0x0600C628 RID: 50728 RVA: 0x0048DF91 File Offset: 0x0048C191
 		public override float FillAmount
 		{
 			get
@@ -74,8 +74,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x1700181A RID: 6170
-		// (get) Token: 0x0600C4A2 RID: 50338 RVA: 0x00487C54 File Offset: 0x00485E54
+		// Token: 0x1700188C RID: 6284
+		// (get) Token: 0x0600C629 RID: 50729 RVA: 0x0048DFA0 File Offset: 0x0048C1A0
 		public override bool NeedsConstantUIUpdate
 		{
 			get
@@ -84,24 +84,24 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C4A3 RID: 50339 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C62A RID: 50730 RVA: 0x000027FC File Offset: 0x000009FC
 		public override void Init()
 		{
 		}
 
-		// Token: 0x0600C4A4 RID: 50340 RVA: 0x00487C5F File Offset: 0x00485E5F
+		// Token: 0x0600C62B RID: 50731 RVA: 0x0048DFAB File Offset: 0x0048C1AB
 		public override void HandleAddHooks()
 		{
 			QuestEventManager.Current.AddObjectiveToBeUpdated(this);
 		}
 
-		// Token: 0x0600C4A5 RID: 50341 RVA: 0x00487C6C File Offset: 0x00485E6C
+		// Token: 0x0600C62C RID: 50732 RVA: 0x0048DFB8 File Offset: 0x0048C1B8
 		public override void HandleRemoveHooks()
 		{
 			QuestEventManager.Current.RemoveObjectiveToBeUpdated(this);
 		}
 
-		// Token: 0x0600C4A6 RID: 50342 RVA: 0x00487C7C File Offset: 0x00485E7C
+		// Token: 0x0600C62D RID: 50733 RVA: 0x0048DFC8 File Offset: 0x0048C1C8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void Update(float deltaTime)
 		{
@@ -127,7 +127,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C4A7 RID: 50343 RVA: 0x00487D33 File Offset: 0x00485F33
+		// Token: 0x0600C62E RID: 50734 RVA: 0x0048E07F File Offset: 0x0048C27F
 		public override void ParseElement(XElement e)
 		{
 			base.ParseElement(e);
@@ -137,21 +137,21 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C4A8 RID: 50344 RVA: 0x00487D70 File Offset: 0x00485F70
+		// Token: 0x0600C62F RID: 50735 RVA: 0x0048E0BC File Offset: 0x0048C2BC
 		public override void Read(byte _currentVersion, BinaryReader _br)
 		{
 			base.Read(_currentVersion, _br);
 			this.currentTime = _br.ReadSingle();
 		}
 
-		// Token: 0x0600C4A9 RID: 50345 RVA: 0x00487D86 File Offset: 0x00485F86
+		// Token: 0x0600C630 RID: 50736 RVA: 0x0048E0D2 File Offset: 0x0048C2D2
 		public override void Write(BinaryWriter _bw)
 		{
 			base.Write(_bw);
 			_bw.Write(this.currentTime);
 		}
 
-		// Token: 0x0600C4AA RID: 50346 RVA: 0x00487D9C File Offset: 0x00485F9C
+		// Token: 0x0600C631 RID: 50737 RVA: 0x0048E0E8 File Offset: 0x0048C2E8
 		public override void CopyValues(BaseChallengeObjective obj, BaseChallengeObjective objFromClass)
 		{
 			base.CopyValues(obj, objFromClass);
@@ -162,7 +162,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C4AB RID: 50347 RVA: 0x00487DC8 File Offset: 0x00485FC8
+		// Token: 0x0600C632 RID: 50738 RVA: 0x0048E114 File Offset: 0x0048C314
 		public override BaseChallengeObjective Clone()
 		{
 			return new ChallengeObjectiveTime
@@ -175,23 +175,23 @@ namespace Challenges
 			};
 		}
 
-		// Token: 0x04009445 RID: 37957
+		// Token: 0x0400956E RID: 38254
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float currentTime;
 
-		// Token: 0x04009446 RID: 37958
+		// Token: 0x0400956F RID: 38255
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float maxTime;
 
-		// Token: 0x04009447 RID: 37959
+		// Token: 0x04009570 RID: 38256
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float nextCheck;
 
-		// Token: 0x04009448 RID: 37960
+		// Token: 0x04009571 RID: 38257
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool isInvalid = true;
 
-		// Token: 0x04009449 RID: 37961
+		// Token: 0x04009572 RID: 38258
 		[PublicizedFrom(EAccessModifier.Private)]
 		public EntityPlayerLocal player;
 	}

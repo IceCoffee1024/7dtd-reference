@@ -8,13 +8,13 @@ using XMLData.Parsers;
 
 namespace XMLData.Item
 {
-	// Token: 0x0200161E RID: 5662
+	// Token: 0x02001639 RID: 5689
 	[Preserve]
 	public class ArmorData : IXMLData
 	{
-		// Token: 0x170014C9 RID: 5321
-		// (get) Token: 0x0600B18D RID: 45453 RVA: 0x004232C6 File Offset: 0x004214C6
-		// (set) Token: 0x0600B18E RID: 45454 RVA: 0x004232CE File Offset: 0x004214CE
+		// Token: 0x17001502 RID: 5378
+		// (get) Token: 0x0600B28A RID: 45706 RVA: 0x00428606 File Offset: 0x00426806
+		// (set) Token: 0x0600B28B RID: 45707 RVA: 0x0042860E File Offset: 0x0042680E
 		public DataItem<float> Melee
 		{
 			get
@@ -27,9 +27,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170014CA RID: 5322
-		// (get) Token: 0x0600B18F RID: 45455 RVA: 0x004232D7 File Offset: 0x004214D7
-		// (set) Token: 0x0600B190 RID: 45456 RVA: 0x004232DF File Offset: 0x004214DF
+		// Token: 0x17001503 RID: 5379
+		// (get) Token: 0x0600B28C RID: 45708 RVA: 0x00428617 File Offset: 0x00426817
+		// (set) Token: 0x0600B28D RID: 45709 RVA: 0x0042861F File Offset: 0x0042681F
 		public DataItem<float> Bullet
 		{
 			get
@@ -42,9 +42,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170014CB RID: 5323
-		// (get) Token: 0x0600B191 RID: 45457 RVA: 0x004232E8 File Offset: 0x004214E8
-		// (set) Token: 0x0600B192 RID: 45458 RVA: 0x004232F0 File Offset: 0x004214F0
+		// Token: 0x17001504 RID: 5380
+		// (get) Token: 0x0600B28E RID: 45710 RVA: 0x00428628 File Offset: 0x00426828
+		// (set) Token: 0x0600B28F RID: 45711 RVA: 0x00428630 File Offset: 0x00426830
 		public DataItem<float> Puncture
 		{
 			get
@@ -57,9 +57,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170014CC RID: 5324
-		// (get) Token: 0x0600B193 RID: 45459 RVA: 0x004232F9 File Offset: 0x004214F9
-		// (set) Token: 0x0600B194 RID: 45460 RVA: 0x00423301 File Offset: 0x00421501
+		// Token: 0x17001505 RID: 5381
+		// (get) Token: 0x0600B290 RID: 45712 RVA: 0x00428639 File Offset: 0x00426839
+		// (set) Token: 0x0600B291 RID: 45713 RVA: 0x00428641 File Offset: 0x00426841
 		public DataItem<float> Blunt
 		{
 			get
@@ -72,9 +72,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170014CD RID: 5325
-		// (get) Token: 0x0600B195 RID: 45461 RVA: 0x0042330A File Offset: 0x0042150A
-		// (set) Token: 0x0600B196 RID: 45462 RVA: 0x00423312 File Offset: 0x00421512
+		// Token: 0x17001506 RID: 5382
+		// (get) Token: 0x0600B292 RID: 45714 RVA: 0x0042864A File Offset: 0x0042684A
+		// (set) Token: 0x0600B293 RID: 45715 RVA: 0x00428652 File Offset: 0x00426852
 		public DataItem<float> Explosive
 		{
 			get
@@ -87,36 +87,36 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x0600B197 RID: 45463 RVA: 0x0042331B File Offset: 0x0042151B
+		// Token: 0x0600B294 RID: 45716 RVA: 0x0042865B File Offset: 0x0042685B
 		public List<IDataItem> GetDisplayValues(bool _recursive = true)
 		{
 			return new List<IDataItem>();
 		}
 
-		// Token: 0x0400854C RID: 34124
+		// Token: 0x04008625 RID: 34341
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pMelee;
 
-		// Token: 0x0400854D RID: 34125
+		// Token: 0x04008626 RID: 34342
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pBullet;
 
-		// Token: 0x0400854E RID: 34126
+		// Token: 0x04008627 RID: 34343
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pPuncture;
 
-		// Token: 0x0400854F RID: 34127
+		// Token: 0x04008628 RID: 34344
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pBlunt;
 
-		// Token: 0x04008550 RID: 34128
+		// Token: 0x04008629 RID: 34345
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pExplosive;
 
-		// Token: 0x0200161F RID: 5663
+		// Token: 0x0200163A RID: 5690
 		public static class Parser
 		{
-			// Token: 0x0600B199 RID: 45465 RVA: 0x00423324 File Offset: 0x00421524
+			// Token: 0x0600B296 RID: 45718 RVA: 0x00428664 File Offset: 0x00426864
 			public static ArmorData Parse(PositionXmlElement _elem, Dictionary<PositionXmlElement, DataItem<ItemClass>> _updateLater)
 			{
 				string text = (_elem.HasAttribute("class") ? _elem.GetAttribute("class") : "ArmorData");
@@ -296,7 +296,7 @@ namespace XMLData.Item
 				return armorData;
 			}
 
-			// Token: 0x04008551 RID: 34129
+			// Token: 0x0400862A RID: 34346
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static Dictionary<string, Range<int>> knownAttributesMultiplicity = new Dictionary<string, Range<int>>
 			{

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 
-// Token: 0x020002D4 RID: 724
+// Token: 0x020002D8 RID: 728
 public class RecipeQueueItem
 {
-	// Token: 0x060014E4 RID: 5348 RVA: 0x0007E3B0 File Offset: 0x0007C5B0
+	// Token: 0x060014F6 RID: 5366 RVA: 0x0007EA08 File Offset: 0x0007CC08
 	public void Write(BinaryWriter _bw)
 	{
 		_bw.Write(2);
@@ -40,7 +40,7 @@ public class RecipeQueueItem
 		}
 	}
 
-	// Token: 0x060014E5 RID: 5349 RVA: 0x0007E494 File Offset: 0x0007C694
+	// Token: 0x060014F7 RID: 5367 RVA: 0x0007EAEC File Offset: 0x0007CCEC
 	public void Read(BinaryReader _br)
 	{
 		ushort num = _br.ReadUInt16();
@@ -93,7 +93,7 @@ public class RecipeQueueItem
 		}
 	}
 
-	// Token: 0x060014E6 RID: 5350 RVA: 0x0007E5F0 File Offset: 0x0007C7F0
+	// Token: 0x060014F8 RID: 5368 RVA: 0x0007EC48 File Offset: 0x0007CE48
 	public void ReadLegacy(BinaryReader _br)
 	{
 		int num = _br.ReadInt32();
@@ -127,37 +127,56 @@ public class RecipeQueueItem
 		if (num != 0)
 		{
 			Log.Warning("[RecipeQueueItem] In-progress recipe has outdata data and has been discarded.");
+			this.Clear();
 		}
 	}
 
-	// Token: 0x04000DEE RID: 3566
+	// Token: 0x060014F9 RID: 5369 RVA: 0x0007ED84 File Offset: 0x0007CF84
+	public void Clear()
+	{
+		this.Recipe = null;
+		this.Multiplier = 0;
+		this.CraftingTimeLeft = 0f;
+		this.OneItemCraftTime = -1f;
+		this.IsCrafting = false;
+		ItemValue repairItem = this.RepairItem;
+		if (repairItem != null)
+		{
+			repairItem.Clear();
+		}
+		this.AmountToRepair = 0;
+		this.Quality = 0;
+		this.StartingEntityId = -1;
+	}
+
+	// Token: 0x04000DFF RID: 3583
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort Version = 2;
 
-	// Token: 0x04000DEF RID: 3567
+	// Token: 0x04000E00 RID: 3584
 	public Recipe Recipe;
 
-	// Token: 0x04000DF0 RID: 3568
+	// Token: 0x04000E01 RID: 3585
 	public short Multiplier;
 
-	// Token: 0x04000DF1 RID: 3569
+	// Token: 0x04000E02 RID: 3586
 	public float CraftingTimeLeft;
 
-	// Token: 0x04000DF2 RID: 3570
+	// Token: 0x04000E03 RID: 3587
 	public float OneItemCraftTime = -1f;
 
-	// Token: 0x04000DF3 RID: 3571
+	// Token: 0x04000E04 RID: 3588
 	public bool IsCrafting;
 
-	// Token: 0x04000DF4 RID: 3572
+	// Token: 0x04000E05 RID: 3589
 	public ItemValue RepairItem;
 
-	// Token: 0x04000DF5 RID: 3573
+	// Token: 0x04000E06 RID: 3590
 	public ushort AmountToRepair;
 
-	// Token: 0x04000DF6 RID: 3574
+	// Token: 0x04000E07 RID: 3591
 	public byte Quality;
 
-	// Token: 0x04000DF7 RID: 3575
+	// Token: 0x04000E08 RID: 3592
 	public int StartingEntityId = -1;
 }

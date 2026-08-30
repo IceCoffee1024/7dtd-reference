@@ -5,11 +5,11 @@ using System.Runtime.CompilerServices;
 using Audio;
 using UnityEngine;
 
-// Token: 0x02000569 RID: 1385
+// Token: 0x0200056E RID: 1390
 public class Inventory : InventoryBase
 {
-	// Token: 0x170004C8 RID: 1224
-	// (get) Token: 0x06002CF2 RID: 11506 RVA: 0x00080B3A File Offset: 0x0007ED3A
+	// Token: 0x170004CC RID: 1228
+	// (get) Token: 0x06002D1C RID: 11548 RVA: 0x000811EE File Offset: 0x0007F3EE
 	public int PUBLIC_SLOTS_PLAYMODE
 	{
 		get
@@ -18,8 +18,8 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x170004C9 RID: 1225
-	// (get) Token: 0x06002CF3 RID: 11507 RVA: 0x0011EB2C File Offset: 0x0011CD2C
+	// Token: 0x170004CD RID: 1229
+	// (get) Token: 0x06002D1D RID: 11549 RVA: 0x0011FBA0 File Offset: 0x0011DDA0
 	public int PUBLIC_SLOTS_PREFABEDITOR
 	{
 		get
@@ -28,8 +28,8 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x170004CA RID: 1226
-	// (get) Token: 0x06002CF4 RID: 11508 RVA: 0x00080B3A File Offset: 0x0007ED3A
+	// Token: 0x170004CE RID: 1230
+	// (get) Token: 0x06002D1E RID: 11550 RVA: 0x000811EE File Offset: 0x0007F3EE
 	public int SHIFT_KEY_SLOT_OFFSET
 	{
 		get
@@ -38,8 +38,8 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x170004CB RID: 1227
-	// (get) Token: 0x06002CF5 RID: 11509 RVA: 0x0011EB36 File Offset: 0x0011CD36
+	// Token: 0x170004CF RID: 1231
+	// (get) Token: 0x06002D1F RID: 11551 RVA: 0x0011FBAA File Offset: 0x0011DDAA
 	public int PUBLIC_SLOTS
 	{
 		get
@@ -52,8 +52,8 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x170004CC RID: 1228
-	// (get) Token: 0x06002CF6 RID: 11510 RVA: 0x0011EB58 File Offset: 0x0011CD58
+	// Token: 0x170004D0 RID: 1232
+	// (get) Token: 0x06002D20 RID: 11552 RVA: 0x0011FBCC File Offset: 0x0011DDCC
 	public int INVENTORY_SLOTS
 	{
 		get
@@ -62,8 +62,8 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x170004CD RID: 1229
-	// (get) Token: 0x06002CF7 RID: 11511 RVA: 0x0011EB62 File Offset: 0x0011CD62
+	// Token: 0x170004D1 RID: 1233
+	// (get) Token: 0x06002D21 RID: 11553 RVA: 0x0011FBD6 File Offset: 0x0011DDD6
 	public int DUMMY_SLOT_IDX
 	{
 		get
@@ -73,11 +73,11 @@ public class Inventory : InventoryBase
 	}
 
 	// Token: 0x14000037 RID: 55
-	// (add) Token: 0x06002CF8 RID: 11512 RVA: 0x0011EB6C File Offset: 0x0011CD6C
-	// (remove) Token: 0x06002CF9 RID: 11513 RVA: 0x0011EBA4 File Offset: 0x0011CDA4
+	// (add) Token: 0x06002D22 RID: 11554 RVA: 0x0011FBE0 File Offset: 0x0011DDE0
+	// (remove) Token: 0x06002D23 RID: 11555 RVA: 0x0011FC18 File Offset: 0x0011DE18
 	public event XUiEvent_ToolbeltItemsChangedInternal OnToolbeltItemsChangedInternal;
 
-	// Token: 0x06002CFA RID: 11514 RVA: 0x0011EBDC File Offset: 0x0011CDDC
+	// Token: 0x06002D24 RID: 11556 RVA: 0x0011FC50 File Offset: 0x0011DE50
 	public Inventory(IGameManager _gameManager, EntityAlive _entity)
 	{
 		this.m_LastDrawnHoldingItemIndex = this.DUMMY_SLOT_IDX;
@@ -95,7 +95,7 @@ public class Inventory : InventoryBase
 		this.previousHeldItemSlotIdx = -1;
 	}
 
-	// Token: 0x06002CFB RID: 11515 RVA: 0x0011ECA8 File Offset: 0x0011CEA8
+	// Token: 0x06002D25 RID: 11557 RVA: 0x0011FD1C File Offset: 0x0011DF1C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitInactiveItemsObject()
 	{
@@ -108,7 +108,7 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x06002CFC RID: 11516 RVA: 0x0011ECF7 File Offset: 0x0011CEF7
+	// Token: 0x06002D26 RID: 11558 RVA: 0x0011FD6B File Offset: 0x0011DF6B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onInventoryChanged()
 	{
@@ -118,31 +118,31 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x06002CFD RID: 11517 RVA: 0x0011ED0C File Offset: 0x0011CF0C
+	// Token: 0x06002D27 RID: 11559 RVA: 0x0011FD80 File Offset: 0x0011DF80
 	public void CallOnToolbeltChangedInternal()
 	{
 		this.onInventoryChanged();
 	}
 
-	// Token: 0x06002CFE RID: 11518 RVA: 0x0011ED14 File Offset: 0x0011CF14
+	// Token: 0x06002D28 RID: 11560 RVA: 0x0011FD88 File Offset: 0x0011DF88
 	public bool UsingBareHand()
 	{
 		return this.bareHandItem == this.holdingItem;
 	}
 
-	// Token: 0x06002CFF RID: 11519 RVA: 0x0011ED24 File Offset: 0x0011CF24
+	// Token: 0x06002D29 RID: 11561 RVA: 0x0011FD98 File Offset: 0x0011DF98
 	public virtual ItemClass GetBareHandItem()
 	{
 		return this.bareHandItem;
 	}
 
-	// Token: 0x06002D00 RID: 11520 RVA: 0x0011ED2C File Offset: 0x0011CF2C
+	// Token: 0x06002D2A RID: 11562 RVA: 0x0011FDA0 File Offset: 0x0011DFA0
 	public virtual ItemValue GetBareHandItemValue()
 	{
 		return this.bareHandItemValue;
 	}
 
-	// Token: 0x06002D01 RID: 11521 RVA: 0x0011ED34 File Offset: 0x0011CF34
+	// Token: 0x06002D2B RID: 11563 RVA: 0x0011FDA8 File Offset: 0x0011DFA8
 	public virtual void SetBareHandItem(ItemValue _bareHandItemValue)
 	{
 		this.bareHandItemValue = _bareHandItemValue;
@@ -150,7 +150,7 @@ public class Inventory : InventoryBase
 		this.bareHandItemInventoryData = this.bareHandItem.CreateInventoryData(new ItemStack(_bareHandItemValue, 1), this.gameManager, this.entity, 0);
 	}
 
-	// Token: 0x06002D02 RID: 11522 RVA: 0x0011ED84 File Offset: 0x0011CF84
+	// Token: 0x06002D2C RID: 11564 RVA: 0x0011FDF8 File Offset: 0x0011DFF8
 	public virtual void SetSlots(ItemStack[] _slots, bool _allowSettingDummySlot = true)
 	{
 		int num = 0;
@@ -162,7 +162,7 @@ public class Inventory : InventoryBase
 		this.notifyListeners();
 	}
 
-	// Token: 0x06002D03 RID: 11523 RVA: 0x0011EDD1 File Offset: 0x0011CFD1
+	// Token: 0x06002D2D RID: 11565 RVA: 0x0011FE45 File Offset: 0x0011E045
 	public virtual ItemActionData GetItemActionDataInSlot(int _slotIdx, int _actionIdx)
 	{
 		if (_slotIdx == this.holdingItemIdx)
@@ -172,7 +172,7 @@ public class Inventory : InventoryBase
 		return this.slots[_slotIdx].actionData[_actionIdx];
 	}
 
-	// Token: 0x06002D04 RID: 11524 RVA: 0x0011EE04 File Offset: 0x0011D004
+	// Token: 0x06002D2E RID: 11566 RVA: 0x0011FE78 File Offset: 0x0011E078
 	public virtual ItemAction GetItemActionInSlot(int _slotIdx, int _actionIdx)
 	{
 		if (_slotIdx == this.holdingItemIdx)
@@ -186,7 +186,7 @@ public class Inventory : InventoryBase
 		return this.slots[_slotIdx].item.Actions[_actionIdx];
 	}
 
-	// Token: 0x06002D05 RID: 11525 RVA: 0x0011EE57 File Offset: 0x0011D057
+	// Token: 0x06002D2F RID: 11567 RVA: 0x0011FECB File Offset: 0x0011E0CB
 	public virtual ItemClass GetItemInSlot(int _idx)
 	{
 		if (this.slots[_idx].item == null)
@@ -196,7 +196,7 @@ public class Inventory : InventoryBase
 		return this.slots[_idx].item;
 	}
 
-	// Token: 0x06002D06 RID: 11526 RVA: 0x0011EE7C File Offset: 0x0011D07C
+	// Token: 0x06002D30 RID: 11568 RVA: 0x0011FEF0 File Offset: 0x0011E0F0
 	public ItemInventoryData GetItemDataInSlot(int _idx)
 	{
 		if (this.slots[_idx].item == null)
@@ -206,7 +206,7 @@ public class Inventory : InventoryBase
 		return this.slots[_idx];
 	}
 
-	// Token: 0x170004CE RID: 1230
+	// Token: 0x170004D2 RID: 1234
 	public virtual ItemValue this[int _idx]
 	{
 		get
@@ -220,13 +220,13 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x06002D09 RID: 11529 RVA: 0x0011EECB File Offset: 0x0011D0CB
+	// Token: 0x06002D33 RID: 11571 RVA: 0x0011FF3F File Offset: 0x0011E13F
 	public ItemStack GetItemStack(int _idx)
 	{
 		return this.slots[_idx].itemStack;
 	}
 
-	// Token: 0x06002D0A RID: 11530 RVA: 0x0011EEDC File Offset: 0x0011D0DC
+	// Token: 0x06002D34 RID: 11572 RVA: 0x0011FF50 File Offset: 0x0011E150
 	public void ModifyValue(ItemValue _originalItemValue, PassiveEffects _passiveEffect, ref float _base_val, ref float _perc_val, FastTags<TagGroup.Global> tags)
 	{
 		if (this.holdingItemItemValue != null && !this.holdingItemItemValue.Equals(_originalItemValue) && !this.holdingItemItemValue.ItemClass.ItemTags.Test_AnySet(this.ignoreWhenHeld))
@@ -235,7 +235,7 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x06002D0B RID: 11531 RVA: 0x0011EF38 File Offset: 0x0011D138
+	// Token: 0x06002D35 RID: 11573 RVA: 0x0011FFAC File Offset: 0x0011E1AC
 	public void OnUpdate()
 	{
 		if (!this.isSwitchingHeldItem && !this.entity.IsDead() && this.entity.IsSpawned())
@@ -258,7 +258,7 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x06002D0C RID: 11532 RVA: 0x0011F010 File Offset: 0x0011D210
+	// Token: 0x06002D36 RID: 11574 RVA: 0x00120084 File Offset: 0x0011E284
 	public void ShowHeldItemOld(bool show, float waitTime = 0.015f)
 	{
 		if (show)
@@ -274,7 +274,7 @@ public class Inventory : InventoryBase
 		GameManager.Instance.StartCoroutine(this.delayedShowHideHeldItem(show, waitTime));
 	}
 
-	// Token: 0x06002D0D RID: 11533 RVA: 0x0011F06B File Offset: 0x0011D26B
+	// Token: 0x06002D37 RID: 11575 RVA: 0x001200DF File Offset: 0x0011E2DF
 	public void ShowHeldItem(float waitTime = 0.015f, bool hideFirst = false)
 	{
 		if (this.delayedShowHideHeldItemRoutine != null)
@@ -285,7 +285,7 @@ public class Inventory : InventoryBase
 		this.delayedShowHideHeldItemRoutine = GameManager.Instance.StartCoroutine(this.delayedShowHideHeldItem(hideFirst, waitTime));
 	}
 
-	// Token: 0x06002D0E RID: 11534 RVA: 0x0011F0A4 File Offset: 0x0011D2A4
+	// Token: 0x06002D38 RID: 11576 RVA: 0x00120118 File Offset: 0x0011E318
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator delayedShowHideHeldItem(bool hideFirst, float waitTime)
 	{
@@ -339,7 +339,7 @@ public class Inventory : InventoryBase
 		yield break;
 	}
 
-	// Token: 0x06002D0F RID: 11535 RVA: 0x0011F0C4 File Offset: 0x0011D2C4
+	// Token: 0x06002D39 RID: 11577 RVA: 0x00120138 File Offset: 0x0011E338
 	public void ShowRightHand(bool _show)
 	{
 		if (this.entity.emodel && this.entity.emodel.avatarController)
@@ -352,7 +352,7 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x06002D10 RID: 11536 RVA: 0x0011F124 File Offset: 0x0011D324
+	// Token: 0x06002D3A RID: 11578 RVA: 0x00120198 File Offset: 0x0011E398
 	public void SetRightHandAsModel()
 	{
 		if (this.entity.emodel && this.entity.emodel.avatarController)
@@ -361,8 +361,8 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x170004CF RID: 1231
-	// (get) Token: 0x06002D11 RID: 11537 RVA: 0x0011F17C File Offset: 0x0011D37C
+	// Token: 0x170004D3 RID: 1235
+	// (get) Token: 0x06002D3B RID: 11579 RVA: 0x001201F0 File Offset: 0x0011E3F0
 	public virtual ItemValue holdingItemItemValue
 	{
 		get
@@ -376,8 +376,8 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x170004D0 RID: 1232
-	// (get) Token: 0x06002D12 RID: 11538 RVA: 0x0011F1B4 File Offset: 0x0011D3B4
+	// Token: 0x170004D4 RID: 1236
+	// (get) Token: 0x06002D3C RID: 11580 RVA: 0x00120228 File Offset: 0x0011E428
 	public virtual ItemStack holdingItemStack
 	{
 		get
@@ -391,8 +391,8 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x170004D1 RID: 1233
-	// (get) Token: 0x06002D13 RID: 11539 RVA: 0x0011F1EC File Offset: 0x0011D3EC
+	// Token: 0x170004D5 RID: 1237
+	// (get) Token: 0x06002D3D RID: 11581 RVA: 0x00120260 File Offset: 0x0011E460
 	public virtual ItemClass holdingItem
 	{
 		get
@@ -406,8 +406,8 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x170004D2 RID: 1234
-	// (get) Token: 0x06002D14 RID: 11540 RVA: 0x0011F234 File Offset: 0x0011D434
+	// Token: 0x170004D6 RID: 1238
+	// (get) Token: 0x06002D3E RID: 11582 RVA: 0x001202A8 File Offset: 0x0011E4A8
 	public virtual int holdingCount
 	{
 		get
@@ -421,8 +421,8 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x170004D3 RID: 1235
-	// (get) Token: 0x06002D15 RID: 11541 RVA: 0x0011F26C File Offset: 0x0011D46C
+	// Token: 0x170004D7 RID: 1239
+	// (get) Token: 0x06002D3F RID: 11583 RVA: 0x001202E0 File Offset: 0x0011E4E0
 	public virtual ItemInventoryData holdingItemData
 	{
 		get
@@ -436,8 +436,8 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x170004D4 RID: 1236
-	// (get) Token: 0x06002D16 RID: 11542 RVA: 0x0011F2BC File Offset: 0x0011D4BC
+	// Token: 0x170004D8 RID: 1240
+	// (get) Token: 0x06002D40 RID: 11584 RVA: 0x00120330 File Offset: 0x0011E530
 	public virtual int holdingItemIdx
 	{
 		get
@@ -446,19 +446,19 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x06002D17 RID: 11543 RVA: 0x0011F2C4 File Offset: 0x0011D4C4
+	// Token: 0x06002D41 RID: 11585 RVA: 0x00120338 File Offset: 0x0011E538
 	public virtual bool IsHolsterDelayActive()
 	{
 		return this.isSwitchingHeldItem;
 	}
 
-	// Token: 0x06002D18 RID: 11544 RVA: 0x0011F2C4 File Offset: 0x0011D4C4
+	// Token: 0x06002D42 RID: 11586 RVA: 0x00120338 File Offset: 0x0011E538
 	public virtual bool IsUnholsterDelayActive()
 	{
 		return this.isSwitchingHeldItem;
 	}
 
-	// Token: 0x06002D19 RID: 11545 RVA: 0x0011F2CC File Offset: 0x0011D4CC
+	// Token: 0x06002D43 RID: 11587 RVA: 0x00120340 File Offset: 0x0011E540
 	public void SetIsFinishedSwitchingHeldItem()
 	{
 		this.isSwitchingHeldItem = false;
@@ -467,7 +467,7 @@ public class Inventory : InventoryBase
 		this.HoldingItemHasChanged();
 	}
 
-	// Token: 0x06002D1A RID: 11546 RVA: 0x0011F308 File Offset: 0x0011D508
+	// Token: 0x06002D44 RID: 11588 RVA: 0x0012037C File Offset: 0x0011E57C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void syncHeldItem()
 	{
@@ -496,7 +496,7 @@ public class Inventory : InventoryBase
 			this.entity.MinEventContext.ItemValue = this.holdingItemItemValue;
 			if (this.holdingItemItemValue.ItemClass != null && this.holdingItemItemValue.ItemClass.HasTrigger(MinEventTypes.onSelfItemActivate))
 			{
-				if (this.holdingItemItemValue.Activated == 1)
+				if (this.holdingItemItemValue.Activated)
 				{
 					this.holdingItemItemValue.FireEvent(MinEventTypes.onSelfItemActivate, this.entity.MinEventContext);
 				}
@@ -517,7 +517,7 @@ public class Inventory : InventoryBase
 						this.entity.MinEventContext.ItemValue = itemValue2;
 						if (itemClass.HasTrigger(MinEventTypes.onSelfItemActivate))
 						{
-							if (itemValue2.Activated == 1)
+							if (itemValue2.Activated)
 							{
 								itemValue2.FireEvent(MinEventTypes.onSelfItemActivate, this.entity.MinEventContext);
 							}
@@ -535,19 +535,19 @@ public class Inventory : InventoryBase
 		this.entity.IsEquipping = false;
 	}
 
-	// Token: 0x06002D1B RID: 11547 RVA: 0x0011F508 File Offset: 0x0011D708
+	// Token: 0x06002D45 RID: 11589 RVA: 0x0012057A File Offset: 0x0011E77A
 	public bool GetIsFinishedSwitchingHeldItem()
 	{
 		return !this.isSwitchingHeldItem;
 	}
 
-	// Token: 0x06002D1C RID: 11548 RVA: 0x0011F513 File Offset: 0x0011D713
+	// Token: 0x06002D46 RID: 11590 RVA: 0x00120585 File Offset: 0x0011E785
 	public virtual int GetFocusedItemIdx()
 	{
 		return this.m_FocusedItemIdx;
 	}
 
-	// Token: 0x06002D1D RID: 11549 RVA: 0x0011F51B File Offset: 0x0011D71B
+	// Token: 0x06002D47 RID: 11591 RVA: 0x0012058D File Offset: 0x0011E78D
 	public virtual int SetFocusedItemIdx(int _idx)
 	{
 		while (_idx < 0)
@@ -562,31 +562,31 @@ public class Inventory : InventoryBase
 		return _idx;
 	}
 
-	// Token: 0x06002D1E RID: 11550 RVA: 0x0011F54A File Offset: 0x0011D74A
+	// Token: 0x06002D48 RID: 11592 RVA: 0x001205BC File Offset: 0x0011E7BC
 	public virtual bool IsHoldingItemActionRunning()
 	{
 		return this.holdingItem.IsActionRunning(this.holdingItemData);
 	}
 
-	// Token: 0x06002D1F RID: 11551 RVA: 0x0011F55D File Offset: 0x0011D75D
+	// Token: 0x06002D49 RID: 11593 RVA: 0x001205CF File Offset: 0x0011E7CF
 	public virtual void SetHoldingItemIdxNoHolsterTime(int _inventoryIdx)
 	{
 		this.setHeldItemByIndex(_inventoryIdx, false);
 	}
 
-	// Token: 0x06002D20 RID: 11552 RVA: 0x0011F567 File Offset: 0x0011D767
+	// Token: 0x06002D4A RID: 11594 RVA: 0x001205D9 File Offset: 0x0011E7D9
 	public virtual void SetHoldingItemIdx(int _inventoryIdx)
 	{
 		this.setHeldItemByIndex(_inventoryIdx, true);
 	}
 
-	// Token: 0x06002D21 RID: 11553 RVA: 0x0011F571 File Offset: 0x0011D771
+	// Token: 0x06002D4B RID: 11595 RVA: 0x001205E3 File Offset: 0x0011E7E3
 	public void BeginSwapHoldingItem()
 	{
 		this.isSwitchingHeldItem = true;
 	}
 
-	// Token: 0x06002D22 RID: 11554 RVA: 0x0011F57C File Offset: 0x0011D77C
+	// Token: 0x06002D4C RID: 11596 RVA: 0x001205EC File Offset: 0x0011E7EC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void setHeldItemByIndex(int _inventoryIdx, bool _applyHolsterTime)
 	{
@@ -631,7 +631,7 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x06002D23 RID: 11555 RVA: 0x0011F6D8 File Offset: 0x0011D8D8
+	// Token: 0x06002D4D RID: 11597 RVA: 0x00120748 File Offset: 0x0011E948
 	public void HoldingItemHasChanged()
 	{
 		if (this.entity != null && this.entity.emodel != null && this.entity.emodel.avatarController != null)
@@ -644,61 +644,61 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x06002D24 RID: 11556 RVA: 0x0011F7AB File Offset: 0x0011D9AB
+	// Token: 0x06002D4E RID: 11598 RVA: 0x0012081B File Offset: 0x0011EA1B
 	public virtual bool IsHoldingGun()
 	{
 		return this.holdingItem != null && this.holdingItem.IsGun();
 	}
 
-	// Token: 0x06002D25 RID: 11557 RVA: 0x0011F7C2 File Offset: 0x0011D9C2
+	// Token: 0x06002D4F RID: 11599 RVA: 0x00120832 File Offset: 0x0011EA32
 	public virtual bool IsHoldingDynamicMelee()
 	{
 		return this.holdingItem != null && this.holdingItem.IsDynamicMelee();
 	}
 
-	// Token: 0x06002D26 RID: 11558 RVA: 0x0011F7D9 File Offset: 0x0011D9D9
+	// Token: 0x06002D50 RID: 11600 RVA: 0x00120849 File Offset: 0x0011EA49
 	public virtual bool IsHoldingBlock()
 	{
 		return this.holdingItem != null && this.holdingItem.IsBlock();
 	}
 
-	// Token: 0x06002D27 RID: 11559 RVA: 0x0011F7F0 File Offset: 0x0011D9F0
+	// Token: 0x06002D51 RID: 11601 RVA: 0x00120860 File Offset: 0x0011EA60
 	public virtual ItemAction GetHoldingPrimary()
 	{
 		return this.holdingItem.Actions[0];
 	}
 
-	// Token: 0x06002D28 RID: 11560 RVA: 0x0011F7FF File Offset: 0x0011D9FF
+	// Token: 0x06002D52 RID: 11602 RVA: 0x0012086F File Offset: 0x0011EA6F
 	public virtual ItemAction GetHoldingSecondary()
 	{
 		return this.holdingItem.Actions[1];
 	}
 
-	// Token: 0x06002D29 RID: 11561 RVA: 0x0011F80E File Offset: 0x0011DA0E
+	// Token: 0x06002D53 RID: 11603 RVA: 0x0012087E File Offset: 0x0011EA7E
 	public virtual ItemActionAttack GetHoldingGun()
 	{
 		return this.holdingItem.Actions[0] as ItemActionAttack;
 	}
 
-	// Token: 0x06002D2A RID: 11562 RVA: 0x0011F822 File Offset: 0x0011DA22
+	// Token: 0x06002D54 RID: 11604 RVA: 0x00120892 File Offset: 0x0011EA92
 	public virtual ItemActionDynamic GetHoldingDynamicMelee()
 	{
 		return this.holdingItem.Actions[0] as ItemActionDynamic;
 	}
 
-	// Token: 0x06002D2B RID: 11563 RVA: 0x0011F836 File Offset: 0x0011DA36
+	// Token: 0x06002D55 RID: 11605 RVA: 0x001208A6 File Offset: 0x0011EAA6
 	public virtual ItemClassBlock GetHoldingBlock()
 	{
 		return this.holdingItem as ItemClassBlock;
 	}
 
-	// Token: 0x06002D2C RID: 11564 RVA: 0x0011F843 File Offset: 0x0011DA43
+	// Token: 0x06002D56 RID: 11606 RVA: 0x001208B3 File Offset: 0x0011EAB3
 	public Transform GetHoldingItemTransform()
 	{
 		return this.models[this.m_HoldingItemIdx];
 	}
 
-	// Token: 0x06002D2D RID: 11565 RVA: 0x0011F854 File Offset: 0x0011DA54
+	// Token: 0x06002D57 RID: 11607 RVA: 0x001208C4 File Offset: 0x0011EAC4
 	public virtual int GetItemCount(ItemValue _itemValue, bool _bConsiderTexture = false, int _seed = -1, int _meta = -1, bool _ignoreModdedItems = true)
 	{
 		if (this.slots == null)
@@ -716,7 +716,7 @@ public class Inventory : InventoryBase
 		return num;
 	}
 
-	// Token: 0x06002D2E RID: 11566 RVA: 0x0011F948 File Offset: 0x0011DB48
+	// Token: 0x06002D58 RID: 11608 RVA: 0x001209B8 File Offset: 0x0011EBB8
 	public virtual int GetItemCount(FastTags<TagGroup.Global> itemTags, int _seed = -1, int _meta = -1, bool _ignoreModdedItems = true)
 	{
 		if (this.slots == null)
@@ -734,17 +734,17 @@ public class Inventory : InventoryBase
 		return num;
 	}
 
-	// Token: 0x06002D2F RID: 11567 RVA: 0x0011FA24 File Offset: 0x0011DC24
+	// Token: 0x06002D59 RID: 11609 RVA: 0x00120A94 File Offset: 0x0011EC94
 	public override bool AddItem(ItemStack _itemStack)
 	{
 		int num;
 		return this.AddItem(_itemStack, out num);
 	}
 
-	// Token: 0x06002D30 RID: 11568 RVA: 0x0011FA3C File Offset: 0x0011DC3C
+	// Token: 0x06002D5A RID: 11610 RVA: 0x00120AAC File Offset: 0x0011ECAC
 	public bool AddItem(ItemStack _itemStack, out int _slot)
 	{
-		if (!_itemStack.CanMoveTo(XUiC_ItemStack.StackLocationTypes.ToolBelt))
+		if (!_itemStack.CanMoveTo(XUiC_ItemStack.StackLocationTypes.ToolBelt, -1))
 		{
 			_slot = -1;
 			return false;
@@ -775,7 +775,7 @@ public class Inventory : InventoryBase
 		return false;
 	}
 
-	// Token: 0x06002D31 RID: 11569 RVA: 0x0011FB54 File Offset: 0x0011DD54
+	// Token: 0x06002D5B RID: 11611 RVA: 0x00120BC8 File Offset: 0x0011EDC8
 	public virtual bool ReturnItem(ItemStack _itemStack)
 	{
 		for (int i = 0; i < this.PUBLIC_SLOTS; i++)
@@ -793,7 +793,7 @@ public class Inventory : InventoryBase
 		return false;
 	}
 
-	// Token: 0x06002D32 RID: 11570 RVA: 0x0011FBA4 File Offset: 0x0011DDA4
+	// Token: 0x06002D5C RID: 11612 RVA: 0x00120C18 File Offset: 0x0011EE18
 	public bool AddItemAtSlot(ItemStack _itemStack, int _slot)
 	{
 		bool flag = false;
@@ -804,7 +804,7 @@ public class Inventory : InventoryBase
 				this.slots[_slot].itemStack.count += _itemStack.count;
 				flag = true;
 			}
-			if (this.slots[_slot].itemStack.IsEmpty())
+			if (this.slots[_slot].itemStack.IsEmpty() && this.CanMoveToSlot(_itemStack, _slot))
 			{
 				this.SetItem(_slot, _itemStack.itemValue, _itemStack.count, true);
 				flag = true;
@@ -822,7 +822,7 @@ public class Inventory : InventoryBase
 		return flag;
 	}
 
-	// Token: 0x06002D33 RID: 11571 RVA: 0x0011FC80 File Offset: 0x0011DE80
+	// Token: 0x06002D5D RID: 11613 RVA: 0x00120CFC File Offset: 0x0011EEFC
 	public virtual int DecItem(ItemValue _itemValue, int _count, bool _ignoreModdedItems = false, IList<ItemStack> _removedItems = null)
 	{
 		int num = _count;
@@ -862,7 +862,7 @@ public class Inventory : InventoryBase
 		return num - _count;
 	}
 
-	// Token: 0x06002D34 RID: 11572 RVA: 0x0011FDD8 File Offset: 0x0011DFD8
+	// Token: 0x06002D5E RID: 11614 RVA: 0x00120E54 File Offset: 0x0011F054
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void clearSlotByIndex(int _idx)
 	{
@@ -881,7 +881,7 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x06002D35 RID: 11573 RVA: 0x0011FE50 File Offset: 0x0011E050
+	// Token: 0x06002D5F RID: 11615 RVA: 0x00120ECC File Offset: 0x0011F0CC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual Transform createHeldItem(int _idx, ItemValue _itemValue)
 	{
@@ -894,20 +894,20 @@ public class Inventory : InventoryBase
 		return transform;
 	}
 
-	// Token: 0x06002D36 RID: 11574 RVA: 0x0011FEAC File Offset: 0x0011E0AC
+	// Token: 0x06002D60 RID: 11616 RVA: 0x00120F28 File Offset: 0x0011F128
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual ItemInventoryData createInventoryData(int _idx, ItemValue _itemValue)
 	{
 		return ItemClass.GetForId(_itemValue.type).CreateInventoryData(ItemStack.Empty, this.gameManager, this.entity, _idx);
 	}
 
-	// Token: 0x06002D37 RID: 11575 RVA: 0x0011FED0 File Offset: 0x0011E0D0
+	// Token: 0x06002D61 RID: 11617 RVA: 0x00120F4C File Offset: 0x0011F14C
 	public virtual void SetItem(int _idx, ItemStack _itemStack)
 	{
 		this.SetItem(_idx, _itemStack.itemValue, _itemStack.count, true);
 	}
 
-	// Token: 0x06002D38 RID: 11576 RVA: 0x0011FEE8 File Offset: 0x0011E0E8
+	// Token: 0x06002D62 RID: 11618 RVA: 0x00120F64 File Offset: 0x0011F164
 	public virtual void SetItem(int _idx, ItemValue _itemValue, int _count, bool _notifyListeners = true)
 	{
 		if (_idx == this.holdingItemIdx && !_itemValue.EqualsExceptUseTimesAndAmmo(this.slots[_idx].itemStack.itemValue))
@@ -963,7 +963,7 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x06002D39 RID: 11577 RVA: 0x00120088 File Offset: 0x0011E288
+	// Token: 0x06002D63 RID: 11619 RVA: 0x00121104 File Offset: 0x0011F304
 	public void FireEvent(MinEventTypes _eventType, MinEventParams _eventParms)
 	{
 		ItemValue itemValue = _eventParms.ItemValue;
@@ -974,19 +974,19 @@ public class Inventory : InventoryBase
 		itemValue.FireEvent(_eventType, _eventParms);
 	}
 
-	// Token: 0x06002D3A RID: 11578 RVA: 0x0011EECB File Offset: 0x0011D0CB
+	// Token: 0x06002D64 RID: 11620 RVA: 0x0011FF3F File Offset: 0x0011E13F
 	public virtual ItemStack GetItem(int _idx)
 	{
 		return this.slots[_idx].itemStack;
 	}
 
-	// Token: 0x06002D3B RID: 11579 RVA: 0x001200AE File Offset: 0x0011E2AE
+	// Token: 0x06002D65 RID: 11621 RVA: 0x0012112A File Offset: 0x0011F32A
 	public virtual int GetItemCount()
 	{
 		return this.slots.Length;
 	}
 
-	// Token: 0x06002D3C RID: 11580 RVA: 0x001200B8 File Offset: 0x0011E2B8
+	// Token: 0x06002D66 RID: 11622 RVA: 0x00121134 File Offset: 0x0011F334
 	public virtual bool DecHoldingItem(int _count)
 	{
 		bool flag = true;
@@ -1005,8 +1005,8 @@ public class Inventory : InventoryBase
 		return true;
 	}
 
-	// Token: 0x170004D5 RID: 1237
-	// (get) Token: 0x06002D3D RID: 11581 RVA: 0x0012013D File Offset: 0x0011E33D
+	// Token: 0x170004D9 RID: 1241
+	// (get) Token: 0x06002D67 RID: 11623 RVA: 0x001211B9 File Offset: 0x0011F3B9
 	public bool IsFlashlightOn
 	{
 		get
@@ -1015,48 +1015,48 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x06002D3E RID: 11582 RVA: 0x00120145 File Offset: 0x0011E345
+	// Token: 0x06002D68 RID: 11624 RVA: 0x001211C1 File Offset: 0x0011F3C1
 	public bool IsAnItemActive()
 	{
 		return this.currActiveItemIndex != -1;
 	}
 
-	// Token: 0x06002D3F RID: 11583 RVA: 0x00120153 File Offset: 0x0011E353
+	// Token: 0x06002D69 RID: 11625 RVA: 0x001211CF File Offset: 0x0011F3CF
 	public void SetActiveItemIndexOff()
 	{
 		this.currActiveItemIndex = -1;
 	}
 
-	// Token: 0x06002D40 RID: 11584 RVA: 0x0012015C File Offset: 0x0011E35C
+	// Token: 0x06002D6A RID: 11626 RVA: 0x001211D8 File Offset: 0x0011F3D8
 	public void ResetActiveIndex()
 	{
 		this.currActiveItemIndex = -2;
 	}
 
-	// Token: 0x06002D41 RID: 11585 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x06002D6B RID: 11627 RVA: 0x00020021 File Offset: 0x0001E221
 	public bool CycleActivatableItems()
 	{
 		return true;
 	}
 
-	// Token: 0x06002D42 RID: 11586 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002D6C RID: 11628 RVA: 0x000027FC File Offset: 0x000009FC
 	public void HandleTurningOffHoldingFlashlight()
 	{
 	}
 
-	// Token: 0x06002D43 RID: 11587 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002D6D RID: 11629 RVA: 0x000027FC File Offset: 0x000009FC
 	public void TurnOffLightFlares()
 	{
 	}
 
-	// Token: 0x06002D44 RID: 11588 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002D6E RID: 11630 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool SetFlashlight(bool on)
 	{
 		return false;
 	}
 
-	// Token: 0x170004D6 RID: 1238
-	// (get) Token: 0x06002D45 RID: 11589 RVA: 0x00120168 File Offset: 0x0011E368
+	// Token: 0x170004DA RID: 1242
+	// (get) Token: 0x06002D6F RID: 11631 RVA: 0x001211E4 File Offset: 0x0011F3E4
 	public virtual bool IsHoldingFlashlight
 	{
 		get
@@ -1097,7 +1097,7 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x06002D46 RID: 11590 RVA: 0x00120328 File Offset: 0x0011E528
+	// Token: 0x06002D70 RID: 11632 RVA: 0x001213A4 File Offset: 0x0011F5A4
 	public float GetLightLevel()
 	{
 		float num = 0f;
@@ -1106,7 +1106,7 @@ public class Inventory : InventoryBase
 		for (int i = 0; i < this.activatables.Count; i++)
 		{
 			ItemValue itemValue = this.activatables[i];
-			if (itemValue != null && itemValue.Activated > 0)
+			if (itemValue != null && itemValue.Activated)
 			{
 				ItemClass itemClass = itemValue.ItemClass;
 				if (itemClass != null)
@@ -1128,7 +1128,7 @@ public class Inventory : InventoryBase
 		return Mathf.Clamp01(num);
 	}
 
-	// Token: 0x06002D47 RID: 11591 RVA: 0x001203F3 File Offset: 0x0011E5F3
+	// Token: 0x06002D71 RID: 11633 RVA: 0x0012146E File Offset: 0x0011F66E
 	public IEnumerator SimulateActionExecution(int _actionIdx, ItemStack _itemStack, Action<ItemStack> onComplete)
 	{
 		Inventory.<>c__DisplayClass138_0 CS$<>8__locals1;
@@ -1191,7 +1191,7 @@ public class Inventory : InventoryBase
 		yield break;
 	}
 
-	// Token: 0x06002D48 RID: 11592 RVA: 0x00120418 File Offset: 0x0011E618
+	// Token: 0x06002D72 RID: 11634 RVA: 0x00121494 File Offset: 0x0011F694
 	public void ForceHoldingItemUpdate()
 	{
 		if (this.models[this.holdingItemIdx] != null)
@@ -1215,7 +1215,7 @@ public class Inventory : InventoryBase
 		this.updateHoldingItem();
 	}
 
-	// Token: 0x06002D49 RID: 11593 RVA: 0x00120524 File Offset: 0x0011E724
+	// Token: 0x06002D73 RID: 11635 RVA: 0x001215A0 File Offset: 0x0011F7A0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void updateHoldingItem()
 	{
@@ -1262,7 +1262,7 @@ public class Inventory : InventoryBase
 		this.lastdrawnHoldingItemData = this.holdingItemData;
 	}
 
-	// Token: 0x06002D4A RID: 11594 RVA: 0x00120754 File Offset: 0x0011E954
+	// Token: 0x06002D74 RID: 11636 RVA: 0x001217D0 File Offset: 0x0011F9D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setHoldingItemTransform(Transform _t)
 	{
@@ -1284,7 +1284,7 @@ public class Inventory : InventoryBase
 		this.lastdrawnHoldingItemTransform = _t;
 	}
 
-	// Token: 0x06002D4B RID: 11595 RVA: 0x00120884 File Offset: 0x0011EA84
+	// Token: 0x06002D75 RID: 11637 RVA: 0x00121900 File Offset: 0x0011FB00
 	public int PreferredItemSlot(int _itemType, int _startSlotIdx)
 	{
 		for (int i = _startSlotIdx; i < this.preferredItemSlots.Length; i++)
@@ -1297,7 +1297,7 @@ public class Inventory : InventoryBase
 		return -1;
 	}
 
-	// Token: 0x06002D4C RID: 11596 RVA: 0x001208B2 File Offset: 0x0011EAB2
+	// Token: 0x06002D76 RID: 11638 RVA: 0x0012192E File Offset: 0x0011FB2E
 	public void ClearPreferredItemInSlot(int _slotIdx)
 	{
 		if (_slotIdx < this.preferredItemSlots.Length)
@@ -1306,12 +1306,12 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x06002D4D RID: 11597 RVA: 0x001208C8 File Offset: 0x0011EAC8
+	// Token: 0x06002D77 RID: 11639 RVA: 0x00121944 File Offset: 0x0011FB44
 	public bool CanStack(ItemStack _itemStack)
 	{
 		for (int i = 0; i < this.PUBLIC_SLOTS; i++)
 		{
-			if (this.slots[i].itemStack.IsEmpty() || this.slots[i].itemStack.CanStackWith(_itemStack, false))
+			if (this.CanMoveToSlot(_itemStack, i) && (this.slots[i].itemStack.IsEmpty() || this.slots[i].itemStack.CanStackWith(_itemStack, false)))
 			{
 				return true;
 			}
@@ -1319,7 +1319,7 @@ public class Inventory : InventoryBase
 		return false;
 	}
 
-	// Token: 0x06002D4E RID: 11598 RVA: 0x00120914 File Offset: 0x0011EB14
+	// Token: 0x06002D78 RID: 11640 RVA: 0x0012199C File Offset: 0x0011FB9C
 	public bool CanStackNoEmpty(ItemStack _itemStack)
 	{
 		for (int i = 0; i < this.PUBLIC_SLOTS; i++)
@@ -1333,7 +1333,7 @@ public class Inventory : InventoryBase
 		return false;
 	}
 
-	// Token: 0x06002D4F RID: 11599 RVA: 0x0012094C File Offset: 0x0011EB4C
+	// Token: 0x06002D79 RID: 11641 RVA: 0x001219D4 File Offset: 0x0011FBD4
 	[return: TupleElementNames(new string[] { "anyMoved", "allMoved" })]
 	public override ValueTuple<bool, bool> TryStackItem(int startIndex, ItemStack _itemStack)
 	{
@@ -1341,26 +1341,29 @@ public class Inventory : InventoryBase
 		bool flag2 = false;
 		for (int i = startIndex; i < this.PUBLIC_SLOTS; i++)
 		{
-			int count = _itemStack.count;
-			ItemStack itemStack = this.slots[i].itemStack;
-			if (_itemStack.itemValue.type == itemStack.itemValue.type && !itemStack.IsEmpty() && itemStack.CanStackPartly(ref count))
+			if (this.CanMoveToSlot(_itemStack, i))
 			{
-				flag = true;
-				itemStack.count += count;
-				_itemStack.count -= count;
-				this.notifyListeners();
-				this.entity.bPlayerStatsChanged = !this.entity.isEntityRemote;
-				if (_itemStack.count == 0)
+				int count = _itemStack.count;
+				ItemStack itemStack = this.slots[i].itemStack;
+				if (_itemStack.itemValue.type == itemStack.itemValue.type && !itemStack.IsEmpty() && itemStack.CanStackPartly(ref count))
 				{
-					flag2 = true;
-					break;
+					flag = true;
+					itemStack.count += count;
+					_itemStack.count -= count;
+					this.notifyListeners();
+					this.entity.bPlayerStatsChanged = !this.entity.isEntityRemote;
+					if (_itemStack.count == 0)
+					{
+						flag2 = true;
+						break;
+					}
 				}
 			}
 		}
 		return new ValueTuple<bool, bool>(flag, flag2);
 	}
 
-	// Token: 0x06002D50 RID: 11600 RVA: 0x00120A08 File Offset: 0x0011EC08
+	// Token: 0x06002D7A RID: 11642 RVA: 0x00121AA0 File Offset: 0x0011FCA0
 	public bool TryTakeItem(ItemStack _itemStack)
 	{
 		int num = 0;
@@ -1390,7 +1393,7 @@ public class Inventory : InventoryBase
 		return false;
 	}
 
-	// Token: 0x06002D51 RID: 11601 RVA: 0x00120AE4 File Offset: 0x0011ECE4
+	// Token: 0x06002D7B RID: 11643 RVA: 0x00121B7C File Offset: 0x0011FD7C
 	public virtual bool CanTakeItem(ItemStack _itemStack)
 	{
 		for (int i = 0; i < this.slots.Length - 1; i++)
@@ -1408,7 +1411,7 @@ public class Inventory : InventoryBase
 		return false;
 	}
 
-	// Token: 0x06002D52 RID: 11602 RVA: 0x00120B36 File Offset: 0x0011ED36
+	// Token: 0x06002D7C RID: 11644 RVA: 0x00121BCE File Offset: 0x0011FDCE
 	public virtual void AddChangeListener(IInventoryChangedListener _listener)
 	{
 		if (this.listeners == null)
@@ -1419,7 +1422,7 @@ public class Inventory : InventoryBase
 		_listener.OnInventoryChanged(this);
 	}
 
-	// Token: 0x06002D53 RID: 11603 RVA: 0x00120B5F File Offset: 0x0011ED5F
+	// Token: 0x06002D7D RID: 11645 RVA: 0x00121BF7 File Offset: 0x0011FDF7
 	public virtual void RemoveChangeListener(IInventoryChangedListener _listener)
 	{
 		if (this.listeners != null)
@@ -1428,13 +1431,13 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x06002D54 RID: 11604 RVA: 0x00120B76 File Offset: 0x0011ED76
+	// Token: 0x06002D7E RID: 11646 RVA: 0x00121C0E File Offset: 0x0011FE0E
 	public void Changed()
 	{
 		this.notifyListeners();
 	}
 
-	// Token: 0x06002D55 RID: 11605 RVA: 0x00120B80 File Offset: 0x0011ED80
+	// Token: 0x06002D7F RID: 11647 RVA: 0x00121C18 File Offset: 0x0011FE18
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void notifyListeners()
 	{
@@ -1449,25 +1452,25 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x06002D56 RID: 11606 RVA: 0x00120BE0 File Offset: 0x0011EDE0
+	// Token: 0x06002D80 RID: 11648 RVA: 0x00121C78 File Offset: 0x0011FE78
 	public virtual bool IsHUDDisabled()
 	{
 		return this.holdingItem.IsHUDDisabled(this.holdingItemData);
 	}
 
-	// Token: 0x06002D57 RID: 11607 RVA: 0x00120BF3 File Offset: 0x0011EDF3
+	// Token: 0x06002D81 RID: 11649 RVA: 0x00121C8B File Offset: 0x0011FE8B
 	public string CanInteract()
 	{
 		return this.holdingItem.CanInteract(this.holdingItemData);
 	}
 
-	// Token: 0x06002D58 RID: 11608 RVA: 0x00120C06 File Offset: 0x0011EE06
+	// Token: 0x06002D82 RID: 11650 RVA: 0x00121C9E File Offset: 0x0011FE9E
 	public void Interact()
 	{
 		this.holdingItem.Interact(this.holdingItemData);
 	}
 
-	// Token: 0x06002D59 RID: 11609 RVA: 0x00120C19 File Offset: 0x0011EE19
+	// Token: 0x06002D83 RID: 11651 RVA: 0x00121CB1 File Offset: 0x0011FEB1
 	public virtual void Execute(int _actionIdx, bool _bReleased, PlayerActionsLocal _playerActions = null)
 	{
 		if (this.IsHolsterDelayActive() || this.IsUnholsterDelayActive())
@@ -1485,7 +1488,7 @@ public class Inventory : InventoryBase
 		this.holdingItem.ExecuteAction(_actionIdx, this.holdingItemData, _bReleased, _playerActions);
 	}
 
-	// Token: 0x06002D5A RID: 11610 RVA: 0x00120C5C File Offset: 0x0011EE5C
+	// Token: 0x06002D84 RID: 11652 RVA: 0x00121CF4 File Offset: 0x0011FEF4
 	public void ReleaseAll(PlayerActionsLocal _playerActions = null)
 	{
 		ItemClass holdingItem = this.holdingItem;
@@ -1495,7 +1498,7 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x06002D5B RID: 11611 RVA: 0x00120C8C File Offset: 0x0011EE8C
+	// Token: 0x06002D85 RID: 11653 RVA: 0x00121D24 File Offset: 0x0011FF24
 	public void Clear()
 	{
 		for (int i = 0; i < this.slots.Length; i++)
@@ -1504,7 +1507,7 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x06002D5C RID: 11612 RVA: 0x00120CBC File Offset: 0x0011EEBC
+	// Token: 0x06002D86 RID: 11654 RVA: 0x00121D54 File Offset: 0x0011FF54
 	public void Cleanup()
 	{
 		if (this.delayedShowHideHeldItemRoutine != null)
@@ -1520,7 +1523,7 @@ public class Inventory : InventoryBase
 		this.models = null;
 	}
 
-	// Token: 0x06002D5D RID: 11613 RVA: 0x00120D10 File Offset: 0x0011EF10
+	// Token: 0x06002D87 RID: 11655 RVA: 0x00121DA8 File Offset: 0x0011FFA8
 	public void CleanupHoldingActions()
 	{
 		if (this.holdingItem != null && this.holdingItemData != null)
@@ -1529,7 +1532,7 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x06002D5E RID: 11614 RVA: 0x00120D34 File Offset: 0x0011EF34
+	// Token: 0x06002D88 RID: 11656 RVA: 0x00121DCC File Offset: 0x0011FFCC
 	public ItemStack[] GetSlots()
 	{
 		ItemStack[] array = new ItemStack[this.slots.Length];
@@ -1540,13 +1543,13 @@ public class Inventory : InventoryBase
 		return array;
 	}
 
-	// Token: 0x06002D5F RID: 11615 RVA: 0x001200AE File Offset: 0x0011E2AE
+	// Token: 0x06002D89 RID: 11657 RVA: 0x0012112A File Offset: 0x0011F32A
 	public int GetSlotCount()
 	{
 		return this.slots.Length;
 	}
 
-	// Token: 0x06002D60 RID: 11616 RVA: 0x00120D74 File Offset: 0x0011EF74
+	// Token: 0x06002D8A RID: 11658 RVA: 0x00121E0C File Offset: 0x0012000C
 	public override void PerformActionOnSlots(Action<ItemStack> _action)
 	{
 		for (int i = 0; i < this.slots.Length; i++)
@@ -1555,13 +1558,13 @@ public class Inventory : InventoryBase
 		}
 	}
 
-	// Token: 0x06002D61 RID: 11617 RVA: 0x00120DA7 File Offset: 0x0011EFA7
+	// Token: 0x06002D8B RID: 11659 RVA: 0x00121E3F File Offset: 0x0012003F
 	public override bool HasItem(ItemValue _item)
 	{
 		return this.GetItemCount(_item, false, -1, -1, true) > 0;
 	}
 
-	// Token: 0x06002D62 RID: 11618 RVA: 0x00120DB8 File Offset: 0x0011EFB8
+	// Token: 0x06002D8C RID: 11660 RVA: 0x00121E50 File Offset: 0x00120050
 	public int GetSlotWithItemValue(ItemValue _itemValue)
 	{
 		for (int i = 0; i < this.slots.Length; i++)
@@ -1574,7 +1577,7 @@ public class Inventory : InventoryBase
 		return -1;
 	}
 
-	// Token: 0x06002D63 RID: 11619 RVA: 0x00120DF0 File Offset: 0x0011EFF0
+	// Token: 0x06002D8D RID: 11661 RVA: 0x00121E88 File Offset: 0x00120088
 	public List<int> GetSlotsWithBlock(Block _block)
 	{
 		List<int> list = new List<int>();
@@ -1598,7 +1601,7 @@ public class Inventory : InventoryBase
 		return list;
 	}
 
-	// Token: 0x06002D64 RID: 11620 RVA: 0x00120E94 File Offset: 0x0011F094
+	// Token: 0x06002D8E RID: 11662 RVA: 0x00121F2C File Offset: 0x0012012C
 	public int GetBestQuickSwapSlot()
 	{
 		if (this.quickSwapSlotIdx == -1 || this.quickSwapItemValue == null)
@@ -1619,7 +1622,13 @@ public class Inventory : InventoryBase
 		return -1;
 	}
 
-	// Token: 0x06002D65 RID: 11621 RVA: 0x00120F14 File Offset: 0x0011F114
+	// Token: 0x06002D8F RID: 11663 RVA: 0x00121FAC File Offset: 0x001201AC
+	public bool CanMoveToSlot(ItemStack _itemStack, int _slotIdx)
+	{
+		return _itemStack.itemValue.ItemClass == null || _itemStack.itemValue.ItemClass.CanMoveToSlot(XUiC_ItemStack.StackLocationTypes.ToolBelt, _slotIdx);
+	}
+
+	// Token: 0x06002D90 RID: 11664 RVA: 0x00121FCF File Offset: 0x001201CF
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool <SimulateActionExecution>g__IsDummySlotActive|138_0(ref Inventory.<>c__DisplayClass138_0 A_1)
@@ -1627,7 +1636,7 @@ public class Inventory : InventoryBase
 		return this.m_HoldingItemIdx == this.DUMMY_SLOT_IDX && !this.GetItem(this.DUMMY_SLOT_IDX).IsEmpty();
 	}
 
-	// Token: 0x06002D66 RID: 11622 RVA: 0x00120F3C File Offset: 0x0011F13C
+	// Token: 0x06002D91 RID: 11665 RVA: 0x00121FF8 File Offset: 0x001201F8
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void <SimulateActionExecution>g__HandleComplete|138_1(ref Inventory.<>c__DisplayClass138_0 A_1)
@@ -1651,158 +1660,158 @@ public class Inventory : InventoryBase
 		A_1.onComplete(itemStack);
 	}
 
-	// Token: 0x04002331 RID: 9009
+	// Token: 0x04002363 RID: 9059
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly FastTags<TagGroup.Global> ignoreWhenHeld = FastTags<TagGroup.Global>.Parse("clothing,armor");
 
-	// Token: 0x04002332 RID: 9010
+	// Token: 0x04002364 RID: 9060
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ItemInventoryData[] slots;
 
-	// Token: 0x04002333 RID: 9011
+	// Token: 0x04002365 RID: 9061
 	public Transform[] models;
 
-	// Token: 0x04002334 RID: 9012
+	// Token: 0x04002366 RID: 9062
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] preferredItemSlots;
 
-	// Token: 0x04002335 RID: 9013
+	// Token: 0x04002367 RID: 9063
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass wearingActiveItem;
 
-	// Token: 0x04002336 RID: 9014
+	// Token: 0x04002368 RID: 9064
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue wearingActiveItemValue;
 
-	// Token: 0x04002337 RID: 9015
+	// Token: 0x04002369 RID: 9065
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass lastdrawnHoldingItem;
 
-	// Token: 0x04002338 RID: 9016
+	// Token: 0x0400236A RID: 9066
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue lastDrawnHoldingItemValue;
 
-	// Token: 0x04002339 RID: 9017
+	// Token: 0x0400236B RID: 9067
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform lastdrawnHoldingItemTransform;
 
-	// Token: 0x0400233A RID: 9018
+	// Token: 0x0400236C RID: 9068
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemInventoryData lastdrawnHoldingItemData;
 
-	// Token: 0x0400233B RID: 9019
+	// Token: 0x0400236D RID: 9069
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool flashlightOn;
 
-	// Token: 0x0400233C RID: 9020
+	// Token: 0x0400236E RID: 9070
 	public ItemStack itemArmor;
 
-	// Token: 0x0400233D RID: 9021
+	// Token: 0x0400236F RID: 9071
 	public ItemStack itemOnBack;
 
-	// Token: 0x0400233E RID: 9022
+	// Token: 0x04002370 RID: 9072
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int m_HoldingItemIdx;
 
-	// Token: 0x0400233F RID: 9023
+	// Token: 0x04002371 RID: 9073
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int m_LastDrawnHoldingItemIndex;
 
-	// Token: 0x04002340 RID: 9024
+	// Token: 0x04002372 RID: 9074
 	public Transform inactiveItems;
 
-	// Token: 0x04002341 RID: 9025
+	// Token: 0x04002373 RID: 9075
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public EntityAlive entity;
 
-	// Token: 0x04002342 RID: 9026
+	// Token: 0x04002374 RID: 9076
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public IGameManager gameManager;
 
-	// Token: 0x04002343 RID: 9027
+	// Token: 0x04002375 RID: 9077
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue bareHandItemValue;
 
-	// Token: 0x04002344 RID: 9028
+	// Token: 0x04002376 RID: 9078
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass bareHandItem;
 
-	// Token: 0x04002345 RID: 9029
+	// Token: 0x04002377 RID: 9079
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemInventoryData bareHandItemInventoryData;
 
-	// Token: 0x04002346 RID: 9030
+	// Token: 0x04002378 RID: 9080
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public HashSet<IInventoryChangedListener> listeners;
 
-	// Token: 0x04002347 RID: 9031
+	// Token: 0x04002379 RID: 9081
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int m_FocusedItemIdx;
 
-	// Token: 0x04002348 RID: 9032
+	// Token: 0x0400237A RID: 9082
 	public Inventory.HeldItemState HoldState;
 
-	// Token: 0x04002349 RID: 9033
+	// Token: 0x0400237B RID: 9083
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemInventoryData emptyItem;
 
-	// Token: 0x0400234B RID: 9035
+	// Token: 0x0400237D RID: 9085
 	public bool WaitForSecondaryRelease;
 
-	// Token: 0x0400234C RID: 9036
+	// Token: 0x0400237E RID: 9086
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue previousHeldItemValue;
 
-	// Token: 0x0400234D RID: 9037
+	// Token: 0x0400237F RID: 9087
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int previousHeldItemSlotIdx;
 
-	// Token: 0x0400234E RID: 9038
+	// Token: 0x04002380 RID: 9088
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue quickSwapItemValue;
 
-	// Token: 0x0400234F RID: 9039
+	// Token: 0x04002381 RID: 9089
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int quickSwapSlotIdx;
 
-	// Token: 0x04002350 RID: 9040
+	// Token: 0x04002382 RID: 9090
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Coroutine delayedShowHideHeldItemRoutine;
 
-	// Token: 0x04002351 RID: 9041
+	// Token: 0x04002383 RID: 9091
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isSwitchingHeldItem;
 
-	// Token: 0x04002352 RID: 9042
+	// Token: 0x04002384 RID: 9092
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int currActiveItemIndex = -2;
 
-	// Token: 0x04002353 RID: 9043
+	// Token: 0x04002385 RID: 9093
 	public bool bResetLightLevelWhenChanged = true;
 
-	// Token: 0x04002354 RID: 9044
+	// Token: 0x04002386 RID: 9094
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ItemValue> activatables = new List<ItemValue>();
 
-	// Token: 0x0200056A RID: 1386
+	// Token: 0x0200056F RID: 1391
 	public enum HeldItemState
 	{
-		// Token: 0x04002356 RID: 9046
+		// Token: 0x04002388 RID: 9096
 		None,
-		// Token: 0x04002357 RID: 9047
+		// Token: 0x04002389 RID: 9097
 		Unholstering,
-		// Token: 0x04002358 RID: 9048
+		// Token: 0x0400238A RID: 9098
 		Holding,
-		// Token: 0x04002359 RID: 9049
+		// Token: 0x0400238B RID: 9099
 		Holstering
 	}
 
-	// Token: 0x0200056B RID: 1387
+	// Token: 0x02000570 RID: 1392
 	public enum ActiveIndex
 	{
-		// Token: 0x0400235B RID: 9051
+		// Token: 0x0400238D RID: 9101
 		NOT_INITIALIZED = -2,
-		// Token: 0x0400235C RID: 9052
+		// Token: 0x0400238E RID: 9102
 		ALL_OFF
 	}
 }

@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x0200021E RID: 542
+// Token: 0x02000221 RID: 545
 [Preserve]
 public class ConsoleCmdGetTime : ConsoleCmdAbstract
 {
-	// Token: 0x06001079 RID: 4217 RVA: 0x00067850 File Offset: 0x00065A50
+	// Token: 0x06001085 RID: 4229 RVA: 0x00067DED File Offset: 0x00065FED
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "gettime", "gt" };
 	}
 
-	// Token: 0x0600107A RID: 4218 RVA: 0x00067868 File Offset: 0x00065A68
+	// Token: 0x06001086 RID: 4230 RVA: 0x00067E05 File Offset: 0x00066005
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
@@ -22,7 +22,7 @@ public class ConsoleCmdGetTime : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000193 RID: 403
-	// (get) Token: 0x0600107B RID: 4219 RVA: 0x0006110A File Offset: 0x0005F30A
+	// (get) Token: 0x06001087 RID: 4231 RVA: 0x00061652 File Offset: 0x0005F852
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -32,7 +32,7 @@ public class ConsoleCmdGetTime : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000194 RID: 404
-	// (get) Token: 0x0600107C RID: 4220 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// (get) Token: 0x06001088 RID: 4232 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -41,7 +41,7 @@ public class ConsoleCmdGetTime : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600107D RID: 4221 RVA: 0x0006786F File Offset: 0x00065A6F
+	// Token: 0x06001089 RID: 4233 RVA: 0x00067E0C File Offset: 0x0006600C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output(ValueDisplayFormatters.WorldTime(GameManager.Instance.World.worldTime, "Day {0}, {1:00}:{2:00}"));

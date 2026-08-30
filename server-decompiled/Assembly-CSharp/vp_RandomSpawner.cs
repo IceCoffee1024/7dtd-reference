@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020015B6 RID: 5558
+// Token: 0x020015D1 RID: 5585
 [RequireComponent(typeof(AudioSource))]
 public class vp_RandomSpawner : MonoBehaviour
 {
-	// Token: 0x0600AD84 RID: 44420 RVA: 0x0040B2A8 File Offset: 0x004094A8
+	// Token: 0x0600AE81 RID: 44673 RVA: 0x004105E8 File Offset: 0x0040E7E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
@@ -31,23 +31,23 @@ public class vp_RandomSpawner : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400813B RID: 33083
+	// Token: 0x04008214 RID: 33300
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public AudioSource m_Audio;
 
-	// Token: 0x0400813C RID: 33084
+	// Token: 0x04008215 RID: 33301
 	public AudioClip Sound;
 
-	// Token: 0x0400813D RID: 33085
+	// Token: 0x04008216 RID: 33302
 	public float SoundMinPitch = 0.8f;
 
-	// Token: 0x0400813E RID: 33086
+	// Token: 0x04008217 RID: 33303
 	public float SoundMaxPitch = 1.2f;
 
-	// Token: 0x0400813F RID: 33087
+	// Token: 0x04008218 RID: 33304
 	public bool RandomAngle = true;
 
-	// Token: 0x04008140 RID: 33088
+	// Token: 0x04008219 RID: 33305
 	public List<GameObject> SpawnObjects;
 }

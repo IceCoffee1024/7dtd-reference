@@ -2,24 +2,24 @@
 
 namespace Platform
 {
-	// Token: 0x02001BA7 RID: 7079
+	// Token: 0x02001BCE RID: 7118
 	public enum EPlatformLoadSaveGameState
 	{
-		// Token: 0x0400A00B RID: 40971
+		// Token: 0x0400A13C RID: 41276
 		Init,
-		// Token: 0x0400A00C RID: 40972
+		// Token: 0x0400A13D RID: 41277
 		NewGameOpen,
-		// Token: 0x0400A00D RID: 40973
+		// Token: 0x0400A13E RID: 41278
 		NewGameSelect,
-		// Token: 0x0400A00E RID: 40974
+		// Token: 0x0400A13F RID: 41279
 		NewGamePlay,
-		// Token: 0x0400A00F RID: 40975
+		// Token: 0x0400A140 RID: 41280
 		ContinueGameOpen,
-		// Token: 0x0400A010 RID: 40976
+		// Token: 0x0400A141 RID: 41281
 		ContinueGameSelect,
-		// Token: 0x0400A011 RID: 40977
+		// Token: 0x0400A142 RID: 41282
 		ContinueGamePlay,
-		// Token: 0x0400A012 RID: 40978
+		// Token: 0x0400A143 RID: 41283
 		Done
 	}
 }

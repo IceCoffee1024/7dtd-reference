@@ -3,11 +3,11 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Platform;
 
-// Token: 0x02000C9E RID: 3230
+// Token: 0x02000CB0 RID: 3248
 public static class VoiceHelpers
 {
-	// Token: 0x17000A4A RID: 2634
-	// (get) Token: 0x06006341 RID: 25409 RVA: 0x0026F54B File Offset: 0x0026D74B
+	// Token: 0x17000A5D RID: 2653
+	// (get) Token: 0x060063CD RID: 25549 RVA: 0x00272447 File Offset: 0x00270647
 	public static bool VoiceAllowed
 	{
 		get
@@ -16,8 +16,8 @@ public static class VoiceHelpers
 		}
 	}
 
-	// Token: 0x17000A4B RID: 2635
-	// (get) Token: 0x06006342 RID: 25410 RVA: 0x0026F552 File Offset: 0x0026D752
+	// Token: 0x17000A5E RID: 2654
+	// (get) Token: 0x060063CE RID: 25550 RVA: 0x0027244E File Offset: 0x0027064E
 	public static bool PlatformVoiceEnabled
 	{
 		get
@@ -26,8 +26,8 @@ public static class VoiceHelpers
 		}
 	}
 
-	// Token: 0x17000A4C RID: 2636
-	// (get) Token: 0x06006343 RID: 25411 RVA: 0x0026F564 File Offset: 0x0026D764
+	// Token: 0x17000A5F RID: 2655
+	// (get) Token: 0x060063CF RID: 25551 RVA: 0x00272460 File Offset: 0x00270660
 	public static bool InAnyVoiceChat
 	{
 		get
@@ -36,7 +36,7 @@ public static class VoiceHelpers
 		}
 	}
 
-	// Token: 0x06006344 RID: 25412 RVA: 0x0026F588 File Offset: 0x0026D788
+	// Token: 0x060063D0 RID: 25552 RVA: 0x00272484 File Offset: 0x00270684
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool pushToTalkButtonValid(LocalPlayerUI _playerUI)
 	{
@@ -46,21 +46,21 @@ public static class VoiceHelpers
 		return (!GameManager.Instance.IsEditMode() || !controlKeyPressed) && !flag && !flag2;
 	}
 
-	// Token: 0x06006345 RID: 25413 RVA: 0x0026F5E0 File Offset: 0x0026D7E0
+	// Token: 0x060063D1 RID: 25553 RVA: 0x002724DC File Offset: 0x002706DC
 	public static bool PushToTalkPressed()
 	{
 		LocalPlayerUI uiforPrimaryPlayer = LocalPlayerUI.GetUIForPrimaryPlayer();
 		return !(uiforPrimaryPlayer == null) && uiforPrimaryPlayer.playerInput != null && uiforPrimaryPlayer.playerInput.PermanentActions.PushToTalk.IsPressed && VoiceHelpers.pushToTalkButtonValid(uiforPrimaryPlayer);
 	}
 
-	// Token: 0x06006346 RID: 25414 RVA: 0x0026F628 File Offset: 0x0026D828
+	// Token: 0x060063D2 RID: 25554 RVA: 0x00272524 File Offset: 0x00270724
 	public static bool PushToTalkWasPressed()
 	{
 		LocalPlayerUI uiforPrimaryPlayer = LocalPlayerUI.GetUIForPrimaryPlayer();
 		return !(uiforPrimaryPlayer == null) && uiforPrimaryPlayer.playerInput != null && uiforPrimaryPlayer.playerInput.PermanentActions.PushToTalk.WasPressed && VoiceHelpers.pushToTalkButtonValid(uiforPrimaryPlayer);
 	}
 
-	// Token: 0x06006347 RID: 25415 RVA: 0x0026F66D File Offset: 0x0026D86D
+	// Token: 0x060063D3 RID: 25555 RVA: 0x00272569 File Offset: 0x00270769
 	public static bool LocalPlayerTalking()
 	{
 		if (PartyVoice.Instance.SendingVoice)
@@ -75,7 +75,7 @@ public static class VoiceHelpers
 		return false;
 	}
 
-	// Token: 0x06006348 RID: 25416 RVA: 0x0026F6A8 File Offset: 0x0026D8A8
+	// Token: 0x060063D4 RID: 25556 RVA: 0x002725A4 File Offset: 0x002707A4
 	public static IPartyVoice.EVoiceMemberState GetPlayerVoiceState(EntityPlayer _player, bool _partyOnly = false)
 	{
 		if (_player == null)
@@ -100,7 +100,7 @@ public static class VoiceHelpers
 		return playerDiscordVoiceState;
 	}
 
-	// Token: 0x06006349 RID: 25417 RVA: 0x0026F70C File Offset: 0x0026D90C
+	// Token: 0x060063D5 RID: 25557 RVA: 0x00272608 File Offset: 0x00270808
 	public static IPartyVoice.EVoiceMemberState GetPlayerDiscordVoiceState(EntityPlayer _player, bool _partyOnly = false)
 	{
 		if (_player == null)
@@ -132,7 +132,7 @@ public static class VoiceHelpers
 		return discordUser.VoiceState;
 	}
 
-	// Token: 0x0600634A RID: 25418 RVA: 0x0026F77C File Offset: 0x0026D97C
+	// Token: 0x060063D6 RID: 25558 RVA: 0x00272678 File Offset: 0x00270878
 	public static bool IsSnapWithoutMicPermission()
 	{
 		if (VoiceHelpers.snapWithoutMicPermission != null)
@@ -148,7 +148,7 @@ public static class VoiceHelpers
 		return VoiceHelpers.snapWithoutMicPermission.Value;
 	}
 
-	// Token: 0x0600634B RID: 25419 RVA: 0x0026F7D0 File Offset: 0x0026D9D0
+	// Token: 0x060063D7 RID: 25559 RVA: 0x002726CC File Offset: 0x002708CC
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static bool <IsSnapWithoutMicPermission>g__SnapHasMicPermission|13_0()
@@ -213,7 +213,7 @@ public static class VoiceHelpers
 		return flag;
 	}
 
-	// Token: 0x04004D03 RID: 19715
+	// Token: 0x04004DA1 RID: 19873
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool? snapWithoutMicPermission;
 }

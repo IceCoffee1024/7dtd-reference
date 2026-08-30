@@ -3,16 +3,16 @@ using System.Collections.Generic;
 
 namespace Platform
 {
-	// Token: 0x02001B28 RID: 6952
+	// Token: 0x02001B4F RID: 6991
 	public static class EPlayGroupExtensions
 	{
-		// Token: 0x0600CFBD RID: 53181 RVA: 0x004BF86D File Offset: 0x004BDA6D
+		// Token: 0x0600D146 RID: 53574 RVA: 0x004C5C61 File Offset: 0x004C3E61
 		public static bool IsCurrent(this EPlayGroup group)
 		{
 			return group == EPlayGroupExtensions.Current;
 		}
 
-		// Token: 0x0600CFBE RID: 53182 RVA: 0x004BF877 File Offset: 0x004BDA77
+		// Token: 0x0600D147 RID: 53575 RVA: 0x004C5C6B File Offset: 0x004C3E6B
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static EPlayGroup GetCurrentPlayGroup()
 		{
@@ -27,7 +27,7 @@ namespace Platform
 			return EPlayGroup.Standalone;
 		}
 
-		// Token: 0x0600CFBF RID: 53183 RVA: 0x004BF890 File Offset: 0x004BDA90
+		// Token: 0x0600D148 RID: 53576 RVA: 0x004C5C84 File Offset: 0x004C3E84
 		public static EPlayGroup ToPlayGroup(this DeviceFlag device)
 		{
 			if (device <= DeviceFlag.XBoxSeriesS)
@@ -64,7 +64,7 @@ namespace Platform
 			throw new ArgumentOutOfRangeException("device", device, string.Format("Missing play group mapping for {0}.", device));
 		}
 
-		// Token: 0x0600CFC0 RID: 53184 RVA: 0x004BF908 File Offset: 0x004BDB08
+		// Token: 0x0600D149 RID: 53577 RVA: 0x004C5CFC File Offset: 0x004C3EFC
 		public static EPlayGroup ToPlayGroup(this ClientInfo.EDeviceType deviceType)
 		{
 			EPlayGroup eplayGroup;
@@ -94,7 +94,7 @@ namespace Platform
 			return eplayGroup;
 		}
 
-		// Token: 0x0600CFC1 RID: 53185 RVA: 0x004BF96F File Offset: 0x004BDB6F
+		// Token: 0x0600D14A RID: 53578 RVA: 0x004C5D63 File Offset: 0x004C3F63
 		public static uint[] GetCurrentlyAllowedPlatformIds()
 		{
 			if (PermissionsManager.IsCrossplayAllowed())
@@ -104,10 +104,10 @@ namespace Platform
 			return EPlayGroupExtensions.s_playGroupToAllowedPlatformIds[EPlayGroupExtensions.Current];
 		}
 
-		// Token: 0x04009F1B RID: 40731
+		// Token: 0x0400A04C RID: 41036
 		public static readonly EPlayGroup Current = EPlayGroupExtensions.GetCurrentPlayGroup();
 
-		// Token: 0x04009F1C RID: 40732
+		// Token: 0x0400A04D RID: 41037
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Dictionary<EPlayGroup, uint[]> s_playGroupToAllowedPlatformIds = new Dictionary<EPlayGroup, uint[]>
 		{

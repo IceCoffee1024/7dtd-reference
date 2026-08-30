@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020015C7 RID: 5575
+// Token: 0x020015E2 RID: 5602
 [RequireComponent(typeof(Collider))]
 public abstract class vp_Interactable : MonoBehaviour
 {
-	// Token: 0x0600ADF3 RID: 44531 RVA: 0x0040E290 File Offset: 0x0040C490
+	// Token: 0x0600AEF0 RID: 44784 RVA: 0x004135D0 File Offset: 0x004117D0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Start()
 	{
@@ -21,7 +21,7 @@ public abstract class vp_Interactable : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600ADF4 RID: 44532 RVA: 0x0040E2E9 File Offset: 0x0040C4E9
+	// Token: 0x0600AEF1 RID: 44785 RVA: 0x00413629 File Offset: 0x00411829
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
@@ -31,7 +31,7 @@ public abstract class vp_Interactable : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600ADF5 RID: 44533 RVA: 0x0040E305 File Offset: 0x0040C505
+	// Token: 0x0600AEF2 RID: 44786 RVA: 0x00413645 File Offset: 0x00411845
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnDisable()
 	{
@@ -41,13 +41,13 @@ public abstract class vp_Interactable : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600ADF6 RID: 44534 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x0600AEF3 RID: 44787 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool TryInteract(vp_FPPlayerEventHandler player)
 	{
 		return false;
 	}
 
-	// Token: 0x0600ADF7 RID: 44535 RVA: 0x0040E324 File Offset: 0x0040C524
+	// Token: 0x0600AEF4 RID: 44788 RVA: 0x00413664 File Offset: 0x00411864
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnTriggerEnter(Collider col)
 	{
@@ -72,68 +72,68 @@ public abstract class vp_Interactable : MonoBehaviour
 		this.TryInteract(this.m_Player);
 	}
 
-	// Token: 0x0600ADF8 RID: 44536 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600AEF5 RID: 44789 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void FinishInteraction()
 	{
 	}
 
-	// Token: 0x0600ADF9 RID: 44537 RVA: 0x0040E3C0 File Offset: 0x0040C5C0
+	// Token: 0x0600AEF6 RID: 44790 RVA: 0x00413700 File Offset: 0x00411900
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public vp_Interactable()
 	{
 	}
 
-	// Token: 0x040081C7 RID: 33223
+	// Token: 0x040082A0 RID: 33440
 	public vp_Interactable.vp_InteractType InteractType;
 
-	// Token: 0x040081C8 RID: 33224
+	// Token: 0x040082A1 RID: 33441
 	public List<string> RecipientTags = new List<string>();
 
-	// Token: 0x040081C9 RID: 33225
+	// Token: 0x040082A2 RID: 33442
 	public float InteractDistance;
 
-	// Token: 0x040081CA RID: 33226
+	// Token: 0x040082A3 RID: 33443
 	public Texture m_InteractCrosshair;
 
-	// Token: 0x040081CB RID: 33227
+	// Token: 0x040082A4 RID: 33444
 	public string InteractText = "";
 
-	// Token: 0x040081CC RID: 33228
+	// Token: 0x040082A5 RID: 33445
 	public float DelayShowingText = 2f;
 
-	// Token: 0x040081CD RID: 33229
+	// Token: 0x040082A6 RID: 33446
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_Transform;
 
-	// Token: 0x040081CE RID: 33230
+	// Token: 0x040082A7 RID: 33447
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_FPController m_Controller;
 
-	// Token: 0x040081CF RID: 33231
+	// Token: 0x040082A8 RID: 33448
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_FPCamera m_Camera;
 
-	// Token: 0x040081D0 RID: 33232
+	// Token: 0x040082A9 RID: 33449
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_WeaponHandler m_WeaponHandler;
 
-	// Token: 0x040081D1 RID: 33233
+	// Token: 0x040082AA RID: 33450
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_FPPlayerEventHandler m_Player;
 
-	// Token: 0x020015C8 RID: 5576
+	// Token: 0x020015E3 RID: 5603
 	public enum vp_InteractType
 	{
-		// Token: 0x040081D3 RID: 33235
+		// Token: 0x040082AC RID: 33452
 		Normal,
-		// Token: 0x040081D4 RID: 33236
+		// Token: 0x040082AD RID: 33453
 		Trigger,
-		// Token: 0x040081D5 RID: 33237
+		// Token: 0x040082AE RID: 33454
 		CollisionTrigger
 	}
 }

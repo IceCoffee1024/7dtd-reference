@@ -6,7 +6,7 @@ using UnityEngine;
 public abstract class LegacyAvatarController : AvatarController
 {
 	// Token: 0x17000063 RID: 99
-	// (get) Token: 0x060005D7 RID: 1495 RVA: 0x0002A268 File Offset: 0x00028468
+	// (get) Token: 0x060005D8 RID: 1496 RVA: 0x0002A32C File Offset: 0x0002852C
 	public Transform HeldItemTransform
 	{
 		get
@@ -15,7 +15,7 @@ public abstract class LegacyAvatarController : AvatarController
 		}
 	}
 
-	// Token: 0x060005D8 RID: 1496 RVA: 0x0002A270 File Offset: 0x00028470
+	// Token: 0x060005D9 RID: 1497 RVA: 0x0002A334 File Offset: 0x00028534
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -31,13 +31,13 @@ public abstract class LegacyAvatarController : AvatarController
 		this.assignStates();
 	}
 
-	// Token: 0x060005D9 RID: 1497 RVA: 0x0002A2BF File Offset: 0x000284BF
+	// Token: 0x060005DA RID: 1498 RVA: 0x0002A383 File Offset: 0x00028583
 	public override Transform GetActiveModelRoot()
 	{
 		return this.modelTransform;
 	}
 
-	// Token: 0x060005DA RID: 1498 RVA: 0x0002A2C8 File Offset: 0x000284C8
+	// Token: 0x060005DB RID: 1499 RVA: 0x0002A38C File Offset: 0x0002858C
 	public override void SetInRightHand(Transform _transform)
 	{
 		this.idleTime = 0f;
@@ -58,19 +58,19 @@ public abstract class LegacyAvatarController : AvatarController
 		}
 	}
 
-	// Token: 0x060005DB RID: 1499 RVA: 0x0002A268 File Offset: 0x00028468
+	// Token: 0x060005DC RID: 1500 RVA: 0x0002A32C File Offset: 0x0002852C
 	public override Transform GetRightHandTransform()
 	{
 		return this.rightHandItemTransform;
 	}
 
-	// Token: 0x060005DC RID: 1500 RVA: 0x0002A363 File Offset: 0x00028563
+	// Token: 0x060005DD RID: 1501 RVA: 0x0002A427 File Offset: 0x00028627
 	public override bool IsAnimationAttackPlaying()
 	{
 		return this.timeAttackAnimationPlaying > 0f;
 	}
 
-	// Token: 0x060005DD RID: 1501 RVA: 0x0002A374 File Offset: 0x00028574
+	// Token: 0x060005DE RID: 1502 RVA: 0x0002A438 File Offset: 0x00028638
 	public override void StartAnimationAttack()
 	{
 		this.idleTime = 0f;
@@ -83,7 +83,7 @@ public abstract class LegacyAvatarController : AvatarController
 		this._setTrigger(AvatarController.weaponFireHash, true);
 	}
 
-	// Token: 0x060005DE RID: 1502 RVA: 0x0002A3CB File Offset: 0x000285CB
+	// Token: 0x060005DF RID: 1503 RVA: 0x0002A48F File Offset: 0x0002868F
 	public override void SetAttackImpact()
 	{
 		if (!this.isAttackImpact)
@@ -93,19 +93,19 @@ public abstract class LegacyAvatarController : AvatarController
 		}
 	}
 
-	// Token: 0x060005DF RID: 1503 RVA: 0x0002A3E7 File Offset: 0x000285E7
+	// Token: 0x060005E0 RID: 1504 RVA: 0x0002A4AB File Offset: 0x000286AB
 	public override bool IsAttackImpact()
 	{
 		return this.isAttackImpact;
 	}
 
-	// Token: 0x060005E0 RID: 1504 RVA: 0x0002A3EF File Offset: 0x000285EF
+	// Token: 0x060005E1 RID: 1505 RVA: 0x0002A4B3 File Offset: 0x000286B3
 	public override bool IsAnimationUsePlaying()
 	{
 		return this.timeUseAnimationPlaying > 0f;
 	}
 
-	// Token: 0x060005E1 RID: 1505 RVA: 0x0002A400 File Offset: 0x00028600
+	// Token: 0x060005E2 RID: 1506 RVA: 0x0002A4C4 File Offset: 0x000286C4
 	public override void StartAnimationUse()
 	{
 		this.idleTime = 0f;
@@ -118,13 +118,13 @@ public abstract class LegacyAvatarController : AvatarController
 		this._setBool(AvatarController.itemUseHash, true, true);
 	}
 
-	// Token: 0x060005E2 RID: 1506 RVA: 0x0002A458 File Offset: 0x00028658
+	// Token: 0x060005E3 RID: 1507 RVA: 0x0002A51C File Offset: 0x0002871C
 	public override bool IsAnimationSpecialAttackPlaying()
 	{
 		return this.bSpecialAttackPlaying;
 	}
 
-	// Token: 0x060005E3 RID: 1507 RVA: 0x0002A460 File Offset: 0x00028660
+	// Token: 0x060005E4 RID: 1508 RVA: 0x0002A524 File Offset: 0x00028724
 	public override void StartAnimationSpecialAttack(bool _b, int _animType)
 	{
 		this.idleTime = 0f;
@@ -137,13 +137,13 @@ public abstract class LegacyAvatarController : AvatarController
 		}
 	}
 
-	// Token: 0x060005E4 RID: 1508 RVA: 0x0002A49B File Offset: 0x0002869B
+	// Token: 0x060005E5 RID: 1509 RVA: 0x0002A55F File Offset: 0x0002875F
 	public override bool IsAnimationSpecialAttack2Playing()
 	{
 		return this.timeSpecialAttack2Playing > 0.3f;
 	}
 
-	// Token: 0x060005E5 RID: 1509 RVA: 0x0002A4AA File Offset: 0x000286AA
+	// Token: 0x060005E6 RID: 1510 RVA: 0x0002A56E File Offset: 0x0002876E
 	public override void StartAnimationSpecialAttack2()
 	{
 		this.idleTime = 0f;
@@ -153,13 +153,13 @@ public abstract class LegacyAvatarController : AvatarController
 		this._setTrigger(AvatarController.weaponPreFireCancelHash, true);
 	}
 
-	// Token: 0x060005E6 RID: 1510 RVA: 0x0002A4E6 File Offset: 0x000286E6
+	// Token: 0x060005E7 RID: 1511 RVA: 0x0002A5AA File Offset: 0x000287AA
 	public override bool IsAnimationHarvestingPlaying()
 	{
 		return this.timeHarestingAnimationPlaying > 0f;
 	}
 
-	// Token: 0x060005E7 RID: 1511 RVA: 0x0002A4F5 File Offset: 0x000286F5
+	// Token: 0x060005E8 RID: 1512 RVA: 0x0002A5B9 File Offset: 0x000287B9
 	public override void StartAnimationHarvesting(float _length, bool _weaponFireTrigger)
 	{
 		this.timeHarestingAnimationPlaying = _length;
@@ -170,7 +170,7 @@ public abstract class LegacyAvatarController : AvatarController
 		}
 	}
 
-	// Token: 0x060005E8 RID: 1512 RVA: 0x0002A51C File Offset: 0x0002871C
+	// Token: 0x060005E9 RID: 1513 RVA: 0x0002A5E0 File Offset: 0x000287E0
 	public override void StartAnimationFiring()
 	{
 		this.idleTime = 0f;
@@ -182,7 +182,7 @@ public abstract class LegacyAvatarController : AvatarController
 		this._setTrigger(AvatarController.weaponFireHash, true);
 	}
 
-	// Token: 0x060005E9 RID: 1513 RVA: 0x0002A56C File Offset: 0x0002876C
+	// Token: 0x060005EA RID: 1514 RVA: 0x0002A630 File Offset: 0x00028830
 	public override void StartAnimationReloading()
 	{
 		this.idleTime = 0f;
@@ -195,13 +195,13 @@ public abstract class LegacyAvatarController : AvatarController
 		this._setFloat(AvatarController.reloadSpeedHash, value, true);
 	}
 
-	// Token: 0x060005EA RID: 1514 RVA: 0x0002A5F4 File Offset: 0x000287F4
+	// Token: 0x060005EB RID: 1515 RVA: 0x0002A6B8 File Offset: 0x000288B8
 	public override void StartAnimationHit(EnumBodyPartHit _bodyPart, int _dir, int _hitDamage, bool _criticalHit, int _movementState, float random, float _duration)
 	{
 		this.InternalStartAnimationHit(_bodyPart, _dir, _hitDamage, _criticalHit, _movementState, random, _duration);
 	}
 
-	// Token: 0x060005EB RID: 1515 RVA: 0x0002A608 File Offset: 0x00028808
+	// Token: 0x060005EC RID: 1516 RVA: 0x0002A6CC File Offset: 0x000288CC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void InternalStartAnimationHit(EnumBodyPartHit _bodyPart, int _dir, int _hitDamage, bool _criticalHit, int _movementState, float random, float _duration)
 	{
@@ -229,7 +229,7 @@ public abstract class LegacyAvatarController : AvatarController
 		}
 	}
 
-	// Token: 0x060005EC RID: 1516 RVA: 0x0002A6E0 File Offset: 0x000288E0
+	// Token: 0x060005ED RID: 1517 RVA: 0x0002A7A4 File Offset: 0x000289A4
 	public override void SetVisible(bool _b)
 	{
 		this.m_bVisible = _b;
@@ -244,7 +244,7 @@ public abstract class LegacyAvatarController : AvatarController
 		}
 	}
 
-	// Token: 0x060005ED RID: 1517 RVA: 0x0002A739 File Offset: 0x00028939
+	// Token: 0x060005EE RID: 1518 RVA: 0x0002A7FD File Offset: 0x000289FD
 	public override void SetVehicleAnimation(int _animHash, int _pose)
 	{
 		if (this.anim)
@@ -253,7 +253,7 @@ public abstract class LegacyAvatarController : AvatarController
 		}
 	}
 
-	// Token: 0x060005EE RID: 1518 RVA: 0x0002A754 File Offset: 0x00028954
+	// Token: 0x060005EF RID: 1519 RVA: 0x0002A818 File Offset: 0x00028A18
 	public override void SetAiming(bool _bEnable)
 	{
 		this.idleTime = 0f;
@@ -267,7 +267,7 @@ public abstract class LegacyAvatarController : AvatarController
 		}
 	}
 
-	// Token: 0x060005EF RID: 1519 RVA: 0x0002A7A8 File Offset: 0x000289A8
+	// Token: 0x060005F0 RID: 1520 RVA: 0x0002A86C File Offset: 0x00028A6C
 	public override void SetCrouching(bool _bEnable)
 	{
 		this.idleTime = 0f;
@@ -281,13 +281,13 @@ public abstract class LegacyAvatarController : AvatarController
 		}
 	}
 
-	// Token: 0x060005F0 RID: 1520 RVA: 0x0002A7FC File Offset: 0x000289FC
+	// Token: 0x060005F1 RID: 1521 RVA: 0x0002A8C0 File Offset: 0x00028AC0
 	public override bool IsAnimationDigRunning()
 	{
 		return AvatarController.digHash == this.baseStateInfo.tagHash;
 	}
 
-	// Token: 0x060005F1 RID: 1521 RVA: 0x0002A810 File Offset: 0x00028A10
+	// Token: 0x060005F2 RID: 1522 RVA: 0x0002A8D4 File Offset: 0x00028AD4
 	public override void StartAnimationJumping()
 	{
 		this.idleTime = 0f;
@@ -301,7 +301,7 @@ public abstract class LegacyAvatarController : AvatarController
 		}
 	}
 
-	// Token: 0x060005F2 RID: 1522 RVA: 0x0002A864 File Offset: 0x00028A64
+	// Token: 0x060005F3 RID: 1523 RVA: 0x0002A928 File Offset: 0x00028B28
 	public override void StartAnimationJump(AnimJumpMode jumpMode)
 	{
 		this.idleTime = 0f;
@@ -324,20 +324,20 @@ public abstract class LegacyAvatarController : AvatarController
 		}
 	}
 
-	// Token: 0x060005F3 RID: 1523 RVA: 0x0002A8F5 File Offset: 0x00028AF5
+	// Token: 0x060005F4 RID: 1524 RVA: 0x0002A9B9 File Offset: 0x00028BB9
 	public override bool IsAnimationJumpRunning()
 	{
 		return this.isJumpStarted || AvatarController.jumpHash == this.baseStateInfo.tagHash;
 	}
 
-	// Token: 0x060005F4 RID: 1524 RVA: 0x0002A918 File Offset: 0x00028B18
+	// Token: 0x060005F5 RID: 1525 RVA: 0x0002A9DC File Offset: 0x00028BDC
 	public override bool IsAnimationWithMotionRunning()
 	{
 		int tagHash = this.baseStateInfo.tagHash;
 		return tagHash == AvatarController.jumpHash || tagHash == AvatarController.moveHash;
 	}
 
-	// Token: 0x060005F5 RID: 1525 RVA: 0x0002A944 File Offset: 0x00028B44
+	// Token: 0x060005F6 RID: 1526 RVA: 0x0002AA08 File Offset: 0x00028C08
 	public override void SetSwim(bool _enable)
 	{
 		int num = -1;
@@ -352,7 +352,7 @@ public abstract class LegacyAvatarController : AvatarController
 		this.SetWalkType(num, true);
 	}
 
-	// Token: 0x060005F6 RID: 1526 RVA: 0x0002A988 File Offset: 0x00028B88
+	// Token: 0x060005F7 RID: 1527 RVA: 0x0002AA4C File Offset: 0x00028C4C
 	public override void StartDeathAnimation(EnumBodyPartHit _bodyPart, int _movementState, float random)
 	{
 		this.idleTime = 0f;
@@ -373,13 +373,13 @@ public abstract class LegacyAvatarController : AvatarController
 		}
 	}
 
-	// Token: 0x060005F7 RID: 1527 RVA: 0x0002AA34 File Offset: 0x00028C34
+	// Token: 0x060005F8 RID: 1528 RVA: 0x0002AAF8 File Offset: 0x00028CF8
 	public override void SetRagdollEnabled(bool _b)
 	{
 		this.bIsRagdoll = _b;
 	}
 
-	// Token: 0x060005F8 RID: 1528 RVA: 0x0002AA40 File Offset: 0x00028C40
+	// Token: 0x060005F9 RID: 1529 RVA: 0x0002AB04 File Offset: 0x00028D04
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void updateLayerStateInfo()
 	{
@@ -393,7 +393,7 @@ public abstract class LegacyAvatarController : AvatarController
 		}
 	}
 
-	// Token: 0x060005F9 RID: 1529 RVA: 0x0002AA90 File Offset: 0x00028C90
+	// Token: 0x060005FA RID: 1530 RVA: 0x0002AB54 File Offset: 0x00028D54
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void updateSpineRotation()
 	{
@@ -418,7 +418,7 @@ public abstract class LegacyAvatarController : AvatarController
 		}
 	}
 
-	// Token: 0x060005FA RID: 1530 RVA: 0x0002AD34 File Offset: 0x00028F34
+	// Token: 0x060005FB RID: 1531 RVA: 0x0002ADF8 File Offset: 0x00028FF8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void LateUpdate()
 	{
@@ -485,7 +485,7 @@ public abstract class LegacyAvatarController : AvatarController
 		}
 	}
 
-	// Token: 0x060005FB RID: 1531 RVA: 0x0002AFA4 File Offset: 0x000291A4
+	// Token: 0x060005FC RID: 1532 RVA: 0x0002B068 File Offset: 0x00029268
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void setLayerWeights()
 	{
@@ -519,7 +519,7 @@ public abstract class LegacyAvatarController : AvatarController
 		}
 	}
 
-	// Token: 0x060005FC RID: 1532 RVA: 0x0002B060 File Offset: 0x00029260
+	// Token: 0x060005FD RID: 1533 RVA: 0x0002B124 File Offset: 0x00029324
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Update()
 	{
@@ -618,13 +618,13 @@ public abstract class LegacyAvatarController : AvatarController
 		base.UpdateFloat(AvatarController.yLookHash, Mathf.Lerp(num6, -base.Entity.rotation.x / 90f, Time.deltaTime * 12f), false);
 	}
 
-	// Token: 0x060005FD RID: 1533 RVA: 0x0002B3CB File Offset: 0x000295CB
+	// Token: 0x060005FE RID: 1534 RVA: 0x0002B48F File Offset: 0x0002968F
 	public virtual Transform GetMeshTransform()
 	{
 		return this.bipedTransform;
 	}
 
-	// Token: 0x060005FE RID: 1534 RVA: 0x0002B3D3 File Offset: 0x000295D3
+	// Token: 0x060005FF RID: 1535 RVA: 0x0002B497 File Offset: 0x00029697
 	public override void SetArchetypeStance(NPCInfo.StanceTypes stance)
 	{
 		if (this.anim != null && this.anim.avatar.isValid && this.anim.enabled)
@@ -633,7 +633,7 @@ public abstract class LegacyAvatarController : AvatarController
 		}
 	}
 
-	// Token: 0x060005FF RID: 1535 RVA: 0x0002B40F File Offset: 0x0002960F
+	// Token: 0x06000600 RID: 1536 RVA: 0x0002B4D3 File Offset: 0x000296D3
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void _setTrigger(int _propertyHash, bool _netsync = true)
 	{
@@ -644,7 +644,7 @@ public abstract class LegacyAvatarController : AvatarController
 		}
 	}
 
-	// Token: 0x06000600 RID: 1536 RVA: 0x0002B448 File Offset: 0x00029648
+	// Token: 0x06000601 RID: 1537 RVA: 0x0002B50C File Offset: 0x0002970C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void _resetTrigger(int _propertyHash, bool _netsync = true)
 	{
@@ -655,7 +655,7 @@ public abstract class LegacyAvatarController : AvatarController
 		}
 	}
 
-	// Token: 0x06000601 RID: 1537 RVA: 0x0002B498 File Offset: 0x00029698
+	// Token: 0x06000602 RID: 1538 RVA: 0x0002B55C File Offset: 0x0002975C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void _setFloat(int _propertyHash, float _value, bool _netsync = true)
 	{
@@ -666,7 +666,7 @@ public abstract class LegacyAvatarController : AvatarController
 		}
 	}
 
-	// Token: 0x06000602 RID: 1538 RVA: 0x0002B4D1 File Offset: 0x000296D1
+	// Token: 0x06000603 RID: 1539 RVA: 0x0002B595 File Offset: 0x00029795
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void _setBool(int _propertyHash, bool _value, bool _netsync = true)
 	{
@@ -677,7 +677,7 @@ public abstract class LegacyAvatarController : AvatarController
 		}
 	}
 
-	// Token: 0x06000603 RID: 1539 RVA: 0x0002B50A File Offset: 0x0002970A
+	// Token: 0x06000604 RID: 1540 RVA: 0x0002B5CE File Offset: 0x000297CE
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void _setInt(int _propertyHash, int _value, bool _netsync = true)
 	{
@@ -688,7 +688,7 @@ public abstract class LegacyAvatarController : AvatarController
 		}
 	}
 
-	// Token: 0x06000604 RID: 1540 RVA: 0x0002B543 File Offset: 0x00029743
+	// Token: 0x06000605 RID: 1541 RVA: 0x0002B607 File Offset: 0x00029807
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public LegacyAvatarController()
 	{

@@ -3,12 +3,12 @@ using InControl;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001034 RID: 4148
+// Token: 0x0200104D RID: 4173
 [global::UnityEngine.Scripting.Preserve]
 public class XUiC_SignStack : XUiC_SelectableEntry
 {
-	// Token: 0x17000F2F RID: 3887
-	// (get) Token: 0x06008390 RID: 33680 RVA: 0x003220E6 File Offset: 0x003202E6
+	// Token: 0x17000F68 RID: 3944
+	// (get) Token: 0x06008482 RID: 33922 RVA: 0x0032690E File Offset: 0x00324B0E
 	public SignData SignData
 	{
 		get
@@ -17,8 +17,8 @@ public class XUiC_SignStack : XUiC_SelectableEntry
 		}
 	}
 
-	// Token: 0x17000F30 RID: 3888
-	// (get) Token: 0x06008391 RID: 33681 RVA: 0x003220EE File Offset: 0x003202EE
+	// Token: 0x17000F69 RID: 3945
+	// (get) Token: 0x06008483 RID: 33923 RVA: 0x00326916 File Offset: 0x00324B16
 	public string LibraryName
 	{
 		get
@@ -27,15 +27,15 @@ public class XUiC_SignStack : XUiC_SelectableEntry
 		}
 	}
 
-	// Token: 0x06008392 RID: 33682 RVA: 0x003220F6 File Offset: 0x003202F6
+	// Token: 0x06008484 RID: 33924 RVA: 0x0032691E File Offset: 0x00324B1E
 	public XUiC_SignStack()
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x17000F31 RID: 3889
-	// (get) Token: 0x06008393 RID: 33683 RVA: 0x00322124 File Offset: 0x00320324
-	// (set) Token: 0x06008394 RID: 33684 RVA: 0x0032212C File Offset: 0x0032032C
+	// Token: 0x17000F6A RID: 3946
+	// (get) Token: 0x06008485 RID: 33925 RVA: 0x0032694C File Offset: 0x00324B4C
+	// (set) Token: 0x06008486 RID: 33926 RVA: 0x00326954 File Offset: 0x00324B54
 	public GlobalSignId SignId
 	{
 		get
@@ -91,7 +91,7 @@ public class XUiC_SignStack : XUiC_SelectableEntry
 		}
 	}
 
-	// Token: 0x06008395 RID: 33685 RVA: 0x00322297 File Offset: 0x00320497
+	// Token: 0x06008487 RID: 33927 RVA: 0x00326ABF File Offset: 0x00324CBF
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SelectedChanged(bool isSelected)
 	{
@@ -109,14 +109,14 @@ public class XUiC_SignStack : XUiC_SelectableEntry
 		onBecameSelected(this);
 	}
 
-	// Token: 0x06008396 RID: 33686 RVA: 0x003222C6 File Offset: 0x003204C6
+	// Token: 0x06008488 RID: 33928 RVA: 0x00326AEE File Offset: 0x00324CEE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetColor(Color32 color)
 	{
 		this.background.Color = color;
 	}
 
-	// Token: 0x06008397 RID: 33687 RVA: 0x003222DC File Offset: 0x003204DC
+	// Token: 0x06008489 RID: 33929 RVA: 0x00326B04 File Offset: 0x00324D04
 	public override void Init()
 	{
 		base.Init();
@@ -129,14 +129,14 @@ public class XUiC_SignStack : XUiC_SelectableEntry
 		this.signMaterial.Texture = Texture2D.whiteTexture;
 	}
 
-	// Token: 0x06008398 RID: 33688 RVA: 0x00322387 File Offset: 0x00320587
+	// Token: 0x0600848A RID: 33930 RVA: 0x00326BAF File Offset: 0x00324DAF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnWillRender(Material mat)
 	{
 		SignDataManager.Instance.TryApplyRenderingData(this.signId, 1f, mat, null, SignUIStyle.Standard);
 	}
 
-	// Token: 0x06008399 RID: 33689 RVA: 0x003223A4 File Offset: 0x003205A4
+	// Token: 0x0600848B RID: 33931 RVA: 0x00326BCC File Offset: 0x00324DCC
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -190,7 +190,7 @@ public class XUiC_SignStack : XUiC_SelectableEntry
 		}
 	}
 
-	// Token: 0x0600839A RID: 33690 RVA: 0x003224E9 File Offset: 0x003206E9
+	// Token: 0x0600848C RID: 33932 RVA: 0x00326D11 File Offset: 0x00324F11
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetItemNameText(string name)
 	{
@@ -199,7 +199,7 @@ public class XUiC_SignStack : XUiC_SelectableEntry
 		viewComponent.ToolTip = name;
 	}
 
-	// Token: 0x0600839B RID: 33691 RVA: 0x00322500 File Offset: 0x00320700
+	// Token: 0x0600848D RID: 33933 RVA: 0x00326D28 File Offset: 0x00324F28
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnHovered(bool _isOver)
 	{
@@ -218,14 +218,14 @@ public class XUiC_SignStack : XUiC_SelectableEntry
 		base.OnHovered(_isOver);
 	}
 
-	// Token: 0x0600839C RID: 33692 RVA: 0x0008AF5C File Offset: 0x0008915C
+	// Token: 0x0600848E RID: 33934 RVA: 0x0008B69C File Offset: 0x0008989C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x0600839D RID: 33693 RVA: 0x00322554 File Offset: 0x00320754
+	// Token: 0x0600848F RID: 33935 RVA: 0x00326D7C File Offset: 0x00324F7C
 	public override bool ParseAttribute(string name, string value)
 	{
 		bool flag = base.ParseAttribute(name, value);
@@ -269,59 +269,59 @@ public class XUiC_SignStack : XUiC_SelectableEntry
 		return flag;
 	}
 
-	// Token: 0x04006172 RID: 24946
+	// Token: 0x04006239 RID: 25145
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isOver;
 
-	// Token: 0x04006173 RID: 24947
+	// Token: 0x0400623A RID: 25146
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 currentColor;
 
-	// Token: 0x04006174 RID: 24948
+	// Token: 0x0400623B RID: 25147
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 selectColor = new Color32(byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue);
 
-	// Token: 0x04006175 RID: 24949
+	// Token: 0x0400623C RID: 25148
 	public static Color32 backgroundColor = new Color32(96, 96, 96, byte.MaxValue);
 
-	// Token: 0x04006176 RID: 24950
+	// Token: 0x0400623D RID: 25149
 	public static Color32 highlightColor = new Color32(222, 206, 163, byte.MaxValue);
 
-	// Token: 0x04006177 RID: 24951
+	// Token: 0x0400623E RID: 25150
 	public static Color32 libraryMarkerColorDefault = new Color32(120, 0, 200, byte.MaxValue);
 
-	// Token: 0x04006178 RID: 24952
+	// Token: 0x0400623F RID: 25151
 	public static Color32 libraryMarkerColorPrefab = new Color32(45, 220, 30, byte.MaxValue);
 
-	// Token: 0x04006179 RID: 24953
+	// Token: 0x04006240 RID: 25152
 	public static Color32 libraryMarkerColorUser = new Color32(0, 170, 190, byte.MaxValue);
 
-	// Token: 0x0400617A RID: 24954
+	// Token: 0x04006241 RID: 25153
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite highlightOverlay;
 
-	// Token: 0x0400617B RID: 24955
+	// Token: 0x04006242 RID: 25154
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite background;
 
-	// Token: 0x0400617C RID: 24956
+	// Token: 0x04006243 RID: 25155
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Texture signMaterial;
 
-	// Token: 0x0400617D RID: 24957
+	// Token: 0x04006244 RID: 25156
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 libraryColor;
 
-	// Token: 0x0400617E RID: 24958
+	// Token: 0x04006245 RID: 25157
 	public SignData signData;
 
-	// Token: 0x0400617F RID: 24959
+	// Token: 0x04006246 RID: 25158
 	public string libraryName;
 
-	// Token: 0x04006180 RID: 24960
+	// Token: 0x04006247 RID: 25159
 	public Action<XUiC_SignStack> OnBecameSelected;
 
-	// Token: 0x04006181 RID: 24961
+	// Token: 0x04006248 RID: 25160
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GlobalSignId signId;
 }

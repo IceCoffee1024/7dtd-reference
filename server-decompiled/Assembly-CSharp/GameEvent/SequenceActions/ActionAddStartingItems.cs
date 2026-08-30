@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x0200193E RID: 6462
+	// Token: 0x02001964 RID: 6500
 	[Preserve]
 	public class ActionAddStartingItems : ActionBaseClientAction
 	{
-		// Token: 0x0600C675 RID: 50805 RVA: 0x0048F1F4 File Offset: 0x0048D3F4
+		// Token: 0x0600C7FC RID: 51196 RVA: 0x00495540 File Offset: 0x00493740
 		public override void OnClientPerform(Entity target)
 		{
 			EntityPlayerLocal entityPlayerLocal = target as EntityPlayerLocal;
@@ -17,7 +17,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C676 RID: 50806 RVA: 0x0048F211 File Offset: 0x0048D411
+		// Token: 0x0600C7FD RID: 51197 RVA: 0x0049555D File Offset: 0x0049375D
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{

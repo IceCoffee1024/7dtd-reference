@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000482 RID: 1154
+// Token: 0x02000486 RID: 1158
 [Preserve]
 public class EntityAnimalStag : EntityAnimal
 {
-	// Token: 0x060023D5 RID: 9173 RVA: 0x000D90B0 File Offset: 0x000D72B0
+	// Token: 0x060023F6 RID: 9206 RVA: 0x000D9B88 File Offset: 0x000D7D88
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020015F2 RID: 5618
+// Token: 0x0200160D RID: 5645
 public class vp_PlayerRespawner : vp_Respawner
 {
-	// Token: 0x1700147E RID: 5246
-	// (get) Token: 0x0600B05B RID: 45147 RVA: 0x0041E451 File Offset: 0x0041C651
+	// Token: 0x170014B7 RID: 5303
+	// (get) Token: 0x0600B158 RID: 45400 RVA: 0x00423791 File Offset: 0x00421991
 	public vp_PlayerEventHandler Player
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -19,14 +19,14 @@ public class vp_PlayerRespawner : vp_Respawner
 		}
 	}
 
-	// Token: 0x0600B05C RID: 45148 RVA: 0x0041E478 File Offset: 0x0041C678
+	// Token: 0x0600B159 RID: 45401 RVA: 0x004237B8 File Offset: 0x004219B8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
 		base.Awake();
 	}
 
-	// Token: 0x0600B05D RID: 45149 RVA: 0x0041E480 File Offset: 0x0041C680
+	// Token: 0x0600B15A RID: 45402 RVA: 0x004237C0 File Offset: 0x004219C0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnEnable()
 	{
@@ -37,7 +37,7 @@ public class vp_PlayerRespawner : vp_Respawner
 		base.OnEnable();
 	}
 
-	// Token: 0x0600B05E RID: 45150 RVA: 0x0041E4A2 File Offset: 0x0041C6A2
+	// Token: 0x0600B15B RID: 45403 RVA: 0x004237E2 File Offset: 0x004219E2
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnDisable()
 	{
@@ -47,7 +47,7 @@ public class vp_PlayerRespawner : vp_Respawner
 		}
 	}
 
-	// Token: 0x0600B05F RID: 45151 RVA: 0x0041E4C0 File Offset: 0x0041C6C0
+	// Token: 0x0600B15C RID: 45404 RVA: 0x00423800 File Offset: 0x00421A00
 	public override void Reset()
 	{
 		if (!Application.isPlaying)
@@ -63,7 +63,7 @@ public class vp_PlayerRespawner : vp_Respawner
 		this.Player.Stop.Send();
 	}
 
-	// Token: 0x04008470 RID: 33904
+	// Token: 0x04008549 RID: 34121
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_PlayerEventHandler m_Player;

@@ -1,21 +1,16 @@
 ﻿using System;
 using System.Collections;
-using System.Net;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
-using BhvrAnalyticsServices.Interfaces;
 using Platform;
-using Platform.EOS;
-using Services;
-using Services.Analytics.Events;
+using Services.Analytics;
 using UnityEngine;
 using WorldGenerationEngineFinal;
 
-// Token: 0x02001255 RID: 4693
+// Token: 0x02001271 RID: 4721
 public class MainMenuMono : MonoBehaviour
 {
-	// Token: 0x170011A3 RID: 4515
-	// (get) Token: 0x0600953C RID: 38204 RVA: 0x00383E77 File Offset: 0x00382077
+	// Token: 0x170011DE RID: 4574
+	// (get) Token: 0x06009640 RID: 38464 RVA: 0x00389167 File Offset: 0x00387367
 	public static bool IsQuickContinue
 	{
 		get
@@ -24,7 +19,7 @@ public class MainMenuMono : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600953D RID: 38205 RVA: 0x00383E95 File Offset: 0x00382095
+	// Token: 0x06009641 RID: 38465 RVA: 0x00389185 File Offset: 0x00387385
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Awake()
 	{
@@ -32,7 +27,7 @@ public class MainMenuMono : MonoBehaviour
 		this.nguiWindowManager = base.GetComponent<NGUIWindowManager>();
 	}
 
-	// Token: 0x0600953E RID: 38206 RVA: 0x00383EB0 File Offset: 0x003820B0
+	// Token: 0x06009642 RID: 38466 RVA: 0x003891A0 File Offset: 0x003873A0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Start()
 	{
@@ -47,7 +42,7 @@ public class MainMenuMono : MonoBehaviour
 		this.nguiWindowManager.Show(EnumNGUIWindow.Loading, true);
 	}
 
-	// Token: 0x0600953F RID: 38207 RVA: 0x00383F05 File Offset: 0x00382105
+	// Token: 0x06009643 RID: 38467 RVA: 0x003891F5 File Offset: 0x003873F5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool CheckLogin()
 	{
@@ -57,7 +52,7 @@ public class MainMenuMono : MonoBehaviour
 		return this.bOpenMainMenu;
 	}
 
-	// Token: 0x06009540 RID: 38208 RVA: 0x00383F3C File Offset: 0x0038213C
+	// Token: 0x06009644 RID: 38468 RVA: 0x0038922C File Offset: 0x0038742C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnLoginComplete()
 	{
@@ -65,7 +60,7 @@ public class MainMenuMono : MonoBehaviour
 		{
 			GameManager.LoadRemoteResources(null);
 		}
-		base.StartCoroutine(this.LoginEventAnalyticCoroutine());
+		base.StartCoroutine(Helper.LoginEventAnalyticCoroutine(true));
 		if (PlatformManager.MultiPlatform.User.UserStatus == EUserStatus.OfflineMode)
 		{
 			this.bOpenMainMenu = true;
@@ -98,45 +93,7 @@ public class MainMenuMono : MonoBehaviour
 		Log.Error(string.Format(text, obj, obj2 ?? "N/A"));
 	}
 
-	// Token: 0x06009541 RID: 38209 RVA: 0x0038402B File Offset: 0x0038222B
-	[PublicizedFrom(EAccessModifier.Private)]
-	public IEnumerator LoginEventAnalyticCoroutine()
-	{
-		Task<string> ipAddressTask = new WebClient().DownloadStringTaskAsync(new Uri("https://api.ipify.org"));
-		yield return new WaitUntil(() => ipAddressTask.IsCompleted);
-		LoginEventData loginEventData = new LoginEventData();
-		loginEventData.SessionStartTimeStamp = DateTime.UtcNow.ToString("O");
-		loginEventData.Platform = Application.platform.ToString();
-		loginEventData.Provider = PlatformManager.NativePlatform.PlatformIdentifier.ToString();
-		loginEventData.IP = ipAddressTask.Result;
-		loginEventData.CrossplayEnabled = GamePrefs.GetBool(EnumGamePrefs.OptionsCrossplay);
-		LoginEventData loginEventData2 = loginEventData;
-		EUserAccountState userAccountState = EosHelpers.UserAccountState;
-		bool? flag;
-		if (userAccountState != EUserAccountState.NewUser)
-		{
-			if (userAccountState == EUserAccountState.Unknown)
-			{
-				flag = null;
-			}
-			else
-			{
-				flag = new bool?(false);
-			}
-		}
-		else
-		{
-			flag = new bool?(true);
-		}
-		loginEventData2.IsFirstLaunchEos = flag;
-		LoginEventData loginEventData3 = loginEventData;
-		ServiceProvider.Instance.Get<IAnalyticsService>().LogEvent(loginEventData3);
-		ServiceProvider.Instance.Get<IAnalyticsService>().LogEvent(new HardwareInfoEventData());
-		SingletonMonoBehaviour<ConnectionManager>.Instance.BeginHeartbeat();
-		yield break;
-	}
-
-	// Token: 0x06009542 RID: 38210 RVA: 0x00384034 File Offset: 0x00382234
+	// Token: 0x06009645 RID: 38469 RVA: 0x0038931C File Offset: 0x0038751C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Update()
 	{
@@ -199,7 +156,7 @@ public class MainMenuMono : MonoBehaviour
 		this.bOpenMainMenu = false;
 	}
 
-	// Token: 0x06009543 RID: 38211 RVA: 0x003841D9 File Offset: 0x003823D9
+	// Token: 0x06009646 RID: 38470 RVA: 0x003894C1 File Offset: 0x003876C1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator startDedicatedServer()
 	{
@@ -272,7 +229,7 @@ public class MainMenuMono : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06009544 RID: 38212 RVA: 0x003841E8 File Offset: 0x003823E8
+	// Token: 0x06009647 RID: 38471 RVA: 0x003894D0 File Offset: 0x003876D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator startGeneration(UserDataStorageType _worldStorageType, Action<bool> _finishedCallback)
 	{
@@ -306,7 +263,7 @@ public class MainMenuMono : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06009545 RID: 38213 RVA: 0x00384208 File Offset: 0x00382408
+	// Token: 0x06009648 RID: 38472 RVA: 0x003894F0 File Offset: 0x003876F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void abortServerStartupWithError(params string[] _errorMessage)
 	{
@@ -319,7 +276,7 @@ public class MainMenuMono : MonoBehaviour
 		Application.Quit();
 	}
 
-	// Token: 0x06009547 RID: 38215 RVA: 0x00384264 File Offset: 0x00382464
+	// Token: 0x0600964A RID: 38474 RVA: 0x0038954C File Offset: 0x0038774C
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator <OnLoginComplete>g__ResolveInitialPermissions|9_0(EUserPerms _perms)
@@ -329,37 +286,37 @@ public class MainMenuMono : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x04006FAD RID: 28589
+	// Token: 0x04007086 RID: 28806
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GUIWindowManager windowManager;
 
-	// Token: 0x04006FAE RID: 28590
+	// Token: 0x04007087 RID: 28807
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public NGUIWindowManager nguiWindowManager;
 
-	// Token: 0x04006FAF RID: 28591
+	// Token: 0x04007088 RID: 28808
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bOpenMainMenu;
 
-	// Token: 0x04006FB0 RID: 28592
+	// Token: 0x04007089 RID: 28809
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool loginCheckDone;
 
-	// Token: 0x04006FB1 RID: 28593
+	// Token: 0x0400708A RID: 28810
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public string loadingText = "";
 
-	// Token: 0x04006FB2 RID: 28594
+	// Token: 0x0400708B RID: 28811
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public string displayedLoadAction = "";
 
-	// Token: 0x04006FB3 RID: 28595
+	// Token: 0x0400708C RID: 28812
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float ServerStartDelaySec = 2.5f;

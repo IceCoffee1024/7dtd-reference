@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200114C RID: 4428
+// Token: 0x02001165 RID: 4453
 public class XUiV_TextureBased : XUiV_ImageBased
 {
-	// Token: 0x170010BD RID: 4285
-	// (get) Token: 0x06008D51 RID: 36177 RVA: 0x00354DEA File Offset: 0x00352FEA
-	// (set) Token: 0x06008D52 RID: 36178 RVA: 0x00354DF2 File Offset: 0x00352FF2
+	// Token: 0x170010F6 RID: 4342
+	// (get) Token: 0x06008E43 RID: 36419 RVA: 0x00359626 File Offset: 0x00357826
+	// (set) Token: 0x06008E44 RID: 36420 RVA: 0x0035962E File Offset: 0x0035782E
 	public virtual Texture Texture
 	{
 		get
@@ -20,9 +20,9 @@ public class XUiV_TextureBased : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010BE RID: 4286
-	// (get) Token: 0x06008D53 RID: 36179 RVA: 0x00354E01 File Offset: 0x00353001
-	// (set) Token: 0x06008D54 RID: 36180 RVA: 0x00354E09 File Offset: 0x00353009
+	// Token: 0x170010F7 RID: 4343
+	// (get) Token: 0x06008E45 RID: 36421 RVA: 0x0035963D File Offset: 0x0035783D
+	// (set) Token: 0x06008E46 RID: 36422 RVA: 0x00359645 File Offset: 0x00357845
 	public Material Material
 	{
 		get
@@ -36,9 +36,9 @@ public class XUiV_TextureBased : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010BF RID: 4287
-	// (get) Token: 0x06008D55 RID: 36181 RVA: 0x00354E18 File Offset: 0x00353018
-	// (set) Token: 0x06008D56 RID: 36182 RVA: 0x00354E25 File Offset: 0x00353025
+	// Token: 0x170010F8 RID: 4344
+	// (get) Token: 0x06008E47 RID: 36423 RVA: 0x00359654 File Offset: 0x00357854
+	// (set) Token: 0x06008E48 RID: 36424 RVA: 0x00359661 File Offset: 0x00357861
 	public UIDrawCall.OnRenderCallback OnRenderTexture
 	{
 		get
@@ -51,9 +51,9 @@ public class XUiV_TextureBased : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010C0 RID: 4288
-	// (get) Token: 0x06008D57 RID: 36183 RVA: 0x00354E33 File Offset: 0x00353033
-	// (set) Token: 0x06008D58 RID: 36184 RVA: 0x00354E3B File Offset: 0x0035303B
+	// Token: 0x170010F9 RID: 4345
+	// (get) Token: 0x06008E49 RID: 36425 RVA: 0x0035966F File Offset: 0x0035786F
+	// (set) Token: 0x06008E4A RID: 36426 RVA: 0x00359677 File Offset: 0x00357877
 	public Rect UVRect
 	{
 		get
@@ -67,9 +67,9 @@ public class XUiV_TextureBased : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010C1 RID: 4289
-	// (get) Token: 0x06008D59 RID: 36185 RVA: 0x00354E4A File Offset: 0x0035304A
-	// (set) Token: 0x06008D5A RID: 36186 RVA: 0x00354E52 File Offset: 0x00353052
+	// Token: 0x170010FA RID: 4346
+	// (get) Token: 0x06008E4B RID: 36427 RVA: 0x00359686 File Offset: 0x00357886
+	// (set) Token: 0x06008E4C RID: 36428 RVA: 0x0035968E File Offset: 0x0035788E
 	public Vector4 Border
 	{
 		get
@@ -83,9 +83,9 @@ public class XUiV_TextureBased : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010C2 RID: 4290
-	// (get) Token: 0x06008D5B RID: 36187 RVA: 0x00354E61 File Offset: 0x00353061
-	// (set) Token: 0x06008D5C RID: 36188 RVA: 0x00354E69 File Offset: 0x00353069
+	// Token: 0x170010FB RID: 4347
+	// (get) Token: 0x06008E4D RID: 36429 RVA: 0x0035969D File Offset: 0x0035789D
+	// (set) Token: 0x06008E4E RID: 36430 RVA: 0x003596A5 File Offset: 0x003578A5
 	[XuiXmlAttribute("color", false)]
 	public Color Color
 	{
@@ -100,9 +100,9 @@ public class XUiV_TextureBased : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010C3 RID: 4291
-	// (get) Token: 0x06008D5D RID: 36189 RVA: 0x00354E78 File Offset: 0x00353078
-	// (set) Token: 0x06008D5E RID: 36190 RVA: 0x00354E80 File Offset: 0x00353080
+	// Token: 0x170010FC RID: 4348
+	// (get) Token: 0x06008E4F RID: 36431 RVA: 0x003596B4 File Offset: 0x003578B4
+	// (set) Token: 0x06008E50 RID: 36432 RVA: 0x003596BC File Offset: 0x003578BC
 	public UIBasicSprite.FillDirection FillDirection
 	{
 		get
@@ -116,9 +116,9 @@ public class XUiV_TextureBased : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010C4 RID: 4292
-	// (get) Token: 0x06008D5F RID: 36191 RVA: 0x00354E8F File Offset: 0x0035308F
-	// (set) Token: 0x06008D60 RID: 36192 RVA: 0x00354E97 File Offset: 0x00353097
+	// Token: 0x170010FD RID: 4349
+	// (get) Token: 0x06008E51 RID: 36433 RVA: 0x003596CB File Offset: 0x003578CB
+	// (set) Token: 0x06008E52 RID: 36434 RVA: 0x003596D3 File Offset: 0x003578D3
 	[XuiXmlAttribute("sourceaspectratiorespectpivot", false)]
 	public bool SourceAspectRatioRespectPivot
 	{
@@ -137,13 +137,13 @@ public class XUiV_TextureBased : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x06008D61 RID: 36193 RVA: 0x00354EB0 File Offset: 0x003530B0
+	// Token: 0x06008E53 RID: 36435 RVA: 0x003596EC File Offset: 0x003578EC
 	public XUiV_TextureBased(XUi _xui, string _id)
 		: base(_xui, _id)
 	{
 	}
 
-	// Token: 0x06008D62 RID: 36194 RVA: 0x00354EEF File Offset: 0x003530EF
+	// Token: 0x06008E54 RID: 36436 RVA: 0x0035972B File Offset: 0x0035792B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void createComponents(GameObject _go)
 	{
@@ -151,7 +151,7 @@ public class XUiV_TextureBased : XUiV_ImageBased
 		_go.AddComponent<UITexture>();
 	}
 
-	// Token: 0x06008D63 RID: 36195 RVA: 0x00354F00 File Offset: 0x00353100
+	// Token: 0x06008E55 RID: 36437 RVA: 0x0035973C File Offset: 0x0035793C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void captureComponents()
 	{
@@ -159,7 +159,7 @@ public class XUiV_TextureBased : XUiV_ImageBased
 		this.widget = (this.uiTexture = this.uiTransform.gameObject.GetComponent<UITexture>());
 	}
 
-	// Token: 0x06008D64 RID: 36196 RVA: 0x00354F34 File Offset: 0x00353134
+	// Token: 0x06008E56 RID: 36438 RVA: 0x00359770 File Offset: 0x00357970
 	public void CreateMaterial(string _shaderName = "Unlit/Transparent Colored Emissive TextureArray")
 	{
 		Shader shader = GlobalAssets.FindShader(_shaderName);
@@ -172,7 +172,7 @@ public class XUiV_TextureBased : XUiV_ImageBased
 		this.isCreatedMaterial = true;
 	}
 
-	// Token: 0x06008D65 RID: 36197 RVA: 0x00354F75 File Offset: 0x00353175
+	// Token: 0x06008E57 RID: 36439 RVA: 0x003597B1 File Offset: 0x003579B1
 	public override void Cleanup()
 	{
 		base.Cleanup();
@@ -185,14 +185,14 @@ public class XUiV_TextureBased : XUiV_ImageBased
 		this.isCreatedMaterial = false;
 	}
 
-	// Token: 0x06008D66 RID: 36198 RVA: 0x003543A1 File Offset: 0x003525A1
+	// Token: 0x06008E58 RID: 36440 RVA: 0x00358BDD File Offset: 0x00356DDD
 	public override void InitView()
 	{
 		base.InitView();
 		this.updateData();
 	}
 
-	// Token: 0x06008D67 RID: 36199 RVA: 0x00354FA0 File Offset: 0x003531A0
+	// Token: 0x06008E59 RID: 36441 RVA: 0x003597DC File Offset: 0x003579DC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateData()
 	{
@@ -214,14 +214,14 @@ public class XUiV_TextureBased : XUiV_ImageBased
 		base.updateData();
 	}
 
-	// Token: 0x06008D68 RID: 36200 RVA: 0x003550D4 File Offset: 0x003532D4
+	// Token: 0x06008E5A RID: 36442 RVA: 0x00359910 File Offset: 0x00357B10
 	public void SetTextureDirty()
 	{
 		this.uiTexture.mainTexture = null;
 		base.SetDirty();
 	}
 
-	// Token: 0x06008D69 RID: 36201 RVA: 0x003550E8 File Offset: 0x003532E8
+	// Token: 0x06008E5B RID: 36443 RVA: 0x00359924 File Offset: 0x00357B24
 	public virtual void UnloadTexture()
 	{
 		if (this.Texture == null)
@@ -233,7 +233,7 @@ public class XUiV_TextureBased : XUiV_ImageBased
 		base.SetDirty();
 	}
 
-	// Token: 0x06008D6A RID: 36202 RVA: 0x00355112 File Offset: 0x00353312
+	// Token: 0x06008E5C RID: 36444 RVA: 0x0035994E File Offset: 0x00357B4E
 	[XuiXmlAttribute("material", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeMaterial(string _value)
@@ -244,7 +244,7 @@ public class XUiV_TextureBased : XUiV_ImageBased
 		});
 	}
 
-	// Token: 0x06008D6B RID: 36203 RVA: 0x0035512C File Offset: 0x0035332C
+	// Token: 0x06008E5D RID: 36445 RVA: 0x00359968 File Offset: 0x00357B68
 	[XuiXmlAttribute("rect_offset", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeRectOffset(Vector2 _value)
@@ -255,7 +255,7 @@ public class XUiV_TextureBased : XUiV_ImageBased
 		this.UVRect = uvrect;
 	}
 
-	// Token: 0x06008D6C RID: 36204 RVA: 0x00355164 File Offset: 0x00353364
+	// Token: 0x06008E5E RID: 36446 RVA: 0x003599A0 File Offset: 0x00357BA0
 	[XuiXmlAttribute("rect_size", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeRectSize(Vector2 _value)
@@ -266,39 +266,39 @@ public class XUiV_TextureBased : XUiV_ImageBased
 		this.UVRect = uvrect;
 	}
 
-	// Token: 0x04006790 RID: 26512
+	// Token: 0x0400685A RID: 26714
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public UITexture uiTexture;
 
-	// Token: 0x04006791 RID: 26513
+	// Token: 0x0400685B RID: 26715
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Texture texture;
 
-	// Token: 0x04006792 RID: 26514
+	// Token: 0x0400685C RID: 26716
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Material material;
 
-	// Token: 0x04006793 RID: 26515
+	// Token: 0x0400685D RID: 26717
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Rect uvRect = new Rect(0f, 0f, 1f, 1f);
 
-	// Token: 0x04006794 RID: 26516
+	// Token: 0x0400685E RID: 26718
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector4 border = Vector4.zero;
 
-	// Token: 0x04006795 RID: 26517
+	// Token: 0x0400685F RID: 26719
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color color = Color.white;
 
-	// Token: 0x04006796 RID: 26518
+	// Token: 0x04006860 RID: 26720
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UIBasicSprite.FillDirection fillDirection;
 
-	// Token: 0x04006797 RID: 26519
+	// Token: 0x04006861 RID: 26721
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isCreatedMaterial;
 
-	// Token: 0x04006798 RID: 26520
+	// Token: 0x04006862 RID: 26722
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool sourceAspectRatioRespectPivot;
 }

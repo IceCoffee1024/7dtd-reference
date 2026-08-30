@@ -6,7 +6,7 @@ using UnityEngine;
 // Token: 0x020000B8 RID: 184
 public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 {
-	// Token: 0x0600038D RID: 909 RVA: 0x0001A0BF File Offset: 0x000182BF
+	// Token: 0x0600038E RID: 910 RVA: 0x0001A183 File Offset: 0x00018383
 	public static void DestroyInstance()
 	{
 		if (EnvironmentAudioManager.Instance != null && EnvironmentAudioManager.Instance.gameObject != null)
@@ -15,7 +15,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x0600038E RID: 910 RVA: 0x0001A0EF File Offset: 0x000182EF
+	// Token: 0x0600038F RID: 911 RVA: 0x0001A1B3 File Offset: 0x000183B3
 	public static IEnumerator CreateNewInstance()
 	{
 		if (!GameManager.IsDedicatedServer)
@@ -34,7 +34,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		yield break;
 	}
 
-	// Token: 0x0600038F RID: 911 RVA: 0x0001A0F8 File Offset: 0x000182F8
+	// Token: 0x06000390 RID: 912 RVA: 0x0001A1BC File Offset: 0x000183BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -63,7 +63,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		this.InitSounds();
 	}
 
-	// Token: 0x06000390 RID: 912 RVA: 0x0001A1FC File Offset: 0x000183FC
+	// Token: 0x06000391 RID: 913 RVA: 0x0001A2C0 File Offset: 0x000184C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitRain()
 	{
@@ -77,7 +77,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06000391 RID: 913 RVA: 0x0001A25C File Offset: 0x0001845C
+	// Token: 0x06000392 RID: 914 RVA: 0x0001A320 File Offset: 0x00018520
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitSounds()
 	{
@@ -129,7 +129,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		this.soundsInitDone = true;
 	}
 
-	// Token: 0x06000392 RID: 914 RVA: 0x0001A464 File Offset: 0x00018664
+	// Token: 0x06000393 RID: 915 RVA: 0x0001A528 File Offset: 0x00018728
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FixedUpdate()
 	{
@@ -222,7 +222,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06000393 RID: 915 RVA: 0x0001A70C File Offset: 0x0001890C
+	// Token: 0x06000394 RID: 916 RVA: 0x0001A7D0 File Offset: 0x000189D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateRainAudio()
 	{
@@ -257,7 +257,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06000394 RID: 916 RVA: 0x0001A7E0 File Offset: 0x000189E0
+	// Token: 0x06000395 RID: 917 RVA: 0x0001A8A4 File Offset: 0x00018AA4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void IncrementRainVolumes(float inc0, float inc1, float inc2)
 	{
@@ -270,7 +270,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		this.rainAudioSources[2].volume = Utils.FastClamp01(this.currentRainVolume[2] * num);
 	}
 
-	// Token: 0x06000395 RID: 917 RVA: 0x0001A8A8 File Offset: 0x00018AA8
+	// Token: 0x06000396 RID: 918 RVA: 0x0001A96C File Offset: 0x00018B6C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateValueTrigger(float value, AudioObject.Trigger trigger)
 	{
@@ -308,7 +308,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x06000396 RID: 918 RVA: 0x0001AA2C File Offset: 0x00018C2C
+	// Token: 0x06000397 RID: 919 RVA: 0x0001AAF0 File Offset: 0x00018CF0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetNewBiome(BiomeDefinition.BiomeType newBiome)
 	{
@@ -324,7 +324,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		this.toBiomeLoops = this.audioBiomes[(int)this.toBiome];
 	}
 
-	// Token: 0x06000397 RID: 919 RVA: 0x0001AA90 File Offset: 0x00018C90
+	// Token: 0x06000398 RID: 920 RVA: 0x0001AB54 File Offset: 0x00018D54
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDestroy()
 	{
@@ -347,7 +347,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		this.toBiomeLoops = null;
 	}
 
-	// Token: 0x06000398 RID: 920 RVA: 0x0001AB2E File Offset: 0x00018D2E
+	// Token: 0x06000399 RID: 921 RVA: 0x0001ABF2 File Offset: 0x00018DF2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TurnOffSounds()
 	{
@@ -355,7 +355,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		this.toBiomeLoops.TurnOff();
 	}
 
-	// Token: 0x06000399 RID: 921 RVA: 0x0001AB48 File Offset: 0x00018D48
+	// Token: 0x0600039A RID: 922 RVA: 0x0001AC0C File Offset: 0x00018E0C
 	public void Pause()
 	{
 		this.toBiomeLoops.Pause();
@@ -366,7 +366,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x0600039A RID: 922 RVA: 0x0001AB94 File Offset: 0x00018D94
+	// Token: 0x0600039B RID: 923 RVA: 0x0001AC58 File Offset: 0x00018E58
 	public void UnPause()
 	{
 		this.toBiomeLoops.UnPause();
@@ -377,7 +377,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x0600039B RID: 923 RVA: 0x0001ABDE File Offset: 0x00018DDE
+	// Token: 0x0600039C RID: 924 RVA: 0x0001ACA2 File Offset: 0x00018EA2
 	public void TriggerThunder(Vector3 _pos)
 	{
 		this.lightningPos = _pos;
@@ -385,7 +385,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		this.thunderTimer = float.PositiveInfinity;
 	}
 
-	// Token: 0x0600039C RID: 924 RVA: 0x0001ABFC File Offset: 0x00018DFC
+	// Token: 0x0600039D RID: 925 RVA: 0x0001ACC0 File Offset: 0x00018EC0
 	public void EnterBiome(BiomeDefinition _biome)
 	{
 		if (AudioObject.biomeIdMap == null)
@@ -410,7 +410,7 @@ public class EnvironmentAudioManager : MonoBehaviour, IGamePrefsChangedListener
 		}
 	}
 
-	// Token: 0x0600039D RID: 925 RVA: 0x0001ACAC File Offset: 0x00018EAC
+	// Token: 0x0600039E RID: 926 RVA: 0x0001AD70 File Offset: 0x00018F70
 	public void OnGamePrefChanged(EnumGamePrefs _enum)
 	{
 		if (_enum == EnumGamePrefs.OptionsMusicVolumeLevel)

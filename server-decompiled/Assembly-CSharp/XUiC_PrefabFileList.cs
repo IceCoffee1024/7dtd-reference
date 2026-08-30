@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FAB RID: 4011
+// Token: 0x02000FC4 RID: 4036
 [Preserve]
 public class XUiC_PrefabFileList : XUiC_List<XUiC_PrefabFileList.PrefabFileEntry>
 {
-	// Token: 0x06007EA9 RID: 32425 RVA: 0x00301A70 File Offset: 0x002FFC70
+	// Token: 0x06007F9B RID: 32667 RVA: 0x00306244 File Offset: 0x00304444
 	public override void RebuildList(bool _resetFilter = false)
 	{
 		this.allEntries.Clear();
@@ -20,14 +20,14 @@ public class XUiC_PrefabFileList : XUiC_List<XUiC_PrefabFileList.PrefabFileEntry
 		base.RebuildList(_resetFilter);
 	}
 
-	// Token: 0x06007EAA RID: 32426 RVA: 0x00301B0C File Offset: 0x002FFD0C
+	// Token: 0x06007F9C RID: 32668 RVA: 0x003062E0 File Offset: 0x003044E0
 	public void SetGroupFilter(string _filter)
 	{
 		this.groupFilter = _filter;
 		this.RebuildList(true);
 	}
 
-	// Token: 0x06007EAB RID: 32427 RVA: 0x00301B1C File Offset: 0x002FFD1C
+	// Token: 0x06007F9D RID: 32669 RVA: 0x003062F0 File Offset: 0x003044F0
 	public bool SelectByName(string _name)
 	{
 		if (!string.IsNullOrEmpty(_name))
@@ -44,7 +44,7 @@ public class XUiC_PrefabFileList : XUiC_List<XUiC_PrefabFileList.PrefabFileEntry
 		return false;
 	}
 
-	// Token: 0x06007EAC RID: 32428 RVA: 0x00301B70 File Offset: 0x002FFD70
+	// Token: 0x06007F9E RID: 32670 RVA: 0x00306344 File Offset: 0x00304544
 	public bool SelectByLocation(PathAbstractions.AbstractedLocation _location)
 	{
 		if (_location.Type == PathAbstractions.EAbstractedLocationType.None)
@@ -62,24 +62,24 @@ public class XUiC_PrefabFileList : XUiC_List<XUiC_PrefabFileList.PrefabFileEntry
 		return false;
 	}
 
-	// Token: 0x04005DDE RID: 24030
+	// Token: 0x04005EA5 RID: 24229
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string groupFilter;
 
-	// Token: 0x04005DDF RID: 24031
+	// Token: 0x04005EA6 RID: 24230
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<PathAbstractions.AbstractedLocation> prefabSearchList = new List<PathAbstractions.AbstractedLocation>();
 
-	// Token: 0x02000FAC RID: 4012
+	// Token: 0x02000FC5 RID: 4037
 	public class PrefabFileEntry : XUiListEntry<XUiC_PrefabFileList.PrefabFileEntry>
 	{
-		// Token: 0x06007EAE RID: 32430 RVA: 0x00301BD4 File Offset: 0x002FFDD4
+		// Token: 0x06007FA0 RID: 32672 RVA: 0x003063A8 File Offset: 0x003045A8
 		public PrefabFileEntry(PathAbstractions.AbstractedLocation _location)
 		{
 			this.location = _location;
 		}
 
-		// Token: 0x06007EAF RID: 32431 RVA: 0x00301BE3 File Offset: 0x002FFDE3
+		// Token: 0x06007FA1 RID: 32673 RVA: 0x003063B7 File Offset: 0x003045B7
 		public override int CompareTo(XUiC_PrefabFileList.PrefabFileEntry _otherEntry)
 		{
 			if (_otherEntry == null)
@@ -89,22 +89,22 @@ public class XUiC_PrefabFileList : XUiC_List<XUiC_PrefabFileList.PrefabFileEntry
 			return this.location.CompareTo(_otherEntry.location);
 		}
 
-		// Token: 0x06007EB0 RID: 32432 RVA: 0x00301BFB File Offset: 0x002FFDFB
+		// Token: 0x06007FA2 RID: 32674 RVA: 0x003063CF File Offset: 0x003045CF
 		public override bool MatchesSearch(string _searchString)
 		{
 			return this.location.Name.ContainsCaseInsensitive(_searchString);
 		}
 
-		// Token: 0x04005DE0 RID: 24032
+		// Token: 0x04005EA7 RID: 24231
 		public readonly PathAbstractions.AbstractedLocation location;
 	}
 
-	// Token: 0x02000FAD RID: 4013
+	// Token: 0x02000FC6 RID: 4038
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class EntryController : XUiC_List<XUiC_PrefabFileList.PrefabFileEntry>.XUiC_ListEntry
 	{
-		// Token: 0x06007EB1 RID: 32433 RVA: 0x00301C10 File Offset: 0x002FFE10
+		// Token: 0x06007FA3 RID: 32675 RVA: 0x003063E4 File Offset: 0x003045E4
 		[XuiXmlBinding("name")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingName()
@@ -134,7 +134,7 @@ public class XUiC_PrefabFileList : XUiC_List<XUiC_PrefabFileList.PrefabFileEntry
 			return this.entryData.location.Name + text2;
 		}
 
-		// Token: 0x06007EB2 RID: 32434 RVA: 0x00301CB2 File Offset: 0x002FFEB2
+		// Token: 0x06007FA4 RID: 32676 RVA: 0x00306486 File Offset: 0x00304686
 		[XuiXmlBinding("localizedname")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingLocalizedName()

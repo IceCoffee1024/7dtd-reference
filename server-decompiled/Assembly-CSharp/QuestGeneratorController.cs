@@ -5,7 +5,7 @@ using UnityEngine;
 public class QuestGeneratorController : MonoBehaviour
 {
 	// Token: 0x17000068 RID: 104
-	// (get) Token: 0x06000620 RID: 1568 RVA: 0x0002B9D0 File Offset: 0x00029BD0
+	// (get) Token: 0x06000621 RID: 1569 RVA: 0x0002BA94 File Offset: 0x00029C94
 	public bool IsRunning
 	{
 		get
@@ -14,7 +14,7 @@ public class QuestGeneratorController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000621 RID: 1569 RVA: 0x0002B9DB File Offset: 0x00029BDB
+	// Token: 0x06000622 RID: 1570 RVA: 0x0002BA9F File Offset: 0x00029C9F
 	public void SetGeneratorState(QuestGeneratorController.GeneratorStates state, bool isInit)
 	{
 		if (state != this.currentState)
@@ -28,7 +28,7 @@ public class QuestGeneratorController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000622 RID: 1570 RVA: 0x0002BA10 File Offset: 0x00029C10
+	// Token: 0x06000623 RID: 1571 RVA: 0x0002BAD4 File Offset: 0x00029CD4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateStateDisplay()
 	{
@@ -69,14 +69,14 @@ public class QuestGeneratorController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000623 RID: 1571 RVA: 0x0002BB33 File Offset: 0x00029D33
+	// Token: 0x06000624 RID: 1572 RVA: 0x0002BBF7 File Offset: 0x00029DF7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
 		this.updateStateDisplay();
 	}
 
-	// Token: 0x06000624 RID: 1572 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000625 RID: 1573 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{

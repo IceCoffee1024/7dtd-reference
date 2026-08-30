@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x0200046A RID: 1130
+// Token: 0x0200046E RID: 1134
 public struct DamageResponse
 {
-	// Token: 0x06002209 RID: 8713 RVA: 0x000CDA28 File Offset: 0x000CBC28
+	// Token: 0x06002226 RID: 8742 RVA: 0x000CE1C4 File Offset: 0x000CC3C4
 	public static DamageResponse New(bool _fatal)
 	{
 		return new DamageResponse
@@ -18,7 +18,7 @@ public struct DamageResponse
 		};
 	}
 
-	// Token: 0x0600220A RID: 8714 RVA: 0x000CDA94 File Offset: 0x000CBC94
+	// Token: 0x06002227 RID: 8743 RVA: 0x000CE230 File Offset: 0x000CC430
 	public static DamageResponse New(DamageSource _source, bool _fatal)
 	{
 		return new DamageResponse
@@ -34,60 +34,60 @@ public struct DamageResponse
 		};
 	}
 
-	// Token: 0x040017B7 RID: 6071
+	// Token: 0x040017CD RID: 6093
 	public DamageSource Source;
 
-	// Token: 0x040017B8 RID: 6072
+	// Token: 0x040017CE RID: 6094
 	public int Strength;
 
-	// Token: 0x040017B9 RID: 6073
+	// Token: 0x040017CF RID: 6095
 	public int ModStrength;
 
-	// Token: 0x040017BA RID: 6074
+	// Token: 0x040017D0 RID: 6096
 	public int MovementState;
 
-	// Token: 0x040017BB RID: 6075
+	// Token: 0x040017D1 RID: 6097
 	public Utils.EnumHitDirection HitDirection;
 
-	// Token: 0x040017BC RID: 6076
+	// Token: 0x040017D2 RID: 6098
 	public EnumBodyPartHit HitBodyPart;
 
-	// Token: 0x040017BD RID: 6077
+	// Token: 0x040017D3 RID: 6099
 	public bool PainHit;
 
-	// Token: 0x040017BE RID: 6078
+	// Token: 0x040017D4 RID: 6100
 	public bool Fatal;
 
-	// Token: 0x040017BF RID: 6079
+	// Token: 0x040017D5 RID: 6101
 	public bool Critical;
 
-	// Token: 0x040017C0 RID: 6080
+	// Token: 0x040017D6 RID: 6102
 	public bool Dismember;
 
-	// Token: 0x040017C1 RID: 6081
+	// Token: 0x040017D7 RID: 6103
 	public bool CrippleLegs;
 
-	// Token: 0x040017C2 RID: 6082
+	// Token: 0x040017D8 RID: 6104
 	public bool TurnIntoCrawler;
 
-	// Token: 0x040017C3 RID: 6083
+	// Token: 0x040017D9 RID: 6105
 	public float Random;
 
-	// Token: 0x040017C4 RID: 6084
+	// Token: 0x040017DA RID: 6106
 	public float ImpulseScale;
 
-	// Token: 0x040017C5 RID: 6085
+	// Token: 0x040017DB RID: 6107
 	public EnumEntityStunType Stun;
 
-	// Token: 0x040017C6 RID: 6086
+	// Token: 0x040017DC RID: 6108
 	public float StunDuration;
 
-	// Token: 0x040017C7 RID: 6087
+	// Token: 0x040017DD RID: 6109
 	public EquipmentSlots ArmorSlot;
 
-	// Token: 0x040017C8 RID: 6088
+	// Token: 0x040017DE RID: 6110
 	public EquipmentSlotGroups ArmorSlotGroup;
 
-	// Token: 0x040017C9 RID: 6089
+	// Token: 0x040017DF RID: 6111
 	public int ArmorDamage;
 }

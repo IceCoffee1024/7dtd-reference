@@ -2,32 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000204 RID: 516
+// Token: 0x02000206 RID: 518
 [Preserve]
 public class ConsoleCmdDebuffPlayer : ConsoleCmdAbstract
 {
-	// Token: 0x06000FC7 RID: 4039 RVA: 0x00065D27 File Offset: 0x00063F27
+	// Token: 0x06000FD2 RID: 4050 RVA: 0x0006626F File Offset: 0x0006446F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Remove a buff from a player";
 	}
 
-	// Token: 0x06000FC8 RID: 4040 RVA: 0x00065D2E File Offset: 0x00063F2E
+	// Token: 0x06000FD3 RID: 4051 RVA: 0x00066276 File Offset: 0x00064476
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Usage:\n   debuffplayer <player name / steam id / entity id> <buff name>\nRemove the given buff from the player given by the player name or entity id (as given by e.g. \"lpi\").";
 	}
 
-	// Token: 0x06000FC9 RID: 4041 RVA: 0x00065D35 File Offset: 0x00063F35
+	// Token: 0x06000FD4 RID: 4052 RVA: 0x0006627D File Offset: 0x0006447D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "debuffplayer" };
 	}
 
-	// Token: 0x06000FCA RID: 4042 RVA: 0x00065D48 File Offset: 0x00063F48
+	// Token: 0x06000FD5 RID: 4053 RVA: 0x00066290 File Offset: 0x00064490
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count != 2)

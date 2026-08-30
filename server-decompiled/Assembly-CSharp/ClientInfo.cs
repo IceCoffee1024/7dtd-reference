@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using Platform.Local;
 using Platform.Steam;
 
-// Token: 0x02000761 RID: 1889
+// Token: 0x0200076B RID: 1899
 public class ClientInfo : IEquatable<ClientInfo>
 {
-	// Token: 0x1700058A RID: 1418
-	// (get) Token: 0x060037FA RID: 14330 RVA: 0x0016F955 File Offset: 0x0016DB55
+	// Token: 0x17000593 RID: 1427
+	// (get) Token: 0x06003850 RID: 14416 RVA: 0x00171B71 File Offset: 0x0016FD71
 	public PlatformUserIdentifierAbs InternalId
 	{
 		get
@@ -16,8 +16,8 @@ public class ClientInfo : IEquatable<ClientInfo>
 		}
 	}
 
-	// Token: 0x1700058B RID: 1419
-	// (get) Token: 0x060037FB RID: 14331 RVA: 0x0016F967 File Offset: 0x0016DB67
+	// Token: 0x17000594 RID: 1428
+	// (get) Token: 0x06003851 RID: 14417 RVA: 0x00171B83 File Offset: 0x0016FD83
 	public string ip
 	{
 		get
@@ -26,7 +26,7 @@ public class ClientInfo : IEquatable<ClientInfo>
 		}
 	}
 
-	// Token: 0x060037FC RID: 14332 RVA: 0x0016F978 File Offset: 0x0016DB78
+	// Token: 0x06003852 RID: 14418 RVA: 0x00171B94 File Offset: 0x0016FD94
 	public ClientInfo()
 	{
 		int num;
@@ -42,7 +42,7 @@ public class ClientInfo : IEquatable<ClientInfo>
 		this.ClientNumber = num;
 	}
 
-	// Token: 0x060037FD RID: 14333 RVA: 0x0016FA00 File Offset: 0x0016DC00
+	// Token: 0x06003853 RID: 14419 RVA: 0x00171C1C File Offset: 0x0016FE1C
 	public override string ToString()
 	{
 		string text = null;
@@ -67,13 +67,13 @@ public class ClientInfo : IEquatable<ClientInfo>
 		return string.Format(text2, array);
 	}
 
-	// Token: 0x060037FE RID: 14334 RVA: 0x0016FAAF File Offset: 0x0016DCAF
+	// Token: 0x06003854 RID: 14420 RVA: 0x00171CCB File Offset: 0x0016FECB
 	public void UpdatePing()
 	{
 		this.ping = this.network.GetPing(this);
 	}
 
-	// Token: 0x060037FF RID: 14335 RVA: 0x0016FAC4 File Offset: 0x0016DCC4
+	// Token: 0x06003855 RID: 14421 RVA: 0x00171CE0 File Offset: 0x0016FEE0
 	public void SendPackage(NetPackage _package)
 	{
 		if (!_package.AllowedBeforeAuth && !this.loginDone)
@@ -88,7 +88,7 @@ public class ClientInfo : IEquatable<ClientInfo>
 		}
 	}
 
-	// Token: 0x06003800 RID: 14336 RVA: 0x0016FB20 File Offset: 0x0016DD20
+	// Token: 0x06003856 RID: 14422 RVA: 0x00171D3C File Offset: 0x0016FF3C
 	public void SetAntiCheatEncryption(IEncryptionModule encryptionModule)
 	{
 		INetConnection[] array = this.netConnection;
@@ -98,90 +98,90 @@ public class ClientInfo : IEquatable<ClientInfo>
 		}
 	}
 
-	// Token: 0x06003801 RID: 14337 RVA: 0x0016FB4B File Offset: 0x0016DD4B
+	// Token: 0x06003857 RID: 14423 RVA: 0x00171D67 File Offset: 0x0016FF67
 	public bool Equals(ClientInfo _other)
 	{
 		return this == _other;
 	}
 
-	// Token: 0x04002DCF RID: 11727
+	// Token: 0x04002E47 RID: 11847
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int lastClientNumber;
 
-	// Token: 0x04002DD0 RID: 11728
+	// Token: 0x04002E48 RID: 11848
 	public INetworkServer network;
 
-	// Token: 0x04002DD1 RID: 11729
+	// Token: 0x04002E49 RID: 11849
 	public readonly int ClientNumber;
 
-	// Token: 0x04002DD2 RID: 11730
+	// Token: 0x04002E4A RID: 11850
 	public long litenetPeerConnectId = -1L;
 
-	// Token: 0x04002DD3 RID: 11731
+	// Token: 0x04002E4B RID: 11851
 	public PlatformUserIdentifierAbs PlatformId = new UserIdentifierLocal("<none>");
 
-	// Token: 0x04002DD4 RID: 11732
+	// Token: 0x04002E4C RID: 11852
 	public PlatformUserIdentifierAbs CrossplatformId;
 
-	// Token: 0x04002DD5 RID: 11733
+	// Token: 0x04002E4D RID: 11853
 	public ulong DiscordUserId;
 
-	// Token: 0x04002DD6 RID: 11734
+	// Token: 0x04002E4E RID: 11854
 	public bool requiresAntiCheat = true;
 
-	// Token: 0x04002DD7 RID: 11735
+	// Token: 0x04002E4F RID: 11855
 	public ClientInfo.EDeviceType device = ClientInfo.EDeviceType.Unknown;
 
-	// Token: 0x04002DD8 RID: 11736
+	// Token: 0x04002E50 RID: 11856
 	public bool loginDone;
 
-	// Token: 0x04002DD9 RID: 11737
+	// Token: 0x04002E51 RID: 11857
 	public bool acAuthDone;
 
-	// Token: 0x04002DDA RID: 11738
+	// Token: 0x04002E52 RID: 11858
 	public INetConnection[] netConnection;
 
-	// Token: 0x04002DDB RID: 11739
+	// Token: 0x04002E53 RID: 11859
 	public bool bAttachedToEntity;
 
-	// Token: 0x04002DDC RID: 11740
+	// Token: 0x04002E54 RID: 11860
 	public int entityId = -1;
 
-	// Token: 0x04002DDD RID: 11741
+	// Token: 0x04002E55 RID: 11861
 	public string playerName;
 
-	// Token: 0x04002DDE RID: 11742
+	// Token: 0x04002E56 RID: 11862
 	public string compatibilityVersion;
 
-	// Token: 0x04002DDF RID: 11743
+	// Token: 0x04002E57 RID: 11863
 	public readonly Dictionary<string, int> groupMemberships = new Dictionary<string, int>(StringComparer.Ordinal);
 
-	// Token: 0x04002DE0 RID: 11744
+	// Token: 0x04002E58 RID: 11864
 	public int groupMembershipsWaiting;
 
-	// Token: 0x04002DE1 RID: 11745
+	// Token: 0x04002E59 RID: 11865
 	public PlayerDataFile latestPlayerData;
 
-	// Token: 0x04002DE2 RID: 11746
+	// Token: 0x04002E5A RID: 11866
 	public int ping;
 
-	// Token: 0x04002DE3 RID: 11747
+	// Token: 0x04002E5B RID: 11867
 	public bool disconnecting;
 
-	// Token: 0x02000762 RID: 1890
+	// Token: 0x0200076C RID: 1900
 	public enum EDeviceType
 	{
-		// Token: 0x04002DE5 RID: 11749
+		// Token: 0x04002E5D RID: 11869
 		Linux,
-		// Token: 0x04002DE6 RID: 11750
+		// Token: 0x04002E5E RID: 11870
 		Mac,
-		// Token: 0x04002DE7 RID: 11751
+		// Token: 0x04002E5F RID: 11871
 		Windows,
-		// Token: 0x04002DE8 RID: 11752
+		// Token: 0x04002E60 RID: 11872
 		PlayStation,
-		// Token: 0x04002DE9 RID: 11753
+		// Token: 0x04002E61 RID: 11873
 		Xbox,
-		// Token: 0x04002DEA RID: 11754
+		// Token: 0x04002E62 RID: 11874
 		Unknown
 	}
 }

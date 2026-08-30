@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Token: 0x02000BD4 RID: 3028
+// Token: 0x02000BE6 RID: 3046
 public class VoxelMeshTerrain : VoxelMesh
 {
-	// Token: 0x06005B53 RID: 23379 RVA: 0x002375CC File Offset: 0x002357CC
+	// Token: 0x06005BDC RID: 23516 RVA: 0x0023A2E8 File Offset: 0x002384E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitStatic()
 	{
@@ -33,7 +33,7 @@ public class VoxelMeshTerrain : VoxelMesh
 		VoxelMeshTerrain.isInitStatic = true;
 	}
 
-	// Token: 0x06005B54 RID: 23380 RVA: 0x0023773C File Offset: 0x0023593C
+	// Token: 0x06005BDD RID: 23517 RVA: 0x0023A458 File Offset: 0x00238658
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void InitMicroSplat()
 	{
@@ -44,7 +44,7 @@ public class VoxelMeshTerrain : VoxelMesh
 		VoxelMeshTerrain.msProcParamTex = VoxelMeshTerrain.msProcData.GetParamTexture();
 	}
 
-	// Token: 0x06005B55 RID: 23381 RVA: 0x002377B4 File Offset: 0x002359B4
+	// Token: 0x06005BDE RID: 23518 RVA: 0x0023A4D0 File Offset: 0x002386D0
 	public VoxelMeshTerrain(int _meshIndex, int _minSize = 500)
 		: base(_meshIndex, _minSize, VoxelMesh.CreateFlags.Default)
 	{
@@ -52,28 +52,28 @@ public class VoxelMeshTerrain : VoxelMesh
 		this.m_Uvs4 = new ArrayListMP<Vector2>(MemoryPools.poolVector2, _minSize);
 	}
 
-	// Token: 0x06005B56 RID: 23382 RVA: 0x00237803 File Offset: 0x00235A03
+	// Token: 0x06005BDF RID: 23519 RVA: 0x0023A51F File Offset: 0x0023871F
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static int EncodeTexIds(int _mainTexId, int _sideTexId)
 	{
 		return (_mainTexId << 16) | _sideTexId;
 	}
 
-	// Token: 0x06005B57 RID: 23383 RVA: 0x0022D4A6 File Offset: 0x0022B6A6
+	// Token: 0x06005BE0 RID: 23520 RVA: 0x0023020E File Offset: 0x0022E40E
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static int DecodeMainTexId(int _fullTexId)
 	{
 		return _fullTexId >> 16;
 	}
 
-	// Token: 0x06005B58 RID: 23384 RVA: 0x00042E32 File Offset: 0x00041032
+	// Token: 0x06005BE1 RID: 23521 RVA: 0x00043092 File Offset: 0x00041292
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static int DecodeSideTexId(int _fullTexId)
 	{
 		return _fullTexId & 65535;
 	}
 
-	// Token: 0x06005B59 RID: 23385 RVA: 0x0023780C File Offset: 0x00235A0C
+	// Token: 0x06005BE2 RID: 23522 RVA: 0x0023A528 File Offset: 0x00238728
 	public override Color[] UpdateColors(byte _suncolor, byte _blockcolor)
 	{
 		float num = (float)_suncolor / 15f;
@@ -88,7 +88,7 @@ public class VoxelMeshTerrain : VoxelMesh
 		return this.m_ColorVertices.ToArray();
 	}
 
-	// Token: 0x06005B5A RID: 23386 RVA: 0x00237878 File Offset: 0x00235A78
+	// Token: 0x06005BE3 RID: 23523 RVA: 0x0023A594 File Offset: 0x00238794
 	public override void GetColorForTextureId(int _subMeshIdx, ref Transvoxel.BuildVertex _data)
 	{
 		if (!World.IsSplatMapAvailable || this.IsPreviewVoxelMesh)
@@ -100,7 +100,7 @@ public class VoxelMeshTerrain : VoxelMesh
 		this.GetColorForTexId(ref _data);
 	}
 
-	// Token: 0x06005B5B RID: 23387 RVA: 0x002378E4 File Offset: 0x00235AE4
+	// Token: 0x06005BE4 RID: 23524 RVA: 0x0023A600 File Offset: 0x00238800
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GetColorForTexId(ref Transvoxel.BuildVertex _data)
 	{
@@ -208,7 +208,7 @@ public class VoxelMeshTerrain : VoxelMesh
 		_data.color = VoxelMeshTerrain.cColSplatMap;
 	}
 
-	// Token: 0x06005B5C RID: 23388 RVA: 0x00237B10 File Offset: 0x00235D10
+	// Token: 0x06005BE5 RID: 23525 RVA: 0x0023A82C File Offset: 0x00238A2C
 	public override int FindOrCreateSubMesh(int _t0, int _t1, int _t2)
 	{
 		this.texIds[0] = _t0;
@@ -234,7 +234,7 @@ public class VoxelMeshTerrain : VoxelMesh
 		return this.submeshes.Count - 1;
 	}
 
-	// Token: 0x06005B5D RID: 23389 RVA: 0x00237BEC File Offset: 0x00235DEC
+	// Token: 0x06005BE6 RID: 23526 RVA: 0x0023A908 File Offset: 0x00238B08
 	public override void AddIndices(int _i0, int _i1, int _i2, int _submesh)
 	{
 		ArrayListMP<int> triangles = this.submeshes[_submesh].triangles;
@@ -244,14 +244,14 @@ public class VoxelMeshTerrain : VoxelMesh
 		triangles.Items[num + 2] = _i2;
 	}
 
-	// Token: 0x06005B5E RID: 23390 RVA: 0x00237C31 File Offset: 0x00235E31
+	// Token: 0x06005BE7 RID: 23527 RVA: 0x0023A94D File Offset: 0x00238B4D
 	public override void ClearMesh()
 	{
 		base.ClearMesh();
 		this.submeshes.Clear();
 	}
 
-	// Token: 0x06005B5F RID: 23391 RVA: 0x00237C44 File Offset: 0x00235E44
+	// Token: 0x06005BE8 RID: 23528 RVA: 0x0023A960 File Offset: 0x00238B60
 	public override void Finished()
 	{
 		this.m_Triangles = 0;
@@ -261,7 +261,7 @@ public class VoxelMeshTerrain : VoxelMesh
 		}
 	}
 
-	// Token: 0x06005B60 RID: 23392 RVA: 0x00237C94 File Offset: 0x00235E94
+	// Token: 0x06005BE9 RID: 23529 RVA: 0x0023A9B0 File Offset: 0x00238BB0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ConfigureTerrainMaterial(Material mat, ChunkProviderGenerateWorldFromRaw cpr)
 	{
@@ -289,7 +289,7 @@ public class VoxelMeshTerrain : VoxelMesh
 		mat.SetVector("_WorldDim", new Vector4((float)worldSize.x, (float)worldSize.y));
 	}
 
-	// Token: 0x06005B61 RID: 23393 RVA: 0x00237DAC File Offset: 0x00235FAC
+	// Token: 0x06005BEA RID: 23530 RVA: 0x0023AAC8 File Offset: 0x00238CC8
 	public void ApplyMaterials(MeshRenderer _mr, TextureAtlasTerrain _ta, float _tilingFac, bool _bDistant = false)
 	{
 		if (!VoxelMeshTerrain.isInitStatic)
@@ -379,7 +379,7 @@ public class VoxelMeshTerrain : VoxelMesh
 		_mr.sharedMaterials = array2;
 	}
 
-	// Token: 0x06005B62 RID: 23394 RVA: 0x002381E0 File Offset: 0x002363E0
+	// Token: 0x06005BEB RID: 23531 RVA: 0x0023AEFC File Offset: 0x002390FC
 	public override int CopyToMesh(MeshFilter _mf, MeshRenderer _mr, int _lodLevel, Action _onCopyComplete = null)
 	{
 		Mesh mesh = _mf.sharedMesh;
@@ -474,7 +474,7 @@ public class VoxelMeshTerrain : VoxelMesh
 		return this.m_Triangles;
 	}
 
-	// Token: 0x06005B63 RID: 23395 RVA: 0x00238448 File Offset: 0x00236648
+	// Token: 0x06005BEC RID: 23532 RVA: 0x0023B164 File Offset: 0x00239364
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string MakeTransformPathName(Transform _t, int _parentMax = 1)
 	{
@@ -491,7 +491,7 @@ public class VoxelMeshTerrain : VoxelMesh
 		return text;
 	}
 
-	// Token: 0x06005B64 RID: 23396 RVA: 0x0023848C File Offset: 0x0023668C
+	// Token: 0x06005BED RID: 23533 RVA: 0x0023B1A8 File Offset: 0x002393A8
 	public override int CopyToColliders(MeshCollider _meshCollider, out Mesh mesh)
 	{
 		if (this.m_Vertices.Count == 0)
@@ -512,105 +512,105 @@ public class VoxelMeshTerrain : VoxelMesh
 		return num;
 	}
 
-	// Token: 0x040046D1 RID: 18129
+	// Token: 0x0400476D RID: 18285
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool isInitStatic;
 
-	// Token: 0x040046D2 RID: 18130
+	// Token: 0x0400476E RID: 18286
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int[] mainTexPropertyIds;
 
-	// Token: 0x040046D3 RID: 18131
+	// Token: 0x0400476F RID: 18287
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string[] mainTexPropertyNames;
 
-	// Token: 0x040046D4 RID: 18132
+	// Token: 0x04004770 RID: 18288
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int[] bumpMapPropertyIds;
 
-	// Token: 0x040046D5 RID: 18133
+	// Token: 0x04004771 RID: 18289
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string[] bumpMapPropertyNames;
 
-	// Token: 0x040046D6 RID: 18134
+	// Token: 0x04004772 RID: 18290
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int[] sideTexPropertyIds;
 
-	// Token: 0x040046D7 RID: 18135
+	// Token: 0x04004773 RID: 18291
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string[] sideTexPropertyNames;
 
-	// Token: 0x040046D8 RID: 18136
+	// Token: 0x04004774 RID: 18292
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int[] sideBumpMapPropertyIds;
 
-	// Token: 0x040046D9 RID: 18137
+	// Token: 0x04004775 RID: 18293
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string[] sideBumpMapPropertyNames;
 
-	// Token: 0x040046DA RID: 18138
+	// Token: 0x04004776 RID: 18294
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static MicroSplatPropData msPropData;
 
-	// Token: 0x040046DB RID: 18139
+	// Token: 0x04004777 RID: 18295
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Texture2D msPropTex;
 
-	// Token: 0x040046DC RID: 18140
+	// Token: 0x04004778 RID: 18296
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static MicroSplatProceduralTextureConfig msProcData;
 
-	// Token: 0x040046DD RID: 18141
+	// Token: 0x04004779 RID: 18297
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Texture2D msProcCurveTex;
 
-	// Token: 0x040046DE RID: 18142
+	// Token: 0x0400477A RID: 18298
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Texture2D msProcParamTex;
 
-	// Token: 0x040046DF RID: 18143
+	// Token: 0x0400477B RID: 18299
 	public bool IsPreviewVoxelMesh;
 
-	// Token: 0x040046E0 RID: 18144
+	// Token: 0x0400477C RID: 18300
 	public List<TerrainSubMesh> submeshes = new List<TerrainSubMesh>();
 
-	// Token: 0x040046E1 RID: 18145
+	// Token: 0x0400477D RID: 18301
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Color cColSplatMap = new Color(0f, 0f, 0f, 0f);
 
-	// Token: 0x040046E2 RID: 18146
+	// Token: 0x0400477E RID: 18302
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Color cColUnderTerrain4to10 = new Color(0f, 0f, 0f, 1f);
 
-	// Token: 0x040046E3 RID: 18147
+	// Token: 0x0400477F RID: 18303
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Color cColDirt = new Color(1f, 0f, 0f, 1f);
 
-	// Token: 0x040046E4 RID: 18148
+	// Token: 0x04004780 RID: 18304
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Color cColGravel = new Color(0f, 1f, 0f, 1f);
 
-	// Token: 0x040046E5 RID: 18149
+	// Token: 0x04004781 RID: 18305
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Color cColCoal = new Color(0f, 0f, 1f, 1f);
 
-	// Token: 0x040046E6 RID: 18150
+	// Token: 0x04004782 RID: 18306
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Color cColAsphalt = new Color(0f, 0f, 0f, 0.8f);
 
-	// Token: 0x040046E7 RID: 18151
+	// Token: 0x04004783 RID: 18307
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector2 cUvEmpty = Vector2.zero;
 
-	// Token: 0x040046E8 RID: 18152
+	// Token: 0x04004784 RID: 18308
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector2 cUvUnderTerrain1_0 = new Vector2(1f, 0f);
 
-	// Token: 0x040046E9 RID: 18153
+	// Token: 0x04004785 RID: 18309
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector2 cUvUnderTerrain0_1 = new Vector2(0f, 1f);
 
-	// Token: 0x040046EA RID: 18154
+	// Token: 0x04004786 RID: 18310
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] texIds = new int[3];
 }

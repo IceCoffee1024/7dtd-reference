@@ -5,63 +5,63 @@ using RaycastPathing;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020008D7 RID: 2263
+// Token: 0x020008E3 RID: 2275
 [Preserve]
 public class RaycastEntityPathGenerator
 {
-	// Token: 0x170006D8 RID: 1752
-	// (get) Token: 0x06004188 RID: 16776 RVA: 0x0019A611 File Offset: 0x00198811
-	// (set) Token: 0x06004189 RID: 16777 RVA: 0x0019A619 File Offset: 0x00198819
+	// Token: 0x170006E4 RID: 1764
+	// (get) Token: 0x060041ED RID: 16877 RVA: 0x0019C6E9 File Offset: 0x0019A8E9
+	// (set) Token: 0x060041EE RID: 16878 RVA: 0x0019C6F1 File Offset: 0x0019A8F1
 	public World GameWorld
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170006D9 RID: 1753
-	// (get) Token: 0x0600418A RID: 16778 RVA: 0x0019A622 File Offset: 0x00198822
-	// (set) Token: 0x0600418B RID: 16779 RVA: 0x0019A62A File Offset: 0x0019882A
+	// Token: 0x170006E5 RID: 1765
+	// (get) Token: 0x060041EF RID: 16879 RVA: 0x0019C6FA File Offset: 0x0019A8FA
+	// (set) Token: 0x060041F0 RID: 16880 RVA: 0x0019C702 File Offset: 0x0019A902
 	public EntityAlive Entity
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170006DA RID: 1754
-	// (get) Token: 0x0600418C RID: 16780 RVA: 0x0019A633 File Offset: 0x00198833
-	// (set) Token: 0x0600418D RID: 16781 RVA: 0x0019A63B File Offset: 0x0019883B
+	// Token: 0x170006E6 RID: 1766
+	// (get) Token: 0x060041F1 RID: 16881 RVA: 0x0019C70B File Offset: 0x0019A90B
+	// (set) Token: 0x060041F2 RID: 16882 RVA: 0x0019C713 File Offset: 0x0019A913
 	public virtual RaycastPath Path
 	{
 		get; [PublicizedFrom(EAccessModifier.Protected)]
 		set;
 	}
 
-	// Token: 0x170006DB RID: 1755
-	// (get) Token: 0x0600418E RID: 16782 RVA: 0x0019A644 File Offset: 0x00198844
-	// (set) Token: 0x0600418F RID: 16783 RVA: 0x0019A64C File Offset: 0x0019884C
+	// Token: 0x170006E7 RID: 1767
+	// (get) Token: 0x060041F3 RID: 16883 RVA: 0x0019C71C File Offset: 0x0019A91C
+	// (set) Token: 0x060041F4 RID: 16884 RVA: 0x0019C724 File Offset: 0x0019A924
 	public bool isBuildingPath
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170006DC RID: 1756
-	// (get) Token: 0x06004190 RID: 16784 RVA: 0x0019A655 File Offset: 0x00198855
-	// (set) Token: 0x06004191 RID: 16785 RVA: 0x0019A65D File Offset: 0x0019885D
+	// Token: 0x170006E8 RID: 1768
+	// (get) Token: 0x060041F5 RID: 16885 RVA: 0x0019C72D File Offset: 0x0019A92D
+	// (set) Token: 0x060041F6 RID: 16886 RVA: 0x0019C735 File Offset: 0x0019A935
 	public bool isPathReady
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06004192 RID: 16786 RVA: 0x0019A666 File Offset: 0x00198866
+	// Token: 0x060041F7 RID: 16887 RVA: 0x0019C73E File Offset: 0x0019A93E
 	public RaycastEntityPathGenerator(World _world, EntityAlive _entity)
 	{
 		this.GameWorld = _world;
 		this.Entity = _entity;
 	}
 
-	// Token: 0x06004193 RID: 16787 RVA: 0x0019A67C File Offset: 0x0019887C
+	// Token: 0x060041F8 RID: 16888 RVA: 0x0019C754 File Offset: 0x0019A954
 	public Vector3[] pathToArray()
 	{
 		Vector3[] array = new Vector3[this.Path.Nodes.Count - 1];
@@ -72,7 +72,7 @@ public class RaycastEntityPathGenerator
 		return array;
 	}
 
-	// Token: 0x06004194 RID: 16788 RVA: 0x0019A6DC File Offset: 0x001988DC
+	// Token: 0x060041F9 RID: 16889 RVA: 0x0019C7B4 File Offset: 0x0019A9B4
 	public List<Vector3> pathToList()
 	{
 		List<Vector3> list = new List<Vector3>();
@@ -84,7 +84,7 @@ public class RaycastEntityPathGenerator
 		return list;
 	}
 
-	// Token: 0x06004195 RID: 16789 RVA: 0x0019A72D File Offset: 0x0019892D
+	// Token: 0x060041FA RID: 16890 RVA: 0x0019C805 File Offset: 0x0019AA05
 	public void CreatePath(Vector3 start, Vector3 end, float speed, bool canBreakBlocks, float yHeightOffset = 0f)
 	{
 		this.cleanupPath();
@@ -92,14 +92,14 @@ public class RaycastEntityPathGenerator
 		this.beginPathProc();
 	}
 
-	// Token: 0x06004196 RID: 16790 RVA: 0x0019A743 File Offset: 0x00198943
+	// Token: 0x060041FB RID: 16891 RVA: 0x0019C81B File Offset: 0x0019AA1B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void InitPath(Vector3 start, Vector3 end)
 	{
 		this.Path = new RaycastPath(start, end);
 	}
 
-	// Token: 0x06004197 RID: 16791 RVA: 0x0019A752 File Offset: 0x00198952
+	// Token: 0x060041FC RID: 16892 RVA: 0x0019C82A File Offset: 0x0019AA2A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual IEnumerator BuildPathProc()
 	{
@@ -107,7 +107,7 @@ public class RaycastEntityPathGenerator
 		yield break;
 	}
 
-	// Token: 0x06004198 RID: 16792 RVA: 0x0019A761 File Offset: 0x00198961
+	// Token: 0x060041FD RID: 16893 RVA: 0x0019C839 File Offset: 0x0019AA39
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void beginPathProc()
 	{
@@ -115,7 +115,7 @@ public class RaycastEntityPathGenerator
 		this.StartCoroutine(this.BuildPathProc());
 	}
 
-	// Token: 0x06004199 RID: 16793 RVA: 0x0019A776 File Offset: 0x00198976
+	// Token: 0x060041FE RID: 16894 RVA: 0x0019C84E File Offset: 0x0019AA4E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void abortPathProc()
 	{
@@ -123,7 +123,7 @@ public class RaycastEntityPathGenerator
 		this.isBuildingPath = false;
 	}
 
-	// Token: 0x0600419A RID: 16794 RVA: 0x0019A78B File Offset: 0x0019898B
+	// Token: 0x060041FF RID: 16895 RVA: 0x0019C863 File Offset: 0x0019AA63
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void finalizePathProc()
 	{
@@ -131,13 +131,13 @@ public class RaycastEntityPathGenerator
 		this.isPathReady = true;
 	}
 
-	// Token: 0x0600419B RID: 16795 RVA: 0x0019A79B File Offset: 0x0019899B
+	// Token: 0x06004200 RID: 16896 RVA: 0x0019C873 File Offset: 0x0019AA73
 	public void Clear()
 	{
 		this.cleanupPath();
 	}
 
-	// Token: 0x0600419C RID: 16796 RVA: 0x0019A7A3 File Offset: 0x001989A3
+	// Token: 0x06004201 RID: 16897 RVA: 0x0019C87B File Offset: 0x0019AA7B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void cleanupPath()
 	{
@@ -150,21 +150,21 @@ public class RaycastEntityPathGenerator
 		}
 	}
 
-	// Token: 0x0600419D RID: 16797 RVA: 0x0019A7CC File Offset: 0x001989CC
+	// Token: 0x06004202 RID: 16898 RVA: 0x0019C8A4 File Offset: 0x0019AAA4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void StartCoroutine(IEnumerator task)
 	{
 		GameManager.Instance.StartCoroutine(task);
 	}
 
-	// Token: 0x0600419E RID: 16798 RVA: 0x0019A7DA File Offset: 0x001989DA
+	// Token: 0x06004203 RID: 16899 RVA: 0x0019C8B2 File Offset: 0x0019AAB2
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void StopCoroutine(IEnumerator task)
 	{
 		GameManager.Instance.StopCoroutine(task);
 	}
 
-	// Token: 0x0600419F RID: 16799 RVA: 0x0019A7E7 File Offset: 0x001989E7
+	// Token: 0x06004204 RID: 16900 RVA: 0x0019C8BF File Offset: 0x0019AABF
 	public bool IsConfinedSpace(Vector3 pos, float size, bool debugDraw = false)
 	{
 		return RaycastPathWorldUtils.IsConfinedSpace(this.GameWorld, pos, size, debugDraw);

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000842 RID: 2114
+// Token: 0x0200084E RID: 2126
 [Preserve]
 public class NetPackageShowToolbeltMessage : NetPackage
 {
-	// Token: 0x06003DD5 RID: 15829 RVA: 0x00187F09 File Offset: 0x00186109
+	// Token: 0x06003E3A RID: 15930 RVA: 0x00189F29 File Offset: 0x00188129
 	public NetPackageShowToolbeltMessage Setup(string _toolbeltMessage, string _sound)
 	{
 		this.toolbeltMessage = _toolbeltMessage;
@@ -13,14 +13,14 @@ public class NetPackageShowToolbeltMessage : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003DD6 RID: 15830 RVA: 0x00187F1A File Offset: 0x0018611A
+	// Token: 0x06003E3B RID: 15931 RVA: 0x00189F3A File Offset: 0x0018813A
 	public override void read(PooledBinaryReader _br)
 	{
 		this.toolbeltMessage = _br.ReadString();
 		this.sound = _br.ReadString();
 	}
 
-	// Token: 0x06003DD7 RID: 15831 RVA: 0x00187F34 File Offset: 0x00186134
+	// Token: 0x06003E3C RID: 15932 RVA: 0x00189F54 File Offset: 0x00188154
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -28,7 +28,7 @@ public class NetPackageShowToolbeltMessage : NetPackage
 		_bw.Write(this.sound);
 	}
 
-	// Token: 0x06003DD8 RID: 15832 RVA: 0x00187F55 File Offset: 0x00186155
+	// Token: 0x06003E3D RID: 15933 RVA: 0x00189F75 File Offset: 0x00188175
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -38,8 +38,8 @@ public class NetPackageShowToolbeltMessage : NetPackage
 		GameManager.ShowTooltip(_world.GetLocalPlayers()[0], this.toolbeltMessage, this.sound, null, null, false, false, 0f);
 	}
 
-	// Token: 0x1700066C RID: 1644
-	// (get) Token: 0x06003DD9 RID: 15833 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x17000678 RID: 1656
+	// (get) Token: 0x06003E3E RID: 15934 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -48,17 +48,17 @@ public class NetPackageShowToolbeltMessage : NetPackage
 		}
 	}
 
-	// Token: 0x06003DDA RID: 15834 RVA: 0x00175944 File Offset: 0x00173B44
+	// Token: 0x06003E3F RID: 15935 RVA: 0x00177BC4 File Offset: 0x00175DC4
 	public override int GetLength()
 	{
 		return 80;
 	}
 
-	// Token: 0x040031FF RID: 12799
+	// Token: 0x0400327E RID: 12926
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string toolbeltMessage;
 
-	// Token: 0x04003200 RID: 12800
+	// Token: 0x0400327F RID: 12927
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string sound = "";
 }

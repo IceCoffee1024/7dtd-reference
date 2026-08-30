@@ -2,17 +2,17 @@
 using Audio;
 using UnityEngine.Scripting;
 
-// Token: 0x0200014F RID: 335
+// Token: 0x02000150 RID: 336
 [Preserve]
 public class BlockSpeaker : BlockPowered
 {
-	// Token: 0x0600093E RID: 2366 RVA: 0x000408EC File Offset: 0x0003EAEC
+	// Token: 0x06000948 RID: 2376 RVA: 0x00040B4C File Offset: 0x0003ED4C
 	public BlockSpeaker()
 	{
 		this.HasTileEntity = true;
 	}
 
-	// Token: 0x0600093F RID: 2367 RVA: 0x00040906 File Offset: 0x0003EB06
+	// Token: 0x06000949 RID: 2377 RVA: 0x00040B66 File Offset: 0x0003ED66
 	public override void Init()
 	{
 		base.Init();
@@ -22,7 +22,7 @@ public class BlockSpeaker : BlockPowered
 		}
 	}
 
-	// Token: 0x06000940 RID: 2368 RVA: 0x00040940 File Offset: 0x0003EB40
+	// Token: 0x0600094A RID: 2378 RVA: 0x00040BA0 File Offset: 0x0003EDA0
 	public override bool ActivateBlock(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool isOn, bool isPowered)
 	{
 		byte b = (byte)(((int)_blockValue.meta & -3) | (isOn ? 2 : 0));
@@ -48,21 +48,21 @@ public class BlockSpeaker : BlockPowered
 		return true;
 	}
 
-	// Token: 0x06000941 RID: 2369 RVA: 0x000409DC File Offset: 0x0003EBDC
+	// Token: 0x0600094B RID: 2379 RVA: 0x00040C3C File Offset: 0x0003EE3C
 	public override void OnBlockUnloaded(WorldBase world, Vector3i blockPos, BlockValue blockValue)
 	{
 		base.OnBlockUnloaded(world, blockPos, blockValue);
 		Manager.Stop(blockPos.ToVector3(), this.playSound);
 	}
 
-	// Token: 0x06000942 RID: 2370 RVA: 0x000409F9 File Offset: 0x0003EBF9
+	// Token: 0x0600094C RID: 2380 RVA: 0x00040C59 File Offset: 0x0003EE59
 	public override void OnBlockRemoved(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockRemoved(world, _chunk, _blockPos, _blockValue);
 		Manager.Stop(_blockPos.ToVector3(), this.playSound);
 	}
 
-	// Token: 0x06000943 RID: 2371 RVA: 0x00040A18 File Offset: 0x0003EC18
+	// Token: 0x0600094D RID: 2381 RVA: 0x00040C78 File Offset: 0x0003EE78
 	public override void OnBlockLoaded(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockLoaded(_world, _blockPos, _blockValue);
@@ -77,7 +77,7 @@ public class BlockSpeaker : BlockPowered
 		}
 	}
 
-	// Token: 0x06000944 RID: 2372 RVA: 0x00040A77 File Offset: 0x0003EC77
+	// Token: 0x0600094E RID: 2382 RVA: 0x00040CD7 File Offset: 0x0003EED7
 	public override TileEntityPowered CreateTileEntity(Chunk chunk)
 	{
 		return new TileEntityPoweredBlock(chunk)
@@ -86,11 +86,11 @@ public class BlockSpeaker : BlockPowered
 		};
 	}
 
-	// Token: 0x040009B5 RID: 2485
+	// Token: 0x040009B7 RID: 2487
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string playSound;
 
-	// Token: 0x040009B6 RID: 2486
+	// Token: 0x040009B8 RID: 2488
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float soundDelay = 1f;
 }

@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x0200159C RID: 5532
+// Token: 0x020015B7 RID: 5559
 [Serializable]
 public class vp_CustomType : vp_ItemType
 {
-	// Token: 0x040080AA RID: 32938
+	// Token: 0x04008183 RID: 33155
 	public bool Variable1;
 
-	// Token: 0x040080AB RID: 32939
+	// Token: 0x04008184 RID: 33156
 	public float Variable2 = 100f;
 }

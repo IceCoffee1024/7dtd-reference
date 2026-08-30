@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001593 RID: 5523
+// Token: 0x020015AE RID: 5550
 [RequireComponent(typeof(AudioSource))]
 public class vp_Explosion : MonoBehaviour
 {
-	// Token: 0x170013DB RID: 5083
-	// (get) Token: 0x0600ACB2 RID: 44210 RVA: 0x00406750 File Offset: 0x00404950
+	// Token: 0x17001414 RID: 5140
+	// (get) Token: 0x0600ADAF RID: 44463 RVA: 0x0040BA90 File Offset: 0x00409C90
 	public float DistanceModifier
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -21,8 +21,8 @@ public class vp_Explosion : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170013DC RID: 5084
-	// (get) Token: 0x0600ACB3 RID: 44211 RVA: 0x0040679E File Offset: 0x0040499E
+	// Token: 0x17001415 RID: 5141
+	// (get) Token: 0x0600ADB0 RID: 44464 RVA: 0x0040BADE File Offset: 0x00409CDE
 	public Transform Transform
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -36,9 +36,9 @@ public class vp_Explosion : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170013DD RID: 5085
-	// (get) Token: 0x0600ACB4 RID: 44212 RVA: 0x004067C0 File Offset: 0x004049C0
-	// (set) Token: 0x0600ACB5 RID: 44213 RVA: 0x004067E2 File Offset: 0x004049E2
+	// Token: 0x17001416 RID: 5142
+	// (get) Token: 0x0600ADB1 RID: 44465 RVA: 0x0040BB00 File Offset: 0x00409D00
+	// (set) Token: 0x0600ADB2 RID: 44466 RVA: 0x0040BB22 File Offset: 0x00409D22
 	public Transform Source
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -57,9 +57,9 @@ public class vp_Explosion : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170013DE RID: 5086
-	// (get) Token: 0x0600ACB6 RID: 44214 RVA: 0x004067EB File Offset: 0x004049EB
-	// (set) Token: 0x0600ACB7 RID: 44215 RVA: 0x0040680D File Offset: 0x00404A0D
+	// Token: 0x17001417 RID: 5143
+	// (get) Token: 0x0600ADB3 RID: 44467 RVA: 0x0040BB2B File Offset: 0x00409D2B
+	// (set) Token: 0x0600ADB4 RID: 44468 RVA: 0x0040BB4D File Offset: 0x00409D4D
 	public Transform OriginalSource
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -78,8 +78,8 @@ public class vp_Explosion : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170013DF RID: 5087
-	// (get) Token: 0x0600ACB8 RID: 44216 RVA: 0x00406816 File Offset: 0x00404A16
+	// Token: 0x17001418 RID: 5144
+	// (get) Token: 0x0600ADB5 RID: 44469 RVA: 0x0040BB56 File Offset: 0x00409D56
 	public AudioSource Audio
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -93,7 +93,7 @@ public class vp_Explosion : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600ACB9 RID: 44217 RVA: 0x00406838 File Offset: 0x00404A38
+	// Token: 0x0600ADB6 RID: 44470 RVA: 0x0040BB78 File Offset: 0x00409D78
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
@@ -102,7 +102,7 @@ public class vp_Explosion : MonoBehaviour
 		vp_TargetEvent<Transform>.Register(base.transform, "SetSource", new Action<Transform>(this.SetSource));
 	}
 
-	// Token: 0x0600ACBA RID: 44218 RVA: 0x00406869 File Offset: 0x00404A69
+	// Token: 0x0600ADB7 RID: 44471 RVA: 0x0040BBA9 File Offset: 0x00409DA9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnDisable()
 	{
@@ -111,7 +111,7 @@ public class vp_Explosion : MonoBehaviour
 		vp_TargetEvent<Transform>.Unregister(base.transform, "SetSource", new Action<Transform>(this.SetSource));
 	}
 
-	// Token: 0x0600ACBB RID: 44219 RVA: 0x00406895 File Offset: 0x00404A95
+	// Token: 0x0600ADB8 RID: 44472 RVA: 0x0040BBD5 File Offset: 0x00409DD5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -126,7 +126,7 @@ public class vp_Explosion : MonoBehaviour
 		this.DoExplode();
 	}
 
-	// Token: 0x0600ACBC RID: 44220 RVA: 0x004068C0 File Offset: 0x00404AC0
+	// Token: 0x0600ADB9 RID: 44473 RVA: 0x0040BC00 File Offset: 0x00409E00
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DoExplode()
 	{
@@ -181,7 +181,7 @@ public class vp_Explosion : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600ACBD RID: 44221 RVA: 0x00406A98 File Offset: 0x00404C98
+	// Token: 0x0600ADBA RID: 44474 RVA: 0x0040BDD8 File Offset: 0x00409FD8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool TargetInCover()
 	{
@@ -199,7 +199,7 @@ public class vp_Explosion : MonoBehaviour
 		return !Physics.Raycast(this.m_Ray, out this.m_RaycastHit, this.Radius + 1f) || !(this.m_RaycastHit.collider == this.m_TargetCollider);
 	}
 
-	// Token: 0x0600ACBE RID: 44222 RVA: 0x00406BD0 File Offset: 0x00404DD0
+	// Token: 0x0600ADBB RID: 44475 RVA: 0x0040BF10 File Offset: 0x0040A110
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void AddRigidbodyForce()
 	{
@@ -216,21 +216,21 @@ public class vp_Explosion : MonoBehaviour
 		this.m_TargetRigidbody.AddExplosionForce(this.Force / Time.timeScale / vp_TimeUtility.AdjustedTimeScale, this.Transform.position, this.Radius, this.UpForce);
 	}
 
-	// Token: 0x0600ACBF RID: 44223 RVA: 0x00406C70 File Offset: 0x00404E70
+	// Token: 0x0600ADBC RID: 44476 RVA: 0x0040BFB0 File Offset: 0x0040A1B0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void AddUFPSForce()
 	{
 		vp_TargetEvent<Vector3>.Send(this.m_TargetTransform.root, "ForceImpact", (this.m_TargetTransform.position - this.Transform.position).normalized * this.Force * 0.001f * this.DistanceModifier, vp_TargetEventOptions.DontRequireReceiver);
 	}
 
-	// Token: 0x0600ACC0 RID: 44224 RVA: 0x00406CD6 File Offset: 0x00404ED6
+	// Token: 0x0600ADBD RID: 44477 RVA: 0x0040C016 File Offset: 0x0040A216
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void AddUFPSCameraShake()
 	{
 		vp_TargetEvent<float>.Send(this.m_TargetTransform.root, "CameraBombShake", this.DistanceModifier * this.CameraShake, vp_TargetEventOptions.DontRequireReceiver);
 	}
 
-	// Token: 0x0600ACC1 RID: 44225 RVA: 0x00406CFC File Offset: 0x00404EFC
+	// Token: 0x0600ADBE RID: 44478 RVA: 0x0040C03C File Offset: 0x0040A23C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void DoUFPSDamage(float damage)
 	{
@@ -242,116 +242,116 @@ public class vp_Explosion : MonoBehaviour
 		vp_Explosion.m_TargetDHandler.Damage(new vp_DamageInfo(damage, this.Source, this.OriginalSource));
 	}
 
-	// Token: 0x0600ACC2 RID: 44226 RVA: 0x00406D49 File Offset: 0x00404F49
+	// Token: 0x0600ADBF RID: 44479 RVA: 0x0040C089 File Offset: 0x0040A289
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DoUnityDamage(float damage)
 	{
 		this.m_TargetCollider.gameObject.BroadcastMessage(this.DamageMessageName, damage, SendMessageOptions.DontRequireReceiver);
 	}
 
-	// Token: 0x0600ACC3 RID: 44227 RVA: 0x0040680D File Offset: 0x00404A0D
+	// Token: 0x0600ADC0 RID: 44480 RVA: 0x0040BB4D File Offset: 0x00409D4D
 	public void SetSource(Transform source)
 	{
 		this.m_OriginalSource = source;
 	}
 
-	// Token: 0x04008052 RID: 32850
+	// Token: 0x0400812B RID: 33067
 	public float Radius = 15f;
 
-	// Token: 0x04008053 RID: 32851
+	// Token: 0x0400812C RID: 33068
 	public float Force = 1000f;
 
-	// Token: 0x04008054 RID: 32852
+	// Token: 0x0400812D RID: 33069
 	public float UpForce = 10f;
 
-	// Token: 0x04008055 RID: 32853
+	// Token: 0x0400812E RID: 33070
 	public float Damage = 10f;
 
-	// Token: 0x04008056 RID: 32854
+	// Token: 0x0400812F RID: 33071
 	public bool AllowCover;
 
-	// Token: 0x04008057 RID: 32855
+	// Token: 0x04008130 RID: 33072
 	public float CameraShake = 1f;
 
-	// Token: 0x04008058 RID: 32856
+	// Token: 0x04008131 RID: 33073
 	public string DamageMessageName = "Damage";
 
-	// Token: 0x04008059 RID: 32857
+	// Token: 0x04008132 RID: 33074
 	public bool RequireDamageHandler = true;
 
-	// Token: 0x0400805A RID: 32858
+	// Token: 0x04008133 RID: 33075
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_HaveExploded;
 
-	// Token: 0x0400805B RID: 32859
+	// Token: 0x04008134 RID: 33076
 	public AudioClip Sound;
 
-	// Token: 0x0400805C RID: 32860
+	// Token: 0x04008135 RID: 33077
 	public float SoundMinPitch = 0.8f;
 
-	// Token: 0x0400805D RID: 32861
+	// Token: 0x04008136 RID: 33078
 	public float SoundMaxPitch = 1.2f;
 
-	// Token: 0x0400805E RID: 32862
+	// Token: 0x04008137 RID: 33079
 	public List<GameObject> FXPrefabs = new List<GameObject>();
 
-	// Token: 0x0400805F RID: 32863
+	// Token: 0x04008138 RID: 33080
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Ray m_Ray;
 
-	// Token: 0x04008060 RID: 32864
+	// Token: 0x04008139 RID: 33081
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public RaycastHit m_RaycastHit;
 
-	// Token: 0x04008061 RID: 32865
+	// Token: 0x0400813A RID: 33082
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Collider m_TargetCollider;
 
-	// Token: 0x04008062 RID: 32866
+	// Token: 0x0400813B RID: 33083
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_TargetTransform;
 
-	// Token: 0x04008063 RID: 32867
+	// Token: 0x0400813C RID: 33084
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Rigidbody m_TargetRigidbody;
 
-	// Token: 0x04008064 RID: 32868
+	// Token: 0x0400813D RID: 33085
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_DistanceModifier;
 
-	// Token: 0x04008065 RID: 32869
+	// Token: 0x0400813E RID: 33086
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Dictionary<vp_DamageHandler, object> m_DHandlersHitByThisExplosion = new Dictionary<vp_DamageHandler, object>(50);
 
-	// Token: 0x04008066 RID: 32870
+	// Token: 0x0400813F RID: 33087
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public static vp_DamageHandler m_TargetDHandler;
 
-	// Token: 0x04008067 RID: 32871
+	// Token: 0x04008140 RID: 33088
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_Transform;
 
-	// Token: 0x04008068 RID: 32872
+	// Token: 0x04008141 RID: 33089
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_Source;
 
-	// Token: 0x04008069 RID: 32873
+	// Token: 0x04008142 RID: 33090
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_OriginalSource;
 
-	// Token: 0x0400806A RID: 32874
+	// Token: 0x04008143 RID: 33091
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AudioSource m_Audio;

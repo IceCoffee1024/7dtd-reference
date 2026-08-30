@@ -2,11 +2,11 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x02000662 RID: 1634
+// Token: 0x0200066B RID: 1643
 [Preserve]
 public class IsStatAtMax : TargetedCompareRequirementBase
 {
-	// Token: 0x0600348A RID: 13450 RVA: 0x0015CE04 File Offset: 0x0015B004
+	// Token: 0x060034DD RID: 13533 RVA: 0x0015EF74 File Offset: 0x0015D174
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -44,7 +44,7 @@ public class IsStatAtMax : TargetedCompareRequirementBase
 		}
 	}
 
-	// Token: 0x0600348B RID: 13451 RVA: 0x0015CF50 File Offset: 0x0015B150
+	// Token: 0x060034DE RID: 13534 RVA: 0x0015F0C0 File Offset: 0x0015D2C0
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -56,23 +56,23 @@ public class IsStatAtMax : TargetedCompareRequirementBase
 		return flag;
 	}
 
-	// Token: 0x04002AB0 RID: 10928
+	// Token: 0x04002B24 RID: 11044
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public IsStatAtMax.StatTypes stat;
 
-	// Token: 0x02000663 RID: 1635
+	// Token: 0x0200066C RID: 1644
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public enum StatTypes
 	{
-		// Token: 0x04002AB2 RID: 10930
+		// Token: 0x04002B26 RID: 11046
 		None,
-		// Token: 0x04002AB3 RID: 10931
+		// Token: 0x04002B27 RID: 11047
 		Health,
-		// Token: 0x04002AB4 RID: 10932
+		// Token: 0x04002B28 RID: 11048
 		Stamina,
-		// Token: 0x04002AB5 RID: 10933
+		// Token: 0x04002B29 RID: 11049
 		Food,
-		// Token: 0x04002AB6 RID: 10934
+		// Token: 0x04002B2A RID: 11050
 		Water
 	}
 }

@@ -7,10 +7,10 @@ using System.Text;
 using Platform;
 using UnityEngine;
 
-// Token: 0x020013AA RID: 5034
+// Token: 0x020013C5 RID: 5061
 public static class DebugGameStats
 {
-	// Token: 0x06009E33 RID: 40499 RVA: 0x003BAF44 File Offset: 0x003B9144
+	// Token: 0x06009F30 RID: 40752 RVA: 0x003C0288 File Offset: 0x003BE488
 	public static void StartStatisticsUpdate(DebugGameStats.StatisticsUpdatedCallback callback)
 	{
 		if (DebugGameStats.m_memorySampler == null)
@@ -51,7 +51,7 @@ public static class DebugGameStats
 		DebugGameStats.updateDeltasCoroutine = ThreadManager.StartCoroutine(DebugGameStats.UpdateDeltas());
 	}
 
-	// Token: 0x06009E34 RID: 40500 RVA: 0x003BB008 File Offset: 0x003B9208
+	// Token: 0x06009F31 RID: 40753 RVA: 0x003C034C File Offset: 0x003BE54C
 	public static void TryInitializeStatisticsDictionary()
 	{
 		if (DebugGameStats.statisticsDictionary.Keys.Count > 0)
@@ -71,7 +71,7 @@ public static class DebugGameStats
 		}
 	}
 
-	// Token: 0x06009E35 RID: 40501 RVA: 0x003BB09D File Offset: 0x003B929D
+	// Token: 0x06009F32 RID: 40754 RVA: 0x003C03E1 File Offset: 0x003BE5E1
 	public static void StopStatisticsUpdate()
 	{
 		DebugGameStats.doStatisticsUpdate = false;
@@ -79,7 +79,7 @@ public static class DebugGameStats
 		DebugGameStats.updateDeltasCoroutine = null;
 	}
 
-	// Token: 0x06009E36 RID: 40502 RVA: 0x003BB0B4 File Offset: 0x003B92B4
+	// Token: 0x06009F33 RID: 40755 RVA: 0x003C03F8 File Offset: 0x003BE5F8
 	public static string GetHeader(char separator)
 	{
 		DebugGameStats.TryInitializeStatisticsDictionary();
@@ -92,7 +92,7 @@ public static class DebugGameStats
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x06009E37 RID: 40503 RVA: 0x003BB128 File Offset: 0x003B9328
+	// Token: 0x06009F34 RID: 40756 RVA: 0x003C046C File Offset: 0x003BE66C
 	public static string GetCurrentStatsString(char separator = ',')
 	{
 		StringBuilder stringBuilder = new StringBuilder();
@@ -104,7 +104,7 @@ public static class DebugGameStats
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x06009E38 RID: 40504 RVA: 0x003BB198 File Offset: 0x003B9398
+	// Token: 0x06009F35 RID: 40757 RVA: 0x003C04DC File Offset: 0x003BE6DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator UpdateDeltas()
 	{
@@ -117,7 +117,7 @@ public static class DebugGameStats
 		yield break;
 	}
 
-	// Token: 0x06009E39 RID: 40505 RVA: 0x003BB1A0 File Offset: 0x003B93A0
+	// Token: 0x06009F36 RID: 40758 RVA: 0x003C04E4 File Offset: 0x003BE6E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator UpdateStatisticsCo(DebugGameStats.StatisticsUpdatedCallback callback)
 	{
@@ -232,125 +232,125 @@ public static class DebugGameStats
 		yield break;
 	}
 
-	// Token: 0x040077BF RID: 30655
+	// Token: 0x04007898 RID: 30872
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<string, string> statisticsDictionary = new Dictionary<string, string>();
 
-	// Token: 0x040077C0 RID: 30656
+	// Token: 0x04007899 RID: 30873
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IPlatformMemorySampler m_memorySampler;
 
-	// Token: 0x040077C1 RID: 30657
+	// Token: 0x0400789A RID: 30874
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IPlatformMemoryStat<long> m_memoryGameUsedStat;
 
-	// Token: 0x040077C2 RID: 30658
+	// Token: 0x0400789B RID: 30875
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool doStatisticsUpdate = false;
 
-	// Token: 0x040077C3 RID: 30659
+	// Token: 0x0400789C RID: 30876
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Coroutine updateStatsCoroutine;
 
-	// Token: 0x040077C4 RID: 30660
+	// Token: 0x0400789D RID: 30877
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Coroutine updateDeltasCoroutine;
 
-	// Token: 0x040077C5 RID: 30661
+	// Token: 0x0400789E RID: 30878
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static long deltaTextureMemory = 0L;
 
-	// Token: 0x040077C6 RID: 30662
+	// Token: 0x0400789F RID: 30879
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static long m_textureMemoryPrevFrame = 0L;
 
-	// Token: 0x020013AB RID: 5035
+	// Token: 0x020013C6 RID: 5062
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static class Statistics
 	{
-		// Token: 0x040077C7 RID: 30663
+		// Token: 0x040078A0 RID: 30880
 		public const string InGameTimeKey = "gamestats.ingametime";
 
-		// Token: 0x040077C8 RID: 30664
+		// Token: 0x040078A1 RID: 30881
 		public const string ManagedHeapSizeKey = "gamestats.managedheap";
 
-		// Token: 0x040077C9 RID: 30665
+		// Token: 0x040078A2 RID: 30882
 		public const string NativeGameUsedKey = "gamestats.nativegameused";
 
-		// Token: 0x040077CA RID: 30666
+		// Token: 0x040078A3 RID: 30883
 		public const string TextureMemoryDesiredKey = "gamestats.textureMemorydesired";
 
-		// Token: 0x040077CB RID: 30667
+		// Token: 0x040078A4 RID: 30884
 		public const string TextureMemoryCurrentKey = "gamestats.texturememorycurrent";
 
-		// Token: 0x040077CC RID: 30668
+		// Token: 0x040078A5 RID: 30885
 		public const string TextureMemoryDelta60Key = "gamestats.texturememorydelta60";
 
-		// Token: 0x040077CD RID: 30669
+		// Token: 0x040078A6 RID: 30886
 		public const string WorldEntitiesCountKey = "gamestats.worldentities";
 
-		// Token: 0x040077CE RID: 30670
+		// Token: 0x040078A7 RID: 30887
 		public const string EntityInstanceCountKey = "gamestats.entityinstances";
 
-		// Token: 0x040077CF RID: 30671
+		// Token: 0x040078A8 RID: 30888
 		public const string ChunkObserverCountKey = "gamestats.chunkobservers";
 
-		// Token: 0x040077D0 RID: 30672
+		// Token: 0x040078A9 RID: 30889
 		public const string MaxUsedChunkCountKey = "gamestats.maxusedchunks";
 
-		// Token: 0x040077D1 RID: 30673
+		// Token: 0x040078AA RID: 30890
 		public const string SyncedChunkCountKey = "gamestats.syncedchunks";
 
-		// Token: 0x040077D2 RID: 30674
+		// Token: 0x040078AB RID: 30891
 		public const string ChunkGameObjectCountKey = "gamestats.chunkgameobjects";
 
-		// Token: 0x040077D3 RID: 30675
+		// Token: 0x040078AC RID: 30892
 		public const string DisplayedPrefabCountKey = "gamestats.displayedprefabs";
 
-		// Token: 0x040077D4 RID: 30676
+		// Token: 0x040078AD RID: 30893
 		public const string LocalPlayerPositionKey = "gamestats.localplayerpos";
 
-		// Token: 0x040077D5 RID: 30677
+		// Token: 0x040078AE RID: 30894
 		public const string WorldTimeKey = "gamestats.worldtime";
 
-		// Token: 0x040077D6 RID: 30678
+		// Token: 0x040078AF RID: 30895
 		public const string BloodMoonKey = "gamestats.isbloodmoon";
 
-		// Token: 0x040077D7 RID: 30679
+		// Token: 0x040078B0 RID: 30896
 		public const string GameModeKey = "gamestats.gameMode";
 
-		// Token: 0x040077D8 RID: 30680
+		// Token: 0x040078B1 RID: 30897
 		public const string PlayerCountKey = "gamestats.PlayerCount";
 
-		// Token: 0x040077D9 RID: 30681
+		// Token: 0x040078B2 RID: 30898
 		public const string ConnectStatusKey = "gamestats.ConnectionStatus";
 
-		// Token: 0x040077DA RID: 30682
+		// Token: 0x040078B3 RID: 30899
 		public const string HostStatusKey = "gamestats.HostStatus";
 
-		// Token: 0x040077DB RID: 30683
+		// Token: 0x040078B4 RID: 30900
 		public const string CurrentBiomeKey = "gamestats.currentPlayerBiome";
 
-		// Token: 0x040077DC RID: 30684
+		// Token: 0x040078B5 RID: 30901
 		public const string WeatherStatusKey = "gamestats.weathersystemstatus";
 
-		// Token: 0x040077DD RID: 30685
+		// Token: 0x040078B6 RID: 30902
 		public const string VideoScalingSetting = "gamestats.VideoScalingSetting";
 
-		// Token: 0x040077DE RID: 30686
+		// Token: 0x040078B7 RID: 30903
 		public const string DiscordPluginStatusKey = "gamestats.discordstatus";
 
-		// Token: 0x040077DF RID: 30687
+		// Token: 0x040078B8 RID: 30904
 		public const string DiscordPluginSettingsKey = "gamestats.discordsettings";
 
-		// Token: 0x040077E0 RID: 30688
+		// Token: 0x040078B9 RID: 30905
 		public const string SandboxPresetKey = "gamestats.SandboxPreset";
 
-		// Token: 0x040077E1 RID: 30689
+		// Token: 0x040078BA RID: 30906
 		public const string SandboxCodeKey = "gamestats.SandboxCode";
 	}
 
-	// Token: 0x020013AC RID: 5036
-	// (Invoke) Token: 0x06009E3C RID: 40508
+	// Token: 0x020013C7 RID: 5063
+	// (Invoke) Token: 0x06009F39 RID: 40761
 	public delegate void StatisticsUpdatedCallback(Dictionary<string, string> statisticsDictionary);
 }

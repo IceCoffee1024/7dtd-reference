@@ -3,18 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
-// Token: 0x02001443 RID: 5187
+// Token: 0x0200145E RID: 5214
 public sealed class OneToManyDictionary<TKey, TValue>
 {
-	// Token: 0x0600A299 RID: 41625 RVA: 0x003CC1D1 File Offset: 0x003CA3D1
+	// Token: 0x0600A396 RID: 41878 RVA: 0x003D1515 File Offset: 0x003CF715
 	public OneToManyDictionary()
 	{
 		this.m_keyToValues = new Dictionary<OneToManyDictionary<TKey, TValue>.Entry<TKey>, HashSet<OneToManyDictionary<TKey, TValue>.Entry<TValue>>>();
 		this.m_valueToKey = new Dictionary<OneToManyDictionary<TKey, TValue>.Entry<TValue>, OneToManyDictionary<TKey, TValue>.Entry<TKey>>();
 	}
 
-	// Token: 0x17001303 RID: 4867
-	// (get) Token: 0x0600A29A RID: 41626 RVA: 0x003CC1EF File Offset: 0x003CA3EF
+	// Token: 0x1700133C RID: 4924
+	// (get) Token: 0x0600A397 RID: 41879 RVA: 0x003D1533 File Offset: 0x003CF733
 	public IEnumerable<TKey> Keys
 	{
 		get
@@ -29,8 +29,8 @@ public sealed class OneToManyDictionary<TKey, TValue>
 		}
 	}
 
-	// Token: 0x17001304 RID: 4868
-	// (get) Token: 0x0600A29B RID: 41627 RVA: 0x003CC1FF File Offset: 0x003CA3FF
+	// Token: 0x1700133D RID: 4925
+	// (get) Token: 0x0600A398 RID: 41880 RVA: 0x003D1543 File Offset: 0x003CF743
 	public IEnumerable<TValue> Values
 	{
 		get
@@ -45,7 +45,7 @@ public sealed class OneToManyDictionary<TKey, TValue>
 		}
 	}
 
-	// Token: 0x0600A29C RID: 41628 RVA: 0x003CC210 File Offset: 0x003CA410
+	// Token: 0x0600A399 RID: 41881 RVA: 0x003D1554 File Offset: 0x003CF754
 	public void Add(TKey key, TValue value)
 	{
 		OneToManyDictionary<TKey, TValue>.Entry<TKey> entry = new OneToManyDictionary<TKey, TValue>.Entry<TKey>(key);
@@ -63,20 +63,20 @@ public sealed class OneToManyDictionary<TKey, TValue>
 		this.m_valueToKey.Add(entry2, entry);
 	}
 
-	// Token: 0x0600A29D RID: 41629 RVA: 0x003CC281 File Offset: 0x003CA481
+	// Token: 0x0600A39A RID: 41882 RVA: 0x003D15C5 File Offset: 0x003CF7C5
 	public bool ContainsKey(TKey key)
 	{
 		return this.m_keyToValues.ContainsKey(new OneToManyDictionary<TKey, TValue>.Entry<TKey>(key));
 	}
 
-	// Token: 0x0600A29E RID: 41630 RVA: 0x003CC294 File Offset: 0x003CA494
+	// Token: 0x0600A39B RID: 41883 RVA: 0x003D15D8 File Offset: 0x003CF7D8
 	public bool ContainsValue(TValue value)
 	{
 		return this.m_valueToKey.ContainsKey(new OneToManyDictionary<TKey, TValue>.Entry<TValue>(value));
 	}
 
-	// Token: 0x17001305 RID: 4869
-	// (get) Token: 0x0600A29F RID: 41631 RVA: 0x003CC2A7 File Offset: 0x003CA4A7
+	// Token: 0x1700133E RID: 4926
+	// (get) Token: 0x0600A39C RID: 41884 RVA: 0x003D15EB File Offset: 0x003CF7EB
 	public int CountKeys
 	{
 		get
@@ -85,8 +85,8 @@ public sealed class OneToManyDictionary<TKey, TValue>
 		}
 	}
 
-	// Token: 0x17001306 RID: 4870
-	// (get) Token: 0x0600A2A0 RID: 41632 RVA: 0x003CC2B4 File Offset: 0x003CA4B4
+	// Token: 0x1700133F RID: 4927
+	// (get) Token: 0x0600A39D RID: 41885 RVA: 0x003D15F8 File Offset: 0x003CF7F8
 	public int CountValues
 	{
 		get
@@ -95,7 +95,7 @@ public sealed class OneToManyDictionary<TKey, TValue>
 		}
 	}
 
-	// Token: 0x0600A2A1 RID: 41633 RVA: 0x003CC2C4 File Offset: 0x003CA4C4
+	// Token: 0x0600A39E RID: 41886 RVA: 0x003D1608 File Offset: 0x003CF808
 	public bool TryGetByKey(TKey key, out IReadOnlyCollection<TValue> values)
 	{
 		HashSet<OneToManyDictionary<TKey, TValue>.Entry<TValue>> hashSet;
@@ -108,7 +108,7 @@ public sealed class OneToManyDictionary<TKey, TValue>
 		return true;
 	}
 
-	// Token: 0x0600A2A2 RID: 41634 RVA: 0x003CC2F4 File Offset: 0x003CA4F4
+	// Token: 0x0600A39F RID: 41887 RVA: 0x003D1638 File Offset: 0x003CF838
 	public int TryGetByKey(TKey key, ICollection<TValue> valuesOut)
 	{
 		HashSet<OneToManyDictionary<TKey, TValue>.Entry<TValue>> hashSet;
@@ -125,7 +125,7 @@ public sealed class OneToManyDictionary<TKey, TValue>
 		return num;
 	}
 
-	// Token: 0x0600A2A3 RID: 41635 RVA: 0x003CC368 File Offset: 0x003CA568
+	// Token: 0x0600A3A0 RID: 41888 RVA: 0x003D16AC File Offset: 0x003CF8AC
 	public unsafe int TryGetByKey(TKey key, Span<TValue> valuesOut)
 	{
 		HashSet<OneToManyDictionary<TKey, TValue>.Entry<TValue>> hashSet;
@@ -146,7 +146,7 @@ public sealed class OneToManyDictionary<TKey, TValue>
 		return num;
 	}
 
-	// Token: 0x0600A2A4 RID: 41636 RVA: 0x003CC3EC File Offset: 0x003CA5EC
+	// Token: 0x0600A3A1 RID: 41889 RVA: 0x003D1730 File Offset: 0x003CF930
 	public bool TryGetByValue(TValue value, out TKey key)
 	{
 		OneToManyDictionary<TKey, TValue>.Entry<TKey> entry;
@@ -159,7 +159,7 @@ public sealed class OneToManyDictionary<TKey, TValue>
 		return false;
 	}
 
-	// Token: 0x0600A2A5 RID: 41637 RVA: 0x003CC424 File Offset: 0x003CA624
+	// Token: 0x0600A3A2 RID: 41890 RVA: 0x003D1768 File Offset: 0x003CF968
 	public bool RemoveByKey(TKey key)
 	{
 		OneToManyDictionary<TKey, TValue>.Entry<TKey> entry = new OneToManyDictionary<TKey, TValue>.Entry<TKey>(key);
@@ -176,7 +176,7 @@ public sealed class OneToManyDictionary<TKey, TValue>
 		return true;
 	}
 
-	// Token: 0x0600A2A6 RID: 41638 RVA: 0x003CC4A0 File Offset: 0x003CA6A0
+	// Token: 0x0600A3A3 RID: 41891 RVA: 0x003D17E4 File Offset: 0x003CF9E4
 	public bool RemoveByValue(TValue value)
 	{
 		OneToManyDictionary<TKey, TValue>.Entry<TValue> entry = new OneToManyDictionary<TKey, TValue>.Entry<TValue>(value);
@@ -199,39 +199,39 @@ public sealed class OneToManyDictionary<TKey, TValue>
 		return true;
 	}
 
-	// Token: 0x0600A2A7 RID: 41639 RVA: 0x003CC503 File Offset: 0x003CA703
+	// Token: 0x0600A3A4 RID: 41892 RVA: 0x003D1847 File Offset: 0x003CFA47
 	public void Clear()
 	{
 		this.m_keyToValues.Clear();
 		this.m_valueToKey.Clear();
 	}
 
-	// Token: 0x040079AF RID: 31151
+	// Token: 0x04007A88 RID: 31368
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<OneToManyDictionary<TKey, TValue>.Entry<TKey>, HashSet<OneToManyDictionary<TKey, TValue>.Entry<TValue>>> m_keyToValues;
 
-	// Token: 0x040079B0 RID: 31152
+	// Token: 0x04007A89 RID: 31369
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<OneToManyDictionary<TKey, TValue>.Entry<TValue>, OneToManyDictionary<TKey, TValue>.Entry<TKey>> m_valueToKey;
 
-	// Token: 0x02001444 RID: 5188
+	// Token: 0x0200145F RID: 5215
 	[PublicizedFrom(EAccessModifier.Private)]
 	public sealed class Entry<T>
 	{
-		// Token: 0x0600A2A8 RID: 41640 RVA: 0x003CC51B File Offset: 0x003CA71B
+		// Token: 0x0600A3A5 RID: 41893 RVA: 0x003D185F File Offset: 0x003CFA5F
 		public Entry(T value)
 		{
 			this.Value = value;
 			this.stableHash = (OneToManyDictionary<TKey, TValue>.Entry<T>.s_isRefType ? ((value == null) ? 0 : RuntimeHelpers.GetHashCode(value)) : EqualityComparer<T>.Default.GetHashCode(value));
 		}
 
-		// Token: 0x0600A2A9 RID: 41641 RVA: 0x003CC55A File Offset: 0x003CA75A
+		// Token: 0x0600A3A6 RID: 41894 RVA: 0x003D189E File Offset: 0x003CFA9E
 		public override int GetHashCode()
 		{
 			return this.stableHash;
 		}
 
-		// Token: 0x0600A2AA RID: 41642 RVA: 0x003CC564 File Offset: 0x003CA764
+		// Token: 0x0600A3A7 RID: 41895 RVA: 0x003D18A8 File Offset: 0x003CFAA8
 		public override bool Equals(object obj)
 		{
 			OneToManyDictionary<TKey, TValue>.Entry<T> entry = obj as OneToManyDictionary<TKey, TValue>.Entry<T>;
@@ -246,30 +246,30 @@ public sealed class OneToManyDictionary<TKey, TValue>
 			return EqualityComparer<T>.Default.Equals(this.Value, entry.Value);
 		}
 
-		// Token: 0x040079B1 RID: 31153
+		// Token: 0x04007A8A RID: 31370
 		public readonly T Value;
 
-		// Token: 0x040079B2 RID: 31154
+		// Token: 0x04007A8B RID: 31371
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly int stableHash;
 
-		// Token: 0x040079B3 RID: 31155
+		// Token: 0x04007A8C RID: 31372
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly bool s_isRefType = !typeof(T).IsValueType;
 	}
 
-	// Token: 0x02001445 RID: 5189
+	// Token: 0x02001460 RID: 5216
 	[PublicizedFrom(EAccessModifier.Private)]
 	public sealed class ValuesView : IReadOnlyCollection<TValue>, IEnumerable<TValue>, IEnumerable
 	{
-		// Token: 0x0600A2AC RID: 41644 RVA: 0x003CC5CC File Offset: 0x003CA7CC
+		// Token: 0x0600A3A9 RID: 41897 RVA: 0x003D1910 File Offset: 0x003CFB10
 		public ValuesView(HashSet<OneToManyDictionary<TKey, TValue>.Entry<TValue>> set)
 		{
 			this.m_set = set;
 		}
 
-		// Token: 0x17001307 RID: 4871
-		// (get) Token: 0x0600A2AD RID: 41645 RVA: 0x003CC5DB File Offset: 0x003CA7DB
+		// Token: 0x17001340 RID: 4928
+		// (get) Token: 0x0600A3AA RID: 41898 RVA: 0x003D191F File Offset: 0x003CFB1F
 		public int Count
 		{
 			get
@@ -278,7 +278,7 @@ public sealed class OneToManyDictionary<TKey, TValue>
 			}
 		}
 
-		// Token: 0x0600A2AE RID: 41646 RVA: 0x003CC5E8 File Offset: 0x003CA7E8
+		// Token: 0x0600A3AB RID: 41899 RVA: 0x003D192C File Offset: 0x003CFB2C
 		public IEnumerator<TValue> GetEnumerator()
 		{
 			foreach (OneToManyDictionary<TKey, TValue>.Entry<TValue> entry in this.m_set)
@@ -290,14 +290,14 @@ public sealed class OneToManyDictionary<TKey, TValue>
 			yield break;
 		}
 
-		// Token: 0x0600A2AF RID: 41647 RVA: 0x003CC5F7 File Offset: 0x003CA7F7
+		// Token: 0x0600A3AC RID: 41900 RVA: 0x003D193B File Offset: 0x003CFB3B
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator System.Collections.IEnumerable.GetEnumerator()
 		{
 			return this.GetEnumerator();
 		}
 
-		// Token: 0x040079B4 RID: 31156
+		// Token: 0x04007A8D RID: 31373
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly HashSet<OneToManyDictionary<TKey, TValue>.Entry<TValue>> m_set;
 	}

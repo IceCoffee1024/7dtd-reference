@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000671 RID: 1649
+// Token: 0x0200067A RID: 1658
 [Preserve]
 public class IsAlly : TargetedCompareRequirementBase
 {
-	// Token: 0x060034A8 RID: 13480 RVA: 0x0015D664 File Offset: 0x0015B864
+	// Token: 0x060034FB RID: 13563 RVA: 0x0015F7D4 File Offset: 0x0015D9D4
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))

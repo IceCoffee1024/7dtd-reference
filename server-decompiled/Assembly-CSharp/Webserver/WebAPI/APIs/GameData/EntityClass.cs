@@ -6,12 +6,12 @@ using Utf8Json;
 
 namespace Webserver.WebAPI.APIs.GameData
 {
-	// Token: 0x02001AC3 RID: 6851
+	// Token: 0x02001AEA RID: 6890
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public class EntityClass : AbsRestApi
 	{
-		// Token: 0x0600CDCE RID: 52686 RVA: 0x004B17E4 File Offset: 0x004AF9E4
+		// Token: 0x0600CF57 RID: 53079 RVA: 0x004B7BD8 File Offset: 0x004B5DD8
 		public EntityClass(Web _parent)
 			: base(null)
 		{
@@ -51,7 +51,7 @@ namespace Webserver.WebAPI.APIs.GameData
 			this.allClassesSerialized = jsonWriter.ToUtf8ByteArray();
 		}
 
-		// Token: 0x0600CDCF RID: 52687 RVA: 0x004B1904 File Offset: 0x004AFB04
+		// Token: 0x0600CF58 RID: 53080 RVA: 0x004B7CF8 File Offset: 0x004B5EF8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void HandleRestGet(RequestContext _context)
 		{
@@ -61,29 +61,29 @@ namespace Webserver.WebAPI.APIs.GameData
 			AbsRestApi.SendEnvelopedResult(_context, ref jsonWriter, HttpStatusCode.OK, null, null, null);
 		}
 
-		// Token: 0x0600CDD0 RID: 52688 RVA: 0x004AEB65 File Offset: 0x004ACD65
+		// Token: 0x0600CF59 RID: 53081 RVA: 0x004B4F59 File Offset: 0x004B3159
 		public override int DefaultPermissionLevel()
 		{
 			return 2000;
 		}
 
-		// Token: 0x04009C33 RID: 39987
+		// Token: 0x04009D64 RID: 40292
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyName = JsonWriter.GetEncodedPropertyNameWithBeginObject("name");
 
-		// Token: 0x04009C34 RID: 39988
+		// Token: 0x04009D65 RID: 40293
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyId = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("id");
 
-		// Token: 0x04009C35 RID: 39989
+		// Token: 0x04009D66 RID: 40294
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyCommandIndex = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("commandId");
 
-		// Token: 0x04009C36 RID: 39990
+		// Token: 0x04009D67 RID: 40295
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyManualSpawnType = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("manualSpawnType");
 
-		// Token: 0x04009C37 RID: 39991
+		// Token: 0x04009D68 RID: 40296
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly byte[] allClassesSerialized;
 	}

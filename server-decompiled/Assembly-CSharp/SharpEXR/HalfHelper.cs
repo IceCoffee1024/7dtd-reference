@@ -3,12 +3,12 @@ using System.Runtime.InteropServices;
 
 namespace SharpEXR
 {
-	// Token: 0x020016AB RID: 5803
+	// Token: 0x020016D1 RID: 5841
 	[ComVisible(false)]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static class HalfHelper
 	{
-		// Token: 0x0600B568 RID: 46440 RVA: 0x004381F0 File Offset: 0x004363F0
+		// Token: 0x0600B6EB RID: 46827 RVA: 0x0043DF68 File Offset: 0x0043C168
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static uint ConvertMantissa(int i)
 		{
@@ -24,7 +24,7 @@ namespace SharpEXR
 			return num | num2;
 		}
 
-		// Token: 0x0600B569 RID: 46441 RVA: 0x00438230 File Offset: 0x00436430
+		// Token: 0x0600B6EC RID: 46828 RVA: 0x0043DFA8 File Offset: 0x0043C1A8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static uint[] GenerateMantissaTable()
 		{
@@ -41,7 +41,7 @@ namespace SharpEXR
 			return array;
 		}
 
-		// Token: 0x0600B56A RID: 46442 RVA: 0x00438290 File Offset: 0x00436490
+		// Token: 0x0600B6ED RID: 46829 RVA: 0x0043E008 File Offset: 0x0043C208
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static uint[] GenerateExponentTable()
 		{
@@ -61,7 +61,7 @@ namespace SharpEXR
 			return array;
 		}
 
-		// Token: 0x0600B56B RID: 46443 RVA: 0x004382FC File Offset: 0x004364FC
+		// Token: 0x0600B6EE RID: 46830 RVA: 0x0043E074 File Offset: 0x0043C274
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static ushort[] GenerateOffsetTable()
 		{
@@ -79,7 +79,7 @@ namespace SharpEXR
 			return array;
 		}
 
-		// Token: 0x0600B56C RID: 46444 RVA: 0x00438348 File Offset: 0x00436548
+		// Token: 0x0600B6EF RID: 46831 RVA: 0x0043E0C0 File Offset: 0x0043C2C0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static ushort[] GenerateBaseTable()
 		{
@@ -116,7 +116,7 @@ namespace SharpEXR
 			return array;
 		}
 
-		// Token: 0x0600B56D RID: 46445 RVA: 0x00438434 File Offset: 0x00436634
+		// Token: 0x0600B6F0 RID: 46832 RVA: 0x0043E1AC File Offset: 0x0043C3AC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static sbyte[] GenerateShiftTable()
 		{
@@ -153,73 +153,73 @@ namespace SharpEXR
 			return array;
 		}
 
-		// Token: 0x0600B56E RID: 46446 RVA: 0x004384E4 File Offset: 0x004366E4
+		// Token: 0x0600B6F1 RID: 46833 RVA: 0x0043E25C File Offset: 0x0043C45C
 		public unsafe static float HalfToSingle(Half half)
 		{
 			uint num = HalfHelper.mantissaTable[(int)(HalfHelper.offsetTable[half.value >> 10] + (half.value & 1023))] + HalfHelper.exponentTable[half.value >> 10];
 			return *(float*)(&num);
 		}
 
-		// Token: 0x0600B56F RID: 46447 RVA: 0x00438528 File Offset: 0x00436728
+		// Token: 0x0600B6F2 RID: 46834 RVA: 0x0043E2A0 File Offset: 0x0043C4A0
 		public unsafe static Half SingleToHalf(float single)
 		{
 			uint num = *(uint*)(&single);
 			return Half.ToHalf((ushort)((uint)HalfHelper.baseTable[(int)((num >> 23) & 511U)] + ((num & 8388607U) >> (int)HalfHelper.shiftTable[(int)(num >> 23)])));
 		}
 
-		// Token: 0x0600B570 RID: 46448 RVA: 0x00438566 File Offset: 0x00436766
+		// Token: 0x0600B6F3 RID: 46835 RVA: 0x0043E2DE File Offset: 0x0043C4DE
 		public static Half Negate(Half half)
 		{
 			return Half.ToHalf(half.value ^ 32768);
 		}
 
-		// Token: 0x0600B571 RID: 46449 RVA: 0x0043857A File Offset: 0x0043677A
+		// Token: 0x0600B6F4 RID: 46836 RVA: 0x0043E2F2 File Offset: 0x0043C4F2
 		public static Half Abs(Half half)
 		{
 			return Half.ToHalf(half.value & 32767);
 		}
 
-		// Token: 0x0600B572 RID: 46450 RVA: 0x0043858E File Offset: 0x0043678E
+		// Token: 0x0600B6F5 RID: 46837 RVA: 0x0043E306 File Offset: 0x0043C506
 		public static bool IsNaN(Half half)
 		{
 			return (half.value & 32767) > 31744;
 		}
 
-		// Token: 0x0600B573 RID: 46451 RVA: 0x004385A3 File Offset: 0x004367A3
+		// Token: 0x0600B6F6 RID: 46838 RVA: 0x0043E31B File Offset: 0x0043C51B
 		public static bool IsInfinity(Half half)
 		{
 			return (half.value & 32767) == 31744;
 		}
 
-		// Token: 0x0600B574 RID: 46452 RVA: 0x004385B8 File Offset: 0x004367B8
+		// Token: 0x0600B6F7 RID: 46839 RVA: 0x0043E330 File Offset: 0x0043C530
 		public static bool IsPositiveInfinity(Half half)
 		{
 			return half.value == 31744;
 		}
 
-		// Token: 0x0600B575 RID: 46453 RVA: 0x004385C7 File Offset: 0x004367C7
+		// Token: 0x0600B6F8 RID: 46840 RVA: 0x0043E33F File Offset: 0x0043C53F
 		public static bool IsNegativeInfinity(Half half)
 		{
 			return half.value == 64512;
 		}
 
-		// Token: 0x04008768 RID: 34664
+		// Token: 0x04008884 RID: 34948
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static uint[] mantissaTable = HalfHelper.GenerateMantissaTable();
 
-		// Token: 0x04008769 RID: 34665
+		// Token: 0x04008885 RID: 34949
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static uint[] exponentTable = HalfHelper.GenerateExponentTable();
 
-		// Token: 0x0400876A RID: 34666
+		// Token: 0x04008886 RID: 34950
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static ushort[] offsetTable = HalfHelper.GenerateOffsetTable();
 
-		// Token: 0x0400876B RID: 34667
+		// Token: 0x04008887 RID: 34951
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static ushort[] baseTable = HalfHelper.GenerateBaseTable();
 
-		// Token: 0x0400876C RID: 34668
+		// Token: 0x04008888 RID: 34952
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static sbyte[] shiftTable = HalfHelper.GenerateShiftTable();
 	}

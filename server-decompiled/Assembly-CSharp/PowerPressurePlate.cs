@@ -1,11 +1,11 @@
 ﻿using System;
 using Audio;
 
-// Token: 0x0200090E RID: 2318
+// Token: 0x0200091A RID: 2330
 public class PowerPressurePlate : PowerTrigger
 {
-	// Token: 0x17000725 RID: 1829
-	// (get) Token: 0x0600432C RID: 17196 RVA: 0x00080B22 File Offset: 0x0007ED22
+	// Token: 0x17000731 RID: 1841
+	// (get) Token: 0x06004391 RID: 17297 RVA: 0x000811D6 File Offset: 0x0007F3D6
 	public override PowerItem.PowerItemTypes PowerItemType
 	{
 		get
@@ -14,9 +14,9 @@ public class PowerPressurePlate : PowerTrigger
 		}
 	}
 
-	// Token: 0x17000726 RID: 1830
-	// (get) Token: 0x0600432D RID: 17197 RVA: 0x001A2A8A File Offset: 0x001A0C8A
-	// (set) Token: 0x0600432E RID: 17198 RVA: 0x001A2A92 File Offset: 0x001A0C92
+	// Token: 0x17000732 RID: 1842
+	// (get) Token: 0x06004392 RID: 17298 RVA: 0x001A4B62 File Offset: 0x001A2D62
+	// (set) Token: 0x06004393 RID: 17299 RVA: 0x001A4B6A File Offset: 0x001A2D6A
 	public bool Pressed
 	{
 		get
@@ -34,7 +34,7 @@ public class PowerPressurePlate : PowerTrigger
 		}
 	}
 
-	// Token: 0x0600432F RID: 17199 RVA: 0x001A2AD4 File Offset: 0x001A0CD4
+	// Token: 0x06004394 RID: 17300 RVA: 0x001A4BAC File Offset: 0x001A2DAC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CheckForActiveChange()
 	{
@@ -52,7 +52,7 @@ public class PowerPressurePlate : PowerTrigger
 		}
 	}
 
-	// Token: 0x06004330 RID: 17200 RVA: 0x001A2B3C File Offset: 0x001A0D3C
+	// Token: 0x06004395 RID: 17301 RVA: 0x001A4C14 File Offset: 0x001A2E14
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void HandleSoundDisable()
 	{
@@ -61,11 +61,11 @@ public class PowerPressurePlate : PowerTrigger
 		this.pressed = false;
 	}
 
-	// Token: 0x04003620 RID: 13856
+	// Token: 0x040036A1 RID: 13985
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool pressed;
 
-	// Token: 0x04003621 RID: 13857
+	// Token: 0x040036A2 RID: 13986
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool lastPressed;
 }

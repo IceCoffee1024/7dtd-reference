@@ -2,10 +2,10 @@
 using System.IO;
 using UnityEngine;
 
-// Token: 0x02000B73 RID: 2931
+// Token: 0x02000B85 RID: 2949
 public class PropChangeInfo
 {
-	// Token: 0x060058CA RID: 22730 RVA: 0x002209CA File Offset: 0x0021EBCA
+	// Token: 0x06005952 RID: 22866 RVA: 0x002236E6 File Offset: 0x002218E6
 	public PropChangeInfo(Vector2i chunkPos, int? propId, Vector3? position, Quaternion? rotation, Vector3? scale, BlockValue? blockValue)
 	{
 		this.ChunkPos = chunkPos;
@@ -16,7 +16,7 @@ public class PropChangeInfo
 		this.BlockValue = blockValue;
 	}
 
-	// Token: 0x060058CB RID: 22731 RVA: 0x00220A00 File Offset: 0x0021EC00
+	// Token: 0x06005953 RID: 22867 RVA: 0x0022371C File Offset: 0x0022191C
 	public static PropChangeInfo Read(BinaryReader br)
 	{
 		PropChangeInfo.Builder builder = new PropChangeInfo.Builder(br.ReadInt32(), br.ReadInt32());
@@ -48,7 +48,7 @@ public class PropChangeInfo
 		return builder.Build();
 	}
 
-	// Token: 0x060058CC RID: 22732 RVA: 0x00220AA8 File Offset: 0x0021ECA8
+	// Token: 0x06005954 RID: 22868 RVA: 0x002237C4 File Offset: 0x002219C4
 	public void Write(BinaryWriter bw)
 	{
 		bw.Write(this.ChunkPos.x);
@@ -78,134 +78,134 @@ public class PropChangeInfo
 		}
 	}
 
-	// Token: 0x060058CD RID: 22733 RVA: 0x00220BEC File Offset: 0x0021EDEC
+	// Token: 0x06005955 RID: 22869 RVA: 0x00223908 File Offset: 0x00221B08
 	public override string ToString()
 	{
 		return string.Format("ChunkId={0}, PropId={1}, Position={2}, Rotation={3}, Scale={4}, BlockValue={5}", new object[] { this.ChunkPos, this.PropId, this.Position, this.Rotation, this.Scale, this.BlockValue });
 	}
 
-	// Token: 0x040044BD RID: 17597
+	// Token: 0x04004558 RID: 17752
 	public static readonly PropChangeInfo Empty = new PropChangeInfo.Builder(Vector2i.zero).Build();
 
-	// Token: 0x040044BE RID: 17598
+	// Token: 0x04004559 RID: 17753
 	public readonly Vector2i ChunkPos;
 
-	// Token: 0x040044BF RID: 17599
+	// Token: 0x0400455A RID: 17754
 	public readonly int? PropId;
 
-	// Token: 0x040044C0 RID: 17600
+	// Token: 0x0400455B RID: 17755
 	public readonly Vector3? Position;
 
-	// Token: 0x040044C1 RID: 17601
+	// Token: 0x0400455C RID: 17756
 	public readonly Quaternion? Rotation;
 
-	// Token: 0x040044C2 RID: 17602
+	// Token: 0x0400455D RID: 17757
 	public readonly Vector3? Scale;
 
-	// Token: 0x040044C3 RID: 17603
+	// Token: 0x0400455E RID: 17758
 	public readonly BlockValue? BlockValue;
 
-	// Token: 0x02000B74 RID: 2932
+	// Token: 0x02000B86 RID: 2950
 	[Flags]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum Flags : byte
 	{
-		// Token: 0x040044C5 RID: 17605
+		// Token: 0x04004560 RID: 17760
 		HasPropId = 1,
-		// Token: 0x040044C6 RID: 17606
+		// Token: 0x04004561 RID: 17761
 		HasPosition = 2,
-		// Token: 0x040044C7 RID: 17607
+		// Token: 0x04004562 RID: 17762
 		HasRotation = 4,
-		// Token: 0x040044C8 RID: 17608
+		// Token: 0x04004563 RID: 17763
 		HasScale = 8,
-		// Token: 0x040044C9 RID: 17609
+		// Token: 0x04004564 RID: 17764
 		HasBlockValue = 16
 	}
 
-	// Token: 0x02000B75 RID: 2933
+	// Token: 0x02000B87 RID: 2951
 	public class Builder
 	{
-		// Token: 0x060058CF RID: 22735 RVA: 0x00220C73 File Offset: 0x0021EE73
+		// Token: 0x06005957 RID: 22871 RVA: 0x0022398F File Offset: 0x00221B8F
 		public Builder(int chunkX, int chunkZ)
 			: this(new Vector2i(chunkX, chunkZ))
 		{
 		}
 
-		// Token: 0x060058D0 RID: 22736 RVA: 0x00220C82 File Offset: 0x0021EE82
+		// Token: 0x06005958 RID: 22872 RVA: 0x0022399E File Offset: 0x00221B9E
 		public Builder(Vector2i chunkPos)
 		{
 			this.ChunkPos = chunkPos;
 		}
 
-		// Token: 0x060058D1 RID: 22737 RVA: 0x00220C91 File Offset: 0x0021EE91
+		// Token: 0x06005959 RID: 22873 RVA: 0x002239AD File Offset: 0x00221BAD
 		public Builder(PropRef propRef)
 		{
 			this.ChunkPos = propRef.ChunkPos;
 			this.PropId = new int?(propRef.PropId);
 		}
 
-		// Token: 0x060058D2 RID: 22738 RVA: 0x00220CB6 File Offset: 0x0021EEB6
+		// Token: 0x0600595A RID: 22874 RVA: 0x002239D2 File Offset: 0x00221BD2
 		public PropChangeInfo Build()
 		{
 			return new PropChangeInfo(this.ChunkPos, this.PropId, this.Position, this.Rotation, this.Scale, this.BlockValue);
 		}
 
-		// Token: 0x060058D3 RID: 22739 RVA: 0x00220CE1 File Offset: 0x0021EEE1
+		// Token: 0x0600595B RID: 22875 RVA: 0x002239FD File Offset: 0x00221BFD
 		public PropChangeInfo.Builder SetPropId(int propId)
 		{
 			this.PropId = new int?(propId);
 			return this;
 		}
 
-		// Token: 0x060058D4 RID: 22740 RVA: 0x00220CF0 File Offset: 0x0021EEF0
+		// Token: 0x0600595C RID: 22876 RVA: 0x00223A0C File Offset: 0x00221C0C
 		public PropChangeInfo.Builder SetPosition(Vector3 position)
 		{
 			this.Position = new Vector3?(position);
 			return this;
 		}
 
-		// Token: 0x060058D5 RID: 22741 RVA: 0x00220CFF File Offset: 0x0021EEFF
+		// Token: 0x0600595D RID: 22877 RVA: 0x00223A1B File Offset: 0x00221C1B
 		public PropChangeInfo.Builder SetRotation(Quaternion rotation)
 		{
 			this.Rotation = new Quaternion?(rotation);
 			return this;
 		}
 
-		// Token: 0x060058D6 RID: 22742 RVA: 0x00220D0E File Offset: 0x0021EF0E
+		// Token: 0x0600595E RID: 22878 RVA: 0x00223A2A File Offset: 0x00221C2A
 		public PropChangeInfo.Builder SetScale(Vector3 scale)
 		{
 			this.Scale = new Vector3?(scale);
 			return this;
 		}
 
-		// Token: 0x060058D7 RID: 22743 RVA: 0x00220D1D File Offset: 0x0021EF1D
+		// Token: 0x0600595F RID: 22879 RVA: 0x00223A39 File Offset: 0x00221C39
 		public PropChangeInfo.Builder SetBlockValue(BlockValue blockValue)
 		{
 			this.BlockValue = new BlockValue?(blockValue);
 			return this;
 		}
 
-		// Token: 0x040044CA RID: 17610
+		// Token: 0x04004565 RID: 17765
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Vector2i ChunkPos;
 
-		// Token: 0x040044CB RID: 17611
+		// Token: 0x04004566 RID: 17766
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int? PropId;
 
-		// Token: 0x040044CC RID: 17612
+		// Token: 0x04004567 RID: 17767
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector3? Position;
 
-		// Token: 0x040044CD RID: 17613
+		// Token: 0x04004568 RID: 17768
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Quaternion? Rotation;
 
-		// Token: 0x040044CE RID: 17614
+		// Token: 0x04004569 RID: 17769
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector3? Scale;
 
-		// Token: 0x040044CF RID: 17615
+		// Token: 0x0400456A RID: 17770
 		[PublicizedFrom(EAccessModifier.Private)]
 		public BlockValue? BlockValue;
 	}

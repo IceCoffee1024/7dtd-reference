@@ -3,22 +3,22 @@ using System.Collections.Generic;
 
 namespace Twitch
 {
-	// Token: 0x02001844 RID: 6212
+	// Token: 0x0200186A RID: 6250
 	public class TwitchVoteType
 	{
-		// Token: 0x0600BF7A RID: 49018 RVA: 0x004714A2 File Offset: 0x0046F6A2
+		// Token: 0x0600C0FF RID: 49407 RVA: 0x0047723E File Offset: 0x0047543E
 		public bool IsInPreset(string preset)
 		{
 			return this.PresetNames == null || this.PresetNames.Contains(preset);
 		}
 
-		// Token: 0x0600BF7B RID: 49019 RVA: 0x004714BA File Offset: 0x0046F6BA
+		// Token: 0x0600C100 RID: 49408 RVA: 0x00477256 File Offset: 0x00475456
 		public bool CanUse()
 		{
 			return this.Enabled && (this.MaxTimesPerDay == -1 || this.MaxTimesPerDay > this.CurrentDayCount);
 		}
 
-		// Token: 0x0600BF7C RID: 49020 RVA: 0x004714E0 File Offset: 0x0046F6E0
+		// Token: 0x0600C101 RID: 49409 RVA: 0x0047727C File Offset: 0x0047547C
 		public virtual void ParseProperties(DynamicProperties properties)
 		{
 			properties.ParseString(TwitchVoteType.PropTitle, ref this.Title);
@@ -50,130 +50,130 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x040090B5 RID: 37045
+		// Token: 0x040091D1 RID: 37329
 		public static string PropTitle = "title";
 
-		// Token: 0x040090B6 RID: 37046
+		// Token: 0x040091D2 RID: 37330
 		public static string PropTitleKey = "title_key";
 
-		// Token: 0x040090B7 RID: 37047
+		// Token: 0x040091D3 RID: 37331
 		public static string PropSpawnBlocked = "spawn_blocked";
 
-		// Token: 0x040090B8 RID: 37048
+		// Token: 0x040091D4 RID: 37332
 		public static string PropExcludeTimeIndex = "exclude_time_index";
 
-		// Token: 0x040090B9 RID: 37049
+		// Token: 0x040091D5 RID: 37333
 		public static string PropMaxTimesPerDay = "max_times_per_day";
 
-		// Token: 0x040090BA RID: 37050
+		// Token: 0x040091D6 RID: 37334
 		public static string PropAllowedStartHour = "allowed_start_hour";
 
-		// Token: 0x040090BB RID: 37051
+		// Token: 0x040091D7 RID: 37335
 		public static string PropAllowedEndHour = "allowed_end_hour";
 
-		// Token: 0x040090BC RID: 37052
+		// Token: 0x040091D8 RID: 37336
 		public static string PropBloodMoonDay = "blood_moon_day";
 
-		// Token: 0x040090BD RID: 37053
+		// Token: 0x040091D9 RID: 37337
 		public static string PropBloodMoonAllowed = "blood_moon_allowed";
 
-		// Token: 0x040090BE RID: 37054
+		// Token: 0x040091DA RID: 37338
 		public static string PropGuaranteedGroups = "guaranteed_group";
 
-		// Token: 0x040090BF RID: 37055
+		// Token: 0x040091DB RID: 37339
 		public static string PropCooldownOnEnd = "cooldown_on_end";
 
-		// Token: 0x040090C0 RID: 37056
+		// Token: 0x040091DC RID: 37340
 		public static string PropUseMystery = "use_mystery";
 
-		// Token: 0x040090C1 RID: 37057
+		// Token: 0x040091DD RID: 37341
 		public static string PropActionLockout = "action_lockout";
 
-		// Token: 0x040090C2 RID: 37058
+		// Token: 0x040091DE RID: 37342
 		public static string PropGroup = "group";
 
-		// Token: 0x040090C3 RID: 37059
+		// Token: 0x040091DF RID: 37343
 		public static string PropEnabled = "enabled";
 
-		// Token: 0x040090C4 RID: 37060
+		// Token: 0x040091E0 RID: 37344
 		public static string PropVoteChoiceCount = "vote_choice_count";
 
-		// Token: 0x040090C5 RID: 37061
+		// Token: 0x040091E1 RID: 37345
 		public static string PropAllowedWithActions = "allowed_with_actions";
 
-		// Token: 0x040090C6 RID: 37062
+		// Token: 0x040091E2 RID: 37346
 		public static string PropIsBoss = "is_boss";
 
-		// Token: 0x040090C7 RID: 37063
+		// Token: 0x040091E3 RID: 37347
 		public static string PropManualStart = "manual_start";
 
-		// Token: 0x040090C8 RID: 37064
+		// Token: 0x040091E4 RID: 37348
 		public static string PropIcon = "icon";
 
-		// Token: 0x040090C9 RID: 37065
+		// Token: 0x040091E5 RID: 37349
 		public static string PropPresets = "presets";
 
-		// Token: 0x040090CA RID: 37066
+		// Token: 0x040091E6 RID: 37350
 		public string Name;
 
-		// Token: 0x040090CB RID: 37067
+		// Token: 0x040091E7 RID: 37351
 		public string Title;
 
-		// Token: 0x040090CC RID: 37068
+		// Token: 0x040091E8 RID: 37352
 		public string Icon;
 
-		// Token: 0x040090CD RID: 37069
+		// Token: 0x040091E9 RID: 37353
 		public string Group;
 
-		// Token: 0x040090CE RID: 37070
+		// Token: 0x040091EA RID: 37354
 		public bool SpawnBlocked = true;
 
-		// Token: 0x040090CF RID: 37071
+		// Token: 0x040091EB RID: 37355
 		public bool BloodMoonDay = true;
 
-		// Token: 0x040090D0 RID: 37072
+		// Token: 0x040091EC RID: 37356
 		public bool BloodMoonAllowed = true;
 
-		// Token: 0x040090D1 RID: 37073
+		// Token: 0x040091ED RID: 37357
 		public bool CooldownOnEnd;
 
-		// Token: 0x040090D2 RID: 37074
+		// Token: 0x040091EE RID: 37358
 		public bool UseMystery;
 
-		// Token: 0x040090D3 RID: 37075
+		// Token: 0x040091EF RID: 37359
 		public bool ActionLockout;
 
-		// Token: 0x040090D4 RID: 37076
+		// Token: 0x040091F0 RID: 37360
 		public bool AllowedWithActions = true;
 
-		// Token: 0x040090D5 RID: 37077
+		// Token: 0x040091F1 RID: 37361
 		public int MaxTimesPerDay = -1;
 
-		// Token: 0x040090D6 RID: 37078
+		// Token: 0x040091F2 RID: 37362
 		public int AllowedStartHour;
 
-		// Token: 0x040090D7 RID: 37079
+		// Token: 0x040091F3 RID: 37363
 		public int AllowedEndHour = 24;
 
-		// Token: 0x040090D8 RID: 37080
+		// Token: 0x040091F4 RID: 37364
 		public int VoteChoiceCount = 3;
 
-		// Token: 0x040090D9 RID: 37081
+		// Token: 0x040091F5 RID: 37365
 		public int CurrentDayCount;
 
-		// Token: 0x040090DA RID: 37082
+		// Token: 0x040091F6 RID: 37366
 		public string GuaranteedGroup = "";
 
-		// Token: 0x040090DB RID: 37083
+		// Token: 0x040091F7 RID: 37367
 		public bool Enabled = true;
 
-		// Token: 0x040090DC RID: 37084
+		// Token: 0x040091F8 RID: 37368
 		public bool ManualStart;
 
-		// Token: 0x040090DD RID: 37085
+		// Token: 0x040091F9 RID: 37369
 		public bool IsBoss;
 
-		// Token: 0x040090DE RID: 37086
+		// Token: 0x040091FA RID: 37370
 		public List<string> PresetNames;
 	}
 }

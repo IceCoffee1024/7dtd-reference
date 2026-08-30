@@ -2,32 +2,32 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Token: 0x020009E8 RID: 2536
+// Token: 0x020009F9 RID: 2553
 public class GameRandom : IMemoryPoolableObject
 {
-	// Token: 0x06004BA6 RID: 19366 RVA: 0x001D5B2C File Offset: 0x001D3D2C
+	// Token: 0x06004C2C RID: 19500 RVA: 0x001D8314 File Offset: 0x001D6514
 	public void SetSeed(int _seed)
 	{
 		this.InternalSetSeed(_seed);
 	}
 
-	// Token: 0x06004BA7 RID: 19367 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004C2D RID: 19501 RVA: 0x000027FC File Offset: 0x000009FC
 	public void SetLock()
 	{
 	}
 
-	// Token: 0x06004BA8 RID: 19368 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004C2E RID: 19502 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Cleanup()
 	{
 	}
 
-	// Token: 0x06004BA9 RID: 19369 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004C2F RID: 19503 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Reset()
 	{
 	}
 
-	// Token: 0x17000807 RID: 2055
-	// (get) Token: 0x06004BAA RID: 19370 RVA: 0x001D5B35 File Offset: 0x001D3D35
+	// Token: 0x17000819 RID: 2073
+	// (get) Token: 0x06004C30 RID: 19504 RVA: 0x001D831D File Offset: 0x001D651D
 	public double RandomDouble
 	{
 		get
@@ -36,8 +36,8 @@ public class GameRandom : IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x17000808 RID: 2056
-	// (get) Token: 0x06004BAB RID: 19371 RVA: 0x001D5B3D File Offset: 0x001D3D3D
+	// Token: 0x1700081A RID: 2074
+	// (get) Token: 0x06004C31 RID: 19505 RVA: 0x001D8325 File Offset: 0x001D6525
 	public float RandomFloat
 	{
 		get
@@ -46,8 +46,8 @@ public class GameRandom : IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x17000809 RID: 2057
-	// (get) Token: 0x06004BAC RID: 19372 RVA: 0x001D5B46 File Offset: 0x001D3D46
+	// Token: 0x1700081B RID: 2075
+	// (get) Token: 0x06004C32 RID: 19506 RVA: 0x001D832E File Offset: 0x001D652E
 	public int RandomInt
 	{
 		get
@@ -56,8 +56,8 @@ public class GameRandom : IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x1700080A RID: 2058
-	// (get) Token: 0x06004BAD RID: 19373 RVA: 0x001D5B50 File Offset: 0x001D3D50
+	// Token: 0x1700081C RID: 2076
+	// (get) Token: 0x06004C33 RID: 19507 RVA: 0x001D8338 File Offset: 0x001D6538
 	public Vector2 RandomInsideUnitCircle
 	{
 		get
@@ -67,8 +67,8 @@ public class GameRandom : IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x1700080B RID: 2059
-	// (get) Token: 0x06004BAE RID: 19374 RVA: 0x001D5B90 File Offset: 0x001D3D90
+	// Token: 0x1700081D RID: 2077
+	// (get) Token: 0x06004C34 RID: 19508 RVA: 0x001D8378 File Offset: 0x001D6578
 	public Vector2 RandomOnUnitCircle
 	{
 		get
@@ -78,8 +78,8 @@ public class GameRandom : IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x1700080C RID: 2060
-	// (get) Token: 0x06004BAF RID: 19375 RVA: 0x001D5BBC File Offset: 0x001D3DBC
+	// Token: 0x1700081E RID: 2078
+	// (get) Token: 0x06004C35 RID: 19509 RVA: 0x001D83A4 File Offset: 0x001D65A4
 	public Vector3 RandomOnUnitCircleXZ
 	{
 		get
@@ -89,8 +89,8 @@ public class GameRandom : IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x1700080D RID: 2061
-	// (get) Token: 0x06004BB0 RID: 19376 RVA: 0x001D5BF0 File Offset: 0x001D3DF0
+	// Token: 0x1700081F RID: 2079
+	// (get) Token: 0x06004C36 RID: 19510 RVA: 0x001D83D8 File Offset: 0x001D65D8
 	public Vector3 RandomInsideUnitSphere
 	{
 		get
@@ -99,8 +99,8 @@ public class GameRandom : IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x1700080E RID: 2062
-	// (get) Token: 0x06004BB1 RID: 19377 RVA: 0x001D5C50 File Offset: 0x001D3E50
+	// Token: 0x17000820 RID: 2080
+	// (get) Token: 0x06004C37 RID: 19511 RVA: 0x001D8438 File Offset: 0x001D6638
 	public Vector3 RandomOnUnitSphere
 	{
 		get
@@ -109,8 +109,8 @@ public class GameRandom : IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x1700080F RID: 2063
-	// (get) Token: 0x06004BB2 RID: 19378 RVA: 0x001D5CA0 File Offset: 0x001D3EA0
+	// Token: 0x17000821 RID: 2081
+	// (get) Token: 0x06004C38 RID: 19512 RVA: 0x001D8488 File Offset: 0x001D6688
 	public float RandomGaussian
 	{
 		get
@@ -129,38 +129,38 @@ public class GameRandom : IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x06004BB3 RID: 19379 RVA: 0x001D5D18 File Offset: 0x001D3F18
+	// Token: 0x06004C39 RID: 19513 RVA: 0x001D8500 File Offset: 0x001D6700
 	public float RandomRange(float _maxExclusive)
 	{
 		return (float)(this.NextDouble() * (double)_maxExclusive);
 	}
 
-	// Token: 0x06004BB4 RID: 19380 RVA: 0x001D5D24 File Offset: 0x001D3F24
+	// Token: 0x06004C3A RID: 19514 RVA: 0x001D850C File Offset: 0x001D670C
 	public float RandomRange(float _min, float _maxExclusive)
 	{
 		return (float)(this.NextDouble() * (double)(_maxExclusive - _min) + (double)_min);
 	}
 
-	// Token: 0x06004BB5 RID: 19381 RVA: 0x001D5D35 File Offset: 0x001D3F35
+	// Token: 0x06004C3B RID: 19515 RVA: 0x001D851D File Offset: 0x001D671D
 	public int RandomRange(int _maxExclusive)
 	{
 		return this.Next(_maxExclusive);
 	}
 
-	// Token: 0x06004BB6 RID: 19382 RVA: 0x001D5D3E File Offset: 0x001D3F3E
+	// Token: 0x06004C3C RID: 19516 RVA: 0x001D8526 File Offset: 0x001D6726
 	public int RandomRange(int _min, int _maxExclusive)
 	{
 		return this.Next(_maxExclusive - _min) + _min;
 	}
 
-	// Token: 0x06004BB7 RID: 19383 RVA: 0x001D5D4B File Offset: 0x001D3F4B
+	// Token: 0x06004C3D RID: 19517 RVA: 0x001D8533 File Offset: 0x001D6733
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void log(string _format, params object[] _values)
 	{
 		Log.Warning(string.Format("{0} GameRandom ", Time.time.ToCultureInvariantString()) + _format, _values);
 	}
 
-	// Token: 0x06004BB8 RID: 19384 RVA: 0x001D5D70 File Offset: 0x001D3F70
+	// Token: 0x06004C3E RID: 19518 RVA: 0x001D8558 File Offset: 0x001D6758
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InternalSetSeed(int Seed)
 	{
@@ -195,7 +195,7 @@ public class GameRandom : IMemoryPoolableObject
 		Seed = 1;
 	}
 
-	// Token: 0x06004BB9 RID: 19385 RVA: 0x001D5E5A File Offset: 0x001D405A
+	// Token: 0x06004C3F RID: 19519 RVA: 0x001D8642 File Offset: 0x001D6842
 	[PublicizedFrom(EAccessModifier.Private)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public double Sample()
@@ -203,7 +203,7 @@ public class GameRandom : IMemoryPoolableObject
 		return (double)this.InternalSample() * 4.656612875245797E-10;
 	}
 
-	// Token: 0x06004BBA RID: 19386 RVA: 0x001D5E70 File Offset: 0x001D4070
+	// Token: 0x06004C40 RID: 19520 RVA: 0x001D8658 File Offset: 0x001D6858
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int InternalSample()
 	{
@@ -232,7 +232,7 @@ public class GameRandom : IMemoryPoolableObject
 		return num3;
 	}
 
-	// Token: 0x06004BBB RID: 19387 RVA: 0x001D5EE4 File Offset: 0x001D40E4
+	// Token: 0x06004C41 RID: 19521 RVA: 0x001D86CC File Offset: 0x001D68CC
 	public int PeekSample()
 	{
 		int num = this.inext;
@@ -257,7 +257,7 @@ public class GameRandom : IMemoryPoolableObject
 		return num3;
 	}
 
-	// Token: 0x06004BBC RID: 19388 RVA: 0x001D5F40 File Offset: 0x001D4140
+	// Token: 0x06004C42 RID: 19522 RVA: 0x001D8728 File Offset: 0x001D6928
 	[PublicizedFrom(EAccessModifier.Private)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public int Next()
@@ -265,7 +265,7 @@ public class GameRandom : IMemoryPoolableObject
 		return this.InternalSample();
 	}
 
-	// Token: 0x06004BBD RID: 19389 RVA: 0x001D5F48 File Offset: 0x001D4148
+	// Token: 0x06004C43 RID: 19523 RVA: 0x001D8730 File Offset: 0x001D6930
 	[PublicizedFrom(EAccessModifier.Private)]
 	public double GetSampleForLargeRange()
 	{
@@ -277,7 +277,7 @@ public class GameRandom : IMemoryPoolableObject
 		return ((double)num + 2147483646.0) / 4294967293.0;
 	}
 
-	// Token: 0x06004BBE RID: 19390 RVA: 0x001D5F88 File Offset: 0x001D4188
+	// Token: 0x06004C44 RID: 19524 RVA: 0x001D8770 File Offset: 0x001D6970
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int Next(int minValue, int maxValue)
 	{
@@ -293,7 +293,7 @@ public class GameRandom : IMemoryPoolableObject
 		return (int)((long)(this.GetSampleForLargeRange() * (double)num) + (long)minValue);
 	}
 
-	// Token: 0x06004BBF RID: 19391 RVA: 0x001D5FD3 File Offset: 0x001D41D3
+	// Token: 0x06004C45 RID: 19525 RVA: 0x001D87BB File Offset: 0x001D69BB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int Next(int maxValue)
 	{
@@ -304,7 +304,7 @@ public class GameRandom : IMemoryPoolableObject
 		return (int)(this.Sample() * (double)maxValue);
 	}
 
-	// Token: 0x06004BC0 RID: 19392 RVA: 0x001D5FF3 File Offset: 0x001D41F3
+	// Token: 0x06004C46 RID: 19526 RVA: 0x001D87DB File Offset: 0x001D69DB
 	[PublicizedFrom(EAccessModifier.Private)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public double NextDouble()
@@ -312,7 +312,7 @@ public class GameRandom : IMemoryPoolableObject
 		return this.Sample();
 	}
 
-	// Token: 0x06004BC1 RID: 19393 RVA: 0x001D5FFC File Offset: 0x001D41FC
+	// Token: 0x06004C47 RID: 19527 RVA: 0x001D87E4 File Offset: 0x001D69E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void NextBytes(byte[] buffer)
 	{
@@ -326,27 +326,27 @@ public class GameRandom : IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x04003B40 RID: 15168
+	// Token: 0x04003BD1 RID: 15313
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int MBIG = 2147483647;
 
-	// Token: 0x04003B41 RID: 15169
+	// Token: 0x04003BD2 RID: 15314
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int MSEED = 161803398;
 
-	// Token: 0x04003B42 RID: 15170
+	// Token: 0x04003BD3 RID: 15315
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int MZ = 0;
 
-	// Token: 0x04003B43 RID: 15171
+	// Token: 0x04003BD4 RID: 15316
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int inext;
 
-	// Token: 0x04003B44 RID: 15172
+	// Token: 0x04003BD5 RID: 15317
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int inextp;
 
-	// Token: 0x04003B45 RID: 15173
+	// Token: 0x04003BD6 RID: 15318
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] SeedArray = new int[56];
 }

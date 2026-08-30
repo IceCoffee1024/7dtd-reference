@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x0200056F RID: 1391
+// Token: 0x02000574 RID: 1396
 public class InventoryManager
 {
-	// Token: 0x170004DB RID: 1243
-	// (get) Token: 0x06002D73 RID: 11635 RVA: 0x001215CB File Offset: 0x0011F7CB
+	// Token: 0x170004DF RID: 1247
+	// (get) Token: 0x06002D9E RID: 11678 RVA: 0x00122687 File Offset: 0x00120887
 	public static InventoryManager Instance
 	{
 		get
@@ -18,7 +18,7 @@ public class InventoryManager
 		}
 	}
 
-	// Token: 0x06002D74 RID: 11636 RVA: 0x001215E3 File Offset: 0x0011F7E3
+	// Token: 0x06002D9F RID: 11679 RVA: 0x0012269F File Offset: 0x0012089F
 	public void Init()
 	{
 		if (this.inventories.Count > 0)
@@ -28,7 +28,7 @@ public class InventoryManager
 		}
 	}
 
-	// Token: 0x06002D75 RID: 11637 RVA: 0x00121608 File Offset: 0x0011F808
+	// Token: 0x06002DA0 RID: 11680 RVA: 0x001226C4 File Offset: 0x001208C4
 	public void TransactionRequestLocal(InventoryTransaction _tx)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsClient)
@@ -45,7 +45,7 @@ public class InventoryManager
 		throw new InvalidOperationException("[InventoryManager] failed to apply transaction locally.");
 	}
 
-	// Token: 0x06002D76 RID: 11638 RVA: 0x0012167C File Offset: 0x0011F87C
+	// Token: 0x06002DA1 RID: 11681 RVA: 0x00122738 File Offset: 0x00120938
 	public void TransactionRequestServer(InventoryTransaction _tx, int _playerId)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -69,19 +69,19 @@ public class InventoryManager
 		}
 	}
 
-	// Token: 0x06002D77 RID: 11639 RVA: 0x000876FD File Offset: 0x000858FD
+	// Token: 0x06002DA2 RID: 11682 RVA: 0x00087DB8 File Offset: 0x00085FB8
 	public void TransactionResponse(bool _success, IList<Guid> _keys, IList<ItemStack[]> _inventories)
 	{
 		throw new NotImplementedException();
 	}
 
-	// Token: 0x06002D78 RID: 11640 RVA: 0x0012170C File Offset: 0x0011F90C
+	// Token: 0x06002DA3 RID: 11683 RVA: 0x001227C8 File Offset: 0x001209C8
 	public TransactionalInventory CreateInventoryServer(int _size)
 	{
 		return this.CreateInventoryServer(ItemStack.CreateArray(_size));
 	}
 
-	// Token: 0x06002D79 RID: 11641 RVA: 0x0012171A File Offset: 0x0011F91A
+	// Token: 0x06002DA4 RID: 11684 RVA: 0x001227D6 File Offset: 0x001209D6
 	public TransactionalInventory CreateInventoryServer(ItemStack[] _stacks)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -91,7 +91,7 @@ public class InventoryManager
 		return this.CreateInventory(Guid.NewGuid(), _stacks);
 	}
 
-	// Token: 0x06002D7A RID: 11642 RVA: 0x00121740 File Offset: 0x0011F940
+	// Token: 0x06002DA5 RID: 11685 RVA: 0x001227FC File Offset: 0x001209FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TransactionalInventory CreateInventory(Guid _key, ItemStack[] _stacks)
 	{
@@ -100,7 +100,7 @@ public class InventoryManager
 		return transactionalInventory;
 	}
 
-	// Token: 0x06002D7B RID: 11643 RVA: 0x00121769 File Offset: 0x0011F969
+	// Token: 0x06002DA6 RID: 11686 RVA: 0x00122825 File Offset: 0x00120A25
 	public void RequestInventoryFromServer(TransactionalInventory.KeyHashPair _keyHash)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsClient)
@@ -110,13 +110,13 @@ public class InventoryManager
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackageInventoryDataRequest>().Setup(_keyHash, this.secretToken), false);
 	}
 
-	// Token: 0x06002D7C RID: 11644 RVA: 0x0012179E File Offset: 0x0011F99E
+	// Token: 0x06002DA7 RID: 11687 RVA: 0x0012285A File Offset: 0x00120A5A
 	public bool TryGetTransactionalInventory(Guid _key, out TransactionalInventory _inventory)
 	{
 		return this.inventories.TryGetValue(_key, out _inventory);
 	}
 
-	// Token: 0x06002D7D RID: 11645 RVA: 0x001217AD File Offset: 0x0011F9AD
+	// Token: 0x06002DA8 RID: 11688 RVA: 0x00122869 File Offset: 0x00120A69
 	public bool ValidateToken(Guid _token)
 	{
 		bool flag = _token.Equals(this.secretToken);
@@ -127,7 +127,7 @@ public class InventoryManager
 		return flag;
 	}
 
-	// Token: 0x06002D7E RID: 11646 RVA: 0x001217CC File Offset: 0x0011F9CC
+	// Token: 0x06002DA9 RID: 11689 RVA: 0x00122888 File Offset: 0x00120A88
 	public void ReadInventory(PooledBinaryReader _br, TileEntity.StreamModeRead _mode, ref TransactionalInventory _inventory)
 	{
 		switch (_mode)
@@ -171,7 +171,7 @@ public class InventoryManager
 		}
 	}
 
-	// Token: 0x06002D7F RID: 11647 RVA: 0x00121884 File Offset: 0x0011FA84
+	// Token: 0x06002DAA RID: 11690 RVA: 0x00122940 File Offset: 0x00120B40
 	public void WriteInventory(TransactionalInventory _inventory, PooledBinaryWriter _bw, TileEntity.StreamModeWrite _mode)
 	{
 		switch (_mode)
@@ -191,15 +191,15 @@ public class InventoryManager
 		}
 	}
 
-	// Token: 0x04002370 RID: 9072
+	// Token: 0x040023A2 RID: 9122
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static InventoryManager _instance;
 
-	// Token: 0x04002371 RID: 9073
+	// Token: 0x040023A3 RID: 9123
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<Guid, TransactionalInventory> inventories = new Dictionary<Guid, TransactionalInventory>();
 
-	// Token: 0x04002372 RID: 9074
+	// Token: 0x040023A4 RID: 9124
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Guid secretToken = Guid.NewGuid();
 }

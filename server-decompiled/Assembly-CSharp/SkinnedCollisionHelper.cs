@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020012AE RID: 4782
+// Token: 0x020012C8 RID: 4808
 public class SkinnedCollisionHelper : MonoBehaviour
 {
-	// Token: 0x0600977B RID: 38779 RVA: 0x00398BC4 File Offset: 0x00396DC4
+	// Token: 0x06009876 RID: 39030 RVA: 0x0039DE08 File Offset: 0x0039C008
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Start()
 	{
@@ -58,7 +58,7 @@ public class SkinnedCollisionHelper : MonoBehaviour
 		Log.Error(base.gameObject.name + ": SkinnedCollisionHelper: this object either has no SkinnedMeshRenderer or has no MeshCollider!");
 	}
 
-	// Token: 0x0600977C RID: 38780 RVA: 0x00398E70 File Offset: 0x00397070
+	// Token: 0x06009877 RID: 39031 RVA: 0x0039E0B4 File Offset: 0x0039C2B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateCollisionMesh()
 	{
@@ -87,7 +87,7 @@ public class SkinnedCollisionHelper : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600977D RID: 38781 RVA: 0x00398FEC File Offset: 0x003971EC
+	// Token: 0x06009878 RID: 39032 RVA: 0x0039E230 File Offset: 0x0039C430
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Update()
 	{
@@ -98,25 +98,25 @@ public class SkinnedCollisionHelper : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040071D1 RID: 29137
+	// Token: 0x040072A8 RID: 29352
 	public bool forceUpdate;
 
-	// Token: 0x040071D2 RID: 29138
+	// Token: 0x040072A9 RID: 29353
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public CWeightList[] nodeWeights;
 
-	// Token: 0x040071D3 RID: 29139
+	// Token: 0x040072AA RID: 29354
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3[] newVert;
 
-	// Token: 0x040071D4 RID: 29140
+	// Token: 0x040072AB RID: 29355
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Mesh mesh;
 
-	// Token: 0x040071D5 RID: 29141
+	// Token: 0x040072AC RID: 29356
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public MeshCollider collide;

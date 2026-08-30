@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UniLinq;
 
-// Token: 0x0200148E RID: 5262
+// Token: 0x020014A9 RID: 5289
 public static class StackSortUtil
 {
-	// Token: 0x0600A4E7 RID: 42215 RVA: 0x003D60A8 File Offset: 0x003D42A8
+	// Token: 0x0600A5E4 RID: 42468 RVA: 0x003DB3EC File Offset: 0x003D95EC
 	public static ItemStack[] CombineAndSortStacks(ItemStack[] _stacks, int _ignoreSlots = 0, PackedBoolArray _ignoredSlots = null)
 	{
 		for (int i = _ignoreSlots; i < _stacks.Length - 1; i++)
@@ -25,7 +25,7 @@ public static class StackSortUtil
 			if (!_stacks[i].IsEmpty())
 			{
 				ItemClass itemClass = _stacks[i].itemValue.ItemClass;
-				int num = itemClass.Stacknumber.Value - _stacks[i].count;
+				int num = itemClass.MaxCount - _stacks[i].count;
 				if (!itemClass.HasQuality && num != 0)
 				{
 					for (int k = i + 1; k < _stacks.Length; k++)
@@ -56,7 +56,7 @@ public static class StackSortUtil
 		return _stacks;
 	}
 
-	// Token: 0x0600A4E8 RID: 42216 RVA: 0x003D61E0 File Offset: 0x003D43E0
+	// Token: 0x0600A5E5 RID: 42469 RVA: 0x003DB520 File Offset: 0x003D9720
 	public static ItemStack[] SortStacks(ItemStack[] _stacks, int _ignoreSlots = 0, PackedBoolArray _ignoredSlots = null)
 	{
 		ItemStack[] array = new ItemStack[_stacks.Length];
@@ -91,13 +91,13 @@ public static class StackSortUtil
 		return array;
 	}
 
-	// Token: 0x0600A4E9 RID: 42217 RVA: 0x003D62E3 File Offset: 0x003D44E3
+	// Token: 0x0600A5E6 RID: 42470 RVA: 0x003DB623 File Offset: 0x003D9823
 	public static bool IsIgnoredSlot(int _ignoreSlots, PackedBoolArray _ignoredSlots, int _slot)
 	{
 		return _slot < _ignoreSlots || (_ignoredSlots != null && _slot < _ignoredSlots.Length && _ignoredSlots[_slot]);
 	}
 
-	// Token: 0x0600A4EA RID: 42218 RVA: 0x003D6300 File Offset: 0x003D4500
+	// Token: 0x0600A5E7 RID: 42471 RVA: 0x003DB640 File Offset: 0x003D9840
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string getGroup(ItemStack _stack)
 	{
@@ -113,7 +113,7 @@ public static class StackSortUtil
 		return forId.Groups[0];
 	}
 
-	// Token: 0x0600A4EB RID: 42219 RVA: 0x003D6340 File Offset: 0x003D4540
+	// Token: 0x0600A5E8 RID: 42472 RVA: 0x003DB680 File Offset: 0x003D9880
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string getName(ItemStack _stack)
 	{

@@ -2,19 +2,19 @@
 
 namespace Platform
 {
-	// Token: 0x02001B3F RID: 6975
+	// Token: 0x02001B66 RID: 7014
 	public interface IGameplayNotifier
 	{
-		// Token: 0x0600D072 RID: 53362
+		// Token: 0x0600D1FD RID: 53757
 		void Init(IPlatform platform);
 
-		// Token: 0x0600D073 RID: 53363
+		// Token: 0x0600D1FE RID: 53758
 		void GameplayStart(bool isOnlineMultiplayer, bool isCrossplayEnabled);
 
-		// Token: 0x0600D074 RID: 53364
+		// Token: 0x0600D1FF RID: 53759
 		void EndOnlineMultiplayer();
 
-		// Token: 0x0600D075 RID: 53365
+		// Token: 0x0600D200 RID: 53760
 		void GameplayEnd();
 	}
 }

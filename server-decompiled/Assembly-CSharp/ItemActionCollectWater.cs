@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000597 RID: 1431
+// Token: 0x0200059C RID: 1436
 [Preserve]
 public class ItemActionCollectWater : ItemAction
 {
-	// Token: 0x06002EF1 RID: 12017 RVA: 0x00129D23 File Offset: 0x00127F23
+	// Token: 0x06002F1F RID: 12063 RVA: 0x0012AD93 File Offset: 0x00128F93
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -15,13 +15,13 @@ public class ItemActionCollectWater : ItemAction
 		this.isReduceWater = _props.GetBool("ReduceWater");
 	}
 
-	// Token: 0x06002EF2 RID: 12018 RVA: 0x00129D4E File Offset: 0x00127F4E
+	// Token: 0x06002F20 RID: 12064 RVA: 0x0012ADBE File Offset: 0x00128FBE
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionCollectWater.CollectWaterActionData(_invData, _indexInEntityOfAction);
 	}
 
-	// Token: 0x06002EF3 RID: 12019 RVA: 0x00129D58 File Offset: 0x00127F58
+	// Token: 0x06002F21 RID: 12065 RVA: 0x0012ADC8 File Offset: 0x00128FC8
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		if (!_bReleased)
@@ -62,20 +62,20 @@ public class ItemActionCollectWater : ItemAction
 		}
 	}
 
-	// Token: 0x06002EF4 RID: 12020 RVA: 0x00129614 File Offset: 0x00127814
+	// Token: 0x06002F22 RID: 12066 RVA: 0x0012A684 File Offset: 0x00128884
 	public override bool IsActionRunning(ItemActionData _actionData)
 	{
 		return _actionData.lastUseTime != 0f && Time.time - _actionData.lastUseTime < this.Delay;
 	}
 
-	// Token: 0x06002EF5 RID: 12021 RVA: 0x00129E76 File Offset: 0x00128076
+	// Token: 0x06002F23 RID: 12067 RVA: 0x0012AEE6 File Offset: 0x001290E6
 	public override void StopHolding(ItemActionData _actionDatadata)
 	{
 		base.StopHolding(_actionDatadata);
 		_actionDatadata.lastUseTime = 0f;
 	}
 
-	// Token: 0x06002EF6 RID: 12022 RVA: 0x00129E8C File Offset: 0x0012808C
+	// Token: 0x06002F24 RID: 12068 RVA: 0x0012AEFC File Offset: 0x001290FC
 	public override void OnHoldingUpdate(ItemActionData _actionData)
 	{
 		if (_actionData.lastUseTime == 0f || this.IsActionRunning(_actionData))
@@ -115,32 +115,32 @@ public class ItemActionCollectWater : ItemAction
 		this.waterPoints.Clear();
 	}
 
-	// Token: 0x04002453 RID: 9299
+	// Token: 0x04002487 RID: 9351
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string changeItemToItem;
 
-	// Token: 0x04002454 RID: 9300
+	// Token: 0x04002488 RID: 9352
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isReduceWater;
 
-	// Token: 0x04002455 RID: 9301
+	// Token: 0x04002489 RID: 9353
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<CollectWaterUtils.WaterPoint> waterPoints = new List<CollectWaterUtils.WaterPoint>();
 
-	// Token: 0x02000598 RID: 1432
+	// Token: 0x0200059D RID: 1437
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class CollectWaterActionData : ItemActionAttackData
 	{
-		// Token: 0x06002EF8 RID: 12024 RVA: 0x00129694 File Offset: 0x00127894
+		// Token: 0x06002F26 RID: 12070 RVA: 0x0012A704 File Offset: 0x00128904
 		public CollectWaterActionData(ItemInventoryData _invData, int _indexInEntityOfAction)
 			: base(_invData, _indexInEntityOfAction)
 		{
 		}
 
-		// Token: 0x04002456 RID: 9302
+		// Token: 0x0400248A RID: 9354
 		public Vector3i targetPosition;
 
-		// Token: 0x04002457 RID: 9303
+		// Token: 0x0400248B RID: 9355
 		public int targetMass;
 	}
 }

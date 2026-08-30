@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020004EE RID: 1262
+// Token: 0x020004F3 RID: 1267
 [Preserve]
 public class EntityVulture : EntityFlying
 {
-	// Token: 0x0600294E RID: 10574 RVA: 0x0010311C File Offset: 0x0010131C
+	// Token: 0x06002978 RID: 10616 RVA: 0x00104128 File Offset: 0x00102328
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -21,14 +21,14 @@ public class EntityVulture : EntityFlying
 		this.state = EntityVulture.State.WanderStart;
 	}
 
-	// Token: 0x0600294F RID: 10575 RVA: 0x0010317E File Offset: 0x0010137E
+	// Token: 0x06002979 RID: 10617 RVA: 0x0010418A File Offset: 0x0010238A
 	public override void Init(int _entityClass, EntityInstanceAssets _assets, EModelInstanceAssets _eModelAssets)
 	{
 		base.Init(_entityClass, _assets, _eModelAssets);
 		this.Init();
 	}
 
-	// Token: 0x06002950 RID: 10576 RVA: 0x0010318F File Offset: 0x0010138F
+	// Token: 0x0600297A RID: 10618 RVA: 0x0010419B File Offset: 0x0010239B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Init()
 	{
@@ -39,7 +39,7 @@ public class EntityVulture : EntityFlying
 		this.battleFatigueSeconds = this.rand.RandomRange(30f, 60f);
 	}
 
-	// Token: 0x06002951 RID: 10577 RVA: 0x001031C0 File Offset: 0x001013C0
+	// Token: 0x0600297B RID: 10619 RVA: 0x001041CC File Offset: 0x001023CC
 	public override void SetSleeper()
 	{
 		base.SetSleeper();
@@ -48,7 +48,7 @@ public class EntityVulture : EntityFlying
 		this.battleFatigueSeconds = float.MaxValue;
 	}
 
-	// Token: 0x06002952 RID: 10578 RVA: 0x001031FC File Offset: 0x001013FC
+	// Token: 0x0600297C RID: 10620 RVA: 0x00104208 File Offset: 0x00102408
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateTasks()
 	{
@@ -537,7 +537,7 @@ public class EntityVulture : EntityFlying
 		this.aiManager.UpdateDebugName();
 	}
 
-	// Token: 0x06002953 RID: 10579 RVA: 0x001041E0 File Offset: 0x001023E0
+	// Token: 0x0600297D RID: 10621 RVA: 0x001051EC File Offset: 0x001033EC
 	public override string MakeDebugNameInfo()
 	{
 		return string.Format("\n{0} {1}\nWaypoint {2}\nTarget {3}, AtkDelay {4}, BtlTime {5}\nSpeed {6}, Motion {7}, Accel {8}", new object[]
@@ -554,7 +554,7 @@ public class EntityVulture : EntityFlying
 		});
 	}
 
-	// Token: 0x06002954 RID: 10580 RVA: 0x001042AE File Offset: 0x001024AE
+	// Token: 0x0600297E RID: 10622 RVA: 0x001052BA File Offset: 0x001034BA
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void SetState(EntityVulture.State newState)
 	{
@@ -563,7 +563,7 @@ public class EntityVulture : EntityFlying
 		this.motionReverseScale = 1f;
 	}
 
-	// Token: 0x06002955 RID: 10581 RVA: 0x001042D0 File Offset: 0x001024D0
+	// Token: 0x0600297F RID: 10623 RVA: 0x001052DC File Offset: 0x001034DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AdjustWaypoint()
 	{
@@ -577,7 +577,7 @@ public class EntityVulture : EntityFlying
 		this.waypoint.y = Mathf.Min(this.waypoint.y, 250f);
 	}
 
-	// Token: 0x06002956 RID: 10582 RVA: 0x00104350 File Offset: 0x00102550
+	// Token: 0x06002980 RID: 10624 RVA: 0x0010535C File Offset: 0x0010355C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void StartAttackReposition()
 	{
@@ -605,7 +605,7 @@ public class EntityVulture : EntityFlying
 		}
 	}
 
-	// Token: 0x06002957 RID: 10583 RVA: 0x0010448F File Offset: 0x0010268F
+	// Token: 0x06002981 RID: 10625 RVA: 0x0010549B File Offset: 0x0010369B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void StartHome(Vector3 _homePos)
 	{
@@ -614,7 +614,7 @@ public class EntityVulture : EntityFlying
 		this.waypoint = _homePos;
 	}
 
-	// Token: 0x06002958 RID: 10584 RVA: 0x001044A6 File Offset: 0x001026A6
+	// Token: 0x06002982 RID: 10626 RVA: 0x001054B2 File Offset: 0x001036B2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ClearTarget()
 	{
@@ -623,7 +623,7 @@ public class EntityVulture : EntityFlying
 		this.currentTarget = null;
 	}
 
-	// Token: 0x06002959 RID: 10585 RVA: 0x001044C0 File Offset: 0x001026C0
+	// Token: 0x06002983 RID: 10627 RVA: 0x001054CC File Offset: 0x001036CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayer FindTarget()
 	{
@@ -658,33 +658,33 @@ public class EntityVulture : EntityFlying
 		return null;
 	}
 
-	// Token: 0x0600295A RID: 10586 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002984 RID: 10628 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void fallHitGround(float _v, Vector3 _fallMotion)
 	{
 	}
 
-	// Token: 0x0600295B RID: 10587 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x06002985 RID: 10629 RVA: 0x00020021 File Offset: 0x0001E221
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isDetailedHeadBodyColliders()
 	{
 		return true;
 	}
 
-	// Token: 0x0600295C RID: 10588 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002986 RID: 10630 RVA: 0x00010E62 File Offset: 0x0000F062
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isRadiationSensitive()
 	{
 		return false;
 	}
 
-	// Token: 0x0600295D RID: 10589 RVA: 0x0010457D File Offset: 0x0010277D
+	// Token: 0x06002987 RID: 10631 RVA: 0x00105589 File Offset: 0x00103789
 	public override float GetEyeHeight()
 	{
 		return 0.3f;
 	}
 
-	// Token: 0x0600295E RID: 10590 RVA: 0x000E8ADB File Offset: 0x000E6CDB
+	// Token: 0x06002988 RID: 10632 RVA: 0x000E9733 File Offset: 0x000E7933
 	public override Vector3 GetLookVector()
 	{
 		if (this.lookAtPosition.Equals(Vector3.zero))
@@ -694,14 +694,14 @@ public class EntityVulture : EntityFlying
 		return this.lookAtPosition - this.getHeadPosition();
 	}
 
-	// Token: 0x0600295F RID: 10591 RVA: 0x00104584 File Offset: 0x00102784
+	// Token: 0x06002989 RID: 10633 RVA: 0x00105590 File Offset: 0x00103790
 	public override bool CanDamageEntity(int _sourceEntityId)
 	{
 		Entity entity = this.world.GetEntity(_sourceEntityId);
 		return !entity || entity.entityClass != this.entityClass;
 	}
 
-	// Token: 0x06002960 RID: 10592 RVA: 0x001045B8 File Offset: 0x001027B8
+	// Token: 0x0600298A RID: 10634 RVA: 0x001055C4 File Offset: 0x001037C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AttackAndAdjust(bool isBlock)
 	{
@@ -727,7 +727,7 @@ public class EntityVulture : EntityFlying
 		}
 	}
 
-	// Token: 0x06002961 RID: 10593 RVA: 0x00104658 File Offset: 0x00102858
+	// Token: 0x0600298B RID: 10635 RVA: 0x00105664 File Offset: 0x00103864
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsCourseTraversable(Vector3 _pos, out float _distance)
 	{
@@ -758,233 +758,233 @@ public class EntityVulture : EntityFlying
 		return true;
 	}
 
-	// Token: 0x04001F2B RID: 7979
+	// Token: 0x04001F5A RID: 8026
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cFlyingMinimumSpeed = 0.02f;
 
-	// Token: 0x04001F2C RID: 7980
+	// Token: 0x04001F5B RID: 8027
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cTargetDistanceClose = 0.9f;
 
-	// Token: 0x04001F2D RID: 7981
+	// Token: 0x04001F5C RID: 8028
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cTargetDistanceMax = 80f;
 
-	// Token: 0x04001F2E RID: 7982
+	// Token: 0x04001F5D RID: 8029
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cTargetAttackOffsetY = -0.1f;
 
-	// Token: 0x04001F2F RID: 7983
+	// Token: 0x04001F5E RID: 8030
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cVomitMinRange = 3f;
 
-	// Token: 0x04001F30 RID: 7984
+	// Token: 0x04001F5F RID: 8031
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cAttackDelay = 18;
 
-	// Token: 0x04001F31 RID: 7985
+	// Token: 0x04001F60 RID: 8032
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cCollisionMask = 1082195968;
 
-	// Token: 0x04001F32 RID: 7986
+	// Token: 0x04001F61 RID: 8033
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cBattleFatigueMin = 30f;
 
-	// Token: 0x04001F33 RID: 7987
+	// Token: 0x04001F62 RID: 8034
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cBattleFatigueMax = 60f;
 
-	// Token: 0x04001F34 RID: 7988
+	// Token: 0x04001F63 RID: 8035
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cBattleFatigueCooldownMin = 80f;
 
-	// Token: 0x04001F35 RID: 7989
+	// Token: 0x04001F64 RID: 8036
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cBattleFatigueCooldownMax = 180f;
 
-	// Token: 0x04001F36 RID: 7990
+	// Token: 0x04001F65 RID: 8037
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int moveUpdateDelay;
 
-	// Token: 0x04001F37 RID: 7991
+	// Token: 0x04001F66 RID: 8038
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float motionReverseScale = 1f;
 
-	// Token: 0x04001F38 RID: 7992
+	// Token: 0x04001F67 RID: 8039
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 waypoint;
 
-	// Token: 0x04001F39 RID: 7993
+	// Token: 0x04001F68 RID: 8040
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isCircling;
 
-	// Token: 0x04001F3A RID: 7994
+	// Token: 0x04001F69 RID: 8041
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 circleCenter;
 
-	// Token: 0x04001F3B RID: 7995
+	// Token: 0x04001F6A RID: 8042
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float circleReverseScale;
 
-	// Token: 0x04001F3C RID: 7996
+	// Token: 0x04001F6B RID: 8043
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float glidingCurrentPercent;
 
-	// Token: 0x04001F3D RID: 7997
+	// Token: 0x04001F6C RID: 8044
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float glidingPercent;
 
-	// Token: 0x04001F3E RID: 7998
+	// Token: 0x04001F6D RID: 8045
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float accel;
 
-	// Token: 0x04001F3F RID: 7999
+	// Token: 0x04001F6E RID: 8046
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector2 wanderHeightRange = new Vector2(10f, 30f);
 
-	// Token: 0x04001F40 RID: 8000
+	// Token: 0x04001F6F RID: 8047
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public EntityAlive currentTarget;
 
-	// Token: 0x04001F41 RID: 8001
+	// Token: 0x04001F70 RID: 8048
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float targetAttackHealthPercent = 0.8f;
 
-	// Token: 0x04001F42 RID: 8002
+	// Token: 0x04001F71 RID: 8049
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool ignoreTargetAttached;
 
-	// Token: 0x04001F43 RID: 8003
+	// Token: 0x04001F72 RID: 8050
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int targetSwitchDelay;
 
-	// Token: 0x04001F44 RID: 8004
+	// Token: 0x04001F73 RID: 8051
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int homeCheckDelay;
 
-	// Token: 0x04001F45 RID: 8005
+	// Token: 0x04001F74 RID: 8052
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int homeSeekDelay;
 
-	// Token: 0x04001F46 RID: 8006
+	// Token: 0x04001F75 RID: 8053
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int wanderChangeDelay;
 
-	// Token: 0x04001F47 RID: 8007
+	// Token: 0x04001F76 RID: 8054
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int checkBlockedDelay;
 
-	// Token: 0x04001F48 RID: 8008
+	// Token: 0x04001F77 RID: 8055
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float battleDuration;
 
-	// Token: 0x04001F49 RID: 8009
+	// Token: 0x04001F78 RID: 8056
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float battleFatigueSeconds;
 
-	// Token: 0x04001F4A RID: 8010
+	// Token: 0x04001F79 RID: 8057
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isBattleFatigued;
 
-	// Token: 0x04001F4B RID: 8011
+	// Token: 0x04001F7A RID: 8058
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int attackDelay;
 
-	// Token: 0x04001F4C RID: 8012
+	// Token: 0x04001F7B RID: 8059
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int attackCount;
 
-	// Token: 0x04001F4D RID: 8013
+	// Token: 0x04001F7C RID: 8060
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int attack2Delay;
 
-	// Token: 0x04001F4E RID: 8014
+	// Token: 0x04001F7D RID: 8061
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isAttack2On;
 
-	// Token: 0x04001F4F RID: 8015
+	// Token: 0x04001F7E RID: 8062
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public EAISetNearestEntityAsTargetSorter sorter;
 
-	// Token: 0x04001F50 RID: 8016
+	// Token: 0x04001F7F RID: 8063
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static List<Entity> list = new List<Entity>();
 
-	// Token: 0x04001F51 RID: 8017
+	// Token: 0x04001F80 RID: 8064
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public EntityVulture.State state;
 
-	// Token: 0x04001F52 RID: 8018
+	// Token: 0x04001F81 RID: 8065
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float stateTime;
 
-	// Token: 0x04001F53 RID: 8019
+	// Token: 0x04001F82 RID: 8066
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float stateMaxTime;
 
-	// Token: 0x04001F54 RID: 8020
+	// Token: 0x04001F83 RID: 8067
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<Bounds> collBB = new List<Bounds>();
 
-	// Token: 0x020004EF RID: 1263
+	// Token: 0x020004F4 RID: 1268
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public enum State
 	{
-		// Token: 0x04001F56 RID: 8022
+		// Token: 0x04001F85 RID: 8069
 		Attack,
-		// Token: 0x04001F57 RID: 8023
+		// Token: 0x04001F86 RID: 8070
 		AttackReposition,
-		// Token: 0x04001F58 RID: 8024
+		// Token: 0x04001F87 RID: 8071
 		AttackStop,
-		// Token: 0x04001F59 RID: 8025
+		// Token: 0x04001F88 RID: 8072
 		Home,
-		// Token: 0x04001F5A RID: 8026
+		// Token: 0x04001F89 RID: 8073
 		Stun,
-		// Token: 0x04001F5B RID: 8027
+		// Token: 0x04001F8A RID: 8074
 		WanderStart,
-		// Token: 0x04001F5C RID: 8028
+		// Token: 0x04001F8B RID: 8075
 		Wander
 	}
 }

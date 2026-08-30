@@ -2,21 +2,21 @@
 
 namespace SharpEXR
 {
-	// Token: 0x020016A0 RID: 5792
+	// Token: 0x020016C6 RID: 5830
 	public class EXRFormatException : Exception
 	{
-		// Token: 0x0600B4AF RID: 46255 RVA: 0x003BBEDB File Offset: 0x003BA0DB
+		// Token: 0x0600B632 RID: 46642 RVA: 0x003C121F File Offset: 0x003BF41F
 		public EXRFormatException()
 		{
 		}
 
-		// Token: 0x0600B4B0 RID: 46256 RVA: 0x003BBEE3 File Offset: 0x003BA0E3
+		// Token: 0x0600B633 RID: 46643 RVA: 0x003C1227 File Offset: 0x003BF427
 		public EXRFormatException(string message)
 			: base(message)
 		{
 		}
 
-		// Token: 0x0600B4B1 RID: 46257 RVA: 0x003BBEEC File Offset: 0x003BA0EC
+		// Token: 0x0600B634 RID: 46644 RVA: 0x003C1230 File Offset: 0x003BF430
 		public EXRFormatException(string message, Exception innerException)
 			: base(message, innerException)
 		{

@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x0200152E RID: 5422
-// (Invoke) Token: 0x0600AA32 RID: 43570
+// Token: 0x02001549 RID: 5449
+// (Invoke) Token: 0x0600AB2F RID: 43823
 public delegate void vp_GlobalCallback();

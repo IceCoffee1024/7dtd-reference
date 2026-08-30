@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000808 RID: 2056
+// Token: 0x02000813 RID: 2067
 [Preserve]
 public class NetPackageNavObject : NetPackage
 {
-	// Token: 0x06003C80 RID: 15488 RVA: 0x001818A5 File Offset: 0x0017FAA5
+	// Token: 0x06003CDF RID: 15583 RVA: 0x00183C7D File Offset: 0x00181E7D
 	public NetPackageNavObject Setup(string _navObjectClass, string _displayName, Vector3 _position, bool _isAdd, bool _usingLocalizationId, int _entityId = -1)
 	{
 		this.navObjectClass = _navObjectClass;
@@ -18,7 +18,7 @@ public class NetPackageNavObject : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003C81 RID: 15489 RVA: 0x001818D5 File Offset: 0x0017FAD5
+	// Token: 0x06003CE0 RID: 15584 RVA: 0x00183CAD File Offset: 0x00181EAD
 	public NetPackageNavObject Setup(int _entityId)
 	{
 		this.navObjectClass = "";
@@ -30,7 +30,7 @@ public class NetPackageNavObject : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003C82 RID: 15490 RVA: 0x0018190E File Offset: 0x0017FB0E
+	// Token: 0x06003CE1 RID: 15585 RVA: 0x00183CE6 File Offset: 0x00181EE6
 	public NetPackageNavObject Setup(string _navObjectClass, string _displayName, Vector3 _position, bool _isAdd, Color _overrideColor, bool _usingLocalizationId)
 	{
 		this.navObjectClass = _navObjectClass;
@@ -43,7 +43,7 @@ public class NetPackageNavObject : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003C83 RID: 15491 RVA: 0x00181948 File Offset: 0x0017FB48
+	// Token: 0x06003CE2 RID: 15586 RVA: 0x00183D20 File Offset: 0x00181F20
 	public override void read(PooledBinaryReader _br)
 	{
 		this.navObjectClass = _br.ReadString();
@@ -56,7 +56,7 @@ public class NetPackageNavObject : NetPackage
 		this.entityId = _br.ReadInt32();
 	}
 
-	// Token: 0x06003C84 RID: 15492 RVA: 0x001819B8 File Offset: 0x0017FBB8
+	// Token: 0x06003CE3 RID: 15587 RVA: 0x00183D90 File Offset: 0x00181F90
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -70,7 +70,7 @@ public class NetPackageNavObject : NetPackage
 		_bw.Write(this.entityId);
 	}
 
-	// Token: 0x06003C85 RID: 15493 RVA: 0x00181A38 File Offset: 0x0017FC38
+	// Token: 0x06003CE4 RID: 15588 RVA: 0x00183E10 File Offset: 0x00182010
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -109,8 +109,8 @@ public class NetPackageNavObject : NetPackage
 		}
 	}
 
-	// Token: 0x1700064F RID: 1615
-	// (get) Token: 0x06003C86 RID: 15494 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x1700065A RID: 1626
+	// (get) Token: 0x06003CE5 RID: 15589 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -119,41 +119,41 @@ public class NetPackageNavObject : NetPackage
 		}
 	}
 
-	// Token: 0x06003C87 RID: 15495 RVA: 0x00104CB5 File Offset: 0x00102EB5
+	// Token: 0x06003CE6 RID: 15590 RVA: 0x00105CC1 File Offset: 0x00103EC1
 	public override int GetLength()
 	{
 		return 30;
 	}
 
-	// Token: 0x040030E0 RID: 12512
+	// Token: 0x0400315F RID: 12639
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string navObjectClass;
 
-	// Token: 0x040030E1 RID: 12513
+	// Token: 0x04003160 RID: 12640
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string name;
 
-	// Token: 0x040030E2 RID: 12514
+	// Token: 0x04003161 RID: 12641
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool usingLocalizationId;
 
-	// Token: 0x040030E3 RID: 12515
+	// Token: 0x04003162 RID: 12642
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 position;
 
-	// Token: 0x040030E4 RID: 12516
+	// Token: 0x04003163 RID: 12643
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isAdd;
 
-	// Token: 0x040030E5 RID: 12517
+	// Token: 0x04003164 RID: 12644
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x040030E6 RID: 12518
+	// Token: 0x04003165 RID: 12645
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool useOverrideColor;
 
-	// Token: 0x040030E7 RID: 12519
+	// Token: 0x04003166 RID: 12646
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color overrideColor;
 }

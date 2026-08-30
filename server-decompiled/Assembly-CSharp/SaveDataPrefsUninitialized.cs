@@ -1,82 +1,82 @@
 ﻿using System;
 
-// Token: 0x02000A2F RID: 2607
+// Token: 0x02000A40 RID: 2624
 public sealed class SaveDataPrefsUninitialized : ISaveDataPrefs
 {
-	// Token: 0x06004EBF RID: 20159 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x06004F45 RID: 20293 RVA: 0x0000640C File Offset: 0x0000460C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SaveDataPrefsUninitialized()
 	{
 	}
 
-	// Token: 0x06004EC0 RID: 20160 RVA: 0x001DF225 File Offset: 0x001DD425
+	// Token: 0x06004F46 RID: 20294 RVA: 0x001E1CBD File Offset: 0x001DFEBD
 	public float GetFloat(string key, float defaultValue)
 	{
 		throw new NotSupportedException("SdPlayerPrefs is being accessed while the pref instance is not initialized.");
 	}
 
-	// Token: 0x06004EC1 RID: 20161 RVA: 0x001DF225 File Offset: 0x001DD425
+	// Token: 0x06004F47 RID: 20295 RVA: 0x001E1CBD File Offset: 0x001DFEBD
 	public void SetFloat(string key, float value)
 	{
 		throw new NotSupportedException("SdPlayerPrefs is being accessed while the pref instance is not initialized.");
 	}
 
-	// Token: 0x06004EC2 RID: 20162 RVA: 0x001DF225 File Offset: 0x001DD425
+	// Token: 0x06004F48 RID: 20296 RVA: 0x001E1CBD File Offset: 0x001DFEBD
 	public int GetInt(string key, int defaultValue)
 	{
 		throw new NotSupportedException("SdPlayerPrefs is being accessed while the pref instance is not initialized.");
 	}
 
-	// Token: 0x06004EC3 RID: 20163 RVA: 0x001DF225 File Offset: 0x001DD425
+	// Token: 0x06004F49 RID: 20297 RVA: 0x001E1CBD File Offset: 0x001DFEBD
 	public void SetInt(string key, int value)
 	{
 		throw new NotSupportedException("SdPlayerPrefs is being accessed while the pref instance is not initialized.");
 	}
 
-	// Token: 0x06004EC4 RID: 20164 RVA: 0x001DF225 File Offset: 0x001DD425
+	// Token: 0x06004F4A RID: 20298 RVA: 0x001E1CBD File Offset: 0x001DFEBD
 	public string GetString(string key, string defaultValue)
 	{
 		throw new NotSupportedException("SdPlayerPrefs is being accessed while the pref instance is not initialized.");
 	}
 
-	// Token: 0x06004EC5 RID: 20165 RVA: 0x001DF225 File Offset: 0x001DD425
+	// Token: 0x06004F4B RID: 20299 RVA: 0x001E1CBD File Offset: 0x001DFEBD
 	public void SetString(string key, string value)
 	{
 		throw new NotSupportedException("SdPlayerPrefs is being accessed while the pref instance is not initialized.");
 	}
 
-	// Token: 0x06004EC6 RID: 20166 RVA: 0x001DF225 File Offset: 0x001DD425
+	// Token: 0x06004F4C RID: 20300 RVA: 0x001E1CBD File Offset: 0x001DFEBD
 	public bool HasKey(string key)
 	{
 		throw new NotSupportedException("SdPlayerPrefs is being accessed while the pref instance is not initialized.");
 	}
 
-	// Token: 0x06004EC7 RID: 20167 RVA: 0x001DF225 File Offset: 0x001DD425
+	// Token: 0x06004F4D RID: 20301 RVA: 0x001E1CBD File Offset: 0x001DFEBD
 	public void DeleteKey(string key)
 	{
 		throw new NotSupportedException("SdPlayerPrefs is being accessed while the pref instance is not initialized.");
 	}
 
-	// Token: 0x06004EC8 RID: 20168 RVA: 0x001DF225 File Offset: 0x001DD425
+	// Token: 0x06004F4E RID: 20302 RVA: 0x001E1CBD File Offset: 0x001DFEBD
 	public void DeleteAll()
 	{
 		throw new NotSupportedException("SdPlayerPrefs is being accessed while the pref instance is not initialized.");
 	}
 
-	// Token: 0x06004EC9 RID: 20169 RVA: 0x001DF225 File Offset: 0x001DD425
+	// Token: 0x06004F4F RID: 20303 RVA: 0x001E1CBD File Offset: 0x001DFEBD
 	public void Save()
 	{
 		throw new NotSupportedException("SdPlayerPrefs is being accessed while the pref instance is not initialized.");
 	}
 
-	// Token: 0x06004ECA RID: 20170 RVA: 0x001DF225 File Offset: 0x001DD425
+	// Token: 0x06004F50 RID: 20304 RVA: 0x001E1CBD File Offset: 0x001DFEBD
 	public void Load()
 	{
 		throw new NotSupportedException("SdPlayerPrefs is being accessed while the pref instance is not initialized.");
 	}
 
-	// Token: 0x17000865 RID: 2149
-	// (get) Token: 0x06004ECB RID: 20171 RVA: 0x001DF225 File Offset: 0x001DD425
+	// Token: 0x17000877 RID: 2167
+	// (get) Token: 0x06004F51 RID: 20305 RVA: 0x001E1CBD File Offset: 0x001DFEBD
 	public bool CanLoad
 	{
 		get
@@ -85,10 +85,10 @@ public sealed class SaveDataPrefsUninitialized : ISaveDataPrefs
 		}
 	}
 
-	// Token: 0x04003C7A RID: 15482
+	// Token: 0x04003D0B RID: 15627
 	public static readonly SaveDataPrefsUninitialized INSTANCE = new SaveDataPrefsUninitialized();
 
-	// Token: 0x04003C7B RID: 15483
+	// Token: 0x04003D0C RID: 15628
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string ERROR_MESSAGE = "SdPlayerPrefs is being accessed while the pref instance is not initialized.";
 }

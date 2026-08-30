@@ -5,34 +5,34 @@ using UnityEngine;
 
 namespace GamePath
 {
-	// Token: 0x020018AF RID: 6319
+	// Token: 0x020018D5 RID: 6357
 	public class AStarPathFinderThread : PathFinderThread
 	{
-		// Token: 0x0600C2A6 RID: 49830 RVA: 0x0047FF4A File Offset: 0x0047E14A
+		// Token: 0x0600C42D RID: 50221 RVA: 0x00486076 File Offset: 0x00484276
 		public AStarPathFinderThread()
 		{
 			PathFinderThread.Instance = this;
 		}
 
-		// Token: 0x0600C2A7 RID: 49831 RVA: 0x0047FF7A File Offset: 0x0047E17A
+		// Token: 0x0600C42E RID: 50222 RVA: 0x004860A6 File Offset: 0x004842A6
 		public override int GetFinishedCount()
 		{
 			return this.finishedPaths.Count;
 		}
 
-		// Token: 0x0600C2A8 RID: 49832 RVA: 0x0047FF87 File Offset: 0x0047E187
+		// Token: 0x0600C42F RID: 50223 RVA: 0x004860B3 File Offset: 0x004842B3
 		public override int GetQueueCount()
 		{
 			return this.entityWaitQueue.list.Count;
 		}
 
-		// Token: 0x0600C2A9 RID: 49833 RVA: 0x0047FF9C File Offset: 0x0047E19C
+		// Token: 0x0600C430 RID: 50224 RVA: 0x004860C8 File Offset: 0x004842C8
 		public override void StartWorkerThreads()
 		{
 			this.threadInfo = ThreadManager.StartThread("Pathfinder", null, new ThreadManager.ThreadFunctionLoopDelegate(this.thread_Pathfinder), null, null, null, false, false);
 		}
 
-		// Token: 0x0600C2AA RID: 49834 RVA: 0x0047FFCC File Offset: 0x0047E1CC
+		// Token: 0x0600C431 RID: 50225 RVA: 0x004860F8 File Offset: 0x004842F8
 		public override void Cleanup()
 		{
 			this.threadInfo.RequestTermination();
@@ -44,7 +44,7 @@ namespace GamePath
 			this.writerThreadWaitHandle = null;
 		}
 
-		// Token: 0x0600C2AB RID: 49835 RVA: 0x00480024 File Offset: 0x0047E224
+		// Token: 0x0600C432 RID: 50226 RVA: 0x00486150 File Offset: 0x00484350
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int thread_Pathfinder(ThreadManager.ThreadInfo _threadInfo)
 		{
@@ -95,7 +95,7 @@ namespace GamePath
 			return -1;
 		}
 
-		// Token: 0x0600C2AC RID: 49836 RVA: 0x00480190 File Offset: 0x0047E390
+		// Token: 0x0600C433 RID: 50227 RVA: 0x004862BC File Offset: 0x004844BC
 		public override bool IsCalculatingPath(int _entityId)
 		{
 			Dictionary<int, PathInfo> dictionary = this.finishedPaths;
@@ -107,7 +107,7 @@ namespace GamePath
 			return flag2;
 		}
 
-		// Token: 0x0600C2AD RID: 49837 RVA: 0x004801D8 File Offset: 0x0047E3D8
+		// Token: 0x0600C434 RID: 50228 RVA: 0x00486304 File Offset: 0x00484504
 		public override void FindPath(EntityAlive _entity, Vector3 _target, float _speed, bool _canBreak, EAIBase _aiTask)
 		{
 			Dictionary<int, PathInfo> dictionary = this.finishedPaths;
@@ -122,7 +122,7 @@ namespace GamePath
 			this.writerThreadWaitHandle.Set();
 		}
 
-		// Token: 0x0600C2AE RID: 49838 RVA: 0x00480264 File Offset: 0x0047E464
+		// Token: 0x0600C435 RID: 50229 RVA: 0x00486390 File Offset: 0x00484590
 		public override PathInfo GetPath(int _entityId)
 		{
 			Dictionary<int, PathInfo> dictionary = this.finishedPaths;
@@ -138,7 +138,7 @@ namespace GamePath
 			return null;
 		}
 
-		// Token: 0x0600C2AF RID: 49839 RVA: 0x004802CC File Offset: 0x0047E4CC
+		// Token: 0x0600C436 RID: 50230 RVA: 0x004863F8 File Offset: 0x004845F8
 		public override void RemovePathsFor(int _entityId)
 		{
 			Dictionary<int, PathInfo> dictionary = this.finishedPaths;
@@ -152,19 +152,19 @@ namespace GamePath
 			}
 		}
 
-		// Token: 0x04009321 RID: 37665
+		// Token: 0x0400944A RID: 37962
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ThreadManager.ThreadInfo threadInfo;
 
-		// Token: 0x04009322 RID: 37666
+		// Token: 0x0400944B RID: 37963
 		[PublicizedFrom(EAccessModifier.Private)]
 		public AutoResetEvent writerThreadWaitHandle = new AutoResetEvent(false);
 
-		// Token: 0x04009323 RID: 37667
+		// Token: 0x0400944C RID: 37964
 		[PublicizedFrom(EAccessModifier.Private)]
 		public HashSetList<int> entityWaitQueue = new HashSetList<int>();
 
-		// Token: 0x04009324 RID: 37668
+		// Token: 0x0400944D RID: 37965
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<int, PathInfo> finishedPaths = new Dictionary<int, PathInfo>();
 	}

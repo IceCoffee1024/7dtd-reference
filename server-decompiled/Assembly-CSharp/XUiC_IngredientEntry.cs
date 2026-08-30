@@ -2,18 +2,18 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F33 RID: 3891
+// Token: 0x02000F4A RID: 3914
 [Preserve]
 public class XUiC_IngredientEntry : XUiController
 {
-	// Token: 0x17000E3A RID: 3642
-	// (get) Token: 0x06007A39 RID: 31289 RVA: 0x002E1AEE File Offset: 0x002DFCEE
-	// (set) Token: 0x06007A3A RID: 31290 RVA: 0x002E1AF6 File Offset: 0x002DFCF6
+	// Token: 0x17000E55 RID: 3669
+	// (get) Token: 0x06007AF2 RID: 31474 RVA: 0x002E5AA2 File Offset: 0x002E3CA2
+	// (set) Token: 0x06007AF3 RID: 31475 RVA: 0x002E5AAA File Offset: 0x002E3CAA
 	public Recipe Recipe { get; set; }
 
-	// Token: 0x17000E3B RID: 3643
-	// (get) Token: 0x06007A3B RID: 31291 RVA: 0x002E1AFF File Offset: 0x002DFCFF
-	// (set) Token: 0x06007A3C RID: 31292 RVA: 0x002E1B08 File Offset: 0x002DFD08
+	// Token: 0x17000E56 RID: 3670
+	// (get) Token: 0x06007AF4 RID: 31476 RVA: 0x002E5AB3 File Offset: 0x002E3CB3
+	// (set) Token: 0x06007AF5 RID: 31477 RVA: 0x002E5ABC File Offset: 0x002E3CBC
 	public ItemStack Ingredient
 	{
 		get
@@ -39,7 +39,7 @@ public class XUiC_IngredientEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007A3D RID: 31293 RVA: 0x002E1B8C File Offset: 0x002DFD8C
+	// Token: 0x06007AF6 RID: 31478 RVA: 0x002E5B40 File Offset: 0x002E3D40
 	public override void Init()
 	{
 		base.Init();
@@ -68,7 +68,7 @@ public class XUiC_IngredientEntry : XUiController
 		this.IsDirty = false;
 	}
 
-	// Token: 0x06007A3E RID: 31294 RVA: 0x002E1C54 File Offset: 0x002DFE54
+	// Token: 0x06007AF7 RID: 31479 RVA: 0x002E5C08 File Offset: 0x002E3E08
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -174,14 +174,14 @@ public class XUiC_IngredientEntry : XUiController
 		return true;
 	}
 
-	// Token: 0x06007A3F RID: 31295 RVA: 0x0008A069 File Offset: 0x00088269
+	// Token: 0x06007AF8 RID: 31480 RVA: 0x0008A715 File Offset: 0x00088915
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnCountChanged(XUiController _sender, OnCountChangedEventArgs _e)
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007A40 RID: 31296 RVA: 0x002E2032 File Offset: 0x002E0232
+	// Token: 0x06007AF9 RID: 31481 RVA: 0x002E5FE6 File Offset: 0x002E41E6
 	public override void Update(float _dt)
 	{
 		if (this.IsDirty)
@@ -193,47 +193,47 @@ public class XUiC_IngredientEntry : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x04005A50 RID: 23120
+	// Token: 0x04005B03 RID: 23299
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack ingredient;
 
-	// Token: 0x04005A51 RID: 23121
+	// Token: 0x04005B04 RID: 23300
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool materialBased;
 
-	// Token: 0x04005A52 RID: 23122
+	// Token: 0x04005B05 RID: 23301
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string material = "";
 
-	// Token: 0x04005A53 RID: 23123
+	// Token: 0x04005B06 RID: 23302
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite icoItem;
 
-	// Token: 0x04005A54 RID: 23124
+	// Token: 0x04005B07 RID: 23303
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label lblName;
 
-	// Token: 0x04005A55 RID: 23125
+	// Token: 0x04005B08 RID: 23304
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label lblHaveCount;
 
-	// Token: 0x04005A56 RID: 23126
+	// Token: 0x04005B09 RID: 23305
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label lblNeedCount;
 
-	// Token: 0x04005A57 RID: 23127
+	// Token: 0x04005B0A RID: 23306
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_RecipeCraftCount craftCountControl;
 
-	// Token: 0x04005A59 RID: 23129
+	// Token: 0x04005B0C RID: 23308
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor itemicontintcolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04005A5A RID: 23130
+	// Token: 0x04005B0D RID: 23309
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt havecountFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x04005A5B RID: 23131
+	// Token: 0x04005B0E RID: 23310
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt needcountFormatter = new CachedStringFormatterInt();
 }

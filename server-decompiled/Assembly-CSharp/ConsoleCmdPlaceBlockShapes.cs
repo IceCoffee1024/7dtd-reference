@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200025B RID: 603
+// Token: 0x0200025F RID: 607
 [Preserve]
 public class ConsoleCmdPlaceBlockShapes : ConsoleCmdAbstract
 {
-	// Token: 0x170001D8 RID: 472
-	// (get) Token: 0x060011F4 RID: 4596 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x170001D9 RID: 473
+	// (get) Token: 0x06001206 RID: 4614 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -16,28 +16,28 @@ public class ConsoleCmdPlaceBlockShapes : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060011F5 RID: 4597 RVA: 0x0007029F File Offset: 0x0006E49F
+	// Token: 0x06001207 RID: 4615 RVA: 0x000708FB File Offset: 0x0006EAFB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Places all shapes of the currently held variant helper block";
 	}
 
-	// Token: 0x060011F6 RID: 4598 RVA: 0x000702A6 File Offset: 0x0006E4A6
+	// Token: 0x06001208 RID: 4616 RVA: 0x00070902 File Offset: 0x0006EB02
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Places all variants of the helper block you currently hold in your hand. Starts\nat the current selection box and spreads out towards the right relative to the\ncurrent view direction of the player, starting a new row behind those every\n" + string.Format("{0} blocks. Spaces out each block by 1m meter.", 25);
 	}
 
-	// Token: 0x060011F7 RID: 4599 RVA: 0x000702C3 File Offset: 0x0006E4C3
+	// Token: 0x06001209 RID: 4617 RVA: 0x0007091F File Offset: 0x0006EB1F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "placeblockshapes", "pbs" };
 	}
 
-	// Token: 0x060011F8 RID: 4600 RVA: 0x000702DC File Offset: 0x0006E4DC
+	// Token: 0x0600120A RID: 4618 RVA: 0x00070938 File Offset: 0x0006EB38
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (!_senderInfo.IsLocalGame)
@@ -104,7 +104,7 @@ public class ConsoleCmdPlaceBlockShapes : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060011F9 RID: 4601 RVA: 0x000704AC File Offset: 0x0006E6AC
+	// Token: 0x0600120B RID: 4619 RVA: 0x00070B08 File Offset: 0x0006ED08
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void PlaceBlock(BlockValue _blockValue, ItemClassBlock.ItemBlockInventoryData _holdingData, Vector3i _placementPos, EntityPlayerLocal _player)
 	{
@@ -129,7 +129,7 @@ public class ConsoleCmdPlaceBlockShapes : ConsoleCmdAbstract
 		GameManager.Instance.World.SetBlocksRPC(new List<BlockChangeInfo> { blockChangeInfo });
 	}
 
-	// Token: 0x04000CF8 RID: 3320
+	// Token: 0x04000D09 RID: 3337
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int BlocksPerRow = 25;
 }

@@ -4,17 +4,17 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x0200191C RID: 6428
+	// Token: 0x02001942 RID: 6466
 	[Preserve]
 	public class RequirementRandomRoll : BaseOperationRequirement
 	{
-		// Token: 0x0600C5C7 RID: 50631 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C74E RID: 51022 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
 		}
 
-		// Token: 0x0600C5C8 RID: 50632 RVA: 0x0048B8E0 File Offset: 0x00489AE0
+		// Token: 0x0600C74F RID: 51023 RVA: 0x00491C2C File Offset: 0x0048FE2C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override object LeftSide(Entity target)
 		{
@@ -22,14 +22,14 @@ namespace GameEvent.SequenceRequirements
 			return Mathf.Lerp(this.minMax.x, this.minMax.y, randomFloat);
 		}
 
-		// Token: 0x0600C5C9 RID: 50633 RVA: 0x0048B91E File Offset: 0x00489B1E
+		// Token: 0x0600C750 RID: 51024 RVA: 0x00491C6A File Offset: 0x0048FE6A
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override object RightSide(Entity target)
 		{
 			return GameEventManager.GetFloatValue(target as EntityAlive, this.valueText, 0f);
 		}
 
-		// Token: 0x0600C5CA RID: 50634 RVA: 0x0048B93B File Offset: 0x00489B3B
+		// Token: 0x0600C751 RID: 51025 RVA: 0x00491C87 File Offset: 0x0048FE87
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -37,7 +37,7 @@ namespace GameEvent.SequenceRequirements
 			properties.ParseString(RequirementRandomRoll.PropValue, ref this.valueText);
 		}
 
-		// Token: 0x0600C5CB RID: 50635 RVA: 0x0048B966 File Offset: 0x00489B66
+		// Token: 0x0600C752 RID: 51026 RVA: 0x00491CB2 File Offset: 0x0048FEB2
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseRequirement CloneChildSettings()
 		{
@@ -50,23 +50,23 @@ namespace GameEvent.SequenceRequirements
 			};
 		}
 
-		// Token: 0x040094E2 RID: 38114
+		// Token: 0x0400960B RID: 38411
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public Vector2 minMax;
 
-		// Token: 0x040094E3 RID: 38115
+		// Token: 0x0400960C RID: 38412
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public GameRandom rand;
 
-		// Token: 0x040094E4 RID: 38116
+		// Token: 0x0400960D RID: 38413
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string valueText;
 
-		// Token: 0x040094E5 RID: 38117
+		// Token: 0x0400960E RID: 38414
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropMinMax = "min_max";
 
-		// Token: 0x040094E6 RID: 38118
+		// Token: 0x0400960F RID: 38415
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropValue = "value";
 	}

@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200105C RID: 4188
+// Token: 0x02001075 RID: 4213
 [Preserve]
 public class XUiC_SpawnMenu : XUiController
 {
-	// Token: 0x060084E3 RID: 34019 RVA: 0x0032C0C8 File Offset: 0x0032A2C8
+	// Token: 0x060085D5 RID: 34261 RVA: 0x003308F0 File Offset: 0x0032EAF0
 	public override void Init()
 	{
 		base.Init();
@@ -28,14 +28,14 @@ public class XUiC_SpawnMenu : XUiController
 		this.toggleFromDynamic.Value = true;
 	}
 
-	// Token: 0x060084E4 RID: 34020 RVA: 0x0032C232 File Offset: 0x0032A432
+	// Token: 0x060085D6 RID: 34262 RVA: 0x00330A5A File Offset: 0x0032EC5A
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		XUiC_FocusedBlockHealth.SetData(this.xui.playerUI, null, 0f);
 	}
 
-	// Token: 0x060084E5 RID: 34021 RVA: 0x0032C250 File Offset: 0x0032A450
+	// Token: 0x060085D7 RID: 34263 RVA: 0x00330A78 File Offset: 0x0032EC78
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void EntitiesList_SelectionChanged(XUiC_List<XUiC_SpawnEntitiesList.SpawnEntityEntry> _list, XUiC_SpawnEntitiesList.SpawnEntityEntry _previousEntry, XUiC_SpawnEntitiesList.SpawnEntityEntry _newEntry)
 	{
@@ -46,19 +46,19 @@ public class XUiC_SpawnMenu : XUiController
 		}
 	}
 
-	// Token: 0x060084E6 RID: 34022 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060085D8 RID: 34264 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ToggleLookAtYou_OnValueChanged(XUiC_ToggleButton _sender, bool _newValue)
 	{
 	}
 
-	// Token: 0x060084E7 RID: 34023 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060085D9 RID: 34265 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ToggleSpawn25_OnValueChanged(XUiC_ToggleButton _sender, bool _newValue)
 	{
 	}
 
-	// Token: 0x060084E8 RID: 34024 RVA: 0x0032C27C File Offset: 0x0032A47C
+	// Token: 0x060085DA RID: 34266 RVA: 0x00330AA4 File Offset: 0x0032ECA4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SpawnFiltered_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -92,7 +92,7 @@ public class XUiC_SpawnMenu : XUiController
 		Log.Out("Spawned {0}", new object[] { num });
 	}
 
-	// Token: 0x060084E9 RID: 34025 RVA: 0x0032C397 File Offset: 0x0032A597
+	// Token: 0x060085DB RID: 34267 RVA: 0x00330BBF File Offset: 0x0032EDBF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ToggleFromDynamic_OnValueChanged(XUiC_ToggleButton _sender, bool _newValue)
 	{
@@ -105,7 +105,7 @@ public class XUiC_SpawnMenu : XUiController
 		this.toggleFromDynamic.Value = true;
 	}
 
-	// Token: 0x060084EA RID: 34026 RVA: 0x0032C3C1 File Offset: 0x0032A5C1
+	// Token: 0x060085DC RID: 34268 RVA: 0x00330BE9 File Offset: 0x0032EDE9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ToggleFromStatic_OnValueChanged(XUiC_ToggleButton _sender, bool _newValue)
 	{
@@ -118,7 +118,7 @@ public class XUiC_SpawnMenu : XUiController
 		this.toggleFromStatic.Value = true;
 	}
 
-	// Token: 0x060084EB RID: 34027 RVA: 0x0032C3EB File Offset: 0x0032A5EB
+	// Token: 0x060085DD RID: 34269 RVA: 0x00330C13 File Offset: 0x0032EE13
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ToggleFromBiome_OnValueChanged(XUiC_ToggleButton _sender, bool _newValue)
 	{
@@ -131,7 +131,7 @@ public class XUiC_SpawnMenu : XUiController
 		this.toggleFromBiome.Value = true;
 	}
 
-	// Token: 0x060084EC RID: 34028 RVA: 0x0032C418 File Offset: 0x0032A618
+	// Token: 0x060085DE RID: 34270 RVA: 0x00330C40 File Offset: 0x0032EE40
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnSpawns_OnPress(int _key)
 	{
@@ -139,7 +139,7 @@ public class XUiC_SpawnMenu : XUiController
 		this.Spawn(_key, hitPoint);
 	}
 
-	// Token: 0x060084ED RID: 34029 RVA: 0x0032C438 File Offset: 0x0032A638
+	// Token: 0x060085DF RID: 34271 RVA: 0x00330C60 File Offset: 0x0032EE60
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 GetHitPoint()
 	{
@@ -155,7 +155,7 @@ public class XUiC_SpawnMenu : XUiController
 		return vector;
 	}
 
-	// Token: 0x060084EE RID: 34030 RVA: 0x0032C4EC File Offset: 0x0032A6EC
+	// Token: 0x060085E0 RID: 34272 RVA: 0x00330D14 File Offset: 0x0032EF14
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int Spawn(int _key, Vector3 _spawnPos)
 	{
@@ -232,34 +232,34 @@ public class XUiC_SpawnMenu : XUiController
 		return num;
 	}
 
-	// Token: 0x040062AF RID: 25263
+	// Token: 0x04006376 RID: 25462
 	public static string ID = "";
 
-	// Token: 0x040062B0 RID: 25264
+	// Token: 0x04006377 RID: 25463
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SpawnEntitiesList entitiesList;
 
-	// Token: 0x040062B1 RID: 25265
+	// Token: 0x04006378 RID: 25464
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ToggleButton toggleLookAtYou;
 
-	// Token: 0x040062B2 RID: 25266
+	// Token: 0x04006379 RID: 25465
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ToggleButton toggleSpawn25;
 
-	// Token: 0x040062B3 RID: 25267
+	// Token: 0x0400637A RID: 25466
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ToggleButton toggleFromDynamic;
 
-	// Token: 0x040062B4 RID: 25268
+	// Token: 0x0400637B RID: 25467
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ToggleButton toggleFromStatic;
 
-	// Token: 0x040062B5 RID: 25269
+	// Token: 0x0400637C RID: 25468
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ToggleButton toggleFromBiome;
 
-	// Token: 0x040062B6 RID: 25270
+	// Token: 0x0400637D RID: 25469
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton spawnFiltered;
 }

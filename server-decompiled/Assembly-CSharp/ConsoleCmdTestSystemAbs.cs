@@ -1,15 +1,15 @@
 ﻿using System;
 
-// Token: 0x020002AD RID: 685
+// Token: 0x020002B1 RID: 689
 public abstract class ConsoleCmdTestSystemAbs : ConsoleCmdAbstract
 {
-	// Token: 0x060013D2 RID: 5074 RVA: 0x00079044 File Offset: 0x00077244
+	// Token: 0x060013E4 RID: 5092 RVA: 0x000796A0 File Offset: 0x000778A0
 	public static void AssertAreApproximatelyEqual(long expected, long actual, long tolerance, string message)
 	{
 		Math.Abs(expected - actual);
 	}
 
-	// Token: 0x060013D3 RID: 5075 RVA: 0x00079050 File Offset: 0x00077250
+	// Token: 0x060013E5 RID: 5093 RVA: 0x000796AC File Offset: 0x000778AC
 	public static void AssertArraysAreEqual<T>(T[] expected, T[] actual, string message)
 	{
 		for (int i = 0; i < expected.Length; i++)
@@ -17,7 +17,7 @@ public abstract class ConsoleCmdTestSystemAbs : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060013D4 RID: 5076 RVA: 0x0007906C File Offset: 0x0007726C
+	// Token: 0x060013E6 RID: 5094 RVA: 0x000796C8 File Offset: 0x000778C8
 	public static bool AssertException(Action action)
 	{
 		bool flag;
@@ -34,7 +34,7 @@ public abstract class ConsoleCmdTestSystemAbs : ConsoleCmdAbstract
 		return flag;
 	}
 
-	// Token: 0x060013D5 RID: 5077 RVA: 0x000790AC File Offset: 0x000772AC
+	// Token: 0x060013E7 RID: 5095 RVA: 0x00079708 File Offset: 0x00077908
 	public static bool ExecutesWithoutExceptions(params Action[] testCases)
 	{
 		bool flag = true;
@@ -45,7 +45,7 @@ public abstract class ConsoleCmdTestSystemAbs : ConsoleCmdAbstract
 		return flag;
 	}
 
-	// Token: 0x060013D6 RID: 5078 RVA: 0x000790DC File Offset: 0x000772DC
+	// Token: 0x060013E8 RID: 5096 RVA: 0x00079738 File Offset: 0x00077938
 	public static bool ExecutesWithoutException(Action testCase)
 	{
 		bool flag = true;
@@ -66,15 +66,15 @@ public abstract class ConsoleCmdTestSystemAbs : ConsoleCmdAbstract
 		return flag;
 	}
 
-	// Token: 0x060013D7 RID: 5079 RVA: 0x0005FE37 File Offset: 0x0005E037
+	// Token: 0x060013E9 RID: 5097 RVA: 0x0006037F File Offset: 0x0005E57F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ConsoleCmdTestSystemAbs()
 	{
 	}
 
-	// Token: 0x04000D88 RID: 3464
+	// Token: 0x04000D99 RID: 3481
 	public const string SuccessString = "<color=green>Success</color>";
 
-	// Token: 0x04000D89 RID: 3465
+	// Token: 0x04000D9A RID: 3482
 	public const string FailureString = "<color=red>Failure</color>";
 }

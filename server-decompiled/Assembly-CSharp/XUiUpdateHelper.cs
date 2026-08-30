@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001166 RID: 4454
+// Token: 0x02001180 RID: 4480
 [PublicizedFrom(EAccessModifier.Internal)]
 public class XUiUpdateHelper : MonoBehaviour
 {
-	// Token: 0x06008EB0 RID: 36528 RVA: 0x0035B03E File Offset: 0x0035923E
+	// Token: 0x06008FA8 RID: 36776 RVA: 0x0035FADA File Offset: 0x0035DCDA
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LateUpdate()
 	{

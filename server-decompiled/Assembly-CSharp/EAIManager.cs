@@ -4,10 +4,10 @@ using System.Text;
 using GamePath;
 using UnityEngine;
 
-// Token: 0x02000445 RID: 1093
+// Token: 0x02000449 RID: 1097
 public class EAIManager
 {
-	// Token: 0x0600215C RID: 8540 RVA: 0x000C8F94 File Offset: 0x000C7194
+	// Token: 0x06002179 RID: 8569 RVA: 0x000C97A0 File Offset: 0x000C79A0
 	public EAIManager(EntityAlive _entity)
 	{
 		this.entity = _entity;
@@ -18,7 +18,7 @@ public class EAIManager
 		this.interestDistance = 10f;
 	}
 
-	// Token: 0x0600215D RID: 8541 RVA: 0x000C9004 File Offset: 0x000C7204
+	// Token: 0x0600217A RID: 8570 RVA: 0x000C9810 File Offset: 0x000C7A10
 	public void AddItemTasks(ItemClass ic)
 	{
 		EAITaskList eaitaskList = new EAITaskList(this);
@@ -43,7 +43,7 @@ public class EAIManager
 		this.tasks.AddTaskList(eaitaskList);
 	}
 
-	// Token: 0x0600215E RID: 8542 RVA: 0x000C9090 File Offset: 0x000C7290
+	// Token: 0x0600217B RID: 8571 RVA: 0x000C989C File Offset: 0x000C7A9C
 	public void RemoveItemTasks(string itemKey)
 	{
 		List<EAITaskEntry> list = this.tasks.Tasks.FindAll((EAITaskEntry t) => t.action is EAIItemTask && (t.action as EAIItemTask).ItemKey.Equals(itemKey));
@@ -56,7 +56,7 @@ public class EAIManager
 		}
 	}
 
-	// Token: 0x0600215F RID: 8543 RVA: 0x000C90F0 File Offset: 0x000C72F0
+	// Token: 0x0600217C RID: 8572 RVA: 0x000C98FC File Offset: 0x000C7AFC
 	public void CopyPropertiesFromEntityClass(EntityClass ec)
 	{
 		ec.Properties.ParseFloat(EntityClass.PropAIFeralSense, ref this.feralSense);
@@ -143,7 +143,7 @@ public class EAIManager
 		throw new Exception("Class '" + text4 + "' not found!");
 	}
 
-	// Token: 0x06002160 RID: 8544 RVA: 0x000C9398 File Offset: 0x000C7598
+	// Token: 0x0600217D RID: 8573 RVA: 0x000C9BA4 File Offset: 0x000C7DA4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ParseTasks(string _str, EAITaskList _list)
 	{
@@ -194,14 +194,14 @@ public class EAIManager
 		}
 	}
 
-	// Token: 0x06002161 RID: 8545 RVA: 0x000C94A8 File Offset: 0x000C76A8
+	// Token: 0x0600217E RID: 8574 RVA: 0x000C9CB4 File Offset: 0x000C7EB4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static EAIBase CreateInstance(string _className)
 	{
 		return (EAIBase)Activator.CreateInstance(EAIManager.GetType(_className));
 	}
 
-	// Token: 0x06002162 RID: 8546 RVA: 0x000C94BC File Offset: 0x000C76BC
+	// Token: 0x0600217F RID: 8575 RVA: 0x000C9CC8 File Offset: 0x000C7EC8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Type GetType(string _className)
 	{
@@ -385,7 +385,7 @@ public class EAIManager
 		return Type.GetType("EAI" + _className);
 	}
 
-	// Token: 0x06002163 RID: 8547 RVA: 0x000C9906 File Offset: 0x000C7B06
+	// Token: 0x06002180 RID: 8576 RVA: 0x000CA112 File Offset: 0x000C8312
 	public void Update()
 	{
 		this.interestDistance = Utils.FastMoveTowards(this.interestDistance, 10f, 0.008333334f);
@@ -394,7 +394,7 @@ public class EAIManager
 		this.UpdateDebugName();
 	}
 
-	// Token: 0x06002164 RID: 8548 RVA: 0x000C9940 File Offset: 0x000C7B40
+	// Token: 0x06002181 RID: 8577 RVA: 0x000CA14C File Offset: 0x000C834C
 	public void UpdateDebugName()
 	{
 		if (GamePrefs.GetBool(EnumGamePrefs.DebugMenuShowTasks))
@@ -404,7 +404,7 @@ public class EAIManager
 		}
 	}
 
-	// Token: 0x06002165 RID: 8549 RVA: 0x000C9978 File Offset: 0x000C7B78
+	// Token: 0x06002182 RID: 8578 RVA: 0x000CA184 File Offset: 0x000C8384
 	public string MakeDebugName(EntityPlayer player)
 	{
 		EntityMoveHelper moveHelper = this.entity.moveHelper;
@@ -491,7 +491,7 @@ public class EAIManager
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x06002166 RID: 8550 RVA: 0x000C9F20 File Offset: 0x000C8120
+	// Token: 0x06002183 RID: 8579 RVA: 0x000CA72C File Offset: 0x000C892C
 	public bool CheckPath(PathInfo pathInfo)
 	{
 		List<EAITaskEntry> executingTasks = this.tasks.GetExecutingTasks();
@@ -505,7 +505,7 @@ public class EAIManager
 		return true;
 	}
 
-	// Token: 0x06002167 RID: 8551 RVA: 0x000C9F66 File Offset: 0x000C8166
+	// Token: 0x06002184 RID: 8580 RVA: 0x000CA772 File Offset: 0x000C8972
 	public void DamagedByEntity()
 	{
 		EAIDestroyArea task = this.tasks.GetTask<EAIDestroyArea>();
@@ -516,7 +516,7 @@ public class EAIManager
 		task.Stop();
 	}
 
-	// Token: 0x06002168 RID: 8552 RVA: 0x000C9F80 File Offset: 0x000C8180
+	// Token: 0x06002185 RID: 8581 RVA: 0x000CA78C File Offset: 0x000C898C
 	public void SleeperWokeUp()
 	{
 		for (int i = 0; i < this.targetTasks.Tasks.Count; i++)
@@ -525,7 +525,7 @@ public class EAIManager
 		}
 	}
 
-	// Token: 0x06002169 RID: 8553 RVA: 0x000C9FC4 File Offset: 0x000C81C4
+	// Token: 0x06002186 RID: 8582 RVA: 0x000CA7D0 File Offset: 0x000C89D0
 	public void FallHitGround(float distance)
 	{
 		if (distance >= 0.8f)
@@ -557,13 +557,13 @@ public class EAIManager
 		}
 	}
 
-	// Token: 0x0600216A RID: 8554 RVA: 0x000CA0FA File Offset: 0x000C82FA
+	// Token: 0x06002187 RID: 8583 RVA: 0x000CA906 File Offset: 0x000C8B06
 	public float GetSeeDistance(Entity _seeEntity)
 	{
 		return this.entity.GetDistance(_seeEntity) - this.seeOffset;
 	}
 
-	// Token: 0x0600216B RID: 8555 RVA: 0x000CA110 File Offset: 0x000C8310
+	// Token: 0x06002188 RID: 8584 RVA: 0x000CA91C File Offset: 0x000C8B1C
 	public static float CalcSenseScale()
 	{
 		switch (EAIManager.FeralSense)
@@ -586,7 +586,7 @@ public class EAIManager
 		return 0f;
 	}
 
-	// Token: 0x0600216C RID: 8556 RVA: 0x000CA174 File Offset: 0x000C8374
+	// Token: 0x06002189 RID: 8585 RVA: 0x000CA980 File Offset: 0x000C8B80
 	public void SetTargetOnlyPlayers(float _distance)
 	{
 		List<EAITaskEntry> list = this.tasks.Tasks;
@@ -609,25 +609,25 @@ public class EAIManager
 		}
 	}
 
-	// Token: 0x0600216D RID: 8557 RVA: 0x000CA1FA File Offset: 0x000C83FA
+	// Token: 0x0600218A RID: 8586 RVA: 0x000CAA06 File Offset: 0x000C8C06
 	public List<T> GetTasks<T>() where T : class
 	{
 		return this.getTaskTypes<T>(this.tasks);
 	}
 
-	// Token: 0x0600216E RID: 8558 RVA: 0x000CA208 File Offset: 0x000C8408
+	// Token: 0x0600218B RID: 8587 RVA: 0x000CAA14 File Offset: 0x000C8C14
 	public T GetTargetTask<T>() where T : class
 	{
 		return this.getTaskType<T>(this.targetTasks);
 	}
 
-	// Token: 0x0600216F RID: 8559 RVA: 0x000CA216 File Offset: 0x000C8416
+	// Token: 0x0600218C RID: 8588 RVA: 0x000CAA22 File Offset: 0x000C8C22
 	public List<T> GetTargetTasks<T>() where T : class
 	{
 		return this.getTaskTypes<T>(this.targetTasks);
 	}
 
-	// Token: 0x06002170 RID: 8560 RVA: 0x000CA224 File Offset: 0x000C8424
+	// Token: 0x0600218D RID: 8589 RVA: 0x000CAA30 File Offset: 0x000C8C30
 	[PublicizedFrom(EAccessModifier.Private)]
 	public T getTaskType<T>(EAITaskList taskList) where T : class
 	{
@@ -642,7 +642,7 @@ public class EAIManager
 		return default(T);
 	}
 
-	// Token: 0x06002171 RID: 8561 RVA: 0x000CA27C File Offset: 0x000C847C
+	// Token: 0x0600218E RID: 8590 RVA: 0x000CAA88 File Offset: 0x000C8C88
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<T> getTaskTypes<T>(EAITaskList taskList) where T : class
 	{
@@ -662,7 +662,7 @@ public class EAIManager
 		return null;
 	}
 
-	// Token: 0x06002172 RID: 8562 RVA: 0x000CA2E4 File Offset: 0x000C84E4
+	// Token: 0x0600218F RID: 8591 RVA: 0x000CAAF0 File Offset: 0x000C8CF0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ClearTaskDelay<T>(EAITaskList taskList) where T : class
 	{
@@ -676,14 +676,14 @@ public class EAIManager
 		}
 	}
 
-	// Token: 0x06002173 RID: 8563 RVA: 0x000CA32C File Offset: 0x000C852C
+	// Token: 0x06002190 RID: 8592 RVA: 0x000CAB38 File Offset: 0x000C8D38
 	public void StopAllTasks()
 	{
 		this.tasks.StopAllTasks();
 		this.targetTasks.StopAllTasks();
 	}
 
-	// Token: 0x06002174 RID: 8564 RVA: 0x000CA344 File Offset: 0x000C8544
+	// Token: 0x06002191 RID: 8593 RVA: 0x000CAB50 File Offset: 0x000C8D50
 	public static void ToggleAnimFreeze()
 	{
 		World world = GameManager.Instance.World;
@@ -707,58 +707,58 @@ public class EAIManager
 		}
 	}
 
-	// Token: 0x040016F0 RID: 5872
+	// Token: 0x04001705 RID: 5893
 	public const float cInterestDistanceMax = 10f;
 
-	// Token: 0x040016F1 RID: 5873
+	// Token: 0x04001706 RID: 5894
 	public float interestDistance;
 
-	// Token: 0x040016F2 RID: 5874
+	// Token: 0x04001707 RID: 5895
 	public float lookTime;
 
-	// Token: 0x040016F3 RID: 5875
+	// Token: 0x04001708 RID: 5896
 	public const float cSenseScaleMax = 1.6f;
 
-	// Token: 0x040016F4 RID: 5876
+	// Token: 0x04001709 RID: 5897
 	public float feralSense;
 
-	// Token: 0x040016F5 RID: 5877
+	// Token: 0x0400170A RID: 5898
 	public float groupCircle;
 
-	// Token: 0x040016F6 RID: 5878
+	// Token: 0x0400170B RID: 5899
 	public float noiseSeekDist;
 
-	// Token: 0x040016F7 RID: 5879
+	// Token: 0x0400170C RID: 5900
 	public float pathCostScale;
 
-	// Token: 0x040016F8 RID: 5880
+	// Token: 0x0400170D RID: 5901
 	public float partialPathHeightScale;
 
-	// Token: 0x040016F9 RID: 5881
+	// Token: 0x0400170E RID: 5902
 	public float seeOffset;
 
-	// Token: 0x040016FA RID: 5882
+	// Token: 0x0400170F RID: 5903
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityAlive entity;
 
-	// Token: 0x040016FB RID: 5883
+	// Token: 0x04001710 RID: 5904
 	public GameRandom random;
 
-	// Token: 0x040016FC RID: 5884
+	// Token: 0x04001711 RID: 5905
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EAITaskList tasks;
 
-	// Token: 0x040016FD RID: 5885
+	// Token: 0x04001712 RID: 5906
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EAITaskList targetTasks;
 
-	// Token: 0x040016FE RID: 5886
+	// Token: 0x04001713 RID: 5907
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Entity> allies = new List<Entity>();
 
-	// Token: 0x040016FF RID: 5887
+	// Token: 0x04001714 RID: 5908
 	public static int FeralSense;
 
-	// Token: 0x04001700 RID: 5888
+	// Token: 0x04001715 RID: 5909
 	public static bool isAnimFreeze;
 }

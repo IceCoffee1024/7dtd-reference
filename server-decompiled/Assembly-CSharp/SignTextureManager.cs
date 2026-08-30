@@ -8,11 +8,11 @@ using Unity.Profiling;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x02000AA9 RID: 2729
+// Token: 0x02000ABA RID: 2746
 public sealed class SignTextureManager
 {
-	// Token: 0x170008DC RID: 2268
-	// (get) Token: 0x060051D9 RID: 20953 RVA: 0x001F3A58 File Offset: 0x001F1C58
+	// Token: 0x170008EE RID: 2286
+	// (get) Token: 0x0600525F RID: 21087 RVA: 0x001F64F0 File Offset: 0x001F46F0
 	public static SignTextureManager Instance
 	{
 		get
@@ -21,7 +21,7 @@ public sealed class SignTextureManager
 		}
 	}
 
-	// Token: 0x060051DA RID: 20954 RVA: 0x001F3A60 File Offset: 0x001F1C60
+	// Token: 0x06005260 RID: 21088 RVA: 0x001F64F8 File Offset: 0x001F46F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignTextureManager()
 	{
@@ -30,8 +30,8 @@ public sealed class SignTextureManager
 		this._scheduler = new BakeScheduler();
 	}
 
-	// Token: 0x170008DD RID: 2269
-	// (get) Token: 0x060051DB RID: 20955 RVA: 0x001F3AE9 File Offset: 0x001F1CE9
+	// Token: 0x170008EF RID: 2287
+	// (get) Token: 0x06005261 RID: 21089 RVA: 0x001F6581 File Offset: 0x001F4781
 	public bool IsEnabled
 	{
 		get
@@ -40,8 +40,8 @@ public sealed class SignTextureManager
 		}
 	}
 
-	// Token: 0x170008DE RID: 2270
-	// (get) Token: 0x060051DC RID: 20956 RVA: 0x001F3AF1 File Offset: 0x001F1CF1
+	// Token: 0x170008F0 RID: 2288
+	// (get) Token: 0x06005262 RID: 21090 RVA: 0x001F6589 File Offset: 0x001F4789
 	public SignTextureManager.SignTextureQuality CurrentQuality
 	{
 		get
@@ -50,7 +50,7 @@ public sealed class SignTextureManager
 		}
 	}
 
-	// Token: 0x060051DD RID: 20957 RVA: 0x001F3AFC File Offset: 0x001F1CFC
+	// Token: 0x06005263 RID: 21091 RVA: 0x001F6594 File Offset: 0x001F4794
 	public void SetQuality(SignTextureManager.SignTextureQuality quality)
 	{
 		if (this._qualityLevel == quality)
@@ -77,7 +77,7 @@ public sealed class SignTextureManager
 		}
 	}
 
-	// Token: 0x060051DE RID: 20958 RVA: 0x001F3BA4 File Offset: 0x001F1DA4
+	// Token: 0x06005264 RID: 21092 RVA: 0x001F663C File Offset: 0x001F483C
 	public void SetTileSize(int tileSize)
 	{
 		if (tileSize > 0)
@@ -86,7 +86,7 @@ public sealed class SignTextureManager
 		}
 	}
 
-	// Token: 0x060051DF RID: 20959 RVA: 0x001F3BB1 File Offset: 0x001F1DB1
+	// Token: 0x06005265 RID: 21093 RVA: 0x001F6649 File Offset: 0x001F4849
 	public void SetTileSizeForCurrentQuality()
 	{
 		if (this._activeTiers != null && this._activeTiers.Length != 0)
@@ -95,13 +95,13 @@ public sealed class SignTextureManager
 		}
 	}
 
-	// Token: 0x060051E0 RID: 20960 RVA: 0x001F3BDB File Offset: 0x001F1DDB
+	// Token: 0x06005266 RID: 21094 RVA: 0x001F6673 File Offset: 0x001F4873
 	public void SetShowProgress(bool showProgress)
 	{
 		this._showProgress = showProgress;
 	}
 
-	// Token: 0x060051E1 RID: 20961 RVA: 0x001F3BE4 File Offset: 0x001F1DE4
+	// Token: 0x06005267 RID: 21095 RVA: 0x001F667C File Offset: 0x001F487C
 	public bool Initialize()
 	{
 		bool flag;
@@ -146,7 +146,7 @@ public sealed class SignTextureManager
 		return flag;
 	}
 
-	// Token: 0x060051E2 RID: 20962 RVA: 0x001F3CCC File Offset: 0x001F1ECC
+	// Token: 0x06005268 RID: 21096 RVA: 0x001F6764 File Offset: 0x001F4964
 	public void Cleanup(bool preserveRegisteredCanvases = false)
 	{
 		using (SignTextureManager.s_SignTextureManagerCleanup.Auto())
@@ -182,7 +182,7 @@ public sealed class SignTextureManager
 		}
 	}
 
-	// Token: 0x060051E3 RID: 20963 RVA: 0x001F3DE0 File Offset: 0x001F1FE0
+	// Token: 0x06005269 RID: 21097 RVA: 0x001F6878 File Offset: 0x001F4A78
 	public void Register(SignCanvas canvas)
 	{
 		if (!this._initialised)
@@ -198,7 +198,7 @@ public sealed class SignTextureManager
 		SignTextureManager.s_RegisteredSigns.Value = this._canvases.Count;
 	}
 
-	// Token: 0x060051E4 RID: 20964 RVA: 0x001F3E1E File Offset: 0x001F201E
+	// Token: 0x0600526A RID: 21098 RVA: 0x001F68B6 File Offset: 0x001F4AB6
 	public void Deregister(SignCanvas canvas)
 	{
 		if (!this._initialised)
@@ -213,7 +213,7 @@ public sealed class SignTextureManager
 		SignTextureManager.s_RegisteredSigns.Value = this._canvases.Count;
 	}
 
-	// Token: 0x060051E5 RID: 20965 RVA: 0x001F3E58 File Offset: 0x001F2058
+	// Token: 0x0600526B RID: 21099 RVA: 0x001F68F0 File Offset: 0x001F4AF0
 	public void Invalidate(SignCanvas canvas)
 	{
 		using (SignTextureManager.s_SignTextureManagerInvalidate.Auto())
@@ -241,7 +241,7 @@ public sealed class SignTextureManager
 		}
 	}
 
-	// Token: 0x060051E6 RID: 20966 RVA: 0x001F3F4C File Offset: 0x001F214C
+	// Token: 0x0600526C RID: 21100 RVA: 0x001F69E4 File Offset: 0x001F4BE4
 	public void MainThreadUpdate()
 	{
 		SignTextureManager.<>c__DisplayClass48_0 CS$<>8__locals1;
@@ -272,14 +272,14 @@ public sealed class SignTextureManager
 		}
 	}
 
-	// Token: 0x060051E7 RID: 20967 RVA: 0x001F406C File Offset: 0x001F226C
+	// Token: 0x0600526D RID: 21101 RVA: 0x001F6B04 File Offset: 0x001F4D04
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector3 GetPlayerPos()
 	{
 		return GameManager.Instance.World.GetPrimaryPlayer().position + new Vector3(0f, 1.5f, 0f);
 	}
 
-	// Token: 0x060051E8 RID: 20968 RVA: 0x001F409C File Offset: 0x001F229C
+	// Token: 0x0600526E RID: 21102 RVA: 0x001F6B34 File Offset: 0x001F4D34
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SelectActiveTiers()
 	{
@@ -308,7 +308,7 @@ public sealed class SignTextureManager
 		this._activeTiers = array;
 	}
 
-	// Token: 0x060051E9 RID: 20969 RVA: 0x001F4104 File Offset: 0x001F2304
+	// Token: 0x0600526F RID: 21103 RVA: 0x001F6B9C File Offset: 0x001F4D9C
 	public void LogDebugInfo(bool saveToDisk)
 	{
 		this.sb.Clear();
@@ -386,14 +386,14 @@ public sealed class SignTextureManager
 		this.sb.Clear();
 	}
 
-	// Token: 0x060051EA RID: 20970 RVA: 0x001F44FE File Offset: 0x001F26FE
+	// Token: 0x06005270 RID: 21104 RVA: 0x001F6F96 File Offset: 0x001F5196
 	[Conditional("SIGN_TEXTURE_DEBUG_LOG_INIT")]
 	public static void DebugLog(string message)
 	{
 		Log.Out("[STM] " + message);
 	}
 
-	// Token: 0x060051EC RID: 20972 RVA: 0x001F46D8 File Offset: 0x001F28D8
+	// Token: 0x06005272 RID: 21106 RVA: 0x001F7170 File Offset: 0x001F5370
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void <MainThreadUpdate>g__RefreshRequestQueue|48_0(ref SignTextureManager.<>c__DisplayClass48_0 A_1)
@@ -408,31 +408,31 @@ public sealed class SignTextureManager
 		this._requestsDirty = false;
 	}
 
-	// Token: 0x04003F51 RID: 16209
+	// Token: 0x04003FE2 RID: 16354
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string kShaderName = "Game/SignTech/UI";
 
-	// Token: 0x04003F52 RID: 16210
+	// Token: 0x04003FE3 RID: 16355
 	public static readonly ProfilerMarker s_SignTextureManagerInitialize = new ProfilerMarker("SignTextureManager.Initialize");
 
-	// Token: 0x04003F53 RID: 16211
+	// Token: 0x04003FE4 RID: 16356
 	public static readonly ProfilerMarker s_SignTextureManagerCleanup = new ProfilerMarker("SignTextureManager.Cleanup");
 
-	// Token: 0x04003F54 RID: 16212
+	// Token: 0x04003FE5 RID: 16357
 	public static readonly ProfilerMarker s_SignTextureManagerInvalidate = new ProfilerMarker("SignTextureManager.Invalidate");
 
-	// Token: 0x04003F55 RID: 16213
+	// Token: 0x04003FE6 RID: 16358
 	public static readonly ProfilerMarker s_SignTextureManagerMainThreadUpdate = new ProfilerMarker("SignTextureManager.MainThreadUpdate");
 
-	// Token: 0x04003F56 RID: 16214
+	// Token: 0x04003FE7 RID: 16359
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerCounterValue<int> s_RegisteredSigns = new ProfilerCounterValue<int>(ProfilerCategory.Scripts, "STM Registered Signs", ProfilerMarkerDataUnit.Count, ProfilerCounterOptions.FlushOnEndOfFrame);
 
-	// Token: 0x04003F57 RID: 16215
+	// Token: 0x04003FE8 RID: 16360
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly SignTextureManager m_instance = new SignTextureManager();
 
-	// Token: 0x04003F58 RID: 16216
+	// Token: 0x04003FE9 RID: 16361
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly SignTextureManager.TierSpec[] s_tiersLowest = new SignTextureManager.TierSpec[]
 	{
@@ -441,7 +441,7 @@ public sealed class SignTextureManager
 		new SignTextureManager.TierSpec(512, 8, 8)
 	};
 
-	// Token: 0x04003F59 RID: 16217
+	// Token: 0x04003FEA RID: 16362
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly SignTextureManager.TierSpec[] s_tiersLow = new SignTextureManager.TierSpec[]
 	{
@@ -450,7 +450,7 @@ public sealed class SignTextureManager
 		new SignTextureManager.TierSpec(1024, 3, 4)
 	};
 
-	// Token: 0x04003F5A RID: 16218
+	// Token: 0x04003FEB RID: 16363
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly SignTextureManager.TierSpec[] s_tiersMedium = new SignTextureManager.TierSpec[]
 	{
@@ -459,7 +459,7 @@ public sealed class SignTextureManager
 		new SignTextureManager.TierSpec(1024, 3, 4)
 	};
 
-	// Token: 0x04003F5B RID: 16219
+	// Token: 0x04003FEC RID: 16364
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly SignTextureManager.TierSpec[] s_tiersHigh = new SignTextureManager.TierSpec[]
 	{
@@ -468,7 +468,7 @@ public sealed class SignTextureManager
 		new SignTextureManager.TierSpec(2048, 1, 1)
 	};
 
-	// Token: 0x04003F5C RID: 16220
+	// Token: 0x04003FED RID: 16365
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly SignTextureManager.TierSpec[] s_tiersUltra = new SignTextureManager.TierSpec[]
 	{
@@ -477,104 +477,104 @@ public sealed class SignTextureManager
 		new SignTextureManager.TierSpec(2048, 2, 2)
 	};
 
-	// Token: 0x04003F5D RID: 16221
+	// Token: 0x04003FEE RID: 16366
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly HashSet<SignCanvas> _canvases = new HashSet<SignCanvas>();
 
-	// Token: 0x04003F5E RID: 16222
+	// Token: 0x04003FEF RID: 16367
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly SignPrioritizer _prioritizer;
 
-	// Token: 0x04003F5F RID: 16223
+	// Token: 0x04003FF0 RID: 16368
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly SignTextureStore _store;
 
-	// Token: 0x04003F60 RID: 16224
+	// Token: 0x04003FF1 RID: 16369
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly BakeScheduler _scheduler;
 
-	// Token: 0x04003F61 RID: 16225
+	// Token: 0x04003FF2 RID: 16370
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<SignBakeRequest> _tmpRequests = new List<SignBakeRequest>(256);
 
-	// Token: 0x04003F62 RID: 16226
+	// Token: 0x04003FF3 RID: 16371
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Shader _shader;
 
-	// Token: 0x04003F63 RID: 16227
+	// Token: 0x04003FF4 RID: 16372
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Material _material;
 
-	// Token: 0x04003F64 RID: 16228
+	// Token: 0x04003FF5 RID: 16373
 	[PublicizedFrom(EAccessModifier.Private)]
 	public CommandBuffer _cmd;
 
-	// Token: 0x04003F65 RID: 16229
+	// Token: 0x04003FF6 RID: 16374
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool _initialised;
 
-	// Token: 0x04003F66 RID: 16230
+	// Token: 0x04003FF7 RID: 16375
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignTextureManager.SignTextureQuality _qualityLevel = SignTextureManager.SignTextureQuality.Medium;
 
-	// Token: 0x04003F67 RID: 16231
+	// Token: 0x04003FF8 RID: 16376
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignTextureManager.TierSpec[] _activeTiers = SignTextureManager.s_tiersMedium;
 
-	// Token: 0x04003F68 RID: 16232
+	// Token: 0x04003FF9 RID: 16377
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int _tileSize = 256;
 
-	// Token: 0x04003F69 RID: 16233
+	// Token: 0x04003FFA RID: 16378
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool _requestsDirty = true;
 
-	// Token: 0x04003F6A RID: 16234
+	// Token: 0x04003FFB RID: 16379
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 _lastUpdatePosition = Vector3.zero;
 
-	// Token: 0x04003F6B RID: 16235
+	// Token: 0x04003FFC RID: 16380
 	[PublicizedFrom(EAccessModifier.Private)]
 	public uint _framesSinceRefreshed;
 
-	// Token: 0x04003F6C RID: 16236
+	// Token: 0x04003FFD RID: 16381
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const uint kMinFramesSinceRefreshed = 10U;
 
-	// Token: 0x04003F6D RID: 16237
+	// Token: 0x04003FFE RID: 16382
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float kMinSqrDistanceSinceRefreshed = 1f;
 
-	// Token: 0x04003F6E RID: 16238
+	// Token: 0x04003FFF RID: 16383
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool _showProgress;
 
-	// Token: 0x04003F6F RID: 16239
+	// Token: 0x04004000 RID: 16384
 	[PublicizedFrom(EAccessModifier.Private)]
 	public StringBuilder sb = new StringBuilder();
 
-	// Token: 0x02000AAA RID: 2730
+	// Token: 0x02000ABB RID: 2747
 	public enum SignTextureQuality
 	{
-		// Token: 0x04003F71 RID: 16241
+		// Token: 0x04004002 RID: 16386
 		Lowest,
-		// Token: 0x04003F72 RID: 16242
+		// Token: 0x04004003 RID: 16387
 		Low,
-		// Token: 0x04003F73 RID: 16243
+		// Token: 0x04004004 RID: 16388
 		Medium,
-		// Token: 0x04003F74 RID: 16244
+		// Token: 0x04004005 RID: 16389
 		High,
-		// Token: 0x04003F75 RID: 16245
+		// Token: 0x04004006 RID: 16390
 		Ultra,
-		// Token: 0x04003F76 RID: 16246
+		// Token: 0x04004007 RID: 16391
 		Infinite
 	}
 
-	// Token: 0x02000AAB RID: 2731
+	// Token: 0x02000ABC RID: 2748
 	public readonly struct TierSpec
 	{
-		// Token: 0x170008DF RID: 2271
-		// (get) Token: 0x060051ED RID: 20973 RVA: 0x001F475A File Offset: 0x001F295A
+		// Token: 0x170008F1 RID: 2289
+		// (get) Token: 0x06005273 RID: 21107 RVA: 0x001F71F2 File Offset: 0x001F53F2
 		public int TotalCount
 		{
 			get
@@ -583,7 +583,7 @@ public sealed class SignTextureManager
 			}
 		}
 
-		// Token: 0x060051EE RID: 20974 RVA: 0x001F4769 File Offset: 0x001F2969
+		// Token: 0x06005274 RID: 21108 RVA: 0x001F7201 File Offset: 0x001F5401
 		public TierSpec(int resolution, int activeCount, int bufferCount)
 		{
 			this.Resolution = resolution;
@@ -591,13 +591,13 @@ public sealed class SignTextureManager
 			this.BufferCount = bufferCount;
 		}
 
-		// Token: 0x04003F77 RID: 16247
+		// Token: 0x04004008 RID: 16392
 		public readonly int Resolution;
 
-		// Token: 0x04003F78 RID: 16248
+		// Token: 0x04004009 RID: 16393
 		public readonly int ActiveCount;
 
-		// Token: 0x04003F79 RID: 16249
+		// Token: 0x0400400A RID: 16394
 		public readonly int BufferCount;
 	}
 }

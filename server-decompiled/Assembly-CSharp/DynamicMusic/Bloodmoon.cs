@@ -6,11 +6,11 @@ using UnityEngine.Scripting;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A33 RID: 6707
+	// Token: 0x02001A5A RID: 6746
 	[Preserve]
 	public class Bloodmoon : LayeredSection<BloodmoonLayerMixer>
 	{
-		// Token: 0x0600CAEB RID: 51947 RVA: 0x004A39F4 File Offset: 0x004A1BF4
+		// Token: 0x0600CC74 RID: 52340 RVA: 0x004A9DE8 File Offset: 0x004A7FE8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override IEnumerator PlayCoroutine()
 		{
@@ -22,7 +22,7 @@ namespace DynamicMusic
 			yield break;
 		}
 
-		// Token: 0x0600CAEC RID: 51948 RVA: 0x004A3A04 File Offset: 0x004A1C04
+		// Token: 0x0600CC75 RID: 52341 RVA: 0x004A9DF8 File Offset: 0x004A7FF8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void FillStream(float[] data)
 		{

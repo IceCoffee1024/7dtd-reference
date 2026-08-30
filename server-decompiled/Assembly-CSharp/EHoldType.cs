@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x02000EA8 RID: 3752
+// Token: 0x02000EBD RID: 3773
 public enum EHoldType
 {
-	// Token: 0x04005688 RID: 22152
+	// Token: 0x0400572D RID: 22317
 	HoldStart,
-	// Token: 0x04005689 RID: 22153
+	// Token: 0x0400572E RID: 22318
 	Hold,
-	// Token: 0x0400568A RID: 22154
+	// Token: 0x0400572F RID: 22319
 	HoldTimed,
-	// Token: 0x0400568B RID: 22155
+	// Token: 0x04005730 RID: 22320
 	HoldEnd
 }

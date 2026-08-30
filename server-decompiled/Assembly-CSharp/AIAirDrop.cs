@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020003FA RID: 1018
+// Token: 0x020003FE RID: 1022
 [Preserve]
 public class AIAirDrop
 {
-	// Token: 0x06001F80 RID: 8064 RVA: 0x000BE69E File Offset: 0x000BC89E
+	// Token: 0x06001F9D RID: 8093 RVA: 0x000BEE0A File Offset: 0x000BD00A
 	public AIAirDrop(AIDirectorAirDropComponent _airDropController, World _world, List<EntityPlayer> _players)
 	{
 		this.controller = _airDropController;
@@ -16,7 +16,7 @@ public class AIAirDrop
 		this.MakePlayerClusters(_players);
 	}
 
-	// Token: 0x06001F81 RID: 8065 RVA: 0x000BE6C8 File Offset: 0x000BC8C8
+	// Token: 0x06001F9E RID: 8094 RVA: 0x000BEE34 File Offset: 0x000BD034
 	public bool Tick(float dt)
 	{
 		if (this.flightPaths == null)
@@ -95,7 +95,7 @@ public class AIAirDrop
 		return this.flightPaths == null;
 	}
 
-	// Token: 0x06001F82 RID: 8066 RVA: 0x000BE90C File Offset: 0x000BCB0C
+	// Token: 0x06001F9F RID: 8095 RVA: 0x000BF078 File Offset: 0x000BD278
 	public static float Angle(Vector2 p_vector2)
 	{
 		if (p_vector2.x < 0f)
@@ -105,7 +105,7 @@ public class AIAirDrop
 		return Mathf.Atan2(p_vector2.x, p_vector2.y) * 57.29578f;
 	}
 
-	// Token: 0x06001F83 RID: 8067 RVA: 0x000BE964 File Offset: 0x000BCB64
+	// Token: 0x06001FA0 RID: 8096 RVA: 0x000BF0D0 File Offset: 0x000BD2D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SpawnPlane(AIAirDrop.FlightPath _fp)
 	{
@@ -126,7 +126,7 @@ public class AIAirDrop
 		}));
 	}
 
-	// Token: 0x06001F84 RID: 8068 RVA: 0x000BEA44 File Offset: 0x000BCC44
+	// Token: 0x06001FA1 RID: 8097 RVA: 0x000BF1B0 File Offset: 0x000BD3B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CreateFlightPaths()
 	{
@@ -205,7 +205,7 @@ public class AIAirDrop
 		}
 	}
 
-	// Token: 0x06001F85 RID: 8069 RVA: 0x000BEE8C File Offset: 0x000BD08C
+	// Token: 0x06001FA2 RID: 8098 RVA: 0x000BF5F8 File Offset: 0x000BD7F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 FindSafePoint(Vector2 _point, Vector2 _dir, float _stepSize, float _range)
 	{
@@ -239,7 +239,7 @@ public class AIAirDrop
 		return _point;
 	}
 
-	// Token: 0x06001F86 RID: 8070 RVA: 0x000BEF38 File Offset: 0x000BD138
+	// Token: 0x06001FA3 RID: 8099 RVA: 0x000BF6A4 File Offset: 0x000BD8A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MakePlayerClusters(List<EntityPlayer> _players)
 	{
@@ -267,7 +267,7 @@ public class AIAirDrop
 		}
 	}
 
-	// Token: 0x06001F87 RID: 8071 RVA: 0x000BF018 File Offset: 0x000BD218
+	// Token: 0x06001FA4 RID: 8100 RVA: 0x000BF784 File Offset: 0x000BD984
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryAddPlayerToCluster(EntityPlayer _player, AIAirDrop.PlayerCluster _cluster)
 	{
@@ -293,14 +293,14 @@ public class AIAirDrop
 		return true;
 	}
 
-	// Token: 0x06001F88 RID: 8072 RVA: 0x000BF0D8 File Offset: 0x000BD2D8
+	// Token: 0x06001FA5 RID: 8101 RVA: 0x000BF844 File Offset: 0x000BDA44
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float GetPlayerDistanceSq(EntityPlayer _player, Vector2 _xzPos)
 	{
 		return (_xzPos - new Vector2(_player.position.x, _player.position.z)).sqrMagnitude;
 	}
 
-	// Token: 0x06001F89 RID: 8073 RVA: 0x000BF10E File Offset: 0x000BD30E
+	// Token: 0x06001FA6 RID: 8102 RVA: 0x000BF87A File Offset: 0x000BDA7A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void SelectCrateCount(int _numPlayers, out int _min, out int _max)
 	{
@@ -308,7 +308,7 @@ public class AIAirDrop
 		_max = 1;
 	}
 
-	// Token: 0x06001F8A RID: 8074 RVA: 0x000BF118 File Offset: 0x000BD318
+	// Token: 0x06001FA7 RID: 8103 RVA: 0x000BF884 File Offset: 0x000BDA84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CalcSupplyDropMetrics(int _numPlayers, int _numClusters, out int _numCrates, out int _numPlanes)
 	{
@@ -323,135 +323,135 @@ public class AIAirDrop
 		}
 	}
 
-	// Token: 0x06001F8B RID: 8075 RVA: 0x000BF191 File Offset: 0x000BD391
+	// Token: 0x06001FA8 RID: 8104 RVA: 0x000BF8FD File Offset: 0x000BDAFD
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 ClampToMapExtents(Vector3 _pos, Vector2 _dir, float _step)
 	{
 		return this.world.ClampToValidWorldPos(_pos);
 	}
 
-	// Token: 0x0400153B RID: 5435
+	// Token: 0x04001550 RID: 5456
 	public const float cPlaneMetersPerSecond = 120f;
 
-	// Token: 0x0400153C RID: 5436
+	// Token: 0x04001551 RID: 5457
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float kMaxPlayerClusterRadius = 70f;
 
-	// Token: 0x0400153D RID: 5437
+	// Token: 0x04001552 RID: 5458
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float kMinPlayerClusterRadius = 30f;
 
-	// Token: 0x0400153E RID: 5438
+	// Token: 0x04001553 RID: 5459
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float kMaxPlaneTangentPointRadius = 750f;
 
-	// Token: 0x0400153F RID: 5439
+	// Token: 0x04001554 RID: 5460
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float kMinPlaneTangentPointRadius = 30f;
 
-	// Token: 0x04001540 RID: 5440
+	// Token: 0x04001555 RID: 5461
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float kMinPlaneFlightVector = 1500f;
 
-	// Token: 0x04001541 RID: 5441
+	// Token: 0x04001556 RID: 5462
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float kMaxPlaneFlightVector = 2000f;
 
-	// Token: 0x04001542 RID: 5442
+	// Token: 0x04001557 RID: 5463
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float kMinDropRange = 150f;
 
-	// Token: 0x04001543 RID: 5443
+	// Token: 0x04001558 RID: 5464
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float kMaxDropRange = 700f;
 
-	// Token: 0x04001544 RID: 5444
+	// Token: 0x04001559 RID: 5465
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int kMaxDropsPerPlane = 3;
 
-	// Token: 0x04001545 RID: 5445
+	// Token: 0x0400155A RID: 5466
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int kSpawnYUp = 180;
 
-	// Token: 0x04001546 RID: 5446
+	// Token: 0x0400155B RID: 5467
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AIDirectorAirDropComponent controller;
 
-	// Token: 0x04001547 RID: 5447
+	// Token: 0x0400155C RID: 5468
 	[PublicizedFrom(EAccessModifier.Private)]
 	public World world;
 
-	// Token: 0x04001548 RID: 5448
+	// Token: 0x0400155D RID: 5469
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<AIAirDrop.PlayerCluster> clusters;
 
-	// Token: 0x04001549 RID: 5449
+	// Token: 0x0400155E RID: 5470
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<AIAirDrop.FlightPath> flightPaths;
 
-	// Token: 0x0400154A RID: 5450
+	// Token: 0x0400155F RID: 5471
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool spawningCrates;
 
-	// Token: 0x0400154B RID: 5451
+	// Token: 0x04001560 RID: 5472
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int numPlayers;
 
-	// Token: 0x0400154C RID: 5452
+	// Token: 0x04001561 RID: 5473
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Entity eSupplyPlane;
 
-	// Token: 0x020003FB RID: 1019
+	// Token: 0x020003FF RID: 1023
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class SupplyCrateSpawn
 	{
-		// Token: 0x0400154D RID: 5453
+		// Token: 0x04001562 RID: 5474
 		public float Delay;
 
-		// Token: 0x0400154E RID: 5454
+		// Token: 0x04001563 RID: 5475
 		public Vector3 SpawnPos;
 
-		// Token: 0x0400154F RID: 5455
+		// Token: 0x04001564 RID: 5476
 		public ChunkManager.ChunkObserver ChunkRef;
 	}
 
-	// Token: 0x020003FC RID: 1020
+	// Token: 0x02000400 RID: 1024
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class PlayerCluster
 	{
-		// Token: 0x04001550 RID: 5456
+		// Token: 0x04001565 RID: 5477
 		public Vector2 XZCenter;
 
-		// Token: 0x04001551 RID: 5457
+		// Token: 0x04001566 RID: 5478
 		public float Radius;
 
-		// Token: 0x04001552 RID: 5458
+		// Token: 0x04001567 RID: 5479
 		public List<EntityPlayer> Players = new List<EntityPlayer>();
 
-		// Token: 0x04001553 RID: 5459
+		// Token: 0x04001568 RID: 5480
 		public float Delay;
 	}
 
-	// Token: 0x020003FD RID: 1021
+	// Token: 0x02000401 RID: 1025
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class FlightPath
 	{
-		// Token: 0x04001554 RID: 5460
+		// Token: 0x04001569 RID: 5481
 		public List<AIAirDrop.SupplyCrateSpawn> Crates = new List<AIAirDrop.SupplyCrateSpawn>();
 
-		// Token: 0x04001555 RID: 5461
+		// Token: 0x0400156A RID: 5482
 		public Vector3 Start;
 
-		// Token: 0x04001556 RID: 5462
+		// Token: 0x0400156B RID: 5483
 		public Vector3 End;
 
-		// Token: 0x04001557 RID: 5463
+		// Token: 0x0400156C RID: 5484
 		public float Delay;
 
-		// Token: 0x04001558 RID: 5464
+		// Token: 0x0400156D RID: 5485
 		public bool Spawned;
 	}
 }

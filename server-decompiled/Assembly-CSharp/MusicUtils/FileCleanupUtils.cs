@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace MusicUtils
 {
-	// Token: 0x020019F0 RID: 6640
+	// Token: 0x02001A17 RID: 6679
 	public static class FileCleanupUtils
 	{
-		// Token: 0x0600C98C RID: 51596 RVA: 0x0049F740 File Offset: 0x0049D940
+		// Token: 0x0600CB15 RID: 51989 RVA: 0x004A5B34 File Offset: 0x004A3D34
 		public static void CleanUpAllWaveFiles()
 		{
 			for (int i = 0; i < FileCleanupUtils.paths.Count; i++)
@@ -15,13 +15,13 @@ namespace MusicUtils
 			}
 		}
 
-		// Token: 0x0600C98D RID: 51597 RVA: 0x0049F772 File Offset: 0x0049D972
+		// Token: 0x0600CB16 RID: 51990 RVA: 0x004A5B66 File Offset: 0x004A3D66
 		public static void CleanUpWaveFile(string file)
 		{
 			WaveCleanUp.Create().GetComponent<WaveCleanUp>().FilePath = file;
 		}
 
-		// Token: 0x04009923 RID: 39203
+		// Token: 0x04009A54 RID: 39508
 		public static List<string> paths = new List<string>();
 	}
 }

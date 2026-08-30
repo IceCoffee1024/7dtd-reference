@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Threading;
 
-// Token: 0x02001390 RID: 5008
+// Token: 0x020013AB RID: 5035
 public class BlockingQueue<T>
 {
-	// Token: 0x06009DB0 RID: 40368 RVA: 0x003B875C File Offset: 0x003B695C
+	// Token: 0x06009EAD RID: 40621 RVA: 0x003BDAA0 File Offset: 0x003BBCA0
 	public void Enqueue(T item)
 	{
 		Queue<T> queue = this.queue;
@@ -16,7 +16,7 @@ public class BlockingQueue<T>
 		}
 	}
 
-	// Token: 0x06009DB1 RID: 40369 RVA: 0x003B87B0 File Offset: 0x003B69B0
+	// Token: 0x06009EAE RID: 40622 RVA: 0x003BDAF4 File Offset: 0x003BBCF4
 	public T Dequeue()
 	{
 		Queue<T> queue = this.queue;
@@ -37,7 +37,7 @@ public class BlockingQueue<T>
 		return t;
 	}
 
-	// Token: 0x06009DB2 RID: 40370 RVA: 0x003B8828 File Offset: 0x003B6A28
+	// Token: 0x06009EAF RID: 40623 RVA: 0x003BDB6C File Offset: 0x003BBD6C
 	public bool HasData()
 	{
 		Queue<T> queue = this.queue;
@@ -49,7 +49,7 @@ public class BlockingQueue<T>
 		return flag2;
 	}
 
-	// Token: 0x06009DB3 RID: 40371 RVA: 0x003B8874 File Offset: 0x003B6A74
+	// Token: 0x06009EB0 RID: 40624 RVA: 0x003BDBB8 File Offset: 0x003BBDB8
 	public void Close()
 	{
 		Queue<T> queue = this.queue;
@@ -60,7 +60,7 @@ public class BlockingQueue<T>
 		}
 	}
 
-	// Token: 0x06009DB4 RID: 40372 RVA: 0x003B88C0 File Offset: 0x003B6AC0
+	// Token: 0x06009EB1 RID: 40625 RVA: 0x003BDC04 File Offset: 0x003BBE04
 	public void Clear()
 	{
 		Queue<T> queue = this.queue;
@@ -70,11 +70,11 @@ public class BlockingQueue<T>
 		}
 	}
 
-	// Token: 0x0400776B RID: 30571
+	// Token: 0x04007844 RID: 30788
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool closing;
 
-	// Token: 0x0400776C RID: 30572
+	// Token: 0x04007845 RID: 30789
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Queue<T> queue = new Queue<T>();
 }

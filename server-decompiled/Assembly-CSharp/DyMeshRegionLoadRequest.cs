@@ -3,10 +3,10 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x020003A7 RID: 935
+// Token: 0x020003AB RID: 939
 public class DyMeshRegionLoadRequest
 {
-	// Token: 0x06001BF3 RID: 7155 RVA: 0x000A6026 File Offset: 0x000A4226
+	// Token: 0x06001C10 RID: 7184 RVA: 0x000A6766 File Offset: 0x000A4966
 	public static DyMeshRegionLoadRequest Create(long key)
 	{
 		return new DyMeshRegionLoadRequest
@@ -17,7 +17,7 @@ public class DyMeshRegionLoadRequest
 		};
 	}
 
-	// Token: 0x06001BF4 RID: 7156 RVA: 0x000A604C File Offset: 0x000A424C
+	// Token: 0x06001C11 RID: 7185 RVA: 0x000A678C File Offset: 0x000A498C
 	public void CreateMeshSync(DynamicMeshRegion region)
 	{
 		GameObject regionMeshRendererFromPool = DynamicMeshItem.GetRegionMeshRendererFromPool();
@@ -32,7 +32,7 @@ public class DyMeshRegionLoadRequest
 		region.SetVisibleNew(region.VisibleChunks == 0 || !region.InBuffer, "create mesh sync finished", true);
 	}
 
-	// Token: 0x06001BF5 RID: 7157 RVA: 0x000A60F3 File Offset: 0x000A42F3
+	// Token: 0x06001C12 RID: 7186 RVA: 0x000A6833 File Offset: 0x000A4A33
 	public IEnumerator CreateMeshCoroutine(DynamicMeshRegion region)
 	{
 		GameObject newRegionObject = DynamicMeshItem.GetRegionMeshRendererFromPool();
@@ -48,7 +48,7 @@ public class DyMeshRegionLoadRequest
 		yield break;
 	}
 
-	// Token: 0x06001BF6 RID: 7158 RVA: 0x000A6109 File Offset: 0x000A4309
+	// Token: 0x06001C13 RID: 7187 RVA: 0x000A6849 File Offset: 0x000A4A49
 	public IEnumerator CreateOpaqueMesh(MeshLists cache, GameObject parent, int maxMsPerFrame)
 	{
 		if (cache.Vertices.Count == 0)
@@ -112,7 +112,7 @@ public class DyMeshRegionLoadRequest
 		yield break;
 	}
 
-	// Token: 0x06001BF7 RID: 7159 RVA: 0x000A6128 File Offset: 0x000A4328
+	// Token: 0x06001C14 RID: 7188 RVA: 0x000A6868 File Offset: 0x000A4A68
 	public void CreateOpaqueMeshSync(MeshLists cache, GameObject parent, int maxMsPerFrame)
 	{
 		if (cache.Vertices.Count == 0)
@@ -145,7 +145,7 @@ public class DyMeshRegionLoadRequest
 		mesh.UploadMeshData(DynamicMeshThread.LockMeshesAfterGenerating);
 	}
 
-	// Token: 0x06001BF8 RID: 7160 RVA: 0x000A6212 File Offset: 0x000A4412
+	// Token: 0x06001C15 RID: 7189 RVA: 0x000A6952 File Offset: 0x000A4B52
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator CreateTerrainGo(MeshLists cache, GameObject parent, int maxMsPerFrame)
 	{
@@ -253,7 +253,7 @@ public class DyMeshRegionLoadRequest
 		yield break;
 	}
 
-	// Token: 0x06001BF9 RID: 7161 RVA: 0x000A6230 File Offset: 0x000A4430
+	// Token: 0x06001C16 RID: 7190 RVA: 0x000A6970 File Offset: 0x000A4B70
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CreateTerrainGoSync(MeshLists cache, GameObject parent, int maxMsPerFrame)
 	{
@@ -313,12 +313,12 @@ public class DyMeshRegionLoadRequest
 		mesh.UploadMeshData(DynamicMeshThread.LockMeshesAfterGenerating);
 	}
 
-	// Token: 0x04001229 RID: 4649
+	// Token: 0x0400123E RID: 4670
 	public long Key;
 
-	// Token: 0x0400122A RID: 4650
+	// Token: 0x0400123F RID: 4671
 	public MeshLists OpaqueMesh;
 
-	// Token: 0x0400122B RID: 4651
+	// Token: 0x04001240 RID: 4672
 	public MeshLists TerrainMesh;
 }

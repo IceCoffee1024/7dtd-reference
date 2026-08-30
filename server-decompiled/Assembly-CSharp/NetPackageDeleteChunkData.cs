@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020007BD RID: 1981
+// Token: 0x020007C8 RID: 1992
 [Preserve]
 public class NetPackageDeleteChunkData : NetPackage
 {
-	// Token: 0x06003ABB RID: 15035 RVA: 0x0017BC4E File Offset: 0x00179E4E
+	// Token: 0x06003B1A RID: 15130 RVA: 0x0017E026 File Offset: 0x0017C226
 	public NetPackageDeleteChunkData Setup(ICollection<long> _chunkKeys)
 	{
 		this.chunkKeys.Clear();
@@ -15,7 +15,7 @@ public class NetPackageDeleteChunkData : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003ABC RID: 15036 RVA: 0x0017BC80 File Offset: 0x00179E80
+	// Token: 0x06003B1B RID: 15131 RVA: 0x0017E058 File Offset: 0x0017C258
 	public override void read(PooledBinaryReader _br)
 	{
 		int num = _br.ReadInt32();
@@ -26,7 +26,7 @@ public class NetPackageDeleteChunkData : NetPackage
 		}
 	}
 
-	// Token: 0x06003ABD RID: 15037 RVA: 0x0017BCBC File Offset: 0x00179EBC
+	// Token: 0x06003B1C RID: 15132 RVA: 0x0017E094 File Offset: 0x0017C294
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -37,7 +37,7 @@ public class NetPackageDeleteChunkData : NetPackage
 		}
 	}
 
-	// Token: 0x06003ABE RID: 15038 RVA: 0x0017BD0C File Offset: 0x00179F0C
+	// Token: 0x06003B1D RID: 15133 RVA: 0x0017E0E4 File Offset: 0x0017C2E4
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -57,8 +57,8 @@ public class NetPackageDeleteChunkData : NetPackage
 		MultiBlockManager.Instance.CullChunklessDataOnClient(this.chunkKeys);
 	}
 
-	// Token: 0x17000618 RID: 1560
-	// (get) Token: 0x06003ABF RID: 15039 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x17000623 RID: 1571
+	// (get) Token: 0x06003B1E RID: 15134 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -67,16 +67,16 @@ public class NetPackageDeleteChunkData : NetPackage
 		}
 	}
 
-	// Token: 0x06003AC0 RID: 15040 RVA: 0x0017BD59 File Offset: 0x00179F59
+	// Token: 0x06003B1F RID: 15135 RVA: 0x0017E131 File Offset: 0x0017C331
 	public override int GetLength()
 	{
 		return this.length;
 	}
 
-	// Token: 0x04002FC2 RID: 12226
+	// Token: 0x04003041 RID: 12353
 	public List<long> chunkKeys = new List<long>();
 
-	// Token: 0x04002FC3 RID: 12227
+	// Token: 0x04003042 RID: 12354
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int length;
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x02000B96 RID: 2966
+// Token: 0x02000BA8 RID: 2984
 public class RegionFileV1 : RegionFileSectorBased
 {
-	// Token: 0x060059BF RID: 22975 RVA: 0x002275B4 File Offset: 0x002257B4
+	// Token: 0x06005A47 RID: 23111 RVA: 0x0022A2D0 File Offset: 0x002284D0
 	public RegionFileV1(string _fullFilePath, int _rX, int _rZ, Stream _fileStream, int _version)
 		: base(_fullFilePath, _rX, _rZ, _version)
 	{
@@ -34,7 +34,7 @@ public class RegionFileV1 : RegionFileSectorBased
 		}
 	}
 
-	// Token: 0x060059C0 RID: 22976 RVA: 0x00227670 File Offset: 0x00225870
+	// Token: 0x06005A48 RID: 23112 RVA: 0x0022A38C File Offset: 0x0022858C
 	public override void SaveHeaderData()
 	{
 		lock (this)
@@ -49,7 +49,7 @@ public class RegionFileV1 : RegionFileSectorBased
 		}
 	}
 
-	// Token: 0x060059C1 RID: 22977 RVA: 0x00227704 File Offset: 0x00225904
+	// Token: 0x06005A49 RID: 23113 RVA: 0x0022A420 File Offset: 0x00228620
 	public override void ReadData(int _cX, int _cZ, Stream _targetStream)
 	{
 		lock (this)
@@ -80,7 +80,7 @@ public class RegionFileV1 : RegionFileSectorBased
 		}
 	}
 
-	// Token: 0x060059C2 RID: 22978 RVA: 0x002277EC File Offset: 0x002259EC
+	// Token: 0x06005A4A RID: 23114 RVA: 0x0022A508 File Offset: 0x00228708
 	public override void WriteData(int _cX, int _cZ, int _dataLength, byte _compression, byte[] _data, bool _saveHeaderToFile)
 	{
 		lock (this)
@@ -130,18 +130,18 @@ public class RegionFileV1 : RegionFileSectorBased
 		}
 	}
 
-	// Token: 0x060059C3 RID: 22979 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005A4B RID: 23115 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void OptimizeLayout()
 	{
 	}
 
-	// Token: 0x060059C4 RID: 22980 RVA: 0x000FEFA9 File Offset: 0x000FD1A9
+	// Token: 0x06005A4C RID: 23116 RVA: 0x000FFF9D File Offset: 0x000FE19D
 	public override int ChunkCount()
 	{
 		return -1;
 	}
 
-	// Token: 0x0400456E RID: 17774
+	// Token: 0x04004609 RID: 17929
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int FILE_HEADER_SIZE = 4;
 }

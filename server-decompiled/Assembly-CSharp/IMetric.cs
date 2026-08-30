@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Text;
 
-// Token: 0x02001509 RID: 5385
+// Token: 0x02001524 RID: 5412
 public interface IMetric
 {
-	// Token: 0x17001389 RID: 5001
-	// (get) Token: 0x0600A90A RID: 43274
+	// Token: 0x170013C2 RID: 5058
+	// (get) Token: 0x0600AA07 RID: 43527
 	string Header { get; }
 
-	// Token: 0x0600A90B RID: 43275
+	// Token: 0x0600AA08 RID: 43528
 	void AppendLastValue(StringBuilder builder);
 
-	// Token: 0x0600A90C RID: 43276
+	// Token: 0x0600AA09 RID: 43529
 	void Cleanup();
 }

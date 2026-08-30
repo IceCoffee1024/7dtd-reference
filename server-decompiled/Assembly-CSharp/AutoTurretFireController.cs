@@ -5,12 +5,12 @@ using System.Runtime.CompilerServices;
 using Audio;
 using UnityEngine;
 
-// Token: 0x020003C5 RID: 965
+// Token: 0x020003C9 RID: 969
 public class AutoTurretFireController : MonoBehaviour
 {
-	// Token: 0x17000382 RID: 898
-	// (get) Token: 0x06001D17 RID: 7447 RVA: 0x000AEC95 File Offset: 0x000ACE95
-	// (set) Token: 0x06001D18 RID: 7448 RVA: 0x000AECA7 File Offset: 0x000ACEA7
+	// Token: 0x17000386 RID: 902
+	// (get) Token: 0x06001D34 RID: 7476 RVA: 0x000AF3D5 File Offset: 0x000AD5D5
+	// (set) Token: 0x06001D35 RID: 7477 RVA: 0x000AF3E7 File Offset: 0x000AD5E7
 	public Vector3 BlockPosition
 	{
 		get
@@ -23,9 +23,9 @@ public class AutoTurretFireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000383 RID: 899
-	// (get) Token: 0x06001D19 RID: 7449 RVA: 0x000AECB0 File Offset: 0x000ACEB0
-	// (set) Token: 0x06001D1A RID: 7450 RVA: 0x000AECBD File Offset: 0x000ACEBD
+	// Token: 0x17000387 RID: 903
+	// (get) Token: 0x06001D36 RID: 7478 RVA: 0x000AF3F0 File Offset: 0x000AD5F0
+	// (set) Token: 0x06001D37 RID: 7479 RVA: 0x000AF3FD File Offset: 0x000AD5FD
 	public float CenteredYaw
 	{
 		get
@@ -38,9 +38,9 @@ public class AutoTurretFireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000384 RID: 900
-	// (get) Token: 0x06001D1B RID: 7451 RVA: 0x000AECCB File Offset: 0x000ACECB
-	// (set) Token: 0x06001D1C RID: 7452 RVA: 0x000AECD8 File Offset: 0x000ACED8
+	// Token: 0x17000388 RID: 904
+	// (get) Token: 0x06001D38 RID: 7480 RVA: 0x000AF40B File Offset: 0x000AD60B
+	// (set) Token: 0x06001D39 RID: 7481 RVA: 0x000AF418 File Offset: 0x000AD618
 	public float CenteredPitch
 	{
 		get
@@ -53,8 +53,8 @@ public class AutoTurretFireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000385 RID: 901
-	// (get) Token: 0x06001D1D RID: 7453 RVA: 0x000AECE6 File Offset: 0x000ACEE6
+	// Token: 0x17000389 RID: 905
+	// (get) Token: 0x06001D3A RID: 7482 RVA: 0x000AF426 File Offset: 0x000AD626
 	public float MaxDistance
 	{
 		get
@@ -63,7 +63,7 @@ public class AutoTurretFireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D1E RID: 7454 RVA: 0x000AECF0 File Offset: 0x000ACEF0
+	// Token: 0x06001D3B RID: 7483 RVA: 0x000AF430 File Offset: 0x000AD630
 	public void Init(DynamicProperties _properties, AutoTurretController _atc)
 	{
 		this.atc = _atc;
@@ -216,14 +216,14 @@ public class AutoTurretFireController : MonoBehaviour
 		this.Laser.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001D1F RID: 7455 RVA: 0x000AF30F File Offset: 0x000AD50F
+	// Token: 0x06001D3C RID: 7484 RVA: 0x000AFA4F File Offset: 0x000ADC4F
 	public void OnDestroy()
 	{
 		this.OnPoweredOff();
 	}
 
-	// Token: 0x17000386 RID: 902
-	// (get) Token: 0x06001D20 RID: 7456 RVA: 0x000AF317 File Offset: 0x000AD517
+	// Token: 0x1700038A RID: 906
+	// (get) Token: 0x06001D3D RID: 7485 RVA: 0x000AFA57 File Offset: 0x000ADC57
 	public bool hasTarget
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -233,7 +233,7 @@ public class AutoTurretFireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D21 RID: 7457 RVA: 0x000AF328 File Offset: 0x000AD528
+	// Token: 0x06001D3E RID: 7486 RVA: 0x000AFA68 File Offset: 0x000ADC68
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -429,7 +429,7 @@ public class AutoTurretFireController : MonoBehaviour
 		this.dispatchSoundCommandsThrottle(Time.deltaTime);
 	}
 
-	// Token: 0x06001D22 RID: 7458 RVA: 0x000AF884 File Offset: 0x000ADA84
+	// Token: 0x06001D3F RID: 7487 RVA: 0x000AFFC4 File Offset: 0x000AE1C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void findTarget()
 	{
@@ -496,7 +496,7 @@ public class AutoTurretFireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D23 RID: 7459 RVA: 0x000AFAEC File Offset: 0x000ADCEC
+	// Token: 0x06001D40 RID: 7488 RVA: 0x000B022C File Offset: 0x000AE42C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool shouldIgnoreTarget(Entity _target)
 	{
@@ -567,7 +567,7 @@ public class AutoTurretFireController : MonoBehaviour
 		return _target is EntityTurret || _target is EntityDrone || (_target is EntityNPC && !this.TileEntity.TargetStrangers) || (_target is EntityEnemy && !this.TileEntity.TargetZombies) || (_target is EntityAnimal && !_target.EntityClass.bIsEnemyEntity);
 	}
 
-	// Token: 0x06001D24 RID: 7460 RVA: 0x000AFCE0 File Offset: 0x000ADEE0
+	// Token: 0x06001D41 RID: 7489 RVA: 0x000B0420 File Offset: 0x000AE620
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool canHitEntity(ref float _yaw, ref float _pitch, out Vector3 targetPos)
 	{
@@ -593,7 +593,7 @@ public class AutoTurretFireController : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06001D25 RID: 7461 RVA: 0x000AFDD4 File Offset: 0x000ADFD4
+	// Token: 0x06001D42 RID: 7490 RVA: 0x000B0514 File Offset: 0x000AE714
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool trackTarget(Entity _target, ref float _yaw, ref float _pitch, out Vector3 _targetPos)
 	{
@@ -636,7 +636,7 @@ public class AutoTurretFireController : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06001D26 RID: 7462 RVA: 0x000AFF88 File Offset: 0x000AE188
+	// Token: 0x06001D43 RID: 7491 RVA: 0x000B06C8 File Offset: 0x000AE8C8
 	public void PlayerFire(bool buttonPressed)
 	{
 		if (this.state == AutoTurretFireController.TurretState.Awake)
@@ -662,7 +662,7 @@ public class AutoTurretFireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D27 RID: 7463 RVA: 0x000B0010 File Offset: 0x000AE210
+	// Token: 0x06001D44 RID: 7492 RVA: 0x000B0750 File Offset: 0x000AE950
 	public void Fire()
 	{
 		ItemClass itemClass = null;
@@ -720,14 +720,14 @@ public class AutoTurretFireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D28 RID: 7464 RVA: 0x000B02CC File Offset: 0x000AE4CC
+	// Token: 0x06001D45 RID: 7493 RVA: 0x000B0A0C File Offset: 0x000AEC0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float GetRange(ItemValue _itemValue)
 	{
 		return EffectManager.GetValue(PassiveEffects.MaxRange, _itemValue, this.maxDistance, null, null, FastTags<TagGroup.Global>.none, true, true, true, true, true, 1, true, false);
 	}
 
-	// Token: 0x06001D29 RID: 7465 RVA: 0x000B02F8 File Offset: 0x000AE4F8
+	// Token: 0x06001D46 RID: 7494 RVA: 0x000B0A38 File Offset: 0x000AEC38
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 getSpread(ItemValue _itemValue)
 	{
@@ -736,14 +736,14 @@ public class AutoTurretFireController : MonoBehaviour
 		return new Vector2(value, value2);
 	}
 
-	// Token: 0x06001D2A RID: 7466 RVA: 0x000B035C File Offset: 0x000AE55C
+	// Token: 0x06001D47 RID: 7495 RVA: 0x000B0A9C File Offset: 0x000AEC9C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float GetDamageEntity(ItemValue _itemValue)
 	{
 		return EffectManager.GetValue(PassiveEffects.EntityDamage, _itemValue, (float)this.entityDamage, null, null, FastTags<TagGroup.Global>.none, true, true, true, true, true, 1, true, false);
 	}
 
-	// Token: 0x06001D2B RID: 7467 RVA: 0x000B0388 File Offset: 0x000AE588
+	// Token: 0x06001D48 RID: 7496 RVA: 0x000B0AC8 File Offset: 0x000AECC8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float GetDamageBlock(ItemValue _itemValue, BlockValue _blockValue)
 	{
@@ -753,7 +753,7 @@ public class AutoTurretFireController : MonoBehaviour
 		return Utils.FastMin((float)_blockValue.Block.blockMaterial.MaxIncomingDamage, value);
 	}
 
-	// Token: 0x06001D2C RID: 7468 RVA: 0x000B03E2 File Offset: 0x000AE5E2
+	// Token: 0x06001D49 RID: 7497 RVA: 0x000B0B22 File Offset: 0x000AED22
 	public void OnPoweredOff()
 	{
 		this.broadcastStop(this.targetingSound);
@@ -762,21 +762,21 @@ public class AutoTurretFireController : MonoBehaviour
 		this.dispatchSoundCommands();
 	}
 
-	// Token: 0x06001D2D RID: 7469 RVA: 0x000B040E File Offset: 0x000AE60E
+	// Token: 0x06001D4A RID: 7498 RVA: 0x000B0B4E File Offset: 0x000AED4E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void broadcastPlay(string name)
 	{
 		this.broadcastSoundAction(name, true);
 	}
 
-	// Token: 0x06001D2E RID: 7470 RVA: 0x000B0418 File Offset: 0x000AE618
+	// Token: 0x06001D4B RID: 7499 RVA: 0x000B0B58 File Offset: 0x000AED58
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void broadcastStop(string name)
 	{
 		this.broadcastSoundAction(name, false);
 	}
 
-	// Token: 0x06001D2F RID: 7471 RVA: 0x000B0422 File Offset: 0x000AE622
+	// Token: 0x06001D4C RID: 7500 RVA: 0x000B0B62 File Offset: 0x000AED62
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void broadcastSoundAction(string name, bool play)
 	{
@@ -786,7 +786,7 @@ public class AutoTurretFireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D30 RID: 7472 RVA: 0x000B043C File Offset: 0x000AE63C
+	// Token: 0x06001D4D RID: 7501 RVA: 0x000B0B7C File Offset: 0x000AED7C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void dispatchSoundCommands()
 	{
@@ -804,7 +804,7 @@ public class AutoTurretFireController : MonoBehaviour
 		this.soundCommandDictionary.Clear();
 	}
 
-	// Token: 0x06001D31 RID: 7473 RVA: 0x000B04C8 File Offset: 0x000AE6C8
+	// Token: 0x06001D4E RID: 7502 RVA: 0x000B0C08 File Offset: 0x000AEE08
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void dispatchSoundCommandsThrottle(float deltaTime)
 	{
@@ -816,7 +816,7 @@ public class AutoTurretFireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001D33 RID: 7475 RVA: 0x000B05A4 File Offset: 0x000AE7A4
+	// Token: 0x06001D50 RID: 7504 RVA: 0x000B0CE4 File Offset: 0x000AEEE4
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 <Fire>g__fireSingleDirectionBullet|73_0(GameRandom _random, ItemValue _ammo, Ray ray, Vector3 _turretLookDirection, Vector2 _localSpread, float range, int penCount, int blockPenFactor)
@@ -887,291 +887,291 @@ public class AutoTurretFireController : MonoBehaviour
 		return ray.direction;
 	}
 
-	// Token: 0x040012F8 RID: 4856
+	// Token: 0x0400130D RID: 4877
 	public bool IsOn;
 
-	// Token: 0x040012F9 RID: 4857
+	// Token: 0x0400130E RID: 4878
 	public Transform Cone;
 
-	// Token: 0x040012FA RID: 4858
+	// Token: 0x0400130F RID: 4879
 	public Transform Laser;
 
-	// Token: 0x040012FB RID: 4859
-	public Transform Muzzle;
-
-	// Token: 0x040012FC RID: 4860
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Vector3 blockPos;
-
-	// Token: 0x040012FD RID: 4861
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public const float baseConeYaw = 22.5f;
-
-	// Token: 0x040012FE RID: 4862
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public const float baseConePitch = 22.5f;
-
-	// Token: 0x040012FF RID: 4863
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public const float baseConeDistance = 5.25f;
-
-	// Token: 0x04001300 RID: 4864
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float fireRateMax = 0.25f;
-
-	// Token: 0x04001301 RID: 4865
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float findTargetDelayMax = 0.5f;
-
-	// Token: 0x04001302 RID: 4866
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float maxDistance;
-
-	// Token: 0x04001303 RID: 4867
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int entityDamage;
-
-	// Token: 0x04001304 RID: 4868
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int blockDamage;
-
-	// Token: 0x04001305 RID: 4869
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int rayCount;
-
-	// Token: 0x04001306 RID: 4870
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int raySpread;
-
-	// Token: 0x04001307 RID: 4871
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float wakeUpTime;
-
-	// Token: 0x04001308 RID: 4872
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float wakeUpTimeMax = 0.6522f;
-
-	// Token: 0x04001309 RID: 4873
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float fallAsleepTime;
-
-	// Token: 0x0400130A RID: 4874
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float fallAsleepTimeMax = 10f;
-
-	// Token: 0x0400130B RID: 4875
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int burstRoundCount;
-
-	// Token: 0x0400130C RID: 4876
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int burstRoundCountMax = 20;
-
-	// Token: 0x0400130D RID: 4877
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float burstFireRate;
-
-	// Token: 0x0400130E RID: 4878
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float burstFireRateMax = 0.1f;
-
-	// Token: 0x0400130F RID: 4879
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float coolOffTime;
-
 	// Token: 0x04001310 RID: 4880
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float coolOffTimeMax = 2f;
+	public Transform Muzzle;
 
 	// Token: 0x04001311 RID: 4881
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float overshootTime;
+	public Vector3 blockPos;
 
 	// Token: 0x04001312 RID: 4882
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float overshootTimeMax = 0.5f;
+	public const float baseConeYaw = 22.5f;
 
 	// Token: 0x04001313 RID: 4883
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float retargetSoundTime;
+	public const float baseConePitch = 22.5f;
 
 	// Token: 0x04001314 RID: 4884
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float retargetSoundTimeMax = 0.874f;
+	public const float baseConeDistance = 5.25f;
 
 	// Token: 0x04001315 RID: 4885
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Bounds targetingBounds;
+	public float fireRateMax = 0.25f;
 
 	// Token: 0x04001316 RID: 4886
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public AutoTurretFireController.TurretState state;
+	public float findTargetDelayMax = 0.5f;
 
 	// Token: 0x04001317 RID: 4887
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public string fireSound;
+	public float maxDistance;
 
 	// Token: 0x04001318 RID: 4888
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public string wakeUpSound;
+	public int entityDamage;
 
 	// Token: 0x04001319 RID: 4889
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public string overheatSound;
+	public int blockDamage;
 
 	// Token: 0x0400131A RID: 4890
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public string targetingSound;
+	public int rayCount;
 
 	// Token: 0x0400131B RID: 4891
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public string idleSound;
+	public int raySpread;
 
 	// Token: 0x0400131C RID: 4892
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public string muzzleFireParticle;
+	public float wakeUpTime;
 
 	// Token: 0x0400131D RID: 4893
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public string muzzleSmokeParticle;
+	public float wakeUpTimeMax = 0.6522f;
 
 	// Token: 0x0400131E RID: 4894
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public string ammoItemName;
+	public float fallAsleepTime;
 
 	// Token: 0x0400131F RID: 4895
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public DamageMultiplier damageMultiplier;
+	public float fallAsleepTimeMax = 10f;
 
 	// Token: 0x04001320 RID: 4896
-	public List<string> buffActions;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public int burstRoundCount;
 
 	// Token: 0x04001321 RID: 4897
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Vector2 yawRange;
+	public int burstRoundCountMax = 20;
 
 	// Token: 0x04001322 RID: 4898
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Vector2 pitchRange;
+	public float burstFireRate;
 
 	// Token: 0x04001323 RID: 4899
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Vector2 spread;
+	public float burstFireRateMax = 0.1f;
 
 	// Token: 0x04001324 RID: 4900
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float fireRate = -1f;
+	public float coolOffTime;
 
 	// Token: 0x04001325 RID: 4901
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float findTargetDelay;
+	public float coolOffTimeMax = 2f;
 
 	// Token: 0x04001326 RID: 4902
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public EntityAlive currentEntityTarget;
+	public float overshootTime;
 
 	// Token: 0x04001327 RID: 4903
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public AutoTurretController atc;
+	public float overshootTimeMax = 0.5f;
 
 	// Token: 0x04001328 RID: 4904
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public AutoTurretFireController.TurretEntitySorter sorter;
+	public float retargetSoundTime;
 
 	// Token: 0x04001329 RID: 4905
-	public TileEntityPoweredRangedTrap TileEntity;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float retargetSoundTimeMax = 0.874f;
 
 	// Token: 0x0400132A RID: 4906
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public CollisionParticleController waterCollisionParticles = new CollisionParticleController();
+	public Bounds targetingBounds;
 
 	// Token: 0x0400132B RID: 4907
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float cTimeBetweenSoundDispatch = 1f;
+	public AutoTurretFireController.TurretState state;
 
 	// Token: 0x0400132C RID: 4908
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float timeSinceDispatchSounds;
+	public string fireSound;
 
 	// Token: 0x0400132D RID: 4909
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Dictionary<string, bool> soundCommandDictionary = new Dictionary<string, bool>();
+	public string wakeUpSound;
 
 	// Token: 0x0400132E RID: 4910
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
+	public string overheatSound;
+
+	// Token: 0x0400132F RID: 4911
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public string targetingSound;
+
+	// Token: 0x04001330 RID: 4912
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public string idleSound;
+
+	// Token: 0x04001331 RID: 4913
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public string muzzleFireParticle;
+
+	// Token: 0x04001332 RID: 4914
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public string muzzleSmokeParticle;
+
+	// Token: 0x04001333 RID: 4915
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public string ammoItemName;
+
+	// Token: 0x04001334 RID: 4916
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public DamageMultiplier damageMultiplier;
+
+	// Token: 0x04001335 RID: 4917
+	public List<string> buffActions;
+
+	// Token: 0x04001336 RID: 4918
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Vector2 yawRange;
+
+	// Token: 0x04001337 RID: 4919
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Vector2 pitchRange;
+
+	// Token: 0x04001338 RID: 4920
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Vector2 spread;
+
+	// Token: 0x04001339 RID: 4921
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float fireRate = -1f;
+
+	// Token: 0x0400133A RID: 4922
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float findTargetDelay;
+
+	// Token: 0x0400133B RID: 4923
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public EntityAlive currentEntityTarget;
+
+	// Token: 0x0400133C RID: 4924
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public AutoTurretController atc;
+
+	// Token: 0x0400133D RID: 4925
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public AutoTurretFireController.TurretEntitySorter sorter;
+
+	// Token: 0x0400133E RID: 4926
+	public TileEntityPoweredRangedTrap TileEntity;
+
+	// Token: 0x0400133F RID: 4927
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public CollisionParticleController waterCollisionParticles = new CollisionParticleController();
+
+	// Token: 0x04001340 RID: 4928
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public const float cTimeBetweenSoundDispatch = 1f;
+
+	// Token: 0x04001341 RID: 4929
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float timeSinceDispatchSounds;
+
+	// Token: 0x04001342 RID: 4930
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Dictionary<string, bool> soundCommandDictionary = new Dictionary<string, bool>();
+
+	// Token: 0x04001343 RID: 4931
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
 	public List<string> soundsPlayOrder = new List<string>();
 
-	// Token: 0x020003C6 RID: 966
+	// Token: 0x020003CA RID: 970
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum TurretState
 	{
-		// Token: 0x04001330 RID: 4912
+		// Token: 0x04001345 RID: 4933
 		Asleep,
-		// Token: 0x04001331 RID: 4913
+		// Token: 0x04001346 RID: 4934
 		Awake,
-		// Token: 0x04001332 RID: 4914
+		// Token: 0x04001347 RID: 4935
 		Overheated
 	}
 
-	// Token: 0x020003C7 RID: 967
+	// Token: 0x020003CB RID: 971
 	public class TurretEntitySorter : IComparer<Entity>
 	{
-		// Token: 0x06001D34 RID: 7476 RVA: 0x000B08FA File Offset: 0x000AEAFA
+		// Token: 0x06001D51 RID: 7505 RVA: 0x000B103A File Offset: 0x000AF23A
 		public TurretEntitySorter(Vector3 _self)
 		{
 			this.self = _self;
 		}
 
-		// Token: 0x06001D35 RID: 7477 RVA: 0x000B090C File Offset: 0x000AEB0C
+		// Token: 0x06001D52 RID: 7506 RVA: 0x000B104C File Offset: 0x000AF24C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int isNearer(Entity _e, Entity _other)
 		{
@@ -1188,20 +1188,20 @@ public class AutoTurretFireController : MonoBehaviour
 			return 0;
 		}
 
-		// Token: 0x06001D36 RID: 7478 RVA: 0x000B094C File Offset: 0x000AEB4C
+		// Token: 0x06001D53 RID: 7507 RVA: 0x000B108C File Offset: 0x000AF28C
 		public int Compare(Entity _obj1, Entity _obj2)
 		{
 			return this.isNearer(_obj1, _obj2);
 		}
 
-		// Token: 0x06001D37 RID: 7479 RVA: 0x000B0958 File Offset: 0x000AEB58
+		// Token: 0x06001D54 RID: 7508 RVA: 0x000B1098 File Offset: 0x000AF298
 		public float DistanceSqr(Vector3 pointA, Vector3 pointB)
 		{
 			Vector3 vector = pointA - pointB;
 			return vector.x * vector.x + vector.y * vector.y + vector.z * vector.z;
 		}
 
-		// Token: 0x04001333 RID: 4915
+		// Token: 0x04001348 RID: 4936
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector3 self;
 	}

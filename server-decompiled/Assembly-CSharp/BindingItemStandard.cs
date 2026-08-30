@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x020010DA RID: 4314
+// Token: 0x020010F3 RID: 4339
 public class BindingItemStandard : BindingItem
 {
-	// Token: 0x060088E0 RID: 35040 RVA: 0x00343D9C File Offset: 0x00341F9C
+	// Token: 0x060089D2 RID: 35282 RVA: 0x003485C0 File Offset: 0x003467C0
 	public BindingItemStandard(BindingInfo _parent, string _sourceText)
 		: base(_sourceText)
 	{
@@ -31,7 +31,7 @@ public class BindingItemStandard : BindingItem
 		}
 	}
 
-	// Token: 0x060088E1 RID: 35041 RVA: 0x00343E6C File Offset: 0x0034206C
+	// Token: 0x060089D3 RID: 35283 RVA: 0x00348690 File Offset: 0x00346890
 	public override string GetValue()
 	{
 		if (this.bindingDelegate != null)
@@ -49,11 +49,11 @@ public class BindingItemStandard : BindingItem
 		return text;
 	}
 
-	// Token: 0x040065C5 RID: 26053
+	// Token: 0x0400668C RID: 26252
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiController dataContext;
 
-	// Token: 0x040065C6 RID: 26054
+	// Token: 0x0400668D RID: 26253
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XuiBindingDelegate bindingDelegate;
 }

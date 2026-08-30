@@ -3,11 +3,11 @@ using System.Globalization;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DBA RID: 3514
+// Token: 0x02000DCE RID: 3534
 [Preserve]
 public class XUiC_ServerBrowserGameOptionInputRange : XUiController
 {
-	// Token: 0x06006B8D RID: 27533 RVA: 0x0029FAAC File Offset: 0x0029DCAC
+	// Token: 0x06006C28 RID: 27688 RVA: 0x002A2C2C File Offset: 0x002A0E2C
 	public override void Init()
 	{
 		base.Init();
@@ -18,7 +18,7 @@ public class XUiC_ServerBrowserGameOptionInputRange : XUiController
 		this.valuemax.OnChangeHandler += this.ControlText_OnChangeHandler;
 	}
 
-	// Token: 0x06006B8E RID: 27534 RVA: 0x0029FB30 File Offset: 0x0029DD30
+	// Token: 0x06006C29 RID: 27689 RVA: 0x002A2CB0 File Offset: 0x002A0EB0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ControlText_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -30,7 +30,7 @@ public class XUiC_ServerBrowserGameOptionInputRange : XUiController
 		onValueChanged(this);
 	}
 
-	// Token: 0x06006B8F RID: 27535 RVA: 0x0029FB44 File Offset: 0x0029DD44
+	// Token: 0x06006C2A RID: 27690 RVA: 0x002A2CC4 File Offset: 0x002A0EC4
 	public XUiC_ServersList.UiServerFilter GetFilter()
 	{
 		string text = this.gameInfoInt.ToStringCached<GameInfoInt>();
@@ -66,18 +66,18 @@ public class XUiC_ServerBrowserGameOptionInputRange : XUiController
 		return new XUiC_ServersList.UiServerFilter(text, XUiC_ServersList.EnumServerLists.Regular, func, eserverFilterType, filterMin, filterMax, false, null);
 	}
 
-	// Token: 0x040051E2 RID: 20962
+	// Token: 0x04005284 RID: 21124
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput valuemin;
 
-	// Token: 0x040051E3 RID: 20963
+	// Token: 0x04005285 RID: 21125
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput valuemax;
 
-	// Token: 0x040051E4 RID: 20964
+	// Token: 0x04005286 RID: 21126
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameInfoInt gameInfoInt;
 
-	// Token: 0x040051E5 RID: 20965
+	// Token: 0x04005287 RID: 21127
 	public Action<XUiC_ServerBrowserGameOptionInputRange> OnValueChanged;
 }

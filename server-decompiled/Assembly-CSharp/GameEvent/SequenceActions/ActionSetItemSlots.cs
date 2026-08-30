@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001994 RID: 6548
+	// Token: 0x020019BA RID: 6586
 	[Preserve]
 	public class ActionSetItemSlots : ActionBaseClientAction
 	{
-		// Token: 0x0600C7F3 RID: 51187 RVA: 0x00498E40 File Offset: 0x00497040
+		// Token: 0x0600C97A RID: 51578 RVA: 0x0049F198 File Offset: 0x0049D398
 		public override void OnClientPerform(Entity target)
 		{
 			if (this.Items == null || (this.ItemLocation != ActionSetItemSlots.ItemLocations.Equipment && this.SlotNumbers == null))
@@ -65,7 +65,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C7F4 RID: 51188 RVA: 0x00498FF0 File Offset: 0x004971F0
+		// Token: 0x0600C97B RID: 51579 RVA: 0x0049F348 File Offset: 0x0049D548
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -102,7 +102,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C7F5 RID: 51189 RVA: 0x00499114 File Offset: 0x00497314
+		// Token: 0x0600C97C RID: 51580 RVA: 0x0049F46C File Offset: 0x0049D66C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -116,40 +116,40 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x0400979B RID: 38811
+		// Token: 0x040098C4 RID: 39108
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ActionSetItemSlots.ItemLocations ItemLocation;
 
-		// Token: 0x0400979C RID: 38812
+		// Token: 0x040098C5 RID: 39109
 		public string[] Items;
 
-		// Token: 0x0400979D RID: 38813
+		// Token: 0x040098C6 RID: 39110
 		public string[] ItemCounts;
 
-		// Token: 0x0400979E RID: 38814
+		// Token: 0x040098C7 RID: 39111
 		public string[] SlotNumbers;
 
-		// Token: 0x0400979F RID: 38815
+		// Token: 0x040098C8 RID: 39112
 		public static string PropItemLocation = "items_location";
 
-		// Token: 0x040097A0 RID: 38816
+		// Token: 0x040098C9 RID: 39113
 		public static string PropItems = "items";
 
-		// Token: 0x040097A1 RID: 38817
+		// Token: 0x040098CA RID: 39114
 		public static string PropItemCounts = "item_counts";
 
-		// Token: 0x040097A2 RID: 38818
+		// Token: 0x040098CB RID: 39115
 		public static string PropSlotNumbers = "slot_numbers";
 
-		// Token: 0x02001995 RID: 6549
+		// Token: 0x020019BB RID: 6587
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum ItemLocations
 		{
-			// Token: 0x040097A4 RID: 38820
+			// Token: 0x040098CD RID: 39117
 			Toolbelt,
-			// Token: 0x040097A5 RID: 38821
+			// Token: 0x040098CE RID: 39118
 			Backpack,
-			// Token: 0x040097A6 RID: 38822
+			// Token: 0x040098CF RID: 39119
 			Equipment
 		}
 	}

@@ -5,7 +5,7 @@ using UnityEngine;
 // Token: 0x020000AD RID: 173
 public class AnimatorWeaponRangedReloadState : StateMachineBehaviour
 {
-	// Token: 0x0600034A RID: 842 RVA: 0x000185A0 File Offset: 0x000167A0
+	// Token: 0x0600034A RID: 842 RVA: 0x00018624 File Offset: 0x00016824
 	public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 		animator.SetBool("Reload", false);
@@ -19,7 +19,7 @@ public class AnimatorWeaponRangedReloadState : StateMachineBehaviour
 		}
 	}
 
-	// Token: 0x0600034B RID: 843 RVA: 0x00018660 File Offset: 0x00016860
+	// Token: 0x0600034B RID: 843 RVA: 0x000186E4 File Offset: 0x000168E4
 	public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 		if (this.actionData != null && this.actionData.isWeaponReloadCancelled && !this.actionData.wasWeaponReloadCancelled)
@@ -30,7 +30,7 @@ public class AnimatorWeaponRangedReloadState : StateMachineBehaviour
 		}
 	}
 
-	// Token: 0x0600034C RID: 844 RVA: 0x000186B3 File Offset: 0x000168B3
+	// Token: 0x0600034C RID: 844 RVA: 0x00018737 File Offset: 0x00016937
 	public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 		this.actionData.isWeaponReloading = false;
@@ -48,7 +48,7 @@ public class AnimatorWeaponRangedReloadState : StateMachineBehaviour
 	{
 	}
 
-	// Token: 0x0600034F RID: 847 RVA: 0x000186D8 File Offset: 0x000168D8
+	// Token: 0x0600034F RID: 847 RVA: 0x0001875C File Offset: 0x0001695C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDisable()
 	{

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001602 RID: 5634
+// Token: 0x0200161D RID: 5661
 public class vp_SimpleHUD : MonoBehaviour
 {
-	// Token: 0x170014A5 RID: 5285
-	// (get) Token: 0x0600B109 RID: 45321 RVA: 0x0042132A File Offset: 0x0041F52A
+	// Token: 0x170014DE RID: 5342
+	// (get) Token: 0x0600B206 RID: 45574 RVA: 0x0042666A File Offset: 0x0042486A
 	public float m_HealthWidth
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -15,8 +15,8 @@ public class vp_SimpleHUD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170014A6 RID: 5286
-	// (get) Token: 0x0600B10A RID: 45322 RVA: 0x00421347 File Offset: 0x0041F547
+	// Token: 0x170014DF RID: 5343
+	// (get) Token: 0x0600B207 RID: 45575 RVA: 0x00426687 File Offset: 0x00424887
 	public GUIStyle MessageStyle
 	{
 		get
@@ -31,8 +31,8 @@ public class vp_SimpleHUD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170014A7 RID: 5287
-	// (get) Token: 0x0600B10B RID: 45323 RVA: 0x00421384 File Offset: 0x0041F584
+	// Token: 0x170014E0 RID: 5344
+	// (get) Token: 0x0600B208 RID: 45576 RVA: 0x004266C4 File Offset: 0x004248C4
 	public GUIStyle HealthStyle
 	{
 		get
@@ -49,8 +49,8 @@ public class vp_SimpleHUD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170014A8 RID: 5288
-	// (get) Token: 0x0600B10C RID: 45324 RVA: 0x004213EC File Offset: 0x0041F5EC
+	// Token: 0x170014E1 RID: 5345
+	// (get) Token: 0x0600B209 RID: 45577 RVA: 0x0042672C File Offset: 0x0042492C
 	public GUIStyle AmmoStyle
 	{
 		get
@@ -67,8 +67,8 @@ public class vp_SimpleHUD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170014A9 RID: 5289
-	// (get) Token: 0x0600B10D RID: 45325 RVA: 0x00421454 File Offset: 0x0041F654
+	// Token: 0x170014E2 RID: 5346
+	// (get) Token: 0x0600B20A RID: 45578 RVA: 0x00426794 File Offset: 0x00424994
 	public GUIStyle AmmoStyleSmall
 	{
 		get
@@ -85,7 +85,7 @@ public class vp_SimpleHUD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B10E RID: 45326 RVA: 0x004214BA File Offset: 0x0041F6BA
+	// Token: 0x0600B20B RID: 45579 RVA: 0x004267FA File Offset: 0x004249FA
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Awake()
 	{
@@ -93,7 +93,7 @@ public class vp_SimpleHUD : MonoBehaviour
 		this.m_Audio = this.m_Player.transform.GetComponent<AudioSource>();
 	}
 
-	// Token: 0x0600B10F RID: 45327 RVA: 0x004214E3 File Offset: 0x0041F6E3
+	// Token: 0x0600B20C RID: 45580 RVA: 0x00426823 File Offset: 0x00424A23
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
@@ -103,7 +103,7 @@ public class vp_SimpleHUD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B110 RID: 45328 RVA: 0x004214FF File Offset: 0x0041F6FF
+	// Token: 0x0600B20D RID: 45581 RVA: 0x0042683F File Offset: 0x00424A3F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnDisable()
 	{
@@ -113,8 +113,8 @@ public class vp_SimpleHUD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170014AA RID: 5290
-	// (get) Token: 0x0600B111 RID: 45329 RVA: 0x0042151C File Offset: 0x0041F71C
+	// Token: 0x170014E3 RID: 5347
+	// (get) Token: 0x0600B20E RID: 45582 RVA: 0x0042685C File Offset: 0x00424A5C
 	public string FormattedHealth
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -133,7 +133,7 @@ public class vp_SimpleHUD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B112 RID: 45330 RVA: 0x004215C0 File Offset: 0x0041F7C0
+	// Token: 0x0600B20F RID: 45583 RVA: 0x00426900 File Offset: 0x00424B00
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -173,7 +173,7 @@ public class vp_SimpleHUD : MonoBehaviour
 		this.AmmoColor = Color.white;
 	}
 
-	// Token: 0x0600B113 RID: 45331 RVA: 0x0042179D File Offset: 0x0041F99D
+	// Token: 0x0600B210 RID: 45584 RVA: 0x00426ADD File Offset: 0x00424CDD
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnGUI()
 	{
@@ -186,7 +186,7 @@ public class vp_SimpleHUD : MonoBehaviour
 		this.DrawText();
 	}
 
-	// Token: 0x0600B114 RID: 45332 RVA: 0x004217BC File Offset: 0x0041F9BC
+	// Token: 0x0600B211 RID: 45585 RVA: 0x00426AFC File Offset: 0x00424CFC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DrawHealth()
 	{
@@ -200,7 +200,7 @@ public class vp_SimpleHUD : MonoBehaviour
 		GUI.color = Color.white;
 	}
 
-	// Token: 0x0600B115 RID: 45333 RVA: 0x0042191C File Offset: 0x0041FB1C
+	// Token: 0x0600B212 RID: 45586 RVA: 0x00426C5C File Offset: 0x00424E5C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DrawAmmo()
 	{
@@ -223,7 +223,7 @@ public class vp_SimpleHUD : MonoBehaviour
 		this.DrawLabel("/ " + this.m_Player.CurrentWeaponClipCount.Get().ToString(), new Vector2(this.m_CurrentAmmoOffset + (float)Screen.width - 60f, (float)Screen.height - this.SmallFontOffset), new Vector2(110f, 60f), this.AmmoStyleSmall, this.AmmoColor, Color.clear, null);
 	}
 
-	// Token: 0x0600B116 RID: 45334 RVA: 0x00421D0C File Offset: 0x0041FF0C
+	// Token: 0x0600B213 RID: 45587 RVA: 0x0042704C File Offset: 0x0042524C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DrawText()
 	{
@@ -241,7 +241,7 @@ public class vp_SimpleHUD : MonoBehaviour
 		GUI.color = Color.white;
 	}
 
-	// Token: 0x0600B117 RID: 45335 RVA: 0x00421DA4 File Offset: 0x0041FFA4
+	// Token: 0x0600B214 RID: 45588 RVA: 0x004270E4 File Offset: 0x004252E4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnMessage_HUDText(string message)
 	{
@@ -249,7 +249,7 @@ public class vp_SimpleHUD : MonoBehaviour
 		this.m_PickupMessage = message;
 	}
 
-	// Token: 0x0600B118 RID: 45336 RVA: 0x00421DB8 File Offset: 0x0041FFB8
+	// Token: 0x0600B215 RID: 45589 RVA: 0x004270F8 File Offset: 0x004252F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DrawLabel(string text, Vector2 position, Vector2 scale, GUIStyle textStyle, Color textColor, Color bgColor, Texture texture)
 	{
@@ -284,21 +284,21 @@ public class vp_SimpleHUD : MonoBehaviour
 		this.m_DrawPos.y = this.m_DrawPos.y + this.m_DrawSize.y;
 	}
 
-	// Token: 0x0600B119 RID: 45337 RVA: 0x00421F1E File Offset: 0x0042011E
+	// Token: 0x0600B216 RID: 45590 RVA: 0x0042725E File Offset: 0x0042545E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnStart_SetWeapon()
 	{
 		this.m_TargetAmmoOffset = 200f;
 	}
 
-	// Token: 0x0600B11A RID: 45338 RVA: 0x00421F2B File Offset: 0x0042012B
+	// Token: 0x0600B217 RID: 45591 RVA: 0x0042726B File Offset: 0x0042546B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnStop_SetWeapon()
 	{
 		this.m_TargetAmmoOffset = 10f;
 	}
 
-	// Token: 0x0600B11B RID: 45339 RVA: 0x00421F38 File Offset: 0x00420138
+	// Token: 0x0600B218 RID: 45592 RVA: 0x00427278 File Offset: 0x00425478
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnStop_Dead()
 	{
@@ -307,155 +307,155 @@ public class vp_SimpleHUD : MonoBehaviour
 		this.HealthColor = Color.white;
 	}
 
-	// Token: 0x040084EB RID: 34027
+	// Token: 0x040085C4 RID: 34244
 	public bool ShowHUD = true;
 
-	// Token: 0x040084EC RID: 34028
+	// Token: 0x040085C5 RID: 34245
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_FPPlayerEventHandler m_Player;
 
-	// Token: 0x040084ED RID: 34029
+	// Token: 0x040085C6 RID: 34246
 	public Font BigFont;
 
-	// Token: 0x040084EE RID: 34030
+	// Token: 0x040085C7 RID: 34247
 	public Font SmallFont;
 
-	// Token: 0x040084EF RID: 34031
+	// Token: 0x040085C8 RID: 34248
 	public Font MessageFont;
 
-	// Token: 0x040084F0 RID: 34032
+	// Token: 0x040085C9 RID: 34249
 	public float BigFontOffset = 69f;
 
-	// Token: 0x040084F1 RID: 34033
+	// Token: 0x040085CA RID: 34250
 	public float SmallFontOffset = 56f;
 
-	// Token: 0x040084F2 RID: 34034
+	// Token: 0x040085CB RID: 34251
 	public Texture Background;
 
-	// Token: 0x040084F3 RID: 34035
+	// Token: 0x040085CC RID: 34252
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector2 m_DrawPos = Vector2.zero;
 
-	// Token: 0x040084F4 RID: 34036
+	// Token: 0x040085CD RID: 34253
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector2 m_DrawSize = Vector2.zero;
 
-	// Token: 0x040084F5 RID: 34037
+	// Token: 0x040085CE RID: 34254
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Rect m_DrawLabelRect = new Rect(0f, 0f, 0f, 0f);
 
-	// Token: 0x040084F6 RID: 34038
+	// Token: 0x040085CF RID: 34255
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Rect m_DrawShadowRect = new Rect(0f, 0f, 0f, 0f);
 
-	// Token: 0x040084F7 RID: 34039
+	// Token: 0x040085D0 RID: 34256
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_TargetHealthOffset;
 
-	// Token: 0x040084F8 RID: 34040
+	// Token: 0x040085D1 RID: 34257
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_CurrentHealthOffset;
 
-	// Token: 0x040084F9 RID: 34041
+	// Token: 0x040085D2 RID: 34258
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_TargetAmmoOffset = 200f;
 
-	// Token: 0x040084FA RID: 34042
+	// Token: 0x040085D3 RID: 34259
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_CurrentAmmoOffset = 200f;
 
-	// Token: 0x040084FB RID: 34043
+	// Token: 0x040085D4 RID: 34260
 	public Texture2D HealthIcon;
 
-	// Token: 0x040084FC RID: 34044
+	// Token: 0x040085D5 RID: 34261
 	public float HealthMultiplier = 10f;
 
-	// Token: 0x040084FD RID: 34045
+	// Token: 0x040085D6 RID: 34262
 	public Color HealthColor = Color.white;
 
-	// Token: 0x040084FE RID: 34046
+	// Token: 0x040085D7 RID: 34263
 	public float HealthLowLevel = 2.5f;
 
-	// Token: 0x040084FF RID: 34047
+	// Token: 0x040085D8 RID: 34264
 	public Color HealthLowColor = new Color(0.75f, 0f, 0f, 1f);
 
-	// Token: 0x04008500 RID: 34048
+	// Token: 0x040085D9 RID: 34265
 	public AudioClip HealthLowSound;
 
-	// Token: 0x04008501 RID: 34049
+	// Token: 0x040085DA RID: 34266
 	public float HealthLowSoundInterval = 1f;
 
-	// Token: 0x04008502 RID: 34050
+	// Token: 0x040085DB RID: 34267
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_FormattedHealth;
 
-	// Token: 0x04008503 RID: 34051
+	// Token: 0x040085DC RID: 34268
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_NextAllowedPlayHealthLowSoundTime;
 
-	// Token: 0x04008504 RID: 34052
+	// Token: 0x040085DD RID: 34269
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AudioSource m_Audio;
 
-	// Token: 0x04008505 RID: 34053
+	// Token: 0x040085DE RID: 34270
 	public Color AmmoColor = Color.white;
 
-	// Token: 0x04008506 RID: 34054
+	// Token: 0x040085DF RID: 34271
 	public Color AmmoLowColor = new Color(0f, 0f, 0f, 1f);
 
-	// Token: 0x04008507 RID: 34055
+	// Token: 0x040085E0 RID: 34272
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public string m_PickupMessage = "";
 
-	// Token: 0x04008508 RID: 34056
+	// Token: 0x040085E1 RID: 34273
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Color m_MessageColor = new Color(1f, 1f, 1f, 2f);
 
-	// Token: 0x04008509 RID: 34057
+	// Token: 0x040085E2 RID: 34274
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Color m_InvisibleColor = new Color(0f, 0f, 0f, 0f);
 
-	// Token: 0x0400850A RID: 34058
+	// Token: 0x040085E3 RID: 34275
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Color m_TranspBlack = new Color(0f, 0f, 0f, 0.5f);
 
-	// Token: 0x0400850B RID: 34059
+	// Token: 0x040085E4 RID: 34276
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Color m_TranspWhite = new Color(1f, 1f, 1f, 0.5f);
 
-	// Token: 0x0400850C RID: 34060
+	// Token: 0x040085E5 RID: 34277
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public static GUIStyle m_MessageStyle;
 
-	// Token: 0x0400850D RID: 34061
+	// Token: 0x040085E6 RID: 34278
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public GUIStyle m_HealthStyle;
 
-	// Token: 0x0400850E RID: 34062
+	// Token: 0x040085E7 RID: 34279
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public GUIStyle m_AmmoStyle;
 
-	// Token: 0x0400850F RID: 34063
+	// Token: 0x040085E8 RID: 34280
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public GUIStyle m_AmmoStyleSmall;

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020005FE RID: 1534
+// Token: 0x02000607 RID: 1543
 public class ThrownWeaponMoveScript : MonoBehaviour
 {
-	// Token: 0x060031ED RID: 12781 RVA: 0x00145194 File Offset: 0x00143394
+	// Token: 0x06003240 RID: 12864 RVA: 0x001472A4 File Offset: 0x001454A4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Awake()
 	{
@@ -15,7 +15,7 @@ public class ThrownWeaponMoveScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060031EE RID: 12782 RVA: 0x001451B0 File Offset: 0x001433B0
+	// Token: 0x06003241 RID: 12865 RVA: 0x001472C0 File Offset: 0x001454C0
 	public void Fire(Vector3 _idealStartPosition, Vector3 _flyDirection, Entity _firingEntity, int _hmOverride = 0, float _velocity = -1f)
 	{
 		this.flyDirection = _flyDirection.normalized;
@@ -56,7 +56,7 @@ public class ThrownWeaponMoveScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060031EF RID: 12783 RVA: 0x00145380 File Offset: 0x00143580
+	// Token: 0x06003242 RID: 12866 RVA: 0x00147490 File Offset: 0x00145690
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void FixedUpdate()
 	{
@@ -107,7 +107,7 @@ public class ThrownWeaponMoveScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060031F0 RID: 12784 RVA: 0x00145524 File Offset: 0x00143724
+	// Token: 0x06003243 RID: 12867 RVA: 0x00147634 File Offset: 0x00145834
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void checkCollision(Vector3 _amountToMove)
 	{
@@ -176,13 +176,13 @@ public class ThrownWeaponMoveScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060031F1 RID: 12785 RVA: 0x00145937 File Offset: 0x00143B37
+	// Token: 0x06003244 RID: 12868 RVA: 0x00147A47 File Offset: 0x00145C47
 	public void DropStuckProjectile()
 	{
 		global::UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060031F2 RID: 12786 RVA: 0x00145944 File Offset: 0x00143B44
+	// Token: 0x06003245 RID: 12869 RVA: 0x00147A54 File Offset: 0x00145C54
 	public void OnDestroy()
 	{
 		if (GameManager.Instance == null || GameManager.Instance.World == null || this.firingEntity == null || base.transform == null || this.itemValueWeapon == null)
@@ -208,7 +208,7 @@ public class ThrownWeaponMoveScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060031F3 RID: 12787 RVA: 0x00145B2C File Offset: 0x00143D2C
+	// Token: 0x06003246 RID: 12870 RVA: 0x00147C3C File Offset: 0x00145E3C
 	public bool TryCollect(EntityPlayerLocal _player)
 	{
 		if (!this.itemWeapon.IsSticky)
@@ -226,99 +226,99 @@ public class ThrownWeaponMoveScript : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060031F4 RID: 12788 RVA: 0x00145BA6 File Offset: 0x00143DA6
+	// Token: 0x06003247 RID: 12871 RVA: 0x00147CB6 File Offset: 0x00145EB6
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public List<string> getBuffActions()
 	{
 		return this.itemActionThrownWeapon.BuffActions;
 	}
 
-	// Token: 0x0400276D RID: 10093
+	// Token: 0x040027E0 RID: 10208
 	public const int InvalidID = -1;
 
-	// Token: 0x0400276E RID: 10094
+	// Token: 0x040027E1 RID: 10209
 	public int ProjectileID = -1;
 
-	// Token: 0x0400276F RID: 10095
+	// Token: 0x040027E2 RID: 10210
 	public int ProjectileOwnerID;
 
-	// Token: 0x04002770 RID: 10096
+	// Token: 0x040027E3 RID: 10211
 	public ItemActionThrownWeapon itemActionThrownWeapon;
 
-	// Token: 0x04002771 RID: 10097
+	// Token: 0x040027E4 RID: 10212
 	public ItemClass itemWeapon;
 
-	// Token: 0x04002772 RID: 10098
+	// Token: 0x040027E5 RID: 10213
 	public ItemValue itemValueWeapon;
 
-	// Token: 0x04002773 RID: 10099
+	// Token: 0x040027E6 RID: 10214
 	public ItemActionThrowAway.MyInventoryData actionData;
 
-	// Token: 0x04002774 RID: 10100
+	// Token: 0x040027E7 RID: 10215
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public static GameManager gameManager;
 
-	// Token: 0x04002775 RID: 10101
+	// Token: 0x040027E8 RID: 10216
 	public Vector3 flyDirection;
 
-	// Token: 0x04002776 RID: 10102
+	// Token: 0x040027E9 RID: 10217
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 idealPosition;
 
-	// Token: 0x04002777 RID: 10103
+	// Token: 0x040027EA RID: 10218
 	public Vector3 velocity;
 
-	// Token: 0x04002778 RID: 10104
+	// Token: 0x040027EB RID: 10219
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float timeShotStarted;
 
-	// Token: 0x04002779 RID: 10105
+	// Token: 0x040027EC RID: 10220
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool bArmed;
 
-	// Token: 0x0400277A RID: 10106
+	// Token: 0x040027ED RID: 10221
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Entity firingEntity;
 
-	// Token: 0x0400277B RID: 10107
+	// Token: 0x040027EE RID: 10222
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 previousPosition;
 
-	// Token: 0x0400277C RID: 10108
+	// Token: 0x040027EF RID: 10223
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 gravity;
 
-	// Token: 0x0400277D RID: 10109
+	// Token: 0x040027F0 RID: 10224
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool bOnIdealPos;
 
-	// Token: 0x0400277E RID: 10110
+	// Token: 0x040027F1 RID: 10225
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public int hmOverride;
 
-	// Token: 0x0400277F RID: 10111
+	// Token: 0x040027F2 RID: 10226
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public NavObject NavObject;
 
-	// Token: 0x04002780 RID: 10112
+	// Token: 0x040027F3 RID: 10227
 	public Vector3 FinalPosition;
 
-	// Token: 0x04002781 RID: 10113
+	// Token: 0x040027F4 RID: 10228
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public CollisionParticleController waterCollisionParticles = new CollisionParticleController();
 
-	// Token: 0x04002782 RID: 10114
+	// Token: 0x040027F5 RID: 10229
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public EntityAlive stuckInEntity;

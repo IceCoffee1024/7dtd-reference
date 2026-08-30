@@ -2,15 +2,27 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020007B7 RID: 1975
+// Token: 0x020007C2 RID: 1986
 [Preserve]
 public class NetPackageDamageEntity : NetPackage
 {
-	// Token: 0x06003A96 RID: 14998 RVA: 0x0017AE20 File Offset: 0x00179020
+	// Token: 0x06003AF5 RID: 15093 RVA: 0x0017D154 File Offset: 0x0017B354
 	public NetPackageDamageEntity Setup(int _targetEntityId, DamageResponse _dmResponse)
 	{
 		this.entityId = _targetEntityId;
 		DamageSource source = _dmResponse.Source;
+		this.flags = 0U;
+		this.flags |= (source.canHitSpecialBodyParts ? 1U : 0U);
+		this.flags |= (_dmResponse.CrippleLegs ? 2U : 0U);
+		this.flags |= (_dmResponse.Critical ? 4U : 0U);
+		this.flags |= (_dmResponse.Dismember ? 8U : 0U);
+		this.flags |= (_dmResponse.Fatal ? 16U : 0U);
+		this.flags |= ((source.BuffClass != null) ? 32U : 0U);
+		this.flags |= (source.IsIgnoreConsecutiveDamages() ? 64U : 0U);
+		this.flags |= (source.bIgnorePartyShare ? 128U : 0U);
+		this.flags |= (_dmResponse.PainHit ? 256U : 0U);
+		this.flags |= (_dmResponse.TurnIntoCrawler ? 512U : 0U);
+		this.flags |= (source.bTrapKillXP ? 1024U : 0U);
 		this.damageSrc = source.GetSource();
 		this.damageTyp = source.GetDamageType();
 		this.attackingItem = source.AttackingItem;
@@ -23,44 +35,35 @@ public class NetPackageDamageEntity : NetPackage
 		this.hitDirection = (int)_dmResponse.HitDirection;
 		this.hitBodyPart = (short)_dmResponse.HitBodyPart;
 		this.movementState = _dmResponse.MovementState;
-		this.bPainHit = _dmResponse.PainHit;
-		this.bFatal = _dmResponse.Fatal;
-		this.bCritical = _dmResponse.Critical;
 		this.attackerEntityId = source.getEntityId();
 		this.dirV = source.getDirection();
 		this.blockPos = source.BlockPosition;
 		this.hitTransformName = source.getHitTransformName() ?? string.Empty;
 		this.hitTransformPosition = source.getHitTransformPosition();
 		this.uvHit = source.getUVHit();
+		this.KillXPScale = source.KillXPScale;
 		this.damageMultiplier = source.DamageMultiplier;
 		this.bonusDamageType = (byte)source.BonusDamageType;
 		this.random = _dmResponse.Random;
-		this.bIgnoreConsecutiveDamages = source.IsIgnoreConsecutiveDamages();
-		this.bDismember = _dmResponse.Dismember;
-		this.bCrippleLegs = _dmResponse.CrippleLegs;
-		this.bTurnIntoCrawler = _dmResponse.TurnIntoCrawler;
 		this.StunType = (byte)_dmResponse.Stun;
 		this.StunDuration = _dmResponse.StunDuration;
 		this.ArmorSlot = _dmResponse.ArmorSlot;
 		this.ArmorSlotGroup = _dmResponse.ArmorSlotGroup;
 		this.ArmorDamage = _dmResponse.ArmorDamage;
-		this.bFromBuff = source.BuffClass != null;
 		return this;
 	}
 
-	// Token: 0x06003A97 RID: 14999 RVA: 0x0017AFB8 File Offset: 0x001791B8
+	// Token: 0x06003AF6 RID: 15094 RVA: 0x0017D3C4 File Offset: 0x0017B5C4
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.entityId = _reader.ReadInt32();
+		this.flags = _reader.ReadUInt32();
 		this.damageSrc = (EnumDamageSource)_reader.ReadByte();
 		this.damageTyp = (EnumDamageTypes)_reader.ReadByte();
 		this.strength = _reader.ReadUInt16();
 		this.hitDirection = (int)_reader.ReadByte();
 		this.hitBodyPart = _reader.ReadInt16();
 		this.movementState = (int)_reader.ReadByte();
-		this.bPainHit = _reader.ReadBoolean();
-		this.bFatal = _reader.ReadBoolean();
-		this.bCritical = _reader.ReadBoolean();
 		this.attackerEntityId = _reader.ReadInt32();
 		this.dirV.x = _reader.ReadSingle();
 		this.dirV.y = _reader.ReadSingle();
@@ -72,17 +75,12 @@ public class NetPackageDamageEntity : NetPackage
 		this.hitTransformPosition.z = _reader.ReadSingle();
 		this.uvHit.x = _reader.ReadSingle();
 		this.uvHit.y = _reader.ReadSingle();
+		this.KillXPScale = _reader.ReadSingle();
 		this.damageMultiplier = _reader.ReadSingle();
 		this.random = _reader.ReadSingle();
-		this.bIgnoreConsecutiveDamages = _reader.ReadBoolean();
-		this.bIsDamageTransfer = _reader.ReadBoolean();
-		this.bDismember = _reader.ReadBoolean();
-		this.bCrippleLegs = _reader.ReadBoolean();
-		this.bTurnIntoCrawler = _reader.ReadBoolean();
 		this.bonusDamageType = _reader.ReadByte();
 		this.StunType = _reader.ReadByte();
 		this.StunDuration = _reader.ReadSingle();
-		this.bFromBuff = _reader.ReadBoolean();
 		this.ArmorSlot = (EquipmentSlots)_reader.ReadByte();
 		this.ArmorSlotGroup = (EquipmentSlotGroups)_reader.ReadByte();
 		this.ArmorDamage = (int)_reader.ReadInt16();
@@ -93,20 +91,18 @@ public class NetPackageDamageEntity : NetPackage
 		}
 	}
 
-	// Token: 0x06003A98 RID: 15000 RVA: 0x0017B1B0 File Offset: 0x001793B0
+	// Token: 0x06003AF7 RID: 15095 RVA: 0x0017D568 File Offset: 0x0017B768
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
 		_writer.Write(this.entityId);
+		_writer.Write(this.flags);
 		_writer.Write((byte)this.damageSrc);
 		_writer.Write((byte)this.damageTyp);
 		_writer.Write(this.strength);
 		_writer.Write((byte)this.hitDirection);
 		_writer.Write(this.hitBodyPart);
 		_writer.Write((byte)this.movementState);
-		_writer.Write(this.bPainHit);
-		_writer.Write(this.bFatal);
-		_writer.Write(this.bCritical);
 		_writer.Write(this.attackerEntityId);
 		_writer.Write(this.dirV.x);
 		_writer.Write(this.dirV.y);
@@ -118,17 +114,12 @@ public class NetPackageDamageEntity : NetPackage
 		_writer.Write(this.hitTransformPosition.z);
 		_writer.Write(this.uvHit.x);
 		_writer.Write(this.uvHit.y);
+		_writer.Write(this.KillXPScale);
 		_writer.Write(this.damageMultiplier);
 		_writer.Write(this.random);
-		_writer.Write(this.bIgnoreConsecutiveDamages);
-		_writer.Write(this.bIsDamageTransfer);
-		_writer.Write(this.bDismember);
-		_writer.Write(this.bCrippleLegs);
-		_writer.Write(this.bTurnIntoCrawler);
 		_writer.Write(this.bonusDamageType);
 		_writer.Write(this.StunType);
 		_writer.Write(this.StunDuration);
-		_writer.Write(this.bFromBuff);
 		_writer.Write((byte)this.ArmorSlot);
 		_writer.Write((byte)this.ArmorSlotGroup);
 		_writer.Write((ushort)this.ArmorDamage);
@@ -139,14 +130,15 @@ public class NetPackageDamageEntity : NetPackage
 		}
 	}
 
-	// Token: 0x06003A99 RID: 15001 RVA: 0x0017B3BC File Offset: 0x001795BC
+	// Token: 0x06003AF8 RID: 15096 RVA: 0x0017D720 File Offset: 0x0017B920
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
 		{
 			return;
 		}
-		if (_world.GetPrimaryPlayer() != null && _world.GetPrimaryPlayer().entityId == this.entityId)
+		EntityPlayerLocal primaryPlayer = _world.GetPrimaryPlayer();
+		if (primaryPlayer && primaryPlayer.entityId == this.entityId)
 		{
 			if (this.damageTyp == EnumDamageTypes.Falling)
 			{
@@ -158,34 +150,38 @@ public class NetPackageDamageEntity : NetPackage
 			}
 		}
 		Entity entity = _world.GetEntity(this.entityId);
-		if (entity != null)
+		if (entity)
 		{
-			DamageSource damageSource = new DamageSourceEntity(this.damageSrc, this.damageTyp, this.attackerEntityId, this.dirV, this.hitTransformName, this.hitTransformPosition, this.uvHit);
-			damageSource.SetIgnoreConsecutiveDamages(this.bIgnoreConsecutiveDamages);
-			damageSource.DamageMultiplier = this.damageMultiplier;
-			damageSource.BonusDamageType = (EnumDamageBonusType)this.bonusDamageType;
-			damageSource.AttackingItem = this.attackingItem;
-			damageSource.BlockPosition = this.blockPos;
+			DamageSourceEntity damageSourceEntity = new DamageSourceEntity(this.damageSrc, this.damageTyp, this.attackerEntityId, this.dirV, this.hitTransformName, this.hitTransformPosition, this.uvHit);
+			damageSourceEntity.canHitSpecialBodyParts = (this.flags & 1U) > 0U;
+			damageSourceEntity.bIgnorePartyShare = (this.flags & 128U) > 0U;
+			damageSourceEntity.bTrapKillXP = (this.flags & 1024U) > 0U;
+			damageSourceEntity.KillXPScale = this.KillXPScale;
+			damageSourceEntity.SetIgnoreConsecutiveDamages((this.flags & 64U) > 0U);
+			damageSourceEntity.DamageMultiplier = this.damageMultiplier;
+			damageSourceEntity.BonusDamageType = (EnumDamageBonusType)this.bonusDamageType;
+			damageSourceEntity.AttackingItem = this.attackingItem;
+			damageSourceEntity.BlockPosition = this.blockPos;
 			DamageResponse damageResponse = default(DamageResponse);
 			damageResponse.Strength = (int)this.strength;
 			damageResponse.ModStrength = 0;
 			damageResponse.MovementState = this.movementState;
 			damageResponse.HitDirection = (Utils.EnumHitDirection)this.hitDirection;
 			damageResponse.HitBodyPart = (EnumBodyPartHit)this.hitBodyPart;
-			damageResponse.PainHit = this.bPainHit;
-			damageResponse.Fatal = this.bFatal;
-			damageResponse.Critical = this.bCritical;
+			damageResponse.PainHit = (this.flags & 256U) > 0U;
+			damageResponse.Fatal = (this.flags & 16U) > 0U;
+			damageResponse.Critical = (this.flags & 4U) > 0U;
 			damageResponse.Random = this.random;
-			damageResponse.Source = damageSource;
-			damageResponse.CrippleLegs = this.bCrippleLegs;
-			damageResponse.Dismember = this.bDismember;
-			damageResponse.TurnIntoCrawler = this.bTurnIntoCrawler;
+			damageResponse.Source = damageSourceEntity;
+			damageResponse.CrippleLegs = (this.flags & 2U) > 0U;
+			damageResponse.Dismember = (this.flags & 8U) > 0U;
+			damageResponse.TurnIntoCrawler = (this.flags & 512U) > 0U;
 			damageResponse.Stun = (EnumEntityStunType)this.StunType;
 			damageResponse.StunDuration = this.StunDuration;
 			damageResponse.ArmorSlot = this.ArmorSlot;
 			damageResponse.ArmorSlotGroup = this.ArmorSlotGroup;
 			damageResponse.ArmorDamage = this.ArmorDamage;
-			if (this.bFromBuff)
+			if ((this.flags & 32U) > 0U)
 			{
 				damageResponse.Source.BuffClass = new BuffClass("");
 			}
@@ -194,133 +190,149 @@ public class NetPackageDamageEntity : NetPackage
 		}
 	}
 
-	// Token: 0x06003A9A RID: 15002 RVA: 0x001757C8 File Offset: 0x001739C8
+	// Token: 0x06003AF9 RID: 15097 RVA: 0x00177A48 File Offset: 0x00175C48
 	public override int GetLength()
 	{
 		return 50;
 	}
 
-	// Token: 0x04002F94 RID: 12180
+	// Token: 0x0400300F RID: 12303
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x04002F95 RID: 12181
+	// Token: 0x04003010 RID: 12304
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const int cFlagsCanHitSpecialBodyParts = 1;
+
+	// Token: 0x04003011 RID: 12305
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const int cFlagsCrippleLegs = 2;
+
+	// Token: 0x04003012 RID: 12306
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const int cFlagsCritical = 4;
+
+	// Token: 0x04003013 RID: 12307
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const int cFlagsDismember = 8;
+
+	// Token: 0x04003014 RID: 12308
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const int cFlagsFatal = 16;
+
+	// Token: 0x04003015 RID: 12309
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const int cFlagsFromBuff = 32;
+
+	// Token: 0x04003016 RID: 12310
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const int cFlagsIgnoreConsecutiveDamages = 64;
+
+	// Token: 0x04003017 RID: 12311
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const int cFlagsIgnorePartyShare = 128;
+
+	// Token: 0x04003018 RID: 12312
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const int cFlagsPainHit = 256;
+
+	// Token: 0x04003019 RID: 12313
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const int cFlagsTurnIntoCrawler = 512;
+
+	// Token: 0x0400301A RID: 12314
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const int cFlagsTrapKillXP = 1024;
+
+	// Token: 0x0400301B RID: 12315
+	[PublicizedFrom(EAccessModifier.Private)]
+	public uint flags;
+
+	// Token: 0x0400301C RID: 12316
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int attackerEntityId;
 
-	// Token: 0x04002F96 RID: 12182
+	// Token: 0x0400301D RID: 12317
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EnumDamageSource damageSrc;
 
-	// Token: 0x04002F97 RID: 12183
+	// Token: 0x0400301E RID: 12318
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EnumDamageTypes damageTyp;
 
-	// Token: 0x04002F98 RID: 12184
+	// Token: 0x0400301F RID: 12319
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ushort strength;
 
-	// Token: 0x04002F99 RID: 12185
+	// Token: 0x04003020 RID: 12320
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int hitDirection;
 
-	// Token: 0x04002F9A RID: 12186
+	// Token: 0x04003021 RID: 12321
 	[PublicizedFrom(EAccessModifier.Private)]
 	public short hitBodyPart;
 
-	// Token: 0x04002F9B RID: 12187
+	// Token: 0x04003022 RID: 12322
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int movementState;
 
-	// Token: 0x04002F9C RID: 12188
+	// Token: 0x04003023 RID: 12323
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 dirV;
 
-	// Token: 0x04002F9D RID: 12189
+	// Token: 0x04003024 RID: 12324
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i blockPos;
 
-	// Token: 0x04002F9E RID: 12190
+	// Token: 0x04003025 RID: 12325
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string hitTransformName;
 
-	// Token: 0x04002F9F RID: 12191
+	// Token: 0x04003026 RID: 12326
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 hitTransformPosition;
 
-	// Token: 0x04002FA0 RID: 12192
+	// Token: 0x04003027 RID: 12327
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 uvHit;
 
-	// Token: 0x04002FA1 RID: 12193
+	// Token: 0x04003028 RID: 12328
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float damageMultiplier;
 
-	// Token: 0x04002FA2 RID: 12194
+	// Token: 0x04003029 RID: 12329
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float random;
 
-	// Token: 0x04002FA3 RID: 12195
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool bIgnoreConsecutiveDamages;
-
-	// Token: 0x04002FA4 RID: 12196
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool bPainHit;
-
-	// Token: 0x04002FA5 RID: 12197
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool bFatal;
-
-	// Token: 0x04002FA6 RID: 12198
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool bCritical;
-
-	// Token: 0x04002FA7 RID: 12199
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool bIsDamageTransfer;
-
-	// Token: 0x04002FA8 RID: 12200
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool bDismember;
-
-	// Token: 0x04002FA9 RID: 12201
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool bCrippleLegs;
-
-	// Token: 0x04002FAA RID: 12202
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool bTurnIntoCrawler;
-
-	// Token: 0x04002FAB RID: 12203
+	// Token: 0x0400302A RID: 12330
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte bonusDamageType;
 
-	// Token: 0x04002FAC RID: 12204
+	// Token: 0x0400302B RID: 12331
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte StunType;
 
-	// Token: 0x04002FAD RID: 12205
+	// Token: 0x0400302C RID: 12332
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float StunDuration;
 
-	// Token: 0x04002FAE RID: 12206
+	// Token: 0x0400302D RID: 12333
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EquipmentSlots ArmorSlot;
 
-	// Token: 0x04002FAF RID: 12207
+	// Token: 0x0400302E RID: 12334
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EquipmentSlotGroups ArmorSlotGroup;
 
-	// Token: 0x04002FB0 RID: 12208
+	// Token: 0x0400302F RID: 12335
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int ArmorDamage;
 
-	// Token: 0x04002FB1 RID: 12209
+	// Token: 0x04003030 RID: 12336
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue attackingItem;
 
-	// Token: 0x04002FB2 RID: 12210
+	// Token: 0x04003031 RID: 12337
 	[PublicizedFrom(EAccessModifier.Private)]
-	public bool bFromBuff;
+	public float KillXPScale;
 }

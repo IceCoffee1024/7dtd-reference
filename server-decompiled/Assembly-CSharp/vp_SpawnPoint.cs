@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Token: 0x020015BB RID: 5563
+// Token: 0x020015D6 RID: 5590
 [Serializable]
 public class vp_SpawnPoint : MonoBehaviour
 {
-	// Token: 0x170013F0 RID: 5104
-	// (get) Token: 0x0600AD97 RID: 44439 RVA: 0x0040B92C File Offset: 0x00409B2C
+	// Token: 0x17001429 RID: 5161
+	// (get) Token: 0x0600AE94 RID: 44692 RVA: 0x00410C6C File Offset: 0x0040EE6C
 	public static List<vp_SpawnPoint> SpawnPoints
 	{
 		get
@@ -21,25 +21,25 @@ public class vp_SpawnPoint : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD98 RID: 44440 RVA: 0x0040B94A File Offset: 0x00409B4A
+	// Token: 0x0600AE95 RID: 44693 RVA: 0x00410C8A File Offset: 0x0040EE8A
 	public static vp_Placement GetRandomPlacement()
 	{
 		return vp_SpawnPoint.GetRandomPlacement(0f, null);
 	}
 
-	// Token: 0x0600AD99 RID: 44441 RVA: 0x0040B957 File Offset: 0x00409B57
+	// Token: 0x0600AE96 RID: 44694 RVA: 0x00410C97 File Offset: 0x0040EE97
 	public static vp_Placement GetRandomPlacement(float physicsCheckRadius)
 	{
 		return vp_SpawnPoint.GetRandomPlacement(physicsCheckRadius, null);
 	}
 
-	// Token: 0x0600AD9A RID: 44442 RVA: 0x0040B960 File Offset: 0x00409B60
+	// Token: 0x0600AE97 RID: 44695 RVA: 0x00410CA0 File Offset: 0x0040EEA0
 	public static vp_Placement GetRandomPlacement(string tag)
 	{
 		return vp_SpawnPoint.GetRandomPlacement(0f, tag);
 	}
 
-	// Token: 0x0600AD9B RID: 44443 RVA: 0x0040B970 File Offset: 0x00409B70
+	// Token: 0x0600AE98 RID: 44696 RVA: 0x00410CB0 File Offset: 0x0040EEB0
 	public static vp_Placement GetRandomPlacement(float physicsCheckRadius, string tag)
 	{
 		if (vp_SpawnPoint.SpawnPoints == null || vp_SpawnPoint.SpawnPoints.Count < 1)
@@ -94,7 +94,7 @@ public class vp_SpawnPoint : MonoBehaviour
 		return vp_Placement;
 	}
 
-	// Token: 0x0600AD9C RID: 44444 RVA: 0x0040BAD2 File Offset: 0x00409CD2
+	// Token: 0x0600AE99 RID: 44697 RVA: 0x00410E12 File Offset: 0x0040F012
 	public static vp_SpawnPoint GetRandomSpawnPoint()
 	{
 		if (vp_SpawnPoint.SpawnPoints.Count < 1)
@@ -104,7 +104,7 @@ public class vp_SpawnPoint : MonoBehaviour
 		return vp_SpawnPoint.SpawnPoints[global::UnityEngine.Random.Range(0, vp_SpawnPoint.SpawnPoints.Count)];
 	}
 
-	// Token: 0x0600AD9D RID: 44445 RVA: 0x0040BB00 File Offset: 0x00409D00
+	// Token: 0x0600AE9A RID: 44698 RVA: 0x00410E40 File Offset: 0x0040F040
 	public static vp_SpawnPoint GetRandomSpawnPoint(string tag)
 	{
 		vp_SpawnPoint.m_MatchingSpawnPoints.Clear();
@@ -126,45 +126,45 @@ public class vp_SpawnPoint : MonoBehaviour
 		return vp_SpawnPoint.m_MatchingSpawnPoints[global::UnityEngine.Random.Range(0, vp_SpawnPoint.m_MatchingSpawnPoints.Count)];
 	}
 
-	// Token: 0x0600AD9E RID: 44446 RVA: 0x0040BB9B File Offset: 0x00409D9B
+	// Token: 0x0600AE9B RID: 44699 RVA: 0x00410EDB File Offset: 0x0040F0DB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
 		SceneManager.sceneLoaded += this.NotifyLevelWasLoaded;
 	}
 
-	// Token: 0x0600AD9F RID: 44447 RVA: 0x0040BBAF File Offset: 0x00409DAF
+	// Token: 0x0600AE9C RID: 44700 RVA: 0x00410EEF File Offset: 0x0040F0EF
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnDisable()
 	{
 		SceneManager.sceneLoaded -= this.NotifyLevelWasLoaded;
 	}
 
-	// Token: 0x0600ADA0 RID: 44448 RVA: 0x0040BBC3 File Offset: 0x00409DC3
+	// Token: 0x0600AE9D RID: 44701 RVA: 0x00410F03 File Offset: 0x0040F103
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void NotifyLevelWasLoaded(Scene scene, LoadSceneMode mode)
 	{
 		vp_SpawnPoint.m_SpawnPoints = null;
 	}
 
-	// Token: 0x0400815C RID: 33116
+	// Token: 0x04008235 RID: 33333
 	public bool RandomDirection;
 
-	// Token: 0x0400815D RID: 33117
+	// Token: 0x04008236 RID: 33334
 	public float Radius;
 
-	// Token: 0x0400815E RID: 33118
+	// Token: 0x04008237 RID: 33335
 	public float GroundSnapThreshold = 2.5f;
 
-	// Token: 0x0400815F RID: 33119
+	// Token: 0x04008238 RID: 33336
 	public bool LockGroundSnapToRadius = true;
 
-	// Token: 0x04008160 RID: 33120
+	// Token: 0x04008239 RID: 33337
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public static List<vp_SpawnPoint> m_MatchingSpawnPoints = new List<vp_SpawnPoint>(50);
 
-	// Token: 0x04008161 RID: 33121
+	// Token: 0x0400823A RID: 33338
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public static List<vp_SpawnPoint> m_SpawnPoints = null;

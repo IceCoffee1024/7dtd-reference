@@ -10,10 +10,10 @@ using NCalc.Domain;
 using Platform;
 using UnityEngine;
 
-// Token: 0x02001160 RID: 4448
+// Token: 0x0200117A RID: 4474
 public static class XUiFromXml
 {
-	// Token: 0x06008E7E RID: 36478 RVA: 0x00358B6C File Offset: 0x00356D6C
+	// Token: 0x06008F76 RID: 36726 RVA: 0x0035D608 File Offset: 0x0035B808
 	[PublicizedFrom(EAccessModifier.Private)]
 	static XUiFromXml()
 	{
@@ -26,7 +26,7 @@ public static class XUiFromXml
 		XUiFromXml.DebugXuiLoading = XUiFromXml.DebugLevel.Off;
 	}
 
-	// Token: 0x06008E7F RID: 36479 RVA: 0x00358BB8 File Offset: 0x00356DB8
+	// Token: 0x06008F77 RID: 36727 RVA: 0x0035D654 File Offset: 0x0035B854
 	public static void ClearLoadingData()
 	{
 		XUiFromXml.mainXuiXmlRoot = null;
@@ -80,7 +80,7 @@ public static class XUiFromXml
 		XUiFromXml.expressionCache = null;
 	}
 
-	// Token: 0x06008E80 RID: 36480 RVA: 0x00358CC4 File Offset: 0x00356EC4
+	// Token: 0x06008F78 RID: 36728 RVA: 0x0035D760 File Offset: 0x0035B960
 	public static void ClearData()
 	{
 		XUiFromXml.ClearLoadingData();
@@ -92,13 +92,13 @@ public static class XUiFromXml
 		XUiFromXml.styles = null;
 	}
 
-	// Token: 0x06008E81 RID: 36481 RVA: 0x00358CE1 File Offset: 0x00356EE1
+	// Token: 0x06008F79 RID: 36729 RVA: 0x0035D77D File Offset: 0x0035B97D
 	public static bool HasData()
 	{
 		return XUiFromXml.mainXuiXmlRoot != null && XUiFromXml.windowData.Count > 0 && XUiFromXml.templateData.Count > 0 && XUiFromXml.styles.Count > 0;
 	}
 
-	// Token: 0x06008E82 RID: 36482 RVA: 0x00358D13 File Offset: 0x00356F13
+	// Token: 0x06008F7A RID: 36730 RVA: 0x0035D7AF File Offset: 0x0035B9AF
 	public static IEnumerator Load(XmlFile _xmlFile)
 	{
 		if (GameManager.IsDedicatedServer)
@@ -167,7 +167,7 @@ public static class XUiFromXml
 		yield break;
 	}
 
-	// Token: 0x06008E83 RID: 36483 RVA: 0x00358D24 File Offset: 0x00356F24
+	// Token: 0x06008F7B RID: 36731 RVA: 0x0035D7C0 File Offset: 0x0035B9C0
 	public static void LoadDone(bool _logUnused)
 	{
 		if (!_logUnused)
@@ -214,7 +214,7 @@ public static class XUiFromXml
 		}
 	}
 
-	// Token: 0x06008E84 RID: 36484 RVA: 0x00358E54 File Offset: 0x00357054
+	// Token: 0x06008F7C RID: 36732 RVA: 0x0035D8F0 File Offset: 0x0035BAF0
 	public static void GetWindowGroupNames(out List<string> _windowGroupNames)
 	{
 		_windowGroupNames = new List<string>();
@@ -231,7 +231,7 @@ public static class XUiFromXml
 		}
 	}
 
-	// Token: 0x06008E85 RID: 36485 RVA: 0x00358ED4 File Offset: 0x003570D4
+	// Token: 0x06008F7D RID: 36733 RVA: 0x0035D970 File Offset: 0x0035BB70
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void loadWindows(XElement _root)
 	{
@@ -257,7 +257,7 @@ public static class XUiFromXml
 		}
 	}
 
-	// Token: 0x06008E86 RID: 36486 RVA: 0x00358F9C File Offset: 0x0035719C
+	// Token: 0x06008F7E RID: 36734 RVA: 0x0035DA38 File Offset: 0x0035BC38
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void loadTemplates(XElement _root)
 	{
@@ -308,7 +308,7 @@ public static class XUiFromXml
 		}
 	}
 
-	// Token: 0x06008E87 RID: 36487 RVA: 0x0035915C File Offset: 0x0035735C
+	// Token: 0x06008F7F RID: 36735 RVA: 0x0035DBF8 File Offset: 0x0035BDF8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void loadStyles(XElement _root)
 	{
@@ -377,7 +377,7 @@ public static class XUiFromXml
 		}
 	}
 
-	// Token: 0x06008E88 RID: 36488 RVA: 0x00359398 File Offset: 0x00357598
+	// Token: 0x06008F80 RID: 36736 RVA: 0x0035DE34 File Offset: 0x0035C034
 	public static void LoadXui(XUi _xui, string _windowGroupToLoad)
 	{
 		string text;
@@ -400,7 +400,7 @@ public static class XUiFromXml
 		}
 	}
 
-	// Token: 0x06008E89 RID: 36489 RVA: 0x0035945C File Offset: 0x0035765C
+	// Token: 0x06008F81 RID: 36737 RVA: 0x0035DEF8 File Offset: 0x0035C0F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool parseWindowGroup(XUi _xui, string _windowGroupToLoad, XElement _groupElement, out XUiWindowGroup _windowGroup)
 	{
@@ -495,7 +495,7 @@ public static class XUiFromXml
 		return true;
 	}
 
-	// Token: 0x06008E8A RID: 36490 RVA: 0x00359654 File Offset: 0x00357854
+	// Token: 0x06008F82 RID: 36738 RVA: 0x0035E0F0 File Offset: 0x0035C2F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool parseWindow(XElement _windowElement, XUiWindowGroup _windowGroup, out XUiV_Window _window)
 	{
@@ -551,7 +551,7 @@ public static class XUiFromXml
 		return true;
 	}
 
-	// Token: 0x06008E8B RID: 36491 RVA: 0x0035977C File Offset: 0x0035797C
+	// Token: 0x06008F83 RID: 36739 RVA: 0x0035E218 File Offset: 0x0035C418
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static XUiView parseViewComponents(XElement _node, XUiWindowGroup _windowGroup, XUiController _parent, string _nodeNameOverride = "", Dictionary<string, object> _templateParams = null)
 	{
@@ -624,7 +624,7 @@ public static class XUiFromXml
 		return xuiView;
 	}
 
-	// Token: 0x06008E8C RID: 36492 RVA: 0x00359968 File Offset: 0x00357B68
+	// Token: 0x06008F84 RID: 36740 RVA: 0x0035E404 File Offset: 0x0035C604
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void parseTweeners(XElement _node, XUiView _viewComponent, XUiController _parent, Dictionary<string, object> _templateParams)
 	{
@@ -639,7 +639,7 @@ public static class XUiFromXml
 		_node.Elements("tween").Remove<XElement>();
 	}
 
-	// Token: 0x06008E8D RID: 36493 RVA: 0x003599E8 File Offset: 0x00357BE8
+	// Token: 0x06008F85 RID: 36741 RVA: 0x0035E484 File Offset: 0x0035C684
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool parseTween(XUiView _view, XElement _tweenElement, XUiController _parent, Dictionary<string, object> _templateParams, out XUiTweenAbs _result)
 	{
@@ -720,7 +720,7 @@ public static class XUiFromXml
 		return true;
 	}
 
-	// Token: 0x06008E8E RID: 36494 RVA: 0x00359BB8 File Offset: 0x00357DB8
+	// Token: 0x06008F86 RID: 36742 RVA: 0x0035E654 File Offset: 0x0035C854
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static XUiView createView(XUi _xui, string _name, string _type, XElement _node, XUiController _parent, XUiWindowGroup _windowGroup, Dictionary<string, object> _templateParams, ref bool _parseChildren, ref bool _parseControllerAndAttributes, ref bool _replacedByTemplate)
 	{
@@ -851,7 +851,7 @@ public static class XUiFromXml
 		return XUiFromXml.createFromTemplate(_type, _name, _node, _parent, _windowGroup, _templateParams, ref _parseChildren, ref _parseControllerAndAttributes, ref _replacedByTemplate);
 	}
 
-	// Token: 0x06008E8F RID: 36495 RVA: 0x00359EB0 File Offset: 0x003580B0
+	// Token: 0x06008F87 RID: 36743 RVA: 0x0035E94C File Offset: 0x0035CB4C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static XUiView createFromTemplate(string _templateName, string _viewName, XElement _node, XUiController _parent, XUiWindowGroup _windowGroup, Dictionary<string, object> _outerParams, ref bool _parseChildren, ref bool _parseControllerAndAttributes, ref bool _replacedByTemplate)
 	{
@@ -908,7 +908,7 @@ public static class XUiFromXml
 		return xuiView;
 	}
 
-	// Token: 0x06008E90 RID: 36496 RVA: 0x0035A036 File Offset: 0x00358236
+	// Token: 0x06008F88 RID: 36744 RVA: 0x0035EAD2 File Offset: 0x0035CCD2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static XUiView createEmptyView(string _viewName, XUiController _parent, XUiWindowGroup _windowGroup, out bool _parseControllerAndAttributes)
 	{
@@ -924,7 +924,7 @@ public static class XUiFromXml
 		return xuiV_Empty;
 	}
 
-	// Token: 0x06008E91 RID: 36497 RVA: 0x0035A074 File Offset: 0x00358274
+	// Token: 0x06008F89 RID: 36745 RVA: 0x0035EB10 File Offset: 0x0035CD10
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void parseParams(XElement _node, XUiController _parent, Dictionary<string, object> _templateParams)
 	{
@@ -1001,7 +1001,7 @@ public static class XUiFromXml
 		}
 	}
 
-	// Token: 0x06008E92 RID: 36498 RVA: 0x0035A2B4 File Offset: 0x003584B4
+	// Token: 0x06008F8A RID: 36746 RVA: 0x0035ED50 File Offset: 0x0035CF50
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void nCalcEvaluateParameter(string _name, ParameterArgs _args)
 	{
@@ -1033,7 +1033,7 @@ public static class XUiFromXml
 		_args.Result = xuiView.Size.y;
 	}
 
-	// Token: 0x06008E93 RID: 36499 RVA: 0x0035A368 File Offset: 0x00358568
+	// Token: 0x06008F8B RID: 36747 RVA: 0x0035EE04 File Offset: 0x0035D004
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void nCalcFunctions(string _name, FunctionArgs _args, bool _ignoreCase)
 	{
@@ -1054,7 +1054,7 @@ public static class XUiFromXml
 		}
 	}
 
-	// Token: 0x06008E94 RID: 36500 RVA: 0x0035A3B4 File Offset: 0x003585B4
+	// Token: 0x06008F8C RID: 36748 RVA: 0x0035EE50 File Offset: 0x0035D050
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void nCalcFuncLength(FunctionArgs _args, bool _ignoreCase)
 	{
@@ -1071,7 +1071,7 @@ public static class XUiFromXml
 		_args.Result = text.Length;
 	}
 
-	// Token: 0x06008E95 RID: 36501 RVA: 0x0035A3F4 File Offset: 0x003585F4
+	// Token: 0x06008F8D RID: 36749 RVA: 0x0035EE90 File Offset: 0x0035D090
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void nCalcFuncStyle(FunctionArgs _args, bool _ignoreCase)
 	{
@@ -1093,7 +1093,7 @@ public static class XUiFromXml
 		_args.Result = text2;
 	}
 
-	// Token: 0x06008E96 RID: 36502 RVA: 0x0035A440 File Offset: 0x00358640
+	// Token: 0x06008F8E RID: 36750 RVA: 0x0035EEDC File Offset: 0x0035D0DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void nCalcFuncIdentifierDefined(FunctionArgs _args, bool _ignoreCase)
 	{
@@ -1111,7 +1111,7 @@ public static class XUiFromXml
 		_args.Result = parameters[0].Parameters.ContainsKey(name);
 	}
 
-	// Token: 0x06008E97 RID: 36503 RVA: 0x0035A490 File Offset: 0x00358690
+	// Token: 0x06008F8F RID: 36751 RVA: 0x0035EF2C File Offset: 0x0035D12C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void parseAttributes(XElement _node, XUiView _viewComponent, Dictionary<string, object> _templateParams = null)
 	{
@@ -1158,7 +1158,7 @@ public static class XUiFromXml
 		}
 	}
 
-	// Token: 0x06008E98 RID: 36504 RVA: 0x0035A640 File Offset: 0x00358840
+	// Token: 0x06008F90 RID: 36752 RVA: 0x0035F0DC File Offset: 0x0035D2DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool tryApplyAttributesFromStyle(string _typeName, string _styleName, XUiView _viewComponent, Dictionary<string, object> _templateParams = null)
 	{
@@ -1198,7 +1198,7 @@ public static class XUiFromXml
 		return true;
 	}
 
-	// Token: 0x06008E99 RID: 36505 RVA: 0x0035A718 File Offset: 0x00358918
+	// Token: 0x06008F91 RID: 36753 RVA: 0x0035F1B4 File Offset: 0x0035D3B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void parseAttribute(XUiView _viewComponent, string _attributeNameLower, string _value, Dictionary<string, object> _templateParams)
 	{
@@ -1210,7 +1210,7 @@ public static class XUiFromXml
 		_viewComponent.ParseInitialAttributeValue(_attributeNameLower, _value);
 	}
 
-	// Token: 0x06008E9A RID: 36506 RVA: 0x0035A730 File Offset: 0x00358930
+	// Token: 0x06008F92 RID: 36754 RVA: 0x0035F1CC File Offset: 0x0035D3CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static XUiController parseController(XElement _node, XUi _xui, XUiWindowGroup _windowGroup, XUiController _parent)
 	{
@@ -1242,7 +1242,7 @@ public static class XUiFromXml
 		return xuiController;
 	}
 
-	// Token: 0x06008E9B RID: 36507 RVA: 0x0035A7D0 File Offset: 0x003589D0
+	// Token: 0x06008F93 RID: 36755 RVA: 0x0035F26C File Offset: 0x0035D46C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void logForNode(LogType _level, XElement _node, string _message)
 	{
@@ -1268,7 +1268,7 @@ public static class XUiFromXml
 		throw new ArgumentOutOfRangeException();
 	}
 
-	// Token: 0x06008E9C RID: 36508 RVA: 0x0035A848 File Offset: 0x00358A48
+	// Token: 0x06008F94 RID: 36756 RVA: 0x0035F2E4 File Offset: 0x0035D4E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void logTree(StringBuilder _sb, XElement _node)
 	{
@@ -1288,7 +1288,7 @@ public static class XUiFromXml
 		_sb.Append(_node.Name);
 	}
 
-	// Token: 0x06008E9D RID: 36509 RVA: 0x0035A8D4 File Offset: 0x00358AD4
+	// Token: 0x06008F95 RID: 36757 RVA: 0x0035F370 File Offset: 0x0035D570
 	public static bool IsMatchingPlatform(string _platformStr)
 	{
 		bool flag = true;
@@ -1417,7 +1417,7 @@ public static class XUiFromXml
 		return flag;
 	}
 
-	// Token: 0x06008E9E RID: 36510 RVA: 0x0035AADC File Offset: 0x00358CDC
+	// Token: 0x06008F96 RID: 36758 RVA: 0x0035F578 File Offset: 0x0035D778
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool tryResolveStyleRef(string _value, out string _resolved, bool _expectBrackets = true)
 	{
@@ -1457,91 +1457,91 @@ public static class XUiFromXml
 		return false;
 	}
 
-	// Token: 0x04006838 RID: 26680
+	// Token: 0x04006907 RID: 26887
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string globalStyleName = "global";
 
-	// Token: 0x04006839 RID: 26681
+	// Token: 0x04006908 RID: 26888
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<string, XElement> windowData;
 
-	// Token: 0x0400683A RID: 26682
+	// Token: 0x04006909 RID: 26889
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IDictionary<string, int> usedWindows;
 
-	// Token: 0x0400683B RID: 26683
+	// Token: 0x0400690A RID: 26890
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<string, XElement> templateData;
 
-	// Token: 0x0400683C RID: 26684
+	// Token: 0x0400690B RID: 26891
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<string, Dictionary<string, object>> templateDefaults;
 
-	// Token: 0x0400683D RID: 26685
+	// Token: 0x0400690C RID: 26892
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IDictionary<string, int> usedTemplates;
 
-	// Token: 0x0400683E RID: 26686
+	// Token: 0x0400690D RID: 26893
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<string, XUiFromXml.StyleData> styles;
 
-	// Token: 0x0400683F RID: 26687
+	// Token: 0x0400690E RID: 26894
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<string, Expression> expressionCache;
 
-	// Token: 0x04006840 RID: 26688
+	// Token: 0x0400690F RID: 26895
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static XElement mainXuiXmlRoot;
 
-	// Token: 0x04006841 RID: 26689
+	// Token: 0x04006910 RID: 26896
 	public static readonly XUiFromXml.DebugLevel DebugXuiLoading;
 
-	// Token: 0x04006842 RID: 26690
+	// Token: 0x04006911 RID: 26897
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static XUiController ncalcCurrentViewParent;
 
-	// Token: 0x04006843 RID: 26691
+	// Token: 0x04006912 RID: 26898
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<string, string[]> styleNameSplitCache = new Dictionary<string, string[]>();
 
-	// Token: 0x04006844 RID: 26692
+	// Token: 0x04006913 RID: 26899
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<string, Dictionary<string, string>> styleNameTypeToStyleKeyCache = new Dictionary<string, Dictionary<string, string>>();
 
-	// Token: 0x02001161 RID: 4449
+	// Token: 0x0200117B RID: 4475
 	public enum DebugLevel
 	{
-		// Token: 0x04006846 RID: 26694
+		// Token: 0x04006915 RID: 26901
 		Off,
-		// Token: 0x04006847 RID: 26695
+		// Token: 0x04006916 RID: 26902
 		Warning,
-		// Token: 0x04006848 RID: 26696
+		// Token: 0x04006917 RID: 26903
 		Verbose
 	}
 
-	// Token: 0x02001162 RID: 4450
+	// Token: 0x0200117C RID: 4476
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class StyleData
 	{
-		// Token: 0x06008E9F RID: 36511 RVA: 0x0035ABD7 File Offset: 0x00358DD7
+		// Token: 0x06008F97 RID: 36759 RVA: 0x0035F673 File Offset: 0x0035D873
 		public StyleData(string _name, string _type)
 		{
 			this.KeyName = _type + "." + _name;
 		}
 
-		// Token: 0x04006849 RID: 26697
+		// Token: 0x04006918 RID: 26904
 		public readonly string KeyName;
 
-		// Token: 0x0400684A RID: 26698
+		// Token: 0x04006919 RID: 26905
 		public readonly Dictionary<string, XUiFromXml.StyleEntryData> StyleEntries = new Dictionary<string, XUiFromXml.StyleEntryData>();
 	}
 
-	// Token: 0x02001163 RID: 4451
+	// Token: 0x0200117D RID: 4477
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class StyleEntryData
 	{
-		// Token: 0x17001100 RID: 4352
-		// (get) Token: 0x06008EA0 RID: 36512 RVA: 0x0035ABFC File Offset: 0x00358DFC
+		// Token: 0x17001139 RID: 4409
+		// (get) Token: 0x06008F98 RID: 36760 RVA: 0x0035F698 File Offset: 0x0035D898
 		public string Value
 		{
 			get
@@ -1557,17 +1557,17 @@ public static class XUiFromXml
 			}
 		}
 
-		// Token: 0x06008EA1 RID: 36513 RVA: 0x0035AC25 File Offset: 0x00358E25
+		// Token: 0x06008F99 RID: 36761 RVA: 0x0035F6C1 File Offset: 0x0035D8C1
 		public StyleEntryData(string _name, string _value)
 		{
 			this.Name = _name;
 			this.value = _value;
 		}
 
-		// Token: 0x0400684B RID: 26699
+		// Token: 0x0400691A RID: 26906
 		public readonly string Name;
 
-		// Token: 0x0400684C RID: 26700
+		// Token: 0x0400691B RID: 26907
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string value;
 	}

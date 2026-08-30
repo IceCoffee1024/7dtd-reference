@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000510 RID: 1296
+// Token: 0x02000515 RID: 1301
 [Preserve]
 public class EModelDrone : EModelBase
 {
-	// Token: 0x06002AAC RID: 10924 RVA: 0x0010E054 File Offset: 0x0010C254
+	// Token: 0x06002AD6 RID: 10966 RVA: 0x0010F090 File Offset: 0x0010D290
 	public override void Init(World _world, Entity _entity, EModelInstanceAssets _assets)
 	{
 		this.entity = _entity;
@@ -31,7 +31,7 @@ public class EModelDrone : EModelBase
 		}
 	}
 
-	// Token: 0x06002AAD RID: 10925 RVA: 0x0010E121 File Offset: 0x0010C321
+	// Token: 0x06002AD7 RID: 10967 RVA: 0x0010F15D File Offset: 0x0010D35D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void createAvatarController(EntityClass _ec)
 	{

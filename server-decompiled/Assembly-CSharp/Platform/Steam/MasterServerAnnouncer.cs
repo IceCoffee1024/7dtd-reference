@@ -6,16 +6,16 @@ using UnityEngine;
 
 namespace Platform.Steam
 {
-	// Token: 0x02001C6D RID: 7277
+	// Token: 0x02001C94 RID: 7316
 	public class MasterServerAnnouncer : IMasterServerAnnouncer
 	{
-		// Token: 0x0600D761 RID: 55137 RVA: 0x004D7EB9 File Offset: 0x004D60B9
+		// Token: 0x0600D8F3 RID: 55539 RVA: 0x004DE3D5 File Offset: 0x004DC5D5
 		public void Init(IPlatform _owner)
 		{
 			this.owner = _owner;
 		}
 
-		// Token: 0x0600D762 RID: 55138 RVA: 0x004D7EC4 File Offset: 0x004D60C4
+		// Token: 0x0600D8F4 RID: 55540 RVA: 0x004DE3E0 File Offset: 0x004DC5E0
 		public void Update()
 		{
 			if (!this.GameServerInitialized)
@@ -40,16 +40,16 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x17001A7C RID: 6780
-		// (get) Token: 0x0600D763 RID: 55139 RVA: 0x004D7F57 File Offset: 0x004D6157
-		// (set) Token: 0x0600D764 RID: 55140 RVA: 0x004D7F5F File Offset: 0x004D615F
+		// Token: 0x17001AEE RID: 6894
+		// (get) Token: 0x0600D8F5 RID: 55541 RVA: 0x004DE473 File Offset: 0x004DC673
+		// (set) Token: 0x0600D8F6 RID: 55542 RVA: 0x004DE47B File Offset: 0x004DC67B
 		public bool GameServerInitialized
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x0600D765 RID: 55141 RVA: 0x004D7F68 File Offset: 0x004D6168
+		// Token: 0x0600D8F7 RID: 55543 RVA: 0x004DE484 File Offset: 0x004DC684
 		public void AdvertiseServer(Action _onServerRegistered)
 		{
 			if (this.owner.User.UserStatus == EUserStatus.OfflineMode)
@@ -65,7 +65,7 @@ namespace Platform.Steam
 			ThreadManager.StartCoroutine(this.registerGameCoroutine);
 		}
 
-		// Token: 0x0600D766 RID: 55142 RVA: 0x004D7FA8 File Offset: 0x004D61A8
+		// Token: 0x0600D8F8 RID: 55544 RVA: 0x004DE4C4 File Offset: 0x004DC6C4
 		public void StopServer()
 		{
 			Log.Out("[Steamworks.NET] Stopping server");
@@ -99,7 +99,7 @@ namespace Platform.Steam
 			this.onServerRegistered = null;
 		}
 
-		// Token: 0x0600D767 RID: 55143 RVA: 0x004D80C1 File Offset: 0x004D62C1
+		// Token: 0x0600D8F9 RID: 55545 RVA: 0x004DE5DD File Offset: 0x004DC7DD
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator RegisterGame()
 		{
@@ -175,7 +175,7 @@ namespace Platform.Steam
 			yield break;
 		}
 
-		// Token: 0x0600D768 RID: 55144 RVA: 0x004D80D0 File Offset: 0x004D62D0
+		// Token: 0x0600D8FA RID: 55546 RVA: 0x004DE5EC File Offset: 0x004DC7EC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SetGameServerInfo(GameServerInfo _gameServerInfo)
 		{
@@ -194,7 +194,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D769 RID: 55145 RVA: 0x004D81D4 File Offset: 0x004D63D4
+		// Token: 0x0600D8FB RID: 55547 RVA: 0x004DE6F0 File Offset: 0x004DC8F0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void updateSteamKeysString(GameServerInfo _gameServerInfo, GameInfoString _gameInfoString)
 		{
@@ -213,7 +213,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D76A RID: 55146 RVA: 0x004D8228 File Offset: 0x004D6428
+		// Token: 0x0600D8FC RID: 55548 RVA: 0x004DE744 File Offset: 0x004DC944
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void updateSteamKeysInt(GameServerInfo _gameServerInfo, GameInfoInt _gameInfoInt)
 		{
@@ -232,7 +232,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D76B RID: 55147 RVA: 0x004D8284 File Offset: 0x004D6484
+		// Token: 0x0600D8FD RID: 55549 RVA: 0x004DE7A0 File Offset: 0x004DC9A0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void updateSteamKeysBool(GameServerInfo _gameServerInfo, GameInfoBool _gameInfoBool)
 		{
@@ -251,7 +251,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D76C RID: 55148 RVA: 0x004D82E0 File Offset: 0x004D64E0
+		// Token: 0x0600D8FE RID: 55550 RVA: 0x004DE7FC File Offset: 0x004DC9FC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void updateSteamKeys(GameServerInfo _gameServerInfo)
 		{
@@ -270,33 +270,33 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D76D RID: 55149 RVA: 0x004D8330 File Offset: 0x004D6530
+		// Token: 0x0600D8FF RID: 55551 RVA: 0x004DE84C File Offset: 0x004DCA4C
 		public string GetServerPorts()
 		{
 			return GamePrefs.GetInt(EnumGamePrefs.ServerPort).ToString() + "/UDP, " + (GamePrefs.GetInt(EnumGamePrefs.ServerPort) + 1).ToString() + "/UDP";
 		}
 
-		// Token: 0x0400A369 RID: 41833
+		// Token: 0x0400A49B RID: 42139
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform owner;
 
-		// Token: 0x0400A36A RID: 41834
+		// Token: 0x0400A49C RID: 42140
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly CountdownTimer updateTagsCountdown = new CountdownTimer(300f, false);
 
-		// Token: 0x0400A36B RID: 41835
+		// Token: 0x0400A49D RID: 42141
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator registerGameCoroutine;
 
-		// Token: 0x0400A36C RID: 41836
+		// Token: 0x0400A49E RID: 42142
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Action onServerRegistered;
 
-		// Token: 0x0400A36D RID: 41837
+		// Token: 0x0400A49F RID: 42143
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly MicroStopwatch tickDurationStopwatch = new MicroStopwatch(false);
 
-		// Token: 0x0400A36F RID: 41839
+		// Token: 0x0400A4A1 RID: 42145
 		[PublicizedFrom(EAccessModifier.Private)]
 		public CSteamID localGameServerId = CSteamID.Nil;
 	}

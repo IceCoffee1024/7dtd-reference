@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001130 RID: 4400
+// Token: 0x02001149 RID: 4425
 public class XUiTweenHeight : XUiTweenAbs
 {
-	// Token: 0x17000FF4 RID: 4084
-	// (get) Token: 0x06008B0A RID: 35594 RVA: 0x0034ED97 File Offset: 0x0034CF97
-	// (set) Token: 0x06008B0B RID: 35595 RVA: 0x0034ED9F File Offset: 0x0034CF9F
+	// Token: 0x1700102D RID: 4141
+	// (get) Token: 0x06008BFC RID: 35836 RVA: 0x003535CB File Offset: 0x003517CB
+	// (set) Token: 0x06008BFD RID: 35837 RVA: 0x003535D3 File Offset: 0x003517D3
 	[XuiXmlAttribute("start", false)]
 	public int Start
 	{
@@ -24,9 +24,9 @@ public class XUiTweenHeight : XUiTweenAbs
 		}
 	}
 
-	// Token: 0x17000FF5 RID: 4085
-	// (get) Token: 0x06008B0C RID: 35596 RVA: 0x0034EDC7 File Offset: 0x0034CFC7
-	// (set) Token: 0x06008B0D RID: 35597 RVA: 0x0034EDCF File Offset: 0x0034CFCF
+	// Token: 0x1700102E RID: 4142
+	// (get) Token: 0x06008BFE RID: 35838 RVA: 0x003535FB File Offset: 0x003517FB
+	// (set) Token: 0x06008BFF RID: 35839 RVA: 0x00353603 File Offset: 0x00351803
 	[XuiXmlAttribute("end", false)]
 	public int End
 	{
@@ -44,7 +44,7 @@ public class XUiTweenHeight : XUiTweenAbs
 		}
 	}
 
-	// Token: 0x06008B0E RID: 35598 RVA: 0x0034EDF8 File Offset: 0x0034CFF8
+	// Token: 0x06008C00 RID: 35840 RVA: 0x0035362C File Offset: 0x0035182C
 	[XuiXmlAttribute("play_to", false)]
 	public void AttributePlayToEnd(int _value)
 	{
@@ -63,13 +63,13 @@ public class XUiTweenHeight : XUiTweenAbs
 		this.tween.PlayForward();
 	}
 
-	// Token: 0x06008B0F RID: 35599 RVA: 0x0034EE5E File Offset: 0x0034D05E
+	// Token: 0x06008C01 RID: 35841 RVA: 0x00353692 File Offset: 0x00351892
 	public XUiTweenHeight(XUiView _targetView)
 		: base(_targetView)
 	{
 	}
 
-	// Token: 0x06008B10 RID: 35600 RVA: 0x0034EE77 File Offset: 0x0034D077
+	// Token: 0x06008C02 RID: 35842 RVA: 0x003536AB File Offset: 0x003518AB
 	public override void CreateTween(GameObject _uiGameObject)
 	{
 		this.tween = _uiGameObject.AddMissingComponent<TweenHeight>();
@@ -78,15 +78,15 @@ public class XUiTweenHeight : XUiTweenAbs
 		base.setCommonTweenValues(this.tween);
 	}
 
-	// Token: 0x040066A0 RID: 26272
+	// Token: 0x0400676A RID: 26474
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TweenHeight tween;
 
-	// Token: 0x040066A1 RID: 26273
+	// Token: 0x0400676B RID: 26475
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int start = 20;
 
-	// Token: 0x040066A2 RID: 26274
+	// Token: 0x0400676C RID: 26476
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int end = 40;
 }

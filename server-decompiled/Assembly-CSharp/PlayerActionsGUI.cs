@@ -1,16 +1,16 @@
 ﻿using System;
 using InControl;
 
-// Token: 0x0200055C RID: 1372
+// Token: 0x02000561 RID: 1377
 public class PlayerActionsGUI : PlayerActionsBase
 {
-	// Token: 0x06002CA0 RID: 11424 RVA: 0x0011A4DF File Offset: 0x001186DF
+	// Token: 0x06002CCA RID: 11466 RVA: 0x0011B553 File Offset: 0x00119753
 	public PlayerActionsGUI()
 	{
 		base.Name = "gui";
 	}
 
-	// Token: 0x06002CA1 RID: 11425 RVA: 0x0011A4F4 File Offset: 0x001186F4
+	// Token: 0x06002CCB RID: 11467 RVA: 0x0011B568 File Offset: 0x00119768
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CreateActions()
 	{
@@ -106,7 +106,7 @@ public class PlayerActionsGUI : PlayerActionsBase
 		this.CameraRight.StateThreshold = 0.25f;
 	}
 
-	// Token: 0x06002CA2 RID: 11426 RVA: 0x0011AD64 File Offset: 0x00118F64
+	// Token: 0x06002CCC RID: 11468 RVA: 0x0011BDD8 File Offset: 0x00119FD8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CreateDefaultJoystickBindings()
 	{
@@ -149,7 +149,7 @@ public class PlayerActionsGUI : PlayerActionsBase
 		this.BackButton.AddDefaultBinding(InputControlType.Select);
 	}
 
-	// Token: 0x06002CA3 RID: 11427 RVA: 0x0011AF4C File Offset: 0x0011914C
+	// Token: 0x06002CCD RID: 11469 RVA: 0x0011BFC0 File Offset: 0x0011A1C0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CreateDefaultKeyboardBindings()
 	{
@@ -172,147 +172,147 @@ public class PlayerActionsGUI : PlayerActionsBase
 		this.scrollDown.AddDefaultBinding(new Key[] { Key.DownArrow });
 	}
 
-	// Token: 0x04002259 RID: 8793
+	// Token: 0x0400228B RID: 8843
 	public PlayerAction Left;
 
-	// Token: 0x0400225A RID: 8794
+	// Token: 0x0400228C RID: 8844
 	public PlayerAction Right;
 
-	// Token: 0x0400225B RID: 8795
+	// Token: 0x0400228D RID: 8845
 	public PlayerAction Up;
 
-	// Token: 0x0400225C RID: 8796
+	// Token: 0x0400228E RID: 8846
 	public PlayerAction Down;
 
-	// Token: 0x0400225D RID: 8797
+	// Token: 0x0400228F RID: 8847
 	public PlayerTwoAxisAction Look;
 
-	// Token: 0x0400225E RID: 8798
+	// Token: 0x04002290 RID: 8848
 	public PlayerAction DPad_Left;
 
-	// Token: 0x0400225F RID: 8799
+	// Token: 0x04002291 RID: 8849
 	public PlayerAction DPad_Right;
 
-	// Token: 0x04002260 RID: 8800
+	// Token: 0x04002292 RID: 8850
 	public PlayerAction DPad_Up;
 
-	// Token: 0x04002261 RID: 8801
+	// Token: 0x04002293 RID: 8851
 	public PlayerAction DPad_Down;
 
-	// Token: 0x04002262 RID: 8802
+	// Token: 0x04002294 RID: 8852
 	public PlayerAction Submit;
 
-	// Token: 0x04002263 RID: 8803
+	// Token: 0x04002295 RID: 8853
 	public PlayerAction Cancel;
 
-	// Token: 0x04002264 RID: 8804
+	// Token: 0x04002296 RID: 8854
 	public PlayerAction HalfStack;
 
-	// Token: 0x04002265 RID: 8805
+	// Token: 0x04002297 RID: 8855
 	public PlayerAction Inspect;
 
-	// Token: 0x04002266 RID: 8806
+	// Token: 0x04002298 RID: 8856
 	public PlayerAction FocusSearch;
 
-	// Token: 0x04002267 RID: 8807
+	// Token: 0x04002299 RID: 8857
 	public PlayerAction LeftClick;
 
-	// Token: 0x04002268 RID: 8808
+	// Token: 0x0400229A RID: 8858
 	public PlayerAction RightClick;
 
-	// Token: 0x04002269 RID: 8809
+	// Token: 0x0400229B RID: 8859
 	public PlayerAction MiddleClick;
 
-	// Token: 0x0400226A RID: 8810
+	// Token: 0x0400229C RID: 8860
 	public PlayerAction CameraLeft;
 
-	// Token: 0x0400226B RID: 8811
+	// Token: 0x0400229D RID: 8861
 	public PlayerAction CameraRight;
 
-	// Token: 0x0400226C RID: 8812
+	// Token: 0x0400229E RID: 8862
 	public PlayerAction CameraUp;
 
-	// Token: 0x0400226D RID: 8813
+	// Token: 0x0400229F RID: 8863
 	public PlayerAction CameraDown;
 
-	// Token: 0x0400226E RID: 8814
+	// Token: 0x040022A0 RID: 8864
 	public PlayerTwoAxisAction Camera;
 
-	// Token: 0x0400226F RID: 8815
+	// Token: 0x040022A1 RID: 8865
 	public PlayerAction WindowPagingLeft;
 
-	// Token: 0x04002270 RID: 8816
+	// Token: 0x040022A2 RID: 8866
 	public PlayerAction WindowPagingRight;
 
-	// Token: 0x04002271 RID: 8817
+	// Token: 0x040022A3 RID: 8867
 	public PlayerAction PageUp;
 
-	// Token: 0x04002272 RID: 8818
+	// Token: 0x040022A4 RID: 8868
 	public PlayerAction PageDown;
 
-	// Token: 0x04002273 RID: 8819
+	// Token: 0x040022A5 RID: 8869
 	public PlayerAction RightStick;
 
-	// Token: 0x04002274 RID: 8820
+	// Token: 0x040022A6 RID: 8870
 	public PlayerAction LeftStick;
 
-	// Token: 0x04002275 RID: 8821
+	// Token: 0x040022A7 RID: 8871
 	public PlayerAction BackButton;
 
-	// Token: 0x04002276 RID: 8822
+	// Token: 0x040022A8 RID: 8872
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float LOWER_STICK_DEADZONE = 0.6f;
 
-	// Token: 0x04002277 RID: 8823
+	// Token: 0x040022A9 RID: 8873
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float UPPER_STICK_DEADZONE = 0.9f;
 
-	// Token: 0x04002278 RID: 8824
+	// Token: 0x040022AA RID: 8874
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float LOWER_LEFT_STICKDEADZONE = 0.8f;
 
-	// Token: 0x04002279 RID: 8825
+	// Token: 0x040022AB RID: 8875
 	public PlayerAction NavUp;
 
-	// Token: 0x0400227A RID: 8826
+	// Token: 0x040022AC RID: 8876
 	public PlayerAction NavDown;
 
-	// Token: 0x0400227B RID: 8827
+	// Token: 0x040022AD RID: 8877
 	public PlayerAction NavLeft;
 
-	// Token: 0x0400227C RID: 8828
+	// Token: 0x040022AE RID: 8878
 	public PlayerAction NavRight;
 
-	// Token: 0x0400227D RID: 8829
+	// Token: 0x040022AF RID: 8879
 	public PlayerTwoAxisAction Nav;
 
-	// Token: 0x0400227E RID: 8830
+	// Token: 0x040022B0 RID: 8880
 	public PlayerOneAxisAction BumperAxis;
 
-	// Token: 0x0400227F RID: 8831
+	// Token: 0x040022B1 RID: 8881
 	public PlayerOneAxisAction TriggerAxis;
 
-	// Token: 0x04002280 RID: 8832
+	// Token: 0x040022B2 RID: 8882
 	public PlayerAction scrollUp;
 
-	// Token: 0x04002281 RID: 8833
+	// Token: 0x040022B3 RID: 8883
 	public PlayerAction scrollDown;
 
-	// Token: 0x04002282 RID: 8834
+	// Token: 0x040022B4 RID: 8884
 	public PlayerOneAxisAction scroll;
 
-	// Token: 0x04002283 RID: 8835
+	// Token: 0x040022B5 RID: 8885
 	public PlayerAction ActionUp;
 
-	// Token: 0x04002284 RID: 8836
+	// Token: 0x040022B6 RID: 8886
 	public PlayerAction ActionDown;
 
-	// Token: 0x04002285 RID: 8837
+	// Token: 0x040022B7 RID: 8887
 	public PlayerAction ActionLeft;
 
-	// Token: 0x04002286 RID: 8838
+	// Token: 0x040022B8 RID: 8888
 	public PlayerAction ActionRight;
 
-	// Token: 0x04002287 RID: 8839
+	// Token: 0x040022B9 RID: 8889
 	public PlayerAction Apply;
 }

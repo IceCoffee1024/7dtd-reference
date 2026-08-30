@@ -5,18 +5,18 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E5C RID: 3676
+// Token: 0x02000E71 RID: 3697
 [Preserve]
 public class XUiC_ColorPicker : XUiController
 {
-	// Token: 0x140000A7 RID: 167
-	// (add) Token: 0x0600717A RID: 29050 RVA: 0x002B6F78 File Offset: 0x002B5178
-	// (remove) Token: 0x0600717B RID: 29051 RVA: 0x002B6FB0 File Offset: 0x002B51B0
+	// Token: 0x140000A8 RID: 168
+	// (add) Token: 0x0600721A RID: 29210 RVA: 0x002BA49C File Offset: 0x002B869C
+	// (remove) Token: 0x0600721B RID: 29211 RVA: 0x002BA4D4 File Offset: 0x002B86D4
 	public event XUiEvent_SelectedColorChanged OnSelectedColorChanged;
 
-	// Token: 0x17000CEC RID: 3308
-	// (get) Token: 0x0600717C RID: 29052 RVA: 0x002B6FE5 File Offset: 0x002B51E5
-	// (set) Token: 0x0600717D RID: 29053 RVA: 0x002B6FF0 File Offset: 0x002B51F0
+	// Token: 0x17000D05 RID: 3333
+	// (get) Token: 0x0600721C RID: 29212 RVA: 0x002BA509 File Offset: 0x002B8709
+	// (set) Token: 0x0600721D RID: 29213 RVA: 0x002BA514 File Offset: 0x002B8714
 	public Color SelectedColor
 	{
 		get
@@ -39,7 +39,7 @@ public class XUiC_ColorPicker : XUiController
 		}
 	}
 
-	// Token: 0x0600717E RID: 29054 RVA: 0x002B70CC File Offset: 0x002B52CC
+	// Token: 0x0600721E RID: 29214 RVA: 0x002BA5F0 File Offset: 0x002B87F0
 	public override void Init()
 	{
 		base.Init();
@@ -87,7 +87,7 @@ public class XUiC_ColorPicker : XUiController
 		this.setupSaturationVibranceTexture();
 	}
 
-	// Token: 0x0600717F RID: 29055 RVA: 0x002B71D3 File Offset: 0x002B53D3
+	// Token: 0x0600721F RID: 29215 RVA: 0x002BA6F7 File Offset: 0x002B88F7
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -95,7 +95,7 @@ public class XUiC_ColorPicker : XUiController
 		this.xui.playerUI.CursorController.Locked = false;
 	}
 
-	// Token: 0x06007180 RID: 29056 RVA: 0x002B71F8 File Offset: 0x002B53F8
+	// Token: 0x06007220 RID: 29216 RVA: 0x002BA71C File Offset: 0x002B891C
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -143,7 +143,7 @@ public class XUiC_ColorPicker : XUiController
 		}
 	}
 
-	// Token: 0x06007181 RID: 29057 RVA: 0x002B7420 File Offset: 0x002B5620
+	// Token: 0x06007221 RID: 29217 RVA: 0x002BA944 File Offset: 0x002B8B44
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void showCallouts(bool _held)
 	{
@@ -167,7 +167,7 @@ public class XUiC_ColorPicker : XUiController
 		this.showingCallouts = true;
 	}
 
-	// Token: 0x06007182 RID: 29058 RVA: 0x002B74DD File Offset: 0x002B56DD
+	// Token: 0x06007222 RID: 29218 RVA: 0x002BAA01 File Offset: 0x002B8C01
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void hideCallouts()
 	{
@@ -175,7 +175,7 @@ public class XUiC_ColorPicker : XUiController
 		this.showingCallouts = false;
 	}
 
-	// Token: 0x06007183 RID: 29059 RVA: 0x002B74F8 File Offset: 0x002B56F8
+	// Token: 0x06007223 RID: 29219 RVA: 0x002BAA1C File Offset: 0x002B8C1C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator setSatVal()
 	{
@@ -194,7 +194,7 @@ public class XUiC_ColorPicker : XUiController
 		yield break;
 	}
 
-	// Token: 0x06007184 RID: 29060 RVA: 0x002B7507 File Offset: 0x002B5707
+	// Token: 0x06007224 RID: 29220 RVA: 0x002BAA2B File Offset: 0x002B8C2B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator setHue()
 	{
@@ -207,7 +207,7 @@ public class XUiC_ColorPicker : XUiController
 		yield break;
 	}
 
-	// Token: 0x06007185 RID: 29061 RVA: 0x002B7516 File Offset: 0x002B5716
+	// Token: 0x06007225 RID: 29221 RVA: 0x002BAA3A File Offset: 0x002B8C3A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color getColorUnderMouse(Texture2D _tex)
 	{
@@ -216,7 +216,7 @@ public class XUiC_ColorPicker : XUiController
 		return _tex.GetPixel(0, 0);
 	}
 
-	// Token: 0x06007186 RID: 29062 RVA: 0x002B7544 File Offset: 0x002B5744
+	// Token: 0x06007226 RID: 29222 RVA: 0x002BAA68 File Offset: 0x002B8C68
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setupSaturationVibranceTexture()
 	{
@@ -235,7 +235,7 @@ public class XUiC_ColorPicker : XUiController
 		this.svPicker.Texture = texture2D;
 	}
 
-	// Token: 0x06007187 RID: 29063 RVA: 0x002B761C File Offset: 0x002B581C
+	// Token: 0x06007227 RID: 29223 RVA: 0x002BAB40 File Offset: 0x002B8D40
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setupHueTexture()
 	{
@@ -252,75 +252,75 @@ public class XUiC_ColorPicker : XUiController
 		this.hPicker.Texture = texture2D;
 	}
 
-	// Token: 0x06007188 RID: 29064 RVA: 0x002B76DE File Offset: 0x002B58DE
+	// Token: 0x06007228 RID: 29224 RVA: 0x002BAC02 File Offset: 0x002B8E02
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SvPickerC_OnDrag(XUiController _sender, EDragType _dragType, Vector2 _mousePositionDelta)
 	{
 		GameManager.Instance.StartCoroutine(this.setSatVal());
 	}
 
-	// Token: 0x06007189 RID: 29065 RVA: 0x002B76DE File Offset: 0x002B58DE
+	// Token: 0x06007229 RID: 29225 RVA: 0x002BAC02 File Offset: 0x002B8E02
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SvPickerC_OnPress(XUiController _sender, int _mouseButton)
 	{
 		GameManager.Instance.StartCoroutine(this.setSatVal());
 	}
 
-	// Token: 0x0600718A RID: 29066 RVA: 0x002B76F1 File Offset: 0x002B58F1
+	// Token: 0x0600722A RID: 29226 RVA: 0x002BAC15 File Offset: 0x002B8E15
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HPickerC_OnDrag(XUiController _sender, EDragType _dragType, Vector2 _mousePositionDelta)
 	{
 		GameManager.Instance.StartCoroutine(this.setHue());
 	}
 
-	// Token: 0x0600718B RID: 29067 RVA: 0x002B76F1 File Offset: 0x002B58F1
+	// Token: 0x0600722B RID: 29227 RVA: 0x002BAC15 File Offset: 0x002B8E15
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HPickerC_OnPress(XUiController _sender, int _mouseButton)
 	{
 		GameManager.Instance.StartCoroutine(this.setHue());
 	}
 
-	// Token: 0x04005536 RID: 21814
+	// Token: 0x040055DA RID: 21978
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color selectedColor = Color.red;
 
-	// Token: 0x04005537 RID: 21815
+	// Token: 0x040055DB RID: 21979
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float saturation;
 
-	// Token: 0x04005538 RID: 21816
+	// Token: 0x040055DC RID: 21980
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float vibrance;
 
-	// Token: 0x04005539 RID: 21817
+	// Token: 0x040055DD RID: 21981
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float hue;
 
-	// Token: 0x0400553A RID: 21818
+	// Token: 0x040055DE RID: 21982
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isLocalDirty;
 
-	// Token: 0x0400553B RID: 21819
+	// Token: 0x040055DF RID: 21983
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Texture svPicker;
 
-	// Token: 0x0400553C RID: 21820
+	// Token: 0x040055E0 RID: 21984
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Texture hPicker;
 
-	// Token: 0x0400553D RID: 21821
+	// Token: 0x040055E1 RID: 21985
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite selectedColorSprite;
 
-	// Token: 0x0400553E RID: 21822
+	// Token: 0x040055E2 RID: 21986
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite selectedColorSatValPointerSprite;
 
-	// Token: 0x0400553F RID: 21823
+	// Token: 0x040055E3 RID: 21987
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showingCallouts;
 
-	// Token: 0x04005540 RID: 21824
+	// Token: 0x040055E4 RID: 21988
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool calloutStateHeld;
 }

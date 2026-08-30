@@ -2,29 +2,29 @@
 using System.Text;
 using UnityEngine.Scripting;
 
-// Token: 0x020011B8 RID: 4536
+// Token: 0x020011D4 RID: 4564
 [Preserve]
 public class GameModeZombieHorde : GameModeAbstract
 {
-	// Token: 0x0600910B RID: 37131 RVA: 0x0036B29B File Offset: 0x0036949B
+	// Token: 0x0600920F RID: 37391 RVA: 0x00370537 File Offset: 0x0036E737
 	public override string GetName()
 	{
 		return "gmZombieHorde";
 	}
 
-	// Token: 0x0600910C RID: 37132 RVA: 0x0036B2A2 File Offset: 0x003694A2
+	// Token: 0x06009210 RID: 37392 RVA: 0x0037053E File Offset: 0x0036E73E
 	public override string GetDescription()
 	{
 		return "gmZombieHordeDesc";
 	}
 
-	// Token: 0x0600910D RID: 37133 RVA: 0x0007FE9C File Offset: 0x0007E09C
+	// Token: 0x06009211 RID: 37393 RVA: 0x00080550 File Offset: 0x0007E750
 	public override int GetID()
 	{
 		return 4;
 	}
 
-	// Token: 0x0600910E RID: 37134 RVA: 0x0036B2AC File Offset: 0x003694AC
+	// Token: 0x06009212 RID: 37394 RVA: 0x00370548 File Offset: 0x0036E748
 	public override GameMode.ModeGamePref[] GetSupportedGamePrefsInfo()
 	{
 		return new GameMode.ModeGamePref[]
@@ -50,13 +50,13 @@ public class GameModeZombieHorde : GameModeAbstract
 		};
 	}
 
-	// Token: 0x0600910F RID: 37135 RVA: 0x0007FE9C File Offset: 0x0007E09C
+	// Token: 0x06009213 RID: 37395 RVA: 0x00080550 File Offset: 0x0007E750
 	public override int GetRoundCount()
 	{
 		return 4;
 	}
 
-	// Token: 0x06009110 RID: 37136 RVA: 0x0036B460 File Offset: 0x00369660
+	// Token: 0x06009214 RID: 37396 RVA: 0x003706FC File Offset: 0x0036E8FC
 	public override void Init()
 	{
 		base.Init();
@@ -76,7 +76,7 @@ public class GameModeZombieHorde : GameModeAbstract
 		GameStats.Set(EnumGameStats.EnemySpawnMode, GamePrefs.GetBool(EnumGamePrefs.EnemySpawnMode));
 	}
 
-	// Token: 0x06009111 RID: 37137 RVA: 0x0036B514 File Offset: 0x00369714
+	// Token: 0x06009215 RID: 37397 RVA: 0x003707B0 File Offset: 0x0036E9B0
 	public override void StartRound(int _idx)
 	{
 		switch (_idx)
@@ -108,12 +108,12 @@ public class GameModeZombieHorde : GameModeAbstract
 		}
 	}
 
-	// Token: 0x06009112 RID: 37138 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009216 RID: 37398 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void EndRound(int _idx)
 	{
 	}
 
-	// Token: 0x06009113 RID: 37139 RVA: 0x0036B5B8 File Offset: 0x003697B8
+	// Token: 0x06009217 RID: 37399 RVA: 0x00370854 File Offset: 0x0036EA54
 	public override string GetAdditionalGameInfo(World _world)
 	{
 		if (GameStats.GetBool(EnumGameStats.TimeLimitActive) || GameStats.GetBool(EnumGameStats.DayLimitActive) || GameStats.GetBool(EnumGameStats.FragLimitActive))
@@ -145,6 +145,6 @@ public class GameModeZombieHorde : GameModeAbstract
 		return string.Empty;
 	}
 
-	// Token: 0x04006B1F RID: 27423
+	// Token: 0x04006BF7 RID: 27639
 	public static readonly string TypeName = typeof(GameModeZombieHorde).Name;
 }

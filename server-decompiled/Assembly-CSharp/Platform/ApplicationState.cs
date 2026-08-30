@@ -2,16 +2,16 @@
 
 namespace Platform
 {
-	// Token: 0x02001B30 RID: 6960
+	// Token: 0x02001B57 RID: 6999
 	public enum ApplicationState
 	{
-		// Token: 0x04009F44 RID: 40772
+		// Token: 0x0400A075 RID: 41077
 		Foreground,
-		// Token: 0x04009F45 RID: 40773
+		// Token: 0x0400A076 RID: 41078
 		ConstrainedBackground,
-		// Token: 0x04009F46 RID: 40774
+		// Token: 0x0400A077 RID: 41079
 		UnconstrainedBackground,
-		// Token: 0x04009F47 RID: 40775
+		// Token: 0x0400A078 RID: 41080
 		Suspended
 	}
 }

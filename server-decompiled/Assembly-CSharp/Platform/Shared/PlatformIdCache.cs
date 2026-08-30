@@ -3,11 +3,11 @@ using System.IO;
 
 namespace Platform.Shared
 {
-	// Token: 0x02001C86 RID: 7302
+	// Token: 0x02001CAD RID: 7341
 	public static class PlatformIdCache
 	{
-		// Token: 0x17001A9C RID: 6812
-		// (get) Token: 0x0600D834 RID: 55348 RVA: 0x004DB56D File Offset: 0x004D976D
+		// Token: 0x17001B0E RID: 6926
+		// (get) Token: 0x0600D9CA RID: 55754 RVA: 0x004E1B49 File Offset: 0x004DFD49
 		public static string IdFilePath
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -17,7 +17,7 @@ namespace Platform.Shared
 			}
 		}
 
-		// Token: 0x0600D835 RID: 55349 RVA: 0x004DB580 File Offset: 0x004D9780
+		// Token: 0x0600D9CB RID: 55755 RVA: 0x004E1B5C File Offset: 0x004DFD5C
 		public static bool TryGetCachedId<T>(out T _platformUserIdentifier) where T : PlatformUserIdentifierAbs
 		{
 			string idFilePath = PlatformIdCache.IdFilePath;
@@ -51,7 +51,7 @@ namespace Platform.Shared
 			return false;
 		}
 
-		// Token: 0x0600D836 RID: 55350 RVA: 0x004DB664 File Offset: 0x004D9864
+		// Token: 0x0600D9CC RID: 55756 RVA: 0x004E1C40 File Offset: 0x004DFE40
 		public static void SetCachedId(PlatformUserIdentifierAbs _platformUserIdentifier)
 		{
 			using (Stream stream = SdFile.OpenWrite(PlatformIdCache.IdFilePath))
@@ -63,7 +63,7 @@ namespace Platform.Shared
 			}
 		}
 
-		// Token: 0x0400A3EC RID: 41964
+		// Token: 0x0400A51F RID: 42271
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string idCacheFile = "PlatformIdCache.txt";
 	}

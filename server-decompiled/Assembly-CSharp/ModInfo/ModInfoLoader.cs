@@ -7,11 +7,11 @@ using XMLData;
 
 namespace ModInfo
 {
-	// Token: 0x02001608 RID: 5640
+	// Token: 0x02001623 RID: 5667
 	[XmlParser]
 	public static class ModInfoLoader
 	{
-		// Token: 0x0600B133 RID: 45363 RVA: 0x004227F4 File Offset: 0x004209F4
+		// Token: 0x0600B230 RID: 45616 RVA: 0x00427B34 File Offset: 0x00425D34
 		public static List<ModInfo> ParseXml(string _filename, XmlFile _xml)
 		{
 			List<ModInfo> list = new List<ModInfo>();

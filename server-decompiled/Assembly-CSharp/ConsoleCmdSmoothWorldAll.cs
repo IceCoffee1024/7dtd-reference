@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine.Scripting;
 
-// Token: 0x02000298 RID: 664
+// Token: 0x0200029C RID: 668
 [Preserve]
 public class ConsoleCmdSmoothWorldAll : ConsoleCmdAbstract
 {
-	// Token: 0x06001362 RID: 4962 RVA: 0x000763BB File Offset: 0x000745BB
+	// Token: 0x06001374 RID: 4980 RVA: 0x00076A17 File Offset: 0x00074C17
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "smoothworldall", "swa" };
 	}
 
-	// Token: 0x06001363 RID: 4963 RVA: 0x000763D4 File Offset: 0x000745D4
+	// Token: 0x06001375 RID: 4981 RVA: 0x00076A30 File Offset: 0x00074C30
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -82,21 +82,21 @@ public class ConsoleCmdSmoothWorldAll : ConsoleCmdAbstract
 		Log.Out("Writing took " + ((float)(microStopwatch.ElapsedMilliseconds - num3) / 1000f).ToCultureInvariantString() + "s");
 	}
 
-	// Token: 0x06001364 RID: 4964 RVA: 0x000765F8 File Offset: 0x000747F8
+	// Token: 0x06001376 RID: 4982 RVA: 0x00076C54 File Offset: 0x00074E54
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Applies some batched smoothing commands.";
 	}
 
-	// Token: 0x06001365 RID: 4965 RVA: 0x000765FF File Offset: 0x000747FF
+	// Token: 0x06001377 RID: 4983 RVA: 0x00076C5B File Offset: 0x00074E5B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Usage:\n  1. smoothworldall [passes] [noregion]\n  2. smoothworldall <worldname> [passes] [noregion]\nArguments:\n  passes: Integer number, overriding the default of 5 passes\n  noregion: If passed in literally it will write the resulting heightmap\n            to the dtm.raw instead of updating all of the worlds region files\n  worldname: If specified the command is applied to the given world instead of the currently loaded world";
 	}
 
-	// Token: 0x06001366 RID: 4966 RVA: 0x00076608 File Offset: 0x00074808
+	// Token: 0x06001378 RID: 4984 RVA: 0x00076C64 File Offset: 0x00074E64
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void writeHeightDataBinary(PathAbstractions.AbstractedLocation _worldLocation, float[,] heightData)
 	{
@@ -127,7 +127,7 @@ public class ConsoleCmdSmoothWorldAll : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001367 RID: 4967 RVA: 0x000766E0 File Offset: 0x000748E0
+	// Token: 0x06001379 RID: 4985 RVA: 0x00076D3C File Offset: 0x00074F3C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void writeRegionFiles(string worldPath, float[,] heightData)
 	{
@@ -161,7 +161,7 @@ public class ConsoleCmdSmoothWorldAll : ConsoleCmdAbstract
 		regionFileManager.Cleanup();
 	}
 
-	// Token: 0x06001368 RID: 4968 RVA: 0x000767D0 File Offset: 0x000749D0
+	// Token: 0x0600137A RID: 4986 RVA: 0x00076E2C File Offset: 0x0007502C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void fillChunk(Chunk _chunk, float[,] heightData, BlockValue _fillValue)
 	{

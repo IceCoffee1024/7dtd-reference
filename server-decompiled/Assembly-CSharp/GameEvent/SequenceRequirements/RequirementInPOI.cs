@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x0200190E RID: 6414
+	// Token: 0x02001934 RID: 6452
 	[Preserve]
 	public class RequirementInPOI : BaseRequirement
 	{
-		// Token: 0x0600C590 RID: 50576 RVA: 0x0048AFDC File Offset: 0x004891DC
+		// Token: 0x0600C717 RID: 50967 RVA: 0x00491328 File Offset: 0x0048F528
 		public override bool CanPerform(Entity target)
 		{
 			bool flag = true;
@@ -46,7 +46,7 @@ namespace GameEvent.SequenceRequirements
 			return !flag;
 		}
 
-		// Token: 0x0600C591 RID: 50577 RVA: 0x0048B0A7 File Offset: 0x004892A7
+		// Token: 0x0600C718 RID: 50968 RVA: 0x004913F3 File Offset: 0x0048F5F3
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -55,7 +55,7 @@ namespace GameEvent.SequenceRequirements
 			properties.ParseString(RequirementInPOI.PropPOINames, ref this.poiName);
 		}
 
-		// Token: 0x0600C592 RID: 50578 RVA: 0x0048B0E3 File Offset: 0x004892E3
+		// Token: 0x0600C719 RID: 50969 RVA: 0x0049142F File Offset: 0x0048F62F
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseRequirement CloneChildSettings()
 		{
@@ -68,27 +68,27 @@ namespace GameEvent.SequenceRequirements
 			};
 		}
 
-		// Token: 0x040094C8 RID: 38088
+		// Token: 0x040095F1 RID: 38385
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string poiName = "";
 
-		// Token: 0x040094C9 RID: 38089
+		// Token: 0x040095F2 RID: 38386
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string poiTags = "";
 
-		// Token: 0x040094CA RID: 38090
+		// Token: 0x040095F3 RID: 38387
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int poiTier = -1;
 
-		// Token: 0x040094CB RID: 38091
+		// Token: 0x040095F4 RID: 38388
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropPOITier = "tier";
 
-		// Token: 0x040094CC RID: 38092
+		// Token: 0x040095F5 RID: 38389
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropPOITags = "tags";
 
-		// Token: 0x040094CD RID: 38093
+		// Token: 0x040095F6 RID: 38390
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropPOINames = "name";
 	}

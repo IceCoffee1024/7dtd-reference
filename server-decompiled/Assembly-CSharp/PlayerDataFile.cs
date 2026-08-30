@@ -4,10 +4,10 @@ using System.IO;
 using Audio;
 using UnityEngine;
 
-// Token: 0x02001297 RID: 4759
+// Token: 0x020012B1 RID: 4785
 public class PlayerDataFile
 {
-	// Token: 0x060096C1 RID: 38593 RVA: 0x0038D660 File Offset: 0x0038B860
+	// Token: 0x060097BC RID: 38844 RVA: 0x003927BC File Offset: 0x003909BC
 	public void ToPlayer(EntityPlayer _player)
 	{
 		if (this.id != -1)
@@ -146,7 +146,7 @@ public class PlayerDataFile
 		_player.favoriteShapes = this.favoriteShapes;
 	}
 
-	// Token: 0x060096C2 RID: 38594 RVA: 0x0038DC08 File Offset: 0x0038BE08
+	// Token: 0x060097BD RID: 38845 RVA: 0x00392D64 File Offset: 0x00390F64
 	public void FromPlayer(EntityPlayer _player)
 	{
 		this.ecd = new EntityCreationData(_player, true);
@@ -221,7 +221,7 @@ public class PlayerDataFile
 		this.bLoaded = true;
 	}
 
-	// Token: 0x060096C3 RID: 38595 RVA: 0x0038DFCC File Offset: 0x0038C1CC
+	// Token: 0x060097BE RID: 38846 RVA: 0x00393128 File Offset: 0x00391328
 	public void ToggleWaypointHiddenStatus(NavObject nav)
 	{
 		Waypoint waypointForNavObject = this.waypoints.GetWaypointForNavObject(nav);
@@ -231,7 +231,7 @@ public class PlayerDataFile
 		}
 	}
 
-	// Token: 0x060096C4 RID: 38596 RVA: 0x0038DFF8 File Offset: 0x0038C1F8
+	// Token: 0x060097BF RID: 38847 RVA: 0x00393154 File Offset: 0x00391354
 	public void Load(string _dir, string _playerName)
 	{
 		try
@@ -299,14 +299,14 @@ public class PlayerDataFile
 		}
 	}
 
-	// Token: 0x060096C5 RID: 38597 RVA: 0x0038E298 File Offset: 0x0038C498
+	// Token: 0x060097C0 RID: 38848 RVA: 0x003933F4 File Offset: 0x003915F4
 	public void ReadNetwork(PooledBinaryReader _br)
 	{
 		this.Read(_br, uint.MaxValue);
 		this.metadata = PlayerMetaInfo.FromStream(_br);
 	}
 
-	// Token: 0x060096C6 RID: 38598 RVA: 0x0038E2B0 File Offset: 0x0038C4B0
+	// Token: 0x060097C1 RID: 38849 RVA: 0x0039340C File Offset: 0x0039160C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Read(PooledBinaryReader _br, uint _version)
 	{
@@ -528,7 +528,7 @@ public class PlayerDataFile
 		}
 	}
 
-	// Token: 0x060096C7 RID: 38599 RVA: 0x0038E850 File Offset: 0x0038CA50
+	// Token: 0x060097C2 RID: 38850 RVA: 0x003939AC File Offset: 0x00391BAC
 	public void Save(string _dir, string _playerId)
 	{
 		try
@@ -580,14 +580,14 @@ public class PlayerDataFile
 		}
 	}
 
-	// Token: 0x060096C8 RID: 38600 RVA: 0x0038EA04 File Offset: 0x0038CC04
+	// Token: 0x060097C3 RID: 38851 RVA: 0x00393B60 File Offset: 0x00391D60
 	public void WriteNetwork(PooledBinaryWriter _bw)
 	{
 		this.Write(_bw);
 		this.metadata.Write(_bw);
 	}
 
-	// Token: 0x060096C9 RID: 38601 RVA: 0x0038EA1C File Offset: 0x0038CC1C
+	// Token: 0x060097C4 RID: 38852 RVA: 0x00393B78 File Offset: 0x00391D78
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Write(PooledBinaryWriter _bw)
 	{
@@ -672,7 +672,7 @@ public class PlayerDataFile
 		_bw.Write(this.totalTimePlayed);
 	}
 
-	// Token: 0x060096CA RID: 38602 RVA: 0x0038EE7C File Offset: 0x0038D07C
+	// Token: 0x060097C5 RID: 38853 RVA: 0x00393FD8 File Offset: 0x003921D8
 	public static bool Exists(string _dir, string _playerName)
 	{
 		return SdFile.Exists(string.Concat(new string[]
@@ -685,149 +685,149 @@ public class PlayerDataFile
 		}));
 	}
 
-	// Token: 0x040070EC RID: 28908
+	// Token: 0x040071C1 RID: 29121
 	public static string EXT = "ttp";
 
-	// Token: 0x040070ED RID: 28909
+	// Token: 0x040071C2 RID: 29122
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cFileVersion = 59;
 
-	// Token: 0x040070EE RID: 28910
+	// Token: 0x040071C3 RID: 29123
 	public bool bLoaded;
 
-	// Token: 0x040070EF RID: 28911
+	// Token: 0x040071C4 RID: 29124
 	public bool bModifiedSinceLastSave;
 
-	// Token: 0x040070F0 RID: 28912
+	// Token: 0x040071C5 RID: 29125
 	public EntityCreationData ecd = new EntityCreationData();
 
-	// Token: 0x040070F1 RID: 28913
+	// Token: 0x040071C6 RID: 29126
 	public ItemStack[] inventory = new ItemStack[0];
 
-	// Token: 0x040070F2 RID: 28914
+	// Token: 0x040071C7 RID: 29127
 	public Bag bag = new Bag(0);
 
-	// Token: 0x040070F3 RID: 28915
+	// Token: 0x040071C8 RID: 29128
 	public ItemStack dragAndDropItem = new ItemStack();
 
-	// Token: 0x040070F4 RID: 28916
+	// Token: 0x040071C9 RID: 29129
 	public Equipment equipment = new Equipment();
 
-	// Token: 0x040070F5 RID: 28917
+	// Token: 0x040071CA RID: 29130
 	public int selectedInventorySlot;
 
-	// Token: 0x040070F6 RID: 28918
+	// Token: 0x040071CB RID: 29131
 	public List<Vector3i> spawnPoints = new List<Vector3i>();
 
-	// Token: 0x040070F7 RID: 28919
+	// Token: 0x040071CC RID: 29132
 	public long selectedSpawnPointKey;
 
-	// Token: 0x040070F8 RID: 28920
+	// Token: 0x040071CD RID: 29133
 	public HashSet<string> alreadyCraftedList = new HashSet<string>();
 
-	// Token: 0x040070F9 RID: 28921
+	// Token: 0x040071CE RID: 29134
 	public List<string> unlockedRecipeList = new List<string>();
 
-	// Token: 0x040070FA RID: 28922
+	// Token: 0x040071CF RID: 29135
 	public List<string> favoriteRecipeList = new List<string>();
 
-	// Token: 0x040070FB RID: 28923
+	// Token: 0x040071D0 RID: 29136
 	public SpawnPosition lastSpawnPosition = SpawnPosition.Undef;
 
-	// Token: 0x040070FC RID: 28924
+	// Token: 0x040071D1 RID: 29137
 	public List<OwnedEntityData> ownedEntities = new List<OwnedEntityData>();
 
-	// Token: 0x040070FD RID: 28925
+	// Token: 0x040071D2 RID: 29138
 	public int playerKills;
 
-	// Token: 0x040070FE RID: 28926
+	// Token: 0x040071D3 RID: 29139
 	public int zombieKills;
 
-	// Token: 0x040070FF RID: 28927
+	// Token: 0x040071D4 RID: 29140
 	public int deaths;
 
-	// Token: 0x04007100 RID: 28928
+	// Token: 0x040071D5 RID: 29141
 	public int score;
 
-	// Token: 0x04007101 RID: 28929
+	// Token: 0x040071D6 RID: 29142
 	public int id = -1;
 
-	// Token: 0x04007102 RID: 28930
+	// Token: 0x040071D7 RID: 29143
 	public Vector3i markerPosition;
 
-	// Token: 0x04007103 RID: 28931
+	// Token: 0x040071D8 RID: 29144
 	public bool markerHidden;
 
-	// Token: 0x04007104 RID: 28932
+	// Token: 0x040071D9 RID: 29145
 	public bool bCrouchedLocked;
 
-	// Token: 0x04007105 RID: 28933
+	// Token: 0x040071DA RID: 29146
 	public CraftingData craftingData = new CraftingData();
 
-	// Token: 0x04007106 RID: 28934
+	// Token: 0x040071DB RID: 29147
 	public int deathUpdateTime;
 
-	// Token: 0x04007107 RID: 28935
+	// Token: 0x040071DC RID: 29148
 	public bool bDead;
 
-	// Token: 0x04007108 RID: 28936
+	// Token: 0x040071DD RID: 29149
 	public float distanceWalked;
 
-	// Token: 0x04007109 RID: 28937
+	// Token: 0x040071DE RID: 29150
 	public uint totalItemsCrafted;
 
-	// Token: 0x0400710A RID: 28938
+	// Token: 0x040071DF RID: 29151
 	public float longestLife;
 
-	// Token: 0x0400710B RID: 28939
+	// Token: 0x040071E0 RID: 29152
 	public float currentLife;
 
-	// Token: 0x0400710C RID: 28940
+	// Token: 0x040071E1 RID: 29153
 	public float totalTimePlayed;
 
-	// Token: 0x0400710D RID: 28941
+	// Token: 0x040071E2 RID: 29154
 	public ulong gameStageBornAtWorldTime = ulong.MaxValue;
 
-	// Token: 0x0400710E RID: 28942
+	// Token: 0x040071E3 RID: 29155
 	public MemoryStream progressionData = new MemoryStream(0);
 
-	// Token: 0x0400710F RID: 28943
+	// Token: 0x040071E4 RID: 29156
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MemoryStream buffData = new MemoryStream(0);
 
-	// Token: 0x04007110 RID: 28944
+	// Token: 0x040071E5 RID: 29157
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MemoryStream stealthData = new MemoryStream(0);
 
-	// Token: 0x04007111 RID: 28945
+	// Token: 0x040071E6 RID: 29158
 	public WaypointCollection waypoints = new WaypointCollection();
 
-	// Token: 0x04007112 RID: 28946
+	// Token: 0x040071E7 RID: 29159
 	public QuestJournal questJournal = new QuestJournal();
 
-	// Token: 0x04007113 RID: 28947
+	// Token: 0x040071E8 RID: 29160
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bModdedSaveGame;
 
-	// Token: 0x04007114 RID: 28948
+	// Token: 0x040071E9 RID: 29161
 	public ChallengeJournal challengeJournal = new ChallengeJournal();
 
-	// Token: 0x04007115 RID: 28949
+	// Token: 0x040071EA RID: 29162
 	public Vector3i rentedVMPosition = Vector3i.zero;
 
-	// Token: 0x04007116 RID: 28950
+	// Token: 0x040071EB RID: 29163
 	public ulong rentalEndTime;
 
-	// Token: 0x04007117 RID: 28951
+	// Token: 0x040071EC RID: 29164
 	public int rentalEndDay;
 
-	// Token: 0x04007118 RID: 28952
+	// Token: 0x040071ED RID: 29165
 	public List<ushort> favoriteCreativeStacks = new List<ushort>();
 
-	// Token: 0x04007119 RID: 28953
+	// Token: 0x040071EE RID: 29166
 	public List<string> favoriteShapes = new List<string>();
 
-	// Token: 0x0400711A RID: 28954
+	// Token: 0x040071EF RID: 29167
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlayerMetaInfo metadata;
 }

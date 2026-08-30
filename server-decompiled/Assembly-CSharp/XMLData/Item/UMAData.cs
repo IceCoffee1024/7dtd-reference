@@ -7,12 +7,12 @@ using XMLData.Parsers;
 
 namespace XMLData.Item
 {
-	// Token: 0x02001632 RID: 5682
+	// Token: 0x0200164D RID: 5709
 	public class UMAData : IXMLData
 	{
-		// Token: 0x17001551 RID: 5457
-		// (get) Token: 0x0600B2C3 RID: 45763 RVA: 0x0042E2C3 File Offset: 0x0042C4C3
-		// (set) Token: 0x0600B2C4 RID: 45764 RVA: 0x0042E2CB File Offset: 0x0042C4CB
+		// Token: 0x1700158A RID: 5514
+		// (get) Token: 0x0600B3C0 RID: 46016 RVA: 0x00433603 File Offset: 0x00431803
+		// (set) Token: 0x0600B3C1 RID: 46017 RVA: 0x0043360B File Offset: 0x0043180B
 		public DataItem<string> Mesh
 		{
 			get
@@ -25,9 +25,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001552 RID: 5458
-		// (get) Token: 0x0600B2C5 RID: 45765 RVA: 0x0042E2D4 File Offset: 0x0042C4D4
-		// (set) Token: 0x0600B2C6 RID: 45766 RVA: 0x0042E2DC File Offset: 0x0042C4DC
+		// Token: 0x1700158B RID: 5515
+		// (get) Token: 0x0600B3C2 RID: 46018 RVA: 0x00433614 File Offset: 0x00431814
+		// (set) Token: 0x0600B3C3 RID: 46019 RVA: 0x0043361C File Offset: 0x0043181C
 		public DataItem<string> OverlayTints
 		{
 			get
@@ -40,9 +40,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001553 RID: 5459
-		// (get) Token: 0x0600B2C7 RID: 45767 RVA: 0x0042E2E5 File Offset: 0x0042C4E5
-		// (set) Token: 0x0600B2C8 RID: 45768 RVA: 0x0042E2ED File Offset: 0x0042C4ED
+		// Token: 0x1700158C RID: 5516
+		// (get) Token: 0x0600B3C4 RID: 46020 RVA: 0x00433625 File Offset: 0x00431825
+		// (set) Token: 0x0600B3C5 RID: 46021 RVA: 0x0043362D File Offset: 0x0043182D
 		public DataItem<string> Overlay
 		{
 			get
@@ -55,9 +55,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001554 RID: 5460
-		// (get) Token: 0x0600B2C9 RID: 45769 RVA: 0x0042E2F6 File Offset: 0x0042C4F6
-		// (set) Token: 0x0600B2CA RID: 45770 RVA: 0x0042E2FE File Offset: 0x0042C4FE
+		// Token: 0x1700158D RID: 5517
+		// (get) Token: 0x0600B3C6 RID: 46022 RVA: 0x00433636 File Offset: 0x00431836
+		// (set) Token: 0x0600B3C7 RID: 46023 RVA: 0x0043363E File Offset: 0x0043183E
 		public DataItem<int> Layer
 		{
 			get
@@ -70,9 +70,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001555 RID: 5461
-		// (get) Token: 0x0600B2CB RID: 45771 RVA: 0x0042E307 File Offset: 0x0042C507
-		// (set) Token: 0x0600B2CC RID: 45772 RVA: 0x0042E30F File Offset: 0x0042C50F
+		// Token: 0x1700158E RID: 5518
+		// (get) Token: 0x0600B3C8 RID: 46024 RVA: 0x00433647 File Offset: 0x00431847
+		// (set) Token: 0x0600B3C9 RID: 46025 RVA: 0x0043364F File Offset: 0x0043184F
 		public DataItem<string> UISlot
 		{
 			get
@@ -85,9 +85,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001556 RID: 5462
-		// (get) Token: 0x0600B2CD RID: 45773 RVA: 0x0042E318 File Offset: 0x0042C518
-		// (set) Token: 0x0600B2CE RID: 45774 RVA: 0x0042E320 File Offset: 0x0042C520
+		// Token: 0x1700158F RID: 5519
+		// (get) Token: 0x0600B3CA RID: 46026 RVA: 0x00433658 File Offset: 0x00431858
+		// (set) Token: 0x0600B3CB RID: 46027 RVA: 0x00433660 File Offset: 0x00431860
 		public DataItem<bool> ShowHair
 		{
 			get
@@ -100,40 +100,40 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x0600B2CF RID: 45775 RVA: 0x0042331B File Offset: 0x0042151B
+		// Token: 0x0600B3CC RID: 46028 RVA: 0x0042865B File Offset: 0x0042685B
 		public List<IDataItem> GetDisplayValues(bool _recursive = true)
 		{
 			return new List<IDataItem>();
 		}
 
-		// Token: 0x0400860B RID: 34315
+		// Token: 0x040086E4 RID: 34532
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pMesh;
 
-		// Token: 0x0400860C RID: 34316
+		// Token: 0x040086E5 RID: 34533
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pOverlayTints;
 
-		// Token: 0x0400860D RID: 34317
+		// Token: 0x040086E6 RID: 34534
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pOverlay;
 
-		// Token: 0x0400860E RID: 34318
+		// Token: 0x040086E7 RID: 34535
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<int> pLayer;
 
-		// Token: 0x0400860F RID: 34319
+		// Token: 0x040086E8 RID: 34536
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pUISlot;
 
-		// Token: 0x04008610 RID: 34320
+		// Token: 0x040086E9 RID: 34537
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<bool> pShowHair;
 
-		// Token: 0x02001633 RID: 5683
+		// Token: 0x0200164E RID: 5710
 		public static class Parser
 		{
-			// Token: 0x0600B2D1 RID: 45777 RVA: 0x0042E32C File Offset: 0x0042C52C
+			// Token: 0x0600B3CE RID: 46030 RVA: 0x0043366C File Offset: 0x0043186C
 			public static UMAData Parse(PositionXmlElement _elem, Dictionary<PositionXmlElement, DataItem<ItemClass>> _updateLater)
 			{
 				string text = (_elem.HasAttribute("class") ? _elem.GetAttribute("class") : "UMAData");
@@ -337,7 +337,7 @@ namespace XMLData.Item
 				return umadata;
 			}
 
-			// Token: 0x04008611 RID: 34321
+			// Token: 0x040086EA RID: 34538
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static Dictionary<string, Range<int>> knownAttributesMultiplicity = new Dictionary<string, Range<int>>
 			{

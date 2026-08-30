@@ -2,104 +2,104 @@
 
 namespace Quests.Requirements
 {
-	// Token: 0x0200187D RID: 6269
+	// Token: 0x020018A3 RID: 6307
 	public abstract class BaseRequirement
 	{
-		// Token: 0x17001776 RID: 6006
-		// (get) Token: 0x0600C12C RID: 49452 RVA: 0x0047A6B0 File Offset: 0x004788B0
-		// (set) Token: 0x0600C12D RID: 49453 RVA: 0x0047A6B8 File Offset: 0x004788B8
+		// Token: 0x170017E8 RID: 6120
+		// (get) Token: 0x0600C2B3 RID: 49843 RVA: 0x004807DC File Offset: 0x0047E9DC
+		// (set) Token: 0x0600C2B4 RID: 49844 RVA: 0x004807E4 File Offset: 0x0047E9E4
 		public string ID { get; set; }
 
-		// Token: 0x17001777 RID: 6007
-		// (get) Token: 0x0600C12E RID: 49454 RVA: 0x0047A6C1 File Offset: 0x004788C1
-		// (set) Token: 0x0600C12F RID: 49455 RVA: 0x0047A6C9 File Offset: 0x004788C9
+		// Token: 0x170017E9 RID: 6121
+		// (get) Token: 0x0600C2B5 RID: 49845 RVA: 0x004807ED File Offset: 0x0047E9ED
+		// (set) Token: 0x0600C2B6 RID: 49846 RVA: 0x004807F5 File Offset: 0x0047E9F5
 		public string Value { get; set; }
 
-		// Token: 0x17001778 RID: 6008
-		// (get) Token: 0x0600C130 RID: 49456 RVA: 0x0047A6D2 File Offset: 0x004788D2
-		// (set) Token: 0x0600C131 RID: 49457 RVA: 0x0047A6DA File Offset: 0x004788DA
+		// Token: 0x170017EA RID: 6122
+		// (get) Token: 0x0600C2B7 RID: 49847 RVA: 0x004807FE File Offset: 0x0047E9FE
+		// (set) Token: 0x0600C2B8 RID: 49848 RVA: 0x00480806 File Offset: 0x0047EA06
 		public bool Complete
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x17001779 RID: 6009
-		// (get) Token: 0x0600C132 RID: 49458 RVA: 0x0047A6E3 File Offset: 0x004788E3
-		// (set) Token: 0x0600C133 RID: 49459 RVA: 0x0047A6EB File Offset: 0x004788EB
+		// Token: 0x170017EB RID: 6123
+		// (get) Token: 0x0600C2B9 RID: 49849 RVA: 0x0048080F File Offset: 0x0047EA0F
+		// (set) Token: 0x0600C2BA RID: 49850 RVA: 0x00480817 File Offset: 0x0047EA17
 		public Quest OwnerQuest { get; set; }
 
-		// Token: 0x1700177A RID: 6010
-		// (get) Token: 0x0600C134 RID: 49460 RVA: 0x0047A6F4 File Offset: 0x004788F4
-		// (set) Token: 0x0600C135 RID: 49461 RVA: 0x0047A6FC File Offset: 0x004788FC
+		// Token: 0x170017EC RID: 6124
+		// (get) Token: 0x0600C2BB RID: 49851 RVA: 0x00480820 File Offset: 0x0047EA20
+		// (set) Token: 0x0600C2BC RID: 49852 RVA: 0x00480828 File Offset: 0x0047EA28
 		public QuestClass Owner { get; set; }
 
-		// Token: 0x1700177B RID: 6011
-		// (get) Token: 0x0600C136 RID: 49462 RVA: 0x0047A705 File Offset: 0x00478905
-		// (set) Token: 0x0600C137 RID: 49463 RVA: 0x0047A70D File Offset: 0x0047890D
+		// Token: 0x170017ED RID: 6125
+		// (get) Token: 0x0600C2BD RID: 49853 RVA: 0x00480831 File Offset: 0x0047EA31
+		// (set) Token: 0x0600C2BE RID: 49854 RVA: 0x00480839 File Offset: 0x0047EA39
 		public string Description
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x1700177C RID: 6012
-		// (get) Token: 0x0600C138 RID: 49464 RVA: 0x0047A716 File Offset: 0x00478916
-		// (set) Token: 0x0600C139 RID: 49465 RVA: 0x0047A71E File Offset: 0x0047891E
+		// Token: 0x170017EE RID: 6126
+		// (get) Token: 0x0600C2BF RID: 49855 RVA: 0x00480842 File Offset: 0x0047EA42
+		// (set) Token: 0x0600C2C0 RID: 49856 RVA: 0x0048084A File Offset: 0x0047EA4A
 		public string StatusText
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x1700177D RID: 6013
-		// (get) Token: 0x0600C13A RID: 49466 RVA: 0x0047A727 File Offset: 0x00478927
-		// (set) Token: 0x0600C13B RID: 49467 RVA: 0x0047A72F File Offset: 0x0047892F
+		// Token: 0x170017EF RID: 6127
+		// (get) Token: 0x0600C2C1 RID: 49857 RVA: 0x00480853 File Offset: 0x0047EA53
+		// (set) Token: 0x0600C2C2 RID: 49858 RVA: 0x0048085B File Offset: 0x0047EA5B
 		public int Phase { get; set; }
 
-		// Token: 0x0600C13C RID: 49468 RVA: 0x0047A738 File Offset: 0x00478938
+		// Token: 0x0600C2C3 RID: 49859 RVA: 0x00480864 File Offset: 0x0047EA64
 		public virtual void HandleVariables()
 		{
 			this.ID = this.OwnerQuest.ParseVariable(this.ID);
 			this.Value = this.OwnerQuest.ParseVariable(this.Value);
 		}
 
-		// Token: 0x0600C13D RID: 49469 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C2C4 RID: 49860 RVA: 0x000027FC File Offset: 0x000009FC
 		public virtual void SetupRequirement()
 		{
 		}
 
-		// Token: 0x0600C13E RID: 49470 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x0600C2C5 RID: 49861 RVA: 0x00010E62 File Offset: 0x0000F062
 		public virtual bool CheckRequirement()
 		{
 			return false;
 		}
 
-		// Token: 0x0600C13F RID: 49471 RVA: 0x0001FF1E File Offset: 0x0001E11E
+		// Token: 0x0600C2C6 RID: 49862 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
 		public virtual BaseRequirement Clone()
 		{
 			return null;
 		}
 
-		// Token: 0x0600C140 RID: 49472 RVA: 0x0000640C File Offset: 0x0000460C
+		// Token: 0x0600C2C7 RID: 49863 RVA: 0x0000640C File Offset: 0x0000460C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public BaseRequirement()
 		{
 		}
 
-		// Token: 0x04009296 RID: 37526
+		// Token: 0x040093BF RID: 37823
 		public DynamicProperties Properties;
 
-		// Token: 0x0200187E RID: 6270
+		// Token: 0x020018A4 RID: 6308
 		public enum RequirementTypes
 		{
-			// Token: 0x04009298 RID: 37528
+			// Token: 0x040093C1 RID: 37825
 			Buff,
-			// Token: 0x04009299 RID: 37529
+			// Token: 0x040093C2 RID: 37826
 			Holding,
-			// Token: 0x0400929A RID: 37530
+			// Token: 0x040093C3 RID: 37827
 			Level,
-			// Token: 0x0400929B RID: 37531
+			// Token: 0x040093C4 RID: 37828
 			Wearing
 		}
 	}

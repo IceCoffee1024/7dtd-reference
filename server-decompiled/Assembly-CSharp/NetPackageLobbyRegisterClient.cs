@@ -3,12 +3,12 @@ using System.Text;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x020007FE RID: 2046
+// Token: 0x02000809 RID: 2057
 [Preserve]
 public class NetPackageLobbyRegisterClient : NetPackage
 {
-	// Token: 0x17000641 RID: 1601
-	// (get) Token: 0x06003C39 RID: 15417 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x1700064C RID: 1612
+	// (get) Token: 0x06003C98 RID: 15512 RVA: 0x00020021 File Offset: 0x0001E221
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -17,7 +17,7 @@ public class NetPackageLobbyRegisterClient : NetPackage
 		}
 	}
 
-	// Token: 0x06003C3A RID: 15418 RVA: 0x0018085D File Offset: 0x0017EA5D
+	// Token: 0x06003C99 RID: 15513 RVA: 0x00182C35 File Offset: 0x00180E35
 	public NetPackageLobbyRegisterClient Setup(PlatformLobbyId lobbyId, bool overwriteExistingLobby)
 	{
 		this.lobbyId = lobbyId;
@@ -25,14 +25,14 @@ public class NetPackageLobbyRegisterClient : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003C3B RID: 15419 RVA: 0x0018086E File Offset: 0x0017EA6E
+	// Token: 0x06003C9A RID: 15514 RVA: 0x00182C46 File Offset: 0x00180E46
 	public override void read(PooledBinaryReader _br)
 	{
 		this.lobbyId = PlatformLobbyId.Read(_br);
 		this.overwriteExistingLobby = _br.ReadBoolean();
 	}
 
-	// Token: 0x06003C3C RID: 15420 RVA: 0x00180888 File Offset: 0x0017EA88
+	// Token: 0x06003C9B RID: 15515 RVA: 0x00182C60 File Offset: 0x00180E60
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -40,7 +40,7 @@ public class NetPackageLobbyRegisterClient : NetPackage
 		_bw.Write(this.overwriteExistingLobby);
 	}
 
-	// Token: 0x06003C3D RID: 15421 RVA: 0x001808AC File Offset: 0x0017EAAC
+	// Token: 0x06003C9C RID: 15516 RVA: 0x00182C84 File Offset: 0x00180E84
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (this.lobbyId.PlatformIdentifier == PlatformManager.NativePlatform.PlatformIdentifier)
@@ -55,7 +55,7 @@ public class NetPackageLobbyRegisterClient : NetPackage
 		PlatformManager.ClientLobbyManager.RegisterLobbyClient(this.lobbyId, base.Sender, this.overwriteExistingLobby);
 	}
 
-	// Token: 0x06003C3E RID: 15422 RVA: 0x00180944 File Offset: 0x0017EB44
+	// Token: 0x06003C9D RID: 15517 RVA: 0x00182D1C File Offset: 0x00180F1C
 	public override int GetLength()
 	{
 		Encoding utf = Encoding.UTF8;
@@ -67,11 +67,11 @@ public class NetPackageLobbyRegisterClient : NetPackage
 		return platformLobbyId.GetWriteLength(utf);
 	}
 
-	// Token: 0x040030B3 RID: 12467
+	// Token: 0x04003132 RID: 12594
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlatformLobbyId lobbyId;
 
-	// Token: 0x040030B4 RID: 12468
+	// Token: 0x04003133 RID: 12595
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool overwriteExistingLobby;
 }

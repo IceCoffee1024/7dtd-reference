@@ -4,11 +4,11 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EDA RID: 3802
+// Token: 0x02000EEF RID: 3823
 [Preserve]
 public class XUiC_ChatOutput : XUiController
 {
-	// Token: 0x06007754 RID: 30548 RVA: 0x002CEAD8 File Offset: 0x002CCCD8
+	// Token: 0x060077F6 RID: 30710 RVA: 0x002D215C File Offset: 0x002D035C
 	public override void Init()
 	{
 		XUiC_ChatOutput.ID = this.windowGroup.Id;
@@ -17,7 +17,7 @@ public class XUiC_ChatOutput : XUiController
 		this.collider = this.txtOutput.UiTransform.GetComponent<BoxCollider>();
 	}
 
-	// Token: 0x06007755 RID: 30549 RVA: 0x002CEB2C File Offset: 0x002CCD2C
+	// Token: 0x060077F7 RID: 30711 RVA: 0x002D21B0 File Offset: 0x002D03B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void addMessage(EnumGameMessages _messageType, EChatType _chatType, EChatDirection _chatDirection, string _message, string _senderDisplayName, string _senderHandlerId)
 	{
@@ -106,7 +106,7 @@ public class XUiC_ChatOutput : XUiController
 		this.txtOutput.ScrollValue = 1f;
 	}
 
-	// Token: 0x06007756 RID: 30550 RVA: 0x002CEEC8 File Offset: 0x002CD0C8
+	// Token: 0x060077F8 RID: 30712 RVA: 0x002D254C File Offset: 0x002D074C
 	public static void AddMessage(XUi _xuiInstance, EnumGameMessages _messageType, string _message, EChatType _chatType = EChatType.Global, EChatDirection _chatDirection = EChatDirection.Inbound, int _senderId = -1, string _senderDisplayName = null, string _senderHandlerId = null, EMessageSender _messageSenderType = EMessageSender.None, GeneratedTextManager.TextFilteringMode _filteringMode = GeneratedTextManager.TextFilteringMode.None, GeneratedTextManager.BbCodeSupportMode _bbMode = GeneratedTextManager.BbCodeSupportMode.Supported)
 	{
 		if (_messageType == EnumGameMessages.Chat && !PermissionsManager.IsCommunicationAllowed())
@@ -155,7 +155,7 @@ public class XUiC_ChatOutput : XUiController
 		}, false, _filteringMode, _bbMode);
 	}
 
-	// Token: 0x06007757 RID: 30551 RVA: 0x002CEFBC File Offset: 0x002CD1BC
+	// Token: 0x060077F9 RID: 30713 RVA: 0x002D2640 File Offset: 0x002D0840
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -173,7 +173,7 @@ public class XUiC_ChatOutput : XUiController
 		}
 	}
 
-	// Token: 0x06007758 RID: 30552 RVA: 0x002CF0A0 File Offset: 0x002CD2A0
+	// Token: 0x060077FA RID: 30714 RVA: 0x002D2724 File Offset: 0x002D0924
 	public override bool ParseAttribute(string _name, string _value)
 	{
 		uint num = <PrivateImplementationDetails>.ComputeStringHash(_name);
@@ -253,54 +253,54 @@ public class XUiC_ChatOutput : XUiController
 		return base.ParseAttribute(_name, _value);
 	}
 
-	// Token: 0x040057FB RID: 22523
+	// Token: 0x040058A1 RID: 22689
 	public static string ID = "";
 
-	// Token: 0x040057FC RID: 22524
+	// Token: 0x040058A2 RID: 22690
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_TextList txtOutput;
 
-	// Token: 0x040057FD RID: 22525
+	// Token: 0x040058A3 RID: 22691
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BoxCollider collider;
 
-	// Token: 0x040057FE RID: 22526
+	// Token: 0x040058A4 RID: 22692
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float fadeoutWaitTime = 5f;
 
-	// Token: 0x040057FF RID: 22527
+	// Token: 0x040058A5 RID: 22693
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float fadeoutDuration = 2f;
 
-	// Token: 0x04005800 RID: 22528
+	// Token: 0x040058A6 RID: 22694
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float currentWaitTime;
 
-	// Token: 0x04005801 RID: 22529
+	// Token: 0x040058A7 RID: 22695
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool useChatTypeColorForMessage;
 
-	// Token: 0x04005802 RID: 22530
+	// Token: 0x040058A8 RID: 22696
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string textColorMessage = Color.white.ToHexCode(false);
 
-	// Token: 0x04005803 RID: 22531
+	// Token: 0x040058A9 RID: 22697
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string textColorGlobal = Color.white.ToHexCode(false);
 
-	// Token: 0x04005804 RID: 22532
+	// Token: 0x040058AA RID: 22698
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string textColorFriends = new Color(0f, 0.75f, 0f).ToHexCode(false);
 
-	// Token: 0x04005805 RID: 22533
+	// Token: 0x040058AB RID: 22699
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string textColorParty = new Color(1f, 0.8f, 0f).ToHexCode(false);
 
-	// Token: 0x04005806 RID: 22534
+	// Token: 0x040058AC RID: 22700
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string textColorWhisper = new Color(0.8f, 0f, 0f).ToHexCode(false);
 
-	// Token: 0x04005807 RID: 22535
+	// Token: 0x040058AD RID: 22701
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string TextColorDiscord = "5865f2";
 }

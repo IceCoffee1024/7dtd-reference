@@ -2,17 +2,17 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020001A6 RID: 422
+// Token: 0x020001A8 RID: 424
 [Preserve]
 public class BlockShapeDistantDecoTree : BlockShapeDistantDeco
 {
-	// Token: 0x06000CC4 RID: 3268 RVA: 0x00050433 File Offset: 0x0004E633
+	// Token: 0x06000CCF RID: 3279 RVA: 0x0005084B File Offset: 0x0004EA4B
 	public BlockShapeDistantDecoTree()
 	{
 		this.Has45DegreeRotations = true;
 	}
 
-	// Token: 0x06000CC5 RID: 3269 RVA: 0x00050444 File Offset: 0x0004E644
+	// Token: 0x06000CD0 RID: 3280 RVA: 0x0005085C File Offset: 0x0004EA5C
 	public override void OnBlockEntityTransformAfterActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		if (!DecoManager.Instance.IsEnabled)
@@ -35,7 +35,7 @@ public class BlockShapeDistantDecoTree : BlockShapeDistantDeco
 		}
 	}
 
-	// Token: 0x06000CC6 RID: 3270 RVA: 0x000504D5 File Offset: 0x0004E6D5
+	// Token: 0x06000CD1 RID: 3281 RVA: 0x000508ED File Offset: 0x0004EAED
 	public override void OnBlockRemoved(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		if (!DecoManager.Instance.IsEnabled)

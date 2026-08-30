@@ -4,7 +4,7 @@
 public class GorePrefab : RootTransformRefEntity
 {
 	// Token: 0x17000062 RID: 98
-	// (set) Token: 0x060005CC RID: 1484 RVA: 0x00029DED File Offset: 0x00027FED
+	// (set) Token: 0x060005CD RID: 1485 RVA: 0x00029EB1 File Offset: 0x000280B1
 	public bool restoreState
 	{
 		set
@@ -13,7 +13,7 @@ public class GorePrefab : RootTransformRefEntity
 		}
 	}
 
-	// Token: 0x060005CD RID: 1485 RVA: 0x00029DF8 File Offset: 0x00027FF8
+	// Token: 0x060005CE RID: 1486 RVA: 0x00029EBC File Offset: 0x000280BC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Start()
 	{

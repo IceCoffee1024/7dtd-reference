@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020007F9 RID: 2041
+// Token: 0x02000804 RID: 2052
 [Preserve]
 public class NetPackageItemActionEffects : NetPackage
 {
-	// Token: 0x06003C1C RID: 15388 RVA: 0x0018032E File Offset: 0x0017E52E
+	// Token: 0x06003C7B RID: 15483 RVA: 0x00182706 File Offset: 0x00180906
 	public NetPackageItemActionEffects Setup(int _entityId, int _slotIdx, int _actionIdx, ItemActionFiringState _firingState, Vector3 _startPos, Vector3 _direction, int _userData)
 	{
 		this.entityId = _entityId;
@@ -19,7 +19,7 @@ public class NetPackageItemActionEffects : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003C1D RID: 15389 RVA: 0x00180368 File Offset: 0x0017E568
+	// Token: 0x06003C7C RID: 15484 RVA: 0x00182740 File Offset: 0x00180940
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.entityId = _reader.ReadInt32();
@@ -39,7 +39,7 @@ public class NetPackageItemActionEffects : NetPackage
 		this.userData = _reader.ReadInt32();
 	}
 
-	// Token: 0x06003C1E RID: 15390 RVA: 0x001803EC File Offset: 0x0017E5EC
+	// Token: 0x06003C7D RID: 15485 RVA: 0x001827C4 File Offset: 0x001809C4
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -57,7 +57,7 @@ public class NetPackageItemActionEffects : NetPackage
 		_writer.Write(this.userData);
 	}
 
-	// Token: 0x06003C1F RID: 15391 RVA: 0x00180488 File Offset: 0x0017E688
+	// Token: 0x06003C7E RID: 15486 RVA: 0x00182860 File Offset: 0x00180A60
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -72,37 +72,37 @@ public class NetPackageItemActionEffects : NetPackage
 		_world.GetGameManager().ItemActionEffectsClient(this.entityId, (int)this.slotIdx, (int)this.actionIdx, (int)this.firingState, this.startPos, this.direction, this.userData);
 	}
 
-	// Token: 0x06003C20 RID: 15392 RVA: 0x001757C8 File Offset: 0x001739C8
+	// Token: 0x06003C7F RID: 15487 RVA: 0x00177A48 File Offset: 0x00175C48
 	public override int GetLength()
 	{
 		return 50;
 	}
 
-	// Token: 0x040030A0 RID: 12448
+	// Token: 0x0400311F RID: 12575
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x040030A1 RID: 12449
+	// Token: 0x04003120 RID: 12576
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte slotIdx;
 
-	// Token: 0x040030A2 RID: 12450
+	// Token: 0x04003121 RID: 12577
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte actionIdx;
 
-	// Token: 0x040030A3 RID: 12451
+	// Token: 0x04003122 RID: 12578
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemActionFiringState firingState;
 
-	// Token: 0x040030A4 RID: 12452
+	// Token: 0x04003123 RID: 12579
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 startPos;
 
-	// Token: 0x040030A5 RID: 12453
+	// Token: 0x04003124 RID: 12580
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 direction;
 
-	// Token: 0x040030A6 RID: 12454
+	// Token: 0x04003125 RID: 12581
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int userData;
 }

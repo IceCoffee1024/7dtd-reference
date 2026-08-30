@@ -3,10 +3,10 @@ using XMLData.Exceptions;
 
 namespace XMLData.Parsers
 {
-	// Token: 0x02001636 RID: 5686
+	// Token: 0x02001651 RID: 5713
 	public static class doubleParser
 	{
-		// Token: 0x0600B2D8 RID: 45784 RVA: 0x0042EC84 File Offset: 0x0042CE84
+		// Token: 0x0600B3D5 RID: 46037 RVA: 0x00433FC4 File Offset: 0x004321C4
 		public static double Parse(string _value)
 		{
 			double num;
@@ -17,7 +17,7 @@ namespace XMLData.Parsers
 			throw new InvalidValueException("Expected double value, found \"" + _value + "\"", -1);
 		}
 
-		// Token: 0x0600B2D9 RID: 45785 RVA: 0x0042ECB3 File Offset: 0x0042CEB3
+		// Token: 0x0600B3D6 RID: 46038 RVA: 0x00433FF3 File Offset: 0x004321F3
 		public static string Unparse(double _value)
 		{
 			return _value.ToCultureInvariantString();

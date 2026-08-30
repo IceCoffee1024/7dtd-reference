@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x020012E3 RID: 4835
+// Token: 0x020012FD RID: 4861
 public enum eLastKnownPositionEntityType
 {
-	// Token: 0x0400732C RID: 29484
+	// Token: 0x04007404 RID: 29700
 	None,
-	// Token: 0x0400732D RID: 29485
+	// Token: 0x04007405 RID: 29701
 	Vehicle,
-	// Token: 0x0400732E RID: 29486
+	// Token: 0x04007406 RID: 29702
 	Drone,
-	// Token: 0x0400732F RID: 29487
+	// Token: 0x04007407 RID: 29703
 	Animal
 }

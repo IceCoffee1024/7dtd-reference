@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000388 RID: 904
+// Token: 0x0200038C RID: 908
 public class DynamicObserver
 {
-	// Token: 0x06001AFF RID: 6911 RVA: 0x000A0720 File Offset: 0x0009E920
+	// Token: 0x06001B1C RID: 6940 RVA: 0x000A0E60 File Offset: 0x0009F060
 	public void Start(Vector3 pos)
 	{
 		this.Position = pos;
@@ -20,14 +20,14 @@ public class DynamicObserver
 		this.StopTime = float.MaxValue;
 	}
 
-	// Token: 0x06001B00 RID: 6912 RVA: 0x000A078C File Offset: 0x0009E98C
+	// Token: 0x06001B1D RID: 6941 RVA: 0x000A0ECC File Offset: 0x0009F0CC
 	public bool ContainsPoint(Vector3i pos)
 	{
 		int num = DynamicObserver.ViewSize * 16;
 		return (float)pos.x >= this.Position.x - (float)num && (float)pos.x <= this.Position.x + (float)num && (float)pos.z >= this.Position.z - (float)num && (float)pos.z <= this.Position.z + (float)num;
 	}
 
-	// Token: 0x06001B01 RID: 6913 RVA: 0x000A0804 File Offset: 0x0009EA04
+	// Token: 0x06001B1E RID: 6942 RVA: 0x000A0F44 File Offset: 0x0009F144
 	public bool HasFallingBlocks()
 	{
 		foreach (long num in this.Observer.chunksLoaded)
@@ -55,7 +55,7 @@ public class DynamicObserver
 		return false;
 	}
 
-	// Token: 0x06001B02 RID: 6914 RVA: 0x000A08C4 File Offset: 0x0009EAC4
+	// Token: 0x06001B1F RID: 6943 RVA: 0x000A1004 File Offset: 0x0009F204
 	public void Stop()
 	{
 		if (this.Observer == null)
@@ -76,15 +76,15 @@ public class DynamicObserver
 		this.Observer = null;
 	}
 
-	// Token: 0x04001158 RID: 4440
+	// Token: 0x0400116D RID: 4461
 	public static int ViewSize = 3;
 
-	// Token: 0x04001159 RID: 4441
+	// Token: 0x0400116E RID: 4462
 	public Vector3 Position;
 
-	// Token: 0x0400115A RID: 4442
+	// Token: 0x0400116F RID: 4463
 	public ChunkManager.ChunkObserver Observer;
 
-	// Token: 0x0400115B RID: 4443
+	// Token: 0x04001170 RID: 4464
 	public float StopTime = float.MaxValue;
 }

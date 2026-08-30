@@ -5,11 +5,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019D5 RID: 6613
+	// Token: 0x020019FC RID: 6652
 	[Preserve]
 	public class ActionTwitchAddPoints : ActionBaseClientAction
 	{
-		// Token: 0x0600C92C RID: 51500 RVA: 0x0049E434 File Offset: 0x0049C634
+		// Token: 0x0600CAB5 RID: 51893 RVA: 0x004A4828 File Offset: 0x004A2A28
 		public override void OnClientPerform(Entity target)
 		{
 			EntityPlayerLocal entityPlayerLocal = target as EntityPlayerLocal;
@@ -57,7 +57,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C92D RID: 51501 RVA: 0x0049E5D3 File Offset: 0x0049C7D3
+		// Token: 0x0600CAB6 RID: 51894 RVA: 0x004A49C7 File Offset: 0x004A2BC7
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override string ParseTextElement(string element)
 		{
@@ -72,7 +72,7 @@ namespace GameEvent.SequenceActions
 			return this.viewer;
 		}
 
-		// Token: 0x0600C92E RID: 51502 RVA: 0x0049E60C File Offset: 0x0049C80C
+		// Token: 0x0600CAB7 RID: 51895 RVA: 0x004A4A00 File Offset: 0x004A2C00
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -83,7 +83,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseString(ActionTwitchAddPoints.PropAwardText, ref this.awardText);
 		}
 
-		// Token: 0x0600C92F RID: 51503 RVA: 0x0049E678 File Offset: 0x0049C878
+		// Token: 0x0600CAB8 RID: 51896 RVA: 0x004A4A6C File Offset: 0x004A2C6C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -97,63 +97,63 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040098B8 RID: 39096
+		// Token: 0x040099E9 RID: 39401
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string amountText;
 
-		// Token: 0x040098B9 RID: 39097
+		// Token: 0x040099EA RID: 39402
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string viewer;
 
-		// Token: 0x040098BA RID: 39098
+		// Token: 0x040099EB RID: 39403
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int amount;
 
-		// Token: 0x040098BB RID: 39099
+		// Token: 0x040099EC RID: 39404
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public TwitchAction.PointTypes pointType;
 
-		// Token: 0x040098BC RID: 39100
+		// Token: 0x040099ED RID: 39405
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool requesterOnly = true;
 
-		// Token: 0x040098BD RID: 39101
+		// Token: 0x040099EE RID: 39406
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string awardText = "";
 
-		// Token: 0x040098BE RID: 39102
+		// Token: 0x040099EF RID: 39407
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ActionTwitchAddPoints.RecipientTypes recipientType;
 
-		// Token: 0x040098BF RID: 39103
+		// Token: 0x040099F0 RID: 39408
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropAmount = "amount";
 
-		// Token: 0x040098C0 RID: 39104
+		// Token: 0x040099F1 RID: 39409
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropPointType = "point_type";
 
-		// Token: 0x040098C1 RID: 39105
+		// Token: 0x040099F2 RID: 39410
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropRecipientType = "recipient_type";
 
-		// Token: 0x040098C2 RID: 39106
+		// Token: 0x040099F3 RID: 39411
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropRequesterOnly = "requester_only";
 
-		// Token: 0x040098C3 RID: 39107
+		// Token: 0x040099F4 RID: 39412
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropAwardText = "award_text";
 
-		// Token: 0x020019D6 RID: 6614
+		// Token: 0x020019FD RID: 6653
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum RecipientTypes
 		{
-			// Token: 0x040098C5 RID: 39109
+			// Token: 0x040099F6 RID: 39414
 			Requester,
-			// Token: 0x040098C6 RID: 39110
+			// Token: 0x040099F7 RID: 39415
 			All,
-			// Token: 0x040098C7 RID: 39111
+			// Token: 0x040099F8 RID: 39416
 			Random
 		}
 	}

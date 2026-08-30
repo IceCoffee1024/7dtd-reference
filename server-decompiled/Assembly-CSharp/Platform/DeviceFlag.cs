@@ -2,23 +2,23 @@
 
 namespace Platform
 {
-	// Token: 0x02001B1A RID: 6938
+	// Token: 0x02001B41 RID: 6977
 	[Flags]
 	public enum DeviceFlag
 	{
-		// Token: 0x04009EE0 RID: 40672
+		// Token: 0x0400A011 RID: 40977
 		None = 0,
-		// Token: 0x04009EE1 RID: 40673
+		// Token: 0x0400A012 RID: 40978
 		StandaloneWindows = 1,
-		// Token: 0x04009EE2 RID: 40674
+		// Token: 0x0400A013 RID: 40979
 		StandaloneLinux = 2,
-		// Token: 0x04009EE3 RID: 40675
+		// Token: 0x0400A014 RID: 40980
 		StandaloneOSX = 4,
-		// Token: 0x04009EE4 RID: 40676
+		// Token: 0x0400A015 RID: 40981
 		XBoxSeriesS = 8,
-		// Token: 0x04009EE5 RID: 40677
+		// Token: 0x0400A016 RID: 40982
 		XBoxSeriesX = 16,
-		// Token: 0x04009EE6 RID: 40678
+		// Token: 0x0400A017 RID: 40983
 		PS5 = 32
 	}
 }

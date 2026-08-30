@@ -2,10 +2,10 @@
 using System.IO;
 using UnityEngine;
 
-// Token: 0x02000520 RID: 1312
+// Token: 0x02000525 RID: 1317
 public struct ActionTarget : IEquatable<ActionTarget>
 {
-	// Token: 0x06002B2C RID: 11052 RVA: 0x00110C6D File Offset: 0x0010EE6D
+	// Token: 0x06002B56 RID: 11094 RVA: 0x00111CE5 File Offset: 0x0010FEE5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ActionTarget(ActionTargetType type, Vector3 position, BlockValueRef blockValueReference)
 	{
@@ -14,37 +14,37 @@ public struct ActionTarget : IEquatable<ActionTarget>
 		this.BlockValueReference = blockValueReference;
 	}
 
-	// Token: 0x06002B2D RID: 11053 RVA: 0x00110C84 File Offset: 0x0010EE84
+	// Token: 0x06002B57 RID: 11095 RVA: 0x00111CFC File Offset: 0x0010FEFC
 	public ActionTarget(float x, float y, float z)
 	{
 		this = new ActionTarget(new Vector3(x, y, z));
 	}
 
-	// Token: 0x06002B2E RID: 11054 RVA: 0x00110C94 File Offset: 0x0010EE94
+	// Token: 0x06002B58 RID: 11096 RVA: 0x00111D0C File Offset: 0x0010FF0C
 	public ActionTarget(Vector3 pos)
 	{
 		this = new ActionTarget(ActionTargetType.Position, pos, BlockValueRef.None);
 	}
 
-	// Token: 0x06002B2F RID: 11055 RVA: 0x00110CA3 File Offset: 0x0010EEA3
+	// Token: 0x06002B59 RID: 11097 RVA: 0x00111D1B File Offset: 0x0010FF1B
 	public ActionTarget(int x, int y, int z)
 	{
 		this = new ActionTarget(new BlockValueRef(x, y, z));
 	}
 
-	// Token: 0x06002B30 RID: 11056 RVA: 0x00110CB3 File Offset: 0x0010EEB3
+	// Token: 0x06002B5A RID: 11098 RVA: 0x00111D2B File Offset: 0x0010FF2B
 	public ActionTarget(Vector3i pos)
 	{
 		this = new ActionTarget(new BlockValueRef(pos));
 	}
 
-	// Token: 0x06002B31 RID: 11057 RVA: 0x00110CC1 File Offset: 0x0010EEC1
+	// Token: 0x06002B5B RID: 11099 RVA: 0x00111D39 File Offset: 0x0010FF39
 	public ActionTarget(BlockValueRef bvRef)
 	{
 		this = new ActionTarget(ActionTargetType.BlockValueRef, Vector3.zero, bvRef);
 	}
 
-	// Token: 0x06002B32 RID: 11058 RVA: 0x00110CD0 File Offset: 0x0010EED0
+	// Token: 0x06002B5C RID: 11100 RVA: 0x00111D48 File Offset: 0x0010FF48
 	public static ActionTarget Read(BinaryReader br)
 	{
 		ActionTarget actionTarget;
@@ -65,7 +65,7 @@ public struct ActionTarget : IEquatable<ActionTarget>
 		return actionTarget;
 	}
 
-	// Token: 0x06002B33 RID: 11059 RVA: 0x00110D24 File Offset: 0x0010EF24
+	// Token: 0x06002B5D RID: 11101 RVA: 0x00111D9C File Offset: 0x0010FF9C
 	public readonly void Write(BinaryWriter bw)
 	{
 		bw.Write((byte)this.Type);
@@ -84,7 +84,7 @@ public struct ActionTarget : IEquatable<ActionTarget>
 		}
 	}
 
-	// Token: 0x06002B34 RID: 11060 RVA: 0x00110D78 File Offset: 0x0010EF78
+	// Token: 0x06002B5E RID: 11102 RVA: 0x00111DF0 File Offset: 0x0010FFF0
 	public static implicit operator Vector3(ActionTarget target)
 	{
 		if (target.Type == ActionTargetType.Position)
@@ -100,7 +100,7 @@ public struct ActionTarget : IEquatable<ActionTarget>
 		return Vector3.zero;
 	}
 
-	// Token: 0x06002B35 RID: 11061 RVA: 0x00110DD0 File Offset: 0x0010EFD0
+	// Token: 0x06002B5F RID: 11103 RVA: 0x00111E48 File Offset: 0x00110048
 	public static implicit operator Vector3i(ActionTarget target)
 	{
 		Vector3i vector3i;
@@ -112,7 +112,7 @@ public struct ActionTarget : IEquatable<ActionTarget>
 		return Vector3i.zero;
 	}
 
-	// Token: 0x06002B36 RID: 11062 RVA: 0x00110E12 File Offset: 0x0010F012
+	// Token: 0x06002B60 RID: 11104 RVA: 0x00111E8A File Offset: 0x0011008A
 	public static implicit operator BlockValueRef(ActionTarget target)
 	{
 		if (target.Type == ActionTargetType.BlockValueRef)
@@ -123,37 +123,37 @@ public struct ActionTarget : IEquatable<ActionTarget>
 		return BlockValueRef.None;
 	}
 
-	// Token: 0x06002B37 RID: 11063 RVA: 0x00110E3E File Offset: 0x0010F03E
+	// Token: 0x06002B61 RID: 11105 RVA: 0x00111EB6 File Offset: 0x001100B6
 	public static implicit operator ActionTarget(Vector3 pos)
 	{
 		return new ActionTarget(pos);
 	}
 
-	// Token: 0x06002B38 RID: 11064 RVA: 0x00110E46 File Offset: 0x0010F046
+	// Token: 0x06002B62 RID: 11106 RVA: 0x00111EBE File Offset: 0x001100BE
 	public static implicit operator ActionTarget(Vector3i pos)
 	{
 		return new ActionTarget(new BlockValueRef(pos));
 	}
 
-	// Token: 0x06002B39 RID: 11065 RVA: 0x00110E53 File Offset: 0x0010F053
+	// Token: 0x06002B63 RID: 11107 RVA: 0x00111ECB File Offset: 0x001100CB
 	public static implicit operator ActionTarget(PropRef propRef)
 	{
 		return new ActionTarget(new BlockValueRef(propRef));
 	}
 
-	// Token: 0x06002B3A RID: 11066 RVA: 0x00110E60 File Offset: 0x0010F060
+	// Token: 0x06002B64 RID: 11108 RVA: 0x00111ED8 File Offset: 0x001100D8
 	public static implicit operator ActionTarget(BlockValueRef bvRef)
 	{
 		return new ActionTarget(bvRef);
 	}
 
-	// Token: 0x06002B3B RID: 11067 RVA: 0x00110E68 File Offset: 0x0010F068
+	// Token: 0x06002B65 RID: 11109 RVA: 0x00111EE0 File Offset: 0x001100E0
 	public bool Equals(ActionTarget other)
 	{
 		return this.Type == other.Type && this.Position.Equals(other.Position) && this.BlockValueReference.Equals(other.BlockValueReference);
 	}
 
-	// Token: 0x06002B3C RID: 11068 RVA: 0x00110EA0 File Offset: 0x0010F0A0
+	// Token: 0x06002B66 RID: 11110 RVA: 0x00111F18 File Offset: 0x00110118
 	public override bool Equals(object obj)
 	{
 		if (obj is ActionTarget)
@@ -164,33 +164,33 @@ public struct ActionTarget : IEquatable<ActionTarget>
 		return false;
 	}
 
-	// Token: 0x06002B3D RID: 11069 RVA: 0x00110EC5 File Offset: 0x0010F0C5
+	// Token: 0x06002B67 RID: 11111 RVA: 0x00111F3D File Offset: 0x0011013D
 	public override int GetHashCode()
 	{
 		return HashCode.Combine<int, Vector3, BlockValueRef>((int)this.Type, this.Position, this.BlockValueReference);
 	}
 
-	// Token: 0x06002B3E RID: 11070 RVA: 0x00110EDE File Offset: 0x0010F0DE
+	// Token: 0x06002B68 RID: 11112 RVA: 0x00111F56 File Offset: 0x00110156
 	public static bool operator ==(ActionTarget left, ActionTarget right)
 	{
 		return left.Equals(right);
 	}
 
-	// Token: 0x06002B3F RID: 11071 RVA: 0x00110EE8 File Offset: 0x0010F0E8
+	// Token: 0x06002B69 RID: 11113 RVA: 0x00111F60 File Offset: 0x00110160
 	public static bool operator !=(ActionTarget left, ActionTarget right)
 	{
 		return !left.Equals(right);
 	}
 
-	// Token: 0x040020F6 RID: 8438
+	// Token: 0x04002125 RID: 8485
 	public static readonly ActionTarget None = new ActionTarget(ActionTargetType.None, Vector3.zero, BlockValueRef.None);
 
-	// Token: 0x040020F7 RID: 8439
+	// Token: 0x04002126 RID: 8486
 	public ActionTargetType Type;
 
-	// Token: 0x040020F8 RID: 8440
+	// Token: 0x04002127 RID: 8487
 	public Vector3 Position;
 
-	// Token: 0x040020F9 RID: 8441
+	// Token: 0x04002128 RID: 8488
 	public BlockValueRef BlockValueReference;
 }

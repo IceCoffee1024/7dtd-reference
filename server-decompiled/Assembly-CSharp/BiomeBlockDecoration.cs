@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000BEB RID: 3051
+// Token: 0x02000BFD RID: 3069
 public class BiomeBlockDecoration
 {
-	// Token: 0x06005D22 RID: 23842 RVA: 0x00242C9C File Offset: 0x00240E9C
+	// Token: 0x06005DAC RID: 23980 RVA: 0x00245A40 File Offset: 0x00243C40
 	public BiomeBlockDecoration(string _name, float _prob, float _clusprob, bool _instantiateReferences, int _randomRotateMax, int _checkResource = 2147483647)
 	{
 		string[] array = _name.Split(',', StringSplitOptions.None);
@@ -31,7 +31,7 @@ public class BiomeBlockDecoration
 		this.checkResourceOffsetY = _checkResource;
 	}
 
-	// Token: 0x06005D23 RID: 23843 RVA: 0x00242D70 File Offset: 0x00240F70
+	// Token: 0x06005DAD RID: 23981 RVA: 0x00245B14 File Offset: 0x00243D14
 	public static byte GetRandomRotation(float _rnd, int _randomRotateMax)
 	{
 		byte b = (byte)(_rnd * (float)_randomRotateMax + 0.5f);
@@ -42,18 +42,18 @@ public class BiomeBlockDecoration
 		return b;
 	}
 
-	// Token: 0x040047DF RID: 18399
+	// Token: 0x0400487B RID: 18555
 	public BlockValue[] blockValues;
 
-	// Token: 0x040047E0 RID: 18400
+	// Token: 0x0400487C RID: 18556
 	public float prob;
 
-	// Token: 0x040047E1 RID: 18401
+	// Token: 0x0400487D RID: 18557
 	public float clusterProb;
 
-	// Token: 0x040047E2 RID: 18402
+	// Token: 0x0400487E RID: 18558
 	public int randomRotateMax;
 
-	// Token: 0x040047E3 RID: 18403
+	// Token: 0x0400487F RID: 18559
 	public int checkResourceOffsetY;
 }

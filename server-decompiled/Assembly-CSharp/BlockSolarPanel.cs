@@ -2,11 +2,11 @@
 using Audio;
 using UnityEngine.Scripting;
 
-// Token: 0x02000142 RID: 322
+// Token: 0x02000143 RID: 323
 [Preserve]
 public class BlockSolarPanel : BlockPowerSource
 {
-	// Token: 0x060008D9 RID: 2265 RVA: 0x0003E5BD File Offset: 0x0003C7BD
+	// Token: 0x060008E3 RID: 2275 RVA: 0x0003E81D File Offset: 0x0003CA1D
 	public override TileEntityPowerSource CreateTileEntity(Chunk chunk)
 	{
 		if (this.slotItem == null)
@@ -20,7 +20,7 @@ public class BlockSolarPanel : BlockPowerSource
 		};
 	}
 
-	// Token: 0x060008DA RID: 2266 RVA: 0x0003E5F4 File Offset: 0x0003C7F4
+	// Token: 0x060008E4 RID: 2276 RVA: 0x0003E854 File Offset: 0x0003CA54
 	public override bool CanPlaceBlockAt(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool _bOmitCollideCheck = false)
 	{
 		if (!base.CanPlaceBlockAt(_world, _blockPos, _blockValue, _bOmitCollideCheck))
@@ -32,28 +32,28 @@ public class BlockSolarPanel : BlockPowerSource
 		return chunkCache == null || chunkCache.GetLight(vector3i, Chunk.LIGHT_TYPE.SUN) >= 15;
 	}
 
-	// Token: 0x060008DB RID: 2267 RVA: 0x0003E635 File Offset: 0x0003C835
+	// Token: 0x060008E5 RID: 2277 RVA: 0x0003E895 File Offset: 0x0003CA95
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string GetPowerSourceIcon()
 	{
 		return "electric_solar";
 	}
 
-	// Token: 0x060008DC RID: 2268 RVA: 0x0003E63C File Offset: 0x0003C83C
+	// Token: 0x060008E6 RID: 2278 RVA: 0x0003E89C File Offset: 0x0003CA9C
 	public override void OnBlockRemoved(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockRemoved(world, _chunk, _blockPos, _blockValue);
 		Manager.BroadcastStop(_blockPos.ToVector3(), this.runningSound);
 	}
 
-	// Token: 0x060008DD RID: 2269 RVA: 0x0003E65B File Offset: 0x0003C85B
+	// Token: 0x060008E7 RID: 2279 RVA: 0x0003E8BB File Offset: 0x0003CABB
 	public override void OnBlockUnloaded(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockUnloaded(_world, _blockPos, _blockValue);
 		Manager.Stop(_blockPos.ToVector3(), this.runningSound);
 	}
 
-	// Token: 0x04000992 RID: 2450
+	// Token: 0x04000994 RID: 2452
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string runningSound = "solarpanel_idle";
 }

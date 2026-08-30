@@ -1,21 +1,21 @@
 ﻿using System;
 
-// Token: 0x02000CC6 RID: 3270
+// Token: 0x02000CD8 RID: 3288
 public static class ScopedChunkAccess
 {
-	// Token: 0x0600644E RID: 25678 RVA: 0x0027451C File Offset: 0x0027271C
+	// Token: 0x060064DA RID: 25818 RVA: 0x00277418 File Offset: 0x00275618
 	public static ScopedChunkReadAccess GetChunkReadAccess(ChunkCluster chunks, int x, int z)
 	{
 		return new ScopedChunkReadAccess(chunks.GetChunkSync(x, z));
 	}
 
-	// Token: 0x0600644F RID: 25679 RVA: 0x0027452B File Offset: 0x0027272B
+	// Token: 0x060064DB RID: 25819 RVA: 0x00277427 File Offset: 0x00275627
 	public static ScopedChunkWriteAccess GetChunkWriteAccess(ChunkCluster chunks, int x, int z)
 	{
 		return new ScopedChunkWriteAccess(chunks.GetChunkSync(x, z));
 	}
 
-	// Token: 0x06006450 RID: 25680 RVA: 0x0027453A File Offset: 0x0027273A
+	// Token: 0x060064DC RID: 25820 RVA: 0x00277436 File Offset: 0x00275636
 	public static ScopedChunkWriteAccess GetChunkWriteAccess(ChunkCluster chunks, long key)
 	{
 		return new ScopedChunkWriteAccess(chunks.GetChunkSync(key));

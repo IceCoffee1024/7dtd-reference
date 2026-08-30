@@ -7,12 +7,12 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F08 RID: 3848
+// Token: 0x02000F1F RID: 3871
 [Preserve]
 public class XUiC_DewCollectorWindow : XUiController
 {
-	// Token: 0x17000E18 RID: 3608
-	// (get) Token: 0x060078BF RID: 30911 RVA: 0x002D893F File Offset: 0x002D6B3F
+	// Token: 0x17000E32 RID: 3634
+	// (get) Token: 0x06007977 RID: 31095 RVA: 0x002DC8CB File Offset: 0x002DAACB
 	public int ContainerSlotsCount
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -22,7 +22,7 @@ public class XUiC_DewCollectorWindow : XUiController
 		}
 	}
 
-	// Token: 0x060078C0 RID: 30912 RVA: 0x002D8958 File Offset: 0x002D6B58
+	// Token: 0x06007978 RID: 31096 RVA: 0x002DC8E4 File Offset: 0x002DAAE4
 	public override void Init()
 	{
 		base.Init();
@@ -61,7 +61,7 @@ public class XUiC_DewCollectorWindow : XUiController
 		this.lootLabel = base.GetChildById("lootName").ViewComponent as XUiV_Label;
 	}
 
-	// Token: 0x060078C1 RID: 30913 RVA: 0x002D89EC File Offset: 0x002D6BEC
+	// Token: 0x06007979 RID: 31097 RVA: 0x002DC978 File Offset: 0x002DAB78
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -94,7 +94,7 @@ public class XUiC_DewCollectorWindow : XUiController
 		}
 	}
 
-	// Token: 0x060078C2 RID: 30914 RVA: 0x002D8B64 File Offset: 0x002D6D64
+	// Token: 0x0600797A RID: 31098 RVA: 0x002DCAF0 File Offset: 0x002DACF0
 	public void SetTileEntity(TileEntityCollector _te)
 	{
 		this.te = _te;
@@ -111,14 +111,14 @@ public class XUiC_DewCollectorWindow : XUiController
 		}
 	}
 
-	// Token: 0x060078C3 RID: 30915 RVA: 0x002D8C58 File Offset: 0x002D6E58
+	// Token: 0x0600797B RID: 31099 RVA: 0x002DCBE4 File Offset: 0x002DADE4
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.isClosing = false;
 	}
 
-	// Token: 0x060078C4 RID: 30916 RVA: 0x002D8C67 File Offset: 0x002D6E67
+	// Token: 0x0600797C RID: 31100 RVA: 0x002DCBF3 File Offset: 0x002DADF3
 	public override void OnClose()
 	{
 		this.wasReleased = false;
@@ -129,7 +129,7 @@ public class XUiC_DewCollectorWindow : XUiController
 		base.OnClose();
 	}
 
-	// Token: 0x060078C5 RID: 30917 RVA: 0x002D8CA8 File Offset: 0x002D6EA8
+	// Token: 0x0600797D RID: 31101 RVA: 0x002DCC34 File Offset: 0x002DAE34
 	public void OpenContainer()
 	{
 		this.container.SetSlots(this.te, this.te.GetItems());
@@ -143,7 +143,7 @@ public class XUiC_DewCollectorWindow : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x060078C6 RID: 30918 RVA: 0x002D8D56 File Offset: 0x002D6F56
+	// Token: 0x0600797E RID: 31102 RVA: 0x002DCCE2 File Offset: 0x002DAEE2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator closeInventoryLater()
 	{
@@ -154,7 +154,7 @@ public class XUiC_DewCollectorWindow : XUiController
 		yield break;
 	}
 
-	// Token: 0x060078C7 RID: 30919 RVA: 0x002D8D65 File Offset: 0x002D6F65
+	// Token: 0x0600797F RID: 31103 RVA: 0x002DCCF1 File Offset: 0x002DAEF1
 	public override bool ParseAttribute(string _name, string _value)
 	{
 		if (_name == "window_grid_width_difference")
@@ -165,7 +165,7 @@ public class XUiC_DewCollectorWindow : XUiController
 		return base.ParseAttribute(_name, _value);
 	}
 
-	// Token: 0x060078C8 RID: 30920 RVA: 0x002D8D90 File Offset: 0x002D6F90
+	// Token: 0x06007980 RID: 31104 RVA: 0x002DCD1C File Offset: 0x002DAF1C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -197,43 +197,43 @@ public class XUiC_DewCollectorWindow : XUiController
 		return true;
 	}
 
-	// Token: 0x04005919 RID: 22809
+	// Token: 0x040059CB RID: 22987
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileEntityCollector te;
 
-	// Token: 0x0400591A RID: 22810
+	// Token: 0x040059CC RID: 22988
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_DewCollectorContainer container;
 
-	// Token: 0x0400591B RID: 22811
+	// Token: 0x040059CD RID: 22989
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ContainerStandardControls controls;
 
-	// Token: 0x0400591C RID: 22812
+	// Token: 0x040059CE RID: 22990
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2i containerSlotsSize;
 
-	// Token: 0x0400591D RID: 22813
+	// Token: 0x040059CF RID: 22991
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int windowWidth;
 
-	// Token: 0x0400591E RID: 22814
+	// Token: 0x040059D0 RID: 22992
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int windowGridWidthDifference;
 
-	// Token: 0x0400591F RID: 22815
+	// Token: 0x040059D1 RID: 22993
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label lootLabel;
 
-	// Token: 0x04005920 RID: 22816
+	// Token: 0x040059D2 RID: 22994
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isClosing;
 
-	// Token: 0x04005921 RID: 22817
+	// Token: 0x040059D3 RID: 22995
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool activeKeyDown;
 
-	// Token: 0x04005922 RID: 22818
+	// Token: 0x040059D4 RID: 22996
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool wasReleased;
 }

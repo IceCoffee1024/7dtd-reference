@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Xml.Linq;
 
-// Token: 0x02000659 RID: 1625
+// Token: 0x02000662 RID: 1634
 public class RequirementBase : IRequirement
 {
-	// Token: 0x0600346F RID: 13423 RVA: 0x0015C41B File Offset: 0x0015A61B
+	// Token: 0x060034C2 RID: 13506 RVA: 0x0015E58B File Offset: 0x0015C78B
 	public virtual bool IsValid(MinEventParams _params)
 	{
 		if (this.cvarName != null)
@@ -16,24 +16,24 @@ public class RequirementBase : IRequirement
 		return true;
 	}
 
-	// Token: 0x06003470 RID: 13424 RVA: 0x0015C442 File Offset: 0x0015A642
+	// Token: 0x060034C3 RID: 13507 RVA: 0x0015E5B2 File Offset: 0x0015C7B2
 	public string GetDescription()
 	{
 		return this.Description;
 	}
 
-	// Token: 0x06003471 RID: 13425 RVA: 0x0015C44A File Offset: 0x0015A64A
+	// Token: 0x060034C4 RID: 13508 RVA: 0x0015E5BA File Offset: 0x0015C7BA
 	public void SetDescription(string desc)
 	{
 		this.Description = desc;
 	}
 
-	// Token: 0x06003472 RID: 13426 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060034C5 RID: 13509 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void GetInfoStrings(ref List<string> list)
 	{
 	}
 
-	// Token: 0x06003473 RID: 13427 RVA: 0x0015C454 File Offset: 0x0015A654
+	// Token: 0x060034C6 RID: 13510 RVA: 0x0015E5C4 File Offset: 0x0015C7C4
 	public virtual bool ParseXAttribute(XAttribute _attribute)
 	{
 		string localName = _attribute.Name.LocalName;
@@ -66,7 +66,7 @@ public class RequirementBase : IRequirement
 		return true;
 	}
 
-	// Token: 0x06003474 RID: 13428 RVA: 0x0015C500 File Offset: 0x0015A700
+	// Token: 0x060034C7 RID: 13511 RVA: 0x0015E670 File Offset: 0x0015C870
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static bool compareValues(float _valueA, RequirementBase.OperationTypes _operation, float _valueB)
 	{
@@ -101,7 +101,7 @@ public class RequirementBase : IRequirement
 		}
 	}
 
-	// Token: 0x06003475 RID: 13429 RVA: 0x0015C588 File Offset: 0x0015A788
+	// Token: 0x060034C8 RID: 13512 RVA: 0x0015E6F8 File Offset: 0x0015C8F8
 	public static IRequirement ParseRequirement(XElement _element)
 	{
 		string text = _element.GetAttribute("name");
@@ -133,7 +133,7 @@ public class RequirementBase : IRequirement
 		return requirementBase;
 	}
 
-	// Token: 0x06003476 RID: 13430 RVA: 0x0015C660 File Offset: 0x0015A860
+	// Token: 0x060034C9 RID: 13513 RVA: 0x0015E7D0 File Offset: 0x0015C9D0
 	public static RequirementGroup ParseRequirementGroup(XElement _element)
 	{
 		RequirementGroup.Op op = RequirementGroup.Op.And;
@@ -197,7 +197,7 @@ public class RequirementBase : IRequirement
 		return requirementGroup3;
 	}
 
-	// Token: 0x06003477 RID: 13431 RVA: 0x0015C810 File Offset: 0x0015AA10
+	// Token: 0x060034CA RID: 13514 RVA: 0x0015E980 File Offset: 0x0015CB80
 	public string GetInfoString()
 	{
 		if (this.Description != null)
@@ -213,69 +213,69 @@ public class RequirementBase : IRequirement
 		return null;
 	}
 
-	// Token: 0x04002A81 RID: 10881
+	// Token: 0x04002AF5 RID: 10997
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static readonly char[] commaSeparator = new char[] { ',' };
 
-	// Token: 0x04002A82 RID: 10882
+	// Token: 0x04002AF6 RID: 10998
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public RequirementBase.OperationTypes operation;
 
-	// Token: 0x04002A83 RID: 10883
+	// Token: 0x04002AF7 RID: 10999
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string cvarName;
 
-	// Token: 0x04002A84 RID: 10884
+	// Token: 0x04002AF8 RID: 11000
 	public bool invert;
 
-	// Token: 0x04002A85 RID: 10885
+	// Token: 0x04002AF9 RID: 11001
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float value;
 
-	// Token: 0x04002A86 RID: 10886
+	// Token: 0x04002AFA RID: 11002
 	public string Description;
 
-	// Token: 0x0200065A RID: 1626
+	// Token: 0x02000663 RID: 1635
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public enum OperationTypes
 	{
-		// Token: 0x04002A88 RID: 10888
+		// Token: 0x04002AFC RID: 11004
 		None,
-		// Token: 0x04002A89 RID: 10889
+		// Token: 0x04002AFD RID: 11005
 		Equals,
-		// Token: 0x04002A8A RID: 10890
+		// Token: 0x04002AFE RID: 11006
 		EQ,
-		// Token: 0x04002A8B RID: 10891
+		// Token: 0x04002AFF RID: 11007
 		E,
-		// Token: 0x04002A8C RID: 10892
+		// Token: 0x04002B00 RID: 11008
 		NotEquals,
-		// Token: 0x04002A8D RID: 10893
+		// Token: 0x04002B01 RID: 11009
 		NEQ,
-		// Token: 0x04002A8E RID: 10894
+		// Token: 0x04002B02 RID: 11010
 		NE,
-		// Token: 0x04002A8F RID: 10895
+		// Token: 0x04002B03 RID: 11011
 		Less,
-		// Token: 0x04002A90 RID: 10896
+		// Token: 0x04002B04 RID: 11012
 		LessThan,
-		// Token: 0x04002A91 RID: 10897
+		// Token: 0x04002B05 RID: 11013
 		LT,
-		// Token: 0x04002A92 RID: 10898
+		// Token: 0x04002B06 RID: 11014
 		Greater,
-		// Token: 0x04002A93 RID: 10899
+		// Token: 0x04002B07 RID: 11015
 		GreaterThan,
-		// Token: 0x04002A94 RID: 10900
+		// Token: 0x04002B08 RID: 11016
 		GT,
-		// Token: 0x04002A95 RID: 10901
+		// Token: 0x04002B09 RID: 11017
 		LessOrEqual,
-		// Token: 0x04002A96 RID: 10902
+		// Token: 0x04002B0A RID: 11018
 		LessThanOrEqualTo,
-		// Token: 0x04002A97 RID: 10903
+		// Token: 0x04002B0B RID: 11019
 		LTE,
-		// Token: 0x04002A98 RID: 10904
+		// Token: 0x04002B0C RID: 11020
 		GreaterOrEqual,
-		// Token: 0x04002A99 RID: 10905
+		// Token: 0x04002B0D RID: 11021
 		GreaterThanOrEqualTo,
-		// Token: 0x04002A9A RID: 10906
+		// Token: 0x04002B0E RID: 11022
 		GTE
 	}
 }

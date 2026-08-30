@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x02001388 RID: 5000
+// Token: 0x020013A3 RID: 5027
 [PublicizedFrom(EAccessModifier.Internal)]
 public static class BitConverterLE
 {
-	// Token: 0x06009D8B RID: 40331 RVA: 0x003B7CDB File Offset: 0x003B5EDB
+	// Token: 0x06009E88 RID: 40584 RVA: 0x003BD01F File Offset: 0x003BB21F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public unsafe static void GetUIntBytes(byte* bytes, byte[] _buffer)
 	{
@@ -22,7 +22,7 @@ public static class BitConverterLE
 		_buffer[3] = *bytes;
 	}
 
-	// Token: 0x06009D8C RID: 40332 RVA: 0x003B7D1C File Offset: 0x003B5F1C
+	// Token: 0x06009E89 RID: 40585 RVA: 0x003BD060 File Offset: 0x003BB260
 	[PublicizedFrom(EAccessModifier.Private)]
 	public unsafe static void GetULongBytes(byte* bytes, byte[] _buffer)
 	{
@@ -48,19 +48,19 @@ public static class BitConverterLE
 		_buffer[7] = *bytes;
 	}
 
-	// Token: 0x06009D8D RID: 40333 RVA: 0x003B7D9D File Offset: 0x003B5F9D
+	// Token: 0x06009E8A RID: 40586 RVA: 0x003BD0E1 File Offset: 0x003BB2E1
 	public unsafe static void GetBytes(float _value, byte[] _buffer)
 	{
 		BitConverterLE.GetUIntBytes((byte*)(&_value), _buffer);
 	}
 
-	// Token: 0x06009D8E RID: 40334 RVA: 0x003B7DA8 File Offset: 0x003B5FA8
+	// Token: 0x06009E8B RID: 40587 RVA: 0x003BD0EC File Offset: 0x003BB2EC
 	public unsafe static void GetBytes(double value, byte[] _buffer)
 	{
 		BitConverterLE.GetULongBytes((byte*)(&value), _buffer);
 	}
 
-	// Token: 0x06009D8F RID: 40335 RVA: 0x003B7DB4 File Offset: 0x003B5FB4
+	// Token: 0x06009E8C RID: 40588 RVA: 0x003BD0F8 File Offset: 0x003BB2F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public unsafe static void UIntFromBytes(byte* _dst, byte[] _src, int _startIndex)
 	{
@@ -78,7 +78,7 @@ public static class BitConverterLE
 		_dst[3] = _src[_startIndex];
 	}
 
-	// Token: 0x06009D90 RID: 40336 RVA: 0x003B7E0C File Offset: 0x003B600C
+	// Token: 0x06009E8D RID: 40589 RVA: 0x003BD150 File Offset: 0x003BB350
 	[PublicizedFrom(EAccessModifier.Private)]
 	public unsafe static void ULongFromBytes(byte* _dst, byte[] _src, int _startIndex)
 	{
@@ -96,7 +96,7 @@ public static class BitConverterLE
 		}
 	}
 
-	// Token: 0x06009D91 RID: 40337 RVA: 0x003B7E50 File Offset: 0x003B6050
+	// Token: 0x06009E8E RID: 40590 RVA: 0x003BD194 File Offset: 0x003BB394
 	public unsafe static float ToSingle(byte[] _value, int _startIndex)
 	{
 		float num;
@@ -104,7 +104,7 @@ public static class BitConverterLE
 		return num;
 	}
 
-	// Token: 0x06009D92 RID: 40338 RVA: 0x003B7E68 File Offset: 0x003B6068
+	// Token: 0x06009E8F RID: 40591 RVA: 0x003BD1AC File Offset: 0x003BB3AC
 	public unsafe static double ToDouble(byte[] _value, int _startIndex)
 	{
 		double num;

@@ -2,32 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000202 RID: 514
+// Token: 0x02000204 RID: 516
 [Preserve]
 public class ConsoleCmdScreenEffect : ConsoleCmdAbstract
 {
-	// Token: 0x06000FBB RID: 4027 RVA: 0x00065A3A File Offset: 0x00063C3A
+	// Token: 0x06000FC6 RID: 4038 RVA: 0x00065F82 File Offset: 0x00064182
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "ScreenEffect" };
 	}
 
-	// Token: 0x06000FBC RID: 4028 RVA: 0x00065A4A File Offset: 0x00063C4A
+	// Token: 0x06000FC7 RID: 4039 RVA: 0x00065F92 File Offset: 0x00064192
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Sets a screen effect";
 	}
 
-	// Token: 0x06000FBD RID: 4029 RVA: 0x00065A51 File Offset: 0x00063C51
+	// Token: 0x06000FC8 RID: 4040 RVA: 0x00065F99 File Offset: 0x00064199
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "ScreenEffect [name] [intensity] [fade time]\nScreenEffect clear\nScreenEffect reload";
 	}
 
-	// Token: 0x06000FBE RID: 4030 RVA: 0x00065A58 File Offset: 0x00063C58
+	// Token: 0x06000FC9 RID: 4041 RVA: 0x00065FA0 File Offset: 0x000641A0
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 0)

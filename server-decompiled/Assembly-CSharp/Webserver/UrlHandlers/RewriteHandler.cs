@@ -2,10 +2,10 @@
 
 namespace Webserver.UrlHandlers
 {
-	// Token: 0x02001ACD RID: 6861
+	// Token: 0x02001AF4 RID: 6900
 	public class RewriteHandler : AbsHandler
 	{
-		// Token: 0x0600CE08 RID: 52744 RVA: 0x004B2CD0 File Offset: 0x004B0ED0
+		// Token: 0x0600CF91 RID: 53137 RVA: 0x004B90C4 File Offset: 0x004B72C4
 		public RewriteHandler(string _target, bool _fixedTarget = false)
 			: base(null, 0)
 		{
@@ -13,18 +13,18 @@ namespace Webserver.UrlHandlers
 			this.fixedTarget = _fixedTarget;
 		}
 
-		// Token: 0x0600CE09 RID: 52745 RVA: 0x004B2CE8 File Offset: 0x004B0EE8
+		// Token: 0x0600CF92 RID: 53138 RVA: 0x004B90DC File Offset: 0x004B72DC
 		public override void HandleRequest(RequestContext _context)
 		{
 			_context.RequestPath = (this.fixedTarget ? this.target : (this.target + _context.RequestPath.Remove(0, this.urlBasePath.Length)));
 			this.parent.ApplyPathHandler(_context);
 		}
 
-		// Token: 0x04009C74 RID: 40052
+		// Token: 0x04009DA5 RID: 40357
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string target;
 
-		// Token: 0x04009C75 RID: 40053
+		// Token: 0x04009DA6 RID: 40358
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly bool fixedTarget;
 	}

@@ -3,32 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020002AA RID: 682
+// Token: 0x020002AE RID: 686
 [Preserve]
 public class ConsoleCmdTeleportPoiRelative : ConsoleCmdTeleportsAbs
 {
-	// Token: 0x060013C1 RID: 5057 RVA: 0x000784BF File Offset: 0x000766BF
+	// Token: 0x060013D3 RID: 5075 RVA: 0x00078B1B File Offset: 0x00076D1B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Teleport the local player within the current POI";
 	}
 
-	// Token: 0x060013C2 RID: 5058 RVA: 0x000784C6 File Offset: 0x000766C6
+	// Token: 0x060013D4 RID: 5076 RVA: 0x00078B22 File Offset: 0x00076D22
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "\n\t\t\tUsage:\n\t\t\t|  1. teleportpoirelative <x> <y> <z> [view direction]\n\t\t\t|1. Teleports the local player to the specified location relative to the bounds of the current POI. View\n\t\t\t|direction is an optional specifier to select the direction you want to look into after teleporting. This\n\t\t\t|can be either of n, ne, e, se, s, sw, w, nw or north, northeast, etc.\n\t\t\t".Unindent(true);
 	}
 
-	// Token: 0x060013C3 RID: 5059 RVA: 0x000784D3 File Offset: 0x000766D3
+	// Token: 0x060013D5 RID: 5077 RVA: 0x00078B2F File Offset: 0x00076D2F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "teleportpoirelative", "tppr" };
 	}
 
-	// Token: 0x060013C4 RID: 5060 RVA: 0x000784EC File Offset: 0x000766EC
+	// Token: 0x060013D6 RID: 5078 RVA: 0x00078B48 File Offset: 0x00076D48
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (!_senderInfo.IsLocalGame && _senderInfo.RemoteClientInfo == null)

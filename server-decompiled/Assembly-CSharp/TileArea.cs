@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000BBB RID: 3003
+// Token: 0x02000BCD RID: 3021
 public class TileArea<T> : ITileArea<T> where T : class
 {
-	// Token: 0x06005A89 RID: 23177 RVA: 0x0022D4B0 File Offset: 0x0022B6B0
+	// Token: 0x06005B11 RID: 23313 RVA: 0x00230218 File Offset: 0x0022E418
 	public TileArea(TileAreaConfig _config, T[,] _data = null)
 	{
 		this.config = _config;
@@ -23,8 +23,8 @@ public class TileArea<T> : ITileArea<T> where T : class
 		}
 	}
 
-	// Token: 0x1700096E RID: 2414
-	// (get) Token: 0x06005A8A RID: 23178 RVA: 0x0022D53C File Offset: 0x0022B73C
+	// Token: 0x17000980 RID: 2432
+	// (get) Token: 0x06005B12 RID: 23314 RVA: 0x002302A4 File Offset: 0x0022E4A4
 	public TileAreaConfig Config
 	{
 		get
@@ -33,13 +33,13 @@ public class TileArea<T> : ITileArea<T> where T : class
 		}
 	}
 
-	// Token: 0x06005A8B RID: 23179 RVA: 0x0022D544 File Offset: 0x0022B744
+	// Token: 0x06005B13 RID: 23315 RVA: 0x002302AC File Offset: 0x0022E4AC
 	public void Remove(uint _key)
 	{
 		this.Data.Remove(_key);
 	}
 
-	// Token: 0x1700096F RID: 2415
+	// Token: 0x17000981 RID: 2433
 	public T this[int _tileX, int _tileZ]
 	{
 		get
@@ -61,7 +61,7 @@ public class TileArea<T> : ITileArea<T> where T : class
 		}
 	}
 
-	// Token: 0x17000970 RID: 2416
+	// Token: 0x17000982 RID: 2434
 	public T this[uint _key]
 	{
 		get
@@ -79,9 +79,9 @@ public class TileArea<T> : ITileArea<T> where T : class
 		}
 	}
 
-	// Token: 0x0400461A RID: 17946
+	// Token: 0x040046B6 RID: 18102
 	public TileAreaConfig config;
 
-	// Token: 0x0400461B RID: 17947
+	// Token: 0x040046B7 RID: 18103
 	public Dictionary<uint, T> Data = new Dictionary<uint, T>();
 }

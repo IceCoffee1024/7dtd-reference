@@ -6,11 +6,11 @@ using InControl;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005E2 RID: 1506
+// Token: 0x020005E7 RID: 1511
 [global::UnityEngine.Scripting.Preserve]
 public class ItemActionZoom : ItemAction
 {
-	// Token: 0x060030EC RID: 12524 RVA: 0x0013DD1C File Offset: 0x0013BF1C
+	// Token: 0x0600311A RID: 12570 RVA: 0x0013ED8C File Offset: 0x0013CF8C
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -30,13 +30,13 @@ public class ItemActionZoom : ItemAction
 		this.zoomTriggerEffectPullXb = string.Empty;
 	}
 
-	// Token: 0x060030ED RID: 12525 RVA: 0x0013DD99 File Offset: 0x0013BF99
+	// Token: 0x0600311B RID: 12571 RVA: 0x0013EE09 File Offset: 0x0013D009
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionZoom.ItemActionDataZoom(_invData, _indexInEntityOfAction);
 	}
 
-	// Token: 0x060030EE RID: 12526 RVA: 0x0013DDA4 File Offset: 0x0013BFA4
+	// Token: 0x0600311C RID: 12572 RVA: 0x0013EE14 File Offset: 0x0013D014
 	public override void OnModificationsChanged(ItemActionData _data)
 	{
 		ItemActionZoom.ItemActionDataZoom itemActionDataZoom = (ItemActionZoom.ItemActionDataZoom)_data;
@@ -130,7 +130,7 @@ public class ItemActionZoom : ItemAction
 		}
 	}
 
-	// Token: 0x060030EF RID: 12527 RVA: 0x0013E298 File Offset: 0x0013C498
+	// Token: 0x0600311D RID: 12573 RVA: 0x0013F308 File Offset: 0x0013D508
 	public override void StartHolding(ItemActionData _data)
 	{
 		base.StartHolding(_data);
@@ -140,7 +140,7 @@ public class ItemActionZoom : ItemAction
 		}
 	}
 
-	// Token: 0x060030F0 RID: 12528 RVA: 0x0013E2EC File Offset: 0x0013C4EC
+	// Token: 0x0600311E RID: 12574 RVA: 0x0013F35C File Offset: 0x0013D55C
 	public override void StopHolding(ItemActionData _data)
 	{
 		base.StopHolding(_data);
@@ -156,7 +156,7 @@ public class ItemActionZoom : ItemAction
 		}
 	}
 
-	// Token: 0x060030F1 RID: 12529 RVA: 0x0013E364 File Offset: 0x0013C564
+	// Token: 0x0600311F RID: 12575 RVA: 0x0013F3D4 File Offset: 0x0013D5D4
 	public override void OnScreenOverlay(ItemActionData _actionData)
 	{
 		ItemActionZoom.ItemActionDataZoom itemActionDataZoom = (ItemActionZoom.ItemActionDataZoom)_actionData;
@@ -198,7 +198,7 @@ public class ItemActionZoom : ItemAction
 		}
 	}
 
-	// Token: 0x060030F2 RID: 12530 RVA: 0x0013E598 File Offset: 0x0013C798
+	// Token: 0x06003120 RID: 12576 RVA: 0x0013F608 File Offset: 0x0013D808
 	public override bool ConsumeScrollWheel(ItemActionData _actionData, float _scrollWheelInput, PlayerActionsLocal _playerInput)
 	{
 		if (!_actionData.invData.holdingEntity.AimingGun)
@@ -218,7 +218,7 @@ public class ItemActionZoom : ItemAction
 		return true;
 	}
 
-	// Token: 0x060030F3 RID: 12531 RVA: 0x0013E624 File Offset: 0x0013C824
+	// Token: 0x06003121 RID: 12577 RVA: 0x0013F694 File Offset: 0x0013D894
 	public override bool ConsumeCameraFunction(ItemActionData _actionData)
 	{
 		if (!_actionData.invData.holdingEntity.AimingGun)
@@ -246,7 +246,7 @@ public class ItemActionZoom : ItemAction
 		return false;
 	}
 
-	// Token: 0x060030F4 RID: 12532 RVA: 0x0013E6D4 File Offset: 0x0013C8D4
+	// Token: 0x06003122 RID: 12578 RVA: 0x0013F744 File Offset: 0x0013D944
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		ItemActionZoom.ItemActionDataZoom itemActionDataZoom = (ItemActionZoom.ItemActionDataZoom)_actionData;
@@ -285,7 +285,7 @@ public class ItemActionZoom : ItemAction
 		}
 	}
 
-	// Token: 0x060030F5 RID: 12533 RVA: 0x0013E801 File Offset: 0x0013CA01
+	// Token: 0x06003123 RID: 12579 RVA: 0x0013F871 File Offset: 0x0013DA71
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator startEndZoomLater(ItemActionZoom.ItemActionDataZoom _actionData)
 	{
@@ -294,7 +294,7 @@ public class ItemActionZoom : ItemAction
 		yield break;
 	}
 
-	// Token: 0x060030F6 RID: 12534 RVA: 0x0013E810 File Offset: 0x0013CA10
+	// Token: 0x06003124 RID: 12580 RVA: 0x0013F880 File Offset: 0x0013DA80
 	public override void AimingSet(ItemActionData _actionData, bool _isAiming, bool _wasAiming)
 	{
 		ItemActionZoom.ItemActionDataZoom itemActionDataZoom = (ItemActionZoom.ItemActionDataZoom)_actionData;
@@ -309,7 +309,7 @@ public class ItemActionZoom : ItemAction
 		}
 	}
 
-	// Token: 0x060030F7 RID: 12535 RVA: 0x0013E850 File Offset: 0x0013CA50
+	// Token: 0x06003125 RID: 12581 RVA: 0x0013F8C0 File Offset: 0x0013DAC0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void startEndZoom(ItemActionZoom.ItemActionDataZoom _actionData, bool _isAiming)
 	{
@@ -339,14 +339,14 @@ public class ItemActionZoom : ItemAction
 		}
 	}
 
-	// Token: 0x060030F8 RID: 12536 RVA: 0x0013E94C File Offset: 0x0013CB4C
+	// Token: 0x06003126 RID: 12582 RVA: 0x0013F9BC File Offset: 0x0013DBBC
 	public override bool IsActionRunning(ItemActionData _actionData)
 	{
 		ItemActionZoom.ItemActionDataZoom itemActionDataZoom = (ItemActionZoom.ItemActionDataZoom)_actionData;
 		return itemActionDataZoom.bZoomInProgress && Time.time - itemActionDataZoom.timeZoomStarted < 0.3f;
 	}
 
-	// Token: 0x060030F9 RID: 12537 RVA: 0x0013E980 File Offset: 0x0013CB80
+	// Token: 0x06003127 RID: 12583 RVA: 0x0013F9F0 File Offset: 0x0013DBF0
 	public override void OnHoldingUpdate(ItemActionData _actionData)
 	{
 		ItemActionZoom.ItemActionDataZoom itemActionDataZoom = (ItemActionZoom.ItemActionDataZoom)_actionData;
@@ -392,19 +392,19 @@ public class ItemActionZoom : ItemAction
 		}
 	}
 
-	// Token: 0x060030FA RID: 12538 RVA: 0x0013EAD4 File Offset: 0x0013CCD4
+	// Token: 0x06003128 RID: 12584 RVA: 0x0013FB44 File Offset: 0x0013DD44
 	public override bool IsHUDDisabled(ItemActionData _data)
 	{
 		return base.ZoomOverlay != null && !_data.invData.holdingEntity.isEntityRemote && _data.invData.holdingEntity.AimingGun && !((ItemActionZoom.ItemActionDataZoom)_data).bZoomInProgress;
 	}
 
-	// Token: 0x060030FB RID: 12539 RVA: 0x0013EB23 File Offset: 0x0013CD23
+	// Token: 0x06003129 RID: 12585 RVA: 0x0013FB93 File Offset: 0x0013DD93
 	public override void GetIronSights(ItemActionData _actionData, out float _fov)
 	{
 		_fov = ((base.ZoomOverlay == null) ? ((ItemActionZoom.ItemActionDataZoom)_actionData).CurrentZoom : 0f);
 	}
 
-	// Token: 0x060030FC RID: 12540 RVA: 0x0013EB47 File Offset: 0x0013CD47
+	// Token: 0x0600312A RID: 12586 RVA: 0x0013FBB7 File Offset: 0x0013DDB7
 	public override EnumCameraShake GetCameraShakeType(ItemActionData _actionData)
 	{
 		if (base.ZoomOverlay != null && _actionData.invData.holdingEntity.AimingGun)
@@ -418,44 +418,44 @@ public class ItemActionZoom : ItemAction
 		return EnumCameraShake.Small;
 	}
 
-	// Token: 0x060030FD RID: 12541 RVA: 0x0013EB80 File Offset: 0x0013CD80
+	// Token: 0x0600312B RID: 12587 RVA: 0x0013FBF0 File Offset: 0x0013DDF0
 	public override TriggerEffectManager.ControllerTriggerEffect GetControllerTriggerEffectPull()
 	{
 		return TriggerEffectManager.GetTriggerEffect(new ValueTuple<string, string>(this.zoomTriggerEffectPullDualsense, this.zoomTriggerEffectPullXb));
 	}
 
-	// Token: 0x060030FE RID: 12542 RVA: 0x0013EB98 File Offset: 0x0013CD98
+	// Token: 0x0600312C RID: 12588 RVA: 0x0013FC08 File Offset: 0x0013DE08
 	public override TriggerEffectManager.ControllerTriggerEffect GetControllerTriggerEffectShoot()
 	{
 		return TriggerEffectManager.GetTriggerEffect(new ValueTuple<string, string>(this.zoomTriggerEffectShootDualsense, this.zoomTriggerEffectShootXb));
 	}
 
-	// Token: 0x060030FF RID: 12543 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x0600312D RID: 12589 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowConcurrentActions()
 	{
 		return true;
 	}
 
-	// Token: 0x040025EC RID: 9708
+	// Token: 0x04002620 RID: 9760
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string zoomTriggerEffectPullDualsense;
 
-	// Token: 0x040025ED RID: 9709
+	// Token: 0x04002621 RID: 9761
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string zoomTriggerEffectShootDualsense;
 
-	// Token: 0x040025EE RID: 9710
+	// Token: 0x04002622 RID: 9762
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string zoomTriggerEffectPullXb;
 
-	// Token: 0x040025EF RID: 9711
+	// Token: 0x04002623 RID: 9763
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string zoomTriggerEffectShootXb;
 
-	// Token: 0x020005E3 RID: 1507
+	// Token: 0x020005E8 RID: 1512
 	public class ItemActionDataZoom : ItemActionData
 	{
-		// Token: 0x06003101 RID: 12545 RVA: 0x0013EBB0 File Offset: 0x0013CDB0
+		// Token: 0x0600312F RID: 12591 RVA: 0x0013FC20 File Offset: 0x0013DE20
 		public ItemActionDataZoom(ItemInventoryData _invData, int _indexInEntityOfAction)
 			: base(_invData, _indexInEntityOfAction)
 		{
@@ -475,49 +475,49 @@ public class ItemActionZoom : ItemAction
 			this.layerBeforeSwitch = -1;
 		}
 
-		// Token: 0x040025F0 RID: 9712
+		// Token: 0x04002624 RID: 9764
 		public float CurrentZoom;
 
-		// Token: 0x040025F1 RID: 9713
+		// Token: 0x04002625 RID: 9765
 		public Transform Scope;
 
-		// Token: 0x040025F2 RID: 9714
+		// Token: 0x04002626 RID: 9766
 		public bool bZoomInProgress;
 
-		// Token: 0x040025F3 RID: 9715
+		// Token: 0x04002627 RID: 9767
 		public float timeZoomStarted;
 
-		// Token: 0x040025F4 RID: 9716
+		// Token: 0x04002628 RID: 9768
 		public int layerBeforeSwitch;
 
-		// Token: 0x040025F5 RID: 9717
+		// Token: 0x04002629 RID: 9769
 		public bool HasScope;
 
-		// Token: 0x040025F6 RID: 9718
+		// Token: 0x0400262A RID: 9770
 		public Vector3 SightsCameraOffset;
 
-		// Token: 0x040025F7 RID: 9719
+		// Token: 0x0400262B RID: 9771
 		public Vector3 ScopeCameraOffset;
 
-		// Token: 0x040025F8 RID: 9720
+		// Token: 0x0400262C RID: 9772
 		public Texture2D ZoomOverlay;
 
-		// Token: 0x040025F9 RID: 9721
+		// Token: 0x0400262D RID: 9773
 		public string ZoomOverlayName;
 
-		// Token: 0x040025FA RID: 9722
+		// Token: 0x0400262E RID: 9774
 		public int MaxZoomIn;
 
-		// Token: 0x040025FB RID: 9723
+		// Token: 0x0400262F RID: 9775
 		public int MaxZoomOut;
 
-		// Token: 0x040025FC RID: 9724
+		// Token: 0x04002630 RID: 9776
 		public int BaseFOV;
 
-		// Token: 0x040025FD RID: 9725
+		// Token: 0x04002631 RID: 9777
 		public Coroutine aimingCoroutine;
 
-		// Token: 0x040025FE RID: 9726
+		// Token: 0x04002632 RID: 9778
 		public bool aimingValue;
 	}
 }

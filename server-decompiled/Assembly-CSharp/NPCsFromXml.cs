@@ -3,10 +3,10 @@ using System.Collections;
 using System.Xml.Linq;
 using MusicUtils.Enums;
 
-// Token: 0x02000D10 RID: 3344
+// Token: 0x02000D22 RID: 3362
 public class NPCsFromXml
 {
-	// Token: 0x060065EE RID: 26094 RVA: 0x002823B9 File Offset: 0x002805B9
+	// Token: 0x0600667A RID: 26234 RVA: 0x002852C9 File Offset: 0x002834C9
 	public static IEnumerator LoadNPCInfo(XmlFile xmlFile)
 	{
 		XElement root = xmlFile.XmlDoc.Root;
@@ -18,7 +18,7 @@ public class NPCsFromXml
 		yield break;
 	}
 
-	// Token: 0x060065EF RID: 26095 RVA: 0x002823C8 File Offset: 0x002805C8
+	// Token: 0x0600667B RID: 26235 RVA: 0x002852D8 File Offset: 0x002834D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseNode(XElement root)
 	{
@@ -35,7 +35,7 @@ public class NPCsFromXml
 		}
 	}
 
-	// Token: 0x060065F0 RID: 26096 RVA: 0x00282464 File Offset: 0x00280664
+	// Token: 0x0600667C RID: 26236 RVA: 0x00285374 File Offset: 0x00283574
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseFactionInfo(XElement root)
 	{
@@ -60,7 +60,7 @@ public class NPCsFromXml
 		}
 	}
 
-	// Token: 0x060065F1 RID: 26097 RVA: 0x00282568 File Offset: 0x00280768
+	// Token: 0x0600667D RID: 26237 RVA: 0x00285478 File Offset: 0x00283678
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseFactionStandings(string factionName, XElement root)
 	{
@@ -113,7 +113,7 @@ public class NPCsFromXml
 		}
 	}
 
-	// Token: 0x060065F2 RID: 26098 RVA: 0x00282754 File Offset: 0x00280954
+	// Token: 0x0600667E RID: 26238 RVA: 0x00285664 File Offset: 0x00283864
 	public static FactionManager.Relationship getRelationshipTier(float rel)
 	{
 		if (rel < 200f)
@@ -139,13 +139,13 @@ public class NPCsFromXml
 		return FactionManager.Relationship.Leader;
 	}
 
-	// Token: 0x060065F3 RID: 26099 RVA: 0x002827A8 File Offset: 0x002809A8
+	// Token: 0x0600667F RID: 26239 RVA: 0x002856B8 File Offset: 0x002838B8
 	public static float getRelationshipFromTier(string _rel)
 	{
 		return (float)EnumUtils.Parse<FactionManager.Relationship>(_rel, true);
 	}
 
-	// Token: 0x060065F4 RID: 26100 RVA: 0x002827B4 File Offset: 0x002809B4
+	// Token: 0x06006680 RID: 26240 RVA: 0x002856C4 File Offset: 0x002838C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseNPCInfo(XElement e)
 	{

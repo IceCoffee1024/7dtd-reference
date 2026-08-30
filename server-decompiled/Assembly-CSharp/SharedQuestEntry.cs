@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020009D7 RID: 2519
+// Token: 0x020009E8 RID: 2536
 public class SharedQuestEntry
 {
-	// Token: 0x170007F5 RID: 2037
-	// (get) Token: 0x06004B28 RID: 19240 RVA: 0x001D3D0B File Offset: 0x001D1F0B
+	// Token: 0x17000807 RID: 2055
+	// (get) Token: 0x06004BAE RID: 19374 RVA: 0x001D64F3 File Offset: 0x001D46F3
 	public QuestClass QuestClass
 	{
 		get
@@ -14,7 +14,7 @@ public class SharedQuestEntry
 		}
 	}
 
-	// Token: 0x06004B29 RID: 19241 RVA: 0x001D3D18 File Offset: 0x001D1F18
+	// Token: 0x06004BAF RID: 19375 RVA: 0x001D6500 File Offset: 0x001D4700
 	public SharedQuestEntry(int questCode, string questID, string poiName, Vector3 position, Vector3 size, Vector3 returnPos, int sharedByPlayerID, int questGiverID, QuestJournal questJournal, Quest quest)
 	{
 		this.QuestCode = questCode;
@@ -38,36 +38,36 @@ public class SharedQuestEntry
 		}
 	}
 
-	// Token: 0x06004B2A RID: 19242 RVA: 0x001D3E0C File Offset: 0x001D200C
+	// Token: 0x06004BB0 RID: 19376 RVA: 0x001D65F4 File Offset: 0x001D47F4
 	public SharedQuestEntry Clone()
 	{
 		return new SharedQuestEntry(this.QuestCode, this.QuestID, this.POIName, this.Position, this.Size, this.ReturnPos, this.SharedByPlayerID, this.QuestGiverID, this.Quest.OwnerJournal, this.Quest);
 	}
 
-	// Token: 0x04003AFA RID: 15098
+	// Token: 0x04003B8B RID: 15243
 	public int QuestCode;
 
-	// Token: 0x04003AFB RID: 15099
+	// Token: 0x04003B8C RID: 15244
 	public string QuestID;
 
-	// Token: 0x04003AFC RID: 15100
+	// Token: 0x04003B8D RID: 15245
 	public string POIName;
 
-	// Token: 0x04003AFD RID: 15101
+	// Token: 0x04003B8E RID: 15246
 	public Vector3 Position;
 
-	// Token: 0x04003AFE RID: 15102
+	// Token: 0x04003B8F RID: 15247
 	public Vector3 Size;
 
-	// Token: 0x04003AFF RID: 15103
+	// Token: 0x04003B90 RID: 15248
 	public Vector3 ReturnPos;
 
-	// Token: 0x04003B00 RID: 15104
+	// Token: 0x04003B91 RID: 15249
 	public int SharedByPlayerID = -1;
 
-	// Token: 0x04003B01 RID: 15105
+	// Token: 0x04003B92 RID: 15250
 	public int QuestGiverID = -1;
 
-	// Token: 0x04003B02 RID: 15106
+	// Token: 0x04003B93 RID: 15251
 	public Quest Quest;
 }

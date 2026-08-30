@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020015F3 RID: 5619
+// Token: 0x0200160E RID: 5646
 public class vp_RagdollHandler : MonoBehaviour
 {
-	// Token: 0x1700147F RID: 5247
-	// (get) Token: 0x0600B061 RID: 45153 RVA: 0x0041E54B File Offset: 0x0041C74B
+	// Token: 0x170014B8 RID: 5304
+	// (get) Token: 0x0600B15E RID: 45406 RVA: 0x0042388B File Offset: 0x00421A8B
 	public vp_PlayerEventHandler Player
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -21,8 +21,8 @@ public class vp_RagdollHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001480 RID: 5248
-	// (get) Token: 0x0600B062 RID: 45154 RVA: 0x0041E586 File Offset: 0x0041C786
+	// Token: 0x170014B9 RID: 5305
+	// (get) Token: 0x0600B15F RID: 45407 RVA: 0x004238C6 File Offset: 0x00421AC6
 	public vp_FPCamera FPCamera
 	{
 		get
@@ -35,8 +35,8 @@ public class vp_RagdollHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001481 RID: 5249
-	// (get) Token: 0x0600B063 RID: 45155 RVA: 0x0041E5B2 File Offset: 0x0041C7B2
+	// Token: 0x170014BA RID: 5306
+	// (get) Token: 0x0600B160 RID: 45408 RVA: 0x004238F2 File Offset: 0x00421AF2
 	public CharacterController CharacterController
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -50,8 +50,8 @@ public class vp_RagdollHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001482 RID: 5250
-	// (get) Token: 0x0600B064 RID: 45156 RVA: 0x0041E5E0 File Offset: 0x0041C7E0
+	// Token: 0x170014BB RID: 5307
+	// (get) Token: 0x0600B161 RID: 45409 RVA: 0x00423920 File Offset: 0x00421B20
 	public List<Collider> Colliders
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -72,8 +72,8 @@ public class vp_RagdollHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001483 RID: 5251
-	// (get) Token: 0x0600B065 RID: 45157 RVA: 0x0041E63A File Offset: 0x0041C83A
+	// Token: 0x170014BC RID: 5308
+	// (get) Token: 0x0600B162 RID: 45410 RVA: 0x0042397A File Offset: 0x00421B7A
 	public List<Rigidbody> Rigidbodies
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -87,8 +87,8 @@ public class vp_RagdollHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001484 RID: 5252
-	// (get) Token: 0x0600B066 RID: 45158 RVA: 0x0041E65C File Offset: 0x0041C85C
+	// Token: 0x170014BD RID: 5309
+	// (get) Token: 0x0600B163 RID: 45411 RVA: 0x0042399C File Offset: 0x00421B9C
 	public List<Transform> Transforms
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -106,8 +106,8 @@ public class vp_RagdollHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001485 RID: 5253
-	// (get) Token: 0x0600B067 RID: 45159 RVA: 0x0041E6D4 File Offset: 0x0041C8D4
+	// Token: 0x170014BE RID: 5310
+	// (get) Token: 0x0600B164 RID: 45412 RVA: 0x00423A14 File Offset: 0x00421C14
 	public Animator Animator
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -121,8 +121,8 @@ public class vp_RagdollHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001486 RID: 5254
-	// (get) Token: 0x0600B068 RID: 45160 RVA: 0x0041E6F6 File Offset: 0x0041C8F6
+	// Token: 0x170014BF RID: 5311
+	// (get) Token: 0x0600B165 RID: 45413 RVA: 0x00423A36 File Offset: 0x00421C36
 	public vp_BodyAnimator BodyAnimator
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -136,7 +136,7 @@ public class vp_RagdollHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B069 RID: 45161 RVA: 0x0041E718 File Offset: 0x0041C918
+	// Token: 0x0600B166 RID: 45414 RVA: 0x00423A58 File Offset: 0x00421C58
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Awake()
 	{
@@ -148,14 +148,14 @@ public class vp_RagdollHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B06A RID: 45162 RVA: 0x0041E7A9 File Offset: 0x0041C9A9
+	// Token: 0x0600B167 RID: 45415 RVA: 0x00423AE9 File Offset: 0x00421CE9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Start()
 	{
 		this.SetRagdoll(false);
 	}
 
-	// Token: 0x0600B06B RID: 45163 RVA: 0x0041E7B4 File Offset: 0x0041C9B4
+	// Token: 0x0600B168 RID: 45416 RVA: 0x00423AF4 File Offset: 0x00421CF4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void SaveStartPose()
 	{
@@ -172,7 +172,7 @@ public class vp_RagdollHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B06C RID: 45164 RVA: 0x0041E84C File Offset: 0x0041CA4C
+	// Token: 0x0600B169 RID: 45417 RVA: 0x00423B8C File Offset: 0x00421D8C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void RestoreStartPose()
 	{
@@ -189,7 +189,7 @@ public class vp_RagdollHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B06D RID: 45165 RVA: 0x0041E8D8 File Offset: 0x0041CAD8
+	// Token: 0x0600B16A RID: 45418 RVA: 0x00423C18 File Offset: 0x00421E18
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
@@ -199,7 +199,7 @@ public class vp_RagdollHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B06E RID: 45166 RVA: 0x0041E8F4 File Offset: 0x0041CAF4
+	// Token: 0x0600B16B RID: 45419 RVA: 0x00423C34 File Offset: 0x00421E34
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnDisable()
 	{
@@ -209,20 +209,20 @@ public class vp_RagdollHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B06F RID: 45167 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600B16C RID: 45420 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
 	}
 
-	// Token: 0x0600B070 RID: 45168 RVA: 0x0041E910 File Offset: 0x0041CB10
+	// Token: 0x0600B16D RID: 45421 RVA: 0x00423C50 File Offset: 0x00421E50
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LateUpdate()
 	{
 		this.UpdateDeathCamera();
 	}
 
-	// Token: 0x0600B071 RID: 45169 RVA: 0x0041E918 File Offset: 0x0041CB18
+	// Token: 0x0600B16E RID: 45422 RVA: 0x00423C58 File Offset: 0x00421E58
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void UpdateDeathCamera()
 	{
@@ -252,7 +252,7 @@ public class vp_RagdollHandler : MonoBehaviour
 		this.FPCamera.Transform.localEulerAngles = this.m_CameraFreezeAngle;
 	}
 
-	// Token: 0x0600B072 RID: 45170 RVA: 0x0041EA10 File Offset: 0x0041CC10
+	// Token: 0x0600B16F RID: 45423 RVA: 0x00423D50 File Offset: 0x00421F50
 	public virtual void SetRagdoll(bool enabled = true)
 	{
 		if (this.Animator != null)
@@ -281,7 +281,7 @@ public class vp_RagdollHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600B073 RID: 45171 RVA: 0x0041EB04 File Offset: 0x0041CD04
+	// Token: 0x0600B170 RID: 45424 RVA: 0x00423E44 File Offset: 0x00422044
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnStart_Dead()
 	{
@@ -293,7 +293,7 @@ public class vp_RagdollHandler : MonoBehaviour
 		this.m_TimeOfDeath = Time.time;
 	}
 
-	// Token: 0x0600B074 RID: 45172 RVA: 0x0041EB88 File Offset: 0x0041CD88
+	// Token: 0x0600B171 RID: 45425 RVA: 0x00423EC8 File Offset: 0x004220C8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnStop_Dead()
 	{
@@ -301,91 +301,91 @@ public class vp_RagdollHandler : MonoBehaviour
 		this.Player.OutOfControl.Stop(0f);
 	}
 
-	// Token: 0x04008471 RID: 33905
+	// Token: 0x0400854A RID: 34122
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public List<Collider> m_Colliders;
 
-	// Token: 0x04008472 RID: 33906
+	// Token: 0x0400854B RID: 34123
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public List<Rigidbody> m_Rigidbodies;
 
-	// Token: 0x04008473 RID: 33907
+	// Token: 0x0400854C RID: 34124
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public List<Transform> m_Transforms;
 
-	// Token: 0x04008474 RID: 33908
+	// Token: 0x0400854D RID: 34125
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Animator m_Animator;
 
-	// Token: 0x04008475 RID: 33909
+	// Token: 0x0400854E RID: 34126
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_BodyAnimator m_BodyAnimator;
 
-	// Token: 0x04008476 RID: 33910
+	// Token: 0x0400854F RID: 34127
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_PlayerEventHandler m_Player;
 
-	// Token: 0x04008477 RID: 33911
+	// Token: 0x04008550 RID: 34128
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_FPCamera m_FPCamera;
 
-	// Token: 0x04008478 RID: 33912
+	// Token: 0x04008551 RID: 34129
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public CharacterController m_CharacterController;
 
-	// Token: 0x04008479 RID: 33913
+	// Token: 0x04008552 RID: 34130
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_HeadRotationCorrection = Vector3.zero;
 
-	// Token: 0x0400847A RID: 33914
+	// Token: 0x04008553 RID: 34131
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_TimeOfDeath;
 
-	// Token: 0x0400847B RID: 33915
+	// Token: 0x04008554 RID: 34132
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_CameraFreezeAngle = Vector3.zero;
 
-	// Token: 0x0400847C RID: 33916
+	// Token: 0x04008555 RID: 34133
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Dictionary<Transform, Quaternion> TransformRotations = new Dictionary<Transform, Quaternion>();
 
-	// Token: 0x0400847D RID: 33917
+	// Token: 0x04008556 RID: 34134
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Dictionary<Transform, Vector3> TransformPositions = new Dictionary<Transform, Vector3>();
 
-	// Token: 0x0400847E RID: 33918
+	// Token: 0x04008557 RID: 34135
 	public float VelocityMultiplier = 30f;
 
-	// Token: 0x0400847F RID: 33919
+	// Token: 0x04008558 RID: 34136
 	public float CameraFreezeDelay = 2.5f;
 
-	// Token: 0x04008480 RID: 33920
+	// Token: 0x04008559 RID: 34137
 	public GameObject HeadBone;
 
-	// Token: 0x04008481 RID: 33921
+	// Token: 0x0400855A RID: 34138
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Quaternion m_Rot;
 
-	// Token: 0x04008482 RID: 33922
+	// Token: 0x0400855B RID: 34139
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_Pos;
 
-	// Token: 0x04008483 RID: 33923
+	// Token: 0x0400855C RID: 34140
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool m_TriedToFetchPlayer;

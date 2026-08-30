@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007F4 RID: 2036
+// Token: 0x020007FF RID: 2047
 [Preserve]
 public class NetPackageInventoryDataRequest : NetPackage
 {
-	// Token: 0x1700063A RID: 1594
-	// (get) Token: 0x06003BFA RID: 15354 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000645 RID: 1605
+	// (get) Token: 0x06003C59 RID: 15449 RVA: 0x00020021 File Offset: 0x0001E221
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,7 +15,7 @@ public class NetPackageInventoryDataRequest : NetPackage
 		}
 	}
 
-	// Token: 0x06003BFB RID: 15355 RVA: 0x0017FE80 File Offset: 0x0017E080
+	// Token: 0x06003C5A RID: 15450 RVA: 0x00182258 File Offset: 0x00180458
 	public NetPackageInventoryDataRequest Setup(TransactionalInventory.KeyHashPair _keyHash, Guid _managerToken)
 	{
 		this.keyHash = _keyHash;
@@ -23,14 +23,14 @@ public class NetPackageInventoryDataRequest : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003BFC RID: 15356 RVA: 0x0017FE91 File Offset: 0x0017E091
+	// Token: 0x06003C5B RID: 15451 RVA: 0x00182269 File Offset: 0x00180469
 	public override void read(PooledBinaryReader _br)
 	{
 		this.keyHash = TransactionalInventory.KeyHashPair.Read(_br);
 		this.managerToken = StreamUtils.ReadGuid(_br);
 	}
 
-	// Token: 0x06003BFD RID: 15357 RVA: 0x0017FEAB File Offset: 0x0017E0AB
+	// Token: 0x06003C5C RID: 15452 RVA: 0x00182283 File Offset: 0x00180483
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -38,7 +38,7 @@ public class NetPackageInventoryDataRequest : NetPackage
 		StreamUtils.Write(_bw, this.managerToken);
 	}
 
-	// Token: 0x06003BFE RID: 15358 RVA: 0x0017FECC File Offset: 0x0017E0CC
+	// Token: 0x06003C5D RID: 15453 RVA: 0x001822A4 File Offset: 0x001804A4
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		TransactionalInventory transactionalInventory;
@@ -55,17 +55,17 @@ public class NetPackageInventoryDataRequest : NetPackage
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageInventoryDataResponse>().Setup(true, string.Empty, this.keyHash.Key, transactionalInventory.GetItemsReadonly(), this.managerToken), false, base.Sender.entityId, -1, -1, null, 192, false);
 	}
 
-	// Token: 0x06003BFF RID: 15359 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06003C5E RID: 15454 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override int GetLength()
 	{
 		return 0;
 	}
 
-	// Token: 0x04003095 RID: 12437
+	// Token: 0x04003114 RID: 12564
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TransactionalInventory.KeyHashPair keyHash;
 
-	// Token: 0x04003096 RID: 12438
+	// Token: 0x04003115 RID: 12565
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Guid managerToken;
 }

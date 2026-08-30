@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Twitch
 {
-	// Token: 0x020017CC RID: 6092
+	// Token: 0x020017F2 RID: 6130
 	public class TwitchActionManager
 	{
-		// Token: 0x170016A0 RID: 5792
-		// (get) Token: 0x0600BC6B RID: 48235 RVA: 0x0045E276 File Offset: 0x0045C476
+		// Token: 0x17001712 RID: 5906
+		// (get) Token: 0x0600BDF0 RID: 48624 RVA: 0x00464012 File Offset: 0x00462212
 		public static TwitchActionManager Current
 		{
 			get
@@ -20,8 +20,8 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x170016A1 RID: 5793
-		// (get) Token: 0x0600BC6C RID: 48236 RVA: 0x0045E28E File Offset: 0x0045C48E
+		// Token: 0x17001713 RID: 5907
+		// (get) Token: 0x0600BDF1 RID: 48625 RVA: 0x0046402A File Offset: 0x0046222A
 		public static bool HasInstance
 		{
 			get
@@ -30,13 +30,13 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BC6D RID: 48237 RVA: 0x0045E298 File Offset: 0x0045C498
+		// Token: 0x0600BDF2 RID: 48626 RVA: 0x00464034 File Offset: 0x00462234
 		[PublicizedFrom(EAccessModifier.Private)]
 		public TwitchActionManager()
 		{
 		}
 
-		// Token: 0x0600BC6E RID: 48238 RVA: 0x0045E2AB File Offset: 0x0045C4AB
+		// Token: 0x0600BDF3 RID: 48627 RVA: 0x00464047 File Offset: 0x00462247
 		public void Cleanup()
 		{
 			if (TwitchActionManager.TwitchActions != null)
@@ -54,7 +54,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BC6F RID: 48239 RVA: 0x0045E2EB File Offset: 0x0045C4EB
+		// Token: 0x0600BDF4 RID: 48628 RVA: 0x00464087 File Offset: 0x00462287
 		public void AddAction(TwitchAction action)
 		{
 			if (!TwitchActionManager.TwitchActions.ContainsKey(action.Name))
@@ -63,13 +63,13 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BC70 RID: 48240 RVA: 0x0045E310 File Offset: 0x0045C510
+		// Token: 0x0600BDF5 RID: 48629 RVA: 0x004640AC File Offset: 0x004622AC
 		public void AddVoteClass(TwitchVote vote)
 		{
 			TwitchActionManager.TwitchVotes.Add(vote.VoteName, vote);
 		}
 
-		// Token: 0x0600BC71 RID: 48241 RVA: 0x0045E324 File Offset: 0x0045C524
+		// Token: 0x0600BDF6 RID: 48630 RVA: 0x004640C0 File Offset: 0x004622C0
 		public int GetCategoryIndex(string categoryName)
 		{
 			for (int i = 0; i < this.CategoryList.Count; i++)
@@ -82,7 +82,7 @@ namespace Twitch
 			return 9999;
 		}
 
-		// Token: 0x0600BC72 RID: 48242 RVA: 0x0045E368 File Offset: 0x0045C568
+		// Token: 0x0600BDF7 RID: 48631 RVA: 0x00464104 File Offset: 0x00462304
 		public TwitchActionManager.ActionCategory GetCategory(string categoryName)
 		{
 			for (int i = 0; i < this.CategoryList.Count; i++)
@@ -95,35 +95,35 @@ namespace Twitch
 			return null;
 		}
 
-		// Token: 0x04008D49 RID: 36169
+		// Token: 0x04008E65 RID: 36453
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static TwitchActionManager instance = null;
 
-		// Token: 0x04008D4A RID: 36170
+		// Token: 0x04008E66 RID: 36454
 		public List<TwitchActionManager.ActionCategory> CategoryList = new List<TwitchActionManager.ActionCategory>();
 
-		// Token: 0x04008D4B RID: 36171
+		// Token: 0x04008E67 RID: 36455
 		public static Dictionary<string, TwitchAction> TwitchActions = new Dictionary<string, TwitchAction>();
 
-		// Token: 0x04008D4C RID: 36172
+		// Token: 0x04008E68 RID: 36456
 		public static Dictionary<string, TwitchVote> TwitchVotes = new Dictionary<string, TwitchVote>();
 
-		// Token: 0x020017CD RID: 6093
+		// Token: 0x020017F3 RID: 6131
 		public class ActionCategory
 		{
-			// Token: 0x04008D4D RID: 36173
+			// Token: 0x04008E69 RID: 36457
 			public string Name;
 
-			// Token: 0x04008D4E RID: 36174
+			// Token: 0x04008E6A RID: 36458
 			public string DisplayName;
 
-			// Token: 0x04008D4F RID: 36175
+			// Token: 0x04008E6B RID: 36459
 			public string Icon;
 
-			// Token: 0x04008D50 RID: 36176
+			// Token: 0x04008E6C RID: 36460
 			public bool ShowInCommandList = true;
 
-			// Token: 0x04008D51 RID: 36177
+			// Token: 0x04008E6D RID: 36461
 			public bool AlwaysShowInMenu;
 		}
 	}

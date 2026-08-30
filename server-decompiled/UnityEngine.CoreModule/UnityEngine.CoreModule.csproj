@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ProjectGuid>{00932D20-8C8E-4629-BFC0-40BD3BC1283A}</ProjectGuid>
+    <ProjectGuid>{ADF6D6CC-2FEF-459F-BAD9-DD49A30DEEF7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>UnityEngine.CoreModule</RootNamespace>
     <AssemblyName>UnityEngine.CoreModule</AssemblyName>
@@ -951,7 +951,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine.SharedInternalsModule">
-      <HintPath>..\..\runtime\7DaysToDieServer_Data\Managed\UnityEngine.SharedInternalsModule.dll</HintPath>
+      <HintPath>../../runtime/7DaysToDieServer_Data/Managed/UnityEngine.SharedInternalsModule.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

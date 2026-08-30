@@ -4,39 +4,39 @@ using UnityEngine.Scripting;
 
 namespace RaycastPathing
 {
-	// Token: 0x020018AB RID: 6315
+	// Token: 0x020018D1 RID: 6353
 	[Preserve]
 	public class RaycastPathUtils
 	{
-		// Token: 0x0600C278 RID: 49784 RVA: 0x0047E954 File Offset: 0x0047CB54
+		// Token: 0x0600C3FF RID: 50175 RVA: 0x00484A80 File Offset: 0x00482C80
 		public static bool IsPositionBlocked(Vector3 start, Vector3 end, out RaycastHit hit, int layerMask = 0, bool debugDraw = false)
 		{
 			Vector3 vector = end - start;
 			return RaycastPathUtils.IsPositionBlocked(new Ray(start - Origin.position, vector), out hit, layerMask, debugDraw, vector.magnitude + 1f);
 		}
 
-		// Token: 0x0600C279 RID: 49785 RVA: 0x0047E990 File Offset: 0x0047CB90
+		// Token: 0x0600C400 RID: 50176 RVA: 0x00484ABC File Offset: 0x00482CBC
 		public static bool IsPositionBlocked(Vector3 start, Vector3 end, int layerMask = 0, bool debugDraw = false)
 		{
 			RaycastHit raycastHit;
 			return RaycastPathUtils.IsPositionBlocked(start, end, out raycastHit, layerMask, debugDraw);
 		}
 
-		// Token: 0x0600C27A RID: 49786 RVA: 0x0047E9A8 File Offset: 0x0047CBA8
+		// Token: 0x0600C401 RID: 50177 RVA: 0x00484AD4 File Offset: 0x00482CD4
 		public static bool IsPointBlocked(Vector3 start, Vector3 end, int layerMask = 0, bool debugDraw = false, float duration = 0f)
 		{
 			RaycastHit raycastHit;
 			return RaycastPathUtils.CheckPositionBlocked(start, end, out raycastHit, layerMask, debugDraw, duration);
 		}
 
-		// Token: 0x0600C27B RID: 49787 RVA: 0x0047E9C4 File Offset: 0x0047CBC4
+		// Token: 0x0600C402 RID: 50178 RVA: 0x00484AF0 File Offset: 0x00482CF0
 		public static bool CheckPositionBlocked(Vector3 start, Vector3 end, out RaycastHit hit, int layerMask = 0, bool debugDraw = false, float duration = 0f)
 		{
 			Vector3 vector = end - start;
 			return RaycastPathUtils.CheckPositionBlocked(new Ray(start - Origin.position, vector), out hit, layerMask, debugDraw, vector.magnitude, duration);
 		}
 
-		// Token: 0x0600C27C RID: 49788 RVA: 0x0047E9FC File Offset: 0x0047CBFC
+		// Token: 0x0600C403 RID: 50179 RVA: 0x00484B28 File Offset: 0x00482D28
 		public static bool CheckPositionBlocked(Ray ray, out RaycastHit hit, int layerMask = 0, bool debugDraw = false, float maxDist = 100f, float duration = 0f)
 		{
 			bool flag = Physics.Raycast(ray, out hit, maxDist, layerMask);
@@ -54,7 +54,7 @@ namespace RaycastPathing
 			return flag;
 		}
 
-		// Token: 0x0600C27D RID: 49789 RVA: 0x0047EA88 File Offset: 0x0047CC88
+		// Token: 0x0600C404 RID: 50180 RVA: 0x00484BB4 File Offset: 0x00482DB4
 		public static bool IsPositionBlocked(Ray ray, out RaycastHit hit, int layerMask = 0, bool debugDraw = false, float maxDist = 100f)
 		{
 			bool flag = Physics.Raycast(ray, out hit, maxDist, layerMask);
@@ -72,44 +72,44 @@ namespace RaycastPathing
 			return flag;
 		}
 
-		// Token: 0x0600C27E RID: 49790 RVA: 0x0047EB1C File Offset: 0x0047CD1C
+		// Token: 0x0600C405 RID: 50181 RVA: 0x00484C48 File Offset: 0x00482E48
 		public static bool IsPositionBlocked(Ray ray, int layerMask = 0, bool debugDraw = false, float maxDist = 100f)
 		{
 			RaycastHit raycastHit;
 			return RaycastPathUtils.IsPositionBlocked(ray, out raycastHit, layerMask, debugDraw, 100f);
 		}
 
-		// Token: 0x0600C27F RID: 49791 RVA: 0x0047EB38 File Offset: 0x0047CD38
+		// Token: 0x0600C406 RID: 50182 RVA: 0x00484C64 File Offset: 0x00482E64
 		public static void DrawLine(Vector3 start, Vector3 end, Color color, float duration = 1f)
 		{
 			Utils.DrawLine(start - Origin.position, end - Origin.position, color, color, 10, duration);
 		}
 
-		// Token: 0x0600C280 RID: 49792 RVA: 0x0047EB5C File Offset: 0x0047CD5C
+		// Token: 0x0600C407 RID: 50183 RVA: 0x00484C88 File Offset: 0x00482E88
 		public static void DrawBounds(Vector3i pos, Color color, float duration, float scale = 1f)
 		{
 			Utils.DrawBoxLines(new Vector3((float)pos.x, (float)pos.y, (float)pos.z) - Origin.position, new Vector3((float)pos.x + scale, (float)pos.y + scale, (float)pos.z + scale) - Origin.position, color, duration);
 		}
 
-		// Token: 0x0600C281 RID: 49793 RVA: 0x0047EBC0 File Offset: 0x0047CDC0
+		// Token: 0x0600C408 RID: 50184 RVA: 0x00484CEC File Offset: 0x00482EEC
 		public static void DrawBounds(Vector3 pos, Color color, float duration, float scale = 1f)
 		{
 			Utils.DrawBoxLines(new Vector3i(pos.x, pos.y, pos.z) - Origin.position, new Vector3i(pos.x + scale, pos.y + scale, pos.z + scale) - Origin.position, color, duration);
 		}
 
-		// Token: 0x0600C282 RID: 49794 RVA: 0x0047EC26 File Offset: 0x0047CE26
+		// Token: 0x0600C409 RID: 50185 RVA: 0x00484D52 File Offset: 0x00482F52
 		public static void DrawNode(RaycastNode node, Color color, float duration)
 		{
 			RaycastPathUtils.DrawNode(node.Min, node.Max, color, duration);
 		}
 
-		// Token: 0x0600C283 RID: 49795 RVA: 0x0047EC3B File Offset: 0x0047CE3B
+		// Token: 0x0600C40A RID: 50186 RVA: 0x00484D67 File Offset: 0x00482F67
 		public static void DrawNode(Vector3 min, Vector3 max, Color color, float duration)
 		{
 			RaycastPathUtils.DrawVolume(min - Origin.position, max - Origin.position, color, duration);
 		}
 
-		// Token: 0x0600C284 RID: 49796 RVA: 0x0047EC5C File Offset: 0x0047CE5C
+		// Token: 0x0600C40B RID: 50187 RVA: 0x00484D88 File Offset: 0x00482F88
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void DrawVolume(Vector3 min, Vector3 max, Color color, float duration)
 		{
@@ -133,7 +133,7 @@ namespace RaycastPathing
 			Debug.DrawLine(vector, vector6, color, duration);
 		}
 
-		// Token: 0x04009318 RID: 37656
+		// Token: 0x04009441 RID: 37953
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int cMaxRayDist = 100;
 	}

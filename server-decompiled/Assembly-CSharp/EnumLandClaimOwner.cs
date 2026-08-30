@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x02000BD7 RID: 3031
+// Token: 0x02000BE9 RID: 3049
 public enum EnumLandClaimOwner
 {
-	// Token: 0x040046F8 RID: 18168
+	// Token: 0x04004794 RID: 18324
 	None,
-	// Token: 0x040046F9 RID: 18169
+	// Token: 0x04004795 RID: 18325
 	Self,
-	// Token: 0x040046FA RID: 18170
+	// Token: 0x04004796 RID: 18326
 	Ally,
-	// Token: 0x040046FB RID: 18171
+	// Token: 0x04004797 RID: 18327
 	Other
 }

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using MusicUtils.Enums;
 
-// Token: 0x0200089C RID: 2204
+// Token: 0x020008A8 RID: 2216
 public class NPCInfo
 {
-	// Token: 0x170006A6 RID: 1702
-	// (get) Token: 0x06003FF1 RID: 16369 RVA: 0x0018FF2C File Offset: 0x0018E12C
+	// Token: 0x170006B2 RID: 1714
+	// (get) Token: 0x06004056 RID: 16470 RVA: 0x00191FFC File Offset: 0x001901FC
 	public List<QuestEntry> Quests
 	{
 		get
@@ -20,73 +20,73 @@ public class NPCInfo
 		}
 	}
 
-	// Token: 0x06003FF3 RID: 16371 RVA: 0x0018FF75 File Offset: 0x0018E175
+	// Token: 0x06004058 RID: 16472 RVA: 0x00192045 File Offset: 0x00190245
 	public static void InitStatic()
 	{
 		NPCInfo.npcInfoList = new Dictionary<string, NPCInfo>();
 	}
 
-	// Token: 0x06003FF4 RID: 16372 RVA: 0x0018FF81 File Offset: 0x0018E181
+	// Token: 0x06004059 RID: 16473 RVA: 0x00192051 File Offset: 0x00190251
 	public void Init()
 	{
 		NPCInfo.npcInfoList[this.Id] = this;
 	}
 
-	// Token: 0x06003FF5 RID: 16373 RVA: 0x0018FF94 File Offset: 0x0018E194
+	// Token: 0x0600405A RID: 16474 RVA: 0x00192064 File Offset: 0x00190264
 	public static void Cleanup()
 	{
 		NPCInfo.npcInfoList = null;
 	}
 
-	// Token: 0x0400335F RID: 13151
+	// Token: 0x040033E0 RID: 13280
 	public static Dictionary<string, NPCInfo> npcInfoList;
 
-	// Token: 0x04003360 RID: 13152
+	// Token: 0x040033E1 RID: 13281
 	public string Id;
 
-	// Token: 0x04003361 RID: 13153
+	// Token: 0x040033E2 RID: 13282
 	public string Name;
 
-	// Token: 0x04003362 RID: 13154
+	// Token: 0x040033E3 RID: 13283
 	public string Faction;
 
-	// Token: 0x04003363 RID: 13155
+	// Token: 0x040033E4 RID: 13284
 	public string Portrait;
 
-	// Token: 0x04003364 RID: 13156
+	// Token: 0x040033E5 RID: 13285
 	public string LocalizationID;
 
-	// Token: 0x04003365 RID: 13157
+	// Token: 0x040033E6 RID: 13286
 	public string VoiceSet = "";
 
-	// Token: 0x04003366 RID: 13158
+	// Token: 0x040033E7 RID: 13287
 	public NPCInfo.StanceTypes CurrentStance;
 
-	// Token: 0x04003367 RID: 13159
+	// Token: 0x040033E8 RID: 13288
 	public SectionType DmsSectionType;
 
-	// Token: 0x04003368 RID: 13160
+	// Token: 0x040033E9 RID: 13289
 	public byte QuestFaction;
 
-	// Token: 0x04003369 RID: 13161
+	// Token: 0x040033EA RID: 13290
 	public string QuestListName = "trader_quests";
 
-	// Token: 0x0400336A RID: 13162
+	// Token: 0x040033EB RID: 13291
 	public int TraderID = -1;
 
-	// Token: 0x0400336B RID: 13163
+	// Token: 0x040033EC RID: 13292
 	public string DialogID;
 
-	// Token: 0x0200089D RID: 2205
+	// Token: 0x020008A9 RID: 2217
 	public enum StanceTypes
 	{
-		// Token: 0x0400336D RID: 13165
+		// Token: 0x040033EE RID: 13294
 		None,
-		// Token: 0x0400336E RID: 13166
+		// Token: 0x040033EF RID: 13295
 		Like,
-		// Token: 0x0400336F RID: 13167
+		// Token: 0x040033F0 RID: 13296
 		Neutral,
-		// Token: 0x04003370 RID: 13168
+		// Token: 0x040033F1 RID: 13297
 		Dislike
 	}
 }

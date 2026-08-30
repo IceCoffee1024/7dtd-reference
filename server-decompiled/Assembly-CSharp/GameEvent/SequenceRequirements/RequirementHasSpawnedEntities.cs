@@ -3,17 +3,17 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x0200190C RID: 6412
+	// Token: 0x02001932 RID: 6450
 	[Preserve]
 	public class RequirementHasSpawnedEntities : BaseRequirement
 	{
-		// Token: 0x0600C585 RID: 50565 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C70C RID: 50956 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
 		}
 
-		// Token: 0x0600C586 RID: 50566 RVA: 0x0048AE24 File Offset: 0x00489024
+		// Token: 0x0600C70D RID: 50957 RVA: 0x00491170 File Offset: 0x0048F370
 		public override bool CanPerform(Entity target)
 		{
 			FastTags<TagGroup.Global> fastTags = FastTags<TagGroup.Global>.Parse(this.tag);
@@ -28,7 +28,7 @@ namespace GameEvent.SequenceRequirements
 			return false;
 		}
 
-		// Token: 0x0600C587 RID: 50567 RVA: 0x0048AE94 File Offset: 0x00489094
+		// Token: 0x0600C70E RID: 50958 RVA: 0x004911E0 File Offset: 0x0048F3E0
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -42,7 +42,7 @@ namespace GameEvent.SequenceRequirements
 			}
 		}
 
-		// Token: 0x0600C588 RID: 50568 RVA: 0x0048AF00 File Offset: 0x00489100
+		// Token: 0x0600C70F RID: 50959 RVA: 0x0049124C File Offset: 0x0048F44C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseRequirement CloneChildSettings()
 		{
@@ -53,19 +53,19 @@ namespace GameEvent.SequenceRequirements
 			};
 		}
 
-		// Token: 0x040094C1 RID: 38081
+		// Token: 0x040095EA RID: 38378
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string tag;
 
-		// Token: 0x040094C2 RID: 38082
+		// Token: 0x040095EB RID: 38379
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool targetOnly;
 
-		// Token: 0x040094C3 RID: 38083
+		// Token: 0x040095EC RID: 38380
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTag = "entity_tags";
 
-		// Token: 0x040094C4 RID: 38084
+		// Token: 0x040095ED RID: 38381
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTargetOnly = "target_only";
 	}

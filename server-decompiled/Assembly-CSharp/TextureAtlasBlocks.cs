@@ -4,11 +4,11 @@ using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000BAE RID: 2990
+// Token: 0x02000BC0 RID: 3008
 [Preserve]
 public class TextureAtlasBlocks : TextureAtlas
 {
-	// Token: 0x06005A64 RID: 23140 RVA: 0x0022CA78 File Offset: 0x0022AC78
+	// Token: 0x06005AEC RID: 23276 RVA: 0x0022F7E0 File Offset: 0x0022D9E0
 	public override bool LoadTextureAtlas(int _idx, MeshDescriptionCollection _tac, bool _bLoadTextures)
 	{
 		try
@@ -35,7 +35,7 @@ public class TextureAtlasBlocks : TextureAtlas
 		return true;
 	}
 
-	// Token: 0x06005A65 RID: 23141 RVA: 0x0022CB10 File Offset: 0x0022AD10
+	// Token: 0x06005AED RID: 23277 RVA: 0x0022F878 File Offset: 0x0022DA78
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LoadTextureAtlasFromMetadata(int _idx, MeshDescriptionCollection _tac)
 	{
@@ -55,7 +55,7 @@ public class TextureAtlasBlocks : TextureAtlas
 		}
 	}
 
-	// Token: 0x06005A66 RID: 23142 RVA: 0x0022CC24 File Offset: 0x0022AE24
+	// Token: 0x06005AEE RID: 23278 RVA: 0x0022F98C File Offset: 0x0022DB8C
 	public override void Cleanup()
 	{
 		if (this.diffuseTexture != null)
@@ -100,34 +100,34 @@ public class TextureAtlasBlocks : TextureAtlas
 		}
 	}
 
-	// Token: 0x040045F6 RID: 17910
+	// Token: 0x04004692 RID: 18066
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cTextureArraySize = 512;
 
-	// Token: 0x040045F7 RID: 17911
+	// Token: 0x04004693 RID: 18067
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int cTextureBorder = 34;
 
-	// Token: 0x040045F8 RID: 17912
+	// Token: 0x04004694 RID: 18068
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int cTextureSize = 8192;
 
-	// Token: 0x02000BAF RID: 2991
+	// Token: 0x02000BC1 RID: 3009
 	public enum WrapMode
 	{
-		// Token: 0x040045FA RID: 17914
+		// Token: 0x04004696 RID: 18070
 		Mirror,
-		// Token: 0x040045FB RID: 17915
+		// Token: 0x04004697 RID: 18071
 		Wrap,
-		// Token: 0x040045FC RID: 17916
+		// Token: 0x04004698 RID: 18072
 		TransparentEdges
 	}
 
-	// Token: 0x02000BB0 RID: 2992
+	// Token: 0x02000BC2 RID: 3010
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct BlockUVRect
 	{
-		// Token: 0x06005A68 RID: 23144 RVA: 0x0022CD44 File Offset: 0x0022AF44
+		// Token: 0x06005AF0 RID: 23280 RVA: 0x0022FAAC File Offset: 0x0022DCAC
 		public BlockUVRect(int _textureId, int _x, int _y, int _width, int _height, int _blocksW, int _blocksH, Color _color, bool _bGlobalUV)
 		{
 			this.textureId = _textureId;
@@ -141,7 +141,7 @@ public class TextureAtlasBlocks : TextureAtlas
 			this.bGlobalUV = _bGlobalUV;
 		}
 
-		// Token: 0x06005A69 RID: 23145 RVA: 0x0022CD98 File Offset: 0x0022AF98
+		// Token: 0x06005AF1 RID: 23281 RVA: 0x0022FB00 File Offset: 0x0022DD00
 		public override string ToString()
 		{
 			return string.Concat(new string[]
@@ -163,39 +163,39 @@ public class TextureAtlasBlocks : TextureAtlas
 			});
 		}
 
-		// Token: 0x040045FD RID: 17917
+		// Token: 0x04004699 RID: 18073
 		public int textureId;
 
-		// Token: 0x040045FE RID: 17918
+		// Token: 0x0400469A RID: 18074
 		public int x;
 
-		// Token: 0x040045FF RID: 17919
+		// Token: 0x0400469B RID: 18075
 		public int y;
 
-		// Token: 0x04004600 RID: 17920
+		// Token: 0x0400469C RID: 18076
 		public int width;
 
-		// Token: 0x04004601 RID: 17921
+		// Token: 0x0400469D RID: 18077
 		public int height;
 
-		// Token: 0x04004602 RID: 17922
+		// Token: 0x0400469E RID: 18078
 		public int blocksW;
 
-		// Token: 0x04004603 RID: 17923
+		// Token: 0x0400469F RID: 18079
 		public int blocksH;
 
-		// Token: 0x04004604 RID: 17924
+		// Token: 0x040046A0 RID: 18080
 		public Color color;
 
-		// Token: 0x04004605 RID: 17925
+		// Token: 0x040046A1 RID: 18081
 		public bool bGlobalUV;
 	}
 
-	// Token: 0x02000BB1 RID: 2993
+	// Token: 0x02000BC3 RID: 3011
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class BlocksTexture
 	{
-		// Token: 0x06005A6A RID: 23146 RVA: 0x0022CE50 File Offset: 0x0022B050
+		// Token: 0x06005AF2 RID: 23282 RVA: 0x0022FBB8 File Offset: 0x0022DDB8
 		public override string ToString()
 		{
 			string[] array = new string[7];
@@ -221,34 +221,34 @@ public class TextureAtlasBlocks : TextureAtlas
 			return text;
 		}
 
-		// Token: 0x04004606 RID: 17926
+		// Token: 0x040046A2 RID: 18082
 		public List<TextureAtlasBlocks.BlockUVRect> blocks = new List<TextureAtlasBlocks.BlockUVRect>();
 
-		// Token: 0x04004607 RID: 17927
+		// Token: 0x040046A3 RID: 18083
 		public string textureName;
 
-		// Token: 0x04004608 RID: 17928
+		// Token: 0x040046A4 RID: 18084
 		public Texture2D diffuse;
 
-		// Token: 0x04004609 RID: 17929
+		// Token: 0x040046A5 RID: 18085
 		public Texture2D normal;
 
-		// Token: 0x0400460A RID: 17930
+		// Token: 0x040046A6 RID: 18086
 		public Texture2D specular;
 
-		// Token: 0x0400460B RID: 17931
+		// Token: 0x040046A7 RID: 18087
 		public Texture2D height;
 
-		// Token: 0x0400460C RID: 17932
+		// Token: 0x040046A8 RID: 18088
 		public TextureAtlasBlocks.WrapMode wrapMode;
 
-		// Token: 0x0400460D RID: 17933
+		// Token: 0x040046A9 RID: 18089
 		public int diffuseW;
 
-		// Token: 0x0400460E RID: 17934
+		// Token: 0x040046AA RID: 18090
 		public int diffuseH;
 
-		// Token: 0x0400460F RID: 17935
+		// Token: 0x040046AB RID: 18091
 		public Color color;
 	}
 }

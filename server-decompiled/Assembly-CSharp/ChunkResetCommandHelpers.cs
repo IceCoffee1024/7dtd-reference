@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000272 RID: 626
+// Token: 0x02000276 RID: 630
 public static class ChunkResetCommandHelpers
 {
-	// Token: 0x06001293 RID: 4755 RVA: 0x00073D98 File Offset: 0x00071F98
+	// Token: 0x060012A5 RID: 4773 RVA: 0x000743F4 File Offset: 0x000725F4
 	public static bool TryParseProtectionMode(List<string> _params, out ChunkProtectionLevel _protection, out int _pmode)
 	{
 		_protection = ChunkProtectionLevel.All;
@@ -42,7 +42,7 @@ public static class ChunkResetCommandHelpers
 		return true;
 	}
 
-	// Token: 0x06001294 RID: 4756 RVA: 0x00073E64 File Offset: 0x00072064
+	// Token: 0x060012A6 RID: 4774 RVA: 0x000744C0 File Offset: 0x000726C0
 	public static bool TryParseGroupingMode(List<string> _params, out EnumResetUnprotectedChunksGroupingMode _grouping)
 	{
 		_grouping = EnumResetUnprotectedChunksGroupingMode.GroupedPOIs;
@@ -61,7 +61,7 @@ public static class ChunkResetCommandHelpers
 		return true;
 	}
 
-	// Token: 0x06001295 RID: 4757 RVA: 0x00073EE4 File Offset: 0x000720E4
+	// Token: 0x060012A7 RID: 4775 RVA: 0x00074540 File Offset: 0x00072740
 	public static bool TryParseRegion(List<string> _params, out int? _regionX, out int? _regionZ)
 	{
 		_regionX = null;
@@ -83,7 +83,7 @@ public static class ChunkResetCommandHelpers
 		return true;
 	}
 
-	// Token: 0x06001296 RID: 4758 RVA: 0x00073F8C File Offset: 0x0007218C
+	// Token: 0x060012A8 RID: 4776 RVA: 0x000745E8 File Offset: 0x000727E8
 	public static void ExecuteReset(ChunkProtectionLevel _protectionMask, EnumResetUnprotectedChunksGroupingMode _groupingMode, int? _regionX, int? _regionZ, string _opName)
 	{
 		World world = GameManager.Instance.World;
@@ -128,7 +128,7 @@ public static class ChunkResetCommandHelpers
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output(string.Format("{0} complete. Reset {1} chunks.", _opName, hashSetLong.Count));
 	}
 
-	// Token: 0x06001297 RID: 4759 RVA: 0x00074164 File Offset: 0x00072364
+	// Token: 0x060012A9 RID: 4777 RVA: 0x000747C0 File Offset: 0x000729C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int FindFlag(List<string> _params, params string[] _flags)
 	{

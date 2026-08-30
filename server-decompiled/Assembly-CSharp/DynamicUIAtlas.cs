@@ -4,15 +4,15 @@ using System.Diagnostics;
 using Unity.Collections;
 using UnityEngine;
 
-// Token: 0x0200126A RID: 4714
+// Token: 0x02001284 RID: 4740
 public class DynamicUIAtlas : UIAtlas
 {
-	// Token: 0x140000FC RID: 252
-	// (add) Token: 0x060095BA RID: 38330 RVA: 0x00386010 File Offset: 0x00384210
-	// (remove) Token: 0x060095BB RID: 38331 RVA: 0x00386048 File Offset: 0x00384248
+	// Token: 0x140000FD RID: 253
+	// (add) Token: 0x060096B5 RID: 38581 RVA: 0x0038B16C File Offset: 0x0038936C
+	// (remove) Token: 0x060096B6 RID: 38582 RVA: 0x0038B1A4 File Offset: 0x003893A4
 	public event Action AtlasUpdatedEv;
 
-	// Token: 0x060095BC RID: 38332 RVA: 0x00386080 File Offset: 0x00384280
+	// Token: 0x060096B7 RID: 38583 RVA: 0x0038B1DC File Offset: 0x003893DC
 	public void Awake()
 	{
 		Stopwatch stopwatch = new Stopwatch();
@@ -38,7 +38,7 @@ public class DynamicUIAtlas : UIAtlas
 		}
 	}
 
-	// Token: 0x060095BD RID: 38333 RVA: 0x00386160 File Offset: 0x00384360
+	// Token: 0x060096B8 RID: 38584 RVA: 0x0038B2BC File Offset: 0x003894BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LoadBaseTexture()
 	{
@@ -55,7 +55,7 @@ public class DynamicUIAtlas : UIAtlas
 		DynamicUIAtlasTools.UnloadTex(this.PrebakedAtlas, texture2D);
 	}
 
-	// Token: 0x060095BE RID: 38334 RVA: 0x003861D0 File Offset: 0x003843D0
+	// Token: 0x060096B9 RID: 38585 RVA: 0x0038B32C File Offset: 0x0038952C
 	public void LoadAdditionalSprites(Dictionary<string, Texture2D> _nameToTex)
 	{
 		DynamicUIAtlasTools.AddSprites(this.elementWidth, this.elementHeight, this.paddingSize, _nameToTex, ref this.currentTex, base.spriteList);
@@ -67,7 +67,7 @@ public class DynamicUIAtlas : UIAtlas
 		}
 	}
 
-	// Token: 0x060095BF RID: 38335 RVA: 0x00386230 File Offset: 0x00384430
+	// Token: 0x060096BA RID: 38586 RVA: 0x0038B38C File Offset: 0x0038958C
 	public void ResetAtlas()
 	{
 		Stopwatch stopwatch = new Stopwatch();
@@ -89,14 +89,14 @@ public class DynamicUIAtlas : UIAtlas
 		}
 	}
 
-	// Token: 0x060095C0 RID: 38336 RVA: 0x003862DB File Offset: 0x003844DB
+	// Token: 0x060096BB RID: 38587 RVA: 0x0038B437 File Offset: 0x00389637
 	public void Compress()
 	{
 		this.currentTex.Compress(true);
 		this.currentTex.Apply(false, true);
 	}
 
-	// Token: 0x060095C1 RID: 38337 RVA: 0x003862F8 File Offset: 0x003844F8
+	// Token: 0x060096BC RID: 38588 RVA: 0x0038B454 File Offset: 0x00389654
 	public static DynamicUIAtlas Create(GameObject _parent, string _prebakedAtlasResourceName, Shader _shader)
 	{
 		string text = _prebakedAtlasResourceName;
@@ -115,33 +115,33 @@ public class DynamicUIAtlas : UIAtlas
 		return dynamicUIAtlas;
 	}
 
-	// Token: 0x0400700F RID: 28687
+	// Token: 0x040070E4 RID: 28900
 	public Shader shader;
 
-	// Token: 0x04007010 RID: 28688
+	// Token: 0x040070E5 RID: 28901
 	public string PrebakedAtlas;
 
-	// Token: 0x04007012 RID: 28690
+	// Token: 0x040070E7 RID: 28903
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int elementWidth;
 
-	// Token: 0x04007013 RID: 28691
+	// Token: 0x040070E8 RID: 28904
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int elementHeight;
 
-	// Token: 0x04007014 RID: 28692
+	// Token: 0x040070E9 RID: 28905
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int paddingSize;
 
-	// Token: 0x04007015 RID: 28693
+	// Token: 0x040070EA RID: 28906
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<UISpriteData> origSpriteData;
 
-	// Token: 0x04007016 RID: 28694
+	// Token: 0x040070EB RID: 28907
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Texture2D currentTex;

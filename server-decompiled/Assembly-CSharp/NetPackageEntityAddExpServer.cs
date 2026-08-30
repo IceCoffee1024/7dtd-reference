@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007C9 RID: 1993
+// Token: 0x020007D4 RID: 2004
 [Preserve]
 public class NetPackageEntityAddExpServer : NetPackageEntityAddExpClient
 {
-	// Token: 0x1700061F RID: 1567
-	// (get) Token: 0x06003AF9 RID: 15097 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x1700062A RID: 1578
+	// (get) Token: 0x06003B58 RID: 15192 RVA: 0x00020021 File Offset: 0x0001E221
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,14 +15,14 @@ public class NetPackageEntityAddExpServer : NetPackageEntityAddExpClient
 		}
 	}
 
-	// Token: 0x06003AFA RID: 15098 RVA: 0x0017C724 File Offset: 0x0017A924
+	// Token: 0x06003B59 RID: 15193 RVA: 0x0017EAFC File Offset: 0x0017CCFC
 	public NetPackageEntityAddExpServer Setup(int _entityId, int _experience)
 	{
 		base.Setup(_entityId, _experience, Progression.XPTypes.Other, null);
 		return this;
 	}
 
-	// Token: 0x06003AFB RID: 15099 RVA: 0x0017C734 File Offset: 0x0017A934
+	// Token: 0x06003B5A RID: 15194 RVA: 0x0017EB0C File Offset: 0x0017CD0C
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)

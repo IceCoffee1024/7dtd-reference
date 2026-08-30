@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000954 RID: 2388
+// Token: 0x02000965 RID: 2405
 public class SimpleMeshInfo
 {
-	// Token: 0x060045ED RID: 17901 RVA: 0x001BB6FE File Offset: 0x001B98FE
+	// Token: 0x06004673 RID: 18035 RVA: 0x001BDEF2 File Offset: 0x001BC0F2
 	public SimpleMeshInfo(string[] _meshNames, Mesh[] _meshes, float _offsetY, Material _mat, List<ImposterCanvas> _signs)
 	{
 		this.meshNames = _meshNames;
@@ -15,18 +15,18 @@ public class SimpleMeshInfo
 		this.signs = _signs;
 	}
 
-	// Token: 0x04003828 RID: 14376
+	// Token: 0x040038B9 RID: 14521
 	public string[] meshNames;
 
-	// Token: 0x04003829 RID: 14377
+	// Token: 0x040038BA RID: 14522
 	public Mesh[] meshes;
 
-	// Token: 0x0400382A RID: 14378
+	// Token: 0x040038BB RID: 14523
 	public readonly float offsetY;
 
-	// Token: 0x0400382B RID: 14379
+	// Token: 0x040038BC RID: 14524
 	public readonly Material mat;
 
-	// Token: 0x0400382C RID: 14380
+	// Token: 0x040038BD RID: 14525
 	public List<ImposterCanvas> signs;
 }

@@ -4,19 +4,19 @@ using System.Text;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000278 RID: 632
+// Token: 0x0200027C RID: 636
 [Preserve]
 public class ConsoleCmdSaveDataManagerInfo : ConsoleCmdAbstract
 {
-	// Token: 0x060012B4 RID: 4788 RVA: 0x000745E0 File Offset: 0x000727E0
+	// Token: 0x060012C6 RID: 4806 RVA: 0x00074C3C File Offset: 0x00072E3C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "sdminfo" };
 	}
 
-	// Token: 0x170001F5 RID: 501
-	// (get) Token: 0x060012B5 RID: 4789 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x170001F6 RID: 502
+	// (get) Token: 0x060012C7 RID: 4807 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -25,21 +25,21 @@ public class ConsoleCmdSaveDataManagerInfo : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060012B6 RID: 4790 RVA: 0x000745F0 File Offset: 0x000727F0
+	// Token: 0x060012C8 RID: 4808 RVA: 0x00074C4C File Offset: 0x00072E4C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "SaveDataManager Information";
 	}
 
-	// Token: 0x060012B7 RID: 4791 RVA: 0x000745F7 File Offset: 0x000727F7
+	// Token: 0x060012C9 RID: 4809 RVA: 0x00074C53 File Offset: 0x00072E53
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "sdminfo";
 	}
 
-	// Token: 0x060012B8 RID: 4792 RVA: 0x00074600 File Offset: 0x00072800
+	// Token: 0x060012CA RID: 4810 RVA: 0x00074C5C File Offset: 0x00072E5C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		StringBuilder stringBuilder = new StringBuilder();
@@ -50,7 +50,7 @@ public class ConsoleCmdSaveDataManagerInfo : ConsoleCmdAbstract
 		Log.Out(stringBuilder.TrimEnd().ToString());
 	}
 
-	// Token: 0x060012B9 RID: 4793 RVA: 0x00074644 File Offset: 0x00072844
+	// Token: 0x060012CB RID: 4811 RVA: 0x00074CA0 File Offset: 0x00072EA0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AppendSaveDataManagerInfo(StringBuilder builder, ISaveDataManager saveDataManager)
 	{
@@ -63,7 +63,7 @@ public class ConsoleCmdSaveDataManagerInfo : ConsoleCmdAbstract
 		builder.AppendLine(string.Format("\tWrite Mode: {0}", saveDataManager.GetWriteMode()));
 	}
 
-	// Token: 0x060012BA RID: 4794 RVA: 0x00074680 File Offset: 0x00072880
+	// Token: 0x060012CC RID: 4812 RVA: 0x00074CDC File Offset: 0x00072EDC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AppendSaveGameProviderInfo(StringBuilder builder, IPlatformSaveGameProvider saveGameProvider)
 	{
@@ -79,7 +79,7 @@ public class ConsoleCmdSaveDataManagerInfo : ConsoleCmdAbstract
 		this.AppendSaveGameProviderSizeInfo(builder, saveGameProvider);
 	}
 
-	// Token: 0x060012BB RID: 4795 RVA: 0x00074708 File Offset: 0x00072908
+	// Token: 0x060012CD RID: 4813 RVA: 0x00074D64 File Offset: 0x00072F64
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AppendSaveGameProviderSizeInfo(StringBuilder builder, IPlatformSaveGameProvider saveGameProvider)
 	{

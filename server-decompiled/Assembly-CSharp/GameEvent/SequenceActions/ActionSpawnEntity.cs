@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019A1 RID: 6561
+	// Token: 0x020019C7 RID: 6599
 	[Preserve]
 	public class ActionSpawnEntity : ActionBaseSpawn
 	{
-		// Token: 0x0600C82C RID: 51244 RVA: 0x00499C7C File Offset: 0x00497E7C
+		// Token: 0x0600C9B3 RID: 51635 RVA: 0x0049FFD4 File Offset: 0x0049E1D4
 		public override void AddPropertiesToSpawnedEntity(Entity entity)
 		{
 			if (this.AddBuffs != null)
@@ -25,7 +25,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C82D RID: 51245 RVA: 0x00499CD4 File Offset: 0x00497ED4
+		// Token: 0x0600C9B4 RID: 51636 RVA: 0x004A002C File Offset: 0x0049E22C
 		public override void HandleTargeting(EntityAlive attacker, EntityAlive targetAlive)
 		{
 			base.HandleTargeting(attacker, targetAlive);
@@ -39,7 +39,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C82E RID: 51246 RVA: 0x00499D38 File Offset: 0x00497F38
+		// Token: 0x0600C9B5 RID: 51637 RVA: 0x004A0090 File Offset: 0x0049E290
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -52,7 +52,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseBool(ActionBaseSpawn.PropIsAggressive, ref this.isAggressive);
 		}
 
-		// Token: 0x0600C82F RID: 51247 RVA: 0x00499D8C File Offset: 0x00497F8C
+		// Token: 0x0600C9B6 RID: 51638 RVA: 0x004A00E4 File Offset: 0x0049E2E4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -84,19 +84,19 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040097D0 RID: 38864
+		// Token: 0x040098F9 RID: 39161
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string[] AddBuffs;
 
-		// Token: 0x040097D1 RID: 38865
+		// Token: 0x040098FA RID: 39162
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool onlyTargetPlayers = true;
 
-		// Token: 0x040097D2 RID: 38866
+		// Token: 0x040098FB RID: 39163
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropAddBuffs = "add_buffs";
 
-		// Token: 0x040097D3 RID: 38867
+		// Token: 0x040098FC RID: 39164
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropOnlyTargetPlayers = "only_target_players";
 	}

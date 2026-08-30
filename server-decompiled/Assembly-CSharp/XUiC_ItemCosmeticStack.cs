@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F3D RID: 3901
+// Token: 0x02000F54 RID: 3924
 [Preserve]
 public class XUiC_ItemCosmeticStack : XUiC_BasePartStack
 {
-	// Token: 0x17000E45 RID: 3653
-	// (get) Token: 0x06007A8E RID: 31374 RVA: 0x002E56BB File Offset: 0x002E38BB
-	// (set) Token: 0x06007A8F RID: 31375 RVA: 0x002E56C3 File Offset: 0x002E38C3
+	// Token: 0x17000E60 RID: 3680
+	// (get) Token: 0x06007B47 RID: 31559 RVA: 0x002E9547 File Offset: 0x002E7747
+	// (set) Token: 0x06007B48 RID: 31560 RVA: 0x002E954F File Offset: 0x002E774F
 	public ItemValue ItemValue
 	{
 		get
@@ -21,9 +21,9 @@ public class XUiC_ItemCosmeticStack : XUiC_BasePartStack
 		}
 	}
 
-	// Token: 0x17000E46 RID: 3654
-	// (get) Token: 0x06007A90 RID: 31376 RVA: 0x002E56D9 File Offset: 0x002E38D9
-	// (set) Token: 0x06007A91 RID: 31377 RVA: 0x002E56E1 File Offset: 0x002E38E1
+	// Token: 0x17000E61 RID: 3681
+	// (get) Token: 0x06007B49 RID: 31561 RVA: 0x002E9565 File Offset: 0x002E7765
+	// (set) Token: 0x06007B4A RID: 31562 RVA: 0x002E956D File Offset: 0x002E776D
 	public ItemClass ExpectedItemClass
 	{
 		get
@@ -37,14 +37,14 @@ public class XUiC_ItemCosmeticStack : XUiC_BasePartStack
 		}
 	}
 
-	// Token: 0x06007A92 RID: 31378 RVA: 0x002E56F0 File Offset: 0x002E38F0
+	// Token: 0x06007B4B RID: 31563 RVA: 0x002E957C File Offset: 0x002E777C
 	public override void Init()
 	{
 		base.Init();
 		this.lblStackMissing = Localization.Get("lblPartStackMissing", false, null);
 	}
 
-	// Token: 0x06007A93 RID: 31379 RVA: 0x002E5395 File Offset: 0x002E3595
+	// Token: 0x06007B4C RID: 31564 RVA: 0x002E9221 File Offset: 0x002E7421
 	public override string GetAtlas()
 	{
 		if (base.ItemStack.IsEmpty())
@@ -54,7 +54,7 @@ public class XUiC_ItemCosmeticStack : XUiC_BasePartStack
 		return "ItemIconAtlas";
 	}
 
-	// Token: 0x06007A94 RID: 31380 RVA: 0x002E570C File Offset: 0x002E390C
+	// Token: 0x06007B4D RID: 31565 RVA: 0x002E9598 File Offset: 0x002E7798
 	public override string GetPartName()
 	{
 		if (this.itemClass == null && this.expectedItemClass == null)
@@ -68,7 +68,7 @@ public class XUiC_ItemCosmeticStack : XUiC_BasePartStack
 		return this.itemClass.GetLocalizedItemName();
 	}
 
-	// Token: 0x06007A95 RID: 31381 RVA: 0x002E5759 File Offset: 0x002E3959
+	// Token: 0x06007B4E RID: 31566 RVA: 0x002E95E5 File Offset: 0x002E77E5
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SetEmptySpriteName()
 	{
@@ -80,7 +80,7 @@ public class XUiC_ItemCosmeticStack : XUiC_BasePartStack
 		this.emptySpriteName = "";
 	}
 
-	// Token: 0x06007A96 RID: 31382 RVA: 0x002E5790 File Offset: 0x002E3990
+	// Token: 0x06007B4F RID: 31567 RVA: 0x002E961C File Offset: 0x002E781C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool CanSwap(ItemStack stack)
 	{
@@ -133,14 +133,14 @@ public class XUiC_ItemCosmeticStack : XUiC_BasePartStack
 		return flag2 && (this.itemValue == null || this.itemValue.type == 0 || (this.itemValue.ItemClass as ItemClassModifier).Type == ItemClassModifier.ModifierTypes.Attachment);
 	}
 
-	// Token: 0x06007A97 RID: 31383 RVA: 0x002E5A74 File Offset: 0x002E3C74
+	// Token: 0x06007B50 RID: 31568 RVA: 0x002E9900 File Offset: 0x002E7B00
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool CanRemove()
 	{
 		return this.itemClass is ItemClassModifier && (this.itemClass as ItemClassModifier).Type == ItemClassModifier.ModifierTypes.Attachment;
 	}
 
-	// Token: 0x06007A98 RID: 31384 RVA: 0x002E5A98 File Offset: 0x002E3C98
+	// Token: 0x06007B51 RID: 31569 RVA: 0x002E9924 File Offset: 0x002E7B24
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SwapItem()
 	{
@@ -166,15 +166,15 @@ public class XUiC_ItemCosmeticStack : XUiC_BasePartStack
 		}
 	}
 
-	// Token: 0x04005A9F RID: 23199
+	// Token: 0x04005B52 RID: 23378
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue itemValue;
 
-	// Token: 0x04005AA0 RID: 23200
+	// Token: 0x04005B53 RID: 23379
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass expectedItemClass;
 
-	// Token: 0x04005AA1 RID: 23201
+	// Token: 0x04005B54 RID: 23380
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblStackMissing;
 }

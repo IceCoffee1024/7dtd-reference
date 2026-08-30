@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200064E RID: 1614
+// Token: 0x02000657 RID: 1623
 public static class EffectManager
 {
-	// Token: 0x06003434 RID: 13364 RVA: 0x0015A5B0 File Offset: 0x001587B0
+	// Token: 0x06003487 RID: 13447 RVA: 0x0015C6CC File Offset: 0x0015A8CC
 	public static float GetValue(PassiveEffects _passiveEffect, ItemValue _originalItemValue = null, float _originalValue = 0f, EntityAlive _entity = null, Recipe _recipe = null, FastTags<TagGroup.Global> tags = default(FastTags<TagGroup.Global>), bool calcEquipment = true, bool calcHoldingItem = true, bool calcProgression = true, bool calcBuffs = true, bool calcChallenges = true, int craftingTier = 1, bool useMods = true, bool _useDurability = false)
 	{
 		float num = 1f;
@@ -134,7 +134,7 @@ public static class EffectManager
 		return _originalValue * num;
 	}
 
-	// Token: 0x06003435 RID: 13365 RVA: 0x0015A97C File Offset: 0x00158B7C
+	// Token: 0x06003488 RID: 13448 RVA: 0x0015CA98 File Offset: 0x0015AC98
 	public static float GetItemValue(PassiveEffects _passiveEffect, ItemValue _originalItemValue, float _originalValue = 0f)
 	{
 		float num = 1f;
@@ -146,7 +146,7 @@ public static class EffectManager
 		return _originalValue * num;
 	}
 
-	// Token: 0x06003436 RID: 13366 RVA: 0x0015A9CC File Offset: 0x00158BCC
+	// Token: 0x06003489 RID: 13449 RVA: 0x0015CAE8 File Offset: 0x0015ACE8
 	public static float GetDisplayValues(PassiveEffects _passiveEffect, out float baseValueChange, out float percValueMultiplier, ItemValue _originalItemValue = null, float _originalValue = 0f, EntityAlive _entity = null, Recipe _recipe = null, FastTags<TagGroup.Global> tags = default(FastTags<TagGroup.Global>), int craftingTier = 1)
 	{
 		float num = _originalValue;
@@ -215,20 +215,20 @@ public static class EffectManager
 		return _originalValue * percValueMultiplier;
 	}
 
-	// Token: 0x06003437 RID: 13367 RVA: 0x0015ABF8 File Offset: 0x00158DF8
+	// Token: 0x0600348A RID: 13450 RVA: 0x0015CD14 File Offset: 0x0015AF14
 	public static string GetInfoString(PassiveEffects _gAttribute, ItemValue _itemValue, EntityAlive _ea = null, float modAmount = 0f)
 	{
 		return string.Format("{0}: {1}\n", _gAttribute.ToStringCached<PassiveEffects>(), (modAmount + EffectManager.GetValue(_gAttribute, _itemValue, 0f, _ea, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false)).ToCultureInvariantString("0.0"));
 	}
 
-	// Token: 0x06003438 RID: 13368 RVA: 0x0015AC40 File Offset: 0x00158E40
+	// Token: 0x0600348B RID: 13451 RVA: 0x0015CD5C File Offset: 0x0015AF5C
 	public static string GetColoredInfoString(PassiveEffects _passiveEffect, ItemValue _itemValue, EntityAlive _ea = null)
 	{
 		EffectManager.GetDisplayValues(_passiveEffect, out EffectManager.cInfoStringBaseValue, out EffectManager.cInfoStringPercValue, _itemValue, 0f, _ea, null, default(FastTags<TagGroup.Global>), 1);
 		return string.Format("{0}: [REPLACE_COLOR]{1}*{2}[-]\n", _passiveEffect.ToStringCached<PassiveEffects>(), EffectManager.cInfoStringBaseValue.ToCultureInvariantString("0.0"), EffectManager.cInfoStringPercValue.ToCultureInvariantString("0.0"));
 	}
 
-	// Token: 0x06003439 RID: 13369 RVA: 0x0015ACA0 File Offset: 0x00158EA0
+	// Token: 0x0600348C RID: 13452 RVA: 0x0015CDBC File Offset: 0x0015AFBC
 	public static List<EffectManager.ModifierValuesAndSources> GetValuesAndSources(PassiveEffects _passiveEffect, ItemValue _originalItemValue = null, float _originalValue = 0f, EntityAlive _entity = null, Recipe _recipe = null, FastTags<TagGroup.Global> tags = default(FastTags<TagGroup.Global>), bool calcEquipment = true, bool calcHoldingItem = true)
 	{
 		float num = 1f;
@@ -287,113 +287,113 @@ public static class EffectManager
 		return list;
 	}
 
-	// Token: 0x04002A34 RID: 10804
+	// Token: 0x04002AA7 RID: 10919
 	public static FastEnumIntEqualityComparer<PassiveEffects> PassiveEffectsComparer = new FastEnumIntEqualityComparer<PassiveEffects>();
 
-	// Token: 0x04002A35 RID: 10805
+	// Token: 0x04002AA8 RID: 10920
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int slotsQueriedFrame;
 
-	// Token: 0x04002A36 RID: 10806
+	// Token: 0x04002AA9 RID: 10921
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int slotsQueriedForEntity;
 
-	// Token: 0x04002A37 RID: 10807
+	// Token: 0x04002AAA RID: 10922
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ItemStack[] slotsCached;
 
-	// Token: 0x04002A38 RID: 10808
+	// Token: 0x04002AAB RID: 10923
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float cInfoStringBaseValue;
 
-	// Token: 0x04002A39 RID: 10809
+	// Token: 0x04002AAC RID: 10924
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float cInfoStringPercValue;
 
-	// Token: 0x0200064F RID: 1615
+	// Token: 0x02000658 RID: 1624
 	public class ModifierValuesAndSources
 	{
-		// Token: 0x04002A3A RID: 10810
+		// Token: 0x04002AAD RID: 10925
 		public PassiveEffects PassiveEffectName;
 
-		// Token: 0x04002A3B RID: 10811
+		// Token: 0x04002AAE RID: 10926
 		public MinEffectController.SourceParentType ParentType;
 
-		// Token: 0x04002A3C RID: 10812
+		// Token: 0x04002AAF RID: 10927
 		public EffectManager.ModifierValuesAndSources.ValueSourceType ValueSource;
 
-		// Token: 0x04002A3D RID: 10813
+		// Token: 0x04002AB0 RID: 10928
 		public EffectManager.ModifierValuesAndSources.ValueTypes ValueType;
 
-		// Token: 0x04002A3E RID: 10814
+		// Token: 0x04002AB1 RID: 10929
 		public FastTags<TagGroup.Global> Tags;
 
-		// Token: 0x04002A3F RID: 10815
+		// Token: 0x04002AB2 RID: 10930
 		public object Source;
 
-		// Token: 0x04002A40 RID: 10816
+		// Token: 0x04002AB3 RID: 10931
 		public float Value;
 
-		// Token: 0x04002A41 RID: 10817
+		// Token: 0x04002AB4 RID: 10932
 		public PassiveEffect.ValueModifierTypes ModifierType;
 
-		// Token: 0x04002A42 RID: 10818
+		// Token: 0x04002AB5 RID: 10933
 		public int ModItemSource;
 
-		// Token: 0x02000650 RID: 1616
+		// Token: 0x02000659 RID: 1625
 		public enum ValueSourceType
 		{
-			// Token: 0x04002A44 RID: 10820
+			// Token: 0x04002AB7 RID: 10935
 			None,
-			// Token: 0x04002A45 RID: 10821
+			// Token: 0x04002AB8 RID: 10936
 			Self,
-			// Token: 0x04002A46 RID: 10822
+			// Token: 0x04002AB9 RID: 10937
 			Held,
-			// Token: 0x04002A47 RID: 10823
+			// Token: 0x04002ABA RID: 10938
 			Worn,
-			// Token: 0x04002A48 RID: 10824
+			// Token: 0x04002ABB RID: 10939
 			Attribute,
-			// Token: 0x04002A49 RID: 10825
+			// Token: 0x04002ABC RID: 10940
 			Skill,
-			// Token: 0x04002A4A RID: 10826
+			// Token: 0x04002ABD RID: 10941
 			Perk,
-			// Token: 0x04002A4B RID: 10827
+			// Token: 0x04002ABE RID: 10942
 			Mod,
-			// Token: 0x04002A4C RID: 10828
+			// Token: 0x04002ABF RID: 10943
 			CosmeticMod,
-			// Token: 0x04002A4D RID: 10829
+			// Token: 0x04002AC0 RID: 10944
 			Fault,
-			// Token: 0x04002A4E RID: 10830
+			// Token: 0x04002AC1 RID: 10945
 			Buff,
-			// Token: 0x04002A4F RID: 10831
+			// Token: 0x04002AC2 RID: 10946
 			Progression,
-			// Token: 0x04002A50 RID: 10832
+			// Token: 0x04002AC3 RID: 10947
 			Base,
-			// Token: 0x04002A51 RID: 10833
+			// Token: 0x04002AC4 RID: 10948
 			Ammo,
-			// Token: 0x04002A52 RID: 10834
+			// Token: 0x04002AC5 RID: 10949
 			ModBonus
 		}
 
-		// Token: 0x02000651 RID: 1617
+		// Token: 0x0200065A RID: 1626
 		public enum ValueTypes
 		{
-			// Token: 0x04002A54 RID: 10836
+			// Token: 0x04002AC7 RID: 10951
 			None,
-			// Token: 0x04002A55 RID: 10837
+			// Token: 0x04002AC8 RID: 10952
 			BaseValue,
-			// Token: 0x04002A56 RID: 10838
+			// Token: 0x04002AC9 RID: 10953
 			PercentValue
 		}
 
-		// Token: 0x02000652 RID: 1618
+		// Token: 0x0200065B RID: 1627
 		public enum ModTypes
 		{
-			// Token: 0x04002A58 RID: 10840
+			// Token: 0x04002ACB RID: 10955
 			None,
-			// Token: 0x04002A59 RID: 10841
+			// Token: 0x04002ACC RID: 10956
 			Base,
-			// Token: 0x04002A5A RID: 10842
+			// Token: 0x04002ACD RID: 10957
 			Percentage
 		}
 	}

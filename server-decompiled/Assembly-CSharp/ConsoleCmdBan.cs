@@ -4,11 +4,11 @@ using Platform;
 using Platform.Steam;
 using UnityEngine.Scripting;
 
-// Token: 0x020001E9 RID: 489
+// Token: 0x020001EB RID: 491
 [Preserve]
 public class ConsoleCmdBan : ConsoleCmdAbstract
 {
-	// Token: 0x06000F1C RID: 3868 RVA: 0x0006259B File Offset: 0x0006079B
+	// Token: 0x06000F27 RID: 3879 RVA: 0x00062AE3 File Offset: 0x00060CE3
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -16,7 +16,7 @@ public class ConsoleCmdBan : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000140 RID: 320
-	// (get) Token: 0x06000F1D RID: 3869 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// (get) Token: 0x06000F28 RID: 3880 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -26,7 +26,7 @@ public class ConsoleCmdBan : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000141 RID: 321
-	// (get) Token: 0x06000F1E RID: 3870 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// (get) Token: 0x06000F29 RID: 3881 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -35,21 +35,21 @@ public class ConsoleCmdBan : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F1F RID: 3871 RVA: 0x000625AB File Offset: 0x000607AB
+	// Token: 0x06000F2A RID: 3882 RVA: 0x00062AF3 File Offset: 0x00060CF3
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Manage ban entries";
 	}
 
-	// Token: 0x06000F20 RID: 3872 RVA: 0x000625B2 File Offset: 0x000607B2
+	// Token: 0x06000F2B RID: 3883 RVA: 0x00062AFA File Offset: 0x00060CFA
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Set/get ban entries. Bans will be automatically lifted after the given time.\nUsage:\n   ban add <name / entity id / platform + platform user id> <duration> <duration unit> [reason] [displayname]\n   ban remove <name / entity id / platform + platform user id>\n   ban list\nTo use the add/remove sub commands with a name or entity ID the player has\nto be online, the variant with platform and platform ID can be used for currently offline\nusers too.\nDuration unit is a modifier to the duration which specifies if in what unit\nthe duration is given. Valid units:\n    minute(s), hour(s), day(s), week(s), month(s), year(s)\nDisplayname can be used to put a descriptive name to the ban list in addition\nto the user's platform ID. If used on an online user the player name is used by default.\nExample: ban add madmole 2 minutes \"Time for a break\" \"Joel\"";
 	}
 
-	// Token: 0x06000F21 RID: 3873 RVA: 0x000625BC File Offset: 0x000607BC
+	// Token: 0x06000F2C RID: 3884 RVA: 0x00062B04 File Offset: 0x00060D04
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (GameManager.Instance.adminTools == null)
@@ -79,7 +79,7 @@ public class ConsoleCmdBan : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Invalid sub command \"" + _params[0] + "\".");
 	}
 
-	// Token: 0x06000F22 RID: 3874 RVA: 0x00062660 File Offset: 0x00060860
+	// Token: 0x06000F2D RID: 3885 RVA: 0x00062BA8 File Offset: 0x00060DA8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteAdd(List<string> _params)
 	{
@@ -170,7 +170,7 @@ public class ConsoleCmdBan : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F23 RID: 3875 RVA: 0x000629C8 File Offset: 0x00060BC8
+	// Token: 0x06000F2E RID: 3886 RVA: 0x00062F10 File Offset: 0x00061110
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteRemove(List<string> _params)
 	{
@@ -189,7 +189,7 @@ public class ConsoleCmdBan : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output(string.Format("{0} removed from ban list.", platformUserIdentifierAbs));
 	}
 
-	// Token: 0x06000F24 RID: 3876 RVA: 0x00062A64 File Offset: 0x00060C64
+	// Token: 0x06000F2F RID: 3887 RVA: 0x00062FAC File Offset: 0x000611AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteList()
 	{

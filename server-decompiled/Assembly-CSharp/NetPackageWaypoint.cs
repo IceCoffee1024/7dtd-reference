@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200085E RID: 2142
+// Token: 0x0200086A RID: 2154
 [Preserve]
 public class NetPackageWaypoint : NetPackage
 {
-	// Token: 0x06003E87 RID: 16007 RVA: 0x00189F78 File Offset: 0x00188178
+	// Token: 0x06003EEC RID: 16108 RVA: 0x0018C048 File Offset: 0x0018A248
 	public NetPackageWaypoint Setup(Waypoint _waypoint, EnumWaypointInviteMode _inviteMode, int _inviterEntityId)
 	{
 		this.waypoint = _waypoint;
@@ -15,7 +15,7 @@ public class NetPackageWaypoint : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003E88 RID: 16008 RVA: 0x00189F9C File Offset: 0x0018819C
+	// Token: 0x06003EED RID: 16109 RVA: 0x0018C06C File Offset: 0x0018A26C
 	public override void read(PooledBinaryReader _br)
 	{
 		this.waypoint = new Waypoint();
@@ -24,7 +24,7 @@ public class NetPackageWaypoint : NetPackage
 		this.inviterEntityId = _br.ReadInt32();
 	}
 
-	// Token: 0x06003E89 RID: 16009 RVA: 0x00189FCE File Offset: 0x001881CE
+	// Token: 0x06003EEE RID: 16110 RVA: 0x0018C09E File Offset: 0x0018A29E
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -33,7 +33,7 @@ public class NetPackageWaypoint : NetPackage
 		_bw.Write(this.inviterEntityId);
 	}
 
-	// Token: 0x06003E8A RID: 16010 RVA: 0x00189FFC File Offset: 0x001881FC
+	// Token: 0x06003EEF RID: 16111 RVA: 0x0018C0CC File Offset: 0x0018A2CC
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (!base.ValidEntityIdForSender(this.inviterEntityId, false))
@@ -48,21 +48,21 @@ public class NetPackageWaypoint : NetPackage
 		GameManager.Instance.WaypointInviteClient(this.waypoint, this.inviteMode, this.inviterEntityId, null);
 	}
 
-	// Token: 0x06003E8B RID: 16011 RVA: 0x0007FE9C File Offset: 0x0007E09C
+	// Token: 0x06003EF0 RID: 16112 RVA: 0x00080550 File Offset: 0x0007E750
 	public override int GetLength()
 	{
 		return 4;
 	}
 
-	// Token: 0x04003249 RID: 12873
+	// Token: 0x040032CA RID: 13002
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Waypoint waypoint;
 
-	// Token: 0x0400324A RID: 12874
+	// Token: 0x040032CB RID: 13003
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EnumWaypointInviteMode inviteMode;
 
-	// Token: 0x0400324B RID: 12875
+	// Token: 0x040032CC RID: 13004
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int inviterEntityId;
 }

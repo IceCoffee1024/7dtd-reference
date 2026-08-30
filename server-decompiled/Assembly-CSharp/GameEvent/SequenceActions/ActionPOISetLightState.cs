@@ -6,11 +6,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019D0 RID: 6608
+	// Token: 0x020019F7 RID: 6647
 	[Preserve]
 	public class ActionPOISetLightState : BaseAction
 	{
-		// Token: 0x0600C917 RID: 51479 RVA: 0x0049DD7C File Offset: 0x0049BF7C
+		// Token: 0x0600CAA0 RID: 51872 RVA: 0x004A4170 File Offset: 0x004A2370
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			Vector3i poiposition = base.Owner.POIPosition;
@@ -68,7 +68,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C918 RID: 51480 RVA: 0x0049DF7B File Offset: 0x0049C17B
+		// Token: 0x0600CAA1 RID: 51873 RVA: 0x004A436F File Offset: 0x004A256F
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public IEnumerator UpdateBlocks(List<BlockChangeInfo> blockChanges)
 		{
@@ -77,7 +77,7 @@ namespace GameEvent.SequenceActions
 			yield break;
 		}
 
-		// Token: 0x0600C919 RID: 51481 RVA: 0x0049DF8C File Offset: 0x0049C18C
+		// Token: 0x0600CAA2 RID: 51874 RVA: 0x004A4380 File Offset: 0x004A2580
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -87,7 +87,7 @@ namespace GameEvent.SequenceActions
 			this.indexBlockNames = text.Split(',', StringSplitOptions.None);
 		}
 
-		// Token: 0x0600C91A RID: 51482 RVA: 0x0049DFD3 File Offset: 0x0049C1D3
+		// Token: 0x0600CAA3 RID: 51875 RVA: 0x004A43C7 File Offset: 0x004A25C7
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -98,19 +98,19 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040098A7 RID: 39079
+		// Token: 0x040099D8 RID: 39384
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool enableLights;
 
-		// Token: 0x040098A8 RID: 39080
+		// Token: 0x040099D9 RID: 39385
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string[] indexBlockNames;
 
-		// Token: 0x040098A9 RID: 39081
+		// Token: 0x040099DA RID: 39386
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropEnabled = "enable_lights";
 
-		// Token: 0x040098AA RID: 39082
+		// Token: 0x040099DB RID: 39387
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropIndexBlockName = "index_block_name";
 	}

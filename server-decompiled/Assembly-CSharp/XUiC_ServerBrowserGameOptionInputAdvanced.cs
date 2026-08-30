@@ -4,11 +4,11 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DB7 RID: 3511
+// Token: 0x02000DCB RID: 3531
 [Preserve]
 public class XUiC_ServerBrowserGameOptionInputAdvanced : XUiController
 {
-	// Token: 0x06006B7E RID: 27518 RVA: 0x0029F540 File Offset: 0x0029D740
+	// Token: 0x06006C19 RID: 27673 RVA: 0x002A26C0 File Offset: 0x002A08C0
 	public override void Init()
 	{
 		base.Init();
@@ -17,7 +17,7 @@ public class XUiC_ServerBrowserGameOptionInputAdvanced : XUiController
 		this.valueField.OnChangeHandler += this.ControlText_OnChangeHandler;
 	}
 
-	// Token: 0x06006B7F RID: 27519 RVA: 0x0029F597 File Offset: 0x0029D797
+	// Token: 0x06006C1A RID: 27674 RVA: 0x002A2717 File Offset: 0x002A0917
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ControlText_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -35,7 +35,7 @@ public class XUiC_ServerBrowserGameOptionInputAdvanced : XUiController
 		onValueChanged(this);
 	}
 
-	// Token: 0x06006B80 RID: 27520 RVA: 0x0029F5D4 File Offset: 0x0029D7D4
+	// Token: 0x06006C1B RID: 27675 RVA: 0x002A2754 File Offset: 0x002A0954
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool parse()
 	{
@@ -234,32 +234,32 @@ public class XUiC_ServerBrowserGameOptionInputAdvanced : XUiController
 		}
 	}
 
-	// Token: 0x06006B81 RID: 27521 RVA: 0x0029F97D File Offset: 0x0029DB7D
+	// Token: 0x06006C1C RID: 27676 RVA: 0x002A2AFD File Offset: 0x002A0CFD
 	public XUiC_ServersList.UiServerFilter GetFilter()
 	{
 		return this.filter;
 	}
 
-	// Token: 0x040051D7 RID: 20951
+	// Token: 0x04005279 RID: 21113
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput valueField;
 
-	// Token: 0x040051D8 RID: 20952
+	// Token: 0x0400527A RID: 21114
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameInfoInt gameInfoInt;
 
-	// Token: 0x040051D9 RID: 20953
+	// Token: 0x0400527B RID: 21115
 	public Action<XUiC_ServerBrowserGameOptionInputAdvanced> OnValueChanged;
 
-	// Token: 0x040051DA RID: 20954
+	// Token: 0x0400527C RID: 21116
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ServersList.UiServerFilter filter;
 
-	// Token: 0x040051DB RID: 20955
+	// Token: 0x0400527D RID: 21117
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Regex rangeMatcher = new Regex("^\\s*(\\d+)\\s*-\\s*(\\d+)\\s*$");
 
-	// Token: 0x040051DC RID: 20956
+	// Token: 0x0400527E RID: 21118
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Regex comparisonMatcher = new Regex("^\\s*(|<|<=|=|==|>=|>|!|!=)\\s*(\\d+)\\s*$");
 }

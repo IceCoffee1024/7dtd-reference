@@ -5,7 +5,7 @@ using UnityEngine;
 // Token: 0x020000A2 RID: 162
 public class AnimatorRangedReloadState : StateMachineBehaviour
 {
-	// Token: 0x0600032A RID: 810 RVA: 0x00017E40 File Offset: 0x00016040
+	// Token: 0x0600032A RID: 810 RVA: 0x00017E84 File Offset: 0x00016084
 	public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 		EntityAlive componentInParent = animator.GetComponentInParent<EntityAlive>();
@@ -69,7 +69,7 @@ public class AnimatorRangedReloadState : StateMachineBehaviour
 		this.actionData.invData.holdingEntity.FireEvent(MinEventTypes.onReloadStart, true);
 	}
 
-	// Token: 0x0600032B RID: 811 RVA: 0x000181E8 File Offset: 0x000163E8
+	// Token: 0x0600032B RID: 811 RVA: 0x0001822C File Offset: 0x0001642C
 	public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 		EntityAlive componentInParent = animator.GetComponentInParent<EntityAlive>();
@@ -78,7 +78,7 @@ public class AnimatorRangedReloadState : StateMachineBehaviour
 			return;
 		}
 		componentInParent.emodel.avatarController.UpdateBool("Reload", false, true);
-		if (this.actionData == null)
+		if (this.actionData == null || this.actionData.invData.holdingEntity == null)
 		{
 			return;
 		}
@@ -104,12 +104,14 @@ public class AnimatorRangedReloadState : StateMachineBehaviour
 		this.actionData.isReloadCancelled = false;
 		animator.SetBool("Reload", false);
 		this.actionData.invData.holdingEntity.StopAnimatorAudio(Entity.StopAnimatorAudioType.StopOnReloadCancel);
+		this.actionData = null;
+		this.actionRanged = null;
 	}
 
-	// Token: 0x0600032C RID: 812 RVA: 0x0001831C File Offset: 0x0001651C
+	// Token: 0x0600032C RID: 812 RVA: 0x00018384 File Offset: 0x00016584
 	public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
-		if (this.actionData != null)
+		if (this.actionData != null && this.actionData.invData.holdingEntity != null)
 		{
 			if (this.actionData.isReloadCancelled)
 			{

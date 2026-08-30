@@ -2,23 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D4A RID: 3402
+// Token: 0x02000D5D RID: 3421
 [Preserve]
 public class ItemActionEntryRecipes : BaseItemActionEntry
 {
-	// Token: 0x06006782 RID: 26498 RVA: 0x0028DCB0 File Offset: 0x0028BEB0
+	// Token: 0x06006811 RID: 26641 RVA: 0x00290C4C File Offset: 0x0028EE4C
 	public ItemActionEntryRecipes(XUiController _controller)
 		: base(_controller, "lblContextActionRecipes", "ui_game_symbol_hammer", BaseItemActionEntry.GamepadShortCut.DPadLeft, "crafting/craft_click_craft", "ui/ui_denied")
 	{
 	}
 
-	// Token: 0x06006783 RID: 26499 RVA: 0x0028DCCE File Offset: 0x0028BECE
+	// Token: 0x06006812 RID: 26642 RVA: 0x00290C6A File Offset: 0x0028EE6A
 	public override void RefreshEnabled()
 	{
 		base.Enabled = true;
 	}
 
-	// Token: 0x06006784 RID: 26500 RVA: 0x0028DCD8 File Offset: 0x0028BED8
+	// Token: 0x06006813 RID: 26643 RVA: 0x00290C74 File Offset: 0x0028EE74
 	public override void OnActivated()
 	{
 		XUi xui = base.ItemController.xui;

@@ -7,27 +7,27 @@ using UnityEngine.Scripting;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A07 RID: 6663
+	// Token: 0x02001A2E RID: 6702
 	[Preserve]
 	public abstract class Section : ContentPlayer, ISection, IPlayable, IFadeable, ICleanable
 	{
-		// Token: 0x17001863 RID: 6243
-		// (get) Token: 0x0600C9DB RID: 51675 RVA: 0x004A0096 File Offset: 0x0049E296
-		// (set) Token: 0x0600C9DC RID: 51676 RVA: 0x004A009E File Offset: 0x0049E29E
+		// Token: 0x170018D5 RID: 6357
+		// (get) Token: 0x0600CB64 RID: 52068 RVA: 0x004A648A File Offset: 0x004A468A
+		// (set) Token: 0x0600CB65 RID: 52069 RVA: 0x004A6492 File Offset: 0x004A4692
 		public SectionType Sect { get; set; }
 
-		// Token: 0x17001864 RID: 6244
-		// (get) Token: 0x0600C9DD RID: 51677 RVA: 0x004A00A7 File Offset: 0x0049E2A7
-		// (set) Token: 0x0600C9DE RID: 51678 RVA: 0x004A00AF File Offset: 0x0049E2AF
+		// Token: 0x170018D6 RID: 6358
+		// (get) Token: 0x0600CB66 RID: 52070 RVA: 0x004A649B File Offset: 0x004A469B
+		// (set) Token: 0x0600CB67 RID: 52071 RVA: 0x004A64A3 File Offset: 0x004A46A3
 		public bool IsInitialized
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x17001865 RID: 6245
-		// (get) Token: 0x0600C9E0 RID: 51680 RVA: 0x004A00D3 File Offset: 0x0049E2D3
-		// (set) Token: 0x0600C9DF RID: 51679 RVA: 0x004A00B8 File Offset: 0x0049E2B8
+		// Token: 0x170018D7 RID: 6359
+		// (get) Token: 0x0600CB69 RID: 52073 RVA: 0x004A64C7 File Offset: 0x004A46C7
+		// (set) Token: 0x0600CB68 RID: 52072 RVA: 0x004A64AC File Offset: 0x004A46AC
 		public override float Volume
 		{
 			get
@@ -47,13 +47,13 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600C9E1 RID: 51681 RVA: 0x004A00F3 File Offset: 0x0049E2F3
+		// Token: 0x0600CB6A RID: 52074 RVA: 0x004A64E7 File Offset: 0x004A46E7
 		public override void Init()
 		{
 			this.coroutines = new EnumDictionary<MusicActionType, Coroutine>();
 		}
 
-		// Token: 0x0600C9E2 RID: 51682 RVA: 0x004A0100 File Offset: 0x0049E300
+		// Token: 0x0600CB6B RID: 52075 RVA: 0x004A64F4 File Offset: 0x004A46F4
 		public override void Play()
 		{
 			if (!this.coroutines.ContainsKey(MusicActionType.Play))
@@ -73,7 +73,7 @@ namespace DynamicMusic
 			Log.Warning(stringBuilder.ToString());
 		}
 
-		// Token: 0x0600C9E3 RID: 51683 RVA: 0x004A01EC File Offset: 0x0049E3EC
+		// Token: 0x0600CB6C RID: 52076 RVA: 0x004A65E0 File Offset: 0x004A47E0
 		public override void Pause()
 		{
 			base.Pause();
@@ -85,7 +85,7 @@ namespace DynamicMusic
 			Log.Out(string.Format("Paused {0}", this.Sect));
 		}
 
-		// Token: 0x0600C9E4 RID: 51684 RVA: 0x004A021F File Offset: 0x0049E41F
+		// Token: 0x0600CB6D RID: 52077 RVA: 0x004A6613 File Offset: 0x004A4813
 		public override void UnPause()
 		{
 			base.UnPause();
@@ -97,7 +97,7 @@ namespace DynamicMusic
 			Log.Out(string.Format("Unpaused {0}", this.Sect));
 		}
 
-		// Token: 0x0600C9E5 RID: 51685 RVA: 0x004A0252 File Offset: 0x0049E452
+		// Token: 0x0600CB6E RID: 52078 RVA: 0x004A6646 File Offset: 0x004A4846
 		public override void Stop()
 		{
 			base.Stop();
@@ -109,7 +109,7 @@ namespace DynamicMusic
 			Log.Out(string.Format("Stopped {0}", this.Sect));
 		}
 
-		// Token: 0x0600C9E6 RID: 51686 RVA: 0x004A0288 File Offset: 0x0049E488
+		// Token: 0x0600CB6F RID: 52079 RVA: 0x004A667C File Offset: 0x004A487C
 		public virtual void FadeIn()
 		{
 			Coroutine coroutine;
@@ -136,7 +136,7 @@ namespace DynamicMusic
 			this.coroutines.Add(MusicActionType.FadeIn, GameManager.Instance.StartCoroutine(this.FadeInCoroutine()));
 		}
 
-		// Token: 0x0600C9E7 RID: 51687 RVA: 0x004A0340 File Offset: 0x0049E540
+		// Token: 0x0600CB70 RID: 52080 RVA: 0x004A6734 File Offset: 0x004A4934
 		public virtual void FadeOut()
 		{
 			Coroutine coroutine;
@@ -155,7 +155,7 @@ namespace DynamicMusic
 			this.coroutines.Add(MusicActionType.FadeOut, GameManager.Instance.StartCoroutine(this.FadeOutCoroutine()));
 		}
 
-		// Token: 0x0600C9E8 RID: 51688 RVA: 0x004A03D3 File Offset: 0x0049E5D3
+		// Token: 0x0600CB71 RID: 52081 RVA: 0x004A67C7 File Offset: 0x004A49C7
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual IEnumerator FadeInCoroutine()
 		{
@@ -177,7 +177,7 @@ namespace DynamicMusic
 			yield break;
 		}
 
-		// Token: 0x0600C9E9 RID: 51689 RVA: 0x004A03E2 File Offset: 0x0049E5E2
+		// Token: 0x0600CB72 RID: 52082 RVA: 0x004A67D6 File Offset: 0x004A49D6
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual IEnumerator FadeOutCoroutine()
 		{
@@ -210,18 +210,18 @@ namespace DynamicMusic
 			yield break;
 		}
 
-		// Token: 0x0600C9EA RID: 51690
+		// Token: 0x0600CB73 RID: 52083
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public abstract IEnumerator PlayCoroutine();
 
-		// Token: 0x0600C9EB RID: 51691 RVA: 0x004A03F1 File Offset: 0x0049E5F1
+		// Token: 0x0600CB74 RID: 52084 RVA: 0x004A67E5 File Offset: 0x004A49E5
 		public virtual IEnumerator PreloadRoutine()
 		{
 			yield return null;
 			yield break;
 		}
 
-		// Token: 0x0600C9EC RID: 51692 RVA: 0x004A03FC File Offset: 0x0049E5FC
+		// Token: 0x0600CB75 RID: 52085 RVA: 0x004A67F0 File Offset: 0x004A49F0
 		public virtual void CleanUp()
 		{
 			AudioSource audioSource = this.src;
@@ -251,33 +251,33 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600C9ED RID: 51693 RVA: 0x004A04DC File Offset: 0x0049E6DC
+		// Token: 0x0600CB76 RID: 52086 RVA: 0x004A68D0 File Offset: 0x004A4AD0
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public Section()
 		{
 		}
 
-		// Token: 0x04009984 RID: 39300
+		// Token: 0x04009AB5 RID: 39605
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static GameObject parent = new GameObject("Music");
 
-		// Token: 0x04009985 RID: 39301
+		// Token: 0x04009AB6 RID: 39606
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static GameRandom rng = GameRandomManager.Instance.CreateGameRandom();
 
-		// Token: 0x04009987 RID: 39303
+		// Token: 0x04009AB8 RID: 39608
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public AudioSource src;
 
-		// Token: 0x04009988 RID: 39304
+		// Token: 0x04009AB9 RID: 39609
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public EnumDictionary<MusicActionType, Coroutine> coroutines;
 
-		// Token: 0x04009989 RID: 39305
+		// Token: 0x04009ABA RID: 39610
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public Coroutine LoadRoutine;
 
-		// Token: 0x0400998B RID: 39307
+		// Token: 0x04009ABC RID: 39612
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float fadeTime = 3f;
 	}

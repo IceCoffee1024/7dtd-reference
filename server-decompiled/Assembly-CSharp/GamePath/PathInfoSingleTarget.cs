@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace GamePath
 {
-	// Token: 0x020018BB RID: 6331
+	// Token: 0x020018E1 RID: 6369
 	public class PathInfoSingleTarget : PathInfo
 	{
-		// Token: 0x0600C2F9 RID: 49913 RVA: 0x00481808 File Offset: 0x0047FA08
+		// Token: 0x0600C480 RID: 50304 RVA: 0x00487934 File Offset: 0x00485B34
 		public PathInfoSingleTarget(EntityAlive _entity, Vector3 _targetPos, bool _canBreakBlocks, float _speed, EAIBase _aiTask)
 			: base(_entity, _canBreakBlocks, _speed, _aiTask)
 		{
@@ -21,10 +21,10 @@ namespace GamePath
 			this.calculatePartial = true;
 		}
 
-		// Token: 0x04009349 RID: 37705
+		// Token: 0x04009472 RID: 38002
 		public Vector3 targetPos;
 
-		// Token: 0x0400934A RID: 37706
+		// Token: 0x04009473 RID: 38003
 		public PathEndingCondition endingCondition;
 	}
 }

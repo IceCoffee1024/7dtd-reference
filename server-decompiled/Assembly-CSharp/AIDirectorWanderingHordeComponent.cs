@@ -4,11 +4,11 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200041A RID: 1050
+// Token: 0x0200041E RID: 1054
 [Preserve]
 public class AIDirectorWanderingHordeComponent : AIDirectorHordeComponent
 {
-	// Token: 0x06002074 RID: 8308 RVA: 0x000C3C67 File Offset: 0x000C1E67
+	// Token: 0x06002091 RID: 8337 RVA: 0x000C4403 File Offset: 0x000C2603
 	public override void InitNewGame()
 	{
 		this.isPlaytest = GameUtils.IsPlaytesting();
@@ -16,7 +16,7 @@ public class AIDirectorWanderingHordeComponent : AIDirectorHordeComponent
 		this.HordeNextTime = 0UL;
 	}
 
-	// Token: 0x06002075 RID: 8309 RVA: 0x000C3C84 File Offset: 0x000C1E84
+	// Token: 0x06002092 RID: 8338 RVA: 0x000C4420 File Offset: 0x000C2620
 	public override void Tick(double _dt)
 	{
 		if (this.isPlaytest)
@@ -28,7 +28,7 @@ public class AIDirectorWanderingHordeComponent : AIDirectorHordeComponent
 		this.TickNextTime(ref this.HordeNextTime, AIWanderingHordeSpawner.SpawnType.Horde);
 	}
 
-	// Token: 0x06002076 RID: 8310 RVA: 0x000C3CAC File Offset: 0x000C1EAC
+	// Token: 0x06002093 RID: 8339 RVA: 0x000C4448 File Offset: 0x000C2648
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TickActiveSpawns(float dt)
 	{
@@ -44,7 +44,7 @@ public class AIDirectorWanderingHordeComponent : AIDirectorHordeComponent
 		}
 	}
 
-	// Token: 0x06002077 RID: 8311 RVA: 0x000C3D24 File Offset: 0x000C1F24
+	// Token: 0x06002094 RID: 8340 RVA: 0x000C44C0 File Offset: 0x000C26C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TickNextTime(ref ulong _nextTime, AIWanderingHordeSpawner.SpawnType _spawnType)
 	{
@@ -85,7 +85,7 @@ public class AIDirectorWanderingHordeComponent : AIDirectorHordeComponent
 		}
 	}
 
-	// Token: 0x06002078 RID: 8312 RVA: 0x000C3DD0 File Offset: 0x000C1FD0
+	// Token: 0x06002095 RID: 8341 RVA: 0x000C456C File Offset: 0x000C276C
 	public override void Read(BinaryReader _stream, int _version)
 	{
 		base.Read(_stream, _version);
@@ -96,7 +96,7 @@ public class AIDirectorWanderingHordeComponent : AIDirectorHordeComponent
 		}
 	}
 
-	// Token: 0x06002079 RID: 8313 RVA: 0x000C3DF6 File Offset: 0x000C1FF6
+	// Token: 0x06002096 RID: 8342 RVA: 0x000C4592 File Offset: 0x000C2792
 	public override void Write(BinaryWriter _stream)
 	{
 		base.Write(_stream);
@@ -104,7 +104,7 @@ public class AIDirectorWanderingHordeComponent : AIDirectorHordeComponent
 		_stream.Write(this.BanditNextTime);
 	}
 
-	// Token: 0x0600207A RID: 8314 RVA: 0x000C3E18 File Offset: 0x000C2018
+	// Token: 0x06002097 RID: 8343 RVA: 0x000C45B4 File Offset: 0x000C27B4
 	public void StartSpawning(AIWanderingHordeSpawner.SpawnType _spawnType)
 	{
 		AIDirector.LogAI("Wandering StartSpawning {0}", new object[] { _spawnType });
@@ -140,7 +140,7 @@ public class AIDirectorWanderingHordeComponent : AIDirectorHordeComponent
 		this.spawners.Add(new AIWanderingHordeSpawner(this.Director, _spawnType, null, list, this.Director.World.worldTime + 12000UL, vector, vector2, vector3));
 	}
 
-	// Token: 0x0600207B RID: 8315 RVA: 0x000C3F64 File Offset: 0x000C2164
+	// Token: 0x06002098 RID: 8344 RVA: 0x000C4700 File Offset: 0x000C2900
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CleanupType(AIWanderingHordeSpawner.SpawnType _spawnType)
 	{
@@ -155,8 +155,8 @@ public class AIDirectorWanderingHordeComponent : AIDirectorHordeComponent
 		}
 	}
 
-	// Token: 0x170003D0 RID: 976
-	// (get) Token: 0x0600207C RID: 8316 RVA: 0x000C3FB1 File Offset: 0x000C21B1
+	// Token: 0x170003D4 RID: 980
+	// (get) Token: 0x06002099 RID: 8345 RVA: 0x000C474D File Offset: 0x000C294D
 	public bool HasAnySpawns
 	{
 		get
@@ -165,8 +165,8 @@ public class AIDirectorWanderingHordeComponent : AIDirectorHordeComponent
 		}
 	}
 
-	// Token: 0x170003D1 RID: 977
-	// (get) Token: 0x0600207D RID: 8317 RVA: 0x000C3FC1 File Offset: 0x000C21C1
+	// Token: 0x170003D5 RID: 981
+	// (get) Token: 0x0600209A RID: 8346 RVA: 0x000C475D File Offset: 0x000C295D
 	public bool OtherHordesAreActive
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -176,7 +176,7 @@ public class AIDirectorWanderingHordeComponent : AIDirectorHordeComponent
 		}
 	}
 
-	// Token: 0x0600207E RID: 8318 RVA: 0x000C3FDC File Offset: 0x000C21DC
+	// Token: 0x0600209B RID: 8347 RVA: 0x000C4778 File Offset: 0x000C2978
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ChooseNextTime(AIWanderingHordeSpawner.SpawnType _spawnType)
 	{
@@ -192,7 +192,7 @@ public class AIDirectorWanderingHordeComponent : AIDirectorHordeComponent
 		}
 	}
 
-	// Token: 0x0600207F RID: 8319 RVA: 0x000C405E File Offset: 0x000C225E
+	// Token: 0x0600209C RID: 8348 RVA: 0x000C47FA File Offset: 0x000C29FA
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetNextTime(AIWanderingHordeSpawner.SpawnType _spawnType, ulong _time)
 	{
@@ -207,7 +207,7 @@ public class AIDirectorWanderingHordeComponent : AIDirectorHordeComponent
 		}
 	}
 
-	// Token: 0x06002080 RID: 8320 RVA: 0x000C4076 File Offset: 0x000C2276
+	// Token: 0x0600209D RID: 8349 RVA: 0x000C4812 File Offset: 0x000C2A12
 	public void LogTimes()
 	{
 		AIDirector.LogAI("Next wandering - bandit {0}, horde {1}", new object[]
@@ -217,23 +217,23 @@ public class AIDirectorWanderingHordeComponent : AIDirectorHordeComponent
 		});
 	}
 
-	// Token: 0x0400162D RID: 5677
+	// Token: 0x04001642 RID: 5698
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cNextHourMin = 7;
 
-	// Token: 0x0400162E RID: 5678
+	// Token: 0x04001643 RID: 5699
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isPlaytest;
 
-	// Token: 0x0400162F RID: 5679
+	// Token: 0x04001644 RID: 5700
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<AIWanderingHordeSpawner> spawners = new List<AIWanderingHordeSpawner>();
 
-	// Token: 0x04001630 RID: 5680
+	// Token: 0x04001645 RID: 5701
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong BanditNextTime;
 
-	// Token: 0x04001631 RID: 5681
+	// Token: 0x04001646 RID: 5702
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong HordeNextTime;
 }

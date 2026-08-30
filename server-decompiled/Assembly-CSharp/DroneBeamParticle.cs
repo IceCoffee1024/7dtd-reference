@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020003D9 RID: 985
+// Token: 0x020003DD RID: 989
 public class DroneBeamParticle : MonoBehaviour
 {
-	// Token: 0x06001DE2 RID: 7650 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06001DFF RID: 7679 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
 	}
 
-	// Token: 0x06001DE3 RID: 7651 RVA: 0x000B5B70 File Offset: 0x000B3D70
+	// Token: 0x06001E00 RID: 7680 RVA: 0x000B62B4 File Offset: 0x000B44B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -43,18 +43,18 @@ public class DroneBeamParticle : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001DE4 RID: 7652 RVA: 0x000B5C47 File Offset: 0x000B3E47
+	// Token: 0x06001E01 RID: 7681 RVA: 0x000B638B File Offset: 0x000B458B
 	public void SetDisplayTime(float time)
 	{
 		this.displayTime = time;
 	}
 
-	// Token: 0x040013F2 RID: 5106
+	// Token: 0x04001407 RID: 5127
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public EntityDrone drone;
 
-	// Token: 0x040013F3 RID: 5107
+	// Token: 0x04001408 RID: 5128
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float displayTime;

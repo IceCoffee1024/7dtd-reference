@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200086F RID: 2159
+// Token: 0x0200087B RID: 2171
 [Preserve]
 public class NetPackageWorldInitInfoRequest : NetPackage
 {
-	// Token: 0x1700068D RID: 1677
-	// (get) Token: 0x06003EF0 RID: 16112 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000699 RID: 1689
+	// (get) Token: 0x06003F55 RID: 16213 RVA: 0x00020021 File Offset: 0x0001E221
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -16,24 +16,24 @@ public class NetPackageWorldInitInfoRequest : NetPackage
 		}
 	}
 
-	// Token: 0x06003EF1 RID: 16113 RVA: 0x001290F5 File Offset: 0x001272F5
+	// Token: 0x06003F56 RID: 16214 RVA: 0x0012A165 File Offset: 0x00128365
 	public NetPackageWorldInitInfoRequest Setup()
 	{
 		return this;
 	}
 
-	// Token: 0x06003EF2 RID: 16114 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06003F57 RID: 16215 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void read(PooledBinaryReader _br)
 	{
 	}
 
-	// Token: 0x06003EF3 RID: 16115 RVA: 0x001799B3 File Offset: 0x00177BB3
+	// Token: 0x06003F58 RID: 16216 RVA: 0x0017BC33 File Offset: 0x00179E33
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
 	}
 
-	// Token: 0x06003EF4 RID: 16116 RVA: 0x0018C16C File Offset: 0x0018A36C
+	// Token: 0x06003F59 RID: 16217 RVA: 0x0018E23C File Offset: 0x0018C43C
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -57,7 +57,7 @@ public class NetPackageWorldInitInfoRequest : NetPackage
 		base.Sender.SendPackage(NetPackageManager.GetPackage<NetPackageWorldInitInfo>().Setup(list, allWallVolumes));
 	}
 
-	// Token: 0x06003EF5 RID: 16117 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x06003F5A RID: 16218 RVA: 0x00020021 File Offset: 0x0001E221
 	public override int GetLength()
 	{
 		return 1;

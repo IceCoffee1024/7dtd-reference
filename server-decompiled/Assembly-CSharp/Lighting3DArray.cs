@@ -1,21 +1,21 @@
 ﻿using System;
 
-// Token: 0x02000B3D RID: 2877
+// Token: 0x02000B4F RID: 2895
 public class Lighting3DArray : Array3DWithOffset<Lighting>
 {
-	// Token: 0x0600574D RID: 22349 RVA: 0x00215B5E File Offset: 0x00213D5E
+	// Token: 0x060057D5 RID: 22485 RVA: 0x0021887A File Offset: 0x00216A7A
 	public Lighting3DArray()
 		: base(3, 3, 3)
 	{
 	}
 
-	// Token: 0x0600574E RID: 22350 RVA: 0x00215B69 File Offset: 0x00213D69
+	// Token: 0x060057D6 RID: 22486 RVA: 0x00218885 File Offset: 0x00216A85
 	public void SetBlockCache(INeighborBlockCache _nBlocks)
 	{
 		this.nBlocks = _nBlocks;
 	}
 
-	// Token: 0x0600574F RID: 22351 RVA: 0x00215B74 File Offset: 0x00213D74
+	// Token: 0x060057D7 RID: 22487 RVA: 0x00218890 File Offset: 0x00216A90
 	public void SetPosition(Vector3i _blockPos)
 	{
 		this.stab = this.nBlocks.GetChunk(0, 0).GetStability(_blockPos.x, _blockPos.y, _blockPos.z);
@@ -36,7 +36,7 @@ public class Lighting3DArray : Array3DWithOffset<Lighting>
 		this.blockPos = _blockPos;
 	}
 
-	// Token: 0x06005750 RID: 22352 RVA: 0x00215C34 File Offset: 0x00213E34
+	// Token: 0x060057D8 RID: 22488 RVA: 0x00218950 File Offset: 0x00216B50
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Lighting GetLight(IChunk _c, int _x, int _y, int _z)
 	{
@@ -49,7 +49,7 @@ public class Lighting3DArray : Array3DWithOffset<Lighting>
 		return new Lighting(_c.GetLight(_x, _y, _z, Chunk.LIGHT_TYPE.SUN), 0, this.stab);
 	}
 
-	// Token: 0x17000937 RID: 2359
+	// Token: 0x17000949 RID: 2377
 	public override Lighting this[int _x, int _y, int _z]
 	{
 		get
@@ -71,31 +71,31 @@ public class Lighting3DArray : Array3DWithOffset<Lighting>
 		}
 	}
 
-	// Token: 0x04004334 RID: 17204
+	// Token: 0x040043CF RID: 17359
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cSize = 3;
 
-	// Token: 0x04004335 RID: 17205
+	// Token: 0x040043D0 RID: 17360
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cSize2d = 9;
 
-	// Token: 0x04004336 RID: 17206
+	// Token: 0x040043D1 RID: 17361
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cSize3d = 27;
 
-	// Token: 0x04004337 RID: 17207
+	// Token: 0x040043D2 RID: 17362
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int available;
 
-	// Token: 0x04004338 RID: 17208
+	// Token: 0x040043D3 RID: 17363
 	[PublicizedFrom(EAccessModifier.Private)]
 	public INeighborBlockCache nBlocks;
 
-	// Token: 0x04004339 RID: 17209
+	// Token: 0x040043D4 RID: 17364
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i blockPos;
 
-	// Token: 0x0400433A RID: 17210
+	// Token: 0x040043D5 RID: 17365
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte stab;
 }

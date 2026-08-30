@@ -7,11 +7,11 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Token: 0x02000B68 RID: 2920
+// Token: 0x02000B7A RID: 2938
 public class MultiBlockManager
 {
-	// Token: 0x1700094B RID: 2379
-	// (get) Token: 0x06005866 RID: 22630 RVA: 0x0021DBAE File Offset: 0x0021BDAE
+	// Token: 0x1700095D RID: 2397
+	// (get) Token: 0x060058EE RID: 22766 RVA: 0x002208CA File Offset: 0x0021EACA
 	public static MultiBlockManager Instance
 	{
 		get
@@ -24,13 +24,13 @@ public class MultiBlockManager
 		}
 	}
 
-	// Token: 0x06005867 RID: 22631 RVA: 0x0021DBC8 File Offset: 0x0021BDC8
+	// Token: 0x060058EF RID: 22767 RVA: 0x002208E4 File Offset: 0x0021EAE4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MultiBlockManager()
 	{
 	}
 
-	// Token: 0x06005868 RID: 22632 RVA: 0x0021DC1D File Offset: 0x0021BE1D
+	// Token: 0x060058F0 RID: 22768 RVA: 0x00220939 File Offset: 0x0021EB39
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool CheckFeatures(MultiBlockManager.FeatureFlags targetFeatures, MultiBlockManager.FeatureRequirement requirement = MultiBlockManager.FeatureRequirement.AllEnabled)
 	{
@@ -45,8 +45,8 @@ public class MultiBlockManager
 		return (this.enabledFeatures & targetFeatures) == targetFeatures;
 	}
 
-	// Token: 0x1700094C RID: 2380
-	// (get) Token: 0x06005869 RID: 22633 RVA: 0x0021DC5C File Offset: 0x0021BE5C
+	// Token: 0x1700095E RID: 2398
+	// (get) Token: 0x060058F1 RID: 22769 RVA: 0x00220978 File Offset: 0x0021EB78
 	public bool NoFeaturesEnabled
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -56,7 +56,7 @@ public class MultiBlockManager
 		}
 	}
 
-	// Token: 0x0600586A RID: 22634 RVA: 0x0021DC68 File Offset: 0x0021BE68
+	// Token: 0x060058F2 RID: 22770 RVA: 0x00220984 File Offset: 0x0021EB84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MultiBlockManager.FeatureFlags GetFeaturesForMode(MultiBlockManager.Mode mode)
 	{
@@ -85,8 +85,8 @@ public class MultiBlockManager
 		return featureFlags;
 	}
 
-	// Token: 0x1700094D RID: 2381
-	// (get) Token: 0x0600586B RID: 22635 RVA: 0x0021DCAF File Offset: 0x0021BEAF
+	// Token: 0x1700095F RID: 2399
+	// (get) Token: 0x060058F3 RID: 22771 RVA: 0x002209CB File Offset: 0x0021EBCB
 	public bool POIMBTrackingEnabled
 	{
 		get
@@ -95,7 +95,7 @@ public class MultiBlockManager
 		}
 	}
 
-	// Token: 0x0600586C RID: 22636 RVA: 0x0021DCBC File Offset: 0x0021BEBC
+	// Token: 0x060058F4 RID: 22772 RVA: 0x002209D8 File Offset: 0x0021EBD8
 	public void Initialize(RegionFileManager regionFileManager)
 	{
 		object obj = this.lockObj;
@@ -138,7 +138,7 @@ public class MultiBlockManager
 		}
 	}
 
-	// Token: 0x0600586D RID: 22637 RVA: 0x0021DE54 File Offset: 0x0021C054
+	// Token: 0x060058F5 RID: 22773 RVA: 0x00220B70 File Offset: 0x0021ED70
 	public void Cleanup()
 	{
 		if (this.NoFeaturesEnabled)
@@ -169,7 +169,7 @@ public class MultiBlockManager
 		}
 	}
 
-	// Token: 0x0600586E RID: 22638 RVA: 0x0021DF84 File Offset: 0x0021C184
+	// Token: 0x060058F6 RID: 22774 RVA: 0x00220CA0 File Offset: 0x0021EEA0
 	public void SaveIfDirty()
 	{
 		if (!this.CheckFeatures(MultiBlockManager.FeatureFlags.Serialization, MultiBlockManager.FeatureRequirement.AllEnabled))
@@ -212,7 +212,7 @@ public class MultiBlockManager
 		}
 	}
 
-	// Token: 0x0600586F RID: 22639 RVA: 0x0021E11C File Offset: 0x0021C31C
+	// Token: 0x060058F7 RID: 22775 RVA: 0x00220E38 File Offset: 0x0021F038
 	public void CullChunklessData()
 	{
 		if (!this.CheckFeatures(MultiBlockManager.FeatureFlags.CrossChunkMBTracking, MultiBlockManager.FeatureRequirement.AllEnabled))
@@ -240,7 +240,7 @@ public class MultiBlockManager
 		}
 	}
 
-	// Token: 0x06005870 RID: 22640 RVA: 0x0021E1E8 File Offset: 0x0021C3E8
+	// Token: 0x060058F8 RID: 22776 RVA: 0x00220F04 File Offset: 0x0021F104
 	public void UpdateTrackedBlockData(Vector3i worldPos, BlockValue blockValue, bool poiOwned)
 	{
 		if (this.NoFeaturesEnabled)
@@ -303,7 +303,7 @@ public class MultiBlockManager
 		}
 	}
 
-	// Token: 0x06005871 RID: 22641 RVA: 0x0021E318 File Offset: 0x0021C518
+	// Token: 0x060058F9 RID: 22777 RVA: 0x00221034 File Offset: 0x0021F234
 	public void DeregisterTrackedBlockData(Vector3i worldPos)
 	{
 		if (this.NoFeaturesEnabled)
@@ -318,7 +318,7 @@ public class MultiBlockManager
 		}
 	}
 
-	// Token: 0x06005872 RID: 22642 RVA: 0x0021E368 File Offset: 0x0021C568
+	// Token: 0x060058FA RID: 22778 RVA: 0x00221084 File Offset: 0x0021F284
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DeregisterTrackedBlockDataInternal(Vector3i worldPos)
 	{
@@ -336,7 +336,7 @@ public class MultiBlockManager
 		}
 	}
 
-	// Token: 0x06005873 RID: 22643 RVA: 0x0021E3CC File Offset: 0x0021C5CC
+	// Token: 0x060058FB RID: 22779 RVA: 0x002210E8 File Offset: 0x0021F2E8
 	public void DeregisterTrackedBlockDatas(Bounds bounds)
 	{
 		if (this.NoFeaturesEnabled)
@@ -369,20 +369,20 @@ public class MultiBlockManager
 		}
 	}
 
-	// Token: 0x06005874 RID: 22644 RVA: 0x0021E4C0 File Offset: 0x0021C6C0
+	// Token: 0x060058FC RID: 22780 RVA: 0x002211DC File Offset: 0x0021F3DC
 	public void MainThreadUpdate()
 	{
 		this.UpdateAlignment();
 		this.UpdateOversizedStability();
 	}
 
-	// Token: 0x06005875 RID: 22645 RVA: 0x0021E4CE File Offset: 0x0021C6CE
+	// Token: 0x060058FD RID: 22781 RVA: 0x002211EA File Offset: 0x0021F3EA
 	public bool TryRegisterTerrainAlignedBlock(Vector3i worldPos, BlockValue blockValue)
 	{
 		return this.TryRegisterTerrainAlignedBlockInternal(worldPos, blockValue);
 	}
 
-	// Token: 0x06005876 RID: 22646 RVA: 0x0021E4D8 File Offset: 0x0021C6D8
+	// Token: 0x060058FE RID: 22782 RVA: 0x002211F4 File Offset: 0x0021F3F4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryRegisterTerrainAlignedBlockInternal(Vector3i worldPos, BlockValue blockValue)
 	{
@@ -453,7 +453,7 @@ public class MultiBlockManager
 		return flag2;
 	}
 
-	// Token: 0x06005877 RID: 22647 RVA: 0x0021E6AC File Offset: 0x0021C8AC
+	// Token: 0x060058FF RID: 22783 RVA: 0x002213C8 File Offset: 0x0021F5C8
 	public void SetTerrainAlignmentDirty(Vector3i worldPos)
 	{
 		if (!this.CheckFeatures(MultiBlockManager.FeatureFlags.TerrainAlignment, MultiBlockManager.FeatureRequirement.AllEnabled))
@@ -477,7 +477,7 @@ public class MultiBlockManager
 		}
 	}
 
-	// Token: 0x06005878 RID: 22648 RVA: 0x0021E73C File Offset: 0x0021C93C
+	// Token: 0x06005900 RID: 22784 RVA: 0x00221458 File Offset: 0x0021F658
 	public void SetTerrainAlignmentDirty(BlockValueRef bvRef)
 	{
 		switch (bvRef.Type)
@@ -493,7 +493,7 @@ public class MultiBlockManager
 		}
 	}
 
-	// Token: 0x06005879 RID: 22649 RVA: 0x0021E778 File Offset: 0x0021C978
+	// Token: 0x06005901 RID: 22785 RVA: 0x00221494 File Offset: 0x0021F694
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateAlignment()
 	{
@@ -520,7 +520,7 @@ public class MultiBlockManager
 		}
 	}
 
-	// Token: 0x0600587A RID: 22650 RVA: 0x0021E840 File Offset: 0x0021CA40
+	// Token: 0x06005902 RID: 22786 RVA: 0x0022155C File Offset: 0x0021F75C
 	public void CullChunklessDataOnClient(List<long> removedChunks)
 	{
 		MultiBlockManager.<>c__DisplayClass47_0 CS$<>8__locals1;
@@ -550,7 +550,7 @@ public class MultiBlockManager
 		}
 	}
 
-	// Token: 0x0600587B RID: 22651 RVA: 0x0021E918 File Offset: 0x0021CB18
+	// Token: 0x06005903 RID: 22787 RVA: 0x00221634 File Offset: 0x0021F834
 	public bool TryRegisterPOIMultiBlock(Vector3i parentWorldPos, BlockValue blockValue)
 	{
 		if (!this.CheckFeatures(MultiBlockManager.FeatureFlags.POIMBTracking, MultiBlockManager.FeatureRequirement.AllEnabled))
@@ -603,7 +603,7 @@ public class MultiBlockManager
 		return flag2;
 	}
 
-	// Token: 0x0600587C RID: 22652 RVA: 0x0021EAD4 File Offset: 0x0021CCD4
+	// Token: 0x06005904 RID: 22788 RVA: 0x002217F0 File Offset: 0x0021F9F0
 	public static void GetMinMaxWorldPositions(Vector3i parentWorldPos, BlockValue blockValue, out Vector3i minPos, out Vector3i maxPos)
 	{
 		minPos = parentWorldPos;
@@ -616,7 +616,7 @@ public class MultiBlockManager
 		}
 	}
 
-	// Token: 0x0600587D RID: 22653 RVA: 0x0021EB58 File Offset: 0x0021CD58
+	// Token: 0x06005905 RID: 22789 RVA: 0x00221874 File Offset: 0x0021FA74
 	public bool TryGetPOIMultiBlock(Vector3i parentWorldPos, out MultiBlockManager.TrackedBlockData poiMultiBlock)
 	{
 		if (!this.CheckFeatures(MultiBlockManager.FeatureFlags.POIMBTracking, MultiBlockManager.FeatureRequirement.AllEnabled))
@@ -633,7 +633,7 @@ public class MultiBlockManager
 		return flag2;
 	}
 
-	// Token: 0x0600587E RID: 22654 RVA: 0x0021EBBC File Offset: 0x0021CDBC
+	// Token: 0x06005906 RID: 22790 RVA: 0x002218D8 File Offset: 0x0021FAD8
 	public bool TryGetOversizedBlock(Vector3i worldPos, out BlockValue oversizedBlock, out Vector3i oversizedBlockParent, out Vector3i oversizedBlockOffset)
 	{
 		object obj = this.lockObj;
@@ -672,7 +672,7 @@ public class MultiBlockManager
 		return false;
 	}
 
-	// Token: 0x0600587F RID: 22655 RVA: 0x0021ED68 File Offset: 0x0021CF68
+	// Token: 0x06005907 RID: 22791 RVA: 0x00221A84 File Offset: 0x0021FC84
 	public void CullCompletePOIPlacements()
 	{
 		if (!this.CheckFeatures(MultiBlockManager.FeatureFlags.POIMBTracking | MultiBlockManager.FeatureFlags.Serialization, MultiBlockManager.FeatureRequirement.AllEnabled))
@@ -700,7 +700,7 @@ public class MultiBlockManager
 		}
 	}
 
-	// Token: 0x06005880 RID: 22656 RVA: 0x0021EE48 File Offset: 0x0021D048
+	// Token: 0x06005908 RID: 22792 RVA: 0x00221B64 File Offset: 0x0021FD64
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryRegisterCrossChunkMultiBlock(Vector3i parentWorldPos, BlockValue parentBlockValue)
 	{
@@ -775,7 +775,7 @@ public class MultiBlockManager
 		return flag2;
 	}
 
-	// Token: 0x06005881 RID: 22657 RVA: 0x0021F078 File Offset: 0x0021D278
+	// Token: 0x06005909 RID: 22793 RVA: 0x00221D94 File Offset: 0x0021FF94
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ProcessDeregistrationCleanup()
 	{
@@ -806,7 +806,7 @@ public class MultiBlockManager
 		this.deregisteredMultiBlockCount = 0;
 	}
 
-	// Token: 0x06005882 RID: 22658 RVA: 0x0021F180 File Offset: 0x0021D380
+	// Token: 0x0600590A RID: 22794 RVA: 0x00221E9C File Offset: 0x0022009C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryRegisterOversizedBlock(Vector3i worldPos, BlockValue blockValue)
 	{
@@ -835,7 +835,7 @@ public class MultiBlockManager
 		return true;
 	}
 
-	// Token: 0x06005883 RID: 22659 RVA: 0x0021F280 File Offset: 0x0021D480
+	// Token: 0x0600590B RID: 22795 RVA: 0x00221F9C File Offset: 0x0022019C
 	public void SetOversizedStabilityDirty(Vector3i worldPos)
 	{
 		if (!this.CheckFeatures(MultiBlockManager.FeatureFlags.OversizedStability, MultiBlockManager.FeatureRequirement.AllEnabled))
@@ -876,7 +876,7 @@ public class MultiBlockManager
 		}
 	}
 
-	// Token: 0x06005884 RID: 22660 RVA: 0x0021F3EC File Offset: 0x0021D5EC
+	// Token: 0x0600590C RID: 22796 RVA: 0x00222108 File Offset: 0x00220308
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnChunkRegeneratedOrDisplayed(Chunk chunk)
 	{
@@ -892,7 +892,7 @@ public class MultiBlockManager
 		}
 	}
 
-	// Token: 0x06005885 RID: 22661 RVA: 0x0021F45C File Offset: 0x0021D65C
+	// Token: 0x0600590D RID: 22797 RVA: 0x00222178 File Offset: 0x00220378
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnChunkInitialized(Chunk chunk)
 	{
@@ -915,7 +915,7 @@ public class MultiBlockManager
 		}
 	}
 
-	// Token: 0x06005886 RID: 22662 RVA: 0x0021F4F8 File Offset: 0x0021D6F8
+	// Token: 0x0600590E RID: 22798 RVA: 0x00222214 File Offset: 0x00220414
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnChunkStabilityCalculationEnabled(Chunk chunk)
 	{
@@ -931,7 +931,7 @@ public class MultiBlockManager
 		}
 	}
 
-	// Token: 0x06005887 RID: 22663 RVA: 0x0021F568 File Offset: 0x0021D768
+	// Token: 0x0600590F RID: 22799 RVA: 0x00222284 File Offset: 0x00220484
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void AddChunkOverlappingBlocksToSet(Vector2i chunkPos, MultiBlockManager.TrackedDataMap.SubsetAccessor blocksMap, HashSet<Vector3i> targetSet)
 	{
@@ -950,7 +950,7 @@ public class MultiBlockManager
 		}
 	}
 
-	// Token: 0x06005888 RID: 22664 RVA: 0x0021F5FC File Offset: 0x0021D7FC
+	// Token: 0x06005910 RID: 22800 RVA: 0x00222318 File Offset: 0x00220518
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateOversizedStability()
 	{
@@ -977,7 +977,7 @@ public class MultiBlockManager
 		}
 	}
 
-	// Token: 0x06005889 RID: 22665 RVA: 0x00067848 File Offset: 0x00065A48
+	// Token: 0x06005911 RID: 22801 RVA: 0x00067DD8 File Offset: 0x00065FD8
 	[Conditional("MBM_ENABLE_GENERAL_LOG")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void DebugLogGeneral(string message)
@@ -985,7 +985,7 @@ public class MultiBlockManager
 		Log.Out(message);
 	}
 
-	// Token: 0x0600588A RID: 22666 RVA: 0x00067848 File Offset: 0x00065A48
+	// Token: 0x06005912 RID: 22802 RVA: 0x00067DD8 File Offset: 0x00065FD8
 	[Conditional("MBM_ENABLE_PLACEMENT_LOG")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void DebugLogPlacement(string message)
@@ -993,7 +993,7 @@ public class MultiBlockManager
 		Log.Out(message);
 	}
 
-	// Token: 0x0600588B RID: 22667 RVA: 0x00067848 File Offset: 0x00065A48
+	// Token: 0x06005913 RID: 22803 RVA: 0x00067DD8 File Offset: 0x00065FD8
 	[Conditional("MBM_ENABLE_REGISTRATION_LOG")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void DebugLogRegistration(string message)
@@ -1001,7 +1001,7 @@ public class MultiBlockManager
 		Log.Out(message);
 	}
 
-	// Token: 0x0600588C RID: 22668 RVA: 0x00067848 File Offset: 0x00065A48
+	// Token: 0x06005914 RID: 22804 RVA: 0x00067DD8 File Offset: 0x00065FD8
 	[Conditional("MBM_ENABLE_STABILITY_LOG")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void DebugLogStability(string message)
@@ -1009,7 +1009,7 @@ public class MultiBlockManager
 		Log.Out(message);
 	}
 
-	// Token: 0x0600588D RID: 22669 RVA: 0x00067848 File Offset: 0x00065A48
+	// Token: 0x06005915 RID: 22805 RVA: 0x00067DD8 File Offset: 0x00065FD8
 	[Conditional("MBM_ENABLE_ALIGNMENT_LOG")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void DebugLogAlignment(string message)
@@ -1017,14 +1017,14 @@ public class MultiBlockManager
 		Log.Out(message);
 	}
 
-	// Token: 0x0600588E RID: 22670 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005916 RID: 22806 RVA: 0x000027FC File Offset: 0x000009FC
 	[Conditional("MBM_ENABLE_PROFILER_MARKERS")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateProfilerCounters()
 	{
 	}
 
-	// Token: 0x0600588F RID: 22671 RVA: 0x0021F6D4 File Offset: 0x0021D8D4
+	// Token: 0x06005917 RID: 22807 RVA: 0x002223F0 File Offset: 0x002205F0
 	[Conditional("MBM_ENABLED_SANITY_CHECKS")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DoCurrentModeSanityChecks()
@@ -1047,7 +1047,7 @@ public class MultiBlockManager
 		}
 	}
 
-	// Token: 0x06005890 RID: 22672 RVA: 0x0021F77C File Offset: 0x0021D97C
+	// Token: 0x06005918 RID: 22808 RVA: 0x00222498 File Offset: 0x00220698
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool <Initialize>g__TryLoad|33_0()
@@ -1107,7 +1107,7 @@ public class MultiBlockManager
 		return flag;
 	}
 
-	// Token: 0x06005891 RID: 22673 RVA: 0x0021F8BC File Offset: 0x0021DABC
+	// Token: 0x06005919 RID: 22809 RVA: 0x002225D8 File Offset: 0x002207D8
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool <CullChunklessData>g__AnyOverlappedChunkIsSyncedOrInSaveDir|36_0(RectInt flatChunkBounds)
@@ -1126,7 +1126,7 @@ public class MultiBlockManager
 		return false;
 	}
 
-	// Token: 0x06005892 RID: 22674 RVA: 0x0021F920 File Offset: 0x0021DB20
+	// Token: 0x0600591A RID: 22810 RVA: 0x0022263C File Offset: 0x0022083C
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void <TryRegisterTerrainAlignedBlockInternal>g__RegisterTerrainAlignedBlock|43_0(Vector3i worldPos, BlockValue blockValue, RectInt flatChunkBounds)
@@ -1136,7 +1136,7 @@ public class MultiBlockManager
 		this.isDirty = true;
 	}
 
-	// Token: 0x06005893 RID: 22675 RVA: 0x0021F94C File Offset: 0x0021DB4C
+	// Token: 0x0600591B RID: 22811 RVA: 0x00222668 File Offset: 0x00220868
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool <UpdateAlignment>g__AllOverlappedChunksAreReady|46_0(RectInt flatChunkBounds)
@@ -1156,7 +1156,7 @@ public class MultiBlockManager
 		return true;
 	}
 
-	// Token: 0x06005894 RID: 22676 RVA: 0x0021F9D0 File Offset: 0x0021DBD0
+	// Token: 0x0600591C RID: 22812 RVA: 0x002226EC File Offset: 0x002208EC
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool <UpdateAlignment>g__TryAlignBlock|46_1(Vector3i worldPos, MultiBlockManager.TrackedBlockData blockData)
@@ -1178,7 +1178,7 @@ public class MultiBlockManager
 		return false;
 	}
 
-	// Token: 0x06005895 RID: 22677 RVA: 0x0021FA68 File Offset: 0x0021DC68
+	// Token: 0x0600591D RID: 22813 RVA: 0x00222784 File Offset: 0x00220984
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool <CullChunklessDataOnClient>g__AnyOverlappedChunkIsSynced|47_0(RectInt flatChunkBounds, ref MultiBlockManager.<>c__DisplayClass47_0 A_2)
@@ -1197,7 +1197,7 @@ public class MultiBlockManager
 		return false;
 	}
 
-	// Token: 0x06005896 RID: 22678 RVA: 0x0021FACC File Offset: 0x0021DCCC
+	// Token: 0x0600591E RID: 22814 RVA: 0x002227E8 File Offset: 0x002209E8
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool <CullCompletePOIPlacements>g__AllOverlappedChunksAreSavedAndDormant|52_0(RectInt flatChunkBounds)
@@ -1216,7 +1216,7 @@ public class MultiBlockManager
 		return true;
 	}
 
-	// Token: 0x06005897 RID: 22679 RVA: 0x0021FB30 File Offset: 0x0021DD30
+	// Token: 0x0600591F RID: 22815 RVA: 0x0022284C File Offset: 0x00220A4C
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool <UpdateOversizedStability>g__AllOverlappedChunksAreSyncedAndInitialized|61_0(RectInt flatChunkBounds)
@@ -1236,7 +1236,7 @@ public class MultiBlockManager
 		return true;
 	}
 
-	// Token: 0x06005898 RID: 22680 RVA: 0x0021FB98 File Offset: 0x0021DD98
+	// Token: 0x06005920 RID: 22816 RVA: 0x002228B4 File Offset: 0x00220AB4
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool <UpdateOversizedStability>g__IsOversizedBlockStable|61_1(Vector3i worldPos, MultiBlockManager.TrackedBlockData blockData)
@@ -1271,100 +1271,100 @@ public class MultiBlockManager
 		return false;
 	}
 
-	// Token: 0x0400447B RID: 17531
+	// Token: 0x04004516 RID: 17686
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const byte FILEVERSION = 6;
 
-	// Token: 0x0400447C RID: 17532
+	// Token: 0x04004517 RID: 17687
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int c_deregisteredMultiBlockLimit = 20;
 
-	// Token: 0x0400447D RID: 17533
+	// Token: 0x04004518 RID: 17688
 	[PublicizedFrom(EAccessModifier.Private)]
 	public object lockObj = new object();
 
-	// Token: 0x0400447E RID: 17534
+	// Token: 0x04004519 RID: 17689
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static MultiBlockManager m_Instance;
 
-	// Token: 0x0400447F RID: 17535
+	// Token: 0x0400451A RID: 17690
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RegionFileManager regionFileManager;
 
-	// Token: 0x04004480 RID: 17536
+	// Token: 0x0400451B RID: 17691
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MultiBlockManager.TrackedDataMap trackedDataMap = new MultiBlockManager.TrackedDataMap();
 
-	// Token: 0x04004481 RID: 17537
+	// Token: 0x0400451C RID: 17692
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<Vector3i> oversizedBlocksWithDirtyStability = new HashSet<Vector3i>();
 
-	// Token: 0x04004482 RID: 17538
+	// Token: 0x0400451D RID: 17693
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<Vector3i> blocksWithDirtyAlignment = new HashSet<Vector3i>();
 
-	// Token: 0x04004483 RID: 17539
+	// Token: 0x0400451E RID: 17694
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Queue<Vector3i> keysToRemove = new Queue<Vector3i>();
 
-	// Token: 0x04004484 RID: 17540
+	// Token: 0x0400451F RID: 17695
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<long> tempChunksToGroup = new List<long>();
 
-	// Token: 0x04004485 RID: 17541
+	// Token: 0x04004520 RID: 17696
 	[PublicizedFrom(EAccessModifier.Private)]
 	public World world;
 
-	// Token: 0x04004486 RID: 17542
+	// Token: 0x04004521 RID: 17697
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ChunkCluster cc;
 
-	// Token: 0x04004487 RID: 17543
+	// Token: 0x04004522 RID: 17698
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ChunkManager chunkManager;
 
-	// Token: 0x04004488 RID: 17544
+	// Token: 0x04004523 RID: 17699
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string filePath;
 
-	// Token: 0x04004489 RID: 17545
+	// Token: 0x04004524 RID: 17700
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isDirty;
 
-	// Token: 0x0400448A RID: 17546
+	// Token: 0x04004525 RID: 17701
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int deregisteredMultiBlockCount;
 
-	// Token: 0x0400448B RID: 17547
+	// Token: 0x04004526 RID: 17702
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MultiBlockManager.Mode currentMode;
 
-	// Token: 0x0400448C RID: 17548
+	// Token: 0x04004527 RID: 17703
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MultiBlockManager.FeatureFlags enabledFeatures;
 
-	// Token: 0x02000B69 RID: 2921
+	// Token: 0x02000B7B RID: 2939
 	[Flags]
 	public enum TrackingTypeFlags : byte
 	{
-		// Token: 0x0400448E RID: 17550
+		// Token: 0x04004529 RID: 17705
 		None = 0,
-		// Token: 0x0400448F RID: 17551
+		// Token: 0x0400452A RID: 17706
 		PoiMultiBlock = 1,
-		// Token: 0x04004490 RID: 17552
+		// Token: 0x0400452B RID: 17707
 		CrossChunkMultiBlock = 2,
-		// Token: 0x04004491 RID: 17553
+		// Token: 0x0400452C RID: 17708
 		OversizedBlock = 4,
-		// Token: 0x04004492 RID: 17554
+		// Token: 0x0400452D RID: 17709
 		TerrainAlignedBlock = 8,
-		// Token: 0x04004493 RID: 17555
+		// Token: 0x0400452E RID: 17710
 		All = 15
 	}
 
-	// Token: 0x02000B6A RID: 2922
+	// Token: 0x02000B7C RID: 2940
 	public struct TrackedBlockData
 	{
-		// Token: 0x06005899 RID: 22681 RVA: 0x0021FC87 File Offset: 0x0021DE87
+		// Token: 0x06005921 RID: 22817 RVA: 0x002229A3 File Offset: 0x00220BA3
 		public TrackedBlockData(uint rawData, RectInt flatChunkBounds, MultiBlockManager.TrackingTypeFlags trackingTypeFlags)
 		{
 			this.rawData = rawData;
@@ -1372,35 +1372,35 @@ public class MultiBlockManager
 			this.trackingTypeFlags = trackingTypeFlags;
 		}
 
-		// Token: 0x04004494 RID: 17556
+		// Token: 0x0400452F RID: 17711
 		public readonly uint rawData;
 
-		// Token: 0x04004495 RID: 17557
+		// Token: 0x04004530 RID: 17712
 		public readonly RectInt flatChunkBounds;
 
-		// Token: 0x04004496 RID: 17558
+		// Token: 0x04004531 RID: 17713
 		public readonly MultiBlockManager.TrackingTypeFlags trackingTypeFlags;
 	}
 
-	// Token: 0x02000B6B RID: 2923
+	// Token: 0x02000B7D RID: 2941
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class TrackedDataMap
 	{
-		// Token: 0x0600589A RID: 22682 RVA: 0x0021FCA0 File Offset: 0x0021DEA0
+		// Token: 0x06005922 RID: 22818 RVA: 0x002229BC File Offset: 0x00220BBC
 		public TrackedDataMap()
 		{
 			this.TrackedDataByPosition = new ReadOnlyDictionary<Vector3i, MultiBlockManager.TrackedBlockData>(this.trackedDataByPosition);
 			this.OversizedBlocksByChunkPosition = new ReadOnlyDictionary<Vector2i, HashSet<Vector3i>>(this.oversizedBlocksByChunkPosition);
 		}
 
-		// Token: 0x0600589B RID: 22683 RVA: 0x0021FD17 File Offset: 0x0021DF17
+		// Token: 0x06005923 RID: 22819 RVA: 0x00222A33 File Offset: 0x00220C33
 		public bool ContainsKey(Vector3i key)
 		{
 			return this.trackedDataByPosition.ContainsKey(key);
 		}
 
-		// Token: 0x1700094E RID: 2382
-		// (get) Token: 0x0600589C RID: 22684 RVA: 0x0021FD25 File Offset: 0x0021DF25
+		// Token: 0x17000960 RID: 2400
+		// (get) Token: 0x06005924 RID: 22820 RVA: 0x00222A41 File Offset: 0x00220C41
 		public int Count
 		{
 			get
@@ -1409,13 +1409,13 @@ public class MultiBlockManager
 			}
 		}
 
-		// Token: 0x0600589D RID: 22685 RVA: 0x0021FD32 File Offset: 0x0021DF32
+		// Token: 0x06005925 RID: 22821 RVA: 0x00222A4E File Offset: 0x00220C4E
 		public bool TryGetValue(Vector3i key, out MultiBlockManager.TrackedBlockData value)
 		{
 			return this.trackedDataByPosition.TryGetValue(key, out value);
 		}
 
-		// Token: 0x0600589E RID: 22686 RVA: 0x0021FD44 File Offset: 0x0021DF44
+		// Token: 0x06005926 RID: 22822 RVA: 0x00222A60 File Offset: 0x00220C60
 		public void Clear()
 		{
 			this.trackedDataByPosition.Clear();
@@ -1426,7 +1426,7 @@ public class MultiBlockManager
 			this.oversizedBlocksByChunkPosition.Clear();
 		}
 
-		// Token: 0x0600589F RID: 22687 RVA: 0x0021FD94 File Offset: 0x0021DF94
+		// Token: 0x06005927 RID: 22823 RVA: 0x00222AB0 File Offset: 0x00220CB0
 		public void AddOrMergeTrackedData(Vector3i worldPos, uint rawData, RectInt flatChunkBounds, MultiBlockManager.TrackingTypeFlags trackingTypeFlags)
 		{
 			if (trackingTypeFlags == MultiBlockManager.TrackingTypeFlags.None)
@@ -1487,7 +1487,7 @@ public class MultiBlockManager
 			}
 		}
 
-		// Token: 0x060058A0 RID: 22688 RVA: 0x0021FEFC File Offset: 0x0021E0FC
+		// Token: 0x06005928 RID: 22824 RVA: 0x00222C18 File Offset: 0x00220E18
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void AddOversizedBlockToChunkBins(Vector3i worldPos)
 		{
@@ -1513,7 +1513,7 @@ public class MultiBlockManager
 			}
 		}
 
-		// Token: 0x060058A1 RID: 22689 RVA: 0x0021FFB0 File Offset: 0x0021E1B0
+		// Token: 0x06005929 RID: 22825 RVA: 0x00222CCC File Offset: 0x00220ECC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void RemoveOversizedBlockFromChunkBins(Vector3i worldPos)
 		{
@@ -1537,7 +1537,7 @@ public class MultiBlockManager
 			}
 		}
 
-		// Token: 0x060058A2 RID: 22690 RVA: 0x00220050 File Offset: 0x0021E250
+		// Token: 0x0600592A RID: 22826 RVA: 0x00222D6C File Offset: 0x00220F6C
 		public void RemoveTrackedData(Vector3i worldPos, MultiBlockManager.TrackingTypeFlags flagsToRemove)
 		{
 			MultiBlockManager.TrackedBlockData trackedBlockData;
@@ -1578,8 +1578,8 @@ public class MultiBlockManager
 			this.trackedDataByPosition[worldPos] = new MultiBlockManager.TrackedBlockData(trackedBlockData.rawData, trackedBlockData.flatChunkBounds, trackingTypeFlags2);
 		}
 
-		// Token: 0x1700094F RID: 2383
-		// (get) Token: 0x060058A3 RID: 22691 RVA: 0x0022012E File Offset: 0x0021E32E
+		// Token: 0x17000961 RID: 2401
+		// (get) Token: 0x0600592B RID: 22827 RVA: 0x00222E4A File Offset: 0x0022104A
 		public MultiBlockManager.TrackedDataMap.SubsetAccessor PoiMultiBlocks
 		{
 			get
@@ -1588,8 +1588,8 @@ public class MultiBlockManager
 			}
 		}
 
-		// Token: 0x17000950 RID: 2384
-		// (get) Token: 0x060058A4 RID: 22692 RVA: 0x00220141 File Offset: 0x0021E341
+		// Token: 0x17000962 RID: 2402
+		// (get) Token: 0x0600592C RID: 22828 RVA: 0x00222E5D File Offset: 0x0022105D
 		public MultiBlockManager.TrackedDataMap.SubsetAccessor CrossChunkMultiBlocks
 		{
 			get
@@ -1598,8 +1598,8 @@ public class MultiBlockManager
 			}
 		}
 
-		// Token: 0x17000951 RID: 2385
-		// (get) Token: 0x060058A5 RID: 22693 RVA: 0x00220154 File Offset: 0x0021E354
+		// Token: 0x17000963 RID: 2403
+		// (get) Token: 0x0600592D RID: 22829 RVA: 0x00222E70 File Offset: 0x00221070
 		public MultiBlockManager.TrackedDataMap.SubsetAccessor OversizedBlocks
 		{
 			get
@@ -1608,8 +1608,8 @@ public class MultiBlockManager
 			}
 		}
 
-		// Token: 0x17000952 RID: 2386
-		// (get) Token: 0x060058A6 RID: 22694 RVA: 0x00220167 File Offset: 0x0021E367
+		// Token: 0x17000964 RID: 2404
+		// (get) Token: 0x0600592E RID: 22830 RVA: 0x00222E83 File Offset: 0x00221083
 		public MultiBlockManager.TrackedDataMap.SubsetAccessor TerrainAlignedBlocks
 		{
 			get
@@ -1618,40 +1618,40 @@ public class MultiBlockManager
 			}
 		}
 
-		// Token: 0x04004497 RID: 17559
+		// Token: 0x04004532 RID: 17714
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<Vector3i, MultiBlockManager.TrackedBlockData> trackedDataByPosition = new Dictionary<Vector3i, MultiBlockManager.TrackedBlockData>();
 
-		// Token: 0x04004498 RID: 17560
+		// Token: 0x04004533 RID: 17715
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly HashSet<Vector3i> poiMultiBlocks = new HashSet<Vector3i>();
 
-		// Token: 0x04004499 RID: 17561
+		// Token: 0x04004534 RID: 17716
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly HashSet<Vector3i> crossChunkMultiBlocks = new HashSet<Vector3i>();
 
-		// Token: 0x0400449A RID: 17562
+		// Token: 0x04004535 RID: 17717
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly HashSet<Vector3i> oversizedBlocks = new HashSet<Vector3i>();
 
-		// Token: 0x0400449B RID: 17563
+		// Token: 0x04004536 RID: 17718
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly HashSet<Vector3i> terrainAlignedBlocks = new HashSet<Vector3i>();
 
-		// Token: 0x0400449C RID: 17564
+		// Token: 0x04004537 RID: 17719
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<Vector2i, HashSet<Vector3i>> oversizedBlocksByChunkPosition = new Dictionary<Vector2i, HashSet<Vector3i>>();
 
-		// Token: 0x0400449D RID: 17565
+		// Token: 0x04004538 RID: 17720
 		public readonly ReadOnlyDictionary<Vector3i, MultiBlockManager.TrackedBlockData> TrackedDataByPosition;
 
-		// Token: 0x0400449E RID: 17566
+		// Token: 0x04004539 RID: 17721
 		public readonly ReadOnlyDictionary<Vector2i, HashSet<Vector3i>> OversizedBlocksByChunkPosition;
 
-		// Token: 0x02000B6C RID: 2924
+		// Token: 0x02000B7E RID: 2942
 		public struct SubsetAccessor : IEnumerator<KeyValuePair<Vector3i, MultiBlockManager.TrackedBlockData>>, IEnumerator, IDisposable
 		{
-			// Token: 0x060058A7 RID: 22695 RVA: 0x0022017A File Offset: 0x0021E37A
+			// Token: 0x0600592F RID: 22831 RVA: 0x00222E96 File Offset: 0x00221096
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
 			public SubsetAccessor(Dictionary<Vector3i, MultiBlockManager.TrackedBlockData> trackedData, HashSet<Vector3i> subset)
 			{
@@ -1660,8 +1660,8 @@ public class MultiBlockManager
 				this._subsetEnumerator = subset.GetEnumerator();
 			}
 
-			// Token: 0x17000953 RID: 2387
-			// (get) Token: 0x060058A8 RID: 22696 RVA: 0x00220198 File Offset: 0x0021E398
+			// Token: 0x17000965 RID: 2405
+			// (get) Token: 0x06005930 RID: 22832 RVA: 0x00222EB4 File Offset: 0x002210B4
 			public KeyValuePair<Vector3i, MultiBlockManager.TrackedBlockData> Current
 			{
 				[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1672,34 +1672,34 @@ public class MultiBlockManager
 				}
 			}
 
-			// Token: 0x060058A9 RID: 22697 RVA: 0x002201C3 File Offset: 0x0021E3C3
+			// Token: 0x06005931 RID: 22833 RVA: 0x00222EDF File Offset: 0x002210DF
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
 			public bool MoveNext()
 			{
 				return this._subsetEnumerator.MoveNext();
 			}
 
-			// Token: 0x060058AA RID: 22698 RVA: 0x00006566 File Offset: 0x00004766
+			// Token: 0x06005932 RID: 22834 RVA: 0x00006566 File Offset: 0x00004766
 			public void Reset()
 			{
 				throw new NotSupportedException();
 			}
 
-			// Token: 0x060058AB RID: 22699 RVA: 0x002201D0 File Offset: 0x0021E3D0
+			// Token: 0x06005933 RID: 22835 RVA: 0x00222EEC File Offset: 0x002210EC
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
 			public void Dispose()
 			{
 				this._subsetEnumerator.Dispose();
 			}
 
-			// Token: 0x060058AC RID: 22700 RVA: 0x002201DD File Offset: 0x0021E3DD
+			// Token: 0x06005934 RID: 22836 RVA: 0x00222EF9 File Offset: 0x002210F9
 			public bool ContainsKey(Vector3i key)
 			{
 				return this._subset.Contains(key);
 			}
 
-			// Token: 0x17000954 RID: 2388
-			// (get) Token: 0x060058AD RID: 22701 RVA: 0x002201EB File Offset: 0x0021E3EB
+			// Token: 0x17000966 RID: 2406
+			// (get) Token: 0x06005935 RID: 22837 RVA: 0x00222F07 File Offset: 0x00221107
 			public int Count
 			{
 				get
@@ -1708,7 +1708,7 @@ public class MultiBlockManager
 				}
 			}
 
-			// Token: 0x060058AE RID: 22702 RVA: 0x002201F8 File Offset: 0x0021E3F8
+			// Token: 0x06005936 RID: 22838 RVA: 0x00222F14 File Offset: 0x00221114
 			public bool TryGetValue(Vector3i key, out MultiBlockManager.TrackedBlockData value)
 			{
 				if (this._subset.Contains(key) && this._trackedData.TryGetValue(key, out value))
@@ -1719,14 +1719,14 @@ public class MultiBlockManager
 				return false;
 			}
 
-			// Token: 0x060058AF RID: 22703 RVA: 0x00220221 File Offset: 0x0021E421
+			// Token: 0x06005937 RID: 22839 RVA: 0x00222F3D File Offset: 0x0022113D
 			public MultiBlockManager.TrackedDataMap.SubsetAccessor GetEnumerator()
 			{
 				return this;
 			}
 
-			// Token: 0x17000955 RID: 2389
-			// (get) Token: 0x060058B0 RID: 22704 RVA: 0x00220229 File Offset: 0x0021E429
+			// Token: 0x17000967 RID: 2407
+			// (get) Token: 0x06005938 RID: 22840 RVA: 0x00222F45 File Offset: 0x00221145
 			public object System.Collections.IEnumerator.Current
 			{
 				[PublicizedFrom(EAccessModifier.Private)]
@@ -1736,7 +1736,7 @@ public class MultiBlockManager
 				}
 			}
 
-			// Token: 0x17000956 RID: 2390
+			// Token: 0x17000968 RID: 2408
 			public MultiBlockManager.TrackedBlockData this[Vector3i key]
 			{
 				get
@@ -1749,66 +1749,66 @@ public class MultiBlockManager
 				}
 			}
 
-			// Token: 0x0400449F RID: 17567
+			// Token: 0x0400453A RID: 17722
 			[PublicizedFrom(EAccessModifier.Private)]
 			public readonly Dictionary<Vector3i, MultiBlockManager.TrackedBlockData> _trackedData;
 
-			// Token: 0x040044A0 RID: 17568
+			// Token: 0x0400453B RID: 17723
 			[PublicizedFrom(EAccessModifier.Private)]
 			public readonly HashSet<Vector3i> _subset;
 
-			// Token: 0x040044A1 RID: 17569
+			// Token: 0x0400453C RID: 17724
 			[PublicizedFrom(EAccessModifier.Private)]
 			public HashSet<Vector3i>.Enumerator _subsetEnumerator;
 		}
 	}
 
-	// Token: 0x02000B6D RID: 2925
+	// Token: 0x02000B7F RID: 2943
 	public enum Mode
 	{
-		// Token: 0x040044A3 RID: 17571
+		// Token: 0x0400453E RID: 17726
 		Disabled,
-		// Token: 0x040044A4 RID: 17572
+		// Token: 0x0400453F RID: 17727
 		Normal,
-		// Token: 0x040044A5 RID: 17573
+		// Token: 0x04004540 RID: 17728
 		WorldEditor,
-		// Token: 0x040044A6 RID: 17574
+		// Token: 0x04004541 RID: 17729
 		PrefabPlaytest,
-		// Token: 0x040044A7 RID: 17575
+		// Token: 0x04004542 RID: 17730
 		PrefabEditor,
-		// Token: 0x040044A8 RID: 17576
+		// Token: 0x04004543 RID: 17731
 		Client
 	}
 
-	// Token: 0x02000B6E RID: 2926
+	// Token: 0x02000B80 RID: 2944
 	[Flags]
 	public enum FeatureFlags
 	{
-		// Token: 0x040044AA RID: 17578
+		// Token: 0x04004545 RID: 17733
 		None = 0,
-		// Token: 0x040044AB RID: 17579
+		// Token: 0x04004546 RID: 17734
 		POIMBTracking = 1,
-		// Token: 0x040044AC RID: 17580
+		// Token: 0x04004547 RID: 17735
 		Serialization = 2,
-		// Token: 0x040044AD RID: 17581
+		// Token: 0x04004548 RID: 17736
 		CrossChunkMBTracking = 4,
-		// Token: 0x040044AE RID: 17582
+		// Token: 0x04004549 RID: 17737
 		OversizedStability = 8,
-		// Token: 0x040044AF RID: 17583
+		// Token: 0x0400454A RID: 17738
 		TerrainAlignment = 16,
-		// Token: 0x040044B0 RID: 17584
+		// Token: 0x0400454B RID: 17739
 		All = 31
 	}
 
-	// Token: 0x02000B6F RID: 2927
+	// Token: 0x02000B81 RID: 2945
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum FeatureRequirement
 	{
-		// Token: 0x040044B2 RID: 17586
+		// Token: 0x0400454D RID: 17741
 		AllEnabled,
-		// Token: 0x040044B3 RID: 17587
+		// Token: 0x0400454E RID: 17742
 		OneOrMoreEnabled,
-		// Token: 0x040044B4 RID: 17588
+		// Token: 0x0400454F RID: 17743
 		AllDisabled
 	}
 }

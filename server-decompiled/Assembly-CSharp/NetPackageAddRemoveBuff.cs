@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020001D1 RID: 465
+// Token: 0x020001D3 RID: 467
 [Preserve]
 public class NetPackageAddRemoveBuff : NetPackage
 {
-	// Token: 0x06000E73 RID: 3699 RVA: 0x0005F1D4 File Offset: 0x0005D3D4
+	// Token: 0x06000E7E RID: 3710 RVA: 0x0005F71C File Offset: 0x0005D91C
 	public NetPackageAddRemoveBuff Setup(int _entityId, string _buffName, float _duration, bool _adding, int _instigatorId, Vector3i _instigatorPos)
 	{
 		this.entityId = _entityId;
@@ -17,7 +17,7 @@ public class NetPackageAddRemoveBuff : NetPackage
 		return this;
 	}
 
-	// Token: 0x06000E74 RID: 3700 RVA: 0x0005F204 File Offset: 0x0005D404
+	// Token: 0x06000E7F RID: 3711 RVA: 0x0005F74C File Offset: 0x0005D94C
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.entityId = _reader.ReadInt32();
@@ -28,7 +28,7 @@ public class NetPackageAddRemoveBuff : NetPackage
 		this.instigatorPos = StreamUtils.ReadVector3i(_reader);
 	}
 
-	// Token: 0x06000E75 RID: 3701 RVA: 0x0005F25C File Offset: 0x0005D45C
+	// Token: 0x06000E80 RID: 3712 RVA: 0x0005F7A4 File Offset: 0x0005D9A4
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -40,7 +40,7 @@ public class NetPackageAddRemoveBuff : NetPackage
 		StreamUtils.Write(_writer, this.instigatorPos);
 	}
 
-	// Token: 0x06000E76 RID: 3702 RVA: 0x0005F2B8 File Offset: 0x0005D4B8
+	// Token: 0x06000E81 RID: 3713 RVA: 0x0005F800 File Offset: 0x0005DA00
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -68,33 +68,33 @@ public class NetPackageAddRemoveBuff : NetPackage
 		}
 	}
 
-	// Token: 0x06000E77 RID: 3703 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000E82 RID: 3714 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override int GetLength()
 	{
 		return 0;
 	}
 
-	// Token: 0x04000C4B RID: 3147
+	// Token: 0x04000C58 RID: 3160
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x04000C4C RID: 3148
+	// Token: 0x04000C59 RID: 3161
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int instigatorId;
 
-	// Token: 0x04000C4D RID: 3149
+	// Token: 0x04000C5A RID: 3162
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string buffName;
 
-	// Token: 0x04000C4E RID: 3150
+	// Token: 0x04000C5B RID: 3163
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float duration;
 
-	// Token: 0x04000C4F RID: 3151
+	// Token: 0x04000C5C RID: 3164
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool adding;
 
-	// Token: 0x04000C50 RID: 3152
+	// Token: 0x04000C5D RID: 3165
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i instigatorPos;
 }

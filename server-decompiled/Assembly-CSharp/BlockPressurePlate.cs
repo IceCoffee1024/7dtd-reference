@@ -1,24 +1,24 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000144 RID: 324
+// Token: 0x02000145 RID: 325
 [Preserve]
 public class BlockPressurePlate : BlockPowered
 {
-	// Token: 0x060008E2 RID: 2274 RVA: 0x0003E6C8 File Offset: 0x0003C8C8
+	// Token: 0x060008EC RID: 2284 RVA: 0x0003E928 File Offset: 0x0003CB28
 	public BlockPressurePlate()
 	{
 		this.HasTileEntity = true;
 		this.IsCheckCollideWithEntity = true;
 	}
 
-	// Token: 0x060008E3 RID: 2275 RVA: 0x0003A8CC File Offset: 0x00038ACC
+	// Token: 0x060008ED RID: 2285 RVA: 0x0003AB2C File Offset: 0x00038D2C
 	public override void Init()
 	{
 		base.Init();
 	}
 
-	// Token: 0x060008E4 RID: 2276 RVA: 0x0003E728 File Offset: 0x0003C928
+	// Token: 0x060008EE RID: 2286 RVA: 0x0003E988 File Offset: 0x0003CB88
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool updateState(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool _bChangeState = false)
 	{
@@ -44,7 +44,7 @@ public class BlockPressurePlate : BlockPowered
 		return true;
 	}
 
-	// Token: 0x060008E5 RID: 2277 RVA: 0x0003E7A8 File Offset: 0x0003C9A8
+	// Token: 0x060008EF RID: 2287 RVA: 0x0003EA08 File Offset: 0x0003CC08
 	public override bool OnEntityCollidedWithBlock(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, Entity _targetEntity)
 	{
 		if (!(_targetEntity is EntityAlive))
@@ -65,13 +65,13 @@ public class BlockPressurePlate : BlockPowered
 		return true;
 	}
 
-	// Token: 0x060008E6 RID: 2278 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060008F0 RID: 2288 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsMovementBlocked(IBlockAccess _world, Vector3i _blockPos, BlockValue blockDef, BlockFace face)
 	{
 		return false;
 	}
 
-	// Token: 0x060008E7 RID: 2279 RVA: 0x0003E81A File Offset: 0x0003CA1A
+	// Token: 0x060008F1 RID: 2289 RVA: 0x0003EA7A File Offset: 0x0003CC7A
 	public override void OnBlockValueChanged(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		base.OnBlockValueChanged(_world, _chunk, _blockPos, _oldBlockValue, _newBlockValue);
@@ -82,19 +82,19 @@ public class BlockPressurePlate : BlockPowered
 		this.updateState(_world, _blockPos, _newBlockValue, false);
 	}
 
-	// Token: 0x060008E8 RID: 2280 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x060008F2 RID: 2290 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool ActivateBlock(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool isOn, bool isPowered)
 	{
 		return true;
 	}
 
-	// Token: 0x060008E9 RID: 2281 RVA: 0x0003AB83 File Offset: 0x00038D83
+	// Token: 0x060008F3 RID: 2291 RVA: 0x0003ADE3 File Offset: 0x00038FE3
 	public static bool IsSwitchOn(byte _metadata)
 	{
 		return (_metadata & 2) > 0;
 	}
 
-	// Token: 0x060008EA RID: 2282 RVA: 0x0003E83F File Offset: 0x0003CA3F
+	// Token: 0x060008F4 RID: 2292 RVA: 0x0003EA9F File Offset: 0x0003CC9F
 	public override TileEntityPowered CreateTileEntity(Chunk chunk)
 	{
 		return new TileEntityPoweredTrigger(chunk)
@@ -103,7 +103,7 @@ public class BlockPressurePlate : BlockPowered
 		};
 	}
 
-	// Token: 0x060008EB RID: 2283 RVA: 0x0003E850 File Offset: 0x0003CA50
+	// Token: 0x060008F5 RID: 2293 RVA: 0x0003EAB0 File Offset: 0x0003CCB0
 	public override void OnBlockAdded(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(_world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -120,7 +120,7 @@ public class BlockPressurePlate : BlockPowered
 		}
 	}
 
-	// Token: 0x060008EC RID: 2284 RVA: 0x0003E8A4 File Offset: 0x0003CAA4
+	// Token: 0x060008F6 RID: 2294 RVA: 0x0003EB04 File Offset: 0x0003CD04
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		if (!_world.CanPlaceBlockAt(_blockPos, _world.GetGameManager().GetPersistentLocalPlayer(), false))
@@ -138,7 +138,7 @@ public class BlockPressurePlate : BlockPowered
 		return "";
 	}
 
-	// Token: 0x060008ED RID: 2285 RVA: 0x0003E934 File Offset: 0x0003CB34
+	// Token: 0x060008F7 RID: 2295 RVA: 0x0003EB94 File Offset: 0x0003CD94
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_blockValue.ischild)
@@ -166,13 +166,13 @@ public class BlockPressurePlate : BlockPowered
 		return true;
 	}
 
-	// Token: 0x060008EE RID: 2286 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x060008F8 RID: 2296 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool HasBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		return true;
 	}
 
-	// Token: 0x060008EF RID: 2287 RVA: 0x0003E9D0 File Offset: 0x0003CBD0
+	// Token: 0x060008F9 RID: 2297 RVA: 0x0003EC30 File Offset: 0x0003CE30
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		bool flag = _world.CanPlaceBlockAt(_blockPos, _world.GetGameManager().GetPersistentLocalPlayer(), false);
@@ -182,7 +182,7 @@ public class BlockPressurePlate : BlockPowered
 		return this.cmds;
 	}
 
-	// Token: 0x04000993 RID: 2451
+	// Token: 0x04000995 RID: 2453
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new BlockActivationCommand[] cmds = new BlockActivationCommand[]
 	{

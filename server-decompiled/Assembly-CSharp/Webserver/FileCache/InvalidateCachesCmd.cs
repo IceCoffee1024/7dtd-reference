@@ -4,32 +4,32 @@ using UnityEngine.Scripting;
 
 namespace Webserver.FileCache
 {
-	// Token: 0x02001AE3 RID: 6883
+	// Token: 0x02001B0A RID: 6922
 	[Preserve]
 	public class InvalidateCachesCmd : ConsoleCmdAbstract
 	{
-		// Token: 0x0600CE76 RID: 52854 RVA: 0x004B5360 File Offset: 0x004B3560
+		// Token: 0x0600CFFF RID: 53247 RVA: 0x004BB754 File Offset: 0x004B9954
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override string[] getCommands()
 		{
 			return new string[] { "invalidatecaches" };
 		}
 
-		// Token: 0x0600CE77 RID: 52855 RVA: 0x004B5370 File Offset: 0x004B3570
+		// Token: 0x0600D000 RID: 53248 RVA: 0x004BB764 File Offset: 0x004B9964
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override string getDescription()
 		{
 			return "Invalidate contents of web file caches";
 		}
 
-		// Token: 0x0600CE78 RID: 52856 RVA: 0x004B5377 File Offset: 0x004B3577
+		// Token: 0x0600D001 RID: 53249 RVA: 0x004BB76B File Offset: 0x004B996B
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override string getHelp()
 		{
 			return "TODO";
 		}
 
-		// Token: 0x0600CE79 RID: 52857 RVA: 0x004B5380 File Offset: 0x004B3580
+		// Token: 0x0600D002 RID: 53250 RVA: 0x004BB774 File Offset: 0x004B9974
 		public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 		{
 			ValueTuple<int, int> valueTuple = AbstractCache.InvalidateAllCaches();

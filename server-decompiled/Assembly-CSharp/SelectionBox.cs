@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000A52 RID: 2642
+// Token: 0x02000A63 RID: 2659
 public class SelectionBox : MonoBehaviour
 {
-	// Token: 0x17000890 RID: 2192
-	// (get) Token: 0x06004FD4 RID: 20436 RVA: 0x001E5FDC File Offset: 0x001E41DC
+	// Token: 0x170008A2 RID: 2210
+	// (get) Token: 0x0600505A RID: 20570 RVA: 0x001E8A74 File Offset: 0x001E6C74
 	public SelectionCategory Category
 	{
 		get
@@ -15,9 +15,9 @@ public class SelectionBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000891 RID: 2193
-	// (get) Token: 0x06004FD5 RID: 20437 RVA: 0x001E5FE4 File Offset: 0x001E41E4
-	// (set) Token: 0x06004FD6 RID: 20438 RVA: 0x001E5FEC File Offset: 0x001E41EC
+	// Token: 0x170008A3 RID: 2211
+	// (get) Token: 0x0600505B RID: 20571 RVA: 0x001E8A7C File Offset: 0x001E6C7C
+	// (set) Token: 0x0600505C RID: 20572 RVA: 0x001E8A84 File Offset: 0x001E6C84
 	public new string name
 	{
 		get
@@ -35,9 +35,9 @@ public class SelectionBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000892 RID: 2194
-	// (get) Token: 0x06004FD7 RID: 20439 RVA: 0x001E600B File Offset: 0x001E420B
-	// (set) Token: 0x06004FD8 RID: 20440 RVA: 0x001E6013 File Offset: 0x001E4213
+	// Token: 0x170008A4 RID: 2212
+	// (get) Token: 0x0600505D RID: 20573 RVA: 0x001E8AA3 File Offset: 0x001E6CA3
+	// (set) Token: 0x0600505E RID: 20574 RVA: 0x001E8AAB File Offset: 0x001E6CAB
 	public object UserData
 	{
 		get
@@ -56,8 +56,8 @@ public class SelectionBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000893 RID: 2195
-	// (get) Token: 0x06004FD9 RID: 20441 RVA: 0x001E6032 File Offset: 0x001E4232
+	// Token: 0x170008A5 RID: 2213
+	// (get) Token: 0x0600505F RID: 20575 RVA: 0x001E8ACA File Offset: 0x001E6CCA
 	public Vector3i Size
 	{
 		get
@@ -66,18 +66,18 @@ public class SelectionBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000894 RID: 2196
-	// (get) Token: 0x06004FDA RID: 20442 RVA: 0x001E603A File Offset: 0x001E423A
-	// (set) Token: 0x06004FDB RID: 20443 RVA: 0x001E6042 File Offset: 0x001E4242
+	// Token: 0x170008A6 RID: 2214
+	// (get) Token: 0x06005060 RID: 20576 RVA: 0x001E8AD2 File Offset: 0x001E6CD2
+	// (set) Token: 0x06005061 RID: 20577 RVA: 0x001E8ADA File Offset: 0x001E6CDA
 	public Vector3i Position
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000895 RID: 2197
-	// (get) Token: 0x06004FDC RID: 20444 RVA: 0x001E604B File Offset: 0x001E424B
-	// (set) Token: 0x06004FDD RID: 20445 RVA: 0x001E6053 File Offset: 0x001E4253
+	// Token: 0x170008A7 RID: 2215
+	// (get) Token: 0x06005062 RID: 20578 RVA: 0x001E8AE3 File Offset: 0x001E6CE3
+	// (set) Token: 0x06005063 RID: 20579 RVA: 0x001E8AEB File Offset: 0x001E6CEB
 	public float FacingDirection
 	{
 		get
@@ -94,8 +94,8 @@ public class SelectionBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000896 RID: 2198
-	// (get) Token: 0x06004FDE RID: 20446 RVA: 0x001E606B File Offset: 0x001E426B
+	// Token: 0x170008A8 RID: 2216
+	// (get) Token: 0x06005064 RID: 20580 RVA: 0x001E8B03 File Offset: 0x001E6D03
 	public bool IsActive
 	{
 		get
@@ -104,7 +104,7 @@ public class SelectionBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004FDF RID: 20447 RVA: 0x001E6080 File Offset: 0x001E4280
+	// Token: 0x06005065 RID: 20581 RVA: 0x001E8B18 File Offset: 0x001E6D18
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Awake()
 	{
@@ -127,14 +127,14 @@ public class SelectionBox : MonoBehaviour
 		this.ResetAllFacesColor();
 	}
 
-	// Token: 0x06004FE0 RID: 20448 RVA: 0x001E6156 File Offset: 0x001E4356
+	// Token: 0x06005066 RID: 20582 RVA: 0x001E8BEE File Offset: 0x001E6DEE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
 		Camera.onPostRender = (Camera.CameraCallback)Delegate.Combine(Camera.onPostRender, new Camera.CameraCallback(this.camPostRender));
 	}
 
-	// Token: 0x06004FE1 RID: 20449 RVA: 0x001E6178 File Offset: 0x001E4378
+	// Token: 0x06005067 RID: 20583 RVA: 0x001E8C10 File Offset: 0x001E6E10
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDestroy()
 	{
@@ -147,13 +147,13 @@ public class SelectionBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004FE2 RID: 20450 RVA: 0x001E61D4 File Offset: 0x001E43D4
+	// Token: 0x06005068 RID: 20584 RVA: 0x001E8C6C File Offset: 0x001E6E6C
 	public void SetOwner(SelectionCategory _selectionCategory)
 	{
 		this.ownerCategory = _selectionCategory;
 	}
 
-	// Token: 0x06004FE3 RID: 20451 RVA: 0x001E61E0 File Offset: 0x001E43E0
+	// Token: 0x06005069 RID: 20585 RVA: 0x001E8C78 File Offset: 0x001E6E78
 	public void SetAllFacesColor(Color _c, bool useAlphaMultiplier = true)
 	{
 		if (useAlphaMultiplier)
@@ -171,20 +171,20 @@ public class SelectionBox : MonoBehaviour
 		this.curColor = _c;
 	}
 
-	// Token: 0x06004FE4 RID: 20452 RVA: 0x001E6240 File Offset: 0x001E4440
+	// Token: 0x0600506A RID: 20586 RVA: 0x001E8CD8 File Offset: 0x001E6ED8
 	public void ResetAllFacesColor()
 	{
 		this.SetAllFacesColor(this.curColor, false);
 	}
 
-	// Token: 0x06004FE5 RID: 20453 RVA: 0x001E624F File Offset: 0x001E444F
+	// Token: 0x0600506B RID: 20587 RVA: 0x001E8CE7 File Offset: 0x001E6EE7
 	public void SetFaceColor(BlockFace _face, Color _c)
 	{
 		this.m_MeshRenderer.materials[(int)_face].color = _c;
 		this.faceColorsSet[(int)_face] = true;
 	}
 
-	// Token: 0x06004FE6 RID: 20454 RVA: 0x001E6270 File Offset: 0x001E4470
+	// Token: 0x0600506C RID: 20588 RVA: 0x001E8D08 File Offset: 0x001E6F08
 	public void SetCaption(string _text)
 	{
 		if (this.captionMesh == null)
@@ -205,7 +205,7 @@ public class SelectionBox : MonoBehaviour
 		this.captionMesh.text = _text;
 	}
 
-	// Token: 0x06004FE7 RID: 20455 RVA: 0x001E636D File Offset: 0x001E456D
+	// Token: 0x0600506D RID: 20589 RVA: 0x001E8E05 File Offset: 0x001E7005
 	public void SetCaptionVisibility(bool _visible)
 	{
 		if (this.captionMesh == null)
@@ -215,7 +215,7 @@ public class SelectionBox : MonoBehaviour
 		this.captionMesh.gameObject.SetActive(_visible);
 	}
 
-	// Token: 0x06004FE8 RID: 20456 RVA: 0x001E6390 File Offset: 0x001E4590
+	// Token: 0x0600506E RID: 20590 RVA: 0x001E8E28 File Offset: 0x001E7028
 	public void SetPositionAndSize(Vector3i _pos, Vector3i _size)
 	{
 		base.transform.localPosition = _pos + new Vector3((float)_size.x * 0.5f, -0.1f, (float)_size.z * 0.5f) - Origin.position;
@@ -239,7 +239,7 @@ public class SelectionBox : MonoBehaviour
 		this.size = _size;
 	}
 
-	// Token: 0x06004FE9 RID: 20457 RVA: 0x001E64B5 File Offset: 0x001E46B5
+	// Token: 0x0600506F RID: 20591 RVA: 0x001E8F4D File Offset: 0x001E714D
 	public void SetVisible(bool _visible)
 	{
 		if (base.gameObject.activeSelf == _visible)
@@ -254,25 +254,25 @@ public class SelectionBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004FEA RID: 20458 RVA: 0x001E64E2 File Offset: 0x001E46E2
+	// Token: 0x06005070 RID: 20592 RVA: 0x001E8F7A File Offset: 0x001E717A
 	public Vector3i GetScale()
 	{
 		return new Vector3i(this.bounds.size);
 	}
 
-	// Token: 0x06004FEB RID: 20459 RVA: 0x001E64F4 File Offset: 0x001E46F4
+	// Token: 0x06005071 RID: 20593 RVA: 0x001E8F8C File Offset: 0x001E718C
 	public Transform GetBoxTransform()
 	{
 		return base.transform.Find("Box");
 	}
 
-	// Token: 0x06004FEC RID: 20460 RVA: 0x001E6506 File Offset: 0x001E4706
+	// Token: 0x06005072 RID: 20594 RVA: 0x001E8F9E File Offset: 0x001E719E
 	public void SetFrameActive(bool _active)
 	{
 		this.SetFrameColor(_active ? SelectionBox.activeFrameColor : SelectionBox.inActiveFrameColor);
 	}
 
-	// Token: 0x06004FED RID: 20461 RVA: 0x001E651D File Offset: 0x001E471D
+	// Token: 0x06005073 RID: 20595 RVA: 0x001E8FB5 File Offset: 0x001E71B5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetFrameColor(Color _color)
 	{
@@ -283,7 +283,7 @@ public class SelectionBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004FEE RID: 20462 RVA: 0x001E6550 File Offset: 0x001E4750
+	// Token: 0x06005074 RID: 20596 RVA: 0x001E8FE8 File Offset: 0x001E71E8
 	public void ShowThroughWalls(bool _bShow)
 	{
 		if (this.curShowingThroughWalls == _bShow)
@@ -303,20 +303,20 @@ public class SelectionBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004FEF RID: 20463 RVA: 0x001E65C7 File Offset: 0x001E47C7
+	// Token: 0x06005075 RID: 20597 RVA: 0x001E905F File Offset: 0x001E725F
 	public void EnableCollider(string _tag, int _layer)
 	{
 		this.collLayer = _layer;
 		this.collTag = _tag;
 	}
 
-	// Token: 0x06004FF0 RID: 20464 RVA: 0x001E65D7 File Offset: 0x001E47D7
+	// Token: 0x06005076 RID: 20598 RVA: 0x001E906F File Offset: 0x001E726F
 	public void HighlightAxis(Vector3i _hightlightedAxis)
 	{
 		this.hightlightedAxis = _hightlightedAxis;
 	}
 
-	// Token: 0x06004FF1 RID: 20465 RVA: 0x001E65E0 File Offset: 0x001E47E0
+	// Token: 0x06005077 RID: 20599 RVA: 0x001E9078 File Offset: 0x001E7278
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Update()
 	{
@@ -326,7 +326,7 @@ public class SelectionBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004FF2 RID: 20466 RVA: 0x001E65FC File Offset: 0x001E47FC
+	// Token: 0x06005078 RID: 20600 RVA: 0x001E9094 File Offset: 0x001E7294
 	public void SetSizeVisibility(bool _visible)
 	{
 		if (_visible && this.sizeMeshes == null)
@@ -363,7 +363,7 @@ public class SelectionBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004FF3 RID: 20467 RVA: 0x001E6748 File Offset: 0x001E4948
+	// Token: 0x06005079 RID: 20601 RVA: 0x001E91E0 File Offset: 0x001E73E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateSizeMeshes(Vector3i _newSize)
 	{
@@ -387,7 +387,7 @@ public class SelectionBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06004FF4 RID: 20468 RVA: 0x001E6820 File Offset: 0x001E4A20
+	// Token: 0x0600507A RID: 20602 RVA: 0x001E92B8 File Offset: 0x001E74B8
 	public bool WorldPosWithinBox(Vector3i _pos)
 	{
 		Vector3i position = this.Position;
@@ -395,7 +395,7 @@ public class SelectionBox : MonoBehaviour
 		return _pos.x >= position.x && _pos.x < vector3i.x && _pos.y >= position.y && _pos.y < vector3i.y && _pos.z >= position.z && _pos.z < vector3i.z;
 	}
 
-	// Token: 0x06004FF5 RID: 20469 RVA: 0x001E6898 File Offset: 0x001E4A98
+	// Token: 0x0600507B RID: 20603 RVA: 0x001E9330 File Offset: 0x001E7530
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void camPostRender(Camera _cam)
 	{
@@ -529,7 +529,7 @@ public class SelectionBox : MonoBehaviour
 		GUIUtils.DrawRectWide(this.Axises[5], (this.Axises[5] - this.AxisOrigin).normalized, Vector3.up, num3 * 0.125f, (this.hightlightedAxis.z < 0) ? Color.yellow : color7);
 	}
 
-	// Token: 0x06004FF6 RID: 20470 RVA: 0x001E7678 File Offset: 0x001E5878
+	// Token: 0x0600507C RID: 20604 RVA: 0x001EA110 File Offset: 0x001E8310
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BuildFrame()
 	{
@@ -691,7 +691,7 @@ public class SelectionBox : MonoBehaviour
 		this.SetFrameColor(this.curFrameColor);
 	}
 
-	// Token: 0x06004FF7 RID: 20471 RVA: 0x001E8D60 File Offset: 0x001E6F60
+	// Token: 0x0600507D RID: 20605 RVA: 0x001EB7F8 File Offset: 0x001E99F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void addQuad(Vector3 _v1, Vector2 _uv1, Vector3 _v2, Vector2 _uv2, Vector3 _v3, Vector2 _uv3, Vector3 _v4, Vector2 _uv4, BlockFace _face)
 	{
@@ -712,7 +712,7 @@ public class SelectionBox : MonoBehaviour
 		this.currentChunkMeshIndex += 4;
 	}
 
-	// Token: 0x06004FF8 RID: 20472 RVA: 0x001E8E60 File Offset: 0x001E7060
+	// Token: 0x0600507E RID: 20606 RVA: 0x001EB8F8 File Offset: 0x001E9AF8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void addTriangle(Vector3 _v1, Vector2 _uv1, Vector3 _v2, Vector2 _uv2, Vector3 _v3, Vector2 _uv3, BlockFace _face)
 	{
@@ -728,7 +728,7 @@ public class SelectionBox : MonoBehaviour
 		this.currentChunkMeshIndex += 3;
 	}
 
-	// Token: 0x06004FF9 RID: 20473 RVA: 0x001E8F08 File Offset: 0x001E7108
+	// Token: 0x0600507F RID: 20607 RVA: 0x001EB9A0 File Offset: 0x001E9BA0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool createMesh()
 	{
@@ -804,7 +804,7 @@ public class SelectionBox : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06004FFA RID: 20474 RVA: 0x001E9738 File Offset: 0x001E7938
+	// Token: 0x06005080 RID: 20608 RVA: 0x001EC1D0 File Offset: 0x001EA3D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Mesh copyMeshAndAddBackFaces(Mesh _mesh)
 	{
@@ -831,173 +831,173 @@ public class SelectionBox : MonoBehaviour
 		};
 	}
 
-	// Token: 0x04003D3F RID: 15679
+	// Token: 0x04003DD0 RID: 15824
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float boundsPadding = 0.16f;
 
-	// Token: 0x04003D40 RID: 15680
+	// Token: 0x04003DD1 RID: 15825
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int maxFacingDirectionDistance = 62500;
 
-	// Token: 0x04003D41 RID: 15681
+	// Token: 0x04003DD2 RID: 15826
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly int zTestShaderProperty = Shader.PropertyToID("_ZTest");
 
-	// Token: 0x04003D42 RID: 15682
+	// Token: 0x04003DD3 RID: 15827
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly int colorShaderProperty = Shader.PropertyToID("_Color");
 
-	// Token: 0x04003D43 RID: 15683
+	// Token: 0x04003DD4 RID: 15828
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public SelectionCategory ownerCategory;
 
-	// Token: 0x04003D44 RID: 15684
+	// Token: 0x04003DD5 RID: 15829
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public string boxName;
 
-	// Token: 0x04003D45 RID: 15685
+	// Token: 0x04003DD6 RID: 15830
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public object userData;
 
-	// Token: 0x04003D46 RID: 15686
+	// Token: 0x04003DD7 RID: 15831
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GameObject frame;
 
-	// Token: 0x04003D47 RID: 15687
+	// Token: 0x04003DD8 RID: 15832
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public TextMesh captionMesh;
 
-	// Token: 0x04003D48 RID: 15688
+	// Token: 0x04003DD9 RID: 15833
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public TextMesh[] sizeMeshes;
 
-	// Token: 0x04003D49 RID: 15689
+	// Token: 0x04003DDA RID: 15834
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3i size = Vector3i.zero;
 
-	// Token: 0x04003D4B RID: 15691
+	// Token: 0x04003DDC RID: 15836
 	public Bounds bounds = BoundsUtils.BoundsForMinMax(Vector3.zero, Vector3.one);
 
-	// Token: 0x04003D4C RID: 15692
+	// Token: 0x04003DDD RID: 15837
 	public RenderCubeType focusType = RenderCubeType.FullBlockBothSides;
 
-	// Token: 0x04003D4D RID: 15693
+	// Token: 0x04003DDE RID: 15838
 	public bool bAlwaysDrawDirection;
 
-	// Token: 0x04003D4E RID: 15694
+	// Token: 0x04003DDF RID: 15839
 	public bool bDrawDirection;
 
-	// Token: 0x04003D4F RID: 15695
+	// Token: 0x04003DE0 RID: 15840
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float facingDirection;
 
-	// Token: 0x04003D50 RID: 15696
+	// Token: 0x04003DE1 RID: 15841
 	public Vector3 AxisOrigin;
 
-	// Token: 0x04003D51 RID: 15697
+	// Token: 0x04003DE2 RID: 15842
 	public readonly List<Vector3> Axises = new List<Vector3>();
 
-	// Token: 0x04003D52 RID: 15698
+	// Token: 0x04003DE3 RID: 15843
 	public readonly List<Vector3i> AxisesI = new List<Vector3i>();
 
-	// Token: 0x04003D53 RID: 15699
+	// Token: 0x04003DE4 RID: 15844
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3i hightlightedAxis = Vector3i.zero;
 
-	// Token: 0x04003D54 RID: 15700
+	// Token: 0x04003DE5 RID: 15845
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public MeshFilter m_MeshFilter;
 
-	// Token: 0x04003D55 RID: 15701
+	// Token: 0x04003DE6 RID: 15846
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public MeshRenderer m_MeshRenderer;
 
-	// Token: 0x04003D56 RID: 15702
+	// Token: 0x04003DE7 RID: 15847
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly List<int>[] subMeshTriangles = new List<int>[6];
 
-	// Token: 0x04003D57 RID: 15703
+	// Token: 0x04003DE8 RID: 15848
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly List<Vector2> m_Uvs = new List<Vector2>();
 
-	// Token: 0x04003D58 RID: 15704
+	// Token: 0x04003DE9 RID: 15849
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly List<Vector3> m_Vertices = new List<Vector3>();
 
-	// Token: 0x04003D59 RID: 15705
+	// Token: 0x04003DEA RID: 15850
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly Material[] materialsArr = new Material[6];
 
-	// Token: 0x04003D5A RID: 15706
+	// Token: 0x04003DEB RID: 15851
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int collLayer;
 
-	// Token: 0x04003D5B RID: 15707
+	// Token: 0x04003DEC RID: 15852
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public string collTag;
 
-	// Token: 0x04003D5C RID: 15708
+	// Token: 0x04003DED RID: 15853
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int currentChunkMeshIndex;
 
-	// Token: 0x04003D5D RID: 15709
+	// Token: 0x04003DEE RID: 15854
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bCreated;
 
-	// Token: 0x04003D5E RID: 15710
+	// Token: 0x04003DEF RID: 15855
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly bool[] faceColorsSet = new bool[6];
 
-	// Token: 0x04003D5F RID: 15711
+	// Token: 0x04003DF0 RID: 15856
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Color curColor;
 
-	// Token: 0x04003D60 RID: 15712
+	// Token: 0x04003DF1 RID: 15857
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Color curFrameColor = SelectionBox.inActiveFrameColor;
 
-	// Token: 0x04003D61 RID: 15713
+	// Token: 0x04003DF2 RID: 15858
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool curShowingThroughWalls;
 
-	// Token: 0x04003D62 RID: 15714
+	// Token: 0x04003DF3 RID: 15859
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly Color inActiveFrameColor = Color.blue;
 
-	// Token: 0x04003D63 RID: 15715
+	// Token: 0x04003DF4 RID: 15860
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly Color activeFrameColor = Color.green;
 
-	// Token: 0x04003D64 RID: 15716
+	// Token: 0x04003DF5 RID: 15861
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly SelectionBox.SizeTextMeshDefinition[] SizeTextMeshDefs = new SelectionBox.SizeTextMeshDefinition[]
@@ -1009,11 +1009,11 @@ public class SelectionBox : MonoBehaviour
 		new SelectionBox.SizeTextMeshDefinition("Right", Vector3.right * 0.5f + Vector3.up * 0.5f, new Vector3(0f, -90f, 0f), new char[] { '↗', '↕', '↔' })
 	};
 
-	// Token: 0x02000A53 RID: 2643
+	// Token: 0x02000A64 RID: 2660
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class SizeTextMeshDefinition
 	{
-		// Token: 0x06004FFD RID: 20477 RVA: 0x001E9A7E File Offset: 0x001E7C7E
+		// Token: 0x06005083 RID: 20611 RVA: 0x001EC516 File Offset: 0x001EA716
 		public SizeTextMeshDefinition(string _name, Vector3 _position, Vector3 _rotation, char[] _arrows)
 		{
 			this.Name = _name;
@@ -1022,16 +1022,16 @@ public class SelectionBox : MonoBehaviour
 			this.Arrows = _arrows;
 		}
 
-		// Token: 0x04003D65 RID: 15717
+		// Token: 0x04003DF6 RID: 15862
 		public readonly string Name;
 
-		// Token: 0x04003D66 RID: 15718
+		// Token: 0x04003DF7 RID: 15863
 		public readonly Vector3 Position;
 
-		// Token: 0x04003D67 RID: 15719
+		// Token: 0x04003DF8 RID: 15864
 		public readonly Vector3 Rotation;
 
-		// Token: 0x04003D68 RID: 15720
+		// Token: 0x04003DF9 RID: 15865
 		public readonly char[] Arrows;
 	}
 }

@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001132 RID: 4402
+// Token: 0x0200114B RID: 4427
 public class XUiTweenRotation : XUiTweenAbs
 {
-	// Token: 0x17000FF8 RID: 4088
-	// (get) Token: 0x06008B18 RID: 35608 RVA: 0x0034EFF4 File Offset: 0x0034D1F4
-	// (set) Token: 0x06008B19 RID: 35609 RVA: 0x0034EFFC File Offset: 0x0034D1FC
+	// Token: 0x17001031 RID: 4145
+	// (get) Token: 0x06008C0A RID: 35850 RVA: 0x00353828 File Offset: 0x00351A28
+	// (set) Token: 0x06008C0B RID: 35851 RVA: 0x00353830 File Offset: 0x00351A30
 	[XuiXmlAttribute("start", false)]
 	public Vector3 Start
 	{
@@ -24,9 +24,9 @@ public class XUiTweenRotation : XUiTweenAbs
 		}
 	}
 
-	// Token: 0x17000FF9 RID: 4089
-	// (get) Token: 0x06008B1A RID: 35610 RVA: 0x0034F024 File Offset: 0x0034D224
-	// (set) Token: 0x06008B1B RID: 35611 RVA: 0x0034F02C File Offset: 0x0034D22C
+	// Token: 0x17001032 RID: 4146
+	// (get) Token: 0x06008C0C RID: 35852 RVA: 0x00353858 File Offset: 0x00351A58
+	// (set) Token: 0x06008C0D RID: 35853 RVA: 0x00353860 File Offset: 0x00351A60
 	[XuiXmlAttribute("end", false)]
 	public Vector3 End
 	{
@@ -44,7 +44,7 @@ public class XUiTweenRotation : XUiTweenAbs
 		}
 	}
 
-	// Token: 0x06008B1C RID: 35612 RVA: 0x0034F054 File Offset: 0x0034D254
+	// Token: 0x06008C0E RID: 35854 RVA: 0x00353888 File Offset: 0x00351A88
 	[XuiXmlAttribute("play_to", false)]
 	public void AttributePlayToEnd(Vector3 _value)
 	{
@@ -63,13 +63,13 @@ public class XUiTweenRotation : XUiTweenAbs
 		this.tween.PlayForward();
 	}
 
-	// Token: 0x06008B1D RID: 35613 RVA: 0x0034F0CA File Offset: 0x0034D2CA
+	// Token: 0x06008C0F RID: 35855 RVA: 0x003538FE File Offset: 0x00351AFE
 	public XUiTweenRotation(XUiView _targetView)
 		: base(_targetView)
 	{
 	}
 
-	// Token: 0x06008B1E RID: 35614 RVA: 0x0034F0F8 File Offset: 0x0034D2F8
+	// Token: 0x06008C10 RID: 35856 RVA: 0x0035392C File Offset: 0x00351B2C
 	public override void CreateTween(GameObject _uiGameObject)
 	{
 		this.tween = _uiGameObject.AddMissingComponent<TweenRotation>();
@@ -78,15 +78,15 @@ public class XUiTweenRotation : XUiTweenAbs
 		base.setCommonTweenValues(this.tween);
 	}
 
-	// Token: 0x040066A6 RID: 26278
+	// Token: 0x04006770 RID: 26480
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TweenRotation tween;
 
-	// Token: 0x040066A7 RID: 26279
+	// Token: 0x04006771 RID: 26481
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 start = Vector3.zero;
 
-	// Token: 0x040066A8 RID: 26280
+	// Token: 0x04006772 RID: 26482
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 end = new Vector3(0f, 0f, 360f);
 }

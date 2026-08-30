@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 
-// Token: 0x02000538 RID: 1336
+// Token: 0x0200053D RID: 1341
 public class DamageMultiplier
 {
-	// Token: 0x06002BFC RID: 11260 RVA: 0x00115A11 File Offset: 0x00113C11
+	// Token: 0x06002C26 RID: 11302 RVA: 0x00116A89 File Offset: 0x00114C89
 	public DamageMultiplier()
 	{
 	}
 
-	// Token: 0x06002BFD RID: 11261 RVA: 0x00115A24 File Offset: 0x00113C24
+	// Token: 0x06002C27 RID: 11303 RVA: 0x00116A9C File Offset: 0x00114C9C
 	public DamageMultiplier(DynamicProperties _properties)
 	{
 		if (_properties.Classes.ContainsKey("DamageBonus"))
@@ -24,14 +24,14 @@ public class DamageMultiplier
 		}
 	}
 
-	// Token: 0x06002BFE RID: 11262 RVA: 0x00115AC4 File Offset: 0x00113CC4
+	// Token: 0x06002C28 RID: 11304 RVA: 0x00116B3C File Offset: 0x00114D3C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void addMultiplier(string _name, float _value)
 	{
 		this.damageMultiplier[_name] = _value;
 	}
 
-	// Token: 0x06002BFF RID: 11263 RVA: 0x00115AD3 File Offset: 0x00113CD3
+	// Token: 0x06002C29 RID: 11305 RVA: 0x00116B4B File Offset: 0x00114D4B
 	public float Get(string _group)
 	{
 		if (_group == null || this.damageMultiplier == null || !this.damageMultiplier.ContainsKey(_group))
@@ -41,7 +41,7 @@ public class DamageMultiplier
 		return this.damageMultiplier[_group];
 	}
 
-	// Token: 0x06002C00 RID: 11264 RVA: 0x00115B00 File Offset: 0x00113D00
+	// Token: 0x06002C2A RID: 11306 RVA: 0x00116B78 File Offset: 0x00114D78
 	public void Read(BinaryReader _br)
 	{
 		this.damageMultiplier.Clear();
@@ -54,7 +54,7 @@ public class DamageMultiplier
 		}
 	}
 
-	// Token: 0x06002C01 RID: 11265 RVA: 0x00115B48 File Offset: 0x00113D48
+	// Token: 0x06002C2B RID: 11307 RVA: 0x00116BC0 File Offset: 0x00114DC0
 	public void Write(BinaryWriter _bw)
 	{
 		_bw.Write((short)this.damageMultiplier.Count);
@@ -65,7 +65,7 @@ public class DamageMultiplier
 		}
 	}
 
-	// Token: 0x04002194 RID: 8596
+	// Token: 0x040021C3 RID: 8643
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, float> damageMultiplier = new Dictionary<string, float>();
 }

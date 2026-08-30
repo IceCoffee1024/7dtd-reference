@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace Twitch
 {
-	// Token: 0x0200183A RID: 6202
+	// Token: 0x02001860 RID: 6240
 	public class TwitchRespawnEntry
 	{
-		// Token: 0x0600BF2D RID: 48941 RVA: 0x0046ECE6 File Offset: 0x0046CEE6
+		// Token: 0x0600C0B2 RID: 49330 RVA: 0x00474A82 File Offset: 0x00472C82
 		public TwitchRespawnEntry(string username, int respawnsLeft, EntityPlayer target, TwitchAction action)
 		{
 			this.UserName = username;
@@ -15,13 +15,13 @@ namespace Twitch
 			this.RespawnsLeft = respawnsLeft;
 		}
 
-		// Token: 0x0600BF2E RID: 48942 RVA: 0x0046ED21 File Offset: 0x0046CF21
+		// Token: 0x0600C0B3 RID: 49331 RVA: 0x00474ABD File Offset: 0x00472CBD
 		public bool CheckRespawn(string username, EntityPlayer target, TwitchAction action)
 		{
 			return this.UserName == username && this.Target == target && this.Action == action;
 		}
 
-		// Token: 0x0600BF2F RID: 48943 RVA: 0x0046ED4C File Offset: 0x0046CF4C
+		// Token: 0x0600C0B4 RID: 49332 RVA: 0x00474AE8 File Offset: 0x00472CE8
 		public bool RemoveSpawnedEntry(int entityID, bool checkForRemove)
 		{
 			bool flag = false;
@@ -40,7 +40,7 @@ namespace Twitch
 			return flag;
 		}
 
-		// Token: 0x0600BF30 RID: 48944 RVA: 0x0046ED9C File Offset: 0x0046CF9C
+		// Token: 0x0600C0B5 RID: 49333 RVA: 0x00474B38 File Offset: 0x00472D38
 		public bool RemoveSpawnedBlock(Vector3i pos, bool checkForRemove)
 		{
 			bool flag = false;
@@ -59,7 +59,7 @@ namespace Twitch
 			return flag;
 		}
 
-		// Token: 0x0600BF31 RID: 48945 RVA: 0x0046EDF0 File Offset: 0x0046CFF0
+		// Token: 0x0600C0B6 RID: 49334 RVA: 0x00474B8C File Offset: 0x00472D8C
 		public bool RemoveAllSpawnedBlock(bool checkForRemove)
 		{
 			bool flag = false;
@@ -75,7 +75,7 @@ namespace Twitch
 			return flag;
 		}
 
-		// Token: 0x0600BF32 RID: 48946 RVA: 0x0046EE24 File Offset: 0x0046D024
+		// Token: 0x0600C0B7 RID: 49335 RVA: 0x00474BC0 File Offset: 0x00472DC0
 		public void CheckReadyForRemove()
 		{
 			TwitchAction.RespawnCountTypes respawnCountType = this.Action.RespawnCountType;
@@ -92,7 +92,7 @@ namespace Twitch
 			this.ReadyForRemove = this.SpawnedEntities.Count == 0 && this.SpawnedBlocks.Count == 0;
 		}
 
-		// Token: 0x0600BF33 RID: 48947 RVA: 0x0046EE94 File Offset: 0x0046D094
+		// Token: 0x0600C0B8 RID: 49336 RVA: 0x00474C30 File Offset: 0x00472E30
 		public TwitchActionEntry RespawnAction()
 		{
 			TwitchActionEntry twitchActionEntry = this.Action.SetupActionEntry();
@@ -110,34 +110,34 @@ namespace Twitch
 			return twitchActionEntry;
 		}
 
-		// Token: 0x0600BF34 RID: 48948 RVA: 0x0046EF10 File Offset: 0x0046D110
+		// Token: 0x0600C0B9 RID: 49337 RVA: 0x00474CAC File Offset: 0x00472EAC
 		public bool CanRespawn(TwitchManager tm)
 		{
 			return this.NeedsRespawn && tm.CheckCanRespawnEvent(this.Target);
 		}
 
-		// Token: 0x04009032 RID: 36914
+		// Token: 0x0400914E RID: 37198
 		public string UserName;
 
-		// Token: 0x04009033 RID: 36915
+		// Token: 0x0400914F RID: 37199
 		public EntityPlayer Target;
 
-		// Token: 0x04009034 RID: 36916
+		// Token: 0x04009150 RID: 37200
 		public TwitchAction Action;
 
-		// Token: 0x04009035 RID: 36917
+		// Token: 0x04009151 RID: 37201
 		public int RespawnsLeft;
 
-		// Token: 0x04009036 RID: 36918
+		// Token: 0x04009152 RID: 37202
 		public bool NeedsRespawn;
 
-		// Token: 0x04009037 RID: 36919
+		// Token: 0x04009153 RID: 37203
 		public bool ReadyForRemove;
 
-		// Token: 0x04009038 RID: 36920
+		// Token: 0x04009154 RID: 37204
 		public List<int> SpawnedEntities = new List<int>();
 
-		// Token: 0x04009039 RID: 36921
+		// Token: 0x04009155 RID: 37205
 		public List<Vector3i> SpawnedBlocks = new List<Vector3i>();
 	}
 }

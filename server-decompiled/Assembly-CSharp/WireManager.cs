@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001361 RID: 4961
+// Token: 0x0200137B RID: 4987
 public class WireManager
 {
-	// Token: 0x17001260 RID: 4704
-	// (get) Token: 0x06009C59 RID: 40025 RVA: 0x003B18D1 File Offset: 0x003AFAD1
+	// Token: 0x17001299 RID: 4761
+	// (get) Token: 0x06009D54 RID: 40276 RVA: 0x003B6B85 File Offset: 0x003B4D85
 	public static WireManager Instance
 	{
 		get
@@ -19,8 +19,8 @@ public class WireManager
 		}
 	}
 
-	// Token: 0x17001261 RID: 4705
-	// (get) Token: 0x06009C5A RID: 40026 RVA: 0x003B18E9 File Offset: 0x003AFAE9
+	// Token: 0x1700129A RID: 4762
+	// (get) Token: 0x06009D55 RID: 40277 RVA: 0x003B6B9D File Offset: 0x003B4D9D
 	public static bool HasInstance
 	{
 		get
@@ -29,8 +29,8 @@ public class WireManager
 		}
 	}
 
-	// Token: 0x17001262 RID: 4706
-	// (get) Token: 0x06009C5B RID: 40027 RVA: 0x003B18F3 File Offset: 0x003AFAF3
+	// Token: 0x1700129B RID: 4763
+	// (get) Token: 0x06009D56 RID: 40278 RVA: 0x003B6BA7 File Offset: 0x003B4DA7
 	public Transform WireManagerRoot
 	{
 		get
@@ -39,7 +39,7 @@ public class WireManager
 		}
 	}
 
-	// Token: 0x06009C5C RID: 40028 RVA: 0x003B18FC File Offset: 0x003AFAFC
+	// Token: 0x06009D57 RID: 40279 RVA: 0x003B6BB0 File Offset: 0x003B4DB0
 	public void Init()
 	{
 		this.activeWires = new HashSet<IWireNode>();
@@ -69,7 +69,7 @@ public class WireManager
 		}
 	}
 
-	// Token: 0x06009C5D RID: 40029 RVA: 0x003B19DC File Offset: 0x003AFBDC
+	// Token: 0x06009D58 RID: 40280 RVA: 0x003B6C90 File Offset: 0x003B4E90
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void addNewNode()
 	{
@@ -93,7 +93,7 @@ public class WireManager
 		gameObject.transform.localRotation = Quaternion.identity;
 	}
 
-	// Token: 0x06009C5E RID: 40030 RVA: 0x003B1A7C File Offset: 0x003AFC7C
+	// Token: 0x06009D59 RID: 40281 RVA: 0x003B6D30 File Offset: 0x003B4F30
 	public void ReturnToPool(IWireNode wireNode)
 	{
 		this.activeWires.Remove(wireNode);
@@ -105,7 +105,7 @@ public class WireManager
 		wireNode.Reset();
 	}
 
-	// Token: 0x06009C5F RID: 40031 RVA: 0x003B1ADC File Offset: 0x003AFCDC
+	// Token: 0x06009D5A RID: 40282 RVA: 0x003B6D90 File Offset: 0x003B4F90
 	public IWireNode GetWireNodeFromPool()
 	{
 		if (this.wirePool.childCount < 1)
@@ -128,31 +128,31 @@ public class WireManager
 		return wireNode;
 	}
 
-	// Token: 0x06009C60 RID: 40032 RVA: 0x003B1B5F File Offset: 0x003AFD5F
+	// Token: 0x06009D5B RID: 40283 RVA: 0x003B6E13 File Offset: 0x003B5013
 	public bool AddActiveWire(IWireNode wire)
 	{
 		return this.activeWires.Add(wire);
 	}
 
-	// Token: 0x06009C61 RID: 40033 RVA: 0x003B1B6D File Offset: 0x003AFD6D
+	// Token: 0x06009D5C RID: 40284 RVA: 0x003B6E21 File Offset: 0x003B5021
 	public bool RemoveActiveWire(IWireNode wire)
 	{
 		return this.activeWires.Remove(wire);
 	}
 
-	// Token: 0x06009C62 RID: 40034 RVA: 0x003B1B7B File Offset: 0x003AFD7B
+	// Token: 0x06009D5D RID: 40285 RVA: 0x003B6E2F File Offset: 0x003B502F
 	public bool AddPulseObject(GameObject pulseObject)
 	{
 		return this.activePulseObjects.Add(pulseObject);
 	}
 
-	// Token: 0x06009C63 RID: 40035 RVA: 0x003B1B89 File Offset: 0x003AFD89
+	// Token: 0x06009D5E RID: 40286 RVA: 0x003B6E3D File Offset: 0x003B503D
 	public bool RemovePulseObject(GameObject pulseObject)
 	{
 		return this.activePulseObjects.Remove(pulseObject);
 	}
 
-	// Token: 0x06009C64 RID: 40036 RVA: 0x003B1B98 File Offset: 0x003AFD98
+	// Token: 0x06009D5F RID: 40287 RVA: 0x003B6E4C File Offset: 0x003B504C
 	public void ToggleAllWirePulse(bool isPulseOn)
 	{
 		World world = GameManager.Instance.World;
@@ -216,13 +216,13 @@ public class WireManager
 		}
 	}
 
-	// Token: 0x06009C65 RID: 40037 RVA: 0x003B1D94 File Offset: 0x003AFF94
+	// Token: 0x06009D60 RID: 40288 RVA: 0x003B7048 File Offset: 0x003B5248
 	public void SetWirePulse(IWireNode node)
 	{
 		node.TogglePulse(this.ShowPulse);
 	}
 
-	// Token: 0x06009C66 RID: 40038 RVA: 0x003B1DA4 File Offset: 0x003AFFA4
+	// Token: 0x06009D61 RID: 40289 RVA: 0x003B7058 File Offset: 0x003B5258
 	public void RefreshPulseObjects()
 	{
 		foreach (GameObject gameObject in this.activePulseObjects)
@@ -232,7 +232,7 @@ public class WireManager
 		}
 	}
 
-	// Token: 0x06009C67 RID: 40039 RVA: 0x003B1E10 File Offset: 0x003B0010
+	// Token: 0x06009D62 RID: 40290 RVA: 0x003B70C4 File Offset: 0x003B52C4
 	public void Cleanup()
 	{
 		foreach (IWireNode wireNode in this.activeWires)
@@ -250,45 +250,45 @@ public class WireManager
 		WireManager.instance = null;
 	}
 
-	// Token: 0x0400766C RID: 30316
+	// Token: 0x04007744 RID: 30532
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool USE_FAST_WIRE_NODES = true;
 
-	// Token: 0x0400766D RID: 30317
+	// Token: 0x04007745 RID: 30533
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static WireManager instance = null;
 
-	// Token: 0x0400766E RID: 30318
+	// Token: 0x04007746 RID: 30534
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int wireIndex;
 
-	// Token: 0x0400766F RID: 30319
+	// Token: 0x04007747 RID: 30535
 	public bool ShowPulse;
 
-	// Token: 0x04007670 RID: 30320
+	// Token: 0x04007748 RID: 30536
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color standardPulseColor = new Color32(0, 97, byte.MaxValue, byte.MaxValue);
 
-	// Token: 0x04007671 RID: 30321
+	// Token: 0x04007749 RID: 30537
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color tripWirePulseColor = Color.magenta;
 
-	// Token: 0x04007672 RID: 30322
+	// Token: 0x0400774A RID: 30538
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<IWireNode> activeWires;
 
-	// Token: 0x04007673 RID: 30323
+	// Token: 0x0400774B RID: 30539
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<GameObject> activePulseObjects;
 
-	// Token: 0x04007674 RID: 30324
+	// Token: 0x0400774C RID: 30540
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform wireManagerRoot;
 
-	// Token: 0x04007675 RID: 30325
+	// Token: 0x0400774D RID: 30541
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform wirePool;
 
-	// Token: 0x04007676 RID: 30326
+	// Token: 0x0400774E RID: 30542
 	public bool WiresShowing;
 }

@@ -2,12 +2,12 @@
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000784 RID: 1924
+// Token: 0x0200078E RID: 1934
 [Preserve]
 public class EacAuthorizer : AuthorizerAbs
 {
-	// Token: 0x170005E0 RID: 1504
-	// (get) Token: 0x06003941 RID: 14657 RVA: 0x001762AC File Offset: 0x001744AC
+	// Token: 0x170005EA RID: 1514
+	// (get) Token: 0x06003999 RID: 14745 RVA: 0x0017852C File Offset: 0x0017672C
 	public override int Order
 	{
 		get
@@ -16,8 +16,8 @@ public class EacAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005E1 RID: 1505
-	// (get) Token: 0x06003942 RID: 14658 RVA: 0x001762B3 File Offset: 0x001744B3
+	// Token: 0x170005EB RID: 1515
+	// (get) Token: 0x0600399A RID: 14746 RVA: 0x00178533 File Offset: 0x00176733
 	public override string AuthorizerName
 	{
 		get
@@ -26,8 +26,8 @@ public class EacAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005E2 RID: 1506
-	// (get) Token: 0x06003943 RID: 14659 RVA: 0x001762BA File Offset: 0x001744BA
+	// Token: 0x170005EC RID: 1516
+	// (get) Token: 0x0600399B RID: 14747 RVA: 0x0017853A File Offset: 0x0017673A
 	public override string StateLocalizationKey
 	{
 		get
@@ -36,8 +36,8 @@ public class EacAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005E3 RID: 1507
-	// (get) Token: 0x06003944 RID: 14660 RVA: 0x001762C1 File Offset: 0x001744C1
+	// Token: 0x170005ED RID: 1517
+	// (get) Token: 0x0600399C RID: 14748 RVA: 0x00178541 File Offset: 0x00176741
 	public override bool AuthorizerActive
 	{
 		get
@@ -47,7 +47,7 @@ public class EacAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x06003945 RID: 14661 RVA: 0x001762D8 File Offset: 0x001744D8
+	// Token: 0x0600399D RID: 14749 RVA: 0x00178558 File Offset: 0x00176758
 	public override void ServerStart()
 	{
 		base.ServerStart();
@@ -59,7 +59,7 @@ public class EacAuthorizer : AuthorizerAbs
 		antiCheatServer.StartServer(new AuthenticationSuccessfulCallbackDelegate(this.authPlayerEacSuccessfulCallback), new KickPlayerDelegate(this.kickPlayerCallback));
 	}
 
-	// Token: 0x06003946 RID: 14662 RVA: 0x0017630D File Offset: 0x0017450D
+	// Token: 0x0600399E RID: 14750 RVA: 0x0017858D File Offset: 0x0017678D
 	public override void ServerStop()
 	{
 		base.ServerStop();
@@ -71,7 +71,7 @@ public class EacAuthorizer : AuthorizerAbs
 		antiCheatServer.StopServer();
 	}
 
-	// Token: 0x06003947 RID: 14663 RVA: 0x0017632C File Offset: 0x0017452C
+	// Token: 0x0600399F RID: 14751 RVA: 0x001785AC File Offset: 0x001767AC
 	public override ValueTuple<EAuthorizerSyncResult, GameUtils.KickPlayerData?> Authorize(ClientInfo _clientInfo)
 	{
 		IAntiCheatServer antiCheatServer = PlatformManager.MultiPlatform.AntiCheatServer;
@@ -82,7 +82,7 @@ public class EacAuthorizer : AuthorizerAbs
 		return new ValueTuple<EAuthorizerSyncResult, GameUtils.KickPlayerData?>(EAuthorizerSyncResult.WaitAsync, null);
 	}
 
-	// Token: 0x06003948 RID: 14664 RVA: 0x0017635F File Offset: 0x0017455F
+	// Token: 0x060039A0 RID: 14752 RVA: 0x001785DF File Offset: 0x001767DF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void authPlayerEacSuccessfulCallback(ClientInfo _cInfo)
 	{
@@ -90,14 +90,14 @@ public class EacAuthorizer : AuthorizerAbs
 		this.authResponsesHandler.AuthorizationAccepted(this, _cInfo);
 	}
 
-	// Token: 0x06003949 RID: 14665 RVA: 0x00175DB3 File Offset: 0x00173FB3
+	// Token: 0x060039A1 RID: 14753 RVA: 0x00178033 File Offset: 0x00176233
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void kickPlayerCallback(ClientInfo _cInfo, GameUtils.KickPlayerData _kickData)
 	{
 		this.authResponsesHandler.AuthorizationDenied(this, _cInfo, _kickData);
 	}
 
-	// Token: 0x0600394A RID: 14666 RVA: 0x00176375 File Offset: 0x00174575
+	// Token: 0x060039A2 RID: 14754 RVA: 0x001785F5 File Offset: 0x001767F5
 	public override void Disconnect(ClientInfo _clientInfo)
 	{
 		IAntiCheatServer antiCheatServer = PlatformManager.MultiPlatform.AntiCheatServer;

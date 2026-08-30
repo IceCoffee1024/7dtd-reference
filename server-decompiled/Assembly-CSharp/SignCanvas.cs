@@ -4,12 +4,12 @@ using System.Diagnostics;
 using System.IO;
 using UnityEngine;
 
-// Token: 0x02000A5D RID: 2653
+// Token: 0x02000A6E RID: 2670
 public class SignCanvas : MonoBehaviour, ISignRenderingDataUpdateListener
 {
-	// Token: 0x170008A4 RID: 2212
-	// (get) Token: 0x06005057 RID: 20567 RVA: 0x001EB8BA File Offset: 0x001E9ABA
-	// (set) Token: 0x06005058 RID: 20568 RVA: 0x001EB8C2 File Offset: 0x001E9AC2
+	// Token: 0x170008B6 RID: 2230
+	// (get) Token: 0x060050DD RID: 20701 RVA: 0x001EE352 File Offset: 0x001EC552
+	// (set) Token: 0x060050DE RID: 20702 RVA: 0x001EE35A File Offset: 0x001EC55A
 	public SignCanvas.CanvasState State
 	{
 		get
@@ -27,8 +27,8 @@ public class SignCanvas : MonoBehaviour, ISignRenderingDataUpdateListener
 		}
 	}
 
-	// Token: 0x170008A5 RID: 2213
-	// (get) Token: 0x06005059 RID: 20569 RVA: 0x001EB8D6 File Offset: 0x001E9AD6
+	// Token: 0x170008B7 RID: 2231
+	// (get) Token: 0x060050DF RID: 20703 RVA: 0x001EE36E File Offset: 0x001EC56E
 	public bool AllowedOnImposter
 	{
 		get
@@ -37,9 +37,9 @@ public class SignCanvas : MonoBehaviour, ISignRenderingDataUpdateListener
 		}
 	}
 
-	// Token: 0x170008A6 RID: 2214
-	// (get) Token: 0x0600505A RID: 20570 RVA: 0x001EB8DE File Offset: 0x001E9ADE
-	// (set) Token: 0x0600505B RID: 20571 RVA: 0x001EB90F File Offset: 0x001E9B0F
+	// Token: 0x170008B8 RID: 2232
+	// (get) Token: 0x060050E0 RID: 20704 RVA: 0x001EE376 File Offset: 0x001EC576
+	// (set) Token: 0x060050E1 RID: 20705 RVA: 0x001EE3A7 File Offset: 0x001EC5A7
 	public float CanvasAspect
 	{
 		get
@@ -57,12 +57,12 @@ public class SignCanvas : MonoBehaviour, ISignRenderingDataUpdateListener
 	}
 
 	// Token: 0x1400007E RID: 126
-	// (add) Token: 0x0600505C RID: 20572 RVA: 0x001EB924 File Offset: 0x001E9B24
-	// (remove) Token: 0x0600505D RID: 20573 RVA: 0x001EB95C File Offset: 0x001E9B5C
+	// (add) Token: 0x060050E2 RID: 20706 RVA: 0x001EE3BC File Offset: 0x001EC5BC
+	// (remove) Token: 0x060050E3 RID: 20707 RVA: 0x001EE3F4 File Offset: 0x001EC5F4
 	public event Action RenderingDataUpdated;
 
-	// Token: 0x170008A7 RID: 2215
-	// (get) Token: 0x0600505E RID: 20574 RVA: 0x001EB991 File Offset: 0x001E9B91
+	// Token: 0x170008B9 RID: 2233
+	// (get) Token: 0x060050E4 RID: 20708 RVA: 0x001EE429 File Offset: 0x001EC629
 	public Texture BakedTexture
 	{
 		get
@@ -71,8 +71,8 @@ public class SignCanvas : MonoBehaviour, ISignRenderingDataUpdateListener
 		}
 	}
 
-	// Token: 0x170008A8 RID: 2216
-	// (get) Token: 0x0600505F RID: 20575 RVA: 0x001EB999 File Offset: 0x001E9B99
+	// Token: 0x170008BA RID: 2234
+	// (get) Token: 0x060050E5 RID: 20709 RVA: 0x001EE431 File Offset: 0x001EC631
 	public float SizeSquared
 	{
 		get
@@ -81,9 +81,9 @@ public class SignCanvas : MonoBehaviour, ISignRenderingDataUpdateListener
 		}
 	}
 
-	// Token: 0x170008A9 RID: 2217
-	// (get) Token: 0x06005060 RID: 20576 RVA: 0x001EB9A1 File Offset: 0x001E9BA1
-	// (set) Token: 0x06005061 RID: 20577 RVA: 0x001EB9B0 File Offset: 0x001E9BB0
+	// Token: 0x170008BB RID: 2235
+	// (get) Token: 0x060050E6 RID: 20710 RVA: 0x001EE439 File Offset: 0x001EC639
+	// (set) Token: 0x060050E7 RID: 20711 RVA: 0x001EE448 File Offset: 0x001EC648
 	public GlobalSignId SignId
 	{
 		get
@@ -110,8 +110,8 @@ public class SignCanvas : MonoBehaviour, ISignRenderingDataUpdateListener
 		}
 	}
 
-	// Token: 0x170008AA RID: 2218
-	// (get) Token: 0x06005062 RID: 20578 RVA: 0x001EBA18 File Offset: 0x001E9C18
+	// Token: 0x170008BC RID: 2236
+	// (get) Token: 0x060050E8 RID: 20712 RVA: 0x001EE4B0 File Offset: 0x001EC6B0
 	public GlobalSignId DisplaySignId
 	{
 		get
@@ -134,9 +134,9 @@ public class SignCanvas : MonoBehaviour, ISignRenderingDataUpdateListener
 		}
 	}
 
-	// Token: 0x170008AB RID: 2219
-	// (get) Token: 0x06005063 RID: 20579 RVA: 0x001EBAA2 File Offset: 0x001E9CA2
-	// (set) Token: 0x06005064 RID: 20580 RVA: 0x001EBAAF File Offset: 0x001E9CAF
+	// Token: 0x170008BD RID: 2237
+	// (get) Token: 0x060050E9 RID: 20713 RVA: 0x001EE53A File Offset: 0x001EC73A
+	// (set) Token: 0x060050EA RID: 20714 RVA: 0x001EE547 File Offset: 0x001EC747
 	public SignCanvas.SignBlendMode BlendMode
 	{
 		get
@@ -154,9 +154,9 @@ public class SignCanvas : MonoBehaviour, ISignRenderingDataUpdateListener
 		}
 	}
 
-	// Token: 0x170008AC RID: 2220
-	// (get) Token: 0x06005065 RID: 20581 RVA: 0x001EBAD2 File Offset: 0x001E9CD2
-	// (set) Token: 0x06005066 RID: 20582 RVA: 0x001EBADF File Offset: 0x001E9CDF
+	// Token: 0x170008BE RID: 2238
+	// (get) Token: 0x060050EB RID: 20715 RVA: 0x001EE56A File Offset: 0x001EC76A
+	// (set) Token: 0x060050EC RID: 20716 RVA: 0x001EE577 File Offset: 0x001EC777
 	public bool ShowOnImposter
 	{
 		get
@@ -169,9 +169,9 @@ public class SignCanvas : MonoBehaviour, ISignRenderingDataUpdateListener
 		}
 	}
 
-	// Token: 0x170008AD RID: 2221
-	// (get) Token: 0x06005067 RID: 20583 RVA: 0x001EBAED File Offset: 0x001E9CED
-	// (set) Token: 0x06005068 RID: 20584 RVA: 0x001EBAFA File Offset: 0x001E9CFA
+	// Token: 0x170008BF RID: 2239
+	// (get) Token: 0x060050ED RID: 20717 RVA: 0x001EE585 File Offset: 0x001EC785
+	// (set) Token: 0x060050EE RID: 20718 RVA: 0x001EE592 File Offset: 0x001EC792
 	public CanvasRotationMode CanvasRotation
 	{
 		get
@@ -189,8 +189,8 @@ public class SignCanvas : MonoBehaviour, ISignRenderingDataUpdateListener
 		}
 	}
 
-	// Token: 0x170008AE RID: 2222
-	// (get) Token: 0x06005069 RID: 20585 RVA: 0x001EBB1D File Offset: 0x001E9D1D
+	// Token: 0x170008C0 RID: 2240
+	// (get) Token: 0x060050EF RID: 20719 RVA: 0x001EE5B5 File Offset: 0x001EC7B5
 	public float CanvasRotationRadians
 	{
 		get
@@ -199,8 +199,8 @@ public class SignCanvas : MonoBehaviour, ISignRenderingDataUpdateListener
 		}
 	}
 
-	// Token: 0x170008AF RID: 2223
-	// (get) Token: 0x0600506A RID: 20586 RVA: 0x001EBB34 File Offset: 0x001E9D34
+	// Token: 0x170008C1 RID: 2241
+	// (get) Token: 0x060050F0 RID: 20720 RVA: 0x001EE5CC File Offset: 0x001EC7CC
 	public bool IsDecal
 	{
 		get
@@ -219,7 +219,7 @@ public class SignCanvas : MonoBehaviour, ISignRenderingDataUpdateListener
 		}
 	}
 
-	// Token: 0x0600506B RID: 20587 RVA: 0x001EBB90 File Offset: 0x001E9D90
+	// Token: 0x060050F1 RID: 20721 RVA: 0x001EE628 File Offset: 0x001EC828
 	public void Initialize(SignDataManager.RenderingDataPatcher _alternativePatcher = null)
 	{
 		this._patchRenderingData = _alternativePatcher ?? new SignDataManager.RenderingDataPatcher(this.PatchRenderingData);
@@ -229,7 +229,7 @@ public class SignCanvas : MonoBehaviour, ISignRenderingDataUpdateListener
 		this.RefreshRenderers();
 	}
 
-	// Token: 0x0600506C RID: 20588 RVA: 0x001EBBC8 File Offset: 0x001E9DC8
+	// Token: 0x060050F2 RID: 20722 RVA: 0x001EE660 File Offset: 0x001EC860
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CacheBoundsMetrics()
 	{
@@ -250,7 +250,7 @@ public class SignCanvas : MonoBehaviour, ISignRenderingDataUpdateListener
 		this._sizeSquared = ((num > 0f) ? (num * num) : 1f);
 	}
 
-	// Token: 0x0600506D RID: 20589 RVA: 0x001EBC98 File Offset: 0x001E9E98
+	// Token: 0x060050F3 RID: 20723 RVA: 0x001EE730 File Offset: 0x001EC930
 	public void SetTexture(Texture rt)
 	{
 		if (this.bakedTexture == rt)
@@ -261,13 +261,13 @@ public class SignCanvas : MonoBehaviour, ISignRenderingDataUpdateListener
 		this.RefreshRenderers();
 	}
 
-	// Token: 0x0600506E RID: 20590 RVA: 0x001EBCB6 File Offset: 0x001E9EB6
+	// Token: 0x060050F4 RID: 20724 RVA: 0x001EE74E File Offset: 0x001EC94E
 	public Vector3 GetWorldPosition()
 	{
 		return base.transform.TransformPoint(this._localCenter) + Origin.position;
 	}
 
-	// Token: 0x0600506F RID: 20591 RVA: 0x001EBCD4 File Offset: 0x001E9ED4
+	// Token: 0x060050F5 RID: 20725 RVA: 0x001EE76C File Offset: 0x001EC96C
 	public void RefreshRenderers()
 	{
 		if (this.SignRenderers == null || this.SignRenderers.Count == 0)
@@ -280,7 +280,7 @@ public class SignCanvas : MonoBehaviour, ISignRenderingDataUpdateListener
 		}
 	}
 
-	// Token: 0x06005070 RID: 20592 RVA: 0x001EBD50 File Offset: 0x001E9F50
+	// Token: 0x060050F6 RID: 20726 RVA: 0x001EE7E8 File Offset: 0x001EC9E8
 	public void PatchRenderingData(MaterialPropertyBlock mpb)
 	{
 		if (this.bakedTexture != null)
@@ -296,7 +296,7 @@ public class SignCanvas : MonoBehaviour, ISignRenderingDataUpdateListener
 		mpb.SetFloat(SignShaderIDs._CanvasRotation, this.CanvasRotationRadians);
 	}
 
-	// Token: 0x06005071 RID: 20593 RVA: 0x001EBDB7 File Offset: 0x001E9FB7
+	// Token: 0x060050F7 RID: 20727 RVA: 0x001EE84F File Offset: 0x001ECA4F
 	public void HandleRenderingDataUpdate()
 	{
 		this.RefreshRenderers();
@@ -309,7 +309,7 @@ public class SignCanvas : MonoBehaviour, ISignRenderingDataUpdateListener
 		renderingDataUpdated();
 	}
 
-	// Token: 0x06005072 RID: 20594 RVA: 0x001EBDDA File Offset: 0x001E9FDA
+	// Token: 0x060050F8 RID: 20728 RVA: 0x001EE872 File Offset: 0x001ECA72
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Register()
 	{
@@ -317,7 +317,7 @@ public class SignCanvas : MonoBehaviour, ISignRenderingDataUpdateListener
 		SignDataManager.Instance.RegisterListener(this.DisplaySignId, this, true);
 	}
 
-	// Token: 0x06005073 RID: 20595 RVA: 0x001EBDF9 File Offset: 0x001E9FF9
+	// Token: 0x060050F9 RID: 20729 RVA: 0x001EE891 File Offset: 0x001ECA91
 	public void Cleanup()
 	{
 		SignDataManager.Instance.DeregisterListener(this);
@@ -325,74 +325,74 @@ public class SignCanvas : MonoBehaviour, ISignRenderingDataUpdateListener
 		this.bakedTexture = null;
 	}
 
-	// Token: 0x06005074 RID: 20596 RVA: 0x00067848 File Offset: 0x00065A48
+	// Token: 0x060050FA RID: 20730 RVA: 0x00067DD8 File Offset: 0x00065FD8
 	[Conditional("DEBUG_LOG_SIGN_CANVAS")]
 	public static void DebugLog(string message)
 	{
 		Log.Out(message);
 	}
 
-	// Token: 0x04003D9E RID: 15774
+	// Token: 0x04003E2F RID: 15919
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public SignCanvas.CanvasState _state = new SignCanvas.CanvasState();
 
-	// Token: 0x04003D9F RID: 15775
+	// Token: 0x04003E30 RID: 15920
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool allowedOnImposter = true;
 
-	// Token: 0x04003DA0 RID: 15776
+	// Token: 0x04003E31 RID: 15921
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 canvasDimensions = Vector2.one;
 
-	// Token: 0x04003DA2 RID: 15778
+	// Token: 0x04003E33 RID: 15923
 	public List<SignRenderer> SignRenderers = new List<SignRenderer>();
 
-	// Token: 0x04003DA3 RID: 15779
+	// Token: 0x04003E34 RID: 15924
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Texture bakedTexture;
 
-	// Token: 0x04003DA4 RID: 15780
+	// Token: 0x04003E35 RID: 15925
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public SignDataManager.RenderingDataPatcher _patchRenderingData;
 
-	// Token: 0x04003DA5 RID: 15781
+	// Token: 0x04003E36 RID: 15926
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool _signDataAvailabilityDirty = true;
 
-	// Token: 0x04003DA6 RID: 15782
+	// Token: 0x04003E37 RID: 15927
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool _signDataAvailable = true;
 
-	// Token: 0x04003DA7 RID: 15783
+	// Token: 0x04003E38 RID: 15928
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 _localCenter = Vector3.zero;
 
-	// Token: 0x04003DA8 RID: 15784
+	// Token: 0x04003E39 RID: 15929
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float _sizeSquared = 1f;
 
-	// Token: 0x02000A5E RID: 2654
+	// Token: 0x02000A6F RID: 2671
 	public enum SignBlendMode
 	{
-		// Token: 0x04003DAA RID: 15786
+		// Token: 0x04003E3B RID: 15931
 		Cutout,
-		// Token: 0x04003DAB RID: 15787
+		// Token: 0x04003E3C RID: 15932
 		AlphaBlend
 	}
 
-	// Token: 0x02000A5F RID: 2655
+	// Token: 0x02000A70 RID: 2672
 	public class CanvasState
 	{
-		// Token: 0x06005076 RID: 20598 RVA: 0x001EBE77 File Offset: 0x001EA077
+		// Token: 0x060050FC RID: 20732 RVA: 0x001EE90F File Offset: 0x001ECB0F
 		public SignCanvas.CanvasState Clone()
 		{
 			return new SignCanvas.CanvasState
@@ -404,7 +404,7 @@ public class SignCanvas : MonoBehaviour, ISignRenderingDataUpdateListener
 			};
 		}
 
-		// Token: 0x06005077 RID: 20599 RVA: 0x001EBEAE File Offset: 0x001EA0AE
+		// Token: 0x060050FD RID: 20733 RVA: 0x001EE946 File Offset: 0x001ECB46
 		public void Write(BinaryWriter _bw)
 		{
 			this.SignId.ToStream(_bw);
@@ -413,7 +413,7 @@ public class SignCanvas : MonoBehaviour, ISignRenderingDataUpdateListener
 			_bw.Write(this.ShowOnImposter);
 		}
 
-		// Token: 0x06005078 RID: 20600 RVA: 0x001EBEE1 File Offset: 0x001EA0E1
+		// Token: 0x060050FE RID: 20734 RVA: 0x001EE979 File Offset: 0x001ECB79
 		public static SignCanvas.CanvasState Read(BinaryReader _br)
 		{
 			return new SignCanvas.CanvasState
@@ -425,16 +425,16 @@ public class SignCanvas : MonoBehaviour, ISignRenderingDataUpdateListener
 			};
 		}
 
-		// Token: 0x04003DAC RID: 15788
+		// Token: 0x04003E3D RID: 15933
 		public GlobalSignId SignId = SignData.defaultSignDataID;
 
-		// Token: 0x04003DAD RID: 15789
+		// Token: 0x04003E3E RID: 15934
 		public SignCanvas.SignBlendMode BlendMode;
 
-		// Token: 0x04003DAE RID: 15790
+		// Token: 0x04003E3F RID: 15935
 		public bool ShowOnImposter;
 
-		// Token: 0x04003DAF RID: 15791
+		// Token: 0x04003E40 RID: 15936
 		public CanvasRotationMode CanvasRotation;
 	}
 }

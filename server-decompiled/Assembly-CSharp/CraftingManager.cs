@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-// Token: 0x020002D5 RID: 725
+// Token: 0x020002D9 RID: 729
 public class CraftingManager
 {
 	// Token: 0x14000004 RID: 4
-	// (add) Token: 0x060014E8 RID: 5352 RVA: 0x0007E740 File Offset: 0x0007C940
-	// (remove) Token: 0x060014E9 RID: 5353 RVA: 0x0007E774 File Offset: 0x0007C974
+	// (add) Token: 0x060014FB RID: 5371 RVA: 0x0007EDFC File Offset: 0x0007CFFC
+	// (remove) Token: 0x060014FC RID: 5372 RVA: 0x0007EE30 File Offset: 0x0007D030
 	public static event CraftingManager.OnRecipeUnlocked RecipeUnlocked;
 
-	// Token: 0x060014EB RID: 5355 RVA: 0x0007E814 File Offset: 0x0007CA14
+	// Token: 0x060014FE RID: 5374 RVA: 0x0007EED0 File Offset: 0x0007D0D0
 	public static void InitForNewGame()
 	{
 		CraftingManager.ClearAllRecipes();
@@ -20,7 +20,7 @@ public class CraftingManager
 		CraftingManager.craftingAreaData.Clear();
 	}
 
-	// Token: 0x060014EC RID: 5356 RVA: 0x0007E843 File Offset: 0x0007CA43
+	// Token: 0x060014FF RID: 5375 RVA: 0x0007EEFF File Offset: 0x0007D0FF
 	public static void PostInit()
 	{
 		CraftingManager.cacheNonScrapableRecipes();
@@ -30,7 +30,7 @@ public class CraftingManager
 		}
 	}
 
-	// Token: 0x060014ED RID: 5357 RVA: 0x0007E858 File Offset: 0x0007CA58
+	// Token: 0x06001500 RID: 5376 RVA: 0x0007EF14 File Offset: 0x0007D114
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void cacheNonScrapableRecipes()
 	{
@@ -44,20 +44,20 @@ public class CraftingManager
 		}
 	}
 
-	// Token: 0x060014EE RID: 5358 RVA: 0x0007E8AB File Offset: 0x0007CAAB
+	// Token: 0x06001501 RID: 5377 RVA: 0x0007EF67 File Offset: 0x0007D167
 	public static void ClearAllRecipes()
 	{
 		CraftingManager.recipes.Clear();
 	}
 
-	// Token: 0x060014EF RID: 5359 RVA: 0x0007E8B7 File Offset: 0x0007CAB7
+	// Token: 0x06001502 RID: 5378 RVA: 0x0007EF73 File Offset: 0x0007D173
 	public static void ClearLockedData()
 	{
 		CraftingManager.lockedRecipeNames.Clear();
 		CraftingManager.lockedRecipeTypes.Clear();
 	}
 
-	// Token: 0x060014F0 RID: 5360 RVA: 0x0007E8D0 File Offset: 0x0007CAD0
+	// Token: 0x06001503 RID: 5379 RVA: 0x0007EF8C File Offset: 0x0007D18C
 	public static void ClearAllGeneralRecipes()
 	{
 		List<Recipe> list = new List<Recipe>(CraftingManager.recipes);
@@ -71,13 +71,13 @@ public class CraftingManager
 		}
 	}
 
-	// Token: 0x060014F1 RID: 5361 RVA: 0x0007E922 File Offset: 0x0007CB22
+	// Token: 0x06001504 RID: 5380 RVA: 0x0007EFDE File Offset: 0x0007D1DE
 	public static void ClearRecipe(Recipe _r)
 	{
 		CraftingManager.recipes.Remove(_r);
 	}
 
-	// Token: 0x060014F2 RID: 5362 RVA: 0x0007E930 File Offset: 0x0007CB30
+	// Token: 0x06001505 RID: 5381 RVA: 0x0007EFEC File Offset: 0x0007D1EC
 	public static void ClearCraftAreaRecipes(string _craftArea, ItemValue _craftTool)
 	{
 		List<Recipe> list = new List<Recipe>(CraftingManager.recipes);
@@ -91,20 +91,20 @@ public class CraftingManager
 		}
 	}
 
-	// Token: 0x060014F3 RID: 5363 RVA: 0x0007E991 File Offset: 0x0007CB91
+	// Token: 0x06001506 RID: 5382 RVA: 0x0007F04D File Offset: 0x0007D24D
 	public static void AddRecipe(Recipe _recipe)
 	{
 		CraftingManager.recipes.Add(_recipe);
 		CraftingManager.bSorted = false;
 	}
 
-	// Token: 0x060014F4 RID: 5364 RVA: 0x0007E9A4 File Offset: 0x0007CBA4
+	// Token: 0x06001507 RID: 5383 RVA: 0x0007F060 File Offset: 0x0007D260
 	public static bool RecipeIsFavorite(Recipe _recipe)
 	{
 		return CraftingManager.FavoriteRecipeList.Contains(_recipe.GetName());
 	}
 
-	// Token: 0x060014F5 RID: 5365 RVA: 0x0007E9B8 File Offset: 0x0007CBB8
+	// Token: 0x06001508 RID: 5384 RVA: 0x0007F074 File Offset: 0x0007D274
 	public static void LockRecipe(string _recipeName, CraftingManager.RecipeLockTypes locktype = CraftingManager.RecipeLockTypes.Item)
 	{
 		for (int i = 0; i < CraftingManager.lockedRecipeNames.list.Count; i++)
@@ -121,7 +121,7 @@ public class CraftingManager
 		CraftingManager.lockedRecipeTypes.Add(locktype);
 	}
 
-	// Token: 0x060014F6 RID: 5366 RVA: 0x0007EA28 File Offset: 0x0007CC28
+	// Token: 0x06001509 RID: 5385 RVA: 0x0007F0E4 File Offset: 0x0007D2E4
 	public static void UnlockRecipe(Recipe _recipe, EntityPlayer _entity)
 	{
 		CraftingManager.UnlockedRecipeList.Add(_recipe.GetName());
@@ -135,7 +135,7 @@ public class CraftingManager
 		}
 	}
 
-	// Token: 0x060014F7 RID: 5367 RVA: 0x0007EA77 File Offset: 0x0007CC77
+	// Token: 0x0600150A RID: 5386 RVA: 0x0007F133 File Offset: 0x0007D333
 	public static void UnlockRecipe(string _recipeName, EntityPlayer _entity)
 	{
 		CraftingManager.UnlockedRecipeList.Add(_recipeName);
@@ -149,7 +149,7 @@ public class CraftingManager
 		}
 	}
 
-	// Token: 0x060014F8 RID: 5368 RVA: 0x0007EAAC File Offset: 0x0007CCAC
+	// Token: 0x0600150B RID: 5387 RVA: 0x0007F168 File Offset: 0x0007D368
 	public static void ToggleFavoriteRecipe(Recipe _recipe)
 	{
 		string name = _recipe.GetName();
@@ -161,25 +161,25 @@ public class CraftingManager
 		CraftingManager.FavoriteRecipeList.Add(name);
 	}
 
-	// Token: 0x060014F9 RID: 5369 RVA: 0x0007EAE6 File Offset: 0x0007CCE6
+	// Token: 0x0600150C RID: 5388 RVA: 0x0007F1A2 File Offset: 0x0007D3A2
 	public static int GetLockedRecipeCount()
 	{
 		return CraftingManager.lockedRecipeNames.list.Count;
 	}
 
-	// Token: 0x060014FA RID: 5370 RVA: 0x0007EAF7 File Offset: 0x0007CCF7
+	// Token: 0x0600150D RID: 5389 RVA: 0x0007F1B3 File Offset: 0x0007D3B3
 	public static int GetUnlockedRecipeCount()
 	{
 		return CraftingManager.UnlockedRecipeList.Count;
 	}
 
-	// Token: 0x060014FB RID: 5371 RVA: 0x0007EB03 File Offset: 0x0007CD03
+	// Token: 0x0600150E RID: 5390 RVA: 0x0007F1BF File Offset: 0x0007D3BF
 	public static List<Recipe> GetRecipes()
 	{
 		return new List<Recipe>(CraftingManager.recipes);
 	}
 
-	// Token: 0x060014FC RID: 5372 RVA: 0x0007EB10 File Offset: 0x0007CD10
+	// Token: 0x0600150F RID: 5391 RVA: 0x0007F1CC File Offset: 0x0007D3CC
 	public static Recipe GetRecipe(string _itemName)
 	{
 		for (int i = 0; i < CraftingManager.recipes.Count; i++)
@@ -192,7 +192,7 @@ public class CraftingManager
 		return null;
 	}
 
-	// Token: 0x060014FD RID: 5373 RVA: 0x0007EB58 File Offset: 0x0007CD58
+	// Token: 0x06001510 RID: 5392 RVA: 0x0007F214 File Offset: 0x0007D414
 	public static List<Recipe> GetRecipes(string _itemName)
 	{
 		List<Recipe> list = new List<Recipe>();
@@ -206,13 +206,13 @@ public class CraftingManager
 		return list;
 	}
 
-	// Token: 0x060014FE RID: 5374 RVA: 0x0007EBAA File Offset: 0x0007CDAA
+	// Token: 0x06001511 RID: 5393 RVA: 0x0007F266 File Offset: 0x0007D466
 	public static List<Recipe> GetAllRecipes()
 	{
 		return CraftingManager.recipes;
 	}
 
-	// Token: 0x060014FF RID: 5375 RVA: 0x0007EBB4 File Offset: 0x0007CDB4
+	// Token: 0x06001512 RID: 5394 RVA: 0x0007F270 File Offset: 0x0007D470
 	public static List<Recipe> GetNonScrapableRecipes(string _itemName)
 	{
 		List<Recipe> list = new List<Recipe>();
@@ -227,7 +227,7 @@ public class CraftingManager
 		return list;
 	}
 
-	// Token: 0x06001500 RID: 5376 RVA: 0x0007EC00 File Offset: 0x0007CE00
+	// Token: 0x06001513 RID: 5395 RVA: 0x0007F2BC File Offset: 0x0007D4BC
 	public static List<Recipe> GetAllRecipes(string _itemName)
 	{
 		List<Recipe> list = new List<Recipe>();
@@ -242,7 +242,7 @@ public class CraftingManager
 		return list;
 	}
 
-	// Token: 0x06001501 RID: 5377 RVA: 0x0007EC4C File Offset: 0x0007CE4C
+	// Token: 0x06001514 RID: 5396 RVA: 0x0007F308 File Offset: 0x0007D508
 	public static void GetFavoriteRecipesFromList(ref List<Recipe> recipeList)
 	{
 		List<Recipe> list = new List<Recipe>();
@@ -257,7 +257,7 @@ public class CraftingManager
 		recipeList = list;
 	}
 
-	// Token: 0x06001502 RID: 5378 RVA: 0x0007EC98 File Offset: 0x0007CE98
+	// Token: 0x06001515 RID: 5397 RVA: 0x0007F354 File Offset: 0x0007D554
 	public static Recipe GetScrapableRecipe(ItemValue _itemValue, int _count = 1)
 	{
 		MaterialBlock madeOfMaterial = _itemValue.ItemClass.MadeOfMaterial;
@@ -290,7 +290,7 @@ public class CraftingManager
 		return null;
 	}
 
-	// Token: 0x06001503 RID: 5379 RVA: 0x0007ED59 File Offset: 0x0007CF59
+	// Token: 0x06001516 RID: 5398 RVA: 0x0007F415 File Offset: 0x0007D615
 	public static void AddWorkstationData(WorkstationData workstationData)
 	{
 		if (CraftingManager.craftingAreaData.ContainsKey(workstationData.WorkstationName))
@@ -301,7 +301,7 @@ public class CraftingManager
 		CraftingManager.craftingAreaData.Add(workstationData.WorkstationName, workstationData);
 	}
 
-	// Token: 0x06001504 RID: 5380 RVA: 0x0007ED90 File Offset: 0x0007CF90
+	// Token: 0x06001517 RID: 5399 RVA: 0x0007F44C File Offset: 0x0007D64C
 	public static WorkstationData GetWorkstationData(string workstationName)
 	{
 		if (workstationName != null && CraftingManager.craftingAreaData.ContainsKey(workstationName))
@@ -311,57 +311,57 @@ public class CraftingManager
 		return null;
 	}
 
-	// Token: 0x04000DF9 RID: 3577
+	// Token: 0x04000E0A RID: 3594
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<Recipe> recipes = new List<Recipe>();
 
-	// Token: 0x04000DFA RID: 3578
+	// Token: 0x04000E0B RID: 3595
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool bSorted;
 
-	// Token: 0x04000DFB RID: 3579
+	// Token: 0x04000E0C RID: 3596
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DictionaryKeyList<string, int> lockedRecipeNames = new DictionaryKeyList<string, int>();
 
-	// Token: 0x04000DFC RID: 3580
+	// Token: 0x04000E0D RID: 3597
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<CraftingManager.RecipeLockTypes> lockedRecipeTypes = new List<CraftingManager.RecipeLockTypes>();
 
-	// Token: 0x04000DFD RID: 3581
+	// Token: 0x04000E0E RID: 3598
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<string, WorkstationData> craftingAreaData = new CaseInsensitiveStringDictionary<WorkstationData>();
 
-	// Token: 0x04000DFE RID: 3582
+	// Token: 0x04000E0F RID: 3599
 	public static HashSet<string> UnlockedRecipeList = new HashSet<string>();
 
-	// Token: 0x04000DFF RID: 3583
+	// Token: 0x04000E10 RID: 3600
 	public static HashSet<string> FavoriteRecipeList = new HashSet<string>();
 
-	// Token: 0x04000E00 RID: 3584
+	// Token: 0x04000E11 RID: 3601
 	public static HashSet<string> AlreadyCraftedList = new HashSet<string>();
 
-	// Token: 0x04000E01 RID: 3585
+	// Token: 0x04000E12 RID: 3602
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<Recipe> nonScrapableRecipes = new List<Recipe>();
 
-	// Token: 0x04000E02 RID: 3586
+	// Token: 0x04000E13 RID: 3603
 	public static readonly ReadOnlyCollection<Recipe> NonScrapableRecipes = CraftingManager.nonScrapableRecipes.AsReadOnly();
 
-	// Token: 0x020002D6 RID: 726
-	// (Invoke) Token: 0x06001507 RID: 5383
+	// Token: 0x020002DA RID: 730
+	// (Invoke) Token: 0x0600151A RID: 5402
 	public delegate void OnRecipeUnlocked(string recipeName);
 
-	// Token: 0x020002D7 RID: 727
+	// Token: 0x020002DB RID: 731
 	[Flags]
 	public enum RecipeLockTypes
 	{
-		// Token: 0x04000E04 RID: 3588
+		// Token: 0x04000E15 RID: 3605
 		None = 0,
-		// Token: 0x04000E05 RID: 3589
+		// Token: 0x04000E16 RID: 3606
 		Item = 1,
-		// Token: 0x04000E06 RID: 3590
+		// Token: 0x04000E17 RID: 3607
 		Skill = 2,
-		// Token: 0x04000E07 RID: 3591
+		// Token: 0x04000E18 RID: 3608
 		Quest = 4
 	}
 }

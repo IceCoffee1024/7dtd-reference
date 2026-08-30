@@ -1,15 +1,15 @@
 ﻿using System;
 
-// Token: 0x02000502 RID: 1282
+// Token: 0x02000507 RID: 1287
 public class EntityLookHelper
 {
-	// Token: 0x060029FE RID: 10750 RVA: 0x00106CC7 File Offset: 0x00104EC7
+	// Token: 0x06002A28 RID: 10792 RVA: 0x00107D03 File Offset: 0x00105F03
 	public EntityLookHelper(EntityAlive _e)
 	{
 		this.entity = _e;
 	}
 
-	// Token: 0x060029FF RID: 10751 RVA: 0x00106CD8 File Offset: 0x00104ED8
+	// Token: 0x06002A29 RID: 10793 RVA: 0x00107D14 File Offset: 0x00105F14
 	public void onUpdateLook()
 	{
 		if (this.entity.rotation.x > 1f)
@@ -25,7 +25,7 @@ public class EntityLookHelper
 		}
 	}
 
-	// Token: 0x04001FC6 RID: 8134
+	// Token: 0x04001FF5 RID: 8181
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityAlive entity;
 }

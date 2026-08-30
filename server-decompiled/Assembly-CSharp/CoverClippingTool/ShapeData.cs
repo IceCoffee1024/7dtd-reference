@@ -3,16 +3,16 @@ using System.Collections.Generic;
 
 namespace CoverClippingTool
 {
-	// Token: 0x0200165D RID: 5725
+	// Token: 0x02001678 RID: 5752
 	public class ShapeData
 	{
-		// Token: 0x0600B361 RID: 45921 RVA: 0x00430F64 File Offset: 0x0042F164
+		// Token: 0x0600B45E RID: 46174 RVA: 0x004362A4 File Offset: 0x004344A4
 		public ShapeData(string name)
 		{
 			this.Name = name;
 		}
 
-		// Token: 0x0600B362 RID: 45922 RVA: 0x00430F94 File Offset: 0x0042F194
+		// Token: 0x0600B45F RID: 46175 RVA: 0x004362D4 File Offset: 0x004344D4
 		public ShapeData Clone(string name)
 		{
 			ShapeData shapeData = new ShapeData(name);
@@ -27,16 +27,16 @@ namespace CoverClippingTool
 			return shapeData;
 		}
 
-		// Token: 0x0400865E RID: 34398
+		// Token: 0x04008737 RID: 34615
 		public readonly string Name;
 
-		// Token: 0x0400865F RID: 34399
+		// Token: 0x04008738 RID: 34616
 		public ShapeData Extends;
 
-		// Token: 0x04008660 RID: 34400
+		// Token: 0x04008739 RID: 34617
 		public Dictionary<string, PropertyValue> Properties = new Dictionary<string, PropertyValue>(StringComparer.OrdinalIgnoreCase);
 
-		// Token: 0x04008661 RID: 34401
+		// Token: 0x0400873A RID: 34618
 		public Dictionary<string, ArrayValue> Arrays = new Dictionary<string, ArrayValue>(StringComparer.OrdinalIgnoreCase);
 	}
 }

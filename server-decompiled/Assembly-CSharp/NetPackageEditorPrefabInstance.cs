@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007C2 RID: 1986
+// Token: 0x020007CD RID: 1997
 [Preserve]
 public class NetPackageEditorPrefabInstance : NetPackage
 {
-	// Token: 0x06003AD8 RID: 15064 RVA: 0x0017C0F0 File Offset: 0x0017A2F0
+	// Token: 0x06003B37 RID: 15159 RVA: 0x0017E4C8 File Offset: 0x0017C6C8
 	public NetPackageEditorPrefabInstance Setup(NetPackageEditorPrefabInstance.EChangeType _changeType, PrefabInstance _prefabInstance)
 	{
 		this.changeType = _changeType;
@@ -20,8 +20,8 @@ public class NetPackageEditorPrefabInstance : NetPackage
 		return this;
 	}
 
-	// Token: 0x1700061C RID: 1564
-	// (get) Token: 0x06003AD9 RID: 15065 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x17000627 RID: 1575
+	// (get) Token: 0x06003B38 RID: 15160 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -30,7 +30,7 @@ public class NetPackageEditorPrefabInstance : NetPackage
 		}
 	}
 
-	// Token: 0x06003ADA RID: 15066 RVA: 0x0017C17C File Offset: 0x0017A37C
+	// Token: 0x06003B39 RID: 15161 RVA: 0x0017E554 File Offset: 0x0017C754
 	public override void read(PooledBinaryReader _br)
 	{
 		this.changeType = (NetPackageEditorPrefabInstance.EChangeType)_br.ReadByte();
@@ -44,7 +44,7 @@ public class NetPackageEditorPrefabInstance : NetPackage
 		this.yOffset = _br.ReadInt32();
 	}
 
-	// Token: 0x06003ADB RID: 15067 RVA: 0x0017C1F8 File Offset: 0x0017A3F8
+	// Token: 0x06003B3A RID: 15162 RVA: 0x0017E5D0 File Offset: 0x0017C7D0
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -59,7 +59,7 @@ public class NetPackageEditorPrefabInstance : NetPackage
 		_bw.Write(this.yOffset);
 	}
 
-	// Token: 0x06003ADC RID: 15068 RVA: 0x0017C27C File Offset: 0x0017A47C
+	// Token: 0x06003B3B RID: 15163 RVA: 0x0017E654 File Offset: 0x0017C854
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -86,56 +86,56 @@ public class NetPackageEditorPrefabInstance : NetPackage
 		}
 	}
 
-	// Token: 0x06003ADD RID: 15069 RVA: 0x0017C343 File Offset: 0x0017A543
+	// Token: 0x06003B3C RID: 15164 RVA: 0x0017E71B File Offset: 0x0017C91B
 	public override int GetLength()
 	{
 		return 33 + this.name.Length + 12 + this.filename.Length + 4;
 	}
 
-	// Token: 0x04002FD2 RID: 12242
+	// Token: 0x04003051 RID: 12369
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetPackageEditorPrefabInstance.EChangeType changeType;
 
-	// Token: 0x04002FD3 RID: 12243
+	// Token: 0x04003052 RID: 12370
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int id;
 
-	// Token: 0x04002FD4 RID: 12244
+	// Token: 0x04003053 RID: 12371
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i boundingBoxPosition;
 
-	// Token: 0x04002FD5 RID: 12245
+	// Token: 0x04003054 RID: 12372
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i boundingBoxSize;
 
-	// Token: 0x04002FD6 RID: 12246
+	// Token: 0x04003055 RID: 12373
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string name;
 
-	// Token: 0x04002FD7 RID: 12247
+	// Token: 0x04003056 RID: 12374
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i size;
 
-	// Token: 0x04002FD8 RID: 12248
+	// Token: 0x04003057 RID: 12375
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string filename;
 
-	// Token: 0x04002FD9 RID: 12249
+	// Token: 0x04003058 RID: 12376
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int localRotation;
 
-	// Token: 0x04002FDA RID: 12250
+	// Token: 0x04003059 RID: 12377
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int yOffset;
 
-	// Token: 0x020007C3 RID: 1987
+	// Token: 0x020007CE RID: 1998
 	public enum EChangeType
 	{
-		// Token: 0x04002FDC RID: 12252
+		// Token: 0x0400305B RID: 12379
 		Added,
-		// Token: 0x04002FDD RID: 12253
+		// Token: 0x0400305C RID: 12380
 		Changed,
-		// Token: 0x04002FDE RID: 12254
+		// Token: 0x0400305D RID: 12381
 		Removed
 	}
 }

@@ -3,11 +3,11 @@ using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Token: 0x02001137 RID: 4407
+// Token: 0x02001150 RID: 4432
 public abstract class XUiView_WidgetBased : XUiView
 {
-	// Token: 0x17001044 RID: 4164
-	// (get) Token: 0x06008BDC RID: 35804 RVA: 0x0035143E File Offset: 0x0034F63E
+	// Token: 0x1700107D RID: 4221
+	// (get) Token: 0x06008CCE RID: 36046 RVA: 0x00355C72 File Offset: 0x00353E72
 	public override UIRect UiRect
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -17,8 +17,8 @@ public abstract class XUiView_WidgetBased : XUiView
 		}
 	}
 
-	// Token: 0x17001045 RID: 4165
-	// (get) Token: 0x06008BDD RID: 35805 RVA: 0x00351446 File Offset: 0x0034F646
+	// Token: 0x1700107E RID: 4222
+	// (get) Token: 0x06008CCF RID: 36047 RVA: 0x00355C7A File Offset: 0x00353E7A
 	public override Vector3 LocalCenter
 	{
 		get
@@ -27,8 +27,8 @@ public abstract class XUiView_WidgetBased : XUiView
 		}
 	}
 
-	// Token: 0x17001046 RID: 4166
-	// (get) Token: 0x06008BDE RID: 35806 RVA: 0x00351453 File Offset: 0x0034F653
+	// Token: 0x1700107F RID: 4223
+	// (get) Token: 0x06008CD0 RID: 36048 RVA: 0x00355C87 File Offset: 0x00353E87
 	public override Vector3[] WorldCorners
 	{
 		get
@@ -37,9 +37,9 @@ public abstract class XUiView_WidgetBased : XUiView
 		}
 	}
 
-	// Token: 0x17001047 RID: 4167
-	// (get) Token: 0x06008BDF RID: 35807 RVA: 0x00351460 File Offset: 0x0034F660
-	// (set) Token: 0x06008BE0 RID: 35808 RVA: 0x00351468 File Offset: 0x0034F668
+	// Token: 0x17001080 RID: 4224
+	// (get) Token: 0x06008CD1 RID: 36049 RVA: 0x00355C94 File Offset: 0x00353E94
+	// (set) Token: 0x06008CD2 RID: 36050 RVA: 0x00355C9C File Offset: 0x00353E9C
 	[XuiXmlAttribute("keep_aspect_ratio", false)]
 	public UIWidget.AspectRatioSource KeepAspectRatio
 	{
@@ -58,9 +58,9 @@ public abstract class XUiView_WidgetBased : XUiView
 		}
 	}
 
-	// Token: 0x17001048 RID: 4168
-	// (get) Token: 0x06008BE1 RID: 35809 RVA: 0x00351481 File Offset: 0x0034F681
-	// (set) Token: 0x06008BE2 RID: 35810 RVA: 0x00351489 File Offset: 0x0034F689
+	// Token: 0x17001081 RID: 4225
+	// (get) Token: 0x06008CD3 RID: 36051 RVA: 0x00355CB5 File Offset: 0x00353EB5
+	// (set) Token: 0x06008CD4 RID: 36052 RVA: 0x00355CBD File Offset: 0x00353EBD
 	[XuiXmlAttribute("aspect_ratio", false)]
 	public float AspectRatio
 	{
@@ -79,9 +79,9 @@ public abstract class XUiView_WidgetBased : XUiView
 		}
 	}
 
-	// Token: 0x17001049 RID: 4169
-	// (get) Token: 0x06008BE3 RID: 35811 RVA: 0x003514A7 File Offset: 0x0034F6A7
-	// (set) Token: 0x06008BE4 RID: 35812 RVA: 0x003514AF File Offset: 0x0034F6AF
+	// Token: 0x17001082 RID: 4226
+	// (get) Token: 0x06008CD5 RID: 36053 RVA: 0x00355CDB File Offset: 0x00353EDB
+	// (set) Token: 0x06008CD6 RID: 36054 RVA: 0x00355CE3 File Offset: 0x00353EE3
 	[XuiXmlAttribute("pivot", false)]
 	public UIWidget.Pivot Pivot
 	{
@@ -100,9 +100,9 @@ public abstract class XUiView_WidgetBased : XUiView
 		}
 	}
 
-	// Token: 0x1700104A RID: 4170
-	// (get) Token: 0x06008BE5 RID: 35813 RVA: 0x003514C8 File Offset: 0x0034F6C8
-	// (set) Token: 0x06008BE6 RID: 35814 RVA: 0x003514D0 File Offset: 0x0034F6D0
+	// Token: 0x17001083 RID: 4227
+	// (get) Token: 0x06008CD7 RID: 36055 RVA: 0x00355CFC File Offset: 0x00353EFC
+	// (set) Token: 0x06008CD8 RID: 36056 RVA: 0x00355D04 File Offset: 0x00353F04
 	[XuiXmlAttribute("auto_resize_collider", false)]
 	public bool AutoResizeCollider
 	{
@@ -121,14 +121,14 @@ public abstract class XUiView_WidgetBased : XUiView
 		}
 	}
 
-	// Token: 0x06008BE7 RID: 35815 RVA: 0x003514E9 File Offset: 0x0034F6E9
+	// Token: 0x06008CD9 RID: 36057 RVA: 0x00355D1D File Offset: 0x00353F1D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiView_WidgetBased(XUi _xui, string _id)
 		: base(_xui, _id)
 	{
 	}
 
-	// Token: 0x06008BE8 RID: 35816 RVA: 0x003514F4 File Offset: 0x0034F6F4
+	// Token: 0x06008CDA RID: 36058 RVA: 0x00355D28 File Offset: 0x00353F28
 	public override void InitView()
 	{
 		base.InitView();
@@ -138,14 +138,14 @@ public abstract class XUiView_WidgetBased : XUiView
 		this.uiTransform.localPosition = new Vector3((float)base.PaddedPosition.x, (float)base.PaddedPosition.y, 0f);
 	}
 
-	// Token: 0x06008BE9 RID: 35817 RVA: 0x00351566 File Offset: 0x0034F766
+	// Token: 0x06008CDB RID: 36059 RVA: 0x00355D9A File Offset: 0x00353F9A
 	public override void SetDefaults(XUiController _parent)
 	{
 		this.Pivot = UIWidget.Pivot.TopLeft;
 		base.SetDefaults(_parent);
 	}
 
-	// Token: 0x06008BEA RID: 35818 RVA: 0x00351578 File Offset: 0x0034F778
+	// Token: 0x06008CDC RID: 36060 RVA: 0x00355DAC File Offset: 0x00353FAC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void refreshBoxCollider()
 	{
@@ -158,7 +158,7 @@ public abstract class XUiView_WidgetBased : XUiView
 		this.collider.size = new Vector3(this.widget.localSize.x * base.ColliderScale + (float)(2 * base.ColliderPadding.x), this.widget.localSize.y * base.ColliderScale + (float)(2 * base.ColliderPadding.y), 0f);
 	}
 
-	// Token: 0x06008BEB RID: 35819 RVA: 0x00351620 File Offset: 0x0034F820
+	// Token: 0x06008CDD RID: 36061 RVA: 0x00355E54 File Offset: 0x00354054
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -172,7 +172,7 @@ public abstract class XUiView_WidgetBased : XUiView
 		}
 	}
 
-	// Token: 0x06008BEC RID: 35820 RVA: 0x00351684 File Offset: 0x0034F884
+	// Token: 0x06008CDE RID: 36062 RVA: 0x00355EB8 File Offset: 0x003540B8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateData()
 	{
@@ -182,8 +182,8 @@ public abstract class XUiView_WidgetBased : XUiView
 		this.refreshBoxCollider();
 	}
 
-	// Token: 0x1700104B RID: 4171
-	// (get) Token: 0x06008BED RID: 35821 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17001084 RID: 4228
+	// (get) Token: 0x06008CDF RID: 36063 RVA: 0x00020021 File Offset: 0x0001E221
 	public virtual bool anchorsKeepSize
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -193,7 +193,7 @@ public abstract class XUiView_WidgetBased : XUiView
 		}
 	}
 
-	// Token: 0x06008BEE RID: 35822 RVA: 0x003516B4 File Offset: 0x0034F8B4
+	// Token: 0x06008CE0 RID: 36064 RVA: 0x00355EE8 File Offset: 0x003540E8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void anchorsParsed()
 	{
@@ -212,7 +212,7 @@ public abstract class XUiView_WidgetBased : XUiView
 		ThreadManager.StartCoroutine(this.<anchorsParsed>g__MarkAsChangedLater|31_0());
 	}
 
-	// Token: 0x06008BEF RID: 35823 RVA: 0x00351747 File Offset: 0x0034F947
+	// Token: 0x06008CE1 RID: 36065 RVA: 0x00355F7B File Offset: 0x0035417B
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator <anchorsParsed>g__MarkAsChangedLater|31_0()
@@ -222,23 +222,23 @@ public abstract class XUiView_WidgetBased : XUiView
 		yield break;
 	}
 
-	// Token: 0x040066FF RID: 26367
+	// Token: 0x040067C9 RID: 26569
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public UIWidget widget;
 
-	// Token: 0x04006700 RID: 26368
+	// Token: 0x040067CA RID: 26570
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public UIWidget.AspectRatioSource keepAspectRatio;
 
-	// Token: 0x04006701 RID: 26369
+	// Token: 0x040067CB RID: 26571
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float aspectRatio;
 
-	// Token: 0x04006702 RID: 26370
+	// Token: 0x040067CC RID: 26572
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool autoResizeCollider;
 
-	// Token: 0x04006703 RID: 26371
+	// Token: 0x040067CD RID: 26573
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public UIWidget.Pivot pivot;
 }

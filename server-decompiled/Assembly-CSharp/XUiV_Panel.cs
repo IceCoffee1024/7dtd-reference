@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001143 RID: 4419
+// Token: 0x0200115C RID: 4444
 public class XUiV_Panel : XUiView
 {
-	// Token: 0x1700108F RID: 4239
-	// (get) Token: 0x06008CB8 RID: 36024 RVA: 0x00353465 File Offset: 0x00351665
+	// Token: 0x170010C8 RID: 4296
+	// (get) Token: 0x06008DAA RID: 36266 RVA: 0x00357CA1 File Offset: 0x00355EA1
 	public override UIRect UiRect
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -15,9 +15,9 @@ public class XUiV_Panel : XUiView
 		}
 	}
 
-	// Token: 0x17001090 RID: 4240
-	// (get) Token: 0x06008CB9 RID: 36025 RVA: 0x0035346D File Offset: 0x0035166D
-	// (set) Token: 0x06008CBA RID: 36026 RVA: 0x00353475 File Offset: 0x00351675
+	// Token: 0x170010C9 RID: 4297
+	// (get) Token: 0x06008DAB RID: 36267 RVA: 0x00357CA9 File Offset: 0x00355EA9
+	// (set) Token: 0x06008DAC RID: 36268 RVA: 0x00357CB1 File Offset: 0x00355EB1
 	[XuiXmlAttribute("clipping", false)]
 	public UIDrawCall.Clipping Clipping
 	{
@@ -36,9 +36,9 @@ public class XUiV_Panel : XUiView
 		}
 	}
 
-	// Token: 0x17001091 RID: 4241
-	// (get) Token: 0x06008CBB RID: 36027 RVA: 0x0035348E File Offset: 0x0035168E
-	// (set) Token: 0x06008CBC RID: 36028 RVA: 0x00353496 File Offset: 0x00351696
+	// Token: 0x170010CA RID: 4298
+	// (get) Token: 0x06008DAD RID: 36269 RVA: 0x00357CCA File Offset: 0x00355ECA
+	// (set) Token: 0x06008DAE RID: 36270 RVA: 0x00357CD2 File Offset: 0x00355ED2
 	[XuiXmlAttribute("clippingsize", false)]
 	public Vector2 ClippingSize
 	{
@@ -57,9 +57,9 @@ public class XUiV_Panel : XUiView
 		}
 	}
 
-	// Token: 0x17001092 RID: 4242
-	// (get) Token: 0x06008CBD RID: 36029 RVA: 0x003534B4 File Offset: 0x003516B4
-	// (set) Token: 0x06008CBE RID: 36030 RVA: 0x003534BC File Offset: 0x003516BC
+	// Token: 0x170010CB RID: 4299
+	// (get) Token: 0x06008DAF RID: 36271 RVA: 0x00357CF0 File Offset: 0x00355EF0
+	// (set) Token: 0x06008DB0 RID: 36272 RVA: 0x00357CF8 File Offset: 0x00355EF8
 	[XuiXmlAttribute("clippingcenter", false)]
 	public Vector2 ClippingCenter
 	{
@@ -78,9 +78,9 @@ public class XUiV_Panel : XUiView
 		}
 	}
 
-	// Token: 0x17001093 RID: 4243
-	// (get) Token: 0x06008CBF RID: 36031 RVA: 0x003534DA File Offset: 0x003516DA
-	// (set) Token: 0x06008CC0 RID: 36032 RVA: 0x003534E2 File Offset: 0x003516E2
+	// Token: 0x170010CC RID: 4300
+	// (get) Token: 0x06008DB1 RID: 36273 RVA: 0x00357D16 File Offset: 0x00355F16
+	// (set) Token: 0x06008DB2 RID: 36274 RVA: 0x00357D1E File Offset: 0x00355F1E
 	[XuiXmlAttribute("clippingsoftness", false)]
 	public Vector2 ClippingSoftness
 	{
@@ -99,9 +99,9 @@ public class XUiV_Panel : XUiView
 		}
 	}
 
-	// Token: 0x17001094 RID: 4244
-	// (get) Token: 0x06008CC1 RID: 36033 RVA: 0x00353500 File Offset: 0x00351700
-	// (set) Token: 0x06008CC2 RID: 36034 RVA: 0x00353508 File Offset: 0x00351708
+	// Token: 0x170010CD RID: 4301
+	// (get) Token: 0x06008DB3 RID: 36275 RVA: 0x00357D3C File Offset: 0x00355F3C
+	// (set) Token: 0x06008DB4 RID: 36276 RVA: 0x00357D44 File Offset: 0x00355F44
 	[XuiXmlAttribute("clippingoffset", false)]
 	public Vector2 ClipOffset
 	{
@@ -120,9 +120,9 @@ public class XUiV_Panel : XUiView
 		}
 	}
 
-	// Token: 0x17001095 RID: 4245
-	// (get) Token: 0x06008CC3 RID: 36035 RVA: 0x00353526 File Offset: 0x00351726
-	// (set) Token: 0x06008CC4 RID: 36036 RVA: 0x00353533 File Offset: 0x00351733
+	// Token: 0x170010CE RID: 4302
+	// (get) Token: 0x06008DB5 RID: 36277 RVA: 0x00357D62 File Offset: 0x00355F62
+	// (set) Token: 0x06008DB6 RID: 36278 RVA: 0x00357D6F File Offset: 0x00355F6F
 	public bool StaticWidgets
 	{
 		get
@@ -135,8 +135,8 @@ public class XUiV_Panel : XUiView
 		}
 	}
 
-	// Token: 0x17001096 RID: 4246
-	// (get) Token: 0x06008CC5 RID: 36037 RVA: 0x00353541 File Offset: 0x00351741
+	// Token: 0x170010CF RID: 4303
+	// (get) Token: 0x06008DB7 RID: 36279 RVA: 0x00357D7D File Offset: 0x00355F7D
 	public override Vector3[] WorldCorners
 	{
 		get
@@ -145,20 +145,20 @@ public class XUiV_Panel : XUiView
 		}
 	}
 
-	// Token: 0x06008CC6 RID: 36038 RVA: 0x00353550 File Offset: 0x00351750
+	// Token: 0x06008DB8 RID: 36280 RVA: 0x00357D8C File Offset: 0x00355F8C
 	public XUiV_Panel(XUi _xui, string _id)
 		: base(_xui, _id)
 	{
 	}
 
-	// Token: 0x06008CC7 RID: 36039 RVA: 0x003535A4 File Offset: 0x003517A4
+	// Token: 0x06008DB9 RID: 36281 RVA: 0x00357DE0 File Offset: 0x00355FE0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void createComponents(GameObject _go)
 	{
 		_go.AddComponent<UIPanel>();
 	}
 
-	// Token: 0x06008CC8 RID: 36040 RVA: 0x003535AD File Offset: 0x003517AD
+	// Token: 0x06008DBA RID: 36282 RVA: 0x00357DE9 File Offset: 0x00355FE9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void captureComponents()
 	{
@@ -166,7 +166,7 @@ public class XUiV_Panel : XUiView
 		this.panel = this.uiTransform.gameObject.GetComponent<UIPanel>();
 	}
 
-	// Token: 0x06008CC9 RID: 36041 RVA: 0x003535CB File Offset: 0x003517CB
+	// Token: 0x06008DBB RID: 36283 RVA: 0x00357E07 File Offset: 0x00356007
 	public override void InitView()
 	{
 		base.InitView();
@@ -175,7 +175,7 @@ public class XUiV_Panel : XUiView
 		base.SetDirty();
 	}
 
-	// Token: 0x06008CCA RID: 36042 RVA: 0x003535F0 File Offset: 0x003517F0
+	// Token: 0x06008DBC RID: 36284 RVA: 0x00357E2C File Offset: 0x0035602C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateData()
 	{
@@ -184,7 +184,7 @@ public class XUiV_Panel : XUiView
 		this.refreshBoxCollider();
 	}
 
-	// Token: 0x06008CCB RID: 36043 RVA: 0x00353604 File Offset: 0x00351804
+	// Token: 0x06008DBD RID: 36285 RVA: 0x00357E40 File Offset: 0x00356040
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateClipping()
 	{
@@ -222,27 +222,27 @@ public class XUiV_Panel : XUiView
 		this.panel.clipOffset = zero;
 	}
 
-	// Token: 0x0400675B RID: 26459
+	// Token: 0x04006825 RID: 26661
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public UIPanel panel;
 
-	// Token: 0x0400675C RID: 26460
+	// Token: 0x04006826 RID: 26662
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UIDrawCall.Clipping clipping;
 
-	// Token: 0x0400675D RID: 26461
+	// Token: 0x04006827 RID: 26663
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 clippingOffset = new Vector2(-10000f, -10000f);
 
-	// Token: 0x0400675E RID: 26462
+	// Token: 0x04006828 RID: 26664
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 clippingSize = new Vector2(-10000f, -10000f);
 
-	// Token: 0x0400675F RID: 26463
+	// Token: 0x04006829 RID: 26665
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 clippingCenter = new Vector2(-10000f, -10000f);
 
-	// Token: 0x04006760 RID: 26464
+	// Token: 0x0400682A RID: 26666
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 clippingSoftness;
 }

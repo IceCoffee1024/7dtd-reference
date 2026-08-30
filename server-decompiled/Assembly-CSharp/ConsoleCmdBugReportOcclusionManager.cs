@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020001ED RID: 493
+// Token: 0x020001EF RID: 495
 [Preserve]
 public class ConsoleCmdBugReportOcclusionManager : ConsoleCmdAbstract
 {
 	// Token: 0x17000144 RID: 324
-	// (get) Token: 0x06000F39 RID: 3897 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// (get) Token: 0x06000F44 RID: 3908 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -16,14 +16,14 @@ public class ConsoleCmdBugReportOcclusionManager : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F3A RID: 3898 RVA: 0x00063241 File Offset: 0x00061441
+	// Token: 0x06000F45 RID: 3909 RVA: 0x00063789 File Offset: 0x00061989
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "testoccreport", "toccr" };
 	}
 
-	// Token: 0x06000F3B RID: 3899 RVA: 0x00063259 File Offset: 0x00061459
+	// Token: 0x06000F46 RID: 3910 RVA: 0x000637A1 File Offset: 0x000619A1
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
@@ -31,7 +31,7 @@ public class ConsoleCmdBugReportOcclusionManager : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000145 RID: 325
-	// (get) Token: 0x06000F3C RID: 3900 RVA: 0x00010E62 File Offset: 0x0000F062
+	// (get) Token: 0x06000F47 RID: 3911 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -40,7 +40,7 @@ public class ConsoleCmdBugReportOcclusionManager : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F3D RID: 3901 RVA: 0x00063260 File Offset: 0x00061460
+	// Token: 0x06000F48 RID: 3912 RVA: 0x000637A8 File Offset: 0x000619A8
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (!GamePrefs.GetBool(EnumGamePrefs.DebugMenuEnabled))

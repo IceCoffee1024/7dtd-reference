@@ -4,13 +4,13 @@ using GUI_2;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x0200100F RID: 4111
+// Token: 0x02001028 RID: 4136
 [Preserve]
 public class XUiC_ShapesWindow : XUiController
 {
-	// Token: 0x17000F08 RID: 3848
-	// (get) Token: 0x060081CF RID: 33231 RVA: 0x00315196 File Offset: 0x00313396
-	// (set) Token: 0x060081D0 RID: 33232 RVA: 0x0031519E File Offset: 0x0031339E
+	// Token: 0x17000F41 RID: 3905
+	// (get) Token: 0x060082C1 RID: 33473 RVA: 0x003199BE File Offset: 0x00317BBE
+	// (set) Token: 0x060082C2 RID: 33474 RVA: 0x003199C6 File Offset: 0x00317BC6
 	public int Page
 	{
 		get
@@ -33,7 +33,7 @@ public class XUiC_ShapesWindow : XUiController
 		}
 	}
 
-	// Token: 0x060081D1 RID: 33233 RVA: 0x003151D8 File Offset: 0x003133D8
+	// Token: 0x060082C3 RID: 33475 RVA: 0x00319A00 File Offset: 0x00317C00
 	public override void Init()
 	{
 		base.Init();
@@ -84,7 +84,7 @@ public class XUiC_ShapesWindow : XUiController
 		}
 	}
 
-	// Token: 0x060081D2 RID: 33234 RVA: 0x003153AE File Offset: 0x003135AE
+	// Token: 0x060082C4 RID: 33476 RVA: 0x00319BD6 File Offset: 0x00317DD6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleFavoritesChanged(XUiController _sender, int _mouseButton)
 	{
@@ -93,7 +93,7 @@ public class XUiC_ShapesWindow : XUiController
 		this.UpdateAll();
 	}
 
-	// Token: 0x060081D3 RID: 33235 RVA: 0x003153D6 File Offset: 0x003135D6
+	// Token: 0x060082C5 RID: 33477 RVA: 0x00319BFE File Offset: 0x00317DFE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnChangedHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -101,7 +101,7 @@ public class XUiC_ShapesWindow : XUiController
 		this.UpdateShapesList();
 	}
 
-	// Token: 0x060081D4 RID: 33236 RVA: 0x003153E5 File Offset: 0x003135E5
+	// Token: 0x060082C6 RID: 33478 RVA: 0x00319C0D File Offset: 0x00317E0D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnScroll(XUiController _sender, float _delta)
 	{
@@ -127,7 +127,7 @@ public class XUiC_ShapesWindow : XUiController
 		}
 	}
 
-	// Token: 0x060081D5 RID: 33237 RVA: 0x00315414 File Offset: 0x00313614
+	// Token: 0x060082C7 RID: 33479 RVA: 0x00319C3C File Offset: 0x00317E3C
 	public void UpgradeDowngradeShapes(BlockValue _targetBv)
 	{
 		string blockName = _targetBv.Block.GetBlockName();
@@ -138,14 +138,14 @@ public class XUiC_ShapesWindow : XUiController
 		this.UpdateAll();
 	}
 
-	// Token: 0x060081D6 RID: 33238 RVA: 0x0031546C File Offset: 0x0031366C
+	// Token: 0x060082C8 RID: 33480 RVA: 0x00319C94 File Offset: 0x00317E94
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateAltList()
 	{
 		this.altBlocks = this.ItemValue.ToBlockValue(false).Block.GetAltBlocks();
 	}
 
-	// Token: 0x060081D7 RID: 33239 RVA: 0x00315498 File Offset: 0x00313698
+	// Token: 0x060082C9 RID: 33481 RVA: 0x00319CC0 File Offset: 0x00317EC0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateCategories()
 	{
@@ -175,7 +175,7 @@ public class XUiC_ShapesWindow : XUiController
 		}
 	}
 
-	// Token: 0x060081D8 RID: 33240 RVA: 0x00315570 File Offset: 0x00313770
+	// Token: 0x060082CA RID: 33482 RVA: 0x00319D98 File Offset: 0x00317F98
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateShapesList()
 	{
@@ -223,7 +223,7 @@ public class XUiC_ShapesWindow : XUiController
 		this.resultCount.Text = string.Format(this.lblTotal, this.currentItems.Count.ToString());
 	}
 
-	// Token: 0x060081D9 RID: 33241 RVA: 0x0031576D File Offset: 0x0031396D
+	// Token: 0x060082CB RID: 33483 RVA: 0x00319F95 File Offset: 0x00318195
 	public void UpdateAll()
 	{
 		this.updateAltList();
@@ -232,13 +232,13 @@ public class XUiC_ShapesWindow : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060081DA RID: 33242 RVA: 0x00315788 File Offset: 0x00313988
+	// Token: 0x060082CC RID: 33484 RVA: 0x00319FB0 File Offset: 0x003181B0
 	public void RefreshItemStack()
 	{
 		XUiC_ItemStack stackController = this.StackController;
 	}
 
-	// Token: 0x060081DB RID: 33243 RVA: 0x00315794 File Offset: 0x00313994
+	// Token: 0x060082CD RID: 33485 RVA: 0x00319FBC File Offset: 0x003181BC
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -261,7 +261,7 @@ public class XUiC_ShapesWindow : XUiController
 		this.UpdateAll();
 	}
 
-	// Token: 0x060081DC RID: 33244 RVA: 0x003158DC File Offset: 0x00313ADC
+	// Token: 0x060082CE RID: 33486 RVA: 0x0031A104 File Offset: 0x00318304
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -283,14 +283,14 @@ public class XUiC_ShapesWindow : XUiController
 		}
 	}
 
-	// Token: 0x060081DD RID: 33245 RVA: 0x003159E0 File Offset: 0x00313BE0
+	// Token: 0x060082CF RID: 33487 RVA: 0x0031A208 File Offset: 0x00318408
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CategoryList_CategoryChanged(XUiC_CategoryEntry _categoryEntry)
 	{
 		this.UpdateShapesList();
 	}
 
-	// Token: 0x060081DE RID: 33246 RVA: 0x003159E8 File Offset: 0x00313BE8
+	// Token: 0x060082D0 RID: 33488 RVA: 0x0031A210 File Offset: 0x00318410
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -301,7 +301,7 @@ public class XUiC_ShapesWindow : XUiController
 		}
 	}
 
-	// Token: 0x060081DF RID: 33247 RVA: 0x00315A18 File Offset: 0x00313C18
+	// Token: 0x060082D1 RID: 33489 RVA: 0x0031A240 File Offset: 0x00318440
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -320,81 +320,81 @@ public class XUiC_ShapesWindow : XUiController
 		return base.GetBindingValueInternal(ref _value, _bindingName);
 	}
 
-	// Token: 0x04006018 RID: 24600
+	// Token: 0x040060DF RID: 24799
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label resultCount;
 
-	// Token: 0x04006019 RID: 24601
+	// Token: 0x040060E0 RID: 24800
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ShapeStackGrid shapeGrid;
 
-	// Token: 0x0400601A RID: 24602
+	// Token: 0x040060E1 RID: 24801
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int page;
 
-	// Token: 0x0400601B RID: 24603
+	// Token: 0x040060E2 RID: 24802
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int length;
 
-	// Token: 0x0400601C RID: 24604
+	// Token: 0x040060E3 RID: 24803
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showFavorites;
 
-	// Token: 0x0400601D RID: 24605
+	// Token: 0x040060E4 RID: 24804
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button favoritesBtn;
 
-	// Token: 0x0400601E RID: 24606
+	// Token: 0x040060E5 RID: 24805
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtInput;
 
-	// Token: 0x0400601F RID: 24607
+	// Token: 0x040060E6 RID: 24806
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_CategoryList categoryList;
 
-	// Token: 0x04006020 RID: 24608
+	// Token: 0x040060E7 RID: 24807
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_Paging pager;
 
-	// Token: 0x04006021 RID: 24609
+	// Token: 0x040060E8 RID: 24808
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController paintbrushButton;
 
-	// Token: 0x04006022 RID: 24610
+	// Token: 0x040060E9 RID: 24809
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController paintrollerButton;
 
-	// Token: 0x04006023 RID: 24611
+	// Token: 0x040060EA RID: 24810
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblPaintEyeDropper;
 
-	// Token: 0x04006024 RID: 24612
+	// Token: 0x040060EB RID: 24811
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblCopyBlock;
 
-	// Token: 0x04006025 RID: 24613
+	// Token: 0x040060EC RID: 24812
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblTotal;
 
-	// Token: 0x04006026 RID: 24614
+	// Token: 0x040060ED RID: 24813
 	public ItemValue ItemValue = ItemValue.None;
 
-	// Token: 0x04006027 RID: 24615
+	// Token: 0x040060EE RID: 24814
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Block[] altBlocks;
 
-	// Token: 0x04006028 RID: 24616
+	// Token: 0x040060EF RID: 24815
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<ShapesFromXml.ShapeCategory> shapeCategories = new List<ShapesFromXml.ShapeCategory>();
 
-	// Token: 0x04006029 RID: 24617
+	// Token: 0x040060F0 RID: 24816
 	public XUiC_ItemStack StackController;
 
-	// Token: 0x0400602A RID: 24618
+	// Token: 0x040060F1 RID: 24817
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<XUiC_ShapeStackGrid.ShapeData> currentItems = new List<XUiC_ShapeStackGrid.ShapeData>();
 
-	// Token: 0x0400602B RID: 24619
+	// Token: 0x040060F2 RID: 24818
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool openedBefore;
 }

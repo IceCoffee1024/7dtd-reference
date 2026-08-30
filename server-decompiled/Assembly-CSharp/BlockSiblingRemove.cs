@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000149 RID: 329
+// Token: 0x0200014A RID: 330
 [Preserve]
 public class BlockSiblingRemove : Block
 {
-	// Token: 0x0600091F RID: 2335 RVA: 0x0003FAD0 File Offset: 0x0003DCD0
+	// Token: 0x06000929 RID: 2345 RVA: 0x0003FD30 File Offset: 0x0003DF30
 	public override void Init()
 	{
 		base.Init();
@@ -16,7 +16,7 @@ public class BlockSiblingRemove : Block
 		}
 	}
 
-	// Token: 0x06000920 RID: 2336 RVA: 0x0003FB24 File Offset: 0x0003DD24
+	// Token: 0x0600092A RID: 2346 RVA: 0x0003FD84 File Offset: 0x0003DF84
 	public override void OnBlockRemoved(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockRemoved(_world, _chunk, _blockPos, _blockValue);
@@ -63,7 +63,7 @@ public class BlockSiblingRemove : Block
 		}
 	}
 
-	// Token: 0x040009A2 RID: 2466
+	// Token: 0x040009A4 RID: 2468
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector3i siblingDirection = Vector3i.zero;
 }

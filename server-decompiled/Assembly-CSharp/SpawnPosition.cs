@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000BA6 RID: 2982
+// Token: 0x02000BB8 RID: 3000
 public struct SpawnPosition : IEquatable<SpawnPosition>
 {
-	// Token: 0x06005A29 RID: 23081 RVA: 0x0022B12C File Offset: 0x0022932C
+	// Token: 0x06005AB1 RID: 23217 RVA: 0x0022DE94 File Offset: 0x0022C094
 	public SpawnPosition(bool _bInvalid)
 	{
 		this.position = Vector3.zero;
@@ -12,7 +12,7 @@ public struct SpawnPosition : IEquatable<SpawnPosition>
 		this.bInvalid = true;
 	}
 
-	// Token: 0x06005A2A RID: 23082 RVA: 0x0022B14B File Offset: 0x0022934B
+	// Token: 0x06005AB2 RID: 23218 RVA: 0x0022DEB3 File Offset: 0x0022C0B3
 	public SpawnPosition(Vector3i _blockPos, float _heading)
 	{
 		this.position = _blockPos.ToVector3() + new Vector3(0.5f, 0f, 0.5f);
@@ -20,7 +20,7 @@ public struct SpawnPosition : IEquatable<SpawnPosition>
 		this.bInvalid = false;
 	}
 
-	// Token: 0x06005A2B RID: 23083 RVA: 0x0022B181 File Offset: 0x00229381
+	// Token: 0x06005AB3 RID: 23219 RVA: 0x0022DEE9 File Offset: 0x0022C0E9
 	public SpawnPosition(Vector3 _position, float _heading)
 	{
 		this.position = _position;
@@ -28,13 +28,13 @@ public struct SpawnPosition : IEquatable<SpawnPosition>
 		this.bInvalid = false;
 	}
 
-	// Token: 0x06005A2C RID: 23084 RVA: 0x0022B198 File Offset: 0x00229398
+	// Token: 0x06005AB4 RID: 23220 RVA: 0x0022DF00 File Offset: 0x0022C100
 	public Vector3i ToBlockPos()
 	{
 		return new Vector3i(Utils.Fastfloor(this.position.x), Utils.Fastfloor(this.position.y), Utils.Fastfloor(this.position.z));
 	}
 
-	// Token: 0x06005A2D RID: 23085 RVA: 0x0022B1CF File Offset: 0x002293CF
+	// Token: 0x06005AB5 RID: 23221 RVA: 0x0022DF37 File Offset: 0x0022C137
 	public void Read(IBinaryReaderOrWriter _readerOrWriter, uint _version)
 	{
 		if (_version > 1U && _version < 3U)
@@ -45,7 +45,7 @@ public struct SpawnPosition : IEquatable<SpawnPosition>
 		this.heading = _readerOrWriter.ReadWrite(0f);
 	}
 
-	// Token: 0x06005A2E RID: 23086 RVA: 0x0022B203 File Offset: 0x00229403
+	// Token: 0x06005AB6 RID: 23222 RVA: 0x0022DF6B File Offset: 0x0022C16B
 	public void Read(PooledBinaryReader _br, uint _version)
 	{
 		if (_version > 1U)
@@ -56,7 +56,7 @@ public struct SpawnPosition : IEquatable<SpawnPosition>
 		this.heading = _br.ReadSingle();
 	}
 
-	// Token: 0x06005A2F RID: 23087 RVA: 0x0022B23C File Offset: 0x0022943C
+	// Token: 0x06005AB7 RID: 23223 RVA: 0x0022DFA4 File Offset: 0x0022C1A4
 	public void Write(PooledBinaryWriter _bw)
 	{
 		_bw.Write(0);
@@ -66,46 +66,46 @@ public struct SpawnPosition : IEquatable<SpawnPosition>
 		_bw.Write(this.heading);
 	}
 
-	// Token: 0x06005A30 RID: 23088 RVA: 0x0022B28F File Offset: 0x0022948F
+	// Token: 0x06005AB8 RID: 23224 RVA: 0x0022DFF7 File Offset: 0x0022C1F7
 	public bool IsUndef()
 	{
 		return this.Equals(SpawnPosition.Undef);
 	}
 
-	// Token: 0x06005A31 RID: 23089 RVA: 0x0022B29C File Offset: 0x0022949C
+	// Token: 0x06005AB9 RID: 23225 RVA: 0x0022E004 File Offset: 0x0022C204
 	public bool Equals(SpawnPosition _other)
 	{
 		return this.position.Equals(_other.position) && this.heading == _other.heading && this.bInvalid == _other.bInvalid;
 	}
 
-	// Token: 0x06005A32 RID: 23090 RVA: 0x0022B2CF File Offset: 0x002294CF
+	// Token: 0x06005ABA RID: 23226 RVA: 0x0022E037 File Offset: 0x0022C237
 	public override bool Equals(object obj)
 	{
 		return obj != null && obj is SpawnPosition && this.Equals((SpawnPosition)obj);
 	}
 
-	// Token: 0x06005A33 RID: 23091 RVA: 0x0022B2EC File Offset: 0x002294EC
+	// Token: 0x06005ABB RID: 23227 RVA: 0x0022E054 File Offset: 0x0022C254
 	public override int GetHashCode()
 	{
 		return (((this.position.GetHashCode() * 397) ^ this.heading.GetHashCode()) * 397) ^ this.bInvalid.GetHashCode();
 	}
 
-	// Token: 0x06005A34 RID: 23092 RVA: 0x0022B323 File Offset: 0x00229523
+	// Token: 0x06005ABC RID: 23228 RVA: 0x0022E08B File Offset: 0x0022C28B
 	public override string ToString()
 	{
 		return string.Format("SpawnPoint {0}/{1}", this.position.ToCultureInvariantString(), this.heading.ToCultureInvariantString("0.0"));
 	}
 
-	// Token: 0x040045D6 RID: 17878
+	// Token: 0x04004672 RID: 18034
 	public static SpawnPosition Undef = new SpawnPosition(true);
 
-	// Token: 0x040045D7 RID: 17879
+	// Token: 0x04004673 RID: 18035
 	public Vector3 position;
 
-	// Token: 0x040045D8 RID: 17880
+	// Token: 0x04004674 RID: 18036
 	public float heading;
 
-	// Token: 0x040045D9 RID: 17881
+	// Token: 0x04004675 RID: 18037
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bInvalid;
 }

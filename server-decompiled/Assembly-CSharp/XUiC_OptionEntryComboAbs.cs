@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D80 RID: 3456
+// Token: 0x02000D94 RID: 3476
 [Preserve]
 public abstract class XUiC_OptionEntryComboAbs : XUiC_OptionEntryAbs
 {
-	// Token: 0x06006920 RID: 26912 RVA: 0x002960BC File Offset: 0x002942BC
+	// Token: 0x060069BC RID: 27068 RVA: 0x00299210 File Offset: 0x00297410
 	[XuiBindEvent("OnValueChangedGeneric", "comboGeneric")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnComboValueChanged(XUiController _sender)
@@ -17,11 +17,11 @@ public abstract class XUiC_OptionEntryComboAbs : XUiC_OptionEntryAbs
 		base.invokeValueChanged();
 	}
 
-	// Token: 0x06006921 RID: 26913
+	// Token: 0x060069BD RID: 27069
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract void immediatelyApplyCurrentSelection();
 
-	// Token: 0x06006922 RID: 26914 RVA: 0x002960D2 File Offset: 0x002942D2
+	// Token: 0x060069BE RID: 27070 RVA: 0x00299226 File Offset: 0x00297426
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_OptionEntryComboAbs()
 	{

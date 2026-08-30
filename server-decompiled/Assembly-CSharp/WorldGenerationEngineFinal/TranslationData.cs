@@ -2,10 +2,10 @@
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x02001716 RID: 5910
+	// Token: 0x0200173C RID: 5948
 	public struct TranslationData
 	{
-		// Token: 0x0600B78D RID: 46989 RVA: 0x0044759C File Offset: 0x0044579C
+		// Token: 0x0600B910 RID: 47376 RVA: 0x0044D314 File Offset: 0x0044B514
 		public TranslationData(int _x, int _y, float _randomScaleMin = 0.5f, float _randomScaleMax = 1.5f)
 		{
 			this.x = _x;
@@ -15,7 +15,7 @@ namespace WorldGenerationEngineFinal
 			this.rotation = instance.Angle();
 		}
 
-		// Token: 0x0600B78E RID: 46990 RVA: 0x004475D8 File Offset: 0x004457D8
+		// Token: 0x0600B911 RID: 47377 RVA: 0x0044D350 File Offset: 0x0044B550
 		public TranslationData(int _x, int _y, float _scale, int _rotation)
 		{
 			this.x = _x;
@@ -24,16 +24,16 @@ namespace WorldGenerationEngineFinal
 			this.rotation = _rotation;
 		}
 
-		// Token: 0x04008934 RID: 35124
+		// Token: 0x04008A50 RID: 35408
 		public int x;
 
-		// Token: 0x04008935 RID: 35125
+		// Token: 0x04008A51 RID: 35409
 		public int y;
 
-		// Token: 0x04008936 RID: 35126
+		// Token: 0x04008A52 RID: 35410
 		public float scale;
 
-		// Token: 0x04008937 RID: 35127
+		// Token: 0x04008A53 RID: 35411
 		public int rotation;
 	}
 }

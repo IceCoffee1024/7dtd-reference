@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x0200057B RID: 1403
+// Token: 0x02000580 RID: 1408
 public class TypedMetadataValue
 {
-	// Token: 0x06002E01 RID: 11777 RVA: 0x001246E4 File Offset: 0x001228E4
+	// Token: 0x06002E2F RID: 11823 RVA: 0x001257D4 File Offset: 0x001239D4
 	public static TypedMetadataValue.TypeTag StringToTag(string str)
 	{
 		TypedMetadataValue.TypeTag typeTag;
@@ -33,13 +33,13 @@ public class TypedMetadataValue
 		return typeTag;
 	}
 
-	// Token: 0x06002E02 RID: 11778 RVA: 0x00124729 File Offset: 0x00122929
+	// Token: 0x06002E30 RID: 11824 RVA: 0x00125819 File Offset: 0x00123A19
 	public TypedMetadataValue.TypeTag GetTypeTag()
 	{
 		return this.typeTag;
 	}
 
-	// Token: 0x06002E03 RID: 11779 RVA: 0x00124731 File Offset: 0x00122931
+	// Token: 0x06002E31 RID: 11825 RVA: 0x00125821 File Offset: 0x00123A21
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TypedMetadataValue(object val, TypedMetadataValue.TypeTag tag)
 	{
@@ -47,7 +47,7 @@ public class TypedMetadataValue
 		this.value = val;
 	}
 
-	// Token: 0x06002E04 RID: 11780 RVA: 0x00124747 File Offset: 0x00122947
+	// Token: 0x06002E32 RID: 11826 RVA: 0x00125837 File Offset: 0x00123A37
 	public static bool TryCreate(object val, TypedMetadataValue.TypeTag tag, out TypedMetadataValue result)
 	{
 		if (!TypedMetadataValue.ValueMatchesTag(val, tag))
@@ -59,13 +59,13 @@ public class TypedMetadataValue
 		return true;
 	}
 
-	// Token: 0x06002E05 RID: 11781 RVA: 0x00124761 File Offset: 0x00122961
+	// Token: 0x06002E33 RID: 11827 RVA: 0x00125851 File Offset: 0x00123A51
 	public object GetValue()
 	{
 		return this.value;
 	}
 
-	// Token: 0x06002E06 RID: 11782 RVA: 0x00124769 File Offset: 0x00122969
+	// Token: 0x06002E34 RID: 11828 RVA: 0x00125859 File Offset: 0x00123A59
 	public bool SetValue(object val)
 	{
 		if (TypedMetadataValue.ValueMatchesTag(val, this.typeTag))
@@ -76,7 +76,7 @@ public class TypedMetadataValue
 		return false;
 	}
 
-	// Token: 0x06002E07 RID: 11783 RVA: 0x00124783 File Offset: 0x00122983
+	// Token: 0x06002E35 RID: 11829 RVA: 0x00125873 File Offset: 0x00123A73
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool ValueMatchesTag(object val, TypedMetadataValue.TypeTag tag)
 	{
@@ -97,7 +97,7 @@ public class TypedMetadataValue
 		}
 	}
 
-	// Token: 0x06002E08 RID: 11784 RVA: 0x001247C0 File Offset: 0x001229C0
+	// Token: 0x06002E36 RID: 11830 RVA: 0x001258B0 File Offset: 0x00123AB0
 	public static void Write(TypedMetadataValue tmv, BinaryWriter writer)
 	{
 		if (tmv == null)
@@ -121,7 +121,7 @@ public class TypedMetadataValue
 		}
 	}
 
-	// Token: 0x06002E09 RID: 11785 RVA: 0x00124830 File Offset: 0x00122A30
+	// Token: 0x06002E37 RID: 11831 RVA: 0x00125920 File Offset: 0x00123B20
 	public static TypedMetadataValue Read(BinaryReader reader)
 	{
 		object obj = null;
@@ -141,44 +141,44 @@ public class TypedMetadataValue
 		return new TypedMetadataValue(obj, typeTag);
 	}
 
-	// Token: 0x06002E0A RID: 11786 RVA: 0x00124888 File Offset: 0x00122A88
+	// Token: 0x06002E38 RID: 11832 RVA: 0x00125978 File Offset: 0x00123B78
 	public override bool Equals(object other)
 	{
 		TypedMetadataValue typedMetadataValue = other as TypedMetadataValue;
 		return typedMetadataValue != null && this.typeTag == typedMetadataValue.typeTag && this.value.Equals(typedMetadataValue.value);
 	}
 
-	// Token: 0x06002E0B RID: 11787 RVA: 0x000111D7 File Offset: 0x0000F3D7
+	// Token: 0x06002E39 RID: 11833 RVA: 0x000111D7 File Offset: 0x0000F3D7
 	public override int GetHashCode()
 	{
 		return base.GetHashCode();
 	}
 
-	// Token: 0x06002E0C RID: 11788 RVA: 0x001248C0 File Offset: 0x00122AC0
+	// Token: 0x06002E3A RID: 11834 RVA: 0x001259B0 File Offset: 0x00123BB0
 	public TypedMetadataValue Clone()
 	{
 		TypedMetadataValue.TypeTag typeTag = this.typeTag;
 		return new TypedMetadataValue(this.value, this.typeTag);
 	}
 
-	// Token: 0x040023AA RID: 9130
+	// Token: 0x040023DE RID: 9182
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly TypedMetadataValue.TypeTag typeTag;
 
-	// Token: 0x040023AB RID: 9131
+	// Token: 0x040023DF RID: 9183
 	[PublicizedFrom(EAccessModifier.Private)]
 	public object value;
 
-	// Token: 0x0200057C RID: 1404
+	// Token: 0x02000581 RID: 1409
 	public enum TypeTag
 	{
-		// Token: 0x040023AD RID: 9133
+		// Token: 0x040023E1 RID: 9185
 		None,
-		// Token: 0x040023AE RID: 9134
+		// Token: 0x040023E2 RID: 9186
 		Float,
-		// Token: 0x040023AF RID: 9135
+		// Token: 0x040023E3 RID: 9187
 		Integer,
-		// Token: 0x040023B0 RID: 9136
+		// Token: 0x040023E4 RID: 9188
 		String
 	}
 }

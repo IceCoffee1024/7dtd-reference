@@ -7,17 +7,17 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Platform;
 
-// Token: 0x02000A1D RID: 2589
+// Token: 0x02000A2E RID: 2606
 public class SaveDataMergedPlatformSaveGameIOProvider : IPlatformSaveGameProvider, IPlatformSaveGameIOProvider
 {
-	// Token: 0x06004E3E RID: 20030 RVA: 0x001DCBDF File Offset: 0x001DADDF
+	// Token: 0x06004EC4 RID: 20164 RVA: 0x001DF677 File Offset: 0x001DD877
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void LogInfo(string text)
 	{
 		Log.Out("[SaveDataMergedPlatformSaveGameIOProvider] " + text);
 	}
 
-	// Token: 0x06004E3F RID: 20031 RVA: 0x001DCBF4 File Offset: 0x001DADF4
+	// Token: 0x06004EC5 RID: 20165 RVA: 0x001DF68C File Offset: 0x001DD88C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Regex CreateCachedManagedPathRegex()
 	{
@@ -72,7 +72,7 @@ public class SaveDataMergedPlatformSaveGameIOProvider : IPlatformSaveGameProvide
 		return new Regex(stringBuilder.ToString(), RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Singleline | RegexOptions.CultureInvariant);
 	}
 
-	// Token: 0x06004E40 RID: 20032 RVA: 0x001DCE48 File Offset: 0x001DB048
+	// Token: 0x06004EC6 RID: 20166 RVA: 0x001DF8E0 File Offset: 0x001DDAE0
 	public SaveDataMergedPlatformSaveGameIOProvider(IPlatformSaveGameProvider main)
 	{
 		this.m_main = main;
@@ -87,14 +87,14 @@ public class SaveDataMergedPlatformSaveGameIOProvider : IPlatformSaveGameProvide
 		}
 	}
 
-	// Token: 0x06004E41 RID: 20033 RVA: 0x001DCE90 File Offset: 0x001DB090
+	// Token: 0x06004EC7 RID: 20167 RVA: 0x001DF928 File Offset: 0x001DDB28
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsCached(SaveDataManagedPath path)
 	{
 		return this.m_cache != null && SaveDataMergedPlatformSaveGameIOProvider.s_cachedManagedPathRegex.IsMatch(path.PathRelativeToRoot);
 	}
 
-	// Token: 0x06004E42 RID: 20034 RVA: 0x001DCEAC File Offset: 0x001DB0AC
+	// Token: 0x06004EC8 RID: 20168 RVA: 0x001DF944 File Offset: 0x001DDB44
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IPlatformSaveGameIOProvider GetIOProvider(SaveDataManagedPath path)
 	{
@@ -105,7 +105,7 @@ public class SaveDataMergedPlatformSaveGameIOProvider : IPlatformSaveGameProvide
 		return this.m_cache;
 	}
 
-	// Token: 0x06004E43 RID: 20035 RVA: 0x001DCED4 File Offset: 0x001DB0D4
+	// Token: 0x06004EC9 RID: 20169 RVA: 0x001DF96C File Offset: 0x001DDB6C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SyncParentDirectories(SaveDataManagedPath path)
 	{
@@ -133,7 +133,7 @@ public class SaveDataMergedPlatformSaveGameIOProvider : IPlatformSaveGameProvide
 		this.m_cache.ManagedDirectoryCreateDirectory(saveDataManagedPath);
 	}
 
-	// Token: 0x06004E44 RID: 20036 RVA: 0x001DCF4C File Offset: 0x001DB14C
+	// Token: 0x06004ECA RID: 20170 RVA: 0x001DF9E4 File Offset: 0x001DDBE4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitialSaveCacheSync()
 	{
@@ -151,7 +151,7 @@ public class SaveDataMergedPlatformSaveGameIOProvider : IPlatformSaveGameProvide
 		}
 	}
 
-	// Token: 0x06004E45 RID: 20037 RVA: 0x001DCFA4 File Offset: 0x001DB1A4
+	// Token: 0x06004ECB RID: 20171 RVA: 0x001DFA3C File Offset: 0x001DDC3C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitEnsureSameCacheUser(MemoryStream buffer)
 	{
@@ -198,7 +198,7 @@ public class SaveDataMergedPlatformSaveGameIOProvider : IPlatformSaveGameProvide
 		this.<InitEnsureSameCacheUser>g__ResetCache|12_0(ref CS$<>8__locals1);
 	}
 
-	// Token: 0x06004E46 RID: 20038 RVA: 0x001DD164 File Offset: 0x001DB364
+	// Token: 0x06004ECC RID: 20172 RVA: 0x001DFBFC File Offset: 0x001DDDFC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitMoveToCache(MemoryStream buffer)
 	{
@@ -232,7 +232,7 @@ public class SaveDataMergedPlatformSaveGameIOProvider : IPlatformSaveGameProvide
 		}
 	}
 
-	// Token: 0x06004E47 RID: 20039 RVA: 0x001DD2E0 File Offset: 0x001DB4E0
+	// Token: 0x06004ECD RID: 20173 RVA: 0x001DFD78 File Offset: 0x001DDF78
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitRemoveInvalidCachedFiles()
 	{
@@ -246,7 +246,7 @@ public class SaveDataMergedPlatformSaveGameIOProvider : IPlatformSaveGameProvide
 		}
 	}
 
-	// Token: 0x06004E48 RID: 20040 RVA: 0x001DD35C File Offset: 0x001DB55C
+	// Token: 0x06004ECE RID: 20174 RVA: 0x001DFDF4 File Offset: 0x001DDFF4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitRemoveCachedGeneratedWorlds()
 	{
@@ -265,7 +265,7 @@ public class SaveDataMergedPlatformSaveGameIOProvider : IPlatformSaveGameProvide
 		}
 	}
 
-	// Token: 0x06004E49 RID: 20041 RVA: 0x001DD3F4 File Offset: 0x001DB5F4
+	// Token: 0x06004ECF RID: 20175 RVA: 0x001DFE8C File Offset: 0x001DE08C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitRemoveEmptyCacheDirectories()
 	{
@@ -281,8 +281,8 @@ public class SaveDataMergedPlatformSaveGameIOProvider : IPlatformSaveGameProvide
 		}
 	}
 
-	// Token: 0x1700085D RID: 2141
-	// (get) Token: 0x06004E4A RID: 20042 RVA: 0x001DD4B4 File Offset: 0x001DB6B4
+	// Token: 0x1700086F RID: 2159
+	// (get) Token: 0x06004ED0 RID: 20176 RVA: 0x001DFF4C File Offset: 0x001DE14C
 	public ESaveGameProviderStatus Status
 	{
 		get
@@ -291,8 +291,8 @@ public class SaveDataMergedPlatformSaveGameIOProvider : IPlatformSaveGameProvide
 		}
 	}
 
-	// Token: 0x1700085E RID: 2142
-	// (get) Token: 0x06004E4B RID: 20043 RVA: 0x0001FF1E File Offset: 0x0001E11E
+	// Token: 0x17000870 RID: 2160
+	// (get) Token: 0x06004ED1 RID: 20177 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
 	public IPlatformSaveGameIOProvider Cache
 	{
 		get
@@ -302,8 +302,8 @@ public class SaveDataMergedPlatformSaveGameIOProvider : IPlatformSaveGameProvide
 	}
 
 	// Token: 0x1400007D RID: 125
-	// (add) Token: 0x06004E4C RID: 20044 RVA: 0x001DD4C1 File Offset: 0x001DB6C1
-	// (remove) Token: 0x06004E4D RID: 20045 RVA: 0x001DD4CF File Offset: 0x001DB6CF
+	// (add) Token: 0x06004ED2 RID: 20178 RVA: 0x001DFF59 File Offset: 0x001DE159
+	// (remove) Token: 0x06004ED3 RID: 20179 RVA: 0x001DFF67 File Offset: 0x001DE167
 	public event Action Initialized
 	{
 		add
@@ -316,74 +316,74 @@ public class SaveDataMergedPlatformSaveGameIOProvider : IPlatformSaveGameProvide
 		}
 	}
 
-	// Token: 0x06004E4E RID: 20046 RVA: 0x001DD4DD File Offset: 0x001DB6DD
+	// Token: 0x06004ED4 RID: 20180 RVA: 0x001DFF75 File Offset: 0x001DE175
 	public void Init(IPlatform _owner)
 	{
 		this.m_main.Init(_owner);
 	}
 
-	// Token: 0x06004E4F RID: 20047 RVA: 0x001DD4EB File Offset: 0x001DB6EB
+	// Token: 0x06004ED5 RID: 20181 RVA: 0x001DFF83 File Offset: 0x001DE183
 	public void Destroy()
 	{
 		this.m_main.Destroy();
 	}
 
-	// Token: 0x06004E50 RID: 20048 RVA: 0x001DD4F8 File Offset: 0x001DB6F8
+	// Token: 0x06004ED6 RID: 20182 RVA: 0x001DFF90 File Offset: 0x001DE190
 	public bool ShouldBackup()
 	{
 		return this.m_main.ShouldBackup();
 	}
 
-	// Token: 0x06004E51 RID: 20049 RVA: 0x001DD505 File Offset: 0x001DB705
+	// Token: 0x06004ED7 RID: 20183 RVA: 0x001DFF9D File Offset: 0x001DE19D
 	public bool ShouldCommit()
 	{
 		return this.m_main.ShouldCommit();
 	}
 
-	// Token: 0x06004E52 RID: 20050 RVA: 0x001DD512 File Offset: 0x001DB712
+	// Token: 0x06004ED8 RID: 20184 RVA: 0x001DFFAA File Offset: 0x001DE1AA
 	public double GetCommitProgress()
 	{
 		return this.m_main.GetCommitProgress();
 	}
 
-	// Token: 0x06004E53 RID: 20051 RVA: 0x001DD51F File Offset: 0x001DB71F
+	// Token: 0x06004ED9 RID: 20185 RVA: 0x001DFFB7 File Offset: 0x001DE1B7
 	public void Flush(bool waitForFlush)
 	{
 		this.m_main.Flush(waitForFlush);
 	}
 
-	// Token: 0x06004E54 RID: 20052 RVA: 0x001DD52D File Offset: 0x001DB72D
+	// Token: 0x06004EDA RID: 20186 RVA: 0x001DFFC5 File Offset: 0x001DE1C5
 	public bool ShouldLimitSize()
 	{
 		return this.m_main.ShouldLimitSize();
 	}
 
-	// Token: 0x06004E55 RID: 20053 RVA: 0x001DD53A File Offset: 0x001DB73A
+	// Token: 0x06004EDB RID: 20187 RVA: 0x001DFFD2 File Offset: 0x001DE1D2
 	public void UpdateSizes()
 	{
 		this.m_main.UpdateSizes();
 	}
 
-	// Token: 0x06004E56 RID: 20054 RVA: 0x001DD547 File Offset: 0x001DB747
+	// Token: 0x06004EDC RID: 20188 RVA: 0x001DFFDF File Offset: 0x001DE1DF
 	public SaveDataSizes GetSizes()
 	{
 		return this.m_main.GetSizes();
 	}
 
-	// Token: 0x06004E57 RID: 20055 RVA: 0x001DD554 File Offset: 0x001DB754
+	// Token: 0x06004EDD RID: 20189 RVA: 0x001DFFEC File Offset: 0x001DE1EC
 	public void ManagedFileRead(SaveDataManagedPath path, Stream dest)
 	{
 		this.GetIOProvider(path).ManagedFileRead(path, dest);
 	}
 
-	// Token: 0x06004E58 RID: 20056 RVA: 0x001DD564 File Offset: 0x001DB764
+	// Token: 0x06004EDE RID: 20190 RVA: 0x001DFFFC File Offset: 0x001DE1FC
 	public void ManagedFileWrite(SaveDataManagedPath path, Stream src)
 	{
 		this.SyncParentDirectories(path);
 		this.GetIOProvider(path).ManagedFileWrite(path, src);
 	}
 
-	// Token: 0x06004E59 RID: 20057 RVA: 0x001DD57C File Offset: 0x001DB77C
+	// Token: 0x06004EDF RID: 20191 RVA: 0x001E0014 File Offset: 0x001DE214
 	public void ManagedFileCopy(SaveDataManagedPath sourceFileName, SaveDataManagedPath destFileName, bool overwrite = false)
 	{
 		IPlatformSaveGameIOProvider ioprovider = this.GetIOProvider(sourceFileName);
@@ -406,25 +406,25 @@ public class SaveDataMergedPlatformSaveGameIOProvider : IPlatformSaveGameProvide
 		}
 	}
 
-	// Token: 0x06004E5A RID: 20058 RVA: 0x001DD608 File Offset: 0x001DB808
+	// Token: 0x06004EE0 RID: 20192 RVA: 0x001E00A0 File Offset: 0x001DE2A0
 	public void ManagedFileDelete(SaveDataManagedPath path)
 	{
 		this.GetIOProvider(path).ManagedFileDelete(path);
 	}
 
-	// Token: 0x06004E5B RID: 20059 RVA: 0x001DD617 File Offset: 0x001DB817
+	// Token: 0x06004EE1 RID: 20193 RVA: 0x001E00AF File Offset: 0x001DE2AF
 	public bool ManagedFileExists(SaveDataManagedPath path)
 	{
 		return this.GetIOProvider(path).ManagedFileExists(path);
 	}
 
-	// Token: 0x06004E5C RID: 20060 RVA: 0x001DD626 File Offset: 0x001DB826
+	// Token: 0x06004EE2 RID: 20194 RVA: 0x001E00BE File Offset: 0x001DE2BE
 	public DateTime ManagedFileGetLastWriteTimeUtc(SaveDataManagedPath path)
 	{
 		return this.GetIOProvider(path).ManagedFileGetLastWriteTimeUtc(path);
 	}
 
-	// Token: 0x06004E5D RID: 20061 RVA: 0x001DD638 File Offset: 0x001DB838
+	// Token: 0x06004EE3 RID: 20195 RVA: 0x001E00D0 File Offset: 0x001DE2D0
 	public void ManagedFileMove(SaveDataManagedPath sourceFileName, SaveDataManagedPath destFileName)
 	{
 		IPlatformSaveGameIOProvider ioprovider = this.GetIOProvider(sourceFileName);
@@ -448,43 +448,43 @@ public class SaveDataMergedPlatformSaveGameIOProvider : IPlatformSaveGameProvide
 		ioprovider.ManagedFileDelete(sourceFileName);
 	}
 
-	// Token: 0x06004E5E RID: 20062 RVA: 0x001DD6C4 File Offset: 0x001DB8C4
+	// Token: 0x06004EE4 RID: 20196 RVA: 0x001E015C File Offset: 0x001DE35C
 	public SdDirectoryInfo ManagedDirectoryCreateDirectory(SaveDataManagedPath path)
 	{
 		return this.GetIOProvider(path).ManagedDirectoryCreateDirectory(path);
 	}
 
-	// Token: 0x06004E5F RID: 20063 RVA: 0x001DD6D3 File Offset: 0x001DB8D3
+	// Token: 0x06004EE5 RID: 20197 RVA: 0x001E016B File Offset: 0x001DE36B
 	public DateTime ManagedDirectoryGetLastWriteTimeUtc(SaveDataManagedPath path)
 	{
 		return this.GetIOProvider(path).ManagedDirectoryGetLastWriteTimeUtc(path);
 	}
 
-	// Token: 0x06004E60 RID: 20064 RVA: 0x001DD6E2 File Offset: 0x001DB8E2
+	// Token: 0x06004EE6 RID: 20198 RVA: 0x001E017A File Offset: 0x001DE37A
 	public bool ManagedDirectoryExists(SaveDataManagedPath path)
 	{
 		return this.GetIOProvider(path).ManagedDirectoryExists(path);
 	}
 
-	// Token: 0x06004E61 RID: 20065 RVA: 0x001DD6F4 File Offset: 0x001DB8F4
+	// Token: 0x06004EE7 RID: 20199 RVA: 0x001E018C File Offset: 0x001DE38C
 	public IEnumerable<SaveDataManagedPath> ManagedDirectoryEnumerateDirectories(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 	{
 		return this.ManagedDirectoryEnumerateInternal(path, (IPlatformSaveGameIOProvider provider) => provider.ManagedDirectoryEnumerateDirectories(path, searchPattern, searchOption));
 	}
 
-	// Token: 0x06004E62 RID: 20066 RVA: 0x001DD734 File Offset: 0x001DB934
+	// Token: 0x06004EE8 RID: 20200 RVA: 0x001E01CC File Offset: 0x001DE3CC
 	public IEnumerable<SaveDataManagedPath> ManagedDirectoryEnumerateFiles(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 	{
 		return this.ManagedDirectoryEnumerateInternal(path, (IPlatformSaveGameIOProvider provider) => provider.ManagedDirectoryEnumerateFiles(path, searchPattern, searchOption));
 	}
 
-	// Token: 0x06004E63 RID: 20067 RVA: 0x001DD774 File Offset: 0x001DB974
+	// Token: 0x06004EE9 RID: 20201 RVA: 0x001E020C File Offset: 0x001DE40C
 	public IEnumerable<SaveDataManagedPath> ManagedDirectoryEnumerateFileSystemEntries(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 	{
 		return this.ManagedDirectoryEnumerateInternal(path, (IPlatformSaveGameIOProvider provider) => provider.ManagedDirectoryEnumerateFileSystemEntries(path, searchPattern, searchOption));
 	}
 
-	// Token: 0x06004E64 RID: 20068 RVA: 0x001DD7B4 File Offset: 0x001DB9B4
+	// Token: 0x06004EEA RID: 20202 RVA: 0x001E024C File Offset: 0x001DE44C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerable<SaveDataManagedPath> ManagedDirectoryEnumerateInternal(SaveDataManagedPath path, Func<IPlatformSaveGameIOProvider, IEnumerable<SaveDataManagedPath>> getEnumerable)
 	{
@@ -512,7 +512,7 @@ public class SaveDataMergedPlatformSaveGameIOProvider : IPlatformSaveGameProvide
 		return CS$<>8__locals1.<ManagedDirectoryEnumerateInternal>g__EnumerateBoth|1();
 	}
 
-	// Token: 0x06004E65 RID: 20069 RVA: 0x001DD874 File Offset: 0x001DBA74
+	// Token: 0x06004EEB RID: 20203 RVA: 0x001E030C File Offset: 0x001DE50C
 	public void ManagedDirectoryDelete(SaveDataManagedPath path, bool recursive)
 	{
 		if (this.IsCached(path))
@@ -527,7 +527,7 @@ public class SaveDataMergedPlatformSaveGameIOProvider : IPlatformSaveGameProvide
 		}
 	}
 
-	// Token: 0x06004E66 RID: 20070 RVA: 0x001DD8C8 File Offset: 0x001DBAC8
+	// Token: 0x06004EEC RID: 20204 RVA: 0x001E0360 File Offset: 0x001DE560
 	public long ManagedFileInfoLength(SaveDataManagedPath path)
 	{
 		if (this.IsCached(path))
@@ -537,25 +537,25 @@ public class SaveDataMergedPlatformSaveGameIOProvider : IPlatformSaveGameProvide
 		return this.m_main.ManagedFileInfoLength(path);
 	}
 
-	// Token: 0x06004E67 RID: 20071 RVA: 0x001DD8E4 File Offset: 0x001DBAE4
+	// Token: 0x06004EED RID: 20205 RVA: 0x001E037C File Offset: 0x001DE57C
 	public IEnumerable<SdDirectoryInfo> ManagedDirectoryInfoEnumerateDirectories(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 	{
 		return this.ManagedDirectoryInfoEnumerateInternal<SdDirectoryInfo>(path, (IPlatformSaveGameIOProvider provider) => provider.ManagedDirectoryInfoEnumerateDirectories(path, searchPattern, searchOption));
 	}
 
-	// Token: 0x06004E68 RID: 20072 RVA: 0x001DD924 File Offset: 0x001DBB24
+	// Token: 0x06004EEE RID: 20206 RVA: 0x001E03BC File Offset: 0x001DE5BC
 	public IEnumerable<SdFileInfo> ManagedDirectoryInfoEnumerateFiles(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 	{
 		return this.ManagedDirectoryInfoEnumerateInternal<SdFileInfo>(path, (IPlatformSaveGameIOProvider provider) => provider.ManagedDirectoryInfoEnumerateFiles(path, searchPattern, searchOption));
 	}
 
-	// Token: 0x06004E69 RID: 20073 RVA: 0x001DD964 File Offset: 0x001DBB64
+	// Token: 0x06004EEF RID: 20207 RVA: 0x001E03FC File Offset: 0x001DE5FC
 	public IEnumerable<SdFileSystemInfo> ManagedDirectoryInfoEnumerateFileSystemInfos(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 	{
 		return this.ManagedDirectoryInfoEnumerateInternal<SdFileSystemInfo>(path, (IPlatformSaveGameIOProvider provider) => provider.ManagedDirectoryInfoEnumerateFileSystemInfos(path, searchPattern, searchOption));
 	}
 
-	// Token: 0x06004E6A RID: 20074 RVA: 0x001DD9A4 File Offset: 0x001DBBA4
+	// Token: 0x06004EF0 RID: 20208 RVA: 0x001E043C File Offset: 0x001DE63C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerable<T> ManagedDirectoryInfoEnumerateInternal<T>(SaveDataManagedPath path, Func<IPlatformSaveGameIOProvider, IEnumerable<T>> getEnumerable) where T : SdFileSystemInfo
 	{
@@ -585,7 +585,7 @@ public class SaveDataMergedPlatformSaveGameIOProvider : IPlatformSaveGameProvide
 		return CS$<>8__locals1.<ManagedDirectoryInfoEnumerateInternal>g__EnumerateBoth|2();
 	}
 
-	// Token: 0x06004E6C RID: 20076 RVA: 0x001DDA70 File Offset: 0x001DBC70
+	// Token: 0x06004EF2 RID: 20210 RVA: 0x001E0508 File Offset: 0x001DE708
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void <InitEnsureSameCacheUser>g__ResetCache|12_0(ref SaveDataMergedPlatformSaveGameIOProvider.<>c__DisplayClass12_0 A_1)
@@ -617,23 +617,23 @@ public class SaveDataMergedPlatformSaveGameIOProvider : IPlatformSaveGameProvide
 		this.m_cache.ManagedFileWrite(A_1.cacheOwnerPath, A_1.buffer);
 	}
 
-	// Token: 0x04003C32 RID: 15410
+	// Token: 0x04003CC3 RID: 15555
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string CACHE_OWNER_FILENAME = "CacheOwner.txt";
 
-	// Token: 0x04003C33 RID: 15411
+	// Token: 0x04003CC4 RID: 15556
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string SAVE_OWNER_FILENAME = "SaveOwner.txt";
 
-	// Token: 0x04003C34 RID: 15412
+	// Token: 0x04003CC5 RID: 15557
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Regex s_cachedManagedPathRegex = SaveDataMergedPlatformSaveGameIOProvider.CreateCachedManagedPathRegex();
 
-	// Token: 0x04003C35 RID: 15413
+	// Token: 0x04003CC6 RID: 15558
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly IPlatformSaveGameProvider m_main;
 
-	// Token: 0x04003C36 RID: 15414
+	// Token: 0x04003CC7 RID: 15559
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly IPlatformSaveGameIOProvider m_cache;
 }

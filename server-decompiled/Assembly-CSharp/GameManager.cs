@@ -14,16 +14,17 @@ using MapRendering;
 using Platform;
 using SandboxOptions;
 using Services;
+using Services.Analytics;
 using Services.Analytics.Events;
 using Twitch;
 using Unity.Collections;
 using UnityEngine;
 using Webserver;
 
-// Token: 0x0200118D RID: 4493
+// Token: 0x020011A7 RID: 4519
 public class GameManager : MonoBehaviour, IGameManager
 {
-	// Token: 0x06008F59 RID: 36697 RVA: 0x0035E43C File Offset: 0x0035C63C
+	// Token: 0x06009053 RID: 36947 RVA: 0x00363040 File Offset: 0x00361240
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator waitForGameStart()
 	{
@@ -57,7 +58,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		yield break;
 	}
 
-	// Token: 0x06008F5A RID: 36698 RVA: 0x0035E44C File Offset: 0x0035C64C
+	// Token: 0x06009054 RID: 36948 RVA: 0x00363050 File Offset: 0x00361250
 	public void ShowBackground(bool show)
 	{
 		if (this.bShowBackground == show)
@@ -79,13 +80,13 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008F5B RID: 36699 RVA: 0x0035E4BF File Offset: 0x0035C6BF
+	// Token: 0x06009055 RID: 36949 RVA: 0x003630C3 File Offset: 0x003612C3
 	public bool ShowBackground()
 	{
 		return this.bShowBackground;
 	}
 
-	// Token: 0x06008F5C RID: 36700 RVA: 0x0035E4C8 File Offset: 0x0035C6C8
+	// Token: 0x06009056 RID: 36950 RVA: 0x003630CC File Offset: 0x003612CC
 	public void IncreaseBackgroundColor()
 	{
 		switch (this.currentBackgroundColorChannel)
@@ -110,7 +111,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008F5D RID: 36701 RVA: 0x0035E59C File Offset: 0x0035C79C
+	// Token: 0x06009057 RID: 36951 RVA: 0x003631A0 File Offset: 0x003613A0
 	public void DecreaseBackgroundColor()
 	{
 		switch (this.currentBackgroundColorChannel)
@@ -135,7 +136,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008F5E RID: 36702 RVA: 0x0035E670 File Offset: 0x0035C870
+	// Token: 0x06009058 RID: 36952 RVA: 0x00363274 File Offset: 0x00361474
 	public void BackgroundColorNext()
 	{
 		this.currentBackgroundColorChannel++;
@@ -145,7 +146,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008F5F RID: 36703 RVA: 0x0035E690 File Offset: 0x0035C890
+	// Token: 0x06009059 RID: 36953 RVA: 0x00363294 File Offset: 0x00361494
 	public void BackgroundColorPrev()
 	{
 		this.currentBackgroundColorChannel--;
@@ -155,8 +156,8 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x1700110D RID: 4365
-	// (get) Token: 0x06008F60 RID: 36704 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17001146 RID: 4422
+	// (get) Token: 0x0600905A RID: 36954 RVA: 0x00020021 File Offset: 0x0001E221
 	public static bool IsDedicatedServer
 	{
 		get
@@ -165,7 +166,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008F61 RID: 36705 RVA: 0x0035E6B0 File Offset: 0x0035C8B0
+	// Token: 0x0600905B RID: 36955 RVA: 0x003632B4 File Offset: 0x003614B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnUserDetailsUpdated(IPlatformUserData userData, string name)
 	{
@@ -175,17 +176,17 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x1700110E RID: 4366
-	// (get) Token: 0x06008F62 RID: 36706 RVA: 0x0035E6C7 File Offset: 0x0035C8C7
-	// (set) Token: 0x06008F63 RID: 36707 RVA: 0x0035E6CF File Offset: 0x0035C8CF
+	// Token: 0x17001147 RID: 4423
+	// (get) Token: 0x0600905C RID: 36956 RVA: 0x003632CB File Offset: 0x003614CB
+	// (set) Token: 0x0600905D RID: 36957 RVA: 0x003632D3 File Offset: 0x003614D3
 	public bool GameIsFocused
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x1700110F RID: 4367
-	// (get) Token: 0x06008F64 RID: 36708 RVA: 0x0035E6D8 File Offset: 0x0035C8D8
+	// Token: 0x17001148 RID: 4424
+	// (get) Token: 0x0600905E RID: 36958 RVA: 0x003632DC File Offset: 0x003614DC
 	public bool IsMouseCursorVisible
 	{
 		get
@@ -194,22 +195,22 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x140000F0 RID: 240
-	// (add) Token: 0x06008F65 RID: 36709 RVA: 0x0035E6F4 File Offset: 0x0035C8F4
-	// (remove) Token: 0x06008F66 RID: 36710 RVA: 0x0035E72C File Offset: 0x0035C92C
+	// Token: 0x140000F1 RID: 241
+	// (add) Token: 0x0600905F RID: 36959 RVA: 0x003632F8 File Offset: 0x003614F8
+	// (remove) Token: 0x06009060 RID: 36960 RVA: 0x00363330 File Offset: 0x00361530
 	public event GameManager.OnWorldChangedEvent OnWorldChanged;
 
-	// Token: 0x140000F1 RID: 241
-	// (add) Token: 0x06008F67 RID: 36711 RVA: 0x0035E764 File Offset: 0x0035C964
-	// (remove) Token: 0x06008F68 RID: 36712 RVA: 0x0035E79C File Offset: 0x0035C99C
+	// Token: 0x140000F2 RID: 242
+	// (add) Token: 0x06009061 RID: 36961 RVA: 0x00363368 File Offset: 0x00361568
+	// (remove) Token: 0x06009062 RID: 36962 RVA: 0x003633A0 File Offset: 0x003615A0
 	public event GameManager.OnLocalPlayerChangedEvent OnLocalPlayerChanged;
 
-	// Token: 0x140000F2 RID: 242
-	// (add) Token: 0x06008F69 RID: 36713 RVA: 0x0035E7D4 File Offset: 0x0035C9D4
-	// (remove) Token: 0x06008F6A RID: 36714 RVA: 0x0035E80C File Offset: 0x0035CA0C
+	// Token: 0x140000F3 RID: 243
+	// (add) Token: 0x06009063 RID: 36963 RVA: 0x003633D8 File Offset: 0x003615D8
+	// (remove) Token: 0x06009064 RID: 36964 RVA: 0x00363410 File Offset: 0x00361610
 	public event Action<ClientInfo> OnClientSpawned;
 
-	// Token: 0x06008F6B RID: 36715 RVA: 0x0035E841 File Offset: 0x0035CA41
+	// Token: 0x06009065 RID: 36965 RVA: 0x00363445 File Offset: 0x00361645
 	public void ApplyAllOptions()
 	{
 		if (this.windowManager != null)
@@ -218,7 +219,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008F6C RID: 36716 RVA: 0x0035E864 File Offset: 0x0035CA64
+	// Token: 0x06009066 RID: 36966 RVA: 0x00363468 File Offset: 0x00361668
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Awake()
 	{
@@ -240,11 +241,13 @@ public class GameManager : MonoBehaviour, IGameManager
 			this.bCursorVisibleOverride = true;
 			this.bCursorVisibleOverrideState = true;
 		}
+		this._analyticsService = ServiceProvider.Instance.Get<IAnalyticsService>();
 		if (!GameManager.IsDedicatedServer)
 		{
 			GameOptionsManager.ResolutionChanged += this.OnResolutionChanged;
 			this.RefreshRefreshRate();
 			this.UpdateFPSCap();
+			this._analyticsService.SessionRefreshed += this.OnAnalyticsSessionRefreshed;
 		}
 		Application.wantsToQuit += this.OnApplicationQuit;
 		if (GameManager.IsDedicatedServer && GamePrefs.GetBool(EnumGamePrefs.TerminalWindowEnabled))
@@ -442,7 +445,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		Log.Out("Awake done in " + microStopwatch.ElapsedMilliseconds.ToString() + " ms");
 	}
 
-	// Token: 0x06008F6D RID: 36717 RVA: 0x0035EDD8 File Offset: 0x0035CFD8
+	// Token: 0x06009067 RID: 36967 RVA: 0x00363A00 File Offset: 0x00361C00
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitMultiSourceUiAtlases(GameObject _parent)
 	{
@@ -478,7 +481,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008F6E RID: 36718 RVA: 0x0035EF48 File Offset: 0x0035D148
+	// Token: 0x06009068 RID: 36968 RVA: 0x00363B70 File Offset: 0x00361D70
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AddGreyscaleItemIconAtlas(INGUIAtlas _atlas, bool _isLoadingInGame)
 	{
@@ -499,7 +502,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		atlasManager.AddAtlas(inguiatlas, gameObject, _isLoadingInGame);
 	}
 
-	// Token: 0x06008F6F RID: 36719 RVA: 0x0035EFBF File Offset: 0x0035D1BF
+	// Token: 0x06009069 RID: 36969 RVA: 0x00363BE7 File Offset: 0x00361DE7
 	public void AddWindows(GUIWindowManager _guiWindowManager)
 	{
 		if (_guiWindowManager == this.windowManager)
@@ -511,7 +514,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		_guiWindowManager.CloseAllOpenModalWindows(null, false);
 	}
 
-	// Token: 0x06008F70 RID: 36720 RVA: 0x0035EFFA File Offset: 0x0035D1FA
+	// Token: 0x0600906A RID: 36970 RVA: 0x00363C22 File Offset: 0x00361E22
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator loadStaticData()
 	{
@@ -529,16 +532,16 @@ public class GameManager : MonoBehaviour, IGameManager
 		yield break;
 	}
 
-	// Token: 0x17001110 RID: 4368
-	// (get) Token: 0x06008F71 RID: 36721 RVA: 0x0035F009 File Offset: 0x0035D209
-	// (set) Token: 0x06008F72 RID: 36722 RVA: 0x0035F011 File Offset: 0x0035D211
+	// Token: 0x17001149 RID: 4425
+	// (get) Token: 0x0600906B RID: 36971 RVA: 0x00363C31 File Offset: 0x00361E31
+	// (set) Token: 0x0600906C RID: 36972 RVA: 0x00363C39 File Offset: 0x00361E39
 	public bool IsStartingGame
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06008F73 RID: 36723 RVA: 0x0035F01C File Offset: 0x0035D21C
+	// Token: 0x0600906D RID: 36973 RVA: 0x00363C44 File Offset: 0x00361E44
 	public void StartGame(bool _offline)
 	{
 		Time.timeScale = 1f;
@@ -551,7 +554,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		base.StartCoroutine(this.startGameCo(_offline));
 	}
 
-	// Token: 0x06008F74 RID: 36724 RVA: 0x0035F076 File Offset: 0x0035D276
+	// Token: 0x0600906E RID: 36974 RVA: 0x00363C9E File Offset: 0x00361E9E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator startGameCo(bool _offline)
 	{
@@ -610,7 +613,7 @@ public class GameManager : MonoBehaviour, IGameManager
 			{
 				Log.WriteLine("GameStat." + _text);
 			});
-			ConsoleCmdGetSandboxOptions.LogOptions(GamePrefs.GetString(EnumGamePrefs.SandboxCode), false, false);
+			ConsoleCmdGetSandboxOptions.LogOptions(GamePrefs.GetString(EnumGamePrefs.SandboxCode), false, ConsoleCmdGetSandboxOptions.ELogType.LogOnly);
 		}
 		yield return null;
 		CraftingManager.InitForNewGame();
@@ -676,7 +679,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		yield break;
 	}
 
-	// Token: 0x06008F75 RID: 36725 RVA: 0x0035F08C File Offset: 0x0035D28C
+	// Token: 0x0600906F RID: 36975 RVA: 0x00363CB4 File Offset: 0x00361EB4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ResetUnprotectedChunksOnLoad(EnumResetUnprotectedChunksGroupingMode _resetChunksMode)
 	{
@@ -708,7 +711,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008F76 RID: 36726 RVA: 0x0035F0EC File Offset: 0x0035D2EC
+	// Token: 0x06009070 RID: 36976 RVA: 0x00363D14 File Offset: 0x00361F14
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateTimeOfDay()
 	{
@@ -763,7 +766,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008F77 RID: 36727 RVA: 0x0035F2D0 File Offset: 0x0035D4D0
+	// Token: 0x06009071 RID: 36977 RVA: 0x00363EF8 File Offset: 0x003620F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateSendClientPlayerPositionToServer()
 	{
@@ -880,21 +883,21 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008F78 RID: 36728 RVA: 0x0035F717 File Offset: 0x0035D917
+	// Token: 0x06009072 RID: 36978 RVA: 0x0036433F File Offset: 0x0036253F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FixedUpdate()
 	{
 		GameManager.fixedUpdateCount++;
 	}
 
-	// Token: 0x06008F79 RID: 36729 RVA: 0x0035F725 File Offset: 0x0035D925
+	// Token: 0x06009073 RID: 36979 RVA: 0x0036434D File Offset: 0x0036254D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Update()
 	{
 		this.gmUpdate();
 	}
 
-	// Token: 0x06008F7A RID: 36730 RVA: 0x0035F730 File Offset: 0x0035D930
+	// Token: 0x06009074 RID: 36980 RVA: 0x00364358 File Offset: 0x00362558
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void gmUpdate()
 	{
@@ -1202,7 +1205,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		GameObjectPool.Instance.FrameUpdate();
 	}
 
-	// Token: 0x06008F7B RID: 36731 RVA: 0x0035FF98 File Offset: 0x0035E198
+	// Token: 0x06009075 RID: 36981 RVA: 0x00364BC0 File Offset: 0x00362DC0
 	public void LateUpdate()
 	{
 		ThreadManager.LateUpdate();
@@ -1215,7 +1218,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		MeshDataManager.Instance.LateUpdate();
 	}
 
-	// Token: 0x06008F7C RID: 36732 RVA: 0x0035FFE4 File Offset: 0x0035E1E4
+	// Token: 0x06009076 RID: 36982 RVA: 0x00364C0C File Offset: 0x00362E0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool UpdateTick()
 	{
@@ -1285,7 +1288,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		return true;
 	}
 
-	// Token: 0x06008F7D RID: 36733 RVA: 0x003601BC File Offset: 0x0035E3BC
+	// Token: 0x06009077 RID: 36983 RVA: 0x00364DE4 File Offset: 0x00362FE4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnNetworkStateChanged(bool connectionState)
 	{
@@ -1295,10 +1298,11 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008F7E RID: 36734 RVA: 0x003601C8 File Offset: 0x0035E3C8
+	// Token: 0x06009078 RID: 36984 RVA: 0x00364DF0 File Offset: 0x00362FF0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnApplicationResume()
 	{
+		this._analyticsService.CheckForAndRefreshStaleSession();
 		PlatformApplicationManager.SetRestartRequired();
 		if (!this.IsSafeToConnect())
 		{
@@ -1308,7 +1312,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		ThreadManager.StartCoroutine(PlatformApplicationManager.CheckRestartCoroutine(false));
 	}
 
-	// Token: 0x06008F7F RID: 36735 RVA: 0x003601EC File Offset: 0x0035E3EC
+	// Token: 0x06009079 RID: 36985 RVA: 0x00364E20 File Offset: 0x00363020
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateMultiplayerServices()
 	{
@@ -1346,7 +1350,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008F80 RID: 36736 RVA: 0x0036028C File Offset: 0x0035E48C
+	// Token: 0x0600907A RID: 36986 RVA: 0x00364EC0 File Offset: 0x003630C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetLocalizationKey(GameManager.EMultiShutReason _reason)
 	{
@@ -1371,14 +1375,14 @@ public class GameManager : MonoBehaviour, IGameManager
 		return text;
 	}
 
-	// Token: 0x06008F81 RID: 36737 RVA: 0x003602F8 File Offset: 0x0035E4F8
+	// Token: 0x0600907B RID: 36987 RVA: 0x00364F2C File Offset: 0x0036312C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ShutdownMultiplayerServices(GameManager.EMultiShutReason _reason)
 	{
 		ThreadManager.StartCoroutine(this.ShutdownMultiplayerServicesCoroutine(_reason));
 	}
 
-	// Token: 0x06008F82 RID: 36738 RVA: 0x00360307 File Offset: 0x0035E507
+	// Token: 0x0600907C RID: 36988 RVA: 0x00364F3B File Offset: 0x0036313B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator ShutdownMultiplayerServicesCoroutine(GameManager.EMultiShutReason _reason)
 	{
@@ -1502,7 +1506,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		yield break;
 	}
 
-	// Token: 0x06008F83 RID: 36739 RVA: 0x0036031D File Offset: 0x0035E51D
+	// Token: 0x0600907D RID: 36989 RVA: 0x00364F51 File Offset: 0x00363151
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnShutdownMultiplayerServicesMessageBoxClosed()
 	{
@@ -1512,7 +1516,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008F84 RID: 36740 RVA: 0x0036032E File Offset: 0x0035E52E
+	// Token: 0x0600907E RID: 36990 RVA: 0x00364F62 File Offset: 0x00363162
 	public void CreateStabilityViewer()
 	{
 		if (this.stabilityViewer == null)
@@ -1521,7 +1525,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008F85 RID: 36741 RVA: 0x00360343 File Offset: 0x0035E543
+	// Token: 0x0600907F RID: 36991 RVA: 0x00364F77 File Offset: 0x00363177
 	public void ClearStabilityViewer()
 	{
 		if (this.stabilityViewer != null)
@@ -1532,7 +1536,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008F86 RID: 36742 RVA: 0x0036036C File Offset: 0x0035E56C
+	// Token: 0x06009080 RID: 36992 RVA: 0x00364FA0 File Offset: 0x003631A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setLocalPlayerEntity(EntityPlayerLocal _playerEntity)
 	{
@@ -1591,7 +1595,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		instance.SessionStarted(_playerEntity);
 	}
 
-	// Token: 0x06008F87 RID: 36743 RVA: 0x003605A1 File Offset: 0x0035E7A1
+	// Token: 0x06009081 RID: 36993 RVA: 0x003651D5 File Offset: 0x003633D5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator StartAsServer(bool _offline)
 	{
@@ -1680,12 +1684,12 @@ public class GameManager : MonoBehaviour, IGameManager
 		yield return null;
 		if (!GameManager.IsDedicatedServer)
 		{
-			GameManager.<>c__DisplayClass166_0 CS$<>8__locals1 = new GameManager.<>c__DisplayClass166_0();
-			CS$<>8__locals1.persistentPlayerId = this.getPersistentPlayerID(null).CombinedString;
+			GameManager.<>c__DisplayClass166_1 CS$<>8__locals2 = new GameManager.<>c__DisplayClass166_1();
+			CS$<>8__locals2.persistentPlayerId = this.getPersistentPlayerID(null).CombinedString;
 			if (!GamePrefs.GetBool(EnumGamePrefs.SkipSpawnButton) && !this.IsEditMode())
 			{
 				this.canSpawnPlayer = false;
-				bool flag = !PlayerDataFile.Exists(GameIO.GetPlayerDataDir(), CS$<>8__locals1.persistentPlayerId);
+				bool flag = !PlayerDataFile.Exists(GameIO.GetPlayerDataDir(), CS$<>8__locals2.persistentPlayerId);
 				XUiC_SpawnSelectionWindow.Open(LocalPlayerUI.primaryUI, false, true, flag);
 				while (!this.canSpawnPlayer)
 				{
@@ -1694,7 +1698,7 @@ public class GameManager : MonoBehaviour, IGameManager
 				yield return new WaitForSeconds(0.1f);
 			}
 			PlayerDataFile playerDataFile = new PlayerDataFile();
-			playerDataFile.Load(GameIO.GetPlayerDataDir(), CS$<>8__locals1.persistentPlayerId);
+			playerDataFile.Load(GameIO.GetPlayerDataDir(), CS$<>8__locals2.persistentPlayerId);
 			EntityCreationData entityCreationData = new EntityCreationData();
 			Vector3 vector;
 			Vector3 vector2;
@@ -1766,11 +1770,11 @@ public class GameManager : MonoBehaviour, IGameManager
 			this.m_World.SpawnEntityInWorld(entityPlayerLocal);
 			this.myEntityPlayerLocal.Respawn(playerDataFile.bLoaded ? RespawnType.LoadedGame : RespawnType.NewGame);
 			this.myEntityPlayerLocal.ChunkObserver = this.m_World.m_ChunkManager.AddChunkObserver(this.myEntityPlayerLocal.GetPosition(), true, Utils.FastMin(12, GameUtils.GetViewDistance()), -1);
-			IMapChunkDatabase.TryCreateOrLoad(this.myEntityPlayerLocal.entityId, out this.myEntityPlayerLocal.ChunkObserver.mapDatabase, () => new IMapChunkDatabase.DirectoryPlayerId(GameIO.GetPlayerDataDir(), CS$<>8__locals1.persistentPlayerId));
+			IMapChunkDatabase.TryCreateOrLoad(this.myEntityPlayerLocal.entityId, out this.myEntityPlayerLocal.ChunkObserver.mapDatabase, () => new IMapChunkDatabase.DirectoryPlayerId(GameIO.GetPlayerDataDir(), CS$<>8__locals2.persistentPlayerId));
 			LocalPlayerUI uiforPlayer = LocalPlayerUI.GetUIForPlayer(entityPlayerLocal);
 			uiforPlayer.xui.SetDataConnections();
 			uiforPlayer.xui.SetCraftingData(playerDataFile.craftingData);
-			CS$<>8__locals1 = null;
+			CS$<>8__locals2 = null;
 		}
 		Log.Out("Loaded player");
 		yield return null;
@@ -1819,7 +1823,12 @@ public class GameManager : MonoBehaviour, IGameManager
 					}
 					ModEvents.SServerRegisteredData sserverRegisteredData;
 					ModEvents.ServerRegistered.Invoke(ref sserverRegisteredData);
+					this.LogServerStartEventAnalytics(_offline);
 				});
+			}
+			else
+			{
+				this.LogServerStartEventAnalytics(_offline);
 			}
 			PlayerInteractions.Instance.JoinedMultiplayerServer(this.persistentPlayers);
 			AuthorizationManager.Instance.ServerStart();
@@ -1827,31 +1836,100 @@ public class GameManager : MonoBehaviour, IGameManager
 		else
 		{
 			GamePrefs.Set(EnumGamePrefs.ServerMaxPlayerCount, 1);
+			this.LogServerStartEventAnalytics(_offline);
 		}
 		yield return GCUtils.UnloadAndCollectCo();
-		this.LogServerStartEventAnalytics(_offline);
 		this.gameStateManager.StartGame();
 		yield break;
 	}
 
-	// Token: 0x06008F88 RID: 36744 RVA: 0x003605B8 File Offset: 0x0035E7B8
+	// Token: 0x06009082 RID: 36994 RVA: 0x003651EB File Offset: 0x003633EB
+	[PublicizedFrom(EAccessModifier.Private)]
+	public IEnumerator LogPlayerJoinServerEventAnalyticsCoroutine()
+	{
+		if (this.IsEditMode() || GameUtils.IsPlaytesting())
+		{
+			yield break;
+		}
+		string joinTs = DateTime.UtcNow.ToString("O");
+		yield return new WaitForSeconds(2.5f);
+		PlayerJoinServerEventData playerJoinServerEventData = new PlayerJoinServerEventData();
+		playerJoinServerEventData.ServerId = Helper.GetServerId();
+		string text;
+		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsClient)
+		{
+			World world = this.World;
+			text = ((world != null) ? world.Guid : null);
+		}
+		else
+		{
+			text = GamePrefs.GetString(EnumGamePrefs.GameGuidClient);
+		}
+		playerJoinServerEventData.SaveId = text;
+		playerJoinServerEventData.ServerJoinTimestamp = joinTs;
+		playerJoinServerEventData.OnlinePlayers = Helper.GetServerPlayerCount();
+		playerJoinServerEventData.ServerJoinSource = SingletonMonoBehaviour<ConnectionManager>.Instance.LastJoinSource;
+		playerJoinServerEventData.LocalMods = ((ModManager.GetLoadedMods().Count > 0) ? Helper.GetTruncatedLoadedMods(100) : null);
+		playerJoinServerEventData.HasModifiedXML = new bool?(!StockFileHashes.HasStockXMLs());
+		World world2 = this.World;
+		playerJoinServerEventData.ElapsedWorldSaveTime = ((world2 != null) ? new ulong?(world2.worldTime) : null);
+		World world3 = this.World;
+		playerJoinServerEventData.InGameDays = ((world3 != null) ? new int?(world3.WorldDay) : null);
+		playerJoinServerEventData.TotalMods = new int?(ModManager.GetLoadedMods().Count);
+		PlayerJoinServerEventData playerJoinServerEventData2 = playerJoinServerEventData;
+		if (this.myEntityPlayerLocal)
+		{
+			PlayerDataFile playerDataFile = new PlayerDataFile();
+			playerDataFile.FromPlayer(this.myEntityPlayerLocal);
+			Dictionary<string, float?> dictionary = new Dictionary<string, float?>();
+			dictionary.Add("Days Alive", new float?(Mathf.Clamp((float)((this.myEntityPlayerLocal.world.worldTime - this.myEntityPlayerLocal.gameStageBornAtWorldTime) / 24000UL), 0f, (float)this.myEntityPlayerLocal.Progression.Level)));
+			dictionary.Add("Difficulty Bonus", new float?(GameStageDefinition.DifficultyBonus));
+			string text2 = "Quest Modifier";
+			Quest activeQuest = this.myEntityPlayerLocal.QuestJournal.ActiveQuest;
+			dictionary.Add(text2, (activeQuest != null) ? new float?(activeQuest.QuestClass.GameStageMod) : null);
+			string text3 = "Quest Bonus";
+			Quest activeQuest2 = this.myEntityPlayerLocal.QuestJournal.ActiveQuest;
+			dictionary.Add(text3, (activeQuest2 != null) ? new float?(activeQuest2.QuestClass.GameStageBonus) : null);
+			dictionary.Add("Biome GameStage Modifier", new float?(EntityPlayer.BiomeGameStageModifier));
+			string text4 = "Biome Modifier";
+			BiomeDefinition biomeStandingOn = this.myEntityPlayerLocal.biomeStandingOn;
+			dictionary.Add(text4, ((biomeStandingOn != null) ? new float?(biomeStandingOn.GameStageMod) : null) * EntityPlayer.BiomeGameStageModifier);
+			string text5 = "Biome Bonus";
+			BiomeDefinition biomeStandingOn2 = this.myEntityPlayerLocal.biomeStandingOn;
+			dictionary.Add(text5, ((biomeStandingOn2 != null) ? new float?(biomeStandingOn2.GameStageBonus) : null) * EntityPlayer.BiomeGameStageModifier);
+			Dictionary<string, float?> dictionary2 = dictionary;
+			playerJoinServerEventData2.ElapsedPlayerTime = new uint?((uint)(playerDataFile.totalTimePlayed * 60f));
+			playerJoinServerEventData2.PersonalGameStageUnmodified = new float?((float)this.myEntityPlayerLocal.unModifiedGameStage);
+			playerJoinServerEventData2.PersonalGameStageModified = new float?((float)this.myEntityPlayerLocal.gameStage);
+			playerJoinServerEventData2.CharacterLevel = new int?(this.myEntityPlayerLocal.Progression.Level);
+			playerJoinServerEventData2.TotalDeaths = new int?(playerDataFile.deaths);
+			playerJoinServerEventData2.GameStagesJson = dictionary2;
+		}
+		this._analyticsService.LogEvent(playerJoinServerEventData2);
+		SingletonMonoBehaviour<ConnectionManager>.Instance.LastJoinSource = "Unknown";
+		yield break;
+	}
+
+	// Token: 0x06009083 RID: 36995 RVA: 0x003651FC File Offset: 0x003633FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LogServerStartEventAnalytics(bool isOffline)
 	{
+		if (this.IsEditMode() || GameUtils.IsPlaytesting())
+		{
+			return;
+		}
 		SandboxOptionManager sandboxOptionManager = SandboxOptionManager.Current;
 		SandboxOptionPreset preset = sandboxOptionManager.GetPreset(GamePrefs.GetString(EnumGamePrefs.SandboxPreset));
-		List<ValueTuple<string, string, bool>> list;
-		sandboxOptionManager.GetChangedPresetOptions(preset, out list);
+		string text = (string.IsNullOrEmpty((preset != null) ? preset.LocalizedName : null) ? ((preset != null) ? preset.Name : null) : Localization.Get((preset != null) ? preset.LocalizedName : null, false, "english"));
+		SandboxOptionPreset sandboxOptionPreset = new SandboxOptionPreset();
+		sandboxOptionManager.LoadOptionsFromCode(GamePrefs.GetString(EnumGamePrefs.SandboxCode), sandboxOptionPreset);
 		Dictionary<string, object> dictionary = new Dictionary<string, object>
 		{
 			{
 				"Group",
 				(preset != null) ? preset.Group : null
 			},
-			{
-				"Preset",
-				(preset != null) ? preset.Name : null
-			},
+			{ "Preset", text },
 			{
 				"Server_Enabled",
 				GamePrefs.GetBool(EnumGamePrefs.ServerEnabled)
@@ -1937,22 +2015,28 @@ public class GameManager : MonoBehaviour, IGameManager
 				GamePrefs.GetInt(EnumGamePrefs.PartySharedKillRange)
 			}
 		};
-		ServerStartEventData serverStartEventData = new ServerStartEventData();
-		GameServerInfo currentGameServerInfoServerOrClient = SingletonMonoBehaviour<ConnectionManager>.Instance.CurrentGameServerInfoServerOrClient;
-		serverStartEventData.ServerId = ((currentGameServerInfoServerOrClient != null) ? currentGameServerInfoServerOrClient.GetValue(GameInfoString.UniqueId) : null);
-		serverStartEventData.SaveId = this.World.Guid;
-		serverStartEventData.ServerStartTimestamp = DateTime.UtcNow.ToString("o");
-		serverStartEventData.ServerType = (GameManager.IsDedicatedServer ? "Dedicated" : (isOffline ? "Offline" : "Listen"));
-		serverStartEventData.SandboxSeed = GameStats.GetString(EnumGameStats.SandboxCode);
-		serverStartEventData.SandboxSettingsDelta = list;
-		serverStartEventData.WorldName = GamePrefs.GetString(EnumGamePrefs.GameWorld);
-		serverStartEventData.GeneralSettings = dictionary;
-		serverStartEventData.ServerMods = ModManager.GetLoadedMods();
-		ServerStartEventData serverStartEventData2 = serverStartEventData;
-		ServiceProvider.Instance.Get<IAnalyticsService>().LogEvent(serverStartEventData2);
+		ServerStartEventData serverStartEventData = new ServerStartEventData
+		{
+			ServerId = Helper.GetServerId(),
+			SaveId = this.World.Guid,
+			ServerStartTimestamp = DateTime.UtcNow.ToString("o"),
+			ServerType = (GameManager.IsDedicatedServer ? "Dedicated" : (isOffline ? "Offline" : "Listen")),
+			SandboxSeed = GameStats.GetString(EnumGameStats.SandboxCode),
+			SandboxSettingsDelta = Helper.GetSandboxSettingsDelta(sandboxOptionPreset),
+			WorldName = GamePrefs.GetString(EnumGamePrefs.GameWorld),
+			GeneralSettings = dictionary,
+			ServerMods = ((ModManager.GetLoadedMods().Count > 0) ? Helper.GetTruncatedLoadedMods(100) : null),
+			TotalMods = ModManager.GetLoadedMods().Count
+		};
+		this._analyticsService.LogEvent(serverStartEventData);
+		if (!GameManager.IsDedicatedServer)
+		{
+			SingletonMonoBehaviour<ConnectionManager>.Instance.LastJoinSource = "Server Start";
+			base.StartCoroutine(this.LogPlayerJoinServerEventAnalyticsCoroutine());
+		}
 	}
 
-	// Token: 0x06008F89 RID: 36745 RVA: 0x003608EC File Offset: 0x0035EAEC
+	// Token: 0x06009084 RID: 36996 RVA: 0x003655B0 File Offset: 0x003637B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void StartAsClient()
 	{
@@ -1981,19 +2065,19 @@ public class GameManager : MonoBehaviour, IGameManager
 		BlockLimitTracker.Init();
 	}
 
-	// Token: 0x06008F8A RID: 36746 RVA: 0x003609AF File Offset: 0x0035EBAF
+	// Token: 0x06009085 RID: 36997 RVA: 0x00365673 File Offset: 0x00363873
 	public bool IsSafeToConnect()
 	{
 		return SingletonMonoBehaviour<ConnectionManager>.Instance.CurrentMode == ProtocolManager.NetworkType.None;
 	}
 
-	// Token: 0x06008F8B RID: 36747 RVA: 0x003609C0 File Offset: 0x0035EBC0
+	// Token: 0x06009086 RID: 36998 RVA: 0x00365684 File Offset: 0x00363884
 	public bool IsSafeToDisconnect()
 	{
 		return SingletonMonoBehaviour<ConnectionManager>.Instance.CurrentMode == ProtocolManager.NetworkType.None || ((!PrefabEditModeManager.Instance.IsActive() || !PrefabEditModeManager.Instance.NeedsSaving) && (this.gameStateManager.IsGameStarted() && !this.IsStartingGame) && !this.isDisconnectingLater);
 	}
 
-	// Token: 0x06008F8C RID: 36748 RVA: 0x00360A18 File Offset: 0x0035EC18
+	// Token: 0x06009087 RID: 36999 RVA: 0x003656DC File Offset: 0x003638DC
 	public void Disconnect()
 	{
 		Log.Out("Disconnect");
@@ -2055,7 +2139,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008F8D RID: 36749 RVA: 0x00360BB6 File Offset: 0x0035EDB6
+	// Token: 0x06009088 RID: 37000 RVA: 0x0036587A File Offset: 0x00363A7A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public IEnumerator disconnectLater()
 	{
@@ -2067,7 +2151,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		yield break;
 	}
 
-	// Token: 0x06008F8E RID: 36750 RVA: 0x00360BC8 File Offset: 0x0035EDC8
+	// Token: 0x06009089 RID: 37001 RVA: 0x0036588C File Offset: 0x00363A8C
 	public void SaveAndCleanupWorld()
 	{
 		Log.Out("SaveAndCleanupWorld");
@@ -2324,7 +2408,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		GameManager.bPlayRecordedSession = false;
 	}
 
-	// Token: 0x06008F8F RID: 36751 RVA: 0x003612C0 File Offset: 0x0035F4C0
+	// Token: 0x0600908A RID: 37002 RVA: 0x00365F84 File Offset: 0x00364184
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ShutdownMultiplayerServicesNow()
 	{
@@ -2354,7 +2438,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		gameplayNotifier.EndOnlineMultiplayer();
 	}
 
-	// Token: 0x06008F90 RID: 36752 RVA: 0x00361347 File Offset: 0x0035F547
+	// Token: 0x0600908B RID: 37003 RVA: 0x0036600B File Offset: 0x0036420B
 	public void SaveWorld()
 	{
 		if (this.m_World != null)
@@ -2363,7 +2447,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008F91 RID: 36753 RVA: 0x0036135C File Offset: 0x0035F55C
+	// Token: 0x0600908C RID: 37004 RVA: 0x00366020 File Offset: 0x00364220
 	public void SaveLocalPlayerData()
 	{
 		if (this.m_World == null)
@@ -2385,7 +2469,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008F92 RID: 36754 RVA: 0x003613EC File Offset: 0x0035F5EC
+	// Token: 0x0600908D RID: 37005 RVA: 0x003660B0 File Offset: 0x003642B0
 	public void Cleanup()
 	{
 		Log.Out("Cleanup");
@@ -2410,8 +2494,8 @@ public class GameManager : MonoBehaviour, IGameManager
 		GC.Collect();
 	}
 
-	// Token: 0x17001111 RID: 4369
-	// (get) Token: 0x06008F93 RID: 36755 RVA: 0x00361485 File Offset: 0x0035F685
+	// Token: 0x1700114A RID: 4426
+	// (get) Token: 0x0600908E RID: 37006 RVA: 0x00366149 File Offset: 0x00364349
 	public bool IsQuitting
 	{
 		get
@@ -2420,7 +2504,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008F94 RID: 36756 RVA: 0x00361490 File Offset: 0x0035F690
+	// Token: 0x0600908F RID: 37007 RVA: 0x00366154 File Offset: 0x00364354
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool OnApplicationQuit()
 	{
@@ -2449,11 +2533,15 @@ public class GameManager : MonoBehaviour, IGameManager
 		{
 			SingletonMonoBehaviour<SdtdConsole>.Instance.Cleanup();
 		}
+		if (!GameManager.IsDedicatedServer)
+		{
+			this._analyticsService.SessionRefreshed -= this.OnAnalyticsSessionRefreshed;
+		}
 		Log.Out("OnApplicationQuit");
 		return true;
 	}
 
-	// Token: 0x06008F95 RID: 36757 RVA: 0x00361518 File Offset: 0x0035F718
+	// Token: 0x06009090 RID: 37008 RVA: 0x003661F8 File Offset: 0x003643F8
 	public void OnApplicationFocus(bool _focus)
 	{
 		if (!GameManager.IsDedicatedServer)
@@ -2491,7 +2579,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008F96 RID: 36758 RVA: 0x00361674 File Offset: 0x0035F874
+	// Token: 0x06009091 RID: 37009 RVA: 0x00366354 File Offset: 0x00364554
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isAnyModalWindowOpen()
 	{
@@ -2506,7 +2594,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		return false;
 	}
 
-	// Token: 0x06008F97 RID: 36759 RVA: 0x003616B0 File Offset: 0x0035F8B0
+	// Token: 0x06009092 RID: 37010 RVA: 0x00366390 File Offset: 0x00364590
 	public bool isAnyCursorWindowOpen(LocalPlayerUI _ui = null)
 	{
 		if (_ui == null)
@@ -2527,7 +2615,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		return false;
 	}
 
-	// Token: 0x06008F98 RID: 36760 RVA: 0x00361724 File Offset: 0x0035F924
+	// Token: 0x06009093 RID: 37011 RVA: 0x00366404 File Offset: 0x00364604
 	public void SetCursorEnabledOverride(bool _bOverrideOn, bool _bOverrideState)
 	{
 		if (this.bCursorVisibleOverride != _bOverrideOn)
@@ -2537,13 +2625,13 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008F99 RID: 36761 RVA: 0x0036173D File Offset: 0x0035F93D
+	// Token: 0x06009094 RID: 37012 RVA: 0x0036641D File Offset: 0x0036461D
 	public bool GetCursorEnabledOverride()
 	{
 		return this.bCursorVisibleOverride;
 	}
 
-	// Token: 0x06008F9A RID: 36762 RVA: 0x00361745 File Offset: 0x0035F945
+	// Token: 0x06009095 RID: 37013 RVA: 0x00366425 File Offset: 0x00364625
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setCursorEnabled(bool _e)
 	{
@@ -2559,7 +2647,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		SoftCursor.SetCursorVisible(this.bCursorVisible);
 	}
 
-	// Token: 0x06008F9B RID: 36763 RVA: 0x00361780 File Offset: 0x0035F980
+	// Token: 0x06009096 RID: 37014 RVA: 0x00366460 File Offset: 0x00364660
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator ApplicationQuitCo(float _delay)
 	{
@@ -2598,21 +2686,21 @@ public class GameManager : MonoBehaviour, IGameManager
 		yield break;
 	}
 
-	// Token: 0x06008F9C RID: 36764 RVA: 0x00361798 File Offset: 0x0035F998
+	// Token: 0x06009097 RID: 37015 RVA: 0x00366478 File Offset: 0x00364678
 	public void ShowMessagePlayerDenied(GameUtils.KickPlayerData _kickData)
 	{
 		Log.Out("[NET] Kicked from server: " + _kickData.ToString());
 		XUiC_MessageBoxWindowGroup.ShowOk(this.windowManager.playerUI.xui, Localization.Get("auth_messageTitle", false, null), _kickData.LocalizedMessage(), "", null, true, true, false);
 	}
 
-	// Token: 0x06008F9D RID: 36765 RVA: 0x003617F2 File Offset: 0x0035F9F2
+	// Token: 0x06009098 RID: 37016 RVA: 0x003664D2 File Offset: 0x003646D2
 	public void ShowMessageServerAuthFailed(string _message)
 	{
 		Log.Out("Client failed to authorize server: " + _message);
 		XUiC_MessageBoxWindowGroup.ShowOk(this.windowManager.playerUI.xui, Localization.Get("auth_serverAuthFailedTitle", false, null), _message, "", null, true, true, false);
 	}
 
-	// Token: 0x06008F9E RID: 36766 RVA: 0x00361830 File Offset: 0x0035FA30
+	// Token: 0x06009099 RID: 37017 RVA: 0x00366510 File Offset: 0x00364710
 	public void PlayerLoginRPC(ClientInfo _cInfo, string _playerName, [TupleElementNames(new string[] { "userId", "token" })] ValueTuple<PlatformUserIdentifierAbs, string> _platformUserAndToken, [TupleElementNames(new string[] { "userId", "token" })] ValueTuple<PlatformUserIdentifierAbs, string> _crossplatformUserAndToken, string _compatibilityVersion, ulong _discordUserId)
 	{
 		Log.Out("PlayerLogin: " + _playerName + "/" + _compatibilityVersion);
@@ -2620,7 +2708,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		AuthorizationManager.Instance.Authorize(_cInfo, _playerName, _platformUserAndToken, _crossplatformUserAndToken, _compatibilityVersion, _discordUserId);
 	}
 
-	// Token: 0x06008F9F RID: 36767 RVA: 0x0036187C File Offset: 0x0035FA7C
+	// Token: 0x0600909A RID: 37018 RVA: 0x0036655C File Offset: 0x0036475C
 	public IEnumerator RequestToEnterGame(ClientInfo _cInfo)
 	{
 		ModEvents.SPlayerJoinedGameData splayerJoinedGameData = new ModEvents.SPlayerJoinedGameData(_cInfo);
@@ -2669,7 +2757,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		yield break;
 	}
 
-	// Token: 0x06008FA0 RID: 36768 RVA: 0x00361894 File Offset: 0x0035FA94
+	// Token: 0x0600909B RID: 37019 RVA: 0x00366574 File Offset: 0x00364774
 	public void WorldInfo(string _gameMode, string _levelName, string _gameName, string _guid, PersistentPlayerList _playerList, ulong _ticks, bool _fixedSizeCC, bool _firstTimeJoin, Dictionary<string, uint> _worldFileHashes, long _worldDataSize)
 	{
 		Log.Out("Received game GUID: " + _guid);
@@ -2680,7 +2768,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		base.StartCoroutine(this.worldInfoCo(_levelName, _gameName, _fixedSizeCC, _firstTimeJoin, _worldFileHashes, _worldDataSize));
 	}
 
-	// Token: 0x06008FA1 RID: 36769 RVA: 0x003618E8 File Offset: 0x0035FAE8
+	// Token: 0x0600909C RID: 37020 RVA: 0x003665C8 File Offset: 0x003647C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator worldInfoCo(string _levelName, string _gameName, bool _fixedSizeCC, bool _firstTimeJoin, Dictionary<string, uint> _worldFileHashes, long _worldDataSize)
 	{
@@ -2846,6 +2934,12 @@ public class GameManager : MonoBehaviour, IGameManager
 			yield break;
 		}
 		yield return this.createWorld(_levelName, worldLocation, _gameName, _fixedSizeCC);
+		this.GetDynamicPrefabDecorator();
+		yield return this.GetDynamicPrefabDecorator().RequestWorldPOIMetadataFromServer();
+		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsConnected)
+		{
+			yield break;
+		}
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackageWorldInitInfoRequest>().Setup(), false);
 		while (!this.worldInitInfoReceived)
 		{
@@ -2890,7 +2984,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		yield break;
 	}
 
-	// Token: 0x06008FA2 RID: 36770 RVA: 0x00361924 File Offset: 0x0035FB24
+	// Token: 0x0600909D RID: 37021 RVA: 0x00366604 File Offset: 0x00364804
 	public void DoSpawn()
 	{
 		if (GamePrefs.GetBool(EnumGamePrefs.SkipSpawnButton))
@@ -2901,20 +2995,20 @@ public class GameManager : MonoBehaviour, IGameManager
 		XUiC_SpawnSelectionWindow.Open(LocalPlayerUI.primaryUI, false, true, this.firstTimeJoin);
 	}
 
-	// Token: 0x06008FA3 RID: 36771 RVA: 0x0036194C File Offset: 0x0035FB4C
+	// Token: 0x0600909E RID: 37022 RVA: 0x0036662C File Offset: 0x0036482C
 	public void RequestToSpawn(int _nearEntityId = -1)
 	{
 		XUiC_ProgressWindow.Open(LocalPlayerUI.primaryUI, null, null, true, true, false);
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackageRequestToSpawnPlayer>().Setup(Utils.FastMin(12, GamePrefs.GetInt(EnumGamePrefs.OptionsGfxViewDistance)), PlayerProfile.LoadLocalProfile(), _nearEntityId), false);
 	}
 
-	// Token: 0x06008FA4 RID: 36772 RVA: 0x00361985 File Offset: 0x0035FB85
+	// Token: 0x0600909F RID: 37023 RVA: 0x00366665 File Offset: 0x00364865
 	public void ChunkClusterInfo(string _name, bool _bInifiniteTerrain, Vector2i _cMin, Vector2i _cMax, Vector3 _pos)
 	{
 		base.StartCoroutine(this.chunkClusterInfoCo(_name, _bInifiniteTerrain, _cMin, _cMax, _pos));
 	}
 
-	// Token: 0x06008FA5 RID: 36773 RVA: 0x0036199B File Offset: 0x0035FB9B
+	// Token: 0x060090A0 RID: 37024 RVA: 0x0036667B File Offset: 0x0036487B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator chunkClusterInfoCo(string _name, bool _bInifiniteTerrain, Vector2i _cMin, Vector2i _cMax, Vector3 _pos)
 	{
@@ -2944,7 +3038,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		yield break;
 	}
 
-	// Token: 0x06008FA6 RID: 36774 RVA: 0x003619C8 File Offset: 0x0035FBC8
+	// Token: 0x060090A1 RID: 37025 RVA: 0x003666A8 File Offset: 0x003648A8
 	public void RequestToSpawnPlayer(ClientInfo _cInfo, int _chunkViewDim, PlayerProfile _playerProfile, int _nearEntityId)
 	{
 		int num = GamePrefs.GetInt(EnumGamePrefs.ServerMaxAllowedViewDistance);
@@ -3117,7 +3211,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		ModEvents.PlayerSpawning.Invoke(ref splayerSpawningData);
 	}
 
-	// Token: 0x06008FA7 RID: 36775 RVA: 0x00361F74 File Offset: 0x00360174
+	// Token: 0x060090A2 RID: 37026 RVA: 0x00366C54 File Offset: 0x00364E54
 	public void PersistentPlayerLogin(PersistentPlayerData ppData)
 	{
 		if (this.persistentPlayers == null)
@@ -3136,7 +3230,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		this.persistentPlayers.DispatchPlayerEvent(ppData, null, EnumPersistentPlayerDataReason.Login);
 	}
 
-	// Token: 0x06008FA8 RID: 36776 RVA: 0x00361FE4 File Offset: 0x003601E4
+	// Token: 0x060090A3 RID: 37027 RVA: 0x00366CC4 File Offset: 0x00364EC4
 	public void HandlePersistentPlayerDisconnected(int _entityId)
 	{
 		PersistentPlayerData playerDataFromEntityID = this.persistentPlayers.GetPlayerDataFromEntityID(_entityId);
@@ -3147,7 +3241,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008FA9 RID: 36777 RVA: 0x00362020 File Offset: 0x00360220
+	// Token: 0x060090A4 RID: 37028 RVA: 0x00366D00 File Offset: 0x00364F00
 	public void PlayerId(int _playerId, int _teamNumber, PlayerDataFile _playerDataFile, int _chunkViewDim)
 	{
 		Log.Out(string.Format("PlayerId({0}, {1})", _playerId, _teamNumber));
@@ -3200,9 +3294,10 @@ public class GameManager : MonoBehaviour, IGameManager
 		entityPlayerLocal.Respawn(this.clientRespawnType);
 		this.gameStateManager.InitGame(false);
 		this.gameStateManager.StartGame();
+		base.StartCoroutine(this.LogPlayerJoinServerEventAnalyticsCoroutine());
 	}
 
-	// Token: 0x06008FAA RID: 36778 RVA: 0x00362228 File Offset: 0x00360428
+	// Token: 0x060090A5 RID: 37029 RVA: 0x00366F14 File Offset: 0x00365114
 	public void PlayerSpawnedInWorld(ClientInfo _cInfo, RespawnType _respawnReason, Vector3i _pos, int _entityId)
 	{
 		if (_entityId == -1)
@@ -3253,7 +3348,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008FAB RID: 36779 RVA: 0x00362368 File Offset: 0x00360568
+	// Token: 0x060090A6 RID: 37030 RVA: 0x00367054 File Offset: 0x00365254
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleFirstSpawnInteractions(PlayerInteraction _interaction)
 	{
@@ -3293,7 +3388,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008FAC RID: 36780 RVA: 0x003624B0 File Offset: 0x003606B0
+	// Token: 0x060090A7 RID: 37031 RVA: 0x0036719C File Offset: 0x0036539C
 	public void PlayerDisconnected(ClientInfo _cInfo)
 	{
 		if (_cInfo.entityId != -1)
@@ -3325,7 +3420,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		SingletonMonoBehaviour<ConnectionManager>.Instance.DisconnectClient(_cInfo, false, true);
 	}
 
-	// Token: 0x06008FAD RID: 36781 RVA: 0x00362590 File Offset: 0x00360790
+	// Token: 0x060090A8 RID: 37032 RVA: 0x0036727C File Offset: 0x0036547C
 	public void SavePlayerData(ClientInfo _cInfo, PlayerDataFile _playerDataFile)
 	{
 		_cInfo.latestPlayerData = _playerDataFile;
@@ -3358,14 +3453,14 @@ public class GameManager : MonoBehaviour, IGameManager
 		ModEvents.SavePlayerData.Invoke(ref ssavePlayerDataData);
 	}
 
-	// Token: 0x06008FAE RID: 36782 RVA: 0x003626C4 File Offset: 0x003608C4
+	// Token: 0x060090A9 RID: 37033 RVA: 0x003673B0 File Offset: 0x003655B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlatformUserIdentifierAbs getPersistentPlayerID(ClientInfo _cInfo)
 	{
 		return ((_cInfo != null) ? _cInfo.InternalId : null) ?? PlatformManager.InternalLocalUserIdentifier;
 	}
 
-	// Token: 0x06008FAF RID: 36783 RVA: 0x003626DB File Offset: 0x003608DB
+	// Token: 0x060090AA RID: 37034 RVA: 0x003673C7 File Offset: 0x003655C7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PersistentPlayerData getPersistentPlayerData(ClientInfo _cInfo)
 	{
@@ -3377,19 +3472,19 @@ public class GameManager : MonoBehaviour, IGameManager
 		return persistentPlayerList.GetPlayerData(this.getPersistentPlayerID(_cInfo));
 	}
 
-	// Token: 0x06008FB0 RID: 36784 RVA: 0x003626F5 File Offset: 0x003608F5
+	// Token: 0x060090AB RID: 37035 RVA: 0x003673E1 File Offset: 0x003655E1
 	public PersistentPlayerList GetPersistentPlayerList()
 	{
 		return this.persistentPlayers;
 	}
 
-	// Token: 0x06008FB1 RID: 36785 RVA: 0x003626FD File Offset: 0x003608FD
+	// Token: 0x060090AC RID: 37036 RVA: 0x003673E9 File Offset: 0x003655E9
 	public PersistentPlayerData GetPersistentLocalPlayer()
 	{
 		return this.persistentLocalPlayer;
 	}
 
-	// Token: 0x06008FB2 RID: 36786 RVA: 0x00362705 File Offset: 0x00360905
+	// Token: 0x060090AD RID: 37037 RVA: 0x003673F1 File Offset: 0x003655F1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator createWorld(string _levelName, PathAbstractions.AbstractedLocation _worldLocation, string _sGameName, bool _fixedSizeCC = false)
 	{
@@ -3505,8 +3600,8 @@ public class GameManager : MonoBehaviour, IGameManager
 		yield break;
 	}
 
-	// Token: 0x17001112 RID: 4370
-	// (get) Token: 0x06008FB3 RID: 36787 RVA: 0x00362731 File Offset: 0x00360931
+	// Token: 0x1700114B RID: 4427
+	// (get) Token: 0x060090AE RID: 37038 RVA: 0x0036741D File Offset: 0x0036561D
 	public World World
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -3516,25 +3611,25 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008FB4 RID: 36788 RVA: 0x00362739 File Offset: 0x00360939
+	// Token: 0x060090AF RID: 37039 RVA: 0x00367425 File Offset: 0x00365625
 	public SpawnPointList GetSpawnPointList()
 	{
 		return this.m_World.ChunkCache.ChunkProvider.GetSpawnPointList();
 	}
 
-	// Token: 0x06008FB5 RID: 36789 RVA: 0x00362750 File Offset: 0x00360950
+	// Token: 0x060090B0 RID: 37040 RVA: 0x0036743C File Offset: 0x0036563C
 	public ChunkManager.ChunkObserver AddChunkObserver(Vector3 _initialPosition, bool _bBuildVisualMeshAround, int _viewDim, int _entityIdToSendChunksTo)
 	{
 		return this.m_World.m_ChunkManager.AddChunkObserver(_initialPosition, _bBuildVisualMeshAround, _viewDim, _entityIdToSendChunksTo);
 	}
 
-	// Token: 0x06008FB6 RID: 36790 RVA: 0x00362767 File Offset: 0x00360967
+	// Token: 0x060090B1 RID: 37041 RVA: 0x00367453 File Offset: 0x00365653
 	public void RemoveChunkObserver(ChunkManager.ChunkObserver _observer)
 	{
 		this.m_World.m_ChunkManager.RemoveChunkObserver(_observer);
 	}
 
-	// Token: 0x06008FB7 RID: 36791 RVA: 0x0036277C File Offset: 0x0036097C
+	// Token: 0x060090B2 RID: 37042 RVA: 0x00367468 File Offset: 0x00365668
 	public void ExplosionServer(Vector3 _worldPos, Vector3i _blockPos, Quaternion _rotation, ExplosionData _explosionData, int _entityId, float _delay, bool _bRemoveBlockAtExplPosition, ItemValue _itemValueExplosionSource = null)
 	{
 		if (_bRemoveBlockAtExplPosition)
@@ -3554,7 +3649,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		base.StartCoroutine(this.explodeLater(_worldPos, _blockPos, _rotation, _explosionData, _entityId, _itemValueExplosionSource, _delay));
 	}
 
-	// Token: 0x06008FB8 RID: 36792 RVA: 0x00362804 File Offset: 0x00360A04
+	// Token: 0x060090B3 RID: 37043 RVA: 0x003674F0 File Offset: 0x003656F0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public IEnumerator explodeLater(Vector3 _position, Vector3i _blockPos, Quaternion _rotation, ExplosionData _explosionData, int _entityId, ItemValue _itemValueExplosionSource, float _delayInSec)
 	{
@@ -3563,7 +3658,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		yield break;
 	}
 
-	// Token: 0x06008FB9 RID: 36793 RVA: 0x00362854 File Offset: 0x00360A54
+	// Token: 0x060090B4 RID: 37044 RVA: 0x00367540 File Offset: 0x00365740
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void explode(Vector3 _worldPos, Vector3i _blockPos, Quaternion _rotation, ExplosionData _explosionData, int _entityId, ItemValue _itemValueExplosionSource)
 	{
@@ -3627,7 +3722,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		this.tempExplPositions.Clear();
 	}
 
-	// Token: 0x06008FBA RID: 36794 RVA: 0x00362AB8 File Offset: 0x00360CB8
+	// Token: 0x060090B5 RID: 37045 RVA: 0x003677A4 File Offset: 0x003659A4
 	public GameObject ExplosionClient(Vector3 _center, Quaternion _rotation, int _index, int _blastPower, float _blastRadius, float _blockDamage, int _entityId, List<BlockChangeInfo> _explosionChanges)
 	{
 		if (this.m_World == null)
@@ -3648,7 +3743,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		return gameObject;
 	}
 
-	// Token: 0x06008FBB RID: 36795 RVA: 0x00362B3C File Offset: 0x00360D3C
+	// Token: 0x060090B6 RID: 37046 RVA: 0x00367828 File Offset: 0x00365A28
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExplodeGroupFrameUpdate()
 	{
@@ -3696,7 +3791,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008FBC RID: 36796 RVA: 0x00362DCC File Offset: 0x00360FCC
+	// Token: 0x060090B7 RID: 37047 RVA: 0x00367AB8 File Offset: 0x00365CB8
 	public void ChangeBlocks(PlatformUserIdentifierAbs persistentPlayerId, List<BlockChangeInfo> _blocksToChange)
 	{
 		if (this.m_World == null)
@@ -3920,7 +4015,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008FBD RID: 36797 RVA: 0x003633D8 File Offset: 0x003615D8
+	// Token: 0x060090B8 RID: 37048 RVA: 0x003680C4 File Offset: 0x003662C4
 	public void ChangeProps(PlatformUserIdentifierAbs persistentPlayerId, List<PropChangeInfo> propsToChange)
 	{
 		if (this.m_World == null)
@@ -3962,7 +4057,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008FBE RID: 36798 RVA: 0x00363558 File Offset: 0x00361758
+	// Token: 0x060090B9 RID: 37049 RVA: 0x00368244 File Offset: 0x00366444
 	public void SetBlocksRPC(List<BlockChangeInfo> _changes, PlatformUserIdentifierAbs _persistentPlayerId = null)
 	{
 		this.ChangeBlocks(_persistentPlayerId, _changes);
@@ -3975,7 +4070,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(netPackageSetBlock, false);
 	}
 
-	// Token: 0x06008FBF RID: 36799 RVA: 0x003635B0 File Offset: 0x003617B0
+	// Token: 0x060090BA RID: 37050 RVA: 0x0036829C File Offset: 0x0036649C
 	public void SetPropsRPC(List<PropChangeInfo> _changes, PlatformUserIdentifierAbs _persistentPlayerId = null)
 	{
 		this.ChangeProps(_persistentPlayerId, _changes);
@@ -3988,19 +4083,19 @@ public class GameManager : MonoBehaviour, IGameManager
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(netPackageSetProp, false);
 	}
 
-	// Token: 0x06008FC0 RID: 36800 RVA: 0x00363608 File Offset: 0x00361808
+	// Token: 0x060090BB RID: 37051 RVA: 0x003682F4 File Offset: 0x003664F4
 	public void SetBlocksOnClients(int _exceptThisEntityId, NetPackageSetBlock package)
 	{
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(package, false, -1, _exceptThisEntityId, -1, null, 192, false);
 	}
 
-	// Token: 0x06008FC1 RID: 36801 RVA: 0x00363634 File Offset: 0x00361834
+	// Token: 0x060090BC RID: 37052 RVA: 0x00368320 File Offset: 0x00366520
 	public void SetPropsOnClients(int _exceptThisEntityId, NetPackageSetProp package)
 	{
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(package, false, -1, _exceptThisEntityId, -1, null, 192, false);
 	}
 
-	// Token: 0x06008FC2 RID: 36802 RVA: 0x00363660 File Offset: 0x00361860
+	// Token: 0x060090BD RID: 37053 RVA: 0x0036834C File Offset: 0x0036654C
 	public void SetWaterRPC(NetPackageWaterSet package)
 	{
 		if (this.m_World != null)
@@ -4020,7 +4115,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(package, false);
 	}
 
-	// Token: 0x06008FC3 RID: 36803 RVA: 0x003636D8 File Offset: 0x003618D8
+	// Token: 0x060090BE RID: 37054 RVA: 0x003683C4 File Offset: 0x003665C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateBlockParticles()
 	{
@@ -4040,7 +4135,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008FC4 RID: 36804 RVA: 0x003637A8 File Offset: 0x003619A8
+	// Token: 0x060090BF RID: 37055 RVA: 0x00368494 File Offset: 0x00366694
 	public void SpawnBlockParticleEffect(Vector3i _blockPos, ParticleEffect _pe)
 	{
 		List<GameManager.BlockParticleCreationData> list = this.blockParticlesToSpawn;
@@ -4050,19 +4145,19 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008FC5 RID: 36805 RVA: 0x003637F4 File Offset: 0x003619F4
+	// Token: 0x060090C0 RID: 37056 RVA: 0x003684E0 File Offset: 0x003666E0
 	public bool HasBlockParticleEffect(Vector3i _blockPos)
 	{
 		return this.m_BlockParticles.ContainsKey(_blockPos);
 	}
 
-	// Token: 0x06008FC6 RID: 36806 RVA: 0x00363802 File Offset: 0x00361A02
+	// Token: 0x060090C1 RID: 37057 RVA: 0x003684EE File Offset: 0x003666EE
 	public Transform GetBlockParticleEffect(Vector3i _blockPos)
 	{
 		return this.m_BlockParticles[_blockPos];
 	}
 
-	// Token: 0x06008FC7 RID: 36807 RVA: 0x00363810 File Offset: 0x00361A10
+	// Token: 0x060090C2 RID: 37058 RVA: 0x003684FC File Offset: 0x003666FC
 	public void RemoveBlockParticleEffect(Vector3i _blockPos)
 	{
 		List<GameManager.BlockParticleCreationData> list = this.blockParticlesToSpawn;
@@ -4090,7 +4185,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008FC8 RID: 36808 RVA: 0x003638C4 File Offset: 0x00361AC4
+	// Token: 0x060090C3 RID: 37059 RVA: 0x003685B0 File Offset: 0x003667B0
 	public void SpawnParticleEffectServer(ParticleEffect _pe, int _entityId, bool _forceCreation = false, bool _worldSpawn = false)
 	{
 		if (this.m_World == null)
@@ -4106,26 +4201,26 @@ public class GameManager : MonoBehaviour, IGameManager
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageParticleEffect>().Setup(_pe, _entityId, _forceCreation, _worldSpawn), false, -1, _entityId, -1, null, 192, false);
 	}
 
-	// Token: 0x06008FC9 RID: 36809 RVA: 0x00363938 File Offset: 0x00361B38
+	// Token: 0x060090C4 RID: 37060 RVA: 0x00368624 File Offset: 0x00366824
 	public Transform SpawnParticleEffectClientForceCreation(ParticleEffect _pe, int _entityThatCausedIt, bool _worldSpawn)
 	{
 		return ParticleEffect.SpawnParticleEffect(_pe, _entityThatCausedIt, true, _worldSpawn);
 	}
 
-	// Token: 0x06008FCA RID: 36810 RVA: 0x00363943 File Offset: 0x00361B43
+	// Token: 0x060090C5 RID: 37061 RVA: 0x0036862F File Offset: 0x0036682F
 	public void SpawnParticleEffectClient(ParticleEffect _pe, int _entityThatCausedIt, bool _forceCreation = false, bool _worldSpawn = false)
 	{
 		ParticleEffect.SpawnParticleEffect(_pe, _entityThatCausedIt, _forceCreation, _worldSpawn);
 	}
 
-	// Token: 0x06008FCB RID: 36811 RVA: 0x00363950 File Offset: 0x00361B50
+	// Token: 0x060090C6 RID: 37062 RVA: 0x0036863C File Offset: 0x0036683C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PhysicsInit()
 	{
 		Physics.ContactEvent += this.PhysicsContactEvent;
 	}
 
-	// Token: 0x06008FCC RID: 36812 RVA: 0x00363964 File Offset: 0x00361B64
+	// Token: 0x060090C7 RID: 37063 RVA: 0x00368650 File Offset: 0x00366850
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PhysicsContactEvent(PhysicsScene scene, NativeArray<ContactPairHeader>.ReadOnly pairHeaders)
 	{
@@ -4149,14 +4244,14 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008FCD RID: 36813 RVA: 0x003639C7 File Offset: 0x00361BC7
+	// Token: 0x060090C8 RID: 37064 RVA: 0x003686B3 File Offset: 0x003668B3
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public bool IsEditMode()
 	{
 		return this.isEditMode;
 	}
 
-	// Token: 0x06008FCE RID: 36814 RVA: 0x003639D0 File Offset: 0x00361BD0
+	// Token: 0x060090C9 RID: 37065 RVA: 0x003686BC File Offset: 0x003668BC
 	public void GameMessage(EnumGameMessages _type, EntityAlive _mainEntity, EntityAlive _otherEntity)
 	{
 		if (_mainEntity == null)
@@ -4198,7 +4293,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008FCF RID: 36815 RVA: 0x00363A68 File Offset: 0x00361C68
+	// Token: 0x060090CA RID: 37066 RVA: 0x00368754 File Offset: 0x00366954
 	public void GameMessageServer(ClientInfo _cInfo, EnumGameMessages _type, int _mainEntityId, int _secondaryEntityId)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -4228,7 +4323,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		this.FinishGameMessageServer(_cInfo, _type, _mainEntityId, _secondaryEntityId, text);
 	}
 
-	// Token: 0x06008FD0 RID: 36816 RVA: 0x00363AF0 File Offset: 0x00361CF0
+	// Token: 0x060090CB RID: 37067 RVA: 0x003687DC File Offset: 0x003669DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FinishGameMessageServer(ClientInfo _cInfo, EnumGameMessages _type, int _mainEntityId, int _secondaryEntityId, string _mainName)
 	{
@@ -4247,7 +4342,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		Log.Out("GameMessage handled by mod '{0}': {1}", new object[] { item2.Name, text2 });
 	}
 
-	// Token: 0x06008FD1 RID: 36817 RVA: 0x00363BA0 File Offset: 0x00361DA0
+	// Token: 0x060090CC RID: 37068 RVA: 0x0036888C File Offset: 0x00366A8C
 	public string DisplayGameMessage(EnumGameMessages _type, int _mainEntity, int _secondaryEntity = -1, bool _log = true)
 	{
 		string text = null;
@@ -4341,7 +4436,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		return text;
 	}
 
-	// Token: 0x06008FD2 RID: 36818 RVA: 0x00363D7C File Offset: 0x00361F7C
+	// Token: 0x060090CD RID: 37069 RVA: 0x00368A68 File Offset: 0x00366C68
 	public void ChatMessageServer(ClientInfo _cInfo, EChatType _chatType, int _senderEntityId, string _msg, List<int> _recipientEntityIds, EMessageSender _msgSender, GeneratedTextManager.BbCodeSupportMode _bbMode = GeneratedTextManager.BbCodeSupportMode.Supported)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -4420,7 +4515,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008FD3 RID: 36819 RVA: 0x00363F74 File Offset: 0x00362174
+	// Token: 0x060090CE RID: 37070 RVA: 0x00368C60 File Offset: 0x00366E60
 	public void ChatMessageClient(EChatType _chatType, int _senderEntityId, string _msg, List<int> _recipientEntityIds, EMessageSender _msgSender, GeneratedTextManager.BbCodeSupportMode _bbMode)
 	{
 		if (GameManager.IsDedicatedServer)
@@ -4436,13 +4531,13 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008FD4 RID: 36820 RVA: 0x00364004 File Offset: 0x00362204
+	// Token: 0x060090CF RID: 37071 RVA: 0x00368CF0 File Offset: 0x00366EF0
 	public void RemoveChunk(long _chunkKey)
 	{
 		this.m_World.m_ChunkManager.RemoveChunk(_chunkKey);
 	}
 
-	// Token: 0x06008FD5 RID: 36821 RVA: 0x00364017 File Offset: 0x00362217
+	// Token: 0x060090D0 RID: 37072 RVA: 0x00368D03 File Offset: 0x00366F03
 	public IBlockTool GetActiveBlockTool()
 	{
 		if (this.activeBlockTool == null)
@@ -4452,13 +4547,13 @@ public class GameManager : MonoBehaviour, IGameManager
 		return this.activeBlockTool;
 	}
 
-	// Token: 0x06008FD6 RID: 36822 RVA: 0x0036402E File Offset: 0x0036222E
+	// Token: 0x060090D1 RID: 37073 RVA: 0x00368D1A File Offset: 0x00366F1A
 	public void SetActiveBlockTool(IBlockTool _tool)
 	{
 		this.activeBlockTool = _tool;
 	}
 
-	// Token: 0x06008FD7 RID: 36823 RVA: 0x00364038 File Offset: 0x00362238
+	// Token: 0x060090D2 RID: 37074 RVA: 0x00368D24 File Offset: 0x00366F24
 	public DynamicPrefabDecorator GetDynamicPrefabDecorator()
 	{
 		if (this.m_World == null)
@@ -4473,7 +4568,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		return chunkCache.ChunkProvider.GetDynamicPrefabDecorator();
 	}
 
-	// Token: 0x06008FD8 RID: 36824 RVA: 0x0036406C File Offset: 0x0036226C
+	// Token: 0x060090D3 RID: 37075 RVA: 0x00368D58 File Offset: 0x00366F58
 	public void SimpleRPC(int _entityId, SimpleRPCType _rpcType, bool _bExeLocal, bool _bOnlyLocal)
 	{
 		if (_bExeLocal)
@@ -4507,13 +4602,13 @@ public class GameManager : MonoBehaviour, IGameManager
 		this.m_World.entityDistributer.SendPacketToTrackedPlayers(_entityId, _entityId, netPackage, false);
 	}
 
-	// Token: 0x06008FD9 RID: 36825 RVA: 0x00364118 File Offset: 0x00362318
+	// Token: 0x060090D4 RID: 37076 RVA: 0x00368E04 File Offset: 0x00367004
 	public void ItemDropServer(ItemStack _itemStack, Vector3 _dropPos, Vector3 _randomPosAdd, int _entityId = -1, float _lifetime = 60f, bool _bDropPosIsRelativeToHead = false)
 	{
 		this.ItemDropServer(_itemStack, _dropPos, _randomPosAdd, Vector3.zero, _entityId, _lifetime, _bDropPosIsRelativeToHead, 0);
 	}
 
-	// Token: 0x06008FDA RID: 36826 RVA: 0x0036413C File Offset: 0x0036233C
+	// Token: 0x060090D5 RID: 37077 RVA: 0x00368E28 File Offset: 0x00367028
 	public void ItemDropServer(ItemStack _itemStack, Vector3 _dropPos, Vector3 _randomPosAdd, Vector3 _initialMotion, int _entityId = -1, float _lifetime = 60f, bool _bDropPosIsRelativeToHead = false, int _clientEntityId = 0)
 	{
 		if (this.m_World == null)
@@ -4615,7 +4710,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008FDB RID: 36827 RVA: 0x00364413 File Offset: 0x00362613
+	// Token: 0x060090D6 RID: 37078 RVA: 0x003690FF File Offset: 0x003672FF
 	public void AddExpServer(int _entityId, string UNUSED_skill, int _experience)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -4624,7 +4719,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008FDC RID: 36828 RVA: 0x00364438 File Offset: 0x00362638
+	// Token: 0x060090D7 RID: 37079 RVA: 0x00369124 File Offset: 0x00367324
 	public void AddScoreServer(int _entityId, int _zombieKills, int _playerKills, int _otherTeamnumber, int _conditions)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -4645,7 +4740,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		entityAlive.AddScore(0, _zombieKills, _playerKills, _otherTeamnumber, _conditions);
 	}
 
-	// Token: 0x06008FDD RID: 36829 RVA: 0x003644D4 File Offset: 0x003626D4
+	// Token: 0x060090D8 RID: 37080 RVA: 0x003691C0 File Offset: 0x003673C0
 	public void AwardKill(EntityAlive killer, EntityAlive killedEntity)
 	{
 		if (killer.isEntityRemote)
@@ -4656,7 +4751,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		QuestEventManager.Current.EntityKilled(killer, killedEntity);
 	}
 
-	// Token: 0x06008FDE RID: 36830 RVA: 0x00364530 File Offset: 0x00362730
+	// Token: 0x060090D9 RID: 37081 RVA: 0x0036921C File Offset: 0x0036741C
 	public void ItemReloadServer(int _entityId)
 	{
 		if (this.m_World == null)
@@ -4672,7 +4767,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageItemReload>().Setup(_entityId), false, -1, _entityId, -1, null, 192, false);
 	}
 
-	// Token: 0x06008FDF RID: 36831 RVA: 0x00364598 File Offset: 0x00362798
+	// Token: 0x060090DA RID: 37082 RVA: 0x00369284 File Offset: 0x00367484
 	public void ItemReloadClient(int _entityId)
 	{
 		if (this.m_World == null)
@@ -4686,7 +4781,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008FE0 RID: 36832 RVA: 0x003645FC File Offset: 0x003627FC
+	// Token: 0x060090DB RID: 37083 RVA: 0x003692E8 File Offset: 0x003674E8
 	public void ItemActionEffectsServer(int _entityId, int _slotIdx, int _itemActionIdx, int _firingState, Vector3 _startPos, Vector3 _direction, int _userData = 0)
 	{
 		if (this.m_World == null)
@@ -4708,7 +4803,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageItemActionEffects>().Setup(_entityId, _slotIdx, _itemActionIdx, (ItemActionFiringState)_firingState, _startPos, _direction, _userData), false, -1, num, _entityId, null, 192, false);
 	}
 
-	// Token: 0x06008FE1 RID: 36833 RVA: 0x003646B4 File Offset: 0x003628B4
+	// Token: 0x060090DC RID: 37084 RVA: 0x003693A0 File Offset: 0x003675A0
 	public void ItemActionEffectsClient(int _entityId, int _slotIdx, int _itemActionIdx, int _firingState, Vector3 _startPos, Vector3 _direction, int _userData = 0)
 	{
 		if (this.m_World == null)
@@ -4728,7 +4823,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		itemActionInSlot.ItemActionEffects(this, entityAlive.inventory.GetItemActionDataInSlot(_slotIdx, _itemActionIdx), _firingState, _startPos, _direction, _userData);
 	}
 
-	// Token: 0x06008FE2 RID: 36834 RVA: 0x00364714 File Offset: 0x00362914
+	// Token: 0x060090DD RID: 37085 RVA: 0x00369400 File Offset: 0x00367600
 	public void SetWorldTime(ulong _worldTime)
 	{
 		if (this.m_World == null)
@@ -4742,7 +4837,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		this.m_World.SetTime(_worldTime);
 	}
 
-	// Token: 0x06008FE3 RID: 36835 RVA: 0x00364744 File Offset: 0x00362944
+	// Token: 0x060090DE RID: 37086 RVA: 0x00369430 File Offset: 0x00367630
 	public void AddVelocityToEntityServer(int _entityId, Vector3 _velToAdd)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -4757,7 +4852,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008FE4 RID: 36836 RVA: 0x00364794 File Offset: 0x00362994
+	// Token: 0x060090DF RID: 37087 RVA: 0x00369480 File Offset: 0x00367680
 	public void PickupBlockServer(Vector3i _blockPos, BlockValue _blockValue, int _playerId, PlatformUserIdentifierAbs persistentPlayerId = null)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -4784,7 +4879,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}, persistentPlayerId);
 	}
 
-	// Token: 0x06008FE5 RID: 36837 RVA: 0x00364878 File Offset: 0x00362A78
+	// Token: 0x060090E0 RID: 37088 RVA: 0x00369564 File Offset: 0x00367764
 	public void PickupBlockClient(Vector3i _blockPos, BlockValue _blockValue, int _playerId)
 	{
 		if (this.m_World.GetBlock(_blockPos).type != _blockValue.type)
@@ -4804,13 +4899,13 @@ public class GameManager : MonoBehaviour, IGameManager
 		this.ItemDropServer(itemStack, _blockPos.ToVector3() + Vector3.one * 0.5f, Vector3.zero, _playerId, 60f, false);
 	}
 
-	// Token: 0x06008FE6 RID: 36838 RVA: 0x00364974 File Offset: 0x00362B74
+	// Token: 0x060090E1 RID: 37089 RVA: 0x00369660 File Offset: 0x00367860
 	public void PlaySoundAtPositionServer(Vector3 _pos, string _audioClipName, AudioRolloffMode _mode, int _distance, float _volumeScale = 1f)
 	{
 		this.PlaySoundAtPositionServer(_pos, _audioClipName, _mode, _distance, this.m_World.GetPrimaryPlayerId(), _volumeScale);
 	}
 
-	// Token: 0x06008FE7 RID: 36839 RVA: 0x00364990 File Offset: 0x00362B90
+	// Token: 0x060090E2 RID: 37090 RVA: 0x0036967C File Offset: 0x0036787C
 	public void PlaySoundAtPositionServer(Vector3 _pos, string _audioClipName, AudioRolloffMode _mode, int _distance, int _entityId, float _volumeScale = 1f)
 	{
 		if (this.m_World == null)
@@ -4833,7 +4928,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageSoundAtPosition>().Setup(_pos, _audioClipName, _mode, _distance, _entityId, _volumeScale), false, -1, _entityId, -1, null, 192, false);
 	}
 
-	// Token: 0x06008FE8 RID: 36840 RVA: 0x00364A43 File Offset: 0x00362C43
+	// Token: 0x060090E3 RID: 37091 RVA: 0x0036972F File Offset: 0x0036792F
 	public void PlaySoundAtPositionClient(Vector3 _pos, string _audioClipName, AudioRolloffMode _mode, int _distance, float _volumeScale)
 	{
 		if (this.m_World == null)
@@ -4847,7 +4942,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008FE9 RID: 36841 RVA: 0x00364A7C File Offset: 0x00362C7C
+	// Token: 0x060090E4 RID: 37092 RVA: 0x00369768 File Offset: 0x00367968
 	public void WaypointInviteServer(Waypoint _waypoint, EnumWaypointInviteMode _inviteMode, int _inviterEntityId)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -4906,7 +5001,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008FEA RID: 36842 RVA: 0x00364C48 File Offset: 0x00362E48
+	// Token: 0x060090E5 RID: 37093 RVA: 0x00369934 File Offset: 0x00367B34
 	public void RemovePartyInvitesFromAllPlayers(EntityPlayer _player)
 	{
 		for (int i = 0; i < this.m_World.Players.list.Count; i++)
@@ -4919,7 +5014,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008FEB RID: 36843 RVA: 0x00364CA4 File Offset: 0x00362EA4
+	// Token: 0x060090E6 RID: 37094 RVA: 0x00369990 File Offset: 0x00367B90
 	public void WaypointInviteClient(Waypoint _waypoint, EnumWaypointInviteMode _inviteMode, int _inviterEntityId, EntityPlayerLocal _player = null)
 	{
 		if (_player == null)
@@ -4964,7 +5059,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}, true, false, GeneratedTextManager.TextFilteringMode.Filter, GeneratedTextManager.BbCodeSupportMode.SupportedAndAddEscapes);
 	}
 
-	// Token: 0x06008FEC RID: 36844 RVA: 0x00364E1C File Offset: 0x0036301C
+	// Token: 0x060090E7 RID: 37095 RVA: 0x00369B08 File Offset: 0x00367D08
 	public void QuestShareServer(NetPackageSharedQuest.SharedQuestData sqd)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -4980,7 +5075,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageSharedQuest>().Setup(sqd), false, sqd.sharedWithEntityID, -1, -1, null, 192, false);
 	}
 
-	// Token: 0x06008FED RID: 36845 RVA: 0x00364E98 File Offset: 0x00363098
+	// Token: 0x060090E8 RID: 37096 RVA: 0x00369B84 File Offset: 0x00367D84
 	public void QuestShareClient(NetPackageSharedQuest.SharedQuestData sqd, EntityPlayerLocal _player = null)
 	{
 		if (_player == null)
@@ -5016,7 +5111,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		_player.AddSharedQuestEntry(new NetPackageSharedQuest.SharedQuestData(sqd));
 	}
 
-	// Token: 0x06008FEE RID: 36846 RVA: 0x00364FA8 File Offset: 0x003631A8
+	// Token: 0x060090E9 RID: 37097 RVA: 0x00369C94 File Offset: 0x00367E94
 	public void SharedKillServer(int _entityID, int _killerID, float _xpModifier = 1f)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -5061,7 +5156,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008FEF RID: 36847 RVA: 0x00365164 File Offset: 0x00363364
+	// Token: 0x060090EA RID: 37098 RVA: 0x00369E50 File Offset: 0x00368050
 	public void SharedKillClient(int _entityTypeID, int _xp, EntityPlayerLocal _player = null, int _entityID = -1, int _killerID = -1)
 	{
 		if (_player == null)
@@ -5082,7 +5177,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		QuestEventManager.Current.EntityKilled(_player, (_entityID == -1) ? null : (this.m_World.GetEntity(_entityID) as EntityAlive));
 	}
 
-	// Token: 0x06008FF0 RID: 36848 RVA: 0x00365219 File Offset: 0x00363419
+	// Token: 0x060090EB RID: 37099 RVA: 0x00369F05 File Offset: 0x00368105
 	public IEnumerator ShowExitingGameUICoroutine()
 	{
 		bool flag = this.windowManager.IsWindowOpen(XUiC_ExitingGame.ID);
@@ -5096,7 +5191,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		yield break;
 	}
 
-	// Token: 0x06008FF1 RID: 36849 RVA: 0x00365228 File Offset: 0x00363428
+	// Token: 0x060090EC RID: 37100 RVA: 0x00369F14 File Offset: 0x00368114
 	public static void ShowTooltipMP(EntityPlayer _player, string _text, string _alertSound = "")
 	{
 		if (_player is EntityPlayerLocal)
@@ -5107,19 +5202,19 @@ public class GameManager : MonoBehaviour, IGameManager
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageShowToolbeltMessage>().Setup(_text, _alertSound), false, _player.entityId, -1, -1, null, 192, false);
 	}
 
-	// Token: 0x06008FF2 RID: 36850 RVA: 0x00365286 File Offset: 0x00363486
+	// Token: 0x060090ED RID: 37101 RVA: 0x00369F72 File Offset: 0x00368172
 	public static void ShowTooltip(EntityPlayerLocal _player, string _text, bool _showImmediately = false, bool _pinTooltip = false, float _timeout = 0f)
 	{
 		GameManager.ShowTooltip(_player, _text, null, null, null, _showImmediately, _pinTooltip, _timeout);
 	}
 
-	// Token: 0x06008FF3 RID: 36851 RVA: 0x00365296 File Offset: 0x00363496
+	// Token: 0x060090EE RID: 37102 RVA: 0x00369F82 File Offset: 0x00368182
 	public static void ShowTooltip(EntityPlayerLocal _player, string _text, string _arg, string _alertSound = null, ToolTipEvent _handler = null, bool _showImmediately = false, bool _pinTooltip = false, float _timeout = 0f)
 	{
 		GameManager.ShowTooltip(_player, _text, new string[] { _arg }, _alertSound, _handler, _showImmediately, false, _timeout);
 	}
 
-	// Token: 0x06008FF4 RID: 36852 RVA: 0x003652B1 File Offset: 0x003634B1
+	// Token: 0x060090EF RID: 37103 RVA: 0x00369F9D File Offset: 0x0036819D
 	public static void ShowTooltip(EntityPlayerLocal _player, string _text, string[] _args, string _alertSound = null, ToolTipEvent _handler = null, bool _showImmediately = false, bool _pinTooltip = false, float _timeout = 0f)
 	{
 		if (GameManager.IsDedicatedServer || _player == null)
@@ -5129,7 +5224,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		XUiC_PopupToolTip.QueueTooltip(LocalPlayerUI.GetUIForPlayer(_player).nguiWindowManager.WindowManager.playerUI.xui, _text, _args, _alertSound, _handler, _showImmediately, _pinTooltip, _timeout);
 	}
 
-	// Token: 0x06008FF5 RID: 36853 RVA: 0x003652EE File Offset: 0x003634EE
+	// Token: 0x060090F0 RID: 37104 RVA: 0x00369FDA File Offset: 0x003681DA
 	public static void RemovePinnedTooltip(EntityPlayerLocal _player, string _key)
 	{
 		if (GameManager.IsDedicatedServer || _player == null)
@@ -5139,7 +5234,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		XUiC_PopupToolTip.RemovePinnedTooltip(LocalPlayerUI.GetUIForPlayer(_player).nguiWindowManager.WindowManager.playerUI.xui, _key);
 	}
 
-	// Token: 0x06008FF6 RID: 36854 RVA: 0x00365321 File Offset: 0x00363521
+	// Token: 0x060090F1 RID: 37105 RVA: 0x0036A00D File Offset: 0x0036820D
 	public void ClearTooltips(NGUIWindowManager _nguiWindowManager)
 	{
 		if (GameManager.IsDedicatedServer)
@@ -5149,7 +5244,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		XUiC_PopupToolTip.ClearTooltips(_nguiWindowManager.WindowManager.playerUI.xui);
 	}
 
-	// Token: 0x06008FF7 RID: 36855 RVA: 0x00365340 File Offset: 0x00363540
+	// Token: 0x060090F2 RID: 37106 RVA: 0x0036A02C File Offset: 0x0036822C
 	public void ClearCurrentTooltip(NGUIWindowManager _nguiWindowManager)
 	{
 		if (GameManager.IsDedicatedServer)
@@ -5159,7 +5254,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		XUiC_PopupToolTip.ClearCurrentTooltip(_nguiWindowManager.WindowManager.playerUI.xui);
 	}
 
-	// Token: 0x06008FF8 RID: 36856 RVA: 0x0036535F File Offset: 0x0036355F
+	// Token: 0x060090F3 RID: 37107 RVA: 0x0036A04B File Offset: 0x0036824B
 	public void SetToolTipPause(NGUIWindowManager _nguiWindowManager, bool _isPaused)
 	{
 		if (GameManager.IsDedicatedServer)
@@ -5169,25 +5264,25 @@ public class GameManager : MonoBehaviour, IGameManager
 		XUiC_PopupToolTip.SetToolTipPause(_nguiWindowManager.WindowManager.playerUI.xui, _isPaused);
 	}
 
-	// Token: 0x06008FF9 RID: 36857 RVA: 0x0036537F File Offset: 0x0036357F
+	// Token: 0x060090F4 RID: 37108 RVA: 0x0036A06B File Offset: 0x0036826B
 	public static void ShowSubtitle(XUi _xui, string speaker, string content, float duration, bool centerAlign = false)
 	{
 		XUiC_SubtitlesDisplay.DisplaySubtitle(_xui, speaker, content, duration, centerAlign);
 	}
 
-	// Token: 0x06008FFA RID: 36858 RVA: 0x0036538C File Offset: 0x0036358C
+	// Token: 0x060090F5 RID: 37109 RVA: 0x0036A078 File Offset: 0x00368278
 	public static void PlayVideo(string id, bool skippable, XUiC_VideoPlayer.DelegateOnVideoFinished callback = null)
 	{
 		XUiC_VideoPlayer.PlayVideo(LocalPlayerUI.primaryUI.xui, VideoManager.GetVideoData(id), skippable, callback);
 	}
 
-	// Token: 0x06008FFB RID: 36859 RVA: 0x003653A5 File Offset: 0x003635A5
+	// Token: 0x060090F6 RID: 37110 RVA: 0x0036A091 File Offset: 0x00368291
 	public static bool IsVideoPlaying()
 	{
 		return XUiC_VideoPlayer.IsVideoPlaying;
 	}
 
-	// Token: 0x06008FFC RID: 36860 RVA: 0x003653AC File Offset: 0x003635AC
+	// Token: 0x060090F7 RID: 37111 RVA: 0x0036A098 File Offset: 0x00368298
 	public void CheckDestroyTileEntity(ITileEntity _te, Vector3i _blockPos)
 	{
 		ITileEntityLootable tileEntityLootable = _te as ITileEntityLootable;
@@ -5204,7 +5299,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		block.Block.DamageBlock(this.m_World, _blockPos, block, block.Block.MaxDamage, -1, null, false, false);
 	}
 
-	// Token: 0x06008FFD RID: 36861 RVA: 0x00365410 File Offset: 0x00363610
+	// Token: 0x060090F8 RID: 37112 RVA: 0x0036A0FC File Offset: 0x003682FC
 	public void DropContentOfLootContainerServer(BlockValue _bvOld, Vector3i _worldPos, ITileEntityLootable _teOld = null)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -5241,7 +5336,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		tileEntityLootable3.SetEmpty();
 	}
 
-	// Token: 0x06008FFE RID: 36862 RVA: 0x0036554C File Offset: 0x0036374C
+	// Token: 0x060090F9 RID: 37113 RVA: 0x0036A238 File Offset: 0x00368438
 	public void DropContentInLootContainerServer(int _droppedByID, string _containerEntity, Vector3 _pos, ItemStack[] _items, bool _skipIfEmpty = false, Vector3? increment = null)
 	{
 		List<EntityLootContainer> list = new List<EntityLootContainer>();
@@ -5280,13 +5375,13 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06008FFF RID: 36863 RVA: 0x00365676 File Offset: 0x00363876
+	// Token: 0x060090FA RID: 37114 RVA: 0x0036A362 File Offset: 0x00368562
 	public GameStateManager GetGameStateManager()
 	{
 		return this.gameStateManager;
 	}
 
-	// Token: 0x06009000 RID: 36864 RVA: 0x00365680 File Offset: 0x00363880
+	// Token: 0x060090FB RID: 37115 RVA: 0x0036A36C File Offset: 0x0036856C
 	public void IdMappingReceived(string _name, byte[] _data)
 	{
 		Log.Out("Received mapping data for: " + _name);
@@ -5305,13 +5400,13 @@ public class GameManager : MonoBehaviour, IGameManager
 		ItemClass.nameIdMapping.LoadFromArray(_data);
 	}
 
-	// Token: 0x06009001 RID: 36865 RVA: 0x00365703 File Offset: 0x00363903
+	// Token: 0x060090FC RID: 37116 RVA: 0x0036A3EF File Offset: 0x003685EF
 	public void SetSpawnPointList(SpawnPointList _startPoints)
 	{
 		base.StartCoroutine(this.setSpawnPointListCo(_startPoints));
 	}
 
-	// Token: 0x06009002 RID: 36866 RVA: 0x00365713 File Offset: 0x00363913
+	// Token: 0x060090FD RID: 37117 RVA: 0x0036A3FF File Offset: 0x003685FF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator setSpawnPointListCo(SpawnPointList _startPoints)
 	{
@@ -5327,7 +5422,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		yield break;
 	}
 
-	// Token: 0x06009003 RID: 36867 RVA: 0x0036572C File Offset: 0x0036392C
+	// Token: 0x060090FE RID: 37118 RVA: 0x0036A418 File Offset: 0x00368618
 	public void RequestToSpawnEntityServer(EntityCreationData _ecd)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -5335,13 +5430,23 @@ public class GameManager : MonoBehaviour, IGameManager
 			SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackageRequestToSpawnEntity>().Setup(_ecd), false);
 			return;
 		}
+		Entity entity = this.SpawnEntityServer(_ecd);
+		if (_ecd.requestedBy != -1)
+		{
+			SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageConfirmSpawnEntity>().Setup(entity.entityId, _ecd.requestKey), true, _ecd.requestedBy, -1, -1, null, 192, false);
+		}
+	}
+
+	// Token: 0x060090FF RID: 37119 RVA: 0x0036A494 File Offset: 0x00368694
+	public Entity SpawnEntityServer(EntityCreationData _ecd)
+	{
 		if (_ecd.entityClass == "fallingTree".GetHashCode())
 		{
 			for (int i = 0; i < this.m_World.Entities.list.Count; i++)
 			{
 				if (this.m_World.Entities.list[i] is EntityFallingTree && ((EntityFallingTree)this.m_World.Entities.list[i]).GetBlockPos() == _ecd.blockPos)
 				{
-					return;
+					return null;
 				}
 			}
 		}
@@ -5360,26 +5465,27 @@ public class GameManager : MonoBehaviour, IGameManager
 			}
 		}
 		this.m_World.SpawnEntityInWorld(entity);
+		return entity;
 	}
 
-	// Token: 0x06009004 RID: 36868 RVA: 0x00365878 File Offset: 0x00363A78
+	// Token: 0x06009100 RID: 37120 RVA: 0x0036A5C0 File Offset: 0x003687C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LocalPlayerInventoryChanged()
 	{
 		this.countdownSendPlayerInventoryToServer.ResetAndRestart();
 	}
 
-	// Token: 0x06009005 RID: 36869 RVA: 0x00365885 File Offset: 0x00363A85
+	// Token: 0x06009101 RID: 37121 RVA: 0x0036A5CD File Offset: 0x003687CD
 	public void TriggerSendOfLocalPlayerDataFile(float _sendItInSeconds)
 	{
 		this.countdownSendPlayerDataFileToServer.SetPassedIn(_sendItInSeconds);
 	}
 
-	// Token: 0x06009006 RID: 36870 RVA: 0x00365894 File Offset: 0x00363A94
+	// Token: 0x06009102 RID: 37122 RVA: 0x0036A5DC File Offset: 0x003687DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void doSendLocalInventory(EntityPlayerLocal _player)
 	{
-		if (_player == null)
+		if (!(this.sendPlayerToolbelt | this.sendPlayerBag | this.sendPlayerEquipment | this.sendDragAndDropItem))
 		{
 			return;
 		}
@@ -5390,14 +5496,10 @@ public class GameManager : MonoBehaviour, IGameManager
 		this.sendDragAndDropItem = false;
 	}
 
-	// Token: 0x06009007 RID: 36871 RVA: 0x003658F8 File Offset: 0x00363AF8
+	// Token: 0x06009103 RID: 37123 RVA: 0x0036A654 File Offset: 0x00368854
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void doSendLocalPlayerData(EntityPlayerLocal _player)
 	{
-		if (_player == null)
-		{
-			return;
-		}
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
 		{
 			this.SaveLocalPlayerData();
@@ -5410,7 +5512,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		this.sendDragAndDropItem = false;
 	}
 
-	// Token: 0x06009008 RID: 36872 RVA: 0x00365954 File Offset: 0x00363B54
+	// Token: 0x06009104 RID: 37124 RVA: 0x0036A6A8 File Offset: 0x003688A8
 	public void SetPauseWindowEffects(bool _bOn)
 	{
 		if (_bOn && !GameModeSurvivalSP.TypeName.Equals(GamePrefs.GetString(EnumGamePrefs.GameMode)))
@@ -5425,7 +5527,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06009009 RID: 36873 RVA: 0x003659CC File Offset: 0x00363BCC
+	// Token: 0x06009105 RID: 37125 RVA: 0x0036A720 File Offset: 0x00368920
 	public static bool ReportUnusedAssets(bool bStart = false)
 	{
 		if (bStart)
@@ -5501,19 +5603,19 @@ public class GameManager : MonoBehaviour, IGameManager
 		return true;
 	}
 
-	// Token: 0x0600900A RID: 36874 RVA: 0x00365B99 File Offset: 0x00363D99
+	// Token: 0x06009106 RID: 37126 RVA: 0x0036A8ED File Offset: 0x00368AED
 	public bool IsPaused()
 	{
 		return this.gamePaused;
 	}
 
-	// Token: 0x0600900B RID: 36875 RVA: 0x00365BA1 File Offset: 0x00363DA1
+	// Token: 0x06009107 RID: 37127 RVA: 0x0036A8F5 File Offset: 0x00368AF5
 	public void Pause(bool _bOn)
 	{
 		this.requestedPauseState = new bool?(_bOn);
 	}
 
-	// Token: 0x0600900C RID: 36876 RVA: 0x00365BB0 File Offset: 0x00363DB0
+	// Token: 0x06009108 RID: 37128 RVA: 0x0036A904 File Offset: 0x00368B04
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updatePauseState()
 	{
@@ -5572,12 +5674,12 @@ public class GameManager : MonoBehaviour, IGameManager
 		this.gamePaused = flag;
 	}
 
-	// Token: 0x0600900D RID: 36877 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009109 RID: 37129 RVA: 0x000027FC File Offset: 0x000009FC
 	public void AddLMPPersistentPlayerData(EntityPlayerLocal _playerEntity)
 	{
 	}
 
-	// Token: 0x0600900E RID: 36878 RVA: 0x00365CE0 File Offset: 0x00363EE0
+	// Token: 0x0600910A RID: 37130 RVA: 0x0036AA34 File Offset: 0x00368C34
 	public void SetBlockTextureServer(BlockValueRef _bvRef, BlockFace _blockFace, int _idx, int _playerIdThatChanged, byte _channel = 255)
 	{
 		this.SetBlockTextureClient(_bvRef, _blockFace, _idx, _channel);
@@ -5590,7 +5692,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(netPackageSetBlockTexture, false);
 	}
 
-	// Token: 0x0600900F RID: 36879 RVA: 0x00365D54 File Offset: 0x00363F54
+	// Token: 0x0600910B RID: 37131 RVA: 0x0036AAA8 File Offset: 0x00368CA8
 	public void SetBlockTextureClient(BlockValueRef _bvRef, BlockFace _blockFace, int _idx, byte _channel)
 	{
 		DynamicMeshManager.ChunkChanged(_bvRef, -1, 1);
@@ -5626,7 +5728,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06009010 RID: 36880 RVA: 0x00365E04 File Offset: 0x00364004
+	// Token: 0x0600910C RID: 37132 RVA: 0x0036AB58 File Offset: 0x00368D58
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void handleGlobalActions()
 	{
@@ -5717,32 +5819,32 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06009011 RID: 36881 RVA: 0x00365F88 File Offset: 0x00364188
+	// Token: 0x0600910D RID: 37133 RVA: 0x0036ACDC File Offset: 0x00368EDC
 	public static bool IsSplatMapAvailable()
 	{
 		string @string = GamePrefs.GetString(EnumGamePrefs.GameWorld);
 		return !(@string == "Empty") && !(@string == "Playtesting");
 	}
 
-	// Token: 0x17001113 RID: 4371
-	// (get) Token: 0x06009012 RID: 36882 RVA: 0x00365FBA File Offset: 0x003641BA
-	// (set) Token: 0x06009013 RID: 36883 RVA: 0x00365FC1 File Offset: 0x003641C1
+	// Token: 0x1700114C RID: 4428
+	// (get) Token: 0x0600910E RID: 37134 RVA: 0x0036AD0E File Offset: 0x00368F0E
+	// (set) Token: 0x0600910F RID: 37135 RVA: 0x0036AD15 File Offset: 0x00368F15
 	public static bool UpdatingRemoteResources
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17001114 RID: 4372
-	// (get) Token: 0x06009014 RID: 36884 RVA: 0x00365FC9 File Offset: 0x003641C9
-	// (set) Token: 0x06009015 RID: 36885 RVA: 0x00365FD0 File Offset: 0x003641D0
+	// Token: 0x1700114D RID: 4429
+	// (get) Token: 0x06009110 RID: 37136 RVA: 0x0036AD1D File Offset: 0x00368F1D
+	// (set) Token: 0x06009111 RID: 37137 RVA: 0x0036AD24 File Offset: 0x00368F24
 	public static bool RemoteResourcesLoaded
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06009016 RID: 36886 RVA: 0x00365FD8 File Offset: 0x003641D8
+	// Token: 0x06009112 RID: 37138 RVA: 0x0036AD2C File Offset: 0x00368F2C
 	public static void LoadRemoteResources(GameManager.RemoteResourcesCompleteHandler _callback = null)
 	{
 		if (GameManager.UpdatingRemoteResources)
@@ -5764,7 +5866,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		GameManager.RemoteResourcesLoaded = true;
 	}
 
-	// Token: 0x06009017 RID: 36887 RVA: 0x00366052 File Offset: 0x00364252
+	// Token: 0x06009113 RID: 37139 RVA: 0x0036ADA6 File Offset: 0x00368FA6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator UpdateRemoteResourcesRoutine(GameManager.RemoteResourcesCompleteHandler _callback)
 	{
@@ -5788,18 +5890,36 @@ public class GameManager : MonoBehaviour, IGameManager
 			}
 		}
 		this.retrievingEula = true;
-		string text = string.Format("eula_{0}", Localization.ActiveLanguage.ToLower());
-		storage.GetFile(text, new IRemoteFileStorage.FileDownloadCompleteCallback(this.EulaProviderCallback));
+		float getFileStart = Time.time;
+		string eulaFileName = string.Format("eula_{0}", Localization.ActiveLanguage.ToLower());
+		storage.GetFile(eulaFileName, new IRemoteFileStorage.FileDownloadCompleteCallback(this.EulaProviderCallback));
 		while (this.retrievingEula)
 		{
+			if (Time.time - getFileStart > 5f)
+			{
+				Log.Warning("Waiting for EULA retrieve timed out.");
+				if (!storage.CancelGetFile(eulaFileName, "Timed Out"))
+				{
+					Log.Warning("EULA CancelGetFile call failed.");
+				}
+			}
 			yield return null;
 		}
 		if (BacktraceUtils.Initialized)
 		{
 			this.retrievingBacktraceConfig = true;
+			getFileStart = Time.time;
 			storage.GetFile("backtraceconfig.xml", new IRemoteFileStorage.FileDownloadCompleteCallback(this.BacktraceConfigProviderCallback));
 			while (this.retrievingBacktraceConfig)
 			{
+				if (Time.time - getFileStart > 5f)
+				{
+					Log.Warning("Waiting for Backtrace Config timed out.");
+					if (!storage.CancelGetFile("backtraceconfig.xml", "Timed Out"))
+					{
+						Log.Warning("Backtrace Config CancelGetFile call failed.");
+					}
+				}
 				yield return null;
 			}
 		}
@@ -5812,7 +5932,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		yield break;
 	}
 
-	// Token: 0x06009018 RID: 36888 RVA: 0x00366068 File Offset: 0x00364268
+	// Token: 0x06009114 RID: 37140 RVA: 0x0036ADBC File Offset: 0x00368FBC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void EulaProviderCallback(IRemoteFileStorage.EFileDownloadResult _result, string _errorDetails, byte[] _data)
 	{
@@ -5836,7 +5956,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x06009019 RID: 36889 RVA: 0x003660C8 File Offset: 0x003642C8
+	// Token: 0x06009115 RID: 37141 RVA: 0x0036AE1C File Offset: 0x0036901C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool LoadEulaXML(byte[] _data, out string contents)
 	{
@@ -5865,17 +5985,24 @@ public class GameManager : MonoBehaviour, IGameManager
 		return true;
 	}
 
-	// Token: 0x0600901A RID: 36890 RVA: 0x00366168 File Offset: 0x00364368
+	// Token: 0x06009116 RID: 37142 RVA: 0x0036AEBC File Offset: 0x003690BC
 	public static bool HasAcceptedLatestEula()
 	{
 		return GamePrefs.GetInt(EnumGamePrefs.EulaVersionAccepted) >= GamePrefs.GetInt(EnumGamePrefs.EulaLatestVersion);
 	}
 
-	// Token: 0x0600901B RID: 36891 RVA: 0x00366184 File Offset: 0x00364384
+	// Token: 0x06009117 RID: 37143 RVA: 0x0036AED8 File Offset: 0x003690D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BacktraceConfigProviderCallback(IRemoteFileStorage.EFileDownloadResult _result, string _errorDetails, byte[] _data)
 	{
 		this.retrievingBacktraceConfig = false;
+		if (_result == IRemoteFileStorage.EFileDownloadResult.Other)
+		{
+			Log.Warning("Retrieving Backtrace config file returned (" + _errorDetails + ")");
+			BacktraceUtils.DebugEnableBacktrace();
+			BacktraceUtils.SendErrorReport("bugreport", _errorDetails, null, null);
+			return;
+		}
 		if (_result != IRemoteFileStorage.EFileDownloadResult.Ok)
 		{
 			Log.Warning(string.Concat(new string[]
@@ -5898,14 +6025,14 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x0600901C RID: 36892 RVA: 0x0036620C File Offset: 0x0036440C
+	// Token: 0x06009118 RID: 37144 RVA: 0x0036AF8C File Offset: 0x0036918C
 	public bool IsGoreCensored()
 	{
 		return GameManager.DebugCensorship;
 	}
 
-	// Token: 0x17001115 RID: 4373
-	// (get) Token: 0x0600901D RID: 36893 RVA: 0x00366218 File Offset: 0x00364418
+	// Token: 0x1700114E RID: 4430
+	// (get) Token: 0x06009119 RID: 37145 RVA: 0x0036AF98 File Offset: 0x00369198
 	public int persistentPlayerCount
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -5915,7 +6042,7 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x0600901E RID: 36894 RVA: 0x00366228 File Offset: 0x00364428
+	// Token: 0x0600911A RID: 37146 RVA: 0x0036AFA8 File Offset: 0x003691A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CalculatePersistentPlayerCount(string worldName, string saveName, UserDataStorageType storage)
 	{
@@ -5945,20 +6072,20 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x0600901F RID: 36895 RVA: 0x003662D0 File Offset: 0x003644D0
+	// Token: 0x0600911B RID: 37147 RVA: 0x0036B050 File Offset: 0x00369250
 	public void OnResolutionChanged(int width, int height)
 	{
 		this.RefreshRefreshRate();
 	}
 
-	// Token: 0x06009020 RID: 36896 RVA: 0x003662D8 File Offset: 0x003644D8
+	// Token: 0x0600911C RID: 37148 RVA: 0x0036B058 File Offset: 0x00369258
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RefreshRefreshRate()
 	{
 		this.currentRefreshRate = (int)PlatformApplicationManager.Application.GetCurrentRefreshRate().value;
 	}
 
-	// Token: 0x06009021 RID: 36897 RVA: 0x00366300 File Offset: 0x00364500
+	// Token: 0x0600911D RID: 37149 RVA: 0x0036B080 File Offset: 0x00369280
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateFPSCap()
 	{
@@ -5986,603 +6113,609 @@ public class GameManager : MonoBehaviour, IGameManager
 		}
 	}
 
-	// Token: 0x04006A03 RID: 27139
+	// Token: 0x0600911E RID: 37150 RVA: 0x0036B0DD File Offset: 0x003692DD
+	public void OnAnalyticsSessionRefreshed()
+	{
+		base.StartCoroutine(Helper.LoginEventAnalyticCoroutine(false));
+	}
+
+	// Token: 0x04006AD3 RID: 27347
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cMinSpawnDistanceFromTrader = 250;
 
-	// Token: 0x04006A04 RID: 27140
+	// Token: 0x04006AD4 RID: 27348
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int cMaxSpawnDistanceFromTrader = 750;
 
-	// Token: 0x04006A05 RID: 27141
+	// Token: 0x04006AD5 RID: 27349
 	public static int frameCount;
 
-	// Token: 0x04006A06 RID: 27142
+	// Token: 0x04006AD6 RID: 27350
 	public static float frameTime;
 
-	// Token: 0x04006A07 RID: 27143
+	// Token: 0x04006AD7 RID: 27351
 	public static int fixedUpdateCount;
 
-	// Token: 0x04006A08 RID: 27144
+	// Token: 0x04006AD8 RID: 27352
 	public AudioSource UIAudioSource;
 
-	// Token: 0x04006A09 RID: 27145
+	// Token: 0x04006AD9 RID: 27353
 	public AudioClip BackgroundMusicClip;
 
-	// Token: 0x04006A0A RID: 27146
+	// Token: 0x04006ADA RID: 27354
 	public AudioClip CreditsSongClip;
 
-	// Token: 0x04006A0B RID: 27147
+	// Token: 0x04006ADB RID: 27355
 	public bool DebugAILines;
 
-	// Token: 0x04006A0C RID: 27148
+	// Token: 0x04006ADC RID: 27356
 	public bool DebugAIAim;
 
-	// Token: 0x04006A0D RID: 27149
+	// Token: 0x04006ADD RID: 27357
 	public StabilityViewer stabilityViewer;
 
-	// Token: 0x04006A0E RID: 27150
+	// Token: 0x04006ADE RID: 27358
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public BiomeParticleManager biomeParticleManager;
 
-	// Token: 0x04006A0F RID: 27151
+	// Token: 0x04006ADF RID: 27359
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int cameraCullMask;
 
-	// Token: 0x04006A10 RID: 27152
+	// Token: 0x04006AE0 RID: 27360
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bShowBackground = true;
 
-	// Token: 0x04006A11 RID: 27153
+	// Token: 0x04006AE1 RID: 27361
 	public static bool enableNetworkdPrioritization = true;
 
-	// Token: 0x04006A12 RID: 27154
+	// Token: 0x04006AE2 RID: 27362
 	public static bool unreliableNetPackets = true;
 
-	// Token: 0x04006A13 RID: 27155
+	// Token: 0x04006AE3 RID: 27363
 	public static ServerDateTimeResult ServerClockSync;
 
-	// Token: 0x04006A14 RID: 27156
+	// Token: 0x04006AE4 RID: 27364
 	public NetPackageMetrics netpackageMetrics;
 
-	// Token: 0x04006A15 RID: 27157
+	// Token: 0x04006AE5 RID: 27365
 	public bool showOpenerMovieOnLoad;
 
-	// Token: 0x04006A16 RID: 27158
+	// Token: 0x04006AE6 RID: 27366
 	public bool GameHasStarted;
 
-	// Token: 0x04006A17 RID: 27159
+	// Token: 0x04006AE7 RID: 27367
 	public RuntimeAnimatorController FirstPersonWeaponAnimatorController;
 
-	// Token: 0x04006A18 RID: 27160
+	// Token: 0x04006AE8 RID: 27368
 	public RuntimeAnimatorController ThirdPersonWeaponAnimatorController;
 
-	// Token: 0x04006A19 RID: 27161
+	// Token: 0x04006AE9 RID: 27369
 	public Color backgroundColor = Color.white;
 
-	// Token: 0x04006A1A RID: 27162
+	// Token: 0x04006AEA RID: 27370
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int currentBackgroundColorChannel;
 
-	// Token: 0x04006A1B RID: 27163
+	// Token: 0x04006AEB RID: 27371
 	public static bool bPhysicsActive;
 
-	// Token: 0x04006A1C RID: 27164
+	// Token: 0x04006AEC RID: 27372
 	public static bool bTickingActive;
 
-	// Token: 0x04006A1D RID: 27165
+	// Token: 0x04006AED RID: 27373
 	public static bool bSavingActive = true;
 
-	// Token: 0x04006A1E RID: 27166
+	// Token: 0x04006AEE RID: 27374
 	public static bool bShowDecorBlocks = true;
 
-	// Token: 0x04006A1F RID: 27167
+	// Token: 0x04006AEF RID: 27375
 	public static bool bShowLootBlocks = true;
 
-	// Token: 0x04006A20 RID: 27168
+	// Token: 0x04006AF0 RID: 27376
 	public static bool bShowPaintables = true;
 
-	// Token: 0x04006A21 RID: 27169
+	// Token: 0x04006AF1 RID: 27377
 	public static bool bShowUnpaintables = true;
 
-	// Token: 0x04006A22 RID: 27170
+	// Token: 0x04006AF2 RID: 27378
 	public static bool bShowTerrain = true;
 
-	// Token: 0x04006A23 RID: 27171
+	// Token: 0x04006AF3 RID: 27379
 	public static bool bVolumeBlocksEditing;
 
-	// Token: 0x04006A24 RID: 27172
+	// Token: 0x04006AF4 RID: 27380
 	public static bool bHideMainMenuNextTime;
 
-	// Token: 0x04006A25 RID: 27173
+	// Token: 0x04006AF5 RID: 27381
 	public static bool bRecordNextSession;
 
-	// Token: 0x04006A26 RID: 27174
+	// Token: 0x04006AF6 RID: 27382
 	public static bool bPlayRecordedSession;
 
-	// Token: 0x04006A27 RID: 27175
+	// Token: 0x04006AF7 RID: 27383
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static bool isDedicatedChecked = false;
 
-	// Token: 0x04006A28 RID: 27176
+	// Token: 0x04006AF8 RID: 27384
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static bool isDedicated = false;
 
-	// Token: 0x04006A29 RID: 27177
+	// Token: 0x04006AF9 RID: 27385
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public World m_World;
 
-	// Token: 0x04006A2A RID: 27178
+	// Token: 0x04006AFA RID: 27386
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool worldCreated;
 
-	// Token: 0x04006A2B RID: 27179
+	// Token: 0x04006AFB RID: 27387
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool chunkClusterLoaded;
 
-	// Token: 0x04006A2C RID: 27180
+	// Token: 0x04006AFC RID: 27388
 	public bool worldInitInfoReceived;
 
-	// Token: 0x04006A2D RID: 27181
+	// Token: 0x04006AFD RID: 27389
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int myPlayerId = -1;
 
-	// Token: 0x04006A2E RID: 27182
+	// Token: 0x04006AFE RID: 27390
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public EntityPlayerLocal myEntityPlayerLocal;
 
-	// Token: 0x04006A2F RID: 27183
+	// Token: 0x04006AFF RID: 27391
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public IMapChunkDatabase fowDatabaseForLocalPlayer;
 
-	// Token: 0x04006A30 RID: 27184
+	// Token: 0x04006B00 RID: 27392
 	public FPS fps = new FPS(5f);
 
-	// Token: 0x04006A31 RID: 27185
+	// Token: 0x04006B01 RID: 27393
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GameObject m_SoundsGameObject;
 
-	// Token: 0x04006A32 RID: 27186
+	// Token: 0x04006B02 RID: 27394
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float lastTimeWorldTickTimeSentToClients;
 
-	// Token: 0x04006A33 RID: 27187
+	// Token: 0x04006B03 RID: 27395
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float lastTimeGameStateCheckedAndSynced;
 
-	// Token: 0x04006A34 RID: 27188
+	// Token: 0x04006B04 RID: 27396
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float lastTimeDecoSaved;
 
-	// Token: 0x04006A35 RID: 27189
+	// Token: 0x04006B05 RID: 27397
 	public AdminTools adminTools;
 
-	// Token: 0x04006A36 RID: 27190
+	// Token: 0x04006B06 RID: 27398
 	public PersistentPlayerList persistentPlayers;
 
-	// Token: 0x04006A37 RID: 27191
+	// Token: 0x04006B07 RID: 27399
 	public PersistentPlayerData persistentLocalPlayer;
 
-	// Token: 0x04006A38 RID: 27192
+	// Token: 0x04006B08 RID: 27400
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public GUIWindowManager windowManager;
 
-	// Token: 0x04006A39 RID: 27193
+	// Token: 0x04006B09 RID: 27401
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public NGUIWindowManager nguiWindowManager;
 
-	// Token: 0x04006A3A RID: 27194
+	// Token: 0x04006B0A RID: 27402
 	public LootManager lootManager;
 
-	// Token: 0x04006A3B RID: 27195
+	// Token: 0x04006B0B RID: 27403
 	public TraderManager traderManager;
 
-	// Token: 0x04006A3C RID: 27196
+	// Token: 0x04006B0C RID: 27404
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int lastDisplayedValueOfTeamTickets;
 
-	// Token: 0x04006A3D RID: 27197
+	// Token: 0x04006B0D RID: 27405
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Dictionary<Vector3i, GameObject> m_PositionSoundMap = new Dictionary<Vector3i, GameObject>();
 
-	// Token: 0x04006A3E RID: 27198
+	// Token: 0x04006B0E RID: 27406
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<GameObject> tileEntitiesMusicToRemove = new List<GameObject>();
 
-	// Token: 0x04006A3F RID: 27199
+	// Token: 0x04006B0F RID: 27407
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int msPassedSinceLastUpdate;
 
-	// Token: 0x04006A40 RID: 27200
+	// Token: 0x04006B10 RID: 27408
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public IBlockTool activeBlockTool;
 
-	// Token: 0x04006A41 RID: 27201
+	// Token: 0x04006B11 RID: 27409
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public IBlockTool blockSelectionTool;
 
-	// Token: 0x04006A42 RID: 27202
+	// Token: 0x04006B12 RID: 27410
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isEditMode;
 
-	// Token: 0x04006A44 RID: 27204
+	// Token: 0x04006B14 RID: 27412
 	public bool bCursorVisible = true;
 
-	// Token: 0x04006A45 RID: 27205
+	// Token: 0x04006B15 RID: 27413
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bCursorVisibleOverride;
 
-	// Token: 0x04006A46 RID: 27206
+	// Token: 0x04006B16 RID: 27414
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bCursorVisibleOverrideState;
 
-	// Token: 0x04006A47 RID: 27207
+	// Token: 0x04006B17 RID: 27415
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public DictionarySave<Vector3i, Transform> m_BlockParticles = new DictionarySave<Vector3i, Transform>();
 
-	// Token: 0x04006A48 RID: 27208
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public CountdownTimer countdownCheckBlockParticles = new CountdownTimer(1.1f, true);
-
-	// Token: 0x04006A49 RID: 27209
+	// Token: 0x04006B18 RID: 27416
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public CountdownTimer countdownSendPlayerDataFileToServer = new CountdownTimer(30f, true);
 
-	// Token: 0x04006A4A RID: 27210
+	// Token: 0x04006B19 RID: 27417
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public CountdownTimer countdownSaveLocalPlayerDataFile = new CountdownTimer(30f, true);
 
-	// Token: 0x04006A4B RID: 27211
+	// Token: 0x04006B1A RID: 27418
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float unloadAssetsDuration;
 
-	// Token: 0x04006A4C RID: 27212
+	// Token: 0x04006B1B RID: 27419
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isUnloadAssetsReady;
 
-	// Token: 0x04006A4D RID: 27213
+	// Token: 0x04006B1C RID: 27420
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly MicroStopwatch stopwatchUnloadAssets = new MicroStopwatch(false);
 
-	// Token: 0x04006A4E RID: 27214
+	// Token: 0x04006B1D RID: 27421
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public CountdownTimer countdownSendPlayerInventoryToServer = new CountdownTimer(0.1f, false);
 
-	// Token: 0x04006A4F RID: 27215
+	// Token: 0x04006B1E RID: 27422
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool sendPlayerToolbelt;
 
-	// Token: 0x04006A50 RID: 27216
+	// Token: 0x04006B1F RID: 27423
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool sendPlayerBag;
 
-	// Token: 0x04006A51 RID: 27217
+	// Token: 0x04006B20 RID: 27424
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool sendPlayerEquipment;
 
-	// Token: 0x04006A52 RID: 27218
+	// Token: 0x04006B21 RID: 27425
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool sendDragAndDropItem;
 
-	// Token: 0x04006A53 RID: 27219
+	// Token: 0x04006B22 RID: 27426
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GameRandomManager gameRandomManager;
 
-	// Token: 0x04006A54 RID: 27220
+	// Token: 0x04006B23 RID: 27427
 	public GameStateManager gameStateManager;
 
-	// Token: 0x04006A55 RID: 27221
+	// Token: 0x04006B24 RID: 27428
 	public PrefabLODManager prefabLODManager;
 
-	// Token: 0x04006A56 RID: 27222
+	// Token: 0x04006B25 RID: 27429
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public RespawnType clientRespawnType;
 
-	// Token: 0x04006A57 RID: 27223
+	// Token: 0x04006B26 RID: 27430
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float fpsCountdownTimer = 30f;
 
-	// Token: 0x04006A58 RID: 27224
+	// Token: 0x04006B27 RID: 27431
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float gcCountdownTimer = 120f;
 
-	// Token: 0x04006A59 RID: 27225
+	// Token: 0x04006B28 RID: 27432
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float wsCountdownTimer = 30f;
 
-	// Token: 0x04006A5A RID: 27226
+	// Token: 0x04006B29 RID: 27433
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float playerPositionsCountdownTimer = 10f;
 
-	// Token: 0x04006A5B RID: 27227
+	// Token: 0x04006B2A RID: 27434
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public MicroStopwatch swCopyChunks = new MicroStopwatch();
 
-	// Token: 0x04006A5C RID: 27228
+	// Token: 0x04006B2B RID: 27435
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public MicroStopwatch swUpdateTime = new MicroStopwatch();
 
-	// Token: 0x04006A5D RID: 27229
+	// Token: 0x04006B2C RID: 27436
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int lastStatsPlayerCount;
 
-	// Token: 0x04006A5E RID: 27230
+	// Token: 0x04006B2D RID: 27437
 	public static long MaxMemoryConsumption;
 
-	// Token: 0x04006A5F RID: 27231
+	// Token: 0x04006B2E RID: 27438
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<GameManager.BlockParticleCreationData> blockParticlesToSpawn = new List<GameManager.BlockParticleCreationData>();
 
-	// Token: 0x04006A60 RID: 27232
+	// Token: 0x04006B2F RID: 27439
 	public static GameManager Instance;
 
-	// Token: 0x04006A64 RID: 27236
+	// Token: 0x04006B33 RID: 27443
 	public TriggerEffectManager triggerEffectManager;
 
-	// Token: 0x04006A65 RID: 27237
+	// Token: 0x04006B34 RID: 27444
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int lastPlayerCount;
 
-	// Token: 0x04006A66 RID: 27238
+	// Token: 0x04006B35 RID: 27445
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int currentRefreshRate = 60;
 
-	// Token: 0x04006A67 RID: 27239
+	// Token: 0x04006B36 RID: 27446
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public IAnalyticsService _analyticsService;
+
+	// Token: 0x04006B37 RID: 27447
 	public bool bStaticDataLoadSync;
 
-	// Token: 0x04006A68 RID: 27240
+	// Token: 0x04006B38 RID: 27448
 	public bool bStaticDataLoaded;
 
-	// Token: 0x04006A69 RID: 27241
+	// Token: 0x04006B39 RID: 27449
 	public string CurrentLoadAction;
 
-	// Token: 0x04006A6B RID: 27243
+	// Token: 0x04006B3B RID: 27451
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int lastTimeAbsPosSentToServer;
 
-	// Token: 0x04006A6C RID: 27244
+	// Token: 0x04006B3C RID: 27452
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bLastWasAttached;
 
-	// Token: 0x04006A6D RID: 27245
+	// Token: 0x04006B3D RID: 27453
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float lastTime;
 
-	// Token: 0x04006A6E RID: 27246
+	// Token: 0x04006B3E RID: 27454
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float timeToClearAllPools = -1f;
 
-	// Token: 0x04006A6F RID: 27247
+	// Token: 0x04006B3F RID: 27455
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float activityCheck;
 
-	// Token: 0x04006A70 RID: 27248
+	// Token: 0x04006B40 RID: 27456
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool shuttingDownMultiplayerServices;
 
-	// Token: 0x04006A71 RID: 27249
+	// Token: 0x04006B41 RID: 27457
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int testing;
 
-	// Token: 0x04006A72 RID: 27250
+	// Token: 0x04006B42 RID: 27458
 	public bool canSpawnPlayer;
 
-	// Token: 0x04006A73 RID: 27251
+	// Token: 0x04006B43 RID: 27459
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isDisconnectingLater;
 
-	// Token: 0x04006A74 RID: 27252
+	// Token: 0x04006B44 RID: 27460
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool allowQuit;
 
-	// Token: 0x04006A75 RID: 27253
+	// Token: 0x04006B45 RID: 27461
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isQuitting;
 
-	// Token: 0x04006A76 RID: 27254
+	// Token: 0x04006B46 RID: 27462
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool firstTimeJoin;
 
-	// Token: 0x04006A77 RID: 27255
+	// Token: 0x04006B47 RID: 27463
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<BlockChangeInfo> tempExplPositions = new List<BlockChangeInfo>();
 
-	// Token: 0x04006A78 RID: 27256
+	// Token: 0x04006B48 RID: 27464
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<GameManager.ExplodeGroup> explodeFallingGroups = new List<GameManager.ExplodeGroup>();
 
-	// Token: 0x04006A79 RID: 27257
+	// Token: 0x04006B49 RID: 27465
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly List<ChunkCluster> ccChanged = new List<ChunkCluster>();
 
-	// Token: 0x04006A7A RID: 27258
+	// Token: 0x04006B4A RID: 27466
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static List<string> materialsBefore = null;
 
-	// Token: 0x04006A7B RID: 27259
+	// Token: 0x04006B4B RID: 27467
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float unusedAssetsTimer = 0f;
 
-	// Token: 0x04006A7C RID: 27260
+	// Token: 0x04006B4C RID: 27468
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static bool runningAssetsUnused = false;
 
-	// Token: 0x04006A7D RID: 27261
+	// Token: 0x04006B4D RID: 27469
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool? requestedPauseState;
 
-	// Token: 0x04006A7E RID: 27262
+	// Token: 0x04006B4E RID: 27470
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool gamePaused;
 
-	// Token: 0x04006A81 RID: 27265
+	// Token: 0x04006B51 RID: 27473
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool retrievingEula;
 
-	// Token: 0x04006A82 RID: 27266
+	// Token: 0x04006B52 RID: 27474
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool retrievingBacktraceConfig;
 
-	// Token: 0x04006A83 RID: 27267
+	// Token: 0x04006B53 RID: 27475
 	public static bool DebugCensorship;
 
-	// Token: 0x04006A84 RID: 27268
+	// Token: 0x04006B54 RID: 27476
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<string> persistentPlayerIds;
 
-	// Token: 0x0200118E RID: 4494
+	// Token: 0x020011A8 RID: 4520
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct BlockParticleCreationData
 	{
-		// Token: 0x0600902A RID: 36906 RVA: 0x00366549 File Offset: 0x00364749
+		// Token: 0x06009127 RID: 37159 RVA: 0x0036B2C1 File Offset: 0x003694C1
 		public BlockParticleCreationData(Vector3i _blockPos, ParticleEffect _particleEffect)
 		{
 			this.blockPos = _blockPos;
 			this.particleEffect = _particleEffect;
 		}
 
-		// Token: 0x04006A85 RID: 27269
+		// Token: 0x04006B55 RID: 27477
 		public Vector3i blockPos;
 
-		// Token: 0x04006A86 RID: 27270
+		// Token: 0x04006B56 RID: 27478
 		public ParticleEffect particleEffect;
 	}
 
-	// Token: 0x0200118F RID: 4495
-	// (Invoke) Token: 0x0600902C RID: 36908
+	// Token: 0x020011A9 RID: 4521
+	// (Invoke) Token: 0x06009129 RID: 37161
 	public delegate void OnWorldChangedEvent(World _world);
 
-	// Token: 0x02001190 RID: 4496
-	// (Invoke) Token: 0x06009030 RID: 36912
+	// Token: 0x020011AA RID: 4522
+	// (Invoke) Token: 0x0600912D RID: 37165
 	public delegate void OnLocalPlayerChangedEvent(EntityPlayerLocal _localPlayer);
 
-	// Token: 0x02001191 RID: 4497
+	// Token: 0x020011AB RID: 4523
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum EMultiShutReason
 	{
-		// Token: 0x04006A88 RID: 27272
+		// Token: 0x04006B58 RID: 27480
 		AppNoNetwork,
-		// Token: 0x04006A89 RID: 27273
+		// Token: 0x04006B59 RID: 27481
 		AppSuspended,
-		// Token: 0x04006A8A RID: 27274
+		// Token: 0x04006B5A RID: 27482
 		PermMissingMultiplayer,
-		// Token: 0x04006A8B RID: 27275
+		// Token: 0x04006B5B RID: 27483
 		PermMissingCrossplay
 	}
 
-	// Token: 0x02001192 RID: 4498
+	// Token: 0x020011AC RID: 4524
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class ExplodeGroup
 	{
-		// Token: 0x04006A8C RID: 27276
+		// Token: 0x04006B5C RID: 27484
 		public Vector3 pos;
 
-		// Token: 0x04006A8D RID: 27277
+		// Token: 0x04006B5D RID: 27485
 		public float radius;
 
-		// Token: 0x04006A8E RID: 27278
+		// Token: 0x04006B5E RID: 27486
 		public int delay;
 
-		// Token: 0x04006A8F RID: 27279
+		// Token: 0x04006B5F RID: 27487
 		public List<GameManager.ExplodeGroup.Falling> fallings = new List<GameManager.ExplodeGroup.Falling>();
 
-		// Token: 0x02001193 RID: 4499
+		// Token: 0x020011AD RID: 4525
 		public struct Falling
 		{
-			// Token: 0x04006A90 RID: 27280
+			// Token: 0x04006B60 RID: 27488
 			public Vector3i pos;
 
-			// Token: 0x04006A91 RID: 27281
+			// Token: 0x04006B61 RID: 27489
 			public BlockValue bv;
 		}
 	}
 
-	// Token: 0x02001194 RID: 4500
+	// Token: 0x020011AE RID: 4526
 	public class EntityItemLifetimeComparer : IComparer<EntityItem>
 	{
-		// Token: 0x06009034 RID: 36916 RVA: 0x0036656C File Offset: 0x0036476C
+		// Token: 0x06009131 RID: 37169 RVA: 0x0036B2E4 File Offset: 0x003694E4
 		public int Compare(EntityItem _obj1, EntityItem _obj2)
 		{
 			return (int)(_obj2.lifetime - _obj1.lifetime);
 		}
 	}
 
-	// Token: 0x02001195 RID: 4501
-	// (Invoke) Token: 0x06009037 RID: 36919
+	// Token: 0x020011AF RID: 4527
+	// (Invoke) Token: 0x06009134 RID: 37172
 	public delegate void RemoteResourcesCompleteHandler();
 }

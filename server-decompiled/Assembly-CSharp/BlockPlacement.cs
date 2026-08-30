@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000F1 RID: 241
+// Token: 0x020000F2 RID: 242
 public class BlockPlacement
 {
-	// Token: 0x06000626 RID: 1574 RVA: 0x0002BB4C File Offset: 0x00029D4C
+	// Token: 0x06000630 RID: 1584 RVA: 0x0002BE08 File Offset: 0x0002A008
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool supports45DegreeRotations(BlockValue _bv)
 	{
@@ -12,7 +12,7 @@ public class BlockPlacement
 		return (!block.isMultiBlock || (block.multiBlockPos.dim.x == 1 && block.multiBlockPos.dim.z == 1)) && (block.AllowedRotations & EBlockRotationClasses.Basic45) > EBlockRotationClasses.None;
 	}
 
-	// Token: 0x06000627 RID: 1575 RVA: 0x0002BB9C File Offset: 0x00029D9C
+	// Token: 0x06000631 RID: 1585 RVA: 0x0002BE58 File Offset: 0x0002A058
 	public virtual BlockPlacement.Result OnPlaceBlock(BlockPlacement.EnumPlacement _placement, BlockPlacement.EnumRotationMode _mode, int _localRot, WorldBase _world, BlockValue _bv, PropTransform _propTransform, HitInfoDetails _hitInfo, Vector3 _entityPos)
 	{
 		Block block = _bv.Block;
@@ -121,7 +121,7 @@ public class BlockPlacement
 		return result;
 	}
 
-	// Token: 0x06000628 RID: 1576 RVA: 0x0002BE94 File Offset: 0x0002A094
+	// Token: 0x06000632 RID: 1586 RVA: 0x0002C150 File Offset: 0x0002A350
 	public virtual byte LimitRotation(BlockPlacement.EnumRotationMode _mode, ref int _localRot, HitInfoDetails _hitInfo, bool _bAdd, BlockValue _bv, byte _rotation)
 	{
 		bool flag = this.supports45DegreeRotations(_bv);
@@ -320,35 +320,35 @@ public class BlockPlacement
 		}
 	}
 
-	// Token: 0x040006D8 RID: 1752
+	// Token: 0x040006DA RID: 1754
 	public static BlockPlacement None = new BlockPlacement();
 
-	// Token: 0x020000F2 RID: 242
+	// Token: 0x020000F3 RID: 243
 	public enum EnumPlacement
 	{
-		// Token: 0x040006DA RID: 1754
+		// Token: 0x040006DC RID: 1756
 		Voxel,
-		// Token: 0x040006DB RID: 1755
+		// Token: 0x040006DD RID: 1757
 		Free
 	}
 
-	// Token: 0x020000F3 RID: 243
+	// Token: 0x020000F4 RID: 244
 	public enum EnumRotationMode
 	{
-		// Token: 0x040006DD RID: 1757
-		ToFace,
-		// Token: 0x040006DE RID: 1758
-		Simple,
 		// Token: 0x040006DF RID: 1759
-		Advanced,
+		ToFace,
 		// Token: 0x040006E0 RID: 1760
+		Simple,
+		// Token: 0x040006E1 RID: 1761
+		Advanced,
+		// Token: 0x040006E2 RID: 1762
 		Auto
 	}
 
-	// Token: 0x020000F4 RID: 244
+	// Token: 0x020000F5 RID: 245
 	public struct Result
 	{
-		// Token: 0x0600062B RID: 1579 RVA: 0x0002C0FE File Offset: 0x0002A2FE
+		// Token: 0x06000635 RID: 1589 RVA: 0x0002C3BA File Offset: 0x0002A5BA
 		public Result(BlockPlacement.EnumPlacement _placement, Vector3 _pos, Vector3i _blockPos, BlockFace _blockFace, BlockValue _blockValue, PropTransform _propTransform)
 		{
 			this.placement = _placement;
@@ -359,28 +359,28 @@ public class BlockPlacement
 			this.propTransform = _propTransform;
 		}
 
-		// Token: 0x0600062C RID: 1580 RVA: 0x0002C12D File Offset: 0x0002A32D
+		// Token: 0x06000636 RID: 1590 RVA: 0x0002C3E9 File Offset: 0x0002A5E9
 		public Result(BlockPlacement.EnumPlacement _placement, BlockValue _blockValue, PropTransform _propTransform, HitInfoDetails _hitInfo)
 		{
 			this = new BlockPlacement.Result(_placement, _hitInfo.pos, _hitInfo.blockPos, _hitInfo.blockFace, _blockValue, _propTransform);
 		}
 
-		// Token: 0x040006E1 RID: 1761
+		// Token: 0x040006E3 RID: 1763
 		public BlockPlacement.EnumPlacement placement;
 
-		// Token: 0x040006E2 RID: 1762
+		// Token: 0x040006E4 RID: 1764
 		public Vector3 pos;
 
-		// Token: 0x040006E3 RID: 1763
+		// Token: 0x040006E5 RID: 1765
 		public Vector3i blockPos;
 
-		// Token: 0x040006E4 RID: 1764
+		// Token: 0x040006E6 RID: 1766
 		public BlockFace blockFace;
 
-		// Token: 0x040006E5 RID: 1765
+		// Token: 0x040006E7 RID: 1767
 		public BlockValue blockValue;
 
-		// Token: 0x040006E6 RID: 1766
+		// Token: 0x040006E8 RID: 1768
 		public PropTransform propTransform;
 	}
 }

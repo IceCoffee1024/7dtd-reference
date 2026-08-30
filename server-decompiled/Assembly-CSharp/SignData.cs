@@ -7,16 +7,16 @@ using System.Xml;
 using System.Xml.Linq;
 using UnityEngine;
 
-// Token: 0x02000A60 RID: 2656
+// Token: 0x02000A71 RID: 2673
 public class SignData
 {
-	// Token: 0x0600507A RID: 20602 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x06005100 RID: 20736 RVA: 0x0000640C File Offset: 0x0000460C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignData()
 	{
 	}
 
-	// Token: 0x0600507B RID: 20603 RVA: 0x001EBF2C File Offset: 0x001EA12C
+	// Token: 0x06005101 RID: 20737 RVA: 0x001EE9C4 File Offset: 0x001ECBC4
 	public static SignData Duplicate(SignData original, string copyName = "")
 	{
 		SignData signData = new SignData();
@@ -32,7 +32,7 @@ public class SignData
 		return signData;
 	}
 
-	// Token: 0x0600507C RID: 20604 RVA: 0x001EBFAC File Offset: 0x001EA1AC
+	// Token: 0x06005102 RID: 20738 RVA: 0x001EEA44 File Offset: 0x001ECC44
 	public void CloneLayersFrom(SignData source)
 	{
 		if (source.layers == null)
@@ -59,7 +59,7 @@ public class SignData
 		this.lastModified = DateTime.Now;
 	}
 
-	// Token: 0x0600507D RID: 20605 RVA: 0x001EC078 File Offset: 0x001EA278
+	// Token: 0x06005103 RID: 20739 RVA: 0x001EEB10 File Offset: 0x001ECD10
 	public void Write(BinaryWriter bw)
 	{
 		StreamUtils.Write(bw, this.guid);
@@ -80,7 +80,7 @@ public class SignData
 		}
 	}
 
-	// Token: 0x0600507E RID: 20606 RVA: 0x001EC14C File Offset: 0x001EA34C
+	// Token: 0x06005104 RID: 20740 RVA: 0x001EEBE4 File Offset: 0x001ECDE4
 	public static SignData Read(BinaryReader br)
 	{
 		SignData signData = new SignData
@@ -102,7 +102,7 @@ public class SignData
 		return signData;
 	}
 
-	// Token: 0x0600507F RID: 20607 RVA: 0x001EC1EC File Offset: 0x001EA3EC
+	// Token: 0x06005105 RID: 20741 RVA: 0x001EEC84 File Offset: 0x001ECE84
 	public void WriteXml(XmlElement parentElement)
 	{
 		XmlElement xmlElement = parentElement.AddXmlElement("sign");
@@ -119,7 +119,7 @@ public class SignData
 		}
 	}
 
-	// Token: 0x06005080 RID: 20608 RVA: 0x001EC300 File Offset: 0x001EA500
+	// Token: 0x06005106 RID: 20742 RVA: 0x001EED98 File Offset: 0x001ECF98
 	public static SignData ReadXML(XElement signElement)
 	{
 		SignData.<>c__DisplayClass30_0 CS$<>8__locals1;
@@ -142,7 +142,7 @@ public class SignData
 		return signData;
 	}
 
-	// Token: 0x06005081 RID: 20609 RVA: 0x001EC430 File Offset: 0x001EA630
+	// Token: 0x06005107 RID: 20743 RVA: 0x001EEEC8 File Offset: 0x001ED0C8
 	public void SetLayerDefaultName(SignData.SignLayer layer)
 	{
 		SignData.PolygonSignLayer polygonSignLayer = layer as SignData.PolygonSignLayer;
@@ -175,7 +175,7 @@ public class SignData
 		groupSignLayer.SetDefaultName(this.nextGroupId);
 	}
 
-	// Token: 0x06005082 RID: 20610 RVA: 0x001EC4D4 File Offset: 0x001EA6D4
+	// Token: 0x06005108 RID: 20744 RVA: 0x001EEF6C File Offset: 0x001ED16C
 	public void UnpackGroups(bool recursive)
 	{
 		for (int i = this.layers.Count - 1; i >= 0; i--)
@@ -185,7 +185,7 @@ public class SignData
 		}
 	}
 
-	// Token: 0x06005083 RID: 20611 RVA: 0x001EC504 File Offset: 0x001EA704
+	// Token: 0x06005109 RID: 20745 RVA: 0x001EEF9C File Offset: 0x001ED19C
 	public bool TryUnpackTopLevelGroup(int groupIndex, bool recursive, out int unpackedLayerCount)
 	{
 		unpackedLayerCount = 0;
@@ -199,7 +199,7 @@ public class SignData
 		return false;
 	}
 
-	// Token: 0x06005084 RID: 20612 RVA: 0x001EC554 File Offset: 0x001EA754
+	// Token: 0x0600510A RID: 20746 RVA: 0x001EEFEC File Offset: 0x001ED1EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UnpackLayers(SignData.SignTransform parentTransform, List<SignData.SignLayer> sourceLayers, List<SignData.SignLayer> destLayers, int destIndex, bool recursive, ref int unpackedLayerCount)
 	{
@@ -229,7 +229,7 @@ public class SignData
 		}
 	}
 
-	// Token: 0x06005085 RID: 20613 RVA: 0x001EC5D8 File Offset: 0x001EA7D8
+	// Token: 0x0600510B RID: 20747 RVA: 0x001EF070 File Offset: 0x001ED270
 	public static SignData GetTestSignData(string text = "Hello World!", float hueOffset = 0f)
 	{
 		SignData signData = new SignData();
@@ -258,7 +258,7 @@ public class SignData
 		return signData;
 	}
 
-	// Token: 0x06005086 RID: 20614 RVA: 0x001EC94C File Offset: 0x001EAB4C
+	// Token: 0x0600510C RID: 20748 RVA: 0x001EF3E4 File Offset: 0x001ED5E4
 	public static SignData GetBasicTestSignData(string text = "Hello World!", float hueOffset = 0f)
 	{
 		return new SignData
@@ -274,7 +274,7 @@ public class SignData
 		};
 	}
 
-	// Token: 0x06005087 RID: 20615 RVA: 0x001ECA54 File Offset: 0x001EAC54
+	// Token: 0x0600510D RID: 20749 RVA: 0x001EF4EC File Offset: 0x001ED6EC
 	public static SignData GetErrorSignData()
 	{
 		return new SignData
@@ -289,7 +289,7 @@ public class SignData
 		};
 	}
 
-	// Token: 0x06005088 RID: 20616 RVA: 0x001ECAF7 File Offset: 0x001EACF7
+	// Token: 0x0600510E RID: 20750 RVA: 0x001EF58F File Offset: 0x001ED78F
 	public static SignData GetNewSignData(string signName)
 	{
 		return new SignData
@@ -301,7 +301,7 @@ public class SignData
 		};
 	}
 
-	// Token: 0x06005089 RID: 20617 RVA: 0x001ECB26 File Offset: 0x001EAD26
+	// Token: 0x0600510F RID: 20751 RVA: 0x001EF5BE File Offset: 0x001ED7BE
 	public static SignData GetDefaultSignData()
 	{
 		SignData testSignData = SignData.GetTestSignData("Hello World!", 0f);
@@ -309,7 +309,7 @@ public class SignData
 		return testSignData;
 	}
 
-	// Token: 0x0600508B RID: 20619 RVA: 0x001ECB60 File Offset: 0x001EAD60
+	// Token: 0x06005111 RID: 20753 RVA: 0x001EF5F8 File Offset: 0x001ED7F8
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static int <ReadXML>g__ReadNextIdAttribute|30_0(string attribute, ref SignData.<>c__DisplayClass30_0 A_1)
@@ -322,42 +322,42 @@ public class SignData
 		return 0;
 	}
 
-	// Token: 0x04003DB0 RID: 15792
+	// Token: 0x04003E41 RID: 15937
 	public Guid guid;
 
-	// Token: 0x04003DB1 RID: 15793
+	// Token: 0x04003E42 RID: 15938
 	public string name;
 
-	// Token: 0x04003DB2 RID: 15794
+	// Token: 0x04003E43 RID: 15939
 	public List<SignData.SignLayer> layers;
 
-	// Token: 0x04003DB3 RID: 15795
+	// Token: 0x04003E44 RID: 15940
 	public DateTime lastModified;
 
-	// Token: 0x04003DB4 RID: 15796
+	// Token: 0x04003E45 RID: 15941
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int nextPolyId;
 
-	// Token: 0x04003DB5 RID: 15797
+	// Token: 0x04003E46 RID: 15942
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int nextTextId;
 
-	// Token: 0x04003DB6 RID: 15798
+	// Token: 0x04003E47 RID: 15943
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int nextNoiseId;
 
-	// Token: 0x04003DB7 RID: 15799
+	// Token: 0x04003E48 RID: 15944
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int nextGroupId;
 
-	// Token: 0x04003DB8 RID: 15800
+	// Token: 0x04003E49 RID: 15945
 	public static readonly GlobalSignId defaultSignDataID = new GlobalSignId("[D]", Guid.Empty);
 
-	// Token: 0x02000A61 RID: 2657
+	// Token: 0x02000A72 RID: 2674
 	public struct SignTransform : IEquatable<SignData.SignTransform>
 	{
-		// Token: 0x170008B0 RID: 2224
-		// (get) Token: 0x0600508C RID: 20620 RVA: 0x001ECB8D File Offset: 0x001EAD8D
+		// Token: 0x170008C2 RID: 2242
+		// (get) Token: 0x06005112 RID: 20754 RVA: 0x001EF625 File Offset: 0x001ED825
 		public bool HasUniformScale
 		{
 			get
@@ -366,7 +366,7 @@ public class SignData
 			}
 		}
 
-		// Token: 0x0600508D RID: 20621 RVA: 0x001ECBAA File Offset: 0x001EADAA
+		// Token: 0x06005113 RID: 20755 RVA: 0x001EF642 File Offset: 0x001ED842
 		public SignTransform(Vector2 position, float rotation, Vector2 scale)
 		{
 			this.position = position;
@@ -374,7 +374,7 @@ public class SignData
 			this.scale = scale;
 		}
 
-		// Token: 0x0600508E RID: 20622 RVA: 0x001ECBC4 File Offset: 0x001EADC4
+		// Token: 0x06005114 RID: 20756 RVA: 0x001EF65C File Offset: 0x001ED85C
 		public static SignData.SignTransform operator *(SignData.SignTransform parent, SignData.SignTransform child)
 		{
 			float num = parent.rotation * 0.017453292f;
@@ -386,13 +386,13 @@ public class SignData
 			return new SignData.SignTransform(vector3, num2, vector4);
 		}
 
-		// Token: 0x0600508F RID: 20623 RVA: 0x001ECC62 File Offset: 0x001EAE62
+		// Token: 0x06005115 RID: 20757 RVA: 0x001EF6FA File Offset: 0x001ED8FA
 		public bool Equals(SignData.SignTransform other)
 		{
 			return this.position == other.position && Mathf.Approximately(this.rotation, other.rotation) && this.scale == other.scale;
 		}
 
-		// Token: 0x06005090 RID: 20624 RVA: 0x001ECCA0 File Offset: 0x001EAEA0
+		// Token: 0x06005116 RID: 20758 RVA: 0x001EF738 File Offset: 0x001ED938
 		public override bool Equals(object obj)
 		{
 			if (obj is SignData.SignTransform)
@@ -403,25 +403,25 @@ public class SignData
 			return false;
 		}
 
-		// Token: 0x06005091 RID: 20625 RVA: 0x001ECCC5 File Offset: 0x001EAEC5
+		// Token: 0x06005117 RID: 20759 RVA: 0x001EF75D File Offset: 0x001ED95D
 		public override int GetHashCode()
 		{
 			return ((17 * 23 + this.position.GetHashCode()) * 23 + this.rotation.GetHashCode()) * 23 + this.scale.GetHashCode();
 		}
 
-		// Token: 0x06005092 RID: 20626 RVA: 0x001ECD02 File Offset: 0x001EAF02
+		// Token: 0x06005118 RID: 20760 RVA: 0x001EF79A File Offset: 0x001ED99A
 		public static bool operator ==(SignData.SignTransform left, SignData.SignTransform right)
 		{
 			return left.Equals(right);
 		}
 
-		// Token: 0x06005093 RID: 20627 RVA: 0x001ECD0C File Offset: 0x001EAF0C
+		// Token: 0x06005119 RID: 20761 RVA: 0x001EF7A4 File Offset: 0x001ED9A4
 		public static bool operator !=(SignData.SignTransform left, SignData.SignTransform right)
 		{
 			return !left.Equals(right);
 		}
 
-		// Token: 0x06005094 RID: 20628 RVA: 0x001ECD1C File Offset: 0x001EAF1C
+		// Token: 0x0600511A RID: 20762 RVA: 0x001EF7B4 File Offset: 0x001ED9B4
 		public void WriteXml(XmlElement element)
 		{
 			element.SetAttrib("pos", string.Format("{0}, {1}", this.position.x, this.position.y));
@@ -429,7 +429,7 @@ public class SignData
 			element.SetAttrib("scale", string.Format("{0}, {1}", this.scale.x, this.scale.y));
 		}
 
-		// Token: 0x06005095 RID: 20629 RVA: 0x001ECDAC File Offset: 0x001EAFAC
+		// Token: 0x0600511B RID: 20763 RVA: 0x001EF844 File Offset: 0x001EDA44
 		public void ReadXml(XElement element)
 		{
 			this.position = StringParsers.ParseVector2(element.GetAttribute("pos"));
@@ -437,7 +437,7 @@ public class SignData
 			this.scale = StringParsers.ParseVector2(element.GetAttribute("scale"));
 		}
 
-		// Token: 0x06005096 RID: 20630 RVA: 0x001ECE0F File Offset: 0x001EB00F
+		// Token: 0x0600511C RID: 20764 RVA: 0x001EF8A7 File Offset: 0x001EDAA7
 		public void Write(BinaryWriter bw)
 		{
 			StreamUtils.Write(bw, this.position);
@@ -445,7 +445,7 @@ public class SignData
 			StreamUtils.Write(bw, this.scale);
 		}
 
-		// Token: 0x06005097 RID: 20631 RVA: 0x001ECE38 File Offset: 0x001EB038
+		// Token: 0x0600511D RID: 20765 RVA: 0x001EF8D0 File Offset: 0x001EDAD0
 		public static SignData.SignTransform Read(BinaryReader br)
 		{
 			Vector2 vector = StreamUtils.ReadVector2(br);
@@ -454,40 +454,40 @@ public class SignData
 			return new SignData.SignTransform(vector, num, vector2);
 		}
 
-		// Token: 0x04003DB9 RID: 15801
+		// Token: 0x04003E4A RID: 15946
 		public Vector2 position;
 
-		// Token: 0x04003DBA RID: 15802
+		// Token: 0x04003E4B RID: 15947
 		public float rotation;
 
-		// Token: 0x04003DBB RID: 15803
+		// Token: 0x04003E4C RID: 15948
 		public Vector2 scale;
 
-		// Token: 0x04003DBC RID: 15804
+		// Token: 0x04003E4D RID: 15949
 		public static readonly SignData.SignTransform Defaults = new SignData.SignTransform(Vector2.zero, 0f, new Vector2(0.3f, 0.3f));
 
-		// Token: 0x04003DBD RID: 15805
+		// Token: 0x04003E4E RID: 15950
 		public static readonly SignData.SignTransform Identity = new SignData.SignTransform(Vector2.zero, 0f, Vector2.one);
 	}
 
-	// Token: 0x02000A62 RID: 2658
+	// Token: 0x02000A73 RID: 2675
 	public struct SignRenderSettings
 	{
-		// Token: 0x06005099 RID: 20633 RVA: 0x001ECE9E File Offset: 0x001EB09E
+		// Token: 0x0600511F RID: 20767 RVA: 0x001EF936 File Offset: 0x001EDB36
 		public SignRenderSettings(Color color, SignData.SignRenderSettings.Mode mode = SignData.SignRenderSettings.Mode.ColorOnly)
 		{
 			this.color = color;
 			this.mode = mode;
 		}
 
-		// Token: 0x0600509A RID: 20634 RVA: 0x001ECEAE File Offset: 0x001EB0AE
+		// Token: 0x06005120 RID: 20768 RVA: 0x001EF946 File Offset: 0x001EDB46
 		public void WriteXml(XmlElement element)
 		{
 			element.SetAttrib("color", "#" + ColorUtility.ToHtmlStringRGBA(this.color));
 			element.SetAttrib("mode", this.mode.ToString());
 		}
 
-		// Token: 0x0600509B RID: 20635 RVA: 0x001ECEF0 File Offset: 0x001EB0F0
+		// Token: 0x06005121 RID: 20769 RVA: 0x001EF988 File Offset: 0x001EDB88
 		public void ReadXml(XElement element)
 		{
 			string text = (element.HasAttribute("tint") ? element.GetAttribute("tint") : element.GetAttribute("color"));
@@ -507,14 +507,14 @@ public class SignData
 			}
 		}
 
-		// Token: 0x0600509C RID: 20636 RVA: 0x001ECFA9 File Offset: 0x001EB1A9
+		// Token: 0x06005122 RID: 20770 RVA: 0x001EFA41 File Offset: 0x001EDC41
 		public void Write(BinaryWriter bw)
 		{
 			StreamUtils.Write(bw, this.color);
 			bw.Write((byte)this.mode);
 		}
 
-		// Token: 0x0600509D RID: 20637 RVA: 0x001ECFC4 File Offset: 0x001EB1C4
+		// Token: 0x06005123 RID: 20771 RVA: 0x001EFA5C File Offset: 0x001EDC5C
 		public static SignData.SignRenderSettings Read(BinaryReader br)
 		{
 			Color color = StreamUtils.ReadColor(br);
@@ -522,63 +522,63 @@ public class SignData
 			return new SignData.SignRenderSettings(color, mode);
 		}
 
-		// Token: 0x04003DBE RID: 15806
+		// Token: 0x04003E4F RID: 15951
 		public Color color;
 
-		// Token: 0x04003DBF RID: 15807
+		// Token: 0x04003E50 RID: 15952
 		public SignData.SignRenderSettings.Mode mode;
 
-		// Token: 0x02000A63 RID: 2659
+		// Token: 0x02000A74 RID: 2676
 		public enum Mode : byte
 		{
-			// Token: 0x04003DC1 RID: 15809
+			// Token: 0x04003E52 RID: 15954
 			ColorOnly,
-			// Token: 0x04003DC2 RID: 15810
+			// Token: 0x04003E53 RID: 15955
 			ColorAndMask,
-			// Token: 0x04003DC3 RID: 15811
+			// Token: 0x04003E54 RID: 15956
 			MaskOnly,
-			// Token: 0x04003DC4 RID: 15812
+			// Token: 0x04003E55 RID: 15957
 			PunchOut
 		}
 	}
 
-	// Token: 0x02000A64 RID: 2660
+	// Token: 0x02000A75 RID: 2677
 	public abstract class SignWarp
 	{
-		// Token: 0x170008B1 RID: 2225
-		// (get) Token: 0x0600509E RID: 20638
+		// Token: 0x170008C3 RID: 2243
+		// (get) Token: 0x06005124 RID: 20772
 		public abstract SignData.SignWarp.WarpType TypeId
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
 			get;
 		}
 
-		// Token: 0x0600509F RID: 20639
+		// Token: 0x06005125 RID: 20773
 		public abstract SignData.SignWarp Clone();
 
-		// Token: 0x060050A0 RID: 20640
+		// Token: 0x06005126 RID: 20774
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public abstract void ReadXml(XElement element);
 
-		// Token: 0x060050A1 RID: 20641
+		// Token: 0x06005127 RID: 20775
 		public abstract void WriteXml(XmlElement xmlElement);
 
-		// Token: 0x060050A2 RID: 20642
+		// Token: 0x06005128 RID: 20776
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public abstract void InternalRead(BinaryReader br);
 
-		// Token: 0x060050A3 RID: 20643
+		// Token: 0x06005129 RID: 20777
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public abstract void InternalWrite(BinaryWriter bw);
 
-		// Token: 0x060050A4 RID: 20644 RVA: 0x001ECFE4 File Offset: 0x001EB1E4
+		// Token: 0x0600512A RID: 20778 RVA: 0x001EFA7C File Offset: 0x001EDC7C
 		public void Write(BinaryWriter bw)
 		{
 			bw.Write((byte)this.TypeId);
 			this.InternalWrite(bw);
 		}
 
-		// Token: 0x060050A5 RID: 20645 RVA: 0x001ECFFC File Offset: 0x001EB1FC
+		// Token: 0x0600512B RID: 20779 RVA: 0x001EFA94 File Offset: 0x001EDC94
 		public static SignData.SignWarp Read(BinaryReader br)
 		{
 			SignData.SignWarp.WarpType warpType = (SignData.SignWarp.WarpType)br.ReadByte();
@@ -617,7 +617,7 @@ public class SignData
 			return signWarp2;
 		}
 
-		// Token: 0x060050A6 RID: 20646 RVA: 0x001ED098 File Offset: 0x001EB298
+		// Token: 0x0600512C RID: 20780 RVA: 0x001EFB30 File Offset: 0x001EDD30
 		public static SignData.SignWarp WarpFromXml(XElement element)
 		{
 			string attribute = element.GetAttribute("type");
@@ -703,58 +703,58 @@ public class SignData
 			return signWarp2;
 		}
 
-		// Token: 0x060050A7 RID: 20647 RVA: 0x0000640C File Offset: 0x0000460C
+		// Token: 0x0600512D RID: 20781 RVA: 0x0000640C File Offset: 0x0000460C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public SignWarp()
 		{
 		}
 
-		// Token: 0x02000A65 RID: 2661
+		// Token: 0x02000A76 RID: 2678
 		public enum WarpType : byte
 		{
-			// Token: 0x04003DC6 RID: 15814
+			// Token: 0x04003E57 RID: 15959
 			Skew,
-			// Token: 0x04003DC7 RID: 15815
+			// Token: 0x04003E58 RID: 15960
 			Bulge,
-			// Token: 0x04003DC8 RID: 15816
+			// Token: 0x04003E59 RID: 15961
 			Twirl,
-			// Token: 0x04003DC9 RID: 15817
+			// Token: 0x04003E5A RID: 15962
 			Kaleido,
-			// Token: 0x04003DCA RID: 15818
+			// Token: 0x04003E5B RID: 15963
 			Perspective,
-			// Token: 0x04003DCB RID: 15819
+			// Token: 0x04003E5C RID: 15964
 			Arc,
-			// Token: 0x04003DCC RID: 15820
+			// Token: 0x04003E5D RID: 15965
 			Stretch,
-			// Token: 0x04003DCD RID: 15821
+			// Token: 0x04003E5E RID: 15966
 			Grid
 		}
 	}
 
-	// Token: 0x02000A66 RID: 2662
+	// Token: 0x02000A77 RID: 2679
 	public class SkewWarp : SignData.SignWarp
 	{
-		// Token: 0x060050A8 RID: 20648 RVA: 0x001ED209 File Offset: 0x001EB409
+		// Token: 0x0600512E RID: 20782 RVA: 0x001EFCA1 File Offset: 0x001EDEA1
 		public SkewWarp()
 		{
 			this.amount = new Vector2(0f, 0.1f);
 			this.rotation = 0f;
 		}
 
-		// Token: 0x060050A9 RID: 20649 RVA: 0x001ED231 File Offset: 0x001EB431
+		// Token: 0x0600512F RID: 20783 RVA: 0x001EFCC9 File Offset: 0x001EDEC9
 		public SkewWarp(Vector2 amount, float rotation)
 		{
 			this.amount = amount;
 			this.rotation = rotation;
 		}
 
-		// Token: 0x060050AA RID: 20650 RVA: 0x001ED247 File Offset: 0x001EB447
+		// Token: 0x06005130 RID: 20784 RVA: 0x001EFCDF File Offset: 0x001EDEDF
 		public override SignData.SignWarp Clone()
 		{
 			return new SignData.SkewWarp(this.amount, this.rotation);
 		}
 
-		// Token: 0x060050AB RID: 20651 RVA: 0x001ED25C File Offset: 0x001EB45C
+		// Token: 0x06005131 RID: 20785 RVA: 0x001EFCF4 File Offset: 0x001EDEF4
 		public override void WriteXml(XmlElement element)
 		{
 			element.SetAttrib("type", base.GetType().Name);
@@ -762,7 +762,7 @@ public class SignData
 			element.SetAttrib("rotation", this.rotation.ToCultureInvariantString() ?? "");
 		}
 
-		// Token: 0x060050AC RID: 20652 RVA: 0x001ED2D6 File Offset: 0x001EB4D6
+		// Token: 0x06005132 RID: 20786 RVA: 0x001EFD6E File Offset: 0x001EDF6E
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void ReadXml(XElement element)
 		{
@@ -770,8 +770,8 @@ public class SignData
 			this.rotation = float.Parse(element.GetAttribute("rotation"), Utils.StandardCulture);
 		}
 
-		// Token: 0x170008B2 RID: 2226
-		// (get) Token: 0x060050AD RID: 20653 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x170008C4 RID: 2244
+		// (get) Token: 0x06005133 RID: 20787 RVA: 0x00010E62 File Offset: 0x0000F062
 		public override SignData.SignWarp.WarpType TypeId
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -781,7 +781,7 @@ public class SignData
 			}
 		}
 
-		// Token: 0x060050AE RID: 20654 RVA: 0x001ED313 File Offset: 0x001EB513
+		// Token: 0x06005134 RID: 20788 RVA: 0x001EFDAB File Offset: 0x001EDFAB
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void InternalWrite(BinaryWriter bw)
 		{
@@ -789,7 +789,7 @@ public class SignData
 			bw.Write(this.rotation);
 		}
 
-		// Token: 0x060050AF RID: 20655 RVA: 0x001ED32D File Offset: 0x001EB52D
+		// Token: 0x06005135 RID: 20789 RVA: 0x001EFDC5 File Offset: 0x001EDFC5
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void InternalRead(BinaryReader br)
 		{
@@ -797,37 +797,37 @@ public class SignData
 			this.rotation = br.ReadSingle();
 		}
 
-		// Token: 0x04003DCE RID: 15822
+		// Token: 0x04003E5F RID: 15967
 		public Vector2 amount;
 
-		// Token: 0x04003DCF RID: 15823
+		// Token: 0x04003E60 RID: 15968
 		public float rotation;
 	}
 
-	// Token: 0x02000A67 RID: 2663
+	// Token: 0x02000A78 RID: 2680
 	public class BulgeWarp : SignData.SignWarp
 	{
-		// Token: 0x060050B0 RID: 20656 RVA: 0x001ED347 File Offset: 0x001EB547
+		// Token: 0x06005136 RID: 20790 RVA: 0x001EFDDF File Offset: 0x001EDFDF
 		public BulgeWarp()
 		{
 			this.offset = Vector2.zero;
 			this.amount = 2f;
 		}
 
-		// Token: 0x060050B1 RID: 20657 RVA: 0x001ED365 File Offset: 0x001EB565
+		// Token: 0x06005137 RID: 20791 RVA: 0x001EFDFD File Offset: 0x001EDFFD
 		public BulgeWarp(Vector2 offset, float amount)
 		{
 			this.offset = offset;
 			this.amount = amount;
 		}
 
-		// Token: 0x060050B2 RID: 20658 RVA: 0x001ED37B File Offset: 0x001EB57B
+		// Token: 0x06005138 RID: 20792 RVA: 0x001EFE13 File Offset: 0x001EE013
 		public override SignData.SignWarp Clone()
 		{
 			return new SignData.BulgeWarp(this.offset, this.amount);
 		}
 
-		// Token: 0x060050B3 RID: 20659 RVA: 0x001ED390 File Offset: 0x001EB590
+		// Token: 0x06005139 RID: 20793 RVA: 0x001EFE28 File Offset: 0x001EE028
 		public override void WriteXml(XmlElement element)
 		{
 			element.SetAttrib("type", base.GetType().Name);
@@ -835,7 +835,7 @@ public class SignData
 			element.SetAttrib("amount", this.amount.ToCultureInvariantString() ?? "");
 		}
 
-		// Token: 0x060050B4 RID: 20660 RVA: 0x001ED40A File Offset: 0x001EB60A
+		// Token: 0x0600513A RID: 20794 RVA: 0x001EFEA2 File Offset: 0x001EE0A2
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void ReadXml(XElement element)
 		{
@@ -843,8 +843,8 @@ public class SignData
 			this.amount = float.Parse(element.GetAttribute("amount"), Utils.StandardCulture);
 		}
 
-		// Token: 0x170008B3 RID: 2227
-		// (get) Token: 0x060050B5 RID: 20661 RVA: 0x0001FF5D File Offset: 0x0001E15D
+		// Token: 0x170008C5 RID: 2245
+		// (get) Token: 0x0600513B RID: 20795 RVA: 0x00020021 File Offset: 0x0001E221
 		public override SignData.SignWarp.WarpType TypeId
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -854,7 +854,7 @@ public class SignData
 			}
 		}
 
-		// Token: 0x060050B6 RID: 20662 RVA: 0x001ED447 File Offset: 0x001EB647
+		// Token: 0x0600513C RID: 20796 RVA: 0x001EFEDF File Offset: 0x001EE0DF
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void InternalWrite(BinaryWriter bw)
 		{
@@ -862,7 +862,7 @@ public class SignData
 			bw.Write(this.amount);
 		}
 
-		// Token: 0x060050B7 RID: 20663 RVA: 0x001ED461 File Offset: 0x001EB661
+		// Token: 0x0600513D RID: 20797 RVA: 0x001EFEF9 File Offset: 0x001EE0F9
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void InternalRead(BinaryReader br)
 		{
@@ -870,17 +870,17 @@ public class SignData
 			this.amount = br.ReadSingle();
 		}
 
-		// Token: 0x04003DD0 RID: 15824
+		// Token: 0x04003E61 RID: 15969
 		public Vector2 offset;
 
-		// Token: 0x04003DD1 RID: 15825
+		// Token: 0x04003E62 RID: 15970
 		public float amount;
 	}
 
-	// Token: 0x02000A68 RID: 2664
+	// Token: 0x02000A79 RID: 2681
 	public class TwirlWarp : SignData.SignWarp
 	{
-		// Token: 0x060050B8 RID: 20664 RVA: 0x001ED47B File Offset: 0x001EB67B
+		// Token: 0x0600513E RID: 20798 RVA: 0x001EFF13 File Offset: 0x001EE113
 		public TwirlWarp()
 		{
 			this.offset = Vector2.zero;
@@ -888,7 +888,7 @@ public class SignData
 			this.frequency = 0.2f;
 		}
 
-		// Token: 0x060050B9 RID: 20665 RVA: 0x001ED4A4 File Offset: 0x001EB6A4
+		// Token: 0x0600513F RID: 20799 RVA: 0x001EFF3C File Offset: 0x001EE13C
 		public TwirlWarp(Vector2 offset, float amount, float frequency)
 		{
 			this.offset = offset;
@@ -896,13 +896,13 @@ public class SignData
 			this.frequency = frequency;
 		}
 
-		// Token: 0x060050BA RID: 20666 RVA: 0x001ED4C1 File Offset: 0x001EB6C1
+		// Token: 0x06005140 RID: 20800 RVA: 0x001EFF59 File Offset: 0x001EE159
 		public override SignData.SignWarp Clone()
 		{
 			return new SignData.TwirlWarp(this.offset, this.amount, this.frequency);
 		}
 
-		// Token: 0x060050BB RID: 20667 RVA: 0x001ED4DC File Offset: 0x001EB6DC
+		// Token: 0x06005141 RID: 20801 RVA: 0x001EFF74 File Offset: 0x001EE174
 		public override void WriteXml(XmlElement element)
 		{
 			element.SetAttrib("type", base.GetType().Name);
@@ -911,7 +911,7 @@ public class SignData
 			element.SetAttrib("frequency", this.frequency.ToCultureInvariantString() ?? "");
 		}
 
-		// Token: 0x060050BC RID: 20668 RVA: 0x001ED578 File Offset: 0x001EB778
+		// Token: 0x06005142 RID: 20802 RVA: 0x001F0010 File Offset: 0x001EE210
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void ReadXml(XElement element)
 		{
@@ -920,8 +920,8 @@ public class SignData
 			this.frequency = float.Parse(element.GetAttribute("frequency"), Utils.StandardCulture);
 		}
 
-		// Token: 0x170008B4 RID: 2228
-		// (get) Token: 0x060050BD RID: 20669 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+		// Token: 0x170008C6 RID: 2246
+		// (get) Token: 0x06005143 RID: 20803 RVA: 0x0002F168 File Offset: 0x0002D368
 		public override SignData.SignWarp.WarpType TypeId
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -931,7 +931,7 @@ public class SignData
 			}
 		}
 
-		// Token: 0x060050BE RID: 20670 RVA: 0x001ED5E0 File Offset: 0x001EB7E0
+		// Token: 0x06005144 RID: 20804 RVA: 0x001F0078 File Offset: 0x001EE278
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void InternalWrite(BinaryWriter bw)
 		{
@@ -940,7 +940,7 @@ public class SignData
 			bw.Write(this.frequency);
 		}
 
-		// Token: 0x060050BF RID: 20671 RVA: 0x001ED606 File Offset: 0x001EB806
+		// Token: 0x06005145 RID: 20805 RVA: 0x001F009E File Offset: 0x001EE29E
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void InternalRead(BinaryReader br)
 		{
@@ -949,20 +949,20 @@ public class SignData
 			this.frequency = br.ReadSingle();
 		}
 
-		// Token: 0x04003DD2 RID: 15826
+		// Token: 0x04003E63 RID: 15971
 		public Vector2 offset;
 
-		// Token: 0x04003DD3 RID: 15827
+		// Token: 0x04003E64 RID: 15972
 		public float amount;
 
-		// Token: 0x04003DD4 RID: 15828
+		// Token: 0x04003E65 RID: 15973
 		public float frequency;
 	}
 
-	// Token: 0x02000A69 RID: 2665
+	// Token: 0x02000A7A RID: 2682
 	public class KaleidoWarp : SignData.SignWarp
 	{
-		// Token: 0x060050C0 RID: 20672 RVA: 0x001ED62C File Offset: 0x001EB82C
+		// Token: 0x06005146 RID: 20806 RVA: 0x001F00C4 File Offset: 0x001EE2C4
 		public KaleidoWarp()
 		{
 			this.offset = Vector2.zero;
@@ -971,7 +971,7 @@ public class SignData
 			this.offsetScale = 1f;
 		}
 
-		// Token: 0x060050C1 RID: 20673 RVA: 0x001ED65C File Offset: 0x001EB85C
+		// Token: 0x06005147 RID: 20807 RVA: 0x001F00F4 File Offset: 0x001EE2F4
 		public KaleidoWarp(Vector2 offset, int sides, float rotation, float offsetScale)
 		{
 			this.offset = offset;
@@ -980,13 +980,13 @@ public class SignData
 			this.offsetScale = offsetScale;
 		}
 
-		// Token: 0x060050C2 RID: 20674 RVA: 0x001ED681 File Offset: 0x001EB881
+		// Token: 0x06005148 RID: 20808 RVA: 0x001F0119 File Offset: 0x001EE319
 		public override SignData.SignWarp Clone()
 		{
 			return new SignData.KaleidoWarp(this.offset, this.sides, this.rotation, this.offsetScale);
 		}
 
-		// Token: 0x060050C3 RID: 20675 RVA: 0x001ED6A0 File Offset: 0x001EB8A0
+		// Token: 0x06005149 RID: 20809 RVA: 0x001F0138 File Offset: 0x001EE338
 		public override void WriteXml(XmlElement element)
 		{
 			element.SetAttrib("type", base.GetType().Name);
@@ -996,7 +996,7 @@ public class SignData
 			element.SetAttrib("offsetScale", this.offsetScale.ToCultureInvariantString() ?? "");
 		}
 
-		// Token: 0x060050C4 RID: 20676 RVA: 0x001ED75C File Offset: 0x001EB95C
+		// Token: 0x0600514A RID: 20810 RVA: 0x001F01F4 File Offset: 0x001EE3F4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void ReadXml(XElement element)
 		{
@@ -1006,8 +1006,8 @@ public class SignData
 			this.offsetScale = (element.HasAttribute("offsetScale") ? float.Parse(element.GetAttribute("offsetScale"), Utils.StandardCulture) : 1f);
 		}
 
-		// Token: 0x170008B5 RID: 2229
-		// (get) Token: 0x060050C5 RID: 20677 RVA: 0x00046C7A File Offset: 0x00044E7A
+		// Token: 0x170008C7 RID: 2247
+		// (get) Token: 0x0600514B RID: 20811 RVA: 0x00046EDA File Offset: 0x000450DA
 		public override SignData.SignWarp.WarpType TypeId
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -1017,7 +1017,7 @@ public class SignData
 			}
 		}
 
-		// Token: 0x060050C6 RID: 20678 RVA: 0x001ED7F8 File Offset: 0x001EB9F8
+		// Token: 0x0600514C RID: 20812 RVA: 0x001F0290 File Offset: 0x001EE490
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void InternalWrite(BinaryWriter bw)
 		{
@@ -1027,7 +1027,7 @@ public class SignData
 			bw.Write(this.offsetScale);
 		}
 
-		// Token: 0x060050C7 RID: 20679 RVA: 0x001ED82A File Offset: 0x001EBA2A
+		// Token: 0x0600514D RID: 20813 RVA: 0x001F02C2 File Offset: 0x001EE4C2
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void InternalRead(BinaryReader br)
 		{
@@ -1037,43 +1037,43 @@ public class SignData
 			this.offsetScale = br.ReadSingle();
 		}
 
-		// Token: 0x04003DD5 RID: 15829
+		// Token: 0x04003E66 RID: 15974
 		public Vector2 offset;
 
-		// Token: 0x04003DD6 RID: 15830
+		// Token: 0x04003E67 RID: 15975
 		public int sides;
 
-		// Token: 0x04003DD7 RID: 15831
+		// Token: 0x04003E68 RID: 15976
 		public float rotation;
 
-		// Token: 0x04003DD8 RID: 15832
+		// Token: 0x04003E69 RID: 15977
 		public float offsetScale;
 	}
 
-	// Token: 0x02000A6A RID: 2666
+	// Token: 0x02000A7B RID: 2683
 	public class PerspectiveWarp : SignData.SignWarp
 	{
-		// Token: 0x060050C8 RID: 20680 RVA: 0x001ED85C File Offset: 0x001EBA5C
+		// Token: 0x0600514E RID: 20814 RVA: 0x001F02F4 File Offset: 0x001EE4F4
 		public PerspectiveWarp()
 		{
 			this.rotation = new Vector3(0f, 30f, 0f);
 			this.strength = 0.1f;
 		}
 
-		// Token: 0x060050C9 RID: 20681 RVA: 0x001ED889 File Offset: 0x001EBA89
+		// Token: 0x0600514F RID: 20815 RVA: 0x001F0321 File Offset: 0x001EE521
 		public PerspectiveWarp(Vector3 rotation, float strength)
 		{
 			this.rotation = rotation;
 			this.strength = strength;
 		}
 
-		// Token: 0x060050CA RID: 20682 RVA: 0x001ED89F File Offset: 0x001EBA9F
+		// Token: 0x06005150 RID: 20816 RVA: 0x001F0337 File Offset: 0x001EE537
 		public override SignData.SignWarp Clone()
 		{
 			return new SignData.PerspectiveWarp(this.rotation, this.strength);
 		}
 
-		// Token: 0x060050CB RID: 20683 RVA: 0x001ED8B4 File Offset: 0x001EBAB4
+		// Token: 0x06005151 RID: 20817 RVA: 0x001F034C File Offset: 0x001EE54C
 		public override void WriteXml(XmlElement element)
 		{
 			element.SetAttrib("type", base.GetType().Name);
@@ -1081,7 +1081,7 @@ public class SignData
 			element.SetAttrib("strength", this.strength.ToCultureInvariantString() ?? "");
 		}
 
-		// Token: 0x060050CC RID: 20684 RVA: 0x001ED93E File Offset: 0x001EBB3E
+		// Token: 0x06005152 RID: 20818 RVA: 0x001F03D6 File Offset: 0x001EE5D6
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void ReadXml(XElement element)
 		{
@@ -1089,8 +1089,8 @@ public class SignData
 			this.strength = float.Parse(element.GetAttribute("strength"), Utils.StandardCulture);
 		}
 
-		// Token: 0x170008B6 RID: 2230
-		// (get) Token: 0x060050CD RID: 20685 RVA: 0x0007FE9C File Offset: 0x0007E09C
+		// Token: 0x170008C8 RID: 2248
+		// (get) Token: 0x06005153 RID: 20819 RVA: 0x00080550 File Offset: 0x0007E750
 		public override SignData.SignWarp.WarpType TypeId
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -1100,7 +1100,7 @@ public class SignData
 			}
 		}
 
-		// Token: 0x060050CE RID: 20686 RVA: 0x001ED97D File Offset: 0x001EBB7D
+		// Token: 0x06005154 RID: 20820 RVA: 0x001F0415 File Offset: 0x001EE615
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void InternalWrite(BinaryWriter bw)
 		{
@@ -1108,7 +1108,7 @@ public class SignData
 			bw.Write(this.strength);
 		}
 
-		// Token: 0x060050CF RID: 20687 RVA: 0x001ED997 File Offset: 0x001EBB97
+		// Token: 0x06005155 RID: 20821 RVA: 0x001F042F File Offset: 0x001EE62F
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void InternalRead(BinaryReader br)
 		{
@@ -1116,17 +1116,17 @@ public class SignData
 			this.strength = br.ReadSingle();
 		}
 
-		// Token: 0x04003DD9 RID: 15833
+		// Token: 0x04003E6A RID: 15978
 		public Vector3 rotation;
 
-		// Token: 0x04003DDA RID: 15834
+		// Token: 0x04003E6B RID: 15979
 		public float strength;
 	}
 
-	// Token: 0x02000A6B RID: 2667
+	// Token: 0x02000A7C RID: 2684
 	public class ArcWarp : SignData.SignWarp
 	{
-		// Token: 0x060050D0 RID: 20688 RVA: 0x001ED9B1 File Offset: 0x001EBBB1
+		// Token: 0x06005156 RID: 20822 RVA: 0x001F0449 File Offset: 0x001EE649
 		public ArcWarp()
 		{
 			this.rotation = 0f;
@@ -1134,7 +1134,7 @@ public class SignData
 			this.width = 0.1f;
 		}
 
-		// Token: 0x060050D1 RID: 20689 RVA: 0x001ED9DA File Offset: 0x001EBBDA
+		// Token: 0x06005157 RID: 20823 RVA: 0x001F0472 File Offset: 0x001EE672
 		public ArcWarp(float rotation, float radius, float width)
 		{
 			this.rotation = rotation;
@@ -1142,13 +1142,13 @@ public class SignData
 			this.width = width;
 		}
 
-		// Token: 0x060050D2 RID: 20690 RVA: 0x001ED9F7 File Offset: 0x001EBBF7
+		// Token: 0x06005158 RID: 20824 RVA: 0x001F048F File Offset: 0x001EE68F
 		public override SignData.SignWarp Clone()
 		{
 			return new SignData.ArcWarp(this.rotation, this.radius, this.width);
 		}
 
-		// Token: 0x060050D3 RID: 20691 RVA: 0x001EDA10 File Offset: 0x001EBC10
+		// Token: 0x06005159 RID: 20825 RVA: 0x001F04A8 File Offset: 0x001EE6A8
 		public override void WriteXml(XmlElement element)
 		{
 			element.SetAttrib("type", base.GetType().Name);
@@ -1157,7 +1157,7 @@ public class SignData
 			element.SetAttrib("width", this.width.ToCultureInvariantString() ?? "");
 		}
 
-		// Token: 0x060050D4 RID: 20692 RVA: 0x001EDA94 File Offset: 0x001EBC94
+		// Token: 0x0600515A RID: 20826 RVA: 0x001F052C File Offset: 0x001EE72C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void ReadXml(XElement element)
 		{
@@ -1166,8 +1166,8 @@ public class SignData
 			this.width = float.Parse(element.GetAttribute("width"), Utils.StandardCulture);
 		}
 
-		// Token: 0x170008B7 RID: 2231
-		// (get) Token: 0x060050D5 RID: 20693 RVA: 0x00080065 File Offset: 0x0007E265
+		// Token: 0x170008C9 RID: 2249
+		// (get) Token: 0x0600515B RID: 20827 RVA: 0x00080719 File Offset: 0x0007E919
 		public override SignData.SignWarp.WarpType TypeId
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -1177,7 +1177,7 @@ public class SignData
 			}
 		}
 
-		// Token: 0x060050D6 RID: 20694 RVA: 0x001EDB01 File Offset: 0x001EBD01
+		// Token: 0x0600515C RID: 20828 RVA: 0x001F0599 File Offset: 0x001EE799
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void InternalWrite(BinaryWriter bw)
 		{
@@ -1186,7 +1186,7 @@ public class SignData
 			bw.Write(this.width);
 		}
 
-		// Token: 0x060050D7 RID: 20695 RVA: 0x001EDB27 File Offset: 0x001EBD27
+		// Token: 0x0600515D RID: 20829 RVA: 0x001F05BF File Offset: 0x001EE7BF
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void InternalRead(BinaryReader br)
 		{
@@ -1195,20 +1195,20 @@ public class SignData
 			this.width = br.ReadSingle();
 		}
 
-		// Token: 0x04003DDB RID: 15835
+		// Token: 0x04003E6C RID: 15980
 		public float rotation;
 
-		// Token: 0x04003DDC RID: 15836
+		// Token: 0x04003E6D RID: 15981
 		public float radius;
 
-		// Token: 0x04003DDD RID: 15837
+		// Token: 0x04003E6E RID: 15982
 		public float width;
 	}
 
-	// Token: 0x02000A6C RID: 2668
+	// Token: 0x02000A7D RID: 2685
 	public class StretchWarp : SignData.SignWarp
 	{
-		// Token: 0x060050D8 RID: 20696 RVA: 0x001EDB50 File Offset: 0x001EBD50
+		// Token: 0x0600515E RID: 20830 RVA: 0x001F05E8 File Offset: 0x001EE7E8
 		public StretchWarp()
 		{
 			this.offset = new Vector2(0f, 0f);
@@ -1218,7 +1218,7 @@ public class SignData
 			this.exponent = 0f;
 		}
 
-		// Token: 0x060050D9 RID: 20697 RVA: 0x001EDBA4 File Offset: 0x001EBDA4
+		// Token: 0x0600515F RID: 20831 RVA: 0x001F063C File Offset: 0x001EE83C
 		public StretchWarp(Vector2 offset, float rotation, float distance, float width, float exponent)
 		{
 			this.offset = offset;
@@ -1228,13 +1228,13 @@ public class SignData
 			this.exponent = exponent;
 		}
 
-		// Token: 0x060050DA RID: 20698 RVA: 0x001EDBD1 File Offset: 0x001EBDD1
+		// Token: 0x06005160 RID: 20832 RVA: 0x001F0669 File Offset: 0x001EE869
 		public override SignData.SignWarp Clone()
 		{
 			return new SignData.StretchWarp(this.offset, this.rotation, this.distance, this.width, this.exponent);
 		}
 
-		// Token: 0x060050DB RID: 20699 RVA: 0x001EDBF8 File Offset: 0x001EBDF8
+		// Token: 0x06005161 RID: 20833 RVA: 0x001F0690 File Offset: 0x001EE890
 		public override void WriteXml(XmlElement element)
 		{
 			element.SetAttrib("type", base.GetType().Name);
@@ -1245,7 +1245,7 @@ public class SignData
 			element.SetAttrib("exponent", this.exponent.ToCultureInvariantString() ?? "");
 		}
 
-		// Token: 0x060050DC RID: 20700 RVA: 0x001EDCD4 File Offset: 0x001EBED4
+		// Token: 0x06005162 RID: 20834 RVA: 0x001F076C File Offset: 0x001EE96C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void ReadXml(XElement element)
 		{
@@ -1256,8 +1256,8 @@ public class SignData
 			this.exponent = float.Parse(element.GetAttribute("exponent"), Utils.StandardCulture);
 		}
 
-		// Token: 0x170008B8 RID: 2232
-		// (get) Token: 0x060050DD RID: 20701 RVA: 0x00081148 File Offset: 0x0007F348
+		// Token: 0x170008CA RID: 2250
+		// (get) Token: 0x06005163 RID: 20835 RVA: 0x000817FC File Offset: 0x0007F9FC
 		public override SignData.SignWarp.WarpType TypeId
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -1267,7 +1267,7 @@ public class SignData
 			}
 		}
 
-		// Token: 0x060050DE RID: 20702 RVA: 0x001EDD7C File Offset: 0x001EBF7C
+		// Token: 0x06005164 RID: 20836 RVA: 0x001F0814 File Offset: 0x001EEA14
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void InternalWrite(BinaryWriter bw)
 		{
@@ -1278,7 +1278,7 @@ public class SignData
 			bw.Write(this.exponent);
 		}
 
-		// Token: 0x060050DF RID: 20703 RVA: 0x001EDDBA File Offset: 0x001EBFBA
+		// Token: 0x06005165 RID: 20837 RVA: 0x001F0852 File Offset: 0x001EEA52
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void InternalRead(BinaryReader br)
 		{
@@ -1289,26 +1289,26 @@ public class SignData
 			this.exponent = br.ReadSingle();
 		}
 
-		// Token: 0x04003DDE RID: 15838
+		// Token: 0x04003E6F RID: 15983
 		public Vector2 offset;
 
-		// Token: 0x04003DDF RID: 15839
+		// Token: 0x04003E70 RID: 15984
 		public float rotation;
 
-		// Token: 0x04003DE0 RID: 15840
+		// Token: 0x04003E71 RID: 15985
 		public float distance;
 
-		// Token: 0x04003DE1 RID: 15841
+		// Token: 0x04003E72 RID: 15986
 		public float width;
 
-		// Token: 0x04003DE2 RID: 15842
+		// Token: 0x04003E73 RID: 15987
 		public float exponent;
 	}
 
-	// Token: 0x02000A6D RID: 2669
+	// Token: 0x02000A7E RID: 2686
 	public class GridWarp : SignData.SignWarp
 	{
-		// Token: 0x060050E0 RID: 20704 RVA: 0x001EDDF8 File Offset: 0x001EBFF8
+		// Token: 0x06005166 RID: 20838 RVA: 0x001F0890 File Offset: 0x001EEA90
 		public GridWarp()
 		{
 			this.mode = SignData.GridWarp.Mode.Rectangle;
@@ -1319,7 +1319,7 @@ public class SignData
 			this.shift = 0f;
 		}
 
-		// Token: 0x060050E1 RID: 20705 RVA: 0x001EDE49 File Offset: 0x001EC049
+		// Token: 0x06005167 RID: 20839 RVA: 0x001F08E1 File Offset: 0x001EEAE1
 		public GridWarp(SignData.GridWarp.Mode mode, Vector2 offset, float rotation, float scale, float aspect, float shift)
 		{
 			this.mode = mode;
@@ -1330,13 +1330,13 @@ public class SignData
 			this.shift = shift;
 		}
 
-		// Token: 0x060050E2 RID: 20706 RVA: 0x001EDE7E File Offset: 0x001EC07E
+		// Token: 0x06005168 RID: 20840 RVA: 0x001F0916 File Offset: 0x001EEB16
 		public override SignData.SignWarp Clone()
 		{
 			return new SignData.GridWarp(this.mode, this.offset, this.rotation, this.scale, this.aspect, this.shift);
 		}
 
-		// Token: 0x060050E3 RID: 20707 RVA: 0x001EDEAC File Offset: 0x001EC0AC
+		// Token: 0x06005169 RID: 20841 RVA: 0x001F0944 File Offset: 0x001EEB44
 		public override void WriteXml(XmlElement element)
 		{
 			element.SetAttrib("type", base.GetType().Name);
@@ -1348,7 +1348,7 @@ public class SignData
 			element.SetAttrib("shift", this.shift.ToCultureInvariantString() ?? "");
 		}
 
-		// Token: 0x060050E4 RID: 20708 RVA: 0x001EDFA8 File Offset: 0x001EC1A8
+		// Token: 0x0600516A RID: 20842 RVA: 0x001F0A40 File Offset: 0x001EEC40
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void ReadXml(XElement element)
 		{
@@ -1360,8 +1360,8 @@ public class SignData
 			this.shift = (element.HasAttribute("shift") ? float.Parse(element.GetAttribute("shift"), Utils.StandardCulture) : 0f);
 		}
 
-		// Token: 0x170008B9 RID: 2233
-		// (get) Token: 0x060050E5 RID: 20709 RVA: 0x0005FC95 File Offset: 0x0005DE95
+		// Token: 0x170008CB RID: 2251
+		// (get) Token: 0x0600516B RID: 20843 RVA: 0x000601DD File Offset: 0x0005E3DD
 		public override SignData.SignWarp.WarpType TypeId
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -1371,7 +1371,7 @@ public class SignData
 			}
 		}
 
-		// Token: 0x060050E6 RID: 20710 RVA: 0x001EE0A0 File Offset: 0x001EC2A0
+		// Token: 0x0600516C RID: 20844 RVA: 0x001F0B38 File Offset: 0x001EED38
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void InternalWrite(BinaryWriter bw)
 		{
@@ -1383,7 +1383,7 @@ public class SignData
 			bw.Write(this.shift);
 		}
 
-		// Token: 0x060050E7 RID: 20711 RVA: 0x001EE0F8 File Offset: 0x001EC2F8
+		// Token: 0x0600516D RID: 20845 RVA: 0x001F0B90 File Offset: 0x001EED90
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void InternalRead(BinaryReader br)
 		{
@@ -1395,41 +1395,41 @@ public class SignData
 			this.shift = br.ReadSingle();
 		}
 
-		// Token: 0x04003DE3 RID: 15843
+		// Token: 0x04003E74 RID: 15988
 		public SignData.GridWarp.Mode mode;
 
-		// Token: 0x04003DE4 RID: 15844
+		// Token: 0x04003E75 RID: 15989
 		public Vector2 offset;
 
-		// Token: 0x04003DE5 RID: 15845
+		// Token: 0x04003E76 RID: 15990
 		public float rotation;
 
-		// Token: 0x04003DE6 RID: 15846
+		// Token: 0x04003E77 RID: 15991
 		public float scale;
 
-		// Token: 0x04003DE7 RID: 15847
+		// Token: 0x04003E78 RID: 15992
 		public float aspect;
 
-		// Token: 0x04003DE8 RID: 15848
+		// Token: 0x04003E79 RID: 15993
 		public float shift;
 
-		// Token: 0x02000A6E RID: 2670
+		// Token: 0x02000A7F RID: 2687
 		public enum Mode
 		{
-			// Token: 0x04003DEA RID: 15850
+			// Token: 0x04003E7B RID: 15995
 			Column,
-			// Token: 0x04003DEB RID: 15851
+			// Token: 0x04003E7C RID: 15996
 			Rectangle,
-			// Token: 0x04003DEC RID: 15852
+			// Token: 0x04003E7D RID: 15997
 			Hex
 		}
 	}
 
-	// Token: 0x02000A6F RID: 2671
+	// Token: 0x02000A80 RID: 2688
 	public abstract class SignLayer
 	{
-		// Token: 0x170008BA RID: 2234
-		// (get) Token: 0x060050E8 RID: 20712 RVA: 0x001EE14D File Offset: 0x001EC34D
+		// Token: 0x170008CC RID: 2252
+		// (get) Token: 0x0600516E RID: 20846 RVA: 0x001F0BE5 File Offset: 0x001EEDE5
 		public bool HasWarps
 		{
 			get
@@ -1439,8 +1439,8 @@ public class SignData
 			}
 		}
 
-		// Token: 0x170008BB RID: 2235
-		// (get) Token: 0x060050E9 RID: 20713 RVA: 0x001EE163 File Offset: 0x001EC363
+		// Token: 0x170008CD RID: 2253
+		// (get) Token: 0x0600516F RID: 20847 RVA: 0x001F0BFB File Offset: 0x001EEDFB
 		public bool HasTransform
 		{
 			get
@@ -1449,8 +1449,8 @@ public class SignData
 			}
 		}
 
-		// Token: 0x170008BC RID: 2236
-		// (get) Token: 0x060050EA RID: 20714 RVA: 0x001EE175 File Offset: 0x001EC375
+		// Token: 0x170008CE RID: 2254
+		// (get) Token: 0x06005170 RID: 20848 RVA: 0x001F0C0D File Offset: 0x001EEE0D
 		public bool HasTransformOrWarps
 		{
 			get
@@ -1459,34 +1459,34 @@ public class SignData
 			}
 		}
 
-		// Token: 0x170008BD RID: 2237
-		// (get) Token: 0x060050EB RID: 20715
+		// Token: 0x170008CF RID: 2255
+		// (get) Token: 0x06005171 RID: 20849
 		public abstract SignData.SignLayer.LayerType TypeId
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
 			get;
 		}
 
-		// Token: 0x170008BE RID: 2238
-		// (get) Token: 0x060050EC RID: 20716
+		// Token: 0x170008D0 RID: 2256
+		// (get) Token: 0x06005172 RID: 20850
 		public abstract string defaultName
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
 			get;
 		}
 
-		// Token: 0x060050ED RID: 20717
+		// Token: 0x06005173 RID: 20851
 		public abstract SignData.SignLayer Clone();
 
-		// Token: 0x060050EE RID: 20718
+		// Token: 0x06005174 RID: 20852
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public abstract void InternalRead(BinaryReader br);
 
-		// Token: 0x060050EF RID: 20719
+		// Token: 0x06005175 RID: 20853
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public abstract void InternalWrite(BinaryWriter bw);
 
-		// Token: 0x060050F0 RID: 20720 RVA: 0x001EE188 File Offset: 0x001EC388
+		// Token: 0x06005176 RID: 20854 RVA: 0x001F0C20 File Offset: 0x001EEE20
 		public SignLayer(string name, Vector2 position, float rotation, Vector2 scale, SignData.SignRenderSettings renderSettings, List<SignData.SignWarp> warps)
 		{
 			this.name = name;
@@ -1497,7 +1497,7 @@ public class SignData
 			this.warps = warps;
 		}
 
-		// Token: 0x060050F1 RID: 20721 RVA: 0x001EE1D8 File Offset: 0x001EC3D8
+		// Token: 0x06005177 RID: 20855 RVA: 0x001F0C70 File Offset: 0x001EEE70
 		public SignLayer()
 		{
 			this.name = string.Empty;
@@ -1508,7 +1508,7 @@ public class SignData
 			this.warps = new List<SignData.SignWarp>();
 		}
 
-		// Token: 0x060050F2 RID: 20722 RVA: 0x001EE24C File Offset: 0x001EC44C
+		// Token: 0x06005178 RID: 20856 RVA: 0x001F0CE4 File Offset: 0x001EEEE4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public List<SignData.SignWarp> CloneWarps()
 		{
@@ -1520,7 +1520,7 @@ public class SignData
 			return list;
 		}
 
-		// Token: 0x060050F3 RID: 20723 RVA: 0x001EE2AC File Offset: 0x001EC4AC
+		// Token: 0x06005179 RID: 20857 RVA: 0x001F0D44 File Offset: 0x001EEF44
 		public void Write(BinaryWriter bw)
 		{
 			bw.Write((byte)this.TypeId);
@@ -1539,7 +1539,7 @@ public class SignData
 			}
 		}
 
-		// Token: 0x060050F4 RID: 20724 RVA: 0x001EE360 File Offset: 0x001EC560
+		// Token: 0x0600517A RID: 20858 RVA: 0x001F0DF8 File Offset: 0x001EEFF8
 		public static SignData.SignLayer Read(BinaryReader br)
 		{
 			SignData.SignLayer.LayerType layerType = (SignData.SignLayer.LayerType)br.ReadByte();
@@ -1575,7 +1575,7 @@ public class SignData
 			return signLayer2;
 		}
 
-		// Token: 0x060050F5 RID: 20725 RVA: 0x001EE424 File Offset: 0x001EC624
+		// Token: 0x0600517B RID: 20859 RVA: 0x001F0EBC File Offset: 0x001EF0BC
 		public static SignData.SignLayer LayerFromXml(XElement element)
 		{
 			string attribute = element.GetAttribute("type");
@@ -1611,7 +1611,7 @@ public class SignData
 			return signLayer2;
 		}
 
-		// Token: 0x060050F6 RID: 20726 RVA: 0x001EE4B4 File Offset: 0x001EC6B4
+		// Token: 0x0600517C RID: 20860 RVA: 0x001F0F4C File Offset: 0x001EF14C
 		public virtual void WriteXml(XmlElement element)
 		{
 			element.SetAttribute("name", this.name);
@@ -1624,7 +1624,7 @@ public class SignData
 			}
 		}
 
-		// Token: 0x060050F7 RID: 20727 RVA: 0x001EE550 File Offset: 0x001EC750
+		// Token: 0x0600517D RID: 20861 RVA: 0x001F0FE8 File Offset: 0x001EF1E8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void ReadXml(XElement element)
 		{
@@ -1637,43 +1637,43 @@ public class SignData
 			}
 		}
 
-		// Token: 0x060050F8 RID: 20728 RVA: 0x001EE5E0 File Offset: 0x001EC7E0
+		// Token: 0x0600517E RID: 20862 RVA: 0x001F1078 File Offset: 0x001EF278
 		public void SetDefaultName(int idx)
 		{
 			this.name = string.Format(this.defaultName + " " + idx.ToString("00"), Array.Empty<object>());
 		}
 
-		// Token: 0x04003DED RID: 15853
+		// Token: 0x04003E7E RID: 15998
 		public string name;
 
-		// Token: 0x04003DEE RID: 15854
+		// Token: 0x04003E7F RID: 15999
 		public SignData.SignTransform transform;
 
-		// Token: 0x04003DEF RID: 15855
+		// Token: 0x04003E80 RID: 16000
 		public SignData.SignRenderSettings renderSettings;
 
-		// Token: 0x04003DF0 RID: 15856
+		// Token: 0x04003E81 RID: 16001
 		public List<SignData.SignWarp> warps;
 
-		// Token: 0x02000A70 RID: 2672
+		// Token: 0x02000A81 RID: 2689
 		public enum LayerType : byte
 		{
-			// Token: 0x04003DF2 RID: 15858
+			// Token: 0x04003E83 RID: 16003
 			Group,
-			// Token: 0x04003DF3 RID: 15859
+			// Token: 0x04003E84 RID: 16004
 			Text,
-			// Token: 0x04003DF4 RID: 15860
+			// Token: 0x04003E85 RID: 16005
 			Polygon,
-			// Token: 0x04003DF5 RID: 15861
+			// Token: 0x04003E86 RID: 16006
 			Noise
 		}
 	}
 
-	// Token: 0x02000A71 RID: 2673
+	// Token: 0x02000A82 RID: 2690
 	public class GroupSignLayer : SignData.SignLayer
 	{
-		// Token: 0x170008BF RID: 2239
-		// (get) Token: 0x060050F9 RID: 20729 RVA: 0x001EE60E File Offset: 0x001EC80E
+		// Token: 0x170008D1 RID: 2257
+		// (get) Token: 0x0600517F RID: 20863 RVA: 0x001F10A6 File Offset: 0x001EF2A6
 		public override string defaultName
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -1683,8 +1683,8 @@ public class SignData
 			}
 		}
 
-		// Token: 0x170008C0 RID: 2240
-		// (get) Token: 0x060050FA RID: 20730 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x170008D2 RID: 2258
+		// (get) Token: 0x06005180 RID: 20864 RVA: 0x00010E62 File Offset: 0x0000F062
 		public override SignData.SignLayer.LayerType TypeId
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -1694,12 +1694,12 @@ public class SignData
 			}
 		}
 
-		// Token: 0x060050FB RID: 20731 RVA: 0x001EE615 File Offset: 0x001EC815
+		// Token: 0x06005181 RID: 20865 RVA: 0x001F10AD File Offset: 0x001EF2AD
 		public GroupSignLayer()
 		{
 		}
 
-		// Token: 0x060050FC RID: 20732 RVA: 0x001EE61D File Offset: 0x001EC81D
+		// Token: 0x06005182 RID: 20866 RVA: 0x001F10B5 File Offset: 0x001EF2B5
 		public GroupSignLayer(string name, Vector2 position, float rotation, Vector2 scale, SignData.SignRenderSettings renderSettings, List<SignData.SignWarp> warps, List<SignData.SignLayer> layers, SignData.GroupSignLayer.OffsetTarget offsetTarget = SignData.GroupSignLayer.OffsetTarget.All, float softnessOffset = 0f, float dilateOffset = 0f, SignData.GroupSignLayer.ColorMode colorMode = SignData.GroupSignLayer.ColorMode.Multiply)
 			: base(name, position, rotation, scale, renderSettings, warps)
 		{
@@ -1710,7 +1710,7 @@ public class SignData
 			this.colorMode = colorMode;
 		}
 
-		// Token: 0x060050FD RID: 20733 RVA: 0x001EE658 File Offset: 0x001EC858
+		// Token: 0x06005183 RID: 20867 RVA: 0x001F10F0 File Offset: 0x001EF2F0
 		public override SignData.SignLayer Clone()
 		{
 			List<SignData.SignLayer> list = null;
@@ -1725,7 +1725,7 @@ public class SignData
 			return new SignData.GroupSignLayer(this.name, this.transform.position, this.transform.rotation, this.transform.scale, this.renderSettings, base.CloneWarps(), list, this.offsetTarget, this.softnessOffset, this.dilateOffset, this.colorMode);
 		}
 
-		// Token: 0x060050FE RID: 20734 RVA: 0x001EE714 File Offset: 0x001EC914
+		// Token: 0x06005184 RID: 20868 RVA: 0x001F11AC File Offset: 0x001EF3AC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void InternalWrite(BinaryWriter bw)
 		{
@@ -1744,7 +1744,7 @@ public class SignData
 			}
 		}
 
-		// Token: 0x060050FF RID: 20735 RVA: 0x001EE7B8 File Offset: 0x001EC9B8
+		// Token: 0x06005185 RID: 20869 RVA: 0x001F1250 File Offset: 0x001EF450
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void InternalRead(BinaryReader br)
 		{
@@ -1760,7 +1760,7 @@ public class SignData
 			}
 		}
 
-		// Token: 0x06005100 RID: 20736 RVA: 0x001EE828 File Offset: 0x001ECA28
+		// Token: 0x06005186 RID: 20870 RVA: 0x001F12C0 File Offset: 0x001EF4C0
 		public override void WriteXml(XmlElement element)
 		{
 			base.WriteXml(element);
@@ -1786,7 +1786,7 @@ public class SignData
 			}
 		}
 
-		// Token: 0x06005101 RID: 20737 RVA: 0x001EE91C File Offset: 0x001ECB1C
+		// Token: 0x06005187 RID: 20871 RVA: 0x001F13B4 File Offset: 0x001EF5B4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void ReadXml(XElement element)
 		{
@@ -1828,51 +1828,51 @@ public class SignData
 			}
 		}
 
-		// Token: 0x04003DF6 RID: 15862
+		// Token: 0x04003E87 RID: 16007
 		public List<SignData.SignLayer> layers;
 
-		// Token: 0x04003DF7 RID: 15863
+		// Token: 0x04003E88 RID: 16008
 		public SignData.GroupSignLayer.OffsetTarget offsetTarget;
 
-		// Token: 0x04003DF8 RID: 15864
+		// Token: 0x04003E89 RID: 16009
 		public float softnessOffset;
 
-		// Token: 0x04003DF9 RID: 15865
+		// Token: 0x04003E8A RID: 16010
 		public float dilateOffset;
 
-		// Token: 0x04003DFA RID: 15866
+		// Token: 0x04003E8B RID: 16011
 		public SignData.GroupSignLayer.ColorMode colorMode;
 
-		// Token: 0x02000A72 RID: 2674
+		// Token: 0x02000A83 RID: 2691
 		public enum OffsetTarget : byte
 		{
-			// Token: 0x04003DFC RID: 15868
+			// Token: 0x04003E8D RID: 16013
 			All,
-			// Token: 0x04003DFD RID: 15869
+			// Token: 0x04003E8E RID: 16014
 			Shapes,
-			// Token: 0x04003DFE RID: 15870
+			// Token: 0x04003E8F RID: 16015
 			Text,
-			// Token: 0x04003DFF RID: 15871
+			// Token: 0x04003E90 RID: 16016
 			Noise
 		}
 
-		// Token: 0x02000A73 RID: 2675
+		// Token: 0x02000A84 RID: 2692
 		public enum ColorMode : byte
 		{
-			// Token: 0x04003E01 RID: 15873
+			// Token: 0x04003E92 RID: 16018
 			Multiply,
-			// Token: 0x04003E02 RID: 15874
+			// Token: 0x04003E93 RID: 16019
 			Blend,
-			// Token: 0x04003E03 RID: 15875
+			// Token: 0x04003E94 RID: 16020
 			Override
 		}
 	}
 
-	// Token: 0x02000A74 RID: 2676
+	// Token: 0x02000A85 RID: 2693
 	public class TextSignLayer : SignData.SignLayer
 	{
-		// Token: 0x170008C1 RID: 2241
-		// (get) Token: 0x06005102 RID: 20738 RVA: 0x001EEA40 File Offset: 0x001ECC40
+		// Token: 0x170008D3 RID: 2259
+		// (get) Token: 0x06005188 RID: 20872 RVA: 0x001F14D8 File Offset: 0x001EF6D8
 		public override string defaultName
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -1882,8 +1882,8 @@ public class SignData
 			}
 		}
 
-		// Token: 0x170008C2 RID: 2242
-		// (get) Token: 0x06005103 RID: 20739 RVA: 0x0001FF5D File Offset: 0x0001E15D
+		// Token: 0x170008D4 RID: 2260
+		// (get) Token: 0x06005189 RID: 20873 RVA: 0x00020021 File Offset: 0x0001E221
 		public override SignData.SignLayer.LayerType TypeId
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -1893,7 +1893,7 @@ public class SignData
 			}
 		}
 
-		// Token: 0x06005104 RID: 20740 RVA: 0x001EEA48 File Offset: 0x001ECC48
+		// Token: 0x0600518A RID: 20874 RVA: 0x001F14E0 File Offset: 0x001EF6E0
 		public TextSignLayer()
 		{
 			this.name = "Text";
@@ -1905,7 +1905,7 @@ public class SignData
 			this.dilate = 0f;
 		}
 
-		// Token: 0x06005105 RID: 20741 RVA: 0x001EEAB0 File Offset: 0x001ECCB0
+		// Token: 0x0600518B RID: 20875 RVA: 0x001F1548 File Offset: 0x001EF748
 		public TextSignLayer(string name, Vector2 position, float rotation, Vector2 scale, SignData.SignRenderSettings renderSettings, List<SignData.SignWarp> warps, string font, string text, float direction, float spacing, float softness, float dilate)
 			: base(name, position, rotation, scale, renderSettings, warps)
 		{
@@ -1917,13 +1917,13 @@ public class SignData
 			this.dilate = dilate;
 		}
 
-		// Token: 0x06005106 RID: 20742 RVA: 0x001EEAFC File Offset: 0x001ECCFC
+		// Token: 0x0600518C RID: 20876 RVA: 0x001F1594 File Offset: 0x001EF794
 		public override SignData.SignLayer Clone()
 		{
 			return new SignData.TextSignLayer(this.name, this.transform.position, this.transform.rotation, this.transform.scale, this.renderSettings, base.CloneWarps(), this.font, this.text, this.direction, this.spacing, this.softness, this.dilate);
 		}
 
-		// Token: 0x06005107 RID: 20743 RVA: 0x001EEB68 File Offset: 0x001ECD68
+		// Token: 0x0600518D RID: 20877 RVA: 0x001F1600 File Offset: 0x001EF800
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void InternalWrite(BinaryWriter bw)
 		{
@@ -1935,7 +1935,7 @@ public class SignData
 			bw.Write(this.dilate);
 		}
 
-		// Token: 0x06005108 RID: 20744 RVA: 0x001EEBC0 File Offset: 0x001ECDC0
+		// Token: 0x0600518E RID: 20878 RVA: 0x001F1658 File Offset: 0x001EF858
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void InternalRead(BinaryReader br)
 		{
@@ -1947,7 +1947,7 @@ public class SignData
 			this.dilate = br.ReadSingle();
 		}
 
-		// Token: 0x06005109 RID: 20745 RVA: 0x001EEC18 File Offset: 0x001ECE18
+		// Token: 0x0600518F RID: 20879 RVA: 0x001F16B0 File Offset: 0x001EF8B0
 		public override void WriteXml(XmlElement element)
 		{
 			base.WriteXml(element);
@@ -1959,7 +1959,7 @@ public class SignData
 			element.SetAttrib("dilate", this.dilate.ToCultureInvariantString());
 		}
 
-		// Token: 0x0600510A RID: 20746 RVA: 0x001EECAC File Offset: 0x001ECEAC
+		// Token: 0x06005190 RID: 20880 RVA: 0x001F1744 File Offset: 0x001EF944
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void ReadXml(XElement element)
 		{
@@ -1972,30 +1972,30 @@ public class SignData
 			this.dilate = float.Parse(element.GetAttribute("dilate"), Utils.StandardCulture);
 		}
 
-		// Token: 0x04003E04 RID: 15876
+		// Token: 0x04003E95 RID: 16021
 		public string font;
 
-		// Token: 0x04003E05 RID: 15877
+		// Token: 0x04003E96 RID: 16022
 		public string text;
 
-		// Token: 0x04003E06 RID: 15878
+		// Token: 0x04003E97 RID: 16023
 		public float direction;
 
-		// Token: 0x04003E07 RID: 15879
+		// Token: 0x04003E98 RID: 16024
 		public float spacing;
 
-		// Token: 0x04003E08 RID: 15880
+		// Token: 0x04003E99 RID: 16025
 		public float softness;
 
-		// Token: 0x04003E09 RID: 15881
+		// Token: 0x04003E9A RID: 16026
 		public float dilate;
 	}
 
-	// Token: 0x02000A75 RID: 2677
+	// Token: 0x02000A86 RID: 2694
 	public class PolygonSignLayer : SignData.SignLayer
 	{
-		// Token: 0x170008C3 RID: 2243
-		// (get) Token: 0x0600510B RID: 20747 RVA: 0x001EED6C File Offset: 0x001ECF6C
+		// Token: 0x170008D5 RID: 2261
+		// (get) Token: 0x06005191 RID: 20881 RVA: 0x001F1804 File Offset: 0x001EFA04
 		public override string defaultName
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -2005,8 +2005,8 @@ public class SignData
 			}
 		}
 
-		// Token: 0x170008C4 RID: 2244
-		// (get) Token: 0x0600510C RID: 20748 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+		// Token: 0x170008D6 RID: 2262
+		// (get) Token: 0x06005192 RID: 20882 RVA: 0x0002F168 File Offset: 0x0002D368
 		public override SignData.SignLayer.LayerType TypeId
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -2016,7 +2016,7 @@ public class SignData
 			}
 		}
 
-		// Token: 0x0600510D RID: 20749 RVA: 0x001EED74 File Offset: 0x001ECF74
+		// Token: 0x06005193 RID: 20883 RVA: 0x001F180C File Offset: 0x001EFA0C
 		public PolygonSignLayer()
 		{
 			this.name = "Polygon";
@@ -2029,7 +2029,7 @@ public class SignData
 			this.shapeMode = SignData.PolygonSignLayer.ShapeMode.Normal;
 		}
 
-		// Token: 0x0600510E RID: 20750 RVA: 0x001EEDD8 File Offset: 0x001ECFD8
+		// Token: 0x06005194 RID: 20884 RVA: 0x001F1870 File Offset: 0x001EFA70
 		public PolygonSignLayer(string name, Vector2 position, float rotation, Vector2 scale, SignData.SignRenderSettings renderSettings, List<SignData.SignWarp> warps, int sides, float smoothness, float starify, float softness, float dilate, float frequency, SignData.PolygonSignLayer.ShapeMode shapeMode)
 			: base(name, position, rotation, scale, renderSettings, warps)
 		{
@@ -2042,13 +2042,13 @@ public class SignData
 			this.shapeMode = shapeMode;
 		}
 
-		// Token: 0x0600510F RID: 20751 RVA: 0x001EEE2C File Offset: 0x001ED02C
+		// Token: 0x06005195 RID: 20885 RVA: 0x001F18C4 File Offset: 0x001EFAC4
 		public override SignData.SignLayer Clone()
 		{
 			return new SignData.PolygonSignLayer(this.name, this.transform.position, this.transform.rotation, this.transform.scale, this.renderSettings, base.CloneWarps(), this.sides, this.smoothness, this.starify, this.softness, this.dilate, this.frequency, this.shapeMode);
 		}
 
-		// Token: 0x06005110 RID: 20752 RVA: 0x001EEE9C File Offset: 0x001ED09C
+		// Token: 0x06005196 RID: 20886 RVA: 0x001F1934 File Offset: 0x001EFB34
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void InternalWrite(BinaryWriter bw)
 		{
@@ -2061,7 +2061,7 @@ public class SignData
 			bw.Write((byte)this.shapeMode);
 		}
 
-		// Token: 0x06005111 RID: 20753 RVA: 0x001EEF00 File Offset: 0x001ED100
+		// Token: 0x06005197 RID: 20887 RVA: 0x001F1998 File Offset: 0x001EFB98
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void InternalRead(BinaryReader br)
 		{
@@ -2074,7 +2074,7 @@ public class SignData
 			this.shapeMode = (SignData.PolygonSignLayer.ShapeMode)br.ReadByte();
 		}
 
-		// Token: 0x06005112 RID: 20754 RVA: 0x001EEF64 File Offset: 0x001ED164
+		// Token: 0x06005198 RID: 20888 RVA: 0x001F19FC File Offset: 0x001EFBFC
 		public override void WriteXml(XmlElement element)
 		{
 			base.WriteXml(element);
@@ -2087,7 +2087,7 @@ public class SignData
 			element.SetAttrib("shapeMode", this.shapeMode.ToString());
 		}
 
-		// Token: 0x06005113 RID: 20755 RVA: 0x001EF020 File Offset: 0x001ED220
+		// Token: 0x06005199 RID: 20889 RVA: 0x001F1AB8 File Offset: 0x001EFCB8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void ReadXml(XElement element)
 		{
@@ -2126,46 +2126,46 @@ public class SignData
 			this.shapeMode = SignData.PolygonSignLayer.ShapeMode.Normal;
 		}
 
-		// Token: 0x04003E0A RID: 15882
+		// Token: 0x04003E9B RID: 16027
 		public int sides;
 
-		// Token: 0x04003E0B RID: 15883
+		// Token: 0x04003E9C RID: 16028
 		public float smoothness;
 
-		// Token: 0x04003E0C RID: 15884
+		// Token: 0x04003E9D RID: 16029
 		public float starify;
 
-		// Token: 0x04003E0D RID: 15885
+		// Token: 0x04003E9E RID: 16030
 		public float softness;
 
-		// Token: 0x04003E0E RID: 15886
+		// Token: 0x04003E9F RID: 16031
 		public float dilate;
 
-		// Token: 0x04003E0F RID: 15887
+		// Token: 0x04003EA0 RID: 16032
 		public float frequency;
 
-		// Token: 0x04003E10 RID: 15888
+		// Token: 0x04003EA1 RID: 16033
 		public SignData.PolygonSignLayer.ShapeMode shapeMode;
 
-		// Token: 0x02000A76 RID: 2678
+		// Token: 0x02000A87 RID: 2695
 		public enum ShapeMode : byte
 		{
-			// Token: 0x04003E12 RID: 15890
+			// Token: 0x04003EA3 RID: 16035
 			Normal,
-			// Token: 0x04003E13 RID: 15891
+			// Token: 0x04003EA4 RID: 16036
 			Invert,
-			// Token: 0x04003E14 RID: 15892
+			// Token: 0x04003EA5 RID: 16037
 			Line,
-			// Token: 0x04003E15 RID: 15893
+			// Token: 0x04003EA6 RID: 16038
 			Ripple
 		}
 	}
 
-	// Token: 0x02000A77 RID: 2679
+	// Token: 0x02000A88 RID: 2696
 	public class NoiseSignLayer : SignData.SignLayer
 	{
-		// Token: 0x170008C5 RID: 2245
-		// (get) Token: 0x06005114 RID: 20756 RVA: 0x001EF151 File Offset: 0x001ED351
+		// Token: 0x170008D7 RID: 2263
+		// (get) Token: 0x0600519A RID: 20890 RVA: 0x001F1BE9 File Offset: 0x001EFDE9
 		public override string defaultName
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -2175,8 +2175,8 @@ public class SignData
 			}
 		}
 
-		// Token: 0x170008C6 RID: 2246
-		// (get) Token: 0x06005115 RID: 20757 RVA: 0x00046C7A File Offset: 0x00044E7A
+		// Token: 0x170008D8 RID: 2264
+		// (get) Token: 0x0600519B RID: 20891 RVA: 0x00046EDA File Offset: 0x000450DA
 		public override SignData.SignLayer.LayerType TypeId
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -2186,7 +2186,7 @@ public class SignData
 			}
 		}
 
-		// Token: 0x06005116 RID: 20758 RVA: 0x001EF158 File Offset: 0x001ED358
+		// Token: 0x0600519C RID: 20892 RVA: 0x001F1BF0 File Offset: 0x001EFDF0
 		public NoiseSignLayer()
 		{
 			this.name = "Noise";
@@ -2197,7 +2197,7 @@ public class SignData
 			this.fade = 0f;
 		}
 
-		// Token: 0x06005117 RID: 20759 RVA: 0x001EF1A5 File Offset: 0x001ED3A5
+		// Token: 0x0600519D RID: 20893 RVA: 0x001F1C3D File Offset: 0x001EFE3D
 		public NoiseSignLayer(string name, Vector2 position, float rotation, Vector2 scale, SignData.SignRenderSettings renderSettings, List<SignData.SignWarp> warps, int seed, int detail, float softness, float dilate, float fade)
 			: base(name, position, rotation, scale, renderSettings, warps)
 		{
@@ -2208,13 +2208,13 @@ public class SignData
 			this.fade = fade;
 		}
 
-		// Token: 0x06005118 RID: 20760 RVA: 0x001EF1E0 File Offset: 0x001ED3E0
+		// Token: 0x0600519E RID: 20894 RVA: 0x001F1C78 File Offset: 0x001EFE78
 		public override SignData.SignLayer Clone()
 		{
 			return new SignData.NoiseSignLayer(this.name, this.transform.position, this.transform.rotation, this.transform.scale, this.renderSettings, base.CloneWarps(), this.seed, this.detail, this.softness, this.dilate, this.fade);
 		}
 
-		// Token: 0x06005119 RID: 20761 RVA: 0x001EF244 File Offset: 0x001ED444
+		// Token: 0x0600519F RID: 20895 RVA: 0x001F1CDC File Offset: 0x001EFEDC
 		public override void WriteXml(XmlElement element)
 		{
 			base.WriteXml(element);
@@ -2225,7 +2225,7 @@ public class SignData
 			element.SetAttrib("fade", this.fade.ToCultureInvariantString());
 		}
 
-		// Token: 0x0600511A RID: 20762 RVA: 0x001EF2CC File Offset: 0x001ED4CC
+		// Token: 0x060051A0 RID: 20896 RVA: 0x001F1D64 File Offset: 0x001EFF64
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void ReadXml(XElement element)
 		{
@@ -2243,7 +2243,7 @@ public class SignData
 			this.fade = 0f;
 		}
 
-		// Token: 0x0600511B RID: 20763 RVA: 0x001EF387 File Offset: 0x001ED587
+		// Token: 0x060051A1 RID: 20897 RVA: 0x001F1E1F File Offset: 0x001F001F
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void InternalWrite(BinaryWriter bw)
 		{
@@ -2254,7 +2254,7 @@ public class SignData
 			bw.Write(this.fade);
 		}
 
-		// Token: 0x0600511C RID: 20764 RVA: 0x001EF3C5 File Offset: 0x001ED5C5
+		// Token: 0x060051A2 RID: 20898 RVA: 0x001F1E5D File Offset: 0x001F005D
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void InternalRead(BinaryReader br)
 		{
@@ -2265,28 +2265,28 @@ public class SignData
 			this.fade = br.ReadSingle();
 		}
 
-		// Token: 0x04003E16 RID: 15894
+		// Token: 0x04003EA7 RID: 16039
 		public int seed;
 
-		// Token: 0x04003E17 RID: 15895
+		// Token: 0x04003EA8 RID: 16040
 		public int detail;
 
-		// Token: 0x04003E18 RID: 15896
+		// Token: 0x04003EA9 RID: 16041
 		public float softness;
 
-		// Token: 0x04003E19 RID: 15897
+		// Token: 0x04003EAA RID: 16042
 		public float dilate;
 
-		// Token: 0x04003E1A RID: 15898
+		// Token: 0x04003EAB RID: 16043
 		public float fade;
 	}
 
-	// Token: 0x02000A78 RID: 2680
+	// Token: 0x02000A89 RID: 2697
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static class DefaultSignData
 	{
-		// Token: 0x170008C7 RID: 2247
-		// (get) Token: 0x0600511D RID: 20765 RVA: 0x001EF404 File Offset: 0x001ED604
+		// Token: 0x170008D9 RID: 2265
+		// (get) Token: 0x060051A3 RID: 20899 RVA: 0x001F1E9C File Offset: 0x001F009C
 		public static List<SignData.SignLayer> PolygonGroupLayers
 		{
 			get
@@ -2301,37 +2301,37 @@ public class SignData
 			}
 		}
 
-		// Token: 0x04003E1B RID: 15899
+		// Token: 0x04003EAC RID: 16044
 		public static readonly Color color1 = new Color(0.318f, 0.396f, 0.686f);
 
-		// Token: 0x04003E1C RID: 15900
+		// Token: 0x04003EAD RID: 16045
 		public static readonly Color color2 = new Color(0.286f, 0.518f, 1f);
 
-		// Token: 0x04003E1D RID: 15901
+		// Token: 0x04003EAE RID: 16046
 		public static readonly Color color3 = new Color(0.514f, 0.671f, 1f);
 
-		// Token: 0x04003E1E RID: 15902
+		// Token: 0x04003EAF RID: 16047
 		public static readonly Vector2 textSize = 0.65f * Vector2.one;
 
-		// Token: 0x04003E1F RID: 15903
+		// Token: 0x04003EB0 RID: 16048
 		public const float textRotation = 8f;
 
-		// Token: 0x04003E20 RID: 15904
+		// Token: 0x04003EB1 RID: 16049
 		public const string font1 = "LiberationSans";
 
-		// Token: 0x04003E21 RID: 15905
+		// Token: 0x04003EB2 RID: 16050
 		public const string font2 = "AmaticSC";
 
-		// Token: 0x04003E22 RID: 15906
+		// Token: 0x04003EB3 RID: 16051
 		public const string text = "Hello World!";
 
-		// Token: 0x04003E23 RID: 15907
+		// Token: 0x04003EB4 RID: 16052
 		public const int polygonSides = 5;
 
-		// Token: 0x04003E24 RID: 15908
+		// Token: 0x04003EB5 RID: 16053
 		public const float polygonSmoothness = 0.2f;
 
-		// Token: 0x04003E25 RID: 15909
+		// Token: 0x04003EB6 RID: 16054
 		public const float polygonStarify = 0.5f;
 	}
 }

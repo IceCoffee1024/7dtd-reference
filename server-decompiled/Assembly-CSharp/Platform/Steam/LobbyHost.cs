@@ -5,20 +5,20 @@ using UnityEngine;
 
 namespace Platform.Steam
 {
-	// Token: 0x02001C6C RID: 7276
+	// Token: 0x02001C93 RID: 7315
 	public class LobbyHost : ILobbyHost
 	{
-		// Token: 0x17001A78 RID: 6776
-		// (get) Token: 0x0600D74C RID: 55116 RVA: 0x004D7833 File Offset: 0x004D5A33
-		// (set) Token: 0x0600D74D RID: 55117 RVA: 0x004D783B File Offset: 0x004D5A3B
+		// Token: 0x17001AEA RID: 6890
+		// (get) Token: 0x0600D8DE RID: 55518 RVA: 0x004DDD4F File Offset: 0x004DBF4F
+		// (set) Token: 0x0600D8DF RID: 55519 RVA: 0x004DDD57 File Offset: 0x004DBF57
 		public string LobbyId
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		} = string.Empty;
 
-		// Token: 0x17001A79 RID: 6777
-		// (get) Token: 0x0600D74E RID: 55118 RVA: 0x004D7844 File Offset: 0x004D5A44
+		// Token: 0x17001AEB RID: 6891
+		// (get) Token: 0x0600D8E0 RID: 55520 RVA: 0x004DDD60 File Offset: 0x004DBF60
 		public bool IsInLobby
 		{
 			get
@@ -27,8 +27,8 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x17001A7A RID: 6778
-		// (get) Token: 0x0600D74F RID: 55119 RVA: 0x0001FF5D File Offset: 0x0001E15D
+		// Token: 0x17001AEC RID: 6892
+		// (get) Token: 0x0600D8E1 RID: 55521 RVA: 0x00020021 File Offset: 0x0001E221
 		public bool AllowClientLobby
 		{
 			get
@@ -37,9 +37,9 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x17001A7B RID: 6779
-		// (get) Token: 0x0600D750 RID: 55120 RVA: 0x004D7855 File Offset: 0x004D5A55
-		// (set) Token: 0x0600D751 RID: 55121 RVA: 0x004D785D File Offset: 0x004D5A5D
+		// Token: 0x17001AED RID: 6893
+		// (get) Token: 0x0600D8E2 RID: 55522 RVA: 0x004DDD71 File Offset: 0x004DBF71
+		// (set) Token: 0x0600D8E3 RID: 55523 RVA: 0x004DDD79 File Offset: 0x004DBF79
 		public CSteamID CurrentLobby
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -55,7 +55,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D752 RID: 55122 RVA: 0x004D787C File Offset: 0x004D5A7C
+		// Token: 0x0600D8E4 RID: 55524 RVA: 0x004DDD98 File Offset: 0x004DBF98
 		public void Init(IPlatform _owner)
 		{
 			this.owner = _owner;
@@ -71,7 +71,7 @@ namespace Platform.Steam
 			};
 		}
 
-		// Token: 0x0600D753 RID: 55123 RVA: 0x004D789C File Offset: 0x004D5A9C
+		// Token: 0x0600D8E5 RID: 55525 RVA: 0x004DDDB8 File Offset: 0x004DBFB8
 		public void JoinLobby(string _lobbyId, Action<LobbyHostJoinResult> _onComplete)
 		{
 			if (this.CurrentLobby != CSteamID.Nil)
@@ -94,7 +94,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D754 RID: 55124 RVA: 0x004D78F5 File Offset: 0x004D5AF5
+		// Token: 0x0600D8E6 RID: 55526 RVA: 0x004DDE11 File Offset: 0x004DC011
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void JoinLobby(ulong _steamLobbyId)
 		{
@@ -106,7 +106,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D755 RID: 55125 RVA: 0x004D7926 File Offset: 0x004D5B26
+		// Token: 0x0600D8E7 RID: 55527 RVA: 0x004DDE42 File Offset: 0x004DC042
 		public void UpdateLobby(GameServerInfo _gameServerInfo)
 		{
 			if (this.CurrentLobby != CSteamID.Nil)
@@ -122,7 +122,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D756 RID: 55126 RVA: 0x004D7965 File Offset: 0x004D5B65
+		// Token: 0x0600D8E8 RID: 55528 RVA: 0x004DDE81 File Offset: 0x004DC081
 		public void ExitLobby()
 		{
 			Log.Out("[Steamworks.NET] Exiting Lobby");
@@ -134,7 +134,7 @@ namespace Platform.Steam
 			this.gameServerInfo = null;
 		}
 
-		// Token: 0x0600D757 RID: 55127 RVA: 0x004D79A0 File Offset: 0x004D5BA0
+		// Token: 0x0600D8E9 RID: 55529 RVA: 0x004DDEBC File Offset: 0x004DC0BC
 		public void UpdateGameTimePlayers(ulong _time, int _players)
 		{
 			if (this.owner.User.UserStatus != EUserStatus.LoggedIn || this.gameServerInfo == null || this.CurrentLobby == CSteamID.Nil)
@@ -151,7 +151,7 @@ namespace Platform.Steam
 			SteamMatchmaking.SetLobbyData(this.CurrentLobby, GameInfoInt.CurrentPlayers.ToStringCached<GameInfoInt>(), _players.ToString());
 		}
 
-		// Token: 0x0600D758 RID: 55128 RVA: 0x004D7A4C File Offset: 0x004D5C4C
+		// Token: 0x0600D8EA RID: 55530 RVA: 0x004DDF68 File Offset: 0x004DC168
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void PassLobbyToInviteListener(CSteamID _lobbyId)
 		{
@@ -166,7 +166,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D759 RID: 55129 RVA: 0x004D7AA8 File Offset: 0x004D5CA8
+		// Token: 0x0600D8EB RID: 55531 RVA: 0x004DDFC4 File Offset: 0x004DC1C4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void LobbyCreated_Callback(LobbyCreated_t _val)
 		{
@@ -206,7 +206,7 @@ namespace Platform.Steam
 			Log.Out("[Steamworks.NET] Lobby creation failed: " + _val.m_eResult.ToString());
 		}
 
-		// Token: 0x0600D75A RID: 55130 RVA: 0x004D7C8C File Offset: 0x004D5E8C
+		// Token: 0x0600D8EC RID: 55532 RVA: 0x004DE1A8 File Offset: 0x004DC3A8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void createLobby()
 		{
@@ -232,7 +232,7 @@ namespace Platform.Steam
 			SteamMatchmaking.CreateLobby(elobbyType2, this.gameServerInfo.GetValue(GameInfoInt.MaxPlayers) + 4);
 		}
 
-		// Token: 0x0600D75B RID: 55131 RVA: 0x004D7CEC File Offset: 0x004D5EEC
+		// Token: 0x0600D8ED RID: 55533 RVA: 0x004DE208 File Offset: 0x004DC408
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void LobbyEnter_Callback(LobbyEnter_t _val)
 		{
@@ -243,7 +243,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D75C RID: 55132 RVA: 0x004D7D43 File Offset: 0x004D5F43
+		// Token: 0x0600D8EE RID: 55534 RVA: 0x004DE25F File Offset: 0x004DC45F
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Lobby_JoinRequested(GameLobbyJoinRequested_t _val)
 		{
@@ -251,7 +251,7 @@ namespace Platform.Steam
 			this.PassLobbyToInviteListener(_val.m_steamIDLobby);
 		}
 
-		// Token: 0x0600D75D RID: 55133 RVA: 0x004D7D5C File Offset: 0x004D5F5C
+		// Token: 0x0600D8EF RID: 55535 RVA: 0x004DE278 File Offset: 0x004DC478
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Lobby_DataUpdate(LobbyDataUpdate_t _val)
 		{
@@ -268,7 +268,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D75E RID: 55134 RVA: 0x004D7DB8 File Offset: 0x004D5FB8
+		// Token: 0x0600D8F0 RID: 55536 RVA: 0x004DE2D4 File Offset: 0x004DC4D4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void StartGameWithLobby(CSteamID _lobbyId)
 		{
@@ -292,43 +292,43 @@ namespace Platform.Steam
 			Log.Warning("[Steamworks.NET] Tried starting a game with an invalid lobby");
 		}
 
-		// Token: 0x0400A35E RID: 41822
+		// Token: 0x0400A490 RID: 42128
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform owner;
 
-		// Token: 0x0400A360 RID: 41824
+		// Token: 0x0400A492 RID: 42130
 		[PublicizedFrom(EAccessModifier.Private)]
 		public CSteamID currentLobby = CSteamID.Nil;
 
-		// Token: 0x0400A361 RID: 41825
+		// Token: 0x0400A493 RID: 42131
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int lobbyCreationAttempts;
 
-		// Token: 0x0400A362 RID: 41826
+		// Token: 0x0400A494 RID: 42132
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float timeLastWorldTimeUpdate;
 
-		// Token: 0x0400A363 RID: 41827
+		// Token: 0x0400A495 RID: 42133
 		[PublicizedFrom(EAccessModifier.Private)]
 		public GameServerInfo gameServerInfo;
 
-		// Token: 0x0400A364 RID: 41828
+		// Token: 0x0400A496 RID: 42134
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Callback<LobbyCreated_t> m_LobbyCreated;
 
-		// Token: 0x0400A365 RID: 41829
+		// Token: 0x0400A497 RID: 42135
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Callback<LobbyEnter_t> m_LobbyEnter;
 
-		// Token: 0x0400A366 RID: 41830
+		// Token: 0x0400A498 RID: 42136
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Callback<GameLobbyJoinRequested_t> m_gameLobbyJoinRequested;
 
-		// Token: 0x0400A367 RID: 41831
+		// Token: 0x0400A499 RID: 42137
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Callback<LobbyDataUpdate_t> m_lobbyDataUpdate;
 
-		// Token: 0x0400A368 RID: 41832
+		// Token: 0x0400A49A RID: 42138
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ulong lobbyJoinRequestForId;
 	}

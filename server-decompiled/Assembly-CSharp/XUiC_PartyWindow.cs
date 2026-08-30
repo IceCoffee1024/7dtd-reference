@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F8D RID: 3981
+// Token: 0x02000FA6 RID: 4006
 [Preserve]
 public class XUiC_PartyWindow : XUiController
 {
-	// Token: 0x06007D8D RID: 32141 RVA: 0x002FB080 File Offset: 0x002F9280
+	// Token: 0x06007E7F RID: 32383 RVA: 0x002FF854 File Offset: 0x002FDA54
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -33,7 +33,7 @@ public class XUiC_PartyWindow : XUiController
 		return true;
 	}
 
-	// Token: 0x06007D8E RID: 32142 RVA: 0x002FB1B8 File Offset: 0x002F93B8
+	// Token: 0x06007E80 RID: 32384 RVA: 0x002FF98C File Offset: 0x002FDB8C
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -43,7 +43,7 @@ public class XUiC_PartyWindow : XUiController
 		this.playerDead = this.xui.playerUI.entityPlayer.IsDead();
 	}
 
-	// Token: 0x06007D8F RID: 32143 RVA: 0x002FB24C File Offset: 0x002F944C
+	// Token: 0x06007E81 RID: 32385 RVA: 0x002FFA20 File Offset: 0x002FDC20
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -52,7 +52,7 @@ public class XUiC_PartyWindow : XUiController
 		this.xui.playerUI.entityPlayer.PartyLeave -= this.Player_PartyChanged;
 	}
 
-	// Token: 0x06007D90 RID: 32144 RVA: 0x002FB2C4 File Offset: 0x002F94C4
+	// Token: 0x06007E82 RID: 32386 RVA: 0x002FFA98 File Offset: 0x002FDC98
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -72,14 +72,14 @@ public class XUiC_PartyWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007D91 RID: 32145 RVA: 0x0008AB7B File Offset: 0x00088D7B
+	// Token: 0x06007E83 RID: 32387 RVA: 0x0008B2BB File Offset: 0x000894BB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Player_PartyChanged(Party _affectedParty, EntityPlayer _player)
 	{
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06007D92 RID: 32146 RVA: 0x002FB34C File Offset: 0x002F954C
+	// Token: 0x06007E84 RID: 32388 RVA: 0x002FFB20 File Offset: 0x002FDD20
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool updateVoiceState()
 	{
@@ -104,19 +104,19 @@ public class XUiC_PartyWindow : XUiController
 		return true;
 	}
 
-	// Token: 0x04005D01 RID: 23809
+	// Token: 0x04005DC8 RID: 24008
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float ForcedRefreshTime = 1f;
 
-	// Token: 0x04005D02 RID: 23810
+	// Token: 0x04005DC9 RID: 24009
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool voiceActive;
 
-	// Token: 0x04005D03 RID: 23811
+	// Token: 0x04005DCA RID: 24010
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool playerDead;
 
-	// Token: 0x04005D04 RID: 23812
+	// Token: 0x04005DCB RID: 24011
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float updateTime;
 }

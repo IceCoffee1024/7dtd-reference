@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000978 RID: 2424
+// Token: 0x02000989 RID: 2441
 [Preserve]
 public class ObjectiveBlockPlace : BaseObjective
 {
-	// Token: 0x1700077E RID: 1918
-	// (get) Token: 0x060046FF RID: 18175 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000790 RID: 1936
+	// (get) Token: 0x06004785 RID: 18309 RVA: 0x00020021 File Offset: 0x0001E221
 	public override BaseObjective.ObjectiveValueTypes ObjectiveValueType
 	{
 		get
@@ -15,7 +15,7 @@ public class ObjectiveBlockPlace : BaseObjective
 		}
 	}
 
-	// Token: 0x06004700 RID: 18176 RVA: 0x001BE344 File Offset: 0x001BC544
+	// Token: 0x06004786 RID: 18310 RVA: 0x001C0B38 File Offset: 0x001BED38
 	public override void SetupObjective()
 	{
 		this.keyword = Localization.Get("ObjectiveBlockPlace_keyword", false, null);
@@ -23,27 +23,27 @@ public class ObjectiveBlockPlace : BaseObjective
 		this.neededCount = Convert.ToInt32(this.Value);
 	}
 
-	// Token: 0x06004701 RID: 18177 RVA: 0x001BE3A8 File Offset: 0x001BC5A8
+	// Token: 0x06004787 RID: 18311 RVA: 0x001C0B9C File Offset: 0x001BED9C
 	public override void SetupDisplay()
 	{
 		base.Description = string.Format(this.keyword, this.localizedName);
 		this.StatusText = string.Format("{0}/{1}", base.CurrentValue, this.neededCount);
 	}
 
-	// Token: 0x06004702 RID: 18178 RVA: 0x001BE3E7 File Offset: 0x001BC5E7
+	// Token: 0x06004788 RID: 18312 RVA: 0x001C0BDB File Offset: 0x001BEDDB
 	public override void AddHooks()
 	{
 		QuestEventManager.Current.BlockPlace -= this.Current_BlockPlace;
 		QuestEventManager.Current.BlockPlace += this.Current_BlockPlace;
 	}
 
-	// Token: 0x06004703 RID: 18179 RVA: 0x001BE415 File Offset: 0x001BC615
+	// Token: 0x06004789 RID: 18313 RVA: 0x001C0C09 File Offset: 0x001BEE09
 	public override void RemoveHooks()
 	{
 		QuestEventManager.Current.BlockPlace -= this.Current_BlockPlace;
 	}
 
-	// Token: 0x06004704 RID: 18180 RVA: 0x001BE430 File Offset: 0x001BC630
+	// Token: 0x0600478A RID: 18314 RVA: 0x001C0C24 File Offset: 0x001BEE24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_BlockPlace(string blockname, Vector3i blockPos)
 	{
@@ -72,7 +72,7 @@ public class ObjectiveBlockPlace : BaseObjective
 		}
 	}
 
-	// Token: 0x06004705 RID: 18181 RVA: 0x001BE4DC File Offset: 0x001BC6DC
+	// Token: 0x0600478B RID: 18315 RVA: 0x001C0CD0 File Offset: 0x001BEED0
 	public override void Refresh()
 	{
 		if ((int)base.CurrentValue > this.neededCount)
@@ -90,7 +90,7 @@ public class ObjectiveBlockPlace : BaseObjective
 		}
 	}
 
-	// Token: 0x06004706 RID: 18182 RVA: 0x001BE53C File Offset: 0x001BC73C
+	// Token: 0x0600478C RID: 18316 RVA: 0x001C0D30 File Offset: 0x001BEF30
 	public override BaseObjective Clone()
 	{
 		ObjectiveBlockPlace objectiveBlockPlace = new ObjectiveBlockPlace();
@@ -98,11 +98,11 @@ public class ObjectiveBlockPlace : BaseObjective
 		return objectiveBlockPlace;
 	}
 
-	// Token: 0x040038D5 RID: 14549
+	// Token: 0x04003966 RID: 14694
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string localizedName = "";
 
-	// Token: 0x040038D6 RID: 14550
+	// Token: 0x04003967 RID: 14695
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int neededCount;
 }

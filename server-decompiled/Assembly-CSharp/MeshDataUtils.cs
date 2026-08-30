@@ -5,10 +5,10 @@ using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x02000B55 RID: 2901
+// Token: 0x02000B67 RID: 2919
 public static class MeshDataUtils
 {
-	// Token: 0x060057D6 RID: 22486 RVA: 0x002193BC File Offset: 0x002175BC
+	// Token: 0x0600585E RID: 22622 RVA: 0x0021C0D8 File Offset: 0x0021A2D8
 	public static void CopyInterleaved(int elementSize, int offset, int stride, ReadOnlySpan<byte> src, Span<byte> dest)
 	{
 		int num = 0;
@@ -21,7 +21,7 @@ public static class MeshDataUtils
 		}
 	}
 
-	// Token: 0x060057D7 RID: 22487 RVA: 0x0021940C File Offset: 0x0021760C
+	// Token: 0x0600585F RID: 22623 RVA: 0x0021C128 File Offset: 0x0021A328
 	public static MeshDataLayout SetAttributes(Mesh.MeshData meshData, ReadOnlySpan<Vector3> vertices, ReadOnlySpan<int> indices, ReadOnlySpan<Vector3> normals, ReadOnlySpan<Vector4> tangents, ReadOnlySpan<Color> colors, ReadOnlySpan<Vector2> texCoord0s, ReadOnlySpan<Vector2> texCoord1s, NativeList<VertexAttributeDescriptor> vertexAttributesOut)
 	{
 		int num = 0;
@@ -102,7 +102,7 @@ public static class MeshDataUtils
 		return meshDataLayout;
 	}
 
-	// Token: 0x060057D8 RID: 22488 RVA: 0x002195C8 File Offset: 0x002177C8
+	// Token: 0x06005860 RID: 22624 RVA: 0x0021C2E4 File Offset: 0x0021A4E4
 	public static void SetSubmesh(Mesh.MeshData meshData, int vertexCount, int indexCount, Bounds bounds)
 	{
 		meshData.subMeshCount = 1;
@@ -113,7 +113,7 @@ public static class MeshDataUtils
 		}, MeshUpdateFlags.DontValidateIndices | MeshUpdateFlags.DontResetBoneBounds | MeshUpdateFlags.DontNotifyMeshUsers | MeshUpdateFlags.DontRecalculateBounds);
 	}
 
-	// Token: 0x060057D9 RID: 22489 RVA: 0x00219604 File Offset: 0x00217804
+	// Token: 0x06005861 RID: 22625 RVA: 0x0021C320 File Offset: 0x0021A520
 	public unsafe static Bounds RecalculateBounds(ReadOnlySpan<Vector3> vertices)
 	{
 		Bounds bounds = new Bounds(*vertices[0], Vector3.zero);
@@ -124,14 +124,14 @@ public static class MeshDataUtils
 		return bounds;
 	}
 
-	// Token: 0x060057DA RID: 22490 RVA: 0x00219651 File Offset: 0x00217851
+	// Token: 0x06005862 RID: 22626 RVA: 0x0021C36D File Offset: 0x0021A56D
 	public static void ApplyMeshDataCompression(Mesh.MeshData meshData, NativeArray<VertexAttributeDescriptor> vertexAttributes)
 	{
 		GameUtils.ApplyCompressedVertexAttributes(in vertexAttributes, false);
 		meshData.SetVertexBufferParams(meshData.vertexCount, vertexAttributes);
 	}
 
-	// Token: 0x060057DB RID: 22491 RVA: 0x00219670 File Offset: 0x00217870
+	// Token: 0x06005863 RID: 22627 RVA: 0x0021C38C File Offset: 0x0021A58C
 	public unsafe static void CalculateNormals(ReadOnlySpan<Vector3> vertices, ReadOnlySpan<int> indices, Span<Vector3> normals)
 	{
 		int num = Math.Min(vertices.Length, normals.Length);
@@ -176,7 +176,7 @@ public static class MeshDataUtils
 		}
 	}
 
-	// Token: 0x060057DC RID: 22492 RVA: 0x00219858 File Offset: 0x00217A58
+	// Token: 0x06005864 RID: 22628 RVA: 0x0021C574 File Offset: 0x0021A774
 	[PublicizedFrom(EAccessModifier.Private)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public unsafe static void AddTriangleNormal(ref Span<Vector3> normals, NativeParallelMultiHashMap<Vector3, int> vertexToIndices, NativeArray<int> normalsAdded, Vector3 vertex, Vector3 normal)
@@ -190,13 +190,13 @@ public static class MeshDataUtils
 		}
 	}
 
-	// Token: 0x060057DD RID: 22493 RVA: 0x002198DC File Offset: 0x00217ADC
+	// Token: 0x06005865 RID: 22629 RVA: 0x0021C5F8 File Offset: 0x0021A7F8
 	public unsafe static AtomicSafeHandleScope CreateNativeArray<[IsUnmanaged] T>(T* ptr, int length, out NativeArray<T> array) where T : struct, ValueType
 	{
 		array = NativeArrayUnsafeUtility.ConvertExistingDataToNativeArray<T>((void*)ptr, length, Allocator.None);
 		return default(AtomicSafeHandleScope);
 	}
 
-	// Token: 0x040043D5 RID: 17365
+	// Token: 0x04004470 RID: 17520
 	public const MeshUpdateFlags DoNothing = MeshUpdateFlags.DontValidateIndices | MeshUpdateFlags.DontResetBoneBounds | MeshUpdateFlags.DontNotifyMeshUsers | MeshUpdateFlags.DontRecalculateBounds;
 }

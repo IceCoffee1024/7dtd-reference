@@ -5,11 +5,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019AE RID: 6574
+	// Token: 0x020019D4 RID: 6612
 	[Preserve]
 	public class ActionUnloadItems : ActionBaseItemAction
 	{
-		// Token: 0x0600C85F RID: 51295 RVA: 0x0049AB94 File Offset: 0x00498D94
+		// Token: 0x0600C9E6 RID: 51686 RVA: 0x004A0EEC File Offset: 0x0049F0EC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override bool HandleItemStackChange(ref ItemStack stack, EntityPlayer player)
 		{
@@ -32,7 +32,7 @@ namespace GameEvent.SequenceActions
 			return false;
 		}
 
-		// Token: 0x0600C860 RID: 51296 RVA: 0x0049AC4C File Offset: 0x00498E4C
+		// Token: 0x0600C9E7 RID: 51687 RVA: 0x004A0FA4 File Offset: 0x0049F1A4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnClientActionEnded(EntityPlayer player)
 		{
@@ -57,14 +57,14 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C861 RID: 51297 RVA: 0x0049AD0E File Offset: 0x00498F0E
+		// Token: 0x0600C9E8 RID: 51688 RVA: 0x004A1066 File Offset: 0x0049F266
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
 			return new ActionUnloadItems();
 		}
 
-		// Token: 0x04009810 RID: 38928
+		// Token: 0x04009939 RID: 39225
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<ItemStack> ItemStacks = new List<ItemStack>();
 	}

@@ -3,10 +3,10 @@ using System.Xml;
 using System.Xml.Linq;
 using UnityEngine;
 
-// Token: 0x02000D65 RID: 3429
+// Token: 0x02000D79 RID: 3449
 public struct RemoteWorldInfo
 {
-	// Token: 0x06006826 RID: 26662 RVA: 0x00292834 File Offset: 0x00290A34
+	// Token: 0x060068C2 RID: 26818 RVA: 0x00295988 File Offset: 0x00293B88
 	public RemoteWorldInfo(string _gameName, string _worldName, VersionInformation _gameVersion, long _saveSize)
 	{
 		this.GameName = _gameName;
@@ -15,7 +15,7 @@ public struct RemoteWorldInfo
 		this.SaveSize = _saveSize;
 	}
 
-	// Token: 0x06006827 RID: 26663 RVA: 0x00292854 File Offset: 0x00290A54
+	// Token: 0x060068C3 RID: 26819 RVA: 0x002959A8 File Offset: 0x00293BA8
 	public static bool TryRead(string _filePath, out RemoteWorldInfo _remoteWorldInfo)
 	{
 		if (!SdFile.Exists(_filePath))
@@ -90,7 +90,7 @@ public struct RemoteWorldInfo
 		return flag;
 	}
 
-	// Token: 0x06006828 RID: 26664 RVA: 0x00292A34 File Offset: 0x00290C34
+	// Token: 0x060068C4 RID: 26820 RVA: 0x00295B88 File Offset: 0x00293D88
 	public void Write(string _filePath)
 	{
 		XmlDocument xmlDocument = new XmlDocument();
@@ -103,34 +103,34 @@ public struct RemoteWorldInfo
 		xmlDocument.SdSave(_filePath);
 	}
 
-	// Token: 0x04004FC3 RID: 20419
+	// Token: 0x04005065 RID: 20581
 	public const string FileNameString = "RemoteWorldInfo.xml";
 
-	// Token: 0x04004FC4 RID: 20420
+	// Token: 0x04005066 RID: 20582
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string GameNameString = "gameName";
 
-	// Token: 0x04004FC5 RID: 20421
+	// Token: 0x04005067 RID: 20583
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string WorldNameString = "worldName";
 
-	// Token: 0x04004FC6 RID: 20422
+	// Token: 0x04005068 RID: 20584
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string GameVersionString = "gameVersion";
 
-	// Token: 0x04004FC7 RID: 20423
+	// Token: 0x04005069 RID: 20585
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string SaveSizeString = "saveSize";
 
-	// Token: 0x04004FC8 RID: 20424
+	// Token: 0x0400506A RID: 20586
 	public readonly string GameName;
 
-	// Token: 0x04004FC9 RID: 20425
+	// Token: 0x0400506B RID: 20587
 	public readonly string WorldName;
 
-	// Token: 0x04004FCA RID: 20426
+	// Token: 0x0400506C RID: 20588
 	public readonly VersionInformation GameVersion;
 
-	// Token: 0x04004FCB RID: 20427
+	// Token: 0x0400506D RID: 20589
 	public readonly long SaveSize;
 }

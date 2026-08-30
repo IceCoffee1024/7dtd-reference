@@ -4,10 +4,10 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using Platform;
 
-// Token: 0x02000C44 RID: 3140
+// Token: 0x02000C56 RID: 3158
 public static class GeneratedTextManager
 {
-	// Token: 0x06005F98 RID: 24472 RVA: 0x0025DFD4 File Offset: 0x0025C1D4
+	// Token: 0x06006022 RID: 24610 RVA: 0x00260E74 File Offset: 0x0025F074
 	public static string GetDisplayTextImmediately(AuthoredText _authoredText, bool _checkBlockState, GeneratedTextManager.TextFilteringMode _filteringMode = GeneratedTextManager.TextFilteringMode.Filter, GeneratedTextManager.BbCodeSupportMode _bbSupportMode = GeneratedTextManager.BbCodeSupportMode.SupportedAndAddEscapes)
 	{
 		GeneratedTextManager.AuthoredTextDetails orCreateFilterDetails = GeneratedTextManager.GetOrCreateFilterDetails(_authoredText);
@@ -41,7 +41,7 @@ public static class GeneratedTextManager
 		}
 	}
 
-	// Token: 0x06005F99 RID: 24473 RVA: 0x0025E0A8 File Offset: 0x0025C2A8
+	// Token: 0x06006023 RID: 24611 RVA: 0x00260F48 File Offset: 0x0025F148
 	public static void GetDisplayText(AuthoredText _authoredText, Action<string> _textReadyCallback, bool _runCallbackIfReadyNow, bool _checkBlockState, GeneratedTextManager.TextFilteringMode _filteringMode = GeneratedTextManager.TextFilteringMode.Filter, GeneratedTextManager.BbCodeSupportMode _bbSupportMode = GeneratedTextManager.BbCodeSupportMode.SupportedAndAddEscapes)
 	{
 		GeneratedTextManager.AuthoredTextDetails orCreateFilterDetails = GeneratedTextManager.GetOrCreateFilterDetails(_authoredText);
@@ -113,7 +113,7 @@ public static class GeneratedTextManager
 		}
 	}
 
-	// Token: 0x06005F9A RID: 24474 RVA: 0x0025E2D8 File Offset: 0x0025C4D8
+	// Token: 0x06006024 RID: 24612 RVA: 0x00261178 File Offset: 0x0025F378
 	public static void GetDisplayText(string _text, PlatformUserIdentifierAbs _author, Action<string> _textReadyCallback, bool _checkBlockState, GeneratedTextManager.TextFilteringMode _filteringMode = GeneratedTextManager.TextFilteringMode.Filter, GeneratedTextManager.BbCodeSupportMode _bbSupportMode = GeneratedTextManager.BbCodeSupportMode.SupportedAndAddEscapes)
 	{
 		if (_textReadyCallback == null)
@@ -162,20 +162,20 @@ public static class GeneratedTextManager
 		});
 	}
 
-	// Token: 0x06005F9B RID: 24475 RVA: 0x0025E480 File Offset: 0x0025C680
+	// Token: 0x06006025 RID: 24613 RVA: 0x00261320 File Offset: 0x0025F520
 	public static void PrefilterText(AuthoredText _authoredText, GeneratedTextManager.TextFilteringMode _filteringMode = GeneratedTextManager.TextFilteringMode.Filter)
 	{
 		GeneratedTextManager.GetDisplayText(_authoredText, null, false, false, _filteringMode, GeneratedTextManager.BbCodeSupportMode.SupportedAndAddEscapes);
 	}
 
-	// Token: 0x06005F9C RID: 24476 RVA: 0x0025E490 File Offset: 0x0025C690
+	// Token: 0x06006026 RID: 24614 RVA: 0x00261330 File Offset: 0x0025F530
 	public static bool IsFiltered(AuthoredText _authoredText)
 	{
 		GeneratedTextManager.AuthoredTextDetails authoredTextDetails;
 		return _authoredText != null && (PlatformManager.MultiPlatform.TextCensor == null || string.IsNullOrEmpty(_authoredText.Text) || GameManager.IsDedicatedServer || (GeneratedTextManager.authoredTextReferences.TryGetValue(_authoredText, out authoredTextDetails) && authoredTextDetails.IsFiltered()));
 	}
 
-	// Token: 0x06005F9D RID: 24477 RVA: 0x0025E4DC File Offset: 0x0025C6DC
+	// Token: 0x06006027 RID: 24615 RVA: 0x0026137C File Offset: 0x0025F57C
 	public static bool IsFiltering(AuthoredText _authoredText)
 	{
 		object obj = GeneratedTextManager.lockObj;
@@ -187,7 +187,7 @@ public static class GeneratedTextManager
 		return flag2;
 	}
 
-	// Token: 0x06005F9E RID: 24478 RVA: 0x0025E528 File Offset: 0x0025C728
+	// Token: 0x06006028 RID: 24616 RVA: 0x002613C8 File Offset: 0x0025F5C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool ShouldSkipFiltering(PlatformUserIdentifierAbs _author, GeneratedTextManager.TextFilteringMode _mode)
 	{
@@ -208,7 +208,7 @@ public static class GeneratedTextManager
 		}
 	}
 
-	// Token: 0x06005F9F RID: 24479 RVA: 0x0025E580 File Offset: 0x0025C780
+	// Token: 0x06006029 RID: 24617 RVA: 0x00261420 File Offset: 0x0025F620
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GeneratedTextManager.AuthoredTextDetails GetOrCreateFilterDetails(AuthoredText _authoredText)
 	{
@@ -227,7 +227,7 @@ public static class GeneratedTextManager
 		return authoredTextDetails;
 	}
 
-	// Token: 0x06005FA0 RID: 24480 RVA: 0x0025E5C8 File Offset: 0x0025C7C8
+	// Token: 0x0600602A RID: 24618 RVA: 0x00261468 File Offset: 0x0025F668
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void FilterTextCallback(AuthoredText _authoredText, CensoredTextResult _censorResult, GeneratedTextManager.BbCodeSupportMode _originalBBSupport)
 	{
@@ -282,7 +282,7 @@ public static class GeneratedTextManager
 		}
 	}
 
-	// Token: 0x06005FA1 RID: 24481 RVA: 0x0025E738 File Offset: 0x0025C938
+	// Token: 0x0600602B RID: 24619 RVA: 0x002615D8 File Offset: 0x0025F7D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void FilterTextCallbackStrings(string _text, CensoredTextResult _censorResult)
 	{
@@ -328,7 +328,7 @@ public static class GeneratedTextManager
 		}
 	}
 
-	// Token: 0x06005FA2 RID: 24482 RVA: 0x0025E830 File Offset: 0x0025CA30
+	// Token: 0x0600602C RID: 24620 RVA: 0x002616D0 File Offset: 0x0025F8D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetTextToFilter(string _baseText, GeneratedTextManager.BbCodeSupportMode _bbSupport)
 	{
@@ -343,7 +343,7 @@ public static class GeneratedTextManager
 		return Utils.GetVisibileTextWithBbCodes(_baseText);
 	}
 
-	// Token: 0x06005FA3 RID: 24483 RVA: 0x0025E844 File Offset: 0x0025CA44
+	// Token: 0x0600602D RID: 24621 RVA: 0x002616E4 File Offset: 0x0025F8E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string ReconstructFilteredTextWithBbCodes(string originalText, string filteredText)
 	{
@@ -377,58 +377,58 @@ public static class GeneratedTextManager
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x04004ACD RID: 19149
+	// Token: 0x04004B6A RID: 19306
 	public const string SafeString = "{...}";
 
-	// Token: 0x04004ACE RID: 19150
+	// Token: 0x04004B6B RID: 19307
 	public const string BlockedString = "";
 
-	// Token: 0x04004ACF RID: 19151
+	// Token: 0x04004B6C RID: 19308
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly object lockObj = new object();
 
-	// Token: 0x04004AD0 RID: 19152
+	// Token: 0x04004B6D RID: 19309
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ConditionalWeakTable<AuthoredText, GeneratedTextManager.AuthoredTextDetails> authoredTextReferences = new ConditionalWeakTable<AuthoredText, GeneratedTextManager.AuthoredTextDetails>();
 
-	// Token: 0x04004AD1 RID: 19153
+	// Token: 0x04004B6E RID: 19310
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<AuthoredText, List<ValueTuple<GeneratedTextManager.BbCodeSupportMode, Action<string>>>> pendingFilterCallbacks = new Dictionary<AuthoredText, List<ValueTuple<GeneratedTextManager.BbCodeSupportMode, Action<string>>>>();
 
-	// Token: 0x04004AD2 RID: 19154
+	// Token: 0x04004B6F RID: 19311
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<string, List<ValueTuple<GeneratedTextManager.BbCodeSupportMode, Action<string>>>> pendingFilterCallbacksStrings = new Dictionary<string, List<ValueTuple<GeneratedTextManager.BbCodeSupportMode, Action<string>>>>();
 
-	// Token: 0x02000C45 RID: 3141
+	// Token: 0x02000C57 RID: 3159
 	public enum TextFilteringMode
 	{
-		// Token: 0x04004AD4 RID: 19156
+		// Token: 0x04004B71 RID: 19313
 		None,
-		// Token: 0x04004AD5 RID: 19157
+		// Token: 0x04004B72 RID: 19314
 		Filter,
-		// Token: 0x04004AD6 RID: 19158
+		// Token: 0x04004B73 RID: 19315
 		FilterOtherPlatforms,
-		// Token: 0x04004AD7 RID: 19159
+		// Token: 0x04004B74 RID: 19316
 		FilterWithSafeString
 	}
 
-	// Token: 0x02000C46 RID: 3142
+	// Token: 0x02000C58 RID: 3160
 	public enum BbCodeSupportMode
 	{
-		// Token: 0x04004AD9 RID: 19161
+		// Token: 0x04004B76 RID: 19318
 		NotSupported,
-		// Token: 0x04004ADA RID: 19162
+		// Token: 0x04004B77 RID: 19319
 		Supported,
-		// Token: 0x04004ADB RID: 19163
+		// Token: 0x04004B78 RID: 19320
 		SupportedAndAddEscapes
 	}
 
-	// Token: 0x02000C47 RID: 3143
+	// Token: 0x02000C59 RID: 3161
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class AuthoredTextDetails
 	{
-		// Token: 0x170009B3 RID: 2483
-		// (get) Token: 0x06005FA5 RID: 24485 RVA: 0x0025E90B File Offset: 0x0025CB0B
+		// Token: 0x170009C6 RID: 2502
+		// (get) Token: 0x0600602F RID: 24623 RVA: 0x002617AB File Offset: 0x0025F9AB
 		public string BaseText
 		{
 			get
@@ -437,19 +437,19 @@ public static class GeneratedTextManager
 			}
 		}
 
-		// Token: 0x06005FA6 RID: 24486 RVA: 0x0025E913 File Offset: 0x0025CB13
+		// Token: 0x06006030 RID: 24624 RVA: 0x002617B3 File Offset: 0x0025F9B3
 		public AuthoredTextDetails(string _baseText)
 		{
 			this.SetText(_baseText);
 		}
 
-		// Token: 0x06005FA7 RID: 24487 RVA: 0x0025E922 File Offset: 0x0025CB22
+		// Token: 0x06006031 RID: 24625 RVA: 0x002617C2 File Offset: 0x0025F9C2
 		public bool IsFiltered()
 		{
 			return this.filteredTextBase != null;
 		}
 
-		// Token: 0x06005FA8 RID: 24488 RVA: 0x0025E92D File Offset: 0x0025CB2D
+		// Token: 0x06006032 RID: 24626 RVA: 0x002617CD File Offset: 0x0025F9CD
 		public void SetText(string _baseText)
 		{
 			if (_baseText != this.baseText)
@@ -462,13 +462,13 @@ public static class GeneratedTextManager
 			}
 		}
 
-		// Token: 0x06005FA9 RID: 24489 RVA: 0x0025E960 File Offset: 0x0025CB60
+		// Token: 0x06006033 RID: 24627 RVA: 0x00261800 File Offset: 0x0025FA00
 		public void SetFilteredText(string _filteredText)
 		{
 			this.filteredTextBase = _filteredText;
 		}
 
-		// Token: 0x06005FAA RID: 24490 RVA: 0x0025E96C File Offset: 0x0025CB6C
+		// Token: 0x06006034 RID: 24628 RVA: 0x0026180C File Offset: 0x0025FA0C
 		public string GetDisplayText(bool _filtered, GeneratedTextManager.BbCodeSupportMode _bbSupportMode)
 		{
 			if (_filtered)
@@ -511,23 +511,23 @@ public static class GeneratedTextManager
 			}
 		}
 
-		// Token: 0x04004ADC RID: 19164
+		// Token: 0x04004B79 RID: 19321
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string baseText;
 
-		// Token: 0x04004ADD RID: 19165
+		// Token: 0x04004B7A RID: 19322
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string baseTextEscaped;
 
-		// Token: 0x04004ADE RID: 19166
+		// Token: 0x04004B7B RID: 19323
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string filteredTextBase;
 
-		// Token: 0x04004ADF RID: 19167
+		// Token: 0x04004B7C RID: 19324
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string filteredTextBBSupported;
 
-		// Token: 0x04004AE0 RID: 19168
+		// Token: 0x04004B7D RID: 19325
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string filteredTextBBEscaped;
 	}

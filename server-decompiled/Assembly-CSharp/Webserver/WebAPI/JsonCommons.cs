@@ -6,10 +6,10 @@ using Utf8Json;
 
 namespace Webserver.WebAPI
 {
-	// Token: 0x02001AA7 RID: 6823
+	// Token: 0x02001ACE RID: 6862
 	public static class JsonCommons
 	{
-		// Token: 0x0600CD29 RID: 52521 RVA: 0x004AD940 File Offset: 0x004ABB40
+		// Token: 0x0600CEB2 RID: 52914 RVA: 0x004B3D34 File Offset: 0x004B1F34
 		public static void WriteVector3I(ref JsonWriter _writer, Vector3i _position)
 		{
 			_writer.WriteRaw(JsonCommons.jsonKeyPositionX);
@@ -21,7 +21,7 @@ namespace Webserver.WebAPI
 			_writer.WriteEndObject();
 		}
 
-		// Token: 0x0600CD2A RID: 52522 RVA: 0x004AD998 File Offset: 0x004ABB98
+		// Token: 0x0600CEB3 RID: 52915 RVA: 0x004B3D8C File Offset: 0x004B1F8C
 		public static void WriteVector3(ref JsonWriter _writer, Vector3 _position)
 		{
 			_writer.WriteRaw(JsonCommons.jsonKeyPositionX);
@@ -33,7 +33,7 @@ namespace Webserver.WebAPI
 			_writer.WriteEndObject();
 		}
 
-		// Token: 0x0600CD2B RID: 52523 RVA: 0x004AD9F0 File Offset: 0x004ABBF0
+		// Token: 0x0600CEB4 RID: 52916 RVA: 0x004B3DE4 File Offset: 0x004B1FE4
 		public static void WriteVector2I(ref JsonWriter _writer, Vector2i _position)
 		{
 			_writer.WriteRaw(JsonCommons.jsonKeyPositionX);
@@ -43,7 +43,7 @@ namespace Webserver.WebAPI
 			_writer.WriteEndObject();
 		}
 
-		// Token: 0x0600CD2C RID: 52524 RVA: 0x004ADA26 File Offset: 0x004ABC26
+		// Token: 0x0600CEB5 RID: 52917 RVA: 0x004B3E1A File Offset: 0x004B201A
 		public static void WriteVector2(ref JsonWriter _writer, Vector2 _position)
 		{
 			_writer.WriteRaw(JsonCommons.jsonKeyPositionX);
@@ -53,7 +53,7 @@ namespace Webserver.WebAPI
 			_writer.WriteEndObject();
 		}
 
-		// Token: 0x0600CD2D RID: 52525 RVA: 0x004ADA5C File Offset: 0x004ABC5C
+		// Token: 0x0600CEB6 RID: 52918 RVA: 0x004B3E50 File Offset: 0x004B2050
 		public static void WriteGameTimeObject(ref JsonWriter _writer, int _days, int _hours, int _minutes)
 		{
 			_writer.WriteRaw(JsonCommons.jsonKeyDays);
@@ -65,7 +65,7 @@ namespace Webserver.WebAPI
 			_writer.WriteEndObject();
 		}
 
-		// Token: 0x0600CD2E RID: 52526 RVA: 0x004ADA9C File Offset: 0x004ABC9C
+		// Token: 0x0600CEB7 RID: 52919 RVA: 0x004B3E90 File Offset: 0x004B2090
 		public static void WritePlatformUserIdentifier(ref JsonWriter _writer, PlatformUserIdentifierAbs _userIdentifier)
 		{
 			if (_userIdentifier == null)
@@ -82,7 +82,7 @@ namespace Webserver.WebAPI
 			_writer.WriteEndObject();
 		}
 
-		// Token: 0x0600CD2F RID: 52527 RVA: 0x004ADB00 File Offset: 0x004ABD00
+		// Token: 0x0600CEB8 RID: 52920 RVA: 0x004B3EF4 File Offset: 0x004B20F4
 		public static bool TryReadPlatformUserIdentifier(IDictionary<string, object> _jsonInput, out PlatformUserIdentifierAbs _userIdentifier)
 		{
 			string text;
@@ -110,13 +110,13 @@ namespace Webserver.WebAPI
 			return _userIdentifier != null;
 		}
 
-		// Token: 0x0600CD30 RID: 52528 RVA: 0x004ADB62 File Offset: 0x004ABD62
+		// Token: 0x0600CEB9 RID: 52921 RVA: 0x004B3F56 File Offset: 0x004B2156
 		public static void WriteDateTime(ref JsonWriter _writer, DateTime _dateTime)
 		{
 			_writer.WriteString(_dateTime.ToString("o"));
 		}
 
-		// Token: 0x0600CD31 RID: 52529 RVA: 0x004ADB78 File Offset: 0x004ABD78
+		// Token: 0x0600CEBA RID: 52922 RVA: 0x004B3F6C File Offset: 0x004B216C
 		public static bool TryReadDateTime(IDictionary<string, object> _jsonInput, string _fieldName, out DateTime _result)
 		{
 			_result = default(DateTime);
@@ -124,7 +124,7 @@ namespace Webserver.WebAPI
 			return JsonCommons.TryGetJsonField(_jsonInput, _fieldName, out text) && DateTime.TryParse(text, null, DateTimeStyles.RoundtripKind, out _result);
 		}
 
-		// Token: 0x0600CD32 RID: 52530 RVA: 0x004ADBA8 File Offset: 0x004ABDA8
+		// Token: 0x0600CEBB RID: 52923 RVA: 0x004B3F9C File Offset: 0x004B219C
 		public static bool TryGetJsonField(IDictionary<string, object> _jsonObject, string _fieldName, out int _value)
 		{
 			_value = 0;
@@ -151,7 +151,7 @@ namespace Webserver.WebAPI
 			return false;
 		}
 
-		// Token: 0x0600CD33 RID: 52531 RVA: 0x004ADBF8 File Offset: 0x004ABDF8
+		// Token: 0x0600CEBC RID: 52924 RVA: 0x004B3FEC File Offset: 0x004B21EC
 		public static bool TryGetJsonField(IDictionary<string, object> _jsonObject, string _fieldName, out double _value)
 		{
 			_value = 0.0;
@@ -178,7 +178,7 @@ namespace Webserver.WebAPI
 			return false;
 		}
 
-		// Token: 0x0600CD34 RID: 52532 RVA: 0x004ADC50 File Offset: 0x004ABE50
+		// Token: 0x0600CEBD RID: 52925 RVA: 0x004B4044 File Offset: 0x004B2244
 		public static bool TryGetJsonField(IDictionary<string, object> _jsonObject, string _fieldName, out string _value)
 		{
 			_value = null;
@@ -205,7 +205,7 @@ namespace Webserver.WebAPI
 			return flag;
 		}
 
-		// Token: 0x0600CD35 RID: 52533 RVA: 0x004ADC98 File Offset: 0x004ABE98
+		// Token: 0x0600CEBE RID: 52926 RVA: 0x004B408C File Offset: 0x004B228C
 		public static bool TryGetJsonField(IDictionary<string, object> _jsonObject, string _fieldName, out IDictionary<string, object> _value)
 		{
 			_value = null;
@@ -232,39 +232,39 @@ namespace Webserver.WebAPI
 			return flag;
 		}
 
-		// Token: 0x04009B96 RID: 39830
+		// Token: 0x04009CC7 RID: 40135
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyPositionX = JsonWriter.GetEncodedPropertyNameWithBeginObject("x");
 
-		// Token: 0x04009B97 RID: 39831
+		// Token: 0x04009CC8 RID: 40136
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyPositionY = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("y");
 
-		// Token: 0x04009B98 RID: 39832
+		// Token: 0x04009CC9 RID: 40137
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyPositionZ = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("z");
 
-		// Token: 0x04009B99 RID: 39833
+		// Token: 0x04009CCA RID: 40138
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyDays = JsonWriter.GetEncodedPropertyNameWithBeginObject("days");
 
-		// Token: 0x04009B9A RID: 39834
+		// Token: 0x04009CCB RID: 40139
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyHours = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("hours");
 
-		// Token: 0x04009B9B RID: 39835
+		// Token: 0x04009CCC RID: 40140
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyMinutes = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("minutes");
 
-		// Token: 0x04009B9C RID: 39836
+		// Token: 0x04009CCD RID: 40141
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyCombinedString = JsonWriter.GetEncodedPropertyNameWithBeginObject("combinedString");
 
-		// Token: 0x04009B9D RID: 39837
+		// Token: 0x04009CCE RID: 40142
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyPlatformId = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("platformId");
 
-		// Token: 0x04009B9E RID: 39838
+		// Token: 0x04009CCF RID: 40143
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyUserId = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("userId");
 	}

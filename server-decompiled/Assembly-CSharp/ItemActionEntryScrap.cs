@@ -3,17 +3,17 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D4E RID: 3406
+// Token: 0x02000D61 RID: 3425
 [Preserve]
 public class ItemActionEntryScrap : BaseItemActionEntry
 {
-	// Token: 0x06006790 RID: 26512 RVA: 0x0028E686 File Offset: 0x0028C886
+	// Token: 0x0600681F RID: 26655 RVA: 0x00291622 File Offset: 0x0028F822
 	public ItemActionEntryScrap(XUiController _controller)
 		: base(_controller, "lblContextActionScrap", "ui_game_symbol_scrap", BaseItemActionEntry.GamepadShortCut.DPadRight, "crafting/craft_click_craft", "ui/ui_denied")
 	{
 	}
 
-	// Token: 0x06006791 RID: 26513 RVA: 0x0028E6BC File Offset: 0x0028C8BC
+	// Token: 0x06006820 RID: 26656 RVA: 0x00291658 File Offset: 0x0028F858
 	public override void OnActivated()
 	{
 		XUi xui = base.ItemController.xui;
@@ -70,7 +70,7 @@ public class ItemActionEntryScrap : BaseItemActionEntry
 		((XUiC_ItemStack)base.ItemController).WindowGroup.Controller.SetAllChildrenDirty();
 	}
 
-	// Token: 0x06006792 RID: 26514 RVA: 0x0028E908 File Offset: 0x0028CB08
+	// Token: 0x06006821 RID: 26657 RVA: 0x002918A4 File Offset: 0x0028FAA4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void warnQueueFull()
 	{
@@ -78,7 +78,7 @@ public class ItemActionEntryScrap : BaseItemActionEntry
 		Manager.PlayInsidePlayerHead("ui_denied", -1, 0f, false, false);
 	}
 
-	// Token: 0x06006793 RID: 26515 RVA: 0x0028E954 File Offset: 0x0028CB54
+	// Token: 0x06006822 RID: 26658 RVA: 0x002918F0 File Offset: 0x0028FAF0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ItemStackController_TimeIntervalElapsedEvent(float _timeLeft, XUiC_ItemStack _uiItemStack)
 	{
@@ -95,7 +95,7 @@ public class ItemActionEntryScrap : BaseItemActionEntry
 		}
 	}
 
-	// Token: 0x06006794 RID: 26516 RVA: 0x0028EA0C File Offset: 0x0028CC0C
+	// Token: 0x06006823 RID: 26659 RVA: 0x002919A8 File Offset: 0x0028FBA8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ItemStackController_LockChangedEvent(XUiC_ItemStack.LockTypes _lockType, XUiC_ItemStack _uiItemStack)
 	{
@@ -109,7 +109,7 @@ public class ItemActionEntryScrap : BaseItemActionEntry
 		xuiC_ItemStack.LockChangedEvent -= this.ItemStackController_LockChangedEvent;
 	}
 
-	// Token: 0x06006795 RID: 26517 RVA: 0x0028EA68 File Offset: 0x0028CC68
+	// Token: 0x06006824 RID: 26660 RVA: 0x00291A04 File Offset: 0x0028FC04
 	public override void RefreshEnabled()
 	{
 		ItemStack itemStack = ((XUiC_ItemStack)base.ItemController).ItemStack;
@@ -128,13 +128,13 @@ public class ItemActionEntryScrap : BaseItemActionEntry
 		base.Enabled = true;
 	}
 
-	// Token: 0x06006796 RID: 26518 RVA: 0x0028EAE7 File Offset: 0x0028CCE7
+	// Token: 0x06006825 RID: 26661 RVA: 0x00291A83 File Offset: 0x0028FC83
 	public override void OnDisabledActivate()
 	{
 		GameManager.ShowTooltip(base.ItemController.xui.playerUI.entityPlayer, Localization.Get("ttCannotScrapWithAttachments", false, null), false, false, 0f);
 	}
 
-	// Token: 0x06006797 RID: 26519 RVA: 0x0028EB18 File Offset: 0x0028CD18
+	// Token: 0x06006826 RID: 26662 RVA: 0x00291AB4 File Offset: 0x0028FCB4
 	public static ItemStack HandleRemoveAmmo(ItemStack _stack, XUi _xui)
 	{
 		if (_stack.itemValue.Meta <= 0)
@@ -158,19 +158,19 @@ public class ItemActionEntryScrap : BaseItemActionEntry
 		return _stack;
 	}
 
-	// Token: 0x04004F60 RID: 20320
+	// Token: 0x04004FFE RID: 20478
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Recipe recipe;
 
-	// Token: 0x04004F61 RID: 20321
+	// Token: 0x04004FFF RID: 20479
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static FastTags<TagGroup.Global> scrap100Tag = FastTags<TagGroup.Global>.Parse("scrap100");
 
-	// Token: 0x04004F62 RID: 20322
+	// Token: 0x04005000 RID: 20480
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float scrapItemCount = 1f;
 
-	// Token: 0x04004F63 RID: 20323
+	// Token: 0x04005001 RID: 20481
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float numberOfCurrentItemsNeededFor1StackOfOutputItem = -1f;
 }

@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019BE RID: 6590
+	// Token: 0x020019E5 RID: 6629
 	[Preserve]
 	public class ActionBlockPickup : ActionBaseBlockAction
 	{
-		// Token: 0x0600C8C2 RID: 51394 RVA: 0x0049BC56 File Offset: 0x00499E56
+		// Token: 0x0600CA4B RID: 51787 RVA: 0x004A1FBA File Offset: 0x004A01BA
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BlockChangeInfo UpdateBlock(World world, Vector3i currentPos, BlockValue blockValue)
 		{
@@ -19,7 +19,7 @@ namespace GameEvent.SequenceActions
 			return null;
 		}
 
-		// Token: 0x0600C8C3 RID: 51395 RVA: 0x0049C48C File Offset: 0x0049A68C
+		// Token: 0x0600CA4C RID: 51788 RVA: 0x004A2880 File Offset: 0x004A0A80
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void ProcessChanges(World world, List<BlockChangeInfo> blockChanges)
 		{
@@ -30,7 +30,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C8C4 RID: 51396 RVA: 0x0049C4E5 File Offset: 0x0049A6E5
+		// Token: 0x0600CA4D RID: 51789 RVA: 0x004A28D9 File Offset: 0x004A0AD9
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{

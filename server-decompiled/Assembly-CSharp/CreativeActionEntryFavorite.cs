@@ -1,18 +1,18 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D40 RID: 3392
+// Token: 0x02000D52 RID: 3410
 [Preserve]
 public class CreativeActionEntryFavorite : BaseItemActionEntry
 {
-	// Token: 0x06006764 RID: 26468 RVA: 0x0028C356 File Offset: 0x0028A556
+	// Token: 0x060067F0 RID: 26608 RVA: 0x0028F23A File Offset: 0x0028D43A
 	public CreativeActionEntryFavorite(XUiController _controller, int _stackID)
 		: base(_controller, "lblContextActionFavorite", "server_favorite", BaseItemActionEntry.GamepadShortCut.DPadRight, "crafting/craft_click_craft", "ui/ui_denied")
 	{
 		this.stackID = (ushort)_stackID;
 	}
 
-	// Token: 0x06006765 RID: 26469 RVA: 0x0028C37C File Offset: 0x0028A57C
+	// Token: 0x060067F1 RID: 26609 RVA: 0x0028F260 File Offset: 0x0028D460
 	public override void OnActivated()
 	{
 		EntityPlayer entityPlayer = base.ItemController.xui.playerUI.entityPlayer;
@@ -32,7 +32,7 @@ public class CreativeActionEntryFavorite : BaseItemActionEntry
 		childByType.RefreshView();
 	}
 
-	// Token: 0x04004F46 RID: 20294
+	// Token: 0x04004FE4 RID: 20452
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ushort stackID;
 }

@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000C21 RID: 3105
+// Token: 0x02000C33 RID: 3123
 public class ThreadInfoParam
 {
-	// Token: 0x06005E9D RID: 24221 RVA: 0x0025717C File Offset: 0x0025537C
+	// Token: 0x06005F27 RID: 24359 RVA: 0x0025A02C File Offset: 0x0025822C
 	public ThreadInfoParam()
 	{
 		this.IsBigCapacity = false;
@@ -33,7 +33,7 @@ public class ThreadInfoParam
 		this.IsCoroutineDone = false;
 	}
 
-	// Token: 0x06005E9E RID: 24222 RVA: 0x002572DC File Offset: 0x002554DC
+	// Token: 0x06005F28 RID: 24360 RVA: 0x0025A18C File Offset: 0x0025838C
 	public ThreadInfoParam(DistantChunkMap _CMap, int _ResLevel, int _OutId, bool _IsBigCapacity)
 	{
 		this.ThreadContListA = new ThreadContainer[this.TmpArraySizeFristDim * 20];
@@ -57,7 +57,7 @@ public class ThreadInfoParam
 		this.Init(_CMap, _ResLevel, _OutId, _IsBigCapacity);
 	}
 
-	// Token: 0x06005E9F RID: 24223 RVA: 0x0025741C File Offset: 0x0025561C
+	// Token: 0x06005F29 RID: 24361 RVA: 0x0025A2CC File Offset: 0x002584CC
 	public void Init(DistantChunkMap _CMap, int _ResLevel, int _OutId, bool _IsBigCapacity)
 	{
 		this.IsBigCapacity = _IsBigCapacity;
@@ -82,7 +82,7 @@ public class ThreadInfoParam
 		this.IsCoroutineDone = false;
 	}
 
-	// Token: 0x06005EA0 RID: 24224 RVA: 0x002574B8 File Offset: 0x002556B8
+	// Token: 0x06005F2A RID: 24362 RVA: 0x0025A368 File Offset: 0x00258568
 	public void ClearAll(ThreadContainerPool TmpThContPool = null)
 	{
 		if (TmpThContPool != null)
@@ -98,86 +98,86 @@ public class ThreadInfoParam
 		this.IsCoroutineDone = true;
 	}
 
-	// Token: 0x040049EF RID: 18927
+	// Token: 0x04004A8C RID: 19084
 	public ThreadContainer[] ThreadContListA;
 
-	// Token: 0x040049F0 RID: 18928
+	// Token: 0x04004A8D RID: 19085
 	public int CntThreadContList;
 
-	// Token: 0x040049F1 RID: 18929
+	// Token: 0x04004A8E RID: 19086
 	public int LengthThreadContList;
 
-	// Token: 0x040049F2 RID: 18930
+	// Token: 0x04004A8F RID: 19087
 	public int ResLevel;
 
-	// Token: 0x040049F3 RID: 18931
+	// Token: 0x04004A90 RID: 19088
 	public int OutId;
 
-	// Token: 0x040049F4 RID: 18932
+	// Token: 0x04004A91 RID: 19089
 	public DistantChunk[] ForwardChunkToDeleteIdA;
 
-	// Token: 0x040049F5 RID: 18933
+	// Token: 0x04004A92 RID: 19090
 	public DistantChunk[] BackwardChunkToDeleteIdA;
 
-	// Token: 0x040049F6 RID: 18934
+	// Token: 0x04004A93 RID: 19091
 	public int CntForwardChunkToDeleteId;
 
-	// Token: 0x040049F7 RID: 18935
+	// Token: 0x04004A94 RID: 19092
 	public int LengthForwardChunkToDeleteId;
 
-	// Token: 0x040049F8 RID: 18936
+	// Token: 0x04004A95 RID: 19093
 	public int CntBackwardChunkToDeleteId;
 
-	// Token: 0x040049F9 RID: 18937
+	// Token: 0x04004A96 RID: 19094
 	public int LengthBackwardChunkToDeleteId;
 
-	// Token: 0x040049FA RID: 18938
+	// Token: 0x04004A97 RID: 19095
 	public DistantChunk[][] ForwardChunkSeamToAdjust;
 
-	// Token: 0x040049FB RID: 18939
+	// Token: 0x04004A98 RID: 19096
 	public DistantChunk[][] BackwardChunkSeamToAdjust;
 
-	// Token: 0x040049FC RID: 18940
+	// Token: 0x04004A99 RID: 19097
 	public int[][] ForwardEdgeId;
 
-	// Token: 0x040049FD RID: 18941
+	// Token: 0x04004A9A RID: 19098
 	public int[][] BackwardEdgeId;
 
-	// Token: 0x040049FE RID: 18942
+	// Token: 0x04004A9B RID: 19099
 	public int CntForwardChunkSeamToAdjust;
 
-	// Token: 0x040049FF RID: 18943
+	// Token: 0x04004A9C RID: 19100
 	public int CntBackwardChunkSeamToAdjust;
 
-	// Token: 0x04004A00 RID: 18944
+	// Token: 0x04004A9D RID: 19101
 	public int FDLengthForwardChunkSeamToAdjust;
 
-	// Token: 0x04004A01 RID: 18945
+	// Token: 0x04004A9E RID: 19102
 	public int FDLengthBackwardChunkSeamToAdjust;
 
-	// Token: 0x04004A02 RID: 18946
+	// Token: 0x04004A9F RID: 19103
 	public int[] SDLengthForwardChunkSeamToAdjust;
 
-	// Token: 0x04004A03 RID: 18947
+	// Token: 0x04004AA0 RID: 19104
 	public int[] SDLengthBackwardChunkSeamToAdjust;
 
-	// Token: 0x04004A04 RID: 18948
+	// Token: 0x04004AA1 RID: 19105
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int TmpArraySizeFristDim = 150;
 
-	// Token: 0x04004A05 RID: 18949
+	// Token: 0x04004AA2 RID: 19106
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int TmpArraySizeSecondDim = 64;
 
-	// Token: 0x04004A06 RID: 18950
+	// Token: 0x04004AA3 RID: 19107
 	public bool IsThreadDone;
 
-	// Token: 0x04004A07 RID: 18951
+	// Token: 0x04004AA4 RID: 19108
 	public bool IsCoroutineDone;
 
-	// Token: 0x04004A08 RID: 18952
+	// Token: 0x04004AA5 RID: 19109
 	public bool IsBigCapacity;
 
-	// Token: 0x04004A09 RID: 18953
+	// Token: 0x04004AA6 RID: 19110
 	public bool IsAsynchronous;
 }

@@ -1,31 +1,31 @@
 ﻿using System;
 
-// Token: 0x0200036A RID: 874
+// Token: 0x0200036E RID: 878
 [Flags]
 public enum DynamicMeshStates : short
 {
-	// Token: 0x04001043 RID: 4163
+	// Token: 0x04001058 RID: 4184
 	None = 0,
-	// Token: 0x04001044 RID: 4164
+	// Token: 0x04001059 RID: 4185
 	ThreadUpdating = 1,
-	// Token: 0x04001045 RID: 4165
+	// Token: 0x0400105A RID: 4186
 	SaveRequired = 2,
-	// Token: 0x04001046 RID: 4166
+	// Token: 0x0400105B RID: 4187
 	LoadRequired = 4,
-	// Token: 0x04001047 RID: 4167
+	// Token: 0x0400105C RID: 4188
 	UnloadMark1 = 8,
-	// Token: 0x04001048 RID: 4168
+	// Token: 0x0400105D RID: 4189
 	UnloadMark2 = 16,
-	// Token: 0x04001049 RID: 4169
+	// Token: 0x0400105E RID: 4190
 	UnloadMark3 = 32,
-	// Token: 0x0400104A RID: 4170
+	// Token: 0x0400105F RID: 4191
 	MarkedForDelete = 64,
-	// Token: 0x0400104B RID: 4171
+	// Token: 0x04001060 RID: 4192
 	LoadBoosted = 128,
-	// Token: 0x0400104C RID: 4172
+	// Token: 0x04001061 RID: 4193
 	MainThreadLoadRequest = 256,
-	// Token: 0x0400104D RID: 4173
+	// Token: 0x04001062 RID: 4194
 	FileMissing = 512,
-	// Token: 0x0400104E RID: 4174
+	// Token: 0x04001063 RID: 4195
 	Generating = 1024
 }

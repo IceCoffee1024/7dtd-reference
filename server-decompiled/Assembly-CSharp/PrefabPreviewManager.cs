@@ -4,11 +4,11 @@ using Platform;
 using UnityEngine;
 using WorldGenerationEngineFinal;
 
-// Token: 0x02000E3F RID: 3647
+// Token: 0x02000E54 RID: 3668
 public class PrefabPreviewManager
 {
-	// Token: 0x17000CAF RID: 3247
-	// (get) Token: 0x0600704E RID: 28750 RVA: 0x002B3241 File Offset: 0x002B1441
+	// Token: 0x17000CC8 RID: 3272
+	// (get) Token: 0x060070EE RID: 28910 RVA: 0x002B6765 File Offset: 0x002B4965
 	public static WorldBuilder WorldBuilder
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -23,13 +23,13 @@ public class PrefabPreviewManager
 		}
 	}
 
-	// Token: 0x0600704F RID: 28751 RVA: 0x002B3253 File Offset: 0x002B1453
+	// Token: 0x060070EF RID: 28911 RVA: 0x002B6777 File Offset: 0x002B4977
 	public PrefabPreviewManager(XUiC_WorldGenerationPreview _previewWindow)
 	{
 		this.previewWindow = _previewWindow;
 	}
 
-	// Token: 0x06007050 RID: 28752 RVA: 0x002B3278 File Offset: 0x002B1478
+	// Token: 0x060070F0 RID: 28912 RVA: 0x002B679C File Offset: 0x002B499C
 	public void InitPrefabs()
 	{
 		if (this.Initialized)
@@ -42,7 +42,7 @@ public class PrefabPreviewManager
 		this.Initialized = true;
 	}
 
-	// Token: 0x06007051 RID: 28753 RVA: 0x002B32D1 File Offset: 0x002B14D1
+	// Token: 0x060070F1 RID: 28913 RVA: 0x002B67F5 File Offset: 0x002B49F5
 	public void RemovePrefabs()
 	{
 		this.ClearDisplayedPrefabs();
@@ -51,7 +51,7 @@ public class PrefabPreviewManager
 		this.Initialized = false;
 	}
 
-	// Token: 0x06007052 RID: 28754 RVA: 0x002B32F6 File Offset: 0x002B14F6
+	// Token: 0x060070F2 RID: 28914 RVA: 0x002B681A File Offset: 0x002B4A1A
 	public void Update()
 	{
 		if (Time.time - this.lastDisplayUpdate < 2f)
@@ -62,7 +62,7 @@ public class PrefabPreviewManager
 		this.ForceUpdate();
 	}
 
-	// Token: 0x06007053 RID: 28755 RVA: 0x002B3320 File Offset: 0x002B1520
+	// Token: 0x060070F3 RID: 28915 RVA: 0x002B6844 File Offset: 0x002B4A44
 	public void ForceUpdate()
 	{
 		this.UpdateDisplay();
@@ -86,7 +86,7 @@ public class PrefabPreviewManager
 		this.InitPrefabs();
 	}
 
-	// Token: 0x06007054 RID: 28756 RVA: 0x002B337C File Offset: 0x002B157C
+	// Token: 0x060070F4 RID: 28916 RVA: 0x002B68A0 File Offset: 0x002B4AA0
 	public void ClearDisplayedPrefabs()
 	{
 		if (this.displayedPrefabs == null || this.displayedPrefabs.Count == 0)
@@ -118,7 +118,7 @@ public class PrefabPreviewManager
 		}
 	}
 
-	// Token: 0x06007055 RID: 28757 RVA: 0x002B34E8 File Offset: 0x002B16E8
+	// Token: 0x060070F5 RID: 28917 RVA: 0x002B6A0C File Offset: 0x002B4C0C
 	public void UpdatePrefabsAround(Dictionary<int, PrefabDataInstance> _prefabsAround)
 	{
 		foreach (KeyValuePair<int, PrefabDataInstance> keyValuePair in _prefabsAround)
@@ -165,7 +165,7 @@ public class PrefabPreviewManager
 		}
 	}
 
-	// Token: 0x06007056 RID: 28758 RVA: 0x002B36F8 File Offset: 0x002B18F8
+	// Token: 0x060070F6 RID: 28918 RVA: 0x002B6C1C File Offset: 0x002B4E1C
 	public void UpdateDisplay()
 	{
 		if (XUiC_WorldGenerationWindow.Instance.PreviewQualityLevel == XUiC_WorldGenerationWindow.PreviewQuality.NoPreview)
@@ -321,13 +321,13 @@ public class PrefabPreviewManager
 		}
 	}
 
-	// Token: 0x06007057 RID: 28759 RVA: 0x002B3F78 File Offset: 0x002B2178
+	// Token: 0x060070F7 RID: 28919 RVA: 0x002B749C File Offset: 0x002B569C
 	public void ClearOldPreview()
 	{
 		this.RemovePrefabs();
 	}
 
-	// Token: 0x06007058 RID: 28760 RVA: 0x002B3F80 File Offset: 0x002B2180
+	// Token: 0x060070F8 RID: 28920 RVA: 0x002B74A4 File Offset: 0x002B56A4
 	public void Cleanup()
 	{
 		this.RemovePrefabs();
@@ -339,60 +339,60 @@ public class PrefabPreviewManager
 		this.parentTransform = null;
 	}
 
-	// Token: 0x04005495 RID: 21653
+	// Token: 0x04005539 RID: 21817
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float PrefabYPosition = 4f;
 
-	// Token: 0x04005496 RID: 21654
+	// Token: 0x0400553A RID: 21818
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float DisplayUpdateDelay = 2f;
 
-	// Token: 0x04005497 RID: 21655
+	// Token: 0x0400553B RID: 21819
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float PrefabListUpdateDelay = 2f;
 
-	// Token: 0x04005498 RID: 21656
+	// Token: 0x0400553C RID: 21820
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int LodPoiDistance = 100000;
 
-	// Token: 0x04005499 RID: 21657
+	// Token: 0x0400553D RID: 21821
 	public bool ReadyToDisplay;
 
-	// Token: 0x0400549A RID: 21658
+	// Token: 0x0400553E RID: 21822
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_WorldGenerationPreview previewWindow;
 
-	// Token: 0x0400549B RID: 21659
+	// Token: 0x0400553F RID: 21823
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<int, PrefabDataInstance> prefabsAround = new Dictionary<int, PrefabDataInstance>();
 
-	// Token: 0x0400549C RID: 21660
+	// Token: 0x04005540 RID: 21824
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<int, PrefabPreviewManager.PrefabGameObject> displayedPrefabs = new Dictionary<int, PrefabPreviewManager.PrefabGameObject>();
 
-	// Token: 0x0400549D RID: 21661
+	// Token: 0x04005541 RID: 21825
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform parentTransform;
 
-	// Token: 0x0400549E RID: 21662
+	// Token: 0x04005542 RID: 21826
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lastTime;
 
-	// Token: 0x0400549F RID: 21663
+	// Token: 0x04005543 RID: 21827
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lastDisplayUpdate;
 
-	// Token: 0x040054A0 RID: 21664
+	// Token: 0x04005544 RID: 21828
 	public bool Initialized;
 
-	// Token: 0x02000E40 RID: 3648
+	// Token: 0x02000E55 RID: 3669
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class PrefabGameObject
 	{
-		// Token: 0x040054A1 RID: 21665
+		// Token: 0x04005545 RID: 21829
 		public PrefabDataInstance PrefabInstance;
 
-		// Token: 0x040054A2 RID: 21666
+		// Token: 0x04005546 RID: 21830
 		public GameObject Go;
 	}
 }

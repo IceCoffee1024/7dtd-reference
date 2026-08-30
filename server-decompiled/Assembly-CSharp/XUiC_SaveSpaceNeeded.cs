@@ -4,13 +4,13 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D7D RID: 3453
+// Token: 0x02000D91 RID: 3473
 [Preserve]
 public class XUiC_SaveSpaceNeeded : XUiController
 {
-	// Token: 0x17000B25 RID: 2853
-	// (get) Token: 0x060068E3 RID: 26851 RVA: 0x002957B8 File Offset: 0x002939B8
-	// (set) Token: 0x060068E4 RID: 26852 RVA: 0x002957C0 File Offset: 0x002939C0
+	// Token: 0x17000B3D RID: 2877
+	// (get) Token: 0x0600697F RID: 27007 RVA: 0x0029890C File Offset: 0x00296B0C
+	// (set) Token: 0x06006980 RID: 27008 RVA: 0x00298914 File Offset: 0x00296B14
 	[XuiXmlBinding("canCancel")]
 	public bool CanCancel
 	{
@@ -20,9 +20,9 @@ public class XUiC_SaveSpaceNeeded : XUiController
 		set;
 	} = true;
 
-	// Token: 0x17000B26 RID: 2854
-	// (get) Token: 0x060068E5 RID: 26853 RVA: 0x002957C9 File Offset: 0x002939C9
-	// (set) Token: 0x060068E6 RID: 26854 RVA: 0x002957D1 File Offset: 0x002939D1
+	// Token: 0x17000B3E RID: 2878
+	// (get) Token: 0x06006981 RID: 27009 RVA: 0x0029891D File Offset: 0x00296B1D
+	// (set) Token: 0x06006982 RID: 27010 RVA: 0x00298925 File Offset: 0x00296B25
 	[XuiXmlBinding("canDiscard")]
 	public bool CanDiscard
 	{
@@ -32,9 +32,9 @@ public class XUiC_SaveSpaceNeeded : XUiController
 		set;
 	} = true;
 
-	// Token: 0x17000B27 RID: 2855
-	// (get) Token: 0x060068E7 RID: 26855 RVA: 0x002957DA File Offset: 0x002939DA
-	// (set) Token: 0x060068E8 RID: 26856 RVA: 0x002957E2 File Offset: 0x002939E2
+	// Token: 0x17000B3F RID: 2879
+	// (get) Token: 0x06006983 RID: 27011 RVA: 0x0029892E File Offset: 0x00296B2E
+	// (set) Token: 0x06006984 RID: 27012 RVA: 0x00298936 File Offset: 0x00296B36
 	[XuiXmlBinding("langKeyTitle")]
 	public string LangKeyTitle
 	{
@@ -44,9 +44,9 @@ public class XUiC_SaveSpaceNeeded : XUiController
 		set;
 	} = "xuiSave";
 
-	// Token: 0x17000B28 RID: 2856
-	// (get) Token: 0x060068E9 RID: 26857 RVA: 0x002957EB File Offset: 0x002939EB
-	// (set) Token: 0x060068EA RID: 26858 RVA: 0x002957F3 File Offset: 0x002939F3
+	// Token: 0x17000B40 RID: 2880
+	// (get) Token: 0x06006985 RID: 27013 RVA: 0x0029893F File Offset: 0x00296B3F
+	// (set) Token: 0x06006986 RID: 27014 RVA: 0x00298947 File Offset: 0x00296B47
 	[XuiXmlBinding("langKeyBody")]
 	public string LangKeyBody
 	{
@@ -56,9 +56,9 @@ public class XUiC_SaveSpaceNeeded : XUiController
 		set;
 	} = "xuiDmSavingBody";
 
-	// Token: 0x17000B29 RID: 2857
-	// (get) Token: 0x060068EB RID: 26859 RVA: 0x002957FC File Offset: 0x002939FC
-	// (set) Token: 0x060068EC RID: 26860 RVA: 0x00295804 File Offset: 0x00293A04
+	// Token: 0x17000B41 RID: 2881
+	// (get) Token: 0x06006987 RID: 27015 RVA: 0x00298950 File Offset: 0x00296B50
+	// (set) Token: 0x06006988 RID: 27016 RVA: 0x00298958 File Offset: 0x00296B58
 	[XuiXmlBinding("langKeyCancel")]
 	public string LangKeyCancel
 	{
@@ -68,9 +68,9 @@ public class XUiC_SaveSpaceNeeded : XUiController
 		set;
 	} = "xuiCancel";
 
-	// Token: 0x17000B2A RID: 2858
-	// (get) Token: 0x060068ED RID: 26861 RVA: 0x0029580D File Offset: 0x00293A0D
-	// (set) Token: 0x060068EE RID: 26862 RVA: 0x00295815 File Offset: 0x00293A15
+	// Token: 0x17000B42 RID: 2882
+	// (get) Token: 0x06006989 RID: 27017 RVA: 0x00298961 File Offset: 0x00296B61
+	// (set) Token: 0x0600698A RID: 27018 RVA: 0x00298969 File Offset: 0x00296B69
 	[XuiXmlBinding("langKeyDiscard")]
 	public string LangKeyDiscard
 	{
@@ -80,9 +80,9 @@ public class XUiC_SaveSpaceNeeded : XUiController
 		set;
 	} = "xuiDiscard";
 
-	// Token: 0x17000B2B RID: 2859
-	// (get) Token: 0x060068EF RID: 26863 RVA: 0x0029581E File Offset: 0x00293A1E
-	// (set) Token: 0x060068F0 RID: 26864 RVA: 0x00295826 File Offset: 0x00293A26
+	// Token: 0x17000B43 RID: 2883
+	// (get) Token: 0x0600698B RID: 27019 RVA: 0x00298972 File Offset: 0x00296B72
+	// (set) Token: 0x0600698C RID: 27020 RVA: 0x0029897A File Offset: 0x00296B7A
 	[XuiXmlBinding("langKeyConfirm")]
 	public string LangKeyConfirm
 	{
@@ -92,9 +92,9 @@ public class XUiC_SaveSpaceNeeded : XUiController
 		set;
 	} = "xuiConfirm";
 
-	// Token: 0x17000B2C RID: 2860
-	// (get) Token: 0x060068F1 RID: 26865 RVA: 0x0029582F File Offset: 0x00293A2F
-	// (set) Token: 0x060068F2 RID: 26866 RVA: 0x00295837 File Offset: 0x00293A37
+	// Token: 0x17000B44 RID: 2884
+	// (get) Token: 0x0600698D RID: 27021 RVA: 0x00298983 File Offset: 0x00296B83
+	// (set) Token: 0x0600698E RID: 27022 RVA: 0x0029898B File Offset: 0x00296B8B
 	[XuiXmlBinding("langKeyManage")]
 	public string LangKeyManage
 	{
@@ -104,8 +104,8 @@ public class XUiC_SaveSpaceNeeded : XUiController
 		set;
 	} = "xuiDmManageSaves";
 
-	// Token: 0x17000B2D RID: 2861
-	// (get) Token: 0x060068F3 RID: 26867 RVA: 0x00295840 File Offset: 0x00293A40
+	// Token: 0x17000B45 RID: 2885
+	// (get) Token: 0x0600698F RID: 27023 RVA: 0x00298994 File Offset: 0x00296B94
 	[XuiXmlBinding("shouldShowDataBar")]
 	public bool ShouldShowDataBar
 	{
@@ -116,8 +116,8 @@ public class XUiC_SaveSpaceNeeded : XUiController
 		}
 	}
 
-	// Token: 0x17000B2E RID: 2862
-	// (get) Token: 0x060068F4 RID: 26868 RVA: 0x00295856 File Offset: 0x00293A56
+	// Token: 0x17000B46 RID: 2886
+	// (get) Token: 0x06006990 RID: 27024 RVA: 0x002989AA File Offset: 0x00296BAA
 	[XuiXmlBinding("hasSufficientSpace")]
 	public bool HasSufficientSpace
 	{
@@ -128,16 +128,16 @@ public class XUiC_SaveSpaceNeeded : XUiController
 		}
 	}
 
-	// Token: 0x17000B2F RID: 2863
-	// (get) Token: 0x060068F5 RID: 26869 RVA: 0x0029587F File Offset: 0x00293A7F
-	// (set) Token: 0x060068F6 RID: 26870 RVA: 0x00295887 File Offset: 0x00293A87
+	// Token: 0x17000B47 RID: 2887
+	// (get) Token: 0x06006991 RID: 27025 RVA: 0x002989D3 File Offset: 0x00296BD3
+	// (set) Token: 0x06006992 RID: 27026 RVA: 0x002989DB File Offset: 0x00296BDB
 	public XUiC_SaveSpaceNeeded.ConfirmationResult Result
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x060068F7 RID: 26871 RVA: 0x00295890 File Offset: 0x00293A90
+	// Token: 0x06006993 RID: 27027 RVA: 0x002989E4 File Offset: 0x00296BE4
 	[XuiXmlAttribute("prompt_sound", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attribBrowseSound(string _value)
@@ -148,14 +148,14 @@ public class XUiC_SaveSpaceNeeded : XUiController
 		});
 	}
 
-	// Token: 0x060068F8 RID: 26872 RVA: 0x002958AA File Offset: 0x00293AAA
+	// Token: 0x06006994 RID: 27028 RVA: 0x002989FE File Offset: 0x00296BFE
 	public override void Init()
 	{
 		base.Init();
 		XUiC_SaveSpaceNeeded.ID = base.WindowGroup.Id;
 	}
 
-	// Token: 0x060068F9 RID: 26873 RVA: 0x002958C2 File Offset: 0x00293AC2
+	// Token: 0x06006995 RID: 27029 RVA: 0x00298A16 File Offset: 0x00296C16
 	[XuiBindEvent("OnPress", "btnCancel")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnCancel_OnPressed(XUiController _sender, int _mouseButton)
@@ -169,7 +169,7 @@ public class XUiC_SaveSpaceNeeded : XUiController
 		this.xui.playerUI.windowManager.Close(this.windowGroup, false);
 	}
 
-	// Token: 0x060068FA RID: 26874 RVA: 0x002958FA File Offset: 0x00293AFA
+	// Token: 0x06006996 RID: 27030 RVA: 0x00298A4E File Offset: 0x00296C4E
 	[XuiBindEvent("OnPress", "btnDiscard")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnDiscard_OnPressed(XUiController _sender, int _mouseButton)
@@ -183,7 +183,7 @@ public class XUiC_SaveSpaceNeeded : XUiController
 		this.xui.playerUI.windowManager.Close(this.windowGroup, false);
 	}
 
-	// Token: 0x060068FB RID: 26875 RVA: 0x00295934 File Offset: 0x00293B34
+	// Token: 0x06006997 RID: 27031 RVA: 0x00298A88 File Offset: 0x00296C88
 	[XuiBindEvent("OnPress", "btnManage")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnManage_OnPressed(XUiController _sender, int _mouseButton)
@@ -207,7 +207,7 @@ public class XUiC_SaveSpaceNeeded : XUiController
 		XUiC_DataManagement.OpenDataManagementWindow(this, new Action(this.OnDataManagementWindowClosed));
 	}
 
-	// Token: 0x060068FC RID: 26876 RVA: 0x00295996 File Offset: 0x00293B96
+	// Token: 0x06006998 RID: 27032 RVA: 0x00298AEA File Offset: 0x00296CEA
 	[XuiBindEvent("OnPress", "btnConfirm")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnConfirm_OnPressed(XUiController _sender, int _mouseButton)
@@ -221,7 +221,7 @@ public class XUiC_SaveSpaceNeeded : XUiController
 		this.xui.playerUI.windowManager.Close(this.windowGroup, false);
 	}
 
-	// Token: 0x060068FD RID: 26877 RVA: 0x002959D0 File Offset: 0x00293BD0
+	// Token: 0x06006999 RID: 27033 RVA: 0x00298B24 File Offset: 0x00296D24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDataManagementWindowClosed()
 	{
@@ -244,7 +244,7 @@ public class XUiC_SaveSpaceNeeded : XUiController
 		this.updateBarValues();
 	}
 
-	// Token: 0x060068FE RID: 26878 RVA: 0x00295A28 File Offset: 0x00293C28
+	// Token: 0x0600699A RID: 27034 RVA: 0x00298B7C File Offset: 0x00296D7C
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -278,7 +278,7 @@ public class XUiC_SaveSpaceNeeded : XUiController
 		this.xui.playerUI.CursorController.Locked = false;
 	}
 
-	// Token: 0x060068FF RID: 26879 RVA: 0x00295B3C File Offset: 0x00293D3C
+	// Token: 0x0600699B RID: 27035 RVA: 0x00298C90 File Offset: 0x00296E90
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -306,7 +306,7 @@ public class XUiC_SaveSpaceNeeded : XUiController
 		this.LangKeyManage = "xuiDmManageSaves";
 	}
 
-	// Token: 0x06006900 RID: 26880 RVA: 0x00295C1C File Offset: 0x00293E1C
+	// Token: 0x0600699C RID: 27036 RVA: 0x00298D70 File Offset: 0x00296F70
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void initInternal(long _pendingBytes, string[] _protectedPaths, UserDataStorageType _storageType, bool _canCancel, bool _canDiscard, string _langKeyTitle, string _langKeyBody, string _langKeyCancel, string _langKeyDiscard, string _langKeyConfirm, string _langKeyManage)
 	{
@@ -325,7 +325,7 @@ public class XUiC_SaveSpaceNeeded : XUiController
 		this.Result = XUiC_SaveSpaceNeeded.ConfirmationResult.Pending;
 	}
 
-	// Token: 0x06006901 RID: 26881 RVA: 0x00295CF8 File Offset: 0x00293EF8
+	// Token: 0x0600699D RID: 27037 RVA: 0x00298E4C File Offset: 0x0029704C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateBarValues()
 	{
@@ -345,13 +345,13 @@ public class XUiC_SaveSpaceNeeded : XUiController
 		this.btnManage.SelectCursorElement(true, false);
 	}
 
-	// Token: 0x06006902 RID: 26882 RVA: 0x00295D98 File Offset: 0x00293F98
+	// Token: 0x0600699E RID: 27038 RVA: 0x00298EEC File Offset: 0x002970EC
 	public static XUiC_SaveSpaceNeeded Open(long _pendingBytes, string _protectedPath, UserDataStorageType _storageType, bool _onlyShowOnInsufficientSpace = false, bool _canCancel = true, bool _canDiscard = true, string _title = null, string _body = null, string _cancel = null, string _discard = null, string _confirm = null, string _manage = null)
 	{
 		return XUiC_SaveSpaceNeeded.Open(_pendingBytes, new string[] { _protectedPath }, _storageType, _onlyShowOnInsufficientSpace, _canCancel, _canDiscard, _title, _body, _cancel, _discard, _confirm, _manage);
 	}
 
-	// Token: 0x06006903 RID: 26883 RVA: 0x00295DC8 File Offset: 0x00293FC8
+	// Token: 0x0600699F RID: 27039 RVA: 0x00298F1C File Offset: 0x0029711C
 	public static XUiC_SaveSpaceNeeded Open(long _pendingBytes, string[] _protectedPaths, UserDataStorageType _storageType, bool _onlyShowOnInsufficientSpace = false, bool _canCancel = true, bool _canDiscard = true, string _title = null, string _body = null, string _cancel = null, string _discard = null, string _confirm = null, string _manage = null)
 	{
 		if (_onlyShowOnInsufficientSpace)
@@ -390,100 +390,100 @@ public class XUiC_SaveSpaceNeeded : XUiController
 		return xuiC_SaveSpaceNeeded2;
 	}
 
-	// Token: 0x04005051 RID: 20561
+	// Token: 0x040050F3 RID: 20723
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string LangKeyDefaultTitle = "xuiSave";
 
-	// Token: 0x04005052 RID: 20562
+	// Token: 0x040050F4 RID: 20724
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string LangKeyDefaultBody = "xuiDmSavingBody";
 
-	// Token: 0x04005053 RID: 20563
+	// Token: 0x040050F5 RID: 20725
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string LangKeyDefaultCancel = "xuiCancel";
 
-	// Token: 0x04005054 RID: 20564
+	// Token: 0x040050F6 RID: 20726
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string LangKeyDefaultDiscard = "xuiDiscard";
 
-	// Token: 0x04005055 RID: 20565
+	// Token: 0x040050F7 RID: 20727
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string LangKeyDefaultConfirm = "xuiConfirm";
 
-	// Token: 0x04005056 RID: 20566
+	// Token: 0x040050F8 RID: 20728
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string LangKeyDefaultManage = "xuiDmManageSaves";
 
-	// Token: 0x04005057 RID: 20567
+	// Token: 0x040050F9 RID: 20729
 	public static string ID = "";
 
-	// Token: 0x04005058 RID: 20568
+	// Token: 0x040050FA RID: 20730
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool mOpenedProperly;
 
-	// Token: 0x04005059 RID: 20569
+	// Token: 0x040050FB RID: 20731
 	[XuiBindComponent("btnCancel", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnCancel;
 
-	// Token: 0x0400505A RID: 20570
+	// Token: 0x040050FC RID: 20732
 	[XuiBindComponent("btnDiscard", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnDiscard;
 
-	// Token: 0x0400505B RID: 20571
+	// Token: 0x040050FD RID: 20733
 	[XuiBindComponent("btnManage", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnManage;
 
-	// Token: 0x0400505C RID: 20572
+	// Token: 0x040050FE RID: 20734
 	[XuiBindComponent("btnConfirm", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnConfirm;
 
-	// Token: 0x0400505D RID: 20573
+	// Token: 0x040050FF RID: 20735
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_DataManagementBar dataManagementBar;
 
-	// Token: 0x0400505E RID: 20574
+	// Token: 0x04005100 RID: 20736
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long mPendingBytes;
 
-	// Token: 0x0400505F RID: 20575
+	// Token: 0x04005101 RID: 20737
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string[] mProtectedPaths;
 
-	// Token: 0x04005060 RID: 20576
+	// Token: 0x04005102 RID: 20738
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UserDataStorageType mStorageType;
 
-	// Token: 0x04005069 RID: 20585
+	// Token: 0x0400510B RID: 20747
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long mTotalAvailableBytes;
 
-	// Token: 0x0400506A RID: 20586
+	// Token: 0x0400510C RID: 20748
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool mWasCursorHidden;
 
-	// Token: 0x0400506B RID: 20587
+	// Token: 0x0400510D RID: 20749
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool mWasCursorLocked;
 
-	// Token: 0x0400506C RID: 20588
+	// Token: 0x0400510E RID: 20750
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AudioClip mPromptReadyClip;
 
-	// Token: 0x02000D7E RID: 3454
+	// Token: 0x02000D92 RID: 3474
 	public enum ConfirmationResult
 	{
-		// Token: 0x0400506F RID: 20591
+		// Token: 0x04005111 RID: 20753
 		Pending,
-		// Token: 0x04005070 RID: 20592
+		// Token: 0x04005112 RID: 20754
 		Cancelled,
-		// Token: 0x04005071 RID: 20593
+		// Token: 0x04005113 RID: 20755
 		Discarded,
-		// Token: 0x04005072 RID: 20594
+		// Token: 0x04005114 RID: 20756
 		Confirmed
 	}
 }

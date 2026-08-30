@@ -2,22 +2,22 @@
 
 namespace Twitch
 {
-	// Token: 0x02001810 RID: 6160
+	// Token: 0x02001836 RID: 6198
 	public class TwitchCreatorGoalEventEntry : BaseTwitchEventEntry
 	{
-		// Token: 0x0600BDB0 RID: 48560 RVA: 0x004638DC File Offset: 0x00461ADC
+		// Token: 0x0600BF35 RID: 48949 RVA: 0x00469678 File Offset: 0x00467878
 		public override bool IsValid(int amount = -1, string name = "", TwitchSubEventEntry.SubTierTypes subTier = TwitchSubEventEntry.SubTierTypes.Any)
 		{
 			return name == this.GoalType;
 		}
 
-		// Token: 0x04008E96 RID: 36502
+		// Token: 0x04008FB2 RID: 36786
 		public string GoalType = "Subs";
 
-		// Token: 0x04008E97 RID: 36503
+		// Token: 0x04008FB3 RID: 36787
 		public int RewardAmount = 100;
 
-		// Token: 0x04008E98 RID: 36504
+		// Token: 0x04008FB4 RID: 36788
 		public TwitchAction.PointTypes RewardType;
 	}
 }

@@ -8,13 +8,13 @@ using XMLData.Parsers;
 
 namespace XMLData.Item
 {
-	// Token: 0x02001622 RID: 5666
+	// Token: 0x0200163D RID: 5693
 	[Preserve]
 	public class DamageBonusData : IXMLData
 	{
-		// Token: 0x170014D6 RID: 5334
-		// (get) Token: 0x0600B1AF RID: 45487 RVA: 0x004243D7 File Offset: 0x004225D7
-		// (set) Token: 0x0600B1B0 RID: 45488 RVA: 0x004243DF File Offset: 0x004225DF
+		// Token: 0x1700150F RID: 5391
+		// (get) Token: 0x0600B2AC RID: 45740 RVA: 0x00429717 File Offset: 0x00427917
+		// (set) Token: 0x0600B2AD RID: 45741 RVA: 0x0042971F File Offset: 0x0042791F
 		public DataItem<float> Head
 		{
 			get
@@ -27,9 +27,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170014D7 RID: 5335
-		// (get) Token: 0x0600B1B1 RID: 45489 RVA: 0x004243E8 File Offset: 0x004225E8
-		// (set) Token: 0x0600B1B2 RID: 45490 RVA: 0x004243F0 File Offset: 0x004225F0
+		// Token: 0x17001510 RID: 5392
+		// (get) Token: 0x0600B2AE RID: 45742 RVA: 0x00429728 File Offset: 0x00427928
+		// (set) Token: 0x0600B2AF RID: 45743 RVA: 0x00429730 File Offset: 0x00427930
 		public DataItem<float> Glass
 		{
 			get
@@ -42,9 +42,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170014D8 RID: 5336
-		// (get) Token: 0x0600B1B3 RID: 45491 RVA: 0x004243F9 File Offset: 0x004225F9
-		// (set) Token: 0x0600B1B4 RID: 45492 RVA: 0x00424401 File Offset: 0x00422601
+		// Token: 0x17001511 RID: 5393
+		// (get) Token: 0x0600B2B0 RID: 45744 RVA: 0x00429739 File Offset: 0x00427939
+		// (set) Token: 0x0600B2B1 RID: 45745 RVA: 0x00429741 File Offset: 0x00427941
 		public DataItem<float> Stone
 		{
 			get
@@ -57,9 +57,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170014D9 RID: 5337
-		// (get) Token: 0x0600B1B5 RID: 45493 RVA: 0x0042440A File Offset: 0x0042260A
-		// (set) Token: 0x0600B1B6 RID: 45494 RVA: 0x00424412 File Offset: 0x00422612
+		// Token: 0x17001512 RID: 5394
+		// (get) Token: 0x0600B2B2 RID: 45746 RVA: 0x0042974A File Offset: 0x0042794A
+		// (set) Token: 0x0600B2B3 RID: 45747 RVA: 0x00429752 File Offset: 0x00427952
 		public DataItem<float> Cloth
 		{
 			get
@@ -72,9 +72,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170014DA RID: 5338
-		// (get) Token: 0x0600B1B7 RID: 45495 RVA: 0x0042441B File Offset: 0x0042261B
-		// (set) Token: 0x0600B1B8 RID: 45496 RVA: 0x00424423 File Offset: 0x00422623
+		// Token: 0x17001513 RID: 5395
+		// (get) Token: 0x0600B2B4 RID: 45748 RVA: 0x0042975B File Offset: 0x0042795B
+		// (set) Token: 0x0600B2B5 RID: 45749 RVA: 0x00429763 File Offset: 0x00427963
 		public DataItem<float> Concrete
 		{
 			get
@@ -87,9 +87,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170014DB RID: 5339
-		// (get) Token: 0x0600B1B9 RID: 45497 RVA: 0x0042442C File Offset: 0x0042262C
-		// (set) Token: 0x0600B1BA RID: 45498 RVA: 0x00424434 File Offset: 0x00422634
+		// Token: 0x17001514 RID: 5396
+		// (get) Token: 0x0600B2B6 RID: 45750 RVA: 0x0042976C File Offset: 0x0042796C
+		// (set) Token: 0x0600B2B7 RID: 45751 RVA: 0x00429774 File Offset: 0x00427974
 		public DataItem<float> Boulder
 		{
 			get
@@ -102,9 +102,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170014DC RID: 5340
-		// (get) Token: 0x0600B1BB RID: 45499 RVA: 0x0042443D File Offset: 0x0042263D
-		// (set) Token: 0x0600B1BC RID: 45500 RVA: 0x00424445 File Offset: 0x00422645
+		// Token: 0x17001515 RID: 5397
+		// (get) Token: 0x0600B2B8 RID: 45752 RVA: 0x0042977D File Offset: 0x0042797D
+		// (set) Token: 0x0600B2B9 RID: 45753 RVA: 0x00429785 File Offset: 0x00427985
 		public DataItem<float> Metal
 		{
 			get
@@ -117,9 +117,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170014DD RID: 5341
-		// (get) Token: 0x0600B1BD RID: 45501 RVA: 0x0042444E File Offset: 0x0042264E
-		// (set) Token: 0x0600B1BE RID: 45502 RVA: 0x00424456 File Offset: 0x00422656
+		// Token: 0x17001516 RID: 5398
+		// (get) Token: 0x0600B2BA RID: 45754 RVA: 0x0042978E File Offset: 0x0042798E
+		// (set) Token: 0x0600B2BB RID: 45755 RVA: 0x00429796 File Offset: 0x00427996
 		public DataItem<float> Wood
 		{
 			get
@@ -132,9 +132,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170014DE RID: 5342
-		// (get) Token: 0x0600B1BF RID: 45503 RVA: 0x0042445F File Offset: 0x0042265F
-		// (set) Token: 0x0600B1C0 RID: 45504 RVA: 0x00424467 File Offset: 0x00422667
+		// Token: 0x17001517 RID: 5399
+		// (get) Token: 0x0600B2BC RID: 45756 RVA: 0x0042979F File Offset: 0x0042799F
+		// (set) Token: 0x0600B2BD RID: 45757 RVA: 0x004297A7 File Offset: 0x004279A7
 		public DataItem<float> Earth
 		{
 			get
@@ -147,9 +147,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170014DF RID: 5343
-		// (get) Token: 0x0600B1C1 RID: 45505 RVA: 0x00424470 File Offset: 0x00422670
-		// (set) Token: 0x0600B1C2 RID: 45506 RVA: 0x00424478 File Offset: 0x00422678
+		// Token: 0x17001518 RID: 5400
+		// (get) Token: 0x0600B2BE RID: 45758 RVA: 0x004297B0 File Offset: 0x004279B0
+		// (set) Token: 0x0600B2BF RID: 45759 RVA: 0x004297B8 File Offset: 0x004279B8
 		public DataItem<float> Snow
 		{
 			get
@@ -162,9 +162,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170014E0 RID: 5344
-		// (get) Token: 0x0600B1C3 RID: 45507 RVA: 0x00424481 File Offset: 0x00422681
-		// (set) Token: 0x0600B1C4 RID: 45508 RVA: 0x00424489 File Offset: 0x00422689
+		// Token: 0x17001519 RID: 5401
+		// (get) Token: 0x0600B2C0 RID: 45760 RVA: 0x004297C1 File Offset: 0x004279C1
+		// (set) Token: 0x0600B2C1 RID: 45761 RVA: 0x004297C9 File Offset: 0x004279C9
 		public DataItem<float> Plants
 		{
 			get
@@ -177,9 +177,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x170014E1 RID: 5345
-		// (get) Token: 0x0600B1C5 RID: 45509 RVA: 0x00424492 File Offset: 0x00422692
-		// (set) Token: 0x0600B1C6 RID: 45510 RVA: 0x0042449A File Offset: 0x0042269A
+		// Token: 0x1700151A RID: 5402
+		// (get) Token: 0x0600B2C2 RID: 45762 RVA: 0x004297D2 File Offset: 0x004279D2
+		// (set) Token: 0x0600B2C3 RID: 45763 RVA: 0x004297DA File Offset: 0x004279DA
 		public DataItem<float> Leaves
 		{
 			get
@@ -192,64 +192,64 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x0600B1C7 RID: 45511 RVA: 0x0042331B File Offset: 0x0042151B
+		// Token: 0x0600B2C4 RID: 45764 RVA: 0x0042865B File Offset: 0x0042685B
 		public List<IDataItem> GetDisplayValues(bool _recursive = true)
 		{
 			return new List<IDataItem>();
 		}
 
-		// Token: 0x0400855B RID: 34139
+		// Token: 0x04008634 RID: 34356
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pHead;
 
-		// Token: 0x0400855C RID: 34140
+		// Token: 0x04008635 RID: 34357
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pGlass;
 
-		// Token: 0x0400855D RID: 34141
+		// Token: 0x04008636 RID: 34358
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pStone;
 
-		// Token: 0x0400855E RID: 34142
+		// Token: 0x04008637 RID: 34359
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pCloth;
 
-		// Token: 0x0400855F RID: 34143
+		// Token: 0x04008638 RID: 34360
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pConcrete;
 
-		// Token: 0x04008560 RID: 34144
+		// Token: 0x04008639 RID: 34361
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pBoulder;
 
-		// Token: 0x04008561 RID: 34145
+		// Token: 0x0400863A RID: 34362
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pMetal;
 
-		// Token: 0x04008562 RID: 34146
+		// Token: 0x0400863B RID: 34363
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pWood;
 
-		// Token: 0x04008563 RID: 34147
+		// Token: 0x0400863C RID: 34364
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pEarth;
 
-		// Token: 0x04008564 RID: 34148
+		// Token: 0x0400863D RID: 34365
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pSnow;
 
-		// Token: 0x04008565 RID: 34149
+		// Token: 0x0400863E RID: 34366
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pPlants;
 
-		// Token: 0x04008566 RID: 34150
+		// Token: 0x0400863F RID: 34367
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pLeaves;
 
-		// Token: 0x02001623 RID: 5667
+		// Token: 0x0200163E RID: 5694
 		public static class Parser
 		{
-			// Token: 0x0600B1C9 RID: 45513 RVA: 0x004244A4 File Offset: 0x004226A4
+			// Token: 0x0600B2C6 RID: 45766 RVA: 0x004297E4 File Offset: 0x004279E4
 			public static DamageBonusData Parse(PositionXmlElement _elem, Dictionary<PositionXmlElement, DataItem<ItemClass>> _updateLater)
 			{
 				string text = (_elem.HasAttribute("class") ? _elem.GetAttribute("class") : "DamageBonusData");
@@ -610,7 +610,7 @@ namespace XMLData.Item
 				return damageBonusData;
 			}
 
-			// Token: 0x04008567 RID: 34151
+			// Token: 0x04008640 RID: 34368
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static Dictionary<string, Range<int>> knownAttributesMultiplicity = new Dictionary<string, Range<int>>
 			{

@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200109D RID: 4253
+// Token: 0x020010B6 RID: 4278
 [Preserve]
 public class XUiC_VehicleWindowGroup : XUiController
 {
-	// Token: 0x17000FB1 RID: 4017
-	// (get) Token: 0x06008774 RID: 34676 RVA: 0x0033D17B File Offset: 0x0033B37B
-	// (set) Token: 0x06008775 RID: 34677 RVA: 0x0033D184 File Offset: 0x0033B384
+	// Token: 0x17000FEA RID: 4074
+	// (get) Token: 0x06008866 RID: 34918 RVA: 0x003419A3 File Offset: 0x0033FBA3
+	// (set) Token: 0x06008867 RID: 34919 RVA: 0x003419AC File Offset: 0x0033FBAC
 	public EntityVehicle CurrentVehicleEntity
 	{
 		get
@@ -37,7 +37,7 @@ public class XUiC_VehicleWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06008776 RID: 34678 RVA: 0x0033D264 File Offset: 0x0033B464
+	// Token: 0x06008868 RID: 34920 RVA: 0x00341A8C File Offset: 0x0033FC8C
 	public override void Init()
 	{
 		base.Init();
@@ -48,7 +48,7 @@ public class XUiC_VehicleWindowGroup : XUiController
 		this.cosmeticGrid = base.GetChildByType<XUiC_ItemCosmeticStackGrid>();
 	}
 
-	// Token: 0x06008777 RID: 34679 RVA: 0x0033D2BC File Offset: 0x0033B4BC
+	// Token: 0x06008869 RID: 34921 RVA: 0x00341AE4 File Offset: 0x0033FCE4
 	public override void Update(float _dt)
 	{
 		if (this.windowGroup.isShowing)
@@ -80,7 +80,7 @@ public class XUiC_VehicleWindowGroup : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x06008778 RID: 34680 RVA: 0x0033D3D1 File Offset: 0x0033B5D1
+	// Token: 0x0600886A RID: 34922 RVA: 0x00341BF9 File Offset: 0x0033FDF9
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -90,7 +90,7 @@ public class XUiC_VehicleWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06008779 RID: 34681 RVA: 0x0033D3F4 File Offset: 0x0033B5F4
+	// Token: 0x0600886B RID: 34923 RVA: 0x00341C1C File Offset: 0x0033FE1C
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -107,7 +107,7 @@ public class XUiC_VehicleWindowGroup : XUiController
 		this.xui.Vehicle.CurrentVehicle = null;
 	}
 
-	// Token: 0x0600877A RID: 34682 RVA: 0x0033D47C File Offset: 0x0033B67C
+	// Token: 0x0600886C RID: 34924 RVA: 0x00341CA4 File Offset: 0x0033FEA4
 	public void OnItemChanged(ItemStack itemStack)
 	{
 		this.partGrid.CurrentItem = itemStack;
@@ -116,38 +116,38 @@ public class XUiC_VehicleWindowGroup : XUiController
 		this.cosmeticGrid.SetParts(itemStack.itemValue.CosmeticMods);
 	}
 
-	// Token: 0x040064DC RID: 25820
+	// Token: 0x040065A3 RID: 26019
 	public static string ID = "vehicle";
 
-	// Token: 0x040064DD RID: 25821
+	// Token: 0x040065A4 RID: 26020
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_VehicleFrameWindow frameWindow;
 
-	// Token: 0x040064DE RID: 25822
+	// Token: 0x040065A5 RID: 26021
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_WindowNonPagingHeader nonPagingHeaderWindow;
 
-	// Token: 0x040064DF RID: 25823
+	// Token: 0x040065A6 RID: 26022
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_VehiclePartStackGrid partGrid;
 
-	// Token: 0x040064E0 RID: 25824
+	// Token: 0x040065A7 RID: 26023
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ItemCosmeticStackGrid cosmeticGrid;
 
-	// Token: 0x040064E1 RID: 25825
+	// Token: 0x040065A8 RID: 26024
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string headerName;
 
-	// Token: 0x040064E2 RID: 25826
+	// Token: 0x040065A9 RID: 26025
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityVehicle currentVehicleEntity;
 
-	// Token: 0x040064E3 RID: 25827
+	// Token: 0x040065AA RID: 26026
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool activeKeyDown;
 
-	// Token: 0x040064E4 RID: 25828
+	// Token: 0x040065AB RID: 26027
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool wasReleased;
 }

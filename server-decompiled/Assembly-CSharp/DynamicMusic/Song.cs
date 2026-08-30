@@ -6,11 +6,11 @@ using UnityEngine.Scripting;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A3D RID: 6717
+	// Token: 0x02001A64 RID: 6756
 	[Preserve]
 	public class Song : SingleClipPlayer, ISection, IPlayable, IFadeable, ICleanable
 	{
-		// Token: 0x0600CB24 RID: 52004 RVA: 0x004A40F8 File Offset: 0x004A22F8
+		// Token: 0x0600CCAD RID: 52397 RVA: 0x004AA4EC File Offset: 0x004A86EC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override IEnumerator PlayCoroutine()
 		{

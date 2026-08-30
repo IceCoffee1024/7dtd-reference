@@ -4,11 +4,11 @@ using Audio;
 using GameEvent.SequenceActions;
 using UnityEngine;
 
-// Token: 0x0200052F RID: 1327
+// Token: 0x02000534 RID: 1332
 public class BossGroup
 {
-	// Token: 0x170004A9 RID: 1193
-	// (get) Token: 0x06002BBA RID: 11194 RVA: 0x00113664 File Offset: 0x00111864
+	// Token: 0x170004AD RID: 1197
+	// (get) Token: 0x06002BE4 RID: 11236 RVA: 0x001146DC File Offset: 0x001128DC
 	public string GetBossNavClass
 	{
 		get
@@ -26,8 +26,8 @@ public class BossGroup
 		}
 	}
 
-	// Token: 0x170004AA RID: 1194
-	// (get) Token: 0x06002BBB RID: 11195 RVA: 0x00113694 File Offset: 0x00111894
+	// Token: 0x170004AE RID: 1198
+	// (get) Token: 0x06002BE5 RID: 11237 RVA: 0x0011470C File Offset: 0x0011290C
 	public string GetMinionNavClass
 	{
 		get
@@ -45,8 +45,8 @@ public class BossGroup
 		}
 	}
 
-	// Token: 0x170004AB RID: 1195
-	// (get) Token: 0x06002BBC RID: 11196 RVA: 0x001136C3 File Offset: 0x001118C3
+	// Token: 0x170004AF RID: 1199
+	// (get) Token: 0x06002BE6 RID: 11238 RVA: 0x0011473B File Offset: 0x0011293B
 	public int MinionCount
 	{
 		get
@@ -59,7 +59,7 @@ public class BossGroup
 		}
 	}
 
-	// Token: 0x06002BBD RID: 11197 RVA: 0x001136DC File Offset: 0x001118DC
+	// Token: 0x06002BE7 RID: 11239 RVA: 0x00114754 File Offset: 0x00112954
 	public BossGroup(EntityPlayer target, EntityAlive boss, List<EntityAlive> minions, BossGroup.BossGroupTypes bossGroupType, string bossIcon)
 	{
 		this.CurrentGroupType = bossGroupType;
@@ -78,7 +78,7 @@ public class BossGroup
 		this.serverBounds.size = this.LeavingSize;
 	}
 
-	// Token: 0x06002BBE RID: 11198 RVA: 0x00113818 File Offset: 0x00111A18
+	// Token: 0x06002BE8 RID: 11240 RVA: 0x00114890 File Offset: 0x00112A90
 	public BossGroup(int bossGroupID, BossGroup.BossGroupTypes bossGroupType, int bossEntityID, List<int> minionIDs, string bossIcon)
 	{
 		this.CurrentGroupType = bossGroupType;
@@ -90,7 +90,7 @@ public class BossGroup
 		this.BossGroupID = bossGroupID;
 	}
 
-	// Token: 0x06002BBF RID: 11199 RVA: 0x001138D8 File Offset: 0x00111AD8
+	// Token: 0x06002BE9 RID: 11241 RVA: 0x00114950 File Offset: 0x00112B50
 	public void Update(EntityPlayerLocal player)
 	{
 		float num = -1f;
@@ -162,19 +162,19 @@ public class BossGroup
 		this.bounds.size = (this.IsCurrent ? this.LeavingSize : this.EnteringSize);
 	}
 
-	// Token: 0x06002BC0 RID: 11200 RVA: 0x00113ADB File Offset: 0x00111CDB
+	// Token: 0x06002BEA RID: 11242 RVA: 0x00114B53 File Offset: 0x00112D53
 	public bool IsPlayerWithinRange(EntityPlayer player)
 	{
 		return this.bounds.Contains(player.position);
 	}
 
-	// Token: 0x06002BC1 RID: 11201 RVA: 0x00113AEE File Offset: 0x00111CEE
+	// Token: 0x06002BEB RID: 11243 RVA: 0x00114B66 File Offset: 0x00112D66
 	public bool IsPlayerWithinServerRange(EntityPlayer player)
 	{
 		return this.serverBounds.Contains(player.position);
 	}
 
-	// Token: 0x06002BC2 RID: 11202 RVA: 0x00113B04 File Offset: 0x00111D04
+	// Token: 0x06002BEC RID: 11244 RVA: 0x00114B7C File Offset: 0x00112D7C
 	public void RemoveMinion(int entityID)
 	{
 		if (this.MinionEntityIDs != null)
@@ -193,7 +193,7 @@ public class BossGroup
 		}
 	}
 
-	// Token: 0x06002BC3 RID: 11203 RVA: 0x00113B7C File Offset: 0x00111D7C
+	// Token: 0x06002BED RID: 11245 RVA: 0x00114BF4 File Offset: 0x00112DF4
 	public void AddNavObjects()
 	{
 		if (this.MinionEntities == null)
@@ -220,7 +220,7 @@ public class BossGroup
 		}
 	}
 
-	// Token: 0x06002BC4 RID: 11204 RVA: 0x00113C5F File Offset: 0x00111E5F
+	// Token: 0x06002BEE RID: 11246 RVA: 0x00114CD7 File Offset: 0x00112ED7
 	public void RequestStatRefresh()
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsClient)
@@ -229,7 +229,7 @@ public class BossGroup
 		}
 	}
 
-	// Token: 0x06002BC5 RID: 11205 RVA: 0x00113C8C File Offset: 0x00111E8C
+	// Token: 0x06002BEF RID: 11247 RVA: 0x00114D04 File Offset: 0x00112F04
 	public void RefreshStats(int playerID)
 	{
 		if (this.MinionEntities == null)
@@ -257,7 +257,7 @@ public class BossGroup
 		}
 	}
 
-	// Token: 0x06002BC6 RID: 11206 RVA: 0x00113DA0 File Offset: 0x00111FA0
+	// Token: 0x06002BF0 RID: 11248 RVA: 0x00114E18 File Offset: 0x00113018
 	public void RemoveNavObjects()
 	{
 		if (this.BossEntity != null)
@@ -282,7 +282,7 @@ public class BossGroup
 		}
 	}
 
-	// Token: 0x06002BC7 RID: 11207 RVA: 0x00113E4C File Offset: 0x0011204C
+	// Token: 0x06002BF1 RID: 11249 RVA: 0x00114EC4 File Offset: 0x001130C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetupTeleportList()
 	{
@@ -328,7 +328,7 @@ public class BossGroup
 		}
 	}
 
-	// Token: 0x06002BC8 RID: 11208 RVA: 0x00114028 File Offset: 0x00112228
+	// Token: 0x06002BF2 RID: 11250 RVA: 0x001150A0 File Offset: 0x001132A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityAlive GetClosestEntity(EntityPlayer player)
 	{
@@ -357,7 +357,7 @@ public class BossGroup
 		return entityAlive;
 	}
 
-	// Token: 0x06002BC9 RID: 11209 RVA: 0x0011410C File Offset: 0x0011230C
+	// Token: 0x06002BF3 RID: 11251 RVA: 0x00115184 File Offset: 0x00113384
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleTeleportList()
 	{
@@ -382,7 +382,7 @@ public class BossGroup
 		}
 	}
 
-	// Token: 0x06002BCA RID: 11210 RVA: 0x001141DA File Offset: 0x001123DA
+	// Token: 0x06002BF4 RID: 11252 RVA: 0x00115252 File Offset: 0x00113452
 	public void HandleAutoPull()
 	{
 		if (this.TeleportList.Count > 0)
@@ -391,7 +391,7 @@ public class BossGroup
 		}
 	}
 
-	// Token: 0x06002BCB RID: 11211 RVA: 0x001141F0 File Offset: 0x001123F0
+	// Token: 0x06002BF5 RID: 11253 RVA: 0x00115268 File Offset: 0x00113468
 	public void HandleLiveHandling()
 	{
 		this.liveTime += Time.deltaTime;
@@ -408,7 +408,7 @@ public class BossGroup
 		}
 	}
 
-	// Token: 0x06002BCC RID: 11212 RVA: 0x00114268 File Offset: 0x00112468
+	// Token: 0x06002BF6 RID: 11254 RVA: 0x001152E0 File Offset: 0x001134E0
 	public bool ServerUpdate()
 	{
 		bool flag = false;
@@ -437,7 +437,7 @@ public class BossGroup
 		return !flag;
 	}
 
-	// Token: 0x06002BCD RID: 11213 RVA: 0x00114380 File Offset: 0x00112580
+	// Token: 0x06002BF7 RID: 11255 RVA: 0x001153F8 File Offset: 0x001135F8
 	public void DespawnAll()
 	{
 		for (int i = this.MinionEntities.Count - 1; i >= 0; i--)
@@ -453,7 +453,7 @@ public class BossGroup
 		}
 	}
 
-	// Token: 0x06002BCE RID: 11214 RVA: 0x00114404 File Offset: 0x00112604
+	// Token: 0x06002BF8 RID: 11256 RVA: 0x0011547C File Offset: 0x0011367C
 	public void HandleAttackTrigger()
 	{
 		for (int i = this.MinionEntities.Count - 1; i >= 0; i--)
@@ -469,92 +469,92 @@ public class BossGroup
 		}
 	}
 
-	// Token: 0x0400213D RID: 8509
+	// Token: 0x0400216C RID: 8556
 	public int BossGroupID = -1;
 
-	// Token: 0x0400213E RID: 8510
+	// Token: 0x0400216D RID: 8557
 	public int BossEntityID = -1;
 
-	// Token: 0x0400213F RID: 8511
+	// Token: 0x0400216E RID: 8558
 	public EntityAlive BossEntity;
 
-	// Token: 0x04002140 RID: 8512
+	// Token: 0x0400216F RID: 8559
 	public List<int> MinionEntityIDs;
 
-	// Token: 0x04002141 RID: 8513
+	// Token: 0x04002170 RID: 8560
 	public List<EntityAlive> MinionEntities;
 
-	// Token: 0x04002142 RID: 8514
+	// Token: 0x04002171 RID: 8561
 	public EntityPlayer TargetPlayer;
 
-	// Token: 0x04002143 RID: 8515
+	// Token: 0x04002172 RID: 8562
 	public BossGroup.BossGroupTypes CurrentGroupType;
 
-	// Token: 0x04002144 RID: 8516
+	// Token: 0x04002173 RID: 8563
 	public string BossIcon = "";
 
-	// Token: 0x04002145 RID: 8517
+	// Token: 0x04002174 RID: 8564
 	public string BossName = "";
 
-	// Token: 0x04002146 RID: 8518
+	// Token: 0x04002175 RID: 8565
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Bounds serverBounds;
 
-	// Token: 0x04002147 RID: 8519
+	// Token: 0x04002176 RID: 8566
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Bounds bounds;
 
-	// Token: 0x04002148 RID: 8520
+	// Token: 0x04002177 RID: 8567
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 EnteringSize = new Vector3(32f, 32f, 32f);
 
-	// Token: 0x04002149 RID: 8521
+	// Token: 0x04002178 RID: 8568
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 LeavingSize = new Vector3(200f, 200f, 200f);
 
-	// Token: 0x0400214A RID: 8522
+	// Token: 0x04002179 RID: 8569
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float autoPullDistance = 32f;
 
-	// Token: 0x0400214B RID: 8523
+	// Token: 0x0400217A RID: 8570
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int nextID = -1;
 
-	// Token: 0x0400214C RID: 8524
+	// Token: 0x0400217B RID: 8571
 	public bool IsCurrent;
 
-	// Token: 0x0400214D RID: 8525
+	// Token: 0x0400217C RID: 8572
 	public bool ReadyForRemove;
 
-	// Token: 0x0400214E RID: 8526
+	// Token: 0x0400217D RID: 8573
 	public string pullSound = "twitch_pull";
 
-	// Token: 0x0400214F RID: 8527
+	// Token: 0x0400217E RID: 8574
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float liveTime;
 
-	// Token: 0x04002150 RID: 8528
+	// Token: 0x0400217F RID: 8575
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float attackTime = 5f;
 
-	// Token: 0x04002151 RID: 8529
+	// Token: 0x04002180 RID: 8576
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityAlive ClosestEnemy;
 
-	// Token: 0x04002152 RID: 8530
+	// Token: 0x04002181 RID: 8577
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<EntityAlive> TeleportList = new List<EntityAlive>();
 
-	// Token: 0x02000530 RID: 1328
+	// Token: 0x02000535 RID: 1333
 	public enum BossGroupTypes
 	{
-		// Token: 0x04002154 RID: 8532
+		// Token: 0x04002183 RID: 8579
 		Standard,
-		// Token: 0x04002155 RID: 8533
+		// Token: 0x04002184 RID: 8580
 		ImmortalBoss,
-		// Token: 0x04002156 RID: 8534
+		// Token: 0x04002185 RID: 8581
 		ImmortalMinions,
-		// Token: 0x04002157 RID: 8535
+		// Token: 0x04002186 RID: 8582
 		Specialized
 	}
 }

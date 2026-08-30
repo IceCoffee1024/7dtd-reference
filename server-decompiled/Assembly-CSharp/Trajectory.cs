@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020014BB RID: 5307
+// Token: 0x020014D6 RID: 5334
 public static class Trajectory
 {
-	// Token: 0x0600A6AB RID: 42667 RVA: 0x003E0154 File Offset: 0x003DE354
+	// Token: 0x0600A7A8 RID: 42920 RVA: 0x003E5494 File Offset: 0x003E3694
 	public unsafe static int Calculate(Vector3 source, Vector3 target, float projectileSpeed, float gravity, Span<Trajectory.AimTrajectory> trajectories)
 	{
 		Span<float> span = new Span<float>(stackalloc byte[(UIntPtr)8], 2);
@@ -42,7 +42,7 @@ public static class Trajectory
 		return num8;
 	}
 
-	// Token: 0x0600A6AC RID: 42668 RVA: 0x003E036C File Offset: 0x003DE56C
+	// Token: 0x0600A7A9 RID: 42921 RVA: 0x003E56AC File Offset: 0x003E38AC
 	public static bool SuggestVelocity_CustomArc(out Vector3 launchVelocity, Vector3 source, Vector3 target, float projectileGravity, float arcParam = 0.5f)
 	{
 		Vector3 vector = target - source;
@@ -69,19 +69,19 @@ public static class Trajectory
 		return false;
 	}
 
-	// Token: 0x020014BC RID: 5308
+	// Token: 0x020014D7 RID: 5335
 	public struct AimTrajectory
 	{
-		// Token: 0x04007B64 RID: 31588
+		// Token: 0x04007C3D RID: 31805
 		public Vector3 Direction;
 
-		// Token: 0x04007B65 RID: 31589
+		// Token: 0x04007C3E RID: 31806
 		public Vector3 LaunchVelocity;
 
-		// Token: 0x04007B66 RID: 31590
+		// Token: 0x04007C3F RID: 31807
 		public float Angle;
 
-		// Token: 0x04007B67 RID: 31591
+		// Token: 0x04007C40 RID: 31808
 		public float Time;
 	}
 }

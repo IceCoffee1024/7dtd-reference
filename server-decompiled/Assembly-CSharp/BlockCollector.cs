@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x02000114 RID: 276
+// Token: 0x02000115 RID: 277
 [Preserve]
 public class BlockCollector : Block
 {
 	// Token: 0x1700007A RID: 122
-	// (get) Token: 0x06000738 RID: 1848 RVA: 0x00033F8C File Offset: 0x0003218C
+	// (get) Token: 0x06000742 RID: 1858 RVA: 0x00034248 File Offset: 0x00032448
 	public string[] Outputs
 	{
 		get
@@ -17,7 +17,7 @@ public class BlockCollector : Block
 		}
 	}
 
-	// Token: 0x06000739 RID: 1849 RVA: 0x00033F94 File Offset: 0x00032194
+	// Token: 0x06000743 RID: 1859 RVA: 0x00034250 File Offset: 0x00032450
 	public BlockCollector.FuelType GetFuelType(string name)
 	{
 		BlockCollector.FuelType fuelType;
@@ -28,7 +28,7 @@ public class BlockCollector : Block
 		return fuelType;
 	}
 
-	// Token: 0x0600073A RID: 1850 RVA: 0x00033FB4 File Offset: 0x000321B4
+	// Token: 0x06000744 RID: 1860 RVA: 0x00034270 File Offset: 0x00032470
 	public BlockCollector.OutputType GetOutputType(string name)
 	{
 		BlockCollector.OutputType outputType;
@@ -40,7 +40,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x1700007B RID: 123
-	// (get) Token: 0x0600073B RID: 1851 RVA: 0x00033FD4 File Offset: 0x000321D4
+	// (get) Token: 0x06000745 RID: 1861 RVA: 0x00034290 File Offset: 0x00032490
 	public string[] ItemIconBackdrop
 	{
 		get
@@ -50,7 +50,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x1700007C RID: 124
-	// (get) Token: 0x0600073C RID: 1852 RVA: 0x00033FDC File Offset: 0x000321DC
+	// (get) Token: 0x06000746 RID: 1862 RVA: 0x00034298 File Offset: 0x00032498
 	public string ItemBackgroundColor
 	{
 		get
@@ -60,7 +60,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x1700007D RID: 125
-	// (get) Token: 0x0600073D RID: 1853 RVA: 0x00033FE4 File Offset: 0x000321E4
+	// (get) Token: 0x06000747 RID: 1863 RVA: 0x000342A0 File Offset: 0x000324A0
 	public string LootLabelKey
 	{
 		get
@@ -70,7 +70,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x1700007E RID: 126
-	// (get) Token: 0x0600073E RID: 1854 RVA: 0x00033FEC File Offset: 0x000321EC
+	// (get) Token: 0x06000748 RID: 1864 RVA: 0x000342A8 File Offset: 0x000324A8
 	public string ActivationEvent
 	{
 		get
@@ -80,7 +80,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x1700007F RID: 127
-	// (get) Token: 0x0600073F RID: 1855 RVA: 0x00033FF4 File Offset: 0x000321F4
+	// (get) Token: 0x06000749 RID: 1865 RVA: 0x000342B0 File Offset: 0x000324B0
 	public string CloseEvent
 	{
 		get
@@ -90,7 +90,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x17000080 RID: 128
-	// (get) Token: 0x06000740 RID: 1856 RVA: 0x00033FFC File Offset: 0x000321FC
+	// (get) Token: 0x0600074A RID: 1866 RVA: 0x000342B8 File Offset: 0x000324B8
 	public string[] RequiredMods
 	{
 		get
@@ -100,7 +100,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x17000081 RID: 129
-	// (get) Token: 0x06000741 RID: 1857 RVA: 0x00034004 File Offset: 0x00032204
+	// (get) Token: 0x0600074B RID: 1867 RVA: 0x000342C0 File Offset: 0x000324C0
 	public bool RequiredModsOnly
 	{
 		get
@@ -110,7 +110,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x17000082 RID: 130
-	// (get) Token: 0x06000742 RID: 1858 RVA: 0x0003400C File Offset: 0x0003220C
+	// (get) Token: 0x0600074C RID: 1868 RVA: 0x000342C8 File Offset: 0x000324C8
 	public string[] ModTransformEnableNames
 	{
 		get
@@ -120,7 +120,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x17000083 RID: 131
-	// (get) Token: 0x06000743 RID: 1859 RVA: 0x00034014 File Offset: 0x00032214
+	// (get) Token: 0x0600074D RID: 1869 RVA: 0x000342D0 File Offset: 0x000324D0
 	public string[] ModTransformDisableNames
 	{
 		get
@@ -130,7 +130,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x17000084 RID: 132
-	// (get) Token: 0x06000744 RID: 1860 RVA: 0x0003401C File Offset: 0x0003221C
+	// (get) Token: 0x0600074E RID: 1870 RVA: 0x000342D8 File Offset: 0x000324D8
 	public int FuelGridInitialHeight
 	{
 		get
@@ -140,7 +140,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x17000085 RID: 133
-	// (get) Token: 0x06000745 RID: 1861 RVA: 0x00034024 File Offset: 0x00032224
+	// (get) Token: 0x0600074F RID: 1871 RVA: 0x000342E0 File Offset: 0x000324E0
 	public int CatalystGridInitialHeight
 	{
 		get
@@ -150,7 +150,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x17000086 RID: 134
-	// (get) Token: 0x06000746 RID: 1862 RVA: 0x0003402C File Offset: 0x0003222C
+	// (get) Token: 0x06000750 RID: 1872 RVA: 0x000342E8 File Offset: 0x000324E8
 	public int OutputGridInitialHeight
 	{
 		get
@@ -160,7 +160,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x17000087 RID: 135
-	// (get) Token: 0x06000747 RID: 1863 RVA: 0x00034034 File Offset: 0x00032234
+	// (get) Token: 0x06000751 RID: 1873 RVA: 0x000342F0 File Offset: 0x000324F0
 	public string FuelTitleText
 	{
 		get
@@ -170,7 +170,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x17000088 RID: 136
-	// (get) Token: 0x06000748 RID: 1864 RVA: 0x0003403C File Offset: 0x0003223C
+	// (get) Token: 0x06000752 RID: 1874 RVA: 0x000342F8 File Offset: 0x000324F8
 	public string FuelTitleSprite
 	{
 		get
@@ -180,7 +180,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x17000089 RID: 137
-	// (get) Token: 0x06000749 RID: 1865 RVA: 0x00034044 File Offset: 0x00032244
+	// (get) Token: 0x06000753 RID: 1875 RVA: 0x00034300 File Offset: 0x00032500
 	public string FuelTitleSpriteAtlas
 	{
 		get
@@ -190,7 +190,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x1700008A RID: 138
-	// (get) Token: 0x0600074A RID: 1866 RVA: 0x0003404C File Offset: 0x0003224C
+	// (get) Token: 0x06000754 RID: 1876 RVA: 0x00034308 File Offset: 0x00032508
 	public string CatalystTitleText
 	{
 		get
@@ -200,7 +200,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x1700008B RID: 139
-	// (get) Token: 0x0600074B RID: 1867 RVA: 0x00034054 File Offset: 0x00032254
+	// (get) Token: 0x06000755 RID: 1877 RVA: 0x00034310 File Offset: 0x00032510
 	public string CatalystTitleSprite
 	{
 		get
@@ -210,7 +210,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x1700008C RID: 140
-	// (get) Token: 0x0600074C RID: 1868 RVA: 0x0003405C File Offset: 0x0003225C
+	// (get) Token: 0x06000756 RID: 1878 RVA: 0x00034318 File Offset: 0x00032518
 	public string CatalystTitleSpriteAtlas
 	{
 		get
@@ -220,7 +220,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x1700008D RID: 141
-	// (get) Token: 0x0600074D RID: 1869 RVA: 0x00034064 File Offset: 0x00032264
+	// (get) Token: 0x06000757 RID: 1879 RVA: 0x00034320 File Offset: 0x00032520
 	public string[] FuelTypesSprites
 	{
 		get
@@ -230,7 +230,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x1700008E RID: 142
-	// (get) Token: 0x0600074E RID: 1870 RVA: 0x0003406C File Offset: 0x0003226C
+	// (get) Token: 0x06000758 RID: 1880 RVA: 0x00034328 File Offset: 0x00032528
 	public string[] FuelTypesSpriteAtlases
 	{
 		get
@@ -240,7 +240,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x1700008F RID: 143
-	// (get) Token: 0x0600074F RID: 1871 RVA: 0x00034074 File Offset: 0x00032274
+	// (get) Token: 0x06000759 RID: 1881 RVA: 0x00034330 File Offset: 0x00032530
 	public string[] CatalystTypesSprites
 	{
 		get
@@ -250,7 +250,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x17000090 RID: 144
-	// (get) Token: 0x06000750 RID: 1872 RVA: 0x0003407C File Offset: 0x0003227C
+	// (get) Token: 0x0600075A RID: 1882 RVA: 0x00034338 File Offset: 0x00032538
 	public string[] CatalystTypesSpriteAtlases
 	{
 		get
@@ -260,7 +260,7 @@ public class BlockCollector : Block
 	}
 
 	// Token: 0x17000091 RID: 145
-	// (get) Token: 0x06000751 RID: 1873 RVA: 0x00034084 File Offset: 0x00032284
+	// (get) Token: 0x0600075B RID: 1883 RVA: 0x00034340 File Offset: 0x00032540
 	public string[] CatalystTypes
 	{
 		get
@@ -269,13 +269,13 @@ public class BlockCollector : Block
 		}
 	}
 
-	// Token: 0x06000752 RID: 1874 RVA: 0x0003408C File Offset: 0x0003228C
+	// Token: 0x0600075C RID: 1884 RVA: 0x00034348 File Offset: 0x00032548
 	public BlockCollector()
 	{
 		this.HasTileEntity = true;
 	}
 
-	// Token: 0x06000753 RID: 1875 RVA: 0x000341DC File Offset: 0x000323DC
+	// Token: 0x0600075D RID: 1885 RVA: 0x00034498 File Offset: 0x00032698
 	public override void Init()
 	{
 		base.Init();
@@ -451,7 +451,7 @@ public class BlockCollector : Block
 		}
 	}
 
-	// Token: 0x06000754 RID: 1876 RVA: 0x000348BF File Offset: 0x00032ABF
+	// Token: 0x0600075E RID: 1886 RVA: 0x00034B7B File Offset: 0x00032D7B
 	public override void OnBlockAdded(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -462,7 +462,7 @@ public class BlockCollector : Block
 		this.addTileEntity(world, _chunk, _blockPos, _blockValue);
 	}
 
-	// Token: 0x06000755 RID: 1877 RVA: 0x000348E3 File Offset: 0x00032AE3
+	// Token: 0x0600075F RID: 1887 RVA: 0x00034B9F File Offset: 0x00032D9F
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_commandName == "Search")
@@ -477,13 +477,13 @@ public class BlockCollector : Block
 		return true;
 	}
 
-	// Token: 0x06000756 RID: 1878 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x06000760 RID: 1888 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool HasBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		return true;
 	}
 
-	// Token: 0x06000757 RID: 1879 RVA: 0x00034924 File Offset: 0x00032B24
+	// Token: 0x06000761 RID: 1889 RVA: 0x00034BE0 File Offset: 0x00032DE0
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		bool flag = _world.IsMyLandProtectedBlock(_blockPos, _world.GetGameManager().GetPersistentLocalPlayer());
@@ -491,7 +491,7 @@ public class BlockCollector : Block
 		return this.cmds;
 	}
 
-	// Token: 0x06000758 RID: 1880 RVA: 0x00034970 File Offset: 0x00032B70
+	// Token: 0x06000762 RID: 1890 RVA: 0x00034C2C File Offset: 0x00032E2C
 	public override void PlaceBlock(WorldBase _world, BlockPlacement.Result _result, EntityAlive _ea)
 	{
 		base.PlaceBlock(_world, _result, _ea);
@@ -507,7 +507,7 @@ public class BlockCollector : Block
 		}
 	}
 
-	// Token: 0x06000759 RID: 1881 RVA: 0x000349C0 File Offset: 0x00032BC0
+	// Token: 0x06000763 RID: 1891 RVA: 0x00034C7C File Offset: 0x00032E7C
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		TileEntityCollector tileEntityCollector = _world.GetTileEntity(_blockPos) as TileEntityCollector;
@@ -529,7 +529,7 @@ public class BlockCollector : Block
 		return string.Format(Localization.Get(this.hasItem1Text, false, null), text, localizedBlockName);
 	}
 
-	// Token: 0x0600075A RID: 1882 RVA: 0x00034A74 File Offset: 0x00032C74
+	// Token: 0x06000764 RID: 1892 RVA: 0x00034D30 File Offset: 0x00032F30
 	public override void OnBlockRemoved(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockRemoved(world, _chunk, _blockPos, _blockValue);
@@ -541,7 +541,7 @@ public class BlockCollector : Block
 		this.removeTileEntity(world, _chunk, _blockPos, _blockValue);
 	}
 
-	// Token: 0x0600075B RID: 1883 RVA: 0x00034AB0 File Offset: 0x00032CB0
+	// Token: 0x06000765 RID: 1893 RVA: 0x00034D6C File Offset: 0x00032F6C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void addTileEntity(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
@@ -551,14 +551,14 @@ public class BlockCollector : Block
 		_chunk.AddTileEntity(tileEntityCollector);
 	}
 
-	// Token: 0x0600075C RID: 1884 RVA: 0x00034ADD File Offset: 0x00032CDD
+	// Token: 0x06000766 RID: 1894 RVA: 0x00034D99 File Offset: 0x00032F99
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void removeTileEntity(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		_chunk.RemoveTileEntityAt<TileEntityCollector>((World)world, World.toBlock(_blockPos));
 	}
 
-	// Token: 0x0600075D RID: 1885 RVA: 0x00034AF4 File Offset: 0x00032CF4
+	// Token: 0x06000767 RID: 1895 RVA: 0x00034DB0 File Offset: 0x00032FB0
 	public override Block.DestroyedResult OnBlockDestroyedBy(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _entityId, bool _bUseHarvestTool)
 	{
 		TileEntityCollector tileEntityCollector = _world.GetTileEntity(_bvRef) as TileEntityCollector;
@@ -573,14 +573,14 @@ public class BlockCollector : Block
 		return Block.DestroyedResult.Downgrade;
 	}
 
-	// Token: 0x0600075E RID: 1886 RVA: 0x00034B2B File Offset: 0x00032D2B
+	// Token: 0x06000768 RID: 1896 RVA: 0x00034DE7 File Offset: 0x00032FE7
 	public override void OnBlockEntityTransformBeforeActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		base.OnBlockEntityTransformBeforeActivated(_world, _blockPos, _blockValue, _ebcd);
 		this.UpdateVisible(_world, _blockPos);
 	}
 
-	// Token: 0x0600075F RID: 1887 RVA: 0x00034B40 File Offset: 0x00032D40
+	// Token: 0x06000769 RID: 1897 RVA: 0x00034DFC File Offset: 0x00032FFC
 	public void UpdateVisible(WorldBase _world, Vector3i _blockPos)
 	{
 		TileEntityCollector tileEntityCollector = _world.GetTileEntity(_blockPos) as TileEntityCollector;
@@ -590,7 +590,7 @@ public class BlockCollector : Block
 		}
 	}
 
-	// Token: 0x06000760 RID: 1888 RVA: 0x00034B64 File Offset: 0x00032D64
+	// Token: 0x0600076A RID: 1898 RVA: 0x00034E20 File Offset: 0x00033020
 	public override bool OnBlockActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_player.inventory.IsHoldingItemActionRunning())
@@ -607,7 +607,7 @@ public class BlockCollector : Block
 		return true;
 	}
 
-	// Token: 0x06000761 RID: 1889 RVA: 0x00034BAC File Offset: 0x00032DAC
+	// Token: 0x0600076B RID: 1899 RVA: 0x00034E68 File Offset: 0x00033068
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool takeItemWithTimerCanTake(Vector3i _blockPos, EntityAlive _player)
 	{
@@ -619,7 +619,7 @@ public class BlockCollector : Block
 		return false;
 	}
 
-	// Token: 0x06000762 RID: 1890 RVA: 0x00034C04 File Offset: 0x00032E04
+	// Token: 0x0600076C RID: 1900 RVA: 0x00034EC0 File Offset: 0x000330C0
 	public bool UsesFuel()
 	{
 		bool flag = false;
@@ -631,23 +631,26 @@ public class BlockCollector : Block
 		case BlockCollector.CollectorTypes.Apiary:
 			flag = XUiM_Recipes.ApiaryInput == 0f;
 			break;
+		case BlockCollector.CollectorTypes.ChickenCoop:
+			flag = XUiM_Recipes.ChickenCoopInput == 0f;
+			break;
 		}
 		return !flag && this.fuelTypes.Values.Count > 0;
 	}
 
-	// Token: 0x06000763 RID: 1891 RVA: 0x00034C62 File Offset: 0x00032E62
+	// Token: 0x0600076D RID: 1901 RVA: 0x00034F2D File Offset: 0x0003312D
 	public bool UsesCatalyst()
 	{
 		return this.CatalystTypes.Length != 0;
 	}
 
-	// Token: 0x06000764 RID: 1892 RVA: 0x00034C6E File Offset: 0x00032E6E
+	// Token: 0x0600076E RID: 1902 RVA: 0x00034F39 File Offset: 0x00033139
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int modifyTime(int time, float modifier)
 	{
 		if (modifier == 0f)
 		{
-			time = 0;
+			time = -1;
 		}
 		else
 		{
@@ -656,7 +659,7 @@ public class BlockCollector : Block
 		return time;
 	}
 
-	// Token: 0x06000765 RID: 1893 RVA: 0x00034C8C File Offset: 0x00032E8C
+	// Token: 0x0600076F RID: 1903 RVA: 0x00034F58 File Offset: 0x00033158
 	public int GetSandboxModifiedTime(int time)
 	{
 		if (time != 0)
@@ -669,16 +672,15 @@ public class BlockCollector : Block
 			case BlockCollector.CollectorTypes.Apiary:
 				time = this.modifyTime(time, XUiM_Recipes.ApiaryTimeModifier);
 				break;
-			}
-			if (time == 0)
-			{
-				time = -1;
+			case BlockCollector.CollectorTypes.ChickenCoop:
+				time = this.modifyTime(time, XUiM_Recipes.ChickenCoopTimeModifier);
+				break;
 			}
 		}
 		return time;
 	}
 
-	// Token: 0x06000766 RID: 1894 RVA: 0x00034CDC File Offset: 0x00032EDC
+	// Token: 0x06000770 RID: 1904 RVA: 0x00034FB4 File Offset: 0x000331B4
 	public int GetSandboxModifiedFuelNeeded(int cost)
 	{
 		switch (this.CollectorType)
@@ -689,11 +691,14 @@ public class BlockCollector : Block
 		case BlockCollector.CollectorTypes.Apiary:
 			cost = (int)(XUiM_Recipes.ApiaryInput * (float)cost);
 			break;
+		case BlockCollector.CollectorTypes.ChickenCoop:
+			cost = (int)(XUiM_Recipes.ChickenCoopInput * (float)cost);
+			break;
 		}
 		return cost;
 	}
 
-	// Token: 0x06000767 RID: 1895 RVA: 0x00034D20 File Offset: 0x00032F20
+	// Token: 0x06000771 RID: 1905 RVA: 0x00035004 File Offset: 0x00033204
 	public int GetSandboxModifiedOutput(int cost)
 	{
 		switch (this.CollectorType)
@@ -704,310 +709,313 @@ public class BlockCollector : Block
 		case BlockCollector.CollectorTypes.Apiary:
 			cost = (int)(XUiM_Recipes.ApiaryOutput * (float)cost);
 			break;
+		case BlockCollector.CollectorTypes.ChickenCoop:
+			cost = (int)(XUiM_Recipes.ChickenCoopOutput * (float)cost);
+			break;
 		}
 		return cost;
 	}
 
-	// Token: 0x04000878 RID: 2168
+	// Token: 0x0400087A RID: 2170
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropCollectorType = "CollectorType";
 
-	// Token: 0x04000879 RID: 2169
+	// Token: 0x0400087B RID: 2171
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropFuelTypes = "FuelTypes";
 
-	// Token: 0x0400087A RID: 2170
+	// Token: 0x0400087C RID: 2172
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropOutputTypes = "OutputTypes";
 
-	// Token: 0x0400087B RID: 2171
+	// Token: 0x0400087D RID: 2173
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropOutputs = "Outputs";
 
-	// Token: 0x0400087C RID: 2172
+	// Token: 0x0400087E RID: 2174
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropOpenSound = "OpenSound";
 
-	// Token: 0x0400087D RID: 2173
+	// Token: 0x0400087F RID: 2175
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropRunningSound = "RunningSound";
 
-	// Token: 0x0400087E RID: 2174
+	// Token: 0x04000880 RID: 2176
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropActivateSound = "ActivateSound";
 
-	// Token: 0x0400087F RID: 2175
+	// Token: 0x04000881 RID: 2177
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropCloseSound = "CloseSound";
 
-	// Token: 0x04000880 RID: 2176
+	// Token: 0x04000882 RID: 2178
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropTakeDelay = "TakeDelay";
 
-	// Token: 0x04000881 RID: 2177
+	// Token: 0x04000883 RID: 2179
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropItemIconBackdrop = "ItemIconBackdrop";
 
-	// Token: 0x04000882 RID: 2178
+	// Token: 0x04000884 RID: 2180
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropLootLabelKey = "LootLabelKey";
 
-	// Token: 0x04000883 RID: 2179
+	// Token: 0x04000885 RID: 2181
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropActivationEvent = "ActivationEvent";
 
-	// Token: 0x04000884 RID: 2180
+	// Token: 0x04000886 RID: 2182
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropCloseEvent = "CloseEvent";
 
-	// Token: 0x04000885 RID: 2181
+	// Token: 0x04000887 RID: 2183
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropRequiredMods = "RequiredMods";
 
-	// Token: 0x04000886 RID: 2182
+	// Token: 0x04000888 RID: 2184
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropRequiredModsOnly = "RequiredModsOnly";
 
-	// Token: 0x04000887 RID: 2183
+	// Token: 0x04000889 RID: 2185
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropModTransformEnableNames = "ModTransformEnableNames";
 
-	// Token: 0x04000888 RID: 2184
+	// Token: 0x0400088A RID: 2186
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropModTransformDisableNames = "ModTransformDisableNames";
 
-	// Token: 0x04000889 RID: 2185
+	// Token: 0x0400088B RID: 2187
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropModTypes = "ModTypes";
 
-	// Token: 0x0400088A RID: 2186
+	// Token: 0x0400088C RID: 2188
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropItemBackgroundColor = "ItemBackgroundColor";
 
-	// Token: 0x0400088B RID: 2187
+	// Token: 0x0400088D RID: 2189
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropEmptyText = "EmptyText";
 
-	// Token: 0x0400088C RID: 2188
+	// Token: 0x0400088E RID: 2190
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropHasItem1Text = "HasItem1Text";
 
-	// Token: 0x0400088D RID: 2189
+	// Token: 0x0400088F RID: 2191
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropHasItem2Text = "HasItem2Text";
 
-	// Token: 0x0400088E RID: 2190
+	// Token: 0x04000890 RID: 2192
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropOutputGridHeight = "OutputGridHeight";
 
-	// Token: 0x0400088F RID: 2191
+	// Token: 0x04000891 RID: 2193
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropFuelGridHeight = "FuelGridHeight";
 
-	// Token: 0x04000890 RID: 2192
+	// Token: 0x04000892 RID: 2194
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropFuelTitleText = "FuelTitleText";
 
-	// Token: 0x04000891 RID: 2193
+	// Token: 0x04000893 RID: 2195
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropFuelTitleSprite = "FuelTitleSprite";
 
-	// Token: 0x04000892 RID: 2194
+	// Token: 0x04000894 RID: 2196
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropFuelTitleSpriteAtlas = "FuelTitleSpriteAtlas";
 
-	// Token: 0x04000893 RID: 2195
+	// Token: 0x04000895 RID: 2197
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropFuelTypesSprites = "FuelTypesSprites";
 
-	// Token: 0x04000894 RID: 2196
+	// Token: 0x04000896 RID: 2198
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropCatalystGridHeight = "CatalystGridHeight";
 
-	// Token: 0x04000895 RID: 2197
+	// Token: 0x04000897 RID: 2199
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropCatalystTypes = "CatalystTypes";
 
-	// Token: 0x04000896 RID: 2198
+	// Token: 0x04000898 RID: 2200
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropCatalystMultiplier = "CatalystMultiplier";
 
-	// Token: 0x04000897 RID: 2199
+	// Token: 0x04000899 RID: 2201
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropCatalystRequirements = "CatalystRequirements";
 
-	// Token: 0x04000898 RID: 2200
+	// Token: 0x0400089A RID: 2202
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropCatalystConvert = "CatalystConvert";
 
-	// Token: 0x04000899 RID: 2201
+	// Token: 0x0400089B RID: 2203
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropCatalystTitleText = "CatalystTitleText";
 
-	// Token: 0x0400089A RID: 2202
+	// Token: 0x0400089C RID: 2204
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropCatalystTitleSprite = "CatalystTitleSprite";
 
-	// Token: 0x0400089B RID: 2203
+	// Token: 0x0400089D RID: 2205
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropCatalystTitleSpriteAtlas = "CatalystTitleSpriteAtlas";
 
-	// Token: 0x0400089C RID: 2204
+	// Token: 0x0400089E RID: 2206
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropCatalystTypesSprites = "CatalystTypesSprites";
 
-	// Token: 0x0400089D RID: 2205
+	// Token: 0x0400089F RID: 2207
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string[] outputs;
 
-	// Token: 0x0400089E RID: 2206
+	// Token: 0x040008A0 RID: 2208
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public BlockCollector.CollectorTypes CollectorType;
 
-	// Token: 0x0400089F RID: 2207
+	// Token: 0x040008A1 RID: 2209
 	public Dictionary<BlockCollector.OutputType, List<int>> OrderedSlotOutputs = new Dictionary<BlockCollector.OutputType, List<int>>();
 
-	// Token: 0x040008A0 RID: 2208
+	// Token: 0x040008A2 RID: 2210
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, BlockCollector.FuelType> fuelTypes = new Dictionary<string, BlockCollector.FuelType>();
 
-	// Token: 0x040008A1 RID: 2209
+	// Token: 0x040008A3 RID: 2211
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, BlockCollector.OutputType> outputTypes = new Dictionary<string, BlockCollector.OutputType>();
 
-	// Token: 0x040008A2 RID: 2210
+	// Token: 0x040008A4 RID: 2212
 	public string OpenSound;
 
-	// Token: 0x040008A3 RID: 2211
+	// Token: 0x040008A5 RID: 2213
 	public string CloseSound;
 
-	// Token: 0x040008A4 RID: 2212
+	// Token: 0x040008A6 RID: 2214
 	public string RunningSound;
 
-	// Token: 0x040008A5 RID: 2213
+	// Token: 0x040008A7 RID: 2215
 	public string ActivateSound;
 
-	// Token: 0x040008A6 RID: 2214
+	// Token: 0x040008A8 RID: 2216
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float TakeDelay = 2f;
 
-	// Token: 0x040008A7 RID: 2215
+	// Token: 0x040008A9 RID: 2217
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string[] itemIconBackdrop;
 
-	// Token: 0x040008A8 RID: 2216
+	// Token: 0x040008AA RID: 2218
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string itemBackgroundColor = "255,255,255,255";
 
-	// Token: 0x040008A9 RID: 2217
+	// Token: 0x040008AB RID: 2219
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lootLabelKey;
 
-	// Token: 0x040008AA RID: 2218
+	// Token: 0x040008AC RID: 2220
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string activationEvent;
 
-	// Token: 0x040008AB RID: 2219
+	// Token: 0x040008AD RID: 2221
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string closeEvent;
 
-	// Token: 0x040008AC RID: 2220
+	// Token: 0x040008AE RID: 2222
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string[] requiredMods;
 
-	// Token: 0x040008AD RID: 2221
+	// Token: 0x040008AF RID: 2223
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool requiredModsOnly;
 
-	// Token: 0x040008AE RID: 2222
+	// Token: 0x040008B0 RID: 2224
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string[] modTransformEnableNames;
 
-	// Token: 0x040008AF RID: 2223
+	// Token: 0x040008B1 RID: 2225
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string[] modTransformDisableNames;
 
-	// Token: 0x040008B0 RID: 2224
+	// Token: 0x040008B2 RID: 2226
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string emptyText = "CollectorEmptyText";
 
-	// Token: 0x040008B1 RID: 2225
+	// Token: 0x040008B3 RID: 2227
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string hasItem1Text = "CollectorHasItem1Text";
 
-	// Token: 0x040008B2 RID: 2226
+	// Token: 0x040008B4 RID: 2228
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string hasItem2Text = "CollectorHasItem2Text";
 
-	// Token: 0x040008B3 RID: 2227
+	// Token: 0x040008B5 RID: 2229
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int fuelGridHeight = 1;
 
-	// Token: 0x040008B4 RID: 2228
+	// Token: 0x040008B6 RID: 2230
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int catalystGridHeight = 1;
 
-	// Token: 0x040008B5 RID: 2229
+	// Token: 0x040008B7 RID: 2231
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int outputGridInitialHeight = 1;
 
-	// Token: 0x040008B6 RID: 2230
+	// Token: 0x040008B8 RID: 2232
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string fuelTitleText;
 
-	// Token: 0x040008B7 RID: 2231
+	// Token: 0x040008B9 RID: 2233
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string fuelTitleSprite = string.Empty;
 
-	// Token: 0x040008B8 RID: 2232
+	// Token: 0x040008BA RID: 2234
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string fuelTitleSpriteAtlas = string.Empty;
 
-	// Token: 0x040008B9 RID: 2233
+	// Token: 0x040008BB RID: 2235
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string catalystTitleText;
 
-	// Token: 0x040008BA RID: 2234
+	// Token: 0x040008BC RID: 2236
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string catalystTitleSprite = string.Empty;
 
-	// Token: 0x040008BB RID: 2235
+	// Token: 0x040008BD RID: 2237
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string catalystTitleSpriteAtlas = string.Empty;
 
-	// Token: 0x040008BC RID: 2236
+	// Token: 0x040008BE RID: 2238
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string[] fuelTypesSprites = new string[0];
 
-	// Token: 0x040008BD RID: 2237
+	// Token: 0x040008BF RID: 2239
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string[] fuelTypesSpriteAtlases = new string[0];
 
-	// Token: 0x040008BE RID: 2238
+	// Token: 0x040008C0 RID: 2240
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string[] catalystTypesSprites = new string[0];
 
-	// Token: 0x040008BF RID: 2239
+	// Token: 0x040008C1 RID: 2241
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string[] catalystTypesSpriteAtlases = new string[0];
 
-	// Token: 0x040008C0 RID: 2240
+	// Token: 0x040008C2 RID: 2242
 	public BlockCollector.ModEffectTypes[] ModTypes;
 
-	// Token: 0x040008C1 RID: 2241
+	// Token: 0x040008C3 RID: 2243
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string[] catalystTypes = new string[0];
 
-	// Token: 0x040008C2 RID: 2242
+	// Token: 0x040008C4 RID: 2244
 	public Dictionary<string, int> CatalystMultipliers = new Dictionary<string, int>();
 
-	// Token: 0x040008C3 RID: 2243
+	// Token: 0x040008C5 RID: 2245
 	public Dictionary<string, int> CatalystRequirements = new Dictionary<string, int>();
 
-	// Token: 0x040008C4 RID: 2244
+	// Token: 0x040008C6 RID: 2246
 	public BlockCollector.CatalystConvert[] CatalystConverts = new BlockCollector.CatalystConvert[0];
 
-	// Token: 0x040008C5 RID: 2245
+	// Token: 0x040008C7 RID: 2247
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new BlockActivationCommand[] cmds = new BlockActivationCommand[]
 	{
@@ -1015,29 +1023,29 @@ public class BlockCollector : Block
 		new BlockActivationCommand("take", "hand", false, false, null)
 	};
 
-	// Token: 0x02000115 RID: 277
+	// Token: 0x02000116 RID: 278
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public enum CollectorTypes
 	{
-		// Token: 0x040008C7 RID: 2247
-		DewCollector,
-		// Token: 0x040008C8 RID: 2248
-		Apiary,
 		// Token: 0x040008C9 RID: 2249
+		DewCollector,
+		// Token: 0x040008CA RID: 2250
+		Apiary,
+		// Token: 0x040008CB RID: 2251
 		ChickenCoop
 	}
 
-	// Token: 0x02000116 RID: 278
+	// Token: 0x02000117 RID: 279
 	public class CatalystConvert
 	{
-		// Token: 0x06000769 RID: 1897 RVA: 0x00034EE3 File Offset: 0x000330E3
+		// Token: 0x06000773 RID: 1907 RVA: 0x000351D3 File Offset: 0x000333D3
 		public CatalystConvert(string _convertFrom, string _convertTo)
 		{
 			this.convertFrom = _convertFrom;
 			this.convertTo = _convertTo;
 		}
 
-		// Token: 0x0600076A RID: 1898 RVA: 0x00034EFC File Offset: 0x000330FC
+		// Token: 0x06000774 RID: 1908 RVA: 0x000351EC File Offset: 0x000333EC
 		public ItemStack Convert(ItemStack _inStack)
 		{
 			ItemStack itemStack = null;
@@ -1048,19 +1056,19 @@ public class BlockCollector : Block
 			return itemStack;
 		}
 
-		// Token: 0x040008CA RID: 2250
+		// Token: 0x040008CC RID: 2252
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string convertFrom;
 
-		// Token: 0x040008CB RID: 2251
+		// Token: 0x040008CD RID: 2253
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string convertTo;
 	}
 
-	// Token: 0x02000117 RID: 279
+	// Token: 0x02000118 RID: 280
 	public class FuelType
 	{
-		// Token: 0x0600076B RID: 1899 RVA: 0x00034F4C File Offset: 0x0003314C
+		// Token: 0x06000775 RID: 1909 RVA: 0x0003523C File Offset: 0x0003343C
 		public FuelType(string ftDef)
 		{
 			string[] array = ftDef.Split(',', StringSplitOptions.None);
@@ -1072,17 +1080,17 @@ public class BlockCollector : Block
 			}
 		}
 
-		// Token: 0x040008CC RID: 2252
+		// Token: 0x040008CE RID: 2254
 		public string Name;
 
-		// Token: 0x040008CD RID: 2253
+		// Token: 0x040008CF RID: 2255
 		public string[] Items;
 	}
 
-	// Token: 0x02000118 RID: 280
+	// Token: 0x02000119 RID: 281
 	public class OutputType
 	{
-		// Token: 0x0600076C RID: 1900 RVA: 0x00034FAC File Offset: 0x000331AC
+		// Token: 0x06000776 RID: 1910 RVA: 0x0003529C File Offset: 0x0003349C
 		public OutputType(string otDef)
 		{
 			string[] array = otDef.Split(",", StringSplitOptions.None);
@@ -1101,7 +1109,7 @@ public class BlockCollector : Block
 			this.ConvertSound = array[num++];
 		}
 
-		// Token: 0x0600076D RID: 1901 RVA: 0x00035094 File Offset: 0x00033294
+		// Token: 0x06000777 RID: 1911 RVA: 0x00035384 File Offset: 0x00033584
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int safeParseInt(string intString)
 		{
@@ -1113,57 +1121,57 @@ public class BlockCollector : Block
 			return num;
 		}
 
-		// Token: 0x040008CE RID: 2254
+		// Token: 0x040008D0 RID: 2256
 		public string Name;
 
-		// Token: 0x040008CF RID: 2255
+		// Token: 0x040008D1 RID: 2257
 		public string Fuel;
 
-		// Token: 0x040008D0 RID: 2256
+		// Token: 0x040008D2 RID: 2258
 		public int FuelCost;
 
-		// Token: 0x040008D1 RID: 2257
+		// Token: 0x040008D3 RID: 2259
 		public int AdditionalFuelCost;
 
-		// Token: 0x040008D2 RID: 2258
+		// Token: 0x040008D4 RID: 2260
 		public int DiscountedFuelDivisor;
 
-		// Token: 0x040008D3 RID: 2259
+		// Token: 0x040008D5 RID: 2261
 		public string OutputItem;
 
-		// Token: 0x040008D4 RID: 2260
+		// Token: 0x040008D6 RID: 2262
 		public string OutputItemModded;
 
-		// Token: 0x040008D5 RID: 2261
+		// Token: 0x040008D7 RID: 2263
 		public int ModdedConvertSpeedMultiplier;
 
-		// Token: 0x040008D6 RID: 2262
+		// Token: 0x040008D8 RID: 2264
 		public int ModdedConvertCountMultiplier;
 
-		// Token: 0x040008D7 RID: 2263
+		// Token: 0x040008D9 RID: 2265
 		public int MinConvertTime;
 
-		// Token: 0x040008D8 RID: 2264
+		// Token: 0x040008DA RID: 2266
 		public int MaxConvertTime;
 
-		// Token: 0x040008D9 RID: 2265
+		// Token: 0x040008DB RID: 2267
 		public string ConvertSound;
 	}
 
-	// Token: 0x02000119 RID: 281
+	// Token: 0x0200011A RID: 282
 	public enum ModEffectTypes
 	{
-		// Token: 0x040008DB RID: 2267
-		Type,
-		// Token: 0x040008DC RID: 2268
-		Speed,
 		// Token: 0x040008DD RID: 2269
-		Count,
+		Type,
 		// Token: 0x040008DE RID: 2270
-		Modify,
+		Speed,
 		// Token: 0x040008DF RID: 2271
-		Expand,
+		Count,
 		// Token: 0x040008E0 RID: 2272
+		Modify,
+		// Token: 0x040008E1 RID: 2273
+		Expand,
+		// Token: 0x040008E2 RID: 2274
 		Cost
 	}
 }

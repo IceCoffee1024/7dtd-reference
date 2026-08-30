@@ -3,28 +3,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.CompilerServices;
 
-// Token: 0x02000565 RID: 1381
+// Token: 0x0200056A RID: 1386
 public class Bag : InventoryBase
 {
 	// Token: 0x14000036 RID: 54
-	// (add) Token: 0x06002CCF RID: 11471 RVA: 0x0011E3AC File Offset: 0x0011C5AC
-	// (remove) Token: 0x06002CD0 RID: 11472 RVA: 0x0011E3E4 File Offset: 0x0011C5E4
+	// (add) Token: 0x06002CF9 RID: 11513 RVA: 0x0011F420 File Offset: 0x0011D620
+	// (remove) Token: 0x06002CFA RID: 11514 RVA: 0x0011F458 File Offset: 0x0011D658
 	public event XUiEvent_BackpackItemsChangedInternal OnBackpackItemsChangedInternal;
 
-	// Token: 0x06002CD1 RID: 11473 RVA: 0x0011E419 File Offset: 0x0011C619
+	// Token: 0x06002CFB RID: 11515 RVA: 0x0011F48D File Offset: 0x0011D68D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Bag()
 	{
 	}
 
-	// Token: 0x06002CD2 RID: 11474 RVA: 0x0011E421 File Offset: 0x0011C621
+	// Token: 0x06002CFC RID: 11516 RVA: 0x0011F495 File Offset: 0x0011D695
 	public Bag(int _size)
 	{
 		this.items = ItemStack.CreateArray(_size);
 	}
 
-	// Token: 0x170004C7 RID: 1223
-	// (get) Token: 0x06002CD3 RID: 11475 RVA: 0x0011E435 File Offset: 0x0011C635
+	// Token: 0x170004CB RID: 1227
+	// (get) Token: 0x06002CFD RID: 11517 RVA: 0x0011F4A9 File Offset: 0x0011D6A9
 	public int SlotCount
 	{
 		get
@@ -37,7 +37,7 @@ public class Bag : InventoryBase
 		}
 	}
 
-	// Token: 0x06002CD4 RID: 11476 RVA: 0x0011E44C File Offset: 0x0011C64C
+	// Token: 0x06002CFE RID: 11518 RVA: 0x0011F4C0 File Offset: 0x0011D6C0
 	public void Write(BinaryWriter bw)
 	{
 		bw.Write(1);
@@ -69,13 +69,13 @@ public class Bag : InventoryBase
 		throw new InvalidOperationException("[Bag] Writing preferences requires PooledBinaryWriter.");
 	}
 
-	// Token: 0x06002CD5 RID: 11477 RVA: 0x0011E4ED File Offset: 0x0011C6ED
+	// Token: 0x06002CFF RID: 11519 RVA: 0x0011F561 File Offset: 0x0011D761
 	public static Bag Read(BinaryReader br)
 	{
 		return new Bag().ReadInto(br);
 	}
 
-	// Token: 0x06002CD6 RID: 11478 RVA: 0x0011E4FC File Offset: 0x0011C6FC
+	// Token: 0x06002D00 RID: 11520 RVA: 0x0011F570 File Offset: 0x0011D770
 	public Bag ReadInto(BinaryReader br)
 	{
 		byte b = br.ReadByte();
@@ -125,7 +125,7 @@ public class Bag : InventoryBase
 		return this;
 	}
 
-	// Token: 0x06002CD7 RID: 11479 RVA: 0x0011E5E4 File Offset: 0x0011C7E4
+	// Token: 0x06002D01 RID: 11521 RVA: 0x0011F658 File Offset: 0x0011D858
 	public Bag Clone()
 	{
 		Bag bag = new Bag();
@@ -138,7 +138,7 @@ public class Bag : InventoryBase
 		return bag;
 	}
 
-	// Token: 0x06002CD8 RID: 11480 RVA: 0x0011E644 File Offset: 0x0011C844
+	// Token: 0x06002D02 RID: 11522 RVA: 0x0011F6B8 File Offset: 0x0011D8B8
 	public void Clear()
 	{
 		ItemStack[] array = this.items;
@@ -152,7 +152,7 @@ public class Bag : InventoryBase
 		this.onBackpackChanged();
 	}
 
-	// Token: 0x06002CD9 RID: 11481 RVA: 0x0011E677 File Offset: 0x0011C877
+	// Token: 0x06002D03 RID: 11523 RVA: 0x0011F6EB File Offset: 0x0011D8EB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onBackpackChanged()
 	{
@@ -164,7 +164,7 @@ public class Bag : InventoryBase
 		onBackpackItemsChangedInternal();
 	}
 
-	// Token: 0x06002CDA RID: 11482 RVA: 0x0011E68C File Offset: 0x0011C88C
+	// Token: 0x06002D04 RID: 11524 RVA: 0x0011F700 File Offset: 0x0011D900
 	public bool CanStackNoEmpty(ItemStack _itemStack)
 	{
 		ItemStack[] slots = this.GetSlots();
@@ -179,7 +179,7 @@ public class Bag : InventoryBase
 		return false;
 	}
 
-	// Token: 0x06002CDB RID: 11483 RVA: 0x0011E6C0 File Offset: 0x0011C8C0
+	// Token: 0x06002D05 RID: 11525 RVA: 0x0011F734 File Offset: 0x0011D934
 	public bool IsEmpty()
 	{
 		ItemStack[] slots = this.GetSlots();
@@ -193,7 +193,7 @@ public class Bag : InventoryBase
 		return true;
 	}
 
-	// Token: 0x06002CDC RID: 11484 RVA: 0x0011E6F0 File Offset: 0x0011C8F0
+	// Token: 0x06002D06 RID: 11526 RVA: 0x0011F764 File Offset: 0x0011D964
 	public bool CanStack(ItemStack _itemStack)
 	{
 		ItemStack[] slots = this.GetSlots();
@@ -207,11 +207,11 @@ public class Bag : InventoryBase
 		return false;
 	}
 
-	// Token: 0x06002CDD RID: 11485 RVA: 0x0011E72C File Offset: 0x0011C92C
+	// Token: 0x06002D07 RID: 11527 RVA: 0x0011F7A0 File Offset: 0x0011D9A0
 	[return: TupleElementNames(new string[] { "anyMoved", "allMoved" })]
 	public override ValueTuple<bool, bool> TryStackItem(int startIndex, ItemStack _itemStack)
 	{
-		if (!_itemStack.CanMoveTo(XUiC_ItemStack.StackLocationTypes.Backpack))
+		if (!_itemStack.CanMoveTo(XUiC_ItemStack.StackLocationTypes.Backpack, -1))
 		{
 			return new ValueTuple<bool, bool>(false, false);
 		}
@@ -236,7 +236,7 @@ public class Bag : InventoryBase
 		return new ValueTuple<bool, bool>(flag, false);
 	}
 
-	// Token: 0x06002CDE RID: 11486 RVA: 0x0011E7D0 File Offset: 0x0011C9D0
+	// Token: 0x06002D08 RID: 11528 RVA: 0x0011F844 File Offset: 0x0011DA44
 	public bool CanTakeItem(ItemStack _itemStack)
 	{
 		ItemStack[] slots = this.GetSlots();
@@ -255,20 +255,20 @@ public class Bag : InventoryBase
 		return false;
 	}
 
-	// Token: 0x06002CDF RID: 11487 RVA: 0x0011E80E File Offset: 0x0011CA0E
+	// Token: 0x06002D09 RID: 11529 RVA: 0x0011F882 File Offset: 0x0011DA82
 	public ItemStack[] GetSlots()
 	{
 		return this.items;
 	}
 
-	// Token: 0x06002CE0 RID: 11488 RVA: 0x0011E816 File Offset: 0x0011CA16
+	// Token: 0x06002D0A RID: 11530 RVA: 0x0011F88A File Offset: 0x0011DA8A
 	public void SetSlots(ItemStack[] _slots)
 	{
 		this.items = _slots;
 		this.onBackpackChanged();
 	}
 
-	// Token: 0x06002CE1 RID: 11489 RVA: 0x0011E825 File Offset: 0x0011CA25
+	// Token: 0x06002D0B RID: 11531 RVA: 0x0011F899 File Offset: 0x0011DA99
 	public void SetSlot(int index, ItemStack _stack, bool callChangedEvent = true)
 	{
 		if (index >= this.items.Length)
@@ -282,7 +282,7 @@ public class Bag : InventoryBase
 		}
 	}
 
-	// Token: 0x06002CE2 RID: 11490 RVA: 0x0011E848 File Offset: 0x0011CA48
+	// Token: 0x06002D0C RID: 11532 RVA: 0x0011F8BC File Offset: 0x0011DABC
 	public override void PerformActionOnSlots(Action<ItemStack> _action)
 	{
 		for (int i = 0; i < this.items.Length; i++)
@@ -291,10 +291,10 @@ public class Bag : InventoryBase
 		}
 	}
 
-	// Token: 0x06002CE3 RID: 11491 RVA: 0x0011E876 File Offset: 0x0011CA76
+	// Token: 0x06002D0D RID: 11533 RVA: 0x0011F8EA File Offset: 0x0011DAEA
 	public override bool AddItem(ItemStack _itemStack)
 	{
-		if (!_itemStack.CanMoveTo(XUiC_ItemStack.StackLocationTypes.Backpack))
+		if (!_itemStack.CanMoveTo(XUiC_ItemStack.StackLocationTypes.Backpack, -1))
 		{
 			return false;
 		}
@@ -306,7 +306,7 @@ public class Bag : InventoryBase
 		return flag;
 	}
 
-	// Token: 0x06002CE4 RID: 11492 RVA: 0x0011E8A0 File Offset: 0x0011CAA0
+	// Token: 0x06002D0E RID: 11534 RVA: 0x0011F914 File Offset: 0x0011DB14
 	public int DecItem(ItemValue _itemValue, int _count, bool _ignoreModdedItems = false, IList<ItemStack> _removedItems = null)
 	{
 		int num = _count;
@@ -347,7 +347,7 @@ public class Bag : InventoryBase
 		return num - _count;
 	}
 
-	// Token: 0x06002CE5 RID: 11493 RVA: 0x0011E9B0 File Offset: 0x0011CBB0
+	// Token: 0x06002D0F RID: 11535 RVA: 0x0011FA24 File Offset: 0x0011DC24
 	public int GetUsedSlotCount()
 	{
 		ItemStack[] slots = this.GetSlots();
@@ -362,7 +362,7 @@ public class Bag : InventoryBase
 		return num;
 	}
 
-	// Token: 0x06002CE6 RID: 11494 RVA: 0x0011E9E4 File Offset: 0x0011CBE4
+	// Token: 0x06002D10 RID: 11536 RVA: 0x0011FA58 File Offset: 0x0011DC58
 	public int GetItemCount(ItemValue _itemValue, int _seed = -1, int _meta = -1, bool _ignoreModdedItems = true)
 	{
 		ItemStack[] slots = this.GetSlots();
@@ -377,7 +377,7 @@ public class Bag : InventoryBase
 		return num;
 	}
 
-	// Token: 0x06002CE7 RID: 11495 RVA: 0x0011EA74 File Offset: 0x0011CC74
+	// Token: 0x06002D11 RID: 11537 RVA: 0x0011FAE8 File Offset: 0x0011DCE8
 	public int GetItemCount(FastTags<TagGroup.Global> itemTags, int _seed = -1, int _meta = -1, bool _ignoreModdedItems = true)
 	{
 		ItemStack[] slots = this.GetSlots();
@@ -392,26 +392,26 @@ public class Bag : InventoryBase
 		return num;
 	}
 
-	// Token: 0x06002CE8 RID: 11496 RVA: 0x0011EB1D File Offset: 0x0011CD1D
+	// Token: 0x06002D12 RID: 11538 RVA: 0x0011FB91 File Offset: 0x0011DD91
 	public override bool HasItem(ItemValue _item)
 	{
 		return this.GetItemCount(_item, -1, -1, true) > 0;
 	}
 
-	// Token: 0x0400232B RID: 9003
+	// Token: 0x0400235D RID: 9053
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const byte Version = 1;
 
-	// Token: 0x0400232D RID: 9005
+	// Token: 0x0400235F RID: 9055
 	public bool Touched;
 
-	// Token: 0x0400232E RID: 9006
+	// Token: 0x04002360 RID: 9056
 	public PackedBoolArray LockedSlots;
 
-	// Token: 0x0400232F RID: 9007
+	// Token: 0x04002361 RID: 9057
 	public PreferenceTracker preferences;
 
-	// Token: 0x04002330 RID: 9008
+	// Token: 0x04002362 RID: 9058
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack[] items;
 }

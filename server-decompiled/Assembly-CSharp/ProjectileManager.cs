@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020012A6 RID: 4774
+// Token: 0x020012C0 RID: 4800
 public static class ProjectileManager
 {
-	// Token: 0x06009755 RID: 38741 RVA: 0x00396181 File Offset: 0x00394381
+	// Token: 0x06009850 RID: 38992 RVA: 0x0039B3C5 File Offset: 0x003995C5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void init()
 	{
@@ -16,7 +16,7 @@ public static class ProjectileManager
 		Origin.Add(ProjectileManager.blockHitParent, 0);
 	}
 
-	// Token: 0x06009756 RID: 38742 RVA: 0x003961BC File Offset: 0x003943BC
+	// Token: 0x06009851 RID: 38993 RVA: 0x0039B400 File Offset: 0x00399600
 	public static void Update()
 	{
 		if (ProjectileManager.projectiles == null)
@@ -43,7 +43,7 @@ public static class ProjectileManager
 		ProjectileManager.keysToRemove.Clear();
 	}
 
-	// Token: 0x06009757 RID: 38743 RVA: 0x003962DC File Offset: 0x003944DC
+	// Token: 0x06009852 RID: 38994 RVA: 0x0039B520 File Offset: 0x00399720
 	public static void Cleanup()
 	{
 		ProjectileManager.keysToRemove = new List<int>();
@@ -61,7 +61,7 @@ public static class ProjectileManager
 		}
 	}
 
-	// Token: 0x06009758 RID: 38744 RVA: 0x00396358 File Offset: 0x00394558
+	// Token: 0x06009853 RID: 38995 RVA: 0x0039B59C File Offset: 0x0039979C
 	public static int AddProjectileItem(Transform _transform = null, int _pId = -1, Vector3 _position = default(Vector3), Vector3 _movementLastFrame = default(Vector3), int _itemValueType = -1)
 	{
 		if (ProjectileManager.projectiles == null)
@@ -206,7 +206,7 @@ public static class ProjectileManager
 		return _pId;
 	}
 
-	// Token: 0x06009759 RID: 38745 RVA: 0x0039682C File Offset: 0x00394A2C
+	// Token: 0x06009854 RID: 38996 RVA: 0x0039BA70 File Offset: 0x00399C70
 	public static bool RemoveProjectile(int _id, bool revive = false)
 	{
 		if (ProjectileManager.projectiles == null)
@@ -258,7 +258,7 @@ public static class ProjectileManager
 		return true;
 	}
 
-	// Token: 0x0600975A RID: 38746 RVA: 0x0039691C File Offset: 0x00394B1C
+	// Token: 0x06009855 RID: 38997 RVA: 0x0039BB60 File Offset: 0x00399D60
 	public static Transform GetProjectile(int _id)
 	{
 		Transform transform = null;
@@ -269,7 +269,7 @@ public static class ProjectileManager
 		return transform;
 	}
 
-	// Token: 0x0600975B RID: 38747 RVA: 0x00396968 File Offset: 0x00394B68
+	// Token: 0x06009856 RID: 38998 RVA: 0x0039BBAC File Offset: 0x00399DAC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Transform instantiateProjectile(int _id, int _itemValueType)
 	{
@@ -285,19 +285,19 @@ public static class ProjectileManager
 		return transform;
 	}
 
-	// Token: 0x04007194 RID: 29076
+	// Token: 0x0400726B RID: 29291
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int nextId;
 
-	// Token: 0x04007195 RID: 29077
+	// Token: 0x0400726C RID: 29292
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DictionaryKeyValueList<int, Transform> projectiles;
 
-	// Token: 0x04007196 RID: 29078
+	// Token: 0x0400726D RID: 29293
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<int> keysToRemove;
 
-	// Token: 0x04007197 RID: 29079
+	// Token: 0x0400726E RID: 29294
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Transform blockHitParent;
 }

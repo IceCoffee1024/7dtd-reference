@@ -7,7 +7,7 @@ using UnityEngine.Scripting;
 [Preserve]
 public class AvatarUMAController : LegacyAvatarController
 {
-	// Token: 0x0600052F RID: 1327 RVA: 0x00023CB4 File Offset: 0x00021EB4
+	// Token: 0x06000530 RID: 1328 RVA: 0x00023D78 File Offset: 0x00021F78
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void assignStates()
 	{
@@ -21,7 +21,7 @@ public class AvatarUMAController : LegacyAvatarController
 		AvatarCharacterController.GetThirdPersonHitStates(this.hitStates);
 	}
 
-	// Token: 0x06000530 RID: 1328 RVA: 0x00023D24 File Offset: 0x00021F24
+	// Token: 0x06000531 RID: 1329 RVA: 0x00023DE8 File Offset: 0x00021FE8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void assignParts(bool _bFPV)
 	{
@@ -72,7 +72,7 @@ public class AvatarUMAController : LegacyAvatarController
 		}
 	}
 
-	// Token: 0x06000531 RID: 1329 RVA: 0x00022B4D File Offset: 0x00020D4D
+	// Token: 0x06000532 RID: 1330 RVA: 0x00022C11 File Offset: 0x00020E11
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Update()
 	{
@@ -83,7 +83,7 @@ public class AvatarUMAController : LegacyAvatarController
 		base.Update();
 	}
 
-	// Token: 0x06000532 RID: 1330 RVA: 0x00023F80 File Offset: 0x00022180
+	// Token: 0x06000533 RID: 1331 RVA: 0x00024044 File Offset: 0x00022244
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void setLayerWeights()
 	{
@@ -117,7 +117,7 @@ public class AvatarUMAController : LegacyAvatarController
 		}
 	}
 
-	// Token: 0x06000533 RID: 1331 RVA: 0x000240B4 File Offset: 0x000222B4
+	// Token: 0x06000534 RID: 1332 RVA: 0x00024178 File Offset: 0x00022378
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateLayerStateInfo()
 	{
@@ -129,7 +129,7 @@ public class AvatarUMAController : LegacyAvatarController
 		}
 	}
 
-	// Token: 0x06000534 RID: 1332 RVA: 0x00024154 File Offset: 0x00022354
+	// Token: 0x06000535 RID: 1333 RVA: 0x00024218 File Offset: 0x00022418
 	public override void SwitchModelAndView(string _modelName, bool _bFPV, bool _bMale)
 	{
 		string text = (_bFPV ? (_bMale ? "maleArms_fp" : "femaleArms_fp") : _modelName);
@@ -170,19 +170,19 @@ public class AvatarUMAController : LegacyAvatarController
 		this._setBool(AvatarController.isAliveHash, this.entity.IsAlive(), true);
 	}
 
-	// Token: 0x06000535 RID: 1333 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000536 RID: 1334 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateSpineRotation()
 	{
 	}
 
-	// Token: 0x06000536 RID: 1334 RVA: 0x00021006 File Offset: 0x0001F206
+	// Token: 0x06000537 RID: 1335 RVA: 0x000210CA File Offset: 0x0001F2CA
 	public override Transform GetRightHandTransform()
 	{
 		return this.rightHand;
 	}
 
-	// Token: 0x06000537 RID: 1335 RVA: 0x00024334 File Offset: 0x00022534
+	// Token: 0x06000538 RID: 1336 RVA: 0x000243F8 File Offset: 0x000225F8
 	public override Transform GetMeshTransform()
 	{
 		if (!(this.meshTransform != null))
@@ -192,13 +192,13 @@ public class AvatarUMAController : LegacyAvatarController
 		return this.meshTransform;
 	}
 
-	// Token: 0x06000538 RID: 1336 RVA: 0x00024351 File Offset: 0x00022551
+	// Token: 0x06000539 RID: 1337 RVA: 0x00024415 File Offset: 0x00022615
 	public override bool IsAnimationHitRunning()
 	{
 		return base.IsAnimationHitRunning() || this.hitStates.Contains(this.painLayer.fullPathHash);
 	}
 
-	// Token: 0x06000539 RID: 1337 RVA: 0x00024374 File Offset: 0x00022574
+	// Token: 0x0600053A RID: 1338 RVA: 0x00024438 File Offset: 0x00022638
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void LateUpdate()
 	{

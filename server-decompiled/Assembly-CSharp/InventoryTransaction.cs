@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 
-// Token: 0x02000572 RID: 1394
+// Token: 0x02000577 RID: 1399
 public class InventoryTransaction
 {
-	// Token: 0x06002D87 RID: 11655 RVA: 0x00121A07 File Offset: 0x0011FC07
+	// Token: 0x06002DB2 RID: 11698 RVA: 0x00122AC3 File Offset: 0x00120CC3
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AddOperation(TransactionalInventory _inventory, InventoryOperation _operation)
 	{
@@ -16,7 +16,7 @@ public class InventoryTransaction
 		this.InventoryOps[_inventory].Ops.Add(_operation);
 	}
 
-	// Token: 0x06002D88 RID: 11656 RVA: 0x00121A45 File Offset: 0x0011FC45
+	// Token: 0x06002DB3 RID: 11699 RVA: 0x00122B01 File Offset: 0x00120D01
 	public InventoryTransaction SetStackAbsolute(TransactionalInventory _inventory, ItemStack _stack, int _index)
 	{
 		if (_inventory == null)
@@ -33,7 +33,7 @@ public class InventoryTransaction
 		return this;
 	}
 
-	// Token: 0x06002D89 RID: 11657 RVA: 0x00121A7A File Offset: 0x0011FC7A
+	// Token: 0x06002DB4 RID: 11700 RVA: 0x00122B36 File Offset: 0x00120D36
 	public InventoryTransaction SetStackRelative(TransactionalInventory _inventory, ItemStack _stack, int _index)
 	{
 		if (_inventory == null)
@@ -45,7 +45,7 @@ public class InventoryTransaction
 		return this;
 	}
 
-	// Token: 0x06002D8A RID: 11658 RVA: 0x00121A9A File Offset: 0x0011FC9A
+	// Token: 0x06002DB5 RID: 11701 RVA: 0x00122B56 File Offset: 0x00120D56
 	public InventoryTransaction SetStacksAll(TransactionalInventory _inventory, ItemStack[] _newStacks)
 	{
 		if (_inventory == null)
@@ -57,7 +57,7 @@ public class InventoryTransaction
 		return this;
 	}
 
-	// Token: 0x06002D8B RID: 11659 RVA: 0x00121ABC File Offset: 0x0011FCBC
+	// Token: 0x06002DB6 RID: 11702 RVA: 0x00122B78 File Offset: 0x00120D78
 	public bool Apply(Guid managerToken)
 	{
 		if (this.InventoryOps.Count == 0)
@@ -109,7 +109,7 @@ public class InventoryTransaction
 		return flag;
 	}
 
-	// Token: 0x06002D8C RID: 11660 RVA: 0x00121C5C File Offset: 0x0011FE5C
+	// Token: 0x06002DB7 RID: 11703 RVA: 0x00122D18 File Offset: 0x00120F18
 	public bool ValidateFinalHashes()
 	{
 		bool flag = true;
@@ -126,7 +126,7 @@ public class InventoryTransaction
 		return flag;
 	}
 
-	// Token: 0x06002D8D RID: 11661 RVA: 0x00121CF8 File Offset: 0x0011FEF8
+	// Token: 0x06002DB8 RID: 11704 RVA: 0x00122DB4 File Offset: 0x00120FB4
 	public static InventoryTransaction Read(BinaryReader _br)
 	{
 		InventoryTransaction inventoryTransaction = new InventoryTransaction();
@@ -164,7 +164,7 @@ public class InventoryTransaction
 		return inventoryTransaction;
 	}
 
-	// Token: 0x06002D8E RID: 11662 RVA: 0x00121DC4 File Offset: 0x0011FFC4
+	// Token: 0x06002DB9 RID: 11705 RVA: 0x00122E80 File Offset: 0x00121080
 	public static void Write(BinaryWriter _bw, InventoryTransaction tx)
 	{
 		if (tx == null || tx.InventoryOps == null || tx.InventoryOps.Count == 0)
@@ -188,15 +188,15 @@ public class InventoryTransaction
 		}
 	}
 
-	// Token: 0x0400237B RID: 9083
+	// Token: 0x040023AD RID: 9133
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<TransactionalInventory, InventoryTransaction.OperationData> InventoryOps = new Dictionary<TransactionalInventory, InventoryTransaction.OperationData>();
 
-	// Token: 0x02000573 RID: 1395
+	// Token: 0x02000578 RID: 1400
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class OperationData
 	{
-		// Token: 0x06002D90 RID: 11664 RVA: 0x00121EE3 File Offset: 0x001200E3
+		// Token: 0x06002DBB RID: 11707 RVA: 0x00122F9F File Offset: 0x0012119F
 		public OperationData(int _initialHash)
 		{
 			this.InitialHash = _initialHash;
@@ -204,13 +204,13 @@ public class InventoryTransaction
 			this.Ops = new List<InventoryOperation>();
 		}
 
-		// Token: 0x0400237C RID: 9084
+		// Token: 0x040023AE RID: 9134
 		public int InitialHash;
 
-		// Token: 0x0400237D RID: 9085
+		// Token: 0x040023AF RID: 9135
 		public int FinalHash;
 
-		// Token: 0x0400237E RID: 9086
+		// Token: 0x040023B0 RID: 9136
 		public List<InventoryOperation> Ops;
 	}
 }

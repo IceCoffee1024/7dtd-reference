@@ -2,10 +2,10 @@
 
 namespace SandboxOptions
 {
-	// Token: 0x0200187B RID: 6267
+	// Token: 0x020018A1 RID: 6305
 	public class SandboxOptionValueSetInt : SandboxOptionValueSet
 	{
-		// Token: 0x0600C11F RID: 49439 RVA: 0x0047A34C File Offset: 0x0047854C
+		// Token: 0x0600C2A6 RID: 49830 RVA: 0x00480478 File Offset: 0x0047E678
 		public override bool GetValue(int index, out object val)
 		{
 			int num;
@@ -14,7 +14,7 @@ namespace SandboxOptions
 			return intValue;
 		}
 
-		// Token: 0x0600C120 RID: 49440 RVA: 0x0047A36A File Offset: 0x0047856A
+		// Token: 0x0600C2A7 RID: 49831 RVA: 0x00480496 File Offset: 0x0047E696
 		public override bool GetIntValue(int index, out int val)
 		{
 			if (index >= 0 && index < this.IntValues.Length)
@@ -26,7 +26,7 @@ namespace SandboxOptions
 			return false;
 		}
 
-		// Token: 0x0600C121 RID: 49441 RVA: 0x0047A38C File Offset: 0x0047858C
+		// Token: 0x0600C2A8 RID: 49832 RVA: 0x004804B8 File Offset: 0x0047E6B8
 		public override int GetIntIndex(int val)
 		{
 			for (int i = 0; i < this.IntValues.Length; i++)
@@ -39,20 +39,20 @@ namespace SandboxOptions
 			return -1;
 		}
 
-		// Token: 0x0600C122 RID: 49442 RVA: 0x0047A3BA File Offset: 0x004785BA
+		// Token: 0x0600C2A9 RID: 49833 RVA: 0x004804E6 File Offset: 0x0047E6E6
 		public override bool IsValidIndex(int index)
 		{
 			return index >= 0 && index < this.IntValues.Length;
 		}
 
-		// Token: 0x0600C123 RID: 49443 RVA: 0x0047A3CD File Offset: 0x004785CD
+		// Token: 0x0600C2AA RID: 49834 RVA: 0x004804F9 File Offset: 0x0047E6F9
 		public override int GetValueCount()
 		{
 			return this.IntValues.Length;
 		}
 
-		// Token: 0x0600C124 RID: 49444 RVA: 0x0047A3D8 File Offset: 0x004785D8
-		public override string GetDisplayAtIndex(int index)
+		// Token: 0x0600C2AB RID: 49835 RVA: 0x00480504 File Offset: 0x0047E704
+		public override string GetDisplayAtIndex(int index, string languageName = null)
 		{
 			if (index < 0 || index >= this.IntValues.Length)
 			{
@@ -66,11 +66,11 @@ namespace SandboxOptions
 			string text2;
 			if (this.DisplayValues != null && this.DisplayValues.Length > index && this.DisplayValues[index] != null)
 			{
-				text2 = Localization.Get(this.DisplayValues[index], false, null);
+				text2 = Localization.Get(this.DisplayValues[index], false, languageName);
 			}
 			else if (this.DisplayFormat != null)
 			{
-				text2 = Localization.Get(this.DisplayFormat, false, null);
+				text2 = Localization.Get(this.DisplayFormat, false, languageName);
 			}
 			else
 			{
@@ -79,13 +79,13 @@ namespace SandboxOptions
 			return string.Format(text2, (text != null) ? text : this.IntValues[index]);
 		}
 
-		// Token: 0x0600C125 RID: 49445 RVA: 0x0047A47E File Offset: 0x0047867E
+		// Token: 0x0600C2AC RID: 49836 RVA: 0x004805AA File Offset: 0x0047E7AA
 		public override string GetValueListString()
 		{
 			return string.Join<int>(", ", this.IntValues);
 		}
 
-		// Token: 0x04009287 RID: 37511
+		// Token: 0x040093B0 RID: 37808
 		public int[] IntValues;
 	}
 }

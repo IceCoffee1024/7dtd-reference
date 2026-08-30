@@ -4,11 +4,11 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200044A RID: 1098
+// Token: 0x0200044E RID: 1102
 [Preserve]
 public class EAIRangedAttackTarget : EAIBase
 {
-	// Token: 0x06002188 RID: 8584 RVA: 0x000CAC20 File Offset: 0x000C8E20
+	// Token: 0x060021A5 RID: 8613 RVA: 0x000CB42C File Offset: 0x000C962C
 	public override void Init(EntityAlive _theEntity)
 	{
 		base.Init(_theEntity);
@@ -17,7 +17,7 @@ public class EAIRangedAttackTarget : EAIBase
 		this.attackDuration = 20f;
 	}
 
-	// Token: 0x06002189 RID: 8585 RVA: 0x000CAC48 File Offset: 0x000C8E48
+	// Token: 0x060021A6 RID: 8614 RVA: 0x000CB454 File Offset: 0x000C9654
 	public override void SetData(Dictionary<string, string> data)
 	{
 		base.SetData(data);
@@ -33,7 +33,7 @@ public class EAIRangedAttackTarget : EAIBase
 		data.TryGetValue("sndRelease", out this.soundReleaseName);
 	}
 
-	// Token: 0x0600218A RID: 8586 RVA: 0x000CAD10 File Offset: 0x000C8F10
+	// Token: 0x060021A7 RID: 8615 RVA: 0x000CB51C File Offset: 0x000C971C
 	public override bool CanExecute()
 	{
 		if (this.theEntity.IsDancing)
@@ -53,7 +53,7 @@ public class EAIRangedAttackTarget : EAIBase
 		return this.entityTarget && !this.entityTarget.IsDead() && !this.theEntity.bodyDamage.IsAnyLegMissing && (this.startAnimType < 0 || !this.theEntity.bodyDamage.IsAnyArmOrLegMissing) && this.InRange() && this.theEntity.CanSee(this.entityTarget);
 	}
 
-	// Token: 0x0600218B RID: 8587 RVA: 0x000CADD8 File Offset: 0x000C8FD8
+	// Token: 0x060021A8 RID: 8616 RVA: 0x000CB5E4 File Offset: 0x000C97E4
 	public override void Start()
 	{
 		this.theEntity.emodel.avatarController.hitWeightMax = 0.5f;
@@ -72,13 +72,13 @@ public class EAIRangedAttackTarget : EAIBase
 		}
 	}
 
-	// Token: 0x0600218C RID: 8588 RVA: 0x000CAE78 File Offset: 0x000C9078
+	// Token: 0x060021A9 RID: 8617 RVA: 0x000CB684 File Offset: 0x000C9884
 	public override bool Continue()
 	{
 		return this.entityTarget && !this.entityTarget.IsDead() && this.elapsedTime < this.attackDuration && this.theEntity.bodyDamage.CurrentStun == EnumEntityStunType.None && !this.theEntity.Electrocuted && (this.startAnimType < 0 || !this.theEntity.bodyDamage.IsAnyArmOrLegMissing) && this.theEntity.painHitsFelt - this.painHitsFelt < 1f;
 	}
 
-	// Token: 0x0600218D RID: 8589 RVA: 0x000CAF08 File Offset: 0x000C9108
+	// Token: 0x060021AA RID: 8618 RVA: 0x000CB714 File Offset: 0x000C9914
 	public override void Update()
 	{
 		this.elapsedTime += 0.05f;
@@ -122,7 +122,7 @@ public class EAIRangedAttackTarget : EAIBase
 		}
 	}
 
-	// Token: 0x0600218E RID: 8590 RVA: 0x000CB050 File Offset: 0x000C9250
+	// Token: 0x060021AB RID: 8619 RVA: 0x000CB85C File Offset: 0x000C9A5C
 	public override void Reset()
 	{
 		this.theEntity.ShowHoldingItem(false);
@@ -134,7 +134,7 @@ public class EAIRangedAttackTarget : EAIBase
 		this.cooldown = this.baseCooldown + this.baseCooldown * 0.5f * base.RandomFloat;
 	}
 
-	// Token: 0x0600218F RID: 8591 RVA: 0x000CB0E0 File Offset: 0x000C92E0
+	// Token: 0x060021AC RID: 8620 RVA: 0x000CB8EC File Offset: 0x000C9AEC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool InRange()
 	{
@@ -150,7 +150,7 @@ public class EAIRangedAttackTarget : EAIBase
 		return distanceSq >= this.minRange * this.minRange && distanceSq <= this.maxRange * this.maxRange;
 	}
 
-	// Token: 0x06002190 RID: 8592 RVA: 0x000CB164 File Offset: 0x000C9364
+	// Token: 0x060021AD RID: 8621 RVA: 0x000CB970 File Offset: 0x000C9B70
 	public override string ToString()
 	{
 		bool flag = this.entityTarget && this.InRange();
@@ -163,81 +163,81 @@ public class EAIRangedAttackTarget : EAIBase
 		});
 	}
 
-	// Token: 0x0400171E RID: 5918
+	// Token: 0x04001733 RID: 5939
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int itemActionType;
 
-	// Token: 0x0400171F RID: 5919
+	// Token: 0x04001734 RID: 5940
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int startAnimType = -1;
 
-	// Token: 0x04001720 RID: 5920
+	// Token: 0x04001735 RID: 5941
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float releaseDelay = 0.5f;
 
-	// Token: 0x04001721 RID: 5921
+	// Token: 0x04001736 RID: 5942
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float baseCooldown;
 
-	// Token: 0x04001722 RID: 5922
+	// Token: 0x04001737 RID: 5943
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float cooldown;
 
-	// Token: 0x04001723 RID: 5923
+	// Token: 0x04001738 RID: 5944
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityAlive entityTarget;
 
-	// Token: 0x04001724 RID: 5924
+	// Token: 0x04001739 RID: 5945
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float attackDuration;
 
-	// Token: 0x04001725 RID: 5925
+	// Token: 0x0400173A RID: 5946
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float elapsedTime;
 
-	// Token: 0x04001726 RID: 5926
+	// Token: 0x0400173B RID: 5947
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float minRange = 4f;
 
-	// Token: 0x04001727 RID: 5927
+	// Token: 0x0400173C RID: 5948
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float maxRange = 25f;
 
-	// Token: 0x04001728 RID: 5928
+	// Token: 0x0400173D RID: 5949
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float unreachableRange;
 
-	// Token: 0x04001729 RID: 5929
+	// Token: 0x0400173E RID: 5950
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string soundStartName;
 
-	// Token: 0x0400172A RID: 5930
+	// Token: 0x0400173F RID: 5951
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string soundReleaseName;
 
-	// Token: 0x0400172B RID: 5931
+	// Token: 0x04001740 RID: 5952
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EAIRangedAttackTarget.State state;
 
-	// Token: 0x0400172C RID: 5932
+	// Token: 0x04001741 RID: 5953
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float stateTime;
 
-	// Token: 0x0400172D RID: 5933
+	// Token: 0x04001742 RID: 5954
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float painHitsFelt;
 
-	// Token: 0x0200044B RID: 1099
+	// Token: 0x0200044F RID: 1103
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum State
 	{
-		// Token: 0x0400172F RID: 5935
+		// Token: 0x04001744 RID: 5956
 		StartAnim,
-		// Token: 0x04001730 RID: 5936
+		// Token: 0x04001745 RID: 5957
 		ReleaseAnim,
-		// Token: 0x04001731 RID: 5937
+		// Token: 0x04001746 RID: 5958
 		Attack,
-		// Token: 0x04001732 RID: 5938
+		// Token: 0x04001747 RID: 5959
 		Release
 	}
 }

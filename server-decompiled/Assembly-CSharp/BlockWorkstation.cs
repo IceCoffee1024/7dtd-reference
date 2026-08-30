@@ -2,17 +2,17 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000168 RID: 360
+// Token: 0x02000169 RID: 361
 [Preserve]
 public class BlockWorkstation : BlockParticle
 {
-	// Token: 0x06000A34 RID: 2612 RVA: 0x000444BC File Offset: 0x000426BC
+	// Token: 0x06000A3E RID: 2622 RVA: 0x0004471C File Offset: 0x0004291C
 	public BlockWorkstation()
 	{
 		this.HasTileEntity = true;
 	}
 
-	// Token: 0x06000A35 RID: 2613 RVA: 0x00044530 File Offset: 0x00042730
+	// Token: 0x06000A3F RID: 2623 RVA: 0x00044790 File Offset: 0x00042990
 	public override void Init()
 	{
 		base.Init();
@@ -25,7 +25,7 @@ public class BlockWorkstation : BlockParticle
 		CraftingManager.AddWorkstationData(this.WorkstationData);
 	}
 
-	// Token: 0x06000A36 RID: 2614 RVA: 0x000445B4 File Offset: 0x000427B4
+	// Token: 0x06000A40 RID: 2624 RVA: 0x00044814 File Offset: 0x00042A14
 	public override void OnBlockAdded(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -39,14 +39,14 @@ public class BlockWorkstation : BlockParticle
 		});
 	}
 
-	// Token: 0x06000A37 RID: 2615 RVA: 0x000445F2 File Offset: 0x000427F2
+	// Token: 0x06000A41 RID: 2625 RVA: 0x00044852 File Offset: 0x00042A52
 	public override void OnBlockRemoved(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockRemoved(world, _chunk, _blockPos, _blockValue);
 		_chunk.RemoveTileEntityAt<TileEntityWorkstation>((World)world, World.toBlock(_blockPos));
 	}
 
-	// Token: 0x06000A38 RID: 2616 RVA: 0x00044614 File Offset: 0x00042814
+	// Token: 0x06000A42 RID: 2626 RVA: 0x00044874 File Offset: 0x00042A74
 	public override void PlaceBlock(WorldBase _world, BlockPlacement.Result _result, EntityAlive _ea)
 	{
 		base.PlaceBlock(_world, _result, _ea);
@@ -57,7 +57,7 @@ public class BlockWorkstation : BlockParticle
 		}
 	}
 
-	// Token: 0x06000A39 RID: 2617 RVA: 0x00044648 File Offset: 0x00042848
+	// Token: 0x06000A43 RID: 2627 RVA: 0x000448A8 File Offset: 0x00042AA8
 	public override bool OnBlockActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		TileEntityWorkstation tileEntityWorkstation = (TileEntityWorkstation)_world.GetTileEntity(_blockPos);
@@ -70,20 +70,20 @@ public class BlockWorkstation : BlockParticle
 		return true;
 	}
 
-	// Token: 0x06000A3A RID: 2618 RVA: 0x0004467D File Offset: 0x0004287D
+	// Token: 0x06000A44 RID: 2628 RVA: 0x000448DD File Offset: 0x00042ADD
 	public override void OnBlockValueChanged(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		base.OnBlockValueChanged(_world, _chunk, _blockPos, _oldBlockValue, _newBlockValue);
 		this.checkParticles(_world, _blockPos, _newBlockValue);
 	}
 
-	// Token: 0x06000A3B RID: 2619 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000A45 RID: 2629 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override byte GetLightValue(BlockValue _blockValue)
 	{
 		return 0;
 	}
 
-	// Token: 0x06000A3C RID: 2620 RVA: 0x00044698 File Offset: 0x00042898
+	// Token: 0x06000A46 RID: 2630 RVA: 0x000448F8 File Offset: 0x00042AF8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void checkParticles(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
@@ -107,19 +107,19 @@ public class BlockWorkstation : BlockParticle
 		}
 	}
 
-	// Token: 0x06000A3D RID: 2621 RVA: 0x0004471F File Offset: 0x0004291F
+	// Token: 0x06000A47 RID: 2631 RVA: 0x0004497F File Offset: 0x00042B7F
 	public static bool IsLit(BlockValue _blockValue)
 	{
 		return _blockValue.meta > 0;
 	}
 
-	// Token: 0x06000A3E RID: 2622 RVA: 0x0004472B File Offset: 0x0004292B
+	// Token: 0x06000A48 RID: 2632 RVA: 0x0004498B File Offset: 0x00042B8B
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		return _blockValue.Block.GetLocalizedBlockName() + "\n" + Localization.Get("useWorkstation", false, null);
 	}
 
-	// Token: 0x06000A3F RID: 2623 RVA: 0x00044750 File Offset: 0x00042950
+	// Token: 0x06000A49 RID: 2633 RVA: 0x000449B0 File Offset: 0x00042BB0
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_commandName == "open")
@@ -165,13 +165,13 @@ public class BlockWorkstation : BlockParticle
 		return true;
 	}
 
-	// Token: 0x06000A40 RID: 2624 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x06000A4A RID: 2634 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool HasBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		return true;
 	}
 
-	// Token: 0x06000A41 RID: 2625 RVA: 0x00044880 File Offset: 0x00042A80
+	// Token: 0x06000A4B RID: 2635 RVA: 0x00044AE0 File Offset: 0x00042CE0
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		bool flag = _world.IsMyLandProtectedBlock(_blockPos, _world.GetGameManager().GetPersistentLocalPlayer());
@@ -186,7 +186,7 @@ public class BlockWorkstation : BlockParticle
 		return this.cmds;
 	}
 
-	// Token: 0x06000A42 RID: 2626 RVA: 0x00044910 File Offset: 0x00042B10
+	// Token: 0x06000A4C RID: 2636 RVA: 0x00044B70 File Offset: 0x00042D70
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool takeItemWithTimerCanTake(Vector3i _blockPos, EntityAlive _player)
 	{
@@ -198,14 +198,14 @@ public class BlockWorkstation : BlockParticle
 		return false;
 	}
 
-	// Token: 0x06000A43 RID: 2627 RVA: 0x00044965 File Offset: 0x00042B65
+	// Token: 0x06000A4D RID: 2637 RVA: 0x00044BC5 File Offset: 0x00042DC5
 	public override void OnBlockEntityTransformBeforeActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		base.OnBlockEntityTransformBeforeActivated(_world, _blockPos, _blockValue, _ebcd);
 		this.UpdateVisible(_world, _blockPos);
 	}
 
-	// Token: 0x06000A44 RID: 2628 RVA: 0x0004497C File Offset: 0x00042B7C
+	// Token: 0x06000A4E RID: 2638 RVA: 0x00044BDC File Offset: 0x00042DDC
 	public void UpdateVisible(WorldBase _world, Vector3i _blockPos)
 	{
 		TileEntityWorkstation tileEntityWorkstation = _world.GetTileEntity(_blockPos) as TileEntityWorkstation;
@@ -215,7 +215,7 @@ public class BlockWorkstation : BlockParticle
 		}
 	}
 
-	// Token: 0x06000A45 RID: 2629 RVA: 0x000449A0 File Offset: 0x00042BA0
+	// Token: 0x06000A4F RID: 2639 RVA: 0x00044C00 File Offset: 0x00042E00
 	public void UpdateVisible(TileEntityWorkstation _te)
 	{
 		BlockEntityData blockEntity = _te.GetChunk().GetBlockEntity(_te.ToWorldPos());
@@ -262,22 +262,22 @@ public class BlockWorkstation : BlockParticle
 		}
 	}
 
-	// Token: 0x04000A1A RID: 2586
+	// Token: 0x04000A1C RID: 2588
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float TakeDelay;
 
-	// Token: 0x04000A1B RID: 2587
+	// Token: 0x04000A1D RID: 2589
 	public WorkstationData WorkstationData;
 
-	// Token: 0x04000A1C RID: 2588
+	// Token: 0x04000A1E RID: 2590
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string[] toolTransformNames;
 
-	// Token: 0x04000A1D RID: 2589
+	// Token: 0x04000A1F RID: 2591
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float CraftingParticleLightIntensity;
 
-	// Token: 0x04000A1E RID: 2590
+	// Token: 0x04000A20 RID: 2592
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public new BlockActivationCommand[] cmds = new BlockActivationCommand[]
 	{

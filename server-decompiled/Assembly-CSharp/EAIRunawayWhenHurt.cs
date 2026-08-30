@@ -4,17 +4,17 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200044E RID: 1102
+// Token: 0x02000452 RID: 1106
 [Preserve]
 public class EAIRunawayWhenHurt : EAIRunAway
 {
-	// Token: 0x060021A6 RID: 8614 RVA: 0x000CB824 File Offset: 0x000C9A24
+	// Token: 0x060021C3 RID: 8643 RVA: 0x000CBFC1 File Offset: 0x000CA1C1
 	public EAIRunawayWhenHurt()
 	{
 		this.MutexBits = 1;
 	}
 
-	// Token: 0x060021A7 RID: 8615 RVA: 0x000CB840 File Offset: 0x000C9A40
+	// Token: 0x060021C4 RID: 8644 RVA: 0x000CBFDC File Offset: 0x000CA1DC
 	public override void SetData(Dictionary<string, string> data)
 	{
 		base.SetData(data);
@@ -34,27 +34,27 @@ public class EAIRunawayWhenHurt : EAIRunAway
 		}
 	}
 
-	// Token: 0x060021A8 RID: 8616 RVA: 0x000CB8D0 File Offset: 0x000C9AD0
+	// Token: 0x060021C5 RID: 8645 RVA: 0x000CC06C File Offset: 0x000CA26C
 	public override bool CanExecute()
 	{
 		this.enemy = this.theEntity.GetRevengeTarget();
 		return this.enemy && (this.lowHealthPercent >= 1f || (float)this.theEntity.Health / (float)this.theEntity.GetMaxHealth() < this.lowHealthPercent) && base.CanExecute();
 	}
 
-	// Token: 0x060021A9 RID: 8617 RVA: 0x000CB933 File Offset: 0x000C9B33
+	// Token: 0x060021C6 RID: 8646 RVA: 0x000CC0CF File Offset: 0x000CA2CF
 	public override bool Continue()
 	{
 		return base.Continue();
 	}
 
-	// Token: 0x060021AA RID: 8618 RVA: 0x000CB93B File Offset: 0x000C9B3B
+	// Token: 0x060021C7 RID: 8647 RVA: 0x000CC0D7 File Offset: 0x000CA2D7
 	public override void Update()
 	{
 		base.Update();
 		this.theEntity.navigator.setMoveSpeed(this.theEntity.IsInWater() ? this.theEntity.GetMoveSpeed() : this.theEntity.GetMoveSpeedPanic());
 	}
 
-	// Token: 0x060021AB RID: 8619 RVA: 0x000CB978 File Offset: 0x000C9B78
+	// Token: 0x060021C8 RID: 8648 RVA: 0x000CC114 File Offset: 0x000CA314
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override Vector3 GetFleeFromPos()
 	{
@@ -65,13 +65,13 @@ public class EAIRunawayWhenHurt : EAIRunAway
 		return this.theEntity.position;
 	}
 
-	// Token: 0x060021AC RID: 8620 RVA: 0x000CB99E File Offset: 0x000C9B9E
+	// Token: 0x060021C9 RID: 8649 RVA: 0x000CC13A File Offset: 0x000CA33A
 	public override string ToString()
 	{
 		return string.Format("{0}, per {1}", base.ToString(), this.lowHealthPercent);
 	}
 
-	// Token: 0x0400173F RID: 5951
+	// Token: 0x04001755 RID: 5973
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lowHealthPercent = 1f;
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001566 RID: 5478
+// Token: 0x02001581 RID: 5505
 public class vp_Gizmo : MonoBehaviour
 {
-	// Token: 0x0600AB41 RID: 43841 RVA: 0x003FCFE4 File Offset: 0x003FB1E4
+	// Token: 0x0600AC3E RID: 44094 RVA: 0x00402324 File Offset: 0x00400524
 	public void OnDrawGizmos()
 	{
 		Vector3 center = base.GetComponent<Collider>().bounds.center;
@@ -15,7 +15,7 @@ public class vp_Gizmo : MonoBehaviour
 		Gizmos.DrawLine(Vector3.zero, Vector3.forward);
 	}
 
-	// Token: 0x0600AB42 RID: 43842 RVA: 0x003FD058 File Offset: 0x003FB258
+	// Token: 0x0600AC3F RID: 44095 RVA: 0x00402398 File Offset: 0x00400598
 	public void OnDrawGizmosSelected()
 	{
 		Vector3 center = base.GetComponent<Collider>().bounds.center;
@@ -26,9 +26,9 @@ public class vp_Gizmo : MonoBehaviour
 		Gizmos.DrawLine(Vector3.zero, Vector3.forward);
 	}
 
-	// Token: 0x04007E96 RID: 32406
+	// Token: 0x04007F6F RID: 32623
 	public Color gizmoColor = new Color(1f, 1f, 1f, 0.4f);
 
-	// Token: 0x04007E97 RID: 32407
+	// Token: 0x04007F70 RID: 32624
 	public Color selectedGizmoColor = new Color(1f, 1f, 1f, 0.4f);
 }

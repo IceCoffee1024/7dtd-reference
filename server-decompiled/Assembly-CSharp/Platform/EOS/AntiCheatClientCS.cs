@@ -5,17 +5,17 @@ using Epic.OnlineServices.AntiCheatClient;
 
 namespace Platform.EOS
 {
-	// Token: 0x02001CB2 RID: 7346
+	// Token: 0x02001CD9 RID: 7385
 	public class AntiCheatClientCS
 	{
-		// Token: 0x0600D992 RID: 55698 RVA: 0x004DE3F4 File Offset: 0x004DC5F4
+		// Token: 0x0600DB2D RID: 56109 RVA: 0x004E4A08 File Offset: 0x004E2C08
 		public AntiCheatClientCS(IPlatform _owner, AntiCheatClientInterface _antiCheatInterface)
 		{
 			this.owner = _owner;
 			this.antiCheatInterface = _antiCheatInterface;
 		}
 
-		// Token: 0x0600D993 RID: 55699 RVA: 0x004DE40C File Offset: 0x004DC60C
+		// Token: 0x0600DB2E RID: 56110 RVA: 0x004E4A20 File Offset: 0x004E2C20
 		public void Activate()
 		{
 			AddNotifyMessageToServerOptions addNotifyMessageToServerOptions = default(AddNotifyMessageToServerOptions);
@@ -26,7 +26,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600D994 RID: 55700 RVA: 0x004DE470 File Offset: 0x004DC670
+		// Token: 0x0600DB2F RID: 56111 RVA: 0x004E4A84 File Offset: 0x004E2C84
 		public void Deactivate()
 		{
 			if (this.handleMessageToServerID != 0UL)
@@ -36,7 +36,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600D995 RID: 55701 RVA: 0x004DE494 File Offset: 0x004DC694
+		// Token: 0x0600DB30 RID: 56112 RVA: 0x004E4AA8 File Offset: 0x004E2CA8
 		public void ConnectToServer(Action _onNoAntiCheatOrConnectionComplete, Action<string> _onConnectionFailed)
 		{
 			ProductUserId productUserId = ((UserIdentifierEos)this.owner.User.PlatformUserId).ProductUserId;
@@ -66,7 +66,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600D996 RID: 55702 RVA: 0x004DE550 File Offset: 0x004DC750
+		// Token: 0x0600DB31 RID: 56113 RVA: 0x004E4B64 File Offset: 0x004E2D64
 		public void HandleMessageFromServer(byte[] _data)
 		{
 			if (AntiCheatCommon.DebugEacVerbose)
@@ -90,7 +90,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600D997 RID: 55703 RVA: 0x004DE5F0 File Offset: 0x004DC7F0
+		// Token: 0x0600DB32 RID: 56114 RVA: 0x004E4C04 File Offset: 0x004E2E04
 		public void DisconnectFromServer()
 		{
 			Log.Out("[EOS-ACC] Disconnected from game server");
@@ -108,7 +108,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600D998 RID: 55704 RVA: 0x004DE66C File Offset: 0x004DC86C
+		// Token: 0x0600DB33 RID: 56115 RVA: 0x004E4C80 File Offset: 0x004E2E80
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void handleMessageToServer(ref OnMessageToServerCallbackInfo _data)
 		{
@@ -119,7 +119,7 @@ namespace Platform.EOS
 			SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackageEAC>().Setup(_data.MessageData.Count, _data.MessageData.Array), false);
 		}
 
-		// Token: 0x0600D999 RID: 55705 RVA: 0x004DE6D4 File Offset: 0x004DC8D4
+		// Token: 0x0600DB34 RID: 56116 RVA: 0x004E4CE8 File Offset: 0x004E2EE8
 		public bool EncryptStream(ClientInfo _cInfo, MemoryStream _stream)
 		{
 			int num = (int)_stream.Length;
@@ -156,7 +156,7 @@ namespace Platform.EOS
 			return true;
 		}
 
-		// Token: 0x0600D99A RID: 55706 RVA: 0x004DE7EC File Offset: 0x004DC9EC
+		// Token: 0x0600DB35 RID: 56117 RVA: 0x004E4E00 File Offset: 0x004E3000
 		public bool DecryptStream(ClientInfo _cInfo, MemoryStream _stream)
 		{
 			int num = (int)_stream.Length;
@@ -199,15 +199,15 @@ namespace Platform.EOS
 			return true;
 		}
 
-		// Token: 0x0400A47B RID: 42107
+		// Token: 0x0400A5AE RID: 42414
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform owner;
 
-		// Token: 0x0400A47C RID: 42108
+		// Token: 0x0400A5AF RID: 42415
 		[PublicizedFrom(EAccessModifier.Private)]
 		public AntiCheatClientInterface antiCheatInterface;
 
-		// Token: 0x0400A47D RID: 42109
+		// Token: 0x0400A5B0 RID: 42416
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ulong handleMessageToServerID;
 	}

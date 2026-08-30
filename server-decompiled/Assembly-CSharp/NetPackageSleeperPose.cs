@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000849 RID: 2121
+// Token: 0x02000855 RID: 2133
 [Preserve]
 public class NetPackageSleeperPose : NetPackage
 {
-	// Token: 0x06003DFC RID: 15868 RVA: 0x00188364 File Offset: 0x00186564
+	// Token: 0x06003E61 RID: 15969 RVA: 0x0018A398 File Offset: 0x00188598
 	public NetPackageSleeperPose Setup(int targetId, byte pose)
 	{
 		this.m_targetId = targetId;
@@ -13,14 +13,14 @@ public class NetPackageSleeperPose : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003DFD RID: 15869 RVA: 0x00188375 File Offset: 0x00186575
+	// Token: 0x06003E62 RID: 15970 RVA: 0x0018A3A9 File Offset: 0x001885A9
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.m_targetId = _reader.ReadInt32();
 		this.m_pose = _reader.ReadByte();
 	}
 
-	// Token: 0x06003DFE RID: 15870 RVA: 0x0018838F File Offset: 0x0018658F
+	// Token: 0x06003E63 RID: 15971 RVA: 0x0018A3C3 File Offset: 0x001885C3
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -28,7 +28,7 @@ public class NetPackageSleeperPose : NetPackage
 		_writer.Write(this.m_pose);
 	}
 
-	// Token: 0x06003DFF RID: 15871 RVA: 0x001883B0 File Offset: 0x001865B0
+	// Token: 0x06003E64 RID: 15972 RVA: 0x0018A3E4 File Offset: 0x001885E4
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null || !_world.IsRemote())
@@ -43,17 +43,17 @@ public class NetPackageSleeperPose : NetPackage
 		entityAlive.TriggerSleeperPose((int)this.m_pose, false);
 	}
 
-	// Token: 0x06003E00 RID: 15872 RVA: 0x00080B69 File Offset: 0x0007ED69
+	// Token: 0x06003E65 RID: 15973 RVA: 0x0008121D File Offset: 0x0007F41D
 	public override int GetLength()
 	{
 		return 8;
 	}
 
-	// Token: 0x0400320A RID: 12810
+	// Token: 0x04003289 RID: 12937
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_targetId;
 
-	// Token: 0x0400320B RID: 12811
+	// Token: 0x0400328A RID: 12938
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte m_pose;
 }

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020008F4 RID: 2292
+// Token: 0x02000900 RID: 2304
 public class PhysicsBodyInstance
 {
-	// Token: 0x06004262 RID: 16994 RVA: 0x0019EF4C File Offset: 0x0019D14C
+	// Token: 0x060042C7 RID: 17095 RVA: 0x001A1024 File Offset: 0x0019F224
 	public PhysicsBodyInstance(Transform _modelRoot, PhysicsBodyLayout _layout, EnumColliderMode _initialMode)
 	{
 		this.modelRoot = _modelRoot;
@@ -18,7 +18,7 @@ public class PhysicsBodyInstance
 		}
 	}
 
-	// Token: 0x06004263 RID: 16995 RVA: 0x0019EFB0 File Offset: 0x0019D1B0
+	// Token: 0x060042C8 RID: 17096 RVA: 0x001A1088 File Offset: 0x0019F288
 	public void BindColliders()
 	{
 		this.colliders.Clear();
@@ -29,7 +29,7 @@ public class PhysicsBodyInstance
 		}
 	}
 
-	// Token: 0x06004264 RID: 16996 RVA: 0x0019EFFC File Offset: 0x0019D1FC
+	// Token: 0x060042C9 RID: 17097 RVA: 0x001A10D4 File Offset: 0x0019F2D4
 	public void SetColliderMode(EnumColliderType colliderTypes, EnumColliderMode _mode)
 	{
 		this.Mode = _mode;
@@ -43,7 +43,7 @@ public class PhysicsBodyInstance
 		}
 	}
 
-	// Token: 0x06004265 RID: 16997 RVA: 0x0019F04C File Offset: 0x0019D24C
+	// Token: 0x060042CA RID: 17098 RVA: 0x001A1124 File Offset: 0x0019F324
 	public Transform GetTransformForColliderTag(string tag)
 	{
 		for (int i = 0; i < this.colliders.Count; i++)
@@ -57,7 +57,7 @@ public class PhysicsBodyInstance
 		return null;
 	}
 
-	// Token: 0x06004266 RID: 16998 RVA: 0x0019F0A8 File Offset: 0x0019D2A8
+	// Token: 0x060042CB RID: 17099 RVA: 0x001A1180 File Offset: 0x0019F380
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void bindCollider(PhysicsBodyColliderConfiguration _bodyConfig)
 	{
@@ -104,18 +104,18 @@ public class PhysicsBodyInstance
 		}
 	}
 
-	// Token: 0x04003580 RID: 13696
+	// Token: 0x04003601 RID: 13825
 	public EnumColliderMode Mode;
 
-	// Token: 0x04003581 RID: 13697
+	// Token: 0x04003602 RID: 13826
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform modelRoot;
 
-	// Token: 0x04003582 RID: 13698
+	// Token: 0x04003603 RID: 13827
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PhysicsBodyLayout layout;
 
-	// Token: 0x04003583 RID: 13699
+	// Token: 0x04003604 RID: 13828
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<IBodyColliderInstance> colliders = new List<IBodyColliderInstance>();
 }

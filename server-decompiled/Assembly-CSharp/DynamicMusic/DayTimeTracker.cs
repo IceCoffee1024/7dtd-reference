@@ -5,10 +5,10 @@ using MusicUtils.Enums;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A24 RID: 6692
+	// Token: 0x02001A4B RID: 6731
 	public class DayTimeTracker : AbstractDayTimeTracker, INotifiableFilter<MusicActionType, SectionType>, INotifiable<MusicActionType>, IFilter<SectionType>
 	{
-		// Token: 0x0600CA87 RID: 51847 RVA: 0x004A1FB8 File Offset: 0x004A01B8
+		// Token: 0x0600CC10 RID: 52240 RVA: 0x004A83AC File Offset: 0x004A65AC
 		public DayTimeTracker()
 		{
 			this.world = GameManager.Instance.World;
@@ -23,7 +23,7 @@ namespace DynamicMusic
 			this.MusicTimeTracker = Factory.CreateMusicTimeTracker();
 		}
 
-		// Token: 0x0600CA88 RID: 51848 RVA: 0x004A2046 File Offset: 0x004A0246
+		// Token: 0x0600CC11 RID: 52241 RVA: 0x004A843A File Offset: 0x004A663A
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Update()
 		{
@@ -35,7 +35,7 @@ namespace DynamicMusic
 			this.UpdateDayPeriod();
 		}
 
-		// Token: 0x0600CA89 RID: 51849 RVA: 0x004A206E File Offset: 0x004A026E
+		// Token: 0x0600CC12 RID: 52242 RVA: 0x004A8462 File Offset: 0x004A6662
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void UpdateDay()
 		{
@@ -43,21 +43,21 @@ namespace DynamicMusic
 			this.MusicTimeTracker.Notify();
 		}
 
-		// Token: 0x0600CA8A RID: 51850 RVA: 0x004A2087 File Offset: 0x004A0287
+		// Token: 0x0600CC13 RID: 52243 RVA: 0x004A847B File Offset: 0x004A667B
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override int GetCurrentDay()
 		{
 			return GameUtils.WorldTimeToDays(this.world.worldTime);
 		}
 
-		// Token: 0x0600CA8B RID: 51851 RVA: 0x004A2099 File Offset: 0x004A0299
+		// Token: 0x0600CC14 RID: 52244 RVA: 0x004A848D File Offset: 0x004A668D
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override float GetCurrentTime()
 		{
 			return SkyManager.GetTimeOfDayAsMinutes();
 		}
 
-		// Token: 0x0600CA8C RID: 51852 RVA: 0x004A20A0 File Offset: 0x004A02A0
+		// Token: 0x0600CC15 RID: 52245 RVA: 0x004A8494 File Offset: 0x004A6694
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void UpdateDayPeriod()
 		{
@@ -84,7 +84,7 @@ namespace DynamicMusic
 			this.dayPeriod = AbstractDayTimeTracker.DayPeriodType.Night;
 		}
 
-		// Token: 0x0600CA8D RID: 51853 RVA: 0x004A2124 File Offset: 0x004A0324
+		// Token: 0x0600CC16 RID: 52246 RVA: 0x004A8518 File Offset: 0x004A6718
 		public override string ToString()
 		{
 			return string.Format("Current Day: {0}\nCurrent part of the day: {1}\nCurrent Time: {2}\nDawn time: {3}\nDusk Time: {4}\n", new object[]
@@ -97,7 +97,7 @@ namespace DynamicMusic
 			});
 		}
 
-		// Token: 0x0600CA8E RID: 51854 RVA: 0x004A2188 File Offset: 0x004A0388
+		// Token: 0x0600CC17 RID: 52247 RVA: 0x004A857C File Offset: 0x004A677C
 		public override List<SectionType> Filter(List<SectionType> _sectionTypes)
 		{
 			this.Update();
@@ -128,25 +128,25 @@ namespace DynamicMusic
 			return this.MusicTimeTracker.Filter(_sectionTypes);
 		}
 
-		// Token: 0x0600CA8F RID: 51855 RVA: 0x004A2288 File Offset: 0x004A0488
+		// Token: 0x0600CC18 RID: 52248 RVA: 0x004A867C File Offset: 0x004A687C
 		public void Notify(MusicActionType _state)
 		{
 			this.MusicTimeTracker.Notify(_state);
 		}
 
-		// Token: 0x040099DA RID: 39386
+		// Token: 0x04009B0B RID: 39691
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float duskDawnWindowRadius = 0.33333334f;
 
-		// Token: 0x040099DB RID: 39387
+		// Token: 0x04009B0C RID: 39692
 		[PublicizedFrom(EAccessModifier.Private)]
 		public World world;
 
-		// Token: 0x040099DC RID: 39388
+		// Token: 0x04009B0D RID: 39693
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Conductor conductor;
 
-		// Token: 0x040099DD RID: 39389
+		// Token: 0x04009B0E RID: 39694
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IMultiNotifiableFilter MusicTimeTracker;
 	}

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020015CA RID: 5578
+// Token: 0x020015E5 RID: 5605
 public class vp_Switch : vp_Interactable
 {
-	// Token: 0x0600ADFF RID: 44543 RVA: 0x0040E644 File Offset: 0x0040C844
+	// Token: 0x0600AEFC RID: 44796 RVA: 0x00413984 File Offset: 0x00411B84
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Start()
 	{
@@ -16,7 +16,7 @@ public class vp_Switch : vp_Interactable
 		}
 	}
 
-	// Token: 0x0600AE00 RID: 44544 RVA: 0x0040E681 File Offset: 0x0040C881
+	// Token: 0x0600AEFD RID: 44797 RVA: 0x004139C1 File Offset: 0x00411BC1
 	public override bool TryInteract(vp_FPPlayerEventHandler player)
 	{
 		if (this.Target == null)
@@ -32,7 +32,7 @@ public class vp_Switch : vp_Interactable
 		return true;
 	}
 
-	// Token: 0x0600AE01 RID: 44545 RVA: 0x0040E6C4 File Offset: 0x0040C8C4
+	// Token: 0x0600AEFE RID: 44798 RVA: 0x00413A04 File Offset: 0x00411C04
 	public virtual void PlaySound()
 	{
 		if (this.AudioSource == null)
@@ -52,7 +52,7 @@ public class vp_Switch : vp_Interactable
 		this.AudioSource.PlayOneShot(audioClip);
 	}
 
-	// Token: 0x0600AE02 RID: 44546 RVA: 0x0040E748 File Offset: 0x0040C948
+	// Token: 0x0600AEFF RID: 44799 RVA: 0x00413A88 File Offset: 0x00411C88
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnTriggerEnter(Collider col)
 	{
@@ -76,18 +76,18 @@ public class vp_Switch : vp_Interactable
 		this.TryInteract(this.m_Player);
 	}
 
-	// Token: 0x040081DD RID: 33245
+	// Token: 0x040082B6 RID: 33462
 	public GameObject Target;
 
-	// Token: 0x040081DE RID: 33246
+	// Token: 0x040082B7 RID: 33463
 	public string TargetMessage = "";
 
-	// Token: 0x040081DF RID: 33247
+	// Token: 0x040082B8 RID: 33464
 	public AudioSource AudioSource;
 
-	// Token: 0x040081E0 RID: 33248
+	// Token: 0x040082B9 RID: 33465
 	public Vector2 SwitchPitchRange = new Vector2(1f, 1.5f);
 
-	// Token: 0x040081E1 RID: 33249
+	// Token: 0x040082BA RID: 33466
 	public List<AudioClip> SwitchSounds = new List<AudioClip>();
 }

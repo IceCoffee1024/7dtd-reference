@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D45 RID: 3397
+// Token: 0x02000D58 RID: 3416
 [Preserve]
 public class ItemActionEntryEquip : BaseItemActionEntry
 {
-	// Token: 0x06006775 RID: 26485 RVA: 0x0028D160 File Offset: 0x0028B360
+	// Token: 0x06006804 RID: 26628 RVA: 0x002900FC File Offset: 0x0028E2FC
 	public ItemActionEntryEquip(XUiController _controller)
 		: base(_controller, "lblContextActionEquip", "ui_game_symbol_knife", BaseItemActionEntry.GamepadShortCut.DPadUp, "crafting/craft_click_craft", "ui/ui_denied")
 	{
 	}
 
-	// Token: 0x06006776 RID: 26486 RVA: 0x0028D180 File Offset: 0x0028B380
+	// Token: 0x06006805 RID: 26629 RVA: 0x0029011C File Offset: 0x0028E31C
 	public override void RefreshEnabled()
 	{
 		XUi xui = base.ItemController.xui;
@@ -20,7 +20,7 @@ public class ItemActionEntryEquip : BaseItemActionEntry
 		base.Enabled = !entityPlayer.AttachedToEntity && toolbelt.GetItem(toolbelt.DUMMY_SLOT_IDX).IsEmpty();
 	}
 
-	// Token: 0x06006777 RID: 26487 RVA: 0x0028D1D8 File Offset: 0x0028B3D8
+	// Token: 0x06006806 RID: 26630 RVA: 0x00290174 File Offset: 0x0028E374
 	public override void OnActivated()
 	{
 		XUi xui = base.ItemController.xui;

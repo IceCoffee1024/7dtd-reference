@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200077E RID: 1918
+// Token: 0x02000788 RID: 1928
 [Preserve]
 public class LegacyModAuthorizer : AuthorizerAbs
 {
-	// Token: 0x170005CB RID: 1483
-	// (get) Token: 0x06003916 RID: 14614 RVA: 0x00175B60 File Offset: 0x00173D60
+	// Token: 0x170005D5 RID: 1493
+	// (get) Token: 0x0600396E RID: 14702 RVA: 0x00177DE0 File Offset: 0x00175FE0
 	public override int Order
 	{
 		get
@@ -15,8 +15,8 @@ public class LegacyModAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005CC RID: 1484
-	// (get) Token: 0x06003917 RID: 14615 RVA: 0x00175B67 File Offset: 0x00173D67
+	// Token: 0x170005D6 RID: 1494
+	// (get) Token: 0x0600396F RID: 14703 RVA: 0x00177DE7 File Offset: 0x00175FE7
 	public override string AuthorizerName
 	{
 		get
@@ -25,8 +25,8 @@ public class LegacyModAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005CD RID: 1485
-	// (get) Token: 0x06003918 RID: 14616 RVA: 0x0001FF1E File Offset: 0x0001E11E
+	// Token: 0x170005D7 RID: 1495
+	// (get) Token: 0x06003970 RID: 14704 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
 	public override string StateLocalizationKey
 	{
 		get
@@ -35,7 +35,7 @@ public class LegacyModAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x06003919 RID: 14617 RVA: 0x00175B70 File Offset: 0x00173D70
+	// Token: 0x06003971 RID: 14705 RVA: 0x00177DF0 File Offset: 0x00175FF0
 	public override ValueTuple<EAuthorizerSyncResult, GameUtils.KickPlayerData?> Authorize(ClientInfo _clientInfo)
 	{
 		ModEvents.SPlayerLoginData splayerLoginData = new ModEvents.SPlayerLoginData(_clientInfo, _clientInfo.compatibilityVersion);

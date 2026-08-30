@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x020011CA RID: 4554
+// Token: 0x020011E6 RID: 4582
 public enum EnumPlayerKillingMode
 {
-	// Token: 0x04006C94 RID: 27796
+	// Token: 0x04006D6D RID: 28013
 	NoKilling,
-	// Token: 0x04006C95 RID: 27797
+	// Token: 0x04006D6E RID: 28014
 	KillAlliesOnly,
-	// Token: 0x04006C96 RID: 27798
+	// Token: 0x04006D6F RID: 28015
 	KillStrangersOnly,
-	// Token: 0x04006C97 RID: 27799
+	// Token: 0x04006D70 RID: 28016
 	KillEveryone
 }

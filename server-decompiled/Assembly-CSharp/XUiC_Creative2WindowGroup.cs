@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F02 RID: 3842
+// Token: 0x02000F19 RID: 3865
 [Preserve]
 public class XUiC_Creative2WindowGroup : XUiController
 {
-	// Token: 0x0600788A RID: 30858 RVA: 0x002D7CEC File Offset: 0x002D5EEC
+	// Token: 0x06007942 RID: 31042 RVA: 0x002DBC78 File Offset: 0x002D9E78
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -18,7 +18,7 @@ public class XUiC_Creative2WindowGroup : XUiController
 		childByType.SetSelected("creative2");
 	}
 
-	// Token: 0x0600788B RID: 30859 RVA: 0x002D5D88 File Offset: 0x002D3F88
+	// Token: 0x06007943 RID: 31043 RVA: 0x002D9D14 File Offset: 0x002D7F14
 	public override void OnClose()
 	{
 		base.OnClose();

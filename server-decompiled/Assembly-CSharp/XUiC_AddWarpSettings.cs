@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02001028 RID: 4136
+// Token: 0x02001041 RID: 4161
 [Preserve]
 public class XUiC_AddWarpSettings : XUiC_SignLayerSettings
 {
-	// Token: 0x06008328 RID: 33576 RVA: 0x00320158 File Offset: 0x0031E358
+	// Token: 0x0600841A RID: 33818 RVA: 0x00324980 File Offset: 0x00322B80
 	public override void Init()
 	{
 		base.Init();
@@ -59,7 +59,7 @@ public class XUiC_AddWarpSettings : XUiC_SignLayerSettings
 		}));
 	}
 
-	// Token: 0x06008329 RID: 33577 RVA: 0x00320354 File Offset: 0x0031E554
+	// Token: 0x0600841B RID: 33819 RVA: 0x00324B7C File Offset: 0x00322D7C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AddWarp<T>(T warp) where T : SignData.SignWarp
 	{
@@ -93,48 +93,48 @@ public class XUiC_AddWarpSettings : XUiC_SignLayerSettings
 		onWarpAdded(name);
 	}
 
-	// Token: 0x0600832A RID: 33578 RVA: 0x003203F1 File Offset: 0x0031E5F1
+	// Token: 0x0600841C RID: 33820 RVA: 0x00324C19 File Offset: 0x00322E19
 	public override void SetLayer(SignData.SignLayer layer)
 	{
 		this.currentLayer = layer;
 	}
 
-	// Token: 0x04006134 RID: 24884
+	// Token: 0x040061FB RID: 25083
 	public Action<string> OnWarpAdded;
 
-	// Token: 0x04006135 RID: 24885
+	// Token: 0x040061FC RID: 25084
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignData.SignLayer currentLayer;
 
-	// Token: 0x04006136 RID: 24886
+	// Token: 0x040061FD RID: 25085
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SignLayerType warpTypeSkew;
 
-	// Token: 0x04006137 RID: 24887
+	// Token: 0x040061FE RID: 25086
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SignLayerType warpTypeBulge;
 
-	// Token: 0x04006138 RID: 24888
+	// Token: 0x040061FF RID: 25087
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SignLayerType warpTypeTwirl;
 
-	// Token: 0x04006139 RID: 24889
+	// Token: 0x04006200 RID: 25088
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SignLayerType warpTypeKaleido;
 
-	// Token: 0x0400613A RID: 24890
+	// Token: 0x04006201 RID: 25089
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SignLayerType warpTypePerspective;
 
-	// Token: 0x0400613B RID: 24891
+	// Token: 0x04006202 RID: 25090
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SignLayerType warpTypeArc;
 
-	// Token: 0x0400613C RID: 24892
+	// Token: 0x04006203 RID: 25091
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SignLayerType warpTypeStretch;
 
-	// Token: 0x0400613D RID: 24893
+	// Token: 0x04006204 RID: 25092
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SignLayerType warpTypeGrid;
 }

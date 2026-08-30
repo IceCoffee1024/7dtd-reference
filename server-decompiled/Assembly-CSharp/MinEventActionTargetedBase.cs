@@ -4,10 +4,10 @@ using System.Globalization;
 using System.Xml.Linq;
 using UnityEngine;
 
-// Token: 0x02000702 RID: 1794
+// Token: 0x0200070C RID: 1804
 public class MinEventActionTargetedBase : MinEventActionBase
 {
-	// Token: 0x0600369B RID: 13979 RVA: 0x001683F4 File Offset: 0x001665F4
+	// Token: 0x060036F1 RID: 14065 RVA: 0x0016A5CC File Offset: 0x001687CC
 	public override bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
 	{
 		this.targets.Clear();
@@ -127,7 +127,7 @@ public class MinEventActionTargetedBase : MinEventActionBase
 		return this.targets.Count > 0;
 	}
 
-	// Token: 0x0600369C RID: 13980 RVA: 0x001688B0 File Offset: 0x00166AB0
+	// Token: 0x060036F2 RID: 14066 RVA: 0x0016AA88 File Offset: 0x00168C88
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -153,14 +153,14 @@ public class MinEventActionTargetedBase : MinEventActionBase
 		return flag;
 	}
 
-	// Token: 0x0600369D RID: 13981 RVA: 0x0016893F File Offset: 0x00166B3F
+	// Token: 0x060036F3 RID: 14067 RVA: 0x0016AB17 File Offset: 0x00168D17
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool singleTargetCheck(MinEventParams _tempParams)
 	{
 		return this.Requirements == null || this.Requirements.IsValid(_tempParams);
 	}
 
-	// Token: 0x0600369E RID: 13982 RVA: 0x00168958 File Offset: 0x00166B58
+	// Token: 0x060036F4 RID: 14068 RVA: 0x0016AB30 File Offset: 0x00168D30
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isValidTarget(EntityAlive _self, EntityAlive _other)
 	{
@@ -300,51 +300,51 @@ public class MinEventActionTargetedBase : MinEventActionBase
 		return false;
 	}
 
-	// Token: 0x04002BF5 RID: 11253
+	// Token: 0x04002C69 RID: 11369
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static FastTags<TagGroup.Global> ally = FastTags<TagGroup.Global>.Parse("ally");
 
-	// Token: 0x04002BF6 RID: 11254
+	// Token: 0x04002C6A RID: 11370
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static FastTags<TagGroup.Global> party = FastTags<TagGroup.Global>.Parse("party");
 
-	// Token: 0x04002BF7 RID: 11255
+	// Token: 0x04002C6B RID: 11371
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static FastTags<TagGroup.Global> enemy = FastTags<TagGroup.Global>.Parse("enemy");
 
-	// Token: 0x04002BF8 RID: 11256
+	// Token: 0x04002C6C RID: 11372
 	public MinEventActionTargetedBase.TargetTypes targetType;
 
-	// Token: 0x04002BF9 RID: 11257
+	// Token: 0x04002C6D RID: 11373
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public FastTags<TagGroup.Global> targetTags = FastTags<TagGroup.Global>.none;
 
-	// Token: 0x04002BFA RID: 11258
+	// Token: 0x04002C6E RID: 11374
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public List<EntityAlive> targets = new List<EntityAlive>();
 
-	// Token: 0x04002BFB RID: 11259
+	// Token: 0x04002C6F RID: 11375
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float maxRange;
 
-	// Token: 0x04002BFC RID: 11260
+	// Token: 0x04002C70 RID: 11376
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<EntityAlive> entsInRange;
 
-	// Token: 0x02000703 RID: 1795
+	// Token: 0x0200070D RID: 1805
 	public enum TargetTypes
 	{
-		// Token: 0x04002BFE RID: 11262
+		// Token: 0x04002C72 RID: 11378
 		self,
-		// Token: 0x04002BFF RID: 11263
+		// Token: 0x04002C73 RID: 11379
 		other,
-		// Token: 0x04002C00 RID: 11264
+		// Token: 0x04002C74 RID: 11380
 		selfAOE,
-		// Token: 0x04002C01 RID: 11265
+		// Token: 0x04002C75 RID: 11381
 		otherAOE,
-		// Token: 0x04002C02 RID: 11266
+		// Token: 0x04002C76 RID: 11382
 		positionAOE,
-		// Token: 0x04002C03 RID: 11267
+		// Token: 0x04002C77 RID: 11383
 		selfOtherPlayers
 	}
 }

@@ -4,17 +4,17 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019D7 RID: 6615
+	// Token: 0x020019FE RID: 6654
 	[Preserve]
 	public class ActionTwitchChallengeAction : ActionBaseClientAction
 	{
-		// Token: 0x0600C932 RID: 51506 RVA: 0x0049E714 File Offset: 0x0049C914
+		// Token: 0x0600CABB RID: 51899 RVA: 0x004A4B08 File Offset: 0x004A2D08
 		public override void OnClientPerform(Entity target)
 		{
 			QuestEventManager.Current.TwitchEventReceived(this.TwitchObjectiveType, this.param);
 		}
 
-		// Token: 0x0600C933 RID: 51507 RVA: 0x0049E72C File Offset: 0x0049C92C
+		// Token: 0x0600CABC RID: 51900 RVA: 0x004A4B20 File Offset: 0x004A2D20
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -22,7 +22,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseString(ActionTwitchChallengeAction.PropObjectiveParam, ref this.param);
 		}
 
-		// Token: 0x0600C934 RID: 51508 RVA: 0x0049E757 File Offset: 0x0049C957
+		// Token: 0x0600CABD RID: 51901 RVA: 0x004A4B4B File Offset: 0x004A2D4B
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -33,19 +33,19 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040098C8 RID: 39112
+		// Token: 0x040099F9 RID: 39417
 		[PublicizedFrom(EAccessModifier.Private)]
 		public TwitchObjectiveTypes TwitchObjectiveType;
 
-		// Token: 0x040098C9 RID: 39113
+		// Token: 0x040099FA RID: 39418
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string param = "";
 
-		// Token: 0x040098CA RID: 39114
+		// Token: 0x040099FB RID: 39419
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropObjectiveType = "objective_type";
 
-		// Token: 0x040098CB RID: 39115
+		// Token: 0x040099FC RID: 39420
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropObjectiveParam = "objective_param";
 	}

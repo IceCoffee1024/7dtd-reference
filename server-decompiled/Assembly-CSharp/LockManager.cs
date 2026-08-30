@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 
-// Token: 0x02000582 RID: 1410
+// Token: 0x02000587 RID: 1415
 public class LockManager
 {
-	// Token: 0x170004EC RID: 1260
-	// (get) Token: 0x06002E1F RID: 11807 RVA: 0x00124C90 File Offset: 0x00122E90
+	// Token: 0x170004F2 RID: 1266
+	// (get) Token: 0x06002E4D RID: 11853 RVA: 0x00125D80 File Offset: 0x00123F80
 	public static LockManager Instance
 	{
 		get
@@ -19,7 +19,7 @@ public class LockManager
 		}
 	}
 
-	// Token: 0x06002E20 RID: 11808 RVA: 0x00124CA8 File Offset: 0x00122EA8
+	// Token: 0x06002E4E RID: 11854 RVA: 0x00125D98 File Offset: 0x00123F98
 	public void Init()
 	{
 		if (this.pendingClientLocks.Count > 0 || this.singleLocks.CountKeys > 0 || this.sharedLocks.CountValues > 0)
@@ -34,7 +34,7 @@ public class LockManager
 		this.lastUpdate = DateTime.UtcNow;
 	}
 
-	// Token: 0x06002E21 RID: 11809 RVA: 0x00124D2C File Offset: 0x00122F2C
+	// Token: 0x06002E4F RID: 11855 RVA: 0x00125E1C File Offset: 0x0012401C
 	public void Update()
 	{
 		if (GameManager.Instance.World == null)
@@ -93,7 +93,7 @@ public class LockManager
 		}
 	}
 
-	// Token: 0x06002E22 RID: 11810 RVA: 0x00124EF8 File Offset: 0x001230F8
+	// Token: 0x06002E50 RID: 11856 RVA: 0x00125FE8 File Offset: 0x001241E8
 	public bool IsLockedByLocalPlayer(ILockTarget _target, ushort _channel = 0)
 	{
 		if (_target == null)
@@ -129,7 +129,7 @@ public class LockManager
 		return !_target.IsSharedLock(_channel) && this.singleLocks.TryGetByValue(lockEntry, out num) && num == primaryPlayerId;
 	}
 
-	// Token: 0x06002E23 RID: 11811 RVA: 0x00124FB8 File Offset: 0x001231B8
+	// Token: 0x06002E51 RID: 11857 RVA: 0x001260A8 File Offset: 0x001242A8
 	public bool IsLockedServer(ILockTarget _target, ushort _channel = 0)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -141,7 +141,7 @@ public class LockManager
 		return (_target.IsSharedLock(_channel) && this.sharedLocks.ContainsValue(lockEntry)) || (!_target.IsSharedLock(_channel) && this.singleLocks.ContainsValue(lockEntry));
 	}
 
-	// Token: 0x06002E24 RID: 11812 RVA: 0x0012501C File Offset: 0x0012321C
+	// Token: 0x06002E52 RID: 11858 RVA: 0x0012610C File Offset: 0x0012430C
 	public void LockRequestLocal(ILockTarget _target, ILockContext _context = null, ushort _channel = 0)
 	{
 		if (_target == null)
@@ -153,7 +153,7 @@ public class LockManager
 		this.LockRequestLocal(readOnlySpan, _context, _channel);
 	}
 
-	// Token: 0x06002E25 RID: 11813 RVA: 0x00125050 File Offset: 0x00123250
+	// Token: 0x06002E53 RID: 11859 RVA: 0x00126140 File Offset: 0x00124340
 	public unsafe void LockRequestLocal(ReadOnlySpan<ILockTarget> _targets, ILockContext _context = null, ushort _channel = 0)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsClient)
@@ -178,7 +178,7 @@ public class LockManager
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackageLockRequest>().Setup(_targets, _context, _channel), false);
 	}
 
-	// Token: 0x06002E26 RID: 11814 RVA: 0x00125108 File Offset: 0x00123308
+	// Token: 0x06002E54 RID: 11860 RVA: 0x001261F8 File Offset: 0x001243F8
 	public unsafe void LockRequestServer(ReadOnlySpan<ILockTarget> _targets, int _playerId, ILockContext _context = null, ushort _channel = 0)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -267,7 +267,7 @@ public class LockManager
 		}
 	}
 
-	// Token: 0x06002E27 RID: 11815 RVA: 0x001253A4 File Offset: 0x001235A4
+	// Token: 0x06002E55 RID: 11861 RVA: 0x00126494 File Offset: 0x00124694
 	public unsafe void LockResponse(bool _success, string _errorMsg, ReadOnlySpan<ILockTarget> _targets, ILockContext _context, ushort _channel)
 	{
 		this.pendingClientLocks.Clear();
@@ -325,7 +325,7 @@ public class LockManager
 		}
 	}
 
-	// Token: 0x06002E28 RID: 11816 RVA: 0x00125510 File Offset: 0x00123710
+	// Token: 0x06002E56 RID: 11862 RVA: 0x00126600 File Offset: 0x00124800
 	public void UnlockRequestLocal()
 	{
 		int primaryPlayerId = GameManager.Instance.World.GetPrimaryPlayerId();
@@ -338,7 +338,7 @@ public class LockManager
 		this.UnlockRequestServer(primaryPlayerId, false);
 	}
 
-	// Token: 0x06002E29 RID: 11817 RVA: 0x0012556C File Offset: 0x0012376C
+	// Token: 0x06002E57 RID: 11863 RVA: 0x0012665C File Offset: 0x0012485C
 	public void UnlockRequestServer(int _playerId, bool _isForceUnlocked)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -405,7 +405,7 @@ public class LockManager
 		}
 	}
 
-	// Token: 0x06002E2A RID: 11818 RVA: 0x00125730 File Offset: 0x00123930
+	// Token: 0x06002E58 RID: 11864 RVA: 0x00126820 File Offset: 0x00124A20
 	public void UnlockResponse(bool _success, string _errorMsg, bool _isForceUnlocked = false)
 	{
 		int primaryPlayerId = GameManager.Instance.World.GetPrimaryPlayerId();
@@ -424,7 +424,7 @@ public class LockManager
 		}
 	}
 
-	// Token: 0x06002E2B RID: 11819 RVA: 0x001257AC File Offset: 0x001239AC
+	// Token: 0x06002E59 RID: 11865 RVA: 0x0012689C File Offset: 0x00124A9C
 	public void ForceUnlockAll()
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -439,7 +439,7 @@ public class LockManager
 		}
 	}
 
-	// Token: 0x06002E2C RID: 11820 RVA: 0x001257F3 File Offset: 0x001239F3
+	// Token: 0x06002E5A RID: 11866 RVA: 0x001268E3 File Offset: 0x00124AE3
 	public void ForceUnlockByPlayer(int _playerId)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -450,7 +450,7 @@ public class LockManager
 		this.UnlockRequestServer(_playerId, true);
 	}
 
-	// Token: 0x06002E2D RID: 11821 RVA: 0x00125814 File Offset: 0x00123A14
+	// Token: 0x06002E5B RID: 11867 RVA: 0x00126904 File Offset: 0x00124B04
 	public void ForceUnlockLockTarget(ILockTarget _target)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -496,7 +496,7 @@ public class LockManager
 		Log.Warning("[LockManager] Target is not locked.");
 	}
 
-	// Token: 0x06002E2E RID: 11822 RVA: 0x001259A0 File Offset: 0x00123BA0
+	// Token: 0x06002E5C RID: 11868 RVA: 0x00126A90 File Offset: 0x00124C90
 	public void ForceUnlockByChunk(HashSetLong chunks)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -564,7 +564,7 @@ public class LockManager
 		}
 	}
 
-	// Token: 0x06002E2F RID: 11823 RVA: 0x00125C2C File Offset: 0x00123E2C
+	// Token: 0x06002E5D RID: 11869 RVA: 0x00126D1C File Offset: 0x00124F1C
 	public void ProcessKeepOpen(int _playerId)
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -581,7 +581,7 @@ public class LockManager
 		this.keepOpenTimes[_playerId] = DateTime.UtcNow;
 	}
 
-	// Token: 0x06002E30 RID: 11824 RVA: 0x00125C92 File Offset: 0x00123E92
+	// Token: 0x06002E5E RID: 11870 RVA: 0x00126D82 File Offset: 0x00124F82
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RefreshPlayerActive(int playerId)
 	{
@@ -593,43 +593,43 @@ public class LockManager
 		this.playersWithLocks.Remove(playerId);
 	}
 
-	// Token: 0x040023BC RID: 9148
+	// Token: 0x040023F0 RID: 9200
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int MaxLocksPerPlayer = 5;
 
-	// Token: 0x040023BD RID: 9149
+	// Token: 0x040023F1 RID: 9201
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float KeepOpenTimeoutSeconds = 10f;
 
-	// Token: 0x040023BE RID: 9150
+	// Token: 0x040023F2 RID: 9202
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float KeepOpenPeriodSeconds = 2.5f;
 
-	// Token: 0x040023BF RID: 9151
+	// Token: 0x040023F3 RID: 9203
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static LockManager _instance;
 
-	// Token: 0x040023C0 RID: 9152
+	// Token: 0x040023F4 RID: 9204
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<int> playersWithLocks = new HashSet<int>();
 
-	// Token: 0x040023C1 RID: 9153
+	// Token: 0x040023F5 RID: 9205
 	[PublicizedFrom(EAccessModifier.Private)]
 	public OneToManyDictionary<int, LockEntry> singleLocks = new OneToManyDictionary<int, LockEntry>();
 
-	// Token: 0x040023C2 RID: 9154
+	// Token: 0x040023F6 RID: 9206
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ManyToManyDictionary<int, LockEntry> sharedLocks = new ManyToManyDictionary<int, LockEntry>();
 
-	// Token: 0x040023C3 RID: 9155
+	// Token: 0x040023F7 RID: 9207
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<LockEntry> pendingClientLocks = new HashSet<LockEntry>();
 
-	// Token: 0x040023C4 RID: 9156
+	// Token: 0x040023F8 RID: 9208
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<int, DateTime> keepOpenTimes = new Dictionary<int, DateTime>();
 
-	// Token: 0x040023C5 RID: 9157
+	// Token: 0x040023F9 RID: 9209
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DateTime lastUpdate;
 }

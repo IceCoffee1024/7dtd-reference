@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using UnityEngine;
 
-// Token: 0x020002C8 RID: 712
+// Token: 0x020002CC RID: 716
 public class SdtdConsole : SingletonMonoBehaviour<SdtdConsole>
 {
-	// Token: 0x17000249 RID: 585
-	// (get) Token: 0x06001492 RID: 5266 RVA: 0x0007C3AC File Offset: 0x0007A5AC
+	// Token: 0x1700024A RID: 586
+	// (get) Token: 0x060014A4 RID: 5284 RVA: 0x0007CA04 File Offset: 0x0007AC04
 	public int HideCommandExecutionLog
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -21,7 +21,7 @@ public class SdtdConsole : SingletonMonoBehaviour<SdtdConsole>
 		}
 	}
 
-	// Token: 0x06001493 RID: 5267 RVA: 0x0007C3CD File Offset: 0x0007A5CD
+	// Token: 0x060014A5 RID: 5285 RVA: 0x0007CA25 File Offset: 0x0007AC25
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void singletonAwake()
 	{
@@ -30,7 +30,7 @@ public class SdtdConsole : SingletonMonoBehaviour<SdtdConsole>
 		PreserveCheckPatch.Enable();
 	}
 
-	// Token: 0x06001494 RID: 5268 RVA: 0x0007C3F8 File Offset: 0x0007A5F8
+	// Token: 0x060014A6 RID: 5286 RVA: 0x0007CA50 File Offset: 0x0007AC50
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LogCallback(string _formattedMessage, string _plainMessage, string _trace, LogType _type, DateTime _timestamp, long _uptime)
 	{
@@ -52,7 +52,7 @@ public class SdtdConsole : SingletonMonoBehaviour<SdtdConsole>
 		}
 	}
 
-	// Token: 0x06001495 RID: 5269 RVA: 0x0007C464 File Offset: 0x0007A664
+	// Token: 0x060014A7 RID: 5287 RVA: 0x0007CABC File Offset: 0x0007ACBC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Update()
 	{
@@ -81,7 +81,7 @@ public class SdtdConsole : SingletonMonoBehaviour<SdtdConsole>
 		}
 	}
 
-	// Token: 0x06001496 RID: 5270 RVA: 0x0007C534 File Offset: 0x0007A734
+	// Token: 0x060014A8 RID: 5288 RVA: 0x0007CB8C File Offset: 0x0007AD8C
 	public void Output(string _line)
 	{
 		List<string> currentCommandOutputList = this.m_currentCommandOutputList;
@@ -92,13 +92,13 @@ public class SdtdConsole : SingletonMonoBehaviour<SdtdConsole>
 		currentCommandOutputList.Add(_line);
 	}
 
-	// Token: 0x06001497 RID: 5271 RVA: 0x0007C547 File Offset: 0x0007A747
+	// Token: 0x060014A9 RID: 5289 RVA: 0x0007CB9F File Offset: 0x0007AD9F
 	public void Output(string _format, params object[] _args)
 	{
 		this.Output(string.Format(_format, _args));
 	}
 
-	// Token: 0x06001498 RID: 5272 RVA: 0x0007C558 File Offset: 0x0007A758
+	// Token: 0x060014AA RID: 5290 RVA: 0x0007CBB0 File Offset: 0x0007ADB0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RegisterCommand(SortedList<string, IConsoleCommand> _commandsList, string _className, IConsoleCommand _command)
 	{
@@ -121,7 +121,7 @@ public class SdtdConsole : SingletonMonoBehaviour<SdtdConsole>
 		}
 	}
 
-	// Token: 0x06001499 RID: 5273 RVA: 0x0007C604 File Offset: 0x0007A804
+	// Token: 0x060014AB RID: 5291 RVA: 0x0007CC5C File Offset: 0x0007AE5C
 	public void RegisterCommands()
 	{
 		SortedList<string, IConsoleCommand> commandsList = new SortedList<string, IConsoleCommand>();
@@ -178,7 +178,7 @@ public class SdtdConsole : SingletonMonoBehaviour<SdtdConsole>
 		adminTools.Save();
 	}
 
-	// Token: 0x0600149A RID: 5274 RVA: 0x0007C764 File Offset: 0x0007A964
+	// Token: 0x060014AC RID: 5292 RVA: 0x0007CDBC File Offset: 0x0007AFBC
 	public void RegisterServer(IConsoleServer _server)
 	{
 		if (_server != null)
@@ -187,7 +187,7 @@ public class SdtdConsole : SingletonMonoBehaviour<SdtdConsole>
 		}
 	}
 
-	// Token: 0x0600149B RID: 5275 RVA: 0x0007C778 File Offset: 0x0007A978
+	// Token: 0x060014AD RID: 5293 RVA: 0x0007CDD0 File Offset: 0x0007AFD0
 	public void Cleanup()
 	{
 		for (int i = 0; i < this.m_Servers.Count; i++)
@@ -206,7 +206,7 @@ public class SdtdConsole : SingletonMonoBehaviour<SdtdConsole>
 		this.m_Servers.Clear();
 	}
 
-	// Token: 0x0600149C RID: 5276 RVA: 0x0007C7DC File Offset: 0x0007A9DC
+	// Token: 0x060014AE RID: 5294 RVA: 0x0007CE34 File Offset: 0x0007B034
 	public IConsoleCommand GetCommand(string _command, bool _alreadyTokenized = false)
 	{
 		if (!_alreadyTokenized)
@@ -225,13 +225,13 @@ public class SdtdConsole : SingletonMonoBehaviour<SdtdConsole>
 		return null;
 	}
 
-	// Token: 0x0600149D RID: 5277 RVA: 0x0007C816 File Offset: 0x0007AA16
+	// Token: 0x060014AF RID: 5295 RVA: 0x0007CE6E File Offset: 0x0007B06E
 	public IList<IConsoleCommand> GetCommands()
 	{
 		return this.m_CommandsReadOnly;
 	}
 
-	// Token: 0x0600149E RID: 5278 RVA: 0x0007C820 File Offset: 0x0007AA20
+	// Token: 0x060014B0 RID: 5296 RVA: 0x0007CE78 File Offset: 0x0007B078
 	public void ExecuteAsync(string _command, IConsoleConnection _sender)
 	{
 		SdtdConsole.CommandInstance commandInstance = new SdtdConsole.CommandInstance(_command, _sender);
@@ -242,7 +242,7 @@ public class SdtdConsole : SingletonMonoBehaviour<SdtdConsole>
 		}
 	}
 
-	// Token: 0x0600149F RID: 5279 RVA: 0x0007C870 File Offset: 0x0007AA70
+	// Token: 0x060014B1 RID: 5297 RVA: 0x0007CEC8 File Offset: 0x0007B0C8
 	public List<string> ExecuteSync(string _command, ClientInfo _cInfo)
 	{
 		CommandSenderInfo commandSenderInfo = new CommandSenderInfo
@@ -254,7 +254,7 @@ public class SdtdConsole : SingletonMonoBehaviour<SdtdConsole>
 		return this.executeCommand(_command, commandSenderInfo);
 	}
 
-	// Token: 0x060014A0 RID: 5280 RVA: 0x0007C8AC File Offset: 0x0007AAAC
+	// Token: 0x060014B2 RID: 5298 RVA: 0x0007CF04 File Offset: 0x0007B104
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<string> executeCommand(string _command, CommandSenderInfo _senderInfo)
 	{
@@ -322,7 +322,7 @@ public class SdtdConsole : SingletonMonoBehaviour<SdtdConsole>
 		return this.m_currentCommandOutputList;
 	}
 
-	// Token: 0x060014A1 RID: 5281 RVA: 0x0007CA80 File Offset: 0x0007AC80
+	// Token: 0x060014B3 RID: 5299 RVA: 0x0007D0D8 File Offset: 0x0007B2D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<string> tokenizeCommand(string _command)
 	{
@@ -380,61 +380,61 @@ public class SdtdConsole : SingletonMonoBehaviour<SdtdConsole>
 		return list;
 	}
 
-	// Token: 0x04000DA0 RID: 3488
+	// Token: 0x04000DB1 RID: 3505
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly List<IConsoleCommand> m_Commands = new List<IConsoleCommand>();
 
-	// Token: 0x04000DA1 RID: 3489
+	// Token: 0x04000DB2 RID: 3506
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly Dictionary<string, IConsoleCommand> m_CommandsAllVariants = new CaseInsensitiveStringDictionary<IConsoleCommand>();
 
-	// Token: 0x04000DA2 RID: 3490
+	// Token: 0x04000DB3 RID: 3507
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public ReadOnlyCollection<IConsoleCommand> m_CommandsReadOnly;
 
-	// Token: 0x04000DA3 RID: 3491
+	// Token: 0x04000DB4 RID: 3508
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly List<IConsoleServer> m_Servers = new List<IConsoleServer>();
 
-	// Token: 0x04000DA4 RID: 3492
+	// Token: 0x04000DB5 RID: 3509
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly List<SdtdConsole.CommandInstance> m_commandsToExecuteAsync = new List<SdtdConsole.CommandInstance>();
 
-	// Token: 0x04000DA5 RID: 3493
+	// Token: 0x04000DB6 RID: 3510
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly List<string> m_currentCommandOutputList = new List<string>();
 
-	// Token: 0x04000DA6 RID: 3494
+	// Token: 0x04000DB7 RID: 3511
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int hideCommandExecutionLog = -1;
 
-	// Token: 0x04000DA7 RID: 3495
+	// Token: 0x04000DB8 RID: 3512
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly List<string> tokenizedCommandList = new List<string>(16);
 
-	// Token: 0x020002C9 RID: 713
+	// Token: 0x020002CD RID: 717
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class CommandInstance
 	{
-		// Token: 0x060014A3 RID: 5283 RVA: 0x0007CC12 File Offset: 0x0007AE12
+		// Token: 0x060014B5 RID: 5301 RVA: 0x0007D26A File Offset: 0x0007B46A
 		public CommandInstance(string _command, IConsoleConnection _sender)
 		{
 			this.command = _command;
 			this.sender = _sender;
 		}
 
-		// Token: 0x04000DA8 RID: 3496
+		// Token: 0x04000DB9 RID: 3513
 		public readonly string command;
 
-		// Token: 0x04000DA9 RID: 3497
+		// Token: 0x04000DBA RID: 3514
 		public readonly IConsoleConnection sender;
 	}
 }

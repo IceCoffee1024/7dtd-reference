@@ -2,19 +2,19 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-// Token: 0x02000C79 RID: 3193
+// Token: 0x02000C8B RID: 3211
 [Serializable]
 public class EventSubMessage
 {
-	// Token: 0x17000A1E RID: 2590
-	// (get) Token: 0x06006221 RID: 25121 RVA: 0x0026A70F File Offset: 0x0026890F
-	// (set) Token: 0x06006222 RID: 25122 RVA: 0x0026A717 File Offset: 0x00268917
+	// Token: 0x17000A31 RID: 2609
+	// (get) Token: 0x060062AC RID: 25260 RVA: 0x0026D5E7 File Offset: 0x0026B7E7
+	// (set) Token: 0x060062AD RID: 25261 RVA: 0x0026D5EF File Offset: 0x0026B7EF
 	[JsonProperty("metadata")]
 	public EventSubMetadata Metadata { get; set; } = new EventSubMetadata();
 
-	// Token: 0x17000A1F RID: 2591
-	// (get) Token: 0x06006223 RID: 25123 RVA: 0x0026A720 File Offset: 0x00268920
-	// (set) Token: 0x06006224 RID: 25124 RVA: 0x0026A728 File Offset: 0x00268928
+	// Token: 0x17000A32 RID: 2610
+	// (get) Token: 0x060062AE RID: 25262 RVA: 0x0026D5F8 File Offset: 0x0026B7F8
+	// (set) Token: 0x060062AF RID: 25263 RVA: 0x0026D600 File Offset: 0x0026B800
 	[JsonProperty("payload")]
 	public JObject Payload { get; set; }
 }

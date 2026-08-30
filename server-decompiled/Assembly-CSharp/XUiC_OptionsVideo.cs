@@ -6,11 +6,11 @@ using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DA4 RID: 3492
+// Token: 0x02000DB8 RID: 3512
 [Preserve]
 public class XUiC_OptionsVideo : XUiC_OptionsVideoBase
 {
-	// Token: 0x06006AE1 RID: 27361 RVA: 0x0029D4A4 File Offset: 0x0029B6A4
+	// Token: 0x06006B7C RID: 27516 RVA: 0x002A0604 File Offset: 0x0029E804
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void initResolutionOptions()
 	{
@@ -62,8 +62,8 @@ public class XUiC_OptionsVideo : XUiC_OptionsVideoBase
 		this.optionResolution.IsChangedDelegate = () => !this.comboResolution.Value.Equals(this.lastResolution);
 	}
 
-	// Token: 0x17000BA9 RID: 2985
-	// (get) Token: 0x06006AE2 RID: 27362 RVA: 0x0029D59D File Offset: 0x0029B79D
+	// Token: 0x17000BC1 RID: 3009
+	// (get) Token: 0x06006B7D RID: 27517 RVA: 0x002A06FD File Offset: 0x0029E8FD
 	public static bool Fsr3Supported
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -73,8 +73,8 @@ public class XUiC_OptionsVideo : XUiC_OptionsVideoBase
 		}
 	}
 
-	// Token: 0x17000BAA RID: 2986
-	// (get) Token: 0x06006AE3 RID: 27363 RVA: 0x0029D5A4 File Offset: 0x0029B7A4
+	// Token: 0x17000BC2 RID: 3010
+	// (get) Token: 0x06006B7E RID: 27518 RVA: 0x002A0704 File Offset: 0x0029E904
 	public static bool DlssSupported
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -84,8 +84,8 @@ public class XUiC_OptionsVideo : XUiC_OptionsVideoBase
 		}
 	}
 
-	// Token: 0x17000BAB RID: 2987
-	// (get) Token: 0x06006AE4 RID: 27364 RVA: 0x0029D5B4 File Offset: 0x0029B7B4
+	// Token: 0x17000BC3 RID: 3011
+	// (get) Token: 0x06006B7F RID: 27519 RVA: 0x002A0714 File Offset: 0x0029E914
 	[XuiXmlBinding("upscaler_mode")]
 	public XUiC_OptionsVideo.UpscalerMode SelectedUpscalerMode
 	{
@@ -100,7 +100,7 @@ public class XUiC_OptionsVideo : XUiC_OptionsVideoBase
 		}
 	}
 
-	// Token: 0x06006AE5 RID: 27365 RVA: 0x0029D5C8 File Offset: 0x0029B7C8
+	// Token: 0x06006B80 RID: 27520 RVA: 0x002A0728 File Offset: 0x0029E928
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void initUpscalerModeOptions()
 	{
@@ -147,7 +147,7 @@ public class XUiC_OptionsVideo : XUiC_OptionsVideoBase
 		this.optionUpscaler.IsChangedDelegate = () => this.comboUpscaler.SelectedIndex != XUiC_OptionsVideo.<initUpscalerModeOptions>g__GamePrefUpscalerModeIndex|16_4();
 	}
 
-	// Token: 0x06006AE6 RID: 27366 RVA: 0x0029D644 File Offset: 0x0029B844
+	// Token: 0x06006B81 RID: 27521 RVA: 0x002A07A4 File Offset: 0x0029E9A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void initQualityPresetBasedOptions()
 	{
@@ -250,7 +250,7 @@ public class XUiC_OptionsVideo : XUiC_OptionsVideoBase
 		}
 	}
 
-	// Token: 0x06006AE7 RID: 27367 RVA: 0x0029D78B File Offset: 0x0029B98B
+	// Token: 0x06006B82 RID: 27522 RVA: 0x002A08EB File Offset: 0x0029EAEB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnQualityBasedOptionChanged(XUiC_OptionEntryAbs _option)
 	{
@@ -261,7 +261,7 @@ public class XUiC_OptionsVideo : XUiC_OptionsVideoBase
 		this.comboQualityPreset.SelectedIndex = 5;
 	}
 
-	// Token: 0x06006AE8 RID: 27368 RVA: 0x0029D7A4 File Offset: 0x0029B9A4
+	// Token: 0x06006B83 RID: 27523 RVA: 0x002A0904 File Offset: 0x0029EB04
 	[XuiBindEvent("OnValueChanged", "comboQualityPreset")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnQualityPresetChanged(XUiController _sender, string _oldValue, string _newValue)
@@ -286,13 +286,13 @@ public class XUiC_OptionsVideo : XUiC_OptionsVideoBase
 		this.changingFromCode = false;
 	}
 
-	// Token: 0x14000096 RID: 150
-	// (add) Token: 0x06006AE9 RID: 27369 RVA: 0x0029D850 File Offset: 0x0029BA50
-	// (remove) Token: 0x06006AEA RID: 27370 RVA: 0x0029D884 File Offset: 0x0029BA84
+	// Token: 0x14000097 RID: 151
+	// (add) Token: 0x06006B84 RID: 27524 RVA: 0x002A09B0 File Offset: 0x0029EBB0
+	// (remove) Token: 0x06006B85 RID: 27525 RVA: 0x002A09E4 File Offset: 0x0029EBE4
 	public static event Action OnSettingsChanged;
 
-	// Token: 0x17000BAC RID: 2988
-	// (get) Token: 0x06006AEB RID: 27371 RVA: 0x0029D8B7 File Offset: 0x0029BAB7
+	// Token: 0x17000BC4 RID: 3012
+	// (get) Token: 0x06006B86 RID: 27526 RVA: 0x002A0A17 File Offset: 0x0029EC17
 	public override bool SupportsDefaults
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -303,7 +303,7 @@ public class XUiC_OptionsVideo : XUiC_OptionsVideoBase
 		}
 	}
 
-	// Token: 0x06006AEC RID: 27372 RVA: 0x0029D8D8 File Offset: 0x0029BAD8
+	// Token: 0x06006B87 RID: 27527 RVA: 0x002A0A38 File Offset: 0x0029EC38
 	public override void Init()
 	{
 		base.Init();
@@ -325,7 +325,7 @@ public class XUiC_OptionsVideo : XUiC_OptionsVideoBase
 		};
 	}
 
-	// Token: 0x06006AED RID: 27373 RVA: 0x0029D994 File Offset: 0x0029BB94
+	// Token: 0x06006B88 RID: 27528 RVA: 0x002A0AF4 File Offset: 0x0029ECF4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void afterChangesSaved()
 	{
@@ -342,8 +342,8 @@ public class XUiC_OptionsVideo : XUiC_OptionsVideoBase
 		onSettingsChanged();
 	}
 
-	// Token: 0x17000BAD RID: 2989
-	// (get) Token: 0x06006AEE RID: 27374 RVA: 0x0029D9F3 File Offset: 0x0029BBF3
+	// Token: 0x17000BC5 RID: 3013
+	// (get) Token: 0x06006B89 RID: 27529 RVA: 0x002A0B53 File Offset: 0x0029ED53
 	[XuiXmlBinding("texture_quality_min")]
 	public int TextureQualityMin
 	{
@@ -354,8 +354,8 @@ public class XUiC_OptionsVideo : XUiC_OptionsVideoBase
 		}
 	}
 
-	// Token: 0x17000BAE RID: 2990
-	// (get) Token: 0x06006AEF RID: 27375 RVA: 0x0029D9FA File Offset: 0x0029BBFA
+	// Token: 0x17000BC6 RID: 3014
+	// (get) Token: 0x06006B8A RID: 27530 RVA: 0x002A0B5A File Offset: 0x0029ED5A
 	[XuiXmlBinding("texture_quality_limited")]
 	public bool TextureQualityLimited
 	{
@@ -367,8 +367,8 @@ public class XUiC_OptionsVideo : XUiC_OptionsVideoBase
 		}
 	}
 
-	// Token: 0x17000BAF RID: 2991
-	// (get) Token: 0x06006AF0 RID: 27376 RVA: 0x0029DA10 File Offset: 0x0029BC10
+	// Token: 0x17000BC7 RID: 3015
+	// (get) Token: 0x06006B8B RID: 27531 RVA: 0x002A0B70 File Offset: 0x0029ED70
 	[XuiXmlBinding("antialiasing_mode")]
 	public int AntiAliasingMode
 	{
@@ -384,8 +384,8 @@ public class XUiC_OptionsVideo : XUiC_OptionsVideoBase
 		}
 	}
 
-	// Token: 0x17000BB0 RID: 2992
-	// (get) Token: 0x06006AF1 RID: 27377 RVA: 0x0029DA23 File Offset: 0x0029BC23
+	// Token: 0x17000BC8 RID: 3016
+	// (get) Token: 0x06006B8C RID: 27532 RVA: 0x002A0B83 File Offset: 0x0029ED83
 	[XuiXmlBinding("vsync_mode")]
 	public int VSyncMode
 	{
@@ -401,7 +401,7 @@ public class XUiC_OptionsVideo : XUiC_OptionsVideoBase
 		}
 	}
 
-	// Token: 0x06006AFB RID: 27387 RVA: 0x0029DBEC File Offset: 0x0029BDEC
+	// Token: 0x06006B96 RID: 27542 RVA: 0x002A0D4C File Offset: 0x0029EF4C
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void <initResolutionOptions>g__GetCurrentResolution|6_8()
@@ -418,7 +418,7 @@ public class XUiC_OptionsVideo : XUiC_OptionsVideoBase
 		this.comboResolution.SelectedIndex = this.comboResolution.Elements.IndexOf(this.lastResolution);
 	}
 
-	// Token: 0x06006AFC RID: 27388 RVA: 0x0029DC7C File Offset: 0x0029BE7C
+	// Token: 0x06006B97 RID: 27543 RVA: 0x002A0DDC File Offset: 0x0029EFDC
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static int <initResolutionOptions>g__ConvertFullScreenModeToIndex|6_9(FullScreenMode _mode)
@@ -442,7 +442,7 @@ public class XUiC_OptionsVideo : XUiC_OptionsVideoBase
 		return num;
 	}
 
-	// Token: 0x06006AFD RID: 27389 RVA: 0x0029DC9C File Offset: 0x0029BE9C
+	// Token: 0x06006B98 RID: 27544 RVA: 0x002A0DFC File Offset: 0x0029EFFC
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static FullScreenMode <initResolutionOptions>g__ConvertIndexToFullScreenMode|6_10(int _index)
@@ -466,7 +466,7 @@ public class XUiC_OptionsVideo : XUiC_OptionsVideoBase
 		return fullScreenMode;
 	}
 
-	// Token: 0x06006B02 RID: 27394 RVA: 0x0029DDB0 File Offset: 0x0029BFB0
+	// Token: 0x06006B9D RID: 27549 RVA: 0x002A0F10 File Offset: 0x0029F110
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static int <initUpscalerModeOptions>g__GamePrefUpscalerModeIndex|16_4()
@@ -487,7 +487,7 @@ public class XUiC_OptionsVideo : XUiC_OptionsVideoBase
 		return -1;
 	}
 
-	// Token: 0x06006B03 RID: 27395 RVA: 0x0029DE14 File Offset: 0x0029C014
+	// Token: 0x06006B9E RID: 27550 RVA: 0x002A0F74 File Offset: 0x0029F174
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int <initUpscalerModeOptions>g__SelectionToUpscalerMode|16_5()
@@ -517,101 +517,101 @@ public class XUiC_OptionsVideo : XUiC_OptionsVideoBase
 		return num;
 	}
 
-	// Token: 0x04005166 RID: 20838
+	// Token: 0x04005208 RID: 21000
 	[XuiBindComponent("OptionResolution", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_OptionEntryCustom optionResolution;
 
-	// Token: 0x04005167 RID: 20839
+	// Token: 0x04005209 RID: 21001
 	[XuiBindComponent("Resolution", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<XUiC_OptionsVideo.ResolutionInfo> comboResolution;
 
-	// Token: 0x04005168 RID: 20840
+	// Token: 0x0400520A RID: 21002
 	[XuiBindComponent("OptionFullscreen", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_OptionEntryCustom optionFullscreen;
 
-	// Token: 0x04005169 RID: 20841
+	// Token: 0x0400520B RID: 21003
 	[XuiBindComponent("Fullscreen", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<string> comboFullscreen;
 
-	// Token: 0x0400516A RID: 20842
+	// Token: 0x0400520C RID: 21004
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_OptionsVideo.ResolutionInfo lastResolution;
 
-	// Token: 0x0400516B RID: 20843
+	// Token: 0x0400520D RID: 21005
 	[XuiBindComponent("OptionUpscaler", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_OptionEntryCustom optionUpscaler;
 
-	// Token: 0x0400516C RID: 20844
+	// Token: 0x0400520E RID: 21006
 	[XuiBindComponent("Upscaler", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<string> comboUpscaler;
 
-	// Token: 0x0400516D RID: 20845
+	// Token: 0x0400520F RID: 21007
 	[XuiBindComponent("OptionQualityPreset", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_OptionEntryGamePrefIntIndex optionQualityPreset;
 
-	// Token: 0x0400516E RID: 20846
+	// Token: 0x04005210 RID: 21008
 	[XuiBindComponent("QualityPreset", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<string> comboQualityPreset;
 
-	// Token: 0x0400516F RID: 20847
+	// Token: 0x04005211 RID: 21009
 	[XuiBindComponent("OptionViewDistance", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_OptionEntryGamePrefIntIndex optionViewDistance;
 
-	// Token: 0x04005170 RID: 20848
+	// Token: 0x04005212 RID: 21010
 	[XuiBindComponent("TextureQuality", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<string> comboTextureQuality;
 
-	// Token: 0x04005171 RID: 20849
+	// Token: 0x04005213 RID: 21011
 	[XuiBindComponent("AntiAliasing", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<string> comboAntiAliasing;
 
-	// Token: 0x04005172 RID: 20850
+	// Token: 0x04005214 RID: 21012
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool changingFromCode;
 
-	// Token: 0x04005173 RID: 20851
+	// Token: 0x04005215 RID: 21013
 	public static string ID = "";
 
-	// Token: 0x04005175 RID: 20853
+	// Token: 0x04005217 RID: 21015
 	[XuiBindComponent("OptionDynamicMeshDistance", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_OptionEntryGamePrefIntIndex optionDynamicMeshDistance;
 
-	// Token: 0x04005176 RID: 20854
+	// Token: 0x04005218 RID: 21016
 	[XuiBindComponent("DynamicMeshDistance", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<int> comboDynamicMeshDistance;
 
-	// Token: 0x04005177 RID: 20855
+	// Token: 0x04005219 RID: 21017
 	[XuiBindComponent("OptionFpsLimitInGame", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_OptionEntryGamePrefIntIndex optionFpsLimitInGame;
 
-	// Token: 0x04005178 RID: 20856
+	// Token: 0x0400521A RID: 21018
 	[XuiBindComponent("FpsLimitInGame", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<int> comboFpsLimitInGame;
 
-	// Token: 0x04005179 RID: 20857
+	// Token: 0x0400521B RID: 21019
 	[XuiBindComponent("VSync", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<string> comboVSync;
 
-	// Token: 0x02000DA5 RID: 3493
+	// Token: 0x02000DB9 RID: 3513
 	public readonly struct ResolutionInfo : IComparable<XUiC_OptionsVideo.ResolutionInfo>, IEquatable<XUiC_OptionsVideo.ResolutionInfo>
 	{
-		// Token: 0x06006B08 RID: 27400 RVA: 0x0029DED4 File Offset: 0x0029C0D4
+		// Token: 0x06006BA3 RID: 27555 RVA: 0x002A1034 File Offset: 0x0029F234
 		[return: TupleElementNames(new string[] { "_aspectRatio", "_aspectRatioFactor", "_aspectRatioString" })]
 		public static ValueTuple<XUiC_OptionsVideo.ResolutionInfo.EAspectRatio, float, string> DimensionsToAspectRatio(int _width, int _height)
 		{
@@ -706,7 +706,7 @@ public class XUiC_OptionsVideo : XUiC_OptionsVideoBase
 			return new ValueTuple<XUiC_OptionsVideo.ResolutionInfo.EAspectRatio, float, string>(XUiC_OptionsVideo.ResolutionInfo.EAspectRatio.Unknown, num2, num2.ToCultureInvariantString("0.##") + ":1");
 		}
 
-		// Token: 0x06006B09 RID: 27401 RVA: 0x0029E100 File Offset: 0x0029C300
+		// Token: 0x06006BA4 RID: 27556 RVA: 0x002A1260 File Offset: 0x0029F460
 		public ResolutionInfo(int _width, int _height)
 		{
 			this.Width = _width;
@@ -729,7 +729,7 @@ public class XUiC_OptionsVideo : XUiC_OptionsVideoBase
 			});
 		}
 
-		// Token: 0x06006B0A RID: 27402 RVA: 0x0029E180 File Offset: 0x0029C380
+		// Token: 0x06006BA5 RID: 27557 RVA: 0x002A12E0 File Offset: 0x0029F4E0
 		public int CompareTo(XUiC_OptionsVideo.ResolutionInfo _other)
 		{
 			int num = this.Width.CompareTo(_other.Width);
@@ -740,98 +740,98 @@ public class XUiC_OptionsVideo : XUiC_OptionsVideoBase
 			return num;
 		}
 
-		// Token: 0x06006B0B RID: 27403 RVA: 0x0029E1BB File Offset: 0x0029C3BB
+		// Token: 0x06006BA6 RID: 27558 RVA: 0x002A131B File Offset: 0x0029F51B
 		public bool Equals(XUiC_OptionsVideo.ResolutionInfo _other)
 		{
 			return this.Width == _other.Width && this.Height == _other.Height;
 		}
 
-		// Token: 0x06006B0C RID: 27404 RVA: 0x0029E1DB File Offset: 0x0029C3DB
+		// Token: 0x06006BA7 RID: 27559 RVA: 0x002A133B File Offset: 0x0029F53B
 		public override string ToString()
 		{
 			return this.label;
 		}
 
-		// Token: 0x0400517A RID: 20858
+		// Token: 0x0400521C RID: 21020
 		public readonly int Width;
 
-		// Token: 0x0400517B RID: 20859
+		// Token: 0x0400521D RID: 21021
 		public readonly int Height;
 
-		// Token: 0x0400517C RID: 20860
+		// Token: 0x0400521E RID: 21022
 		public readonly XUiC_OptionsVideo.ResolutionInfo.EAspectRatio AspectRatio;
 
-		// Token: 0x0400517D RID: 20861
+		// Token: 0x0400521F RID: 21023
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string label;
 
-		// Token: 0x02000DA6 RID: 3494
+		// Token: 0x02000DBA RID: 3514
 		public enum EAspectRatio
 		{
-			// Token: 0x0400517F RID: 20863
+			// Token: 0x04005221 RID: 21025
 			Aspect_32_9,
-			// Token: 0x04005180 RID: 20864
+			// Token: 0x04005222 RID: 21026
 			Aspect_32_10,
-			// Token: 0x04005181 RID: 20865
+			// Token: 0x04005223 RID: 21027
 			Aspect_24_10,
-			// Token: 0x04005182 RID: 20866
+			// Token: 0x04005224 RID: 21028
 			Aspect_21_9,
-			// Token: 0x04005183 RID: 20867
+			// Token: 0x04005225 RID: 21029
 			Aspect_17_9,
-			// Token: 0x04005184 RID: 20868
+			// Token: 0x04005226 RID: 21030
 			Aspect_16_9,
-			// Token: 0x04005185 RID: 20869
+			// Token: 0x04005227 RID: 21031
 			Aspect_5_3,
-			// Token: 0x04005186 RID: 20870
+			// Token: 0x04005228 RID: 21032
 			Aspect_16_10,
-			// Token: 0x04005187 RID: 20871
+			// Token: 0x04005229 RID: 21033
 			Aspect_25_16,
-			// Token: 0x04005188 RID: 20872
+			// Token: 0x0400522A RID: 21034
 			Aspect_3_2,
-			// Token: 0x04005189 RID: 20873
+			// Token: 0x0400522B RID: 21035
 			Aspect_4_3,
-			// Token: 0x0400518A RID: 20874
+			// Token: 0x0400522C RID: 21036
 			Aspect_5_4,
-			// Token: 0x0400518B RID: 20875
+			// Token: 0x0400522D RID: 21037
 			Aspect_1_1,
-			// Token: 0x0400518C RID: 20876
+			// Token: 0x0400522E RID: 21038
 			Unknown
 		}
 	}
 
-	// Token: 0x02000DA7 RID: 3495
+	// Token: 0x02000DBB RID: 3515
 	public enum UpscalerMode
 	{
-		// Token: 0x0400518E RID: 20878
+		// Token: 0x04005230 RID: 21040
 		Off,
-		// Token: 0x0400518F RID: 20879
+		// Token: 0x04005231 RID: 21041
 		Dynamic,
-		// Token: 0x04005190 RID: 20880
+		// Token: 0x04005232 RID: 21042
 		Scale,
-		// Token: 0x04005191 RID: 20881
+		// Token: 0x04005233 RID: 21043
 		FSR3,
-		// Token: 0x04005192 RID: 20882
+		// Token: 0x04005234 RID: 21044
 		DLSS
 	}
 
-	// Token: 0x02000DA8 RID: 3496
+	// Token: 0x02000DBC RID: 3516
 	public enum GraphicsMode
 	{
-		// Token: 0x04005194 RID: 20884
+		// Token: 0x04005236 RID: 21046
 		Lowest,
-		// Token: 0x04005195 RID: 20885
+		// Token: 0x04005237 RID: 21047
 		Low,
-		// Token: 0x04005196 RID: 20886
+		// Token: 0x04005238 RID: 21048
 		Medium,
-		// Token: 0x04005197 RID: 20887
+		// Token: 0x04005239 RID: 21049
 		High,
-		// Token: 0x04005198 RID: 20888
+		// Token: 0x0400523A RID: 21050
 		Ultra,
-		// Token: 0x04005199 RID: 20889
+		// Token: 0x0400523B RID: 21051
 		Custom,
-		// Token: 0x0400519A RID: 20890
+		// Token: 0x0400523C RID: 21052
 		ConsolePerformance,
-		// Token: 0x0400519B RID: 20891
+		// Token: 0x0400523D RID: 21053
 		ConsoleQuality
 	}
 }

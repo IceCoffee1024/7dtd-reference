@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using Audio;
 using UnityEngine.Scripting;
 
-// Token: 0x020001E5 RID: 485
+// Token: 0x020001E7 RID: 487
 [Preserve]
 public class ConsoleCmdAudioManager : ConsoleCmdAbstract
 {
-	// Token: 0x06000EF1 RID: 3825 RVA: 0x00060F9B File Offset: 0x0005F19B
+	// Token: 0x06000EFC RID: 3836 RVA: 0x000614E3 File Offset: 0x0005F6E3
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -15,7 +15,7 @@ public class ConsoleCmdAudioManager : ConsoleCmdAbstract
 	}
 
 	// Token: 0x1700013A RID: 314
-	// (get) Token: 0x06000EF2 RID: 3826 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// (get) Token: 0x06000EFD RID: 3837 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -24,28 +24,28 @@ public class ConsoleCmdAudioManager : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000EF3 RID: 3827 RVA: 0x00060FAB File Offset: 0x0005F1AB
+	// Token: 0x06000EFE RID: 3838 RVA: 0x000614F3 File Offset: 0x0005F6F3
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Watch audio stats";
 	}
 
-	// Token: 0x06000EF4 RID: 3828 RVA: 0x00060FB2 File Offset: 0x0005F1B2
+	// Token: 0x06000EFF RID: 3839 RVA: 0x000614FA File Offset: 0x0005F6FA
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Just type audio and hit enter for the info.\n";
 	}
 
-	// Token: 0x06000EF5 RID: 3829 RVA: 0x00060FB9 File Offset: 0x0005F1B9
+	// Token: 0x06000F00 RID: 3840 RVA: 0x00061501 File Offset: 0x0005F701
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DisplayHelp()
 	{
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("No help yet");
 	}
 
-	// Token: 0x06000EF6 RID: 3830 RVA: 0x00060FCC File Offset: 0x0005F1CC
+	// Token: 0x06000F01 RID: 3841 RVA: 0x00061514 File Offset: 0x0005F714
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 0)

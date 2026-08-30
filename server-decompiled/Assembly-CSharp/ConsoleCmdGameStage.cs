@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000218 RID: 536
+// Token: 0x0200021A RID: 538
 [Preserve]
 public class ConsoleCmdGameStage : ConsoleCmdAbstract
 {
 	// Token: 0x17000183 RID: 387
-	// (get) Token: 0x06001048 RID: 4168 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// (get) Token: 0x06001053 RID: 4179 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -18,7 +18,7 @@ public class ConsoleCmdGameStage : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000184 RID: 388
-	// (get) Token: 0x06001049 RID: 4169 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// (get) Token: 0x06001054 RID: 4180 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -28,7 +28,7 @@ public class ConsoleCmdGameStage : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000185 RID: 389
-	// (get) Token: 0x0600104A RID: 4170 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// (get) Token: 0x06001055 RID: 4181 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -37,21 +37,21 @@ public class ConsoleCmdGameStage : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600104B RID: 4171 RVA: 0x00067039 File Offset: 0x00065239
+	// Token: 0x06001056 RID: 4182 RVA: 0x00067581 File Offset: 0x00065781
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "gamestage" };
 	}
 
-	// Token: 0x0600104C RID: 4172 RVA: 0x00067049 File Offset: 0x00065249
+	// Token: 0x06001057 RID: 4183 RVA: 0x00067591 File Offset: 0x00065791
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Shows the gamestage of the local player";
 	}
 
-	// Token: 0x0600104D RID: 4173 RVA: 0x00067050 File Offset: 0x00065250
+	// Token: 0x06001058 RID: 4184 RVA: 0x00067598 File Offset: 0x00065798
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		EntityPlayer primaryPlayer = GameManager.Instance.World.GetPrimaryPlayer();
@@ -75,7 +75,7 @@ public class ConsoleCmdGameStage : ConsoleCmdAbstract
 				primaryPlayer.gameStage,
 				primaryPlayer.GetLootStage(0f, 0f),
 				primaryPlayer.Progression.Level,
-				primaryPlayer.biomeStandingOn.GameStageMod,
+				primaryPlayer.biomeStandingOn.GameStageMod * EntityPlayer.BiomeGameStageModifier,
 				num,
 				(long)((primaryPlayer.world.worldTime - primaryPlayer.gameStageBornAtWorldTime) / 24000UL),
 				primaryPlayer.biomeStandingOn.GameStageBonus,

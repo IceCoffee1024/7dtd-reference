@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace UniLinq
 {
-	// Token: 0x02001797 RID: 6039
+	// Token: 0x020017BD RID: 6077
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public class SortSequenceContext<TElement, TKey> : SortContext<TElement>
 	{
-		// Token: 0x0600BB69 RID: 47977 RVA: 0x00459B49 File Offset: 0x00457D49
+		// Token: 0x0600BCEC RID: 48364 RVA: 0x0045F8C1 File Offset: 0x0045DAC1
 		public SortSequenceContext(Func<TElement, TKey> selector, IComparer<TKey> comparer, SortDirection direction, SortContext<TElement> child_context)
 			: base(direction, child_context)
 		{
@@ -15,7 +15,7 @@ namespace UniLinq
 			this.comparer = comparer;
 		}
 
-		// Token: 0x0600BB6A RID: 47978 RVA: 0x00459B64 File Offset: 0x00457D64
+		// Token: 0x0600BCED RID: 48365 RVA: 0x0045F8DC File Offset: 0x0045DADC
 		public override void Initialize(TElement[] elements)
 		{
 			if (this.child_context != null)
@@ -29,7 +29,7 @@ namespace UniLinq
 			}
 		}
 
-		// Token: 0x0600BB6B RID: 47979 RVA: 0x00459BC4 File Offset: 0x00457DC4
+		// Token: 0x0600BCEE RID: 48366 RVA: 0x0045F93C File Offset: 0x0045DB3C
 		public override int Compare(int first_index, int second_index)
 		{
 			int num = this.comparer.Compare(this.keys[first_index], this.keys[second_index]);
@@ -48,15 +48,15 @@ namespace UniLinq
 			return -num;
 		}
 
-		// Token: 0x04008C3B RID: 35899
+		// Token: 0x04008D57 RID: 36183
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Func<TElement, TKey> selector;
 
-		// Token: 0x04008C3C RID: 35900
+		// Token: 0x04008D58 RID: 36184
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IComparer<TKey> comparer;
 
-		// Token: 0x04008C3D RID: 35901
+		// Token: 0x04008D59 RID: 36185
 		[PublicizedFrom(EAccessModifier.Private)]
 		public TKey[] keys;
 	}

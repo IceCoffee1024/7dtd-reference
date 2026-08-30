@@ -2,12 +2,12 @@
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x020007BF RID: 1983
+// Token: 0x020007CA RID: 1994
 [Preserve]
 public class NetPackageEAC : NetPackage
 {
-	// Token: 0x1700061A RID: 1562
-	// (get) Token: 0x06003AC9 RID: 15049 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000625 RID: 1573
+	// (get) Token: 0x06003B28 RID: 15144 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedBeforeAuth
 	{
 		get
@@ -16,7 +16,7 @@ public class NetPackageEAC : NetPackage
 		}
 	}
 
-	// Token: 0x06003ACA RID: 15050 RVA: 0x0017BE85 File Offset: 0x0017A085
+	// Token: 0x06003B29 RID: 15145 RVA: 0x0017E25D File Offset: 0x0017C45D
 	public NetPackageEAC Setup(int _size, byte[] _data)
 	{
 		this.data = new byte[_size];
@@ -24,7 +24,7 @@ public class NetPackageEAC : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003ACB RID: 15051 RVA: 0x0017BEA4 File Offset: 0x0017A0A4
+	// Token: 0x06003B2A RID: 15146 RVA: 0x0017E27C File Offset: 0x0017C47C
 	public override void read(PooledBinaryReader _reader)
 	{
 		int num = _reader.ReadInt32();
@@ -35,7 +35,7 @@ public class NetPackageEAC : NetPackage
 		}
 	}
 
-	// Token: 0x06003ACC RID: 15052 RVA: 0x0017BEE8 File Offset: 0x0017A0E8
+	// Token: 0x06003B2B RID: 15147 RVA: 0x0017E2C0 File Offset: 0x0017C4C0
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -46,7 +46,7 @@ public class NetPackageEAC : NetPackage
 		}
 	}
 
-	// Token: 0x06003ACD RID: 15053 RVA: 0x0017BF2C File Offset: 0x0017A12C
+	// Token: 0x06003B2C RID: 15148 RVA: 0x0017E304 File Offset: 0x0017C504
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -71,13 +71,13 @@ public class NetPackageEAC : NetPackage
 		}
 	}
 
-	// Token: 0x06003ACE RID: 15054 RVA: 0x0017BF80 File Offset: 0x0017A180
+	// Token: 0x06003B2D RID: 15149 RVA: 0x0017E358 File Offset: 0x0017C558
 	public override int GetLength()
 	{
 		return 4 + ((this.data != null) ? this.data.Length : 0);
 	}
 
-	// Token: 0x04002FC8 RID: 12232
+	// Token: 0x04003047 RID: 12359
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] data;
 }

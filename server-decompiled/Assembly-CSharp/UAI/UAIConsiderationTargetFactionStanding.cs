@@ -5,11 +5,11 @@ using UnityEngine.Scripting;
 
 namespace UAI
 {
-	// Token: 0x02001753 RID: 5971
+	// Token: 0x02001779 RID: 6009
 	[Preserve]
 	public class UAIConsiderationTargetFactionStanding : UAIConsiderationBase
 	{
-		// Token: 0x0600B8CF RID: 47311 RVA: 0x0045053C File Offset: 0x0044E73C
+		// Token: 0x0600BA52 RID: 47698 RVA: 0x004562B4 File Offset: 0x004544B4
 		public override void Init(Dictionary<string, string> parameters)
 		{
 			base.Init(parameters);
@@ -29,7 +29,7 @@ namespace UAI
 			this.max = 255f;
 		}
 
-		// Token: 0x0600B8D0 RID: 47312 RVA: 0x004505C0 File Offset: 0x0044E7C0
+		// Token: 0x0600BA53 RID: 47699 RVA: 0x00456338 File Offset: 0x00454538
 		public override float GetScore(Context _context, object target)
 		{
 			if (target is EntityAlive)
@@ -40,11 +40,11 @@ namespace UAI
 			return 0f;
 		}
 
-		// Token: 0x04008A9B RID: 35483
+		// Token: 0x04008BB7 RID: 35767
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float min;
 
-		// Token: 0x04008A9C RID: 35484
+		// Token: 0x04008BB8 RID: 35768
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float max;
 	}

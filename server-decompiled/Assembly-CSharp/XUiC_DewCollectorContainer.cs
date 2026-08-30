@@ -2,38 +2,38 @@
 using Audio;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F05 RID: 3845
+// Token: 0x02000F1C RID: 3868
 [Preserve]
 public class XUiC_DewCollectorContainer : XUiC_VariableHeightGrid, ITileEntityChangedListener
 {
-	// Token: 0x17000E14 RID: 3604
-	// (get) Token: 0x0600789A RID: 30874 RVA: 0x002D7F6A File Offset: 0x002D616A
-	// (set) Token: 0x0600789B RID: 30875 RVA: 0x002D7F72 File Offset: 0x002D6172
+	// Token: 0x17000E2E RID: 3630
+	// (get) Token: 0x06007952 RID: 31058 RVA: 0x002DBEF6 File Offset: 0x002DA0F6
+	// (set) Token: 0x06007953 RID: 31059 RVA: 0x002DBEFE File Offset: 0x002DA0FE
 	public Vector2i GridCellSize
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x0600789C RID: 30876 RVA: 0x002D7F7B File Offset: 0x002D617B
+	// Token: 0x06007954 RID: 31060 RVA: 0x002DBF07 File Offset: 0x002DA107
 	public override ItemStack[] GetSlots()
 	{
 		return this.localTileEntity.Items;
 	}
 
-	// Token: 0x0600789D RID: 30877 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06007955 RID: 31061 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateBackend(ItemStack[] stackList)
 	{
 	}
 
-	// Token: 0x0600789E RID: 30878 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06007956 RID: 31062 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SetStacks(ItemStack[] stackList)
 	{
 	}
 
-	// Token: 0x0600789F RID: 30879 RVA: 0x002D7F88 File Offset: 0x002D6188
+	// Token: 0x06007957 RID: 31063 RVA: 0x002DBF14 File Offset: 0x002DA114
 	public void SetTileEntity(TileEntityCollector _te)
 	{
 		if (_te != null)
@@ -42,7 +42,7 @@ public class XUiC_DewCollectorContainer : XUiC_VariableHeightGrid, ITileEntityCh
 		}
 	}
 
-	// Token: 0x060078A0 RID: 30880 RVA: 0x002D7F9C File Offset: 0x002D619C
+	// Token: 0x06007958 RID: 31064 RVA: 0x002DBF28 File Offset: 0x002DA128
 	public void SetSlots(TileEntityCollector lootContainer, ItemStack[] stackList)
 	{
 		if (stackList == null)
@@ -81,7 +81,7 @@ public class XUiC_DewCollectorContainer : XUiC_VariableHeightGrid, ITileEntityCh
 		this.windowGroup.Controller.SetAllChildrenDirty();
 	}
 
-	// Token: 0x060078A1 RID: 30881 RVA: 0x002D80D4 File Offset: 0x002D62D4
+	// Token: 0x06007959 RID: 31065 RVA: 0x002DC060 File Offset: 0x002DA260
 	public override void Init()
 	{
 		base.Init();
@@ -97,14 +97,14 @@ public class XUiC_DewCollectorContainer : XUiC_VariableHeightGrid, ITileEntityCh
 		}
 	}
 
-	// Token: 0x060078A2 RID: 30882 RVA: 0x002D8153 File Offset: 0x002D6353
+	// Token: 0x0600795A RID: 31066 RVA: 0x002DC0DF File Offset: 0x002DA2DF
 	public void HandleLootSlotChangedEvent(int slotNumber, ItemStack stack)
 	{
 		this.localTileEntity.UpdateSlot(slotNumber, stack);
 		this.localTileEntity.SetModified();
 	}
 
-	// Token: 0x060078A3 RID: 30883 RVA: 0x002D8170 File Offset: 0x002D6370
+	// Token: 0x0600795B RID: 31067 RVA: 0x002DC0FC File Offset: 0x002DA2FC
 	public void OnTileEntityChanged(ITileEntity _te)
 	{
 		TileEntityCollector tileEntityCollector = _te as TileEntityCollector;
@@ -119,7 +119,7 @@ public class XUiC_DewCollectorContainer : XUiC_VariableHeightGrid, ITileEntityCh
 		}
 	}
 
-	// Token: 0x060078A4 RID: 30884 RVA: 0x002D81DC File Offset: 0x002D63DC
+	// Token: 0x0600795C RID: 31068 RVA: 0x002DC168 File Offset: 0x002DA368
 	public void SetItemInSlot(int i, ItemStack stack, bool onTEChanged)
 	{
 		ItemStack itemStack = ItemStack.Empty;
@@ -157,7 +157,7 @@ public class XUiC_DewCollectorContainer : XUiC_VariableHeightGrid, ITileEntityCh
 		}
 	}
 
-	// Token: 0x060078A5 RID: 30885 RVA: 0x002D82D4 File Offset: 0x002D64D4
+	// Token: 0x0600795D RID: 31069 RVA: 0x002DC260 File Offset: 0x002DA460
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -169,7 +169,7 @@ public class XUiC_DewCollectorContainer : XUiC_VariableHeightGrid, ITileEntityCh
 		this.blockValue = GameManager.Instance.World.GetBlock(this.localTileEntity.ToWorldPos());
 	}
 
-	// Token: 0x060078A6 RID: 30886 RVA: 0x002D8342 File Offset: 0x002D6542
+	// Token: 0x0600795E RID: 31070 RVA: 0x002DC2CE File Offset: 0x002DA4CE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LocalTileEntity_Destroyed(ITileEntity te)
 	{
@@ -184,7 +184,7 @@ public class XUiC_DewCollectorContainer : XUiC_VariableHeightGrid, ITileEntityCh
 		}
 	}
 
-	// Token: 0x060078A7 RID: 30887 RVA: 0x002D837C File Offset: 0x002D657C
+	// Token: 0x0600795F RID: 31071 RVA: 0x002DC308 File Offset: 0x002DA508
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -200,7 +200,7 @@ public class XUiC_DewCollectorContainer : XUiC_VariableHeightGrid, ITileEntityCh
 		}
 	}
 
-	// Token: 0x060078A8 RID: 30888 RVA: 0x002D83E6 File Offset: 0x002D65E6
+	// Token: 0x06007960 RID: 31072 RVA: 0x002DC372 File Offset: 0x002DA572
 	public override bool ParseAttribute(string _name, string _value)
 	{
 		if (_name == "required_item")
@@ -211,15 +211,15 @@ public class XUiC_DewCollectorContainer : XUiC_VariableHeightGrid, ITileEntityCh
 		return base.ParseAttribute(_name, _value);
 	}
 
-	// Token: 0x04005905 RID: 22789
+	// Token: 0x040059B7 RID: 22967
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileEntityCollector localTileEntity;
 
-	// Token: 0x04005906 RID: 22790
+	// Token: 0x040059B8 RID: 22968
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string requiredItem = "";
 
-	// Token: 0x04005908 RID: 22792
+	// Token: 0x040059BA RID: 22970
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockValue blockValue;
 }

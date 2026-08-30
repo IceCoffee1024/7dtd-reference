@@ -6,7 +6,7 @@ using UnityEngine.Animations.Rigging;
 // Token: 0x020000E6 RID: 230
 public class IKController : MonoBehaviour
 {
-	// Token: 0x060005CF RID: 1487 RVA: 0x00029E5C File Offset: 0x0002805C
+	// Token: 0x060005D0 RID: 1488 RVA: 0x00029F20 File Offset: 0x00028120
 	public unsafe void Start()
 	{
 		this.animator = base.GetComponent<Animator>();
@@ -40,7 +40,7 @@ public class IKController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005D0 RID: 1488 RVA: 0x00029F2C File Offset: 0x0002812C
+	// Token: 0x060005D1 RID: 1489 RVA: 0x00029FF0 File Offset: 0x000281F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int NameToIndex(string name)
 	{
@@ -54,13 +54,13 @@ public class IKController : MonoBehaviour
 		return -1;
 	}
 
-	// Token: 0x060005D1 RID: 1489 RVA: 0x00029F5D File Offset: 0x0002815D
+	// Token: 0x060005D2 RID: 1490 RVA: 0x0002A021 File Offset: 0x00028221
 	public void SetTargets(List<IKController.Target> _targets)
 	{
 		this.targets = _targets;
 	}
 
-	// Token: 0x060005D2 RID: 1490 RVA: 0x00029F66 File Offset: 0x00028166
+	// Token: 0x060005D3 RID: 1491 RVA: 0x0002A02A File Offset: 0x0002822A
 	public void Cleanup()
 	{
 		this.targets = null;
@@ -70,7 +70,7 @@ public class IKController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005D3 RID: 1491 RVA: 0x00029F84 File Offset: 0x00028184
+	// Token: 0x060005D4 RID: 1492 RVA: 0x0002A048 File Offset: 0x00028248
 	public void ModifyRig()
 	{
 		if (this.targets == null)
@@ -117,7 +117,7 @@ public class IKController : MonoBehaviour
 		base.GetComponent<RigBuilder>().Build();
 	}
 
-	// Token: 0x060005D4 RID: 1492 RVA: 0x0002A0E0 File Offset: 0x000282E0
+	// Token: 0x060005D5 RID: 1493 RVA: 0x0002A1A4 File Offset: 0x000283A4
 	public void OnAnimatorIK()
 	{
 		if (!this.animator)

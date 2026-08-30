@@ -6,13 +6,13 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000183 RID: 387
+// Token: 0x02000185 RID: 389
 [Preserve]
 public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, ILockTarget, IInventory
 {
 	// Token: 0x170000E4 RID: 228
-	// (get) Token: 0x06000B94 RID: 2964 RVA: 0x00049715 File Offset: 0x00047915
-	// (set) Token: 0x06000B95 RID: 2965 RVA: 0x0004971D File Offset: 0x0004791D
+	// (get) Token: 0x06000B9F RID: 2975 RVA: 0x00049B2D File Offset: 0x00047D2D
+	// (set) Token: 0x06000BA0 RID: 2976 RVA: 0x00049B35 File Offset: 0x00047D35
 	public float LootStageMod
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
@@ -20,15 +20,15 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 	}
 
 	// Token: 0x170000E5 RID: 229
-	// (get) Token: 0x06000B96 RID: 2966 RVA: 0x00049726 File Offset: 0x00047926
-	// (set) Token: 0x06000B97 RID: 2967 RVA: 0x0004972E File Offset: 0x0004792E
+	// (get) Token: 0x06000BA1 RID: 2977 RVA: 0x00049B3E File Offset: 0x00047D3E
+	// (set) Token: 0x06000BA2 RID: 2978 RVA: 0x00049B46 File Offset: 0x00047D46
 	public float LootStageBonus
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06000B98 RID: 2968 RVA: 0x00049738 File Offset: 0x00047938
+	// Token: 0x06000BA3 RID: 2979 RVA: 0x00049B50 File Offset: 0x00047D50
 	public override void Init(TileEntityComposite _parent, TileEntityFeatureData _featureData)
 	{
 		base.Init(_parent, _featureData);
@@ -80,7 +80,7 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 		this.SetContainerSize(LootContainer.GetLootContainer(this.lootListName, true).size, true);
 	}
 
-	// Token: 0x06000B99 RID: 2969 RVA: 0x000498EC File Offset: 0x00047AEC
+	// Token: 0x06000BA4 RID: 2980 RVA: 0x00049D04 File Offset: 0x00047F04
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CopyFromInternal(TileEntityComposite _other)
 	{
@@ -95,7 +95,7 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 		}
 	}
 
-	// Token: 0x06000B9A RID: 2970 RVA: 0x00049944 File Offset: 0x00047B44
+	// Token: 0x06000BA5 RID: 2981 RVA: 0x00049D5C File Offset: 0x00047F5C
 	public override void OnDestroy()
 	{
 		base.OnDestroy();
@@ -105,7 +105,7 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 		}
 	}
 
-	// Token: 0x06000B9B RID: 2971 RVA: 0x0004995F File Offset: 0x00047B5F
+	// Token: 0x06000BA6 RID: 2982 RVA: 0x00049D77 File Offset: 0x00047F77
 	public override void OnAdded(Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnAdded(_blockPos, _blockValue);
@@ -116,7 +116,7 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 		}
 	}
 
-	// Token: 0x06000B9C RID: 2972 RVA: 0x000499A0 File Offset: 0x00047BA0
+	// Token: 0x06000BA7 RID: 2983 RVA: 0x00049DB8 File Offset: 0x00047FB8
 	public override void UpgradeDowngradeFrom(TileEntityComposite _other)
 	{
 		base.UpgradeDowngradeFrom(_other);
@@ -129,7 +129,7 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 		}
 	}
 
-	// Token: 0x06000B9D RID: 2973 RVA: 0x000499E0 File Offset: 0x00047BE0
+	// Token: 0x06000BA8 RID: 2984 RVA: 0x00049DF8 File Offset: 0x00047FF8
 	public override void ReplacedBy(BlockValue _bvOld, BlockValue _bvNew, TileEntity _teNew)
 	{
 		base.ReplacedBy(_bvOld, _bvNew, _teNew);
@@ -140,7 +140,7 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 		}
 	}
 
-	// Token: 0x06000B9E RID: 2974 RVA: 0x00049A14 File Offset: 0x00047C14
+	// Token: 0x06000BA9 RID: 2985 RVA: 0x00049E2C File Offset: 0x0004802C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void migrateItemsFromOtherContainer(ITileEntityLootable _other)
 	{
@@ -165,7 +165,7 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 		this.SlotLocks = new PackedBoolArray(this.items.Length);
 	}
 
-	// Token: 0x06000B9F RID: 2975 RVA: 0x00049B0C File Offset: 0x00047D0C
+	// Token: 0x06000BAA RID: 2986 RVA: 0x00049F24 File Offset: 0x00048124
 	public override void Reset(FastTags<TagGroup.Global> _questTags)
 	{
 		base.Reset(_questTags);
@@ -193,7 +193,7 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 		base.SetModified();
 	}
 
-	// Token: 0x06000BA0 RID: 2976 RVA: 0x00049BB0 File Offset: 0x00047DB0
+	// Token: 0x06000BAB RID: 2987 RVA: 0x00049FC8 File Offset: 0x000481C8
 	public override void UpdateTick(World _world)
 	{
 		base.UpdateTick(_world);
@@ -230,7 +230,7 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 		}
 	}
 
-	// Token: 0x06000BA1 RID: 2977 RVA: 0x00049CAC File Offset: 0x00047EAC
+	// Token: 0x06000BAC RID: 2988 RVA: 0x0004A0C4 File Offset: 0x000482C4
 	public override string GetActivationText(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityAlive _entityFocusing, string _activateHotkeyMarkup, string _focusedTileEntityName)
 	{
 		base.GetActivationText(_world, _blockPos, _blockValue, _entityFocusing, _activateHotkeyMarkup, _focusedTileEntityName);
@@ -261,14 +261,14 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 		return string.Format(Localization.Get("lootTooltipTouched", false, null), _activateHotkeyMarkup, _focusedTileEntityName);
 	}
 
-	// Token: 0x06000BA2 RID: 2978 RVA: 0x00049DBE File Offset: 0x00047FBE
+	// Token: 0x06000BAD RID: 2989 RVA: 0x0004A1D6 File Offset: 0x000483D6
 	public override void InitBlockActivationCommands(Action<BlockActivationCommand, TileEntityComposite.EBlockCommandOrder, TileEntityFeatureData> _addCallback)
 	{
 		base.InitBlockActivationCommands(_addCallback);
 		_addCallback(new BlockActivationCommand("Search", "search", true, false, null), TileEntityComposite.EBlockCommandOrder.Normal, base.FeatureData);
 	}
 
-	// Token: 0x06000BA3 RID: 2979 RVA: 0x00049DE8 File Offset: 0x00047FE8
+	// Token: 0x06000BAE RID: 2990 RVA: 0x0004A200 File Offset: 0x00048400
 	public override bool OnBlockActivated(ReadOnlySpan<char> _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		base.OnBlockActivated(_commandName, _world, _blockPos, _blockValue, _player);
@@ -288,13 +288,13 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 	}
 
 	// Token: 0x170000E6 RID: 230
-	// (get) Token: 0x06000BA4 RID: 2980 RVA: 0x00049E8B File Offset: 0x0004808B
-	// (set) Token: 0x06000BA5 RID: 2981 RVA: 0x00049E93 File Offset: 0x00048093
+	// (get) Token: 0x06000BAF RID: 2991 RVA: 0x0004A2A3 File Offset: 0x000484A3
+	// (set) Token: 0x06000BB0 RID: 2992 RVA: 0x0004A2AB File Offset: 0x000484AB
 	public string lootListName { get; set; }
 
 	// Token: 0x170000E7 RID: 231
-	// (get) Token: 0x06000BA6 RID: 2982 RVA: 0x00049E9C File Offset: 0x0004809C
-	// (set) Token: 0x06000BA7 RID: 2983 RVA: 0x00049EB3 File Offset: 0x000480B3
+	// (get) Token: 0x06000BB1 RID: 2993 RVA: 0x0004A2B4 File Offset: 0x000484B4
+	// (set) Token: 0x06000BB2 RID: 2994 RVA: 0x0004A2CB File Offset: 0x000484CB
 	public bool bPlayerStorage
 	{
 		get
@@ -308,18 +308,18 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 	}
 
 	// Token: 0x170000E8 RID: 232
-	// (get) Token: 0x06000BA8 RID: 2984 RVA: 0x00049EBC File Offset: 0x000480BC
-	// (set) Token: 0x06000BA9 RID: 2985 RVA: 0x00049EC4 File Offset: 0x000480C4
+	// (get) Token: 0x06000BB3 RID: 2995 RVA: 0x0004A2D4 File Offset: 0x000484D4
+	// (set) Token: 0x06000BB4 RID: 2996 RVA: 0x0004A2DC File Offset: 0x000484DC
 	public PreferenceTracker preferences { get; set; }
 
 	// Token: 0x170000E9 RID: 233
-	// (get) Token: 0x06000BAA RID: 2986 RVA: 0x00049ECD File Offset: 0x000480CD
-	// (set) Token: 0x06000BAB RID: 2987 RVA: 0x00049ED5 File Offset: 0x000480D5
+	// (get) Token: 0x06000BB5 RID: 2997 RVA: 0x0004A2E5 File Offset: 0x000484E5
+	// (set) Token: 0x06000BB6 RID: 2998 RVA: 0x0004A2ED File Offset: 0x000484ED
 	public ulong worldTimeTouched { get; set; }
 
 	// Token: 0x170000EA RID: 234
-	// (get) Token: 0x06000BAC RID: 2988 RVA: 0x00049EDE File Offset: 0x000480DE
-	// (set) Token: 0x06000BAD RID: 2989 RVA: 0x00049EF0 File Offset: 0x000480F0
+	// (get) Token: 0x06000BB7 RID: 2999 RVA: 0x0004A2F6 File Offset: 0x000484F6
+	// (set) Token: 0x06000BB8 RID: 3000 RVA: 0x0004A308 File Offset: 0x00048508
 	public bool bTouched
 	{
 		get
@@ -333,13 +333,13 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 	}
 
 	// Token: 0x170000EB RID: 235
-	// (get) Token: 0x06000BAE RID: 2990 RVA: 0x00049EF9 File Offset: 0x000480F9
-	// (set) Token: 0x06000BAF RID: 2991 RVA: 0x00049F01 File Offset: 0x00048101
+	// (get) Token: 0x06000BB9 RID: 3001 RVA: 0x0004A311 File Offset: 0x00048511
+	// (set) Token: 0x06000BBA RID: 3002 RVA: 0x0004A319 File Offset: 0x00048519
 	public bool bWasTouched { get; set; }
 
 	// Token: 0x170000EC RID: 236
-	// (get) Token: 0x06000BB0 RID: 2992 RVA: 0x00049F0C File Offset: 0x0004810C
-	// (set) Token: 0x06000BB1 RID: 2993 RVA: 0x00049F48 File Offset: 0x00048148
+	// (get) Token: 0x06000BBB RID: 3003 RVA: 0x0004A324 File Offset: 0x00048524
+	// (set) Token: 0x06000BBC RID: 3004 RVA: 0x0004A360 File Offset: 0x00048560
 	public ItemStack[] items
 	{
 		get
@@ -357,13 +357,13 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 		}
 	}
 
-	// Token: 0x06000BB2 RID: 2994 RVA: 0x00049F51 File Offset: 0x00048151
+	// Token: 0x06000BBD RID: 3005 RVA: 0x0004A369 File Offset: 0x00048569
 	public virtual Vector2i GetContainerSize()
 	{
 		return this.containerSize;
 	}
 
-	// Token: 0x06000BB3 RID: 2995 RVA: 0x00049F5C File Offset: 0x0004815C
+	// Token: 0x06000BBE RID: 3006 RVA: 0x0004A374 File Offset: 0x00048574
 	public virtual void SetContainerSize(Vector2i _containerSize, bool _clearItems = true)
 	{
 		this.containerSize = _containerSize;
@@ -382,14 +382,14 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 		}
 	}
 
-	// Token: 0x06000BB4 RID: 2996 RVA: 0x00049FD8 File Offset: 0x000481D8
+	// Token: 0x06000BBF RID: 3007 RVA: 0x0004A3F0 File Offset: 0x000485F0
 	public void UpdateSlot(int _idx, ItemStack _item)
 	{
 		this.items[_idx] = _item.Clone();
 		base.Parent.NotifyListeners();
 	}
 
-	// Token: 0x06000BB5 RID: 2997 RVA: 0x00049FF4 File Offset: 0x000481F4
+	// Token: 0x06000BC0 RID: 3008 RVA: 0x0004A40C File Offset: 0x0004860C
 	public void RemoveItem(ItemValue _itemValue)
 	{
 		for (int i = 0; i < this.items.Length; i++)
@@ -401,7 +401,7 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 		}
 	}
 
-	// Token: 0x06000BB6 RID: 2998 RVA: 0x0004A03C File Offset: 0x0004823C
+	// Token: 0x06000BC1 RID: 3009 RVA: 0x0004A454 File Offset: 0x00048654
 	public int RemoveItems(ItemValue _itemValue, int _count)
 	{
 		int num = _count;
@@ -433,7 +433,7 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 		return num - _count;
 	}
 
-	// Token: 0x06000BB7 RID: 2999 RVA: 0x0004A104 File Offset: 0x00048304
+	// Token: 0x06000BC2 RID: 3010 RVA: 0x0004A51C File Offset: 0x0004871C
 	public bool IsEmpty()
 	{
 		for (int i = 0; i < this.items.Length; i++)
@@ -446,7 +446,7 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 		return true;
 	}
 
-	// Token: 0x06000BB8 RID: 3000 RVA: 0x0004A138 File Offset: 0x00048338
+	// Token: 0x06000BC3 RID: 3011 RVA: 0x0004A550 File Offset: 0x00048750
 	public void SetEmpty()
 	{
 		for (int i = 0; i < this.items.Length; i++)
@@ -463,7 +463,7 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 		base.SetModified();
 	}
 
-	// Token: 0x06000BB9 RID: 3001 RVA: 0x0004A190 File Offset: 0x00048390
+	// Token: 0x06000BC4 RID: 3012 RVA: 0x0004A5A8 File Offset: 0x000487A8
 	public bool ShouldDestroyOnClose()
 	{
 		LootContainer.DestroyOnClose destroyOnClose = LootContainer.GetLootContainer(this.lootListName, true).destroyOnClose;
@@ -471,7 +471,7 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 	}
 
 	// Token: 0x170000ED RID: 237
-	// (get) Token: 0x06000BBA RID: 3002 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// (get) Token: 0x06000BC5 RID: 3013 RVA: 0x00020021 File Offset: 0x0001E221
 	public bool HasSlotLocksSupport
 	{
 		get
@@ -481,11 +481,11 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 	}
 
 	// Token: 0x170000EE RID: 238
-	// (get) Token: 0x06000BBB RID: 3003 RVA: 0x0004A1C1 File Offset: 0x000483C1
-	// (set) Token: 0x06000BBC RID: 3004 RVA: 0x0004A1C9 File Offset: 0x000483C9
+	// (get) Token: 0x06000BC6 RID: 3014 RVA: 0x0004A5D9 File Offset: 0x000487D9
+	// (set) Token: 0x06000BC7 RID: 3015 RVA: 0x0004A5E1 File Offset: 0x000487E1
 	public PackedBoolArray SlotLocks { get; set; }
 
-	// Token: 0x06000BBD RID: 3005 RVA: 0x0004A1D4 File Offset: 0x000483D4
+	// Token: 0x06000BC8 RID: 3016 RVA: 0x0004A5EC File Offset: 0x000487EC
 	public bool AddItem(ItemStack _itemStack)
 	{
 		for (int i = 0; i < this.items.Length; i++)
@@ -500,7 +500,7 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 		return false;
 	}
 
-	// Token: 0x06000BBE RID: 3006 RVA: 0x0004A214 File Offset: 0x00048414
+	// Token: 0x06000BC9 RID: 3017 RVA: 0x0004A62C File Offset: 0x0004882C
 	[return: TupleElementNames(new string[] { "anyMoved", "allMoved" })]
 	public ValueTuple<bool, bool> TryStackItem(int _startIndex, ItemStack _itemStack)
 	{
@@ -528,7 +528,7 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 		return new ValueTuple<bool, bool>(flag, _itemStack.count == 0);
 	}
 
-	// Token: 0x06000BBF RID: 3007 RVA: 0x0004A2CC File Offset: 0x000484CC
+	// Token: 0x06000BCA RID: 3018 RVA: 0x0004A6E4 File Offset: 0x000488E4
 	public bool HasItem(ItemValue _item)
 	{
 		for (int i = 0; i < this.items.Length; i++)
@@ -541,7 +541,7 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 		return false;
 	}
 
-	// Token: 0x06000BC0 RID: 3008 RVA: 0x0004A30C File Offset: 0x0004850C
+	// Token: 0x06000BCB RID: 3019 RVA: 0x0004A724 File Offset: 0x00048924
 	public int CountItem(ItemClass _itemClass)
 	{
 		int num = 0;
@@ -555,7 +555,7 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 		return num;
 	}
 
-	// Token: 0x06000BC1 RID: 3009 RVA: 0x0004A354 File Offset: 0x00048554
+	// Token: 0x06000BCC RID: 3020 RVA: 0x0004A76C File Offset: 0x0004896C
 	public override void Read(PooledBinaryReader _br, TileEntity.StreamModeRead _eStreamMode)
 	{
 		base.Read(_br, _eStreamMode);
@@ -619,7 +619,7 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 		this.SlotLocks = new PackedBoolArray(this.items.Length);
 	}
 
-	// Token: 0x06000BC2 RID: 3010 RVA: 0x0004A508 File Offset: 0x00048708
+	// Token: 0x06000BCD RID: 3021 RVA: 0x0004A920 File Offset: 0x00048B20
 	public override void Write(PooledBinaryWriter _bw, TileEntity.StreamModeWrite _eStreamMode)
 	{
 		base.Write(_bw, _eStreamMode);
@@ -657,13 +657,13 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 		this.SlotLocks.Write(_bw);
 	}
 
-	// Token: 0x06000BC3 RID: 3011 RVA: 0x00048695 File Offset: 0x00046895
+	// Token: 0x06000BCE RID: 3022 RVA: 0x00048AAD File Offset: 0x00046CAD
 	public override bool CanLockLocally(ILockContext _context, ushort _channel)
 	{
 		return LocalPlayerUI.GetUIForPrimaryPlayer() != null;
 	}
 
-	// Token: 0x06000BC4 RID: 3012 RVA: 0x0004A612 File Offset: 0x00048812
+	// Token: 0x06000BCF RID: 3023 RVA: 0x0004AA2A File Offset: 0x00048C2A
 	public override void OnLockedServer(bool _success, int _lockingPlayerID, ILockContext _context, ushort _channel)
 	{
 		if (_success)
@@ -672,19 +672,19 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 		}
 	}
 
-	// Token: 0x06000BC5 RID: 3013 RVA: 0x0004A61E File Offset: 0x0004881E
+	// Token: 0x06000BD0 RID: 3024 RVA: 0x0004AA36 File Offset: 0x00048C36
 	public override void OnLockedLocal(bool _success, ILockContext _context, ushort _channel)
 	{
 		this.ShowUI(_success);
 	}
 
-	// Token: 0x06000BC6 RID: 3014 RVA: 0x0004A627 File Offset: 0x00048827
+	// Token: 0x06000BD1 RID: 3025 RVA: 0x0004AA3F File Offset: 0x00048C3F
 	public override void OnUnlockedServer(int _unlockingPlayerId, ushort _channel)
 	{
 		GameManager.Instance.CheckDestroyTileEntity(this, base.ToWorldPos());
 	}
 
-	// Token: 0x06000BC7 RID: 3015 RVA: 0x0004A63C File Offset: 0x0004883C
+	// Token: 0x06000BD2 RID: 3026 RVA: 0x0004AA54 File Offset: 0x00048C54
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PopulateTE(int _playerThatOpened)
 	{
@@ -694,7 +694,7 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 		base.SetModified();
 	}
 
-	// Token: 0x06000BC8 RID: 3016 RVA: 0x0004A68C File Offset: 0x0004888C
+	// Token: 0x06000BD3 RID: 3027 RVA: 0x0004AAA4 File Offset: 0x00048CA4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ShowUI(bool _lockGranted)
 	{
@@ -721,74 +721,74 @@ public class TEFeatureStorage : TEFeatureAbs, ITileEntityLootable, ITileEntity, 
 		}
 	}
 
-	// Token: 0x04000A9E RID: 2718
+	// Token: 0x04000AAB RID: 2731
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int Version = 18;
 
-	// Token: 0x04000A9F RID: 2719
+	// Token: 0x04000AAC RID: 2732
 	public static string PropLootList = "LootList";
 
-	// Token: 0x04000AA0 RID: 2720
+	// Token: 0x04000AAD RID: 2733
 	public static string PropAlternateLootList = "AlternateLootList";
 
-	// Token: 0x04000AA1 RID: 2721
+	// Token: 0x04000AAE RID: 2734
 	public static string PropLootStageMod = "LootStageMod";
 
-	// Token: 0x04000AA2 RID: 2722
+	// Token: 0x04000AAF RID: 2735
 	public static string PropLootStageBonus = "LootStageBonus";
 
-	// Token: 0x04000AA3 RID: 2723
+	// Token: 0x04000AB0 RID: 2736
 	public static string PropIsJammed = "IsJammed";
 
-	// Token: 0x04000AA4 RID: 2724
+	// Token: 0x04000AB1 RID: 2737
 	public static string PropIsQuestLoot = "IsQuestLoot";
 
-	// Token: 0x04000AA5 RID: 2725
+	// Token: 0x04000AB2 RID: 2738
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TEFeatureLockable lockFeature;
 
-	// Token: 0x04000AA6 RID: 2726
+	// Token: 0x04000AB3 RID: 2739
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TEFeatureLockPickable lockpickFeature;
 
-	// Token: 0x04000AA9 RID: 2729
+	// Token: 0x04000AB6 RID: 2742
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isJammed;
 
-	// Token: 0x04000AAA RID: 2730
+	// Token: 0x04000AB7 RID: 2743
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isQuestLoot;
 
-	// Token: 0x04000AAB RID: 2731
+	// Token: 0x04000AB8 RID: 2744
 	public List<TEFeatureStorage.AlternateLootEntry> AlternateLootList;
 
-	// Token: 0x04000AAC RID: 2732
+	// Token: 0x04000AB9 RID: 2745
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Entity> entityTempList;
 
-	// Token: 0x04000AAD RID: 2733
+	// Token: 0x04000ABA RID: 2746
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2i containerSize = Vector2i.one;
 
-	// Token: 0x04000AAE RID: 2734
+	// Token: 0x04000ABB RID: 2747
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack[] itemsArr;
 
-	// Token: 0x04000AB0 RID: 2736
+	// Token: 0x04000ABD RID: 2749
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool playerStorage;
 
-	// Token: 0x04000AB3 RID: 2739
+	// Token: 0x04000AC0 RID: 2752
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool internalTouched;
 
-	// Token: 0x02000184 RID: 388
+	// Token: 0x02000186 RID: 390
 	public struct AlternateLootEntry
 	{
-		// Token: 0x04000AB6 RID: 2742
+		// Token: 0x04000AC3 RID: 2755
 		public FastTags<TagGroup.Global> tag;
 
-		// Token: 0x04000AB7 RID: 2743
+		// Token: 0x04000AC4 RID: 2756
 		public string lootEntry;
 	}
 }

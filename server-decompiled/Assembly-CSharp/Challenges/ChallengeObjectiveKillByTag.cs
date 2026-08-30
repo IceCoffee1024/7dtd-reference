@@ -4,12 +4,12 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x020018E2 RID: 6370
+	// Token: 0x02001908 RID: 6408
 	[Preserve]
 	public class ChallengeObjectiveKillByTag : BaseChallengeObjective
 	{
-		// Token: 0x17001806 RID: 6150
-		// (get) Token: 0x0600C45D RID: 50269 RVA: 0x0005EFE1 File Offset: 0x0005D1E1
+		// Token: 0x17001878 RID: 6264
+		// (get) Token: 0x0600C5E4 RID: 50660 RVA: 0x0005F529 File Offset: 0x0005D729
 		public override ChallengeObjectiveType ObjectiveType
 		{
 			get
@@ -18,8 +18,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x17001807 RID: 6151
-		// (get) Token: 0x0600C45E RID: 50270 RVA: 0x00486FF4 File Offset: 0x004851F4
+		// Token: 0x17001879 RID: 6265
+		// (get) Token: 0x0600C5E5 RID: 50661 RVA: 0x0048D340 File Offset: 0x0048B540
 		public override string DescriptionText
 		{
 			get
@@ -32,20 +32,20 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C45F RID: 50271 RVA: 0x00487071 File Offset: 0x00485271
+		// Token: 0x0600C5E6 RID: 50662 RVA: 0x0048D3BD File Offset: 0x0048B5BD
 		public override void Init()
 		{
 			this.entityTags = FastTags<TagGroup.Global>.Parse(this.entityTag);
 		}
 
-		// Token: 0x0600C460 RID: 50272 RVA: 0x00487084 File Offset: 0x00485284
+		// Token: 0x0600C5E7 RID: 50663 RVA: 0x0048D3D0 File Offset: 0x0048B5D0
 		public override void HandleAddHooks()
 		{
 			if (!EntityFactory.EnemySpawnMode && this.isEnemy)
 			{
 				base.Current = this.MaxCount;
 				base.Complete = true;
-				this.Owner.HandleComplete(false);
+				this.Owner.HandleComplete(false, true);
 				if (this.Owner.ChallengeState == Challenge.ChallengeStates.Completed)
 				{
 					this.Owner.AutoCompleted = true;
@@ -60,13 +60,13 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C461 RID: 50273 RVA: 0x00487112 File Offset: 0x00485312
+		// Token: 0x0600C5E8 RID: 50664 RVA: 0x0048D45F File Offset: 0x0048B65F
 		public override void HandleRemoveHooks()
 		{
 			QuestEventManager.Current.EntityKill -= this.Current_EntityKill;
 		}
 
-		// Token: 0x0600C462 RID: 50274 RVA: 0x0048712C File Offset: 0x0048532C
+		// Token: 0x0600C5E9 RID: 50665 RVA: 0x0048D478 File Offset: 0x0048B678
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Current_EntityKill(EntityAlive killedBy, EntityAlive killedEntity)
 		{
@@ -102,7 +102,7 @@ namespace Challenges
 			this.CheckObjectiveComplete(true);
 		}
 
-		// Token: 0x0600C463 RID: 50275 RVA: 0x004871E4 File Offset: 0x004853E4
+		// Token: 0x0600C5EA RID: 50666 RVA: 0x0048D530 File Offset: 0x0048B730
 		public override void ParseElement(XElement e)
 		{
 			base.ParseElement(e);
@@ -133,7 +133,7 @@ namespace Challenges
 			e.ParseAttribute("is_enemy", ref this.isEnemy);
 		}
 
-		// Token: 0x0600C464 RID: 50276 RVA: 0x00487320 File Offset: 0x00485520
+		// Token: 0x0600C5EB RID: 50667 RVA: 0x0048D66C File Offset: 0x0048B86C
 		public override BaseChallengeObjective Clone()
 		{
 			return new ChallengeObjectiveKillByTag
@@ -149,31 +149,31 @@ namespace Challenges
 			};
 		}
 
-		// Token: 0x04009434 RID: 37940
+		// Token: 0x0400955D RID: 38237
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string entityTag = "";
 
-		// Token: 0x04009435 RID: 37941
+		// Token: 0x0400955E RID: 38238
 		[PublicizedFrom(EAccessModifier.Private)]
 		public FastTags<TagGroup.Global> entityTags;
 
-		// Token: 0x04009436 RID: 37942
+		// Token: 0x0400955F RID: 38239
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string targetName = "";
 
-		// Token: 0x04009437 RID: 37943
+		// Token: 0x04009560 RID: 38240
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int isTwitchSpawn = -1;
 
-		// Token: 0x04009438 RID: 37944
+		// Token: 0x04009561 RID: 38241
 		[PublicizedFrom(EAccessModifier.Private)]
 		public FastTags<TagGroup.Global> killerHasBuffTag;
 
-		// Token: 0x04009439 RID: 37945
+		// Token: 0x04009562 RID: 38242
 		[PublicizedFrom(EAccessModifier.Private)]
 		public FastTags<TagGroup.Global> killedHasBuffTag;
 
-		// Token: 0x0400943A RID: 37946
+		// Token: 0x04009563 RID: 38243
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isEnemy = true;
 	}

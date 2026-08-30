@@ -4,12 +4,12 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020002A4 RID: 676
+// Token: 0x020002A8 RID: 680
 [Preserve]
 public class ConsoleCmdStarve : ConsoleCmdAbstract
 {
-	// Token: 0x1700021F RID: 543
-	// (get) Token: 0x060013A1 RID: 5025 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000220 RID: 544
+	// (get) Token: 0x060013B3 RID: 5043 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -18,14 +18,14 @@ public class ConsoleCmdStarve : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060013A2 RID: 5026 RVA: 0x00077C7F File Offset: 0x00075E7F
+	// Token: 0x060013B4 RID: 5044 RVA: 0x000782DB File Offset: 0x000764DB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "starve", "hungry", "food" };
 	}
 
-	// Token: 0x060013A3 RID: 5027 RVA: 0x00077CA0 File Offset: 0x00075EA0
+	// Token: 0x060013B5 RID: 5045 RVA: 0x000782FC File Offset: 0x000764FC
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		EntityPlayer primaryPlayer = GameManager.Instance.World.GetPrimaryPlayer();
@@ -40,7 +40,7 @@ public class ConsoleCmdStarve : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060013A4 RID: 5028 RVA: 0x00077D17 File Offset: 0x00075F17
+	// Token: 0x060013B6 RID: 5046 RVA: 0x00078373 File Offset: 0x00076573
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

@@ -2,11 +2,11 @@
 using PrefabVolumes;
 using UnityEngine.Scripting;
 
-// Token: 0x020007C0 RID: 1984
+// Token: 0x020007CB RID: 1995
 [Preserve]
 public class NetPackageEditorAddVolumeFromClient : NetPackage
 {
-	// Token: 0x06003AD0 RID: 15056 RVA: 0x0017BF97 File Offset: 0x0017A197
+	// Token: 0x06003B2F RID: 15151 RVA: 0x0017E36F File Offset: 0x0017C56F
 	public NetPackageEditorAddVolumeFromClient Setup(PrefabVolumeAbs.EVolumeType _volumeType, Vector3i _startPos, Vector3i _size)
 	{
 		this.addType = NetPackageEditorAddVolumeFromClient.EAddType.New;
@@ -16,7 +16,7 @@ public class NetPackageEditorAddVolumeFromClient : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003AD1 RID: 15057 RVA: 0x0017BFB6 File Offset: 0x0017A1B6
+	// Token: 0x06003B30 RID: 15152 RVA: 0x0017E38E File Offset: 0x0017C58E
 	public NetPackageEditorAddVolumeFromClient Setup(PrefabVolumeAbs.EVolumeType _volumeType, int _prefabInstanceId, int _existingIndex, Vector3i _offset)
 	{
 		this.addType = NetPackageEditorAddVolumeFromClient.EAddType.Clone;
@@ -27,8 +27,8 @@ public class NetPackageEditorAddVolumeFromClient : NetPackage
 		return this;
 	}
 
-	// Token: 0x1700061B RID: 1563
-	// (get) Token: 0x06003AD2 RID: 15058 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000626 RID: 1574
+	// (get) Token: 0x06003B31 RID: 15153 RVA: 0x00020021 File Offset: 0x0001E221
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -37,7 +37,7 @@ public class NetPackageEditorAddVolumeFromClient : NetPackage
 		}
 	}
 
-	// Token: 0x06003AD3 RID: 15059 RVA: 0x0017BFE0 File Offset: 0x0017A1E0
+	// Token: 0x06003B32 RID: 15154 RVA: 0x0017E3B8 File Offset: 0x0017C5B8
 	public override void read(PooledBinaryReader _br)
 	{
 		this.addType = (NetPackageEditorAddVolumeFromClient.EAddType)_br.ReadByte();
@@ -48,7 +48,7 @@ public class NetPackageEditorAddVolumeFromClient : NetPackage
 		this.existingIndex = (int)_br.ReadInt16();
 	}
 
-	// Token: 0x06003AD4 RID: 15060 RVA: 0x0017C038 File Offset: 0x0017A238
+	// Token: 0x06003B33 RID: 15155 RVA: 0x0017E410 File Offset: 0x0017C610
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -60,7 +60,7 @@ public class NetPackageEditorAddVolumeFromClient : NetPackage
 		_bw.Write((short)this.existingIndex);
 	}
 
-	// Token: 0x06003AD5 RID: 15061 RVA: 0x0017C098 File Offset: 0x0017A298
+	// Token: 0x06003B34 RID: 15156 RVA: 0x0017E470 File Offset: 0x0017C670
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (this.addType == NetPackageEditorAddVolumeFromClient.EAddType.New)
@@ -71,42 +71,42 @@ public class NetPackageEditorAddVolumeFromClient : NetPackage
 		PrefabVolumeManager.Instance.CloneVolumeServer(this.volumeType, this.prefabInstanceId, this.existingIndex, this.startPos);
 	}
 
-	// Token: 0x06003AD6 RID: 15062 RVA: 0x0017C0EC File Offset: 0x0017A2EC
+	// Token: 0x06003B35 RID: 15157 RVA: 0x0017E4C4 File Offset: 0x0017C6C4
 	public override int GetLength()
 	{
 		return 29;
 	}
 
-	// Token: 0x04002FC9 RID: 12233
+	// Token: 0x04003048 RID: 12360
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetPackageEditorAddVolumeFromClient.EAddType addType;
 
-	// Token: 0x04002FCA RID: 12234
+	// Token: 0x04003049 RID: 12361
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PrefabVolumeAbs.EVolumeType volumeType;
 
-	// Token: 0x04002FCB RID: 12235
+	// Token: 0x0400304A RID: 12362
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i startPos;
 
-	// Token: 0x04002FCC RID: 12236
+	// Token: 0x0400304B RID: 12363
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i size;
 
-	// Token: 0x04002FCD RID: 12237
+	// Token: 0x0400304C RID: 12364
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int prefabInstanceId;
 
-	// Token: 0x04002FCE RID: 12238
+	// Token: 0x0400304D RID: 12365
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int existingIndex;
 
-	// Token: 0x020007C1 RID: 1985
+	// Token: 0x020007CC RID: 1996
 	public enum EAddType
 	{
-		// Token: 0x04002FD0 RID: 12240
+		// Token: 0x0400304F RID: 12367
 		New,
-		// Token: 0x04002FD1 RID: 12241
+		// Token: 0x04003050 RID: 12368
 		Clone
 	}
 }

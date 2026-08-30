@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x02000C35 RID: 3125
+// Token: 0x02000C47 RID: 3143
 [PublicizedFrom(EAccessModifier.Internal)]
 public class TerrainFromDTM : TerrainGeneratorWithBiomeResource
 {
-	// Token: 0x06005F24 RID: 24356 RVA: 0x00259BCC File Offset: 0x00257DCC
+	// Token: 0x06005FAE RID: 24494 RVA: 0x0025CA7C File Offset: 0x0025AC7C
 	public void Init(ArrayWithOffset<byte> _dtm, IBiomeProvider _biomeProvider, string _levelName, string _worldPath, int _seed)
 	{
 		base.Init(null, _biomeProvider, _seed);
@@ -16,7 +16,7 @@ public class TerrainFromDTM : TerrainGeneratorWithBiomeResource
 		this.heightData = HeightMapUtils.SmoothTerrain(5, this.heightData);
 	}
 
-	// Token: 0x06005F25 RID: 24357 RVA: 0x00259C18 File Offset: 0x00257E18
+	// Token: 0x06005FAF RID: 24495 RVA: 0x0025CAC8 File Offset: 0x0025ACC8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void fillDensityInBlock(Chunk _chunk, int _x, int _y, int _z, BlockValue _bv)
 	{
@@ -52,7 +52,7 @@ public class TerrainFromDTM : TerrainGeneratorWithBiomeResource
 		_chunk.SetDensity(_x, _y, _z, b);
 	}
 
-	// Token: 0x06005F26 RID: 24358 RVA: 0x00259CEA File Offset: 0x00257EEA
+	// Token: 0x06005FB0 RID: 24496 RVA: 0x0025CB9A File Offset: 0x0025AD9A
 	public override sbyte GetDensityAt(int _xWorld, int _yWorld, int _zWorld, BiomeDefinition _bd, float _biomeIntensity)
 	{
 		if ((int)this.m_DTM[_xWorld, _zWorld] > _yWorld)
@@ -62,7 +62,7 @@ public class TerrainFromDTM : TerrainGeneratorWithBiomeResource
 		return MarchingCubes.DensityTerrain;
 	}
 
-	// Token: 0x06005F27 RID: 24359 RVA: 0x00259D08 File Offset: 0x00257F08
+	// Token: 0x06005FB1 RID: 24497 RVA: 0x0025CBB8 File Offset: 0x0025ADB8
 	public override byte GetTerrainHeightByteAt(int _x, int _z)
 	{
 		int num = _x + this.heightData.GetLength(0) / 2;
@@ -74,7 +74,7 @@ public class TerrainFromDTM : TerrainGeneratorWithBiomeResource
 		return (byte)((int)(this.heightData[num, num2] + 0.5f));
 	}
 
-	// Token: 0x06005F28 RID: 24360 RVA: 0x00259D74 File Offset: 0x00257F74
+	// Token: 0x06005FB2 RID: 24498 RVA: 0x0025CC24 File Offset: 0x0025AE24
 	public override float GetTerrainHeightAt(int x, int z)
 	{
 		float num;
@@ -91,11 +91,11 @@ public class TerrainFromDTM : TerrainGeneratorWithBiomeResource
 		return num;
 	}
 
-	// Token: 0x04004A5A RID: 19034
+	// Token: 0x04004AF7 RID: 19191
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ArrayWithOffset<byte> m_DTM;
 
-	// Token: 0x04004A5B RID: 19035
+	// Token: 0x04004AF8 RID: 19192
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[,] heightData;
 }

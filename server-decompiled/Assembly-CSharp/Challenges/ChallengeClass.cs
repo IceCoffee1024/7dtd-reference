@@ -6,21 +6,21 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x020018C9 RID: 6345
+	// Token: 0x020018EF RID: 6383
 	[Preserve]
 	public class ChallengeClass
 	{
-		// Token: 0x170017D7 RID: 6103
-		// (get) Token: 0x0600C349 RID: 49993 RVA: 0x00482735 File Offset: 0x00480935
-		// (set) Token: 0x0600C34A RID: 49994 RVA: 0x0048273D File Offset: 0x0048093D
+		// Token: 0x17001849 RID: 6217
+		// (get) Token: 0x0600C4D0 RID: 50384 RVA: 0x00488A75 File Offset: 0x00486C75
+		// (set) Token: 0x0600C4D1 RID: 50385 RVA: 0x00488A7D File Offset: 0x00486C7D
 		public int OrderIndex
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x170017D8 RID: 6104
-		// (get) Token: 0x0600C34B RID: 49995 RVA: 0x00482746 File Offset: 0x00480946
+		// Token: 0x1700184A RID: 6218
+		// (get) Token: 0x0600C4D2 RID: 50386 RVA: 0x00488A86 File Offset: 0x00486C86
 		public bool HasNavType
 		{
 			get
@@ -29,14 +29,14 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C34C RID: 49996 RVA: 0x00482754 File Offset: 0x00480954
+		// Token: 0x0600C4D3 RID: 50387 RVA: 0x00488A94 File Offset: 0x00486C94
 		public ChallengeClass(string name)
 		{
 			this.Name = name;
 			this.OrderIndex = ChallengeClass.nextIndex++;
 		}
 
-		// Token: 0x0600C34D RID: 49997 RVA: 0x004827B0 File Offset: 0x004809B0
+		// Token: 0x0600C4D4 RID: 50388 RVA: 0x00488AF0 File Offset: 0x00486CF0
 		public static ChallengeClass NewClass(string id)
 		{
 			if (ChallengeClass.s_Challenges.ContainsKey(id))
@@ -48,13 +48,13 @@ namespace Challenges
 			return challengeClass;
 		}
 
-		// Token: 0x0600C34E RID: 49998 RVA: 0x004827E5 File Offset: 0x004809E5
+		// Token: 0x0600C4D5 RID: 50389 RVA: 0x00488B25 File Offset: 0x00486D25
 		public static void Cleanup()
 		{
 			ChallengeClass.s_Challenges.Clear();
 		}
 
-		// Token: 0x0600C34F RID: 49999 RVA: 0x004827F4 File Offset: 0x004809F4
+		// Token: 0x0600C4D6 RID: 50390 RVA: 0x00488B34 File Offset: 0x00486D34
 		public static void InitChallenges()
 		{
 			foreach (string text in ChallengeClass.s_Challenges.Keys)
@@ -63,7 +63,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C350 RID: 50000 RVA: 0x00482854 File Offset: 0x00480A54
+		// Token: 0x0600C4D7 RID: 50391 RVA: 0x00488B94 File Offset: 0x00486D94
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Init()
 		{
@@ -77,13 +77,13 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C351 RID: 50001 RVA: 0x004828A2 File Offset: 0x00480AA2
+		// Token: 0x0600C4D8 RID: 50392 RVA: 0x00488BE2 File Offset: 0x00486DE2
 		public bool HasEventsOrPassives()
 		{
 			return this.Effects != null;
 		}
 
-		// Token: 0x0600C352 RID: 50002 RVA: 0x004828AD File Offset: 0x00480AAD
+		// Token: 0x0600C4D9 RID: 50393 RVA: 0x00488BED File Offset: 0x00486DED
 		public void ModifyValue(EntityAlive _ea, PassiveEffects _effect, ref float _base_value, ref float _perc_value, FastTags<TagGroup.Global> _tags = default(FastTags<TagGroup.Global>))
 		{
 			if (this.Effects == null)
@@ -93,7 +93,7 @@ namespace Challenges
 			this.Effects.ModifyValue(_ea, _effect, ref _base_value, ref _perc_value, 0f, _tags, 1);
 		}
 
-		// Token: 0x0600C353 RID: 50003 RVA: 0x004828D0 File Offset: 0x00480AD0
+		// Token: 0x0600C4DA RID: 50394 RVA: 0x00488C10 File Offset: 0x00486E10
 		public static ChallengeClass GetChallenge(string name)
 		{
 			if (ChallengeClass.s_Challenges.ContainsKey(name))
@@ -103,7 +103,7 @@ namespace Challenges
 			return null;
 		}
 
-		// Token: 0x0600C354 RID: 50004 RVA: 0x004828EC File Offset: 0x00480AEC
+		// Token: 0x0600C4DB RID: 50395 RVA: 0x00488C2C File Offset: 0x00486E2C
 		public Challenge CreateChallenge(ChallengeJournal ownerJournal)
 		{
 			Challenge challenge = new Challenge();
@@ -124,7 +124,7 @@ namespace Challenges
 			return challenge;
 		}
 
-		// Token: 0x0600C355 RID: 50005 RVA: 0x00482981 File Offset: 0x00480B81
+		// Token: 0x0600C4DC RID: 50396 RVA: 0x00488CC1 File Offset: 0x00486EC1
 		public string GetNextChallengeName()
 		{
 			if (this.NextChallenge != null)
@@ -134,14 +134,14 @@ namespace Challenges
 			return "";
 		}
 
-		// Token: 0x0600C356 RID: 50006 RVA: 0x0048299C File Offset: 0x00480B9C
+		// Token: 0x0600C4DD RID: 50397 RVA: 0x00488CDC File Offset: 0x00486EDC
 		public void AddObjective(BaseChallengeObjective objective)
 		{
 			this.ObjectiveList.Add(objective);
 			objective.OwnerClass = this;
 		}
 
-		// Token: 0x0600C357 RID: 50007 RVA: 0x004829B4 File Offset: 0x00480BB4
+		// Token: 0x0600C4DE RID: 50398 RVA: 0x00488CF4 File Offset: 0x00486EF4
 		public bool ResetObjectives(Challenge challenge)
 		{
 			int count = challenge.ObjectiveList.Count;
@@ -183,7 +183,7 @@ namespace Challenges
 			return true;
 		}
 
-		// Token: 0x0600C358 RID: 50008 RVA: 0x00482AF8 File Offset: 0x00480CF8
+		// Token: 0x0600C4DF RID: 50399 RVA: 0x00488E38 File Offset: 0x00487038
 		public string GetHint(bool isPreReq)
 		{
 			if (this.ChallengeHint == null)
@@ -213,7 +213,7 @@ namespace Challenges
 			return Localization.Get(this.ChallengeHint, false, null);
 		}
 
-		// Token: 0x0600C359 RID: 50009 RVA: 0x00482B9C File Offset: 0x00480D9C
+		// Token: 0x0600C4E0 RID: 50400 RVA: 0x00488EDC File Offset: 0x004870DC
 		public string GetDescription()
 		{
 			if (PlatformManager.NativePlatform.Input.CurrentInputStyle != PlayerInputManager.InputStyle.Keyboard)
@@ -227,7 +227,7 @@ namespace Challenges
 			return Localization.Get(this.Description, false, null);
 		}
 
-		// Token: 0x0600C35A RID: 50010 RVA: 0x00482BEB File Offset: 0x00480DEB
+		// Token: 0x0600C4E1 RID: 50401 RVA: 0x00488F2B File Offset: 0x0048712B
 		public void FireEvent(MinEventTypes _eventType, MinEventParams _params)
 		{
 			if (this.Effects != null)
@@ -236,7 +236,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C35B RID: 50011 RVA: 0x00482C04 File Offset: 0x00480E04
+		// Token: 0x0600C4E2 RID: 50402 RVA: 0x00488F44 File Offset: 0x00487144
 		public void ParseElement(XElement e)
 		{
 			if (e.HasAttribute("icon"))
@@ -332,7 +332,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C35C RID: 50012 RVA: 0x00482F44 File Offset: 0x00481144
+		// Token: 0x0600C4E3 RID: 50403 RVA: 0x00489284 File Offset: 0x00487484
 		public ChallengeClass.UINavTypes GetNavType()
 		{
 			for (int i = 0; i < this.ObjectiveList.Count; i++)
@@ -346,7 +346,7 @@ namespace Challenges
 			return ChallengeClass.UINavTypes.None;
 		}
 
-		// Token: 0x0600C35D RID: 50013 RVA: 0x00482F84 File Offset: 0x00481184
+		// Token: 0x0600C4E4 RID: 50404 RVA: 0x004892C4 File Offset: 0x004874C4
 		public bool HandleResourceRequirement()
 		{
 			if (ItemActionAttack.BlockDamagePercent == 0f)
@@ -390,88 +390,88 @@ namespace Challenges
 			return true;
 		}
 
-		// Token: 0x04009395 RID: 37781
+		// Token: 0x040094BE RID: 38078
 		public static Dictionary<string, ChallengeClass> s_Challenges = new CaseInsensitiveStringDictionary<ChallengeClass>();
 
-		// Token: 0x04009396 RID: 37782
+		// Token: 0x040094BF RID: 38079
 		public string Name;
 
-		// Token: 0x04009397 RID: 37783
+		// Token: 0x040094C0 RID: 38080
 		public string Title;
 
-		// Token: 0x04009398 RID: 37784
+		// Token: 0x040094C1 RID: 38081
 		public string Icon;
 
-		// Token: 0x04009399 RID: 37785
+		// Token: 0x040094C2 RID: 38082
 		public ChallengeGroup ChallengeGroup;
 
-		// Token: 0x0400939A RID: 37786
+		// Token: 0x040094C3 RID: 38083
 		public string ShortDescription;
 
-		// Token: 0x0400939B RID: 37787
+		// Token: 0x040094C4 RID: 38084
 		public string Description;
 
-		// Token: 0x0400939C RID: 37788
+		// Token: 0x040094C5 RID: 38085
 		public string PreReqChallengeHint;
 
-		// Token: 0x0400939D RID: 37789
+		// Token: 0x040094C6 RID: 38086
 		public string ChallengeHint;
 
-		// Token: 0x0400939E RID: 37790
+		// Token: 0x040094C7 RID: 38087
 		public string RewardEvent;
 
-		// Token: 0x0400939F RID: 37791
+		// Token: 0x040094C8 RID: 38088
 		public string RewardText = "";
 
-		// Token: 0x040093A0 RID: 37792
+		// Token: 0x040094C9 RID: 38089
 		public string TagName = string.Empty;
 
-		// Token: 0x040093A1 RID: 37793
+		// Token: 0x040094CA RID: 38090
 		public FastTags<TagGroup.Global> Tags = FastTags<TagGroup.Global>.none;
 
-		// Token: 0x040093A2 RID: 37794
+		// Token: 0x040094CB RID: 38091
 		public List<BaseChallengeObjective> ObjectiveList = new List<BaseChallengeObjective>();
 
-		// Token: 0x040093A3 RID: 37795
+		// Token: 0x040094CC RID: 38092
 		public ChallengeClass NextChallenge;
 
-		// Token: 0x040093A4 RID: 37796
+		// Token: 0x040094CD RID: 38093
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static int nextIndex = 0;
 
-		// Token: 0x040093A6 RID: 37798
+		// Token: 0x040094CF RID: 38095
 		public bool RedeemAlways;
 
-		// Token: 0x040093A7 RID: 37799
+		// Token: 0x040094D0 RID: 38096
 		public bool NeedsConstantUIUpdate;
 
-		// Token: 0x040093A8 RID: 37800
+		// Token: 0x040094D1 RID: 38097
 		public MinEffectController Effects;
 
-		// Token: 0x040093A9 RID: 37801
+		// Token: 0x040094D2 RID: 38098
 		public List<ChallengeClass.ResourceRequiredTypes> RequiredResourceTypeList;
 
-		// Token: 0x020018CA RID: 6346
+		// Token: 0x020018F0 RID: 6384
 		public enum UINavTypes
 		{
-			// Token: 0x040093AB RID: 37803
+			// Token: 0x040094D4 RID: 38100
 			None,
-			// Token: 0x040093AC RID: 37804
+			// Token: 0x040094D5 RID: 38101
 			Crafting,
-			// Token: 0x040093AD RID: 37805
+			// Token: 0x040094D6 RID: 38102
 			TwitchActions
 		}
 
-		// Token: 0x020018CB RID: 6347
+		// Token: 0x020018F1 RID: 6385
 		public enum ResourceRequiredTypes
 		{
-			// Token: 0x040093AF RID: 37807
+			// Token: 0x040094D8 RID: 38104
 			Resource,
-			// Token: 0x040093B0 RID: 37808
+			// Token: 0x040094D9 RID: 38105
 			Ore,
-			// Token: 0x040093B1 RID: 37809
+			// Token: 0x040094DA RID: 38106
 			Seed,
-			// Token: 0x040093B2 RID: 37810
+			// Token: 0x040094DB RID: 38107
 			Crop
 		}
 	}

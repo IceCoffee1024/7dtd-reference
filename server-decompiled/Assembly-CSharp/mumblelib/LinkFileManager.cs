@@ -2,10 +2,10 @@
 
 namespace mumblelib
 {
-	// Token: 0x02001678 RID: 5752
+	// Token: 0x0200169E RID: 5790
 	public static class LinkFileManager
 	{
-		// Token: 0x0600B40E RID: 46094 RVA: 0x00432EB9 File Offset: 0x004310B9
+		// Token: 0x0600B591 RID: 46481 RVA: 0x00438C31 File Offset: 0x00436E31
 		public static ILinkFile Open()
 		{
 			if (Environment.OSVersion.Platform == PlatformID.Win32NT)

@@ -3,17 +3,17 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000125 RID: 293
+// Token: 0x02000126 RID: 294
 [Preserve]
 public class BlockLauncher : BlockPowered
 {
-	// Token: 0x060007B5 RID: 1973 RVA: 0x00036A2C File Offset: 0x00034C2C
+	// Token: 0x060007BF RID: 1983 RVA: 0x00036D1C File Offset: 0x00034F1C
 	public BlockLauncher()
 	{
 		this.HasTileEntity = true;
 	}
 
-	// Token: 0x060007B6 RID: 1974 RVA: 0x00036A84 File Offset: 0x00034C84
+	// Token: 0x060007C0 RID: 1984 RVA: 0x00036D74 File Offset: 0x00034F74
 	public override void Init()
 	{
 		base.Init();
@@ -27,13 +27,13 @@ public class BlockLauncher : BlockPowered
 		}
 	}
 
-	// Token: 0x060007B7 RID: 1975 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x060007C1 RID: 1985 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool HasBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		return true;
 	}
 
-	// Token: 0x060007B8 RID: 1976 RVA: 0x00036AFC File Offset: 0x00034CFC
+	// Token: 0x060007C2 RID: 1986 RVA: 0x00036DEC File Offset: 0x00034FEC
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		bool flag = _world.CanPlaceBlockAt(_blockPos, _world.GetGameManager().GetPersistentLocalPlayer(), false);
@@ -43,7 +43,7 @@ public class BlockLauncher : BlockPowered
 		return this.cmds;
 	}
 
-	// Token: 0x060007B9 RID: 1977 RVA: 0x00036B6C File Offset: 0x00034D6C
+	// Token: 0x060007C3 RID: 1987 RVA: 0x00036E5C File Offset: 0x0003505C
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		if (!_world.CanPlaceBlockAt(_blockPos, _world.GetGameManager().GetPersistentLocalPlayer(), false))
@@ -61,7 +61,7 @@ public class BlockLauncher : BlockPowered
 		return string.Format(Localization.Get("vendingMachineActivate", false, null), text, localizedBlockName);
 	}
 
-	// Token: 0x060007BA RID: 1978 RVA: 0x00036BFC File Offset: 0x00034DFC
+	// Token: 0x060007C4 RID: 1988 RVA: 0x00036EEC File Offset: 0x000350EC
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_blockValue.ischild)
@@ -89,7 +89,7 @@ public class BlockLauncher : BlockPowered
 		return true;
 	}
 
-	// Token: 0x060007BB RID: 1979 RVA: 0x00036C98 File Offset: 0x00034E98
+	// Token: 0x060007C5 RID: 1989 RVA: 0x00036F88 File Offset: 0x00035188
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool updateState(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
@@ -122,14 +122,14 @@ public class BlockLauncher : BlockPowered
 		return true;
 	}
 
-	// Token: 0x060007BC RID: 1980 RVA: 0x00036D49 File Offset: 0x00034F49
+	// Token: 0x060007C6 RID: 1990 RVA: 0x00037039 File Offset: 0x00035239
 	public override void OnBlockValueChanged(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		base.OnBlockValueChanged(_world, _chunk, _blockPos, _oldBlockValue, _newBlockValue);
 		this.updateState(_world, _blockPos, _newBlockValue);
 	}
 
-	// Token: 0x060007BD RID: 1981 RVA: 0x00036D64 File Offset: 0x00034F64
+	// Token: 0x060007C7 RID: 1991 RVA: 0x00037054 File Offset: 0x00035254
 	public override void OnBlockEntityTransformAfterActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		base.OnBlockEntityTransformAfterActivated(_world, _blockPos, _blockValue, _ebcd);
@@ -164,7 +164,7 @@ public class BlockLauncher : BlockPowered
 		this.updateState(_world, _blockPos, _blockValue);
 	}
 
-	// Token: 0x060007BE RID: 1982 RVA: 0x00036E14 File Offset: 0x00035014
+	// Token: 0x060007C8 RID: 1992 RVA: 0x00037104 File Offset: 0x00035304
 	public override bool ActivateBlock(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool _isOn, bool _isPowered)
 	{
 		byte b = (byte)(((int)_blockValue.meta & -3) | (_isOn ? 2 : 0));
@@ -176,7 +176,7 @@ public class BlockLauncher : BlockPowered
 		return true;
 	}
 
-	// Token: 0x060007BF RID: 1983 RVA: 0x00036E58 File Offset: 0x00035058
+	// Token: 0x060007C9 RID: 1993 RVA: 0x00037148 File Offset: 0x00035348
 	public override void OnBlockAdded(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(_world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -208,7 +208,7 @@ public class BlockLauncher : BlockPowered
 		_chunk.AddEntityBlockStub(blockEntityData);
 	}
 
-	// Token: 0x060007C0 RID: 1984 RVA: 0x00036EF4 File Offset: 0x000350F4
+	// Token: 0x060007CA RID: 1994 RVA: 0x000371E4 File Offset: 0x000353E4
 	public override void OnBlockLoaded(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockLoaded(_world, _blockPos, _blockValue);
@@ -221,7 +221,7 @@ public class BlockLauncher : BlockPowered
 		PowerManager.Instance.SetTileEntityUpdate(tileEntityPoweredBlock, flag);
 	}
 
-	// Token: 0x060007C1 RID: 1985 RVA: 0x00036F34 File Offset: 0x00035134
+	// Token: 0x060007CB RID: 1995 RVA: 0x00037224 File Offset: 0x00035424
 	public override TileEntityPowered CreateTileEntity(Chunk _chunk)
 	{
 		return new TileEntityPoweredRangedTrap(_chunk)
@@ -230,7 +230,7 @@ public class BlockLauncher : BlockPowered
 		};
 	}
 
-	// Token: 0x060007C2 RID: 1986 RVA: 0x00036F44 File Offset: 0x00035144
+	// Token: 0x060007CC RID: 1996 RVA: 0x00037234 File Offset: 0x00035434
 	public bool InstantiateProjectile(WorldBase _world, Vector3i _blockPos)
 	{
 		TileEntityPoweredRangedTrap tileEntityPoweredRangedTrap = _world.GetTileEntity(_blockPos) as TileEntityPoweredRangedTrap;
@@ -297,14 +297,14 @@ public class BlockLauncher : BlockPowered
 		return true;
 	}
 
-	// Token: 0x04000914 RID: 2324
+	// Token: 0x04000916 RID: 2326
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string playSound;
 
-	// Token: 0x04000915 RID: 2325
+	// Token: 0x04000917 RID: 2327
 	public string AmmoItemName;
 
-	// Token: 0x04000916 RID: 2326
+	// Token: 0x04000918 RID: 2328
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new readonly BlockActivationCommand[] cmds = new BlockActivationCommand[]
 	{

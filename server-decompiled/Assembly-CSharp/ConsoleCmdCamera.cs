@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020001EE RID: 494
+// Token: 0x020001F0 RID: 496
 [Preserve]
 public class ConsoleCmdCamera : ConsoleCmdAbstract
 {
-	// Token: 0x06000F3F RID: 3903 RVA: 0x0006327B File Offset: 0x0006147B
+	// Token: 0x06000F4A RID: 3914 RVA: 0x000637C3 File Offset: 0x000619C3
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -14,7 +14,7 @@ public class ConsoleCmdCamera : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000146 RID: 326
-	// (get) Token: 0x06000F40 RID: 3904 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// (get) Token: 0x06000F4B RID: 3915 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -23,21 +23,21 @@ public class ConsoleCmdCamera : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F41 RID: 3905 RVA: 0x00063293 File Offset: 0x00061493
+	// Token: 0x06000F4C RID: 3916 RVA: 0x000637DB File Offset: 0x000619DB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Lock/unlock camera movement or load/save a specific camera position";
 	}
 
-	// Token: 0x06000F42 RID: 3906 RVA: 0x0006329A File Offset: 0x0006149A
+	// Token: 0x06000F4D RID: 3917 RVA: 0x000637E2 File Offset: 0x000619E2
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Usage:\n   1. cam save <name> [comment]\n   2. cam load <name>\n   3. cam list\n   4. cam lock\n   5. cam unlock\n1. Save the current player's position and camera view or the camera position\nand view if in detached mode under the given name. Optionally a more descriptive\ncomment can be supplied.\n2. Load the position and direction with the given name. If in detached camera\nmode the camera itself will be adjusted, otherwise the player will be teleported.\n3. List the saved camera positions.\n4/5. Lock/unlock the camera rotation. Can also be achieved with the \"Lock Camera\" key.";
 	}
 
-	// Token: 0x06000F43 RID: 3907 RVA: 0x000632A4 File Offset: 0x000614A4
+	// Token: 0x06000F4E RID: 3918 RVA: 0x000637EC File Offset: 0x000619EC
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count < 1)
@@ -79,21 +79,21 @@ public class ConsoleCmdCamera : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Invalid sub command \"" + _params[0] + "\".");
 	}
 
-	// Token: 0x06000F44 RID: 3908 RVA: 0x000633A0 File Offset: 0x000615A0
+	// Token: 0x06000F4F RID: 3919 RVA: 0x000638E8 File Offset: 0x00061AE8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteLock(List<string> _params, EntityPlayerLocal _epl)
 	{
 		_epl.movementInput.bCameraPositionLocked = true;
 	}
 
-	// Token: 0x06000F45 RID: 3909 RVA: 0x000633AE File Offset: 0x000615AE
+	// Token: 0x06000F50 RID: 3920 RVA: 0x000638F6 File Offset: 0x00061AF6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteUnlock(List<string> _params, EntityPlayerLocal _epl)
 	{
 		_epl.movementInput.bCameraPositionLocked = false;
 	}
 
-	// Token: 0x06000F46 RID: 3910 RVA: 0x000633BC File Offset: 0x000615BC
+	// Token: 0x06000F51 RID: 3921 RVA: 0x00063904 File Offset: 0x00061B04
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteSave(List<string> _params, EntityPlayerLocal _epl)
 	{
@@ -110,7 +110,7 @@ public class ConsoleCmdCamera : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Position saved with name \"" + text + "\"");
 	}
 
-	// Token: 0x06000F47 RID: 3911 RVA: 0x00063438 File Offset: 0x00061638
+	// Token: 0x06000F52 RID: 3922 RVA: 0x00063980 File Offset: 0x00061B80
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteLoad(List<string> _params, EntityPlayerLocal _epl)
 	{
@@ -128,7 +128,7 @@ public class ConsoleCmdCamera : ConsoleCmdAbstract
 		perspective.ToPlayer(_epl);
 	}
 
-	// Token: 0x06000F48 RID: 3912 RVA: 0x00063490 File Offset: 0x00061690
+	// Token: 0x06000F53 RID: 3923 RVA: 0x000639D8 File Offset: 0x00061BD8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteList(List<string> _params)
 	{

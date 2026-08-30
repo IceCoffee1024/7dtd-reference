@@ -2,10 +2,10 @@
 
 namespace Platform
 {
-	// Token: 0x02001B08 RID: 6920
+	// Token: 0x02001B2F RID: 6959
 	public static class EnumAchievementDataStatExtensions
 	{
-		// Token: 0x0600CF40 RID: 53056 RVA: 0x004BC997 File Offset: 0x004BAB97
+		// Token: 0x0600D0C9 RID: 53449 RVA: 0x004C2D8B File Offset: 0x004C0F8B
 		public static bool IsSupported(this EnumAchievementDataStat _stat)
 		{
 			IAchievementManager achievementManager = PlatformManager.NativePlatform.AchievementManager;

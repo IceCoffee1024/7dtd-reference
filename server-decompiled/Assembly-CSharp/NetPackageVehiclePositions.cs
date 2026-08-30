@@ -4,18 +4,18 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000857 RID: 2135
+// Token: 0x02000863 RID: 2147
 [Preserve]
 public class NetPackageVehiclePositions : NetPackage
 {
-	// Token: 0x06003E53 RID: 15955 RVA: 0x00189643 File Offset: 0x00187843
+	// Token: 0x06003EB8 RID: 16056 RVA: 0x0018B713 File Offset: 0x00189913
 	public NetPackageVehiclePositions Setup([TupleElementNames(new string[] { "entityId", "position" })] List<ValueTuple<int, Vector3>> _positions)
 	{
 		this.positions = new List<ValueTuple<int, Vector3>>(_positions);
 		return this;
 	}
 
-	// Token: 0x06003E54 RID: 15956 RVA: 0x00189654 File Offset: 0x00187854
+	// Token: 0x06003EB9 RID: 16057 RVA: 0x0018B724 File Offset: 0x00189924
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		EntityPlayerLocal primaryPlayer = _world.GetPrimaryPlayer();
@@ -25,7 +25,7 @@ public class NetPackageVehiclePositions : NetPackage
 		}
 	}
 
-	// Token: 0x06003E55 RID: 15957 RVA: 0x00189684 File Offset: 0x00187884
+	// Token: 0x06003EBA RID: 16058 RVA: 0x0018B754 File Offset: 0x00189954
 	public override void read(PooledBinaryReader _reader)
 	{
 		int num = _reader.ReadInt32();
@@ -36,7 +36,7 @@ public class NetPackageVehiclePositions : NetPackage
 		}
 	}
 
-	// Token: 0x06003E56 RID: 15958 RVA: 0x001896CC File Offset: 0x001878CC
+	// Token: 0x06003EBB RID: 16059 RVA: 0x0018B79C File Offset: 0x0018999C
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -48,13 +48,13 @@ public class NetPackageVehiclePositions : NetPackage
 		}
 	}
 
-	// Token: 0x06003E57 RID: 15959 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06003EBC RID: 16060 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override int GetLength()
 	{
 		return 0;
 	}
 
-	// Token: 0x04003236 RID: 12854
+	// Token: 0x040032B7 RID: 12983
 	[TupleElementNames(new string[] { "entityId", "position" })]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ValueTuple<int, Vector3>> positions;

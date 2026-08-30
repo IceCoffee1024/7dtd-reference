@@ -3,55 +3,55 @@ using UnityEngine;
 
 namespace mumblelib
 {
-	// Token: 0x02001677 RID: 5751
+	// Token: 0x0200169D RID: 5789
 	public interface ILinkFile : IDisposable
 	{
-		// Token: 0x17001596 RID: 5526
-		// (get) Token: 0x0600B402 RID: 46082
-		// (set) Token: 0x0600B401 RID: 46081
+		// Token: 0x17001608 RID: 5640
+		// (get) Token: 0x0600B585 RID: 46469
+		// (set) Token: 0x0600B584 RID: 46468
 		uint UIVersion { get; set; }
 
-		// Token: 0x0600B403 RID: 46083
+		// Token: 0x0600B586 RID: 46470
 		void Tick();
 
-		// Token: 0x17001597 RID: 5527
-		// (set) Token: 0x0600B404 RID: 46084
+		// Token: 0x17001609 RID: 5641
+		// (set) Token: 0x0600B587 RID: 46471
 		Vector3 AvatarPosition { set; }
 
-		// Token: 0x17001598 RID: 5528
-		// (set) Token: 0x0600B405 RID: 46085
+		// Token: 0x1700160A RID: 5642
+		// (set) Token: 0x0600B588 RID: 46472
 		Vector3 AvatarForward { set; }
 
-		// Token: 0x17001599 RID: 5529
-		// (set) Token: 0x0600B406 RID: 46086
+		// Token: 0x1700160B RID: 5643
+		// (set) Token: 0x0600B589 RID: 46473
 		Vector3 AvatarTop { set; }
 
-		// Token: 0x1700159A RID: 5530
-		// (set) Token: 0x0600B407 RID: 46087
+		// Token: 0x1700160C RID: 5644
+		// (set) Token: 0x0600B58A RID: 46474
 		string Name { set; }
 
-		// Token: 0x1700159B RID: 5531
-		// (set) Token: 0x0600B408 RID: 46088
+		// Token: 0x1700160D RID: 5645
+		// (set) Token: 0x0600B58B RID: 46475
 		Vector3 CameraPosition { set; }
 
-		// Token: 0x1700159C RID: 5532
-		// (set) Token: 0x0600B409 RID: 46089
+		// Token: 0x1700160E RID: 5646
+		// (set) Token: 0x0600B58C RID: 46476
 		Vector3 CameraForward { set; }
 
-		// Token: 0x1700159D RID: 5533
-		// (set) Token: 0x0600B40A RID: 46090
+		// Token: 0x1700160F RID: 5647
+		// (set) Token: 0x0600B58D RID: 46477
 		Vector3 CameraTop { set; }
 
-		// Token: 0x1700159E RID: 5534
-		// (set) Token: 0x0600B40B RID: 46091
+		// Token: 0x17001610 RID: 5648
+		// (set) Token: 0x0600B58E RID: 46478
 		string Identity { set; }
 
-		// Token: 0x1700159F RID: 5535
-		// (set) Token: 0x0600B40C RID: 46092
+		// Token: 0x17001611 RID: 5649
+		// (set) Token: 0x0600B58F RID: 46479
 		string Context { set; }
 
-		// Token: 0x170015A0 RID: 5536
-		// (set) Token: 0x0600B40D RID: 46093
+		// Token: 0x17001612 RID: 5650
+		// (set) Token: 0x0600B590 RID: 46480
 		string Description { set; }
 	}
 }

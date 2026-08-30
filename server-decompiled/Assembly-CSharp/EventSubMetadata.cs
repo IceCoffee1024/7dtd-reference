@@ -1,25 +1,25 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-// Token: 0x02000C7A RID: 3194
+// Token: 0x02000C8C RID: 3212
 [Serializable]
 public class EventSubMetadata
 {
-	// Token: 0x17000A20 RID: 2592
-	// (get) Token: 0x06006226 RID: 25126 RVA: 0x0026A744 File Offset: 0x00268944
-	// (set) Token: 0x06006227 RID: 25127 RVA: 0x0026A74C File Offset: 0x0026894C
+	// Token: 0x17000A33 RID: 2611
+	// (get) Token: 0x060062B1 RID: 25265 RVA: 0x0026D61C File Offset: 0x0026B81C
+	// (set) Token: 0x060062B2 RID: 25266 RVA: 0x0026D624 File Offset: 0x0026B824
 	[JsonProperty("message_id")]
 	public string MessageId { get; set; } = string.Empty;
 
-	// Token: 0x17000A21 RID: 2593
-	// (get) Token: 0x06006228 RID: 25128 RVA: 0x0026A755 File Offset: 0x00268955
-	// (set) Token: 0x06006229 RID: 25129 RVA: 0x0026A75D File Offset: 0x0026895D
+	// Token: 0x17000A34 RID: 2612
+	// (get) Token: 0x060062B3 RID: 25267 RVA: 0x0026D62D File Offset: 0x0026B82D
+	// (set) Token: 0x060062B4 RID: 25268 RVA: 0x0026D635 File Offset: 0x0026B835
 	[JsonProperty("message_type")]
 	public string MessageType { get; set; } = string.Empty;
 
-	// Token: 0x17000A22 RID: 2594
-	// (get) Token: 0x0600622A RID: 25130 RVA: 0x0026A766 File Offset: 0x00268966
-	// (set) Token: 0x0600622B RID: 25131 RVA: 0x0026A76E File Offset: 0x0026896E
+	// Token: 0x17000A35 RID: 2613
+	// (get) Token: 0x060062B5 RID: 25269 RVA: 0x0026D63E File Offset: 0x0026B83E
+	// (set) Token: 0x060062B6 RID: 25270 RVA: 0x0026D646 File Offset: 0x0026B846
 	[JsonProperty("message_timestamp")]
 	public string MessageTimestamp { get; set; } = string.Empty;
 }

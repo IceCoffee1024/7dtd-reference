@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000805 RID: 2053
+// Token: 0x02000810 RID: 2064
 [Preserve]
 public class NetPackageMapPosition : NetPackage
 {
-	// Token: 0x1700064D RID: 1613
-	// (get) Token: 0x06003C71 RID: 15473 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000658 RID: 1624
+	// (get) Token: 0x06003CD0 RID: 15568 RVA: 0x00020021 File Offset: 0x0001E221
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,7 +15,7 @@ public class NetPackageMapPosition : NetPackage
 		}
 	}
 
-	// Token: 0x06003C72 RID: 15474 RVA: 0x0018162A File Offset: 0x0017F82A
+	// Token: 0x06003CD1 RID: 15569 RVA: 0x00183A02 File Offset: 0x00181C02
 	public NetPackageMapPosition Setup(int _entityId, Vector2i _mapMiddlePosition)
 	{
 		this.entityId = _entityId;
@@ -23,14 +23,14 @@ public class NetPackageMapPosition : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003C73 RID: 15475 RVA: 0x0018163B File Offset: 0x0017F83B
+	// Token: 0x06003CD2 RID: 15570 RVA: 0x00183A13 File Offset: 0x00181C13
 	public override void read(PooledBinaryReader _br)
 	{
 		this.entityId = _br.ReadInt32();
 		this.mapMiddlePosition = StreamUtils.ReadVector2i(_br);
 	}
 
-	// Token: 0x06003C74 RID: 15476 RVA: 0x00181655 File Offset: 0x0017F855
+	// Token: 0x06003CD3 RID: 15571 RVA: 0x00183A2D File Offset: 0x00181C2D
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -38,7 +38,7 @@ public class NetPackageMapPosition : NetPackage
 		StreamUtils.Write(_bw, this.mapMiddlePosition);
 	}
 
-	// Token: 0x06003C75 RID: 15477 RVA: 0x00181678 File Offset: 0x0017F878
+	// Token: 0x06003CD4 RID: 15572 RVA: 0x00183A50 File Offset: 0x00181C50
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -56,17 +56,17 @@ public class NetPackageMapPosition : NetPackage
 		}
 	}
 
-	// Token: 0x06003C76 RID: 15478 RVA: 0x0017BE6E File Offset: 0x0017A06E
+	// Token: 0x06003CD5 RID: 15573 RVA: 0x0017E246 File Offset: 0x0017C446
 	public override int GetLength()
 	{
 		return 16;
 	}
 
-	// Token: 0x040030D5 RID: 12501
+	// Token: 0x04003154 RID: 12628
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityId;
 
-	// Token: 0x040030D6 RID: 12502
+	// Token: 0x04003155 RID: 12629
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2i mapMiddlePosition;
 }

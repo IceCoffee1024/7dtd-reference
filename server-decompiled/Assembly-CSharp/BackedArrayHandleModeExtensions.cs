@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02001370 RID: 4976
+// Token: 0x0200138A RID: 5002
 public static class BackedArrayHandleModeExtensions
 {
-	// Token: 0x06009CCC RID: 40140 RVA: 0x003B45E4 File Offset: 0x003B27E4
+	// Token: 0x06009DC7 RID: 40391 RVA: 0x003B9898 File Offset: 0x003B7A98
 	public static bool CanRead(this BackedArrayHandleMode mode)
 	{
 		bool flag;
@@ -22,7 +22,7 @@ public static class BackedArrayHandleModeExtensions
 		return flag;
 	}
 
-	// Token: 0x06009CCD RID: 40141 RVA: 0x003B4624 File Offset: 0x003B2824
+	// Token: 0x06009DC8 RID: 40392 RVA: 0x003B98D8 File Offset: 0x003B7AD8
 	public static bool CanWrite(this BackedArrayHandleMode mode)
 	{
 		bool flag;

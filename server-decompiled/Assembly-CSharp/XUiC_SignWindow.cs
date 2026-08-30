@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02001036 RID: 4150
+// Token: 0x0200104F RID: 4175
 [Preserve]
 public class XUiC_SignWindow : XUiController
 {
-	// Token: 0x060083A9 RID: 33705 RVA: 0x003227D4 File Offset: 0x003209D4
+	// Token: 0x0600849B RID: 33947 RVA: 0x00326FFC File Offset: 0x003251FC
 	public override void Init()
 	{
 		base.Init();
@@ -29,7 +29,7 @@ public class XUiC_SignWindow : XUiController
 		xuiView.Controller.OnPress += this.closeButton_OnPress;
 	}
 
-	// Token: 0x060083AA RID: 33706 RVA: 0x00322904 File Offset: 0x00320B04
+	// Token: 0x0600849C RID: 33948 RVA: 0x0032712C File Offset: 0x0032532C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TextInput_OnSubmitHandler(XUiController _sender, string _text)
 	{
@@ -49,20 +49,20 @@ public class XUiC_SignWindow : XUiController
 		}
 	}
 
-	// Token: 0x060083AB RID: 33707 RVA: 0x002A4621 File Offset: 0x002A2821
+	// Token: 0x0600849D RID: 33949 RVA: 0x002A7AB5 File Offset: 0x002A5CB5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void closeButton_OnPress(XUiController _sender, int _mouseButton)
 	{
 		this.xui.playerUI.windowManager.Close(base.WindowGroup, false);
 	}
 
-	// Token: 0x060083AC RID: 33708 RVA: 0x0032295B File Offset: 0x00320B5B
+	// Token: 0x0600849E RID: 33950 RVA: 0x00327183 File Offset: 0x00325383
 	public void SetTileEntitySign(ITileEntitySignable _te)
 	{
 		this.SignTileEntity = _te;
 	}
 
-	// Token: 0x060083AD RID: 33709 RVA: 0x00322964 File Offset: 0x00320B64
+	// Token: 0x0600849F RID: 33951 RVA: 0x0032718C File Offset: 0x0032538C
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -92,7 +92,7 @@ public class XUiC_SignWindow : XUiController
 		this.xui.playerUI.CursorController.SetNavigationLockView(base.ViewComponent, null);
 	}
 
-	// Token: 0x060083AE RID: 33710 RVA: 0x00322A50 File Offset: 0x00320C50
+	// Token: 0x060084A0 RID: 33952 RVA: 0x00327278 File Offset: 0x00325478
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -118,7 +118,7 @@ public class XUiC_SignWindow : XUiController
 		}, true, false, GeneratedTextManager.TextFilteringMode.FilterWithSafeString, GeneratedTextManager.BbCodeSupportMode.NotSupported);
 	}
 
-	// Token: 0x060083AF RID: 33711 RVA: 0x00322BA0 File Offset: 0x00320DA0
+	// Token: 0x060084A1 RID: 33953 RVA: 0x003273C8 File Offset: 0x003255C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FinishClosing()
 	{
@@ -126,23 +126,23 @@ public class XUiC_SignWindow : XUiController
 		LockManager.Instance.UnlockRequestLocal();
 	}
 
-	// Token: 0x04006189 RID: 24969
+	// Token: 0x04006250 RID: 25168
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ITileEntitySignable SignTileEntity;
 
-	// Token: 0x0400618A RID: 24970
+	// Token: 0x04006251 RID: 25169
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool separateLineMode;
 
-	// Token: 0x0400618B RID: 24971
+	// Token: 0x04006252 RID: 25170
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput textInput1;
 
-	// Token: 0x0400618C RID: 24972
+	// Token: 0x04006253 RID: 25171
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput textInput2;
 
-	// Token: 0x0400618D RID: 24973
+	// Token: 0x04006254 RID: 25172
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput textInput3;
 }

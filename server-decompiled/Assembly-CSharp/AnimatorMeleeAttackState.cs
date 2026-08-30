@@ -5,14 +5,14 @@ using UnityEngine;
 // Token: 0x0200009D RID: 157
 public class AnimatorMeleeAttackState : StateMachineBehaviour
 {
-	// Token: 0x0600030F RID: 783 RVA: 0x0001752C File Offset: 0x0001572C
+	// Token: 0x0600030F RID: 783 RVA: 0x0001753C File Offset: 0x0001573C
 	public AnimatorMeleeAttackState()
 	{
 		AnimatorMeleeAttackState.FistHoldHash = Animator.StringToHash("fistHold");
 		AnimatorMeleeAttackState.FpvFistHoldHash = Animator.StringToHash("fpvFistHold");
 	}
 
-	// Token: 0x06000310 RID: 784 RVA: 0x00017580 File Offset: 0x00015780
+	// Token: 0x06000310 RID: 784 RVA: 0x00017590 File Offset: 0x00015790
 	public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 		if (this.playingImpact)
@@ -77,7 +77,7 @@ public class AnimatorMeleeAttackState : StateMachineBehaviour
 		GameManager.Instance.StartCoroutine(this.impactStart(animator, animator.GetNextAnimatorStateInfo(layerIndex), clip, layerIndex));
 	}
 
-	// Token: 0x06000311 RID: 785 RVA: 0x0001783A File Offset: 0x00015A3A
+	// Token: 0x06000311 RID: 785 RVA: 0x0001784A File Offset: 0x00015A4A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator impactStart(Animator animator, AnimatorStateInfo stateInfo, AnimationClip clip, int layerIndex)
 	{
@@ -99,7 +99,7 @@ public class AnimatorMeleeAttackState : StateMachineBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000312 RID: 786 RVA: 0x00017866 File Offset: 0x00015A66
+	// Token: 0x06000312 RID: 786 RVA: 0x00017876 File Offset: 0x00015A76
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator impactStop(Animator animator, AnimatorStateInfo stateInfo, AnimationClip clip, int layerIndex)
 	{
@@ -110,7 +110,7 @@ public class AnimatorMeleeAttackState : StateMachineBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000313 RID: 787 RVA: 0x0001788C File Offset: 0x00015A8C
+	// Token: 0x06000313 RID: 787 RVA: 0x0001789C File Offset: 0x00015A9C
 	public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 		if (this.entity != null && !this.entity.isEntityRemote && this.actionIndex >= 0)
@@ -124,7 +124,7 @@ public class AnimatorMeleeAttackState : StateMachineBehaviour
 		}
 	}
 
-	// Token: 0x06000314 RID: 788 RVA: 0x00017900 File Offset: 0x00015B00
+	// Token: 0x06000314 RID: 788 RVA: 0x00017910 File Offset: 0x00015B10
 	public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 		float normalizedTime = stateInfo.normalizedTime;

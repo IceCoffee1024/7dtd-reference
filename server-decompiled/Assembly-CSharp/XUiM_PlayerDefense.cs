@@ -1,51 +1,51 @@
 ﻿using System;
 
-// Token: 0x02001114 RID: 4372
+// Token: 0x0200112D RID: 4397
 public class XUiM_PlayerDefense : XUiModel
 {
-	// Token: 0x06008A11 RID: 35345 RVA: 0x0034AEF8 File Offset: 0x003490F8
+	// Token: 0x06008B03 RID: 35587 RVA: 0x0034F71C File Offset: 0x0034D91C
 	public static string GetBashing(EntityPlayer _player)
 	{
 		return XUiM_PlayerDefense.GetDefenseFromPlayer(_player, EnumDamageTypes.Bashing) + "%";
 	}
 
-	// Token: 0x06008A12 RID: 35346 RVA: 0x0034AF0B File Offset: 0x0034910B
+	// Token: 0x06008B04 RID: 35588 RVA: 0x0034F72F File Offset: 0x0034D92F
 	public static string GetPiercing(EntityPlayer _player)
 	{
 		return XUiM_PlayerDefense.GetDefenseFromPlayer(_player, EnumDamageTypes.Piercing) + "%";
 	}
 
-	// Token: 0x06008A13 RID: 35347 RVA: 0x0034AF1E File Offset: 0x0034911E
+	// Token: 0x06008B05 RID: 35589 RVA: 0x0034F742 File Offset: 0x0034D942
 	public static string GetRadiation(EntityPlayer _player)
 	{
 		return XUiM_PlayerDefense.GetDefenseFromPlayer(_player, EnumDamageTypes.Radiation) + "%";
 	}
 
-	// Token: 0x06008A14 RID: 35348 RVA: 0x0034AF31 File Offset: 0x00349131
+	// Token: 0x06008B06 RID: 35590 RVA: 0x0034F755 File Offset: 0x0034D955
 	public static string GetWaterproof(EntityPlayer _player)
 	{
 		return string.Format("{0}%", (int)(_player.equipment.GetTotalWaterproof() * 100f));
 	}
 
-	// Token: 0x06008A15 RID: 35349 RVA: 0x0034AF54 File Offset: 0x00349154
+	// Token: 0x06008B07 RID: 35591 RVA: 0x0034F778 File Offset: 0x0034D978
 	public static string GetFireproof(EntityPlayer _player)
 	{
 		return XUiM_PlayerDefense.GetDefenseFromPlayer(_player, EnumDamageTypes.Heat) + "%";
 	}
 
-	// Token: 0x06008A16 RID: 35350 RVA: 0x0034AF67 File Offset: 0x00349167
+	// Token: 0x06008B08 RID: 35592 RVA: 0x0034F78B File Offset: 0x0034D98B
 	public static string GetElectrical(EntityPlayer _player)
 	{
 		return XUiM_PlayerDefense.GetDefenseFromPlayer(_player, EnumDamageTypes.Electrical) + "%";
 	}
 
-	// Token: 0x06008A17 RID: 35351 RVA: 0x0034AF7B File Offset: 0x0034917B
+	// Token: 0x06008B09 RID: 35593 RVA: 0x0034F79F File Offset: 0x0034D99F
 	public static string GetInsulation(EntityPlayer _player)
 	{
 		return ValueDisplayFormatters.TemperatureRelative(_player.equipment.GetTotalInsulation(), 0);
 	}
 
-	// Token: 0x06008A18 RID: 35352 RVA: 0x0034AF90 File Offset: 0x00349190
+	// Token: 0x06008B0A RID: 35594 RVA: 0x0034F7B4 File Offset: 0x0034D9B4
 	public static string GetWeight(EntityPlayer _player)
 	{
 		float num = 0f;
@@ -62,7 +62,7 @@ public class XUiM_PlayerDefense : XUiModel
 		return num.ToCultureInvariantString() + "%";
 	}
 
-	// Token: 0x06008A19 RID: 35353 RVA: 0x0034AFF8 File Offset: 0x003491F8
+	// Token: 0x06008B0B RID: 35595 RVA: 0x0034F81C File Offset: 0x0034DA1C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetDefenseFromPlayer(EntityPlayer _player, EnumDamageTypes _armorType)
 	{
@@ -81,25 +81,25 @@ public class XUiM_PlayerDefense : XUiModel
 		return num.ToCultureInvariantString("00");
 	}
 
-	// Token: 0x06008A1A RID: 35354 RVA: 0x0034B06D File Offset: 0x0034926D
+	// Token: 0x06008B0C RID: 35596 RVA: 0x0034F891 File Offset: 0x0034DA91
 	public static string GetBashing(ItemValue _itemValue, XUi _xui)
 	{
 		return XUiM_PlayerDefense.GetDefenseFromItemValue(_itemValue, EnumDamageTypes.Bashing, _xui) + "%";
 	}
 
-	// Token: 0x06008A1B RID: 35355 RVA: 0x0034B081 File Offset: 0x00349281
+	// Token: 0x06008B0D RID: 35597 RVA: 0x0034F8A5 File Offset: 0x0034DAA5
 	public static string GetPiercing(ItemValue _itemValue, XUi _xui)
 	{
 		return XUiM_PlayerDefense.GetDefenseFromItemValue(_itemValue, EnumDamageTypes.Piercing, _xui) + "%";
 	}
 
-	// Token: 0x06008A1C RID: 35356 RVA: 0x0034B095 File Offset: 0x00349295
+	// Token: 0x06008B0E RID: 35598 RVA: 0x0034F8B9 File Offset: 0x0034DAB9
 	public static string GetRadiation(ItemValue _itemValue, XUi _xui)
 	{
 		return XUiM_PlayerDefense.GetDefenseFromItemValue(_itemValue, EnumDamageTypes.Radiation, _xui) + "%";
 	}
 
-	// Token: 0x06008A1D RID: 35357 RVA: 0x0034B0AC File Offset: 0x003492AC
+	// Token: 0x06008B0F RID: 35599 RVA: 0x0034F8D0 File Offset: 0x0034DAD0
 	public static string GetWaterproof(ItemValue _itemValue)
 	{
 		float num = 0f;
@@ -111,19 +111,19 @@ public class XUiM_PlayerDefense : XUiModel
 		return string.Format("{0}%", (int)(num * 100f));
 	}
 
-	// Token: 0x06008A1E RID: 35358 RVA: 0x0034B0E7 File Offset: 0x003492E7
+	// Token: 0x06008B10 RID: 35600 RVA: 0x0034F90B File Offset: 0x0034DB0B
 	public static string GetFireproof(ItemValue _itemValue, XUi _xui)
 	{
 		return XUiM_PlayerDefense.GetDefenseFromItemValue(_itemValue, EnumDamageTypes.Heat, _xui) + "%";
 	}
 
-	// Token: 0x06008A1F RID: 35359 RVA: 0x0034B0FB File Offset: 0x003492FB
+	// Token: 0x06008B11 RID: 35601 RVA: 0x0034F91F File Offset: 0x0034DB1F
 	public static string GetElectrical(ItemValue _itemValue, XUi _xui)
 	{
 		return XUiM_PlayerDefense.GetDefenseFromItemValue(_itemValue, EnumDamageTypes.Electrical, _xui) + "%";
 	}
 
-	// Token: 0x06008A20 RID: 35360 RVA: 0x0034B110 File Offset: 0x00349310
+	// Token: 0x06008B12 RID: 35602 RVA: 0x0034F934 File Offset: 0x0034DB34
 	public static string GetInsulation(ItemValue _itemValue)
 	{
 		float num = 0f;
@@ -135,7 +135,7 @@ public class XUiM_PlayerDefense : XUiModel
 		return ValueDisplayFormatters.TemperatureRelative(num, 0);
 	}
 
-	// Token: 0x06008A21 RID: 35361 RVA: 0x0034B13C File Offset: 0x0034933C
+	// Token: 0x06008B13 RID: 35603 RVA: 0x0034F960 File Offset: 0x0034DB60
 	public static string GetWeight(ItemValue _itemValue)
 	{
 		float num = 0f;
@@ -147,7 +147,7 @@ public class XUiM_PlayerDefense : XUiModel
 		return num.ToCultureInvariantString() + "%";
 	}
 
-	// Token: 0x06008A22 RID: 35362 RVA: 0x0034B178 File Offset: 0x00349378
+	// Token: 0x06008B14 RID: 35604 RVA: 0x0034F99C File Offset: 0x0034DB9C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetDefenseFromItemValue(ItemValue _itemValue, EnumDamageTypes _damageType, XUi _xui)
 	{

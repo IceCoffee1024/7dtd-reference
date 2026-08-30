@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using UnityEngine.Profiling;
 using UnityEngine.Scripting;
 
-// Token: 0x0200026E RID: 622
+// Token: 0x02000272 RID: 626
 [Preserve]
 public class ConsoleCmdProfiling : ConsoleCmdAbstract
 {
-	// Token: 0x170001EB RID: 491
-	// (get) Token: 0x0600127B RID: 4731 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x170001EC RID: 492
+	// (get) Token: 0x0600128D RID: 4749 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -18,15 +18,15 @@ public class ConsoleCmdProfiling : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600127C RID: 4732 RVA: 0x000739CE File Offset: 0x00071BCE
+	// Token: 0x0600128E RID: 4750 RVA: 0x0007402A File Offset: 0x0007222A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "profiling" };
 	}
 
-	// Token: 0x170001EC RID: 492
-	// (get) Token: 0x0600127D RID: 4733 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x170001ED RID: 493
+	// (get) Token: 0x0600128F RID: 4751 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -35,7 +35,7 @@ public class ConsoleCmdProfiling : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600127E RID: 4734 RVA: 0x000739E0 File Offset: 0x00071BE0
+	// Token: 0x06001290 RID: 4752 RVA: 0x0007403C File Offset: 0x0007223C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (this.cmdNetwork == null)
@@ -85,7 +85,7 @@ public class ConsoleCmdProfiling : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Profiling stopped.");
 	}
 
-	// Token: 0x0600127F RID: 4735 RVA: 0x00073B5E File Offset: 0x00071D5E
+	// Token: 0x06001291 RID: 4753 RVA: 0x000741BA File Offset: 0x000723BA
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator stopProfilingLater(int _frames)
 	{
@@ -104,7 +104,7 @@ public class ConsoleCmdProfiling : ConsoleCmdAbstract
 		yield break;
 	}
 
-	// Token: 0x06001280 RID: 4736 RVA: 0x00073B74 File Offset: 0x00071D74
+	// Token: 0x06001292 RID: 4754 RVA: 0x000741D0 File Offset: 0x000723D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void stopProfiling()
 	{
@@ -121,30 +121,30 @@ public class ConsoleCmdProfiling : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001281 RID: 4737 RVA: 0x00073B9A File Offset: 0x00071D9A
+	// Token: 0x06001293 RID: 4755 RVA: 0x000741F6 File Offset: 0x000723F6
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Enable Unity profiling for 300 frames";
 	}
 
-	// Token: 0x04000D37 RID: 3383
+	// Token: 0x04000D48 RID: 3400
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ConsoleCmdProfileNetwork cmdNetwork;
 
-	// Token: 0x04000D38 RID: 3384
+	// Token: 0x04000D49 RID: 3401
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool profileNetwork;
 
-	// Token: 0x04000D39 RID: 3385
+	// Token: 0x04000D4A RID: 3402
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int FramesDefault = 300;
 
-	// Token: 0x04000D3A RID: 3386
+	// Token: 0x04000D4B RID: 3403
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int FramesMin = 10;
 
-	// Token: 0x04000D3B RID: 3387
+	// Token: 0x04000D4C RID: 3404
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int FramesMax = 3000;
 }

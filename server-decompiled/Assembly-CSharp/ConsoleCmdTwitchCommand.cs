@@ -4,19 +4,19 @@ using Platform;
 using Twitch;
 using UnityEngine.Scripting;
 
-// Token: 0x020002B3 RID: 691
+// Token: 0x020002B7 RID: 695
 [Preserve]
 public class ConsoleCmdTwitchCommand : ConsoleCmdAbstract
 {
-	// Token: 0x060013F6 RID: 5110 RVA: 0x000797DE File Offset: 0x000779DE
+	// Token: 0x06001408 RID: 5128 RVA: 0x00079E3A File Offset: 0x0007803A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "twitch" };
 	}
 
-	// Token: 0x1700022B RID: 555
-	// (get) Token: 0x060013F7 RID: 5111 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x1700022C RID: 556
+	// (get) Token: 0x06001409 RID: 5129 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -25,8 +25,8 @@ public class ConsoleCmdTwitchCommand : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x1700022C RID: 556
-	// (get) Token: 0x060013F8 RID: 5112 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// Token: 0x1700022D RID: 557
+	// (get) Token: 0x0600140A RID: 5130 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -35,8 +35,8 @@ public class ConsoleCmdTwitchCommand : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x1700022D RID: 557
-	// (get) Token: 0x060013F9 RID: 5113 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// Token: 0x1700022E RID: 558
+	// (get) Token: 0x0600140B RID: 5131 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -45,7 +45,7 @@ public class ConsoleCmdTwitchCommand : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060013FA RID: 5114 RVA: 0x000797F0 File Offset: 0x000779F0
+	// Token: 0x0600140C RID: 5132 RVA: 0x00079E4C File Offset: 0x0007804C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (!TwitchManager.Current.IsReady)
@@ -69,7 +69,7 @@ public class ConsoleCmdTwitchCommand : ConsoleCmdAbstract
 		TwitchManager.Current.HandleConsoleAction(_params);
 	}
 
-	// Token: 0x060013FB RID: 5115 RVA: 0x000798B5 File Offset: 0x00077AB5
+	// Token: 0x0600140D RID: 5133 RVA: 0x00079F11 File Offset: 0x00078111
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

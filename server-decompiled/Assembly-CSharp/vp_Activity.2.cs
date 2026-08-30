@@ -1,15 +1,15 @@
 ﻿using System;
 
-// Token: 0x02001525 RID: 5413
+// Token: 0x02001540 RID: 5440
 public class vp_Activity<V> : vp_Activity
 {
-	// Token: 0x0600A9F8 RID: 43512 RVA: 0x003F7451 File Offset: 0x003F5651
+	// Token: 0x0600AAF5 RID: 43765 RVA: 0x003FC791 File Offset: 0x003FA991
 	public vp_Activity(string name)
 		: base(name)
 	{
 	}
 
-	// Token: 0x0600A9F9 RID: 43513 RVA: 0x003F745A File Offset: 0x003F565A
+	// Token: 0x0600AAF6 RID: 43766 RVA: 0x003FC79A File Offset: 0x003FA99A
 	public bool TryStart<T>(T argument)
 	{
 		if (this.m_Active)

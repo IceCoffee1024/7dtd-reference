@@ -3,10 +3,10 @@ using System.IO;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
-// Token: 0x020013FF RID: 5119
+// Token: 0x0200141A RID: 5146
 public static class HeightMapUtils
 {
-	// Token: 0x0600A0AF RID: 41135 RVA: 0x003C4D8C File Offset: 0x003C2F8C
+	// Token: 0x0600A1AC RID: 41388 RVA: 0x003CA0D0 File Offset: 0x003C82D0
 	public static bool TryGetHeightDataFromResources(string levelName, out float[,] heightData)
 	{
 		Texture2D texture2D = Resources.Load("Data/Worlds/" + levelName + "/dtm", typeof(Texture2D)) as Texture2D;
@@ -20,7 +20,7 @@ public static class HeightMapUtils
 		return true;
 	}
 
-	// Token: 0x0600A0B0 RID: 41136 RVA: 0x003C4DDC File Offset: 0x003C2FDC
+	// Token: 0x0600A1AD RID: 41389 RVA: 0x003CA120 File Offset: 0x003C8320
 	public static float[,] GetHeightDataFromWorld(string worldPath, bool loadPNG = true)
 	{
 		string text = worldPath + "/dtm";
@@ -42,7 +42,7 @@ public static class HeightMapUtils
 		return array;
 	}
 
-	// Token: 0x0600A0B1 RID: 41137 RVA: 0x003C4E60 File Offset: 0x003C3060
+	// Token: 0x0600A1AE RID: 41390 RVA: 0x003CA1A4 File Offset: 0x003C83A4
 	public static float[,] GetHeightDataFromImageFile(string filePath)
 	{
 		if (!SdFile.Exists(filePath))
@@ -55,7 +55,7 @@ public static class HeightMapUtils
 		return array;
 	}
 
-	// Token: 0x0600A0B2 RID: 41138 RVA: 0x003C4E94 File Offset: 0x003C3094
+	// Token: 0x0600A1AF RID: 41391 RVA: 0x003CA1D8 File Offset: 0x003C83D8
 	public static float[,] ConvertDTMToHeightData(Color[] dtmPixs, int dtmSize, bool _bFlip = false)
 	{
 		float[,] array = new float[dtmSize, dtmSize];
@@ -82,7 +82,7 @@ public static class HeightMapUtils
 		return array;
 	}
 
-	// Token: 0x0600A0B3 RID: 41139 RVA: 0x003C4F28 File Offset: 0x003C3128
+	// Token: 0x0600A1B0 RID: 41392 RVA: 0x003CA26C File Offset: 0x003C846C
 	public static float[,] ConvertDTMToHeightData(Texture2D dtm, bool _bFlip = false)
 	{
 		Color[] pixels = dtm.GetPixels();
@@ -112,7 +112,7 @@ public static class HeightMapUtils
 		return array;
 	}
 
-	// Token: 0x0600A0B4 RID: 41140 RVA: 0x003C4FF8 File Offset: 0x003C31F8
+	// Token: 0x0600A1B1 RID: 41393 RVA: 0x003CA33C File Offset: 0x003C853C
 	public static float[,] ConvertDTMToTerrainStampData(Texture2D dtm)
 	{
 		Color[] pixels = dtm.GetPixels();
@@ -127,7 +127,7 @@ public static class HeightMapUtils
 		return array;
 	}
 
-	// Token: 0x0600A0B5 RID: 41141 RVA: 0x003C5060 File Offset: 0x003C3260
+	// Token: 0x0600A1B2 RID: 41394 RVA: 0x003CA3A4 File Offset: 0x003C85A4
 	public static float[,] ConvertDTMToHeightData(Color32[] dtmPixs, int w, int h, bool _bFlip = false)
 	{
 		float[,] array = new float[w, h];
@@ -162,7 +162,7 @@ public static class HeightMapUtils
 		return array;
 	}
 
-	// Token: 0x0600A0B6 RID: 41142 RVA: 0x003C5184 File Offset: 0x003C3384
+	// Token: 0x0600A1B3 RID: 41395 RVA: 0x003CA4C8 File Offset: 0x003C86C8
 	public static float[,] LoadRAWToHeightData(string _filePath)
 	{
 		ushort[] array = HeightMapUtils.LoadHeightMapRAW(_filePath);
@@ -180,7 +180,7 @@ public static class HeightMapUtils
 		return array2;
 	}
 
-	// Token: 0x0600A0B7 RID: 41143 RVA: 0x003C51F8 File Offset: 0x003C33F8
+	// Token: 0x0600A1B4 RID: 41396 RVA: 0x003CA53C File Offset: 0x003C873C
 	public static ushort[] LoadHeightMapRAW(string _filePath)
 	{
 		ushort[] array3;
@@ -218,7 +218,7 @@ public static class HeightMapUtils
 		return array3;
 	}
 
-	// Token: 0x0600A0B8 RID: 41144 RVA: 0x003C52E0 File Offset: 0x003C34E0
+	// Token: 0x0600A1B5 RID: 41397 RVA: 0x003CA624 File Offset: 0x003C8824
 	public unsafe static IBackedArray<ushort> LoadHeightMapRAW(string _filePath, int w, int h, float _fac = 1f, int _clampHeight = 1)
 	{
 		_clampHeight *= 256;
@@ -268,7 +268,7 @@ public static class HeightMapUtils
 		return backedArray2;
 	}
 
-	// Token: 0x0600A0B9 RID: 41145 RVA: 0x003C5424 File Offset: 0x003C3624
+	// Token: 0x0600A1B6 RID: 41398 RVA: 0x003CA768 File Offset: 0x003C8968
 	public static float[,] LoadHeightMapRAWAsUnityHeightMap(string _filePath, int w, int h, float _fac = 1f)
 	{
 		float[,] array3;
@@ -301,7 +301,7 @@ public static class HeightMapUtils
 		return array3;
 	}
 
-	// Token: 0x0600A0BA RID: 41146 RVA: 0x003C54E4 File Offset: 0x003C36E4
+	// Token: 0x0600A1B7 RID: 41399 RVA: 0x003CA828 File Offset: 0x003C8A28
 	public static float[,] LoadHeightMapRAWAsStampData(string _filePath, float multiplier = 1f)
 	{
 		float[,] array3;
@@ -335,7 +335,7 @@ public static class HeightMapUtils
 		return array3;
 	}
 
-	// Token: 0x0600A0BB RID: 41147 RVA: 0x003C55C0 File Offset: 0x003C37C0
+	// Token: 0x0600A1B8 RID: 41400 RVA: 0x003CA904 File Offset: 0x003C8B04
 	public static void SaveHeightMapRAW(string _filePath, int w, int h, float[] _data)
 	{
 		using (BufferedStream bufferedStream = new BufferedStream(SdFile.OpenWrite(_filePath)))
@@ -356,7 +356,7 @@ public static class HeightMapUtils
 		}
 	}
 
-	// Token: 0x0600A0BC RID: 41148 RVA: 0x003C5650 File Offset: 0x003C3850
+	// Token: 0x0600A1B9 RID: 41401 RVA: 0x003CA994 File Offset: 0x003C8B94
 	public static void SaveHeightMapRAW(string _filePath, int w, int h, IBackedArray<ushort> _data)
 	{
 		using (Stream stream = SdFile.OpenWrite(_filePath))
@@ -377,7 +377,7 @@ public static class HeightMapUtils
 		}
 	}
 
-	// Token: 0x0600A0BD RID: 41149 RVA: 0x003C56D8 File Offset: 0x003C38D8
+	// Token: 0x0600A1BA RID: 41402 RVA: 0x003CAA1C File Offset: 0x003C8C1C
 	public static void SaveHeightMapRAW(string _filePath, int w, int h, float[,] _data)
 	{
 		using (BufferedStream bufferedStream = new BufferedStream(SdFile.OpenWrite(_filePath)))
@@ -397,7 +397,7 @@ public static class HeightMapUtils
 		}
 	}
 
-	// Token: 0x0600A0BE RID: 41150 RVA: 0x003C5768 File Offset: 0x003C3968
+	// Token: 0x0600A1BB RID: 41403 RVA: 0x003CAAAC File Offset: 0x003C8CAC
 	public static void SaveHeightMapRAW(Stream _stream, float[] _data, float _offset)
 	{
 		for (int i = 0; i < _data.Length; i++)
@@ -409,7 +409,7 @@ public static class HeightMapUtils
 		}
 	}
 
-	// Token: 0x0600A0BF RID: 41151 RVA: 0x003C57B0 File Offset: 0x003C39B0
+	// Token: 0x0600A1BC RID: 41404 RVA: 0x003CAAF4 File Offset: 0x003C8CF4
 	public static float[,] SmoothTerrain(int Passes, float[,] HeightData)
 	{
 		int length = HeightData.GetLength(0);
@@ -474,7 +474,7 @@ public static class HeightMapUtils
 		return HeightData;
 	}
 
-	// Token: 0x0600A0C0 RID: 41152 RVA: 0x003C592C File Offset: 0x003C3B2C
+	// Token: 0x0600A1BD RID: 41405 RVA: 0x003CAC70 File Offset: 0x003C8E70
 	public static float[,][,] ConvertAndSliceUnityHeightmap(ushort[] _rawHeightMap, int _heightMapWidth, int _heightMapHeight, int _sliceAtPix, int _resStep)
 	{
 		int num = _heightMapWidth / _sliceAtPix;
@@ -509,7 +509,7 @@ public static class HeightMapUtils
 		return array;
 	}
 
-	// Token: 0x0600A0C1 RID: 41153 RVA: 0x003C59FC File Offset: 0x003C3BFC
+	// Token: 0x0600A1BE RID: 41406 RVA: 0x003CAD40 File Offset: 0x003C8F40
 	public static float[,][,] ConvertAndSliceUnityHeightmapQuartered(IBackedArray<ushort> _rawHeightMap, int _heightMapWidth, int _heightMapHeight, int _sliceAtPix)
 	{
 		int num = _heightMapWidth / _sliceAtPix;
@@ -525,7 +525,7 @@ public static class HeightMapUtils
 		return array;
 	}
 
-	// Token: 0x0600A0C2 RID: 41154 RVA: 0x003C5A4C File Offset: 0x003C3C4C
+	// Token: 0x0600A1BF RID: 41407 RVA: 0x003CAD90 File Offset: 0x003C8F90
 	public unsafe static float[,] ConvertUnityHeightmapSliceQuartered(IBackedArray<ushort> _rawHeightMap, int _heightMapWidth, int _heightMapHeight, int _sliceX, int _sliceZ, int _sliceAtPix)
 	{
 		float[,] array = new float[_sliceAtPix / 2 + 1, _sliceAtPix / 2 + 1];
@@ -545,7 +545,7 @@ public static class HeightMapUtils
 		return array;
 	}
 
-	// Token: 0x0600A0C3 RID: 41155 RVA: 0x003C5AB0 File Offset: 0x003C3CB0
+	// Token: 0x0600A1C0 RID: 41408 RVA: 0x003CADF4 File Offset: 0x003C8FF4
 	public static TileFile<float> ConvertAndSliceUnityHeightmapQuarteredToFile(IBackedArray<ushort> _rawHeightMap, int _heightMapWidth, int _heightMapHeight, int _sliceAtPix)
 	{
 		int num = _heightMapWidth / _sliceAtPix;
@@ -568,7 +568,7 @@ public static class HeightMapUtils
 		return new TileFile<float>(fileBackedArray, num3, num, num2);
 	}
 
-	// Token: 0x0600A0C4 RID: 41156 RVA: 0x003C5B50 File Offset: 0x003C3D50
+	// Token: 0x0600A1C1 RID: 41409 RVA: 0x003CAE94 File Offset: 0x003C9094
 	[PublicizedFrom(EAccessModifier.Private)]
 	public unsafe static void ConvertUnityHeightmapSliceQuartered(IBackedArray<ushort> _rawHeightMap, int _heightMapWidth, int _heightMapHeight, int _sliceX, int _sliceZ, int _sliceAtPix, Span<float> tempHeightMapData)
 	{
@@ -618,7 +618,7 @@ public static class HeightMapUtils
 		}
 	}
 
-	// Token: 0x0600A0C5 RID: 41157 RVA: 0x003C5CB0 File Offset: 0x003C3EB0
+	// Token: 0x0600A1C2 RID: 41410 RVA: 0x003CAFF4 File Offset: 0x003C91F4
 	public static Color32[,][] ConvertAndSliceSplatmap(Color32[] _splat, int _splatMapWidth, int _splatMapHeight, int _overlapBorderPix, int _sliceAtWidth, int _resStep)
 	{
 		int num = _splatMapWidth / _sliceAtWidth;
@@ -663,7 +663,7 @@ public static class HeightMapUtils
 		return array;
 	}
 
-	// Token: 0x040078CE RID: 30926
+	// Token: 0x040079A7 RID: 31143
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cGameHeightToU16Scale = 257f;
 }

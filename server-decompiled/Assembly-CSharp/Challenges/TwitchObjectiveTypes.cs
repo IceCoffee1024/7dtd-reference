@@ -2,28 +2,28 @@
 
 namespace Challenges
 {
-	// Token: 0x020018EB RID: 6379
+	// Token: 0x02001911 RID: 6417
 	public enum TwitchObjectiveTypes
 	{
-		// Token: 0x0400944D RID: 37965
+		// Token: 0x04009576 RID: 38262
 		Enabled,
-		// Token: 0x0400944E RID: 37966
+		// Token: 0x04009577 RID: 38263
 		EnableExtras,
-		// Token: 0x0400944F RID: 37967
+		// Token: 0x04009578 RID: 38264
 		HelperReward,
-		// Token: 0x04009450 RID: 37968
+		// Token: 0x04009579 RID: 38265
 		ChannelPointRedeems,
-		// Token: 0x04009451 RID: 37969
+		// Token: 0x0400957A RID: 38266
 		VoteComplete,
-		// Token: 0x04009452 RID: 37970
+		// Token: 0x0400957B RID: 38267
 		PimpPot,
-		// Token: 0x04009453 RID: 37971
+		// Token: 0x0400957C RID: 38268
 		BitPot,
-		// Token: 0x04009454 RID: 37972
+		// Token: 0x0400957D RID: 38269
 		DefeatBossHorde,
-		// Token: 0x04009455 RID: 37973
+		// Token: 0x0400957E RID: 38270
 		GoodAction,
-		// Token: 0x04009456 RID: 37974
+		// Token: 0x0400957F RID: 38271
 		BadAction
 	}
 }

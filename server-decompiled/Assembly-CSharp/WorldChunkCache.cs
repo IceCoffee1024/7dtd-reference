@@ -3,31 +3,31 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading;
 
-// Token: 0x02000BF6 RID: 3062
+// Token: 0x02000C08 RID: 3080
 public class WorldChunkCache : IChunkAccess
 {
-	// Token: 0x06005D58 RID: 23896 RVA: 0x0004D782 File Offset: 0x0004B982
+	// Token: 0x06005DE2 RID: 24034 RVA: 0x0004DB9A File Offset: 0x0004BD9A
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static long MakeChunkKey(int x, int y)
 	{
 		return (((long)y & 16777215L) << 24) | ((long)x & 16777215L);
 	}
 
-	// Token: 0x06005D59 RID: 23897 RVA: 0x00244EBE File Offset: 0x002430BE
+	// Token: 0x06005DE3 RID: 24035 RVA: 0x00247C62 File Offset: 0x00245E62
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static int extractX(long key)
 	{
 		return (int)((int)key << 8) >> 8;
 	}
 
-	// Token: 0x06005D5A RID: 23898 RVA: 0x00244EC6 File Offset: 0x002430C6
+	// Token: 0x06005DE4 RID: 24036 RVA: 0x00247C6A File Offset: 0x00245E6A
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static int extractZ(long key)
 	{
 		return (int)(key >> 16) >> 8;
 	}
 
-	// Token: 0x06005D5B RID: 23899 RVA: 0x00244ED0 File Offset: 0x002430D0
+	// Token: 0x06005DE5 RID: 24037 RVA: 0x00247C74 File Offset: 0x00245E74
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector2i extractXZ(long key)
 	{
@@ -37,14 +37,14 @@ public class WorldChunkCache : IChunkAccess
 		return vector2i;
 	}
 
-	// Token: 0x06005D5C RID: 23900 RVA: 0x00244EF8 File Offset: 0x002430F8
+	// Token: 0x06005DE6 RID: 24038 RVA: 0x00247C9C File Offset: 0x00245E9C
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public Chunk GetChunkSync(int _x, int _y)
 	{
 		return this.GetChunkSync(WorldChunkCache.MakeChunkKey(_x, _y));
 	}
 
-	// Token: 0x06005D5D RID: 23901 RVA: 0x00244F08 File Offset: 0x00243108
+	// Token: 0x06005DE7 RID: 24039 RVA: 0x00247CAC File Offset: 0x00245EAC
 	public virtual Chunk GetChunkSync(long _key)
 	{
 		this.sync.EnterReadLock();
@@ -54,75 +54,75 @@ public class WorldChunkCache : IChunkAccess
 		return chunk;
 	}
 
-	// Token: 0x06005D5E RID: 23902 RVA: 0x00244F4A File Offset: 0x0024314A
+	// Token: 0x06005DE8 RID: 24040 RVA: 0x00247CEE File Offset: 0x00245EEE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IChunk IChunkAccess.GetChunkSync(int chunkX, int chunkZ)
 	{
 		return this.GetChunkSync(chunkX, chunkZ);
 	}
 
-	// Token: 0x06005D5F RID: 23903 RVA: 0x00244F54 File Offset: 0x00243154
+	// Token: 0x06005DE9 RID: 24041 RVA: 0x00247CF8 File Offset: 0x00245EF8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IChunk IChunkAccess.GetChunkSync(long chunkKey)
 	{
 		return this.GetChunkSync(chunkKey);
 	}
 
-	// Token: 0x06005D60 RID: 23904 RVA: 0x001AEC68 File Offset: 0x001ACE68
+	// Token: 0x06005DEA RID: 24042 RVA: 0x001B1240 File Offset: 0x001AF440
 	public IChunk GetChunkSync(int chunkX, int chunkY, int chunkZ)
 	{
 		return IChunkAccess.DefaultGetChunkSync(this, chunkX, chunkY, chunkZ);
 	}
 
-	// Token: 0x06005D61 RID: 23905 RVA: 0x001AEC73 File Offset: 0x001ACE73
+	// Token: 0x06005DEB RID: 24043 RVA: 0x001B124B File Offset: 0x001AF44B
 	public IChunk GetChunkSync(Vector2i chunkPos)
 	{
 		return IChunkAccess.DefaultGetChunkSync(this, chunkPos);
 	}
 
-	// Token: 0x06005D62 RID: 23906 RVA: 0x001AEC7C File Offset: 0x001ACE7C
+	// Token: 0x06005DEC RID: 24044 RVA: 0x001B1254 File Offset: 0x001AF454
 	public IChunk GetChunkSync(PropRef propRef)
 	{
 		return IChunkAccess.DefaultGetChunkSync(this, propRef);
 	}
 
-	// Token: 0x06005D63 RID: 23907 RVA: 0x001AEC85 File Offset: 0x001ACE85
+	// Token: 0x06005DED RID: 24045 RVA: 0x001B125D File Offset: 0x001AF45D
 	public IChunk GetChunkSync(BlockValueRef bvRef)
 	{
 		return IChunkAccess.DefaultGetChunkSync(this, bvRef);
 	}
 
-	// Token: 0x06005D64 RID: 23908 RVA: 0x001AEC8E File Offset: 0x001ACE8E
+	// Token: 0x06005DEE RID: 24046 RVA: 0x001B1266 File Offset: 0x001AF466
 	public IChunk GetChunkFromWorldPos(int x, int z)
 	{
 		return IChunkAccess.DefaultGetChunkFromWorldPos(this, x, z);
 	}
 
-	// Token: 0x06005D65 RID: 23909 RVA: 0x001AEC98 File Offset: 0x001ACE98
+	// Token: 0x06005DEF RID: 24047 RVA: 0x001B1270 File Offset: 0x001AF470
 	public IChunk GetChunkFromWorldPos(int x, int y, int z)
 	{
 		return IChunkAccess.DefaultGetChunkFromWorldPos(this, x, y, z);
 	}
 
-	// Token: 0x06005D66 RID: 23910 RVA: 0x001AECA3 File Offset: 0x001ACEA3
+	// Token: 0x06005DF0 RID: 24048 RVA: 0x001B127B File Offset: 0x001AF47B
 	public IChunk GetChunkFromWorldPos(Vector3i blockPos)
 	{
 		return IChunkAccess.DefaultGetChunkFromWorldPos(this, blockPos);
 	}
 
-	// Token: 0x06005D67 RID: 23911 RVA: 0x001AECAC File Offset: 0x001ACEAC
+	// Token: 0x06005DF1 RID: 24049 RVA: 0x001B1284 File Offset: 0x001AF484
 	public bool GetChunkFromWorldPos(int x, int z, ref IChunk chunk)
 	{
 		return IChunkAccess.DefaultGetChunkFromWorldPos(this, x, z, ref chunk);
 	}
 
-	// Token: 0x06005D68 RID: 23912 RVA: 0x001AECB7 File Offset: 0x001ACEB7
+	// Token: 0x06005DF2 RID: 24050 RVA: 0x001B128F File Offset: 0x001AF48F
 	public bool GetChunkFromWorldPos(Vector3i blockPos, ref IChunk chunk)
 	{
 		return IChunkAccess.DefaultGetChunkFromWorldPos(this, blockPos, ref chunk);
 	}
 
-	// Token: 0x06005D69 RID: 23913 RVA: 0x00244F60 File Offset: 0x00243160
+	// Token: 0x06005DF3 RID: 24051 RVA: 0x00247D04 File Offset: 0x00245F04
 	public virtual void RemoveChunkSync(long _key)
 	{
 		this.sync.EnterWriteLock();
@@ -144,7 +144,7 @@ public class WorldChunkCache : IChunkAccess
 		}
 	}
 
-	// Token: 0x06005D6A RID: 23914 RVA: 0x00245004 File Offset: 0x00243204
+	// Token: 0x06005DF4 RID: 24052 RVA: 0x00247DA8 File Offset: 0x00245FA8
 	public void NotifyOnChunkBeforeSave(Chunk _c)
 	{
 		for (int i = 0; i < this.chunkCallbacks.Count; i++)
@@ -153,7 +153,7 @@ public class WorldChunkCache : IChunkAccess
 		}
 	}
 
-	// Token: 0x06005D6B RID: 23915 RVA: 0x0024503C File Offset: 0x0024323C
+	// Token: 0x06005DF5 RID: 24053 RVA: 0x00247DE0 File Offset: 0x00245FE0
 	public virtual bool AddChunkSync(Chunk _chunk, bool _bOmitCallbacks = false)
 	{
 		this.ChunkMinPos.x = Utils.FastMin(this.ChunkMinPos.x, _chunk.X);
@@ -181,7 +181,7 @@ public class WorldChunkCache : IChunkAccess
 		return true;
 	}
 
-	// Token: 0x06005D6C RID: 23916 RVA: 0x00245168 File Offset: 0x00243368
+	// Token: 0x06005DF6 RID: 24054 RVA: 0x00247F0C File Offset: 0x0024610C
 	public List<Chunk> GetChunkArrayCopySync()
 	{
 		this.sync.EnterReadLock();
@@ -195,13 +195,13 @@ public class WorldChunkCache : IChunkAccess
 		return this.chunkArrayCopy;
 	}
 
-	// Token: 0x06005D6D RID: 23917 RVA: 0x002451D5 File Offset: 0x002433D5
+	// Token: 0x06005DF7 RID: 24055 RVA: 0x00247F79 File Offset: 0x00246179
 	public LinkedList<Chunk> GetChunkArray()
 	{
 		return this.chunks.list;
 	}
 
-	// Token: 0x06005D6E RID: 23918 RVA: 0x002451E4 File Offset: 0x002433E4
+	// Token: 0x06005DF8 RID: 24056 RVA: 0x00247F88 File Offset: 0x00246188
 	public HashSetLong GetChunkKeysCopySync()
 	{
 		if (this.isChunkKeysDirty)
@@ -218,19 +218,19 @@ public class WorldChunkCache : IChunkAccess
 		return this.chunkKeysCopy;
 	}
 
-	// Token: 0x06005D6F RID: 23919 RVA: 0x00245278 File Offset: 0x00243478
+	// Token: 0x06005DF9 RID: 24057 RVA: 0x0024801C File Offset: 0x0024621C
 	public int Count()
 	{
 		return this.chunks.list.Count;
 	}
 
-	// Token: 0x06005D70 RID: 23920 RVA: 0x0024528A File Offset: 0x0024348A
+	// Token: 0x06005DFA RID: 24058 RVA: 0x0024802E File Offset: 0x0024622E
 	public ReaderWriterLockSlim GetSyncRoot()
 	{
 		return this.sync;
 	}
 
-	// Token: 0x06005D71 RID: 23921 RVA: 0x00245292 File Offset: 0x00243492
+	// Token: 0x06005DFB RID: 24059 RVA: 0x00248036 File Offset: 0x00246236
 	public virtual bool ContainsChunkSync(long key)
 	{
 		this.sync.EnterReadLock();
@@ -239,24 +239,24 @@ public class WorldChunkCache : IChunkAccess
 		return flag;
 	}
 
-	// Token: 0x06005D72 RID: 23922 RVA: 0x002452BB File Offset: 0x002434BB
+	// Token: 0x06005DFC RID: 24060 RVA: 0x0024805F File Offset: 0x0024625F
 	public void AddChunkCallback(IChunkCallback _callback)
 	{
 		this.chunkCallbacks.Add(_callback);
 	}
 
-	// Token: 0x06005D73 RID: 23923 RVA: 0x002452C9 File Offset: 0x002434C9
+	// Token: 0x06005DFD RID: 24061 RVA: 0x0024806D File Offset: 0x0024626D
 	public void RemoveChunkCallback(IChunkCallback _callback)
 	{
 		this.chunkCallbacks.Remove(_callback);
 	}
 
-	// Token: 0x06005D74 RID: 23924 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005DFE RID: 24062 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void Update()
 	{
 	}
 
-	// Token: 0x06005D75 RID: 23925 RVA: 0x002452D8 File Offset: 0x002434D8
+	// Token: 0x06005DFF RID: 24063 RVA: 0x0024807C File Offset: 0x0024627C
 	public virtual void Clear()
 	{
 		this.sync.EnterWriteLock();
@@ -270,7 +270,7 @@ public class WorldChunkCache : IChunkAccess
 		MemoryPools.PoolChunks.FreeSync(list);
 	}
 
-	// Token: 0x06005D76 RID: 23926 RVA: 0x00245340 File Offset: 0x00243540
+	// Token: 0x06005E00 RID: 24064 RVA: 0x002480E4 File Offset: 0x002462E4
 	public void GetNeighborChunkKeys(long _chunkKey, bool _includeDiagonals, ref long[] _neighbours)
 	{
 		if (_includeDiagonals && _neighbours.Length != 8)
@@ -296,7 +296,7 @@ public class WorldChunkCache : IChunkAccess
 		}
 	}
 
-	// Token: 0x06005D77 RID: 23927 RVA: 0x002453F4 File Offset: 0x002435F4
+	// Token: 0x06005E01 RID: 24065 RVA: 0x00248198 File Offset: 0x00246398
 	public bool GetNeighborChunks(Chunk _chunk, Chunk[] neighbours)
 	{
 		this.sync.EnterReadLock();
@@ -348,7 +348,7 @@ public class WorldChunkCache : IChunkAccess
 		return false;
 	}
 
-	// Token: 0x06005D78 RID: 23928 RVA: 0x002454D4 File Offset: 0x002436D4
+	// Token: 0x06005E02 RID: 24066 RVA: 0x00248278 File Offset: 0x00246478
 	public bool HasNeighborChunks(Chunk _chunk)
 	{
 		this.sync.EnterReadLock();
@@ -359,7 +359,7 @@ public class WorldChunkCache : IChunkAccess
 		return flag;
 	}
 
-	// Token: 0x06005D79 RID: 23929 RVA: 0x00245574 File Offset: 0x00243774
+	// Token: 0x06005E03 RID: 24067 RVA: 0x00248318 File Offset: 0x00246518
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Chunk GetChunk(int _x, int _y)
 	{
@@ -369,42 +369,42 @@ public class WorldChunkCache : IChunkAccess
 		return chunk;
 	}
 
-	// Token: 0x0400480C RID: 18444
+	// Token: 0x040048A8 RID: 18600
 	public const long InvalidChunk = 9223372036854775807L;
 
-	// Token: 0x0400480D RID: 18445
+	// Token: 0x040048A9 RID: 18601
 	public Vector2i ChunkMinPos = Vector2i.zero;
 
-	// Token: 0x0400480E RID: 18446
+	// Token: 0x040048AA RID: 18602
 	public Vector2i ChunkMaxPos = Vector2i.zero;
 
-	// Token: 0x0400480F RID: 18447
+	// Token: 0x040048AB RID: 18603
 	public DictionaryLinkedList<long, Chunk> chunks = new DictionaryLinkedList<long, Chunk>();
 
-	// Token: 0x04004810 RID: 18448
+	// Token: 0x040048AC RID: 18604
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<IChunkCallback> chunkCallbacks = new List<IChunkCallback>();
 
-	// Token: 0x04004811 RID: 18449
+	// Token: 0x040048AD RID: 18605
 	public HashSetLong chunkKeys = new HashSetLong();
 
-	// Token: 0x04004812 RID: 18450
+	// Token: 0x040048AE RID: 18606
 	[PublicizedFrom(EAccessModifier.Private)]
 	public volatile bool isChunkKeysDirty = true;
 
-	// Token: 0x04004813 RID: 18451
+	// Token: 0x040048AF RID: 18607
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSetLong chunkKeysCopy = new HashSetLong();
 
-	// Token: 0x04004814 RID: 18452
+	// Token: 0x040048B0 RID: 18608
 	[PublicizedFrom(EAccessModifier.Private)]
 	public volatile bool isChunkArrayDirty = true;
 
-	// Token: 0x04004815 RID: 18453
+	// Token: 0x040048B1 RID: 18609
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Chunk> chunkArrayCopy = new List<Chunk>();
 
-	// Token: 0x04004816 RID: 18454
+	// Token: 0x040048B2 RID: 18610
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ReaderWriterLockSlim sync = new ReaderWriterLockSlim();
 }

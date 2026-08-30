@@ -5,7 +5,7 @@ using UnityEngine;
 [SharedBetweenAnimators]
 public class AnimatorStateRaycastOnExit : StateMachineBehaviour
 {
-	// Token: 0x0600033A RID: 826 RVA: 0x0001852E File Offset: 0x0001672E
+	// Token: 0x0600033A RID: 826 RVA: 0x000185B2 File Offset: 0x000167B2
 	public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 		animator.ResetTrigger("WeaponFire");

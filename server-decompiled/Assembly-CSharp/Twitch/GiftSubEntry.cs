@@ -2,10 +2,10 @@
 
 namespace Twitch
 {
-	// Token: 0x0200183D RID: 6205
+	// Token: 0x02001863 RID: 6243
 	public class GiftSubEntry
 	{
-		// Token: 0x0600BF60 RID: 48992 RVA: 0x0047093C File Offset: 0x0046EB3C
+		// Token: 0x0600C0E5 RID: 49381 RVA: 0x004766D8 File Offset: 0x004748D8
 		public GiftSubEntry(string userName, int userID, TwitchSubEventEntry.SubTierTypes tier, int subCount)
 		{
 			this.UserName = userName;
@@ -15,33 +15,33 @@ namespace Twitch
 			this.Tier = tier;
 		}
 
-		// Token: 0x0600BF61 RID: 48993 RVA: 0x0047099B File Offset: 0x0046EB9B
+		// Token: 0x0600C0E6 RID: 49382 RVA: 0x00476737 File Offset: 0x00474937
 		public void AddSub()
 		{
 			this.SubCount++;
 			this.TimeRemaining = 1f;
 		}
 
-		// Token: 0x0600BF62 RID: 48994 RVA: 0x004709B6 File Offset: 0x0046EBB6
+		// Token: 0x0600C0E7 RID: 49383 RVA: 0x00476752 File Offset: 0x00474952
 		public bool Update(float deltaTime)
 		{
 			this.TimeRemaining -= deltaTime;
 			return this.TimeRemaining <= 0f;
 		}
 
-		// Token: 0x0400905C RID: 36956
+		// Token: 0x04009178 RID: 37240
 		public float TimeRemaining = 1f;
 
-		// Token: 0x0400905D RID: 36957
+		// Token: 0x04009179 RID: 37241
 		public string UserName = "";
 
-		// Token: 0x0400905E RID: 36958
+		// Token: 0x0400917A RID: 37242
 		public int UserID = -1;
 
-		// Token: 0x0400905F RID: 36959
+		// Token: 0x0400917B RID: 37243
 		public int SubCount;
 
-		// Token: 0x04009060 RID: 36960
+		// Token: 0x0400917C RID: 37244
 		public TwitchSubEventEntry.SubTierTypes Tier = TwitchSubEventEntry.SubTierTypes.Tier1;
 	}
 }

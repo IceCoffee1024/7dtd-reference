@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02001205 RID: 4613
+// Token: 0x02001221 RID: 4641
 public class GUIWindowConsoleComponents : MonoBehaviour
 {
-	// Token: 0x0600932F RID: 37679 RVA: 0x0037AFD5 File Offset: 0x003791D5
+	// Token: 0x06009433 RID: 37939 RVA: 0x003802B1 File Offset: 0x0037E4B1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
 		this.buttonPrompts = new List<GUIButtonPrompt>(base.GetComponentsInChildren<GUIButtonPrompt>());
 	}
 
-	// Token: 0x06009330 RID: 37680 RVA: 0x0037AFE8 File Offset: 0x003791E8
+	// Token: 0x06009434 RID: 37940 RVA: 0x003802C4 File Offset: 0x0037E4C4
 	public void RefreshButtonPrompts()
 	{
 		foreach (GUIButtonPrompt guibuttonPrompt in this.buttonPrompts)
@@ -22,28 +22,28 @@ public class GUIWindowConsoleComponents : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04006E32 RID: 28210
+	// Token: 0x04006F0B RID: 28427
 	public ScrollRect scrollRect;
 
-	// Token: 0x04006E33 RID: 28211
+	// Token: 0x04006F0C RID: 28428
 	public Transform contentRect;
 
-	// Token: 0x04006E34 RID: 28212
+	// Token: 0x04006F0D RID: 28429
 	public InputField commandField;
 
-	// Token: 0x04006E35 RID: 28213
+	// Token: 0x04006F0E RID: 28430
 	public Button closeButton;
 
-	// Token: 0x04006E36 RID: 28214
+	// Token: 0x04006F0F RID: 28431
 	public Button openLogsButton;
 
-	// Token: 0x04006E37 RID: 28215
+	// Token: 0x04006F10 RID: 28432
 	public GameObject controllerPrompts;
 
-	// Token: 0x04006E38 RID: 28216
+	// Token: 0x04006F11 RID: 28433
 	public GameObject consoleLinePrefab;
 
-	// Token: 0x04006E39 RID: 28217
+	// Token: 0x04006F12 RID: 28434
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<GUIButtonPrompt> buttonPrompts;

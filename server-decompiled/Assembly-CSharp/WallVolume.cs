@@ -3,10 +3,10 @@ using System.IO;
 using PrefabVolumes;
 using UnityEngine;
 
-// Token: 0x02000BD5 RID: 3029
+// Token: 0x02000BE7 RID: 3047
 public class WallVolume
 {
-	// Token: 0x06005B66 RID: 23398 RVA: 0x0023862B File Offset: 0x0023682B
+	// Token: 0x06005BEF RID: 23535 RVA: 0x0023B347 File Offset: 0x00239547
 	public static WallVolume Create(PrefabWallVolume psv, Vector3i _boxMin, Vector3i _boxMax)
 	{
 		WallVolume wallVolume = new WallVolume();
@@ -15,7 +15,7 @@ public class WallVolume
 		return wallVolume;
 	}
 
-	// Token: 0x06005B67 RID: 23399 RVA: 0x00238644 File Offset: 0x00236844
+	// Token: 0x06005BF0 RID: 23536 RVA: 0x0023B360 File Offset: 0x00239560
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetMinMax(Vector3i _boxMin, Vector3i _boxMax)
 	{
@@ -24,8 +24,8 @@ public class WallVolume
 		this.Center = (this.BoxMin + this.BoxMax).ToVector3() * 0.5f;
 	}
 
-	// Token: 0x17000985 RID: 2437
-	// (get) Token: 0x06005B68 RID: 23400 RVA: 0x00238688 File Offset: 0x00236888
+	// Token: 0x17000998 RID: 2456
+	// (get) Token: 0x06005BF1 RID: 23537 RVA: 0x0023B3A4 File Offset: 0x002395A4
 	public PrefabInstance PrefabInstance
 	{
 		get
@@ -34,7 +34,7 @@ public class WallVolume
 		}
 	}
 
-	// Token: 0x06005B69 RID: 23401 RVA: 0x00238690 File Offset: 0x00236890
+	// Token: 0x06005BF2 RID: 23538 RVA: 0x0023B3AC File Offset: 0x002395AC
 	public bool AddToPrefabInstance()
 	{
 		this.prefabInstance = GameManager.Instance.World.ChunkCache.ChunkProvider.GetDynamicPrefabDecorator().FindVolumeOwner(PrefabVolumeAbs.EVolumeType.Wall, this.BoxMin, this.BoxMax);
@@ -46,7 +46,7 @@ public class WallVolume
 		return false;
 	}
 
-	// Token: 0x06005B6A RID: 23402 RVA: 0x002386E8 File Offset: 0x002368E8
+	// Token: 0x06005BF3 RID: 23539 RVA: 0x0023B404 File Offset: 0x00239604
 	public static WallVolume Read(BinaryReader _br)
 	{
 		WallVolume wallVolume = new WallVolume();
@@ -55,7 +55,7 @@ public class WallVolume
 		return wallVolume;
 	}
 
-	// Token: 0x06005B6B RID: 23403 RVA: 0x00238738 File Offset: 0x00236938
+	// Token: 0x06005BF4 RID: 23540 RVA: 0x0023B454 File Offset: 0x00239654
 	public void Write(BinaryWriter _bw)
 	{
 		_bw.Write(1);
@@ -67,23 +67,23 @@ public class WallVolume
 		_bw.Write(this.BoxMax.z);
 	}
 
-	// Token: 0x040046EB RID: 18155
+	// Token: 0x04004787 RID: 18311
 	public const int BinarySize = 25;
 
-	// Token: 0x040046EC RID: 18156
+	// Token: 0x04004788 RID: 18312
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const byte VERSION = 1;
 
-	// Token: 0x040046ED RID: 18157
+	// Token: 0x04004789 RID: 18313
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PrefabInstance prefabInstance;
 
-	// Token: 0x040046EE RID: 18158
+	// Token: 0x0400478A RID: 18314
 	public Vector3i BoxMin;
 
-	// Token: 0x040046EF RID: 18159
+	// Token: 0x0400478B RID: 18315
 	public Vector3i BoxMax;
 
-	// Token: 0x040046F0 RID: 18160
+	// Token: 0x0400478C RID: 18316
 	public Vector3 Center;
 }

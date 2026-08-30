@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace GamePath
 {
-	// Token: 0x020018B7 RID: 6327
+	// Token: 0x020018DD RID: 6365
 	public class PathFinder
 	{
-		// Token: 0x0600C2E8 RID: 49896 RVA: 0x00481790 File Offset: 0x0047F990
+		// Token: 0x0600C46F RID: 50287 RVA: 0x004878BC File Offset: 0x00485ABC
 		public PathFinder(PathInfo _pathInfo, bool _bDrn, bool _canClimbLadders, bool _bCanClimbWalls)
 		{
 			this.pathInfo = _pathInfo;
@@ -15,27 +15,27 @@ namespace GamePath
 			this.canClimbLadders = _canClimbLadders;
 		}
 
-		// Token: 0x0600C2E9 RID: 49897 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C470 RID: 50288 RVA: 0x000027FC File Offset: 0x000009FC
 		public virtual void Calculate(Vector3 _fromPos)
 		{
 		}
 
-		// Token: 0x0600C2EA RID: 49898 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C471 RID: 50289 RVA: 0x000027FC File Offset: 0x000009FC
 		public virtual void Destruct()
 		{
 		}
 
-		// Token: 0x04009335 RID: 37685
+		// Token: 0x0400945E RID: 37982
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public PathInfo pathInfo;
 
-		// Token: 0x04009336 RID: 37686
+		// Token: 0x0400945F RID: 37983
 		public bool canClimbWalls;
 
-		// Token: 0x04009337 RID: 37687
+		// Token: 0x04009460 RID: 37984
 		public bool canClimbLadders;
 
-		// Token: 0x04009338 RID: 37688
+		// Token: 0x04009461 RID: 37985
 		public bool canEntityDrown;
 	}
 }

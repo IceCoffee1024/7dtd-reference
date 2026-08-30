@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x02001917 RID: 6423
+	// Token: 0x0200193D RID: 6461
 	[Preserve]
 	public class RequirementIsWeatherGracePeriod : BaseRequirement
 	{
-		// Token: 0x0600C5B2 RID: 50610 RVA: 0x0048B4B4 File Offset: 0x004896B4
+		// Token: 0x0600C739 RID: 51001 RVA: 0x00491800 File Offset: 0x0048FA00
 		public override bool CanPerform(Entity target)
 		{
 			bool flag = GameManager.Instance.World.GetWorldTime() <= 30000UL;
@@ -18,7 +18,7 @@ namespace GameEvent.SequenceRequirements
 			return !flag;
 		}
 
-		// Token: 0x0600C5B3 RID: 50611 RVA: 0x0048B4EA File Offset: 0x004896EA
+		// Token: 0x0600C73A RID: 51002 RVA: 0x00491836 File Offset: 0x0048FA36
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseRequirement CloneChildSettings()
 		{

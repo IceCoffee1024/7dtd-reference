@@ -5,16 +5,16 @@ using System.Net.Sockets;
 using LiteNetLib;
 using UnityEngine.Networking;
 
-// Token: 0x0200087F RID: 2175
+// Token: 0x0200088B RID: 2187
 public class NetworkServerLiteNetLib : INetworkServer
 {
-	// Token: 0x06003F46 RID: 16198 RVA: 0x0018CA47 File Offset: 0x0018AC47
+	// Token: 0x06003FAB RID: 16299 RVA: 0x0018EB17 File Offset: 0x0018CD17
 	public NetworkServerLiteNetLib(IProtocolManagerProtocolInterface _protoManager)
 	{
 		this.protoManager = _protoManager;
 	}
 
-	// Token: 0x06003F47 RID: 16199 RVA: 0x0018CA6C File Offset: 0x0018AC6C
+	// Token: 0x06003FAC RID: 16300 RVA: 0x0018EB3C File Offset: 0x0018CD3C
 	public void Update()
 	{
 		ClientInfo clientInfo;
@@ -45,12 +45,12 @@ public class NetworkServerLiteNetLib : INetworkServer
 		liteNetLibAuthWrapperServer.Update();
 	}
 
-	// Token: 0x06003F48 RID: 16200 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06003FAD RID: 16301 RVA: 0x000027FC File Offset: 0x000009FC
 	public void LateUpdate()
 	{
 	}
 
-	// Token: 0x06003F49 RID: 16201 RVA: 0x0018CAF4 File Offset: 0x0018ACF4
+	// Token: 0x06003FAE RID: 16302 RVA: 0x0018EBC4 File Offset: 0x0018CDC4
 	public NetworkConnectionError StartServer(int _basePort, string _password)
 	{
 		this.serverPassword = (string.IsNullOrEmpty(_password) ? "" : _password);
@@ -75,13 +75,13 @@ public class NetworkServerLiteNetLib : INetworkServer
 		return NetworkConnectionError.CreateSocketOrThreadFailure;
 	}
 
-	// Token: 0x06003F4A RID: 16202 RVA: 0x0018CBEC File Offset: 0x0018ADEC
+	// Token: 0x06003FAF RID: 16303 RVA: 0x0018ECBC File Offset: 0x0018CEBC
 	public void SetServerPassword(string _password)
 	{
 		this.serverPassword = _password ?? "";
 	}
 
-	// Token: 0x06003F4B RID: 16203 RVA: 0x0018CC00 File Offset: 0x0018AE00
+	// Token: 0x06003FB0 RID: 16304 RVA: 0x0018ECD0 File Offset: 0x0018CED0
 	public void StopServer()
 	{
 		NetManager netManager = this.server;
@@ -100,7 +100,7 @@ public class NetworkServerLiteNetLib : INetworkServer
 		Log.Out("NET: LiteNetLib server stopped");
 	}
 
-	// Token: 0x06003F4C RID: 16204 RVA: 0x0018CC80 File Offset: 0x0018AE80
+	// Token: 0x06003FB1 RID: 16305 RVA: 0x0018ED50 File Offset: 0x0018CF50
 	public void DropClient(ClientInfo _clientInfo, bool _clientDisconnect)
 	{
 		this.OnPlayerDisconnected(_clientInfo.litenetPeerConnectId);
@@ -111,7 +111,7 @@ public class NetworkServerLiteNetLib : INetworkServer
 		}
 	}
 
-	// Token: 0x06003F4D RID: 16205 RVA: 0x0018CCBC File Offset: 0x0018AEBC
+	// Token: 0x06003FB2 RID: 16306 RVA: 0x0018ED8C File Offset: 0x0018CF8C
 	public NetworkError SendData(ClientInfo _cInfo, int _channel, ArrayListMP<byte> _data, bool _reliableDelivery = true)
 	{
 		NetPeer peerByConnectId = this.GetPeerByConnectId(_cInfo.litenetPeerConnectId);
@@ -142,7 +142,7 @@ public class NetworkServerLiteNetLib : INetworkServer
 		return NetworkError.Ok;
 	}
 
-	// Token: 0x06003F4E RID: 16206 RVA: 0x0018CD9C File Offset: 0x0018AF9C
+	// Token: 0x06003FB3 RID: 16307 RVA: 0x0018EE6C File Offset: 0x0018D06C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PeerConnectedEvent(NetPeer _peer)
 	{
@@ -161,7 +161,7 @@ public class NetworkServerLiteNetLib : INetworkServer
 		SingletonMonoBehaviour<ConnectionManager>.Instance.Net_PlayerConnected(clientInfo);
 	}
 
-	// Token: 0x06003F4F RID: 16207 RVA: 0x0018CE2C File Offset: 0x0018B02C
+	// Token: 0x06003FB4 RID: 16308 RVA: 0x0018EEFC File Offset: 0x0018D0FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PeerDisconnectedEvent(NetPeer _peer, DisconnectInfo _info)
 	{
@@ -177,7 +177,7 @@ public class NetworkServerLiteNetLib : INetworkServer
 		}, null);
 	}
 
-	// Token: 0x06003F50 RID: 16208 RVA: 0x0018CED0 File Offset: 0x0018B0D0
+	// Token: 0x06003FB5 RID: 16309 RVA: 0x0018EFA0 File Offset: 0x0018D1A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void NetworkReceiveEvent(NetPeer _peer, NetPacketReader _reader, DeliveryMethod _deliveryMethod)
 	{
@@ -209,7 +209,7 @@ public class NetworkServerLiteNetLib : INetworkServer
 		SingletonMonoBehaviour<ConnectionManager>.Instance.Net_DataReceivedServer(clientInfo, (int)array[0], array, availableBytes);
 	}
 
-	// Token: 0x06003F51 RID: 16209 RVA: 0x0018CFA0 File Offset: 0x0018B1A0
+	// Token: 0x06003FB6 RID: 16310 RVA: 0x0018F070 File Offset: 0x0018D270
 	public string GetIP(ClientInfo _cInfo)
 	{
 		NetPeer peerByConnectId = this.GetPeerByConnectId(_cInfo.litenetPeerConnectId);
@@ -221,7 +221,7 @@ public class NetworkServerLiteNetLib : INetworkServer
 		return peerByConnectId.Address.ToString();
 	}
 
-	// Token: 0x06003F52 RID: 16210 RVA: 0x0018CFE8 File Offset: 0x0018B1E8
+	// Token: 0x06003FB7 RID: 16311 RVA: 0x0018F0B8 File Offset: 0x0018D2B8
 	public int GetPing(ClientInfo _cInfo)
 	{
 		NetPeer peerByConnectId = this.GetPeerByConnectId(_cInfo.litenetPeerConnectId);
@@ -233,7 +233,7 @@ public class NetworkServerLiteNetLib : INetworkServer
 		return peerByConnectId.Ping;
 	}
 
-	// Token: 0x06003F53 RID: 16211 RVA: 0x0018D028 File Offset: 0x0018B228
+	// Token: 0x06003FB8 RID: 16312 RVA: 0x0018F0F8 File Offset: 0x0018D2F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPlayerDisconnected(long _peerConnectId)
 	{
@@ -244,7 +244,7 @@ public class NetworkServerLiteNetLib : INetworkServer
 		}
 	}
 
-	// Token: 0x06003F54 RID: 16212 RVA: 0x0018D054 File Offset: 0x0018B254
+	// Token: 0x06003FB9 RID: 16313 RVA: 0x0018F124 File Offset: 0x0018D324
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetPeer GetPeerByConnectId(long _connectId)
 	{
@@ -267,7 +267,7 @@ public class NetworkServerLiteNetLib : INetworkServer
 		return null;
 	}
 
-	// Token: 0x06003F55 RID: 16213 RVA: 0x0018D0E8 File Offset: 0x0018B2E8
+	// Token: 0x06003FBA RID: 16314 RVA: 0x0018F1B8 File Offset: 0x0018D3B8
 	public int GetBadPacketCount(ClientInfo _cInfo)
 	{
 		NetPeer peerByConnectId = this.GetPeerByConnectId(_cInfo.litenetPeerConnectId);
@@ -278,13 +278,13 @@ public class NetworkServerLiteNetLib : INetworkServer
 		return 0;
 	}
 
-	// Token: 0x06003F56 RID: 16214 RVA: 0x0018D110 File Offset: 0x0018B310
+	// Token: 0x06003FBB RID: 16315 RVA: 0x0018F1E0 File Offset: 0x0018D3E0
 	public string GetServerPorts(int _basePort)
 	{
 		return (_basePort + 2).ToString() + "/UDP";
 	}
 
-	// Token: 0x06003F57 RID: 16215 RVA: 0x0018D132 File Offset: 0x0018B332
+	// Token: 0x06003FBC RID: 16316 RVA: 0x0018F202 File Offset: 0x0018D402
 	public void SetLatencySimulation(bool _enable, int _minLatency, int _maxLatency)
 	{
 		if (this.server != null)
@@ -295,7 +295,7 @@ public class NetworkServerLiteNetLib : INetworkServer
 		}
 	}
 
-	// Token: 0x06003F58 RID: 16216 RVA: 0x0018D160 File Offset: 0x0018B360
+	// Token: 0x06003FBD RID: 16317 RVA: 0x0018F230 File Offset: 0x0018D430
 	public void SetPacketLossSimulation(bool _enable, int _chance)
 	{
 		if (this.server != null)
@@ -305,7 +305,7 @@ public class NetworkServerLiteNetLib : INetworkServer
 		}
 	}
 
-	// Token: 0x06003F59 RID: 16217 RVA: 0x0018D182 File Offset: 0x0018B382
+	// Token: 0x06003FBE RID: 16318 RVA: 0x0018F252 File Offset: 0x0018D452
 	public void EnableStatistics()
 	{
 		if (this.server != null)
@@ -314,7 +314,7 @@ public class NetworkServerLiteNetLib : INetworkServer
 		}
 	}
 
-	// Token: 0x06003F5A RID: 16218 RVA: 0x0018D198 File Offset: 0x0018B398
+	// Token: 0x06003FBF RID: 16319 RVA: 0x0018F268 File Offset: 0x0018D468
 	public void DisableStatistics()
 	{
 		if (this.server != null)
@@ -323,7 +323,7 @@ public class NetworkServerLiteNetLib : INetworkServer
 		}
 	}
 
-	// Token: 0x06003F5B RID: 16219 RVA: 0x0018D1AE File Offset: 0x0018B3AE
+	// Token: 0x06003FC0 RID: 16320 RVA: 0x0018F27E File Offset: 0x0018D47E
 	public string PrintNetworkStatistics()
 	{
 		if (this.server != null)
@@ -333,7 +333,7 @@ public class NetworkServerLiteNetLib : INetworkServer
 		return "no server!";
 	}
 
-	// Token: 0x06003F5C RID: 16220 RVA: 0x0018D1CE File Offset: 0x0018B3CE
+	// Token: 0x06003FC1 RID: 16321 RVA: 0x0018F29E File Offset: 0x0018D49E
 	public void ResetNetworkStatistics()
 	{
 		if (this.server != null)
@@ -342,7 +342,7 @@ public class NetworkServerLiteNetLib : INetworkServer
 		}
 	}
 
-	// Token: 0x06003F5D RID: 16221 RVA: 0x0018D1E8 File Offset: 0x0018B3E8
+	// Token: 0x06003FC2 RID: 16322 RVA: 0x0018F2B8 File Offset: 0x0018D4B8
 	public int GetMaximumPacketSize(ClientInfo _cInfo, bool _reliable = false)
 	{
 		int num = -1;
@@ -354,7 +354,7 @@ public class NetworkServerLiteNetLib : INetworkServer
 		return num;
 	}
 
-	// Token: 0x06003F5E RID: 16222 RVA: 0x0018D218 File Offset: 0x0018B418
+	// Token: 0x06003FC3 RID: 16323 RVA: 0x0018F2E8 File Offset: 0x0018D4E8
 	// Note: this type is marked as 'beforefieldinit'.
 	[PublicizedFrom(EAccessModifier.Private)]
 	static NetworkServerLiteNetLib()
@@ -373,61 +373,61 @@ public class NetworkServerLiteNetLib : INetworkServer
 		NetworkServerLiteNetLib.disconnectFromClientSide = array4;
 	}
 
-	// Token: 0x040032D8 RID: 13016
+	// Token: 0x04003359 RID: 13145
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly byte[] rejectInvalidPassword = new byte[2];
 
-	// Token: 0x040032D9 RID: 13017
+	// Token: 0x0400335A RID: 13146
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly byte[] rejectRateLimit;
 
-	// Token: 0x040032DA RID: 13018
+	// Token: 0x0400335B RID: 13147
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly byte[] rejectPendingConnection;
 
-	// Token: 0x040032DB RID: 13019
+	// Token: 0x0400335C RID: 13148
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly byte[] disconnectServerShutdown;
 
-	// Token: 0x040032DC RID: 13020
+	// Token: 0x0400335D RID: 13149
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly byte[] disconnectFromClientSide;
 
-	// Token: 0x040032DD RID: 13021
+	// Token: 0x0400335E RID: 13150
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly IProtocolManagerProtocolInterface protoManager;
 
-	// Token: 0x040032DE RID: 13022
+	// Token: 0x0400335F RID: 13151
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string serverPassword;
 
-	// Token: 0x040032DF RID: 13023
+	// Token: 0x04003360 RID: 13152
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetManager server;
 
-	// Token: 0x040032E0 RID: 13024
+	// Token: 0x04003361 RID: 13153
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetworkServerLiteNetLib.LiteNetLibAuthWrapperServer authWrapper;
 
-	// Token: 0x040032E1 RID: 13025
+	// Token: 0x04003362 RID: 13154
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<ClientInfo> dropClientsQueue = new List<ClientInfo>();
 
-	// Token: 0x040032E2 RID: 13026
+	// Token: 0x04003363 RID: 13155
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<NetPeer> getPeersList = new List<NetPeer>();
 
-	// Token: 0x02000880 RID: 2176
+	// Token: 0x0200088C RID: 2188
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class LiteNetLibAuthWrapperServer
 	{
-		// Token: 0x06003F5F RID: 16223 RVA: 0x0018D26C File Offset: 0x0018B46C
+		// Token: 0x06003FC4 RID: 16324 RVA: 0x0018F33C File Offset: 0x0018D53C
 		public LiteNetLibAuthWrapperServer(NetworkServerLiteNetLib _owner)
 		{
 			this.owner = _owner;
 		}
 
-		// Token: 0x06003F60 RID: 16224 RVA: 0x0018D29C File Offset: 0x0018B49C
+		// Token: 0x06003FC5 RID: 16325 RVA: 0x0018F36C File Offset: 0x0018D56C
 		public void Update()
 		{
 			DateTime now = DateTime.Now;
@@ -459,7 +459,7 @@ public class NetworkServerLiteNetLib : INetworkServer
 			}
 		}
 
-		// Token: 0x06003F61 RID: 16225 RVA: 0x0018D3C8 File Offset: 0x0018B5C8
+		// Token: 0x06003FC6 RID: 16326 RVA: 0x0018F498 File Offset: 0x0018D698
 		public void ConnectionRequestCheck(ConnectionRequest _request)
 		{
 			string text = _request.RemoteEndPoint.Address.ToString();
@@ -491,7 +491,7 @@ public class NetworkServerLiteNetLib : INetworkServer
 			_request.Accept();
 		}
 
-		// Token: 0x06003F62 RID: 16226 RVA: 0x0018D4F8 File Offset: 0x0018B6F8
+		// Token: 0x06003FC7 RID: 16327 RVA: 0x0018F5C8 File Offset: 0x0018D7C8
 		public void OnPeerConnectedEvent(NetPeer _peer)
 		{
 			Dictionary<int, NetworkServerLiteNetLib.LiteNetLibAuthWrapperServer.LNLAuthConnectionState> dictionary = this.authStates;
@@ -515,7 +515,7 @@ public class NetworkServerLiteNetLib : INetworkServer
 			_peer.Send(array, 0, array.Length, DeliveryMethod.ReliableOrdered);
 		}
 
-		// Token: 0x06003F63 RID: 16227 RVA: 0x0018D5D8 File Offset: 0x0018B7D8
+		// Token: 0x06003FC8 RID: 16328 RVA: 0x0018F6A8 File Offset: 0x0018D8A8
 		public void OnPeerDisconnectedEvent(NetPeer _peer, DisconnectInfo _disconnectInfo)
 		{
 			Dictionary<int, NetworkServerLiteNetLib.LiteNetLibAuthWrapperServer.LNLAuthConnectionState> dictionary = this.authStates;
@@ -540,7 +540,7 @@ public class NetworkServerLiteNetLib : INetworkServer
 			this.owner.PeerDisconnectedEvent(_peer, _disconnectInfo);
 		}
 
-		// Token: 0x06003F64 RID: 16228 RVA: 0x0018D698 File Offset: 0x0018B898
+		// Token: 0x06003FC9 RID: 16329 RVA: 0x0018F768 File Offset: 0x0018D968
 		public void OnNetworkReceiveEvent(NetPeer _peer, NetPacketReader _reader, byte _channel, DeliveryMethod _deliveryMethod)
 		{
 			Dictionary<int, NetworkServerLiteNetLib.LiteNetLibAuthWrapperServer.LNLAuthConnectionState> dictionary = this.authStates;
@@ -595,48 +595,48 @@ public class NetworkServerLiteNetLib : INetworkServer
 			}
 		}
 
-		// Token: 0x040032E3 RID: 13027
+		// Token: 0x04003364 RID: 13156
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly TimeSpan ConnectionStateCheckInterval = TimeSpan.FromSeconds(10.0);
 
-		// Token: 0x040032E4 RID: 13028
+		// Token: 0x04003365 RID: 13157
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int ConnectionRateLimitMilliseconds = 500;
 
-		// Token: 0x040032E5 RID: 13029
+		// Token: 0x04003366 RID: 13158
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly TimeSpan MaxDurationInAuthState = new TimeSpan(0, 0, 0, 10);
 
-		// Token: 0x040032E6 RID: 13030
+		// Token: 0x04003367 RID: 13159
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int ChallengePackageSize = 17;
 
-		// Token: 0x040032E7 RID: 13031
+		// Token: 0x04003368 RID: 13160
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly NetworkServerLiteNetLib owner;
 
-		// Token: 0x040032E8 RID: 13032
+		// Token: 0x04003369 RID: 13161
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<string, DateTime> lastConnectAttemptTimes = new Dictionary<string, DateTime>();
 
-		// Token: 0x040032E9 RID: 13033
+		// Token: 0x0400336A RID: 13162
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<int, NetworkServerLiteNetLib.LiteNetLibAuthWrapperServer.LNLAuthConnectionState> authStates = new Dictionary<int, NetworkServerLiteNetLib.LiteNetLibAuthWrapperServer.LNLAuthConnectionState>();
 
-		// Token: 0x040032EA RID: 13034
+		// Token: 0x0400336B RID: 13163
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly List<int> clearList = new List<int>();
 
-		// Token: 0x040032EB RID: 13035
+		// Token: 0x0400336C RID: 13164
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DateTime nextStateChecksRun;
 
-		// Token: 0x02000881 RID: 2177
+		// Token: 0x0200088D RID: 2189
 		[PublicizedFrom(EAccessModifier.Private)]
 		public class LNLAuthConnectionState
 		{
-			// Token: 0x17000690 RID: 1680
-			// (get) Token: 0x06003F66 RID: 16230 RVA: 0x0018D864 File Offset: 0x0018BA64
+			// Token: 0x1700069C RID: 1692
+			// (get) Token: 0x06003FCB RID: 16331 RVA: 0x0018F934 File Offset: 0x0018DB34
 			public TimeSpan Age
 			{
 				get
@@ -645,21 +645,21 @@ public class NetworkServerLiteNetLib : INetworkServer
 				}
 			}
 
-			// Token: 0x040032EC RID: 13036
+			// Token: 0x0400336D RID: 13165
 			public NetworkServerLiteNetLib.LiteNetLibAuthWrapperServer.LNLAuthConnectionState.EState State;
 
-			// Token: 0x040032ED RID: 13037
+			// Token: 0x0400336E RID: 13166
 			public readonly Guid Challenge = Guid.NewGuid();
 
-			// Token: 0x040032EE RID: 13038
+			// Token: 0x0400336F RID: 13167
 			public readonly DateTime StartTime = DateTime.Now;
 
-			// Token: 0x02000882 RID: 2178
+			// Token: 0x0200088E RID: 2190
 			public enum EState
 			{
-				// Token: 0x040032F0 RID: 13040
+				// Token: 0x04003371 RID: 13169
 				Authenticating,
-				// Token: 0x040032F1 RID: 13041
+				// Token: 0x04003372 RID: 13170
 				Connected
 			}
 		}

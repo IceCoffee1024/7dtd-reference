@@ -5,7 +5,7 @@ using UnityEngine;
 // Token: 0x020000DC RID: 220
 public class DismembermentAccessoryMan : MonoBehaviour
 {
-	// Token: 0x06000594 RID: 1428 RVA: 0x00027B18 File Offset: 0x00025D18
+	// Token: 0x06000595 RID: 1429 RVA: 0x00027BDC File Offset: 0x00025DDC
 	public void HidePart(EnumBodyPartHit bodyPart)
 	{
 		if (bodyPart <= EnumBodyPartHit.RightUpperLeg)

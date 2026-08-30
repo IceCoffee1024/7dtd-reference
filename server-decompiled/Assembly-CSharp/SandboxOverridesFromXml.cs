@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using SandboxOptions;
 
-// Token: 0x02000D1A RID: 3354
+// Token: 0x02000D2C RID: 3372
 public class SandboxOverridesFromXml
 {
-	// Token: 0x0600662C RID: 26156 RVA: 0x00284920 File Offset: 0x00282B20
+	// Token: 0x060066B8 RID: 26296 RVA: 0x00287804 File Offset: 0x00285A04
 	public static IEnumerator CreateOverrides(XmlFile xmlFile)
 	{
 		XElement root = xmlFile.XmlDoc.Root;
@@ -48,7 +48,7 @@ public class SandboxOverridesFromXml
 		yield break;
 	}
 
-	// Token: 0x0600662D RID: 26157 RVA: 0x0028492F File Offset: 0x00282B2F
+	// Token: 0x060066B9 RID: 26297 RVA: 0x00287813 File Offset: 0x00285A13
 	public static void Reload(XmlFile xmlFile)
 	{
 		ThreadManager.RunCoroutineSync(SandboxOverridesFromXml.CreateOverrides(xmlFile));

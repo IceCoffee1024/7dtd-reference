@@ -2,12 +2,12 @@
 using Challenges;
 using UnityEngine;
 
-// Token: 0x020002D9 RID: 729
+// Token: 0x020002DD RID: 733
 public class RecipeUnlockData
 {
-	// Token: 0x1700024F RID: 591
-	// (get) Token: 0x0600151F RID: 5407 RVA: 0x0007F490 File Offset: 0x0007D690
-	// (set) Token: 0x06001520 RID: 5408 RVA: 0x0007F4B0 File Offset: 0x0007D6B0
+	// Token: 0x17000250 RID: 592
+	// (get) Token: 0x06001532 RID: 5426 RVA: 0x0007FB4C File Offset: 0x0007DD4C
+	// (set) Token: 0x06001533 RID: 5427 RVA: 0x0007FB6C File Offset: 0x0007DD6C
 	public RecipeUnlockData.UnlockTypes UnlockType
 	{
 		get
@@ -24,9 +24,9 @@ public class RecipeUnlockData
 		}
 	}
 
-	// Token: 0x17000250 RID: 592
-	// (get) Token: 0x06001521 RID: 5409 RVA: 0x0007F4B9 File Offset: 0x0007D6B9
-	// (set) Token: 0x06001522 RID: 5410 RVA: 0x0007F4C1 File Offset: 0x0007D6C1
+	// Token: 0x17000251 RID: 593
+	// (get) Token: 0x06001534 RID: 5428 RVA: 0x0007FB75 File Offset: 0x0007DD75
+	// (set) Token: 0x06001535 RID: 5429 RVA: 0x0007FB7D File Offset: 0x0007DD7D
 	public ItemClass Item
 	{
 		get
@@ -40,9 +40,9 @@ public class RecipeUnlockData
 		}
 	}
 
-	// Token: 0x17000251 RID: 593
-	// (get) Token: 0x06001523 RID: 5411 RVA: 0x0007F4D1 File Offset: 0x0007D6D1
-	// (set) Token: 0x06001524 RID: 5412 RVA: 0x0007F4D9 File Offset: 0x0007D6D9
+	// Token: 0x17000252 RID: 594
+	// (get) Token: 0x06001536 RID: 5430 RVA: 0x0007FB8D File Offset: 0x0007DD8D
+	// (set) Token: 0x06001537 RID: 5431 RVA: 0x0007FB95 File Offset: 0x0007DD95
 	public ProgressionClass Perk
 	{
 		get
@@ -66,9 +66,9 @@ public class RecipeUnlockData
 		}
 	}
 
-	// Token: 0x17000252 RID: 594
-	// (get) Token: 0x06001525 RID: 5413 RVA: 0x0007F513 File Offset: 0x0007D713
-	// (set) Token: 0x06001526 RID: 5414 RVA: 0x0007F51B File Offset: 0x0007D71B
+	// Token: 0x17000253 RID: 595
+	// (get) Token: 0x06001538 RID: 5432 RVA: 0x0007FBCF File Offset: 0x0007DDCF
+	// (set) Token: 0x06001539 RID: 5433 RVA: 0x0007FBD7 File Offset: 0x0007DDD7
 	public ChallengeGroup ChallengeGroup
 	{
 		get
@@ -82,9 +82,9 @@ public class RecipeUnlockData
 		}
 	}
 
-	// Token: 0x17000253 RID: 595
-	// (get) Token: 0x06001527 RID: 5415 RVA: 0x0007F52B File Offset: 0x0007D72B
-	// (set) Token: 0x06001528 RID: 5416 RVA: 0x0007F533 File Offset: 0x0007D733
+	// Token: 0x17000254 RID: 596
+	// (get) Token: 0x0600153A RID: 5434 RVA: 0x0007FBE7 File Offset: 0x0007DDE7
+	// (set) Token: 0x0600153B RID: 5435 RVA: 0x0007FBEF File Offset: 0x0007DDEF
 	public ChallengeClass Challenge
 	{
 		get
@@ -98,13 +98,13 @@ public class RecipeUnlockData
 		}
 	}
 
-	// Token: 0x06001529 RID: 5417 RVA: 0x0007F543 File Offset: 0x0007D743
+	// Token: 0x0600153C RID: 5436 RVA: 0x0007FBFF File Offset: 0x0007DDFF
 	public RecipeUnlockData(string unlock)
 	{
 		this.unlockText = unlock;
 	}
 
-	// Token: 0x0600152A RID: 5418 RVA: 0x0007F560 File Offset: 0x0007D760
+	// Token: 0x0600153D RID: 5437 RVA: 0x0007FC1C File Offset: 0x0007DE1C
 	public void Init()
 	{
 		if (Progression.ProgressionClasses.ContainsKey(this.unlockText))
@@ -133,7 +133,7 @@ public class RecipeUnlockData
 		this.UnlockType = (GameManager.Instance.IsEditMode() ? RecipeUnlockData.UnlockTypes.PrefabEditorInvalid : RecipeUnlockData.UnlockTypes.None);
 	}
 
-	// Token: 0x0600152B RID: 5419 RVA: 0x0007F5F8 File Offset: 0x0007D7F8
+	// Token: 0x0600153E RID: 5438 RVA: 0x0007FCB4 File Offset: 0x0007DEB4
 	public string GetName()
 	{
 		if (this.unlockText != "")
@@ -155,7 +155,7 @@ public class RecipeUnlockData
 		return Localization.Get(this.perk.NameKey, false, null);
 	}
 
-	// Token: 0x0600152C RID: 5420 RVA: 0x0007F670 File Offset: 0x0007D870
+	// Token: 0x0600153F RID: 5439 RVA: 0x0007FD2C File Offset: 0x0007DF2C
 	public string GetIcon()
 	{
 		if (this.unlockText != "")
@@ -181,7 +181,7 @@ public class RecipeUnlockData
 		return "ui_game_symbol_book";
 	}
 
-	// Token: 0x0600152D RID: 5421 RVA: 0x0007F6E0 File Offset: 0x0007D8E0
+	// Token: 0x06001540 RID: 5440 RVA: 0x0007FD9C File Offset: 0x0007DF9C
 	public string GetLevel(EntityPlayerLocal player, string recipeName)
 	{
 		if (this.unlockText != "")
@@ -212,13 +212,13 @@ public class RecipeUnlockData
 		return "--";
 	}
 
-	// Token: 0x0600152E RID: 5422 RVA: 0x0007F7ED File Offset: 0x0007D9ED
+	// Token: 0x06001541 RID: 5441 RVA: 0x0007FEA9 File Offset: 0x0007E0A9
 	public string GetIconAtlas()
 	{
 		return "UIAtlas";
 	}
 
-	// Token: 0x0600152F RID: 5423 RVA: 0x0007F7F4 File Offset: 0x0007D9F4
+	// Token: 0x06001542 RID: 5442 RVA: 0x0007FEB0 File Offset: 0x0007E0B0
 	public Color GetItemTint()
 	{
 		if (this.unlockText != "")
@@ -232,48 +232,48 @@ public class RecipeUnlockData
 		return Color.white;
 	}
 
-	// Token: 0x04000E21 RID: 3617
+	// Token: 0x04000E32 RID: 3634
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RecipeUnlockData.UnlockTypes unlockType;
 
-	// Token: 0x04000E22 RID: 3618
+	// Token: 0x04000E33 RID: 3635
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string unlockText = "";
 
-	// Token: 0x04000E23 RID: 3619
+	// Token: 0x04000E34 RID: 3636
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass item;
 
-	// Token: 0x04000E24 RID: 3620
+	// Token: 0x04000E35 RID: 3637
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ProgressionClass perk;
 
-	// Token: 0x04000E25 RID: 3621
+	// Token: 0x04000E36 RID: 3638
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ChallengeGroup challengeGroup;
 
-	// Token: 0x04000E26 RID: 3622
+	// Token: 0x04000E37 RID: 3639
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ChallengeClass challenge;
 
-	// Token: 0x020002DA RID: 730
+	// Token: 0x020002DE RID: 734
 	public enum UnlockTypes
 	{
-		// Token: 0x04000E28 RID: 3624
+		// Token: 0x04000E39 RID: 3641
 		None,
-		// Token: 0x04000E29 RID: 3625
+		// Token: 0x04000E3A RID: 3642
 		Perk,
-		// Token: 0x04000E2A RID: 3626
+		// Token: 0x04000E3B RID: 3643
 		Book,
-		// Token: 0x04000E2B RID: 3627
+		// Token: 0x04000E3C RID: 3644
 		Skill,
-		// Token: 0x04000E2C RID: 3628
+		// Token: 0x04000E3D RID: 3645
 		Schematic,
-		// Token: 0x04000E2D RID: 3629
+		// Token: 0x04000E3E RID: 3646
 		ChallengeGroup,
-		// Token: 0x04000E2E RID: 3630
+		// Token: 0x04000E3F RID: 3647
 		Challenge,
-		// Token: 0x04000E2F RID: 3631
+		// Token: 0x04000E40 RID: 3648
 		PrefabEditorInvalid
 	}
 }

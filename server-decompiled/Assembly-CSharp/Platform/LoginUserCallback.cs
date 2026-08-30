@@ -2,7 +2,7 @@
 
 namespace Platform
 {
-	// Token: 0x02001B82 RID: 7042
-	// (Invoke) Token: 0x0600D1D2 RID: 53714
+	// Token: 0x02001BA9 RID: 7081
+	// (Invoke) Token: 0x0600D35E RID: 54110
 	public delegate void LoginUserCallback(IPlatform _platform, EApiStatusReason _statusReason, string _statusReasonAdditionalText);
 }

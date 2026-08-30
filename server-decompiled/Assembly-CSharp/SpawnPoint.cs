@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000BA7 RID: 2983
+// Token: 0x02000BB9 RID: 3001
 public class SpawnPoint
 {
-	// Token: 0x06005A36 RID: 23094 RVA: 0x0022B357 File Offset: 0x00229557
+	// Token: 0x06005ABE RID: 23230 RVA: 0x0022E0BF File Offset: 0x0022C2BF
 	public SpawnPoint()
 	{
 		this.spawnPosition = SpawnPosition.Undef;
@@ -12,7 +12,7 @@ public class SpawnPoint
 		this.activeInGameMode = 0;
 	}
 
-	// Token: 0x06005A37 RID: 23095 RVA: 0x0022B378 File Offset: 0x00229578
+	// Token: 0x06005ABF RID: 23231 RVA: 0x0022E0E0 File Offset: 0x0022C2E0
 	public SpawnPoint(Vector3i _blockPos)
 	{
 		this.spawnPosition = new SpawnPosition(_blockPos, 0f);
@@ -20,7 +20,7 @@ public class SpawnPoint
 		this.activeInGameMode = -1;
 	}
 
-	// Token: 0x06005A38 RID: 23096 RVA: 0x0022B39F File Offset: 0x0022959F
+	// Token: 0x06005AC0 RID: 23232 RVA: 0x0022E107 File Offset: 0x0022C307
 	public SpawnPoint(Vector3 _position, float _heading)
 	{
 		this.spawnPosition = new SpawnPosition(_position, _heading);
@@ -28,7 +28,7 @@ public class SpawnPoint
 		this.activeInGameMode = -1;
 	}
 
-	// Token: 0x06005A39 RID: 23097 RVA: 0x0022B3C2 File Offset: 0x002295C2
+	// Token: 0x06005AC1 RID: 23233 RVA: 0x0022E12A File Offset: 0x0022C32A
 	public void Read(IBinaryReaderOrWriter _readerOrWriter, uint _version)
 	{
 		this.spawnPosition.Read(_readerOrWriter, _version);
@@ -36,7 +36,7 @@ public class SpawnPoint
 		this.activeInGameMode = _readerOrWriter.ReadWrite(0);
 	}
 
-	// Token: 0x06005A3A RID: 23098 RVA: 0x0022B3EB File Offset: 0x002295EB
+	// Token: 0x06005AC2 RID: 23234 RVA: 0x0022E153 File Offset: 0x0022C353
 	public void Read(PooledBinaryReader _br, uint _version)
 	{
 		this.spawnPosition.Read(_br, _version);
@@ -44,7 +44,7 @@ public class SpawnPoint
 		this.activeInGameMode = _br.ReadInt32();
 	}
 
-	// Token: 0x06005A3B RID: 23099 RVA: 0x0022B412 File Offset: 0x00229612
+	// Token: 0x06005AC3 RID: 23235 RVA: 0x0022E17A File Offset: 0x0022C37A
 	public void Write(PooledBinaryWriter _bw)
 	{
 		this.spawnPosition.Write(_bw);
@@ -52,18 +52,18 @@ public class SpawnPoint
 		_bw.Write(this.activeInGameMode);
 	}
 
-	// Token: 0x06005A3C RID: 23100 RVA: 0x0022B438 File Offset: 0x00229638
+	// Token: 0x06005AC4 RID: 23236 RVA: 0x0022E1A0 File Offset: 0x0022C3A0
 	public override int GetHashCode()
 	{
 		return this.spawnPosition.ToBlockPos().GetHashCode();
 	}
 
-	// Token: 0x040045DA RID: 17882
+	// Token: 0x04004676 RID: 18038
 	public SpawnPosition spawnPosition;
 
-	// Token: 0x040045DB RID: 17883
+	// Token: 0x04004677 RID: 18039
 	public int team;
 
-	// Token: 0x040045DC RID: 17884
+	// Token: 0x04004678 RID: 18040
 	public int activeInGameMode;
 }

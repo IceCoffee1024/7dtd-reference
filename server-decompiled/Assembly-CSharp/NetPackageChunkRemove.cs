@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007B0 RID: 1968
+// Token: 0x020007BA RID: 1978
 [Preserve]
 public class NetPackageChunkRemove : NetPackage
 {
-	// Token: 0x1700060A RID: 1546
-	// (get) Token: 0x06003A61 RID: 14945 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000614 RID: 1556
+	// (get) Token: 0x06003AB9 RID: 15033 RVA: 0x00020021 File Offset: 0x0001E221
 	public override int Channel
 	{
 		get
@@ -15,27 +15,27 @@ public class NetPackageChunkRemove : NetPackage
 		}
 	}
 
-	// Token: 0x06003A62 RID: 14946 RVA: 0x0017A8A2 File Offset: 0x00178AA2
+	// Token: 0x06003ABA RID: 15034 RVA: 0x0017CB22 File Offset: 0x0017AD22
 	public NetPackageChunkRemove Setup(long _chunkKey)
 	{
 		this.chunkKey = _chunkKey;
 		return this;
 	}
 
-	// Token: 0x06003A63 RID: 14947 RVA: 0x0017A8AC File Offset: 0x00178AAC
+	// Token: 0x06003ABB RID: 15035 RVA: 0x0017CB2C File Offset: 0x0017AD2C
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.chunkKey = _reader.ReadInt64();
 	}
 
-	// Token: 0x06003A64 RID: 14948 RVA: 0x0017A8BA File Offset: 0x00178ABA
+	// Token: 0x06003ABC RID: 15036 RVA: 0x0017CB3A File Offset: 0x0017AD3A
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
 		_writer.Write(this.chunkKey);
 	}
 
-	// Token: 0x06003A65 RID: 14949 RVA: 0x0017A8CF File Offset: 0x00178ACF
+	// Token: 0x06003ABD RID: 15037 RVA: 0x0017CB4F File Offset: 0x0017AD4F
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -45,14 +45,14 @@ public class NetPackageChunkRemove : NetPackage
 		_callbacks.RemoveChunk(this.chunkKey);
 	}
 
-	// Token: 0x06003A66 RID: 14950 RVA: 0x0007FE9C File Offset: 0x0007E09C
+	// Token: 0x06003ABE RID: 15038 RVA: 0x00080550 File Offset: 0x0007E750
 	public override int GetLength()
 	{
 		return 4;
 	}
 
-	// Token: 0x1700060B RID: 1547
-	// (get) Token: 0x06003A67 RID: 14951 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x17000615 RID: 1557
+	// (get) Token: 0x06003ABF RID: 15039 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -61,7 +61,7 @@ public class NetPackageChunkRemove : NetPackage
 		}
 	}
 
-	// Token: 0x04002F8A RID: 12170
+	// Token: 0x04003003 RID: 12291
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long chunkKey;
 }

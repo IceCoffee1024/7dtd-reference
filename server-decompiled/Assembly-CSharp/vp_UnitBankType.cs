@@ -1,23 +1,23 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200159E RID: 5534
+// Token: 0x020015B9 RID: 5561
 [Serializable]
 public class vp_UnitBankType : vp_ItemType
 {
-	// Token: 0x040080B1 RID: 32945
+	// Token: 0x0400818A RID: 33162
 	[SerializeField]
 	public vp_UnitType Unit;
 
-	// Token: 0x040080B2 RID: 32946
+	// Token: 0x0400818B RID: 33163
 	[SerializeField]
 	public int Capacity = 10;
 
-	// Token: 0x040080B3 RID: 32947
+	// Token: 0x0400818C RID: 33164
 	[SerializeField]
 	public bool Reloadable = true;
 
-	// Token: 0x040080B4 RID: 32948
+	// Token: 0x0400818D RID: 33165
 	[SerializeField]
 	public bool RemoveWhenDepleted;
 }

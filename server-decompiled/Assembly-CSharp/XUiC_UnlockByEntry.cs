@@ -2,18 +2,18 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001095 RID: 4245
+// Token: 0x020010AE RID: 4270
 [Preserve]
 public class XUiC_UnlockByEntry : XUiController
 {
-	// Token: 0x17000FA8 RID: 4008
-	// (get) Token: 0x0600873C RID: 34620 RVA: 0x0033BD7B File Offset: 0x00339F7B
-	// (set) Token: 0x0600873D RID: 34621 RVA: 0x0033BD83 File Offset: 0x00339F83
+	// Token: 0x17000FE1 RID: 4065
+	// (get) Token: 0x0600882E RID: 34862 RVA: 0x003405A3 File Offset: 0x0033E7A3
+	// (set) Token: 0x0600882F RID: 34863 RVA: 0x003405AB File Offset: 0x0033E7AB
 	public Recipe Recipe { get; set; }
 
-	// Token: 0x17000FA9 RID: 4009
-	// (get) Token: 0x0600873E RID: 34622 RVA: 0x0033BD8C File Offset: 0x00339F8C
-	// (set) Token: 0x0600873F RID: 34623 RVA: 0x0033BD94 File Offset: 0x00339F94
+	// Token: 0x17000FE2 RID: 4066
+	// (get) Token: 0x06008830 RID: 34864 RVA: 0x003405B4 File Offset: 0x0033E7B4
+	// (set) Token: 0x06008831 RID: 34865 RVA: 0x003405BC File Offset: 0x0033E7BC
 	public RecipeUnlockData UnlockData
 	{
 		get
@@ -27,14 +27,14 @@ public class XUiC_UnlockByEntry : XUiController
 		}
 	}
 
-	// Token: 0x06008740 RID: 34624 RVA: 0x0033BDA4 File Offset: 0x00339FA4
+	// Token: 0x06008832 RID: 34866 RVA: 0x003405CC File Offset: 0x0033E7CC
 	public override void Init()
 	{
 		base.Init();
 		this.IsDirty = false;
 	}
 
-	// Token: 0x06008741 RID: 34625 RVA: 0x0033BDB4 File Offset: 0x00339FB4
+	// Token: 0x06008833 RID: 34867 RVA: 0x003405DC File Offset: 0x0033E7DC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -100,14 +100,14 @@ public class XUiC_UnlockByEntry : XUiController
 		return true;
 	}
 
-	// Token: 0x06008742 RID: 34626 RVA: 0x0008A069 File Offset: 0x00088269
+	// Token: 0x06008834 RID: 34868 RVA: 0x0008A715 File Offset: 0x00088915
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnCountChanged(XUiController _sender, OnCountChangedEventArgs _e)
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06008743 RID: 34627 RVA: 0x002E2032 File Offset: 0x002E0232
+	// Token: 0x06008835 RID: 34869 RVA: 0x002E5FE6 File Offset: 0x002E41E6
 	public override void Update(float _dt)
 	{
 		if (this.IsDirty)
@@ -119,19 +119,19 @@ public class XUiC_UnlockByEntry : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x040064B1 RID: 25777
+	// Token: 0x04006578 RID: 25976
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RecipeUnlockData unlockData;
 
-	// Token: 0x040064B2 RID: 25778
+	// Token: 0x04006579 RID: 25977
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor itemicontintcolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x040064B3 RID: 25779
+	// Token: 0x0400657A RID: 25978
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt havecountFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x040064B4 RID: 25780
+	// Token: 0x0400657B RID: 25979
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt needcountFormatter = new CachedStringFormatterInt();
 }

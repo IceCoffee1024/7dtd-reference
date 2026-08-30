@@ -3,11 +3,11 @@ using System.Collections;
 using Platform;
 using UnityEngine;
 
-// Token: 0x020012D8 RID: 4824
+// Token: 0x020012F2 RID: 4850
 public class TitleStorageOverridesManager
 {
-	// Token: 0x170011F7 RID: 4599
-	// (get) Token: 0x060098AC RID: 39084 RVA: 0x0039DBA9 File Offset: 0x0039BDA9
+	// Token: 0x17001230 RID: 4656
+	// (get) Token: 0x060099A7 RID: 39335 RVA: 0x003A2DF9 File Offset: 0x003A0FF9
 	public static TitleStorageOverridesManager Instance
 	{
 		get
@@ -21,13 +21,13 @@ public class TitleStorageOverridesManager
 		}
 	}
 
-	// Token: 0x14000100 RID: 256
-	// (add) Token: 0x060098AD RID: 39085 RVA: 0x0039DBC0 File Offset: 0x0039BDC0
-	// (remove) Token: 0x060098AE RID: 39086 RVA: 0x0039DBF8 File Offset: 0x0039BDF8
+	// Token: 0x14000101 RID: 257
+	// (add) Token: 0x060099A8 RID: 39336 RVA: 0x003A2E10 File Offset: 0x003A1010
+	// (remove) Token: 0x060099A9 RID: 39337 RVA: 0x003A2E48 File Offset: 0x003A1048
 	[method: PublicizedFrom(EAccessModifier.Private)]
 	public event Action<TitleStorageOverridesManager.TSOverrides> fetchFinished;
 
-	// Token: 0x060098AF RID: 39087 RVA: 0x0039DC30 File Offset: 0x0039BE30
+	// Token: 0x060099AA RID: 39338 RVA: 0x003A2E80 File Offset: 0x003A1080
 	public void FetchFromSource(Action<TitleStorageOverridesManager.TSOverrides> _callback)
 	{
 		IPlatform crossplatformPlatform = PlatformManager.CrossplatformPlatform;
@@ -59,13 +59,16 @@ public class TitleStorageOverridesManager
 		}
 	}
 
-	// Token: 0x060098B0 RID: 39088 RVA: 0x0039DCC8 File Offset: 0x0039BEC8
+	// Token: 0x060099AB RID: 39339 RVA: 0x003A2F18 File Offset: 0x003A1118
 	public void ClearOverrides()
 	{
-		this.overrides = default(TitleStorageOverridesManager.TSOverrides);
+		this.overrides = new TitleStorageOverridesManager.TSOverrides
+		{
+			Crossplay = true
+		};
 	}
 
-	// Token: 0x060098B1 RID: 39089 RVA: 0x0039DCD8 File Offset: 0x0039BED8
+	// Token: 0x060099AC RID: 39340 RVA: 0x003A2F3C File Offset: 0x003A113C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetLocalPlatformNetworkString()
 	{
@@ -98,7 +101,7 @@ public class TitleStorageOverridesManager
 		return null;
 	}
 
-	// Token: 0x060098B2 RID: 39090 RVA: 0x0039DD40 File Offset: 0x0039BF40
+	// Token: 0x060099AD RID: 39341 RVA: 0x003A2FA4 File Offset: 0x003A11A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator RequestDataCo()
 	{
@@ -135,9 +138,14 @@ public class TitleStorageOverridesManager
 				}
 			}
 			CS$<>8__locals1.fileDownloadComplete = false;
+			float fileDownloadStart = Time.time;
 			storage.GetFile("PlatformOverrides", new IRemoteFileStorage.FileDownloadCompleteCallback(CS$<>8__locals1.<RequestDataCo>g__fileDownloadedCallback|0));
 			while (!CS$<>8__locals1.fileDownloadComplete)
 			{
+				if (Time.time - fileDownloadStart > 5f)
+				{
+					storage.CancelGetFile("PlatformOverrides", "Timed Out");
+				}
 				yield return null;
 			}
 			storage = null;
@@ -160,33 +168,33 @@ public class TitleStorageOverridesManager
 		yield break;
 	}
 
-	// Token: 0x040072EE RID: 29422
+	// Token: 0x040073C5 RID: 29637
 	public const string RFSUri = "PlatformOverrides";
 
-	// Token: 0x040072EF RID: 29423
+	// Token: 0x040073C6 RID: 29638
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static TitleStorageOverridesManager instance;
 
-	// Token: 0x040072F0 RID: 29424
+	// Token: 0x040073C7 RID: 29639
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DateTime lastSuccess = DateTime.MinValue;
 
-	// Token: 0x040072F1 RID: 29425
+	// Token: 0x040073C8 RID: 29640
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly object fetchLock = new object();
 
-	// Token: 0x040072F2 RID: 29426
+	// Token: 0x040073C9 RID: 29641
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool fetching;
 
-	// Token: 0x040072F4 RID: 29428
+	// Token: 0x040073CB RID: 29643
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TitleStorageOverridesManager.TSOverrides overrides;
 
-	// Token: 0x020012D9 RID: 4825
+	// Token: 0x020012F3 RID: 4851
 	public struct TSOverrides
 	{
-		// Token: 0x040072F5 RID: 29429
+		// Token: 0x040073CC RID: 29644
 		public bool Crossplay;
 	}
 }

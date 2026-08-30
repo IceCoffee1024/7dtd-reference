@@ -5,11 +5,11 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x020018F8 RID: 6392
+	// Token: 0x0200191E RID: 6430
 	[Preserve]
 	public class TrackingEntry
 	{
-		// Token: 0x0600C514 RID: 50452 RVA: 0x00489DD4 File Offset: 0x00487FD4
+		// Token: 0x0600C69B RID: 50843 RVA: 0x00490120 File Offset: 0x0048E320
 		public void AddHooks()
 		{
 			if (this.TrackingHelper != null)
@@ -20,7 +20,7 @@ namespace Challenges
 			QuestEventManager.Current.BlockChange += this.Current_BlockChange;
 		}
 
-		// Token: 0x0600C515 RID: 50453 RVA: 0x00489E24 File Offset: 0x00488024
+		// Token: 0x0600C69C RID: 50844 RVA: 0x00490170 File Offset: 0x0048E370
 		public void RemoveHooks()
 		{
 			if (this.TrackingHelper != null)
@@ -36,7 +36,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C516 RID: 50454 RVA: 0x00489E9C File Offset: 0x0048809C
+		// Token: 0x0600C69D RID: 50845 RVA: 0x004901E8 File Offset: 0x0048E3E8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Current_BlockChange(Block blockOld, Block blockNew, Vector3i blockPos)
 		{
@@ -54,7 +54,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C517 RID: 50455 RVA: 0x00489F14 File Offset: 0x00488114
+		// Token: 0x0600C69E RID: 50846 RVA: 0x00490260 File Offset: 0x0048E460
 		public void StartUpdate()
 		{
 			if (this.localPlayer == null)
@@ -67,7 +67,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C518 RID: 50456 RVA: 0x00489F74 File Offset: 0x00488174
+		// Token: 0x0600C69F RID: 50847 RVA: 0x004902C0 File Offset: 0x0048E4C0
 		public void HandleTrack(Chunk c)
 		{
 			List<Vector3i> list;
@@ -84,7 +84,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C519 RID: 50457 RVA: 0x0048A010 File Offset: 0x00488210
+		// Token: 0x0600C6A0 RID: 50848 RVA: 0x0049035C File Offset: 0x0048E55C
 		public void EndUpdate()
 		{
 			NavObjectManager instance = NavObjectManager.Instance;
@@ -98,7 +98,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C51A RID: 50458 RVA: 0x0048A074 File Offset: 0x00488274
+		// Token: 0x0600C6A1 RID: 50849 RVA: 0x004903C0 File Offset: 0x0048E5C0
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void HandleAddTrackedBlock(Vector3i pos)
 		{
@@ -112,36 +112,36 @@ namespace Challenges
 			this.TrackedBlocks.Add(new TrackingEntry.TrackedBlock(pos, this.navObjectName));
 		}
 
-		// Token: 0x04009477 RID: 38007
+		// Token: 0x040095A0 RID: 38304
 		public float trackDistance = 20f;
 
-		// Token: 0x04009478 RID: 38008
+		// Token: 0x040095A1 RID: 38305
 		[PublicizedFrom(EAccessModifier.Private)]
 		public EntityPlayerLocal localPlayer;
 
-		// Token: 0x04009479 RID: 38009
+		// Token: 0x040095A2 RID: 38306
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public List<TrackingEntry.TrackedBlock> TrackedBlocks = new List<TrackingEntry.TrackedBlock>();
 
-		// Token: 0x0400947A RID: 38010
+		// Token: 0x040095A3 RID: 38307
 		public ItemClass TrackedItem;
 
-		// Token: 0x0400947B RID: 38011
+		// Token: 0x040095A4 RID: 38308
 		public BaseChallengeObjective Owner;
 
-		// Token: 0x0400947C RID: 38012
+		// Token: 0x040095A5 RID: 38309
 		public ChallengeTrackingHandler TrackingHelper;
 
-		// Token: 0x0400947D RID: 38013
+		// Token: 0x040095A6 RID: 38310
 		public string blockIndexName = "quest_wood";
 
-		// Token: 0x0400947E RID: 38014
+		// Token: 0x040095A7 RID: 38311
 		public string navObjectName = "quest_resource";
 
-		// Token: 0x020018F9 RID: 6393
+		// Token: 0x0200191F RID: 6431
 		public class TrackedBlock
 		{
-			// Token: 0x0600C51C RID: 50460 RVA: 0x0048A10D File Offset: 0x0048830D
+			// Token: 0x0600C6A3 RID: 50851 RVA: 0x00490459 File Offset: 0x0048E659
 			public TrackedBlock(Vector3i worldPos, string NavObjectName)
 			{
 				this.WorldPos = worldPos;
@@ -149,13 +149,13 @@ namespace Challenges
 				this.KeepAlive = true;
 			}
 
-			// Token: 0x0400947F RID: 38015
+			// Token: 0x040095A8 RID: 38312
 			public Vector3i WorldPos;
 
-			// Token: 0x04009480 RID: 38016
+			// Token: 0x040095A9 RID: 38313
 			public NavObject NavObject;
 
-			// Token: 0x04009481 RID: 38017
+			// Token: 0x040095AA RID: 38314
 			public bool KeepAlive;
 		}
 	}

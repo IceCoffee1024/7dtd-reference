@@ -5,10 +5,10 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 
-// Token: 0x02000B94 RID: 2964
+// Token: 0x02000BA6 RID: 2982
 public class RegionFileRaw : RegionFile
 {
-	// Token: 0x0600599F RID: 22943 RVA: 0x00226758 File Offset: 0x00224958
+	// Token: 0x06005A27 RID: 23079 RVA: 0x00229474 File Offset: 0x00227674
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RegionFileRaw(string fullFilePath, int rX, int rZ, int paddingBytes, int version)
 		: base(fullFilePath, rX, rZ)
@@ -17,7 +17,7 @@ public class RegionFileRaw : RegionFile
 		this.version = version;
 	}
 
-	// Token: 0x060059A0 RID: 22944 RVA: 0x002267A8 File Offset: 0x002249A8
+	// Token: 0x06005A28 RID: 23080 RVA: 0x002294C4 File Offset: 0x002276C4
 	public static RegionFileRaw Load(string fullFilePath, int rX, int rZ)
 	{
 		RegionFileRaw regionFileRaw2;
@@ -42,7 +42,7 @@ public class RegionFileRaw : RegionFile
 		return regionFileRaw2;
 	}
 
-	// Token: 0x060059A1 RID: 22945 RVA: 0x00226868 File Offset: 0x00224A68
+	// Token: 0x06005A29 RID: 23081 RVA: 0x00229584 File Offset: 0x00227784
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitUsedSectors()
 	{
@@ -65,7 +65,7 @@ public class RegionFileRaw : RegionFile
 		}
 	}
 
-	// Token: 0x060059A2 RID: 22946 RVA: 0x002268E8 File Offset: 0x00224AE8
+	// Token: 0x06005A2A RID: 23082 RVA: 0x00229604 File Offset: 0x00227804
 	public static RegionFileRaw New(string fullFilePath, int rX, int rZ, int paddingBytes)
 	{
 		RegionFileRaw regionFileRaw2;
@@ -87,7 +87,7 @@ public class RegionFileRaw : RegionFile
 		return regionFileRaw2;
 	}
 
-	// Token: 0x060059A3 RID: 22947 RVA: 0x002269A8 File Offset: 0x00224BA8
+	// Token: 0x06005A2B RID: 23083 RVA: 0x002296C4 File Offset: 0x002278C4
 	public override void ReadData(int cX, int cZ, Stream targetStream)
 	{
 		lock (this)
@@ -112,7 +112,7 @@ public class RegionFileRaw : RegionFile
 		}
 	}
 
-	// Token: 0x060059A4 RID: 22948 RVA: 0x00226AA4 File Offset: 0x00224CA4
+	// Token: 0x06005A2C RID: 23084 RVA: 0x002297C0 File Offset: 0x002279C0
 	public override void WriteData(int cX, int cZ, int dataLength, byte compression, byte[] data, bool saveHeaderToFile)
 	{
 		lock (this)
@@ -166,7 +166,7 @@ public class RegionFileRaw : RegionFile
 		}
 	}
 
-	// Token: 0x060059A5 RID: 22949 RVA: 0x00226CD4 File Offset: 0x00224ED4
+	// Token: 0x06005A2D RID: 23085 RVA: 0x002299F0 File Offset: 0x00227BF0
 	public override void SaveHeaderData()
 	{
 		lock (this)
@@ -180,7 +180,7 @@ public class RegionFileRaw : RegionFile
 		}
 	}
 
-	// Token: 0x060059A6 RID: 22950 RVA: 0x00226D64 File Offset: 0x00224F64
+	// Token: 0x06005A2E RID: 23086 RVA: 0x00229A80 File Offset: 0x00227C80
 	public override bool HasChunk(int cX, int cZ)
 	{
 		int num;
@@ -189,7 +189,7 @@ public class RegionFileRaw : RegionFile
 		return num > 0 && num2 > 0;
 	}
 
-	// Token: 0x060059A7 RID: 22951 RVA: 0x00226D88 File Offset: 0x00224F88
+	// Token: 0x06005A2F RID: 23087 RVA: 0x00229AA4 File Offset: 0x00227CA4
 	public override void RemoveChunk(int cX, int cZ)
 	{
 		lock (this)
@@ -205,7 +205,7 @@ public class RegionFileRaw : RegionFile
 		}
 	}
 
-	// Token: 0x060059A8 RID: 22952 RVA: 0x00226DE8 File Offset: 0x00224FE8
+	// Token: 0x06005A30 RID: 23088 RVA: 0x00229B04 File Offset: 0x00227D04
 	public override int ChunkCount()
 	{
 		int num2;
@@ -227,7 +227,7 @@ public class RegionFileRaw : RegionFile
 		return num2;
 	}
 
-	// Token: 0x060059A9 RID: 22953 RVA: 0x00226E6C File Offset: 0x0022506C
+	// Token: 0x06005A31 RID: 23089 RVA: 0x00229B88 File Offset: 0x00227D88
 	public override int GetChunkByteCount(int cX, int cZ)
 	{
 		int num;
@@ -236,7 +236,7 @@ public class RegionFileRaw : RegionFile
 		return num2;
 	}
 
-	// Token: 0x060059AA RID: 22954 RVA: 0x00226E88 File Offset: 0x00225088
+	// Token: 0x06005A32 RID: 23090 RVA: 0x00229BA4 File Offset: 0x00227DA4
 	public override void GetTimestampInfo(int cX, int cZ, out uint timeStamp)
 	{
 		lock (this)
@@ -246,14 +246,14 @@ public class RegionFileRaw : RegionFile
 		}
 	}
 
-	// Token: 0x060059AB RID: 22955 RVA: 0x00226ED4 File Offset: 0x002250D4
+	// Token: 0x06005A33 RID: 23091 RVA: 0x00229BF0 File Offset: 0x00227DF0
 	public override void SetTimestampInfo(int cX, int cZ, uint timeStamp)
 	{
 		long offsetFromXz = this.GetOffsetFromXz(cX, cZ);
 		this.timestampHeader[(int)(checked((IntPtr)offsetFromXz))] = timeStamp;
 	}
 
-	// Token: 0x060059AC RID: 22956 RVA: 0x00226EF4 File Offset: 0x002250F4
+	// Token: 0x06005A34 RID: 23092 RVA: 0x00229C10 File Offset: 0x00227E10
 	public override void OptimizeLayout()
 	{
 		lock (this)
@@ -292,7 +292,7 @@ public class RegionFileRaw : RegionFile
 		}
 	}
 
-	// Token: 0x060059AD RID: 22957 RVA: 0x00227078 File Offset: 0x00225278
+	// Token: 0x06005A35 RID: 23093 RVA: 0x00229D94 File Offset: 0x00227F94
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GetLocationInfo(int cX, int cZ, out int offset, out int length)
 	{
@@ -307,7 +307,7 @@ public class RegionFileRaw : RegionFile
 		}
 	}
 
-	// Token: 0x060059AE RID: 22958 RVA: 0x002270D4 File Offset: 0x002252D4
+	// Token: 0x06005A36 RID: 23094 RVA: 0x00229DF0 File Offset: 0x00227FF0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetLocationInfo(int cX, int cZ, int offset, int length)
 	{
@@ -326,7 +326,7 @@ public class RegionFileRaw : RegionFile
 		}
 	}
 
-	// Token: 0x060059AF RID: 22959 RVA: 0x00227140 File Offset: 0x00225340
+	// Token: 0x06005A37 RID: 23095 RVA: 0x00229E5C File Offset: 0x0022805C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long GetOffsetFromXz(int _cX, int _cZ)
 	{
@@ -343,7 +343,7 @@ public class RegionFileRaw : RegionFile
 		return (long)(num + num2 * 8);
 	}
 
-	// Token: 0x060059B0 RID: 22960 RVA: 0x0022716C File Offset: 0x0022536C
+	// Token: 0x06005A38 RID: 23096 RVA: 0x00229E88 File Offset: 0x00228088
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int FindBestFreeSpace(int requiredLength)
 	{
@@ -380,7 +380,7 @@ public class RegionFileRaw : RegionFile
 		return num6;
 	}
 
-	// Token: 0x060059B1 RID: 22961 RVA: 0x00227238 File Offset: 0x00225438
+	// Token: 0x06005A39 RID: 23097 RVA: 0x00229F54 File Offset: 0x00228154
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void WriteBytes<[IsUnmanaged] T>(Stream stream, T[] buf, int offset, int length) where T : struct, ValueType
 	{
@@ -388,7 +388,7 @@ public class RegionFileRaw : RegionFile
 		stream.Write(readOnlySpan);
 	}
 
-	// Token: 0x060059B2 RID: 22962 RVA: 0x00227260 File Offset: 0x00225460
+	// Token: 0x06005A3A RID: 23098 RVA: 0x00229F7C File Offset: 0x0022817C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ReadBytes<[IsUnmanaged] T>(Stream stream, T[] buf, int offset, int length) where T : struct, ValueType
 	{
@@ -406,61 +406,61 @@ public class RegionFileRaw : RegionFile
 		}
 	}
 
-	// Token: 0x04004556 RID: 17750
+	// Token: 0x040045F1 RID: 17905
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int CurrentVersion = 1;
 
-	// Token: 0x04004557 RID: 17751
+	// Token: 0x040045F2 RID: 17906
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static readonly byte[] FileHeaderMagicBytes = Encoding.ASCII.GetBytes("7rr");
 
-	// Token: 0x04004558 RID: 17752
+	// Token: 0x040045F3 RID: 17907
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public const int FileHeaderMagicBytesLength = 3;
 
-	// Token: 0x04004559 RID: 17753
+	// Token: 0x040045F4 RID: 17908
 	public const int ChunksPerRegionPerDimension = 8;
 
-	// Token: 0x0400455A RID: 17754
+	// Token: 0x040045F5 RID: 17909
 	public const int ChunksPerRegion = 64;
 
-	// Token: 0x0400455B RID: 17755
+	// Token: 0x040045F6 RID: 17910
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int fileHeaderLength = 11;
 
-	// Token: 0x0400455C RID: 17756
+	// Token: 0x040045F7 RID: 17911
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int locationHeaderLength = 128;
 
-	// Token: 0x0400455D RID: 17757
+	// Token: 0x040045F8 RID: 17912
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int timestampHeaderLength = 64;
 
-	// Token: 0x0400455E RID: 17758
+	// Token: 0x040045F9 RID: 17913
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int sectorsStartOffset = 779;
 
-	// Token: 0x0400455F RID: 17759
+	// Token: 0x040045FA RID: 17914
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int reservedBytesPerEntry = 4;
 
-	// Token: 0x04004560 RID: 17760
+	// Token: 0x040045FB RID: 17915
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int[] locationHeader = new int[128];
 
-	// Token: 0x04004561 RID: 17761
+	// Token: 0x040045FC RID: 17916
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly uint[] timestampHeader = new uint[64];
 
-	// Token: 0x04004562 RID: 17762
+	// Token: 0x040045FD RID: 17917
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int paddingBytes;
 
-	// Token: 0x04004563 RID: 17763
+	// Token: 0x040045FE RID: 17918
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int version;
 
-	// Token: 0x04004564 RID: 17764
+	// Token: 0x040045FF RID: 17919
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SortedDictionary<int, int> usedSectors = new SortedDictionary<int, int>();
 }

@@ -10,12 +10,12 @@ using XMLData.Parsers;
 
 namespace XMLData.Item
 {
-	// Token: 0x0200162A RID: 5674
+	// Token: 0x02001645 RID: 5701
 	[Preserve]
 	public class ItemData : IXMLParserBase, IXMLData
 	{
-		// Token: 0x1700153D RID: 5437
-		// (get) Token: 0x0600B28A RID: 45706 RVA: 0x0042A8CF File Offset: 0x00428ACF
+		// Token: 0x17001576 RID: 5494
+		// (get) Token: 0x0600B387 RID: 45959 RVA: 0x0042FC0F File Offset: 0x0042DE0F
 		public string Name
 		{
 			get
@@ -24,8 +24,8 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700153E RID: 5438
-		// (get) Token: 0x0600B28B RID: 45707 RVA: 0x0042A8D7 File Offset: 0x00428AD7
+		// Token: 0x17001577 RID: 5495
+		// (get) Token: 0x0600B388 RID: 45960 RVA: 0x0042FC17 File Offset: 0x0042DE17
 		public int Id
 		{
 			get
@@ -34,9 +34,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x1700153F RID: 5439
-		// (get) Token: 0x0600B28C RID: 45708 RVA: 0x0042A8DF File Offset: 0x00428ADF
-		// (set) Token: 0x0600B28D RID: 45709 RVA: 0x0042A8E7 File Offset: 0x00428AE7
+		// Token: 0x17001578 RID: 5496
+		// (get) Token: 0x0600B389 RID: 45961 RVA: 0x0042FC1F File Offset: 0x0042DE1F
+		// (set) Token: 0x0600B38A RID: 45962 RVA: 0x0042FC27 File Offset: 0x0042DE27
 		public DataItem<bool> Active
 		{
 			get
@@ -49,9 +49,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001540 RID: 5440
-		// (get) Token: 0x0600B28E RID: 45710 RVA: 0x0042A8F0 File Offset: 0x00428AF0
-		// (set) Token: 0x0600B28F RID: 45711 RVA: 0x0042A8F8 File Offset: 0x00428AF8
+		// Token: 0x17001579 RID: 5497
+		// (get) Token: 0x0600B38B RID: 45963 RVA: 0x0042FC30 File Offset: 0x0042DE30
+		// (set) Token: 0x0600B38C RID: 45964 RVA: 0x0042FC38 File Offset: 0x0042DE38
 		public DataItem<bool> AlwaysActive
 		{
 			get
@@ -64,9 +64,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001541 RID: 5441
-		// (get) Token: 0x0600B290 RID: 45712 RVA: 0x0042A901 File Offset: 0x00428B01
-		// (set) Token: 0x0600B291 RID: 45713 RVA: 0x0042A909 File Offset: 0x00428B09
+		// Token: 0x1700157A RID: 5498
+		// (get) Token: 0x0600B38D RID: 45965 RVA: 0x0042FC41 File Offset: 0x0042DE41
+		// (set) Token: 0x0600B38E RID: 45966 RVA: 0x0042FC49 File Offset: 0x0042DE49
 		public DataItem<int> FuelValue
 		{
 			get
@@ -79,9 +79,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001542 RID: 5442
-		// (get) Token: 0x0600B292 RID: 45714 RVA: 0x0042A912 File Offset: 0x00428B12
-		// (set) Token: 0x0600B293 RID: 45715 RVA: 0x0042A91A File Offset: 0x00428B1A
+		// Token: 0x1700157B RID: 5499
+		// (get) Token: 0x0600B38F RID: 45967 RVA: 0x0042FC52 File Offset: 0x0042DE52
+		// (set) Token: 0x0600B390 RID: 45968 RVA: 0x0042FC5A File Offset: 0x0042DE5A
 		public DataItem<string> ImageEffectOnActive
 		{
 			get
@@ -94,9 +94,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001543 RID: 5443
-		// (get) Token: 0x0600B294 RID: 45716 RVA: 0x0042A923 File Offset: 0x00428B23
-		// (set) Token: 0x0600B295 RID: 45717 RVA: 0x0042A92B File Offset: 0x00428B2B
+		// Token: 0x1700157C RID: 5500
+		// (get) Token: 0x0600B391 RID: 45969 RVA: 0x0042FC63 File Offset: 0x0042DE63
+		// (set) Token: 0x0600B392 RID: 45970 RVA: 0x0042FC6B File Offset: 0x0042DE6B
 		public DataItem<PartsData> PartTypes
 		{
 			get
@@ -109,9 +109,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001544 RID: 5444
-		// (get) Token: 0x0600B296 RID: 45718 RVA: 0x0042A934 File Offset: 0x00428B34
-		// (set) Token: 0x0600B297 RID: 45719 RVA: 0x0042A93C File Offset: 0x00428B3C
+		// Token: 0x1700157D RID: 5501
+		// (get) Token: 0x0600B393 RID: 45971 RVA: 0x0042FC74 File Offset: 0x0042DE74
+		// (set) Token: 0x0600B394 RID: 45972 RVA: 0x0042FC7C File Offset: 0x0042DE7C
 		public DataItem<string> PlaySoundOnActive
 		{
 			get
@@ -124,9 +124,9 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x17001545 RID: 5445
-		// (get) Token: 0x0600B298 RID: 45720 RVA: 0x0042A945 File Offset: 0x00428B45
-		// (set) Token: 0x0600B299 RID: 45721 RVA: 0x0042A94D File Offset: 0x00428B4D
+		// Token: 0x1700157E RID: 5502
+		// (get) Token: 0x0600B395 RID: 45973 RVA: 0x0042FC85 File Offset: 0x0042DE85
+		// (set) Token: 0x0600B396 RID: 45974 RVA: 0x0042FC8D File Offset: 0x0042DE8D
 		public DataItem<int> Weight
 		{
 			get
@@ -139,7 +139,7 @@ namespace XMLData.Item
 			}
 		}
 
-		// Token: 0x0600B29A RID: 45722 RVA: 0x0042A958 File Offset: 0x00428B58
+		// Token: 0x0600B397 RID: 45975 RVA: 0x0042FC98 File Offset: 0x0042DE98
 		public List<IDataItem> GetDisplayValues(bool _recursive = true)
 		{
 			List<IDataItem> list = new List<IDataItem>();
@@ -177,198 +177,198 @@ namespace XMLData.Item
 			return list;
 		}
 
-		// Token: 0x040085CF RID: 34255
+		// Token: 0x040086A8 RID: 34472
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Dictionary<string, ItemClass> pElementMap = new Dictionary<string, ItemClass>();
 
-		// Token: 0x040085D0 RID: 34256
+		// Token: 0x040086A9 RID: 34473
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static ItemClass[] pElementIndexed;
 
-		// Token: 0x040085D1 RID: 34257
+		// Token: 0x040086AA RID: 34474
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string pName;
 
-		// Token: 0x040085D2 RID: 34258
+		// Token: 0x040086AB RID: 34475
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int pId;
 
-		// Token: 0x040085D3 RID: 34259
+		// Token: 0x040086AC RID: 34476
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<bool> pAlwaysActive;
 
-		// Token: 0x040085D4 RID: 34260
+		// Token: 0x040086AD RID: 34477
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<bool> pActive;
 
-		// Token: 0x040085D5 RID: 34261
+		// Token: 0x040086AE RID: 34478
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pPlaySoundOnActive;
 
-		// Token: 0x040085D6 RID: 34262
+		// Token: 0x040086AF RID: 34479
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pImageEffectOnActive;
 
-		// Token: 0x040085D7 RID: 34263
+		// Token: 0x040086B0 RID: 34480
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pMeshfile;
 
-		// Token: 0x040085D8 RID: 34264
+		// Token: 0x040086B1 RID: 34481
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pMaterial;
 
-		// Token: 0x040085D9 RID: 34265
+		// Token: 0x040086B2 RID: 34482
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<int> pHoldType;
 
-		// Token: 0x040085DA RID: 34266
+		// Token: 0x040086B3 RID: 34483
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<bool> pCanhold;
 
-		// Token: 0x040085DB RID: 34267
+		// Token: 0x040086B4 RID: 34484
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<int> pStacknumber;
 
-		// Token: 0x040085DC RID: 34268
+		// Token: 0x040086B5 RID: 34485
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<int> pDegradation;
 
-		// Token: 0x040085DD RID: 34269
+		// Token: 0x040086B6 RID: 34486
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<bool> pDegradationBreaksAfter;
 
-		// Token: 0x040085DE RID: 34270
+		// Token: 0x040086B7 RID: 34487
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<int> pFuelValue;
 
-		// Token: 0x040085DF RID: 34271
+		// Token: 0x040086B8 RID: 34488
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pCritChance;
 
-		// Token: 0x040085E0 RID: 34272
+		// Token: 0x040086B9 RID: 34489
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pGroup;
 
-		// Token: 0x040085E1 RID: 34273
+		// Token: 0x040086BA RID: 34490
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<int> pDamageEntityMin;
 
-		// Token: 0x040085E2 RID: 34274
+		// Token: 0x040086BB RID: 34491
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<int> pDamageEntityMax;
 
-		// Token: 0x040085E3 RID: 34275
+		// Token: 0x040086BC RID: 34492
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pSmell;
 
-		// Token: 0x040085E4 RID: 34276
+		// Token: 0x040086BD RID: 34493
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<int> pDropScale;
 
-		// Token: 0x040085E5 RID: 34277
+		// Token: 0x040086BE RID: 34494
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pCustomIcon;
 
-		// Token: 0x040085E6 RID: 34278
+		// Token: 0x040086BF RID: 34495
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pCustomIconTint;
 
-		// Token: 0x040085E7 RID: 34279
+		// Token: 0x040086C0 RID: 34496
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<EPartType> pPartType;
 
-		// Token: 0x040085E8 RID: 34280
+		// Token: 0x040086C1 RID: 34497
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<int> pWeight;
 
-		// Token: 0x040085E9 RID: 34281
+		// Token: 0x040086C2 RID: 34498
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<bool> pCandrop;
 
-		// Token: 0x040085EA RID: 34282
+		// Token: 0x040086C3 RID: 34499
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<bool> pUserHidden;
 
-		// Token: 0x040085EB RID: 34283
+		// Token: 0x040086C4 RID: 34500
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pLightSource;
 
-		// Token: 0x040085EC RID: 34284
+		// Token: 0x040086C5 RID: 34501
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<bool> pThrowableDecoy;
 
-		// Token: 0x040085ED RID: 34285
+		// Token: 0x040086C6 RID: 34502
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pFuseTime;
 
-		// Token: 0x040085EE RID: 34286
+		// Token: 0x040086C7 RID: 34503
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<ItemClass> pMoldTarget;
 
-		// Token: 0x040085EF RID: 34287
+		// Token: 0x040086C8 RID: 34504
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<EquipmentSlots> pEquipSlot;
 
-		// Token: 0x040085F0 RID: 34288
+		// Token: 0x040086C9 RID: 34505
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pActivateObject;
 
-		// Token: 0x040085F1 RID: 34289
+		// Token: 0x040086CA RID: 34506
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ItemData.DataItemArrayRepairTools pRepairTools;
 
-		// Token: 0x040085F2 RID: 34290
+		// Token: 0x040086CB RID: 34507
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<float> pRepairTime;
 
-		// Token: 0x040085F3 RID: 34291
+		// Token: 0x040086CC RID: 34508
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<int> pRepairAmount;
 
-		// Token: 0x040085F4 RID: 34292
+		// Token: 0x040086CD RID: 34509
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pSoundDestroy;
 
-		// Token: 0x040085F5 RID: 34293
+		// Token: 0x040086CE RID: 34510
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pSoundIdle;
 
-		// Token: 0x040085F6 RID: 34294
+		// Token: 0x040086CF RID: 34511
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<string> pSoundJammed;
 
-		// Token: 0x040085F7 RID: 34295
+		// Token: 0x040086D0 RID: 34512
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<PartsData> pPartTypes;
 
-		// Token: 0x040085F8 RID: 34296
+		// Token: 0x040086D1 RID: 34513
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ItemData.DataItemArrayAction pAction;
 
-		// Token: 0x040085F9 RID: 34297
+		// Token: 0x040086D2 RID: 34514
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<ArmorData> pArmor;
 
-		// Token: 0x040085FA RID: 34298
+		// Token: 0x040086D3 RID: 34515
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<PreviewData> pPreview;
 
-		// Token: 0x040085FB RID: 34299
+		// Token: 0x040086D4 RID: 34516
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<AttributesData> pAttributes;
 
-		// Token: 0x040085FC RID: 34300
+		// Token: 0x040086D5 RID: 34517
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<ExplosionData> pExplosion;
 
-		// Token: 0x040085FD RID: 34301
+		// Token: 0x040086D6 RID: 34518
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DataItem<UMAData> pUMA;
 
-		// Token: 0x0200162B RID: 5675
+		// Token: 0x02001646 RID: 5702
 		public class DataItemArrayRepairTools
 		{
-			// Token: 0x17001546 RID: 5446
+			// Token: 0x1700157F RID: 5503
 			public DataItem<string> this[int index]
 			{
 				get
@@ -389,8 +389,8 @@ namespace XMLData.Item
 				}
 			}
 
-			// Token: 0x17001547 RID: 5447
-			// (get) Token: 0x0600B29F RID: 45727 RVA: 0x0042AB5A File Offset: 0x00428D5A
+			// Token: 0x17001580 RID: 5504
+			// (get) Token: 0x0600B39C RID: 45980 RVA: 0x0042FE9A File Offset: 0x0042E09A
 			public int Length
 			{
 				get
@@ -399,27 +399,27 @@ namespace XMLData.Item
 				}
 			}
 
-			// Token: 0x0600B2A0 RID: 45728 RVA: 0x0042AB64 File Offset: 0x00428D64
+			// Token: 0x0600B39D RID: 45981 RVA: 0x0042FEA4 File Offset: 0x0042E0A4
 			public DataItemArrayRepairTools(int _size)
 			{
 				this.pRepairTools = new DataItem<string>[_size];
 			}
 
-			// Token: 0x0600B2A1 RID: 45729 RVA: 0x0042AB78 File Offset: 0x00428D78
+			// Token: 0x0600B39E RID: 45982 RVA: 0x0042FEB8 File Offset: 0x0042E0B8
 			public DataItemArrayRepairTools(DataItem<string>[] _init)
 			{
 				this.pRepairTools = _init;
 			}
 
-			// Token: 0x040085FE RID: 34302
+			// Token: 0x040086D7 RID: 34519
 			[PublicizedFrom(EAccessModifier.Private)]
 			public DataItem<string>[] pRepairTools;
 		}
 
-		// Token: 0x0200162C RID: 5676
+		// Token: 0x02001647 RID: 5703
 		public class DataItemArrayAction
 		{
-			// Token: 0x17001548 RID: 5448
+			// Token: 0x17001581 RID: 5505
 			public DataItem<ItemAction> this[int index]
 			{
 				get
@@ -440,8 +440,8 @@ namespace XMLData.Item
 				}
 			}
 
-			// Token: 0x17001549 RID: 5449
-			// (get) Token: 0x0600B2A4 RID: 45732 RVA: 0x0042AC2E File Offset: 0x00428E2E
+			// Token: 0x17001582 RID: 5506
+			// (get) Token: 0x0600B3A1 RID: 45985 RVA: 0x0042FF6E File Offset: 0x0042E16E
 			public int Length
 			{
 				get
@@ -450,27 +450,27 @@ namespace XMLData.Item
 				}
 			}
 
-			// Token: 0x0600B2A5 RID: 45733 RVA: 0x0042AC38 File Offset: 0x00428E38
+			// Token: 0x0600B3A2 RID: 45986 RVA: 0x0042FF78 File Offset: 0x0042E178
 			public DataItemArrayAction(int _size)
 			{
 				this.pAction = new DataItem<ItemAction>[_size];
 			}
 
-			// Token: 0x0600B2A6 RID: 45734 RVA: 0x0042AC4C File Offset: 0x00428E4C
+			// Token: 0x0600B3A3 RID: 45987 RVA: 0x0042FF8C File Offset: 0x0042E18C
 			public DataItemArrayAction(DataItem<ItemAction>[] _init)
 			{
 				this.pAction = _init;
 			}
 
-			// Token: 0x040085FF RID: 34303
+			// Token: 0x040086D8 RID: 34520
 			[PublicizedFrom(EAccessModifier.Private)]
 			public DataItem<ItemAction>[] pAction;
 		}
 
-		// Token: 0x0200162D RID: 5677
+		// Token: 0x02001648 RID: 5704
 		public static class Parser
 		{
-			// Token: 0x0600B2A7 RID: 45735 RVA: 0x0042AC5C File Offset: 0x00428E5C
+			// Token: 0x0600B3A4 RID: 45988 RVA: 0x0042FF9C File Offset: 0x0042E19C
 			public static ItemClass Parse(PositionXmlElement _elem, Dictionary<PositionXmlElement, DataItem<ItemClass>> _updateLater)
 			{
 				string text = ParserUtils.ParseStringAttribute(_elem, "name", true, null);
@@ -1593,7 +1593,7 @@ namespace XMLData.Item
 				return itemClass;
 			}
 
-			// Token: 0x0600B2A8 RID: 45736 RVA: 0x0042CEC8 File Offset: 0x0042B0C8
+			// Token: 0x0600B3A5 RID: 45989 RVA: 0x00432208 File Offset: 0x00430408
 			public static List<ItemClass> ParseXml(string _filename, string _content, bool _clearFirst = true, bool _validateOnly = false)
 			{
 				PositionXmlDocument positionXmlDocument = new PositionXmlDocument();
@@ -1649,7 +1649,7 @@ namespace XMLData.Item
 				return list;
 			}
 
-			// Token: 0x0600B2A9 RID: 45737 RVA: 0x0042D080 File Offset: 0x0042B280
+			// Token: 0x0600B3A6 RID: 45990 RVA: 0x004323C0 File Offset: 0x004305C0
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static void Clear()
 			{
@@ -1657,7 +1657,7 @@ namespace XMLData.Item
 				ItemData.pElementIndexed = null;
 			}
 
-			// Token: 0x0600B2AA RID: 45738 RVA: 0x0042D094 File Offset: 0x0042B294
+			// Token: 0x0600B3A7 RID: 45991 RVA: 0x004323D4 File Offset: 0x004305D4
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static void FillLists(string _filename, List<ItemClass> _entries, bool _clearFirst)
 			{
@@ -1700,7 +1700,7 @@ namespace XMLData.Item
 				}
 			}
 
-			// Token: 0x0600B2AB RID: 45739 RVA: 0x0042D220 File Offset: 0x0042B420
+			// Token: 0x0600B3A8 RID: 45992 RVA: 0x00432560 File Offset: 0x00430760
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static void UpdateXmlRefs(string _filename, Dictionary<PositionXmlElement, DataItem<ItemClass>> _updateLater)
 			{
@@ -1722,10 +1722,10 @@ namespace XMLData.Item
 				}
 			}
 
-			// Token: 0x04008600 RID: 34304
+			// Token: 0x040086D9 RID: 34521
 			public static int idOffset = 0;
 
-			// Token: 0x04008601 RID: 34305
+			// Token: 0x040086DA RID: 34522
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static Dictionary<string, Range<int>> knownAttributesMultiplicity = new Dictionary<string, Range<int>>
 			{

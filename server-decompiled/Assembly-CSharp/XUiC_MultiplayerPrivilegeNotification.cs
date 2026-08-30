@@ -4,11 +4,11 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E01 RID: 3585
+// Token: 0x02000E16 RID: 3606
 [Preserve]
 public class XUiC_MultiplayerPrivilegeNotification : XUiController
 {
-	// Token: 0x06006DF6 RID: 28150 RVA: 0x002AA1F0 File Offset: 0x002A83F0
+	// Token: 0x06006E96 RID: 28310 RVA: 0x002AD704 File Offset: 0x002AB904
 	[XuiBindEvent("OnPress", "btnCancel")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnCancel_OnPressed(XUiController _sender, int _mouseButton)
@@ -24,7 +24,7 @@ public class XUiC_MultiplayerPrivilegeNotification : XUiController
 		this.btnCancel.ViewComponent.Enabled = false;
 	}
 
-	// Token: 0x06006DF7 RID: 28151 RVA: 0x002AA21F File Offset: 0x002A841F
+	// Token: 0x06006E97 RID: 28311 RVA: 0x002AD733 File Offset: 0x002AB933
 	[XuiBindEvent("OnPress", "btnClose")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnClose_OnPressed(XUiController _sender, int _mouseButton)
@@ -32,7 +32,7 @@ public class XUiC_MultiplayerPrivilegeNotification : XUiController
 		this.closeWindow(false);
 	}
 
-	// Token: 0x06006DF8 RID: 28152 RVA: 0x002AA228 File Offset: 0x002A8428
+	// Token: 0x06006E98 RID: 28312 RVA: 0x002AD73C File Offset: 0x002AB93C
 	public override void OnClose()
 	{
 		CoroutineCancellationToken coroutineCancellationToken = this.cancellationToken;
@@ -51,7 +51,7 @@ public class XUiC_MultiplayerPrivilegeNotification : XUiController
 		}
 	}
 
-	// Token: 0x06006DF9 RID: 28153 RVA: 0x002AA294 File Offset: 0x002A8494
+	// Token: 0x06006E99 RID: 28313 RVA: 0x002AD7A8 File Offset: 0x002AB9A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool resolvePrivilegesWithDialog(EUserPerms _permissions, Action<bool> _resolutionComplete, float _delayDisplay = -1f, bool _usingProgressWindow = false, Action _cancellationCleanupAction = null)
 	{
@@ -95,7 +95,7 @@ public class XUiC_MultiplayerPrivilegeNotification : XUiController
 		return true;
 	}
 
-	// Token: 0x06006DFA RID: 28154 RVA: 0x002AA3C3 File Offset: 0x002A85C3
+	// Token: 0x06006E9A RID: 28314 RVA: 0x002AD8D7 File Offset: 0x002ABAD7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator delayPanelVisibility(float _delay)
 	{
@@ -107,8 +107,8 @@ public class XUiC_MultiplayerPrivilegeNotification : XUiController
 		yield break;
 	}
 
-	// Token: 0x17000C35 RID: 3125
-	// (get) Token: 0x06006DFB RID: 28155 RVA: 0x002AA3DC File Offset: 0x002A85DC
+	// Token: 0x17000C4E RID: 3150
+	// (get) Token: 0x06006E9B RID: 28315 RVA: 0x002AD8F0 File Offset: 0x002ABAF0
 	public float DefaultPlatformDelay
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -118,7 +118,7 @@ public class XUiC_MultiplayerPrivilegeNotification : XUiController
 		}
 	}
 
-	// Token: 0x06006DFC RID: 28156 RVA: 0x002AA3F0 File Offset: 0x002A85F0
+	// Token: 0x06006E9C RID: 28316 RVA: 0x002AD904 File Offset: 0x002ABB04
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator resolvePrivilegesCoroutine(EUserPerms _permissions, Action<bool> _resolutionComplete, bool _usingProgressWindow)
 	{
@@ -194,7 +194,7 @@ public class XUiC_MultiplayerPrivilegeNotification : XUiController
 		yield break;
 	}
 
-	// Token: 0x06006DFD RID: 28157 RVA: 0x002AA414 File Offset: 0x002A8614
+	// Token: 0x06006E9D RID: 28317 RVA: 0x002AD928 File Offset: 0x002ABB28
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void closeWindow(bool _success)
 	{
@@ -215,7 +215,7 @@ public class XUiC_MultiplayerPrivilegeNotification : XUiController
 		}
 	}
 
-	// Token: 0x06006DFE RID: 28158 RVA: 0x002AA498 File Offset: 0x002A8698
+	// Token: 0x06006E9E RID: 28318 RVA: 0x002AD9AC File Offset: 0x002ABBAC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setContentVisibility(bool _visible)
 	{
@@ -243,67 +243,67 @@ public class XUiC_MultiplayerPrivilegeNotification : XUiController
 		}
 	}
 
-	// Token: 0x06006DFF RID: 28159 RVA: 0x002AA574 File Offset: 0x002A8774
+	// Token: 0x06006E9F RID: 28319 RVA: 0x002ADA88 File Offset: 0x002ABC88
 	public static bool ResolvePrivilegesWithDialog(EUserPerms _permissions, Action<bool> _resolutionComplete, float _delayDisplay = -1f, bool _usingProgressWindow = false, Action _cancellationCleanupAction = null)
 	{
 		return LocalPlayerUI.primaryUI.xui.GetChildByType<XUiC_MultiplayerPrivilegeNotification>().resolvePrivilegesWithDialog(_permissions, _resolutionComplete, _delayDisplay, _usingProgressWindow, _cancellationCleanupAction);
 	}
 
-	// Token: 0x06006E00 RID: 28160 RVA: 0x002AA590 File Offset: 0x002A8790
+	// Token: 0x06006EA0 RID: 28320 RVA: 0x002ADAA4 File Offset: 0x002ABCA4
 	public static void Close()
 	{
 		LocalPlayerUI primaryUI = LocalPlayerUI.primaryUI;
 		primaryUI.windowManager.Close(primaryUI.xui.GetChildByType<XUiC_MultiplayerPrivilegeNotification>().windowGroup, false);
 	}
 
-	// Token: 0x0400535D RID: 21341
+	// Token: 0x04005400 RID: 21504
 	[XuiBindComponent("btnCancel", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnCancel;
 
-	// Token: 0x0400535E RID: 21342
+	// Token: 0x04005401 RID: 21505
 	[XuiBindComponent("btnClose", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnClose;
 
-	// Token: 0x0400535F RID: 21343
+	// Token: 0x04005402 RID: 21506
 	[XuiBindComponent("lblResolvingPrivileges", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Label lblResolvingPrivileges;
 
-	// Token: 0x04005360 RID: 21344
+	// Token: 0x04005403 RID: 21507
 	[XuiBindComponent("lblInvalidPrivileges", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Label lblInvalidPrivileges;
 
-	// Token: 0x04005361 RID: 21345
+	// Token: 0x04005404 RID: 21508
 	[XuiBindComponent("header", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiView header;
 
-	// Token: 0x04005362 RID: 21346
+	// Token: 0x04005405 RID: 21509
 	[XuiBindComponent("content", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiView content;
 
-	// Token: 0x04005363 RID: 21347
+	// Token: 0x04005406 RID: 21510
 	[XuiBindComponent("buttons", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiView buttons;
 
-	// Token: 0x04005364 RID: 21348
+	// Token: 0x04005407 RID: 21511
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool resolving;
 
-	// Token: 0x04005365 RID: 21349
+	// Token: 0x04005408 RID: 21512
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool eulaAccepted;
 
-	// Token: 0x04005366 RID: 21350
+	// Token: 0x04005409 RID: 21513
 	[PublicizedFrom(EAccessModifier.Private)]
 	public CoroutineCancellationToken cancellationToken;
 
-	// Token: 0x04005367 RID: 21351
+	// Token: 0x0400540A RID: 21514
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Action cancellationCleanupAction;
 }

@@ -1,29 +1,29 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020003D7 RID: 983
+// Token: 0x020003DB RID: 987
 public class TripWireController : MonoBehaviour
 {
-	// Token: 0x06001DD3 RID: 7635 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06001DF0 RID: 7664 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Init(DynamicProperties _properties)
 	{
 	}
 
-	// Token: 0x06001DD4 RID: 7636 RVA: 0x000B5864 File Offset: 0x000B3A64
+	// Token: 0x06001DF1 RID: 7665 RVA: 0x000B5FA8 File Offset: 0x000B41A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnTriggerEnter(Collider other)
 	{
 		this.checkIfTriggered(other);
 	}
 
-	// Token: 0x06001DD5 RID: 7637 RVA: 0x000B5864 File Offset: 0x000B3A64
+	// Token: 0x06001DF2 RID: 7666 RVA: 0x000B5FA8 File Offset: 0x000B41A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnTriggerStay(Collider other)
 	{
 		this.checkIfTriggered(other);
 	}
 
-	// Token: 0x06001DD6 RID: 7638 RVA: 0x000B5870 File Offset: 0x000B3A70
+	// Token: 0x06001DF3 RID: 7667 RVA: 0x000B5FB4 File Offset: 0x000B41B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void checkIfTriggered(Collider other)
 	{
@@ -54,12 +54,12 @@ public class TripWireController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040013E7 RID: 5095
+	// Token: 0x040013FC RID: 5116
 	public TileEntityPoweredTrigger TileEntityParent;
 
-	// Token: 0x040013E8 RID: 5096
+	// Token: 0x040013FD RID: 5117
 	public TileEntityPoweredTrigger TileEntityChild;
 
-	// Token: 0x040013E9 RID: 5097
+	// Token: 0x040013FE RID: 5118
 	public IWireNode WireNode;
 }

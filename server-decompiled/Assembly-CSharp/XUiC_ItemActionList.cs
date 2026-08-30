@@ -4,11 +4,11 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F36 RID: 3894
+// Token: 0x02000F4D RID: 3917
 [Preserve]
 public class XUiC_ItemActionList : XUiController
 {
-	// Token: 0x06007A55 RID: 31317 RVA: 0x002E2444 File Offset: 0x002E0644
+	// Token: 0x06007B0E RID: 31502 RVA: 0x002E63F8 File Offset: 0x002E45F8
 	public override void Init()
 	{
 		base.Init();
@@ -22,7 +22,7 @@ public class XUiC_ItemActionList : XUiController
 		this.craftCountControl = this.windowGroup.Controller.GetChildByType<XUiC_RecipeCraftCount>();
 	}
 
-	// Token: 0x06007A56 RID: 31318 RVA: 0x002E24B4 File Offset: 0x002E06B4
+	// Token: 0x06007B0F RID: 31503 RVA: 0x002E6468 File Offset: 0x002E4668
 	public override void Update(float _dt)
 	{
 		ItemAction holdingPrimary = this.xui.playerUI.entityPlayer.inventory.GetHoldingPrimary();
@@ -70,7 +70,7 @@ public class XUiC_ItemActionList : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x06007A57 RID: 31319 RVA: 0x002E26F8 File Offset: 0x002E08F8
+	// Token: 0x06007B10 RID: 31504 RVA: 0x002E66AC File Offset: 0x002E48AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SortActionList()
 	{
@@ -120,20 +120,20 @@ public class XUiC_ItemActionList : XUiController
 		}
 	}
 
-	// Token: 0x06007A58 RID: 31320 RVA: 0x002E284E File Offset: 0x002E0A4E
+	// Token: 0x06007B11 RID: 31505 RVA: 0x002E6802 File Offset: 0x002E4A02
 	public void AddActionListEntry(BaseItemActionEntry actionEntry)
 	{
 		this.itemActionEntries.Add(actionEntry);
 		actionEntry.ParentActionList = this;
 	}
 
-	// Token: 0x06007A59 RID: 31321 RVA: 0x0008A069 File Offset: 0x00088269
+	// Token: 0x06007B12 RID: 31506 RVA: 0x0008A715 File Offset: 0x00088915
 	public void RefreshActionList()
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007A5A RID: 31322 RVA: 0x002E2864 File Offset: 0x002E0A64
+	// Token: 0x06007B13 RID: 31507 RVA: 0x002E6818 File Offset: 0x002E4A18
 	public void SetCraftingActionList(XUiC_ItemActionList.ItemActionListTypes _actionListType, XUiController itemController)
 	{
 		for (int i = 0; i < this.itemActionEntries.Count; i++)
@@ -381,7 +381,7 @@ public class XUiC_ItemActionList : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007A5B RID: 31323 RVA: 0x002E3084 File Offset: 0x002E1284
+	// Token: 0x06007B14 RID: 31508 RVA: 0x002E7038 File Offset: 0x002E5238
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AddActionActions(ItemValue itemValue, ItemClass itemClass, XUiC_ItemStack stackController, ref bool equipFound)
 	{
@@ -401,9 +401,17 @@ public class XUiC_ItemActionList : XUiController
 			{
 				this.AddActionListEntry(new ItemActionEntryUse(stackController, ItemActionEntryUse.ConsumeType.Read));
 			}
-			if ((stackController.StackLocation == XUiC_ItemStack.StackLocationTypes.Backpack || stackController.StackLocation == XUiC_ItemStack.StackLocationTypes.ToolBelt) && itemAction is ItemActionQuest)
+			if (stackController.StackLocation == XUiC_ItemStack.StackLocationTypes.Backpack || stackController.StackLocation == XUiC_ItemStack.StackLocationTypes.ToolBelt)
 			{
-				this.AddActionListEntry(new ItemActionEntryUse(stackController, ItemActionEntryUse.ConsumeType.Quest));
+				if (itemAction is ItemActionQuest)
+				{
+					this.AddActionListEntry(new ItemActionEntryUse(stackController, ItemActionEntryUse.ConsumeType.Quest));
+				}
+				if (!equipFound && this.xui.CurrentCombineGrid != null && stackController.ItemStack.itemValue.ItemClass.HasQuality && !stackController.ItemStack.itemValue.ItemClass.HasSubItems)
+				{
+					this.AddActionListEntry(new ItemActionEntryCombine(stackController));
+					equipFound = true;
+				}
 			}
 			if (itemAction is ItemActionOpenBundle)
 			{
@@ -425,7 +433,7 @@ public class XUiC_ItemActionList : XUiController
 		}
 	}
 
-	// Token: 0x06007A5C RID: 31324 RVA: 0x002E3238 File Offset: 0x002E1438
+	// Token: 0x06007B15 RID: 31509 RVA: 0x002E723C File Offset: 0x002E543C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleUnlockedBy(XUiController itemController, XUiC_RecipeEntry entry)
 	{
@@ -488,7 +496,7 @@ public class XUiC_ItemActionList : XUiController
 		}
 	}
 
-	// Token: 0x06007A5D RID: 31325 RVA: 0x002E337A File Offset: 0x002E157A
+	// Token: 0x06007B16 RID: 31510 RVA: 0x002E737E File Offset: 0x002E557E
 	public void SetServiceActionList(InGameService service, XUiController itemController)
 	{
 		this.itemActionEntries.Clear();
@@ -499,60 +507,60 @@ public class XUiC_ItemActionList : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x04005A61 RID: 23137
+	// Token: 0x04005B14 RID: 23316
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiC_ItemActionEntry> entryList = new List<XUiC_ItemActionEntry>();
 
-	// Token: 0x04005A62 RID: 23138
+	// Token: 0x04005B15 RID: 23317
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<BaseItemActionEntry> itemActionEntries = new List<BaseItemActionEntry>();
 
-	// Token: 0x04005A63 RID: 23139
+	// Token: 0x04005B16 RID: 23318
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ItemActionList.ItemActionListTypes itemActionListType = XUiC_ItemActionList.ItemActionListTypes.Crafting;
 
-	// Token: 0x04005A64 RID: 23140
+	// Token: 0x04005B17 RID: 23319
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_RecipeEntry recipeEntry;
 
-	// Token: 0x04005A65 RID: 23141
+	// Token: 0x04005B18 RID: 23320
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int length;
 
-	// Token: 0x04005A66 RID: 23142
+	// Token: 0x04005B19 RID: 23321
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_RecipeCraftCount craftCountControl;
 
-	// Token: 0x04005A67 RID: 23143
+	// Token: 0x04005B1A RID: 23322
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool actionWasRunning;
 
-	// Token: 0x02000F37 RID: 3895
+	// Token: 0x02000F4E RID: 3918
 	public enum ItemActionListTypes
 	{
-		// Token: 0x04005A69 RID: 23145
+		// Token: 0x04005B1C RID: 23324
 		None,
-		// Token: 0x04005A6A RID: 23146
+		// Token: 0x04005B1D RID: 23325
 		Buff,
-		// Token: 0x04005A6B RID: 23147
+		// Token: 0x04005B1E RID: 23326
 		Crafting,
-		// Token: 0x04005A6C RID: 23148
+		// Token: 0x04005B1F RID: 23327
 		Forge,
-		// Token: 0x04005A6D RID: 23149
+		// Token: 0x04005B20 RID: 23328
 		Item,
-		// Token: 0x04005A6E RID: 23150
+		// Token: 0x04005B21 RID: 23329
 		Loot,
-		// Token: 0x04005A6F RID: 23151
+		// Token: 0x04005B22 RID: 23330
 		Equipment,
-		// Token: 0x04005A70 RID: 23152
+		// Token: 0x04005B23 RID: 23331
 		Creative,
-		// Token: 0x04005A71 RID: 23153
+		// Token: 0x04005B24 RID: 23332
 		Skill,
-		// Token: 0x04005A72 RID: 23154
+		// Token: 0x04005B25 RID: 23333
 		Part,
-		// Token: 0x04005A73 RID: 23155
+		// Token: 0x04005B26 RID: 23334
 		Trader,
-		// Token: 0x04005A74 RID: 23156
+		// Token: 0x04005B27 RID: 23335
 		QuestReward
 	}
 }

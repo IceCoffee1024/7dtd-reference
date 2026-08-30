@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EBB RID: 3771
+// Token: 0x02000ED0 RID: 3792
 [Preserve]
 public class XUiC_CamPositionsList : XUiC_List<XUiC_CamPositionsList.CamPerspectiveEntry>
 {
-	// Token: 0x17000DE1 RID: 3553
-	// (get) Token: 0x0600762D RID: 30253 RVA: 0x002C6803 File Offset: 0x002C4A03
-	// (set) Token: 0x0600762E RID: 30254 RVA: 0x002C680B File Offset: 0x002C4A0B
+	// Token: 0x17000DFB RID: 3579
+	// (get) Token: 0x060076CE RID: 30414 RVA: 0x002C9D27 File Offset: 0x002C7F27
+	// (set) Token: 0x060076CF RID: 30415 RVA: 0x002C9D2F File Offset: 0x002C7F2F
 	public bool ShowAddCamPositionWindow
 	{
 		get
@@ -26,7 +26,7 @@ public class XUiC_CamPositionsList : XUiC_List<XUiC_CamPositionsList.CamPerspect
 		}
 	}
 
-	// Token: 0x0600762F RID: 30255 RVA: 0x002C6824 File Offset: 0x002C4A24
+	// Token: 0x060076D0 RID: 30416 RVA: 0x002C9D48 File Offset: 0x002C7F48
 	public override void Init()
 	{
 		base.Init();
@@ -42,14 +42,14 @@ public class XUiC_CamPositionsList : XUiC_List<XUiC_CamPositionsList.CamPerspect
 		base.OnVisiblity += this.OnVisibilityChanged;
 	}
 
-	// Token: 0x06007630 RID: 30256 RVA: 0x002C6880 File Offset: 0x002C4A80
+	// Token: 0x060076D1 RID: 30417 RVA: 0x002C9DA4 File Offset: 0x002C7FA4
 	public override void Cleanup()
 	{
 		base.Cleanup();
 		base.OnVisiblity -= this.OnVisibilityChanged;
 	}
 
-	// Token: 0x06007631 RID: 30257 RVA: 0x002C689C File Offset: 0x002C4A9C
+	// Token: 0x060076D2 RID: 30418 RVA: 0x002C9DC0 File Offset: 0x002C7FC0
 	public void UpdateList()
 	{
 		int page = base.Page;
@@ -57,7 +57,7 @@ public class XUiC_CamPositionsList : XUiC_List<XUiC_CamPositionsList.CamPerspect
 		base.Page = page;
 	}
 
-	// Token: 0x06007632 RID: 30258 RVA: 0x002C68C0 File Offset: 0x002C4AC0
+	// Token: 0x060076D3 RID: 30419 RVA: 0x002C9DE4 File Offset: 0x002C7FE4
 	public override void RebuildList(bool _resetFilter = false)
 	{
 		this.allEntries.Clear();
@@ -74,7 +74,7 @@ public class XUiC_CamPositionsList : XUiC_List<XUiC_CamPositionsList.CamPerspect
 		base.RebuildList(_resetFilter);
 	}
 
-	// Token: 0x06007633 RID: 30259 RVA: 0x002C695C File Offset: 0x002C4B5C
+	// Token: 0x060076D4 RID: 30420 RVA: 0x002C9E80 File Offset: 0x002C8080
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -86,7 +86,7 @@ public class XUiC_CamPositionsList : XUiC_List<XUiC_CamPositionsList.CamPerspect
 		return base.GetBindingValueInternal(ref _value, _bindingName);
 	}
 
-	// Token: 0x06007634 RID: 30260 RVA: 0x002C6990 File Offset: 0x002C4B90
+	// Token: 0x060076D5 RID: 30421 RVA: 0x002C9EB4 File Offset: 0x002C80B4
 	public void OnVisibilityChanged(XUiController _sender, bool _visibleSelf, bool _visibleInScene)
 	{
 		if (_visibleInScene)
@@ -95,7 +95,7 @@ public class XUiC_CamPositionsList : XUiC_List<XUiC_CamPositionsList.CamPerspect
 		}
 	}
 
-	// Token: 0x06007635 RID: 30261 RVA: 0x002C699C File Offset: 0x002C4B9C
+	// Token: 0x060076D6 RID: 30422 RVA: 0x002C9EC0 File Offset: 0x002C80C0
 	public void Add(string _name, string _comment)
 	{
 		CameraPerspectives.Perspective perspective = new CameraPerspectives.Perspective(_name, this.xui.playerUI.entityPlayer, _comment);
@@ -104,25 +104,25 @@ public class XUiC_CamPositionsList : XUiC_List<XUiC_CamPositionsList.CamPerspect
 		this.UpdateList();
 	}
 
-	// Token: 0x0400572D RID: 22317
+	// Token: 0x040057D2 RID: 22482
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CameraPerspectives perspectives = new CameraPerspectives(false);
 
-	// Token: 0x0400572E RID: 22318
+	// Token: 0x040057D3 RID: 22483
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showAddCamPositionWindow;
 
-	// Token: 0x02000EBC RID: 3772
+	// Token: 0x02000ED1 RID: 3793
 	[Preserve]
 	public class CamPerspectiveEntry : XUiListEntry<XUiC_CamPositionsList.CamPerspectiveEntry>
 	{
-		// Token: 0x06007638 RID: 30264 RVA: 0x002C6A0E File Offset: 0x002C4C0E
+		// Token: 0x060076D9 RID: 30425 RVA: 0x002C9F32 File Offset: 0x002C8132
 		public CamPerspectiveEntry(CameraPerspectives.Perspective _perspective)
 		{
 			this.Perspective = _perspective;
 		}
 
-		// Token: 0x06007639 RID: 30265 RVA: 0x002C6A1D File Offset: 0x002C4C1D
+		// Token: 0x060076DA RID: 30426 RVA: 0x002C9F41 File Offset: 0x002C8141
 		public override int CompareTo(XUiC_CamPositionsList.CamPerspectiveEntry _otherEntry)
 		{
 			if (_otherEntry == null)
@@ -132,7 +132,7 @@ public class XUiC_CamPositionsList : XUiC_List<XUiC_CamPositionsList.CamPerspect
 			return string.Compare(this.Perspective.Name, _otherEntry.Perspective.Name, StringComparison.OrdinalIgnoreCase);
 		}
 
-		// Token: 0x0600763A RID: 30266 RVA: 0x002C6A40 File Offset: 0x002C4C40
+		// Token: 0x060076DB RID: 30427 RVA: 0x002C9F64 File Offset: 0x002C8164
 		public override bool MatchesSearch(string _searchString)
 		{
 			if (string.IsNullOrEmpty(_searchString))
@@ -147,16 +147,16 @@ public class XUiC_CamPositionsList : XUiC_List<XUiC_CamPositionsList.CamPerspect
 			return true;
 		}
 
-		// Token: 0x0400572F RID: 22319
+		// Token: 0x040057D4 RID: 22484
 		public readonly CameraPerspectives.Perspective Perspective;
 	}
 
-	// Token: 0x02000EBD RID: 3773
+	// Token: 0x02000ED2 RID: 3794
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class CamPositionsListEntryController : XUiC_List<XUiC_CamPositionsList.CamPerspectiveEntry>.XUiC_ListEntry
 	{
-		// Token: 0x0600763B RID: 30267 RVA: 0x002C6A78 File Offset: 0x002C4C78
+		// Token: 0x060076DC RID: 30428 RVA: 0x002C9F9C File Offset: 0x002C819C
 		public override void Init()
 		{
 			base.Init();
@@ -183,7 +183,7 @@ public class XUiC_CamPositionsList : XUiC_List<XUiC_CamPositionsList.CamPerspect
 			}
 		}
 
-		// Token: 0x0600763C RID: 30268 RVA: 0x002C6AF4 File Offset: 0x002C4CF4
+		// Token: 0x060076DD RID: 30429 RVA: 0x002CA018 File Offset: 0x002C8218
 		[XuiXmlBinding("name")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingName()
@@ -192,7 +192,7 @@ public class XUiC_CamPositionsList : XUiC_List<XUiC_CamPositionsList.CamPerspect
 			return ((entryData != null) ? entryData.Perspective.Name : null) ?? "";
 		}
 
-		// Token: 0x0600763D RID: 30269 RVA: 0x002C6B16 File Offset: 0x002C4D16
+		// Token: 0x060076DE RID: 30430 RVA: 0x002CA03A File Offset: 0x002C823A
 		[XuiXmlBinding("position")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingPosition()
@@ -204,7 +204,7 @@ public class XUiC_CamPositionsList : XUiC_List<XUiC_CamPositionsList.CamPerspect
 			return "";
 		}
 
-		// Token: 0x0600763E RID: 30270 RVA: 0x002C6B41 File Offset: 0x002C4D41
+		// Token: 0x060076DF RID: 30431 RVA: 0x002CA065 File Offset: 0x002C8265
 		[XuiXmlBinding("direction")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingDirection()
@@ -213,7 +213,7 @@ public class XUiC_CamPositionsList : XUiC_List<XUiC_CamPositionsList.CamPerspect
 			return ((entryData != null) ? entryData.Perspective.Direction.ToCultureInvariantString() : null) ?? "";
 		}
 
-		// Token: 0x0600763F RID: 30271 RVA: 0x002C6B68 File Offset: 0x002C4D68
+		// Token: 0x060076E0 RID: 30432 RVA: 0x002CA08C File Offset: 0x002C828C
 		[XuiXmlBinding("comment")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingComment()
@@ -222,7 +222,7 @@ public class XUiC_CamPositionsList : XUiC_List<XUiC_CamPositionsList.CamPerspect
 			return ((entryData != null) ? entryData.Perspective.Comment : null) ?? "";
 		}
 
-		// Token: 0x04005730 RID: 22320
+		// Token: 0x040057D5 RID: 22485
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XUiC_CamPositionsList parentList;
 	}

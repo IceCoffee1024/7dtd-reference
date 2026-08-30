@@ -4,10 +4,10 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 
-// Token: 0x02000B43 RID: 2883
+// Token: 0x02000B55 RID: 2901
 public class MapChunkDatabaseByRegion : IMapChunkDatabase
 {
-	// Token: 0x0600577A RID: 22394 RVA: 0x00216718 File Offset: 0x00214918
+	// Token: 0x06005802 RID: 22530 RVA: 0x00219434 File Offset: 0x00217634
 	public MapChunkDatabaseByRegion(int playerId)
 	{
 		this.m_regions = new Dictionary<Vector2i, MapChunkDatabaseByRegion.RegionData>();
@@ -17,7 +17,7 @@ public class MapChunkDatabaseByRegion : IMapChunkDatabase
 		this.m_playerId = playerId;
 	}
 
-	// Token: 0x0600577B RID: 22395 RVA: 0x0021676C File Offset: 0x0021496C
+	// Token: 0x06005803 RID: 22531 RVA: 0x00219488 File Offset: 0x00217688
 	public void Clear()
 	{
 		object regionsLock = this.m_regionsLock;
@@ -27,7 +27,7 @@ public class MapChunkDatabaseByRegion : IMapChunkDatabase
 		}
 	}
 
-	// Token: 0x0600577C RID: 22396 RVA: 0x002167B4 File Offset: 0x002149B4
+	// Token: 0x06005804 RID: 22532 RVA: 0x002194D0 File Offset: 0x002176D0
 	public ushort[] GetMapColors(long _chunkKey)
 	{
 		Vector2i vector2i;
@@ -45,13 +45,13 @@ public class MapChunkDatabaseByRegion : IMapChunkDatabase
 		return regionData.GetChunkData(vector2i2);
 	}
 
-	// Token: 0x0600577D RID: 22397 RVA: 0x0021681C File Offset: 0x00214A1C
+	// Token: 0x06005805 RID: 22533 RVA: 0x00219538 File Offset: 0x00217738
 	public void Add(int _chunkX, int _chunkZ, ushort[] _mapColors)
 	{
 		this.Add(_chunkX, _chunkZ, _mapColors, false);
 	}
 
-	// Token: 0x0600577E RID: 22398 RVA: 0x00216828 File Offset: 0x00214A28
+	// Token: 0x06005806 RID: 22534 RVA: 0x00219544 File Offset: 0x00217744
 	public void Add(List<int> _chunks, List<ushort[]> _mapPieces)
 	{
 		for (int i = 0; i < _chunks.Count; i++)
@@ -64,7 +64,7 @@ public class MapChunkDatabaseByRegion : IMapChunkDatabase
 		this.m_networkDataAvailable = true;
 	}
 
-	// Token: 0x0600577F RID: 22399 RVA: 0x00216870 File Offset: 0x00214A70
+	// Token: 0x06005807 RID: 22535 RVA: 0x0021958C File Offset: 0x0021778C
 	public bool Contains(long _chunkKey)
 	{
 		Vector2i vector2i;
@@ -82,19 +82,19 @@ public class MapChunkDatabaseByRegion : IMapChunkDatabase
 		return regionData.GetChunkData(vector2i2) != null;
 	}
 
-	// Token: 0x06005780 RID: 22400 RVA: 0x002168DC File Offset: 0x00214ADC
+	// Token: 0x06005808 RID: 22536 RVA: 0x002195F8 File Offset: 0x002177F8
 	public bool IsNetworkDataAvail()
 	{
 		return this.m_networkDataAvailable;
 	}
 
-	// Token: 0x06005781 RID: 22401 RVA: 0x002168E4 File Offset: 0x00214AE4
+	// Token: 0x06005809 RID: 22537 RVA: 0x00219600 File Offset: 0x00217800
 	public void ResetNetworkDataAvail()
 	{
 		this.m_networkDataAvailable = false;
 	}
 
-	// Token: 0x06005782 RID: 22402 RVA: 0x002168F0 File Offset: 0x00214AF0
+	// Token: 0x0600580A RID: 22538 RVA: 0x0021960C File Offset: 0x0021780C
 	public NetPackage GetMapChunkPackagesToSend()
 	{
 		if (!this.m_clientMapMiddlePositionUpdated)
@@ -143,28 +143,28 @@ public class MapChunkDatabaseByRegion : IMapChunkDatabase
 		return NetPackageManager.GetPackage<NetPackageMapChunks>().Setup(this.m_playerId, this.m_chunkIdsToSend, this.m_chunkDataToSend);
 	}
 
-	// Token: 0x06005783 RID: 22403 RVA: 0x00216A4C File Offset: 0x00214C4C
+	// Token: 0x0600580B RID: 22539 RVA: 0x00219768 File Offset: 0x00217968
 	public void LoadAsync(ThreadManager.TaskInfo _taskInfo)
 	{
 		IMapChunkDatabase.DirectoryPlayerId directoryPlayerId = (IMapChunkDatabase.DirectoryPlayerId)_taskInfo.parameter;
 		this.Load(Path.Join(directoryPlayerId.dir, directoryPlayerId.file));
 	}
 
-	// Token: 0x06005784 RID: 22404 RVA: 0x00216A88 File Offset: 0x00214C88
+	// Token: 0x0600580C RID: 22540 RVA: 0x002197A4 File Offset: 0x002179A4
 	public void SaveAsync(ThreadManager.TaskInfo _taskInfo)
 	{
 		IMapChunkDatabase.DirectoryPlayerId directoryPlayerId = (IMapChunkDatabase.DirectoryPlayerId)_taskInfo.parameter;
 		this.Save(Path.Join(directoryPlayerId.dir, directoryPlayerId.file));
 	}
 
-	// Token: 0x06005785 RID: 22405 RVA: 0x00216AC2 File Offset: 0x00214CC2
+	// Token: 0x0600580D RID: 22541 RVA: 0x002197DE File Offset: 0x002179DE
 	public void SetClientMapMiddlePosition(Vector2i _pos)
 	{
 		this.m_clientMapMiddlePosition = _pos;
 		this.m_clientMapMiddlePositionUpdated = true;
 	}
 
-	// Token: 0x06005786 RID: 22406 RVA: 0x00216AD4 File Offset: 0x00214CD4
+	// Token: 0x0600580E RID: 22542 RVA: 0x002197F0 File Offset: 0x002179F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Add(int chunkX, int chunkZ, ushort[] mapColors, bool skipCopy)
 	{
@@ -184,7 +184,7 @@ public class MapChunkDatabaseByRegion : IMapChunkDatabase
 		regionData.SetChunkData(vector2i2, mapColors, skipCopy);
 	}
 
-	// Token: 0x06005787 RID: 22407 RVA: 0x00216B4C File Offset: 0x00214D4C
+	// Token: 0x0600580F RID: 22543 RVA: 0x00219868 File Offset: 0x00217A68
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Load(string rootDirectory)
 	{
@@ -226,7 +226,7 @@ public class MapChunkDatabaseByRegion : IMapChunkDatabase
 		}
 	}
 
-	// Token: 0x06005788 RID: 22408 RVA: 0x00216D14 File Offset: 0x00214F14
+	// Token: 0x06005810 RID: 22544 RVA: 0x00219A30 File Offset: 0x00217C30
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Save(string rootDirectory)
 	{
@@ -280,7 +280,7 @@ public class MapChunkDatabaseByRegion : IMapChunkDatabase
 		}
 	}
 
-	// Token: 0x06005789 RID: 22409 RVA: 0x00216F2C File Offset: 0x0021512C
+	// Token: 0x06005811 RID: 22545 RVA: 0x00219C48 File Offset: 0x00217E48
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ToRegionAndOffset(long worldChunkKey, out Vector2i regionPos, out Vector2i chunkOffset)
 	{
@@ -289,14 +289,14 @@ public class MapChunkDatabaseByRegion : IMapChunkDatabase
 		this.ToRegionAndOffset(num, num2, out regionPos, out chunkOffset);
 	}
 
-	// Token: 0x0600578A RID: 22410 RVA: 0x00216F51 File Offset: 0x00215151
+	// Token: 0x06005812 RID: 22546 RVA: 0x00219C6D File Offset: 0x00217E6D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ToRegionAndOffset(Vector3i chunkPos, out Vector2i regionPos, out Vector2i chunkOffset)
 	{
 		this.ToRegionAndOffset(chunkPos.x, chunkPos.y, out regionPos, out chunkOffset);
 	}
 
-	// Token: 0x0600578B RID: 22411 RVA: 0x00216F68 File Offset: 0x00215168
+	// Token: 0x06005813 RID: 22547 RVA: 0x00219C84 File Offset: 0x00217E84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ToRegionAndOffset(int chunkX, int chunkZ, out Vector2i regionPos, out Vector2i chunkOffset)
 	{
@@ -308,14 +308,14 @@ public class MapChunkDatabaseByRegion : IMapChunkDatabase
 		chunkOffset = new Vector2i(num3, num4);
 	}
 
-	// Token: 0x0600578C RID: 22412 RVA: 0x00216FA8 File Offset: 0x002151A8
+	// Token: 0x06005814 RID: 22548 RVA: 0x00219CC4 File Offset: 0x00217EC4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetRegionDataPath(string rootDirectory, Vector2i regionPos)
 	{
 		return Path.Join(rootDirectory, string.Format("{0}{1}{2}{3}{4}", new object[] { "r.", regionPos.x, ".", regionPos.y, ".7rm" }));
 	}
 
-	// Token: 0x0600578D RID: 22413 RVA: 0x0021700C File Offset: 0x0021520C
+	// Token: 0x06005815 RID: 22549 RVA: 0x00219D28 File Offset: 0x00217F28
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryGetRegionPosFromFileName(StringSpan name, out Vector2i regionPos)
 	{
@@ -371,79 +371,79 @@ public class MapChunkDatabaseByRegion : IMapChunkDatabase
 		return true;
 	}
 
-	// Token: 0x04004354 RID: 17236
+	// Token: 0x040043EF RID: 17391
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string FilePrefix = "r.";
 
-	// Token: 0x04004355 RID: 17237
+	// Token: 0x040043F0 RID: 17392
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string FileElementSeparator = ".";
 
-	// Token: 0x04004356 RID: 17238
+	// Token: 0x040043F1 RID: 17393
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string FilePostfix = ".7rm";
 
-	// Token: 0x04004357 RID: 17239
+	// Token: 0x040043F2 RID: 17394
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int REGION_CHUNK_WIDTH = 32;
 
-	// Token: 0x04004358 RID: 17240
+	// Token: 0x040043F3 RID: 17395
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int CHUNK_TO_REGION_SHIFT = 5;
 
-	// Token: 0x04004359 RID: 17241
+	// Token: 0x040043F4 RID: 17396
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int REGION_CHUNK_AREA = 1024;
 
-	// Token: 0x0400435A RID: 17242
+	// Token: 0x040043F5 RID: 17397
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int CHUNK_DATA_LENGTH = 256;
 
-	// Token: 0x0400435B RID: 17243
+	// Token: 0x040043F6 RID: 17398
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ushort[] EMPTY_CHUNK_DATA = new ushort[256];
 
-	// Token: 0x0400435C RID: 17244
+	// Token: 0x040043F7 RID: 17399
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<Vector2i, MapChunkDatabaseByRegion.RegionData> m_regions;
 
-	// Token: 0x0400435D RID: 17245
+	// Token: 0x040043F8 RID: 17400
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly object m_regionsLock = new object();
 
-	// Token: 0x0400435E RID: 17246
+	// Token: 0x040043F9 RID: 17401
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly HashSet<int> m_chunksSent;
 
-	// Token: 0x0400435F RID: 17247
+	// Token: 0x040043FA RID: 17402
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<int> m_chunkIdsToSend;
 
-	// Token: 0x04004360 RID: 17248
+	// Token: 0x040043FB RID: 17403
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<ushort[]> m_chunkDataToSend;
 
-	// Token: 0x04004361 RID: 17249
+	// Token: 0x040043FC RID: 17404
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int m_playerId;
 
-	// Token: 0x04004362 RID: 17250
+	// Token: 0x040043FD RID: 17405
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool m_networkDataAvailable;
 
-	// Token: 0x04004363 RID: 17251
+	// Token: 0x040043FE RID: 17406
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2i m_clientMapMiddlePosition;
 
-	// Token: 0x04004364 RID: 17252
+	// Token: 0x040043FF RID: 17407
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool m_clientMapMiddlePositionUpdated;
 
-	// Token: 0x02000B44 RID: 2884
+	// Token: 0x02000B56 RID: 2902
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class RegionData
 	{
-		// Token: 0x0600578F RID: 22415 RVA: 0x0021713C File Offset: 0x0021533C
+		// Token: 0x06005817 RID: 22551 RVA: 0x00219E58 File Offset: 0x00218058
 		public RegionData()
 		{
 			this.m_regionData = new ushort[32][][];
@@ -454,13 +454,13 @@ public class MapChunkDatabaseByRegion : IMapChunkDatabase
 			this.m_dirty = true;
 		}
 
-		// Token: 0x06005790 RID: 22416 RVA: 0x0021717F File Offset: 0x0021537F
+		// Token: 0x06005818 RID: 22552 RVA: 0x00219E9B File Offset: 0x0021809B
 		public ushort[] GetChunkData(Vector2i offset)
 		{
 			return this.m_regionData[offset.y][offset.x];
 		}
 
-		// Token: 0x06005791 RID: 22417 RVA: 0x00217198 File Offset: 0x00215398
+		// Token: 0x06005819 RID: 22553 RVA: 0x00219EB4 File Offset: 0x002180B4
 		public void SetChunkData(Vector2i offset, ushort[] mapColors, bool skipCopy)
 		{
 			if (skipCopy)
@@ -479,7 +479,7 @@ public class MapChunkDatabaseByRegion : IMapChunkDatabase
 			this.m_dirty = true;
 		}
 
-		// Token: 0x06005792 RID: 22418 RVA: 0x00217210 File Offset: 0x00215410
+		// Token: 0x0600581A RID: 22554 RVA: 0x00219F2C File Offset: 0x0021812C
 		public void Load(string regionFilePath)
 		{
 			using (Stream stream = SdFile.Open(regionFilePath, FileMode.Open, FileAccess.Read))
@@ -522,7 +522,7 @@ public class MapChunkDatabaseByRegion : IMapChunkDatabase
 			}
 		}
 
-		// Token: 0x06005793 RID: 22419 RVA: 0x00217320 File Offset: 0x00215520
+		// Token: 0x0600581B RID: 22555 RVA: 0x0021A03C File Offset: 0x0021823C
 		public void Save(string regionFilePath)
 		{
 			if (!this.m_dirty && regionFilePath == this.m_lastRegionPath)
@@ -556,19 +556,19 @@ public class MapChunkDatabaseByRegion : IMapChunkDatabase
 			}
 		}
 
-		// Token: 0x04004365 RID: 17253
+		// Token: 0x04004400 RID: 17408
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int VERSION = 1;
 
-		// Token: 0x04004366 RID: 17254
+		// Token: 0x04004401 RID: 17409
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly ushort[][][] m_regionData;
 
-		// Token: 0x04004367 RID: 17255
+		// Token: 0x04004402 RID: 17410
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string m_lastRegionPath;
 
-		// Token: 0x04004368 RID: 17256
+		// Token: 0x04004403 RID: 17411
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool m_dirty;
 	}

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 
-// Token: 0x020010EB RID: 4331
+// Token: 0x02001104 RID: 4356
 public static class LabelUrlUtils
 {
-	// Token: 0x0600894F RID: 35151 RVA: 0x0034612F File Offset: 0x0034432F
+	// Token: 0x06008A41 RID: 35393 RVA: 0x0034A953 File Offset: 0x00348B53
 	public static void RegisterLabelUrlHandler(string _type, LabelUrlUtils.HandleTextClickUrlDelegate _clickHandler, LabelUrlUtils.HandleTextHoverUrlDelegate _hoverHandler)
 	{
 		if (LabelUrlUtils.urlHandlers.ContainsKey(_type))
@@ -16,7 +16,7 @@ public static class LabelUrlUtils
 		LabelUrlUtils.urlHandlers[_type] = new LabelUrlUtils.SHandlerData(_clickHandler, _hoverHandler);
 	}
 
-	// Token: 0x06008950 RID: 35152 RVA: 0x00346168 File Offset: 0x00344368
+	// Token: 0x06008A42 RID: 35394 RVA: 0x0034A98C File Offset: 0x00348B8C
 	public static void HandleLabelUrlClick(XUiView _view, UILabel _label, HashSet<string> _allowedTypes = null)
 	{
 		LabelUrlUtils.SHandlerData shandlerData;
@@ -33,7 +33,7 @@ public static class LabelUrlUtils
 		}
 	}
 
-	// Token: 0x06008951 RID: 35153 RVA: 0x00346198 File Offset: 0x00344398
+	// Token: 0x06008A43 RID: 35395 RVA: 0x0034A9BC File Offset: 0x00348BBC
 	public static void HandleLabelUrlHover(XUiView _view, UILabel _label, HashSet<string> _allowedTypes, out bool _isOverUrl, out string _tooltipText)
 	{
 		LabelUrlUtils.SHandlerData shandlerData;
@@ -49,7 +49,7 @@ public static class LabelUrlUtils
 		_tooltipText = null;
 	}
 
-	// Token: 0x06008952 RID: 35154 RVA: 0x003461D8 File Offset: 0x003443D8
+	// Token: 0x06008A44 RID: 35396 RVA: 0x0034A9FC File Offset: 0x00348BFC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool tryGetDataForLabelPos(XUiView _view, UILabel _label, HashSet<string> _allowedTypes, out LabelUrlUtils.SHandlerData _handler, out string _fullUrlString, out Dictionary<string, string> _urlElements)
 	{
@@ -101,19 +101,19 @@ public static class LabelUrlUtils
 		return true;
 	}
 
-	// Token: 0x06008953 RID: 35155 RVA: 0x003463C4 File Offset: 0x003445C4
+	// Token: 0x06008A45 RID: 35397 RVA: 0x0034ABE8 File Offset: 0x00348DE8
 	public static string BuildUrlFunctionString(string _type)
 	{
 		return "[url=Type>" + _type + "]";
 	}
 
-	// Token: 0x06008954 RID: 35156 RVA: 0x003463D8 File Offset: 0x003445D8
+	// Token: 0x06008A46 RID: 35398 RVA: 0x0034ABFC File Offset: 0x00348DFC
 	public static string BuildUrlFunctionString(string _type, [TupleElementNames(new string[] { "key", "value" })] ValueTuple<string, string> _param1)
 	{
 		return string.Concat(new string[] { "[url=Type>", _type, "|", _param1.Item1, ">", _param1.Item2, "]" });
 	}
 
-	// Token: 0x06008955 RID: 35157 RVA: 0x00346428 File Offset: 0x00344628
+	// Token: 0x06008A47 RID: 35399 RVA: 0x0034AC4C File Offset: 0x00348E4C
 	public static string BuildUrlFunctionString(string _type, [TupleElementNames(new string[] { "key", "value" })] ValueTuple<string, string> _param1, [TupleElementNames(new string[] { "key", "value" })] ValueTuple<string, string> _param2)
 	{
 		return string.Concat(new string[]
@@ -123,7 +123,7 @@ public static class LabelUrlUtils
 		});
 	}
 
-	// Token: 0x06008956 RID: 35158 RVA: 0x0034649C File Offset: 0x0034469C
+	// Token: 0x06008A48 RID: 35400 RVA: 0x0034ACC0 File Offset: 0x00348EC0
 	public static string BuildUrlFunctionString(string _type, [TupleElementNames(new string[] { "key", "value" })] ValueTuple<string, string> _param1, [TupleElementNames(new string[] { "key", "value" })] ValueTuple<string, string> _param2, [TupleElementNames(new string[] { "key", "value" })] ValueTuple<string, string> _param3)
 	{
 		return string.Concat(new string[]
@@ -133,7 +133,7 @@ public static class LabelUrlUtils
 		});
 	}
 
-	// Token: 0x06008957 RID: 35159 RVA: 0x00346538 File Offset: 0x00344738
+	// Token: 0x06008A49 RID: 35401 RVA: 0x0034AD5C File Offset: 0x00348F5C
 	[PublicizedFrom(EAccessModifier.Private)]
 	static LabelUrlUtils()
 	{
@@ -141,7 +141,7 @@ public static class LabelUrlUtils
 		LabelUrlUtils.RegisterLabelUrlHandler("HTTP", new LabelUrlUtils.HandleTextClickUrlDelegate(LabelUrlUtils.handleHttpUrl), new LabelUrlUtils.HandleTextHoverUrlDelegate(LabelUrlUtils.handleHttpUrlHover));
 	}
 
-	// Token: 0x06008958 RID: 35160 RVA: 0x003465A4 File Offset: 0x003447A4
+	// Token: 0x06008A4A RID: 35402 RVA: 0x0034ADC8 File Offset: 0x00348FC8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void handleChatTargetUrlHover(XUiView _sender, string _sourceUrl, Dictionary<string, string> _urlElements, out string _tooltipText)
 	{
@@ -167,7 +167,7 @@ public static class LabelUrlUtils
 		}
 	}
 
-	// Token: 0x06008959 RID: 35161 RVA: 0x00346644 File Offset: 0x00344844
+	// Token: 0x06008A4B RID: 35403 RVA: 0x0034AE68 File Offset: 0x00349068
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void handleChatTargetUrlClick(XUiView _sender, string _sourceUrl, Dictionary<string, string> _urlElements)
 	{
@@ -188,7 +188,7 @@ public static class LabelUrlUtils
 		XUiC_Chat.SetChatTarget(_sender.xui, echatType, text2);
 	}
 
-	// Token: 0x0600895A RID: 35162 RVA: 0x003466D0 File Offset: 0x003448D0
+	// Token: 0x06008A4C RID: 35404 RVA: 0x0034AEF4 File Offset: 0x003490F4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void handleHttpUrlHover(XUiView _sender, string _sourceUrl, Dictionary<string, string> _urlElements, out string _tooltipText)
 	{
@@ -202,7 +202,7 @@ public static class LabelUrlUtils
 		_tooltipText = text;
 	}
 
-	// Token: 0x0600895B RID: 35163 RVA: 0x00346708 File Offset: 0x00344908
+	// Token: 0x06008A4D RID: 35405 RVA: 0x0034AF2C File Offset: 0x0034912C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void handleHttpUrl(XUiView _sender, string _sourceUrl, Dictionary<string, string> _urlElements)
 	{
@@ -215,40 +215,40 @@ public static class LabelUrlUtils
 		XUiC_MessageBoxWindowGroup.ShowUrlConfirmationDialog(_sender.xui, text, false, null, null, null, "", null, false);
 	}
 
-	// Token: 0x040065F2 RID: 26098
+	// Token: 0x040066B9 RID: 26297
 	public const string LabelUrlTypeFieldName = "Type";
 
-	// Token: 0x040065F3 RID: 26099
+	// Token: 0x040066BA RID: 26298
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<string, LabelUrlUtils.SHandlerData> urlHandlers = new Dictionary<string, LabelUrlUtils.SHandlerData>();
 
-	// Token: 0x040065F4 RID: 26100
+	// Token: 0x040066BB RID: 26299
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Regex urlMatcher = new Regex("([^|]+)>([^|]+)", RegexOptions.Compiled | RegexOptions.Singleline);
 
-	// Token: 0x020010EC RID: 4332
+	// Token: 0x02001105 RID: 4357
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly struct SHandlerData
 	{
-		// Token: 0x0600895C RID: 35164 RVA: 0x00346751 File Offset: 0x00344951
+		// Token: 0x06008A4E RID: 35406 RVA: 0x0034AF75 File Offset: 0x00349175
 		public SHandlerData(LabelUrlUtils.HandleTextClickUrlDelegate _clickDelegate, LabelUrlUtils.HandleTextHoverUrlDelegate _hoverDelegate)
 		{
 			this.ClickDelegate = _clickDelegate;
 			this.HoverDelegate = _hoverDelegate;
 		}
 
-		// Token: 0x040065F5 RID: 26101
+		// Token: 0x040066BC RID: 26300
 		public readonly LabelUrlUtils.HandleTextClickUrlDelegate ClickDelegate;
 
-		// Token: 0x040065F6 RID: 26102
+		// Token: 0x040066BD RID: 26301
 		public readonly LabelUrlUtils.HandleTextHoverUrlDelegate HoverDelegate;
 	}
 
-	// Token: 0x020010ED RID: 4333
-	// (Invoke) Token: 0x0600895E RID: 35166
+	// Token: 0x02001106 RID: 4358
+	// (Invoke) Token: 0x06008A50 RID: 35408
 	public delegate void HandleTextClickUrlDelegate(XUiView _sender, string _sourceUrl, Dictionary<string, string> _urlElements);
 
-	// Token: 0x020010EE RID: 4334
-	// (Invoke) Token: 0x06008962 RID: 35170
+	// Token: 0x02001107 RID: 4359
+	// (Invoke) Token: 0x06008A54 RID: 35412
 	public delegate void HandleTextHoverUrlDelegate(XUiView _sender, string _sourceUrl, Dictionary<string, string> _urlElements, out string _tooltipText);
 }

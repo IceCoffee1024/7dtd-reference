@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Token: 0x02001570 RID: 5488
+// Token: 0x0200158B RID: 5515
 public class vp_Timer : MonoBehaviour
 {
-	// Token: 0x170013B3 RID: 5043
-	// (get) Token: 0x0600AB7A RID: 43898 RVA: 0x003FE0D8 File Offset: 0x003FC2D8
+	// Token: 0x170013EC RID: 5100
+	// (get) Token: 0x0600AC77 RID: 44151 RVA: 0x00403418 File Offset: 0x00401618
 	public bool WasAddedCorrectly
 	{
 		get
@@ -16,7 +16,7 @@ public class vp_Timer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AB7B RID: 43899 RVA: 0x003FE0F8 File Offset: 0x003FC2F8
+	// Token: 0x0600AC78 RID: 44152 RVA: 0x00403438 File Offset: 0x00401638
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
@@ -27,7 +27,7 @@ public class vp_Timer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AB7C RID: 43900 RVA: 0x003FE10C File Offset: 0x003FC30C
+	// Token: 0x0600AC79 RID: 44153 RVA: 0x0040344C File Offset: 0x0040164C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -60,43 +60,43 @@ public class vp_Timer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AB7D RID: 43901 RVA: 0x003FE235 File Offset: 0x003FC435
+	// Token: 0x0600AC7A RID: 44154 RVA: 0x00403575 File Offset: 0x00401775
 	public static void In(float delay, vp_Timer.Callback callback, vp_Timer.Handle timerHandle = null)
 	{
 		vp_Timer.Schedule(delay, callback, null, null, timerHandle, 1, -1f);
 	}
 
-	// Token: 0x0600AB7E RID: 43902 RVA: 0x003FE247 File Offset: 0x003FC447
+	// Token: 0x0600AC7B RID: 44155 RVA: 0x00403587 File Offset: 0x00401787
 	public static void In(float delay, vp_Timer.Callback callback, int iterations, vp_Timer.Handle timerHandle = null)
 	{
 		vp_Timer.Schedule(delay, callback, null, null, timerHandle, iterations, -1f);
 	}
 
-	// Token: 0x0600AB7F RID: 43903 RVA: 0x003FE259 File Offset: 0x003FC459
+	// Token: 0x0600AC7C RID: 44156 RVA: 0x00403599 File Offset: 0x00401799
 	public static void In(float delay, vp_Timer.Callback callback, int iterations, float interval, vp_Timer.Handle timerHandle = null)
 	{
 		vp_Timer.Schedule(delay, callback, null, null, timerHandle, iterations, interval);
 	}
 
-	// Token: 0x0600AB80 RID: 43904 RVA: 0x003FE268 File Offset: 0x003FC468
+	// Token: 0x0600AC7D RID: 44157 RVA: 0x004035A8 File Offset: 0x004017A8
 	public static void In(float delay, vp_Timer.ArgCallback callback, object arguments, vp_Timer.Handle timerHandle = null)
 	{
 		vp_Timer.Schedule(delay, null, callback, arguments, timerHandle, 1, -1f);
 	}
 
-	// Token: 0x0600AB81 RID: 43905 RVA: 0x003FE27A File Offset: 0x003FC47A
+	// Token: 0x0600AC7E RID: 44158 RVA: 0x004035BA File Offset: 0x004017BA
 	public static void In(float delay, vp_Timer.ArgCallback callback, object arguments, int iterations, vp_Timer.Handle timerHandle = null)
 	{
 		vp_Timer.Schedule(delay, null, callback, arguments, timerHandle, iterations, -1f);
 	}
 
-	// Token: 0x0600AB82 RID: 43906 RVA: 0x003FE28D File Offset: 0x003FC48D
+	// Token: 0x0600AC7F RID: 44159 RVA: 0x004035CD File Offset: 0x004017CD
 	public static void In(float delay, vp_Timer.ArgCallback callback, object arguments, int iterations, float interval, vp_Timer.Handle timerHandle = null)
 	{
 		vp_Timer.Schedule(delay, null, callback, arguments, timerHandle, iterations, interval);
 	}
 
-	// Token: 0x0600AB83 RID: 43907 RVA: 0x003FE29D File Offset: 0x003FC49D
+	// Token: 0x0600AC80 RID: 44160 RVA: 0x004035DD File Offset: 0x004017DD
 	public static void Start(vp_Timer.Handle timerHandle)
 	{
 		vp_Timer.Schedule(315360000f, delegate
@@ -104,7 +104,7 @@ public class vp_Timer : MonoBehaviour
 		}, null, null, timerHandle, 1, -1f);
 	}
 
-	// Token: 0x0600AB84 RID: 43908 RVA: 0x003FE2D4 File Offset: 0x003FC4D4
+	// Token: 0x0600AC81 RID: 44161 RVA: 0x00403614 File Offset: 0x00401814
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void Schedule(float time, vp_Timer.Callback func, vp_Timer.ArgCallback argFunc, object args, vp_Timer.Handle timerHandle, int iterations, float interval)
 	{
@@ -160,7 +160,7 @@ public class vp_Timer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AB85 RID: 43909 RVA: 0x003FE45D File Offset: 0x003FC65D
+	// Token: 0x0600AC82 RID: 44162 RVA: 0x0040379D File Offset: 0x0040199D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void Cancel(vp_Timer.Handle handle)
 	{
@@ -175,7 +175,7 @@ public class vp_Timer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AB86 RID: 43910 RVA: 0x003FE474 File Offset: 0x003FC674
+	// Token: 0x0600AC83 RID: 44163 RVA: 0x004037B4 File Offset: 0x004019B4
 	public static void CancelAll()
 	{
 		for (int i = vp_Timer.m_Active.Count - 1; i > -1; i--)
@@ -184,7 +184,7 @@ public class vp_Timer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AB87 RID: 43911 RVA: 0x003FE4AC File Offset: 0x003FC6AC
+	// Token: 0x0600AC84 RID: 44164 RVA: 0x004037EC File Offset: 0x004019EC
 	public static void CancelAll(string methodName)
 	{
 		for (int i = vp_Timer.m_Active.Count - 1; i > -1; i--)
@@ -196,28 +196,28 @@ public class vp_Timer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AB88 RID: 43912 RVA: 0x003FE4F9 File Offset: 0x003FC6F9
+	// Token: 0x0600AC85 RID: 44165 RVA: 0x00403839 File Offset: 0x00401A39
 	public static void DestroyAll()
 	{
 		vp_Timer.m_Active.Clear();
 		vp_Timer.m_Pool.Clear();
 	}
 
-	// Token: 0x0600AB89 RID: 43913 RVA: 0x003FE50F File Offset: 0x003FC70F
+	// Token: 0x0600AC86 RID: 44166 RVA: 0x0040384F File Offset: 0x00401A4F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
 		SceneManager.sceneLoaded += this.NotifyLevelWasLoaded;
 	}
 
-	// Token: 0x0600AB8A RID: 43914 RVA: 0x003FE522 File Offset: 0x003FC722
+	// Token: 0x0600AC87 RID: 44167 RVA: 0x00403862 File Offset: 0x00401A62
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnDisable()
 	{
 		SceneManager.sceneLoaded -= this.NotifyLevelWasLoaded;
 	}
 
-	// Token: 0x0600AB8B RID: 43915 RVA: 0x003FE538 File Offset: 0x003FC738
+	// Token: 0x0600AC88 RID: 44168 RVA: 0x00403878 File Offset: 0x00401A78
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void NotifyLevelWasLoaded(Scene scene, LoadSceneMode mode)
 	{
@@ -230,7 +230,7 @@ public class vp_Timer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AB8C RID: 43916 RVA: 0x003FE580 File Offset: 0x003FC780
+	// Token: 0x0600AC89 RID: 44169 RVA: 0x004038C0 File Offset: 0x00401AC0
 	public static vp_Timer.Stats EditorGetStats()
 	{
 		vp_Timer.Stats stats;
@@ -240,7 +240,7 @@ public class vp_Timer : MonoBehaviour
 		return stats;
 	}
 
-	// Token: 0x0600AB8D RID: 43917 RVA: 0x003FE5CC File Offset: 0x003FC7CC
+	// Token: 0x0600AC8A RID: 44170 RVA: 0x0040390C File Offset: 0x00401B0C
 	public static string EditorGetMethodInfo(int eventIndex)
 	{
 		if (eventIndex < 0 || eventIndex > vp_Timer.m_Active.Count - 1)
@@ -250,7 +250,7 @@ public class vp_Timer : MonoBehaviour
 		return vp_Timer.m_Active[eventIndex].MethodInfo;
 	}
 
-	// Token: 0x0600AB8E RID: 43918 RVA: 0x003FE5F7 File Offset: 0x003FC7F7
+	// Token: 0x0600AC8B RID: 44171 RVA: 0x00403937 File Offset: 0x00401B37
 	public static int EditorGetMethodId(int eventIndex)
 	{
 		if (eventIndex < 0 || eventIndex > vp_Timer.m_Active.Count - 1)
@@ -260,70 +260,70 @@ public class vp_Timer : MonoBehaviour
 		return vp_Timer.m_Active[eventIndex].Id;
 	}
 
-	// Token: 0x04007EC8 RID: 32456
+	// Token: 0x04007FA1 RID: 32673
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static GameObject m_MainObject = null;
 
-	// Token: 0x04007EC9 RID: 32457
+	// Token: 0x04007FA2 RID: 32674
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static List<vp_Timer.Event> m_Active = new List<vp_Timer.Event>();
 
-	// Token: 0x04007ECA RID: 32458
+	// Token: 0x04007FA3 RID: 32675
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static List<vp_Timer.Event> m_Pool = new List<vp_Timer.Event>();
 
-	// Token: 0x04007ECB RID: 32459
+	// Token: 0x04007FA4 RID: 32676
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static vp_Timer.Event m_NewEvent = null;
 
-	// Token: 0x04007ECC RID: 32460
+	// Token: 0x04007FA5 RID: 32677
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static int m_EventCount = 0;
 
-	// Token: 0x04007ECD RID: 32461
+	// Token: 0x04007FA6 RID: 32678
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static int m_EventBatch = 0;
 
-	// Token: 0x04007ECE RID: 32462
+	// Token: 0x04007FA7 RID: 32679
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static int m_EventIterator = 0;
 
-	// Token: 0x04007ECF RID: 32463
+	// Token: 0x04007FA8 RID: 32680
 	public static int MaxEventsPerFrame = 500;
 
-	// Token: 0x02001571 RID: 5489
-	// (Invoke) Token: 0x0600AB92 RID: 43922
+	// Token: 0x0200158C RID: 5516
+	// (Invoke) Token: 0x0600AC8F RID: 44175
 	public delegate void Callback();
 
-	// Token: 0x02001572 RID: 5490
-	// (Invoke) Token: 0x0600AB96 RID: 43926
+	// Token: 0x0200158D RID: 5517
+	// (Invoke) Token: 0x0600AC93 RID: 44179
 	public delegate void ArgCallback(object args);
 
-	// Token: 0x02001573 RID: 5491
+	// Token: 0x0200158E RID: 5518
 	public struct Stats
 	{
-		// Token: 0x04007ED0 RID: 32464
+		// Token: 0x04007FA9 RID: 32681
 		public int Created;
 
-		// Token: 0x04007ED1 RID: 32465
+		// Token: 0x04007FAA RID: 32682
 		public int Inactive;
 
-		// Token: 0x04007ED2 RID: 32466
+		// Token: 0x04007FAB RID: 32683
 		public int Active;
 	}
 
-	// Token: 0x02001574 RID: 5492
+	// Token: 0x0200158F RID: 5519
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class Event
 	{
-		// Token: 0x0600AB99 RID: 43929 RVA: 0x003FE65C File Offset: 0x003FC85C
+		// Token: 0x0600AC96 RID: 44182 RVA: 0x0040399C File Offset: 0x00401B9C
 		public void Execute()
 		{
 			if (this.Id == 0 || this.DueTime == 0f)
@@ -357,7 +357,7 @@ public class vp_Timer : MonoBehaviour
 			this.DueTime = Time.time + this.Interval;
 		}
 
-		// Token: 0x0600AB9A RID: 43930 RVA: 0x003FE700 File Offset: 0x003FC900
+		// Token: 0x0600AC97 RID: 44183 RVA: 0x00403A40 File Offset: 0x00401C40
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Recycle()
 		{
@@ -374,7 +374,7 @@ public class vp_Timer : MonoBehaviour
 			}
 		}
 
-		// Token: 0x0600AB9B RID: 43931 RVA: 0x003FE75E File Offset: 0x003FC95E
+		// Token: 0x0600AC98 RID: 44184 RVA: 0x00403A9E File Offset: 0x00401C9E
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Destroy()
 		{
@@ -382,15 +382,15 @@ public class vp_Timer : MonoBehaviour
 			vp_Timer.m_Pool.Remove(this);
 		}
 
-		// Token: 0x0600AB9C RID: 43932 RVA: 0x003FE778 File Offset: 0x003FC978
+		// Token: 0x0600AC99 RID: 44185 RVA: 0x00403AB8 File Offset: 0x00401CB8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Error(string message)
 		{
 			Debug.LogError("Error: (" + ((this != null) ? this.ToString() : null) + ") " + message);
 		}
 
-		// Token: 0x170013B4 RID: 5044
-		// (get) Token: 0x0600AB9D RID: 43933 RVA: 0x003FE79C File Offset: 0x003FC99C
+		// Token: 0x170013ED RID: 5101
+		// (get) Token: 0x0600AC9A RID: 44186 RVA: 0x00403ADC File Offset: 0x00401CDC
 		public string MethodName
 		{
 			get
@@ -418,8 +418,8 @@ public class vp_Timer : MonoBehaviour
 			}
 		}
 
-		// Token: 0x170013B5 RID: 5045
-		// (get) Token: 0x0600AB9E RID: 43934 RVA: 0x003FE844 File Offset: 0x003FCA44
+		// Token: 0x170013EE RID: 5102
+		// (get) Token: 0x0600AC9B RID: 44187 RVA: 0x00403B84 File Offset: 0x00401D84
 		public string MethodInfo
 		{
 			get
@@ -459,46 +459,46 @@ public class vp_Timer : MonoBehaviour
 			}
 		}
 
-		// Token: 0x04007ED3 RID: 32467
+		// Token: 0x04007FAC RID: 32684
 		public int Id;
 
-		// Token: 0x04007ED4 RID: 32468
+		// Token: 0x04007FAD RID: 32685
 		public vp_Timer.Callback Function;
 
-		// Token: 0x04007ED5 RID: 32469
+		// Token: 0x04007FAE RID: 32686
 		public vp_Timer.ArgCallback ArgFunction;
 
-		// Token: 0x04007ED6 RID: 32470
+		// Token: 0x04007FAF RID: 32687
 		public object Arguments;
 
-		// Token: 0x04007ED7 RID: 32471
+		// Token: 0x04007FB0 RID: 32688
 		public int Iterations = 1;
 
-		// Token: 0x04007ED8 RID: 32472
+		// Token: 0x04007FB1 RID: 32689
 		public float Interval = -1f;
 
-		// Token: 0x04007ED9 RID: 32473
+		// Token: 0x04007FB2 RID: 32690
 		public float DueTime;
 
-		// Token: 0x04007EDA RID: 32474
+		// Token: 0x04007FB3 RID: 32691
 		public float StartTime;
 
-		// Token: 0x04007EDB RID: 32475
+		// Token: 0x04007FB4 RID: 32692
 		public float LifeTime;
 
-		// Token: 0x04007EDC RID: 32476
+		// Token: 0x04007FB5 RID: 32693
 		public bool Paused;
 
-		// Token: 0x04007EDD RID: 32477
+		// Token: 0x04007FB6 RID: 32694
 		public bool CancelOnLoad = true;
 	}
 
-	// Token: 0x02001575 RID: 5493
+	// Token: 0x02001590 RID: 5520
 	public class Handle
 	{
-		// Token: 0x170013B6 RID: 5046
-		// (get) Token: 0x0600ABA0 RID: 43936 RVA: 0x003FE924 File Offset: 0x003FCB24
-		// (set) Token: 0x0600ABA1 RID: 43937 RVA: 0x003FE93B File Offset: 0x003FCB3B
+		// Token: 0x170013EF RID: 5103
+		// (get) Token: 0x0600AC9D RID: 44189 RVA: 0x00403C64 File Offset: 0x00401E64
+		// (set) Token: 0x0600AC9E RID: 44190 RVA: 0x00403C7B File Offset: 0x00401E7B
 		public bool Paused
 		{
 			get
@@ -514,8 +514,8 @@ public class vp_Timer : MonoBehaviour
 			}
 		}
 
-		// Token: 0x170013B7 RID: 5047
-		// (get) Token: 0x0600ABA2 RID: 43938 RVA: 0x003FE951 File Offset: 0x003FCB51
+		// Token: 0x170013F0 RID: 5104
+		// (get) Token: 0x0600AC9F RID: 44191 RVA: 0x00403C91 File Offset: 0x00401E91
 		public float TimeOfInitiation
 		{
 			get
@@ -528,8 +528,8 @@ public class vp_Timer : MonoBehaviour
 			}
 		}
 
-		// Token: 0x170013B8 RID: 5048
-		// (get) Token: 0x0600ABA3 RID: 43939 RVA: 0x003FE96C File Offset: 0x003FCB6C
+		// Token: 0x170013F1 RID: 5105
+		// (get) Token: 0x0600ACA0 RID: 44192 RVA: 0x00403CAC File Offset: 0x00401EAC
 		public float TimeOfFirstIteration
 		{
 			get
@@ -542,8 +542,8 @@ public class vp_Timer : MonoBehaviour
 			}
 		}
 
-		// Token: 0x170013B9 RID: 5049
-		// (get) Token: 0x0600ABA4 RID: 43940 RVA: 0x003FE982 File Offset: 0x003FCB82
+		// Token: 0x170013F2 RID: 5106
+		// (get) Token: 0x0600ACA1 RID: 44193 RVA: 0x00403CC2 File Offset: 0x00401EC2
 		public float TimeOfNextIteration
 		{
 			get
@@ -556,8 +556,8 @@ public class vp_Timer : MonoBehaviour
 			}
 		}
 
-		// Token: 0x170013BA RID: 5050
-		// (get) Token: 0x0600ABA5 RID: 43941 RVA: 0x003FE99D File Offset: 0x003FCB9D
+		// Token: 0x170013F3 RID: 5107
+		// (get) Token: 0x0600ACA2 RID: 44194 RVA: 0x00403CDD File Offset: 0x00401EDD
 		public float TimeOfLastIteration
 		{
 			get
@@ -570,8 +570,8 @@ public class vp_Timer : MonoBehaviour
 			}
 		}
 
-		// Token: 0x170013BB RID: 5051
-		// (get) Token: 0x0600ABA6 RID: 43942 RVA: 0x003FE9B9 File Offset: 0x003FCBB9
+		// Token: 0x170013F4 RID: 5108
+		// (get) Token: 0x0600ACA3 RID: 44195 RVA: 0x00403CF9 File Offset: 0x00401EF9
 		public float Delay
 		{
 			get
@@ -580,8 +580,8 @@ public class vp_Timer : MonoBehaviour
 			}
 		}
 
-		// Token: 0x170013BC RID: 5052
-		// (get) Token: 0x0600ABA7 RID: 43943 RVA: 0x003FE9D9 File Offset: 0x003FCBD9
+		// Token: 0x170013F5 RID: 5109
+		// (get) Token: 0x0600ACA4 RID: 44196 RVA: 0x00403D19 File Offset: 0x00401F19
 		public float Interval
 		{
 			get
@@ -594,8 +594,8 @@ public class vp_Timer : MonoBehaviour
 			}
 		}
 
-		// Token: 0x170013BD RID: 5053
-		// (get) Token: 0x0600ABA8 RID: 43944 RVA: 0x003FE9F4 File Offset: 0x003FCBF4
+		// Token: 0x170013F6 RID: 5110
+		// (get) Token: 0x0600ACA5 RID: 44197 RVA: 0x00403D34 File Offset: 0x00401F34
 		public float TimeUntilNextIteration
 		{
 			get
@@ -608,8 +608,8 @@ public class vp_Timer : MonoBehaviour
 			}
 		}
 
-		// Token: 0x170013BE RID: 5054
-		// (get) Token: 0x0600ABA9 RID: 43945 RVA: 0x003FEA15 File Offset: 0x003FCC15
+		// Token: 0x170013F7 RID: 5111
+		// (get) Token: 0x0600ACA6 RID: 44198 RVA: 0x00403D55 File Offset: 0x00401F55
 		public float DurationLeft
 		{
 			get
@@ -622,8 +622,8 @@ public class vp_Timer : MonoBehaviour
 			}
 		}
 
-		// Token: 0x170013BF RID: 5055
-		// (get) Token: 0x0600ABAA RID: 43946 RVA: 0x003FEA46 File Offset: 0x003FCC46
+		// Token: 0x170013F8 RID: 5112
+		// (get) Token: 0x0600ACA7 RID: 44199 RVA: 0x00403D86 File Offset: 0x00401F86
 		public float DurationTotal
 		{
 			get
@@ -636,8 +636,8 @@ public class vp_Timer : MonoBehaviour
 			}
 		}
 
-		// Token: 0x170013C0 RID: 5056
-		// (get) Token: 0x0600ABAB RID: 43947 RVA: 0x003FEA7B File Offset: 0x003FCC7B
+		// Token: 0x170013F9 RID: 5113
+		// (get) Token: 0x0600ACA8 RID: 44200 RVA: 0x00403DBB File Offset: 0x00401FBB
 		public float Duration
 		{
 			get
@@ -650,8 +650,8 @@ public class vp_Timer : MonoBehaviour
 			}
 		}
 
-		// Token: 0x170013C1 RID: 5057
-		// (get) Token: 0x0600ABAC RID: 43948 RVA: 0x003FEA96 File Offset: 0x003FCC96
+		// Token: 0x170013FA RID: 5114
+		// (get) Token: 0x0600ACA9 RID: 44201 RVA: 0x00403DD6 File Offset: 0x00401FD6
 		public int IterationsTotal
 		{
 			get
@@ -660,8 +660,8 @@ public class vp_Timer : MonoBehaviour
 			}
 		}
 
-		// Token: 0x170013C2 RID: 5058
-		// (get) Token: 0x0600ABAD RID: 43949 RVA: 0x003FEA9E File Offset: 0x003FCC9E
+		// Token: 0x170013FB RID: 5115
+		// (get) Token: 0x0600ACAA RID: 44202 RVA: 0x00403DDE File Offset: 0x00401FDE
 		public int IterationsLeft
 		{
 			get
@@ -674,9 +674,9 @@ public class vp_Timer : MonoBehaviour
 			}
 		}
 
-		// Token: 0x170013C3 RID: 5059
-		// (get) Token: 0x0600ABAE RID: 43950 RVA: 0x003FEAB5 File Offset: 0x003FCCB5
-		// (set) Token: 0x0600ABAF RID: 43951 RVA: 0x003FEAC0 File Offset: 0x003FCCC0
+		// Token: 0x170013FC RID: 5116
+		// (get) Token: 0x0600ACAB RID: 44203 RVA: 0x00403DF5 File Offset: 0x00401FF5
+		// (set) Token: 0x0600ACAC RID: 44204 RVA: 0x00403E00 File Offset: 0x00402000
 		public int Id
 		{
 			get
@@ -716,8 +716,8 @@ public class vp_Timer : MonoBehaviour
 			}
 		}
 
-		// Token: 0x170013C4 RID: 5060
-		// (get) Token: 0x0600ABB0 RID: 43952 RVA: 0x003FEBA6 File Offset: 0x003FCDA6
+		// Token: 0x170013FD RID: 5117
+		// (get) Token: 0x0600ACAD RID: 44205 RVA: 0x00403EE6 File Offset: 0x004020E6
 		public bool Active
 		{
 			get
@@ -726,8 +726,8 @@ public class vp_Timer : MonoBehaviour
 			}
 		}
 
-		// Token: 0x170013C5 RID: 5061
-		// (get) Token: 0x0600ABB1 RID: 43953 RVA: 0x003FEBDA File Offset: 0x003FCDDA
+		// Token: 0x170013FE RID: 5118
+		// (get) Token: 0x0600ACAE RID: 44206 RVA: 0x00403F1A File Offset: 0x0040211A
 		public string MethodName
 		{
 			get
@@ -740,8 +740,8 @@ public class vp_Timer : MonoBehaviour
 			}
 		}
 
-		// Token: 0x170013C6 RID: 5062
-		// (get) Token: 0x0600ABB2 RID: 43954 RVA: 0x003FEBF5 File Offset: 0x003FCDF5
+		// Token: 0x170013FF RID: 5119
+		// (get) Token: 0x0600ACAF RID: 44207 RVA: 0x00403F35 File Offset: 0x00402135
 		public string MethodInfo
 		{
 			get
@@ -754,9 +754,9 @@ public class vp_Timer : MonoBehaviour
 			}
 		}
 
-		// Token: 0x170013C7 RID: 5063
-		// (get) Token: 0x0600ABB3 RID: 43955 RVA: 0x003FEC10 File Offset: 0x003FCE10
-		// (set) Token: 0x0600ABB4 RID: 43956 RVA: 0x003FEC27 File Offset: 0x003FCE27
+		// Token: 0x17001400 RID: 5120
+		// (get) Token: 0x0600ACB0 RID: 44208 RVA: 0x00403F50 File Offset: 0x00402150
+		// (set) Token: 0x0600ACB1 RID: 44209 RVA: 0x00403F67 File Offset: 0x00402167
 		public bool CancelOnLoad
 		{
 			get
@@ -774,31 +774,31 @@ public class vp_Timer : MonoBehaviour
 			}
 		}
 
-		// Token: 0x0600ABB5 RID: 43957 RVA: 0x003FEC5F File Offset: 0x003FCE5F
+		// Token: 0x0600ACB2 RID: 44210 RVA: 0x00403F9F File Offset: 0x0040219F
 		public void Cancel()
 		{
 			vp_Timer.Cancel(this);
 		}
 
-		// Token: 0x0600ABB6 RID: 43958 RVA: 0x003FEC67 File Offset: 0x003FCE67
+		// Token: 0x0600ACB3 RID: 44211 RVA: 0x00403FA7 File Offset: 0x004021A7
 		public void Execute()
 		{
 			this.m_Event.DueTime = Time.time;
 		}
 
-		// Token: 0x04007EDE RID: 32478
+		// Token: 0x04007FB7 RID: 32695
 		[PublicizedFrom(EAccessModifier.Private)]
 		public vp_Timer.Event m_Event;
 
-		// Token: 0x04007EDF RID: 32479
+		// Token: 0x04007FB8 RID: 32696
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int m_Id;
 
-		// Token: 0x04007EE0 RID: 32480
+		// Token: 0x04007FB9 RID: 32697
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int m_StartIterations = 1;
 
-		// Token: 0x04007EE1 RID: 32481
+		// Token: 0x04007FBA RID: 32698
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float m_FirstDueTime;
 	}

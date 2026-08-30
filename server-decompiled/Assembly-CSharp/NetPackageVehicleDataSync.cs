@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000854 RID: 2132
+// Token: 0x02000860 RID: 2144
 [Preserve]
 public class NetPackageVehicleDataSync : NetPackage
 {
-	// Token: 0x06003E46 RID: 15942 RVA: 0x001891BC File Offset: 0x001873BC
+	// Token: 0x06003EAB RID: 16043 RVA: 0x0018B28C File Offset: 0x0018948C
 	public NetPackageVehicleDataSync Setup(EntityVehicle _ev, int _senderId, ushort _syncFlags)
 	{
 		this.senderId = _senderId;
@@ -19,14 +19,14 @@ public class NetPackageVehicleDataSync : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003E47 RID: 15943 RVA: 0x00189220 File Offset: 0x00187420
+	// Token: 0x06003EAC RID: 16044 RVA: 0x0018B2F0 File Offset: 0x001894F0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ~NetPackageVehicleDataSync()
 	{
 		MemoryPools.poolMemoryStream.FreeSync(this.entityData);
 	}
 
-	// Token: 0x06003E48 RID: 15944 RVA: 0x00189258 File Offset: 0x00187458
+	// Token: 0x06003EAD RID: 16045 RVA: 0x0018B328 File Offset: 0x00189528
 	public override void read(PooledBinaryReader _br)
 	{
 		this.senderId = _br.ReadInt32();
@@ -36,7 +36,7 @@ public class NetPackageVehicleDataSync : NetPackage
 		StreamUtils.StreamCopy(_br.BaseStream, this.entityData, num, null, true);
 	}
 
-	// Token: 0x06003E49 RID: 15945 RVA: 0x001892A4 File Offset: 0x001874A4
+	// Token: 0x06003EAE RID: 16046 RVA: 0x0018B374 File Offset: 0x00189574
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -47,7 +47,7 @@ public class NetPackageVehicleDataSync : NetPackage
 		this.entityData.WriteTo(_bw.BaseStream);
 	}
 
-	// Token: 0x06003E4A RID: 15946 RVA: 0x00189300 File Offset: 0x00187500
+	// Token: 0x06003EAF RID: 16047 RVA: 0x0018B3D0 File Offset: 0x001895D0
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -96,25 +96,25 @@ public class NetPackageVehicleDataSync : NetPackage
 		}
 	}
 
-	// Token: 0x06003E4B RID: 15947 RVA: 0x00189468 File Offset: 0x00187668
+	// Token: 0x06003EB0 RID: 16048 RVA: 0x0018B538 File Offset: 0x00189738
 	public override int GetLength()
 	{
 		return (int)(12L + this.entityData.Length);
 	}
 
-	// Token: 0x04003229 RID: 12841
+	// Token: 0x040032AA RID: 12970
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int senderId;
 
-	// Token: 0x0400322A RID: 12842
+	// Token: 0x040032AB RID: 12971
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int vehicleId;
 
-	// Token: 0x0400322B RID: 12843
+	// Token: 0x040032AC RID: 12972
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ushort syncFlags;
 
-	// Token: 0x0400322C RID: 12844
+	// Token: 0x040032AD RID: 12973
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PooledExpandableMemoryStream entityData = MemoryPools.poolMemoryStream.AllocSync(true);
 }

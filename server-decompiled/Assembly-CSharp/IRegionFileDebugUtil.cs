@@ -1,8 +1,8 @@
 ﻿using System;
 
-// Token: 0x02000B85 RID: 2949
+// Token: 0x02000B97 RID: 2967
 public interface IRegionFileDebugUtil
 {
-	// Token: 0x06005936 RID: 22838
+	// Token: 0x060059BE RID: 22974
 	string GetLocationString(int chunkX, int chunkZ);
 }

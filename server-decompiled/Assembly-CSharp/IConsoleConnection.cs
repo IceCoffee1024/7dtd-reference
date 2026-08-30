@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020002C6 RID: 710
+// Token: 0x020002CA RID: 714
 public interface IConsoleConnection
 {
-	// Token: 0x0600148A RID: 5258
+	// Token: 0x0600149C RID: 5276
 	void SendLines(List<string> _output);
 
-	// Token: 0x0600148B RID: 5259
+	// Token: 0x0600149D RID: 5277
 	void SendLine(string _text);
 
-	// Token: 0x0600148C RID: 5260
+	// Token: 0x0600149E RID: 5278
 	void SendLog(string _formattedMessage, string _plainMessage, string _trace, LogType _type, DateTime _timestamp, long _uptime);
 
-	// Token: 0x0600148D RID: 5261
+	// Token: 0x0600149F RID: 5279
 	void EnableLogLevel(LogType _type, bool _enable);
 
-	// Token: 0x0600148E RID: 5262
+	// Token: 0x060014A0 RID: 5280
 	string GetDescription();
 }

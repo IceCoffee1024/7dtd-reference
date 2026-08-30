@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200140D RID: 5133
+// Token: 0x02001428 RID: 5160
 public class LightFlicker : MonoBehaviour
 {
-	// Token: 0x0600A127 RID: 41255 RVA: 0x003C7145 File Offset: 0x003C5345
+	// Token: 0x0600A224 RID: 41508 RVA: 0x003CC489 File Offset: 0x003CA689
 	public void Start()
 	{
 		this.Init();
 	}
 
-	// Token: 0x0600A128 RID: 41256 RVA: 0x003C7150 File Offset: 0x003C5350
+	// Token: 0x0600A225 RID: 41509 RVA: 0x003CC494 File Offset: 0x003CA694
 	public void Update()
 	{
 		this.m_time += Time.deltaTime;
@@ -34,14 +34,14 @@ public class LightFlicker : MonoBehaviour
 		base.GetComponent<Light>().intensity = Mathf.Lerp(this.m_baseLight, interval.Value, this.m_time / interval.Time);
 	}
 
-	// Token: 0x0600A129 RID: 41257 RVA: 0x003C7203 File Offset: 0x003C5403
+	// Token: 0x0600A226 RID: 41510 RVA: 0x003CC547 File Offset: 0x003CA747
 	public void Reset()
 	{
 		this.MinLight = 0.1f;
 		this.MaxLight = 0.5f;
 	}
 
-	// Token: 0x0600A12A RID: 41258 RVA: 0x003C721C File Offset: 0x003C541C
+	// Token: 0x0600A227 RID: 41511 RVA: 0x003CC560 File Offset: 0x003CA760
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Init()
 	{
@@ -62,46 +62,46 @@ public class LightFlicker : MonoBehaviour
 		while (num < 5f);
 	}
 
-	// Token: 0x04007903 RID: 30979
+	// Token: 0x040079DC RID: 31196
 	public float MinLight;
 
-	// Token: 0x04007904 RID: 30980
+	// Token: 0x040079DD RID: 31197
 	public float MaxLight;
 
-	// Token: 0x04007905 RID: 30981
+	// Token: 0x040079DE RID: 31198
 	public float IntervalMin;
 
-	// Token: 0x04007906 RID: 30982
+	// Token: 0x040079DF RID: 31199
 	public float IntervalMax;
 
-	// Token: 0x04007907 RID: 30983
+	// Token: 0x040079E0 RID: 31200
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int m_intervalIdx;
 
-	// Token: 0x04007908 RID: 30984
+	// Token: 0x040079E1 RID: 31201
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float m_time;
 
-	// Token: 0x04007909 RID: 30985
+	// Token: 0x040079E2 RID: 31202
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float m_baseLight;
 
-	// Token: 0x0400790A RID: 30986
+	// Token: 0x040079E3 RID: 31203
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<LightFlicker.Interval> m_steps;
 
-	// Token: 0x0200140E RID: 5134
+	// Token: 0x02001429 RID: 5161
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class Interval
 	{
-		// Token: 0x0400790B RID: 30987
+		// Token: 0x040079E4 RID: 31204
 		public float Time;
 
-		// Token: 0x0400790C RID: 30988
+		// Token: 0x040079E5 RID: 31205
 		public float Value;
 	}
 }

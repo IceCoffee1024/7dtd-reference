@@ -5,17 +5,17 @@ using MemoryPack;
 using MemoryPack.Formatters;
 using MemoryPack.Internal;
 
-// Token: 0x020013C9 RID: 5065
+// Token: 0x020013E4 RID: 5092
 [MemoryPackable(GenerateType.Object)]
 public class DictionarySave<T1, T2> : IMemoryPackable<DictionarySave<T1, T2>>, IMemoryPackFormatterRegister where T2 : class
 {
-	// Token: 0x06009ED1 RID: 40657 RVA: 0x003BCD80 File Offset: 0x003BAF80
+	// Token: 0x06009FCE RID: 40910 RVA: 0x003C20C4 File Offset: 0x003C02C4
 	[MemoryPackConstructor]
 	public DictionarySave()
 	{
 	}
 
-	// Token: 0x170012A4 RID: 4772
+	// Token: 0x170012DD RID: 4829
 	public virtual T2 this[T1 _v]
 	{
 		get
@@ -37,8 +37,8 @@ public class DictionarySave<T1, T2> : IMemoryPackable<DictionarySave<T1, T2>>, I
 		}
 	}
 
-	// Token: 0x170012A5 RID: 4773
-	// (get) Token: 0x06009ED4 RID: 40660 RVA: 0x003BCDF0 File Offset: 0x003BAFF0
+	// Token: 0x170012DE RID: 4830
+	// (get) Token: 0x06009FD1 RID: 40913 RVA: 0x003C2134 File Offset: 0x003C0334
 	public Dictionary<T1, T2> Dict
 	{
 		get
@@ -47,43 +47,43 @@ public class DictionarySave<T1, T2> : IMemoryPackable<DictionarySave<T1, T2>>, I
 		}
 	}
 
-	// Token: 0x06009ED5 RID: 40661 RVA: 0x003BCDF8 File Offset: 0x003BAFF8
+	// Token: 0x06009FD2 RID: 40914 RVA: 0x003C213C File Offset: 0x003C033C
 	public bool ContainsKey(T1 _key)
 	{
 		return this.dic.ContainsKey(_key);
 	}
 
-	// Token: 0x06009ED6 RID: 40662 RVA: 0x003BCE06 File Offset: 0x003BB006
+	// Token: 0x06009FD3 RID: 40915 RVA: 0x003C214A File Offset: 0x003C034A
 	public bool TryGetValue(T1 _key, out T2 _value)
 	{
 		return this.dic.TryGetValue(_key, out _value);
 	}
 
-	// Token: 0x06009ED7 RID: 40663 RVA: 0x003BCE15 File Offset: 0x003BB015
+	// Token: 0x06009FD4 RID: 40916 RVA: 0x003C2159 File Offset: 0x003C0359
 	public void Add(T1 _key, T2 _value)
 	{
 		this.dic.Add(_key, _value);
 	}
 
-	// Token: 0x06009ED8 RID: 40664 RVA: 0x003BCE24 File Offset: 0x003BB024
+	// Token: 0x06009FD5 RID: 40917 RVA: 0x003C2168 File Offset: 0x003C0368
 	public void Remove(T1 _key)
 	{
 		this.dic.Remove(_key);
 	}
 
-	// Token: 0x06009ED9 RID: 40665 RVA: 0x003BCE33 File Offset: 0x003BB033
+	// Token: 0x06009FD6 RID: 40918 RVA: 0x003C2177 File Offset: 0x003C0377
 	public void Clear()
 	{
 		this.dic.Clear();
 	}
 
-	// Token: 0x06009EDA RID: 40666 RVA: 0x003BCE40 File Offset: 0x003BB040
+	// Token: 0x06009FD7 RID: 40919 RVA: 0x003C2184 File Offset: 0x003C0384
 	public void MarkToRemove(T1 _v)
 	{
 		this.toRemove.Add(_v);
 	}
 
-	// Token: 0x06009EDB RID: 40667 RVA: 0x003BCE50 File Offset: 0x003BB050
+	// Token: 0x06009FD8 RID: 40920 RVA: 0x003C2194 File Offset: 0x003C0394
 	public void RemoveAllMarked(DictionarySave<T1, T2>.DictionaryRemoveCallback _callback)
 	{
 		foreach (T1 t in this.toRemove)
@@ -93,8 +93,8 @@ public class DictionarySave<T1, T2> : IMemoryPackable<DictionarySave<T1, T2>>, I
 		this.toRemove.Clear();
 	}
 
-	// Token: 0x170012A6 RID: 4774
-	// (get) Token: 0x06009EDC RID: 40668 RVA: 0x003BCEB0 File Offset: 0x003BB0B0
+	// Token: 0x170012DF RID: 4831
+	// (get) Token: 0x06009FD9 RID: 40921 RVA: 0x003C21F4 File Offset: 0x003C03F4
 	public int Count
 	{
 		get
@@ -103,14 +103,14 @@ public class DictionarySave<T1, T2> : IMemoryPackable<DictionarySave<T1, T2>>, I
 		}
 	}
 
-	// Token: 0x06009EDD RID: 40669 RVA: 0x003BCEBD File Offset: 0x003BB0BD
+	// Token: 0x06009FDA RID: 40922 RVA: 0x003C2201 File Offset: 0x003C0401
 	[PublicizedFrom(EAccessModifier.Private)]
 	static DictionarySave()
 	{
 		DictionarySave<T1, T2>.RegisterFormatter();
 	}
 
-	// Token: 0x06009EDE RID: 40670 RVA: 0x003BCED8 File Offset: 0x003BB0D8
+	// Token: 0x06009FDB RID: 40923 RVA: 0x003C221C File Offset: 0x003C041C
 	[Preserve]
 	public static void RegisterFormatter()
 	{
@@ -128,7 +128,7 @@ public class DictionarySave<T1, T2> : IMemoryPackable<DictionarySave<T1, T2>>, I
 		}
 	}
 
-	// Token: 0x06009EDF RID: 40671 RVA: 0x003BCF10 File Offset: 0x003BB110
+	// Token: 0x06009FDC RID: 40924 RVA: 0x003C2254 File Offset: 0x003C0454
 	[Preserve]
 	public static void Serialize(ref MemoryPackWriter writer, [Nullable(new byte[] { 2, 1, 1 })] ref DictionarySave<T1, T2> value)
 	{
@@ -145,7 +145,7 @@ public class DictionarySave<T1, T2> : IMemoryPackable<DictionarySave<T1, T2>>, I
 		writer.WriteUnmanaged<int>(in count);
 	}
 
-	// Token: 0x06009EE0 RID: 40672 RVA: 0x003BCF5C File Offset: 0x003BB15C
+	// Token: 0x06009FDD RID: 40925 RVA: 0x003C22A0 File Offset: 0x003C04A0
 	[Preserve]
 	public static void Deserialize(ref MemoryPackReader reader, [Nullable(new byte[] { 2, 1, 1 })] ref DictionarySave<T1, T2> value)
 	{
@@ -221,38 +221,38 @@ public class DictionarySave<T1, T2> : IMemoryPackable<DictionarySave<T1, T2>>, I
 		};
 	}
 
-	// Token: 0x0400781A RID: 30746
+	// Token: 0x040078F3 RID: 30963
 	[MemoryPackInclude]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<T1, T2> dic = new Dictionary<T1, T2>();
 
-	// Token: 0x0400781B RID: 30747
+	// Token: 0x040078F4 RID: 30964
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<T1> toRemove = new List<T1>();
 
-	// Token: 0x0400781C RID: 30748
+	// Token: 0x040078F5 RID: 30965
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly bool KeyIsValuetype = typeof(T1).IsValueType;
 
-	// Token: 0x020013CA RID: 5066
-	// (Invoke) Token: 0x06009EE2 RID: 40674
+	// Token: 0x020013E5 RID: 5093
+	// (Invoke) Token: 0x06009FDF RID: 40927
 	public delegate void DictionaryRemoveCallback(T1 _o);
 
-	// Token: 0x020013CB RID: 5067
+	// Token: 0x020013E6 RID: 5094
 	[NullableContext(1)]
 	[Nullable(new byte[] { 0, 1, 1, 1 })]
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public sealed class DictionarySaveFormatter : MemoryPackFormatter<DictionarySave<T1, T2>>
 	{
-		// Token: 0x06009EE5 RID: 40677 RVA: 0x003BD048 File Offset: 0x003BB248
+		// Token: 0x06009FE2 RID: 40930 RVA: 0x003C238C File Offset: 0x003C058C
 		[Preserve]
 		public override void Serialize(ref MemoryPackWriter writer, ref DictionarySave<T1, T2> value)
 		{
 			DictionarySave<T1, T2>.Serialize(ref writer, ref value);
 		}
 
-		// Token: 0x06009EE6 RID: 40678 RVA: 0x003BD051 File Offset: 0x003BB251
+		// Token: 0x06009FE3 RID: 40931 RVA: 0x003C2395 File Offset: 0x003C0595
 		[Preserve]
 		public override void Deserialize(ref MemoryPackReader reader, ref DictionarySave<T1, T2> value)
 		{

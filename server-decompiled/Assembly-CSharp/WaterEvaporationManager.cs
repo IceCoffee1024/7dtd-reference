@@ -2,20 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000196 RID: 406
+// Token: 0x02000198 RID: 408
 public class WaterEvaporationManager : MonoBehaviour
 {
-	// Token: 0x06000C56 RID: 3158 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000C61 RID: 3169 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Start()
 	{
 	}
 
-	// Token: 0x06000C57 RID: 3159 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000C62 RID: 3170 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Update()
 	{
 	}
 
-	// Token: 0x06000C58 RID: 3160 RVA: 0x0004C730 File Offset: 0x0004A930
+	// Token: 0x06000C63 RID: 3171 RVA: 0x0004CB48 File Offset: 0x0004AD48
 	public static void UpdateEvaporation()
 	{
 		if (GameManager.Instance == null)
@@ -114,7 +114,7 @@ public class WaterEvaporationManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C59 RID: 3161 RVA: 0x0004CBB8 File Offset: 0x0004ADB8
+	// Token: 0x06000C64 RID: 3172 RVA: 0x0004CFD0 File Offset: 0x0004B1D0
 	public static void ClearAll()
 	{
 		DictionaryList<int, DictionaryList<int, DictionaryList<int, WaterEvaporationManager.BlockData>>> dictionaryList = WaterEvaporationManager.restingList;
@@ -139,7 +139,7 @@ public class WaterEvaporationManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C5A RID: 3162 RVA: 0x0004CC94 File Offset: 0x0004AE94
+	// Token: 0x06000C65 RID: 3173 RVA: 0x0004D0AC File Offset: 0x0004B2AC
 	public static void AddToRestList(Vector3i _blockPos)
 	{
 		DictionaryList<int, DictionaryList<int, DictionaryList<int, WaterEvaporationManager.BlockData>>> dictionaryList = WaterEvaporationManager.restingList;
@@ -185,7 +185,7 @@ public class WaterEvaporationManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C5B RID: 3163 RVA: 0x0004CF30 File Offset: 0x0004B130
+	// Token: 0x06000C66 RID: 3174 RVA: 0x0004D348 File Offset: 0x0004B548
 	public static void RemoveFromRestList(Vector3i _blockPos)
 	{
 		DictionaryList<int, DictionaryList<int, DictionaryList<int, WaterEvaporationManager.BlockData>>> dictionaryList = WaterEvaporationManager.restingList;
@@ -203,7 +203,7 @@ public class WaterEvaporationManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C5C RID: 3164 RVA: 0x0004D0A0 File Offset: 0x0004B2A0
+	// Token: 0x06000C67 RID: 3175 RVA: 0x0004D4B8 File Offset: 0x0004B6B8
 	public static ulong GetRestTime(Vector3i _blockPos)
 	{
 		DictionaryList<int, DictionaryList<int, DictionaryList<int, WaterEvaporationManager.BlockData>>> dictionaryList = WaterEvaporationManager.restingList;
@@ -217,7 +217,7 @@ public class WaterEvaporationManager : MonoBehaviour
 		return 0UL;
 	}
 
-	// Token: 0x06000C5D RID: 3165 RVA: 0x0004D194 File Offset: 0x0004B394
+	// Token: 0x06000C68 RID: 3176 RVA: 0x0004D5AC File Offset: 0x0004B7AC
 	public static void AddToEvapList(Vector3i _blockPos)
 	{
 		DictionaryList<int, DictionaryList<int, DictionaryList<int, WaterEvaporationManager.BlockData>>> dictionaryList = WaterEvaporationManager.evaporationList;
@@ -263,7 +263,7 @@ public class WaterEvaporationManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C5E RID: 3166 RVA: 0x0004D430 File Offset: 0x0004B630
+	// Token: 0x06000C69 RID: 3177 RVA: 0x0004D848 File Offset: 0x0004BA48
 	public static void RemoveFromEvapList(Vector3i _blockPos)
 	{
 		DictionaryList<int, DictionaryList<int, DictionaryList<int, WaterEvaporationManager.BlockData>>> dictionaryList = WaterEvaporationManager.evaporationList;
@@ -281,7 +281,7 @@ public class WaterEvaporationManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C5F RID: 3167 RVA: 0x0004D5A0 File Offset: 0x0004B7A0
+	// Token: 0x06000C6A RID: 3178 RVA: 0x0004D9B8 File Offset: 0x0004BBB8
 	public static ulong GetEvapTime(Vector3i _blockPos)
 	{
 		DictionaryList<int, DictionaryList<int, DictionaryList<int, WaterEvaporationManager.BlockData>>> dictionaryList = WaterEvaporationManager.evaporationList;
@@ -295,61 +295,61 @@ public class WaterEvaporationManager : MonoBehaviour
 		return 0UL;
 	}
 
-	// Token: 0x04000B12 RID: 2834
+	// Token: 0x04000B1F RID: 2847
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static int evapWalkIndex = 0;
 
-	// Token: 0x04000B13 RID: 2835
+	// Token: 0x04000B20 RID: 2848
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static ulong uniqueIndex = 0UL;
 
-	// Token: 0x04000B14 RID: 2836
+	// Token: 0x04000B21 RID: 2849
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static int restWalkIndex = 0;
 
-	// Token: 0x04000B15 RID: 2837
+	// Token: 0x04000B22 RID: 2850
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static DictionaryList<ulong, WaterEvaporationManager.BlockData> evapWalkList = new DictionaryList<ulong, WaterEvaporationManager.BlockData>();
 
-	// Token: 0x04000B16 RID: 2838
+	// Token: 0x04000B23 RID: 2851
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static DictionaryList<int, DictionaryList<int, DictionaryList<int, WaterEvaporationManager.BlockData>>> evaporationList = new DictionaryList<int, DictionaryList<int, DictionaryList<int, WaterEvaporationManager.BlockData>>>();
 
-	// Token: 0x04000B17 RID: 2839
+	// Token: 0x04000B24 RID: 2852
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static DictionaryList<ulong, WaterEvaporationManager.BlockData> restWalkList = new DictionaryList<ulong, WaterEvaporationManager.BlockData>();
 
-	// Token: 0x04000B18 RID: 2840
+	// Token: 0x04000B25 RID: 2853
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static DictionaryList<int, DictionaryList<int, DictionaryList<int, WaterEvaporationManager.BlockData>>> restingList = new DictionaryList<int, DictionaryList<int, DictionaryList<int, WaterEvaporationManager.BlockData>>>();
 
-	// Token: 0x04000B19 RID: 2841
+	// Token: 0x04000B26 RID: 2854
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static int waterBlockID = -1;
 
-	// Token: 0x04000B1A RID: 2842
+	// Token: 0x04000B27 RID: 2855
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static List<Vector3i> vRemovalList = new List<Vector3i>();
 
-	// Token: 0x04000B1B RID: 2843
+	// Token: 0x04000B28 RID: 2856
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static List<ulong> uRemovalList = new List<ulong>();
 
-	// Token: 0x02000197 RID: 407
+	// Token: 0x02000199 RID: 409
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class BlockData
 	{
-		// Token: 0x06000C62 RID: 3170 RVA: 0x0004D6F6 File Offset: 0x0004B8F6
+		// Token: 0x06000C6D RID: 3181 RVA: 0x0004DB0E File Offset: 0x0004BD0E
 		public BlockData(Vector3i _pos)
 		{
 			this.time = GameManager.Instance.World.GetWorldTime();
@@ -359,13 +359,13 @@ public class WaterEvaporationManager : MonoBehaviour
 			this.pos = _pos;
 		}
 
-		// Token: 0x04000B1C RID: 2844
+		// Token: 0x04000B29 RID: 2857
 		public ulong time;
 
-		// Token: 0x04000B1D RID: 2845
+		// Token: 0x04000B2A RID: 2858
 		public ulong ID;
 
-		// Token: 0x04000B1E RID: 2846
+		// Token: 0x04000B2B RID: 2859
 		public Vector3i pos;
 	}
 }

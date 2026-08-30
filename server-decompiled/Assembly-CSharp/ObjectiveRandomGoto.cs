@@ -4,12 +4,12 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000997 RID: 2455
+// Token: 0x020009A8 RID: 2472
 [Preserve]
 public class ObjectiveRandomGoto : BaseObjective
 {
-	// Token: 0x170007A5 RID: 1957
-	// (get) Token: 0x06004852 RID: 18514 RVA: 0x001C0119 File Offset: 0x001BE319
+	// Token: 0x170007B7 RID: 1975
+	// (get) Token: 0x060048D8 RID: 18648 RVA: 0x001C290D File Offset: 0x001C0B0D
 	public override BaseObjective.ObjectiveValueTypes ObjectiveValueType
 	{
 		get
@@ -22,15 +22,15 @@ public class ObjectiveRandomGoto : BaseObjective
 		}
 	}
 
-	// Token: 0x06004853 RID: 18515 RVA: 0x001C4DCE File Offset: 0x001C2FCE
+	// Token: 0x060048D9 RID: 18649 RVA: 0x001C75C2 File Offset: 0x001C57C2
 	public override void SetupObjective()
 	{
 		this.keyword = Localization.Get("ObjectiveRallyPointHeadTo", false, null);
 		this.SetupIcon();
 	}
 
-	// Token: 0x170007A6 RID: 1958
-	// (get) Token: 0x06004854 RID: 18516 RVA: 0x001BE8E8 File Offset: 0x001BCAE8
+	// Token: 0x170007B8 RID: 1976
+	// (get) Token: 0x060048DA RID: 18650 RVA: 0x001C10DC File Offset: 0x001BF2DC
 	public override bool UpdateUI
 	{
 		get
@@ -39,15 +39,15 @@ public class ObjectiveRandomGoto : BaseObjective
 		}
 	}
 
-	// Token: 0x06004855 RID: 18517 RVA: 0x001BE8F6 File Offset: 0x001BCAF6
+	// Token: 0x060048DB RID: 18651 RVA: 0x001C10EA File Offset: 0x001BF2EA
 	public override void SetupDisplay()
 	{
 		base.Description = this.keyword;
 		this.StatusText = "";
 	}
 
-	// Token: 0x170007A7 RID: 1959
-	// (get) Token: 0x06004856 RID: 18518 RVA: 0x001C4DE8 File Offset: 0x001C2FE8
+	// Token: 0x170007B9 RID: 1977
+	// (get) Token: 0x060048DC RID: 18652 RVA: 0x001C75DC File Offset: 0x001C57DC
 	public override string StatusText
 	{
 		get
@@ -75,26 +75,26 @@ public class ObjectiveRandomGoto : BaseObjective
 		}
 	}
 
-	// Token: 0x06004857 RID: 18519 RVA: 0x001C4E52 File Offset: 0x001C3052
+	// Token: 0x060048DD RID: 18653 RVA: 0x001C7646 File Offset: 0x001C5846
 	public override void AddHooks()
 	{
 		QuestEventManager.Current.AddObjectiveToBeUpdated(this);
 		base.OwnerQuest.HandleMapObject(Quest.PositionDataTypes.Location, this.NavObjectName, -1);
 	}
 
-	// Token: 0x06004858 RID: 18520 RVA: 0x001C4E72 File Offset: 0x001C3072
+	// Token: 0x060048DE RID: 18654 RVA: 0x001C7666 File Offset: 0x001C5866
 	public override void RemoveHooks()
 	{
 		QuestEventManager.Current.RemoveObjectiveToBeUpdated(this);
 	}
 
-	// Token: 0x06004859 RID: 18521 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060048DF RID: 18655 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void SetupIcon()
 	{
 	}
 
-	// Token: 0x0600485A RID: 18522 RVA: 0x001C4E80 File Offset: 0x001C3080
+	// Token: 0x060048E0 RID: 18656 RVA: 0x001C7674 File Offset: 0x001C5874
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual Vector3 GetPosition()
 	{
@@ -153,7 +153,7 @@ public class ObjectiveRandomGoto : BaseObjective
 		return Vector3.zero;
 	}
 
-	// Token: 0x0600485B RID: 18523 RVA: 0x001C50F0 File Offset: 0x001C32F0
+	// Token: 0x060048E1 RID: 18657 RVA: 0x001C78E4 File Offset: 0x001C5AE4
 	public static Vector3i CalculateRandomPoint(int entityID, float distance, string questID, bool canBeWithinPOI = false, BiomeFilterTypes biomeFilterType = BiomeFilterTypes.SameBiome, string biomeFilter = "")
 	{
 		World world = GameManager.Instance.World;
@@ -217,7 +217,7 @@ public class ObjectiveRandomGoto : BaseObjective
 		return vector3i;
 	}
 
-	// Token: 0x0600485C RID: 18524 RVA: 0x001C5344 File Offset: 0x001C3544
+	// Token: 0x060048E2 RID: 18658 RVA: 0x001C7B38 File Offset: 0x001C5D38
 	public static Vector3i CalculateRandomPositionFromFlatAreas(int entityID, float minDistance, float maxDistance, BiomeFilterTypes biomeFilterType = BiomeFilterTypes.SameBiome, string biomeFilter = "")
 	{
 		World world = GameManager.Instance.World;
@@ -234,7 +234,7 @@ public class ObjectiveRandomGoto : BaseObjective
 		return new Vector3i(0, -99999, 0);
 	}
 
-	// Token: 0x0600485D RID: 18525 RVA: 0x001C5414 File Offset: 0x001C3614
+	// Token: 0x060048E3 RID: 18659 RVA: 0x001C7C08 File Offset: 0x001C5E08
 	public void FinalizePoint(int x, int y, int z)
 	{
 		this.position = new Vector3((float)x, (float)y, (float)z);
@@ -245,7 +245,7 @@ public class ObjectiveRandomGoto : BaseObjective
 		base.CurrentValue = 2;
 	}
 
-	// Token: 0x0600485E RID: 18526 RVA: 0x001C5478 File Offset: 0x001C3678
+	// Token: 0x060048E4 RID: 18660 RVA: 0x001C7C6C File Offset: 0x001C5E6C
 	public override void Update(float deltaTime)
 	{
 		if (Time.time > this.updateTime)
@@ -307,12 +307,12 @@ public class ObjectiveRandomGoto : BaseObjective
 		}
 	}
 
-	// Token: 0x0600485F RID: 18527 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060048E5 RID: 18661 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void OnStart()
 	{
 	}
 
-	// Token: 0x06004860 RID: 18528 RVA: 0x001C562C File Offset: 0x001C382C
+	// Token: 0x060048E6 RID: 18662 RVA: 0x001C7E20 File Offset: 0x001C6020
 	public override void Refresh()
 	{
 		bool flag = base.CurrentValue == 3;
@@ -326,7 +326,7 @@ public class ObjectiveRandomGoto : BaseObjective
 		}
 	}
 
-	// Token: 0x06004861 RID: 18529 RVA: 0x001C5680 File Offset: 0x001C3880
+	// Token: 0x060048E7 RID: 18663 RVA: 0x001C7E74 File Offset: 0x001C6074
 	public override BaseObjective Clone()
 	{
 		ObjectiveRandomGoto objectiveRandomGoto = new ObjectiveRandomGoto();
@@ -339,14 +339,14 @@ public class ObjectiveRandomGoto : BaseObjective
 		return objectiveRandomGoto;
 	}
 
-	// Token: 0x06004862 RID: 18530 RVA: 0x001C56D7 File Offset: 0x001C38D7
+	// Token: 0x060048E8 RID: 18664 RVA: 0x001C7ECB File Offset: 0x001C60CB
 	public override bool SetLocation(Vector3 pos, Vector3 size)
 	{
 		this.FinalizePoint((int)pos.x, (int)pos.y, (int)pos.z);
 		return true;
 	}
 
-	// Token: 0x06004863 RID: 18531 RVA: 0x001C56F8 File Offset: 0x001C38F8
+	// Token: 0x060048E9 RID: 18665 RVA: 0x001C7EEC File Offset: 0x001C60EC
 	public override void ParseProperties(DynamicProperties properties)
 	{
 		base.ParseProperties(properties);
@@ -356,65 +356,65 @@ public class ObjectiveRandomGoto : BaseObjective
 		properties.ParseString(ObjectiveRandomGoto.PropBiomeFilter, ref this.biomeFilter);
 	}
 
-	// Token: 0x04003978 RID: 14712
+	// Token: 0x04003A09 RID: 14857
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool positionSet;
 
-	// Token: 0x04003979 RID: 14713
+	// Token: 0x04003A0A RID: 14858
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float distance;
 
-	// Token: 0x0400397A RID: 14714
+	// Token: 0x04003A0B RID: 14859
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float completionDistance = 10f;
 
-	// Token: 0x0400397B RID: 14715
+	// Token: 0x04003A0C RID: 14860
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector3 position;
 
-	// Token: 0x0400397C RID: 14716
+	// Token: 0x04003A0D RID: 14861
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string icon = "ui_game_symbol_quest";
 
-	// Token: 0x0400397D RID: 14717
+	// Token: 0x04003A0E RID: 14862
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public BiomeFilterTypes biomeFilterType = BiomeFilterTypes.SameBiome;
 
-	// Token: 0x0400397E RID: 14718
+	// Token: 0x04003A0F RID: 14863
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string biomeFilter = "";
 
-	// Token: 0x0400397F RID: 14719
+	// Token: 0x04003A10 RID: 14864
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new float updateTime;
 
-	// Token: 0x04003980 RID: 14720
+	// Token: 0x04003A11 RID: 14865
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool completeWithinRange = true;
 
-	// Token: 0x04003981 RID: 14721
+	// Token: 0x04003A12 RID: 14866
 	public static string PropDistance = "distance";
 
-	// Token: 0x04003982 RID: 14722
+	// Token: 0x04003A13 RID: 14867
 	public static string PropCompletionDistance = "completion_distance";
 
-	// Token: 0x04003983 RID: 14723
+	// Token: 0x04003A14 RID: 14868
 	public static string PropBiomeFilterType = "biome_filter_type";
 
-	// Token: 0x04003984 RID: 14724
+	// Token: 0x04003A15 RID: 14869
 	public static string PropBiomeFilter = "biome_filter";
 
-	// Token: 0x02000998 RID: 2456
+	// Token: 0x020009A9 RID: 2473
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public enum GotoStates
 	{
-		// Token: 0x04003986 RID: 14726
+		// Token: 0x04003A17 RID: 14871
 		NoPosition,
-		// Token: 0x04003987 RID: 14727
+		// Token: 0x04003A18 RID: 14872
 		WaitingForPoint,
-		// Token: 0x04003988 RID: 14728
+		// Token: 0x04003A19 RID: 14873
 		TryComplete,
-		// Token: 0x04003989 RID: 14729
+		// Token: 0x04003A1A RID: 14874
 		Completed
 	}
 }

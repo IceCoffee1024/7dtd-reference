@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020012E7 RID: 4839
+// Token: 0x02001301 RID: 4865
 public struct HitInfoDetails
 {
-	// Token: 0x170011FC RID: 4604
-	// (get) Token: 0x06009904 RID: 39172 RVA: 0x0039FF7C File Offset: 0x0039E17C
+	// Token: 0x17001235 RID: 4661
+	// (get) Token: 0x060099FF RID: 39423 RVA: 0x003A5214 File Offset: 0x003A3414
 	public BlockValue blockValue
 	{
 		get
@@ -14,8 +14,8 @@ public struct HitInfoDetails
 		}
 	}
 
-	// Token: 0x170011FD RID: 4605
-	// (get) Token: 0x06009905 RID: 39173 RVA: 0x0039FF89 File Offset: 0x0039E189
+	// Token: 0x17001236 RID: 4662
+	// (get) Token: 0x06009A00 RID: 39424 RVA: 0x003A5221 File Offset: 0x003A3421
 	public WaterValue waterValue
 	{
 		get
@@ -24,8 +24,8 @@ public struct HitInfoDetails
 		}
 	}
 
-	// Token: 0x170011FE RID: 4606
-	// (get) Token: 0x06009906 RID: 39174 RVA: 0x0039FF96 File Offset: 0x0039E196
+	// Token: 0x17001237 RID: 4663
+	// (get) Token: 0x06009A01 RID: 39425 RVA: 0x003A522E File Offset: 0x003A342E
 	public PropRef propRef
 	{
 		get
@@ -34,8 +34,8 @@ public struct HitInfoDetails
 		}
 	}
 
-	// Token: 0x170011FF RID: 4607
-	// (get) Token: 0x06009907 RID: 39175 RVA: 0x0039FFA3 File Offset: 0x0039E1A3
+	// Token: 0x17001238 RID: 4664
+	// (get) Token: 0x06009A02 RID: 39426 RVA: 0x003A523B File Offset: 0x003A343B
 	public PropValue propValue
 	{
 		get
@@ -44,8 +44,8 @@ public struct HitInfoDetails
 		}
 	}
 
-	// Token: 0x17001200 RID: 4608
-	// (get) Token: 0x06009908 RID: 39176 RVA: 0x0039FFB0 File Offset: 0x0039E1B0
+	// Token: 0x17001239 RID: 4665
+	// (get) Token: 0x06009A03 RID: 39427 RVA: 0x003A5248 File Offset: 0x003A3448
 	public BlockValueRef blockValueRef
 	{
 		get
@@ -62,7 +62,7 @@ public struct HitInfoDetails
 		}
 	}
 
-	// Token: 0x06009909 RID: 39177 RVA: 0x0039FFFF File Offset: 0x0039E1FF
+	// Token: 0x06009A04 RID: 39428 RVA: 0x003A5297 File Offset: 0x003A3497
 	public void Clear()
 	{
 		this.pos = Vector3.zero;
@@ -73,7 +73,7 @@ public struct HitInfoDetails
 		this.distanceSq = 0f;
 	}
 
-	// Token: 0x0600990A RID: 39178 RVA: 0x003A0040 File Offset: 0x0039E240
+	// Token: 0x06009A05 RID: 39429 RVA: 0x003A52D8 File Offset: 0x003A34D8
 	public void CopyFrom(HitInfoDetails _other)
 	{
 		this.pos = _other.pos;
@@ -84,7 +84,7 @@ public struct HitInfoDetails
 		this.distanceSq = _other.distanceSq;
 	}
 
-	// Token: 0x0600990B RID: 39179 RVA: 0x003A0098 File Offset: 0x0039E298
+	// Token: 0x06009A06 RID: 39430 RVA: 0x003A5330 File Offset: 0x003A3530
 	public HitInfoDetails Clone()
 	{
 		HitInfoDetails hitInfoDetails = default(HitInfoDetails);
@@ -92,35 +92,35 @@ public struct HitInfoDetails
 		return hitInfoDetails;
 	}
 
-	// Token: 0x04007344 RID: 29508
+	// Token: 0x0400741C RID: 29724
 	public Vector3 pos;
 
-	// Token: 0x04007345 RID: 29509
+	// Token: 0x0400741D RID: 29725
 	public Vector3i blockPos;
 
-	// Token: 0x04007346 RID: 29510
+	// Token: 0x0400741E RID: 29726
 	public HitInfoDetails.VoxelData voxelData;
 
-	// Token: 0x04007347 RID: 29511
+	// Token: 0x0400741F RID: 29727
 	public HitInfoDetails.PropData propData;
 
-	// Token: 0x04007348 RID: 29512
+	// Token: 0x04007420 RID: 29728
 	public BlockFace blockFace;
 
-	// Token: 0x04007349 RID: 29513
+	// Token: 0x04007421 RID: 29729
 	public float distanceSq;
 
-	// Token: 0x020012E8 RID: 4840
+	// Token: 0x02001302 RID: 4866
 	public struct VoxelData : IEquatable<HitInfoDetails.VoxelData>
 	{
-		// Token: 0x0600990C RID: 39180 RVA: 0x003A00BB File Offset: 0x0039E2BB
+		// Token: 0x06009A07 RID: 39431 RVA: 0x003A5353 File Offset: 0x003A3553
 		public void Set(BlockValue _bv, WaterValue _wv)
 		{
 			this.BlockValue = _bv;
 			this.WaterValue = _wv;
 		}
 
-		// Token: 0x0600990D RID: 39181 RVA: 0x003A00CC File Offset: 0x0039E2CC
+		// Token: 0x06009A08 RID: 39432 RVA: 0x003A5364 File Offset: 0x003A3564
 		public static HitInfoDetails.VoxelData GetFrom(ChunkCluster _cc, Vector3i _blockPos)
 		{
 			return new HitInfoDetails.VoxelData
@@ -130,7 +130,7 @@ public struct HitInfoDetails
 			};
 		}
 
-		// Token: 0x0600990E RID: 39182 RVA: 0x003A0100 File Offset: 0x0039E300
+		// Token: 0x06009A09 RID: 39433 RVA: 0x003A5398 File Offset: 0x003A3598
 		public static HitInfoDetails.VoxelData GetFrom(World _world, Vector3i _blockPos)
 		{
 			return new HitInfoDetails.VoxelData
@@ -140,7 +140,7 @@ public struct HitInfoDetails
 			};
 		}
 
-		// Token: 0x0600990F RID: 39183 RVA: 0x003A0134 File Offset: 0x0039E334
+		// Token: 0x06009A0A RID: 39434 RVA: 0x003A53CC File Offset: 0x003A35CC
 		public static HitInfoDetails.VoxelData GetFrom(IChunk _chunk, int _x, int _y, int _z)
 		{
 			return new HitInfoDetails.VoxelData
@@ -150,60 +150,60 @@ public struct HitInfoDetails
 			};
 		}
 
-		// Token: 0x06009910 RID: 39184 RVA: 0x003A016A File Offset: 0x0039E36A
+		// Token: 0x06009A0B RID: 39435 RVA: 0x003A5402 File Offset: 0x003A3602
 		public bool IsOnlyAir()
 		{
 			return this.BlockValue.isair && !this.WaterValue.HasMass();
 		}
 
-		// Token: 0x06009911 RID: 39185 RVA: 0x003A0189 File Offset: 0x0039E389
+		// Token: 0x06009A0C RID: 39436 RVA: 0x003A5421 File Offset: 0x003A3621
 		public bool IsOnlyWater()
 		{
 			return this.BlockValue.isair && this.WaterValue.HasMass();
 		}
 
-		// Token: 0x06009912 RID: 39186 RVA: 0x003A01A5 File Offset: 0x0039E3A5
+		// Token: 0x06009A0D RID: 39437 RVA: 0x003A543D File Offset: 0x003A363D
 		public bool Equals(HitInfoDetails.VoxelData _other)
 		{
 			return this.BlockValue.Equals(_other.BlockValue) && this.WaterValue.HasMass() == _other.WaterValue.HasMass();
 		}
 
-		// Token: 0x06009913 RID: 39187 RVA: 0x003A01D5 File Offset: 0x0039E3D5
+		// Token: 0x06009A0E RID: 39438 RVA: 0x003A546D File Offset: 0x003A366D
 		public void Clear()
 		{
 			this.BlockValue = BlockValue.Air;
 			this.WaterValue = WaterValue.Empty;
 		}
 
-		// Token: 0x0400734A RID: 29514
+		// Token: 0x04007422 RID: 29730
 		public BlockValue BlockValue;
 
-		// Token: 0x0400734B RID: 29515
+		// Token: 0x04007423 RID: 29731
 		public WaterValue WaterValue;
 	}
 
-	// Token: 0x020012E9 RID: 4841
+	// Token: 0x02001303 RID: 4867
 	public struct PropData : IEquatable<HitInfoDetails.PropData>
 	{
-		// Token: 0x17001201 RID: 4609
-		// (get) Token: 0x06009914 RID: 39188 RVA: 0x003A01ED File Offset: 0x0039E3ED
-		// (set) Token: 0x06009915 RID: 39189 RVA: 0x003A01F5 File Offset: 0x0039E3F5
+		// Token: 0x1700123A RID: 4666
+		// (get) Token: 0x06009A0F RID: 39439 RVA: 0x003A5485 File Offset: 0x003A3685
+		// (set) Token: 0x06009A10 RID: 39440 RVA: 0x003A548D File Offset: 0x003A368D
 		public PropRef PropRef
 		{
 			readonly get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x17001202 RID: 4610
-		// (get) Token: 0x06009916 RID: 39190 RVA: 0x003A01FE File Offset: 0x0039E3FE
-		// (set) Token: 0x06009917 RID: 39191 RVA: 0x003A0206 File Offset: 0x0039E406
+		// Token: 0x1700123B RID: 4667
+		// (get) Token: 0x06009A11 RID: 39441 RVA: 0x003A5496 File Offset: 0x003A3696
+		// (set) Token: 0x06009A12 RID: 39442 RVA: 0x003A549E File Offset: 0x003A369E
 		public PropValue PropValue
 		{
 			readonly get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x06009918 RID: 39192 RVA: 0x003A0210 File Offset: 0x0039E410
+		// Token: 0x06009A13 RID: 39443 RVA: 0x003A54A8 File Offset: 0x003A36A8
 		public static HitInfoDetails.PropData GetFrom(ChunkCluster cc, Transform transform)
 		{
 			PropReference propReference;
@@ -224,26 +224,26 @@ public struct HitInfoDetails
 			};
 		}
 
-		// Token: 0x06009919 RID: 39193 RVA: 0x003A026C File Offset: 0x0039E46C
+		// Token: 0x06009A14 RID: 39444 RVA: 0x003A5504 File Offset: 0x003A3704
 		public override string ToString()
 		{
 			return string.Format("PropRef=[{0}], PropValue=[{1}]", this.PropRef, this.PropValue);
 		}
 
-		// Token: 0x0600991A RID: 39194 RVA: 0x003A028E File Offset: 0x0039E48E
+		// Token: 0x06009A15 RID: 39445 RVA: 0x003A5526 File Offset: 0x003A3726
 		public void Clear()
 		{
 			this.PropRef = PropRef.Default;
 			this.PropValue = HitInfoDetails.PropData.Empty.PropValue;
 		}
 
-		// Token: 0x0600991B RID: 39195 RVA: 0x003A02AC File Offset: 0x0039E4AC
+		// Token: 0x06009A16 RID: 39446 RVA: 0x003A5544 File Offset: 0x003A3744
 		public bool Equals(HitInfoDetails.PropData other)
 		{
 			return this.PropRef.Equals(other.PropRef) && this.PropValue.Equals(other.PropValue);
 		}
 
-		// Token: 0x0600991C RID: 39196 RVA: 0x003A02E8 File Offset: 0x0039E4E8
+		// Token: 0x06009A17 RID: 39447 RVA: 0x003A5580 File Offset: 0x003A3780
 		public override bool Equals(object obj)
 		{
 			if (obj is HitInfoDetails.PropData)
@@ -254,25 +254,25 @@ public struct HitInfoDetails
 			return false;
 		}
 
-		// Token: 0x0600991D RID: 39197 RVA: 0x003A030D File Offset: 0x0039E50D
+		// Token: 0x06009A18 RID: 39448 RVA: 0x003A55A5 File Offset: 0x003A37A5
 		public override int GetHashCode()
 		{
 			return HashCode.Combine<PropRef, PropValue>(this.PropRef, this.PropValue);
 		}
 
-		// Token: 0x0600991E RID: 39198 RVA: 0x003A0320 File Offset: 0x0039E520
+		// Token: 0x06009A19 RID: 39449 RVA: 0x003A55B8 File Offset: 0x003A37B8
 		public static bool operator ==(HitInfoDetails.PropData left, HitInfoDetails.PropData right)
 		{
 			return left.Equals(right);
 		}
 
-		// Token: 0x0600991F RID: 39199 RVA: 0x003A032A File Offset: 0x0039E52A
+		// Token: 0x06009A1A RID: 39450 RVA: 0x003A55C2 File Offset: 0x003A37C2
 		public static bool operator !=(HitInfoDetails.PropData left, HitInfoDetails.PropData right)
 		{
 			return !left.Equals(right);
 		}
 
-		// Token: 0x0400734C RID: 29516
+		// Token: 0x04007424 RID: 29732
 		public static readonly HitInfoDetails.PropData Empty = new HitInfoDetails.PropData
 		{
 			PropRef = PropRef.Default,

@@ -4,11 +4,11 @@ using System.Linq;
 using Unity.Collections;
 using UnityEngine;
 
-// Token: 0x02000A3B RID: 2619
+// Token: 0x02000A4C RID: 2636
 [DisallowMultipleComponent]
 public class GearBoneMap : MonoBehaviour
 {
-	// Token: 0x06004F55 RID: 20309 RVA: 0x001E1690 File Offset: 0x001DF890
+	// Token: 0x06004FDB RID: 20443 RVA: 0x001E4128 File Offset: 0x001E2328
 	public IReadOnlyList<Transform> GetPartBones(string partName)
 	{
 		if (string.IsNullOrEmpty(partName))
@@ -34,13 +34,13 @@ public class GearBoneMap : MonoBehaviour
 		return Array.Empty<Transform>();
 	}
 
-	// Token: 0x06004F56 RID: 20310 RVA: 0x001E174A File Offset: 0x001DF94A
+	// Token: 0x06004FDC RID: 20444 RVA: 0x001E41E2 File Offset: 0x001E23E2
 	public IReadOnlyList<string> GetPartNames()
 	{
 		return this.parts.Select<GearBoneMap.PartBones, string>((GearBoneMap.PartBones p) => p.partName).ToArray<string>();
 	}
 
-	// Token: 0x06004F57 RID: 20311 RVA: 0x001E177C File Offset: 0x001DF97C
+	// Token: 0x06004FDD RID: 20445 RVA: 0x001E4214 File Offset: 0x001E2414
 	public void SetBones(string partName, IEnumerable<Transform> newBones)
 	{
 		if (string.IsNullOrEmpty(partName))
@@ -63,13 +63,13 @@ public class GearBoneMap : MonoBehaviour
 		partBones.bones.AddRange(list);
 	}
 
-	// Token: 0x06004F58 RID: 20312 RVA: 0x001E186C File Offset: 0x001DFA6C
+	// Token: 0x06004FDE RID: 20446 RVA: 0x001E4304 File Offset: 0x001E2504
 	public void ClearAll()
 	{
 		this.parts.Clear();
 	}
 
-	// Token: 0x06004F59 RID: 20313 RVA: 0x001E187C File Offset: 0x001DFA7C
+	// Token: 0x06004FDF RID: 20447 RVA: 0x001E4314 File Offset: 0x001E2514
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string GetHierarchyPath(Transform t)
 	{
@@ -87,7 +87,7 @@ public class GearBoneMap : MonoBehaviour
 		return string.Join("/", stack);
 	}
 
-	// Token: 0x06004F5A RID: 20314 RVA: 0x001E18CC File Offset: 0x001DFACC
+	// Token: 0x06004FE0 RID: 20448 RVA: 0x001E4364 File Offset: 0x001E2564
 	public void Bake()
 	{
 		List<Transform> list = new List<Transform>();
@@ -160,25 +160,25 @@ public class GearBoneMap : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04003CE0 RID: 15584
+	// Token: 0x04003D71 RID: 15729
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<GearBoneMap.PartBones> parts = new List<GearBoneMap.PartBones>();
 
-	// Token: 0x04003CE1 RID: 15585
+	// Token: 0x04003D72 RID: 15730
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly string[] DefaultParts = new string[] { "head", "body", "feet", "hands" };
 
-	// Token: 0x02000A3C RID: 2620
+	// Token: 0x02000A4D RID: 2637
 	[Serializable]
 	public class PartBones
 	{
-		// Token: 0x04003CE2 RID: 15586
+		// Token: 0x04003D73 RID: 15731
 		[Tooltip("e.g. head, body, feet, hands")]
 		public string partName;
 
-		// Token: 0x04003CE3 RID: 15587
+		// Token: 0x04003D74 RID: 15732
 		[Tooltip("The unique bones actually referenced by skin weights for this part")]
 		public List<Transform> bones = new List<Transform>();
 	}

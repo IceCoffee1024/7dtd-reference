@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace KinematicCharacterController
 {
-	// Token: 0x02001D31 RID: 7473
+	// Token: 0x02001D59 RID: 7513
 	[DefaultExecutionOrder(-100)]
 	public class KinematicCharacterSystem : MonoBehaviour
 	{
-		// Token: 0x0600DC73 RID: 56435 RVA: 0x004F1DBC File Offset: 0x004EFFBC
+		// Token: 0x0600DE14 RID: 56852 RVA: 0x004F8830 File Offset: 0x004F6A30
 		public static void EnsureCreation()
 		{
 			if (KinematicCharacterSystem._instance == null)
@@ -20,13 +20,13 @@ namespace KinematicCharacterController
 			}
 		}
 
-		// Token: 0x0600DC74 RID: 56436 RVA: 0x004F1DF1 File Offset: 0x004EFFF1
+		// Token: 0x0600DE15 RID: 56853 RVA: 0x004F8865 File Offset: 0x004F6A65
 		public static KinematicCharacterSystem GetInstance()
 		{
 			return KinematicCharacterSystem._instance;
 		}
 
-		// Token: 0x0600DC75 RID: 56437 RVA: 0x004F1DF8 File Offset: 0x004EFFF8
+		// Token: 0x0600DE16 RID: 56854 RVA: 0x004F886C File Offset: 0x004F6A6C
 		public static void SetCharacterMotorsCapacity(int capacity)
 		{
 			if (capacity < KinematicCharacterSystem.CharacterMotors.Count)
@@ -36,19 +36,19 @@ namespace KinematicCharacterController
 			KinematicCharacterSystem.CharacterMotors.Capacity = capacity;
 		}
 
-		// Token: 0x0600DC76 RID: 56438 RVA: 0x004F1E1E File Offset: 0x004F001E
+		// Token: 0x0600DE17 RID: 56855 RVA: 0x004F8892 File Offset: 0x004F6A92
 		public static void RegisterCharacterMotor(KinematicCharacterMotor motor)
 		{
 			KinematicCharacterSystem.CharacterMotors.Add(motor);
 		}
 
-		// Token: 0x0600DC77 RID: 56439 RVA: 0x004F1E2B File Offset: 0x004F002B
+		// Token: 0x0600DE18 RID: 56856 RVA: 0x004F889F File Offset: 0x004F6A9F
 		public static void UnregisterCharacterMotor(KinematicCharacterMotor motor)
 		{
 			KinematicCharacterSystem.CharacterMotors.Remove(motor);
 		}
 
-		// Token: 0x0600DC78 RID: 56440 RVA: 0x004F1E39 File Offset: 0x004F0039
+		// Token: 0x0600DE19 RID: 56857 RVA: 0x004F88AD File Offset: 0x004F6AAD
 		public static void SetPhysicsMoversCapacity(int capacity)
 		{
 			if (capacity < KinematicCharacterSystem.PhysicsMovers.Count)
@@ -58,34 +58,34 @@ namespace KinematicCharacterController
 			KinematicCharacterSystem.PhysicsMovers.Capacity = capacity;
 		}
 
-		// Token: 0x0600DC79 RID: 56441 RVA: 0x004F1E5F File Offset: 0x004F005F
+		// Token: 0x0600DE1A RID: 56858 RVA: 0x004F88D3 File Offset: 0x004F6AD3
 		public static void RegisterPhysicsMover(PhysicsMover mover)
 		{
 			KinematicCharacterSystem.PhysicsMovers.Add(mover);
 			mover.Rigidbody.interpolation = RigidbodyInterpolation.None;
 		}
 
-		// Token: 0x0600DC7A RID: 56442 RVA: 0x004F1E78 File Offset: 0x004F0078
+		// Token: 0x0600DE1B RID: 56859 RVA: 0x004F88EC File Offset: 0x004F6AEC
 		public static void UnregisterPhysicsMover(PhysicsMover mover)
 		{
 			KinematicCharacterSystem.PhysicsMovers.Remove(mover);
 		}
 
-		// Token: 0x0600DC7B RID: 56443 RVA: 0x00145937 File Offset: 0x00143B37
+		// Token: 0x0600DE1C RID: 56860 RVA: 0x00147A47 File Offset: 0x00145C47
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnDisable()
 		{
 			global::UnityEngine.Object.Destroy(base.gameObject);
 		}
 
-		// Token: 0x0600DC7C RID: 56444 RVA: 0x004F1E86 File Offset: 0x004F0086
+		// Token: 0x0600DE1D RID: 56861 RVA: 0x004F88FA File Offset: 0x004F6AFA
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Awake()
 		{
 			KinematicCharacterSystem._instance = this;
 		}
 
-		// Token: 0x0600DC7D RID: 56445 RVA: 0x004F1E90 File Offset: 0x004F0090
+		// Token: 0x0600DE1E RID: 56862 RVA: 0x004F8904 File Offset: 0x004F6B04
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void FixedUpdate()
 		{
@@ -104,7 +104,7 @@ namespace KinematicCharacterController
 			}
 		}
 
-		// Token: 0x0600DC7E RID: 56446 RVA: 0x004F1EE8 File Offset: 0x004F00E8
+		// Token: 0x0600DE1F RID: 56863 RVA: 0x004F895C File Offset: 0x004F6B5C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Update()
 		{
@@ -114,7 +114,7 @@ namespace KinematicCharacterController
 			}
 		}
 
-		// Token: 0x0600DC7F RID: 56447 RVA: 0x004F1EF8 File Offset: 0x004F00F8
+		// Token: 0x0600DE20 RID: 56864 RVA: 0x004F896C File Offset: 0x004F6B6C
 		public static void PreSimulationInterpolationUpdate(float deltaTime)
 		{
 			for (int i = 0; i < KinematicCharacterSystem.CharacterMotors.Count; i++)
@@ -135,7 +135,7 @@ namespace KinematicCharacterController
 			}
 		}
 
-		// Token: 0x0600DC80 RID: 56448 RVA: 0x004F1FC8 File Offset: 0x004F01C8
+		// Token: 0x0600DE21 RID: 56865 RVA: 0x004F8A3C File Offset: 0x004F6C3C
 		public static void Simulate(float deltaTime, List<KinematicCharacterMotor> motors, int characterMotorsCount, List<PhysicsMover> movers, int physicsMoversCount)
 		{
 			for (int i = 0; i < physicsMoversCount; i++)
@@ -162,7 +162,7 @@ namespace KinematicCharacterController
 			Physics.SyncTransforms();
 		}
 
-		// Token: 0x0600DC81 RID: 56449 RVA: 0x004F2098 File Offset: 0x004F0298
+		// Token: 0x0600DE22 RID: 56866 RVA: 0x004F8B0C File Offset: 0x004F6D0C
 		public static void PostSimulationInterpolationUpdate(float deltaTime)
 		{
 			KinematicCharacterSystem._lastCustomInterpolationStartTime = Time.time;
@@ -182,7 +182,7 @@ namespace KinematicCharacterController
 			}
 		}
 
-		// Token: 0x0600DC82 RID: 56450 RVA: 0x004F2154 File Offset: 0x004F0354
+		// Token: 0x0600DE23 RID: 56867 RVA: 0x004F8BC8 File Offset: 0x004F6DC8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void CustomInterpolationUpdate()
 		{
@@ -199,41 +199,41 @@ namespace KinematicCharacterController
 			}
 		}
 
-		// Token: 0x0400A74A RID: 42826
+		// Token: 0x0400A87F RID: 43135
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public static KinematicCharacterSystem _instance;
 
-		// Token: 0x0400A74B RID: 42827
+		// Token: 0x0400A880 RID: 43136
 		public static List<KinematicCharacterMotor> CharacterMotors = new List<KinematicCharacterMotor>(100);
 
-		// Token: 0x0400A74C RID: 42828
+		// Token: 0x0400A881 RID: 43137
 		public static List<PhysicsMover> PhysicsMovers = new List<PhysicsMover>(100);
 
-		// Token: 0x0400A74D RID: 42829
+		// Token: 0x0400A882 RID: 43138
 		public static bool AutoSimulation = true;
 
-		// Token: 0x0400A74E RID: 42830
+		// Token: 0x0400A883 RID: 43139
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public static float _lastCustomInterpolationStartTime = -1f;
 
-		// Token: 0x0400A74F RID: 42831
+		// Token: 0x0400A884 RID: 43140
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public static float _lastCustomInterpolationDeltaTime = -1f;
 
-		// Token: 0x0400A750 RID: 42832
+		// Token: 0x0400A885 RID: 43141
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public const int CharacterMotorsBaseCapacity = 100;
 
-		// Token: 0x0400A751 RID: 42833
+		// Token: 0x0400A886 RID: 43142
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public const int PhysicsMoversBaseCapacity = 100;
 
-		// Token: 0x0400A752 RID: 42834
+		// Token: 0x0400A887 RID: 43143
 		public static bool Interpolate = true;
 	}
 }

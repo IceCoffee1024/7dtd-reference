@@ -1,31 +1,31 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000871 RID: 2161
+// Token: 0x0200087D RID: 2173
 [Preserve]
 public class NetPackageWorldTime : NetPackage
 {
-	// Token: 0x06003EFE RID: 16126 RVA: 0x0018C23B File Offset: 0x0018A43B
+	// Token: 0x06003F63 RID: 16227 RVA: 0x0018E30B File Offset: 0x0018C50B
 	public NetPackageWorldTime Setup(ulong _worldTime)
 	{
 		this.worldTime = _worldTime;
 		return this;
 	}
 
-	// Token: 0x06003EFF RID: 16127 RVA: 0x0018C245 File Offset: 0x0018A445
+	// Token: 0x06003F64 RID: 16228 RVA: 0x0018E315 File Offset: 0x0018C515
 	public override void read(PooledBinaryReader _br)
 	{
 		this.worldTime = _br.ReadUInt64();
 	}
 
-	// Token: 0x06003F00 RID: 16128 RVA: 0x0018C253 File Offset: 0x0018A453
+	// Token: 0x06003F65 RID: 16229 RVA: 0x0018E323 File Offset: 0x0018C523
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
 		_bw.Write(this.worldTime);
 	}
 
-	// Token: 0x06003F01 RID: 16129 RVA: 0x0018C268 File Offset: 0x0018A468
+	// Token: 0x06003F66 RID: 16230 RVA: 0x0018E338 File Offset: 0x0018C538
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -35,14 +35,14 @@ public class NetPackageWorldTime : NetPackage
 		_world.gameManager.SetWorldTime(this.worldTime);
 	}
 
-	// Token: 0x06003F02 RID: 16130 RVA: 0x00080B69 File Offset: 0x0007ED69
+	// Token: 0x06003F67 RID: 16231 RVA: 0x0008121D File Offset: 0x0007F41D
 	public override int GetLength()
 	{
 		return 8;
 	}
 
-	// Token: 0x1700068F RID: 1679
-	// (get) Token: 0x06003F03 RID: 16131 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x1700069B RID: 1691
+	// (get) Token: 0x06003F68 RID: 16232 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -51,7 +51,7 @@ public class NetPackageWorldTime : NetPackage
 		}
 	}
 
-	// Token: 0x040032BC RID: 12988
+	// Token: 0x0400333D RID: 13117
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong worldTime;
 }

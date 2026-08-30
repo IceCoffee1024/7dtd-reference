@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200102D RID: 4141
+// Token: 0x02001046 RID: 4166
 [Preserve]
 public class XUiC_KaleidoWarpSettings : XUiC_SignWarpSettings
 {
-	// Token: 0x17000F2A RID: 3882
-	// (get) Token: 0x06008353 RID: 33619 RVA: 0x00320D33 File Offset: 0x0031EF33
+	// Token: 0x17000F63 RID: 3939
+	// (get) Token: 0x06008445 RID: 33861 RVA: 0x0032555B File Offset: 0x0032375B
 	public override SignData.SignWarp CurrentWarp
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -17,7 +17,7 @@ public class XUiC_KaleidoWarpSettings : XUiC_SignWarpSettings
 		}
 	}
 
-	// Token: 0x06008354 RID: 33620 RVA: 0x00320D3C File Offset: 0x0031EF3C
+	// Token: 0x06008446 RID: 33862 RVA: 0x00325564 File Offset: 0x00323764
 	public override void Init()
 	{
 		base.Init();
@@ -54,7 +54,7 @@ public class XUiC_KaleidoWarpSettings : XUiC_SignWarpSettings
 		base.SetDefaultValue("cbxRotation", kaleidoWarp.rotation);
 	}
 
-	// Token: 0x06008355 RID: 33621 RVA: 0x00320EE0 File Offset: 0x0031F0E0
+	// Token: 0x06008447 RID: 33863 RVA: 0x00325708 File Offset: 0x00323908
 	public override void SetWarp(SignData.SignWarp warp)
 	{
 		this.currentWarp = warp as SignData.KaleidoWarp;
@@ -74,7 +74,7 @@ public class XUiC_KaleidoWarpSettings : XUiC_SignWarpSettings
 		this.cbxRotation.Value = (double)this.currentWarp.rotation;
 	}
 
-	// Token: 0x06008356 RID: 33622 RVA: 0x00320FDC File Offset: 0x0031F1DC
+	// Token: 0x06008448 RID: 33864 RVA: 0x00325804 File Offset: 0x00323A04
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnValueChangedGeneric(string _changeDescription)
 	{
@@ -99,27 +99,27 @@ public class XUiC_KaleidoWarpSettings : XUiC_SignWarpSettings
 		onLayerSettingsChanged();
 	}
 
-	// Token: 0x0400614E RID: 24910
+	// Token: 0x04006215 RID: 25109
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignData.KaleidoWarp currentWarp;
 
-	// Token: 0x0400614F RID: 24911
+	// Token: 0x04006216 RID: 25110
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxOffsetX;
 
-	// Token: 0x04006150 RID: 24912
+	// Token: 0x04006217 RID: 25111
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxOffsetY;
 
-	// Token: 0x04006151 RID: 24913
+	// Token: 0x04006218 RID: 25112
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxOffsetScale;
 
-	// Token: 0x04006152 RID: 24914
+	// Token: 0x04006219 RID: 25113
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxInt cbxSides;
 
-	// Token: 0x04006153 RID: 24915
+	// Token: 0x0400621A RID: 25114
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxRotation;
 }

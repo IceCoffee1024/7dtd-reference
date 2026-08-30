@@ -4,11 +4,11 @@ using System.Reflection;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200152C RID: 5420
+// Token: 0x02001547 RID: 5447
 [Preserve]
 public abstract class vp_EventHandler : MonoBehaviour
 {
-	// Token: 0x0600AA26 RID: 43558 RVA: 0x003F83E8 File Offset: 0x003F65E8
+	// Token: 0x0600AB23 RID: 43811 RVA: 0x003FD728 File Offset: 0x003FB928
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Awake()
 	{
@@ -21,7 +21,7 @@ public abstract class vp_EventHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AA27 RID: 43559 RVA: 0x003F8444 File Offset: 0x003F6644
+	// Token: 0x0600AB24 RID: 43812 RVA: 0x003FD784 File Offset: 0x003FB984
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void StoreHandlerEvents()
 	{
@@ -64,7 +64,7 @@ public abstract class vp_EventHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AA28 RID: 43560 RVA: 0x003F85D0 File Offset: 0x003F67D0
+	// Token: 0x0600AB25 RID: 43813 RVA: 0x003FD910 File Offset: 0x003FBB10
 	public List<FieldInfo> GetFields()
 	{
 		List<FieldInfo> list = new List<FieldInfo>();
@@ -90,7 +90,7 @@ public abstract class vp_EventHandler : MonoBehaviour
 		return list;
 	}
 
-	// Token: 0x0600AA29 RID: 43561 RVA: 0x003F86A4 File Offset: 0x003F68A4
+	// Token: 0x0600AB26 RID: 43814 RVA: 0x003FD9E4 File Offset: 0x003FBBE4
 	public void Register(object target)
 	{
 		if (target == null)
@@ -131,7 +131,7 @@ public abstract class vp_EventHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AA2A RID: 43562 RVA: 0x003F87E4 File Offset: 0x003F69E4
+	// Token: 0x0600AB27 RID: 43815 RVA: 0x003FDB24 File Offset: 0x003FBD24
 	public void Unregister(object target)
 	{
 		if (target == null)
@@ -170,7 +170,7 @@ public abstract class vp_EventHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AA2B RID: 43563 RVA: 0x003F88EC File Offset: 0x003F6AEC
+	// Token: 0x0600AB28 RID: 43816 RVA: 0x003FDC2C File Offset: 0x003FBE2C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool CompareMethodSignatures(MethodInfo scriptMethod, Type handlerParameterType, Type handlerReturnType)
 	{
@@ -249,7 +249,7 @@ public abstract class vp_EventHandler : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x0600AA2C RID: 43564 RVA: 0x003F8B20 File Offset: 0x003F6D20
+	// Token: 0x0600AB29 RID: 43817 RVA: 0x003FDE60 File Offset: 0x003FC060
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public vp_EventHandler.ScriptMethods GetScriptMethods(object target)
 	{
@@ -262,48 +262,48 @@ public abstract class vp_EventHandler : MonoBehaviour
 		return scriptMethods;
 	}
 
-	// Token: 0x0600AA2D RID: 43565 RVA: 0x003F8B5F File Offset: 0x003F6D5F
+	// Token: 0x0600AB2A RID: 43818 RVA: 0x003FDE9F File Offset: 0x003FC09F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public vp_EventHandler()
 	{
 	}
 
-	// Token: 0x04007E2D RID: 32301
+	// Token: 0x04007F06 RID: 32518
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_Initialized;
 
-	// Token: 0x04007E2E RID: 32302
+	// Token: 0x04007F07 RID: 32519
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Dictionary<string, vp_Event> m_HandlerEvents = new Dictionary<string, vp_Event>();
 
-	// Token: 0x04007E2F RID: 32303
+	// Token: 0x04007F08 RID: 32520
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public List<object> m_PendingRegistrants = new List<object>();
 
-	// Token: 0x04007E30 RID: 32304
+	// Token: 0x04007F09 RID: 32521
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public static Dictionary<Type, vp_EventHandler.ScriptMethods> m_StoredScriptTypes = new Dictionary<Type, vp_EventHandler.ScriptMethods>();
 
-	// Token: 0x04007E31 RID: 32305
+	// Token: 0x04007F0A RID: 32522
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public static string[] m_SupportedPrefixes = new string[] { "OnMessage_", "CanStart_", "CanStop_", "OnStart_", "OnStop_", "OnAttempt_", "get_OnValue_", "set_OnValue_", "OnFailStart_", "OnFailStop_" };
 
-	// Token: 0x0200152D RID: 5421
+	// Token: 0x02001548 RID: 5448
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class ScriptMethods
 	{
-		// Token: 0x0600AA2F RID: 43567 RVA: 0x003F8BF4 File Offset: 0x003F6DF4
+		// Token: 0x0600AB2C RID: 43820 RVA: 0x003FDF34 File Offset: 0x003FC134
 		public ScriptMethods(Type type)
 		{
 			this.Events = vp_EventHandler.ScriptMethods.GetMethods(type);
 		}
 
-		// Token: 0x0600AA30 RID: 43568 RVA: 0x003F8C14 File Offset: 0x003F6E14
+		// Token: 0x0600AB2D RID: 43821 RVA: 0x003FDF54 File Offset: 0x003FC154
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static List<MethodInfo> GetMethods(Type type)
 		{
@@ -331,7 +331,7 @@ public abstract class vp_EventHandler : MonoBehaviour
 			return list;
 		}
 
-		// Token: 0x04007E32 RID: 32306
+		// Token: 0x04007F0B RID: 32523
 		public List<MethodInfo> Events = new List<MethodInfo>();
 	}
 }

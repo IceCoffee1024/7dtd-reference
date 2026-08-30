@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 
-// Token: 0x02000A18 RID: 2584
+// Token: 0x02000A29 RID: 2601
 public class SaveDataManager_Minimal : SaveDataManagerBase
 {
-	// Token: 0x17000857 RID: 2135
-	// (get) Token: 0x06004E02 RID: 19970 RVA: 0x001DC70D File Offset: 0x001DA90D
+	// Token: 0x17000869 RID: 2153
+	// (get) Token: 0x06004E88 RID: 20104 RVA: 0x001DF1A5 File Offset: 0x001DD3A5
 	public static SaveDataManager_Minimal Instance
 	{
 		get
@@ -19,7 +19,7 @@ public class SaveDataManager_Minimal : SaveDataManagerBase
 		}
 	}
 
-	// Token: 0x06004E03 RID: 19971 RVA: 0x001DC728 File Offset: 0x001DA928
+	// Token: 0x06004E89 RID: 20105 RVA: 0x001DF1C0 File Offset: 0x001DD3C0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override Stream GetStream(SaveDataManagedPath path, FileMode mode, FileAccess access, FileShare share)
 	{
@@ -50,7 +50,7 @@ public class SaveDataManager_Minimal : SaveDataManagerBase
 		return stream2;
 	}
 
-	// Token: 0x06004E04 RID: 19972 RVA: 0x001DC7F4 File Offset: 0x001DA9F4
+	// Token: 0x06004E8A RID: 20106 RVA: 0x001DF28C File Offset: 0x001DD48C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void ReturnStream(Stream stream)
 	{
@@ -70,23 +70,23 @@ public class SaveDataManager_Minimal : SaveDataManagerBase
 		}
 	}
 
-	// Token: 0x04003C21 RID: 15393
+	// Token: 0x04003CB2 RID: 15538
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly bool concurrencyCheckEnabled = true;
 
-	// Token: 0x04003C22 RID: 15394
+	// Token: 0x04003CB3 RID: 15539
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<SaveDataManagedPath, int> openCountMap = new Dictionary<SaveDataManagedPath, int>();
 
-	// Token: 0x04003C23 RID: 15395
+	// Token: 0x04003CB4 RID: 15540
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<Stream, SaveDataManagedPath> streamToPathMap = new Dictionary<Stream, SaveDataManagedPath>();
 
-	// Token: 0x04003C24 RID: 15396
+	// Token: 0x04003CB5 RID: 15541
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly object lockObj = new object();
 
-	// Token: 0x04003C25 RID: 15397
+	// Token: 0x04003CB6 RID: 15542
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static SaveDataManager_Minimal instance;
 }

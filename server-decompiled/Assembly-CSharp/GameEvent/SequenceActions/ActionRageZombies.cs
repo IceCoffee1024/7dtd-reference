@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001976 RID: 6518
+	// Token: 0x0200199C RID: 6556
 	[Preserve]
 	public class ActionRageZombies : ActionBaseTargetAction
 	{
-		// Token: 0x0600C75C RID: 51036 RVA: 0x00496008 File Offset: 0x00494208
+		// Token: 0x0600C8E3 RID: 51427 RVA: 0x0049C34C File Offset: 0x0049A54C
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			EntityAlive entityAlive = target as EntityAlive;
@@ -32,7 +32,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C75D RID: 51037 RVA: 0x00496097 File Offset: 0x00494297
+		// Token: 0x0600C8E4 RID: 51428 RVA: 0x0049C3DB File Offset: 0x0049A5DB
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -40,7 +40,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseString(ActionRageZombies.PropSpeedPercent, ref this.speedPercentText);
 		}
 
-		// Token: 0x0600C75E RID: 51038 RVA: 0x004960C2 File Offset: 0x004942C2
+		// Token: 0x0600C8E5 RID: 51429 RVA: 0x0049C406 File Offset: 0x0049A606
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -52,19 +52,19 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009710 RID: 38672
+		// Token: 0x04009839 RID: 38969
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string rageTimeText;
 
-		// Token: 0x04009711 RID: 38673
+		// Token: 0x0400983A RID: 38970
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string speedPercentText;
 
-		// Token: 0x04009712 RID: 38674
+		// Token: 0x0400983B RID: 38971
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTime = "time";
 
-		// Token: 0x04009713 RID: 38675
+		// Token: 0x0400983C RID: 38972
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSpeedPercent = "speed_percent";
 	}

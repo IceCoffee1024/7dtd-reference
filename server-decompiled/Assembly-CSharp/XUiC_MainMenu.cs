@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DFD RID: 3581
+// Token: 0x02000E12 RID: 3602
 [Preserve]
 public class XUiC_MainMenu : XUiController
 {
-	// Token: 0x06006DD4 RID: 28116 RVA: 0x002A97C0 File Offset: 0x002A79C0
+	// Token: 0x06006E74 RID: 28276 RVA: 0x002ACCD4 File Offset: 0x002AAED4
 	[XuiXmlAttribute("windows_to_open_globally", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeWindowsToOpenGlobally(string _value)
@@ -43,14 +43,14 @@ public class XUiC_MainMenu : XUiController
 		}
 	}
 
-	// Token: 0x06006DD5 RID: 28117 RVA: 0x002A9863 File Offset: 0x002A7A63
+	// Token: 0x06006E75 RID: 28277 RVA: 0x002ACD77 File Offset: 0x002AAF77
 	public override void Init()
 	{
 		base.Init();
 		XUiC_MainMenu.ID = base.WindowGroup.Id;
 	}
 
-	// Token: 0x06006DD6 RID: 28118 RVA: 0x002A987B File Offset: 0x002A7A7B
+	// Token: 0x06006E76 RID: 28278 RVA: 0x002ACD8F File Offset: 0x002AAF8F
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -62,7 +62,7 @@ public class XUiC_MainMenu : XUiController
 		}
 	}
 
-	// Token: 0x06006DD7 RID: 28119 RVA: 0x002A98B8 File Offset: 0x002A7AB8
+	// Token: 0x06006E77 RID: 28279 RVA: 0x002ACDCC File Offset: 0x002AAFCC
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -107,7 +107,7 @@ public class XUiC_MainMenu : XUiController
 		this.clockSyncCheck();
 	}
 
-	// Token: 0x06006DD8 RID: 28120 RVA: 0x002A9A24 File Offset: 0x002A7C24
+	// Token: 0x06006E78 RID: 28280 RVA: 0x002ACF38 File Offset: 0x002AB138
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void quickContinue()
 	{
@@ -121,7 +121,7 @@ public class XUiC_MainMenu : XUiController
 		XUiC_MessageBoxWindowGroup.ShowNetworkError(this.xui, networkConnectionError, false);
 	}
 
-	// Token: 0x06006DD9 RID: 28121 RVA: 0x002A9A78 File Offset: 0x002A7C78
+	// Token: 0x06006E79 RID: 28281 RVA: 0x002ACF8C File Offset: 0x002AB18C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool snapCheck()
 	{
@@ -138,7 +138,7 @@ public class XUiC_MainMenu : XUiController
 		return false;
 	}
 
-	// Token: 0x06006DDA RID: 28122 RVA: 0x002A9AE4 File Offset: 0x002A7CE4
+	// Token: 0x06006E7A RID: 28282 RVA: 0x002ACFF8 File Offset: 0x002AB1F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void clockSyncCheck()
 	{
@@ -157,7 +157,7 @@ public class XUiC_MainMenu : XUiController
 		}
 	}
 
-	// Token: 0x06006DDB RID: 28123 RVA: 0x002A9B58 File Offset: 0x002A7D58
+	// Token: 0x06006E7B RID: 28283 RVA: 0x002AD06C File Offset: 0x002AB26C
 	public static void Open(XUi _xuiInstance)
 	{
 		XUiC_MainMenu.OpenGlobalMenuWindows(_xuiInstance);
@@ -183,7 +183,7 @@ public class XUiC_MainMenu : XUiController
 		_xuiInstance.playerUI.windowManager.Open(XUiC_MainMenu.ID, true);
 	}
 
-	// Token: 0x06006DDC RID: 28124 RVA: 0x002A9BFC File Offset: 0x002A7DFC
+	// Token: 0x06006E7C RID: 28284 RVA: 0x002AD110 File Offset: 0x002AB310
 	public static void OpenGlobalMenuWindows(XUi _xui)
 	{
 		LocalPlayerUI playerUI = _xui.playerUI;
@@ -195,7 +195,7 @@ public class XUiC_MainMenu : XUiController
 		}
 	}
 
-	// Token: 0x06006DDD RID: 28125 RVA: 0x002A9C68 File Offset: 0x002A7E68
+	// Token: 0x06006E7D RID: 28285 RVA: 0x002AD17C File Offset: 0x002AB37C
 	public static void CloseGlobalMenuWindows(XUi _xui)
 	{
 		LocalPlayerUI playerUI = _xui.playerUI;
@@ -207,29 +207,29 @@ public class XUiC_MainMenu : XUiController
 		}
 	}
 
-	// Token: 0x04005353 RID: 21331
+	// Token: 0x040053F6 RID: 21494
 	public static string ID = "";
 
-	// Token: 0x04005354 RID: 21332
+	// Token: 0x040053F7 RID: 21495
 	public static bool openedOnce;
 
-	// Token: 0x04005355 RID: 21333
+	// Token: 0x040053F8 RID: 21496
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool shownNewsScreenOnce;
 
-	// Token: 0x04005356 RID: 21334
+	// Token: 0x040053F9 RID: 21497
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool clockSyncChecked;
 
-	// Token: 0x04005357 RID: 21335
+	// Token: 0x040053FA RID: 21498
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool snapMicPermissionChecked;
 
-	// Token: 0x04005358 RID: 21336
+	// Token: 0x040053FB RID: 21499
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<string> windowsToOpenGloballyWithMainMenu = new List<string>();
 
-	// Token: 0x04005359 RID: 21337
+	// Token: 0x040053FC RID: 21500
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<string> windowsToCloseGloballyWithMainMenu = new List<string>();
 }

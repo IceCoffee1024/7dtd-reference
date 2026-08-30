@@ -2,18 +2,18 @@
 using Challenges;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FDA RID: 4058
+// Token: 0x02000FF3 RID: 4083
 [Preserve]
 public class XUiC_QuestTrackerObjectiveEntry : XUiController
 {
-	// Token: 0x17000ECD RID: 3789
-	// (get) Token: 0x06007FEA RID: 32746 RVA: 0x003084F5 File Offset: 0x003066F5
-	// (set) Token: 0x06007FEB RID: 32747 RVA: 0x003084FD File Offset: 0x003066FD
+	// Token: 0x17000F06 RID: 3846
+	// (get) Token: 0x060080DC RID: 32988 RVA: 0x0030CD29 File Offset: 0x0030AF29
+	// (set) Token: 0x060080DD RID: 32989 RVA: 0x0030CD31 File Offset: 0x0030AF31
 	public XUiC_QuestTrackerObjectiveList Owner { get; set; }
 
-	// Token: 0x17000ECE RID: 3790
-	// (get) Token: 0x06007FEC RID: 32748 RVA: 0x00308506 File Offset: 0x00306706
-	// (set) Token: 0x06007FED RID: 32749 RVA: 0x00308510 File Offset: 0x00306710
+	// Token: 0x17000F07 RID: 3847
+	// (get) Token: 0x060080DE RID: 32990 RVA: 0x0030CD3A File Offset: 0x0030AF3A
+	// (set) Token: 0x060080DF RID: 32991 RVA: 0x0030CD44 File Offset: 0x0030AF44
 	public BaseObjective QuestObjective
 	{
 		get
@@ -38,9 +38,9 @@ public class XUiC_QuestTrackerObjectiveEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000ECF RID: 3791
-	// (get) Token: 0x06007FEE RID: 32750 RVA: 0x00308595 File Offset: 0x00306795
-	// (set) Token: 0x06007FEF RID: 32751 RVA: 0x003085A0 File Offset: 0x003067A0
+	// Token: 0x17000F08 RID: 3848
+	// (get) Token: 0x060080E0 RID: 32992 RVA: 0x0030CDC9 File Offset: 0x0030AFC9
+	// (set) Token: 0x060080E1 RID: 32993 RVA: 0x0030CDD4 File Offset: 0x0030AFD4
 	public BaseChallengeObjective ChallengeObjective
 	{
 		get
@@ -65,15 +65,15 @@ public class XUiC_QuestTrackerObjectiveEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007FF0 RID: 32752 RVA: 0x0008AB7B File Offset: 0x00088D7B
+	// Token: 0x060080E2 RID: 32994 RVA: 0x0008B2BB File Offset: 0x000894BB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Objective_ValueChanged()
 	{
 		base.RefreshBindings();
 	}
 
-	// Token: 0x17000ED0 RID: 3792
-	// (get) Token: 0x06007FF1 RID: 32753 RVA: 0x0030860D File Offset: 0x0030680D
+	// Token: 0x17000F09 RID: 3849
+	// (get) Token: 0x060080E3 RID: 32995 RVA: 0x0030CE41 File Offset: 0x0030B041
 	public static string OptionalKeyword
 	{
 		get
@@ -86,7 +86,7 @@ public class XUiC_QuestTrackerObjectiveEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007FF2 RID: 32754 RVA: 0x00308638 File Offset: 0x00306838
+	// Token: 0x060080E4 RID: 32996 RVA: 0x0030CE6C File Offset: 0x0030B06C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -283,7 +283,7 @@ public class XUiC_QuestTrackerObjectiveEntry : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x06007FF3 RID: 32755 RVA: 0x00308B1E File Offset: 0x00306D1E
+	// Token: 0x060080E5 RID: 32997 RVA: 0x0030D352 File Offset: 0x0030B552
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void ClearObjective()
 	{
@@ -291,7 +291,7 @@ public class XUiC_QuestTrackerObjectiveEntry : XUiController
 		this.ChallengeObjective = null;
 	}
 
-	// Token: 0x06007FF4 RID: 32756 RVA: 0x00308B2E File Offset: 0x00306D2E
+	// Token: 0x060080E6 RID: 32998 RVA: 0x0030D362 File Offset: 0x0030B562
 	public override void Update(float _dt)
 	{
 		if (this.questObjective != null && this.questObjective.UpdateUI)
@@ -302,23 +302,23 @@ public class XUiC_QuestTrackerObjectiveEntry : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x04005EB9 RID: 24249
+	// Token: 0x04005F80 RID: 24448
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BaseObjective questObjective;
 
-	// Token: 0x04005EBA RID: 24250
+	// Token: 0x04005F81 RID: 24449
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BaseChallengeObjective challengeObjective;
 
-	// Token: 0x04005EBB RID: 24251
+	// Token: 0x04005F82 RID: 24450
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isBool;
 
-	// Token: 0x04005EBC RID: 24252
+	// Token: 0x04005F83 RID: 24451
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string optionalKeyword = "";
 
-	// Token: 0x04005EBE RID: 24254
+	// Token: 0x04005F85 RID: 24453
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string> objectiveOptionalFormatter = new CachedStringFormatter<string>((string _s) => "(" + _s + ") ");
 }

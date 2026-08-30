@@ -4,17 +4,17 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005C2 RID: 1474
+// Token: 0x020005C7 RID: 1479
 [Preserve]
 public class ItemActionRepair : ItemActionAttack
 {
-	// Token: 0x06003009 RID: 12297 RVA: 0x00135E0E File Offset: 0x0013400E
+	// Token: 0x06003037 RID: 12343 RVA: 0x00136E7E File Offset: 0x0013507E
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionRepair.InventoryDataRepair(_invData, _indexInEntityOfAction);
 	}
 
-	// Token: 0x0600300A RID: 12298 RVA: 0x00135E18 File Offset: 0x00134018
+	// Token: 0x06003038 RID: 12344 RVA: 0x00136E88 File Offset: 0x00135088
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -29,7 +29,7 @@ public class ItemActionRepair : ItemActionAttack
 		this.soundAnimActionSyncTimer = 0.3f;
 	}
 
-	// Token: 0x0600300B RID: 12299 RVA: 0x00135EB4 File Offset: 0x001340B4
+	// Token: 0x06003039 RID: 12345 RVA: 0x00136F24 File Offset: 0x00135124
 	public override void StopHolding(ItemActionData _data)
 	{
 		((ItemActionRepair.InventoryDataRepair)_data).bUseStarted = false;
@@ -42,7 +42,7 @@ public class ItemActionRepair : ItemActionAttack
 		}
 	}
 
-	// Token: 0x0600300C RID: 12300 RVA: 0x00135F06 File Offset: 0x00134106
+	// Token: 0x0600303A RID: 12346 RVA: 0x00136F76 File Offset: 0x00135176
 	public override void StartHolding(ItemActionData _data)
 	{
 		((ItemActionRepair.InventoryDataRepair)_data).bUseStarted = false;
@@ -50,7 +50,7 @@ public class ItemActionRepair : ItemActionAttack
 		this.blockUpgradeCount = 0;
 	}
 
-	// Token: 0x0600300D RID: 12301 RVA: 0x00135F24 File Offset: 0x00134124
+	// Token: 0x0600303B RID: 12347 RVA: 0x00136F94 File Offset: 0x00135194
 	public override void OnHoldingUpdate(ItemActionData _actionData)
 	{
 		EntityPlayerLocal entityPlayerLocal = _actionData.invData.holdingEntity as EntityPlayerLocal;
@@ -131,7 +131,7 @@ public class ItemActionRepair : ItemActionAttack
 		this.ExecuteAction(_actionData, false);
 	}
 
-	// Token: 0x0600300E RID: 12302 RVA: 0x00136288 File Offset: 0x00134488
+	// Token: 0x0600303C RID: 12348 RVA: 0x001372F8 File Offset: 0x001354F8
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		EntityPlayerLocal entityPlayerLocal = _actionData.invData.holdingEntity as EntityPlayerLocal;
@@ -317,13 +317,13 @@ public class ItemActionRepair : ItemActionAttack
 		}
 	}
 
-	// Token: 0x0600300F RID: 12303 RVA: 0x0013698B File Offset: 0x00134B8B
+	// Token: 0x0600303D RID: 12349 RVA: 0x001379FB File Offset: 0x00135BFB
 	public float GetRepairAmount()
 	{
 		return this.repairAmount;
 	}
 
-	// Token: 0x06003010 RID: 12304 RVA: 0x00136994 File Offset: 0x00134B94
+	// Token: 0x0600303E RID: 12350 RVA: 0x00137A04 File Offset: 0x00135C04
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string GetUpgradeItemName(Block block)
 	{
@@ -335,7 +335,7 @@ public class ItemActionRepair : ItemActionAttack
 		return text;
 	}
 
-	// Token: 0x06003011 RID: 12305 RVA: 0x001369E4 File Offset: 0x00134BE4
+	// Token: 0x0600303F RID: 12351 RVA: 0x00137A54 File Offset: 0x00135C54
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool CanRemoveRequiredResource(ItemInventoryData data, BlockValue blockValue)
 	{
@@ -382,7 +382,7 @@ public class ItemActionRepair : ItemActionAttack
 		return false;
 	}
 
-	// Token: 0x06003012 RID: 12306 RVA: 0x00136AE4 File Offset: 0x00134CE4
+	// Token: 0x06003040 RID: 12352 RVA: 0x00137B54 File Offset: 0x00135D54
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool RemoveRequiredResource(ItemInventoryData data, BlockValue blockValue)
 	{
@@ -418,21 +418,21 @@ public class ItemActionRepair : ItemActionAttack
 		return false;
 	}
 
-	// Token: 0x06003013 RID: 12307 RVA: 0x00136BB4 File Offset: 0x00134DB4
+	// Token: 0x06003041 RID: 12353 RVA: 0x00137C24 File Offset: 0x00135E24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool canRemoveRequiredItem(ItemInventoryData _data, ItemStack _itemStack)
 	{
 		return _data.holdingEntity.inventory.GetItemCount(_itemStack.itemValue, false, -1, -1, true) >= _itemStack.count || _data.holdingEntity.bag.GetItemCount(_itemStack.itemValue, -1, -1, true) >= _itemStack.count;
 	}
 
-	// Token: 0x06003014 RID: 12308 RVA: 0x00136C0C File Offset: 0x00134E0C
+	// Token: 0x06003042 RID: 12354 RVA: 0x00137C7C File Offset: 0x00135E7C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool removeRequiredItem(ItemInventoryData _data, ItemStack _itemStack)
 	{
 		return _data.holdingEntity.inventory.DecItem(_itemStack.itemValue, _itemStack.count, false, null) == _itemStack.count || _data.holdingEntity.bag.DecItem(_itemStack.itemValue, _itemStack.count, false, null) == _itemStack.count;
 	}
 
-	// Token: 0x06003015 RID: 12309 RVA: 0x00136C6C File Offset: 0x00134E6C
+	// Token: 0x06003043 RID: 12355 RVA: 0x00137CDC File Offset: 0x00135EDC
 	public override ItemClass.EnumCrosshairType GetCrosshairType(ItemActionData _actionData)
 	{
 		EntityPlayerLocal entityPlayerLocal = _actionData.invData.holdingEntity as EntityPlayerLocal;
@@ -452,7 +452,7 @@ public class ItemActionRepair : ItemActionAttack
 		return ItemClass.EnumCrosshairType.Upgrade;
 	}
 
-	// Token: 0x06003016 RID: 12310 RVA: 0x00136CB4 File Offset: 0x00134EB4
+	// Token: 0x06003044 RID: 12356 RVA: 0x00137D24 File Offset: 0x00135F24
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isShowOverlay(ItemActionData _actionData)
 	{
@@ -493,7 +493,7 @@ public class ItemActionRepair : ItemActionAttack
 		return flag;
 	}
 
-	// Token: 0x06003017 RID: 12311 RVA: 0x00136E40 File Offset: 0x00135040
+	// Token: 0x06003045 RID: 12357 RVA: 0x00137EB0 File Offset: 0x001360B0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void getOverlayData(ItemActionData _actionData, out float _perc, out string _text)
 	{
@@ -528,123 +528,123 @@ public class ItemActionRepair : ItemActionAttack
 		_text = string.Empty;
 	}
 
-	// Token: 0x06003018 RID: 12312 RVA: 0x00136F74 File Offset: 0x00135174
+	// Token: 0x06003046 RID: 12358 RVA: 0x00137FE4 File Offset: 0x001361E4
 	public override bool IsActionRunning(ItemActionData _actionData)
 	{
 		ItemActionRepair.InventoryDataRepair inventoryDataRepair = (ItemActionRepair.InventoryDataRepair)_actionData;
 		return Time.time - inventoryDataRepair.lastUseTime < this.Delay + 0.1f;
 	}
 
-	// Token: 0x06003019 RID: 12313 RVA: 0x00136FA5 File Offset: 0x001351A5
+	// Token: 0x06003047 RID: 12359 RVA: 0x00138015 File Offset: 0x00136215
 	public override void GetItemValueActionInfo(ref List<string> _infoList, ItemValue _itemValue, XUi _xui, int _actionIndex = 0)
 	{
 		base.GetItemValueActionInfo(ref _infoList, _itemValue, _xui, _actionIndex);
 		_infoList.Add(ItemAction.StringFormatHandler(Localization.Get("lblBlkRpr", false, null), this.GetRepairAmount().ToCultureInvariantString()));
 	}
 
-	// Token: 0x04002538 RID: 9528
+	// Token: 0x0400256C RID: 9580
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public BlockValue targetBlock;
 
-	// Token: 0x04002539 RID: 9529
+	// Token: 0x0400256D RID: 9581
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float repairAmount;
 
-	// Token: 0x0400253A RID: 9530
+	// Token: 0x0400256E RID: 9582
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float hitCountOffset;
 
-	// Token: 0x0400253B RID: 9531
+	// Token: 0x0400256F RID: 9583
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float soundAnimActionSyncTimer;
 
-	// Token: 0x0400253C RID: 9532
+	// Token: 0x04002570 RID: 9584
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public const float SOUND_LENGTH = 0.3f;
 
-	// Token: 0x0400253D RID: 9533
+	// Token: 0x04002571 RID: 9585
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isUpgradeItem = true;
 
-	// Token: 0x0400253E RID: 9534
+	// Token: 0x04002572 RID: 9586
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i blockTargetPos;
 
-	// Token: 0x0400253F RID: 9535
+	// Token: 0x04002573 RID: 9587
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i lastBlockTargetPos;
 
-	// Token: 0x04002540 RID: 9536
+	// Token: 0x04002574 RID: 9588
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int blockUpgradeCount;
 
-	// Token: 0x04002541 RID: 9537
+	// Token: 0x04002575 RID: 9589
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bUpgradeCountChanged;
 
-	// Token: 0x04002542 RID: 9538
+	// Token: 0x04002576 RID: 9590
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string repairActionSound;
 
-	// Token: 0x04002543 RID: 9539
+	// Token: 0x04002577 RID: 9591
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string upgradeActionSound;
 
-	// Token: 0x04002544 RID: 9540
+	// Token: 0x04002578 RID: 9592
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string allowedUpgradeItems;
 
-	// Token: 0x04002545 RID: 9541
+	// Token: 0x04002579 RID: 9593
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string restrictedUpgradeItems;
 
-	// Token: 0x020005C3 RID: 1475
+	// Token: 0x020005C8 RID: 1480
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public enum EnumRepairType
 	{
-		// Token: 0x04002547 RID: 9543
+		// Token: 0x0400257B RID: 9595
 		None,
-		// Token: 0x04002548 RID: 9544
+		// Token: 0x0400257C RID: 9596
 		Repair,
-		// Token: 0x04002549 RID: 9545
+		// Token: 0x0400257D RID: 9597
 		Upgrade
 	}
 
-	// Token: 0x020005C4 RID: 1476
+	// Token: 0x020005C9 RID: 1481
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class InventoryDataRepair : ItemActionAttackData
 	{
-		// Token: 0x0600301B RID: 12315 RVA: 0x00136FE4 File Offset: 0x001351E4
+		// Token: 0x06003049 RID: 12361 RVA: 0x00138054 File Offset: 0x00136254
 		public InventoryDataRepair(ItemInventoryData _invData, int _indexInEntityOfAction)
 			: base(_invData, _indexInEntityOfAction)
 		{
 		}
 
-		// Token: 0x0400254A RID: 9546
+		// Token: 0x0400257E RID: 9598
 		public new bool uiOpenedByMe;
 
-		// Token: 0x0400254B RID: 9547
+		// Token: 0x0400257F RID: 9599
 		public ItemActionRepair.EnumRepairType repairType;
 
-		// Token: 0x0400254C RID: 9548
+		// Token: 0x04002580 RID: 9600
 		public float blockDamagePerc;
 
-		// Token: 0x0400254D RID: 9549
+		// Token: 0x04002581 RID: 9601
 		public bool bUseStarted;
 
-		// Token: 0x0400254E RID: 9550
+		// Token: 0x04002582 RID: 9602
 		public float upgradePerc;
 
-		// Token: 0x0400254F RID: 9551
+		// Token: 0x04002583 RID: 9603
 		public BlockValue lastHitBlockValue;
 
-		// Token: 0x04002550 RID: 9552
+		// Token: 0x04002584 RID: 9604
 		public Vector3i lastHitPosition = Vector3i.zero;
 
-		// Token: 0x04002551 RID: 9553
+		// Token: 0x04002585 RID: 9605
 		public List<Block.SItemNameCount> lastRepairItems;
 
-		// Token: 0x04002552 RID: 9554
+		// Token: 0x04002586 RID: 9606
 		public float[] lastRepairItemsPercents;
 	}
 }

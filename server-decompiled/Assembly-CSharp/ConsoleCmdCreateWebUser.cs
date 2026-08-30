@@ -5,25 +5,25 @@ using Platform;
 using UnityEngine.Scripting;
 using Webserver;
 
-// Token: 0x020001FC RID: 508
+// Token: 0x020001FE RID: 510
 [Preserve]
 public class ConsoleCmdCreateWebUser : ConsoleCmdAbstract
 {
-	// Token: 0x06000F97 RID: 3991 RVA: 0x000650C4 File Offset: 0x000632C4
+	// Token: 0x06000FA2 RID: 4002 RVA: 0x0006560C File Offset: 0x0006380C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "createwebuser" };
 	}
 
-	// Token: 0x06000F98 RID: 3992 RVA: 0x000650D4 File Offset: 0x000632D4
+	// Token: 0x06000FA3 RID: 4003 RVA: 0x0006561C File Offset: 0x0006381C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Create a web dashboard user account";
 	}
 
-	// Token: 0x06000F99 RID: 3993 RVA: 0x00031E8B File Offset: 0x0003008B
+	// Token: 0x06000FA4 RID: 4004 RVA: 0x00032147 File Offset: 0x00030347
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
@@ -31,7 +31,7 @@ public class ConsoleCmdCreateWebUser : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000159 RID: 345
-	// (get) Token: 0x06000F9A RID: 3994 RVA: 0x0006110A File Offset: 0x0005F30A
+	// (get) Token: 0x06000FA5 RID: 4005 RVA: 0x00061652 File Offset: 0x0005F852
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -40,7 +40,7 @@ public class ConsoleCmdCreateWebUser : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F9B RID: 3995 RVA: 0x000650DC File Offset: 0x000632DC
+	// Token: 0x06000FA6 RID: 4006 RVA: 0x00065624 File Offset: 0x00063824
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_senderInfo.NetworkConnection != null)
@@ -88,7 +88,7 @@ public class ConsoleCmdCreateWebUser : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F9C RID: 3996 RVA: 0x00065208 File Offset: 0x00063408
+	// Token: 0x06000FA7 RID: 4007 RVA: 0x00065750 File Offset: 0x00063950
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void openUserRegistrationPage(string _url)
 	{
@@ -97,7 +97,7 @@ public class ConsoleCmdCreateWebUser : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Requested browser for user creation at " + _url);
 	}
 
-	// Token: 0x06000F9D RID: 3997 RVA: 0x00065260 File Offset: 0x00063460
+	// Token: 0x06000FA8 RID: 4008 RVA: 0x000657A8 File Offset: 0x000639A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string createRegistrationPageUrl(string _token, bool _isLocalOnListenServer = false)
 	{
@@ -125,14 +125,14 @@ public class ConsoleCmdCreateWebUser : ConsoleCmdAbstract
 		return text + "app/createuser?token=" + _token;
 	}
 
-	// Token: 0x06000F9E RID: 3998 RVA: 0x00065304 File Offset: 0x00063504
+	// Token: 0x06000FA9 RID: 4009 RVA: 0x0006584C File Offset: 0x00063A4C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string createToken(string _playerName, PlatformUserIdentifierAbs _platformUserId, PlatformUserIdentifierAbs _crossPlatformUserId)
 	{
 		return UserRegistrationTokens.CreateToken(_playerName, _platformUserId, _crossPlatformUserId);
 	}
 
-	// Token: 0x04000C97 RID: 3223
+	// Token: 0x04000CA4 RID: 3236
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string registrationPagePath = "app/createuser";
 }

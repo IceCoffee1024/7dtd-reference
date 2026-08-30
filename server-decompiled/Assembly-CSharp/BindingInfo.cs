@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using Unity.Profiling;
 
-// Token: 0x020010CB RID: 4299
+// Token: 0x020010E4 RID: 4324
 public class BindingInfo : IBindingInstance
 {
-	// Token: 0x060088A1 RID: 34977 RVA: 0x00342920 File Offset: 0x00340B20
+	// Token: 0x06008993 RID: 35219 RVA: 0x00347144 File Offset: 0x00345344
 	public BindingInfo(XUiView _view, string _attribute, string _sourceText)
 	{
 		this.View = _view;
@@ -65,7 +65,7 @@ public class BindingInfo : IBindingInstance
 		}
 	}
 
-	// Token: 0x060088A2 RID: 34978 RVA: 0x00342B14 File Offset: 0x00340D14
+	// Token: 0x06008994 RID: 35220 RVA: 0x00347338 File Offset: 0x00345538
 	public void RefreshValue()
 	{
 		using (this.pmRefreshValueComplete.Auto())
@@ -170,62 +170,62 @@ public class BindingInfo : IBindingInstance
 		}
 	}
 
-	// Token: 0x04006590 RID: 26000
+	// Token: 0x04006657 RID: 26199
 	public readonly XUiView View;
 
-	// Token: 0x04006591 RID: 26001
+	// Token: 0x04006658 RID: 26200
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string attributeName;
 
-	// Token: 0x04006592 RID: 26002
+	// Token: 0x04006659 RID: 26201
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string sourceText;
 
-	// Token: 0x04006593 RID: 26003
+	// Token: 0x0400665A RID: 26202
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool parsersDetected;
 
-	// Token: 0x04006594 RID: 26004
+	// Token: 0x0400665B RID: 26203
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XuiParsingDelegate parsingDelegateView;
 
-	// Token: 0x04006595 RID: 26005
+	// Token: 0x0400665C RID: 26204
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XuiParsingDelegate parsingDelegateController;
 
-	// Token: 0x04006596 RID: 26006
+	// Token: 0x0400665D RID: 26205
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<BindingItem> bindingList = new List<BindingItem>();
 
-	// Token: 0x04006597 RID: 26007
+	// Token: 0x0400665E RID: 26206
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<string> cachedBindingValues = new List<string>();
 
-	// Token: 0x04006598 RID: 26008
+	// Token: 0x0400665F RID: 26207
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string cachedResultValue;
 
-	// Token: 0x04006599 RID: 26009
+	// Token: 0x04006660 RID: 26208
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ProfilerMarker pmCtor = new ProfilerMarker("BindingInfo.ctor");
 
-	// Token: 0x0400659A RID: 26010
+	// Token: 0x04006661 RID: 26209
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ProfilerMarker pmRefreshValueComplete = new ProfilerMarker("BindingInfo.RefreshValue");
 
-	// Token: 0x0400659B RID: 26011
+	// Token: 0x04006662 RID: 26210
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ProfilerMarker pmRefreshValueCompleteSourceText;
 
-	// Token: 0x0400659C RID: 26012
+	// Token: 0x04006663 RID: 26211
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ProfilerMarker pmGetBindingValues = new ProfilerMarker("GetBindingValues");
 
-	// Token: 0x0400659D RID: 26013
+	// Token: 0x04006664 RID: 26212
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ProfilerMarker pmBuildAttributeValue = new ProfilerMarker("BuildAttributeValue");
 
-	// Token: 0x0400659E RID: 26014
+	// Token: 0x04006665 RID: 26213
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ProfilerMarker pmParseAttribute = new ProfilerMarker("ParseAttribute");
 }

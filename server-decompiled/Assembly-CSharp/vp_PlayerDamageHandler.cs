@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020015ED RID: 5613
+// Token: 0x02001608 RID: 5640
 public class vp_PlayerDamageHandler : vp_DamageHandler
 {
-	// Token: 0x1700146F RID: 5231
-	// (get) Token: 0x0600B01C RID: 45084 RVA: 0x0041CE9B File Offset: 0x0041B09B
+	// Token: 0x170014A8 RID: 5288
+	// (get) Token: 0x0600B119 RID: 45337 RVA: 0x004221DB File Offset: 0x004203DB
 	public vp_PlayerEventHandler Player
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -20,8 +20,8 @@ public class vp_PlayerDamageHandler : vp_DamageHandler
 		}
 	}
 
-	// Token: 0x17001470 RID: 5232
-	// (get) Token: 0x0600B01D RID: 45085 RVA: 0x0041CEC2 File Offset: 0x0041B0C2
+	// Token: 0x170014A9 RID: 5289
+	// (get) Token: 0x0600B11A RID: 45338 RVA: 0x00422202 File Offset: 0x00420402
 	public vp_PlayerInventory Inventory
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -35,8 +35,8 @@ public class vp_PlayerDamageHandler : vp_DamageHandler
 		}
 	}
 
-	// Token: 0x17001471 RID: 5233
-	// (get) Token: 0x0600B01E RID: 45086 RVA: 0x0041CEF0 File Offset: 0x0041B0F0
+	// Token: 0x170014AA RID: 5290
+	// (get) Token: 0x0600B11B RID: 45339 RVA: 0x00422230 File Offset: 0x00420430
 	public List<Collider> Colliders
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -57,7 +57,7 @@ public class vp_PlayerDamageHandler : vp_DamageHandler
 		}
 	}
 
-	// Token: 0x0600B01F RID: 45087 RVA: 0x0041CF4A File Offset: 0x0041B14A
+	// Token: 0x0600B11C RID: 45340 RVA: 0x0042228A File Offset: 0x0042048A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnEnable()
 	{
@@ -67,7 +67,7 @@ public class vp_PlayerDamageHandler : vp_DamageHandler
 		}
 	}
 
-	// Token: 0x0600B020 RID: 45088 RVA: 0x0041CF66 File Offset: 0x0041B166
+	// Token: 0x0600B11D RID: 45341 RVA: 0x004222A6 File Offset: 0x004204A6
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnDisable()
 	{
@@ -77,7 +77,7 @@ public class vp_PlayerDamageHandler : vp_DamageHandler
 		}
 	}
 
-	// Token: 0x0600B021 RID: 45089 RVA: 0x0041CF82 File Offset: 0x0041B182
+	// Token: 0x0600B11E RID: 45342 RVA: 0x004222C2 File Offset: 0x004204C2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -87,7 +87,7 @@ public class vp_PlayerDamageHandler : vp_DamageHandler
 		}
 	}
 
-	// Token: 0x0600B022 RID: 45090 RVA: 0x0041CFA4 File Offset: 0x0041B1A4
+	// Token: 0x0600B11F RID: 45343 RVA: 0x004222E4 File Offset: 0x004204E4
 	public override void Die()
 	{
 		if (!base.enabled || !vp_Utility.IsActive(base.gameObject))
@@ -131,7 +131,7 @@ public class vp_PlayerDamageHandler : vp_DamageHandler
 		}
 	}
 
-	// Token: 0x0600B023 RID: 45091 RVA: 0x0041D1AC File Offset: 0x0041B3AC
+	// Token: 0x0600B120 RID: 45344 RVA: 0x004224EC File Offset: 0x004206EC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Reset()
 	{
@@ -157,9 +157,9 @@ public class vp_PlayerDamageHandler : vp_DamageHandler
 		}
 	}
 
-	// Token: 0x17001472 RID: 5234
-	// (get) Token: 0x0600B024 RID: 45092 RVA: 0x0041D290 File Offset: 0x0041B490
-	// (set) Token: 0x0600B025 RID: 45093 RVA: 0x0041D298 File Offset: 0x0041B498
+	// Token: 0x170014AB RID: 5291
+	// (get) Token: 0x0600B121 RID: 45345 RVA: 0x004225D0 File Offset: 0x004207D0
+	// (set) Token: 0x0600B122 RID: 45346 RVA: 0x004225D8 File Offset: 0x004207D8
 	public virtual float OnValue_Health
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -174,8 +174,8 @@ public class vp_PlayerDamageHandler : vp_DamageHandler
 		}
 	}
 
-	// Token: 0x17001473 RID: 5235
-	// (get) Token: 0x0600B026 RID: 45094 RVA: 0x0041D2AC File Offset: 0x0041B4AC
+	// Token: 0x170014AC RID: 5292
+	// (get) Token: 0x0600B123 RID: 45347 RVA: 0x004225EC File Offset: 0x004207EC
 	public virtual float OnValue_MaxHealth
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -185,7 +185,7 @@ public class vp_PlayerDamageHandler : vp_DamageHandler
 		}
 	}
 
-	// Token: 0x0600B027 RID: 45095 RVA: 0x0041D2B4 File Offset: 0x0041B4B4
+	// Token: 0x0600B124 RID: 45348 RVA: 0x004225F4 File Offset: 0x004207F4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnMessage_FallImpact(float impact)
 	{
@@ -198,42 +198,42 @@ public class vp_PlayerDamageHandler : vp_DamageHandler
 		this.Damage(num);
 	}
 
-	// Token: 0x0400840E RID: 33806
+	// Token: 0x040084E7 RID: 34023
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_PlayerEventHandler m_Player;
 
-	// Token: 0x0400840F RID: 33807
+	// Token: 0x040084E8 RID: 34024
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_PlayerInventory m_Inventory;
 
-	// Token: 0x04008410 RID: 33808
+	// Token: 0x040084E9 RID: 34025
 	public bool AllowFallDamage = true;
 
-	// Token: 0x04008411 RID: 33809
+	// Token: 0x040084EA RID: 34026
 	public float FallImpactThreshold = 0.15f;
 
-	// Token: 0x04008412 RID: 33810
+	// Token: 0x040084EB RID: 34027
 	public bool DeathOnFallImpactThreshold;
 
-	// Token: 0x04008413 RID: 33811
+	// Token: 0x040084EC RID: 34028
 	public Vector2 FallImpactPitch = new Vector2(1f, 1.5f);
 
-	// Token: 0x04008414 RID: 33812
+	// Token: 0x040084ED RID: 34029
 	public List<AudioClip> FallImpactSounds = new List<AudioClip>();
 
-	// Token: 0x04008415 RID: 33813
+	// Token: 0x040084EE RID: 34030
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_FallImpactMultiplier = 2f;
 
-	// Token: 0x04008416 RID: 33814
+	// Token: 0x040084EF RID: 34031
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_InventoryWasEnabledAtStart = true;
 
-	// Token: 0x04008417 RID: 33815
+	// Token: 0x040084F0 RID: 34032
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public List<Collider> m_Colliders;

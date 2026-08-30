@@ -1,11 +1,11 @@
 ﻿using System;
 
-// Token: 0x0200110B RID: 4363
+// Token: 0x02001124 RID: 4388
 public class XUiM_AssembleItem : XUiModel
 {
-	// Token: 0x17000FD9 RID: 4057
-	// (get) Token: 0x060089C0 RID: 35264 RVA: 0x00347F51 File Offset: 0x00346151
-	// (set) Token: 0x060089C1 RID: 35265 RVA: 0x00347F59 File Offset: 0x00346159
+	// Token: 0x17001012 RID: 4114
+	// (get) Token: 0x06008AB2 RID: 35506 RVA: 0x0034C775 File Offset: 0x0034A975
+	// (set) Token: 0x06008AB3 RID: 35507 RVA: 0x0034C77D File Offset: 0x0034A97D
 	public ItemStack CurrentItem
 	{
 		get
@@ -22,9 +22,9 @@ public class XUiM_AssembleItem : XUiModel
 		}
 	}
 
-	// Token: 0x17000FDA RID: 4058
-	// (get) Token: 0x060089C2 RID: 35266 RVA: 0x00347F6B File Offset: 0x0034616B
-	// (set) Token: 0x060089C3 RID: 35267 RVA: 0x00347F73 File Offset: 0x00346173
+	// Token: 0x17001013 RID: 4115
+	// (get) Token: 0x06008AB4 RID: 35508 RVA: 0x0034C78F File Offset: 0x0034A98F
+	// (set) Token: 0x06008AB5 RID: 35509 RVA: 0x0034C797 File Offset: 0x0034A997
 	public XUiC_ItemStack CurrentItemStackController
 	{
 		get
@@ -45,9 +45,9 @@ public class XUiM_AssembleItem : XUiModel
 		}
 	}
 
-	// Token: 0x17000FDB RID: 4059
-	// (get) Token: 0x060089C4 RID: 35268 RVA: 0x00347FA4 File Offset: 0x003461A4
-	// (set) Token: 0x060089C5 RID: 35269 RVA: 0x00347FAC File Offset: 0x003461AC
+	// Token: 0x17001014 RID: 4116
+	// (get) Token: 0x06008AB6 RID: 35510 RVA: 0x0034C7C8 File Offset: 0x0034A9C8
+	// (set) Token: 0x06008AB7 RID: 35511 RVA: 0x0034C7D0 File Offset: 0x0034A9D0
 	public XUiC_EquipmentStack CurrentEquipmentStackController
 	{
 		get
@@ -60,16 +60,16 @@ public class XUiM_AssembleItem : XUiModel
 		}
 	}
 
-	// Token: 0x17000FDC RID: 4060
-	// (get) Token: 0x060089C6 RID: 35270 RVA: 0x00347FB5 File Offset: 0x003461B5
-	// (set) Token: 0x060089C7 RID: 35271 RVA: 0x00347FBD File Offset: 0x003461BD
+	// Token: 0x17001015 RID: 4117
+	// (get) Token: 0x06008AB8 RID: 35512 RVA: 0x0034C7D9 File Offset: 0x0034A9D9
+	// (set) Token: 0x06008AB9 RID: 35513 RVA: 0x0034C7E1 File Offset: 0x0034A9E1
 	public int PartCount
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x060089C8 RID: 35272 RVA: 0x00347FC8 File Offset: 0x003461C8
+	// Token: 0x06008ABA RID: 35514 RVA: 0x0034C7EC File Offset: 0x0034A9EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetPartCount()
 	{
@@ -88,7 +88,7 @@ public class XUiM_AssembleItem : XUiModel
 		}
 	}
 
-	// Token: 0x060089C9 RID: 35273 RVA: 0x00348050 File Offset: 0x00346250
+	// Token: 0x06008ABB RID: 35515 RVA: 0x0034C874 File Offset: 0x0034AA74
 	public void RefreshAssembleItem()
 	{
 		this.PartCount = 0;
@@ -120,7 +120,7 @@ public class XUiM_AssembleItem : XUiModel
 		}
 	}
 
-	// Token: 0x060089CA RID: 35274 RVA: 0x00348104 File Offset: 0x00346304
+	// Token: 0x06008ABC RID: 35516 RVA: 0x0034C928 File Offset: 0x0034AB28
 	public bool AddPartToItem(ItemStack _partStack, out ItemStack _resultStack)
 	{
 		if (this.CurrentItem == null || this.CurrentItem.IsEmpty())
@@ -236,7 +236,7 @@ public class XUiM_AssembleItem : XUiModel
 		return false;
 	}
 
-	// Token: 0x060089CB RID: 35275 RVA: 0x00348559 File Offset: 0x00346759
+	// Token: 0x06008ABD RID: 35517 RVA: 0x0034CD7D File Offset: 0x0034AF7D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateAssembleWindow()
 	{
@@ -247,18 +247,18 @@ public class XUiM_AssembleItem : XUiModel
 		}
 	}
 
-	// Token: 0x04006621 RID: 26145
+	// Token: 0x040066E8 RID: 26344
 	public XUiC_AssembleWindow AssembleWindow;
 
-	// Token: 0x04006622 RID: 26146
+	// Token: 0x040066E9 RID: 26345
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack currentItem;
 
-	// Token: 0x04006623 RID: 26147
+	// Token: 0x040066EA RID: 26346
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ItemStack currentItemStackController;
 
-	// Token: 0x04006624 RID: 26148
+	// Token: 0x040066EB RID: 26347
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_EquipmentStack currentEquipmentStackController;
 }

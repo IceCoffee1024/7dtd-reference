@@ -1,18 +1,18 @@
 ﻿using System;
 
-// Token: 0x02000394 RID: 916
+// Token: 0x02000398 RID: 920
 public enum DynamicRegionState
 {
-	// Token: 0x04001196 RID: 4502
+	// Token: 0x040011AB RID: 4523
 	Unloaded,
-	// Token: 0x04001197 RID: 4503
+	// Token: 0x040011AC RID: 4524
 	Loaded,
-	// Token: 0x04001198 RID: 4504
+	// Token: 0x040011AD RID: 4525
 	StartLoad,
-	// Token: 0x04001199 RID: 4505
+	// Token: 0x040011AE RID: 4526
 	Loading,
-	// Token: 0x0400119A RID: 4506
+	// Token: 0x040011AF RID: 4527
 	Unloading,
-	// Token: 0x0400119B RID: 4507
+	// Token: 0x040011B0 RID: 4528
 	LoadItems
 }

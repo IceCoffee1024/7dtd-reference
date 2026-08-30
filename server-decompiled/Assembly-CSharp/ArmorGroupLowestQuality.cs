@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006A8 RID: 1704
+// Token: 0x020006B2 RID: 1714
 [Preserve]
 public class ArmorGroupLowestQuality : TargetedCompareRequirementBase
 {
-	// Token: 0x06003556 RID: 13654 RVA: 0x0015FDA4 File Offset: 0x0015DFA4
+	// Token: 0x060035AC RID: 13740 RVA: 0x00161F7C File Offset: 0x0016017C
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -22,13 +22,13 @@ public class ArmorGroupLowestQuality : TargetedCompareRequirementBase
 		return RequirementBase.compareValues((float)armorGroupLowestQuality, this.operation, this.value);
 	}
 
-	// Token: 0x06003557 RID: 13655 RVA: 0x0015FE05 File Offset: 0x0015E005
+	// Token: 0x060035AD RID: 13741 RVA: 0x00161FDD File Offset: 0x001601DD
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("ArmorGroupLowestQuality: {0}{1} {2}", this.invert ? "NOT " : "", this.operation.ToStringCached<RequirementBase.OperationTypes>(), this.value.ToCultureInvariantString()));
 	}
 
-	// Token: 0x06003558 RID: 13656 RVA: 0x0015FE44 File Offset: 0x0015E044
+	// Token: 0x060035AE RID: 13742 RVA: 0x0016201C File Offset: 0x0016021C
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -40,7 +40,7 @@ public class ArmorGroupLowestQuality : TargetedCompareRequirementBase
 		return flag;
 	}
 
-	// Token: 0x04002AF0 RID: 10992
+	// Token: 0x04002B64 RID: 11108
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string armorGroupName;
 }

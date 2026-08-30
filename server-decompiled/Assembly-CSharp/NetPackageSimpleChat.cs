@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000845 RID: 2117
+// Token: 0x02000851 RID: 2129
 [Preserve]
 public class NetPackageSimpleChat : NetPackage
 {
-	// Token: 0x06003DEA RID: 15850 RVA: 0x0018804F File Offset: 0x0018624F
+	// Token: 0x06003E4F RID: 15951 RVA: 0x0018A082 File Offset: 0x00188282
 	public NetPackageSimpleChat Setup(string _msg)
 	{
 		this.msg = (string.IsNullOrEmpty(_msg) ? string.Empty : _msg);
 		return this;
 	}
 
-	// Token: 0x06003DEB RID: 15851 RVA: 0x00188068 File Offset: 0x00186268
+	// Token: 0x06003E50 RID: 15952 RVA: 0x0018A09B File Offset: 0x0018829B
 	public NetPackageSimpleChat Setup(string _msg, List<int> _recipientEntityIds)
 	{
 		this.msg = (string.IsNullOrEmpty(_msg) ? string.Empty : _msg);
@@ -21,7 +21,7 @@ public class NetPackageSimpleChat : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003DEC RID: 15852 RVA: 0x00188088 File Offset: 0x00186288
+	// Token: 0x06003E51 RID: 15953 RVA: 0x0018A0BC File Offset: 0x001882BC
 	public override void read(PooledBinaryReader _br)
 	{
 		this.msg = _br.ReadString();
@@ -36,7 +36,7 @@ public class NetPackageSimpleChat : NetPackage
 		}
 	}
 
-	// Token: 0x06003DED RID: 15853 RVA: 0x001880D4 File Offset: 0x001862D4
+	// Token: 0x06003E52 RID: 15954 RVA: 0x0018A108 File Offset: 0x00188308
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -51,7 +51,7 @@ public class NetPackageSimpleChat : NetPackage
 		}
 	}
 
-	// Token: 0x06003DEE RID: 15854 RVA: 0x00188150 File Offset: 0x00186350
+	// Token: 0x06003E53 RID: 15955 RVA: 0x0018A184 File Offset: 0x00188384
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -101,17 +101,17 @@ public class NetPackageSimpleChat : NetPackage
 		}
 	}
 
-	// Token: 0x06003DEF RID: 15855 RVA: 0x00188298 File Offset: 0x00186498
+	// Token: 0x06003E54 RID: 15956 RVA: 0x0018A2CC File Offset: 0x001884CC
 	public override int GetLength()
 	{
 		return 4 + this.msg.Length;
 	}
 
-	// Token: 0x04003203 RID: 12803
+	// Token: 0x04003282 RID: 12930
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<int> recipientEntityIds;
 
-	// Token: 0x04003204 RID: 12804
+	// Token: 0x04003283 RID: 12931
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string msg;
 }

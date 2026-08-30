@@ -2,12 +2,12 @@
 using Audio;
 using UnityEngine.Scripting;
 
-// Token: 0x020007A1 RID: 1953
+// Token: 0x020007AB RID: 1963
 [Preserve]
 public class NetPackageAudioPlayInHead : NetPackage
 {
-	// Token: 0x170005FD RID: 1533
-	// (get) Token: 0x06003A07 RID: 14855 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x17000607 RID: 1543
+	// (get) Token: 0x06003A5F RID: 14943 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -16,7 +16,7 @@ public class NetPackageAudioPlayInHead : NetPackage
 		}
 	}
 
-	// Token: 0x06003A08 RID: 14856 RVA: 0x00179949 File Offset: 0x00177B49
+	// Token: 0x06003A60 RID: 14944 RVA: 0x0017BBC9 File Offset: 0x00179DC9
 	public NetPackageAudioPlayInHead Setup(string _soundName, bool _isUnique)
 	{
 		this.soundName = _soundName;
@@ -24,14 +24,14 @@ public class NetPackageAudioPlayInHead : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003A09 RID: 14857 RVA: 0x0017995A File Offset: 0x00177B5A
+	// Token: 0x06003A61 RID: 14945 RVA: 0x0017BBDA File Offset: 0x00179DDA
 	public override void read(PooledBinaryReader _br)
 	{
 		this.soundName = _br.ReadString();
 		this.isUnique = _br.ReadBoolean();
 	}
 
-	// Token: 0x06003A0A RID: 14858 RVA: 0x00179974 File Offset: 0x00177B74
+	// Token: 0x06003A62 RID: 14946 RVA: 0x0017BBF4 File Offset: 0x00179DF4
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -39,7 +39,7 @@ public class NetPackageAudioPlayInHead : NetPackage
 		_bw.Write(this.isUnique);
 	}
 
-	// Token: 0x06003A0B RID: 14859 RVA: 0x00179995 File Offset: 0x00177B95
+	// Token: 0x06003A63 RID: 14947 RVA: 0x0017BC15 File Offset: 0x00179E15
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -49,17 +49,17 @@ public class NetPackageAudioPlayInHead : NetPackage
 		Manager.PlayInsidePlayerHead(this.soundName, -1, 0f, false, this.isUnique);
 	}
 
-	// Token: 0x06003A0C RID: 14860 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06003A64 RID: 14948 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override int GetLength()
 	{
 		return 0;
 	}
 
-	// Token: 0x04002F56 RID: 12118
+	// Token: 0x04002FCF RID: 12239
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string soundName;
 
-	// Token: 0x04002F57 RID: 12119
+	// Token: 0x04002FD0 RID: 12240
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isUnique;
 }

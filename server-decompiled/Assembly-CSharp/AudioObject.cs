@@ -10,7 +10,7 @@ using UnityEngine.Audio;
 [Serializable]
 public class AudioObject
 {
-	// Token: 0x0600036F RID: 879 RVA: 0x00018DEC File Offset: 0x00016FEC
+	// Token: 0x06000370 RID: 880 RVA: 0x00018EB0 File Offset: 0x000170B0
 	public void Init()
 	{
 		foreach (AudioClip audioClip in this.audioClips)
@@ -42,7 +42,7 @@ public class AudioObject
 		}
 	}
 
-	// Token: 0x06000370 RID: 880 RVA: 0x00018EEC File Offset: 0x000170EC
+	// Token: 0x06000371 RID: 881 RVA: 0x00018FB0 File Offset: 0x000171B0
 	public void SetValue(float _value)
 	{
 		this.value = _value;
@@ -83,13 +83,13 @@ public class AudioObject
 		}
 	}
 
-	// Token: 0x06000371 RID: 881 RVA: 0x000190A4 File Offset: 0x000172A4
+	// Token: 0x06000372 RID: 882 RVA: 0x00019168 File Offset: 0x00017368
 	public void SetBiomeVolume(float _volume)
 	{
 		this.biomeVolume = _volume;
 	}
 
-	// Token: 0x06000372 RID: 882 RVA: 0x000190B0 File Offset: 0x000172B0
+	// Token: 0x06000373 RID: 883 RVA: 0x00019174 File Offset: 0x00017374
 	public void Pause()
 	{
 		if (this.currentAudioSrc != null)
@@ -108,7 +108,7 @@ public class AudioObject
 		}
 	}
 
-	// Token: 0x06000373 RID: 883 RVA: 0x0001912C File Offset: 0x0001732C
+	// Token: 0x06000374 RID: 884 RVA: 0x000191F0 File Offset: 0x000173F0
 	public void UnPause()
 	{
 		if (this.currentAudioSrc != null)
@@ -127,7 +127,7 @@ public class AudioObject
 		}
 	}
 
-	// Token: 0x06000374 RID: 884 RVA: 0x000191B0 File Offset: 0x000173B0
+	// Token: 0x06000375 RID: 885 RVA: 0x00019274 File Offset: 0x00017474
 	public void TurnOff(bool immediate = false)
 	{
 		this.fadingOut = true;
@@ -148,7 +148,7 @@ public class AudioObject
 		}
 	}
 
-	// Token: 0x06000375 RID: 885 RVA: 0x00019234 File Offset: 0x00017434
+	// Token: 0x06000376 RID: 886 RVA: 0x000192F8 File Offset: 0x000174F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool PlayConditionPasses()
 	{
@@ -277,7 +277,7 @@ public class AudioObject
 		return true;
 	}
 
-	// Token: 0x06000376 RID: 886 RVA: 0x00019554 File Offset: 0x00017754
+	// Token: 0x06000377 RID: 887 RVA: 0x00019618 File Offset: 0x00017818
 	public void DestroySources()
 	{
 		if (this.playOrder == AudioObject.PlayOrder.ByValue)
@@ -298,7 +298,7 @@ public class AudioObject
 		}
 	}
 
-	// Token: 0x06000377 RID: 887 RVA: 0x000195F0 File Offset: 0x000177F0
+	// Token: 0x06000378 RID: 888 RVA: 0x000196B4 File Offset: 0x000178B4
 	public void SetVolume(float volume)
 	{
 		if (this.currentAudioSrc != null)
@@ -307,7 +307,7 @@ public class AudioObject
 		}
 	}
 
-	// Token: 0x06000378 RID: 888 RVA: 0x0001960C File Offset: 0x0001780C
+	// Token: 0x06000379 RID: 889 RVA: 0x000196D0 File Offset: 0x000178D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlayAtPoint()
 	{
@@ -321,7 +321,7 @@ public class AudioObject
 		}
 	}
 
-	// Token: 0x06000379 RID: 889 RVA: 0x0001966C File Offset: 0x0001786C
+	// Token: 0x0600037A RID: 890 RVA: 0x00019730 File Offset: 0x00017930
 	public void Play()
 	{
 		int num = 0;
@@ -358,19 +358,19 @@ public class AudioObject
 		}
 	}
 
-	// Token: 0x0600037A RID: 890 RVA: 0x00019755 File Offset: 0x00017955
+	// Token: 0x0600037B RID: 891 RVA: 0x00019819 File Offset: 0x00017A19
 	public bool IsPlaying()
 	{
 		return !(this.currentAudioSrc == null) && this.currentAudioSrc.isPlaying;
 	}
 
-	// Token: 0x0600037B RID: 891 RVA: 0x00019772 File Offset: 0x00017972
+	// Token: 0x0600037C RID: 892 RVA: 0x00019836 File Offset: 0x00017A36
 	public void SetPosition(Vector3 _position)
 	{
 		this.playAtPosition = _position;
 	}
 
-	// Token: 0x0600037C RID: 892 RVA: 0x0001977C File Offset: 0x0001797C
+	// Token: 0x0600037D RID: 893 RVA: 0x00019840 File Offset: 0x00017A40
 	public void Update(float deltaTime)
 	{
 		if (this.runtimeAudioSrcs.Count == 0)

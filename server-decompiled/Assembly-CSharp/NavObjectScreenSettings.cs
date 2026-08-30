@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200074E RID: 1870
+// Token: 0x02000758 RID: 1880
 public class NavObjectScreenSettings : NavObjectSettings
 {
-	// Token: 0x0600379E RID: 14238 RVA: 0x0016DBDC File Offset: 0x0016BDDC
+	// Token: 0x060037F4 RID: 14324 RVA: 0x0016FDF8 File Offset: 0x0016DFF8
 	public override void Init()
 	{
 		base.Init();
@@ -24,67 +24,67 @@ public class NavObjectScreenSettings : NavObjectSettings
 		this.FadeEndDistance = (this.MaxDistance - this.MinDistance) * this.FadePercent;
 	}
 
-	// Token: 0x04002D9C RID: 11676
+	// Token: 0x04002E14 RID: 11796
 	public NavObjectScreenSettings.ShowTextTypes ShowTextType;
 
-	// Token: 0x04002D9D RID: 11677
+	// Token: 0x04002E15 RID: 11797
 	public int FontSize = 24;
 
-	// Token: 0x04002D9E RID: 11678
+	// Token: 0x04002E16 RID: 11798
 	public Color FontColor = Color.white;
 
-	// Token: 0x04002D9F RID: 11679
+	// Token: 0x04002E17 RID: 11799
 	public float SpriteSize = 32f;
 
-	// Token: 0x04002DA0 RID: 11680
+	// Token: 0x04002E18 RID: 11800
 	public float FadePercent = 0.9f;
 
-	// Token: 0x04002DA1 RID: 11681
+	// Token: 0x04002E19 RID: 11801
 	public float FadeEndDistance;
 
-	// Token: 0x04002DA2 RID: 11682
+	// Token: 0x04002E1A RID: 11802
 	public bool ShowOffScreen;
 
-	// Token: 0x04002DA3 RID: 11683
+	// Token: 0x04002E1B RID: 11803
 	public bool UseHeadOffset;
 
-	// Token: 0x04002DA4 RID: 11684
+	// Token: 0x04002E1C RID: 11804
 	public NavObjectScreenSettings.SpriteFillTypes SpriteFillType;
 
-	// Token: 0x04002DA5 RID: 11685
+	// Token: 0x04002E1D RID: 11805
 	public string SpriteFillName;
 
-	// Token: 0x04002DA6 RID: 11686
+	// Token: 0x04002E1E RID: 11806
 	public Color SpriteFillColor = Color.white;
 
-	// Token: 0x04002DA7 RID: 11687
+	// Token: 0x04002E1F RID: 11807
 	public string SubSpriteName;
 
-	// Token: 0x04002DA8 RID: 11688
+	// Token: 0x04002E20 RID: 11808
 	public Vector2 SubSpriteOffset;
 
-	// Token: 0x04002DA9 RID: 11689
+	// Token: 0x04002E21 RID: 11809
 	public float SubSpriteSize = 16f;
 
-	// Token: 0x0200074F RID: 1871
+	// Token: 0x02000759 RID: 1881
 	public enum ShowTextTypes
 	{
-		// Token: 0x04002DAB RID: 11691
+		// Token: 0x04002E23 RID: 11811
 		None,
-		// Token: 0x04002DAC RID: 11692
+		// Token: 0x04002E24 RID: 11812
 		Distance,
-		// Token: 0x04002DAD RID: 11693
+		// Token: 0x04002E25 RID: 11813
 		Name,
-		// Token: 0x04002DAE RID: 11694
+		// Token: 0x04002E26 RID: 11814
 		SpawnName
 	}
 
-	// Token: 0x02000750 RID: 1872
+	// Token: 0x0200075A RID: 1882
 	public enum SpriteFillTypes
 	{
-		// Token: 0x04002DB0 RID: 11696
+		// Token: 0x04002E28 RID: 11816
 		None,
-		// Token: 0x04002DB1 RID: 11697
+		// Token: 0x04002E29 RID: 11817
 		Health
 	}
 }

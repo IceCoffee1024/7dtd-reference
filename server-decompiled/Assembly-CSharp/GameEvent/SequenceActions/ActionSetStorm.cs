@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001998 RID: 6552
+	// Token: 0x020019BE RID: 6590
 	[Preserve]
 	public class ActionSetStorm : BaseAction
 	{
-		// Token: 0x0600C802 RID: 51202 RVA: 0x0049930C File Offset: 0x0049750C
+		// Token: 0x0600C989 RID: 51593 RVA: 0x0049F664 File Offset: 0x0049D864
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			float floatValue = GameEventManager.GetFloatValue(base.Owner.Target as EntityAlive, this.timeText, 1f);
@@ -16,14 +16,14 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C803 RID: 51203 RVA: 0x00499358 File Offset: 0x00497558
+		// Token: 0x0600C98A RID: 51594 RVA: 0x0049F6B0 File Offset: 0x0049D8B0
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseString(ActionSetStorm.PropTime, ref this.timeText);
 		}
 
-		// Token: 0x0600C804 RID: 51204 RVA: 0x00499372 File Offset: 0x00497572
+		// Token: 0x0600C98B RID: 51595 RVA: 0x0049F6CA File Offset: 0x0049D8CA
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -33,11 +33,11 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040097AF RID: 38831
+		// Token: 0x040098D8 RID: 39128
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string timeText;
 
-		// Token: 0x040097B0 RID: 38832
+		// Token: 0x040098D9 RID: 39129
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTime = "hours";
 	}

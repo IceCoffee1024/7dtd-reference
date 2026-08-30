@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using UniLinq;
+using System.Linq;
+using BhvrAnalyticsServices.Interfaces;
+using Services;
+using Services.Analytics;
+using Services.Analytics.Events;
 using UnityEngine.Scripting;
 
-// Token: 0x02000ECC RID: 3788
+// Token: 0x02000EE1 RID: 3809
 [Preserve]
 public class XUiC_CharacterCosmeticsListWindow : XUiController
 {
-	// Token: 0x060076EC RID: 30444 RVA: 0x002CADFC File Offset: 0x002C8FFC
+	// Token: 0x0600778D RID: 30605 RVA: 0x002CE320 File Offset: 0x002CC520
 	public override void Init()
 	{
 		base.Init();
@@ -26,7 +30,7 @@ public class XUiC_CharacterCosmeticsListWindow : XUiController
 		this.categoryList.CategoryChanged += this.CategoryList_CategoryChanged;
 	}
 
-	// Token: 0x060076ED RID: 30445 RVA: 0x002CAEE0 File Offset: 0x002C90E0
+	// Token: 0x0600778E RID: 30606 RVA: 0x002CE404 File Offset: 0x002CC604
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ApplySelected()
 	{
@@ -52,14 +56,14 @@ public class XUiC_CharacterCosmeticsListWindow : XUiController
 		}
 	}
 
-	// Token: 0x060076EE RID: 30446 RVA: 0x002CAF65 File Offset: 0x002C9165
+	// Token: 0x0600778F RID: 30607 RVA: 0x002CE489 File Offset: 0x002CC689
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnApply_OnPressed(XUiController _sender, int _mouseButton)
 	{
 		this.ApplySelected();
 	}
 
-	// Token: 0x060076EF RID: 30447 RVA: 0x002CAF70 File Offset: 0x002C9170
+	// Token: 0x06007790 RID: 30608 RVA: 0x002CE494 File Offset: 0x002CC694
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnApplySet_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -105,7 +109,7 @@ public class XUiC_CharacterCosmeticsListWindow : XUiController
 		}
 	}
 
-	// Token: 0x060076F0 RID: 30448 RVA: 0x002CB0E4 File Offset: 0x002C92E4
+	// Token: 0x06007791 RID: 30609 RVA: 0x002CE608 File Offset: 0x002CC808
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnChangedHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -113,7 +117,7 @@ public class XUiC_CharacterCosmeticsListWindow : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060076F1 RID: 30449 RVA: 0x002CB0F4 File Offset: 0x002C92F4
+	// Token: 0x06007792 RID: 30610 RVA: 0x002CE618 File Offset: 0x002CC818
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -133,10 +137,68 @@ public class XUiC_CharacterCosmeticsListWindow : XUiController
 			base.GetChildById(XUiC_CharacterCosmeticsListWindow.defaultSelectedElement).SelectCursorElement(true, false);
 			XUiC_CharacterCosmeticsListWindow.defaultSelectedElement = "";
 		}
+		this._cachedCosmeticSlots = this.xui.PlayerEquipment.Equipment.CosmeticSlots.Clone() as ItemClass[];
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060076F2 RID: 30450 RVA: 0x002CB1F1 File Offset: 0x002C93F1
+	// Token: 0x06007793 RID: 30611 RVA: 0x002CE73C File Offset: 0x002CC93C
+	public override void OnClose()
+	{
+		base.OnClose();
+		ItemClass[] cosmeticSlots = this.xui.PlayerEquipment.Equipment.CosmeticSlots;
+		for (int i = 0; i < cosmeticSlots.Length; i++)
+		{
+			ItemClass itemClass = cosmeticSlots[i];
+			ItemClass itemClass2 = this._cachedCosmeticSlots[i];
+			if (itemClass != itemClass2)
+			{
+				ItemClassArmor itemClassArmor = itemClass as ItemClassArmor;
+				string text3;
+				if (itemClassArmor == null)
+				{
+					string text = ((itemClass != null) ? "Hide_" : "Empty_");
+					ItemStack stackFromSlot = this.xui.PlayerEquipment.GetStackFromSlot((EquipmentSlots)i);
+					string text2;
+					if (stackFromSlot == null)
+					{
+						text2 = null;
+					}
+					else
+					{
+						ItemValue itemValue = stackFromSlot.itemValue;
+						if (itemValue == null)
+						{
+							text2 = null;
+						}
+						else
+						{
+							ItemClass itemClass3 = itemValue.ItemClass;
+							text2 = ((itemClass3 != null) ? itemClass3.Name : null);
+						}
+					}
+					text3 = text + (text2 ?? "NoArmor");
+				}
+				else
+				{
+					text3 = itemClassArmor.Name;
+				}
+				string text4 = text3;
+				CosmeticUsageEventData cosmeticUsageEventData = new CosmeticUsageEventData();
+				cosmeticUsageEventData.ServerId = Helper.GetServerId();
+				cosmeticUsageEventData.SaveId = Helper.GetSaveID();
+				cosmeticUsageEventData.CosmeticChangeTimestamp = DateTime.UtcNow.ToString("O");
+				EquipmentSlots equipmentSlots = (EquipmentSlots)i;
+				cosmeticUsageEventData.Slot = equipmentSlots.ToString();
+				cosmeticUsageEventData.CosmeticName = text4;
+				ItemClassArmor itemClassArmor2 = itemClass as ItemClassArmor;
+				cosmeticUsageEventData.SetName = ((itemClassArmor2 != null) ? itemClassArmor2.ArmorGroup[0] : null);
+				CosmeticUsageEventData cosmeticUsageEventData2 = cosmeticUsageEventData;
+				ServiceProvider.Instance.Get<IAnalyticsService>().LogEvent(cosmeticUsageEventData2);
+			}
+		}
+	}
+
+	// Token: 0x06007794 RID: 30612 RVA: 0x002CE875 File Offset: 0x002CCA75
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void SetCategory(EquipmentSlots equipSlot)
 	{
@@ -144,13 +206,13 @@ public class XUiC_CharacterCosmeticsListWindow : XUiController
 		this.categoryList.SetCategory(equipSlot.ToString());
 	}
 
-	// Token: 0x060076F3 RID: 30451 RVA: 0x002CB212 File Offset: 0x002C9412
+	// Token: 0x06007795 RID: 30613 RVA: 0x002CE896 File Offset: 0x002CCA96
 	public void SetEmptyCosmeticForCurrentCategory()
 	{
 		this.cosmeticGrid.SetEmptyCosmetic();
 	}
 
-	// Token: 0x060076F4 RID: 30452 RVA: 0x002CB220 File Offset: 0x002C9420
+	// Token: 0x06007796 RID: 30614 RVA: 0x002CE8A4 File Offset: 0x002CCAA4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CategoryList_CategoryChanged(XUiC_CategoryEntry _categoryEntry)
 	{
@@ -168,7 +230,7 @@ public class XUiC_CharacterCosmeticsListWindow : XUiController
 		((XUiC_CharacterCosmeticWindowGroup)base.WindowGroup.Controller).ResetPreview();
 	}
 
-	// Token: 0x060076F5 RID: 30453 RVA: 0x002CB2C8 File Offset: 0x002C94C8
+	// Token: 0x06007797 RID: 30615 RVA: 0x002CE94C File Offset: 0x002CCB4C
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -184,7 +246,7 @@ public class XUiC_CharacterCosmeticsListWindow : XUiController
 		}
 	}
 
-	// Token: 0x060076F6 RID: 30454 RVA: 0x002CB31C File Offset: 0x002C951C
+	// Token: 0x06007798 RID: 30616 RVA: 0x002CE9A0 File Offset: 0x002CCBA0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -236,29 +298,33 @@ public class XUiC_CharacterCosmeticsListWindow : XUiController
 		return true;
 	}
 
-	// Token: 0x04005796 RID: 22422
+	// Token: 0x0400583B RID: 22587
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CharacterCosmeticList cosmeticGrid;
 
-	// Token: 0x04005797 RID: 22423
+	// Token: 0x0400583C RID: 22588
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CategoryList categoryList;
 
-	// Token: 0x04005798 RID: 22424
+	// Token: 0x0400583D RID: 22589
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnApply;
 
-	// Token: 0x04005799 RID: 22425
+	// Token: 0x0400583E RID: 22590
 	public EquipmentSlots selectedSlot;
 
-	// Token: 0x0400579A RID: 22426
+	// Token: 0x0400583F RID: 22591
 	public static string defaultSelectedElement;
 
-	// Token: 0x0400579B RID: 22427
+	// Token: 0x04005840 RID: 22592
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtInput;
 
-	// Token: 0x0400579C RID: 22428
+	// Token: 0x04005841 RID: 22593
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string filterText = "";
+
+	// Token: 0x04005842 RID: 22594
+	[PublicizedFrom(EAccessModifier.Private)]
+	public ItemClass[] _cachedCosmeticSlots;
 }

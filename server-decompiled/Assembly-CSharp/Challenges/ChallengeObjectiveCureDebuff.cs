@@ -4,12 +4,12 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x020018D9 RID: 6361
+	// Token: 0x020018FF RID: 6399
 	[Preserve]
 	public class ChallengeObjectiveCureDebuff : BaseChallengeObjective
 	{
-		// Token: 0x170017F3 RID: 6131
-		// (get) Token: 0x0600C3F3 RID: 50163 RVA: 0x00080065 File Offset: 0x0007E265
+		// Token: 0x17001865 RID: 6245
+		// (get) Token: 0x0600C57A RID: 50554 RVA: 0x00080719 File Offset: 0x0007E919
 		public override ChallengeObjectiveType ObjectiveType
 		{
 			get
@@ -18,8 +18,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x170017F4 RID: 6132
-		// (get) Token: 0x0600C3F4 RID: 50164 RVA: 0x00485090 File Offset: 0x00483290
+		// Token: 0x17001866 RID: 6246
+		// (get) Token: 0x0600C57B RID: 50555 RVA: 0x0048B3D8 File Offset: 0x004895D8
 		public override string DescriptionText
 		{
 			get
@@ -28,7 +28,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C3F5 RID: 50165 RVA: 0x004850C0 File Offset: 0x004832C0
+		// Token: 0x0600C57C RID: 50556 RVA: 0x0048B408 File Offset: 0x00489608
 		public override void Init()
 		{
 			if (this.buffName != null)
@@ -49,19 +49,19 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C3F6 RID: 50166 RVA: 0x00485137 File Offset: 0x00483337
+		// Token: 0x0600C57D RID: 50557 RVA: 0x0048B47F File Offset: 0x0048967F
 		public override void HandleAddHooks()
 		{
 			QuestEventManager.Current.UseItem += this.Current_UseItem;
 		}
 
-		// Token: 0x0600C3F7 RID: 50167 RVA: 0x0048514F File Offset: 0x0048334F
+		// Token: 0x0600C57E RID: 50558 RVA: 0x0048B497 File Offset: 0x00489697
 		public override void HandleRemoveHooks()
 		{
 			QuestEventManager.Current.UseItem -= this.Current_UseItem;
 		}
 
-		// Token: 0x0600C3F8 RID: 50168 RVA: 0x00485168 File Offset: 0x00483368
+		// Token: 0x0600C57F RID: 50559 RVA: 0x0048B4B0 File Offset: 0x004896B0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Current_UseItem(ItemValue itemValue)
 		{
@@ -81,7 +81,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C3F9 RID: 50169 RVA: 0x004851D0 File Offset: 0x004833D0
+		// Token: 0x0600C580 RID: 50560 RVA: 0x0048B518 File Offset: 0x00489718
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool PlayerHasBuff()
 		{
@@ -96,7 +96,7 @@ namespace Challenges
 			return false;
 		}
 
-		// Token: 0x0600C3FA RID: 50170 RVA: 0x0048521C File Offset: 0x0048341C
+		// Token: 0x0600C581 RID: 50561 RVA: 0x0048B564 File Offset: 0x00489764
 		public override void ParseElement(XElement e)
 		{
 			base.ParseElement(e);
@@ -110,7 +110,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C3FB RID: 50171 RVA: 0x00485280 File Offset: 0x00483480
+		// Token: 0x0600C582 RID: 50562 RVA: 0x0048B5C8 File Offset: 0x004897C8
 		public override BaseChallengeObjective Clone()
 		{
 			return new ChallengeObjectiveCureDebuff
@@ -122,19 +122,19 @@ namespace Challenges
 			};
 		}
 
-		// Token: 0x0400940F RID: 37903
+		// Token: 0x04009538 RID: 38200
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string buffName = "";
 
-		// Token: 0x04009410 RID: 37904
+		// Token: 0x04009539 RID: 38201
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string[] buffNames;
 
-		// Token: 0x04009411 RID: 37905
+		// Token: 0x0400953A RID: 38202
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string itemName = "";
 
-		// Token: 0x04009412 RID: 37906
+		// Token: 0x0400953B RID: 38203
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string[] itemNames;
 	}

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020006D6 RID: 1750
+// Token: 0x020006E0 RID: 1760
 [Preserve]
 public class MinEventActionAddPartTPV : MinEventActionAddPart
 {
-	// Token: 0x060035F4 RID: 13812 RVA: 0x00164D30 File Offset: 0x00162F30
+	// Token: 0x0600364A RID: 13898 RVA: 0x00166F08 File Offset: 0x00165108
 	public override bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
 	{
 		EntityPlayerLocal entityPlayerLocal = _params.Self as EntityPlayerLocal;

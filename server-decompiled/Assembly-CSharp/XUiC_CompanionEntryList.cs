@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EE7 RID: 3815
+// Token: 0x02000EFE RID: 3838
 [Preserve]
 public class XUiC_CompanionEntryList : XUiController
 {
-	// Token: 0x060077A2 RID: 30626 RVA: 0x002D22B4 File Offset: 0x002D04B4
+	// Token: 0x0600785A RID: 30810 RVA: 0x002D6240 File Offset: 0x002D4440
 	public override void Init()
 	{
 		base.Init();
@@ -20,7 +20,7 @@ public class XUiC_CompanionEntryList : XUiController
 		this.yOffset = (float)this.viewComponent.Position.y;
 	}
 
-	// Token: 0x060077A3 RID: 30627 RVA: 0x002D230C File Offset: 0x002D050C
+	// Token: 0x0600785B RID: 30811 RVA: 0x002D6298 File Offset: 0x002D4498
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -39,7 +39,7 @@ public class XUiC_CompanionEntryList : XUiController
 		}
 	}
 
-	// Token: 0x060077A4 RID: 30628 RVA: 0x002D23E0 File Offset: 0x002D05E0
+	// Token: 0x0600785C RID: 30812 RVA: 0x002D636C File Offset: 0x002D456C
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -57,21 +57,21 @@ public class XUiC_CompanionEntryList : XUiController
 		}
 	}
 
-	// Token: 0x060077A5 RID: 30629 RVA: 0x002D24AE File Offset: 0x002D06AE
+	// Token: 0x0600785D RID: 30813 RVA: 0x002D643A File Offset: 0x002D463A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Party_Changed(Party _affectedParty, EntityPlayer _player)
 	{
 		this.RefreshPartyList();
 	}
 
-	// Token: 0x060077A6 RID: 30630 RVA: 0x002D24AE File Offset: 0x002D06AE
+	// Token: 0x0600785E RID: 30814 RVA: 0x002D643A File Offset: 0x002D463A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Party_PartyMemberChanged(EntityPlayer player)
 	{
 		this.RefreshPartyList();
 	}
 
-	// Token: 0x060077A7 RID: 30631 RVA: 0x002D24B8 File Offset: 0x002D06B8
+	// Token: 0x0600785F RID: 30815 RVA: 0x002D6444 File Offset: 0x002D4644
 	public void RefreshPartyList()
 	{
 		int i = 0;
@@ -112,11 +112,11 @@ public class XUiC_CompanionEntryList : XUiController
 		}
 	}
 
-	// Token: 0x04005857 RID: 22615
+	// Token: 0x04005909 RID: 22793
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiC_CompanionEntry> entryList = new List<XUiC_CompanionEntry>();
 
-	// Token: 0x04005858 RID: 22616
+	// Token: 0x0400590A RID: 22794
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float yOffset;
 }

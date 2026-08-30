@@ -2,13 +2,13 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FE0 RID: 4064
+// Token: 0x02000FF9 RID: 4089
 [Preserve]
 public class XUiC_QuestTurnInEntry : XUiC_SelectableEntry
 {
-	// Token: 0x17000ED6 RID: 3798
-	// (get) Token: 0x0600801C RID: 32796 RVA: 0x00309BB0 File Offset: 0x00307DB0
-	// (set) Token: 0x0600801D RID: 32797 RVA: 0x00309BB8 File Offset: 0x00307DB8
+	// Token: 0x17000F0F RID: 3855
+	// (get) Token: 0x0600810E RID: 33038 RVA: 0x0030E3E4 File Offset: 0x0030C5E4
+	// (set) Token: 0x0600810F RID: 33039 RVA: 0x0030E3EC File Offset: 0x0030C5EC
 	public BaseReward Reward
 	{
 		get
@@ -26,8 +26,8 @@ public class XUiC_QuestTurnInEntry : XUiC_SelectableEntry
 		}
 	}
 
-	// Token: 0x17000ED7 RID: 3799
-	// (get) Token: 0x0600801E RID: 32798 RVA: 0x00309BF0 File Offset: 0x00307DF0
+	// Token: 0x17000F10 RID: 3856
+	// (get) Token: 0x06008110 RID: 33040 RVA: 0x0030E424 File Offset: 0x0030C624
 	public ItemStack Item
 	{
 		get
@@ -47,9 +47,9 @@ public class XUiC_QuestTurnInEntry : XUiC_SelectableEntry
 		}
 	}
 
-	// Token: 0x17000ED8 RID: 3800
-	// (get) Token: 0x0600801F RID: 32799 RVA: 0x00309C60 File Offset: 0x00307E60
-	// (set) Token: 0x06008020 RID: 32800 RVA: 0x00309C68 File Offset: 0x00307E68
+	// Token: 0x17000F11 RID: 3857
+	// (get) Token: 0x06008111 RID: 33041 RVA: 0x0030E494 File Offset: 0x0030C694
+	// (set) Token: 0x06008112 RID: 33042 RVA: 0x0030E49C File Offset: 0x0030C69C
 	public bool Chosen
 	{
 		get
@@ -64,14 +64,14 @@ public class XUiC_QuestTurnInEntry : XUiC_SelectableEntry
 		}
 	}
 
-	// Token: 0x06008021 RID: 32801 RVA: 0x00309C7D File Offset: 0x00307E7D
+	// Token: 0x06008113 RID: 33043 RVA: 0x0030E4B1 File Offset: 0x0030C6B1
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SelectedChanged(bool isSelected)
 	{
 		this.RefreshBackground();
 	}
 
-	// Token: 0x06008022 RID: 32802 RVA: 0x00309C88 File Offset: 0x00307E88
+	// Token: 0x06008114 RID: 33044 RVA: 0x0030E4BC File Offset: 0x0030C6BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RefreshBackground()
 	{
@@ -82,7 +82,7 @@ public class XUiC_QuestTurnInEntry : XUiC_SelectableEntry
 		}
 	}
 
-	// Token: 0x06008023 RID: 32803 RVA: 0x00309D00 File Offset: 0x00307F00
+	// Token: 0x06008115 RID: 33045 RVA: 0x0030E534 File Offset: 0x0030C734
 	public void SetBaseReward(BaseReward reward)
 	{
 		this.Reward = reward;
@@ -96,7 +96,7 @@ public class XUiC_QuestTurnInEntry : XUiC_SelectableEntry
 		}
 	}
 
-	// Token: 0x06008024 RID: 32804 RVA: 0x00309D60 File Offset: 0x00307F60
+	// Token: 0x06008116 RID: 33046 RVA: 0x0030E594 File Offset: 0x0030C794
 	public override void Init()
 	{
 		base.Init();
@@ -111,7 +111,7 @@ public class XUiC_QuestTurnInEntry : XUiC_SelectableEntry
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06008025 RID: 32805 RVA: 0x00309DC0 File Offset: 0x00307FC0
+	// Token: 0x06008117 RID: 33047 RVA: 0x0030E5F4 File Offset: 0x0030C7F4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnHovered(bool _isOver)
 	{
@@ -130,7 +130,7 @@ public class XUiC_QuestTurnInEntry : XUiC_SelectableEntry
 		base.OnHovered(_isOver);
 	}
 
-	// Token: 0x06008026 RID: 32806 RVA: 0x00309E38 File Offset: 0x00308038
+	// Token: 0x06008118 RID: 33048 RVA: 0x0030E66C File Offset: 0x0030C86C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -406,7 +406,7 @@ public class XUiC_QuestTurnInEntry : XUiC_SelectableEntry
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x06008027 RID: 32807 RVA: 0x0030A618 File Offset: 0x00308818
+	// Token: 0x06008119 RID: 33049 RVA: 0x0030EE4C File Offset: 0x0030D04C
 	public override bool ParseAttribute(string name, string value)
 	{
 		bool flag = base.ParseAttribute(name, value);
@@ -429,74 +429,74 @@ public class XUiC_QuestTurnInEntry : XUiC_SelectableEntry
 		return flag;
 	}
 
-	// Token: 0x06008028 RID: 32808 RVA: 0x002D9B33 File Offset: 0x002D7D33
+	// Token: 0x0600811A RID: 33050 RVA: 0x002DDABF File Offset: 0x002DBCBF
 	public void Refresh()
 	{
 		this.IsDirty = true;
 		base.RefreshBindings();
 	}
 
-	// Token: 0x04005EDD RID: 24285
+	// Token: 0x04005FA4 RID: 24484
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BaseReward reward;
 
-	// Token: 0x04005EDE RID: 24286
+	// Token: 0x04005FA5 RID: 24485
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isHovered;
 
-	// Token: 0x04005EDF RID: 24287
+	// Token: 0x04005FA6 RID: 24486
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite background;
 
-	// Token: 0x04005EE0 RID: 24288
+	// Token: 0x04005FA7 RID: 24487
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack item = ItemStack.Empty;
 
-	// Token: 0x04005EE1 RID: 24289
+	// Token: 0x04005FA8 RID: 24488
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool chosen;
 
-	// Token: 0x04005EE2 RID: 24290
+	// Token: 0x04005FA9 RID: 24489
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor recipeicontintcolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04005EE3 RID: 24291
+	// Token: 0x04005FAA RID: 24490
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor hasingredientsstatecolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04005EE4 RID: 24292
+	// Token: 0x04005FAB RID: 24491
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor unlockstatecolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04005EE5 RID: 24293
+	// Token: 0x04005FAC RID: 24492
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor durabilityColorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04005EE6 RID: 24294
+	// Token: 0x04005FAD RID: 24493
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt durabilityValueFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x04005EE7 RID: 24295
+	// Token: 0x04005FAE RID: 24494
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterFloat durabilityFillFormatter = new CachedStringFormatterFloat(null);
 
-	// Token: 0x04005EE8 RID: 24296
+	// Token: 0x04005FAF RID: 24495
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor rewardiconcolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04005EE9 RID: 24297
+	// Token: 0x04005FB0 RID: 24496
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor rewardchosencolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04005EEA RID: 24298
+	// Token: 0x04005FB1 RID: 24497
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor altitemtypeiconcolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04005EEB RID: 24299
+	// Token: 0x04005FB2 RID: 24498
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color defaultColor;
 
-	// Token: 0x04005EEC RID: 24300
+	// Token: 0x04005FB3 RID: 24499
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color selectedColor;
 }

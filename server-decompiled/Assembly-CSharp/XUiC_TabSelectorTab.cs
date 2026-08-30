@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E88 RID: 3720
+// Token: 0x02000E9D RID: 3741
 [Preserve]
 public class XUiC_TabSelectorTab : XUiController
 {
-	// Token: 0x17000D88 RID: 3464
-	// (get) Token: 0x060073D7 RID: 29655 RVA: 0x002BCE27 File Offset: 0x002BB027
-	// (set) Token: 0x060073D8 RID: 29656 RVA: 0x002BCE2F File Offset: 0x002BB02F
+	// Token: 0x17000DA1 RID: 3489
+	// (get) Token: 0x06007477 RID: 29815 RVA: 0x002C0353 File Offset: 0x002BE553
+	// (set) Token: 0x06007478 RID: 29816 RVA: 0x002C035B File Offset: 0x002BE55B
 	[XuiXmlAttribute("tab_key", false)]
 	public string TabKey
 	{
@@ -27,9 +27,9 @@ public class XUiC_TabSelectorTab : XUiController
 		}
 	}
 
-	// Token: 0x17000D89 RID: 3465
-	// (get) Token: 0x060073D9 RID: 29657 RVA: 0x002BCE61 File Offset: 0x002BB061
-	// (set) Token: 0x060073DA RID: 29658 RVA: 0x002BCE69 File Offset: 0x002BB069
+	// Token: 0x17000DA2 RID: 3490
+	// (get) Token: 0x06007479 RID: 29817 RVA: 0x002C038D File Offset: 0x002BE58D
+	// (set) Token: 0x0600747A RID: 29818 RVA: 0x002C0395 File Offset: 0x002BE595
 	[XuiXmlAttribute("tab_caption", false)]
 	public string TabHeaderText
 	{
@@ -52,9 +52,9 @@ public class XUiC_TabSelectorTab : XUiController
 		}
 	}
 
-	// Token: 0x17000D8A RID: 3466
-	// (get) Token: 0x060073DB RID: 29659 RVA: 0x002BCE9C File Offset: 0x002BB09C
-	// (set) Token: 0x060073DC RID: 29660 RVA: 0x002BCEA4 File Offset: 0x002BB0A4
+	// Token: 0x17000DA3 RID: 3491
+	// (get) Token: 0x0600747B RID: 29819 RVA: 0x002C03C8 File Offset: 0x002BE5C8
+	// (set) Token: 0x0600747C RID: 29820 RVA: 0x002C03D0 File Offset: 0x002BE5D0
 	[XuiXmlAttribute("tab_sprite", false)]
 	public string TabHeaderSprite
 	{
@@ -77,9 +77,9 @@ public class XUiC_TabSelectorTab : XUiController
 		}
 	}
 
-	// Token: 0x17000D8B RID: 3467
-	// (get) Token: 0x060073DD RID: 29661 RVA: 0x002BCED7 File Offset: 0x002BB0D7
-	// (set) Token: 0x060073DE RID: 29662 RVA: 0x002BCEE0 File Offset: 0x002BB0E0
+	// Token: 0x17000DA4 RID: 3492
+	// (get) Token: 0x0600747D RID: 29821 RVA: 0x002C0403 File Offset: 0x002BE603
+	// (set) Token: 0x0600747E RID: 29822 RVA: 0x002C040C File Offset: 0x002BE60C
 	[XuiXmlAttribute("tab_visible", false)]
 	public bool TabVisible
 	{
@@ -108,9 +108,9 @@ public class XUiC_TabSelectorTab : XUiController
 		}
 	}
 
-	// Token: 0x17000D8C RID: 3468
-	// (get) Token: 0x060073DF RID: 29663 RVA: 0x002BCF2E File Offset: 0x002BB12E
-	// (set) Token: 0x060073E0 RID: 29664 RVA: 0x002BCF38 File Offset: 0x002BB138
+	// Token: 0x17000DA5 RID: 3493
+	// (get) Token: 0x0600747F RID: 29823 RVA: 0x002C045A File Offset: 0x002BE65A
+	// (set) Token: 0x06007480 RID: 29824 RVA: 0x002C0464 File Offset: 0x002BE664
 	[XuiXmlBinding("tab_selected")]
 	public bool TabSelected
 	{
@@ -132,9 +132,9 @@ public class XUiC_TabSelectorTab : XUiController
 		}
 	}
 
-	// Token: 0x17000D8D RID: 3469
-	// (get) Token: 0x060073E1 RID: 29665 RVA: 0x002BCF85 File Offset: 0x002BB185
-	// (set) Token: 0x060073E2 RID: 29666 RVA: 0x002BCF8D File Offset: 0x002BB18D
+	// Token: 0x17000DA6 RID: 3494
+	// (get) Token: 0x06007481 RID: 29825 RVA: 0x002C04B1 File Offset: 0x002BE6B1
+	// (set) Token: 0x06007482 RID: 29826 RVA: 0x002C04B9 File Offset: 0x002BE6B9
 	[XuiXmlBinding("tab_highlight")]
 	public bool TabHighlight
 	{
@@ -154,7 +154,7 @@ public class XUiC_TabSelectorTab : XUiController
 		}
 	}
 
-	// Token: 0x060073E3 RID: 29667 RVA: 0x002BCFB3 File Offset: 0x002BB1B3
+	// Token: 0x06007483 RID: 29827 RVA: 0x002C04DF File Offset: 0x002BE6DF
 	[XuiXmlAttribute("tab_caption_key", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeTabCaptionKey(string _value)
@@ -162,48 +162,48 @@ public class XUiC_TabSelectorTab : XUiController
 		this.TabHeaderText = Localization.Get(_value, false, null);
 	}
 
-	// Token: 0x060073E4 RID: 29668 RVA: 0x002BCFC3 File Offset: 0x002BB1C3
+	// Token: 0x06007484 RID: 29828 RVA: 0x002C04EF File Offset: 0x002BE6EF
 	public override void Init()
 	{
 		base.Init();
 		this.parentSelector = base.GetParentByType<XUiC_TabSelector>();
 	}
 
-	// Token: 0x060073E5 RID: 29669 RVA: 0x0028AD37 File Offset: 0x00288F37
+	// Token: 0x06007485 RID: 29829 RVA: 0x0028DC1B File Offset: 0x0028BE1B
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 		base.handleDirtyUpdateDefault();
 	}
 
-	// Token: 0x040055F5 RID: 22005
+	// Token: 0x04005699 RID: 22169
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TabSelector parentSelector;
 
-	// Token: 0x040055F6 RID: 22006
+	// Token: 0x0400569A RID: 22170
 	public XUiC_TabSelectorButton TabButton;
 
-	// Token: 0x040055F7 RID: 22007
+	// Token: 0x0400569B RID: 22171
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string tabKey;
 
-	// Token: 0x040055F8 RID: 22008
+	// Token: 0x0400569C RID: 22172
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string tabHeaderText;
 
-	// Token: 0x040055F9 RID: 22009
+	// Token: 0x0400569D RID: 22173
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string tabHeaderSprite;
 
-	// Token: 0x040055FA RID: 22010
+	// Token: 0x0400569E RID: 22174
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool tabVisible = true;
 
-	// Token: 0x040055FB RID: 22011
+	// Token: 0x0400569F RID: 22175
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool tabSelected;
 
-	// Token: 0x040055FC RID: 22012
+	// Token: 0x040056A0 RID: 22176
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool tabHighlight;
 }

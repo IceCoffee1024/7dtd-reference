@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020015EF RID: 5615
+// Token: 0x0200160A RID: 5642
 public class vp_PlayerInventory : vp_Inventory
 {
-	// Token: 0x17001474 RID: 5236
-	// (get) Token: 0x0600B02B RID: 45099 RVA: 0x0041D494 File Offset: 0x0041B694
+	// Token: 0x170014AD RID: 5293
+	// (get) Token: 0x0600B128 RID: 45352 RVA: 0x004227D4 File Offset: 0x004209D4
 	public Dictionary<vp_Weapon, vp_ItemIdentifier> WeaponIdentifiers
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -28,8 +28,8 @@ public class vp_PlayerInventory : vp_Inventory
 		}
 	}
 
-	// Token: 0x17001475 RID: 5237
-	// (get) Token: 0x0600B02C RID: 45100 RVA: 0x0041D51C File Offset: 0x0041B71C
+	// Token: 0x170014AE RID: 5294
+	// (get) Token: 0x0600B129 RID: 45353 RVA: 0x0042285C File Offset: 0x00420A5C
 	public Dictionary<vp_UnitType, List<vp_Weapon>> WeaponsByUnit
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -69,8 +69,8 @@ public class vp_PlayerInventory : vp_Inventory
 		}
 	}
 
-	// Token: 0x17001476 RID: 5238
-	// (get) Token: 0x0600B02D RID: 45101 RVA: 0x0041D624 File Offset: 0x0041B824
+	// Token: 0x170014AF RID: 5295
+	// (get) Token: 0x0600B12A RID: 45354 RVA: 0x00422964 File Offset: 0x00420B64
 	public virtual vp_ItemInstance CurrentWeaponInstance
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -95,8 +95,8 @@ public class vp_PlayerInventory : vp_Inventory
 		}
 	}
 
-	// Token: 0x17001477 RID: 5239
-	// (get) Token: 0x0600B02E RID: 45102 RVA: 0x0041D69D File Offset: 0x0041B89D
+	// Token: 0x170014B0 RID: 5296
+	// (get) Token: 0x0600B12B RID: 45355 RVA: 0x004229DD File Offset: 0x00420BDD
 	public vp_PlayerEventHandler Player
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -110,8 +110,8 @@ public class vp_PlayerInventory : vp_Inventory
 		}
 	}
 
-	// Token: 0x17001478 RID: 5240
-	// (get) Token: 0x0600B02F RID: 45103 RVA: 0x0041D6C4 File Offset: 0x0041B8C4
+	// Token: 0x170014B1 RID: 5297
+	// (get) Token: 0x0600B12C RID: 45356 RVA: 0x00422A04 File Offset: 0x00420C04
 	public vp_WeaponHandler WeaponHandler
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -125,8 +125,8 @@ public class vp_PlayerInventory : vp_Inventory
 		}
 	}
 
-	// Token: 0x17001479 RID: 5241
-	// (get) Token: 0x0600B030 RID: 45104 RVA: 0x0041D6EB File Offset: 0x0041B8EB
+	// Token: 0x170014B2 RID: 5298
+	// (get) Token: 0x0600B12D RID: 45357 RVA: 0x00422A2B File Offset: 0x00420C2B
 	public vp_ItemIdentifier CurrentWeaponIdentifier
 	{
 		get
@@ -139,7 +139,7 @@ public class vp_PlayerInventory : vp_Inventory
 		}
 	}
 
-	// Token: 0x0600B031 RID: 45105 RVA: 0x0041D708 File Offset: 0x0041B908
+	// Token: 0x0600B12E RID: 45358 RVA: 0x00422A48 File Offset: 0x00420C48
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual vp_ItemIdentifier GetWeaponIdentifier(vp_Weapon weapon)
 	{
@@ -171,7 +171,7 @@ public class vp_PlayerInventory : vp_Inventory
 		return this.m_WeaponIdentifierResult;
 	}
 
-	// Token: 0x0600B032 RID: 45106 RVA: 0x0041D791 File Offset: 0x0041B991
+	// Token: 0x0600B12F RID: 45359 RVA: 0x00422AD1 File Offset: 0x00420CD1
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -182,7 +182,7 @@ public class vp_PlayerInventory : vp_Inventory
 		}
 	}
 
-	// Token: 0x0600B033 RID: 45107 RVA: 0x0041D7C0 File Offset: 0x0041B9C0
+	// Token: 0x0600B130 RID: 45360 RVA: 0x00422B00 File Offset: 0x00420D00
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnEnable()
 	{
@@ -194,7 +194,7 @@ public class vp_PlayerInventory : vp_Inventory
 		this.UnwieldMissingWeapon();
 	}
 
-	// Token: 0x0600B034 RID: 45108 RVA: 0x0041D7E8 File Offset: 0x0041B9E8
+	// Token: 0x0600B131 RID: 45361 RVA: 0x00422B28 File Offset: 0x00420D28
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnDisable()
 	{
@@ -205,7 +205,7 @@ public class vp_PlayerInventory : vp_Inventory
 		}
 	}
 
-	// Token: 0x0600B035 RID: 45109 RVA: 0x0041D80C File Offset: 0x0041BA0C
+	// Token: 0x0600B132 RID: 45362 RVA: 0x00422B4C File Offset: 0x00420D4C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool MissingIdentifierError(int weaponIndex = 0)
 	{
@@ -229,7 +229,7 @@ public class vp_PlayerInventory : vp_Inventory
 		return false;
 	}
 
-	// Token: 0x0600B036 RID: 45110 RVA: 0x0041D888 File Offset: 0x0041BA88
+	// Token: 0x0600B133 RID: 45363 RVA: 0x00422BC8 File Offset: 0x00420DC8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void DoAddItem(vp_ItemType type, int id)
 	{
@@ -238,7 +238,7 @@ public class vp_PlayerInventory : vp_Inventory
 		this.TryWieldNewItem(type, flag);
 	}
 
-	// Token: 0x0600B037 RID: 45111 RVA: 0x0041D8BF File Offset: 0x0041BABF
+	// Token: 0x0600B134 RID: 45364 RVA: 0x00422BFF File Offset: 0x00420DFF
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void DoRemoveItem(vp_ItemInstance item)
 	{
@@ -246,7 +246,7 @@ public class vp_PlayerInventory : vp_Inventory
 		base.DoRemoveItem(item);
 	}
 
-	// Token: 0x0600B038 RID: 45112 RVA: 0x0041D8D0 File Offset: 0x0041BAD0
+	// Token: 0x0600B135 RID: 45365 RVA: 0x00422C10 File Offset: 0x00420E10
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void DoAddUnitBank(vp_UnitBankType unitBankType, int id, int unitsLoaded)
 	{
@@ -255,7 +255,7 @@ public class vp_PlayerInventory : vp_Inventory
 		this.TryWieldNewItem(unitBankType, flag);
 	}
 
-	// Token: 0x0600B039 RID: 45113 RVA: 0x0041D908 File Offset: 0x0041BB08
+	// Token: 0x0600B136 RID: 45366 RVA: 0x00422C48 File Offset: 0x00420E48
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void TryWieldNewItem(vp_ItemType type, bool alreadyHaveIt)
 	{
@@ -305,7 +305,7 @@ public class vp_PlayerInventory : vp_Inventory
 		}
 	}
 
-	// Token: 0x0600B03A RID: 45114 RVA: 0x0041DA85 File Offset: 0x0041BC85
+	// Token: 0x0600B137 RID: 45367 RVA: 0x00422DC5 File Offset: 0x00420FC5
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void DoRemoveUnitBank(vp_UnitBankInstance bank)
 	{
@@ -313,7 +313,7 @@ public class vp_PlayerInventory : vp_Inventory
 		base.DoRemoveUnitBank(bank);
 	}
 
-	// Token: 0x0600B03B RID: 45115 RVA: 0x0041DA98 File Offset: 0x0041BC98
+	// Token: 0x0600B138 RID: 45368 RVA: 0x00422DD8 File Offset: 0x00420FD8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual vp_Weapon GetWeaponOfItemInstance(vp_ItemInstance itemInstance)
 	{
@@ -348,7 +348,7 @@ public class vp_PlayerInventory : vp_Inventory
 		return null;
 	}
 
-	// Token: 0x0600B03C RID: 45116 RVA: 0x0041DBB0 File Offset: 0x0041BDB0
+	// Token: 0x0600B139 RID: 45369 RVA: 0x00422EF0 File Offset: 0x004210F0
 	public override bool DoAddUnits(vp_UnitBankInstance bank, int amount)
 	{
 		if (bank == null)
@@ -378,7 +378,7 @@ public class vp_PlayerInventory : vp_Inventory
 		return flag;
 	}
 
-	// Token: 0x0600B03D RID: 45117 RVA: 0x0041DC60 File Offset: 0x0041BE60
+	// Token: 0x0600B13A RID: 45370 RVA: 0x00422FA0 File Offset: 0x004211A0
 	public override bool DoRemoveUnits(vp_UnitBankInstance bank, int amount)
 	{
 		bool flag = base.DoRemoveUnits(bank, amount);
@@ -392,13 +392,13 @@ public class vp_PlayerInventory : vp_Inventory
 		return flag;
 	}
 
-	// Token: 0x0600B03E RID: 45118 RVA: 0x0041DC89 File Offset: 0x0041BE89
+	// Token: 0x0600B13B RID: 45371 RVA: 0x00422FC9 File Offset: 0x004211C9
 	public vp_UnitBankInstance GetUnitBankInstanceOfWeapon(vp_Weapon weapon)
 	{
 		return this.GetItemInstanceOfWeapon(weapon) as vp_UnitBankInstance;
 	}
 
-	// Token: 0x0600B03F RID: 45119 RVA: 0x0041DC98 File Offset: 0x0041BE98
+	// Token: 0x0600B13C RID: 45372 RVA: 0x00422FD8 File Offset: 0x004211D8
 	public vp_ItemInstance GetItemInstanceOfWeapon(vp_Weapon weapon)
 	{
 		vp_ItemIdentifier weaponIdentifier = this.GetWeaponIdentifier(weapon);
@@ -409,7 +409,7 @@ public class vp_PlayerInventory : vp_Inventory
 		return this.GetItem(weaponIdentifier.Type);
 	}
 
-	// Token: 0x0600B040 RID: 45120 RVA: 0x0041DCC4 File Offset: 0x0041BEC4
+	// Token: 0x0600B13D RID: 45373 RVA: 0x00423004 File Offset: 0x00421204
 	public int GetAmmoInWeapon(vp_Weapon weapon)
 	{
 		vp_UnitBankInstance unitBankInstanceOfWeapon = this.GetUnitBankInstanceOfWeapon(weapon);
@@ -420,7 +420,7 @@ public class vp_PlayerInventory : vp_Inventory
 		return unitBankInstanceOfWeapon.Count;
 	}
 
-	// Token: 0x0600B041 RID: 45121 RVA: 0x0041DCE4 File Offset: 0x0041BEE4
+	// Token: 0x0600B13E RID: 45374 RVA: 0x00423024 File Offset: 0x00421224
 	public int GetExtraAmmoForWeapon(vp_Weapon weapon)
 	{
 		vp_UnitBankInstance unitBankInstanceOfWeapon = this.GetUnitBankInstanceOfWeapon(weapon);
@@ -431,19 +431,19 @@ public class vp_PlayerInventory : vp_Inventory
 		return this.GetUnitCount(unitBankInstanceOfWeapon.UnitType);
 	}
 
-	// Token: 0x0600B042 RID: 45122 RVA: 0x0041DD0A File Offset: 0x0041BF0A
+	// Token: 0x0600B13F RID: 45375 RVA: 0x0042304A File Offset: 0x0042124A
 	public int GetAmmoInCurrentWeapon()
 	{
 		return this.OnValue_CurrentWeaponAmmoCount;
 	}
 
-	// Token: 0x0600B043 RID: 45123 RVA: 0x0041DD12 File Offset: 0x0041BF12
+	// Token: 0x0600B140 RID: 45376 RVA: 0x00423052 File Offset: 0x00421252
 	public int GetExtraAmmoForCurrentWeapon()
 	{
 		return this.OnValue_CurrentWeaponClipCount;
 	}
 
-	// Token: 0x0600B044 RID: 45124 RVA: 0x0041DD1C File Offset: 0x0041BF1C
+	// Token: 0x0600B141 RID: 45377 RVA: 0x0042305C File Offset: 0x0042125C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void UnwieldMissingWeapon()
 	{
@@ -466,7 +466,7 @@ public class vp_PlayerInventory : vp_Inventory
 		this.Player.SetWeapon.TryStart<int>(0);
 	}
 
-	// Token: 0x0600B045 RID: 45125 RVA: 0x0041DDA0 File Offset: 0x0041BFA0
+	// Token: 0x0600B142 RID: 45378 RVA: 0x004230E0 File Offset: 0x004212E0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool TryWieldByUnit(vp_UnitType unitType)
 	{
@@ -485,7 +485,7 @@ public class vp_PlayerInventory : vp_Inventory
 		return false;
 	}
 
-	// Token: 0x0600B046 RID: 45126 RVA: 0x0041DE30 File Offset: 0x0041C030
+	// Token: 0x0600B143 RID: 45379 RVA: 0x00423170 File Offset: 0x00421370
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void TryWield(vp_ItemInstance item)
 	{
@@ -512,7 +512,7 @@ public class vp_PlayerInventory : vp_Inventory
 		}
 	}
 
-	// Token: 0x0600B047 RID: 45127 RVA: 0x0041DEE4 File Offset: 0x0041C0E4
+	// Token: 0x0600B144 RID: 45380 RVA: 0x00423224 File Offset: 0x00421424
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Unwield(vp_ItemInstance item)
 	{
@@ -548,14 +548,14 @@ public class vp_PlayerInventory : vp_Inventory
 		vp_Timer.In(1f, new vp_Timer.Callback(this.UnwieldMissingWeapon), null);
 	}
 
-	// Token: 0x0600B048 RID: 45128 RVA: 0x0041DFAE File Offset: 0x0041C1AE
+	// Token: 0x0600B145 RID: 45381 RVA: 0x004232EE File Offset: 0x004214EE
 	public override void Refresh()
 	{
 		base.Refresh();
 		this.UnwieldMissingWeapon();
 	}
 
-	// Token: 0x0600B049 RID: 45129 RVA: 0x0041DFBC File Offset: 0x0041C1BC
+	// Token: 0x0600B146 RID: 45382 RVA: 0x004232FC File Offset: 0x004214FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool CanStart_SetWeapon()
 	{
@@ -598,7 +598,7 @@ public class vp_PlayerInventory : vp_Inventory
 		return flag;
 	}
 
-	// Token: 0x0600B04A RID: 45130 RVA: 0x0041E104 File Offset: 0x0041C304
+	// Token: 0x0600B147 RID: 45383 RVA: 0x00423444 File Offset: 0x00421644
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool OnAttempt_DepleteAmmo()
 	{
@@ -613,7 +613,7 @@ public class vp_PlayerInventory : vp_Inventory
 		return this.TryDeduct(this.CurrentWeaponIdentifier.Type as vp_UnitBankType, this.CurrentWeaponIdentifier.ID, 1);
 	}
 
-	// Token: 0x0600B04B RID: 45131 RVA: 0x0041E16E File Offset: 0x0041C36E
+	// Token: 0x0600B148 RID: 45384 RVA: 0x004234AE File Offset: 0x004216AE
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool OnAttempt_RefillCurrentWeapon()
 	{
@@ -624,7 +624,7 @@ public class vp_PlayerInventory : vp_Inventory
 		return this.TryReload(this.CurrentWeaponIdentifier.Type as vp_UnitBankType, this.CurrentWeaponIdentifier.ID);
 	}
 
-	// Token: 0x0600B04C RID: 45132 RVA: 0x0041E1A7 File Offset: 0x0041C3A7
+	// Token: 0x0600B149 RID: 45385 RVA: 0x004234E7 File Offset: 0x004216E7
 	public override void Reset()
 	{
 		this.m_PreviouslyOwnedItems.Clear();
@@ -636,9 +636,9 @@ public class vp_PlayerInventory : vp_Inventory
 		base.Reset();
 	}
 
-	// Token: 0x1700147A RID: 5242
-	// (get) Token: 0x0600B04D RID: 45133 RVA: 0x0041E1D0 File Offset: 0x0041C3D0
-	// (set) Token: 0x0600B04E RID: 45134 RVA: 0x0041E1F4 File Offset: 0x0041C3F4
+	// Token: 0x170014B3 RID: 5299
+	// (get) Token: 0x0600B14A RID: 45386 RVA: 0x00423510 File Offset: 0x00421710
+	// (set) Token: 0x0600B14B RID: 45387 RVA: 0x00423534 File Offset: 0x00421734
 	public virtual int OnValue_CurrentWeaponAmmoCount
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -663,8 +663,8 @@ public class vp_PlayerInventory : vp_Inventory
 		}
 	}
 
-	// Token: 0x1700147B RID: 5243
-	// (get) Token: 0x0600B04F RID: 45135 RVA: 0x0041E21C File Offset: 0x0041C41C
+	// Token: 0x170014B4 RID: 5300
+	// (get) Token: 0x0600B14C RID: 45388 RVA: 0x0042355C File Offset: 0x0042175C
 	public virtual int OnValue_CurrentWeaponMaxAmmoCount
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -679,8 +679,8 @@ public class vp_PlayerInventory : vp_Inventory
 		}
 	}
 
-	// Token: 0x1700147C RID: 5244
-	// (get) Token: 0x0600B050 RID: 45136 RVA: 0x0041E240 File Offset: 0x0041C440
+	// Token: 0x170014B5 RID: 5301
+	// (get) Token: 0x0600B14D RID: 45389 RVA: 0x00423580 File Offset: 0x00421780
 	public virtual int OnValue_CurrentWeaponClipCount
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -695,7 +695,7 @@ public class vp_PlayerInventory : vp_Inventory
 		}
 	}
 
-	// Token: 0x0600B051 RID: 45137 RVA: 0x0041E26C File Offset: 0x0041C46C
+	// Token: 0x0600B14E RID: 45390 RVA: 0x004235AC File Offset: 0x004217AC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual int OnMessage_GetItemCount(string itemTypeObjectName)
 	{
@@ -712,7 +712,7 @@ public class vp_PlayerInventory : vp_Inventory
 		return this.GetItemCount(item.Type);
 	}
 
-	// Token: 0x0600B052 RID: 45138 RVA: 0x0041E2B4 File Offset: 0x0041C4B4
+	// Token: 0x0600B14F RID: 45391 RVA: 0x004235F4 File Offset: 0x004217F4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool OnAttempt_AddItem(object args)
 	{
@@ -730,7 +730,7 @@ public class vp_PlayerInventory : vp_Inventory
 		return this.TryGiveItems(vp_ItemType, num);
 	}
 
-	// Token: 0x0600B053 RID: 45139 RVA: 0x0041E30C File Offset: 0x0041C50C
+	// Token: 0x0600B150 RID: 45392 RVA: 0x0042364C File Offset: 0x0042184C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool OnAttempt_RemoveItem(object args)
 	{
@@ -748,8 +748,8 @@ public class vp_PlayerInventory : vp_Inventory
 		return this.TryRemoveItems(vp_ItemType, num);
 	}
 
-	// Token: 0x1700147D RID: 5245
-	// (get) Token: 0x0600B054 RID: 45140 RVA: 0x0041E364 File Offset: 0x0041C564
+	// Token: 0x170014B6 RID: 5302
+	// (get) Token: 0x0600B151 RID: 45393 RVA: 0x004236A4 File Offset: 0x004218A4
 	public virtual Texture2D OnValue_CurrentAmmoIcon
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -776,98 +776,98 @@ public class vp_PlayerInventory : vp_Inventory
 		}
 	}
 
-	// Token: 0x0600B055 RID: 45141 RVA: 0x0041E3C7 File Offset: 0x0041C5C7
+	// Token: 0x0600B152 RID: 45394 RVA: 0x00423707 File Offset: 0x00421907
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnStop_SetWeapon()
 	{
 		this.m_CurrentWeaponInstance = null;
 	}
 
-	// Token: 0x0400845E RID: 33886
+	// Token: 0x04008537 RID: 34103
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Dictionary<vp_ItemType, object> m_PreviouslyOwnedItems = new Dictionary<vp_ItemType, object>();
 
-	// Token: 0x0400845F RID: 33887
+	// Token: 0x04008538 RID: 34104
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_ItemIdentifier m_WeaponIdentifierResult;
 
-	// Token: 0x04008460 RID: 33888
+	// Token: 0x04008539 RID: 34105
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public string m_MissingHandlerError = "Error (vp_PlayerInventory) this component must be on the same transform as a vp_PlayerEventHandler + vp_WeaponHandler.";
 
-	// Token: 0x04008461 RID: 33889
+	// Token: 0x0400853A RID: 34106
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Dictionary<vp_UnitBankInstance, vp_Weapon> m_UnitBankWeapons;
 
-	// Token: 0x04008462 RID: 33890
+	// Token: 0x0400853B RID: 34107
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Dictionary<vp_ItemInstance, vp_Weapon> m_ItemWeapons;
 
-	// Token: 0x04008463 RID: 33891
+	// Token: 0x0400853C RID: 34108
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Dictionary<vp_Weapon, vp_ItemIdentifier> m_WeaponIdentifiers;
 
-	// Token: 0x04008464 RID: 33892
+	// Token: 0x0400853D RID: 34109
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Dictionary<vp_UnitType, List<vp_Weapon>> m_WeaponsByUnit;
 
-	// Token: 0x04008465 RID: 33893
+	// Token: 0x0400853E RID: 34110
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_ItemInstance m_CurrentWeaponInstance;
 
-	// Token: 0x04008466 RID: 33894
+	// Token: 0x0400853F RID: 34111
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_PlayerEventHandler m_Player;
 
-	// Token: 0x04008467 RID: 33895
+	// Token: 0x04008540 RID: 34112
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_WeaponHandler m_WeaponHandler;
 
-	// Token: 0x04008468 RID: 33896
+	// Token: 0x04008541 RID: 34113
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public vp_PlayerInventory.AutoWieldSection m_AutoWield;
 
-	// Token: 0x04008469 RID: 33897
+	// Token: 0x04008542 RID: 34114
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public vp_PlayerInventory.MiscSection m_Misc;
 
-	// Token: 0x020015F0 RID: 5616
+	// Token: 0x0200160B RID: 5643
 	[Serializable]
 	public class AutoWieldSection
 	{
-		// Token: 0x0400846A RID: 33898
+		// Token: 0x04008543 RID: 34115
 		public bool Always;
 
-		// Token: 0x0400846B RID: 33899
+		// Token: 0x04008544 RID: 34116
 		public bool IfUnarmed = true;
 
-		// Token: 0x0400846C RID: 33900
+		// Token: 0x04008545 RID: 34117
 		public bool IfOutOfAmmo = true;
 
-		// Token: 0x0400846D RID: 33901
+		// Token: 0x04008546 RID: 34118
 		public bool IfNotPresent = true;
 
-		// Token: 0x0400846E RID: 33902
+		// Token: 0x04008547 RID: 34119
 		public bool FirstTimeOnly = true;
 	}
 
-	// Token: 0x020015F1 RID: 5617
+	// Token: 0x0200160C RID: 5644
 	[Serializable]
 	public class MiscSection
 	{
-		// Token: 0x0400846F RID: 33903
+		// Token: 0x04008548 RID: 34120
 		public bool ResetOnRespawn = true;
 	}
 }

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000260 RID: 608
+// Token: 0x02000264 RID: 612
 [Preserve]
 public class ConsoleCmdPOIWaypoints : ConsoleCmdAbstract
 {
-	// Token: 0x170001DC RID: 476
-	// (get) Token: 0x06001218 RID: 4632 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x170001DD RID: 477
+	// (get) Token: 0x0600122A RID: 4650 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -17,8 +17,8 @@ public class ConsoleCmdPOIWaypoints : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x170001DD RID: 477
-	// (get) Token: 0x06001219 RID: 4633 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// Token: 0x170001DE RID: 478
+	// (get) Token: 0x0600122B RID: 4651 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -27,8 +27,8 @@ public class ConsoleCmdPOIWaypoints : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x170001DE RID: 478
-	// (get) Token: 0x0600121A RID: 4634 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// Token: 0x170001DF RID: 479
+	// (get) Token: 0x0600122C RID: 4652 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -37,28 +37,28 @@ public class ConsoleCmdPOIWaypoints : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600121B RID: 4635 RVA: 0x00071382 File Offset: 0x0006F582
+	// Token: 0x0600122D RID: 4653 RVA: 0x000719DE File Offset: 0x0006FBDE
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "poiwaypoints", "pwp" };
 	}
 
-	// Token: 0x0600121C RID: 4636 RVA: 0x0007139A File Offset: 0x0006F59A
+	// Token: 0x0600122E RID: 4654 RVA: 0x000719F6 File Offset: 0x0006FBF6
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Adds waypoints for specified POIs.";
 	}
 
-	// Token: 0x0600121D RID: 4637 RVA: 0x000713A1 File Offset: 0x0006F5A1
+	// Token: 0x0600122F RID: 4655 RVA: 0x000719FD File Offset: 0x0006FBFD
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return this.getDescription() + "\n\npwp * - adds waypoints to all POIs in the world.\npwp <name> - adds waypoints to all POIs that starts with the name.\npwp <distance> - adds waypoints to all POIs with the specified distance.\npwp * <distance> - adds waypoints to all POIs within the specified distance.\npwp <name> <distance> - adds waypoints to all POIs within the specified distance that start with the name.\npwp -clear - removes all POI waypoints.";
 	}
 
-	// Token: 0x0600121E RID: 4638 RVA: 0x000713B4 File Offset: 0x0006F5B4
+	// Token: 0x06001230 RID: 4656 RVA: 0x00071A10 File Offset: 0x0006FC10
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 0)
@@ -108,7 +108,7 @@ public class ConsoleCmdPOIWaypoints : ConsoleCmdAbstract
 		this.CreateWaypoints(_params[0], 0f);
 	}
 
-	// Token: 0x0600121F RID: 4639 RVA: 0x000714DC File Offset: 0x0006F6DC
+	// Token: 0x06001231 RID: 4657 RVA: 0x00071B38 File Offset: 0x0006FD38
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CreateWaypoints(string filterName, float distance)
 	{
@@ -134,7 +134,7 @@ public class ConsoleCmdPOIWaypoints : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Added {0} POI waypoints.", new object[] { num });
 	}
 
-	// Token: 0x04000D12 RID: 3346
+	// Token: 0x04000D23 RID: 3363
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int SmallPoiVolumeLimit = 100;
 }

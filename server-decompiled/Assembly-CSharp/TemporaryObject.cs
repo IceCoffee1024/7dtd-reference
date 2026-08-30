@@ -3,10 +3,10 @@ using System.Collections;
 using System.Diagnostics;
 using UnityEngine;
 
-// Token: 0x0200054A RID: 1354
+// Token: 0x0200054F RID: 1359
 public class TemporaryObject : MonoBehaviour
 {
-	// Token: 0x06002C4B RID: 11339 RVA: 0x00118718 File Offset: 0x00116918
+	// Token: 0x06002C75 RID: 11381 RVA: 0x0011978C File Offset: 0x0011798C
 	public void SetLife(float _life)
 	{
 		this.life = _life;
@@ -74,14 +74,14 @@ public class TemporaryObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002C4C RID: 11340 RVA: 0x001188A6 File Offset: 0x00116AA6
+	// Token: 0x06002C76 RID: 11382 RVA: 0x0011991A File Offset: 0x00117B1A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Start()
 	{
 		this.coroutine = base.StartCoroutine(this.DestroyLater());
 	}
 
-	// Token: 0x06002C4D RID: 11341 RVA: 0x001188BA File Offset: 0x00116ABA
+	// Token: 0x06002C77 RID: 11383 RVA: 0x0011992E File Offset: 0x00117B2E
 	public void Restart()
 	{
 		base.gameObject.SetActive(true);
@@ -92,7 +92,7 @@ public class TemporaryObject : MonoBehaviour
 		this.Start();
 	}
 
-	// Token: 0x06002C4E RID: 11342 RVA: 0x001188E2 File Offset: 0x00116AE2
+	// Token: 0x06002C78 RID: 11384 RVA: 0x00119956 File Offset: 0x00117B56
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator DestroyLater()
 	{
@@ -105,7 +105,7 @@ public class TemporaryObject : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06002C4F RID: 11343 RVA: 0x001188F4 File Offset: 0x00116AF4
+	// Token: 0x06002C79 RID: 11385 RVA: 0x00119968 File Offset: 0x00117B68
 	[Conditional("DEBUG_TEMPOBJ")]
 	public void LogTO(string _format = "", params object[] _args)
 	{
@@ -120,13 +120,13 @@ public class TemporaryObject : MonoBehaviour
 		Log.Warning(_format, _args);
 	}
 
-	// Token: 0x04002206 RID: 8710
+	// Token: 0x04002238 RID: 8760
 	public float life = 2f;
 
-	// Token: 0x04002207 RID: 8711
+	// Token: 0x04002239 RID: 8761
 	public bool destroyMaterials;
 
-	// Token: 0x04002208 RID: 8712
+	// Token: 0x0400223A RID: 8762
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Coroutine coroutine;

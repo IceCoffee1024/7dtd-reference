@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D6E RID: 3438
+// Token: 0x02000D82 RID: 3458
 [Preserve]
 public class XUiC_DMPlayersList : XUiC_DMBaseList<XUiC_DMPlayersList.ListEntry>
 {
-	// Token: 0x17000B10 RID: 2832
-	// (get) Token: 0x06006854 RID: 26708 RVA: 0x0029385A File Offset: 0x00291A5A
+	// Token: 0x17000B28 RID: 2856
+	// (get) Token: 0x060068F0 RID: 26864 RVA: 0x002969AE File Offset: 0x00294BAE
 	public bool HasBlockedPlayers
 	{
 		get
@@ -17,8 +17,8 @@ public class XUiC_DMPlayersList : XUiC_DMBaseList<XUiC_DMPlayersList.ListEntry>
 		}
 	}
 
-	// Token: 0x17000B11 RID: 2833
-	// (get) Token: 0x06006855 RID: 26709 RVA: 0x00293865 File Offset: 0x00291A65
+	// Token: 0x17000B29 RID: 2857
+	// (get) Token: 0x060068F1 RID: 26865 RVA: 0x002969B9 File Offset: 0x00294BB9
 	public int BlockedPlayerCount
 	{
 		get
@@ -27,8 +27,8 @@ public class XUiC_DMPlayersList : XUiC_DMBaseList<XUiC_DMPlayersList.ListEntry>
 		}
 	}
 
-	// Token: 0x17000B12 RID: 2834
-	// (get) Token: 0x06006856 RID: 26710 RVA: 0x00293872 File Offset: 0x00291A72
+	// Token: 0x17000B2A RID: 2858
+	// (get) Token: 0x060068F2 RID: 26866 RVA: 0x002969C6 File Offset: 0x00294BC6
 	public IEnumerable<SaveInfoProvider.PlayerEntryInfo> BlockedPlayers
 	{
 		get
@@ -37,7 +37,7 @@ public class XUiC_DMPlayersList : XUiC_DMBaseList<XUiC_DMPlayersList.ListEntry>
 		}
 	}
 
-	// Token: 0x06006857 RID: 26711 RVA: 0x0029387C File Offset: 0x00291A7C
+	// Token: 0x060068F3 RID: 26867 RVA: 0x002969D0 File Offset: 0x00294BD0
 	public override void Init()
 	{
 		base.Init();
@@ -50,7 +50,7 @@ public class XUiC_DMPlayersList : XUiC_DMBaseList<XUiC_DMPlayersList.ListEntry>
 		}
 	}
 
-	// Token: 0x06006858 RID: 26712 RVA: 0x00293910 File Offset: 0x00291B10
+	// Token: 0x060068F4 RID: 26868 RVA: 0x00296A64 File Offset: 0x00294C64
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ProfileButtonOnPress(XUiController _sender, int _mouseButton)
 	{
@@ -63,7 +63,7 @@ public class XUiC_DMPlayersList : XUiC_DMBaseList<XUiC_DMPlayersList.ListEntry>
 		}
 	}
 
-	// Token: 0x06006859 RID: 26713 RVA: 0x0029394C File Offset: 0x00291B4C
+	// Token: 0x060068F5 RID: 26869 RVA: 0x00296AA0 File Offset: 0x00294CA0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void showProfileForEntry(int _index)
 	{
@@ -86,12 +86,12 @@ public class XUiC_DMPlayersList : XUiC_DMBaseList<XUiC_DMPlayersList.ListEntry>
 		PlatformManager.MultiPlatform.User.ShowProfile(entry.NativeUserId);
 	}
 
-	// Token: 0x0600685A RID: 26714 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060068F6 RID: 26870 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void RebuildList(bool _resetFilter = false)
 	{
 	}
 
-	// Token: 0x0600685B RID: 26715 RVA: 0x002939C4 File Offset: 0x00291BC4
+	// Token: 0x060068F7 RID: 26871 RVA: 0x00296B18 File Offset: 0x00294D18
 	public void RebuildList(IReadOnlyCollection<SaveInfoProvider.PlayerEntryInfo> _playerEntryInfos, bool _resetFilter = false)
 	{
 		this.ClearList(false);
@@ -115,7 +115,7 @@ public class XUiC_DMPlayersList : XUiC_DMBaseList<XUiC_DMPlayersList.ListEntry>
 		base.RebuildList(_resetFilter);
 	}
 
-	// Token: 0x0600685C RID: 26716 RVA: 0x00293AA0 File Offset: 0x00291CA0
+	// Token: 0x060068F8 RID: 26872 RVA: 0x00296BF4 File Offset: 0x00294DF4
 	public void ClearList(bool _resetFilter = false)
 	{
 		this.allEntries.Clear();
@@ -127,35 +127,35 @@ public class XUiC_DMPlayersList : XUiC_DMBaseList<XUiC_DMPlayersList.ListEntry>
 		base.RebuildList(_resetFilter);
 	}
 
-	// Token: 0x0600685D RID: 26717 RVA: 0x00293AD7 File Offset: 0x00291CD7
+	// Token: 0x060068F9 RID: 26873 RVA: 0x00296C2B File Offset: 0x00294E2B
 	public void ShowLoading()
 	{
 		this.loadingView.IsVisible = true;
 	}
 
-	// Token: 0x04005002 RID: 20482
+	// Token: 0x040050A4 RID: 20644
 	[XuiBindComponent("lblPlayerLimit", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Label lblPlayerLimit;
 
-	// Token: 0x04005003 RID: 20483
+	// Token: 0x040050A5 RID: 20645
 	[XuiBindComponent("loadingOverlay", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiView loadingView;
 
-	// Token: 0x04005004 RID: 20484
+	// Token: 0x040050A6 RID: 20646
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<XUiController> profileButtons = new List<XUiController>();
 
-	// Token: 0x04005005 RID: 20485
+	// Token: 0x040050A7 RID: 20647
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<SaveInfoProvider.PlayerEntryInfo> blockedPlayers = new List<SaveInfoProvider.PlayerEntryInfo>();
 
-	// Token: 0x02000D6F RID: 3439
+	// Token: 0x02000D83 RID: 3459
 	[Preserve]
 	public class ListEntry : XUiListEntry<XUiC_DMPlayersList.ListEntry>
 	{
-		// Token: 0x0600685F RID: 26719 RVA: 0x00293B04 File Offset: 0x00291D04
+		// Token: 0x060068FB RID: 26875 RVA: 0x00296C58 File Offset: 0x00294E58
 		public ListEntry(SaveInfoProvider.PlayerEntryInfo _playerEntryInfo)
 		{
 			this.PlayerEntryInfo = _playerEntryInfo;
@@ -171,13 +171,13 @@ public class XUiC_DMPlayersList : XUiC_DMBaseList<XUiC_DMPlayersList.ListEntry>
 			this.NativeUserId = _playerEntryInfo.NativeUserId;
 		}
 
-		// Token: 0x06006860 RID: 26720 RVA: 0x00293B96 File Offset: 0x00291D96
+		// Token: 0x060068FC RID: 26876 RVA: 0x00296CEA File Offset: 0x00294EEA
 		public bool CanShowProfile()
 		{
 			return this.NativeUserId != null && PlatformManager.MultiPlatform.User.CanShowProfile(this.NativeUserId);
 		}
 
-		// Token: 0x06006861 RID: 26721 RVA: 0x00293BB7 File Offset: 0x00291DB7
+		// Token: 0x060068FD RID: 26877 RVA: 0x00296D0B File Offset: 0x00294F0B
 		public override int CompareTo(XUiC_DMPlayersList.ListEntry _otherEntry)
 		{
 			if (_otherEntry != null)
@@ -187,49 +187,49 @@ public class XUiC_DMPlayersList : XUiC_DMBaseList<XUiC_DMPlayersList.ListEntry>
 			return 1;
 		}
 
-		// Token: 0x06006862 RID: 26722 RVA: 0x00293BCF File Offset: 0x00291DCF
+		// Token: 0x060068FE RID: 26878 RVA: 0x00296D23 File Offset: 0x00294F23
 		public override bool MatchesSearch(string _searchString)
 		{
 			return (this.PlayerName ?? this.CachedName).ContainsCaseInsensitive(_searchString);
 		}
 
-		// Token: 0x04005006 RID: 20486
+		// Token: 0x040050A8 RID: 20648
 		public readonly string ID;
 
-		// Token: 0x04005007 RID: 20487
+		// Token: 0x040050A9 RID: 20649
 		public readonly string CachedName;
 
-		// Token: 0x04005008 RID: 20488
+		// Token: 0x040050AA RID: 20650
 		public readonly string PlayerName;
 
-		// Token: 0x04005009 RID: 20489
+		// Token: 0x040050AB RID: 20651
 		public readonly string Platform;
 
-		// Token: 0x0400500A RID: 20490
+		// Token: 0x040050AC RID: 20652
 		public readonly DateTime LastPlayed;
 
-		// Token: 0x0400500B RID: 20491
+		// Token: 0x040050AD RID: 20653
 		public readonly int PlayerLevel;
 
-		// Token: 0x0400500C RID: 20492
+		// Token: 0x040050AE RID: 20654
 		public readonly float DistanceWalked;
 
-		// Token: 0x0400500D RID: 20493
+		// Token: 0x040050AF RID: 20655
 		public readonly long SaveSize;
 
-		// Token: 0x0400500E RID: 20494
+		// Token: 0x040050B0 RID: 20656
 		public readonly PlatformUserIdentifierAbs NativeUserId;
 
-		// Token: 0x0400500F RID: 20495
+		// Token: 0x040050B1 RID: 20657
 		public readonly SaveInfoProvider.PlayerEntryInfo PlayerEntryInfo;
 	}
 
-	// Token: 0x02000D70 RID: 3440
+	// Token: 0x02000D84 RID: 3460
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class EntryController : XUiC_List<XUiC_DMPlayersList.ListEntry>.XUiC_ListEntry
 	{
-		// Token: 0x06006863 RID: 26723 RVA: 0x00293BE7 File Offset: 0x00291DE7
+		// Token: 0x060068FF RID: 26879 RVA: 0x00296D3B File Offset: 0x00294F3B
 		[XuiXmlBinding("savename")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingSaveName()
@@ -244,7 +244,7 @@ public class XUiC_DMPlayersList : XUiC_DMBaseList<XUiC_DMPlayersList.ListEntry>
 			return text;
 		}
 
-		// Token: 0x06006864 RID: 26724 RVA: 0x00293C1A File Offset: 0x00291E1A
+		// Token: 0x06006900 RID: 26880 RVA: 0x00296D6E File Offset: 0x00294F6E
 		[XuiXmlBinding("platform")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingPlatform()
@@ -253,7 +253,7 @@ public class XUiC_DMPlayersList : XUiC_DMBaseList<XUiC_DMPlayersList.ListEntry>
 			return ((entryData != null) ? entryData.Platform : null) ?? "";
 		}
 
-		// Token: 0x06006865 RID: 26725 RVA: 0x00293C38 File Offset: 0x00291E38
+		// Token: 0x06006901 RID: 26881 RVA: 0x00296D8C File Offset: 0x00294F8C
 		[XuiXmlBinding("lastplayed")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingLastPlayed()
@@ -262,7 +262,7 @@ public class XUiC_DMPlayersList : XUiC_DMBaseList<XUiC_DMPlayersList.ListEntry>
 			return ((entryData != null) ? entryData.LastPlayed.ToString("yyyy-MM-dd HH:mm") : null) ?? "";
 		}
 
-		// Token: 0x06006866 RID: 26726 RVA: 0x00293C70 File Offset: 0x00291E70
+		// Token: 0x06006902 RID: 26882 RVA: 0x00296DC4 File Offset: 0x00294FC4
 		[XuiXmlBinding("lastplayedinfo")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingLastPlayedInfo()
@@ -275,7 +275,7 @@ public class XUiC_DMPlayersList : XUiC_DMBaseList<XUiC_DMPlayersList.ListEntry>
 			return string.Format("{0} {1}", num, Localization.Get("xuiDmDaysAgo", false, null));
 		}
 
-		// Token: 0x06006867 RID: 26727 RVA: 0x00293CC8 File Offset: 0x00291EC8
+		// Token: 0x06006903 RID: 26883 RVA: 0x00296E1C File Offset: 0x0029501C
 		[XuiXmlBinding("level")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingLevel()
@@ -291,7 +291,7 @@ public class XUiC_DMPlayersList : XUiC_DMBaseList<XUiC_DMPlayersList.ListEntry>
 			return "-";
 		}
 
-		// Token: 0x06006868 RID: 26728 RVA: 0x00293D20 File Offset: 0x00291F20
+		// Token: 0x06006904 RID: 26884 RVA: 0x00296E74 File Offset: 0x00295074
 		[XuiXmlBinding("distance")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingDistance()
@@ -307,7 +307,7 @@ public class XUiC_DMPlayersList : XUiC_DMBaseList<XUiC_DMPlayersList.ListEntry>
 			return "-";
 		}
 
-		// Token: 0x06006869 RID: 26729 RVA: 0x00293D7C File Offset: 0x00291F7C
+		// Token: 0x06006905 RID: 26885 RVA: 0x00296ED0 File Offset: 0x002950D0
 		[XuiXmlBinding("canShowProfile")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool bindingCanShowProfile()

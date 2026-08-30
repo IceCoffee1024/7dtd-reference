@@ -4,10 +4,10 @@ using MusicUtils.Enums;
 
 namespace MusicUtils
 {
-	// Token: 0x020019E4 RID: 6628
+	// Token: 0x02001A0B RID: 6667
 	public static class DMSConstants
 	{
-		// Token: 0x040098F2 RID: 39154
+		// Token: 0x04009A23 RID: 39459
 		public static EnumDictionary<SectionType, string> SectionAbbrvs = new EnumDictionary<SectionType, string>
 		{
 			{
@@ -28,7 +28,7 @@ namespace MusicUtils
 			}
 		};
 
-		// Token: 0x040098F3 RID: 39155
+		// Token: 0x04009A24 RID: 39460
 		public static EnumDictionary<LayerType, string> LayerAbbrvs = new EnumDictionary<LayerType, string>
 		{
 			{
@@ -57,7 +57,7 @@ namespace MusicUtils
 			}
 		};
 
-		// Token: 0x040098F4 RID: 39156
+		// Token: 0x04009A25 RID: 39461
 		public static EnumDictionary<PlacementType, string> PlacementAbbrv = new EnumDictionary<PlacementType, string>
 		{
 			{
@@ -74,13 +74,13 @@ namespace MusicUtils
 			}
 		};
 
-		// Token: 0x040098F5 RID: 39157
+		// Token: 0x04009A26 RID: 39462
 		public const int cChannels = 2;
 
-		// Token: 0x040098F6 RID: 39158
+		// Token: 0x04009A27 RID: 39463
 		public const int cFrequency = 44100;
 
-		// Token: 0x040098F7 RID: 39159
+		// Token: 0x04009A28 RID: 39464
 		public static List<SectionType> LayeredSections = new List<SectionType>
 		{
 			SectionType.Exploration,

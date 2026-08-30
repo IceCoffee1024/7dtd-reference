@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200054C RID: 1356
+// Token: 0x02000551 RID: 1361
 public class TimeRotateObject : MonoBehaviour
 {
-	// Token: 0x06002C57 RID: 11351 RVA: 0x001189F4 File Offset: 0x00116BF4
+	// Token: 0x06002C81 RID: 11393 RVA: 0x00119A68 File Offset: 0x00117C68
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -27,9 +27,9 @@ public class TimeRotateObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400220C RID: 8716
+	// Token: 0x0400223E RID: 8766
 	public Transform hourTransform;
 
-	// Token: 0x0400220D RID: 8717
+	// Token: 0x0400223F RID: 8767
 	public Transform minuteTransform;
 }

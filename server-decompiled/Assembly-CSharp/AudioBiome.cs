@@ -4,7 +4,7 @@
 [PublicizedFrom(EAccessModifier.Internal)]
 public class AudioBiome
 {
-	// Token: 0x06000364 RID: 868 RVA: 0x00018B28 File Offset: 0x00016D28
+	// Token: 0x06000365 RID: 869 RVA: 0x00018BEC File Offset: 0x00016DEC
 	public AudioBiome()
 	{
 		int num = Enum.GetNames(typeof(AudioObject.Trigger)).Length;
@@ -15,13 +15,13 @@ public class AudioBiome
 		}
 	}
 
-	// Token: 0x06000365 RID: 869 RVA: 0x00018B73 File Offset: 0x00016D73
+	// Token: 0x06000366 RID: 870 RVA: 0x00018C37 File Offset: 0x00016E37
 	public void Add(AudioObject _audioObject)
 	{
 		this.triggers[(int)_audioObject.trigger].Add(_audioObject);
 	}
 
-	// Token: 0x06000366 RID: 870 RVA: 0x00018B88 File Offset: 0x00016D88
+	// Token: 0x06000367 RID: 871 RVA: 0x00018C4C File Offset: 0x00016E4C
 	public void TransitionFrom(float _biomeTransition)
 	{
 		for (int i = 3; i < this.triggers.Length - 1; i++)
@@ -36,7 +36,7 @@ public class AudioBiome
 		}
 	}
 
-	// Token: 0x06000367 RID: 871 RVA: 0x00018BD4 File Offset: 0x00016DD4
+	// Token: 0x06000368 RID: 872 RVA: 0x00018C98 File Offset: 0x00016E98
 	public void TransitionTo(float _biomeTransition)
 	{
 		for (int i = 3; i < this.triggers.Length - 1; i++)
@@ -50,7 +50,7 @@ public class AudioBiome
 		}
 	}
 
-	// Token: 0x06000368 RID: 872 RVA: 0x00018C14 File Offset: 0x00016E14
+	// Token: 0x06000369 RID: 873 RVA: 0x00018CD8 File Offset: 0x00016ED8
 	public void Pause()
 	{
 		for (int i = 0; i < this.triggers.Length; i++)
@@ -59,7 +59,7 @@ public class AudioBiome
 		}
 	}
 
-	// Token: 0x06000369 RID: 873 RVA: 0x00018C44 File Offset: 0x00016E44
+	// Token: 0x0600036A RID: 874 RVA: 0x00018D08 File Offset: 0x00016F08
 	public void UnPause()
 	{
 		for (int i = 0; i < this.triggers.Length; i++)
@@ -68,7 +68,7 @@ public class AudioBiome
 		}
 	}
 
-	// Token: 0x0600036A RID: 874 RVA: 0x00018C74 File Offset: 0x00016E74
+	// Token: 0x0600036B RID: 875 RVA: 0x00018D38 File Offset: 0x00016F38
 	public void TurnOff()
 	{
 		for (int i = 0; i < this.triggers.Length; i++)

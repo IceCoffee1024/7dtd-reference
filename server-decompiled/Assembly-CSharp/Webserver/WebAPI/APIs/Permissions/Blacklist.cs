@@ -6,12 +6,12 @@ using Utf8Json;
 
 namespace Webserver.WebAPI.APIs.Permissions
 {
-	// Token: 0x02001ABA RID: 6842
+	// Token: 0x02001AE1 RID: 6881
 	[Preserve]
 	public class Blacklist : AbsRestApi
 	{
-		// Token: 0x17001908 RID: 6408
-		// (get) Token: 0x0600CD85 RID: 52613 RVA: 0x004AFF08 File Offset: 0x004AE108
+		// Token: 0x1700197A RID: 6522
+		// (get) Token: 0x0600CF0E RID: 53006 RVA: 0x004B62FC File Offset: 0x004B44FC
 		public static AdminBlacklist BlacklistInstance
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -21,7 +21,7 @@ namespace Webserver.WebAPI.APIs.Permissions
 			}
 		}
 
-		// Token: 0x0600CD86 RID: 52614 RVA: 0x004AFF1C File Offset: 0x004AE11C
+		// Token: 0x0600CF0F RID: 53007 RVA: 0x004B6310 File Offset: 0x004B4510
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void HandleRestGet(RequestContext _context)
 		{
@@ -49,7 +49,7 @@ namespace Webserver.WebAPI.APIs.Permissions
 			AbsRestApi.SendEnvelopedResult(_context, ref jsonWriter, HttpStatusCode.BadRequest, null, null, null);
 		}
 
-		// Token: 0x0600CD87 RID: 52615 RVA: 0x004AFFD4 File Offset: 0x004AE1D4
+		// Token: 0x0600CF10 RID: 53008 RVA: 0x004B63C8 File Offset: 0x004B45C8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void writeBan(ref JsonWriter _writer, AdminBlacklist.BannedUser _ban)
 		{
@@ -64,7 +64,7 @@ namespace Webserver.WebAPI.APIs.Permissions
 			_writer.WriteEndObject();
 		}
 
-		// Token: 0x0600CD88 RID: 52616 RVA: 0x004B004C File Offset: 0x004AE24C
+		// Token: 0x0600CF11 RID: 53009 RVA: 0x004B6440 File Offset: 0x004B4640
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void HandleRestPost(RequestContext _context, IDictionary<string, object> _jsonInput, byte[] _jsonInputData)
 		{
@@ -87,7 +87,7 @@ namespace Webserver.WebAPI.APIs.Permissions
 			AbsRestApi.SendEmptyResponse(_context, HttpStatusCode.Created, null, null, null);
 		}
 
-		// Token: 0x0600CD89 RID: 52617 RVA: 0x004B00BC File Offset: 0x004AE2BC
+		// Token: 0x0600CF12 RID: 53010 RVA: 0x004B64B0 File Offset: 0x004B46B0
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void HandleRestDelete(RequestContext _context)
 		{
@@ -99,7 +99,7 @@ namespace Webserver.WebAPI.APIs.Permissions
 			AbsRestApi.SendEmptyResponse(_context, Blacklist.BlacklistInstance.RemoveBan(platformUserIdentifierAbs) ? HttpStatusCode.NoContent : HttpStatusCode.NotFound, null, null, null);
 		}
 
-		// Token: 0x0600CD8A RID: 52618 RVA: 0x004B00FC File Offset: 0x004AE2FC
+		// Token: 0x0600CF13 RID: 53011 RVA: 0x004B64F0 File Offset: 0x004B46F0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool TryParseId(RequestContext _context, byte[] _jsonInputData, out PlatformUserIdentifierAbs _userId)
 		{
@@ -118,8 +118,8 @@ namespace Webserver.WebAPI.APIs.Permissions
 			return true;
 		}
 
-		// Token: 0x17001909 RID: 6409
-		// (get) Token: 0x0600CD8B RID: 52619 RVA: 0x0001FF5D File Offset: 0x0001E15D
+		// Token: 0x1700197B RID: 6523
+		// (get) Token: 0x0600CF14 RID: 53012 RVA: 0x00020021 File Offset: 0x0001E221
 		public override bool AllowPostWithId
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -129,47 +129,47 @@ namespace Webserver.WebAPI.APIs.Permissions
 			}
 		}
 
-		// Token: 0x0600CD8C RID: 52620 RVA: 0x004B0145 File Offset: 0x004AE345
+		// Token: 0x0600CF15 RID: 53013 RVA: 0x004B6539 File Offset: 0x004B4739
 		public override int[] DefaultMethodPermissionLevels()
 		{
 			return new int[] { -2147483647, int.MinValue, int.MinValue, -2147483647, int.MinValue };
 		}
 
-		// Token: 0x0600CD8D RID: 52621 RVA: 0x004A91E8 File Offset: 0x004A73E8
+		// Token: 0x0600CF16 RID: 53014 RVA: 0x004AF5DC File Offset: 0x004AD7DC
 		public Blacklist()
 			: base(null)
 		{
 		}
 
-		// Token: 0x04009BF5 RID: 39925
+		// Token: 0x04009D26 RID: 40230
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string propertyName = "name";
 
-		// Token: 0x04009BF6 RID: 39926
+		// Token: 0x04009D27 RID: 40231
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string propertyUserId = "userId";
 
-		// Token: 0x04009BF7 RID: 39927
+		// Token: 0x04009D28 RID: 40232
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string propertyBannedUntil = "bannedUntil";
 
-		// Token: 0x04009BF8 RID: 39928
+		// Token: 0x04009D29 RID: 40233
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string propertyBanReason = "banReason";
 
-		// Token: 0x04009BF9 RID: 39929
+		// Token: 0x04009D2A RID: 40234
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyName = JsonWriter.GetEncodedPropertyNameWithBeginObject("name");
 
-		// Token: 0x04009BFA RID: 39930
+		// Token: 0x04009D2B RID: 40235
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyUserId = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("userId");
 
-		// Token: 0x04009BFB RID: 39931
+		// Token: 0x04009D2C RID: 40236
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyBannedUntil = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("bannedUntil");
 
-		// Token: 0x04009BFC RID: 39932
+		// Token: 0x04009D2D RID: 40237
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyBanReason = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("banReason");
 	}

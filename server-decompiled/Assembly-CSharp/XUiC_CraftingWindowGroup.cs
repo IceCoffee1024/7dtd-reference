@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EF6 RID: 3830
+// Token: 0x02000F0D RID: 3853
 [Preserve]
 public class XUiC_CraftingWindowGroup : XUiController
 {
-	// Token: 0x17000E08 RID: 3592
-	// (get) Token: 0x0600781E RID: 30750 RVA: 0x002D5BC7 File Offset: 0x002D3DC7
-	// (set) Token: 0x0600781F RID: 30751 RVA: 0x002D5BCF File Offset: 0x002D3DCF
+	// Token: 0x17000E22 RID: 3618
+	// (get) Token: 0x060078D6 RID: 30934 RVA: 0x002D9B53 File Offset: 0x002D7D53
+	// (set) Token: 0x060078D7 RID: 30935 RVA: 0x002D9B5B File Offset: 0x002D7D5B
 	public string Workstation
 	{
 		get
@@ -24,7 +24,7 @@ public class XUiC_CraftingWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06007820 RID: 30752 RVA: 0x002D5BF4 File Offset: 0x002D3DF4
+	// Token: 0x060078D8 RID: 30936 RVA: 0x002D9B80 File Offset: 0x002D7D80
 	public override void Init()
 	{
 		base.Init();
@@ -36,7 +36,7 @@ public class XUiC_CraftingWindowGroup : XUiController
 		this.recipeList.InfoWindow = this.craftInfoWindow;
 	}
 
-	// Token: 0x06007821 RID: 30753 RVA: 0x002D5C54 File Offset: 0x002D3E54
+	// Token: 0x060078D9 RID: 30937 RVA: 0x002D9BE0 File Offset: 0x002D7DE0
 	public virtual bool AddItemToQueue(Recipe _recipe)
 	{
 		if (this.craftCountControl != null)
@@ -46,25 +46,25 @@ public class XUiC_CraftingWindowGroup : XUiController
 		return this.craftingQueue.AddRecipeToCraft(_recipe, 1, -1f, true, -1f);
 	}
 
-	// Token: 0x06007822 RID: 30754 RVA: 0x002D5CA4 File Offset: 0x002D3EA4
+	// Token: 0x060078DA RID: 30938 RVA: 0x002D9C30 File Offset: 0x002D7E30
 	public virtual bool AddItemToQueue(Recipe _recipe, int _count)
 	{
 		return this.craftingQueue.AddRecipeToCraft(_recipe, _count, -1f, true, -1f);
 	}
 
-	// Token: 0x06007823 RID: 30755 RVA: 0x002D5CBE File Offset: 0x002D3EBE
+	// Token: 0x060078DB RID: 30939 RVA: 0x002D9C4A File Offset: 0x002D7E4A
 	public virtual bool AddItemToQueue(Recipe _recipe, int _count, float _craftTime)
 	{
 		return this.craftingQueue.AddRecipeToCraft(_recipe, _count, _craftTime, true, -1f);
 	}
 
-	// Token: 0x06007824 RID: 30756 RVA: 0x002D5CD4 File Offset: 0x002D3ED4
+	// Token: 0x060078DC RID: 30940 RVA: 0x002D9C60 File Offset: 0x002D7E60
 	public virtual bool AddRepairItemToQueue(float _repairTime, ItemValue _itemToRepair, int _amountToRepair)
 	{
 		return this.craftingQueue.AddItemToRepair(_repairTime, _itemToRepair, _amountToRepair);
 	}
 
-	// Token: 0x06007825 RID: 30757 RVA: 0x002D5CE4 File Offset: 0x002D3EE4
+	// Token: 0x060078DD RID: 30941 RVA: 0x002D9C70 File Offset: 0x002D7E70
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -82,50 +82,50 @@ public class XUiC_CraftingWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06007826 RID: 30758 RVA: 0x002D5D88 File Offset: 0x002D3F88
+	// Token: 0x060078DE RID: 30942 RVA: 0x002D9D14 File Offset: 0x002D7F14
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.xui.playerUI.windowManager.Close("windowpaging");
 	}
 
-	// Token: 0x06007827 RID: 30759 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x060078DF RID: 30943 RVA: 0x00020021 File Offset: 0x0001E221
 	public virtual bool CraftingRequirementsValid(Recipe _recipe)
 	{
 		return true;
 	}
 
-	// Token: 0x06007828 RID: 30760 RVA: 0x00031E8B File Offset: 0x0003008B
+	// Token: 0x060078E0 RID: 30944 RVA: 0x00032147 File Offset: 0x00030347
 	public virtual string CraftingRequirementsInvalidMessage(Recipe _recipe)
 	{
 		return "";
 	}
 
-	// Token: 0x040058B7 RID: 22711
+	// Token: 0x04005969 RID: 22889
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string workstation = "";
 
-	// Token: 0x040058B8 RID: 22712
+	// Token: 0x0400596A RID: 22890
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool firstRun = true;
 
-	// Token: 0x040058B9 RID: 22713
+	// Token: 0x0400596B RID: 22891
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_CategoryList categoryList;
 
-	// Token: 0x040058BA RID: 22714
+	// Token: 0x0400596C RID: 22892
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_RecipeList recipeList;
 
-	// Token: 0x040058BB RID: 22715
+	// Token: 0x0400596D RID: 22893
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_CraftingQueue craftingQueue;
 
-	// Token: 0x040058BC RID: 22716
+	// Token: 0x0400596E RID: 22894
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_RecipeCraftCount craftCountControl;
 
-	// Token: 0x040058BD RID: 22717
+	// Token: 0x0400596F RID: 22895
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_CraftingInfoWindow craftInfoWindow;
 }

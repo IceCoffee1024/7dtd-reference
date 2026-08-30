@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001B6 RID: 438
+// Token: 0x020001B8 RID: 440
 public abstract class BlockShapeRotatedAbstract : BlockShape
 {
-	// Token: 0x06000D2C RID: 3372 RVA: 0x00056228 File Offset: 0x00054428
+	// Token: 0x06000D37 RID: 3383 RVA: 0x000566A8 File Offset: 0x000548A8
 	public BlockShapeRotatedAbstract()
 	{
 		this.IsRotatable = true;
 	}
 
-	// Token: 0x06000D2D RID: 3373 RVA: 0x00056251 File Offset: 0x00054451
+	// Token: 0x06000D38 RID: 3384 RVA: 0x000566D1 File Offset: 0x000548D1
 	public override void Init(Block _block)
 	{
 		base.Init(_block);
@@ -19,7 +19,7 @@ public abstract class BlockShapeRotatedAbstract : BlockShape
 		this.createAABBVertices();
 	}
 
-	// Token: 0x06000D2E RID: 3374 RVA: 0x0005626C File Offset: 0x0005446C
+	// Token: 0x06000D39 RID: 3385 RVA: 0x000566EC File Offset: 0x000548EC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void createBoundingBoxes()
 	{
@@ -40,7 +40,7 @@ public abstract class BlockShapeRotatedAbstract : BlockShape
 		}
 	}
 
-	// Token: 0x06000D2F RID: 3375 RVA: 0x000562DC File Offset: 0x000544DC
+	// Token: 0x06000D3A RID: 3386 RVA: 0x0005675C File Offset: 0x0005495C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void createAABBVertices()
 	{
@@ -56,11 +56,11 @@ public abstract class BlockShapeRotatedAbstract : BlockShape
 		}
 	}
 
-	// Token: 0x06000D30 RID: 3376
+	// Token: 0x06000D3B RID: 3387
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract void createVertices();
 
-	// Token: 0x06000D31 RID: 3377 RVA: 0x000563CC File Offset: 0x000545CC
+	// Token: 0x06000D3C RID: 3388 RVA: 0x0005684C File Offset: 0x00054A4C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector3[] rotateVertices(Vector3[] _vertices, Vector3 _drawPos, BlockValue _blockValue)
 	{
@@ -75,25 +75,25 @@ public abstract class BlockShapeRotatedAbstract : BlockShape
 		return array;
 	}
 
-	// Token: 0x06000D32 RID: 3378 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000D3D RID: 3389 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override int getFacesDrawnFullBitfield(BlockValue _blockValue)
 	{
 		return 0;
 	}
 
-	// Token: 0x06000D33 RID: 3379 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000D3E RID: 3390 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool isRenderFace(BlockValue _blockValue, BlockFace _face, BlockValue _adjBlockValue)
 	{
 		return false;
 	}
 
-	// Token: 0x06000D34 RID: 3380 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x06000D3F RID: 3391 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsRenderDecoration()
 	{
 		return true;
 	}
 
-	// Token: 0x06000D35 RID: 3381 RVA: 0x00056444 File Offset: 0x00054644
+	// Token: 0x06000D40 RID: 3392 RVA: 0x000568C4 File Offset: 0x00054AC4
 	public override Bounds[] GetBounds(BlockValue _blockValue)
 	{
 		int rotation = (int)_blockValue.rotation;
@@ -135,7 +135,7 @@ public abstract class BlockShapeRotatedAbstract : BlockShape
 		return this.boundsArr;
 	}
 
-	// Token: 0x06000D36 RID: 3382 RVA: 0x000565EC File Offset: 0x000547EC
+	// Token: 0x06000D41 RID: 3393 RVA: 0x00056A6C File Offset: 0x00054C6C
 	public override BlockValue RotateY(bool _bLeft, BlockValue _blockValue, int _rotCount)
 	{
 		for (int i = 0; i < _rotCount; i++)
@@ -190,30 +190,30 @@ public abstract class BlockShapeRotatedAbstract : BlockShape
 		return _blockValue;
 	}
 
-	// Token: 0x06000D37 RID: 3383 RVA: 0x000566AE File Offset: 0x000548AE
+	// Token: 0x06000D42 RID: 3394 RVA: 0x00056B2E File Offset: 0x00054D2E
 	public override float GetStepHeight(BlockValue _blockValue, BlockFace crossingFace)
 	{
 		this.GetBounds(_blockValue);
 		return this.maxAABB_Y[(int)_blockValue.rotation];
 	}
 
-	// Token: 0x04000BA4 RID: 2980
+	// Token: 0x04000BB1 RID: 2993
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector3[] vertices;
 
-	// Token: 0x04000BA5 RID: 2981
+	// Token: 0x04000BB2 RID: 2994
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Vector3 vecInternalOffset = new Vector3(-0.5f, -0.5f, -0.5f);
 
-	// Token: 0x04000BA6 RID: 2982
+	// Token: 0x04000BB3 RID: 2995
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3[] aabbVertices;
 
-	// Token: 0x04000BA7 RID: 2983
+	// Token: 0x04000BB4 RID: 2996
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Bounds[][] cachedBounds = new Bounds[32][];
 
-	// Token: 0x04000BA8 RID: 2984
+	// Token: 0x04000BB5 RID: 2997
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float[] maxAABB_Y = new float[32];
 }

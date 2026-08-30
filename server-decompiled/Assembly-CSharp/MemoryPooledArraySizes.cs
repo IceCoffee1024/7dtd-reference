@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02001425 RID: 5157
+// Token: 0x02001440 RID: 5184
 public static class MemoryPooledArraySizes
 {
-	// Token: 0x0400794B RID: 31051
+	// Token: 0x04007A24 RID: 31268
 	public static readonly int[] poolElements = new int[]
 	{
 		64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768,

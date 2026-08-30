@@ -1,29 +1,29 @@
 ﻿using System;
 
-// Token: 0x02000387 RID: 903
+// Token: 0x0200038B RID: 907
 public class DynamicMeshUpdateData
 {
-	// Token: 0x06001AFD RID: 6909 RVA: 0x000A06F3 File Offset: 0x0009E8F3
+	// Token: 0x06001B1A RID: 6938 RVA: 0x000A0E33 File Offset: 0x0009F033
 	public string ToDebugLocation()
 	{
 		return this.ChunkPosition.x.ToString() + "," + this.ChunkPosition.z.ToString();
 	}
 
-	// Token: 0x04001152 RID: 4434
+	// Token: 0x04001167 RID: 4455
 	public Vector3i ChunkPosition;
 
-	// Token: 0x04001153 RID: 4435
+	// Token: 0x04001168 RID: 4456
 	public long Key;
 
-	// Token: 0x04001154 RID: 4436
+	// Token: 0x04001169 RID: 4457
 	public float MaxTime;
 
-	// Token: 0x04001155 RID: 4437
+	// Token: 0x0400116A RID: 4458
 	public float UpdateTime;
 
-	// Token: 0x04001156 RID: 4438
+	// Token: 0x0400116B RID: 4459
 	public bool IsUrgent;
 
-	// Token: 0x04001157 RID: 4439
+	// Token: 0x0400116C RID: 4460
 	public bool AddToThread;
 }

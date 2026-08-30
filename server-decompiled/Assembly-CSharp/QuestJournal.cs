@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
 
-// Token: 0x020009D6 RID: 2518
+// Token: 0x020009E7 RID: 2535
 public class QuestJournal
 {
-	// Token: 0x170007F4 RID: 2036
-	// (get) Token: 0x06004ADE RID: 19166 RVA: 0x001D16C0 File Offset: 0x001CF8C0
-	// (set) Token: 0x06004ADF RID: 19167 RVA: 0x001D16C8 File Offset: 0x001CF8C8
+	// Token: 0x17000806 RID: 2054
+	// (get) Token: 0x06004B64 RID: 19300 RVA: 0x001D3EA8 File Offset: 0x001D20A8
+	// (set) Token: 0x06004B65 RID: 19301 RVA: 0x001D3EB0 File Offset: 0x001D20B0
 	public Quest TrackedQuest
 	{
 		get
@@ -40,7 +40,7 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004AE0 RID: 19168 RVA: 0x001D1794 File Offset: 0x001CF994
+	// Token: 0x06004B66 RID: 19302 RVA: 0x001D3F7C File Offset: 0x001D217C
 	public void AddTraderPOI(Vector2 pos, int factionID)
 	{
 		if (!this.TraderPOIs.Contains(pos))
@@ -57,13 +57,13 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004AE1 RID: 19169 RVA: 0x001D1800 File Offset: 0x001CFA00
+	// Token: 0x06004B67 RID: 19303 RVA: 0x001D3FE8 File Offset: 0x001D21E8
 	public bool HasTraderPOI(Vector2 pos)
 	{
 		return this.TraderPOIs.Contains(pos);
 	}
 
-	// Token: 0x06004AE2 RID: 19170 RVA: 0x001D180E File Offset: 0x001CFA0E
+	// Token: 0x06004B68 RID: 19304 RVA: 0x001D3FF6 File Offset: 0x001D21F6
 	public List<Vector2> GetTraderList(int factionID)
 	{
 		if (this.TradersByFaction.ContainsKey(factionID))
@@ -73,7 +73,7 @@ public class QuestJournal
 		return null;
 	}
 
-	// Token: 0x06004AE3 RID: 19171 RVA: 0x001D182C File Offset: 0x001CFA2C
+	// Token: 0x06004B69 RID: 19305 RVA: 0x001D4014 File Offset: 0x001D2214
 	public Quest GetSharedQuest(int questCode)
 	{
 		for (int i = 0; i < this.quests.Count; i++)
@@ -86,7 +86,7 @@ public class QuestJournal
 		return null;
 	}
 
-	// Token: 0x06004AE4 RID: 19172 RVA: 0x001D1888 File Offset: 0x001CFA88
+	// Token: 0x06004B6A RID: 19306 RVA: 0x001D4070 File Offset: 0x001D2270
 	public void RemoveSharedQuestByOwner(int questCode)
 	{
 		for (int i = 0; i < this.quests.Count; i++)
@@ -101,7 +101,7 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004AE5 RID: 19173 RVA: 0x001D1924 File Offset: 0x001CFB24
+	// Token: 0x06004B6B RID: 19307 RVA: 0x001D410C File Offset: 0x001D230C
 	public void RemoveSharedQuestForOwner(int entityID)
 	{
 		for (int i = 0; i < this.quests.Count; i++)
@@ -115,7 +115,7 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004AE6 RID: 19174 RVA: 0x001D19C0 File Offset: 0x001CFBC0
+	// Token: 0x06004B6C RID: 19308 RVA: 0x001D41A8 File Offset: 0x001D23A8
 	public void FailAllSharedQuests()
 	{
 		for (int i = 0; i < this.quests.Count; i++)
@@ -127,7 +127,7 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004AE7 RID: 19175 RVA: 0x001D1A48 File Offset: 0x001CFC48
+	// Token: 0x06004B6D RID: 19309 RVA: 0x001D4230 File Offset: 0x001D2430
 	public void FailAllActivatedQuests()
 	{
 		for (int i = 0; i < this.quests.Count; i++)
@@ -139,7 +139,7 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004AE8 RID: 19176 RVA: 0x001D1AD0 File Offset: 0x001CFCD0
+	// Token: 0x06004B6E RID: 19310 RVA: 0x001D42B8 File Offset: 0x001D24B8
 	public List<Vector2> GetUsedPOIs(Vector2 traderPOI, int tier)
 	{
 		QuestTraderData traderData = this.GetTraderData(traderPOI);
@@ -150,7 +150,7 @@ public class QuestJournal
 		return null;
 	}
 
-	// Token: 0x06004AE9 RID: 19177 RVA: 0x001D1AF4 File Offset: 0x001CFCF4
+	// Token: 0x06004B6F RID: 19311 RVA: 0x001D42DC File Offset: 0x001D24DC
 	public void RemoveAllSharedQuests()
 	{
 		for (int i = this.quests.Count - 1; i >= 0; i--)
@@ -178,7 +178,7 @@ public class QuestJournal
 		this.OwnerPlayer.TriggerSharedQuestRemovedEvent(null);
 	}
 
-	// Token: 0x06004AEA RID: 19178 RVA: 0x001D1C74 File Offset: 0x001CFE74
+	// Token: 0x06004B70 RID: 19312 RVA: 0x001D445C File Offset: 0x001D265C
 	public void RemovePlayerFromSharedWiths(EntityPlayer player)
 	{
 		for (int i = 0; i < this.quests.Count; i++)
@@ -187,7 +187,7 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004AEB RID: 19179 RVA: 0x001D1CAC File Offset: 0x001CFEAC
+	// Token: 0x06004B71 RID: 19313 RVA: 0x001D4494 File Offset: 0x001D2694
 	public Quest FindSharedQuest(int questCode)
 	{
 		for (int i = 0; i < this.quests.Count; i++)
@@ -200,7 +200,7 @@ public class QuestJournal
 		return null;
 	}
 
-	// Token: 0x06004AEC RID: 19180 RVA: 0x001D1CF4 File Offset: 0x001CFEF4
+	// Token: 0x06004B72 RID: 19314 RVA: 0x001D44DC File Offset: 0x001D26DC
 	public Quest FindQuest(string questName, int questFaction = -1)
 	{
 		for (int i = 0; i < this.quests.Count; i++)
@@ -213,7 +213,7 @@ public class QuestJournal
 		return null;
 	}
 
-	// Token: 0x06004AED RID: 19181 RVA: 0x001D1D58 File Offset: 0x001CFF58
+	// Token: 0x06004B73 RID: 19315 RVA: 0x001D4540 File Offset: 0x001D2740
 	public bool FindCompletedQuest(string questName, int questFaction = -1)
 	{
 		for (int i = 0; i < this.quests.Count; i++)
@@ -227,7 +227,7 @@ public class QuestJournal
 		return false;
 	}
 
-	// Token: 0x06004AEE RID: 19182 RVA: 0x001D1DB0 File Offset: 0x001CFFB0
+	// Token: 0x06004B74 RID: 19316 RVA: 0x001D4598 File Offset: 0x001D2798
 	public Quest FindNonSharedQuest(string questName)
 	{
 		for (int i = 0; i < this.quests.Count; i++)
@@ -240,7 +240,7 @@ public class QuestJournal
 		return null;
 	}
 
-	// Token: 0x06004AEF RID: 19183 RVA: 0x001D1E10 File Offset: 0x001D0010
+	// Token: 0x06004B75 RID: 19317 RVA: 0x001D45F8 File Offset: 0x001D27F8
 	public Quest FindNonSharedQuest(int questCode)
 	{
 		for (int i = 0; i < this.quests.Count; i++)
@@ -253,7 +253,7 @@ public class QuestJournal
 		return null;
 	}
 
-	// Token: 0x06004AF0 RID: 19184 RVA: 0x001D1E6C File Offset: 0x001D006C
+	// Token: 0x06004B76 RID: 19318 RVA: 0x001D4654 File Offset: 0x001D2854
 	public Quest FindLatestNonSharedQuest(string questName)
 	{
 		Quest quest = null;
@@ -267,7 +267,7 @@ public class QuestJournal
 		return quest;
 	}
 
-	// Token: 0x06004AF1 RID: 19185 RVA: 0x001D1EFC File Offset: 0x001D00FC
+	// Token: 0x06004B77 RID: 19319 RVA: 0x001D46E4 File Offset: 0x001D28E4
 	public Quest FindActiveQuest()
 	{
 		for (int i = 0; i < this.quests.Count; i++)
@@ -280,7 +280,7 @@ public class QuestJournal
 		return null;
 	}
 
-	// Token: 0x06004AF2 RID: 19186 RVA: 0x001D1F58 File Offset: 0x001D0158
+	// Token: 0x06004B78 RID: 19320 RVA: 0x001D4740 File Offset: 0x001D2940
 	public bool QuestIsActive(Quest quest)
 	{
 		bool flag = false;
@@ -296,7 +296,7 @@ public class QuestJournal
 		return flag;
 	}
 
-	// Token: 0x06004AF3 RID: 19187 RVA: 0x001D1FA8 File Offset: 0x001D01A8
+	// Token: 0x06004B79 RID: 19321 RVA: 0x001D4790 File Offset: 0x001D2990
 	public Quest FindActiveQuest(int questCode)
 	{
 		for (int i = 0; i < this.quests.Count; i++)
@@ -309,7 +309,7 @@ public class QuestJournal
 		return null;
 	}
 
-	// Token: 0x06004AF4 RID: 19188 RVA: 0x001D2018 File Offset: 0x001D0218
+	// Token: 0x06004B7A RID: 19322 RVA: 0x001D4800 File Offset: 0x001D2A00
 	public Quest FindActiveQuest(string questName, int questFaction = -1)
 	{
 		for (int i = 0; i < this.quests.Count; i++)
@@ -322,7 +322,7 @@ public class QuestJournal
 		return null;
 	}
 
-	// Token: 0x06004AF5 RID: 19189 RVA: 0x001D20A4 File Offset: 0x001D02A4
+	// Token: 0x06004B7B RID: 19323 RVA: 0x001D488C File Offset: 0x001D2A8C
 	public Quest FindActiveOrCompleteQuest(string questName, int questFaction = -1)
 	{
 		for (int i = 0; i < this.quests.Count; i++)
@@ -335,7 +335,7 @@ public class QuestJournal
 		return null;
 	}
 
-	// Token: 0x06004AF6 RID: 19190 RVA: 0x001D211C File Offset: 0x001D031C
+	// Token: 0x06004B7C RID: 19324 RVA: 0x001D4904 File Offset: 0x001D2B04
 	public Quest FindActiveQuestByGiver(int questGiverID)
 	{
 		for (int i = 0; i < this.quests.Count; i++)
@@ -348,7 +348,7 @@ public class QuestJournal
 		return null;
 	}
 
-	// Token: 0x06004AF7 RID: 19191 RVA: 0x001D218C File Offset: 0x001D038C
+	// Token: 0x06004B7D RID: 19325 RVA: 0x001D4974 File Offset: 0x001D2B74
 	public Quest FindActiveQuestByGiver(int questGiverID, string questType)
 	{
 		for (int i = 0; i < this.quests.Count; i++)
@@ -361,7 +361,7 @@ public class QuestJournal
 		return null;
 	}
 
-	// Token: 0x06004AF8 RID: 19192 RVA: 0x001D2230 File Offset: 0x001D0430
+	// Token: 0x06004B7E RID: 19326 RVA: 0x001D4A18 File Offset: 0x001D2C18
 	public Quest FindReadyForTurnInQuestByGiver(int questGiverID)
 	{
 		for (int i = 0; i < this.quests.Count; i++)
@@ -374,7 +374,7 @@ public class QuestJournal
 		return null;
 	}
 
-	// Token: 0x06004AF9 RID: 19193 RVA: 0x001D22B0 File Offset: 0x001D04B0
+	// Token: 0x06004B7F RID: 19327 RVA: 0x001D4A98 File Offset: 0x001D2C98
 	public bool HasActiveQuestByQuestCode(int questCode)
 	{
 		for (int i = 0; i < this.quests.Count; i++)
@@ -387,7 +387,7 @@ public class QuestJournal
 		return false;
 	}
 
-	// Token: 0x06004AFA RID: 19194 RVA: 0x001D2300 File Offset: 0x001D0500
+	// Token: 0x06004B80 RID: 19328 RVA: 0x001D4AE8 File Offset: 0x001D2CE8
 	public void AddQuest(Quest q, bool notify = true)
 	{
 		q.OwnerJournal = this;
@@ -403,7 +403,7 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004AFB RID: 19195 RVA: 0x001D23C4 File Offset: 0x001D05C4
+	// Token: 0x06004B81 RID: 19329 RVA: 0x001D4BAC File Offset: 0x001D2DAC
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void RefreshTracked()
 	{
@@ -417,7 +417,7 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004AFC RID: 19196 RVA: 0x001D2410 File Offset: 0x001D0610
+	// Token: 0x06004B82 RID: 19330 RVA: 0x001D4BF8 File Offset: 0x001D2DF8
 	public void CompleteQuest(Quest q)
 	{
 		q.CurrentState = Quest.QuestState.Completed;
@@ -442,7 +442,7 @@ public class QuestJournal
 		GameManager.Instance.persistentPlayers.GetPlayerDataFromEntityID(this.OwnerPlayer.entityId).RemovePositionsForQuest(q.QuestCode);
 	}
 
-	// Token: 0x06004AFD RID: 19197 RVA: 0x001D254C File Offset: 0x001D074C
+	// Token: 0x06004B83 RID: 19331 RVA: 0x001D4D34 File Offset: 0x001D2F34
 	public int AddTraderData(Vector2 pos)
 	{
 		for (int i = 0; i < this.TraderData.Count; i++)
@@ -459,21 +459,21 @@ public class QuestJournal
 		return this.TraderData.Count - 1;
 	}
 
-	// Token: 0x06004AFE RID: 19198 RVA: 0x001D25B0 File Offset: 0x001D07B0
+	// Token: 0x06004B84 RID: 19332 RVA: 0x001D4D98 File Offset: 0x001D2F98
 	public void AddPOIToTraderData(int tier, Vector3 questGiver, Vector3 poiPosition)
 	{
 		int num = this.AddTraderData(new Vector2(questGiver.x, questGiver.z));
 		this.TraderData[num].AddPOI(tier, new Vector2(poiPosition.x, poiPosition.z));
 	}
 
-	// Token: 0x06004AFF RID: 19199 RVA: 0x001D25F8 File Offset: 0x001D07F8
+	// Token: 0x06004B85 RID: 19333 RVA: 0x001D4DE0 File Offset: 0x001D2FE0
 	public void AddPOIToTraderData(int tier, Vector2 questGiver, Vector2 poiPosition)
 	{
 		int num = this.AddTraderData(questGiver);
 		this.TraderData[num].AddPOI(tier, poiPosition);
 	}
 
-	// Token: 0x06004B00 RID: 19200 RVA: 0x001D2620 File Offset: 0x001D0820
+	// Token: 0x06004B86 RID: 19334 RVA: 0x001D4E08 File Offset: 0x001D3008
 	public void ClearTraderDataTier(int tier, Vector2 questGiver)
 	{
 		QuestTraderData traderData = this.GetTraderData(questGiver);
@@ -483,7 +483,7 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004B01 RID: 19201 RVA: 0x001D2640 File Offset: 0x001D0840
+	// Token: 0x06004B87 RID: 19335 RVA: 0x001D4E28 File Offset: 0x001D3028
 	public QuestTraderData GetTraderData(Vector2 questGiver)
 	{
 		for (int i = 0; i < this.TraderData.Count; i++)
@@ -496,7 +496,7 @@ public class QuestJournal
 		return null;
 	}
 
-	// Token: 0x06004B02 RID: 19202 RVA: 0x001D268C File Offset: 0x001D088C
+	// Token: 0x06004B88 RID: 19336 RVA: 0x001D4E74 File Offset: 0x001D3074
 	public void Clear()
 	{
 		this.TrackedQuest = null;
@@ -510,7 +510,7 @@ public class QuestJournal
 		this.TraderPOIs.Clear();
 	}
 
-	// Token: 0x06004B03 RID: 19203 RVA: 0x001D26EC File Offset: 0x001D08EC
+	// Token: 0x06004B89 RID: 19337 RVA: 0x001D4ED4 File Offset: 0x001D30D4
 	public void FailedQuest(Quest q)
 	{
 		q.CurrentState = Quest.QuestState.Failed;
@@ -519,7 +519,7 @@ public class QuestJournal
 		GameManager.Instance.persistentPlayers.GetPlayerDataFromEntityID(this.OwnerPlayer.entityId).RemovePositionsForQuest(q.QuestCode);
 	}
 
-	// Token: 0x06004B04 RID: 19204 RVA: 0x001D2748 File Offset: 0x001D0948
+	// Token: 0x06004B8A RID: 19338 RVA: 0x001D4F30 File Offset: 0x001D3130
 	public void RemoveQuest(Quest q)
 	{
 		if (this.FindActiveQuest(q.QuestCode) != null)
@@ -543,7 +543,7 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004B05 RID: 19205 RVA: 0x001D283C File Offset: 0x001D0A3C
+	// Token: 0x06004B8B RID: 19339 RVA: 0x001D5024 File Offset: 0x001D3224
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandlePartyRemoveQuest(Quest q)
 	{
@@ -570,7 +570,7 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004B06 RID: 19206 RVA: 0x001D2944 File Offset: 0x001D0B44
+	// Token: 0x06004B8C RID: 19340 RVA: 0x001D512C File Offset: 0x001D332C
 	public void ForceRemoveAllQuests()
 	{
 		for (int i = this.quests.Count - 1; i >= 0; i--)
@@ -579,7 +579,7 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004B07 RID: 19207 RVA: 0x001D297C File Offset: 0x001D0B7C
+	// Token: 0x06004B8D RID: 19341 RVA: 0x001D5164 File Offset: 0x001D3364
 	public void ForceRemoveQuest(Quest quest)
 	{
 		this.quests.Remove(quest);
@@ -588,7 +588,7 @@ public class QuestJournal
 		GameManager.Instance.persistentPlayers.GetPlayerDataFromEntityID(this.OwnerPlayer.entityId).RemovePositionsForQuest(quest.QuestCode);
 	}
 
-	// Token: 0x06004B08 RID: 19208 RVA: 0x001D29D0 File Offset: 0x001D0BD0
+	// Token: 0x06004B8E RID: 19342 RVA: 0x001D51B8 File Offset: 0x001D33B8
 	public void ForceRemoveQuest(string questID)
 	{
 		for (int i = 0; i < this.quests.Count; i++)
@@ -605,13 +605,13 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004B09 RID: 19209 RVA: 0x001D2A5E File Offset: 0x001D0C5E
+	// Token: 0x06004B8F RID: 19343 RVA: 0x001D5246 File Offset: 0x001D3446
 	public void RefreshQuest(Quest q)
 	{
 		this.OwnerPlayer.TriggerQuestChangedEvent(q);
 	}
 
-	// Token: 0x06004B0A RID: 19210 RVA: 0x001D2A6C File Offset: 0x001D0C6C
+	// Token: 0x06004B90 RID: 19344 RVA: 0x001D5254 File Offset: 0x001D3454
 	public void UnHookQuests()
 	{
 		for (int i = 0; i < this.quests.Count; i++)
@@ -620,7 +620,7 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004B0B RID: 19211 RVA: 0x001D2AA0 File Offset: 0x001D0CA0
+	// Token: 0x06004B91 RID: 19345 RVA: 0x001D5288 File Offset: 0x001D3488
 	public void Read(PooledBinaryReader _br)
 	{
 		this.quests.Clear();
@@ -715,7 +715,7 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004B0C RID: 19212 RVA: 0x001D2CF4 File Offset: 0x001D0EF4
+	// Token: 0x06004B92 RID: 19346 RVA: 0x001D54DC File Offset: 0x001D36DC
 	public void AddQuestFactionPoint(byte id, int difficultyTier)
 	{
 		if (difficultyTier == 0)
@@ -732,7 +732,7 @@ public class QuestJournal
 		questFactionPoints[id] += difficultyTier;
 	}
 
-	// Token: 0x06004B0D RID: 19213 RVA: 0x001D2D48 File Offset: 0x001D0F48
+	// Token: 0x06004B93 RID: 19347 RVA: 0x001D5530 File Offset: 0x001D3730
 	public int GetQuestFactionPoints(byte id)
 	{
 		if (this.QuestFactionPoints.ContainsKey(id))
@@ -742,7 +742,7 @@ public class QuestJournal
 		return 0;
 	}
 
-	// Token: 0x06004B0E RID: 19214 RVA: 0x001D2D68 File Offset: 0x001D0F68
+	// Token: 0x06004B94 RID: 19348 RVA: 0x001D5550 File Offset: 0x001D3750
 	public int GetQuestFactionMax(byte id, int tier)
 	{
 		int num = 0;
@@ -753,7 +753,7 @@ public class QuestJournal
 		return num;
 	}
 
-	// Token: 0x06004B0F RID: 19215 RVA: 0x001D2D90 File Offset: 0x001D0F90
+	// Token: 0x06004B95 RID: 19349 RVA: 0x001D5578 File Offset: 0x001D3778
 	public void ResetAddToProgression()
 	{
 		int num = 0;
@@ -769,7 +769,7 @@ public class QuestJournal
 		this.CanAddProgression = questsPerDay == -1 || num < questsPerDay;
 	}
 
-	// Token: 0x06004B10 RID: 19216 RVA: 0x001D2DF4 File Offset: 0x001D0FF4
+	// Token: 0x06004B96 RID: 19350 RVA: 0x001D55DC File Offset: 0x001D37DC
 	public void HandleQuestCompleteToday(Quest q)
 	{
 		int num = 0;
@@ -797,7 +797,7 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004B11 RID: 19217 RVA: 0x001D2E8C File Offset: 0x001D108C
+	// Token: 0x06004B97 RID: 19351 RVA: 0x001D5674 File Offset: 0x001D3874
 	public int GetCurrentFactionTier(byte id, int offset = 0, bool allowExtraTierOverMax = false)
 	{
 		int num = this.GetQuestFactionPoints(id) + offset;
@@ -818,7 +818,7 @@ public class QuestJournal
 		return 1;
 	}
 
-	// Token: 0x06004B12 RID: 19218 RVA: 0x001D2EE8 File Offset: 0x001D10E8
+	// Token: 0x06004B98 RID: 19352 RVA: 0x001D56D0 File Offset: 0x001D38D0
 	public void Write(PooledBinaryWriter _bw)
 	{
 		_bw.Write(5);
@@ -854,7 +854,7 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004B13 RID: 19219 RVA: 0x001D3060 File Offset: 0x001D1260
+	// Token: 0x06004B99 RID: 19353 RVA: 0x001D5848 File Offset: 0x001D3A48
 	public QuestJournal Clone()
 	{
 		QuestJournal questJournal = new QuestJournal();
@@ -886,7 +886,7 @@ public class QuestJournal
 		return questJournal;
 	}
 
-	// Token: 0x06004B14 RID: 19220 RVA: 0x001D31FC File Offset: 0x001D13FC
+	// Token: 0x06004B9A RID: 19354 RVA: 0x001D59E4 File Offset: 0x001D3BE4
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void StartQuests()
 	{
@@ -915,7 +915,7 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004B15 RID: 19221 RVA: 0x001D3310 File Offset: 0x001D1510
+	// Token: 0x06004B9B RID: 19355 RVA: 0x001D5AF8 File Offset: 0x001D3CF8
 	public bool AddSharedQuestEntry(NetPackageSharedQuest.SharedQuestData sqd)
 	{
 		for (int i = 0; i < this.sharedQuestEntries.Count; i++)
@@ -966,7 +966,7 @@ public class QuestJournal
 		return true;
 	}
 
-	// Token: 0x06004B16 RID: 19222 RVA: 0x001D35B3 File Offset: 0x001D17B3
+	// Token: 0x06004B9C RID: 19356 RVA: 0x001D5D9B File Offset: 0x001D3F9B
 	public void RemoveSharedQuestEntry(SharedQuestEntry entry)
 	{
 		if (this.sharedQuestEntries.Contains(entry))
@@ -977,7 +977,7 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004B17 RID: 19223 RVA: 0x001D35E8 File Offset: 0x001D17E8
+	// Token: 0x06004B9D RID: 19357 RVA: 0x001D5DD0 File Offset: 0x001D3FD0
 	public void RemoveSharedQuestEntry(int questCode)
 	{
 		for (int i = this.sharedQuestEntries.Count - 1; i >= 0; i--)
@@ -992,7 +992,7 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004B18 RID: 19224 RVA: 0x001D3658 File Offset: 0x001D1858
+	// Token: 0x06004B9E RID: 19358 RVA: 0x001D5E40 File Offset: 0x001D4040
 	public void RemoveSharedQuestEntryByOwner(int entityID)
 	{
 		for (int i = this.sharedQuestEntries.Count - 1; i >= 0; i--)
@@ -1007,7 +1007,7 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004B19 RID: 19225 RVA: 0x001D36C8 File Offset: 0x001D18C8
+	// Token: 0x06004B9F RID: 19359 RVA: 0x001D5EB0 File Offset: 0x001D40B0
 	public void ClearSharedQuestMarkers()
 	{
 		for (int i = 0; i < this.sharedQuestEntries.Count; i++)
@@ -1016,7 +1016,7 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004B1A RID: 19226 RVA: 0x001D3704 File Offset: 0x001D1904
+	// Token: 0x06004BA0 RID: 19360 RVA: 0x001D5EEC File Offset: 0x001D40EC
 	public Quest GetNextCompletedQuest(Quest lastQuest, int entityId)
 	{
 		for (int i = 0; i < this.quests.Count; i++)
@@ -1040,7 +1040,7 @@ public class QuestJournal
 		return null;
 	}
 
-	// Token: 0x06004B1B RID: 19227 RVA: 0x001D3778 File Offset: 0x001D1978
+	// Token: 0x06004BA1 RID: 19361 RVA: 0x001D5F60 File Offset: 0x001D4160
 	public void SetActivePositionData(Quest.PositionDataTypes dataType, Vector3i position)
 	{
 		for (int i = 0; i < this.quests.Count; i++)
@@ -1052,7 +1052,7 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004B1C RID: 19228 RVA: 0x001D37D4 File Offset: 0x001D19D4
+	// Token: 0x06004BA2 RID: 19362 RVA: 0x001D5FBC File Offset: 0x001D41BC
 	public void HandleRestorePowerReceived(Vector3 prefabPos, List<Vector3i> activateList)
 	{
 		int num = 0;
@@ -1062,7 +1062,7 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004B1D RID: 19229 RVA: 0x001D3834 File Offset: 0x001D1A34
+	// Token: 0x06004BA3 RID: 19363 RVA: 0x001D601C File Offset: 0x001D421C
 	public void HandleRallyMarkerActivation(int questCode, Vector3 prefabPos, bool rallyMarkerActivated, QuestEventManager.POILockoutReasonTypes lockoutReason, ulong extraData = 0UL)
 	{
 		int num = 0;
@@ -1072,7 +1072,7 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004B1E RID: 19230 RVA: 0x001D3898 File Offset: 0x001D1A98
+	// Token: 0x06004BA4 RID: 19364 RVA: 0x001D6080 File Offset: 0x001D4280
 	public bool CheckRallyMarkerActivation()
 	{
 		bool flag = false;
@@ -1096,7 +1096,7 @@ public class QuestJournal
 		return !flag2 || flag;
 	}
 
-	// Token: 0x06004B1F RID: 19231 RVA: 0x001D3938 File Offset: 0x001D1B38
+	// Token: 0x06004BA5 RID: 19365 RVA: 0x001D6120 File Offset: 0x001D4320
 	public Quest HasQuestAtRallyPosition(Vector3 rallyPos, bool mustBeHost = true)
 	{
 		for (int i = 0; i < this.quests.Count; i++)
@@ -1111,7 +1111,7 @@ public class QuestJournal
 		return null;
 	}
 
-	// Token: 0x06004B20 RID: 19232 RVA: 0x001D39B0 File Offset: 0x001D1BB0
+	// Token: 0x06004BA6 RID: 19366 RVA: 0x001D6198 File Offset: 0x001D4398
 	public void RefreshRallyMarkerPositions()
 	{
 		for (int i = 0; i < this.quests.Count; i++)
@@ -1124,7 +1124,7 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x06004B21 RID: 19233 RVA: 0x001D39F8 File Offset: 0x001D1BF8
+	// Token: 0x06004BA7 RID: 19367 RVA: 0x001D61E0 File Offset: 0x001D43E0
 	public bool HasCraftingQuest()
 	{
 		for (int i = 0; i < this.quests.Count; i++)
@@ -1138,7 +1138,7 @@ public class QuestJournal
 		return false;
 	}
 
-	// Token: 0x06004B22 RID: 19234 RVA: 0x001D3A48 File Offset: 0x001D1C48
+	// Token: 0x06004BA8 RID: 19368 RVA: 0x001D6230 File Offset: 0x001D4430
 	public List<string> GetQuestRecipes()
 	{
 		this.questRecipeList.Clear();
@@ -1159,7 +1159,7 @@ public class QuestJournal
 		return this.questRecipeList;
 	}
 
-	// Token: 0x06004B23 RID: 19235 RVA: 0x001D3B28 File Offset: 0x001D1D28
+	// Token: 0x06004BA9 RID: 19369 RVA: 0x001D6310 File Offset: 0x001D4510
 	public T GetObjectiveForQuest<T>(int _questCode) where T : BaseObjective
 	{
 		Quest quest = this.FindActiveQuest(_questCode);
@@ -1176,7 +1176,7 @@ public class QuestJournal
 		return default(T);
 	}
 
-	// Token: 0x06004B24 RID: 19236 RVA: 0x001D3BA4 File Offset: 0x001D1DA4
+	// Token: 0x06004BAA RID: 19370 RVA: 0x001D638C File Offset: 0x001D458C
 	public int GetRewardedSkillPoints()
 	{
 		int num = 0;
@@ -1198,7 +1198,7 @@ public class QuestJournal
 		return num;
 	}
 
-	// Token: 0x06004B25 RID: 19237 RVA: 0x001D3C2C File Offset: 0x001D1E2C
+	// Token: 0x06004BAB RID: 19371 RVA: 0x001D6414 File Offset: 0x001D4614
 	public void Update(int worldDay)
 	{
 		if (this.previousDay != worldDay)
@@ -1214,58 +1214,58 @@ public class QuestJournal
 		}
 	}
 
-	// Token: 0x04003AE9 RID: 15081
+	// Token: 0x04003B7A RID: 15226
 	public EntityPlayerLocal OwnerPlayer;
 
-	// Token: 0x04003AEA RID: 15082
+	// Token: 0x04003B7B RID: 15227
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cCurrentSaveVersion = 5;
 
-	// Token: 0x04003AEB RID: 15083
+	// Token: 0x04003B7C RID: 15228
 	public List<Quest> quests = new List<Quest>();
 
-	// Token: 0x04003AEC RID: 15084
+	// Token: 0x04003B7D RID: 15229
 	public List<SharedQuestEntry> sharedQuestEntries = new List<SharedQuestEntry>();
 
-	// Token: 0x04003AED RID: 15085
+	// Token: 0x04003B7E RID: 15230
 	public List<Vector2> TraderPOIs = new List<Vector2>();
 
-	// Token: 0x04003AEE RID: 15086
+	// Token: 0x04003B7F RID: 15231
 	public List<QuestTraderData> TraderData = new List<QuestTraderData>();
 
-	// Token: 0x04003AEF RID: 15087
+	// Token: 0x04003B80 RID: 15232
 	public Dictionary<int, List<Vector2>> TradersByFaction = new Dictionary<int, List<Vector2>>();
 
-	// Token: 0x04003AF0 RID: 15088
+	// Token: 0x04003B81 RID: 15233
 	public static bool IntroQuestEnabled = true;
 
-	// Token: 0x04003AF1 RID: 15089
+	// Token: 0x04003B82 RID: 15234
 	public static bool BuriedQuestsEnabled = true;
 
-	// Token: 0x04003AF2 RID: 15090
+	// Token: 0x04003B83 RID: 15235
 	public static bool POIQuestsEnabled = true;
 
-	// Token: 0x04003AF3 RID: 15091
+	// Token: 0x04003B84 RID: 15236
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Quest trackedQuest;
 
-	// Token: 0x04003AF4 RID: 15092
+	// Token: 0x04003B85 RID: 15237
 	public Quest ActiveQuest;
 
-	// Token: 0x04003AF5 RID: 15093
+	// Token: 0x04003B86 RID: 15238
 	public Dictionary<byte, int> QuestFactionPoints = new Dictionary<byte, int>();
 
-	// Token: 0x04003AF6 RID: 15094
+	// Token: 0x04003B87 RID: 15239
 	public int GlobalFactionPoints;
 
-	// Token: 0x04003AF7 RID: 15095
+	// Token: 0x04003B88 RID: 15240
 	public bool CanAddProgression;
 
-	// Token: 0x04003AF8 RID: 15096
+	// Token: 0x04003B89 RID: 15241
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<string> questRecipeList = new List<string>();
 
-	// Token: 0x04003AF9 RID: 15097
+	// Token: 0x04003B8A RID: 15242
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int previousDay = -1;
 }

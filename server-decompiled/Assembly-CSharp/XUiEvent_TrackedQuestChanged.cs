@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x02001124 RID: 4388
-// (Invoke) Token: 0x06008A83 RID: 35459
+// Token: 0x0200113D RID: 4413
+// (Invoke) Token: 0x06008B75 RID: 35701
 public delegate void XUiEvent_TrackedQuestChanged();

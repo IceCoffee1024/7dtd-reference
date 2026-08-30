@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001595 RID: 5525
+// Token: 0x020015B0 RID: 5552
 [RequireComponent(typeof(AudioSource))]
 public class vp_HitscanBullet : MonoBehaviour
 {
-	// Token: 0x0600ACCB RID: 44235 RVA: 0x00406EF5 File Offset: 0x004050F5
+	// Token: 0x0600ADC8 RID: 44488 RVA: 0x0040C235 File Offset: 0x0040A435
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
@@ -15,7 +15,7 @@ public class vp_HitscanBullet : MonoBehaviour
 		this.m_Audio = base.GetComponent<AudioSource>();
 	}
 
-	// Token: 0x0600ACCC RID: 44236 RVA: 0x00406F1B File Offset: 0x0040511B
+	// Token: 0x0600ADC9 RID: 44489 RVA: 0x0040C25B File Offset: 0x0040A45B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -23,7 +23,7 @@ public class vp_HitscanBullet : MonoBehaviour
 		this.DoHit();
 	}
 
-	// Token: 0x0600ACCD RID: 44237 RVA: 0x00406F2A File Offset: 0x0040512A
+	// Token: 0x0600ADCA RID: 44490 RVA: 0x0040C26A File Offset: 0x0040A46A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
@@ -34,7 +34,7 @@ public class vp_HitscanBullet : MonoBehaviour
 		this.DoHit();
 	}
 
-	// Token: 0x0600ACCE RID: 44238 RVA: 0x00406F3C File Offset: 0x0040513C
+	// Token: 0x0600ADCB RID: 44491 RVA: 0x0040C27C File Offset: 0x0040A47C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DoHit()
 	{
@@ -115,7 +115,7 @@ public class vp_HitscanBullet : MonoBehaviour
 		vp_Timer.In(1f, new vp_Timer.Callback(this.TryDestroy), null);
 	}
 
-	// Token: 0x0600ACCF RID: 44239 RVA: 0x004072B8 File Offset: 0x004054B8
+	// Token: 0x0600ADCC RID: 44492 RVA: 0x0040C5F8 File Offset: 0x0040A7F8
 	public void SetSource(Transform source)
 	{
 		this.m_Source = source;
@@ -125,14 +125,14 @@ public class vp_HitscanBullet : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600ACD0 RID: 44240 RVA: 0x004072E9 File Offset: 0x004054E9
+	// Token: 0x0600ADCD RID: 44493 RVA: 0x0040C629 File Offset: 0x0040A829
 	[Obsolete("Please use 'SetSource' instead.")]
 	public void SetSender(Transform sender)
 	{
 		this.SetSource(sender);
 	}
 
-	// Token: 0x0600ACD1 RID: 44241 RVA: 0x004072F4 File Offset: 0x004054F4
+	// Token: 0x0600ADCE RID: 44494 RVA: 0x0040C634 File Offset: 0x0040A834
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TryDestroy()
 	{
@@ -149,66 +149,66 @@ public class vp_HitscanBullet : MonoBehaviour
 		vp_Timer.In(1f, new vp_Timer.Callback(this.TryDestroy), null);
 	}
 
-	// Token: 0x04008071 RID: 32881
+	// Token: 0x0400814A RID: 33098
 	public bool IgnoreLocalPlayer = true;
 
-	// Token: 0x04008072 RID: 32882
+	// Token: 0x0400814B RID: 33099
 	public float Range = 100f;
 
-	// Token: 0x04008073 RID: 32883
+	// Token: 0x0400814C RID: 33100
 	public float Force = 100f;
 
-	// Token: 0x04008074 RID: 32884
+	// Token: 0x0400814D RID: 33101
 	public float Damage = 1f;
 
-	// Token: 0x04008075 RID: 32885
+	// Token: 0x0400814E RID: 33102
 	public string DamageMethodName = "Damage";
 
-	// Token: 0x04008076 RID: 32886
+	// Token: 0x0400814F RID: 33103
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_Source;
 
-	// Token: 0x04008077 RID: 32887
+	// Token: 0x04008150 RID: 33104
 	public float m_SparkFactor = 0.5f;
 
-	// Token: 0x04008078 RID: 32888
+	// Token: 0x04008151 RID: 33105
 	public GameObject m_ImpactPrefab;
 
-	// Token: 0x04008079 RID: 32889
+	// Token: 0x04008152 RID: 33106
 	public GameObject m_DustPrefab;
 
-	// Token: 0x0400807A RID: 32890
+	// Token: 0x04008153 RID: 33107
 	public GameObject m_SparkPrefab;
 
-	// Token: 0x0400807B RID: 32891
+	// Token: 0x04008154 RID: 33108
 	public GameObject m_DebrisPrefab;
 
-	// Token: 0x0400807C RID: 32892
+	// Token: 0x04008155 RID: 33109
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AudioSource m_Audio;
 
-	// Token: 0x0400807D RID: 32893
+	// Token: 0x04008156 RID: 33110
 	public List<AudioClip> m_ImpactSounds = new List<AudioClip>();
 
-	// Token: 0x0400807E RID: 32894
+	// Token: 0x04008157 RID: 33111
 	public Vector2 SoundImpactPitch = new Vector2(1f, 1.5f);
 
-	// Token: 0x0400807F RID: 32895
+	// Token: 0x04008158 RID: 33112
 	public int[] NoDecalOnTheseLayers;
 
-	// Token: 0x04008080 RID: 32896
+	// Token: 0x04008159 RID: 33113
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_Transform;
 
-	// Token: 0x04008081 RID: 32897
+	// Token: 0x0400815A RID: 33114
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Renderer m_Renderer;
 
-	// Token: 0x04008082 RID: 32898
+	// Token: 0x0400815B RID: 33115
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_Initialized;

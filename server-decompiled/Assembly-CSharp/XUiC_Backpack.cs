@@ -2,12 +2,12 @@
 using GUI_2;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EAE RID: 3758
+// Token: 0x02000EC3 RID: 3779
 [Preserve]
 public class XUiC_Backpack : XUiC_ItemStackGrid
 {
-	// Token: 0x17000DCE RID: 3534
-	// (get) Token: 0x06007576 RID: 30070 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x17000DE8 RID: 3560
+	// (get) Token: 0x06007617 RID: 30231 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override XUiC_ItemStack.StackLocationTypes StackLocation
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -17,34 +17,34 @@ public class XUiC_Backpack : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x06007577 RID: 30071 RVA: 0x002C1D4D File Offset: 0x002BFF4D
+	// Token: 0x06007618 RID: 30232 RVA: 0x002C5271 File Offset: 0x002C3471
 	public void RefreshBackpackSlots()
 	{
 		this.SetStacks(this.GetSlots());
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007578 RID: 30072 RVA: 0x002C1D62 File Offset: 0x002BFF62
+	// Token: 0x06007619 RID: 30233 RVA: 0x002C5286 File Offset: 0x002C3486
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void PlayerInventory_OnBackpackItemsChanged()
 	{
 		this.RefreshBackpackSlots();
 	}
 
-	// Token: 0x06007579 RID: 30073 RVA: 0x002C1D6A File Offset: 0x002BFF6A
+	// Token: 0x0600761A RID: 30234 RVA: 0x002C528E File Offset: 0x002C348E
 	public override ItemStack[] GetSlots()
 	{
 		return this.xui.PlayerInventory.GetBackpackItemStacks();
 	}
 
-	// Token: 0x0600757A RID: 30074 RVA: 0x002C1D7C File Offset: 0x002BFF7C
+	// Token: 0x0600761B RID: 30235 RVA: 0x002C52A0 File Offset: 0x002C34A0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateBackend(ItemStack[] stackList)
 	{
 		this.xui.PlayerInventory.SetBackpackItemStacks(stackList);
 	}
 
-	// Token: 0x0600757B RID: 30075 RVA: 0x002C1D90 File Offset: 0x002BFF90
+	// Token: 0x0600761C RID: 30236 RVA: 0x002C52B4 File Offset: 0x002C34B4
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -75,7 +75,7 @@ public class XUiC_Backpack : XUiC_ItemStackGrid
 		this.xui.PlayerInventory.OnBackpackItemsChanged += this.PlayerInventory_OnBackpackItemsChanged;
 	}
 
-	// Token: 0x0600757C RID: 30076 RVA: 0x002C1EC7 File Offset: 0x002C00C7
+	// Token: 0x0600761D RID: 30237 RVA: 0x002C53EB File Offset: 0x002C35EB
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -83,7 +83,7 @@ public class XUiC_Backpack : XUiC_ItemStackGrid
 		this.xui.PlayerInventory.OnBackpackItemsChanged -= this.PlayerInventory_OnBackpackItemsChanged;
 	}
 
-	// Token: 0x0600757D RID: 30077 RVA: 0x002C1EFC File Offset: 0x002C00FC
+	// Token: 0x0600761E RID: 30238 RVA: 0x002C5420 File Offset: 0x002C3620
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -103,7 +103,7 @@ public class XUiC_Backpack : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x0600757E RID: 30078 RVA: 0x002C1F88 File Offset: 0x002C0188
+	// Token: 0x0600761F RID: 30239 RVA: 0x002C54AC File Offset: 0x002C36AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateCallouts(bool _holdingItem)
 	{
@@ -122,7 +122,7 @@ public class XUiC_Backpack : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x0600757F RID: 30079 RVA: 0x002C1FF8 File Offset: 0x002C01F8
+	// Token: 0x06007620 RID: 30240 RVA: 0x002C551C File Offset: 0x002C371C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SetStacks(ItemStack[] stackList)
 	{
@@ -162,11 +162,11 @@ public class XUiC_Backpack : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x040056AC RID: 22188
+	// Token: 0x04005751 RID: 22353
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool wasHoldingItem;
 
-	// Token: 0x040056AD RID: 22189
+	// Token: 0x04005752 RID: 22354
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int maxSlotCount;
 }

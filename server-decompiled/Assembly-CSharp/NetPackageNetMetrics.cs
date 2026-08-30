@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000809 RID: 2057
+// Token: 0x02000814 RID: 2068
 [Preserve]
 public class NetPackageNetMetrics : NetPackage
 {
-	// Token: 0x06003C89 RID: 15497 RVA: 0x00181B18 File Offset: 0x0017FD18
+	// Token: 0x06003CE8 RID: 15592 RVA: 0x00183EF0 File Offset: 0x001820F0
 	public static NetPackageNetMetrics SetupClient(string content, string csv)
 	{
 		NetPackageNetMetrics package = NetPackageManager.GetPackage<NetPackageNetMetrics>();
@@ -14,7 +14,7 @@ public class NetPackageNetMetrics : NetPackage
 		return package;
 	}
 
-	// Token: 0x06003C8A RID: 15498 RVA: 0x00181B2D File Offset: 0x0017FD2D
+	// Token: 0x06003CE9 RID: 15593 RVA: 0x00183F05 File Offset: 0x00182105
 	public static NetPackageNetMetrics SetupServer(bool enable, float duration, bool loop)
 	{
 		NetPackageNetMetrics package = NetPackageManager.GetPackage<NetPackageNetMetrics>();
@@ -24,7 +24,7 @@ public class NetPackageNetMetrics : NetPackage
 		return package;
 	}
 
-	// Token: 0x06003C8B RID: 15499 RVA: 0x00181B4C File Offset: 0x0017FD4C
+	// Token: 0x06003CEA RID: 15594 RVA: 0x00183F24 File Offset: 0x00182124
 	public override void read(PooledBinaryReader _reader)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -38,7 +38,7 @@ public class NetPackageNetMetrics : NetPackage
 		this.loop = _reader.ReadBoolean();
 	}
 
-	// Token: 0x06003C8C RID: 15500 RVA: 0x00181BA4 File Offset: 0x0017FDA4
+	// Token: 0x06003CEB RID: 15595 RVA: 0x00183F7C File Offset: 0x0018217C
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -53,7 +53,7 @@ public class NetPackageNetMetrics : NetPackage
 		_writer.Write(this.csv);
 	}
 
-	// Token: 0x06003C8D RID: 15501 RVA: 0x00181C04 File Offset: 0x0017FE04
+	// Token: 0x06003CEC RID: 15596 RVA: 0x00183FDC File Offset: 0x001821DC
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -71,24 +71,24 @@ public class NetPackageNetMetrics : NetPackage
 		}
 	}
 
-	// Token: 0x06003C8E RID: 15502 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06003CED RID: 15597 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override int GetLength()
 	{
 		return 0;
 	}
 
-	// Token: 0x040030E8 RID: 12520
+	// Token: 0x04003167 RID: 12647
 	public bool enable;
 
-	// Token: 0x040030E9 RID: 12521
+	// Token: 0x04003168 RID: 12648
 	public float duration;
 
-	// Token: 0x040030EA RID: 12522
+	// Token: 0x04003169 RID: 12649
 	public bool loop;
 
-	// Token: 0x040030EB RID: 12523
+	// Token: 0x0400316A RID: 12650
 	public string content;
 
-	// Token: 0x040030EC RID: 12524
+	// Token: 0x0400316B RID: 12651
 	public string csv;
 }

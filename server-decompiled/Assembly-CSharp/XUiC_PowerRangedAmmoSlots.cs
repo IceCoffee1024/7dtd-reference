@@ -5,13 +5,13 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F9D RID: 3997
+// Token: 0x02000FB6 RID: 4022
 [Preserve]
 public class XUiC_PowerRangedAmmoSlots : XUiC_ItemStackGrid
 {
-	// Token: 0x17000E9A RID: 3738
-	// (get) Token: 0x06007E16 RID: 32278 RVA: 0x002FE626 File Offset: 0x002FC826
-	// (set) Token: 0x06007E17 RID: 32279 RVA: 0x002FE62E File Offset: 0x002FC82E
+	// Token: 0x17000ED3 RID: 3795
+	// (get) Token: 0x06007F08 RID: 32520 RVA: 0x00302DFA File Offset: 0x00300FFA
+	// (set) Token: 0x06007F09 RID: 32521 RVA: 0x00302E02 File Offset: 0x00301002
 	public TileEntityPoweredRangedTrap TileEntity
 	{
 		get
@@ -25,7 +25,7 @@ public class XUiC_PowerRangedAmmoSlots : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x06007E18 RID: 32280 RVA: 0x002FE648 File Offset: 0x002FC848
+	// Token: 0x06007F0A RID: 32522 RVA: 0x00302E1C File Offset: 0x0030101C
 	public override void HandleSlotChangedEvent(int _slotNumber, ItemStack _stack)
 	{
 		base.HandleSlotChangedEvent(_slotNumber, _stack);
@@ -33,7 +33,7 @@ public class XUiC_PowerRangedAmmoSlots : XUiC_ItemStackGrid
 		this.tileEntity.SetModified();
 	}
 
-	// Token: 0x06007E19 RID: 32281 RVA: 0x002FE668 File Offset: 0x002FC868
+	// Token: 0x06007F0B RID: 32523 RVA: 0x00302E3C File Offset: 0x0030103C
 	public override void Init()
 	{
 		base.Init();
@@ -55,7 +55,7 @@ public class XUiC_PowerRangedAmmoSlots : XUiC_ItemStackGrid
 		this.turnOn = Localization.Get("xuiLockAmmo", false, null);
 	}
 
-	// Token: 0x06007E1A RID: 32282 RVA: 0x002FE754 File Offset: 0x002FC954
+	// Token: 0x06007F0C RID: 32524 RVA: 0x00302F28 File Offset: 0x00301128
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnOn_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -79,7 +79,7 @@ public class XUiC_PowerRangedAmmoSlots : XUiC_ItemStackGrid
 		this.RefreshIsLocked(this.tileEntity.IsLocked);
 	}
 
-	// Token: 0x06007E1B RID: 32283 RVA: 0x002FE80C File Offset: 0x002FCA0C
+	// Token: 0x06007F0D RID: 32525 RVA: 0x00302FE0 File Offset: 0x003011E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setRequirements()
 	{
@@ -95,8 +95,8 @@ public class XUiC_PowerRangedAmmoSlots : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x17000E9B RID: 3739
-	// (get) Token: 0x06007E1C RID: 32284 RVA: 0x00081148 File Offset: 0x0007F348
+	// Token: 0x17000ED4 RID: 3796
+	// (get) Token: 0x06007F0E RID: 32526 RVA: 0x000817FC File Offset: 0x0007F9FC
 	public override XUiC_ItemStack.StackLocationTypes StackLocation
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -106,19 +106,19 @@ public class XUiC_PowerRangedAmmoSlots : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x17000E9C RID: 3740
-	// (get) Token: 0x06007E1D RID: 32285 RVA: 0x002FE852 File Offset: 0x002FCA52
-	// (set) Token: 0x06007E1E RID: 32286 RVA: 0x002FE85A File Offset: 0x002FCA5A
+	// Token: 0x17000ED5 RID: 3797
+	// (get) Token: 0x06007F0F RID: 32527 RVA: 0x00303026 File Offset: 0x00301226
+	// (set) Token: 0x06007F10 RID: 32528 RVA: 0x0030302E File Offset: 0x0030122E
 	public XUiC_PowerRangedTrapWindowGroup Owner { get; set; }
 
-	// Token: 0x06007E1F RID: 32287 RVA: 0x002FE863 File Offset: 0x002FCA63
+	// Token: 0x06007F11 RID: 32529 RVA: 0x00303037 File Offset: 0x00301237
 	public virtual void SetSlots(ItemStack[] _stacks)
 	{
 		this.items = _stacks;
 		base.SetStacks(_stacks);
 	}
 
-	// Token: 0x06007E20 RID: 32288 RVA: 0x002FE874 File Offset: 0x002FCA74
+	// Token: 0x06007F12 RID: 32530 RVA: 0x00303048 File Offset: 0x00301248
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -136,7 +136,7 @@ public class XUiC_PowerRangedAmmoSlots : XUiC_ItemStackGrid
 		this.xui.CalloutWindow.EnableCallouts(XUiC_GamepadCalloutWindow.CalloutType.MenuShortcuts, 0f);
 	}
 
-	// Token: 0x06007E21 RID: 32289 RVA: 0x002FE918 File Offset: 0x002FCB18
+	// Token: 0x06007F13 RID: 32531 RVA: 0x003030EC File Offset: 0x003012EC
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -157,7 +157,7 @@ public class XUiC_PowerRangedAmmoSlots : XUiC_ItemStackGrid
 		this.xui.CalloutWindow.ClearCallouts(XUiC_GamepadCalloutWindow.CalloutType.MenuShortcuts);
 	}
 
-	// Token: 0x06007E22 RID: 32290 RVA: 0x002FE9AC File Offset: 0x002FCBAC
+	// Token: 0x06007F14 RID: 32532 RVA: 0x00303180 File Offset: 0x00301380
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RefreshIsLocked(bool _isOn)
 	{
@@ -190,7 +190,7 @@ public class XUiC_PowerRangedAmmoSlots : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x06007E23 RID: 32291 RVA: 0x002FEA64 File Offset: 0x002FCC64
+	// Token: 0x06007F15 RID: 32533 RVA: 0x00303238 File Offset: 0x00301438
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void SetLocked(bool _isOn)
 	{
@@ -205,7 +205,7 @@ public class XUiC_PowerRangedAmmoSlots : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x06007E24 RID: 32292 RVA: 0x002FEA99 File Offset: 0x002FCC99
+	// Token: 0x06007F16 RID: 32534 RVA: 0x0030326D File Offset: 0x0030146D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateBackend(ItemStack[] _stackList)
 	{
@@ -215,7 +215,7 @@ public class XUiC_PowerRangedAmmoSlots : XUiC_ItemStackGrid
 		this.windowGroup.Controller.SetAllChildrenDirty();
 	}
 
-	// Token: 0x06007E25 RID: 32293 RVA: 0x002FEACC File Offset: 0x002FCCCC
+	// Token: 0x06007F17 RID: 32535 RVA: 0x003032A0 File Offset: 0x003014A0
 	public override void Update(float _dt)
 	{
 		if (GameManager.Instance == null && GameManager.Instance.World == null)
@@ -243,7 +243,7 @@ public class XUiC_PowerRangedAmmoSlots : XUiC_ItemStackGrid
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06007E26 RID: 32294 RVA: 0x002FEB98 File Offset: 0x002FCD98
+	// Token: 0x06007F18 RID: 32536 RVA: 0x0030336C File Offset: 0x0030156C
 	public bool TryAddItemToSlot(ItemClass _itemClass, ItemStack _itemStack)
 	{
 		XUiC_ItemStack[] itemControllers = this.itemControllers;
@@ -258,43 +258,43 @@ public class XUiC_PowerRangedAmmoSlots : XUiC_ItemStackGrid
 		return _itemStack.count == 0;
 	}
 
-	// Token: 0x04005D72 RID: 23922
+	// Token: 0x04005E39 RID: 24121
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController btnOn;
 
-	// Token: 0x04005D73 RID: 23923
+	// Token: 0x04005E3A RID: 24122
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button btnOn_Background;
 
-	// Token: 0x04005D74 RID: 23924
+	// Token: 0x04005E3B RID: 24123
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label lblOnOff;
 
-	// Token: 0x04005D75 RID: 23925
+	// Token: 0x04005E3C RID: 24124
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite sprOnOff;
 
-	// Token: 0x04005D76 RID: 23926
+	// Token: 0x04005E3D RID: 24125
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Color32 onColor = new Color32(250, byte.MaxValue, 163, byte.MaxValue);
 
-	// Token: 0x04005D77 RID: 23927
+	// Token: 0x04005E3E RID: 24126
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Color32 offColor = Color.white;
 
-	// Token: 0x04005D78 RID: 23928
+	// Token: 0x04005E3F RID: 24127
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool lastLocked;
 
-	// Token: 0x04005D79 RID: 23929
+	// Token: 0x04005E40 RID: 24128
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string turnOff;
 
-	// Token: 0x04005D7A RID: 23930
+	// Token: 0x04005E41 RID: 24129
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string turnOn;
 
-	// Token: 0x04005D7B RID: 23931
+	// Token: 0x04005E42 RID: 24130
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileEntityPoweredRangedTrap tileEntity;
 }

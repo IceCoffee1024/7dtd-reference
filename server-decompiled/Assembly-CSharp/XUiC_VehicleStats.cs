@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200109C RID: 4252
+// Token: 0x020010B5 RID: 4277
 [Preserve]
 public class XUiC_VehicleStats : XUiController
 {
-	// Token: 0x17000FB0 RID: 4016
-	// (get) Token: 0x0600876B RID: 34667 RVA: 0x0033CB63 File Offset: 0x0033AD63
-	// (set) Token: 0x0600876C RID: 34668 RVA: 0x0033CB6B File Offset: 0x0033AD6B
+	// Token: 0x17000FE9 RID: 4073
+	// (get) Token: 0x0600885D RID: 34909 RVA: 0x0034138B File Offset: 0x0033F58B
+	// (set) Token: 0x0600885E RID: 34910 RVA: 0x00341393 File Offset: 0x0033F593
 	public EntityVehicle Vehicle
 	{
 		get
@@ -21,7 +21,7 @@ public class XUiC_VehicleStats : XUiController
 		}
 	}
 
-	// Token: 0x0600876D RID: 34669 RVA: 0x0033CB7C File Offset: 0x0033AD7C
+	// Token: 0x0600885F RID: 34911 RVA: 0x003413A4 File Offset: 0x0033F5A4
 	public override void Init()
 	{
 		base.Init();
@@ -35,7 +35,7 @@ public class XUiC_VehicleStats : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x0600876E RID: 34670 RVA: 0x0033CC45 File Offset: 0x0033AE45
+	// Token: 0x06008860 RID: 34912 RVA: 0x0034146D File Offset: 0x0033F66D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnRefuel_OnHover(XUiController _sender, bool _isOver)
 	{
@@ -43,7 +43,7 @@ public class XUiC_VehicleStats : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x0600876F RID: 34671 RVA: 0x0033CC54 File Offset: 0x0033AE54
+	// Token: 0x06008861 RID: 34913 RVA: 0x0034147C File Offset: 0x0033F67C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnRefuel_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -53,7 +53,7 @@ public class XUiC_VehicleStats : XUiController
 		}
 	}
 
-	// Token: 0x06008770 RID: 34672 RVA: 0x0033CC84 File Offset: 0x0033AE84
+	// Token: 0x06008862 RID: 34914 RVA: 0x003414AC File Offset: 0x0033F6AC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -226,7 +226,7 @@ public class XUiC_VehicleStats : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x06008771 RID: 34673 RVA: 0x0033D0A8 File Offset: 0x0033B2A8
+	// Token: 0x06008863 RID: 34915 RVA: 0x003418D0 File Offset: 0x0033FAD0
 	public override void Update(float _dt)
 	{
 		if (GameManager.Instance == null && GameManager.Instance.World == null)
@@ -240,7 +240,7 @@ public class XUiC_VehicleStats : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x06008772 RID: 34674 RVA: 0x0033D0DC File Offset: 0x0033B2DC
+	// Token: 0x06008864 RID: 34916 RVA: 0x00341904 File Offset: 0x0033FB04
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -250,51 +250,51 @@ public class XUiC_VehicleStats : XUiController
 		}
 	}
 
-	// Token: 0x040064D0 RID: 25808
+	// Token: 0x04006597 RID: 26007
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool RefuelButtonHovered;
 
-	// Token: 0x040064D1 RID: 25809
+	// Token: 0x04006598 RID: 26008
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite sprFuelFill;
 
-	// Token: 0x040064D2 RID: 25810
+	// Token: 0x04006599 RID: 26009
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite sprFillPotential;
 
-	// Token: 0x040064D3 RID: 25811
+	// Token: 0x0400659A RID: 26010
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController btnRefuel;
 
-	// Token: 0x040064D4 RID: 25812
+	// Token: 0x0400659B RID: 26011
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button btnRefuel_Background;
 
-	// Token: 0x040064D5 RID: 25813
+	// Token: 0x0400659C RID: 26012
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityVehicle vehicle;
 
-	// Token: 0x040064D6 RID: 25814
+	// Token: 0x0400659D RID: 26013
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt speedFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x040064D7 RID: 25815
+	// Token: 0x0400659E RID: 26014
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt protectionFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x040064D8 RID: 25816
+	// Token: 0x0400659F RID: 26015
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt fuelFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x040064D9 RID: 25817
+	// Token: 0x040065A0 RID: 26016
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt passengersFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x040064DA RID: 25818
+	// Token: 0x040065A1 RID: 26017
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterFloat potentialFuelFillFormatter = new CachedStringFormatterFloat(null);
 
-	// Token: 0x040064DB RID: 25819
+	// Token: 0x040065A2 RID: 26018
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterFloat fuelFillFormatter = new CachedStringFormatterFloat(null);
 }

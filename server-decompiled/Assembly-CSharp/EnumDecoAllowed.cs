@@ -1,21 +1,21 @@
 ﻿using System;
 
-// Token: 0x02000C0E RID: 3086
+// Token: 0x02000C20 RID: 3104
 [Flags]
 public enum EnumDecoAllowed : byte
 {
-	// Token: 0x040048FE RID: 18686
+	// Token: 0x0400499B RID: 18843
 	Everything = 0,
-	// Token: 0x040048FF RID: 18687
+	// Token: 0x0400499C RID: 18844
 	SlopeLo = 1,
-	// Token: 0x04004900 RID: 18688
+	// Token: 0x0400499D RID: 18845
 	SlopeHi = 2,
-	// Token: 0x04004901 RID: 18689
+	// Token: 0x0400499E RID: 18846
 	SizeLo = 4,
-	// Token: 0x04004902 RID: 18690
+	// Token: 0x0400499F RID: 18847
 	SizeHi = 8,
-	// Token: 0x04004903 RID: 18691
+	// Token: 0x040049A0 RID: 18848
 	StreetOnly = 16,
-	// Token: 0x04004904 RID: 18692
+	// Token: 0x040049A1 RID: 18849
 	Nothing = 255
 }

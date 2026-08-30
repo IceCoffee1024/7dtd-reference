@@ -3,11 +3,11 @@ using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000620 RID: 1568
+// Token: 0x02000629 RID: 1577
 [Preserve]
 public class LootEntryRequirementRandomRoll : BaseOperationLootEntryRequirement
 {
-	// Token: 0x060032CB RID: 13003 RVA: 0x0014A4F6 File Offset: 0x001486F6
+	// Token: 0x0600331E RID: 13086 RVA: 0x0014C612 File Offset: 0x0014A812
 	public override void Init(XElement e)
 	{
 		base.Init(e);
@@ -15,7 +15,7 @@ public class LootEntryRequirementRandomRoll : BaseOperationLootEntryRequirement
 		e.ParseAttribute("value", ref this.valueText);
 	}
 
-	// Token: 0x060032CC RID: 13004 RVA: 0x0014A530 File Offset: 0x00148730
+	// Token: 0x0600331F RID: 13087 RVA: 0x0014C64C File Offset: 0x0014A84C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override float LeftSide(EntityPlayer player)
 	{
@@ -23,22 +23,22 @@ public class LootEntryRequirementRandomRoll : BaseOperationLootEntryRequirement
 		return Mathf.Lerp(this.minMax.x, this.minMax.y, randomFloat);
 	}
 
-	// Token: 0x060032CD RID: 13005 RVA: 0x0014A569 File Offset: 0x00148769
+	// Token: 0x06003320 RID: 13088 RVA: 0x0014C685 File Offset: 0x0014A885
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override float RightSide(EntityPlayer player)
 	{
 		return GameEventManager.GetFloatValue(player, this.valueText, 0f);
 	}
 
-	// Token: 0x0400286B RID: 10347
+	// Token: 0x040028DE RID: 10462
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector2 minMax;
 
-	// Token: 0x0400286C RID: 10348
+	// Token: 0x040028DF RID: 10463
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public GameRandom rand;
 
-	// Token: 0x0400286D RID: 10349
+	// Token: 0x040028E0 RID: 10464
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string valueText;
 }

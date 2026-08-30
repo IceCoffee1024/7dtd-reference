@@ -2,17 +2,17 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006D0 RID: 1744
+// Token: 0x020006DA RID: 1754
 [Preserve]
 public class MinEventActionLogMessage : MinEventActionBase
 {
-	// Token: 0x060035E2 RID: 13794 RVA: 0x0016426E File Offset: 0x0016246E
+	// Token: 0x06003638 RID: 13880 RVA: 0x00166446 File Offset: 0x00164646
 	public override void Execute(MinEventParams _params)
 	{
 		Log.Out("MinEventLogMessage: {0}", new object[] { this.message });
 	}
 
-	// Token: 0x060035E3 RID: 13795 RVA: 0x0016428C File Offset: 0x0016248C
+	// Token: 0x06003639 RID: 13881 RVA: 0x00166464 File Offset: 0x00164664
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -24,7 +24,7 @@ public class MinEventActionLogMessage : MinEventActionBase
 		return flag;
 	}
 
-	// Token: 0x04002B58 RID: 11096
+	// Token: 0x04002BCC RID: 11212
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string message;
 }

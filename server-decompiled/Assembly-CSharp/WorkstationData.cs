@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x020002DB RID: 731
+// Token: 0x020002DF RID: 735
 public class WorkstationData
 {
-	// Token: 0x06001530 RID: 5424 RVA: 0x0007F834 File Offset: 0x0007DA34
+	// Token: 0x06001543 RID: 5443 RVA: 0x0007FEF0 File Offset: 0x0007E0F0
 	public WorkstationData(string blockName, DynamicProperties properties)
 	{
 		if (properties.Values.ContainsKey("WorkstationName"))
@@ -78,30 +78,30 @@ public class WorkstationData
 		this.WorkstationWindow = "";
 	}
 
-	// Token: 0x04000E30 RID: 3632
+	// Token: 0x04000E41 RID: 3649
 	public string WorkstationName;
 
-	// Token: 0x04000E31 RID: 3633
+	// Token: 0x04000E42 RID: 3650
 	public string WorkstationIcon;
 
-	// Token: 0x04000E32 RID: 3634
+	// Token: 0x04000E43 RID: 3651
 	public string CraftIcon;
 
-	// Token: 0x04000E33 RID: 3635
+	// Token: 0x04000E44 RID: 3652
 	public string CraftActionName = "";
 
-	// Token: 0x04000E34 RID: 3636
+	// Token: 0x04000E45 RID: 3653
 	public string WorkstationWindow = "";
 
-	// Token: 0x04000E35 RID: 3637
+	// Token: 0x04000E46 RID: 3654
 	public string OpenSound;
 
-	// Token: 0x04000E36 RID: 3638
+	// Token: 0x04000E47 RID: 3655
 	public string CloseSound;
 
-	// Token: 0x04000E37 RID: 3639
+	// Token: 0x04000E48 RID: 3656
 	public string CraftSound;
 
-	// Token: 0x04000E38 RID: 3640
+	// Token: 0x04000E49 RID: 3657
 	public string CraftCompleteSound;
 }

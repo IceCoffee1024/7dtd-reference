@@ -5,16 +5,16 @@ using UnityEngine;
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x020016DA RID: 5850
+	// Token: 0x02001700 RID: 5888
 	public class WildernessPathPlanner
 	{
-		// Token: 0x0600B5FD RID: 46589 RVA: 0x0043BB95 File Offset: 0x00439D95
+		// Token: 0x0600B780 RID: 46976 RVA: 0x0044190D File Offset: 0x0043FB0D
 		public WildernessPathPlanner(WorldBuilder _worldBuilder)
 		{
 			this.worldBuilder = _worldBuilder;
 		}
 
-		// Token: 0x0600B5FE RID: 46590 RVA: 0x0043BBA4 File Offset: 0x00439DA4
+		// Token: 0x0600B781 RID: 46977 RVA: 0x0044191C File Offset: 0x0043FB1C
 		public void Plan(int worldSeed)
 		{
 			MicroStopwatch microStopwatch = new MicroStopwatch(true);
@@ -131,7 +131,7 @@ namespace WorldGenerationEngineFinal
 			Log.Out(string.Format("WildernessPathPlanner Plan #{0} in {1}, r={2:x}", wildernessPathInfos.Count, (float)microStopwatch.ElapsedMilliseconds * 0.001f, Rand.Instance.PeekSample()));
 		}
 
-		// Token: 0x0600B5FF RID: 46591 RVA: 0x0043C064 File Offset: 0x0043A264
+		// Token: 0x0600B782 RID: 46978 RVA: 0x00441DDC File Offset: 0x0043FFDC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool FindShortestPathPointToPathTo(NativeList<Vector2> _path, Vector2 _startPos, out Vector2 _destPoint, out int _cost)
 		{
@@ -151,7 +151,7 @@ namespace WorldGenerationEngineFinal
 			return false;
 		}
 
-		// Token: 0x0600B600 RID: 46592 RVA: 0x0043C0DC File Offset: 0x0043A2DC
+		// Token: 0x0600B783 RID: 46979 RVA: 0x00441E54 File Offset: 0x00440054
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void createTraderSpawnIfAble(NativeList<Vector2> pathPoints)
 		{
@@ -206,14 +206,14 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B601 RID: 46593 RVA: 0x0043C24C File Offset: 0x0043A44C
+		// Token: 0x0600B784 RID: 46980 RVA: 0x00441FC4 File Offset: 0x004401C4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int getMaxTraderDistance()
 		{
 			return (int)(0.1f * (float)this.worldBuilder.WorldSize);
 		}
 
-		// Token: 0x04008815 RID: 34837
+		// Token: 0x04008931 RID: 35121
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly WorldBuilder worldBuilder;
 	}

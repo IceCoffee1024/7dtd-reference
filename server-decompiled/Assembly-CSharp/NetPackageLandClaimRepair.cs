@@ -2,11 +2,11 @@
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x020007A0 RID: 1952
+// Token: 0x020007AA RID: 1962
 [Preserve]
 public class NetPackageLandClaimRepair : NetPackage
 {
-	// Token: 0x06003A01 RID: 14849 RVA: 0x00179831 File Offset: 0x00177A31
+	// Token: 0x06003A59 RID: 14937 RVA: 0x0017BAB1 File Offset: 0x00179CB1
 	public NetPackageLandClaimRepair Setup(Vector3i _blockPosition, bool _beginRepair)
 	{
 		this.blockPosition = _blockPosition;
@@ -14,7 +14,7 @@ public class NetPackageLandClaimRepair : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003A02 RID: 14850 RVA: 0x00179844 File Offset: 0x00177A44
+	// Token: 0x06003A5A RID: 14938 RVA: 0x0017BAC4 File Offset: 0x00179CC4
 	public override void read(PooledBinaryReader _br)
 	{
 		long num = _br.ReadInt64();
@@ -24,7 +24,7 @@ public class NetPackageLandClaimRepair : NetPackage
 		this.beginRepair = _br.ReadBoolean();
 	}
 
-	// Token: 0x06003A03 RID: 14851 RVA: 0x00179884 File Offset: 0x00177A84
+	// Token: 0x06003A5B RID: 14939 RVA: 0x0017BB04 File Offset: 0x00179D04
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -34,7 +34,7 @@ public class NetPackageLandClaimRepair : NetPackage
 		_bw.Write(this.beginRepair);
 	}
 
-	// Token: 0x06003A04 RID: 14852 RVA: 0x001798DC File Offset: 0x00177ADC
+	// Token: 0x06003A5C RID: 14940 RVA: 0x0017BB5C File Offset: 0x00179D5C
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		TEFeatureAreaRepair selfOrFeature = _world.GetTileEntity(this.blockPosition).GetSelfOrFeature<TEFeatureAreaRepair>();
@@ -55,17 +55,17 @@ public class NetPackageLandClaimRepair : NetPackage
 		}
 	}
 
-	// Token: 0x06003A05 RID: 14853 RVA: 0x0004A832 File Offset: 0x00048A32
+	// Token: 0x06003A5D RID: 14941 RVA: 0x0004AC4A File Offset: 0x00048E4A
 	public override int GetLength()
 	{
 		return 25;
 	}
 
-	// Token: 0x04002F54 RID: 12116
+	// Token: 0x04002FCD RID: 12237
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i blockPosition;
 
-	// Token: 0x04002F55 RID: 12117
+	// Token: 0x04002FCE RID: 12238
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool beginRepair;
 }

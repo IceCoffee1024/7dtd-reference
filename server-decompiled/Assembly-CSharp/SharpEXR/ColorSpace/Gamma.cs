@@ -2,22 +2,22 @@
 
 namespace SharpEXR.ColorSpace
 {
-	// Token: 0x020016B5 RID: 5813
+	// Token: 0x020016DB RID: 5851
 	public static class Gamma
 	{
-		// Token: 0x0600B580 RID: 46464 RVA: 0x00438741 File Offset: 0x00436941
+		// Token: 0x0600B703 RID: 46851 RVA: 0x0043E4B9 File Offset: 0x0043C6B9
 		public static float Expand(float nonlinear)
 		{
 			return (float)Math.Pow((double)nonlinear, 2.2);
 		}
 
-		// Token: 0x0600B581 RID: 46465 RVA: 0x00438754 File Offset: 0x00436954
+		// Token: 0x0600B704 RID: 46852 RVA: 0x0043E4CC File Offset: 0x0043C6CC
 		public static float Compress(float linear)
 		{
 			return (float)Math.Pow((double)linear, 0.45454545454545453);
 		}
 
-		// Token: 0x0600B582 RID: 46466 RVA: 0x00438767 File Offset: 0x00436967
+		// Token: 0x0600B705 RID: 46853 RVA: 0x0043E4DF File Offset: 0x0043C6DF
 		public static void Expand(ref tVec3 pColor)
 		{
 			pColor.X = Gamma.Expand(pColor.X);
@@ -25,7 +25,7 @@ namespace SharpEXR.ColorSpace
 			pColor.Z = Gamma.Expand(pColor.Z);
 		}
 
-		// Token: 0x0600B583 RID: 46467 RVA: 0x0043879C File Offset: 0x0043699C
+		// Token: 0x0600B706 RID: 46854 RVA: 0x0043E514 File Offset: 0x0043C714
 		public static void Compress(ref tVec3 pColor)
 		{
 			pColor.X = Gamma.Compress(pColor.X);
@@ -33,7 +33,7 @@ namespace SharpEXR.ColorSpace
 			pColor.Z = Gamma.Compress(pColor.Z);
 		}
 
-		// Token: 0x0600B584 RID: 46468 RVA: 0x004387D1 File Offset: 0x004369D1
+		// Token: 0x0600B707 RID: 46855 RVA: 0x0043E549 File Offset: 0x0043C749
 		public static void Expand(ref float r, ref float g, ref float b)
 		{
 			r = Gamma.Expand(r);
@@ -41,7 +41,7 @@ namespace SharpEXR.ColorSpace
 			b = Gamma.Expand(b);
 		}
 
-		// Token: 0x0600B585 RID: 46469 RVA: 0x004387EE File Offset: 0x004369EE
+		// Token: 0x0600B708 RID: 46856 RVA: 0x0043E566 File Offset: 0x0043C766
 		public static void Compress(ref float r, ref float g, ref float b)
 		{
 			r = Gamma.Compress(r);
@@ -49,7 +49,7 @@ namespace SharpEXR.ColorSpace
 			b = Gamma.Compress(b);
 		}
 
-		// Token: 0x0600B586 RID: 46470 RVA: 0x0043880C File Offset: 0x00436A0C
+		// Token: 0x0600B709 RID: 46857 RVA: 0x0043E584 File Offset: 0x0043C784
 		public static tVec3 Expand(float r, float g, float b)
 		{
 			tVec3 tVec = new tVec3(r, g, b);
@@ -57,7 +57,7 @@ namespace SharpEXR.ColorSpace
 			return tVec;
 		}
 
-		// Token: 0x0600B587 RID: 46471 RVA: 0x0043882C File Offset: 0x00436A2C
+		// Token: 0x0600B70A RID: 46858 RVA: 0x0043E5A4 File Offset: 0x0043C7A4
 		public static tVec3 Compress(float r, float g, float b)
 		{
 			tVec3 tVec = new tVec3(r, g, b);
@@ -65,7 +65,7 @@ namespace SharpEXR.ColorSpace
 			return tVec;
 		}
 
-		// Token: 0x0600B588 RID: 46472 RVA: 0x0043884B File Offset: 0x00436A4B
+		// Token: 0x0600B70B RID: 46859 RVA: 0x0043E5C3 File Offset: 0x0043C7C3
 		public static float Expand_sRGB(float nonlinear)
 		{
 			if (nonlinear > 0.04045f)
@@ -75,7 +75,7 @@ namespace SharpEXR.ColorSpace
 			return nonlinear / 12.92f;
 		}
 
-		// Token: 0x0600B589 RID: 46473 RVA: 0x0043887A File Offset: 0x00436A7A
+		// Token: 0x0600B70C RID: 46860 RVA: 0x0043E5F2 File Offset: 0x0043C7F2
 		public static float Compress_sRGB(float linear)
 		{
 			if (linear > 0.0031308f)
@@ -85,7 +85,7 @@ namespace SharpEXR.ColorSpace
 			return 12.92f * linear;
 		}
 
-		// Token: 0x0600B58A RID: 46474 RVA: 0x004388A9 File Offset: 0x00436AA9
+		// Token: 0x0600B70D RID: 46861 RVA: 0x0043E621 File Offset: 0x0043C821
 		public static void Expand_sRGB(ref tVec3 pColor)
 		{
 			pColor.X = Gamma.Expand_sRGB(pColor.X);
@@ -93,7 +93,7 @@ namespace SharpEXR.ColorSpace
 			pColor.Z = Gamma.Expand_sRGB(pColor.Z);
 		}
 
-		// Token: 0x0600B58B RID: 46475 RVA: 0x004388DE File Offset: 0x00436ADE
+		// Token: 0x0600B70E RID: 46862 RVA: 0x0043E656 File Offset: 0x0043C856
 		public static void Compress_sRGB(ref tVec3 pColor)
 		{
 			pColor.X = Gamma.Compress_sRGB(pColor.X);
@@ -101,7 +101,7 @@ namespace SharpEXR.ColorSpace
 			pColor.Z = Gamma.Compress_sRGB(pColor.Z);
 		}
 
-		// Token: 0x0600B58C RID: 46476 RVA: 0x00438913 File Offset: 0x00436B13
+		// Token: 0x0600B70F RID: 46863 RVA: 0x0043E68B File Offset: 0x0043C88B
 		public static void Expand_sRGB(ref float r, ref float g, ref float b)
 		{
 			r = Gamma.Expand_sRGB(r);
@@ -109,7 +109,7 @@ namespace SharpEXR.ColorSpace
 			b = Gamma.Expand_sRGB(b);
 		}
 
-		// Token: 0x0600B58D RID: 46477 RVA: 0x00438930 File Offset: 0x00436B30
+		// Token: 0x0600B710 RID: 46864 RVA: 0x0043E6A8 File Offset: 0x0043C8A8
 		public static void Compress_sRGB(ref float r, ref float g, ref float b)
 		{
 			r = Gamma.Compress_sRGB(r);
@@ -117,7 +117,7 @@ namespace SharpEXR.ColorSpace
 			b = Gamma.Compress_sRGB(b);
 		}
 
-		// Token: 0x0600B58E RID: 46478 RVA: 0x00438950 File Offset: 0x00436B50
+		// Token: 0x0600B711 RID: 46865 RVA: 0x0043E6C8 File Offset: 0x0043C8C8
 		public static tVec3 Expand_sRGB(float r, float g, float b)
 		{
 			tVec3 tVec = new tVec3(r, g, b);
@@ -125,7 +125,7 @@ namespace SharpEXR.ColorSpace
 			return tVec;
 		}
 
-		// Token: 0x0600B58F RID: 46479 RVA: 0x00438970 File Offset: 0x00436B70
+		// Token: 0x0600B712 RID: 46866 RVA: 0x0043E6E8 File Offset: 0x0043C8E8
 		public static tVec3 Compress_sRGB(float r, float g, float b)
 		{
 			tVec3 tVec = new tVec3(r, g, b);

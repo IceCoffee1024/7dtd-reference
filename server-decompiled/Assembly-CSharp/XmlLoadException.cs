@@ -2,22 +2,22 @@
 using System.Xml;
 using System.Xml.Linq;
 
-// Token: 0x020014DE RID: 5342
+// Token: 0x020014F9 RID: 5369
 public class XmlLoadException : Exception
 {
-	// Token: 0x0600A7FD RID: 43005 RVA: 0x003E7F34 File Offset: 0x003E6134
+	// Token: 0x0600A8FA RID: 43258 RVA: 0x003ED274 File Offset: 0x003EB474
 	public XmlLoadException(string _xmlName, XElement _element, string _message)
 		: this(XmlLoadException.buildMessage(_element, _xmlName, _message))
 	{
 	}
 
-	// Token: 0x0600A7FE RID: 43006 RVA: 0x003E7F44 File Offset: 0x003E6144
+	// Token: 0x0600A8FB RID: 43259 RVA: 0x003ED284 File Offset: 0x003EB484
 	public XmlLoadException(string _xmlName, XElement _element, string _message, Exception _innerException)
 		: this(XmlLoadException.buildMessage(_element, _xmlName, _message), _innerException)
 	{
 	}
 
-	// Token: 0x0600A7FF RID: 43007 RVA: 0x003E7F58 File Offset: 0x003E6158
+	// Token: 0x0600A8FC RID: 43260 RVA: 0x003ED298 File Offset: 0x003EB498
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string buildMessage(XElement _element, string _xmlName, string _message)
 	{
@@ -30,14 +30,14 @@ public class XmlLoadException : Exception
 		});
 	}
 
-	// Token: 0x0600A800 RID: 43008 RVA: 0x003BBEE3 File Offset: 0x003BA0E3
+	// Token: 0x0600A8FD RID: 43261 RVA: 0x003C1227 File Offset: 0x003BF427
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XmlLoadException(string _message)
 		: base(_message)
 	{
 	}
 
-	// Token: 0x0600A801 RID: 43009 RVA: 0x003BBEEC File Offset: 0x003BA0EC
+	// Token: 0x0600A8FE RID: 43262 RVA: 0x003C1230 File Offset: 0x003BF430
 	public XmlLoadException(string _message, Exception _innerException)
 		: base(_message, _innerException)
 	{

@@ -6,11 +6,11 @@ using UnityEngine;
 
 namespace Platform.LAN
 {
-	// Token: 0x02001CA7 RID: 7335
+	// Token: 0x02001CCE RID: 7374
 	public class LANMasterServerAnnouncer : IMasterServerAnnouncer
 	{
-		// Token: 0x17001AEA RID: 6890
-		// (get) Token: 0x0600D958 RID: 55640 RVA: 0x0001FF5D File Offset: 0x0001E15D
+		// Token: 0x17001B5C RID: 7004
+		// (get) Token: 0x0600DAF3 RID: 56051 RVA: 0x00020021 File Offset: 0x0001E221
 		public bool GameServerInitialized
 		{
 			get
@@ -19,18 +19,18 @@ namespace Platform.LAN
 			}
 		}
 
-		// Token: 0x0600D959 RID: 55641 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DAF4 RID: 56052 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Init(IPlatform _owner)
 		{
 		}
 
-		// Token: 0x0600D95A RID: 55642 RVA: 0x0004E124 File Offset: 0x0004C324
+		// Token: 0x0600DAF5 RID: 56053 RVA: 0x0004E53C File Offset: 0x0004C73C
 		public string GetServerPorts()
 		{
 			return string.Empty;
 		}
 
-		// Token: 0x0600D95B RID: 55643 RVA: 0x004DD8EC File Offset: 0x004DBAEC
+		// Token: 0x0600DAF6 RID: 56054 RVA: 0x004E3F00 File Offset: 0x004E2100
 		public void AdvertiseServer(Action _onServerRegistered)
 		{
 			int num = 11000;
@@ -55,7 +55,7 @@ namespace Platform.LAN
 			_onServerRegistered();
 		}
 
-		// Token: 0x0600D95C RID: 55644 RVA: 0x004DD9D0 File Offset: 0x004DBBD0
+		// Token: 0x0600DAF7 RID: 56055 RVA: 0x004E3FE4 File Offset: 0x004E21E4
 		public IEnumerator LANServerListReplyTask()
 		{
 			while (this.shouldAnnounce)
@@ -80,7 +80,7 @@ namespace Platform.LAN
 			yield break;
 		}
 
-		// Token: 0x0600D95D RID: 55645 RVA: 0x004DD9E0 File Offset: 0x004DBBE0
+		// Token: 0x0600DAF8 RID: 56056 RVA: 0x004E3FF4 File Offset: 0x004E21F4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SendReply(IPEndPoint _remoteEP)
 		{
@@ -98,12 +98,12 @@ namespace Platform.LAN
 			}
 		}
 
-		// Token: 0x0600D95E RID: 55646 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DAF9 RID: 56057 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Update()
 		{
 		}
 
-		// Token: 0x0600D95F RID: 55647 RVA: 0x004DDA58 File Offset: 0x004DBC58
+		// Token: 0x0600DAFA RID: 56058 RVA: 0x004E406C File Offset: 0x004E226C
 		public void StopServer()
 		{
 			this.shouldAnnounce = false;
@@ -120,27 +120,27 @@ namespace Platform.LAN
 			this.receiveHandler = null;
 		}
 
-		// Token: 0x0400A44D RID: 42061
+		// Token: 0x0400A580 RID: 42368
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool shouldAnnounce = true;
 
-		// Token: 0x0400A44E RID: 42062
+		// Token: 0x0400A581 RID: 42369
 		[PublicizedFrom(EAccessModifier.Private)]
 		public UdpClient udpClient;
 
-		// Token: 0x0400A44F RID: 42063
+		// Token: 0x0400A582 RID: 42370
 		[PublicizedFrom(EAccessModifier.Private)]
 		public UdpClientReceiveHandler receiveHandler;
 
-		// Token: 0x0400A450 RID: 42064
+		// Token: 0x0400A583 RID: 42371
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Coroutine replyCoroutine;
 
-		// Token: 0x0400A451 RID: 42065
+		// Token: 0x0400A584 RID: 42372
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static byte[] emptyMessage = new byte[0];
 
-		// Token: 0x0400A452 RID: 42066
+		// Token: 0x0400A585 RID: 42373
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static byte[] replyBuffer = new byte[4];
 	}

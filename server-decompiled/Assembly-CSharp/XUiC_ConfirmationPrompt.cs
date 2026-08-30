@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EEA RID: 3818
+// Token: 0x02000F01 RID: 3841
 [Preserve]
 public class XUiC_ConfirmationPrompt : XUiController
 {
-	// Token: 0x17000DFC RID: 3580
-	// (get) Token: 0x060077B6 RID: 30646 RVA: 0x002D3DBB File Offset: 0x002D1FBB
-	// (set) Token: 0x060077B7 RID: 30647 RVA: 0x002D3DC3 File Offset: 0x002D1FC3
+	// Token: 0x17000E16 RID: 3606
+	// (get) Token: 0x0600786E RID: 30830 RVA: 0x002D7D47 File Offset: 0x002D5F47
+	// (set) Token: 0x0600786F RID: 30831 RVA: 0x002D7D4F File Offset: 0x002D5F4F
 	[XuiXmlBinding("headertext")]
 	public string HeaderText
 	{
@@ -17,9 +17,9 @@ public class XUiC_ConfirmationPrompt : XUiController
 		set;
 	} = "";
 
-	// Token: 0x17000DFD RID: 3581
-	// (get) Token: 0x060077B8 RID: 30648 RVA: 0x002D3DCC File Offset: 0x002D1FCC
-	// (set) Token: 0x060077B9 RID: 30649 RVA: 0x002D3DD4 File Offset: 0x002D1FD4
+	// Token: 0x17000E17 RID: 3607
+	// (get) Token: 0x06007870 RID: 30832 RVA: 0x002D7D58 File Offset: 0x002D5F58
+	// (set) Token: 0x06007871 RID: 30833 RVA: 0x002D7D60 File Offset: 0x002D5F60
 	[XuiXmlBinding("bodytext")]
 	public string BodyText
 	{
@@ -29,9 +29,9 @@ public class XUiC_ConfirmationPrompt : XUiController
 		set;
 	} = "";
 
-	// Token: 0x17000DFE RID: 3582
-	// (get) Token: 0x060077BA RID: 30650 RVA: 0x002D3DDD File Offset: 0x002D1FDD
-	// (set) Token: 0x060077BB RID: 30651 RVA: 0x002D3DE5 File Offset: 0x002D1FE5
+	// Token: 0x17000E18 RID: 3608
+	// (get) Token: 0x06007872 RID: 30834 RVA: 0x002D7D69 File Offset: 0x002D5F69
+	// (set) Token: 0x06007873 RID: 30835 RVA: 0x002D7D71 File Offset: 0x002D5F71
 	[XuiXmlBinding("canceltext")]
 	public string CancelText
 	{
@@ -41,9 +41,9 @@ public class XUiC_ConfirmationPrompt : XUiController
 		set;
 	} = "";
 
-	// Token: 0x17000DFF RID: 3583
-	// (get) Token: 0x060077BC RID: 30652 RVA: 0x002D3DEE File Offset: 0x002D1FEE
-	// (set) Token: 0x060077BD RID: 30653 RVA: 0x002D3DF6 File Offset: 0x002D1FF6
+	// Token: 0x17000E19 RID: 3609
+	// (get) Token: 0x06007874 RID: 30836 RVA: 0x002D7D7A File Offset: 0x002D5F7A
+	// (set) Token: 0x06007875 RID: 30837 RVA: 0x002D7D82 File Offset: 0x002D5F82
 	[XuiXmlBinding("confirmtext")]
 	public string ConfirmText
 	{
@@ -53,8 +53,8 @@ public class XUiC_ConfirmationPrompt : XUiController
 		set;
 	} = "";
 
-	// Token: 0x17000E00 RID: 3584
-	// (get) Token: 0x060077BE RID: 30654 RVA: 0x002D3DFF File Offset: 0x002D1FFF
+	// Token: 0x17000E1A RID: 3610
+	// (get) Token: 0x06007876 RID: 30838 RVA: 0x002D7D8B File Offset: 0x002D5F8B
 	[XuiXmlBinding("cancelvisible")]
 	public bool CancelVisible
 	{
@@ -65,8 +65,8 @@ public class XUiC_ConfirmationPrompt : XUiController
 		}
 	}
 
-	// Token: 0x17000E01 RID: 3585
-	// (get) Token: 0x060077BF RID: 30655 RVA: 0x002D3E0F File Offset: 0x002D200F
+	// Token: 0x17000E1B RID: 3611
+	// (get) Token: 0x06007877 RID: 30839 RVA: 0x002D7D9B File Offset: 0x002D5F9B
 	[XuiXmlBinding("confirmvisible")]
 	public bool ConfirmVisible
 	{
@@ -77,8 +77,8 @@ public class XUiC_ConfirmationPrompt : XUiController
 		}
 	}
 
-	// Token: 0x17000E02 RID: 3586
-	// (get) Token: 0x060077C0 RID: 30656 RVA: 0x002D3E1F File Offset: 0x002D201F
+	// Token: 0x17000E1C RID: 3612
+	// (get) Token: 0x06007878 RID: 30840 RVA: 0x002D7DAB File Offset: 0x002D5FAB
 	public bool IsVisible
 	{
 		get
@@ -87,21 +87,21 @@ public class XUiC_ConfirmationPrompt : XUiController
 		}
 	}
 
-	// Token: 0x060077C1 RID: 30657 RVA: 0x002D3E2C File Offset: 0x002D202C
+	// Token: 0x06007879 RID: 30841 RVA: 0x002D7DB8 File Offset: 0x002D5FB8
 	public override void Init()
 	{
 		base.Init();
 		this.viewComponent.IsVisible = false;
 	}
 
-	// Token: 0x060077C2 RID: 30658 RVA: 0x002D3E40 File Offset: 0x002D2040
+	// Token: 0x0600787A RID: 30842 RVA: 0x002D7DCC File Offset: 0x002D5FCC
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.viewComponent.IsVisible = false;
 	}
 
-	// Token: 0x060077C3 RID: 30659 RVA: 0x002D3E54 File Offset: 0x002D2054
+	// Token: 0x0600787B RID: 30843 RVA: 0x002D7DE0 File Offset: 0x002D5FE0
 	[XuiBindEvent("OnPress", "btnConfirm")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnConfirm_OnPress(XUiController _sender, int _mouseButton)
@@ -109,7 +109,7 @@ public class XUiC_ConfirmationPrompt : XUiController
 		this.Confirm();
 	}
 
-	// Token: 0x060077C4 RID: 30660 RVA: 0x002D3E5C File Offset: 0x002D205C
+	// Token: 0x0600787C RID: 30844 RVA: 0x002D7DE8 File Offset: 0x002D5FE8
 	[XuiBindEvent("OnPress", "btnCancel")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnCancel_OnPress(XUiController _sender, int _mouseButton)
@@ -117,7 +117,7 @@ public class XUiC_ConfirmationPrompt : XUiController
 		this.Cancel();
 	}
 
-	// Token: 0x060077C5 RID: 30661 RVA: 0x002D3E64 File Offset: 0x002D2064
+	// Token: 0x0600787D RID: 30845 RVA: 0x002D7DF0 File Offset: 0x002D5FF0
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -128,7 +128,7 @@ public class XUiC_ConfirmationPrompt : XUiController
 		base.handleDirtyUpdateDefault();
 	}
 
-	// Token: 0x060077C6 RID: 30662 RVA: 0x002D3EC0 File Offset: 0x002D20C0
+	// Token: 0x0600787E RID: 30846 RVA: 0x002D7E4C File Offset: 0x002D604C
 	public void ShowPrompt(string _headerText, string _bodyText, string _cancelText, string _confirmText, Action<XUiC_ConfirmationPrompt.Result> _callback)
 	{
 		this.HeaderText = _headerText;
@@ -142,7 +142,7 @@ public class XUiC_ConfirmationPrompt : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060077C7 RID: 30663 RVA: 0x002D3F4E File Offset: 0x002D214E
+	// Token: 0x0600787F RID: 30847 RVA: 0x002D7EDA File Offset: 0x002D60DA
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void closePrompt()
 	{
@@ -150,7 +150,7 @@ public class XUiC_ConfirmationPrompt : XUiController
 		this.viewComponent.IsVisible = false;
 	}
 
-	// Token: 0x060077C8 RID: 30664 RVA: 0x002D3F73 File Offset: 0x002D2173
+	// Token: 0x06007880 RID: 30848 RVA: 0x002D7EFF File Offset: 0x002D60FF
 	public void Confirm()
 	{
 		if (!this.IsVisible)
@@ -166,7 +166,7 @@ public class XUiC_ConfirmationPrompt : XUiController
 		action(XUiC_ConfirmationPrompt.Result.Confirmed);
 	}
 
-	// Token: 0x060077C9 RID: 30665 RVA: 0x002D3F95 File Offset: 0x002D2195
+	// Token: 0x06007881 RID: 30849 RVA: 0x002D7F21 File Offset: 0x002D6121
 	public void Cancel()
 	{
 		if (!this.IsVisible)
@@ -182,26 +182,26 @@ public class XUiC_ConfirmationPrompt : XUiController
 		action(XUiC_ConfirmationPrompt.Result.Cancelled);
 	}
 
-	// Token: 0x04005864 RID: 22628
+	// Token: 0x04005916 RID: 22806
 	[XuiBindComponent("btnPromptCancel", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnCancel;
 
-	// Token: 0x04005865 RID: 22629
+	// Token: 0x04005917 RID: 22807
 	[XuiBindComponent("btnPromptConfirm", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnConfirm;
 
-	// Token: 0x04005866 RID: 22630
+	// Token: 0x04005918 RID: 22808
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Action<XUiC_ConfirmationPrompt.Result> resultHandler;
 
-	// Token: 0x02000EEB RID: 3819
+	// Token: 0x02000F02 RID: 3842
 	public enum Result
 	{
-		// Token: 0x0400586C RID: 22636
+		// Token: 0x0400591E RID: 22814
 		Cancelled,
-		// Token: 0x0400586D RID: 22637
+		// Token: 0x0400591F RID: 22815
 		Confirmed
 	}
 }

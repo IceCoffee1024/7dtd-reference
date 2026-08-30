@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000404 RID: 1028
+// Token: 0x02000408 RID: 1032
 [Preserve]
 public class AIDirectorBloodMoonParty
 {
-	// Token: 0x06001FDA RID: 8154 RVA: 0x000C109C File Offset: 0x000BF29C
+	// Token: 0x06001FF7 RID: 8183 RVA: 0x000C1808 File Offset: 0x000BFA08
 	public AIDirectorBloodMoonParty(EntityPlayer _initialPlayer, AIDirectorBloodMoonComponent _controller, int _bloodMoonCountUNUSED)
 	{
 		this.spawnWorld = _initialPlayer.world;
@@ -20,7 +20,7 @@ public class AIDirectorBloodMoonParty
 		this.groupIndex = -1;
 	}
 
-	// Token: 0x06001FDB RID: 8155 RVA: 0x000C1128 File Offset: 0x000BF328
+	// Token: 0x06001FF8 RID: 8184 RVA: 0x000C1894 File Offset: 0x000BFA94
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CalcBestDir(Vector3 basePos)
 	{
@@ -71,7 +71,7 @@ public class AIDirectorBloodMoonParty
 		this.spawnDirectionV = Quaternion.AngleAxis((float)num5 * 22.5f, Vector3.up) * Vector3.forward * 40f;
 	}
 
-	// Token: 0x06001FDC RID: 8156 RVA: 0x000C128C File Offset: 0x000BF48C
+	// Token: 0x06001FF9 RID: 8185 RVA: 0x000C19F8 File Offset: 0x000BFBF8
 	public bool Tick(World _world, double _dt, bool _canSpawn)
 	{
 		if (this.partySpawner.partyLevel < 0)
@@ -137,7 +137,7 @@ public class AIDirectorBloodMoonParty
 		return flag;
 	}
 
-	// Token: 0x06001FDD RID: 8157 RVA: 0x000C143D File Offset: 0x000BF63D
+	// Token: 0x06001FFA RID: 8186 RVA: 0x000C1BA9 File Offset: 0x000BFDA9
 	public void PlayerLoggedOut(EntityPlayer _player)
 	{
 		this.partySpawner.RemoveMember(_player, false);
@@ -147,7 +147,7 @@ public class AIDirectorBloodMoonParty
 		}
 	}
 
-	// Token: 0x06001FDE RID: 8158 RVA: 0x000C146C File Offset: 0x000BF66C
+	// Token: 0x06001FFB RID: 8187 RVA: 0x000C1BD8 File Offset: 0x000BFDD8
 	public void KillPartyZombies()
 	{
 		int count = this.zombies.Count;
@@ -166,8 +166,8 @@ public class AIDirectorBloodMoonParty
 		}
 	}
 
-	// Token: 0x170003B5 RID: 949
-	// (get) Token: 0x06001FDF RID: 8159 RVA: 0x000C14EF File Offset: 0x000BF6EF
+	// Token: 0x170003B9 RID: 953
+	// (get) Token: 0x06001FFC RID: 8188 RVA: 0x000C1C5B File Offset: 0x000BFE5B
 	public bool IsEmpty
 	{
 		get
@@ -176,13 +176,13 @@ public class AIDirectorBloodMoonParty
 		}
 	}
 
-	// Token: 0x06001FE0 RID: 8160 RVA: 0x000C1507 File Offset: 0x000BF707
+	// Token: 0x06001FFD RID: 8189 RVA: 0x000C1C73 File Offset: 0x000BFE73
 	public bool IsMemberOfParty(int _entityID)
 	{
 		return this.partySpawner.IsMemberOfParty(_entityID);
 	}
 
-	// Token: 0x06001FE1 RID: 8161 RVA: 0x000C1518 File Offset: 0x000BF718
+	// Token: 0x06001FFE RID: 8190 RVA: 0x000C1C84 File Offset: 0x000BFE84
 	public bool TryAddPlayer(EntityPlayer _player)
 	{
 		for (int i = 0; i < this.partySpawner.partyMembers.Count; i++)
@@ -196,14 +196,14 @@ public class AIDirectorBloodMoonParty
 		return false;
 	}
 
-	// Token: 0x06001FE2 RID: 8162 RVA: 0x000C157A File Offset: 0x000BF77A
+	// Token: 0x06001FFF RID: 8191 RVA: 0x000C1CE6 File Offset: 0x000BFEE6
 	public void AddPlayer(EntityPlayer _player)
 	{
 		this.partySpawner.AddMember(_player);
 		_player.bloodMoonParty = this;
 	}
 
-	// Token: 0x06001FE3 RID: 8163 RVA: 0x000C1590 File Offset: 0x000BF790
+	// Token: 0x06002000 RID: 8192 RVA: 0x000C1CFC File Offset: 0x000BFEFC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitParty()
 	{
@@ -217,7 +217,7 @@ public class AIDirectorBloodMoonParty
 		this.bonusLootSpawnCount = this.partySpawner.bonusLootEvery / 2;
 	}
 
-	// Token: 0x06001FE4 RID: 8164 RVA: 0x000C1624 File Offset: 0x000BF824
+	// Token: 0x06002001 RID: 8193 RVA: 0x000C1D90 File Offset: 0x000BFF90
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool SpawnZombie(World _world, EntityPlayer _target, Vector3 _focusPos, Vector3 _radiusV)
 	{
@@ -227,11 +227,16 @@ public class AIDirectorBloodMoonParty
 			return false;
 		}
 		bool flag = true;
-		int num = EntityGroups.GetRandomFromGroup(this.partySpawner.spawnGroupName, ref this.lastClassId, null);
+		int num = EntityGroups.GetRandomEntityFromGroupMaxTier(this.partySpawner.spawnGroupName, EntityFactory.MaxEntityTier, ref this.lastClassId, true, false, null);
 		if (_target.AttachedToEntity && this.controller.Random.RandomFloat < 0.5f)
 		{
 			flag = false;
 			num = EntityClass.FromString("animalZombieVultureRadiated");
+		}
+		if (num == -1)
+		{
+			Log.Warning(string.Format("Could not spawn an entity from group {0} within Sandbox Options Max Tier Limit {1}.", this.partySpawner.spawnGroupName, EntityFactory.MaxEntityTier));
+			return false;
 		}
 		EntityEnemy entityEnemy = (EntityEnemy)EntityFactory.CreateEntity(num, vector);
 		entityEnemy.SetSpawnerSource(EnumSpawnerSource.Dynamic);
@@ -273,7 +278,7 @@ public class AIDirectorBloodMoonParty
 		return true;
 	}
 
-	// Token: 0x06001FE5 RID: 8165 RVA: 0x000C17D8 File Offset: 0x000BF9D8
+	// Token: 0x06002002 RID: 8194 RVA: 0x000C1F74 File Offset: 0x000C0174
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool CalcSpawnPos(World _world, Vector3 _focusPos, Vector3 _radiusV, out Vector3 spawnPos)
 	{
@@ -281,7 +286,7 @@ public class AIDirectorBloodMoonParty
 		return _world.GetMobRandomSpawnPosWithWater(_focusPos + _radiusV, 0, 10, 30, false, out spawnPos);
 	}
 
-	// Token: 0x06001FE6 RID: 8166 RVA: 0x000C1830 File Offset: 0x000BFA30
+	// Token: 0x06002003 RID: 8195 RVA: 0x000C1FCC File Offset: 0x000C01CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayer FindPartyTarget(Vector3 fromPos)
 	{
@@ -303,7 +308,7 @@ public class AIDirectorBloodMoonParty
 		return entityPlayer;
 	}
 
-	// Token: 0x06001FE7 RID: 8167 RVA: 0x000C18A0 File Offset: 0x000BFAA0
+	// Token: 0x06002004 RID: 8196 RVA: 0x000C203C File Offset: 0x000C023C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool SeekTarget(AIDirectorBloodMoonParty.ManagedZombie mz)
 	{
@@ -366,15 +371,15 @@ public class AIDirectorBloodMoonParty
 		return true;
 	}
 
-	// Token: 0x06001FE8 RID: 8168 RVA: 0x000C1A94 File Offset: 0x000BFC94
+	// Token: 0x06002005 RID: 8197 RVA: 0x000C2230 File Offset: 0x000C0430
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsPlayerATarget(EntityPlayer player)
 	{
 		return !player.IsDead() && player.IsSpawned() && player.entityId != -1 && !player.IsIgnoredByAI() && player.Progression.Level > 1 && !player.IsBloodMoonDead;
 	}
 
-	// Token: 0x170003B6 RID: 950
-	// (get) Token: 0x06001FE9 RID: 8169 RVA: 0x000C1AD4 File Offset: 0x000BFCD4
+	// Token: 0x170003BA RID: 954
+	// (get) Token: 0x06002006 RID: 8198 RVA: 0x000C2270 File Offset: 0x000C0470
 	public bool BloodmoonZombiesRemain
 	{
 		get
@@ -383,118 +388,118 @@ public class AIDirectorBloodMoonParty
 		}
 	}
 
-	// Token: 0x04001594 RID: 5524
+	// Token: 0x040015A9 RID: 5545
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cPartyJoinDistance = 80f;
 
-	// Token: 0x04001595 RID: 5525
+	// Token: 0x040015AA RID: 5546
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cPartyJoinDistanceSq = 6400f;
 
-	// Token: 0x04001596 RID: 5526
+	// Token: 0x040015AB RID: 5547
 	public const float cSightDist = 100f;
 
-	// Token: 0x04001597 RID: 5527
+	// Token: 0x040015AC RID: 5548
 	public const float cSightDistSq = 10000f;
 
-	// Token: 0x04001598 RID: 5528
+	// Token: 0x040015AD RID: 5549
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cTeleportDist = 150f;
 
-	// Token: 0x04001599 RID: 5529
+	// Token: 0x040015AE RID: 5550
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cTeleportDistSq = 22500f;
 
-	// Token: 0x0400159A RID: 5530
+	// Token: 0x040015AF RID: 5551
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cSpawnPreferredArc = 120;
 
-	// Token: 0x0400159B RID: 5531
+	// Token: 0x040015B0 RID: 5552
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cSpawnAngle = 90f;
 
-	// Token: 0x0400159C RID: 5532
+	// Token: 0x040015B1 RID: 5553
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cSpawnDistance = 40f;
 
-	// Token: 0x0400159D RID: 5533
+	// Token: 0x040015B2 RID: 5554
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cSpawnMinRandDistance = 0;
 
-	// Token: 0x0400159E RID: 5534
+	// Token: 0x040015B3 RID: 5555
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cSpawnMaxRandDistance = 10;
 
-	// Token: 0x0400159F RID: 5535
+	// Token: 0x040015B4 RID: 5556
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cSpawnMinPlayerDistance = 30;
 
-	// Token: 0x040015A0 RID: 5536
+	// Token: 0x040015B5 RID: 5557
 	public AIDirectorGameStagePartySpawner partySpawner;
 
-	// Token: 0x040015A1 RID: 5537
+	// Token: 0x040015B6 RID: 5558
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lastClassId;
 
-	// Token: 0x040015A2 RID: 5538
+	// Token: 0x040015B7 RID: 5559
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<AIDirectorBloodMoonParty.ManagedZombie> zombies = new List<AIDirectorBloodMoonParty.ManagedZombie>();
 
-	// Token: 0x040015A3 RID: 5539
+	// Token: 0x040015B8 RID: 5560
 	[PublicizedFrom(EAccessModifier.Private)]
 	public World spawnWorld;
 
-	// Token: 0x040015A4 RID: 5540
+	// Token: 0x040015B9 RID: 5561
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 spawnBasePos;
 
-	// Token: 0x040015A5 RID: 5541
+	// Token: 0x040015BA RID: 5562
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int spawnBaseDir;
 
-	// Token: 0x040015A6 RID: 5542
+	// Token: 0x040015BB RID: 5563
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int enemyActiveMax;
 
-	// Token: 0x040015A7 RID: 5543
+	// Token: 0x040015BC RID: 5564
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AIDirectorBloodMoonComponent controller;
 
-	// Token: 0x040015A8 RID: 5544
+	// Token: 0x040015BD RID: 5565
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 spawnDirectionV;
 
-	// Token: 0x040015A9 RID: 5545
+	// Token: 0x040015BE RID: 5566
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int nextPlayer;
 
-	// Token: 0x040015AA RID: 5546
+	// Token: 0x040015BF RID: 5567
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int groupIndex;
 
-	// Token: 0x040015AB RID: 5547
+	// Token: 0x040015C0 RID: 5568
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int bonusLootSpawnCount;
 
-	// Token: 0x02000405 RID: 1029
+	// Token: 0x02000409 RID: 1033
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class ManagedZombie
 	{
-		// Token: 0x06001FEA RID: 8170 RVA: 0x000C1AE4 File Offset: 0x000BFCE4
+		// Token: 0x06002007 RID: 8199 RVA: 0x000C2280 File Offset: 0x000C0480
 		public ManagedZombie(EntityEnemy _zombie, EntityPlayer _player)
 		{
 			this.zombie = _zombie;
 			this.player = _player;
 		}
 
-		// Token: 0x040015AC RID: 5548
+		// Token: 0x040015C1 RID: 5569
 		public EntityPlayer player;
 
-		// Token: 0x040015AD RID: 5549
+		// Token: 0x040015C2 RID: 5570
 		public EntityEnemy zombie;
 
-		// Token: 0x040015AE RID: 5550
+		// Token: 0x040015C3 RID: 5571
 		public float updateDelay;
 	}
 }

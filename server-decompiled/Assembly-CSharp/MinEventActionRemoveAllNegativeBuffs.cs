@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020006C6 RID: 1734
+// Token: 0x020006D0 RID: 1744
 [Preserve]
 public class MinEventActionRemoveAllNegativeBuffs : MinEventActionTargetedBase
 {
-	// Token: 0x060035C7 RID: 13767 RVA: 0x0016383C File Offset: 0x00161A3C
+	// Token: 0x0600361D RID: 13853 RVA: 0x00165A14 File Offset: 0x00163C14
 	public override void Execute(MinEventParams _params)
 	{
 		for (int i = 0; i < this.targets.Count; i++)

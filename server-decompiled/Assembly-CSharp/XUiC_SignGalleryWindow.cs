@@ -3,31 +3,31 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine.Scripting;
 
-// Token: 0x02001019 RID: 4121
+// Token: 0x02001032 RID: 4146
 [Preserve]
 public class XUiC_SignGalleryWindow : XUiController
 {
-	// Token: 0x17000F12 RID: 3858
-	// (get) Token: 0x0600825C RID: 33372 RVA: 0x0031B06C File Offset: 0x0031926C
-	// (set) Token: 0x0600825D RID: 33373 RVA: 0x0031B074 File Offset: 0x00319274
+	// Token: 0x17000F4B RID: 3915
+	// (get) Token: 0x0600834E RID: 33614 RVA: 0x0031F894 File Offset: 0x0031DA94
+	// (set) Token: 0x0600834F RID: 33615 RVA: 0x0031F89C File Offset: 0x0031DA9C
 	public SignCanvas targetCanvas
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000F13 RID: 3859
-	// (get) Token: 0x0600825E RID: 33374 RVA: 0x0031B07D File Offset: 0x0031927D
-	// (set) Token: 0x0600825F RID: 33375 RVA: 0x0031B085 File Offset: 0x00319285
+	// Token: 0x17000F4C RID: 3916
+	// (get) Token: 0x06008350 RID: 33616 RVA: 0x0031F8A5 File Offset: 0x0031DAA5
+	// (set) Token: 0x06008351 RID: 33617 RVA: 0x0031F8AD File Offset: 0x0031DAAD
 	public TEFeatureCanvas targetEntity
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000F14 RID: 3860
-	// (get) Token: 0x06008260 RID: 33376 RVA: 0x0031B08E File Offset: 0x0031928E
-	// (set) Token: 0x06008261 RID: 33377 RVA: 0x0031B096 File Offset: 0x00319296
+	// Token: 0x17000F4D RID: 3917
+	// (get) Token: 0x06008352 RID: 33618 RVA: 0x0031F8B6 File Offset: 0x0031DAB6
+	// (set) Token: 0x06008353 RID: 33619 RVA: 0x0031F8BE File Offset: 0x0031DABE
 	public int Page
 	{
 		get
@@ -50,7 +50,7 @@ public class XUiC_SignGalleryWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008262 RID: 33378 RVA: 0x0031B0D0 File Offset: 0x003192D0
+	// Token: 0x06008354 RID: 33620 RVA: 0x0031F8F8 File Offset: 0x0031DAF8
 	public override void Init()
 	{
 		base.Init();
@@ -97,7 +97,7 @@ public class XUiC_SignGalleryWindow : XUiController
 		childById2.OnPress += this.BtnFilterPrefab_OnPressed;
 	}
 
-	// Token: 0x06008263 RID: 33379 RVA: 0x0031B30C File Offset: 0x0031950C
+	// Token: 0x06008355 RID: 33621 RVA: 0x0031FB34 File Offset: 0x0031DD34
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnNew_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -119,7 +119,7 @@ public class XUiC_SignGalleryWindow : XUiController
 		XUiC_SignEditorWindow.Open(this.xui.playerUI, newSignData, globalSignId);
 	}
 
-	// Token: 0x06008264 RID: 33380 RVA: 0x0031B3A4 File Offset: 0x003195A4
+	// Token: 0x06008356 RID: 33622 RVA: 0x0031FBCC File Offset: 0x0031DDCC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnSelect(XUiC_SignStack _sender)
 	{
@@ -136,7 +136,7 @@ public class XUiC_SignGalleryWindow : XUiController
 		this.infoWindow.SetSignInfo(_sender.SignId);
 	}
 
-	// Token: 0x06008265 RID: 33381 RVA: 0x0031B416 File Offset: 0x00319616
+	// Token: 0x06008357 RID: 33623 RVA: 0x0031FC3E File Offset: 0x0031DE3E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnChangedHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -145,7 +145,7 @@ public class XUiC_SignGalleryWindow : XUiController
 		this.UpdateGrid(false);
 	}
 
-	// Token: 0x06008266 RID: 33382 RVA: 0x0031B437 File Offset: 0x00319637
+	// Token: 0x06008358 RID: 33624 RVA: 0x0031FC5F File Offset: 0x0031DE5F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnScroll(XUiController _sender, float _delta)
 	{
@@ -171,7 +171,7 @@ public class XUiC_SignGalleryWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008267 RID: 33383 RVA: 0x0031B464 File Offset: 0x00319664
+	// Token: 0x06008359 RID: 33625 RVA: 0x0031FC8C File Offset: 0x0031DE8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RefreshItems(string _filter)
 	{
@@ -212,7 +212,7 @@ public class XUiC_SignGalleryWindow : XUiController
 		this.resultCount.Text = string.Format(this.lblTotal, this.currentItems.Count.ToString());
 	}
 
-	// Token: 0x06008268 RID: 33384 RVA: 0x0031B5C4 File Offset: 0x003197C4
+	// Token: 0x0600835A RID: 33626 RVA: 0x0031FDEC File Offset: 0x0031DFEC
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -233,7 +233,7 @@ public class XUiC_SignGalleryWindow : XUiController
 		this.windowGroup.Controller.GetChildByType<XUiC_WindowNonPagingHeader>().SetHeader(Localization.Get("xuiSigns", false, null).ToUpper());
 	}
 
-	// Token: 0x06008269 RID: 33385 RVA: 0x0031B668 File Offset: 0x00319868
+	// Token: 0x0600835B RID: 33627 RVA: 0x0031FE90 File Offset: 0x0031E090
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AutoPage()
 	{
@@ -244,7 +244,7 @@ public class XUiC_SignGalleryWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600826A RID: 33386 RVA: 0x0031B6A0 File Offset: 0x003198A0
+	// Token: 0x0600835C RID: 33628 RVA: 0x0031FEC8 File Offset: 0x0031E0C8
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -261,7 +261,7 @@ public class XUiC_SignGalleryWindow : XUiController
 		this.targetEntity = null;
 	}
 
-	// Token: 0x0600826B RID: 33387 RVA: 0x0031B72C File Offset: 0x0031992C
+	// Token: 0x0600835D RID: 33629 RVA: 0x0031FF54 File Offset: 0x0031E154
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -281,7 +281,7 @@ public class XUiC_SignGalleryWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600826C RID: 33388 RVA: 0x0031B7A2 File Offset: 0x003199A2
+	// Token: 0x0600835E RID: 33630 RVA: 0x0031FFCA File Offset: 0x0031E1CA
 	public static void Open(LocalPlayerUI _playerUi, TEFeatureCanvas _feature)
 	{
 		XUiC_SignGalleryWindow childByType = _playerUi.xui.FindWindowGroupByName(XUiC_SignGalleryWindow.ID).GetChildByType<XUiC_SignGalleryWindow>();
@@ -290,7 +290,7 @@ public class XUiC_SignGalleryWindow : XUiController
 		_playerUi.windowManager.Open(XUiC_SignGalleryWindow.ID, true);
 	}
 
-	// Token: 0x0600826D RID: 33389 RVA: 0x0031B7E4 File Offset: 0x003199E4
+	// Token: 0x0600835F RID: 33631 RVA: 0x0032000C File Offset: 0x0031E20C
 	public void RefreshAndSelect(GlobalSignId newSignId)
 	{
 		this.RefreshItems(this.txtInput.Text);
@@ -304,7 +304,7 @@ public class XUiC_SignGalleryWindow : XUiController
 		this.UpdateGrid(true);
 	}
 
-	// Token: 0x0600826E RID: 33390 RVA: 0x0031B83C File Offset: 0x00319A3C
+	// Token: 0x06008360 RID: 33632 RVA: 0x00320064 File Offset: 0x0031E264
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateGrid(bool forceRefreshInfoPanel)
 	{
@@ -315,7 +315,7 @@ public class XUiC_SignGalleryWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600826F RID: 33391 RVA: 0x0031B87C File Offset: 0x00319A7C
+	// Token: 0x06008361 RID: 33633 RVA: 0x003200A4 File Offset: 0x0031E2A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RefreshFilterButtons()
 	{
@@ -323,7 +323,7 @@ public class XUiC_SignGalleryWindow : XUiController
 		this.filterPrefabButton.Selected = this.includePrefabLibrary;
 	}
 
-	// Token: 0x06008270 RID: 33392 RVA: 0x0031B8A0 File Offset: 0x00319AA0
+	// Token: 0x06008362 RID: 33634 RVA: 0x003200C8 File Offset: 0x0031E2C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnFilterDefault_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -332,7 +332,7 @@ public class XUiC_SignGalleryWindow : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06008271 RID: 33393 RVA: 0x0031B8BF File Offset: 0x00319ABF
+	// Token: 0x06008363 RID: 33635 RVA: 0x003200E7 File Offset: 0x0031E2E7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnFilterPrefab_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -341,7 +341,7 @@ public class XUiC_SignGalleryWindow : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06008276 RID: 33398 RVA: 0x0031B978 File Offset: 0x00319B78
+	// Token: 0x06008368 RID: 33640 RVA: 0x003201A0 File Offset: 0x0031E3A0
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static string <RefreshItems>g__GetNiceName|35_1(GlobalSignId signId)
@@ -355,78 +355,78 @@ public class XUiC_SignGalleryWindow : XUiController
 		return string.Empty;
 	}
 
-	// Token: 0x040060A4 RID: 24740
+	// Token: 0x0400616B RID: 24939
 	public static string ID = "";
 
-	// Token: 0x040060A5 RID: 24741
+	// Token: 0x0400616C RID: 24940
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label resultCount;
 
-	// Token: 0x040060A6 RID: 24742
+	// Token: 0x0400616D RID: 24941
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SignStackGrid signGrid;
 
-	// Token: 0x040060A7 RID: 24743
+	// Token: 0x0400616E RID: 24942
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_Paging pager;
 
-	// Token: 0x040060A8 RID: 24744
+	// Token: 0x0400616F RID: 24943
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int page;
 
-	// Token: 0x040060A9 RID: 24745
+	// Token: 0x04006170 RID: 24944
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int length;
 
-	// Token: 0x040060AA RID: 24746
+	// Token: 0x04006171 RID: 24945
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool updateFilters;
 
-	// Token: 0x040060AB RID: 24747
+	// Token: 0x04006172 RID: 24946
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool includeDefaultLibrary = true;
 
-	// Token: 0x040060AC RID: 24748
+	// Token: 0x04006173 RID: 24947
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool includePrefabLibrary = true;
 
-	// Token: 0x040060AD RID: 24749
+	// Token: 0x04006174 RID: 24948
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtInput;
 
-	// Token: 0x040060AE RID: 24750
+	// Token: 0x04006175 RID: 24949
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnNew;
 
-	// Token: 0x040060AF RID: 24751
+	// Token: 0x04006176 RID: 24950
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblTotal;
 
-	// Token: 0x040060B2 RID: 24754
+	// Token: 0x04006179 RID: 24953
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GlobalSignId currentSignId = GlobalSignId.InvalidId;
 
-	// Token: 0x040060B3 RID: 24755
+	// Token: 0x0400617A RID: 24954
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SignInfoWindow infoWindow;
 
-	// Token: 0x040060B4 RID: 24756
+	// Token: 0x0400617B RID: 24955
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SignInstanceWindow instanceWindow;
 
-	// Token: 0x040060B5 RID: 24757
+	// Token: 0x0400617C RID: 24956
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiV_Button filterDefaultButton;
 
-	// Token: 0x040060B6 RID: 24758
+	// Token: 0x0400617D RID: 24957
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiV_Button filterPrefabButton;
 
-	// Token: 0x040060B7 RID: 24759
+	// Token: 0x0400617E RID: 24958
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<GlobalSignId> currentItems = new List<GlobalSignId>();
 
-	// Token: 0x040060B8 RID: 24760
+	// Token: 0x0400617F RID: 24959
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<GlobalSignId, string> signNamesById = new Dictionary<GlobalSignId, string>();
 }

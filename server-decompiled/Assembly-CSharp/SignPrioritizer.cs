@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
-// Token: 0x02000AAE RID: 2734
+// Token: 0x02000ABF RID: 2751
 public sealed class SignPrioritizer
 {
-	// Token: 0x060051F1 RID: 20977 RVA: 0x001F47D4 File Offset: 0x001F29D4
+	// Token: 0x06005277 RID: 21111 RVA: 0x001F726C File Offset: 0x001F546C
 	public SignPrioritizer()
 	{
 		this._compareGroupOrder = new Comparison<int>(this.CompareGroupOrder);
 	}
 
-	// Token: 0x060051F2 RID: 20978 RVA: 0x001F4878 File Offset: 0x001F2A78
+	// Token: 0x06005278 RID: 21112 RVA: 0x001F7310 File Offset: 0x001F5510
 	public void Clear()
 	{
 		this._groups.Clear();
@@ -25,7 +25,7 @@ public sealed class SignPrioritizer
 		this._groupOffsets.Clear();
 	}
 
-	// Token: 0x060051F3 RID: 20979 RVA: 0x001F48DD File Offset: 0x001F2ADD
+	// Token: 0x06005279 RID: 21113 RVA: 0x001F7375 File Offset: 0x001F5575
 	public void RebuildRequests(HashSet<SignCanvas> canvases, Vector3 playerPos, SignTextureManager.TierSpec[] tiers, SignTextureStore store, List<SignBakeRequest> outRequests)
 	{
 		outRequests.Clear();
@@ -41,19 +41,19 @@ public sealed class SignPrioritizer
 		outRequests.Sort();
 	}
 
-	// Token: 0x060051F4 RID: 20980 RVA: 0x001F4917 File Offset: 0x001F2B17
+	// Token: 0x0600527A RID: 21114 RVA: 0x001F73AF File Offset: 0x001F55AF
 	public GlobalSignId GetGroupSignId(int groupIndex)
 	{
 		return this._groups[groupIndex].SignId;
 	}
 
-	// Token: 0x060051F5 RID: 20981 RVA: 0x001F492A File Offset: 0x001F2B2A
+	// Token: 0x0600527B RID: 21115 RVA: 0x001F73C2 File Offset: 0x001F55C2
 	public void ApplyToGroupCanvases(int groupIndex, RenderTexture rt)
 	{
 		this.ApplyToCanvases(groupIndex, rt);
 	}
 
-	// Token: 0x060051F6 RID: 20982 RVA: 0x001F4934 File Offset: 0x001F2B34
+	// Token: 0x0600527C RID: 21116 RVA: 0x001F73CC File Offset: 0x001F55CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BuildGroups(HashSet<SignCanvas> canvases, Vector3 playerPos)
 	{
@@ -106,7 +106,7 @@ public sealed class SignPrioritizer
 		}
 	}
 
-	// Token: 0x060051F7 RID: 20983 RVA: 0x001F4AD8 File Offset: 0x001F2CD8
+	// Token: 0x0600527D RID: 21117 RVA: 0x001F7570 File Offset: 0x001F5770
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PackCanvasRefs()
 	{
@@ -147,21 +147,21 @@ public sealed class SignPrioritizer
 		}
 	}
 
-	// Token: 0x060051F8 RID: 20984 RVA: 0x001F4C3C File Offset: 0x001F2E3C
+	// Token: 0x0600527E RID: 21118 RVA: 0x001F76D4 File Offset: 0x001F58D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int CompareGroupOrder(int a, int b)
 	{
 		return this._groups[a].MinDistanceSquared.CompareTo(this._groups[b].MinDistanceSquared);
 	}
 
-	// Token: 0x060051F9 RID: 20985 RVA: 0x001F4C73 File Offset: 0x001F2E73
+	// Token: 0x0600527F RID: 21119 RVA: 0x001F770B File Offset: 0x001F590B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SortGroupsByDistance()
 	{
 		this._groupOrder.Sort(this._compareGroupOrder);
 	}
 
-	// Token: 0x060051FA RID: 20986 RVA: 0x001F4C88 File Offset: 0x001F2E88
+	// Token: 0x06005280 RID: 21120 RVA: 0x001F7720 File Offset: 0x001F5920
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AssignTiersAndEmitRequests(SignTextureManager.TierSpec[] tiers, SignTextureStore store, List<SignBakeRequest> outRequests)
 	{
@@ -201,7 +201,7 @@ public sealed class SignPrioritizer
 		}
 	}
 
-	// Token: 0x060051FB RID: 20987 RVA: 0x001F4DB8 File Offset: 0x001F2FB8
+	// Token: 0x06005281 RID: 21121 RVA: 0x001F7850 File Offset: 0x001F5A50
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ApplyToCanvases(int groupIndex, RenderTexture rt)
 	{
@@ -214,7 +214,7 @@ public sealed class SignPrioritizer
 		}
 	}
 
-	// Token: 0x060051FC RID: 20988 RVA: 0x001F4E04 File Offset: 0x001F3004
+	// Token: 0x06005282 RID: 21122 RVA: 0x001F789C File Offset: 0x001F5A9C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void EnsureListSize<T>(List<T> list, int size)
 	{
@@ -224,7 +224,7 @@ public sealed class SignPrioritizer
 		}
 	}
 
-	// Token: 0x060051FD RID: 20989 RVA: 0x001F4E2C File Offset: 0x001F302C
+	// Token: 0x06005283 RID: 21123 RVA: 0x001F78C4 File Offset: 0x001F5AC4
 	public void WriteGroupInfo(StringBuilder sb, Vector3 playerPos, SignTextureManager.TierSpec[] activeTiers)
 	{
 		int count = this._groups.Count;
@@ -314,73 +314,73 @@ public sealed class SignPrioritizer
 		sb.AppendLine("**************************************************");
 	}
 
-	// Token: 0x04003F7F RID: 16255
+	// Token: 0x04004010 RID: 16400
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<SignPrioritizer.Group> _groups = new List<SignPrioritizer.Group>(256);
 
-	// Token: 0x04003F80 RID: 16256
+	// Token: 0x04004011 RID: 16401
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<SignPrioritizer.CanvasRef> _canvasRefs = new List<SignPrioritizer.CanvasRef>(1024);
 
-	// Token: 0x04003F81 RID: 16257
+	// Token: 0x04004012 RID: 16402
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<SignPrioritizer.CanvasRef> _canvasRefsPacked = new List<SignPrioritizer.CanvasRef>(1024);
 
-	// Token: 0x04003F82 RID: 16258
+	// Token: 0x04004013 RID: 16403
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<GlobalSignId, int> _groupIndexById = new Dictionary<GlobalSignId, int>(256);
 
-	// Token: 0x04003F83 RID: 16259
+	// Token: 0x04004014 RID: 16404
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<int> _groupOrder = new List<int>(256);
 
-	// Token: 0x04003F84 RID: 16260
+	// Token: 0x04004015 RID: 16405
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<int> _availableSlots = new List<int>(8);
 
-	// Token: 0x04003F85 RID: 16261
+	// Token: 0x04004016 RID: 16406
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<int> _groupCounts = new List<int>(256);
 
-	// Token: 0x04003F86 RID: 16262
+	// Token: 0x04004017 RID: 16407
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<int> _groupOffsets = new List<int>(256);
 
-	// Token: 0x04003F87 RID: 16263
+	// Token: 0x04004018 RID: 16408
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Comparison<int> _compareGroupOrder;
 
-	// Token: 0x02000AAF RID: 2735
+	// Token: 0x02000AC0 RID: 2752
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct Group
 	{
-		// Token: 0x04003F88 RID: 16264
+		// Token: 0x04004019 RID: 16409
 		public GlobalSignId SignId;
 
-		// Token: 0x04003F89 RID: 16265
+		// Token: 0x0400401A RID: 16410
 		public float MinDistanceSquared;
 
-		// Token: 0x04003F8A RID: 16266
+		// Token: 0x0400401B RID: 16411
 		public int TargetTier;
 
-		// Token: 0x04003F8B RID: 16267
+		// Token: 0x0400401C RID: 16412
 		public int CanvasStart;
 
-		// Token: 0x04003F8C RID: 16268
+		// Token: 0x0400401D RID: 16413
 		public int CanvasCount;
 	}
 
-	// Token: 0x02000AB0 RID: 2736
+	// Token: 0x02000AC1 RID: 2753
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct CanvasRef
 	{
-		// Token: 0x04003F8D RID: 16269
+		// Token: 0x0400401E RID: 16414
 		public SignCanvas Canvas;
 
-		// Token: 0x04003F8E RID: 16270
+		// Token: 0x0400401F RID: 16415
 		public float DistanceSquared;
 
-		// Token: 0x04003F8F RID: 16271
+		// Token: 0x04004020 RID: 16416
 		public int GroupIndex;
 	}
 }

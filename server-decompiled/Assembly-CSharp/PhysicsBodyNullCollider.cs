@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020008F6 RID: 2294
+// Token: 0x02000902 RID: 2306
 public class PhysicsBodyNullCollider : PhysicsBodyColliderBase
 {
-	// Token: 0x0600426D RID: 17005 RVA: 0x0019F2E4 File Offset: 0x0019D4E4
+	// Token: 0x060042D2 RID: 17106 RVA: 0x001A13BC File Offset: 0x0019F5BC
 	public PhysicsBodyNullCollider(Transform _transform, PhysicsBodyColliderConfiguration _config)
 		: base(_transform, _config)
 	{
 	}
 
-	// Token: 0x170006FC RID: 1788
-	// (set) Token: 0x0600426E RID: 17006 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x17000708 RID: 1800
+	// (set) Token: 0x060042D3 RID: 17107 RVA: 0x000027FC File Offset: 0x000009FC
 	public override EnumColliderMode ColliderMode
 	{
 		set

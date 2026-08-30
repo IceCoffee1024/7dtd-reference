@@ -4,7 +4,7 @@ using UnityEngine;
 // Token: 0x020000BB RID: 187
 public class ArchetypePreviewIKController : MonoBehaviour
 {
-	// Token: 0x060003A8 RID: 936 RVA: 0x0001AE24 File Offset: 0x00019024
+	// Token: 0x060003A9 RID: 937 RVA: 0x0001AEE8 File Offset: 0x000190E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -17,7 +17,7 @@ public class ArchetypePreviewIKController : MonoBehaviour
 		this.rightFootRot = transform2.rotation;
 	}
 
-	// Token: 0x060003A9 RID: 937 RVA: 0x0001AE94 File Offset: 0x00019094
+	// Token: 0x060003AA RID: 938 RVA: 0x0001AF58 File Offset: 0x00019158
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnAnimatorIK()
 	{

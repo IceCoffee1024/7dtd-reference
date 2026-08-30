@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02001392 RID: 5010
+// Token: 0x020013AD RID: 5037
 public class BucketHashSetList
 {
-	// Token: 0x06009DC6 RID: 40390 RVA: 0x003B927B File Offset: 0x003B747B
+	// Token: 0x06009EC3 RID: 40643 RVA: 0x003BE5BF File Offset: 0x003BC7BF
 	public BucketHashSetList()
 	{
 		this.buckets = new OptimizedList<HashSetLong>(4);
 	}
 
-	// Token: 0x06009DC7 RID: 40391 RVA: 0x003B92A8 File Offset: 0x003B74A8
+	// Token: 0x06009EC4 RID: 40644 RVA: 0x003BE5EC File Offset: 0x003BC7EC
 	public BucketHashSetList(int _noBuckets)
 	{
 		this.buckets = new OptimizedList<HashSetLong>(_noBuckets);
@@ -20,19 +20,19 @@ public class BucketHashSetList
 		}
 	}
 
-	// Token: 0x06009DC8 RID: 40392 RVA: 0x003B92F9 File Offset: 0x003B74F9
+	// Token: 0x06009EC5 RID: 40645 RVA: 0x003BE63D File Offset: 0x003BC83D
 	public void Add(int _bucketIdx, long _value)
 	{
 		this.buckets.array[_bucketIdx].Add(_value);
 	}
 
-	// Token: 0x06009DC9 RID: 40393 RVA: 0x003B930F File Offset: 0x003B750F
+	// Token: 0x06009EC6 RID: 40646 RVA: 0x003BE653 File Offset: 0x003BC853
 	public void Add(int _bucketIdx, HashSetLong _otherBucket)
 	{
 		this.buckets.array[_bucketIdx].UnionWithHashSetLong(_otherBucket);
 	}
 
-	// Token: 0x06009DCA RID: 40394 RVA: 0x003B9324 File Offset: 0x003B7524
+	// Token: 0x06009EC7 RID: 40647 RVA: 0x003BE668 File Offset: 0x003BC868
 	public bool Contains(long _value)
 	{
 		if (!this.IsRecalc)
@@ -49,7 +49,7 @@ public class BucketHashSetList
 		return false;
 	}
 
-	// Token: 0x06009DCB RID: 40395 RVA: 0x003B936C File Offset: 0x003B756C
+	// Token: 0x06009EC8 RID: 40648 RVA: 0x003BE6B0 File Offset: 0x003BC8B0
 	public void Remove(long _value)
 	{
 		this.list.Remove(_value);
@@ -63,7 +63,7 @@ public class BucketHashSetList
 		}
 	}
 
-	// Token: 0x06009DCC RID: 40396 RVA: 0x003B93C8 File Offset: 0x003B75C8
+	// Token: 0x06009EC9 RID: 40649 RVA: 0x003BE70C File Offset: 0x003BC90C
 	public void Clear()
 	{
 		for (int i = 0; i < this.buckets.Count; i++)
@@ -74,7 +74,7 @@ public class BucketHashSetList
 		this.IsRecalc = false;
 	}
 
-	// Token: 0x06009DCD RID: 40397 RVA: 0x003B9410 File Offset: 0x003B7610
+	// Token: 0x06009ECA RID: 40650 RVA: 0x003BE754 File Offset: 0x003BC954
 	public void ExceptTarget(HashSetLong hash)
 	{
 		if (!this.IsRecalc)
@@ -87,7 +87,7 @@ public class BucketHashSetList
 		}
 	}
 
-	// Token: 0x06009DCE RID: 40398 RVA: 0x003B9450 File Offset: 0x003B7650
+	// Token: 0x06009ECB RID: 40651 RVA: 0x003BE794 File Offset: 0x003BC994
 	public void RecalcHashSetList()
 	{
 		this.list.Clear();
@@ -105,7 +105,7 @@ public class BucketHashSetList
 		}
 	}
 
-	// Token: 0x06009DCF RID: 40399 RVA: 0x003B94F0 File Offset: 0x003B76F0
+	// Token: 0x06009ECC RID: 40652 RVA: 0x003BE834 File Offset: 0x003BCA34
 	public BucketHashSetList Clone()
 	{
 		BucketHashSetList bucketHashSetList = new BucketHashSetList(this.buckets.Count);
@@ -116,16 +116,16 @@ public class BucketHashSetList
 		return bucketHashSetList;
 	}
 
-	// Token: 0x0400776F RID: 30575
+	// Token: 0x04007848 RID: 30792
 	public List<long> list = new List<long>();
 
-	// Token: 0x04007770 RID: 30576
+	// Token: 0x04007849 RID: 30793
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<long> elementsInList = new HashSet<long>();
 
-	// Token: 0x04007771 RID: 30577
+	// Token: 0x0400784A RID: 30794
 	public OptimizedList<HashSetLong> buckets;
 
-	// Token: 0x04007772 RID: 30578
+	// Token: 0x0400784B RID: 30795
 	public bool IsRecalc;
 }

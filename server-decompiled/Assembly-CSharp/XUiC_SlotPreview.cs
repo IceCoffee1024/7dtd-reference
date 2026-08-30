@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02001054 RID: 4180
+// Token: 0x0200106D RID: 4205
 [Preserve]
 public class XUiC_SlotPreview : XUiController
 {
-	// Token: 0x060084C7 RID: 33991 RVA: 0x0032BB60 File Offset: 0x00329D60
+	// Token: 0x060085B9 RID: 34233 RVA: 0x00330388 File Offset: 0x0032E588
 	public override void Init()
 	{
 		base.Init();
@@ -14,7 +14,7 @@ public class XUiC_SlotPreview : XUiController
 		this.itemStacks = childrenByType;
 	}
 
-	// Token: 0x060084C8 RID: 33992 RVA: 0x0032BB9C File Offset: 0x00329D9C
+	// Token: 0x060085BA RID: 34234 RVA: 0x003303C4 File Offset: 0x0032E5C4
 	public override void OnOpen()
 	{
 		for (int i = 0; i < this.itemStacks.Length; i++)
@@ -27,14 +27,14 @@ public class XUiC_SlotPreview : XUiController
 		}
 	}
 
-	// Token: 0x060084C9 RID: 33993 RVA: 0x0032BC5C File Offset: 0x00329E5C
+	// Token: 0x060085BB RID: 34235 RVA: 0x00330484 File Offset: 0x0032E684
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void XUiC_SlotPreview_ToolLockChangedEvent(int slotNumber, ItemStack stack, bool locked)
 	{
 		this.slots[slotNumber].ViewComponent.IsVisible = stack.IsEmpty() && !locked;
 	}
 
-	// Token: 0x060084CA RID: 33994 RVA: 0x0032BC80 File Offset: 0x00329E80
+	// Token: 0x060085BC RID: 34236 RVA: 0x003304A8 File Offset: 0x0032E6A8
 	public override void OnClose()
 	{
 		for (int i = 0; i < this.itemStacks.Length; i++)
@@ -43,18 +43,18 @@ public class XUiC_SlotPreview : XUiController
 		}
 	}
 
-	// Token: 0x060084CB RID: 33995 RVA: 0x0032BCBE File Offset: 0x00329EBE
+	// Token: 0x060085BD RID: 34237 RVA: 0x003304E6 File Offset: 0x0032E6E6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void XUiC_SlotPreview_SlotChangedEvent(int slotNumber, ItemStack stack)
 	{
 		this.slots[slotNumber].ViewComponent.IsVisible = stack.IsEmpty();
 	}
 
-	// Token: 0x040062A5 RID: 25253
+	// Token: 0x0400636C RID: 25452
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController[] slots;
 
-	// Token: 0x040062A6 RID: 25254
+	// Token: 0x0400636D RID: 25453
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController[] itemStacks;
 }

@@ -1,30 +1,30 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200041B RID: 1051
+// Token: 0x0200041F RID: 1055
 [Preserve]
 public class AIDirectorZombieState : IMemoryPoolableObject
 {
-	// Token: 0x06002082 RID: 8322 RVA: 0x000C40B7 File Offset: 0x000C22B7
+	// Token: 0x0600209F RID: 8351 RVA: 0x000C4853 File Offset: 0x000C2A53
 	public AIDirectorZombieState Construct(EntityEnemy zombie)
 	{
 		this.m_zombie = zombie;
 		return this;
 	}
 
-	// Token: 0x06002083 RID: 8323 RVA: 0x000C40C1 File Offset: 0x000C22C1
+	// Token: 0x060020A0 RID: 8352 RVA: 0x000C485D File Offset: 0x000C2A5D
 	public void Reset()
 	{
 		this.m_zombie = null;
 	}
 
-	// Token: 0x06002084 RID: 8324 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060020A1 RID: 8353 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Cleanup()
 	{
 	}
 
-	// Token: 0x170003D2 RID: 978
-	// (get) Token: 0x06002085 RID: 8325 RVA: 0x000C40CA File Offset: 0x000C22CA
+	// Token: 0x170003D6 RID: 982
+	// (get) Token: 0x060020A2 RID: 8354 RVA: 0x000C4866 File Offset: 0x000C2A66
 	public EntityEnemy Zombie
 	{
 		get
@@ -33,7 +33,7 @@ public class AIDirectorZombieState : IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x04001632 RID: 5682
+	// Token: 0x04001647 RID: 5703
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityEnemy m_zombie;
 }

@@ -3,32 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200029B RID: 667
+// Token: 0x0200029F RID: 671
 [Preserve]
 public class ConsoleCmdSpawnScreen : ConsoleCmdAbstract
 {
-	// Token: 0x06001374 RID: 4980 RVA: 0x000770E4 File Offset: 0x000752E4
+	// Token: 0x06001386 RID: 4998 RVA: 0x00077740 File Offset: 0x00075940
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "SpawnScreen" };
 	}
 
-	// Token: 0x06001375 RID: 4981 RVA: 0x000770F4 File Offset: 0x000752F4
+	// Token: 0x06001387 RID: 4999 RVA: 0x00077750 File Offset: 0x00075950
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Display SpawnScreen";
 	}
 
-	// Token: 0x06001376 RID: 4982 RVA: 0x000770FB File Offset: 0x000752FB
+	// Token: 0x06001388 RID: 5000 RVA: 0x00077757 File Offset: 0x00075957
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "SpawnScreen on/off";
 	}
 
-	// Token: 0x06001377 RID: 4983 RVA: 0x00077104 File Offset: 0x00075304
+	// Token: 0x06001389 RID: 5001 RVA: 0x00077760 File Offset: 0x00075960
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		foreach (EntityPlayerLocal entityPlayerLocal in GameManager.Instance.World.GetLocalPlayers())

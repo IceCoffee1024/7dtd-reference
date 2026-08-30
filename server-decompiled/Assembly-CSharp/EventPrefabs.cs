@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 
-// Token: 0x02000917 RID: 2327
+// Token: 0x02000927 RID: 2343
 public class EventPrefabs
 {
-	// Token: 0x06004397 RID: 17303 RVA: 0x001A5F34 File Offset: 0x001A4134
+	// Token: 0x06004418 RID: 17432 RVA: 0x001A8508 File Offset: 0x001A6708
 	public EventPrefabs(World world, DynamicPrefabDecorator prefabDecorator, RegionFileManager regionFileManager)
 	{
 		this.world = world;
@@ -15,13 +15,13 @@ public class EventPrefabs
 		this.saveWriter = new ThreadedFileWriterQueue("EventPrefabs.Save", Path.Combine(GameIO.GetSaveGameDir(), "eventprefabs.dat"));
 	}
 
-	// Token: 0x06004398 RID: 17304 RVA: 0x001A5F92 File Offset: 0x001A4192
+	// Token: 0x06004419 RID: 17433 RVA: 0x001A8566 File Offset: 0x001A6766
 	public void GetPrefabs(List<PrefabInstance> prefabs)
 	{
 		prefabs.AddRange(this.prefabs);
 	}
 
-	// Token: 0x06004399 RID: 17305 RVA: 0x001A5FA0 File Offset: 0x001A41A0
+	// Token: 0x0600441A RID: 17434 RVA: 0x001A8574 File Offset: 0x001A6774
 	public List<PrefabInstance.Serializable> GetPrefabsSerialized()
 	{
 		List<PrefabInstance.Serializable> list = new List<PrefabInstance.Serializable>();
@@ -32,7 +32,7 @@ public class EventPrefabs
 		return list;
 	}
 
-	// Token: 0x0600439A RID: 17306 RVA: 0x001A6000 File Offset: 0x001A4200
+	// Token: 0x0600441B RID: 17435 RVA: 0x001A85D4 File Offset: 0x001A67D4
 	public PrefabInstance TryPlaceAt(string prefabName, byte rotation, Vector3i position, bool yIsGroundLevel = true)
 	{
 		Prefab prefabRotated = this.prefabCache.GetPrefabRotated(prefabName, (int)rotation, true, true, false, false);
@@ -63,7 +63,7 @@ public class EventPrefabs
 		return prefabInstance;
 	}
 
-	// Token: 0x0600439B RID: 17307 RVA: 0x001A6140 File Offset: 0x001A4340
+	// Token: 0x0600441C RID: 17436 RVA: 0x001A8714 File Offset: 0x001A6914
 	public bool Remove(PrefabInstance pi)
 	{
 		HashSetLong occupiedChunks = pi.GetOccupiedChunks();
@@ -88,7 +88,7 @@ public class EventPrefabs
 		return true;
 	}
 
-	// Token: 0x0600439C RID: 17308 RVA: 0x001A620C File Offset: 0x001A440C
+	// Token: 0x0600441D RID: 17437 RVA: 0x001A87E0 File Offset: 0x001A69E0
 	public void Save(bool waitForComplete = false)
 	{
 		if (!this.needsSaving)
@@ -113,7 +113,7 @@ public class EventPrefabs
 		this.saveWriter.Write(pooledExpandableMemoryStream, waitForComplete);
 	}
 
-	// Token: 0x0600439D RID: 17309 RVA: 0x001A62F4 File Offset: 0x001A44F4
+	// Token: 0x0600441E RID: 17438 RVA: 0x001A88C8 File Offset: 0x001A6AC8
 	public void Load()
 	{
 		string text = Path.Combine(GameIO.GetSaveGameDir(), "eventprefabs.dat");
@@ -156,39 +156,39 @@ public class EventPrefabs
 		}
 	}
 
-	// Token: 0x04003658 RID: 13912
+	// Token: 0x040036E1 RID: 14049
 	[PublicizedFrom(EAccessModifier.Private)]
 	public World world;
 
-	// Token: 0x04003659 RID: 13913
+	// Token: 0x040036E2 RID: 14050
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PrefabCache prefabCache;
 
-	// Token: 0x0400365A RID: 13914
+	// Token: 0x040036E3 RID: 14051
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DynamicPrefabDecorator dpd;
 
-	// Token: 0x0400365B RID: 13915
+	// Token: 0x040036E4 RID: 14052
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RegionFileManager rfm;
 
-	// Token: 0x0400365C RID: 13916
+	// Token: 0x040036E5 RID: 14053
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<PrefabInstance> prefabs = new List<PrefabInstance>();
 
-	// Token: 0x0400365D RID: 13917
+	// Token: 0x040036E6 RID: 14054
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ThreadedFileWriterQueue saveWriter;
 
-	// Token: 0x0400365E RID: 13918
+	// Token: 0x040036E7 RID: 14055
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool needsSaving;
 
-	// Token: 0x0400365F RID: 13919
+	// Token: 0x040036E8 RID: 14056
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cSaveVersion = 1;
 
-	// Token: 0x04003660 RID: 13920
+	// Token: 0x040036E9 RID: 14057
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cSaveFilename = "eventprefabs.dat";
 }

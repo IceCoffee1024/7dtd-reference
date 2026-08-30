@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace PrefabVolumes
 {
-	// Token: 0x02001897 RID: 6295
+	// Token: 0x020018BD RID: 6333
 	public class PrefabSleeperVolume : PrefabVolumeAbs<PrefabSleeperVolume>
 	{
-		// Token: 0x0600C1F0 RID: 49648 RVA: 0x0047D658 File Offset: 0x0047B858
+		// Token: 0x0600C377 RID: 50039 RVA: 0x00483784 File Offset: 0x00481984
 		public override void Reset()
 		{
 			base.Reset();
@@ -20,7 +20,7 @@ namespace PrefabVolumes
 			this.minScript = null;
 		}
 
-		// Token: 0x0600C1F1 RID: 49649 RVA: 0x0047D6A8 File Offset: 0x0047B8A8
+		// Token: 0x0600C378 RID: 50040 RVA: 0x004837D4 File Offset: 0x004819D4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void CopyValues(PrefabVolumeAbs<PrefabSleeperVolume> _target, bool _nonBasicOnly = false)
 		{
@@ -40,8 +40,8 @@ namespace PrefabVolumes
 			prefabSleeperVolume.minScript = this.minScript;
 		}
 
-		// Token: 0x17001797 RID: 6039
-		// (get) Token: 0x0600C1F2 RID: 49650 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x17001809 RID: 6153
+		// (get) Token: 0x0600C379 RID: 50041 RVA: 0x00010E62 File Offset: 0x0000F062
 		public override PrefabVolumeAbs.EVolumeType VolumeType
 		{
 			get
@@ -50,8 +50,8 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x17001798 RID: 6040
-		// (get) Token: 0x0600C1F3 RID: 49651 RVA: 0x0047D738 File Offset: 0x0047B938
+		// Token: 0x1700180A RID: 6154
+		// (get) Token: 0x0600C37A RID: 50042 RVA: 0x00483864 File Offset: 0x00481A64
 		public override int SerializedSize
 		{
 			get
@@ -64,7 +64,7 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C1F4 RID: 49652 RVA: 0x0047D7EC File Offset: 0x0047B9EC
+		// Token: 0x0600C37B RID: 50043 RVA: 0x00483918 File Offset: 0x00481B18
 		public override void Read(PooledBinaryReader _br)
 		{
 			base.Read(_br);
@@ -78,7 +78,7 @@ namespace PrefabVolumes
 			this.minScript = _br.ReadString();
 		}
 
-		// Token: 0x0600C1F5 RID: 49653 RVA: 0x0047D860 File Offset: 0x0047BA60
+		// Token: 0x0600C37C RID: 50044 RVA: 0x0048398C File Offset: 0x00481B8C
 		public override void Write(PooledBinaryWriter _bw)
 		{
 			base.Write(_bw);
@@ -92,13 +92,13 @@ namespace PrefabVolumes
 			_bw.Write(this.minScript ?? "");
 		}
 
-		// Token: 0x0600C1F6 RID: 49654 RVA: 0x0047D8DD File Offset: 0x0047BADD
+		// Token: 0x0600C37D RID: 50045 RVA: 0x00483A09 File Offset: 0x00481C09
 		public void SetTrigger(SleeperVolume.ETriggerType _type)
 		{
 			this.flags = (this.flags & -8) | (int)_type;
 		}
 
-		// Token: 0x0600C1F7 RID: 49655 RVA: 0x0047D8F0 File Offset: 0x0047BAF0
+		// Token: 0x0600C37E RID: 50046 RVA: 0x00483A1C File Offset: 0x00481C1C
 		public void SetTriggeredByFlag(byte _index)
 		{
 			if (!this.triggeredByIndices.Contains(_index))
@@ -107,25 +107,25 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C1F8 RID: 49656 RVA: 0x0047D90C File Offset: 0x0047BB0C
+		// Token: 0x0600C37F RID: 50047 RVA: 0x00483A38 File Offset: 0x00481C38
 		public void ClearTriggeredBy()
 		{
 			this.triggeredByIndices.Clear();
 		}
 
-		// Token: 0x0600C1F9 RID: 49657 RVA: 0x0047D919 File Offset: 0x0047BB19
+		// Token: 0x0600C380 RID: 50048 RVA: 0x00483A45 File Offset: 0x00481C45
 		public void RemoveTriggeredByFlag(byte _index)
 		{
 			this.triggeredByIndices.Remove(_index);
 		}
 
-		// Token: 0x0600C1FA RID: 49658 RVA: 0x0047D928 File Offset: 0x0047BB28
+		// Token: 0x0600C381 RID: 50049 RVA: 0x00483A54 File Offset: 0x00481C54
 		public bool HasTriggeredBy(byte _index)
 		{
 			return this.triggeredByIndices.Contains(_index);
 		}
 
-		// Token: 0x0600C1FB RID: 49659 RVA: 0x0047D938 File Offset: 0x0047BB38
+		// Token: 0x0600C382 RID: 50050 RVA: 0x00483A64 File Offset: 0x00481C64
 		public void ToggleTriggeredByFlag(byte layer)
 		{
 			int num = this.triggeredByIndices.IndexOf(layer);
@@ -137,37 +137,37 @@ namespace PrefabVolumes
 			this.triggeredByIndices.Add(layer);
 		}
 
-		// Token: 0x0600C1FC RID: 49660 RVA: 0x0047D96F File Offset: 0x0047BB6F
+		// Token: 0x0600C383 RID: 50051 RVA: 0x00483A9B File Offset: 0x00481C9B
 		public bool HasAnyTriggeredBy()
 		{
 			return this.triggeredByIndices.Count > 0;
 		}
 
-		// Token: 0x040092CE RID: 37582
+		// Token: 0x040093F7 RID: 37879
 		public string groupName;
 
-		// Token: 0x040092CF RID: 37583
+		// Token: 0x040093F8 RID: 37880
 		public bool isPriority;
 
-		// Token: 0x040092D0 RID: 37584
+		// Token: 0x040093F9 RID: 37881
 		public bool isQuestExclude;
 
-		// Token: 0x040092D1 RID: 37585
+		// Token: 0x040093FA RID: 37882
 		public short spawnCountMin;
 
-		// Token: 0x040092D2 RID: 37586
+		// Token: 0x040093FB RID: 37883
 		public short spawnCountMax;
 
-		// Token: 0x040092D3 RID: 37587
+		// Token: 0x040093FC RID: 37884
 		public short groupId;
 
-		// Token: 0x040092D4 RID: 37588
+		// Token: 0x040093FD RID: 37885
 		public int flags;
 
-		// Token: 0x040092D5 RID: 37589
+		// Token: 0x040093FE RID: 37886
 		public string minScript;
 
-		// Token: 0x040092D6 RID: 37590
+		// Token: 0x040093FF RID: 37887
 		public readonly List<byte> triggeredByIndices = new List<byte>();
 	}
 }

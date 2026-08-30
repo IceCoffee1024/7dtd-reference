@@ -1,31 +1,31 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DDB RID: 3547
+// Token: 0x02000DF0 RID: 3568
 [Preserve]
 public class XUiC_BugReportSaveSelect : XUiController
 {
-	// Token: 0x06006C9B RID: 27803 RVA: 0x002A408C File Offset: 0x002A228C
+	// Token: 0x06006D3A RID: 27962 RVA: 0x002A7520 File Offset: 0x002A5720
 	public override void Init()
 	{
 		base.Init();
 		this.List = base.GetChildByType<XUiC_BugReportSavesList>();
 	}
 
-	// Token: 0x06006C9C RID: 27804 RVA: 0x002A40A0 File Offset: 0x002A22A0
+	// Token: 0x06006D3B RID: 27963 RVA: 0x002A7534 File Offset: 0x002A5734
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.rebuildList();
 	}
 
-	// Token: 0x06006C9D RID: 27805 RVA: 0x002A40AE File Offset: 0x002A22AE
+	// Token: 0x06006D3C RID: 27964 RVA: 0x002A7542 File Offset: 0x002A5742
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void rebuildList()
 	{
 		this.List.RebuildList(SaveInfoProvider.Instance.SaveEntryInfos, false);
 	}
 
-	// Token: 0x040052A4 RID: 21156
+	// Token: 0x04005347 RID: 21319
 	public XUiC_BugReportSavesList List;
 }

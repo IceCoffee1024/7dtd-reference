@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000B46 RID: 2886
+// Token: 0x02000B58 RID: 2904
 public struct AtomicSafeHandleScope : IDisposable
 {
-	// Token: 0x0600579C RID: 22428 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005824 RID: 22564 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Dispose()
 	{
 	}

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
 
-// Token: 0x02000C63 RID: 3171
+// Token: 0x02000C75 RID: 3189
 public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 {
-	// Token: 0x170009DD RID: 2525
-	// (get) Token: 0x060060F5 RID: 24821 RVA: 0x00264B10 File Offset: 0x00262D10
+	// Token: 0x170009F0 RID: 2544
+	// (get) Token: 0x06006180 RID: 24960 RVA: 0x002679F8 File Offset: 0x00265BF8
 	public ItemClass[] AmmoItems
 	{
 		get
@@ -35,15 +35,15 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x060060F6 RID: 24822 RVA: 0x00264B88 File Offset: 0x00262D88
+	// Token: 0x06006181 RID: 24961 RVA: 0x00267A70 File Offset: 0x00265C70
 	public TileEntityPoweredRangedTrap(Chunk _chunk)
 		: base(_chunk)
 	{
 	}
 
-	// Token: 0x170009DE RID: 2526
-	// (get) Token: 0x060060F7 RID: 24823 RVA: 0x00264BAA File Offset: 0x00262DAA
-	// (set) Token: 0x060060F8 RID: 24824 RVA: 0x00264BC1 File Offset: 0x00262DC1
+	// Token: 0x170009F1 RID: 2545
+	// (get) Token: 0x06006182 RID: 24962 RVA: 0x00267A92 File Offset: 0x00265C92
+	// (set) Token: 0x06006183 RID: 24963 RVA: 0x00267AA9 File Offset: 0x00265CA9
 	public int OwnerEntityID
 	{
 		get
@@ -61,19 +61,19 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x060060F9 RID: 24825 RVA: 0x00264BCA File Offset: 0x00262DCA
+	// Token: 0x06006184 RID: 24964 RVA: 0x00267AB2 File Offset: 0x00265CB2
 	public bool IsOwner(PlatformUserIdentifierAbs _userIdentifier)
 	{
 		return _userIdentifier != null && _userIdentifier.Equals(this.ownerID);
 	}
 
-	// Token: 0x060060FA RID: 24826 RVA: 0x00264BDD File Offset: 0x00262DDD
+	// Token: 0x06006185 RID: 24965 RVA: 0x00267AC5 File Offset: 0x00265CC5
 	public PlatformUserIdentifierAbs GetOwner()
 	{
 		return this.ownerID;
 	}
 
-	// Token: 0x060060FB RID: 24827 RVA: 0x00264BE5 File Offset: 0x00262DE5
+	// Token: 0x06006186 RID: 24966 RVA: 0x00267ACD File Offset: 0x00265CCD
 	public void SetOwner(PlatformUserIdentifierAbs _userIdentifier)
 	{
 		this.ownerID = _userIdentifier;
@@ -81,19 +81,19 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		this.setModified();
 	}
 
-	// Token: 0x060060FC RID: 24828 RVA: 0x00264BFA File Offset: 0x00262DFA
+	// Token: 0x06006187 RID: 24967 RVA: 0x00267AE2 File Offset: 0x00265CE2
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void SetSendSlots()
 	{
 		this.ClientData.SendSlots = true;
 	}
 
-	// Token: 0x060060FD RID: 24829 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06006188 RID: 24968 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void OnSetLocalChunkPosition()
 	{
 	}
 
-	// Token: 0x060060FE RID: 24830 RVA: 0x00264C08 File Offset: 0x00262E08
+	// Token: 0x06006189 RID: 24969 RVA: 0x00267AF0 File Offset: 0x00265CF0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetOwnerEntityID()
 	{
@@ -111,7 +111,7 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		this.ownerEntityID = -1;
 	}
 
-	// Token: 0x060060FF RID: 24831 RVA: 0x00264C58 File Offset: 0x00262E58
+	// Token: 0x0600618A RID: 24970 RVA: 0x00267B40 File Offset: 0x00265D40
 	public override void read(PooledBinaryReader _br, TileEntity.StreamModeRead _eStreamMode)
 	{
 		base.read(_br, _eStreamMode);
@@ -165,7 +165,7 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x06006100 RID: 24832 RVA: 0x00264DA4 File Offset: 0x00262FA4
+	// Token: 0x0600618B RID: 24971 RVA: 0x00267C8C File Offset: 0x00265E8C
 	public override void write(PooledBinaryWriter _bw, TileEntity.StreamModeWrite _eStreamMode)
 	{
 		base.write(_bw, _eStreamMode);
@@ -200,9 +200,9 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x170009DF RID: 2527
-	// (get) Token: 0x06006101 RID: 24833 RVA: 0x00264E78 File Offset: 0x00263078
-	// (set) Token: 0x06006102 RID: 24834 RVA: 0x00264EA2 File Offset: 0x002630A2
+	// Token: 0x170009F2 RID: 2546
+	// (get) Token: 0x0600618C RID: 24972 RVA: 0x00267D60 File Offset: 0x00265F60
+	// (set) Token: 0x0600618D RID: 24973 RVA: 0x00267D8A File Offset: 0x00265F8A
 	public bool IsLocked
 	{
 		get
@@ -225,9 +225,9 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x170009E0 RID: 2528
-	// (get) Token: 0x06006103 RID: 24835 RVA: 0x00264ED4 File Offset: 0x002630D4
-	// (set) Token: 0x06006104 RID: 24836 RVA: 0x00264EFE File Offset: 0x002630FE
+	// Token: 0x170009F3 RID: 2547
+	// (get) Token: 0x0600618E RID: 24974 RVA: 0x00267DBC File Offset: 0x00265FBC
+	// (set) Token: 0x0600618F RID: 24975 RVA: 0x00267DE6 File Offset: 0x00265FE6
 	public ItemStack[] ItemSlots
 	{
 		get
@@ -250,9 +250,9 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x170009E1 RID: 2529
-	// (get) Token: 0x06006105 RID: 24837 RVA: 0x00264F30 File Offset: 0x00263130
-	// (set) Token: 0x06006106 RID: 24838 RVA: 0x00264F5A File Offset: 0x0026315A
+	// Token: 0x170009F4 RID: 2548
+	// (get) Token: 0x06006190 RID: 24976 RVA: 0x00267E18 File Offset: 0x00266018
+	// (set) Token: 0x06006191 RID: 24977 RVA: 0x00267E42 File Offset: 0x00266042
 	public int TargetType
 	{
 		get
@@ -274,8 +274,8 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x170009E2 RID: 2530
-	// (get) Token: 0x06006107 RID: 24839 RVA: 0x00264F86 File Offset: 0x00263186
+	// Token: 0x170009F5 RID: 2549
+	// (get) Token: 0x06006192 RID: 24978 RVA: 0x00267E6E File Offset: 0x0026606E
 	public bool TargetSelf
 	{
 		get
@@ -284,8 +284,8 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x170009E3 RID: 2531
-	// (get) Token: 0x06006108 RID: 24840 RVA: 0x00264F93 File Offset: 0x00263193
+	// Token: 0x170009F6 RID: 2550
+	// (get) Token: 0x06006193 RID: 24979 RVA: 0x00267E7B File Offset: 0x0026607B
 	public bool TargetAllies
 	{
 		get
@@ -294,8 +294,8 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x170009E4 RID: 2532
-	// (get) Token: 0x06006109 RID: 24841 RVA: 0x00264FA0 File Offset: 0x002631A0
+	// Token: 0x170009F7 RID: 2551
+	// (get) Token: 0x06006194 RID: 24980 RVA: 0x00267E88 File Offset: 0x00266088
 	public bool TargetStrangers
 	{
 		get
@@ -304,8 +304,8 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x170009E5 RID: 2533
-	// (get) Token: 0x0600610A RID: 24842 RVA: 0x00264FAD File Offset: 0x002631AD
+	// Token: 0x170009F8 RID: 2552
+	// (get) Token: 0x06006195 RID: 24981 RVA: 0x00267E95 File Offset: 0x00266095
 	public bool TargetZombies
 	{
 		get
@@ -314,7 +314,7 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x0600610B RID: 24843 RVA: 0x00264FBC File Offset: 0x002631BC
+	// Token: 0x06006196 RID: 24982 RVA: 0x00267EA4 File Offset: 0x002660A4
 	public bool TryStackItem(ItemStack itemStack)
 	{
 		if (this.IsLocked)
@@ -351,7 +351,7 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		return false;
 	}
 
-	// Token: 0x0600610C RID: 24844 RVA: 0x002650D8 File Offset: 0x002632D8
+	// Token: 0x06006197 RID: 24983 RVA: 0x00267FC0 File Offset: 0x002661C0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SetValuesFromBlock(ushort blockID)
 	{
@@ -372,13 +372,13 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		this.ShowTargeting = true;
 	}
 
-	// Token: 0x0600610D RID: 24845 RVA: 0x00265191 File Offset: 0x00263391
+	// Token: 0x06006198 RID: 24984 RVA: 0x00268079 File Offset: 0x00266279
 	public override TileEntityType GetTileEntityType()
 	{
 		return TileEntityType.PowerRangeTrap;
 	}
 
-	// Token: 0x0600610E RID: 24846 RVA: 0x00265198 File Offset: 0x00263398
+	// Token: 0x06006199 RID: 24985 RVA: 0x00268080 File Offset: 0x00266280
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public bool DecrementAmmo(out ItemClass _ammoItem)
 	{
@@ -400,7 +400,7 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		return false;
 	}
 
-	// Token: 0x0600610F RID: 24847 RVA: 0x0026521C File Offset: 0x0026341C
+	// Token: 0x0600619A RID: 24986 RVA: 0x00268104 File Offset: 0x00266304
 	public ItemClass CurrentAmmoItem()
 	{
 		foreach (ItemStack itemStack in this.ItemSlots)
@@ -413,10 +413,10 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		return null;
 	}
 
-	// Token: 0x06006110 RID: 24848 RVA: 0x00265258 File Offset: 0x00263458
+	// Token: 0x0600619B RID: 24987 RVA: 0x00268140 File Offset: 0x00266340
 	public bool AddItem(ItemStack _itemStack)
 	{
-		if (!_itemStack.CanMoveTo(XUiC_ItemStack.StackLocationTypes.Workstation))
+		if (!_itemStack.CanMoveTo(XUiC_ItemStack.StackLocationTypes.Workstation, -1))
 		{
 			return false;
 		}
@@ -435,7 +435,7 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		return false;
 	}
 
-	// Token: 0x06006111 RID: 24849 RVA: 0x002652BC File Offset: 0x002634BC
+	// Token: 0x0600619C RID: 24988 RVA: 0x002681A8 File Offset: 0x002663A8
 	public override void ClientUpdate()
 	{
 		if (Time.time > this.updateTime)
@@ -457,7 +457,7 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x06006112 RID: 24850 RVA: 0x0026534C File Offset: 0x0026354C
+	// Token: 0x0600619D RID: 24989 RVA: 0x00268238 File Offset: 0x00266438
 	public override void ReplacedBy(BlockValue _bvOld, BlockValue _bvNew, TileEntity _teNew)
 	{
 		base.ReplacedBy(_bvOld, _bvNew, _teNew);
@@ -473,13 +473,13 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		GameManager.Instance.DropContentInLootContainerServer(-1, "DroppedLootContainer", vector, list.ToArray(), true, null);
 	}
 
-	// Token: 0x06006113 RID: 24851 RVA: 0x00048695 File Offset: 0x00046895
+	// Token: 0x0600619E RID: 24990 RVA: 0x00048AAD File Offset: 0x00046CAD
 	public override bool CanLockLocally(ILockContext _context, ushort _channel)
 	{
 		return LocalPlayerUI.GetUIForPrimaryPlayer() != null;
 	}
 
-	// Token: 0x06006114 RID: 24852 RVA: 0x002653B8 File Offset: 0x002635B8
+	// Token: 0x0600619F RID: 24991 RVA: 0x002682A4 File Offset: 0x002664A4
 	public override void OnLockedLocal(bool _success, ILockContext _context, ushort _channel)
 	{
 		LocalPlayerUI uiforPrimaryPlayer = LocalPlayerUI.GetUIForPrimaryPlayer();
@@ -492,32 +492,32 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 		uiforPrimaryPlayer.windowManager.Open("powerrangedtrap", true);
 	}
 
-	// Token: 0x04004B97 RID: 19351
+	// Token: 0x04004C34 RID: 19508
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new const int Version = 18;
 
-	// Token: 0x04004B98 RID: 19352
+	// Token: 0x04004C35 RID: 19509
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass[] ammoItems;
 
-	// Token: 0x04004B99 RID: 19353
+	// Token: 0x04004C36 RID: 19510
 	public readonly TileEntityPoweredRangedTrap.ClientAmmoData ClientData = new TileEntityPoweredRangedTrap.ClientAmmoData();
 
-	// Token: 0x04004B9A RID: 19354
+	// Token: 0x04004C37 RID: 19511
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlatformUserIdentifierAbs ownerID;
 
-	// Token: 0x04004B9B RID: 19355
+	// Token: 0x04004C38 RID: 19512
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int ownerEntityID = -1;
 
-	// Token: 0x04004B9C RID: 19356
+	// Token: 0x04004C39 RID: 19513
 	public bool ShowTargeting = true;
 
-	// Token: 0x02000C64 RID: 3172
+	// Token: 0x02000C76 RID: 3190
 	public class ClientAmmoData
 	{
-		// Token: 0x06006115 RID: 24853 RVA: 0x00265430 File Offset: 0x00263630
+		// Token: 0x060061A0 RID: 24992 RVA: 0x0026831C File Offset: 0x0026651C
 		public ClientAmmoData()
 		{
 			for (int i = 0; i < this.ItemSlots.Length; i++)
@@ -526,16 +526,16 @@ public class TileEntityPoweredRangedTrap : TileEntityPoweredBlock
 			}
 		}
 
-		// Token: 0x04004B9D RID: 19357
+		// Token: 0x04004C3A RID: 19514
 		public bool IsLocked;
 
-		// Token: 0x04004B9E RID: 19358
+		// Token: 0x04004C3B RID: 19515
 		public bool SendSlots;
 
-		// Token: 0x04004B9F RID: 19359
+		// Token: 0x04004C3C RID: 19516
 		public ItemStack[] ItemSlots = new ItemStack[3];
 
-		// Token: 0x04004BA0 RID: 19360
+		// Token: 0x04004C3D RID: 19517
 		public int TargetType = 12;
 	}
 }

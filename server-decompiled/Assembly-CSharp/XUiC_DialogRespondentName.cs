@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F0B RID: 3851
+// Token: 0x02000F22 RID: 3874
 [Preserve]
 public class XUiC_DialogRespondentName : XUiController
 {
-	// Token: 0x17000E1B RID: 3611
-	// (get) Token: 0x060078DE RID: 30942 RVA: 0x002D9509 File Offset: 0x002D7709
-	// (set) Token: 0x060078DF RID: 30943 RVA: 0x002D9511 File Offset: 0x002D7711
+	// Token: 0x17000E35 RID: 3637
+	// (get) Token: 0x06007996 RID: 31126 RVA: 0x002DD495 File Offset: 0x002DB695
+	// (set) Token: 0x06007997 RID: 31127 RVA: 0x002DD49D File Offset: 0x002DB69D
 	public Dialog CurrentDialog
 	{
 		get
@@ -22,14 +22,14 @@ public class XUiC_DialogRespondentName : XUiController
 		}
 	}
 
-	// Token: 0x060078E0 RID: 30944 RVA: 0x002D9527 File Offset: 0x002D7727
+	// Token: 0x06007998 RID: 31128 RVA: 0x002DD4B3 File Offset: 0x002DB6B3
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.currentDialog = null;
 	}
 
-	// Token: 0x060078E1 RID: 30945 RVA: 0x002D9538 File Offset: 0x002D7738
+	// Token: 0x06007999 RID: 31129 RVA: 0x002DD4C4 File Offset: 0x002DB6C4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -41,18 +41,18 @@ public class XUiC_DialogRespondentName : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x060078E2 RID: 30946 RVA: 0x002D9599 File Offset: 0x002D7799
+	// Token: 0x0600799A RID: 31130 RVA: 0x002DD525 File Offset: 0x002DB725
 	public void Refresh()
 	{
 		base.RefreshBindings();
 		this.IsDirty = true;
 	}
 
-	// Token: 0x04005937 RID: 22839
+	// Token: 0x040059E9 RID: 23017
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label label;
 
-	// Token: 0x04005938 RID: 22840
+	// Token: 0x040059EA RID: 23018
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dialog currentDialog;
 }

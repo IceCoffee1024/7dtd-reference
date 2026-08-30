@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine.Scripting;
 
-// Token: 0x0200081E RID: 2078
+// Token: 0x02000829 RID: 2089
 [Preserve]
 public class NetPackagePlayerInventoryForAI : NetPackage
 {
-	// Token: 0x1700065C RID: 1628
-	// (get) Token: 0x06003CFB RID: 15611 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000667 RID: 1639
+	// (get) Token: 0x06003D5A RID: 15706 RVA: 0x00020021 File Offset: 0x0001E221
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -17,7 +17,7 @@ public class NetPackagePlayerInventoryForAI : NetPackage
 		}
 	}
 
-	// Token: 0x06003CFC RID: 15612 RVA: 0x00183974 File Offset: 0x00181B74
+	// Token: 0x06003D5B RID: 15707 RVA: 0x00185D4C File Offset: 0x00183F4C
 	public NetPackagePlayerInventoryForAI Setup(EntityAlive entity, AIDirectorPlayerInventory inventory)
 	{
 		this.m_entityId = entity.entityId;
@@ -25,7 +25,7 @@ public class NetPackagePlayerInventoryForAI : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003CFD RID: 15613 RVA: 0x0018398C File Offset: 0x00181B8C
+	// Token: 0x06003D5C RID: 15708 RVA: 0x00185D64 File Offset: 0x00183F64
 	public override int GetLength()
 	{
 		int num = 8;
@@ -40,7 +40,7 @@ public class NetPackagePlayerInventoryForAI : NetPackage
 		return num;
 	}
 
-	// Token: 0x06003CFE RID: 15614 RVA: 0x001839E0 File Offset: 0x00181BE0
+	// Token: 0x06003D5D RID: 15709 RVA: 0x00185DB8 File Offset: 0x00183FB8
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.m_entityId = _reader.ReadInt32();
@@ -48,7 +48,7 @@ public class NetPackagePlayerInventoryForAI : NetPackage
 		this.m_inventory.belt = NetPackagePlayerInventoryForAI.ReadInventorySet(_reader);
 	}
 
-	// Token: 0x06003CFF RID: 15615 RVA: 0x00183A10 File Offset: 0x00181C10
+	// Token: 0x06003D5E RID: 15710 RVA: 0x00185DE8 File Offset: 0x00183FE8
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -57,7 +57,7 @@ public class NetPackagePlayerInventoryForAI : NetPackage
 		NetPackagePlayerInventoryForAI.WriteInventorySet(_writer, this.m_inventory.belt);
 	}
 
-	// Token: 0x06003D00 RID: 15616 RVA: 0x00183A48 File Offset: 0x00181C48
+	// Token: 0x06003D5F RID: 15711 RVA: 0x00185E20 File Offset: 0x00184020
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null || _world.aiDirector == null)
@@ -70,7 +70,7 @@ public class NetPackagePlayerInventoryForAI : NetPackage
 		_world.aiDirector.UpdatePlayerInventory(this.m_entityId, aidirectorPlayerInventory);
 	}
 
-	// Token: 0x06003D01 RID: 15617 RVA: 0x00183A98 File Offset: 0x00181C98
+	// Token: 0x06003D60 RID: 15712 RVA: 0x00185E70 File Offset: 0x00184070
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<AIDirectorPlayerInventory.ItemId> ReadInventorySet(BinaryReader stream)
 	{
@@ -87,7 +87,7 @@ public class NetPackagePlayerInventoryForAI : NetPackage
 		return list;
 	}
 
-	// Token: 0x06003D02 RID: 15618 RVA: 0x00183AD0 File Offset: 0x00181CD0
+	// Token: 0x06003D61 RID: 15713 RVA: 0x00185EA8 File Offset: 0x001840A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void WriteInventorySet(BinaryWriter stream, List<AIDirectorPlayerInventory.ItemId> items)
 	{
@@ -102,11 +102,11 @@ public class NetPackagePlayerInventoryForAI : NetPackage
 		}
 	}
 
-	// Token: 0x04003146 RID: 12614
+	// Token: 0x040031C5 RID: 12741
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_entityId;
 
-	// Token: 0x04003147 RID: 12615
+	// Token: 0x040031C6 RID: 12742
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AIDirectorPlayerInventory m_inventory;
 }

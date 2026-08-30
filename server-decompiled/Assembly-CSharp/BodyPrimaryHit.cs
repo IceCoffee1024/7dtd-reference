@@ -1,28 +1,28 @@
 ﻿using System;
 
-// Token: 0x02000466 RID: 1126
+// Token: 0x0200046A RID: 1130
 public enum BodyPrimaryHit
 {
-	// Token: 0x04001796 RID: 6038
+	// Token: 0x040017AC RID: 6060
 	None,
-	// Token: 0x04001797 RID: 6039
+	// Token: 0x040017AD RID: 6061
 	Torso,
-	// Token: 0x04001798 RID: 6040
+	// Token: 0x040017AE RID: 6062
 	Head,
-	// Token: 0x04001799 RID: 6041
+	// Token: 0x040017AF RID: 6063
 	LeftUpperArm,
-	// Token: 0x0400179A RID: 6042
+	// Token: 0x040017B0 RID: 6064
 	RightUpperArm,
-	// Token: 0x0400179B RID: 6043
+	// Token: 0x040017B1 RID: 6065
 	LeftUpperLeg,
-	// Token: 0x0400179C RID: 6044
+	// Token: 0x040017B2 RID: 6066
 	RightUpperLeg,
-	// Token: 0x0400179D RID: 6045
+	// Token: 0x040017B3 RID: 6067
 	LeftLowerArm,
-	// Token: 0x0400179E RID: 6046
+	// Token: 0x040017B4 RID: 6068
 	RightLowerArm,
-	// Token: 0x0400179F RID: 6047
+	// Token: 0x040017B5 RID: 6069
 	LeftLowerLeg,
-	// Token: 0x040017A0 RID: 6048
+	// Token: 0x040017B6 RID: 6070
 	RightLowerLeg
 }

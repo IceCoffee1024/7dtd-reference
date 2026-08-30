@@ -2,11 +2,11 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006F6 RID: 1782
+// Token: 0x02000700 RID: 1792
 [Preserve]
 public class MinEventActionPinToolbeltMessage : MinEventActionBase
 {
-	// Token: 0x0600366E RID: 13934 RVA: 0x0016760C File Offset: 0x0016580C
+	// Token: 0x060036C4 RID: 14020 RVA: 0x001697E4 File Offset: 0x001679E4
 	public override void Execute(MinEventParams _params)
 	{
 		base.Execute(_params);
@@ -17,7 +17,7 @@ public class MinEventActionPinToolbeltMessage : MinEventActionBase
 		}
 	}
 
-	// Token: 0x0600366F RID: 13935 RVA: 0x00167642 File Offset: 0x00165842
+	// Token: 0x060036C5 RID: 14021 RVA: 0x0016981A File Offset: 0x00167A1A
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -28,7 +28,7 @@ public class MinEventActionPinToolbeltMessage : MinEventActionBase
 		return flag;
 	}
 
-	// Token: 0x04002BC1 RID: 11201
+	// Token: 0x04002C35 RID: 11317
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string messageKey = "";
 }

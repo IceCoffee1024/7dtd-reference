@@ -2,12 +2,12 @@
 using System.Threading;
 using UnityEngine.Scripting;
 
-// Token: 0x02000793 RID: 1939
+// Token: 0x0200079D RID: 1949
 [Preserve]
 public abstract class NetPackage
 {
-	// Token: 0x170005EB RID: 1515
-	// (get) Token: 0x0600399E RID: 14750 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x170005F5 RID: 1525
+	// (get) Token: 0x060039F6 RID: 14838 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual int Channel
 	{
 		get
@@ -16,8 +16,8 @@ public abstract class NetPackage
 		}
 	}
 
-	// Token: 0x170005EC RID: 1516
-	// (get) Token: 0x0600399F RID: 14751 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x170005F6 RID: 1526
+	// (get) Token: 0x060039F7 RID: 14839 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool Compress
 	{
 		get
@@ -26,8 +26,8 @@ public abstract class NetPackage
 		}
 	}
 
-	// Token: 0x170005ED RID: 1517
-	// (get) Token: 0x060039A0 RID: 14752 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x170005F7 RID: 1527
+	// (get) Token: 0x060039F8 RID: 14840 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool FlushQueue
 	{
 		get
@@ -36,8 +36,8 @@ public abstract class NetPackage
 		}
 	}
 
-	// Token: 0x170005EE RID: 1518
-	// (get) Token: 0x060039A1 RID: 14753 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x170005F8 RID: 1528
+	// (get) Token: 0x060039F9 RID: 14841 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual NetPackageDirection PackageDirection
 	{
 		get
@@ -46,8 +46,8 @@ public abstract class NetPackage
 		}
 	}
 
-	// Token: 0x170005EF RID: 1519
-	// (get) Token: 0x060039A2 RID: 14754 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x170005F9 RID: 1529
+	// (get) Token: 0x060039FA RID: 14842 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool AllowedBeforeAuth
 	{
 		get
@@ -56,8 +56,8 @@ public abstract class NetPackage
 		}
 	}
 
-	// Token: 0x170005F0 RID: 1520
-	// (get) Token: 0x060039A3 RID: 14755 RVA: 0x00178855 File Offset: 0x00176A55
+	// Token: 0x170005FA RID: 1530
+	// (get) Token: 0x060039FB RID: 14843 RVA: 0x0017AAD5 File Offset: 0x00178CD5
 	public int PackageId
 	{
 		get
@@ -66,13 +66,13 @@ public abstract class NetPackage
 		}
 	}
 
-	// Token: 0x170005F1 RID: 1521
-	// (get) Token: 0x060039A4 RID: 14756 RVA: 0x00178862 File Offset: 0x00176A62
-	// (set) Token: 0x060039A5 RID: 14757 RVA: 0x0017886A File Offset: 0x00176A6A
+	// Token: 0x170005FB RID: 1531
+	// (get) Token: 0x060039FC RID: 14844 RVA: 0x0017AAE2 File Offset: 0x00178CE2
+	// (set) Token: 0x060039FD RID: 14845 RVA: 0x0017AAEA File Offset: 0x00178CEA
 	public ClientInfo Sender { get; set; }
 
-	// Token: 0x170005F2 RID: 1522
-	// (get) Token: 0x060039A6 RID: 14758 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x170005FC RID: 1532
+	// (get) Token: 0x060039FE RID: 14846 RVA: 0x00020021 File Offset: 0x0001E221
 	public virtual bool ReliableDelivery
 	{
 		get
@@ -81,34 +81,34 @@ public abstract class NetPackage
 		}
 	}
 
-	// Token: 0x060039A7 RID: 14759
+	// Token: 0x060039FF RID: 14847
 	public abstract void read(PooledBinaryReader _reader);
 
-	// Token: 0x060039A8 RID: 14760 RVA: 0x00178873 File Offset: 0x00176A73
+	// Token: 0x06003A00 RID: 14848 RVA: 0x0017AAF3 File Offset: 0x00178CF3
 	public virtual void write(PooledBinaryWriter _writer)
 	{
 		_writer.Write((ushort)this.PackageId);
 	}
 
-	// Token: 0x060039A9 RID: 14761 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x06003A01 RID: 14849 RVA: 0x00020021 File Offset: 0x0001E221
 	public virtual bool ShouldProcess(World _world, GameManager _callbacks)
 	{
 		return true;
 	}
 
-	// Token: 0x060039AA RID: 14762
+	// Token: 0x06003A02 RID: 14850
 	public abstract void ProcessPackage(World _world, GameManager _callbacks);
 
-	// Token: 0x060039AB RID: 14763 RVA: 0x00178882 File Offset: 0x00176A82
+	// Token: 0x06003A03 RID: 14851 RVA: 0x0017AB02 File Offset: 0x00178D02
 	public virtual void HandleSkipped(World _world, GameManager _callbacks)
 	{
 		NetPackageManager.FreePackage(this);
 	}
 
-	// Token: 0x060039AC RID: 14764
+	// Token: 0x06003A04 RID: 14852
 	public abstract int GetLength();
 
-	// Token: 0x060039AD RID: 14765 RVA: 0x0017888C File Offset: 0x00176A8C
+	// Token: 0x06003A05 RID: 14853 RVA: 0x0017AB0C File Offset: 0x00178D0C
 	public override string ToString()
 	{
 		string text;
@@ -119,13 +119,13 @@ public abstract class NetPackage
 		return text;
 	}
 
-	// Token: 0x060039AE RID: 14766 RVA: 0x001788B7 File Offset: 0x00176AB7
+	// Token: 0x06003A06 RID: 14854 RVA: 0x0017AB37 File Offset: 0x00178D37
 	public void RegisterSendQueue()
 	{
 		Interlocked.Increment(ref this.inSendQueuesCount);
 	}
 
-	// Token: 0x060039AF RID: 14767 RVA: 0x001788C5 File Offset: 0x00176AC5
+	// Token: 0x06003A07 RID: 14855 RVA: 0x0017AB45 File Offset: 0x00178D45
 	public void SendQueueHandled()
 	{
 		if (Interlocked.Decrement(ref this.inSendQueuesCount) == 0)
@@ -134,7 +134,7 @@ public abstract class NetPackage
 		}
 	}
 
-	// Token: 0x060039B0 RID: 14768 RVA: 0x001788DC File Offset: 0x00176ADC
+	// Token: 0x06003A08 RID: 14856 RVA: 0x0017AB5C File Offset: 0x00178D5C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool ValidEntityIdForSender(int _entityId, bool _allowAttachedToEntity = false)
 	{
@@ -158,7 +158,7 @@ public abstract class NetPackage
 		return false;
 	}
 
-	// Token: 0x060039B1 RID: 14769 RVA: 0x00178974 File Offset: 0x00176B74
+	// Token: 0x06003A09 RID: 14857 RVA: 0x0017ABF4 File Offset: 0x00178DF4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool ValidUserIdForSender(PlatformUserIdentifierAbs _userId)
 	{
@@ -174,17 +174,17 @@ public abstract class NetPackage
 		return false;
 	}
 
-	// Token: 0x060039B2 RID: 14770 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x06003A0A RID: 14858 RVA: 0x0000640C File Offset: 0x0000460C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public NetPackage()
 	{
 	}
 
-	// Token: 0x04002F2A RID: 12074
+	// Token: 0x04002FA3 RID: 12195
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int inSendQueuesCount;
 
-	// Token: 0x04002F2B RID: 12075
+	// Token: 0x04002FA4 RID: 12196
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string classnameCached;
 }

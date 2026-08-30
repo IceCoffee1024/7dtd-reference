@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000987 RID: 2439
+// Token: 0x02000998 RID: 2456
 [Preserve]
 public class ObjectiveGameEvent : BaseObjective
 {
-	// Token: 0x1700078D RID: 1933
-	// (get) Token: 0x060047A9 RID: 18345 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x1700079F RID: 1951
+	// (get) Token: 0x0600482F RID: 18479 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool useUpdateLoop
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -16,20 +16,20 @@ public class ObjectiveGameEvent : BaseObjective
 		}
 	}
 
-	// Token: 0x060047AA RID: 18346 RVA: 0x001C10A4 File Offset: 0x001BF2A4
+	// Token: 0x06004830 RID: 18480 RVA: 0x001C3898 File Offset: 0x001C1A98
 	public override void SetupObjective()
 	{
 		this.keyword = Localization.Get("ObjectiveAssemble_keyword", false, null);
 	}
 
-	// Token: 0x060047AB RID: 18347 RVA: 0x001C10B8 File Offset: 0x001BF2B8
+	// Token: 0x06004831 RID: 18481 RVA: 0x001C38AC File Offset: 0x001C1AAC
 	public override void SetupDisplay()
 	{
 		base.Description = "Test Game Event";
 		this.StatusText = "";
 	}
 
-	// Token: 0x060047AC RID: 18348 RVA: 0x001C10D0 File Offset: 0x001BF2D0
+	// Token: 0x06004832 RID: 18482 RVA: 0x001C38C4 File Offset: 0x001C1AC4
 	public override void AddHooks()
 	{
 		GameEventManager gameEventManager = GameEventManager.Current;
@@ -37,7 +37,7 @@ public class ObjectiveGameEvent : BaseObjective
 		gameEventManager.GameEventDenied += this.Current_GameEventDenied;
 	}
 
-	// Token: 0x060047AD RID: 18349 RVA: 0x001C10FA File Offset: 0x001BF2FA
+	// Token: 0x06004833 RID: 18483 RVA: 0x001C38EE File Offset: 0x001C1AEE
 	public override void RemoveHooks()
 	{
 		GameEventManager gameEventManager = GameEventManager.Current;
@@ -45,7 +45,7 @@ public class ObjectiveGameEvent : BaseObjective
 		gameEventManager.GameEventDenied -= this.Current_GameEventDenied;
 	}
 
-	// Token: 0x060047AE RID: 18350 RVA: 0x001C1124 File Offset: 0x001BF324
+	// Token: 0x06004834 RID: 18484 RVA: 0x001C3918 File Offset: 0x001C1B18
 	public override void Update(float updateTime)
 	{
 		switch (this.GameEventState)
@@ -65,7 +65,7 @@ public class ObjectiveGameEvent : BaseObjective
 		}
 	}
 
-	// Token: 0x060047AF RID: 18351 RVA: 0x001C118C File Offset: 0x001BF38C
+	// Token: 0x06004835 RID: 18485 RVA: 0x001C3980 File Offset: 0x001C1B80
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_GameEventCompleted(string _gameEventID, int _targetEntityID, string _extraData, string _tag)
 	{
@@ -76,13 +76,13 @@ public class ObjectiveGameEvent : BaseObjective
 		}
 	}
 
-	// Token: 0x060047B0 RID: 18352 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004836 RID: 18486 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_GameEventDenied(string gameEventID, int targetEntityID, string extraData, string tag)
 	{
 	}
 
-	// Token: 0x060047B1 RID: 18353 RVA: 0x001C11E8 File Offset: 0x001BF3E8
+	// Token: 0x06004837 RID: 18487 RVA: 0x001C39DC File Offset: 0x001C1BDC
 	public override void Refresh()
 	{
 		if (base.Complete)
@@ -96,7 +96,7 @@ public class ObjectiveGameEvent : BaseObjective
 		}
 	}
 
-	// Token: 0x060047B2 RID: 18354 RVA: 0x001C121C File Offset: 0x001BF41C
+	// Token: 0x06004838 RID: 18488 RVA: 0x001C3A10 File Offset: 0x001C1C10
 	public override BaseObjective Clone()
 	{
 		ObjectiveGameEvent objectiveGameEvent = new ObjectiveGameEvent();
@@ -106,7 +106,7 @@ public class ObjectiveGameEvent : BaseObjective
 		return objectiveGameEvent;
 	}
 
-	// Token: 0x060047B3 RID: 18355 RVA: 0x001C124F File Offset: 0x001BF44F
+	// Token: 0x06004839 RID: 18489 RVA: 0x001C3A43 File Offset: 0x001C1C43
 	public override void ParseProperties(DynamicProperties properties)
 	{
 		base.ParseProperties(properties);
@@ -114,35 +114,35 @@ public class ObjectiveGameEvent : BaseObjective
 		properties.ParseString(ObjectiveGameEvent.PropGameEventTag, ref this.gameEventTag);
 	}
 
-	// Token: 0x04003910 RID: 14608
+	// Token: 0x040039A1 RID: 14753
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string gameEventID = "";
 
-	// Token: 0x04003911 RID: 14609
+	// Token: 0x040039A2 RID: 14754
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string gameEventTag = "quest";
 
-	// Token: 0x04003912 RID: 14610
+	// Token: 0x040039A3 RID: 14755
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropGameEventID = "event";
 
-	// Token: 0x04003913 RID: 14611
+	// Token: 0x040039A4 RID: 14756
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropGameEventTag = "event_tag";
 
-	// Token: 0x04003914 RID: 14612
+	// Token: 0x040039A5 RID: 14757
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ObjectiveGameEvent.GameEventStates GameEventState;
 
-	// Token: 0x02000988 RID: 2440
+	// Token: 0x02000999 RID: 2457
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public enum GameEventStates
 	{
-		// Token: 0x04003916 RID: 14614
+		// Token: 0x040039A7 RID: 14759
 		Start,
-		// Token: 0x04003917 RID: 14615
+		// Token: 0x040039A8 RID: 14760
 		Waiting,
-		// Token: 0x04003918 RID: 14616
+		// Token: 0x040039A9 RID: 14761
 		Complete
 	}
 }

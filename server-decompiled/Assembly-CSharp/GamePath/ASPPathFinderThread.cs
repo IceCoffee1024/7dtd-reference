@@ -5,34 +5,34 @@ using UnityEngine;
 
 namespace GamePath
 {
-	// Token: 0x020018B3 RID: 6323
+	// Token: 0x020018D9 RID: 6361
 	public class ASPPathFinderThread : PathFinderThread
 	{
-		// Token: 0x0600C2BD RID: 49853 RVA: 0x00480F2F File Offset: 0x0047F12F
+		// Token: 0x0600C444 RID: 50244 RVA: 0x0048705B File Offset: 0x0048525B
 		public ASPPathFinderThread()
 		{
 			PathFinderThread.Instance = this;
 		}
 
-		// Token: 0x0600C2BE RID: 49854 RVA: 0x00480F53 File Offset: 0x0047F153
+		// Token: 0x0600C445 RID: 50245 RVA: 0x0048707F File Offset: 0x0048527F
 		public override int GetFinishedCount()
 		{
 			return this.finishedPaths.Count;
 		}
 
-		// Token: 0x0600C2BF RID: 49855 RVA: 0x00480F60 File Offset: 0x0047F160
+		// Token: 0x0600C446 RID: 50246 RVA: 0x0048708C File Offset: 0x0048528C
 		public override int GetQueueCount()
 		{
 			return this.entityWaitQueue.list.Count;
 		}
 
-		// Token: 0x0600C2C0 RID: 49856 RVA: 0x00480F72 File Offset: 0x0047F172
+		// Token: 0x0600C447 RID: 50247 RVA: 0x0048709E File Offset: 0x0048529E
 		public override void StartWorkerThreads()
 		{
 			this.coroutine = GameManager.Instance.StartCoroutine(this.FindPaths());
 		}
 
-		// Token: 0x0600C2C1 RID: 49857 RVA: 0x00480F8A File Offset: 0x0047F18A
+		// Token: 0x0600C448 RID: 50248 RVA: 0x004870B6 File Offset: 0x004852B6
 		public override void Cleanup()
 		{
 			GameManager.Instance.StopCoroutine(this.coroutine);
@@ -40,7 +40,7 @@ namespace GamePath
 			this.finishedPaths.Clear();
 		}
 
-		// Token: 0x0600C2C2 RID: 49858 RVA: 0x00480FB2 File Offset: 0x0047F1B2
+		// Token: 0x0600C449 RID: 50249 RVA: 0x004870DE File Offset: 0x004852DE
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator FindPaths()
 		{
@@ -75,14 +75,14 @@ namespace GamePath
 			yield break;
 		}
 
-		// Token: 0x0600C2C3 RID: 49859 RVA: 0x00480FC1 File Offset: 0x0047F1C1
+		// Token: 0x0600C44A RID: 50250 RVA: 0x004870ED File Offset: 0x004852ED
 		public override void FindPath(EntityAlive _entity, Vector3 _targetPos, float _speed, bool _canBreak, EAIBase _aiTask)
 		{
 			this.entityWaitQueue.Add(_entity.entityId);
 			this.finishedPaths[_entity.entityId] = new PathInfoSingleTarget(_entity, _targetPos, _canBreak, _speed, _aiTask);
 		}
 
-		// Token: 0x0600C2C4 RID: 49860 RVA: 0x00480FF4 File Offset: 0x0047F1F4
+		// Token: 0x0600C44B RID: 50251 RVA: 0x00487120 File Offset: 0x00485320
 		public override void FindPath(EntityAlive _entity, Vector3 _startPos, Vector3 _targetPos, float _speed, bool _canBreak, EAIBase _aiTask)
 		{
 			this.entityWaitQueue.Add(_entity.entityId);
@@ -91,14 +91,14 @@ namespace GamePath
 			this.finishedPaths[_entity.entityId] = pathInfoSingleTarget;
 		}
 
-		// Token: 0x0600C2C5 RID: 49861 RVA: 0x00481039 File Offset: 0x0047F239
+		// Token: 0x0600C44C RID: 50252 RVA: 0x00487165 File Offset: 0x00485365
 		public override void FindPath(PathInfo _pathInfo)
 		{
 			this.entityWaitQueue.Add(_pathInfo.entity.entityId);
 			this.finishedPaths[_pathInfo.entity.entityId] = _pathInfo;
 		}
 
-		// Token: 0x0600C2C6 RID: 49862 RVA: 0x00481068 File Offset: 0x0047F268
+		// Token: 0x0600C44D RID: 50253 RVA: 0x00487194 File Offset: 0x00485394
 		public override PathInfo GetPath(int _entityId)
 		{
 			PathInfo pathInfo;
@@ -110,28 +110,28 @@ namespace GamePath
 			return null;
 		}
 
-		// Token: 0x0600C2C7 RID: 49863 RVA: 0x0048109E File Offset: 0x0047F29E
+		// Token: 0x0600C44E RID: 50254 RVA: 0x004871CA File Offset: 0x004853CA
 		public override bool IsCalculatingPath(int _entityId)
 		{
 			return this.finishedPaths.ContainsKey(_entityId);
 		}
 
-		// Token: 0x0600C2C8 RID: 49864 RVA: 0x004810AC File Offset: 0x0047F2AC
+		// Token: 0x0600C44F RID: 50255 RVA: 0x004871D8 File Offset: 0x004853D8
 		public override void RemovePathsFor(int _entityId)
 		{
 			this.finishedPaths.Remove(_entityId);
 			this.entityWaitQueue.Remove(_entityId);
 		}
 
-		// Token: 0x04009329 RID: 37673
+		// Token: 0x04009452 RID: 37970
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Coroutine coroutine;
 
-		// Token: 0x0400932A RID: 37674
+		// Token: 0x04009453 RID: 37971
 		[PublicizedFrom(EAccessModifier.Private)]
 		public HashSetList<int> entityWaitQueue = new HashSetList<int>();
 
-		// Token: 0x0400932B RID: 37675
+		// Token: 0x04009454 RID: 37972
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<int, PathInfo> finishedPaths = new Dictionary<int, PathInfo>();
 	}

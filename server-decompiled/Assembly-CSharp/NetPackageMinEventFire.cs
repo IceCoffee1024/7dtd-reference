@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000806 RID: 2054
+// Token: 0x02000811 RID: 2065
 [Preserve]
 public class NetPackageMinEventFire : NetPackage
 {
-	// Token: 0x06003C78 RID: 15480 RVA: 0x001816D7 File Offset: 0x0017F8D7
+	// Token: 0x06003CD7 RID: 15575 RVA: 0x00183AAF File Offset: 0x00181CAF
 	public NetPackageMinEventFire Setup(int _selfEntityID, int _otherEntityID, MinEventTypes _eventType, ItemValue _itemValue)
 	{
 		this.selfEntityID = _selfEntityID;
@@ -16,7 +16,7 @@ public class NetPackageMinEventFire : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003C79 RID: 15481 RVA: 0x001816FE File Offset: 0x0017F8FE
+	// Token: 0x06003CD8 RID: 15576 RVA: 0x00183AD6 File Offset: 0x00181CD6
 	public NetPackageMinEventFire Setup(int _selfEntityID, int _otherEntityID, MinEventTypes _eventType, BlockValue _blockValue)
 	{
 		this.selfEntityID = _selfEntityID;
@@ -27,7 +27,7 @@ public class NetPackageMinEventFire : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003C7A RID: 15482 RVA: 0x00181728 File Offset: 0x0017F928
+	// Token: 0x06003CD9 RID: 15577 RVA: 0x00183B00 File Offset: 0x00181D00
 	public override void read(PooledBinaryReader _br)
 	{
 		this.selfEntityID = _br.ReadInt32();
@@ -45,7 +45,7 @@ public class NetPackageMinEventFire : NetPackage
 		this.itemValue = ItemValue.None;
 	}
 
-	// Token: 0x06003C7B RID: 15483 RVA: 0x001817AC File Offset: 0x0017F9AC
+	// Token: 0x06003CDA RID: 15578 RVA: 0x00183B84 File Offset: 0x00181D84
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -61,7 +61,7 @@ public class NetPackageMinEventFire : NetPackage
 		_bw.Write(this.blockValue.rawData);
 	}
 
-	// Token: 0x06003C7C RID: 15484 RVA: 0x00181818 File Offset: 0x0017FA18
+	// Token: 0x06003CDB RID: 15579 RVA: 0x00183BF0 File Offset: 0x00181DF0
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -79,8 +79,8 @@ public class NetPackageMinEventFire : NetPackage
 		}
 	}
 
-	// Token: 0x1700064E RID: 1614
-	// (get) Token: 0x06003C7D RID: 15485 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x17000659 RID: 1625
+	// (get) Token: 0x06003CDC RID: 15580 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -89,42 +89,42 @@ public class NetPackageMinEventFire : NetPackage
 		}
 	}
 
-	// Token: 0x06003C7E RID: 15486 RVA: 0x001818A1 File Offset: 0x0017FAA1
+	// Token: 0x06003CDD RID: 15581 RVA: 0x00183C79 File Offset: 0x00181E79
 	public override int GetLength()
 	{
 		return 32;
 	}
 
-	// Token: 0x040030D7 RID: 12503
+	// Token: 0x04003156 RID: 12630
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int selfEntityID;
 
-	// Token: 0x040030D8 RID: 12504
+	// Token: 0x04003157 RID: 12631
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int otherEntityID;
 
-	// Token: 0x040030D9 RID: 12505
+	// Token: 0x04003158 RID: 12632
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MinEventTypes eventType;
 
-	// Token: 0x040030DA RID: 12506
+	// Token: 0x04003159 RID: 12633
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue itemValue;
 
-	// Token: 0x040030DB RID: 12507
+	// Token: 0x0400315A RID: 12634
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockValue blockValue;
 
-	// Token: 0x040030DC RID: 12508
+	// Token: 0x0400315B RID: 12635
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetPackageMinEventFire.EventPackageTypes eventPackageType;
 
-	// Token: 0x02000807 RID: 2055
+	// Token: 0x02000812 RID: 2066
 	public enum EventPackageTypes
 	{
-		// Token: 0x040030DE RID: 12510
+		// Token: 0x0400315D RID: 12637
 		ItemEvent,
-		// Token: 0x040030DF RID: 12511
+		// Token: 0x0400315E RID: 12638
 		BlockEvent
 	}
 }

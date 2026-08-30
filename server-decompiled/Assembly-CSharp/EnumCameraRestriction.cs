@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x020011CE RID: 4558
+// Token: 0x020011EA RID: 4586
 public enum EnumCameraRestriction
 {
-	// Token: 0x04006CA5 RID: 27813
+	// Token: 0x04006D7E RID: 28030
 	Disabled,
-	// Token: 0x04006CA6 RID: 27814
+	// Token: 0x04006D7F RID: 28031
 	FirstPersonOnly,
-	// Token: 0x04006CA7 RID: 27815
+	// Token: 0x04006D80 RID: 28032
 	ThirdPersonOnly
 }

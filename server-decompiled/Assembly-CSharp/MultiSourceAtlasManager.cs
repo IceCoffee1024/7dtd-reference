@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200126D RID: 4717
+// Token: 0x02001287 RID: 4743
 public class MultiSourceAtlasManager : MonoBehaviour
 {
-	// Token: 0x060095CE RID: 38350 RVA: 0x00386E28 File Offset: 0x00385028
+	// Token: 0x060096C9 RID: 38601 RVA: 0x0038BF84 File Offset: 0x0038A184
 	public INGUIAtlas GetAtlasForSprite(string _spriteName)
 	{
 		MultiSourceAtlasManager.BaseAtlas baseAtlas;
@@ -20,7 +20,7 @@ public class MultiSourceAtlasManager : MonoBehaviour
 		return this.atlases[0].Atlas;
 	}
 
-	// Token: 0x060095CF RID: 38351 RVA: 0x00386E70 File Offset: 0x00385070
+	// Token: 0x060096CA RID: 38602 RVA: 0x0038BFCC File Offset: 0x0038A1CC
 	public void AddAtlas(INGUIAtlas _atlas, GameObject _gameObject, bool _isLoadingInGame)
 	{
 		MultiSourceAtlasManager.BaseAtlas baseAtlas = new MultiSourceAtlasManager.BaseAtlas
@@ -34,7 +34,7 @@ public class MultiSourceAtlasManager : MonoBehaviour
 		this.recalcSpriteSources();
 	}
 
-	// Token: 0x060095D0 RID: 38352 RVA: 0x00386EB8 File Offset: 0x003850B8
+	// Token: 0x060096CB RID: 38603 RVA: 0x0038C014 File Offset: 0x0038A214
 	public void CleanupAfterGame()
 	{
 		for (int i = this.atlases.Count - 1; i >= 0; i--)
@@ -53,7 +53,7 @@ public class MultiSourceAtlasManager : MonoBehaviour
 		this.recalcSpriteSources();
 	}
 
-	// Token: 0x060095D1 RID: 38353 RVA: 0x00386F34 File Offset: 0x00385134
+	// Token: 0x060096CC RID: 38604 RVA: 0x0038C090 File Offset: 0x0038A290
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void recalcSpriteSources()
 	{
@@ -66,7 +66,7 @@ public class MultiSourceAtlasManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060095D2 RID: 38354 RVA: 0x00386FD4 File Offset: 0x003851D4
+	// Token: 0x060096CD RID: 38605 RVA: 0x0038C130 File Offset: 0x0038A330
 	public static MultiSourceAtlasManager Create(GameObject _parent, string _name)
 	{
 		return new GameObject(_name)
@@ -78,27 +78,27 @@ public class MultiSourceAtlasManager : MonoBehaviour
 		}.AddComponent<MultiSourceAtlasManager>();
 	}
 
-	// Token: 0x0400701B RID: 28699
+	// Token: 0x040070F0 RID: 28912
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly List<MultiSourceAtlasManager.BaseAtlas> atlases = new List<MultiSourceAtlasManager.BaseAtlas>();
 
-	// Token: 0x0400701C RID: 28700
+	// Token: 0x040070F1 RID: 28913
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public readonly Dictionary<string, MultiSourceAtlasManager.BaseAtlas> atlasesForSprites = new Dictionary<string, MultiSourceAtlasManager.BaseAtlas>();
 
-	// Token: 0x0200126E RID: 4718
+	// Token: 0x02001288 RID: 4744
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class BaseAtlas
 	{
-		// Token: 0x0400701D RID: 28701
+		// Token: 0x040070F2 RID: 28914
 		public GameObject Parent;
 
-		// Token: 0x0400701E RID: 28702
+		// Token: 0x040070F3 RID: 28915
 		public INGUIAtlas Atlas;
 
-		// Token: 0x0400701F RID: 28703
+		// Token: 0x040070F4 RID: 28916
 		public bool IsLoadedInGame;
 	}
 }

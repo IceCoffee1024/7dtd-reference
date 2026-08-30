@@ -3,16 +3,16 @@ using Newtonsoft.Json;
 
 namespace Twitch.PubSub
 {
-	// Token: 0x0200185A RID: 6234
+	// Token: 0x02001880 RID: 6272
 	public class PubSubGoalMessage : BasePubSubMessage
 	{
-		// Token: 0x1700174C RID: 5964
-		// (get) Token: 0x0600C000 RID: 49152 RVA: 0x0047361D File Offset: 0x0047181D
-		// (set) Token: 0x0600C001 RID: 49153 RVA: 0x00473625 File Offset: 0x00471825
+		// Token: 0x170017BE RID: 6078
+		// (get) Token: 0x0600C185 RID: 49541 RVA: 0x004793B9 File Offset: 0x004775B9
+		// (set) Token: 0x0600C186 RID: 49542 RVA: 0x004793C1 File Offset: 0x004775C1
 		public new string type { get; set; }
 
-		// Token: 0x1700174D RID: 5965
-		// (get) Token: 0x0600C002 RID: 49154 RVA: 0x0047362E File Offset: 0x0047182E
+		// Token: 0x170017BF RID: 6079
+		// (get) Token: 0x0600C187 RID: 49543 RVA: 0x004793CA File Offset: 0x004775CA
 		public string TheType
 		{
 			get
@@ -21,47 +21,47 @@ namespace Twitch.PubSub
 			}
 		}
 
-		// Token: 0x1700174E RID: 5966
-		// (get) Token: 0x0600C003 RID: 49155 RVA: 0x00473636 File Offset: 0x00471836
-		// (set) Token: 0x0600C004 RID: 49156 RVA: 0x0047363E File Offset: 0x0047183E
+		// Token: 0x170017C0 RID: 6080
+		// (get) Token: 0x0600C188 RID: 49544 RVA: 0x004793D2 File Offset: 0x004775D2
+		// (set) Token: 0x0600C189 RID: 49545 RVA: 0x004793DA File Offset: 0x004775DA
 		public PubSubGoalMessage.GoalData data { get; set; }
 
-		// Token: 0x0600C005 RID: 49157 RVA: 0x00473647 File Offset: 0x00471847
+		// Token: 0x0600C18A RID: 49546 RVA: 0x004793E3 File Offset: 0x004775E3
 		public static PubSubGoalMessage Deserialize(string message)
 		{
 			return JsonConvert.DeserializeObject<PubSubGoalMessage>(message);
 		}
 
-		// Token: 0x0200185B RID: 6235
+		// Token: 0x02001881 RID: 6273
 		public class GoalData
 		{
-			// Token: 0x1700174F RID: 5967
-			// (get) Token: 0x0600C007 RID: 49159 RVA: 0x0047364F File Offset: 0x0047184F
-			// (set) Token: 0x0600C008 RID: 49160 RVA: 0x00473657 File Offset: 0x00471857
+			// Token: 0x170017C1 RID: 6081
+			// (get) Token: 0x0600C18C RID: 49548 RVA: 0x004793EB File Offset: 0x004775EB
+			// (set) Token: 0x0600C18D RID: 49549 RVA: 0x004793F3 File Offset: 0x004775F3
 			public PubSubGoalMessage.Goal goal { get; set; }
 		}
 
-		// Token: 0x0200185C RID: 6236
+		// Token: 0x02001882 RID: 6274
 		public class Goal
 		{
-			// Token: 0x17001750 RID: 5968
-			// (get) Token: 0x0600C00A RID: 49162 RVA: 0x00473660 File Offset: 0x00471860
-			// (set) Token: 0x0600C00B RID: 49163 RVA: 0x00473668 File Offset: 0x00471868
+			// Token: 0x170017C2 RID: 6082
+			// (get) Token: 0x0600C18F RID: 49551 RVA: 0x004793FC File Offset: 0x004775FC
+			// (set) Token: 0x0600C190 RID: 49552 RVA: 0x00479404 File Offset: 0x00477604
 			public string contributionType { get; set; }
 
-			// Token: 0x17001751 RID: 5969
-			// (get) Token: 0x0600C00C RID: 49164 RVA: 0x00473671 File Offset: 0x00471871
-			// (set) Token: 0x0600C00D RID: 49165 RVA: 0x00473679 File Offset: 0x00471879
+			// Token: 0x170017C3 RID: 6083
+			// (get) Token: 0x0600C191 RID: 49553 RVA: 0x0047940D File Offset: 0x0047760D
+			// (set) Token: 0x0600C192 RID: 49554 RVA: 0x00479415 File Offset: 0x00477615
 			public string state { get; set; }
 
-			// Token: 0x17001752 RID: 5970
-			// (get) Token: 0x0600C00E RID: 49166 RVA: 0x00473682 File Offset: 0x00471882
-			// (set) Token: 0x0600C00F RID: 49167 RVA: 0x0047368A File Offset: 0x0047188A
+			// Token: 0x170017C4 RID: 6084
+			// (get) Token: 0x0600C193 RID: 49555 RVA: 0x0047941E File Offset: 0x0047761E
+			// (set) Token: 0x0600C194 RID: 49556 RVA: 0x00479426 File Offset: 0x00477626
 			public int currentContributions { get; set; }
 
-			// Token: 0x17001753 RID: 5971
-			// (get) Token: 0x0600C010 RID: 49168 RVA: 0x00473693 File Offset: 0x00471893
-			// (set) Token: 0x0600C011 RID: 49169 RVA: 0x0047369B File Offset: 0x0047189B
+			// Token: 0x170017C5 RID: 6085
+			// (get) Token: 0x0600C195 RID: 49557 RVA: 0x0047942F File Offset: 0x0047762F
+			// (set) Token: 0x0600C196 RID: 49558 RVA: 0x00479437 File Offset: 0x00477637
 			public int targetContributions { get; set; }
 		}
 	}

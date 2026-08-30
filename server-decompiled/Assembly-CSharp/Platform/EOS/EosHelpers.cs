@@ -8,10 +8,10 @@ using Epic.OnlineServices.AntiCheatCommon;
 
 namespace Platform.EOS
 {
-	// Token: 0x02001CC5 RID: 7365
+	// Token: 0x02001CEC RID: 7404
 	public static class EosHelpers
 	{
-		// Token: 0x0600DA1E RID: 55838 RVA: 0x004E20B0 File Offset: 0x004E02B0
+		// Token: 0x0600DBB9 RID: 56249 RVA: 0x004E86C4 File Offset: 0x004E68C4
 		[PublicizedFrom(EAccessModifier.Private)]
 		static EosHelpers()
 		{
@@ -23,7 +23,7 @@ namespace Platform.EOS
 			EosHelpers.PlatformIdentifierMappings = new ReadOnlyDictionary<EPlatformIdentifier, ExternalAccountType>(enumDictionary);
 		}
 
-		// Token: 0x0600DA1F RID: 55839 RVA: 0x004E21A8 File Offset: 0x004E03A8
+		// Token: 0x0600DBBA RID: 56250 RVA: 0x004E87BC File Offset: 0x004E69BC
 		public static void TestEosConnection(Action<bool> _callback)
 		{
 			ThreadManager.StartThread("TestEosConnection", new ThreadManager.ThreadFunctionDelegate(EosHelpers.<TestEosConnection>g__workerFunc|10_0), new EosHelpers.EosConnectionTestInfo
@@ -32,7 +32,7 @@ namespace Platform.EOS
 			}, null, false, true);
 		}
 
-		// Token: 0x0600DA20 RID: 55840 RVA: 0x004E21D0 File Offset: 0x004E03D0
+		// Token: 0x0600DBBB RID: 56251 RVA: 0x004E87E4 File Offset: 0x004E69E4
 		public static void AssertMainThread(string _id)
 		{
 			if (!ThreadManager.IsMainThread())
@@ -41,7 +41,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DA21 RID: 55841 RVA: 0x004E21EC File Offset: 0x004E03EC
+		// Token: 0x0600DBBC RID: 56252 RVA: 0x004E8800 File Offset: 0x004E6A00
 		public static ClientInfo.EDeviceType GetDeviceTypeFromPlatform(string platform)
 		{
 			if (platform == "other" || platform == "steam")
@@ -60,13 +60,13 @@ namespace Platform.EOS
 			return ClientInfo.EDeviceType.Xbox;
 		}
 
-		// Token: 0x0600DA22 RID: 55842 RVA: 0x004E2246 File Offset: 0x004E0446
+		// Token: 0x0600DBBD RID: 56253 RVA: 0x004E885A File Offset: 0x004E6A5A
 		public static bool RequiresAntiCheat(this ClientInfo.EDeviceType deviceType)
 		{
 			return deviceType != ClientInfo.EDeviceType.PlayStation && deviceType != ClientInfo.EDeviceType.Xbox;
 		}
 
-		// Token: 0x0600DA23 RID: 55843 RVA: 0x004E2258 File Offset: 0x004E0458
+		// Token: 0x0600DBBE RID: 56254 RVA: 0x004E886C File Offset: 0x004E6A6C
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <TestEosConnection>g__workerFunc|10_0(ThreadManager.ThreadInfo _info)
@@ -89,7 +89,7 @@ namespace Platform.EOS
 			ThreadManager.AddSingleTaskMainThread("TestEosConnectionResult", new ThreadManager.MainThreadTaskFunctionDelegate(EosHelpers.<TestEosConnection>g__mainThreadSyncFunc|10_1), _info.parameter);
 		}
 
-		// Token: 0x0600DA24 RID: 55844 RVA: 0x004E2314 File Offset: 0x004E0514
+		// Token: 0x0600DBBF RID: 56255 RVA: 0x004E8928 File Offset: 0x004E6B28
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <TestEosConnection>g__mainThreadSyncFunc|10_1(object _parameter)
@@ -98,7 +98,7 @@ namespace Platform.EOS
 			eosConnectionTestInfo.Callback(eosConnectionTestInfo.Result);
 		}
 
-		// Token: 0x0400A4DF RID: 42207
+		// Token: 0x0400A612 RID: 42514
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Dictionary<ExternalAccountType, EPlatformIdentifier> accountTypeMappings = new EnumDictionary<ExternalAccountType, EPlatformIdentifier>
 		{
@@ -120,13 +120,13 @@ namespace Platform.EOS
 			}
 		};
 
-		// Token: 0x0400A4E0 RID: 42208
+		// Token: 0x0400A613 RID: 42515
 		public static readonly ReadOnlyDictionary<ExternalAccountType, EPlatformIdentifier> AccountTypeMappings = new ReadOnlyDictionary<ExternalAccountType, EPlatformIdentifier>(EosHelpers.accountTypeMappings);
 
-		// Token: 0x0400A4E1 RID: 42209
+		// Token: 0x0400A614 RID: 42516
 		public static readonly ReadOnlyDictionary<EPlatformIdentifier, ExternalAccountType> PlatformIdentifierMappings;
 
-		// Token: 0x0400A4E2 RID: 42210
+		// Token: 0x0400A615 RID: 42517
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Dictionary<ClientInfo.EDeviceType, AntiCheatCommonClientPlatform> deviceTypeToAntiCheatPlatformMappings = new EnumDictionary<ClientInfo.EDeviceType, AntiCheatCommonClientPlatform>
 		{
@@ -156,28 +156,28 @@ namespace Platform.EOS
 			}
 		};
 
-		// Token: 0x0400A4E3 RID: 42211
+		// Token: 0x0400A616 RID: 42518
 		public static readonly ReadOnlyDictionary<ClientInfo.EDeviceType, AntiCheatCommonClientPlatform> DeviceTypeToAntiCheatPlatformMappings = new ReadOnlyDictionary<ClientInfo.EDeviceType, AntiCheatCommonClientPlatform>(EosHelpers.deviceTypeToAntiCheatPlatformMappings);
 
-		// Token: 0x0400A4E4 RID: 42212
+		// Token: 0x0400A617 RID: 42519
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string eosApiUrl = "https://api.epicgames.dev/sdk/v1/default";
 
-		// Token: 0x0400A4E5 RID: 42213
+		// Token: 0x0400A618 RID: 42520
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int eosApiTestTimeout = 5000;
 
-		// Token: 0x0400A4E6 RID: 42214
+		// Token: 0x0400A619 RID: 42521
 		public static EUserAccountState UserAccountState = EUserAccountState.Unknown;
 
-		// Token: 0x02001CC6 RID: 7366
+		// Token: 0x02001CED RID: 7405
 		[PublicizedFrom(EAccessModifier.Private)]
 		public class EosConnectionTestInfo
 		{
-			// Token: 0x0400A4E7 RID: 42215
+			// Token: 0x0400A61A RID: 42522
 			public Action<bool> Callback;
 
-			// Token: 0x0400A4E8 RID: 42216
+			// Token: 0x0400A61B RID: 42523
 			public bool Result;
 		}
 	}

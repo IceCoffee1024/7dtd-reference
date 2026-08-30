@@ -5,28 +5,28 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Platform;
 
-// Token: 0x02000A31 RID: 2609
+// Token: 0x02000A42 RID: 2626
 public static class SaveDataUtils
 {
-	// Token: 0x17000868 RID: 2152
-	// (get) Token: 0x06004EDB RID: 20187 RVA: 0x001DF2B3 File Offset: 0x001DD4B3
-	// (set) Token: 0x06004EDC RID: 20188 RVA: 0x001DF2BA File Offset: 0x001DD4BA
+	// Token: 0x1700087A RID: 2170
+	// (get) Token: 0x06004F61 RID: 20321 RVA: 0x001E1D4B File Offset: 0x001DFF4B
+	// (set) Token: 0x06004F62 RID: 20322 RVA: 0x001E1D52 File Offset: 0x001DFF52
 	public static ISaveDataManager SaveDataManager
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000869 RID: 2153
-	// (get) Token: 0x06004EDD RID: 20189 RVA: 0x001DF2C2 File Offset: 0x001DD4C2
-	// (set) Token: 0x06004EDE RID: 20190 RVA: 0x001DF2C9 File Offset: 0x001DD4C9
+	// Token: 0x1700087B RID: 2171
+	// (get) Token: 0x06004F63 RID: 20323 RVA: 0x001E1D5A File Offset: 0x001DFF5A
+	// (set) Token: 0x06004F64 RID: 20324 RVA: 0x001E1D61 File Offset: 0x001DFF61
 	public static ISaveDataPrefs SaveDataPrefs
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	} = SaveDataPrefsUninitialized.INSTANCE;
 
-	// Token: 0x06004EDF RID: 20191 RVA: 0x001DF2D1 File Offset: 0x001DD4D1
+	// Token: 0x06004F65 RID: 20325 RVA: 0x001E1D69 File Offset: 0x001DFF69
 	public static IEnumerator InitStaticCoroutine()
 	{
 		if (SaveDataUtils.s_initStatic)
@@ -71,7 +71,7 @@ public static class SaveDataUtils
 		yield break;
 	}
 
-	// Token: 0x06004EE0 RID: 20192 RVA: 0x001DF2D9 File Offset: 0x001DD4D9
+	// Token: 0x06004F66 RID: 20326 RVA: 0x001E1D71 File Offset: 0x001DFF71
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void SetSaveDataManagerOverride(ISaveDataManager saveDataManagerOverride)
 	{
@@ -83,7 +83,7 @@ public static class SaveDataUtils
 		SaveDataUtils.SaveDataManager = saveDataManagerOverride;
 	}
 
-	// Token: 0x06004EE1 RID: 20193 RVA: 0x001DF2F4 File Offset: 0x001DD4F4
+	// Token: 0x06004F67 RID: 20327 RVA: 0x001E1D8C File Offset: 0x001DFF8C
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void ClearSaveDataManagerOverride()
 	{
@@ -97,21 +97,21 @@ public static class SaveDataUtils
 		SaveDataUtils.SaveDataManager = SaveDataUtils.s_saveDataManager;
 	}
 
-	// Token: 0x06004EE2 RID: 20194 RVA: 0x001DF327 File Offset: 0x001DD527
+	// Token: 0x06004F68 RID: 20328 RVA: 0x001E1DBF File Offset: 0x001DFFBF
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void SetSaveDataPrefsOverride(ISaveDataPrefs saveDataPrefsOverride)
 	{
 		SaveDataUtils.SaveDataPrefs = saveDataPrefsOverride;
 	}
 
-	// Token: 0x06004EE3 RID: 20195 RVA: 0x001DF32F File Offset: 0x001DD52F
+	// Token: 0x06004F69 RID: 20329 RVA: 0x001E1DC7 File Offset: 0x001DFFC7
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void ClearSaveDataPrefsOverride()
 	{
 		SaveDataUtils.SaveDataPrefs = SaveDataUtils.s_saveDataPrefs;
 	}
 
-	// Token: 0x06004EE4 RID: 20196 RVA: 0x001DF33C File Offset: 0x001DD53C
+	// Token: 0x06004F6A RID: 20330 RVA: 0x001E1DD4 File Offset: 0x001DFFD4
 	public static bool IsManaged(string path)
 	{
 		if (!SaveDataUtils.s_isManagementEnabled)
@@ -126,7 +126,7 @@ public static class SaveDataUtils
 		return SaveDataUtils.s_managedPathRegexWithoutGroups.IsMatch(normalizedPath);
 	}
 
-	// Token: 0x06004EE5 RID: 20197 RVA: 0x001DF370 File Offset: 0x001DD570
+	// Token: 0x06004F6B RID: 20331 RVA: 0x001E1E08 File Offset: 0x001E0008
 	public static bool TryGetManagedPath(string path, out SaveDataManagedPath managedPath)
 	{
 		if (!SaveDataUtils.s_isManagementEnabled)
@@ -153,13 +153,13 @@ public static class SaveDataUtils
 		return false;
 	}
 
-	// Token: 0x06004EE6 RID: 20198 RVA: 0x001DF3DE File Offset: 0x001DD5DE
+	// Token: 0x06004F6C RID: 20332 RVA: 0x001E1E76 File Offset: 0x001E0076
 	public static SaveDataManagedPath GetBackupPath(SaveDataManagedPath restorePath)
 	{
 		return new SaveDataManagedPath(restorePath.PathRelativeToRoot + ".bup");
 	}
 
-	// Token: 0x06004EE7 RID: 20199 RVA: 0x001DF3F8 File Offset: 0x001DD5F8
+	// Token: 0x06004F6D RID: 20333 RVA: 0x001E1E90 File Offset: 0x001E0090
 	public static SaveDataManagedPath GetRestorePath(SaveDataManagedPath backupPath)
 	{
 		string pathRelativeToRoot = backupPath.PathRelativeToRoot;
@@ -170,7 +170,7 @@ public static class SaveDataUtils
 		return new SaveDataManagedPath(pathRelativeToRoot.AsSpan(0, pathRelativeToRoot.Length - ".bup".Length));
 	}
 
-	// Token: 0x06004EE8 RID: 20200 RVA: 0x001DF454 File Offset: 0x001DD654
+	// Token: 0x06004F6E RID: 20334 RVA: 0x001E1EEC File Offset: 0x001E00EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void UpdatePaths()
 	{
@@ -193,7 +193,7 @@ public static class SaveDataUtils
 		SaveDataUtils.s_saveDataRootPathPrefix = normalizedPath;
 	}
 
-	// Token: 0x06004EE9 RID: 20201 RVA: 0x001DF514 File Offset: 0x001DD714
+	// Token: 0x06004F6F RID: 20335 RVA: 0x001E1FAC File Offset: 0x001E01AC
 	public static void Destroy()
 	{
 		SdPlayerPrefs.Save();
@@ -209,36 +209,36 @@ public static class SaveDataUtils
 		saveGameProvider.Destroy();
 	}
 
-	// Token: 0x04003C7D RID: 15485
+	// Token: 0x04003D0E RID: 15630
 	public const string BACKUP_FILE_EXTENSION = "bup";
 
-	// Token: 0x04003C7E RID: 15486
+	// Token: 0x04003D0F RID: 15631
 	public const string BACKUP_FILE_EXTENSION_WITH_DOT = ".bup";
 
-	// Token: 0x04003C7F RID: 15487
+	// Token: 0x04003D10 RID: 15632
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool s_initStatic;
 
-	// Token: 0x04003C81 RID: 15489
+	// Token: 0x04003D12 RID: 15634
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ISaveDataManager s_saveDataManager;
 
-	// Token: 0x04003C82 RID: 15490
+	// Token: 0x04003D13 RID: 15635
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool s_isManagementEnabled = false;
 
-	// Token: 0x04003C83 RID: 15491
+	// Token: 0x04003D14 RID: 15636
 	public static string s_saveDataRootPathPrefix;
 
-	// Token: 0x04003C85 RID: 15493
+	// Token: 0x04003D16 RID: 15638
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ISaveDataPrefs s_saveDataPrefs = SaveDataPrefsUninitialized.INSTANCE;
 
-	// Token: 0x04003C86 RID: 15494
+	// Token: 0x04003D17 RID: 15639
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Regex s_managedPathRegex = new Regex("$^", RegexOptions.Compiled);
 
-	// Token: 0x04003C87 RID: 15495
+	// Token: 0x04003D18 RID: 15640
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Regex s_managedPathRegexWithoutGroups = new Regex("$^", RegexOptions.Compiled);
 }

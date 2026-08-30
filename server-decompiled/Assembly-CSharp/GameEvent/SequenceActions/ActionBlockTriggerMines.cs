@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019C2 RID: 6594
+	// Token: 0x020019E9 RID: 6633
 	[Preserve]
 	public class ActionBlockTriggerMines : ActionBaseBlockAction
 	{
-		// Token: 0x0600C8D6 RID: 51414 RVA: 0x0049BC56 File Offset: 0x00499E56
+		// Token: 0x0600CA5F RID: 51807 RVA: 0x004A1FBA File Offset: 0x004A01BA
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BlockChangeInfo UpdateBlock(World world, Vector3i currentPos, BlockValue blockValue)
 		{
@@ -19,7 +19,7 @@ namespace GameEvent.SequenceActions
 			return null;
 		}
 
-		// Token: 0x0600C8D7 RID: 51415 RVA: 0x0049C930 File Offset: 0x0049AB30
+		// Token: 0x0600CA60 RID: 51808 RVA: 0x004A2D24 File Offset: 0x004A0F24
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void ProcessChanges(World world, List<BlockChangeInfo> blockChanges)
 		{
@@ -33,14 +33,14 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C8D8 RID: 51416 RVA: 0x0049C991 File Offset: 0x0049AB91
+		// Token: 0x0600CA61 RID: 51809 RVA: 0x004A2D85 File Offset: 0x004A0F85
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			this.Properties.ParseBool(ActionBlockTriggerMines.PropUseTrigger, ref this.useTrigger);
 		}
 
-		// Token: 0x0600C8D9 RID: 51417 RVA: 0x0049C9B0 File Offset: 0x0049ABB0
+		// Token: 0x0600CA62 RID: 51810 RVA: 0x004A2DA4 File Offset: 0x004A0FA4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -50,11 +50,11 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009876 RID: 39030
+		// Token: 0x040099A7 RID: 39335
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool useTrigger;
 
-		// Token: 0x04009877 RID: 39031
+		// Token: 0x040099A8 RID: 39336
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropUseTrigger = "use_trigger";
 	}

@@ -3,11 +3,11 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D9A RID: 3482
+// Token: 0x02000DAE RID: 3502
 [Preserve]
 public class XUiC_OptionsGeneral : XUiC_OptionsDialogBase
 {
-	// Token: 0x06006A60 RID: 27232 RVA: 0x0029A05C File Offset: 0x0029825C
+	// Token: 0x06006AFB RID: 27387 RVA: 0x0029D1BC File Offset: 0x0029B3BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void initLanguageOptions()
 	{
@@ -62,7 +62,7 @@ public class XUiC_OptionsGeneral : XUiC_OptionsDialogBase
 		this.optionLanguage.IsDefaultDelegate = () => this.comboLanguage.Value.LanguageKey.EqualsCaseInsensitive((string)GamePrefs.GetDefault(EnumGamePrefs.Language));
 	}
 
-	// Token: 0x06006A61 RID: 27233 RVA: 0x0029A104 File Offset: 0x00298304
+	// Token: 0x06006AFC RID: 27388 RVA: 0x0029D264 File Offset: 0x0029B464
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void languageSavedOptions()
 	{
@@ -92,8 +92,8 @@ public class XUiC_OptionsGeneral : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000B81 RID: 2945
-	// (get) Token: 0x06006A62 RID: 27234 RVA: 0x0029A1D9 File Offset: 0x002983D9
+	// Token: 0x17000B99 RID: 2969
+	// (get) Token: 0x06006AFD RID: 27389 RVA: 0x0029D339 File Offset: 0x0029B539
 	[XuiXmlBinding("crosshairs_enabled")]
 	public bool CrosshairsEnabled
 	{
@@ -104,7 +104,7 @@ public class XUiC_OptionsGeneral : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x06006A63 RID: 27235 RVA: 0x0029A1E8 File Offset: 0x002983E8
+	// Token: 0x06006AFE RID: 27390 RVA: 0x0029D348 File Offset: 0x0029B548
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void initCrosshairOptions()
 	{
@@ -113,7 +113,7 @@ public class XUiC_OptionsGeneral : XUiC_OptionsDialogBase
 		this.crosshairDrawer = this.viewComponent.UiTransform.gameObject.AddComponent<CrosshairDrawer>();
 	}
 
-	// Token: 0x06006A64 RID: 27236 RVA: 0x0029A235 File Offset: 0x00298435
+	// Token: 0x06006AFF RID: 27391 RVA: 0x0029D395 File Offset: 0x0029B595
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnGamePrefChanged(EnumGamePrefs _pref)
 	{
@@ -123,7 +123,7 @@ public class XUiC_OptionsGeneral : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x06006A65 RID: 27237 RVA: 0x0029A251 File Offset: 0x00298451
+	// Token: 0x06006B00 RID: 27392 RVA: 0x0029D3B1 File Offset: 0x0029B5B1
 	[XuiBindEvent("OnTabChanged", "TabSelector")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new void OnTabChanged(int _tabIndex, XUiC_TabSelectorTab _tab)
@@ -131,7 +131,7 @@ public class XUiC_OptionsGeneral : XUiC_OptionsDialogBase
 		this.updateCrosshairElements();
 	}
 
-	// Token: 0x06006A66 RID: 27238 RVA: 0x0029A25C File Offset: 0x0029845C
+	// Token: 0x06006B01 RID: 27393 RVA: 0x0029D3BC File Offset: 0x0029B5BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateRangedCrosshairDrwaing()
 	{
@@ -140,7 +140,7 @@ public class XUiC_OptionsGeneral : XUiC_OptionsDialogBase
 		this.crosshairDrawer.draw = this.TabSelector.SelectedTabIndex == 1 && @bool && bool2 && !XUiC_FullScreenCollider.IsBlocked(this.viewComponent);
 	}
 
-	// Token: 0x06006A67 RID: 27239 RVA: 0x0029A2B0 File Offset: 0x002984B0
+	// Token: 0x06006B02 RID: 27394 RVA: 0x0029D410 File Offset: 0x0029B610
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateCrosshairPosition()
 	{
@@ -153,7 +153,7 @@ public class XUiC_OptionsGeneral : XUiC_OptionsDialogBase
 		this.updateRangedCrosshairDrwaing();
 	}
 
-	// Token: 0x06006A68 RID: 27240 RVA: 0x0029A348 File Offset: 0x00298548
+	// Token: 0x06006B03 RID: 27395 RVA: 0x0029D4A8 File Offset: 0x0029B6A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateCrosshairElements()
 	{
@@ -178,8 +178,8 @@ public class XUiC_OptionsGeneral : XUiC_OptionsDialogBase
 		base.RefreshBindings();
 	}
 
-	// Token: 0x17000B82 RID: 2946
-	// (get) Token: 0x06006A69 RID: 27241 RVA: 0x0029A442 File Offset: 0x00298642
+	// Token: 0x17000B9A RID: 2970
+	// (get) Token: 0x06006B04 RID: 27396 RVA: 0x0029D5A2 File Offset: 0x0029B7A2
 	public static EUserPerms UserPermissions
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -189,8 +189,8 @@ public class XUiC_OptionsGeneral : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000B83 RID: 2947
-	// (get) Token: 0x06006A6A RID: 27242 RVA: 0x0029A44B File Offset: 0x0029864B
+	// Token: 0x17000B9B RID: 2971
+	// (get) Token: 0x06006B05 RID: 27397 RVA: 0x0029D5AB File Offset: 0x0029B7AB
 	[XuiXmlBinding("has_communication_perm")]
 	public bool HasCommunicationPermission
 	{
@@ -201,8 +201,8 @@ public class XUiC_OptionsGeneral : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000B84 RID: 2948
-	// (get) Token: 0x06006A6B RID: 27243 RVA: 0x0029A457 File Offset: 0x00298657
+	// Token: 0x17000B9C RID: 2972
+	// (get) Token: 0x06006B06 RID: 27398 RVA: 0x0029D5B7 File Offset: 0x0029B7B7
 	[XuiXmlBinding("has_crossplay_perm")]
 	public bool HasCrossplayPermission
 	{
@@ -213,8 +213,8 @@ public class XUiC_OptionsGeneral : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000B85 RID: 2949
-	// (get) Token: 0x06006A6C RID: 27244 RVA: 0x0029A463 File Offset: 0x00298663
+	// Token: 0x17000B9D RID: 2973
+	// (get) Token: 0x06006B07 RID: 27399 RVA: 0x0029D5C3 File Offset: 0x0029B7C3
 	[XuiXmlBinding("crossplayTooltip")]
 	public string CrossplayTooltip
 	{
@@ -225,7 +225,7 @@ public class XUiC_OptionsGeneral : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x06006A6D RID: 27245 RVA: 0x0029A480 File Offset: 0x00298680
+	// Token: 0x06006B08 RID: 27400 RVA: 0x0029D5E0 File Offset: 0x0029B7E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void initPermissionsBasedOptions()
 	{
@@ -249,8 +249,8 @@ public class XUiC_OptionsGeneral : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x17000B86 RID: 2950
-	// (get) Token: 0x06006A6E RID: 27246 RVA: 0x0029A545 File Offset: 0x00298745
+	// Token: 0x17000B9E RID: 2974
+	// (get) Token: 0x06006B09 RID: 27401 RVA: 0x0029D6A5 File Offset: 0x0029B8A5
 	[XuiXmlBinding("bug_reporting")]
 	public bool SupportsBugReporting
 	{
@@ -261,7 +261,7 @@ public class XUiC_OptionsGeneral : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x06006A6F RID: 27247 RVA: 0x0029A54C File Offset: 0x0029874C
+	// Token: 0x06006B0A RID: 27402 RVA: 0x0029D6AC File Offset: 0x0029B8AC
 	public override void Init()
 	{
 		base.Init();
@@ -271,7 +271,7 @@ public class XUiC_OptionsGeneral : XUiC_OptionsDialogBase
 		this.initPermissionsBasedOptions();
 	}
 
-	// Token: 0x06006A70 RID: 27248 RVA: 0x0029A576 File Offset: 0x00298776
+	// Token: 0x06006B0B RID: 27403 RVA: 0x0029D6D6 File Offset: 0x0029B8D6
 	[XuiBindEvent("OnPress", "btnEula")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnEula_OnPressed(XUiController _sender, int _mouseButton)
@@ -279,7 +279,7 @@ public class XUiC_OptionsGeneral : XUiC_OptionsDialogBase
 		XUiC_EulaWindow.Open(this.xui, GameManager.HasAcceptedLatestEula());
 	}
 
-	// Token: 0x06006A71 RID: 27249 RVA: 0x0029A588 File Offset: 0x00298788
+	// Token: 0x06006B0C RID: 27404 RVA: 0x0029D6E8 File Offset: 0x0029B8E8
 	[XuiBindEvent("OnPress", "btnBugReport")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnBugReport_OnPressed(XUiController _sender, int _mouseButton)
@@ -287,7 +287,7 @@ public class XUiC_OptionsGeneral : XUiC_OptionsDialogBase
 		XUiC_BugReportWindow.Open();
 	}
 
-	// Token: 0x06006A72 RID: 27250 RVA: 0x0029A58F File Offset: 0x0029878F
+	// Token: 0x06006B0D RID: 27405 RVA: 0x0029D6EF File Offset: 0x0029B8EF
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void afterChangesSaved()
 	{
@@ -295,80 +295,80 @@ public class XUiC_OptionsGeneral : XUiC_OptionsDialogBase
 		this.languageSavedOptions();
 	}
 
-	// Token: 0x06006A73 RID: 27251 RVA: 0x0029A59D File Offset: 0x0029879D
+	// Token: 0x06006B0E RID: 27406 RVA: 0x0029D6FD File Offset: 0x0029B8FD
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 		this.updateCrosshairPosition();
 	}
 
-	// Token: 0x06006A74 RID: 27252 RVA: 0x0029A5AC File Offset: 0x002987AC
+	// Token: 0x06006B0F RID: 27407 RVA: 0x0029D70C File Offset: 0x0029B90C
 	public override void OnOpen()
 	{
 		this.updateCrosshairElements();
 		base.OnOpen();
 	}
 
-	// Token: 0x040050E4 RID: 20708
+	// Token: 0x04005186 RID: 20870
 	[XuiBindComponent("OptionLanguage", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_OptionEntryCustom optionLanguage;
 
-	// Token: 0x040050E5 RID: 20709
+	// Token: 0x04005187 RID: 20871
 	[XuiBindComponent("Language", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<XUiC_OptionsGeneral.LanguageInfo> comboLanguage;
 
-	// Token: 0x040050E6 RID: 20710
+	// Token: 0x04005188 RID: 20872
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool languageChanged;
 
-	// Token: 0x040050E7 RID: 20711
+	// Token: 0x04005189 RID: 20873
 	[XuiBindComponent("CrosshairsColor", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxInt comboCrosshairsColor;
 
-	// Token: 0x040050E8 RID: 20712
+	// Token: 0x0400518A RID: 20874
 	[XuiBindComponent("CrosshairsSample", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiV_Sprite crosshairSample;
 
-	// Token: 0x040050E9 RID: 20713
+	// Token: 0x0400518B RID: 20875
 	[XuiBindComponent("rangedCrosshairSample", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiView crosshairRangedSample;
 
-	// Token: 0x040050EA RID: 20714
+	// Token: 0x0400518C RID: 20876
 	[PublicizedFrom(EAccessModifier.Private)]
 	public CrosshairDrawer crosshairDrawer;
 
-	// Token: 0x040050EB RID: 20715
+	// Token: 0x0400518D RID: 20877
 	[XuiBindComponent("OptionChatComms", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_OptionEntryGamePrefBool optionChatComms;
 
-	// Token: 0x040050EC RID: 20716
+	// Token: 0x0400518E RID: 20878
 	[XuiBindComponent("OptionCrossplay", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_OptionEntryGamePrefBool optionCrossplay;
 
-	// Token: 0x040050ED RID: 20717
+	// Token: 0x0400518F RID: 20879
 	public static string ID = "";
 
-	// Token: 0x040050EE RID: 20718
+	// Token: 0x04005190 RID: 20880
 	[XuiBindComponent("btnEula", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnEula;
 
-	// Token: 0x040050EF RID: 20719
+	// Token: 0x04005191 RID: 20881
 	[XuiBindComponent("btnBugReport", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnBugReport;
 
-	// Token: 0x02000D9B RID: 3483
+	// Token: 0x02000DAF RID: 3503
 	public readonly struct LanguageInfo : IComparable<XUiC_OptionsGeneral.LanguageInfo>, IEquatable<XUiC_OptionsGeneral.LanguageInfo>, IComparable
 	{
-		// Token: 0x06006A7F RID: 27263 RVA: 0x0029A7EC File Offset: 0x002989EC
+		// Token: 0x06006B1A RID: 27418 RVA: 0x0029D94C File Offset: 0x0029BB4C
 		public LanguageInfo(string _languageKey)
 		{
 			this.LanguageKey = _languageKey;
@@ -382,7 +382,7 @@ public class XUiC_OptionsGeneral : XUiC_OptionsDialogBase
 			this.NameNative = Localization.Get("languageNameNative", false, _languageKey);
 		}
 
-		// Token: 0x06006A80 RID: 27264 RVA: 0x0029A840 File Offset: 0x00298A40
+		// Token: 0x06006B1B RID: 27419 RVA: 0x0029D9A0 File Offset: 0x0029BBA0
 		public override string ToString()
 		{
 			if (!(this.LanguageKey == ""))
@@ -392,13 +392,13 @@ public class XUiC_OptionsGeneral : XUiC_OptionsDialogBase
 			return "-Auto-";
 		}
 
-		// Token: 0x06006A81 RID: 27265 RVA: 0x0029A870 File Offset: 0x00298A70
+		// Token: 0x06006B1C RID: 27420 RVA: 0x0029D9D0 File Offset: 0x0029BBD0
 		public bool Equals(XUiC_OptionsGeneral.LanguageInfo _other)
 		{
 			return this.LanguageKey == _other.LanguageKey;
 		}
 
-		// Token: 0x06006A82 RID: 27266 RVA: 0x0029A884 File Offset: 0x00298A84
+		// Token: 0x06006B1D RID: 27421 RVA: 0x0029D9E4 File Offset: 0x0029BBE4
 		public override bool Equals(object _obj)
 		{
 			if (_obj is XUiC_OptionsGeneral.LanguageInfo)
@@ -409,7 +409,7 @@ public class XUiC_OptionsGeneral : XUiC_OptionsDialogBase
 			return false;
 		}
 
-		// Token: 0x06006A83 RID: 27267 RVA: 0x0029A8A9 File Offset: 0x00298AA9
+		// Token: 0x06006B1E RID: 27422 RVA: 0x0029DA09 File Offset: 0x0029BC09
 		public override int GetHashCode()
 		{
 			if (this.LanguageKey == null)
@@ -419,13 +419,13 @@ public class XUiC_OptionsGeneral : XUiC_OptionsDialogBase
 			return this.LanguageKey.GetHashCode();
 		}
 
-		// Token: 0x06006A84 RID: 27268 RVA: 0x0029A8C0 File Offset: 0x00298AC0
+		// Token: 0x06006B1F RID: 27423 RVA: 0x0029DA20 File Offset: 0x0029BC20
 		public int CompareTo(XUiC_OptionsGeneral.LanguageInfo _other)
 		{
 			return string.Compare(this.NameEnglish, _other.NameEnglish, StringComparison.OrdinalIgnoreCase);
 		}
 
-		// Token: 0x06006A85 RID: 27269 RVA: 0x0029A8D4 File Offset: 0x00298AD4
+		// Token: 0x06006B20 RID: 27424 RVA: 0x0029DA34 File Offset: 0x0029BC34
 		public int CompareTo(object _obj)
 		{
 			if (_obj == null)
@@ -440,13 +440,13 @@ public class XUiC_OptionsGeneral : XUiC_OptionsDialogBase
 			throw new ArgumentException("Object must be of type LanguageInfo");
 		}
 
-		// Token: 0x040050F0 RID: 20720
+		// Token: 0x04005192 RID: 20882
 		public readonly string NameEnglish;
 
-		// Token: 0x040050F1 RID: 20721
+		// Token: 0x04005193 RID: 20883
 		public readonly string NameNative;
 
-		// Token: 0x040050F2 RID: 20722
+		// Token: 0x04005194 RID: 20884
 		public readonly string LanguageKey;
 	}
 }

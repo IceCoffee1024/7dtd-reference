@@ -3,30 +3,30 @@ using System.Collections.Generic;
 using Audio;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E98 RID: 3736
+// Token: 0x02000EAD RID: 3757
 [Preserve]
 public class XUiC_WindowSelector : XUiController
 {
-	// Token: 0x140000BE RID: 190
-	// (add) Token: 0x06007496 RID: 29846 RVA: 0x002BE604 File Offset: 0x002BC804
-	// (remove) Token: 0x06007497 RID: 29847 RVA: 0x002BE63C File Offset: 0x002BC83C
+	// Token: 0x140000BF RID: 191
+	// (add) Token: 0x06007536 RID: 30006 RVA: 0x002C1B30 File Offset: 0x002BFD30
+	// (remove) Token: 0x06007537 RID: 30007 RVA: 0x002C1B68 File Offset: 0x002BFD68
 	public event XUiC_WindowSelector.WindowSelectedDelegate WindowSelected;
 
-	// Token: 0x17000DB7 RID: 3511
-	// (get) Token: 0x06007498 RID: 29848 RVA: 0x002BE671 File Offset: 0x002BC871
-	// (set) Token: 0x06007499 RID: 29849 RVA: 0x002BE679 File Offset: 0x002BC879
+	// Token: 0x17000DD0 RID: 3536
+	// (get) Token: 0x06007538 RID: 30008 RVA: 0x002C1B9D File Offset: 0x002BFD9D
+	// (set) Token: 0x06007539 RID: 30009 RVA: 0x002C1BA5 File Offset: 0x002BFDA5
 	[XuiXmlAttribute("sound_on_open", false)]
 	public string SoundOnOpen { get; set; }
 
-	// Token: 0x17000DB8 RID: 3512
-	// (get) Token: 0x0600749A RID: 29850 RVA: 0x002BE682 File Offset: 0x002BC882
-	// (set) Token: 0x0600749B RID: 29851 RVA: 0x002BE68A File Offset: 0x002BC88A
+	// Token: 0x17000DD1 RID: 3537
+	// (get) Token: 0x0600753A RID: 30010 RVA: 0x002C1BAE File Offset: 0x002BFDAE
+	// (set) Token: 0x0600753B RID: 30011 RVA: 0x002C1BB6 File Offset: 0x002BFDB6
 	[XuiXmlAttribute("sound_on_close", false)]
 	public string SoundOnClose { get; set; }
 
-	// Token: 0x17000DB9 RID: 3513
-	// (get) Token: 0x0600749C RID: 29852 RVA: 0x002BE693 File Offset: 0x002BC893
-	// (set) Token: 0x0600749D RID: 29853 RVA: 0x002BE69B File Offset: 0x002BC89B
+	// Token: 0x17000DD2 RID: 3538
+	// (get) Token: 0x0600753C RID: 30012 RVA: 0x002C1BBF File Offset: 0x002BFDBF
+	// (set) Token: 0x0600753D RID: 30013 RVA: 0x002C1BC7 File Offset: 0x002BFDC7
 	public XUiC_ButtonSelectable SelectedButton
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -50,9 +50,9 @@ public class XUiC_WindowSelector : XUiController
 		}
 	}
 
-	// Token: 0x17000DBA RID: 3514
-	// (get) Token: 0x0600749E RID: 29854 RVA: 0x002BE6D2 File Offset: 0x002BC8D2
-	// (set) Token: 0x0600749F RID: 29855 RVA: 0x002BE6DA File Offset: 0x002BC8DA
+	// Token: 0x17000DD3 RID: 3539
+	// (get) Token: 0x0600753E RID: 30014 RVA: 0x002C1BFE File Offset: 0x002BFDFE
+	// (set) Token: 0x0600753F RID: 30015 RVA: 0x002C1C06 File Offset: 0x002BFE06
 	[XuiXmlAttribute("name_based_windows", false)]
 	public bool NameBasedWindows
 	{
@@ -66,8 +66,8 @@ public class XUiC_WindowSelector : XUiController
 		}
 	}
 
-	// Token: 0x17000DBB RID: 3515
-	// (get) Token: 0x060074A0 RID: 29856 RVA: 0x002BE6E3 File Offset: 0x002BC8E3
+	// Token: 0x17000DD4 RID: 3540
+	// (get) Token: 0x06007540 RID: 30016 RVA: 0x002C1C0F File Offset: 0x002BFE0F
 	[XuiXmlBinding("open_window_key")]
 	public string SelectedName
 	{
@@ -78,8 +78,8 @@ public class XUiC_WindowSelector : XUiController
 		}
 	}
 
-	// Token: 0x17000DBC RID: 3516
-	// (get) Token: 0x060074A1 RID: 29857 RVA: 0x002BE705 File Offset: 0x002BC905
+	// Token: 0x17000DD5 RID: 3541
+	// (get) Token: 0x06007541 RID: 30017 RVA: 0x002C1C31 File Offset: 0x002BFE31
 	[XuiXmlBinding("open_window")]
 	public string SelectedNameLocalized
 	{
@@ -93,7 +93,7 @@ public class XUiC_WindowSelector : XUiController
 		}
 	}
 
-	// Token: 0x060074A2 RID: 29858 RVA: 0x002BE738 File Offset: 0x002BC938
+	// Token: 0x06007542 RID: 30018 RVA: 0x002C1C64 File Offset: 0x002BFE64
 	public override void Init()
 	{
 		base.Init();
@@ -108,7 +108,7 @@ public class XUiC_WindowSelector : XUiController
 		}
 	}
 
-	// Token: 0x060074A3 RID: 29859 RVA: 0x002BE7A0 File Offset: 0x002BC9A0
+	// Token: 0x06007543 RID: 30019 RVA: 0x002C1CCC File Offset: 0x002BFECC
 	[XuiBindEvent("OnPress", "buttons")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnPress(XUiController _sender, int _mouseButton)
@@ -120,7 +120,7 @@ public class XUiC_WindowSelector : XUiController
 		});
 	}
 
-	// Token: 0x060074A4 RID: 29860 RVA: 0x002BE7D4 File Offset: 0x002BC9D4
+	// Token: 0x06007544 RID: 30020 RVA: 0x002C1D00 File Offset: 0x002BFF00
 	public void OpenSelectedWindow()
 	{
 		if (this.SelectedButton == null)
@@ -149,7 +149,7 @@ public class XUiC_WindowSelector : XUiController
 		}
 	}
 
-	// Token: 0x060074A5 RID: 29861 RVA: 0x002BE890 File Offset: 0x002BCA90
+	// Token: 0x06007545 RID: 30021 RVA: 0x002C1DBC File Offset: 0x002BFFBC
 	public void SetSelected(string _name)
 	{
 		XUiC_ButtonSelectable xuiC_ButtonSelectable;
@@ -160,7 +160,7 @@ public class XUiC_WindowSelector : XUiController
 		this.SelectedButton = xuiC_ButtonSelectable;
 	}
 
-	// Token: 0x060074A6 RID: 29862 RVA: 0x002BE8B5 File Offset: 0x002BCAB5
+	// Token: 0x06007546 RID: 30022 RVA: 0x002C1DE1 File Offset: 0x002BFFE1
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -172,7 +172,7 @@ public class XUiC_WindowSelector : XUiController
 		Manager.PlayInsidePlayerHead(this.SoundOnOpen, -1, 0f, false, false);
 	}
 
-	// Token: 0x060074A7 RID: 29863 RVA: 0x002BE8F4 File Offset: 0x002BCAF4
+	// Token: 0x06007547 RID: 30023 RVA: 0x002C1E20 File Offset: 0x002C0020
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -200,7 +200,7 @@ public class XUiC_WindowSelector : XUiController
 		}
 	}
 
-	// Token: 0x060074A8 RID: 29864 RVA: 0x002BE9A0 File Offset: 0x002BCBA0
+	// Token: 0x06007548 RID: 30024 RVA: 0x002C1ECC File Offset: 0x002C00CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void openSelectorAndWindow(string _selectedPage)
 	{
@@ -224,7 +224,7 @@ public class XUiC_WindowSelector : XUiController
 		this.xui.playerUI.windowManager.Open(this.windowGroup, false);
 	}
 
-	// Token: 0x060074A9 RID: 29865 RVA: 0x002BEAA9 File Offset: 0x002BCCA9
+	// Token: 0x06007549 RID: 30025 RVA: 0x002C1FD5 File Offset: 0x002C01D5
 	public static void OpenSelectorAndWindow(EntityPlayerLocal _localPlayer, string _selectedPage)
 	{
 		if (_localPlayer.IsDead())
@@ -234,7 +234,7 @@ public class XUiC_WindowSelector : XUiController
 		LocalPlayerUI.GetUIForPlayer(_localPlayer).xui.FindWindowGroupByName("windowpaging").GetChildByType<XUiC_WindowSelector>().openSelectorAndWindow(_selectedPage);
 	}
 
-	// Token: 0x060074AA RID: 29866 RVA: 0x002BEAD4 File Offset: 0x002BCCD4
+	// Token: 0x0600754A RID: 30026 RVA: 0x002C2000 File Offset: 0x002C0200
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void toggleCategory(int _dir)
 	{
@@ -259,7 +259,7 @@ public class XUiC_WindowSelector : XUiController
 		this.OpenSelectedWindow();
 	}
 
-	// Token: 0x060074AB RID: 29867 RVA: 0x002BEB78 File Offset: 0x002BCD78
+	// Token: 0x0600754B RID: 30027 RVA: 0x002C20A4 File Offset: 0x002C02A4
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -289,7 +289,7 @@ public class XUiC_WindowSelector : XUiController
 		}
 	}
 
-	// Token: 0x060074AC RID: 29868 RVA: 0x002BEBEC File Offset: 0x002BCDEC
+	// Token: 0x0600754C RID: 30028 RVA: 0x002C2118 File Offset: 0x002C0318
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void tryCloseCurrentWindow(Action _onDone)
 	{
@@ -318,24 +318,24 @@ public class XUiC_WindowSelector : XUiController
 		_onDone();
 	}
 
-	// Token: 0x04005651 RID: 22097
+	// Token: 0x040056F5 RID: 22261
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ButtonSelectable[] buttons;
 
-	// Token: 0x04005652 RID: 22098
+	// Token: 0x040056F6 RID: 22262
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<string, XUiC_ButtonSelectable> buttonsByName = new CaseInsensitiveStringDictionary<XUiC_ButtonSelectable>();
 
-	// Token: 0x04005655 RID: 22101
+	// Token: 0x040056F9 RID: 22265
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ButtonSelectable selectedButton;
 
-	// Token: 0x04005656 RID: 22102
+	// Token: 0x040056FA RID: 22266
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool nameBasedWindows = true;
 
-	// Token: 0x02000E99 RID: 3737
-	// (Invoke) Token: 0x060074B3 RID: 29875
+	// Token: 0x02000EAE RID: 3758
+	// (Invoke) Token: 0x06007553 RID: 30035
 	public delegate void WindowSelectedDelegate(XUiC_WindowSelector _sender, string _windowId);
 }

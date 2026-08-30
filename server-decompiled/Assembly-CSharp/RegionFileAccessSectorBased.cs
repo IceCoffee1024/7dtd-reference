@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x02000B7E RID: 2942
+// Token: 0x02000B90 RID: 2960
 public class RegionFileAccessSectorBased : RegionFileAccessMultipleChunks
 {
-	// Token: 0x1700095B RID: 2395
-	// (get) Token: 0x06005917 RID: 22807 RVA: 0x001818A1 File Offset: 0x0017FAA1
+	// Token: 0x1700096D RID: 2413
+	// (get) Token: 0x0600599F RID: 22943 RVA: 0x00183C79 File Offset: 0x00181E79
 	public override int ChunksPerRegionPerDimension
 	{
 		get
@@ -13,20 +13,20 @@ public class RegionFileAccessSectorBased : RegionFileAccessMultipleChunks
 		}
 	}
 
-	// Token: 0x06005918 RID: 22808 RVA: 0x002217F5 File Offset: 0x0021F9F5
+	// Token: 0x060059A0 RID: 22944 RVA: 0x00224511 File Offset: 0x00222711
 	public override void ReadDirectory(string _dir, Action<long, string, uint> _chunkAndTimeStampHandler)
 	{
 		this.ReadDirectory(_dir, _chunkAndTimeStampHandler, 32);
 	}
 
-	// Token: 0x06005919 RID: 22809 RVA: 0x00221801 File Offset: 0x0021FA01
+	// Token: 0x060059A1 RID: 22945 RVA: 0x0022451D File Offset: 0x0022271D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override RegionFile OpenRegionFile(string _dir, int _regionX, int _regionZ, string _ext)
 	{
 		return RegionFileSectorBased.Get(_dir, _regionX, _regionZ, _ext);
 	}
 
-	// Token: 0x0600591A RID: 22810 RVA: 0x0022180D File Offset: 0x0021FA0D
+	// Token: 0x060059A2 RID: 22946 RVA: 0x00224529 File Offset: 0x00222729
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void GetRegionCoords(int _chunkX, int _chunkZ, out int _regionX, out int _regionZ)
 	{

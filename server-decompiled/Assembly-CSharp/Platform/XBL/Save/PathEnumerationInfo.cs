@@ -4,10 +4,10 @@ using System.Linq;
 
 namespace Platform.XBL.Save
 {
-	// Token: 0x02001C17 RID: 7191
+	// Token: 0x02001C3E RID: 7230
 	public sealed class PathEnumerationInfo
 	{
-		// Token: 0x0600D4D0 RID: 54480 RVA: 0x004CBF16 File Offset: 0x004CA116
+		// Token: 0x0600D660 RID: 54880 RVA: 0x004D233A File Offset: 0x004D053A
 		public PathEnumerationInfo(string relativePath, bool isDirectory, bool isFile)
 		{
 			this.RelativePath = relativePath;
@@ -15,13 +15,13 @@ namespace Platform.XBL.Save
 			this.IsFile = isFile;
 		}
 
-		// Token: 0x0600D4D1 RID: 54481 RVA: 0x004CBF34 File Offset: 0x004CA134
+		// Token: 0x0600D661 RID: 54881 RVA: 0x004D2358 File Offset: 0x004D0558
 		public override string ToString()
 		{
 			return string.Format("{0}[{1}=\"{2}\", {3}={4}, {5}={6}]", new object[] { "PathEnumerationInfo", "RelativePath", this.RelativePath, "IsDirectory", this.IsDirectory, "IsFile", this.IsFile });
 		}
 
-		// Token: 0x0600D4D2 RID: 54482 RVA: 0x004CBF98 File Offset: 0x004CA198
+		// Token: 0x0600D662 RID: 54882 RVA: 0x004D23BC File Offset: 0x004D05BC
 		public void UsedOnlyForAOTCodeGeneration()
 		{
 			IEnumerable<SaveDataManagedPath> enumerable = from _ in Enumerable.Empty<PathEnumerationInfo>()
@@ -32,13 +32,13 @@ namespace Platform.XBL.Save
 			throw new InvalidOperationException("This method is used for AOT code generation only. Do not call it at runtime.");
 		}
 
-		// Token: 0x0400A20E RID: 41486
+		// Token: 0x0400A33F RID: 41791
 		public readonly string RelativePath;
 
-		// Token: 0x0400A20F RID: 41487
+		// Token: 0x0400A340 RID: 41792
 		public readonly bool IsDirectory;
 
-		// Token: 0x0400A210 RID: 41488
+		// Token: 0x0400A341 RID: 41793
 		public readonly bool IsFile;
 	}
 }

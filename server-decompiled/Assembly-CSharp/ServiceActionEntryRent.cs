@@ -1,24 +1,24 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D5E RID: 3422
+// Token: 0x02000D71 RID: 3441
 [Preserve]
 public class ServiceActionEntryRent : BaseItemActionEntry
 {
-	// Token: 0x060067C6 RID: 26566 RVA: 0x0029079B File Offset: 0x0028E99B
+	// Token: 0x06006855 RID: 26709 RVA: 0x0029372F File Offset: 0x0029192F
 	public ServiceActionEntryRent(XUiController _controller, TileEntityVendingMachine _vending)
 		: base(_controller, "lblContextActionRent", "ui_game_symbol_coin", BaseItemActionEntry.GamepadShortCut.None, "crafting/craft_click_craft", "ui/ui_denied")
 	{
 		this.vending = _vending;
 	}
 
-	// Token: 0x060067C7 RID: 26567 RVA: 0x002907C0 File Offset: 0x0028E9C0
+	// Token: 0x06006856 RID: 26710 RVA: 0x00293754 File Offset: 0x00291954
 	public override void RefreshEnabled()
 	{
 		base.Enabled = this.vending.CanRent() == TileEntityVendingMachine.RentResult.Allowed;
 	}
 
-	// Token: 0x060067C8 RID: 26568 RVA: 0x002907D8 File Offset: 0x0028E9D8
+	// Token: 0x06006857 RID: 26711 RVA: 0x0029376C File Offset: 0x0029196C
 	public override void OnDisabledActivate()
 	{
 		string text;
@@ -44,7 +44,7 @@ public class ServiceActionEntryRent : BaseItemActionEntry
 		}
 	}
 
-	// Token: 0x060067C9 RID: 26569 RVA: 0x00290871 File Offset: 0x0028EA71
+	// Token: 0x06006858 RID: 26712 RVA: 0x00293805 File Offset: 0x00291A05
 	public override void OnActivated()
 	{
 		if (this.vending.Rent())
@@ -54,7 +54,7 @@ public class ServiceActionEntryRent : BaseItemActionEntry
 		this.RefreshEnabled();
 	}
 
-	// Token: 0x04004F8F RID: 20367
+	// Token: 0x0400502D RID: 20525
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly TileEntityVendingMachine vending;
 }

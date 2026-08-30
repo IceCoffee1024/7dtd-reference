@@ -1,22 +1,22 @@
 ﻿using System;
 
-// Token: 0x02000886 RID: 2182
+// Token: 0x02000892 RID: 2194
 public interface IProtocolManagerProtocolInterface
 {
-	// Token: 0x17000691 RID: 1681
-	// (get) Token: 0x06003F6D RID: 16237
+	// Token: 0x1700069D RID: 1693
+	// (get) Token: 0x06003FD2 RID: 16338
 	bool IsServer { get; }
 
-	// Token: 0x17000692 RID: 1682
-	// (get) Token: 0x06003F6E RID: 16238
+	// Token: 0x1700069E RID: 1694
+	// (get) Token: 0x06003FD3 RID: 16339
 	bool IsClient { get; }
 
-	// Token: 0x06003F6F RID: 16239
+	// Token: 0x06003FD4 RID: 16340
 	void InvalidPasswordEv();
 
-	// Token: 0x06003F70 RID: 16240
+	// Token: 0x06003FD5 RID: 16341
 	void ConnectionFailedEv(string _msg);
 
-	// Token: 0x06003F71 RID: 16241
+	// Token: 0x06003FD6 RID: 16342
 	void DisconnectedFromServerEv(string _msg);
 }

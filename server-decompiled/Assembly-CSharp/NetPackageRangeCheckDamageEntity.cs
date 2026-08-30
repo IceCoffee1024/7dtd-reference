@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000834 RID: 2100
+// Token: 0x02000840 RID: 2112
 [Preserve]
 public class NetPackageRangeCheckDamageEntity : NetPackage
 {
-	// Token: 0x17000668 RID: 1640
-	// (get) Token: 0x06003D85 RID: 15749 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x17000674 RID: 1652
+	// (get) Token: 0x06003DEA RID: 15850 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -17,7 +17,7 @@ public class NetPackageRangeCheckDamageEntity : NetPackage
 		}
 	}
 
-	// Token: 0x06003D86 RID: 15750 RVA: 0x001867B4 File Offset: 0x001849B4
+	// Token: 0x06003DEB RID: 15851 RVA: 0x001887D4 File Offset: 0x001869D4
 	public NetPackageRangeCheckDamageEntity Setup(int _targetEntityId, Vector3 _origin, float _maxRange, DamageSourceEntity _damageSource, int _strength, bool _isCritical, List<string> _buffActions, string _buffActionContext, ParticleEffect particleEffect)
 	{
 		this.entityId = _targetEntityId;
@@ -49,7 +49,7 @@ public class NetPackageRangeCheckDamageEntity : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D87 RID: 15751 RVA: 0x00186920 File Offset: 0x00184B20
+	// Token: 0x06003DEC RID: 15852 RVA: 0x00188940 File Offset: 0x00186B40
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.entityId = _reader.ReadInt32();
@@ -90,7 +90,7 @@ public class NetPackageRangeCheckDamageEntity : NetPackage
 		this.buffActions = null;
 	}
 
-	// Token: 0x06003D88 RID: 15752 RVA: 0x00186AF0 File Offset: 0x00184CF0
+	// Token: 0x06003DED RID: 15853 RVA: 0x00188B10 File Offset: 0x00186D10
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -142,7 +142,7 @@ public class NetPackageRangeCheckDamageEntity : NetPackage
 		_writer.Write(0);
 	}
 
-	// Token: 0x06003D89 RID: 15753 RVA: 0x00186D6C File Offset: 0x00184F6C
+	// Token: 0x06003DEE RID: 15854 RVA: 0x00188D8C File Offset: 0x00186F8C
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -181,90 +181,90 @@ public class NetPackageRangeCheckDamageEntity : NetPackage
 		}
 	}
 
-	// Token: 0x06003D8A RID: 15754 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06003DEF RID: 15855 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override int GetLength()
 	{
 		return 0;
 	}
 
-	// Token: 0x040031BB RID: 12731
+	// Token: 0x0400323A RID: 12858
 	public int entityId;
 
-	// Token: 0x040031BC RID: 12732
+	// Token: 0x0400323B RID: 12859
 	public int attackerEntityId;
 
-	// Token: 0x040031BD RID: 12733
+	// Token: 0x0400323C RID: 12860
 	public EnumDamageSource damageStr;
 
-	// Token: 0x040031BE RID: 12734
+	// Token: 0x0400323D RID: 12861
 	public EnumDamageTypes damageTyp;
 
-	// Token: 0x040031BF RID: 12735
+	// Token: 0x0400323E RID: 12862
 	public int strength;
 
-	// Token: 0x040031C0 RID: 12736
+	// Token: 0x0400323F RID: 12863
 	public Vector3 origin;
 
-	// Token: 0x040031C1 RID: 12737
+	// Token: 0x04003240 RID: 12864
 	public float maxRangeSq;
 
-	// Token: 0x040031C2 RID: 12738
+	// Token: 0x04003241 RID: 12865
 	public float dirX;
 
-	// Token: 0x040031C3 RID: 12739
+	// Token: 0x04003242 RID: 12866
 	public float dirY;
 
-	// Token: 0x040031C4 RID: 12740
+	// Token: 0x04003243 RID: 12867
 	public float dirZ;
 
-	// Token: 0x040031C5 RID: 12741
+	// Token: 0x04003244 RID: 12868
 	public string hitTransformName;
 
-	// Token: 0x040031C6 RID: 12742
+	// Token: 0x04003245 RID: 12869
 	public Vector3 hitTransformPosition;
 
-	// Token: 0x040031C7 RID: 12743
+	// Token: 0x04003246 RID: 12870
 	public float uvHitx;
 
-	// Token: 0x040031C8 RID: 12744
+	// Token: 0x04003247 RID: 12871
 	public float uvHity;
 
-	// Token: 0x040031C9 RID: 12745
+	// Token: 0x04003248 RID: 12872
 	public float damageMultiplier;
 
-	// Token: 0x040031CA RID: 12746
+	// Token: 0x04003249 RID: 12873
 	public bool bIgnoreConsecutiveDamages;
 
-	// Token: 0x040031CB RID: 12747
+	// Token: 0x0400324A RID: 12874
 	public bool bCritical;
 
-	// Token: 0x040031CC RID: 12748
+	// Token: 0x0400324B RID: 12875
 	public bool bIsDamageTransfer;
 
-	// Token: 0x040031CD RID: 12749
+	// Token: 0x0400324C RID: 12876
 	public byte bonusDamageType;
 
-	// Token: 0x040031CE RID: 12750
+	// Token: 0x0400324D RID: 12877
 	public List<string> buffActions;
 
-	// Token: 0x040031CF RID: 12751
+	// Token: 0x0400324E RID: 12878
 	public string buffActionContext;
 
-	// Token: 0x040031D0 RID: 12752
+	// Token: 0x0400324F RID: 12879
 	public string particleName;
 
-	// Token: 0x040031D1 RID: 12753
+	// Token: 0x04003250 RID: 12880
 	public Vector3 particlePos;
 
-	// Token: 0x040031D2 RID: 12754
+	// Token: 0x04003251 RID: 12881
 	public Vector3 particleRot;
 
-	// Token: 0x040031D3 RID: 12755
+	// Token: 0x04003252 RID: 12882
 	public float particleLight;
 
-	// Token: 0x040031D4 RID: 12756
+	// Token: 0x04003253 RID: 12883
 	public Color particleColor;
 
-	// Token: 0x040031D5 RID: 12757
+	// Token: 0x04003254 RID: 12884
 	public string particleSound;
 }

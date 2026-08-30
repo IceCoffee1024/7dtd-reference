@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020013FC RID: 5116
+// Token: 0x02001417 RID: 5143
 public class GUIUtils
 {
-	// Token: 0x0600A096 RID: 41110 RVA: 0x003C4374 File Offset: 0x003C2574
+	// Token: 0x0600A193 RID: 41363 RVA: 0x003C96B8 File Offset: 0x003C78B8
 	public static void DrawFilledRect(Rect _rect, Color _colFill, bool _bDrawBorder, Color _colBorder)
 	{
 		if (Event.current.type == EventType.Repaint)
@@ -21,7 +21,7 @@ public class GUIUtils
 		}
 	}
 
-	// Token: 0x0600A097 RID: 41111 RVA: 0x003C43D9 File Offset: 0x003C25D9
+	// Token: 0x0600A194 RID: 41364 RVA: 0x003C971D File Offset: 0x003C791D
 	public static void DrawFilledRect(Rect _rect, Texture2D _tex, bool _bDrawBorder, Color _colBorder)
 	{
 		if (Event.current.type == EventType.Repaint)
@@ -34,7 +34,7 @@ public class GUIUtils
 		}
 	}
 
-	// Token: 0x0600A098 RID: 41112 RVA: 0x003C43FC File Offset: 0x003C25FC
+	// Token: 0x0600A195 RID: 41365 RVA: 0x003C9740 File Offset: 0x003C7940
 	public static void DrawRect(Rect _rect, Color _col)
 	{
 		GUIUtils.DrawLine(new Vector2(_rect.x, _rect.y), new Vector2(_rect.x, _rect.y + _rect.height), _col);
@@ -43,7 +43,7 @@ public class GUIUtils
 		GUIUtils.DrawLine(new Vector2(_rect.x + _rect.width, _rect.y), new Vector2(_rect.x, _rect.y), _col);
 	}
 
-	// Token: 0x0600A099 RID: 41113 RVA: 0x003C44FC File Offset: 0x003C26FC
+	// Token: 0x0600A196 RID: 41366 RVA: 0x003C9840 File Offset: 0x003C7A40
 	public static void DrawArrow(Vector2 pos, Vector2 dir, float size, Color col)
 	{
 		Vector2 vector = new Vector2(dir.y, -dir.x);
@@ -65,7 +65,7 @@ public class GUIUtils
 		GUIUtils.DrawLine(vector6, vector7, col);
 	}
 
-	// Token: 0x0600A09A RID: 41114 RVA: 0x003C4680 File Offset: 0x003C2880
+	// Token: 0x0600A197 RID: 41367 RVA: 0x003C99C4 File Offset: 0x003C7BC4
 	public static void DrawTriangle(Vector2 pos, Vector2 dir, float size, Color col)
 	{
 		Vector2 vector = new Vector2(dir.y, -dir.x);
@@ -80,7 +80,7 @@ public class GUIUtils
 		GUIUtils.DrawLine(vector4, vector5, col);
 	}
 
-	// Token: 0x0600A09B RID: 41115 RVA: 0x003C4768 File Offset: 0x003C2968
+	// Token: 0x0600A198 RID: 41368 RVA: 0x003C9AAC File Offset: 0x003C7CAC
 	public static void DrawTriangleWide(Vector3 pos, Vector3 facing, Vector3 perpDir, float size, Color _color)
 	{
 		Vector3 vector = Vector3.Cross(facing, perpDir);
@@ -94,7 +94,7 @@ public class GUIUtils
 		GUIUtils.DrawLineWide(vector3, vector4, _color, _color);
 	}
 
-	// Token: 0x0600A09C RID: 41116 RVA: 0x003C47C8 File Offset: 0x003C29C8
+	// Token: 0x0600A199 RID: 41369 RVA: 0x003C9B0C File Offset: 0x003C7D0C
 	public static void DrawRectWide(Vector3 pos, Vector3 facing, Vector3 perpDir, float size, Color _color)
 	{
 		Vector3 vector = Vector3.Cross(facing, perpDir);
@@ -110,7 +110,7 @@ public class GUIUtils
 		GUIUtils.DrawLineWide(vector4, vector5, _color, _color);
 	}
 
-	// Token: 0x0600A09D RID: 41117 RVA: 0x003C484C File Offset: 0x003C2A4C
+	// Token: 0x0600A19A RID: 41370 RVA: 0x003C9B90 File Offset: 0x003C7D90
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static bool clip_test(float p, float q, ref float u1, ref float u2)
 	{
@@ -146,7 +146,7 @@ public class GUIUtils
 		return flag;
 	}
 
-	// Token: 0x0600A09E RID: 41118 RVA: 0x003C48B4 File Offset: 0x003C2AB4
+	// Token: 0x0600A19B RID: 41371 RVA: 0x003C9BF8 File Offset: 0x003C7DF8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static bool segment_rect_intersection(Rect bounds, ref Vector2 p1, ref Vector2 p2)
 	{
@@ -174,7 +174,7 @@ public class GUIUtils
 		return false;
 	}
 
-	// Token: 0x0600A09F RID: 41119 RVA: 0x003C49B0 File Offset: 0x003C2BB0
+	// Token: 0x0600A19C RID: 41372 RVA: 0x003C9CF4 File Offset: 0x003C7EF4
 	public static void BeginGroup(Rect position)
 	{
 		GUIUtils.clippingEnabled = true;
@@ -182,7 +182,7 @@ public class GUIUtils
 		GUI.BeginGroup(position);
 	}
 
-	// Token: 0x0600A0A0 RID: 41120 RVA: 0x003C49E0 File Offset: 0x003C2BE0
+	// Token: 0x0600A19D RID: 41373 RVA: 0x003C9D24 File Offset: 0x003C7F24
 	public static void EndGroup()
 	{
 		GUI.EndGroup();
@@ -190,7 +190,7 @@ public class GUIUtils
 		GUIUtils.clippingEnabled = false;
 	}
 
-	// Token: 0x0600A0A1 RID: 41121 RVA: 0x003C4A10 File Offset: 0x003C2C10
+	// Token: 0x0600A19E RID: 41374 RVA: 0x003C9D54 File Offset: 0x003C7F54
 	public static void DrawLine(Vector2 pointA, Vector2 pointB, Color color)
 	{
 		if (GUIUtils.clippingEnabled && !GUIUtils.segment_rect_intersection(GUIUtils.clippingBounds, ref pointA, ref pointB))
@@ -209,7 +209,7 @@ public class GUIUtils
 		GL.End();
 	}
 
-	// Token: 0x0600A0A2 RID: 41122 RVA: 0x003C4A90 File Offset: 0x003C2C90
+	// Token: 0x0600A19F RID: 41375 RVA: 0x003C9DD4 File Offset: 0x003C7FD4
 	public static GUIUtils.IntRect RectIntersection(GUIUtils.IntRect r1, GUIUtils.IntRect r2)
 	{
 		int num = r1.x;
@@ -253,14 +253,14 @@ public class GUIUtils
 		return new GUIUtils.IntRect(num, num2, (int)num3, (int)num4);
 	}
 
-	// Token: 0x0600A0A3 RID: 41123 RVA: 0x003C4B58 File Offset: 0x003C2D58
+	// Token: 0x0600A1A0 RID: 41376 RVA: 0x003C9E9C File Offset: 0x003C809C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void createLineMaterial()
 	{
 		GUIUtils.lineMaterial = new Material(Resources.Load("Shaders/DrawLine", typeof(Shader)) as Shader);
 	}
 
-	// Token: 0x0600A0A4 RID: 41124 RVA: 0x003C4B80 File Offset: 0x003C2D80
+	// Token: 0x0600A1A1 RID: 41377 RVA: 0x003C9EC4 File Offset: 0x003C80C4
 	public static void DrawLine(Vector3 pointA, Vector3 pointB, Color color)
 	{
 		if (!GUIUtils.lineMaterial)
@@ -277,20 +277,20 @@ public class GUIUtils
 		GL.PopMatrix();
 	}
 
-	// Token: 0x0600A0A5 RID: 41125 RVA: 0x003C4BD1 File Offset: 0x003C2DD1
+	// Token: 0x0600A1A2 RID: 41378 RVA: 0x003C9F15 File Offset: 0x003C8115
 	public static void SetupLines(Camera _camera, float _lineWidth)
 	{
 		GUIUtils.lineCamera = _camera;
 		GUIUtils.lineHalfWidth = _lineWidth * 0.5f;
 	}
 
-	// Token: 0x0600A0A6 RID: 41126 RVA: 0x003C4BE5 File Offset: 0x003C2DE5
+	// Token: 0x0600A1A3 RID: 41379 RVA: 0x003C9F29 File Offset: 0x003C8129
 	public static void DrawLineWide(Vector3 pointA, Vector3 pointB, Color color)
 	{
 		GUIUtils.DrawLineWide(pointA, pointB, color, color);
 	}
 
-	// Token: 0x0600A0A7 RID: 41127 RVA: 0x003C4BF0 File Offset: 0x003C2DF0
+	// Token: 0x0600A1A4 RID: 41380 RVA: 0x003C9F34 File Offset: 0x003C8134
 	public static void DrawLineWide(Vector3 pointA, Vector3 pointB, Color colorA, Color colorB)
 	{
 		if (!GUIUtils.lineMaterial)
@@ -313,30 +313,30 @@ public class GUIUtils
 		GL.PopMatrix();
 	}
 
-	// Token: 0x040078C3 RID: 30915
+	// Token: 0x0400799C RID: 31132
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static bool clippingEnabled;
 
-	// Token: 0x040078C4 RID: 30916
+	// Token: 0x0400799D RID: 31133
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static Rect clippingBounds;
 
-	// Token: 0x040078C5 RID: 30917
+	// Token: 0x0400799E RID: 31134
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static Material lineMaterial;
 
-	// Token: 0x040078C6 RID: 30918
+	// Token: 0x0400799F RID: 31135
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Camera lineCamera;
 
-	// Token: 0x040078C7 RID: 30919
+	// Token: 0x040079A0 RID: 31136
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float lineHalfWidth;
 
-	// Token: 0x020013FD RID: 5117
+	// Token: 0x02001418 RID: 5144
 	public class IntRect
 	{
-		// Token: 0x0600A0A9 RID: 41129 RVA: 0x003C4CCF File Offset: 0x003C2ECF
+		// Token: 0x0600A1A6 RID: 41382 RVA: 0x003CA013 File Offset: 0x003C8213
 		public IntRect(int _x, int _y, int _width, int _height)
 		{
 			this.x = _x;
@@ -345,7 +345,7 @@ public class GUIUtils
 			this.height = _height;
 		}
 
-		// Token: 0x0600A0AA RID: 41130 RVA: 0x003C4CF4 File Offset: 0x003C2EF4
+		// Token: 0x0600A1A7 RID: 41383 RVA: 0x003CA038 File Offset: 0x003C8238
 		public IntRect(float _x, float _y, float _width, float _height)
 		{
 			this.x = (int)_x;
@@ -354,16 +354,16 @@ public class GUIUtils
 			this.height = (int)_height;
 		}
 
-		// Token: 0x040078C8 RID: 30920
+		// Token: 0x040079A1 RID: 31137
 		public int x;
 
-		// Token: 0x040078C9 RID: 30921
+		// Token: 0x040079A2 RID: 31138
 		public int y;
 
-		// Token: 0x040078CA RID: 30922
+		// Token: 0x040079A3 RID: 31139
 		public int width;
 
-		// Token: 0x040078CB RID: 30923
+		// Token: 0x040079A4 RID: 31140
 		public int height;
 	}
 }

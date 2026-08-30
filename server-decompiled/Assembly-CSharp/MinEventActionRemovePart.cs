@@ -2,11 +2,11 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006D8 RID: 1752
+// Token: 0x020006E2 RID: 1762
 [Preserve]
 public class MinEventActionRemovePart : MinEventActionTargetedBase
 {
-	// Token: 0x060035FA RID: 13818 RVA: 0x001651C6 File Offset: 0x001633C6
+	// Token: 0x06003650 RID: 13904 RVA: 0x0016739E File Offset: 0x0016559E
 	public override void Execute(MinEventParams _params)
 	{
 		if (_params.Self == null)
@@ -16,13 +16,13 @@ public class MinEventActionRemovePart : MinEventActionTargetedBase
 		_params.Self.RemovePart(this.partName);
 	}
 
-	// Token: 0x060035FB RID: 13819 RVA: 0x001651E8 File Offset: 0x001633E8
+	// Token: 0x06003651 RID: 13905 RVA: 0x001673C0 File Offset: 0x001655C0
 	public override bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
 	{
 		return base.CanExecute(_eventType, _params) && _params.Self != null && this.partName != null;
 	}
 
-	// Token: 0x060035FC RID: 13820 RVA: 0x00165210 File Offset: 0x00163410
+	// Token: 0x06003652 RID: 13906 RVA: 0x001673E8 File Offset: 0x001655E8
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -34,7 +34,7 @@ public class MinEventActionRemovePart : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002B71 RID: 11121
+	// Token: 0x04002BE5 RID: 11237
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string partName;
 }

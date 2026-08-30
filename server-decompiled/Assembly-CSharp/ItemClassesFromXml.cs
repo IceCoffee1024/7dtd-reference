@@ -6,10 +6,10 @@ using System.Xml.Linq;
 using UnityEngine;
 using XMLData.Item;
 
-// Token: 0x02000D02 RID: 3330
+// Token: 0x02000D14 RID: 3348
 public class ItemClassesFromXml
 {
-	// Token: 0x060065A3 RID: 26019 RVA: 0x0027D68C File Offset: 0x0027B88C
+	// Token: 0x0600662F RID: 26159 RVA: 0x00280580 File Offset: 0x0027E780
 	public static void CreateItemsFromBlocks()
 	{
 		for (int i = 1; i < Block.ItemsStartHere; i++)
@@ -26,13 +26,17 @@ public class ItemClassesFromXml
 		}
 	}
 
-	// Token: 0x060065A4 RID: 26020 RVA: 0x0027D706 File Offset: 0x0027B906
+	// Token: 0x06006630 RID: 26160 RVA: 0x002805FA File Offset: 0x0027E7FA
 	public static IEnumerator CreateItems(XmlFile _xmlFile)
 	{
 		XElement root = _xmlFile.XmlDoc.Root;
 		if (!root.HasElements)
 		{
 			throw new Exception("No element <items> found!");
+		}
+		if (!root.ParseAttribute("max_quality_tier", ref ItemClass.MaxQualityTier))
+		{
+			ItemClass.MaxQualityTier = 6;
 		}
 		MicroStopwatch msw = new MicroStopwatch(true);
 		foreach (XElement xelement in root.Elements())
@@ -60,7 +64,7 @@ public class ItemClassesFromXml
 		yield break;
 	}
 
-	// Token: 0x060065A5 RID: 26021 RVA: 0x0027D718 File Offset: 0x0027B918
+	// Token: 0x06006631 RID: 26161 RVA: 0x0028060C File Offset: 0x0027E80C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void parseItem(XElement _node)
 	{
@@ -316,7 +320,7 @@ public class ItemClassesFromXml
 		itemClass2.Init();
 	}
 
-	// Token: 0x060065A6 RID: 26022 RVA: 0x0027E0F0 File Offset: 0x0027C2F0
+	// Token: 0x06006632 RID: 26162 RVA: 0x00280FE4 File Offset: 0x0027F1E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void parseAnimation(XElement _node)
 	{
@@ -367,7 +371,7 @@ public class ItemClassesFromXml
 		}
 	}
 
-	// Token: 0x060065A7 RID: 26023 RVA: 0x0027E2F0 File Offset: 0x0027C4F0
+	// Token: 0x06006633 RID: 26163 RVA: 0x002811E4 File Offset: 0x0027F3E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void parseNoise(XElement _node)
 	{

@@ -9,10 +9,10 @@ using Unity.Profiling.LowLevel;
 using Unity.Profiling.LowLevel.Unsafe;
 using UnityEngine;
 
-// Token: 0x02001514 RID: 5396
+// Token: 0x0200152F RID: 5423
 public static class ProfilerUtils
 {
-	// Token: 0x0600A93E RID: 43326 RVA: 0x003F2550 File Offset: 0x003F0750
+	// Token: 0x0600AA3B RID: 43579 RVA: 0x003F7890 File Offset: 0x003F5A90
 	public static string GetAvailableMetricsCsv()
 	{
 		StringBuilder stringBuilder = new StringBuilder();
@@ -34,7 +34,7 @@ public static class ProfilerUtils
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x0600A93F RID: 43327 RVA: 0x003F2634 File Offset: 0x003F0834
+	// Token: 0x0600AA3C RID: 43580 RVA: 0x003F7974 File Offset: 0x003F5B74
 	public static void AppendLastValue(ProfilerRecorder recorder, StringBuilder builder)
 	{
 		switch (recorder.UnitType)
@@ -62,19 +62,19 @@ public static class ProfilerUtils
 		}
 	}
 
-	// Token: 0x0600A940 RID: 43328 RVA: 0x003F26F3 File Offset: 0x003F08F3
+	// Token: 0x0600AA3D RID: 43581 RVA: 0x003F7A33 File Offset: 0x003F5C33
 	public static bool AreMipMapsStreamed(this Texture2D texture)
 	{
 		return texture.streamingMipmaps && !texture.isReadable;
 	}
 
-	// Token: 0x0600A941 RID: 43329 RVA: 0x003F2708 File Offset: 0x003F0908
+	// Token: 0x0600AA3E RID: 43582 RVA: 0x003F7A48 File Offset: 0x003F5C48
 	public static bool AreMipMapsStreamed(this Cubemap texture)
 	{
 		return texture.streamingMipmaps && !texture.isReadable;
 	}
 
-	// Token: 0x0600A942 RID: 43330 RVA: 0x003F2720 File Offset: 0x003F0920
+	// Token: 0x0600AA3F RID: 43583 RVA: 0x003F7A60 File Offset: 0x003F5C60
 	public static int CalculateTextureSizeBytes(Texture2D texture, int mipLevel = 0)
 	{
 		int num = ProfilerUtils.CalculateTextureSizeBytes(texture.format, texture.width, texture.height, texture.mipmapCount, mipLevel);
@@ -85,7 +85,7 @@ public static class ProfilerUtils
 		return num;
 	}
 
-	// Token: 0x0600A943 RID: 43331 RVA: 0x003F2778 File Offset: 0x003F0978
+	// Token: 0x0600AA40 RID: 43584 RVA: 0x003F7AB8 File Offset: 0x003F5CB8
 	public static int CalculateTextureSizeBytes(Cubemap texture, int mipLevel = 0)
 	{
 		int num = ProfilerUtils.CalculateTextureSizeBytes(texture.format, texture.width, texture.height, texture.mipmapCount, mipLevel);
@@ -96,7 +96,7 @@ public static class ProfilerUtils
 		return num * 6;
 	}
 
-	// Token: 0x0600A944 RID: 43332 RVA: 0x003F27D4 File Offset: 0x003F09D4
+	// Token: 0x0600AA41 RID: 43585 RVA: 0x003F7B14 File Offset: 0x003F5D14
 	public static int CalculateTextureSizeBytes(TextureFormat format, int width, int height, int mipCount, int mipLevel = 0)
 	{
 		int num = 0;
@@ -110,7 +110,7 @@ public static class ProfilerUtils
 		return num;
 	}
 
-	// Token: 0x0600A945 RID: 43333 RVA: 0x003F2820 File Offset: 0x003F0A20
+	// Token: 0x0600AA42 RID: 43586 RVA: 0x003F7B60 File Offset: 0x003F5D60
 	public static int CalculateTextureSizeBytes(TextureFormat format, int width, int height)
 	{
 		int num = width * height;
@@ -143,25 +143,25 @@ public static class ProfilerUtils
 		return -1;
 	}
 
-	// Token: 0x0600A946 RID: 43334 RVA: 0x003F28CD File Offset: 0x003F0ACD
+	// Token: 0x0600AA43 RID: 43587 RVA: 0x003F7C0D File Offset: 0x003F5E0D
 	public static int CalculateUnsafeParallelHashMapBytes<[IsUnmanaged] TKey, [IsUnmanaged] TValue>(UnsafeParallelHashMap<TKey, TValue> hashMap) where TKey : struct, ValueType, IEquatable<TKey> where TValue : struct, ValueType
 	{
 		return ProfilerUtils.CalculateUnsafeParallelHashMapBytes<TKey, TValue>(hashMap.Capacity);
 	}
 
-	// Token: 0x0600A947 RID: 43335 RVA: 0x003F28DB File Offset: 0x003F0ADB
+	// Token: 0x0600AA44 RID: 43588 RVA: 0x003F7C1B File Offset: 0x003F5E1B
 	public static int CalculateUnsafeParallelHashSetBytes<[IsUnmanaged] TKey>(UnsafeParallelHashSet<TKey> hashSet) where TKey : struct, ValueType, IEquatable<TKey>
 	{
 		return ProfilerUtils.CalculateUnsafeParallelHashMapBytes<TKey, bool>(hashSet.Capacity);
 	}
 
-	// Token: 0x0600A948 RID: 43336 RVA: 0x003F28E9 File Offset: 0x003F0AE9
+	// Token: 0x0600AA45 RID: 43589 RVA: 0x003F7C29 File Offset: 0x003F5E29
 	public static int CalculateUnsafeParallelMultiHashMapBytes<[IsUnmanaged] TKey, [IsUnmanaged] TValue>(UnsafeParallelMultiHashMap<TKey, TValue> hashMap) where TKey : struct, ValueType, IEquatable<TKey> where TValue : struct, ValueType
 	{
 		return ProfilerUtils.CalculateUnsafeParallelHashMapBytes<TKey, TValue>(hashMap.Capacity);
 	}
 
-	// Token: 0x0600A949 RID: 43337 RVA: 0x003F28F8 File Offset: 0x003F0AF8
+	// Token: 0x0600AA46 RID: 43590 RVA: 0x003F7C38 File Offset: 0x003F5E38
 	public static int CalculateUnsafeParallelHashMapBytes<[IsUnmanaged] TKey, [IsUnmanaged] TValue>(int length) where TKey : struct, ValueType, IEquatable<TKey> where TValue : struct, ValueType
 	{
 		int num = UnsafeUtility.SizeOf<UnsafeParallelHashMap<TKey, TValue>>() + 8256;
@@ -176,36 +176,36 @@ public static class ProfilerUtils
 		return num + (num6 + num7 + num8 + num9);
 	}
 
-	// Token: 0x0600A94A RID: 43338 RVA: 0x003F295E File Offset: 0x003F0B5E
+	// Token: 0x0600AA47 RID: 43591 RVA: 0x003F7C9E File Offset: 0x003F5E9E
 	public static int CalculateUnsafeBitArrayBytes(UnsafeBitArray bitArray)
 	{
 		return ProfilerUtils.AlignUp(bitArray.Length, 64) / 8;
 	}
 
-	// Token: 0x0600A94B RID: 43339 RVA: 0x003F296F File Offset: 0x003F0B6F
+	// Token: 0x0600AA48 RID: 43592 RVA: 0x003F7CAF File Offset: 0x003F5EAF
 	public static int AlignDown(int value, int alignPow2)
 	{
 		return value & ~(alignPow2 - 1);
 	}
 
-	// Token: 0x0600A94C RID: 43340 RVA: 0x003F2977 File Offset: 0x003F0B77
+	// Token: 0x0600AA49 RID: 43593 RVA: 0x003F7CB7 File Offset: 0x003F5EB7
 	public static int AlignUp(int value, int alignPow2)
 	{
 		return ProfilerUtils.AlignDown(value + alignPow2 - 1, alignPow2);
 	}
 
-	// Token: 0x0600A94D RID: 43341 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x0600AA4A RID: 43594 RVA: 0x00010E62 File Offset: 0x0000F062
 	public static int CalculateMeshBytes(Mesh mesh)
 	{
 		return 0;
 	}
 
-	// Token: 0x0600A94E RID: 43342 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600AA4B RID: 43595 RVA: 0x000027FC File Offset: 0x000009FC
 	public static void CollectDependencies(GameObject[] roots, List<Texture2D> textures = null, List<Mesh> meshes = null)
 	{
 	}
 
-	// Token: 0x0600A94F RID: 43343 RVA: 0x003F2984 File Offset: 0x003F0B84
+	// Token: 0x0600AA4C RID: 43596 RVA: 0x003F7CC4 File Offset: 0x003F5EC4
 	public static void CalculateDependentBytes(GameObject[] roots, out long meshBytes, out long textureBytes)
 	{
 		meshBytes = 0L;

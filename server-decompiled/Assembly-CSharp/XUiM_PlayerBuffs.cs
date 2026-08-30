@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
-// Token: 0x02001113 RID: 4371
+// Token: 0x0200112C RID: 4396
 public class XUiM_PlayerBuffs : XUiModel
 {
-	// Token: 0x06008A05 RID: 35333 RVA: 0x0034A584 File Offset: 0x00348784
+	// Token: 0x06008AF7 RID: 35575 RVA: 0x0034EDA8 File Offset: 0x0034CFA8
 	public static List<string> GetInfoFromBuffNotification(EntityUINotification _notification, BuffValue _overridenBuff, XUi _xui)
 	{
 		List<string> list = new List<string>();
@@ -44,7 +44,7 @@ public class XUiM_PlayerBuffs : XUiModel
 		return list;
 	}
 
-	// Token: 0x06008A06 RID: 35334 RVA: 0x0034A684 File Offset: 0x00348884
+	// Token: 0x06008AF8 RID: 35576 RVA: 0x0034EEA8 File Offset: 0x0034D0A8
 	public static string GetInfoFromBuff(EntityPlayerLocal _localPlayer, EntityUINotification _notification, BuffValue _overridenBuff)
 	{
 		StringBuilder stringBuilder = new StringBuilder();
@@ -83,7 +83,7 @@ public class XUiM_PlayerBuffs : XUiModel
 		return stringBuilder.ToString().Replace("REPLACE_COLOR", text);
 	}
 
-	// Token: 0x06008A07 RID: 35335 RVA: 0x0034A7C4 File Offset: 0x003489C4
+	// Token: 0x06008AF9 RID: 35577 RVA: 0x0034EFE8 File Offset: 0x0034D1E8
 	public static string GetTimeString(float _currentTime)
 	{
 		int num = (int)Math.Floor((double)(_currentTime / 3600f));
@@ -96,19 +96,19 @@ public class XUiM_PlayerBuffs : XUiModel
 		return string.Format("{0}{1}{2}", (num > 0) ? string.Format("{0}{1} ", num, Localization.Get("timeAbbreviationHours", false, null)) : "", (num2 > 0) ? string.Format("{0}{1} ", num2, Localization.Get("timeAbbreviationMinutes", false, null)) : "", (num3 > 0) ? string.Format("{0}{1} ", num3, Localization.Get("timeAbbreviationSeconds", false, null)) : "");
 	}
 
-	// Token: 0x06008A08 RID: 35336 RVA: 0x0034A8A6 File Offset: 0x00348AA6
+	// Token: 0x06008AFA RID: 35578 RVA: 0x0034F0CA File Offset: 0x0034D2CA
 	public static string GetBuffTimerDurationString(float _duration)
 	{
 		return XUiM_PlayerBuffs.GetTimeString((float)Mathf.FloorToInt(_duration * 20f));
 	}
 
-	// Token: 0x06008A09 RID: 35337 RVA: 0x0034A8BA File Offset: 0x00348ABA
+	// Token: 0x06008AFB RID: 35579 RVA: 0x0034F0DE File Offset: 0x0034D2DE
 	public static string GetBuffTimerTimeLeftString(float _duration, float _maxDuration)
 	{
 		return XUiM_PlayerBuffs.GetTimeString((float)((int)((_maxDuration - _duration) * 20f)));
 	}
 
-	// Token: 0x06008A0A RID: 35338 RVA: 0x0034A8CC File Offset: 0x00348ACC
+	// Token: 0x06008AFC RID: 35580 RVA: 0x0034F0F0 File Offset: 0x0034D2F0
 	public static string GetBuffTimeLeftString(BuffValue _buff)
 	{
 		if (_buff.BuffClass == null)
@@ -133,7 +133,7 @@ public class XUiM_PlayerBuffs : XUiModel
 		return string.Format("{0}S", num);
 	}
 
-	// Token: 0x06008A0B RID: 35339 RVA: 0x0034A978 File Offset: 0x00348B78
+	// Token: 0x06008AFD RID: 35581 RVA: 0x0034F19C File Offset: 0x0034D39C
 	public static string FormatWorldTimeString(int _duration)
 	{
 		int num = _duration / 24000;
@@ -158,7 +158,7 @@ public class XUiM_PlayerBuffs : XUiModel
 		}
 	}
 
-	// Token: 0x06008A0C RID: 35340 RVA: 0x0034AA70 File Offset: 0x00348C70
+	// Token: 0x06008AFE RID: 35582 RVA: 0x0034F294 File Offset: 0x0034D494
 	public static string GetBuffDisplayInfo(EntityUINotification _notification, BuffValue _overridenBuff = null)
 	{
 		if (_notification.Buff != null)
@@ -227,7 +227,7 @@ public class XUiM_PlayerBuffs : XUiModel
 		return "";
 	}
 
-	// Token: 0x06008A0D RID: 35341 RVA: 0x0034AC70 File Offset: 0x00348E70
+	// Token: 0x06008AFF RID: 35583 RVA: 0x0034F494 File Offset: 0x0034D694
 	public static string GetCVarValueAsTimeString(float _cvarValue)
 	{
 		if (_cvarValue == 0f)
@@ -277,7 +277,7 @@ public class XUiM_PlayerBuffs : XUiModel
 		}
 	}
 
-	// Token: 0x06008A0E RID: 35342 RVA: 0x0034ADB8 File Offset: 0x00348FB8
+	// Token: 0x06008B00 RID: 35584 RVA: 0x0034F5DC File Offset: 0x0034D7DC
 	public static string ConvertToTimeString(float _timeSeconds)
 	{
 		if (_timeSeconds == 0f)
@@ -327,22 +327,22 @@ public class XUiM_PlayerBuffs : XUiModel
 		}
 	}
 
-	// Token: 0x06008A0F RID: 35343 RVA: 0x00126DC2 File Offset: 0x00124FC2
+	// Token: 0x06008B01 RID: 35585 RVA: 0x00127EB2 File Offset: 0x001260B2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string StringFormatHandler(string _title, object _value)
 	{
 		return string.Format("{0}: [REPLACE_COLOR]{1}[-]\n", _title, _value);
 	}
 
-	// Token: 0x04006638 RID: 26168
+	// Token: 0x040066FF RID: 26367
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string minuteAbbrev;
 
-	// Token: 0x04006639 RID: 26169
+	// Token: 0x04006700 RID: 26368
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string secondAbbrev;
 
-	// Token: 0x0400663A RID: 26170
+	// Token: 0x04006701 RID: 26369
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string hourAbbrev;
 }

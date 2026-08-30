@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine.Scripting;
 
-// Token: 0x0200085B RID: 2139
+// Token: 0x02000867 RID: 2151
 [Preserve]
 public class NetPackageWaterSet : NetPackage
 {
-	// Token: 0x17000676 RID: 1654
-	// (get) Token: 0x06003E6D RID: 15981 RVA: 0x001899DB File Offset: 0x00187BDB
+	// Token: 0x17000682 RID: 1666
+	// (get) Token: 0x06003ED2 RID: 16082 RVA: 0x0018BAAB File Offset: 0x00189CAB
 	public bool HasChanges
 	{
 		get
@@ -17,26 +17,26 @@ public class NetPackageWaterSet : NetPackage
 		}
 	}
 
-	// Token: 0x06003E6E RID: 15982 RVA: 0x001899EB File Offset: 0x00187BEB
+	// Token: 0x06003ED3 RID: 16083 RVA: 0x0018BABB File Offset: 0x00189CBB
 	public void SetSenderId(int _entityId)
 	{
 		this.senderEntityId = _entityId;
 	}
 
-	// Token: 0x06003E6F RID: 15983 RVA: 0x001899F4 File Offset: 0x00187BF4
+	// Token: 0x06003ED4 RID: 16084 RVA: 0x0018BAC4 File Offset: 0x00189CC4
 	public void Reset()
 	{
 		this.senderEntityId = -1;
 		this.changes.Clear();
 	}
 
-	// Token: 0x06003E70 RID: 15984 RVA: 0x00189A08 File Offset: 0x00187C08
+	// Token: 0x06003ED5 RID: 16085 RVA: 0x0018BAD8 File Offset: 0x00189CD8
 	public void AddChange(int _worldX, int _worldY, int _worldZ, WaterValue _data)
 	{
 		this.AddChange(new Vector3i(_worldX, _worldY, _worldZ), _data);
 	}
 
-	// Token: 0x06003E71 RID: 15985 RVA: 0x00189A1C File Offset: 0x00187C1C
+	// Token: 0x06003ED6 RID: 16086 RVA: 0x0018BAEC File Offset: 0x00189CEC
 	public void AddChange(Vector3i _worldPos, WaterValue _data)
 	{
 		NetPackageWaterSet.WaterSetInfo waterSetInfo = new NetPackageWaterSet.WaterSetInfo
@@ -47,7 +47,7 @@ public class NetPackageWaterSet : NetPackage
 		this.changes.Add(waterSetInfo);
 	}
 
-	// Token: 0x06003E72 RID: 15986 RVA: 0x00189A50 File Offset: 0x00187C50
+	// Token: 0x06003ED7 RID: 16087 RVA: 0x0018BB20 File Offset: 0x00189D20
 	public override void read(PooledBinaryReader _br)
 	{
 		this.senderEntityId = _br.ReadInt32();
@@ -61,7 +61,7 @@ public class NetPackageWaterSet : NetPackage
 		}
 	}
 
-	// Token: 0x06003E73 RID: 15987 RVA: 0x00189AA4 File Offset: 0x00187CA4
+	// Token: 0x06003ED8 RID: 16088 RVA: 0x0018BB74 File Offset: 0x00189D74
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -74,7 +74,7 @@ public class NetPackageWaterSet : NetPackage
 		}
 	}
 
-	// Token: 0x06003E74 RID: 15988 RVA: 0x00189B04 File Offset: 0x00187D04
+	// Token: 0x06003ED9 RID: 16089 RVA: 0x0018BBD4 File Offset: 0x00189DD4
 	public void ApplyChanges(ChunkCluster _cc)
 	{
 		_cc.ChunkPosNeedsRegeneration_DelayedStart();
@@ -87,7 +87,7 @@ public class NetPackageWaterSet : NetPackage
 		_cc.ChunkPosNeedsRegeneration_DelayedStop();
 	}
 
-	// Token: 0x06003E75 RID: 15989 RVA: 0x00189B74 File Offset: 0x00187D74
+	// Token: 0x06003EDA RID: 16090 RVA: 0x0018BC44 File Offset: 0x00189E44
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -106,48 +106,48 @@ public class NetPackageWaterSet : NetPackage
 		this.ApplyChanges(chunkCache);
 	}
 
-	// Token: 0x06003E76 RID: 15990 RVA: 0x00189BC6 File Offset: 0x00187DC6
+	// Token: 0x06003EDB RID: 16091 RVA: 0x0018BC96 File Offset: 0x00189E96
 	public override int GetLength()
 	{
 		return 2 + this.changes.Count * NetPackageWaterSet.WaterSetInfo.GetLength();
 	}
 
-	// Token: 0x0400323F RID: 12863
+	// Token: 0x040032C0 RID: 12992
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int senderEntityId = -1;
 
-	// Token: 0x04003240 RID: 12864
+	// Token: 0x040032C1 RID: 12993
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<NetPackageWaterSet.WaterSetInfo> changes = new List<NetPackageWaterSet.WaterSetInfo>();
 
-	// Token: 0x0200085C RID: 2140
+	// Token: 0x02000868 RID: 2152
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct WaterSetInfo
 	{
-		// Token: 0x06003E78 RID: 15992 RVA: 0x00189BF5 File Offset: 0x00187DF5
+		// Token: 0x06003EDD RID: 16093 RVA: 0x0018BCC5 File Offset: 0x00189EC5
 		public void Read(BinaryReader _br)
 		{
 			this.worldPos = StreamUtils.ReadVector3i(_br);
 			this.waterData.Read(_br);
 		}
 
-		// Token: 0x06003E79 RID: 15993 RVA: 0x00189C0F File Offset: 0x00187E0F
+		// Token: 0x06003EDE RID: 16094 RVA: 0x0018BCDF File Offset: 0x00189EDF
 		public void Write(BinaryWriter _bw)
 		{
 			StreamUtils.Write(_bw, this.worldPos);
 			this.waterData.Write(_bw);
 		}
 
-		// Token: 0x06003E7A RID: 15994 RVA: 0x00189C29 File Offset: 0x00187E29
+		// Token: 0x06003EDF RID: 16095 RVA: 0x0018BCF9 File Offset: 0x00189EF9
 		public static int GetLength()
 		{
 			return 12 + WaterValue.SerializedLength();
 		}
 
-		// Token: 0x04003241 RID: 12865
+		// Token: 0x040032C2 RID: 12994
 		public Vector3i worldPos;
 
-		// Token: 0x04003242 RID: 12866
+		// Token: 0x040032C3 RID: 12995
 		public WaterValue waterData;
 	}
 }

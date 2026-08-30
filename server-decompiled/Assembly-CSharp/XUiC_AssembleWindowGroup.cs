@@ -3,13 +3,13 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EAC RID: 3756
+// Token: 0x02000EC1 RID: 3777
 [Preserve]
 public class XUiC_AssembleWindowGroup : XUiController
 {
-	// Token: 0x17000DCB RID: 3531
-	// (get) Token: 0x06007567 RID: 30055 RVA: 0x002C1A5C File Offset: 0x002BFC5C
-	// (set) Token: 0x06007568 RID: 30056 RVA: 0x002C1A64 File Offset: 0x002BFC64
+	// Token: 0x17000DE5 RID: 3557
+	// (get) Token: 0x06007608 RID: 30216 RVA: 0x002C4F80 File Offset: 0x002C3180
+	// (set) Token: 0x06007609 RID: 30217 RVA: 0x002C4F88 File Offset: 0x002C3188
 	public ItemStack ItemStack
 	{
 		get
@@ -29,7 +29,7 @@ public class XUiC_AssembleWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06007569 RID: 30057 RVA: 0x002C1AF4 File Offset: 0x002BFCF4
+	// Token: 0x0600760A RID: 30218 RVA: 0x002C5018 File Offset: 0x002C3218
 	public override void Init()
 	{
 		base.Init();
@@ -39,7 +39,7 @@ public class XUiC_AssembleWindowGroup : XUiController
 		this.nonPagingHeaderWindow = base.GetChildByType<XUiC_WindowNonPagingHeader>();
 	}
 
-	// Token: 0x0600756A RID: 30058 RVA: 0x002C1B2C File Offset: 0x002BFD2C
+	// Token: 0x0600760B RID: 30219 RVA: 0x002C5050 File Offset: 0x002C3250
 	public override void OnOpen()
 	{
 		this.ItemStack = this.xui.AssembleItem.CurrentItem;
@@ -66,7 +66,7 @@ public class XUiC_AssembleWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x0600756B RID: 30059 RVA: 0x002C1C27 File Offset: 0x002BFE27
+	// Token: 0x0600760C RID: 30220 RVA: 0x002C514B File Offset: 0x002C334B
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -77,7 +77,7 @@ public class XUiC_AssembleWindowGroup : XUiController
 		GameManager.Instance.StartCoroutine(this.showCraftingLater());
 	}
 
-	// Token: 0x0600756C RID: 30060 RVA: 0x002C1C5F File Offset: 0x002BFE5F
+	// Token: 0x0600760D RID: 30221 RVA: 0x002C5183 File Offset: 0x002C3383
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public IEnumerator showCraftingLater()
 	{
@@ -89,36 +89,36 @@ public class XUiC_AssembleWindowGroup : XUiController
 		yield break;
 	}
 
-	// Token: 0x0600756D RID: 30061 RVA: 0x002C1C6E File Offset: 0x002BFE6E
+	// Token: 0x0600760E RID: 30222 RVA: 0x002C5192 File Offset: 0x002C3392
 	public static XUiC_AssembleWindowGroup GetWindowGroup(XUi _xuiInstance)
 	{
 		return _xuiInstance.FindWindowGroupByName(XUiC_AssembleWindowGroup.ID) as XUiC_AssembleWindowGroup;
 	}
 
-	// Token: 0x040056A2 RID: 22178
+	// Token: 0x04005747 RID: 22343
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_AssembleWindow assembleWindow;
 
-	// Token: 0x040056A3 RID: 22179
+	// Token: 0x04005748 RID: 22344
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ItemPartStackGrid grid;
 
-	// Token: 0x040056A4 RID: 22180
+	// Token: 0x04005749 RID: 22345
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ItemCosmeticStackGrid cosmeticGrid;
 
-	// Token: 0x040056A5 RID: 22181
+	// Token: 0x0400574A RID: 22346
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_WindowNonPagingHeader nonPagingHeaderWindow;
 
-	// Token: 0x040056A6 RID: 22182
+	// Token: 0x0400574B RID: 22347
 	public static string ID = "assemble";
 
-	// Token: 0x040056A7 RID: 22183
+	// Token: 0x0400574C RID: 22348
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool openEquipmentOnClose;
 
-	// Token: 0x040056A8 RID: 22184
+	// Token: 0x0400574D RID: 22349
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack itemStack;
 }

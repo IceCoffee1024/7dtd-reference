@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000819 RID: 2073
+// Token: 0x02000824 RID: 2084
 [Preserve]
 public class NetPackagePlayerDenied : NetPackage
 {
-	// Token: 0x17000656 RID: 1622
-	// (get) Token: 0x06003CD9 RID: 15577 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000661 RID: 1633
+	// (get) Token: 0x06003D38 RID: 15672 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool FlushQueue
 	{
 		get
@@ -15,8 +15,8 @@ public class NetPackagePlayerDenied : NetPackage
 		}
 	}
 
-	// Token: 0x17000657 RID: 1623
-	// (get) Token: 0x06003CDA RID: 15578 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000662 RID: 1634
+	// (get) Token: 0x06003D39 RID: 15673 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedBeforeAuth
 	{
 		get
@@ -25,14 +25,14 @@ public class NetPackagePlayerDenied : NetPackage
 		}
 	}
 
-	// Token: 0x06003CDB RID: 15579 RVA: 0x00183373 File Offset: 0x00181573
+	// Token: 0x06003D3A RID: 15674 RVA: 0x0018574B File Offset: 0x0018394B
 	public NetPackagePlayerDenied Setup(GameUtils.KickPlayerData _kickData)
 	{
 		this.kickData = _kickData;
 		return this;
 	}
 
-	// Token: 0x06003CDC RID: 15580 RVA: 0x00183380 File Offset: 0x00181580
+	// Token: 0x06003D3B RID: 15675 RVA: 0x00185758 File Offset: 0x00183958
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.kickData.reason = (GameUtils.EKickReason)_reader.ReadInt32();
@@ -48,7 +48,7 @@ public class NetPackagePlayerDenied : NetPackage
 		}
 	}
 
-	// Token: 0x06003CDD RID: 15581 RVA: 0x001833FC File Offset: 0x001815FC
+	// Token: 0x06003D3C RID: 15676 RVA: 0x001857D4 File Offset: 0x001839D4
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -58,7 +58,7 @@ public class NetPackagePlayerDenied : NetPackage
 		_writer.Write(this.kickData.customReason);
 	}
 
-	// Token: 0x06003CDE RID: 15582 RVA: 0x00183459 File Offset: 0x00181659
+	// Token: 0x06003D3D RID: 15677 RVA: 0x00185831 File Offset: 0x00183A31
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (!this.processed)
@@ -69,14 +69,14 @@ public class NetPackagePlayerDenied : NetPackage
 		}
 	}
 
-	// Token: 0x06003CDF RID: 15583 RVA: 0x000B8CB1 File Offset: 0x000B6EB1
+	// Token: 0x06003D3E RID: 15678 RVA: 0x000B93F5 File Offset: 0x000B75F5
 	public override int GetLength()
 	{
 		return 20;
 	}
 
-	// Token: 0x17000658 RID: 1624
-	// (get) Token: 0x06003CE0 RID: 15584 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x17000663 RID: 1635
+	// (get) Token: 0x06003D3F RID: 15679 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -85,10 +85,10 @@ public class NetPackagePlayerDenied : NetPackage
 		}
 	}
 
-	// Token: 0x0400313B RID: 12603
+	// Token: 0x040031BA RID: 12730
 	public GameUtils.KickPlayerData kickData;
 
-	// Token: 0x0400313C RID: 12604
+	// Token: 0x040031BB RID: 12731
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool processed;
 }

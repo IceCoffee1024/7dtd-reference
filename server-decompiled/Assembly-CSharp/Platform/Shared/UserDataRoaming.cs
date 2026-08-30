@@ -2,10 +2,10 @@
 
 namespace Platform.Shared
 {
-	// Token: 0x02001C8F RID: 7311
+	// Token: 0x02001CB6 RID: 7350
 	public class UserDataRoaming : UserDataRoamingAbs
 	{
-		// Token: 0x0600D882 RID: 55426 RVA: 0x004DC1BB File Offset: 0x004DA3BB
+		// Token: 0x0600DA18 RID: 55832 RVA: 0x004E2797 File Offset: 0x004E0997
 		[PublicizedFrom(EAccessModifier.Private)]
 		public UserDataRoaming(SaveRoamingMode mode, UserDataStorageType storageType)
 		{
@@ -13,8 +13,8 @@ namespace Platform.Shared
 			this.storageType = storageType;
 		}
 
-		// Token: 0x17001AA7 RID: 6823
-		// (get) Token: 0x0600D883 RID: 55427 RVA: 0x004DC1D1 File Offset: 0x004DA3D1
+		// Token: 0x17001B19 RID: 6937
+		// (get) Token: 0x0600DA19 RID: 55833 RVA: 0x004E27AD File Offset: 0x004E09AD
 		public override SaveRoamingMode SaveRoamingMode
 		{
 			get
@@ -23,8 +23,8 @@ namespace Platform.Shared
 			}
 		}
 
-		// Token: 0x17001AA8 RID: 6824
-		// (get) Token: 0x0600D884 RID: 55428 RVA: 0x004DC1D9 File Offset: 0x004DA3D9
+		// Token: 0x17001B1A RID: 6938
+		// (get) Token: 0x0600DA1A RID: 55834 RVA: 0x004E27B5 File Offset: 0x004E09B5
 		public override UserDataStorageType DefaultSaveStorage
 		{
 			get
@@ -33,8 +33,8 @@ namespace Platform.Shared
 			}
 		}
 
-		// Token: 0x17001AA9 RID: 6825
-		// (get) Token: 0x0600D885 RID: 55429 RVA: 0x004DC1E1 File Offset: 0x004DA3E1
+		// Token: 0x17001B1B RID: 6939
+		// (get) Token: 0x0600DA1B RID: 55835 RVA: 0x004E27BD File Offset: 0x004E09BD
 		public static UserDataRoaming OptionalSaveRoaming
 		{
 			get
@@ -43,8 +43,8 @@ namespace Platform.Shared
 			}
 		}
 
-		// Token: 0x17001AAA RID: 6826
-		// (get) Token: 0x0600D886 RID: 55430 RVA: 0x004DC1EA File Offset: 0x004DA3EA
+		// Token: 0x17001B1C RID: 6940
+		// (get) Token: 0x0600DA1C RID: 55836 RVA: 0x004E27C6 File Offset: 0x004E09C6
 		public static UserDataRoaming ForcedSaveRoaming
 		{
 			get
@@ -53,8 +53,8 @@ namespace Platform.Shared
 			}
 		}
 
-		// Token: 0x17001AAB RID: 6827
-		// (get) Token: 0x0600D887 RID: 55431 RVA: 0x004DC1F3 File Offset: 0x004DA3F3
+		// Token: 0x17001B1D RID: 6941
+		// (get) Token: 0x0600DA1D RID: 55837 RVA: 0x004E27CF File Offset: 0x004E09CF
 		public static UserDataRoaming NoSaveRoaming
 		{
 			get
@@ -63,11 +63,11 @@ namespace Platform.Shared
 			}
 		}
 
-		// Token: 0x0400A41E RID: 42014
+		// Token: 0x0400A551 RID: 42321
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SaveRoamingMode mode;
 
-		// Token: 0x0400A41F RID: 42015
+		// Token: 0x0400A552 RID: 42322
 		[PublicizedFrom(EAccessModifier.Private)]
 		public UserDataStorageType storageType;
 	}

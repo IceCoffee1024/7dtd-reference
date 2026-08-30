@@ -1,56 +1,56 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D3E RID: 3390
+// Token: 0x02000D50 RID: 3408
 [Preserve]
 public class BaseItemActionEntry
 {
-	// Token: 0x17000AF5 RID: 2805
-	// (get) Token: 0x0600674C RID: 26444 RVA: 0x0028C244 File Offset: 0x0028A444
-	// (set) Token: 0x0600674D RID: 26445 RVA: 0x0028C24C File Offset: 0x0028A44C
+	// Token: 0x17000B08 RID: 2824
+	// (get) Token: 0x060067D8 RID: 26584 RVA: 0x0028F128 File Offset: 0x0028D328
+	// (set) Token: 0x060067D9 RID: 26585 RVA: 0x0028F130 File Offset: 0x0028D330
 	public string ActionName { get; set; }
 
-	// Token: 0x17000AF6 RID: 2806
-	// (get) Token: 0x0600674E RID: 26446 RVA: 0x0028C255 File Offset: 0x0028A455
-	// (set) Token: 0x0600674F RID: 26447 RVA: 0x0028C25D File Offset: 0x0028A45D
+	// Token: 0x17000B09 RID: 2825
+	// (get) Token: 0x060067DA RID: 26586 RVA: 0x0028F139 File Offset: 0x0028D339
+	// (set) Token: 0x060067DB RID: 26587 RVA: 0x0028F141 File Offset: 0x0028D341
 	public string IconName { get; set; }
 
-	// Token: 0x17000AF7 RID: 2807
-	// (get) Token: 0x06006750 RID: 26448 RVA: 0x0028C266 File Offset: 0x0028A466
-	// (set) Token: 0x06006751 RID: 26449 RVA: 0x0028C26E File Offset: 0x0028A46E
+	// Token: 0x17000B0A RID: 2826
+	// (get) Token: 0x060067DC RID: 26588 RVA: 0x0028F14A File Offset: 0x0028D34A
+	// (set) Token: 0x060067DD RID: 26589 RVA: 0x0028F152 File Offset: 0x0028D352
 	public bool Enabled { get; set; }
 
-	// Token: 0x17000AF8 RID: 2808
-	// (get) Token: 0x06006752 RID: 26450 RVA: 0x0028C277 File Offset: 0x0028A477
-	// (set) Token: 0x06006753 RID: 26451 RVA: 0x0028C27F File Offset: 0x0028A47F
+	// Token: 0x17000B0B RID: 2827
+	// (get) Token: 0x060067DE RID: 26590 RVA: 0x0028F15B File Offset: 0x0028D35B
+	// (set) Token: 0x060067DF RID: 26591 RVA: 0x0028F163 File Offset: 0x0028D363
 	public string SoundName { get; set; }
 
-	// Token: 0x17000AF9 RID: 2809
-	// (get) Token: 0x06006754 RID: 26452 RVA: 0x0028C288 File Offset: 0x0028A488
-	// (set) Token: 0x06006755 RID: 26453 RVA: 0x0028C290 File Offset: 0x0028A490
+	// Token: 0x17000B0C RID: 2828
+	// (get) Token: 0x060067E0 RID: 26592 RVA: 0x0028F16C File Offset: 0x0028D36C
+	// (set) Token: 0x060067E1 RID: 26593 RVA: 0x0028F174 File Offset: 0x0028D374
 	public string DisabledSound { get; set; }
 
-	// Token: 0x17000AFA RID: 2810
-	// (get) Token: 0x06006756 RID: 26454 RVA: 0x0028C299 File Offset: 0x0028A499
-	// (set) Token: 0x06006757 RID: 26455 RVA: 0x0028C2A1 File Offset: 0x0028A4A1
+	// Token: 0x17000B0D RID: 2829
+	// (get) Token: 0x060067E2 RID: 26594 RVA: 0x0028F17D File Offset: 0x0028D37D
+	// (set) Token: 0x060067E3 RID: 26595 RVA: 0x0028F185 File Offset: 0x0028D385
 	public XUiController ItemController { get; set; }
 
-	// Token: 0x17000AFB RID: 2811
-	// (get) Token: 0x06006758 RID: 26456 RVA: 0x0028C2AA File Offset: 0x0028A4AA
-	// (set) Token: 0x06006759 RID: 26457 RVA: 0x0028C2B2 File Offset: 0x0028A4B2
+	// Token: 0x17000B0E RID: 2830
+	// (get) Token: 0x060067E4 RID: 26596 RVA: 0x0028F18E File Offset: 0x0028D38E
+	// (set) Token: 0x060067E5 RID: 26597 RVA: 0x0028F196 File Offset: 0x0028D396
 	public XUiC_ItemActionEntry ParentItem { get; set; }
 
-	// Token: 0x17000AFC RID: 2812
-	// (get) Token: 0x0600675A RID: 26458 RVA: 0x0028C2BB File Offset: 0x0028A4BB
-	// (set) Token: 0x0600675B RID: 26459 RVA: 0x0028C2C3 File Offset: 0x0028A4C3
+	// Token: 0x17000B0F RID: 2831
+	// (get) Token: 0x060067E6 RID: 26598 RVA: 0x0028F19F File Offset: 0x0028D39F
+	// (set) Token: 0x060067E7 RID: 26599 RVA: 0x0028F1A7 File Offset: 0x0028D3A7
 	public XUiC_ItemActionList ParentActionList { get; set; }
 
-	// Token: 0x17000AFD RID: 2813
-	// (get) Token: 0x0600675C RID: 26460 RVA: 0x0028C2CC File Offset: 0x0028A4CC
-	// (set) Token: 0x0600675D RID: 26461 RVA: 0x0028C2D4 File Offset: 0x0028A4D4
+	// Token: 0x17000B10 RID: 2832
+	// (get) Token: 0x060067E8 RID: 26600 RVA: 0x0028F1B0 File Offset: 0x0028D3B0
+	// (set) Token: 0x060067E9 RID: 26601 RVA: 0x0028F1B8 File Offset: 0x0028D3B8
 	public BaseItemActionEntry.GamepadShortCut ShortCut { get; set; }
 
-	// Token: 0x0600675E RID: 26462 RVA: 0x0028C2E0 File Offset: 0x0028A4E0
+	// Token: 0x060067EA RID: 26602 RVA: 0x0028F1C4 File Offset: 0x0028D3C4
 	public BaseItemActionEntry(XUiController itemController, string actionName, string spriteName, BaseItemActionEntry.GamepadShortCut shortcut = BaseItemActionEntry.GamepadShortCut.None, string soundName = "crafting/craft_click_craft", string disabledSoundName = "ui/ui_denied")
 	{
 		this.ItemController = itemController;
@@ -62,7 +62,7 @@ public class BaseItemActionEntry
 		this.ShortCut = shortcut;
 	}
 
-	// Token: 0x0600675F RID: 26463 RVA: 0x0028C32E File Offset: 0x0028A52E
+	// Token: 0x060067EB RID: 26603 RVA: 0x0028F212 File Offset: 0x0028D412
 	public virtual void RefreshEnabled()
 	{
 		if (this.ItemController is XUiC_ItemStack)
@@ -71,40 +71,40 @@ public class BaseItemActionEntry
 		}
 	}
 
-	// Token: 0x06006760 RID: 26464 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060067EC RID: 26604 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void OnActivated()
 	{
 	}
 
-	// Token: 0x06006761 RID: 26465 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060067ED RID: 26605 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void OnDisabledActivate()
 	{
 	}
 
-	// Token: 0x06006762 RID: 26466 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060067EE RID: 26606 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void OnTimerCompleted()
 	{
 	}
 
-	// Token: 0x06006763 RID: 26467 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060067EF RID: 26607 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void DisableEvents()
 	{
 	}
 
-	// Token: 0x02000D3F RID: 3391
+	// Token: 0x02000D51 RID: 3409
 	public enum GamepadShortCut
 	{
-		// Token: 0x04004F40 RID: 20288
+		// Token: 0x04004FDE RID: 20446
 		DPadUp,
-		// Token: 0x04004F41 RID: 20289
+		// Token: 0x04004FDF RID: 20447
 		DPadLeft,
-		// Token: 0x04004F42 RID: 20290
+		// Token: 0x04004FE0 RID: 20448
 		DPadRight,
-		// Token: 0x04004F43 RID: 20291
+		// Token: 0x04004FE1 RID: 20449
 		DPadDown,
-		// Token: 0x04004F44 RID: 20292
+		// Token: 0x04004FE2 RID: 20450
 		None,
-		// Token: 0x04004F45 RID: 20293
+		// Token: 0x04004FE3 RID: 20451
 		Max
 	}
 }

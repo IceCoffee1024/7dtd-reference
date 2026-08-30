@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x020009D3 RID: 2515
+// Token: 0x020009E4 RID: 2532
 public class QuestLockInstance
 {
-	// Token: 0x06004AD0 RID: 19152 RVA: 0x001D15B1 File Offset: 0x001CF7B1
+	// Token: 0x06004B56 RID: 19286 RVA: 0x001D3D99 File Offset: 0x001D1F99
 	public QuestLockInstance(int lockedByEntityID)
 	{
 		this.AddQuester(lockedByEntityID);
@@ -12,7 +12,7 @@ public class QuestLockInstance
 		this.IsLocked = true;
 	}
 
-	// Token: 0x06004AD1 RID: 19153 RVA: 0x001D15E1 File Offset: 0x001CF7E1
+	// Token: 0x06004B57 RID: 19287 RVA: 0x001D3DC9 File Offset: 0x001D1FC9
 	public void AddQuester(int entityID)
 	{
 		if (!this.LockedByEntities.Contains(entityID))
@@ -21,7 +21,7 @@ public class QuestLockInstance
 		}
 	}
 
-	// Token: 0x06004AD2 RID: 19154 RVA: 0x001D1600 File Offset: 0x001CF800
+	// Token: 0x06004B58 RID: 19288 RVA: 0x001D3DE8 File Offset: 0x001D1FE8
 	public void AddQuesters(int[] entityIDs)
 	{
 		for (int i = 0; i < entityIDs.Length; i++)
@@ -33,7 +33,7 @@ public class QuestLockInstance
 		}
 	}
 
-	// Token: 0x06004AD3 RID: 19155 RVA: 0x001D1639 File Offset: 0x001CF839
+	// Token: 0x06004B59 RID: 19289 RVA: 0x001D3E21 File Offset: 0x001D2021
 	public void RemoveQuester(int entityID)
 	{
 		if (this.LockedByEntities.Contains(entityID))
@@ -46,7 +46,7 @@ public class QuestLockInstance
 		}
 	}
 
-	// Token: 0x06004AD4 RID: 19156 RVA: 0x001D1669 File Offset: 0x001CF869
+	// Token: 0x06004B5A RID: 19290 RVA: 0x001D3E51 File Offset: 0x001D2051
 	public void SetUnlocked()
 	{
 		if (this.IsLocked)
@@ -59,18 +59,18 @@ public class QuestLockInstance
 		}
 	}
 
-	// Token: 0x06004AD5 RID: 19157 RVA: 0x001D169D File Offset: 0x001CF89D
+	// Token: 0x06004B5B RID: 19291 RVA: 0x001D3E85 File Offset: 0x001D2085
 	public bool CheckQuestLock()
 	{
 		return !this.IsLocked && GameManager.Instance.World.GetWorldTime() > this.LockedOutUntil;
 	}
 
-	// Token: 0x04003AE6 RID: 15078
+	// Token: 0x04003B77 RID: 15223
 	public bool IsLocked = true;
 
-	// Token: 0x04003AE7 RID: 15079
+	// Token: 0x04003B78 RID: 15224
 	public List<int> LockedByEntities = new List<int>();
 
-	// Token: 0x04003AE8 RID: 15080
+	// Token: 0x04003B79 RID: 15225
 	public ulong LockedOutUntil;
 }

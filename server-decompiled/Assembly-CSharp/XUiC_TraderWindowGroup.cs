@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02001078 RID: 4216
+// Token: 0x02001091 RID: 4241
 [Preserve]
 public class XUiC_TraderWindowGroup : XUiController
 {
-	// Token: 0x060085E0 RID: 34272 RVA: 0x00332474 File Offset: 0x00330674
+	// Token: 0x060086D2 RID: 34514 RVA: 0x00336C9C File Offset: 0x00334E9C
 	public override void Init()
 	{
 		base.Init();
@@ -26,7 +26,7 @@ public class XUiC_TraderWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x060085E1 RID: 34273 RVA: 0x003324CC File Offset: 0x003306CC
+	// Token: 0x060086D3 RID: 34515 RVA: 0x00336CF4 File Offset: 0x00334EF4
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -54,7 +54,7 @@ public class XUiC_TraderWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x060085E2 RID: 34274 RVA: 0x003325AC File Offset: 0x003307AC
+	// Token: 0x060086D4 RID: 34516 RVA: 0x00336DD4 File Offset: 0x00334FD4
 	public override void OnOpen()
 	{
 		this.xui.Trader.TraderWindowGroup = this;
@@ -86,7 +86,7 @@ public class XUiC_TraderWindowGroup : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060085E3 RID: 34275 RVA: 0x00332710 File Offset: 0x00330910
+	// Token: 0x060086D5 RID: 34517 RVA: 0x00336F38 File Offset: 0x00335138
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -96,39 +96,39 @@ public class XUiC_TraderWindowGroup : XUiController
 		this.xui.playerUI.entityPlayer.OverrideFOV = -1f;
 	}
 
-	// Token: 0x060085E4 RID: 34276 RVA: 0x0033275C File Offset: 0x0033095C
+	// Token: 0x060086D6 RID: 34518 RVA: 0x00336F84 File Offset: 0x00335184
 	public void RefreshTraderItems()
 	{
 		this.TraderWindow.CompletedTransaction = true;
 		this.TraderWindow.RefreshTraderItems();
 	}
 
-	// Token: 0x060085E5 RID: 34277 RVA: 0x00332775 File Offset: 0x00330975
+	// Token: 0x060086D7 RID: 34519 RVA: 0x00336F9D File Offset: 0x0033519D
 	public void RefreshTraderWindow()
 	{
 		this.TraderWindow.RefreshBindings();
 	}
 
-	// Token: 0x04006376 RID: 25462
+	// Token: 0x0400643D RID: 25661
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_WindowNonPagingHeader nonPagingHeader;
 
-	// Token: 0x04006377 RID: 25463
+	// Token: 0x0400643E RID: 25662
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TraderWindow TraderWindow;
 
-	// Token: 0x04006378 RID: 25464
+	// Token: 0x0400643F RID: 25663
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ServiceInfoWindow ServiceInfoWindow;
 
-	// Token: 0x04006379 RID: 25465
+	// Token: 0x04006440 RID: 25664
 	public static string ID = "trader";
 
-	// Token: 0x0400637A RID: 25466
+	// Token: 0x04006441 RID: 25665
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool activeKeyDown;
 
-	// Token: 0x0400637B RID: 25467
+	// Token: 0x04006442 RID: 25666
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool wasReleased;
 }

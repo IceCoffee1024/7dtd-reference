@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000C23 RID: 3107
+// Token: 0x02000C35 RID: 3125
 public class ThreadProcessing
 {
-	// Token: 0x06005EA7 RID: 24231 RVA: 0x002577D0 File Offset: 0x002559D0
+	// Token: 0x06005F31 RID: 24369 RVA: 0x0025A680 File Offset: 0x00258880
 	public ThreadProcessing(List<ThreadInfoParam> _JobList)
 	{
 		this.JobList = new List<ThreadInfoParam>(100);
 		this.Init(_JobList);
 	}
 
-	// Token: 0x06005EA8 RID: 24232 RVA: 0x002577EC File Offset: 0x002559EC
+	// Token: 0x06005F32 RID: 24370 RVA: 0x0025A69C File Offset: 0x0025889C
 	public ThreadProcessing()
 	{
 		this.JobList = new List<ThreadInfoParam>(100);
@@ -19,7 +19,7 @@ public class ThreadProcessing
 		this.IsFinished = false;
 	}
 
-	// Token: 0x06005EA9 RID: 24233 RVA: 0x00257810 File Offset: 0x00255A10
+	// Token: 0x06005F33 RID: 24371 RVA: 0x0025A6C0 File Offset: 0x002588C0
 	public void Init(List<ThreadInfoParam> _JobList)
 	{
 		this.RemoveTreatedElement(_JobList);
@@ -41,7 +41,7 @@ public class ThreadProcessing
 		this.TaskInfo = ThreadManager.AddSingleTask(new ThreadManager.TaskFunctionDelegate(this.ThreadJob), this.JobList, null, true);
 	}
 
-	// Token: 0x06005EAA RID: 24234 RVA: 0x002578D0 File Offset: 0x00255AD0
+	// Token: 0x06005F34 RID: 24372 RVA: 0x0025A780 File Offset: 0x00258980
 	public void RemoveTreatedElement(List<ThreadInfoParam> _JobList)
 	{
 		this.JobList.Clear();
@@ -54,7 +54,7 @@ public class ThreadProcessing
 		}
 	}
 
-	// Token: 0x06005EAB RID: 24235 RVA: 0x0025791C File Offset: 0x00255B1C
+	// Token: 0x06005F35 RID: 24373 RVA: 0x0025A7CC File Offset: 0x002589CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ThreadJob(ThreadManager.TaskInfo _InfoJob)
 	{
@@ -91,7 +91,7 @@ public class ThreadProcessing
 		}
 	}
 
-	// Token: 0x06005EAC RID: 24236 RVA: 0x00257A20 File Offset: 0x00255C20
+	// Token: 0x06005F36 RID: 24374 RVA: 0x0025A8D0 File Offset: 0x00258AD0
 	public void CancelThread()
 	{
 		object lockObjectThread = ThreadProcessing.LockObjectThread;
@@ -101,7 +101,7 @@ public class ThreadProcessing
 		}
 	}
 
-	// Token: 0x06005EAD RID: 24237 RVA: 0x00257A60 File Offset: 0x00255C60
+	// Token: 0x06005F37 RID: 24375 RVA: 0x0025A910 File Offset: 0x00258B10
 	public long CancelThreadAndWaitFinished()
 	{
 		object lockObjectThread = ThreadProcessing.LockObjectThread;
@@ -116,13 +116,13 @@ public class ThreadProcessing
 		return 0L;
 	}
 
-	// Token: 0x06005EAE RID: 24238 RVA: 0x00257AB8 File Offset: 0x00255CB8
+	// Token: 0x06005F38 RID: 24376 RVA: 0x0025A968 File Offset: 0x00258B68
 	public bool IsThreadFinished()
 	{
 		return this.IsFinished;
 	}
 
-	// Token: 0x06005EAF RID: 24239 RVA: 0x00257AC0 File Offset: 0x00255CC0
+	// Token: 0x06005F39 RID: 24377 RVA: 0x0025A970 File Offset: 0x00258B70
 	public bool IsThreadDone(int ThreadInfoParamId)
 	{
 		object lockObjectThread = ThreadProcessing.LockObjectThread;
@@ -134,20 +134,20 @@ public class ThreadProcessing
 		return isThreadDone;
 	}
 
-	// Token: 0x04004A0D RID: 18957
+	// Token: 0x04004AAA RID: 19114
 	public bool IsFinished;
 
-	// Token: 0x04004A0E RID: 18958
+	// Token: 0x04004AAB RID: 19115
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsCancelled;
 
-	// Token: 0x04004A0F RID: 18959
+	// Token: 0x04004AAC RID: 19116
 	public ThreadManager.TaskInfo TaskInfo;
 
-	// Token: 0x04004A10 RID: 18960
+	// Token: 0x04004AAD RID: 19117
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static object LockObjectThread = new object();
 
-	// Token: 0x04004A11 RID: 18961
+	// Token: 0x04004AAE RID: 19118
 	public List<ThreadInfoParam> JobList;
 }

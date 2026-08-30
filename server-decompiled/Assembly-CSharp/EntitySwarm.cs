@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020004D4 RID: 1236
+// Token: 0x020004D9 RID: 1241
 [Preserve]
 public class EntitySwarm : EntityVulture
 {
-	// Token: 0x0600283C RID: 10300 RVA: 0x000F94A4 File Offset: 0x000F76A4
+	// Token: 0x06002866 RID: 10342 RVA: 0x000FA4B0 File Offset: 0x000F86B0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Init()
 	{
@@ -18,7 +18,7 @@ public class EntitySwarm : EntityVulture
 		this.dissipateDelay = 24f;
 	}
 
-	// Token: 0x0600283D RID: 10301 RVA: 0x000F94F4 File Offset: 0x000F76F4
+	// Token: 0x06002867 RID: 10343 RVA: 0x000FA500 File Offset: 0x000F8700
 	public override void OnUpdateLive()
 	{
 		base.OnUpdateLive();
@@ -36,7 +36,7 @@ public class EntitySwarm : EntityVulture
 		}
 	}
 
-	// Token: 0x04001E27 RID: 7719
+	// Token: 0x04001E56 RID: 7766
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float dissipateDelay;

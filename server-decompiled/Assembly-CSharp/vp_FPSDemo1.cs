@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200157F RID: 5503
+// Token: 0x0200159A RID: 5530
 public class vp_FPSDemo1 : MonoBehaviour
 {
-	// Token: 0x0600AC03 RID: 44035 RVA: 0x00400870 File Offset: 0x003FEA70
+	// Token: 0x0600AD00 RID: 44288 RVA: 0x00405BB0 File Offset: 0x00403DB0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -26,7 +26,7 @@ public class vp_FPSDemo1 : MonoBehaviour
 		this.m_Demo.PlayerEventHandler.SetNextWeapon.Try = () => false;
 	}
 
-	// Token: 0x0600AC04 RID: 44036 RVA: 0x00400A65 File Offset: 0x003FEC65
+	// Token: 0x0600AD01 RID: 44289 RVA: 0x00405DA5 File Offset: 0x00403FA5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDisable()
 	{
@@ -36,7 +36,7 @@ public class vp_FPSDemo1 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AC05 RID: 44037 RVA: 0x00400A8C File Offset: 0x003FEC8C
+	// Token: 0x0600AD02 RID: 44290 RVA: 0x00405DCC File Offset: 0x00403FCC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -115,7 +115,7 @@ public class vp_FPSDemo1 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AC06 RID: 44038 RVA: 0x00400C7C File Offset: 0x003FEE7C
+	// Token: 0x0600AD03 RID: 44291 RVA: 0x00405FBC File Offset: 0x004041BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DemoIntro()
 	{
@@ -136,7 +136,7 @@ public class vp_FPSDemo1 : MonoBehaviour
 		this.m_Demo.ForceCameraShake();
 	}
 
-	// Token: 0x0600AC07 RID: 44039 RVA: 0x00400D70 File Offset: 0x003FEF70
+	// Token: 0x0600AD04 RID: 44292 RVA: 0x004060B0 File Offset: 0x004042B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetWeapon(int i, string state = null, bool drawCrosshair = true, bool wieldMotion = true)
 	{
@@ -175,7 +175,7 @@ public class vp_FPSDemo1 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AC08 RID: 44040 RVA: 0x00400E70 File Offset: 0x003FF070
+	// Token: 0x0600AD05 RID: 44293 RVA: 0x004061B0 File Offset: 0x004043B0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DemoExamples()
 	{
@@ -324,7 +324,7 @@ public class vp_FPSDemo1 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AC09 RID: 44041 RVA: 0x00401590 File Offset: 0x003FF790
+	// Token: 0x0600AD06 RID: 44294 RVA: 0x004068D0 File Offset: 0x00404AD0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DemoForces()
 	{
@@ -416,7 +416,7 @@ public class vp_FPSDemo1 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AC0A RID: 44042 RVA: 0x00401B3C File Offset: 0x003FFD3C
+	// Token: 0x0600AD07 RID: 44295 RVA: 0x00406E7C File Offset: 0x0040507C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DemoMouseInput()
 	{
@@ -474,7 +474,7 @@ public class vp_FPSDemo1 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AC0B RID: 44043 RVA: 0x00401E58 File Offset: 0x00400058
+	// Token: 0x0600AD08 RID: 44296 RVA: 0x00407198 File Offset: 0x00405398
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DemoWeaponPerspective()
 	{
@@ -527,7 +527,7 @@ public class vp_FPSDemo1 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AC0C RID: 44044 RVA: 0x004020F0 File Offset: 0x004002F0
+	// Token: 0x0600AD09 RID: 44297 RVA: 0x00407430 File Offset: 0x00405630
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DemoWeaponLayer()
 	{
@@ -562,7 +562,7 @@ public class vp_FPSDemo1 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AC0D RID: 44045 RVA: 0x004022AC File Offset: 0x004004AC
+	// Token: 0x0600AD0A RID: 44298 RVA: 0x004075EC File Offset: 0x004057EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DemoPivot()
 	{
@@ -617,7 +617,7 @@ public class vp_FPSDemo1 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AC0E RID: 44046 RVA: 0x00402538 File Offset: 0x00400738
+	// Token: 0x0600AD0B RID: 44299 RVA: 0x00407878 File Offset: 0x00405A78
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnGUI()
 	{
@@ -650,452 +650,452 @@ public class vp_FPSDemo1 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04007F1A RID: 32538
+	// Token: 0x04007FF3 RID: 32755
 	public GameObject Player;
 
-	// Token: 0x04007F1B RID: 32539
+	// Token: 0x04007FF4 RID: 32756
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_FPSDemoManager m_Demo;
 
-	// Token: 0x04007F1C RID: 32540
+	// Token: 0x04007FF5 RID: 32757
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int m_ExamplesCurrentSel;
 
-	// Token: 0x04007F1D RID: 32541
+	// Token: 0x04007FF6 RID: 32758
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_Timer.Handle m_ChrashingAirplaneRestoreTimer = new vp_Timer.Handle();
 
-	// Token: 0x04007F1E RID: 32542
+	// Token: 0x04007FF7 RID: 32759
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_Timer.Handle m_WeaponSwitchTimer = new vp_Timer.Handle();
 
-	// Token: 0x04007F1F RID: 32543
+	// Token: 0x04007FF8 RID: 32760
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool m_WeaponLayerToggle;
 
-	// Token: 0x04007F20 RID: 32544
+	// Token: 0x04007FF9 RID: 32761
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 m_MouseLookPos = new Vector3(-8.093015f, 20.08f, 3.416737f);
 
-	// Token: 0x04007F21 RID: 32545
+	// Token: 0x04007FFA RID: 32762
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 m_OverviewPos = new Vector3(1.246535f, 32.08f, 21.43753f);
 
-	// Token: 0x04007F22 RID: 32546
+	// Token: 0x04007FFB RID: 32763
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 m_StartPos = new Vector3(-18.14881f, 20.08f, -24.16859f);
 
-	// Token: 0x04007F23 RID: 32547
+	// Token: 0x04007FFC RID: 32764
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 m_WeaponLayerPos = new Vector3(-19.43989f, 16.08f, 2.10474f);
 
-	// Token: 0x04007F24 RID: 32548
+	// Token: 0x04007FFD RID: 32765
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 m_ForcesPos = new Vector3(-8.093015f, 20.08f, 3.416737f);
 
-	// Token: 0x04007F25 RID: 32549
+	// Token: 0x04007FFE RID: 32766
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 m_MechPos = new Vector3(0.02941191f, 1.08f, -93.50691f);
 
-	// Token: 0x04007F26 RID: 32550
+	// Token: 0x04007FFF RID: 32767
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 m_DrunkPos = new Vector3(18.48685f, 21.08f, 24.05441f);
 
-	// Token: 0x04007F27 RID: 32551
+	// Token: 0x04008000 RID: 32768
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 m_SniperPos = new Vector3(0.8841875f, 33.08f, 21.3446f);
 
-	// Token: 0x04007F28 RID: 32552
+	// Token: 0x04008001 RID: 32769
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 m_OldSchoolPos = new Vector3(25.88745f, 0.08f, 23.08822f);
 
-	// Token: 0x04007F29 RID: 32553
+	// Token: 0x04008002 RID: 32770
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 m_AstronautPos = new Vector3(20f, 20f, 16f);
 
-	// Token: 0x04007F2A RID: 32554
+	// Token: 0x04008003 RID: 32771
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_UnFreezePosition = Vector3.zero;
 
-	// Token: 0x04007F2B RID: 32555
+	// Token: 0x04008004 RID: 32772
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 m_MouseLookAngle = new Vector2(0f, 33.10683f);
 
-	// Token: 0x04007F2C RID: 32556
+	// Token: 0x04008005 RID: 32773
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 m_OverviewAngle = new Vector2(28.89369f, 224f);
 
-	// Token: 0x04007F2D RID: 32557
+	// Token: 0x04008006 RID: 32774
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 m_PerspectiveAngle = new Vector2(27f, 223f);
 
-	// Token: 0x04007F2E RID: 32558
+	// Token: 0x04008007 RID: 32775
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 m_StartAngle = new Vector2(0f, 0f);
 
-	// Token: 0x04007F2F RID: 32559
+	// Token: 0x04008008 RID: 32776
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 m_WeaponLayerAngle = new Vector2(0f, -90f);
 
-	// Token: 0x04007F30 RID: 32560
+	// Token: 0x04008009 RID: 32777
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 m_ForcesAngle = new Vector2(0f, 0f);
 
-	// Token: 0x04007F31 RID: 32561
+	// Token: 0x0400800A RID: 32778
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 m_MechAngle = new Vector3(0f, 180f);
 
-	// Token: 0x04007F32 RID: 32562
+	// Token: 0x0400800B RID: 32779
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 m_DrunkAngle = new Vector3(0f, -90f);
 
-	// Token: 0x04007F33 RID: 32563
+	// Token: 0x0400800C RID: 32780
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 m_SniperAngle = new Vector2(20f, 180f);
 
-	// Token: 0x04007F34 RID: 32564
+	// Token: 0x0400800D RID: 32781
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 m_OldSchoolAngle = new Vector2(0f, 180f);
 
-	// Token: 0x04007F35 RID: 32565
+	// Token: 0x0400800E RID: 32782
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 m_AstronautAngle = new Vector2(0f, 269.5f);
 
-	// Token: 0x04007F36 RID: 32566
+	// Token: 0x0400800F RID: 32783
 	public Texture m_ImageEditorPreview;
 
-	// Token: 0x04007F37 RID: 32567
+	// Token: 0x04008010 RID: 32784
 	public Texture m_ImageEditorPreviewShow;
 
-	// Token: 0x04007F38 RID: 32568
+	// Token: 0x04008011 RID: 32785
 	public Texture m_ImageCameraMouse;
 
-	// Token: 0x04007F39 RID: 32569
+	// Token: 0x04008012 RID: 32786
 	public Texture m_ImageWeaponPosition;
 
-	// Token: 0x04007F3A RID: 32570
+	// Token: 0x04008013 RID: 32787
 	public Texture m_ImageWeaponPerspective;
 
-	// Token: 0x04007F3B RID: 32571
+	// Token: 0x04008014 RID: 32788
 	public Texture m_ImageWeaponPivot;
 
-	// Token: 0x04007F3C RID: 32572
+	// Token: 0x04008015 RID: 32789
 	public Texture m_ImageEditorScreenshot;
 
-	// Token: 0x04007F3D RID: 32573
+	// Token: 0x04008016 RID: 32790
 	public Texture m_ImageLeftArrow;
 
-	// Token: 0x04007F3E RID: 32574
+	// Token: 0x04008017 RID: 32791
 	public Texture m_ImageRightArrow;
 
-	// Token: 0x04007F3F RID: 32575
+	// Token: 0x04008018 RID: 32792
 	public Texture m_ImageCheckmark;
 
-	// Token: 0x04007F40 RID: 32576
+	// Token: 0x04008019 RID: 32793
 	public Texture m_ImageLeftPointer;
 
-	// Token: 0x04007F41 RID: 32577
+	// Token: 0x0400801A RID: 32794
 	public Texture m_ImageRightPointer;
 
-	// Token: 0x04007F42 RID: 32578
+	// Token: 0x0400801B RID: 32795
 	public Texture m_ImageUpPointer;
 
-	// Token: 0x04007F43 RID: 32579
+	// Token: 0x0400801C RID: 32796
 	public Texture m_ImageCrosshair;
 
-	// Token: 0x04007F44 RID: 32580
+	// Token: 0x0400801D RID: 32797
 	public Texture m_ImageFullScreen;
 
-	// Token: 0x04007F45 RID: 32581
+	// Token: 0x0400801E RID: 32798
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public AudioSource m_AudioSource;
 
-	// Token: 0x04007F46 RID: 32582
+	// Token: 0x0400801F RID: 32799
 	public AudioClip m_StompSound;
 
-	// Token: 0x04007F47 RID: 32583
+	// Token: 0x04008020 RID: 32800
 	public AudioClip m_EarthquakeSound;
 
-	// Token: 0x04007F48 RID: 32584
+	// Token: 0x04008021 RID: 32801
 	public AudioClip m_ExplosionSound;
 
-	// Token: 0x04007F49 RID: 32585
+	// Token: 0x04008022 RID: 32802
 	public GameObject m_ArtilleryFX;
 
-	// Token: 0x04007F4A RID: 32586
+	// Token: 0x04008023 RID: 32803
 	public TextAsset ArtilleryCamera;
 
-	// Token: 0x04007F4B RID: 32587
+	// Token: 0x04008024 RID: 32804
 	public TextAsset ArtilleryController;
 
-	// Token: 0x04007F4C RID: 32588
+	// Token: 0x04008025 RID: 32805
 	public TextAsset ArtilleryInput;
 
-	// Token: 0x04007F4D RID: 32589
+	// Token: 0x04008026 RID: 32806
 	public TextAsset AstronautCamera;
 
-	// Token: 0x04007F4E RID: 32590
+	// Token: 0x04008027 RID: 32807
 	public TextAsset AstronautController;
 
-	// Token: 0x04007F4F RID: 32591
+	// Token: 0x04008028 RID: 32808
 	public TextAsset AstronautInput;
 
-	// Token: 0x04007F50 RID: 32592
+	// Token: 0x04008029 RID: 32809
 	public TextAsset CowboyCamera;
 
-	// Token: 0x04007F51 RID: 32593
+	// Token: 0x0400802A RID: 32810
 	public TextAsset CowboyController;
 
-	// Token: 0x04007F52 RID: 32594
+	// Token: 0x0400802B RID: 32811
 	public TextAsset CowboyWeapon;
 
-	// Token: 0x04007F53 RID: 32595
+	// Token: 0x0400802C RID: 32812
 	public TextAsset CowboyShooter;
 
-	// Token: 0x04007F54 RID: 32596
+	// Token: 0x0400802D RID: 32813
 	public TextAsset CowboyInput;
 
-	// Token: 0x04007F55 RID: 32597
+	// Token: 0x0400802E RID: 32814
 	public TextAsset CrouchController;
 
-	// Token: 0x04007F56 RID: 32598
+	// Token: 0x0400802F RID: 32815
 	public TextAsset CrouchInput;
 
-	// Token: 0x04007F57 RID: 32599
+	// Token: 0x04008030 RID: 32816
 	public TextAsset DefaultCamera;
 
-	// Token: 0x04007F58 RID: 32600
+	// Token: 0x04008031 RID: 32817
 	public TextAsset DefaultWeapon;
 
-	// Token: 0x04007F59 RID: 32601
+	// Token: 0x04008032 RID: 32818
 	public TextAsset DefaultInput;
 
-	// Token: 0x04007F5A RID: 32602
+	// Token: 0x04008033 RID: 32819
 	public TextAsset DrunkCamera;
 
-	// Token: 0x04007F5B RID: 32603
+	// Token: 0x04008034 RID: 32820
 	public TextAsset DrunkController;
 
-	// Token: 0x04007F5C RID: 32604
+	// Token: 0x04008035 RID: 32821
 	public TextAsset DrunkInput;
 
-	// Token: 0x04007F5D RID: 32605
+	// Token: 0x04008036 RID: 32822
 	public TextAsset ImmobileCamera;
 
-	// Token: 0x04007F5E RID: 32606
+	// Token: 0x04008037 RID: 32823
 	public TextAsset ImmobileController;
 
-	// Token: 0x04007F5F RID: 32607
+	// Token: 0x04008038 RID: 32824
 	public TextAsset ImmobileInput;
 
-	// Token: 0x04007F60 RID: 32608
+	// Token: 0x04008039 RID: 32825
 	public TextAsset MaceCamera;
 
-	// Token: 0x04007F61 RID: 32609
+	// Token: 0x0400803A RID: 32826
 	public TextAsset MaceWeapon;
 
-	// Token: 0x04007F62 RID: 32610
+	// Token: 0x0400803B RID: 32827
 	public TextAsset MaceInput;
 
-	// Token: 0x04007F63 RID: 32611
+	// Token: 0x0400803C RID: 32828
 	public TextAsset MafiaCamera;
 
-	// Token: 0x04007F64 RID: 32612
+	// Token: 0x0400803D RID: 32829
 	public TextAsset MafiaWeapon;
 
-	// Token: 0x04007F65 RID: 32613
+	// Token: 0x0400803E RID: 32830
 	public TextAsset MafiaShooter;
 
-	// Token: 0x04007F66 RID: 32614
+	// Token: 0x0400803F RID: 32831
 	public TextAsset MafiaInput;
 
-	// Token: 0x04007F67 RID: 32615
+	// Token: 0x04008040 RID: 32832
 	public TextAsset MechCamera;
 
-	// Token: 0x04007F68 RID: 32616
+	// Token: 0x04008041 RID: 32833
 	public TextAsset MechController;
 
-	// Token: 0x04007F69 RID: 32617
+	// Token: 0x04008042 RID: 32834
 	public TextAsset MechWeapon;
 
-	// Token: 0x04007F6A RID: 32618
+	// Token: 0x04008043 RID: 32835
 	public TextAsset MechShooter;
 
-	// Token: 0x04007F6B RID: 32619
+	// Token: 0x04008044 RID: 32836
 	public TextAsset MechInput;
 
-	// Token: 0x04007F6C RID: 32620
+	// Token: 0x04008045 RID: 32837
 	public TextAsset ModernCamera;
 
-	// Token: 0x04007F6D RID: 32621
+	// Token: 0x04008046 RID: 32838
 	public TextAsset ModernController;
 
-	// Token: 0x04007F6E RID: 32622
+	// Token: 0x04008047 RID: 32839
 	public TextAsset ModernWeapon;
 
-	// Token: 0x04007F6F RID: 32623
+	// Token: 0x04008048 RID: 32840
 	public TextAsset ModernShooter;
 
-	// Token: 0x04007F70 RID: 32624
+	// Token: 0x04008049 RID: 32841
 	public TextAsset ModernInput;
 
-	// Token: 0x04007F71 RID: 32625
+	// Token: 0x0400804A RID: 32842
 	public TextAsset MouseLowSensCamera;
 
-	// Token: 0x04007F72 RID: 32626
+	// Token: 0x0400804B RID: 32843
 	public TextAsset MouseLowSensInput;
 
-	// Token: 0x04007F73 RID: 32627
+	// Token: 0x0400804C RID: 32844
 	public TextAsset MouseRawUnityCamera;
 
-	// Token: 0x04007F74 RID: 32628
+	// Token: 0x0400804D RID: 32845
 	public TextAsset MouseRawUnityInput;
 
-	// Token: 0x04007F75 RID: 32629
+	// Token: 0x0400804E RID: 32846
 	public TextAsset MouseSmoothingCamera;
 
-	// Token: 0x04007F76 RID: 32630
+	// Token: 0x0400804F RID: 32847
 	public TextAsset MouseSmoothingInput;
 
-	// Token: 0x04007F77 RID: 32631
+	// Token: 0x04008050 RID: 32848
 	public TextAsset OldSchoolCamera;
 
-	// Token: 0x04007F78 RID: 32632
+	// Token: 0x04008051 RID: 32849
 	public TextAsset OldSchoolController;
 
-	// Token: 0x04007F79 RID: 32633
+	// Token: 0x04008052 RID: 32850
 	public TextAsset OldSchoolWeapon;
 
-	// Token: 0x04007F7A RID: 32634
+	// Token: 0x04008053 RID: 32851
 	public TextAsset OldSchoolShooter;
 
-	// Token: 0x04007F7B RID: 32635
+	// Token: 0x04008054 RID: 32852
 	public TextAsset OldSchoolInput;
 
-	// Token: 0x04007F7C RID: 32636
+	// Token: 0x04008055 RID: 32853
 	public TextAsset Persp1999Camera;
 
-	// Token: 0x04007F7D RID: 32637
+	// Token: 0x04008056 RID: 32854
 	public TextAsset Persp1999Weapon;
 
-	// Token: 0x04007F7E RID: 32638
+	// Token: 0x04008057 RID: 32855
 	public TextAsset Persp1999Input;
 
-	// Token: 0x04007F7F RID: 32639
+	// Token: 0x04008058 RID: 32856
 	public TextAsset PerspModernCamera;
 
-	// Token: 0x04007F80 RID: 32640
+	// Token: 0x04008059 RID: 32857
 	public TextAsset PerspModernWeapon;
 
-	// Token: 0x04007F81 RID: 32641
+	// Token: 0x0400805A RID: 32858
 	public TextAsset PerspModernInput;
 
-	// Token: 0x04007F82 RID: 32642
+	// Token: 0x0400805B RID: 32859
 	public TextAsset PerspOldCamera;
 
-	// Token: 0x04007F83 RID: 32643
+	// Token: 0x0400805C RID: 32860
 	public TextAsset PerspOldWeapon;
 
-	// Token: 0x04007F84 RID: 32644
+	// Token: 0x0400805D RID: 32861
 	public TextAsset PerspOldInput;
 
-	// Token: 0x04007F85 RID: 32645
+	// Token: 0x0400805E RID: 32862
 	public TextAsset PivotChestWeapon;
 
-	// Token: 0x04007F86 RID: 32646
+	// Token: 0x0400805F RID: 32863
 	public TextAsset PivotElbowWeapon;
 
-	// Token: 0x04007F87 RID: 32647
+	// Token: 0x04008060 RID: 32864
 	public TextAsset PivotMuzzleWeapon;
 
-	// Token: 0x04007F88 RID: 32648
+	// Token: 0x04008061 RID: 32865
 	public TextAsset PivotWristWeapon;
 
-	// Token: 0x04007F89 RID: 32649
+	// Token: 0x04008062 RID: 32866
 	public TextAsset SmackController;
 
-	// Token: 0x04007F8A RID: 32650
+	// Token: 0x04008063 RID: 32867
 	public TextAsset SniperCamera;
 
-	// Token: 0x04007F8B RID: 32651
+	// Token: 0x04008064 RID: 32868
 	public TextAsset SniperWeapon;
 
-	// Token: 0x04007F8C RID: 32652
+	// Token: 0x04008065 RID: 32869
 	public TextAsset SniperShooter;
 
-	// Token: 0x04007F8D RID: 32653
+	// Token: 0x04008066 RID: 32870
 	public TextAsset SniperInput;
 
-	// Token: 0x04007F8E RID: 32654
+	// Token: 0x04008067 RID: 32871
 	public TextAsset StompingCamera;
 
-	// Token: 0x04007F8F RID: 32655
+	// Token: 0x04008068 RID: 32872
 	public TextAsset StompingInput;
 
-	// Token: 0x04007F90 RID: 32656
+	// Token: 0x04008069 RID: 32873
 	public TextAsset SystemOFFCamera;
 
-	// Token: 0x04007F91 RID: 32657
+	// Token: 0x0400806A RID: 32874
 	public TextAsset SystemOFFController;
 
-	// Token: 0x04007F92 RID: 32658
+	// Token: 0x0400806B RID: 32875
 	public TextAsset SystemOFFShooter;
 
-	// Token: 0x04007F93 RID: 32659
+	// Token: 0x0400806C RID: 32876
 	public TextAsset SystemOFFWeapon;
 
-	// Token: 0x04007F94 RID: 32660
+	// Token: 0x0400806D RID: 32877
 	public TextAsset SystemOFFWeaponGlideIn;
 
-	// Token: 0x04007F95 RID: 32661
+	// Token: 0x0400806E RID: 32878
 	public TextAsset SystemOFFInput;
 
-	// Token: 0x04007F96 RID: 32662
+	// Token: 0x0400806F RID: 32879
 	public TextAsset TurretCamera;
 
-	// Token: 0x04007F97 RID: 32663
+	// Token: 0x04008070 RID: 32880
 	public TextAsset TurretWeapon;
 
-	// Token: 0x04007F98 RID: 32664
+	// Token: 0x04008071 RID: 32881
 	public TextAsset TurretShooter;
 
-	// Token: 0x04007F99 RID: 32665
+	// Token: 0x04008072 RID: 32882
 	public TextAsset TurretInput;
 
-	// Token: 0x04007F9A RID: 32666
+	// Token: 0x04008073 RID: 32883
 	public TextAsset WallFacingCamera;
 
-	// Token: 0x04007F9B RID: 32667
+	// Token: 0x04008074 RID: 32884
 	public TextAsset WallFacingWeapon;
 
-	// Token: 0x04007F9C RID: 32668
+	// Token: 0x04008075 RID: 32885
 	public TextAsset WallFacingInput;
 }

@@ -1,15 +1,15 @@
 ﻿using System;
 
-// Token: 0x0200046C RID: 1132
+// Token: 0x02000470 RID: 1136
 [Flags]
 public enum DynamicRagdollFlags
 {
-	// Token: 0x040017E1 RID: 6113
+	// Token: 0x040017F7 RID: 6135
 	None = 0,
-	// Token: 0x040017E2 RID: 6114
+	// Token: 0x040017F8 RID: 6136
 	Active = 1,
-	// Token: 0x040017E3 RID: 6115
+	// Token: 0x040017F9 RID: 6137
 	RagdollOnFall = 2,
-	// Token: 0x040017E4 RID: 6116
+	// Token: 0x040017FA RID: 6138
 	UseBoneVelocities = 4
 }

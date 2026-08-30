@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections;
 
-// Token: 0x02000C38 RID: 3128
+// Token: 0x02000C4A RID: 3146
 public class WorldBiomeProviderFromHeight : IBiomeProvider
 {
-	// Token: 0x06005F3B RID: 24379 RVA: 0x0025A4FF File Offset: 0x002586FF
+	// Token: 0x06005FC5 RID: 24517 RVA: 0x0025D3AF File Offset: 0x0025B5AF
 	public WorldBiomeProviderFromHeight(string _levelName, ITerrainGenerator _terrainGenerator, int _waterLevel, BiomeDefinition _waterBiome, BiomeDefinition _otherBiome)
 	{
 		this.worldName = _levelName;
@@ -14,42 +14,42 @@ public class WorldBiomeProviderFromHeight : IBiomeProvider
 		this.terrainGenerator = _terrainGenerator;
 	}
 
-	// Token: 0x06005F3C RID: 24380 RVA: 0x0025A52C File Offset: 0x0025872C
+	// Token: 0x06005FC6 RID: 24518 RVA: 0x0025D3DC File Offset: 0x0025B5DC
 	public string GetWorldName()
 	{
 		return this.worldName;
 	}
 
-	// Token: 0x06005F3D RID: 24381 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005FC7 RID: 24519 RVA: 0x000027FC File Offset: 0x000009FC
 	public void SetBiomeSizeFactor(float _factor)
 	{
 	}
 
-	// Token: 0x06005F3E RID: 24382 RVA: 0x0025A534 File Offset: 0x00258734
+	// Token: 0x06005FC8 RID: 24520 RVA: 0x0025D3E4 File Offset: 0x0025B5E4
 	public IEnumerator InitData()
 	{
 		yield break;
 	}
 
-	// Token: 0x06005F3F RID: 24383 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005FC9 RID: 24521 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Init(int _seed, string _worldName, WorldBiomes _biomes, string _params1, string _params2)
 	{
 	}
 
-	// Token: 0x06005F40 RID: 24384 RVA: 0x000FEFA9 File Offset: 0x000FD1A9
+	// Token: 0x06005FCA RID: 24522 RVA: 0x000FFF9D File Offset: 0x000FE19D
 	public int GetSubBiomeIdxAt(BiomeDefinition bd, int _x, int _y, int _z)
 	{
 		return -1;
 	}
 
-	// Token: 0x06005F41 RID: 24385 RVA: 0x0025A53C File Offset: 0x0025873C
+	// Token: 0x06005FCB RID: 24523 RVA: 0x0025D3EC File Offset: 0x0025B5EC
 	public BiomeDefinition GetBiomeAt(int x, int z, out float _intensity)
 	{
 		_intensity = 1f;
 		return this.GetBiomeAt(x, z);
 	}
 
-	// Token: 0x06005F42 RID: 24386 RVA: 0x0025A54D File Offset: 0x0025874D
+	// Token: 0x06005FCC RID: 24524 RVA: 0x0025D3FD File Offset: 0x0025B5FD
 	public BiomeDefinition GetBiomeAt(int x, int z)
 	{
 		if (this.terrainGenerator.GetTerrainHeightAt(x, z) <= (float)this.waterLevel)
@@ -59,59 +59,59 @@ public class WorldBiomeProviderFromHeight : IBiomeProvider
 		return this.otherBiome;
 	}
 
-	// Token: 0x06005F43 RID: 24387 RVA: 0x0025A572 File Offset: 0x00258772
+	// Token: 0x06005FCD RID: 24525 RVA: 0x0025D422 File Offset: 0x0025B622
 	public Vector2i GetSize()
 	{
 		return new Vector2i(1, 1);
 	}
 
-	// Token: 0x06005F44 RID: 24388 RVA: 0x0025A57B File Offset: 0x0025877B
+	// Token: 0x06005FCE RID: 24526 RVA: 0x0025D42B File Offset: 0x0025B62B
 	public BiomeIntensity GetBiomeIntensityAt(int _x, int _z)
 	{
 		return BiomeIntensity.Default;
 	}
 
-	// Token: 0x06005F45 RID: 24389 RVA: 0x0003D066 File Offset: 0x0003B266
+	// Token: 0x06005FCF RID: 24527 RVA: 0x0003D2C6 File Offset: 0x0003B4C6
 	public float GetHumidityAt(int x, int z)
 	{
 		return 0f;
 	}
 
-	// Token: 0x06005F46 RID: 24390 RVA: 0x0003D066 File Offset: 0x0003B266
+	// Token: 0x06005FD0 RID: 24528 RVA: 0x0003D2C6 File Offset: 0x0003B4C6
 	public float GetTemperatureAt(int x, int z)
 	{
 		return 0f;
 	}
 
-	// Token: 0x06005F47 RID: 24391 RVA: 0x0003D066 File Offset: 0x0003B266
+	// Token: 0x06005FD1 RID: 24529 RVA: 0x0003D2C6 File Offset: 0x0003B4C6
 	public float GetRadiationAt(int x, int z)
 	{
 		return 0f;
 	}
 
-	// Token: 0x06005F48 RID: 24392 RVA: 0x001A7AE9 File Offset: 0x001A5CE9
+	// Token: 0x06005FD2 RID: 24530 RVA: 0x001AA0C5 File Offset: 0x001A82C5
 	public BlockValue GetTopmostBlockValue(int xWorld, int zWorld)
 	{
 		return BlockValue.Air;
 	}
 
-	// Token: 0x04004A63 RID: 19043
+	// Token: 0x04004B00 RID: 19200
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string worldName;
 
-	// Token: 0x04004A64 RID: 19044
+	// Token: 0x04004B01 RID: 19201
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BiomeDefinition waterBiome;
 
-	// Token: 0x04004A65 RID: 19045
+	// Token: 0x04004B02 RID: 19202
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BiomeDefinition otherBiome;
 
-	// Token: 0x04004A66 RID: 19046
+	// Token: 0x04004B03 RID: 19203
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ITerrainGenerator terrainGenerator;
 
-	// Token: 0x04004A67 RID: 19047
+	// Token: 0x04004B04 RID: 19204
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int waterLevel;
 }

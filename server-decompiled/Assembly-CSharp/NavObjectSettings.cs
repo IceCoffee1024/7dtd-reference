@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000749 RID: 1865
+// Token: 0x02000753 RID: 1875
 public class NavObjectSettings
 {
-	// Token: 0x06003796 RID: 14230 RVA: 0x0016D74C File Offset: 0x0016B94C
+	// Token: 0x060037EC RID: 14316 RVA: 0x0016F968 File Offset: 0x0016DB68
 	public virtual void Init()
 	{
 		this.Properties.ParseString("sprite_name", ref this.SpriteName);
@@ -15,24 +15,24 @@ public class NavObjectSettings
 		this.Properties.ParseBool("has_pulse", ref this.HasPulse);
 	}
 
-	// Token: 0x04002D7D RID: 11645
+	// Token: 0x04002DF5 RID: 11765
 	public DynamicProperties Properties;
 
-	// Token: 0x04002D7E RID: 11646
+	// Token: 0x04002DF6 RID: 11766
 	public string SpriteName = "";
 
-	// Token: 0x04002D7F RID: 11647
+	// Token: 0x04002DF7 RID: 11767
 	public float MinDistance;
 
-	// Token: 0x04002D80 RID: 11648
+	// Token: 0x04002DF8 RID: 11768
 	public float MaxDistance = -1f;
 
-	// Token: 0x04002D81 RID: 11649
+	// Token: 0x04002DF9 RID: 11769
 	public Vector3 Offset;
 
-	// Token: 0x04002D82 RID: 11650
+	// Token: 0x04002DFA RID: 11770
 	public Color Color = Color.white;
 
-	// Token: 0x04002D83 RID: 11651
+	// Token: 0x04002DFB RID: 11771
 	public bool HasPulse;
 }

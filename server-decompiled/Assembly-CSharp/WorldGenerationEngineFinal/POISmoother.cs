@@ -3,16 +3,16 @@ using UnityEngine;
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x020016F2 RID: 5874
+	// Token: 0x02001718 RID: 5912
 	public class POISmoother
 	{
-		// Token: 0x0600B692 RID: 46738 RVA: 0x0043F305 File Offset: 0x0043D505
+		// Token: 0x0600B815 RID: 47125 RVA: 0x0044507D File Offset: 0x0044327D
 		public POISmoother(WorldBuilder _worldBuilder)
 		{
 			this.worldBuilder = _worldBuilder;
 		}
 
-		// Token: 0x0600B693 RID: 46739 RVA: 0x0043F314 File Offset: 0x0043D514
+		// Token: 0x0600B816 RID: 47126 RVA: 0x0044508C File Offset: 0x0044328C
 		public void SmoothStreetTiles()
 		{
 			MicroStopwatch microStopwatch = new MicroStopwatch(true);
@@ -34,7 +34,7 @@ namespace WorldGenerationEngineFinal
 			Log.Out("POISmoother SmoothStreetTiles in {0}", new object[] { (float)microStopwatch.ElapsedMilliseconds * 0.001f });
 		}
 
-		// Token: 0x0400886D RID: 34925
+		// Token: 0x04008989 RID: 35209
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly WorldBuilder worldBuilder;
 	}

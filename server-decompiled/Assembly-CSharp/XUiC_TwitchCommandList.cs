@@ -5,16 +5,16 @@ using UniLinq;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001081 RID: 4225
+// Token: 0x0200109A RID: 4250
 [Preserve]
 public class XUiC_TwitchCommandList : XUiController
 {
-	// Token: 0x17000F92 RID: 3986
-	// (get) Token: 0x06008651 RID: 34385 RVA: 0x0033450B File Offset: 0x0033270B
-	// (set) Token: 0x06008652 RID: 34386 RVA: 0x00334513 File Offset: 0x00332713
+	// Token: 0x17000FCB RID: 4043
+	// (get) Token: 0x06008743 RID: 34627 RVA: 0x00338D33 File Offset: 0x00336F33
+	// (set) Token: 0x06008744 RID: 34628 RVA: 0x00338D3B File Offset: 0x00336F3B
 	public XUiC_TwitchWindow Owner { get; set; }
 
-	// Token: 0x06008653 RID: 34387 RVA: 0x0033451C File Offset: 0x0033271C
+	// Token: 0x06008745 RID: 34629 RVA: 0x00338D44 File Offset: 0x00336F44
 	public float GetHeight()
 	{
 		if (!this.twitchManager.IsReady || this.twitchManager.VotingManager.VotingIsActive)
@@ -28,7 +28,7 @@ public class XUiC_TwitchCommandList : XUiController
 		return 0f;
 	}
 
-	// Token: 0x06008654 RID: 34388 RVA: 0x00334584 File Offset: 0x00332784
+	// Token: 0x06008746 RID: 34630 RVA: 0x00338DAC File Offset: 0x00336FAC
 	public override void Init()
 	{
 		base.Init();
@@ -45,7 +45,7 @@ public class XUiC_TwitchCommandList : XUiController
 		this.twitchManager.CommandsChanged += this.TwitchManager_CommandsChanged;
 	}
 
-	// Token: 0x06008655 RID: 34389 RVA: 0x003345F9 File Offset: 0x003327F9
+	// Token: 0x06008747 RID: 34631 RVA: 0x00338E21 File Offset: 0x00337021
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TwitchManager_CommandsChanged()
 	{
@@ -54,7 +54,7 @@ public class XUiC_TwitchCommandList : XUiController
 		this.commandListIndex = -1;
 	}
 
-	// Token: 0x06008656 RID: 34390 RVA: 0x00334614 File Offset: 0x00332814
+	// Token: 0x06008748 RID: 34632 RVA: 0x00338E3C File Offset: 0x0033703C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GetPrevCategory()
 	{
@@ -80,7 +80,7 @@ public class XUiC_TwitchCommandList : XUiController
 		this.ResetKey();
 	}
 
-	// Token: 0x06008657 RID: 34391 RVA: 0x00334694 File Offset: 0x00332894
+	// Token: 0x06008749 RID: 34633 RVA: 0x00338EBC File Offset: 0x003370BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GetNextCategory()
 	{
@@ -106,7 +106,7 @@ public class XUiC_TwitchCommandList : XUiController
 		this.ResetKey();
 	}
 
-	// Token: 0x06008658 RID: 34392 RVA: 0x0033471C File Offset: 0x0033291C
+	// Token: 0x0600874A RID: 34634 RVA: 0x00338F44 File Offset: 0x00337144
 	public override void Update(float _dt)
 	{
 		if (!this.twitchManager.IsReady)
@@ -156,7 +156,7 @@ public class XUiC_TwitchCommandList : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x06008659 RID: 34393 RVA: 0x003348A5 File Offset: 0x00332AA5
+	// Token: 0x0600874B RID: 34635 RVA: 0x003390CD File Offset: 0x003372CD
 	public void MoveForward()
 	{
 		this.GetNextCategory();
@@ -164,7 +164,7 @@ public class XUiC_TwitchCommandList : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x0600865A RID: 34394 RVA: 0x003348C5 File Offset: 0x00332AC5
+	// Token: 0x0600874C RID: 34636 RVA: 0x003390ED File Offset: 0x003372ED
 	public void MoveBackward()
 	{
 		this.GetPrevCategory();
@@ -172,7 +172,7 @@ public class XUiC_TwitchCommandList : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x0600865B RID: 34395 RVA: 0x003348E8 File Offset: 0x00332AE8
+	// Token: 0x0600874D RID: 34637 RVA: 0x00339110 File Offset: 0x00337310
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TwitchActionGroup AddCommandGroup(string groupName)
 	{
@@ -194,7 +194,7 @@ public class XUiC_TwitchCommandList : XUiController
 		return this.commandGroupList[this.commandGroupList.Count - 1];
 	}
 
-	// Token: 0x0600865C RID: 34396 RVA: 0x0033499C File Offset: 0x00332B9C
+	// Token: 0x0600874E RID: 34638 RVA: 0x003391C4 File Offset: 0x003373C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RemoveCommandGroup(string groupName)
 	{
@@ -208,7 +208,7 @@ public class XUiC_TwitchCommandList : XUiController
 		}
 	}
 
-	// Token: 0x0600865D RID: 34397 RVA: 0x003349E8 File Offset: 0x00332BE8
+	// Token: 0x0600874F RID: 34639 RVA: 0x00339210 File Offset: 0x00337410
 	public void SetupCommandList()
 	{
 		this.commandLists.Clear();
@@ -322,7 +322,7 @@ public class XUiC_TwitchCommandList : XUiController
 		this.ResetKey();
 	}
 
-	// Token: 0x0600865E RID: 34398 RVA: 0x00334EA4 File Offset: 0x003330A4
+	// Token: 0x06008750 RID: 34640 RVA: 0x003396CC File Offset: 0x003378CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ResetKey()
 	{
@@ -335,7 +335,7 @@ public class XUiC_TwitchCommandList : XUiController
 		this.CurrentTitle = this.commandGroupList[this.commandListIndex].displayName;
 	}
 
-	// Token: 0x0600865F RID: 34399 RVA: 0x00334F13 File Offset: 0x00333113
+	// Token: 0x06008751 RID: 34641 RVA: 0x0033973B File Offset: 0x0033793B
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -343,7 +343,7 @@ public class XUiC_TwitchCommandList : XUiController
 		this.twitchManager = TwitchManager.Current;
 	}
 
-	// Token: 0x06008660 RID: 34400 RVA: 0x00334F30 File Offset: 0x00333130
+	// Token: 0x06008752 RID: 34642 RVA: 0x00339758 File Offset: 0x00337958
 	public override bool ParseAttribute(string name, string value)
 	{
 		if (name == "complete_icon")
@@ -373,66 +373,66 @@ public class XUiC_TwitchCommandList : XUiController
 		return true;
 	}
 
-	// Token: 0x040063BD RID: 25533
+	// Token: 0x04006484 RID: 25732
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiC_TwitchCommandEntry> commandEntries = new List<XUiC_TwitchCommandEntry>();
 
-	// Token: 0x040063BE RID: 25534
+	// Token: 0x04006485 RID: 25733
 	public string completeIconName = "";
 
-	// Token: 0x040063BF RID: 25535
+	// Token: 0x04006486 RID: 25734
 	public string incompleteIconName = "";
 
-	// Token: 0x040063C0 RID: 25536
+	// Token: 0x04006487 RID: 25735
 	public string completeHexColor = "FF00FF00";
 
-	// Token: 0x040063C1 RID: 25537
+	// Token: 0x04006488 RID: 25736
 	public string incompleteHexColor = "FFB400";
 
-	// Token: 0x040063C2 RID: 25538
+	// Token: 0x04006489 RID: 25737
 	public string warningHexColor = "FFFF00FF";
 
-	// Token: 0x040063C3 RID: 25539
+	// Token: 0x0400648A RID: 25738
 	public string inactiveHexColor = "888888FF";
 
-	// Token: 0x040063C4 RID: 25540
+	// Token: 0x0400648B RID: 25739
 	public string activeHexColor = "FFFFFFFF";
 
-	// Token: 0x040063C5 RID: 25541
+	// Token: 0x0400648C RID: 25740
 	public string completeColor = "0,255,0,255";
 
-	// Token: 0x040063C6 RID: 25542
+	// Token: 0x0400648D RID: 25741
 	public string incompleteColor = "255, 180, 0, 255";
 
-	// Token: 0x040063C7 RID: 25543
+	// Token: 0x0400648E RID: 25742
 	public string warningColor = "255,255,0,255";
 
-	// Token: 0x040063C8 RID: 25544
+	// Token: 0x0400648F RID: 25743
 	public Dictionary<string, List<TwitchAction>> commandLists = new Dictionary<string, List<TwitchAction>>();
 
-	// Token: 0x040063C9 RID: 25545
+	// Token: 0x04006490 RID: 25744
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<TwitchActionGroup> commandGroupList = new List<TwitchActionGroup>();
 
-	// Token: 0x040063CA RID: 25546
+	// Token: 0x04006491 RID: 25745
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int commandListIndex = -1;
 
-	// Token: 0x040063CB RID: 25547
+	// Token: 0x04006492 RID: 25746
 	public string CurrentKey = "";
 
-	// Token: 0x040063CC RID: 25548
+	// Token: 0x04006493 RID: 25747
 	public string CurrentTitle = "";
 
-	// Token: 0x040063CD RID: 25549
+	// Token: 0x04006494 RID: 25748
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lastUpdate;
 
-	// Token: 0x040063CE RID: 25550
+	// Token: 0x04006495 RID: 25749
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float secondRotation = 10f;
 
-	// Token: 0x040063CF RID: 25551
+	// Token: 0x04006496 RID: 25750
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TwitchManager twitchManager;
 }

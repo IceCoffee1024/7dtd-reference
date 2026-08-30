@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020000F5 RID: 245
+// Token: 0x020000F6 RID: 246
 [Preserve]
 public class BlockPlacementDoor : BlockPlacementTowardsPlacerInverted
 {
-	// Token: 0x0600062D RID: 1581 RVA: 0x0002C150 File Offset: 0x0002A350
+	// Token: 0x06000637 RID: 1591 RVA: 0x0002C40C File Offset: 0x0002A60C
 	public override BlockPlacement.Result OnPlaceBlock(BlockPlacement.EnumPlacement _placement, BlockPlacement.EnumRotationMode _mode, int _localRot, WorldBase _world, BlockValue _blockValue, PropTransform _propTransform, HitInfoDetails _hitInfo, Vector3 _entityPos)
 	{
 		if (_mode != BlockPlacement.EnumRotationMode.Auto)
@@ -45,7 +45,7 @@ public class BlockPlacementDoor : BlockPlacementTowardsPlacerInverted
 		return result;
 	}
 
-	// Token: 0x0600062E RID: 1582 RVA: 0x0002C2B8 File Offset: 0x0002A4B8
+	// Token: 0x06000638 RID: 1592 RVA: 0x0002C574 File Offset: 0x0002A774
 	public override byte LimitRotation(BlockPlacement.EnumRotationMode _mode, ref int _localRot, HitInfoDetails _hitInfo, bool _bAdd, BlockValue _bv, byte _rotation)
 	{
 		if (_mode != BlockPlacement.EnumRotationMode.Auto)

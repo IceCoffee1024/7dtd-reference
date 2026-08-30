@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x0200053B RID: 1339
+// Token: 0x02000540 RID: 1344
 public enum EnumDamageBonusType
 {
-	// Token: 0x04002199 RID: 8601
+	// Token: 0x040021C8 RID: 8648
 	None,
-	// Token: 0x0400219A RID: 8602
+	// Token: 0x040021C9 RID: 8649
 	Sneak,
-	// Token: 0x0400219B RID: 8603
+	// Token: 0x040021CA RID: 8650
 	Stun
 }

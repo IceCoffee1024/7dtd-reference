@@ -6,11 +6,11 @@ using System.Linq;
 
 namespace Platform
 {
-	// Token: 0x02001B10 RID: 6928
+	// Token: 0x02001B37 RID: 6967
 	public class BlockedPlayerList : IRemotePlayerStorageObject
 	{
-		// Token: 0x1700192F RID: 6447
-		// (get) Token: 0x0600CF5F RID: 53087 RVA: 0x004BDA7C File Offset: 0x004BBC7C
+		// Token: 0x170019A1 RID: 6561
+		// (get) Token: 0x0600D0E8 RID: 53480 RVA: 0x004C3E70 File Offset: 0x004C2070
 		public static BlockedPlayerList Instance
 		{
 			get
@@ -28,7 +28,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600CF60 RID: 53088 RVA: 0x004BDACC File Offset: 0x004BBCCC
+		// Token: 0x0600D0E9 RID: 53481 RVA: 0x004C3EC0 File Offset: 0x004C20C0
 		public void Update()
 		{
 			IPlatform multiPlatform = PlatformManager.MultiPlatform;
@@ -44,7 +44,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600CF61 RID: 53089 RVA: 0x004BDB8C File Offset: 0x004BBD8C
+		// Token: 0x0600D0EA RID: 53482 RVA: 0x004C3F80 File Offset: 0x004C2180
 		public void UpdatePlayersSeenInWorld(World _world)
 		{
 			if (((_world != null) ? _world.Players : null) == null)
@@ -58,7 +58,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600CF62 RID: 53090 RVA: 0x004BDC20 File Offset: 0x004BBE20
+		// Token: 0x0600D0EB RID: 53483 RVA: 0x004C4014 File Offset: 0x004C2214
 		[PublicizedFrom(EAccessModifier.Private)]
 		public BlockedPlayerList.ListEntry AddOrUpdatePlayer(PlayerData _playerData, DateTime _timeStamp, bool? _blocked = null, bool _ignoreLimit = false)
 		{
@@ -102,7 +102,7 @@ namespace Platform
 			return listEntry2;
 		}
 
-		// Token: 0x0600CF63 RID: 53091 RVA: 0x004BDD5C File Offset: 0x004BBF5C
+		// Token: 0x0600D0EC RID: 53484 RVA: 0x004C4150 File Offset: 0x004C2350
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnPlayerInteraction(PlayerInteraction _interaction)
 		{
@@ -114,13 +114,13 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600CF64 RID: 53092 RVA: 0x004BDD94 File Offset: 0x004BBF94
+		// Token: 0x0600D0ED RID: 53485 RVA: 0x004C4188 File Offset: 0x004C2388
 		public int EntryCount(bool _blocked, bool _resolveRequired)
 		{
 			return this.playerStates.list.Count<BlockedPlayerList.ListEntry>((BlockedPlayerList.ListEntry entry) => entry.Blocked == _blocked && (!_resolveRequired || entry.ResolvedOnce));
 		}
 
-		// Token: 0x0600CF65 RID: 53093 RVA: 0x004BDDD1 File Offset: 0x004BBFD1
+		// Token: 0x0600D0EE RID: 53486 RVA: 0x004C41C5 File Offset: 0x004C23C5
 		public IEnumerable<BlockedPlayerList.ListEntry> GetEntriesOrdered(bool _blocked, bool _resolveRequired)
 		{
 			object obj = this.bplLock;
@@ -143,7 +143,7 @@ namespace Platform
 			yield break;
 		}
 
-		// Token: 0x0600CF66 RID: 53094 RVA: 0x004BDDF0 File Offset: 0x004BBFF0
+		// Token: 0x0600D0EF RID: 53487 RVA: 0x004C41E4 File Offset: 0x004C23E4
 		public BlockedPlayerList.ListEntry GetPlayerStateInfo(PlatformUserIdentifierAbs _primaryId)
 		{
 			object obj = this.bplLock;
@@ -163,14 +163,14 @@ namespace Platform
 			return listEntry2;
 		}
 
-		// Token: 0x0600CF67 RID: 53095 RVA: 0x004BDE48 File Offset: 0x004BC048
+		// Token: 0x0600D0F0 RID: 53488 RVA: 0x004C423C File Offset: 0x004C243C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SortPlayerStates()
 		{
 			this.playerStates.list.Sort((BlockedPlayerList.ListEntry p1, BlockedPlayerList.ListEntry p2) => p2.LastSeen.CompareTo(p1.LastSeen));
 		}
 
-		// Token: 0x0600CF68 RID: 53096 RVA: 0x004BDE79 File Offset: 0x004BC079
+		// Token: 0x0600D0F1 RID: 53489 RVA: 0x004C426D File Offset: 0x004C246D
 		public IEnumerator ReadStorageAndResolve()
 		{
 			BlockedPlayerList.<>c__DisplayClass25_0 CS$<>8__locals1 = new BlockedPlayerList.<>c__DisplayClass25_0();
@@ -203,7 +203,7 @@ namespace Platform
 			yield break;
 		}
 
-		// Token: 0x0600CF69 RID: 53097 RVA: 0x004BDE88 File Offset: 0x004BC088
+		// Token: 0x0600D0F2 RID: 53490 RVA: 0x004C427C File Offset: 0x004C247C
 		public void ReadInto(BinaryReader _reader)
 		{
 			object obj = this.bplLock;
@@ -220,7 +220,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600CF6A RID: 53098 RVA: 0x004BDF14 File Offset: 0x004BC114
+		// Token: 0x0600D0F3 RID: 53491 RVA: 0x004C4308 File Offset: 0x004C2508
 		public void MarkForWrite()
 		{
 			if (this.writeRequestTime == null)
@@ -229,7 +229,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600CF6B RID: 53099 RVA: 0x004BDF34 File Offset: 0x004BC134
+		// Token: 0x0600D0F4 RID: 53492 RVA: 0x004C4328 File Offset: 0x004C2528
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void WriteToStorage()
 		{
@@ -255,7 +255,7 @@ namespace Platform
 			PlatformManager.MultiPlatform.RemotePlayerFileStorage.WriteRemoteObject("BlockedPlayerList", this, true, new IRemotePlayerFileStorage.FileWriteCompleteCallback(this.WriteRPFSCallback));
 		}
 
-		// Token: 0x0600CF6C RID: 53100 RVA: 0x004BDFDC File Offset: 0x004BC1DC
+		// Token: 0x0600D0F5 RID: 53493 RVA: 0x004C43D0 File Offset: 0x004C25D0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void WriteRPFSCallback(IRemotePlayerFileStorage.CallbackResult _result)
 		{
@@ -266,7 +266,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600CF6D RID: 53101 RVA: 0x004BDFF4 File Offset: 0x004BC1F4
+		// Token: 0x0600D0F6 RID: 53494 RVA: 0x004C43E8 File Offset: 0x004C25E8
 		public void WriteFrom(BinaryWriter _writer)
 		{
 			object obj = this.bplLock;
@@ -284,13 +284,13 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600CF6E RID: 53102 RVA: 0x004BE088 File Offset: 0x004BC288
+		// Token: 0x0600D0F7 RID: 53495 RVA: 0x004C447C File Offset: 0x004C267C
 		public bool PendingResolve()
 		{
 			return this.readStorageState != ERoutineState.Succeeded || this.resolveState == ERoutineState.Running;
 		}
 
-		// Token: 0x0600CF6F RID: 53103 RVA: 0x004BE09E File Offset: 0x004BC29E
+		// Token: 0x0600D0F8 RID: 53496 RVA: 0x004C4492 File Offset: 0x004C2692
 		public IEnumerator ResolveUserDetails()
 		{
 			while (this.resolveState == ERoutineState.Running)
@@ -335,90 +335,90 @@ namespace Platform
 			yield break;
 		}
 
-		// Token: 0x04009EAE RID: 40622
+		// Token: 0x04009FDF RID: 40927
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static BlockedPlayerList instance;
 
-		// Token: 0x04009EAF RID: 40623
+		// Token: 0x04009FE0 RID: 40928
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly TimeSpan WriteThreshold = TimeSpan.FromMinutes(10.0);
 
-		// Token: 0x04009EB0 RID: 40624
+		// Token: 0x04009FE1 RID: 40929
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly TimeSpan WriteRequestDelay = TimeSpan.FromSeconds(5.0);
 
-		// Token: 0x04009EB1 RID: 40625
+		// Token: 0x04009FE2 RID: 40930
 		public const int MaxBlockedPlayerEntries = 500;
 
-		// Token: 0x04009EB2 RID: 40626
+		// Token: 0x04009FE3 RID: 40931
 		public const int MaxRecentPlayerEntries = 100;
 
-		// Token: 0x04009EB3 RID: 40627
+		// Token: 0x04009FE4 RID: 40932
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int Version = 1;
 
-		// Token: 0x04009EB4 RID: 40628
+		// Token: 0x04009FE5 RID: 40933
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string FilePath = "BlockedPlayerList";
 
-		// Token: 0x04009EB5 RID: 40629
+		// Token: 0x04009FE6 RID: 40934
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int TimeoutHours = 168;
 
-		// Token: 0x04009EB6 RID: 40630
+		// Token: 0x04009FE7 RID: 40935
 		[PublicizedFrom(EAccessModifier.Private)]
 		public object bplLock = new object();
 
-		// Token: 0x04009EB7 RID: 40631
+		// Token: 0x04009FE8 RID: 40936
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DictionaryList<PlatformUserIdentifierAbs, BlockedPlayerList.ListEntry> playerStates = new DictionaryList<PlatformUserIdentifierAbs, BlockedPlayerList.ListEntry>();
 
-		// Token: 0x04009EB8 RID: 40632
+		// Token: 0x04009FE9 RID: 40937
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DateTime lastWriteTime = DateTime.UtcNow;
 
-		// Token: 0x04009EB9 RID: 40633
+		// Token: 0x04009FEA RID: 40938
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DateTime? writeRequestTime;
 
-		// Token: 0x04009EBA RID: 40634
+		// Token: 0x04009FEB RID: 40939
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ERoutineState readStorageState;
 
-		// Token: 0x04009EBB RID: 40635
+		// Token: 0x04009FEC RID: 40940
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IRemotePlayerFileStorage.CallbackResult readStorageResult = IRemotePlayerFileStorage.CallbackResult.Other;
 
-		// Token: 0x04009EBC RID: 40636
+		// Token: 0x04009FED RID: 40941
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ERoutineState writeToStorageState;
 
-		// Token: 0x04009EBD RID: 40637
+		// Token: 0x04009FEE RID: 40942
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ERoutineState resolveState;
 
-		// Token: 0x02001B11 RID: 6929
+		// Token: 0x02001B38 RID: 6968
 		public class ListEntry
 		{
-			// Token: 0x17001930 RID: 6448
-			// (get) Token: 0x0600CF72 RID: 53106 RVA: 0x004BE105 File Offset: 0x004BC305
-			// (set) Token: 0x0600CF73 RID: 53107 RVA: 0x004BE10D File Offset: 0x004BC30D
+			// Token: 0x170019A2 RID: 6562
+			// (get) Token: 0x0600D0FB RID: 53499 RVA: 0x004C44F9 File Offset: 0x004C26F9
+			// (set) Token: 0x0600D0FC RID: 53500 RVA: 0x004C4501 File Offset: 0x004C2701
 			public bool ResolvedOnce
 			{
 				get; [PublicizedFrom(EAccessModifier.Private)]
 				set;
 			}
 
-			// Token: 0x17001931 RID: 6449
-			// (get) Token: 0x0600CF74 RID: 53108 RVA: 0x004BE116 File Offset: 0x004BC316
-			// (set) Token: 0x0600CF75 RID: 53109 RVA: 0x004BE11E File Offset: 0x004BC31E
+			// Token: 0x170019A3 RID: 6563
+			// (get) Token: 0x0600D0FD RID: 53501 RVA: 0x004C450A File Offset: 0x004C270A
+			// (set) Token: 0x0600D0FE RID: 53502 RVA: 0x004C4512 File Offset: 0x004C2712
 			public bool Blocked
 			{
 				get; [PublicizedFrom(EAccessModifier.Private)]
 				set;
 			}
 
-			// Token: 0x0600CF76 RID: 53110 RVA: 0x004BE127 File Offset: 0x004BC327
+			// Token: 0x0600D0FF RID: 53503 RVA: 0x004C451B File Offset: 0x004C271B
 			public ListEntry(PlayerData _playerData, DateTime _lastSeen, bool _blockState)
 			{
 				this.PlayerData = _playerData;
@@ -426,7 +426,7 @@ namespace Platform
 				this.Blocked = _blockState;
 			}
 
-			// Token: 0x0600CF77 RID: 53111 RVA: 0x004BE144 File Offset: 0x004BC344
+			// Token: 0x0600D100 RID: 53504 RVA: 0x004C4538 File Offset: 0x004C2738
 			public static BlockedPlayerList.ListEntry Read(BinaryReader _reader)
 			{
 				PlayerData playerData = PlayerData.Read(_reader);
@@ -435,7 +435,7 @@ namespace Platform
 				return new BlockedPlayerList.ListEntry(playerData, utcDateTime, flag);
 			}
 
-			// Token: 0x0600CF78 RID: 53112 RVA: 0x004BE17C File Offset: 0x004BC37C
+			// Token: 0x0600D101 RID: 53505 RVA: 0x004C4570 File Offset: 0x004C2770
 			public void Write(BinaryWriter _writer)
 			{
 				this.PlayerData.Write(_writer);
@@ -444,13 +444,13 @@ namespace Platform
 				_writer.Write(this.Blocked);
 			}
 
-			// Token: 0x0600CF79 RID: 53113 RVA: 0x004BE1BC File Offset: 0x004BC3BC
+			// Token: 0x0600D102 RID: 53506 RVA: 0x004C45B0 File Offset: 0x004C27B0
 			public void SetResolvedOnce()
 			{
 				this.ResolvedOnce = true;
 			}
 
-			// Token: 0x0600CF7A RID: 53114 RVA: 0x004BE1C8 File Offset: 0x004BC3C8
+			// Token: 0x0600D103 RID: 53507 RVA: 0x004C45BC File Offset: 0x004C27BC
 			public ValueTuple<bool, string> SetBlockState(bool _blockState)
 			{
 				if (this.Blocked == _blockState)
@@ -473,10 +473,10 @@ namespace Platform
 				return new ValueTuple<bool, string>(true, null);
 			}
 
-			// Token: 0x04009EBE RID: 40638
+			// Token: 0x04009FEF RID: 40943
 			public readonly PlayerData PlayerData;
 
-			// Token: 0x04009EBF RID: 40639
+			// Token: 0x04009FF0 RID: 40944
 			public readonly DateTime LastSeen;
 		}
 	}

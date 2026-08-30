@@ -4,7 +4,7 @@ using System.IO;
 // Token: 0x020000CA RID: 202
 public struct AnimParamData
 {
-	// Token: 0x060004AF RID: 1199 RVA: 0x00020DC3 File Offset: 0x0001EFC3
+	// Token: 0x060004B0 RID: 1200 RVA: 0x00020E87 File Offset: 0x0001F087
 	public AnimParamData(int _nameHash, AnimParamData.ValueTypes _valueType, bool _value)
 	{
 		this.NameHash = _nameHash;
@@ -13,7 +13,7 @@ public struct AnimParamData
 		this.IntValue = (_value ? 1 : 0);
 	}
 
-	// Token: 0x060004B0 RID: 1200 RVA: 0x00020DEB File Offset: 0x0001EFEB
+	// Token: 0x060004B1 RID: 1201 RVA: 0x00020EAF File Offset: 0x0001F0AF
 	public AnimParamData(int _nameHash, AnimParamData.ValueTypes _valueType, float _value)
 	{
 		this.NameHash = _nameHash;
@@ -22,7 +22,7 @@ public struct AnimParamData
 		this.IntValue = 0;
 	}
 
-	// Token: 0x060004B1 RID: 1201 RVA: 0x00020E09 File Offset: 0x0001F009
+	// Token: 0x060004B2 RID: 1202 RVA: 0x00020ECD File Offset: 0x0001F0CD
 	public AnimParamData(int _nameHash, AnimParamData.ValueTypes _valueType, int _value)
 	{
 		this.NameHash = _nameHash;
@@ -31,7 +31,7 @@ public struct AnimParamData
 		this.IntValue = _value;
 	}
 
-	// Token: 0x060004B2 RID: 1202 RVA: 0x00020E2C File Offset: 0x0001F02C
+	// Token: 0x060004B3 RID: 1203 RVA: 0x00020EF0 File Offset: 0x0001F0F0
 	public static AnimParamData CreateFromBinary(BinaryReader _br)
 	{
 		int num = _br.ReadInt32();
@@ -55,7 +55,7 @@ public struct AnimParamData
 		}
 	}
 
-	// Token: 0x060004B3 RID: 1203 RVA: 0x00020EA8 File Offset: 0x0001F0A8
+	// Token: 0x060004B4 RID: 1204 RVA: 0x00020F6C File Offset: 0x0001F16C
 	public void Write(BinaryWriter _bw)
 	{
 		_bw.Write(this.NameHash);
@@ -78,7 +78,7 @@ public struct AnimParamData
 		}
 	}
 
-	// Token: 0x060004B4 RID: 1204 RVA: 0x00020F18 File Offset: 0x0001F118
+	// Token: 0x060004B5 RID: 1205 RVA: 0x00020FDC File Offset: 0x0001F1DC
 	public string ToString(AvatarController _controller)
 	{
 		string parameterName = _controller.GetParameterName(this.NameHash);

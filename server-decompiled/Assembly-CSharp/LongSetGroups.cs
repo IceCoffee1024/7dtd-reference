@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02001415 RID: 5141
+// Token: 0x02001430 RID: 5168
 public class LongSetGroups
 {
-	// Token: 0x170012D3 RID: 4819
-	// (get) Token: 0x0600A15E RID: 41310 RVA: 0x003C78AF File Offset: 0x003C5AAF
+	// Token: 0x1700130C RID: 4876
+	// (get) Token: 0x0600A25B RID: 41563 RVA: 0x003CCBF3 File Offset: 0x003CADF3
 	public IReadOnlyCollection<LongSetGroups.Group> Groups
 	{
 		get
@@ -14,8 +14,8 @@ public class LongSetGroups
 		}
 	}
 
-	// Token: 0x170012D4 RID: 4820
-	// (get) Token: 0x0600A15F RID: 41311 RVA: 0x003C78B7 File Offset: 0x003C5AB7
+	// Token: 0x1700130D RID: 4877
+	// (get) Token: 0x0600A25C RID: 41564 RVA: 0x003CCBFB File Offset: 0x003CADFB
 	public int Count
 	{
 		get
@@ -24,8 +24,8 @@ public class LongSetGroups
 		}
 	}
 
-	// Token: 0x170012D5 RID: 4821
-	// (get) Token: 0x0600A160 RID: 41312 RVA: 0x003C78C4 File Offset: 0x003C5AC4
+	// Token: 0x1700130E RID: 4878
+	// (get) Token: 0x0600A25D RID: 41565 RVA: 0x003CCC08 File Offset: 0x003CAE08
 	public int GroupedLongsCount
 	{
 		get
@@ -34,7 +34,7 @@ public class LongSetGroups
 		}
 	}
 
-	// Token: 0x0600A161 RID: 41313 RVA: 0x003C78D4 File Offset: 0x003C5AD4
+	// Token: 0x0600A25E RID: 41566 RVA: 0x003CCC18 File Offset: 0x003CAE18
 	public LongSetGroups.Group MergeOrCreateGroup(HashSetLong longsToGroup)
 	{
 		LongSetGroups.Group group = null;
@@ -75,7 +75,7 @@ public class LongSetGroups
 		return group;
 	}
 
-	// Token: 0x0600A162 RID: 41314 RVA: 0x003C7A0C File Offset: 0x003C5C0C
+	// Token: 0x0600A25F RID: 41567 RVA: 0x003CCD50 File Offset: 0x003CAF50
 	public void RemoveGroupedKeys(HashSetLong keys)
 	{
 		List<HashSetLong> list = new List<HashSetLong>();
@@ -110,32 +110,32 @@ public class LongSetGroups
 		}
 	}
 
-	// Token: 0x0600A163 RID: 41315 RVA: 0x003C7B7C File Offset: 0x003C5D7C
+	// Token: 0x0600A260 RID: 41568 RVA: 0x003CCEC0 File Offset: 0x003CB0C0
 	public bool TryGetGroup(long key, out LongSetGroups.Group group)
 	{
 		return this.groupsByLongKey.TryGetValue(key, out group);
 	}
 
-	// Token: 0x0600A164 RID: 41316 RVA: 0x003C7B8B File Offset: 0x003C5D8B
+	// Token: 0x0600A261 RID: 41569 RVA: 0x003CCECF File Offset: 0x003CB0CF
 	public void Clear()
 	{
 		this.groupsByLongKey.Clear();
 		this.groups.Clear();
 	}
 
-	// Token: 0x04007916 RID: 30998
+	// Token: 0x040079EF RID: 31215
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<LongSetGroups.Group> groups = new List<LongSetGroups.Group>();
 
-	// Token: 0x04007917 RID: 30999
+	// Token: 0x040079F0 RID: 31216
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<long, LongSetGroups.Group> groupsByLongKey = new Dictionary<long, LongSetGroups.Group>();
 
-	// Token: 0x02001416 RID: 5142
+	// Token: 0x02001431 RID: 5169
 	public class Group
 	{
-		// Token: 0x170012D6 RID: 4822
-		// (get) Token: 0x0600A166 RID: 41318 RVA: 0x003C7BC1 File Offset: 0x003C5DC1
+		// Token: 0x1700130F RID: 4879
+		// (get) Token: 0x0600A263 RID: 41571 RVA: 0x003CCF05 File Offset: 0x003CB105
 		public IEnumerable<long> Keys
 		{
 			get
@@ -144,8 +144,8 @@ public class LongSetGroups
 			}
 		}
 
-		// Token: 0x170012D7 RID: 4823
-		// (get) Token: 0x0600A167 RID: 41319 RVA: 0x003C7BC9 File Offset: 0x003C5DC9
+		// Token: 0x17001310 RID: 4880
+		// (get) Token: 0x0600A264 RID: 41572 RVA: 0x003CCF0D File Offset: 0x003CB10D
 		public IEnumerable<HashSetLong> Sets
 		{
 			get
@@ -154,8 +154,8 @@ public class LongSetGroups
 			}
 		}
 
-		// Token: 0x170012D8 RID: 4824
-		// (get) Token: 0x0600A168 RID: 41320 RVA: 0x003C7BD1 File Offset: 0x003C5DD1
+		// Token: 0x17001311 RID: 4881
+		// (get) Token: 0x0600A265 RID: 41573 RVA: 0x003CCF15 File Offset: 0x003CB115
 		public int Count
 		{
 			get
@@ -164,14 +164,14 @@ public class LongSetGroups
 			}
 		}
 
-		// Token: 0x0600A169 RID: 41321 RVA: 0x003C7BDE File Offset: 0x003C5DDE
+		// Token: 0x0600A266 RID: 41574 RVA: 0x003CCF22 File Offset: 0x003CB122
 		public void AddSet(HashSetLong addSet)
 		{
 			this.sets.Add(addSet);
 			this.keys.UnionWith(addSet);
 		}
 
-		// Token: 0x0600A16A RID: 41322 RVA: 0x003C7BF8 File Offset: 0x003C5DF8
+		// Token: 0x0600A267 RID: 41575 RVA: 0x003CCF3C File Offset: 0x003CB13C
 		public bool RemoveSet(HashSetLong removeSet, List<HashSetLong> orphanedSets)
 		{
 			bool flag = false;
@@ -208,13 +208,13 @@ public class LongSetGroups
 			return flag;
 		}
 
-		// Token: 0x0600A16B RID: 41323 RVA: 0x003C7D10 File Offset: 0x003C5F10
+		// Token: 0x0600A268 RID: 41576 RVA: 0x003CD054 File Offset: 0x003CB254
 		public bool Contains(long key)
 		{
 			return this.keys.Contains(key);
 		}
 
-		// Token: 0x0600A16C RID: 41324 RVA: 0x003C7D20 File Offset: 0x003C5F20
+		// Token: 0x0600A269 RID: 41577 RVA: 0x003CD064 File Offset: 0x003CB264
 		public void MergeFrom(LongSetGroups.Group other)
 		{
 			foreach (HashSetLong hashSetLong in other.sets)
@@ -239,11 +239,11 @@ public class LongSetGroups
 			}
 		}
 
-		// Token: 0x04007918 RID: 31000
+		// Token: 0x040079F1 RID: 31217
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly HashSetLong keys = new HashSetLong();
 
-		// Token: 0x04007919 RID: 31001
+		// Token: 0x040079F2 RID: 31218
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly List<HashSetLong> sets = new List<HashSetLong>();
 	}

@@ -6,11 +6,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x0200199D RID: 6557
+	// Token: 0x020019C3 RID: 6595
 	[Preserve]
 	public class ActionShuffleItems : ActionBaseClientAction
 	{
-		// Token: 0x0600C81B RID: 51227 RVA: 0x00499730 File Offset: 0x00497930
+		// Token: 0x0600C9A2 RID: 51618 RVA: 0x0049FA88 File Offset: 0x0049DC88
 		public override void OnClientPerform(Entity target)
 		{
 			EntityPlayer entityPlayer = target as EntityPlayer;
@@ -20,7 +20,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C81C RID: 51228 RVA: 0x00499759 File Offset: 0x00497959
+		// Token: 0x0600C9A3 RID: 51619 RVA: 0x0049FAB1 File Offset: 0x0049DCB1
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator handleShuffle(EntityPlayer player)
 		{
@@ -74,7 +74,7 @@ namespace GameEvent.SequenceActions
 			yield break;
 		}
 
-		// Token: 0x0600C81D RID: 51229 RVA: 0x00499770 File Offset: 0x00497970
+		// Token: 0x0600C9A4 RID: 51620 RVA: 0x0049FAC8 File Offset: 0x0049DCC8
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -92,7 +92,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C81E RID: 51230 RVA: 0x004997D8 File Offset: 0x004979D8
+		// Token: 0x0600C9A5 RID: 51621 RVA: 0x0049FB30 File Offset: 0x0049DD30
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -103,21 +103,21 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040097C3 RID: 38851
+		// Token: 0x040098EC RID: 39148
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public List<ActionShuffleItems.ItemLocations> itemLocations = new List<ActionShuffleItems.ItemLocations>();
 
-		// Token: 0x040097C4 RID: 38852
+		// Token: 0x040098ED RID: 39149
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropItemLocation = "items_location";
 
-		// Token: 0x0200199E RID: 6558
+		// Token: 0x020019C4 RID: 6596
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum ItemLocations
 		{
-			// Token: 0x040097C6 RID: 38854
+			// Token: 0x040098EF RID: 39151
 			Toolbelt,
-			// Token: 0x040097C7 RID: 38855
+			// Token: 0x040098F0 RID: 39152
 			Backpack
 		}
 	}

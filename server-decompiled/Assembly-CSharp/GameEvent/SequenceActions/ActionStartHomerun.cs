@@ -5,11 +5,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019A3 RID: 6563
+	// Token: 0x020019C9 RID: 6601
 	[Preserve]
 	public class ActionStartHomerun : ActionBaseTargetAction
 	{
-		// Token: 0x0600C83A RID: 51258 RVA: 0x0049A178 File Offset: 0x00498378
+		// Token: 0x0600C9C1 RID: 51649 RVA: 0x004A04D0 File Offset: 0x0049E6D0
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			EntityPlayer entityPlayer = target as EntityPlayer;
@@ -21,7 +21,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C83B RID: 51259 RVA: 0x0049A1CC File Offset: 0x004983CC
+		// Token: 0x0600C9C2 RID: 51650 RVA: 0x004A0524 File Offset: 0x0049E724
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -38,13 +38,13 @@ namespace GameEvent.SequenceActions
 			this.Properties.ParseString(ActionStartHomerun.PropDuration, ref this.gameTimeText);
 		}
 
-		// Token: 0x0600C83C RID: 51260 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C9C3 RID: 51651 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void HomeRunComplete()
 		{
 		}
 
-		// Token: 0x0600C83D RID: 51261 RVA: 0x0049A286 File Offset: 0x00498486
+		// Token: 0x0600C9C4 RID: 51652 RVA: 0x004A05DE File Offset: 0x0049E7DE
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -57,19 +57,19 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040097DA RID: 38874
+		// Token: 0x04009903 RID: 39171
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<int> rewardLevels = new List<int>();
 
-		// Token: 0x040097DB RID: 38875
+		// Token: 0x04009904 RID: 39172
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<string> rewardEvents = new List<string>();
 
-		// Token: 0x040097DC RID: 38876
+		// Token: 0x04009905 RID: 39173
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string gameTimeText;
 
-		// Token: 0x040097DD RID: 38877
+		// Token: 0x04009906 RID: 39174
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropDuration = "duration";
 	}

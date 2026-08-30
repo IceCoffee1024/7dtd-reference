@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200131C RID: 4892
+// Token: 0x02001336 RID: 4918
 public class FaceSpriteAtCamera : MonoBehaviour
 {
-	// Token: 0x06009A3A RID: 39482 RVA: 0x003A467B File Offset: 0x003A287B
+	// Token: 0x06009B35 RID: 39733 RVA: 0x003A9913 File Offset: 0x003A7B13
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Start()
 	{
@@ -14,7 +14,7 @@ public class FaceSpriteAtCamera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009A3B RID: 39483 RVA: 0x003A467B File Offset: 0x003A287B
+	// Token: 0x06009B36 RID: 39734 RVA: 0x003A9913 File Offset: 0x003A7B13
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Awake()
 	{
@@ -24,14 +24,14 @@ public class FaceSpriteAtCamera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009A3C RID: 39484 RVA: 0x003A468A File Offset: 0x003A288A
+	// Token: 0x06009B37 RID: 39735 RVA: 0x003A9922 File Offset: 0x003A7B22
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnEnable()
 	{
 		this.mainCamera = null;
 	}
 
-	// Token: 0x06009A3D RID: 39485 RVA: 0x003A4694 File Offset: 0x003A2894
+	// Token: 0x06009B38 RID: 39736 RVA: 0x003A992C File Offset: 0x003A7B2C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Update()
 	{
@@ -45,7 +45,7 @@ public class FaceSpriteAtCamera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400743B RID: 29755
+	// Token: 0x04007513 RID: 29971
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Camera mainCamera;

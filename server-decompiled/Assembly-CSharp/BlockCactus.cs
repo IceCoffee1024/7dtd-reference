@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000112 RID: 274
+// Token: 0x02000113 RID: 275
 [Preserve]
 public class BlockCactus : BlockDamage
 {
-	// Token: 0x06000735 RID: 1845 RVA: 0x00033EBB File Offset: 0x000320BB
+	// Token: 0x0600073F RID: 1855 RVA: 0x00034177 File Offset: 0x00032377
 	public override void Init()
 	{
 		base.Init();
@@ -15,7 +15,7 @@ public class BlockCactus : BlockDamage
 		this.CanDecorateOnSlopes = false;
 	}
 
-	// Token: 0x06000736 RID: 1846 RVA: 0x00033ED4 File Offset: 0x000320D4
+	// Token: 0x06000740 RID: 1856 RVA: 0x00034190 File Offset: 0x00032390
 	public override void GetCollisionAABB(BlockValue _blockValue, int _x, int _y, int _z, float _distortedY, List<Bounds> _result)
 	{
 		base.GetCollisionAABB(_blockValue, _x, _y, _z, _distortedY, _result);

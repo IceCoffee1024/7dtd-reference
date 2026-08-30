@@ -2,11 +2,11 @@
 
 namespace Platform.GameCore
 {
-	// Token: 0x02001C52 RID: 7250
+	// Token: 0x02001C79 RID: 7289
 	public class UserDataRoamingGameCore : UserDataRoamingAbs
 	{
-		// Token: 0x17001A5F RID: 6751
-		// (get) Token: 0x0600D69A RID: 54938 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+		// Token: 0x17001AD1 RID: 6865
+		// (get) Token: 0x0600D82A RID: 55338 RVA: 0x0002F168 File Offset: 0x0002D368
 		public override SaveRoamingMode SaveRoamingMode
 		{
 			get
@@ -15,8 +15,8 @@ namespace Platform.GameCore
 			}
 		}
 
-		// Token: 0x17001A60 RID: 6752
-		// (get) Token: 0x0600D69B RID: 54939 RVA: 0x0001FF5D File Offset: 0x0001E15D
+		// Token: 0x17001AD2 RID: 6866
+		// (get) Token: 0x0600D82B RID: 55339 RVA: 0x00020021 File Offset: 0x0001E221
 		public override UserDataStorageType DefaultSaveStorage
 		{
 			get

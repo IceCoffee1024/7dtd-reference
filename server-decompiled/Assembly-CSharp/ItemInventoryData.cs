@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000574 RID: 1396
+// Token: 0x02000579 RID: 1401
 public class ItemInventoryData
 {
-	// Token: 0x170004DC RID: 1244
-	// (get) Token: 0x06002D91 RID: 11665 RVA: 0x00121F04 File Offset: 0x00120104
+	// Token: 0x170004E0 RID: 1248
+	// (get) Token: 0x06002DBC RID: 11708 RVA: 0x00122FC0 File Offset: 0x001211C0
 	public Transform model
 	{
 		get
@@ -15,9 +15,9 @@ public class ItemInventoryData
 		}
 	}
 
-	// Token: 0x170004DD RID: 1245
-	// (get) Token: 0x06002D92 RID: 11666 RVA: 0x00121F1D File Offset: 0x0012011D
-	// (set) Token: 0x06002D93 RID: 11667 RVA: 0x00121F35 File Offset: 0x00120135
+	// Token: 0x170004E1 RID: 1249
+	// (get) Token: 0x06002DBD RID: 11709 RVA: 0x00122FD9 File Offset: 0x001211D9
+	// (set) Token: 0x06002DBE RID: 11710 RVA: 0x00122FF1 File Offset: 0x001211F1
 	public ItemValue itemValue
 	{
 		get
@@ -30,13 +30,13 @@ public class ItemInventoryData
 		}
 	}
 
-	// Token: 0x06002D94 RID: 11668 RVA: 0x00121F4E File Offset: 0x0012014E
+	// Token: 0x06002DBF RID: 11711 RVA: 0x0012300A File Offset: 0x0012120A
 	public void Changed()
 	{
 		this.holdingEntity.inventory.Changed();
 	}
 
-	// Token: 0x06002D95 RID: 11669 RVA: 0x00121F60 File Offset: 0x00120160
+	// Token: 0x06002DC0 RID: 11712 RVA: 0x0012301C File Offset: 0x0012121C
 	public ItemInventoryData(ItemClass _item, ItemStack _itemStack, IGameManager _gameManager, EntityAlive _holdingEntity, int _slotIdx)
 	{
 		this.item = _item;
@@ -50,38 +50,38 @@ public class ItemInventoryData
 		this.actionData.Add(null);
 	}
 
-	// Token: 0x0400237F RID: 9087
+	// Token: 0x040023B1 RID: 9137
 	public ItemClass item;
 
-	// Token: 0x04002380 RID: 9088
+	// Token: 0x040023B2 RID: 9138
 	public ItemStack itemStack;
 
-	// Token: 0x04002381 RID: 9089
+	// Token: 0x040023B3 RID: 9139
 	public readonly EntityAlive holdingEntity;
 
-	// Token: 0x04002382 RID: 9090
+	// Token: 0x040023B4 RID: 9140
 	public int holdingEntitySoundID = -2;
 
-	// Token: 0x04002383 RID: 9091
+	// Token: 0x040023B5 RID: 9141
 	public World world;
 
-	// Token: 0x04002384 RID: 9092
+	// Token: 0x040023B6 RID: 9142
 	public IGameManager gameManager;
 
-	// Token: 0x04002385 RID: 9093
+	// Token: 0x040023B7 RID: 9143
 	public List<ItemActionData> actionData;
 
-	// Token: 0x04002386 RID: 9094
+	// Token: 0x040023B8 RID: 9144
 	public int slotIdx;
 
-	// Token: 0x02000575 RID: 1397
+	// Token: 0x0200057A RID: 1402
 	public enum SoundPlayType
 	{
-		// Token: 0x04002388 RID: 9096
+		// Token: 0x040023BA RID: 9146
 		None = -2,
-		// Token: 0x04002389 RID: 9097
+		// Token: 0x040023BB RID: 9147
 		IdleReady,
-		// Token: 0x0400238A RID: 9098
+		// Token: 0x040023BC RID: 9148
 		Idle
 	}
 }

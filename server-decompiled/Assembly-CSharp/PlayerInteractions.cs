@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using Platform;
 
-// Token: 0x02001299 RID: 4761
+// Token: 0x020012B3 RID: 4787
 public class PlayerInteractions
 {
-	// Token: 0x170011C8 RID: 4552
-	// (get) Token: 0x060096D1 RID: 38609 RVA: 0x0038EFCA File Offset: 0x0038D1CA
+	// Token: 0x17001201 RID: 4609
+	// (get) Token: 0x060097CC RID: 38860 RVA: 0x00394126 File Offset: 0x00392326
 	public static PlayerInteractions Instance { get; } = new PlayerInteractions();
 
-	// Token: 0x140000FD RID: 253
-	// (add) Token: 0x060096D2 RID: 38610 RVA: 0x0038EFD4 File Offset: 0x0038D1D4
-	// (remove) Token: 0x060096D3 RID: 38611 RVA: 0x0038F00C File Offset: 0x0038D20C
+	// Token: 0x140000FE RID: 254
+	// (add) Token: 0x060097CD RID: 38861 RVA: 0x00394130 File Offset: 0x00392330
+	// (remove) Token: 0x060097CE RID: 38862 RVA: 0x00394168 File Offset: 0x00392368
 	public event PlayerIteractionEvent OnNewPlayerInteraction;
 
-	// Token: 0x060096D4 RID: 38612 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x060097CF RID: 38863 RVA: 0x0000640C File Offset: 0x0000460C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlayerInteractions()
 	{
 	}
 
-	// Token: 0x060096D5 RID: 38613 RVA: 0x0038F041 File Offset: 0x0038D241
+	// Token: 0x060097D0 RID: 38864 RVA: 0x0039419D File Offset: 0x0039239D
 	public void JoinedMultiplayerServer(PersistentPlayerList ppl)
 	{
 		Log.Out("[PlayerInteractions] JoinedMultplayerServer");
@@ -29,7 +29,7 @@ public class PlayerInteractions
 		this.SetPlayersList(ppl);
 	}
 
-	// Token: 0x060096D6 RID: 38614 RVA: 0x0038F05C File Offset: 0x0038D25C
+	// Token: 0x060097D1 RID: 38865 RVA: 0x003941B8 File Offset: 0x003923B8
 	public void PlayerSpawnedInMultiplayerServer(PersistentPlayerList ppl, int spawningEntityId, RespawnType respawnReason)
 	{
 		this.SetPlayersList(ppl);
@@ -54,7 +54,7 @@ public class PlayerInteractions
 		onNewPlayerInteraction(this.CreateInteraction(playerDataFromEntityID, PlayerInteractionType.FirstSpawn));
 	}
 
-	// Token: 0x060096D7 RID: 38615 RVA: 0x0038F0F4 File Offset: 0x0038D2F4
+	// Token: 0x060097D2 RID: 38866 RVA: 0x00394250 File Offset: 0x00392450
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetPlayersList(PersistentPlayerList ppl)
 	{
@@ -70,7 +70,7 @@ public class PlayerInteractions
 		this.playerList.AddPlayerEventHandler(new PersistentPlayerData.PlayerEventHandler(this.OnPersistentPlayerEvent));
 	}
 
-	// Token: 0x060096D8 RID: 38616 RVA: 0x0038F148 File Offset: 0x0038D348
+	// Token: 0x060097D3 RID: 38867 RVA: 0x003942A4 File Offset: 0x003924A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPersistentPlayerEvent(PersistentPlayerData ppData, PersistentPlayerData otherPlayer, EnumPersistentPlayerDataReason reason)
 	{
@@ -106,7 +106,7 @@ public class PlayerInteractions
 		onNewPlayerInteraction(playerInteraction);
 	}
 
-	// Token: 0x060096D9 RID: 38617 RVA: 0x0038F1CB File Offset: 0x0038D3CB
+	// Token: 0x060097D4 RID: 38868 RVA: 0x00394327 File Offset: 0x00392527
 	public void Shutdown()
 	{
 		if (this.playerList != null)
@@ -118,7 +118,7 @@ public class PlayerInteractions
 		}
 	}
 
-	// Token: 0x060096DA RID: 38618 RVA: 0x0038F20C File Offset: 0x0038D40C
+	// Token: 0x060097D5 RID: 38869 RVA: 0x00394368 File Offset: 0x00392568
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RecordInteractionForActivePersistentPlayers(PersistentPlayerList ppl, PlayerInteractionType interactionType)
 	{
@@ -140,14 +140,14 @@ public class PlayerInteractions
 		}
 	}
 
-	// Token: 0x060096DB RID: 38619 RVA: 0x0038F2D0 File Offset: 0x0038D4D0
+	// Token: 0x060097D6 RID: 38870 RVA: 0x0039442C File Offset: 0x0039262C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlayerInteraction CreateInteraction(PersistentPlayerData ppd, PlayerInteractionType type)
 	{
 		return new PlayerInteraction(ppd.PlayerData, type);
 	}
 
-	// Token: 0x0400711D RID: 28957
+	// Token: 0x040071F2 RID: 29170
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PersistentPlayerList playerList;
 }

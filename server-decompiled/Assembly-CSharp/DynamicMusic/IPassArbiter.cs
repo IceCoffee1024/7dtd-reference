@@ -2,11 +2,11 @@
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A56 RID: 6742
+	// Token: 0x02001A7D RID: 6781
 	public interface IPassArbiter
 	{
-		// Token: 0x170018AE RID: 6318
-		// (get) Token: 0x0600CB64 RID: 52068
+		// Token: 0x17001920 RID: 6432
+		// (get) Token: 0x0600CCED RID: 52461
 		bool WillAllowPass { get; }
 	}
 }

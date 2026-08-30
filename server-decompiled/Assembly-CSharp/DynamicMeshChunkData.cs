@@ -3,71 +3,71 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 
-// Token: 0x0200035C RID: 860
+// Token: 0x02000360 RID: 864
 public class DynamicMeshChunkData
 {
-	// Token: 0x170002F4 RID: 756
-	// (get) Token: 0x060018F3 RID: 6387 RVA: 0x0008CCCA File Offset: 0x0008AECA
-	// (set) Token: 0x060018F4 RID: 6388 RVA: 0x0008CCD2 File Offset: 0x0008AED2
+	// Token: 0x170002F8 RID: 760
+	// (get) Token: 0x06001910 RID: 6416 RVA: 0x0008D40A File Offset: 0x0008B60A
+	// (set) Token: 0x06001911 RID: 6417 RVA: 0x0008D412 File Offset: 0x0008B612
 	public int X { get; set; }
 
-	// Token: 0x170002F5 RID: 757
-	// (get) Token: 0x060018F5 RID: 6389 RVA: 0x0008CCDB File Offset: 0x0008AEDB
-	// (set) Token: 0x060018F6 RID: 6390 RVA: 0x0008CCE3 File Offset: 0x0008AEE3
+	// Token: 0x170002F9 RID: 761
+	// (get) Token: 0x06001912 RID: 6418 RVA: 0x0008D41B File Offset: 0x0008B61B
+	// (set) Token: 0x06001913 RID: 6419 RVA: 0x0008D423 File Offset: 0x0008B623
 	public int OffsetY { get; set; }
 
-	// Token: 0x170002F6 RID: 758
-	// (get) Token: 0x060018F7 RID: 6391 RVA: 0x0008CCEC File Offset: 0x0008AEEC
-	// (set) Token: 0x060018F8 RID: 6392 RVA: 0x0008CCF4 File Offset: 0x0008AEF4
+	// Token: 0x170002FA RID: 762
+	// (get) Token: 0x06001914 RID: 6420 RVA: 0x0008D42C File Offset: 0x0008B62C
+	// (set) Token: 0x06001915 RID: 6421 RVA: 0x0008D434 File Offset: 0x0008B634
 	public int Z { get; set; }
 
-	// Token: 0x170002F7 RID: 759
-	// (get) Token: 0x060018F9 RID: 6393 RVA: 0x0008CCFD File Offset: 0x0008AEFD
-	// (set) Token: 0x060018FA RID: 6394 RVA: 0x0008CD05 File Offset: 0x0008AF05
+	// Token: 0x170002FB RID: 763
+	// (get) Token: 0x06001916 RID: 6422 RVA: 0x0008D43D File Offset: 0x0008B63D
+	// (set) Token: 0x06001917 RID: 6423 RVA: 0x0008D445 File Offset: 0x0008B645
 	public int UpdateTime { get; set; }
 
-	// Token: 0x170002F8 RID: 760
-	// (get) Token: 0x060018FB RID: 6395 RVA: 0x0008CD0E File Offset: 0x0008AF0E
-	// (set) Token: 0x060018FC RID: 6396 RVA: 0x0008CD16 File Offset: 0x0008AF16
+	// Token: 0x170002FC RID: 764
+	// (get) Token: 0x06001918 RID: 6424 RVA: 0x0008D44E File Offset: 0x0008B64E
+	// (set) Token: 0x06001919 RID: 6425 RVA: 0x0008D456 File Offset: 0x0008B656
 	public byte MainBiome { get; set; }
 
-	// Token: 0x170002F9 RID: 761
-	// (get) Token: 0x060018FD RID: 6397 RVA: 0x0008CD1F File Offset: 0x0008AF1F
-	// (set) Token: 0x060018FE RID: 6398 RVA: 0x0008CD27 File Offset: 0x0008AF27
+	// Token: 0x170002FD RID: 765
+	// (get) Token: 0x0600191A RID: 6426 RVA: 0x0008D45F File Offset: 0x0008B65F
+	// (set) Token: 0x0600191B RID: 6427 RVA: 0x0008D467 File Offset: 0x0008B667
 	public int EndY { get; set; }
 
-	// Token: 0x170002FA RID: 762
-	// (get) Token: 0x060018FF RID: 6399 RVA: 0x0008CD30 File Offset: 0x0008AF30
-	// (set) Token: 0x06001900 RID: 6400 RVA: 0x0008CD38 File Offset: 0x0008AF38
+	// Token: 0x170002FE RID: 766
+	// (get) Token: 0x0600191C RID: 6428 RVA: 0x0008D470 File Offset: 0x0008B670
+	// (set) Token: 0x0600191D RID: 6429 RVA: 0x0008D478 File Offset: 0x0008B678
 	public List<byte> TerrainHeight { get; set; } = new List<byte>();
 
-	// Token: 0x170002FB RID: 763
-	// (get) Token: 0x06001901 RID: 6401 RVA: 0x0008CD41 File Offset: 0x0008AF41
-	// (set) Token: 0x06001902 RID: 6402 RVA: 0x0008CD49 File Offset: 0x0008AF49
+	// Token: 0x170002FF RID: 767
+	// (get) Token: 0x0600191E RID: 6430 RVA: 0x0008D481 File Offset: 0x0008B681
+	// (set) Token: 0x0600191F RID: 6431 RVA: 0x0008D489 File Offset: 0x0008B689
 	public List<byte> Height { get; set; } = new List<byte>();
 
-	// Token: 0x170002FC RID: 764
-	// (get) Token: 0x06001903 RID: 6403 RVA: 0x0008CD52 File Offset: 0x0008AF52
-	// (set) Token: 0x06001904 RID: 6404 RVA: 0x0008CD5A File Offset: 0x0008AF5A
+	// Token: 0x17000300 RID: 768
+	// (get) Token: 0x06001920 RID: 6432 RVA: 0x0008D492 File Offset: 0x0008B692
+	// (set) Token: 0x06001921 RID: 6433 RVA: 0x0008D49A File Offset: 0x0008B69A
 	public List<byte> TopSoil { get; set; } = new List<byte>();
 
-	// Token: 0x170002FD RID: 765
-	// (get) Token: 0x06001905 RID: 6405 RVA: 0x0008CD63 File Offset: 0x0008AF63
-	// (set) Token: 0x06001906 RID: 6406 RVA: 0x0008CD6B File Offset: 0x0008AF6B
+	// Token: 0x17000301 RID: 769
+	// (get) Token: 0x06001922 RID: 6434 RVA: 0x0008D4A3 File Offset: 0x0008B6A3
+	// (set) Token: 0x06001923 RID: 6435 RVA: 0x0008D4AB File Offset: 0x0008B6AB
 	public List<uint> BlockRaw { get; set; } = new List<uint>();
 
-	// Token: 0x170002FE RID: 766
-	// (get) Token: 0x06001907 RID: 6407 RVA: 0x0008CD74 File Offset: 0x0008AF74
-	// (set) Token: 0x06001908 RID: 6408 RVA: 0x0008CD7C File Offset: 0x0008AF7C
+	// Token: 0x17000302 RID: 770
+	// (get) Token: 0x06001924 RID: 6436 RVA: 0x0008D4B4 File Offset: 0x0008B6B4
+	// (set) Token: 0x06001925 RID: 6437 RVA: 0x0008D4BC File Offset: 0x0008B6BC
 	public List<sbyte> Densities { get; set; } = new List<sbyte>();
 
-	// Token: 0x170002FF RID: 767
-	// (get) Token: 0x06001909 RID: 6409 RVA: 0x0008CD85 File Offset: 0x0008AF85
-	// (set) Token: 0x0600190A RID: 6410 RVA: 0x0008CD8D File Offset: 0x0008AF8D
+	// Token: 0x17000303 RID: 771
+	// (get) Token: 0x06001926 RID: 6438 RVA: 0x0008D4C5 File Offset: 0x0008B6C5
+	// (set) Token: 0x06001927 RID: 6439 RVA: 0x0008D4CD File Offset: 0x0008B6CD
 	public List<long> Textures { get; set; } = new List<long>();
 
-	// Token: 0x17000300 RID: 768
-	// (get) Token: 0x0600190B RID: 6411 RVA: 0x0008CD96 File Offset: 0x0008AF96
+	// Token: 0x17000304 RID: 772
+	// (get) Token: 0x06001928 RID: 6440 RVA: 0x0008D4D6 File Offset: 0x0008B6D6
 	public int TotalBlocks
 	{
 		get
@@ -76,19 +76,19 @@ public class DynamicMeshChunkData
 		}
 	}
 
-	// Token: 0x0600190C RID: 6412 RVA: 0x0008CDBD File Offset: 0x0008AFBD
+	// Token: 0x06001929 RID: 6441 RVA: 0x0008D4FD File Offset: 0x0008B6FD
 	public DynamicMeshChunkData.ChunkNeighbourData GetNeighbourData(int x, int z)
 	{
 		return this._neighbours[x + 1, z + 1];
 	}
 
-	// Token: 0x0600190D RID: 6413 RVA: 0x0008CDD0 File Offset: 0x0008AFD0
+	// Token: 0x0600192A RID: 6442 RVA: 0x0008D510 File Offset: 0x0008B710
 	public void SetNeighbourData(int x, int z, DynamicMeshChunkData.ChunkNeighbourData data)
 	{
 		this._neighbours[x + 1, z + 1] = data;
 	}
 
-	// Token: 0x0600190E RID: 6414 RVA: 0x0008CDE4 File Offset: 0x0008AFE4
+	// Token: 0x0600192B RID: 6443 RVA: 0x0008D524 File Offset: 0x0008B724
 	public void Copy(DynamicMeshChunkData other)
 	{
 		if (other == null)
@@ -125,7 +125,7 @@ public class DynamicMeshChunkData
 		}
 	}
 
-	// Token: 0x0600190F RID: 6415 RVA: 0x0008CF04 File Offset: 0x0008B104
+	// Token: 0x0600192C RID: 6444 RVA: 0x0008D644 File Offset: 0x0008B844
 	public static DynamicMeshChunkData LoadFromStream(MemoryStream stream)
 	{
 		stream.Position = 0L;
@@ -138,7 +138,7 @@ public class DynamicMeshChunkData
 		return fromCache;
 	}
 
-	// Token: 0x06001910 RID: 6416 RVA: 0x0008CF5C File Offset: 0x0008B15C
+	// Token: 0x0600192D RID: 6445 RVA: 0x0008D69C File Offset: 0x0008B89C
 	public void RecordCounts()
 	{
 		this.lastRaw = this.BlockRaw.Count;
@@ -146,7 +146,7 @@ public class DynamicMeshChunkData
 		this.lastTex = this.Textures.Count;
 	}
 
-	// Token: 0x06001911 RID: 6417 RVA: 0x0008CF94 File Offset: 0x0008B194
+	// Token: 0x0600192E RID: 6446 RVA: 0x0008D6D4 File Offset: 0x0008B8D4
 	public void ClearPreviousLayers()
 	{
 		if (this.lastRaw > 0)
@@ -163,7 +163,7 @@ public class DynamicMeshChunkData
 		}
 	}
 
-	// Token: 0x06001912 RID: 6418 RVA: 0x0008CFF4 File Offset: 0x0008B1F4
+	// Token: 0x0600192F RID: 6447 RVA: 0x0008D734 File Offset: 0x0008B934
 	public void Reset()
 	{
 		this.X = 0;
@@ -189,13 +189,13 @@ public class DynamicMeshChunkData
 		this.GetNeighbourData(0, 1).Clear();
 	}
 
-	// Token: 0x06001913 RID: 6419 RVA: 0x0008D0E0 File Offset: 0x0008B2E0
+	// Token: 0x06001930 RID: 6448 RVA: 0x0008D820 File Offset: 0x0008BA20
 	public void SetTopSoil(byte[] soil)
 	{
 		this.TopSoil.AddRange(soil);
 	}
 
-	// Token: 0x06001914 RID: 6420 RVA: 0x0008D0F0 File Offset: 0x0008B2F0
+	// Token: 0x06001931 RID: 6449 RVA: 0x0008D830 File Offset: 0x0008BA30
 	public int GetStreamSize()
 	{
 		int num = 81 + this.TerrainHeight.Count + this.Height.Count + this.TopSoil.Count + 4 * this.BlockRaw.Count + this.Densities.Count + 8 * this.Textures.Count;
@@ -213,7 +213,7 @@ public class DynamicMeshChunkData
 		return num;
 	}
 
-	// Token: 0x06001915 RID: 6421 RVA: 0x0008D1A0 File Offset: 0x0008B3A0
+	// Token: 0x06001932 RID: 6450 RVA: 0x0008D8E0 File Offset: 0x0008BAE0
 	public void Write(BinaryWriter writer)
 	{
 		writer.Write(this.X);
@@ -266,7 +266,7 @@ public class DynamicMeshChunkData
 		}
 	}
 
-	// Token: 0x06001916 RID: 6422 RVA: 0x0008D418 File Offset: 0x0008B618
+	// Token: 0x06001933 RID: 6451 RVA: 0x0008DB58 File Offset: 0x0008BD58
 	public void Read(PooledBinaryReader reader)
 	{
 		this.X = reader.ReadInt32();
@@ -318,7 +318,7 @@ public class DynamicMeshChunkData
 		}
 	}
 
-	// Token: 0x06001917 RID: 6423 RVA: 0x0008D598 File Offset: 0x0008B798
+	// Token: 0x06001934 RID: 6452 RVA: 0x0008DCD8 File Offset: 0x0008BED8
 	public void ApplyToChunk(Chunk chunk, ChunkCacheNeighborChunks cacheNeighbourChunks)
 	{
 		int num = 0;
@@ -404,7 +404,7 @@ public class DynamicMeshChunkData
 		this.SetNeighbourCorner(0, 0, (Chunk)cacheNeighbourChunks[1, 1], this.GetNeighbourData(1, 1));
 	}
 
-	// Token: 0x06001918 RID: 6424 RVA: 0x0008D8C4 File Offset: 0x0008BAC4
+	// Token: 0x06001935 RID: 6453 RVA: 0x0008E004 File Offset: 0x0008C204
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetNeighbourCorner(int x, int z, Chunk chunk, DynamicMeshChunkData.ChunkNeighbourData data)
 	{
@@ -430,7 +430,7 @@ public class DynamicMeshChunkData
 		}
 	}
 
-	// Token: 0x06001919 RID: 6425 RVA: 0x0008D96C File Offset: 0x0008BB6C
+	// Token: 0x06001936 RID: 6454 RVA: 0x0008E0AC File Offset: 0x0008C2AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetXNeighbour(int x, Chunk chunk, DynamicMeshChunkData.ChunkNeighbourData data)
 	{
@@ -459,7 +459,7 @@ public class DynamicMeshChunkData
 		}
 	}
 
-	// Token: 0x0600191A RID: 6426 RVA: 0x0008DA30 File Offset: 0x0008BC30
+	// Token: 0x06001937 RID: 6455 RVA: 0x0008E170 File Offset: 0x0008C370
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetZNeighbour(int z, Chunk chunk, DynamicMeshChunkData.ChunkNeighbourData data)
 	{
@@ -488,7 +488,7 @@ public class DynamicMeshChunkData
 		}
 	}
 
-	// Token: 0x0600191B RID: 6427 RVA: 0x0008DAF4 File Offset: 0x0008BCF4
+	// Token: 0x06001938 RID: 6456 RVA: 0x0008E234 File Offset: 0x0008C434
 	public static DynamicMeshChunkData GetFromCache(string debug)
 	{
 		DynamicMeshChunkData dynamicMeshChunkData;
@@ -500,7 +500,7 @@ public class DynamicMeshChunkData
 		return dynamicMeshChunkData;
 	}
 
-	// Token: 0x0600191C RID: 6428 RVA: 0x0008DB22 File Offset: 0x0008BD22
+	// Token: 0x06001939 RID: 6457 RVA: 0x0008E262 File Offset: 0x0008C462
 	public static void AddToCache(DynamicMeshChunkData data, string debug)
 	{
 		data.Reset();
@@ -508,7 +508,7 @@ public class DynamicMeshChunkData
 		DynamicMeshChunkData.ActiveDataItems--;
 	}
 
-	// Token: 0x0600191D RID: 6429 RVA: 0x0008DB44 File Offset: 0x0008BD44
+	// Token: 0x0600193A RID: 6458 RVA: 0x0008E284 File Offset: 0x0008C484
 	public static DynamicMeshChunkData Creates()
 	{
 		DynamicMeshChunkData dynamicMeshChunkData = new DynamicMeshChunkData
@@ -533,50 +533,50 @@ public class DynamicMeshChunkData
 		return dynamicMeshChunkData;
 	}
 
-	// Token: 0x04000FEE RID: 4078
+	// Token: 0x04001003 RID: 4099
 	public int MinTerrainHeight;
 
-	// Token: 0x04000FEF RID: 4079
+	// Token: 0x04001004 RID: 4100
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DynamicMeshChunkData.ChunkNeighbourData[,] _neighbours = new DynamicMeshChunkData.ChunkNeighbourData[3, 3];
 
-	// Token: 0x04000FF0 RID: 4080
+	// Token: 0x04001005 RID: 4101
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lastRaw;
 
-	// Token: 0x04000FF1 RID: 4081
+	// Token: 0x04001006 RID: 4102
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lastDen;
 
-	// Token: 0x04000FF2 RID: 4082
+	// Token: 0x04001007 RID: 4103
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lastTex;
 
-	// Token: 0x04000FF3 RID: 4083
+	// Token: 0x04001008 RID: 4104
 	public static int ActiveDataItems = 0;
 
-	// Token: 0x04000FF4 RID: 4084
+	// Token: 0x04001009 RID: 4105
 	public static ConcurrentQueue<DynamicMeshChunkData> Cache = new ConcurrentQueue<DynamicMeshChunkData>();
 
-	// Token: 0x0200035D RID: 861
+	// Token: 0x02000361 RID: 865
 	public class ChunkNeighbourData
 	{
-		// Token: 0x17000301 RID: 769
-		// (get) Token: 0x06001920 RID: 6432 RVA: 0x0008DC48 File Offset: 0x0008BE48
-		// (set) Token: 0x06001921 RID: 6433 RVA: 0x0008DC50 File Offset: 0x0008BE50
+		// Token: 0x17000305 RID: 773
+		// (get) Token: 0x0600193D RID: 6461 RVA: 0x0008E388 File Offset: 0x0008C588
+		// (set) Token: 0x0600193E RID: 6462 RVA: 0x0008E390 File Offset: 0x0008C590
 		public List<uint> BlockRaw { get; set; }
 
-		// Token: 0x17000302 RID: 770
-		// (get) Token: 0x06001922 RID: 6434 RVA: 0x0008DC59 File Offset: 0x0008BE59
-		// (set) Token: 0x06001923 RID: 6435 RVA: 0x0008DC61 File Offset: 0x0008BE61
+		// Token: 0x17000306 RID: 774
+		// (get) Token: 0x0600193F RID: 6463 RVA: 0x0008E399 File Offset: 0x0008C599
+		// (set) Token: 0x06001940 RID: 6464 RVA: 0x0008E3A1 File Offset: 0x0008C5A1
 		public List<sbyte> Densities { get; set; }
 
-		// Token: 0x17000303 RID: 771
-		// (get) Token: 0x06001924 RID: 6436 RVA: 0x0008DC6A File Offset: 0x0008BE6A
-		// (set) Token: 0x06001925 RID: 6437 RVA: 0x0008DC72 File Offset: 0x0008BE72
+		// Token: 0x17000307 RID: 775
+		// (get) Token: 0x06001941 RID: 6465 RVA: 0x0008E3AA File Offset: 0x0008C5AA
+		// (set) Token: 0x06001942 RID: 6466 RVA: 0x0008E3B2 File Offset: 0x0008C5B2
 		public List<long> Textures { get; set; }
 
-		// Token: 0x06001926 RID: 6438 RVA: 0x0008DC7B File Offset: 0x0008BE7B
+		// Token: 0x06001943 RID: 6467 RVA: 0x0008E3BB File Offset: 0x0008C5BB
 		public void Clear()
 		{
 			this.BlockRaw.Clear();
@@ -584,7 +584,7 @@ public class DynamicMeshChunkData
 			this.Textures.Clear();
 		}
 
-		// Token: 0x06001927 RID: 6439 RVA: 0x0008DC9E File Offset: 0x0008BE9E
+		// Token: 0x06001944 RID: 6468 RVA: 0x0008E3DE File Offset: 0x0008C5DE
 		public void SetData(uint blockraw, sbyte density, long texture)
 		{
 			this.BlockRaw.Add(blockraw);
@@ -596,7 +596,7 @@ public class DynamicMeshChunkData
 			this.Textures.Add(texture);
 		}
 
-		// Token: 0x06001928 RID: 6440 RVA: 0x0008DCC8 File Offset: 0x0008BEC8
+		// Token: 0x06001945 RID: 6469 RVA: 0x0008E408 File Offset: 0x0008C608
 		public void Copy(DynamicMeshChunkData.ChunkNeighbourData other)
 		{
 			this.BlockRaw.Clear();
@@ -607,7 +607,7 @@ public class DynamicMeshChunkData
 			this.Textures.AddRange(other.Textures);
 		}
 
-		// Token: 0x06001929 RID: 6441 RVA: 0x0008DD2C File Offset: 0x0008BF2C
+		// Token: 0x06001946 RID: 6470 RVA: 0x0008E46C File Offset: 0x0008C66C
 		public void Write(BinaryWriter writer)
 		{
 			writer.Write(this.BlockRaw.Count);
@@ -627,7 +627,7 @@ public class DynamicMeshChunkData
 			}
 		}
 
-		// Token: 0x0600192A RID: 6442 RVA: 0x0008DE3C File Offset: 0x0008C03C
+		// Token: 0x06001947 RID: 6471 RVA: 0x0008E57C File Offset: 0x0008C77C
 		public void Read(PooledBinaryReader reader)
 		{
 			int num = reader.ReadInt32();
@@ -647,7 +647,7 @@ public class DynamicMeshChunkData
 			}
 		}
 
-		// Token: 0x0600192B RID: 6443 RVA: 0x0008DEB5 File Offset: 0x0008C0B5
+		// Token: 0x06001948 RID: 6472 RVA: 0x0008E5F5 File Offset: 0x0008C7F5
 		public static DynamicMeshChunkData.ChunkNeighbourData Create()
 		{
 			return new DynamicMeshChunkData.ChunkNeighbourData
@@ -658,7 +658,7 @@ public class DynamicMeshChunkData
 			};
 		}
 
-		// Token: 0x0600192C RID: 6444 RVA: 0x0008DEDD File Offset: 0x0008C0DD
+		// Token: 0x06001949 RID: 6473 RVA: 0x0008E61D File Offset: 0x0008C81D
 		public static DynamicMeshChunkData.ChunkNeighbourData CreateMax()
 		{
 			return new DynamicMeshChunkData.ChunkNeighbourData
@@ -669,7 +669,7 @@ public class DynamicMeshChunkData
 			};
 		}
 
-		// Token: 0x0600192D RID: 6445 RVA: 0x0008DF14 File Offset: 0x0008C114
+		// Token: 0x0600194A RID: 6474 RVA: 0x0008E654 File Offset: 0x0008C854
 		public static DynamicMeshChunkData.ChunkNeighbourData CreateCorner()
 		{
 			return new DynamicMeshChunkData.ChunkNeighbourData

@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x0200138A RID: 5002
+// Token: 0x020013A5 RID: 5029
 public class BlendCycleTimer
 {
-	// Token: 0x06009D9A RID: 40346 RVA: 0x003B801F File Offset: 0x003B621F
+	// Token: 0x06009E97 RID: 40599 RVA: 0x003BD363 File Offset: 0x003BB563
 	public BlendCycleTimer(float inTime, float holdTime, float outTime)
 	{
 		this.m_inTime = inTime;
@@ -13,7 +13,7 @@ public class BlendCycleTimer
 		this.m_dir = BlendCycleTimer.Dir.Done;
 	}
 
-	// Token: 0x06009D9B RID: 40347 RVA: 0x003B8060 File Offset: 0x003B6260
+	// Token: 0x06009E98 RID: 40600 RVA: 0x003BD3A4 File Offset: 0x003BB5A4
 	public void Tick(float dt)
 	{
 		this.m_blendTimer.Tick(dt);
@@ -55,7 +55,7 @@ public class BlendCycleTimer
 		}
 	}
 
-	// Token: 0x06009D9C RID: 40348 RVA: 0x003B813E File Offset: 0x003B633E
+	// Token: 0x06009E99 RID: 40601 RVA: 0x003BD482 File Offset: 0x003BB682
 	public void FadeIn()
 	{
 		this.m_dir = BlendCycleTimer.Dir.In;
@@ -63,7 +63,7 @@ public class BlendCycleTimer
 		this.m_blendTimer.BlendTo(1f, this.m_inTime);
 	}
 
-	// Token: 0x06009D9D RID: 40349 RVA: 0x003B8170 File Offset: 0x003B6370
+	// Token: 0x06009E9A RID: 40602 RVA: 0x003BD4B4 File Offset: 0x003BB6B4
 	public void FadeOut()
 	{
 		this.m_dir = BlendCycleTimer.Dir.Out;
@@ -71,7 +71,7 @@ public class BlendCycleTimer
 		this.m_blendTimer.BlendTo(0f, this.m_outTime);
 	}
 
-	// Token: 0x06009D9E RID: 40350 RVA: 0x003B81A8 File Offset: 0x003B63A8
+	// Token: 0x06009E9B RID: 40603 RVA: 0x003BD4EC File Offset: 0x003BB6EC
 	public void Restart()
 	{
 		this.m_time = 0f;
@@ -80,8 +80,8 @@ public class BlendCycleTimer
 		this.m_blendTimer.BlendTo(1f, this.m_inTime);
 	}
 
-	// Token: 0x1700128B RID: 4747
-	// (get) Token: 0x06009D9F RID: 40351 RVA: 0x003B81E7 File Offset: 0x003B63E7
+	// Token: 0x170012C4 RID: 4804
+	// (get) Token: 0x06009E9C RID: 40604 RVA: 0x003BD52B File Offset: 0x003BB72B
 	public BlendCycleTimer.Dir Direction
 	{
 		get
@@ -90,8 +90,8 @@ public class BlendCycleTimer
 		}
 	}
 
-	// Token: 0x1700128C RID: 4748
-	// (get) Token: 0x06009DA0 RID: 40352 RVA: 0x003B81EF File Offset: 0x003B63EF
+	// Token: 0x170012C5 RID: 4805
+	// (get) Token: 0x06009E9D RID: 40605 RVA: 0x003BD533 File Offset: 0x003BB733
 	public float Value
 	{
 		get
@@ -100,40 +100,40 @@ public class BlendCycleTimer
 		}
 	}
 
-	// Token: 0x04007749 RID: 30537
+	// Token: 0x04007822 RID: 30754
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlendTimer m_blendTimer = new BlendTimer(0f);
 
-	// Token: 0x0400774A RID: 30538
+	// Token: 0x04007823 RID: 30755
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float m_inTime;
 
-	// Token: 0x0400774B RID: 30539
+	// Token: 0x04007824 RID: 30756
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float m_outTime;
 
-	// Token: 0x0400774C RID: 30540
+	// Token: 0x04007825 RID: 30757
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float m_holdTime;
 
-	// Token: 0x0400774D RID: 30541
+	// Token: 0x04007826 RID: 30758
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float m_time;
 
-	// Token: 0x0400774E RID: 30542
+	// Token: 0x04007827 RID: 30759
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlendCycleTimer.Dir m_dir;
 
-	// Token: 0x0200138B RID: 5003
+	// Token: 0x020013A6 RID: 5030
 	public enum Dir
 	{
-		// Token: 0x04007750 RID: 30544
+		// Token: 0x04007829 RID: 30761
 		In,
-		// Token: 0x04007751 RID: 30545
+		// Token: 0x0400782A RID: 30762
 		Hold,
-		// Token: 0x04007752 RID: 30546
+		// Token: 0x0400782B RID: 30763
 		Out,
-		// Token: 0x04007753 RID: 30547
+		// Token: 0x0400782C RID: 30764
 		Done
 	}
 }

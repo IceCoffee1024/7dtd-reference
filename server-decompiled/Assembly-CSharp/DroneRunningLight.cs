@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020003DF RID: 991
+// Token: 0x020003E3 RID: 995
 public class DroneRunningLight : MonoBehaviour
 {
-	// Token: 0x06001E17 RID: 7703 RVA: 0x000B7259 File Offset: 0x000B5459
+	// Token: 0x06001E34 RID: 7732 RVA: 0x000B799D File Offset: 0x000B5B9D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
@@ -16,7 +16,7 @@ public class DroneRunningLight : MonoBehaviour
 		this.setLightsActive(true);
 	}
 
-	// Token: 0x06001E18 RID: 7704 RVA: 0x000B7285 File Offset: 0x000B5485
+	// Token: 0x06001E35 RID: 7733 RVA: 0x000B79C9 File Offset: 0x000B5BC9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void _initLights()
 	{
@@ -26,7 +26,7 @@ public class DroneRunningLight : MonoBehaviour
 		this.setLightColor(this.LightColor);
 	}
 
-	// Token: 0x06001E19 RID: 7705 RVA: 0x000B72BC File Offset: 0x000B54BC
+	// Token: 0x06001E36 RID: 7734 RVA: 0x000B7A00 File Offset: 0x000B5C00
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setLightsActive(bool value)
 	{
@@ -45,7 +45,7 @@ public class DroneRunningLight : MonoBehaviour
 		this.lightsActive = value;
 	}
 
-	// Token: 0x06001E1A RID: 7706 RVA: 0x000B7328 File Offset: 0x000B5528
+	// Token: 0x06001E37 RID: 7735 RVA: 0x000B7A6C File Offset: 0x000B5C6C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setLightColor(Color color)
 	{
@@ -53,7 +53,7 @@ public class DroneRunningLight : MonoBehaviour
 		this.particles.main.startColor = color;
 	}
 
-	// Token: 0x06001E1B RID: 7707 RVA: 0x000B735C File Offset: 0x000B555C
+	// Token: 0x06001E38 RID: 7736 RVA: 0x000B7AA0 File Offset: 0x000B5CA0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -105,7 +105,7 @@ public class DroneRunningLight : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001E1C RID: 7708 RVA: 0x000B74EE File Offset: 0x000B56EE
+	// Token: 0x06001E39 RID: 7737 RVA: 0x000B7C32 File Offset: 0x000B5E32
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator blink()
 	{
@@ -129,55 +129,55 @@ public class DroneRunningLight : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x0400140E RID: 5134
+	// Token: 0x04001423 RID: 5155
 	public float MinLightIntensity;
 
-	// Token: 0x0400140F RID: 5135
+	// Token: 0x04001424 RID: 5156
 	public float MaxLightIntensity;
 
-	// Token: 0x04001410 RID: 5136
+	// Token: 0x04001425 RID: 5157
 	public float LightBlinkInterval;
 
-	// Token: 0x04001411 RID: 5137
+	// Token: 0x04001426 RID: 5158
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Light runningLight;
 
-	// Token: 0x04001412 RID: 5138
+	// Token: 0x04001427 RID: 5159
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float startIntensity;
 
-	// Token: 0x04001413 RID: 5139
+	// Token: 0x04001428 RID: 5160
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public ParticleSystem particles;
 
-	// Token: 0x04001414 RID: 5140
+	// Token: 0x04001429 RID: 5161
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float lightBlinkTimer;
 
-	// Token: 0x04001415 RID: 5141
+	// Token: 0x0400142A RID: 5162
 	public Color LightColor;
 
-	// Token: 0x04001416 RID: 5142
+	// Token: 0x0400142B RID: 5163
 	public List<Light> connectedLights;
 
-	// Token: 0x04001417 RID: 5143
+	// Token: 0x0400142C RID: 5164
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool lightsActive;
 
-	// Token: 0x04001418 RID: 5144
+	// Token: 0x0400142D RID: 5165
 	public bool dayTimeVisibility;
 
-	// Token: 0x04001419 RID: 5145
+	// Token: 0x0400142E RID: 5166
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float transitionTime = 0.2f;
 
-	// Token: 0x0400141A RID: 5146
+	// Token: 0x0400142F RID: 5167
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float transitionTimer;

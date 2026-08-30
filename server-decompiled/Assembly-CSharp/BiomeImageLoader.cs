@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine;
 
-// Token: 0x02000C2B RID: 3115
+// Token: 0x02000C3D RID: 3133
 public struct BiomeImageLoader
 {
-	// Token: 0x06005EDC RID: 24284 RVA: 0x00258C50 File Offset: 0x00256E50
+	// Token: 0x06005F66 RID: 24422 RVA: 0x0025BB00 File Offset: 0x00259D00
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static uint BiomeValueFromARGB32(BiomeImageLoader.BiomePixel _argb)
 	{
@@ -17,7 +17,7 @@ public struct BiomeImageLoader
 		return num | num2 | c;
 	}
 
-	// Token: 0x06005EDD RID: 24285 RVA: 0x00258C7C File Offset: 0x00256E7C
+	// Token: 0x06005F67 RID: 24423 RVA: 0x0025BB2C File Offset: 0x00259D2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static uint BiomeValueFromRGBA32(BiomeImageLoader.BiomePixel _rgba)
 	{
@@ -27,7 +27,7 @@ public struct BiomeImageLoader
 		return num | num2 | c;
 	}
 
-	// Token: 0x06005EDE RID: 24286 RVA: 0x00258CA8 File Offset: 0x00256EA8
+	// Token: 0x06005F68 RID: 24424 RVA: 0x0025BB58 File Offset: 0x00259D58
 	public BiomeImageLoader(Texture2D _biomesTex, Dictionary<uint, BiomeDefinition> _biomeDefinitions)
 	{
 		if (_biomesTex.format == TextureFormat.ARGB32)
@@ -51,7 +51,7 @@ public struct BiomeImageLoader
 		this.biomeId = byte.MaxValue;
 	}
 
-	// Token: 0x06005EDF RID: 24287 RVA: 0x00258D49 File Offset: 0x00256F49
+	// Token: 0x06005F69 RID: 24425 RVA: 0x0025BBF9 File Offset: 0x00259DF9
 	public IEnumerator Load()
 	{
 		this.isError = false;
@@ -96,7 +96,7 @@ public struct BiomeImageLoader
 		yield break;
 	}
 
-	// Token: 0x06005EE0 RID: 24288 RVA: 0x00258D60 File Offset: 0x00256F60
+	// Token: 0x06005F6A RID: 24426 RVA: 0x0025BC10 File Offset: 0x00259E10
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte GetBiomeId(uint iBiomeValue)
 	{
@@ -112,7 +112,7 @@ public struct BiomeImageLoader
 		return this.biomeId;
 	}
 
-	// Token: 0x06005EE1 RID: 24289 RVA: 0x00258DA0 File Offset: 0x00256FA0
+	// Token: 0x06005F6B RID: 24427 RVA: 0x0025BC50 File Offset: 0x00259E50
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color32 BiomeIdToColor32(uint iBiomeValue)
 	{
@@ -122,60 +122,60 @@ public struct BiomeImageLoader
 		return new Color32(b, b2, b3, 0);
 	}
 
-	// Token: 0x04004A35 RID: 18997
+	// Token: 0x04004AD2 RID: 19154
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static BiomeImageLoader.PixelToBiomeValue fromARGB32 = new BiomeImageLoader.PixelToBiomeValue(BiomeImageLoader.BiomeValueFromARGB32);
 
-	// Token: 0x04004A36 RID: 18998
+	// Token: 0x04004AD3 RID: 19155
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static BiomeImageLoader.PixelToBiomeValue fromRGBA32 = new BiomeImageLoader.PixelToBiomeValue(BiomeImageLoader.BiomeValueFromRGBA32);
 
-	// Token: 0x04004A37 RID: 18999
+	// Token: 0x04004AD4 RID: 19156
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BiomeImageLoader.PixelToBiomeValue toBiomeValue;
 
-	// Token: 0x04004A38 RID: 19000
+	// Token: 0x04004AD5 RID: 19157
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Texture2D biomesTex;
 
-	// Token: 0x04004A39 RID: 19001
+	// Token: 0x04004AD6 RID: 19158
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<uint, BiomeDefinition> biomeDefinitions;
 
-	// Token: 0x04004A3A RID: 19002
+	// Token: 0x04004AD7 RID: 19159
 	public GridCompressedData<byte> biomeMap;
 
-	// Token: 0x04004A3B RID: 19003
+	// Token: 0x04004AD8 RID: 19160
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isError;
 
-	// Token: 0x04004A3C RID: 19004
+	// Token: 0x04004AD9 RID: 19161
 	[PublicizedFrom(EAccessModifier.Private)]
 	public uint lastBiomeValue;
 
-	// Token: 0x04004A3D RID: 19005
+	// Token: 0x04004ADA RID: 19162
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte biomeId;
 
-	// Token: 0x02000C2C RID: 3116
+	// Token: 0x02000C3E RID: 3134
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct BiomePixel
 	{
-		// Token: 0x04004A3E RID: 19006
+		// Token: 0x04004ADB RID: 19163
 		public byte c1;
 
-		// Token: 0x04004A3F RID: 19007
+		// Token: 0x04004ADC RID: 19164
 		public byte c2;
 
-		// Token: 0x04004A40 RID: 19008
+		// Token: 0x04004ADD RID: 19165
 		public byte c3;
 
-		// Token: 0x04004A41 RID: 19009
+		// Token: 0x04004ADE RID: 19166
 		public byte c4;
 	}
 
-	// Token: 0x02000C2D RID: 3117
-	// (Invoke) Token: 0x06005EE4 RID: 24292
+	// Token: 0x02000C3F RID: 3135
+	// (Invoke) Token: 0x06005F6E RID: 24430
 	[PublicizedFrom(EAccessModifier.Private)]
 	public delegate uint PixelToBiomeValue(BiomeImageLoader.BiomePixel pix);
 }

@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020002F5 RID: 757
+// Token: 0x020002F9 RID: 761
 [Preserve]
 public class DialogRequirementQuestStatus : BaseDialogRequirement
 {
-	// Token: 0x17000273 RID: 627
-	// (get) Token: 0x060015A3 RID: 5539 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000274 RID: 628
+	// (get) Token: 0x060015B6 RID: 5558 RVA: 0x00020021 File Offset: 0x0001E221
 	public override BaseDialogRequirement.RequirementTypes RequirementType
 	{
 		get
@@ -15,13 +15,13 @@ public class DialogRequirementQuestStatus : BaseDialogRequirement
 		}
 	}
 
-	// Token: 0x060015A4 RID: 5540 RVA: 0x00031E8B File Offset: 0x0003008B
+	// Token: 0x060015B7 RID: 5559 RVA: 0x00032147 File Offset: 0x00030347
 	public override string GetRequiredDescription(EntityPlayer player)
 	{
 		return "";
 	}
 
-	// Token: 0x060015A5 RID: 5541 RVA: 0x00080D7C File Offset: 0x0007EF7C
+	// Token: 0x060015B8 RID: 5560 RVA: 0x00081430 File Offset: 0x0007F630
 	public override bool CheckRequirement(EntityPlayer player, EntityNPC talkingTo)
 	{
 		DialogRequirementQuestStatus.QuestStatuses questStatuses = EnumUtils.Parse<DialogRequirementQuestStatus.QuestStatuses>(base.Value, false);
@@ -138,21 +138,21 @@ public class DialogRequirementQuestStatus : BaseDialogRequirement
 		return false;
 	}
 
-	// Token: 0x020002F6 RID: 758
+	// Token: 0x020002FA RID: 762
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum QuestStatuses
 	{
-		// Token: 0x04000E87 RID: 3719
+		// Token: 0x04000E98 RID: 3736
 		NotStarted,
-		// Token: 0x04000E88 RID: 3720
+		// Token: 0x04000E99 RID: 3737
 		InProgress,
-		// Token: 0x04000E89 RID: 3721
+		// Token: 0x04000E9A RID: 3738
 		TurnInReady,
-		// Token: 0x04000E8A RID: 3722
+		// Token: 0x04000E9B RID: 3739
 		Completed,
-		// Token: 0x04000E8B RID: 3723
+		// Token: 0x04000E9C RID: 3740
 		CanReceive,
-		// Token: 0x04000E8C RID: 3724
+		// Token: 0x04000E9D RID: 3741
 		CannotReceive
 	}
 }

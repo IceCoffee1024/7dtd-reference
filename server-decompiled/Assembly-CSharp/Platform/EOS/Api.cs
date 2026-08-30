@@ -9,10 +9,10 @@ using UnityEngine;
 
 namespace Platform.EOS
 {
-	// Token: 0x02001CBD RID: 7357
+	// Token: 0x02001CE4 RID: 7396
 	public class Api : IPlatformApi
 	{
-		// Token: 0x0600D9F4 RID: 55796 RVA: 0x004E0C18 File Offset: 0x004DEE18
+		// Token: 0x0600DB8F RID: 56207 RVA: 0x004E722C File Offset: 0x004E542C
 		[PublicizedFrom(EAccessModifier.Private)]
 		static Api()
 		{
@@ -28,13 +28,13 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600D9F5 RID: 55797 RVA: 0x004E0C53 File Offset: 0x004DEE53
+		// Token: 0x0600DB90 RID: 56208 RVA: 0x004E7267 File Offset: 0x004E5467
 		public void Init(IPlatform _owner)
 		{
 			this.owner = _owner;
 		}
 
-		// Token: 0x0600D9F6 RID: 55798 RVA: 0x004E0C5C File Offset: 0x004DEE5C
+		// Token: 0x0600DB91 RID: 56209 RVA: 0x004E7270 File Offset: 0x004E5470
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnApplicationStateChanged(ApplicationState _applicationState)
 		{
@@ -62,18 +62,18 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x17001AF5 RID: 6901
-		// (get) Token: 0x0600D9F7 RID: 55799 RVA: 0x004E0CD8 File Offset: 0x004DEED8
-		// (set) Token: 0x0600D9F8 RID: 55800 RVA: 0x004E0CE0 File Offset: 0x004DEEE0
+		// Token: 0x17001B67 RID: 7015
+		// (get) Token: 0x0600DB92 RID: 56210 RVA: 0x004E72EC File Offset: 0x004E54EC
+		// (set) Token: 0x0600DB93 RID: 56211 RVA: 0x004E72F4 File Offset: 0x004E54F4
 		public EApiStatus ClientApiStatus
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		} = EApiStatus.Uninitialized;
 
-		// Token: 0x1400013F RID: 319
-		// (add) Token: 0x0600D9F9 RID: 55801 RVA: 0x004E0CEC File Offset: 0x004DEEEC
-		// (remove) Token: 0x0600D9FA RID: 55802 RVA: 0x004E0D48 File Offset: 0x004DEF48
+		// Token: 0x14000140 RID: 320
+		// (add) Token: 0x0600DB94 RID: 56212 RVA: 0x004E7300 File Offset: 0x004E5500
+		// (remove) Token: 0x0600DB95 RID: 56213 RVA: 0x004E735C File Offset: 0x004E555C
 		public event Action ClientApiInitialized
 		{
 			add
@@ -96,7 +96,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600D9FB RID: 55803 RVA: 0x004E0D94 File Offset: 0x004DEF94
+		// Token: 0x0600DB96 RID: 56214 RVA: 0x004E73A8 File Offset: 0x004E55A8
 		public bool InitClientApis()
 		{
 			if (this.ClientApiStatus == EApiStatus.Ok)
@@ -108,18 +108,18 @@ namespace Platform.EOS
 			return this.ClientApiStatus == EApiStatus.Ok;
 		}
 
-		// Token: 0x0600D9FC RID: 55804 RVA: 0x004E0DD5 File Offset: 0x004DEFD5
+		// Token: 0x0600DB97 RID: 56215 RVA: 0x004E73E9 File Offset: 0x004E55E9
 		public bool InitServerApis()
 		{
 			return this.InitClientApis();
 		}
 
-		// Token: 0x0600D9FD RID: 55805 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DB98 RID: 56216 RVA: 0x000027FC File Offset: 0x000009FC
 		public void ServerApiLoaded()
 		{
 		}
 
-		// Token: 0x0600D9FE RID: 55806 RVA: 0x004E0DE0 File Offset: 0x004DEFE0
+		// Token: 0x0600DB99 RID: 56217 RVA: 0x004E73F4 File Offset: 0x004E55F4
 		public void Update()
 		{
 			if (this.ClientApiStatus != EApiStatus.Ok)
@@ -139,7 +139,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600D9FF RID: 55807 RVA: 0x004E0E6C File Offset: 0x004DF06C
+		// Token: 0x0600DB9A RID: 56218 RVA: 0x004E7480 File Offset: 0x004E5680
 		public void Destroy()
 		{
 			if (this.ClientApiStatus != EApiStatus.Ok)
@@ -160,13 +160,13 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DA00 RID: 55808 RVA: 0x00040D24 File Offset: 0x0003EF24
+		// Token: 0x0600DB9B RID: 56219 RVA: 0x00040F84 File Offset: 0x0003F184
 		public float GetScreenBoundsValueFromSystem()
 		{
 			return 1f;
 		}
 
-		// Token: 0x0600DA01 RID: 55809 RVA: 0x004E0EF8 File Offset: 0x004DF0F8
+		// Token: 0x0600DB9C RID: 56220 RVA: 0x004E750C File Offset: 0x004E570C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void initPlatform(EosCreds _creds, bool _serverMode)
 		{
@@ -278,7 +278,7 @@ namespace Platform.EOS
 			action();
 		}
 
-		// Token: 0x0600DA02 RID: 55810 RVA: 0x004E1220 File Offset: 0x004DF420
+		// Token: 0x0600DB9D RID: 56221 RVA: 0x004E7834 File Offset: 0x004E5A34
 		[PublicizedFrom(EAccessModifier.Private)]
 		public PlatformInterface createPlatformInterface(EosCreds _creds, bool _serverMode)
 		{
@@ -317,7 +317,7 @@ namespace Platform.EOS
 			return platformInterface;
 		}
 
-		// Token: 0x0600DA03 RID: 55811 RVA: 0x004E1394 File Offset: 0x004DF594
+		// Token: 0x0600DB9E RID: 56222 RVA: 0x004E79A8 File Offset: 0x004E5BA8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void logCallback(ref LogMessage _message)
 		{
@@ -380,58 +380,58 @@ namespace Platform.EOS
 			throw new ArgumentOutOfRangeException();
 		}
 
-		// Token: 0x0400A4B6 RID: 42166
+		// Token: 0x0400A5E9 RID: 42473
 		public static readonly Api.EDebugLevel DebugLevel = Api.EDebugLevel.Off;
 
-		// Token: 0x0400A4B7 RID: 42167
+		// Token: 0x0400A5EA RID: 42474
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform owner;
 
-		// Token: 0x0400A4B8 RID: 42168
+		// Token: 0x0400A5EB RID: 42475
 		public PlatformInterface PlatformInterface;
 
-		// Token: 0x0400A4B9 RID: 42169
+		// Token: 0x0400A5EC RID: 42476
 		public ConnectInterface ConnectInterface;
 
-		// Token: 0x0400A4BA RID: 42170
+		// Token: 0x0400A5ED RID: 42477
 		public SanctionsInterface SanctionsInterface;
 
-		// Token: 0x0400A4BB RID: 42171
+		// Token: 0x0400A5EE RID: 42478
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly MicroStopwatch tickDurationStopwatch = new MicroStopwatch(false);
 
-		// Token: 0x0400A4BC RID: 42172
+		// Token: 0x0400A5EF RID: 42479
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public readonly SanctionsCheck eosSanctionsCheck = new SanctionsCheck();
 
-		// Token: 0x0400A4BE RID: 42174
+		// Token: 0x0400A5F1 RID: 42481
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Action clientApiInitialized;
 
-		// Token: 0x0400A4BF RID: 42175
+		// Token: 0x0400A5F2 RID: 42482
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int httpWarningLimit = 50;
 
-		// Token: 0x0400A4C0 RID: 42176
+		// Token: 0x0400A5F3 RID: 42483
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float httpWarningTimeout = 600f;
 
-		// Token: 0x0400A4C1 RID: 42177
+		// Token: 0x0400A5F4 RID: 42484
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int httpWarningCount;
 
-		// Token: 0x0400A4C2 RID: 42178
+		// Token: 0x0400A5F5 RID: 42485
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float httpNextTime;
 
-		// Token: 0x02001CBE RID: 7358
+		// Token: 0x02001CE5 RID: 7397
 		public enum EDebugLevel
 		{
-			// Token: 0x0400A4C4 RID: 42180
+			// Token: 0x0400A5F7 RID: 42487
 			Off,
-			// Token: 0x0400A4C5 RID: 42181
+			// Token: 0x0400A5F8 RID: 42488
 			Normal,
-			// Token: 0x0400A4C6 RID: 42182
+			// Token: 0x0400A5F9 RID: 42489
 			Verbose
 		}
 	}

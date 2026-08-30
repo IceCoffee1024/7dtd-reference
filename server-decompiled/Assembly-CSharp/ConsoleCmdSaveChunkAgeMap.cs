@@ -2,32 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000277 RID: 631
+// Token: 0x0200027B RID: 635
 [Preserve]
 public class ConsoleCmdSaveChunkAgeMap : ConsoleCmdAbstract
 {
-	// Token: 0x060012AF RID: 4783 RVA: 0x00074505 File Offset: 0x00072705
+	// Token: 0x060012C1 RID: 4801 RVA: 0x00074B61 File Offset: 0x00072D61
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "agemap" };
 	}
 
-	// Token: 0x060012B0 RID: 4784 RVA: 0x00074515 File Offset: 0x00072715
+	// Token: 0x060012C2 RID: 4802 RVA: 0x00074B71 File Offset: 0x00072D71
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Output debug map for chunk age/protection/save status.";
 	}
 
-	// Token: 0x060012B1 RID: 4785 RVA: 0x0007451C File Offset: 0x0007271C
+	// Token: 0x060012C3 RID: 4803 RVA: 0x00074B78 File Offset: 0x00072D78
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "\"agemap\" or \"agemap [x]\", where [x] is a float value specifying the maximum age to normalise results to in in-game days. Defaults to EnumGamePrefs.MaxChunkAge when not specified.\n\tOutputs a TGA texture representing a map of all chunks with chunk age, protection status and save status data split across each colour channel:\n\tR [scalar]: Effective chunk age proportionate to maximum age, taking POI-based grouping rules into account. More red = older, closer to expiry.\n\tG [scalar]: Raw chunk age proportionate to maximum age, ignoring POI-based grouping. Can be compared with the red channel to asses the impacts of grouping.\n\tB [scalar]: Protection level. More blue = more protected.\n\tA [binary]: Saved status. Opaque = saved, transparent = not saved.";
 	}
 
-	// Token: 0x060012B2 RID: 4786 RVA: 0x00074524 File Offset: 0x00072724
+	// Token: 0x060012C4 RID: 4804 RVA: 0x00074B80 File Offset: 0x00072D80
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		ChunkProviderGenerateWorld chunkProviderGenerateWorld = GameManager.Instance.World.ChunkCache.ChunkProvider as ChunkProviderGenerateWorld;

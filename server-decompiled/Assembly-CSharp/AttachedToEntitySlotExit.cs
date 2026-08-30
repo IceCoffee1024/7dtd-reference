@@ -2,13 +2,13 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020003EF RID: 1007
+// Token: 0x020003F3 RID: 1011
 [Preserve]
 public struct AttachedToEntitySlotExit
 {
-	// Token: 0x0400146C RID: 5228
+	// Token: 0x04001481 RID: 5249
 	public Vector3 position;
 
-	// Token: 0x0400146D RID: 5229
+	// Token: 0x04001482 RID: 5250
 	public Vector3 rotation;
 }

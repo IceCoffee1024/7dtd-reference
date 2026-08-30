@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using UniLinq;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F7F RID: 3967
+// Token: 0x02000F98 RID: 3992
 [Preserve]
 public class XUiC_MaterialStackGrid : XUiController
 {
-	// Token: 0x17000E81 RID: 3713
-	// (get) Token: 0x06007D1E RID: 32030 RVA: 0x002F7D12 File Offset: 0x002F5F12
-	// (set) Token: 0x06007D1F RID: 32031 RVA: 0x002F7D1A File Offset: 0x002F5F1A
+	// Token: 0x17000EBA RID: 3770
+	// (get) Token: 0x06007E10 RID: 32272 RVA: 0x002FC4E6 File Offset: 0x002FA6E6
+	// (set) Token: 0x06007E11 RID: 32273 RVA: 0x002FC4EE File Offset: 0x002FA6EE
 	public int Length
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000E82 RID: 3714
-	// (get) Token: 0x06007D20 RID: 32032 RVA: 0x002F7D23 File Offset: 0x002F5F23
-	// (set) Token: 0x06007D21 RID: 32033 RVA: 0x002F7D2B File Offset: 0x002F5F2B
+	// Token: 0x17000EBB RID: 3771
+	// (get) Token: 0x06007E12 RID: 32274 RVA: 0x002FC4F7 File Offset: 0x002FA6F7
+	// (set) Token: 0x06007E13 RID: 32275 RVA: 0x002FC4FF File Offset: 0x002FA6FF
 	public int Page
 	{
 		get
@@ -32,7 +32,7 @@ public class XUiC_MaterialStackGrid : XUiController
 		}
 	}
 
-	// Token: 0x06007D22 RID: 32034 RVA: 0x002F7D3C File Offset: 0x002F5F3C
+	// Token: 0x06007E14 RID: 32276 RVA: 0x002FC510 File Offset: 0x002FA710
 	public override void Init()
 	{
 		base.Init();
@@ -42,7 +42,7 @@ public class XUiC_MaterialStackGrid : XUiController
 		this.bAwakeCalled = true;
 	}
 
-	// Token: 0x06007D23 RID: 32035 RVA: 0x002F7D74 File Offset: 0x002F5F74
+	// Token: 0x06007E15 RID: 32277 RVA: 0x002FC548 File Offset: 0x002FA748
 	public void SetMaterials(List<BlockTextureData> materialIndexList, int newSelectedMaterial = -1)
 	{
 		bool isCreative = GameStats.GetBool(EnumGameStats.IsCreativeMenuEnabled) && GamePrefs.GetBool(EnumGamePrefs.CreativeMenuEnabled);
@@ -101,7 +101,7 @@ public class XUiC_MaterialStackGrid : XUiController
 		}
 	}
 
-	// Token: 0x06007D24 RID: 32036 RVA: 0x002F7F7E File Offset: 0x002F617E
+	// Token: 0x06007E16 RID: 32278 RVA: 0x002FC752 File Offset: 0x002FA952
 	public override void OnOpen()
 	{
 		if (base.ViewComponent != null && !base.ViewComponent.IsVisible)
@@ -110,7 +110,7 @@ public class XUiC_MaterialStackGrid : XUiController
 		}
 	}
 
-	// Token: 0x06007D25 RID: 32037 RVA: 0x002E5E28 File Offset: 0x002E4028
+	// Token: 0x06007E17 RID: 32279 RVA: 0x002E9CB4 File Offset: 0x002E7EB4
 	public override void OnClose()
 	{
 		if (base.ViewComponent != null && base.ViewComponent.IsVisible)
@@ -119,7 +119,7 @@ public class XUiC_MaterialStackGrid : XUiController
 		}
 	}
 
-	// Token: 0x06007D26 RID: 32038 RVA: 0x002F7FA4 File Offset: 0x002F61A4
+	// Token: 0x06007E18 RID: 32280 RVA: 0x002FC778 File Offset: 0x002FA978
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -139,35 +139,35 @@ public class XUiC_MaterialStackGrid : XUiController
 		}
 	}
 
-	// Token: 0x04005CA4 RID: 23716
+	// Token: 0x04005D6B RID: 23915
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int curPageIdx;
 
-	// Token: 0x04005CA5 RID: 23717
+	// Token: 0x04005D6C RID: 23916
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int numPages;
 
-	// Token: 0x04005CA6 RID: 23718
+	// Token: 0x04005D6D RID: 23917
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int page;
 
-	// Token: 0x04005CA8 RID: 23720
+	// Token: 0x04005D6F RID: 23919
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiController[] materialControllers;
 
-	// Token: 0x04005CA9 RID: 23721
+	// Token: 0x04005D70 RID: 23920
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int[] materialIndices;
 
-	// Token: 0x04005CAA RID: 23722
+	// Token: 0x04005D71 RID: 23921
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bAwakeCalled;
 
-	// Token: 0x04005CAB RID: 23723
+	// Token: 0x04005D72 RID: 23922
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockTextureData selectedMaterial;
 
-	// Token: 0x04005CAC RID: 23724
+	// Token: 0x04005D73 RID: 23923
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<BlockTextureData> currentList;
 }

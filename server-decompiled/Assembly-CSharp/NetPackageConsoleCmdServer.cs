@@ -1,31 +1,31 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007B6 RID: 1974
+// Token: 0x020007C1 RID: 1985
 [Preserve]
 public class NetPackageConsoleCmdServer : NetPackage
 {
-	// Token: 0x06003A8F RID: 14991 RVA: 0x0017ADD7 File Offset: 0x00178FD7
+	// Token: 0x06003AEE RID: 15086 RVA: 0x0017D10B File Offset: 0x0017B30B
 	public NetPackageConsoleCmdServer Setup(string _cmd)
 	{
 		this.cmd = _cmd;
 		return this;
 	}
 
-	// Token: 0x06003A90 RID: 14992 RVA: 0x0017ADE1 File Offset: 0x00178FE1
+	// Token: 0x06003AEF RID: 15087 RVA: 0x0017D115 File Offset: 0x0017B315
 	public override void read(PooledBinaryReader _br)
 	{
 		this.cmd = _br.ReadString();
 	}
 
-	// Token: 0x06003A91 RID: 14993 RVA: 0x0017ADEF File Offset: 0x00178FEF
+	// Token: 0x06003AF0 RID: 15088 RVA: 0x0017D123 File Offset: 0x0017B323
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
 		_bw.Write(this.cmd);
 	}
 
-	// Token: 0x06003A92 RID: 14994 RVA: 0x0017AE04 File Offset: 0x00179004
+	// Token: 0x06003AF1 RID: 15089 RVA: 0x0017D138 File Offset: 0x0017B338
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -35,8 +35,8 @@ public class NetPackageConsoleCmdServer : NetPackage
 		SingletonMonoBehaviour<ConnectionManager>.Instance.ServerConsoleCommand(base.Sender, this.cmd);
 	}
 
-	// Token: 0x17000613 RID: 1555
-	// (get) Token: 0x06003A93 RID: 14995 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x1700061E RID: 1566
+	// (get) Token: 0x06003AF2 RID: 15090 RVA: 0x00020021 File Offset: 0x0001E221
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -45,13 +45,13 @@ public class NetPackageConsoleCmdServer : NetPackage
 		}
 	}
 
-	// Token: 0x06003A94 RID: 14996 RVA: 0x00104CB5 File Offset: 0x00102EB5
+	// Token: 0x06003AF3 RID: 15091 RVA: 0x00105CC1 File Offset: 0x00103EC1
 	public override int GetLength()
 	{
 		return 30;
 	}
 
-	// Token: 0x04002F93 RID: 12179
+	// Token: 0x0400300E RID: 12302
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string cmd;
 }

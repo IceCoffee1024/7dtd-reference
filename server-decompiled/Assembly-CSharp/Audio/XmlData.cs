@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace Audio
 {
-	// Token: 0x02001AE9 RID: 6889
+	// Token: 0x02001B10 RID: 6928
 	public class XmlData
 	{
-		// Token: 0x0600CE94 RID: 52884 RVA: 0x004B5D58 File Offset: 0x004B3F58
+		// Token: 0x0600D01D RID: 53277 RVA: 0x004BC14C File Offset: 0x004BA34C
 		public XmlData()
 		{
 			this.soundGroupName = "Invalid";
@@ -35,7 +35,7 @@ namespace Audio
 			this.priority = 99;
 		}
 
-		// Token: 0x0600CE95 RID: 52885 RVA: 0x004B5E5C File Offset: 0x004B405C
+		// Token: 0x0600D01E RID: 53278 RVA: 0x004BC250 File Offset: 0x004BA450
 		public bool CanAddANewVoice()
 		{
 			if (this.maxRepeatRate > 0f)
@@ -70,7 +70,7 @@ namespace Audio
 			return true;
 		}
 
-		// Token: 0x0600CE96 RID: 52886 RVA: 0x004B5F09 File Offset: 0x004B4109
+		// Token: 0x0600D01F RID: 53279 RVA: 0x004BC2FD File Offset: 0x004BA4FD
 		public List<ClipSourceMap> GetClipList()
 		{
 			if (Manager.Instance.bUseAltSounds && this.altAudioClipMap != null)
@@ -84,7 +84,7 @@ namespace Audio
 			return this.audioClipMap;
 		}
 
-		// Token: 0x0600CE97 RID: 52887 RVA: 0x004B5F48 File Offset: 0x004B4148
+		// Token: 0x0600D020 RID: 53280 RVA: 0x004BC33C File Offset: 0x004BA53C
 		public ClipSourceMap GetRandomClip()
 		{
 			List<ClipSourceMap> clipList = this.GetClipList();
@@ -114,7 +114,7 @@ namespace Audio
 			return clipList[num];
 		}
 
-		// Token: 0x0600CE98 RID: 52888 RVA: 0x004B5FE2 File Offset: 0x004B41E2
+		// Token: 0x0600D021 RID: 53281 RVA: 0x004BC3D6 File Offset: 0x004BA5D6
 		public void AddAltClipSourceMap(ClipSourceMap csm)
 		{
 			if (this.altAudioClipMap == null)
@@ -124,103 +124,103 @@ namespace Audio
 			this.altAudioClipMap.Add(csm);
 		}
 
-		// Token: 0x04009D2C RID: 40236
+		// Token: 0x04009E5D RID: 40541
 		public string soundGroupName;
 
-		// Token: 0x04009D2D RID: 40237
+		// Token: 0x04009E5E RID: 40542
 		public int maxVoices;
 
-		// Token: 0x04009D2E RID: 40238
+		// Token: 0x04009E5F RID: 40543
 		public List<ClipSourceMap> audioClipMap;
 
-		// Token: 0x04009D2F RID: 40239
+		// Token: 0x04009E60 RID: 40544
 		public List<ClipSourceMap> altAudioClipMap;
 
-		// Token: 0x04009D30 RID: 40240
+		// Token: 0x04009E61 RID: 40545
 		public List<ClipSourceMap> cleanClipMap;
 
-		// Token: 0x04009D31 RID: 40241
+		// Token: 0x04009E62 RID: 40546
 		public NoiseData noiseData;
 
-		// Token: 0x04009D32 RID: 40242
+		// Token: 0x04009E63 RID: 40547
 		public float localCrouchVolumeScale;
 
-		// Token: 0x04009D33 RID: 40243
+		// Token: 0x04009E64 RID: 40548
 		public float runningVolumeScale;
 
-		// Token: 0x04009D34 RID: 40244
+		// Token: 0x04009E65 RID: 40549
 		public float crouchNoiseScale;
 
-		// Token: 0x04009D35 RID: 40245
+		// Token: 0x04009E66 RID: 40550
 		public float noiseScale;
 
-		// Token: 0x04009D36 RID: 40246
+		// Token: 0x04009E67 RID: 40551
 		public float maxRepeatRate;
 
-		// Token: 0x04009D37 RID: 40247
+		// Token: 0x04009E68 RID: 40552
 		public bool prioritizeNewNodes;
 
-		// Token: 0x04009D38 RID: 40248
+		// Token: 0x04009E69 RID: 40553
 		public bool stopOldestNode;
 
-		// Token: 0x04009D39 RID: 40249
+		// Token: 0x04009E6A RID: 40554
 		public int voicesPlaying;
 
-		// Token: 0x04009D3A RID: 40250
+		// Token: 0x04009E6B RID: 40555
 		public float lastRecordedPlayTime;
 
-		// Token: 0x04009D3B RID: 40251
+		// Token: 0x04009E6C RID: 40556
 		public float lastClipLenght;
 
-		// Token: 0x04009D3C RID: 40252
+		// Token: 0x04009E6D RID: 40557
 		public bool playImmediate;
 
-		// Token: 0x04009D3D RID: 40253
+		// Token: 0x04009E6E RID: 40558
 		public bool sequence;
 
-		// Token: 0x04009D3E RID: 40254
+		// Token: 0x04009E6F RID: 40559
 		public float maxVolume;
 
-		// Token: 0x04009D3F RID: 40255
+		// Token: 0x04009E70 RID: 40560
 		public float lowestPitch;
 
-		// Token: 0x04009D40 RID: 40256
+		// Token: 0x04009E71 RID: 40561
 		public float highestPitch;
 
-		// Token: 0x04009D41 RID: 40257
+		// Token: 0x04009E72 RID: 40562
 		public float distantFadeStart;
 
-		// Token: 0x04009D42 RID: 40258
+		// Token: 0x04009E73 RID: 40563
 		public float distantFadeEnd;
 
-		// Token: 0x04009D43 RID: 40259
+		// Token: 0x04009E74 RID: 40564
 		public int maxVoicesPerEntity;
 
-		// Token: 0x04009D44 RID: 40260
+		// Token: 0x04009E75 RID: 40565
 		public bool hasProfanity;
 
-		// Token: 0x04009D45 RID: 40261
+		// Token: 0x04009E76 RID: 40566
 		public XmlData.Channel channel;
 
-		// Token: 0x04009D46 RID: 40262
+		// Token: 0x04009E77 RID: 40567
 		public int priority;
 
-		// Token: 0x04009D47 RID: 40263
+		// Token: 0x04009E78 RID: 40568
 		public bool vibratesController = true;
 
-		// Token: 0x04009D48 RID: 40264
+		// Token: 0x04009E79 RID: 40569
 		public float vibrationStrengthMultiplier = 1f;
 
-		// Token: 0x04009D49 RID: 40265
+		// Token: 0x04009E7A RID: 40570
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int randomLastIndex;
 
-		// Token: 0x02001AEA RID: 6890
+		// Token: 0x02001B11 RID: 6929
 		public enum Channel
 		{
-			// Token: 0x04009D4B RID: 40267
+			// Token: 0x04009E7C RID: 40572
 			Mouth,
-			// Token: 0x04009D4C RID: 40268
+			// Token: 0x04009E7D RID: 40573
 			Environment
 		}
 	}

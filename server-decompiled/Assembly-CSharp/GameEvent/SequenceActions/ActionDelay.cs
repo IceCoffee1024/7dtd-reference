@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001950 RID: 6480
+	// Token: 0x02001976 RID: 6518
 	[Preserve]
 	public class ActionDelay : BaseAction
 	{
-		// Token: 0x0600C6CB RID: 50891 RVA: 0x0049128C File Offset: 0x0048F48C
+		// Token: 0x0600C852 RID: 51282 RVA: 0x004975D8 File Offset: 0x004957D8
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			if (this.currentTime == -999f)
@@ -23,21 +23,21 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.InComplete;
 		}
 
-		// Token: 0x0600C6CC RID: 50892 RVA: 0x004912EE File Offset: 0x0048F4EE
+		// Token: 0x0600C853 RID: 51283 RVA: 0x0049763A File Offset: 0x0049583A
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnReset()
 		{
 			this.currentTime = -999f;
 		}
 
-		// Token: 0x0600C6CD RID: 50893 RVA: 0x004912FB File Offset: 0x0048F4FB
+		// Token: 0x0600C854 RID: 51284 RVA: 0x00497647 File Offset: 0x00495847
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseString(ActionDelay.PropTime, ref this.delayTimeText);
 		}
 
-		// Token: 0x0600C6CE RID: 50894 RVA: 0x00491315 File Offset: 0x0048F515
+		// Token: 0x0600C855 RID: 51285 RVA: 0x00497661 File Offset: 0x00495861
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -47,19 +47,19 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x0400960A RID: 38410
+		// Token: 0x04009733 RID: 38707
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string delayTimeText = "";
 
-		// Token: 0x0400960B RID: 38411
+		// Token: 0x04009734 RID: 38708
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float delayTime = 5f;
 
-		// Token: 0x0400960C RID: 38412
+		// Token: 0x04009735 RID: 38709
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float currentTime = -999f;
 
-		// Token: 0x0400960D RID: 38413
+		// Token: 0x04009736 RID: 38710
 		public static string PropTime = "time";
 	}
 }

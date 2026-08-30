@@ -3,12 +3,12 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001042 RID: 4162
+// Token: 0x0200105B RID: 4187
 [Preserve]
 public class XUiC_SkillCraftingInfoEntry : XUiController
 {
-	// Token: 0x17000F44 RID: 3908
-	// (set) Token: 0x06008414 RID: 33812 RVA: 0x00325867 File Offset: 0x00323A67
+	// Token: 0x17000F7D RID: 3965
+	// (set) Token: 0x06008506 RID: 34054 RVA: 0x0032A08F File Offset: 0x0032828F
 	public int ListIndex
 	{
 		set
@@ -21,9 +21,9 @@ public class XUiC_SkillCraftingInfoEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000F45 RID: 3909
-	// (get) Token: 0x06008415 RID: 33813 RVA: 0x00325880 File Offset: 0x00323A80
-	// (set) Token: 0x06008416 RID: 33814 RVA: 0x00325888 File Offset: 0x00323A88
+	// Token: 0x17000F7E RID: 3966
+	// (get) Token: 0x06008507 RID: 34055 RVA: 0x0032A0A8 File Offset: 0x003282A8
+	// (set) Token: 0x06008508 RID: 34056 RVA: 0x0032A0B0 File Offset: 0x003282B0
 	public ProgressionClass.DisplayData Data
 	{
 		get
@@ -40,9 +40,9 @@ public class XUiC_SkillCraftingInfoEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000F46 RID: 3910
-	// (get) Token: 0x06008417 RID: 33815 RVA: 0x003258A1 File Offset: 0x00323AA1
-	// (set) Token: 0x06008418 RID: 33816 RVA: 0x003258A9 File Offset: 0x00323AA9
+	// Token: 0x17000F7F RID: 3967
+	// (get) Token: 0x06008509 RID: 34057 RVA: 0x0032A0C9 File Offset: 0x003282C9
+	// (set) Token: 0x0600850A RID: 34058 RVA: 0x0032A0D1 File Offset: 0x003282D1
 	public bool IsSelected
 	{
 		get
@@ -56,8 +56,8 @@ public class XUiC_SkillCraftingInfoEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000F47 RID: 3911
-	// (set) Token: 0x06008419 RID: 33817 RVA: 0x003258B9 File Offset: 0x00323AB9
+	// Token: 0x17000F80 RID: 3968
+	// (set) Token: 0x0600850B RID: 34059 RVA: 0x0032A0E1 File Offset: 0x003282E1
 	public int MaxEntriesWithoutPaging
 	{
 		set
@@ -70,8 +70,8 @@ public class XUiC_SkillCraftingInfoEntry : XUiController
 		}
 	}
 
-	// Token: 0x17000F48 RID: 3912
-	// (set) Token: 0x0600841A RID: 33818 RVA: 0x003258D2 File Offset: 0x00323AD2
+	// Token: 0x17000F81 RID: 3969
+	// (set) Token: 0x0600850C RID: 34060 RVA: 0x0032A0FA File Offset: 0x003282FA
 	public int HiddenEntriesWithPaging
 	{
 		set
@@ -84,13 +84,13 @@ public class XUiC_SkillCraftingInfoEntry : XUiController
 		}
 	}
 
-	// Token: 0x0600841B RID: 33819 RVA: 0x003258EB File Offset: 0x00323AEB
+	// Token: 0x0600850D RID: 34061 RVA: 0x0032A113 File Offset: 0x00328313
 	public override void Init()
 	{
 		base.Init();
 	}
 
-	// Token: 0x0600841C RID: 33820 RVA: 0x003258F4 File Offset: 0x00323AF4
+	// Token: 0x0600850E RID: 34062 RVA: 0x0032A11C File Offset: 0x0032831C
 	public override bool ParseAttribute(string _name, string _value)
 	{
 		if (_name == "color_bg_bought")
@@ -121,7 +121,7 @@ public class XUiC_SkillCraftingInfoEntry : XUiController
 		return true;
 	}
 
-	// Token: 0x0600841D RID: 33821 RVA: 0x0032597C File Offset: 0x00323B7C
+	// Token: 0x0600850F RID: 34063 RVA: 0x0032A1A4 File Offset: 0x003283A4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -353,7 +353,7 @@ public class XUiC_SkillCraftingInfoEntry : XUiController
 		return base.GetBindingValueInternal(ref _value, _bindingName);
 	}
 
-	// Token: 0x0600841E RID: 33822 RVA: 0x00324608 File Offset: 0x00322808
+	// Token: 0x06008510 RID: 34064 RVA: 0x00328E30 File Offset: 0x00327030
 	public override void Update(float _dt)
 	{
 		if (this.IsDirty)
@@ -364,63 +364,63 @@ public class XUiC_SkillCraftingInfoEntry : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x040061FA RID: 25082
+	// Token: 0x040062C1 RID: 25281
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string color_bg_bought;
 
-	// Token: 0x040061FB RID: 25083
+	// Token: 0x040062C2 RID: 25282
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string color_bg_available;
 
-	// Token: 0x040061FC RID: 25084
+	// Token: 0x040062C3 RID: 25283
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string color_bg_locked;
 
-	// Token: 0x040061FD RID: 25085
+	// Token: 0x040062C4 RID: 25284
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string color_lbl_available;
 
-	// Token: 0x040061FE RID: 25086
+	// Token: 0x040062C5 RID: 25285
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string color_lbl_locked;
 
-	// Token: 0x040061FF RID: 25087
+	// Token: 0x040062C6 RID: 25286
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int listIndex;
 
-	// Token: 0x04006200 RID: 25088
+	// Token: 0x040062C7 RID: 25287
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ProgressionClass.DisplayData data;
 
-	// Token: 0x04006201 RID: 25089
+	// Token: 0x040062C8 RID: 25288
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isSelected;
 
-	// Token: 0x04006202 RID: 25090
+	// Token: 0x040062C9 RID: 25289
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int maxEntriesWithoutPaging = 5;
 
-	// Token: 0x04006203 RID: 25091
+	// Token: 0x040062CA RID: 25290
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int hiddenEntriesWithPaging = 2;
 
-	// Token: 0x04006204 RID: 25092
+	// Token: 0x040062CB RID: 25291
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string, float, bool> attributeSubtractionFormatter = new CachedStringFormatter<string, float, bool>((string _s, float _f, bool _b) => string.Format("{0}: {1}", _s, _f.ToCultureInvariantString("0.#") + (_b ? "%" : "")));
 
-	// Token: 0x04006205 RID: 25093
+	// Token: 0x040062CC RID: 25292
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string, float> attributeSetValueFormatter = new CachedStringFormatter<string, float>((string _s, float _f) => string.Format("{0}: {1}", _s, _f.ToCultureInvariantString("0.#")));
 
-	// Token: 0x04006206 RID: 25094
+	// Token: 0x040062CD RID: 25293
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor durabilitycolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04006207 RID: 25095
+	// Token: 0x040062CE RID: 25294
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor nextdurabilitycolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04006208 RID: 25096
+	// Token: 0x040062CF RID: 25295
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly StringBuilder effectsStringBuilder = new StringBuilder();
 }

@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020002B4 RID: 692
+// Token: 0x020002B8 RID: 696
 [Preserve]
 public class ConsoleCmdUIOptions : ConsoleCmdAbstract
 {
-	// Token: 0x060013FD RID: 5117 RVA: 0x000798BC File Offset: 0x00077ABC
+	// Token: 0x0600140F RID: 5135 RVA: 0x00079F18 File Offset: 0x00078118
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "uioptions", "uio" };
 	}
 
-	// Token: 0x1700022E RID: 558
-	// (get) Token: 0x060013FE RID: 5118 RVA: 0x0006110A File Offset: 0x0005F30A
+	// Token: 0x1700022F RID: 559
+	// (get) Token: 0x06001410 RID: 5136 RVA: 0x00061652 File Offset: 0x0005F852
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -23,8 +23,8 @@ public class ConsoleCmdUIOptions : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x1700022F RID: 559
-	// (get) Token: 0x060013FF RID: 5119 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000230 RID: 560
+	// (get) Token: 0x06001411 RID: 5137 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -33,8 +33,8 @@ public class ConsoleCmdUIOptions : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x17000230 RID: 560
-	// (get) Token: 0x06001400 RID: 5120 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000231 RID: 561
+	// (get) Token: 0x06001412 RID: 5138 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -43,21 +43,21 @@ public class ConsoleCmdUIOptions : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001401 RID: 5121 RVA: 0x000798D4 File Offset: 0x00077AD4
+	// Token: 0x06001413 RID: 5139 RVA: 0x00079F30 File Offset: 0x00078130
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Allows overriding of some options that control the presentation of the UI";
 	}
 
-	// Token: 0x06001402 RID: 5122 RVA: 0x000798DB File Offset: 0x00077ADB
+	// Token: 0x06001414 RID: 5140 RVA: 0x00079F37 File Offset: 0x00078137
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Commands:\noptionsvideowindow <value> - set the options window to use for video settings\n[no parameters] - toggles video settings between simplified and detailed modes\n";
 	}
 
-	// Token: 0x06001403 RID: 5123 RVA: 0x000798E4 File Offset: 0x00077AE4
+	// Token: 0x06001415 RID: 5141 RVA: 0x00079F40 File Offset: 0x00078140
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 0)

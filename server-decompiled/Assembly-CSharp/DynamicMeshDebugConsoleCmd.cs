@@ -6,12 +6,12 @@ using UniLinq;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200036B RID: 875
+// Token: 0x0200036F RID: 879
 [Preserve]
 public class DynamicMeshDebugConsoleCmd : ConsoleCmdAbstract
 {
-	// Token: 0x1700030C RID: 780
-	// (get) Token: 0x060019C4 RID: 6596 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x17000310 RID: 784
+	// (get) Token: 0x060019E1 RID: 6625 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -20,7 +20,7 @@ public class DynamicMeshDebugConsoleCmd : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060019C5 RID: 6597 RVA: 0x000940C8 File Offset: 0x000922C8
+	// Token: 0x060019E2 RID: 6626 RVA: 0x00094808 File Offset: 0x00092A08
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params == null || _params.Count == 0)
@@ -196,7 +196,7 @@ public class DynamicMeshDebugConsoleCmd : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060019C6 RID: 6598 RVA: 0x0008B7FB File Offset: 0x000899FB
+	// Token: 0x060019E3 RID: 6627 RVA: 0x0008BF3B File Offset: 0x0008A13B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string GetParam(List<string> _params, int index)
 	{
@@ -211,7 +211,7 @@ public class DynamicMeshDebugConsoleCmd : ConsoleCmdAbstract
 		return _params[index];
 	}
 
-	// Token: 0x060019C7 RID: 6599 RVA: 0x000947DC File Offset: 0x000929DC
+	// Token: 0x060019E4 RID: 6628 RVA: 0x00094F1C File Offset: 0x0009311C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int GetParamAsInt(List<string> _params, int index)
 	{
@@ -228,7 +228,7 @@ public class DynamicMeshDebugConsoleCmd : ConsoleCmdAbstract
 		return num;
 	}
 
-	// Token: 0x060019C8 RID: 6600 RVA: 0x0009480F File Offset: 0x00092A0F
+	// Token: 0x060019E5 RID: 6629 RVA: 0x00094F4F File Offset: 0x0009314F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -239,18 +239,18 @@ public class DynamicMeshDebugConsoleCmd : ConsoleCmdAbstract
 		};
 	}
 
-	// Token: 0x060019C9 RID: 6601 RVA: 0x00094827 File Offset: 0x00092A27
+	// Token: 0x060019E6 RID: 6630 RVA: 0x00094F67 File Offset: 0x00093167
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return DynamicMeshDebugConsoleCmd.info;
 	}
 
-	// Token: 0x0400104F RID: 4175
+	// Token: 0x04001064 RID: 4196
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string info = "Dynamic mesh debug";
 
-	// Token: 0x04001050 RID: 4176
+	// Token: 0x04001065 RID: 4197
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool GC_ENABLED = true;
 }

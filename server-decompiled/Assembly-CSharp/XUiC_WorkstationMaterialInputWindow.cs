@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020010BA RID: 4282
+// Token: 0x020010D3 RID: 4307
 [Preserve]
 public class XUiC_WorkstationMaterialInputWindow : XUiController
 {
-	// Token: 0x140000E0 RID: 224
-	// (add) Token: 0x06008838 RID: 34872 RVA: 0x00340518 File Offset: 0x0033E718
-	// (remove) Token: 0x06008839 RID: 34873 RVA: 0x00340550 File Offset: 0x0033E750
+	// Token: 0x140000E1 RID: 225
+	// (add) Token: 0x0600892A RID: 35114 RVA: 0x00344D3C File Offset: 0x00342F3C
+	// (remove) Token: 0x0600892B RID: 35115 RVA: 0x00344D74 File Offset: 0x00342F74
 	public event XuiEvent_WorkstationItemsChanged OnWorkstationMaterialWeightsChanged;
 
-	// Token: 0x0600883A RID: 34874 RVA: 0x00340588 File Offset: 0x0033E788
+	// Token: 0x0600892C RID: 35116 RVA: 0x00344DAC File Offset: 0x00342FAC
 	public override void Init()
 	{
 		base.Init();
@@ -28,7 +28,7 @@ public class XUiC_WorkstationMaterialInputWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600883B RID: 34875 RVA: 0x00340604 File Offset: 0x0033E804
+	// Token: 0x0600892D RID: 35117 RVA: 0x00344E28 File Offset: 0x00343028
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -49,7 +49,7 @@ public class XUiC_WorkstationMaterialInputWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600883C RID: 34876 RVA: 0x003406CA File Offset: 0x0033E8CA
+	// Token: 0x0600892E RID: 35118 RVA: 0x00344EEE File Offset: 0x003430EE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onForgeValuesChanged()
 	{
@@ -59,7 +59,7 @@ public class XUiC_WorkstationMaterialInputWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600883D RID: 34877 RVA: 0x003406E0 File Offset: 0x0033E8E0
+	// Token: 0x0600892F RID: 35119 RVA: 0x00344F04 File Offset: 0x00343104
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -70,7 +70,7 @@ public class XUiC_WorkstationMaterialInputWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600883E RID: 34878 RVA: 0x0034071C File Offset: 0x0033E91C
+	// Token: 0x06008930 RID: 35120 RVA: 0x00344F40 File Offset: 0x00343140
 	public override void Update(float _dt)
 	{
 		if (!this.windowGroup.isShowing)
@@ -89,7 +89,7 @@ public class XUiC_WorkstationMaterialInputWindow : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x0600883F RID: 34879 RVA: 0x003407B4 File Offset: 0x0033E9B4
+	// Token: 0x06008931 RID: 35121 RVA: 0x00344FD8 File Offset: 0x003431D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RecipeList_RecipeChanged(Recipe _recipe, XUiC_RecipeEntry recipeEntry)
 	{
@@ -99,7 +99,7 @@ public class XUiC_WorkstationMaterialInputWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008840 RID: 34880 RVA: 0x003407C4 File Offset: 0x0033E9C4
+	// Token: 0x06008932 RID: 35122 RVA: 0x00344FE8 File Offset: 0x003431E8
 	public bool HasRequirement(Recipe recipe)
 	{
 		if (this.weights == null)
@@ -149,7 +149,7 @@ public class XUiC_WorkstationMaterialInputWindow : XUiController
 		return true;
 	}
 
-	// Token: 0x06008841 RID: 34881 RVA: 0x00340968 File Offset: 0x0033EB68
+	// Token: 0x06008933 RID: 35123 RVA: 0x0034518C File Offset: 0x0034338C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ResetWeightColors()
 	{
@@ -159,7 +159,7 @@ public class XUiC_WorkstationMaterialInputWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008842 RID: 34882 RVA: 0x003409A8 File Offset: 0x0033EBA8
+	// Token: 0x06008934 RID: 35124 RVA: 0x003451CC File Offset: 0x003433CC
 	public void SetMaterialWeights(ItemStack[] stackList)
 	{
 		for (int i = 3; i < stackList.Length; i++)
@@ -172,7 +172,7 @@ public class XUiC_WorkstationMaterialInputWindow : XUiController
 		this.onForgeValuesChanged();
 	}
 
-	// Token: 0x06008843 RID: 34883 RVA: 0x003409E8 File Offset: 0x0033EBE8
+	// Token: 0x06008935 RID: 35125 RVA: 0x0034520C File Offset: 0x0034340C
 	public override bool ParseAttribute(string name, string value)
 	{
 		bool flag = base.ParseAttribute(name, value);
@@ -206,52 +206,52 @@ public class XUiC_WorkstationMaterialInputWindow : XUiController
 		return true;
 	}
 
-	// Token: 0x06008844 RID: 34884 RVA: 0x00340AA0 File Offset: 0x0033ECA0
+	// Token: 0x06008936 RID: 35126 RVA: 0x003452C4 File Offset: 0x003434C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float calculateWeightOunces(int materialIndex)
 	{
 		return (float)this.weights[materialIndex];
 	}
 
-	// Token: 0x06008845 RID: 34885 RVA: 0x00340AAB File Offset: 0x0033ECAB
+	// Token: 0x06008937 RID: 35127 RVA: 0x003452CF File Offset: 0x003434CF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float calculateWeightPounds(int materialIndex)
 	{
 		return this.calculateWeightOunces(materialIndex) / 16f;
 	}
 
-	// Token: 0x0400653B RID: 25915
+	// Token: 0x04006602 RID: 26114
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float OUNCES_IN_POUND = 16f;
 
-	// Token: 0x0400653C RID: 25916
+	// Token: 0x04006603 RID: 26115
 	public string[] MaterialNames;
 
-	// Token: 0x0400653D RID: 25917
+	// Token: 0x04006604 RID: 26116
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] weights;
 
-	// Token: 0x0400653E RID: 25918
+	// Token: 0x04006605 RID: 26117
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController[] materialTitles;
 
-	// Token: 0x0400653F RID: 25919
+	// Token: 0x04006606 RID: 26118
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController[] materialWeights;
 
-	// Token: 0x04006540 RID: 25920
+	// Token: 0x04006607 RID: 26119
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_WorkstationMaterialInputGrid inputGrid;
 
-	// Token: 0x04006542 RID: 25922
+	// Token: 0x04006609 RID: 26121
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color baseTextColor;
 
-	// Token: 0x04006543 RID: 25923
+	// Token: 0x0400660A RID: 26122
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color validColor = Color.green;
 
-	// Token: 0x04006544 RID: 25924
+	// Token: 0x0400660B RID: 26123
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color invalidColor = Color.red;
 }

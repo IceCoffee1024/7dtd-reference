@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000ACC RID: 2764
+// Token: 0x02000ADE RID: 2782
 public class EntityGroupSpawnState
 {
-	// Token: 0x060052A4 RID: 21156 RVA: 0x001F9890 File Offset: 0x001F7A90
+	// Token: 0x0600532C RID: 21292 RVA: 0x001FC500 File Offset: 0x001FA700
 	public EntityGroupSpawnState(string _sEntityGroupName)
 	{
 		List<SEntityClassAndProb> list = EntityGroups.list[_sEntityGroupName];
@@ -14,7 +14,7 @@ public class EntityGroupSpawnState
 		}
 	}
 
-	// Token: 0x060052A5 RID: 21157 RVA: 0x001F98E4 File Offset: 0x001F7AE4
+	// Token: 0x0600532D RID: 21293 RVA: 0x001FC554 File Offset: 0x001FA754
 	public int GetRandomFromGroup()
 	{
 		float randomFloat = GameManager.Instance.World.GetGameRandom().RandomFloat;
@@ -31,7 +31,7 @@ public class EntityGroupSpawnState
 		return -1;
 	}
 
-	// Token: 0x060052A6 RID: 21158 RVA: 0x001F9954 File Offset: 0x001F7B54
+	// Token: 0x0600532E RID: 21294 RVA: 0x001FC5C4 File Offset: 0x001FA7C4
 	public void DidSpawn(int _classId)
 	{
 		for (int i = 0; i < this.state.Count; i++)
@@ -45,15 +45,15 @@ public class EntityGroupSpawnState
 		}
 	}
 
-	// Token: 0x0400403E RID: 16446
+	// Token: 0x040040D4 RID: 16596
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<EntityGroupSpawnState.State> state = new List<EntityGroupSpawnState.State>();
 
-	// Token: 0x02000ACD RID: 2765
+	// Token: 0x02000ADF RID: 2783
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct State
 	{
-		// Token: 0x060052A7 RID: 21159 RVA: 0x001F99A6 File Offset: 0x001F7BA6
+		// Token: 0x0600532F RID: 21295 RVA: 0x001FC616 File Offset: 0x001FA816
 		public State(SEntityClassAndProb _src)
 		{
 			this.entityClassId = _src.entityClassId;
@@ -61,13 +61,13 @@ public class EntityGroupSpawnState
 			this.numSpawned = 0;
 		}
 
-		// Token: 0x0400403F RID: 16447
+		// Token: 0x040040D5 RID: 16597
 		public readonly int entityClassId;
 
-		// Token: 0x04004040 RID: 16448
+		// Token: 0x040040D6 RID: 16598
 		public readonly float prob;
 
-		// Token: 0x04004041 RID: 16449
+		// Token: 0x040040D7 RID: 16599
 		public int numSpawned;
 	}
 }

@@ -1,17 +1,17 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x02000B78 RID: 2936
+// Token: 0x02000B8A RID: 2954
 [PublicizedFrom(EAccessModifier.Internal)]
 public class ChunkMemoryStreamWriter : MemoryStream
 {
-	// Token: 0x060058F8 RID: 22776 RVA: 0x00220EB6 File Offset: 0x0021F0B6
+	// Token: 0x06005980 RID: 22912 RVA: 0x00223BD2 File Offset: 0x00221DD2
 	public ChunkMemoryStreamWriter()
 		: this(new byte[512000])
 	{
 	}
 
-	// Token: 0x060058F9 RID: 22777 RVA: 0x00220EC8 File Offset: 0x0021F0C8
+	// Token: 0x06005981 RID: 22913 RVA: 0x00223BE4 File Offset: 0x00221DE4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ChunkMemoryStreamWriter(byte[] _buffer)
 		: base(_buffer)
@@ -19,7 +19,7 @@ public class ChunkMemoryStreamWriter : MemoryStream
 		this.buffer = _buffer;
 	}
 
-	// Token: 0x060058FA RID: 22778 RVA: 0x00220ED8 File Offset: 0x0021F0D8
+	// Token: 0x06005982 RID: 22914 RVA: 0x00223BF4 File Offset: 0x00221DF4
 	public void Init(RegionFileAccessMultipleChunks _regionFileAccess, string _dir, int _x, int _z, string _ext)
 	{
 		this.dir = _dir;
@@ -30,33 +30,33 @@ public class ChunkMemoryStreamWriter : MemoryStream
 		this.Seek(0L, SeekOrigin.Begin);
 	}
 
-	// Token: 0x060058FB RID: 22779 RVA: 0x00220F09 File Offset: 0x0021F109
+	// Token: 0x06005983 RID: 22915 RVA: 0x00223C25 File Offset: 0x00221E25
 	public override void Close()
 	{
 		this.regionFileAccess.Write(this.dir, this.chunkX, this.chunkZ, this.ext, this.buffer, (int)this.Position);
 	}
 
-	// Token: 0x040044D5 RID: 17621
+	// Token: 0x04004570 RID: 17776
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string dir;
 
-	// Token: 0x040044D6 RID: 17622
+	// Token: 0x04004571 RID: 17777
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int chunkX;
 
-	// Token: 0x040044D7 RID: 17623
+	// Token: 0x04004572 RID: 17778
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int chunkZ;
 
-	// Token: 0x040044D8 RID: 17624
+	// Token: 0x04004573 RID: 17779
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string ext;
 
-	// Token: 0x040044D9 RID: 17625
+	// Token: 0x04004574 RID: 17780
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RegionFileAccessMultipleChunks regionFileAccess;
 
-	// Token: 0x040044DA RID: 17626
+	// Token: 0x04004575 RID: 17781
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] buffer;
 }

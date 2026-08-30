@@ -1,31 +1,31 @@
 ﻿using System;
 
-// Token: 0x02000580 RID: 1408
+// Token: 0x02000585 RID: 1413
 public interface ILockTarget
 {
-	// Token: 0x170004EB RID: 1259
-	// (get) Token: 0x06002E10 RID: 11792
+	// Token: 0x170004F1 RID: 1265
+	// (get) Token: 0x06002E3E RID: 11838
 	LockTargetType LockTargetType { get; }
 
-	// Token: 0x06002E11 RID: 11793
+	// Token: 0x06002E3F RID: 11839
 	bool IsSharedLock(ushort _channel);
 
-	// Token: 0x06002E12 RID: 11794
+	// Token: 0x06002E40 RID: 11840
 	bool CanLockOnServer(int _lockingPlayerID, ILockContext _context, ushort _channel);
 
-	// Token: 0x06002E13 RID: 11795
+	// Token: 0x06002E41 RID: 11841
 	bool CanLockLocally(ILockContext _context, ushort _channel);
 
-	// Token: 0x06002E14 RID: 11796
+	// Token: 0x06002E42 RID: 11842
 	void OnLockedServer(bool _success, int _lockingPlayerID, ILockContext _context, ushort _channel);
 
-	// Token: 0x06002E15 RID: 11797
+	// Token: 0x06002E43 RID: 11843
 	void OnLockedLocal(bool _success, ILockContext _context, ushort _channel);
 
-	// Token: 0x06002E16 RID: 11798
+	// Token: 0x06002E44 RID: 11844
 	void OnUnlockedServer(int _unlockingPlayerId, ushort _channel);
 
-	// Token: 0x06002E17 RID: 11799 RVA: 0x00124904 File Offset: 0x00122B04
+	// Token: 0x06002E45 RID: 11845 RVA: 0x001259F4 File Offset: 0x00123BF4
 	public static void WriteIdentifyingInfo(ILockTarget _target, PooledBinaryWriter _bw)
 	{
 		if (_target == null)
@@ -85,7 +85,7 @@ public interface ILockTarget
 		}
 	}
 
-	// Token: 0x06002E18 RID: 11800 RVA: 0x00124A68 File Offset: 0x00122C68
+	// Token: 0x06002E46 RID: 11846 RVA: 0x00125B58 File Offset: 0x00123D58
 	public static ILockTarget ReadIdentifyingInfo(PooledBinaryReader _br)
 	{
 		if (_br.ReadByte() == 0)

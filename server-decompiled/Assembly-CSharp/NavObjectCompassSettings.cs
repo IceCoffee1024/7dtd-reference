@@ -2,11 +2,11 @@
 using System.Globalization;
 using UnityEngine;
 
-// Token: 0x0200074B RID: 1867
+// Token: 0x02000755 RID: 1877
 public class NavObjectCompassSettings : NavObjectSettings
 {
-	// Token: 0x17000584 RID: 1412
-	// (get) Token: 0x0600379A RID: 14234 RVA: 0x0016D8D6 File Offset: 0x0016BAD6
+	// Token: 0x1700058D RID: 1421
+	// (get) Token: 0x060037F0 RID: 14320 RVA: 0x0016FAF2 File Offset: 0x0016DCF2
 	public bool ShowVerticalCompassIcons
 	{
 		get
@@ -15,7 +15,7 @@ public class NavObjectCompassSettings : NavObjectSettings
 		}
 	}
 
-	// Token: 0x0600379B RID: 14235 RVA: 0x0016D8FC File Offset: 0x0016BAFC
+	// Token: 0x060037F1 RID: 14321 RVA: 0x0016FB18 File Offset: 0x0016DD18
 	public override void Init()
 	{
 		base.Init();
@@ -61,62 +61,62 @@ public class NavObjectCompassSettings : NavObjectSettings
 		}
 	}
 
-	// Token: 0x04002D89 RID: 11657
+	// Token: 0x04002E01 RID: 11777
 	public bool IconClamped;
 
-	// Token: 0x04002D8A RID: 11658
+	// Token: 0x04002E02 RID: 11778
 	public float MinCompassIconScale = 0.5f;
 
-	// Token: 0x04002D8B RID: 11659
+	// Token: 0x04002E03 RID: 11779
 	public float MaxCompassIconScale = 1.25f;
 
-	// Token: 0x04002D8C RID: 11660
+	// Token: 0x04002E04 RID: 11780
 	public float MaxScaleDistance = -1f;
 
-	// Token: 0x04002D8D RID: 11661
+	// Token: 0x04002E05 RID: 11781
 	public float MinFadePercent = -1f;
 
-	// Token: 0x04002D8E RID: 11662
+	// Token: 0x04002E06 RID: 11782
 	public string UpSpriteName = "";
 
-	// Token: 0x04002D8F RID: 11663
+	// Token: 0x04002E07 RID: 11783
 	public string DownSpriteName = "";
 
-	// Token: 0x04002D90 RID: 11664
+	// Token: 0x04002E08 RID: 11784
 	public float ShowUpOffset = 3f;
 
-	// Token: 0x04002D91 RID: 11665
+	// Token: 0x04002E09 RID: 11785
 	public float ShowDownOffset = -2f;
 
-	// Token: 0x04002D92 RID: 11666
+	// Token: 0x04002E0A RID: 11786
 	public int DepthOffset;
 
-	// Token: 0x04002D93 RID: 11667
+	// Token: 0x04002E0B RID: 11787
 	public NavObjectCompassSettings.HotZoneSettings HotZone;
 
-	// Token: 0x0200074C RID: 1868
+	// Token: 0x02000756 RID: 1878
 	public class HotZoneSettings
 	{
-		// Token: 0x04002D94 RID: 11668
+		// Token: 0x04002E0C RID: 11788
 		public NavObjectCompassSettings.HotZoneSettings.HotZoneTypes HotZoneType;
 
-		// Token: 0x04002D95 RID: 11669
+		// Token: 0x04002E0D RID: 11789
 		public string SpriteName = "";
 
-		// Token: 0x04002D96 RID: 11670
+		// Token: 0x04002E0E RID: 11790
 		public Color Color = Color.white;
 
-		// Token: 0x04002D97 RID: 11671
+		// Token: 0x04002E0F RID: 11791
 		public float CustomDistance = -1f;
 
-		// Token: 0x0200074D RID: 1869
+		// Token: 0x02000757 RID: 1879
 		public enum HotZoneTypes
 		{
-			// Token: 0x04002D99 RID: 11673
+			// Token: 0x04002E11 RID: 11793
 			None,
-			// Token: 0x04002D9A RID: 11674
+			// Token: 0x04002E12 RID: 11794
 			Treasure,
-			// Token: 0x04002D9B RID: 11675
+			// Token: 0x04002E13 RID: 11795
 			Custom
 		}
 	}

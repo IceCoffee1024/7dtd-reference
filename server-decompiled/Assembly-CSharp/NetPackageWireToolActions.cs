@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000861 RID: 2145
+// Token: 0x0200086D RID: 2157
 [Preserve]
 public class NetPackageWireToolActions : NetPackage
 {
-	// Token: 0x06003E94 RID: 16020 RVA: 0x0018A41B File Offset: 0x0018861B
+	// Token: 0x06003EF9 RID: 16121 RVA: 0x0018C4EB File Offset: 0x0018A6EB
 	public NetPackageWireToolActions Setup(NetPackageWireToolActions.WireActions _operation, Vector3i _tileEntityPosition, int _entityID)
 	{
 		this.currentOperation = _operation;
@@ -15,7 +15,7 @@ public class NetPackageWireToolActions : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003E95 RID: 16021 RVA: 0x0018A433 File Offset: 0x00188633
+	// Token: 0x06003EFA RID: 16122 RVA: 0x0018C503 File Offset: 0x0018A703
 	public override void read(PooledBinaryReader _br)
 	{
 		this.currentOperation = (NetPackageWireToolActions.WireActions)_br.ReadByte();
@@ -23,7 +23,7 @@ public class NetPackageWireToolActions : NetPackage
 		this.entityID = _br.ReadInt32();
 	}
 
-	// Token: 0x06003E96 RID: 16022 RVA: 0x0018A459 File Offset: 0x00188659
+	// Token: 0x06003EFB RID: 16123 RVA: 0x0018C529 File Offset: 0x0018A729
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -32,7 +32,7 @@ public class NetPackageWireToolActions : NetPackage
 		_bw.Write(this.entityID);
 	}
 
-	// Token: 0x06003E97 RID: 16023 RVA: 0x0018A488 File Offset: 0x00188688
+	// Token: 0x06003EFC RID: 16124 RVA: 0x0018C558 File Offset: 0x0018A758
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -119,30 +119,30 @@ public class NetPackageWireToolActions : NetPackage
 		}
 	}
 
-	// Token: 0x06003E98 RID: 16024 RVA: 0x0017DEA0 File Offset: 0x0017C0A0
+	// Token: 0x06003EFD RID: 16125 RVA: 0x00180278 File Offset: 0x0017E478
 	public override int GetLength()
 	{
 		return 12;
 	}
 
-	// Token: 0x04003254 RID: 12884
+	// Token: 0x040032D5 RID: 13013
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i tileEntityPosition;
 
-	// Token: 0x04003255 RID: 12885
+	// Token: 0x040032D6 RID: 13014
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetPackageWireToolActions.WireActions currentOperation;
 
-	// Token: 0x04003256 RID: 12886
+	// Token: 0x040032D7 RID: 13015
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entityID;
 
-	// Token: 0x02000862 RID: 2146
+	// Token: 0x0200086E RID: 2158
 	public enum WireActions
 	{
-		// Token: 0x04003258 RID: 12888
+		// Token: 0x040032D9 RID: 13017
 		AddWire,
-		// Token: 0x04003259 RID: 12889
+		// Token: 0x040032DA RID: 13018
 		RemoveWire
 	}
 }

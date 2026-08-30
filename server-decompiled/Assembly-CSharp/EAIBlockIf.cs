@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine.Scripting;
 
-// Token: 0x0200042D RID: 1069
+// Token: 0x02000431 RID: 1073
 [Preserve]
 public class EAIBlockIf : EAIBase
 {
-	// Token: 0x060020E7 RID: 8423 RVA: 0x000C68F8 File Offset: 0x000C4AF8
+	// Token: 0x06002104 RID: 8452 RVA: 0x000C7104 File Offset: 0x000C5304
 	public override void Init(EntityAlive _theEntity)
 	{
 		base.Init(_theEntity);
 		this.MutexBits = 1;
 	}
 
-	// Token: 0x060020E8 RID: 8424 RVA: 0x000C6908 File Offset: 0x000C4B08
+	// Token: 0x06002105 RID: 8453 RVA: 0x000C7114 File Offset: 0x000C5314
 	public override void SetData(Dictionary<string, string> data)
 	{
 		base.SetData(data);
@@ -44,7 +44,7 @@ public class EAIBlockIf : EAIBase
 		}
 	}
 
-	// Token: 0x060020E9 RID: 8425 RVA: 0x000C69F4 File Offset: 0x000C4BF4
+	// Token: 0x06002106 RID: 8454 RVA: 0x000C7200 File Offset: 0x000C5400
 	public override bool CanExecute()
 	{
 		int count = this.conditions.Count;
@@ -72,7 +72,7 @@ public class EAIBlockIf : EAIBase
 		return false;
 	}
 
-	// Token: 0x060020EA RID: 8426 RVA: 0x000C6A80 File Offset: 0x000C4C80
+	// Token: 0x06002107 RID: 8455 RVA: 0x000C728C File Offset: 0x000C548C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool Compare(EAIBlockIf.eOp op, float v1, float v2)
 	{
@@ -83,54 +83,54 @@ public class EAIBlockIf : EAIBase
 		return v1 == v2;
 	}
 
-	// Token: 0x060020EB RID: 8427 RVA: 0x000C6841 File Offset: 0x000C4A41
+	// Token: 0x06002108 RID: 8456 RVA: 0x000C704D File Offset: 0x000C524D
 	public override bool Continue()
 	{
 		return this.CanExecute();
 	}
 
-	// Token: 0x0400168C RID: 5772
+	// Token: 0x040016A1 RID: 5793
 	public bool canExecute;
 
-	// Token: 0x0400168D RID: 5773
+	// Token: 0x040016A2 RID: 5794
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<EAIBlockIf.Condition> conditions;
 
-	// Token: 0x0200042E RID: 1070
+	// Token: 0x02000432 RID: 1074
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum eType
 	{
-		// Token: 0x0400168F RID: 5775
+		// Token: 0x040016A4 RID: 5796
 		None,
-		// Token: 0x04001690 RID: 5776
+		// Token: 0x040016A5 RID: 5797
 		Alert,
-		// Token: 0x04001691 RID: 5777
+		// Token: 0x040016A6 RID: 5798
 		Investigate
 	}
 
-	// Token: 0x0200042F RID: 1071
+	// Token: 0x02000433 RID: 1075
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum eOp
 	{
-		// Token: 0x04001693 RID: 5779
+		// Token: 0x040016A8 RID: 5800
 		None,
-		// Token: 0x04001694 RID: 5780
+		// Token: 0x040016A9 RID: 5801
 		e,
-		// Token: 0x04001695 RID: 5781
+		// Token: 0x040016AA RID: 5802
 		ne
 	}
 
-	// Token: 0x02000430 RID: 1072
+	// Token: 0x02000434 RID: 1076
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct Condition
 	{
-		// Token: 0x04001696 RID: 5782
+		// Token: 0x040016AB RID: 5803
 		public EAIBlockIf.eType type;
 
-		// Token: 0x04001697 RID: 5783
+		// Token: 0x040016AC RID: 5804
 		public EAIBlockIf.eOp op;
 
-		// Token: 0x04001698 RID: 5784
+		// Token: 0x040016AD RID: 5805
 		public float value;
 	}
 }

@@ -1,179 +1,179 @@
 ﻿using System;
 
-// Token: 0x020012C0 RID: 4800
+// Token: 0x020012DA RID: 4826
 public class Tags
 {
-	// Token: 0x0400726C RID: 29292
+	// Token: 0x04007343 RID: 29507
 	public const string None = "Untagged";
 
-	// Token: 0x0400726D RID: 29293
+	// Token: 0x04007344 RID: 29508
 	public const string EntitySpawner = "SB_EntitySpawner";
 
-	// Token: 0x0400726E RID: 29294
+	// Token: 0x04007345 RID: 29509
 	public const string PrefabBoundingBox = "SB_Prefabs";
 
-	// Token: 0x0400726F RID: 29295
+	// Token: 0x04007346 RID: 29510
 	public const string StartPoint = "SB_StartPoint";
 
-	// Token: 0x04007270 RID: 29296
+	// Token: 0x04007347 RID: 29511
 	public const string TraderTeleport = "SB_TraderTeleport";
 
-	// Token: 0x04007271 RID: 29297
+	// Token: 0x04007348 RID: 29512
 	public const string SleeperVolume = "SB_SleeperVolume";
 
-	// Token: 0x04007272 RID: 29298
+	// Token: 0x04007349 RID: 29513
 	public const string InfoVolume = "SB_InfoVolume";
 
-	// Token: 0x04007273 RID: 29299
+	// Token: 0x0400734A RID: 29514
 	public const string WallVolume = "SB_WallVolume";
 
-	// Token: 0x04007274 RID: 29300
+	// Token: 0x0400734B RID: 29515
 	public const string TriggerVolume = "SB_TriggerVolume";
 
-	// Token: 0x04007275 RID: 29301
+	// Token: 0x0400734C RID: 29516
 	public const string Item = "Item";
 
-	// Token: 0x04007276 RID: 29302
+	// Token: 0x0400734D RID: 29517
 	public const string LOD = "LOD";
 
-	// Token: 0x04007277 RID: 29303
+	// Token: 0x0400734E RID: 29518
 	public const string EMesh = "E_Mesh";
 
-	// Token: 0x04007278 RID: 29304
+	// Token: 0x0400734F RID: 29519
 	public const string BlocksMesh = "B_Mesh";
 
-	// Token: 0x04007279 RID: 29305
+	// Token: 0x04007350 RID: 29520
 	public const string TerrainMesh = "T_Mesh";
 
-	// Token: 0x0400727A RID: 29306
+	// Token: 0x04007351 RID: 29521
 	public const string BlocksMeshBlockModel = "T_Mesh_B";
 
-	// Token: 0x0400727B RID: 29307
+	// Token: 0x04007352 RID: 29522
 	public const string BlocksMeshBlockEntity = "T_Block";
 
-	// Token: 0x0400727C RID: 29308
+	// Token: 0x04007353 RID: 29523
 	public const string PrefixEntity = "E_";
 
-	// Token: 0x0400727D RID: 29309
+	// Token: 0x04007354 RID: 29524
 	public const string PrefixBodyPart = "E_BP_";
 
-	// Token: 0x0400727E RID: 29310
+	// Token: 0x04007355 RID: 29525
 	public const string Player = "E_Player";
 
-	// Token: 0x0400727F RID: 29311
+	// Token: 0x04007356 RID: 29526
 	public const string Vehicle = "E_Vehicle";
 
-	// Token: 0x04007280 RID: 29312
+	// Token: 0x04007357 RID: 29527
 	public const string VStrong = "E_VehicleStrong";
 
-	// Token: 0x04007281 RID: 29313
+	// Token: 0x04007358 RID: 29528
 	public const string Enemy = "E_Enemy";
 
-	// Token: 0x04007282 RID: 29314
+	// Token: 0x04007359 RID: 29529
 	public const string Animal = "E_Animal";
 
-	// Token: 0x04007283 RID: 29315
+	// Token: 0x0400735A RID: 29530
 	public const string BipedRoot = "E_BP_BipedRoot";
 
-	// Token: 0x04007284 RID: 29316
+	// Token: 0x0400735B RID: 29531
 	public const string Head = "E_BP_Head";
 
-	// Token: 0x04007285 RID: 29317
+	// Token: 0x0400735C RID: 29532
 	public const string Eye = "E_BP_Eye";
 
-	// Token: 0x04007286 RID: 29318
+	// Token: 0x0400735D RID: 29533
 	public const string Body = "E_BP_Body";
 
-	// Token: 0x04007287 RID: 29319
+	// Token: 0x0400735E RID: 29534
 	public const string LArm = "E_BP_LArm";
 
-	// Token: 0x04007288 RID: 29320
+	// Token: 0x0400735F RID: 29535
 	public const string RArm = "E_BP_RArm";
 
-	// Token: 0x04007289 RID: 29321
+	// Token: 0x04007360 RID: 29536
 	public const string LLeg = "E_BP_LLeg";
 
-	// Token: 0x0400728A RID: 29322
+	// Token: 0x04007361 RID: 29537
 	public const string RLeg = "E_BP_RLeg";
 
-	// Token: 0x0400728B RID: 29323
+	// Token: 0x04007362 RID: 29538
 	public const string EBPSpotlight = "E_BP_Spotlight";
 
-	// Token: 0x0400728C RID: 29324
+	// Token: 0x04007363 RID: 29539
 	public const string EBPSpecial = "E_BP_Special";
 
-	// Token: 0x0400728D RID: 29325
+	// Token: 0x04007364 RID: 29540
 	public const string EBPTemp = "E_BP_Temp";
 
-	// Token: 0x0400728E RID: 29326
+	// Token: 0x04007365 RID: 29541
 	public const string LUpperArm = "E_BP_LArm";
 
-	// Token: 0x0400728F RID: 29327
+	// Token: 0x04007366 RID: 29542
 	public const string LLowerArm = "E_BP_LLowerArm";
 
-	// Token: 0x04007290 RID: 29328
+	// Token: 0x04007367 RID: 29543
 	public const string RUpperArm = "E_BP_RArm";
 
-	// Token: 0x04007291 RID: 29329
+	// Token: 0x04007368 RID: 29544
 	public const string RLowerArm = "E_BP_RLowerArm";
 
-	// Token: 0x04007292 RID: 29330
+	// Token: 0x04007369 RID: 29545
 	public const string LUpperLeg = "E_BP_LLeg";
 
-	// Token: 0x04007293 RID: 29331
+	// Token: 0x0400736A RID: 29546
 	public const string LLowerLeg = "E_BP_LLowerLeg";
 
-	// Token: 0x04007294 RID: 29332
+	// Token: 0x0400736B RID: 29547
 	public const string RUpperLeg = "E_BP_RLeg";
 
-	// Token: 0x04007295 RID: 29333
+	// Token: 0x0400736C RID: 29548
 	public const string RLowerLeg = "E_BP_RLowerLeg";
 
-	// Token: 0x04007296 RID: 29334
+	// Token: 0x0400736D RID: 29549
 	public const string HeadGore = "L_HeadGore";
 
-	// Token: 0x04007297 RID: 29335
+	// Token: 0x0400736E RID: 29550
 	public const string LeftUpperArmGore = "L_LeftUpperArmGore";
 
-	// Token: 0x04007298 RID: 29336
+	// Token: 0x0400736F RID: 29551
 	public const string LeftLowerArmGore = "L_LeftLowerArmGore";
 
-	// Token: 0x04007299 RID: 29337
+	// Token: 0x04007370 RID: 29552
 	public const string RightUpperArmGore = "L_RightUpperArmGore";
 
-	// Token: 0x0400729A RID: 29338
+	// Token: 0x04007371 RID: 29553
 	public const string RightLowerArmGore = "L_RightLowerArmGore";
 
-	// Token: 0x0400729B RID: 29339
+	// Token: 0x04007372 RID: 29554
 	public const string LeftUpperLegGore = "L_LeftUpperLegGore";
 
-	// Token: 0x0400729C RID: 29340
+	// Token: 0x04007373 RID: 29555
 	public const string LeftLowerLegGore = "L_LeftLowerLegGore";
 
-	// Token: 0x0400729D RID: 29341
+	// Token: 0x04007374 RID: 29556
 	public const string RightUpperLegGore = "L_RightUpperLegGore";
 
-	// Token: 0x0400729E RID: 29342
+	// Token: 0x04007375 RID: 29557
 	public const string RightLowerLegGore = "L_RightLowerLegGore";
 
-	// Token: 0x0400729F RID: 29343
+	// Token: 0x04007376 RID: 29558
 	public const string ModOn = "ModOn";
 
-	// Token: 0x040072A0 RID: 29344
+	// Token: 0x04007377 RID: 29559
 	public const string ModMesh = "ModMesh";
 
-	// Token: 0x040072A1 RID: 29345
+	// Token: 0x04007378 RID: 29560
 	public const string Deco = "T_Deco";
 
-	// Token: 0x040072A2 RID: 29346
+	// Token: 0x04007379 RID: 29561
 	public const string PrefabSub = "TE_PrefabSub";
 
-	// Token: 0x040072A3 RID: 29347
+	// Token: 0x0400737A RID: 29562
 	public const string Physics = "Physics";
 
-	// Token: 0x040072A4 RID: 29348
+	// Token: 0x0400737B RID: 29563
 	public const string AudioRigidBody = "AudioRigidBody";
 
-	// Token: 0x040072A5 RID: 29349
+	// Token: 0x0400737C RID: 29564
 	public const string cDismembermentAccessoryManTag = "D_Accessory";
 }

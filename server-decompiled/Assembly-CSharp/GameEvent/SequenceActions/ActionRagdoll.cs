@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001975 RID: 6517
+	// Token: 0x0200199B RID: 6555
 	[Preserve]
 	public class ActionRagdoll : ActionBaseTargetAction
 	{
-		// Token: 0x0600C757 RID: 51031 RVA: 0x00495F50 File Offset: 0x00494150
+		// Token: 0x0600C8DE RID: 51422 RVA: 0x0049C294 File Offset: 0x0049A494
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			EntityAlive entityAlive = target as EntityAlive;
@@ -29,14 +29,14 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C758 RID: 51032 RVA: 0x00495FC1 File Offset: 0x004941C1
+		// Token: 0x0600C8DF RID: 51423 RVA: 0x0049C305 File Offset: 0x0049A505
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseString(ActionRagdoll.PropStunDuration, ref this.stunDurationText);
 		}
 
-		// Token: 0x0600C759 RID: 51033 RVA: 0x00495FDB File Offset: 0x004941DB
+		// Token: 0x0600C8E0 RID: 51424 RVA: 0x0049C31F File Offset: 0x0049A51F
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -47,11 +47,11 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x0400970E RID: 38670
+		// Token: 0x04009837 RID: 38967
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string stunDurationText;
 
-		// Token: 0x0400970F RID: 38671
+		// Token: 0x04009838 RID: 38968
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropStunDuration = "stun_duration";
 	}

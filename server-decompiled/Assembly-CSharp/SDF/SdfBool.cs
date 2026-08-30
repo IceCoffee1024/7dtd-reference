@@ -3,10 +3,10 @@ using System.IO;
 
 namespace SDF
 {
-	// Token: 0x02001671 RID: 5745
+	// Token: 0x02001697 RID: 5783
 	public class SdfBool : SdfTag
 	{
-		// Token: 0x0600B3EA RID: 46058 RVA: 0x00432B4C File Offset: 0x00430D4C
+		// Token: 0x0600B56D RID: 46445 RVA: 0x004388C4 File Offset: 0x00436AC4
 		public SdfBool(string _name, bool _value)
 		{
 			base.TagType = SdfTagType.Bool;
@@ -14,7 +14,7 @@ namespace SDF
 			base.Value = _value;
 		}
 
-		// Token: 0x0600B3EB RID: 46059 RVA: 0x00432B6E File Offset: 0x00430D6E
+		// Token: 0x0600B56E RID: 46446 RVA: 0x004388E6 File Offset: 0x00436AE6
 		public override void WritePayload(BinaryWriter bw)
 		{
 			bw.Write((bool)base.Value);

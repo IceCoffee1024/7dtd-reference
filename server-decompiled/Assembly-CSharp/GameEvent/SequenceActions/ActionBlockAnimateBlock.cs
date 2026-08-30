@@ -6,11 +6,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019B6 RID: 6582
+	// Token: 0x020019DC RID: 6620
 	[Preserve]
 	public class ActionBlockAnimateBlock : ActionBaseBlockAction
 	{
-		// Token: 0x0600C89E RID: 51358 RVA: 0x0049BC56 File Offset: 0x00499E56
+		// Token: 0x0600CA26 RID: 51750 RVA: 0x004A1FBA File Offset: 0x004A01BA
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BlockChangeInfo UpdateBlock(World world, Vector3i currentPos, BlockValue blockValue)
 		{
@@ -21,7 +21,7 @@ namespace GameEvent.SequenceActions
 			return null;
 		}
 
-		// Token: 0x0600C89F RID: 51359 RVA: 0x0049BC70 File Offset: 0x00499E70
+		// Token: 0x0600CA27 RID: 51751 RVA: 0x004A1FD4 File Offset: 0x004A01D4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void ProcessChanges(World world, List<BlockChangeInfo> blockChanges)
 		{
@@ -46,7 +46,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C8A0 RID: 51360 RVA: 0x0049BCF1 File Offset: 0x00499EF1
+		// Token: 0x0600CA28 RID: 51752 RVA: 0x004A2055 File Offset: 0x004A0255
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator WaitForBEDTransform(BlockEntityData bed)
 		{
@@ -68,7 +68,7 @@ namespace GameEvent.SequenceActions
 			yield break;
 		}
 
-		// Token: 0x0600C8A1 RID: 51361 RVA: 0x0049BD08 File Offset: 0x00499F08
+		// Token: 0x0600CA29 RID: 51753 RVA: 0x004A206C File Offset: 0x004A026C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void AnimateBlock(BlockEntityData bed)
 		{
@@ -98,7 +98,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C8A2 RID: 51362 RVA: 0x0049BE38 File Offset: 0x0049A038
+		// Token: 0x0600CA2A RID: 51754 RVA: 0x004A219C File Offset: 0x004A039C
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -109,7 +109,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseString(ActionBlockAnimateBlock.PropAnimationTrigger, ref this.animationTrigger);
 		}
 
-		// Token: 0x0600C8A3 RID: 51363 RVA: 0x0049BEA4 File Offset: 0x0049A0A4
+		// Token: 0x0600CA2B RID: 51755 RVA: 0x004A2208 File Offset: 0x004A0408
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -123,43 +123,43 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x0400984B RID: 38987
+		// Token: 0x04009974 RID: 39284
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string animationBool;
 
-		// Token: 0x0400984C RID: 38988
+		// Token: 0x04009975 RID: 39285
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string animationInteger;
 
-		// Token: 0x0400984D RID: 38989
+		// Token: 0x04009976 RID: 39286
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string animationTrigger;
 
-		// Token: 0x0400984E RID: 38990
+		// Token: 0x04009977 RID: 39287
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool animationBoolValue = true;
 
-		// Token: 0x0400984F RID: 38991
+		// Token: 0x04009978 RID: 39288
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int animationIntegerValue;
 
-		// Token: 0x04009850 RID: 38992
+		// Token: 0x04009979 RID: 39289
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropAnimationBool = "animation_bool";
 
-		// Token: 0x04009851 RID: 38993
+		// Token: 0x0400997A RID: 39290
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropAnimationBoolValue = "animation_bool_value";
 
-		// Token: 0x04009852 RID: 38994
+		// Token: 0x0400997B RID: 39291
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropAnimationInteger = "animation_integer";
 
-		// Token: 0x04009853 RID: 38995
+		// Token: 0x0400997C RID: 39292
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropAnimationIntegerValue = "animation_integer_value";
 
-		// Token: 0x04009854 RID: 38996
+		// Token: 0x0400997D RID: 39293
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropAnimationTrigger = "animation_trigger";
 	}

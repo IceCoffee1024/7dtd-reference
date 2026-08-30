@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020015C0 RID: 5568
+// Token: 0x020015DB RID: 5595
 public class vp_Climb : vp_Interactable
 {
-	// Token: 0x0600ADB3 RID: 44467 RVA: 0x0040C14A File Offset: 0x0040A34A
+	// Token: 0x0600AEB0 RID: 44720 RVA: 0x0041148A File Offset: 0x0040F68A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Start()
 	{
@@ -14,7 +14,7 @@ public class vp_Climb : vp_Interactable
 		this.m_CanClimbAgain = Time.time;
 	}
 
-	// Token: 0x0600ADB4 RID: 44468 RVA: 0x0040C160 File Offset: 0x0040A360
+	// Token: 0x0600AEB1 RID: 44721 RVA: 0x004114A0 File Offset: 0x0040F6A0
 	public override bool TryInteract(vp_FPPlayerEventHandler player)
 	{
 		if (!base.enabled)
@@ -59,7 +59,7 @@ public class vp_Climb : vp_Interactable
 		return this.m_Player.Climb.TryStart(true);
 	}
 
-	// Token: 0x0600ADB5 RID: 44469 RVA: 0x0040C298 File Offset: 0x0040A498
+	// Token: 0x0600AEB2 RID: 44722 RVA: 0x004115D8 File Offset: 0x0040F7D8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnStart_Climb()
 	{
@@ -79,7 +79,7 @@ public class vp_Climb : vp_Interactable
 		base.StartCoroutine("LineUp");
 	}
 
-	// Token: 0x0600ADB6 RID: 44470 RVA: 0x0040C3C0 File Offset: 0x0040A5C0
+	// Token: 0x0600AEB3 RID: 44723 RVA: 0x00411700 File Offset: 0x0040F900
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void PlaySound(List<AudioClip> sounds)
 	{
@@ -117,7 +117,7 @@ public class vp_Climb : vp_Interactable
 		this.m_LastPlayedSound = this.m_SoundToPlay;
 	}
 
-	// Token: 0x0600ADB7 RID: 44471 RVA: 0x0040C4B2 File Offset: 0x0040A6B2
+	// Token: 0x0600AEB4 RID: 44724 RVA: 0x004117F2 File Offset: 0x0040F9F2
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual IEnumerator LineUp()
 	{
@@ -161,7 +161,7 @@ public class vp_Climb : vp_Interactable
 		yield break;
 	}
 
-	// Token: 0x0600ADB8 RID: 44472 RVA: 0x0040C4C4 File Offset: 0x0040A6C4
+	// Token: 0x0600AEB5 RID: 44725 RVA: 0x00411804 File Offset: 0x0040FA04
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnStop_Climb()
 	{
@@ -192,7 +192,7 @@ public class vp_Climb : vp_Interactable
 		base.StartCoroutine("RestorePitch");
 	}
 
-	// Token: 0x0600ADB9 RID: 44473 RVA: 0x0040C65B File Offset: 0x0040A85B
+	// Token: 0x0600AEB6 RID: 44726 RVA: 0x0041199B File Offset: 0x0040FB9B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual IEnumerator RestorePitch()
 	{
@@ -206,7 +206,7 @@ public class vp_Climb : vp_Interactable
 		yield break;
 	}
 
-	// Token: 0x0600ADBA RID: 44474 RVA: 0x0040C66A File Offset: 0x0040A86A
+	// Token: 0x0600AEB7 RID: 44727 RVA: 0x004119AA File Offset: 0x0040FBAA
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool CanStart_Interact()
 	{
@@ -217,28 +217,28 @@ public class vp_Climb : vp_Interactable
 		return true;
 	}
 
-	// Token: 0x0600ADBB RID: 44475 RVA: 0x0040C687 File Offset: 0x0040A887
+	// Token: 0x0600AEB8 RID: 44728 RVA: 0x004119C7 File Offset: 0x0040FBC7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void FixedUpdate()
 	{
 		this.Climbing();
 	}
 
-	// Token: 0x0600ADBC RID: 44476 RVA: 0x0040C68F File Offset: 0x0040A88F
+	// Token: 0x0600AEB9 RID: 44729 RVA: 0x004119CF File Offset: 0x0040FBCF
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Update()
 	{
 		this.InputJump();
 	}
 
-	// Token: 0x0600ADBD RID: 44477 RVA: 0x0040C697 File Offset: 0x0040A897
+	// Token: 0x0600AEBA RID: 44730 RVA: 0x004119D7 File Offset: 0x0040FBD7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnStart_Dead()
 	{
 		this.FinishInteraction();
 	}
 
-	// Token: 0x0600ADBE RID: 44478 RVA: 0x0040C69F File Offset: 0x0040A89F
+	// Token: 0x0600AEBB RID: 44731 RVA: 0x004119DF File Offset: 0x0040FBDF
 	public override void FinishInteraction()
 	{
 		if (this.m_IsClimbing)
@@ -247,7 +247,7 @@ public class vp_Climb : vp_Interactable
 		}
 	}
 
-	// Token: 0x0600ADBF RID: 44479 RVA: 0x0040C6BC File Offset: 0x0040A8BC
+	// Token: 0x0600AEBC RID: 44732 RVA: 0x004119FC File Offset: 0x0040FBFC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Climbing()
 	{
@@ -303,7 +303,7 @@ public class vp_Climb : vp_Interactable
 		this.m_Player.Position.Set(Vector3.Slerp(this.m_Controller.Transform.position, vector, Time.deltaTime * num3));
 	}
 
-	// Token: 0x0600ADC0 RID: 44480 RVA: 0x0040C9B0 File Offset: 0x0040ABB0
+	// Token: 0x0600AEBD RID: 44733 RVA: 0x00411CF0 File Offset: 0x0040FEF0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual Vector3 GetNewPosition()
 	{
@@ -317,7 +317,7 @@ public class vp_Climb : vp_Interactable
 		return vector;
 	}
 
-	// Token: 0x0600ADC1 RID: 44481 RVA: 0x0040CA74 File Offset: 0x0040AC74
+	// Token: 0x0600AEBE RID: 44734 RVA: 0x00411DB4 File Offset: 0x0040FFB4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void InputJump()
 	{
@@ -339,102 +339,102 @@ public class vp_Climb : vp_Interactable
 		}
 	}
 
-	// Token: 0x0600ADC2 RID: 44482 RVA: 0x0040CB30 File Offset: 0x0040AD30
+	// Token: 0x0600AEBF RID: 44735 RVA: 0x00411E70 File Offset: 0x00410070
 	public static float GetTopOfCollider(Transform t)
 	{
 		return t.position.y + t.GetComponent<Collider>().bounds.size.y / 2f;
 	}
 
-	// Token: 0x04008175 RID: 33141
+	// Token: 0x0400824E RID: 33358
 	public float MinimumClimbSpeed = 3f;
 
-	// Token: 0x04008176 RID: 33142
+	// Token: 0x0400824F RID: 33359
 	public float ClimbSpeed = 16f;
 
-	// Token: 0x04008177 RID: 33143
+	// Token: 0x04008250 RID: 33360
 	public float MountSpeed = 5f;
 
-	// Token: 0x04008178 RID: 33144
+	// Token: 0x04008251 RID: 33361
 	public float DistanceToClimbable = 1f;
 
-	// Token: 0x04008179 RID: 33145
+	// Token: 0x04008252 RID: 33362
 	public float MinVelocityToClimb = 7f;
 
-	// Token: 0x0400817A RID: 33146
+	// Token: 0x04008253 RID: 33363
 	public float ClimbAgainTimeout = 1f;
 
-	// Token: 0x0400817B RID: 33147
+	// Token: 0x04008254 RID: 33364
 	public bool MountAutoRotatePitch;
 
-	// Token: 0x0400817C RID: 33148
+	// Token: 0x04008255 RID: 33365
 	public bool SimpleClimb = true;
 
-	// Token: 0x0400817D RID: 33149
+	// Token: 0x04008256 RID: 33366
 	public float DismountForce = 0.2f;
 
-	// Token: 0x0400817E RID: 33150
+	// Token: 0x04008257 RID: 33367
 	public vp_Climb.vp_ClimbingSounds Sounds;
 
-	// Token: 0x0400817F RID: 33151
+	// Token: 0x04008258 RID: 33368
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public int m_LastWeaponEquipped;
 
-	// Token: 0x04008180 RID: 33152
+	// Token: 0x04008259 RID: 33369
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_IsClimbing;
 
-	// Token: 0x04008181 RID: 33153
+	// Token: 0x0400825A RID: 33370
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_CanClimbAgain;
 
-	// Token: 0x04008182 RID: 33154
+	// Token: 0x0400825B RID: 33371
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_CachedDirection = Vector3.zero;
 
-	// Token: 0x04008183 RID: 33155
+	// Token: 0x0400825C RID: 33372
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector2 m_CachedRotation = Vector2.zero;
 
-	// Token: 0x04008184 RID: 33156
+	// Token: 0x0400825D RID: 33373
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Timer.Handle m_ClimbingSoundTimer = new vp_Timer.Handle();
 
-	// Token: 0x04008185 RID: 33157
+	// Token: 0x0400825E RID: 33374
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AudioClip m_SoundToPlay;
 
-	// Token: 0x04008186 RID: 33158
+	// Token: 0x0400825F RID: 33375
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AudioClip m_LastPlayedSound;
 
-	// Token: 0x020015C1 RID: 5569
+	// Token: 0x020015DC RID: 5596
 	[Serializable]
 	public class vp_ClimbingSounds
 	{
-		// Token: 0x04008187 RID: 33159
+		// Token: 0x04008260 RID: 33376
 		public AudioSource AudioSource;
 
-		// Token: 0x04008188 RID: 33160
+		// Token: 0x04008261 RID: 33377
 		public List<AudioClip> MountSounds = new List<AudioClip>();
 
-		// Token: 0x04008189 RID: 33161
+		// Token: 0x04008262 RID: 33378
 		public List<AudioClip> DismountSounds = new List<AudioClip>();
 
-		// Token: 0x0400818A RID: 33162
+		// Token: 0x04008263 RID: 33379
 		public float ClimbingSoundSpeed = 4f;
 
-		// Token: 0x0400818B RID: 33163
+		// Token: 0x04008264 RID: 33380
 		public Vector2 ClimbingPitch = new Vector2(1f, 1.5f);
 
-		// Token: 0x0400818C RID: 33164
+		// Token: 0x04008265 RID: 33381
 		public List<AudioClip> ClimbingSounds = new List<AudioClip>();
 	}
 }

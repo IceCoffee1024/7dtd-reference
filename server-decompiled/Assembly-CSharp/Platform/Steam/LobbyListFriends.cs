@@ -4,10 +4,10 @@ using Steamworks;
 
 namespace Platform.Steam
 {
-	// Token: 0x02001C65 RID: 7269
+	// Token: 0x02001C8C RID: 7308
 	public class LobbyListFriends : LobbyListAbs
 	{
-		// Token: 0x0600D719 RID: 55065 RVA: 0x004D6DB8 File Offset: 0x004D4FB8
+		// Token: 0x0600D8AB RID: 55467 RVA: 0x004DD2D4 File Offset: 0x004DB4D4
 		public override void Init(IPlatform _owner)
 		{
 			this.owner = _owner;
@@ -20,14 +20,14 @@ namespace Platform.Steam
 			};
 		}
 
-		// Token: 0x0600D71A RID: 55066 RVA: 0x004D6DD8 File Offset: 0x004D4FD8
+		// Token: 0x0600D8AC RID: 55468 RVA: 0x004DD2F4 File Offset: 0x004DB4F4
 		public override void StopSearch()
 		{
 			this.currentFriend = -1;
 			this.isRefreshing = false;
 		}
 
-		// Token: 0x0600D71B RID: 55067 RVA: 0x004D6DE8 File Offset: 0x004D4FE8
+		// Token: 0x0600D8AD RID: 55469 RVA: 0x004DD304 File Offset: 0x004DB504
 		public override void StartSearch(IList<IServerListInterface.ServerFilter> _activeFilters)
 		{
 			if (this.gameServerFoundCallback == null)
@@ -39,7 +39,7 @@ namespace Platform.Steam
 			this.queryNextFriend();
 		}
 
-		// Token: 0x0600D71C RID: 55068 RVA: 0x004D6E08 File Offset: 0x004D5008
+		// Token: 0x0600D8AE RID: 55470 RVA: 0x004DD324 File Offset: 0x004DB524
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void queryNextFriend()
 		{
@@ -56,7 +56,7 @@ namespace Platform.Steam
 			ThreadManager.StartCoroutine(base.restartRefreshCo(2f));
 		}
 
-		// Token: 0x0600D71D RID: 55069 RVA: 0x004D6E80 File Offset: 0x004D5080
+		// Token: 0x0600D8AF RID: 55471 RVA: 0x004DD39C File Offset: 0x004DB59C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Lobby_DataUpdate(LobbyDataUpdate_t _val)
 		{
@@ -74,11 +74,11 @@ namespace Platform.Steam
 			this.queryNextFriend();
 		}
 
-		// Token: 0x0400A347 RID: 41799
+		// Token: 0x0400A479 RID: 42105
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Callback<LobbyDataUpdate_t> m_lobbyDataUpdate;
 
-		// Token: 0x0400A348 RID: 41800
+		// Token: 0x0400A47A RID: 42106
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int currentFriend;
 	}

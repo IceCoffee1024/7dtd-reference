@@ -3,16 +3,16 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000960 RID: 2400
+// Token: 0x02000971 RID: 2417
 [Preserve]
 public class QuestActionTreasureChest : BaseQuestAction
 {
-	// Token: 0x0600463F RID: 17983 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060046C5 RID: 18117 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void SetupAction()
 	{
 	}
 
-	// Token: 0x06004640 RID: 17984 RVA: 0x001BC564 File Offset: 0x001BA764
+	// Token: 0x060046C6 RID: 18118 RVA: 0x001BED58 File Offset: 0x001BCF58
 	public override void PerformAction(Quest ownerQuest)
 	{
 		World world = GameManager.Instance.World;
@@ -34,7 +34,7 @@ public class QuestActionTreasureChest : BaseQuestAction
 		ownerQuest.DataVariables.Add("treasurecontainer", string.Format("{0},{1},{2}", num2, num4, num3));
 	}
 
-	// Token: 0x06004641 RID: 17985 RVA: 0x001BC690 File Offset: 0x001BA890
+	// Token: 0x060046C7 RID: 18119 RVA: 0x001BEE84 File Offset: 0x001BD084
 	public override BaseQuestAction Clone()
 	{
 		QuestActionTreasureChest questActionTreasureChest = new QuestActionTreasureChest();

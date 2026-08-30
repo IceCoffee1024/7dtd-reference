@@ -4,12 +4,12 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x020018EA RID: 6378
+	// Token: 0x02001910 RID: 6416
 	[Preserve]
 	public class ChallengeObjectiveTrader : BaseChallengeObjective
 	{
-		// Token: 0x1700181B RID: 6171
-		// (get) Token: 0x0600C4AD RID: 50349 RVA: 0x001AFF0C File Offset: 0x001AE10C
+		// Token: 0x1700188D RID: 6285
+		// (get) Token: 0x0600C634 RID: 50740 RVA: 0x001B24E4 File Offset: 0x001B06E4
 		public override ChallengeObjectiveType ObjectiveType
 		{
 			get
@@ -18,8 +18,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x1700181C RID: 6172
-		// (get) Token: 0x0600C4AE RID: 50350 RVA: 0x00487E28 File Offset: 0x00486028
+		// Token: 0x1700188E RID: 6286
+		// (get) Token: 0x0600C635 RID: 50741 RVA: 0x0048E174 File Offset: 0x0048C374
 		public override string DescriptionText
 		{
 			get
@@ -43,12 +43,12 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C4AF RID: 50351 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C636 RID: 50742 RVA: 0x000027FC File Offset: 0x000009FC
 		public override void Init()
 		{
 		}
 
-		// Token: 0x0600C4B0 RID: 50352 RVA: 0x00487EA9 File Offset: 0x004860A9
+		// Token: 0x0600C637 RID: 50743 RVA: 0x0048E1F5 File Offset: 0x0048C3F5
 		public override void HandleAddHooks()
 		{
 			if (this.BuyItems)
@@ -59,7 +59,7 @@ namespace Challenges
 			QuestEventManager.Current.SellItems += this.Current_SellItems;
 		}
 
-		// Token: 0x0600C4B1 RID: 50353 RVA: 0x00487EE0 File Offset: 0x004860E0
+		// Token: 0x0600C638 RID: 50744 RVA: 0x0048E22C File Offset: 0x0048C42C
 		public override void HandleRemoveHooks()
 		{
 			if (this.BuyItems)
@@ -70,7 +70,7 @@ namespace Challenges
 			QuestEventManager.Current.SellItems -= this.Current_SellItems;
 		}
 
-		// Token: 0x0600C4B2 RID: 50354 RVA: 0x00487F18 File Offset: 0x00486118
+		// Token: 0x0600C639 RID: 50745 RVA: 0x0048E264 File Offset: 0x0048C464
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Current_BuyItems(string traderName, int itemCounts)
 		{
@@ -89,7 +89,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C4B3 RID: 50355 RVA: 0x00487F80 File Offset: 0x00486180
+		// Token: 0x0600C63A RID: 50746 RVA: 0x0048E2CC File Offset: 0x0048C4CC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Current_SellItems(string traderName, int itemCounts)
 		{
@@ -108,7 +108,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C4B4 RID: 50356 RVA: 0x00487FE8 File Offset: 0x004861E8
+		// Token: 0x0600C63B RID: 50747 RVA: 0x0048E334 File Offset: 0x0048C534
 		public override void ParseElement(XElement e)
 		{
 			base.ParseElement(e);
@@ -122,7 +122,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C4B5 RID: 50357 RVA: 0x00488054 File Offset: 0x00486254
+		// Token: 0x0600C63C RID: 50748 RVA: 0x0048E3A0 File Offset: 0x0048C5A0
 		public override BaseChallengeObjective Clone()
 		{
 			return new ChallengeObjectiveTrader
@@ -132,11 +132,11 @@ namespace Challenges
 			};
 		}
 
-		// Token: 0x0400944A RID: 37962
+		// Token: 0x04009573 RID: 38259
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool BuyItems;
 
-		// Token: 0x0400944B RID: 37963
+		// Token: 0x04009574 RID: 38260
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string TraderName = "";
 	}

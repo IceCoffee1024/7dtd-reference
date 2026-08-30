@@ -2,18 +2,18 @@
 
 namespace XMLData.Item
 {
-	// Token: 0x02001625 RID: 5669
+	// Token: 0x02001640 RID: 5696
 	public enum EPartType
 	{
-		// Token: 0x0400856D RID: 34157
+		// Token: 0x04008646 RID: 34374
 		None,
-		// Token: 0x0400856E RID: 34158
+		// Token: 0x04008647 RID: 34375
 		Stock,
-		// Token: 0x0400856F RID: 34159
+		// Token: 0x04008648 RID: 34376
 		Receiver,
-		// Token: 0x04008570 RID: 34160
+		// Token: 0x04008649 RID: 34377
 		Pump,
-		// Token: 0x04008571 RID: 34161
+		// Token: 0x0400864A RID: 34378
 		Barrel
 	}
 }

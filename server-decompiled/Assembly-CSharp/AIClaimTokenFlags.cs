@@ -1,11 +1,11 @@
 ﻿using System;
 
-// Token: 0x0200045C RID: 1116
+// Token: 0x02000460 RID: 1120
 [Flags]
 public enum AIClaimTokenFlags
 {
-	// Token: 0x04001778 RID: 6008
+	// Token: 0x0400178E RID: 6030
 	None = 0,
-	// Token: 0x04001779 RID: 6009
+	// Token: 0x0400178F RID: 6031
 	UpdateTimeout = 1
 }

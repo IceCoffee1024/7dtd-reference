@@ -1,10 +1,10 @@
 ﻿using System;
 using Unity.Collections;
 
-// Token: 0x02000CD5 RID: 3285
+// Token: 0x02000CE7 RID: 3303
 public struct WaterStats
 {
-	// Token: 0x0600649E RID: 25758 RVA: 0x00275B54 File Offset: 0x00273D54
+	// Token: 0x0600652A RID: 25898 RVA: 0x00278A50 File Offset: 0x00276C50
 	public static WaterStats Sum(NativeArray<WaterStats> array)
 	{
 		WaterStats waterStats = default(WaterStats);
@@ -15,7 +15,7 @@ public struct WaterStats
 		return waterStats;
 	}
 
-	// Token: 0x0600649F RID: 25759 RVA: 0x00275B8C File Offset: 0x00273D8C
+	// Token: 0x0600652B RID: 25899 RVA: 0x00278A88 File Offset: 0x00276C88
 	public static WaterStats operator +(WaterStats a, WaterStats b)
 	{
 		return new WaterStats
@@ -29,7 +29,7 @@ public struct WaterStats
 		};
 	}
 
-	// Token: 0x060064A0 RID: 25760 RVA: 0x00275C1A File Offset: 0x00273E1A
+	// Token: 0x0600652C RID: 25900 RVA: 0x00278B16 File Offset: 0x00276D16
 	public void ResetFrame()
 	{
 		this.NumChunksProcessed = 0;
@@ -40,21 +40,21 @@ public struct WaterStats
 		this.NumVoxelsWokeUp = 0;
 	}
 
-	// Token: 0x04004E10 RID: 19984
+	// Token: 0x04004EAE RID: 20142
 	public int NumChunksProcessed;
 
-	// Token: 0x04004E11 RID: 19985
+	// Token: 0x04004EAF RID: 20143
 	public int NumChunksActive;
 
-	// Token: 0x04004E12 RID: 19986
+	// Token: 0x04004EB0 RID: 20144
 	public int NumFlowEvents;
 
-	// Token: 0x04004E13 RID: 19987
+	// Token: 0x04004EB1 RID: 20145
 	public int NumVoxelsProcessed;
 
-	// Token: 0x04004E14 RID: 19988
+	// Token: 0x04004EB2 RID: 20146
 	public int NumVoxelsPutToSleep;
 
-	// Token: 0x04004E15 RID: 19989
+	// Token: 0x04004EB3 RID: 20147
 	public int NumVoxelsWokeUp;
 }

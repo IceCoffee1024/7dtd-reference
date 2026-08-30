@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200081C RID: 2076
+// Token: 0x02000827 RID: 2087
 [Preserve]
 public class NetPackagePlayerId : NetPackage
 {
-	// Token: 0x1700065A RID: 1626
-	// (get) Token: 0x06003CED RID: 15597 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x17000665 RID: 1637
+	// (get) Token: 0x06003D4C RID: 15692 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,7 +15,7 @@ public class NetPackagePlayerId : NetPackage
 		}
 	}
 
-	// Token: 0x06003CEE RID: 15598 RVA: 0x001835BE File Offset: 0x001817BE
+	// Token: 0x06003D4D RID: 15693 RVA: 0x00185996 File Offset: 0x00183B96
 	public NetPackagePlayerId Setup(int _id, int _teamNumber, PlayerDataFile _playerDataFile, int _chunkViewDim)
 	{
 		this.id = _id;
@@ -25,7 +25,7 @@ public class NetPackagePlayerId : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003CEF RID: 15599 RVA: 0x001835DE File Offset: 0x001817DE
+	// Token: 0x06003D4E RID: 15694 RVA: 0x001859B6 File Offset: 0x00183BB6
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.id = _reader.ReadInt32();
@@ -35,7 +35,7 @@ public class NetPackagePlayerId : NetPackage
 		this.chunkViewDim = _reader.ReadInt32();
 	}
 
-	// Token: 0x06003CF0 RID: 15600 RVA: 0x0018361B File Offset: 0x0018181B
+	// Token: 0x06003D4F RID: 15695 RVA: 0x001859F3 File Offset: 0x00183BF3
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -45,31 +45,31 @@ public class NetPackagePlayerId : NetPackage
 		_writer.Write(this.chunkViewDim);
 	}
 
-	// Token: 0x06003CF1 RID: 15601 RVA: 0x00183655 File Offset: 0x00181855
+	// Token: 0x06003D50 RID: 15696 RVA: 0x00185A2D File Offset: 0x00183C2D
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		_callbacks.PlayerId(this.id, this.teamNumber, this.playerDataFile, this.chunkViewDim);
 	}
 
-	// Token: 0x06003CF2 RID: 15602 RVA: 0x0017A89E File Offset: 0x00178A9E
+	// Token: 0x06003D51 RID: 15697 RVA: 0x0017CB1E File Offset: 0x0017AD1E
 	public override int GetLength()
 	{
 		return 40;
 	}
 
-	// Token: 0x0400313E RID: 12606
+	// Token: 0x040031BD RID: 12733
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int id;
 
-	// Token: 0x0400313F RID: 12607
+	// Token: 0x040031BE RID: 12734
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int teamNumber;
 
-	// Token: 0x04003140 RID: 12608
+	// Token: 0x040031BF RID: 12735
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlayerDataFile playerDataFile;
 
-	// Token: 0x04003141 RID: 12609
+	// Token: 0x040031C0 RID: 12736
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int chunkViewDim;
 }

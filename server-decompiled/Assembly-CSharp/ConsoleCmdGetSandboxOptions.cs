@@ -4,11 +4,11 @@ using System.Runtime.CompilerServices;
 using SandboxOptions;
 using UnityEngine.Scripting;
 
-// Token: 0x0200021D RID: 541
+// Token: 0x0200021F RID: 543
 [Preserve]
 public class ConsoleCmdGetSandboxOptions : ConsoleCmdAbstract
 {
-	// Token: 0x06001070 RID: 4208 RVA: 0x00067600 File Offset: 0x00065800
+	// Token: 0x0600107B RID: 4219 RVA: 0x00067B58 File Offset: 0x00065D58
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -16,7 +16,7 @@ public class ConsoleCmdGetSandboxOptions : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000192 RID: 402
-	// (get) Token: 0x06001071 RID: 4209 RVA: 0x0006110A File Offset: 0x0005F30A
+	// (get) Token: 0x0600107C RID: 4220 RVA: 0x00061652 File Offset: 0x0005F852
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -25,42 +25,57 @@ public class ConsoleCmdGetSandboxOptions : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001072 RID: 4210 RVA: 0x00067618 File Offset: 0x00065818
+	// Token: 0x0600107D RID: 4221 RVA: 0x00067B70 File Offset: 0x00065D70
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Gets the current game's Sandbox Options";
 	}
 
-	// Token: 0x06001073 RID: 4211 RVA: 0x0006761F File Offset: 0x0006581F
+	// Token: 0x0600107E RID: 4222 RVA: 0x00067B77 File Offset: 0x00065D77
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return ("\n\t\t\t|Usage:\n\t\t\t|  " + this.PrimaryCommand + " [show all]\n\t\t\t|Shows the currently loaded game's Sandbox Options.\n\t\t\t|By default only shows those that have non-default values, but can show all options by specifying the optional argument with \"true\".\n\t\t\t").Unindent(true);
 	}
 
-	// Token: 0x06001074 RID: 4212 RVA: 0x0006763C File Offset: 0x0006583C
+	// Token: 0x0600107F RID: 4223 RVA: 0x00067B94 File Offset: 0x00065D94
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		bool flag = _params.Count > 0 && StringParsers.ParseBool(_params[0], 0, -1, true);
-		ConsoleCmdGetSandboxOptions.LogOptions(GameStats.GetString(EnumGameStats.SandboxCode), flag, true);
+		ConsoleCmdGetSandboxOptions.LogOptions(GameStats.GetString(EnumGameStats.SandboxCode), flag, ConsoleCmdGetSandboxOptions.ELogType.RemoteConsole);
 	}
 
-	// Token: 0x06001075 RID: 4213 RVA: 0x00067674 File Offset: 0x00065874
-	public static void LogOptions(string _code, bool _showAll, bool _logToConsole)
+	// Token: 0x06001080 RID: 4224 RVA: 0x00067BCC File Offset: 0x00065DCC
+	public static void LogOptions(string _code, bool _showAll, ConsoleCmdGetSandboxOptions.ELogType _logTarget)
 	{
-		Action<string> action = (_logToConsole ? new Action<string>(ConsoleCmdGetSandboxOptions.<LogOptions>g__PrintConsole|6_1) : new Action<string>(ConsoleCmdGetSandboxOptions.<LogOptions>g__PrintLog|6_0));
+		Action<string> action;
+		switch (_logTarget)
+		{
+		case ConsoleCmdGetSandboxOptions.ELogType.LogOnly:
+			action = new Action<string>(ConsoleCmdGetSandboxOptions.<LogOptions>g__PrintLog|7_0);
+			break;
+		case ConsoleCmdGetSandboxOptions.ELogType.Console:
+			action = new Action<string>(ConsoleCmdGetSandboxOptions.<LogOptions>g__PrintConsole|7_1);
+			break;
+		case ConsoleCmdGetSandboxOptions.ELogType.RemoteConsole:
+			action = new Action<string>(ConsoleCmdGetSandboxOptions.<LogOptions>g__PrintRemoteConsole|7_2);
+			break;
+		default:
+			throw new ArgumentOutOfRangeException("_logTarget", _logTarget, null);
+		}
+		Action<string> action2 = action;
 		if (_code == null)
 		{
 			_code = "";
 		}
-		action("Sandbox Code: " + _code);
-		action("Sandbox Options:");
+		action2("Sandbox Code: " + _code);
+		action2("Sandbox Options:");
 		SandboxOptionManager sandboxOptionManager = SandboxOptionManager.Current;
 		SandboxOptionPreset sandboxOptionPreset = new SandboxOptionPreset();
 		if (!sandboxOptionManager.LoadOptionsFromCode(_code, sandboxOptionPreset))
 		{
-			action("  - Invalid code -");
+			action2("  - Invalid code -");
 			return;
 		}
 		foreach (KeyValuePair<string, List<BaseSandboxOption>> keyValuePair in sandboxOptionManager.OptionsByCategory.dict)
@@ -80,11 +95,11 @@ public class ConsoleCmdGetSandboxOptions : ConsoleCmdAbstract
 					if (!flag)
 					{
 						flag = true;
-						action("*** " + text2.ToUpper() + " ***");
+						action2("*** " + text2.ToUpper() + " ***");
 					}
-					string valueTextFromIndex = baseSandboxOption.GetValueTextFromIndex(num);
-					string valueTextFromIndex2 = baseSandboxOption.GetValueTextFromIndex(defaultIndex);
-					action(string.Format("Option {0}: {1}/{2} (default: {3}/{4})", new object[]
+					string valueTextFromIndex = baseSandboxOption.GetValueTextFromIndex(num, null);
+					string valueTextFromIndex2 = baseSandboxOption.GetValueTextFromIndex(defaultIndex, null);
+					action2(string.Format("Option {0}: {1}/{2} (default: {3}/{4})", new object[]
 					{
 						baseSandboxOption.Option.ToStringCached<global::SandboxOptions.SandboxOptions>(),
 						num,
@@ -97,19 +112,38 @@ public class ConsoleCmdGetSandboxOptions : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001077 RID: 4215 RVA: 0x00067840 File Offset: 0x00065A40
+	// Token: 0x06001082 RID: 4226 RVA: 0x00067DD0 File Offset: 0x00065FD0
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
-	public static void <LogOptions>g__PrintLog|6_0(string _line)
+	public static void <LogOptions>g__PrintLog|7_0(string _line)
 	{
 		Log.WriteLine(_line);
 	}
 
-	// Token: 0x06001078 RID: 4216 RVA: 0x00067848 File Offset: 0x00065A48
+	// Token: 0x06001083 RID: 4227 RVA: 0x00067DD8 File Offset: 0x00065FD8
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
-	public static void <LogOptions>g__PrintConsole|6_1(string _line)
+	public static void <LogOptions>g__PrintConsole|7_1(string _line)
 	{
 		Log.Out(_line);
+	}
+
+	// Token: 0x06001084 RID: 4228 RVA: 0x00067DE0 File Offset: 0x00065FE0
+	[CompilerGenerated]
+	[PublicizedFrom(EAccessModifier.Internal)]
+	public static void <LogOptions>g__PrintRemoteConsole|7_2(string _line)
+	{
+		SingletonMonoBehaviour<SdtdConsole>.Instance.Output(_line);
+	}
+
+	// Token: 0x02000220 RID: 544
+	public enum ELogType
+	{
+		// Token: 0x04000CB8 RID: 3256
+		LogOnly,
+		// Token: 0x04000CB9 RID: 3257
+		Console,
+		// Token: 0x04000CBA RID: 3258
+		RemoteConsole
 	}
 }

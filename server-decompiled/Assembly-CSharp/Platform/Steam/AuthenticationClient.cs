@@ -3,16 +3,16 @@ using Steamworks;
 
 namespace Platform.Steam
 {
-	// Token: 0x02001C59 RID: 7257
+	// Token: 0x02001C80 RID: 7296
 	public class AuthenticationClient : IAuthenticationClient
 	{
-		// Token: 0x0600D6C5 RID: 54981 RVA: 0x004D5E9B File Offset: 0x004D409B
+		// Token: 0x0600D855 RID: 55381 RVA: 0x004DC2BF File Offset: 0x004DA4BF
 		public void Init(IPlatform _owner)
 		{
 			this.owner = _owner;
 		}
 
-		// Token: 0x0600D6C6 RID: 54982 RVA: 0x004D5EA4 File Offset: 0x004D40A4
+		// Token: 0x0600D856 RID: 55382 RVA: 0x004DC2C8 File Offset: 0x004DA4C8
 		public string GetAuthTicket()
 		{
 			if (!this.registeredDisconnectEvent)
@@ -36,7 +36,7 @@ namespace Platform.Steam
 			return Convert.ToBase64String(array);
 		}
 
-		// Token: 0x0600D6C7 RID: 54983 RVA: 0x004D5F3E File Offset: 0x004D413E
+		// Token: 0x0600D857 RID: 55383 RVA: 0x004DC362 File Offset: 0x004DA562
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnDisconnectFromServer()
 		{
@@ -47,27 +47,27 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D6C8 RID: 54984 RVA: 0x004D5F68 File Offset: 0x004D4168
+		// Token: 0x0600D858 RID: 55384 RVA: 0x004DC38C File Offset: 0x004DA58C
 		public void AuthenticateServer(ClientAuthenticateServerContext _context)
 		{
 			_context.Success();
 		}
 
-		// Token: 0x0600D6C9 RID: 54985 RVA: 0x004D5F70 File Offset: 0x004D4170
+		// Token: 0x0600D859 RID: 55385 RVA: 0x004DC394 File Offset: 0x004DA594
 		public void Destroy()
 		{
 			this.OnDisconnectFromServer();
 		}
 
-		// Token: 0x0400A326 RID: 41766
+		// Token: 0x0400A457 RID: 42071
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform owner;
 
-		// Token: 0x0400A327 RID: 41767
+		// Token: 0x0400A458 RID: 42072
 		[PublicizedFrom(EAccessModifier.Private)]
 		public HAuthTicket ticketHandle = HAuthTicket.Invalid;
 
-		// Token: 0x0400A328 RID: 41768
+		// Token: 0x0400A459 RID: 42073
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool registeredDisconnectEvent;
 	}

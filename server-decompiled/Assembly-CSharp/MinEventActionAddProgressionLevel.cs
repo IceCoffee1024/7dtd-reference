@@ -4,29 +4,29 @@ using System.Xml.Linq;
 using SandboxOptions;
 using UnityEngine.Scripting;
 
-// Token: 0x020006E2 RID: 1762
+// Token: 0x020006EC RID: 1772
 [Preserve]
 public class MinEventActionAddProgressionLevel : MinEventActionTargetedBase
 {
-	// Token: 0x1700055C RID: 1372
-	// (get) Token: 0x06003629 RID: 13865 RVA: 0x0016618B File Offset: 0x0016438B
-	// (set) Token: 0x0600362A RID: 13866 RVA: 0x00166193 File Offset: 0x00164393
+	// Token: 0x17000565 RID: 1381
+	// (get) Token: 0x0600367F RID: 13951 RVA: 0x00168363 File Offset: 0x00166563
+	// (set) Token: 0x06003680 RID: 13952 RVA: 0x0016836B File Offset: 0x0016656B
 	public string progressionName
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x1700055D RID: 1373
-	// (get) Token: 0x0600362B RID: 13867 RVA: 0x0016619C File Offset: 0x0016439C
-	// (set) Token: 0x0600362C RID: 13868 RVA: 0x001661A4 File Offset: 0x001643A4
+	// Token: 0x17000566 RID: 1382
+	// (get) Token: 0x06003681 RID: 13953 RVA: 0x00168374 File Offset: 0x00166574
+	// (set) Token: 0x06003682 RID: 13954 RVA: 0x0016837C File Offset: 0x0016657C
 	public int level
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x0600362D RID: 13869 RVA: 0x001661B0 File Offset: 0x001643B0
+	// Token: 0x06003683 RID: 13955 RVA: 0x00168388 File Offset: 0x00166588
 	public override void Execute(MinEventParams _params)
 	{
 		if (this.targets == null)
@@ -74,13 +74,13 @@ public class MinEventActionAddProgressionLevel : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x0600362E RID: 13870 RVA: 0x00166357 File Offset: 0x00164557
+	// Token: 0x06003684 RID: 13956 RVA: 0x0016852F File Offset: 0x0016672F
 	public override bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
 	{
 		return base.CanExecute(_eventType, _params) && this.progressionName != null && this.level >= -1;
 	}
 
-	// Token: 0x0600362F RID: 13871 RVA: 0x0016637C File Offset: 0x0016457C
+	// Token: 0x06003685 RID: 13957 RVA: 0x00168554 File Offset: 0x00166754
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -109,7 +109,7 @@ public class MinEventActionAddProgressionLevel : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002B96 RID: 11158
+	// Token: 0x04002C0A RID: 11274
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showMessage = true;
 }

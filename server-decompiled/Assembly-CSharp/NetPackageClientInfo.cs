@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020007B2 RID: 1970
+// Token: 0x020007BC RID: 1980
 [Preserve]
 public class NetPackageClientInfo : NetPackage
 {
-	// Token: 0x06003A70 RID: 14960 RVA: 0x0017A8FC File Offset: 0x00178AFC
+	// Token: 0x06003AC8 RID: 15048 RVA: 0x0017CB7C File Offset: 0x0017AD7C
 	public NetPackageClientInfo Setup(WorldBase _world, IList<ClientInfo> _clients)
 	{
 		this.playerIds.Clear();
@@ -32,7 +32,7 @@ public class NetPackageClientInfo : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003A71 RID: 14961 RVA: 0x0017A990 File Offset: 0x00178B90
+	// Token: 0x06003AC9 RID: 15049 RVA: 0x0017CC10 File Offset: 0x0017AE10
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void addPlayerEntry(EntityAlive _ea, ClientInfo _clientInfo)
 	{
@@ -47,7 +47,7 @@ public class NetPackageClientInfo : NetPackage
 		this.admins.Add(entityPlayer != null && entityPlayer.IsAdmin);
 	}
 
-	// Token: 0x06003A72 RID: 14962 RVA: 0x0017AA00 File Offset: 0x00178C00
+	// Token: 0x06003ACA RID: 15050 RVA: 0x0017CC80 File Offset: 0x0017AE80
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.playerIds.Clear();
@@ -62,7 +62,7 @@ public class NetPackageClientInfo : NetPackage
 		}
 	}
 
-	// Token: 0x06003A73 RID: 14963 RVA: 0x0017AA74 File Offset: 0x00178C74
+	// Token: 0x06003ACB RID: 15051 RVA: 0x0017CCF4 File Offset: 0x0017AEF4
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -75,7 +75,7 @@ public class NetPackageClientInfo : NetPackage
 		}
 	}
 
-	// Token: 0x06003A74 RID: 14964 RVA: 0x0017AAE8 File Offset: 0x00178CE8
+	// Token: 0x06003ACC RID: 15052 RVA: 0x0017CD68 File Offset: 0x0017AF68
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -97,14 +97,14 @@ public class NetPackageClientInfo : NetPackage
 		}
 	}
 
-	// Token: 0x06003A75 RID: 14965 RVA: 0x0017A89E File Offset: 0x00178A9E
+	// Token: 0x06003ACD RID: 15053 RVA: 0x0017CB1E File Offset: 0x0017AD1E
 	public override int GetLength()
 	{
 		return 40;
 	}
 
-	// Token: 0x1700060E RID: 1550
-	// (get) Token: 0x06003A76 RID: 14966 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x17000618 RID: 1560
+	// (get) Token: 0x06003ACE RID: 15054 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -113,15 +113,15 @@ public class NetPackageClientInfo : NetPackage
 		}
 	}
 
-	// Token: 0x04002F8B RID: 12171
+	// Token: 0x04003004 RID: 12292
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<int> playerIds = new List<int>();
 
-	// Token: 0x04002F8C RID: 12172
+	// Token: 0x04003005 RID: 12293
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<int> pingTimes = new List<int>();
 
-	// Token: 0x04002F8D RID: 12173
+	// Token: 0x04003006 RID: 12294
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<bool> admins = new List<bool>();
 }

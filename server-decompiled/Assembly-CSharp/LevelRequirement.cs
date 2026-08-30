@@ -1,18 +1,18 @@
 ﻿using System;
 
-// Token: 0x02000ABD RID: 2749
+// Token: 0x02000ACE RID: 2766
 public struct LevelRequirement
 {
-	// Token: 0x06005241 RID: 21057 RVA: 0x001F7910 File Offset: 0x001F5B10
+	// Token: 0x060052C7 RID: 21191 RVA: 0x001FA3A8 File Offset: 0x001F85A8
 	public LevelRequirement(int _level)
 	{
 		this.Level = _level;
 		this.Requirements = null;
 	}
 
-	// Token: 0x04003FF7 RID: 16375
+	// Token: 0x04004088 RID: 16520
 	public readonly int Level;
 
-	// Token: 0x04003FF8 RID: 16376
+	// Token: 0x04004089 RID: 16521
 	public RequirementGroup Requirements;
 }

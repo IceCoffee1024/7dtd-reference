@@ -4,14 +4,14 @@ using UnityEngine.Rendering;
 
 namespace PostEffects
 {
-	// Token: 0x02001D3A RID: 7482
+	// Token: 0x02001D62 RID: 7522
 	[ExecuteInEditMode]
 	[RequireComponent(typeof(Camera))]
 	public sealed class ContactShadows : MonoBehaviour
 	{
-		// Token: 0x17001B4F RID: 6991
-		// (get) Token: 0x0600DCC7 RID: 56519 RVA: 0x004F34FB File Offset: 0x004F16FB
-		// (set) Token: 0x0600DCC8 RID: 56520 RVA: 0x004F3503 File Offset: 0x004F1703
+		// Token: 0x17001BC1 RID: 7105
+		// (get) Token: 0x0600DE68 RID: 56936 RVA: 0x004F9F6F File Offset: 0x004F816F
+		// (set) Token: 0x0600DE69 RID: 56937 RVA: 0x004F9F77 File Offset: 0x004F8177
 		public Light Light
 		{
 			get
@@ -24,7 +24,7 @@ namespace PostEffects
 			}
 		}
 
-		// Token: 0x0600DCC9 RID: 56521 RVA: 0x004F350C File Offset: 0x004F170C
+		// Token: 0x0600DE6A RID: 56938 RVA: 0x004F9F80 File Offset: 0x004F8180
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnDestroy()
 		{
@@ -57,7 +57,7 @@ namespace PostEffects
 			}
 		}
 
-		// Token: 0x0600DCCA RID: 56522 RVA: 0x004F359E File Offset: 0x004F179E
+		// Token: 0x0600DE6B RID: 56939 RVA: 0x004FA012 File Offset: 0x004F8212
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnPreCull()
 		{
@@ -70,7 +70,7 @@ namespace PostEffects
 			}
 		}
 
-		// Token: 0x0600DCCB RID: 56523 RVA: 0x004F35E0 File Offset: 0x004F17E0
+		// Token: 0x0600DE6C RID: 56940 RVA: 0x004FA054 File Offset: 0x004F8254
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnPreRender()
 		{
@@ -83,14 +83,14 @@ namespace PostEffects
 			}
 		}
 
-		// Token: 0x0600DCCC RID: 56524 RVA: 0x004F3635 File Offset: 0x004F1835
+		// Token: 0x0600DE6D RID: 56941 RVA: 0x004FA0A9 File Offset: 0x004F82A9
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Update()
 		{
 			base.GetComponent<Camera>().depthTextureMode |= DepthTextureMode.Depth;
 		}
 
-		// Token: 0x0600DCCD RID: 56525 RVA: 0x004F364C File Offset: 0x004F184C
+		// Token: 0x0600DE6E RID: 56942 RVA: 0x004FA0C0 File Offset: 0x004F82C0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Matrix4x4 CalculateVPMatrix()
 		{
@@ -100,7 +100,7 @@ namespace PostEffects
 			return GL.GetGPUProjectionMatrix(nonJitteredProjectionMatrix, true) * worldToCameraMatrix;
 		}
 
-		// Token: 0x0600DCCE RID: 56526 RVA: 0x004F3678 File Offset: 0x004F1878
+		// Token: 0x0600DE6F RID: 56943 RVA: 0x004FA0EC File Offset: 0x004F82EC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector2Int GetScreenSize()
 		{
@@ -109,7 +109,7 @@ namespace PostEffects
 			return new Vector2Int(current.pixelWidth / num, current.pixelHeight / num);
 		}
 
-		// Token: 0x0600DCCF RID: 56527 RVA: 0x004F36B0 File Offset: 0x004F18B0
+		// Token: 0x0600DE70 RID: 56944 RVA: 0x004FA124 File Offset: 0x004F8324
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void UpdateTempObjects()
 		{
@@ -152,7 +152,7 @@ namespace PostEffects
 			this._previousVP = ContactShadows.CalculateVPMatrix();
 		}
 
-		// Token: 0x0600DCD0 RID: 56528 RVA: 0x004F3898 File Offset: 0x004F1A98
+		// Token: 0x0600DE71 RID: 56945 RVA: 0x004FA30C File Offset: 0x004F850C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void BuildCommandBuffer()
 		{
@@ -189,72 +189,72 @@ namespace PostEffects
 			this._prevMaskRT1 = temporary;
 		}
 
-		// Token: 0x0400A792 RID: 42898
+		// Token: 0x0400A8C7 RID: 43207
 		[SerializeField]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Light _light;
 
-		// Token: 0x0400A793 RID: 42899
+		// Token: 0x0400A8C8 RID: 43208
 		[SerializeField]
 		[Range(0f, 5f)]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float _rejectionDepth = 0.05f;
 
-		// Token: 0x0400A794 RID: 42900
+		// Token: 0x0400A8C9 RID: 43209
 		[SerializeField]
 		[Range(4f, 32f)]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int _sampleCount = 16;
 
-		// Token: 0x0400A795 RID: 42901
+		// Token: 0x0400A8CA RID: 43210
 		[SerializeField]
 		[Range(0f, 1f)]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float _temporalFilter = 0.5f;
 
-		// Token: 0x0400A796 RID: 42902
+		// Token: 0x0400A8CB RID: 43211
 		[SerializeField]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool _downsample = true;
 
-		// Token: 0x0400A797 RID: 42903
+		// Token: 0x0400A8CC RID: 43212
 		[SerializeField]
 		[HideInInspector]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Shader _shader;
 
-		// Token: 0x0400A798 RID: 42904
+		// Token: 0x0400A8CD RID: 43213
 		[SerializeField]
 		[HideInInspector]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public NoiseTextureSet _noiseTextures;
 
-		// Token: 0x0400A799 RID: 42905
+		// Token: 0x0400A8CE RID: 43214
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public Material _material;
 
-		// Token: 0x0400A79A RID: 42906
+		// Token: 0x0400A8CF RID: 43215
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public RenderTexture _prevMaskRT1;
 
-		// Token: 0x0400A79B RID: 42907
+		// Token: 0x0400A8D0 RID: 43216
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public RenderTexture _prevMaskRT2;
 
-		// Token: 0x0400A79C RID: 42908
+		// Token: 0x0400A8D1 RID: 43217
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public CommandBuffer _command1;
 
-		// Token: 0x0400A79D RID: 42909
+		// Token: 0x0400A8D2 RID: 43218
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public CommandBuffer _command2;
 
-		// Token: 0x0400A79E RID: 42910
+		// Token: 0x0400A8D3 RID: 43219
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public Matrix4x4 _previousVP = Matrix4x4.identity;

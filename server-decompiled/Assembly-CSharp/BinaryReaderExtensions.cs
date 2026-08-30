@@ -1,17 +1,17 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x02001387 RID: 4999
+// Token: 0x020013A2 RID: 5026
 public static class BinaryReaderExtensions
 {
-	// Token: 0x06009D89 RID: 40329 RVA: 0x003B7C7C File Offset: 0x003B5E7C
+	// Token: 0x06009E86 RID: 40582 RVA: 0x003BCFC0 File Offset: 0x003BB1C0
 	public static bool TryReadAllBytes(this BinaryReader reader, Span<byte> dest)
 	{
 		int num;
 		return reader.TryReadAllBytes(dest, out num);
 	}
 
-	// Token: 0x06009D8A RID: 40330 RVA: 0x003B7C94 File Offset: 0x003B5E94
+	// Token: 0x06009E87 RID: 40583 RVA: 0x003BCFD8 File Offset: 0x003BB1D8
 	public static bool TryReadAllBytes(this BinaryReader reader, Span<byte> dest, out int totalBytesRead)
 	{
 		int num2;

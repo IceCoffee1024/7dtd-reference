@@ -2,10 +2,10 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Token: 0x0200138F RID: 5007
+// Token: 0x020013AA RID: 5034
 public static class BlockFaceFlags
 {
-	// Token: 0x06009DA4 RID: 40356 RVA: 0x003B83E4 File Offset: 0x003B65E4
+	// Token: 0x06009EA1 RID: 40609 RVA: 0x003BD728 File Offset: 0x003BB928
 	[PublicizedFrom(EAccessModifier.Private)]
 	static BlockFaceFlags()
 	{
@@ -18,7 +18,7 @@ public static class BlockFaceFlags
 		}
 	}
 
-	// Token: 0x06009DA5 RID: 40357 RVA: 0x003B845C File Offset: 0x003B665C
+	// Token: 0x06009EA2 RID: 40610 RVA: 0x003BD7A0 File Offset: 0x003BB9A0
 	public static BlockFaceFlag RotateFlags(BlockFaceFlag mask, byte blockRotation)
 	{
 		if (mask == BlockFaceFlag.None || mask == BlockFaceFlag.All || blockRotation > 23)
@@ -46,7 +46,7 @@ public static class BlockFaceFlags
 		return (BlockFaceFlag)num;
 	}
 
-	// Token: 0x06009DA6 RID: 40358 RVA: 0x003B84BE File Offset: 0x003B66BE
+	// Token: 0x06009EA3 RID: 40611 RVA: 0x003BD802 File Offset: 0x003BBA02
 	public static BlockFace ToBlockFace(BlockFaceFlag flags)
 	{
 		if ((flags & BlockFaceFlag.Top) != BlockFaceFlag.None)
@@ -76,7 +76,7 @@ public static class BlockFaceFlags
 		return BlockFace.None;
 	}
 
-	// Token: 0x06009DA7 RID: 40359 RVA: 0x003B84F1 File Offset: 0x003B66F1
+	// Token: 0x06009EA4 RID: 40612 RVA: 0x003BD835 File Offset: 0x003BBA35
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static BlockFaceFlag FromBlockFace(BlockFace face)
 	{
@@ -87,7 +87,7 @@ public static class BlockFaceFlags
 		return (BlockFaceFlag)(1 << (int)face);
 	}
 
-	// Token: 0x06009DA8 RID: 40360 RVA: 0x003B8503 File Offset: 0x003B6703
+	// Token: 0x06009EA5 RID: 40613 RVA: 0x003BD847 File Offset: 0x003BBA47
 	public static BlockFace OppositeFace(BlockFace face)
 	{
 		switch (face)
@@ -109,7 +109,7 @@ public static class BlockFaceFlags
 		}
 	}
 
-	// Token: 0x06009DA9 RID: 40361 RVA: 0x003B8538 File Offset: 0x003B6738
+	// Token: 0x06009EA6 RID: 40614 RVA: 0x003BD87C File Offset: 0x003BBA7C
 	public static BlockFace NearestFaceForDirection(Vector3 direction, float dotTolerance = 0.8f)
 	{
 		float num = -2f;
@@ -130,7 +130,7 @@ public static class BlockFaceFlags
 		return blockFace;
 	}
 
-	// Token: 0x06009DAA RID: 40362 RVA: 0x003B8580 File Offset: 0x003B6780
+	// Token: 0x06009EA7 RID: 40615 RVA: 0x003BD8C4 File Offset: 0x003BBAC4
 	public static Vector3 OffsetForFace(BlockFace face)
 	{
 		switch (face)
@@ -152,7 +152,7 @@ public static class BlockFaceFlags
 		}
 	}
 
-	// Token: 0x06009DAB RID: 40363 RVA: 0x003B85D8 File Offset: 0x003B67D8
+	// Token: 0x06009EA8 RID: 40616 RVA: 0x003BD91C File Offset: 0x003BBB1C
 	public static Vector3i OffsetIForFace(BlockFace face)
 	{
 		switch (face)
@@ -174,13 +174,13 @@ public static class BlockFaceFlags
 		}
 	}
 
-	// Token: 0x06009DAC RID: 40364 RVA: 0x003B862E File Offset: 0x003B682E
+	// Token: 0x06009EA9 RID: 40617 RVA: 0x003BD972 File Offset: 0x003BBB72
 	public static BlockFaceFlag OppositeFaceFlag(BlockFace face)
 	{
 		return BlockFaceFlags.FromBlockFace(BlockFaceFlags.OppositeFace(face));
 	}
 
-	// Token: 0x06009DAD RID: 40365 RVA: 0x003B863B File Offset: 0x003B683B
+	// Token: 0x06009EAA RID: 40618 RVA: 0x003BD97F File Offset: 0x003BBB7F
 	public static float YawForDirection(BlockFace face)
 	{
 		switch (face)
@@ -196,7 +196,7 @@ public static class BlockFaceFlags
 		}
 	}
 
-	// Token: 0x06009DAE RID: 40366 RVA: 0x003B866C File Offset: 0x003B686C
+	// Token: 0x06009EAB RID: 40619 RVA: 0x003BD9B0 File Offset: 0x003BBBB0
 	public static BlockFaceFlag FrontSidesFromPosition(Vector3i blockPos, Vector3 entityPos)
 	{
 		BlockFaceFlag blockFaceFlag = BlockFaceFlag.None;
@@ -227,7 +227,7 @@ public static class BlockFaceFlags
 		return blockFaceFlag;
 	}
 
-	// Token: 0x06009DAF RID: 40367 RVA: 0x003B86F8 File Offset: 0x003B68F8
+	// Token: 0x06009EAC RID: 40620 RVA: 0x003BDA3C File Offset: 0x003BBC3C
 	public static string SerializeFaceFlags(BlockFaceFlag coverFaceMask)
 	{
 		string text = string.Empty;
@@ -244,11 +244,11 @@ public static class BlockFaceFlags
 		return text;
 	}
 
-	// Token: 0x04007768 RID: 30568
+	// Token: 0x04007841 RID: 30785
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly int[] faceRotShiftValues = new int[144];
 
-	// Token: 0x04007769 RID: 30569
+	// Token: 0x04007842 RID: 30786
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly BlockFaceFlag[] cubeSideFaceFlags = new BlockFaceFlag[]
 	{
@@ -260,7 +260,7 @@ public static class BlockFaceFlags
 		BlockFaceFlag.East
 	};
 
-	// Token: 0x0400776A RID: 30570
+	// Token: 0x04007843 RID: 30787
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly char[] cubeSideFaceChars = new char[] { 'T', 'B', 'N', 'W', 'S', 'E' };
 }

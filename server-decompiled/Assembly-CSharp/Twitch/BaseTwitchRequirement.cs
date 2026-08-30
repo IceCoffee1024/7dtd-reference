@@ -3,29 +3,29 @@ using UnityEngine.Scripting;
 
 namespace Twitch
 {
-	// Token: 0x02001832 RID: 6194
+	// Token: 0x02001858 RID: 6232
 	[Preserve]
 	public class BaseTwitchRequirement
 	{
-		// Token: 0x0600BF0A RID: 48906 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C08F RID: 49295 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void OnInit()
 		{
 		}
 
-		// Token: 0x0600BF0B RID: 48907 RVA: 0x0046E987 File Offset: 0x0046CB87
+		// Token: 0x0600C090 RID: 49296 RVA: 0x00474723 File Offset: 0x00472923
 		public void Init()
 		{
 			this.OnInit();
 		}
 
-		// Token: 0x0600BF0C RID: 48908 RVA: 0x0001FF5D File Offset: 0x0001E15D
+		// Token: 0x0600C091 RID: 49297 RVA: 0x00020021 File Offset: 0x0001E221
 		public virtual bool CanPerform(Entity player)
 		{
 			return true;
 		}
 
-		// Token: 0x0600BF0D RID: 48909 RVA: 0x0046E98F File Offset: 0x0046CB8F
+		// Token: 0x0600C092 RID: 49298 RVA: 0x0047472B File Offset: 0x0047292B
 		public virtual void ParseProperties(DynamicProperties properties)
 		{
 			this.Properties = properties;
@@ -33,41 +33,41 @@ namespace Twitch
 			properties.ParseBool(BaseTwitchRequirement.PropHidesAction, ref this.HideAction);
 		}
 
-		// Token: 0x04009014 RID: 36884
+		// Token: 0x04009130 RID: 37168
 		public BaseTwitchRequirement.OwnerTypes OwnerType;
 
-		// Token: 0x04009015 RID: 36885
+		// Token: 0x04009131 RID: 37169
 		public TwitchAction OwnerAction;
 
-		// Token: 0x04009016 RID: 36886
+		// Token: 0x04009132 RID: 37170
 		public TwitchVote OwnerVote;
 
-		// Token: 0x04009017 RID: 36887
+		// Token: 0x04009133 RID: 37171
 		public BaseTwitchEventEntry OwnerEvent;
 
-		// Token: 0x04009018 RID: 36888
+		// Token: 0x04009134 RID: 37172
 		public DynamicProperties Properties;
 
-		// Token: 0x04009019 RID: 36889
+		// Token: 0x04009135 RID: 37173
 		public bool HideAction;
 
-		// Token: 0x0400901A RID: 36890
+		// Token: 0x04009136 RID: 37174
 		public bool Invert;
 
-		// Token: 0x0400901B RID: 36891
+		// Token: 0x04009137 RID: 37175
 		public static string PropInvert = "invert";
 
-		// Token: 0x0400901C RID: 36892
+		// Token: 0x04009138 RID: 37176
 		public static string PropHidesAction = "hide_action";
 
-		// Token: 0x02001833 RID: 6195
+		// Token: 0x02001859 RID: 6233
 		public enum OwnerTypes
 		{
-			// Token: 0x0400901E RID: 36894
+			// Token: 0x0400913A RID: 37178
 			Action,
-			// Token: 0x0400901F RID: 36895
+			// Token: 0x0400913B RID: 37179
 			Vote,
-			// Token: 0x04009020 RID: 36896
+			// Token: 0x0400913C RID: 37180
 			Event
 		}
 	}

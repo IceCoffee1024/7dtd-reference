@@ -1,34 +1,34 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020004FD RID: 1277
+// Token: 0x02000502 RID: 1282
 public class CharacterControllerUnity : CharacterControllerAbstract
 {
-	// Token: 0x060029DE RID: 10718 RVA: 0x00106A67 File Offset: 0x00104C67
+	// Token: 0x06002A08 RID: 10760 RVA: 0x00107AA3 File Offset: 0x00105CA3
 	public CharacterControllerUnity(CharacterController _cc)
 	{
 		this.cc = _cc;
 	}
 
-	// Token: 0x060029DF RID: 10719 RVA: 0x00106A76 File Offset: 0x00104C76
+	// Token: 0x06002A09 RID: 10761 RVA: 0x00107AB2 File Offset: 0x00105CB2
 	public override void Enable(bool isEnabled)
 	{
 		this.cc.enabled = isEnabled;
 	}
 
-	// Token: 0x060029E0 RID: 10720 RVA: 0x00106A84 File Offset: 0x00104C84
+	// Token: 0x06002A0A RID: 10762 RVA: 0x00107AC0 File Offset: 0x00105CC0
 	public override void SetStepOffset(float _stepOffset)
 	{
 		this.cc.stepOffset = _stepOffset;
 	}
 
-	// Token: 0x060029E1 RID: 10721 RVA: 0x00106A92 File Offset: 0x00104C92
+	// Token: 0x06002A0B RID: 10763 RVA: 0x00107ACE File Offset: 0x00105CCE
 	public override float GetStepOffset()
 	{
 		return this.cc.stepOffset;
 	}
 
-	// Token: 0x060029E2 RID: 10722 RVA: 0x00106A9F File Offset: 0x00104C9F
+	// Token: 0x06002A0C RID: 10764 RVA: 0x00107ADB File Offset: 0x00105CDB
 	public override void SetSize(Vector3 _center, float _height, float _radius)
 	{
 		this.cc.center = _center;
@@ -36,74 +36,74 @@ public class CharacterControllerUnity : CharacterControllerAbstract
 		this.cc.radius = _radius;
 	}
 
-	// Token: 0x060029E3 RID: 10723 RVA: 0x00106AC5 File Offset: 0x00104CC5
+	// Token: 0x06002A0D RID: 10765 RVA: 0x00107B01 File Offset: 0x00105D01
 	public override void SetCenter(Vector3 _center)
 	{
 		this.cc.center = _center;
 	}
 
-	// Token: 0x060029E4 RID: 10724 RVA: 0x00106AD3 File Offset: 0x00104CD3
+	// Token: 0x06002A0E RID: 10766 RVA: 0x00107B0F File Offset: 0x00105D0F
 	public override Vector3 GetCenter()
 	{
 		return this.cc.center;
 	}
 
-	// Token: 0x060029E5 RID: 10725 RVA: 0x00106AE0 File Offset: 0x00104CE0
+	// Token: 0x06002A0F RID: 10767 RVA: 0x00107B1C File Offset: 0x00105D1C
 	public override void SetRadius(float _radius)
 	{
 		this.cc.radius = _radius;
 	}
 
-	// Token: 0x060029E6 RID: 10726 RVA: 0x00106AEE File Offset: 0x00104CEE
+	// Token: 0x06002A10 RID: 10768 RVA: 0x00107B2A File Offset: 0x00105D2A
 	public override float GetRadius()
 	{
 		return this.cc.radius;
 	}
 
-	// Token: 0x060029E7 RID: 10727 RVA: 0x00106AFB File Offset: 0x00104CFB
+	// Token: 0x06002A11 RID: 10769 RVA: 0x00107B37 File Offset: 0x00105D37
 	public override void SetSkinWidth(float _width)
 	{
 		this.cc.skinWidth = _width;
 	}
 
-	// Token: 0x060029E8 RID: 10728 RVA: 0x00106B09 File Offset: 0x00104D09
+	// Token: 0x06002A12 RID: 10770 RVA: 0x00107B45 File Offset: 0x00105D45
 	public override float GetSkinWidth()
 	{
 		return this.cc.skinWidth;
 	}
 
-	// Token: 0x060029E9 RID: 10729 RVA: 0x00106B16 File Offset: 0x00104D16
+	// Token: 0x06002A13 RID: 10771 RVA: 0x00107B52 File Offset: 0x00105D52
 	public override void SetHeight(float _height)
 	{
 		this.cc.height = _height;
 	}
 
-	// Token: 0x060029EA RID: 10730 RVA: 0x00106B24 File Offset: 0x00104D24
+	// Token: 0x06002A14 RID: 10772 RVA: 0x00107B60 File Offset: 0x00105D60
 	public override float GetHeight()
 	{
 		return this.cc.height;
 	}
 
-	// Token: 0x060029EB RID: 10731 RVA: 0x00106B31 File Offset: 0x00104D31
+	// Token: 0x06002A15 RID: 10773 RVA: 0x00107B6D File Offset: 0x00105D6D
 	public override bool IsGrounded()
 	{
 		return this.cc.isGrounded;
 	}
 
-	// Token: 0x060029EC RID: 10732 RVA: 0x00106B3E File Offset: 0x00104D3E
+	// Token: 0x06002A16 RID: 10774 RVA: 0x00107B7A File Offset: 0x00105D7A
 	public override CollisionFlags Move(Vector3 _dir)
 	{
 		return this.cc.Move(_dir);
 	}
 
-	// Token: 0x060029ED RID: 10733 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002A17 RID: 10775 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void Rotate(Quaternion _dir)
 	{
 	}
 
-	// Token: 0x17000496 RID: 1174
-	// (get) Token: 0x060029EE RID: 10734 RVA: 0x00106B4C File Offset: 0x00104D4C
-	// (set) Token: 0x060029EF RID: 10735 RVA: 0x00106B59 File Offset: 0x00104D59
+	// Token: 0x1700049A RID: 1178
+	// (get) Token: 0x06002A18 RID: 10776 RVA: 0x00107B88 File Offset: 0x00105D88
+	// (set) Token: 0x06002A19 RID: 10777 RVA: 0x00107B95 File Offset: 0x00105D95
 	public override bool enableOverlapRecovery
 	{
 		get
@@ -116,7 +116,7 @@ public class CharacterControllerUnity : CharacterControllerAbstract
 		}
 	}
 
-	// Token: 0x04001FBF RID: 8127
+	// Token: 0x04001FEE RID: 8174
 	[PublicizedFrom(EAccessModifier.Private)]
 	public CharacterController cc;
 }

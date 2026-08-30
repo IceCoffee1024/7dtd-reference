@@ -5,32 +5,32 @@ using UnityEngine;
 using UnityEngine.Scripting;
 using WorldGenerationEngineFinal;
 
-// Token: 0x02000E41 RID: 3649
+// Token: 0x02000E56 RID: 3670
 [Preserve]
 public class XUiC_WorldGenerationWindow : XUiController
 {
-	// Token: 0x1400009F RID: 159
-	// (add) Token: 0x0600705A RID: 28762 RVA: 0x002B3FB0 File Offset: 0x002B21B0
-	// (remove) Token: 0x0600705B RID: 28763 RVA: 0x002B3FE8 File Offset: 0x002B21E8
+	// Token: 0x140000A0 RID: 160
+	// (add) Token: 0x060070FA RID: 28922 RVA: 0x002B74D4 File Offset: 0x002B56D4
+	// (remove) Token: 0x060070FB RID: 28923 RVA: 0x002B750C File Offset: 0x002B570C
 	public event Action OnCountyNameChanged;
 
-	// Token: 0x140000A0 RID: 160
-	// (add) Token: 0x0600705C RID: 28764 RVA: 0x002B4020 File Offset: 0x002B2220
-	// (remove) Token: 0x0600705D RID: 28765 RVA: 0x002B4058 File Offset: 0x002B2258
+	// Token: 0x140000A1 RID: 161
+	// (add) Token: 0x060070FC RID: 28924 RVA: 0x002B7544 File Offset: 0x002B5744
+	// (remove) Token: 0x060070FD RID: 28925 RVA: 0x002B757C File Offset: 0x002B577C
 	public event Action OnWorldSizeChanged;
 
-	// Token: 0x140000A1 RID: 161
-	// (add) Token: 0x0600705E RID: 28766 RVA: 0x002B4090 File Offset: 0x002B2290
-	// (remove) Token: 0x0600705F RID: 28767 RVA: 0x002B40C8 File Offset: 0x002B22C8
+	// Token: 0x140000A2 RID: 162
+	// (add) Token: 0x060070FE RID: 28926 RVA: 0x002B75B4 File Offset: 0x002B57B4
+	// (remove) Token: 0x060070FF RID: 28927 RVA: 0x002B75EC File Offset: 0x002B57EC
 	public event Action OnWorldStorageChanged;
 
-	// Token: 0x140000A2 RID: 162
-	// (add) Token: 0x06007060 RID: 28768 RVA: 0x002B4100 File Offset: 0x002B2300
-	// (remove) Token: 0x06007061 RID: 28769 RVA: 0x002B4138 File Offset: 0x002B2338
+	// Token: 0x140000A3 RID: 163
+	// (add) Token: 0x06007100 RID: 28928 RVA: 0x002B7624 File Offset: 0x002B5824
+	// (remove) Token: 0x06007101 RID: 28929 RVA: 0x002B765C File Offset: 0x002B585C
 	public event Action<UserDataStorageType> OnGameSaveStorageChanged;
 
-	// Token: 0x17000CB0 RID: 3248
-	// (get) Token: 0x06007062 RID: 28770 RVA: 0x002B416D File Offset: 0x002B236D
+	// Token: 0x17000CC9 RID: 3273
+	// (get) Token: 0x06007102 RID: 28930 RVA: 0x002B7691 File Offset: 0x002B5891
 	public XUiC_WorldGenerationWindow.PreviewQuality PreviewQualityLevel
 	{
 		get
@@ -44,9 +44,9 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000CB1 RID: 3249
-	// (get) Token: 0x06007063 RID: 28771 RVA: 0x002B4180 File Offset: 0x002B2380
-	// (set) Token: 0x06007064 RID: 28772 RVA: 0x002B4193 File Offset: 0x002B2393
+	// Token: 0x17000CCA RID: 3274
+	// (get) Token: 0x06007103 RID: 28931 RVA: 0x002B76A4 File Offset: 0x002B58A4
+	// (set) Token: 0x06007104 RID: 28932 RVA: 0x002B76B7 File Offset: 0x002B58B7
 	public WorldBuilder.BiomeLayout BiomeLayout
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -69,9 +69,9 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000CB2 RID: 3250
-	// (get) Token: 0x06007065 RID: 28773 RVA: 0x002B41A9 File Offset: 0x002B23A9
-	// (set) Token: 0x06007066 RID: 28774 RVA: 0x002B41BF File Offset: 0x002B23BF
+	// Token: 0x17000CCB RID: 3275
+	// (get) Token: 0x06007105 RID: 28933 RVA: 0x002B76CD File Offset: 0x002B58CD
+	// (set) Token: 0x06007106 RID: 28934 RVA: 0x002B76E3 File Offset: 0x002B58E3
 	public int PlainsWeight
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -90,9 +90,9 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000CB3 RID: 3251
-	// (get) Token: 0x06007067 RID: 28775 RVA: 0x002B41D6 File Offset: 0x002B23D6
-	// (set) Token: 0x06007068 RID: 28776 RVA: 0x002B41EC File Offset: 0x002B23EC
+	// Token: 0x17000CCC RID: 3276
+	// (get) Token: 0x06007107 RID: 28935 RVA: 0x002B76FA File Offset: 0x002B58FA
+	// (set) Token: 0x06007108 RID: 28936 RVA: 0x002B7710 File Offset: 0x002B5910
 	public int HillsWeight
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -111,9 +111,9 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000CB4 RID: 3252
-	// (get) Token: 0x06007069 RID: 28777 RVA: 0x002B4203 File Offset: 0x002B2403
-	// (set) Token: 0x0600706A RID: 28778 RVA: 0x002B4219 File Offset: 0x002B2419
+	// Token: 0x17000CCD RID: 3277
+	// (get) Token: 0x06007109 RID: 28937 RVA: 0x002B7727 File Offset: 0x002B5927
+	// (set) Token: 0x0600710A RID: 28938 RVA: 0x002B773D File Offset: 0x002B593D
 	public int MountainsWeight
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -132,9 +132,9 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000CB5 RID: 3253
-	// (get) Token: 0x0600706B RID: 28779 RVA: 0x002B4230 File Offset: 0x002B2430
-	// (set) Token: 0x0600706C RID: 28780 RVA: 0x002B4243 File Offset: 0x002B2443
+	// Token: 0x17000CCE RID: 3278
+	// (get) Token: 0x0600710B RID: 28939 RVA: 0x002B7754 File Offset: 0x002B5954
+	// (set) Token: 0x0600710C RID: 28940 RVA: 0x002B7767 File Offset: 0x002B5967
 	public WorldBuilder.GenerationSelections Rivers
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -157,9 +157,9 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000CB6 RID: 3254
-	// (get) Token: 0x0600706D RID: 28781 RVA: 0x002B4259 File Offset: 0x002B2459
-	// (set) Token: 0x0600706E RID: 28782 RVA: 0x002B426C File Offset: 0x002B246C
+	// Token: 0x17000CCF RID: 3279
+	// (get) Token: 0x0600710D RID: 28941 RVA: 0x002B777D File Offset: 0x002B597D
+	// (set) Token: 0x0600710E RID: 28942 RVA: 0x002B7790 File Offset: 0x002B5990
 	public WorldBuilder.GenerationSelections Craters
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -182,9 +182,9 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000CB7 RID: 3255
-	// (get) Token: 0x0600706F RID: 28783 RVA: 0x002B4282 File Offset: 0x002B2482
-	// (set) Token: 0x06007070 RID: 28784 RVA: 0x002B4295 File Offset: 0x002B2495
+	// Token: 0x17000CD0 RID: 3280
+	// (get) Token: 0x0600710F RID: 28943 RVA: 0x002B77A6 File Offset: 0x002B59A6
+	// (set) Token: 0x06007110 RID: 28944 RVA: 0x002B77B9 File Offset: 0x002B59B9
 	public WorldBuilder.GenerationSelections Canyons
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -207,9 +207,9 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000CB8 RID: 3256
-	// (get) Token: 0x06007071 RID: 28785 RVA: 0x002B42AB File Offset: 0x002B24AB
-	// (set) Token: 0x06007072 RID: 28786 RVA: 0x002B42BE File Offset: 0x002B24BE
+	// Token: 0x17000CD1 RID: 3281
+	// (get) Token: 0x06007111 RID: 28945 RVA: 0x002B77CF File Offset: 0x002B59CF
+	// (set) Token: 0x06007112 RID: 28946 RVA: 0x002B77E2 File Offset: 0x002B59E2
 	public WorldBuilder.GenerationSelections Lakes
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -232,9 +232,9 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000CB9 RID: 3257
-	// (get) Token: 0x06007073 RID: 28787 RVA: 0x002B42D4 File Offset: 0x002B24D4
-	// (set) Token: 0x06007074 RID: 28788 RVA: 0x002B42E7 File Offset: 0x002B24E7
+	// Token: 0x17000CD2 RID: 3282
+	// (get) Token: 0x06007113 RID: 28947 RVA: 0x002B77F8 File Offset: 0x002B59F8
+	// (set) Token: 0x06007114 RID: 28948 RVA: 0x002B780B File Offset: 0x002B5A0B
 	public WorldBuilder.GenerationSelections Rural
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -257,9 +257,9 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000CBA RID: 3258
-	// (get) Token: 0x06007075 RID: 28789 RVA: 0x002B42FD File Offset: 0x002B24FD
-	// (set) Token: 0x06007076 RID: 28790 RVA: 0x002B4310 File Offset: 0x002B2510
+	// Token: 0x17000CD3 RID: 3283
+	// (get) Token: 0x06007115 RID: 28949 RVA: 0x002B7821 File Offset: 0x002B5A21
+	// (set) Token: 0x06007116 RID: 28950 RVA: 0x002B7834 File Offset: 0x002B5A34
 	public WorldBuilder.GenerationSelections Town
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -282,9 +282,9 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000CBB RID: 3259
-	// (get) Token: 0x06007077 RID: 28791 RVA: 0x002B4326 File Offset: 0x002B2526
-	// (set) Token: 0x06007078 RID: 28792 RVA: 0x002B4339 File Offset: 0x002B2539
+	// Token: 0x17000CD4 RID: 3284
+	// (get) Token: 0x06007117 RID: 28951 RVA: 0x002B784A File Offset: 0x002B5A4A
+	// (set) Token: 0x06007118 RID: 28952 RVA: 0x002B785D File Offset: 0x002B5A5D
 	public WorldBuilder.GenerationSelections City
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -307,9 +307,9 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000CBC RID: 3260
-	// (get) Token: 0x06007079 RID: 28793 RVA: 0x002B434F File Offset: 0x002B254F
-	// (set) Token: 0x0600707A RID: 28794 RVA: 0x002B4362 File Offset: 0x002B2562
+	// Token: 0x17000CD5 RID: 3285
+	// (get) Token: 0x06007119 RID: 28953 RVA: 0x002B7873 File Offset: 0x002B5A73
+	// (set) Token: 0x0600711A RID: 28954 RVA: 0x002B7886 File Offset: 0x002B5A86
 	public WorldBuilder.GenerationSelections Towns
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -332,9 +332,9 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000CBD RID: 3261
-	// (get) Token: 0x0600707B RID: 28795 RVA: 0x002B4378 File Offset: 0x002B2578
-	// (set) Token: 0x0600707C RID: 28796 RVA: 0x002B438B File Offset: 0x002B258B
+	// Token: 0x17000CD6 RID: 3286
+	// (get) Token: 0x0600711B RID: 28955 RVA: 0x002B789C File Offset: 0x002B5A9C
+	// (set) Token: 0x0600711C RID: 28956 RVA: 0x002B78AF File Offset: 0x002B5AAF
 	public WorldBuilder.GenerationSelections Wilderness
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -357,8 +357,8 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000CBE RID: 3262
-	// (get) Token: 0x0600707D RID: 28797 RVA: 0x002B43A1 File Offset: 0x002B25A1
+	// Token: 0x17000CD7 RID: 3287
+	// (get) Token: 0x0600711D RID: 28957 RVA: 0x002B78C5 File Offset: 0x002B5AC5
 	public bool HasSufficientSpace
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -368,8 +368,8 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000CBF RID: 3263
-	// (get) Token: 0x0600707E RID: 28798 RVA: 0x002B43BD File Offset: 0x002B25BD
+	// Token: 0x17000CD8 RID: 3288
+	// (get) Token: 0x0600711E RID: 28958 RVA: 0x002B78E1 File Offset: 0x002B5AE1
 	public bool IsAdvancedUi
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -379,18 +379,18 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000CC0 RID: 3264
-	// (get) Token: 0x0600707F RID: 28799 RVA: 0x002B43D4 File Offset: 0x002B25D4
-	// (set) Token: 0x06007080 RID: 28800 RVA: 0x002B43DC File Offset: 0x002B25DC
+	// Token: 0x17000CD9 RID: 3289
+	// (get) Token: 0x0600711F RID: 28959 RVA: 0x002B78F8 File Offset: 0x002B5AF8
+	// (set) Token: 0x06007120 RID: 28960 RVA: 0x002B7900 File Offset: 0x002B5B00
 	public int WorldSize
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000CC1 RID: 3265
-	// (get) Token: 0x06007081 RID: 28801 RVA: 0x002B43E5 File Offset: 0x002B25E5
-	// (set) Token: 0x06007082 RID: 28802 RVA: 0x002B43ED File Offset: 0x002B25ED
+	// Token: 0x17000CDA RID: 3290
+	// (get) Token: 0x06007121 RID: 28961 RVA: 0x002B7909 File Offset: 0x002B5B09
+	// (set) Token: 0x06007122 RID: 28962 RVA: 0x002B7911 File Offset: 0x002B5B11
 	[XuiXmlBinding("countynamevalid")]
 	public bool ValidCountyName
 	{
@@ -406,9 +406,9 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000CC2 RID: 3266
-	// (get) Token: 0x06007083 RID: 28803 RVA: 0x002B43FD File Offset: 0x002B25FD
-	// (set) Token: 0x06007084 RID: 28804 RVA: 0x002B440E File Offset: 0x002B260E
+	// Token: 0x17000CDB RID: 3291
+	// (get) Token: 0x06007123 RID: 28963 RVA: 0x002B7921 File Offset: 0x002B5B21
+	// (set) Token: 0x06007124 RID: 28964 RVA: 0x002B7932 File Offset: 0x002B5B32
 	[XuiXmlBinding("countyname")]
 	public string CountyName
 	{
@@ -424,9 +424,9 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000CC3 RID: 3267
-	// (get) Token: 0x06007085 RID: 28805 RVA: 0x002B441E File Offset: 0x002B261E
-	// (set) Token: 0x06007086 RID: 28806 RVA: 0x002B442F File Offset: 0x002B262F
+	// Token: 0x17000CDC RID: 3292
+	// (get) Token: 0x06007125 RID: 28965 RVA: 0x002B7942 File Offset: 0x002B5B42
+	// (set) Token: 0x06007126 RID: 28966 RVA: 0x002B7953 File Offset: 0x002B5B53
 	[XuiXmlBinding("statustext")]
 	public string StatusText
 	{
@@ -441,8 +441,8 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000CC4 RID: 3268
-	// (get) Token: 0x06007087 RID: 28807 RVA: 0x002B443F File Offset: 0x002B263F
+	// Token: 0x17000CDD RID: 3293
+	// (get) Token: 0x06007127 RID: 28967 RVA: 0x002B7963 File Offset: 0x002B5B63
 	[XuiXmlBinding("showbar")]
 	public bool HasDataManagementBar
 	{
@@ -453,8 +453,8 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000CC5 RID: 3269
-	// (get) Token: 0x06007088 RID: 28808 RVA: 0x002B4450 File Offset: 0x002B2650
+	// Token: 0x17000CDE RID: 3294
+	// (get) Token: 0x06007128 RID: 28968 RVA: 0x002B7974 File Offset: 0x002B5B74
 	[XuiXmlBinding("canstartnewgame")]
 	public bool CanStartNewGame
 	{
@@ -473,7 +473,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007089 RID: 28809 RVA: 0x00292DD2 File Offset: 0x00290FD2
+	// Token: 0x06007129 RID: 28969 RVA: 0x00295F26 File Offset: 0x00294126
 	[XuiXmlBinding("isroamingoptional")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bindingIsRoamingOptional()
@@ -481,18 +481,18 @@ public class XUiC_WorldGenerationWindow : XUiController
 		return PlatformManager.MultiPlatform.UserDataRoaming.IsRoamingOptional;
 	}
 
-	// Token: 0x17000CC6 RID: 3270
-	// (get) Token: 0x0600708A RID: 28810 RVA: 0x002B4494 File Offset: 0x002B2694
-	// (set) Token: 0x0600708B RID: 28811 RVA: 0x002B449C File Offset: 0x002B269C
+	// Token: 0x17000CDF RID: 3295
+	// (get) Token: 0x0600712A RID: 28970 RVA: 0x002B79B8 File Offset: 0x002B5BB8
+	// (set) Token: 0x0600712B RID: 28971 RVA: 0x002B79C0 File Offset: 0x002B5BC0
 	public WorldBuilder WorldBuilder
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000CC7 RID: 3271
-	// (get) Token: 0x0600708C RID: 28812 RVA: 0x002B44A5 File Offset: 0x002B26A5
-	// (set) Token: 0x0600708D RID: 28813 RVA: 0x002B44AD File Offset: 0x002B26AD
+	// Token: 0x17000CE0 RID: 3296
+	// (get) Token: 0x0600712C RID: 28972 RVA: 0x002B79C9 File Offset: 0x002B5BC9
+	// (set) Token: 0x0600712D RID: 28973 RVA: 0x002B79D1 File Offset: 0x002B5BD1
 	[XuiXmlBinding("isgenerating")]
 	public bool IsGenerating
 	{
@@ -509,9 +509,9 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000CC8 RID: 3272
-	// (get) Token: 0x0600708E RID: 28814 RVA: 0x002B44BD File Offset: 0x002B26BD
-	// (set) Token: 0x0600708F RID: 28815 RVA: 0x002B44C5 File Offset: 0x002B26C5
+	// Token: 0x17000CE1 RID: 3297
+	// (get) Token: 0x0600712E RID: 28974 RVA: 0x002B79E1 File Offset: 0x002B5BE1
+	// (set) Token: 0x0600712F RID: 28975 RVA: 0x002B79E9 File Offset: 0x002B5BE9
 	[XuiXmlBinding("iscancelling")]
 	public bool IsCancelling
 	{
@@ -526,8 +526,8 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000CC9 RID: 3273
-	// (get) Token: 0x06007090 RID: 28816 RVA: 0x002B44D8 File Offset: 0x002B26D8
+	// Token: 0x17000CE2 RID: 3298
+	// (get) Token: 0x06007130 RID: 28976 RVA: 0x002B79FC File Offset: 0x002B5BFC
 	public static bool WorldBuilderIsGenerating
 	{
 		get
@@ -538,7 +538,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007091 RID: 28817 RVA: 0x002B4508 File Offset: 0x002B2708
+	// Token: 0x06007131 RID: 28977 RVA: 0x002B7A2C File Offset: 0x002B5C2C
 	public static void CancelGeneration()
 	{
 		XUiC_WorldGenerationWindow instance = XUiC_WorldGenerationWindow.Instance;
@@ -550,7 +550,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007092 RID: 28818 RVA: 0x002B453C File Offset: 0x002B273C
+	// Token: 0x06007132 RID: 28978 RVA: 0x002B7A60 File Offset: 0x002B5C60
 	[XuiBindEvent("OnPress", "btnNewGame")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void NewGameButton_OnPressed(XUiController _sender, int _mouseButton)
@@ -558,7 +558,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		this.xui.StartCoroutine(this.saveAndNewGameCo());
 	}
 
-	// Token: 0x06007093 RID: 28819 RVA: 0x002B4550 File Offset: 0x002B2750
+	// Token: 0x06007133 RID: 28979 RVA: 0x002B7A74 File Offset: 0x002B5C74
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator saveAndNewGameCo()
 	{
@@ -588,7 +588,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		yield break;
 	}
 
-	// Token: 0x06007094 RID: 28820 RVA: 0x002B4560 File Offset: 0x002B2760
+	// Token: 0x06007134 RID: 28980 RVA: 0x002B7A84 File Offset: 0x002B5C84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void checkProfile(string _windowToOpen)
 	{
@@ -604,7 +604,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		this.xui.playerUI.windowManager.Open(_windowToOpen, true);
 	}
 
-	// Token: 0x06007095 RID: 28821 RVA: 0x002B45E0 File Offset: 0x002B27E0
+	// Token: 0x06007135 RID: 28981 RVA: 0x002B7B04 File Offset: 0x002B5D04
 	public override void OnOpen()
 	{
 		XUiC_WorldGenerationWindow.Instance = this;
@@ -681,7 +681,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		this.updateBarValues();
 	}
 
-	// Token: 0x06007096 RID: 28822 RVA: 0x002B4840 File Offset: 0x002B2A40
+	// Token: 0x06007136 RID: 28982 RVA: 0x002B7D64 File Offset: 0x002B5F64
 	[XuiBindEvent("OnValueChanged", "cbxPreviewQuality")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Quality_OnValueChanged(XUiController _sender, XUiC_WorldGenerationWindow.PreviewQuality _oldValue, XUiC_WorldGenerationWindow.PreviewQuality _newValue)
@@ -704,7 +704,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		this.prefabPreviewManagerInstance.ForceUpdate();
 	}
 
-	// Token: 0x06007097 RID: 28823 RVA: 0x002B48BB File Offset: 0x002B2ABB
+	// Token: 0x06007137 RID: 28983 RVA: 0x002B7DDF File Offset: 0x002B5FDF
 	[XuiBindEvent("ValueChanged", "biomeBoxes")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BiomeWeight_OnValueChanged()
@@ -712,7 +712,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		this.updateBiomePercentages();
 	}
 
-	// Token: 0x06007098 RID: 28824 RVA: 0x002B48C3 File Offset: 0x002B2AC3
+	// Token: 0x06007138 RID: 28984 RVA: 0x002B7DE7 File Offset: 0x002B5FE7
 	[XuiBindEvent("OnValueChanged", "cbxPlainsWeight")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlainsWeight_OnValueChanged(XUiController _sender, long _oldValue, long _newValue)
@@ -720,7 +720,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		this.updateTerrainPercentages(false);
 	}
 
-	// Token: 0x06007099 RID: 28825 RVA: 0x002B48C3 File Offset: 0x002B2AC3
+	// Token: 0x06007139 RID: 28985 RVA: 0x002B7DE7 File Offset: 0x002B5FE7
 	[XuiBindEvent("OnValueChanged", "cbxHillsWeight")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HillsWeight_OnValueChanged(XUiController _sender, long _oldValue, long _newValue)
@@ -728,7 +728,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		this.updateTerrainPercentages(false);
 	}
 
-	// Token: 0x0600709A RID: 28826 RVA: 0x002B48CC File Offset: 0x002B2ACC
+	// Token: 0x0600713A RID: 28986 RVA: 0x002B7DF0 File Offset: 0x002B5FF0
 	[XuiBindEvent("OnValueChanged", "cbxMountainsWeight")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MountainsWeight_OnValueChanged(XUiController _sender, long _oldValue, long _newValue)
@@ -736,7 +736,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		this.updateTerrainPercentages(true);
 	}
 
-	// Token: 0x0600709B RID: 28827 RVA: 0x002B48D8 File Offset: 0x002B2AD8
+	// Token: 0x0600713B RID: 28987 RVA: 0x002B7DFC File Offset: 0x002B5FFC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateTerrainPercentages(bool _isMountainsChanged = false)
 	{
@@ -782,7 +782,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		this.cbxMountainsWeight.IsDirty = true;
 	}
 
-	// Token: 0x0600709C RID: 28828 RVA: 0x002B4A20 File Offset: 0x002B2C20
+	// Token: 0x0600713C RID: 28988 RVA: 0x002B7F44 File Offset: 0x002B6144
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateBiomePercentages()
 	{
@@ -829,7 +829,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600709D RID: 28829 RVA: 0x002B4B51 File Offset: 0x002B2D51
+	// Token: 0x0600713D RID: 28989 RVA: 0x002B8075 File Offset: 0x002B6275
 	[XuiBindEvent("OnValueChanged", "cbxWorldSize")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WorldSizeComboBox_OnValueChanged(XUiController _sender, int _oldValue, int _newValue)
@@ -844,7 +844,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		onWorldSizeChanged();
 	}
 
-	// Token: 0x0600709E RID: 28830 RVA: 0x002B4B70 File Offset: 0x002B2D70
+	// Token: 0x0600713E RID: 28990 RVA: 0x002B8094 File Offset: 0x002B6294
 	[XuiBindEvent("OnChangeHandler", "txtSeedInput")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SeedInput_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
@@ -852,7 +852,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		this.RefreshCountyName();
 	}
 
-	// Token: 0x0600709F RID: 28831 RVA: 0x002B4B78 File Offset: 0x002B2D78
+	// Token: 0x0600713F RID: 28991 RVA: 0x002B809C File Offset: 0x002B629C
 	[XuiBindEvent("OnValueChanged", "cbxGameSaveStorage")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GameSaveStorage_OnValueChanged(XUiController _sender, UserDataStorageType _oldValue, UserDataStorageType _newValue)
@@ -868,7 +868,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		onGameSaveStorageChanged(_newValue);
 	}
 
-	// Token: 0x060070A0 RID: 28832 RVA: 0x002B4BA7 File Offset: 0x002B2DA7
+	// Token: 0x06007140 RID: 28992 RVA: 0x002B80CB File Offset: 0x002B62CB
 	[XuiBindEvent("OnValueChanged", "cbxWorldSaveStorage")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WorldSaveStorage_OnValueChanged(XUiController _sender, UserDataStorageType _oldValue, UserDataStorageType _newValue)
@@ -889,20 +889,20 @@ public class XUiC_WorldGenerationWindow : XUiController
 		onWorldStorageChanged();
 	}
 
-	// Token: 0x060070A1 RID: 28833 RVA: 0x002B4BE2 File Offset: 0x002B2DE2
+	// Token: 0x06007141 RID: 28993 RVA: 0x002B8106 File Offset: 0x002B6306
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SaveDataLimit_OnChanged()
 	{
 		this.validateDataLimit();
 	}
 
-	// Token: 0x060070A2 RID: 28834 RVA: 0x002B4BEA File Offset: 0x002B2DEA
+	// Token: 0x06007142 RID: 28994 RVA: 0x002B810E File Offset: 0x002B630E
 	public void SetGameSaveStorageValue(UserDataStorageType _newValue)
 	{
 		this.cbxGameSaveStorage.Value = _newValue;
 	}
 
-	// Token: 0x060070A3 RID: 28835 RVA: 0x002B4BF8 File Offset: 0x002B2DF8
+	// Token: 0x06007143 RID: 28995 RVA: 0x002B811C File Offset: 0x002B631C
 	public void RefreshCountyName()
 	{
 		this.CountyName = WorldBuilder.GetGeneratedWorldName(this.txtSeedInput.Text, this.WorldSize);
@@ -915,7 +915,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		onCountyNameChanged();
 	}
 
-	// Token: 0x060070A4 RID: 28836 RVA: 0x002B4C2C File Offset: 0x002B2E2C
+	// Token: 0x06007144 RID: 28996 RVA: 0x002B8150 File Offset: 0x002B6350
 	public void ValidateNewRwg()
 	{
 		string text = this.CountyName;
@@ -924,7 +924,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		this.validateDataLimit();
 	}
 
-	// Token: 0x060070A5 RID: 28837 RVA: 0x002B4C7C File Offset: 0x002B2E7C
+	// Token: 0x06007145 RID: 28997 RVA: 0x002B81A0 File Offset: 0x002B63A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void validateDataLimit()
 	{
@@ -936,7 +936,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		this.cbxSaveDataLimit.TextColor = (flag ? Color.white : Color.red);
 	}
 
-	// Token: 0x060070A6 RID: 28838 RVA: 0x002B4CCF File Offset: 0x002B2ECF
+	// Token: 0x06007146 RID: 28998 RVA: 0x002B81F3 File Offset: 0x002B63F3
 	[XuiBindEvent("OnPress", "btnManage")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnManage_OnPressed(XUiController _sender, int _mouseButton)
@@ -944,14 +944,14 @@ public class XUiC_WorldGenerationWindow : XUiController
 		XUiC_DataManagement.OpenDataManagementWindow(this, new Action(this.OnDataManagementWindowClosed));
 	}
 
-	// Token: 0x060070A7 RID: 28839 RVA: 0x002B4CE3 File Offset: 0x002B2EE3
+	// Token: 0x06007147 RID: 28999 RVA: 0x002B8207 File Offset: 0x002B6407
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDataManagementWindowClosed()
 	{
 		this.updateBarValues();
 	}
 
-	// Token: 0x060070A8 RID: 28840 RVA: 0x002B4CEC File Offset: 0x002B2EEC
+	// Token: 0x06007148 RID: 29000 RVA: 0x002B8210 File Offset: 0x002B6410
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateBarValues()
 	{
@@ -971,7 +971,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x060070A9 RID: 28841 RVA: 0x002B4D78 File Offset: 0x002B2F78
+	// Token: 0x06007149 RID: 29001 RVA: 0x002B829C File Offset: 0x002B649C
 	[XuiBindEvent("OnPress", "btnGenerate")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GenerateButton_OnPressed(XUiController _sender, int _mouseButton)
@@ -997,7 +997,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		ThreadManager.StartCoroutine(this.GenerateCo(null, null));
 	}
 
-	// Token: 0x060070AA RID: 28842 RVA: 0x002B4DD2 File Offset: 0x002B2FD2
+	// Token: 0x0600714A RID: 29002 RVA: 0x002B82F6 File Offset: 0x002B64F6
 	public IEnumerator GenerateCo(Action<string> _onSuccess = null, Action _onFailure = null)
 	{
 		this.IsGenerating = true;
@@ -1086,7 +1086,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		yield break;
 	}
 
-	// Token: 0x060070AB RID: 28843 RVA: 0x002B4DEF File Offset: 0x002B2FEF
+	// Token: 0x0600714B RID: 29003 RVA: 0x002B8313 File Offset: 0x002B6513
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void destroyBuilder()
 	{
@@ -1098,7 +1098,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		this.WorldBuilder = null;
 	}
 
-	// Token: 0x060070AC RID: 28844 RVA: 0x002B4E0C File Offset: 0x002B300C
+	// Token: 0x0600714C RID: 29004 RVA: 0x002B8330 File Offset: 0x002B6530
 	public void StartClose()
 	{
 		if (this.IsGenerating)
@@ -1113,7 +1113,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		this.xui.StartCoroutine(this.startCloseCo());
 	}
 
-	// Token: 0x060070AD RID: 28845 RVA: 0x002B4E5D File Offset: 0x002B305D
+	// Token: 0x0600714D RID: 29005 RVA: 0x002B8381 File Offset: 0x002B6581
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator startCloseCo()
 	{
@@ -1146,7 +1146,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		yield break;
 	}
 
-	// Token: 0x060070AE RID: 28846 RVA: 0x002B4E6C File Offset: 0x002B306C
+	// Token: 0x0600714E RID: 29006 RVA: 0x002B8390 File Offset: 0x002B6590
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void close()
 	{
@@ -1154,7 +1154,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		this.xui.playerUI.windowManager.Open(this.lastWindowID, true);
 	}
 
-	// Token: 0x060070AF RID: 28847 RVA: 0x002B4EA8 File Offset: 0x002B30A8
+	// Token: 0x0600714F RID: 29007 RVA: 0x002B83CC File Offset: 0x002B65CC
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -1165,7 +1165,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		SaveDataLimitUIHelper.OnValueChanged = (Action)Delegate.Remove(SaveDataLimitUIHelper.OnValueChanged, new Action(this.SaveDataLimit_OnChanged));
 	}
 
-	// Token: 0x060070B0 RID: 28848 RVA: 0x002B4EF8 File Offset: 0x002B30F8
+	// Token: 0x06007150 RID: 29008 RVA: 0x002B841C File Offset: 0x002B661C
 	public void CleanupPreviewManager()
 	{
 		if (this.prefabPreviewManagerInstance == null)
@@ -1176,7 +1176,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		this.prefabPreviewManagerInstance = null;
 	}
 
-	// Token: 0x060070B1 RID: 28849 RVA: 0x002B4F18 File Offset: 0x002B3118
+	// Token: 0x06007151 RID: 29009 RVA: 0x002B843C File Offset: 0x002B663C
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -1195,7 +1195,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 		}
 	}
 
-	// Token: 0x060070B2 RID: 28850 RVA: 0x002B4F98 File Offset: 0x002B3198
+	// Token: 0x06007152 RID: 29010 RVA: 0x002B84BC File Offset: 0x002B66BC
 	public static void Open(XUi _xui, string _previousWindowId)
 	{
 		XUiC_WorldGenerationWindow childByType = _xui.GetChildByType<XUiC_WorldGenerationWindowGroup>().GetChildByType<XUiC_WorldGenerationWindow>();
@@ -1203,224 +1203,224 @@ public class XUiC_WorldGenerationWindow : XUiController
 		_xui.playerUI.windowManager.Open(childByType.windowGroup, true);
 	}
 
-	// Token: 0x060070B3 RID: 28851 RVA: 0x002B4FD0 File Offset: 0x002B31D0
+	// Token: 0x06007153 RID: 29011 RVA: 0x002B84F4 File Offset: 0x002B66F4
 	public static bool IsWindowOpen(XUi _xui)
 	{
 		XUiC_WorldGenerationWindow childByType = _xui.GetChildByType<XUiC_WorldGenerationWindowGroup>().GetChildByType<XUiC_WorldGenerationWindow>();
 		return _xui.playerUI.windowManager.IsWindowOpen(childByType.windowGroup);
 	}
 
-	// Token: 0x040054A3 RID: 21667
+	// Token: 0x04005547 RID: 21831
 	public static XUiC_WorldGenerationWindow Instance;
 
-	// Token: 0x040054A4 RID: 21668
+	// Token: 0x04005548 RID: 21832
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lastWindowID = string.Empty;
 
-	// Token: 0x040054A9 RID: 21673
+	// Token: 0x0400554D RID: 21837
 	[XuiBindComponent(false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_WorldGenerationPreview previewWindow;
 
-	// Token: 0x040054AA RID: 21674
+	// Token: 0x0400554E RID: 21838
 	[XuiBindComponent("progress", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiView progressView;
 
-	// Token: 0x040054AB RID: 21675
+	// Token: 0x0400554F RID: 21839
 	[XuiBindComponent("seedInput", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_TextInput txtSeedInput;
 
-	// Token: 0x040054AC RID: 21676
+	// Token: 0x04005550 RID: 21840
 	[XuiBindComponent("generate", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnGenerate;
 
-	// Token: 0x040054AD RID: 21677
+	// Token: 0x04005551 RID: 21841
 	[XuiBindComponent("btnNewGame", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnNewGame;
 
-	// Token: 0x040054AE RID: 21678
+	// Token: 0x04005552 RID: 21842
 	[XuiBindComponent("WorldSize", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<int> cbxWorldSize;
 
-	// Token: 0x040054AF RID: 21679
+	// Token: 0x04005553 RID: 21843
 	[XuiBindComponent("SaveDataLimitComboBox", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxEnum<SaveDataLimitType> cbxSaveDataLimit;
 
-	// Token: 0x040054B0 RID: 21680
+	// Token: 0x04005554 RID: 21844
 	[XuiBindComponent("PreviewQuality", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxEnum<XUiC_WorldGenerationWindow.PreviewQuality> cbxPreviewQuality;
 
-	// Token: 0x040054B1 RID: 21681
+	// Token: 0x04005555 RID: 21845
 	[XuiBindComponent("BiomeLayout", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxEnum<WorldBuilder.BiomeLayout> cbxBiomeLayout;
 
-	// Token: 0x040054B2 RID: 21682
+	// Token: 0x04005556 RID: 21846
 	[XuiBindComponent(false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_WorldGenerationWindow.XUiC_RwgBiome[] biomeBoxes;
 
-	// Token: 0x040054B3 RID: 21683
+	// Token: 0x04005557 RID: 21847
 	[XuiBindComponent("PlainsWeight", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxInt cbxPlainsWeight;
 
-	// Token: 0x040054B4 RID: 21684
+	// Token: 0x04005558 RID: 21848
 	[XuiBindComponent("HillsWeight", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxInt cbxHillsWeight;
 
-	// Token: 0x040054B5 RID: 21685
+	// Token: 0x04005559 RID: 21849
 	[XuiBindComponent("MountainsWeight", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxInt cbxMountainsWeight;
 
-	// Token: 0x040054B6 RID: 21686
+	// Token: 0x0400555A RID: 21850
 	[XuiBindComponent("Rivers", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxEnum<WorldBuilder.GenerationSelections> cbxRivers;
 
-	// Token: 0x040054B7 RID: 21687
+	// Token: 0x0400555B RID: 21851
 	[XuiBindComponent("Craters", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxEnum<WorldBuilder.GenerationSelections> cbxCraters;
 
-	// Token: 0x040054B8 RID: 21688
+	// Token: 0x0400555C RID: 21852
 	[XuiBindComponent("Cracks", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxEnum<WorldBuilder.GenerationSelections> cbxCanyons;
 
-	// Token: 0x040054B9 RID: 21689
+	// Token: 0x0400555D RID: 21853
 	[XuiBindComponent("Lakes", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxEnum<WorldBuilder.GenerationSelections> cbxLakes;
 
-	// Token: 0x040054BA RID: 21690
+	// Token: 0x0400555E RID: 21854
 	[XuiBindComponent("Rural", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxEnum<WorldBuilder.GenerationSelections> cbxRural;
 
-	// Token: 0x040054BB RID: 21691
+	// Token: 0x0400555F RID: 21855
 	[XuiBindComponent("Town", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxEnum<WorldBuilder.GenerationSelections> cbxTown;
 
-	// Token: 0x040054BC RID: 21692
+	// Token: 0x04005560 RID: 21856
 	[XuiBindComponent("City", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxEnum<WorldBuilder.GenerationSelections> cbxCity;
 
-	// Token: 0x040054BD RID: 21693
+	// Token: 0x04005561 RID: 21857
 	[XuiBindComponent("Towns", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxEnum<WorldBuilder.GenerationSelections> cbxTowns;
 
-	// Token: 0x040054BE RID: 21694
+	// Token: 0x04005562 RID: 21858
 	[XuiBindComponent("Wilderness", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxEnum<WorldBuilder.GenerationSelections> cbxWilderness;
 
-	// Token: 0x040054BF RID: 21695
+	// Token: 0x04005563 RID: 21859
 	[XuiBindComponent("btnDataManagement", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnManage;
 
-	// Token: 0x040054C0 RID: 21696
+	// Token: 0x04005564 RID: 21860
 	[XuiBindComponent("data_bar_controller", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_DataManagementBar dataManagementBar;
 
-	// Token: 0x040054C1 RID: 21697
+	// Token: 0x04005565 RID: 21861
 	[XuiBindComponent("GameSaveStorageComboBox", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxEnum<UserDataStorageType> cbxGameSaveStorage;
 
-	// Token: 0x040054C2 RID: 21698
+	// Token: 0x04005566 RID: 21862
 	[XuiBindComponent("WorldSaveStorage", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxEnum<UserDataStorageType> cbxWorldSaveStorage;
 
-	// Token: 0x040054C3 RID: 21699
+	// Token: 0x04005567 RID: 21863
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PrefabPreviewManager prefabPreviewManagerInstance;
 
-	// Token: 0x040054C4 RID: 21700
+	// Token: 0x04005568 RID: 21864
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long pendingBytes;
 
-	// Token: 0x040054C5 RID: 21701
+	// Token: 0x04005569 RID: 21865
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long totalAvailableBytes;
 
-	// Token: 0x040054C7 RID: 21703
+	// Token: 0x0400556B RID: 21867
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool validCountyName;
 
-	// Token: 0x040054C8 RID: 21704
+	// Token: 0x0400556C RID: 21868
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string countyName;
 
-	// Token: 0x040054C9 RID: 21705
+	// Token: 0x0400556D RID: 21869
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string statusText;
 
-	// Token: 0x040054CA RID: 21706
+	// Token: 0x0400556E RID: 21870
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float oldFogDensity;
 
-	// Token: 0x040054CC RID: 21708
+	// Token: 0x04005570 RID: 21872
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isClosing;
 
-	// Token: 0x040054CD RID: 21709
+	// Token: 0x04005571 RID: 21873
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string[] biomeToUiName = new string[] { "xuiPineForest", "xuiBurntForest", "xuiDesert", "xuiSnow", "xuiWasteland" };
 
-	// Token: 0x040054CE RID: 21710
+	// Token: 0x04005572 RID: 21874
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isGenerating;
 
-	// Token: 0x040054CF RID: 21711
+	// Token: 0x04005573 RID: 21875
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isCancelling;
 
-	// Token: 0x02000E42 RID: 3650
+	// Token: 0x02000E57 RID: 3671
 	public enum PreviewQuality
 	{
-		// Token: 0x040054D1 RID: 21713
+		// Token: 0x04005575 RID: 21877
 		NoPreview,
-		// Token: 0x040054D2 RID: 21714
+		// Token: 0x04005576 RID: 21878
 		Lowest,
-		// Token: 0x040054D3 RID: 21715
+		// Token: 0x04005577 RID: 21879
 		Low,
-		// Token: 0x040054D4 RID: 21716
+		// Token: 0x04005578 RID: 21880
 		Default,
-		// Token: 0x040054D5 RID: 21717
+		// Token: 0x04005579 RID: 21881
 		High,
-		// Token: 0x040054D6 RID: 21718
+		// Token: 0x0400557A RID: 21882
 		Highest
 	}
 
-	// Token: 0x02000E43 RID: 3651
+	// Token: 0x02000E58 RID: 3672
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class XUiC_RwgBiome : XUiController
 	{
-		// Token: 0x140000A3 RID: 163
-		// (add) Token: 0x060070B6 RID: 28854 RVA: 0x002B5048 File Offset: 0x002B3248
-		// (remove) Token: 0x060070B7 RID: 28855 RVA: 0x002B5080 File Offset: 0x002B3280
+		// Token: 0x140000A4 RID: 164
+		// (add) Token: 0x06007156 RID: 29014 RVA: 0x002B856C File Offset: 0x002B676C
+		// (remove) Token: 0x06007157 RID: 29015 RVA: 0x002B85A4 File Offset: 0x002B67A4
 		public event Action ValueChanged;
 
-		// Token: 0x17000CCA RID: 3274
-		// (get) Token: 0x060070B8 RID: 28856 RVA: 0x002B50B5 File Offset: 0x002B32B5
-		// (set) Token: 0x060070B9 RID: 28857 RVA: 0x002B50BD File Offset: 0x002B32BD
+		// Token: 0x17000CE3 RID: 3299
+		// (get) Token: 0x06007158 RID: 29016 RVA: 0x002B85D9 File Offset: 0x002B67D9
+		// (set) Token: 0x06007159 RID: 29017 RVA: 0x002B85E1 File Offset: 0x002B67E1
 		public int BiomeIdx
 		{
 			get
@@ -1435,8 +1435,8 @@ public class XUiC_WorldGenerationWindow : XUiController
 			}
 		}
 
-		// Token: 0x17000CCB RID: 3275
-		// (get) Token: 0x060070BA RID: 28858 RVA: 0x002B50F7 File Offset: 0x002B32F7
+		// Token: 0x17000CE4 RID: 3300
+		// (get) Token: 0x0600715A RID: 29018 RVA: 0x002B861B File Offset: 0x002B681B
 		[XuiXmlBinding("biomename")]
 		public string BiomeName
 		{
@@ -1451,8 +1451,8 @@ public class XUiC_WorldGenerationWindow : XUiController
 			}
 		}
 
-		// Token: 0x17000CCC RID: 3276
-		// (get) Token: 0x060070BB RID: 28859 RVA: 0x002B511C File Offset: 0x002B331C
+		// Token: 0x17000CE5 RID: 3301
+		// (get) Token: 0x0600715B RID: 29019 RVA: 0x002B8640 File Offset: 0x002B6840
 		[XuiXmlBinding("biomecolor")]
 		public Color BiomeColor
 		{
@@ -1467,8 +1467,8 @@ public class XUiC_WorldGenerationWindow : XUiController
 			}
 		}
 
-		// Token: 0x17000CCD RID: 3277
-		// (get) Token: 0x060070BC RID: 28860 RVA: 0x002B516A File Offset: 0x002B336A
+		// Token: 0x17000CE6 RID: 3302
+		// (get) Token: 0x0600715C RID: 29020 RVA: 0x002B868E File Offset: 0x002B688E
 		public int Value
 		{
 			get
@@ -1477,7 +1477,7 @@ public class XUiC_WorldGenerationWindow : XUiController
 			}
 		}
 
-		// Token: 0x060070BD RID: 28861 RVA: 0x002B5178 File Offset: 0x002B3378
+		// Token: 0x0600715D RID: 29021 RVA: 0x002B869C File Offset: 0x002B689C
 		[XuiBindEvent("OnValueChanged", "combo")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void comboValueChanged(XUiController _sender, long _oldValue, long _newValue)
@@ -1490,25 +1490,25 @@ public class XUiC_WorldGenerationWindow : XUiController
 			valueChanged();
 		}
 
-		// Token: 0x060070BE RID: 28862 RVA: 0x0028AD37 File Offset: 0x00288F37
+		// Token: 0x0600715E RID: 29022 RVA: 0x0028DC1B File Offset: 0x0028BE1B
 		public override void Update(float _dt)
 		{
 			base.Update(_dt);
 			base.handleDirtyUpdateDefault();
 		}
 
-		// Token: 0x060070BF RID: 28863 RVA: 0x002B518A File Offset: 0x002B338A
+		// Token: 0x0600715F RID: 29023 RVA: 0x002B86AE File Offset: 0x002B68AE
 		public void SetLabel(string _text)
 		{
 			this.combo.ValueTextOverride = _text;
 		}
 
-		// Token: 0x040054D7 RID: 21719
+		// Token: 0x0400557B RID: 21883
 		[XuiBindComponent(true)]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly XUiC_ComboBoxInt combo;
 
-		// Token: 0x040054D9 RID: 21721
+		// Token: 0x0400557D RID: 21885
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int biomeIdx;
 	}

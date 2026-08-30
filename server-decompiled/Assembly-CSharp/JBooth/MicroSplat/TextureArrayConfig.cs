@@ -4,38 +4,38 @@ using UnityEngine;
 
 namespace JBooth.MicroSplat
 {
-	// Token: 0x02001D13 RID: 7443
+	// Token: 0x02001D3B RID: 7483
 	[CreateAssetMenu(menuName = "MicroSplat/Texture Array Config", order = 1)]
 	[ExecuteInEditMode]
 	public class TextureArrayConfig : ScriptableObject
 	{
-		// Token: 0x0600DC03 RID: 56323 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x0600DDA4 RID: 56740 RVA: 0x00010E62 File Offset: 0x0000F062
 		public bool IsScatter()
 		{
 			return false;
 		}
 
-		// Token: 0x0600DC04 RID: 56324 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x0600DDA5 RID: 56741 RVA: 0x00010E62 File Offset: 0x0000F062
 		public bool IsDecal()
 		{
 			return false;
 		}
 
-		// Token: 0x0600DC05 RID: 56325 RVA: 0x004EDC8C File Offset: 0x004EBE8C
+		// Token: 0x0600DDA6 RID: 56742 RVA: 0x004F4700 File Offset: 0x004F2900
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Awake()
 		{
 			TextureArrayConfig.sAllConfigs.Add(this);
 		}
 
-		// Token: 0x0600DC06 RID: 56326 RVA: 0x004EDC99 File Offset: 0x004EBE99
+		// Token: 0x0600DDA7 RID: 56743 RVA: 0x004F470D File Offset: 0x004F290D
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnDestroy()
 		{
 			TextureArrayConfig.sAllConfigs.Remove(this);
 		}
 
-		// Token: 0x0600DC07 RID: 56327 RVA: 0x004EDCA8 File Offset: 0x004EBEA8
+		// Token: 0x0600DDA8 RID: 56744 RVA: 0x004F471C File Offset: 0x004F291C
 		public static TextureArrayConfig FindConfig(Texture2DArray diffuse)
 		{
 			for (int i = 0; i < TextureArrayConfig.sAllConfigs.Count; i++)
@@ -48,215 +48,215 @@ namespace JBooth.MicroSplat
 			return null;
 		}
 
-		// Token: 0x0400A62D RID: 42541
+		// Token: 0x0400A762 RID: 42850
 		public bool diffuseIsLinear;
 
-		// Token: 0x0400A62E RID: 42542
+		// Token: 0x0400A763 RID: 42851
 		[HideInInspector]
 		public bool antiTileArray;
 
-		// Token: 0x0400A62F RID: 42543
+		// Token: 0x0400A764 RID: 42852
 		[HideInInspector]
 		public bool emisMetalArray;
 
-		// Token: 0x0400A630 RID: 42544
+		// Token: 0x0400A765 RID: 42853
 		public bool traxArray;
 
-		// Token: 0x0400A631 RID: 42545
+		// Token: 0x0400A766 RID: 42854
 		[HideInInspector]
 		public TextureArrayConfig.TextureMode textureMode = TextureArrayConfig.TextureMode.PBR;
 
-		// Token: 0x0400A632 RID: 42546
+		// Token: 0x0400A767 RID: 42855
 		[HideInInspector]
 		public TextureArrayConfig.ClusterMode clusterMode;
 
-		// Token: 0x0400A633 RID: 42547
+		// Token: 0x0400A768 RID: 42856
 		[HideInInspector]
 		public TextureArrayConfig.PackingMode packingMode;
 
-		// Token: 0x0400A634 RID: 42548
+		// Token: 0x0400A769 RID: 42857
 		[HideInInspector]
 		public TextureArrayConfig.PBRWorkflow pbrWorkflow;
 
-		// Token: 0x0400A635 RID: 42549
+		// Token: 0x0400A76A RID: 42858
 		[HideInInspector]
 		public int hash;
 
-		// Token: 0x0400A636 RID: 42550
+		// Token: 0x0400A76B RID: 42859
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public static List<TextureArrayConfig> sAllConfigs = new List<TextureArrayConfig>();
 
-		// Token: 0x0400A637 RID: 42551
+		// Token: 0x0400A76C RID: 42860
 		[HideInInspector]
 		public Texture2DArray splatArray;
 
-		// Token: 0x0400A638 RID: 42552
+		// Token: 0x0400A76D RID: 42861
 		[HideInInspector]
 		public Texture2DArray diffuseArray;
 
-		// Token: 0x0400A639 RID: 42553
+		// Token: 0x0400A76E RID: 42862
 		[HideInInspector]
 		public Texture2DArray normalSAOArray;
 
-		// Token: 0x0400A63A RID: 42554
+		// Token: 0x0400A76F RID: 42863
 		[HideInInspector]
 		public Texture2DArray smoothAOArray;
 
-		// Token: 0x0400A63B RID: 42555
+		// Token: 0x0400A770 RID: 42864
 		[HideInInspector]
 		public Texture2DArray specularArray;
 
-		// Token: 0x0400A63C RID: 42556
+		// Token: 0x0400A771 RID: 42865
 		[HideInInspector]
 		public Texture2DArray diffuseArray2;
 
-		// Token: 0x0400A63D RID: 42557
+		// Token: 0x0400A772 RID: 42866
 		[HideInInspector]
 		public Texture2DArray normalSAOArray2;
 
-		// Token: 0x0400A63E RID: 42558
+		// Token: 0x0400A773 RID: 42867
 		[HideInInspector]
 		public Texture2DArray smoothAOArray2;
 
-		// Token: 0x0400A63F RID: 42559
+		// Token: 0x0400A774 RID: 42868
 		[HideInInspector]
 		public Texture2DArray specularArray2;
 
-		// Token: 0x0400A640 RID: 42560
+		// Token: 0x0400A775 RID: 42869
 		[HideInInspector]
 		public Texture2DArray diffuseArray3;
 
-		// Token: 0x0400A641 RID: 42561
+		// Token: 0x0400A776 RID: 42870
 		[HideInInspector]
 		public Texture2DArray normalSAOArray3;
 
-		// Token: 0x0400A642 RID: 42562
+		// Token: 0x0400A777 RID: 42871
 		[HideInInspector]
 		public Texture2DArray smoothAOArray3;
 
-		// Token: 0x0400A643 RID: 42563
+		// Token: 0x0400A778 RID: 42872
 		[HideInInspector]
 		public Texture2DArray specularArray3;
 
-		// Token: 0x0400A644 RID: 42564
+		// Token: 0x0400A779 RID: 42873
 		[HideInInspector]
 		public Texture2DArray emisArray;
 
-		// Token: 0x0400A645 RID: 42565
+		// Token: 0x0400A77A RID: 42874
 		[HideInInspector]
 		public Texture2DArray emisArray2;
 
-		// Token: 0x0400A646 RID: 42566
+		// Token: 0x0400A77B RID: 42875
 		[HideInInspector]
 		public Texture2DArray emisArray3;
 
-		// Token: 0x0400A647 RID: 42567
+		// Token: 0x0400A77C RID: 42876
 		public TextureArrayConfig.TextureArrayGroup defaultTextureSettings = new TextureArrayConfig.TextureArrayGroup();
 
-		// Token: 0x0400A648 RID: 42568
+		// Token: 0x0400A77D RID: 42877
 		public List<TextureArrayConfig.PlatformTextureOverride> platformOverrides = new List<TextureArrayConfig.PlatformTextureOverride>();
 
-		// Token: 0x0400A649 RID: 42569
+		// Token: 0x0400A77E RID: 42878
 		public TextureArrayConfig.SourceTextureSize sourceTextureSize;
 
-		// Token: 0x0400A64A RID: 42570
+		// Token: 0x0400A77F RID: 42879
 		[HideInInspector]
 		public TextureArrayConfig.AllTextureChannel allTextureChannelHeight = TextureArrayConfig.AllTextureChannel.G;
 
-		// Token: 0x0400A64B RID: 42571
+		// Token: 0x0400A780 RID: 42880
 		[HideInInspector]
 		public TextureArrayConfig.AllTextureChannel allTextureChannelSmoothness = TextureArrayConfig.AllTextureChannel.G;
 
-		// Token: 0x0400A64C RID: 42572
+		// Token: 0x0400A781 RID: 42881
 		[HideInInspector]
 		public TextureArrayConfig.AllTextureChannel allTextureChannelAO = TextureArrayConfig.AllTextureChannel.G;
 
-		// Token: 0x0400A64D RID: 42573
+		// Token: 0x0400A782 RID: 42882
 		[HideInInspector]
 		public List<TextureArrayConfig.TextureEntry> sourceTextures = new List<TextureArrayConfig.TextureEntry>();
 
-		// Token: 0x0400A64E RID: 42574
+		// Token: 0x0400A783 RID: 42883
 		[HideInInspector]
 		public List<TextureArrayConfig.TextureEntry> sourceTextures2 = new List<TextureArrayConfig.TextureEntry>();
 
-		// Token: 0x0400A64F RID: 42575
+		// Token: 0x0400A784 RID: 42884
 		[HideInInspector]
 		public List<TextureArrayConfig.TextureEntry> sourceTextures3 = new List<TextureArrayConfig.TextureEntry>();
 
-		// Token: 0x02001D14 RID: 7444
+		// Token: 0x02001D3C RID: 7484
 		public enum AllTextureChannel
 		{
-			// Token: 0x0400A651 RID: 42577
+			// Token: 0x0400A786 RID: 42886
 			R,
-			// Token: 0x0400A652 RID: 42578
+			// Token: 0x0400A787 RID: 42887
 			G,
-			// Token: 0x0400A653 RID: 42579
+			// Token: 0x0400A788 RID: 42888
 			B,
-			// Token: 0x0400A654 RID: 42580
+			// Token: 0x0400A789 RID: 42889
 			A,
-			// Token: 0x0400A655 RID: 42581
+			// Token: 0x0400A78A RID: 42890
 			Custom
 		}
 
-		// Token: 0x02001D15 RID: 7445
+		// Token: 0x02001D3D RID: 7485
 		public enum TextureChannel
 		{
-			// Token: 0x0400A657 RID: 42583
+			// Token: 0x0400A78C RID: 42892
 			R,
-			// Token: 0x0400A658 RID: 42584
+			// Token: 0x0400A78D RID: 42893
 			G,
-			// Token: 0x0400A659 RID: 42585
+			// Token: 0x0400A78E RID: 42894
 			B,
-			// Token: 0x0400A65A RID: 42586
+			// Token: 0x0400A78F RID: 42895
 			A
 		}
 
-		// Token: 0x02001D16 RID: 7446
+		// Token: 0x02001D3E RID: 7486
 		public enum Compression
 		{
-			// Token: 0x0400A65C RID: 42588
+			// Token: 0x0400A791 RID: 42897
 			AutomaticCompressed,
-			// Token: 0x0400A65D RID: 42589
+			// Token: 0x0400A792 RID: 42898
 			ForceDXT,
-			// Token: 0x0400A65E RID: 42590
+			// Token: 0x0400A793 RID: 42899
 			ForcePVR,
-			// Token: 0x0400A65F RID: 42591
+			// Token: 0x0400A794 RID: 42900
 			ForceETC2,
-			// Token: 0x0400A660 RID: 42592
+			// Token: 0x0400A795 RID: 42901
 			ForceASTC,
-			// Token: 0x0400A661 RID: 42593
+			// Token: 0x0400A796 RID: 42902
 			ForceCrunch,
-			// Token: 0x0400A662 RID: 42594
+			// Token: 0x0400A797 RID: 42903
 			Uncompressed
 		}
 
-		// Token: 0x02001D17 RID: 7447
+		// Token: 0x02001D3F RID: 7487
 		public enum TextureSize
 		{
-			// Token: 0x0400A664 RID: 42596
+			// Token: 0x0400A799 RID: 42905
 			k4096 = 4096,
-			// Token: 0x0400A665 RID: 42597
+			// Token: 0x0400A79A RID: 42906
 			k2048 = 2048,
-			// Token: 0x0400A666 RID: 42598
+			// Token: 0x0400A79B RID: 42907
 			k1024 = 1024,
-			// Token: 0x0400A667 RID: 42599
+			// Token: 0x0400A79C RID: 42908
 			k512 = 512,
-			// Token: 0x0400A668 RID: 42600
+			// Token: 0x0400A79D RID: 42909
 			k256 = 256,
-			// Token: 0x0400A669 RID: 42601
+			// Token: 0x0400A79E RID: 42910
 			k128 = 128,
-			// Token: 0x0400A66A RID: 42602
+			// Token: 0x0400A79F RID: 42911
 			k64 = 64,
-			// Token: 0x0400A66B RID: 42603
+			// Token: 0x0400A7A0 RID: 42912
 			k32 = 32
 		}
 
-		// Token: 0x02001D18 RID: 7448
+		// Token: 0x02001D40 RID: 7488
 		[Serializable]
 		public class TextureArraySettings
 		{
-			// Token: 0x0600DC0A RID: 56330 RVA: 0x004EDD62 File Offset: 0x004EBF62
+			// Token: 0x0600DDAB RID: 56747 RVA: 0x004F47D6 File Offset: 0x004F29D6
 			public TextureArraySettings(TextureArrayConfig.TextureSize s, TextureArrayConfig.Compression c, FilterMode f, int a = 1)
 			{
 				this.textureSize = s;
@@ -265,114 +265,114 @@ namespace JBooth.MicroSplat
 				this.Aniso = a;
 			}
 
-			// Token: 0x0400A66C RID: 42604
+			// Token: 0x0400A7A1 RID: 42913
 			public TextureArrayConfig.TextureSize textureSize;
 
-			// Token: 0x0400A66D RID: 42605
+			// Token: 0x0400A7A2 RID: 42914
 			public TextureArrayConfig.Compression compression;
 
-			// Token: 0x0400A66E RID: 42606
+			// Token: 0x0400A7A3 RID: 42915
 			public FilterMode filterMode;
 
-			// Token: 0x0400A66F RID: 42607
+			// Token: 0x0400A7A4 RID: 42916
 			[Range(0f, 16f)]
 			public int Aniso = 1;
 		}
 
-		// Token: 0x02001D19 RID: 7449
+		// Token: 0x02001D41 RID: 7489
 		public enum PBRWorkflow
 		{
-			// Token: 0x0400A671 RID: 42609
+			// Token: 0x0400A7A6 RID: 42918
 			Metallic,
-			// Token: 0x0400A672 RID: 42610
+			// Token: 0x0400A7A7 RID: 42919
 			Specular
 		}
 
-		// Token: 0x02001D1A RID: 7450
+		// Token: 0x02001D42 RID: 7490
 		public enum PackingMode
 		{
-			// Token: 0x0400A674 RID: 42612
+			// Token: 0x0400A7A9 RID: 42921
 			Fastest,
-			// Token: 0x0400A675 RID: 42613
+			// Token: 0x0400A7AA RID: 42922
 			Quality
 		}
 
-		// Token: 0x02001D1B RID: 7451
+		// Token: 0x02001D43 RID: 7491
 		public enum SourceTextureSize
 		{
-			// Token: 0x0400A677 RID: 42615
+			// Token: 0x0400A7AC RID: 42924
 			Unchanged,
-			// Token: 0x0400A678 RID: 42616
+			// Token: 0x0400A7AD RID: 42925
 			k32 = 32,
-			// Token: 0x0400A679 RID: 42617
+			// Token: 0x0400A7AE RID: 42926
 			k256 = 256
 		}
 
-		// Token: 0x02001D1C RID: 7452
+		// Token: 0x02001D44 RID: 7492
 		public enum TextureMode
 		{
-			// Token: 0x0400A67B RID: 42619
+			// Token: 0x0400A7B0 RID: 42928
 			Basic,
-			// Token: 0x0400A67C RID: 42620
+			// Token: 0x0400A7B1 RID: 42929
 			PBR
 		}
 
-		// Token: 0x02001D1D RID: 7453
+		// Token: 0x02001D45 RID: 7493
 		public enum ClusterMode
 		{
-			// Token: 0x0400A67E RID: 42622
+			// Token: 0x0400A7B3 RID: 42931
 			None,
-			// Token: 0x0400A67F RID: 42623
+			// Token: 0x0400A7B4 RID: 42932
 			TwoVariations,
-			// Token: 0x0400A680 RID: 42624
+			// Token: 0x0400A7B5 RID: 42933
 			ThreeVariations
 		}
 
-		// Token: 0x02001D1E RID: 7454
+		// Token: 0x02001D46 RID: 7494
 		[Serializable]
 		public class TextureArrayGroup
 		{
-			// Token: 0x0400A681 RID: 42625
+			// Token: 0x0400A7B6 RID: 42934
 			public TextureArrayConfig.TextureArraySettings diffuseSettings = new TextureArrayConfig.TextureArraySettings(TextureArrayConfig.TextureSize.k1024, TextureArrayConfig.Compression.AutomaticCompressed, FilterMode.Bilinear, 1);
 
-			// Token: 0x0400A682 RID: 42626
+			// Token: 0x0400A7B7 RID: 42935
 			public TextureArrayConfig.TextureArraySettings normalSettings = new TextureArrayConfig.TextureArraySettings(TextureArrayConfig.TextureSize.k1024, TextureArrayConfig.Compression.AutomaticCompressed, FilterMode.Trilinear, 1);
 
-			// Token: 0x0400A683 RID: 42627
+			// Token: 0x0400A7B8 RID: 42936
 			public TextureArrayConfig.TextureArraySettings smoothSettings = new TextureArrayConfig.TextureArraySettings(TextureArrayConfig.TextureSize.k1024, TextureArrayConfig.Compression.AutomaticCompressed, FilterMode.Bilinear, 1);
 
-			// Token: 0x0400A684 RID: 42628
+			// Token: 0x0400A7B9 RID: 42937
 			public TextureArrayConfig.TextureArraySettings antiTileSettings = new TextureArrayConfig.TextureArraySettings(TextureArrayConfig.TextureSize.k1024, TextureArrayConfig.Compression.AutomaticCompressed, FilterMode.Bilinear, 1);
 
-			// Token: 0x0400A685 RID: 42629
+			// Token: 0x0400A7BA RID: 42938
 			public TextureArrayConfig.TextureArraySettings emissiveSettings = new TextureArrayConfig.TextureArraySettings(TextureArrayConfig.TextureSize.k1024, TextureArrayConfig.Compression.AutomaticCompressed, FilterMode.Bilinear, 1);
 
-			// Token: 0x0400A686 RID: 42630
+			// Token: 0x0400A7BB RID: 42939
 			public TextureArrayConfig.TextureArraySettings specularSettings = new TextureArrayConfig.TextureArraySettings(TextureArrayConfig.TextureSize.k1024, TextureArrayConfig.Compression.AutomaticCompressed, FilterMode.Bilinear, 1);
 
-			// Token: 0x0400A687 RID: 42631
+			// Token: 0x0400A7BC RID: 42940
 			public TextureArrayConfig.TextureArraySettings traxDiffuseSettings = new TextureArrayConfig.TextureArraySettings(TextureArrayConfig.TextureSize.k1024, TextureArrayConfig.Compression.AutomaticCompressed, FilterMode.Bilinear, 1);
 
-			// Token: 0x0400A688 RID: 42632
+			// Token: 0x0400A7BD RID: 42941
 			public TextureArrayConfig.TextureArraySettings traxNormalSettings = new TextureArrayConfig.TextureArraySettings(TextureArrayConfig.TextureSize.k1024, TextureArrayConfig.Compression.AutomaticCompressed, FilterMode.Bilinear, 1);
 
-			// Token: 0x0400A689 RID: 42633
+			// Token: 0x0400A7BE RID: 42942
 			public TextureArrayConfig.TextureArraySettings decalSplatSettings = new TextureArrayConfig.TextureArraySettings(TextureArrayConfig.TextureSize.k1024, TextureArrayConfig.Compression.AutomaticCompressed, FilterMode.Bilinear, 1);
 		}
 
-		// Token: 0x02001D1F RID: 7455
+		// Token: 0x02001D47 RID: 7495
 		[Serializable]
 		public class PlatformTextureOverride
 		{
-			// Token: 0x0400A68A RID: 42634
+			// Token: 0x0400A7BF RID: 42943
 			public TextureArrayConfig.TextureArrayGroup settings = new TextureArrayConfig.TextureArrayGroup();
 		}
 
-		// Token: 0x02001D20 RID: 7456
+		// Token: 0x02001D48 RID: 7496
 		[Serializable]
 		public class TextureEntry
 		{
-			// Token: 0x0600DC0D RID: 56333 RVA: 0x004EDE64 File Offset: 0x004EC064
+			// Token: 0x0600DDAE RID: 56750 RVA: 0x004F48D8 File Offset: 0x004F2AD8
 			public void Reset()
 			{
 				this.diffuse = null;
@@ -402,7 +402,7 @@ namespace JBooth.MicroSplat
 				this.splat = null;
 			}
 
-			// Token: 0x0600DC0E RID: 56334 RVA: 0x004EDF20 File Offset: 0x004EC120
+			// Token: 0x0600DDAF RID: 56751 RVA: 0x004F4994 File Offset: 0x004F2B94
 			public bool HasTextures(TextureArrayConfig.PBRWorkflow wf)
 			{
 				if (wf == TextureArrayConfig.PBRWorkflow.Specular)
@@ -412,88 +412,88 @@ namespace JBooth.MicroSplat
 				return this.diffuse != null || this.height != null || this.normal != null || this.smoothness != null || this.metal != null || this.ao != null;
 			}
 
-			// Token: 0x0400A68B RID: 42635
+			// Token: 0x0400A7C0 RID: 42944
 			public Texture2D diffuse;
 
-			// Token: 0x0400A68C RID: 42636
+			// Token: 0x0400A7C1 RID: 42945
 			public Texture2D height;
 
-			// Token: 0x0400A68D RID: 42637
+			// Token: 0x0400A7C2 RID: 42946
 			public TextureArrayConfig.TextureChannel heightChannel = TextureArrayConfig.TextureChannel.G;
 
-			// Token: 0x0400A68E RID: 42638
+			// Token: 0x0400A7C3 RID: 42947
 			public Texture2D normal;
 
-			// Token: 0x0400A68F RID: 42639
+			// Token: 0x0400A7C4 RID: 42948
 			public Texture2D smoothness;
 
-			// Token: 0x0400A690 RID: 42640
+			// Token: 0x0400A7C5 RID: 42949
 			public TextureArrayConfig.TextureChannel smoothnessChannel = TextureArrayConfig.TextureChannel.G;
 
-			// Token: 0x0400A691 RID: 42641
+			// Token: 0x0400A7C6 RID: 42950
 			public bool isRoughness;
 
-			// Token: 0x0400A692 RID: 42642
+			// Token: 0x0400A7C7 RID: 42951
 			public Texture2D ao;
 
-			// Token: 0x0400A693 RID: 42643
+			// Token: 0x0400A7C8 RID: 42952
 			public TextureArrayConfig.TextureChannel aoChannel = TextureArrayConfig.TextureChannel.G;
 
-			// Token: 0x0400A694 RID: 42644
+			// Token: 0x0400A7C9 RID: 42953
 			public Texture2D emis;
 
-			// Token: 0x0400A695 RID: 42645
+			// Token: 0x0400A7CA RID: 42954
 			public Texture2D metal;
 
-			// Token: 0x0400A696 RID: 42646
+			// Token: 0x0400A7CB RID: 42955
 			public TextureArrayConfig.TextureChannel metalChannel = TextureArrayConfig.TextureChannel.G;
 
-			// Token: 0x0400A697 RID: 42647
+			// Token: 0x0400A7CC RID: 42956
 			public Texture2D specular;
 
-			// Token: 0x0400A698 RID: 42648
+			// Token: 0x0400A7CD RID: 42957
 			public Texture2D noiseNormal;
 
-			// Token: 0x0400A699 RID: 42649
+			// Token: 0x0400A7CE RID: 42958
 			public Texture2D detailNoise;
 
-			// Token: 0x0400A69A RID: 42650
+			// Token: 0x0400A7CF RID: 42959
 			public TextureArrayConfig.TextureChannel detailChannel = TextureArrayConfig.TextureChannel.G;
 
-			// Token: 0x0400A69B RID: 42651
+			// Token: 0x0400A7D0 RID: 42960
 			public Texture2D distanceNoise;
 
-			// Token: 0x0400A69C RID: 42652
+			// Token: 0x0400A7D1 RID: 42961
 			public TextureArrayConfig.TextureChannel distanceChannel = TextureArrayConfig.TextureChannel.G;
 
-			// Token: 0x0400A69D RID: 42653
+			// Token: 0x0400A7D2 RID: 42962
 			public Texture2D traxDiffuse;
 
-			// Token: 0x0400A69E RID: 42654
+			// Token: 0x0400A7D3 RID: 42963
 			public Texture2D traxHeight;
 
-			// Token: 0x0400A69F RID: 42655
+			// Token: 0x0400A7D4 RID: 42964
 			public TextureArrayConfig.TextureChannel traxHeightChannel = TextureArrayConfig.TextureChannel.G;
 
-			// Token: 0x0400A6A0 RID: 42656
+			// Token: 0x0400A7D5 RID: 42965
 			public Texture2D traxNormal;
 
-			// Token: 0x0400A6A1 RID: 42657
+			// Token: 0x0400A7D6 RID: 42966
 			public Texture2D traxSmoothness;
 
-			// Token: 0x0400A6A2 RID: 42658
+			// Token: 0x0400A7D7 RID: 42967
 			public TextureArrayConfig.TextureChannel traxSmoothnessChannel = TextureArrayConfig.TextureChannel.G;
 
-			// Token: 0x0400A6A3 RID: 42659
+			// Token: 0x0400A7D8 RID: 42968
 			public bool traxIsRoughness;
 
-			// Token: 0x0400A6A4 RID: 42660
+			// Token: 0x0400A7D9 RID: 42969
 			public Texture2D traxAO;
 
-			// Token: 0x0400A6A5 RID: 42661
+			// Token: 0x0400A7DA RID: 42970
 			public TextureArrayConfig.TextureChannel traxAOChannel = TextureArrayConfig.TextureChannel.G;
 
-			// Token: 0x0400A6A6 RID: 42662
+			// Token: 0x0400A7DB RID: 42971
 			public Texture2D splat;
 		}
 	}

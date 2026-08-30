@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200038D RID: 909
+// Token: 0x02000391 RID: 913
 [Preserve]
 public class RegionItemData
 {
-	// Token: 0x06001B0F RID: 6927 RVA: 0x000A0BD9 File Offset: 0x0009EDD9
+	// Token: 0x06001B2C RID: 6956 RVA: 0x000A1319 File Offset: 0x0009F519
 	public RegionItemData(int x, int z, int updateTime)
 	{
 		this.X = x;
@@ -13,7 +13,7 @@ public class RegionItemData
 		this.UpdateTime = updateTime;
 	}
 
-	// Token: 0x06001B10 RID: 6928 RVA: 0x000A0BF6 File Offset: 0x0009EDF6
+	// Token: 0x06001B2D RID: 6957 RVA: 0x000A1336 File Offset: 0x0009F536
 	public void Update(int x, int z, int updateTime)
 	{
 		this.X = x;
@@ -21,7 +21,7 @@ public class RegionItemData
 		this.UpdateTime = updateTime;
 	}
 
-	// Token: 0x06001B11 RID: 6929 RVA: 0x000A0C0D File Offset: 0x0009EE0D
+	// Token: 0x06001B2E RID: 6958 RVA: 0x000A134D File Offset: 0x0009F54D
 	public void Update(DynamicMeshItem item)
 	{
 		this.X = item.WorldPosition.x;
@@ -29,12 +29,12 @@ public class RegionItemData
 		this.UpdateTime = item.UpdateTime;
 	}
 
-	// Token: 0x04001169 RID: 4457
+	// Token: 0x0400117E RID: 4478
 	public int X;
 
-	// Token: 0x0400116A RID: 4458
+	// Token: 0x0400117F RID: 4479
 	public int Z;
 
-	// Token: 0x0400116B RID: 4459
+	// Token: 0x04001180 RID: 4480
 	public int UpdateTime;
 }

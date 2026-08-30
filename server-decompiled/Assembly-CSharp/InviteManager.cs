@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine;
 
-// Token: 0x02001212 RID: 4626
+// Token: 0x0200122E RID: 4654
 public class InviteManager
 {
-	// Token: 0x17001164 RID: 4452
-	// (get) Token: 0x06009387 RID: 37767 RVA: 0x0037D46C File Offset: 0x0037B66C
+	// Token: 0x1700119F RID: 4511
+	// (get) Token: 0x0600948B RID: 38027 RVA: 0x00382748 File Offset: 0x00380948
 	public static InviteManager Instance
 	{
 		get
@@ -39,7 +39,7 @@ public class InviteManager
 		}
 	}
 
-	// Token: 0x06009388 RID: 37768 RVA: 0x0037D4C0 File Offset: 0x0037B6C0
+	// Token: 0x0600948C RID: 38028 RVA: 0x0038279C File Offset: 0x0038099C
 	public void Update()
 	{
 		if (this.listeners == null || this.listeners.Count == 0)
@@ -93,20 +93,20 @@ public class InviteManager
 		this.profileReady = true;
 	}
 
-	// Token: 0x06009389 RID: 37769 RVA: 0x0037D58C File Offset: 0x0037B78C
+	// Token: 0x0600948D RID: 38029 RVA: 0x00382868 File Offset: 0x00380A68
 	public bool HasPendingInvite()
 	{
 		this.CheckForInvites();
 		return !string.IsNullOrEmpty(this.pendingInvite);
 	}
 
-	// Token: 0x0600938A RID: 37770 RVA: 0x0037D5A3 File Offset: 0x0037B7A3
+	// Token: 0x0600948E RID: 38030 RVA: 0x0038287F File Offset: 0x00380A7F
 	public bool IsConnectingToInvite()
 	{
 		return this.connectingToSession;
 	}
 
-	// Token: 0x0600938B RID: 37771 RVA: 0x0037D5AB File Offset: 0x0037B7AB
+	// Token: 0x0600948F RID: 38031 RVA: 0x00382887 File Offset: 0x00380A87
 	public IEnumerable<string> GetCommandLineArguments()
 	{
 		this.CheckForInvites();
@@ -122,7 +122,7 @@ public class InviteManager
 		yield break;
 	}
 
-	// Token: 0x0600938C RID: 37772 RVA: 0x0037D5BC File Offset: 0x0037B7BC
+	// Token: 0x06009490 RID: 38032 RVA: 0x00382898 File Offset: 0x00380A98
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool CheckForInvites()
 	{
@@ -146,7 +146,7 @@ public class InviteManager
 		return false;
 	}
 
-	// Token: 0x0600938D RID: 37773 RVA: 0x0037D654 File Offset: 0x0037B854
+	// Token: 0x06009491 RID: 38033 RVA: 0x00382930 File Offset: 0x00380B30
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator StartJoinIntentCoroutine()
 	{
@@ -192,7 +192,7 @@ public class InviteManager
 		yield break;
 	}
 
-	// Token: 0x0600938E RID: 37774 RVA: 0x0037D663 File Offset: 0x0037B863
+	// Token: 0x06009492 RID: 38034 RVA: 0x0038293F File Offset: 0x00380B3F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void StopJoinCoroutine()
 	{
@@ -207,7 +207,7 @@ public class InviteManager
 		this.connectingToSession = false;
 	}
 
-	// Token: 0x0600938F RID: 37775 RVA: 0x0037D695 File Offset: 0x0037B895
+	// Token: 0x06009493 RID: 38035 RVA: 0x00382971 File Offset: 0x00380B71
 	public static IEnumerator HandleSessionIdInvite(string _sessionId, string _password, Action<bool> _onFinished)
 	{
 		InviteManager.<>c__DisplayClass19_0 CS$<>8__locals1 = new InviteManager.<>c__DisplayClass19_0();
@@ -286,7 +286,7 @@ public class InviteManager
 		yield break;
 	}
 
-	// Token: 0x06009390 RID: 37776 RVA: 0x0037D6B2 File Offset: 0x0037B8B2
+	// Token: 0x06009494 RID: 38036 RVA: 0x0038298E File Offset: 0x00380B8E
 	public static IEnumerator HandleIpPortInvite(string _ip, int _port, string _password, Action<bool> _onFinished)
 	{
 		if (string.IsNullOrEmpty(_ip))
@@ -322,43 +322,43 @@ public class InviteManager
 		yield break;
 	}
 
-	// Token: 0x04006E78 RID: 28280
+	// Token: 0x04006F51 RID: 28497
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static InviteManager _instance;
 
-	// Token: 0x04006E79 RID: 28281
+	// Token: 0x04006F52 RID: 28498
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IList<IJoinSessionGameInviteListener> listeners;
 
-	// Token: 0x04006E7A RID: 28282
+	// Token: 0x04006F53 RID: 28499
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IJoinSessionGameInviteListener pendingListener;
 
-	// Token: 0x04006E7B RID: 28283
+	// Token: 0x04006F54 RID: 28500
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string pendingInvite;
 
-	// Token: 0x04006E7C RID: 28284
+	// Token: 0x04006F55 RID: 28501
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string pendingPassword;
 
-	// Token: 0x04006E7D RID: 28285
+	// Token: 0x04006F56 RID: 28502
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string commandLineInvite;
 
-	// Token: 0x04006E7E RID: 28286
+	// Token: 0x04006F57 RID: 28503
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Coroutine joinInviteCoroutine;
 
-	// Token: 0x04006E7F RID: 28287
+	// Token: 0x04006F58 RID: 28504
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool connectingToSession;
 
-	// Token: 0x04006E80 RID: 28288
+	// Token: 0x04006F59 RID: 28505
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool profileReady;
 
-	// Token: 0x04006E81 RID: 28289
+	// Token: 0x04006F5A RID: 28506
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool creatingProfile;
 }

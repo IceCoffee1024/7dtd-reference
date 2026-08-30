@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001592 RID: 5522
+// Token: 0x020015AD RID: 5549
 [Preserve]
 public class vp_DamageInfo
 {
-	// Token: 0x0600ACB0 RID: 44208 RVA: 0x00406714 File Offset: 0x00404914
+	// Token: 0x0600ADAD RID: 44461 RVA: 0x0040BA54 File Offset: 0x00409C54
 	public vp_DamageInfo(float damage, Transform source)
 	{
 		this.Damage = damage;
@@ -14,7 +14,7 @@ public class vp_DamageInfo
 		this.OriginalSource = source;
 	}
 
-	// Token: 0x0600ACB1 RID: 44209 RVA: 0x00406731 File Offset: 0x00404931
+	// Token: 0x0600ADAE RID: 44462 RVA: 0x0040BA71 File Offset: 0x00409C71
 	public vp_DamageInfo(float damage, Transform source, Transform originalSource)
 	{
 		this.Damage = damage;
@@ -22,12 +22,12 @@ public class vp_DamageInfo
 		this.OriginalSource = originalSource;
 	}
 
-	// Token: 0x0400804F RID: 32847
+	// Token: 0x04008128 RID: 33064
 	public float Damage;
 
-	// Token: 0x04008050 RID: 32848
+	// Token: 0x04008129 RID: 33065
 	public Transform Source;
 
-	// Token: 0x04008051 RID: 32849
+	// Token: 0x0400812A RID: 33066
 	public Transform OriginalSource;
 }

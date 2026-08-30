@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x020010FE RID: 4350
+// Token: 0x02001117 RID: 4375
 public enum OptionsVideoWindowMode
 {
-	// Token: 0x04006612 RID: 26130
+	// Token: 0x040066D9 RID: 26329
 	Simplified,
-	// Token: 0x04006613 RID: 26131
+	// Token: 0x040066DA RID: 26330
 	Detailed
 }

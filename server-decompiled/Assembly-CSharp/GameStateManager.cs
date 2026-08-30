@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020011E4 RID: 4580
+// Token: 0x02001200 RID: 4608
 public class GameStateManager
 {
-	// Token: 0x0600922B RID: 37419 RVA: 0x00373F23 File Offset: 0x00372123
+	// Token: 0x0600932F RID: 37679 RVA: 0x003791EF File Offset: 0x003773EF
 	public GameStateManager(GameManager _gameManager)
 	{
 		this.bGameStarted = false;
 		this.gameManager = _gameManager;
 	}
 
-	// Token: 0x0600922C RID: 37420 RVA: 0x00373F4C File Offset: 0x0037214C
+	// Token: 0x06009330 RID: 37680 RVA: 0x00379218 File Offset: 0x00377418
 	public void InitGame(bool _bServer)
 	{
 		this.bServer = _bServer;
@@ -34,19 +34,19 @@ public class GameStateManager
 		}
 	}
 
-	// Token: 0x0600922D RID: 37421 RVA: 0x00373FF0 File Offset: 0x003721F0
+	// Token: 0x06009331 RID: 37681 RVA: 0x003792BC File Offset: 0x003774BC
 	public void StartGame()
 	{
 		this.bGameStarted = true;
 	}
 
-	// Token: 0x0600922E RID: 37422 RVA: 0x00373FF9 File Offset: 0x003721F9
+	// Token: 0x06009332 RID: 37682 RVA: 0x003792C5 File Offset: 0x003774C5
 	public bool IsGameStarted()
 	{
 		return this.bGameStarted;
 	}
 
-	// Token: 0x0600922F RID: 37423 RVA: 0x00374001 File Offset: 0x00372201
+	// Token: 0x06009333 RID: 37683 RVA: 0x003792CD File Offset: 0x003774CD
 	public void EndGame()
 	{
 		GameStats.Set(EnumGameStats.GameState, 0);
@@ -55,7 +55,7 @@ public class GameStateManager
 		this.bServer = false;
 	}
 
-	// Token: 0x06009230 RID: 37424 RVA: 0x00374020 File Offset: 0x00372220
+	// Token: 0x06009334 RID: 37684 RVA: 0x003792EC File Offset: 0x003774EC
 	public void SetBloodMoonDay(int day)
 	{
 		int @int = GameStats.GetInt(EnumGameStats.BloodMoonDay);
@@ -66,7 +66,7 @@ public class GameStateManager
 		}
 	}
 
-	// Token: 0x06009231 RID: 37425 RVA: 0x00374048 File Offset: 0x00372248
+	// Token: 0x06009335 RID: 37685 RVA: 0x00379314 File Offset: 0x00377514
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int nextRound()
 	{
@@ -82,7 +82,7 @@ public class GameStateManager
 		return num;
 	}
 
-	// Token: 0x06009232 RID: 37426 RVA: 0x00374098 File Offset: 0x00372298
+	// Token: 0x06009336 RID: 37686 RVA: 0x00379364 File Offset: 0x00377564
 	public bool OnUpdateTick()
 	{
 		if (this.bServer)
@@ -158,7 +158,7 @@ public class GameStateManager
 		return true;
 	}
 
-	// Token: 0x06009233 RID: 37427 RVA: 0x003742BC File Offset: 0x003724BC
+	// Token: 0x06009337 RID: 37687 RVA: 0x00379588 File Offset: 0x00377788
 	public string GetModeName()
 	{
 		if (this.currentGameMode == null)
@@ -173,45 +173,45 @@ public class GameStateManager
 		return this.lastGameModeString;
 	}
 
-	// Token: 0x06009234 RID: 37428 RVA: 0x00374319 File Offset: 0x00372519
+	// Token: 0x06009338 RID: 37688 RVA: 0x003795E5 File Offset: 0x003777E5
 	public GameMode GetGameMode()
 	{
 		return this.currentGameMode;
 	}
 
-	// Token: 0x04006D30 RID: 27952
+	// Token: 0x04006E09 RID: 28169
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float timeRoundStarted;
 
-	// Token: 0x04006D31 RID: 27953
+	// Token: 0x04006E0A RID: 28170
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bDirty;
 
-	// Token: 0x04006D32 RID: 27954
+	// Token: 0x04006E0B RID: 28171
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameMode currentGameMode;
 
-	// Token: 0x04006D33 RID: 27955
+	// Token: 0x04006E0C RID: 28172
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameManager gameManager;
 
-	// Token: 0x04006D34 RID: 27956
+	// Token: 0x04006E0D RID: 28173
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bServer;
 
-	// Token: 0x04006D35 RID: 27957
+	// Token: 0x04006E0E RID: 28174
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bGameStarted;
 
-	// Token: 0x04006D36 RID: 27958
+	// Token: 0x04006E0F RID: 28175
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int fragLimitCounter;
 
-	// Token: 0x04006D37 RID: 27959
+	// Token: 0x04006E10 RID: 28176
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lastGameModeID = -1;
 
-	// Token: 0x04006D38 RID: 27960
+	// Token: 0x04006E11 RID: 28177
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lastGameModeString = string.Empty;
 }

@@ -6,16 +6,16 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using UnityEngine;
 
-// Token: 0x0200071A RID: 1818
+// Token: 0x02000724 RID: 1828
 public class MinScript
 {
-	// Token: 0x060036E8 RID: 14056 RVA: 0x0016AD0B File Offset: 0x00168F0B
+	// Token: 0x0600373E RID: 14142 RVA: 0x0016CF27 File Offset: 0x0016B127
 	public static string ConvertFromUIText(string _text)
 	{
 		return _text.Replace("\n", "^");
 	}
 
-	// Token: 0x060036E9 RID: 14057 RVA: 0x0016AD1D File Offset: 0x00168F1D
+	// Token: 0x0600373F RID: 14143 RVA: 0x0016CF39 File Offset: 0x0016B139
 	public static string ConvertToUIText(string _text)
 	{
 		if (_text == null)
@@ -25,7 +25,7 @@ public class MinScript
 		return _text.Replace("^", "\n");
 	}
 
-	// Token: 0x060036EA RID: 14058 RVA: 0x0016AD38 File Offset: 0x00168F38
+	// Token: 0x06003740 RID: 14144 RVA: 0x0016CF54 File Offset: 0x0016B154
 	public void SetText(string _text)
 	{
 		int num = 0;
@@ -68,20 +68,20 @@ public class MinScript
 		}
 	}
 
-	// Token: 0x060036EB RID: 14059 RVA: 0x0016AE0F File Offset: 0x0016900F
+	// Token: 0x06003741 RID: 14145 RVA: 0x0016D02B File Offset: 0x0016B22B
 	public void Reset()
 	{
 		this.curIndex = -1;
 	}
 
-	// Token: 0x060036EC RID: 14060 RVA: 0x0016AE18 File Offset: 0x00169018
+	// Token: 0x06003742 RID: 14146 RVA: 0x0016D034 File Offset: 0x0016B234
 	public void Restart()
 	{
 		this.curIndex = 0;
 		this.sleep = 0f;
 	}
 
-	// Token: 0x060036ED RID: 14061 RVA: 0x0016AE2C File Offset: 0x0016902C
+	// Token: 0x06003743 RID: 14147 RVA: 0x0016D048 File Offset: 0x0016B248
 	public void Run(SleeperVolume _sv, EntityPlayer _player, float _countScale)
 	{
 		if (this.commandList == null)
@@ -94,14 +94,14 @@ public class MinScript
 		this.sleep = 0f;
 	}
 
-	// Token: 0x060036EE RID: 14062 RVA: 0x0016AE57 File Offset: 0x00169057
+	// Token: 0x06003744 RID: 14148 RVA: 0x0016D073 File Offset: 0x0016B273
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public bool IsRunning()
 	{
 		return this.curIndex >= 0;
 	}
 
-	// Token: 0x060036EF RID: 14063 RVA: 0x0016AE68 File Offset: 0x00169068
+	// Token: 0x06003745 RID: 14149 RVA: 0x0016D084 File Offset: 0x0016B284
 	public void Tick(SleeperVolume _sv)
 	{
 		if (this.curIndex < 0)
@@ -236,7 +236,7 @@ public class MinScript
 		this.curIndex = -1;
 	}
 
-	// Token: 0x060036F0 RID: 14064 RVA: 0x0016B134 File Offset: 0x00169334
+	// Token: 0x06003746 RID: 14150 RVA: 0x0016D350 File Offset: 0x0016B550
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int FindLabel(string _name)
 	{
@@ -252,7 +252,7 @@ public class MinScript
 		return -1;
 	}
 
-	// Token: 0x060036F1 RID: 14065 RVA: 0x0016B180 File Offset: 0x00169380
+	// Token: 0x06003747 RID: 14151 RVA: 0x0016D39C File Offset: 0x0016B59C
 	public static MinScript Read(BinaryReader _br)
 	{
 		_br.ReadByte();
@@ -280,13 +280,13 @@ public class MinScript
 		return minScript;
 	}
 
-	// Token: 0x060036F2 RID: 14066 RVA: 0x0016B23A File Offset: 0x0016943A
+	// Token: 0x06003748 RID: 14152 RVA: 0x0016D456 File Offset: 0x0016B656
 	public bool HasData()
 	{
 		return this.commandList.Count > 0;
 	}
 
-	// Token: 0x060036F3 RID: 14067 RVA: 0x0016B24C File Offset: 0x0016944C
+	// Token: 0x06003749 RID: 14153 RVA: 0x0016D468 File Offset: 0x0016B668
 	public void Write(BinaryWriter _bw)
 	{
 		_bw.Write(1);
@@ -323,13 +323,13 @@ public class MinScript
 		}
 	}
 
-	// Token: 0x060036F4 RID: 14068 RVA: 0x0016B364 File Offset: 0x00169564
+	// Token: 0x0600374A RID: 14154 RVA: 0x0016D580 File Offset: 0x0016B780
 	public override string ToString()
 	{
 		return string.Format("cmds {0}, index {1}, sleep {2}", this.commandList.Count, this.curIndex, this.sleep);
 	}
 
-	// Token: 0x060036F5 RID: 14069 RVA: 0x0016B396 File Offset: 0x00169596
+	// Token: 0x0600374B RID: 14155 RVA: 0x0016D5B2 File Offset: 0x0016B7B2
 	[Conditional("DEBUG_MINSCRIPTLOG")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void LogMS(string format, params object[] args)
@@ -338,75 +338,75 @@ public class MinScript
 		Log.Out(format, args);
 	}
 
-	// Token: 0x04002CB5 RID: 11445
+	// Token: 0x04002D2D RID: 11565
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const byte cVersion = 1;
 
-	// Token: 0x04002CB6 RID: 11446
+	// Token: 0x04002D2E RID: 11566
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const char cLineSepChar = '^';
 
-	// Token: 0x04002CB7 RID: 11447
+	// Token: 0x04002D2F RID: 11567
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cLineSepStr = "^";
 
-	// Token: 0x04002CB8 RID: 11448
+	// Token: 0x04002D30 RID: 11568
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<MinScript.CmdLine> commandList = new List<MinScript.CmdLine>();
 
-	// Token: 0x04002CB9 RID: 11449
+	// Token: 0x04002D31 RID: 11569
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int curIndex;
 
-	// Token: 0x04002CBA RID: 11450
+	// Token: 0x04002D32 RID: 11570
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float sleep;
 
-	// Token: 0x04002CBB RID: 11451
+	// Token: 0x04002D33 RID: 11571
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int loopCount;
 
-	// Token: 0x04002CBC RID: 11452
+	// Token: 0x04002D34 RID: 11572
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int loopToIndex;
 
-	// Token: 0x04002CBD RID: 11453
+	// Token: 0x04002D35 RID: 11573
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cCmdNop = 0;
 
-	// Token: 0x04002CBE RID: 11454
+	// Token: 0x04002D36 RID: 11574
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cCmdLog = 1;
 
-	// Token: 0x04002CBF RID: 11455
+	// Token: 0x04002D37 RID: 11575
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cCmdLabel = 2;
 
-	// Token: 0x04002CC0 RID: 11456
+	// Token: 0x04002D38 RID: 11576
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cCmdLoop = 3;
 
-	// Token: 0x04002CC1 RID: 11457
+	// Token: 0x04002D39 RID: 11577
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cCmdSleep = 4;
 
-	// Token: 0x04002CC2 RID: 11458
+	// Token: 0x04002D3A RID: 11578
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cCmdSound = 40;
 
-	// Token: 0x04002CC3 RID: 11459
+	// Token: 0x04002D3B RID: 11579
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cCmdSpawn = 50;
 
-	// Token: 0x04002CC4 RID: 11460
+	// Token: 0x04002D3C RID: 11580
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cCmdWaitAlive = 51;
 
-	// Token: 0x04002CC5 RID: 11461
+	// Token: 0x04002D3D RID: 11581
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cCmdTrigger = 52;
 
-	// Token: 0x04002CC6 RID: 11462
+	// Token: 0x04002D3E RID: 11582
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<string, ushort> nameToCmds = new Dictionary<string, ushort>
 	{
@@ -420,30 +420,30 @@ public class MinScript
 		{ "waitalive", 51 }
 	};
 
-	// Token: 0x04002CC7 RID: 11463
+	// Token: 0x04002D3F RID: 11583
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static byte[] tempBytes = new byte[256];
 
-	// Token: 0x04002CC8 RID: 11464
+	// Token: 0x04002D40 RID: 11584
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static char[] tempChars = new char[256];
 
-	// Token: 0x04002CC9 RID: 11465
+	// Token: 0x04002D41 RID: 11585
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayer player;
 
-	// Token: 0x04002CCA RID: 11466
+	// Token: 0x04002D42 RID: 11586
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float countScale = 1f;
 
-	// Token: 0x0200071B RID: 1819
+	// Token: 0x02000725 RID: 1829
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct CmdLine
 	{
-		// Token: 0x04002CCB RID: 11467
+		// Token: 0x04002D43 RID: 11587
 		public ushort command;
 
-		// Token: 0x04002CCC RID: 11468
+		// Token: 0x04002D44 RID: 11588
 		public string parameters;
 	}
 }

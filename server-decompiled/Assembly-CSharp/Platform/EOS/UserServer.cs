@@ -4,11 +4,11 @@ using Epic.OnlineServices.Connect;
 
 namespace Platform.EOS
 {
-	// Token: 0x02001D04 RID: 7428
+	// Token: 0x02001D2C RID: 7468
 	public class UserServer : UserBase
 	{
-		// Token: 0x17001B29 RID: 6953
-		// (get) Token: 0x0600DBA2 RID: 56226 RVA: 0x001AFF0C File Offset: 0x001AE10C
+		// Token: 0x17001B9B RID: 7067
+		// (get) Token: 0x0600DD43 RID: 56643 RVA: 0x001B24E4 File Offset: 0x001B06E4
 		public override EUserPerms Permissions
 		{
 			get
@@ -17,7 +17,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DBA3 RID: 56227 RVA: 0x004EB654 File Offset: 0x004E9854
+		// Token: 0x0600DD44 RID: 56644 RVA: 0x004F20C8 File Offset: 0x004F02C8
 		public override void Login(LoginUserCallback _delegate)
 		{
 			if (base.UserStatus == EUserStatus.LoggedIn)
@@ -39,14 +39,14 @@ namespace Platform.EOS
 			});
 		}
 
-		// Token: 0x0600DBA4 RID: 56228 RVA: 0x004EB6AF File Offset: 0x004E98AF
+		// Token: 0x0600DD45 RID: 56645 RVA: 0x004F2123 File Offset: 0x004F0323
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void startLogin(LoginUserCallback _delegate, bool _refreshing = false)
 		{
 			this.fetchDeviceId(_delegate, _refreshing);
 		}
 
-		// Token: 0x0600DBA5 RID: 56229 RVA: 0x004EB6BC File Offset: 0x004E98BC
+		// Token: 0x0600DD46 RID: 56646 RVA: 0x004F2130 File Offset: 0x004F0330
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void fetchDeviceId(LoginUserCallback _delegate, bool _refreshing)
 		{
@@ -73,14 +73,14 @@ namespace Platform.EOS
 			});
 		}
 
-		// Token: 0x0600DBA6 RID: 56230 RVA: 0x000876FD File Offset: 0x000858FD
+		// Token: 0x0600DD47 RID: 56647 RVA: 0x00087DB8 File Offset: 0x00085FB8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void connectCreateUser(ContinuanceToken _continuanceToken, LoginUserCallback _callback)
 		{
 			throw new NotImplementedException();
 		}
 
-		// Token: 0x0600DBA7 RID: 56231 RVA: 0x004EB741 File Offset: 0x004E9941
+		// Token: 0x0600DD48 RID: 56648 RVA: 0x004F21B5 File Offset: 0x004F03B5
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void eosLoggedIn(ProductUserId _puid, LoginUserCallback _callback)
 		{

@@ -4,10 +4,10 @@ using System.Net;
 using System.Net.Sockets;
 using UnityEngine;
 
-// Token: 0x020002CC RID: 716
+// Token: 0x020002D0 RID: 720
 public class TelnetConsole : IConsoleServer
 {
-	// Token: 0x060014B7 RID: 5303 RVA: 0x0007D3A4 File Offset: 0x0007B5A4
+	// Token: 0x060014C9 RID: 5321 RVA: 0x0007D9FC File Offset: 0x0007BBFC
 	public TelnetConsole()
 	{
 		try
@@ -29,7 +29,7 @@ public class TelnetConsole : IConsoleServer
 		}
 	}
 
-	// Token: 0x060014B8 RID: 5304 RVA: 0x0007D494 File Offset: 0x0007B694
+	// Token: 0x060014CA RID: 5322 RVA: 0x0007DAEC File Offset: 0x0007BCEC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AcceptClient(IAsyncResult _asyncResult)
 	{
@@ -81,7 +81,7 @@ public class TelnetConsole : IConsoleServer
 		this.listener.BeginAcceptTcpClient(new AsyncCallback(this.AcceptClient), null);
 	}
 
-	// Token: 0x060014B9 RID: 5305 RVA: 0x0007D608 File Offset: 0x0007B808
+	// Token: 0x060014CB RID: 5323 RVA: 0x0007DC60 File Offset: 0x0007BE60
 	public bool RegisterFailedLogin(TelnetConnection _con)
 	{
 		Dictionary<int, TelnetConsole.LoginAttempts> dictionary = this.loginAttemptsPerIP;
@@ -93,7 +93,7 @@ public class TelnetConsole : IConsoleServer
 		return flag2;
 	}
 
-	// Token: 0x060014BA RID: 5306 RVA: 0x0007D65C File Offset: 0x0007B85C
+	// Token: 0x060014CC RID: 5324 RVA: 0x0007DCB4 File Offset: 0x0007BEB4
 	public void ConnectionClosed(TelnetConnection _con)
 	{
 		List<TelnetConnection> list = this.connections;
@@ -103,7 +103,7 @@ public class TelnetConsole : IConsoleServer
 		}
 	}
 
-	// Token: 0x060014BB RID: 5307 RVA: 0x0007D6A4 File Offset: 0x0007B8A4
+	// Token: 0x060014CD RID: 5325 RVA: 0x0007DCFC File Offset: 0x0007BEFC
 	public void Disconnect()
 	{
 		try
@@ -132,7 +132,7 @@ public class TelnetConsole : IConsoleServer
 		}
 	}
 
-	// Token: 0x060014BC RID: 5308 RVA: 0x0007D770 File Offset: 0x0007B970
+	// Token: 0x060014CE RID: 5326 RVA: 0x0007DDC8 File Offset: 0x0007BFC8
 	public void SendLine(string _line)
 	{
 		if (_line == null)
@@ -149,7 +149,7 @@ public class TelnetConsole : IConsoleServer
 		}
 	}
 
-	// Token: 0x060014BD RID: 5309 RVA: 0x0007D7EC File Offset: 0x0007B9EC
+	// Token: 0x060014CF RID: 5327 RVA: 0x0007DE44 File Offset: 0x0007C044
 	public void SendLog(string _formattedMessage, string _plainMessage, string _trace, LogType _type, DateTime _timestamp, long _uptime)
 	{
 		List<TelnetConnection> list = this.connections;
@@ -162,35 +162,35 @@ public class TelnetConsole : IConsoleServer
 		}
 	}
 
-	// Token: 0x04000DBC RID: 3516
+	// Token: 0x04000DCD RID: 3533
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int maxLoginAttempts;
 
-	// Token: 0x04000DBD RID: 3517
+	// Token: 0x04000DCE RID: 3534
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int blockTimeSeconds;
 
-	// Token: 0x04000DBE RID: 3518
+	// Token: 0x04000DCF RID: 3535
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TcpListener listener;
 
-	// Token: 0x04000DBF RID: 3519
+	// Token: 0x04000DD0 RID: 3536
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly bool authEnabled;
 
-	// Token: 0x04000DC0 RID: 3520
+	// Token: 0x04000DD1 RID: 3537
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<TelnetConnection> connections = new List<TelnetConnection>();
 
-	// Token: 0x04000DC1 RID: 3521
+	// Token: 0x04000DD2 RID: 3538
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<int, TelnetConsole.LoginAttempts> loginAttemptsPerIP = new Dictionary<int, TelnetConsole.LoginAttempts>();
 
-	// Token: 0x020002CD RID: 717
+	// Token: 0x020002D1 RID: 721
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class LoginAttempts
 	{
-		// Token: 0x060014BE RID: 5310 RVA: 0x0007D86C File Offset: 0x0007BA6C
+		// Token: 0x060014D0 RID: 5328 RVA: 0x0007DEC4 File Offset: 0x0007C0C4
 		public bool LogAttempt()
 		{
 			this.lastAttempt = DateTime.Now;
@@ -198,7 +198,7 @@ public class TelnetConsole : IConsoleServer
 			return this.count < TelnetConsole.maxLoginAttempts;
 		}
 
-		// Token: 0x060014BF RID: 5311 RVA: 0x0007D894 File Offset: 0x0007BA94
+		// Token: 0x060014D1 RID: 5329 RVA: 0x0007DEEC File Offset: 0x0007C0EC
 		public bool IsBanned()
 		{
 			if ((DateTime.Now - this.lastAttempt).TotalSeconds > (double)TelnetConsole.blockTimeSeconds)
@@ -208,11 +208,11 @@ public class TelnetConsole : IConsoleServer
 			return this.count >= TelnetConsole.maxLoginAttempts;
 		}
 
-		// Token: 0x04000DC2 RID: 3522
+		// Token: 0x04000DD3 RID: 3539
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int count;
 
-		// Token: 0x04000DC3 RID: 3523
+		// Token: 0x04000DD4 RID: 3540
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DateTime lastAttempt = new DateTime(0L);
 	}

@@ -2,10 +2,10 @@
 
 namespace Platform
 {
-	// Token: 0x02001B90 RID: 7056
+	// Token: 0x02001BB7 RID: 7095
 	public struct PlatformUserDetails
 	{
-		// Token: 0x04009FE7 RID: 40935
+		// Token: 0x0400A118 RID: 41240
 		public string name;
 	}
 }

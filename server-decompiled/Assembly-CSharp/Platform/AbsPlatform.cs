@@ -4,10 +4,10 @@ using InControl;
 
 namespace Platform
 {
-	// Token: 0x02001B29 RID: 6953
+	// Token: 0x02001B50 RID: 6992
 	public abstract class AbsPlatform : IPlatform
 	{
-		// Token: 0x0600CFC3 RID: 53187 RVA: 0x004BF9B8 File Offset: 0x004BDBB8
+		// Token: 0x0600D14C RID: 53580 RVA: 0x004C5DAC File Offset: 0x004C3FAC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public AbsPlatform()
 		{
@@ -21,18 +21,18 @@ namespace Platform
 			this.PlatformIdentifier = platformFactoryAttribute.TargetPlatform;
 		}
 
-		// Token: 0x1700193E RID: 6462
-		// (get) Token: 0x0600CFC4 RID: 53188 RVA: 0x004BFA08 File Offset: 0x004BDC08
-		// (set) Token: 0x0600CFC5 RID: 53189 RVA: 0x004BFA10 File Offset: 0x004BDC10
+		// Token: 0x170019B0 RID: 6576
+		// (get) Token: 0x0600D14D RID: 53581 RVA: 0x004C5DFC File Offset: 0x004C3FFC
+		// (set) Token: 0x0600D14E RID: 53582 RVA: 0x004C5E04 File Offset: 0x004C4004
 		public bool AsServerOnly { get; set; }
 
-		// Token: 0x1700193F RID: 6463
-		// (get) Token: 0x0600CFC6 RID: 53190 RVA: 0x004BFA19 File Offset: 0x004BDC19
-		// (set) Token: 0x0600CFC7 RID: 53191 RVA: 0x004BFA21 File Offset: 0x004BDC21
+		// Token: 0x170019B1 RID: 6577
+		// (get) Token: 0x0600D14F RID: 53583 RVA: 0x004C5E0D File Offset: 0x004C400D
+		// (set) Token: 0x0600D150 RID: 53584 RVA: 0x004C5E15 File Offset: 0x004C4015
 		public bool IsCrossplatform { get; set; }
 
-		// Token: 0x17001940 RID: 6464
-		// (get) Token: 0x0600CFC8 RID: 53192 RVA: 0x004BFA2A File Offset: 0x004BDC2A
+		// Token: 0x170019B2 RID: 6578
+		// (get) Token: 0x0600D151 RID: 53585 RVA: 0x004C5E1E File Offset: 0x004C401E
 		public string PlatformDisplayName
 		{
 			get
@@ -41,7 +41,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600CFC9 RID: 53193 RVA: 0x004BFA38 File Offset: 0x004BDC38
+		// Token: 0x0600D152 RID: 53586 RVA: 0x004C5E2C File Offset: 0x004C402C
 		public virtual void Init()
 		{
 			Log.Out("[Platform] Initializing " + this.PlatformIdentifier.ToString());
@@ -225,7 +225,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600CFCA RID: 53194 RVA: 0x004BFD6C File Offset: 0x004BDF6C
+		// Token: 0x0600D153 RID: 53587 RVA: 0x004C6160 File Offset: 0x004C4360
 		public virtual bool HasNetworkingEnabled(IList<string> _disabledProtocolNames)
 		{
 			string networkProtocolName = this.NetworkProtocolName;
@@ -242,21 +242,21 @@ namespace Platform
 			return flag;
 		}
 
-		// Token: 0x0600CFCB RID: 53195 RVA: 0x0001FF1E File Offset: 0x0001E11E
+		// Token: 0x0600D154 RID: 53588 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual IPlatformNetworkServer instantiateNetworkServer(ProtocolManager _protocolManager)
 		{
 			return null;
 		}
 
-		// Token: 0x0600CFCC RID: 53196 RVA: 0x0001FF1E File Offset: 0x0001E11E
+		// Token: 0x0600D155 RID: 53589 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual IPlatformNetworkClient instantiateNetworkClient(ProtocolManager _protocolManager)
 		{
 			return null;
 		}
 
-		// Token: 0x0600CFCD RID: 53197 RVA: 0x004BFDC4 File Offset: 0x004BDFC4
+		// Token: 0x0600D156 RID: 53590 RVA: 0x004C61B8 File Offset: 0x004C43B8
 		public INetworkServer GetNetworkingServer(ProtocolManager _protocolManager)
 		{
 			IPlatformNetworkServer platformNetworkServer;
@@ -267,7 +267,7 @@ namespace Platform
 			return platformNetworkServer;
 		}
 
-		// Token: 0x0600CFCE RID: 53198 RVA: 0x004BFDEC File Offset: 0x004BDFEC
+		// Token: 0x0600D157 RID: 53591 RVA: 0x004C61E0 File Offset: 0x004C43E0
 		public INetworkClient GetNetworkingClient(ProtocolManager _protocolManager)
 		{
 			IPlatformNetworkClient platformNetworkClient;
@@ -278,21 +278,21 @@ namespace Platform
 			return platformNetworkClient;
 		}
 
-		// Token: 0x0600CFCF RID: 53199 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600D158 RID: 53592 RVA: 0x000027FC File Offset: 0x000009FC
 		public virtual void UserAdded(PlatformUserIdentifierAbs _id, bool _isPrimary)
 		{
 		}
 
-		// Token: 0x0600CFD0 RID: 53200 RVA: 0x004BFE13 File Offset: 0x004BE013
+		// Token: 0x0600D159 RID: 53593 RVA: 0x004C6207 File Offset: 0x004C4407
 		public virtual string[] GetArgumentsForRelaunch()
 		{
 			return new string[0];
 		}
 
-		// Token: 0x0600CFD1 RID: 53201
+		// Token: 0x0600D15A RID: 53594
 		public abstract void CreateInstances();
 
-		// Token: 0x0600CFD2 RID: 53202 RVA: 0x004BFE1C File Offset: 0x004BE01C
+		// Token: 0x0600D15B RID: 53595 RVA: 0x004C6210 File Offset: 0x004C4410
 		public virtual void Update()
 		{
 			IPlatformApi api = this.Api;
@@ -328,12 +328,12 @@ namespace Platform
 			applicationState.Update();
 		}
 
-		// Token: 0x0600CFD3 RID: 53203 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600D15C RID: 53596 RVA: 0x000027FC File Offset: 0x000009FC
 		public void LateUpdate()
 		{
 		}
 
-		// Token: 0x0600CFD4 RID: 53204 RVA: 0x004BFE90 File Offset: 0x004BE090
+		// Token: 0x0600D15D RID: 53597 RVA: 0x004C6284 File Offset: 0x004C4484
 		public virtual void Destroy()
 		{
 			this.RichPresence = null;
@@ -429,311 +429,311 @@ namespace Platform
 			this.Api = null;
 		}
 
-		// Token: 0x17001941 RID: 6465
-		// (get) Token: 0x0600CFD5 RID: 53205 RVA: 0x004C0030 File Offset: 0x004BE230
+		// Token: 0x170019B3 RID: 6579
+		// (get) Token: 0x0600D15E RID: 53598 RVA: 0x004C6424 File Offset: 0x004C4624
 		public EPlatformIdentifier PlatformIdentifier { get; }
 
-		// Token: 0x17001942 RID: 6466
-		// (get) Token: 0x0600CFD6 RID: 53206 RVA: 0x004C0038 File Offset: 0x004BE238
-		// (set) Token: 0x0600CFD7 RID: 53207 RVA: 0x004C0040 File Offset: 0x004BE240
+		// Token: 0x170019B4 RID: 6580
+		// (get) Token: 0x0600D15F RID: 53599 RVA: 0x004C642C File Offset: 0x004C462C
+		// (set) Token: 0x0600D160 RID: 53600 RVA: 0x004C6434 File Offset: 0x004C4634
 		public IPlatformApi Api
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x17001943 RID: 6467
-		// (get) Token: 0x0600CFD8 RID: 53208 RVA: 0x004C0049 File Offset: 0x004BE249
-		// (set) Token: 0x0600CFD9 RID: 53209 RVA: 0x004C0051 File Offset: 0x004BE251
+		// Token: 0x170019B5 RID: 6581
+		// (get) Token: 0x0600D161 RID: 53601 RVA: 0x004C643D File Offset: 0x004C463D
+		// (set) Token: 0x0600D162 RID: 53602 RVA: 0x004C6445 File Offset: 0x004C4645
 		public IUserClient User
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x17001944 RID: 6468
-		// (get) Token: 0x0600CFDA RID: 53210 RVA: 0x004C005A File Offset: 0x004BE25A
-		// (set) Token: 0x0600CFDB RID: 53211 RVA: 0x004C0062 File Offset: 0x004BE262
+		// Token: 0x170019B6 RID: 6582
+		// (get) Token: 0x0600D163 RID: 53603 RVA: 0x004C644E File Offset: 0x004C464E
+		// (set) Token: 0x0600D164 RID: 53604 RVA: 0x004C6456 File Offset: 0x004C4656
 		public IUserClient UserServer
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x17001945 RID: 6469
-		// (get) Token: 0x0600CFDC RID: 53212 RVA: 0x004C006B File Offset: 0x004BE26B
-		// (set) Token: 0x0600CFDD RID: 53213 RVA: 0x004C0073 File Offset: 0x004BE273
+		// Token: 0x170019B7 RID: 6583
+		// (get) Token: 0x0600D165 RID: 53605 RVA: 0x004C645F File Offset: 0x004C465F
+		// (set) Token: 0x0600D166 RID: 53606 RVA: 0x004C6467 File Offset: 0x004C4667
 		public IAuthenticationClient AuthenticationClient
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x17001946 RID: 6470
-		// (get) Token: 0x0600CFDE RID: 53214 RVA: 0x004C007C File Offset: 0x004BE27C
-		// (set) Token: 0x0600CFDF RID: 53215 RVA: 0x004C0084 File Offset: 0x004BE284
+		// Token: 0x170019B8 RID: 6584
+		// (get) Token: 0x0600D167 RID: 53607 RVA: 0x004C6470 File Offset: 0x004C4670
+		// (set) Token: 0x0600D168 RID: 53608 RVA: 0x004C6478 File Offset: 0x004C4678
 		public IAuthenticationServer AuthenticationServer
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x17001947 RID: 6471
-		// (get) Token: 0x0600CFE0 RID: 53216 RVA: 0x004C008D File Offset: 0x004BE28D
-		// (set) Token: 0x0600CFE1 RID: 53217 RVA: 0x004C0095 File Offset: 0x004BE295
+		// Token: 0x170019B9 RID: 6585
+		// (get) Token: 0x0600D169 RID: 53609 RVA: 0x004C6481 File Offset: 0x004C4681
+		// (set) Token: 0x0600D16A RID: 53610 RVA: 0x004C6489 File Offset: 0x004C4689
 		public IList<IServerListInterface> ServerListInterfaces
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x17001948 RID: 6472
-		// (get) Token: 0x0600CFE2 RID: 53218 RVA: 0x004C009E File Offset: 0x004BE29E
-		// (set) Token: 0x0600CFE3 RID: 53219 RVA: 0x004C00A6 File Offset: 0x004BE2A6
+		// Token: 0x170019BA RID: 6586
+		// (get) Token: 0x0600D16B RID: 53611 RVA: 0x004C6492 File Offset: 0x004C4692
+		// (set) Token: 0x0600D16C RID: 53612 RVA: 0x004C649A File Offset: 0x004C469A
 		public IServerListInterface ServerLookupInterface
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x17001949 RID: 6473
-		// (get) Token: 0x0600CFE4 RID: 53220 RVA: 0x004C00AF File Offset: 0x004BE2AF
-		// (set) Token: 0x0600CFE5 RID: 53221 RVA: 0x004C00B7 File Offset: 0x004BE2B7
+		// Token: 0x170019BB RID: 6587
+		// (get) Token: 0x0600D16D RID: 53613 RVA: 0x004C64A3 File Offset: 0x004C46A3
+		// (set) Token: 0x0600D16E RID: 53614 RVA: 0x004C64AB File Offset: 0x004C46AB
 		public IMasterServerAnnouncer ServerListAnnouncer
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x1700194A RID: 6474
-		// (get) Token: 0x0600CFE6 RID: 53222 RVA: 0x004C00C0 File Offset: 0x004BE2C0
-		// (set) Token: 0x0600CFE7 RID: 53223 RVA: 0x004C00C8 File Offset: 0x004BE2C8
+		// Token: 0x170019BC RID: 6588
+		// (get) Token: 0x0600D16F RID: 53615 RVA: 0x004C64B4 File Offset: 0x004C46B4
+		// (set) Token: 0x0600D170 RID: 53616 RVA: 0x004C64BC File Offset: 0x004C46BC
 		public ILobbyHost LobbyHost
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x1700194B RID: 6475
-		// (get) Token: 0x0600CFE8 RID: 53224 RVA: 0x004C00D1 File Offset: 0x004BE2D1
-		// (set) Token: 0x0600CFE9 RID: 53225 RVA: 0x004C00D9 File Offset: 0x004BE2D9
+		// Token: 0x170019BD RID: 6589
+		// (get) Token: 0x0600D171 RID: 53617 RVA: 0x004C64C5 File Offset: 0x004C46C5
+		// (set) Token: 0x0600D172 RID: 53618 RVA: 0x004C64CD File Offset: 0x004C46CD
 		public IPlayerInteractionsRecorder PlayerInteractionsRecorder
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x1700194C RID: 6476
-		// (get) Token: 0x0600CFEA RID: 53226 RVA: 0x004C00E2 File Offset: 0x004BE2E2
-		// (set) Token: 0x0600CFEB RID: 53227 RVA: 0x004C00EA File Offset: 0x004BE2EA
+		// Token: 0x170019BE RID: 6590
+		// (get) Token: 0x0600D173 RID: 53619 RVA: 0x004C64D6 File Offset: 0x004C46D6
+		// (set) Token: 0x0600D174 RID: 53620 RVA: 0x004C64DE File Offset: 0x004C46DE
 		public IGameplayNotifier GameplayNotifier
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x1700194D RID: 6477
-		// (get) Token: 0x0600CFEC RID: 53228 RVA: 0x004C00F3 File Offset: 0x004BE2F3
-		// (set) Token: 0x0600CFED RID: 53229 RVA: 0x004C00FB File Offset: 0x004BE2FB
+		// Token: 0x170019BF RID: 6591
+		// (get) Token: 0x0600D175 RID: 53621 RVA: 0x004C64E7 File Offset: 0x004C46E7
+		// (set) Token: 0x0600D176 RID: 53622 RVA: 0x004C64EF File Offset: 0x004C46EF
 		public IList<IJoinSessionGameInviteListener> InviteListeners
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x1700194E RID: 6478
-		// (get) Token: 0x0600CFEE RID: 53230 RVA: 0x004C0104 File Offset: 0x004BE304
-		// (set) Token: 0x0600CFEF RID: 53231 RVA: 0x004C010C File Offset: 0x004BE30C
+		// Token: 0x170019C0 RID: 6592
+		// (get) Token: 0x0600D177 RID: 53623 RVA: 0x004C64F8 File Offset: 0x004C46F8
+		// (set) Token: 0x0600D178 RID: 53624 RVA: 0x004C6500 File Offset: 0x004C4700
 		public IMultiplayerInvitationDialog MultiplayerInvitationDialog
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x1700194F RID: 6479
-		// (get) Token: 0x0600CFF0 RID: 53232 RVA: 0x004C0115 File Offset: 0x004BE315
-		// (set) Token: 0x0600CFF1 RID: 53233 RVA: 0x004C011D File Offset: 0x004BE31D
+		// Token: 0x170019C1 RID: 6593
+		// (get) Token: 0x0600D179 RID: 53625 RVA: 0x004C6509 File Offset: 0x004C4709
+		// (set) Token: 0x0600D17A RID: 53626 RVA: 0x004C6511 File Offset: 0x004C4711
 		public IPartyVoice PartyVoice
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x17001950 RID: 6480
-		// (get) Token: 0x0600CFF2 RID: 53234 RVA: 0x004C0126 File Offset: 0x004BE326
-		// (set) Token: 0x0600CFF3 RID: 53235 RVA: 0x004C012E File Offset: 0x004BE32E
+		// Token: 0x170019C2 RID: 6594
+		// (get) Token: 0x0600D17B RID: 53627 RVA: 0x004C651A File Offset: 0x004C471A
+		// (set) Token: 0x0600D17C RID: 53628 RVA: 0x004C6522 File Offset: 0x004C4722
 		public IUtils Utils
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x17001951 RID: 6481
-		// (get) Token: 0x0600CFF4 RID: 53236 RVA: 0x004C0137 File Offset: 0x004BE337
-		// (set) Token: 0x0600CFF5 RID: 53237 RVA: 0x004C013F File Offset: 0x004BE33F
+		// Token: 0x170019C3 RID: 6595
+		// (get) Token: 0x0600D17D RID: 53629 RVA: 0x004C652B File Offset: 0x004C472B
+		// (set) Token: 0x0600D17E RID: 53630 RVA: 0x004C6533 File Offset: 0x004C4733
 		public IPlatformMemory Memory
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x17001952 RID: 6482
-		// (get) Token: 0x0600CFF6 RID: 53238 RVA: 0x004C0148 File Offset: 0x004BE348
-		// (set) Token: 0x0600CFF7 RID: 53239 RVA: 0x004C0150 File Offset: 0x004BE350
+		// Token: 0x170019C4 RID: 6596
+		// (get) Token: 0x0600D17F RID: 53631 RVA: 0x004C653C File Offset: 0x004C473C
+		// (set) Token: 0x0600D180 RID: 53632 RVA: 0x004C6544 File Offset: 0x004C4744
 		public IAntiCheatClient AntiCheatClient
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x17001953 RID: 6483
-		// (get) Token: 0x0600CFF8 RID: 53240 RVA: 0x004C0159 File Offset: 0x004BE359
-		// (set) Token: 0x0600CFF9 RID: 53241 RVA: 0x004C0161 File Offset: 0x004BE361
+		// Token: 0x170019C5 RID: 6597
+		// (get) Token: 0x0600D181 RID: 53633 RVA: 0x004C654D File Offset: 0x004C474D
+		// (set) Token: 0x0600D182 RID: 53634 RVA: 0x004C6555 File Offset: 0x004C4755
 		public IAntiCheatServer AntiCheatServer
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x17001954 RID: 6484
-		// (get) Token: 0x0600CFFA RID: 53242 RVA: 0x004C016A File Offset: 0x004BE36A
-		// (set) Token: 0x0600CFFB RID: 53243 RVA: 0x004C0172 File Offset: 0x004BE372
+		// Token: 0x170019C6 RID: 6598
+		// (get) Token: 0x0600D183 RID: 53635 RVA: 0x004C655E File Offset: 0x004C475E
+		// (set) Token: 0x0600D184 RID: 53636 RVA: 0x004C6566 File Offset: 0x004C4766
 		public IUserIdentifierMappingService IdMappingService
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x17001955 RID: 6485
-		// (get) Token: 0x0600CFFC RID: 53244 RVA: 0x004C017B File Offset: 0x004BE37B
-		// (set) Token: 0x0600CFFD RID: 53245 RVA: 0x004C0183 File Offset: 0x004BE383
+		// Token: 0x170019C7 RID: 6599
+		// (get) Token: 0x0600D185 RID: 53637 RVA: 0x004C656F File Offset: 0x004C476F
+		// (set) Token: 0x0600D186 RID: 53638 RVA: 0x004C6577 File Offset: 0x004C4777
 		public IUserDetailsService UserDetailsService
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x17001956 RID: 6486
-		// (get) Token: 0x0600CFFE RID: 53246 RVA: 0x004C018C File Offset: 0x004BE38C
-		// (set) Token: 0x0600CFFF RID: 53247 RVA: 0x004C0194 File Offset: 0x004BE394
+		// Token: 0x170019C8 RID: 6600
+		// (get) Token: 0x0600D187 RID: 53639 RVA: 0x004C6580 File Offset: 0x004C4780
+		// (set) Token: 0x0600D188 RID: 53640 RVA: 0x004C6588 File Offset: 0x004C4788
 		public IPlayerReporting PlayerReporting
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x17001957 RID: 6487
-		// (get) Token: 0x0600D000 RID: 53248 RVA: 0x004C019D File Offset: 0x004BE39D
-		// (set) Token: 0x0600D001 RID: 53249 RVA: 0x004C01A5 File Offset: 0x004BE3A5
+		// Token: 0x170019C9 RID: 6601
+		// (get) Token: 0x0600D189 RID: 53641 RVA: 0x004C6591 File Offset: 0x004C4791
+		// (set) Token: 0x0600D18A RID: 53642 RVA: 0x004C6599 File Offset: 0x004C4799
 		public ITextCensor TextCensor
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x17001958 RID: 6488
-		// (get) Token: 0x0600D002 RID: 53250 RVA: 0x004C01AE File Offset: 0x004BE3AE
-		// (set) Token: 0x0600D003 RID: 53251 RVA: 0x004C01B6 File Offset: 0x004BE3B6
+		// Token: 0x170019CA RID: 6602
+		// (get) Token: 0x0600D18B RID: 53643 RVA: 0x004C65A2 File Offset: 0x004C47A2
+		// (set) Token: 0x0600D18C RID: 53644 RVA: 0x004C65AA File Offset: 0x004C47AA
 		public IRemoteFileStorage RemoteFileStorage
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x17001959 RID: 6489
-		// (get) Token: 0x0600D004 RID: 53252 RVA: 0x004C01BF File Offset: 0x004BE3BF
-		// (set) Token: 0x0600D005 RID: 53253 RVA: 0x004C01C7 File Offset: 0x004BE3C7
+		// Token: 0x170019CB RID: 6603
+		// (get) Token: 0x0600D18D RID: 53645 RVA: 0x004C65B3 File Offset: 0x004C47B3
+		// (set) Token: 0x0600D18E RID: 53646 RVA: 0x004C65BB File Offset: 0x004C47BB
 		public IRemotePlayerFileStorage RemotePlayerFileStorage
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x1700195A RID: 6490
-		// (get) Token: 0x0600D006 RID: 53254 RVA: 0x004C01D0 File Offset: 0x004BE3D0
-		// (set) Token: 0x0600D007 RID: 53255 RVA: 0x004C01D8 File Offset: 0x004BE3D8
+		// Token: 0x170019CC RID: 6604
+		// (get) Token: 0x0600D18F RID: 53647 RVA: 0x004C65C4 File Offset: 0x004C47C4
+		// (set) Token: 0x0600D190 RID: 53648 RVA: 0x004C65CC File Offset: 0x004C47CC
 		public IList<IEntitlementValidator> EntitlementValidators
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x1700195B RID: 6491
-		// (get) Token: 0x0600D008 RID: 53256 RVA: 0x004C01E1 File Offset: 0x004BE3E1
-		// (set) Token: 0x0600D009 RID: 53257 RVA: 0x004C01E9 File Offset: 0x004BE3E9
+		// Token: 0x170019CD RID: 6605
+		// (get) Token: 0x0600D191 RID: 53649 RVA: 0x004C65D5 File Offset: 0x004C47D5
+		// (set) Token: 0x0600D192 RID: 53650 RVA: 0x004C65DD File Offset: 0x004C47DD
 		public PlayerInputManager Input
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x1700195C RID: 6492
-		// (get) Token: 0x0600D00A RID: 53258 RVA: 0x004C01F2 File Offset: 0x004BE3F2
-		// (set) Token: 0x0600D00B RID: 53259 RVA: 0x004C01FA File Offset: 0x004BE3FA
+		// Token: 0x170019CE RID: 6606
+		// (get) Token: 0x0600D193 RID: 53651 RVA: 0x004C65E6 File Offset: 0x004C47E6
+		// (set) Token: 0x0600D194 RID: 53652 RVA: 0x004C65EE File Offset: 0x004C47EE
 		public IVirtualKeyboard VirtualKeyboard
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x1700195D RID: 6493
-		// (get) Token: 0x0600D00C RID: 53260 RVA: 0x004C0203 File Offset: 0x004BE403
-		// (set) Token: 0x0600D00D RID: 53261 RVA: 0x004C020B File Offset: 0x004BE40B
+		// Token: 0x170019CF RID: 6607
+		// (get) Token: 0x0600D195 RID: 53653 RVA: 0x004C65F7 File Offset: 0x004C47F7
+		// (set) Token: 0x0600D196 RID: 53654 RVA: 0x004C65FF File Offset: 0x004C47FF
 		public IAchievementManager AchievementManager
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x1700195E RID: 6494
-		// (get) Token: 0x0600D00E RID: 53262 RVA: 0x004C0214 File Offset: 0x004BE414
-		// (set) Token: 0x0600D00F RID: 53263 RVA: 0x004C021C File Offset: 0x004BE41C
+		// Token: 0x170019D0 RID: 6608
+		// (get) Token: 0x0600D197 RID: 53655 RVA: 0x004C6608 File Offset: 0x004C4808
+		// (set) Token: 0x0600D198 RID: 53656 RVA: 0x004C6610 File Offset: 0x004C4810
 		public IRichPresence RichPresence
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x1700195F RID: 6495
-		// (get) Token: 0x0600D010 RID: 53264 RVA: 0x004C0225 File Offset: 0x004BE425
-		// (set) Token: 0x0600D011 RID: 53265 RVA: 0x004C022D File Offset: 0x004BE42D
+		// Token: 0x170019D1 RID: 6609
+		// (get) Token: 0x0600D199 RID: 53657 RVA: 0x004C6619 File Offset: 0x004C4819
+		// (set) Token: 0x0600D19A RID: 53658 RVA: 0x004C6621 File Offset: 0x004C4821
 		public IApplicationStateController ApplicationState
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x17001960 RID: 6496
-		// (get) Token: 0x0600D012 RID: 53266 RVA: 0x004C0236 File Offset: 0x004BE436
-		// (set) Token: 0x0600D013 RID: 53267 RVA: 0x004C023E File Offset: 0x004BE43E
+		// Token: 0x170019D2 RID: 6610
+		// (get) Token: 0x0600D19B RID: 53659 RVA: 0x004C662A File Offset: 0x004C482A
+		// (set) Token: 0x0600D19C RID: 53660 RVA: 0x004C6632 File Offset: 0x004C4832
 		public IPlatformSaveGameProvider SaveGameProvider
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x17001961 RID: 6497
-		// (get) Token: 0x0600D014 RID: 53268 RVA: 0x004C0247 File Offset: 0x004BE447
-		// (set) Token: 0x0600D015 RID: 53269 RVA: 0x004C024F File Offset: 0x004BE44F
+		// Token: 0x170019D3 RID: 6611
+		// (get) Token: 0x0600D19D RID: 53661 RVA: 0x004C663B File Offset: 0x004C483B
+		// (set) Token: 0x0600D19E RID: 53662 RVA: 0x004C6643 File Offset: 0x004C4843
 		public IUserDataRoaming UserDataRoaming
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x17001962 RID: 6498
-		// (get) Token: 0x0600D016 RID: 53270 RVA: 0x004C0258 File Offset: 0x004BE458
+		// Token: 0x170019D4 RID: 6612
+		// (get) Token: 0x0600D19F RID: 53663 RVA: 0x004C664C File Offset: 0x004C484C
 		public virtual string NetworkProtocolName
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
 			get;
 		}
 
-		// Token: 0x04009F41 RID: 40769
+		// Token: 0x0400A072 RID: 41074
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public IPlatformNetworkServer NetworkServer;
 
-		// Token: 0x04009F42 RID: 40770
+		// Token: 0x0400A073 RID: 41075
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public IPlatformNetworkClient NetworkClient;
 	}

@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200019E RID: 414
+// Token: 0x020001A0 RID: 416
 [Preserve]
 public class BlockShapeBillboardComplex : BlockShapeBillboardAbstract
 {
-	// Token: 0x06000C9D RID: 3229 RVA: 0x0004E230 File Offset: 0x0004C430
+	// Token: 0x06000CA8 RID: 3240 RVA: 0x0004E648 File Offset: 0x0004C848
 	public override void renderFull(Vector3i _worldPos, BlockValue _blockValue, Vector3 _drawPos, Vector3[] _vertices, LightingAround _lightingAround, TextureFullArray _textureFullArray, VoxelMesh[] _meshes, BlockShape.MeshPurpose _purpose = BlockShape.MeshPurpose.World)
 	{
 		byte sun = _lightingAround[LightingAround.Pos.Middle].sun;
@@ -33,7 +33,7 @@ public class BlockShapeBillboardComplex : BlockShapeBillboardAbstract
 		voxelMesh.AddBlockSide(this.v[11], this.v[10], this.v[9], this.v[8], _blockValue, VoxelMesh.COLOR_TOP, BlockFace.Top, sun, block, (int)block2.MeshIndex);
 	}
 
-	// Token: 0x04000B50 RID: 2896
+	// Token: 0x04000B5D RID: 2909
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3[] v = new Vector3[12];
 }

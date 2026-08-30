@@ -3,17 +3,17 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x02001901 RID: 6401
+	// Token: 0x02001927 RID: 6439
 	[Preserve]
 	public class RequirementGamestage : BaseOperationRequirement
 	{
-		// Token: 0x0600C547 RID: 50503 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C6CE RID: 50894 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
 		}
 
-		// Token: 0x0600C548 RID: 50504 RVA: 0x0048A7F4 File Offset: 0x004889F4
+		// Token: 0x0600C6CF RID: 50895 RVA: 0x00490B40 File Offset: 0x0048ED40
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override object LeftSide(Entity target)
 		{
@@ -21,21 +21,21 @@ namespace GameEvent.SequenceRequirements
 			return (entityPlayer != null) ? entityPlayer.gameStage : 0;
 		}
 
-		// Token: 0x0600C549 RID: 50505 RVA: 0x0048A819 File Offset: 0x00488A19
+		// Token: 0x0600C6D0 RID: 50896 RVA: 0x00490B65 File Offset: 0x0048ED65
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override object RightSide(Entity target)
 		{
 			return GameEventManager.GetIntValue(target as EntityAlive, this.gamestageText, 0);
 		}
 
-		// Token: 0x0600C54A RID: 50506 RVA: 0x0048A832 File Offset: 0x00488A32
+		// Token: 0x0600C6D1 RID: 50897 RVA: 0x00490B7E File Offset: 0x0048ED7E
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseString(RequirementGamestage.PropGamestage, ref this.gamestageText);
 		}
 
-		// Token: 0x0600C54B RID: 50507 RVA: 0x0048A84C File Offset: 0x00488A4C
+		// Token: 0x0600C6D2 RID: 50898 RVA: 0x00490B98 File Offset: 0x0048ED98
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseRequirement CloneChildSettings()
 		{
@@ -47,11 +47,11 @@ namespace GameEvent.SequenceRequirements
 			};
 		}
 
-		// Token: 0x040094AA RID: 38058
+		// Token: 0x040095D3 RID: 38355
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string gamestageText;
 
-		// Token: 0x040094AB RID: 38059
+		// Token: 0x040095D4 RID: 38356
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropGamestage = "game_stage";
 	}

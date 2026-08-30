@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x020001FA RID: 506
+// Token: 0x020001FC RID: 508
 [Preserve]
 public class ConsoleCmdCommandPermissions : ConsoleCmdAbstract
 {
-	// Token: 0x06000F87 RID: 3975 RVA: 0x00064D14 File Offset: 0x00062F14
+	// Token: 0x06000F92 RID: 3986 RVA: 0x0006525C File Offset: 0x0006345C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -15,7 +15,7 @@ public class ConsoleCmdCommandPermissions : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000156 RID: 342
-	// (get) Token: 0x06000F88 RID: 3976 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// (get) Token: 0x06000F93 RID: 3987 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -25,7 +25,7 @@ public class ConsoleCmdCommandPermissions : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000157 RID: 343
-	// (get) Token: 0x06000F89 RID: 3977 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// (get) Token: 0x06000F94 RID: 3988 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -34,21 +34,21 @@ public class ConsoleCmdCommandPermissions : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F8A RID: 3978 RVA: 0x00064D2C File Offset: 0x00062F2C
+	// Token: 0x06000F95 RID: 3989 RVA: 0x00065274 File Offset: 0x00063474
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Manage command permission levels";
 	}
 
-	// Token: 0x06000F8B RID: 3979 RVA: 0x00064D33 File Offset: 0x00062F33
+	// Token: 0x06000F96 RID: 3990 RVA: 0x0006527B File Offset: 0x0006347B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Set/get permission levels required to execute a given command. Default\nlevel required for commands that are not explicitly specified is 0.\nUsage:\n   cp add <command> <level>\n   cp remove <command>\n   cp list";
 	}
 
-	// Token: 0x06000F8C RID: 3980 RVA: 0x00064D3C File Offset: 0x00062F3C
+	// Token: 0x06000F97 RID: 3991 RVA: 0x00065284 File Offset: 0x00063484
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (GameManager.Instance.adminTools == null)
@@ -78,7 +78,7 @@ public class ConsoleCmdCommandPermissions : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Invalid sub command \"" + _params[0] + "\".");
 	}
 
-	// Token: 0x06000F8D RID: 3981 RVA: 0x00064DE0 File Offset: 0x00062FE0
+	// Token: 0x06000F98 RID: 3992 RVA: 0x00065328 File Offset: 0x00063528
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteAdd(List<string> _params)
 	{
@@ -102,7 +102,7 @@ public class ConsoleCmdCommandPermissions : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output(string.Format("{0} added with permission level of {1}.", _params[1], num));
 	}
 
-	// Token: 0x06000F8E RID: 3982 RVA: 0x00064EC4 File Offset: 0x000630C4
+	// Token: 0x06000F99 RID: 3993 RVA: 0x0006540C File Offset: 0x0006360C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteRemove(List<string> _params)
 	{
@@ -121,7 +121,7 @@ public class ConsoleCmdCommandPermissions : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output(string.Format("{0} removed from permissions list.", _params[1]));
 	}
 
-	// Token: 0x06000F8F RID: 3983 RVA: 0x00064F70 File Offset: 0x00063170
+	// Token: 0x06000F9A RID: 3994 RVA: 0x000654B8 File Offset: 0x000636B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteList()
 	{

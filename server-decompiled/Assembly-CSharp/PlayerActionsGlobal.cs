@@ -1,11 +1,11 @@
 ﻿using System;
 using InControl;
 
-// Token: 0x0200055B RID: 1371
+// Token: 0x02000560 RID: 1376
 public class PlayerActionsGlobal : PlayerActionsBase
 {
-	// Token: 0x170004C0 RID: 1216
-	// (get) Token: 0x06002C9A RID: 11418 RVA: 0x0011A1E2 File Offset: 0x001183E2
+	// Token: 0x170004C4 RID: 1220
+	// (get) Token: 0x06002CC4 RID: 11460 RVA: 0x0011B256 File Offset: 0x00119456
 	public static PlayerActionsGlobal Instance
 	{
 		get
@@ -14,7 +14,7 @@ public class PlayerActionsGlobal : PlayerActionsBase
 		}
 	}
 
-	// Token: 0x06002C9B RID: 11419 RVA: 0x0011A1E9 File Offset: 0x001183E9
+	// Token: 0x06002CC5 RID: 11461 RVA: 0x0011B25D File Offset: 0x0011945D
 	public static void Init()
 	{
 		if (PlayerActionsGlobal.m_Instance == null)
@@ -23,14 +23,14 @@ public class PlayerActionsGlobal : PlayerActionsBase
 		}
 	}
 
-	// Token: 0x06002C9C RID: 11420 RVA: 0x0011A1FC File Offset: 0x001183FC
+	// Token: 0x06002CC6 RID: 11462 RVA: 0x0011B270 File Offset: 0x00119470
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlayerActionsGlobal()
 	{
 		base.Name = "global";
 	}
 
-	// Token: 0x06002C9D RID: 11421 RVA: 0x0011A210 File Offset: 0x00118410
+	// Token: 0x06002CC7 RID: 11463 RVA: 0x0011B284 File Offset: 0x00119484
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CreateActions()
 	{
@@ -55,7 +55,7 @@ public class PlayerActionsGlobal : PlayerActionsBase
 		this.BackgroundedScreenshot = base.CreatePlayerAction("BackgroundedScreenshot");
 	}
 
-	// Token: 0x06002C9E RID: 11422 RVA: 0x0011A3E8 File Offset: 0x001185E8
+	// Token: 0x06002CC8 RID: 11464 RVA: 0x0011B45C File Offset: 0x0011965C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CreateDefaultKeyboardBindings()
 	{
@@ -78,43 +78,43 @@ public class PlayerActionsGlobal : PlayerActionsBase
 		}
 	}
 
-	// Token: 0x06002C9F RID: 11423 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002CC9 RID: 11465 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CreateDefaultJoystickBindings()
 	{
 	}
 
-	// Token: 0x0400224E RID: 8782
+	// Token: 0x04002280 RID: 8832
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static PlayerActionsGlobal m_Instance;
 
-	// Token: 0x0400224F RID: 8783
+	// Token: 0x04002281 RID: 8833
 	public PlayerAction Console;
 
-	// Token: 0x04002250 RID: 8784
+	// Token: 0x04002282 RID: 8834
 	public PlayerAction ShowDebugData;
 
-	// Token: 0x04002251 RID: 8785
+	// Token: 0x04002283 RID: 8835
 	public PlayerAction Fullscreen;
 
-	// Token: 0x04002252 RID: 8786
+	// Token: 0x04002284 RID: 8836
 	public PlayerAction DebugSpawn;
 
-	// Token: 0x04002253 RID: 8787
+	// Token: 0x04002285 RID: 8837
 	public PlayerAction DebugGameEvent;
 
-	// Token: 0x04002254 RID: 8788
+	// Token: 0x04002286 RID: 8838
 	public PlayerAction SwitchHUD;
 
-	// Token: 0x04002255 RID: 8789
+	// Token: 0x04002287 RID: 8839
 	public PlayerAction ShowFPS;
 
-	// Token: 0x04002256 RID: 8790
+	// Token: 0x04002288 RID: 8840
 	public PlayerAction Screenshot;
 
-	// Token: 0x04002257 RID: 8791
+	// Token: 0x04002289 RID: 8841
 	public PlayerAction DebugScreenshot;
 
-	// Token: 0x04002258 RID: 8792
+	// Token: 0x0400228A RID: 8842
 	public PlayerAction BackgroundedScreenshot;
 }

@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using BhvrAnalyticsServices.Attributes;
 using Newtonsoft.Json;
 using UnityEngine;
 
 namespace Services.Analytics.Events
 {
-	// Token: 0x02001664 RID: 5732
+	// Token: 0x02001689 RID: 5769
+	[EventTitle("Hardware Info")]
 	public class HardwareInfoEventData : BaseEventData
 	{
-		// Token: 0x17001578 RID: 5496
-		// (get) Token: 0x0600B37D RID: 45949 RVA: 0x00431BFE File Offset: 0x0042FDFE
+		// Token: 0x170015D7 RID: 5591
+		// (get) Token: 0x0600B4DA RID: 46298 RVA: 0x00437846 File Offset: 0x00435A46
 		public override string EventType
 		{
 			get
@@ -18,9 +20,9 @@ namespace Services.Analytics.Events
 			}
 		}
 
-		// Token: 0x17001579 RID: 5497
-		// (get) Token: 0x0600B37E RID: 45950 RVA: 0x00431C05 File Offset: 0x0042FE05
-		// (set) Token: 0x0600B37F RID: 45951 RVA: 0x00431C0D File Offset: 0x0042FE0D
+		// Token: 0x170015D8 RID: 5592
+		// (get) Token: 0x0600B4DB RID: 46299 RVA: 0x0043784D File Offset: 0x00435A4D
+		// (set) Token: 0x0600B4DC RID: 46300 RVA: 0x00437855 File Offset: 0x00435A55
 		[JsonProperty(PropertyName = "os")]
 		public string OperatingSystem
 		{
@@ -28,9 +30,9 @@ namespace Services.Analytics.Events
 			set;
 		} = SystemInfo.operatingSystem;
 
-		// Token: 0x1700157A RID: 5498
-		// (get) Token: 0x0600B380 RID: 45952 RVA: 0x00431C16 File Offset: 0x0042FE16
-		// (set) Token: 0x0600B381 RID: 45953 RVA: 0x00431C1E File Offset: 0x0042FE1E
+		// Token: 0x170015D9 RID: 5593
+		// (get) Token: 0x0600B4DD RID: 46301 RVA: 0x0043785E File Offset: 0x00435A5E
+		// (set) Token: 0x0600B4DE RID: 46302 RVA: 0x00437866 File Offset: 0x00435A66
 		[JsonProperty(PropertyName = "cpu_data")]
 		public Dictionary<string, string> CpuData
 		{
@@ -48,9 +50,9 @@ namespace Services.Analytics.Events
 			}
 		};
 
-		// Token: 0x1700157B RID: 5499
-		// (get) Token: 0x0600B382 RID: 45954 RVA: 0x00431C27 File Offset: 0x0042FE27
-		// (set) Token: 0x0600B383 RID: 45955 RVA: 0x00431C2F File Offset: 0x0042FE2F
+		// Token: 0x170015DA RID: 5594
+		// (get) Token: 0x0600B4DF RID: 46303 RVA: 0x0043786F File Offset: 0x00435A6F
+		// (set) Token: 0x0600B4E0 RID: 46304 RVA: 0x00437877 File Offset: 0x00435A77
 		[JsonProperty(PropertyName = "gpu_data")]
 		public Dictionary<string, string> GpuData
 		{
@@ -80,9 +82,9 @@ namespace Services.Analytics.Events
 			}
 		};
 
-		// Token: 0x1700157C RID: 5500
-		// (get) Token: 0x0600B384 RID: 45956 RVA: 0x00431C38 File Offset: 0x0042FE38
-		// (set) Token: 0x0600B385 RID: 45957 RVA: 0x00431C40 File Offset: 0x0042FE40
+		// Token: 0x170015DB RID: 5595
+		// (get) Token: 0x0600B4E1 RID: 46305 RVA: 0x00437880 File Offset: 0x00435A80
+		// (set) Token: 0x0600B4E2 RID: 46306 RVA: 0x00437888 File Offset: 0x00435A88
 		[JsonProperty(PropertyName = "memory_ram")]
 		public int MemoryRam
 		{

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200158A RID: 5514
+// Token: 0x020015A5 RID: 5541
 public sealed class vp_DecalManager
 {
-	// Token: 0x170013D1 RID: 5073
-	// (get) Token: 0x0600AC61 RID: 44129 RVA: 0x0040501C File Offset: 0x0040321C
-	// (set) Token: 0x0600AC62 RID: 44130 RVA: 0x00405023 File Offset: 0x00403223
+	// Token: 0x1700140A RID: 5130
+	// (get) Token: 0x0600AD5E RID: 44382 RVA: 0x0040A35C File Offset: 0x0040855C
+	// (set) Token: 0x0600AD5F RID: 44383 RVA: 0x0040A363 File Offset: 0x00408563
 	public static float MaxDecals
 	{
 		get
@@ -21,9 +21,9 @@ public sealed class vp_DecalManager
 		}
 	}
 
-	// Token: 0x170013D2 RID: 5074
-	// (get) Token: 0x0600AC63 RID: 44131 RVA: 0x00405030 File Offset: 0x00403230
-	// (set) Token: 0x0600AC64 RID: 44132 RVA: 0x00405037 File Offset: 0x00403237
+	// Token: 0x1700140B RID: 5131
+	// (get) Token: 0x0600AD60 RID: 44384 RVA: 0x0040A370 File Offset: 0x00408570
+	// (set) Token: 0x0600AD61 RID: 44385 RVA: 0x0040A377 File Offset: 0x00408577
 	public static float FadedDecals
 	{
 		get
@@ -42,20 +42,20 @@ public sealed class vp_DecalManager
 		}
 	}
 
-	// Token: 0x0600AC65 RID: 44133 RVA: 0x00405058 File Offset: 0x00403258
+	// Token: 0x0600AD62 RID: 44386 RVA: 0x0040A398 File Offset: 0x00408598
 	[PublicizedFrom(EAccessModifier.Private)]
 	static vp_DecalManager()
 	{
 		vp_DecalManager.Refresh();
 	}
 
-	// Token: 0x0600AC66 RID: 44134 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x0600AD63 RID: 44387 RVA: 0x0000640C File Offset: 0x0000460C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public vp_DecalManager()
 	{
 	}
 
-	// Token: 0x0600AC67 RID: 44135 RVA: 0x004050A8 File Offset: 0x004032A8
+	// Token: 0x0600AD64 RID: 44388 RVA: 0x0040A3E8 File Offset: 0x004085E8
 	public static void Add(GameObject decal)
 	{
 		if (vp_DecalManager.m_Decals.Contains(decal))
@@ -69,7 +69,7 @@ public sealed class vp_DecalManager
 		vp_DecalManager.FadeAndRemove();
 	}
 
-	// Token: 0x0600AC68 RID: 44136 RVA: 0x0040510C File Offset: 0x0040330C
+	// Token: 0x0600AD65 RID: 44389 RVA: 0x0040A44C File Offset: 0x0040864C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void FadeAndRemove()
 	{
@@ -102,7 +102,7 @@ public sealed class vp_DecalManager
 		}
 	}
 
-	// Token: 0x0600AC69 RID: 44137 RVA: 0x0040520C File Offset: 0x0040340C
+	// Token: 0x0600AD66 RID: 44390 RVA: 0x0040A54C File Offset: 0x0040874C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void Refresh()
 	{
@@ -114,7 +114,7 @@ public sealed class vp_DecalManager
 		vp_DecalManager.m_NonFadedDecals = vp_DecalManager.m_MaxDecals - vp_DecalManager.m_FadedDecals;
 	}
 
-	// Token: 0x0600AC6A RID: 44138 RVA: 0x0040524C File Offset: 0x0040344C
+	// Token: 0x0600AD67 RID: 44391 RVA: 0x0040A58C File Offset: 0x0040878C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void DebugOutput()
 	{
@@ -145,26 +145,26 @@ public sealed class vp_DecalManager
 		}));
 	}
 
-	// Token: 0x0400800D RID: 32781
+	// Token: 0x040080E6 RID: 32998
 	public static readonly vp_DecalManager instance = new vp_DecalManager();
 
-	// Token: 0x0400800E RID: 32782
+	// Token: 0x040080E7 RID: 32999
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<GameObject> m_Decals = new List<GameObject>();
 
-	// Token: 0x0400800F RID: 32783
+	// Token: 0x040080E8 RID: 33000
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float m_MaxDecals = 100f;
 
-	// Token: 0x04008010 RID: 32784
+	// Token: 0x040080E9 RID: 33001
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float m_FadedDecals = 20f;
 
-	// Token: 0x04008011 RID: 32785
+	// Token: 0x040080EA RID: 33002
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float m_NonFadedDecals = 0f;
 
-	// Token: 0x04008012 RID: 32786
+	// Token: 0x040080EB RID: 33003
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float m_FadeAmount = 0f;
 }

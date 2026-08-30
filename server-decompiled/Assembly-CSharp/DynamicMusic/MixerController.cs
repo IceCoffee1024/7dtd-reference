@@ -4,11 +4,11 @@ using UnityEngine.Audio;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A2E RID: 6702
+	// Token: 0x02001A55 RID: 6741
 	public class MixerController : IGamePrefsChangedListener
 	{
-		// Token: 0x1700188F RID: 6287
-		// (get) Token: 0x0600CAC3 RID: 51907 RVA: 0x004A305C File Offset: 0x004A125C
+		// Token: 0x17001901 RID: 6401
+		// (get) Token: 0x0600CC4C RID: 52300 RVA: 0x004A9450 File Offset: 0x004A7650
 		public static MixerController Instance
 		{
 			get
@@ -21,7 +21,7 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600CAC4 RID: 51908 RVA: 0x004A3074 File Offset: 0x004A1274
+		// Token: 0x0600CC4D RID: 52301 RVA: 0x004A9468 File Offset: 0x004A7668
 		public void Init()
 		{
 			MixerController.DmsAbsoluteVolumeCurve = new LogarithmicCurve(2.0, 6.0, -80f, 0f, 0f, 1f);
@@ -31,13 +31,13 @@ namespace DynamicMusic
 			GamePrefs.AddChangeListener(this);
 		}
 
-		// Token: 0x0600CAC5 RID: 51909 RVA: 0x004A3103 File Offset: 0x004A1303
+		// Token: 0x0600CC4E RID: 52302 RVA: 0x004A94F7 File Offset: 0x004A76F7
 		public void Update()
 		{
 			this.SetAllCombatVolume();
 		}
 
-		// Token: 0x0600CAC6 RID: 51910 RVA: 0x004A310B File Offset: 0x004A130B
+		// Token: 0x0600CC4F RID: 52303 RVA: 0x004A94FF File Offset: 0x004A76FF
 		public void OnGamePrefChanged(EnumGamePrefs _enum)
 		{
 			if (_enum.Equals(EnumGamePrefs.OptionsMusicVolumeLevel))
@@ -46,7 +46,7 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600CAC7 RID: 51911 RVA: 0x004A312E File Offset: 0x004A132E
+		// Token: 0x0600CC50 RID: 52304 RVA: 0x004A9522 File Offset: 0x004A7722
 		public void SetDynamicMusicVolume(float _vol)
 		{
 			if (MixerController.Master)
@@ -55,14 +55,14 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600CAC8 RID: 51912 RVA: 0x004A3158 File Offset: 0x004A1358
+		// Token: 0x0600CC51 RID: 52305 RVA: 0x004A954C File Offset: 0x004A774C
 		public void OnSnapshotTransition()
 		{
 			float @float = GamePrefs.GetFloat(EnumGamePrefs.OptionsMusicVolumeLevel);
 			this.SetDynamicMusicVolume(@float);
 		}
 
-		// Token: 0x0600CAC9 RID: 51913 RVA: 0x004A3174 File Offset: 0x004A1374
+		// Token: 0x0600CC52 RID: 52306 RVA: 0x004A9568 File Offset: 0x004A7768
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SetAllCombatVolume()
 		{
@@ -78,19 +78,19 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x04009A09 RID: 39433
+		// Token: 0x04009B3A RID: 39738
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static MixerController instance;
 
-		// Token: 0x04009A0A RID: 39434
+		// Token: 0x04009B3B RID: 39739
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static AudioMixer Master;
 
-		// Token: 0x04009A0B RID: 39435
+		// Token: 0x04009B3C RID: 39740
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static LogarithmicCurve DmsAbsoluteVolumeCurve;
 
-		// Token: 0x04009A0C RID: 39436
+		// Token: 0x04009B3D RID: 39741
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static LogarithmicCurve AllCombatVolumeCurve;
 	}

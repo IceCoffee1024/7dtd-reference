@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000198 RID: 408
+// Token: 0x0200019A RID: 410
 public class WaterSplashCubes
 {
-	// Token: 0x06000C63 RID: 3171 RVA: 0x0004D730 File Offset: 0x0004B930
+	// Token: 0x06000C6E RID: 3182 RVA: 0x0004DB48 File Offset: 0x0004BD48
 	public WaterSplashCubes()
 	{
 		if (WaterSplashCubes.instance == null)
@@ -19,19 +19,19 @@ public class WaterSplashCubes
 		WaterSplashCubes.particleLimiter = GamePrefs.GetFloat(EnumGamePrefs.OptionsGfxWaterPtlLimiter);
 	}
 
-	// Token: 0x06000C64 RID: 3172 RVA: 0x0004D782 File Offset: 0x0004B982
+	// Token: 0x06000C6F RID: 3183 RVA: 0x0004DB9A File Offset: 0x0004BD9A
 	public static long MakeKey(int x, int z)
 	{
 		return (((long)z & 16777215L) << 24) | ((long)x & 16777215L);
 	}
 
-	// Token: 0x06000C65 RID: 3173 RVA: 0x0004D79A File Offset: 0x0004B99A
+	// Token: 0x06000C70 RID: 3184 RVA: 0x0004DBB2 File Offset: 0x0004BDB2
 	public static object GetSyncRoot()
 	{
 		return ((ICollection)WaterSplashCubes.splashes.dict).SyncRoot;
 	}
 
-	// Token: 0x06000C66 RID: 3174 RVA: 0x0004D7AC File Offset: 0x0004B9AC
+	// Token: 0x06000C71 RID: 3185 RVA: 0x0004DBC4 File Offset: 0x0004BDC4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GameObject AddParticleEffect(Vector3i pos, BlockFace face, WaterSplashCubes.SplashType type)
 	{
@@ -75,7 +75,7 @@ public class WaterSplashCubes
 		return gameObject;
 	}
 
-	// Token: 0x06000C67 RID: 3175 RVA: 0x0004D9AC File Offset: 0x0004BBAC
+	// Token: 0x06000C72 RID: 3186 RVA: 0x0004DDC4 File Offset: 0x0004BFC4
 	public static void Update()
 	{
 		if (WaterSplashCubes.removeList == null)
@@ -146,7 +146,7 @@ public class WaterSplashCubes
 		WaterSplashCubes.CleanUp();
 	}
 
-	// Token: 0x06000C68 RID: 3176 RVA: 0x0004DC50 File Offset: 0x0004BE50
+	// Token: 0x06000C73 RID: 3187 RVA: 0x0004E068 File Offset: 0x0004C268
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void CleanUp()
 	{
@@ -202,7 +202,7 @@ public class WaterSplashCubes
 		}
 	}
 
-	// Token: 0x06000C69 RID: 3177 RVA: 0x0004DE20 File Offset: 0x0004C020
+	// Token: 0x06000C74 RID: 3188 RVA: 0x0004E238 File Offset: 0x0004C438
 	public static void RemoveSplashAt(int _x, int _y, int _z)
 	{
 		if (WaterSplashCubes.removeList == null)
@@ -216,7 +216,7 @@ public class WaterSplashCubes
 		}
 	}
 
-	// Token: 0x06000C6A RID: 3178 RVA: 0x0004DE74 File Offset: 0x0004C074
+	// Token: 0x06000C75 RID: 3189 RVA: 0x0004E28C File Offset: 0x0004C48C
 	public static void AddSplashAt(int _x, int _y, int _z, BlockFace _dir, WaterSplashCubes.SplashType _type)
 	{
 		if (WaterSplashCubes.particleLimiter <= 0f)
@@ -235,7 +235,7 @@ public class WaterSplashCubes
 		}
 	}
 
-	// Token: 0x06000C6B RID: 3179 RVA: 0x0004DEE0 File Offset: 0x0004C0E0
+	// Token: 0x06000C76 RID: 3190 RVA: 0x0004E2F8 File Offset: 0x0004C4F8
 	public static void Clear()
 	{
 		object syncRoot = WaterSplashCubes.GetSyncRoot();
@@ -254,63 +254,63 @@ public class WaterSplashCubes
 		}
 	}
 
-	// Token: 0x04000B1F RID: 2847
+	// Token: 0x04000B2C RID: 2860
 	public static WaterSplashCubes instance = null;
 
-	// Token: 0x04000B20 RID: 2848
+	// Token: 0x04000B2D RID: 2861
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DictionaryList<long, DictionaryList<int, GameObject>> splashes = new DictionaryList<long, DictionaryList<int, GameObject>>();
 
-	// Token: 0x04000B21 RID: 2849
+	// Token: 0x04000B2E RID: 2862
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GameObject root;
 
-	// Token: 0x04000B22 RID: 2850
+	// Token: 0x04000B2F RID: 2863
 	public static List<WaterSplashCubes.ParticlePlacement> addList;
 
-	// Token: 0x04000B23 RID: 2851
+	// Token: 0x04000B30 RID: 2864
 	public static List<Vector3i> removeList;
 
-	// Token: 0x04000B24 RID: 2852
+	// Token: 0x04000B31 RID: 2865
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int checkListNum = 0;
 
-	// Token: 0x04000B25 RID: 2853
+	// Token: 0x04000B32 RID: 2866
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static global::UnityEngine.Object[] waterFallSplashCubeEffect = null;
 
-	// Token: 0x04000B26 RID: 2854
+	// Token: 0x04000B33 RID: 2867
 	public static float particleLimiter = 1f;
 
-	// Token: 0x04000B27 RID: 2855
+	// Token: 0x04000B34 RID: 2868
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int particleCount = 0;
 
-	// Token: 0x04000B28 RID: 2856
+	// Token: 0x04000B35 RID: 2869
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float cleanUpTimer = 0f;
 
-	// Token: 0x04000B29 RID: 2857
+	// Token: 0x04000B36 RID: 2870
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int currentCleanupIndex = 15;
 
-	// Token: 0x02000199 RID: 409
+	// Token: 0x0200019B RID: 411
 	public enum SplashType
 	{
-		// Token: 0x04000B2B RID: 2859
+		// Token: 0x04000B38 RID: 2872
 		Splash,
-		// Token: 0x04000B2C RID: 2860
+		// Token: 0x04000B39 RID: 2873
 		Slope,
-		// Token: 0x04000B2D RID: 2861
+		// Token: 0x04000B3A RID: 2874
 		Area,
-		// Token: 0x04000B2E RID: 2862
+		// Token: 0x04000B3B RID: 2875
 		Mist
 	}
 
-	// Token: 0x0200019A RID: 410
+	// Token: 0x0200019C RID: 412
 	public class ParticlePlacement
 	{
-		// Token: 0x06000C6D RID: 3181 RVA: 0x0004DFBB File Offset: 0x0004C1BB
+		// Token: 0x06000C78 RID: 3192 RVA: 0x0004E3D3 File Offset: 0x0004C5D3
 		public ParticlePlacement(Vector3i _pos, BlockFace _dir, WaterSplashCubes.SplashType _type)
 		{
 			this.pos = _pos;
@@ -318,13 +318,13 @@ public class WaterSplashCubes
 			this.type = _type;
 		}
 
-		// Token: 0x04000B2F RID: 2863
+		// Token: 0x04000B3C RID: 2876
 		public Vector3i pos;
 
-		// Token: 0x04000B30 RID: 2864
+		// Token: 0x04000B3D RID: 2877
 		public BlockFace dir;
 
-		// Token: 0x04000B31 RID: 2865
+		// Token: 0x04000B3E RID: 2878
 		public WaterSplashCubes.SplashType type;
 	}
 }

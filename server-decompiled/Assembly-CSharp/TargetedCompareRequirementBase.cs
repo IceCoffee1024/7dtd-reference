@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Xml.Linq;
 
-// Token: 0x0200065F RID: 1631
+// Token: 0x02000668 RID: 1640
 public class TargetedCompareRequirementBase : RequirementBase
 {
-	// Token: 0x06003483 RID: 13443 RVA: 0x0015CC78 File Offset: 0x0015AE78
+	// Token: 0x060034D6 RID: 13526 RVA: 0x0015EDE8 File Offset: 0x0015CFE8
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -33,7 +33,7 @@ public class TargetedCompareRequirementBase : RequirementBase
 		return this.target != null;
 	}
 
-	// Token: 0x06003484 RID: 13444 RVA: 0x0015CD08 File Offset: 0x0015AF08
+	// Token: 0x060034D7 RID: 13527 RVA: 0x0015EE78 File Offset: 0x0015D078
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -45,23 +45,23 @@ public class TargetedCompareRequirementBase : RequirementBase
 		return flag;
 	}
 
-	// Token: 0x04002AA9 RID: 10921
+	// Token: 0x04002B1D RID: 11037
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public TargetedCompareRequirementBase.TargetTypes targetType;
 
-	// Token: 0x04002AAA RID: 10922
+	// Token: 0x04002B1E RID: 11038
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public EntityAlive target;
 
-	// Token: 0x02000660 RID: 1632
+	// Token: 0x02000669 RID: 1641
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public enum TargetTypes
 	{
-		// Token: 0x04002AAC RID: 10924
+		// Token: 0x04002B20 RID: 11040
 		self,
-		// Token: 0x04002AAD RID: 10925
+		// Token: 0x04002B21 RID: 11041
 		other,
-		// Token: 0x04002AAE RID: 10926
+		// Token: 0x04002B22 RID: 11042
 		instigator
 	}
 }

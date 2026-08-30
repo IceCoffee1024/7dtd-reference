@@ -1,20 +1,20 @@
 ﻿using System;
 
-// Token: 0x02000ABB RID: 2747
+// Token: 0x02000ACC RID: 2764
 public enum ProgressionType : byte
 {
-	// Token: 0x04003FEB RID: 16363
+	// Token: 0x0400407C RID: 16508
 	None,
-	// Token: 0x04003FEC RID: 16364
+	// Token: 0x0400407D RID: 16509
 	Attribute,
-	// Token: 0x04003FED RID: 16365
+	// Token: 0x0400407E RID: 16510
 	Skill,
-	// Token: 0x04003FEE RID: 16366
+	// Token: 0x0400407F RID: 16511
 	Perk,
-	// Token: 0x04003FEF RID: 16367
+	// Token: 0x04004080 RID: 16512
 	BookGroup,
-	// Token: 0x04003FF0 RID: 16368
+	// Token: 0x04004081 RID: 16513
 	Book,
-	// Token: 0x04003FF1 RID: 16369
+	// Token: 0x04004082 RID: 16514
 	Crafting
 }

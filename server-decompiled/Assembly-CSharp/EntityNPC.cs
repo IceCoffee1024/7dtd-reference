@@ -2,12 +2,12 @@
 using System.IO;
 using UnityEngine.Scripting;
 
-// Token: 0x020004BC RID: 1212
+// Token: 0x020004C0 RID: 1216
 [Preserve]
 public class EntityNPC : EntityAlive
 {
-	// Token: 0x17000448 RID: 1096
-	// (get) Token: 0x0600266D RID: 9837 RVA: 0x000EB306 File Offset: 0x000E9506
+	// Token: 0x1700044C RID: 1100
+	// (get) Token: 0x0600268F RID: 9871 RVA: 0x000EBF5A File Offset: 0x000EA15A
 	public override string LocalizedEntityName
 	{
 		get
@@ -16,8 +16,8 @@ public class EntityNPC : EntityAlive
 		}
 	}
 
-	// Token: 0x17000449 RID: 1097
-	// (get) Token: 0x0600266E RID: 9838 RVA: 0x000EB315 File Offset: 0x000E9515
+	// Token: 0x1700044D RID: 1101
+	// (get) Token: 0x06002690 RID: 9872 RVA: 0x000EBF69 File Offset: 0x000EA169
 	public NPCInfo NPCInfo
 	{
 		get
@@ -30,7 +30,7 @@ public class EntityNPC : EntityAlive
 		}
 	}
 
-	// Token: 0x0600266F RID: 9839 RVA: 0x000EB33C File Offset: 0x000E953C
+	// Token: 0x06002691 RID: 9873 RVA: 0x000EBF90 File Offset: 0x000EA190
 	public override void CopyPropertiesFromEntityClass()
 	{
 		base.CopyPropertiesFromEntityClass();
@@ -41,7 +41,7 @@ public class EntityNPC : EntityAlive
 		}
 	}
 
-	// Token: 0x06002670 RID: 9840 RVA: 0x000EB392 File Offset: 0x000E9592
+	// Token: 0x06002692 RID: 9874 RVA: 0x000EBFE6 File Offset: 0x000EA1E6
 	public override void Read(byte _version, BinaryReader _br)
 	{
 		base.Read(_version, _br);
@@ -51,65 +51,65 @@ public class EntityNPC : EntityAlive
 		}
 	}
 
-	// Token: 0x06002671 RID: 9841 RVA: 0x000E4994 File Offset: 0x000E2B94
+	// Token: 0x06002693 RID: 9875 RVA: 0x000E5624 File Offset: 0x000E3824
 	public override bool IsSavedToFile()
 	{
 		return (base.GetSpawnerSource() != EnumSpawnerSource.Dynamic || this.IsDead()) && base.IsSavedToFile();
 	}
 
-	// Token: 0x06002672 RID: 9842 RVA: 0x000EB3A8 File Offset: 0x000E95A8
+	// Token: 0x06002694 RID: 9876 RVA: 0x000EBFFC File Offset: 0x000EA1FC
 	public override float GetSeeDistance()
 	{
 		return 80f;
 	}
 
-	// Token: 0x06002673 RID: 9843 RVA: 0x000EB3B0 File Offset: 0x000E95B0
+	// Token: 0x06002695 RID: 9877 RVA: 0x000EC004 File Offset: 0x000EA204
 	public override void VisiblityCheck(float _distanceSqr, bool _masterIsZooming)
 	{
 		bool flag = _distanceSqr < (float)(_masterIsZooming ? 14400 : 8100);
 		this.emodel.SetVisible(flag, false);
 	}
 
-	// Token: 0x06002674 RID: 9844 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002696 RID: 9878 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool CanBePushed()
 	{
 		return false;
 	}
 
-	// Token: 0x06002675 RID: 9845 RVA: 0x000EB3DE File Offset: 0x000E95DE
+	// Token: 0x06002697 RID: 9879 RVA: 0x000EC032 File Offset: 0x000EA232
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool canDespawn()
 	{
 		return this.world.GetPlayers().Count == 0 && base.canDespawn();
 	}
 
-	// Token: 0x06002676 RID: 9846 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002698 RID: 9880 RVA: 0x00010E62 File Offset: 0x0000F062
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isRadiationSensitive()
 	{
 		return false;
 	}
 
-	// Token: 0x06002677 RID: 9847 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x06002699 RID: 9881 RVA: 0x00020021 File Offset: 0x0001E221
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isDetailedHeadBodyColliders()
 	{
 		return true;
 	}
 
-	// Token: 0x06002678 RID: 9848 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x0600269A RID: 9882 RVA: 0x00010E62 File Offset: 0x0000F062
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isGameMessageOnDeath()
 	{
 		return false;
 	}
 
-	// Token: 0x06002679 RID: 9849 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600269B RID: 9883 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void PlayVoiceSetEntry(string name, EntityPlayer player, bool ignoreTime = true, bool showReactionAnim = true)
 	{
 	}
 
-	// Token: 0x0600267A RID: 9850 RVA: 0x000EB3FC File Offset: 0x000E95FC
+	// Token: 0x0600269C RID: 9884 RVA: 0x000EC050 File Offset: 0x000EA250
 	public override string GetActivationText()
 	{
 		GameManager instance = GameManager.Instance;
@@ -132,6 +132,6 @@ public class EntityNPC : EntityAlive
 		return string.Format(Localization.Get("npcTooltipTalk", false, null), text, this.LocalizedEntityName);
 	}
 
-	// Token: 0x04001C78 RID: 7288
+	// Token: 0x04001C9A RID: 7322
 	public string npcID = "";
 }

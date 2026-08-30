@@ -2,12 +2,12 @@
 
 namespace MusicUtils.Enums
 {
-	// Token: 0x020019F8 RID: 6648
+	// Token: 0x02001A1F RID: 6687
 	public enum IntensityType
 	{
-		// Token: 0x04009953 RID: 39251
+		// Token: 0x04009A84 RID: 39556
 		lo,
-		// Token: 0x04009954 RID: 39252
+		// Token: 0x04009A85 RID: 39557
 		hi
 	}
 }

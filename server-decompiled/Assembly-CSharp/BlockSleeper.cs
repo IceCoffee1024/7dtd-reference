@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200014B RID: 331
+// Token: 0x0200014C RID: 332
 [Preserve]
 public class BlockSleeper : Block
 {
-	// Token: 0x06000926 RID: 2342 RVA: 0x0003FF3C File Offset: 0x0003E13C
+	// Token: 0x06000930 RID: 2352 RVA: 0x0004019C File Offset: 0x0003E39C
 	public BlockSleeper()
 	{
 		this.IsSleeperBlock = true;
 		this.HasTileEntity = true;
 	}
 
-	// Token: 0x06000927 RID: 2343 RVA: 0x0003FF84 File Offset: 0x0003E184
+	// Token: 0x06000931 RID: 2353 RVA: 0x000401E4 File Offset: 0x0003E3E4
 	public override void Init()
 	{
 		base.Init();
@@ -46,13 +46,13 @@ public class BlockSleeper : Block
 		base.Properties.ParseEnum<BlockSleeper.eMode>(BlockSleeper.PropSpawnMode, ref this.spawnMode);
 	}
 
-	// Token: 0x06000928 RID: 2344 RVA: 0x00040074 File Offset: 0x0003E274
+	// Token: 0x06000932 RID: 2354 RVA: 0x000402D4 File Offset: 0x0003E4D4
 	public override bool CanPlaceBlockAt(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool _bOmitCollideCheck = false)
 	{
 		return _world.IsEditor() || base.CanPlaceBlockAt(_world, _blockPos, _blockValue, _bOmitCollideCheck);
 	}
 
-	// Token: 0x06000929 RID: 2345 RVA: 0x0004008C File Offset: 0x0003E28C
+	// Token: 0x06000933 RID: 2355 RVA: 0x000402EC File Offset: 0x0003E4EC
 	public float GetSleeperRotation(BlockValue _blockValue)
 	{
 		byte rotation = _blockValue.rotation;
@@ -82,69 +82,69 @@ public class BlockSleeper : Block
 		}
 	}
 
-	// Token: 0x0600092A RID: 2346 RVA: 0x000400FF File Offset: 0x0003E2FF
+	// Token: 0x06000934 RID: 2356 RVA: 0x0004035F File Offset: 0x0003E55F
 	public bool ExcludesWalkType(int _walkType)
 	{
 		return this.excludedWalkTypes != null && this.excludedWalkTypes.Contains(_walkType);
 	}
 
-	// Token: 0x0600092B RID: 2347 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000935 RID: 2357 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsTileEntitySavedInPrefab()
 	{
 		return false;
 	}
 
-	// Token: 0x040009A4 RID: 2468
+	// Token: 0x040009A6 RID: 2470
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string PropPose = "Pose";
 
-	// Token: 0x040009A5 RID: 2469
+	// Token: 0x040009A7 RID: 2471
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string PropLookIdentity = "LookIdentity";
 
-	// Token: 0x040009A6 RID: 2470
+	// Token: 0x040009A8 RID: 2472
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string PropExcludeWalkType = "ExcludeWalkType";
 
-	// Token: 0x040009A7 RID: 2471
+	// Token: 0x040009A9 RID: 2473
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string PropSpawnGroup = "SpawnGroup";
 
-	// Token: 0x040009A8 RID: 2472
+	// Token: 0x040009AA RID: 2474
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string PropSpawnMode = "SpawnMode";
 
-	// Token: 0x040009A9 RID: 2473
+	// Token: 0x040009AB RID: 2475
 	public int pose;
 
-	// Token: 0x040009AA RID: 2474
+	// Token: 0x040009AC RID: 2476
 	public Vector3 look;
 
-	// Token: 0x040009AB RID: 2475
+	// Token: 0x040009AD RID: 2477
 	public string spawnGroup;
 
-	// Token: 0x040009AC RID: 2476
+	// Token: 0x040009AE RID: 2478
 	public BlockSleeper.eMode spawnMode;
 
-	// Token: 0x040009AD RID: 2477
+	// Token: 0x040009AF RID: 2479
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<int> excludedWalkTypes;
 
-	// Token: 0x040009AE RID: 2478
+	// Token: 0x040009B0 RID: 2480
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new BlockActivationCommand[] cmds = new BlockActivationCommand[]
 	{
 		new BlockActivationCommand("open", "dummy", true, false, null)
 	};
 
-	// Token: 0x0200014C RID: 332
+	// Token: 0x0200014D RID: 333
 	public enum eMode
 	{
-		// Token: 0x040009B0 RID: 2480
-		Normal,
-		// Token: 0x040009B1 RID: 2481
-		Bandit,
 		// Token: 0x040009B2 RID: 2482
+		Normal,
+		// Token: 0x040009B3 RID: 2483
+		Bandit,
+		// Token: 0x040009B4 RID: 2484
 		Infested
 	}
 }

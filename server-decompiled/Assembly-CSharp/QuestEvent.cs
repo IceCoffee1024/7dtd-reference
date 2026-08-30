@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000969 RID: 2409
+// Token: 0x0200097A RID: 2426
 [Preserve]
 public class QuestEvent
 {
-	// Token: 0x0600466B RID: 18027 RVA: 0x001BCA0E File Offset: 0x001BAC0E
+	// Token: 0x060046F1 RID: 18161 RVA: 0x001BF202 File Offset: 0x001BD402
 	public QuestEvent(string type)
 	{
 		this.EventType = type;
 	}
 
-	// Token: 0x0600466C RID: 18028 RVA: 0x001BCA34 File Offset: 0x001BAC34
+	// Token: 0x060046F2 RID: 18162 RVA: 0x001BF228 File Offset: 0x001BD428
 	public void HandleEvent(Quest quest)
 	{
 		if (this.IsServerOnly && !SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -28,7 +28,7 @@ public class QuestEvent
 		}
 	}
 
-	// Token: 0x0600466D RID: 18029 RVA: 0x001BCA9A File Offset: 0x001BAC9A
+	// Token: 0x060046F3 RID: 18163 RVA: 0x001BF28E File Offset: 0x001BD48E
 	public virtual void ParseProperties(DynamicProperties properties)
 	{
 		this.Properties = properties;
@@ -37,7 +37,7 @@ public class QuestEvent
 		properties.ParseBool(QuestEvent.PropServerOnly, ref this.IsServerOnly);
 	}
 
-	// Token: 0x0600466E RID: 18030 RVA: 0x001BCAD4 File Offset: 0x001BACD4
+	// Token: 0x060046F4 RID: 18164 RVA: 0x001BF2C8 File Offset: 0x001BD4C8
 	public QuestEvent Clone()
 	{
 		QuestEvent questEvent = new QuestEvent(this.EventType);
@@ -60,27 +60,27 @@ public class QuestEvent
 		return questEvent;
 	}
 
-	// Token: 0x04003865 RID: 14437
+	// Token: 0x040038F6 RID: 14582
 	public string EventType;
 
-	// Token: 0x04003866 RID: 14438
+	// Token: 0x040038F7 RID: 14583
 	public float Chance = 1f;
 
-	// Token: 0x04003867 RID: 14439
+	// Token: 0x040038F8 RID: 14584
 	public List<BaseQuestAction> Actions = new List<BaseQuestAction>();
 
-	// Token: 0x04003868 RID: 14440
+	// Token: 0x040038F9 RID: 14585
 	public bool IsServerOnly;
 
-	// Token: 0x04003869 RID: 14441
+	// Token: 0x040038FA RID: 14586
 	public static string PropChance = "chance";
 
-	// Token: 0x0400386A RID: 14442
+	// Token: 0x040038FB RID: 14587
 	public static string PropServerOnly = "server_only";
 
-	// Token: 0x0400386B RID: 14443
+	// Token: 0x040038FC RID: 14588
 	public QuestClass Owner;
 
-	// Token: 0x0400386C RID: 14444
+	// Token: 0x040038FD RID: 14589
 	public DynamicProperties Properties;
 }

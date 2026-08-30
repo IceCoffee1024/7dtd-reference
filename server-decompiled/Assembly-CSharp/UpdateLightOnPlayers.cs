@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020012DF RID: 4831
+// Token: 0x020012F9 RID: 4857
 public class UpdateLightOnPlayers : UpdateLight
 {
-	// Token: 0x060098D4 RID: 39124 RVA: 0x0039E850 File Offset: 0x0039CA50
+	// Token: 0x060099CF RID: 39375 RVA: 0x003A3AE8 File Offset: 0x003A1CE8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -48,7 +48,7 @@ public class UpdateLightOnPlayers : UpdateLight
 		base.UpdateLighting(0.15f);
 	}
 
-	// Token: 0x060098D5 RID: 39125 RVA: 0x0039E969 File Offset: 0x0039CB69
+	// Token: 0x060099D0 RID: 39376 RVA: 0x003A3C01 File Offset: 0x003A1E01
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnApplicationFocus(bool focusStatus)
 	{
@@ -56,33 +56,33 @@ public class UpdateLightOnPlayers : UpdateLight
 		this.isForceUpdate = true;
 	}
 
-	// Token: 0x060098D6 RID: 39126 RVA: 0x0039E97F File Offset: 0x0039CB7F
+	// Token: 0x060099D1 RID: 39377 RVA: 0x003A3C17 File Offset: 0x003A1E17
 	public void ForceUpdate()
 	{
 		this.updateDelay = 0f;
 	}
 
-	// Token: 0x04007311 RID: 29457
+	// Token: 0x040073E9 RID: 29673
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cUpdateTime = 0.05f;
 
-	// Token: 0x04007312 RID: 29458
+	// Token: 0x040073EA RID: 29674
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isForceUpdate;
 
-	// Token: 0x04007313 RID: 29459
+	// Token: 0x040073EB RID: 29675
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int forceUpdateFrame;
 
-	// Token: 0x04007314 RID: 29460
+	// Token: 0x040073EC RID: 29676
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool lastFPV;
 
-	// Token: 0x04007315 RID: 29461
+	// Token: 0x040073ED RID: 29677
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float updateDelay;

@@ -5,17 +5,17 @@ using Utf8Json;
 
 namespace Webserver.WebAPI.APIs.ServerState
 {
-	// Token: 0x02001AB8 RID: 6840
+	// Token: 0x02001ADF RID: 6879
 	[Preserve]
 	public class ServerInfo : KeyValueListAbs
 	{
-		// Token: 0x0600CD7E RID: 52606 RVA: 0x004AFD25 File Offset: 0x004ADF25
+		// Token: 0x0600CF07 RID: 52999 RVA: 0x004B6119 File Offset: 0x004B4319
 		public ServerInfo()
 			: base("ServerInfo")
 		{
 		}
 
-		// Token: 0x0600CD7F RID: 52607 RVA: 0x004AFD34 File Offset: 0x004ADF34
+		// Token: 0x0600CF08 RID: 53000 RVA: 0x004B6128 File Offset: 0x004B4328
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void iterateList(ref JsonWriter _writer, ref bool _first)
 		{
@@ -40,7 +40,7 @@ namespace Webserver.WebAPI.APIs.ServerState
 			}
 		}
 
-		// Token: 0x0600CD80 RID: 52608 RVA: 0x004AEB65 File Offset: 0x004ACD65
+		// Token: 0x0600CF09 RID: 53001 RVA: 0x004B4F59 File Offset: 0x004B3159
 		public override int DefaultPermissionLevel()
 		{
 			return 2000;

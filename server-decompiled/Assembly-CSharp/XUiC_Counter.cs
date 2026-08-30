@@ -1,18 +1,18 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EEF RID: 3823
+// Token: 0x02000F06 RID: 3846
 [Preserve]
 public class XUiC_Counter : XUiController
 {
-	// Token: 0x140000CF RID: 207
-	// (add) Token: 0x060077E6 RID: 30694 RVA: 0x002D4390 File Offset: 0x002D2590
-	// (remove) Token: 0x060077E7 RID: 30695 RVA: 0x002D43C8 File Offset: 0x002D25C8
+	// Token: 0x140000D0 RID: 208
+	// (add) Token: 0x0600789E RID: 30878 RVA: 0x002D831C File Offset: 0x002D651C
+	// (remove) Token: 0x0600789F RID: 30879 RVA: 0x002D8354 File Offset: 0x002D6554
 	public event XUiEvent_OnCountChanged OnCountChanged;
 
-	// Token: 0x17000E04 RID: 3588
-	// (get) Token: 0x060077E8 RID: 30696 RVA: 0x002D43FD File Offset: 0x002D25FD
-	// (set) Token: 0x060077E9 RID: 30697 RVA: 0x002D4405 File Offset: 0x002D2605
+	// Token: 0x17000E1E RID: 3614
+	// (get) Token: 0x060078A0 RID: 30880 RVA: 0x002D8389 File Offset: 0x002D6589
+	// (set) Token: 0x060078A1 RID: 30881 RVA: 0x002D8391 File Offset: 0x002D6591
 	public int Count
 	{
 		get
@@ -26,7 +26,7 @@ public class XUiC_Counter : XUiController
 		}
 	}
 
-	// Token: 0x060077EA RID: 30698 RVA: 0x002D4418 File Offset: 0x002D2618
+	// Token: 0x060078A2 RID: 30882 RVA: 0x002D83A4 File Offset: 0x002D65A4
 	public override void Init()
 	{
 		base.Init();
@@ -57,7 +57,7 @@ public class XUiC_Counter : XUiController
 		this.textInput.OnInputSelectedHandler += this.TextInput_HandleInputDeselected;
 	}
 
-	// Token: 0x060077EB RID: 30699 RVA: 0x002D452C File Offset: 0x002D272C
+	// Token: 0x060078A3 RID: 30883 RVA: 0x002D84B8 File Offset: 0x002D66B8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void HandleCountChangedEvent()
 	{
@@ -70,7 +70,7 @@ public class XUiC_Counter : XUiController
 		}
 	}
 
-	// Token: 0x060077EC RID: 30700 RVA: 0x002D4568 File Offset: 0x002D2768
+	// Token: 0x060078A4 RID: 30884 RVA: 0x002D84F4 File Offset: 0x002D66F4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void TextInput_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -95,7 +95,7 @@ public class XUiC_Counter : XUiController
 		this.HandleCountChangedEvent();
 	}
 
-	// Token: 0x060077ED RID: 30701 RVA: 0x002D4604 File Offset: 0x002D2804
+	// Token: 0x060078A5 RID: 30885 RVA: 0x002D8590 File Offset: 0x002D6790
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void HandleMaxCountOnPress(XUiController _sender, int _mouseButton)
 	{
@@ -103,7 +103,7 @@ public class XUiC_Counter : XUiController
 		this.HandleCountChangedEvent();
 	}
 
-	// Token: 0x060077EE RID: 30702 RVA: 0x002D4618 File Offset: 0x002D2818
+	// Token: 0x060078A6 RID: 30886 RVA: 0x002D85A4 File Offset: 0x002D67A4
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -117,7 +117,7 @@ public class XUiC_Counter : XUiController
 		}
 	}
 
-	// Token: 0x060077EF RID: 30703 RVA: 0x002D46C5 File Offset: 0x002D28C5
+	// Token: 0x060078A7 RID: 30887 RVA: 0x002D8651 File Offset: 0x002D6851
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void HandleCountDownOnPress(XUiController _sender, int _mouseButton)
 	{
@@ -130,7 +130,7 @@ public class XUiC_Counter : XUiController
 		this.ForceTextRefresh();
 	}
 
-	// Token: 0x060077F0 RID: 30704 RVA: 0x002D46F5 File Offset: 0x002D28F5
+	// Token: 0x060078A8 RID: 30888 RVA: 0x002D8681 File Offset: 0x002D6881
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void HandleCountUpOnPress(XUiController _sender, int _mouseButton)
 	{
@@ -143,7 +143,7 @@ public class XUiC_Counter : XUiController
 		}
 	}
 
-	// Token: 0x060077F1 RID: 30705 RVA: 0x002D472A File Offset: 0x002D292A
+	// Token: 0x060078A9 RID: 30889 RVA: 0x002D86B6 File Offset: 0x002D68B6
 	public void SetToMaxCount()
 	{
 		this.Count = this.MaxCount;
@@ -152,7 +152,7 @@ public class XUiC_Counter : XUiController
 		this.ForceTextRefresh();
 	}
 
-	// Token: 0x060077F2 RID: 30706 RVA: 0x002D474A File Offset: 0x002D294A
+	// Token: 0x060078AA RID: 30890 RVA: 0x002D86D6 File Offset: 0x002D68D6
 	public void SetCount(int count)
 	{
 		if (this.Count != count)
@@ -162,7 +162,7 @@ public class XUiC_Counter : XUiController
 		}
 	}
 
-	// Token: 0x060077F3 RID: 30707 RVA: 0x002D4764 File Offset: 0x002D2964
+	// Token: 0x060078AB RID: 30891 RVA: 0x002D86F0 File Offset: 0x002D68F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleStepClamping()
 	{
@@ -176,13 +176,13 @@ public class XUiC_Counter : XUiController
 		}
 	}
 
-	// Token: 0x060077F4 RID: 30708 RVA: 0x002D479C File Offset: 0x002D299C
+	// Token: 0x060078AC RID: 30892 RVA: 0x002D8728 File Offset: 0x002D6928
 	public void ForceTextRefresh()
 	{
 		((XUiV_Label)this.counter.ViewComponent).Text = (this.textInput.Text = this.count.ToString());
 	}
 
-	// Token: 0x060077F5 RID: 30709 RVA: 0x002D47D7 File Offset: 0x002D29D7
+	// Token: 0x060078AD RID: 30893 RVA: 0x002D8763 File Offset: 0x002D6963
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void TextInput_HandleInputDeselected(XUiController _sender, bool _selected)
 	{
@@ -192,37 +192,37 @@ public class XUiC_Counter : XUiController
 		}
 	}
 
-	// Token: 0x0400587A RID: 22650
+	// Token: 0x0400592C RID: 22828
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiController countUp;
 
-	// Token: 0x0400587B RID: 22651
+	// Token: 0x0400592D RID: 22829
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiController countDown;
 
-	// Token: 0x0400587C RID: 22652
+	// Token: 0x0400592E RID: 22830
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiController countMax;
 
-	// Token: 0x0400587D RID: 22653
+	// Token: 0x0400592F RID: 22831
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiController counter;
 
-	// Token: 0x0400587E RID: 22654
+	// Token: 0x04005930 RID: 22832
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_TextInput textInput;
 
-	// Token: 0x0400587F RID: 22655
+	// Token: 0x04005931 RID: 22833
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int count = 1;
 
-	// Token: 0x04005880 RID: 22656
+	// Token: 0x04005932 RID: 22834
 	public int MaxCount = 1;
 
-	// Token: 0x04005881 RID: 22657
+	// Token: 0x04005933 RID: 22835
 	public int Step = 1;
 
-	// Token: 0x04005882 RID: 22658
+	// Token: 0x04005934 RID: 22836
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiEvent_InputOnChangedEventHandler textInputChangedDelegate;
 }

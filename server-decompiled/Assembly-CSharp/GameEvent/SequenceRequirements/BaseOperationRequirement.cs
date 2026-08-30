@@ -3,19 +3,19 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x020018FB RID: 6395
+	// Token: 0x02001921 RID: 6433
 	[Preserve]
 	public class BaseOperationRequirement : BaseRequirement
 	{
-		// Token: 0x0600C522 RID: 50466 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C6A9 RID: 50857 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
 		}
 
-		// Token: 0x17001828 RID: 6184
-		// (get) Token: 0x0600C523 RID: 50467 RVA: 0x0048A380 File Offset: 0x00488580
-		// (set) Token: 0x0600C524 RID: 50468 RVA: 0x0048A38B File Offset: 0x0048858B
+		// Token: 0x1700189A RID: 6298
+		// (get) Token: 0x0600C6AA RID: 50858 RVA: 0x004906CC File Offset: 0x0048E8CC
+		// (set) Token: 0x0600C6AB RID: 50859 RVA: 0x004906D7 File Offset: 0x0048E8D7
 		public bool StringCompareCaseSensitive
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -30,7 +30,7 @@ namespace GameEvent.SequenceRequirements
 			}
 		}
 
-		// Token: 0x0600C525 RID: 50469 RVA: 0x0048A39C File Offset: 0x0048859C
+		// Token: 0x0600C6AC RID: 50860 RVA: 0x004906E8 File Offset: 0x0048E8E8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual bool compare(float valueA, float valueB)
 		{
@@ -65,7 +65,7 @@ namespace GameEvent.SequenceRequirements
 			}
 		}
 
-		// Token: 0x0600C526 RID: 50470 RVA: 0x0048A42C File Offset: 0x0048862C
+		// Token: 0x0600C6AD RID: 50861 RVA: 0x00490778 File Offset: 0x0048E978
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual bool compare(string valueA, string valueB)
 		{
@@ -101,7 +101,7 @@ namespace GameEvent.SequenceRequirements
 			}
 		}
 
-		// Token: 0x0600C527 RID: 50471 RVA: 0x0048A4C8 File Offset: 0x004886C8
+		// Token: 0x0600C6AE RID: 50862 RVA: 0x00490814 File Offset: 0x0048EA14
 		public override bool CanPerform(Entity target)
 		{
 			object obj = this.LeftSide(target);
@@ -113,28 +113,28 @@ namespace GameEvent.SequenceRequirements
 			return this.compare(Convert.ToSingle(obj), Convert.ToSingle(obj2));
 		}
 
-		// Token: 0x0600C528 RID: 50472 RVA: 0x0046E94A File Offset: 0x0046CB4A
+		// Token: 0x0600C6AF RID: 50863 RVA: 0x004746E6 File Offset: 0x004728E6
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual object LeftSide(Entity target)
 		{
 			return 0;
 		}
 
-		// Token: 0x0600C529 RID: 50473 RVA: 0x0046E94A File Offset: 0x0046CB4A
+		// Token: 0x0600C6B0 RID: 50864 RVA: 0x004746E6 File Offset: 0x004728E6
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual object RightSide(Entity target)
 		{
 			return 0;
 		}
 
-		// Token: 0x0600C52A RID: 50474 RVA: 0x0048A512 File Offset: 0x00488712
+		// Token: 0x0600C6B1 RID: 50865 RVA: 0x0049085E File Offset: 0x0048EA5E
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseEnum<BaseOperationRequirement.OperationTypes>(BaseOperationRequirement.PropOperation, ref this.operation);
 		}
 
-		// Token: 0x0600C52B RID: 50475 RVA: 0x0048A52C File Offset: 0x0048872C
+		// Token: 0x0600C6B2 RID: 50866 RVA: 0x00490878 File Offset: 0x0048EA78
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseRequirement CloneChildSettings()
 		{
@@ -145,59 +145,59 @@ namespace GameEvent.SequenceRequirements
 			};
 		}
 
-		// Token: 0x04009489 RID: 38025
+		// Token: 0x040095B2 RID: 38322
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public BaseOperationRequirement.OperationTypes operation = BaseOperationRequirement.OperationTypes.Equals;
 
-		// Token: 0x0400948A RID: 38026
+		// Token: 0x040095B3 RID: 38323
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropOperation = "operation";
 
-		// Token: 0x0400948B RID: 38027
+		// Token: 0x040095B4 RID: 38324
 		[PublicizedFrom(EAccessModifier.Private)]
 		public StringComparison stringComparison;
 
-		// Token: 0x020018FC RID: 6396
+		// Token: 0x02001922 RID: 6434
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum OperationTypes
 		{
-			// Token: 0x0400948D RID: 38029
+			// Token: 0x040095B6 RID: 38326
 			None,
-			// Token: 0x0400948E RID: 38030
+			// Token: 0x040095B7 RID: 38327
 			Equals,
-			// Token: 0x0400948F RID: 38031
+			// Token: 0x040095B8 RID: 38328
 			EQ,
-			// Token: 0x04009490 RID: 38032
+			// Token: 0x040095B9 RID: 38329
 			E,
-			// Token: 0x04009491 RID: 38033
+			// Token: 0x040095BA RID: 38330
 			NotEquals,
-			// Token: 0x04009492 RID: 38034
+			// Token: 0x040095BB RID: 38331
 			NEQ,
-			// Token: 0x04009493 RID: 38035
+			// Token: 0x040095BC RID: 38332
 			NE,
-			// Token: 0x04009494 RID: 38036
+			// Token: 0x040095BD RID: 38333
 			Less,
-			// Token: 0x04009495 RID: 38037
+			// Token: 0x040095BE RID: 38334
 			LessThan,
-			// Token: 0x04009496 RID: 38038
+			// Token: 0x040095BF RID: 38335
 			LT,
-			// Token: 0x04009497 RID: 38039
+			// Token: 0x040095C0 RID: 38336
 			Greater,
-			// Token: 0x04009498 RID: 38040
+			// Token: 0x040095C1 RID: 38337
 			GreaterThan,
-			// Token: 0x04009499 RID: 38041
+			// Token: 0x040095C2 RID: 38338
 			GT,
-			// Token: 0x0400949A RID: 38042
+			// Token: 0x040095C3 RID: 38339
 			LessOrEqual,
-			// Token: 0x0400949B RID: 38043
+			// Token: 0x040095C4 RID: 38340
 			LessThanOrEqualTo,
-			// Token: 0x0400949C RID: 38044
+			// Token: 0x040095C5 RID: 38341
 			LTE,
-			// Token: 0x0400949D RID: 38045
+			// Token: 0x040095C6 RID: 38342
 			GreaterOrEqual,
-			// Token: 0x0400949E RID: 38046
+			// Token: 0x040095C7 RID: 38343
 			GreaterThanOrEqualTo,
-			// Token: 0x0400949F RID: 38047
+			// Token: 0x040095C8 RID: 38344
 			GTE
 		}
 	}

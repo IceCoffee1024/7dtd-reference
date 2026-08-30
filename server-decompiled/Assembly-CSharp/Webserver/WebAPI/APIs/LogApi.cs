@@ -7,17 +7,17 @@ using Utf8Json;
 
 namespace Webserver.WebAPI.APIs
 {
-	// Token: 0x02001AAC RID: 6828
+	// Token: 0x02001AD3 RID: 6867
 	[Preserve]
 	public class LogApi : AbsRestApi
 	{
-		// Token: 0x0600CD4F RID: 52559 RVA: 0x004AE863 File Offset: 0x004ACA63
+		// Token: 0x0600CED8 RID: 52952 RVA: 0x004B4C57 File Offset: 0x004B2E57
 		public LogApi()
 			: base("Log")
 		{
 		}
 
-		// Token: 0x0600CD50 RID: 52560 RVA: 0x004AE870 File Offset: 0x004ACA70
+		// Token: 0x0600CED9 RID: 52953 RVA: 0x004B4C64 File Offset: 0x004B2E64
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void HandleRestGet(RequestContext _context)
 		{
@@ -67,7 +67,7 @@ namespace Webserver.WebAPI.APIs
 			AbsRestApi.SendEnvelopedResult(_context, ref jsonWriter, HttpStatusCode.OK, null, null, null);
 		}
 
-		// Token: 0x0600CD51 RID: 52561 RVA: 0x004AE9B8 File Offset: 0x004ACBB8
+		// Token: 0x0600CEDA RID: 52954 RVA: 0x004B4DAC File Offset: 0x004B2FAC
 		public static void WriteLogMessageObject(ref JsonWriter _writer, LogBuffer.LogEntry _logEntry)
 		{
 			_writer.WriteRaw(LogApi.jsonIdKey);
@@ -85,43 +85,43 @@ namespace Webserver.WebAPI.APIs
 			_writer.WriteEndObject();
 		}
 
-		// Token: 0x04009BAC RID: 39852
+		// Token: 0x04009CDD RID: 40157
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int maxCount = 1000;
 
-		// Token: 0x04009BAD RID: 39853
+		// Token: 0x04009CDE RID: 40158
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyEntries = JsonWriter.GetEncodedPropertyNameWithBeginObject("entries");
 
-		// Token: 0x04009BAE RID: 39854
+		// Token: 0x04009CDF RID: 40159
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyFirstLine = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("firstLine");
 
-		// Token: 0x04009BAF RID: 39855
+		// Token: 0x04009CE0 RID: 40160
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonKeyLastLine = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("lastLine");
 
-		// Token: 0x04009BB0 RID: 39856
+		// Token: 0x04009CE1 RID: 40161
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonIdKey = JsonWriter.GetEncodedPropertyNameWithBeginObject("id");
 
-		// Token: 0x04009BB1 RID: 39857
+		// Token: 0x04009CE2 RID: 40162
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonMsgKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("msg");
 
-		// Token: 0x04009BB2 RID: 39858
+		// Token: 0x04009CE3 RID: 40163
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonTypeKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("type");
 
-		// Token: 0x04009BB3 RID: 39859
+		// Token: 0x04009CE4 RID: 40164
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonTraceKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("trace");
 
-		// Token: 0x04009BB4 RID: 39860
+		// Token: 0x04009CE5 RID: 40165
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonIsotimeKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("isotime");
 
-		// Token: 0x04009BB5 RID: 39861
+		// Token: 0x04009CE6 RID: 40166
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonUptimeKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("uptime");
 	}

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200138D RID: 5005
+// Token: 0x020013A8 RID: 5032
 public static class BlockFaces
 {
-	// Token: 0x06009DA1 RID: 40353 RVA: 0x003B81FC File Offset: 0x003B63FC
+	// Token: 0x06009E9E RID: 40606 RVA: 0x003BD540 File Offset: 0x003BB740
 	public static BlockFace CharToFace(char c)
 	{
 		if (c <= 'W')
@@ -79,7 +79,7 @@ public static class BlockFaces
 		return BlockFace.Top;
 	}
 
-	// Token: 0x06009DA2 RID: 40354 RVA: 0x003B828C File Offset: 0x003B648C
+	// Token: 0x06009E9F RID: 40607 RVA: 0x003BD5D0 File Offset: 0x003BB7D0
 	public static BlockFace RotateFace(this BlockFace face, int rotation)
 	{
 		Vector3 vector = Vector3.zero;
@@ -132,7 +132,7 @@ public static class BlockFaces
 		return face;
 	}
 
-	// Token: 0x06009DA3 RID: 40355 RVA: 0x003B8358 File Offset: 0x003B6558
+	// Token: 0x06009EA0 RID: 40608 RVA: 0x003BD69C File Offset: 0x003BB89C
 	public static Vector3 GetNormal(this BlockFace face)
 	{
 		Vector3 vector;

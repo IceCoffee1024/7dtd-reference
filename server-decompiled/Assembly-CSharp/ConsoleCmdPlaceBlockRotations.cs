@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200025A RID: 602
+// Token: 0x0200025E RID: 606
 [Preserve]
 public class ConsoleCmdPlaceBlockRotations : ConsoleCmdAbstract
 {
-	// Token: 0x170001D7 RID: 471
-	// (get) Token: 0x060011ED RID: 4589 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x170001D8 RID: 472
+	// (get) Token: 0x060011FF RID: 4607 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -17,28 +17,28 @@ public class ConsoleCmdPlaceBlockRotations : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060011EE RID: 4590 RVA: 0x00070002 File Offset: 0x0006E202
+	// Token: 0x06001200 RID: 4608 RVA: 0x0007065E File Offset: 0x0006E85E
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Places all rotations of the currently held block";
 	}
 
-	// Token: 0x060011EF RID: 4591 RVA: 0x00070009 File Offset: 0x0006E209
+	// Token: 0x06001201 RID: 4609 RVA: 0x00070665 File Offset: 0x0006E865
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Places the block you currently hold in your hand in all supported rotations. Starts\nat the current selection box and spreads out towards the right relative to the\ncurrent view direction of the player. Spaces out each block by 1m meter.";
 	}
 
-	// Token: 0x060011F0 RID: 4592 RVA: 0x00070010 File Offset: 0x0006E210
+	// Token: 0x06001202 RID: 4610 RVA: 0x0007066C File Offset: 0x0006E86C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "placeblockrotations", "pbr" };
 	}
 
-	// Token: 0x060011F1 RID: 4593 RVA: 0x00070028 File Offset: 0x0006E228
+	// Token: 0x06001203 RID: 4611 RVA: 0x00070684 File Offset: 0x0006E884
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (!_senderInfo.IsLocalGame)
@@ -97,7 +97,7 @@ public class ConsoleCmdPlaceBlockRotations : ConsoleCmdAbstract
 		while (blockValue.rotation != 0);
 	}
 
-	// Token: 0x060011F2 RID: 4594 RVA: 0x000701B4 File Offset: 0x0006E3B4
+	// Token: 0x06001204 RID: 4612 RVA: 0x00070810 File Offset: 0x0006EA10
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void PlaceBlock(BlockValue _blockValue, ItemClassBlock.ItemBlockInventoryData _holdingData, Vector3i _placementPos, EntityPlayerLocal _player)
 	{

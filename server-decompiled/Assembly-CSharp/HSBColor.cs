@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001400 RID: 5120
+// Token: 0x0200141B RID: 5147
 [Serializable]
 public struct HSBColor
 {
-	// Token: 0x0600A0C6 RID: 41158 RVA: 0x003C5DC8 File Offset: 0x003C3FC8
+	// Token: 0x0600A1C3 RID: 41411 RVA: 0x003CB10C File Offset: 0x003C930C
 	public HSBColor(float h, float s, float b, float a)
 	{
 		this.h = h;
@@ -14,7 +14,7 @@ public struct HSBColor
 		this.a = a;
 	}
 
-	// Token: 0x0600A0C7 RID: 41159 RVA: 0x003C5DE7 File Offset: 0x003C3FE7
+	// Token: 0x0600A1C4 RID: 41412 RVA: 0x003CB12B File Offset: 0x003C932B
 	public HSBColor(float h, float s, float b)
 	{
 		this.h = h;
@@ -23,7 +23,7 @@ public struct HSBColor
 		this.a = 1f;
 	}
 
-	// Token: 0x0600A0C8 RID: 41160 RVA: 0x003C5E0C File Offset: 0x003C400C
+	// Token: 0x0600A1C5 RID: 41413 RVA: 0x003CB150 File Offset: 0x003C9350
 	public HSBColor(Color col)
 	{
 		HSBColor hsbcolor = HSBColor.FromColor(col);
@@ -33,7 +33,7 @@ public struct HSBColor
 		this.a = hsbcolor.a;
 	}
 
-	// Token: 0x0600A0C9 RID: 41161 RVA: 0x003C5E50 File Offset: 0x003C4050
+	// Token: 0x0600A1C6 RID: 41414 RVA: 0x003CB194 File Offset: 0x003C9394
 	public static HSBColor FromColor(Color color)
 	{
 		HSBColor hsbcolor = new HSBColor(0f, 0f, 0f, color.a);
@@ -80,7 +80,7 @@ public struct HSBColor
 		return hsbcolor;
 	}
 
-	// Token: 0x0600A0CA RID: 41162 RVA: 0x003C5F94 File Offset: 0x003C4194
+	// Token: 0x0600A1C7 RID: 41415 RVA: 0x003CB2D8 File Offset: 0x003C94D8
 	public static Color ToColor(HSBColor hsbColor)
 	{
 		float num = hsbColor.b;
@@ -138,13 +138,13 @@ public struct HSBColor
 		return new Color(Mathf.Clamp01(num), Mathf.Clamp01(num2), Mathf.Clamp01(num3), hsbColor.a);
 	}
 
-	// Token: 0x0600A0CB RID: 41163 RVA: 0x003C6108 File Offset: 0x003C4308
+	// Token: 0x0600A1C8 RID: 41416 RVA: 0x003CB44C File Offset: 0x003C964C
 	public Color ToColor()
 	{
 		return HSBColor.ToColor(this);
 	}
 
-	// Token: 0x0600A0CC RID: 41164 RVA: 0x003C6118 File Offset: 0x003C4318
+	// Token: 0x0600A1C9 RID: 41417 RVA: 0x003CB45C File Offset: 0x003C965C
 	public override string ToString()
 	{
 		return string.Concat(new string[]
@@ -158,7 +158,7 @@ public struct HSBColor
 		});
 	}
 
-	// Token: 0x0600A0CD RID: 41165 RVA: 0x003C6174 File Offset: 0x003C4374
+	// Token: 0x0600A1CA RID: 41418 RVA: 0x003CB4B8 File Offset: 0x003C96B8
 	public static HSBColor Lerp(HSBColor a, HSBColor b, float t)
 	{
 		float num;
@@ -200,15 +200,15 @@ public struct HSBColor
 		return new HSBColor(num, num2, Mathf.Lerp(a.b, b.b, t), Mathf.Lerp(a.a, b.a, t));
 	}
 
-	// Token: 0x040078CF RID: 30927
+	// Token: 0x040079A8 RID: 31144
 	public float h;
 
-	// Token: 0x040078D0 RID: 30928
+	// Token: 0x040079A9 RID: 31145
 	public float s;
 
-	// Token: 0x040078D1 RID: 30929
+	// Token: 0x040079AA RID: 31146
 	public float b;
 
-	// Token: 0x040078D2 RID: 30930
+	// Token: 0x040079AB RID: 31147
 	public float a;
 }

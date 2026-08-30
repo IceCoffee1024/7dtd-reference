@@ -6,12 +6,12 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001012 RID: 4114
+// Token: 0x0200102B RID: 4139
 [Preserve]
 public class XUiC_SignEditorWindow : XUiController
 {
-	// Token: 0x17000F09 RID: 3849
-	// (get) Token: 0x060081EB RID: 33259 RVA: 0x00315DAD File Offset: 0x00313FAD
+	// Token: 0x17000F42 RID: 3906
+	// (get) Token: 0x060082DD RID: 33501 RVA: 0x0031A5D5 File Offset: 0x003187D5
 	public XUiC_SignEditorWindow.AffectMode CurrentAffectMode
 	{
 		get
@@ -20,7 +20,7 @@ public class XUiC_SignEditorWindow : XUiController
 		}
 	}
 
-	// Token: 0x060081EC RID: 33260 RVA: 0x00315DB8 File Offset: 0x00313FB8
+	// Token: 0x060082DE RID: 33502 RVA: 0x0031A5E0 File Offset: 0x003187E0
 	public override void Init()
 	{
 		base.Init();
@@ -126,7 +126,7 @@ public class XUiC_SignEditorWindow : XUiController
 		xuiC_SignLayerGrid6.OnAddLayerPressed = (Action<int>)Delegate.Combine(xuiC_SignLayerGrid6.OnAddLayerPressed, new Action<int>(this.BeginAddLayerFlow));
 	}
 
-	// Token: 0x060081ED RID: 33261 RVA: 0x00316508 File Offset: 0x00314708
+	// Token: 0x060082DF RID: 33503 RVA: 0x0031AD30 File Offset: 0x00318F30
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TxtLayerName_OnChangeHandler(XUiController sender, string text, bool changeFromCode)
 	{
@@ -138,7 +138,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.MarkChanged();
 	}
 
-	// Token: 0x060081EE RID: 33262 RVA: 0x00316520 File Offset: 0x00314720
+	// Token: 0x060082E0 RID: 33504 RVA: 0x0031AD48 File Offset: 0x00318F48
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleMultiSelectionDeselect(bool wasPrimary)
 	{
@@ -148,7 +148,7 @@ public class XUiC_SignEditorWindow : XUiController
 		}
 	}
 
-	// Token: 0x060081EF RID: 33263 RVA: 0x0031652C File Offset: 0x0031472C
+	// Token: 0x060082E1 RID: 33505 RVA: 0x0031AD54 File Offset: 0x00318F54
 	public static void Open(LocalPlayerUI _playerUi, SignData signData, GlobalSignId signId)
 	{
 		XUiC_SignEditorWindow childByType = _playerUi.xui.FindWindowGroupByName(XUiC_SignEditorWindow.ID).GetChildByType<XUiC_SignEditorWindow>();
@@ -159,7 +159,7 @@ public class XUiC_SignEditorWindow : XUiController
 		_playerUi.windowManager.Open(XUiC_SignEditorWindow.ID, true);
 	}
 
-	// Token: 0x060081F0 RID: 33264 RVA: 0x0031657C File Offset: 0x0031477C
+	// Token: 0x060082E2 RID: 33506 RVA: 0x0031ADA4 File Offset: 0x00318FA4
 	public static void Open(LocalPlayerUI _playerUi, TEFeatureCanvas _feature)
 	{
 		XUiC_SignEditorWindow childByType = _playerUi.xui.FindWindowGroupByName(XUiC_SignEditorWindow.ID).GetChildByType<XUiC_SignEditorWindow>();
@@ -178,7 +178,7 @@ public class XUiC_SignEditorWindow : XUiController
 		_playerUi.windowManager.Open(XUiC_SignEditorWindow.ID, true);
 	}
 
-	// Token: 0x060081F1 RID: 33265 RVA: 0x00316608 File Offset: 0x00314808
+	// Token: 0x060082E3 RID: 33507 RVA: 0x0031AE30 File Offset: 0x00319030
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -200,7 +200,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.xui.playerUI.windowManager.IsInputLocked = true;
 	}
 
-	// Token: 0x060081F2 RID: 33266 RVA: 0x003166D9 File Offset: 0x003148D9
+	// Token: 0x060082E4 RID: 33508 RVA: 0x0031AF01 File Offset: 0x00319101
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -208,14 +208,14 @@ public class XUiC_SignEditorWindow : XUiController
 		this.historyStateManager.Reset();
 	}
 
-	// Token: 0x060081F3 RID: 33267 RVA: 0x00316702 File Offset: 0x00314902
+	// Token: 0x060082E5 RID: 33509 RVA: 0x0031AF2A File Offset: 0x0031912A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnBeforeApplyingChange(string changeDescription, bool forceDirty = false)
 	{
 		this.historyStateManager.ProcessPendingChange(changeDescription, forceDirty);
 	}
 
-	// Token: 0x060081F4 RID: 33268 RVA: 0x00316711 File Offset: 0x00314911
+	// Token: 0x060082E6 RID: 33510 RVA: 0x0031AF39 File Offset: 0x00319139
 	public void RequestAffectMode(XUiC_SignEditorWindow.AffectMode requestedMode)
 	{
 		if (!(this.selectedLayer is SignData.GroupSignLayer))
@@ -231,7 +231,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.SetAffectMode(requestedMode);
 	}
 
-	// Token: 0x060081F5 RID: 33269 RVA: 0x00316740 File Offset: 0x00314940
+	// Token: 0x060082E7 RID: 33511 RVA: 0x0031AF68 File Offset: 0x00319168
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetAffectMode(XUiC_SignEditorWindow.AffectMode newMode)
 	{
@@ -249,7 +249,7 @@ public class XUiC_SignEditorWindow : XUiController
 		onAffectModeChanged(this.currentAffectMode);
 	}
 
-	// Token: 0x060081F6 RID: 33270 RVA: 0x00316774 File Offset: 0x00314974
+	// Token: 0x060082E8 RID: 33512 RVA: 0x0031AF9C File Offset: 0x0031919C
 	public void RestoreAffectModeFromHistory(XUiC_SignEditorWindow.AffectMode mode)
 	{
 		if (!(this.selectedLayer is SignData.GroupSignLayer))
@@ -268,7 +268,7 @@ public class XUiC_SignEditorWindow : XUiController
 		}
 	}
 
-	// Token: 0x060081F7 RID: 33271 RVA: 0x003167AC File Offset: 0x003149AC
+	// Token: 0x060082E9 RID: 33513 RVA: 0x0031AFD4 File Offset: 0x003191D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector2 WorldDeltaToGroupLocalDelta(SignData.GroupSignLayer group, Vector2 worldDelta)
 	{
@@ -282,7 +282,7 @@ public class XUiC_SignEditorWindow : XUiController
 		return new Vector2(vector.x * num4, vector.y * num5);
 	}
 
-	// Token: 0x060081F8 RID: 33272 RVA: 0x00316874 File Offset: 0x00314A74
+	// Token: 0x060082EA RID: 33514 RVA: 0x0031B09C File Offset: 0x0031929C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void RotateGroupChildrenAroundOrigin(SignData.GroupSignLayer group, float deltaDegrees)
 	{
@@ -298,7 +298,7 @@ public class XUiC_SignEditorWindow : XUiController
 		}
 	}
 
-	// Token: 0x060081F9 RID: 33273 RVA: 0x00316904 File Offset: 0x00314B04
+	// Token: 0x060082EB RID: 33515 RVA: 0x0031B12C File Offset: 0x0031932C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ScaleGroupChildrenAroundOrigin(SignData.GroupSignLayer group, Vector2 factor)
 	{
@@ -310,7 +310,7 @@ public class XUiC_SignEditorWindow : XUiController
 		}
 	}
 
-	// Token: 0x060081FA RID: 33274 RVA: 0x003169B8 File Offset: 0x00314BB8
+	// Token: 0x060082EC RID: 33516 RVA: 0x0031B1E0 File Offset: 0x003193E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string DecorateChangeDescription(string baseDescription)
 	{
@@ -326,7 +326,7 @@ public class XUiC_SignEditorWindow : XUiController
 		return baseDescription + " [Affect Pivot]";
 	}
 
-	// Token: 0x060081FB RID: 33275 RVA: 0x003169F0 File Offset: 0x00314BF0
+	// Token: 0x060082ED RID: 33517 RVA: 0x0031B218 File Offset: 0x00319418
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryGetAffectTargetGroup(out SignData.GroupSignLayer group)
 	{
@@ -344,7 +344,7 @@ public class XUiC_SignEditorWindow : XUiController
 		return true;
 	}
 
-	// Token: 0x060081FC RID: 33276 RVA: 0x00316A34 File Offset: 0x00314C34
+	// Token: 0x060082EE RID: 33518 RVA: 0x0031B25C File Offset: 0x0031945C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateAspect()
 	{
@@ -363,7 +363,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.OnFrameAspectChanged();
 	}
 
-	// Token: 0x060081FD RID: 33277 RVA: 0x00316B08 File Offset: 0x00314D08
+	// Token: 0x060082EF RID: 33519 RVA: 0x0031B330 File Offset: 0x00319530
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnAspectText_OnChangeHandler(XUiController sender, string text, bool changeFromCode)
 	{
@@ -385,7 +385,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.canvasAspect = ((num3 > 1f) ? new Vector2(1f, 1f / num3) : new Vector2(num3, 1f));
 	}
 
-	// Token: 0x060081FE RID: 33278 RVA: 0x00316B84 File Offset: 0x00314D84
+	// Token: 0x060082F0 RID: 33520 RVA: 0x0031B3AC File Offset: 0x003195AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnAspectFit_OnPressed(XUiController sender, int mouseButton)
 	{
@@ -397,7 +397,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.OnFrameAspectChanged();
 	}
 
-	// Token: 0x060081FF RID: 33279 RVA: 0x00316C2C File Offset: 0x00314E2C
+	// Token: 0x060082F1 RID: 33521 RVA: 0x0031B454 File Offset: 0x00319654
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnAspectSquare_OnPressed(XUiController sender, int mouseButton)
 	{
@@ -405,7 +405,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.OnFrameAspectChanged();
 	}
 
-	// Token: 0x06008200 RID: 33280 RVA: 0x00316C3F File Offset: 0x00314E3F
+	// Token: 0x060082F2 RID: 33522 RVA: 0x0031B467 File Offset: 0x00319667
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnFrameAspectChanged()
 	{
@@ -413,7 +413,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.txtAspectVertical.Text = this.canvasAspect.y.ToString();
 	}
 
-	// Token: 0x06008201 RID: 33281 RVA: 0x00316C78 File Offset: 0x00314E78
+	// Token: 0x060082F3 RID: 33523 RVA: 0x0031B4A0 File Offset: 0x003196A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CreateWorkingCopy()
 	{
@@ -422,7 +422,7 @@ public class XUiC_SignEditorWindow : XUiController
 		SignDataManager.Instance.TryGetSignComplexityInfo(this.workingSignId, out this.signComplexityInfo);
 	}
 
-	// Token: 0x06008202 RID: 33282 RVA: 0x00316CCD File Offset: 0x00314ECD
+	// Token: 0x060082F4 RID: 33524 RVA: 0x0031B4F5 File Offset: 0x003196F5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MarkChanged()
 	{
@@ -431,7 +431,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06008203 RID: 33283 RVA: 0x00316CF0 File Offset: 0x00314EF0
+	// Token: 0x060082F5 RID: 33525 RVA: 0x0031B518 File Offset: 0x00319718
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RefreshComplexityInfo()
 	{
@@ -463,7 +463,7 @@ public class XUiC_SignEditorWindow : XUiController
 		Log.Error(string.Format("Failed to retrieve valid complexity info for sign: {0}", this.workingSignId));
 	}
 
-	// Token: 0x06008204 RID: 33284 RVA: 0x00316E28 File Offset: 0x00315028
+	// Token: 0x060082F6 RID: 33526 RVA: 0x0031B650 File Offset: 0x00319850
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetLayerSelected(SignData.SignLayer layer)
 	{
@@ -515,7 +515,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.RefreshLayerSettings(text ?? string.Empty);
 	}
 
-	// Token: 0x06008205 RID: 33285 RVA: 0x00316F14 File Offset: 0x00315114
+	// Token: 0x060082F7 RID: 33527 RVA: 0x0031B73C File Offset: 0x0031993C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RefreshLayerSettings(string autoSelectCategory)
 	{
@@ -643,7 +643,7 @@ public class XUiC_SignEditorWindow : XUiController
 		goto IL_045A;
 	}
 
-	// Token: 0x06008206 RID: 33286 RVA: 0x003173EC File Offset: 0x003155EC
+	// Token: 0x060082F8 RID: 33528 RVA: 0x0031BC14 File Offset: 0x00319E14
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleWarpAdded(string warpName)
 	{
@@ -651,7 +651,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.RefreshLayerSettings((((signLayer != null) ? signLayer.warps : null) != null) ? string.Format("{0}_{1}", warpName, this.selectedLayer.warps.Count - 1) : string.Empty);
 	}
 
-	// Token: 0x06008207 RID: 33287 RVA: 0x0031743C File Offset: 0x0031563C
+	// Token: 0x060082F9 RID: 33529 RVA: 0x0031BC64 File Offset: 0x00319E64
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleWarpRemoved()
 	{
@@ -660,14 +660,14 @@ public class XUiC_SignEditorWindow : XUiController
 		this.RefreshLayerSettings((categoryByIndex == null) ? string.Empty : categoryByIndex.CategoryName);
 	}
 
-	// Token: 0x06008208 RID: 33288 RVA: 0x0031748A File Offset: 0x0031568A
+	// Token: 0x060082FA RID: 33530 RVA: 0x0031BCB2 File Offset: 0x00319EB2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleMaskModeChanged()
 	{
 		this.signLayerGrid.RefreshSelectedLayerBindings();
 	}
 
-	// Token: 0x06008209 RID: 33289 RVA: 0x00317498 File Offset: 0x00315698
+	// Token: 0x060082FB RID: 33531 RVA: 0x0031BCC0 File Offset: 0x00319EC0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnWillRender(Material mat)
 	{
@@ -687,7 +687,7 @@ public class XUiC_SignEditorWindow : XUiController
 		mat.SetVector(SignShaderIDs._Crosshair, new Vector4(0f, 0f, 0f, 0f));
 	}
 
-	// Token: 0x0600820A RID: 33290 RVA: 0x003175A0 File Offset: 0x003157A0
+	// Token: 0x060082FC RID: 33532 RVA: 0x0031BDC8 File Offset: 0x00319FC8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPulseOverlayWillRender(Material mat)
 	{
@@ -703,7 +703,7 @@ public class XUiC_SignEditorWindow : XUiController
 		mat.SetVector(SignShaderIDs._AtlasArray_ST, vector);
 	}
 
-	// Token: 0x0600820B RID: 33291 RVA: 0x00317658 File Offset: 0x00315858
+	// Token: 0x060082FD RID: 33533 RVA: 0x0031BE80 File Offset: 0x0031A080
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnHoverOverlayWillRender(Material mat)
 	{
@@ -718,7 +718,7 @@ public class XUiC_SignEditorWindow : XUiController
 		mat.SetVector(SignShaderIDs._AtlasArray_ST, vector);
 	}
 
-	// Token: 0x0600820C RID: 33292 RVA: 0x00317700 File Offset: 0x00315900
+	// Token: 0x060082FE RID: 33534 RVA: 0x0031BF28 File Offset: 0x0031A128
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CategoryList_CategoryChanged(XUiC_CategoryEntry _categoryEntry)
 	{
@@ -734,28 +734,28 @@ public class XUiC_SignEditorWindow : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x0600820D RID: 33293 RVA: 0x00317794 File Offset: 0x00315994
+	// Token: 0x060082FF RID: 33535 RVA: 0x0031BFBC File Offset: 0x0031A1BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnSave_OnPressed(XUiController _sender, int _mouseButton)
 	{
 		this.Save();
 	}
 
-	// Token: 0x0600820E RID: 33294 RVA: 0x0031779C File Offset: 0x0031599C
+	// Token: 0x06008300 RID: 33536 RVA: 0x0031BFC4 File Offset: 0x0031A1C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnSaveCopy_OnPressed(XUiController sender, int mouseButton)
 	{
 		this.SaveCopy();
 	}
 
-	// Token: 0x0600820F RID: 33295 RVA: 0x003177A4 File Offset: 0x003159A4
+	// Token: 0x06008301 RID: 33537 RVA: 0x0031BFCC File Offset: 0x0031A1CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnQuit_OnPressed(XUiController _sender, int _mouseButton)
 	{
 		this.Quit(false);
 	}
 
-	// Token: 0x06008210 RID: 33296 RVA: 0x003177B0 File Offset: 0x003159B0
+	// Token: 0x06008302 RID: 33538 RVA: 0x0031BFD8 File Offset: 0x0031A1D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Save()
 	{
@@ -777,7 +777,7 @@ public class XUiC_SignEditorWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008211 RID: 33297 RVA: 0x00317840 File Offset: 0x00315A40
+	// Token: 0x06008303 RID: 33539 RVA: 0x0031C068 File Offset: 0x0031A268
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SaveCopy()
 	{
@@ -802,7 +802,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.Refresh();
 	}
 
-	// Token: 0x06008212 RID: 33298 RVA: 0x00317944 File Offset: 0x00315B44
+	// Token: 0x06008304 RID: 33540 RVA: 0x0031C16C File Offset: 0x0031A36C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Quit(bool force = false)
 	{
@@ -818,7 +818,7 @@ public class XUiC_SignEditorWindow : XUiController
 		XUiC_SignGalleryWindow.Open(this.xui.playerUI, this.targetEntity);
 	}
 
-	// Token: 0x06008213 RID: 33299 RVA: 0x003179E6 File Offset: 0x00315BE6
+	// Token: 0x06008305 RID: 33541 RVA: 0x0031C20E File Offset: 0x0031A40E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDiscardChangesPromptResult(XUiC_ConfirmationPrompt.Result result)
 	{
@@ -828,7 +828,7 @@ public class XUiC_SignEditorWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008214 RID: 33300 RVA: 0x003179F6 File Offset: 0x00315BF6
+	// Token: 0x06008306 RID: 33542 RVA: 0x0031C21E File Offset: 0x0031A41E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TxtSignName_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -841,7 +841,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.MarkChanged();
 	}
 
-	// Token: 0x06008215 RID: 33301 RVA: 0x00317A1C File Offset: 0x00315C1C
+	// Token: 0x06008307 RID: 33543 RVA: 0x0031C244 File Offset: 0x0031A444
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleCanvasScrolled(XUiController _sender, float _delta)
 	{
@@ -873,7 +873,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.MarkChanged();
 	}
 
-	// Token: 0x06008216 RID: 33302 RVA: 0x00317AF4 File Offset: 0x00315CF4
+	// Token: 0x06008308 RID: 33544 RVA: 0x0031C31C File Offset: 0x0031A51C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleCanvasDragged(XUiController _sender, EDragType _dragType, Vector2 _mousePositionDelta)
 	{
@@ -892,7 +892,7 @@ public class XUiC_SignEditorWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008217 RID: 33303 RVA: 0x00317B31 File Offset: 0x00315D31
+	// Token: 0x06008309 RID: 33545 RVA: 0x0031C359 File Offset: 0x0031A559
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ResetView()
 	{
@@ -900,7 +900,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.viewScale = 1f;
 	}
 
-	// Token: 0x06008218 RID: 33304 RVA: 0x00317B4C File Offset: 0x00315D4C
+	// Token: 0x0600830A RID: 33546 RVA: 0x0031C374 File Offset: 0x0031A574
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleMiddleMouseDragged(EDragType _dragType, Vector2 _mousePositionDelta)
 	{
@@ -926,7 +926,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.<HandleMiddleMouseDragged>g__UpdateViewOffset|121_0();
 	}
 
-	// Token: 0x06008219 RID: 33305 RVA: 0x00317BDC File Offset: 0x00315DDC
+	// Token: 0x0600830B RID: 33547 RVA: 0x0031C404 File Offset: 0x0031A604
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleLeftMouseDragged(EDragType _dragType, Vector2 _mousePositionDelta)
 	{
@@ -1013,14 +1013,14 @@ public class XUiC_SignEditorWindow : XUiController
 		this.MarkChanged();
 	}
 
-	// Token: 0x0600821A RID: 33306 RVA: 0x00317FBC File Offset: 0x003161BC
+	// Token: 0x0600830C RID: 33548 RVA: 0x0031C7E4 File Offset: 0x0031A9E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDragAndDropStarted(int dragStartIdx)
 	{
 		this.dragAndDropIcon.SetLayer(this.workingSignId, this.workingSignData.layers[this.signLayerGrid.draggedLayerIndices[0]]);
 	}
 
-	// Token: 0x0600821B RID: 33307 RVA: 0x00317FF0 File Offset: 0x003161F0
+	// Token: 0x0600830D RID: 33549 RVA: 0x0031C818 File Offset: 0x0031AA18
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDragAndDropReleased(int insertIndex)
 	{
@@ -1064,7 +1064,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.dragAndDropIcon.SetLayer(this.workingSignId, null);
 	}
 
-	// Token: 0x0600821C RID: 33308 RVA: 0x00318174 File Offset: 0x00316374
+	// Token: 0x0600830E RID: 33550 RVA: 0x0031C99C File Offset: 0x0031AB9C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleLayerSelected(int selectedLayerIndex)
 	{
@@ -1082,7 +1082,7 @@ public class XUiC_SignEditorWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600821D RID: 33309 RVA: 0x003181D8 File Offset: 0x003163D8
+	// Token: 0x0600830F RID: 33551 RVA: 0x0031CA00 File Offset: 0x0031AC00
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleLayerHovered(int hoveredDisplayIndex)
 	{
@@ -1112,7 +1112,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.sizeBar.SetHoveredRegion(new XUiC_SizeBar.BarRegionFloat(this.complexityHoverOffset, layerComplexityInfo.Complexity));
 	}
 
-	// Token: 0x0600821E RID: 33310 RVA: 0x003182F9 File Offset: 0x003164F9
+	// Token: 0x06008310 RID: 33552 RVA: 0x0031CB21 File Offset: 0x0031AD21
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BeginAddLayerFlow(int index)
 	{
@@ -1120,7 +1120,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.signLayerGrid.UpdateLayers(this.workingSignId, this.addLayerIndex, true, true);
 	}
 
-	// Token: 0x0600821F RID: 33311 RVA: 0x0031831C File Offset: 0x0031651C
+	// Token: 0x06008311 RID: 33553 RVA: 0x0031CB44 File Offset: 0x0031AD44
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleLayerTypeSelected(SignData.SignLayer layer)
 	{
@@ -1140,7 +1140,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.addLayerIndex = -1;
 	}
 
-	// Token: 0x06008220 RID: 33312 RVA: 0x003183D0 File Offset: 0x003165D0
+	// Token: 0x06008312 RID: 33554 RVA: 0x0031CBF8 File Offset: 0x0031ADF8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DeleteSelectedLayers(string changeDescription = "Deleted Layer(s)")
 	{
@@ -1169,7 +1169,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.MarkChanged();
 	}
 
-	// Token: 0x06008221 RID: 33313 RVA: 0x003184C8 File Offset: 0x003166C8
+	// Token: 0x06008313 RID: 33555 RVA: 0x0031CCF0 File Offset: 0x0031AEF0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SelectAllLayers()
 	{
@@ -1185,7 +1185,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.signLayerGrid.UpdateLayers(this.workingSignId, 0, false, true);
 	}
 
-	// Token: 0x06008222 RID: 33314 RVA: 0x00318538 File Offset: 0x00316738
+	// Token: 0x06008314 RID: 33556 RVA: 0x0031CD60 File Offset: 0x0031AF60
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DuplicateSelectedLayers()
 	{
@@ -1210,7 +1210,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.signLayerGrid.UpdateLayers(this.workingSignId, num + count - 1, false, true);
 	}
 
-	// Token: 0x06008223 RID: 33315 RVA: 0x0031863C File Offset: 0x0031683C
+	// Token: 0x06008315 RID: 33557 RVA: 0x0031CE64 File Offset: 0x0031B064
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CopySelectedLayersToClipboard()
 	{
@@ -1226,7 +1226,7 @@ public class XUiC_SignEditorWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008224 RID: 33316 RVA: 0x003186E8 File Offset: 0x003168E8
+	// Token: 0x06008316 RID: 33558 RVA: 0x0031CF10 File Offset: 0x0031B110
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PasteLayersFromClipboard()
 	{
@@ -1247,7 +1247,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.signLayerGrid.UpdateLayers(this.workingSignId, num, false, true);
 	}
 
-	// Token: 0x06008225 RID: 33317 RVA: 0x003187C8 File Offset: 0x003169C8
+	// Token: 0x06008317 RID: 33559 RVA: 0x0031CFF0 File Offset: 0x0031B1F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UngroupSelectedLayers()
 	{
@@ -1283,7 +1283,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.signLayerGrid.UpdateLayers(this.workingSignId, num, false, true);
 	}
 
-	// Token: 0x06008226 RID: 33318 RVA: 0x00318904 File Offset: 0x00316B04
+	// Token: 0x06008318 RID: 33560 RVA: 0x0031D12C File Offset: 0x0031B32C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GroupSelectedLayers()
 	{
@@ -1322,7 +1322,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.signLayerGrid.UpdateLayers(this.workingSignId, num, false, true);
 	}
 
-	// Token: 0x06008227 RID: 33319 RVA: 0x00318B2C File Offset: 0x00316D2C
+	// Token: 0x06008319 RID: 33561 RVA: 0x0031D354 File Offset: 0x0031B554
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TranslateSelection(Vector2 delta)
 	{
@@ -1356,7 +1356,7 @@ public class XUiC_SignEditorWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008228 RID: 33320 RVA: 0x00318C74 File Offset: 0x00316E74
+	// Token: 0x0600831A RID: 33562 RVA: 0x0031D49C File Offset: 0x0031B69C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RotateSelection(float deltaDegrees)
 	{
@@ -1382,7 +1382,7 @@ public class XUiC_SignEditorWindow : XUiController
 		XUiC_SignEditorWindow.RotateGroupChildrenAroundOrigin(groupSignLayer, -deltaDegrees);
 	}
 
-	// Token: 0x06008229 RID: 33321 RVA: 0x00318D38 File Offset: 0x00316F38
+	// Token: 0x0600831B RID: 33563 RVA: 0x0031D560 File Offset: 0x0031B760
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ScaleSelection(Vector2 scaleFactor)
 	{
@@ -1407,7 +1407,7 @@ public class XUiC_SignEditorWindow : XUiController
 		XUiC_SignEditorWindow.ScaleGroupChildrenAroundOrigin(groupSignLayer, vector);
 	}
 
-	// Token: 0x0600822A RID: 33322 RVA: 0x00318E7C File Offset: 0x0031707C
+	// Token: 0x0600831C RID: 33564 RVA: 0x0031D6A4 File Offset: 0x0031B8A4
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -1434,7 +1434,7 @@ public class XUiC_SignEditorWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600822B RID: 33323 RVA: 0x00318F7C File Offset: 0x0031717C
+	// Token: 0x0600831D RID: 33565 RVA: 0x0031D7A4 File Offset: 0x0031B9A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateInputs()
 	{
@@ -1614,7 +1614,7 @@ public class XUiC_SignEditorWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600822C RID: 33324 RVA: 0x00319390 File Offset: 0x00317590
+	// Token: 0x0600831E RID: 33566 RVA: 0x0031DBB8 File Offset: 0x0031BDB8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Refresh()
 	{
@@ -1633,14 +1633,14 @@ public class XUiC_SignEditorWindow : XUiController
 		onRefreshed();
 	}
 
-	// Token: 0x0600822D RID: 33325 RVA: 0x00319400 File Offset: 0x00317600
+	// Token: 0x0600831F RID: 33567 RVA: 0x0031DC28 File Offset: 0x0031BE28
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool GetSavingAllowed()
 	{
 		return this.signComplexityInfo.IsValid && this.signComplexityInfo.TotalComplexity <= 600f && this.signComplexityInfo.StackInfo.MaxCompStackIndex <= 7 && this.signComplexityInfo.StackInfo.MaxUVStackIndex <= 7;
 	}
 
-	// Token: 0x0600822E RID: 33326 RVA: 0x0031945C File Offset: 0x0031765C
+	// Token: 0x06008320 RID: 33568 RVA: 0x0031DC84 File Offset: 0x0031BE84
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -2234,7 +2234,7 @@ public class XUiC_SignEditorWindow : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x0600822F RID: 33327 RVA: 0x0031A068 File Offset: 0x00318268
+	// Token: 0x06008321 RID: 33569 RVA: 0x0031E890 File Offset: 0x0031CA90
 	public override bool ParseAttribute(string name, string value)
 	{
 		bool flag = base.ParseAttribute(name, value);
@@ -2318,7 +2318,7 @@ public class XUiC_SignEditorWindow : XUiController
 		return flag;
 	}
 
-	// Token: 0x06008233 RID: 33331 RVA: 0x0031A30F File Offset: 0x0031850F
+	// Token: 0x06008325 RID: 33573 RVA: 0x0031EB37 File Offset: 0x0031CD37
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void <SetLayerSelected>g__ToggleNewLayerPopup|94_0(bool visible)
@@ -2335,7 +2335,7 @@ public class XUiC_SignEditorWindow : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06008234 RID: 33332 RVA: 0x0031A334 File Offset: 0x00318534
+	// Token: 0x06008326 RID: 33574 RVA: 0x0031EB5C File Offset: 0x0031CD5C
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void <RefreshLayerSettings>g__AddWarpCategories|95_0(ref XUiC_SignEditorWindow.<>c__DisplayClass95_0 A_1)
@@ -2434,7 +2434,7 @@ public class XUiC_SignEditorWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008235 RID: 33333 RVA: 0x0031A6B4 File Offset: 0x003188B4
+	// Token: 0x06008327 RID: 33575 RVA: 0x0031EEDC File Offset: 0x0031D0DC
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void <HandleMiddleMouseDragged>g__UpdateViewOffset|121_0()
@@ -2451,7 +2451,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.viewOffset = this.dragStartViewOffset + vector;
 	}
 
-	// Token: 0x06008236 RID: 33334 RVA: 0x0031A73C File Offset: 0x0031893C
+	// Token: 0x06008328 RID: 33576 RVA: 0x0031EF64 File Offset: 0x0031D164
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void <HandleMiddleMouseDragged>g__BeginDrag|121_1()
@@ -2464,7 +2464,7 @@ public class XUiC_SignEditorWindow : XUiController
 		this.dragStartViewScaleMode = InputUtils.ControlKeyPressed;
 	}
 
-	// Token: 0x06008237 RID: 33335 RVA: 0x0031A7AC File Offset: 0x003189AC
+	// Token: 0x06008329 RID: 33577 RVA: 0x0031EFD4 File Offset: 0x0031D1D4
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void <HandleMiddleMouseDragged>g__EndDrag|121_2()
@@ -2473,337 +2473,337 @@ public class XUiC_SignEditorWindow : XUiController
 		this.<HandleMiddleMouseDragged>g__UpdateViewOffset|121_0();
 	}
 
-	// Token: 0x04006037 RID: 24631
+	// Token: 0x040060FE RID: 24830
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cMaxWarpsPerLayer = 4;
 
-	// Token: 0x04006038 RID: 24632
+	// Token: 0x040060FF RID: 24831
 	public static string ID = "";
 
-	// Token: 0x04006039 RID: 24633
+	// Token: 0x04006100 RID: 24832
 	public static bool ShowDebugPanel = false;
 
-	// Token: 0x0400603A RID: 24634
+	// Token: 0x04006101 RID: 24833
 	public Action OnRefreshed;
 
-	// Token: 0x0400603B RID: 24635
+	// Token: 0x04006102 RID: 24834
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignCanvas targetCanvas;
 
-	// Token: 0x0400603C RID: 24636
+	// Token: 0x04006103 RID: 24835
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TEFeatureCanvas targetEntity;
 
-	// Token: 0x0400603D RID: 24637
+	// Token: 0x04006104 RID: 24836
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GlobalSignId sourceSignId = GlobalSignId.InvalidId;
 
-	// Token: 0x0400603E RID: 24638
+	// Token: 0x04006105 RID: 24837
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignData sourceSignData;
 
-	// Token: 0x0400603F RID: 24639
+	// Token: 0x04006106 RID: 24838
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GlobalSignId workingSignId = GlobalSignId.InvalidId;
 
-	// Token: 0x04006040 RID: 24640
+	// Token: 0x04006107 RID: 24839
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignData workingSignData;
 
-	// Token: 0x04006041 RID: 24641
+	// Token: 0x04006108 RID: 24840
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Texture signMaterial;
 
-	// Token: 0x04006042 RID: 24642
+	// Token: 0x04006109 RID: 24841
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Texture pulseOverlayMaterial;
 
-	// Token: 0x04006043 RID: 24643
+	// Token: 0x0400610A RID: 24842
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cHighlightPulseDuration = 1f;
 
-	// Token: 0x04006044 RID: 24644
+	// Token: 0x0400610B RID: 24843
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float highlightStartTime = 1f;
 
-	// Token: 0x04006045 RID: 24645
+	// Token: 0x0400610C RID: 24844
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Texture hoverOverlayMaterial;
 
-	// Token: 0x04006046 RID: 24646
+	// Token: 0x0400610D RID: 24845
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cHoverFadeDuration = 0.25f;
 
-	// Token: 0x04006047 RID: 24647
+	// Token: 0x0400610E RID: 24846
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float hoverOverlayOpacity;
 
-	// Token: 0x04006048 RID: 24648
+	// Token: 0x0400610F RID: 24847
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignData.SignLayer hoveredLayer;
 
-	// Token: 0x04006049 RID: 24649
+	// Token: 0x04006110 RID: 24848
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignData.SignLayer hoverOverlayLayer;
 
-	// Token: 0x0400604A RID: 24650
+	// Token: 0x04006111 RID: 24849
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float previewAspect;
 
-	// Token: 0x0400604B RID: 24651
+	// Token: 0x04006112 RID: 24850
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CategoryList categoryList;
 
-	// Token: 0x0400604C RID: 24652
+	// Token: 0x04006113 RID: 24851
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SignLayerGrid signLayerGrid;
 
-	// Token: 0x0400604D RID: 24653
+	// Token: 0x04006114 RID: 24852
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignData.SignLayer selectedLayer;
 
-	// Token: 0x0400604E RID: 24654
+	// Token: 0x04006115 RID: 24853
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiC_SignLayerSettings> allSettings = new List<XUiC_SignLayerSettings>();
 
-	// Token: 0x0400604F RID: 24655
+	// Token: 0x04006116 RID: 24854
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiC_SignWarpSettings> allWarpSettings = new List<XUiC_SignWarpSettings>();
 
-	// Token: 0x04006050 RID: 24656
+	// Token: 0x04006117 RID: 24855
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiC_SignColorSettings> allColorSettings = new List<XUiC_SignColorSettings>();
 
-	// Token: 0x04006051 RID: 24657
+	// Token: 0x04006118 RID: 24856
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_AddWarpSettings addWarpSettings;
 
-	// Token: 0x04006052 RID: 24658
+	// Token: 0x04006119 RID: 24857
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SignTransformSettings transformSettings;
 
-	// Token: 0x04006053 RID: 24659
+	// Token: 0x0400611A RID: 24858
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController canvasView;
 
-	// Token: 0x04006054 RID: 24660
+	// Token: 0x0400611B RID: 24859
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SignNewLayerPanel newLayerPanel;
 
-	// Token: 0x04006055 RID: 24661
+	// Token: 0x0400611C RID: 24860
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnSave;
 
-	// Token: 0x04006056 RID: 24662
+	// Token: 0x0400611D RID: 24861
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnSaveCopy;
 
-	// Token: 0x04006057 RID: 24663
+	// Token: 0x0400611E RID: 24862
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnQuit;
 
-	// Token: 0x04006058 RID: 24664
+	// Token: 0x0400611F RID: 24863
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtAspectHorizontal;
 
-	// Token: 0x04006059 RID: 24665
+	// Token: 0x04006120 RID: 24864
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtAspectVertical;
 
-	// Token: 0x0400605A RID: 24666
+	// Token: 0x04006121 RID: 24865
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnAspectFit;
 
-	// Token: 0x0400605B RID: 24667
+	// Token: 0x04006122 RID: 24866
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnAspectSquare;
 
-	// Token: 0x0400605C RID: 24668
+	// Token: 0x04006123 RID: 24867
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtSignName;
 
-	// Token: 0x0400605D RID: 24669
+	// Token: 0x04006124 RID: 24868
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtLayerName;
 
-	// Token: 0x0400605E RID: 24670
+	// Token: 0x04006125 RID: 24869
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SizeBar sizeBar;
 
-	// Token: 0x0400605F RID: 24671
+	// Token: 0x04006126 RID: 24870
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<SignData.SignLayer> layerClipboard = new List<SignData.SignLayer>();
 
-	// Token: 0x04006060 RID: 24672
+	// Token: 0x04006127 RID: 24871
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ConfirmationPrompt confirmationPrompt;
 
-	// Token: 0x04006061 RID: 24673
+	// Token: 0x04006128 RID: 24872
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SignDebugPanel debugPanel;
 
-	// Token: 0x04006062 RID: 24674
+	// Token: 0x04006129 RID: 24873
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SignLayerDragAndDropIcon dragAndDropIcon;
 
-	// Token: 0x04006063 RID: 24675
+	// Token: 0x0400612A RID: 24874
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string selectedLayerName;
 
-	// Token: 0x04006064 RID: 24676
+	// Token: 0x0400612B RID: 24875
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showNewLayerPanel;
 
-	// Token: 0x04006065 RID: 24677
+	// Token: 0x0400612C RID: 24876
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasUnsavedChanges;
 
-	// Token: 0x04006066 RID: 24678
+	// Token: 0x0400612D RID: 24877
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 canvasAspect = Vector2.one;
 
-	// Token: 0x04006067 RID: 24679
+	// Token: 0x0400612E RID: 24878
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool aspectMaskEnabled = true;
 
-	// Token: 0x04006068 RID: 24680
+	// Token: 0x0400612F RID: 24879
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_SignEditorWindow.HistoryStateManager historyStateManager = new XUiC_SignEditorWindow.HistoryStateManager();
 
-	// Token: 0x04006069 RID: 24681
+	// Token: 0x04006130 RID: 24880
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SignEditorWindow.AffectMode currentAffectMode;
 
-	// Token: 0x0400606A RID: 24682
+	// Token: 0x04006131 RID: 24881
 	public Action<XUiC_SignEditorWindow.AffectMode> OnAffectModeChanged;
 
-	// Token: 0x0400606B RID: 24683
+	// Token: 0x04006132 RID: 24882
 	public SignComplexityInfo signComplexityInfo;
 
-	// Token: 0x0400606C RID: 24684
+	// Token: 0x04006133 RID: 24883
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string warpIconSkew;
 
-	// Token: 0x0400606D RID: 24685
+	// Token: 0x04006134 RID: 24884
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string warpIconBulge;
 
-	// Token: 0x0400606E RID: 24686
+	// Token: 0x04006135 RID: 24885
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string warpIconTwirl;
 
-	// Token: 0x0400606F RID: 24687
+	// Token: 0x04006136 RID: 24886
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string warpIconKaleido;
 
-	// Token: 0x04006070 RID: 24688
+	// Token: 0x04006137 RID: 24887
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string warpIconPerspective;
 
-	// Token: 0x04006071 RID: 24689
+	// Token: 0x04006138 RID: 24888
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string warpIconArc;
 
-	// Token: 0x04006072 RID: 24690
+	// Token: 0x04006139 RID: 24889
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string warpIconStretch;
 
-	// Token: 0x04006073 RID: 24691
+	// Token: 0x0400613A RID: 24890
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string warpIconGrid;
 
-	// Token: 0x04006074 RID: 24692
+	// Token: 0x0400613B RID: 24891
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly StringBuilder stringBuilder = new StringBuilder();
 
-	// Token: 0x04006075 RID: 24693
+	// Token: 0x0400613C RID: 24892
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<int> originalLayerIndices = new List<int>();
 
-	// Token: 0x04006076 RID: 24694
+	// Token: 0x0400613D RID: 24893
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<SignData.SignLayer> originalLayers = new List<SignData.SignLayer>();
 
-	// Token: 0x04006077 RID: 24695
+	// Token: 0x0400613E RID: 24894
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int addLayerIndex = -1;
 
-	// Token: 0x04006078 RID: 24696
+	// Token: 0x0400613F RID: 24895
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float complexityHoverOffset;
 
-	// Token: 0x04006079 RID: 24697
+	// Token: 0x04006140 RID: 24896
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SignEditorWindow.DragInfo middleMouseDrag;
 
-	// Token: 0x0400607A RID: 24698
+	// Token: 0x04006141 RID: 24897
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 viewOffset = Vector2.zero;
 
-	// Token: 0x0400607B RID: 24699
+	// Token: 0x04006142 RID: 24898
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float viewScale = 1f;
 
-	// Token: 0x0400607C RID: 24700
+	// Token: 0x04006143 RID: 24899
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 dragStartViewOffset = Vector2.zero;
 
-	// Token: 0x0400607D RID: 24701
+	// Token: 0x04006144 RID: 24900
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float dragStartViewScale = 1f;
 
-	// Token: 0x0400607E RID: 24702
+	// Token: 0x04006145 RID: 24901
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool dragStartViewScaleMode;
 
-	// Token: 0x0400607F RID: 24703
+	// Token: 0x04006146 RID: 24902
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SignEditorWindow.DragInfo leftMouseDrag;
 
-	// Token: 0x04006080 RID: 24704
+	// Token: 0x04006147 RID: 24903
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Vector2> layerDragStartPositions = new List<Vector2>();
 
-	// Token: 0x04006081 RID: 24705
+	// Token: 0x04006148 RID: 24904
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 affectDragGroupStartPosition;
 
-	// Token: 0x04006082 RID: 24706
+	// Token: 0x04006149 RID: 24905
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Vector2> affectDragChildStartPositions = new List<Vector2>();
 
-	// Token: 0x04006083 RID: 24707
+	// Token: 0x0400614A RID: 24906
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<int> indicesToSelect = new List<int>();
 
-	// Token: 0x04006084 RID: 24708
+	// Token: 0x0400614B RID: 24907
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DateTime heldInputRetriggerTime;
 
-	// Token: 0x04006085 RID: 24709
+	// Token: 0x0400614C RID: 24908
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly TimeSpan firstRetriggerDelay = TimeSpan.FromSeconds(0.3499999940395355);
 
-	// Token: 0x04006086 RID: 24710
+	// Token: 0x0400614D RID: 24909
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly TimeSpan subsequentRetriggerDelay = TimeSpan.FromSeconds(0.05000000074505806);
 
-	// Token: 0x02001013 RID: 4115
+	// Token: 0x0200102C RID: 4140
 	public enum AffectMode
 	{
-		// Token: 0x04006088 RID: 24712
+		// Token: 0x0400614F RID: 24911
 		None,
-		// Token: 0x04006089 RID: 24713
+		// Token: 0x04006150 RID: 24912
 		Children,
-		// Token: 0x0400608A RID: 24714
+		// Token: 0x04006151 RID: 24913
 		Pivot
 	}
 
-	// Token: 0x02001014 RID: 4116
+	// Token: 0x0200102D RID: 4141
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class HistoryStateManager
 	{
-		// Token: 0x06008238 RID: 33336 RVA: 0x0031A7C0 File Offset: 0x003189C0
+		// Token: 0x0600832A RID: 33578 RVA: 0x0031EFE8 File Offset: 0x0031D1E8
 		public void Init(string baseChangeDescription, XUiC_SignLayerGrid signLayerGrid, XUiC_TextInput txtSignName, GlobalSignId workingSignId, SignData workingSignData, XUiC_SignEditorWindow editorWindow)
 		{
 			this.Reset();
@@ -2818,7 +2818,7 @@ public class XUiC_SignEditorWindow : XUiController
 			this.currentStateIndex++;
 		}
 
-		// Token: 0x06008239 RID: 33337 RVA: 0x0031A821 File Offset: 0x00318A21
+		// Token: 0x0600832B RID: 33579 RVA: 0x0031F049 File Offset: 0x0031D249
 		public void Reset()
 		{
 			this.PoolHistoryStates(0, this.historyStates.Count);
@@ -2829,7 +2829,7 @@ public class XUiC_SignEditorWindow : XUiController
 			this.editorWindow = null;
 		}
 
-		// Token: 0x0600823A RID: 33338 RVA: 0x0031A85C File Offset: 0x00318A5C
+		// Token: 0x0600832C RID: 33580 RVA: 0x0031F084 File Offset: 0x0031D284
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void PoolHistoryStates(int index, int count)
 		{
@@ -2846,7 +2846,7 @@ public class XUiC_SignEditorWindow : XUiController
 			this.historyStates.RemoveRange(index, count);
 		}
 
-		// Token: 0x0600823B RID: 33339 RVA: 0x0031A8EC File Offset: 0x00318AEC
+		// Token: 0x0600832D RID: 33581 RVA: 0x0031F114 File Offset: 0x0031D314
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XUiC_SignEditorWindow.HistoryStateManager.HistoryState UnpoolOrCreateHistoryState()
 		{
@@ -2857,7 +2857,7 @@ public class XUiC_SignEditorWindow : XUiController
 			return new XUiC_SignEditorWindow.HistoryStateManager.HistoryState();
 		}
 
-		// Token: 0x0600823C RID: 33340 RVA: 0x0031A910 File Offset: 0x00318B10
+		// Token: 0x0600832E RID: 33582 RVA: 0x0031F138 File Offset: 0x0031D338
 		public void ProcessPendingChange(string changeDescription, bool forceDirty = false)
 		{
 			if (this.currentStateIndex < this.historyStates.Count - 1)
@@ -2898,7 +2898,7 @@ public class XUiC_SignEditorWindow : XUiController
 			this.historyStateDirty = false;
 		}
 
-		// Token: 0x0600823D RID: 33341 RVA: 0x0031AAAC File Offset: 0x00318CAC
+		// Token: 0x0600832F RID: 33583 RVA: 0x0031F2D4 File Offset: 0x0031D4D4
 		public bool TryUndo()
 		{
 			if (this.currentStateIndex <= 0)
@@ -2914,7 +2914,7 @@ public class XUiC_SignEditorWindow : XUiController
 			return true;
 		}
 
-		// Token: 0x0600823E RID: 33342 RVA: 0x0031AB2C File Offset: 0x00318D2C
+		// Token: 0x06008330 RID: 33584 RVA: 0x0031F354 File Offset: 0x0031D554
 		public bool TryRedo()
 		{
 			if (this.currentStateIndex >= this.historyStates.Count - 1)
@@ -2931,7 +2931,7 @@ public class XUiC_SignEditorWindow : XUiController
 			return true;
 		}
 
-		// Token: 0x0600823F RID: 33343 RVA: 0x0031ABDC File Offset: 0x00318DDC
+		// Token: 0x06008331 RID: 33585 RVA: 0x0031F404 File Offset: 0x0031D604
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ApplyHistoryState(XUiC_SignEditorWindow.HistoryStateManager.HistoryState historyState)
 		{
@@ -2953,13 +2953,13 @@ public class XUiC_SignEditorWindow : XUiController
 			this.ForceDirty();
 		}
 
-		// Token: 0x06008240 RID: 33344 RVA: 0x0031ACA7 File Offset: 0x00318EA7
+		// Token: 0x06008332 RID: 33586 RVA: 0x0031F4CF File Offset: 0x0031D6CF
 		public void ForceDirty()
 		{
 			this.historyStateDirty = true;
 		}
 
-		// Token: 0x06008241 RID: 33345 RVA: 0x0031ACB0 File Offset: 0x00318EB0
+		// Token: 0x06008333 RID: 33587 RVA: 0x0031F4D8 File Offset: 0x0031D6D8
 		[Conditional("DEBUG_LOG_SIGN_HISTORY")]
 		public void LogUndoRedoStack()
 		{
@@ -2986,106 +2986,106 @@ public class XUiC_SignEditorWindow : XUiController
 			Log.Out(stringBuilder.ToString());
 		}
 
-		// Token: 0x0400608B RID: 24715
+		// Token: 0x04006152 RID: 24914
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int cMaxHistoryStates = 100;
 
-		// Token: 0x0400608C RID: 24716
+		// Token: 0x04006153 RID: 24915
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XUiC_SignLayerGrid signLayerGrid;
 
-		// Token: 0x0400608D RID: 24717
+		// Token: 0x04006154 RID: 24916
 		[PublicizedFrom(EAccessModifier.Private)]
 		public GlobalSignId workingSignId = GlobalSignId.InvalidId;
 
-		// Token: 0x0400608E RID: 24718
+		// Token: 0x04006155 RID: 24917
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SignData workingSignData;
 
-		// Token: 0x0400608F RID: 24719
+		// Token: 0x04006156 RID: 24918
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XUiC_TextInput txtSignName;
 
-		// Token: 0x04006090 RID: 24720
+		// Token: 0x04006157 RID: 24919
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XUiC_SignEditorWindow editorWindow;
 
-		// Token: 0x04006091 RID: 24721
+		// Token: 0x04006158 RID: 24920
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Stack<XUiC_SignEditorWindow.HistoryStateManager.HistoryState> historyStatePool = new Stack<XUiC_SignEditorWindow.HistoryStateManager.HistoryState>(100);
 
-		// Token: 0x04006092 RID: 24722
+		// Token: 0x04006159 RID: 24921
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly List<XUiC_SignEditorWindow.HistoryStateManager.HistoryState> historyStates = new List<XUiC_SignEditorWindow.HistoryStateManager.HistoryState>(100);
 
-		// Token: 0x04006093 RID: 24723
+		// Token: 0x0400615A RID: 24922
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int currentStateIndex = -1;
 
-		// Token: 0x04006094 RID: 24724
+		// Token: 0x0400615B RID: 24923
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool historyStateDirty;
 
-		// Token: 0x02001015 RID: 4117
+		// Token: 0x0200102E RID: 4142
 		[PublicizedFrom(EAccessModifier.Private)]
 		public class HistoryState
 		{
-			// Token: 0x17000F0A RID: 3850
-			// (get) Token: 0x06008243 RID: 33347 RVA: 0x0031ADAF File Offset: 0x00318FAF
-			// (set) Token: 0x06008244 RID: 33348 RVA: 0x0031ADB7 File Offset: 0x00318FB7
+			// Token: 0x17000F43 RID: 3907
+			// (get) Token: 0x06008335 RID: 33589 RVA: 0x0031F5D7 File Offset: 0x0031D7D7
+			// (set) Token: 0x06008336 RID: 33590 RVA: 0x0031F5DF File Offset: 0x0031D7DF
 			public string Description
 			{
 				get; [PublicizedFrom(EAccessModifier.Private)]
 				set;
 			}
 
-			// Token: 0x17000F0B RID: 3851
-			// (get) Token: 0x06008245 RID: 33349 RVA: 0x0031ADC0 File Offset: 0x00318FC0
-			// (set) Token: 0x06008246 RID: 33350 RVA: 0x0031ADC8 File Offset: 0x00318FC8
+			// Token: 0x17000F44 RID: 3908
+			// (get) Token: 0x06008337 RID: 33591 RVA: 0x0031F5E8 File Offset: 0x0031D7E8
+			// (set) Token: 0x06008338 RID: 33592 RVA: 0x0031F5F0 File Offset: 0x0031D7F0
 			public DateTime Time
 			{
 				get; [PublicizedFrom(EAccessModifier.Private)]
 				set;
 			}
 
-			// Token: 0x17000F0C RID: 3852
-			// (get) Token: 0x06008247 RID: 33351 RVA: 0x0031ADD1 File Offset: 0x00318FD1
-			// (set) Token: 0x06008248 RID: 33352 RVA: 0x0031ADD9 File Offset: 0x00318FD9
+			// Token: 0x17000F45 RID: 3909
+			// (get) Token: 0x06008339 RID: 33593 RVA: 0x0031F5F9 File Offset: 0x0031D7F9
+			// (set) Token: 0x0600833A RID: 33594 RVA: 0x0031F601 File Offset: 0x0031D801
 			public int SelectedLayerIndex
 			{
 				get; [PublicizedFrom(EAccessModifier.Private)]
 				set;
 			}
 
-			// Token: 0x17000F0D RID: 3853
-			// (get) Token: 0x06008249 RID: 33353 RVA: 0x0031ADE2 File Offset: 0x00318FE2
-			// (set) Token: 0x0600824A RID: 33354 RVA: 0x0031ADEA File Offset: 0x00318FEA
+			// Token: 0x17000F46 RID: 3910
+			// (get) Token: 0x0600833B RID: 33595 RVA: 0x0031F60A File Offset: 0x0031D80A
+			// (set) Token: 0x0600833C RID: 33596 RVA: 0x0031F612 File Offset: 0x0031D812
 			public List<int> MultiSelectedLayerIndices
 			{
 				get; [PublicizedFrom(EAccessModifier.Private)]
 				set;
 			} = new List<int>(10);
 
-			// Token: 0x17000F0E RID: 3854
-			// (get) Token: 0x0600824B RID: 33355 RVA: 0x0031ADF3 File Offset: 0x00318FF3
-			// (set) Token: 0x0600824C RID: 33356 RVA: 0x0031ADFB File Offset: 0x00318FFB
+			// Token: 0x17000F47 RID: 3911
+			// (get) Token: 0x0600833D RID: 33597 RVA: 0x0031F61B File Offset: 0x0031D81B
+			// (set) Token: 0x0600833E RID: 33598 RVA: 0x0031F623 File Offset: 0x0031D823
 			public SignData SnapshotSignData
 			{
 				get; [PublicizedFrom(EAccessModifier.Private)]
 				set;
 			}
 
-			// Token: 0x17000F0F RID: 3855
-			// (get) Token: 0x0600824D RID: 33357 RVA: 0x0031AE04 File Offset: 0x00319004
-			// (set) Token: 0x0600824E RID: 33358 RVA: 0x0031AE0C File Offset: 0x0031900C
+			// Token: 0x17000F48 RID: 3912
+			// (get) Token: 0x0600833F RID: 33599 RVA: 0x0031F62C File Offset: 0x0031D82C
+			// (set) Token: 0x06008340 RID: 33600 RVA: 0x0031F634 File Offset: 0x0031D834
 			public XUiC_SignEditorWindow.AffectMode AffectMode
 			{
 				get; [PublicizedFrom(EAccessModifier.Private)]
 				set;
 			}
 
-			// Token: 0x17000F10 RID: 3856
-			// (get) Token: 0x0600824F RID: 33359 RVA: 0x0031AE15 File Offset: 0x00319015
+			// Token: 0x17000F49 RID: 3913
+			// (get) Token: 0x06008341 RID: 33601 RVA: 0x0031F63D File Offset: 0x0031D83D
 			public bool HasSnapshot
 			{
 				get
@@ -3094,26 +3094,26 @@ public class XUiC_SignEditorWindow : XUiController
 				}
 			}
 
-			// Token: 0x06008250 RID: 33360 RVA: 0x0031AE20 File Offset: 0x00319020
+			// Token: 0x06008342 RID: 33602 RVA: 0x0031F648 File Offset: 0x0031D848
 			public void InitPending(string description)
 			{
 				this.Description = description;
 				this.Time = DateTime.Now;
 			}
 
-			// Token: 0x06008251 RID: 33361 RVA: 0x0031AE34 File Offset: 0x00319034
+			// Token: 0x06008343 RID: 33603 RVA: 0x0031F65C File Offset: 0x0031D85C
 			public void Refresh()
 			{
 				this.Time = DateTime.Now;
 			}
 
-			// Token: 0x06008252 RID: 33362 RVA: 0x0031AE41 File Offset: 0x00319041
+			// Token: 0x06008344 RID: 33604 RVA: 0x0031F669 File Offset: 0x0031D869
 			public void SetSnapshotData(XUiC_SignLayerGrid signLayerGrid, SignData workingSignData, XUiC_SignEditorWindow editorWindow)
 			{
 				this.SetSnapshotData(signLayerGrid.SelectedLayerIndex, signLayerGrid.MultiSelectedLayerIndices, workingSignData, editorWindow.CurrentAffectMode);
 			}
 
-			// Token: 0x06008253 RID: 33363 RVA: 0x0031AE5C File Offset: 0x0031905C
+			// Token: 0x06008345 RID: 33605 RVA: 0x0031F684 File Offset: 0x0031D884
 			public void SetSnapshotData(int selectedLayerIndex, List<int> multiSelectedLayerIndices, SignData workingSignData, XUiC_SignEditorWindow.AffectMode affectMode)
 			{
 				this.SelectedLayerIndex = selectedLayerIndex;
@@ -3123,7 +3123,7 @@ public class XUiC_SignEditorWindow : XUiController
 				this.AffectMode = affectMode;
 			}
 
-			// Token: 0x06008254 RID: 33364 RVA: 0x0031AE95 File Offset: 0x00319095
+			// Token: 0x06008346 RID: 33606 RVA: 0x0031F6BD File Offset: 0x0031D8BD
 			public void Clear()
 			{
 				this.MultiSelectedLayerIndices.Clear();
@@ -3132,17 +3132,17 @@ public class XUiC_SignEditorWindow : XUiController
 		}
 	}
 
-	// Token: 0x02001016 RID: 4118
+	// Token: 0x0200102F RID: 4143
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct DragInfo
 	{
-		// Token: 0x0400609B RID: 24731
+		// Token: 0x04006162 RID: 24930
 		public Vector2 StartPosition;
 
-		// Token: 0x0400609C RID: 24732
+		// Token: 0x04006163 RID: 24931
 		public Vector2 RawPosition;
 
-		// Token: 0x0400609D RID: 24733
+		// Token: 0x04006164 RID: 24932
 		public bool IsDragging;
 	}
 }

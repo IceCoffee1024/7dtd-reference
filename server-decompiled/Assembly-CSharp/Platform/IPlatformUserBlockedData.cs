@@ -2,20 +2,20 @@
 
 namespace Platform
 {
-	// Token: 0x02001BC2 RID: 7106
+	// Token: 0x02001BE9 RID: 7145
 	public interface IPlatformUserBlockedData
 	{
-		// Token: 0x170019EE RID: 6638
-		// (get) Token: 0x0600D303 RID: 54019
+		// Token: 0x17001A60 RID: 6752
+		// (get) Token: 0x0600D491 RID: 54417
 		EBlockType Type { get; }
 
-		// Token: 0x170019EF RID: 6639
-		// (get) Token: 0x0600D304 RID: 54020
+		// Token: 0x17001A61 RID: 6753
+		// (get) Token: 0x0600D492 RID: 54418
 		EUserBlockState State { get; }
 
-		// Token: 0x170019F0 RID: 6640
-		// (get) Token: 0x0600D305 RID: 54021
-		// (set) Token: 0x0600D306 RID: 54022
+		// Token: 0x17001A62 RID: 6754
+		// (get) Token: 0x0600D493 RID: 54419
+		// (set) Token: 0x0600D494 RID: 54420
 		bool Locally { get; set; }
 	}
 }

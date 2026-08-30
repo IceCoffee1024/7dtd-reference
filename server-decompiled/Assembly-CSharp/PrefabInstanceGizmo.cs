@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000548 RID: 1352
+// Token: 0x0200054D RID: 1357
 public class PrefabInstanceGizmo : MonoBehaviour
 {
-	// Token: 0x06002C44 RID: 11332 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002C6E RID: 11374 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
 	}
 
-	// Token: 0x06002C45 RID: 11333 RVA: 0x00118270 File Offset: 0x00116470
+	// Token: 0x06002C6F RID: 11375 RVA: 0x001192E4 File Offset: 0x001174E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDrawGizmos()
 	{
@@ -74,7 +74,7 @@ public class PrefabInstanceGizmo : MonoBehaviour
 		this.bSelected = false;
 	}
 
-	// Token: 0x06002C46 RID: 11334 RVA: 0x001186BB File Offset: 0x001168BB
+	// Token: 0x06002C70 RID: 11376 RVA: 0x0011972F File Offset: 0x0011792F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDrawGizmosSelected()
 	{
@@ -82,18 +82,18 @@ public class PrefabInstanceGizmo : MonoBehaviour
 		PrefabInstanceGizmo.Selected = this.pi;
 	}
 
-	// Token: 0x040021FF RID: 8703
+	// Token: 0x04002231 RID: 8753
 	public static PrefabInstance Selected;
 
-	// Token: 0x04002200 RID: 8704
+	// Token: 0x04002232 RID: 8754
 	public PrefabInstance pi;
 
-	// Token: 0x04002201 RID: 8705
+	// Token: 0x04002233 RID: 8755
 	public Vector3 pos;
 
-	// Token: 0x04002202 RID: 8706
+	// Token: 0x04002234 RID: 8756
 	public int rot;
 
-	// Token: 0x04002203 RID: 8707
+	// Token: 0x04002235 RID: 8757
 	public bool bSelected;
 }

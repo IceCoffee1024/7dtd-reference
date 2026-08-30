@@ -6,7 +6,7 @@ using UnityEngine.Scripting;
 [Preserve]
 public class GameObjectAnimalAnimation : AvatarController
 {
-	// Token: 0x060005C2 RID: 1474 RVA: 0x00029708 File Offset: 0x00027908
+	// Token: 0x060005C3 RID: 1475 RVA: 0x000297CC File Offset: 0x000279CC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -29,19 +29,19 @@ public class GameObjectAnimalAnimation : AvatarController
 		this.attack2AS = this.anim["Attack2"];
 	}
 
-	// Token: 0x060005C3 RID: 1475 RVA: 0x000297CD File Offset: 0x000279CD
+	// Token: 0x060005C4 RID: 1476 RVA: 0x00029891 File Offset: 0x00027A91
 	public void SetAlwaysWalk(bool _b)
 	{
 		this.bAlwaysWalk = _b;
 	}
 
-	// Token: 0x060005C4 RID: 1476 RVA: 0x000297D6 File Offset: 0x000279D6
+	// Token: 0x060005C5 RID: 1477 RVA: 0x0002989A File Offset: 0x00027A9A
 	public override bool IsAnimationAttackPlaying()
 	{
 		return (this.attack1AS != null && this.attack1AS.enabled) || (this.attack2AS != null && this.attack2AS.enabled);
 	}
 
-	// Token: 0x060005C5 RID: 1477 RVA: 0x00029810 File Offset: 0x00027A10
+	// Token: 0x060005C6 RID: 1478 RVA: 0x000298D4 File Offset: 0x00027AD4
 	public override void StartAnimationAttack()
 	{
 		this.state = GameObjectAnimalAnimation.State.Attack;
@@ -64,7 +64,7 @@ public class GameObjectAnimalAnimation : AvatarController
 		}
 	}
 
-	// Token: 0x060005C6 RID: 1478 RVA: 0x0002988C File Offset: 0x00027A8C
+	// Token: 0x060005C7 RID: 1479 RVA: 0x00029950 File Offset: 0x00027B50
 	public override void StartAnimationHit(EnumBodyPartHit _bodyPart, int _dir, int _hitDamage, bool _criticalHit, int _movementState, float _random, float _duration)
 	{
 		if (this.isDead)
@@ -78,7 +78,7 @@ public class GameObjectAnimalAnimation : AvatarController
 		}
 	}
 
-	// Token: 0x060005C7 RID: 1479 RVA: 0x000298C8 File Offset: 0x00027AC8
+	// Token: 0x060005C8 RID: 1480 RVA: 0x0002998C File Offset: 0x00027B8C
 	public override void StartAnimationJumping()
 	{
 		if (!this.entity.IsSwimming() && this.anim["Jump"] != null)
@@ -88,7 +88,7 @@ public class GameObjectAnimalAnimation : AvatarController
 		}
 	}
 
-	// Token: 0x060005C8 RID: 1480 RVA: 0x00029918 File Offset: 0x00027B18
+	// Token: 0x060005C9 RID: 1481 RVA: 0x000299DC File Offset: 0x00027BDC
 	public override void SetVisible(bool _b)
 	{
 		if (this.m_bVisible != _b || !this.visInit)
@@ -107,7 +107,7 @@ public class GameObjectAnimalAnimation : AvatarController
 		}
 	}
 
-	// Token: 0x060005C9 RID: 1481 RVA: 0x00029974 File Offset: 0x00027B74
+	// Token: 0x060005CA RID: 1482 RVA: 0x00029A38 File Offset: 0x00027C38
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Update()
 	{
@@ -225,7 +225,7 @@ public class GameObjectAnimalAnimation : AvatarController
 		}
 	}
 
-	// Token: 0x060005CA RID: 1482 RVA: 0x00029DE5 File Offset: 0x00027FE5
+	// Token: 0x060005CB RID: 1483 RVA: 0x00029EA9 File Offset: 0x000280A9
 	public override Transform GetActiveModelRoot()
 	{
 		return this.figureT;

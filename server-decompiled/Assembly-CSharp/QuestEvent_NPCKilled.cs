@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x020009C4 RID: 2500
-// (Invoke) Token: 0x06004A02 RID: 18946
+// Token: 0x020009D5 RID: 2517
+// (Invoke) Token: 0x06004A88 RID: 19080
 public delegate void QuestEvent_NPCKilled(string name);

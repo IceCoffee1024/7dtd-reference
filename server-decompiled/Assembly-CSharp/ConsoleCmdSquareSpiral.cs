@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200029E RID: 670
+// Token: 0x020002A2 RID: 674
 [Preserve]
 public class ConsoleCmdSquareSpiral : ConsoleCmdAbstract
 {
-	// Token: 0x1700021A RID: 538
-	// (get) Token: 0x06001384 RID: 4996 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x1700021B RID: 539
+	// (get) Token: 0x06001396 RID: 5014 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -18,28 +18,28 @@ public class ConsoleCmdSquareSpiral : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001385 RID: 4997 RVA: 0x00077274 File Offset: 0x00075474
+	// Token: 0x06001397 RID: 5015 RVA: 0x000778D0 File Offset: 0x00075AD0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "squarespiral", "sqs" };
 	}
 
-	// Token: 0x06001386 RID: 4998 RVA: 0x0007728C File Offset: 0x0007548C
+	// Token: 0x06001398 RID: 5016 RVA: 0x000778E8 File Offset: 0x00075AE8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Move the player chunk by chunk in a square spiral. Will start off paused and required un-pausing. Also gives god mode and flying at the start.";
 	}
 
-	// Token: 0x06001387 RID: 4999 RVA: 0x00077293 File Offset: 0x00075493
+	// Token: 0x06001399 RID: 5017 RVA: 0x000778EF File Offset: 0x00075AEF
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "<s[tart] [chunks per auto-pause]|p[ause]|r[eset]|waitmode [minimal|meshes|displayed]>";
 	}
 
-	// Token: 0x06001388 RID: 5000 RVA: 0x0007729A File Offset: 0x0007549A
+	// Token: 0x0600139A RID: 5018 RVA: 0x000778F6 File Offset: 0x00075AF6
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (!this.ExecuteInternal(_params, _senderInfo))
@@ -48,7 +48,7 @@ public class ConsoleCmdSquareSpiral : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001389 RID: 5001 RVA: 0x000772B8 File Offset: 0x000754B8
+	// Token: 0x0600139B RID: 5019 RVA: 0x00077914 File Offset: 0x00075B14
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool ExecuteInternal(List<string> _params, CommandSenderInfo _senderInfo)
 	{
@@ -174,7 +174,7 @@ public class ConsoleCmdSquareSpiral : ConsoleCmdAbstract
 		return true;
 	}
 
-	// Token: 0x0600138A RID: 5002 RVA: 0x000774C8 File Offset: 0x000756C8
+	// Token: 0x0600139C RID: 5020 RVA: 0x00077B24 File Offset: 0x00075D24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MacroStart(int _chunksPerAutoPause)
 	{
@@ -189,7 +189,7 @@ public class ConsoleCmdSquareSpiral : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600138B RID: 5003 RVA: 0x000774FA File Offset: 0x000756FA
+	// Token: 0x0600139D RID: 5021 RVA: 0x00077B56 File Offset: 0x00075D56
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MacroPause()
 	{
@@ -201,7 +201,7 @@ public class ConsoleCmdSquareSpiral : ConsoleCmdAbstract
 		this.m_isRunning = true;
 	}
 
-	// Token: 0x0600138C RID: 5004 RVA: 0x00077513 File Offset: 0x00075713
+	// Token: 0x0600139E RID: 5022 RVA: 0x00077B6F File Offset: 0x00075D6F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MacroReset()
 	{
@@ -214,7 +214,7 @@ public class ConsoleCmdSquareSpiral : ConsoleCmdAbstract
 		this.m_coroutine = null;
 	}
 
-	// Token: 0x0600138D RID: 5005 RVA: 0x00077537 File Offset: 0x00075737
+	// Token: 0x0600139F RID: 5023 RVA: 0x00077B93 File Offset: 0x00075D93
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator CoroutineSpiral(int _chunksPerAutoPause)
 	{
@@ -294,7 +294,7 @@ public class ConsoleCmdSquareSpiral : ConsoleCmdAbstract
 		yield break;
 	}
 
-	// Token: 0x0600138E RID: 5006 RVA: 0x0007754D File Offset: 0x0007574D
+	// Token: 0x060013A0 RID: 5024 RVA: 0x00077BA9 File Offset: 0x00075DA9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator<Vector2i> SpiralSequence()
 	{
@@ -369,45 +369,45 @@ public class ConsoleCmdSquareSpiral : ConsoleCmdAbstract
 		yield break;
 	}
 
-	// Token: 0x04000D63 RID: 3427
+	// Token: 0x04000D74 RID: 3444
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool m_isRunning;
 
-	// Token: 0x04000D64 RID: 3428
+	// Token: 0x04000D75 RID: 3445
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Coroutine m_coroutine;
 
-	// Token: 0x04000D65 RID: 3429
+	// Token: 0x04000D76 RID: 3446
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ChunkConditions.Delegate chunkCondition = ChunkConditions.Decorated;
 
-	// Token: 0x04000D66 RID: 3430
+	// Token: 0x04000D77 RID: 3447
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ConsoleCmdSquareSpiral.WaitMode waitMode;
 
-	// Token: 0x0200029F RID: 671
+	// Token: 0x020002A3 RID: 675
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum WaitMode
 	{
-		// Token: 0x04000D68 RID: 3432
+		// Token: 0x04000D79 RID: 3449
 		SingleChunkDecorated,
-		// Token: 0x04000D69 RID: 3433
+		// Token: 0x04000D7A RID: 3450
 		SurroundingMeshesCopied,
-		// Token: 0x04000D6A RID: 3434
+		// Token: 0x04000D7B RID: 3451
 		SurroundingChunksDisplayed
 	}
 
-	// Token: 0x020002A0 RID: 672
+	// Token: 0x020002A4 RID: 676
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum SpiralSequenceState
 	{
-		// Token: 0x04000D6C RID: 3436
+		// Token: 0x04000D7D RID: 3453
 		Left,
-		// Token: 0x04000D6D RID: 3437
+		// Token: 0x04000D7E RID: 3454
 		Down,
-		// Token: 0x04000D6E RID: 3438
+		// Token: 0x04000D7F RID: 3455
 		Right,
-		// Token: 0x04000D6F RID: 3439
+		// Token: 0x04000D80 RID: 3456
 		Up
 	}
 }

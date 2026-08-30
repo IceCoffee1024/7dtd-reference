@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000697 RID: 1687
+// Token: 0x020006A1 RID: 1697
 [Preserve]
 public class IsSleeping : TargetedCompareRequirementBase
 {
-	// Token: 0x0600351F RID: 13599 RVA: 0x0015F0D8 File Offset: 0x0015D2D8
+	// Token: 0x06003575 RID: 13685 RVA: 0x001612B0 File Offset: 0x0015F4B0
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -25,7 +25,7 @@ public class IsSleeping : TargetedCompareRequirementBase
 		return !entityEnemy.IsSleeping;
 	}
 
-	// Token: 0x06003520 RID: 13600 RVA: 0x0015F11F File Offset: 0x0015D31F
+	// Token: 0x06003576 RID: 13686 RVA: 0x001612F7 File Offset: 0x0015F4F7
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("{0}sleeping", this.invert ? "NOT " : ""));

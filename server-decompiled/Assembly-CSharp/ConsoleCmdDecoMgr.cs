@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine.Scripting;
 
-// Token: 0x0200020C RID: 524
+// Token: 0x0200020E RID: 526
 [Preserve]
 public class ConsoleCmdDecoMgr : ConsoleCmdAbstract
 {
-	// Token: 0x06000FFB RID: 4091 RVA: 0x000662FB File Offset: 0x000644FB
+	// Token: 0x06001006 RID: 4102 RVA: 0x00066843 File Offset: 0x00064A43
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "decomgr" };
 	}
 
-	// Token: 0x06000FFC RID: 4092 RVA: 0x0006630B File Offset: 0x0006450B
+	// Token: 0x06001007 RID: 4103 RVA: 0x00066853 File Offset: 0x00064A53
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
@@ -22,7 +22,7 @@ public class ConsoleCmdDecoMgr : ConsoleCmdAbstract
 	}
 
 	// Token: 0x1700016D RID: 365
-	// (get) Token: 0x06000FFD RID: 4093 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// (get) Token: 0x06001008 RID: 4104 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -32,7 +32,7 @@ public class ConsoleCmdDecoMgr : ConsoleCmdAbstract
 	}
 
 	// Token: 0x1700016E RID: 366
-	// (get) Token: 0x06000FFE RID: 4094 RVA: 0x0006110A File Offset: 0x0005F30A
+	// (get) Token: 0x06001009 RID: 4105 RVA: 0x00061652 File Offset: 0x0005F852
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -41,7 +41,7 @@ public class ConsoleCmdDecoMgr : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000FFF RID: 4095 RVA: 0x00066314 File Offset: 0x00064514
+	// Token: 0x0600100A RID: 4106 RVA: 0x0006685C File Offset: 0x00064A5C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count > 0 && _params[0] == "state")

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02001032 RID: 4146
+// Token: 0x0200104B RID: 4171
 [Preserve]
 public class XUiC_SignNewLayerPanel : XUiController
 {
-	// Token: 0x06008387 RID: 33671 RVA: 0x00321F80 File Offset: 0x00320180
+	// Token: 0x06008479 RID: 33913 RVA: 0x003267A8 File Offset: 0x003249A8
 	public override void Init()
 	{
 		base.Init();
@@ -20,7 +20,7 @@ public class XUiC_SignNewLayerPanel : XUiController
 		xuiC_SignLayerType3.OnBecameSelected = (Action<XUiC_SignGridEntry>)Delegate.Combine(xuiC_SignLayerType3.OnBecameSelected, new Action<XUiC_SignGridEntry>(this.LayerTypeNoise_OnBecameSelected));
 	}
 
-	// Token: 0x06008388 RID: 33672 RVA: 0x0032204C File Offset: 0x0032024C
+	// Token: 0x0600847A RID: 33914 RVA: 0x00326874 File Offset: 0x00324A74
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LayerTypeText_OnBecameSelected(XUiC_SignGridEntry gridEntry)
 	{
@@ -33,7 +33,7 @@ public class XUiC_SignNewLayerPanel : XUiController
 		onLayerTypeSelected(signLayer);
 	}
 
-	// Token: 0x06008389 RID: 33673 RVA: 0x00322070 File Offset: 0x00320270
+	// Token: 0x0600847B RID: 33915 RVA: 0x00326898 File Offset: 0x00324A98
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LayerTypePolygon_OnBecameSelected(XUiC_SignGridEntry gridEntry)
 	{
@@ -46,7 +46,7 @@ public class XUiC_SignNewLayerPanel : XUiController
 		onLayerTypeSelected(signLayer);
 	}
 
-	// Token: 0x0600838A RID: 33674 RVA: 0x00322094 File Offset: 0x00320294
+	// Token: 0x0600847C RID: 33916 RVA: 0x003268BC File Offset: 0x00324ABC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LayerTypeNoise_OnBecameSelected(XUiC_SignGridEntry gridEntry)
 	{
@@ -59,18 +59,18 @@ public class XUiC_SignNewLayerPanel : XUiController
 		onLayerTypeSelected(signLayer);
 	}
 
-	// Token: 0x0400616E RID: 24942
+	// Token: 0x04006235 RID: 25141
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SignLayerType layerTypeText;
 
-	// Token: 0x0400616F RID: 24943
+	// Token: 0x04006236 RID: 25142
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SignLayerType layerTypePolygon;
 
-	// Token: 0x04006170 RID: 24944
+	// Token: 0x04006237 RID: 25143
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SignLayerType layerTypeNoise;
 
-	// Token: 0x04006171 RID: 24945
+	// Token: 0x04006238 RID: 25144
 	public Action<SignData.SignLayer> OnLayerTypeSelected;
 }

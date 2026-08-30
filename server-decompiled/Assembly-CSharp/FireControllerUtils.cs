@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x020003CB RID: 971
+// Token: 0x020003CF RID: 975
 public static class FireControllerUtils
 {
-	// Token: 0x06001D5A RID: 7514 RVA: 0x000B1634 File Offset: 0x000AF834
+	// Token: 0x06001D77 RID: 7543 RVA: 0x000B1D78 File Offset: 0x000AFF78
 	public static void SpawnParticleEffect(ParticleEffect _pe, int _entityId)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001590 RID: 5520
+// Token: 0x020015AB RID: 5547
 [RequireComponent(typeof(vp_Shooter))]
 public class vp_SimpleAITurret : MonoBehaviour
 {
-	// Token: 0x0600AC8B RID: 44171 RVA: 0x00405C57 File Offset: 0x00403E57
+	// Token: 0x0600AD88 RID: 44424 RVA: 0x0040AF97 File Offset: 0x00409197
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Start()
 	{
@@ -13,7 +13,7 @@ public class vp_SimpleAITurret : MonoBehaviour
 		this.m_Transform = base.transform;
 	}
 
-	// Token: 0x0600AC8C RID: 44172 RVA: 0x00405C71 File Offset: 0x00403E71
+	// Token: 0x0600AD89 RID: 44425 RVA: 0x0040AFB1 File Offset: 0x004091B1
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Update()
 	{
@@ -35,7 +35,7 @@ public class vp_SimpleAITurret : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AC8D RID: 44173 RVA: 0x00405CB4 File Offset: 0x00403EB4
+	// Token: 0x0600AD8A RID: 44426 RVA: 0x0040AFF4 File Offset: 0x004091F4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual Transform ScanForLocalPlayer()
 	{
@@ -51,7 +51,7 @@ public class vp_SimpleAITurret : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x0600AC8E RID: 44174 RVA: 0x00405D40 File Offset: 0x00403F40
+	// Token: 0x0600AD8B RID: 44427 RVA: 0x0040B080 File Offset: 0x00409280
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void AttackTarget()
 	{
@@ -63,34 +63,34 @@ public class vp_SimpleAITurret : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400802F RID: 32815
+	// Token: 0x04008108 RID: 33032
 	public float ViewRange = 10f;
 
-	// Token: 0x04008030 RID: 32816
+	// Token: 0x04008109 RID: 33033
 	public float AimSpeed = 50f;
 
-	// Token: 0x04008031 RID: 32817
+	// Token: 0x0400810A RID: 33034
 	public float WakeInterval = 2f;
 
-	// Token: 0x04008032 RID: 32818
+	// Token: 0x0400810B RID: 33035
 	public float FireAngle = 10f;
 
-	// Token: 0x04008033 RID: 32819
+	// Token: 0x0400810C RID: 33036
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Shooter m_Shooter;
 
-	// Token: 0x04008034 RID: 32820
+	// Token: 0x0400810D RID: 33037
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_Transform;
 
-	// Token: 0x04008035 RID: 32821
+	// Token: 0x0400810E RID: 33038
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_Target;
 
-	// Token: 0x04008036 RID: 32822
+	// Token: 0x0400810F RID: 33039
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Timer.Handle m_Timer = new vp_Timer.Handle();

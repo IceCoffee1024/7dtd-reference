@@ -119,17 +119,21 @@ public class AnimatorDoorState : StateMachineBehaviour
 					}
 					this.colliders[i].enabled = !_on;
 				}
-				IL_005E:
+				IL_006D:
 				i--;
 				continue;
 				IL_0050:
-				this.colliders[i].enabled = _on;
-				goto IL_005E;
+				if (!this.colliders[i].isTrigger)
+				{
+					this.colliders[i].enabled = _on;
+					goto IL_006D;
+				}
+				goto IL_006D;
 			}
 		}
 	}
 
-	// Token: 0x06000305 RID: 773 RVA: 0x0001712C File Offset: 0x0001532C
+	// Token: 0x06000305 RID: 773 RVA: 0x0001713C File Offset: 0x0001533C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool CheckForObstacles()
 	{
@@ -165,7 +169,7 @@ public class AnimatorDoorState : StateMachineBehaviour
 		return false;
 	}
 
-	// Token: 0x06000306 RID: 774 RVA: 0x00017228 File Offset: 0x00015428
+	// Token: 0x06000306 RID: 774 RVA: 0x00017238 File Offset: 0x00015438
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void PushPlayers(float _normalizedTime)
 	{
@@ -214,7 +218,7 @@ public class AnimatorDoorState : StateMachineBehaviour
 		}
 	}
 
-	// Token: 0x06000307 RID: 775 RVA: 0x00017386 File Offset: 0x00015586
+	// Token: 0x06000307 RID: 775 RVA: 0x00017396 File Offset: 0x00015596
 	[Conditional("DEBUG_DOOR")]
 	public void LogDoor(string _format = "", params object[] _args)
 	{

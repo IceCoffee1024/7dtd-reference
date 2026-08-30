@@ -1,18 +1,18 @@
 ﻿using System;
 
-// Token: 0x020012D7 RID: 4823
+// Token: 0x020012F1 RID: 4849
 public enum ERoutineState
 {
-	// Token: 0x040072E8 RID: 29416
+	// Token: 0x040073BF RID: 29631
 	NotStarted,
-	// Token: 0x040072E9 RID: 29417
+	// Token: 0x040073C0 RID: 29632
 	Running,
-	// Token: 0x040072EA RID: 29418
+	// Token: 0x040073C1 RID: 29633
 	Succeeded,
-	// Token: 0x040072EB RID: 29419
+	// Token: 0x040073C2 RID: 29634
 	Failed,
-	// Token: 0x040072EC RID: 29420
+	// Token: 0x040073C3 RID: 29635
 	Cancelled,
-	// Token: 0x040072ED RID: 29421
+	// Token: 0x040073C4 RID: 29636
 	Suspended
 }

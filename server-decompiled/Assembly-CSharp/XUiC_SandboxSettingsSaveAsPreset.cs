@@ -2,13 +2,13 @@
 using SandboxOptions;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E2E RID: 3630
+// Token: 0x02000E43 RID: 3651
 [Preserve]
 public class XUiC_SandboxSettingsSaveAsPreset : XUiController
 {
-	// Token: 0x17000C97 RID: 3223
-	// (get) Token: 0x06006FAB RID: 28587 RVA: 0x002B0311 File Offset: 0x002AE511
-	// (set) Token: 0x06006FAC RID: 28588 RVA: 0x002B0322 File Offset: 0x002AE522
+	// Token: 0x17000CB0 RID: 3248
+	// (get) Token: 0x0600704B RID: 28747 RVA: 0x002B3835 File Offset: 0x002B1A35
+	// (set) Token: 0x0600704C RID: 28748 RVA: 0x002B3846 File Offset: 0x002B1A46
 	[XuiXmlAttribute("sandboxcode", false)]
 	[XuiXmlBinding("sandboxcode")]
 	public string SandboxCode
@@ -30,9 +30,9 @@ public class XUiC_SandboxSettingsSaveAsPreset : XUiController
 		}
 	}
 
-	// Token: 0x17000C98 RID: 3224
-	// (get) Token: 0x06006FAD RID: 28589 RVA: 0x002B0341 File Offset: 0x002AE541
-	// (set) Token: 0x06006FAE RID: 28590 RVA: 0x002B0349 File Offset: 0x002AE549
+	// Token: 0x17000CB1 RID: 3249
+	// (get) Token: 0x0600704D RID: 28749 RVA: 0x002B3865 File Offset: 0x002B1A65
+	// (set) Token: 0x0600704E RID: 28750 RVA: 0x002B386D File Offset: 0x002B1A6D
 	[XuiXmlBinding("name_valid")]
 	public bool NameValid
 	{
@@ -52,9 +52,9 @@ public class XUiC_SandboxSettingsSaveAsPreset : XUiController
 		}
 	}
 
-	// Token: 0x17000C99 RID: 3225
-	// (get) Token: 0x06006FAF RID: 28591 RVA: 0x002B0363 File Offset: 0x002AE563
-	// (set) Token: 0x06006FB0 RID: 28592 RVA: 0x002B0374 File Offset: 0x002AE574
+	// Token: 0x17000CB2 RID: 3250
+	// (get) Token: 0x0600704F RID: 28751 RVA: 0x002B3887 File Offset: 0x002B1A87
+	// (set) Token: 0x06007050 RID: 28752 RVA: 0x002B3898 File Offset: 0x002B1A98
 	public string Description
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -74,14 +74,14 @@ public class XUiC_SandboxSettingsSaveAsPreset : XUiController
 		}
 	}
 
-	// Token: 0x06006FB1 RID: 28593 RVA: 0x002B0393 File Offset: 0x002AE593
+	// Token: 0x06007051 RID: 28753 RVA: 0x002B38B7 File Offset: 0x002B1AB7
 	public override void Init()
 	{
 		base.Init();
 		this.txtPresetName.UIInput.onValidate = new UIInput.OnValidate(GameUtils.ValidateGameNameInput);
 	}
 
-	// Token: 0x06006FB2 RID: 28594 RVA: 0x002B03B7 File Offset: 0x002AE5B7
+	// Token: 0x06007052 RID: 28754 RVA: 0x002B38DB File Offset: 0x002B1ADB
 	[XuiBindEvent("OnPress", "btnCancel")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnCancelCreate_OnPressed(XUiController _sender, int _mouseButton)
@@ -90,7 +90,7 @@ public class XUiC_SandboxSettingsSaveAsPreset : XUiController
 		this.onConfirm = null;
 	}
 
-	// Token: 0x06006FB3 RID: 28595 RVA: 0x002B03DC File Offset: 0x002AE5DC
+	// Token: 0x06007053 RID: 28755 RVA: 0x002B3900 File Offset: 0x002B1B00
 	[XuiBindEvent("OnPress", "btnConfirm")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnConfirmCreate_OnPressed(XUiController _sender, int _mouseButton)
@@ -118,7 +118,7 @@ public class XUiC_SandboxSettingsSaveAsPreset : XUiController
 		this.onConfirm = null;
 	}
 
-	// Token: 0x06006FB4 RID: 28596 RVA: 0x002B0492 File Offset: 0x002AE692
+	// Token: 0x06007054 RID: 28756 RVA: 0x002B39B6 File Offset: 0x002B1BB6
 	[XuiBindEvent("OnSubmitHandler", "txtPresetName")]
 	[XuiBindEvent("OnSubmitHandler", "txtDescription")]
 	[PublicizedFrom(EAccessModifier.Private)]
@@ -127,7 +127,7 @@ public class XUiC_SandboxSettingsSaveAsPreset : XUiController
 		this.BtnConfirmCreate_OnPressed(this, -1);
 	}
 
-	// Token: 0x06006FB5 RID: 28597 RVA: 0x002B049C File Offset: 0x002AE69C
+	// Token: 0x06007055 RID: 28757 RVA: 0x002B39C0 File Offset: 0x002B1BC0
 	[XuiBindEvent("OnChangeHandler", "txtPresetName")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CreateProfileName_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
@@ -136,7 +136,7 @@ public class XUiC_SandboxSettingsSaveAsPreset : XUiController
 		this.NameValid = text.Length > 0 && text.IndexOf('.') < 0 && this.sandboxManager.GetPreset(text) == null;
 	}
 
-	// Token: 0x06006FB6 RID: 28598 RVA: 0x002B04DC File Offset: 0x002AE6DC
+	// Token: 0x06007056 RID: 28758 RVA: 0x002B3A00 File Offset: 0x002B1C00
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -158,7 +158,7 @@ public class XUiC_SandboxSettingsSaveAsPreset : XUiController
 		}
 	}
 
-	// Token: 0x06006FB7 RID: 28599 RVA: 0x002B0568 File Offset: 0x002AE768
+	// Token: 0x06007057 RID: 28759 RVA: 0x002B3A8C File Offset: 0x002B1C8C
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -168,14 +168,14 @@ public class XUiC_SandboxSettingsSaveAsPreset : XUiController
 		this.txtPresetName.SelectOrVirtualKeyboard(true);
 	}
 
-	// Token: 0x06006FB8 RID: 28600 RVA: 0x002B05B8 File Offset: 0x002AE7B8
+	// Token: 0x06007058 RID: 28760 RVA: 0x002B3ADC File Offset: 0x002B1CDC
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.Description = "";
 	}
 
-	// Token: 0x06006FB9 RID: 28601 RVA: 0x002B05CC File Offset: 0x002AE7CC
+	// Token: 0x06007059 RID: 28761 RVA: 0x002B3AF0 File Offset: 0x002B1CF0
 	public static void Open(XUi _xui, string _sandboxCode, string _description, Action<string> _onConfirm = null)
 	{
 		XUiC_SandboxSettingsSaveAsPreset childByType = _xui.GetChildByType<XUiC_SandboxSettingsSaveAsPreset>();
@@ -185,43 +185,43 @@ public class XUiC_SandboxSettingsSaveAsPreset : XUiController
 		_xui.playerUI.windowManager.Open(childByType.windowGroup, false);
 	}
 
-	// Token: 0x0400542F RID: 21551
+	// Token: 0x040054D3 RID: 21715
 	[XuiBindComponent("presetName", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_TextInput txtPresetName;
 
-	// Token: 0x04005430 RID: 21552
+	// Token: 0x040054D4 RID: 21716
 	[XuiBindComponent("description", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_TextInput txtDescription;
 
-	// Token: 0x04005431 RID: 21553
+	// Token: 0x040054D5 RID: 21717
 	[XuiBindComponent("btnConfirm", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnConfirm;
 
-	// Token: 0x04005432 RID: 21554
+	// Token: 0x040054D6 RID: 21718
 	[XuiBindComponent("btnCancel", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnCancel;
 
-	// Token: 0x04005433 RID: 21555
+	// Token: 0x040054D7 RID: 21719
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly SandboxOptionManager sandboxManager = SandboxOptionManager.Current;
 
-	// Token: 0x04005434 RID: 21556
+	// Token: 0x040054D8 RID: 21720
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Action<string> onConfirm;
 
-	// Token: 0x04005435 RID: 21557
+	// Token: 0x040054D9 RID: 21721
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string sandboxCode;
 
-	// Token: 0x04005436 RID: 21558
+	// Token: 0x040054DA RID: 21722
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool nameValid;
 
-	// Token: 0x04005437 RID: 21559
+	// Token: 0x040054DB RID: 21723
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string description;
 }

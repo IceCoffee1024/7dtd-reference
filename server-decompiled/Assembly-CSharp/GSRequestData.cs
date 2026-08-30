@@ -1,60 +1,60 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x020011D8 RID: 4568
+// Token: 0x020011F4 RID: 4596
 public class GSRequestData
 {
-	// Token: 0x060091D6 RID: 37334 RVA: 0x0001FF1E File Offset: 0x0001E11E
+	// Token: 0x060092DA RID: 37594 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
 	public GSRequestData GetGSData(string _key)
 	{
 		return null;
 	}
 
-	// Token: 0x060091D7 RID: 37335 RVA: 0x0037205C File Offset: 0x0037025C
+	// Token: 0x060092DB RID: 37595 RVA: 0x00377328 File Offset: 0x00375528
 	public int? GetInt(string _key)
 	{
 		return null;
 	}
 
-	// Token: 0x060091D8 RID: 37336 RVA: 0x00372074 File Offset: 0x00370274
+	// Token: 0x060092DC RID: 37596 RVA: 0x00377340 File Offset: 0x00375540
 	public float? GetFloat(string _key)
 	{
 		return null;
 	}
 
-	// Token: 0x060091D9 RID: 37337 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060092DD RID: 37597 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Add(string _key, object _value)
 	{
 	}
 
-	// Token: 0x060091DA RID: 37338 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060092DE RID: 37598 RVA: 0x000027FC File Offset: 0x000009FC
 	public void AddNumber(string _key, double _value)
 	{
 	}
 
-	// Token: 0x060091DB RID: 37339 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060092DF RID: 37599 RVA: 0x000027FC File Offset: 0x000009FC
 	public void AddNumber(string _key, int _value)
 	{
 	}
 
-	// Token: 0x060091DC RID: 37340 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060092E0 RID: 37600 RVA: 0x000027FC File Offset: 0x000009FC
 	public void AddString(string _key, string _value)
 	{
 	}
 
-	// Token: 0x060091DD RID: 37341 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060092E1 RID: 37601 RVA: 0x000027FC File Offset: 0x000009FC
 	public void AddBoolean(string _key, bool _value)
 	{
 	}
 
-	// Token: 0x060091DE RID: 37342 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060092E2 RID: 37602 RVA: 0x000027FC File Offset: 0x000009FC
 	public void AddObject(string _key, GSRequestData _value)
 	{
 	}
 
-	// Token: 0x04006CF0 RID: 27888
+	// Token: 0x04006DC9 RID: 28105
 	public IEnumerable<KeyValuePair<string, object>> BaseData;
 
-	// Token: 0x04006CF1 RID: 27889
+	// Token: 0x04006DCA RID: 28106
 	public string JSON;
 }

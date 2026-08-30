@@ -6,7 +6,7 @@ using UnityEngine;
 public class AnimationEventBridge : RootTransformRefEntity
 {
 	// Token: 0x17000049 RID: 73
-	// (get) Token: 0x06000356 RID: 854 RVA: 0x000187A8 File Offset: 0x000169A8
+	// (get) Token: 0x06000356 RID: 854 RVA: 0x0001882C File Offset: 0x00016A2C
 	public EntityAlive entity
 	{
 		get
@@ -19,13 +19,13 @@ public class AnimationEventBridge : RootTransformRefEntity
 		}
 	}
 
-	// Token: 0x06000357 RID: 855 RVA: 0x000187DB File Offset: 0x000169DB
+	// Token: 0x06000357 RID: 855 RVA: 0x0001885F File Offset: 0x00016A5F
 	public void PlaySound(AnimationEvent ae)
 	{
 		this.playSound(ae.stringParameter, ae);
 	}
 
-	// Token: 0x06000358 RID: 856 RVA: 0x000187EC File Offset: 0x000169EC
+	// Token: 0x06000358 RID: 856 RVA: 0x00018870 File Offset: 0x00016A70
 	public void playSound(string name, AnimationEvent ae = null)
 	{
 		if (this.entity != null)
@@ -39,7 +39,7 @@ public class AnimationEventBridge : RootTransformRefEntity
 		}
 	}
 
-	// Token: 0x06000359 RID: 857 RVA: 0x0001883C File Offset: 0x00016A3C
+	// Token: 0x06000359 RID: 857 RVA: 0x000188C0 File Offset: 0x00016AC0
 	public void PlayWeaponSound(AnimationEvent ae)
 	{
 		EntityPlayer entityPlayer = this.entity as EntityPlayer;
@@ -49,13 +49,13 @@ public class AnimationEventBridge : RootTransformRefEntity
 		}
 	}
 
-	// Token: 0x0600035A RID: 858 RVA: 0x00018882 File Offset: 0x00016A82
+	// Token: 0x0600035A RID: 858 RVA: 0x00018906 File Offset: 0x00016B06
 	public void PlayLocalSound(string name)
 	{
 		this.playSound(name, null);
 	}
 
-	// Token: 0x0600035B RID: 859 RVA: 0x0001888C File Offset: 0x00016A8C
+	// Token: 0x0600035B RID: 859 RVA: 0x00018910 File Offset: 0x00016B10
 	public void PlayStepSound(AnimationEvent _animEvent)
 	{
 		if (this.entity && _animEvent.animatorClipInfo.weight >= 0.3f)
@@ -74,7 +74,7 @@ public class AnimationEventBridge : RootTransformRefEntity
 		}
 	}
 
-	// Token: 0x0600035C RID: 860 RVA: 0x000188F8 File Offset: 0x00016AF8
+	// Token: 0x0600035C RID: 860 RVA: 0x0001897C File Offset: 0x00016B7C
 	public void DeathImpactLight()
 	{
 		if (this.entity != null && this.entity.IsDead())
@@ -83,7 +83,7 @@ public class AnimationEventBridge : RootTransformRefEntity
 		}
 	}
 
-	// Token: 0x0600035D RID: 861 RVA: 0x0001892C File Offset: 0x00016B2C
+	// Token: 0x0600035D RID: 861 RVA: 0x000189B0 File Offset: 0x00016BB0
 	public void DeathImpactHeavy()
 	{
 		if (this.entity != null && this.entity.IsDead())
@@ -92,7 +92,7 @@ public class AnimationEventBridge : RootTransformRefEntity
 		}
 	}
 
-	// Token: 0x0600035E RID: 862 RVA: 0x00018960 File Offset: 0x00016B60
+	// Token: 0x0600035E RID: 862 RVA: 0x000189E4 File Offset: 0x00016BE4
 	public void HideHoldingItem()
 	{
 		EntityAlive entity = this.entity;
@@ -106,7 +106,7 @@ public class AnimationEventBridge : RootTransformRefEntity
 		}
 	}
 
-	// Token: 0x0600035F RID: 863 RVA: 0x000189AC File Offset: 0x00016BAC
+	// Token: 0x0600035F RID: 863 RVA: 0x00018A30 File Offset: 0x00016C30
 	public void ShowHoldingItem()
 	{
 		EntityAlive entity = this.entity;
@@ -120,7 +120,7 @@ public class AnimationEventBridge : RootTransformRefEntity
 		}
 	}
 
-	// Token: 0x06000360 RID: 864 RVA: 0x000189F8 File Offset: 0x00016BF8
+	// Token: 0x06000360 RID: 864 RVA: 0x00018A7C File Offset: 0x00016C7C
 	public void Hit()
 	{
 		Entity entity = this.entity;
@@ -130,7 +130,7 @@ public class AnimationEventBridge : RootTransformRefEntity
 		}
 	}
 
-	// Token: 0x06000361 RID: 865 RVA: 0x00018A44 File Offset: 0x00016C44
+	// Token: 0x06000361 RID: 865 RVA: 0x00018AC8 File Offset: 0x00016CC8
 	public void ConsumeComplete()
 	{
 		EntityPlayerLocal entityPlayerLocal = this.entity as EntityPlayerLocal;
@@ -149,7 +149,21 @@ public class AnimationEventBridge : RootTransformRefEntity
 		}
 	}
 
-	// Token: 0x06000362 RID: 866 RVA: 0x00018AD8 File Offset: 0x00016CD8
+	// Token: 0x06000362 RID: 866 RVA: 0x00018B5C File Offset: 0x00016D5C
+	public void HeldEntityStress()
+	{
+		EntityPlayerLocal primaryPlayer = GameManager.Instance.World.GetPrimaryPlayer();
+		if (primaryPlayer != null)
+		{
+			ItemClassHeldEntity itemClassHeldEntity = primaryPlayer.inventory.holdingItem as ItemClassHeldEntity;
+			if (itemClassHeldEntity != null)
+			{
+				itemClassHeldEntity.PlayStressSound();
+			}
+		}
+	}
+
+	// Token: 0x06000363 RID: 867 RVA: 0x00018B9C File Offset: 0x00016D9C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{

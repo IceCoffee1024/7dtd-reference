@@ -4,17 +4,17 @@ using UnityEngine.Scripting;
 
 namespace Webserver.WebAPI.APIs
 {
-	// Token: 0x02001AAD RID: 6829
+	// Token: 0x02001AD4 RID: 6868
 	[Preserve]
 	public class OpenAPI : AbsRestApi
 	{
-		// Token: 0x0600CD53 RID: 52563 RVA: 0x004AEAF8 File Offset: 0x004ACCF8
+		// Token: 0x0600CEDC RID: 52956 RVA: 0x004B4EEC File Offset: 0x004B30EC
 		public OpenAPI(Web _parentWeb)
 			: base(_parentWeb, null)
 		{
 		}
 
-		// Token: 0x0600CD54 RID: 52564 RVA: 0x004AEB04 File Offset: 0x004ACD04
+		// Token: 0x0600CEDD RID: 52957 RVA: 0x004B4EF8 File Offset: 0x004B30F8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void HandleRestGet(RequestContext _context)
 		{
@@ -28,7 +28,7 @@ namespace Webserver.WebAPI.APIs
 			WebUtils.WriteText(_context.Response, text, HttpStatusCode.OK, "text/x-yaml");
 		}
 
-		// Token: 0x0600CD55 RID: 52565 RVA: 0x004AEB65 File Offset: 0x004ACD65
+		// Token: 0x0600CEDE RID: 52958 RVA: 0x004B4F59 File Offset: 0x004B3159
 		public override int DefaultPermissionLevel()
 		{
 			return 2000;

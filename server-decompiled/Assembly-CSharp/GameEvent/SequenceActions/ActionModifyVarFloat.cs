@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019DE RID: 6622
+	// Token: 0x02001A05 RID: 6661
 	[Preserve]
 	public class ActionModifyVarFloat : ActionBaseClientAction
 	{
-		// Token: 0x0600C956 RID: 51542 RVA: 0x0049EBC4 File Offset: 0x0049CDC4
+		// Token: 0x0600CADF RID: 51935 RVA: 0x004A4FB8 File Offset: 0x004A31B8
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			float floatValue = GameEventManager.GetFloatValue(target as EntityAlive, this.valueText, 0f);
@@ -15,7 +15,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C957 RID: 51543 RVA: 0x0049EC16 File Offset: 0x0049CE16
+		// Token: 0x0600CAE0 RID: 51936 RVA: 0x004A500A File Offset: 0x004A320A
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -24,7 +24,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseEnum<GameEventVariables.OperationTypes>(ActionModifyVarFloat.PropOperation, ref this.operationType);
 		}
 
-		// Token: 0x0600C958 RID: 51544 RVA: 0x0049EC52 File Offset: 0x0049CE52
+		// Token: 0x0600CAE1 RID: 51937 RVA: 0x004A5046 File Offset: 0x004A3246
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -36,27 +36,27 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040098DD RID: 39133
+		// Token: 0x04009A0E RID: 39438
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string valueText = "";
 
-		// Token: 0x040098DE RID: 39134
+		// Token: 0x04009A0F RID: 39439
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string varName = "";
 
-		// Token: 0x040098DF RID: 39135
+		// Token: 0x04009A10 RID: 39440
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public GameEventVariables.OperationTypes operationType;
 
-		// Token: 0x040098E0 RID: 39136
+		// Token: 0x04009A11 RID: 39441
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropValue = "value";
 
-		// Token: 0x040098E1 RID: 39137
+		// Token: 0x04009A12 RID: 39442
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropVarName = "var_name";
 
-		// Token: 0x040098E2 RID: 39138
+		// Token: 0x04009A13 RID: 39443
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropOperation = "operation";
 	}

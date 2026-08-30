@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace GamePath
 {
-	// Token: 0x020018B0 RID: 6320
+	// Token: 0x020018D6 RID: 6358
 	public class ASPPathFinder : PathFinder
 	{
-		// Token: 0x0600C2B0 RID: 49840 RVA: 0x00480334 File Offset: 0x0047E534
+		// Token: 0x0600C437 RID: 50231 RVA: 0x00486460 File Offset: 0x00484660
 		public ASPPathFinder(PathInfo _pathInfo, bool _bDrn, bool _canClimbLadders, bool _bCanClimbWalls)
 			: base(_pathInfo, _bDrn, _canClimbLadders, _bCanClimbWalls)
 		{
@@ -15,7 +15,7 @@ namespace GamePath
 			this.smoothPercent = 0.82f + this.entity.rand.RandomFloat * 0.07f;
 		}
 
-		// Token: 0x0600C2B1 RID: 49841 RVA: 0x00480370 File Offset: 0x0047E570
+		// Token: 0x0600C438 RID: 50232 RVA: 0x0048649C File Offset: 0x0048469C
 		public override void Calculate(Vector3 _fromPos)
 		{
 			if (AstarPath.active == null)
@@ -139,7 +139,7 @@ namespace GamePath
 			this.pathInfo.state = PathInfo.State.Pathing;
 		}
 
-		// Token: 0x0600C2B2 RID: 49842 RVA: 0x0048078C File Offset: 0x0047E98C
+		// Token: 0x0600C439 RID: 50233 RVA: 0x004868B8 File Offset: 0x00484AB8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnPathFinished(Path p)
 		{
@@ -272,7 +272,7 @@ namespace GamePath
 			this.pathInfo.path.SetPoints(array);
 		}
 
-		// Token: 0x0600C2B3 RID: 49843 RVA: 0x00480CCC File Offset: 0x0047EECC
+		// Token: 0x0600C43A RID: 50234 RVA: 0x00486DF8 File Offset: 0x00484FF8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool IsLineClear(Vector3 pos1, Vector3 pos2, bool isTall)
 		{
@@ -309,7 +309,7 @@ namespace GamePath
 			return true;
 		}
 
-		// Token: 0x0600C2B4 RID: 49844 RVA: 0x00480DA7 File Offset: 0x0047EFA7
+		// Token: 0x0600C43B RID: 50235 RVA: 0x00486ED3 File Offset: 0x004850D3
 		public void Cancel()
 		{
 			if (this.path != null)
@@ -318,19 +318,19 @@ namespace GamePath
 			}
 		}
 
-		// Token: 0x04009325 RID: 37669
+		// Token: 0x0400944E RID: 37966
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int cCollisionMask = 1082195968;
 
-		// Token: 0x04009326 RID: 37670
+		// Token: 0x0400944F RID: 37967
 		[PublicizedFrom(EAccessModifier.Private)]
 		public EntityAlive entity;
 
-		// Token: 0x04009327 RID: 37671
+		// Token: 0x04009450 RID: 37968
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float smoothPercent;
 
-		// Token: 0x04009328 RID: 37672
+		// Token: 0x04009451 RID: 37969
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ABPath path;
 	}

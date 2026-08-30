@@ -2,10 +2,10 @@
 using System.IO;
 using Noemax.GZip;
 
-// Token: 0x02000B7F RID: 2943
+// Token: 0x02000B91 RID: 2961
 public class RegionFileChunkReader
 {
-	// Token: 0x0600591C RID: 22812 RVA: 0x00221838 File Offset: 0x0021FA38
+	// Token: 0x060059A4 RID: 22948 RVA: 0x00224554 File Offset: 0x00222754
 	public RegionFileChunkReader(RegionFileAccessAbstract regionFileAccess)
 	{
 		this.regionFileAccess = regionFileAccess;
@@ -14,7 +14,7 @@ public class RegionFileChunkReader
 		this.loadChunkReader.SetBaseStream(this.loadChunkMemoryStream);
 	}
 
-	// Token: 0x0600591D RID: 22813 RVA: 0x0022189C File Offset: 0x0021FA9C
+	// Token: 0x060059A5 RID: 22949 RVA: 0x002245B8 File Offset: 0x002227B8
 	public PooledBinaryReader readIntoLoadStream(string _dir, int chunkX, int chunkZ, string ext, out uint version)
 	{
 		Stream inputStream = this.regionFileAccess.GetInputStream(_dir, chunkX, chunkZ, ext);
@@ -54,7 +54,7 @@ public class RegionFileChunkReader
 		return this.loadChunkReader;
 	}
 
-	// Token: 0x0600591E RID: 22814 RVA: 0x002219D8 File Offset: 0x0021FBD8
+	// Token: 0x060059A6 RID: 22950 RVA: 0x002246F4 File Offset: 0x002228F4
 	public void WriteBackup(string dir, int chunkX, int chunkZ)
 	{
 		using (Stream stream = SdFile.OpenWrite(string.Concat(new string[]
@@ -85,31 +85,31 @@ public class RegionFileChunkReader
 		}
 	}
 
-	// Token: 0x040044E0 RID: 17632
+	// Token: 0x0400457B RID: 17787
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RegionFileAccessAbstract regionFileAccess;
 
-	// Token: 0x040044E1 RID: 17633
+	// Token: 0x0400457C RID: 17788
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Stream innerLoadStream;
 
-	// Token: 0x040044E2 RID: 17634
+	// Token: 0x0400457D RID: 17789
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DeflateInputStream zipLoadStream;
 
-	// Token: 0x040044E3 RID: 17635
+	// Token: 0x0400457E RID: 17790
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MemoryStream loadChunkMemoryStream;
 
-	// Token: 0x040044E4 RID: 17636
+	// Token: 0x0400457F RID: 17791
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PooledBinaryReader loadChunkReader;
 
-	// Token: 0x040044E5 RID: 17637
+	// Token: 0x04004580 RID: 17792
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] loadBuffer = new byte[4096];
 
-	// Token: 0x040044E6 RID: 17638
+	// Token: 0x04004581 RID: 17793
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] magicBytes = new byte[4];
 }

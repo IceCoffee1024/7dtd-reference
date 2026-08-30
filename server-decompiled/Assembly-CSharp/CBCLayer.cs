@@ -1,33 +1,33 @@
 ﻿using System;
 
-// Token: 0x02000AF8 RID: 2808
+// Token: 0x02000B0A RID: 2826
 public class CBCLayer : IMemoryPoolableObject
 {
-	// Token: 0x0600548A RID: 21642 RVA: 0x00205A4C File Offset: 0x00203C4C
+	// Token: 0x06005512 RID: 21778 RVA: 0x00208768 File Offset: 0x00206968
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ~CBCLayer()
 	{
 	}
 
-	// Token: 0x0600548B RID: 21643 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005513 RID: 21779 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Reset()
 	{
 	}
 
-	// Token: 0x0600548C RID: 21644 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005514 RID: 21780 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Cleanup()
 	{
 	}
 
-	// Token: 0x0600548D RID: 21645 RVA: 0x00205A74 File Offset: 0x00203C74
+	// Token: 0x06005515 RID: 21781 RVA: 0x00208790 File Offset: 0x00206990
 	public void CopyFrom(CBCLayer _other)
 	{
 		Array.Copy(_other.data, this.data, this.data.Length);
 	}
 
-	// Token: 0x0400418A RID: 16778
+	// Token: 0x04004225 RID: 16933
 	public readonly byte[] data = new byte[1024];
 
-	// Token: 0x0400418B RID: 16779
+	// Token: 0x04004226 RID: 16934
 	public static int InstanceCount;
 }

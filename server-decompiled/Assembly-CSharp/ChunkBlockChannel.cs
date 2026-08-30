@@ -2,10 +2,10 @@
 using System.IO;
 using System.Runtime.CompilerServices;
 
-// Token: 0x02000AF9 RID: 2809
+// Token: 0x02000B0B RID: 2827
 public class ChunkBlockChannel
 {
-	// Token: 0x0600548E RID: 21646 RVA: 0x00205A90 File Offset: 0x00203C90
+	// Token: 0x06005516 RID: 21782 RVA: 0x002087AC File Offset: 0x002069AC
 	public ChunkBlockChannel(long _defaultValue, int _bytesPerVal = 1)
 	{
 		this.defaultValue = _defaultValue;
@@ -15,14 +15,14 @@ public class ChunkBlockChannel
 		this.layers = new CBCLayer[64 * this.bytesPerVal];
 	}
 
-	// Token: 0x0600548F RID: 21647 RVA: 0x00205AE1 File Offset: 0x00203CE1
+	// Token: 0x06005517 RID: 21783 RVA: 0x002087FD File Offset: 0x002069FD
 	[PublicizedFrom(EAccessModifier.Private)]
 	public CBCLayer allocLayer()
 	{
 		return MemoryPools.poolCBC.AllocSync(true);
 	}
 
-	// Token: 0x06005490 RID: 21648 RVA: 0x00205AEE File Offset: 0x00203CEE
+	// Token: 0x06005518 RID: 21784 RVA: 0x0020880A File Offset: 0x00206A0A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void freeLayer(int _idx)
 	{
@@ -34,7 +34,7 @@ public class ChunkBlockChannel
 		this.layers[_idx] = null;
 	}
 
-	// Token: 0x06005491 RID: 21649 RVA: 0x00205B16 File Offset: 0x00203D16
+	// Token: 0x06005519 RID: 21785 RVA: 0x00208832 File Offset: 0x00206A32
 	[PublicizedFrom(EAccessModifier.Private)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static int calcOffset(int _x, int _y, int _z)
@@ -42,7 +42,7 @@ public class ChunkBlockChannel
 		return _x + _z * 16 + (_y & 3) * 256;
 	}
 
-	// Token: 0x06005492 RID: 21650 RVA: 0x00205B28 File Offset: 0x00203D28
+	// Token: 0x0600551A RID: 21786 RVA: 0x00208844 File Offset: 0x00206A44
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void fillSameValue(long _value = -1L)
 	{
@@ -57,7 +57,7 @@ public class ChunkBlockChannel
 		}
 	}
 
-	// Token: 0x06005493 RID: 21651 RVA: 0x00205B80 File Offset: 0x00203D80
+	// Token: 0x0600551B RID: 21787 RVA: 0x0020889C File Offset: 0x00206A9C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long getSameValue(int _idx)
 	{
@@ -69,7 +69,7 @@ public class ChunkBlockChannel
 		return num;
 	}
 
-	// Token: 0x06005494 RID: 21652 RVA: 0x00205BB8 File Offset: 0x00203DB8
+	// Token: 0x0600551C RID: 21788 RVA: 0x002088D4 File Offset: 0x00206AD4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setSameValue(int _idx, long _value)
 	{
@@ -80,7 +80,7 @@ public class ChunkBlockChannel
 		}
 	}
 
-	// Token: 0x06005495 RID: 21653 RVA: 0x00205BE8 File Offset: 0x00203DE8
+	// Token: 0x0600551D RID: 21789 RVA: 0x00208904 File Offset: 0x00206B04
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long getData(int _idx, int _offs)
 	{
@@ -97,7 +97,7 @@ public class ChunkBlockChannel
 		return num;
 	}
 
-	// Token: 0x06005496 RID: 21654 RVA: 0x00205C2C File Offset: 0x00203E2C
+	// Token: 0x0600551E RID: 21790 RVA: 0x00208948 File Offset: 0x00206B48
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long getSetData(int _idx, int _offs, long _value)
 	{
@@ -116,7 +116,7 @@ public class ChunkBlockChannel
 		return num;
 	}
 
-	// Token: 0x06005497 RID: 21655 RVA: 0x00205C80 File Offset: 0x00203E80
+	// Token: 0x0600551F RID: 21791 RVA: 0x0020899C File Offset: 0x00206B9C
 	public long GetSet(int _x, int _y, int _z, long _value)
 	{
 		int num = (_y >> 2) * this.bytesPerVal;
@@ -142,7 +142,7 @@ public class ChunkBlockChannel
 		return this.getSetData(num, num3, _value);
 	}
 
-	// Token: 0x06005498 RID: 21656 RVA: 0x00205D1C File Offset: 0x00203F1C
+	// Token: 0x06005520 RID: 21792 RVA: 0x00208A38 File Offset: 0x00206C38
 	public void Set(int _x, int _y, int _z, long _value)
 	{
 		int num = (_y >> 2) * this.bytesPerVal;
@@ -177,7 +177,7 @@ public class ChunkBlockChannel
 		}
 	}
 
-	// Token: 0x06005499 RID: 21657 RVA: 0x00205DE0 File Offset: 0x00203FE0
+	// Token: 0x06005521 RID: 21793 RVA: 0x00208AFC File Offset: 0x00206CFC
 	public long Get(int _x, int _y, int _z)
 	{
 		int num = (_y >> 2) * this.bytesPerVal;
@@ -198,7 +198,7 @@ public class ChunkBlockChannel
 		return this.getData(num, num2);
 	}
 
-	// Token: 0x0600549A RID: 21658 RVA: 0x00205E38 File Offset: 0x00204038
+	// Token: 0x06005522 RID: 21794 RVA: 0x00208B54 File Offset: 0x00206D54
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public byte GetByte(int _x, int _y, int _z)
 	{
@@ -216,7 +216,7 @@ public class ChunkBlockChannel
 		return cbclayer.data[num2];
 	}
 
-	// Token: 0x0600549B RID: 21659 RVA: 0x00205E78 File Offset: 0x00204078
+	// Token: 0x06005523 RID: 21795 RVA: 0x00208B94 File Offset: 0x00206D94
 	public void Read(BinaryReader _br, uint _version, bool _bNetworkRead)
 	{
 		if (_version > 34U)
@@ -270,7 +270,7 @@ public class ChunkBlockChannel
 		}
 	}
 
-	// Token: 0x0600549C RID: 21660 RVA: 0x00205FCC File Offset: 0x002041CC
+	// Token: 0x06005524 RID: 21796 RVA: 0x00208CE8 File Offset: 0x00206EE8
 	public void Write(BinaryWriter _bw, bool _bNetworkWrite, byte[] temp)
 	{
 		int num = 0;
@@ -312,7 +312,7 @@ public class ChunkBlockChannel
 		}
 	}
 
-	// Token: 0x0600549D RID: 21661 RVA: 0x0020609A File Offset: 0x0020429A
+	// Token: 0x06005525 RID: 21797 RVA: 0x00208DB6 File Offset: 0x00206FB6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onLayerRead(int _idx)
 	{
@@ -323,7 +323,7 @@ public class ChunkBlockChannel
 		this.checkSameValue(_idx);
 	}
 
-	// Token: 0x0600549E RID: 21662 RVA: 0x002060B0 File Offset: 0x002042B0
+	// Token: 0x06005526 RID: 21798 RVA: 0x00208DCC File Offset: 0x00206FCC
 	public void CheckSameValue()
 	{
 		for (int i = 63; i >= 0; i--)
@@ -332,7 +332,7 @@ public class ChunkBlockChannel
 		}
 	}
 
-	// Token: 0x0600549F RID: 21663 RVA: 0x002060D8 File Offset: 0x002042D8
+	// Token: 0x06005527 RID: 21799 RVA: 0x00208DF4 File Offset: 0x00206FF4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void checkSameValue(int _idx)
 	{
@@ -355,21 +355,21 @@ public class ChunkBlockChannel
 		}
 	}
 
-	// Token: 0x060054A0 RID: 21664 RVA: 0x00206138 File Offset: 0x00204338
+	// Token: 0x06005528 RID: 21800 RVA: 0x00208E54 File Offset: 0x00207054
 	public bool HasSameValue(int _y)
 	{
 		int num = (_y >> 2) * this.bytesPerVal;
 		return this.layers[num] == null;
 	}
 
-	// Token: 0x060054A1 RID: 21665 RVA: 0x0020615C File Offset: 0x0020435C
+	// Token: 0x06005529 RID: 21801 RVA: 0x00208E78 File Offset: 0x00207078
 	public long GetSameValue(int _y)
 	{
 		int num = (_y >> 2) * this.bytesPerVal;
 		return this.getSameValue(num);
 	}
 
-	// Token: 0x060054A2 RID: 21666 RVA: 0x0020617C File Offset: 0x0020437C
+	// Token: 0x0600552A RID: 21802 RVA: 0x00208E98 File Offset: 0x00207098
 	public bool IsDefault()
 	{
 		for (int i = 63; i >= 0; i--)
@@ -382,20 +382,20 @@ public class ChunkBlockChannel
 		return true;
 	}
 
-	// Token: 0x060054A3 RID: 21667 RVA: 0x002061A4 File Offset: 0x002043A4
+	// Token: 0x0600552B RID: 21803 RVA: 0x00208EC0 File Offset: 0x002070C0
 	public bool IsDefault(int _y)
 	{
 		int num = _y >> 2;
 		return this.IsDefaultLayer(num);
 	}
 
-	// Token: 0x060054A4 RID: 21668 RVA: 0x002061BC File Offset: 0x002043BC
+	// Token: 0x0600552C RID: 21804 RVA: 0x00208ED8 File Offset: 0x002070D8
 	public bool IsDefaultLayer(int _blockLayer)
 	{
 		return this.isDefault(_blockLayer * this.bytesPerVal);
 	}
 
-	// Token: 0x060054A5 RID: 21669 RVA: 0x002061CC File Offset: 0x002043CC
+	// Token: 0x0600552D RID: 21805 RVA: 0x00208EE8 File Offset: 0x002070E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isDefault(int _idx)
 	{
@@ -403,7 +403,7 @@ public class ChunkBlockChannel
 		return this.layers[_idx] == null && this.getSameValue(_idx) == this.defaultValue;
 	}
 
-	// Token: 0x060054A6 RID: 21670 RVA: 0x002061F0 File Offset: 0x002043F0
+	// Token: 0x0600552E RID: 21806 RVA: 0x00208F0C File Offset: 0x0020710C
 	public int GetUsedMem()
 	{
 		int num = 0;
@@ -418,14 +418,14 @@ public class ChunkBlockChannel
 		return num + this.layers.Length * 4;
 	}
 
-	// Token: 0x060054A7 RID: 21671 RVA: 0x0020623F File Offset: 0x0020443F
+	// Token: 0x0600552F RID: 21807 RVA: 0x00208F5B File Offset: 0x0020715B
 	public void FreeLayers()
 	{
 		MemoryPools.poolCBC.FreeSync(this.layers);
 		this.fillSameValue(-1L);
 	}
 
-	// Token: 0x060054A8 RID: 21672 RVA: 0x0020625C File Offset: 0x0020445C
+	// Token: 0x06005530 RID: 21808 RVA: 0x00208F78 File Offset: 0x00207178
 	public void Clear(long _defaultValue = -1L)
 	{
 		for (int i = 0; i < this.layers.Length; i++)
@@ -435,7 +435,7 @@ public class ChunkBlockChannel
 		this.fillSameValue(_defaultValue);
 	}
 
-	// Token: 0x060054A9 RID: 21673 RVA: 0x0020628C File Offset: 0x0020448C
+	// Token: 0x06005531 RID: 21809 RVA: 0x00208FA8 File Offset: 0x002071A8
 	public void ClearHalf(bool _bClearUpperHalf)
 	{
 		byte b = (_bClearUpperHalf ? 15 : 240);
@@ -460,7 +460,7 @@ public class ChunkBlockChannel
 		}
 	}
 
-	// Token: 0x060054AA RID: 21674 RVA: 0x002062F8 File Offset: 0x002044F8
+	// Token: 0x06005532 RID: 21810 RVA: 0x00209014 File Offset: 0x00207214
 	public void SetHalf(bool _bSetUpperHalf, byte _v)
 	{
 		byte b = (_bSetUpperHalf ? 15 : 240);
@@ -491,7 +491,7 @@ public class ChunkBlockChannel
 		}
 	}
 
-	// Token: 0x060054AB RID: 21675 RVA: 0x00206388 File Offset: 0x00204588
+	// Token: 0x06005533 RID: 21811 RVA: 0x002090A4 File Offset: 0x002072A4
 	public void CopyFrom(ChunkBlockChannel _other)
 	{
 		for (int i = 0; i < _other.layers.Length; i++)
@@ -515,7 +515,7 @@ public class ChunkBlockChannel
 		}
 	}
 
-	// Token: 0x060054AC RID: 21676 RVA: 0x0020640C File Offset: 0x0020460C
+	// Token: 0x06005534 RID: 21812 RVA: 0x00209128 File Offset: 0x00207328
 	public void Convert(SmartArray _sa, int _shiftBits)
 	{
 		for (int i = 0; i < 256; i++)
@@ -534,7 +534,7 @@ public class ChunkBlockChannel
 		this.CheckSameValue();
 	}
 
-	// Token: 0x060054AD RID: 21677 RVA: 0x00206478 File Offset: 0x00204678
+	// Token: 0x06005535 RID: 21813 RVA: 0x00209194 File Offset: 0x00207394
 	public void Convert(ChunkBlockLayerLegacy[] m_BlockLayers)
 	{
 		for (int i = 0; i < 256; i++)
@@ -559,22 +559,22 @@ public class ChunkBlockChannel
 		this.CheckSameValue();
 	}
 
-	// Token: 0x0400418C RID: 16780
+	// Token: 0x04004227 RID: 16935
 	public const int cElementsPerLayer = 1024;
 
-	// Token: 0x0400418D RID: 16781
+	// Token: 0x04004228 RID: 16936
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly byte[] sameValue;
 
-	// Token: 0x0400418E RID: 16782
+	// Token: 0x04004229 RID: 16937
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CBCLayer[] layers;
 
-	// Token: 0x0400418F RID: 16783
+	// Token: 0x0400422A RID: 16938
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long defaultValue;
 
-	// Token: 0x04004190 RID: 16784
+	// Token: 0x0400422B RID: 16939
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int bytesPerVal;
 }

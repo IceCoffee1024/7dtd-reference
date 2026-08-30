@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000468 RID: 1128
+// Token: 0x0200046C RID: 1132
 [Flags]
 public enum ScoreConditions
 {
-	// Token: 0x040017B6 RID: 6070
+	// Token: 0x040017CC RID: 6092
 	MagnumKill = 2
 }

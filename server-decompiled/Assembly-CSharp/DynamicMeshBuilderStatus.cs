@@ -1,26 +1,26 @@
 ﻿using System;
 
-// Token: 0x02000396 RID: 918
+// Token: 0x0200039A RID: 922
 public enum DynamicMeshBuilderStatus
 {
-	// Token: 0x040011A3 RID: 4515
+	// Token: 0x040011B8 RID: 4536
 	Ready,
-	// Token: 0x040011A4 RID: 4516
+	// Token: 0x040011B9 RID: 4537
 	StartingExport,
-	// Token: 0x040011A5 RID: 4517
+	// Token: 0x040011BA RID: 4538
 	StartingGeneration,
-	// Token: 0x040011A6 RID: 4518
+	// Token: 0x040011BB RID: 4539
 	StartingRegionRegen,
-	// Token: 0x040011A7 RID: 4519
+	// Token: 0x040011BC RID: 4540
 	StartingPreview,
-	// Token: 0x040011A8 RID: 4520
+	// Token: 0x040011BD RID: 4541
 	Running,
-	// Token: 0x040011A9 RID: 4521
+	// Token: 0x040011BE RID: 4542
 	Complete,
-	// Token: 0x040011AA RID: 4522
+	// Token: 0x040011BF RID: 4543
 	PreviewComplete,
-	// Token: 0x040011AB RID: 4523
+	// Token: 0x040011C0 RID: 4544
 	Stopped,
-	// Token: 0x040011AC RID: 4524
+	// Token: 0x040011C1 RID: 4545
 	Error
 }

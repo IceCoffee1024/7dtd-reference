@@ -4,52 +4,52 @@ using UnityEngine.Scripting;
 
 namespace DynamicMusic.Factories
 {
-	// Token: 0x02001A7F RID: 6783
+	// Token: 0x02001AA6 RID: 6822
 	public static class Factory
 	{
-		// Token: 0x0600CC43 RID: 52291 RVA: 0x004A6AAE File Offset: 0x004A4CAE
+		// Token: 0x0600CDCC RID: 52684 RVA: 0x004ACEA2 File Offset: 0x004AB0A2
 		[Preserve]
 		public static Conductor CreateConductor()
 		{
 			return new Conductor();
 		}
 
-		// Token: 0x0600CC44 RID: 52292 RVA: 0x004A6AB5 File Offset: 0x004A4CB5
+		// Token: 0x0600CDCD RID: 52685 RVA: 0x004ACEA9 File Offset: 0x004AB0A9
 		[Preserve]
 		public static ISectionSelector CreateSectionSelector()
 		{
 			return new SectionSelector();
 		}
 
-		// Token: 0x0600CC45 RID: 52293 RVA: 0x004A6ABC File Offset: 0x004A4CBC
+		// Token: 0x0600CDCE RID: 52686 RVA: 0x004ACEB0 File Offset: 0x004AB0B0
 		[Preserve]
 		public static IThreatLevel CreateThreatLevel()
 		{
 			return default(ThreatLevel);
 		}
 
-		// Token: 0x0600CC46 RID: 52294 RVA: 0x004A6AD7 File Offset: 0x004A4CD7
+		// Token: 0x0600CDCF RID: 52687 RVA: 0x004ACECB File Offset: 0x004AB0CB
 		[Preserve]
 		public static IFilter<SectionType> CreatePlayerTracker()
 		{
 			return new PlayerTracker();
 		}
 
-		// Token: 0x0600CC47 RID: 52295 RVA: 0x004A6ADE File Offset: 0x004A4CDE
+		// Token: 0x0600CDD0 RID: 52688 RVA: 0x004ACED2 File Offset: 0x004AB0D2
 		[Preserve]
 		public static DayTimeTracker CreateDayTimeTracker()
 		{
 			return new DayTimeTracker();
 		}
 
-		// Token: 0x0600CC48 RID: 52296 RVA: 0x004A6AE5 File Offset: 0x004A4CE5
+		// Token: 0x0600CDD1 RID: 52689 RVA: 0x004ACED9 File Offset: 0x004AB0D9
 		[Preserve]
 		public static IMultiNotifiableFilter CreateMusicTimeTracker()
 		{
 			return new MusicTimeTracker();
 		}
 
-		// Token: 0x0600CC49 RID: 52297 RVA: 0x004A6AEC File Offset: 0x004A4CEC
+		// Token: 0x0600CDD2 RID: 52690 RVA: 0x004ACEE0 File Offset: 0x004AB0E0
 		[Preserve]
 		public static ISection CreateSection<T>(SectionType _sectionType) where T : ISection, new()
 		{
@@ -59,7 +59,7 @@ namespace DynamicMusic.Factories
 			return t;
 		}
 
-		// Token: 0x0600CC4A RID: 52298 RVA: 0x004A6B20 File Offset: 0x004A4D20
+		// Token: 0x0600CDD3 RID: 52691 RVA: 0x004ACF14 File Offset: 0x004AB114
 		[Preserve]
 		public static IConfiguration CreateConfiguration()
 		{

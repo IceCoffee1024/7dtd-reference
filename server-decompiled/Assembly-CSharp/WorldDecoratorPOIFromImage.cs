@@ -5,10 +5,10 @@ using System.Xml;
 using Unity.Collections;
 using UnityEngine;
 
-// Token: 0x02000C40 RID: 3136
+// Token: 0x02000C52 RID: 3154
 public class WorldDecoratorPOIFromImage : IWorldDecorator
 {
-	// Token: 0x06005F7E RID: 24446 RVA: 0x0025CD3C File Offset: 0x0025AF3C
+	// Token: 0x06006008 RID: 24584 RVA: 0x0025FBE4 File Offset: 0x0025DDE4
 	public WorldDecoratorPOIFromImage(string _levelName, string _worldPath, DynamicPrefabDecorator _prefabDecorator, int _worldX, int _worldZ, Texture2D _splat3Tex = null, bool _bChangeWaterDensity = true, int _worldScale = 1, HeightMap _heightMap = null, Texture2D _splat4Tex = null)
 	{
 		this.m_PrefabDecorator = _prefabDecorator;
@@ -22,7 +22,7 @@ public class WorldDecoratorPOIFromImage : IWorldDecorator
 		this.splat4Tex = _splat4Tex;
 	}
 
-	// Token: 0x06005F7F RID: 24447 RVA: 0x0025CD95 File Offset: 0x0025AF95
+	// Token: 0x06006009 RID: 24585 RVA: 0x0025FC3D File Offset: 0x0025DE3D
 	public IEnumerator InitData()
 	{
 		MicroStopwatch msw = new MicroStopwatch(true);
@@ -196,14 +196,14 @@ public class WorldDecoratorPOIFromImage : IWorldDecorator
 		yield break;
 	}
 
-	// Token: 0x06005F80 RID: 24448 RVA: 0x0025CDA4 File Offset: 0x0025AFA4
+	// Token: 0x0600600A RID: 24586 RVA: 0x0025FC4C File Offset: 0x0025DE4C
 	public void GetWaterChunks16x16(out int _water16x16ChunksW, out byte[] _water16x16Chunks)
 	{
 		_water16x16ChunksW = this.water16x16ChunksW;
 		_water16x16Chunks = this.water16x16Chunks;
 	}
 
-	// Token: 0x06005F81 RID: 24449 RVA: 0x0025CDB8 File Offset: 0x0025AFB8
+	// Token: 0x0600600B RID: 24587 RVA: 0x0025FC60 File Offset: 0x0025DE60
 	public static List<WaterInfo> LoadWaterInfo(string _filename)
 	{
 		if (!SdFile.Exists(_filename))
@@ -255,7 +255,7 @@ public class WorldDecoratorPOIFromImage : IWorldDecorator
 		return list;
 	}
 
-	// Token: 0x06005F82 RID: 24450 RVA: 0x0025CF70 File Offset: 0x0025B170
+	// Token: 0x0600600C RID: 24588 RVA: 0x0025FE18 File Offset: 0x0025E018
 	public void DecorateChunkOverlapping(World _world, Chunk _chunk, Chunk _c10, Chunk _c01, Chunk _c11, int seed)
 	{
 		if (this.m_Poi == null)
@@ -270,14 +270,14 @@ public class WorldDecoratorPOIFromImage : IWorldDecorator
 		GameRandom gameRandom = Utils.RandomFromSeedOnPos(_chunk.X, _chunk.Z, seed);
 		GameManager.Instance.GetSpawnPointList();
 		Vector3i worldPos = _chunk.GetWorldPos();
-		bool flag = this.m_PrefabDecorator.IsWithinTraderArea(_chunk.worldPosIMin, _chunk.worldPosIMax);
+		bool flag = this.m_PrefabDecorator.IsWithinDecoSuppressArea(_chunk.worldPosIMin, _chunk.worldPosIMax);
 		for (int i = 0; i < 16; i++)
 		{
 			int blockWorldPosZ = _chunk.GetBlockWorldPosZ(i);
 			for (int j = 0; j < 16; j++)
 			{
 				int blockWorldPosX = _chunk.GetBlockWorldPosX(j);
-				if ((!flag || this.m_PrefabDecorator.GetTraderAtPosition(new Vector3i(blockWorldPosX, 0, blockWorldPosZ), 0) == null) && this.m_Poi.Contains(blockWorldPosX, blockWorldPosZ))
+				if ((!flag || !this.m_PrefabDecorator.IsDecorationSuppressedAt(blockWorldPosX, blockWorldPosZ)) && this.m_Poi.Contains(blockWorldPosX, blockWorldPosZ))
 				{
 					byte data = this.m_Poi.GetData(blockWorldPosX, blockWorldPosZ);
 					if (data != 0 && data != 255)
@@ -393,55 +393,55 @@ public class WorldDecoratorPOIFromImage : IWorldDecorator
 		GameRandomManager.Instance.FreeGameRandom(gameRandom);
 	}
 
-	// Token: 0x04004AA2 RID: 19106
+	// Token: 0x04004B3F RID: 19263
 	public WorldGridCompressedData<byte> m_Poi;
 
-	// Token: 0x04004AA3 RID: 19107
+	// Token: 0x04004B40 RID: 19264
 	public int worldScale;
 
-	// Token: 0x04004AA4 RID: 19108
+	// Token: 0x04004B41 RID: 19265
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int worldSizeX;
 
-	// Token: 0x04004AA5 RID: 19109
+	// Token: 0x04004B42 RID: 19266
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int worldSizeZ;
 
-	// Token: 0x04004AA6 RID: 19110
+	// Token: 0x04004B43 RID: 19267
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HeightMap heightMap;
 
-	// Token: 0x04004AA7 RID: 19111
+	// Token: 0x04004B44 RID: 19268
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DynamicPrefabDecorator m_PrefabDecorator;
 
-	// Token: 0x04004AA8 RID: 19112
+	// Token: 0x04004B45 RID: 19269
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bChangeWaterDensity;
 
-	// Token: 0x04004AA9 RID: 19113
+	// Token: 0x04004B46 RID: 19270
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string worldPath;
 
-	// Token: 0x04004AAA RID: 19114
+	// Token: 0x04004B47 RID: 19271
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Texture2D splat3Tex;
 
-	// Token: 0x04004AAB RID: 19115
+	// Token: 0x04004B48 RID: 19272
 	public int splat3Width;
 
-	// Token: 0x04004AAC RID: 19116
+	// Token: 0x04004B49 RID: 19273
 	public int splat3Height;
 
-	// Token: 0x04004AAD RID: 19117
+	// Token: 0x04004B4A RID: 19274
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Texture2D splat4Tex;
 
-	// Token: 0x04004AAE RID: 19118
+	// Token: 0x04004B4B RID: 19275
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] water16x16Chunks;
 
-	// Token: 0x04004AAF RID: 19119
+	// Token: 0x04004B4C RID: 19276
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int water16x16ChunksW;
 }

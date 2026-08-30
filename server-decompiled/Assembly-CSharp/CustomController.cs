@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020013A5 RID: 5029
+// Token: 0x020013C0 RID: 5056
 public class CustomController : MonoBehaviour
 {
-	// Token: 0x06009E12 RID: 40466 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009F0F RID: 40719 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Start()
 	{
 	}
 
-	// Token: 0x06009E13 RID: 40467 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009F10 RID: 40720 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Update()
 	{
 	}
 
-	// Token: 0x06009E14 RID: 40468 RVA: 0x003BA184 File Offset: 0x003B8384
+	// Token: 0x06009F11 RID: 40721 RVA: 0x003BF4C8 File Offset: 0x003BD6C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool CollidesWithX(Vector3 position, float movement, out float newVelocity)
 	{
@@ -31,7 +31,7 @@ public class CustomController : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06009E15 RID: 40469 RVA: 0x003BA200 File Offset: 0x003B8400
+	// Token: 0x06009F12 RID: 40722 RVA: 0x003BF544 File Offset: 0x003BD744
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool CollidesWithY(Vector3 position, float movement, out float newVelocity)
 	{
@@ -68,25 +68,25 @@ public class CustomController : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x040077A5 RID: 30629
+	// Token: 0x0400787E RID: 30846
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float m_BoxWidth = 0.5f;
 
-	// Token: 0x040077A6 RID: 30630
+	// Token: 0x0400787F RID: 30847
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 m_Velocity;
 
-	// Token: 0x040077A7 RID: 30631
+	// Token: 0x04007880 RID: 30848
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 m_Forward;
 
-	// Token: 0x040077A8 RID: 30632
+	// Token: 0x04007881 RID: 30849
 	public float Speed = 0.1f;
 
-	// Token: 0x040077A9 RID: 30633
+	// Token: 0x04007882 RID: 30850
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public World m_WorldData;

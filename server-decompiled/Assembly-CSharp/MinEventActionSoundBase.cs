@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Xml.Linq;
 
-// Token: 0x02000707 RID: 1799
+// Token: 0x02000711 RID: 1809
 public class MinEventActionSoundBase : MinEventActionTargetedBase
 {
-	// Token: 0x060036A9 RID: 13993 RVA: 0x00168EE0 File Offset: 0x001670E0
+	// Token: 0x060036FF RID: 14079 RVA: 0x0016B0B8 File Offset: 0x001692B8
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -92,7 +92,7 @@ public class MinEventActionSoundBase : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x060036AA RID: 13994 RVA: 0x0016906C File Offset: 0x0016726C
+	// Token: 0x06003700 RID: 14080 RVA: 0x0016B244 File Offset: 0x00169444
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string GetSoundGroupForTarget()
 	{
@@ -108,31 +108,31 @@ public class MinEventActionSoundBase : MinEventActionTargetedBase
 		return this.soundGroup.Replace("$", this.targets[0].IsMale ? "Male" : "Female");
 	}
 
-	// Token: 0x04002C0A RID: 11274
+	// Token: 0x04002C7E RID: 11390
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string soundGroup;
 
-	// Token: 0x04002C0B RID: 11275
+	// Token: 0x04002C7F RID: 11391
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool localPlayerOnly;
 
-	// Token: 0x04002C0C RID: 11276
+	// Token: 0x04002C80 RID: 11392
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool loop;
 
-	// Token: 0x04002C0D RID: 11277
+	// Token: 0x04002C81 RID: 11393
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool toggleDMS;
 
-	// Token: 0x04002C0E RID: 11278
+	// Token: 0x04002C82 RID: 11394
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool playAtSelf;
 
-	// Token: 0x04002C0F RID: 11279
+	// Token: 0x04002C83 RID: 11395
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool silentOnEquip;
 
-	// Token: 0x04002C10 RID: 11280
+	// Token: 0x04002C84 RID: 11396
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static char[] convertChars = new char[] { '#', '$' };
 }

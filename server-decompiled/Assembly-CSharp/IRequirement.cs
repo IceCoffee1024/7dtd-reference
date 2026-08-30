@@ -2,24 +2,24 @@
 using System.Collections.Generic;
 using System.Xml.Linq;
 
-// Token: 0x02000658 RID: 1624
+// Token: 0x02000661 RID: 1633
 public interface IRequirement
 {
-	// Token: 0x06003469 RID: 13417
+	// Token: 0x060034BC RID: 13500
 	bool IsValid(MinEventParams _params);
 
-	// Token: 0x0600346A RID: 13418
+	// Token: 0x060034BD RID: 13501
 	bool ParseXAttribute(XAttribute _attribute);
 
-	// Token: 0x0600346B RID: 13419
+	// Token: 0x060034BE RID: 13502
 	void GetInfoStrings(ref List<string> list);
 
-	// Token: 0x0600346C RID: 13420
+	// Token: 0x060034BF RID: 13503
 	string GetInfoString();
 
-	// Token: 0x0600346D RID: 13421
+	// Token: 0x060034C0 RID: 13504
 	string GetDescription();
 
-	// Token: 0x0600346E RID: 13422
+	// Token: 0x060034C1 RID: 13505
 	void SetDescription(string desc);
 }

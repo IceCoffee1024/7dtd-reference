@@ -2,12 +2,12 @@
 using Twitch;
 using UnityEngine.Scripting;
 
-// Token: 0x020009A6 RID: 2470
+// Token: 0x020009B7 RID: 2487
 [Preserve]
 public class ObjectiveTwitchVote : BaseObjective
 {
-	// Token: 0x170007BC RID: 1980
-	// (get) Token: 0x060048F3 RID: 18675 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x170007CE RID: 1998
+	// (get) Token: 0x06004979 RID: 18809 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool useUpdateLoop
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -17,8 +17,8 @@ public class ObjectiveTwitchVote : BaseObjective
 		}
 	}
 
-	// Token: 0x170007BD RID: 1981
-	// (get) Token: 0x060048F4 RID: 18676 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x170007CF RID: 1999
+	// (get) Token: 0x0600497A RID: 18810 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool ShowInQuestLog
 	{
 		get
@@ -27,20 +27,20 @@ public class ObjectiveTwitchVote : BaseObjective
 		}
 	}
 
-	// Token: 0x060048F5 RID: 18677 RVA: 0x001C10A4 File Offset: 0x001BF2A4
+	// Token: 0x0600497B RID: 18811 RVA: 0x001C3898 File Offset: 0x001C1A98
 	public override void SetupObjective()
 	{
 		this.keyword = Localization.Get("ObjectiveAssemble_keyword", false, null);
 	}
 
-	// Token: 0x060048F6 RID: 18678 RVA: 0x001C91B4 File Offset: 0x001C73B4
+	// Token: 0x0600497C RID: 18812 RVA: 0x001CB9A8 File Offset: 0x001C9BA8
 	public override void SetupDisplay()
 	{
 		base.Description = "";
 		this.StatusText = "";
 	}
 
-	// Token: 0x060048F7 RID: 18679 RVA: 0x001C91CC File Offset: 0x001C73CC
+	// Token: 0x0600497D RID: 18813 RVA: 0x001CB9C0 File Offset: 0x001C9BC0
 	public override void Update(float updateTime)
 	{
 		TwitchManager twitchManager = TwitchManager.Current;
@@ -71,7 +71,7 @@ public class ObjectiveTwitchVote : BaseObjective
 		}
 	}
 
-	// Token: 0x060048F8 RID: 18680 RVA: 0x001C927B File Offset: 0x001C747B
+	// Token: 0x0600497E RID: 18814 RVA: 0x001CBA6F File Offset: 0x001C9C6F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void VoteStarted()
 	{
@@ -81,7 +81,7 @@ public class ObjectiveTwitchVote : BaseObjective
 		}
 	}
 
-	// Token: 0x060048F9 RID: 18681 RVA: 0x001C11E8 File Offset: 0x001BF3E8
+	// Token: 0x0600497F RID: 18815 RVA: 0x001C39DC File Offset: 0x001C1BDC
 	public override void Refresh()
 	{
 		if (base.Complete)
@@ -95,7 +95,7 @@ public class ObjectiveTwitchVote : BaseObjective
 		}
 	}
 
-	// Token: 0x060048FA RID: 18682 RVA: 0x001C92A8 File Offset: 0x001C74A8
+	// Token: 0x06004980 RID: 18816 RVA: 0x001CBA9C File Offset: 0x001C9C9C
 	public override BaseObjective Clone()
 	{
 		ObjectiveTwitchVote objectiveTwitchVote = new ObjectiveTwitchVote();
@@ -104,38 +104,38 @@ public class ObjectiveTwitchVote : BaseObjective
 		return objectiveTwitchVote;
 	}
 
-	// Token: 0x060048FB RID: 18683 RVA: 0x001C92CF File Offset: 0x001C74CF
+	// Token: 0x06004981 RID: 18817 RVA: 0x001CBAC3 File Offset: 0x001C9CC3
 	public override void ParseProperties(DynamicProperties properties)
 	{
 		base.ParseProperties(properties);
 		properties.ParseString(ObjectiveTwitchVote.PropVoteType, ref this.voteType);
 	}
 
-	// Token: 0x040039DE RID: 14814
+	// Token: 0x04003A6F RID: 14959
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string voteType = "";
 
-	// Token: 0x040039DF RID: 14815
+	// Token: 0x04003A70 RID: 14960
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float timeRemaining = 2f;
 
-	// Token: 0x040039E0 RID: 14816
+	// Token: 0x04003A71 RID: 14961
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropVoteType = "vote_type";
 
-	// Token: 0x040039E1 RID: 14817
+	// Token: 0x04003A72 RID: 14962
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ObjectiveTwitchVote.TwitchVoteStates GameEventState;
 
-	// Token: 0x020009A7 RID: 2471
+	// Token: 0x020009B8 RID: 2488
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public enum TwitchVoteStates
 	{
-		// Token: 0x040039E3 RID: 14819
+		// Token: 0x04003A74 RID: 14964
 		Start,
-		// Token: 0x040039E4 RID: 14820
+		// Token: 0x04003A75 RID: 14965
 		Waiting,
-		// Token: 0x040039E5 RID: 14821
+		// Token: 0x04003A76 RID: 14966
 		Complete
 	}
 }

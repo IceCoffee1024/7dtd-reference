@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E19 RID: 3609
+// Token: 0x02000E2E RID: 3630
 [Preserve]
 public abstract class XUiC_PlayGameDialogBase : XUiController
 {
-	// Token: 0x06006F03 RID: 28419 RVA: 0x002ADE11 File Offset: 0x002AC011
+	// Token: 0x06006FA3 RID: 28579 RVA: 0x002B1325 File Offset: 0x002AF525
 	[XuiBindEvent("OnPress", "btnBack")]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Event_BackOnPress(XUiController _sender, int _mouseButton)
@@ -13,7 +13,7 @@ public abstract class XUiC_PlayGameDialogBase : XUiController
 		this.close();
 	}
 
-	// Token: 0x06006F04 RID: 28420 RVA: 0x002ADE1C File Offset: 0x002AC01C
+	// Token: 0x06006FA4 RID: 28580 RVA: 0x002B1330 File Offset: 0x002AF530
 	public override void OnOpen()
 	{
 		this.xui.GetChildByType<XUiC_PlayGameMenu>().SetWindow(this.windowGroup.Id);
@@ -23,7 +23,7 @@ public abstract class XUiC_PlayGameDialogBase : XUiController
 		this.xui.playerUI.windowManager.Open(XUiC_PlayGameMenu.ID, false);
 	}
 
-	// Token: 0x06006F05 RID: 28421 RVA: 0x002ADE8B File Offset: 0x002AC08B
+	// Token: 0x06006FA5 RID: 28581 RVA: 0x002B139F File Offset: 0x002AF59F
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -31,7 +31,7 @@ public abstract class XUiC_PlayGameDialogBase : XUiController
 		this.xui.playerUI.windowManager.Open(XUiC_MainMenu.ID, true);
 	}
 
-	// Token: 0x06006F06 RID: 28422 RVA: 0x002ADEC8 File Offset: 0x002AC0C8
+	// Token: 0x06006FA6 RID: 28582 RVA: 0x002B13DC File Offset: 0x002AF5DC
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -45,26 +45,26 @@ public abstract class XUiC_PlayGameDialogBase : XUiController
 		}
 	}
 
-	// Token: 0x06006F07 RID: 28423 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06006FA7 RID: 28583 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void onDirtyUpdate()
 	{
 	}
 
-	// Token: 0x06006F08 RID: 28424 RVA: 0x00088DF5 File Offset: 0x00086FF5
+	// Token: 0x06006FA8 RID: 28584 RVA: 0x00089495 File Offset: 0x00087695
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void close()
 	{
 		this.xui.playerUI.windowManager.Close(this.windowGroup, false);
 	}
 
-	// Token: 0x06006F09 RID: 28425 RVA: 0x00088DE1 File Offset: 0x00086FE1
+	// Token: 0x06006FA9 RID: 28585 RVA: 0x00089481 File Offset: 0x00087681
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_PlayGameDialogBase()
 	{
 	}
 
-	// Token: 0x040053DA RID: 21466
+	// Token: 0x0400547E RID: 21630
 	[XuiBindComponent("btnBack", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnBack;

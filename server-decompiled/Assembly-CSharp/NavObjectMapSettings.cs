@@ -2,10 +2,10 @@
 using System.Globalization;
 using UnityEngine;
 
-// Token: 0x0200074A RID: 1866
+// Token: 0x02000754 RID: 1876
 public class NavObjectMapSettings : NavObjectSettings
 {
-	// Token: 0x06003798 RID: 14232 RVA: 0x0016D808 File Offset: 0x0016BA08
+	// Token: 0x060037EE RID: 14318 RVA: 0x0016FA24 File Offset: 0x0016DC24
 	public override void Init()
 	{
 		base.Init();
@@ -19,18 +19,18 @@ public class NavObjectMapSettings : NavObjectSettings
 		this.Properties.ParseBool("use_rotation", ref this.UseRotation);
 	}
 
-	// Token: 0x04002D84 RID: 11652
+	// Token: 0x04002DFC RID: 11772
 	public int Layer;
 
-	// Token: 0x04002D85 RID: 11653
+	// Token: 0x04002DFD RID: 11773
 	public float IconScale = 1f;
 
-	// Token: 0x04002D86 RID: 11654
+	// Token: 0x04002DFE RID: 11774
 	public Vector3 IconScaleVector = Vector3.one;
 
-	// Token: 0x04002D87 RID: 11655
+	// Token: 0x04002DFF RID: 11775
 	public bool UseRotation;
 
-	// Token: 0x04002D88 RID: 11656
+	// Token: 0x04002E00 RID: 11776
 	public bool AdjustCenter;
 }

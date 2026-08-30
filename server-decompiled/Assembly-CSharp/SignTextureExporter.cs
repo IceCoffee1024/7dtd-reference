@@ -2,11 +2,11 @@
 using System.IO;
 using UnityEngine;
 
-// Token: 0x02000AA8 RID: 2728
+// Token: 0x02000AB9 RID: 2745
 public sealed class SignTextureExporter
 {
-	// Token: 0x170008DB RID: 2267
-	// (get) Token: 0x060051D3 RID: 20947 RVA: 0x001F37DE File Offset: 0x001F19DE
+	// Token: 0x170008ED RID: 2285
+	// (get) Token: 0x06005259 RID: 21081 RVA: 0x001F6276 File Offset: 0x001F4476
 	public static SignTextureExporter Instance
 	{
 		get
@@ -15,13 +15,13 @@ public sealed class SignTextureExporter
 		}
 	}
 
-	// Token: 0x060051D4 RID: 20948 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x0600525A RID: 21082 RVA: 0x0000640C File Offset: 0x0000460C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignTextureExporter()
 	{
 	}
 
-	// Token: 0x060051D5 RID: 20949 RVA: 0x001F37E8 File Offset: 0x001F19E8
+	// Token: 0x0600525B RID: 21083 RVA: 0x001F6280 File Offset: 0x001F4480
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Initialize()
 	{
@@ -49,7 +49,7 @@ public sealed class SignTextureExporter
 		this.initialized = true;
 	}
 
-	// Token: 0x060051D6 RID: 20950 RVA: 0x001F38B8 File Offset: 0x001F1AB8
+	// Token: 0x0600525C RID: 21084 RVA: 0x001F6350 File Offset: 0x001F4550
 	public void Cleanup()
 	{
 		this.initialized = false;
@@ -75,7 +75,7 @@ public sealed class SignTextureExporter
 		this.readback = null;
 	}
 
-	// Token: 0x060051D7 RID: 20951 RVA: 0x001F394C File Offset: 0x001F1B4C
+	// Token: 0x0600525D RID: 21085 RVA: 0x001F63E4 File Offset: 0x001F45E4
 	public string ExportSignToTexture(string signName, GlobalSignId signId)
 	{
 		if (!this.initialized)
@@ -109,43 +109,43 @@ public sealed class SignTextureExporter
 		return text3;
 	}
 
-	// Token: 0x04003F47 RID: 16199
+	// Token: 0x04003FD8 RID: 16344
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly SignTextureExporter m_instance = new SignTextureExporter();
 
-	// Token: 0x04003F48 RID: 16200
+	// Token: 0x04003FD9 RID: 16345
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int kResolutionMultiplier = 4;
 
-	// Token: 0x04003F49 RID: 16201
+	// Token: 0x04003FDA RID: 16346
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int kWidth = 4096;
 
-	// Token: 0x04003F4A RID: 16202
+	// Token: 0x04003FDB RID: 16347
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int kHeight = 4096;
 
-	// Token: 0x04003F4B RID: 16203
+	// Token: 0x04003FDC RID: 16348
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string kShaderName = "Game/SignTech/UI";
 
-	// Token: 0x04003F4C RID: 16204
+	// Token: 0x04003FDD RID: 16349
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Shader shader;
 
-	// Token: 0x04003F4D RID: 16205
+	// Token: 0x04003FDE RID: 16350
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Material material;
 
-	// Token: 0x04003F4E RID: 16206
+	// Token: 0x04003FDF RID: 16351
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RenderTexture rt;
 
-	// Token: 0x04003F4F RID: 16207
+	// Token: 0x04003FE0 RID: 16352
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Texture2D readback;
 
-	// Token: 0x04003F50 RID: 16208
+	// Token: 0x04003FE1 RID: 16353
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool initialized;
 }

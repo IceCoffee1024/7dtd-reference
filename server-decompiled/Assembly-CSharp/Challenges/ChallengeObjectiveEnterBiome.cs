@@ -4,12 +4,12 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x020018DA RID: 6362
+	// Token: 0x02001900 RID: 6400
 	[Preserve]
 	public class ChallengeObjectiveEnterBiome : BaseChallengeObjective
 	{
-		// Token: 0x170017F5 RID: 6133
-		// (get) Token: 0x0600C3FD RID: 50173 RVA: 0x00081148 File Offset: 0x0007F348
+		// Token: 0x17001867 RID: 6247
+		// (get) Token: 0x0600C584 RID: 50564 RVA: 0x000817FC File Offset: 0x0007F9FC
 		public override ChallengeObjectiveType ObjectiveType
 		{
 			get
@@ -18,8 +18,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x170017F6 RID: 6134
-		// (get) Token: 0x0600C3FE RID: 50174 RVA: 0x004852D5 File Offset: 0x004834D5
+		// Token: 0x17001868 RID: 6248
+		// (get) Token: 0x0600C585 RID: 50565 RVA: 0x0048B61D File Offset: 0x0048981D
 		public override string DescriptionText
 		{
 			get
@@ -28,24 +28,24 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C3FF RID: 50175 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C586 RID: 50566 RVA: 0x000027FC File Offset: 0x000009FC
 		public override void Init()
 		{
 		}
 
-		// Token: 0x0600C400 RID: 50176 RVA: 0x00485309 File Offset: 0x00483509
+		// Token: 0x0600C587 RID: 50567 RVA: 0x0048B651 File Offset: 0x00489851
 		public override void HandleAddHooks()
 		{
 			QuestEventManager.Current.BiomeEnter += this.Current_BiomeEnter;
 		}
 
-		// Token: 0x0600C401 RID: 50177 RVA: 0x00485321 File Offset: 0x00483521
+		// Token: 0x0600C588 RID: 50568 RVA: 0x0048B669 File Offset: 0x00489869
 		public override void HandleRemoveHooks()
 		{
 			QuestEventManager.Current.BiomeEnter -= this.Current_BiomeEnter;
 		}
 
-		// Token: 0x0600C402 RID: 50178 RVA: 0x0048533C File Offset: 0x0048353C
+		// Token: 0x0600C589 RID: 50569 RVA: 0x0048B684 File Offset: 0x00489884
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Current_BiomeEnter(BiomeDefinition biomeDef)
 		{
@@ -61,7 +61,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C403 RID: 50179 RVA: 0x00485391 File Offset: 0x00483591
+		// Token: 0x0600C58A RID: 50570 RVA: 0x0048B6D9 File Offset: 0x004898D9
 		public override void ParseElement(XElement e)
 		{
 			base.ParseElement(e);
@@ -71,7 +71,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C404 RID: 50180 RVA: 0x004853C2 File Offset: 0x004835C2
+		// Token: 0x0600C58B RID: 50571 RVA: 0x0048B70A File Offset: 0x0048990A
 		public override BaseChallengeObjective Clone()
 		{
 			return new ChallengeObjectiveEnterBiome
@@ -80,7 +80,7 @@ namespace Challenges
 			};
 		}
 
-		// Token: 0x04009413 RID: 37907
+		// Token: 0x0400953C RID: 38204
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string biome;
 	}

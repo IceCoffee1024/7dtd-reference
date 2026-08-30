@@ -4,16 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-// Token: 0x02000929 RID: 2345
+// Token: 0x02000939 RID: 2361
 public class PrefabEditModeManager
 {
 	// Token: 0x14000050 RID: 80
-	// (add) Token: 0x060044B2 RID: 17586 RVA: 0x001B09DC File Offset: 0x001AEBDC
-	// (remove) Token: 0x060044B3 RID: 17587 RVA: 0x001B0A14 File Offset: 0x001AEC14
+	// (add) Token: 0x06004533 RID: 17715 RVA: 0x001B2FB4 File Offset: 0x001B11B4
+	// (remove) Token: 0x06004534 RID: 17716 RVA: 0x001B2FEC File Offset: 0x001B11EC
 	public event Action<PrefabInstance> OnPrefabChanged;
 
-	// Token: 0x17000740 RID: 1856
-	// (get) Token: 0x060044B4 RID: 17588 RVA: 0x001B0A49 File Offset: 0x001AEC49
+	// Token: 0x17000752 RID: 1874
+	// (get) Token: 0x06004535 RID: 17717 RVA: 0x001B3021 File Offset: 0x001B1221
 	public int PrefabInstanceId
 	{
 		get
@@ -22,8 +22,8 @@ public class PrefabEditModeManager
 		}
 	}
 
-	// Token: 0x17000741 RID: 1857
-	// (get) Token: 0x060044B5 RID: 17589 RVA: 0x001B0A54 File Offset: 0x001AEC54
+	// Token: 0x17000753 RID: 1875
+	// (get) Token: 0x06004536 RID: 17718 RVA: 0x001B302C File Offset: 0x001B122C
 	public SelectionBox boxShowFacing
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -39,13 +39,13 @@ public class PrefabEditModeManager
 		}
 	}
 
-	// Token: 0x060044B6 RID: 17590 RVA: 0x001B0A9D File Offset: 0x001AEC9D
+	// Token: 0x06004537 RID: 17719 RVA: 0x001B3075 File Offset: 0x001B1275
 	public PrefabEditModeManager()
 	{
 		PrefabEditModeManager.Instance = this;
 	}
 
-	// Token: 0x060044B7 RID: 17591 RVA: 0x001B0AC8 File Offset: 0x001AECC8
+	// Token: 0x06004538 RID: 17720 RVA: 0x001B30A0 File Offset: 0x001B12A0
 	public void Init()
 	{
 		this.ReloadAllXmls();
@@ -58,7 +58,7 @@ public class PrefabEditModeManager
 		GameManager.Instance.World.ChunkCache.OnBlockChangedDelegates += this.blockChangeDelegate;
 	}
 
-	// Token: 0x060044B8 RID: 17592 RVA: 0x001B0B20 File Offset: 0x001AED20
+	// Token: 0x06004539 RID: 17721 RVA: 0x001B30F8 File Offset: 0x001B12F8
 	public void Update()
 	{
 		if (!this.IsActive())
@@ -68,13 +68,13 @@ public class PrefabEditModeManager
 		this.updateCompositionGrid();
 	}
 
-	// Token: 0x060044B9 RID: 17593 RVA: 0x001B0B31 File Offset: 0x001AED31
+	// Token: 0x0600453A RID: 17722 RVA: 0x001B3109 File Offset: 0x001B1309
 	public bool IsActive()
 	{
 		return GameManager.Instance.IsEditMode() && GamePrefs.GetString(EnumGamePrefs.GameWorld) == "Empty";
 	}
 
-	// Token: 0x060044BA RID: 17594 RVA: 0x001B0B54 File Offset: 0x001AED54
+	// Token: 0x0600453B RID: 17723 RVA: 0x001B312C File Offset: 0x001B132C
 	public void LoadRecentlyUsedOrCreateNew()
 	{
 		if (this.VoxelPrefab != null)
@@ -95,7 +95,7 @@ public class PrefabEditModeManager
 		this.NewVoxelPrefab();
 	}
 
-	// Token: 0x060044BB RID: 17595 RVA: 0x001B0BC0 File Offset: 0x001AEDC0
+	// Token: 0x0600453C RID: 17724 RVA: 0x001B3198 File Offset: 0x001B1398
 	public void LoadRecentlyUsed()
 	{
 		string @string = GamePrefs.GetString(EnumGamePrefs.LastLoadedPrefab);
@@ -105,7 +105,7 @@ public class PrefabEditModeManager
 		}
 	}
 
-	// Token: 0x060044BC RID: 17596 RVA: 0x001B0C07 File Offset: 0x001AEE07
+	// Token: 0x0600453D RID: 17725 RVA: 0x001B31DF File Offset: 0x001B13DF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator loadLastUsedPrefabLater()
 	{
@@ -133,7 +133,7 @@ public class PrefabEditModeManager
 		yield break;
 	}
 
-	// Token: 0x060044BD RID: 17597 RVA: 0x001B0C18 File Offset: 0x001AEE18
+	// Token: 0x0600453E RID: 17726 RVA: 0x001B31F0 File Offset: 0x001B13F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitXmlWatcher()
 	{
@@ -147,7 +147,7 @@ public class PrefabEditModeManager
 		this.xmlWatcher.EnableRaisingEvents = true;
 	}
 
-	// Token: 0x060044BE RID: 17598 RVA: 0x001B0CB0 File Offset: 0x001AEEB0
+	// Token: 0x0600453F RID: 17727 RVA: 0x001B3288 File Offset: 0x001B1488
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnXmlFileChanged(object _sender, FileSystemEventArgs _e)
 	{
@@ -187,7 +187,7 @@ public class PrefabEditModeManager
 		}
 	}
 
-	// Token: 0x060044BF RID: 17599 RVA: 0x001B0E28 File Offset: 0x001AF028
+	// Token: 0x06004540 RID: 17728 RVA: 0x001B3400 File Offset: 0x001B1600
 	public void ReloadAllXmls()
 	{
 		Dictionary<PathAbstractions.AbstractedLocation, Prefab> dictionary = this.loadedPrefabHeaders;
@@ -201,7 +201,7 @@ public class PrefabEditModeManager
 		}
 	}
 
-	// Token: 0x060044C0 RID: 17600 RVA: 0x001B0EC0 File Offset: 0x001AF0C0
+	// Token: 0x06004541 RID: 17729 RVA: 0x001B3498 File Offset: 0x001B1698
 	public void LoadXml(PathAbstractions.AbstractedLocation _location)
 	{
 		Prefab prefab = new Prefab();
@@ -213,7 +213,7 @@ public class PrefabEditModeManager
 		}
 	}
 
-	// Token: 0x060044C1 RID: 17601 RVA: 0x001B0F18 File Offset: 0x001AF118
+	// Token: 0x06004542 RID: 17730 RVA: 0x001B34F0 File Offset: 0x001B16F0
 	public void Cleanup()
 	{
 		if (this.xmlWatcher != null)
@@ -244,14 +244,14 @@ public class PrefabEditModeManager
 		this.HighlightBlocks(null);
 	}
 
-	// Token: 0x060044C2 RID: 17602 RVA: 0x001B100C File Offset: 0x001AF20C
+	// Token: 0x06004543 RID: 17731 RVA: 0x001B35E4 File Offset: 0x001B17E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void blockChangeDelegate(Vector3i pos, BlockValue bvOld, sbyte oldDens, TextureFullArray oldTex, BlockValue bvNew)
 	{
 		this.NeedsSaving = true;
 	}
 
-	// Token: 0x060044C3 RID: 17603 RVA: 0x001B1018 File Offset: 0x001AF218
+	// Token: 0x06004544 RID: 17732 RVA: 0x001B35F0 File Offset: 0x001B17F0
 	public void FindPrefabs(string _group, List<PathAbstractions.AbstractedLocation> _result)
 	{
 		Dictionary<PathAbstractions.AbstractedLocation, Prefab> dictionary = this.loadedPrefabHeaders;
@@ -285,7 +285,7 @@ public class PrefabEditModeManager
 		}
 	}
 
-	// Token: 0x060044C4 RID: 17604 RVA: 0x001B1138 File Offset: 0x001AF338
+	// Token: 0x06004545 RID: 17733 RVA: 0x001B3710 File Offset: 0x001B1910
 	public void GetAllTags(List<string> _result, Prefab _considerLoadedPrefab = null)
 	{
 		Dictionary<PathAbstractions.AbstractedLocation, Prefab> dictionary = this.loadedPrefabHeaders;
@@ -317,7 +317,7 @@ public class PrefabEditModeManager
 		}
 	}
 
-	// Token: 0x060044C5 RID: 17605 RVA: 0x001B1290 File Offset: 0x001AF490
+	// Token: 0x06004546 RID: 17734 RVA: 0x001B3868 File Offset: 0x001B1A68
 	public void GetAllThemeTags(List<string> _result, Prefab _considerLoadedPrefab = null)
 	{
 		Dictionary<PathAbstractions.AbstractedLocation, Prefab> dictionary = this.loadedPrefabHeaders;
@@ -349,7 +349,7 @@ public class PrefabEditModeManager
 		}
 	}
 
-	// Token: 0x060044C6 RID: 17606 RVA: 0x001B13E8 File Offset: 0x001AF5E8
+	// Token: 0x06004547 RID: 17735 RVA: 0x001B39C0 File Offset: 0x001B1BC0
 	public void GetAllGroups(List<string> _result, Prefab _considerLoadedPrefab = null)
 	{
 		Dictionary<PathAbstractions.AbstractedLocation, Prefab> dictionary = this.loadedPrefabHeaders;
@@ -381,7 +381,7 @@ public class PrefabEditModeManager
 		}
 	}
 
-	// Token: 0x060044C7 RID: 17607 RVA: 0x001B151C File Offset: 0x001AF71C
+	// Token: 0x06004548 RID: 17736 RVA: 0x001B3AF4 File Offset: 0x001B1CF4
 	public void GetAllZones(List<string> _result, Prefab _considerLoadedPrefab = null)
 	{
 		Dictionary<PathAbstractions.AbstractedLocation, Prefab> dictionary = this.loadedPrefabHeaders;
@@ -418,7 +418,7 @@ public class PrefabEditModeManager
 		}
 	}
 
-	// Token: 0x060044C8 RID: 17608 RVA: 0x001B1610 File Offset: 0x001AF810
+	// Token: 0x06004549 RID: 17737 RVA: 0x001B3BE8 File Offset: 0x001B1DE8
 	public void GetAllQuestTags(List<string> _result, Prefab _considerLoadedPrefab = null)
 	{
 		string[] array;
@@ -447,13 +447,13 @@ public class PrefabEditModeManager
 		}
 	}
 
-	// Token: 0x060044C9 RID: 17609 RVA: 0x001B16B8 File Offset: 0x001AF8B8
+	// Token: 0x0600454A RID: 17738 RVA: 0x001B3C90 File Offset: 0x001B1E90
 	public bool HasPrefabImposter(PathAbstractions.AbstractedLocation _location)
 	{
 		return SdFile.Exists(_location.FullPathNoExtension + ".mesh");
 	}
 
-	// Token: 0x060044CA RID: 17610 RVA: 0x001B16D0 File Offset: 0x001AF8D0
+	// Token: 0x0600454B RID: 17739 RVA: 0x001B3CA8 File Offset: 0x001B1EA8
 	public void ClearImposterPrefab()
 	{
 		this.ClearEditorImposterSigns();
@@ -461,7 +461,7 @@ public class PrefabEditModeManager
 		this.ImposterPrefab = null;
 	}
 
-	// Token: 0x060044CB RID: 17611 RVA: 0x001B16EC File Offset: 0x001AF8EC
+	// Token: 0x0600454C RID: 17740 RVA: 0x001B3CC4 File Offset: 0x001B1EC4
 	public bool LoadImposterPrefab(PathAbstractions.AbstractedLocation _location)
 	{
 		this.ClearImposterPrefab();
@@ -481,7 +481,7 @@ public class PrefabEditModeManager
 		return true;
 	}
 
-	// Token: 0x060044CC RID: 17612 RVA: 0x001B1790 File Offset: 0x001AF990
+	// Token: 0x0600454D RID: 17741 RVA: 0x001B3D68 File Offset: 0x001B1F68
 	public void LoadEditorImposterSigns(SimpleMeshInfo _meshInfo)
 	{
 		if (((_meshInfo != null) ? _meshInfo.signs : null) == null || _meshInfo.signs.Count == 0)
@@ -503,7 +503,7 @@ public class PrefabEditModeManager
 		}
 	}
 
-	// Token: 0x060044CD RID: 17613 RVA: 0x001B1840 File Offset: 0x001AFA40
+	// Token: 0x0600454E RID: 17742 RVA: 0x001B3E18 File Offset: 0x001B2018
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ClearEditorImposterSigns()
 	{
@@ -517,13 +517,13 @@ public class PrefabEditModeManager
 		}
 	}
 
-	// Token: 0x060044CE RID: 17614 RVA: 0x001B18A0 File Offset: 0x001AFAA0
+	// Token: 0x0600454F RID: 17743 RVA: 0x001B3E78 File Offset: 0x001B2078
 	public bool IsShowingImposterPrefab()
 	{
 		return this.ImposterPrefab != null;
 	}
 
-	// Token: 0x060044CF RID: 17615 RVA: 0x001B18AE File Offset: 0x001AFAAE
+	// Token: 0x06004550 RID: 17744 RVA: 0x001B3E86 File Offset: 0x001B2086
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void removeAllChunks()
 	{
@@ -532,7 +532,7 @@ public class PrefabEditModeManager
 		WaterSimulationNative.Instance.Clear();
 	}
 
-	// Token: 0x060044D0 RID: 17616 RVA: 0x001B18E4 File Offset: 0x001AFAE4
+	// Token: 0x06004551 RID: 17745 RVA: 0x001B3EBC File Offset: 0x001B20BC
 	public void ClearVoxelPrefab()
 	{
 		SelectionBoxManager.Instance.Deactivate();
@@ -558,7 +558,7 @@ public class PrefabEditModeManager
 		this.showCompositionGrid = false;
 	}
 
-	// Token: 0x060044D1 RID: 17617 RVA: 0x001B19F0 File Offset: 0x001AFBF0
+	// Token: 0x06004552 RID: 17746 RVA: 0x001B3FC8 File Offset: 0x001B21C8
 	public bool NewVoxelPrefab()
 	{
 		this.ClearImposterPrefab();
@@ -601,7 +601,7 @@ public class PrefabEditModeManager
 		return true;
 	}
 
-	// Token: 0x060044D2 RID: 17618 RVA: 0x001B1B98 File Offset: 0x001AFD98
+	// Token: 0x06004553 RID: 17747 RVA: 0x001B4170 File Offset: 0x001B2370
 	public bool LoadVoxelPrefab(PathAbstractions.AbstractedLocation _location, bool _bBulk = false, bool _bIgnoreExcludeImposterCheck = false)
 	{
 		this.ClearImposterPrefab();
@@ -688,7 +688,7 @@ public class PrefabEditModeManager
 		return true;
 	}
 
-	// Token: 0x060044D3 RID: 17619 RVA: 0x001B1F80 File Offset: 0x001B0180
+	// Token: 0x06004554 RID: 17748 RVA: 0x001B4558 File Offset: 0x001B2758
 	public bool SaveVoxelPrefab()
 	{
 		if (this.VoxelPrefab == null)
@@ -712,7 +712,7 @@ public class PrefabEditModeManager
 		return flag;
 	}
 
-	// Token: 0x060044D4 RID: 17620 RVA: 0x001B202C File Offset: 0x001B022C
+	// Token: 0x06004555 RID: 17749 RVA: 0x001B4604 File Offset: 0x001B2804
 	public void UpdateMinMax()
 	{
 		if (this.VoxelPrefab == null)
@@ -772,7 +772,7 @@ public class PrefabEditModeManager
 		this.maxPos = zero2;
 	}
 
-	// Token: 0x060044D5 RID: 17621 RVA: 0x001B2238 File Offset: 0x001B0438
+	// Token: 0x06004556 RID: 17750 RVA: 0x001B4810 File Offset: 0x001B2A10
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updatePrefabBounds()
 	{
@@ -789,7 +789,7 @@ public class PrefabEditModeManager
 		}
 	}
 
-	// Token: 0x060044D6 RID: 17622 RVA: 0x001B22C4 File Offset: 0x001B04C4
+	// Token: 0x06004557 RID: 17751 RVA: 0x001B489C File Offset: 0x001B2A9C
 	public void SetGroundLevel(int _yOffset)
 	{
 		this.curGridYPos = _yOffset;
@@ -809,13 +809,13 @@ public class PrefabEditModeManager
 		}
 	}
 
-	// Token: 0x060044D7 RID: 17623 RVA: 0x001B2366 File Offset: 0x001B0566
+	// Token: 0x06004558 RID: 17752 RVA: 0x001B493E File Offset: 0x001B2B3E
 	public void MoveGroundGridUpOrDown(int _deltaY)
 	{
 		this.SetGroundLevel(Utils.FastClamp(this.curGridYPos - _deltaY, -200, 0));
 	}
 
-	// Token: 0x060044D8 RID: 17624 RVA: 0x001B2384 File Offset: 0x001B0584
+	// Token: 0x06004559 RID: 17753 RVA: 0x001B495C File Offset: 0x001B2B5C
 	public void ToggleGroundGrid(bool _bForceOn = false)
 	{
 		if (this.groundGrid == null)
@@ -831,13 +831,13 @@ public class PrefabEditModeManager
 		this.groundGrid.SetActive(_bForceOn || !this.groundGrid.activeSelf);
 	}
 
-	// Token: 0x060044D9 RID: 17625 RVA: 0x001B243D File Offset: 0x001B063D
+	// Token: 0x0600455A RID: 17754 RVA: 0x001B4A15 File Offset: 0x001B2C15
 	public bool IsGroundGrid()
 	{
 		return this.groundGrid != null && this.groundGrid.activeSelf;
 	}
 
-	// Token: 0x060044DA RID: 17626 RVA: 0x001B245C File Offset: 0x001B065C
+	// Token: 0x0600455B RID: 17755 RVA: 0x001B4A34 File Offset: 0x001B2C34
 	public void ToggleCompositionGrid()
 	{
 		this.showCompositionGrid = !this.showCompositionGrid;
@@ -857,13 +857,13 @@ public class PrefabEditModeManager
 		}
 	}
 
-	// Token: 0x060044DB RID: 17627 RVA: 0x001B24C5 File Offset: 0x001B06C5
+	// Token: 0x0600455C RID: 17756 RVA: 0x001B4A9D File Offset: 0x001B2C9D
 	public bool IsCompositionGrid()
 	{
 		return this.showCompositionGrid && this.IsActive();
 	}
 
-	// Token: 0x060044DC RID: 17628 RVA: 0x001B24D8 File Offset: 0x001B06D8
+	// Token: 0x0600455D RID: 17757 RVA: 0x001B4AB0 File Offset: 0x001B2CB0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateCompositionGrid()
 	{
@@ -928,7 +928,7 @@ public class PrefabEditModeManager
 		DebugLines.Create("GoldenRatio_OuterZ2", entityPlayerLocal.RootTransform, vector, vector2, color3, color3, 0.03f, 0.03f, 0.1f);
 	}
 
-	// Token: 0x060044DD RID: 17629 RVA: 0x001B29C4 File Offset: 0x001B0BC4
+	// Token: 0x0600455E RID: 17758 RVA: 0x001B4F9C File Offset: 0x001B319C
 	public void UpdatePrefabBounds()
 	{
 		DynamicPrefabDecorator dynamicPrefabDecorator = GameManager.Instance.GetDynamicPrefabDecorator();
@@ -944,13 +944,13 @@ public class PrefabEditModeManager
 		this.updatePrefabBounds();
 	}
 
-	// Token: 0x060044DE RID: 17630 RVA: 0x001B2A37 File Offset: 0x001B0C37
+	// Token: 0x0600455F RID: 17759 RVA: 0x001B500F File Offset: 0x001B320F
 	public bool IsPrefabFacing()
 	{
 		return this.bShowFacing;
 	}
 
-	// Token: 0x060044DF RID: 17631 RVA: 0x001B2A40 File Offset: 0x001B0C40
+	// Token: 0x06004560 RID: 17760 RVA: 0x001B5018 File Offset: 0x001B3218
 	public void TogglePrefabFacing(bool _bShow)
 	{
 		if (this.VoxelPrefab == null)
@@ -964,7 +964,7 @@ public class PrefabEditModeManager
 		SelectionBoxManager.Instance.CategoryPrefabFacingVolume.SetVisible(this.bShowFacing);
 	}
 
-	// Token: 0x060044E0 RID: 17632 RVA: 0x001B2ABA File Offset: 0x001B0CBA
+	// Token: 0x06004561 RID: 17761 RVA: 0x001B5092 File Offset: 0x001B3292
 	public void RotatePrefabFacing()
 	{
 		if (this.VoxelPrefab == null)
@@ -977,7 +977,7 @@ public class PrefabEditModeManager
 		this.NeedsSaving = true;
 	}
 
-	// Token: 0x060044E1 RID: 17633 RVA: 0x001B2AF8 File Offset: 0x001B0CF8
+	// Token: 0x06004562 RID: 17762 RVA: 0x001B50D0 File Offset: 0x001B32D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateFacing()
 	{
@@ -1001,7 +1001,7 @@ public class PrefabEditModeManager
 		this.boxShowFacing.FacingDirection = num;
 	}
 
-	// Token: 0x060044E2 RID: 17634 RVA: 0x001B2B58 File Offset: 0x001B0D58
+	// Token: 0x06004563 RID: 17763 RVA: 0x001B5130 File Offset: 0x001B3330
 	public void MovePrefabUpOrDown(int _deltaY)
 	{
 		this.updatePrefabBounds();
@@ -1049,7 +1049,7 @@ public class PrefabEditModeManager
 		}
 	}
 
-	// Token: 0x060044E3 RID: 17635 RVA: 0x001B2D6C File Offset: 0x001B0F6C
+	// Token: 0x06004564 RID: 17764 RVA: 0x001B5344 File Offset: 0x001B3544
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool checkLayerEmpty(int _y, List<Chunk> chunks)
 	{
@@ -1074,7 +1074,7 @@ public class PrefabEditModeManager
 		return bAllEmpty;
 	}
 
-	// Token: 0x060044E4 RID: 17636 RVA: 0x001B2DD4 File Offset: 0x001B0FD4
+	// Token: 0x06004565 RID: 17765 RVA: 0x001B53AC File Offset: 0x001B35AC
 	public void StripTextures()
 	{
 		HashSet<Chunk> changedChunks = new HashSet<Chunk>();
@@ -1116,7 +1116,7 @@ public class PrefabEditModeManager
 		GameManager.Instance.World.m_ChunkManager.RemoveAllChunksOnAllClients();
 	}
 
-	// Token: 0x060044E5 RID: 17637 RVA: 0x001B2F00 File Offset: 0x001B1100
+	// Token: 0x06004566 RID: 17766 RVA: 0x001B54D8 File Offset: 0x001B36D8
 	public void StripInternalTextures()
 	{
 		HashSet<Chunk> changedChunks = new HashSet<Chunk>();
@@ -1186,7 +1186,7 @@ public class PrefabEditModeManager
 		GameManager.Instance.World.m_ChunkManager.RemoveAllChunksOnAllClients();
 	}
 
-	// Token: 0x060044E6 RID: 17638 RVA: 0x001B3038 File Offset: 0x001B1238
+	// Token: 0x06004567 RID: 17767 RVA: 0x001B5610 File Offset: 0x001B3810
 	public void GetLootAndFetchLootContainerCount(out int _loot, out int _fetchLoot, out int _restorePower)
 	{
 		int tempLoot = 0;
@@ -1235,16 +1235,16 @@ public class PrefabEditModeManager
 		_restorePower = tempRestorePower;
 	}
 
-	// Token: 0x17000742 RID: 1858
-	// (get) Token: 0x060044E7 RID: 17639 RVA: 0x001B30CB File Offset: 0x001B12CB
-	// (set) Token: 0x060044E8 RID: 17640 RVA: 0x001B30D3 File Offset: 0x001B12D3
+	// Token: 0x17000754 RID: 1876
+	// (get) Token: 0x06004568 RID: 17768 RVA: 0x001B56A3 File Offset: 0x001B38A3
+	// (set) Token: 0x06004569 RID: 17769 RVA: 0x001B56AB File Offset: 0x001B38AB
 	public bool HighlightingBlocks
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x060044E9 RID: 17641 RVA: 0x001B30DC File Offset: 0x001B12DC
+	// Token: 0x0600456A RID: 17770 RVA: 0x001B56B4 File Offset: 0x001B38B4
 	public void HighlightBlocks(Block _blockClass)
 	{
 		this.highlightBlockId = ((_blockClass != null) ? _blockClass.blockID : 0);
@@ -1252,14 +1252,14 @@ public class PrefabEditModeManager
 		this.highlightBlocks(this.highlightBlockId);
 	}
 
-	// Token: 0x060044EA RID: 17642 RVA: 0x001B310B File Offset: 0x001B130B
+	// Token: 0x0600456B RID: 17771 RVA: 0x001B56E3 File Offset: 0x001B38E3
 	public void ToggleHighlightBlocks()
 	{
 		this.HighlightingBlocks = !this.HighlightingBlocks;
 		this.highlightBlocks(this.HighlightingBlocks ? this.highlightBlockId : 0);
 	}
 
-	// Token: 0x060044EB RID: 17643 RVA: 0x001B3134 File Offset: 0x001B1334
+	// Token: 0x0600456C RID: 17772 RVA: 0x001B570C File Offset: 0x001B390C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void highlightBlocks(int _blockId)
 	{
@@ -1282,9 +1282,9 @@ public class PrefabEditModeManager
 		}
 	}
 
-	// Token: 0x17000743 RID: 1859
-	// (get) Token: 0x060044EC RID: 17644 RVA: 0x001B31BE File Offset: 0x001B13BE
-	// (set) Token: 0x060044ED RID: 17645 RVA: 0x001B31C8 File Offset: 0x001B13C8
+	// Token: 0x17000755 RID: 1877
+	// (get) Token: 0x0600456D RID: 17773 RVA: 0x001B5796 File Offset: 0x001B3996
+	// (set) Token: 0x0600456E RID: 17774 RVA: 0x001B57A0 File Offset: 0x001B39A0
 	public bool HighlightQuestLoot
 	{
 		get
@@ -1313,9 +1313,9 @@ public class PrefabEditModeManager
 		}
 	}
 
-	// Token: 0x17000744 RID: 1860
-	// (get) Token: 0x060044EE RID: 17646 RVA: 0x001B32C0 File Offset: 0x001B14C0
-	// (set) Token: 0x060044EF RID: 17647 RVA: 0x001B32C8 File Offset: 0x001B14C8
+	// Token: 0x17000756 RID: 1878
+	// (get) Token: 0x0600456F RID: 17775 RVA: 0x001B5898 File Offset: 0x001B3A98
+	// (set) Token: 0x06004570 RID: 17776 RVA: 0x001B58A0 File Offset: 0x001B3AA0
 	public bool HighlightBlockTriggers
 	{
 		get
@@ -1343,89 +1343,89 @@ public class PrefabEditModeManager
 		}
 	}
 
-	// Token: 0x04003721 RID: 14113
+	// Token: 0x040037AA RID: 14250
 	public const int cGroundGridYDefault = 1;
 
-	// Token: 0x04003722 RID: 14114
+	// Token: 0x040037AB RID: 14251
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string SingleFacingBoxName = "single";
 
-	// Token: 0x04003723 RID: 14115
+	// Token: 0x040037AC RID: 14252
 	public static PrefabEditModeManager Instance;
 
-	// Token: 0x04003725 RID: 14117
+	// Token: 0x040037AE RID: 14254
 	public PathAbstractions.AbstractedLocation LoadedPrefab;
 
-	// Token: 0x04003726 RID: 14118
+	// Token: 0x040037AF RID: 14255
 	public Prefab VoxelPrefab;
 
-	// Token: 0x04003727 RID: 14119
+	// Token: 0x040037B0 RID: 14256
 	public GameObject ImposterPrefab;
 
-	// Token: 0x04003728 RID: 14120
+	// Token: 0x040037B1 RID: 14257
 	public List<ImposterCanvas> ImposterSignData;
 
-	// Token: 0x04003729 RID: 14121
+	// Token: 0x040037B2 RID: 14258
 	public bool NeedsSaving;
 
-	// Token: 0x0400372A RID: 14122
+	// Token: 0x040037B3 RID: 14259
 	public Vector3i minPos;
 
-	// Token: 0x0400372B RID: 14123
+	// Token: 0x040037B4 RID: 14260
 	public Vector3i maxPos;
 
-	// Token: 0x0400372C RID: 14124
+	// Token: 0x040037B5 RID: 14261
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<PathAbstractions.AbstractedLocation, Prefab> loadedPrefabHeaders = new Dictionary<PathAbstractions.AbstractedLocation, Prefab>();
 
-	// Token: 0x0400372D RID: 14125
+	// Token: 0x040037B6 RID: 14262
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int curGridYPos;
 
-	// Token: 0x0400372E RID: 14126
+	// Token: 0x040037B7 RID: 14263
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject groundGrid;
 
-	// Token: 0x0400372F RID: 14127
+	// Token: 0x040037B8 RID: 14264
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int prefabInstanceId = -1;
 
-	// Token: 0x04003730 RID: 14128
+	// Token: 0x040037B9 RID: 14265
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FileSystemWatcher xmlWatcher;
 
-	// Token: 0x04003731 RID: 14129
+	// Token: 0x040037BA RID: 14266
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bShowFacing;
 
-	// Token: 0x04003732 RID: 14130
+	// Token: 0x040037BB RID: 14267
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bShowQuestLoot;
 
-	// Token: 0x04003733 RID: 14131
+	// Token: 0x040037BC RID: 14268
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bShowBlockTriggers;
 
-	// Token: 0x04003734 RID: 14132
+	// Token: 0x040037BD RID: 14269
 	public List<byte> TriggerLayers = new List<byte>();
 
-	// Token: 0x04003735 RID: 14133
+	// Token: 0x040037BE RID: 14270
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showCompositionGrid;
 
-	// Token: 0x04003736 RID: 14134
+	// Token: 0x040037BF RID: 14271
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i compositionGridMin;
 
-	// Token: 0x04003737 RID: 14135
+	// Token: 0x040037C0 RID: 14272
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i compositionGridMax;
 
-	// Token: 0x04003738 RID: 14136
+	// Token: 0x040037C1 RID: 14273
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int compositionGridGroundLevel;
 
-	// Token: 0x0400373A RID: 14138
+	// Token: 0x040037C3 RID: 14275
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int highlightBlockId;
 }

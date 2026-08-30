@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E57 RID: 3671
+// Token: 0x02000E6C RID: 3692
 [Preserve]
 public class XUiC_Button : XUiController
 {
-	// Token: 0x06007140 RID: 28992 RVA: 0x002B6AB8 File Offset: 0x002B4CB8
+	// Token: 0x060071E0 RID: 29152 RVA: 0x002B9FDC File Offset: 0x002B81DC
 	public override void Init()
 	{
 		base.Init();
@@ -17,14 +17,14 @@ public class XUiC_Button : XUiController
 		this.CustomAttributes.EntryModified += this.OnCustomAttributeModified;
 	}
 
-	// Token: 0x06007141 RID: 28993 RVA: 0x0008A069 File Offset: 0x00088269
+	// Token: 0x060071E1 RID: 29153 RVA: 0x0008A715 File Offset: 0x00088915
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnCustomAttributeModified(object _sender, DictionaryChangedEventArgs<string, object> _e)
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007142 RID: 28994 RVA: 0x0008A069 File Offset: 0x00088269
+	// Token: 0x060071E2 RID: 29154 RVA: 0x0008A715 File Offset: 0x00088915
 	[XuiBindEvent("OnInteraction", null)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnAnyEvent(XUiController _sender, EXUiControllerInteractionType _type)
@@ -32,7 +32,7 @@ public class XUiC_Button : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007143 RID: 28995 RVA: 0x002B6B05 File Offset: 0x002B4D05
+	// Token: 0x060071E3 RID: 29155 RVA: 0x002BA029 File Offset: 0x002B8229
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -43,7 +43,7 @@ public class XUiC_Button : XUiController
 		base.handleDirtyUpdateDefault();
 	}
 
-	// Token: 0x06007144 RID: 28996 RVA: 0x002B6B37 File Offset: 0x002B4D37
+	// Token: 0x060071E4 RID: 29156 RVA: 0x002BA05B File Offset: 0x002B825B
 	public override void Pressed(int _mouseButton)
 	{
 		if (this.HoldToActivate)
@@ -53,7 +53,7 @@ public class XUiC_Button : XUiController
 		base.Pressed(_mouseButton);
 	}
 
-	// Token: 0x06007145 RID: 28997 RVA: 0x002B6B49 File Offset: 0x002B4D49
+	// Token: 0x060071E5 RID: 29157 RVA: 0x002BA06D File Offset: 0x002B826D
 	[XuiBindEvent("OnVisiblity", null)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onVisibilityChanged(XUiController _sender, bool _visibleSelf, bool _visibleInScene)
@@ -66,7 +66,7 @@ public class XUiC_Button : XUiController
 		this.HoldToActivateElapsed = 0f;
 	}
 
-	// Token: 0x06007146 RID: 28998 RVA: 0x002B6B61 File Offset: 0x002B4D61
+	// Token: 0x060071E6 RID: 29158 RVA: 0x002BA085 File Offset: 0x002B8285
 	[XuiBindEvent("OnMouseUpDown", null)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onMouse(XUiController _sender, bool _mouseDown)
@@ -88,8 +88,8 @@ public class XUiC_Button : XUiController
 		this.HoldToActivateElapsed = 0f;
 	}
 
-	// Token: 0x17000CDC RID: 3292
-	// (get) Token: 0x06007147 RID: 28999 RVA: 0x002B6BA1 File Offset: 0x002B4DA1
+	// Token: 0x17000CF5 RID: 3317
+	// (get) Token: 0x060071E7 RID: 29159 RVA: 0x002BA0C5 File Offset: 0x002B82C5
 	public bool HoldToActivate
 	{
 		get
@@ -98,9 +98,9 @@ public class XUiC_Button : XUiController
 		}
 	}
 
-	// Token: 0x17000CDD RID: 3293
-	// (get) Token: 0x06007148 RID: 29000 RVA: 0x002B6BB0 File Offset: 0x002B4DB0
-	// (set) Token: 0x06007149 RID: 29001 RVA: 0x002B6BB8 File Offset: 0x002B4DB8
+	// Token: 0x17000CF6 RID: 3318
+	// (get) Token: 0x060071E8 RID: 29160 RVA: 0x002BA0D4 File Offset: 0x002B82D4
+	// (set) Token: 0x060071E9 RID: 29161 RVA: 0x002BA0DC File Offset: 0x002B82DC
 	[XuiXmlAttribute("hold_to_activate_time", false)]
 	public float HoldToActivateTime
 	{
@@ -119,9 +119,9 @@ public class XUiC_Button : XUiController
 		}
 	}
 
-	// Token: 0x17000CDE RID: 3294
-	// (get) Token: 0x0600714A RID: 29002 RVA: 0x002B6BD7 File Offset: 0x002B4DD7
-	// (set) Token: 0x0600714B RID: 29003 RVA: 0x002B6BDF File Offset: 0x002B4DDF
+	// Token: 0x17000CF7 RID: 3319
+	// (get) Token: 0x060071EA RID: 29162 RVA: 0x002BA0FB File Offset: 0x002B82FB
+	// (set) Token: 0x060071EB RID: 29163 RVA: 0x002BA103 File Offset: 0x002B8303
 	public float HoldToActivateElapsed
 	{
 		get
@@ -139,8 +139,8 @@ public class XUiC_Button : XUiController
 		}
 	}
 
-	// Token: 0x17000CDF RID: 3295
-	// (get) Token: 0x0600714C RID: 29004 RVA: 0x002B6BFE File Offset: 0x002B4DFE
+	// Token: 0x17000CF8 RID: 3320
+	// (get) Token: 0x060071EC RID: 29164 RVA: 0x002BA122 File Offset: 0x002B8322
 	[XuiXmlBinding("hold_to_activate_state")]
 	public float HoldToActivateState
 	{
@@ -154,8 +154,8 @@ public class XUiC_Button : XUiController
 		}
 	}
 
-	// Token: 0x17000CE0 RID: 3296
-	// (get) Token: 0x0600714D RID: 29005 RVA: 0x002B6C20 File Offset: 0x002B4E20
+	// Token: 0x17000CF9 RID: 3321
+	// (get) Token: 0x060071ED RID: 29165 RVA: 0x002BA144 File Offset: 0x002B8344
 	[XuiXmlBinding("btn_enabled")]
 	public bool BindingEnabled
 	{
@@ -166,8 +166,8 @@ public class XUiC_Button : XUiController
 		}
 	}
 
-	// Token: 0x17000CE1 RID: 3297
-	// (get) Token: 0x0600714E RID: 29006 RVA: 0x002B6C2D File Offset: 0x002B4E2D
+	// Token: 0x17000CFA RID: 3322
+	// (get) Token: 0x060071EE RID: 29166 RVA: 0x002BA151 File Offset: 0x002B8351
 	[XuiXmlBinding("btn_hovered")]
 	public bool BindingHovered
 	{
@@ -178,8 +178,8 @@ public class XUiC_Button : XUiController
 		}
 	}
 
-	// Token: 0x17000CE2 RID: 3298
-	// (get) Token: 0x0600714F RID: 29007 RVA: 0x002B6C3A File Offset: 0x002B4E3A
+	// Token: 0x17000CFB RID: 3323
+	// (get) Token: 0x060071EF RID: 29167 RVA: 0x002BA15E File Offset: 0x002B835E
 	[XuiXmlBinding("btn_attributes")]
 	public ObservableDictionary<string, object> BindingCustomAttributes
 	{
@@ -190,15 +190,15 @@ public class XUiC_Button : XUiController
 		}
 	}
 
-	// Token: 0x0400552B RID: 21803
+	// Token: 0x040055CF RID: 21967
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isPressed;
 
-	// Token: 0x0400552C RID: 21804
+	// Token: 0x040055D0 RID: 21968
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float holdToActivateTime;
 
-	// Token: 0x0400552D RID: 21805
+	// Token: 0x040055D1 RID: 21969
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float holdToActivateElapsed;
 }

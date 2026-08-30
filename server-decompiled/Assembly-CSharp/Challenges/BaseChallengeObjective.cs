@@ -6,17 +6,17 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x020018D1 RID: 6353
+	// Token: 0x020018F7 RID: 6391
 	[Preserve]
 	public class BaseChallengeObjective
 	{
-		// Token: 0x170017DA RID: 6106
-		// (get) Token: 0x0600C374 RID: 50036 RVA: 0x0048382A File Offset: 0x00481A2A
-		// (set) Token: 0x0600C375 RID: 50037 RVA: 0x00483832 File Offset: 0x00481A32
+		// Token: 0x1700184C RID: 6220
+		// (get) Token: 0x0600C4FB RID: 50427 RVA: 0x00489B6A File Offset: 0x00487D6A
+		// (set) Token: 0x0600C4FC RID: 50428 RVA: 0x00489B72 File Offset: 0x00487D72
 		public byte CurrentFileVersion { get; set; }
 
-		// Token: 0x170017DB RID: 6107
-		// (get) Token: 0x0600C376 RID: 50038 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x1700184D RID: 6221
+		// (get) Token: 0x0600C4FD RID: 50429 RVA: 0x00010E62 File Offset: 0x0000F062
 		public virtual ChallengeObjectiveType ObjectiveType
 		{
 			get
@@ -25,8 +25,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x170017DC RID: 6108
-		// (get) Token: 0x0600C377 RID: 50039 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x1700184E RID: 6222
+		// (get) Token: 0x0600C4FE RID: 50430 RVA: 0x00010E62 File Offset: 0x0000F062
 		public virtual ChallengeClass.UINavTypes NavType
 		{
 			get
@@ -35,8 +35,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x170017DD RID: 6109
-		// (get) Token: 0x0600C378 RID: 50040 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x1700184F RID: 6223
+		// (get) Token: 0x0600C4FF RID: 50431 RVA: 0x00010E62 File Offset: 0x0000F062
 		public virtual bool NeedsConstantUIUpdate
 		{
 			get
@@ -45,9 +45,9 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x170017DE RID: 6110
-		// (get) Token: 0x0600C379 RID: 50041 RVA: 0x0048383B File Offset: 0x00481A3B
-		// (set) Token: 0x0600C37A RID: 50042 RVA: 0x00483843 File Offset: 0x00481A43
+		// Token: 0x17001850 RID: 6224
+		// (get) Token: 0x0600C500 RID: 50432 RVA: 0x00489B7B File Offset: 0x00487D7B
+		// (set) Token: 0x0600C501 RID: 50433 RVA: 0x00489B83 File Offset: 0x00487D83
 		public bool Complete
 		{
 			get
@@ -64,9 +64,9 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x170017DF RID: 6111
-		// (get) Token: 0x0600C37B RID: 50043 RVA: 0x0048385B File Offset: 0x00481A5B
-		// (set) Token: 0x0600C37C RID: 50044 RVA: 0x00483863 File Offset: 0x00481A63
+		// Token: 0x17001851 RID: 6225
+		// (get) Token: 0x0600C502 RID: 50434 RVA: 0x00489B9B File Offset: 0x00487D9B
+		// (set) Token: 0x0600C503 RID: 50435 RVA: 0x00489BA3 File Offset: 0x00487DA3
 		public int Current
 		{
 			get
@@ -83,13 +83,13 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C37D RID: 50045 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C504 RID: 50436 RVA: 0x000027FC File Offset: 0x000009FC
 		public virtual void BaseInit()
 		{
 		}
 
-		// Token: 0x170017E0 RID: 6112
-		// (get) Token: 0x0600C37E RID: 50046 RVA: 0x0048387B File Offset: 0x00481A7B
+		// Token: 0x17001852 RID: 6226
+		// (get) Token: 0x0600C505 RID: 50437 RVA: 0x00489BBB File Offset: 0x00487DBB
 		public EntityPlayerLocal Player
 		{
 			get
@@ -98,20 +98,20 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C37F RID: 50047 RVA: 0x0048388D File Offset: 0x00481A8D
+		// Token: 0x0600C506 RID: 50438 RVA: 0x00489BCD File Offset: 0x00487DCD
 		public void ResetComplete()
 		{
 			this.Complete = false;
 			this.current = 0;
 		}
 
-		// Token: 0x14000117 RID: 279
-		// (add) Token: 0x0600C380 RID: 50048 RVA: 0x004838A0 File Offset: 0x00481AA0
-		// (remove) Token: 0x0600C381 RID: 50049 RVA: 0x004838D8 File Offset: 0x00481AD8
+		// Token: 0x14000118 RID: 280
+		// (add) Token: 0x0600C507 RID: 50439 RVA: 0x00489BE0 File Offset: 0x00487DE0
+		// (remove) Token: 0x0600C508 RID: 50440 RVA: 0x00489C18 File Offset: 0x00487E18
 		public event ObjectiveValueChanged ValueChanged;
 
-		// Token: 0x170017E1 RID: 6113
-		// (get) Token: 0x0600C382 RID: 50050 RVA: 0x0048390D File Offset: 0x00481B0D
+		// Token: 0x17001853 RID: 6227
+		// (get) Token: 0x0600C509 RID: 50441 RVA: 0x00489C4D File Offset: 0x00487E4D
 		public string ObjectiveText
 		{
 			get
@@ -120,8 +120,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x170017E2 RID: 6114
-		// (get) Token: 0x0600C383 RID: 50051 RVA: 0x00031E8B File Offset: 0x0003008B
+		// Token: 0x17001854 RID: 6228
+		// (get) Token: 0x0600C50A RID: 50442 RVA: 0x00032147 File Offset: 0x00030347
 		public virtual string DescriptionText
 		{
 			get
@@ -130,8 +130,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x170017E3 RID: 6115
-		// (get) Token: 0x0600C384 RID: 50052 RVA: 0x00483925 File Offset: 0x00481B25
+		// Token: 0x17001855 RID: 6229
+		// (get) Token: 0x0600C50B RID: 50443 RVA: 0x00489C65 File Offset: 0x00487E65
 		public virtual string StatusText
 		{
 			get
@@ -144,8 +144,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x170017E4 RID: 6116
-		// (get) Token: 0x0600C385 RID: 50053 RVA: 0x00483962 File Offset: 0x00481B62
+		// Token: 0x17001856 RID: 6230
+		// (get) Token: 0x0600C50C RID: 50444 RVA: 0x00489CA2 File Offset: 0x00487EA2
 		public virtual float FillAmount
 		{
 			get
@@ -154,7 +154,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C386 RID: 50054 RVA: 0x00483973 File Offset: 0x00481B73
+		// Token: 0x0600C50D RID: 50445 RVA: 0x00489CB3 File Offset: 0x00487EB3
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void HandleValueChanged()
 		{
@@ -164,45 +164,45 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C387 RID: 50055 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C50E RID: 50446 RVA: 0x000027FC File Offset: 0x000009FC
 		public virtual void Init()
 		{
 		}
 
-		// Token: 0x0600C388 RID: 50056 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C50F RID: 50447 RVA: 0x000027FC File Offset: 0x000009FC
 		public virtual void HandleOnCreated()
 		{
 		}
 
-		// Token: 0x0600C389 RID: 50057 RVA: 0x00483988 File Offset: 0x00481B88
+		// Token: 0x0600C510 RID: 50448 RVA: 0x00489CC8 File Offset: 0x00487EC8
 		public virtual bool HandleCheckStatus()
 		{
 			this.Complete = this.CheckObjectiveComplete(false);
 			return this.Complete;
 		}
 
-		// Token: 0x0600C38A RID: 50058 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C511 RID: 50449 RVA: 0x000027FC File Offset: 0x000009FC
 		public virtual void UpdateStatus()
 		{
 		}
 
-		// Token: 0x0600C38B RID: 50059 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C512 RID: 50450 RVA: 0x000027FC File Offset: 0x000009FC
 		public virtual void HandleAddHooks()
 		{
 		}
 
-		// Token: 0x0600C38C RID: 50060 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C513 RID: 50451 RVA: 0x000027FC File Offset: 0x000009FC
 		public virtual void HandleRemoveHooks()
 		{
 		}
 
-		// Token: 0x0600C38D RID: 50061 RVA: 0x0048399D File Offset: 0x00481B9D
+		// Token: 0x0600C514 RID: 50452 RVA: 0x00489CDD File Offset: 0x00487EDD
 		public virtual void HandleTrackingStarted()
 		{
 			this.IsTracking = true;
 		}
 
-		// Token: 0x0600C38E RID: 50062 RVA: 0x004839A8 File Offset: 0x00481BA8
+		// Token: 0x0600C515 RID: 50453 RVA: 0x00489CE8 File Offset: 0x00487EE8
 		public virtual void CopyValues(BaseChallengeObjective obj, BaseChallengeObjective objFromClass)
 		{
 			this.current = obj.current;
@@ -212,26 +212,26 @@ namespace Challenges
 			this.complete = this.Current >= this.MaxCount;
 		}
 
-		// Token: 0x0600C38F RID: 50063 RVA: 0x004839FC File Offset: 0x00481BFC
+		// Token: 0x0600C516 RID: 50454 RVA: 0x00489D3C File Offset: 0x00487F3C
 		public virtual void HandleTrackingEnded()
 		{
 			this.IsTracking = false;
 		}
 
-		// Token: 0x0600C390 RID: 50064 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C517 RID: 50455 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void HandleUpdatingCurrent()
 		{
 		}
 
-		// Token: 0x0600C391 RID: 50065 RVA: 0x00483A05 File Offset: 0x00481C05
+		// Token: 0x0600C518 RID: 50456 RVA: 0x00489D45 File Offset: 0x00487F45
 		public void HandleAutoComplete()
 		{
 			this.current = this.MaxCount;
 			this.Complete = true;
 		}
 
-		// Token: 0x0600C392 RID: 50066 RVA: 0x00483A1C File Offset: 0x00481C1C
+		// Token: 0x0600C519 RID: 50457 RVA: 0x00489D5C File Offset: 0x00487F5C
 		public static BaseChallengeObjective ReadObjective(byte _currentVersion, ChallengeObjectiveType _type, BinaryReader _br)
 		{
 			BaseChallengeObjective baseChallengeObjective = null;
@@ -323,13 +323,13 @@ namespace Challenges
 			return baseChallengeObjective;
 		}
 
-		// Token: 0x0600C393 RID: 50067 RVA: 0x0001FF1E File Offset: 0x0001E11E
+		// Token: 0x0600C51A RID: 50458 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
 		public virtual Recipe GetRecipeItem()
 		{
 			return null;
 		}
 
-		// Token: 0x0600C394 RID: 50068 RVA: 0x00483B9C File Offset: 0x00481D9C
+		// Token: 0x0600C51B RID: 50459 RVA: 0x00489EDC File Offset: 0x004880DC
 		public virtual Recipe[] GetRecipeItems()
 		{
 			if (this.Owner.NeedsPreRequisites)
@@ -343,26 +343,26 @@ namespace Challenges
 			return null;
 		}
 
-		// Token: 0x0600C395 RID: 50069 RVA: 0x00483BD1 File Offset: 0x00481DD1
+		// Token: 0x0600C51C RID: 50460 RVA: 0x00489F11 File Offset: 0x00488111
 		public virtual void Read(byte _currentVersion, BinaryReader _br)
 		{
 			this.current = _br.ReadInt32();
 		}
 
-		// Token: 0x0600C396 RID: 50070 RVA: 0x00483BDF File Offset: 0x00481DDF
+		// Token: 0x0600C51D RID: 50461 RVA: 0x00489F1F File Offset: 0x0048811F
 		public void WriteObjective(BinaryWriter _bw)
 		{
 			_bw.Write((byte)this.ObjectiveType);
 			this.Write(_bw);
 		}
 
-		// Token: 0x0600C397 RID: 50071 RVA: 0x00483BF4 File Offset: 0x00481DF4
+		// Token: 0x0600C51E RID: 50462 RVA: 0x00489F34 File Offset: 0x00488134
 		public virtual void Write(BinaryWriter _bw)
 		{
 			_bw.Write(this.current);
 		}
 
-		// Token: 0x0600C398 RID: 50072 RVA: 0x00483C04 File Offset: 0x00481E04
+		// Token: 0x0600C51F RID: 50463 RVA: 0x00489F44 File Offset: 0x00488144
 		public virtual bool CheckObjectiveComplete(bool handleComplete = true)
 		{
 			this.HandleUpdatingCurrent();
@@ -372,31 +372,31 @@ namespace Challenges
 				this.Complete = true;
 				if (handleComplete)
 				{
-					this.Owner.HandleComplete(true);
+					this.Owner.HandleComplete(true, false);
 				}
 				return true;
 			}
 			if (handleComplete)
 			{
-				this.Owner.HandleComplete(true);
+				this.Owner.HandleComplete(true, false);
 			}
 			this.Complete = false;
 			return false;
 		}
 
-		// Token: 0x0600C399 RID: 50073 RVA: 0x00483C60 File Offset: 0x00481E60
+		// Token: 0x0600C520 RID: 50464 RVA: 0x00489FA4 File Offset: 0x004881A4
 		public virtual bool CheckBaseRequirements()
 		{
 			return this.Owner.ChallengeGroup.IsActive && (this.Biome != "" && (this.Owner.Owner.Player.biomeStandingOn == null || this.Owner.Owner.Player.biomeStandingOn.m_sBiomeName != this.Biome));
 		}
 
-		// Token: 0x0600C39A RID: 50074 RVA: 0x0001FF1E File Offset: 0x0001E11E
+		// Token: 0x0600C521 RID: 50465 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
 		public virtual BaseChallengeObjective Clone()
 		{
 			return null;
 		}
 
-		// Token: 0x0600C39B RID: 50075 RVA: 0x00483CD4 File Offset: 0x00481ED4
+		// Token: 0x0600C522 RID: 50466 RVA: 0x0048A018 File Offset: 0x00488218
 		public virtual void ParseElement(XElement e)
 		{
 			if (e.HasAttribute("count"))
@@ -413,13 +413,13 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C39C RID: 50076 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C523 RID: 50467 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void Update(float deltaTime)
 		{
 		}
 
-		// Token: 0x0600C39D RID: 50077 RVA: 0x00483D69 File Offset: 0x00481F69
+		// Token: 0x0600C524 RID: 50468 RVA: 0x0048A0AD File Offset: 0x004882AD
 		public void HandleUpdate(float deltaTime)
 		{
 			if (this.Owner.IsActive)
@@ -428,42 +428,42 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C39E RID: 50078 RVA: 0x00483D7F File Offset: 0x00481F7F
+		// Token: 0x0600C525 RID: 50469 RVA: 0x0048A0C3 File Offset: 0x004882C3
 		public virtual void CompleteObjective(bool handleComplete = true)
 		{
 			this.Current = this.MaxCount;
 			this.CheckObjectiveComplete(handleComplete);
 		}
 
-		// Token: 0x040093E8 RID: 37864
+		// Token: 0x04009511 RID: 38161
 		public static byte FileVersion = 1;
 
-		// Token: 0x040093EA RID: 37866
+		// Token: 0x04009513 RID: 38163
 		public int MaxCount = 1;
 
-		// Token: 0x040093EB RID: 37867
+		// Token: 0x04009514 RID: 38164
 		public bool IsRequirement;
 
-		// Token: 0x040093EC RID: 37868
+		// Token: 0x04009515 RID: 38165
 		public Challenge Owner;
 
-		// Token: 0x040093ED RID: 37869
+		// Token: 0x04009516 RID: 38166
 		public ChallengeClass OwnerClass;
 
-		// Token: 0x040093EE RID: 37870
+		// Token: 0x04009517 RID: 38167
 		public string Biome = "";
 
-		// Token: 0x040093EF RID: 37871
+		// Token: 0x04009518 RID: 38168
 		public bool ShowRequirements = true;
 
-		// Token: 0x040093F0 RID: 37872
+		// Token: 0x04009519 RID: 38169
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool complete;
 
-		// Token: 0x040093F1 RID: 37873
+		// Token: 0x0400951A RID: 38170
 		public bool IsTracking;
 
-		// Token: 0x040093F2 RID: 37874
+		// Token: 0x0400951B RID: 38171
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int current;
 	}

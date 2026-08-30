@@ -1,24 +1,24 @@
 ﻿using System;
 
-// Token: 0x020014D5 RID: 5333
+// Token: 0x020014F0 RID: 5360
 public struct Vector2F : IEquatable<Vector2F>
 {
-	// Token: 0x0600A784 RID: 42884 RVA: 0x003E65F4 File Offset: 0x003E47F4
+	// Token: 0x0600A881 RID: 43137 RVA: 0x003EB934 File Offset: 0x003E9B34
 	public Vector2F(double angle)
 	{
 		this.X = (float)Math.Sin(angle);
 		this.Y = (float)Math.Cos(angle);
 	}
 
-	// Token: 0x0600A785 RID: 42885 RVA: 0x003E6610 File Offset: 0x003E4810
+	// Token: 0x0600A882 RID: 43138 RVA: 0x003EB950 File Offset: 0x003E9B50
 	public Vector2F(float x, float y)
 	{
 		this.X = x;
 		this.Y = y;
 	}
 
-	// Token: 0x1700137A RID: 4986
-	// (get) Token: 0x0600A786 RID: 42886 RVA: 0x003E6620 File Offset: 0x003E4820
+	// Token: 0x170013B3 RID: 5043
+	// (get) Token: 0x0600A883 RID: 43139 RVA: 0x003EB960 File Offset: 0x003E9B60
 	public double Length
 	{
 		get
@@ -27,66 +27,66 @@ public struct Vector2F : IEquatable<Vector2F>
 		}
 	}
 
-	// Token: 0x0600A787 RID: 42887 RVA: 0x003E6643 File Offset: 0x003E4843
+	// Token: 0x0600A884 RID: 43140 RVA: 0x003EB983 File Offset: 0x003E9B83
 	public static double Lengthsquared(Vector2F a)
 	{
 		return (double)(a.X * a.X + a.Y * a.Y);
 	}
 
-	// Token: 0x0600A788 RID: 42888 RVA: 0x003E6661 File Offset: 0x003E4861
+	// Token: 0x0600A885 RID: 43141 RVA: 0x003EB9A1 File Offset: 0x003E9BA1
 	public static Vector2F operator -(Vector2F a, Vector2F b)
 	{
 		return new Vector2F(a.X - b.X, a.Y - b.Y);
 	}
 
-	// Token: 0x0600A789 RID: 42889 RVA: 0x003E6682 File Offset: 0x003E4882
+	// Token: 0x0600A886 RID: 43142 RVA: 0x003EB9C2 File Offset: 0x003E9BC2
 	public static bool operator ==(Vector2F a, Vector2F b)
 	{
 		return a.X == b.X && a.Y == b.Y;
 	}
 
-	// Token: 0x0600A78A RID: 42890 RVA: 0x003E66A2 File Offset: 0x003E48A2
+	// Token: 0x0600A887 RID: 43143 RVA: 0x003EB9E2 File Offset: 0x003E9BE2
 	public static bool operator !=(Vector2F a, Vector2F b)
 	{
 		return a.X != b.X || a.Y != b.Y;
 	}
 
-	// Token: 0x0600A78B RID: 42891 RVA: 0x003E66C5 File Offset: 0x003E48C5
+	// Token: 0x0600A888 RID: 43144 RVA: 0x003EBA05 File Offset: 0x003E9C05
 	public override int GetHashCode()
 	{
 		return this.X.GetHashCode() * this.Y.GetHashCode();
 	}
 
-	// Token: 0x0600A78C RID: 42892 RVA: 0x003E6643 File Offset: 0x003E4843
+	// Token: 0x0600A889 RID: 43145 RVA: 0x003EB983 File Offset: 0x003E9B83
 	public double Lengthsquared()
 	{
 		return (double)(this.X * this.X + this.Y * this.Y);
 	}
 
-	// Token: 0x0600A78D RID: 42893 RVA: 0x003E66DE File Offset: 0x003E48DE
+	// Token: 0x0600A88A RID: 43146 RVA: 0x003EBA1E File Offset: 0x003E9C1E
 	public override bool Equals(object obj)
 	{
 		return this == (Vector2F)obj;
 	}
 
-	// Token: 0x0600A78E RID: 42894 RVA: 0x003E66F1 File Offset: 0x003E48F1
+	// Token: 0x0600A88B RID: 43147 RVA: 0x003EBA31 File Offset: 0x003E9C31
 	public bool Equals(Vector2F other)
 	{
 		return other.X == this.X && other.Y == this.Y;
 	}
 
-	// Token: 0x0600A78F RID: 42895 RVA: 0x003E6711 File Offset: 0x003E4911
+	// Token: 0x0600A88C RID: 43148 RVA: 0x003EBA51 File Offset: 0x003E9C51
 	public override string ToString()
 	{
 		return this.X.ToCultureInvariantString() + ", " + this.Y.ToCultureInvariantString();
 	}
 
-	// Token: 0x04007BFE RID: 31742
+	// Token: 0x04007CD7 RID: 31959
 	public float Y;
 
-	// Token: 0x04007BFF RID: 31743
+	// Token: 0x04007CD8 RID: 31960
 	public float X;
 
-	// Token: 0x04007C00 RID: 31744
+	// Token: 0x04007CD9 RID: 31961
 	public static readonly Vector2F Zero = new Vector2F(0f, 0f);
 }

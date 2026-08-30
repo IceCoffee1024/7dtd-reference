@@ -4,11 +4,11 @@ using System.Globalization;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006C7 RID: 1735
+// Token: 0x020006D1 RID: 1745
 [Preserve]
 public class MinEventActionAddBuff : MinEventActionBuffModifierBase
 {
-	// Token: 0x060035C9 RID: 13769 RVA: 0x001638D4 File Offset: 0x00161AD4
+	// Token: 0x0600361F RID: 13855 RVA: 0x00165AAC File Offset: 0x00163CAC
 	public override void Execute(MinEventParams _params)
 	{
 		bool flag = !_params.Self.isEntityRemote | _params.IsLocal;
@@ -80,7 +80,7 @@ public class MinEventActionAddBuff : MinEventActionBuffModifierBase
 		}
 	}
 
-	// Token: 0x060035CA RID: 13770 RVA: 0x00163AF0 File Offset: 0x00161CF0
+	// Token: 0x06003620 RID: 13856 RVA: 0x00165CC8 File Offset: 0x00163EC8
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -101,19 +101,19 @@ public class MinEventActionAddBuff : MinEventActionBuffModifierBase
 		return flag;
 	}
 
-	// Token: 0x04002B3D RID: 11069
+	// Token: 0x04002BB1 RID: 11185
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float duration;
 
-	// Token: 0x04002B3E RID: 11070
+	// Token: 0x04002BB2 RID: 11186
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool durationAltered;
 
-	// Token: 0x04002B3F RID: 11071
+	// Token: 0x04002BB3 RID: 11187
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool cvarRef;
 
-	// Token: 0x04002B40 RID: 11072
+	// Token: 0x04002BB4 RID: 11188
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string refCvarName = string.Empty;
 }

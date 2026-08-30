@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-// Token: 0x020009DA RID: 2522
+// Token: 0x020009EB RID: 2539
 public class QuestTraderData
 {
-	// Token: 0x06004B33 RID: 19251 RVA: 0x001D3F34 File Offset: 0x001D2134
+	// Token: 0x06004BB9 RID: 19385 RVA: 0x001D671C File Offset: 0x001D491C
 	public QuestTraderData()
 	{
 	}
 
-	// Token: 0x06004B34 RID: 19252 RVA: 0x001D3F59 File Offset: 0x001D2159
+	// Token: 0x06004BBA RID: 19386 RVA: 0x001D6741 File Offset: 0x001D4941
 	public QuestTraderData(Vector2 traderPOI)
 	{
 		this.TraderPOI = traderPOI;
 	}
 
-	// Token: 0x06004B35 RID: 19253 RVA: 0x001D3F88 File Offset: 0x001D2188
+	// Token: 0x06004BBB RID: 19387 RVA: 0x001D6770 File Offset: 0x001D4970
 	public void AddPOI(int tier, Vector2 poiPosition)
 	{
 		if (!this.CompletedPOIByTier.ContainsKey(tier))
@@ -34,7 +34,7 @@ public class QuestTraderData
 		}
 	}
 
-	// Token: 0x06004B36 RID: 19254 RVA: 0x001D4000 File Offset: 0x001D2200
+	// Token: 0x06004BBC RID: 19388 RVA: 0x001D67E8 File Offset: 0x001D49E8
 	public void ClearTier(int tier)
 	{
 		if (tier == -1)
@@ -55,7 +55,7 @@ public class QuestTraderData
 		}
 	}
 
-	// Token: 0x06004B37 RID: 19255 RVA: 0x001D4064 File Offset: 0x001D2264
+	// Token: 0x06004BBD RID: 19389 RVA: 0x001D684C File Offset: 0x001D4A4C
 	public void CheckReset(EntityPlayer player)
 	{
 		if (this.resetDay != -1 && GameUtils.WorldTimeToDays(GameManager.Instance.World.worldTime) - this.resetDay >= 7)
@@ -75,7 +75,7 @@ public class QuestTraderData
 		}
 	}
 
-	// Token: 0x06004B38 RID: 19256 RVA: 0x001D4112 File Offset: 0x001D2312
+	// Token: 0x06004BBE RID: 19390 RVA: 0x001D68FA File Offset: 0x001D4AFA
 	public List<Vector2> GetTierPOIs(int tier)
 	{
 		if (this.CompletedPOIByTier.ContainsKey(tier))
@@ -85,7 +85,7 @@ public class QuestTraderData
 		return null;
 	}
 
-	// Token: 0x06004B39 RID: 19257 RVA: 0x001D4130 File Offset: 0x001D2330
+	// Token: 0x06004BBF RID: 19391 RVA: 0x001D6918 File Offset: 0x001D4B18
 	public void Read(BinaryReader _br, byte version)
 	{
 		this.TraderPOI = StreamUtils.ReadVector2(_br);
@@ -114,7 +114,7 @@ public class QuestTraderData
 		this.resetDay = _br.ReadInt32();
 	}
 
-	// Token: 0x06004B3A RID: 19258 RVA: 0x001D41F0 File Offset: 0x001D23F0
+	// Token: 0x06004BC0 RID: 19392 RVA: 0x001D69D8 File Offset: 0x001D4BD8
 	public void Write(BinaryWriter _bw)
 	{
 		StreamUtils.Write(_bw, this.TraderPOI);
@@ -137,27 +137,27 @@ public class QuestTraderData
 		_bw.Write(this.resetDay);
 	}
 
-	// Token: 0x04003B08 RID: 15112
+	// Token: 0x04003B99 RID: 15257
 	public QuestJournal Owner;
 
-	// Token: 0x04003B09 RID: 15113
+	// Token: 0x04003B9A RID: 15258
 	public Vector2 TraderPOI;
 
-	// Token: 0x04003B0A RID: 15114
+	// Token: 0x04003B9B RID: 15259
 	public List<Vector2> TradersSentTo = new List<Vector2>();
 
-	// Token: 0x04003B0B RID: 15115
+	// Token: 0x04003B9C RID: 15260
 	public Dictionary<int, List<Vector2>> CompletedPOIByTier = new Dictionary<int, List<Vector2>>();
 
-	// Token: 0x04003B0C RID: 15116
+	// Token: 0x04003B9D RID: 15261
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int resetDay = -1;
 
-	// Token: 0x04003B0D RID: 15117
+	// Token: 0x04003B9E RID: 15262
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int resetStartTier = 4;
 
-	// Token: 0x04003B0E RID: 15118
+	// Token: 0x04003B9F RID: 15263
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int fullTierCount = 6;
 }

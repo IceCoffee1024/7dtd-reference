@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x020009D9 RID: 2521
+// Token: 0x020009EA RID: 2538
 public class QuestTierReward
 {
-	// Token: 0x06004B31 RID: 19249 RVA: 0x001D3EEC File Offset: 0x001D20EC
+	// Token: 0x06004BB7 RID: 19383 RVA: 0x001D66D4 File Offset: 0x001D48D4
 	public void GiveRewards(EntityPlayer player)
 	{
 		for (int i = 0; i < this.Rewards.Count; i++)
@@ -13,9 +13,9 @@ public class QuestTierReward
 		}
 	}
 
-	// Token: 0x04003B06 RID: 15110
+	// Token: 0x04003B97 RID: 15255
 	public int Tier;
 
-	// Token: 0x04003B07 RID: 15111
+	// Token: 0x04003B98 RID: 15256
 	public List<BaseReward> Rewards = new List<BaseReward>();
 }

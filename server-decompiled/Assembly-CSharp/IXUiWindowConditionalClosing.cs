@@ -1,8 +1,8 @@
 ﻿using System;
 
-// Token: 0x02000D97 RID: 3479
+// Token: 0x02000DAB RID: 3499
 public interface IXUiWindowConditionalClosing
 {
-	// Token: 0x06006A3B RID: 27195
+	// Token: 0x06006AD5 RID: 27349
 	void TryClose(Action _onClosed, Action _onCancelled);
 }

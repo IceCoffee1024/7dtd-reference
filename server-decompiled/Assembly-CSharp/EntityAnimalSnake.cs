@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000481 RID: 1153
+// Token: 0x02000485 RID: 1157
 [Preserve]
 public class EntityAnimalSnake : EntityEnemyAnimal
 {
-	// Token: 0x060023D3 RID: 9171 RVA: 0x000D907C File Offset: 0x000D727C
+	// Token: 0x060023F4 RID: 9204 RVA: 0x000D9B54 File Offset: 0x000D7D54
 	public override Vector3 GetAttackTargetHitPosition()
 	{
 		Vector3 position = this.attackTarget.position;

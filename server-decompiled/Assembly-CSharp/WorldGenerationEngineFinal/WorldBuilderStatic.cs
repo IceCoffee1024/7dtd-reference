@@ -3,16 +3,16 @@ using System.Collections.Generic;
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x0200171B RID: 5915
+	// Token: 0x02001741 RID: 5953
 	public static class WorldBuilderStatic
 	{
-		// Token: 0x04008943 RID: 35139
+		// Token: 0x04008A5F RID: 35423
 		public static readonly Dictionary<string, DynamicProperties> Properties = new Dictionary<string, DynamicProperties>();
 
-		// Token: 0x04008944 RID: 35140
+		// Token: 0x04008A60 RID: 35424
 		public static readonly Dictionary<string, Vector2i> WorldSizeMapper = new Dictionary<string, Vector2i>();
 
-		// Token: 0x04008945 RID: 35141
+		// Token: 0x04008A61 RID: 35425
 		public static readonly Dictionary<int, TownshipData> idToTownshipData = new Dictionary<int, TownshipData>();
 	}
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000830 RID: 2096
+// Token: 0x0200083C RID: 2108
 [Preserve]
 public class NetPackageQuestObjectiveUpdate : NetPackage
 {
-	// Token: 0x06003D73 RID: 15731 RVA: 0x00185EE5 File Offset: 0x001840E5
+	// Token: 0x06003DD8 RID: 15832 RVA: 0x00187F05 File Offset: 0x00186105
 	public NetPackageQuestObjectiveUpdate Setup(NetPackageQuestObjectiveUpdate.QuestObjectiveEventTypes _eventType, int _entityID, int _questCode)
 	{
 		this.senderEntityID = _entityID;
@@ -15,7 +15,7 @@ public class NetPackageQuestObjectiveUpdate : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D74 RID: 15732 RVA: 0x00185F08 File Offset: 0x00184108
+	// Token: 0x06003DD9 RID: 15833 RVA: 0x00187F28 File Offset: 0x00186128
 	public NetPackageQuestObjectiveUpdate Setup(NetPackageQuestObjectiveUpdate.QuestObjectiveEventTypes _eventType, int _entityID, int _questCode, Vector3i _blockPos)
 	{
 		this.senderEntityID = _entityID;
@@ -25,7 +25,7 @@ public class NetPackageQuestObjectiveUpdate : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D75 RID: 15733 RVA: 0x00185F28 File Offset: 0x00184128
+	// Token: 0x06003DDA RID: 15834 RVA: 0x00187F48 File Offset: 0x00186148
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.senderEntityID = _reader.ReadInt32();
@@ -34,7 +34,7 @@ public class NetPackageQuestObjectiveUpdate : NetPackage
 		this.blockPos = StreamUtils.ReadVector3i(_reader);
 	}
 
-	// Token: 0x06003D76 RID: 15734 RVA: 0x00185F5A File Offset: 0x0018415A
+	// Token: 0x06003DDB RID: 15835 RVA: 0x00187F7A File Offset: 0x0018617A
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -44,7 +44,7 @@ public class NetPackageQuestObjectiveUpdate : NetPackage
 		StreamUtils.Write(_writer, this.blockPos);
 	}
 
-	// Token: 0x06003D77 RID: 15735 RVA: 0x00185F94 File Offset: 0x00184194
+	// Token: 0x06003DDC RID: 15836 RVA: 0x00187FB4 File Offset: 0x001861B4
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -126,7 +126,7 @@ public class NetPackageQuestObjectiveUpdate : NetPackage
 		}
 	}
 
-	// Token: 0x06003D78 RID: 15736 RVA: 0x001861B4 File Offset: 0x001843B4
+	// Token: 0x06003DDD RID: 15837 RVA: 0x001881D4 File Offset: 0x001863D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandlePlayer(World _world, EntityPlayerLocal localPlayer)
 	{
@@ -167,36 +167,36 @@ public class NetPackageQuestObjectiveUpdate : NetPackage
 		}
 	}
 
-	// Token: 0x06003D79 RID: 15737 RVA: 0x000B8CB1 File Offset: 0x000B6EB1
+	// Token: 0x06003DDE RID: 15838 RVA: 0x000B93F5 File Offset: 0x000B75F5
 	public override int GetLength()
 	{
 		return 20;
 	}
 
-	// Token: 0x040031A4 RID: 12708
+	// Token: 0x04003223 RID: 12835
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int senderEntityID;
 
-	// Token: 0x040031A5 RID: 12709
+	// Token: 0x04003224 RID: 12836
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int questCode;
 
-	// Token: 0x040031A6 RID: 12710
+	// Token: 0x04003225 RID: 12837
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i blockPos;
 
-	// Token: 0x040031A7 RID: 12711
+	// Token: 0x04003226 RID: 12838
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetPackageQuestObjectiveUpdate.QuestObjectiveEventTypes eventType;
 
-	// Token: 0x02000831 RID: 2097
+	// Token: 0x0200083D RID: 2109
 	public enum QuestObjectiveEventTypes
 	{
-		// Token: 0x040031A9 RID: 12713
+		// Token: 0x04003228 RID: 12840
 		TreasureRadiusBreak,
-		// Token: 0x040031AA RID: 12714
+		// Token: 0x04003229 RID: 12841
 		TreasureComplete,
-		// Token: 0x040031AB RID: 12715
+		// Token: 0x0400322A RID: 12842
 		BlockActivated
 	}
 }

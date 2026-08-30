@@ -4,12 +4,12 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020002BE RID: 702
+// Token: 0x020002C2 RID: 706
 [Preserve]
 public class ConsoleCmdWorkstationMaterials : ConsoleCmdAbstract
 {
-	// Token: 0x1700023D RID: 573
-	// (get) Token: 0x0600144E RID: 5198 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x1700023E RID: 574
+	// (get) Token: 0x06001460 RID: 5216 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -18,14 +18,14 @@ public class ConsoleCmdWorkstationMaterials : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600144F RID: 5199 RVA: 0x0007B4B1 File Offset: 0x000796B1
+	// Token: 0x06001461 RID: 5217 RVA: 0x0007BB0D File Offset: 0x00079D0D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "wsmats", "workstationmaterials" };
 	}
 
-	// Token: 0x06001450 RID: 5200 RVA: 0x0007B4CC File Offset: 0x000796CC
+	// Token: 0x06001462 RID: 5218 RVA: 0x0007BB28 File Offset: 0x00079D28
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count != 2)
@@ -100,7 +100,7 @@ public class ConsoleCmdWorkstationMaterials : ConsoleCmdAbstract
 		primaryPlayer.Stats.Stamina.MaxModifier = -primaryPlayer.Stats.Stamina.Max + (float)Mathf.CeilToInt(num4 / 100f * primaryPlayer.Stats.Stamina.Max);
 	}
 
-	// Token: 0x06001451 RID: 5201 RVA: 0x0007B70C File Offset: 0x0007990C
+	// Token: 0x06001463 RID: 5219 RVA: 0x0007BD68 File Offset: 0x00079F68
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setSlot(int _targetSlot, int _count, int _storedSlotCount, int _smeltSlotCount, ItemStack[] _inputStacks, string[] _materialNames)
 	{
@@ -120,7 +120,7 @@ public class ConsoleCmdWorkstationMaterials : ConsoleCmdAbstract
 		{
 			_inputStacks[num] = new ItemStack(new ItemValue(itemClass.Id, false), _inputStacks[num].count);
 		}
-		if (_count > itemClass.Stacknumber.Value)
+		if (_count > itemClass.MaxCount)
 		{
 			SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Parameter <count> is larger than the max stack size for the material!");
 			return;
@@ -128,14 +128,14 @@ public class ConsoleCmdWorkstationMaterials : ConsoleCmdAbstract
 		_inputStacks[num].count = _count;
 	}
 
-	// Token: 0x06001452 RID: 5202 RVA: 0x0007B7C8 File Offset: 0x000799C8
+	// Token: 0x06001464 RID: 5220 RVA: 0x0007BE1F File Offset: 0x0007A01F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Set material counts on workstations.";
 	}
 
-	// Token: 0x06001453 RID: 5203 RVA: 0x0007B7CF File Offset: 0x000799CF
+	// Token: 0x06001465 RID: 5221 RVA: 0x0007BE26 File Offset: 0x0007A026
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200091A RID: 2330
+// Token: 0x0200092A RID: 2346
 public class PrefabDataInstance
 {
-	// Token: 0x1700072D RID: 1837
-	// (get) Token: 0x060043A5 RID: 17317 RVA: 0x001A695E File Offset: 0x001A4B5E
+	// Token: 0x1700073F RID: 1855
+	// (get) Token: 0x06004426 RID: 17446 RVA: 0x001A8F32 File Offset: 0x001A7132
 	public Vector3i boundingBoxSize
 	{
 		get
@@ -14,8 +14,8 @@ public class PrefabDataInstance
 		}
 	}
 
-	// Token: 0x1700072E RID: 1838
-	// (get) Token: 0x060043A6 RID: 17318 RVA: 0x001A696C File Offset: 0x001A4B6C
+	// Token: 0x17000740 RID: 1856
+	// (get) Token: 0x06004427 RID: 17447 RVA: 0x001A8F40 File Offset: 0x001A7140
 	public Vector2i CenterXZ
 	{
 		get
@@ -27,8 +27,8 @@ public class PrefabDataInstance
 		}
 	}
 
-	// Token: 0x1700072F RID: 1839
-	// (get) Token: 0x060043A7 RID: 17319 RVA: 0x001A69C4 File Offset: 0x001A4BC4
+	// Token: 0x17000741 RID: 1857
+	// (get) Token: 0x06004428 RID: 17448 RVA: 0x001A8F98 File Offset: 0x001A7198
 	public Vector2 CenterXZV2
 	{
 		get
@@ -40,8 +40,8 @@ public class PrefabDataInstance
 		}
 	}
 
-	// Token: 0x17000730 RID: 1840
-	// (get) Token: 0x060043A8 RID: 17320 RVA: 0x001A6A28 File Offset: 0x001A4C28
+	// Token: 0x17000742 RID: 1858
+	// (get) Token: 0x06004429 RID: 17449 RVA: 0x001A8FFC File Offset: 0x001A71FC
 	public PathAbstractions.AbstractedLocation location
 	{
 		get
@@ -50,7 +50,7 @@ public class PrefabDataInstance
 		}
 	}
 
-	// Token: 0x060043A9 RID: 17321 RVA: 0x001A6A35 File Offset: 0x001A4C35
+	// Token: 0x0600442A RID: 17450 RVA: 0x001A9009 File Offset: 0x001A7209
 	public PrefabDataInstance(int _id, Vector3i _position, byte _rotation, PrefabData _prefabData)
 	{
 		this.id = _id;
@@ -60,22 +60,22 @@ public class PrefabDataInstance
 		this.previewColor = PrefabDataInstance.previewColorDefault;
 	}
 
-	// Token: 0x04003671 RID: 13937
+	// Token: 0x040036FA RID: 14074
 	public int id;
 
-	// Token: 0x04003672 RID: 13938
+	// Token: 0x040036FB RID: 14075
 	public PrefabData prefab;
 
-	// Token: 0x04003673 RID: 13939
+	// Token: 0x040036FC RID: 14076
 	public Vector3i boundingBoxPosition;
 
-	// Token: 0x04003674 RID: 13940
+	// Token: 0x040036FD RID: 14077
 	public byte rotation;
 
-	// Token: 0x04003675 RID: 13941
+	// Token: 0x040036FE RID: 14078
 	public Color32 previewColor;
 
-	// Token: 0x04003676 RID: 13942
+	// Token: 0x040036FF RID: 14079
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Color32 previewColorDefault = new Color32(byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue);
 }

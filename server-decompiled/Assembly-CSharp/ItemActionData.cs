@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020005A1 RID: 1441
+// Token: 0x020005A6 RID: 1446
 [Preserve]
 public class ItemActionData
 {
-	// Token: 0x06002F3A RID: 12090 RVA: 0x0012DF1C File Offset: 0x0012C11C
+	// Token: 0x06002F68 RID: 12136 RVA: 0x0012EF8C File Offset: 0x0012D18C
 	public ItemActionData(ItemInventoryData _inventoryData, int _indexInEntityOfAction)
 	{
 		this.invData = _inventoryData;
@@ -15,40 +15,40 @@ public class ItemActionData
 		this.hitInfo = new WorldRayHitInfo();
 	}
 
-	// Token: 0x06002F3B RID: 12091 RVA: 0x0012DF78 File Offset: 0x0012C178
+	// Token: 0x06002F69 RID: 12137 RVA: 0x0012EFE8 File Offset: 0x0012D1E8
 	public WorldRayHitInfo GetUpdatedHitInfo()
 	{
 		this.hitInfo.CopyFrom(Voxel.voxelRayHitInfo);
 		return this.hitInfo;
 	}
 
-	// Token: 0x04002492 RID: 9362
+	// Token: 0x040024C6 RID: 9414
 	public ItemInventoryData invData;
 
-	// Token: 0x04002493 RID: 9363
+	// Token: 0x040024C7 RID: 9415
 	public float lastUseTime;
 
-	// Token: 0x04002494 RID: 9364
+	// Token: 0x040024C8 RID: 9416
 	public int indexInEntityOfAction;
 
-	// Token: 0x04002495 RID: 9365
+	// Token: 0x040024C9 RID: 9417
 	public bool bWaitForRelease;
 
-	// Token: 0x04002496 RID: 9366
+	// Token: 0x040024CA RID: 9418
 	public ItemActionAttack.AttackHitInfo attackDetails;
 
-	// Token: 0x04002497 RID: 9367
+	// Token: 0x040024CB RID: 9419
 	public FastTags<TagGroup.Global> ActionTags;
 
-	// Token: 0x04002498 RID: 9368
+	// Token: 0x040024CC RID: 9420
 	public bool HasExecuted;
 
-	// Token: 0x04002499 RID: 9369
+	// Token: 0x040024CD RID: 9421
 	public bool uiOpenedByMe;
 
-	// Token: 0x0400249A RID: 9370
+	// Token: 0x040024CE RID: 9422
 	public MinEventParams EventParms;
 
-	// Token: 0x0400249B RID: 9371
+	// Token: 0x040024CF RID: 9423
 	public WorldRayHitInfo hitInfo;
 }

@@ -2,18 +2,18 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000515 RID: 1301
+// Token: 0x0200051A RID: 1306
 [Preserve]
 public class EModelSupplyCrate : EModelBase
 {
-	// Token: 0x06002ACB RID: 10955 RVA: 0x0010E93A File Offset: 0x0010CB3A
+	// Token: 0x06002AF5 RID: 10997 RVA: 0x0010F976 File Offset: 0x0010DB76
 	public override void Init(World _world, Entity _entity, EModelInstanceAssets _assets)
 	{
 		base.Init(_world, _entity, _assets);
 		this.parachute = base.transform.FindInChilds("parachute_supplies", false);
 	}
 
-	// Token: 0x06002ACC RID: 10956 RVA: 0x0010E95C File Offset: 0x0010CB5C
+	// Token: 0x06002AF6 RID: 10998 RVA: 0x0010F998 File Offset: 0x0010DB98
 	public override void SetSkinTexture(string _texture)
 	{
 		base.SetSkinTexture(_texture);
@@ -32,6 +32,6 @@ public class EModelSupplyCrate : EModelBase
 		}
 	}
 
-	// Token: 0x040020A2 RID: 8354
+	// Token: 0x040020D1 RID: 8401
 	public Transform parachute;
 }

@@ -3,12 +3,12 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020007AE RID: 1966
+// Token: 0x020007B8 RID: 1976
 [Preserve]
 public class NetPackageChunk : NetPackage
 {
-	// Token: 0x17000606 RID: 1542
-	// (get) Token: 0x06003A50 RID: 14928 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000610 RID: 1552
+	// (get) Token: 0x06003AA8 RID: 15016 RVA: 0x00020021 File Offset: 0x0001E221
 	public override int Channel
 	{
 		get
@@ -17,8 +17,8 @@ public class NetPackageChunk : NetPackage
 		}
 	}
 
-	// Token: 0x17000607 RID: 1543
-	// (get) Token: 0x06003A51 RID: 14929 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000611 RID: 1553
+	// (get) Token: 0x06003AA9 RID: 15017 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool Compress
 	{
 		get
@@ -27,8 +27,8 @@ public class NetPackageChunk : NetPackage
 		}
 	}
 
-	// Token: 0x17000608 RID: 1544
-	// (get) Token: 0x06003A52 RID: 14930 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x17000612 RID: 1554
+	// (get) Token: 0x06003AAA RID: 15018 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -37,7 +37,7 @@ public class NetPackageChunk : NetPackage
 		}
 	}
 
-	// Token: 0x06003A53 RID: 14931 RVA: 0x0017A370 File Offset: 0x00178570
+	// Token: 0x06003AAB RID: 15019 RVA: 0x0017C5F0 File Offset: 0x0017A7F0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ~NetPackageChunk()
 	{
@@ -53,7 +53,7 @@ public class NetPackageChunk : NetPackage
 		}
 	}
 
-	// Token: 0x06003A54 RID: 14932 RVA: 0x0017A3D4 File Offset: 0x001785D4
+	// Token: 0x06003AAC RID: 15020 RVA: 0x0017C654 File Offset: 0x0017A854
 	public NetPackageChunk Setup(Chunk _chunk, bool _bOverwriteExisting = false)
 	{
 		this.chunk = _chunk;
@@ -67,7 +67,7 @@ public class NetPackageChunk : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003A55 RID: 14933 RVA: 0x0017A444 File Offset: 0x00178644
+	// Token: 0x06003AAD RID: 15021 RVA: 0x0017C6C4 File Offset: 0x0017A8C4
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.bOverwriteExisting = _reader.ReadBoolean();
@@ -93,7 +93,7 @@ public class NetPackageChunk : NetPackage
 		}
 	}
 
-	// Token: 0x06003A56 RID: 14934 RVA: 0x0017A510 File Offset: 0x00178710
+	// Token: 0x06003AAE RID: 15022 RVA: 0x0017C790 File Offset: 0x0017A990
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -112,7 +112,7 @@ public class NetPackageChunk : NetPackage
 		this.chunk = null;
 	}
 
-	// Token: 0x06003A57 RID: 14935 RVA: 0x0017A5C0 File Offset: 0x001787C0
+	// Token: 0x06003AAF RID: 15023 RVA: 0x0017C840 File Offset: 0x0017AA40
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -162,41 +162,41 @@ public class NetPackageChunk : NetPackage
 		}
 	}
 
-	// Token: 0x06003A58 RID: 14936 RVA: 0x0017A738 File Offset: 0x00178938
+	// Token: 0x06003AB0 RID: 15024 RVA: 0x0017C9B8 File Offset: 0x0017ABB8
 	public override int GetLength()
 	{
 		return 14 + (int)this.serializedData.Length;
 	}
 
-	// Token: 0x04002F7D RID: 12157
+	// Token: 0x04002FF6 RID: 12278
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Chunk chunk;
 
-	// Token: 0x04002F7E RID: 12158
+	// Token: 0x04002FF7 RID: 12279
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PooledMemoryStream serializedData;
 
-	// Token: 0x04002F7F RID: 12159
+	// Token: 0x04002FF8 RID: 12280
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bOverwriteExisting;
 
-	// Token: 0x04002F80 RID: 12160
+	// Token: 0x04002FF9 RID: 12281
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int dataLen;
 
-	// Token: 0x04002F81 RID: 12161
+	// Token: 0x04002FFA RID: 12282
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] data;
 
-	// Token: 0x04002F82 RID: 12162
+	// Token: 0x04002FFB RID: 12283
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int chunkX;
 
-	// Token: 0x04002F83 RID: 12163
+	// Token: 0x04002FFC RID: 12284
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int chunkY;
 
-	// Token: 0x04002F84 RID: 12164
+	// Token: 0x04002FFD RID: 12285
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int chunkZ;
 }

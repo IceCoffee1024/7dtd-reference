@@ -1,17 +1,17 @@
 ﻿using System;
 
-// Token: 0x02000C62 RID: 3170
+// Token: 0x02000C74 RID: 3188
 public class TileEntityPoweredMeleeTrap : TileEntityPoweredBlock
 {
-	// Token: 0x060060EA RID: 24810 RVA: 0x00264A13 File Offset: 0x00262C13
+	// Token: 0x06006175 RID: 24949 RVA: 0x002678FB File Offset: 0x00265AFB
 	public TileEntityPoweredMeleeTrap(Chunk _chunk)
 		: base(_chunk)
 	{
 	}
 
-	// Token: 0x170009DC RID: 2524
-	// (get) Token: 0x060060EB RID: 24811 RVA: 0x00264A23 File Offset: 0x00262C23
-	// (set) Token: 0x060060EC RID: 24812 RVA: 0x00264A3A File Offset: 0x00262C3A
+	// Token: 0x170009EF RID: 2543
+	// (get) Token: 0x06006176 RID: 24950 RVA: 0x0026790B File Offset: 0x00265B0B
+	// (set) Token: 0x06006177 RID: 24951 RVA: 0x00267922 File Offset: 0x00265B22
 	public int OwnerEntityID
 	{
 		get
@@ -29,25 +29,25 @@ public class TileEntityPoweredMeleeTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x060060ED RID: 24813 RVA: 0x0005EFE1 File Offset: 0x0005D1E1
+	// Token: 0x06006178 RID: 24952 RVA: 0x0005F529 File Offset: 0x0005D729
 	public override TileEntityType GetTileEntityType()
 	{
 		return TileEntityType.PowerMeleeTrap;
 	}
 
-	// Token: 0x060060EE RID: 24814 RVA: 0x00264A43 File Offset: 0x00262C43
+	// Token: 0x06006179 RID: 24953 RVA: 0x0026792B File Offset: 0x00265B2B
 	public bool IsOwner(PlatformUserIdentifierAbs _userIdentifier)
 	{
 		return _userIdentifier != null && _userIdentifier.Equals(this.ownerID);
 	}
 
-	// Token: 0x060060EF RID: 24815 RVA: 0x00264A56 File Offset: 0x00262C56
+	// Token: 0x0600617A RID: 24954 RVA: 0x0026793E File Offset: 0x00265B3E
 	public PlatformUserIdentifierAbs GetOwner()
 	{
 		return this.ownerID;
 	}
 
-	// Token: 0x060060F0 RID: 24816 RVA: 0x00264A5E File Offset: 0x00262C5E
+	// Token: 0x0600617B RID: 24955 RVA: 0x00267946 File Offset: 0x00265B46
 	public void SetOwner(PlatformUserIdentifierAbs _userIdentifier)
 	{
 		this.ownerID = _userIdentifier;
@@ -55,12 +55,12 @@ public class TileEntityPoweredMeleeTrap : TileEntityPoweredBlock
 		this.setModified();
 	}
 
-	// Token: 0x060060F1 RID: 24817 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600617C RID: 24956 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void OnSetLocalChunkPosition()
 	{
 	}
 
-	// Token: 0x060060F2 RID: 24818 RVA: 0x00264A74 File Offset: 0x00262C74
+	// Token: 0x0600617D RID: 24957 RVA: 0x0026795C File Offset: 0x00265B5C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetOwnerEntityID()
 	{
@@ -73,7 +73,7 @@ public class TileEntityPoweredMeleeTrap : TileEntityPoweredBlock
 		}
 	}
 
-	// Token: 0x060060F3 RID: 24819 RVA: 0x00264AB4 File Offset: 0x00262CB4
+	// Token: 0x0600617E RID: 24958 RVA: 0x0026799C File Offset: 0x00265B9C
 	public override void read(PooledBinaryReader _br, TileEntity.StreamModeRead _eStreamMode)
 	{
 		base.read(_br, _eStreamMode);
@@ -92,7 +92,7 @@ public class TileEntityPoweredMeleeTrap : TileEntityPoweredBlock
 		this.SetOwnerEntityID();
 	}
 
-	// Token: 0x060060F4 RID: 24820 RVA: 0x00264AED File Offset: 0x00262CED
+	// Token: 0x0600617F RID: 24959 RVA: 0x002679D5 File Offset: 0x00265BD5
 	public override void write(PooledBinaryWriter _bw, TileEntity.StreamModeWrite _eStreamMode)
 	{
 		base.write(_bw, _eStreamMode);
@@ -103,15 +103,15 @@ public class TileEntityPoweredMeleeTrap : TileEntityPoweredBlock
 		this.ownerID.ToStream(_bw, false);
 	}
 
-	// Token: 0x04004B94 RID: 19348
+	// Token: 0x04004C31 RID: 19505
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new const int Version = 18;
 
-	// Token: 0x04004B95 RID: 19349
+	// Token: 0x04004C32 RID: 19506
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlatformUserIdentifierAbs ownerID;
 
-	// Token: 0x04004B96 RID: 19350
+	// Token: 0x04004C33 RID: 19507
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int ownerEntityID = -1;
 }

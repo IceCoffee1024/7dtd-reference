@@ -9,10 +9,10 @@ using UnityEngine;
 
 namespace Platform
 {
-	// Token: 0x02001BAD RID: 7085
+	// Token: 0x02001BD4 RID: 7124
 	public static class PlatformUserManager
 	{
-		// Token: 0x0600D27D RID: 53885 RVA: 0x004C2DA5 File Offset: 0x004C0FA5
+		// Token: 0x0600D40B RID: 54283 RVA: 0x004C9199 File Offset: 0x004C7399
 		[Conditional("PLATFORM_USER_MANAGER_DEBUG")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void LogTrace(string message)
@@ -20,38 +20,38 @@ namespace Platform
 			Log.Out("[PlatformUserManager] " + message);
 		}
 
-		// Token: 0x0600D27E RID: 53886 RVA: 0x004C2DA5 File Offset: 0x004C0FA5
+		// Token: 0x0600D40C RID: 54284 RVA: 0x004C9199 File Offset: 0x004C7399
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void LogInfo(string message)
 		{
 			Log.Out("[PlatformUserManager] " + message);
 		}
 
-		// Token: 0x0600D27F RID: 53887 RVA: 0x004C2DB7 File Offset: 0x004C0FB7
+		// Token: 0x0600D40D RID: 54285 RVA: 0x004C91AB File Offset: 0x004C73AB
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void LogWarning(string message)
 		{
 			Log.Warning("[PlatformUserManager] " + message);
 		}
 
-		// Token: 0x0600D280 RID: 53888 RVA: 0x004C2DC9 File Offset: 0x004C0FC9
+		// Token: 0x0600D40E RID: 54286 RVA: 0x004C91BD File Offset: 0x004C73BD
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void LogError(string message)
 		{
 			Log.Error("[PlatformUserManager] " + message);
 		}
 
-		// Token: 0x14000127 RID: 295
-		// (add) Token: 0x0600D281 RID: 53889 RVA: 0x004C2DDC File Offset: 0x004C0FDC
-		// (remove) Token: 0x0600D282 RID: 53890 RVA: 0x004C2E10 File Offset: 0x004C1010
+		// Token: 0x14000128 RID: 296
+		// (add) Token: 0x0600D40F RID: 54287 RVA: 0x004C91D0 File Offset: 0x004C73D0
+		// (remove) Token: 0x0600D410 RID: 54288 RVA: 0x004C9204 File Offset: 0x004C7404
 		public static event PlatformUserBlockedStateChangedHandler BlockedStateChanged;
 
-		// Token: 0x14000128 RID: 296
-		// (add) Token: 0x0600D283 RID: 53891 RVA: 0x004C2E44 File Offset: 0x004C1044
-		// (remove) Token: 0x0600D284 RID: 53892 RVA: 0x004C2E78 File Offset: 0x004C1078
+		// Token: 0x14000129 RID: 297
+		// (add) Token: 0x0600D411 RID: 54289 RVA: 0x004C9238 File Offset: 0x004C7438
+		// (remove) Token: 0x0600D412 RID: 54290 RVA: 0x004C926C File Offset: 0x004C746C
 		public static event PlatformUserDetailsUpdatedHandler DetailsUpdated;
 
-		// Token: 0x0600D285 RID: 53893 RVA: 0x004C2EAC File Offset: 0x004C10AC
+		// Token: 0x0600D413 RID: 54291 RVA: 0x004C92A0 File Offset: 0x004C74A0
 		public static void Init()
 		{
 			PlatformUserManager.s_primaryIdToPlatform = new Dictionary<PlatformUserIdentifierAbs, PlatformUserManager.PlatformUserData>();
@@ -75,7 +75,7 @@ namespace Platform
 			PlatformUserManager.s_enabled = true;
 		}
 
-		// Token: 0x0600D286 RID: 53894 RVA: 0x004C2F84 File Offset: 0x004C1184
+		// Token: 0x0600D414 RID: 54292 RVA: 0x004C9378 File Offset: 0x004C7578
 		public static void Destroy()
 		{
 			PlatformUserManager.s_enabled = false;
@@ -119,7 +119,7 @@ namespace Platform
 			PlatformUserManager.s_primaryIdToPlatform = null;
 		}
 
-		// Token: 0x0600D287 RID: 53895 RVA: 0x004C3058 File Offset: 0x004C1258
+		// Token: 0x0600D415 RID: 54293 RVA: 0x004C944C File Offset: 0x004C764C
 		public static void Update()
 		{
 			if (!PlatformUserManager.s_enabled)
@@ -139,7 +139,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600D288 RID: 53896 RVA: 0x004C309C File Offset: 0x004C129C
+		// Token: 0x0600D416 RID: 54294 RVA: 0x004C9490 File Offset: 0x004C7690
 		public static IPlatformUserData GetOrCreate(PlatformUserIdentifierAbs primaryId)
 		{
 			if (primaryId == null)
@@ -164,7 +164,7 @@ namespace Platform
 			return platformUserData2;
 		}
 
-		// Token: 0x0600D289 RID: 53897 RVA: 0x004C3130 File Offset: 0x004C1330
+		// Token: 0x0600D417 RID: 54295 RVA: 0x004C9524 File Offset: 0x004C7724
 		public static bool TryGetNativePlatform(PlatformUserIdentifierAbs primaryId, out EPlatformIdentifier platform)
 		{
 			if (primaryId == null)
@@ -199,7 +199,7 @@ namespace Platform
 			return flag;
 		}
 
-		// Token: 0x0600D28A RID: 53898 RVA: 0x004C31A4 File Offset: 0x004C13A4
+		// Token: 0x0600D418 RID: 54296 RVA: 0x004C9598 File Offset: 0x004C7798
 		public static int TryGetByNative(PlatformUserIdentifierAbs nativeId, Span<PlatformUserIdentifierAbs> primaryIds)
 		{
 			if (nativeId == null)
@@ -218,7 +218,7 @@ namespace Platform
 			return num;
 		}
 
-		// Token: 0x0600D28B RID: 53899 RVA: 0x004C3210 File Offset: 0x004C1410
+		// Token: 0x0600D419 RID: 54297 RVA: 0x004C9604 File Offset: 0x004C7804
 		public static IEnumerator ResolveUserBlockedCoroutine(IPlatformUserData data)
 		{
 			for (;;)
@@ -235,7 +235,7 @@ namespace Platform
 			yield break;
 		}
 
-		// Token: 0x0600D28C RID: 53900 RVA: 0x004C321F File Offset: 0x004C141F
+		// Token: 0x0600D41A RID: 54298 RVA: 0x004C9613 File Offset: 0x004C7813
 		public static IEnumerator ResolveUserDetailsCoroutine(IPlatformUserData data)
 		{
 			for (;;)
@@ -252,7 +252,7 @@ namespace Platform
 			yield break;
 		}
 
-		// Token: 0x0600D28D RID: 53901 RVA: 0x004C3230 File Offset: 0x004C1430
+		// Token: 0x0600D41B RID: 54299 RVA: 0x004C9624 File Offset: 0x004C7824
 		public static bool AreUsersPendingResolve(IReadOnlyList<IPlatformUserData> users)
 		{
 			if (users == null || users.Count == 0)
@@ -282,7 +282,7 @@ namespace Platform
 			return false;
 		}
 
-		// Token: 0x0600D28E RID: 53902 RVA: 0x004C32FC File Offset: 0x004C14FC
+		// Token: 0x0600D41C RID: 54300 RVA: 0x004C96F0 File Offset: 0x004C78F0
 		public static IEnumerator ResolveUserBlocksCoroutine(IReadOnlyList<IPlatformUserData> users)
 		{
 			if (users == null || users.Count == 0)
@@ -298,7 +298,7 @@ namespace Platform
 			yield break;
 		}
 
-		// Token: 0x0600D28F RID: 53903 RVA: 0x004C330B File Offset: 0x004C150B
+		// Token: 0x0600D41D RID: 54301 RVA: 0x004C96FF File Offset: 0x004C78FF
 		public static IEnumerator ResolveUsersDetailsCoroutine(IReadOnlyList<IPlatformUserData> users)
 		{
 			if (users == null || users.Count == 0)
@@ -314,7 +314,7 @@ namespace Platform
 			yield break;
 		}
 
-		// Token: 0x0600D290 RID: 53904 RVA: 0x004C331C File Offset: 0x004C151C
+		// Token: 0x0600D41E RID: 54302 RVA: 0x004C9710 File Offset: 0x004C7910
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void OnUserAdded(PlatformUserIdentifierAbs userId, bool isPrimary)
 		{
@@ -329,7 +329,7 @@ namespace Platform
 			PlatformManager.MultiPlatform.UserAdded(userId, isPrimary);
 		}
 
-		// Token: 0x0600D291 RID: 53905 RVA: 0x004C3374 File Offset: 0x004C1574
+		// Token: 0x0600D41F RID: 54303 RVA: 0x004C9768 File Offset: 0x004C7968
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void OnBlockedStateChanged(PlatformUserManager.PlatformUserData userData, EBlockType type, EUserBlockState nextBlockState)
 		{
@@ -354,7 +354,7 @@ namespace Platform
 			blockedStateChanged(userData, type, nextBlockState);
 		}
 
-		// Token: 0x0600D292 RID: 53906 RVA: 0x004C33DC File Offset: 0x004C15DC
+		// Token: 0x0600D420 RID: 54304 RVA: 0x004C97D0 File Offset: 0x004C79D0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void UpdatePermissions()
 		{
@@ -370,7 +370,7 @@ namespace Platform
 			PlatformUserManager.s_lastPermissions = permissions;
 		}
 
-		// Token: 0x0600D293 RID: 53907 RVA: 0x004C3418 File Offset: 0x004C1618
+		// Token: 0x0600D421 RID: 54305 RVA: 0x004C980C File Offset: 0x004C7A0C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void UpdatePersistentIds()
 		{
@@ -410,7 +410,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600D294 RID: 53908 RVA: 0x004C3580 File Offset: 0x004C1780
+		// Token: 0x0600D422 RID: 54306 RVA: 0x004C9974 File Offset: 0x004C7B74
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void UpdateUserDetails()
 		{
@@ -439,7 +439,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600D295 RID: 53909 RVA: 0x004C3644 File Offset: 0x004C1844
+		// Token: 0x0600D423 RID: 54307 RVA: 0x004C9A38 File Offset: 0x004C7C38
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerator ResolveUserDetailsCoroutine()
 		{
@@ -553,7 +553,7 @@ namespace Platform
 			yield break;
 		}
 
-		// Token: 0x0600D296 RID: 53910 RVA: 0x004C364C File Offset: 0x004C184C
+		// Token: 0x0600D424 RID: 54308 RVA: 0x004C9A40 File Offset: 0x004C7C40
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void UpdateBlockedStates()
 		{
@@ -587,7 +587,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600D297 RID: 53911 RVA: 0x004C377C File Offset: 0x004C197C
+		// Token: 0x0600D425 RID: 54309 RVA: 0x004C9B70 File Offset: 0x004C7D70
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerator UpdateBlockedStatesCoroutine()
 		{
@@ -624,7 +624,7 @@ namespace Platform
 			yield break;
 		}
 
-		// Token: 0x0600D298 RID: 53912 RVA: 0x004C3784 File Offset: 0x004C1984
+		// Token: 0x0600D426 RID: 54310 RVA: 0x004C9B78 File Offset: 0x004C7D78
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void MarkBlockedStateChangedAll()
 		{
@@ -637,7 +637,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600D299 RID: 53913 RVA: 0x004C3800 File Offset: 0x004C1A00
+		// Token: 0x0600D427 RID: 54311 RVA: 0x004C9BF4 File Offset: 0x004C7DF4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void OnPlatformUserBlocksChanged(IReadOnlyCollection<PlatformUserIdentifierAbs> userIds)
 		{
@@ -676,7 +676,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600D29A RID: 53914 RVA: 0x004C3958 File Offset: 0x004C1B58
+		// Token: 0x0600D428 RID: 54312 RVA: 0x004C9D4C File Offset: 0x004C7F4C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool CanCheckUserDetails()
 		{
@@ -684,7 +684,7 @@ namespace Platform
 			return ((crossplatformPlatform != null) ? crossplatformPlatform.UserDetailsService : null) != null || PlatformManager.NativePlatform.UserDetailsService != null;
 		}
 
-		// Token: 0x0600D29B RID: 53915 RVA: 0x004C397C File Offset: 0x004C1B7C
+		// Token: 0x0600D429 RID: 54313 RVA: 0x004C9D70 File Offset: 0x004C7F70
 		public static IEnumerator ResolveUserBlocksFromBlockList(IReadOnlyList<IPlatformUserBlockedResults> _results)
 		{
 			if (BlockedPlayerList.Instance == null)
@@ -715,7 +715,7 @@ namespace Platform
 			yield break;
 		}
 
-		// Token: 0x0600D29C RID: 53916 RVA: 0x004C398B File Offset: 0x004C1B8B
+		// Token: 0x0600D42A RID: 54314 RVA: 0x004C9D7F File Offset: 0x004C7F7F
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static IEnumerator <ResolveUserDetailsCoroutine>g__ResolveUserDetails|50_0(IUserDetailsService service, IReadOnlyList<UserDetailsRequest> requests, IReadOnlyList<int> resultsIndices, List<PlatformUserManager.PlatformUserDetailsResult> results)
@@ -733,106 +733,106 @@ namespace Platform
 			yield break;
 		}
 
-		// Token: 0x0400A02A RID: 41002
+		// Token: 0x0400A15B RID: 41307
 		public const int PrimaryIdsPerNativeIdLimit = 3;
 
-		// Token: 0x0400A02B RID: 41003
+		// Token: 0x0400A15C RID: 41308
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool s_enabled;
 
-		// Token: 0x0400A02C RID: 41004
+		// Token: 0x0400A15D RID: 41309
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Dictionary<PlatformUserIdentifierAbs, PlatformUserManager.PlatformUserData> s_primaryIdToPlatform;
 
-		// Token: 0x0400A02D RID: 41005
+		// Token: 0x0400A15E RID: 41310
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static ReaderWriterLockSlim s_primaryIdToPlatformLock;
 
-		// Token: 0x0400A02E RID: 41006
+		// Token: 0x0400A15F RID: 41311
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static OneToManyDictionary<PlatformUserIdentifierAbs, PlatformUserIdentifierAbs> s_nativeIdToPrimaryIds;
 
-		// Token: 0x0400A02F RID: 41007
+		// Token: 0x0400A160 RID: 41312
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static ReaderWriterLockSlim s_nativeIdToPrimaryIdsLock;
 
-		// Token: 0x0400A030 RID: 41008
+		// Token: 0x0400A161 RID: 41313
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static HashSet<PlatformUserIdentifierAbs> s_nativeUserIdsSeen;
 
-		// Token: 0x0400A031 RID: 41009
+		// Token: 0x0400A162 RID: 41314
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static ReaderWriterLockSlim s_nativeUserIdsSeenLock;
 
-		// Token: 0x0400A032 RID: 41010
+		// Token: 0x0400A163 RID: 41315
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int PermissionFrameFrequency = 60;
 
-		// Token: 0x0400A033 RID: 41011
+		// Token: 0x0400A164 RID: 41316
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static EUserPerms s_lastPermissions;
 
-		// Token: 0x0400A034 RID: 41012
+		// Token: 0x0400A165 RID: 41317
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int PersistentFrameFrequency = 300;
 
-		// Token: 0x0400A035 RID: 41013
+		// Token: 0x0400A166 RID: 41318
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static PersistentPlayerList s_persistentPlayerListLast;
 
-		// Token: 0x0400A036 RID: 41014
+		// Token: 0x0400A167 RID: 41319
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static HashSet<PlatformUserIdentifierAbs> s_persistentIdsTemp;
 
-		// Token: 0x0400A037 RID: 41015
+		// Token: 0x0400A168 RID: 41320
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static HashSet<PlatformUserIdentifierAbs> s_persistentIdsLast;
 
-		// Token: 0x0400A038 RID: 41016
+		// Token: 0x0400A169 RID: 41321
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static HashSet<PlatformUserManager.PlatformUserData> s_blockedUsersToUpdate;
 
-		// Token: 0x0400A039 RID: 41017
+		// Token: 0x0400A16A RID: 41322
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static ReaderWriterLockSlim s_blockedUsersToUpdateLock;
 
-		// Token: 0x0400A03A RID: 41018
+		// Token: 0x0400A16B RID: 41323
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static List<PlatformUserManager.PlatformUserBlockedResults> s_blockedDataCurrentlyUpdating;
 
-		// Token: 0x0400A03B RID: 41019
+		// Token: 0x0400A16C RID: 41324
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IReadOnlyList<IPlatformUserBlockedResults> s_blockedDataCurrentlyUpdatingReadOnly;
 
-		// Token: 0x0400A03D RID: 41021
+		// Token: 0x0400A16E RID: 41326
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static HashSet<PlatformUserManager.PlatformUserData> s_userDetailsToUpdate;
 
-		// Token: 0x0400A03E RID: 41022
+		// Token: 0x0400A16F RID: 41327
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static List<PlatformUserManager.PlatformUserDetailsResult> s_userDetailsCurrentlyUpdating;
 
-		// Token: 0x0400A03F RID: 41023
+		// Token: 0x0400A170 RID: 41328
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static ReaderWriterLockSlim s_userDetailsToUpdateLock;
 
-		// Token: 0x0400A040 RID: 41024
+		// Token: 0x0400A171 RID: 41329
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int UserDetailsMaxAttempts = 5;
 
-		// Token: 0x0400A041 RID: 41025
+		// Token: 0x0400A172 RID: 41330
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float UserDetailsRetryBaseDelay = 0.5f;
 
-		// Token: 0x0400A042 RID: 41026
+		// Token: 0x0400A173 RID: 41331
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float UserDetailsRetryMaxDelay = 30f;
 
-		// Token: 0x02001BAE RID: 7086
+		// Token: 0x02001BD5 RID: 7125
 		[PublicizedFrom(EAccessModifier.Private)]
 		public sealed class PlatformUserData : IPlatformUserData, IPlatformUser
 		{
-			// Token: 0x0600D29D RID: 53917 RVA: 0x004C39B0 File Offset: 0x004C1BB0
+			// Token: 0x0600D42B RID: 54315 RVA: 0x004C9DA4 File Offset: 0x004C7FA4
 			public PlatformUserData(PlatformUserIdentifierAbs primaryId)
 			{
 				this.PrimaryId = primaryId;
@@ -845,7 +845,7 @@ namespace Platform
 				this.RequestUserDetailsUpdate();
 			}
 
-			// Token: 0x0600D29E RID: 53918 RVA: 0x004C3A38 File Offset: 0x004C1C38
+			// Token: 0x0600D42C RID: 54316 RVA: 0x004C9E2C File Offset: 0x004C802C
 			public override string ToString()
 			{
 				string text = "{0}[PrimaryId={1}, NativeId={2}, Name={3}, {4}]";
@@ -858,13 +858,13 @@ namespace Platform
 				return string.Format(text, array);
 			}
 
-			// Token: 0x170019CE RID: 6606
-			// (get) Token: 0x0600D29F RID: 53919 RVA: 0x004C3AAF File Offset: 0x004C1CAF
+			// Token: 0x17001A40 RID: 6720
+			// (get) Token: 0x0600D42D RID: 54317 RVA: 0x004C9EA3 File Offset: 0x004C80A3
 			public PlatformUserIdentifierAbs PrimaryId { get; }
 
-			// Token: 0x170019CF RID: 6607
-			// (get) Token: 0x0600D2A0 RID: 53920 RVA: 0x004C3AB8 File Offset: 0x004C1CB8
-			// (set) Token: 0x0600D2A1 RID: 53921 RVA: 0x004C3B0C File Offset: 0x004C1D0C
+			// Token: 0x17001A41 RID: 6721
+			// (get) Token: 0x0600D42E RID: 54318 RVA: 0x004C9EAC File Offset: 0x004C80AC
+			// (set) Token: 0x0600D42F RID: 54319 RVA: 0x004C9F00 File Offset: 0x004C8100
 			public PlatformUserIdentifierAbs NativeId
 			{
 				get
@@ -929,12 +929,12 @@ namespace Platform
 				}
 			}
 
-			// Token: 0x170019D0 RID: 6608
-			// (get) Token: 0x0600D2A2 RID: 53922 RVA: 0x004C3C7C File Offset: 0x004C1E7C
-			// (set) Token: 0x0600D2A3 RID: 53923 RVA: 0x004C3C84 File Offset: 0x004C1E84
+			// Token: 0x17001A42 RID: 6722
+			// (get) Token: 0x0600D430 RID: 54320 RVA: 0x004CA070 File Offset: 0x004C8270
+			// (set) Token: 0x0600D431 RID: 54321 RVA: 0x004CA078 File Offset: 0x004C8278
 			public string Name { get; set; }
 
-			// Token: 0x0600D2A4 RID: 53924 RVA: 0x004C3C90 File Offset: 0x004C1E90
+			// Token: 0x0600D432 RID: 54322 RVA: 0x004CA084 File Offset: 0x004C8284
 			public void RequestUserDetailsUpdate()
 			{
 				if (!PlatformUserManager.CanCheckUserDetails())
@@ -949,8 +949,8 @@ namespace Platform
 				}
 			}
 
-			// Token: 0x170019D1 RID: 6609
-			// (get) Token: 0x0600D2A5 RID: 53925 RVA: 0x004C3CF0 File Offset: 0x004C1EF0
+			// Token: 0x17001A43 RID: 6723
+			// (get) Token: 0x0600D433 RID: 54323 RVA: 0x004CA0E4 File Offset: 0x004C82E4
 			public IReadOnlyDictionary<EBlockType, PlatformUserManager.PlatformUserBlockedData> Blocked
 			{
 				get
@@ -959,8 +959,8 @@ namespace Platform
 				}
 			}
 
-			// Token: 0x170019D2 RID: 6610
-			// (get) Token: 0x0600D2A6 RID: 53926 RVA: 0x004C3CF8 File Offset: 0x004C1EF8
+			// Token: 0x17001A44 RID: 6724
+			// (get) Token: 0x0600D434 RID: 54324 RVA: 0x004CA0EC File Offset: 0x004C82EC
 			public IReadOnlyDictionary<EBlockType, IPlatformUserBlockedData> Platform.IPlatformUserData.Blocked
 			{
 				[PublicizedFrom(EAccessModifier.Private)]
@@ -970,7 +970,7 @@ namespace Platform
 				}
 			}
 
-			// Token: 0x0600D2A7 RID: 53927 RVA: 0x004C3D00 File Offset: 0x004C1F00
+			// Token: 0x0600D435 RID: 54325 RVA: 0x004CA0F4 File Offset: 0x004C82F4
 			public void MarkBlockedStateChanged()
 			{
 				if (GameManager.IsDedicatedServer)
@@ -989,26 +989,26 @@ namespace Platform
 				}
 			}
 
-			// Token: 0x0400A044 RID: 41028
+			// Token: 0x0400A175 RID: 41333
 			[PublicizedFrom(EAccessModifier.Private)]
 			public readonly EnumDictionary<EBlockType, PlatformUserManager.PlatformUserBlockedData> m_userBlockedStates;
 
-			// Token: 0x0400A045 RID: 41029
+			// Token: 0x0400A176 RID: 41334
 			[PublicizedFrom(EAccessModifier.Private)]
 			public readonly IReadOnlyDictionary<EBlockType, IPlatformUserBlockedData> m_userBlockedStatesReadOnly;
 
-			// Token: 0x0400A048 RID: 41032
+			// Token: 0x0400A179 RID: 41337
 			public int DetailAttempts;
 
-			// Token: 0x0400A049 RID: 41033
+			// Token: 0x0400A17A RID: 41338
 			public float NextDetailRetryTime;
 		}
 
-		// Token: 0x02001BB0 RID: 7088
+		// Token: 0x02001BD7 RID: 7127
 		[PublicizedFrom(EAccessModifier.Private)]
 		public sealed class PlatformUserBlockedData : IPlatformUserBlockedData
 		{
-			// Token: 0x0600D2AB RID: 53931 RVA: 0x004C3DAB File Offset: 0x004C1FAB
+			// Token: 0x0600D439 RID: 54329 RVA: 0x004CA19F File Offset: 0x004C839F
 			public PlatformUserBlockedData(PlatformUserManager.PlatformUserData userData, EBlockType blockType)
 			{
 				this.m_userData = userData;
@@ -1017,28 +1017,28 @@ namespace Platform
 				this.State = EUserBlockState.NotBlocked;
 			}
 
-			// Token: 0x0600D2AC RID: 53932 RVA: 0x004C3DD0 File Offset: 0x004C1FD0
+			// Token: 0x0600D43A RID: 54330 RVA: 0x004CA1C4 File Offset: 0x004C83C4
 			public override string ToString()
 			{
 				return string.Format("{0}[Type={1}, State={2}, Locally={3}]", new object[] { "PlatformUserBlockedData", this.Type, this.State, this.Locally });
 			}
 
-			// Token: 0x170019D3 RID: 6611
-			// (get) Token: 0x0600D2AD RID: 53933 RVA: 0x004C3E1F File Offset: 0x004C201F
+			// Token: 0x17001A45 RID: 6725
+			// (get) Token: 0x0600D43B RID: 54331 RVA: 0x004CA213 File Offset: 0x004C8413
 			public EBlockType Type { get; }
 
-			// Token: 0x170019D4 RID: 6612
-			// (get) Token: 0x0600D2AE RID: 53934 RVA: 0x004C3E27 File Offset: 0x004C2027
-			// (set) Token: 0x0600D2AF RID: 53935 RVA: 0x004C3E2F File Offset: 0x004C202F
+			// Token: 0x17001A46 RID: 6726
+			// (get) Token: 0x0600D43C RID: 54332 RVA: 0x004CA21B File Offset: 0x004C841B
+			// (set) Token: 0x0600D43D RID: 54333 RVA: 0x004CA223 File Offset: 0x004C8423
 			public EUserBlockState State
 			{
 				get; [PublicizedFrom(EAccessModifier.Private)]
 				set;
 			}
 
-			// Token: 0x170019D5 RID: 6613
-			// (get) Token: 0x0600D2B0 RID: 53936 RVA: 0x004C3E38 File Offset: 0x004C2038
-			// (set) Token: 0x0600D2B1 RID: 53937 RVA: 0x004C3E40 File Offset: 0x004C2040
+			// Token: 0x17001A47 RID: 6727
+			// (get) Token: 0x0600D43E RID: 54334 RVA: 0x004CA22C File Offset: 0x004C842C
+			// (set) Token: 0x0600D43F RID: 54335 RVA: 0x004CA234 File Offset: 0x004C8434
 			public bool Locally
 			{
 				get
@@ -1052,7 +1052,7 @@ namespace Platform
 				}
 			}
 
-			// Token: 0x0600D2B2 RID: 53938 RVA: 0x004C3E58 File Offset: 0x004C2058
+			// Token: 0x0600D440 RID: 54336 RVA: 0x004CA24C File Offset: 0x004C844C
 			public void RefreshBlockedState(bool isBlockedByPlatform)
 			{
 				EUserBlockState state = this.State;
@@ -1080,20 +1080,20 @@ namespace Platform
 				}
 			}
 
-			// Token: 0x0400A04C RID: 41036
+			// Token: 0x0400A17D RID: 41341
 			[PublicizedFrom(EAccessModifier.Private)]
 			public readonly PlatformUserManager.PlatformUserData m_userData;
 
-			// Token: 0x0400A04D RID: 41037
+			// Token: 0x0400A17E RID: 41342
 			[PublicizedFrom(EAccessModifier.Private)]
 			public bool m_blockedLocally;
 		}
 
-		// Token: 0x02001BB1 RID: 7089
+		// Token: 0x02001BD8 RID: 7128
 		[PublicizedFrom(EAccessModifier.Private)]
 		public sealed class PlatformUserBlockedResults : IPlatformUserBlockedResults
 		{
-			// Token: 0x0600D2B3 RID: 53939 RVA: 0x004C3EA8 File Offset: 0x004C20A8
+			// Token: 0x0600D441 RID: 54337 RVA: 0x004CA29C File Offset: 0x004C849C
 			public PlatformUserBlockedResults(PlatformUserManager.PlatformUserData userData)
 			{
 				this.m_userData = userData;
@@ -1105,7 +1105,7 @@ namespace Platform
 				this.HasErrored = false;
 			}
 
-			// Token: 0x0600D2B4 RID: 53940 RVA: 0x004C3F1C File Offset: 0x004C211C
+			// Token: 0x0600D442 RID: 54338 RVA: 0x004CA310 File Offset: 0x004C8510
 			public override string ToString()
 			{
 				string text = "{0}[{1}, HasErrored={2}, {3}.{4}={5}, {6}.{7}={8}]";
@@ -1122,8 +1122,8 @@ namespace Platform
 				return string.Format(text, array);
 			}
 
-			// Token: 0x170019D6 RID: 6614
-			// (get) Token: 0x0600D2B5 RID: 53941 RVA: 0x004C3FC3 File Offset: 0x004C21C3
+			// Token: 0x17001A48 RID: 6728
+			// (get) Token: 0x0600D443 RID: 54339 RVA: 0x004CA3B7 File Offset: 0x004C85B7
 			public PlatformUserManager.PlatformUserData User
 			{
 				get
@@ -1132,21 +1132,21 @@ namespace Platform
 				}
 			}
 
-			// Token: 0x170019D7 RID: 6615
-			// (get) Token: 0x0600D2B6 RID: 53942 RVA: 0x004C3FCB File Offset: 0x004C21CB
+			// Token: 0x17001A49 RID: 6729
+			// (get) Token: 0x0600D444 RID: 54340 RVA: 0x004CA3BF File Offset: 0x004C85BF
 			public EnumDictionary<EBlockType, bool> IsBlocked { get; }
 
-			// Token: 0x170019D8 RID: 6616
-			// (get) Token: 0x0600D2B7 RID: 53943 RVA: 0x004C3FD3 File Offset: 0x004C21D3
-			// (set) Token: 0x0600D2B8 RID: 53944 RVA: 0x004C3FDB File Offset: 0x004C21DB
+			// Token: 0x17001A4A RID: 6730
+			// (get) Token: 0x0600D445 RID: 54341 RVA: 0x004CA3C7 File Offset: 0x004C85C7
+			// (set) Token: 0x0600D446 RID: 54342 RVA: 0x004CA3CF File Offset: 0x004C85CF
 			public bool HasErrored
 			{
 				get; [PublicizedFrom(EAccessModifier.Private)]
 				set;
 			}
 
-			// Token: 0x170019D9 RID: 6617
-			// (get) Token: 0x0600D2B9 RID: 53945 RVA: 0x004C3FC3 File Offset: 0x004C21C3
+			// Token: 0x17001A4B RID: 6731
+			// (get) Token: 0x0600D447 RID: 54343 RVA: 0x004CA3B7 File Offset: 0x004C85B7
 			public IPlatformUser Platform.IPlatformUserBlockedResults.User
 			{
 				[PublicizedFrom(EAccessModifier.Private)]
@@ -1156,37 +1156,37 @@ namespace Platform
 				}
 			}
 
-			// Token: 0x0600D2BA RID: 53946 RVA: 0x004C3FE4 File Offset: 0x004C21E4
+			// Token: 0x0600D448 RID: 54344 RVA: 0x004CA3D8 File Offset: 0x004C85D8
 			public void Block(EBlockType blockType)
 			{
 				this.IsBlocked[blockType] = true;
 			}
 
-			// Token: 0x0600D2BB RID: 53947 RVA: 0x004C3FF3 File Offset: 0x004C21F3
+			// Token: 0x0600D449 RID: 54345 RVA: 0x004CA3E7 File Offset: 0x004C85E7
 			public void Error()
 			{
 				this.HasErrored = true;
 			}
 
-			// Token: 0x0400A050 RID: 41040
+			// Token: 0x0400A181 RID: 41345
 			[PublicizedFrom(EAccessModifier.Private)]
 			public readonly PlatformUserManager.PlatformUserData m_userData;
 		}
 
-		// Token: 0x02001BB3 RID: 7091
+		// Token: 0x02001BDA RID: 7130
 		[PublicizedFrom(EAccessModifier.Private)]
 		public sealed class PlatformUserDetailsResult
 		{
-			// Token: 0x0600D2BF RID: 53951 RVA: 0x004C402C File Offset: 0x004C222C
+			// Token: 0x0600D44D RID: 54349 RVA: 0x004CA420 File Offset: 0x004C8620
 			public PlatformUserDetailsResult(PlatformUserManager.PlatformUserData userData)
 			{
 				this.UserData = userData;
 			}
 
-			// Token: 0x0400A055 RID: 41045
+			// Token: 0x0400A186 RID: 41350
 			public readonly PlatformUserManager.PlatformUserData UserData;
 
-			// Token: 0x0400A056 RID: 41046
+			// Token: 0x0400A187 RID: 41351
 			public string Name;
 		}
 	}

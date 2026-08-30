@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x02000773 RID: 1907
+// Token: 0x0200077D RID: 1917
 public enum EAuthorizerSyncResult
 {
-	// Token: 0x04002EE0 RID: 12000
+	// Token: 0x04002F59 RID: 12121
 	WaitAsync,
-	// Token: 0x04002EE1 RID: 12001
+	// Token: 0x04002F5A RID: 12122
 	SyncAllow,
-	// Token: 0x04002EE2 RID: 12002
+	// Token: 0x04002F5B RID: 12123
 	SyncDeny,
-	// Token: 0x04002EE3 RID: 12003
+	// Token: 0x04002F5C RID: 12124
 	SyncFinalAllow
 }

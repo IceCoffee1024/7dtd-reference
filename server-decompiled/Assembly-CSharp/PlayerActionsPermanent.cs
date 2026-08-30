@@ -1,16 +1,16 @@
 ﻿using System;
 using InControl;
 
-// Token: 0x0200055F RID: 1375
+// Token: 0x02000564 RID: 1380
 public class PlayerActionsPermanent : PlayerActionsBase
 {
-	// Token: 0x06002CB4 RID: 11444 RVA: 0x0011CBA4 File Offset: 0x0011ADA4
+	// Token: 0x06002CDE RID: 11486 RVA: 0x0011DC18 File Offset: 0x0011BE18
 	public PlayerActionsPermanent()
 	{
 		base.Name = "permanent";
 	}
 
-	// Token: 0x06002CB5 RID: 11445 RVA: 0x0011CBB8 File Offset: 0x0011ADB8
+	// Token: 0x06002CDF RID: 11487 RVA: 0x0011DC2C File Offset: 0x0011BE2C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CreateActions()
 	{
@@ -63,7 +63,7 @@ public class PlayerActionsPermanent : PlayerActionsBase
 		this.CameraZoom = base.CreateOneAxisPlayerAction(this.CameraZoomOut, this.CameraZoomIn);
 	}
 
-	// Token: 0x06002CB6 RID: 11446 RVA: 0x0011D034 File Offset: 0x0011B234
+	// Token: 0x06002CE0 RID: 11488 RVA: 0x0011E0A8 File Offset: 0x0011C2A8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CreateDefaultJoystickBindings()
 	{
@@ -87,7 +87,7 @@ public class PlayerActionsPermanent : PlayerActionsBase
 		this.ControllerRebindableActions.Add(this.Creative);
 	}
 
-	// Token: 0x06002CB7 RID: 11447 RVA: 0x0011D148 File Offset: 0x0011B348
+	// Token: 0x06002CE1 RID: 11489 RVA: 0x0011E1BC File Offset: 0x0011C3BC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CreateDefaultKeyboardBindings()
 	{
@@ -116,72 +116,72 @@ public class PlayerActionsPermanent : PlayerActionsBase
 		this.CameraZoomOut.AddDefaultBinding(Mouse.NegativeScrollWheel);
 	}
 
-	// Token: 0x040022D6 RID: 8918
+	// Token: 0x04002308 RID: 8968
 	public PlayerAction Reload;
 
-	// Token: 0x040022D7 RID: 8919
+	// Token: 0x04002309 RID: 8969
 	public PlayerAction Activate;
 
-	// Token: 0x040022D8 RID: 8920
+	// Token: 0x0400230A RID: 8970
 	public PlayerAction ToggleFlashlight;
 
-	// Token: 0x040022D9 RID: 8921
+	// Token: 0x0400230B RID: 8971
 	public PlayerAction Inventory;
 
-	// Token: 0x040022DA RID: 8922
+	// Token: 0x0400230C RID: 8972
 	public PlayerAction Skills;
 
-	// Token: 0x040022DB RID: 8923
+	// Token: 0x0400230D RID: 8973
 	public PlayerAction Quests;
 
-	// Token: 0x040022DC RID: 8924
+	// Token: 0x0400230E RID: 8974
 	public PlayerAction Challenges;
 
-	// Token: 0x040022DD RID: 8925
+	// Token: 0x0400230F RID: 8975
 	public PlayerAction Character;
 
-	// Token: 0x040022DE RID: 8926
+	// Token: 0x04002310 RID: 8976
 	public PlayerAction Map;
 
-	// Token: 0x040022DF RID: 8927
+	// Token: 0x04002311 RID: 8977
 	public PlayerAction Creative;
 
-	// Token: 0x040022E0 RID: 8928
+	// Token: 0x04002312 RID: 8978
 	public PlayerAction Scoreboard;
 
-	// Token: 0x040022E1 RID: 8929
+	// Token: 0x04002313 RID: 8979
 	public PlayerAction DebugControllerLeft;
 
-	// Token: 0x040022E2 RID: 8930
+	// Token: 0x04002314 RID: 8980
 	public PlayerAction DebugControllerRight;
 
-	// Token: 0x040022E3 RID: 8931
+	// Token: 0x04002315 RID: 8981
 	public PlayerAction Chat;
 
-	// Token: 0x040022E4 RID: 8932
+	// Token: 0x04002316 RID: 8982
 	public PlayerAction PushToTalk;
 
-	// Token: 0x040022E5 RID: 8933
+	// Token: 0x04002317 RID: 8983
 	public PlayerAction Cancel;
 
-	// Token: 0x040022E6 RID: 8934
+	// Token: 0x04002318 RID: 8984
 	public PlayerAction Swap;
 
-	// Token: 0x040022E7 RID: 8935
+	// Token: 0x04002319 RID: 8985
 	public PlayerAction PageTipsForward;
 
-	// Token: 0x040022E8 RID: 8936
+	// Token: 0x0400231A RID: 8986
 	public PlayerAction PageTipsBack;
 
-	// Token: 0x040022E9 RID: 8937
+	// Token: 0x0400231B RID: 8987
 	public PlayerAction QuickMenu;
 
-	// Token: 0x040022EA RID: 8938
+	// Token: 0x0400231C RID: 8988
 	public PlayerAction CameraZoomIn;
 
-	// Token: 0x040022EB RID: 8939
+	// Token: 0x0400231D RID: 8989
 	public PlayerAction CameraZoomOut;
 
-	// Token: 0x040022EC RID: 8940
+	// Token: 0x0400231E RID: 8990
 	public PlayerOneAxisAction CameraZoom;
 }

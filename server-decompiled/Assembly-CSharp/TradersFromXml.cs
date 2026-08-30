@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Xml.Linq;
 
-// Token: 0x02000D26 RID: 3366
+// Token: 0x02000D38 RID: 3384
 public class TradersFromXml
 {
-	// Token: 0x0600666F RID: 26223 RVA: 0x0028648C File Offset: 0x0028468C
+	// Token: 0x060066FB RID: 26363 RVA: 0x00289370 File Offset: 0x00287570
 	public static IEnumerator LoadTraderInfo(XmlFile xmlFile)
 	{
 		XElement root = xmlFile.XmlDoc.Root;
@@ -19,7 +19,7 @@ public class TradersFromXml
 		yield break;
 	}
 
-	// Token: 0x06006670 RID: 26224 RVA: 0x0028649C File Offset: 0x0028469C
+	// Token: 0x060066FC RID: 26364 RVA: 0x00289380 File Offset: 0x00287580
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseNode(XElement e)
 	{
@@ -87,7 +87,7 @@ public class TradersFromXml
 		}
 	}
 
-	// Token: 0x06006671 RID: 26225 RVA: 0x002866F8 File Offset: 0x002848F8
+	// Token: 0x060066FD RID: 26365 RVA: 0x002895DC File Offset: 0x002877DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseTraderInfo(XElement e)
 	{
@@ -181,7 +181,7 @@ public class TradersFromXml
 		}
 	}
 
-	// Token: 0x06006672 RID: 26226 RVA: 0x00286AF0 File Offset: 0x00284CF0
+	// Token: 0x060066FE RID: 26366 RVA: 0x002899D4 File Offset: 0x00287BD4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseTraderItems(TraderInfo info, XElement e)
 	{
@@ -203,7 +203,7 @@ public class TradersFromXml
 		TradersFromXml.parseItemList(info.Id.ToString(), e.Elements("item"), info.traderItems, -1, -1);
 	}
 
-	// Token: 0x06006673 RID: 26227 RVA: 0x00286B7C File Offset: 0x00284D7C
+	// Token: 0x060066FF RID: 26367 RVA: 0x00289A60 File Offset: 0x00287C60
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseTierItems(TraderInfo info, XElement e)
 	{
@@ -232,7 +232,7 @@ public class TradersFromXml
 		throw new Exception("level range missing on tier items group.");
 	}
 
-	// Token: 0x06006674 RID: 26228 RVA: 0x00286C70 File Offset: 0x00284E70
+	// Token: 0x06006700 RID: 26368 RVA: 0x00289B54 File Offset: 0x00287D54
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseTraderItemGroups(XElement e)
 	{
@@ -242,7 +242,7 @@ public class TradersFromXml
 		}
 	}
 
-	// Token: 0x06006675 RID: 26229 RVA: 0x00286CC4 File Offset: 0x00284EC4
+	// Token: 0x06006701 RID: 26369 RVA: 0x00289BA8 File Offset: 0x00287DA8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseTraderItemGroup(XElement e)
 	{
@@ -295,7 +295,7 @@ public class TradersFromXml
 		}
 	}
 
-	// Token: 0x06006676 RID: 26230 RVA: 0x00286E90 File Offset: 0x00285090
+	// Token: 0x06006702 RID: 26370 RVA: 0x00289D74 File Offset: 0x00287F74
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseTraderStageTemplates(XElement e)
 	{
@@ -305,7 +305,7 @@ public class TradersFromXml
 		}
 	}
 
-	// Token: 0x06006677 RID: 26231 RVA: 0x00286EE4 File Offset: 0x002850E4
+	// Token: 0x06006703 RID: 26371 RVA: 0x00289DC8 File Offset: 0x00287FC8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseTraderStageTemplate(XElement e)
 	{
@@ -340,7 +340,7 @@ public class TradersFromXml
 		}
 	}
 
-	// Token: 0x06006678 RID: 26232 RVA: 0x00287048 File Offset: 0x00285248
+	// Token: 0x06006704 RID: 26372 RVA: 0x00289F2C File Offset: 0x0028812C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void parseItemList(string _containerId, IEnumerable<XElement> _childNodes, List<TraderInfo.TraderItemEntry> _itemList, int minQualityBase, int maxQualityBase)
 	{

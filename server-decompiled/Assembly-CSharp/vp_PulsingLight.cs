@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200158C RID: 5516
+// Token: 0x020015A7 RID: 5543
 public class vp_PulsingLight : MonoBehaviour
 {
-	// Token: 0x0600AC78 RID: 44152 RVA: 0x00405637 File Offset: 0x00403837
+	// Token: 0x0600AD75 RID: 44405 RVA: 0x0040A977 File Offset: 0x00408B77
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
 		this.m_Light = base.GetComponent<Light>();
 	}
 
-	// Token: 0x0600AC79 RID: 44153 RVA: 0x00405648 File Offset: 0x00403848
+	// Token: 0x0600AD76 RID: 44406 RVA: 0x0040A988 File Offset: 0x00408B88
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -22,17 +22,17 @@ public class vp_PulsingLight : MonoBehaviour
 		this.m_Light.intensity = this.m_MinIntensity + Mathf.Abs(Mathf.Cos(Time.time * this.m_Rate) * (this.m_MaxIntensity - this.m_MinIntensity));
 	}
 
-	// Token: 0x0400801B RID: 32795
+	// Token: 0x040080F4 RID: 33012
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Light m_Light;
 
-	// Token: 0x0400801C RID: 32796
+	// Token: 0x040080F5 RID: 33013
 	public float m_MinIntensity = 2f;
 
-	// Token: 0x0400801D RID: 32797
+	// Token: 0x040080F6 RID: 33014
 	public float m_MaxIntensity = 5f;
 
-	// Token: 0x0400801E RID: 32798
+	// Token: 0x040080F7 RID: 33015
 	public float m_Rate = 1f;
 }

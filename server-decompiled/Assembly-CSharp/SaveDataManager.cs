@@ -9,11 +9,11 @@ using System.Threading;
 using Platform;
 using Unity.Profiling;
 
-// Token: 0x02000A09 RID: 2569
+// Token: 0x02000A1A RID: 2586
 public class SaveDataManager : SaveDataManagerBase
 {
-	// Token: 0x17000836 RID: 2102
-	// (get) Token: 0x06004D35 RID: 19765 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000848 RID: 2120
+	// (get) Token: 0x06004DBB RID: 19899 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AppliesSaveSizeLimit
 	{
 		get
@@ -22,7 +22,7 @@ public class SaveDataManager : SaveDataManagerBase
 		}
 	}
 
-	// Token: 0x06004D36 RID: 19766 RVA: 0x001D9498 File Offset: 0x001D7698
+	// Token: 0x06004DBC RID: 19900 RVA: 0x001DBF30 File Offset: 0x001DA130
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override Stream GetStream(SaveDataManagedPath path, FileMode mode, FileAccess access, FileShare share)
 	{
@@ -64,14 +64,14 @@ public class SaveDataManager : SaveDataManagerBase
 		return stream;
 	}
 
-	// Token: 0x06004D37 RID: 19767 RVA: 0x001D9640 File Offset: 0x001D7840
+	// Token: 0x06004DBD RID: 19901 RVA: 0x001DC0D8 File Offset: 0x001DA2D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool IsPriorityFilePath(SaveDataManagedPath path)
 	{
 		return path.Type == SaveDataType.Saves && path.PathRelativeToSlot.AsSpan().IndexOf<char>("Region") == 0;
 	}
 
-	// Token: 0x06004D38 RID: 19768 RVA: 0x001D9678 File Offset: 0x001D7878
+	// Token: 0x06004DBE RID: 19902 RVA: 0x001DC110 File Offset: 0x001DA310
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void ReturnStream(Stream stream)
 	{
@@ -114,7 +114,7 @@ public class SaveDataManager : SaveDataManagerBase
 		}
 	}
 
-	// Token: 0x06004D39 RID: 19769 RVA: 0x001D9780 File Offset: 0x001D7980
+	// Token: 0x06004DBF RID: 19903 RVA: 0x001DC218 File Offset: 0x001DA418
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RemoveAndDispose(SaveDataManager.CachedStream cachedStream)
 	{
@@ -127,25 +127,25 @@ public class SaveDataManager : SaveDataManagerBase
 		}
 	}
 
-	// Token: 0x06004D3A RID: 19770 RVA: 0x001D97E0 File Offset: 0x001D79E0
+	// Token: 0x06004DC0 RID: 19904 RVA: 0x001DC278 File Offset: 0x001DA478
 	public override bool ShouldLimitSize()
 	{
 		return this.platformSaveGameProvider.ShouldLimitSize();
 	}
 
-	// Token: 0x06004D3B RID: 19771 RVA: 0x001D97ED File Offset: 0x001D79ED
+	// Token: 0x06004DC1 RID: 19905 RVA: 0x001DC285 File Offset: 0x001DA485
 	public override void UpdateSizes()
 	{
 		this.platformSaveGameProvider.UpdateSizes();
 	}
 
-	// Token: 0x06004D3C RID: 19772 RVA: 0x001D97FA File Offset: 0x001D79FA
+	// Token: 0x06004DC2 RID: 19906 RVA: 0x001DC292 File Offset: 0x001DA492
 	public override SaveDataSizes GetSizes()
 	{
 		return this.platformSaveGameProvider.GetSizes();
 	}
 
-	// Token: 0x06004D3D RID: 19773 RVA: 0x001D9808 File Offset: 0x001D7A08
+	// Token: 0x06004DC3 RID: 19907 RVA: 0x001DC2A0 File Offset: 0x001DA4A0
 	public override void ManagedFileDelete(SaveDataManagedPath path)
 	{
 		object obj = this.mapLockObj;
@@ -178,7 +178,7 @@ public class SaveDataManager : SaveDataManagerBase
 		}
 	}
 
-	// Token: 0x06004D3E RID: 19774 RVA: 0x001D98D0 File Offset: 0x001D7AD0
+	// Token: 0x06004DC4 RID: 19908 RVA: 0x001DC368 File Offset: 0x001DA568
 	public override bool ManagedFileExists(SaveDataManagedPath path)
 	{
 		object obj = this.mapLockObj;
@@ -193,7 +193,7 @@ public class SaveDataManager : SaveDataManagerBase
 		return this.platformSaveGameProvider.ManagedFileExists(path);
 	}
 
-	// Token: 0x06004D3F RID: 19775 RVA: 0x001D9934 File Offset: 0x001D7B34
+	// Token: 0x06004DC5 RID: 19909 RVA: 0x001DC3CC File Offset: 0x001DA5CC
 	public override DateTime ManagedFileGetLastWriteTimeUtc(SaveDataManagedPath path)
 	{
 		object obj = this.mapLockObj;
@@ -208,31 +208,31 @@ public class SaveDataManager : SaveDataManagerBase
 		return this.platformSaveGameProvider.ManagedFileGetLastWriteTimeUtc(path);
 	}
 
-	// Token: 0x06004D40 RID: 19776 RVA: 0x001D9998 File Offset: 0x001D7B98
+	// Token: 0x06004DC6 RID: 19910 RVA: 0x001DC430 File Offset: 0x001DA630
 	public override SdDirectoryInfo ManagedDirectoryCreateDirectory(SaveDataManagedPath path)
 	{
 		return this.platformSaveGameProvider.ManagedDirectoryCreateDirectory(path);
 	}
 
-	// Token: 0x06004D41 RID: 19777 RVA: 0x001D99A6 File Offset: 0x001D7BA6
+	// Token: 0x06004DC7 RID: 19911 RVA: 0x001DC43E File Offset: 0x001DA63E
 	public override DateTime ManagedDirectoryGetLastWriteTimeUtc(SaveDataManagedPath path)
 	{
 		return this.platformSaveGameProvider.ManagedDirectoryGetLastWriteTimeUtc(path);
 	}
 
-	// Token: 0x06004D42 RID: 19778 RVA: 0x001D99B4 File Offset: 0x001D7BB4
+	// Token: 0x06004DC8 RID: 19912 RVA: 0x001DC44C File Offset: 0x001DA64C
 	public override bool ManagedDirectoryExists(SaveDataManagedPath path)
 	{
 		return this.platformSaveGameProvider.ManagedDirectoryExists(path);
 	}
 
-	// Token: 0x06004D43 RID: 19779 RVA: 0x001D99C2 File Offset: 0x001D7BC2
+	// Token: 0x06004DC9 RID: 19913 RVA: 0x001DC45A File Offset: 0x001DA65A
 	public override IEnumerable<SaveDataManagedPath> ManagedDirectoryEnumerateDirectories(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 	{
 		return this.platformSaveGameProvider.ManagedDirectoryEnumerateDirectories(path, searchPattern, searchOption);
 	}
 
-	// Token: 0x06004D44 RID: 19780 RVA: 0x001D99D2 File Offset: 0x001D7BD2
+	// Token: 0x06004DCA RID: 19914 RVA: 0x001DC46A File Offset: 0x001DA66A
 	public override IEnumerable<SaveDataManagedPath> ManagedDirectoryEnumerateFiles(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 	{
 		HashSet<SaveDataManagedPath> cachedPaths = new HashSet<SaveDataManagedPath>();
@@ -267,7 +267,7 @@ public class SaveDataManager : SaveDataManagerBase
 		yield break;
 	}
 
-	// Token: 0x06004D45 RID: 19781 RVA: 0x001D99F7 File Offset: 0x001D7BF7
+	// Token: 0x06004DCB RID: 19915 RVA: 0x001DC48F File Offset: 0x001DA68F
 	public override IEnumerable<SaveDataManagedPath> ManagedDirectoryEnumerateFileSystemEntries(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 	{
 		HashSet<SaveDataManagedPath> cachedPaths = new HashSet<SaveDataManagedPath>();
@@ -302,7 +302,7 @@ public class SaveDataManager : SaveDataManagerBase
 		yield break;
 	}
 
-	// Token: 0x06004D46 RID: 19782 RVA: 0x001D9A1C File Offset: 0x001D7C1C
+	// Token: 0x06004DCC RID: 19916 RVA: 0x001DC4B4 File Offset: 0x001DA6B4
 	public override void ManagedDirectoryDelete(SaveDataManagedPath path, bool recursive)
 	{
 		object obj = this.mapLockObj;
@@ -336,7 +336,7 @@ public class SaveDataManager : SaveDataManagerBase
 		}
 	}
 
-	// Token: 0x06004D47 RID: 19783 RVA: 0x001D9BC4 File Offset: 0x001D7DC4
+	// Token: 0x06004DCD RID: 19917 RVA: 0x001DC65C File Offset: 0x001DA85C
 	public override long ManagedFileInfoLength(SaveDataManagedPath path)
 	{
 		object obj = this.mapLockObj;
@@ -351,13 +351,13 @@ public class SaveDataManager : SaveDataManagerBase
 		return this.platformSaveGameProvider.ManagedFileInfoLength(path);
 	}
 
-	// Token: 0x06004D48 RID: 19784 RVA: 0x001D9C30 File Offset: 0x001D7E30
+	// Token: 0x06004DCE RID: 19918 RVA: 0x001DC6C8 File Offset: 0x001DA8C8
 	public override IEnumerable<SdDirectoryInfo> ManagedDirectoryInfoEnumerateDirectories(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 	{
 		return this.platformSaveGameProvider.ManagedDirectoryInfoEnumerateDirectories(path, searchPattern, searchOption);
 	}
 
-	// Token: 0x06004D49 RID: 19785 RVA: 0x001D9C40 File Offset: 0x001D7E40
+	// Token: 0x06004DCF RID: 19919 RVA: 0x001DC6D8 File Offset: 0x001DA8D8
 	public override IEnumerable<SdFileInfo> ManagedDirectoryInfoEnumerateFiles(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 	{
 		HashSet<SaveDataManagedPath> cachedPaths = new HashSet<SaveDataManagedPath>();
@@ -392,7 +392,7 @@ public class SaveDataManager : SaveDataManagerBase
 		yield break;
 	}
 
-	// Token: 0x06004D4A RID: 19786 RVA: 0x001D9C65 File Offset: 0x001D7E65
+	// Token: 0x06004DD0 RID: 19920 RVA: 0x001DC6FD File Offset: 0x001DA8FD
 	public override IEnumerable<SdFileSystemInfo> ManagedDirectoryInfoEnumerateFileSystemInfos(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 	{
 		HashSet<SaveDataManagedPath> cachedPaths = new HashSet<SaveDataManagedPath>();
@@ -427,7 +427,7 @@ public class SaveDataManager : SaveDataManagerBase
 		yield break;
 	}
 
-	// Token: 0x06004D4B RID: 19787 RVA: 0x001D9C8C File Offset: 0x001D7E8C
+	// Token: 0x06004DD1 RID: 19921 RVA: 0x001DC724 File Offset: 0x001DA924
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool PathSearchMatches(SaveDataManagedPath parent, SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 	{
@@ -446,7 +446,7 @@ public class SaveDataManager : SaveDataManagerBase
 		return SaveDataManager.MatchesSearchPattern(path, searchPattern);
 	}
 
-	// Token: 0x06004D4C RID: 19788 RVA: 0x001D9CE8 File Offset: 0x001D7EE8
+	// Token: 0x06004DD2 RID: 19922 RVA: 0x001DC780 File Offset: 0x001DA980
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool MatchesSearchPattern(SaveDataManagedPath path, string searchPattern)
 	{
@@ -463,13 +463,13 @@ public class SaveDataManager : SaveDataManagerBase
 		return SaveDataManager.<MatchesSearchPattern>g__MatchWildcard|32_0(stringSpan, searchPattern);
 	}
 
-	// Token: 0x06004D4D RID: 19789 RVA: 0x001D9D3C File Offset: 0x001D7F3C
+	// Token: 0x06004DD3 RID: 19923 RVA: 0x001DC7D4 File Offset: 0x001DA9D4
 	public SaveDataManager(IPlatformSaveGameProvider platformSaveGameProvider)
 	{
 		this.platformSaveGameProvider = new SaveDataMergedPlatformSaveGameIOProvider(platformSaveGameProvider);
 	}
 
-	// Token: 0x06004D4E RID: 19790 RVA: 0x001D9DBE File Offset: 0x001D7FBE
+	// Token: 0x06004DD4 RID: 19924 RVA: 0x001DC856 File Offset: 0x001DAA56
 	public override void Init()
 	{
 		this.SetWriteMode(SaveDataWriteMode.Deferred);
@@ -477,7 +477,7 @@ public class SaveDataManager : SaveDataManagerBase
 		this.InitFileSizeTracking();
 	}
 
-	// Token: 0x06004D4F RID: 19791 RVA: 0x001D9DD4 File Offset: 0x001D7FD4
+	// Token: 0x06004DD5 RID: 19925 RVA: 0x001DC86C File Offset: 0x001DAA6C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitRestoreBackups()
 	{
@@ -508,7 +508,7 @@ public class SaveDataManager : SaveDataManagerBase
 		}
 	}
 
-	// Token: 0x06004D50 RID: 19792 RVA: 0x001D9EBC File Offset: 0x001D80BC
+	// Token: 0x06004DD6 RID: 19926 RVA: 0x001DC954 File Offset: 0x001DAB54
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitFileSizeTracking()
 	{
@@ -535,7 +535,7 @@ public class SaveDataManager : SaveDataManagerBase
 		}
 	}
 
-	// Token: 0x06004D51 RID: 19793 RVA: 0x001D9FAC File Offset: 0x001D81AC
+	// Token: 0x06004DD7 RID: 19927 RVA: 0x001DCA44 File Offset: 0x001DAC44
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryGetTrackedSize(SaveDataManagedPath path, out long trackedSize, out bool isPriorityFile)
 	{
@@ -549,7 +549,7 @@ public class SaveDataManager : SaveDataManagerBase
 		return false;
 	}
 
-	// Token: 0x06004D52 RID: 19794 RVA: 0x001D9FE4 File Offset: 0x001D81E4
+	// Token: 0x06004DD8 RID: 19928 RVA: 0x001DCA7C File Offset: 0x001DAC7C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int WriteTask(ThreadManager.ThreadInfo _threadInfo)
 	{
@@ -577,7 +577,7 @@ public class SaveDataManager : SaveDataManagerBase
 		return 5;
 	}
 
-	// Token: 0x06004D53 RID: 19795 RVA: 0x001DA064 File Offset: 0x001D8264
+	// Token: 0x06004DD9 RID: 19929 RVA: 0x001DCAFC File Offset: 0x001DACFC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool CommitPendingChanges(bool force = false)
 	{
@@ -702,7 +702,7 @@ public class SaveDataManager : SaveDataManagerBase
 		return true;
 	}
 
-	// Token: 0x06004D54 RID: 19796 RVA: 0x001DA3A8 File Offset: 0x001D85A8
+	// Token: 0x06004DDA RID: 19930 RVA: 0x001DCE40 File Offset: 0x001DB040
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryGetNextStreamToCommit(HashSet<SaveDataManager.CachedStream> ignored, out SaveDataManager.CachedStream commitTarget, out bool isPriorityStream)
 	{
@@ -730,7 +730,7 @@ public class SaveDataManager : SaveDataManagerBase
 		return flag3;
 	}
 
-	// Token: 0x06004D55 RID: 19797 RVA: 0x001DA434 File Offset: 0x001D8634
+	// Token: 0x06004DDB RID: 19931 RVA: 0x001DCECC File Offset: 0x001DB0CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CloseDormantStreams()
 	{
@@ -754,7 +754,7 @@ public class SaveDataManager : SaveDataManagerBase
 		}
 	}
 
-	// Token: 0x06004D56 RID: 19798 RVA: 0x001DA554 File Offset: 0x001D8754
+	// Token: 0x06004DDC RID: 19932 RVA: 0x001DCFEC File Offset: 0x001DB1EC
 	public override void RegisterRegionFileManager(RegionFileManager regionFileManager)
 	{
 		object obj = this.regionFileLock;
@@ -768,7 +768,7 @@ public class SaveDataManager : SaveDataManagerBase
 		}
 	}
 
-	// Token: 0x06004D57 RID: 19799 RVA: 0x001DA5A8 File Offset: 0x001D87A8
+	// Token: 0x06004DDD RID: 19933 RVA: 0x001DD040 File Offset: 0x001DB240
 	public override void DeregisterRegionFileManager(RegionFileManager regionFileManager)
 	{
 		object obj = this.regionFileLock;
@@ -785,13 +785,13 @@ public class SaveDataManager : SaveDataManagerBase
 		}
 	}
 
-	// Token: 0x06004D58 RID: 19800 RVA: 0x001DA600 File Offset: 0x001D8800
+	// Token: 0x06004DDE RID: 19934 RVA: 0x001DD098 File Offset: 0x001DB298
 	public override SaveDataWriteMode GetWriteMode()
 	{
 		return this.writeMode;
 	}
 
-	// Token: 0x06004D59 RID: 19801 RVA: 0x001DA608 File Offset: 0x001D8808
+	// Token: 0x06004DDF RID: 19935 RVA: 0x001DD0A0 File Offset: 0x001DB2A0
 	public override void SetWriteMode(SaveDataWriteMode writeMode)
 	{
 		if (this.writeMode == writeMode)
@@ -824,14 +824,14 @@ public class SaveDataManager : SaveDataManagerBase
 		}
 	}
 
-	// Token: 0x06004D5A RID: 19802 RVA: 0x001DA6D4 File Offset: 0x001D88D4
+	// Token: 0x06004DE0 RID: 19936 RVA: 0x001DD16C File Offset: 0x001DB36C
 	public override void Cleanup()
 	{
 		this.SetWriteMode(SaveDataWriteMode.None);
 		this.cleanupComplete = true;
 	}
 
-	// Token: 0x06004D5B RID: 19803 RVA: 0x001DA6E4 File Offset: 0x001D88E4
+	// Token: 0x06004DE1 RID: 19937 RVA: 0x001DD17C File Offset: 0x001DB37C
 	public override int CommitAsync()
 	{
 		if (this.writeMode != SaveDataWriteMode.Deferred)
@@ -843,13 +843,13 @@ public class SaveDataManager : SaveDataManagerBase
 		return num;
 	}
 
-	// Token: 0x06004D5C RID: 19804 RVA: 0x001DA712 File Offset: 0x001D8912
+	// Token: 0x06004DE2 RID: 19938 RVA: 0x001DD1AA File Offset: 0x001DB3AA
 	public override bool IsCommitPending(int token)
 	{
 		return token > this.explicitCommitCount;
 	}
 
-	// Token: 0x06004D5D RID: 19805 RVA: 0x001DA720 File Offset: 0x001D8920
+	// Token: 0x06004DE3 RID: 19939 RVA: 0x001DD1B8 File Offset: 0x001DB3B8
 	public override void CommitSync()
 	{
 		if (this.writeMode != SaveDataWriteMode.Deferred)
@@ -863,7 +863,7 @@ public class SaveDataManager : SaveDataManagerBase
 		}
 	}
 
-	// Token: 0x06004D5E RID: 19806 RVA: 0x001DA758 File Offset: 0x001D8958
+	// Token: 0x06004DE4 RID: 19940 RVA: 0x001DD1F0 File Offset: 0x001DB3F0
 	public override IEnumerator CommitCoroutine(Action<double> progressFeedback = null)
 	{
 		if (this.writeMode != SaveDataWriteMode.Deferred)
@@ -882,7 +882,7 @@ public class SaveDataManager : SaveDataManagerBase
 		yield break;
 	}
 
-	// Token: 0x06004D5F RID: 19807 RVA: 0x001DA76E File Offset: 0x001D896E
+	// Token: 0x06004DE5 RID: 19941 RVA: 0x001DD206 File Offset: 0x001DB406
 	[Conditional("DEBUG_SAVE_DATA_MANAGER")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new static void DebugLog(string text)
@@ -890,7 +890,7 @@ public class SaveDataManager : SaveDataManagerBase
 		Log.Out("[SaveDataManager] " + text);
 	}
 
-	// Token: 0x06004D61 RID: 19809 RVA: 0x001DA7FC File Offset: 0x001D89FC
+	// Token: 0x06004DE7 RID: 19943 RVA: 0x001DD294 File Offset: 0x001DB494
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public unsafe static bool <MatchesSearchPattern>g__MatchWildcard|32_0(StringSpan text, string pattern)
@@ -928,120 +928,120 @@ public class SaveDataManager : SaveDataManagerBase
 		return num == pattern.Length;
 	}
 
-	// Token: 0x04003BA5 RID: 15269
+	// Token: 0x04003C36 RID: 15414
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int writerThreadTerminationTimeout = 420;
 
-	// Token: 0x04003BA6 RID: 15270
+	// Token: 0x04003C37 RID: 15415
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly IPlatformSaveGameProvider platformSaveGameProvider;
 
-	// Token: 0x04003BA7 RID: 15271
+	// Token: 0x04003C38 RID: 15416
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly object mapLockObj = new object();
 
-	// Token: 0x04003BA8 RID: 15272
+	// Token: 0x04003C39 RID: 15417
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly object commitLockObj = new object();
 
-	// Token: 0x04003BA9 RID: 15273
+	// Token: 0x04003C3A RID: 15418
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<SaveDataManagedPath, SaveDataManager.CachedStream> pathToCacheMap = new Dictionary<SaveDataManagedPath, SaveDataManager.CachedStream>();
 
-	// Token: 0x04003BAA RID: 15274
+	// Token: 0x04003C3B RID: 15419
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<SaveDataManager.CachedStream> priorityCachedStreams = new HashSet<SaveDataManager.CachedStream>();
 
-	// Token: 0x04003BAB RID: 15275
+	// Token: 0x04003C3C RID: 15420
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<Stream, SaveDataManager.CachedStream> streamToCacheMap = new Dictionary<Stream, SaveDataManager.CachedStream>();
 
-	// Token: 0x04003BAC RID: 15276
+	// Token: 0x04003C3D RID: 15421
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly TimeSpan commitInterval = TimeSpan.FromSeconds(30.0);
 
-	// Token: 0x04003BAD RID: 15277
+	// Token: 0x04003C3E RID: 15422
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int writeTaskDelay = 5;
 
-	// Token: 0x04003BAE RID: 15278
+	// Token: 0x04003C3F RID: 15423
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int memoryCopyTimeout = 30000;
 
-	// Token: 0x04003BAF RID: 15279
+	// Token: 0x04003C40 RID: 15424
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_CommitPendingChangesMarker = new ProfilerMarker("SaveDataManager.CommitPendingChanges");
 
-	// Token: 0x04003BB0 RID: 15280
+	// Token: 0x04003C41 RID: 15425
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_InitRestoreBackupsMarker = new ProfilerMarker("SaveDataManager.InitRestoreBackups");
 
-	// Token: 0x04003BB1 RID: 15281
+	// Token: 0x04003C42 RID: 15426
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_InitFileSizeTrackingMarker = new ProfilerMarker("SaveDataManager.InitFileSizeTracking");
 
-	// Token: 0x04003BB2 RID: 15282
+	// Token: 0x04003C43 RID: 15427
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerCounterValue<int> s_CachedStreamCount = new ProfilerCounterValue<int>(ProfilerCategory.Scripts, "Cached Streams", ProfilerMarkerDataUnit.Count, ProfilerCounterOptions.FlushOnEndOfFrame);
 
-	// Token: 0x04003BB3 RID: 15283
+	// Token: 0x04003C44 RID: 15428
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerCounterValue<int> s_StreamOperationCount = new ProfilerCounterValue<int>(ProfilerCategory.Scripts, "Stream Operations", ProfilerMarkerDataUnit.Count, ProfilerCounterOptions.FlushOnEndOfFrame | ProfilerCounterOptions.ResetToZeroOnFlush);
 
-	// Token: 0x04003BB4 RID: 15284
+	// Token: 0x04003C45 RID: 15429
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ThreadManager.ThreadInfo writerThreadInfo;
 
-	// Token: 0x04003BB5 RID: 15285
+	// Token: 0x04003C46 RID: 15430
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DateTime lastCommitTime;
 
-	// Token: 0x04003BB6 RID: 15286
+	// Token: 0x04003C47 RID: 15431
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int explicitCommitNeeded;
 
-	// Token: 0x04003BB7 RID: 15287
+	// Token: 0x04003C48 RID: 15432
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int explicitCommitCount;
 
-	// Token: 0x04003BB8 RID: 15288
+	// Token: 0x04003C49 RID: 15433
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<SaveDataManager.CachedStream> commitList = new List<SaveDataManager.CachedStream>();
 
-	// Token: 0x04003BB9 RID: 15289
+	// Token: 0x04003C4A RID: 15434
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<SaveDataManager.CachedStream> closeList = new List<SaveDataManager.CachedStream>();
 
-	// Token: 0x04003BBA RID: 15290
+	// Token: 0x04003C4B RID: 15435
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SaveDataWriteMode writeMode;
 
-	// Token: 0x04003BBB RID: 15291
+	// Token: 0x04003C4C RID: 15436
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool cleanupComplete;
 
-	// Token: 0x04003BBC RID: 15292
+	// Token: 0x04003C4D RID: 15437
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<SaveDataSlot, SaveDataManager.SlotSizeData> fileSizesBySlot = new Dictionary<SaveDataSlot, SaveDataManager.SlotSizeData>();
 
-	// Token: 0x04003BBD RID: 15293
+	// Token: 0x04003C4E RID: 15438
 	[PublicizedFrom(EAccessModifier.Private)]
 	public object regionFileLock = new object();
 
-	// Token: 0x04003BBE RID: 15294
+	// Token: 0x04003C4F RID: 15439
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RegionFileManager activeRegionFileManager;
 
-	// Token: 0x02000A0A RID: 2570
+	// Token: 0x02000A1B RID: 2587
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class CachedStream : IDisposable
 	{
-		// Token: 0x17000837 RID: 2103
-		// (get) Token: 0x06004D62 RID: 19810 RVA: 0x001DA8AA File Offset: 0x001D8AAA
+		// Token: 0x17000849 RID: 2121
+		// (get) Token: 0x06004DE8 RID: 19944 RVA: 0x001DD342 File Offset: 0x001DB542
 		public SaveDataManagedPath Path { get; }
 
-		// Token: 0x17000838 RID: 2104
-		// (get) Token: 0x06004D63 RID: 19811 RVA: 0x001DA8B2 File Offset: 0x001D8AB2
+		// Token: 0x1700084A RID: 2122
+		// (get) Token: 0x06004DE9 RID: 19945 RVA: 0x001DD34A File Offset: 0x001DB54A
 		public long PendingSize
 		{
 			get
@@ -1059,17 +1059,17 @@ public class SaveDataManager : SaveDataManagerBase
 			}
 		}
 
-		// Token: 0x17000839 RID: 2105
-		// (get) Token: 0x06004D64 RID: 19812 RVA: 0x001DA8D1 File Offset: 0x001D8AD1
-		// (set) Token: 0x06004D65 RID: 19813 RVA: 0x001DA8D9 File Offset: 0x001D8AD9
+		// Token: 0x1700084B RID: 2123
+		// (get) Token: 0x06004DEA RID: 19946 RVA: 0x001DD369 File Offset: 0x001DB569
+		// (set) Token: 0x06004DEB RID: 19947 RVA: 0x001DD371 File Offset: 0x001DB571
 		public bool HasPendingChanges
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x1700083A RID: 2106
-		// (get) Token: 0x06004D66 RID: 19814 RVA: 0x001DA8E2 File Offset: 0x001D8AE2
+		// Token: 0x1700084C RID: 2124
+		// (get) Token: 0x06004DEC RID: 19948 RVA: 0x001DD37A File Offset: 0x001DB57A
 		public bool IsLocked
 		{
 			get
@@ -1078,8 +1078,8 @@ public class SaveDataManager : SaveDataManagerBase
 			}
 		}
 
-		// Token: 0x1700083B RID: 2107
-		// (get) Token: 0x06004D67 RID: 19815 RVA: 0x001DA8EF File Offset: 0x001D8AEF
+		// Token: 0x1700084D RID: 2125
+		// (get) Token: 0x06004DED RID: 19949 RVA: 0x001DD387 File Offset: 0x001DB587
 		public DateTime LastAccessTime
 		{
 			get
@@ -1092,8 +1092,8 @@ public class SaveDataManager : SaveDataManagerBase
 			}
 		}
 
-		// Token: 0x1700083C RID: 2108
-		// (get) Token: 0x06004D68 RID: 19816 RVA: 0x001DA905 File Offset: 0x001D8B05
+		// Token: 0x1700084E RID: 2126
+		// (get) Token: 0x06004DEE RID: 19950 RVA: 0x001DD39D File Offset: 0x001DB59D
 		public DateTime LastWriteTime
 		{
 			get
@@ -1102,8 +1102,8 @@ public class SaveDataManager : SaveDataManagerBase
 			}
 		}
 
-		// Token: 0x1700083D RID: 2109
-		// (get) Token: 0x06004D69 RID: 19817 RVA: 0x001DA910 File Offset: 0x001D8B10
+		// Token: 0x1700084F RID: 2127
+		// (get) Token: 0x06004DEF RID: 19951 RVA: 0x001DD3A8 File Offset: 0x001DB5A8
 		public bool ExistsVirtual
 		{
 			get
@@ -1118,7 +1118,7 @@ public class SaveDataManager : SaveDataManagerBase
 			}
 		}
 
-		// Token: 0x06004D6A RID: 19818 RVA: 0x001DA958 File Offset: 0x001D8B58
+		// Token: 0x06004DF0 RID: 19952 RVA: 0x001DD3F0 File Offset: 0x001DB5F0
 		public CachedStream(SaveDataManagedPath path, IPlatformSaveGameProvider platformSaveGameProvider)
 		{
 			this.Path = path;
@@ -1138,7 +1138,7 @@ public class SaveDataManager : SaveDataManagerBase
 			}
 		}
 
-		// Token: 0x06004D6B RID: 19819 RVA: 0x001DAA20 File Offset: 0x001D8C20
+		// Token: 0x06004DF1 RID: 19953 RVA: 0x001DD4B8 File Offset: 0x001DB6B8
 		public void EnterLock(FileMode mode, FileAccess access, FileShare share, out Stream stream)
 		{
 			bool flag = false;
@@ -1229,7 +1229,7 @@ public class SaveDataManager : SaveDataManagerBase
 			}
 		}
 
-		// Token: 0x06004D6C RID: 19820 RVA: 0x001DAC3C File Offset: 0x001D8E3C
+		// Token: 0x06004DF2 RID: 19954 RVA: 0x001DD6D4 File Offset: 0x001DB8D4
 		public void ExitLock()
 		{
 			bool flag = false;
@@ -1269,19 +1269,19 @@ public class SaveDataManager : SaveDataManagerBase
 			this.ExitCommitLock();
 		}
 
-		// Token: 0x06004D6D RID: 19821 RVA: 0x001DAD54 File Offset: 0x001D8F54
+		// Token: 0x06004DF3 RID: 19955 RVA: 0x001DD7EC File Offset: 0x001DB9EC
 		public void EnterCommitLock(ref bool lockTaken)
 		{
 			this.commitLock.Enter(ref lockTaken);
 		}
 
-		// Token: 0x06004D6E RID: 19822 RVA: 0x001DAD62 File Offset: 0x001D8F62
+		// Token: 0x06004DF4 RID: 19956 RVA: 0x001DD7FA File Offset: 0x001DB9FA
 		public void ExitCommitLock()
 		{
 			this.commitLock.Exit();
 		}
 
-		// Token: 0x06004D6F RID: 19823 RVA: 0x001DAD70 File Offset: 0x001D8F70
+		// Token: 0x06004DF5 RID: 19957 RVA: 0x001DD808 File Offset: 0x001DBA08
 		public void Commit()
 		{
 			object obj = this.lockObj;
@@ -1316,7 +1316,7 @@ public class SaveDataManager : SaveDataManagerBase
 			}
 		}
 
-		// Token: 0x06004D70 RID: 19824 RVA: 0x001DAE98 File Offset: 0x001D9098
+		// Token: 0x06004DF6 RID: 19958 RVA: 0x001DD930 File Offset: 0x001DBB30
 		public void Dispose()
 		{
 			object obj = this.lockObj;
@@ -1338,66 +1338,66 @@ public class SaveDataManager : SaveDataManagerBase
 			}
 		}
 
-		// Token: 0x04003BC1 RID: 15297
+		// Token: 0x04003C52 RID: 15442
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DateTime lastAccessTime;
 
-		// Token: 0x04003BC2 RID: 15298
+		// Token: 0x04003C53 RID: 15443
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DateTime lastWriteTime;
 
-		// Token: 0x04003BC3 RID: 15299
+		// Token: 0x04003C54 RID: 15444
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly IPlatformSaveGameProvider platformSaveGameProvider;
 
-		// Token: 0x04003BC4 RID: 15300
+		// Token: 0x04003C55 RID: 15445
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly SaveDataManagedPath backupPath;
 
-		// Token: 0x04003BC5 RID: 15301
+		// Token: 0x04003C56 RID: 15446
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SpinLock sl = new SpinLock(true);
 
-		// Token: 0x04003BC6 RID: 15302
+		// Token: 0x04003C57 RID: 15447
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SpinLock commitLock = new SpinLock(true);
 
-		// Token: 0x04003BC7 RID: 15303
+		// Token: 0x04003C58 RID: 15448
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SaveDataManager.CachedStream.VirtualFileStream workingCopy;
 
-		// Token: 0x04003BC8 RID: 15304
+		// Token: 0x04003C59 RID: 15449
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SaveDataManager.CachedStream.VirtualFileStream commitCopy;
 
-		// Token: 0x04003BC9 RID: 15305
+		// Token: 0x04003C5A RID: 15450
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isReading;
 
-		// Token: 0x04003BCA RID: 15306
+		// Token: 0x04003C5B RID: 15451
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isWriting;
 
-		// Token: 0x04003BCB RID: 15307
+		// Token: 0x04003C5C RID: 15452
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly object lockObj = new object();
 
-		// Token: 0x02000A0B RID: 2571
+		// Token: 0x02000A1C RID: 2588
 		[PublicizedFrom(EAccessModifier.Private)]
 		public class VirtualFileStream : MemoryStream
 		{
-			// Token: 0x1700083E RID: 2110
-			// (get) Token: 0x06004D71 RID: 19825 RVA: 0x001DAF0C File Offset: 0x001D910C
-			// (set) Token: 0x06004D72 RID: 19826 RVA: 0x001DAF14 File Offset: 0x001D9114
+			// Token: 0x17000850 RID: 2128
+			// (get) Token: 0x06004DF7 RID: 19959 RVA: 0x001DD9A4 File Offset: 0x001DBBA4
+			// (set) Token: 0x06004DF8 RID: 19960 RVA: 0x001DD9AC File Offset: 0x001DBBAC
 			public bool ReadEnabled { get; set; }
 
-			// Token: 0x1700083F RID: 2111
-			// (get) Token: 0x06004D73 RID: 19827 RVA: 0x001DAF1D File Offset: 0x001D911D
-			// (set) Token: 0x06004D74 RID: 19828 RVA: 0x001DAF25 File Offset: 0x001D9125
+			// Token: 0x17000851 RID: 2129
+			// (get) Token: 0x06004DF9 RID: 19961 RVA: 0x001DD9B5 File Offset: 0x001DBBB5
+			// (set) Token: 0x06004DFA RID: 19962 RVA: 0x001DD9BD File Offset: 0x001DBBBD
 			public bool WriteEnabled { get; set; }
 
-			// Token: 0x17000840 RID: 2112
-			// (get) Token: 0x06004D75 RID: 19829 RVA: 0x001DAF2E File Offset: 0x001D912E
+			// Token: 0x17000852 RID: 2130
+			// (get) Token: 0x06004DFB RID: 19963 RVA: 0x001DD9C6 File Offset: 0x001DBBC6
 			public override bool CanRead
 			{
 				get
@@ -1406,8 +1406,8 @@ public class SaveDataManager : SaveDataManagerBase
 				}
 			}
 
-			// Token: 0x17000841 RID: 2113
-			// (get) Token: 0x06004D76 RID: 19830 RVA: 0x001DAF40 File Offset: 0x001D9140
+			// Token: 0x17000853 RID: 2131
+			// (get) Token: 0x06004DFC RID: 19964 RVA: 0x001DD9D8 File Offset: 0x001DBBD8
 			public override bool CanWrite
 			{
 				get
@@ -1416,14 +1416,14 @@ public class SaveDataManager : SaveDataManagerBase
 				}
 			}
 
-			// Token: 0x06004D77 RID: 19831 RVA: 0x001DAF52 File Offset: 0x001D9152
+			// Token: 0x06004DFD RID: 19965 RVA: 0x001DD9EA File Offset: 0x001DBBEA
 			public VirtualFileStream()
 			{
 				this.ReadEnabled = true;
 				this.WriteEnabled = true;
 			}
 
-			// Token: 0x06004D78 RID: 19832 RVA: 0x001DAF68 File Offset: 0x001D9168
+			// Token: 0x06004DFE RID: 19966 RVA: 0x001DDA00 File Offset: 0x001DBC00
 			public VirtualFileStream(int capacity)
 				: base(capacity)
 			{
@@ -1431,7 +1431,7 @@ public class SaveDataManager : SaveDataManagerBase
 				this.WriteEnabled = true;
 			}
 
-			// Token: 0x06004D79 RID: 19833 RVA: 0x001DAF7F File Offset: 0x001D917F
+			// Token: 0x06004DFF RID: 19967 RVA: 0x001DDA17 File Offset: 0x001DBC17
 			public VirtualFileStream(long capacity)
 				: base((capacity < 2147483647L) ? ((int)capacity) : int.MaxValue)
 			{
@@ -1439,7 +1439,7 @@ public class SaveDataManager : SaveDataManagerBase
 				this.WriteEnabled = true;
 			}
 
-			// Token: 0x06004D7A RID: 19834 RVA: 0x001DAFA7 File Offset: 0x001D91A7
+			// Token: 0x06004E00 RID: 19968 RVA: 0x001DDA3F File Offset: 0x001DBC3F
 			public override int Read(byte[] buffer, int offset, int count)
 			{
 				if (!this.CanRead)
@@ -1449,7 +1449,7 @@ public class SaveDataManager : SaveDataManagerBase
 				return base.Read(buffer, offset, count);
 			}
 
-			// Token: 0x06004D7B RID: 19835 RVA: 0x001DAFC5 File Offset: 0x001D91C5
+			// Token: 0x06004E01 RID: 19969 RVA: 0x001DDA5D File Offset: 0x001DBC5D
 			public override int ReadByte()
 			{
 				if (!this.CanRead)
@@ -1461,20 +1461,20 @@ public class SaveDataManager : SaveDataManagerBase
 		}
 	}
 
-	// Token: 0x02000A0C RID: 2572
+	// Token: 0x02000A1D RID: 2589
 	public class SlotSizeData
 	{
-		// Token: 0x17000842 RID: 2114
-		// (get) Token: 0x06004D7C RID: 19836 RVA: 0x001DAFE0 File Offset: 0x001D91E0
-		// (set) Token: 0x06004D7D RID: 19837 RVA: 0x001DAFE8 File Offset: 0x001D91E8
+		// Token: 0x17000854 RID: 2132
+		// (get) Token: 0x06004E02 RID: 19970 RVA: 0x001DDA78 File Offset: 0x001DBC78
+		// (set) Token: 0x06004E03 RID: 19971 RVA: 0x001DDA80 File Offset: 0x001DBC80
 		public long TotalFileSize
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x17000843 RID: 2115
-		// (get) Token: 0x06004D7E RID: 19838 RVA: 0x001DAFF1 File Offset: 0x001D91F1
+		// Token: 0x17000855 RID: 2133
+		// (get) Token: 0x06004E04 RID: 19972 RVA: 0x001DDA89 File Offset: 0x001DBC89
 		public long LargestPriorityFileSize
 		{
 			get
@@ -1483,8 +1483,8 @@ public class SaveDataManager : SaveDataManagerBase
 			}
 		}
 
-		// Token: 0x17000844 RID: 2116
-		// (get) Token: 0x06004D7F RID: 19839 RVA: 0x001DAFFE File Offset: 0x001D91FE
+		// Token: 0x17000856 RID: 2134
+		// (get) Token: 0x06004E05 RID: 19973 RVA: 0x001DDA96 File Offset: 0x001DBC96
 		public int FileCount
 		{
 			get
@@ -1493,13 +1493,13 @@ public class SaveDataManager : SaveDataManagerBase
 			}
 		}
 
-		// Token: 0x06004D80 RID: 19840 RVA: 0x001DB017 File Offset: 0x001D9217
+		// Token: 0x06004E06 RID: 19974 RVA: 0x001DDAAF File Offset: 0x001DBCAF
 		public SlotSizeData(SaveDataSlot saveDataSlot)
 		{
 			this.saveDataSlot = saveDataSlot;
 		}
 
-		// Token: 0x06004D81 RID: 19841 RVA: 0x001DB03C File Offset: 0x001D923C
+		// Token: 0x06004E07 RID: 19975 RVA: 0x001DDAD4 File Offset: 0x001DBCD4
 		public void SetFileSize(SaveDataManagedPath managedPath, long pendingSize)
 		{
 			long num = pendingSize;
@@ -1523,21 +1523,21 @@ public class SaveDataManager : SaveDataManagerBase
 			this.otherFileSizes[managedPath] = pendingSize;
 		}
 
-		// Token: 0x06004D82 RID: 19842 RVA: 0x001DB09C File Offset: 0x001D929C
+		// Token: 0x06004E08 RID: 19976 RVA: 0x001DDB34 File Offset: 0x001DBD34
 		public bool TryGetFileSize(SaveDataManagedPath managedPath, out long trackedSize)
 		{
 			bool flag;
 			return this.TryGetFileSize(managedPath, out trackedSize, out flag);
 		}
 
-		// Token: 0x06004D83 RID: 19843 RVA: 0x001DB0B3 File Offset: 0x001D92B3
+		// Token: 0x06004E09 RID: 19977 RVA: 0x001DDB4B File Offset: 0x001DBD4B
 		public bool TryGetFileSize(SaveDataManagedPath managedPath, out long trackedSize, out bool isPriorityFile)
 		{
 			isPriorityFile = this.priorityFileSizes.TryGetValue(managedPath, out trackedSize);
 			return isPriorityFile || this.otherFileSizes.TryGetValue(managedPath, out trackedSize);
 		}
 
-		// Token: 0x06004D84 RID: 19844 RVA: 0x001DB0D8 File Offset: 0x001D92D8
+		// Token: 0x06004E0A RID: 19978 RVA: 0x001DDB70 File Offset: 0x001DBD70
 		public void RemoveFileSize(SaveDataManagedPath managedPath)
 		{
 			long num;
@@ -1555,7 +1555,7 @@ public class SaveDataManager : SaveDataManagerBase
 			}
 		}
 
-		// Token: 0x06004D85 RID: 19845 RVA: 0x001DB12C File Offset: 0x001D932C
+		// Token: 0x06004E0B RID: 19979 RVA: 0x001DDBC4 File Offset: 0x001DBDC4
 		public void RemoveFileSizes(SaveDataManagedPath parentManagedPath)
 		{
 			SaveDataManager.SlotSizeData.<>c__DisplayClass17_0 CS$<>8__locals1;
@@ -1567,7 +1567,7 @@ public class SaveDataManager : SaveDataManagerBase
 			this.<RemoveFileSizes>g__RemoveFileSizesInternal|17_0(list2, ref CS$<>8__locals1);
 		}
 
-		// Token: 0x06004D86 RID: 19846 RVA: 0x001DB180 File Offset: 0x001D9380
+		// Token: 0x06004E0C RID: 19980 RVA: 0x001DDC18 File Offset: 0x001DBE18
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void UpdateLargestPriorityFileSize(SaveDataManagedPath managedPath, long pendingSize, long delta)
 		{
@@ -1593,7 +1593,7 @@ public class SaveDataManager : SaveDataManagerBase
 			}
 		}
 
-		// Token: 0x06004D87 RID: 19847 RVA: 0x001DB238 File Offset: 0x001D9438
+		// Token: 0x06004E0D RID: 19981 RVA: 0x001DDCD0 File Offset: 0x001DBED0
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <RemoveFileSizes>g__RemoveFileSizesInternal|17_0(List<SaveDataManagedPath> managedPaths, ref SaveDataManager.SlotSizeData.<>c__DisplayClass17_0 A_2)
@@ -1607,20 +1607,20 @@ public class SaveDataManager : SaveDataManagerBase
 			}
 		}
 
-		// Token: 0x04003BCE RID: 15310
+		// Token: 0x04003C5F RID: 15455
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<SaveDataManagedPath, long> priorityFileSizes = new Dictionary<SaveDataManagedPath, long>();
 
-		// Token: 0x04003BCF RID: 15311
+		// Token: 0x04003C60 RID: 15456
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<SaveDataManagedPath, long> otherFileSizes = new Dictionary<SaveDataManagedPath, long>();
 
-		// Token: 0x04003BD0 RID: 15312
+		// Token: 0x04003C61 RID: 15457
 		[TupleElementNames(new string[] { "path", "size" })]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ValueTuple<SaveDataManagedPath, long> largestPriorityFile;
 
-		// Token: 0x04003BD2 RID: 15314
+		// Token: 0x04003C63 RID: 15459
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly SaveDataSlot saveDataSlot;
 	}

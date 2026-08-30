@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F0D RID: 3853
+// Token: 0x02000F24 RID: 3876
 [Preserve]
 public class XUiC_DialogResponseList : XUiController
 {
-	// Token: 0x17000E1D RID: 3613
-	// (get) Token: 0x060078EE RID: 30958 RVA: 0x002D9882 File Offset: 0x002D7A82
-	// (set) Token: 0x060078EF RID: 30959 RVA: 0x002D988A File Offset: 0x002D7A8A
+	// Token: 0x17000E37 RID: 3639
+	// (get) Token: 0x060079A6 RID: 31142 RVA: 0x002DD80E File Offset: 0x002DBA0E
+	// (set) Token: 0x060079A7 RID: 31143 RVA: 0x002DD816 File Offset: 0x002DBA16
 	public Dialog CurrentDialog
 	{
 		get
@@ -23,7 +23,7 @@ public class XUiC_DialogResponseList : XUiController
 		}
 	}
 
-	// Token: 0x060078F0 RID: 30960 RVA: 0x002D98A0 File Offset: 0x002D7AA0
+	// Token: 0x060079A8 RID: 31144 RVA: 0x002DD82C File Offset: 0x002DBA2C
 	public override void Init()
 	{
 		base.Init();
@@ -41,14 +41,14 @@ public class XUiC_DialogResponseList : XUiController
 		}
 	}
 
-	// Token: 0x060078F1 RID: 30961 RVA: 0x002D9931 File Offset: 0x002D7B31
+	// Token: 0x060079A9 RID: 31145 RVA: 0x002DD8BD File Offset: 0x002DBABD
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.lblResponderName.Text = Localization.Get(this.xui.Dialog.Respondent.EntityName, false, null);
 	}
 
-	// Token: 0x060078F2 RID: 30962 RVA: 0x002D9960 File Offset: 0x002D7B60
+	// Token: 0x060079AA RID: 31146 RVA: 0x002DD8EC File Offset: 0x002DBAEC
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -104,7 +104,7 @@ public class XUiC_DialogResponseList : XUiController
 		}
 	}
 
-	// Token: 0x060078F3 RID: 30963 RVA: 0x002D9ADC File Offset: 0x002D7CDC
+	// Token: 0x060079AB RID: 31147 RVA: 0x002DDA68 File Offset: 0x002DBC68
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPressResponse(XUiController _sender, int _mouseButton)
 	{
@@ -116,38 +116,38 @@ public class XUiC_DialogResponseList : XUiController
 		}
 	}
 
-	// Token: 0x060078F4 RID: 30964 RVA: 0x002D9B33 File Offset: 0x002D7D33
+	// Token: 0x060079AC RID: 31148 RVA: 0x002DDABF File Offset: 0x002DBCBF
 	public void Refresh()
 	{
 		this.IsDirty = true;
 		base.RefreshBindings();
 	}
 
-	// Token: 0x04005941 RID: 22849
+	// Token: 0x040059F3 RID: 23027
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dialog conversation;
 
-	// Token: 0x04005942 RID: 22850
+	// Token: 0x040059F4 RID: 23028
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string xuiQuestDescriptionLabel;
 
-	// Token: 0x04005943 RID: 22851
+	// Token: 0x040059F5 RID: 23029
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiC_DialogResponseEntry> entryList = new List<XUiC_DialogResponseEntry>();
 
-	// Token: 0x04005944 RID: 22852
+	// Token: 0x040059F6 RID: 23030
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int length;
 
-	// Token: 0x04005945 RID: 22853
+	// Token: 0x040059F7 RID: 23031
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<string> uniqueResponseIDs = new List<string>();
 
-	// Token: 0x04005946 RID: 22854
+	// Token: 0x040059F8 RID: 23032
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dialog currentDialog;
 
-	// Token: 0x04005947 RID: 22855
+	// Token: 0x040059F9 RID: 23033
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label lblResponderName;
 }

@@ -4,11 +4,11 @@ using MusicUtils.Enums;
 
 namespace DynamicMusic.Legacy
 {
-	// Token: 0x02001A70 RID: 6768
+	// Token: 0x02001A97 RID: 6807
 	public class StreamerMaster
 	{
-		// Token: 0x170018DB RID: 6363
-		// (get) Token: 0x0600CBE6 RID: 52198 RVA: 0x004A559B File Offset: 0x004A379B
+		// Token: 0x1700194D RID: 6477
+		// (get) Token: 0x0600CD6F RID: 52591 RVA: 0x004AB98F File Offset: 0x004A9B8F
 		public bool IsReplacementNecessary
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -18,13 +18,13 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x0600CBE7 RID: 52199 RVA: 0x004A55C1 File Offset: 0x004A37C1
+		// Token: 0x0600CD70 RID: 52592 RVA: 0x004AB9B5 File Offset: 0x004A9BB5
 		public static StreamerMaster Create()
 		{
 			return new StreamerMaster();
 		}
 
-		// Token: 0x0600CBE8 RID: 52200 RVA: 0x004A55C8 File Offset: 0x004A37C8
+		// Token: 0x0600CD71 RID: 52593 RVA: 0x004AB9BC File Offset: 0x004A9BBC
 		public static void Init(DynamicMusicManager _dynamicMusicManager)
 		{
 			_dynamicMusicManager.StreamerMaster = StreamerMaster.Create();
@@ -32,7 +32,7 @@ namespace DynamicMusic.Legacy
 			StreamerMaster.Streamers = new EnumDictionary<ThreatLevelLegacyType, Queue<ThreatLevelStreamer>>();
 		}
 
-		// Token: 0x0600CBE9 RID: 52201 RVA: 0x004A55EC File Offset: 0x004A37EC
+		// Token: 0x0600CD72 RID: 52594 RVA: 0x004AB9E0 File Offset: 0x004A9BE0
 		public void Tick()
 		{
 			LayerReserve.Tick();
@@ -59,7 +59,7 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x0600CBEA RID: 52202 RVA: 0x004A5660 File Offset: 0x004A3860
+		// Token: 0x0600CD73 RID: 52595 RVA: 0x004ABA54 File Offset: 0x004A9C54
 		public void Play()
 		{
 			if (StreamerMaster.currentStreamer != null)
@@ -68,7 +68,7 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x0600CBEB RID: 52203 RVA: 0x004A5673 File Offset: 0x004A3873
+		// Token: 0x0600CD74 RID: 52596 RVA: 0x004ABA67 File Offset: 0x004A9C67
 		public void Pause()
 		{
 			if (StreamerMaster.currentStreamer != null)
@@ -77,7 +77,7 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x0600CBEC RID: 52204 RVA: 0x004A5686 File Offset: 0x004A3886
+		// Token: 0x0600CD75 RID: 52597 RVA: 0x004ABA7A File Offset: 0x004A9C7A
 		public void UnPause()
 		{
 			if (StreamerMaster.currentStreamer != null)
@@ -86,7 +86,7 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x0600CBED RID: 52205 RVA: 0x004A5699 File Offset: 0x004A3899
+		// Token: 0x0600CD76 RID: 52598 RVA: 0x004ABA8D File Offset: 0x004A9C8D
 		public void Stop()
 		{
 			if (StreamerMaster.currentStreamer != null && (StreamerMaster.currentStreamer.IsPlaying || StreamerMaster.currentStreamer.IsPaused))
@@ -96,7 +96,7 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x0600CBEE RID: 52206 RVA: 0x004A56CA File Offset: 0x004A38CA
+		// Token: 0x0600CD77 RID: 52599 RVA: 0x004ABABE File Offset: 0x004A9CBE
 		public void Cleanup()
 		{
 			if (StreamerMaster.currentStreamer != null)
@@ -111,7 +111,7 @@ namespace DynamicMusic.Legacy
 			}
 		}
 
-		// Token: 0x0600CBEF RID: 52207 RVA: 0x004A56FC File Offset: 0x004A38FC
+		// Token: 0x0600CD78 RID: 52600 RVA: 0x004ABAF0 File Offset: 0x004A9CF0
 		public void ReplaceCurrentStreamer()
 		{
 			if (StreamerMaster.currentStreamer != null)
@@ -137,15 +137,15 @@ namespace DynamicMusic.Legacy
 			queue.Enqueue(ThreatLevelStreamer.Create(ThreatLevelLegacyType.Exploration));
 		}
 
-		// Token: 0x04009A7F RID: 39551
+		// Token: 0x04009BB0 RID: 39856
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static EnumDictionary<ThreatLevelLegacyType, Queue<ThreatLevelStreamer>> Streamers;
 
-		// Token: 0x04009A80 RID: 39552
+		// Token: 0x04009BB1 RID: 39857
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DynamicMusicManager dynamicMusicManager;
 
-		// Token: 0x04009A81 RID: 39553
+		// Token: 0x04009BB2 RID: 39858
 		public static ThreatLevelStreamer currentStreamer;
 	}
 }

@@ -3,22 +3,22 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FCE RID: 4046
+// Token: 0x02000FE7 RID: 4071
 [Preserve]
 public class XUiC_QuestOfferWindow : XUiController
 {
-	// Token: 0x17000EBB RID: 3771
-	// (get) Token: 0x06007F88 RID: 32648 RVA: 0x00306206 File Offset: 0x00304406
-	// (set) Token: 0x06007F89 RID: 32649 RVA: 0x0030620E File Offset: 0x0030440E
+	// Token: 0x17000EF4 RID: 3828
+	// (get) Token: 0x0600807A RID: 32890 RVA: 0x0030A9DA File Offset: 0x00308BDA
+	// (set) Token: 0x0600807B RID: 32891 RVA: 0x0030A9E2 File Offset: 0x00308BE2
 	public XUiC_QuestOfferWindow.OfferTypes OfferType
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000EBC RID: 3772
-	// (get) Token: 0x06007F8A RID: 32650 RVA: 0x00306217 File Offset: 0x00304417
-	// (set) Token: 0x06007F8B RID: 32651 RVA: 0x0030621F File Offset: 0x0030441F
+	// Token: 0x17000EF5 RID: 3829
+	// (get) Token: 0x0600807C RID: 32892 RVA: 0x0030A9EB File Offset: 0x00308BEB
+	// (set) Token: 0x0600807D RID: 32893 RVA: 0x0030A9F3 File Offset: 0x00308BF3
 	public Quest Quest
 	{
 		get
@@ -32,9 +32,9 @@ public class XUiC_QuestOfferWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000EBD RID: 3773
-	// (get) Token: 0x06007F8C RID: 32652 RVA: 0x0030622F File Offset: 0x0030442F
-	// (set) Token: 0x06007F8D RID: 32653 RVA: 0x00306237 File Offset: 0x00304437
+	// Token: 0x17000EF6 RID: 3830
+	// (get) Token: 0x0600807E RID: 32894 RVA: 0x0030AA03 File Offset: 0x00308C03
+	// (set) Token: 0x0600807F RID: 32895 RVA: 0x0030AA0B File Offset: 0x00308C0B
 	public int Variation
 	{
 		get
@@ -48,21 +48,21 @@ public class XUiC_QuestOfferWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000EBE RID: 3774
-	// (get) Token: 0x06007F8E RID: 32654 RVA: 0x00306247 File Offset: 0x00304447
-	// (set) Token: 0x06007F8F RID: 32655 RVA: 0x0030624F File Offset: 0x0030444F
+	// Token: 0x17000EF7 RID: 3831
+	// (get) Token: 0x06008080 RID: 32896 RVA: 0x0030AA1B File Offset: 0x00308C1B
+	// (set) Token: 0x06008081 RID: 32897 RVA: 0x0030AA23 File Offset: 0x00308C23
 	public XUiC_ItemStack ItemStackController { get; set; }
 
-	// Token: 0x17000EBF RID: 3775
-	// (get) Token: 0x06007F90 RID: 32656 RVA: 0x00306258 File Offset: 0x00304458
-	// (set) Token: 0x06007F91 RID: 32657 RVA: 0x00306260 File Offset: 0x00304460
+	// Token: 0x17000EF8 RID: 3832
+	// (get) Token: 0x06008082 RID: 32898 RVA: 0x0030AA2C File Offset: 0x00308C2C
+	// (set) Token: 0x06008083 RID: 32899 RVA: 0x0030AA34 File Offset: 0x00308C34
 	public int QuestGiverID
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06007F92 RID: 32658 RVA: 0x0030626C File Offset: 0x0030446C
+	// Token: 0x06008084 RID: 32900 RVA: 0x0030AA40 File Offset: 0x00308C40
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -121,7 +121,7 @@ public class XUiC_QuestOfferWindow : XUiController
 		return true;
 	}
 
-	// Token: 0x06007F93 RID: 32659 RVA: 0x00306468 File Offset: 0x00304668
+	// Token: 0x06008085 RID: 32901 RVA: 0x0030AC3C File Offset: 0x00308E3C
 	public override void Init()
 	{
 		base.Init();
@@ -135,25 +135,33 @@ public class XUiC_QuestOfferWindow : XUiController
 		this.btnDecline_Background.Controller.OnHover += this.btnDecline_OnHover;
 	}
 
-	// Token: 0x06007F94 RID: 32660 RVA: 0x0008AB7B File Offset: 0x00088D7B
+	// Token: 0x06008086 RID: 32902 RVA: 0x0008B2BB File Offset: 0x000894BB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnAccept_OnHover(XUiController _sender, bool _isOver)
 	{
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06007F95 RID: 32661 RVA: 0x0008AB7B File Offset: 0x00088D7B
+	// Token: 0x06008087 RID: 32903 RVA: 0x0008B2BB File Offset: 0x000894BB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnDecline_OnHover(XUiController _sender, bool _isOver)
 	{
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06007F96 RID: 32662 RVA: 0x00306550 File Offset: 0x00304750
+	// Token: 0x06008088 RID: 32904 RVA: 0x0030AD24 File Offset: 0x00308F24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnAccept_OnPress(XUiController _sender, int _mouseButton)
 	{
 		Quest quest = this.Quest;
+		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
+		{
+			quest = this.Quest.Clone();
+		}
+		else if (quest.CurrentState != Quest.QuestState.InProgress)
+		{
+			quest.ResetQuest();
+		}
 		quest.QuestGiverID = this.QuestGiverID;
 		if (this.OfferType == XUiC_QuestOfferWindow.OfferTypes.Item)
 		{
@@ -180,7 +188,7 @@ public class XUiC_QuestOfferWindow : XUiController
 		entityPlayer.QuestJournal.AddQuest(quest, true);
 	}
 
-	// Token: 0x06007F97 RID: 32663 RVA: 0x00306650 File Offset: 0x00304850
+	// Token: 0x06008089 RID: 32905 RVA: 0x0030AE4C File Offset: 0x0030904C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnDecline_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -192,7 +200,7 @@ public class XUiC_QuestOfferWindow : XUiController
 		this.xui.playerUI.windowManager.Close(base.WindowGroup, false);
 	}
 
-	// Token: 0x06007F98 RID: 32664 RVA: 0x0008A091 File Offset: 0x00088291
+	// Token: 0x0600808A RID: 32906 RVA: 0x0008A73D File Offset: 0x0008893D
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -203,7 +211,7 @@ public class XUiC_QuestOfferWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007F99 RID: 32665 RVA: 0x003066B8 File Offset: 0x003048B8
+	// Token: 0x0600808B RID: 32907 RVA: 0x0030AEB4 File Offset: 0x003090B4
 	public static XUiC_QuestOfferWindow OpenQuestOfferWindow(XUi xui, Quest q, int listIndex = -1, XUiC_QuestOfferWindow.OfferTypes offerType = XUiC_QuestOfferWindow.OfferTypes.Item, int questGiverID = -1, Action<EntityNPC> onDenied = null)
 	{
 		bool flag = offerType == XUiC_QuestOfferWindow.OfferTypes.Item;
@@ -218,7 +226,7 @@ public class XUiC_QuestOfferWindow : XUiController
 		return childByType;
 	}
 
-	// Token: 0x06007F9A RID: 32666 RVA: 0x0030671C File Offset: 0x0030491C
+	// Token: 0x0600808C RID: 32908 RVA: 0x0030AF18 File Offset: 0x00309118
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -238,7 +246,7 @@ public class XUiC_QuestOfferWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007F9B RID: 32667 RVA: 0x003067FC File Offset: 0x003049FC
+	// Token: 0x0600808D RID: 32909 RVA: 0x0030AFF8 File Offset: 0x003091F8
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -260,11 +268,11 @@ public class XUiC_QuestOfferWindow : XUiController
 			if (this.questAccepted)
 			{
 				EntityTrader entityTrader = this.xui.Dialog.Respondent as EntityTrader;
-				if (entityTrader != null && entityTrader.activeQuests != null)
+				if (entityTrader != null && entityTrader.activeQuests != null && this.Quest.QuestClass.QuestType != "special")
 				{
 					entityTrader.activeQuests.Remove(this.Quest);
 				}
-				if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
+				if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer && this.Quest.QuestClass.QuestType != "special")
 				{
 					SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackageNPCQuestList>().Setup(this.QuestGiverID, this.xui.playerUI.entityPlayer.entityId, (int)this.Quest.QuestClass.DifficultyTier, (byte)this.listIndex), false);
 				}
@@ -290,48 +298,48 @@ public class XUiC_QuestOfferWindow : XUiController
 		}
 	}
 
-	// Token: 0x04005E68 RID: 24168
+	// Token: 0x04005F2F RID: 24367
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController btnAccept;
 
-	// Token: 0x04005E69 RID: 24169
+	// Token: 0x04005F30 RID: 24368
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController btnDecline;
 
-	// Token: 0x04005E6A RID: 24170
+	// Token: 0x04005F31 RID: 24369
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button btnAccept_Background;
 
-	// Token: 0x04005E6B RID: 24171
+	// Token: 0x04005F32 RID: 24370
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button btnDecline_Background;
 
-	// Token: 0x04005E6C RID: 24172
+	// Token: 0x04005F33 RID: 24371
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool questAccepted;
 
-	// Token: 0x04005E6D RID: 24173
+	// Token: 0x04005F34 RID: 24372
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Action<EntityNPC> OnDenied;
 
-	// Token: 0x04005E6E RID: 24174
+	// Token: 0x04005F35 RID: 24373
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Quest quest;
 
-	// Token: 0x04005E6F RID: 24175
+	// Token: 0x04005F36 RID: 24374
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int variation = -1;
 
-	// Token: 0x04005E70 RID: 24176
+	// Token: 0x04005F37 RID: 24375
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int listIndex = -1;
 
-	// Token: 0x02000FCF RID: 4047
+	// Token: 0x02000FE8 RID: 4072
 	public enum OfferTypes
 	{
-		// Token: 0x04005E74 RID: 24180
+		// Token: 0x04005F3B RID: 24379
 		Item,
-		// Token: 0x04005E75 RID: 24181
+		// Token: 0x04005F3C RID: 24380
 		Dialog
 	}
 }

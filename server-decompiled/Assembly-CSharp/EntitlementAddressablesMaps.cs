@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x0200117E RID: 4478
+// Token: 0x02001198 RID: 4504
 public static class EntitlementAddressablesMaps
 {
-	// Token: 0x040069A8 RID: 27048
+	// Token: 0x04006A77 RID: 27255
 	public static readonly StringSpanDictionary<EntitlementSetEnum> AddressablesStringMap = new StringSpanDictionary<EntitlementSetEnum>
 	{
 		{
@@ -70,6 +70,10 @@ public static class EntitlementAddressablesMaps
 		{
 			"DLC/SamuraiCosmetic".ToLowerInvariant(),
 			EntitlementSetEnum.SamuraiCosmetic
+		},
+		{
+			"DLC/HenpocalypseCosmetic".ToLowerInvariant(),
+			EntitlementSetEnum.HenpocalypseCosmetic
 		},
 		{
 			"TwitchDrops/PimpHatBlue".ToLowerInvariant(),
@@ -149,6 +153,6 @@ public static class EntitlementAddressablesMaps
 		}
 	};
 
-	// Token: 0x040069A9 RID: 27049
+	// Token: 0x04006A78 RID: 27256
 	public static readonly Dictionary<object, EntitlementSetEnum> AddressablesKeyMap = new Dictionary<object, EntitlementSetEnum>();
 }

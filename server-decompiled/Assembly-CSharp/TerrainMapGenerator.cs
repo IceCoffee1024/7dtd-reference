@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-// Token: 0x02000BAC RID: 2988
+// Token: 0x02000BBE RID: 3006
 public class TerrainMapGenerator
 {
-	// Token: 0x06005A57 RID: 23127 RVA: 0x0022C010 File Offset: 0x0022A210
+	// Token: 0x06005ADF RID: 23263 RVA: 0x0022ED78 File Offset: 0x0022CF78
 	public void GenerateTerrain(IChunkProvider _chunkProvider)
 	{
 		World world = GameManager.Instance.World;
@@ -117,7 +117,7 @@ public class TerrainMapGenerator
 		GCUtils.UnloadAndCollectStart();
 	}
 
-	// Token: 0x06005A58 RID: 23128 RVA: 0x0022C5DC File Offset: 0x0022A7DC
+	// Token: 0x06005AE0 RID: 23264 RVA: 0x0022F344 File Offset: 0x0022D544
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 calcNormal(int x, int z, int _xAdd1, int _zAdd1, int _xAdd2, int _zAdd2)
 	{
@@ -130,51 +130,51 @@ public class TerrainMapGenerator
 		return Vector3.Cross(vector, vector2).normalized;
 	}
 
-	// Token: 0x040045E5 RID: 17893
+	// Token: 0x04004681 RID: 18049
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int xs;
 
-	// Token: 0x040045E6 RID: 17894
+	// Token: 0x04004682 RID: 18050
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int zs;
 
-	// Token: 0x040045E7 RID: 17895
+	// Token: 0x04004683 RID: 18051
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int w = 1024;
 
-	// Token: 0x040045E8 RID: 17896
+	// Token: 0x04004684 RID: 18052
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int h = 1024;
 
-	// Token: 0x040045E9 RID: 17897
+	// Token: 0x04004685 RID: 18053
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color[] colArray = new Color[1048576];
 
-	// Token: 0x040045EA RID: 17898
+	// Token: 0x04004686 RID: 18054
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color[] normalArray = new Color[1048576];
 
-	// Token: 0x040045EB RID: 17899
+	// Token: 0x04004687 RID: 18055
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] heights = new int[1050625];
 
-	// Token: 0x040045EC RID: 17900
+	// Token: 0x04004688 RID: 18056
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] densitySub = new float[1050625];
 
-	// Token: 0x040045ED RID: 17901
+	// Token: 0x04004689 RID: 18057
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float[] biomeIntens = new float[1050625];
 
-	// Token: 0x040045EE RID: 17902
+	// Token: 0x0400468A RID: 18058
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockValue[] blockValues = new BlockValue[1050625];
 
-	// Token: 0x040045EF RID: 17903
+	// Token: 0x0400468B RID: 18059
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BiomeDefinition[] biomeDefs = new BiomeDefinition[1050625];
 
-	// Token: 0x040045F0 RID: 17904
+	// Token: 0x0400468C RID: 18060
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] subbiome = new int[1050625];
 }

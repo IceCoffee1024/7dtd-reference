@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020015E3 RID: 5603
+// Token: 0x020015FE RID: 5630
 [RequireComponent(typeof(vp_FPPlayerEventHandler))]
 public class vp_FPPlayerDamageHandler : vp_PlayerDamageHandler
 {
-	// Token: 0x1700144B RID: 5195
-	// (get) Token: 0x0600AF6E RID: 44910 RVA: 0x00417402 File Offset: 0x00415602
+	// Token: 0x17001484 RID: 5252
+	// (get) Token: 0x0600B06B RID: 45163 RVA: 0x0041C742 File Offset: 0x0041A942
 	public vp_FPPlayerEventHandler FPPlayer
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -20,8 +20,8 @@ public class vp_FPPlayerDamageHandler : vp_PlayerDamageHandler
 		}
 	}
 
-	// Token: 0x1700144C RID: 5196
-	// (get) Token: 0x0600AF6F RID: 44911 RVA: 0x00417429 File Offset: 0x00415629
+	// Token: 0x17001485 RID: 5253
+	// (get) Token: 0x0600B06C RID: 45164 RVA: 0x0041C769 File Offset: 0x0041A969
 	public vp_FPCamera FPCamera
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -35,8 +35,8 @@ public class vp_FPPlayerDamageHandler : vp_PlayerDamageHandler
 		}
 	}
 
-	// Token: 0x1700144D RID: 5197
-	// (get) Token: 0x0600AF70 RID: 44912 RVA: 0x00417450 File Offset: 0x00415650
+	// Token: 0x17001486 RID: 5254
+	// (get) Token: 0x0600B06D RID: 45165 RVA: 0x0041C790 File Offset: 0x0041A990
 	public CharacterController CharacterController
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -50,7 +50,7 @@ public class vp_FPPlayerDamageHandler : vp_PlayerDamageHandler
 		}
 	}
 
-	// Token: 0x0600AF71 RID: 44913 RVA: 0x0041747C File Offset: 0x0041567C
+	// Token: 0x0600B06E RID: 45166 RVA: 0x0041C7BC File Offset: 0x0041A9BC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnEnable()
 	{
@@ -61,7 +61,7 @@ public class vp_FPPlayerDamageHandler : vp_PlayerDamageHandler
 		this.RefreshColliders();
 	}
 
-	// Token: 0x0600AF72 RID: 44914 RVA: 0x0041749E File Offset: 0x0041569E
+	// Token: 0x0600B06F RID: 45167 RVA: 0x0041C7DE File Offset: 0x0041A9DE
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnDisable()
 	{
@@ -71,7 +71,7 @@ public class vp_FPPlayerDamageHandler : vp_PlayerDamageHandler
 		}
 	}
 
-	// Token: 0x0600AF73 RID: 44915 RVA: 0x004174BA File Offset: 0x004156BA
+	// Token: 0x0600B070 RID: 45168 RVA: 0x0041C7FA File Offset: 0x0041A9FA
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Update()
 	{
@@ -81,7 +81,7 @@ public class vp_FPPlayerDamageHandler : vp_PlayerDamageHandler
 		}
 	}
 
-	// Token: 0x0600AF74 RID: 44916 RVA: 0x004174EC File Offset: 0x004156EC
+	// Token: 0x0600B071 RID: 45169 RVA: 0x0041C82C File Offset: 0x0041AA2C
 	public override void Damage(float damage)
 	{
 		if (!base.enabled)
@@ -97,7 +97,7 @@ public class vp_FPPlayerDamageHandler : vp_PlayerDamageHandler
 		this.FPPlayer.HeadImpact.Send((global::UnityEngine.Random.value < 0.5f) ? (damage * this.CameraShakeFactor) : (-(damage * this.CameraShakeFactor)));
 	}
 
-	// Token: 0x0600AF75 RID: 44917 RVA: 0x00417568 File Offset: 0x00415768
+	// Token: 0x0600B072 RID: 45170 RVA: 0x0041C8A8 File Offset: 0x0041AAA8
 	public override void Damage(vp_DamageInfo damageInfo)
 	{
 		if (!base.enabled)
@@ -118,7 +118,7 @@ public class vp_FPPlayerDamageHandler : vp_PlayerDamageHandler
 		}
 	}
 
-	// Token: 0x0600AF76 RID: 44918 RVA: 0x0041766B File Offset: 0x0041586B
+	// Token: 0x0600B073 RID: 45171 RVA: 0x0041C9AB File Offset: 0x0041ABAB
 	public override void Die()
 	{
 		base.Die();
@@ -129,7 +129,7 @@ public class vp_FPPlayerDamageHandler : vp_PlayerDamageHandler
 		this.FPPlayer.InputAllowGameplay.Set(false);
 	}
 
-	// Token: 0x0600AF77 RID: 44919 RVA: 0x004176A0 File Offset: 0x004158A0
+	// Token: 0x0600B074 RID: 45172 RVA: 0x0041C9E0 File Offset: 0x0041ABE0
 	public virtual void RefreshColliders()
 	{
 		if (this.CharacterController != null && this.CharacterController.enabled)
@@ -144,7 +144,7 @@ public class vp_FPPlayerDamageHandler : vp_PlayerDamageHandler
 		}
 	}
 
-	// Token: 0x0600AF78 RID: 44920 RVA: 0x0041771C File Offset: 0x0041591C
+	// Token: 0x0600B075 RID: 45173 RVA: 0x0041CA5C File Offset: 0x0041AC5C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Reset()
 	{
@@ -158,44 +158,44 @@ public class vp_FPPlayerDamageHandler : vp_PlayerDamageHandler
 		this.RefreshColliders();
 	}
 
-	// Token: 0x0600AF79 RID: 44921 RVA: 0x00417769 File Offset: 0x00415969
+	// Token: 0x0600B076 RID: 45174 RVA: 0x0041CAA9 File Offset: 0x0041ACA9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnStart_Crouch()
 	{
 		this.RefreshColliders();
 	}
 
-	// Token: 0x0600AF7A RID: 44922 RVA: 0x00417769 File Offset: 0x00415969
+	// Token: 0x0600B077 RID: 45175 RVA: 0x0041CAA9 File Offset: 0x0041ACA9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnStop_Crouch()
 	{
 		this.RefreshColliders();
 	}
 
-	// Token: 0x040082F9 RID: 33529
+	// Token: 0x040083D2 RID: 33746
 	public float CameraShakeFactor = 0.02f;
 
-	// Token: 0x040082FA RID: 33530
+	// Token: 0x040083D3 RID: 33747
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_DamageAngle;
 
-	// Token: 0x040082FB RID: 33531
+	// Token: 0x040083D4 RID: 33748
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float m_DamageAngleFactor = 1f;
 
-	// Token: 0x040082FC RID: 33532
+	// Token: 0x040083D5 RID: 33749
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_FPPlayerEventHandler m_FPPlayer;
 
-	// Token: 0x040082FD RID: 33533
+	// Token: 0x040083D6 RID: 33750
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_FPCamera m_FPCamera;
 
-	// Token: 0x040082FE RID: 33534
+	// Token: 0x040083D7 RID: 33751
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public CharacterController m_CharacterController;

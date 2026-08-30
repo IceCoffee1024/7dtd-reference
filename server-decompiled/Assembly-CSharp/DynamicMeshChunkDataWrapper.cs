@@ -2,17 +2,17 @@
 using System.Diagnostics;
 using System.Threading;
 
-// Token: 0x0200035F RID: 863
+// Token: 0x02000363 RID: 867
 [DebuggerDisplay("{X},{Z} {StateInfo}")]
 public class DynamicMeshChunkDataWrapper
 {
-	// Token: 0x0600194D RID: 6477 RVA: 0x0008EB40 File Offset: 0x0008CD40
+	// Token: 0x0600196A RID: 6506 RVA: 0x0008F280 File Offset: 0x0008D480
 	public void Reset()
 	{
 		this.StateInfo = DynamicMeshStates.None;
 	}
 
-	// Token: 0x0600194E RID: 6478 RVA: 0x0008EB4C File Offset: 0x0008CD4C
+	// Token: 0x0600196B RID: 6507 RVA: 0x0008F28C File Offset: 0x0008D48C
 	public bool IsReadyForRelease()
 	{
 		if (this.StateInfo.HasFlag(DynamicMeshStates.SaveRequired))
@@ -34,25 +34,25 @@ public class DynamicMeshChunkDataWrapper
 		return true;
 	}
 
-	// Token: 0x0600194F RID: 6479 RVA: 0x0008EC02 File Offset: 0x0008CE02
+	// Token: 0x0600196C RID: 6508 RVA: 0x0008F342 File Offset: 0x0008D542
 	public string Path()
 	{
 		return DynamicMeshFile.MeshLocation + string.Format("{0}.update", WorldChunkCache.MakeChunkKey(World.toChunkXZ(this.X), World.toChunkXZ(this.Z)));
 	}
 
-	// Token: 0x06001950 RID: 6480 RVA: 0x0008EC38 File Offset: 0x0008CE38
+	// Token: 0x0600196D RID: 6509 RVA: 0x0008F378 File Offset: 0x0008D578
 	public string RawPath()
 	{
 		return DynamicMeshFile.MeshLocation + string.Format("{0}.raw", WorldChunkCache.MakeChunkKey(World.toChunkXZ(this.X), World.toChunkXZ(this.Z)));
 	}
 
-	// Token: 0x06001951 RID: 6481 RVA: 0x0008EC6E File Offset: 0x0008CE6E
+	// Token: 0x0600196E RID: 6510 RVA: 0x0008F3AE File Offset: 0x0008D5AE
 	public bool Exists()
 	{
 		return SdFile.Exists(this.Path());
 	}
 
-	// Token: 0x06001952 RID: 6482 RVA: 0x0008EC7C File Offset: 0x0008CE7C
+	// Token: 0x0600196F RID: 6511 RVA: 0x0008F3BC File Offset: 0x0008D5BC
 	public bool GetLock(string debug)
 	{
 		int num = 0;
@@ -77,13 +77,13 @@ public class DynamicMeshChunkDataWrapper
 		return true;
 	}
 
-	// Token: 0x06001953 RID: 6483 RVA: 0x0008ED3C File Offset: 0x0008CF3C
+	// Token: 0x06001970 RID: 6512 RVA: 0x0008F47C File Offset: 0x0008D67C
 	public bool ReleaseLock()
 	{
 		return this.TryExit("releaseLock");
 	}
 
-	// Token: 0x06001954 RID: 6484 RVA: 0x0008ED4C File Offset: 0x0008CF4C
+	// Token: 0x06001971 RID: 6513 RVA: 0x0008F48C File Offset: 0x0008D68C
 	public bool TryTakeLock(string debug)
 	{
 		bool flag = false;
@@ -119,13 +119,13 @@ public class DynamicMeshChunkDataWrapper
 		return flag;
 	}
 
-	// Token: 0x06001955 RID: 6485 RVA: 0x0008EE02 File Offset: 0x0008D002
+	// Token: 0x06001972 RID: 6514 RVA: 0x0008F542 File Offset: 0x0008D742
 	public bool ThreadHasLock()
 	{
 		return Monitor.IsEntered(this._lock);
 	}
 
-	// Token: 0x06001956 RID: 6486 RVA: 0x0008EE0F File Offset: 0x0008D00F
+	// Token: 0x06001973 RID: 6515 RVA: 0x0008F54F File Offset: 0x0008D74F
 	public bool TryGetData(out DynamicMeshChunkData data, string debug)
 	{
 		if (this.TryTakeLock(debug))
@@ -137,7 +137,7 @@ public class DynamicMeshChunkDataWrapper
 		return false;
 	}
 
-	// Token: 0x06001957 RID: 6487 RVA: 0x0008EE28 File Offset: 0x0008D028
+	// Token: 0x06001974 RID: 6516 RVA: 0x0008F568 File Offset: 0x0008D768
 	public bool TryExit(string debug)
 	{
 		if (!Monitor.IsEntered(this._lock))
@@ -156,19 +156,19 @@ public class DynamicMeshChunkDataWrapper
 		return true;
 	}
 
-	// Token: 0x06001958 RID: 6488 RVA: 0x0008EE90 File Offset: 0x0008D090
+	// Token: 0x06001975 RID: 6517 RVA: 0x0008F5D0 File Offset: 0x0008D7D0
 	public bool IsAvailableToLoad()
 	{
 		return this.Data != null && !this.StateInfo.HasFlag(DynamicMeshStates.MarkedForDelete) && !this.StateInfo.HasFlag(DynamicMeshStates.ThreadUpdating) && !this.StateInfo.HasFlag(DynamicMeshStates.LoadRequired);
 	}
 
-	// Token: 0x06001959 RID: 6489 RVA: 0x0008EEF1 File Offset: 0x0008D0F1
+	// Token: 0x06001976 RID: 6518 RVA: 0x0008F631 File Offset: 0x0008D831
 	public string ToDebugLocation()
 	{
 		return string.Format("{0},{1}", this.X, this.Z);
 	}
 
-	// Token: 0x0600195A RID: 6490 RVA: 0x0008EF13 File Offset: 0x0008D113
+	// Token: 0x06001977 RID: 6519 RVA: 0x0008F653 File Offset: 0x0008D853
 	public void ClearUnloadMarks()
 	{
 		this.StateInfo &= ~DynamicMeshStates.UnloadMark1;
@@ -176,7 +176,7 @@ public class DynamicMeshChunkDataWrapper
 		this.StateInfo &= ~DynamicMeshStates.UnloadMark3;
 	}
 
-	// Token: 0x0600195B RID: 6491 RVA: 0x0008EF42 File Offset: 0x0008D142
+	// Token: 0x06001978 RID: 6520 RVA: 0x0008F682 File Offset: 0x0008D882
 	public static DynamicMeshChunkDataWrapper Create(long key)
 	{
 		return new DynamicMeshChunkDataWrapper
@@ -187,25 +187,25 @@ public class DynamicMeshChunkDataWrapper
 		};
 	}
 
-	// Token: 0x04001005 RID: 4101
+	// Token: 0x0400101A RID: 4122
 	public DynamicMeshChunkData Data;
 
-	// Token: 0x04001006 RID: 4102
+	// Token: 0x0400101B RID: 4123
 	[PublicizedFrom(EAccessModifier.Private)]
 	public object _lock = new object();
 
-	// Token: 0x04001007 RID: 4103
+	// Token: 0x0400101C RID: 4124
 	public string lastLock;
 
-	// Token: 0x04001008 RID: 4104
+	// Token: 0x0400101D RID: 4125
 	public DynamicMeshStates StateInfo;
 
-	// Token: 0x04001009 RID: 4105
+	// Token: 0x0400101E RID: 4126
 	public int X;
 
-	// Token: 0x0400100A RID: 4106
+	// Token: 0x0400101F RID: 4127
 	public int Z;
 
-	// Token: 0x0400100B RID: 4107
+	// Token: 0x04001020 RID: 4128
 	public long Key;
 }

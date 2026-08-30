@@ -5,11 +5,11 @@ using Unity.Collections.LowLevel.Unsafe;
 using Unity.Jobs;
 using Unity.Mathematics;
 
-// Token: 0x02000CBC RID: 3260
+// Token: 0x02000CCE RID: 3278
 [BurstCompile(CompileSynchronously = true)]
 public struct WaterSimulationApplyFlows : IJobParallelFor
 {
-	// Token: 0x06006420 RID: 25632 RVA: 0x00272A0C File Offset: 0x00270C0C
+	// Token: 0x060064AC RID: 25772 RVA: 0x00275908 File Offset: 0x00273B08
 	public unsafe void Execute(int chunkIndex)
 	{
 		this.neighborCache = WaterNeighborCacheNative.InitializeCache(this.waterDataHandles);
@@ -62,7 +62,7 @@ public struct WaterSimulationApplyFlows : IJobParallelFor
 		this.waterStats[chunkIndex] = this.stats;
 	}
 
-	// Token: 0x06006421 RID: 25633 RVA: 0x00272BB0 File Offset: 0x00270DB0
+	// Token: 0x060064AD RID: 25773 RVA: 0x00275AAC File Offset: 0x00273CAC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WakeNeighbor(int _yOffset)
 	{
@@ -75,7 +75,7 @@ public struct WaterSimulationApplyFlows : IJobParallelFor
 		this.stats.NumVoxelsWokeUp = this.stats.NumVoxelsWokeUp + 1;
 	}
 
-	// Token: 0x06006422 RID: 25634 RVA: 0x00272C10 File Offset: 0x00270E10
+	// Token: 0x060064AE RID: 25774 RVA: 0x00275B0C File Offset: 0x00273D0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WakeNeighbor(int2 _xzOffset)
 	{
@@ -99,26 +99,26 @@ public struct WaterSimulationApplyFlows : IJobParallelFor
 		}
 	}
 
-	// Token: 0x04004DA7 RID: 19879
+	// Token: 0x04004E45 RID: 20037
 	public NativeArray<ChunkKey> processingChunks;
 
-	// Token: 0x04004DA8 RID: 19880
+	// Token: 0x04004E46 RID: 20038
 	public NativeList<ChunkKey>.ParallelWriter nonFlowingChunks;
 
-	// Token: 0x04004DA9 RID: 19881
+	// Token: 0x04004E47 RID: 20039
 	public UnsafeParallelHashSet<ChunkKey>.ParallelWriter activeChunkSet;
 
-	// Token: 0x04004DAA RID: 19882
+	// Token: 0x04004E48 RID: 20040
 	public UnsafeParallelHashMap<ChunkKey, WaterDataHandle> waterDataHandles;
 
-	// Token: 0x04004DAB RID: 19883
+	// Token: 0x04004E49 RID: 20041
 	public NativeArray<WaterStats> waterStats;
 
-	// Token: 0x04004DAC RID: 19884
+	// Token: 0x04004E4A RID: 20042
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WaterNeighborCacheNative neighborCache;
 
-	// Token: 0x04004DAD RID: 19885
+	// Token: 0x04004E4B RID: 20043
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WaterStats stats;
 }

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02001056 RID: 4182
+// Token: 0x0200106F RID: 4207
 [Preserve]
 public class XUiC_SpawnEntitiesList : XUiC_List<XUiC_SpawnEntitiesList.SpawnEntityEntry>
 {
-	// Token: 0x060084D4 RID: 34004 RVA: 0x0032BE8C File Offset: 0x0032A08C
+	// Token: 0x060085C6 RID: 34246 RVA: 0x003306B4 File Offset: 0x0032E8B4
 	public override void RebuildList(bool _resetFilter = false)
 	{
 		this.allEntries.Clear();
@@ -21,7 +21,7 @@ public class XUiC_SpawnEntitiesList : XUiC_List<XUiC_SpawnEntitiesList.SpawnEnti
 		base.RebuildList(_resetFilter);
 	}
 
-	// Token: 0x060084D5 RID: 34005 RVA: 0x0032BF2C File Offset: 0x0032A12C
+	// Token: 0x060085C7 RID: 34247 RVA: 0x00330754 File Offset: 0x0032E954
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -31,11 +31,11 @@ public class XUiC_SpawnEntitiesList : XUiC_List<XUiC_SpawnEntitiesList.SpawnEnti
 		}
 	}
 
-	// Token: 0x02001057 RID: 4183
+	// Token: 0x02001070 RID: 4208
 	[Preserve]
 	public class SpawnEntityEntry : XUiListEntry<XUiC_SpawnEntitiesList.SpawnEntityEntry>
 	{
-		// Token: 0x060084D7 RID: 34007 RVA: 0x0032BF50 File Offset: 0x0032A150
+		// Token: 0x060085C9 RID: 34249 RVA: 0x00330778 File Offset: 0x0032E978
 		public SpawnEntityEntry(string _name, int _key)
 		{
 			this.name = _name;
@@ -43,7 +43,7 @@ public class XUiC_SpawnEntitiesList : XUiC_List<XUiC_SpawnEntitiesList.SpawnEnti
 			this.camelCase = this.name.SeparateCamelCase();
 		}
 
-		// Token: 0x060084D8 RID: 34008 RVA: 0x0032BF77 File Offset: 0x0032A177
+		// Token: 0x060085CA RID: 34250 RVA: 0x0033079F File Offset: 0x0032E99F
 		public override int CompareTo(XUiC_SpawnEntitiesList.SpawnEntityEntry _otherEntry)
 		{
 			if (_otherEntry == null)
@@ -53,28 +53,28 @@ public class XUiC_SpawnEntitiesList : XUiC_List<XUiC_SpawnEntitiesList.SpawnEnti
 			return string.Compare(this.name, _otherEntry.name, StringComparison.OrdinalIgnoreCase);
 		}
 
-		// Token: 0x060084D9 RID: 34009 RVA: 0x0032BF90 File Offset: 0x0032A190
+		// Token: 0x060085CB RID: 34251 RVA: 0x003307B8 File Offset: 0x0032E9B8
 		public override bool MatchesSearch(string _searchString)
 		{
 			return this.name.IndexOf(_searchString, StringComparison.OrdinalIgnoreCase) >= 0;
 		}
 
-		// Token: 0x040062AA RID: 25258
+		// Token: 0x04006371 RID: 25457
 		public readonly string name;
 
-		// Token: 0x040062AB RID: 25259
+		// Token: 0x04006372 RID: 25458
 		public readonly int key;
 
-		// Token: 0x040062AC RID: 25260
+		// Token: 0x04006373 RID: 25459
 		public readonly string camelCase;
 	}
 
-	// Token: 0x02001058 RID: 4184
+	// Token: 0x02001071 RID: 4209
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class EntryController : XUiC_List<XUiC_SpawnEntitiesList.SpawnEntityEntry>.XUiC_ListEntry
 	{
-		// Token: 0x060084DA RID: 34010 RVA: 0x0032BFA5 File Offset: 0x0032A1A5
+		// Token: 0x060085CC RID: 34252 RVA: 0x003307CD File Offset: 0x0032E9CD
 		[XuiXmlBinding("name")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingName()

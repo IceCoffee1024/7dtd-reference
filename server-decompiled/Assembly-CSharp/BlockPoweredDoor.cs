@@ -3,17 +3,17 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200013B RID: 315
+// Token: 0x0200013C RID: 316
 [Preserve]
 public class BlockPoweredDoor : BlockPowered
 {
-	// Token: 0x0600088C RID: 2188 RVA: 0x0003C9D4 File Offset: 0x0003ABD4
+	// Token: 0x06000896 RID: 2198 RVA: 0x0003CC34 File Offset: 0x0003AE34
 	public BlockPoweredDoor()
 	{
 		this.HasTileEntity = true;
 	}
 
-	// Token: 0x0600088D RID: 2189 RVA: 0x0003CA14 File Offset: 0x0003AC14
+	// Token: 0x06000897 RID: 2199 RVA: 0x0003CC74 File Offset: 0x0003AE74
 	public override void Init()
 	{
 		if (base.Properties.GetValue(Block.PropMultiBlockDim) == null)
@@ -31,13 +31,13 @@ public class BlockPoweredDoor : BlockPowered
 		}
 	}
 
-	// Token: 0x0600088E RID: 2190 RVA: 0x0003CAB7 File Offset: 0x0003ACB7
+	// Token: 0x06000898 RID: 2200 RVA: 0x0003CD17 File Offset: 0x0003AF17
 	public static bool IsDoorOpen(byte _metadata)
 	{
 		return (_metadata & 1) > 0;
 	}
 
-	// Token: 0x0600088F RID: 2191 RVA: 0x0003CAC0 File Offset: 0x0003ACC0
+	// Token: 0x06000899 RID: 2201 RVA: 0x0003CD20 File Offset: 0x0003AF20
 	public override bool IsMovementBlocked(IBlockAccess _world, Vector3i _blockPos, BlockValue _blockValue, BlockFace _face)
 	{
 		if (!this.isMultiBlock || !_blockValue.ischild)
@@ -64,7 +64,7 @@ public class BlockPoweredDoor : BlockPowered
 		return this.IsMovementBlocked(_world, parentPos, block, _face);
 	}
 
-	// Token: 0x06000890 RID: 2192 RVA: 0x0003CB6C File Offset: 0x0003AD6C
+	// Token: 0x0600089A RID: 2202 RVA: 0x0003CDCC File Offset: 0x0003AFCC
 	public override bool IsSeeThrough(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		if (!this.isMultiBlock || !_blockValue.ischild)
@@ -91,13 +91,13 @@ public class BlockPoweredDoor : BlockPowered
 		return this.IsSeeThrough(_world, parentPos, block);
 	}
 
-	// Token: 0x06000891 RID: 2193 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x0600089B RID: 2203 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool HasBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		return true;
 	}
 
-	// Token: 0x06000892 RID: 2194 RVA: 0x0003CC10 File Offset: 0x0003AE10
+	// Token: 0x0600089C RID: 2204 RVA: 0x0003CE70 File Offset: 0x0003B070
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		bool flag = _world.IsMyLandProtectedBlock(_blockPos, _world.GetGameManager().GetPersistentLocalPlayer());
@@ -116,7 +116,7 @@ public class BlockPoweredDoor : BlockPowered
 		return this.cmds;
 	}
 
-	// Token: 0x06000893 RID: 2195 RVA: 0x0003CCA4 File Offset: 0x0003AEA4
+	// Token: 0x0600089D RID: 2205 RVA: 0x0003CF04 File Offset: 0x0003B104
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_blockValue.ischild)
@@ -133,7 +133,7 @@ public class BlockPoweredDoor : BlockPowered
 		return false;
 	}
 
-	// Token: 0x06000894 RID: 2196 RVA: 0x0003CD08 File Offset: 0x0003AF08
+	// Token: 0x0600089E RID: 2206 RVA: 0x0003CF68 File Offset: 0x0003B168
 	public override void OnBlockValueChanged(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		base.OnBlockValueChanged(_world, _chunk, _blockPos, _oldBlockValue, _newBlockValue);
@@ -149,7 +149,7 @@ public class BlockPoweredDoor : BlockPowered
 		}
 	}
 
-	// Token: 0x06000895 RID: 2197 RVA: 0x0003CD90 File Offset: 0x0003AF90
+	// Token: 0x0600089F RID: 2207 RVA: 0x0003CFF0 File Offset: 0x0003B1F0
 	public override bool OnBlockActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		bool flag = !BlockPoweredDoor.IsDoorOpen(_blockValue.meta);
@@ -161,7 +161,7 @@ public class BlockPoweredDoor : BlockPowered
 		return true;
 	}
 
-	// Token: 0x06000896 RID: 2198 RVA: 0x0003CDF4 File Offset: 0x0003AFF4
+	// Token: 0x060008A0 RID: 2208 RVA: 0x0003D054 File Offset: 0x0003B254
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateAnimState(WorldBase _world, Vector3i _blockPos, bool _bOpen)
 	{
@@ -183,7 +183,7 @@ public class BlockPoweredDoor : BlockPowered
 		this.updateAnimState(blockEntity, _bOpen);
 	}
 
-	// Token: 0x06000897 RID: 2199 RVA: 0x0003CE54 File Offset: 0x0003B054
+	// Token: 0x060008A1 RID: 2209 RVA: 0x0003D0B4 File Offset: 0x0003B2B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateAnimState(BlockEntityData _ebcd, bool _bOpen)
 	{
@@ -203,7 +203,7 @@ public class BlockPoweredDoor : BlockPowered
 		}
 	}
 
-	// Token: 0x06000898 RID: 2200 RVA: 0x0003CEAC File Offset: 0x0003B0AC
+	// Token: 0x060008A2 RID: 2210 RVA: 0x0003D10C File Offset: 0x0003B30C
 	public override bool ActivateBlock(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool isOn, bool isPowered)
 	{
 		byte meta = _blockValue.meta;
@@ -224,7 +224,7 @@ public class BlockPoweredDoor : BlockPowered
 		return true;
 	}
 
-	// Token: 0x06000899 RID: 2201 RVA: 0x0003CF50 File Offset: 0x0003B150
+	// Token: 0x060008A3 RID: 2211 RVA: 0x0003D1B0 File Offset: 0x0003B3B0
 	public override TileEntityPowered CreateTileEntity(Chunk chunk)
 	{
 		PowerItem.PowerItemTypes powerItemTypes = PowerItem.PowerItemTypes.Consumer;
@@ -234,7 +234,7 @@ public class BlockPoweredDoor : BlockPowered
 		};
 	}
 
-	// Token: 0x0600089A RID: 2202 RVA: 0x0003CF6C File Offset: 0x0003B16C
+	// Token: 0x060008A4 RID: 2212 RVA: 0x0003D1CC File Offset: 0x0003B3CC
 	public override void ForceAnimationState(BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		if (_ebcd != null && _ebcd.bHasTransform)
@@ -255,7 +255,7 @@ public class BlockPoweredDoor : BlockPowered
 		}
 	}
 
-	// Token: 0x0600089B RID: 2203 RVA: 0x0003CFE8 File Offset: 0x0003B1E8
+	// Token: 0x060008A5 RID: 2213 RVA: 0x0003D248 File Offset: 0x0003B448
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void updateOpenCloseState(bool _bOpen, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool _bOnlyLocal)
 	{
@@ -273,7 +273,7 @@ public class BlockPoweredDoor : BlockPowered
 		chunkCache.SetBlockRaw(_blockPos, _blockValue);
 	}
 
-	// Token: 0x0600089C RID: 2204 RVA: 0x0003D036 File Offset: 0x0003B236
+	// Token: 0x060008A6 RID: 2214 RVA: 0x0003D296 File Offset: 0x0003B496
 	public override void OnBlockAdded(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(_world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -284,19 +284,19 @@ public class BlockPoweredDoor : BlockPowered
 		this.updateOpenCloseState(BlockPoweredDoor.IsDoorOpen(_blockValue.meta), _world, _blockPos, _blockValue, true);
 	}
 
-	// Token: 0x0600089D RID: 2205 RVA: 0x0003D066 File Offset: 0x0003B266
+	// Token: 0x060008A7 RID: 2215 RVA: 0x0003D2C6 File Offset: 0x0003B4C6
 	public override float GetStepHeight(IBlockAccess world, Vector3i blockPos, BlockValue blockDef, BlockFace stepFace)
 	{
 		return 0f;
 	}
 
-	// Token: 0x0600089E RID: 2206 RVA: 0x0003D070 File Offset: 0x0003B270
+	// Token: 0x060008A8 RID: 2216 RVA: 0x0003D2D0 File Offset: 0x0003B4D0
 	public bool IsOpen(IBlockAccess _blockAccess, int _x, int _y, int _z)
 	{
 		return BlockPoweredDoor.IsDoorOpen(_blockAccess.GetBlock(_x, _y, _z).meta);
 	}
 
-	// Token: 0x0600089F RID: 2207 RVA: 0x0003D094 File Offset: 0x0003B294
+	// Token: 0x060008A9 RID: 2217 RVA: 0x0003D2F4 File Offset: 0x0003B4F4
 	public override void RenderDecorations(Vector3i _worldPos, BlockValue _blockValue, Vector3 _drawPos, Vector3[] _vertices, LightingAround _lightingAround, TextureFullArray _textureFullArray, VoxelMesh[] _meshes, INeighborBlockCache _nBlocks)
 	{
 		if (!(this.shape is BlockShapeModelEntity) || (_blockValue.meta & 2) == 0)
@@ -305,19 +305,19 @@ public class BlockPoweredDoor : BlockPowered
 		}
 	}
 
-	// Token: 0x0400097C RID: 2428
+	// Token: 0x0400097E RID: 2430
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string openSound;
 
-	// Token: 0x0400097D RID: 2429
+	// Token: 0x0400097F RID: 2431
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string closeSound;
 
-	// Token: 0x0400097E RID: 2430
+	// Token: 0x04000980 RID: 2432
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockEntityData ebcd;
 
-	// Token: 0x0400097F RID: 2431
+	// Token: 0x04000981 RID: 2433
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new BlockActivationCommand[] cmds = new BlockActivationCommand[]
 	{

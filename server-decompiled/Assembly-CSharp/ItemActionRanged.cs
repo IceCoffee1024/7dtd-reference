@@ -6,35 +6,35 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005BF RID: 1471
+// Token: 0x020005C4 RID: 1476
 [Preserve]
 public class ItemActionRanged : ItemActionAttack
 {
-	// Token: 0x170004FE RID: 1278
-	// (get) Token: 0x06002FC3 RID: 12227 RVA: 0x00132A59 File Offset: 0x00130C59
-	// (set) Token: 0x06002FC4 RID: 12228 RVA: 0x00132A61 File Offset: 0x00130C61
+	// Token: 0x17000504 RID: 1284
+	// (get) Token: 0x06002FF1 RID: 12273 RVA: 0x00133AC9 File Offset: 0x00131CC9
+	// (set) Token: 0x06002FF2 RID: 12274 RVA: 0x00133AD1 File Offset: 0x00131CD1
 	public IntRange aiBurstShot
 	{
 		get; [PublicizedFrom(EAccessModifier.Protected)]
 		set;
 	}
 
-	// Token: 0x170004FF RID: 1279
-	// (get) Token: 0x06002FC5 RID: 12229 RVA: 0x00132A6A File Offset: 0x00130C6A
-	// (set) Token: 0x06002FC6 RID: 12230 RVA: 0x00132A72 File Offset: 0x00130C72
+	// Token: 0x17000505 RID: 1285
+	// (get) Token: 0x06002FF3 RID: 12275 RVA: 0x00133ADA File Offset: 0x00131CDA
+	// (set) Token: 0x06002FF4 RID: 12276 RVA: 0x00133AE2 File Offset: 0x00131CE2
 	public FloatRange aiBurstDelay
 	{
 		get; [PublicizedFrom(EAccessModifier.Protected)]
 		set;
 	}
 
-	// Token: 0x06002FC8 RID: 12232 RVA: 0x00132AA0 File Offset: 0x00130CA0
+	// Token: 0x06002FF6 RID: 12278 RVA: 0x00133B10 File Offset: 0x00131D10
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionRanged.ItemActionDataRanged(_invData, _indexInEntityOfAction);
 	}
 
-	// Token: 0x06002FC9 RID: 12233 RVA: 0x00132AAC File Offset: 0x00130CAC
+	// Token: 0x06002FF7 RID: 12279 RVA: 0x00133B1C File Offset: 0x00131D1C
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -84,20 +84,20 @@ public class ItemActionRanged : ItemActionAttack
 		this.aiBurstDelay = _props.TryParseRange("aiBurstDelay", new FloatRange(1f, 2f));
 	}
 
-	// Token: 0x06002FCA RID: 12234 RVA: 0x00132C66 File Offset: 0x00130E66
+	// Token: 0x06002FF8 RID: 12280 RVA: 0x00133CD6 File Offset: 0x00131ED6
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool canShowOverlay(ItemActionData actionData)
 	{
 		return this.bSupportHarvesting;
 	}
 
-	// Token: 0x06002FCB RID: 12235 RVA: 0x00132C6E File Offset: 0x00130E6E
+	// Token: 0x06002FF9 RID: 12281 RVA: 0x00133CDE File Offset: 0x00131EDE
 	public bool IsSingleMagazineUsage()
 	{
 		return this.AmmoIsPerMagazine;
 	}
 
-	// Token: 0x06002FCC RID: 12236 RVA: 0x00132C78 File Offset: 0x00130E78
+	// Token: 0x06002FFA RID: 12282 RVA: 0x00133CE8 File Offset: 0x00131EE8
 	public override ItemClass.EnumCrosshairType GetCrosshairType(ItemActionData _actionData)
 	{
 		EntityPlayerLocal entityPlayerLocal = _actionData.invData.holdingEntity as EntityPlayerLocal;
@@ -123,13 +123,13 @@ public class ItemActionRanged : ItemActionAttack
 		}
 	}
 
-	// Token: 0x06002FCD RID: 12237 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002FFB RID: 12283 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override RenderCubeType GetFocusType(ItemActionData _actionData)
 	{
 		return RenderCubeType.None;
 	}
 
-	// Token: 0x06002FCE RID: 12238 RVA: 0x00132CC4 File Offset: 0x00130EC4
+	// Token: 0x06002FFC RID: 12284 RVA: 0x00133D34 File Offset: 0x00131F34
 	public override void OnModificationsChanged(ItemActionData _data)
 	{
 		ItemActionRanged.ItemActionDataRanged itemActionDataRanged = _data as ItemActionRanged.ItemActionDataRanged;
@@ -227,7 +227,7 @@ public class ItemActionRanged : ItemActionAttack
 		}
 	}
 
-	// Token: 0x06002FCF RID: 12239 RVA: 0x00133100 File Offset: 0x00131300
+	// Token: 0x06002FFD RID: 12285 RVA: 0x00134170 File Offset: 0x00132370
 	public override void StartHolding(ItemActionData _data)
 	{
 		base.StartHolding(_data);
@@ -238,7 +238,7 @@ public class ItemActionRanged : ItemActionAttack
 		}
 	}
 
-	// Token: 0x06002FD0 RID: 12240 RVA: 0x00133158 File Offset: 0x00131358
+	// Token: 0x06002FFE RID: 12286 RVA: 0x001341C8 File Offset: 0x001323C8
 	public override void StopHolding(ItemActionData _data)
 	{
 		base.StopHolding(_data);
@@ -263,7 +263,7 @@ public class ItemActionRanged : ItemActionAttack
 		}
 	}
 
-	// Token: 0x06002FD1 RID: 12241 RVA: 0x00133228 File Offset: 0x00131428
+	// Token: 0x06002FFF RID: 12287 RVA: 0x00134298 File Offset: 0x00132498
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void stopParticles(Transform t)
 	{
@@ -277,7 +277,7 @@ public class ItemActionRanged : ItemActionAttack
 		}
 	}
 
-	// Token: 0x06002FD2 RID: 12242 RVA: 0x0013325C File Offset: 0x0013145C
+	// Token: 0x06003000 RID: 12288 RVA: 0x001342CC File Offset: 0x001324CC
 	public override bool IsActionRunning(ItemActionData _actionData)
 	{
 		ItemActionRanged.ItemActionDataRanged itemActionDataRanged = (ItemActionRanged.ItemActionDataRanged)_actionData;
@@ -289,7 +289,7 @@ public class ItemActionRanged : ItemActionAttack
 		return (!this.rapidTrigger || !itemActionDataRanged.bReleased || num <= 0.25f) && num < itemActionDataRanged.Delay;
 	}
 
-	// Token: 0x06002FD3 RID: 12243 RVA: 0x001332B0 File Offset: 0x001314B0
+	// Token: 0x06003001 RID: 12289 RVA: 0x00134320 File Offset: 0x00132520
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void removeCurrentlyLoadedAmmunition(ItemValue _gun, ItemValue _ammo, EntityAlive _entity)
 	{
@@ -325,7 +325,7 @@ public class ItemActionRanged : ItemActionAttack
 		_entity.inventory.CallOnToolbeltChangedInternal();
 	}
 
-	// Token: 0x06002FD4 RID: 12244 RVA: 0x0013344E File Offset: 0x0013164E
+	// Token: 0x06003002 RID: 12290 RVA: 0x001344BE File Offset: 0x001326BE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void loadNewAmmunition(ItemValue _gun, ItemValue _ammo, EntityAlive _entity)
 	{
@@ -337,7 +337,7 @@ public class ItemActionRanged : ItemActionAttack
 		itemActionDataRanged.isChangingAmmoType = true;
 	}
 
-	// Token: 0x06002FD5 RID: 12245 RVA: 0x00133488 File Offset: 0x00131688
+	// Token: 0x06003003 RID: 12291 RVA: 0x001344F8 File Offset: 0x001326F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setSelectedAmmoById(int _ammoItemId, ItemValue _gun)
 	{
@@ -351,7 +351,7 @@ public class ItemActionRanged : ItemActionAttack
 		}
 	}
 
-	// Token: 0x06002FD6 RID: 12246 RVA: 0x001334C8 File Offset: 0x001316C8
+	// Token: 0x06003004 RID: 12292 RVA: 0x00134538 File Offset: 0x00132738
 	public virtual void SetAmmoType(EntityAlive _entity, ref ItemValue _gun, int _lastSelectedIndex, int _newSelectedIndex)
 	{
 		_gun.SelectedAmmoTypeIndex = (byte)_newSelectedIndex;
@@ -367,7 +367,7 @@ public class ItemActionRanged : ItemActionAttack
 		this.requestReload(itemActionDataRanged);
 	}
 
-	// Token: 0x06002FD7 RID: 12247 RVA: 0x0013355C File Offset: 0x0013175C
+	// Token: 0x06003005 RID: 12293 RVA: 0x001345CC File Offset: 0x001327CC
 	public void CompleteReload(ItemActionRanged.ItemActionDataRanged _adr)
 	{
 		if (_adr == null)
@@ -412,7 +412,7 @@ public class ItemActionRanged : ItemActionAttack
 		_adr.invData.holdingEntity.inventory.holdingItemItemValue.RemoveMetaData(ItemActionRanged.scGunIsJammed);
 	}
 
-	// Token: 0x06002FD8 RID: 12248 RVA: 0x0013372E File Offset: 0x0013192E
+	// Token: 0x06003006 RID: 12294 RVA: 0x0013479E File Offset: 0x0013299E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void requestReload(ItemActionRanged.ItemActionDataRanged _adr)
 	{
@@ -423,7 +423,7 @@ public class ItemActionRanged : ItemActionAttack
 		}
 	}
 
-	// Token: 0x06002FD9 RID: 12249 RVA: 0x00133754 File Offset: 0x00131954
+	// Token: 0x06003007 RID: 12295 RVA: 0x001347C4 File Offset: 0x001329C4
 	public void SwapSelectedAmmo(EntityAlive _entity, int _ammoIndex)
 	{
 		if (_ammoIndex == (int)_entity.inventory.holdingItemItemValue.SelectedAmmoTypeIndex)
@@ -442,7 +442,7 @@ public class ItemActionRanged : ItemActionAttack
 		}
 	}
 
-	// Token: 0x06002FDA RID: 12250 RVA: 0x001337D0 File Offset: 0x001319D0
+	// Token: 0x06003008 RID: 12296 RVA: 0x00134840 File Offset: 0x00132A40
 	public override void SwapAmmoType(EntityAlive _entity, int _ammoItemId = -1)
 	{
 		ItemActionRanged.ItemActionDataRanged itemActionDataRanged = (ItemActionRanged.ItemActionDataRanged)_entity.inventory.holdingItemData.actionData[0];
@@ -488,7 +488,7 @@ public class ItemActionRanged : ItemActionAttack
 		}
 	}
 
-	// Token: 0x06002FDB RID: 12251 RVA: 0x00133960 File Offset: 0x00131B60
+	// Token: 0x06003009 RID: 12297 RVA: 0x001349D0 File Offset: 0x00132BD0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CycleAmmoType(ItemActionData _actionData, bool excludeNonUnderwaterAmmoTypes)
 	{
@@ -522,7 +522,7 @@ public class ItemActionRanged : ItemActionAttack
 		this.SwapSelectedAmmo(_actionData.invData.holdingEntity, num);
 	}
 
-	// Token: 0x06002FDC RID: 12252 RVA: 0x00133A24 File Offset: 0x00131C24
+	// Token: 0x0600300A RID: 12298 RVA: 0x00134A94 File Offset: 0x00132C94
 	public virtual bool IsAmmoUsableUnderwater(EntityAlive holdingEntity)
 	{
 		if (!this.UsesMagazines)
@@ -533,7 +533,7 @@ public class ItemActionRanged : ItemActionAttack
 		return ItemClass.GetItem(this.MagazineItemNames[selectedAmmoTypeIndex], false).ItemClass.UsableUnderwater;
 	}
 
-	// Token: 0x06002FDD RID: 12253 RVA: 0x00133A64 File Offset: 0x00131C64
+	// Token: 0x0600300B RID: 12299 RVA: 0x00134AD4 File Offset: 0x00132CD4
 	public override void OnHoldingUpdate(ItemActionData _actionData)
 	{
 		ItemActionRanged.ItemActionDataRanged itemActionDataRanged = (ItemActionRanged.ItemActionDataRanged)_actionData;
@@ -565,31 +565,31 @@ public class ItemActionRanged : ItemActionAttack
 		}
 	}
 
-	// Token: 0x06002FDE RID: 12254 RVA: 0x00133C08 File Offset: 0x00131E08
+	// Token: 0x0600300C RID: 12300 RVA: 0x00134C78 File Offset: 0x00132E78
 	public static bool ReloadCancelled(ItemActionRanged.ItemActionDataRanged actionData)
 	{
 		return actionData.isReloadCancelled || actionData.isWeaponReloadCancelled;
 	}
 
-	// Token: 0x06002FDF RID: 12255 RVA: 0x00133C1A File Offset: 0x00131E1A
+	// Token: 0x0600300D RID: 12301 RVA: 0x00134C8A File Offset: 0x00132E8A
 	public static bool NotReloadCancelled(ItemActionRanged.ItemActionDataRanged actionData)
 	{
 		return !actionData.isReloadCancelled || !actionData.isWeaponReloadCancelled;
 	}
 
-	// Token: 0x06002FE0 RID: 12256 RVA: 0x00133C2F File Offset: 0x00131E2F
+	// Token: 0x0600300E RID: 12302 RVA: 0x00134C9F File Offset: 0x00132E9F
 	public static bool Reloading(ItemActionRanged.ItemActionDataRanged actionData)
 	{
 		return actionData.isReloading || actionData.isWeaponReloading || actionData.isReloadRequested;
 	}
 
-	// Token: 0x06002FE1 RID: 12257 RVA: 0x00133C49 File Offset: 0x00131E49
+	// Token: 0x0600300F RID: 12303 RVA: 0x00134CB9 File Offset: 0x00132EB9
 	public static bool NotReloading(ItemActionRanged.ItemActionDataRanged actionData)
 	{
 		return !actionData.isReloading && !actionData.isWeaponReloading && !actionData.isReloadRequested;
 	}
 
-	// Token: 0x06002FE2 RID: 12258 RVA: 0x00133C68 File Offset: 0x00131E68
+	// Token: 0x06003010 RID: 12304 RVA: 0x00134CD8 File Offset: 0x00132ED8
 	public override void CancelReload(ItemActionData _data, bool holsterWeapon)
 	{
 		ItemActionRanged.ItemActionDataRanged itemActionDataRanged = (ItemActionRanged.ItemActionDataRanged)_data;
@@ -614,7 +614,7 @@ public class ItemActionRanged : ItemActionAttack
 		}
 	}
 
-	// Token: 0x06002FE3 RID: 12259 RVA: 0x00133D1C File Offset: 0x00131F1C
+	// Token: 0x06003011 RID: 12305 RVA: 0x00134D8C File Offset: 0x00132F8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isJammed(ItemValue iv)
 	{
@@ -622,7 +622,7 @@ public class ItemActionRanged : ItemActionAttack
 		return iv.TryGetMetadata(ItemActionRanged.scGunIsJammed, out num);
 	}
 
-	// Token: 0x06002FE4 RID: 12260 RVA: 0x00133D38 File Offset: 0x00131F38
+	// Token: 0x06003012 RID: 12306 RVA: 0x00134DA8 File Offset: 0x00132FA8
 	public ItemActionRanged.ReloadFlags GetReloadFlags(ItemActionData _actionData)
 	{
 		ItemActionRanged.ReloadFlags reloadFlags = ItemActionRanged.ReloadFlags.InvalidItem;
@@ -671,7 +671,7 @@ public class ItemActionRanged : ItemActionAttack
 		return reloadFlags;
 	}
 
-	// Token: 0x06002FE5 RID: 12261 RVA: 0x00133E88 File Offset: 0x00132088
+	// Token: 0x06003013 RID: 12307 RVA: 0x00134EF8 File Offset: 0x001330F8
 	public override bool CanReload(ItemActionData _actionData)
 	{
 		ItemActionRanged.ItemActionDataRanged itemActionDataRanged = (ItemActionRanged.ItemActionDataRanged)_actionData;
@@ -695,7 +695,7 @@ public class ItemActionRanged : ItemActionAttack
 		return false;
 	}
 
-	// Token: 0x06002FE6 RID: 12262 RVA: 0x00133F64 File Offset: 0x00132164
+	// Token: 0x06003014 RID: 12308 RVA: 0x00134FD4 File Offset: 0x001331D4
 	public override void ReloadGun(ItemActionData _actionData)
 	{
 		ItemActionRanged.ItemActionDataRanged itemActionDataRanged = _actionData as ItemActionRanged.ItemActionDataRanged;
@@ -712,13 +712,13 @@ public class ItemActionRanged : ItemActionAttack
 		}
 	}
 
-	// Token: 0x06002FE7 RID: 12263 RVA: 0x00133FE0 File Offset: 0x001321E0
+	// Token: 0x06003015 RID: 12309 RVA: 0x00135050 File Offset: 0x00133250
 	public override bool IsAimingGunPossible(ItemActionData _actionData)
 	{
 		return ItemActionRanged.NotReloading((ItemActionRanged.ItemActionDataRanged)_actionData);
 	}
 
-	// Token: 0x06002FE8 RID: 12264 RVA: 0x00133FED File Offset: 0x001321ED
+	// Token: 0x06003016 RID: 12310 RVA: 0x0013505D File Offset: 0x0013325D
 	public override EnumCameraShake GetCameraShakeType(ItemActionData _actionData)
 	{
 		if (!_actionData.invData.holdingEntity.AimingGun)
@@ -728,19 +728,19 @@ public class ItemActionRanged : ItemActionAttack
 		return EnumCameraShake.None;
 	}
 
-	// Token: 0x06002FE9 RID: 12265 RVA: 0x00134004 File Offset: 0x00132204
+	// Token: 0x06003017 RID: 12311 RVA: 0x00135074 File Offset: 0x00133274
 	public override TriggerEffectManager.ControllerTriggerEffect GetControllerTriggerEffectPull()
 	{
 		return TriggerEffectManager.GetTriggerEffect(new ValueTuple<string, string>(this.triggerEffectTriggerPullDualsense, this.triggerEffectTriggerPullXbox));
 	}
 
-	// Token: 0x06002FEA RID: 12266 RVA: 0x0013401C File Offset: 0x0013221C
+	// Token: 0x06003018 RID: 12312 RVA: 0x0013508C File Offset: 0x0013328C
 	public override TriggerEffectManager.ControllerTriggerEffect GetControllerTriggerEffectShoot()
 	{
 		return TriggerEffectManager.GetTriggerEffect(new ValueTuple<string, string>(this.triggerEffectShootDualsense, this.triggerEffectShootXbox));
 	}
 
-	// Token: 0x06002FEB RID: 12267 RVA: 0x00134034 File Offset: 0x00132234
+	// Token: 0x06003019 RID: 12313 RVA: 0x001350A4 File Offset: 0x001332A4
 	public override bool AllowItemLoopingSound(ItemActionData _actionData)
 	{
 		ItemActionRanged.ItemActionDataRanged itemActionDataRanged = (ItemActionRanged.ItemActionDataRanged)_actionData;
@@ -748,7 +748,7 @@ public class ItemActionRanged : ItemActionAttack
 		return _actionData.invData.itemValue.Meta > 0 && burstCount > 0 && (int)itemActionDataRanged.curBurstCount <= burstCount && !string.IsNullOrEmpty(this.soundRepeat) && itemActionDataRanged.state == ItemActionFiringState.Loop;
 	}
 
-	// Token: 0x06002FEC RID: 12268 RVA: 0x00134088 File Offset: 0x00132288
+	// Token: 0x0600301A RID: 12314 RVA: 0x001350F8 File Offset: 0x001332F8
 	public override void ItemActionEffects(GameManager _gameManager, ItemActionData _actionData, int _firingState, Vector3 _startPos, Vector3 _direction, int _userData = 0)
 	{
 		if (GameManager.Instance.IsPaused())
@@ -871,7 +871,7 @@ public class ItemActionRanged : ItemActionAttack
 		}
 	}
 
-	// Token: 0x06002FED RID: 12269 RVA: 0x0013446C File Offset: 0x0013266C
+	// Token: 0x0600301B RID: 12315 RVA: 0x001354DC File Offset: 0x001336DC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void onHoldingEntityFired(ItemActionData _actionData)
 	{
@@ -888,7 +888,7 @@ public class ItemActionRanged : ItemActionAttack
 		}
 	}
 
-	// Token: 0x06002FEE RID: 12270 RVA: 0x0013456C File Offset: 0x0013276C
+	// Token: 0x0600301C RID: 12316 RVA: 0x001355DC File Offset: 0x001337DC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void triggerReleased(ItemActionRanged.ItemActionDataRanged myActionData, int _idx)
 	{
@@ -906,7 +906,7 @@ public class ItemActionRanged : ItemActionAttack
 		}
 	}
 
-	// Token: 0x06002FEF RID: 12271 RVA: 0x00134616 File Offset: 0x00132816
+	// Token: 0x0600301D RID: 12317 RVA: 0x00135686 File Offset: 0x00133886
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void ResetBurstShot(ItemActionRanged.ItemActionDataRanged _actionDataRanged)
 	{
@@ -915,21 +915,21 @@ public class ItemActionRanged : ItemActionAttack
 		_actionDataRanged.curBurstCount = 0;
 	}
 
-	// Token: 0x06002FF0 RID: 12272 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x0600301E RID: 12318 RVA: 0x00010E62 File Offset: 0x0000F062
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual int getUserData(ItemActionData _actionData)
 	{
 		return 0;
 	}
 
-	// Token: 0x06002FF1 RID: 12273 RVA: 0x0013462D File Offset: 0x0013282D
+	// Token: 0x0600301F RID: 12319 RVA: 0x0013569D File Offset: 0x0013389D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void ConsumeAmmo(ItemActionData _actionData)
 	{
 		_actionData.invData.itemValue.Meta--;
 	}
 
-	// Token: 0x06002FF2 RID: 12274 RVA: 0x00134648 File Offset: 0x00132848
+	// Token: 0x06003020 RID: 12320 RVA: 0x001356B8 File Offset: 0x001338B8
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		ItemActionRanged.ItemActionDataRanged itemActionDataRanged = (ItemActionRanged.ItemActionDataRanged)_actionData;
@@ -952,7 +952,7 @@ public class ItemActionRanged : ItemActionAttack
 		this.TryExecuteAction(_actionData);
 	}
 
-	// Token: 0x06002FF3 RID: 12275 RVA: 0x001346E0 File Offset: 0x001328E0
+	// Token: 0x06003021 RID: 12321 RVA: 0x00135750 File Offset: 0x00133950
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void TryExecuteAction(ItemActionData _actionData)
 	{
@@ -1139,20 +1139,20 @@ public class ItemActionRanged : ItemActionAttack
 		base.HandleItemBreak(_actionData);
 	}
 
-	// Token: 0x06002FF4 RID: 12276 RVA: 0x00134CD1 File Offset: 0x00132ED1
+	// Token: 0x06003022 RID: 12322 RVA: 0x00135D41 File Offset: 0x00133F41
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool checkAmmo(ItemActionData _actionData)
 	{
 		return this.InfiniteAmmo || _actionData.invData.itemValue.Meta > 0;
 	}
 
-	// Token: 0x06002FF5 RID: 12277 RVA: 0x00134CF0 File Offset: 0x00132EF0
+	// Token: 0x06003023 RID: 12323 RVA: 0x00135D60 File Offset: 0x00133F60
 	public bool HasInfiniteAmmo(ItemActionData _actionData)
 	{
 		return EffectManager.GetValue(PassiveEffects.InfiniteAmmo, _actionData.invData.itemValue, 0f, _actionData.invData.holdingEntity, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false) > 0f;
 	}
 
-	// Token: 0x06002FF6 RID: 12278 RVA: 0x00134D3C File Offset: 0x00132F3C
+	// Token: 0x06003024 RID: 12324 RVA: 0x00135DAC File Offset: 0x00133FAC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual float updateAccuracy(ItemActionData _actionData, bool _isAimingGun, float deltaTickTime)
 	{
@@ -1189,7 +1189,7 @@ public class ItemActionRanged : ItemActionAttack
 		return itemActionDataRanged.lastAccuracy;
 	}
 
-	// Token: 0x06002FF7 RID: 12279 RVA: 0x00134EAE File Offset: 0x001330AE
+	// Token: 0x06003025 RID: 12325 RVA: 0x00135F1E File Offset: 0x0013411E
 	[Conditional("DEVELOPMENT_BUILD")]
 	[Conditional("UNITY_EDITOR")]
 	public static void ResetOldAccuracy()
@@ -1197,31 +1197,31 @@ public class ItemActionRanged : ItemActionAttack
 		ItemActionRanged._oldAccuracy = 1f;
 	}
 
-	// Token: 0x06002FF8 RID: 12280 RVA: 0x00134EBC File Offset: 0x001330BC
+	// Token: 0x06003026 RID: 12326 RVA: 0x00135F2C File Offset: 0x0013412C
 	public virtual float GetRange(ItemActionData _actionData)
 	{
 		return EffectManager.GetValue(PassiveEffects.MaxRange, _actionData.invData.itemValue, this.Range, _actionData.invData.holdingEntity, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false);
 	}
 
-	// Token: 0x06002FF9 RID: 12281 RVA: 0x00134F00 File Offset: 0x00133100
+	// Token: 0x06003027 RID: 12327 RVA: 0x00135F70 File Offset: 0x00134170
 	public virtual int GetMaxAmmoCount(ItemActionData _actionData)
 	{
 		return (int)EffectManager.GetValue(PassiveEffects.MagazineSize, _actionData.invData.itemValue, (float)this.BulletsPerMagazine, _actionData.invData.holdingEntity, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false);
 	}
 
-	// Token: 0x06002FFA RID: 12282 RVA: 0x00134F44 File Offset: 0x00133144
+	// Token: 0x06003028 RID: 12328 RVA: 0x00135FB4 File Offset: 0x001341B4
 	public virtual int GetBurstCount(ItemActionData _actionData)
 	{
 		return (int)EffectManager.GetValue(PassiveEffects.BurstRoundCount, _actionData.invData.itemValue, 1f, _actionData.invData.holdingEntity, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false);
 	}
 
-	// Token: 0x06002FFB RID: 12283 RVA: 0x00134F88 File Offset: 0x00133188
+	// Token: 0x06003029 RID: 12329 RVA: 0x00135FF8 File Offset: 0x001341F8
 	public virtual float GetIdealRangeForAI(ItemActionData _actionData)
 	{
 		return EffectManager.GetValue(PassiveEffects.MaxRange, _actionData.invData.itemValue, this.Range, _actionData.invData.holdingEntity, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false);
 	}
 
-	// Token: 0x06002FFC RID: 12284 RVA: 0x00134FCC File Offset: 0x001331CC
+	// Token: 0x0600302A RID: 12330 RVA: 0x0013603C File Offset: 0x0013423C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual Vector3 getDirectionOffset(ItemActionRanged.ItemActionDataRanged _actionData, Vector3 _forward, int _shotOffset = 0)
 	{
@@ -1234,7 +1234,7 @@ public class ItemActionRanged : ItemActionAttack
 		return quaternion * vector;
 	}
 
-	// Token: 0x06002FFD RID: 12285 RVA: 0x001350CC File Offset: 0x001332CC
+	// Token: 0x0600302B RID: 12331 RVA: 0x0013613C File Offset: 0x0013433C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual Vector3 getDirectionRandomOffset(ItemActionRanged.ItemActionDataRanged _actionData, Vector3 _forward)
 	{
@@ -1247,7 +1247,7 @@ public class ItemActionRanged : ItemActionAttack
 		return quaternion * vector;
 	}
 
-	// Token: 0x06002FFE RID: 12286 RVA: 0x001351B4 File Offset: 0x001333B4
+	// Token: 0x0600302C RID: 12332 RVA: 0x00136224 File Offset: 0x00134424
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual Vector3 fireShot(int _shotIdx, ItemActionRanged.ItemActionDataRanged _actionData, ref bool hitEntityFound)
 	{
@@ -1382,21 +1382,21 @@ public class ItemActionRanged : ItemActionAttack
 		return lookRay.direction;
 	}
 
-	// Token: 0x06002FFF RID: 12287 RVA: 0x001356D8 File Offset: 0x001338D8
+	// Token: 0x0600302D RID: 12333 RVA: 0x00136748 File Offset: 0x00134948
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float getDamageBlock(ItemActionRanged.ItemActionDataRanged _actionData)
 	{
 		return base.GetDamageBlock(_actionData.invData.itemValue, BlockValue.Air, _actionData.invData.holdingEntity, _actionData.indexInEntityOfAction);
 	}
 
-	// Token: 0x06003000 RID: 12288 RVA: 0x00135701 File Offset: 0x00133901
+	// Token: 0x0600302E RID: 12334 RVA: 0x00136771 File Offset: 0x00134971
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float getDamageEntity(ItemActionRanged.ItemActionDataRanged _actionData)
 	{
 		return base.GetDamageEntity(_actionData.invData.itemValue, _actionData.invData.holdingEntity, _actionData.indexInEntityOfAction);
 	}
 
-	// Token: 0x06003001 RID: 12289 RVA: 0x00135725 File Offset: 0x00133925
+	// Token: 0x0600302F RID: 12335 RVA: 0x00136795 File Offset: 0x00134995
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual int GetActionEffectsValues(ItemActionData _actionData, out Vector3 _startPos, out Vector3 _direction)
 	{
@@ -1405,13 +1405,13 @@ public class ItemActionRanged : ItemActionAttack
 		return 0;
 	}
 
-	// Token: 0x06003002 RID: 12290 RVA: 0x00135740 File Offset: 0x00133940
+	// Token: 0x06003030 RID: 12336 RVA: 0x001367B0 File Offset: 0x001349B0
 	public override int GetInitialMeta(ItemValue _itemValue)
 	{
 		return (int)EffectManager.GetValue(PassiveEffects.MagazineSize, _itemValue, (float)this.BulletsPerMagazine, null, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false);
 	}
 
-	// Token: 0x06003003 RID: 12291 RVA: 0x00135770 File Offset: 0x00133970
+	// Token: 0x06003031 RID: 12337 RVA: 0x001367E0 File Offset: 0x001349E0
 	public override WorldRayHitInfo GetExecuteActionTarget(ItemActionData _actionData)
 	{
 		ItemActionRanged.ItemActionDataRanged itemActionDataRanged = (ItemActionRanged.ItemActionDataRanged)_actionData;
@@ -1471,7 +1471,7 @@ public class ItemActionRanged : ItemActionAttack
 		return null;
 	}
 
-	// Token: 0x06003004 RID: 12292 RVA: 0x001359E8 File Offset: 0x00133BE8
+	// Token: 0x06003032 RID: 12338 RVA: 0x00136A58 File Offset: 0x00134C58
 	public override void GetItemValueActionInfo(ref List<string> _infoList, ItemValue _itemValue, XUi _xui, int _actionIndex = 0)
 	{
 		base.GetItemValueActionInfo(ref _infoList, _itemValue, _xui, 0);
@@ -1480,7 +1480,7 @@ public class ItemActionRanged : ItemActionAttack
 		_infoList.Add(ItemAction.StringFormatHandler(Localization.Get("lblAttributeFalloffRange", false, null), string.Format("{0} / {1} {2}", EffectManager.GetValue(PassiveEffects.DamageFalloffRange, _itemValue, 0f, _xui.playerUI.entityPlayer, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false).ToCultureInvariantString(), EffectManager.GetValue(PassiveEffects.MaxRange, _itemValue, this.Range, _xui.playerUI.entityPlayer, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false).ToCultureInvariantString(), Localization.Get("lblAttributeFalloffRangeText", false, null))));
 	}
 
-	// Token: 0x06003006 RID: 12294 RVA: 0x00135B38 File Offset: 0x00133D38
+	// Token: 0x06003034 RID: 12340 RVA: 0x00136BA8 File Offset: 0x00134DA8
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static float <updateAccuracy>g__AccuracyExpDecay|73_0(float initial, float target, double decay, float dt)
@@ -1494,77 +1494,77 @@ public class ItemActionRanged : ItemActionAttack
 		return num;
 	}
 
-	// Token: 0x040024EC RID: 9452
+	// Token: 0x04002520 RID: 9504
 	public static string scGunIsJammed = "GunIsJammed";
 
-	// Token: 0x040024ED RID: 9453
+	// Token: 0x04002521 RID: 9505
 	public const float cUnderwaterDamageReductionMultipler = 0.25f;
 
-	// Token: 0x040024EE RID: 9454
+	// Token: 0x04002522 RID: 9506
 	public const float cUnderwaterDamagePenalty = 0.75f;
 
-	// Token: 0x040024EF RID: 9455
+	// Token: 0x04002523 RID: 9507
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string bulletMaterialName;
 
-	// Token: 0x040024F0 RID: 9456
+	// Token: 0x04002524 RID: 9508
 	public bool bSupportHarvesting;
 
-	// Token: 0x040024F1 RID: 9457
+	// Token: 0x04002525 RID: 9509
 	public bool bUseMeleeCrosshair;
 
-	// Token: 0x040024F2 RID: 9458
+	// Token: 0x04002526 RID: 9510
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float originalDelay = -1f;
 
-	// Token: 0x040024F3 RID: 9459
+	// Token: 0x04002527 RID: 9511
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string triggerEffectShootDualsense;
 
-	// Token: 0x040024F4 RID: 9460
+	// Token: 0x04002528 RID: 9512
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string triggerEffectTriggerPullDualsense;
 
-	// Token: 0x040024F5 RID: 9461
+	// Token: 0x04002529 RID: 9513
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string triggerEffectShootXbox;
 
-	// Token: 0x040024F6 RID: 9462
+	// Token: 0x0400252A RID: 9514
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string triggerEffectTriggerPullXbox;
 
-	// Token: 0x040024F7 RID: 9463
+	// Token: 0x0400252B RID: 9515
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool rapidTrigger;
 
-	// Token: 0x040024FA RID: 9466
+	// Token: 0x0400252E RID: 9518
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool AutoReload = true;
 
-	// Token: 0x040024FB RID: 9467
+	// Token: 0x0400252F RID: 9519
 	public int EntityPenetrationCount;
 
-	// Token: 0x040024FC RID: 9468
+	// Token: 0x04002530 RID: 9520
 	public int BlockPenetrationFactor = 251;
 
-	// Token: 0x040024FD RID: 9469
+	// Token: 0x04002531 RID: 9521
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float spreadVerticalOffset;
 
-	// Token: 0x040024FE RID: 9470
+	// Token: 0x04002532 RID: 9522
 	public static float AccuracyUpdateDecayConstant = 9.1f;
 
-	// Token: 0x040024FF RID: 9471
+	// Token: 0x04002533 RID: 9523
 	public static bool LogOldAccuracy;
 
-	// Token: 0x04002500 RID: 9472
+	// Token: 0x04002534 RID: 9524
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float _oldAccuracy;
 
-	// Token: 0x020005C0 RID: 1472
+	// Token: 0x020005C5 RID: 1477
 	public class ItemActionDataRanged : ItemActionAttackData
 	{
-		// Token: 0x06003007 RID: 12295 RVA: 0x00135B74 File Offset: 0x00133D74
+		// Token: 0x06003035 RID: 12341 RVA: 0x00136BE4 File Offset: 0x00134DE4
 		public ItemActionDataRanged(ItemInventoryData _invData, int _indexInEntityOfAction)
 			: base(_invData, _indexInEntityOfAction)
 		{
@@ -1616,7 +1616,7 @@ public class ItemActionRanged : ItemActionAttack
 			this.waterCollisionParticles.Init(_invData.holdingEntity.entityId, _invData.item.MadeOfMaterial.SurfaceCategory, "water", 16);
 		}
 
-		// Token: 0x06003008 RID: 12296 RVA: 0x00135DD5 File Offset: 0x00133FD5
+		// Token: 0x06003036 RID: 12342 RVA: 0x00136E45 File Offset: 0x00135045
 		public static Transform getModelChildTransformByName(ItemInventoryData _invData, string _name)
 		{
 			if (_invData.model == null)
@@ -1630,162 +1630,162 @@ public class ItemActionRanged : ItemActionAttack
 			return _invData.model.FindInChilds(_name, false);
 		}
 
-		// Token: 0x04002501 RID: 9473
+		// Token: 0x04002535 RID: 9525
 		public float m_LastShotTime;
 
-		// Token: 0x04002502 RID: 9474
+		// Token: 0x04002536 RID: 9526
 		public int reloadAmount;
 
-		// Token: 0x04002503 RID: 9475
+		// Token: 0x04002537 RID: 9527
 		public bool IsDoubleBarrel;
 
-		// Token: 0x04002504 RID: 9476
+		// Token: 0x04002538 RID: 9528
 		public Transform muzzle;
 
-		// Token: 0x04002505 RID: 9477
+		// Token: 0x04002539 RID: 9529
 		public Transform muzzle2;
 
-		// Token: 0x04002506 RID: 9478
+		// Token: 0x0400253A RID: 9530
 		public Transform Laser;
 
-		// Token: 0x04002507 RID: 9479
+		// Token: 0x0400253B RID: 9531
 		public ItemActionFiringState state;
 
-		// Token: 0x04002508 RID: 9480
+		// Token: 0x0400253C RID: 9532
 		public float lastTimeTriggerPressed;
 
-		// Token: 0x04002509 RID: 9481
+		// Token: 0x0400253D RID: 9533
 		public Vector3i currentDiggingLocation;
 
-		// Token: 0x0400250A RID: 9482
+		// Token: 0x0400253E RID: 9534
 		public float curBlockDamagePerHit;
 
-		// Token: 0x0400250B RID: 9483
+		// Token: 0x0400253F RID: 9535
 		public float curBlockDamage;
 
-		// Token: 0x0400250C RID: 9484
+		// Token: 0x04002540 RID: 9536
 		public bool bReleased;
 
-		// Token: 0x0400250D RID: 9485
+		// Token: 0x04002541 RID: 9537
 		public bool bPressed;
 
-		// Token: 0x0400250E RID: 9486
+		// Token: 0x04002542 RID: 9538
 		public GameRandom rand;
 
-		// Token: 0x0400250F RID: 9487
+		// Token: 0x04002543 RID: 9539
 		public PerlinNoise MeanderNoise;
 
-		// Token: 0x04002510 RID: 9488
+		// Token: 0x04002544 RID: 9540
 		public byte curBurstCount;
 
-		// Token: 0x04002511 RID: 9489
+		// Token: 0x04002545 RID: 9541
 		public float lastAccuracy;
 
-		// Token: 0x04002512 RID: 9490
+		// Token: 0x04002546 RID: 9542
 		public float distance;
 
-		// Token: 0x04002513 RID: 9491
+		// Token: 0x04002547 RID: 9543
 		public float damageFalloffPercent;
 
-		// Token: 0x04002514 RID: 9492
+		// Token: 0x04002548 RID: 9544
 		public bool isReloadRequested;
 
-		// Token: 0x04002515 RID: 9493
+		// Token: 0x04002549 RID: 9545
 		public bool isReloading;
 
-		// Token: 0x04002516 RID: 9494
+		// Token: 0x0400254A RID: 9546
 		public bool isWeaponReloading;
 
-		// Token: 0x04002517 RID: 9495
+		// Token: 0x0400254B RID: 9547
 		public bool isReloadCancelled;
 
-		// Token: 0x04002518 RID: 9496
+		// Token: 0x0400254C RID: 9548
 		public bool isWeaponReloadCancelled;
 
-		// Token: 0x04002519 RID: 9497
+		// Token: 0x0400254D RID: 9549
 		public bool wasReloadCancelled;
 
-		// Token: 0x0400251A RID: 9498
+		// Token: 0x0400254E RID: 9550
 		public bool wasWeaponReloadCancelled;
 
-		// Token: 0x0400251B RID: 9499
+		// Token: 0x0400254F RID: 9551
 		public bool wasAiming;
 
-		// Token: 0x0400251C RID: 9500
+		// Token: 0x04002550 RID: 9552
 		public bool isChangingAmmoType;
 
-		// Token: 0x0400251D RID: 9501
+		// Token: 0x04002551 RID: 9553
 		public Transform ScopeTransform;
 
-		// Token: 0x0400251E RID: 9502
+		// Token: 0x04002552 RID: 9554
 		public Transform SideTransform;
 
-		// Token: 0x0400251F RID: 9503
+		// Token: 0x04002553 RID: 9555
 		public Transform BarrelTransform;
 
-		// Token: 0x04002520 RID: 9504
+		// Token: 0x04002554 RID: 9556
 		public bool hasScopeMod;
 
-		// Token: 0x04002521 RID: 9505
+		// Token: 0x04002555 RID: 9557
 		public bool hasSideMod;
 
-		// Token: 0x04002522 RID: 9506
+		// Token: 0x04002556 RID: 9558
 		public bool hasBarrelMod;
 
-		// Token: 0x04002523 RID: 9507
+		// Token: 0x04002557 RID: 9559
 		public bool IsFlashSuppressed;
 
-		// Token: 0x04002524 RID: 9508
+		// Token: 0x04002558 RID: 9560
 		public string SoundStart;
 
-		// Token: 0x04002525 RID: 9509
+		// Token: 0x04002559 RID: 9561
 		public string SoundLoop;
 
-		// Token: 0x04002526 RID: 9510
+		// Token: 0x0400255A RID: 9562
 		public string SoundEnd;
 
-		// Token: 0x04002527 RID: 9511
+		// Token: 0x0400255B RID: 9563
 		public float Delay;
 
-		// Token: 0x04002528 RID: 9512
+		// Token: 0x0400255C RID: 9564
 		public float OriginalDelay = -1f;
 
-		// Token: 0x04002529 RID: 9513
+		// Token: 0x0400255D RID: 9565
 		public bool burstShotStarted;
 
-		// Token: 0x0400252A RID: 9514
+		// Token: 0x0400255E RID: 9566
 		public bool burstShotFinished;
 
-		// Token: 0x0400252B RID: 9515
+		// Token: 0x0400255F RID: 9567
 		public bool bInitialPress;
 
-		// Token: 0x0400252C RID: 9516
+		// Token: 0x04002560 RID: 9568
 		public CollisionParticleController waterCollisionParticles = new CollisionParticleController();
 	}
 
-	// Token: 0x020005C1 RID: 1473
+	// Token: 0x020005C6 RID: 1478
 	[Flags]
 	public enum ReloadFlags
 	{
-		// Token: 0x0400252E RID: 9518
+		// Token: 0x04002562 RID: 9570
 		None = 0,
-		// Token: 0x0400252F RID: 9519
+		// Token: 0x04002563 RID: 9571
 		InvalidItem = 1,
-		// Token: 0x04002530 RID: 9520
+		// Token: 0x04002564 RID: 9572
 		AlreadyReloading = 2,
-		// Token: 0x04002531 RID: 9521
+		// Token: 0x04002565 RID: 9573
 		PendingInventoryActions = 4,
-		// Token: 0x04002532 RID: 9522
+		// Token: 0x04002566 RID: 9574
 		Jammed = 8,
-		// Token: 0x04002533 RID: 9523
+		// Token: 0x04002567 RID: 9575
 		OutOfAmmo = 16,
-		// Token: 0x04002534 RID: 9524
+		// Token: 0x04002568 RID: 9576
 		EmptyClip = 32,
-		// Token: 0x04002535 RID: 9525
+		// Token: 0x04002569 RID: 9577
 		PartialClip = 64,
-		// Token: 0x04002536 RID: 9526
+		// Token: 0x0400256A RID: 9578
 		FullClip = 128,
-		// Token: 0x04002537 RID: 9527
+		// Token: 0x0400256B RID: 9579
 		CompletelyOutOfAmmo = 48
 	}
 }

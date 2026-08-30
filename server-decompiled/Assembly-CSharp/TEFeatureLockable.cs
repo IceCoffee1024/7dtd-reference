@@ -5,12 +5,12 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200017C RID: 380
+// Token: 0x0200017E RID: 382
 [Preserve]
 public class TEFeatureLockable : TEFeatureAbs, ILockable, IFeatureTriggerCapability
 {
 	// Token: 0x170000E2 RID: 226
-	// (get) Token: 0x06000B36 RID: 2870 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// (get) Token: 0x06000B41 RID: 2881 RVA: 0x00020021 File Offset: 0x0001E221
 	public IFeatureTriggerCapability.ETriggerRole TriggerRole
 	{
 		get
@@ -19,13 +19,13 @@ public class TEFeatureLockable : TEFeatureAbs, ILockable, IFeatureTriggerCapabil
 		}
 	}
 
-	// Token: 0x06000B37 RID: 2871 RVA: 0x00047F49 File Offset: 0x00046149
+	// Token: 0x06000B42 RID: 2882 RVA: 0x00048361 File Offset: 0x00046561
 	public override void Init(TileEntityComposite _parent, TileEntityFeatureData _featureData)
 	{
 		base.Init(_parent, _featureData);
 	}
 
-	// Token: 0x06000B38 RID: 2872 RVA: 0x00047F54 File Offset: 0x00046154
+	// Token: 0x06000B43 RID: 2883 RVA: 0x0004836C File Offset: 0x0004656C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void CopyFromInternal(TileEntityComposite _other)
 	{
@@ -38,7 +38,7 @@ public class TEFeatureLockable : TEFeatureAbs, ILockable, IFeatureTriggerCapabil
 		}
 	}
 
-	// Token: 0x06000B39 RID: 2873 RVA: 0x00047F94 File Offset: 0x00046194
+	// Token: 0x06000B44 RID: 2884 RVA: 0x000483AC File Offset: 0x000465AC
 	public override void UpgradeDowngradeFrom(TileEntityComposite _other)
 	{
 		base.UpgradeDowngradeFrom(_other);
@@ -51,20 +51,20 @@ public class TEFeatureLockable : TEFeatureAbs, ILockable, IFeatureTriggerCapabil
 		}
 	}
 
-	// Token: 0x06000B3A RID: 2874 RVA: 0x00047FDB File Offset: 0x000461DB
+	// Token: 0x06000B45 RID: 2885 RVA: 0x000483F3 File Offset: 0x000465F3
 	public bool IsLocked()
 	{
 		return this.locked;
 	}
 
-	// Token: 0x06000B3B RID: 2875 RVA: 0x00047FE3 File Offset: 0x000461E3
+	// Token: 0x06000B46 RID: 2886 RVA: 0x000483FB File Offset: 0x000465FB
 	public void SetLocked(bool _isLocked)
 	{
 		this.locked = _isLocked;
 		base.SetModified();
 	}
 
-	// Token: 0x06000B3C RID: 2876 RVA: 0x00047FF2 File Offset: 0x000461F2
+	// Token: 0x06000B47 RID: 2887 RVA: 0x0004840A File Offset: 0x0004660A
 	public void OnBlockTriggered(EntityPlayer _player, Vector3i _blockPos, BlockValue _blockValue, List<BlockChangeInfo> _blockChanges, BlockTrigger _triggeredBy)
 	{
 		if (_triggeredBy == null)
@@ -77,50 +77,50 @@ public class TEFeatureLockable : TEFeatureAbs, ILockable, IFeatureTriggerCapabil
 		}
 	}
 
-	// Token: 0x06000B3D RID: 2877 RVA: 0x00048009 File Offset: 0x00046209
+	// Token: 0x06000B48 RID: 2888 RVA: 0x00048421 File Offset: 0x00046621
 	public PlatformUserIdentifierAbs GetOwner()
 	{
 		return base.Parent.Owner;
 	}
 
-	// Token: 0x06000B3E RID: 2878 RVA: 0x00048016 File Offset: 0x00046216
+	// Token: 0x06000B49 RID: 2889 RVA: 0x0004842E File Offset: 0x0004662E
 	public void SetOwner(PlatformUserIdentifierAbs _userIdentifier)
 	{
 		base.Parent.SetOwner(_userIdentifier);
 	}
 
-	// Token: 0x06000B3F RID: 2879 RVA: 0x00048024 File Offset: 0x00046224
+	// Token: 0x06000B4A RID: 2890 RVA: 0x0004843C File Offset: 0x0004663C
 	public bool IsUserAllowed(PlatformUserIdentifierAbs _userIdentifier)
 	{
 		TEFeatureDoor tefeatureDoor;
 		return this.IsOwner(_userIdentifier) || this.allowedUserIds.Contains(_userIdentifier) || (_userIdentifier.Equals(PlatformManager.InternalLocalUserIdentifier) && (!base.Parent.TryGetSelfOrFeature<TEFeatureDoor>(out tefeatureDoor) && GamePrefs.GetBool(EnumGamePrefs.DebugMenuEnabled)));
 	}
 
-	// Token: 0x06000B40 RID: 2880 RVA: 0x00048074 File Offset: 0x00046274
+	// Token: 0x06000B4B RID: 2891 RVA: 0x0004848C File Offset: 0x0004668C
 	public List<PlatformUserIdentifierAbs> GetUsers()
 	{
 		return this.allowedUserIds;
 	}
 
-	// Token: 0x06000B41 RID: 2881 RVA: 0x0004807C File Offset: 0x0004627C
+	// Token: 0x06000B4C RID: 2892 RVA: 0x00048494 File Offset: 0x00046694
 	public bool LocalPlayerIsOwner()
 	{
 		return this.IsOwner(PlatformManager.InternalLocalUserIdentifier);
 	}
 
-	// Token: 0x06000B42 RID: 2882 RVA: 0x00048089 File Offset: 0x00046289
+	// Token: 0x06000B4D RID: 2893 RVA: 0x000484A1 File Offset: 0x000466A1
 	public bool IsOwner(PlatformUserIdentifierAbs _userIdentifier)
 	{
 		return _userIdentifier != null && _userIdentifier.Equals(base.Parent.Owner);
 	}
 
-	// Token: 0x06000B43 RID: 2883 RVA: 0x000480A1 File Offset: 0x000462A1
+	// Token: 0x06000B4E RID: 2894 RVA: 0x000484B9 File Offset: 0x000466B9
 	public bool HasPassword()
 	{
 		return !string.IsNullOrEmpty(this.passwordHash);
 	}
 
-	// Token: 0x06000B44 RID: 2884 RVA: 0x000480B1 File Offset: 0x000462B1
+	// Token: 0x06000B4F RID: 2895 RVA: 0x000484C9 File Offset: 0x000466C9
 	public bool SetPasswordHash(string _passwordHash, PlatformUserIdentifierAbs _userIdentifier)
 	{
 		if (this.IsOwner(_userIdentifier) && _passwordHash != this.passwordHash)
@@ -133,7 +133,7 @@ public class TEFeatureLockable : TEFeatureAbs, ILockable, IFeatureTriggerCapabil
 		return false;
 	}
 
-	// Token: 0x06000B45 RID: 2885 RVA: 0x000480E5 File Offset: 0x000462E5
+	// Token: 0x06000B50 RID: 2896 RVA: 0x000484FD File Offset: 0x000466FD
 	public bool CheckPasswordHash(string _passwordHash, PlatformUserIdentifierAbs _userIdentifier)
 	{
 		if (this.IsOwner(_userIdentifier) || !this.HasPassword())
@@ -149,13 +149,13 @@ public class TEFeatureLockable : TEFeatureAbs, ILockable, IFeatureTriggerCapabil
 		return false;
 	}
 
-	// Token: 0x06000B46 RID: 2886 RVA: 0x0004811D File Offset: 0x0004631D
+	// Token: 0x06000B51 RID: 2897 RVA: 0x00048535 File Offset: 0x00046735
 	public string GetPasswordHash()
 	{
 		return this.passwordHash;
 	}
 
-	// Token: 0x06000B47 RID: 2887 RVA: 0x00048128 File Offset: 0x00046328
+	// Token: 0x06000B52 RID: 2898 RVA: 0x00048540 File Offset: 0x00046740
 	public override string GetActivationText(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityAlive _entityFocusing, string _activateHotkeyMarkup, string _focusedTileEntityName)
 	{
 		base.GetActivationText(_world, _blockPos, _blockValue, _entityFocusing, _activateHotkeyMarkup, _focusedTileEntityName);
@@ -170,7 +170,7 @@ public class TEFeatureLockable : TEFeatureAbs, ILockable, IFeatureTriggerCapabil
 		return string.Format(Localization.Get("tooltipLocked", false, null), _activateHotkeyMarkup, _focusedTileEntityName);
 	}
 
-	// Token: 0x06000B48 RID: 2888 RVA: 0x0004819C File Offset: 0x0004639C
+	// Token: 0x06000B53 RID: 2899 RVA: 0x000485B4 File Offset: 0x000467B4
 	public override void InitBlockActivationCommands(Action<BlockActivationCommand, TileEntityComposite.EBlockCommandOrder, TileEntityFeatureData> _addCallback)
 	{
 		base.InitBlockActivationCommands(_addCallback);
@@ -179,7 +179,7 @@ public class TEFeatureLockable : TEFeatureAbs, ILockable, IFeatureTriggerCapabil
 		_addCallback(new BlockActivationCommand("keypad", "keypad", false, false, null), TileEntityComposite.EBlockCommandOrder.Normal, base.FeatureData);
 	}
 
-	// Token: 0x06000B49 RID: 2889 RVA: 0x00048210 File Offset: 0x00046410
+	// Token: 0x06000B54 RID: 2900 RVA: 0x00048628 File Offset: 0x00046828
 	public override bool AllowBlockActivationCommand(ITileEntityFeature _module, ReadOnlySpan<char> _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityAlive _entityFocusing)
 	{
 		if (!base.AllowBlockActivationCommand(_module, _commandName, _world, _blockPos, _blockValue, _entityFocusing))
@@ -203,7 +203,7 @@ public class TEFeatureLockable : TEFeatureAbs, ILockable, IFeatureTriggerCapabil
 		return !base.CommandIs(_commandName, "keypad") || (!this.IsUserAllowed(internalLocalUserIdentifier) && this.HasPassword() && this.IsLocked()) || this.LocalPlayerIsOwner();
 	}
 
-	// Token: 0x06000B4A RID: 2890 RVA: 0x000482F4 File Offset: 0x000464F4
+	// Token: 0x06000B55 RID: 2901 RVA: 0x0004870C File Offset: 0x0004690C
 	public override bool OnBlockActivated(ReadOnlySpan<char> _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		base.OnBlockActivated(_commandName, _world, _blockPos, _blockValue, _player);
@@ -233,7 +233,7 @@ public class TEFeatureLockable : TEFeatureAbs, ILockable, IFeatureTriggerCapabil
 		return false;
 	}
 
-	// Token: 0x06000B4B RID: 2891 RVA: 0x000483D8 File Offset: 0x000465D8
+	// Token: 0x06000B56 RID: 2902 RVA: 0x000487F0 File Offset: 0x000469F0
 	public override void Read(PooledBinaryReader _br, TileEntity.StreamModeRead _eStreamMode)
 	{
 		base.Read(_br, _eStreamMode);
@@ -258,7 +258,7 @@ public class TEFeatureLockable : TEFeatureAbs, ILockable, IFeatureTriggerCapabil
 		this.passwordHash = _br.ReadString();
 	}
 
-	// Token: 0x06000B4C RID: 2892 RVA: 0x0004845C File Offset: 0x0004665C
+	// Token: 0x06000B57 RID: 2903 RVA: 0x00048874 File Offset: 0x00046A74
 	public override void Write(PooledBinaryWriter _bw, TileEntity.StreamModeWrite _eStreamMode)
 	{
 		base.Write(_bw, _eStreamMode);
@@ -275,19 +275,19 @@ public class TEFeatureLockable : TEFeatureAbs, ILockable, IFeatureTriggerCapabil
 		_bw.Write(this.passwordHash);
 	}
 
-	// Token: 0x04000A79 RID: 2681
+	// Token: 0x04000A86 RID: 2694
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int Version = 18;
 
-	// Token: 0x04000A7A RID: 2682
+	// Token: 0x04000A87 RID: 2695
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool locked;
 
-	// Token: 0x04000A7B RID: 2683
+	// Token: 0x04000A88 RID: 2696
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<PlatformUserIdentifierAbs> allowedUserIds = new List<PlatformUserIdentifierAbs>();
 
-	// Token: 0x04000A7C RID: 2684
+	// Token: 0x04000A89 RID: 2697
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string passwordHash = "";
 }

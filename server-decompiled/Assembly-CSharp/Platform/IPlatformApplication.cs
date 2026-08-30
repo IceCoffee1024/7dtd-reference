@@ -7,15 +7,15 @@ using UnityEngine;
 
 namespace Platform
 {
-	// Token: 0x02001BA1 RID: 7073
+	// Token: 0x02001BC8 RID: 7112
 	public interface IPlatformApplication
 	{
-		// Token: 0x170019BE RID: 6590
-		// (get) Token: 0x0600D22B RID: 53803
+		// Token: 0x17001A30 RID: 6704
+		// (get) Token: 0x0600D3B9 RID: 54201
 		Resolution[] SupportedResolutions { get; }
 
-		// Token: 0x170019BF RID: 6591
-		// (get) Token: 0x0600D22C RID: 53804
+		// Token: 0x17001A31 RID: 6705
+		// (get) Token: 0x0600D3BA RID: 54202
 		[TupleElementNames(new string[] { "width", "height", "fullScreenMode" })]
 		ValueTuple<int, int, FullScreenMode> ScreenOptions
 		{
@@ -23,23 +23,23 @@ namespace Platform
 			get;
 		}
 
-		// Token: 0x0600D22D RID: 53805
+		// Token: 0x0600D3BB RID: 54203
 		void SetResolution(int width, int height, FullScreenMode fullscreen);
 
-		// Token: 0x170019C0 RID: 6592
-		// (get) Token: 0x0600D22E RID: 53806
+		// Token: 0x17001A32 RID: 6706
+		// (get) Token: 0x0600D3BC RID: 54204
 		string temporaryCachePath { get; }
 
-		// Token: 0x0600D22F RID: 53807
+		// Token: 0x0600D3BD RID: 54205
 		void RestartProcess(params string[] argv);
 
-		// Token: 0x0600D230 RID: 53808 RVA: 0x004C1950 File Offset: 0x004BFB50
+		// Token: 0x0600D3BE RID: 54206 RVA: 0x004C7D44 File Offset: 0x004C5F44
 		public static IPlatformApplication Create()
 		{
 			return new PlatformApplicationStandalone();
 		}
 
-		// Token: 0x0600D231 RID: 53809 RVA: 0x004C1957 File Offset: 0x004BFB57
+		// Token: 0x0600D3BF RID: 54207 RVA: 0x004C7D4B File Offset: 0x004C5F4B
 		public static string JoinAndEscapeArgv(params string[] args)
 		{
 			if (args != null)
@@ -49,7 +49,7 @@ namespace Platform
 			return null;
 		}
 
-		// Token: 0x0600D232 RID: 53810 RVA: 0x004C1978 File Offset: 0x004BFB78
+		// Token: 0x0600D3C0 RID: 54208 RVA: 0x004C7D6C File Offset: 0x004C5F6C
 		public static string EscapeArg(string arg)
 		{
 			if (arg.Length > 0 && arg.AsSpan().IndexOfAny<char>(" \t\n\v\"") < 0)
@@ -93,20 +93,20 @@ namespace Platform
 			return stringBuilder.ToString();
 		}
 
-		// Token: 0x0600D233 RID: 53811 RVA: 0x004C1A58 File Offset: 0x004BFC58
+		// Token: 0x0600D3C1 RID: 54209 RVA: 0x004C7E4C File Offset: 0x004C604C
 		RefreshRate GetCurrentRefreshRate()
 		{
 			return Screen.currentResolution.refreshRateRatio;
 		}
 
-		// Token: 0x0600D234 RID: 53812 RVA: 0x004C1A72 File Offset: 0x004BFC72
+		// Token: 0x0600D3C2 RID: 54210 RVA: 0x004C7E66 File Offset: 0x004C6066
 		Resolution GetCurrentResolution()
 		{
 			return Screen.currentResolution;
 		}
 
-		// Token: 0x170019C1 RID: 6593
-		// (get) Token: 0x0600D235 RID: 53813 RVA: 0x004C1A79 File Offset: 0x004BFC79
+		// Token: 0x17001A33 RID: 6707
+		// (get) Token: 0x0600D3C3 RID: 54211 RVA: 0x004C7E6D File Offset: 0x004C606D
 		EnumGamePrefs VSyncCountPref
 		{
 			get

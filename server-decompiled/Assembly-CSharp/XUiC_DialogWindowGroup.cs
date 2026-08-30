@@ -1,20 +1,20 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F0F RID: 3855
+// Token: 0x02000F26 RID: 3878
 [Preserve]
 public class XUiC_DialogWindowGroup : XUiController
 {
-	// Token: 0x17000E1F RID: 3615
-	// (get) Token: 0x060078FE RID: 30974 RVA: 0x002D9C4E File Offset: 0x002D7E4E
-	// (set) Token: 0x060078FF RID: 30975 RVA: 0x002D9C56 File Offset: 0x002D7E56
+	// Token: 0x17000E39 RID: 3641
+	// (get) Token: 0x060079B6 RID: 31158 RVA: 0x002DDBDA File Offset: 0x002DBDDA
+	// (set) Token: 0x060079B7 RID: 31159 RVA: 0x002DDBE2 File Offset: 0x002DBDE2
 	public Dialog CurrentDialog
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06007900 RID: 30976 RVA: 0x002D9C60 File Offset: 0x002D7E60
+	// Token: 0x060079B8 RID: 31160 RVA: 0x002DDBEC File Offset: 0x002DBDEC
 	public static void Open(XUi _xui, Action _onDialogClosed = null)
 	{
 		_xui.playerUI.windowManager.Open("dialog", true);
@@ -25,20 +25,20 @@ public class XUiC_DialogWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06007901 RID: 30977 RVA: 0x002D9CB1 File Offset: 0x002D7EB1
+	// Token: 0x060079B9 RID: 31161 RVA: 0x002DDC3D File Offset: 0x002DBE3D
 	public override void Init()
 	{
 		base.Init();
 		this.responseWindow = base.GetChildByType<XUiC_DialogResponseList>();
 	}
 
-	// Token: 0x06007902 RID: 30978 RVA: 0x002CF437 File Offset: 0x002CD637
+	// Token: 0x060079BA RID: 31162 RVA: 0x002D2ABB File Offset: 0x002D0CBB
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 	}
 
-	// Token: 0x06007903 RID: 30979 RVA: 0x002D9CC8 File Offset: 0x002D7EC8
+	// Token: 0x060079BB RID: 31163 RVA: 0x002DDC54 File Offset: 0x002DBE54
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -63,7 +63,7 @@ public class XUiC_DialogWindowGroup : XUiController
 		GameManager.Instance.SetToolTipPause(this.xui.playerUI.nguiWindowManager, true);
 	}
 
-	// Token: 0x06007904 RID: 30980 RVA: 0x002D9E80 File Offset: 0x002D8080
+	// Token: 0x060079BC RID: 31164 RVA: 0x002DDE0C File Offset: 0x002DC00C
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -77,7 +77,7 @@ public class XUiC_DialogWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x06007905 RID: 30981 RVA: 0x002D9F20 File Offset: 0x002D8120
+	// Token: 0x060079BD RID: 31165 RVA: 0x002DDEAC File Offset: 0x002DC0AC
 	public void RefreshDialog()
 	{
 		if (this.CurrentDialog.CurrentStatement != null)
@@ -88,13 +88,13 @@ public class XUiC_DialogWindowGroup : XUiController
 		this.xui.playerUI.windowManager.Close("dialog");
 	}
 
-	// Token: 0x06007906 RID: 30982 RVA: 0x002D9F55 File Offset: 0x002D8155
+	// Token: 0x060079BE RID: 31166 RVA: 0x002DDEE1 File Offset: 0x002DC0E1
 	public void ShowResponseWindow(bool isVisible)
 	{
 		this.responseWindow.ViewComponent.IsVisible = isVisible;
 	}
 
-	// Token: 0x0400594C RID: 22860
+	// Token: 0x040059FE RID: 23038
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_DialogResponseList responseWindow;
 }

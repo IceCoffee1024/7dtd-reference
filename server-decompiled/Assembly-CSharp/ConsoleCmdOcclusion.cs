@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200024A RID: 586
+// Token: 0x0200024E RID: 590
 [Preserve]
 public class ConsoleCmdOcclusion : ConsoleCmdAbstract
 {
-	// Token: 0x0600118B RID: 4491 RVA: 0x0006E9DE File Offset: 0x0006CBDE
+	// Token: 0x0600119D RID: 4509 RVA: 0x0006F03A File Offset: 0x0006D23A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "occlusion" };
 	}
 
-	// Token: 0x170001C5 RID: 453
-	// (get) Token: 0x0600118C RID: 4492 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x170001C6 RID: 454
+	// (get) Token: 0x0600119E RID: 4510 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -23,8 +23,8 @@ public class ConsoleCmdOcclusion : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x170001C6 RID: 454
-	// (get) Token: 0x0600118D RID: 4493 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x170001C7 RID: 455
+	// (get) Token: 0x0600119F RID: 4511 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -33,21 +33,21 @@ public class ConsoleCmdOcclusion : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600118E RID: 4494 RVA: 0x0006E9EE File Offset: 0x0006CBEE
+	// Token: 0x060011A0 RID: 4512 RVA: 0x0006F04A File Offset: 0x0006D24A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Control OcclusionManager";
 	}
 
-	// Token: 0x0600118F RID: 4495 RVA: 0x00031E8B File Offset: 0x0003008B
+	// Token: 0x060011A1 RID: 4513 RVA: 0x00032147 File Offset: 0x00030347
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "";
 	}
 
-	// Token: 0x06001190 RID: 4496 RVA: 0x0006E9F8 File Offset: 0x0006CBF8
+	// Token: 0x060011A2 RID: 4514 RVA: 0x0006F054 File Offset: 0x0006D254
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (GameManager.IsDedicatedServer)

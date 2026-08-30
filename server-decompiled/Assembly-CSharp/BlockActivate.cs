@@ -3,12 +3,12 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200010D RID: 269
+// Token: 0x0200010E RID: 270
 [Preserve]
 public class BlockActivate : Block
 {
 	// Token: 0x17000077 RID: 119
-	// (get) Token: 0x06000703 RID: 1795 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// (get) Token: 0x0600070D RID: 1805 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowBlockTriggers
 	{
 		get
@@ -17,7 +17,7 @@ public class BlockActivate : Block
 		}
 	}
 
-	// Token: 0x06000705 RID: 1797 RVA: 0x0003311C File Offset: 0x0003131C
+	// Token: 0x0600070F RID: 1807 RVA: 0x000333D8 File Offset: 0x000315D8
 	public override void Init()
 	{
 		base.Init();
@@ -27,7 +27,7 @@ public class BlockActivate : Block
 		}
 	}
 
-	// Token: 0x06000706 RID: 1798 RVA: 0x00033158 File Offset: 0x00031358
+	// Token: 0x06000710 RID: 1808 RVA: 0x00033414 File Offset: 0x00031614
 	public override void LateInit()
 	{
 		base.LateInit();
@@ -38,13 +38,13 @@ public class BlockActivate : Block
 		}
 	}
 
-	// Token: 0x06000707 RID: 1799 RVA: 0x000331AA File Offset: 0x000313AA
+	// Token: 0x06000711 RID: 1809 RVA: 0x00033466 File Offset: 0x00031666
 	public override void OnBlockValueChanged(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		base.OnBlockValueChanged(_world, _chunk, _blockPos, _oldBlockValue, _newBlockValue);
 	}
 
-	// Token: 0x06000708 RID: 1800 RVA: 0x000331BC File Offset: 0x000313BC
+	// Token: 0x06000712 RID: 1810 RVA: 0x00033478 File Offset: 0x00031678
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		PlayerActionsLocal playerInput = ((EntityPlayerLocal)_entityFocusing).playerInput;
@@ -53,7 +53,7 @@ public class BlockActivate : Block
 		return string.Format(Localization.Get("questBlockActivate", false, null), text, localizedBlockName);
 	}
 
-	// Token: 0x06000709 RID: 1801 RVA: 0x00033220 File Offset: 0x00031420
+	// Token: 0x06000713 RID: 1811 RVA: 0x000334DC File Offset: 0x000316DC
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (!(_commandName == "activate"))
@@ -76,13 +76,13 @@ public class BlockActivate : Block
 		return false;
 	}
 
-	// Token: 0x0600070A RID: 1802 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x06000714 RID: 1812 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool HasBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		return true;
 	}
 
-	// Token: 0x0600070B RID: 1803 RVA: 0x000332C0 File Offset: 0x000314C0
+	// Token: 0x06000715 RID: 1813 RVA: 0x0003357C File Offset: 0x0003177C
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		((Chunk)_world.ChunkCache.GetChunkSync(World.toChunkXZ(_blockPos.x), _blockPos.y, World.toChunkXZ(_blockPos.z))).GetBlockTrigger(World.toBlock(_blockPos));
@@ -91,19 +91,19 @@ public class BlockActivate : Block
 		return this.cmds;
 	}
 
-	// Token: 0x0400085F RID: 2143
+	// Token: 0x04000861 RID: 2145
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string activateSound;
 
-	// Token: 0x04000860 RID: 2144
+	// Token: 0x04000862 RID: 2146
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockValue blockChangeTo = BlockValue.Air;
 
-	// Token: 0x04000861 RID: 2145
+	// Token: 0x04000863 RID: 2147
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool useChangeTo;
 
-	// Token: 0x04000862 RID: 2146
+	// Token: 0x04000864 RID: 2148
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new BlockActivationCommand[] cmds = new BlockActivationCommand[]
 	{
@@ -111,7 +111,7 @@ public class BlockActivate : Block
 		new BlockActivationCommand("trigger", "wrench", true, false, null)
 	};
 
-	// Token: 0x04000863 RID: 2147
+	// Token: 0x04000865 RID: 2149
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropBlockChangeTo = "BlockChangeTo";
 }

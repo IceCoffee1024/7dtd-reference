@@ -4,11 +4,11 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000595 RID: 1429
+// Token: 0x0200059A RID: 1434
 [Preserve]
 public class ItemActionCatapult : ItemActionLauncher
 {
-	// Token: 0x06002EE4 RID: 12004 RVA: 0x001296F4 File Offset: 0x001278F4
+	// Token: 0x06002F12 RID: 12050 RVA: 0x0012A764 File Offset: 0x00128964
 	public ItemActionCatapult()
 	{
 		Texture2D texture2D = new Texture2D(1, 1);
@@ -18,7 +18,7 @@ public class ItemActionCatapult : ItemActionLauncher
 		this.progressBarStyle.normal.background = texture2D;
 	}
 
-	// Token: 0x06002EE5 RID: 12005 RVA: 0x00129754 File Offset: 0x00127954
+	// Token: 0x06002F13 RID: 12051 RVA: 0x0012A7C4 File Offset: 0x001289C4
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -32,7 +32,7 @@ public class ItemActionCatapult : ItemActionLauncher
 		}
 	}
 
-	// Token: 0x06002EE6 RID: 12006 RVA: 0x001297B8 File Offset: 0x001279B8
+	// Token: 0x06002F14 RID: 12052 RVA: 0x0012A828 File Offset: 0x00128A28
 	public override void OnModificationsChanged(ItemActionData _data)
 	{
 		base.OnModificationsChanged(_data);
@@ -47,13 +47,13 @@ public class ItemActionCatapult : ItemActionLauncher
 		((ItemActionCatapult.ItemActionDataCatapult)_data).m_MaxStrainTime = 60f / EffectManager.GetValue(PassiveEffects.RoundsPerMinute, _data.invData.itemValue, ((ItemActionCatapult.ItemActionDataCatapult)_data).m_MaxStrainTime, _data.invData.holdingEntity, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false);
 	}
 
-	// Token: 0x06002EE7 RID: 12007 RVA: 0x001298A2 File Offset: 0x00127AA2
+	// Token: 0x06002F15 RID: 12053 RVA: 0x0012A912 File Offset: 0x00128B12
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionCatapult.ItemActionDataCatapult(_invData, _indexInEntityOfAction);
 	}
 
-	// Token: 0x06002EE8 RID: 12008 RVA: 0x001298AC File Offset: 0x00127AAC
+	// Token: 0x06002F16 RID: 12054 RVA: 0x0012A91C File Offset: 0x00128B1C
 	public override void OnScreenOverlay(ItemActionData _actionData)
 	{
 		ItemActionCatapult.ItemActionDataCatapult itemActionDataCatapult = (ItemActionCatapult.ItemActionDataCatapult)_actionData;
@@ -71,7 +71,7 @@ public class ItemActionCatapult : ItemActionLauncher
 		}
 	}
 
-	// Token: 0x06002EE9 RID: 12009 RVA: 0x00129918 File Offset: 0x00127B18
+	// Token: 0x06002F17 RID: 12055 RVA: 0x0012A988 File Offset: 0x00128B88
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		ItemActionCatapult.ItemActionDataCatapult itemActionDataCatapult = (ItemActionCatapult.ItemActionDataCatapult)_actionData;
@@ -132,7 +132,7 @@ public class ItemActionCatapult : ItemActionLauncher
 		base.ExecuteAction(_actionData, true);
 	}
 
-	// Token: 0x06002EEA RID: 12010 RVA: 0x00129AF8 File Offset: 0x00127CF8
+	// Token: 0x06002F18 RID: 12056 RVA: 0x0012AB68 File Offset: 0x00128D68
 	public override void OnHoldingUpdate(ItemActionData _actionData)
 	{
 		base.OnHoldingUpdate(_actionData);
@@ -147,7 +147,7 @@ public class ItemActionCatapult : ItemActionLauncher
 		}
 	}
 
-	// Token: 0x06002EEB RID: 12011 RVA: 0x00129B38 File Offset: 0x00127D38
+	// Token: 0x06002F19 RID: 12057 RVA: 0x0012ABA8 File Offset: 0x00128DA8
 	public override void StopHolding(ItemActionData _data)
 	{
 		base.StopHolding(_data);
@@ -161,7 +161,7 @@ public class ItemActionCatapult : ItemActionLauncher
 		}
 	}
 
-	// Token: 0x06002EEC RID: 12012 RVA: 0x00129B8C File Offset: 0x00127D8C
+	// Token: 0x06002F1A RID: 12058 RVA: 0x0012ABFC File Offset: 0x00128DFC
 	public override void CancelAction(ItemActionData _actionData)
 	{
 		ItemActionCatapult.ItemActionDataCatapult itemActionDataCatapult = (ItemActionCatapult.ItemActionDataCatapult)_actionData;
@@ -184,7 +184,7 @@ public class ItemActionCatapult : ItemActionLauncher
 		}
 	}
 
-	// Token: 0x06002EED RID: 12013 RVA: 0x00129C70 File Offset: 0x00127E70
+	// Token: 0x06002F1B RID: 12059 RVA: 0x0012ACE0 File Offset: 0x00128EE0
 	public override void ReloadGun(ItemActionData _actionData)
 	{
 		ItemActionCatapult.ItemActionDataCatapult itemActionDataCatapult = (ItemActionCatapult.ItemActionDataCatapult)_actionData;
@@ -199,7 +199,7 @@ public class ItemActionCatapult : ItemActionLauncher
 		}
 	}
 
-	// Token: 0x06002EEE RID: 12014 RVA: 0x00129CC8 File Offset: 0x00127EC8
+	// Token: 0x06002F1C RID: 12060 RVA: 0x0012AD38 File Offset: 0x00128F38
 	public float GetStrainPercent(ItemActionData _actionData)
 	{
 		ItemActionLauncher.ItemActionDataLauncher itemActionDataLauncher = _actionData as ItemActionLauncher.ItemActionDataLauncher;
@@ -210,7 +210,7 @@ public class ItemActionCatapult : ItemActionLauncher
 		return 0f;
 	}
 
-	// Token: 0x06002EEF RID: 12015 RVA: 0x00129CEC File Offset: 0x00127EEC
+	// Token: 0x06002F1D RID: 12061 RVA: 0x0012AD5C File Offset: 0x00128F5C
 	public override bool CanReload(ItemActionData _actionData)
 	{
 		ItemActionCatapult.ItemActionDataCatapult itemActionDataCatapult = (ItemActionCatapult.ItemActionDataCatapult)_actionData;
@@ -221,38 +221,38 @@ public class ItemActionCatapult : ItemActionLauncher
 		return base.CanReload(_actionData);
 	}
 
-	// Token: 0x0400244C RID: 9292
+	// Token: 0x04002480 RID: 9344
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GUIStyle progressBarStyle;
 
-	// Token: 0x0400244D RID: 9293
+	// Token: 0x04002481 RID: 9345
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string soundDraw;
 
-	// Token: 0x0400244E RID: 9294
+	// Token: 0x04002482 RID: 9346
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string soundCancel;
 
-	// Token: 0x02000596 RID: 1430
+	// Token: 0x0200059B RID: 1435
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class ItemActionDataCatapult : ItemActionLauncher.ItemActionDataLauncher
 	{
-		// Token: 0x06002EF0 RID: 12016 RVA: 0x00129D19 File Offset: 0x00127F19
+		// Token: 0x06002F1E RID: 12062 RVA: 0x0012AD89 File Offset: 0x00128F89
 		public ItemActionDataCatapult(ItemInventoryData _invData, int _indexInEntityOfAction)
 			: base(_invData, _indexInEntityOfAction)
 		{
 		}
 
-		// Token: 0x0400244F RID: 9295
+		// Token: 0x04002483 RID: 9347
 		public bool m_bActivated;
 
-		// Token: 0x04002450 RID: 9296
+		// Token: 0x04002484 RID: 9348
 		public bool m_bCanceled;
 
-		// Token: 0x04002451 RID: 9297
+		// Token: 0x04002485 RID: 9349
 		public float m_ActivateTime;
 
-		// Token: 0x04002452 RID: 9298
+		// Token: 0x04002486 RID: 9350
 		public float m_MaxStrainTime;
 	}
 }

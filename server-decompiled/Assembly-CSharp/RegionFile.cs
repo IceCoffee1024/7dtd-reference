@@ -1,25 +1,25 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x02000B76 RID: 2934
+// Token: 0x02000B88 RID: 2952
 public abstract class RegionFile
 {
-	// Token: 0x17000958 RID: 2392
-	// (get) Token: 0x060058D8 RID: 22744 RVA: 0x00220D2C File Offset: 0x0021EF2C
-	// (set) Token: 0x060058D9 RID: 22745 RVA: 0x00220D34 File Offset: 0x0021EF34
+	// Token: 0x1700096A RID: 2410
+	// (get) Token: 0x06005960 RID: 22880 RVA: 0x00223A48 File Offset: 0x00221C48
+	// (set) Token: 0x06005961 RID: 22881 RVA: 0x00223A50 File Offset: 0x00221C50
 	public long Length
 	{
 		get; [PublicizedFrom(EAccessModifier.Protected)]
 		set;
 	}
 
-	// Token: 0x060058DA RID: 22746 RVA: 0x00220D3D File Offset: 0x0021EF3D
+	// Token: 0x06005962 RID: 22882 RVA: 0x00223A59 File Offset: 0x00221C59
 	public static string ConstructFullFilePath(string dir, int rX, int rZ, string ext)
 	{
 		return string.Format("{0}/r.{1}.{2}.{3}", new object[] { dir, rX, rZ, ext });
 	}
 
-	// Token: 0x060058DB RID: 22747 RVA: 0x00220D69 File Offset: 0x0021EF69
+	// Token: 0x06005963 RID: 22883 RVA: 0x00223A85 File Offset: 0x00221C85
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public RegionFile(string fullFilePath, int rX, int rZ)
 	{
@@ -28,12 +28,12 @@ public abstract class RegionFile
 		this.fullFilePath = fullFilePath;
 	}
 
-	// Token: 0x060058DC RID: 22748 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005964 RID: 22884 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void Close()
 	{
 	}
 
-	// Token: 0x060058DD RID: 22749 RVA: 0x00220D96 File Offset: 0x0021EF96
+	// Token: 0x06005965 RID: 22885 RVA: 0x00223AB2 File Offset: 0x00221CB2
 	public void GetPositionAndPath(out int regionX, out int regionZ, out string fullFilePath)
 	{
 		regionX = this.regionX;
@@ -41,37 +41,37 @@ public abstract class RegionFile
 		fullFilePath = this.fullFilePath;
 	}
 
-	// Token: 0x060058DE RID: 22750
+	// Token: 0x06005966 RID: 22886
 	public abstract void SaveHeaderData();
 
-	// Token: 0x060058DF RID: 22751
+	// Token: 0x06005967 RID: 22887
 	public abstract void GetTimestampInfo(int cX, int cZ, out uint timeStamp);
 
-	// Token: 0x060058E0 RID: 22752
+	// Token: 0x06005968 RID: 22888
 	public abstract void SetTimestampInfo(int cX, int cZ, uint timeStamp);
 
-	// Token: 0x060058E1 RID: 22753
+	// Token: 0x06005969 RID: 22889
 	public abstract bool HasChunk(int _cX, int _cZ);
 
-	// Token: 0x060058E2 RID: 22754
+	// Token: 0x0600596A RID: 22890
 	public abstract int GetChunkByteCount(int _cX, int _cZ);
 
-	// Token: 0x060058E3 RID: 22755
+	// Token: 0x0600596B RID: 22891
 	public abstract void ReadData(int cX, int cZ, Stream _targetStream);
 
-	// Token: 0x060058E4 RID: 22756
+	// Token: 0x0600596C RID: 22892
 	public abstract void WriteData(int _cX, int _cZ, int _dataLength, byte _compression, byte[] _data, bool _saveHeaderToFile);
 
-	// Token: 0x060058E5 RID: 22757
+	// Token: 0x0600596D RID: 22893
 	public abstract void RemoveChunk(int cX, int cZ);
 
-	// Token: 0x060058E6 RID: 22758
+	// Token: 0x0600596E RID: 22894
 	public abstract void OptimizeLayout();
 
-	// Token: 0x060058E7 RID: 22759
+	// Token: 0x0600596F RID: 22895
 	public abstract int ChunkCount();
 
-	// Token: 0x060058E8 RID: 22760 RVA: 0x00220DB0 File Offset: 0x0021EFB0
+	// Token: 0x06005970 RID: 22896 RVA: 0x00223ACC File Offset: 0x00221CCC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static short ToShort(short byte1, short byte2)
 	{
@@ -88,7 +88,7 @@ public abstract class RegionFile
 		return num2;
 	}
 
-	// Token: 0x060058E9 RID: 22761 RVA: 0x00220DE4 File Offset: 0x0021EFE4
+	// Token: 0x06005971 RID: 22897 RVA: 0x00223B00 File Offset: 0x00221D00
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static void FromShort(short number, out byte byte1, out byte byte2)
 	{
@@ -96,19 +96,19 @@ public abstract class RegionFile
 		byte1 = (byte)(number & 255);
 	}
 
-	// Token: 0x040044D0 RID: 17616
+	// Token: 0x0400456B RID: 17771
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly byte[] tempReadBuffer = new byte[4096];
 
-	// Token: 0x040044D1 RID: 17617
+	// Token: 0x0400456C RID: 17772
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly string fullFilePath;
 
-	// Token: 0x040044D2 RID: 17618
+	// Token: 0x0400456D RID: 17773
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly int regionX;
 
-	// Token: 0x040044D3 RID: 17619
+	// Token: 0x0400456E RID: 17774
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly int regionZ;
 }

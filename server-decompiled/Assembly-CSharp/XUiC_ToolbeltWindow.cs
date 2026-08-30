@@ -3,11 +3,11 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001070 RID: 4208
+// Token: 0x02001089 RID: 4233
 [Preserve]
 public class XUiC_ToolbeltWindow : XUiController
 {
-	// Token: 0x06008590 RID: 34192 RVA: 0x0032F464 File Offset: 0x0032D664
+	// Token: 0x06008682 RID: 34434 RVA: 0x00333C8C File Offset: 0x00331E8C
 	public override void Init()
 	{
 		base.Init();
@@ -23,21 +23,21 @@ public class XUiC_ToolbeltWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008591 RID: 34193 RVA: 0x0032F4B9 File Offset: 0x0032D6B9
+	// Token: 0x06008683 RID: 34435 RVA: 0x00333CE1 File Offset: 0x00331EE1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnClearInventory1_OnPress(XUiController _sender, int _mouseButton)
 	{
 		this.xui.playerUI.entityPlayer.EmptyToolbelt(0, 10);
 	}
 
-	// Token: 0x06008592 RID: 34194 RVA: 0x0032F4D3 File Offset: 0x0032D6D3
+	// Token: 0x06008684 RID: 34436 RVA: 0x00333CFB File Offset: 0x00331EFB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnClearInventory2_OnPress(XUiController _sender, int _mouseButton)
 	{
 		this.xui.playerUI.entityPlayer.EmptyToolbelt(10, 20);
 	}
 
-	// Token: 0x06008593 RID: 34195 RVA: 0x0032F4F0 File Offset: 0x0032D6F0
+	// Token: 0x06008685 RID: 34437 RVA: 0x00333D18 File Offset: 0x00331F18
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -79,7 +79,7 @@ public class XUiC_ToolbeltWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008594 RID: 34196 RVA: 0x0032F6A0 File Offset: 0x0032D8A0
+	// Token: 0x06008686 RID: 34438 RVA: 0x00333EC8 File Offset: 0x003320C8
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -90,7 +90,7 @@ public class XUiC_ToolbeltWindow : XUiController
 		this.currentValue = (this.lastValue = XUiM_Player.GetLevelPercent(this.localPlayer));
 	}
 
-	// Token: 0x06008595 RID: 34197 RVA: 0x0032F6F4 File Offset: 0x0032D8F4
+	// Token: 0x06008687 RID: 34439 RVA: 0x00333F1C File Offset: 0x0033211C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -170,51 +170,51 @@ public class XUiC_ToolbeltWindow : XUiController
 		}
 	}
 
-	// Token: 0x04006322 RID: 25378
+	// Token: 0x040063E9 RID: 25577
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayer localPlayer;
 
-	// Token: 0x04006323 RID: 25379
+	// Token: 0x040063EA RID: 25578
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DateTime updateTime;
 
-	// Token: 0x04006324 RID: 25380
+	// Token: 0x040063EB RID: 25579
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lmpPositionAdjustment = 0.05f;
 
-	// Token: 0x04006325 RID: 25381
+	// Token: 0x040063EC RID: 25580
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lastValue;
 
-	// Token: 0x04006326 RID: 25382
+	// Token: 0x040063ED RID: 25581
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float currentValue;
 
-	// Token: 0x04006327 RID: 25383
+	// Token: 0x040063EE RID: 25582
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lastDeficitValue;
 
-	// Token: 0x04006328 RID: 25384
+	// Token: 0x040063EF RID: 25583
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float deltaTime;
 
-	// Token: 0x04006329 RID: 25385
+	// Token: 0x040063F0 RID: 25584
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string standardXPColor = "255,255,255,255";
 
-	// Token: 0x0400632A RID: 25386
+	// Token: 0x040063F1 RID: 25585
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string updatingXPColor = "255,255,255,255";
 
-	// Token: 0x0400632B RID: 25387
+	// Token: 0x040063F2 RID: 25586
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string expDeficitColor = "255,255,255,255";
 
-	// Token: 0x0400632C RID: 25388
+	// Token: 0x040063F3 RID: 25587
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float xpFillSpeed = 2.5f;
 
-	// Token: 0x0400632D RID: 25389
+	// Token: 0x040063F4 RID: 25588
 	[PublicizedFrom(EAccessModifier.Private)]
 	public CachedStringFormatterFloat bindingXp = new CachedStringFormatterFloat(null);
 }

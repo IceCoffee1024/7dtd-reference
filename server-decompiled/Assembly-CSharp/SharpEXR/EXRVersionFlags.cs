@@ -2,17 +2,17 @@
 
 namespace SharpEXR
 {
-	// Token: 0x020016A7 RID: 5799
+	// Token: 0x020016CD RID: 5837
 	[Flags]
 	public enum EXRVersionFlags
 	{
-		// Token: 0x04008758 RID: 34648
+		// Token: 0x04008874 RID: 34932
 		IsSinglePartTiled = 512,
-		// Token: 0x04008759 RID: 34649
+		// Token: 0x04008875 RID: 34933
 		LongNames = 1024,
-		// Token: 0x0400875A RID: 34650
+		// Token: 0x04008876 RID: 34934
 		NonImageParts = 2048,
-		// Token: 0x0400875B RID: 34651
+		// Token: 0x04008877 RID: 34935
 		MultiPart = 4096
 	}
 }

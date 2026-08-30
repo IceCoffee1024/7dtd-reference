@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000235 RID: 565
+// Token: 0x02000238 RID: 568
 [Preserve]
 public class ConsoleCmdListThreads : ConsoleCmdAbstract
 {
-	// Token: 0x06001108 RID: 4360 RVA: 0x0006C2F9 File Offset: 0x0006A4F9
+	// Token: 0x06001114 RID: 4372 RVA: 0x0006C895 File Offset: 0x0006AA95
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -14,7 +14,7 @@ public class ConsoleCmdListThreads : ConsoleCmdAbstract
 	}
 
 	// Token: 0x170001AC RID: 428
-	// (get) Token: 0x06001109 RID: 4361 RVA: 0x0006110A File Offset: 0x0005F30A
+	// (get) Token: 0x06001115 RID: 4373 RVA: 0x00061652 File Offset: 0x0005F852
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -24,7 +24,7 @@ public class ConsoleCmdListThreads : ConsoleCmdAbstract
 	}
 
 	// Token: 0x170001AD RID: 429
-	// (get) Token: 0x0600110A RID: 4362 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// (get) Token: 0x06001116 RID: 4374 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -33,7 +33,7 @@ public class ConsoleCmdListThreads : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600110B RID: 4363 RVA: 0x0006C314 File Offset: 0x0006A514
+	// Token: 0x06001117 RID: 4375 RVA: 0x0006C8B0 File Offset: 0x0006AAB0
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Threads:");
@@ -47,7 +47,7 @@ public class ConsoleCmdListThreads : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600110C RID: 4364 RVA: 0x0006C398 File Offset: 0x0006A598
+	// Token: 0x06001118 RID: 4376 RVA: 0x0006C934 File Offset: 0x0006AB34
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

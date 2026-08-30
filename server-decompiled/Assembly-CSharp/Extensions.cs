@@ -5,10 +5,10 @@ using System.Text;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
-// Token: 0x020013E2 RID: 5090
+// Token: 0x020013FD RID: 5117
 public static class Extensions
 {
-	// Token: 0x06009F90 RID: 40848 RVA: 0x003BFA1C File Offset: 0x003BDC1C
+	// Token: 0x0600A08D RID: 41101 RVA: 0x003C4D60 File Offset: 0x003C2F60
 	public static Transform FindInChildren(this Transform _t, string _name)
 	{
 		int childCount = _t.childCount;
@@ -31,7 +31,7 @@ public static class Extensions
 		return transform;
 	}
 
-	// Token: 0x06009F91 RID: 40849 RVA: 0x003BFA68 File Offset: 0x003BDC68
+	// Token: 0x0600A08E RID: 41102 RVA: 0x003C4DAC File Offset: 0x003C2FAC
 	public static Transform FindTagInChildren(this Transform _t, string _tag)
 	{
 		if (!_t)
@@ -58,7 +58,7 @@ public static class Extensions
 		return null;
 	}
 
-	// Token: 0x06009F92 RID: 40850 RVA: 0x003BFABC File Offset: 0x003BDCBC
+	// Token: 0x0600A08F RID: 41103 RVA: 0x003C4E00 File Offset: 0x003C3000
 	public static Transform FindInChilds(this Transform target, string name, bool onlyActive = false)
 	{
 		if (!target || name == null)
@@ -84,19 +84,19 @@ public static class Extensions
 		return null;
 	}
 
-	// Token: 0x06009F93 RID: 40851 RVA: 0x003BFB31 File Offset: 0x003BDD31
+	// Token: 0x0600A090 RID: 41104 RVA: 0x003C4E75 File Offset: 0x003C3075
 	public static T GetComponentInChildren<T>(this GameObject o, bool searchInactive, bool avoidGC = false) where T : Component
 	{
 		return o.transform.GetComponentInChildren<T>(searchInactive, avoidGC);
 	}
 
-	// Token: 0x06009F94 RID: 40852 RVA: 0x003BFB40 File Offset: 0x003BDD40
+	// Token: 0x0600A091 RID: 41105 RVA: 0x003C4E84 File Offset: 0x003C3084
 	public static T GetComponentInChildren<T>(this Component c, bool searchInactive, bool avoidGC = false) where T : Component
 	{
 		return c.transform.GetComponentInChildren<T>(searchInactive, avoidGC);
 	}
 
-	// Token: 0x06009F95 RID: 40853 RVA: 0x003BFB50 File Offset: 0x003BDD50
+	// Token: 0x0600A092 RID: 41106 RVA: 0x003C4E94 File Offset: 0x003C3094
 	public static T GetComponentInChildren<T>(this Transform t, bool searchInactive, bool avoidGC = false) where T : Component
 	{
 		if (!searchInactive)
@@ -127,7 +127,7 @@ public static class Extensions
 		return componentsInChildren[0];
 	}
 
-	// Token: 0x06009F96 RID: 40854 RVA: 0x003BFBCC File Offset: 0x003BDDCC
+	// Token: 0x0600A093 RID: 41107 RVA: 0x003C4F10 File Offset: 0x003C3110
 	public static T GetOrAddComponent<T>(this GameObject go) where T : Component
 	{
 		T t = go.GetComponent<T>();
@@ -138,7 +138,7 @@ public static class Extensions
 		return t;
 	}
 
-	// Token: 0x06009F97 RID: 40855 RVA: 0x003BFBF8 File Offset: 0x003BDDF8
+	// Token: 0x0600A094 RID: 41108 RVA: 0x003C4F3C File Offset: 0x003C313C
 	public static string GetGameObjectPath(this GameObject _obj)
 	{
 		string text = "/" + _obj.name;
@@ -150,7 +150,7 @@ public static class Extensions
 		return text;
 	}
 
-	// Token: 0x06009F98 RID: 40856 RVA: 0x003BFC50 File Offset: 0x003BDE50
+	// Token: 0x0600A095 RID: 41109 RVA: 0x003C4F94 File Offset: 0x003C3194
 	public static bool ContainsWithComparer<T>(this List<T> _list, T _item, IEqualityComparer<T> _comparer)
 	{
 		if (_list == null)
@@ -171,7 +171,7 @@ public static class Extensions
 		return false;
 	}
 
-	// Token: 0x06009F99 RID: 40857 RVA: 0x003BFC9C File Offset: 0x003BDE9C
+	// Token: 0x0600A096 RID: 41110 RVA: 0x003C4FE0 File Offset: 0x003C31E0
 	public static bool ContainsCaseInsensitive(this IList<string> _list, string _item)
 	{
 		if (_item == null)
@@ -195,7 +195,7 @@ public static class Extensions
 		return false;
 	}
 
-	// Token: 0x06009F9A RID: 40858 RVA: 0x003BFCF4 File Offset: 0x003BDEF4
+	// Token: 0x0600A097 RID: 41111 RVA: 0x003C5038 File Offset: 0x003C3238
 	public static void CopyTo<T>(this IList<T> _srcList, IList<T> _dest)
 	{
 		foreach (T t in _srcList)
@@ -204,13 +204,13 @@ public static class Extensions
 		}
 	}
 
-	// Token: 0x06009F9B RID: 40859 RVA: 0x003BFD3C File Offset: 0x003BDF3C
+	// Token: 0x0600A098 RID: 41112 RVA: 0x003C5080 File Offset: 0x003C3280
 	public static void Shuffle<T>(this List<T> _list)
 	{
 		_list.Shuffle<T>(GameManager.Instance.World.GetGameRandom());
 	}
 
-	// Token: 0x06009F9C RID: 40860 RVA: 0x003BFD54 File Offset: 0x003BDF54
+	// Token: 0x0600A099 RID: 41113 RVA: 0x003C5098 File Offset: 0x003C3298
 	public static void Shuffle<T>(this List<T> _list, int _seed)
 	{
 		GameRandom gameRandom = GameRandomManager.Instance.CreateGameRandom(_seed);
@@ -218,7 +218,7 @@ public static class Extensions
 		GameRandomManager.Instance.FreeGameRandom(gameRandom);
 	}
 
-	// Token: 0x06009F9D RID: 40861 RVA: 0x003BFD80 File Offset: 0x003BDF80
+	// Token: 0x0600A09A RID: 41114 RVA: 0x003C50C4 File Offset: 0x003C32C4
 	public static void Shuffle<T>(this List<T> _list, GameRandom _rand)
 	{
 		int i = _list.Count;
@@ -234,25 +234,25 @@ public static class Extensions
 		}
 	}
 
-	// Token: 0x06009F9E RID: 40862 RVA: 0x003BFDD9 File Offset: 0x003BDFD9
+	// Token: 0x0600A09B RID: 41115 RVA: 0x003C511D File Offset: 0x003C331D
 	public static bool ColorEquals(this Color32 _a, Color32 _b)
 	{
 		return _a.r == _b.r && _a.g == _b.g && _a.b == _b.b && _a.a == _b.a;
 	}
 
-	// Token: 0x06009F9F RID: 40863 RVA: 0x003BFE15 File Offset: 0x003BE015
+	// Token: 0x0600A09C RID: 41116 RVA: 0x003C5159 File Offset: 0x003C3359
 	public static string ToHexCode(this Color _color, bool _includeAlpha = false)
 	{
 		return _color.ToHexCode(_includeAlpha);
 	}
 
-	// Token: 0x06009FA0 RID: 40864 RVA: 0x003BFE23 File Offset: 0x003BE023
+	// Token: 0x0600A09D RID: 41117 RVA: 0x003C5167 File Offset: 0x003C3367
 	public static Color WithAlpha(this Color _color, float _alpha)
 	{
 		return new Color(_color.r, _color.g, _color.b, _alpha);
 	}
 
-	// Token: 0x06009FA1 RID: 40865 RVA: 0x003BFE40 File Offset: 0x003BE040
+	// Token: 0x0600A09E RID: 41118 RVA: 0x003C5184 File Offset: 0x003C3384
 	public static string ToHexCode(this Color32 _color, bool _includeAlpha = false)
 	{
 		if (!_includeAlpha)
@@ -262,7 +262,7 @@ public static class Extensions
 		return string.Format("{0:X02}{1:X02}{2:X02}{3:X02}", new object[] { _color.r, _color.g, _color.b, _color.a });
 	}
 
-	// Token: 0x06009FA2 RID: 40866 RVA: 0x003BFEC4 File Offset: 0x003BE0C4
+	// Token: 0x0600A09F RID: 41119 RVA: 0x003C5208 File Offset: 0x003C3408
 	public unsafe static void WriteToBuffer(this Guid _value, byte[] _dest, int _offset)
 	{
 		if (_dest.Length - _offset < 16)
@@ -287,19 +287,19 @@ public static class Extensions
 		}
 	}
 
-	// Token: 0x06009FA3 RID: 40867 RVA: 0x003BFF13 File Offset: 0x003BE113
+	// Token: 0x0600A0A0 RID: 41120 RVA: 0x003C5257 File Offset: 0x003C3457
 	public static Bounds Offset(this Bounds _bounds, Vector3 _offset)
 	{
 		return new Bounds(_bounds.center + _offset, _bounds.size);
 	}
 
-	// Token: 0x06009FA4 RID: 40868 RVA: 0x003BFF30 File Offset: 0x003BE130
+	// Token: 0x0600A0A1 RID: 41121 RVA: 0x003C5274 File Offset: 0x003C3474
 	public static bool ContainsInclusive(this BoundsInt bounds, Vector3Int position)
 	{
 		return position.x >= bounds.min.x && position.y >= bounds.min.y && position.z >= bounds.min.z && position.x <= bounds.max.x && position.y <= bounds.max.y && position.z <= bounds.max.z;
 	}
 
-	// Token: 0x06009FA5 RID: 40869 RVA: 0x003BFFD4 File Offset: 0x003BE1D4
+	// Token: 0x0600A0A2 RID: 41122 RVA: 0x003C5318 File Offset: 0x003C3518
 	public static BoundsInt InitFromPoints(IEnumerable<Vector3i> points)
 	{
 		Vector3i vector3i = new Vector3i(int.MaxValue, int.MaxValue, int.MaxValue);
@@ -314,7 +314,7 @@ public static class Extensions
 		return boundsInt;
 	}
 
-	// Token: 0x06009FA6 RID: 40870 RVA: 0x003C0070 File Offset: 0x003BE270
+	// Token: 0x0600A0A3 RID: 41123 RVA: 0x003C53B4 File Offset: 0x003C35B4
 	public static void CalculatePersistableHash(this Bounds _bounds, IncrementalHash calcHash)
 	{
 		calcHash.AppendDataNoAlloc(_bounds.center.x);
@@ -325,25 +325,25 @@ public static class Extensions
 		calcHash.AppendDataNoAlloc(_bounds.size.z);
 	}
 
-	// Token: 0x06009FA7 RID: 40871 RVA: 0x000063DF File Offset: 0x000045DF
+	// Token: 0x0600A0A4 RID: 41124 RVA: 0x000063DF File Offset: 0x000045DF
 	public static bool EqualsCaseInsensitive(this string _a, string _b)
 	{
 		return string.Equals(_a, _b, StringComparison.OrdinalIgnoreCase);
 	}
 
-	// Token: 0x06009FA8 RID: 40872 RVA: 0x003C00E9 File Offset: 0x003BE2E9
+	// Token: 0x0600A0A5 RID: 41125 RVA: 0x003C542D File Offset: 0x003C362D
 	public static bool ContainsCaseInsensitive(this string _a, string _b)
 	{
 		return _a.IndexOf(_b, StringComparison.OrdinalIgnoreCase) >= 0;
 	}
 
-	// Token: 0x06009FA9 RID: 40873 RVA: 0x003C00F9 File Offset: 0x003BE2F9
+	// Token: 0x0600A0A6 RID: 41126 RVA: 0x003C543D File Offset: 0x003C363D
 	public static string SeparateCamelCase(this string _value)
 	{
 		return Extensions.StringSeparationRegex.Replace(_value, " $1").Trim();
 	}
 
-	// Token: 0x06009FAA RID: 40874 RVA: 0x003C0110 File Offset: 0x003BE310
+	// Token: 0x0600A0A7 RID: 41127 RVA: 0x003C5454 File Offset: 0x003C3654
 	public static string UppercaseFirst(this string _s)
 	{
 		if (string.IsNullOrEmpty(_s))
@@ -353,7 +353,7 @@ public static class Extensions
 		return char.ToUpper(_s[0]).ToString() + _s.Substring(1);
 	}
 
-	// Token: 0x06009FAB RID: 40875 RVA: 0x003C014B File Offset: 0x003BE34B
+	// Token: 0x0600A0A8 RID: 41128 RVA: 0x003C548F File Offset: 0x003C368F
 	public unsafe static string ToHexString(this ReadOnlyMemory<byte> bytes)
 	{
 		if (bytes.Length <= 0)
@@ -372,13 +372,13 @@ public static class Extensions
 		});
 	}
 
-	// Token: 0x06009FAC RID: 40876 RVA: 0x003C018B File Offset: 0x003BE38B
+	// Token: 0x0600A0A9 RID: 41129 RVA: 0x003C54CF File Offset: 0x003C36CF
 	public static string ToHexString(this byte[] bytes)
 	{
 		return bytes.ToHexString();
 	}
 
-	// Token: 0x06009FAD RID: 40877 RVA: 0x003C0198 File Offset: 0x003BE398
+	// Token: 0x0600A0AA RID: 41130 RVA: 0x003C54DC File Offset: 0x003C36DC
 	public static string ToUnicodeCodepoints(this string _value)
 	{
 		StringBuilder stringBuilder = new StringBuilder();
@@ -389,19 +389,19 @@ public static class Extensions
 		return stringBuilder.ToString();
 	}
 
-	// Token: 0x06009FAE RID: 40878 RVA: 0x003C01DE File Offset: 0x003BE3DE
+	// Token: 0x0600A0AB RID: 41131 RVA: 0x003C5522 File Offset: 0x003C3722
 	public static string RemoveLineBreaks(this string _value)
 	{
 		return _value.Replace("\r\n", " ").Replace("\r", " ").Replace("\n", " ");
 	}
 
-	// Token: 0x06009FAF RID: 40879 RVA: 0x003C020E File Offset: 0x003BE40E
+	// Token: 0x0600A0AC RID: 41132 RVA: 0x003C5552 File Offset: 0x003C3752
 	public static int GetStableHashCode(this string _str)
 	{
 		return _str.AsSpan().GetStableHashCode();
 	}
 
-	// Token: 0x06009FB0 RID: 40880 RVA: 0x003C021C File Offset: 0x003BE41C
+	// Token: 0x0600A0AD RID: 41133 RVA: 0x003C5560 File Offset: 0x003C3760
 	public unsafe static int GetStableHashCode(this ReadOnlySpan<char> _str)
 	{
 		int num = 5381;
@@ -420,7 +420,7 @@ public static class Extensions
 		return num + num2 * 1566083941;
 	}
 
-	// Token: 0x06009FB1 RID: 40881 RVA: 0x003C0294 File Offset: 0x003BE494
+	// Token: 0x0600A0AE RID: 41134 RVA: 0x003C55D8 File Offset: 0x003C37D8
 	public static string Unindent(this string _indented, bool _trimEmptyLines = true)
 	{
 		if (_trimEmptyLines)
@@ -433,7 +433,7 @@ public static class Extensions
 		return _indented;
 	}
 
-	// Token: 0x06009FB2 RID: 40882 RVA: 0x003C02F0 File Offset: 0x003BE4F0
+	// Token: 0x0600A0AF RID: 41135 RVA: 0x003C5634 File Offset: 0x003C3834
 	public static StringBuilder TrimEnd(this StringBuilder _sb)
 	{
 		if (_sb == null || _sb.Length == 0)
@@ -452,7 +452,7 @@ public static class Extensions
 		return _sb;
 	}
 
-	// Token: 0x06009FB3 RID: 40883 RVA: 0x003C0340 File Offset: 0x003BE540
+	// Token: 0x0600A0B0 RID: 41136 RVA: 0x003C5684 File Offset: 0x003C3884
 	public static StringBuilder TrimStart(this StringBuilder _sb)
 	{
 		if (_sb == null || _sb.Length == 0)
@@ -471,7 +471,7 @@ public static class Extensions
 		return _sb;
 	}
 
-	// Token: 0x06009FB4 RID: 40884 RVA: 0x003C0387 File Offset: 0x003BE587
+	// Token: 0x0600A0B1 RID: 41137 RVA: 0x003C56CB File Offset: 0x003C38CB
 	public static StringBuilder Trim(this StringBuilder _sb)
 	{
 		if (_sb == null || _sb.Length == 0)
@@ -481,49 +481,49 @@ public static class Extensions
 		return _sb.TrimEnd().TrimStart();
 	}
 
-	// Token: 0x06009FB5 RID: 40885 RVA: 0x003C03A1 File Offset: 0x003BE5A1
+	// Token: 0x0600A0B2 RID: 41138 RVA: 0x003C56E5 File Offset: 0x003C38E5
 	public static string ToCultureInvariantString(this float _value)
 	{
 		return _value.ToString(Utils.StandardCulture);
 	}
 
-	// Token: 0x06009FB6 RID: 40886 RVA: 0x003C03AF File Offset: 0x003BE5AF
+	// Token: 0x0600A0B3 RID: 41139 RVA: 0x003C56F3 File Offset: 0x003C38F3
 	public static string ToCultureInvariantString(this double _value)
 	{
 		return _value.ToString(Utils.StandardCulture);
 	}
 
-	// Token: 0x06009FB7 RID: 40887 RVA: 0x003C03BD File Offset: 0x003BE5BD
+	// Token: 0x0600A0B4 RID: 41140 RVA: 0x003C5701 File Offset: 0x003C3901
 	public static string ToCultureInvariantString(this float _value, string _format)
 	{
 		return _value.ToString(_format, Utils.StandardCulture);
 	}
 
-	// Token: 0x06009FB8 RID: 40888 RVA: 0x003C03CC File Offset: 0x003BE5CC
+	// Token: 0x0600A0B5 RID: 41141 RVA: 0x003C5710 File Offset: 0x003C3910
 	public static string ToCultureInvariantString(this double _value, string _format)
 	{
 		return _value.ToString(_format, Utils.StandardCulture);
 	}
 
-	// Token: 0x06009FB9 RID: 40889 RVA: 0x003C03DB File Offset: 0x003BE5DB
+	// Token: 0x0600A0B6 RID: 41142 RVA: 0x003C571F File Offset: 0x003C391F
 	public static string ToCultureInvariantString(this decimal _value)
 	{
 		return _value.ToString(Utils.StandardCulture);
 	}
 
-	// Token: 0x06009FBA RID: 40890 RVA: 0x003C03E9 File Offset: 0x003BE5E9
+	// Token: 0x0600A0B7 RID: 41143 RVA: 0x003C572D File Offset: 0x003C392D
 	public static string ToCultureInvariantString(this decimal _value, string _format)
 	{
 		return _value.ToString(_format, Utils.StandardCulture);
 	}
 
-	// Token: 0x06009FBB RID: 40891 RVA: 0x003C03F8 File Offset: 0x003BE5F8
+	// Token: 0x0600A0B8 RID: 41144 RVA: 0x003C573C File Offset: 0x003C393C
 	public static string ToCultureInvariantString(this DateTime _value)
 	{
 		return _value.ToString(Utils.StandardCulture);
 	}
 
-	// Token: 0x06009FBC RID: 40892 RVA: 0x003C0408 File Offset: 0x003BE608
+	// Token: 0x0600A0B9 RID: 41145 RVA: 0x003C574C File Offset: 0x003C394C
 	public static string ToCultureInvariantString(this Vector2 _value)
 	{
 		return string.Concat(new string[]
@@ -536,7 +536,7 @@ public static class Extensions
 		});
 	}
 
-	// Token: 0x06009FBD RID: 40893 RVA: 0x003C0460 File Offset: 0x003BE660
+	// Token: 0x0600A0BA RID: 41146 RVA: 0x003C57A4 File Offset: 0x003C39A4
 	public static string ToCultureInvariantString(this Vector2 _value, string _format)
 	{
 		return string.Concat(new string[]
@@ -549,7 +549,7 @@ public static class Extensions
 		});
 	}
 
-	// Token: 0x06009FBE RID: 40894 RVA: 0x003C04B0 File Offset: 0x003BE6B0
+	// Token: 0x0600A0BB RID: 41147 RVA: 0x003C57F4 File Offset: 0x003C39F4
 	public static string ToCultureInvariantString(this Vector3 _value)
 	{
 		return string.Concat(new string[]
@@ -564,7 +564,7 @@ public static class Extensions
 		});
 	}
 
-	// Token: 0x06009FBF RID: 40895 RVA: 0x003C0524 File Offset: 0x003BE724
+	// Token: 0x0600A0BC RID: 41148 RVA: 0x003C5868 File Offset: 0x003C3A68
 	public static string ToCultureInvariantString(this Vector3 _value, string _format)
 	{
 		return string.Concat(new string[]
@@ -579,7 +579,7 @@ public static class Extensions
 		});
 	}
 
-	// Token: 0x06009FC0 RID: 40896 RVA: 0x003C058C File Offset: 0x003BE78C
+	// Token: 0x0600A0BD RID: 41149 RVA: 0x003C58D0 File Offset: 0x003C3AD0
 	public static string ToCultureInvariantString(this Vector4 _value)
 	{
 		return string.Concat(new string[]
@@ -596,7 +596,7 @@ public static class Extensions
 		});
 	}
 
-	// Token: 0x06009FC1 RID: 40897 RVA: 0x003C061C File Offset: 0x003BE81C
+	// Token: 0x0600A0BE RID: 41150 RVA: 0x003C5960 File Offset: 0x003C3B60
 	public static string ToCultureInvariantString(this Vector4 _value, string _format)
 	{
 		return string.Concat(new string[]
@@ -613,13 +613,13 @@ public static class Extensions
 		});
 	}
 
-	// Token: 0x06009FC2 RID: 40898 RVA: 0x003C0699 File Offset: 0x003BE899
+	// Token: 0x0600A0BF RID: 41151 RVA: 0x003C59DD File Offset: 0x003C3BDD
 	public static string ToCultureInvariantString(this Bounds _value)
 	{
 		return "Center: " + _value.center.ToCultureInvariantString() + ", Extents: " + _value.extents.ToCultureInvariantString();
 	}
 
-	// Token: 0x06009FC3 RID: 40899 RVA: 0x003C06C4 File Offset: 0x003BE8C4
+	// Token: 0x0600A0C0 RID: 41152 RVA: 0x003C5A08 File Offset: 0x003C3C08
 	public static string ToCultureInvariantString(this Rect _value)
 	{
 		return string.Concat(new string[]
@@ -636,7 +636,7 @@ public static class Extensions
 		});
 	}
 
-	// Token: 0x06009FC4 RID: 40900 RVA: 0x003C0758 File Offset: 0x003BE958
+	// Token: 0x0600A0C1 RID: 41153 RVA: 0x003C5A9C File Offset: 0x003C3C9C
 	public static string ToCultureInvariantString(this Quaternion _value)
 	{
 		return string.Concat(new string[]
@@ -653,7 +653,7 @@ public static class Extensions
 		});
 	}
 
-	// Token: 0x06009FC5 RID: 40901 RVA: 0x003C07E8 File Offset: 0x003BE9E8
+	// Token: 0x0600A0C2 RID: 41154 RVA: 0x003C5B2C File Offset: 0x003C3D2C
 	public static string ToCultureInvariantString(this Matrix4x4 _value)
 	{
 		return string.Concat(new string[]
@@ -693,7 +693,7 @@ public static class Extensions
 		});
 	}
 
-	// Token: 0x06009FC6 RID: 40902 RVA: 0x003C09C8 File Offset: 0x003BEBC8
+	// Token: 0x0600A0C3 RID: 41155 RVA: 0x003C5D0C File Offset: 0x003C3F0C
 	public static string ToCultureInvariantString(this Color _value)
 	{
 		return string.Concat(new string[]
@@ -710,7 +710,7 @@ public static class Extensions
 		});
 	}
 
-	// Token: 0x06009FC7 RID: 40903 RVA: 0x003C0A58 File Offset: 0x003BEC58
+	// Token: 0x0600A0C4 RID: 41156 RVA: 0x003C5D9C File Offset: 0x003C3F9C
 	public static string ToCultureInvariantString(this Plane _value)
 	{
 		return string.Concat(new string[]
@@ -727,19 +727,19 @@ public static class Extensions
 		});
 	}
 
-	// Token: 0x06009FC8 RID: 40904 RVA: 0x003C0AF8 File Offset: 0x003BECF8
+	// Token: 0x0600A0C5 RID: 41157 RVA: 0x003C5E3C File Offset: 0x003C403C
 	public static string ToCultureInvariantString(this Ray _value)
 	{
 		return "Origin: " + _value.origin.ToCultureInvariantString() + ", Dir: " + _value.direction.ToCultureInvariantString();
 	}
 
-	// Token: 0x06009FC9 RID: 40905 RVA: 0x003C0B21 File Offset: 0x003BED21
+	// Token: 0x0600A0C6 RID: 41158 RVA: 0x003C5E65 File Offset: 0x003C4065
 	public static string ToCultureInvariantString(this Ray2D _value)
 	{
 		return "Origin: " + _value.origin.ToCultureInvariantString() + ", Dir: " + _value.direction.ToCultureInvariantString();
 	}
 
-	// Token: 0x06009FCA RID: 40906 RVA: 0x003C0B4A File Offset: 0x003BED4A
+	// Token: 0x0600A0C7 RID: 41159 RVA: 0x003C5E8E File Offset: 0x003C408E
 	public static Vector3 NormalizeReturnMagnitude(this Vector3 _value, out float magnitude)
 	{
 		magnitude = Vector3.Magnitude(_value);
@@ -754,13 +754,13 @@ public static class Extensions
 		return _value;
 	}
 
-	// Token: 0x06009FCB RID: 40907 RVA: 0x003C0B76 File Offset: 0x003BED76
+	// Token: 0x0600A0C8 RID: 41160 RVA: 0x003C5EBA File Offset: 0x003C40BA
 	public static Vector3 Abs(this Vector3 _value)
 	{
 		return new Vector3(Math.Abs(_value.x), Math.Abs(_value.y), Math.Abs(_value.z));
 	}
 
-	// Token: 0x06009FCC RID: 40908 RVA: 0x003C0BA0 File Offset: 0x003BEDA0
+	// Token: 0x0600A0C9 RID: 41161 RVA: 0x003C5EE4 File Offset: 0x003C40E4
 	public static Vector3 Max(this Vector3 _value, params Vector3[] _others)
 	{
 		Vector3 vector = _value;
@@ -771,11 +771,11 @@ public static class Extensions
 		return vector;
 	}
 
-	// Token: 0x0400784C RID: 30796
+	// Token: 0x04007925 RID: 31013
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Regex StringSeparationRegex = new Regex("((?<=\\p{Ll})\\p{Lu}|\\p{Lu}(?=\\p{Ll}))", RegexOptions.IgnorePatternWhitespace);
 
-	// Token: 0x0400784D RID: 30797
+	// Token: 0x04007926 RID: 31014
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly char[] HexLookup = new char[]
 	{
@@ -783,19 +783,19 @@ public static class Extensions
 		'a', 'b', 'c', 'd', 'e', 'f'
 	};
 
-	// Token: 0x0400784E RID: 30798
+	// Token: 0x04007927 RID: 31015
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Regex unindentEmptyBeginning = new Regex("^\\s*\r?\n", RegexOptions.Compiled | RegexOptions.Singleline | RegexOptions.CultureInvariant);
 
-	// Token: 0x0400784F RID: 30799
+	// Token: 0x04007928 RID: 31016
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Regex unindentEmptyEnd = new Regex("\r?\n\\s*$", RegexOptions.Compiled | RegexOptions.Singleline | RegexOptions.CultureInvariant);
 
-	// Token: 0x04007850 RID: 30800
+	// Token: 0x04007929 RID: 31017
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Regex unindentIndentationNoLinebreak = new Regex("\\s*\r?\n\\s*([^\\s|])", RegexOptions.Multiline | RegexOptions.Compiled | RegexOptions.CultureInvariant);
 
-	// Token: 0x04007851 RID: 30801
+	// Token: 0x0400792A RID: 31018
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Regex unindentIndentationRegularLinebreak = new Regex("^\\s*\\|", RegexOptions.Multiline | RegexOptions.Compiled | RegexOptions.CultureInvariant);
 }

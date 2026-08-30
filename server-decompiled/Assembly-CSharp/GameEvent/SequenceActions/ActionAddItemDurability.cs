@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001936 RID: 6454
+	// Token: 0x0200195C RID: 6492
 	[Preserve]
 	public class ActionAddItemDurability : ActionBaseItemAction
 	{
-		// Token: 0x0600C64B RID: 50763 RVA: 0x0048E4EB File Offset: 0x0048C6EB
+		// Token: 0x0600C7D2 RID: 51154 RVA: 0x00494837 File Offset: 0x00492A37
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnClientActionStarted(EntityPlayer player)
 		{
@@ -15,7 +15,7 @@ namespace GameEvent.SequenceActions
 			this.amount = GameEventManager.GetFloatValue(player, this.amountText, 0.25f);
 		}
 
-		// Token: 0x0600C64C RID: 50764 RVA: 0x0048E50C File Offset: 0x0048C70C
+		// Token: 0x0600C7D3 RID: 51155 RVA: 0x00494858 File Offset: 0x00492A58
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override bool HandleItemStackChange(ref ItemStack stack, EntityPlayer player)
 		{
@@ -65,7 +65,7 @@ namespace GameEvent.SequenceActions
 			return true;
 		}
 
-		// Token: 0x0600C64D RID: 50765 RVA: 0x0048E6B0 File Offset: 0x0048C8B0
+		// Token: 0x0600C7D4 RID: 51156 RVA: 0x004949FC File Offset: 0x00492BFC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override bool HandleItemValueChange(ref ItemValue itemValue, EntityPlayer player)
 		{
@@ -115,7 +115,7 @@ namespace GameEvent.SequenceActions
 			return true;
 		}
 
-		// Token: 0x0600C64E RID: 50766 RVA: 0x0048E802 File Offset: 0x0048CA02
+		// Token: 0x0600C7D5 RID: 51157 RVA: 0x00494B4E File Offset: 0x00492D4E
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -124,7 +124,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseBool(ActionAddItemDurability.PropIsNegative, ref this.isNegative);
 		}
 
-		// Token: 0x0600C64F RID: 50767 RVA: 0x0048E83E File Offset: 0x0048CA3E
+		// Token: 0x0600C7D6 RID: 51158 RVA: 0x00494B8A File Offset: 0x00492D8A
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -136,31 +136,31 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009570 RID: 38256
+		// Token: 0x04009699 RID: 38553
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string amountText = "";
 
-		// Token: 0x04009571 RID: 38257
+		// Token: 0x0400969A RID: 38554
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float amount = 0.25f;
 
-		// Token: 0x04009572 RID: 38258
+		// Token: 0x0400969B RID: 38555
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool isPercent = true;
 
-		// Token: 0x04009573 RID: 38259
+		// Token: 0x0400969C RID: 38556
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool isNegative;
 
-		// Token: 0x04009574 RID: 38260
+		// Token: 0x0400969D RID: 38557
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropAmount = "amount";
 
-		// Token: 0x04009575 RID: 38261
+		// Token: 0x0400969E RID: 38558
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropIsPercent = "is_percent";
 
-		// Token: 0x04009576 RID: 38262
+		// Token: 0x0400969F RID: 38559
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropIsNegative = "is_negative";
 	}

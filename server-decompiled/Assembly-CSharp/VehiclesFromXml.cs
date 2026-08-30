@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Linq;
 
-// Token: 0x02000D2D RID: 3373
+// Token: 0x02000D3F RID: 3391
 public class VehiclesFromXml
 {
-	// Token: 0x060066B7 RID: 26295 RVA: 0x0028A6C9 File Offset: 0x002888C9
+	// Token: 0x06006743 RID: 26435 RVA: 0x0028D5AD File Offset: 0x0028B7AD
 	public static IEnumerator Load(XmlFile _xmlFile)
 	{
 		XElement root = _xmlFile.XmlDoc.Root;
@@ -37,7 +37,7 @@ public class VehiclesFromXml
 		yield break;
 	}
 
-	// Token: 0x060066B8 RID: 26296 RVA: 0x0028A6D8 File Offset: 0x002888D8
+	// Token: 0x06006744 RID: 26436 RVA: 0x0028D5BC File Offset: 0x0028B7BC
 	public static void Reload(XmlFile xmlFile)
 	{
 		ThreadManager.RunCoroutineSync(VehiclesFromXml.Load(xmlFile));

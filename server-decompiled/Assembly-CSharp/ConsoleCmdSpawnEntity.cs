@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000299 RID: 665
+// Token: 0x0200029D RID: 669
 [Preserve]
 public class ConsoleCmdSpawnEntity : ConsoleCmdAbstract
 {
-	// Token: 0x0600136A RID: 4970 RVA: 0x0007690C File Offset: 0x00074B0C
+	// Token: 0x0600137C RID: 4988 RVA: 0x00076F68 File Offset: 0x00075168
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "spawnentity", "se" };
 	}
 
-	// Token: 0x0600136B RID: 4971 RVA: 0x00076924 File Offset: 0x00074B24
+	// Token: 0x0600137D RID: 4989 RVA: 0x00076F80 File Offset: 0x00075180
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "se playerId entity# <count> - spawn around playerId (0 for local) entity# of count (1 to 100)";
 	}
 
-	// Token: 0x0600136C RID: 4972 RVA: 0x0007692C File Offset: 0x00074B2C
+	// Token: 0x0600137E RID: 4990 RVA: 0x00076F88 File Offset: 0x00075188
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		World world = GameManager.Instance.World;
@@ -118,7 +118,7 @@ public class ConsoleCmdSpawnEntity : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Entity '" + _params[1] + "' not found");
 	}
 
-	// Token: 0x0600136D RID: 4973 RVA: 0x00076CAC File Offset: 0x00074EAC
+	// Token: 0x0600137F RID: 4991 RVA: 0x00077308 File Offset: 0x00075508
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

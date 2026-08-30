@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000E5B RID: 3675
-// (Invoke) Token: 0x06007177 RID: 29047
+// Token: 0x02000E70 RID: 3696
+// (Invoke) Token: 0x06007217 RID: 29207
 public delegate void XUiEvent_SelectedColorChanged(Color _color);

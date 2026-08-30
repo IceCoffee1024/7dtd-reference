@@ -1,18 +1,19 @@
 ﻿using System;
+using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000343 RID: 835
+// Token: 0x02000347 RID: 839
 [Preserve]
 public class XUiC_DiscordInfo : XUiController
 {
-	// Token: 0x06001820 RID: 6176 RVA: 0x00089E50 File Offset: 0x00088050
+	// Token: 0x06001835 RID: 6197 RVA: 0x0008A4F8 File Offset: 0x000886F8
 	public override void Init()
 	{
 		base.Init();
 		XUiC_DiscordInfo.ID = base.WindowGroup.Id;
 	}
 
-	// Token: 0x06001821 RID: 6177 RVA: 0x00089E68 File Offset: 0x00088068
+	// Token: 0x06001836 RID: 6198 RVA: 0x0008A510 File Offset: 0x00088710
 	[XuiBindEvent("OnPress", "btnFullAccount")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnFullAccount_OnPressed(XUiController _sender, int _mouseButton)
@@ -21,7 +22,7 @@ public class XUiC_DiscordInfo : XUiController
 		DiscordManager.Instance.AuthManager.LoginDiscordUser();
 	}
 
-	// Token: 0x06001822 RID: 6178 RVA: 0x00089E7F File Offset: 0x0008807F
+	// Token: 0x06001837 RID: 6199 RVA: 0x0008A527 File Offset: 0x00088727
 	[XuiBindEvent("OnPress", "btnOk")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnOk_OnPressed(XUiController _sender, int _mouseButton)
@@ -29,7 +30,7 @@ public class XUiC_DiscordInfo : XUiController
 		this.closeAndOpenMainMenu();
 	}
 
-	// Token: 0x06001823 RID: 6179 RVA: 0x00089E7F File Offset: 0x0008807F
+	// Token: 0x06001838 RID: 6200 RVA: 0x0008A527 File Offset: 0x00088727
 	[XuiBindEvent("OnPress", "btnNotNow")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnNotNow_OnPressed(XUiController _sender, int _mouseButton)
@@ -37,7 +38,7 @@ public class XUiC_DiscordInfo : XUiController
 		this.closeAndOpenMainMenu();
 	}
 
-	// Token: 0x06001824 RID: 6180 RVA: 0x00089E87 File Offset: 0x00088087
+	// Token: 0x06001839 RID: 6201 RVA: 0x0008A52F File Offset: 0x0008872F
 	[XuiBindEvent("OnPress", "btnSettings")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnSettings_OnPressed(XUiController _sender, int _mouseButton)
@@ -51,7 +52,7 @@ public class XUiC_DiscordInfo : XUiController
 		childByType.OpenAtTab("xuiOptionsAudioDiscord");
 	}
 
-	// Token: 0x06001825 RID: 6181 RVA: 0x00089EBF File Offset: 0x000880BF
+	// Token: 0x0600183A RID: 6202 RVA: 0x0008A567 File Offset: 0x00088767
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void closeAndOpenMainMenu()
 	{
@@ -59,15 +60,15 @@ public class XUiC_DiscordInfo : XUiController
 		this.xui.playerUI.windowManager.Open(XUiC_MainMenu.ID, true);
 	}
 
-	// Token: 0x06001826 RID: 6182 RVA: 0x00089EF8 File Offset: 0x000880F8
+	// Token: 0x0600183B RID: 6203 RVA: 0x0008A5A0 File Offset: 0x000887A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void closeAndOpenLoginWindow()
 	{
 		this.xui.playerUI.windowManager.Close(this.windowGroup, false);
-		XUiC_DiscordLogin.Open(null, true, false, false, true, false);
+		XUiC_DiscordLogin.Open(null, true, false, false, true, (DeviceFlag.XBoxSeriesS | DeviceFlag.XBoxSeriesX | DeviceFlag.PS5).IsCurrent());
 	}
 
-	// Token: 0x06001827 RID: 6183 RVA: 0x00089F21 File Offset: 0x00088121
+	// Token: 0x0600183C RID: 6204 RVA: 0x0008A5CF File Offset: 0x000887CF
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -76,8 +77,8 @@ public class XUiC_DiscordInfo : XUiController
 		DiscordManager.Instance.Settings.Save();
 	}
 
-	// Token: 0x170002E3 RID: 739
-	// (get) Token: 0x06001828 RID: 6184 RVA: 0x00089F54 File Offset: 0x00088154
+	// Token: 0x170002E4 RID: 740
+	// (get) Token: 0x0600183D RID: 6205 RVA: 0x0008A602 File Offset: 0x00088802
 	[XuiXmlBinding("supports_full_accounts")]
 	public bool SupportsFullAccounts
 	{
@@ -88,8 +89,8 @@ public class XUiC_DiscordInfo : XUiController
 		}
 	}
 
-	// Token: 0x170002E4 RID: 740
-	// (get) Token: 0x06001829 RID: 6185 RVA: 0x00089F5B File Offset: 0x0008815B
+	// Token: 0x170002E5 RID: 741
+	// (get) Token: 0x0600183E RID: 6206 RVA: 0x0008A609 File Offset: 0x00088809
 	[XuiXmlBinding("supports_provisional_accounts")]
 	public bool SupportsProvisionalAccounts
 	{
@@ -100,25 +101,25 @@ public class XUiC_DiscordInfo : XUiController
 		}
 	}
 
-	// Token: 0x04000F8C RID: 3980
+	// Token: 0x04000F9D RID: 3997
 	public static string ID = "";
 
-	// Token: 0x04000F8D RID: 3981
+	// Token: 0x04000F9E RID: 3998
 	[XuiBindComponent("btnFullAccount", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnFullAccount;
 
-	// Token: 0x04000F8E RID: 3982
+	// Token: 0x04000F9F RID: 3999
 	[XuiBindComponent("btnOk", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnOk;
 
-	// Token: 0x04000F8F RID: 3983
+	// Token: 0x04000FA0 RID: 4000
 	[XuiBindComponent("btnNotNow", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnNotNow;
 
-	// Token: 0x04000F90 RID: 3984
+	// Token: 0x04000FA1 RID: 4001
 	[XuiBindComponent("btnSettings", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnSettings;

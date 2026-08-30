@@ -5,7 +5,7 @@ using UnityEngine;
 // Token: 0x020000C3 RID: 195
 public abstract class AvatarController : MonoBehaviour
 {
-	// Token: 0x06000429 RID: 1065 RVA: 0x0001F7CF File Offset: 0x0001D9CF
+	// Token: 0x0600042A RID: 1066 RVA: 0x0001F893 File Offset: 0x0001DA93
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Awake()
 	{
@@ -13,7 +13,7 @@ public abstract class AvatarController : MonoBehaviour
 		this.entity = base.GetComponent<EntityAlive>();
 	}
 
-	// Token: 0x0600042A RID: 1066 RVA: 0x0001F7E4 File Offset: 0x0001D9E4
+	// Token: 0x0600042B RID: 1067 RVA: 0x0001F8A8 File Offset: 0x0001DAA8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void StaticInit()
 	{
@@ -132,7 +132,7 @@ public abstract class AvatarController : MonoBehaviour
 		AvatarController.AssignAnimatorHash(ref AvatarController.stressLevel, "ChickenStress");
 	}
 
-	// Token: 0x0600042B RID: 1067 RVA: 0x0001FE4E File Offset: 0x0001E04E
+	// Token: 0x0600042C RID: 1068 RVA: 0x0001FF12 File Offset: 0x0001E112
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static void AssignAnimatorHash(ref int hash, string parameterName)
 	{
@@ -143,25 +143,25 @@ public abstract class AvatarController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600042C RID: 1068 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600042D RID: 1069 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void assignStates()
 	{
 	}
 
-	// Token: 0x0600042D RID: 1069 RVA: 0x0001FE73 File Offset: 0x0001E073
+	// Token: 0x0600042E RID: 1070 RVA: 0x0001FF37 File Offset: 0x0001E137
 	public virtual Animator GetAnimator()
 	{
 		return this.anim;
 	}
 
-	// Token: 0x0600042E RID: 1070 RVA: 0x0001FE7B File Offset: 0x0001E07B
+	// Token: 0x0600042F RID: 1071 RVA: 0x0001FF3F File Offset: 0x0001E13F
 	public void SetAnimator(Transform _animT)
 	{
 		this.SetAnimator(_animT.GetComponent<Animator>());
 	}
 
-	// Token: 0x0600042F RID: 1071 RVA: 0x0001FE8C File Offset: 0x0001E08C
+	// Token: 0x06000430 RID: 1072 RVA: 0x0001FF50 File Offset: 0x0001E150
 	public void SetAnimator(Animator _anim)
 	{
 		if (this.anim == _anim)
@@ -184,7 +184,7 @@ public abstract class AvatarController : MonoBehaviour
 	}
 
 	// Token: 0x1700004F RID: 79
-	// (get) Token: 0x06000430 RID: 1072 RVA: 0x0001FEF8 File Offset: 0x0001E0F8
+	// (get) Token: 0x06000431 RID: 1073 RVA: 0x0001FFBC File Offset: 0x0001E1BC
 	public EntityAlive Entity
 	{
 		get
@@ -193,34 +193,34 @@ public abstract class AvatarController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000431 RID: 1073 RVA: 0x0001FF00 File Offset: 0x0001E100
+	// Token: 0x06000432 RID: 1074 RVA: 0x0001FFC4 File Offset: 0x0001E1C4
 	public bool IsMoving(float forwardSpeed, float strafeSpeed)
 	{
 		return forwardSpeed * forwardSpeed + strafeSpeed * strafeSpeed > 0.0001f;
 	}
 
-	// Token: 0x06000432 RID: 1074 RVA: 0x0001FF10 File Offset: 0x0001E110
+	// Token: 0x06000433 RID: 1075 RVA: 0x0001FFD4 File Offset: 0x0001E1D4
 	public virtual void NotifyAnimatorMove(Animator instigator)
 	{
 		this.entity.NotifyRootMotion(instigator);
 	}
 
-	// Token: 0x06000433 RID: 1075
+	// Token: 0x06000434 RID: 1076
 	public abstract Transform GetActiveModelRoot();
 
-	// Token: 0x06000434 RID: 1076 RVA: 0x0001FF1E File Offset: 0x0001E11E
+	// Token: 0x06000435 RID: 1077 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
 	public virtual Transform GetRightHandTransform()
 	{
 		return null;
 	}
 
-	// Token: 0x06000435 RID: 1077 RVA: 0x0001FF1E File Offset: 0x0001E11E
+	// Token: 0x06000436 RID: 1078 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
 	public Texture2D GetTexture()
 	{
 		return null;
 	}
 
-	// Token: 0x06000436 RID: 1078 RVA: 0x0001FF24 File Offset: 0x0001E124
+	// Token: 0x06000437 RID: 1079 RVA: 0x0001FFE8 File Offset: 0x0001E1E8
 	public virtual void ResetAnimations()
 	{
 		Animator animator = this.GetAnimator();
@@ -231,114 +231,114 @@ public abstract class AvatarController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000437 RID: 1079 RVA: 0x0001FF4E File Offset: 0x0001E14E
+	// Token: 0x06000438 RID: 1080 RVA: 0x00020012 File Offset: 0x0001E212
 	public virtual void SetMeleeAttackSpeed(float _speed)
 	{
 		this.UpdateFloat(AvatarController.meleeAttackSpeedHash, _speed, true);
 	}
 
-	// Token: 0x06000438 RID: 1080
+	// Token: 0x06000439 RID: 1081
 	public abstract bool IsAnimationAttackPlaying();
 
-	// Token: 0x06000439 RID: 1081
+	// Token: 0x0600043A RID: 1082
 	public abstract void StartAnimationAttack();
 
-	// Token: 0x0600043A RID: 1082 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600043B RID: 1083 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetInAir(bool inAir)
 	{
 	}
 
-	// Token: 0x0600043B RID: 1083 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600043C RID: 1084 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetAttackImpact()
 	{
 	}
 
-	// Token: 0x0600043C RID: 1084 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x0600043D RID: 1085 RVA: 0x00020021 File Offset: 0x0001E221
 	public virtual bool IsAttackImpact()
 	{
 		return true;
 	}
 
-	// Token: 0x0600043D RID: 1085 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x0600043E RID: 1086 RVA: 0x00020021 File Offset: 0x0001E221
 	public virtual bool IsAnimationWithMotionRunning()
 	{
 		return true;
 	}
 
-	// Token: 0x0600043E RID: 1086 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x0600043F RID: 1087 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual AvatarController.ActionState GetActionState()
 	{
 		return AvatarController.ActionState.None;
 	}
 
-	// Token: 0x0600043F RID: 1087 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000440 RID: 1088 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool IsActionActive()
 	{
 		return false;
 	}
 
-	// Token: 0x06000440 RID: 1088 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000441 RID: 1089 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void StartAction(int _animType)
 	{
 	}
 
-	// Token: 0x06000441 RID: 1089 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000442 RID: 1090 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool IsAnimationSpecialAttackPlaying()
 	{
 		return false;
 	}
 
-	// Token: 0x06000442 RID: 1090 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000443 RID: 1091 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void StartAnimationSpecialAttack(bool _b, int _animType)
 	{
 	}
 
-	// Token: 0x06000443 RID: 1091 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000444 RID: 1092 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool IsAnimationSpecialAttack2Playing()
 	{
 		return false;
 	}
 
-	// Token: 0x06000444 RID: 1092 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000445 RID: 1093 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void StartAnimationSpecialAttack2()
 	{
 	}
 
-	// Token: 0x06000445 RID: 1093 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000446 RID: 1094 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool IsAnimationRagingPlaying()
 	{
 		return false;
 	}
 
-	// Token: 0x06000446 RID: 1094 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000447 RID: 1095 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void StartAnimationRaging()
 	{
 	}
 
-	// Token: 0x06000447 RID: 1095 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000448 RID: 1096 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void StartAnimationFiring()
 	{
 	}
 
-	// Token: 0x06000448 RID: 1096 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000449 RID: 1097 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool IsAnimationHitRunning()
 	{
 		return false;
 	}
 
-	// Token: 0x06000449 RID: 1097 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600044A RID: 1098 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void StartAnimationHit(EnumBodyPartHit _bodyPart, int _dir, int _hitDamage, bool _criticalHit, int _movementState, float _random, float _duration)
 	{
 	}
 
-	// Token: 0x0600044A RID: 1098 RVA: 0x0001FF60 File Offset: 0x0001E160
+	// Token: 0x0600044B RID: 1099 RVA: 0x00020024 File Offset: 0x0001E224
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool CheckHit(float duration)
 	{
 		return this.hitWeight < 0.15f || duration > this.hitDuration || !this.IsAnimationHitRunning();
 	}
 
-	// Token: 0x0600044B RID: 1099 RVA: 0x0001FF84 File Offset: 0x0001E184
+	// Token: 0x0600044C RID: 1100 RVA: 0x00020048 File Offset: 0x0001E248
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitHitDuration(float duration)
 	{
@@ -377,122 +377,122 @@ public abstract class AvatarController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600044C RID: 1100 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x0600044D RID: 1101 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool IsAnimationHarvestingPlaying()
 	{
 		return false;
 	}
 
-	// Token: 0x0600044D RID: 1101 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600044E RID: 1102 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void StartAnimationHarvesting(float _length, bool _weaponFireTrigger)
 	{
 	}
 
-	// Token: 0x0600044E RID: 1102 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x0600044F RID: 1103 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool IsAnimationDigRunning()
 	{
 		return false;
 	}
 
-	// Token: 0x0600044F RID: 1103 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000450 RID: 1104 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool IsAttackProhibited()
 	{
 		return false;
 	}
 
-	// Token: 0x06000450 RID: 1104 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000451 RID: 1105 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void StartAnimationDodge(float _blend)
 	{
 	}
 
-	// Token: 0x06000451 RID: 1105 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000452 RID: 1106 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool IsAnimationToDodge()
 	{
 		return false;
 	}
 
-	// Token: 0x06000452 RID: 1106 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000453 RID: 1107 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void StartAnimationJumping()
 	{
 	}
 
-	// Token: 0x06000453 RID: 1107 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000454 RID: 1108 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void StartAnimationJump(AnimJumpMode jumpMode)
 	{
 	}
 
-	// Token: 0x06000454 RID: 1108 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000455 RID: 1109 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool IsAnimationJumpRunning()
 	{
 		return false;
 	}
 
-	// Token: 0x06000455 RID: 1109 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000456 RID: 1110 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetSwim(bool _enable)
 	{
 	}
 
-	// Token: 0x06000456 RID: 1110 RVA: 0x000200AA File Offset: 0x0001E2AA
+	// Token: 0x06000457 RID: 1111 RVA: 0x0002016E File Offset: 0x0001E36E
 	public virtual float GetAnimationElectrocuteRemaining()
 	{
 		return this.electrocuteTime;
 	}
 
-	// Token: 0x06000457 RID: 1111 RVA: 0x000200B2 File Offset: 0x0001E2B2
+	// Token: 0x06000458 RID: 1112 RVA: 0x00020176 File Offset: 0x0001E376
 	public virtual void StartAnimationElectrocute(float _duration)
 	{
 		this.electrocuteTime = _duration;
 	}
 
-	// Token: 0x06000458 RID: 1112 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000459 RID: 1113 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void Electrocute(bool enabled)
 	{
 	}
 
-	// Token: 0x06000459 RID: 1113 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600045A RID: 1114 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void StartAnimationReloading()
 	{
 	}
 
-	// Token: 0x0600045A RID: 1114 RVA: 0x000200BB File Offset: 0x0001E2BB
+	// Token: 0x0600045B RID: 1115 RVA: 0x0002017F File Offset: 0x0001E37F
 	public void SetReloadBool(bool value)
 	{
 		this._setBool(AvatarController.reloadHash, value, true);
 	}
 
-	// Token: 0x0600045B RID: 1115 RVA: 0x000200CA File Offset: 0x0001E2CA
+	// Token: 0x0600045C RID: 1116 RVA: 0x0002018E File Offset: 0x0001E38E
 	public void SetStress(float val)
 	{
 		this._setFloat(AvatarController.stressLevel, val, true);
 	}
 
-	// Token: 0x0600045C RID: 1116 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600045D RID: 1117 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void StartDeathAnimation(EnumBodyPartHit _bodyPart, int _movementState, float random)
 	{
 	}
 
-	// Token: 0x0600045D RID: 1117 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x0600045E RID: 1118 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool IsAnimationUsePlaying()
 	{
 		return false;
 	}
 
-	// Token: 0x0600045E RID: 1118 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600045F RID: 1119 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void StartAnimationUse()
 	{
 	}
 
-	// Token: 0x0600045F RID: 1119 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000460 RID: 1120 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SwitchModelAndView(string _modelName, bool _bFPV, bool _bMale)
 	{
 	}
 
-	// Token: 0x06000460 RID: 1120 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000461 RID: 1121 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetAiming(bool _bEnable)
 	{
 	}
 
-	// Token: 0x06000461 RID: 1121 RVA: 0x000200D9 File Offset: 0x0001E2D9
+	// Token: 0x06000462 RID: 1122 RVA: 0x0002019D File Offset: 0x0001E39D
 	public virtual void SetAlive()
 	{
 		if (this.anim != null)
@@ -501,32 +501,32 @@ public abstract class AvatarController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000462 RID: 1122 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000463 RID: 1123 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetCrouching(bool _bEnable)
 	{
 	}
 
-	// Token: 0x06000463 RID: 1123 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000464 RID: 1124 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetDrunk(float _numBeers)
 	{
 	}
 
-	// Token: 0x06000464 RID: 1124 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000465 RID: 1125 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetInRightHand(Transform _transform)
 	{
 	}
 
-	// Token: 0x06000465 RID: 1125 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000466 RID: 1126 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetLookPosition(Vector3 _pos)
 	{
 	}
 
-	// Token: 0x06000466 RID: 1126 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000467 RID: 1127 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetVehicleAnimation(int _animHash, int _pose)
 	{
 	}
 
-	// Token: 0x06000467 RID: 1127 RVA: 0x000200F8 File Offset: 0x0001E2F8
+	// Token: 0x06000468 RID: 1128 RVA: 0x000201BC File Offset: 0x0001E3BC
 	public virtual int GetVehicleAnimation()
 	{
 		int num;
@@ -537,55 +537,55 @@ public abstract class AvatarController : MonoBehaviour
 		return -1;
 	}
 
-	// Token: 0x06000468 RID: 1128 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000469 RID: 1129 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual AvatarController.CoverMode CurrentCoverMode()
 	{
 		return AvatarController.CoverMode.None;
 	}
 
-	// Token: 0x06000469 RID: 1129 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x0600046A RID: 1130 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual AvatarController.CoverType CurrentCoverType()
 	{
 		return AvatarController.CoverType.Center;
 	}
 
-	// Token: 0x0600046A RID: 1130 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x0600046B RID: 1131 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual AvatarController.CoverEngageType CurrentCoverEngageType()
 	{
 		return AvatarController.CoverEngageType.None;
 	}
 
-	// Token: 0x0600046B RID: 1131 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600046C RID: 1132 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetCoverMode(AvatarController.CoverMode _coverMode)
 	{
 	}
 
-	// Token: 0x0600046C RID: 1132 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600046D RID: 1133 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetCoverType(AvatarController.CoverType _coverType)
 	{
 	}
 
-	// Token: 0x0600046D RID: 1133 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600046E RID: 1134 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetCoverEngageType(AvatarController.CoverEngageType _engage)
 	{
 	}
 
-	// Token: 0x0600046E RID: 1134 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600046F RID: 1135 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetCoverHeight(float coverHeight)
 	{
 	}
 
-	// Token: 0x0600046F RID: 1135 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000470 RID: 1136 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetRagdollEnabled(bool _b)
 	{
 	}
 
-	// Token: 0x06000470 RID: 1136 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000471 RID: 1137 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetWalkingSpeed(float _f)
 	{
 	}
 
-	// Token: 0x06000471 RID: 1137 RVA: 0x00020118 File Offset: 0x0001E318
+	// Token: 0x06000472 RID: 1138 RVA: 0x000201DC File Offset: 0x0001E3DC
 	public virtual void SetWalkType(int _walkType, bool _trigger = false)
 	{
 		this._setInt(AvatarController.walkTypeHash, _walkType, true);
@@ -603,25 +603,25 @@ public abstract class AvatarController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000472 RID: 1138 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000473 RID: 1139 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetHeadAngles(float _nick, float _yaw)
 	{
 	}
 
-	// Token: 0x06000473 RID: 1139 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000474 RID: 1140 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetArmsAngles(float _rightArmAngle, float _leftArmAngle)
 	{
 	}
 
-	// Token: 0x06000474 RID: 1140
+	// Token: 0x06000475 RID: 1141
 	public abstract void SetVisible(bool _b);
 
-	// Token: 0x06000475 RID: 1141 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000476 RID: 1142 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void SetArchetypeStance(NPCInfo.StanceTypes stance)
 	{
 	}
 
-	// Token: 0x06000476 RID: 1142 RVA: 0x0002016E File Offset: 0x0001E36E
+	// Token: 0x06000477 RID: 1143 RVA: 0x00020232 File Offset: 0x0001E432
 	public virtual void TriggerReaction(int reaction)
 	{
 		if (this.anim != null)
@@ -631,7 +631,7 @@ public abstract class AvatarController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000477 RID: 1143 RVA: 0x00020197 File Offset: 0x0001E397
+	// Token: 0x06000478 RID: 1144 RVA: 0x0002025B File Offset: 0x0001E45B
 	public virtual void TriggerSleeperPose(int pose, bool returningToSleep = false)
 	{
 		if (this.anim != null)
@@ -641,12 +641,12 @@ public abstract class AvatarController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000478 RID: 1144 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000479 RID: 1145 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void RemoveLimb(BodyDamage _bodyDamage, bool restoreState)
 	{
 	}
 
-	// Token: 0x06000479 RID: 1145 RVA: 0x000201C0 File Offset: 0x0001E3C0
+	// Token: 0x0600047A RID: 1146 RVA: 0x00020284 File Offset: 0x0001E484
 	public virtual void DismemberLimb(BodyDamage _bodyDamage, bool restoreState)
 	{
 		if (_bodyDamage.bodyPartHit != EnumBodyPartHit.None)
@@ -655,68 +655,68 @@ public abstract class AvatarController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600047A RID: 1146 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600047B RID: 1147 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void TurnIntoCrawler()
 	{
 	}
 
-	// Token: 0x0600047B RID: 1147 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600047C RID: 1148 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void BeginStun(EnumEntityStunType stun, EnumBodyPartHit _bodyPart, Utils.EnumHitDirection _hitDirection, bool _criticalHit, float random)
 	{
 	}
 
-	// Token: 0x0600047C RID: 1148 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600047D RID: 1149 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void EndStun()
 	{
 	}
 
-	// Token: 0x0600047D RID: 1149 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x0600047E RID: 1150 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool IsAnimationStunRunning()
 	{
 		return false;
 	}
 
-	// Token: 0x0600047E RID: 1150 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600047F RID: 1151 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void StartEating()
 	{
 	}
 
-	// Token: 0x0600047F RID: 1151 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000480 RID: 1152 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void StopEating()
 	{
 	}
 
-	// Token: 0x06000480 RID: 1152 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000481 RID: 1153 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void PlayPlayerFPRevive()
 	{
 	}
 
-	// Token: 0x06000481 RID: 1153 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000482 RID: 1154 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool IsAnimationPlayerFPRevivePlaying()
 	{
 		return false;
 	}
 
-	// Token: 0x06000482 RID: 1154 RVA: 0x000201D2 File Offset: 0x0001E3D2
+	// Token: 0x06000483 RID: 1155 RVA: 0x00020296 File Offset: 0x0001E496
 	public bool IsRootMotionForced()
 	{
 		return this.anim != null && this.anim.GetFloat(AvatarController.forcedRootMotionHash) > 0f;
 	}
 
-	// Token: 0x06000483 RID: 1155 RVA: 0x000201FB File Offset: 0x0001E3FB
+	// Token: 0x06000484 RID: 1156 RVA: 0x000202BF File Offset: 0x0001E4BF
 	public bool IsAttackPrevented()
 	{
 		return this.anim != null && this.anim.GetFloat(AvatarController.preventAttackHash) > 0f;
 	}
 
-	// Token: 0x06000484 RID: 1156 RVA: 0x00020224 File Offset: 0x0001E424
+	// Token: 0x06000485 RID: 1157 RVA: 0x000202E8 File Offset: 0x0001E4E8
 	public virtual void SetFallAndGround(bool _canFall, bool _onGnd)
 	{
 		this._setBool(AvatarController.canFallHash, _canFall, false);
 		this._setBool(AvatarController.isOnGroundHash, _onGnd, false);
 	}
 
-	// Token: 0x06000485 RID: 1157 RVA: 0x00020240 File Offset: 0x0001E440
+	// Token: 0x06000486 RID: 1158 RVA: 0x00020304 File Offset: 0x0001E504
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void FixedUpdate()
 	{
@@ -747,7 +747,7 @@ public abstract class AvatarController : MonoBehaviour
 		this.updateNetworkAnimData();
 	}
 
-	// Token: 0x06000486 RID: 1158 RVA: 0x0002034C File Offset: 0x0001E54C
+	// Token: 0x06000487 RID: 1159 RVA: 0x00020410 File Offset: 0x0001E610
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Update()
 	{
@@ -792,7 +792,7 @@ public abstract class AvatarController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000487 RID: 1159 RVA: 0x000204A8 File Offset: 0x0001E6A8
+	// Token: 0x06000488 RID: 1160 RVA: 0x0002056C File Offset: 0x0001E76C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void processAnimParamData(List<AnimParamData> animationParameterData)
 	{
@@ -827,74 +827,74 @@ public abstract class AvatarController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000488 RID: 1160 RVA: 0x0002057B File Offset: 0x0001E77B
+	// Token: 0x06000489 RID: 1161 RVA: 0x0002063F File Offset: 0x0001E83F
 	public void TriggerEvent(string _property)
 	{
 		this._setTrigger(_property, true);
 	}
 
-	// Token: 0x06000489 RID: 1161 RVA: 0x00020585 File Offset: 0x0001E785
+	// Token: 0x0600048A RID: 1162 RVA: 0x00020649 File Offset: 0x0001E849
 	public void TriggerEvent(int _pid)
 	{
 		this._setTrigger(_pid, true);
 	}
 
-	// Token: 0x0600048A RID: 1162 RVA: 0x0002058F File Offset: 0x0001E78F
+	// Token: 0x0600048B RID: 1163 RVA: 0x00020653 File Offset: 0x0001E853
 	public void CancelEvent(string _property)
 	{
 		this._resetTrigger(_property, true);
 	}
 
-	// Token: 0x0600048B RID: 1163 RVA: 0x00020599 File Offset: 0x0001E799
+	// Token: 0x0600048C RID: 1164 RVA: 0x0002065D File Offset: 0x0001E85D
 	public void CancelEvent(int _pid)
 	{
 		this._resetTrigger(_pid, true);
 	}
 
-	// Token: 0x0600048C RID: 1164 RVA: 0x000205A3 File Offset: 0x0001E7A3
+	// Token: 0x0600048D RID: 1165 RVA: 0x00020667 File Offset: 0x0001E867
 	public void UpdateFloat(string _property, float _value, bool _netsync = true)
 	{
 		this._setFloat(_property, _value, _netsync);
 	}
 
-	// Token: 0x0600048D RID: 1165 RVA: 0x000205AE File Offset: 0x0001E7AE
+	// Token: 0x0600048E RID: 1166 RVA: 0x00020672 File Offset: 0x0001E872
 	public void UpdateFloat(int _pid, float _value, bool _netsync = true)
 	{
 		this._setFloat(_pid, _value, _netsync);
 	}
 
-	// Token: 0x0600048E RID: 1166 RVA: 0x000205B9 File Offset: 0x0001E7B9
+	// Token: 0x0600048F RID: 1167 RVA: 0x0002067D File Offset: 0x0001E87D
 	public void UpdateBool(string _property, bool _value, bool _netsync = true)
 	{
 		this._setBool(_property, _value, _netsync);
 	}
 
-	// Token: 0x0600048F RID: 1167 RVA: 0x000205C4 File Offset: 0x0001E7C4
+	// Token: 0x06000490 RID: 1168 RVA: 0x00020688 File Offset: 0x0001E888
 	public void UpdateBool(int _pid, bool _value, bool _netsync = true)
 	{
 		this._setBool(_pid, _value, _netsync);
 	}
 
-	// Token: 0x06000490 RID: 1168 RVA: 0x000205CF File Offset: 0x0001E7CF
+	// Token: 0x06000491 RID: 1169 RVA: 0x00020693 File Offset: 0x0001E893
 	public void UpdateInt(string _property, int _value, bool _netsync = true)
 	{
 		this._setInt(_property, _value, _netsync);
 	}
 
-	// Token: 0x06000491 RID: 1169 RVA: 0x000205DA File Offset: 0x0001E7DA
+	// Token: 0x06000492 RID: 1170 RVA: 0x0002069E File Offset: 0x0001E89E
 	public void UpdateInt(int _pid, int _value, bool _netsync = true)
 	{
 		this._setInt(_pid, _value, _netsync);
 	}
 
-	// Token: 0x06000492 RID: 1170 RVA: 0x000205E5 File Offset: 0x0001E7E5
+	// Token: 0x06000493 RID: 1171 RVA: 0x000206A9 File Offset: 0x0001E8A9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void _setTrigger(string _property, bool _netsync = true)
 	{
 		this._setTrigger(Animator.StringToHash(_property), _netsync);
 	}
 
-	// Token: 0x06000493 RID: 1171 RVA: 0x000205F4 File Offset: 0x0001E7F4
+	// Token: 0x06000494 RID: 1172 RVA: 0x000206B8 File Offset: 0x0001E8B8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void _setTrigger(int _pid, bool _netsync = true)
 	{
@@ -909,20 +909,20 @@ public abstract class AvatarController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000494 RID: 1172 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000495 RID: 1173 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnTrigger(int _id)
 	{
 	}
 
-	// Token: 0x06000495 RID: 1173 RVA: 0x00020647 File Offset: 0x0001E847
+	// Token: 0x06000496 RID: 1174 RVA: 0x0002070B File Offset: 0x0001E90B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void _resetTrigger(string _property, bool _netsync = true)
 	{
 		this._resetTrigger(Animator.StringToHash(_property), _netsync);
 	}
 
-	// Token: 0x06000496 RID: 1174 RVA: 0x00020658 File Offset: 0x0001E858
+	// Token: 0x06000497 RID: 1175 RVA: 0x0002071C File Offset: 0x0001E91C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void _resetTrigger(int _propertyHash, bool _netsync = true)
 	{
@@ -936,14 +936,14 @@ public abstract class AvatarController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000497 RID: 1175 RVA: 0x000206C4 File Offset: 0x0001E8C4
+	// Token: 0x06000498 RID: 1176 RVA: 0x00020788 File Offset: 0x0001E988
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void _setFloat(string _property, float _value, bool _netsync = true)
 	{
 		this._setFloat(Animator.StringToHash(_property), _value, _netsync);
 	}
 
-	// Token: 0x06000498 RID: 1176 RVA: 0x000206D4 File Offset: 0x0001E8D4
+	// Token: 0x06000499 RID: 1177 RVA: 0x00020798 File Offset: 0x0001E998
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void _setBool(string _property, bool _value, bool _netsync = true)
 	{
@@ -951,14 +951,14 @@ public abstract class AvatarController : MonoBehaviour
 		this._setBool(num, _value, _netsync);
 	}
 
-	// Token: 0x06000499 RID: 1177 RVA: 0x000206F1 File Offset: 0x0001E8F1
+	// Token: 0x0600049A RID: 1178 RVA: 0x000207B5 File Offset: 0x0001E9B5
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void _setInt(string _property, int _value, bool _netsync = true)
 	{
 		this._setInt(Animator.StringToHash(_property), _value, _netsync);
 	}
 
-	// Token: 0x0600049A RID: 1178 RVA: 0x00020704 File Offset: 0x0001E904
+	// Token: 0x0600049B RID: 1179 RVA: 0x000207C8 File Offset: 0x0001E9C8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void _setFloat(int _propertyHash, float _value, bool _netSync = true)
 	{
@@ -981,7 +981,7 @@ public abstract class AvatarController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600049B RID: 1179 RVA: 0x00020778 File Offset: 0x0001E978
+	// Token: 0x0600049C RID: 1180 RVA: 0x0002083C File Offset: 0x0001EA3C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void _setBool(int _propertyHash, bool _value, bool _netsync = true)
 	{
@@ -999,7 +999,7 @@ public abstract class AvatarController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600049C RID: 1180 RVA: 0x000207E0 File Offset: 0x0001E9E0
+	// Token: 0x0600049D RID: 1181 RVA: 0x000208A4 File Offset: 0x0001EAA4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void _setInt(int _propertyHash, int _value, bool _netsync = true)
 	{
@@ -1013,7 +1013,7 @@ public abstract class AvatarController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600049D RID: 1181 RVA: 0x0002083C File Offset: 0x0001EA3C
+	// Token: 0x0600049E RID: 1182 RVA: 0x00020900 File Offset: 0x0001EB00
 	public virtual void SetDataFloat(AvatarController.DataTypes _type, float _value, bool _netsync = true)
 	{
 		if (_type == AvatarController.DataTypes.HitDuration)
@@ -1026,31 +1026,31 @@ public abstract class AvatarController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600049E RID: 1182 RVA: 0x0002086D File Offset: 0x0001EA6D
+	// Token: 0x0600049F RID: 1183 RVA: 0x00020931 File Offset: 0x0001EB31
 	public virtual bool TryGetTrigger(string _property, out bool _value)
 	{
 		return this.TryGetTrigger(Animator.StringToHash(_property), out _value);
 	}
 
-	// Token: 0x0600049F RID: 1183 RVA: 0x0002087C File Offset: 0x0001EA7C
+	// Token: 0x060004A0 RID: 1184 RVA: 0x00020940 File Offset: 0x0001EB40
 	public virtual bool TryGetFloat(string _property, out float _value)
 	{
 		return this.TryGetFloat(Animator.StringToHash(_property), out _value);
 	}
 
-	// Token: 0x060004A0 RID: 1184 RVA: 0x0002088B File Offset: 0x0001EA8B
+	// Token: 0x060004A1 RID: 1185 RVA: 0x0002094F File Offset: 0x0001EB4F
 	public virtual bool TryGetBool(string _property, out bool _value)
 	{
 		return this.TryGetBool(Animator.StringToHash(_property), out _value);
 	}
 
-	// Token: 0x060004A1 RID: 1185 RVA: 0x0002089A File Offset: 0x0001EA9A
+	// Token: 0x060004A2 RID: 1186 RVA: 0x0002095E File Offset: 0x0001EB5E
 	public virtual bool TryGetInt(string _property, out int _value)
 	{
 		return this.TryGetInt(Animator.StringToHash(_property), out _value);
 	}
 
-	// Token: 0x060004A2 RID: 1186 RVA: 0x000208AC File Offset: 0x0001EAAC
+	// Token: 0x060004A3 RID: 1187 RVA: 0x00020970 File Offset: 0x0001EB70
 	public virtual bool TryGetTrigger(int _propertyHash, out bool _value)
 	{
 		if (this.anim == null)
@@ -1061,7 +1061,7 @@ public abstract class AvatarController : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x060004A3 RID: 1187 RVA: 0x000208DD File Offset: 0x0001EADD
+	// Token: 0x060004A4 RID: 1188 RVA: 0x000209A1 File Offset: 0x0001EBA1
 	public virtual bool TryGetFloat(int _propertyHash, out float _value)
 	{
 		if (this.anim == null)
@@ -1073,7 +1073,7 @@ public abstract class AvatarController : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x060004A4 RID: 1188 RVA: 0x00020908 File Offset: 0x0001EB08
+	// Token: 0x060004A5 RID: 1189 RVA: 0x000209CC File Offset: 0x0001EBCC
 	public virtual bool TryGetBool(int _propertyHash, out bool _value)
 	{
 		if (this.anim == null)
@@ -1084,7 +1084,7 @@ public abstract class AvatarController : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x060004A5 RID: 1189 RVA: 0x00020939 File Offset: 0x0001EB39
+	// Token: 0x060004A6 RID: 1190 RVA: 0x000209FD File Offset: 0x0001EBFD
 	public virtual bool TryGetInt(int _propertyHash, out int _value)
 	{
 		if (this.anim == null)
@@ -1096,7 +1096,7 @@ public abstract class AvatarController : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x060004A6 RID: 1190 RVA: 0x00020960 File Offset: 0x0001EB60
+	// Token: 0x060004A7 RID: 1191 RVA: 0x00020A24 File Offset: 0x0001EC24
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void updateNetworkAnimData()
 	{
@@ -1133,7 +1133,7 @@ public abstract class AvatarController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004A7 RID: 1191 RVA: 0x00020A88 File Offset: 0x0001EC88
+	// Token: 0x060004A8 RID: 1192 RVA: 0x00020B4C File Offset: 0x0001ED4C
 	public void SyncAnimParameters(int _toEntityId)
 	{
 		if (!this.anim)
@@ -1168,7 +1168,7 @@ public abstract class AvatarController : MonoBehaviour
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageEntityAnimationData>().Setup(this.entity.entityId, dictionary), false, _toEntityId, -1, -1, null, 192, false);
 	}
 
-	// Token: 0x060004A8 RID: 1192 RVA: 0x00020BB4 File Offset: 0x0001EDB4
+	// Token: 0x060004A9 RID: 1193 RVA: 0x00020C78 File Offset: 0x0001EE78
 	public virtual string GetParameterName(int _nameHash)
 	{
 		foreach (AnimatorControllerParameter animatorControllerParameter in this.anim.parameters)
@@ -1181,13 +1181,13 @@ public abstract class AvatarController : MonoBehaviour
 		return "?";
 	}
 
-	// Token: 0x060004A9 RID: 1193 RVA: 0x00020BF4 File Offset: 0x0001EDF4
+	// Token: 0x060004AA RID: 1194 RVA: 0x00020CB8 File Offset: 0x0001EEB8
 	public void SetAnimParameters(List<AnimParamData> animationParameterData)
 	{
 		this.queuedAnimParams.Add(animationParameterData);
 	}
 
-	// Token: 0x060004AA RID: 1194 RVA: 0x00020C04 File Offset: 0x0001EE04
+	// Token: 0x060004AB RID: 1195 RVA: 0x00020CC8 File Offset: 0x0001EEC8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public AvatarController()
 	{
@@ -1833,7 +1833,7 @@ public abstract class AvatarController : MonoBehaviour
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class ChangedAnimationParameters
 	{
-		// Token: 0x060004AB RID: 1195 RVA: 0x00020C6C File Offset: 0x0001EE6C
+		// Token: 0x060004AC RID: 1196 RVA: 0x00020D30 File Offset: 0x0001EF30
 		public void Add(AnimParamData apd)
 		{
 			int count = this.m_animationParameters.Count;
@@ -1860,7 +1860,7 @@ public abstract class AvatarController : MonoBehaviour
 			}
 		}
 
-		// Token: 0x060004AC RID: 1196 RVA: 0x00020CF4 File Offset: 0x0001EEF4
+		// Token: 0x060004AD RID: 1197 RVA: 0x00020DB8 File Offset: 0x0001EFB8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<AnimParamData> newPacket()
 		{
@@ -1870,7 +1870,7 @@ public abstract class AvatarController : MonoBehaviour
 			return list;
 		}
 
-		// Token: 0x060004AD RID: 1197 RVA: 0x00020D20 File Offset: 0x0001EF20
+		// Token: 0x060004AE RID: 1198 RVA: 0x00020DE4 File Offset: 0x0001EFE4
 		public List<List<AnimParamData>> GetParameterLists()
 		{
 			List<List<AnimParamData>> list = new List<List<AnimParamData>>();

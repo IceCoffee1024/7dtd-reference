@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000827 RID: 2087
+// Token: 0x02000832 RID: 2098
 [Preserve]
 public class NetPackagePlayerVendingMachine : NetPackage
 {
-	// Token: 0x06003D3D RID: 15677 RVA: 0x00184665 File Offset: 0x00182865
+	// Token: 0x06003D9C RID: 15772 RVA: 0x00186A3D File Offset: 0x00184C3D
 	public NetPackagePlayerVendingMachine Setup(PlatformUserIdentifierAbs _userId, Vector3i _position, bool _removing)
 	{
 		this.userId = _userId;
@@ -14,7 +14,7 @@ public class NetPackagePlayerVendingMachine : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D3E RID: 15678 RVA: 0x0018467D File Offset: 0x0018287D
+	// Token: 0x06003D9D RID: 15773 RVA: 0x00186A55 File Offset: 0x00184C55
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.userId = PlatformUserIdentifierAbs.FromStream(_reader, false, false);
@@ -22,7 +22,7 @@ public class NetPackagePlayerVendingMachine : NetPackage
 		this.removing = _reader.ReadBoolean();
 	}
 
-	// Token: 0x06003D3F RID: 15679 RVA: 0x001846B8 File Offset: 0x001828B8
+	// Token: 0x06003D9E RID: 15774 RVA: 0x00186A90 File Offset: 0x00184C90
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -33,7 +33,7 @@ public class NetPackagePlayerVendingMachine : NetPackage
 		_writer.Write(this.removing);
 	}
 
-	// Token: 0x06003D40 RID: 15680 RVA: 0x00184718 File Offset: 0x00182918
+	// Token: 0x06003D9F RID: 15775 RVA: 0x00186AF0 File Offset: 0x00184CF0
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		PersistentPlayerData persistentPlayerData2;
@@ -52,18 +52,18 @@ public class NetPackagePlayerVendingMachine : NetPackage
 		}
 	}
 
-	// Token: 0x06003D41 RID: 15681 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06003DA0 RID: 15776 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override int GetLength()
 	{
 		return 0;
 	}
 
-	// Token: 0x04003164 RID: 12644
+	// Token: 0x040031E3 RID: 12771
 	public PlatformUserIdentifierAbs userId;
 
-	// Token: 0x04003165 RID: 12645
+	// Token: 0x040031E4 RID: 12772
 	public Vector3i position;
 
-	// Token: 0x04003166 RID: 12646
+	// Token: 0x040031E5 RID: 12773
 	public bool removing;
 }

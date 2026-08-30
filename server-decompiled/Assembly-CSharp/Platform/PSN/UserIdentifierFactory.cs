@@ -3,12 +3,12 @@ using UnityEngine.Scripting;
 
 namespace Platform.PSN
 {
-	// Token: 0x02001C92 RID: 7314
+	// Token: 0x02001CB9 RID: 7353
 	[Preserve]
 	[UserIdentifierFactory(EPlatformIdentifier.PSN)]
 	public class UserIdentifierFactory : AbsUserIdentifierFactory
 	{
-		// Token: 0x0600D89B RID: 55451 RVA: 0x004DC4F4 File Offset: 0x004DA6F4
+		// Token: 0x0600DA33 RID: 55859 RVA: 0x004E2AF0 File Offset: 0x004E0CF0
 		public override PlatformUserIdentifierAbs FromId(string _idString)
 		{
 			Log.Out("[PSN] Creating PSN user identifier from: {0}", new object[] { _idString });

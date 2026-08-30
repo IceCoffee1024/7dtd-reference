@@ -2,10 +2,10 @@
 
 namespace SharpEXR.ColorSpace
 {
-	// Token: 0x020016B7 RID: 5815
+	// Token: 0x020016DD RID: 5853
 	public struct tVec3
 	{
-		// Token: 0x0600B591 RID: 46481 RVA: 0x0043899F File Offset: 0x00436B9F
+		// Token: 0x0600B714 RID: 46868 RVA: 0x0043E717 File Offset: 0x0043C917
 		public tVec3(float x, float y, float z)
 		{
 			this.X = x;
@@ -13,13 +13,13 @@ namespace SharpEXR.ColorSpace
 			this.Z = z;
 		}
 
-		// Token: 0x0400879C RID: 34716
+		// Token: 0x040088B8 RID: 35000
 		public float X;
 
-		// Token: 0x0400879D RID: 34717
+		// Token: 0x040088B9 RID: 35001
 		public float Y;
 
-		// Token: 0x0400879E RID: 34718
+		// Token: 0x040088BA RID: 35002
 		public float Z;
 	}
 }

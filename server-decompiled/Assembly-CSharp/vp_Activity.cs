@@ -4,33 +4,33 @@ using System.Reflection;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001522 RID: 5410
+// Token: 0x0200153D RID: 5437
 [Preserve]
 public class vp_Activity : vp_Event
 {
-	// Token: 0x0600A9DA RID: 43482 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600AAD7 RID: 43735 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static void Empty()
 	{
 	}
 
-	// Token: 0x0600A9DB RID: 43483 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x0600AAD8 RID: 43736 RVA: 0x00020021 File Offset: 0x0001E221
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static bool AlwaysOK()
 	{
 		return true;
 	}
 
-	// Token: 0x0600A9DC RID: 43484 RVA: 0x003F6DDA File Offset: 0x003F4FDA
+	// Token: 0x0600AAD9 RID: 43737 RVA: 0x003FC11A File Offset: 0x003FA31A
 	public vp_Activity(string name)
 		: base(name)
 	{
 		this.InitFields();
 	}
 
-	// Token: 0x170013A3 RID: 5027
-	// (get) Token: 0x0600A9DD RID: 43485 RVA: 0x003F6DFF File Offset: 0x003F4FFF
-	// (set) Token: 0x0600A9DE RID: 43486 RVA: 0x003F6E07 File Offset: 0x003F5007
+	// Token: 0x170013DC RID: 5084
+	// (get) Token: 0x0600AADA RID: 43738 RVA: 0x003FC13F File Offset: 0x003FA33F
+	// (set) Token: 0x0600AADB RID: 43739 RVA: 0x003FC147 File Offset: 0x003FA347
 	public float MinPause
 	{
 		get
@@ -43,9 +43,9 @@ public class vp_Activity : vp_Event
 		}
 	}
 
-	// Token: 0x170013A4 RID: 5028
-	// (get) Token: 0x0600A9DF RID: 43487 RVA: 0x003F6E1A File Offset: 0x003F501A
-	// (set) Token: 0x0600A9E0 RID: 43488 RVA: 0x003F6E24 File Offset: 0x003F5024
+	// Token: 0x170013DD RID: 5085
+	// (get) Token: 0x0600AADC RID: 43740 RVA: 0x003FC15A File Offset: 0x003FA35A
+	// (set) Token: 0x0600AADD RID: 43741 RVA: 0x003FC164 File Offset: 0x003FA364
 	public float MinDuration
 	{
 		get
@@ -67,9 +67,9 @@ public class vp_Activity : vp_Event
 		}
 	}
 
-	// Token: 0x170013A5 RID: 5029
-	// (get) Token: 0x0600A9E1 RID: 43489 RVA: 0x003F6E84 File Offset: 0x003F5084
-	// (set) Token: 0x0600A9E2 RID: 43490 RVA: 0x003F6E8C File Offset: 0x003F508C
+	// Token: 0x170013DE RID: 5086
+	// (get) Token: 0x0600AADE RID: 43742 RVA: 0x003FC1C4 File Offset: 0x003FA3C4
+	// (set) Token: 0x0600AADF RID: 43743 RVA: 0x003FC1CC File Offset: 0x003FA3CC
 	public float AutoDuration
 	{
 		get
@@ -92,9 +92,9 @@ public class vp_Activity : vp_Event
 		}
 	}
 
-	// Token: 0x170013A6 RID: 5030
-	// (get) Token: 0x0600A9E3 RID: 43491 RVA: 0x003F6EF0 File Offset: 0x003F50F0
-	// (set) Token: 0x0600A9E4 RID: 43492 RVA: 0x003F6F54 File Offset: 0x003F5154
+	// Token: 0x170013DF RID: 5087
+	// (get) Token: 0x0600AAE0 RID: 43744 RVA: 0x003FC230 File Offset: 0x003FA430
+	// (set) Token: 0x0600AAE1 RID: 43745 RVA: 0x003FC294 File Offset: 0x003FA494
 	public object Argument
 	{
 		get
@@ -131,7 +131,7 @@ public class vp_Activity : vp_Event
 		}
 	}
 
-	// Token: 0x0600A9E5 RID: 43493 RVA: 0x003F6FB8 File Offset: 0x003F51B8
+	// Token: 0x0600AAE2 RID: 43746 RVA: 0x003FC2F8 File Offset: 0x003FA4F8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void InitFields()
 	{
@@ -180,14 +180,14 @@ public class vp_Activity : vp_Event
 		this.FailStopCallbacks = new vp_Activity.Callback(vp_Activity.Empty);
 	}
 
-	// Token: 0x0600A9E6 RID: 43494 RVA: 0x003F71E0 File Offset: 0x003F53E0
+	// Token: 0x0600AAE3 RID: 43747 RVA: 0x003FC520 File Offset: 0x003FA720
 	public override void Register(object t, string m, int v)
 	{
 		base.AddExternalMethodToField(t, this.m_Fields[v], m, this.m_DelegateTypes[v]);
 		base.Refresh();
 	}
 
-	// Token: 0x0600A9E7 RID: 43495 RVA: 0x003F7200 File Offset: 0x003F5400
+	// Token: 0x0600AAE4 RID: 43748 RVA: 0x003FC540 File Offset: 0x003FA740
 	public override void Unregister(object t)
 	{
 		base.RemoveExternalMethodFromField(t, this.m_Fields[0]);
@@ -199,7 +199,7 @@ public class vp_Activity : vp_Event
 		base.Refresh();
 	}
 
-	// Token: 0x0600A9E8 RID: 43496 RVA: 0x003F7270 File Offset: 0x003F5470
+	// Token: 0x0600AAE5 RID: 43749 RVA: 0x003FC5B0 File Offset: 0x003FA7B0
 	public bool TryStart(bool startIfAllowed = true)
 	{
 		if (this.m_Active)
@@ -231,7 +231,7 @@ public class vp_Activity : vp_Event
 		return true;
 	}
 
-	// Token: 0x0600A9E9 RID: 43497 RVA: 0x003F72E8 File Offset: 0x003F54E8
+	// Token: 0x0600AAE6 RID: 43750 RVA: 0x003FC628 File Offset: 0x003FA828
 	public bool TryStop(bool stopIfAllowed = true)
 	{
 		if (!this.m_Active)
@@ -261,9 +261,9 @@ public class vp_Activity : vp_Event
 		return true;
 	}
 
-	// Token: 0x170013A7 RID: 5031
-	// (get) Token: 0x0600A9EB RID: 43499 RVA: 0x003F73F1 File Offset: 0x003F55F1
-	// (set) Token: 0x0600A9EA RID: 43498 RVA: 0x003F7354 File Offset: 0x003F5554
+	// Token: 0x170013E0 RID: 5088
+	// (get) Token: 0x0600AAE8 RID: 43752 RVA: 0x003FC731 File Offset: 0x003FA931
+	// (set) Token: 0x0600AAE7 RID: 43751 RVA: 0x003FC694 File Offset: 0x003FA894
 	public bool Active
 	{
 		get
@@ -296,7 +296,7 @@ public class vp_Activity : vp_Event
 		}
 	}
 
-	// Token: 0x0600A9EC RID: 43500 RVA: 0x003F73F9 File Offset: 0x003F55F9
+	// Token: 0x0600AAE9 RID: 43753 RVA: 0x003FC739 File Offset: 0x003FA939
 	public void Start(float forcedActiveDuration = 0f)
 	{
 		this.Active = true;
@@ -306,7 +306,7 @@ public class vp_Activity : vp_Event
 		}
 	}
 
-	// Token: 0x0600A9ED RID: 43501 RVA: 0x003F7417 File Offset: 0x003F5617
+	// Token: 0x0600AAEA RID: 43754 RVA: 0x003FC757 File Offset: 0x003FA957
 	public void Stop(float forcedPauseDuration = 0f)
 	{
 		this.Active = false;
@@ -316,65 +316,65 @@ public class vp_Activity : vp_Event
 		}
 	}
 
-	// Token: 0x0600A9EE RID: 43502 RVA: 0x003F7435 File Offset: 0x003F5635
+	// Token: 0x0600AAEB RID: 43755 RVA: 0x003FC775 File Offset: 0x003FA975
 	public void Disallow(float duration)
 	{
 		this.NextAllowedStartTime = Time.time + duration;
 	}
 
-	// Token: 0x04007E15 RID: 32277
+	// Token: 0x04007EEE RID: 32494
 	public vp_Activity.Callback StartCallbacks;
 
-	// Token: 0x04007E16 RID: 32278
+	// Token: 0x04007EEF RID: 32495
 	public vp_Activity.Callback StopCallbacks;
 
-	// Token: 0x04007E17 RID: 32279
+	// Token: 0x04007EF0 RID: 32496
 	public vp_Activity.Condition StartConditions;
 
-	// Token: 0x04007E18 RID: 32280
+	// Token: 0x04007EF1 RID: 32497
 	public vp_Activity.Condition StopConditions;
 
-	// Token: 0x04007E19 RID: 32281
+	// Token: 0x04007EF2 RID: 32498
 	public vp_Activity.Callback FailStartCallbacks;
 
-	// Token: 0x04007E1A RID: 32282
+	// Token: 0x04007EF3 RID: 32499
 	public vp_Activity.Callback FailStopCallbacks;
 
-	// Token: 0x04007E1B RID: 32283
+	// Token: 0x04007EF4 RID: 32500
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public vp_Timer.Handle m_ForceStopTimer = new vp_Timer.Handle();
 
-	// Token: 0x04007E1C RID: 32284
+	// Token: 0x04007EF5 RID: 32501
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public object m_Argument;
 
-	// Token: 0x04007E1D RID: 32285
+	// Token: 0x04007EF6 RID: 32502
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool m_Active;
 
-	// Token: 0x04007E1E RID: 32286
+	// Token: 0x04007EF7 RID: 32503
 	public float NextAllowedStartTime;
 
-	// Token: 0x04007E1F RID: 32287
+	// Token: 0x04007EF8 RID: 32504
 	public float NextAllowedStopTime;
 
-	// Token: 0x04007E20 RID: 32288
+	// Token: 0x04007EF9 RID: 32505
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float m_MinPause;
 
-	// Token: 0x04007E21 RID: 32289
+	// Token: 0x04007EFA RID: 32506
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float m_MinDuration;
 
-	// Token: 0x04007E22 RID: 32290
+	// Token: 0x04007EFB RID: 32507
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float m_MaxDuration = -1f;
 
-	// Token: 0x02001523 RID: 5411
-	// (Invoke) Token: 0x0600A9F1 RID: 43505
+	// Token: 0x0200153E RID: 5438
+	// (Invoke) Token: 0x0600AAEE RID: 43758
 	public delegate void Callback();
 
-	// Token: 0x02001524 RID: 5412
-	// (Invoke) Token: 0x0600A9F5 RID: 43509
+	// Token: 0x0200153F RID: 5439
+	// (Invoke) Token: 0x0600AAF2 RID: 43762
 	public delegate bool Condition();
 }

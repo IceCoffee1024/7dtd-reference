@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200098B RID: 2443
+// Token: 0x0200099C RID: 2460
 [Preserve]
 public class ObjectiveOpenWindow : BaseObjective
 {
-	// Token: 0x060047D9 RID: 18393 RVA: 0x001C22D8 File Offset: 0x001C04D8
+	// Token: 0x0600485F RID: 18527 RVA: 0x001C4ACC File Offset: 0x001C2CCC
 	public override void SetupObjective()
 	{
 		this.keyword = Localization.Get("ObjectiveOpenWindow_keyword", false, null);
 	}
 
-	// Token: 0x060047DA RID: 18394 RVA: 0x001C22EC File Offset: 0x001C04EC
+	// Token: 0x06004860 RID: 18528 RVA: 0x001C4AE0 File Offset: 0x001C2CE0
 	public override void SetupDisplay()
 	{
 		byte currentValue = base.CurrentValue;
@@ -19,19 +19,19 @@ public class ObjectiveOpenWindow : BaseObjective
 		this.StatusText = "";
 	}
 
-	// Token: 0x060047DB RID: 18395 RVA: 0x001C2317 File Offset: 0x001C0517
+	// Token: 0x06004861 RID: 18529 RVA: 0x001C4B0B File Offset: 0x001C2D0B
 	public override void AddHooks()
 	{
 		QuestEventManager.Current.WindowChanged += this.Current_WindowOpened;
 	}
 
-	// Token: 0x060047DC RID: 18396 RVA: 0x001C232F File Offset: 0x001C052F
+	// Token: 0x06004862 RID: 18530 RVA: 0x001C4B23 File Offset: 0x001C2D23
 	public override void RemoveHooks()
 	{
 		QuestEventManager.Current.WindowChanged -= this.Current_WindowOpened;
 	}
 
-	// Token: 0x060047DD RID: 18397 RVA: 0x001C2347 File Offset: 0x001C0547
+	// Token: 0x06004863 RID: 18531 RVA: 0x001C4B3B File Offset: 0x001C2D3B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_WindowOpened(string windowName)
 	{
@@ -42,7 +42,7 @@ public class ObjectiveOpenWindow : BaseObjective
 		}
 	}
 
-	// Token: 0x060047DE RID: 18398 RVA: 0x001C2374 File Offset: 0x001C0574
+	// Token: 0x06004864 RID: 18532 RVA: 0x001C4B68 File Offset: 0x001C2D68
 	public override void Refresh()
 	{
 		bool flag = base.CurrentValue == 1;
@@ -53,12 +53,12 @@ public class ObjectiveOpenWindow : BaseObjective
 		}
 	}
 
-	// Token: 0x060047DF RID: 18399 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004865 RID: 18533 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void RemoveObjectives()
 	{
 	}
 
-	// Token: 0x060047E0 RID: 18400 RVA: 0x001C23AC File Offset: 0x001C05AC
+	// Token: 0x06004866 RID: 18534 RVA: 0x001C4BA0 File Offset: 0x001C2DA0
 	public override BaseObjective Clone()
 	{
 		ObjectiveOpenWindow objectiveOpenWindow = new ObjectiveOpenWindow();

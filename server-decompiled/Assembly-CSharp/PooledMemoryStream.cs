@@ -1,26 +1,26 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x02000B89 RID: 2953
+// Token: 0x02000B9B RID: 2971
 public class PooledMemoryStream : MemoryStream, IMemoryPoolableObject
 {
-	// Token: 0x0600593D RID: 22845 RVA: 0x00222008 File Offset: 0x00220208
+	// Token: 0x060059C5 RID: 22981 RVA: 0x00224D24 File Offset: 0x00222F24
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ~PooledMemoryStream()
 	{
 	}
 
-	// Token: 0x0600593E RID: 22846 RVA: 0x00222030 File Offset: 0x00220230
+	// Token: 0x060059C6 RID: 22982 RVA: 0x00224D4C File Offset: 0x00222F4C
 	public void Reset()
 	{
 		this.SetLength(0L);
 	}
 
-	// Token: 0x0600593F RID: 22847 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060059C7 RID: 22983 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Cleanup()
 	{
 	}
 
-	// Token: 0x040044F1 RID: 17649
+	// Token: 0x0400458C RID: 17804
 	public static int InstanceCount;
 }

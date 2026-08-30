@@ -2,17 +2,17 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000592 RID: 1426
+// Token: 0x02000597 RID: 1431
 [Preserve]
 public class ItemActionBailLiquid : ItemAction
 {
-	// Token: 0x06002EDC RID: 11996 RVA: 0x00129537 File Offset: 0x00127737
+	// Token: 0x06002F0A RID: 12042 RVA: 0x0012A5A7 File Offset: 0x001287A7
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionBailLiquid.MyInventoryData(_invData, _indexInEntityOfAction);
 	}
 
-	// Token: 0x06002EDD RID: 11997 RVA: 0x00129540 File Offset: 0x00127740
+	// Token: 0x06002F0B RID: 12043 RVA: 0x0012A5B0 File Offset: 0x001287B0
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		if (!_bReleased)
@@ -40,13 +40,13 @@ public class ItemActionBailLiquid : ItemAction
 		}
 	}
 
-	// Token: 0x06002EDE RID: 11998 RVA: 0x00129614 File Offset: 0x00127814
+	// Token: 0x06002F0C RID: 12044 RVA: 0x0012A684 File Offset: 0x00128884
 	public override bool IsActionRunning(ItemActionData _actionData)
 	{
 		return _actionData.lastUseTime != 0f && Time.time - _actionData.lastUseTime < this.Delay;
 	}
 
-	// Token: 0x06002EDF RID: 11999 RVA: 0x0012963C File Offset: 0x0012783C
+	// Token: 0x06002F0D RID: 12045 RVA: 0x0012A6AC File Offset: 0x001288AC
 	public override void OnHoldingUpdate(ItemActionData _actionData)
 	{
 		if (_actionData.lastUseTime == 0f || this.IsActionRunning(_actionData))
@@ -60,17 +60,17 @@ public class ItemActionBailLiquid : ItemAction
 		GameManager.Instance.SetWaterRPC(package);
 	}
 
-	// Token: 0x02000593 RID: 1427
+	// Token: 0x02000598 RID: 1432
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class MyInventoryData : ItemActionAttackData
 	{
-		// Token: 0x06002EE1 RID: 12001 RVA: 0x00129694 File Offset: 0x00127894
+		// Token: 0x06002F0F RID: 12047 RVA: 0x0012A704 File Offset: 0x00128904
 		public MyInventoryData(ItemInventoryData _invData, int _indexInEntityOfAction)
 			: base(_invData, _indexInEntityOfAction)
 		{
 		}
 
-		// Token: 0x0400244B RID: 9291
+		// Token: 0x0400247F RID: 9343
 		public Vector3i targetPosition;
 	}
 }

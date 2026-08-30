@@ -1,86 +1,86 @@
 ﻿using System;
 using System.Threading;
 
-// Token: 0x0200146A RID: 5226
+// Token: 0x02001485 RID: 5253
 public static class ReaderWriterLockSlimExtensions
 {
-	// Token: 0x0600A400 RID: 41984 RVA: 0x003D1701 File Offset: 0x003CF901
+	// Token: 0x0600A4FD RID: 42237 RVA: 0x003D6A45 File Offset: 0x003D4C45
 	public static ReaderWriterLockSlimExtensions.ReadScope ReadLockScope(this ReaderWriterLockSlim lockSlim)
 	{
 		return new ReaderWriterLockSlimExtensions.ReadScope(lockSlim);
 	}
 
-	// Token: 0x0600A401 RID: 41985 RVA: 0x003D1709 File Offset: 0x003CF909
+	// Token: 0x0600A4FE RID: 42238 RVA: 0x003D6A4D File Offset: 0x003D4C4D
 	public static ReaderWriterLockSlimExtensions.WriteScope WriteLockScope(this ReaderWriterLockSlim lockSlim)
 	{
 		return new ReaderWriterLockSlimExtensions.WriteScope(lockSlim);
 	}
 
-	// Token: 0x0600A402 RID: 41986 RVA: 0x003D1711 File Offset: 0x003CF911
+	// Token: 0x0600A4FF RID: 42239 RVA: 0x003D6A55 File Offset: 0x003D4C55
 	public static ReaderWriterLockSlimExtensions.UpgradeableReadScope UpgradableReadLockScope(this ReaderWriterLockSlim lockSlim)
 	{
 		return new ReaderWriterLockSlimExtensions.UpgradeableReadScope(lockSlim);
 	}
 
-	// Token: 0x0200146B RID: 5227
+	// Token: 0x02001486 RID: 5254
 	public readonly struct ReadScope : IDisposable
 	{
-		// Token: 0x0600A403 RID: 41987 RVA: 0x003D1719 File Offset: 0x003CF919
+		// Token: 0x0600A500 RID: 42240 RVA: 0x003D6A5D File Offset: 0x003D4C5D
 		public ReadScope(ReaderWriterLockSlim lockSlim)
 		{
 			this.m_lockSlim = lockSlim;
 			this.m_lockSlim.EnterReadLock();
 		}
 
-		// Token: 0x0600A404 RID: 41988 RVA: 0x003D172D File Offset: 0x003CF92D
+		// Token: 0x0600A501 RID: 42241 RVA: 0x003D6A71 File Offset: 0x003D4C71
 		public void Dispose()
 		{
 			this.m_lockSlim.ExitReadLock();
 		}
 
-		// Token: 0x04007A31 RID: 31281
+		// Token: 0x04007B0A RID: 31498
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly ReaderWriterLockSlim m_lockSlim;
 	}
 
-	// Token: 0x0200146C RID: 5228
+	// Token: 0x02001487 RID: 5255
 	public readonly struct WriteScope : IDisposable
 	{
-		// Token: 0x0600A405 RID: 41989 RVA: 0x003D173A File Offset: 0x003CF93A
+		// Token: 0x0600A502 RID: 42242 RVA: 0x003D6A7E File Offset: 0x003D4C7E
 		public WriteScope(ReaderWriterLockSlim lockSlim)
 		{
 			this.m_lockSlim = lockSlim;
 			this.m_lockSlim.EnterWriteLock();
 		}
 
-		// Token: 0x0600A406 RID: 41990 RVA: 0x003D174E File Offset: 0x003CF94E
+		// Token: 0x0600A503 RID: 42243 RVA: 0x003D6A92 File Offset: 0x003D4C92
 		public void Dispose()
 		{
 			this.m_lockSlim.ExitWriteLock();
 		}
 
-		// Token: 0x04007A32 RID: 31282
+		// Token: 0x04007B0B RID: 31499
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly ReaderWriterLockSlim m_lockSlim;
 	}
 
-	// Token: 0x0200146D RID: 5229
+	// Token: 0x02001488 RID: 5256
 	public readonly struct UpgradeableReadScope : IDisposable
 	{
-		// Token: 0x0600A407 RID: 41991 RVA: 0x003D175B File Offset: 0x003CF95B
+		// Token: 0x0600A504 RID: 42244 RVA: 0x003D6A9F File Offset: 0x003D4C9F
 		public UpgradeableReadScope(ReaderWriterLockSlim lockSlim)
 		{
 			this.m_lockSlim = lockSlim;
 			this.m_lockSlim.EnterUpgradeableReadLock();
 		}
 
-		// Token: 0x0600A408 RID: 41992 RVA: 0x003D176F File Offset: 0x003CF96F
+		// Token: 0x0600A505 RID: 42245 RVA: 0x003D6AB3 File Offset: 0x003D4CB3
 		public void Dispose()
 		{
 			this.m_lockSlim.ExitUpgradeableReadLock();
 		}
 
-		// Token: 0x04007A33 RID: 31283
+		// Token: 0x04007B0C RID: 31500
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly ReaderWriterLockSlim m_lockSlim;
 	}

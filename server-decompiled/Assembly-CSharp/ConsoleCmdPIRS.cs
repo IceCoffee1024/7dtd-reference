@@ -5,19 +5,19 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000258 RID: 600
+// Token: 0x0200025C RID: 604
 [Preserve]
 public class ConsoleCmdPIRS : ConsoleCmdAbstract
 {
-	// Token: 0x060011DF RID: 4575 RVA: 0x0006FBB5 File Offset: 0x0006DDB5
+	// Token: 0x060011F1 RID: 4593 RVA: 0x00070211 File Offset: 0x0006E411
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "pirs" };
 	}
 
-	// Token: 0x170001D4 RID: 468
-	// (get) Token: 0x060011E0 RID: 4576 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x170001D5 RID: 469
+	// (get) Token: 0x060011F2 RID: 4594 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -26,21 +26,21 @@ public class ConsoleCmdPIRS : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060011E1 RID: 4577 RVA: 0x0006FBC5 File Offset: 0x0006DDC5
+	// Token: 0x060011F3 RID: 4595 RVA: 0x00070221 File Offset: 0x0006E421
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "tbd";
 	}
 
-	// Token: 0x060011E2 RID: 4578 RVA: 0x0006FBC5 File Offset: 0x0006DDC5
+	// Token: 0x060011F4 RID: 4596 RVA: 0x00070221 File Offset: 0x0006E421
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "tbd";
 	}
 
-	// Token: 0x060011E3 RID: 4579 RVA: 0x0006FBCC File Offset: 0x0006DDCC
+	// Token: 0x060011F5 RID: 4597 RVA: 0x00070228 File Offset: 0x0006E428
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 2 && _params[0] == "reset")
@@ -152,7 +152,7 @@ public class ConsoleCmdPIRS : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060011E4 RID: 4580 RVA: 0x0006FF6D File Offset: 0x0006E16D
+	// Token: 0x060011F6 RID: 4598 RVA: 0x000705C9 File Offset: 0x0006E7C9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator onCloseConsoleLater()
 	{
@@ -161,7 +161,7 @@ public class ConsoleCmdPIRS : ConsoleCmdAbstract
 		yield break;
 	}
 
-	// Token: 0x060011E5 RID: 4581 RVA: 0x0006FF75 File Offset: 0x0006E175
+	// Token: 0x060011F7 RID: 4599 RVA: 0x000705D1 File Offset: 0x0006E7D1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void load(string _filename)
 	{
@@ -169,11 +169,11 @@ public class ConsoleCmdPIRS : ConsoleCmdAbstract
 		PlayerInputRecordingSystem.Instance.SetStartPosition(GameManager.Instance.World.GetLocalPlayers()[0]);
 	}
 
-	// Token: 0x04000CF4 RID: 3316
+	// Token: 0x04000D05 RID: 3333
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string sGameSuffix = "_perftest";
 
-	// Token: 0x04000CF5 RID: 3317
+	// Token: 0x04000D06 RID: 3334
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GameObject go;
 }

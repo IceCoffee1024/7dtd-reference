@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200081A RID: 2074
+// Token: 0x02000825 RID: 2085
 [Preserve]
 public class NetPackagePlayerDisconnect : NetPackagePlayerData
 {
-	// Token: 0x17000659 RID: 1625
-	// (get) Token: 0x06003CE3 RID: 15587 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000664 RID: 1636
+	// (get) Token: 0x06003D42 RID: 15682 RVA: 0x00020021 File Offset: 0x0001E221
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,14 +15,14 @@ public class NetPackagePlayerDisconnect : NetPackagePlayerData
 		}
 	}
 
-	// Token: 0x06003CE4 RID: 15588 RVA: 0x00183497 File Offset: 0x00181697
+	// Token: 0x06003D43 RID: 15683 RVA: 0x0018586F File Offset: 0x00183A6F
 	public new NetPackagePlayerDisconnect Setup(EntityPlayer _player)
 	{
 		base.Setup(_player);
 		return this;
 	}
 
-	// Token: 0x06003CE5 RID: 15589 RVA: 0x001834A2 File Offset: 0x001816A2
+	// Token: 0x06003D44 RID: 15684 RVA: 0x0018587A File Offset: 0x00183A7A
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		base.ProcessPackage(_world, _callbacks);

@@ -5,10 +5,10 @@ using System.IO;
 using MemoryPack;
 using Platform;
 
-// Token: 0x020013D5 RID: 5077
+// Token: 0x020013F0 RID: 5104
 public class DynamicPropertiesCache
 {
-	// Token: 0x06009F53 RID: 40787 RVA: 0x003BEBC8 File Offset: 0x003BCDC8
+	// Token: 0x0600A050 RID: 41040 RVA: 0x003C3F0C File Offset: 0x003C210C
 	public DynamicPropertiesCache()
 	{
 		Log.Out(string.Format("[BLOCKPROPERTIES] Creating DynamicProperties Cache, max cache size {0}", 1000));
@@ -20,7 +20,7 @@ public class DynamicPropertiesCache
 		this.offsetsAndLengths = new ValueTuple<long, int>[Block.MAX_BLOCKS];
 	}
 
-	// Token: 0x06009F54 RID: 40788 RVA: 0x003BEC78 File Offset: 0x003BCE78
+	// Token: 0x0600A051 RID: 41041 RVA: 0x003C3FBC File Offset: 0x003C21BC
 	public void Cleanup()
 	{
 		this.m_cache.Clear();
@@ -32,7 +32,7 @@ public class DynamicPropertiesCache
 		this.m_fileStream.Close();
 	}
 
-	// Token: 0x06009F55 RID: 40789 RVA: 0x003BECC8 File Offset: 0x003BCEC8
+	// Token: 0x0600A052 RID: 41042 RVA: 0x003C400C File Offset: 0x003C220C
 	public bool Store(int blockID, DynamicProperties props)
 	{
 		long position = this.m_fileStream.Position;
@@ -45,7 +45,7 @@ public class DynamicPropertiesCache
 		return true;
 	}
 
-	// Token: 0x06009F56 RID: 40790 RVA: 0x003BED34 File Offset: 0x003BCF34
+	// Token: 0x0600A053 RID: 41043 RVA: 0x003C4078 File Offset: 0x003C2278
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DynamicProperties Retrieve(long offset, int length)
 	{
@@ -64,7 +64,7 @@ public class DynamicPropertiesCache
 		return MemoryPackSerializer.Deserialize<DynamicProperties>(span, null);
 	}
 
-	// Token: 0x06009F57 RID: 40791 RVA: 0x003BEDC0 File Offset: 0x003BCFC0
+	// Token: 0x0600A054 RID: 41044 RVA: 0x003C4104 File Offset: 0x003C2304
 	public DynamicProperties Cache(int blockID)
 	{
 		LinkedListNode<int> linkedListNode = null;
@@ -104,7 +104,7 @@ public class DynamicPropertiesCache
 		return dynamicProperties;
 	}
 
-	// Token: 0x06009F58 RID: 40792 RVA: 0x003BEEE8 File Offset: 0x003BD0E8
+	// Token: 0x0600A055 RID: 41045 RVA: 0x003C422C File Offset: 0x003C242C
 	public void Stats()
 	{
 		Log.Out("[BLOCKPROPERTIES] Block DynamicProperties Cache Stats:");
@@ -112,47 +112,47 @@ public class DynamicPropertiesCache
 		Log.Out(string.Format("[BLOCKPROPERTIES] Hits: {0}, Misses: {1}, Rate: {2}%", this.m_cacheHits, this.m_cacheMisses, (float)this.m_cacheHits / (float)(this.m_cacheHits + this.m_cacheMisses) * 100f));
 	}
 
-	// Token: 0x0400782C RID: 30764
+	// Token: 0x04007905 RID: 30981
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string m_filePath;
 
-	// Token: 0x0400782D RID: 30765
+	// Token: 0x04007906 RID: 30982
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FileStream m_fileStream;
 
-	// Token: 0x0400782E RID: 30766
+	// Token: 0x04007907 RID: 30983
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ArrayBufferWriter<byte> m_buffer;
 
-	// Token: 0x0400782F RID: 30767
+	// Token: 0x04007908 RID: 30984
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int FILE_STREAM_BUFFER_SIZE = 4096;
 
-	// Token: 0x04007830 RID: 30768
+	// Token: 0x04007909 RID: 30985
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ValueTuple<long, int>[] offsetsAndLengths;
 
-	// Token: 0x04007831 RID: 30769
+	// Token: 0x0400790A RID: 30986
 	[PublicizedFrom(EAccessModifier.Private)]
 	public LinkedList<int> m_queue;
 
-	// Token: 0x04007832 RID: 30770
+	// Token: 0x0400790B RID: 30987
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<int, DynamicProperties> m_cache;
 
-	// Token: 0x04007833 RID: 30771
+	// Token: 0x0400790C RID: 30988
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_cacheHits;
 
-	// Token: 0x04007834 RID: 30772
+	// Token: 0x0400790D RID: 30989
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_cacheMisses;
 
-	// Token: 0x04007835 RID: 30773
+	// Token: 0x0400790E RID: 30990
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cacheSize = 1000;
 
-	// Token: 0x04007836 RID: 30774
+	// Token: 0x0400790F RID: 30991
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly object _cacheLock = new object();
 }

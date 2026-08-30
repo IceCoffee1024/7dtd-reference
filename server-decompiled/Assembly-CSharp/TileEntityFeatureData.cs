@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x0200018D RID: 397
+// Token: 0x0200018F RID: 399
 public class TileEntityFeatureData
 {
-	// Token: 0x06000C1C RID: 3100 RVA: 0x0004C08F File Offset: 0x0004A28F
+	// Token: 0x06000C27 RID: 3111 RVA: 0x0004C4A7 File Offset: 0x0004A6A7
 	public TileEntityFeatureData(TileEntityCompositeData _parent, string _name, int _customOrder, Type _type, DynamicProperties _props)
 	{
 		this.Parent = _parent;
@@ -15,40 +15,40 @@ public class TileEntityFeatureData
 		this.Props = _props;
 	}
 
-	// Token: 0x06000C1D RID: 3101 RVA: 0x0004C0CD File Offset: 0x0004A2CD
+	// Token: 0x06000C28 RID: 3112 RVA: 0x0004C4E5 File Offset: 0x0004A6E5
 	public ITileEntityFeature InstantiateModule()
 	{
 		return ReflectionHelpers.Instantiate<ITileEntityFeature>(this.Type);
 	}
 
-	// Token: 0x04000ADE RID: 2782
+	// Token: 0x04000AEB RID: 2795
 	public readonly TileEntityCompositeData Parent;
 
-	// Token: 0x04000ADF RID: 2783
+	// Token: 0x04000AEC RID: 2796
 	public readonly string Name;
 
-	// Token: 0x04000AE0 RID: 2784
+	// Token: 0x04000AED RID: 2797
 	public readonly int NameHash;
 
-	// Token: 0x04000AE1 RID: 2785
+	// Token: 0x04000AEE RID: 2798
 	public readonly int CustomOrder;
 
-	// Token: 0x04000AE2 RID: 2786
+	// Token: 0x04000AEF RID: 2799
 	public readonly Type Type;
 
-	// Token: 0x04000AE3 RID: 2787
+	// Token: 0x04000AF0 RID: 2800
 	public readonly DynamicProperties Props;
 
-	// Token: 0x0200018E RID: 398
+	// Token: 0x02000190 RID: 400
 	public class FeatureDataSorterByName : IComparer<TileEntityFeatureData>
 	{
-		// Token: 0x06000C1E RID: 3102 RVA: 0x0000640C File Offset: 0x0000460C
+		// Token: 0x06000C29 RID: 3113 RVA: 0x0000640C File Offset: 0x0000460C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public FeatureDataSorterByName()
 		{
 		}
 
-		// Token: 0x06000C1F RID: 3103 RVA: 0x0004C0DA File Offset: 0x0004A2DA
+		// Token: 0x06000C2A RID: 3114 RVA: 0x0004C4F2 File Offset: 0x0004A6F2
 		public int Compare(TileEntityFeatureData _x, TileEntityFeatureData _y)
 		{
 			if (_x == _y)
@@ -66,7 +66,7 @@ public class TileEntityFeatureData
 			return string.Compare(_x.Name, _y.Name, StringComparison.Ordinal);
 		}
 
-		// Token: 0x04000AE4 RID: 2788
+		// Token: 0x04000AF1 RID: 2801
 		public static readonly TileEntityFeatureData.FeatureDataSorterByName Instance = new TileEntityFeatureData.FeatureDataSorterByName();
 	}
 }

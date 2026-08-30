@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001931 RID: 6449
+	// Token: 0x02001957 RID: 6487
 	[Preserve]
 	public class ActionAddBuff : ActionBaseTargetAction
 	{
-		// Token: 0x0600C636 RID: 50742 RVA: 0x0048D928 File Offset: 0x0048BB28
+		// Token: 0x0600C7BD RID: 51133 RVA: 0x00493C74 File Offset: 0x00491E74
 		public override bool CanPerform(Entity target)
 		{
 			if (!this.checkAlreadyExists)
@@ -18,7 +18,7 @@ namespace GameEvent.SequenceActions
 			return entityAlive != null && !entityAlive.Buffs.HasBuff(this.buffName) && (!(this.altVisionBuffName != "") || !entityAlive.Buffs.HasBuff(this.altVisionBuffName));
 		}
 
-		// Token: 0x0600C637 RID: 50743 RVA: 0x0048D988 File Offset: 0x0048BB88
+		// Token: 0x0600C7BE RID: 51134 RVA: 0x00493CD4 File Offset: 0x00491ED4
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			if (this.removesBuffs == null)
@@ -54,7 +54,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C638 RID: 50744 RVA: 0x0048DAAC File Offset: 0x0048BCAC
+		// Token: 0x0600C7BF RID: 51135 RVA: 0x00493DF8 File Offset: 0x00491FF8
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -66,7 +66,7 @@ namespace GameEvent.SequenceActions
 			this.Properties.ParseFloat(ActionAddBuff.PropDuration, ref this.duration);
 		}
 
-		// Token: 0x0600C639 RID: 50745 RVA: 0x0048DB2C File Offset: 0x0048BD2C
+		// Token: 0x0600C7C0 RID: 51136 RVA: 0x00493E78 File Offset: 0x00492078
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -82,55 +82,55 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x0400953E RID: 38206
+		// Token: 0x04009667 RID: 38503
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string buffName = "";
 
-		// Token: 0x0400953F RID: 38207
+		// Token: 0x04009668 RID: 38504
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string removesBuff = "";
 
-		// Token: 0x04009540 RID: 38208
+		// Token: 0x04009669 RID: 38505
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string[] removesBuffs;
 
-		// Token: 0x04009541 RID: 38209
+		// Token: 0x0400966A RID: 38506
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string altVisionBuffName = "";
 
-		// Token: 0x04009542 RID: 38210
+		// Token: 0x0400966B RID: 38507
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool checkAlreadyExists = true;
 
-		// Token: 0x04009543 RID: 38211
+		// Token: 0x0400966C RID: 38508
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string sequenceLink = "";
 
-		// Token: 0x04009544 RID: 38212
+		// Token: 0x0400966D RID: 38509
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float duration = -1f;
 
-		// Token: 0x04009545 RID: 38213
+		// Token: 0x0400966E RID: 38510
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropBuffName = "buff_name";
 
-		// Token: 0x04009546 RID: 38214
+		// Token: 0x0400966F RID: 38511
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropRemovesBuff = "removes_buff";
 
-		// Token: 0x04009547 RID: 38215
+		// Token: 0x04009670 RID: 38512
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropAltVisionBuffName = "alt_vision_buff_name";
 
-		// Token: 0x04009548 RID: 38216
+		// Token: 0x04009671 RID: 38513
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropCheckAlreadyExists = "check_already_exists";
 
-		// Token: 0x04009549 RID: 38217
+		// Token: 0x04009672 RID: 38514
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSequenceLink = "sequence_link";
 
-		// Token: 0x0400954A RID: 38218
+		// Token: 0x04009673 RID: 38515
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropDuration = "duration";
 	}

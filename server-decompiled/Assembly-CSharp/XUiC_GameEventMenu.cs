@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F1F RID: 3871
+// Token: 0x02000F36 RID: 3894
 [Preserve]
 public class XUiC_GameEventMenu : XUiController
 {
-	// Token: 0x06007997 RID: 31127 RVA: 0x002DD95C File Offset: 0x002DBB5C
+	// Token: 0x06007A50 RID: 31312 RVA: 0x002E1910 File Offset: 0x002DFB10
 	public override void Init()
 	{
 		base.Init();
@@ -18,7 +18,7 @@ public class XUiC_GameEventMenu : XUiController
 		this.cbxTarget = (XUiC_ComboBoxList<string>)base.GetChildById("cbxTarget");
 	}
 
-	// Token: 0x06007998 RID: 31128 RVA: 0x002DD9EF File Offset: 0x002DBBEF
+	// Token: 0x06007A51 RID: 31313 RVA: 0x002E19A3 File Offset: 0x002DFBA3
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CategoryList_CategoryChanged(XUiC_CategoryEntry _categoryEntry)
 	{
@@ -27,7 +27,7 @@ public class XUiC_GameEventMenu : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06007999 RID: 31129 RVA: 0x002DDA14 File Offset: 0x002DBC14
+	// Token: 0x06007A52 RID: 31314 RVA: 0x002E19C8 File Offset: 0x002DFBC8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void EntitiesList_SelectionChanged(XUiC_List<XUiC_GameEventsList.GameEventEntry> _list, XUiC_GameEventsList.GameEventEntry _previousEntry, XUiC_GameEventsList.GameEventEntry _newEntry)
 	{
@@ -38,7 +38,7 @@ public class XUiC_GameEventMenu : XUiController
 		}
 	}
 
-	// Token: 0x0600799A RID: 31130 RVA: 0x002DDA40 File Offset: 0x002DBC40
+	// Token: 0x06007A53 RID: 31315 RVA: 0x002E19F4 File Offset: 0x002DFBF4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnSpawns_OnPress(string _name)
 	{
@@ -50,7 +50,7 @@ public class XUiC_GameEventMenu : XUiController
 		}
 	}
 
-	// Token: 0x0600799B RID: 31131 RVA: 0x002DDAA8 File Offset: 0x002DBCA8
+	// Token: 0x06007A54 RID: 31316 RVA: 0x002E1A5C File Offset: 0x002DFC5C
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -72,7 +72,7 @@ public class XUiC_GameEventMenu : XUiController
 		this.cbxTarget.SelectedIndex = num;
 	}
 
-	// Token: 0x0600799C RID: 31132 RVA: 0x002DDB78 File Offset: 0x002DBD78
+	// Token: 0x06007A55 RID: 31317 RVA: 0x002E1B2C File Offset: 0x002DFD2C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -91,26 +91,26 @@ public class XUiC_GameEventMenu : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x040059C4 RID: 22980
+	// Token: 0x04005A77 RID: 23159
 	public static string ID = "";
 
-	// Token: 0x040059C5 RID: 22981
+	// Token: 0x04005A78 RID: 23160
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CategoryList categoryList;
 
-	// Token: 0x040059C6 RID: 22982
+	// Token: 0x04005A79 RID: 23161
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_GameEventsList gameEventsList;
 
-	// Token: 0x040059C7 RID: 22983
+	// Token: 0x04005A7A RID: 23162
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string categoryDisplay = "";
 
-	// Token: 0x040059C8 RID: 22984
+	// Token: 0x04005A7B RID: 23163
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<string> cbxTarget;
 
-	// Token: 0x040059C9 RID: 22985
+	// Token: 0x04005A7C RID: 23164
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, EntityPlayer> PlayerList = new Dictionary<string, EntityPlayer>();
 }

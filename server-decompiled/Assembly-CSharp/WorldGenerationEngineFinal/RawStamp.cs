@@ -5,18 +5,18 @@ using Unity.Collections;
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x020016FA RID: 5882
+	// Token: 0x02001720 RID: 5920
 	[BurstCompile(CompileSynchronously = true)]
 	public class RawStamp
 	{
-		// Token: 0x0600B6B6 RID: 46774 RVA: 0x0044045F File Offset: 0x0043E65F
+		// Token: 0x0600B839 RID: 47161 RVA: 0x004461D7 File Offset: 0x004443D7
 		[BurstCompile(CompileSynchronously = true)]
 		public static void SmoothAlpha(ref RawStamp.Data d, int _boxSize)
 		{
-			RawStamp.SmoothAlpha_0000B669$BurstDirectCall.Invoke(ref d, _boxSize);
+			RawStamp.SmoothAlpha_0000B7EC$BurstDirectCall.Invoke(ref d, _boxSize);
 		}
 
-		// Token: 0x0600B6B7 RID: 46775 RVA: 0x00440468 File Offset: 0x0043E668
+		// Token: 0x0600B83A RID: 47162 RVA: 0x004461E0 File Offset: 0x004443E0
 		public void BoxAlpha()
 		{
 			for (int i = 0; i < this.height; i += 4)
@@ -44,7 +44,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B6B8 RID: 46776 RVA: 0x00440546 File Offset: 0x0043E746
+		// Token: 0x0600B83B RID: 47163 RVA: 0x004462BE File Offset: 0x004444BE
 		public void Clear()
 		{
 			this.data.heightPixels.Dispose();
@@ -52,8 +52,8 @@ namespace WorldGenerationEngineFinal
 			this.data.waterPixels.Dispose();
 		}
 
-		// Token: 0x170015F3 RID: 5619
-		// (get) Token: 0x0600B6B9 RID: 46777 RVA: 0x00440578 File Offset: 0x0043E778
+		// Token: 0x17001665 RID: 5733
+		// (get) Token: 0x0600B83C RID: 47164 RVA: 0x004462F0 File Offset: 0x004444F0
 		public int width
 		{
 			get
@@ -62,8 +62,8 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x170015F4 RID: 5620
-		// (get) Token: 0x0600B6BA RID: 46778 RVA: 0x00440585 File Offset: 0x0043E785
+		// Token: 0x17001666 RID: 5734
+		// (get) Token: 0x0600B83D RID: 47165 RVA: 0x004462FD File Offset: 0x004444FD
 		public int height
 		{
 			get
@@ -72,7 +72,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B6BC RID: 46780 RVA: 0x00440594 File Offset: 0x0043E794
+		// Token: 0x0600B83F RID: 47167 RVA: 0x0044630C File Offset: 0x0044450C
 		[BurstCompile(CompileSynchronously = true)]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -109,92 +109,92 @@ namespace WorldGenerationEngineFinal
 			d.alphaPixels = nativeArray;
 		}
 
-		// Token: 0x04008891 RID: 34961
+		// Token: 0x040089AD RID: 35245
 		public string name;
 
-		// Token: 0x04008892 RID: 34962
+		// Token: 0x040089AE RID: 35246
 		public RawStamp.Data data;
 
-		// Token: 0x020016FB RID: 5883
+		// Token: 0x02001721 RID: 5921
 		public struct Data
 		{
-			// Token: 0x04008893 RID: 34963
+			// Token: 0x040089AF RID: 35247
 			public float heightConst;
 
-			// Token: 0x04008894 RID: 34964
+			// Token: 0x040089B0 RID: 35248
 			public NativeArray<float> heightPixels;
 
-			// Token: 0x04008895 RID: 34965
+			// Token: 0x040089B1 RID: 35249
 			public float alphaConst;
 
-			// Token: 0x04008896 RID: 34966
+			// Token: 0x040089B2 RID: 35250
 			public NativeArray<float> alphaPixels;
 
-			// Token: 0x04008897 RID: 34967
+			// Token: 0x040089B3 RID: 35251
 			public NativeArray<float> waterPixels;
 
-			// Token: 0x04008898 RID: 34968
+			// Token: 0x040089B4 RID: 35252
 			public int width;
 
-			// Token: 0x04008899 RID: 34969
+			// Token: 0x040089B5 RID: 35253
 			public int height;
 		}
 
-		// Token: 0x020016FC RID: 5884
-		// (Invoke) Token: 0x0600B6BE RID: 46782
+		// Token: 0x02001722 RID: 5922
+		// (Invoke) Token: 0x0600B841 RID: 47169
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public delegate void SmoothAlpha_0000B669$PostfixBurstDelegate(ref RawStamp.Data d, int _boxSize);
+		public delegate void SmoothAlpha_0000B7EC$PostfixBurstDelegate(ref RawStamp.Data d, int _boxSize);
 
-		// Token: 0x020016FD RID: 5885
+		// Token: 0x02001723 RID: 5923
 		[PublicizedFrom(EAccessModifier.Internal)]
-		public static class SmoothAlpha_0000B669$BurstDirectCall
+		public static class SmoothAlpha_0000B7EC$BurstDirectCall
 		{
-			// Token: 0x0600B6C1 RID: 46785 RVA: 0x00440676 File Offset: 0x0043E876
+			// Token: 0x0600B844 RID: 47172 RVA: 0x004463EE File Offset: 0x004445EE
 			[BurstDiscard]
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static void GetFunctionPointerDiscard(ref IntPtr A_0)
 			{
-				if (RawStamp.SmoothAlpha_0000B669$BurstDirectCall.Pointer == 0)
+				if (RawStamp.SmoothAlpha_0000B7EC$BurstDirectCall.Pointer == 0)
 				{
-					RawStamp.SmoothAlpha_0000B669$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(RawStamp.SmoothAlpha_0000B669$BurstDirectCall.DeferredCompilation, methodof(RawStamp.SmoothAlpha$BurstManaged(ref RawStamp.Data, int)).MethodHandle, typeof(RawStamp.SmoothAlpha_0000B669$PostfixBurstDelegate).TypeHandle);
+					RawStamp.SmoothAlpha_0000B7EC$BurstDirectCall.Pointer = BurstCompiler.GetILPPMethodFunctionPointer2(RawStamp.SmoothAlpha_0000B7EC$BurstDirectCall.DeferredCompilation, methodof(RawStamp.SmoothAlpha$BurstManaged(ref RawStamp.Data, int)).MethodHandle, typeof(RawStamp.SmoothAlpha_0000B7EC$PostfixBurstDelegate).TypeHandle);
 				}
-				A_0 = RawStamp.SmoothAlpha_0000B669$BurstDirectCall.Pointer;
+				A_0 = RawStamp.SmoothAlpha_0000B7EC$BurstDirectCall.Pointer;
 			}
 
-			// Token: 0x0600B6C2 RID: 46786 RVA: 0x004406A4 File Offset: 0x0043E8A4
+			// Token: 0x0600B845 RID: 47173 RVA: 0x0044641C File Offset: 0x0044461C
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr GetFunctionPointer()
 			{
 				IntPtr intPtr = (IntPtr)0;
-				RawStamp.SmoothAlpha_0000B669$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
+				RawStamp.SmoothAlpha_0000B7EC$BurstDirectCall.GetFunctionPointerDiscard(ref intPtr);
 				return intPtr;
 			}
 
-			// Token: 0x0600B6C3 RID: 46787 RVA: 0x004406BC File Offset: 0x0043E8BC
+			// Token: 0x0600B846 RID: 47174 RVA: 0x00446434 File Offset: 0x00444634
 			public static void Constructor()
 			{
-				RawStamp.SmoothAlpha_0000B669$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(RawStamp.SmoothAlpha(ref RawStamp.Data, int)).MethodHandle);
+				RawStamp.SmoothAlpha_0000B7EC$BurstDirectCall.DeferredCompilation = BurstCompiler.CompileILPPMethod2(methodof(RawStamp.SmoothAlpha(ref RawStamp.Data, int)).MethodHandle);
 			}
 
-			// Token: 0x0600B6C4 RID: 46788 RVA: 0x000027FC File Offset: 0x000009FC
+			// Token: 0x0600B847 RID: 47175 RVA: 0x000027FC File Offset: 0x000009FC
 			public static void Initialize()
 			{
 			}
 
-			// Token: 0x0600B6C5 RID: 46789 RVA: 0x004406CD File Offset: 0x0043E8CD
+			// Token: 0x0600B848 RID: 47176 RVA: 0x00446445 File Offset: 0x00444645
 			// Note: this type is marked as 'beforefieldinit'.
 			[PublicizedFrom(EAccessModifier.Private)]
-			static SmoothAlpha_0000B669$BurstDirectCall()
+			static SmoothAlpha_0000B7EC$BurstDirectCall()
 			{
-				RawStamp.SmoothAlpha_0000B669$BurstDirectCall.Constructor();
+				RawStamp.SmoothAlpha_0000B7EC$BurstDirectCall.Constructor();
 			}
 
-			// Token: 0x0600B6C6 RID: 46790 RVA: 0x004406D4 File Offset: 0x0043E8D4
+			// Token: 0x0600B849 RID: 47177 RVA: 0x0044644C File Offset: 0x0044464C
 			public static void Invoke(ref RawStamp.Data d, int _boxSize)
 			{
 				if (BurstCompiler.IsEnabled)
 				{
-					IntPtr functionPointer = RawStamp.SmoothAlpha_0000B669$BurstDirectCall.GetFunctionPointer();
+					IntPtr functionPointer = RawStamp.SmoothAlpha_0000B7EC$BurstDirectCall.GetFunctionPointer();
 					if (functionPointer != 0)
 					{
 						calli(System.Void(WorldGenerationEngineFinal.RawStamp/Data&,System.Int32), ref d, _boxSize, functionPointer);
@@ -204,11 +204,11 @@ namespace WorldGenerationEngineFinal
 				RawStamp.SmoothAlpha$BurstManaged(ref d, _boxSize);
 			}
 
-			// Token: 0x0400889A RID: 34970
+			// Token: 0x040089B6 RID: 35254
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr Pointer;
 
-			// Token: 0x0400889B RID: 34971
+			// Token: 0x040089B7 RID: 35255
 			[PublicizedFrom(EAccessModifier.Private)]
 			public static IntPtr DeferredCompilation;
 		}

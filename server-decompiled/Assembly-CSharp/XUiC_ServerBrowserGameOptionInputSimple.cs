@@ -3,11 +3,11 @@ using System.Globalization;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DBC RID: 3516
+// Token: 0x02000DD0 RID: 3536
 [Preserve]
 public class XUiC_ServerBrowserGameOptionInputSimple : XUiController
 {
-	// Token: 0x06006B95 RID: 27541 RVA: 0x0029FD1C File Offset: 0x0029DF1C
+	// Token: 0x06006C30 RID: 27696 RVA: 0x002A2E9C File Offset: 0x002A109C
 	public override void Init()
 	{
 		base.Init();
@@ -19,7 +19,7 @@ public class XUiC_ServerBrowserGameOptionInputSimple : XUiController
 		this.comparisonLabel = (XUiV_Label)childById.ViewComponent;
 	}
 
-	// Token: 0x06006B96 RID: 27542 RVA: 0x0029FDA4 File Offset: 0x0029DFA4
+	// Token: 0x06006C31 RID: 27697 RVA: 0x002A2F24 File Offset: 0x002A1124
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ComparisonLabel_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -56,7 +56,7 @@ public class XUiC_ServerBrowserGameOptionInputSimple : XUiController
 		onValueChanged(this);
 	}
 
-	// Token: 0x06006B97 RID: 27543 RVA: 0x0029FE3C File Offset: 0x0029E03C
+	// Token: 0x06006C32 RID: 27698 RVA: 0x002A2FBC File Offset: 0x002A11BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ControlText_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -68,7 +68,7 @@ public class XUiC_ServerBrowserGameOptionInputSimple : XUiController
 		onValueChanged(this);
 	}
 
-	// Token: 0x06006B98 RID: 27544 RVA: 0x0029FE50 File Offset: 0x0029E050
+	// Token: 0x06006C33 RID: 27699 RVA: 0x002A2FD0 File Offset: 0x002A11D0
 	public XUiC_ServersList.UiServerFilter GetFilter()
 	{
 		string text = this.gameInfoInt.ToStringCached<GameInfoInt>();
@@ -114,38 +114,38 @@ public class XUiC_ServerBrowserGameOptionInputSimple : XUiController
 		return new XUiC_ServersList.UiServerFilter(text, XUiC_ServersList.EnumServerLists.Regular, func, eserverFilterType, num, num2, false, null);
 	}
 
-	// Token: 0x040051E9 RID: 20969
+	// Token: 0x0400528B RID: 21131
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label comparisonLabel;
 
-	// Token: 0x040051EA RID: 20970
+	// Token: 0x0400528C RID: 21132
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput value;
 
-	// Token: 0x040051EB RID: 20971
+	// Token: 0x0400528D RID: 21133
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameInfoInt gameInfoInt;
 
-	// Token: 0x040051EC RID: 20972
+	// Token: 0x0400528E RID: 21134
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ServerBrowserGameOptionInputSimple.EComparisonType currentComparison = XUiC_ServerBrowserGameOptionInputSimple.EComparisonType.Equals;
 
-	// Token: 0x040051ED RID: 20973
+	// Token: 0x0400528F RID: 21135
 	public Action<XUiC_ServerBrowserGameOptionInputSimple> OnValueChanged;
 
-	// Token: 0x02000DBD RID: 3517
+	// Token: 0x02000DD1 RID: 3537
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum EComparisonType
 	{
-		// Token: 0x040051EF RID: 20975
+		// Token: 0x04005291 RID: 21137
 		Smaller,
-		// Token: 0x040051F0 RID: 20976
+		// Token: 0x04005292 RID: 21138
 		SmallerEquals,
-		// Token: 0x040051F1 RID: 20977
+		// Token: 0x04005293 RID: 21139
 		Equals,
-		// Token: 0x040051F2 RID: 20978
+		// Token: 0x04005294 RID: 21140
 		LargerEquals,
-		// Token: 0x040051F3 RID: 20979
+		// Token: 0x04005295 RID: 21141
 		Larger
 	}
 }

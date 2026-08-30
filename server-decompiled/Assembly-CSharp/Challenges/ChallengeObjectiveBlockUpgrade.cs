@@ -5,12 +5,12 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x020018D4 RID: 6356
+	// Token: 0x020018FA RID: 6394
 	[Preserve]
 	public class ChallengeObjectiveBlockUpgrade : BaseChallengeObjective
 	{
-		// Token: 0x170017E7 RID: 6119
-		// (get) Token: 0x0600C3B5 RID: 50101 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+		// Token: 0x17001859 RID: 6233
+		// (get) Token: 0x0600C53C RID: 50492 RVA: 0x0002F168 File Offset: 0x0002D368
 		public override ChallengeObjectiveType ObjectiveType
 		{
 			get
@@ -19,8 +19,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x170017E8 RID: 6120
-		// (get) Token: 0x0600C3B6 RID: 50102 RVA: 0x00484271 File Offset: 0x00482471
+		// Token: 0x1700185A RID: 6234
+		// (get) Token: 0x0600C53D RID: 50493 RVA: 0x0048A5B5 File Offset: 0x004887B5
 		public override string DescriptionText
 		{
 			get
@@ -29,14 +29,14 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C3B7 RID: 50103 RVA: 0x0048429B File Offset: 0x0048249B
+		// Token: 0x0600C53E RID: 50494 RVA: 0x0048A5DF File Offset: 0x004887DF
 		public override void HandleOnCreated()
 		{
 			base.HandleOnCreated();
 			this.CreateRequirements();
 		}
 
-		// Token: 0x0600C3B8 RID: 50104 RVA: 0x004842A9 File Offset: 0x004824A9
+		// Token: 0x0600C53F RID: 50495 RVA: 0x0048A5ED File Offset: 0x004887ED
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void CreateRequirements()
 		{
@@ -47,20 +47,20 @@ namespace Challenges
 			this.Owner.SetRequirementGroup(new RequirementObjectiveGroupBlockUpgrade(this.heldItemID, this.neededResourceID, this.neededResourceCount));
 		}
 
-		// Token: 0x0600C3B9 RID: 50105 RVA: 0x004842D6 File Offset: 0x004824D6
+		// Token: 0x0600C540 RID: 50496 RVA: 0x0048A61A File Offset: 0x0048881A
 		public override void HandleAddHooks()
 		{
 			QuestEventManager.Current.BlockUpgrade -= this.Current_BlockUpgrade;
 			QuestEventManager.Current.BlockUpgrade += this.Current_BlockUpgrade;
 		}
 
-		// Token: 0x0600C3BA RID: 50106 RVA: 0x00484304 File Offset: 0x00482504
+		// Token: 0x0600C541 RID: 50497 RVA: 0x0048A648 File Offset: 0x00488848
 		public override void HandleRemoveHooks()
 		{
 			QuestEventManager.Current.BlockUpgrade -= this.Current_BlockUpgrade;
 		}
 
-		// Token: 0x0600C3BB RID: 50107 RVA: 0x0048431C File Offset: 0x0048251C
+		// Token: 0x0600C542 RID: 50498 RVA: 0x0048A660 File Offset: 0x00488860
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Current_BlockUpgrade(string blockName, Vector3i blockPos)
 		{
@@ -93,7 +93,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C3BC RID: 50108 RVA: 0x004843E8 File Offset: 0x004825E8
+		// Token: 0x0600C543 RID: 50499 RVA: 0x0048A72C File Offset: 0x0048892C
 		public override void ParseElement(XElement e)
 		{
 			base.ParseElement(e);
@@ -115,7 +115,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C3BD RID: 50109 RVA: 0x004844A4 File Offset: 0x004826A4
+		// Token: 0x0600C544 RID: 50500 RVA: 0x0048A7E8 File Offset: 0x004889E8
 		public override BaseChallengeObjective Clone()
 		{
 			return new ChallengeObjectiveBlockUpgrade
@@ -127,16 +127,16 @@ namespace Challenges
 			};
 		}
 
-		// Token: 0x040093FD RID: 37885
+		// Token: 0x04009526 RID: 38182
 		public string expectedBlock = "";
 
-		// Token: 0x040093FE RID: 37886
+		// Token: 0x04009527 RID: 38183
 		public string heldItemID = "";
 
-		// Token: 0x040093FF RID: 37887
+		// Token: 0x04009528 RID: 38184
 		public string neededResourceID = "";
 
-		// Token: 0x04009400 RID: 37888
+		// Token: 0x04009529 RID: 38185
 		public int neededResourceCount = 1;
 	}
 }

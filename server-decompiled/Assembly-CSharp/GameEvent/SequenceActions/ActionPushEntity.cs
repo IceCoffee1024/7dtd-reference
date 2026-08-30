@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001973 RID: 6515
+	// Token: 0x02001999 RID: 6553
 	[Preserve]
 	public class ActionPushEntity : ActionBaseTargetAction
 	{
-		// Token: 0x0600C751 RID: 51025 RVA: 0x00495C9C File Offset: 0x00493E9C
+		// Token: 0x0600C8D8 RID: 51416 RVA: 0x0049BFE0 File Offset: 0x0049A1E0
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			EntityAlive entityAlive = target as EntityAlive;
@@ -46,7 +46,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C752 RID: 51026 RVA: 0x00495DA0 File Offset: 0x00493FA0
+		// Token: 0x0600C8D9 RID: 51417 RVA: 0x0049C0E4 File Offset: 0x0049A2E4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool CheckValidPosition(ref Vector3 newPoint, EntityAlive target)
 		{
@@ -69,7 +69,7 @@ namespace GameEvent.SequenceActions
 			return true;
 		}
 
-		// Token: 0x0600C753 RID: 51027 RVA: 0x00495ED0 File Offset: 0x004940D0
+		// Token: 0x0600C8DA RID: 51418 RVA: 0x0049C214 File Offset: 0x0049A414
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -77,7 +77,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseFloat(ActionPushEntity.PropForce, ref this.force);
 		}
 
-		// Token: 0x0600C754 RID: 51028 RVA: 0x00495EFB File Offset: 0x004940FB
+		// Token: 0x0600C8DB RID: 51419 RVA: 0x0049C23F File Offset: 0x0049A43F
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -89,34 +89,34 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009704 RID: 38660
+		// Token: 0x0400982D RID: 38957
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ActionPushEntity.Direction direction;
 
-		// Token: 0x04009705 RID: 38661
+		// Token: 0x0400982E RID: 38958
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float force = 2f;
 
-		// Token: 0x04009706 RID: 38662
+		// Token: 0x0400982F RID: 38959
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropDirection = "direction";
 
-		// Token: 0x04009707 RID: 38663
+		// Token: 0x04009830 RID: 38960
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropForce = "distance";
 
-		// Token: 0x02001974 RID: 6516
+		// Token: 0x0200199A RID: 6554
 		public enum Direction
 		{
-			// Token: 0x04009709 RID: 38665
+			// Token: 0x04009832 RID: 38962
 			Random,
-			// Token: 0x0400970A RID: 38666
+			// Token: 0x04009833 RID: 38963
 			Forward,
-			// Token: 0x0400970B RID: 38667
+			// Token: 0x04009834 RID: 38964
 			Backward,
-			// Token: 0x0400970C RID: 38668
+			// Token: 0x04009835 RID: 38965
 			Left,
-			// Token: 0x0400970D RID: 38669
+			// Token: 0x04009836 RID: 38966
 			Right
 		}
 	}

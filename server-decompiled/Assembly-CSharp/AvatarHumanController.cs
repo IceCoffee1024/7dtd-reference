@@ -6,7 +6,7 @@ using UnityEngine.Scripting;
 [Preserve]
 public abstract class AvatarHumanController : AvatarController
 {
-	// Token: 0x060004C2 RID: 1218 RVA: 0x00021117 File Offset: 0x0001F317
+	// Token: 0x060004C3 RID: 1219 RVA: 0x000211DB File Offset: 0x0001F3DB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -15,7 +15,7 @@ public abstract class AvatarHumanController : AvatarController
 		this.assignStates();
 	}
 
-	// Token: 0x060004C3 RID: 1219 RVA: 0x00021138 File Offset: 0x0001F338
+	// Token: 0x060004C4 RID: 1220 RVA: 0x000211FC File Offset: 0x0001F3FC
 	public override void SwitchModelAndView(string _modelName, bool _bFPV, bool _bMale)
 	{
 		if (!this.bipedT)
@@ -34,14 +34,14 @@ public abstract class AvatarHumanController : AvatarController
 		this._setBool(AvatarController.isDeadHash, this.entity.IsDead(), true);
 	}
 
-	// Token: 0x060004C4 RID: 1220 RVA: 0x000211F0 File Offset: 0x0001F3F0
+	// Token: 0x060004C5 RID: 1221 RVA: 0x000212B4 File Offset: 0x0001F4B4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Transform FindTransform(string _name)
 	{
 		return this.bipedT.FindInChildren(_name);
 	}
 
-	// Token: 0x060004C5 RID: 1221 RVA: 0x00021200 File Offset: 0x0001F400
+	// Token: 0x060004C6 RID: 1222 RVA: 0x000212C4 File Offset: 0x0001F4C4
 	public override void SetVisible(bool _b)
 	{
 		if (this.isVisible != _b || !this.isVisibleInit)
@@ -60,19 +60,19 @@ public abstract class AvatarHumanController : AvatarController
 		}
 	}
 
-	// Token: 0x060004C6 RID: 1222 RVA: 0x0002125A File Offset: 0x0001F45A
+	// Token: 0x060004C7 RID: 1223 RVA: 0x0002131E File Offset: 0x0001F51E
 	public override Transform GetActiveModelRoot()
 	{
 		return this.modelT;
 	}
 
-	// Token: 0x060004C7 RID: 1223 RVA: 0x00021262 File Offset: 0x0001F462
+	// Token: 0x060004C8 RID: 1224 RVA: 0x00021326 File Offset: 0x0001F526
 	public override Transform GetRightHandTransform()
 	{
 		return this.rightHandT;
 	}
 
-	// Token: 0x060004C8 RID: 1224 RVA: 0x0002126C File Offset: 0x0001F46C
+	// Token: 0x060004C9 RID: 1225 RVA: 0x00021330 File Offset: 0x0001F530
 	public override void TriggerSleeperPose(int pose, bool returningToSleep = false)
 	{
 		if (returningToSleep)
@@ -115,7 +115,7 @@ public abstract class AvatarHumanController : AvatarController
 		}
 	}
 
-	// Token: 0x060004C9 RID: 1225 RVA: 0x00021354 File Offset: 0x0001F554
+	// Token: 0x060004CA RID: 1226 RVA: 0x00021418 File Offset: 0x0001F618
 	public override void TurnIntoCrawler()
 	{
 		this.isCrawler = true;
@@ -126,7 +126,7 @@ public abstract class AvatarHumanController : AvatarController
 		this._setTrigger(AvatarController.toCrawlerTriggerHash, true);
 	}
 
-	// Token: 0x060004CA RID: 1226 RVA: 0x00021391 File Offset: 0x0001F591
+	// Token: 0x060004CB RID: 1227 RVA: 0x00021455 File Offset: 0x0001F655
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void _setInt(int _propertyHash, int _value, bool _netsync = true)
 	{
@@ -137,7 +137,7 @@ public abstract class AvatarHumanController : AvatarController
 		base._setInt(_propertyHash, _value, _netsync);
 	}
 
-	// Token: 0x060004CB RID: 1227 RVA: 0x0001BDDD File Offset: 0x00019FDD
+	// Token: 0x060004CC RID: 1228 RVA: 0x0001BEA1 File Offset: 0x0001A0A1
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public AvatarHumanController()
 	{

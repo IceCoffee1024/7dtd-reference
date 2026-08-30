@@ -12,24 +12,24 @@ using Unity.XGamingRuntime.Interop;
 
 namespace Platform.XBL.Save.Storage.Blobs
 {
-	// Token: 0x02001C2D RID: 7213
+	// Token: 0x02001C54 RID: 7252
 	public sealed class SaveStorageStorageContainerBlobs : ISaveStorageContainer, IDisposable
 	{
-		// Token: 0x0600D557 RID: 54615 RVA: 0x004CF0BE File Offset: 0x004CD2BE
+		// Token: 0x0600D6E7 RID: 55015 RVA: 0x004D54E2 File Offset: 0x004D36E2
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void LogWarning(string text)
 		{
 			Log.Warning("[XBL: SaveStorageStorageContainerBlobs] " + text);
 		}
 
-		// Token: 0x0600D558 RID: 54616 RVA: 0x004CF0D0 File Offset: 0x004CD2D0
+		// Token: 0x0600D6E8 RID: 55016 RVA: 0x004D54F4 File Offset: 0x004D36F4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void LogError(string text)
 		{
 			Log.Error("[XBL: SaveStorageStorageContainerBlobs] " + text);
 		}
 
-		// Token: 0x0600D559 RID: 54617 RVA: 0x004CF0E2 File Offset: 0x004CD2E2
+		// Token: 0x0600D6E9 RID: 55017 RVA: 0x004D5506 File Offset: 0x004D3706
 		[Conditional("DEBUG_SAVE_DATA_MANAGER")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void LogTrace(string text)
@@ -37,7 +37,7 @@ namespace Platform.XBL.Save.Storage.Blobs
 			Log.Out("[XBL: SaveStorageStorageContainerBlobs] " + text);
 		}
 
-		// Token: 0x0600D55A RID: 54618 RVA: 0x004CF0F4 File Offset: 0x004CD2F4
+		// Token: 0x0600D6EA RID: 55018 RVA: 0x004D5518 File Offset: 0x004D3718
 		public SaveStorageStorageContainerBlobs(string containerName, XGameSaveProviderHandle gameSaveProviderHandle, SingleThreadTaskScheduler taskScheduler)
 		{
 			using (this.m_lastAccessHelper.CreateScope())
@@ -69,7 +69,7 @@ namespace Platform.XBL.Save.Storage.Blobs
 			}
 		}
 
-		// Token: 0x0600D55B RID: 54619 RVA: 0x004CF1DC File Offset: 0x004CD3DC
+		// Token: 0x0600D6EB RID: 55019 RVA: 0x004D5600 File Offset: 0x004D3800
 		public void Dispose()
 		{
 			this.m_disposed = true;
@@ -129,8 +129,8 @@ namespace Platform.XBL.Save.Storage.Blobs
 			this.m_taskScheduler = null;
 		}
 
-		// Token: 0x17001A2E RID: 6702
-		// (get) Token: 0x0600D55C RID: 54620 RVA: 0x004CF314 File Offset: 0x004CD514
+		// Token: 0x17001AA0 RID: 6816
+		// (get) Token: 0x0600D6EC RID: 55020 RVA: 0x004D5738 File Offset: 0x004D3938
 		public bool IsDisposed
 		{
 			get
@@ -139,8 +139,8 @@ namespace Platform.XBL.Save.Storage.Blobs
 			}
 		}
 
-		// Token: 0x17001A2F RID: 6703
-		// (get) Token: 0x0600D55D RID: 54621 RVA: 0x004CF31C File Offset: 0x004CD51C
+		// Token: 0x17001AA1 RID: 6817
+		// (get) Token: 0x0600D6ED RID: 55021 RVA: 0x004D5740 File Offset: 0x004D3940
 		public string Name
 		{
 			get
@@ -149,8 +149,8 @@ namespace Platform.XBL.Save.Storage.Blobs
 			}
 		}
 
-		// Token: 0x17001A30 RID: 6704
-		// (get) Token: 0x0600D55E RID: 54622 RVA: 0x004CF324 File Offset: 0x004CD524
+		// Token: 0x17001AA2 RID: 6818
+		// (get) Token: 0x0600D6EE RID: 55022 RVA: 0x004D5748 File Offset: 0x004D3948
 		public DateTime LastAccessed
 		{
 			get
@@ -159,7 +159,7 @@ namespace Platform.XBL.Save.Storage.Blobs
 			}
 		}
 
-		// Token: 0x0600D55F RID: 54623 RVA: 0x004CF334 File Offset: 0x004CD534
+		// Token: 0x0600D6EF RID: 55023 RVA: 0x004D5758 File Offset: 0x004D3958
 		public void Flush(bool waitForFlush)
 		{
 			Task task = this.StartProcessOperationsTask();
@@ -181,7 +181,7 @@ namespace Platform.XBL.Save.Storage.Blobs
 			}
 		}
 
-		// Token: 0x0600D560 RID: 54624 RVA: 0x004CF388 File Offset: 0x004CD588
+		// Token: 0x0600D6F0 RID: 55024 RVA: 0x004D57AC File Offset: 0x004D39AC
 		public bool TryEnumerateBlobInfos(out Unity.XGamingRuntime.XGameSaveBlobInfo[] blobInfos)
 		{
 			bool flag;
@@ -233,7 +233,7 @@ namespace Platform.XBL.Save.Storage.Blobs
 			return flag;
 		}
 
-		// Token: 0x0600D561 RID: 54625 RVA: 0x004CF530 File Offset: 0x004CD730
+		// Token: 0x0600D6F1 RID: 55025 RVA: 0x004D5954 File Offset: 0x004D3B54
 		public Unity.XGamingRuntime.XGameSaveBlobInfo GetBlobInfo(string blobName)
 		{
 			Unity.XGamingRuntime.XGameSaveBlobInfo xgameSaveBlobInfo;
@@ -287,7 +287,7 @@ namespace Platform.XBL.Save.Storage.Blobs
 			return xgameSaveBlobInfo;
 		}
 
-		// Token: 0x0600D562 RID: 54626 RVA: 0x004CF6BC File Offset: 0x004CD8BC
+		// Token: 0x0600D6F2 RID: 55026 RVA: 0x004D5AE0 File Offset: 0x004D3CE0
 		public RefCountedBuffer[] GetBlobs(string[] blobNames, StringSpan debugIdentifier)
 		{
 			RefCountedBuffer[] array4;
@@ -436,7 +436,7 @@ namespace Platform.XBL.Save.Storage.Blobs
 			return array4;
 		}
 
-		// Token: 0x0600D563 RID: 54627 RVA: 0x004CFAD8 File Offset: 0x004CDCD8
+		// Token: 0x0600D6F3 RID: 55027 RVA: 0x004D5EFC File Offset: 0x004D40FC
 		public void SetBlob(string blobName, RefCountedBuffer blobData)
 		{
 			using (this.m_lastAccessHelper.CreateScope())
@@ -445,7 +445,7 @@ namespace Platform.XBL.Save.Storage.Blobs
 			}
 		}
 
-		// Token: 0x0600D564 RID: 54628 RVA: 0x004CFB20 File Offset: 0x004CDD20
+		// Token: 0x0600D6F4 RID: 55028 RVA: 0x004D5F44 File Offset: 0x004D4144
 		public void DeleteBlob(string blobName)
 		{
 			using (this.m_lastAccessHelper.CreateScope())
@@ -454,7 +454,7 @@ namespace Platform.XBL.Save.Storage.Blobs
 			}
 		}
 
-		// Token: 0x0600D565 RID: 54629 RVA: 0x004CFB68 File Offset: 0x004CDD68
+		// Token: 0x0600D6F5 RID: 55029 RVA: 0x004D5F8C File Offset: 0x004D418C
 		public int GetQueuedUsed()
 		{
 			int num = 0;
@@ -471,7 +471,7 @@ namespace Platform.XBL.Save.Storage.Blobs
 			return num;
 		}
 
-		// Token: 0x0600D566 RID: 54630 RVA: 0x004CFBE0 File Offset: 0x004CDDE0
+		// Token: 0x0600D6F6 RID: 55030 RVA: 0x004D6004 File Offset: 0x004D4204
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Task StartProcessOperationsTask()
 		{
@@ -500,7 +500,7 @@ namespace Platform.XBL.Save.Storage.Blobs
 			return task;
 		}
 
-		// Token: 0x0600D567 RID: 54631 RVA: 0x004CFCA8 File Offset: 0x004CDEA8
+		// Token: 0x0600D6F7 RID: 55031 RVA: 0x004D60CC File Offset: 0x004D42CC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void EnqueueBlobOperation(SaveStorageStorageContainerBlobs.BlobOperation operation)
 		{
@@ -525,7 +525,7 @@ namespace Platform.XBL.Save.Storage.Blobs
 			this.StartProcessOperationsTask();
 		}
 
-		// Token: 0x0600D568 RID: 54632 RVA: 0x004CFD88 File Offset: 0x004CDF88
+		// Token: 0x0600D6F8 RID: 55032 RVA: 0x004D61AC File Offset: 0x004D43AC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public async Task ProcessOperations(CancellationToken cancellationToken, Task waitSkipTask)
 		{
@@ -566,7 +566,7 @@ namespace Platform.XBL.Save.Storage.Blobs
 			}
 		}
 
-		// Token: 0x0600D56C RID: 54636 RVA: 0x004CFE3C File Offset: 0x004CE03C
+		// Token: 0x0600D6FC RID: 55036 RVA: 0x004D6260 File Offset: 0x004D4460
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <ProcessOperations>g__DoSingleUpdate|40_0()
@@ -683,91 +683,91 @@ namespace Platform.XBL.Save.Storage.Blobs
 			}
 		}
 
-		// Token: 0x0400A262 RID: 41570
+		// Token: 0x0400A393 RID: 41875
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int MaxBlobSize = 16777216;
 
-		// Token: 0x0400A263 RID: 41571
+		// Token: 0x0400A394 RID: 41876
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int MaxUpdateSize = 16777216;
 
-		// Token: 0x0400A264 RID: 41572
+		// Token: 0x0400A395 RID: 41877
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly TimeSpan GetBlobsWaitReportingInterval = TimeSpan.FromSeconds(1.0);
 
-		// Token: 0x0400A265 RID: 41573
+		// Token: 0x0400A396 RID: 41878
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly TimeSpan EnqueueBlobOperationWaitReportingInterval = TimeSpan.FromSeconds(1.0);
 
-		// Token: 0x0400A266 RID: 41574
+		// Token: 0x0400A397 RID: 41879
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly TimeSpan BlobQueueDelay = TimeSpan.FromSeconds(5.0);
 
-		// Token: 0x0400A267 RID: 41575
+		// Token: 0x0400A398 RID: 41880
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly LastAccessHelper m_lastAccessHelper = new LastAccessHelper();
 
-		// Token: 0x0400A268 RID: 41576
+		// Token: 0x0400A399 RID: 41881
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool m_disposed;
 
-		// Token: 0x0400A269 RID: 41577
+		// Token: 0x0400A39A RID: 41882
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string m_containerName;
 
-		// Token: 0x0400A26A RID: 41578
+		// Token: 0x0400A39B RID: 41883
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SingleThreadTaskScheduler m_taskScheduler;
 
-		// Token: 0x0400A26B RID: 41579
+		// Token: 0x0400A39C RID: 41884
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XGameSaveProviderHandle m_gameSaveProviderHandle;
 
-		// Token: 0x0400A26C RID: 41580
+		// Token: 0x0400A39D RID: 41885
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XGameSaveContainerHandle m_gameSaveContainerHandle;
 
-		// Token: 0x0400A26D RID: 41581
+		// Token: 0x0400A39E RID: 41886
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ConcurrentQueue<SaveStorageStorageContainerBlobs.BlobOperation> m_operationsInput;
 
-		// Token: 0x0400A26E RID: 41582
+		// Token: 0x0400A39F RID: 41887
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ConcurrentDictionary<string, SaveStorageStorageContainerBlobs.BlobOperation> m_operationsInputLatest;
 
-		// Token: 0x0400A26F RID: 41583
+		// Token: 0x0400A3A0 RID: 41888
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int m_operationsTotalSize;
 
-		// Token: 0x0400A270 RID: 41584
+		// Token: 0x0400A3A1 RID: 41889
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly object m_processOperationsTaskLock = new object();
 
-		// Token: 0x0400A271 RID: 41585
+		// Token: 0x0400A3A2 RID: 41890
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<SaveStorageStorageContainerBlobs.BlobOperation> m_processOperationsToDo;
 
-		// Token: 0x0400A272 RID: 41586
+		// Token: 0x0400A3A3 RID: 41891
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<string, SaveStorageStorageContainerBlobs.BlobOperation> m_processOperationsCurrent;
 
-		// Token: 0x0400A273 RID: 41587
+		// Token: 0x0400A3A4 RID: 41892
 		[PublicizedFrom(EAccessModifier.Private)]
 		public TaskCompletionSource<bool> m_processOperationsTaskWaitSkipTaskSource;
 
-		// Token: 0x0400A274 RID: 41588
+		// Token: 0x0400A3A5 RID: 41893
 		[PublicizedFrom(EAccessModifier.Private)]
 		public CancellationTokenSource m_processOperationsTaskCancellationTokenProvider;
 
-		// Token: 0x0400A275 RID: 41589
+		// Token: 0x0400A3A6 RID: 41894
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Task m_processOperationsTask;
 
-		// Token: 0x02001C2E RID: 7214
+		// Token: 0x02001C55 RID: 7253
 		[PublicizedFrom(EAccessModifier.Private)]
 		public sealed class BlobOperation : IDisposable
 		{
-			// Token: 0x0600D56D RID: 54637 RVA: 0x004D0370 File Offset: 0x004CE570
+			// Token: 0x0600D6FD RID: 55037 RVA: 0x004D6794 File Offset: 0x004D4994
 			public BlobOperation(string name, RefCountedBuffer buffer)
 			{
 				this.m_name = name;
@@ -780,7 +780,7 @@ namespace Platform.XBL.Save.Storage.Blobs
 				}
 			}
 
-			// Token: 0x0600D56E RID: 54638 RVA: 0x004D03D1 File Offset: 0x004CE5D1
+			// Token: 0x0600D6FE RID: 55038 RVA: 0x004D67F5 File Offset: 0x004D49F5
 			[PublicizedFrom(EAccessModifier.Private)]
 			public void Dispose(bool disposing)
 			{
@@ -798,22 +798,22 @@ namespace Platform.XBL.Save.Storage.Blobs
 				this.m_buffer = null;
 			}
 
-			// Token: 0x0600D56F RID: 54639 RVA: 0x004D0400 File Offset: 0x004CE600
+			// Token: 0x0600D6FF RID: 55039 RVA: 0x004D6824 File Offset: 0x004D4A24
 			public void Dispose()
 			{
 				this.Dispose(true);
 				GC.SuppressFinalize(this);
 			}
 
-			// Token: 0x0600D570 RID: 54640 RVA: 0x004D0410 File Offset: 0x004CE610
+			// Token: 0x0600D700 RID: 55040 RVA: 0x004D6834 File Offset: 0x004D4A34
 			[PublicizedFrom(EAccessModifier.Protected)]
 			public ~BlobOperation()
 			{
 				this.Dispose(false);
 			}
 
-			// Token: 0x17001A31 RID: 6705
-			// (get) Token: 0x0600D571 RID: 54641 RVA: 0x004D0440 File Offset: 0x004CE640
+			// Token: 0x17001AA3 RID: 6819
+			// (get) Token: 0x0600D701 RID: 55041 RVA: 0x004D6864 File Offset: 0x004D4A64
 			public bool IsDisposed
 			{
 				get
@@ -822,8 +822,8 @@ namespace Platform.XBL.Save.Storage.Blobs
 				}
 			}
 
-			// Token: 0x17001A32 RID: 6706
-			// (get) Token: 0x0600D572 RID: 54642 RVA: 0x004D0448 File Offset: 0x004CE648
+			// Token: 0x17001AA4 RID: 6820
+			// (get) Token: 0x0600D702 RID: 55042 RVA: 0x004D686C File Offset: 0x004D4A6C
 			public string Name
 			{
 				get
@@ -832,8 +832,8 @@ namespace Platform.XBL.Save.Storage.Blobs
 				}
 			}
 
-			// Token: 0x17001A33 RID: 6707
-			// (get) Token: 0x0600D573 RID: 54643 RVA: 0x004D0450 File Offset: 0x004CE650
+			// Token: 0x17001AA5 RID: 6821
+			// (get) Token: 0x0600D703 RID: 55043 RVA: 0x004D6874 File Offset: 0x004D4A74
 			public int Size
 			{
 				get
@@ -847,7 +847,7 @@ namespace Platform.XBL.Save.Storage.Blobs
 				}
 			}
 
-			// Token: 0x0600D574 RID: 54644 RVA: 0x004D0463 File Offset: 0x004CE663
+			// Token: 0x0600D704 RID: 55044 RVA: 0x004D6887 File Offset: 0x004D4A87
 			public RefCountedBuffer CreateRef()
 			{
 				RefCountedBuffer buffer = this.m_buffer;
@@ -858,8 +858,8 @@ namespace Platform.XBL.Save.Storage.Blobs
 				return buffer.CreateRef();
 			}
 
-			// Token: 0x17001A34 RID: 6708
-			// (get) Token: 0x0600D575 RID: 54645 RVA: 0x004D0476 File Offset: 0x004CE676
+			// Token: 0x17001AA6 RID: 6822
+			// (get) Token: 0x0600D705 RID: 55045 RVA: 0x004D689A File Offset: 0x004D4A9A
 			public bool Delete
 			{
 				get
@@ -868,19 +868,19 @@ namespace Platform.XBL.Save.Storage.Blobs
 				}
 			}
 
-			// Token: 0x0400A276 RID: 41590
+			// Token: 0x0400A3A7 RID: 41895
 			[PublicizedFrom(EAccessModifier.Private)]
 			public readonly string m_name;
 
-			// Token: 0x0400A277 RID: 41591
+			// Token: 0x0400A3A8 RID: 41896
 			[PublicizedFrom(EAccessModifier.Private)]
 			public readonly bool m_delete;
 
-			// Token: 0x0400A278 RID: 41592
+			// Token: 0x0400A3A9 RID: 41897
 			[PublicizedFrom(EAccessModifier.Private)]
 			public RefCountedBuffer m_buffer;
 
-			// Token: 0x0400A279 RID: 41593
+			// Token: 0x0400A3AA RID: 41898
 			[PublicizedFrom(EAccessModifier.Private)]
 			public bool m_disposed;
 		}

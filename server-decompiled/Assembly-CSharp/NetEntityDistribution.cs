@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000789 RID: 1929
+// Token: 0x02000793 RID: 1939
 public class NetEntityDistribution
 {
-	// Token: 0x06003967 RID: 14695 RVA: 0x00176500 File Offset: 0x00174700
+	// Token: 0x060039BF RID: 14783 RVA: 0x00178780 File Offset: 0x00176980
 	public NetEntityDistribution(World _world, int _v)
 	{
 		this.trackedEntitySet = new HashSetList<NetEntityDistributionEntry>();
@@ -13,7 +13,7 @@ public class NetEntityDistribution
 		this.world = _world;
 	}
 
-	// Token: 0x06003968 RID: 14696 RVA: 0x001766D4 File Offset: 0x001748D4
+	// Token: 0x060039C0 RID: 14784 RVA: 0x00178954 File Offset: 0x00176B54
 	public void OnUpdateEntities()
 	{
 		this.playerList.Clear();
@@ -121,7 +121,7 @@ public class NetEntityDistribution
 		}
 	}
 
-	// Token: 0x06003969 RID: 14697 RVA: 0x00176AEC File Offset: 0x00174CEC
+	// Token: 0x060039C1 RID: 14785 RVA: 0x00178D6C File Offset: 0x00176F6C
 	public void SendPacketToTrackedPlayers(int _entityId, int _excludePlayer, NetPackage _package, bool _inRangeOnly = false)
 	{
 		NetEntityDistributionEntry netEntityDistributionEntry = (NetEntityDistributionEntry)this.trackedEntityHashTable.lookup(_entityId);
@@ -131,7 +131,7 @@ public class NetEntityDistribution
 		}
 	}
 
-	// Token: 0x0600396A RID: 14698 RVA: 0x00176B20 File Offset: 0x00174D20
+	// Token: 0x060039C2 RID: 14786 RVA: 0x00178DA0 File Offset: 0x00176FA0
 	public void SendPacketToTrackedPlayersAndTrackedEntity(int _entityId, int _excludePlayer, NetPackage _package, bool _inRangeOnly = false)
 	{
 		NetEntityDistributionEntry netEntityDistributionEntry = (NetEntityDistributionEntry)this.trackedEntityHashTable.lookup(_entityId);
@@ -141,7 +141,7 @@ public class NetEntityDistribution
 		}
 	}
 
-	// Token: 0x0600396B RID: 14699 RVA: 0x00176B4C File Offset: 0x00174D4C
+	// Token: 0x060039C3 RID: 14787 RVA: 0x00178DCC File Offset: 0x00176FCC
 	public void Add(Entity _e)
 	{
 		for (int i = 0; i < this.config.Count; i++)
@@ -166,13 +166,13 @@ public class NetEntityDistribution
 		}
 	}
 
-	// Token: 0x0600396C RID: 14700 RVA: 0x00176C02 File Offset: 0x00174E02
+	// Token: 0x060039C4 RID: 14788 RVA: 0x00178E82 File Offset: 0x00177082
 	public void Add(Entity _e, int _d, int _t)
 	{
 		this.Add(_e, _d, _t, false);
 	}
 
-	// Token: 0x0600396D RID: 14701 RVA: 0x00176C10 File Offset: 0x00174E10
+	// Token: 0x060039C5 RID: 14789 RVA: 0x00178E90 File Offset: 0x00177090
 	public void Add(Entity _e, int _distance, int _t, bool _upd)
 	{
 		if (!this.trackedEntityHashTable.containsItem(_e.entityId))
@@ -184,7 +184,7 @@ public class NetEntityDistribution
 		}
 	}
 
-	// Token: 0x0600396E RID: 14702 RVA: 0x00176C70 File Offset: 0x00174E70
+	// Token: 0x060039C6 RID: 14790 RVA: 0x00178EF0 File Offset: 0x001770F0
 	public void Remove(Entity _e, EnumRemoveEntityReason _reason)
 	{
 		if (_e is EntityPlayer)
@@ -208,7 +208,7 @@ public class NetEntityDistribution
 		}
 	}
 
-	// Token: 0x0600396F RID: 14703 RVA: 0x00176CF8 File Offset: 0x00174EF8
+	// Token: 0x060039C7 RID: 14791 RVA: 0x00178F78 File Offset: 0x00177178
 	public void SyncEntity(Entity _e, Vector3 _pos, Vector3 _rot)
 	{
 		NetEntityDistributionEntry netEntityDistributionEntry = (NetEntityDistributionEntry)this.trackedEntityHashTable.lookup(_e.entityId);
@@ -219,7 +219,7 @@ public class NetEntityDistribution
 		}
 	}
 
-	// Token: 0x06003970 RID: 14704 RVA: 0x00176D38 File Offset: 0x00174F38
+	// Token: 0x060039C8 RID: 14792 RVA: 0x00178FB8 File Offset: 0x001771B8
 	public void SendFullUpdateNextTick(Entity _e)
 	{
 		NetEntityDistributionEntry netEntityDistributionEntry = (NetEntityDistributionEntry)this.trackedEntityHashTable.lookup(_e.entityId);
@@ -229,57 +229,57 @@ public class NetEntityDistribution
 		}
 	}
 
-	// Token: 0x06003971 RID: 14705 RVA: 0x00176D65 File Offset: 0x00174F65
+	// Token: 0x060039C9 RID: 14793 RVA: 0x00178FE5 File Offset: 0x001771E5
 	public void Cleanup()
 	{
 		this.trackedEntitySet.Clear();
 		this.trackedEntityHashTable.clearMap();
 	}
 
-	// Token: 0x06003972 RID: 14706 RVA: 0x00176D7D File Offset: 0x00174F7D
+	// Token: 0x060039CA RID: 14794 RVA: 0x00178FFD File Offset: 0x001771FD
 	public NetEntityDistributionEntry FindEntry(Entity entity)
 	{
 		return this.trackedEntityHashTable.lookup(entity.entityId) as NetEntityDistributionEntry;
 	}
 
-	// Token: 0x04002EE6 RID: 12006
+	// Token: 0x04002F5F RID: 12127
 	public const float cHighPriorityRange = 5f;
 
-	// Token: 0x04002EE7 RID: 12007
+	// Token: 0x04002F60 RID: 12128
 	public const float cLowPriorityRange = 18f;
 
-	// Token: 0x04002EE8 RID: 12008
+	// Token: 0x04002F61 RID: 12129
 	public const float cLowestPriorityRange = 25f;
 
-	// Token: 0x04002EE9 RID: 12009
+	// Token: 0x04002F62 RID: 12130
 	public const int MobsUpdateTicks = 3;
 
-	// Token: 0x04002EEA RID: 12010
+	// Token: 0x04002F63 RID: 12131
 	public const int lowPriorityTick = 6;
 
-	// Token: 0x04002EEB RID: 12011
+	// Token: 0x04002F64 RID: 12132
 	public const int lowestPriorityTick = 10;
 
-	// Token: 0x04002EEC RID: 12012
+	// Token: 0x04002F65 RID: 12133
 	public static float priorityViewAngleLimit = 60f;
 
-	// Token: 0x04002EED RID: 12013
+	// Token: 0x04002F66 RID: 12134
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float priorityViewAngleMinDistance = 128f;
 
-	// Token: 0x04002EEE RID: 12014
+	// Token: 0x04002F67 RID: 12135
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSetList<NetEntityDistributionEntry> trackedEntitySet;
 
-	// Token: 0x04002EEF RID: 12015
+	// Token: 0x04002F68 RID: 12136
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IntHashMap trackedEntityHashTable;
 
-	// Token: 0x04002EF0 RID: 12016
+	// Token: 0x04002F69 RID: 12137
 	[PublicizedFrom(EAccessModifier.Private)]
 	public World world;
 
-	// Token: 0x04002EF1 RID: 12017
+	// Token: 0x04002F6A RID: 12138
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<NetEntityDistribution.SEnts> config = new List<NetEntityDistribution.SEnts>
 	{
@@ -300,19 +300,19 @@ public class NetEntityDistribution
 		new NetEntityDistribution.SEnts(typeof(EntityHomerunGoal), 80, 3, false)
 	};
 
-	// Token: 0x04002EF2 RID: 12018
+	// Token: 0x04002F6B RID: 12139
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<EntityPlayer> playerList = new List<EntityPlayer>();
 
-	// Token: 0x04002EF3 RID: 12019
+	// Token: 0x04002F6C RID: 12140
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<EntityEnemy> enemyList = new List<EntityEnemy>();
 
-	// Token: 0x0200078A RID: 1930
+	// Token: 0x02000794 RID: 1940
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct SEnts
 	{
-		// Token: 0x06003974 RID: 14708 RVA: 0x00176DA1 File Offset: 0x00174FA1
+		// Token: 0x060039CC RID: 14796 RVA: 0x00179021 File Offset: 0x00177221
 		public SEnts(Type _eType, int _distance, int _update, bool _motion)
 		{
 			this.eType = _eType;
@@ -321,16 +321,16 @@ public class NetEntityDistribution
 			this.motion = _motion;
 		}
 
-		// Token: 0x04002EF4 RID: 12020
+		// Token: 0x04002F6D RID: 12141
 		public Type eType;
 
-		// Token: 0x04002EF5 RID: 12021
+		// Token: 0x04002F6E RID: 12142
 		public int distance;
 
-		// Token: 0x04002EF6 RID: 12022
+		// Token: 0x04002F6F RID: 12143
 		public int update;
 
-		// Token: 0x04002EF7 RID: 12023
+		// Token: 0x04002F70 RID: 12144
 		public bool motion;
 	}
 }

@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x020001D5 RID: 469
+// Token: 0x020001D7 RID: 471
 public enum EnumEntityUINotificationDisplayMode
 {
-	// Token: 0x04000C58 RID: 3160
+	// Token: 0x04000C65 RID: 3173
 	IconOnly,
-	// Token: 0x04000C59 RID: 3161
+	// Token: 0x04000C66 RID: 3174
 	IconPlusCurrentValue,
-	// Token: 0x04000C5A RID: 3162
+	// Token: 0x04000C67 RID: 3175
 	IconPlusDetail
 }

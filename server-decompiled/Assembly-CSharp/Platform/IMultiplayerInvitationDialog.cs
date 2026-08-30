@@ -2,17 +2,17 @@
 
 namespace Platform
 {
-	// Token: 0x02001B44 RID: 6980
+	// Token: 0x02001B6B RID: 7019
 	public interface IMultiplayerInvitationDialog
 	{
-		// Token: 0x1700196C RID: 6508
-		// (get) Token: 0x0600D089 RID: 53385
+		// Token: 0x170019DE RID: 6622
+		// (get) Token: 0x0600D214 RID: 53780
 		bool CanShow { get; }
 
-		// Token: 0x0600D08A RID: 53386
+		// Token: 0x0600D215 RID: 53781
 		void Init(IPlatform owner);
 
-		// Token: 0x0600D08B RID: 53387
+		// Token: 0x0600D216 RID: 53782
 		void ShowInviteDialog();
 	}
 }

@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x0200194A RID: 6474
+	// Token: 0x02001970 RID: 6512
 	[Preserve]
 	public class ActionBaseTeleport : ActionBaseTargetAction
 	{
-		// Token: 0x0600C6AD RID: 50861 RVA: 0x00490CD0 File Offset: 0x0048EED0
+		// Token: 0x0600C834 RID: 51252 RVA: 0x0049701C File Offset: 0x0049521C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void TeleportEntity(Entity entity, Vector3 position)
 		{
@@ -16,25 +16,25 @@ namespace GameEvent.SequenceActions
 			GameManager.Instance.StartCoroutine(base.TeleportEntity(entity, position, floatValue));
 		}
 
-		// Token: 0x0600C6AE RID: 50862 RVA: 0x00490D08 File Offset: 0x0048EF08
+		// Token: 0x0600C835 RID: 51253 RVA: 0x00497054 File Offset: 0x00495254
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseString(ActionBaseTeleport.PropTeleportDelay, ref this.teleportDelayText);
 		}
 
-		// Token: 0x0600C6AF RID: 50863 RVA: 0x0001FF1E File Offset: 0x0001E11E
+		// Token: 0x0600C836 RID: 51254 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
 			return null;
 		}
 
-		// Token: 0x040095F6 RID: 38390
+		// Token: 0x0400971F RID: 38687
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string teleportDelayText = "";
 
-		// Token: 0x040095F7 RID: 38391
+		// Token: 0x04009720 RID: 38688
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTeleportDelay = "teleport_delay";
 	}

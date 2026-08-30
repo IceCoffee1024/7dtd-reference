@@ -1,6 +1,6 @@
 ﻿using System;
 
-// Token: 0x0200043D RID: 1085
+// Token: 0x02000441 RID: 1089
 public interface IFocusTarget
 {
 }

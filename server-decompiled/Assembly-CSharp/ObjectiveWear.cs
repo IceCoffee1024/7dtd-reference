@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020009A8 RID: 2472
+// Token: 0x020009B9 RID: 2489
 [Preserve]
 public class ObjectiveWear : BaseObjective
 {
-	// Token: 0x060048FE RID: 18686 RVA: 0x001C9313 File Offset: 0x001C7513
+	// Token: 0x06004984 RID: 18820 RVA: 0x001CBB07 File Offset: 0x001C9D07
 	public override void SetupObjective()
 	{
 		this.keyword = Localization.Get("ObjectiveWear_keyword", false, null);
@@ -13,7 +13,7 @@ public class ObjectiveWear : BaseObjective
 		this.expectedItemClass = ItemClass.GetItemClass(this.ID, false);
 	}
 
-	// Token: 0x060048FF RID: 18687 RVA: 0x001C934B File Offset: 0x001C754B
+	// Token: 0x06004985 RID: 18821 RVA: 0x001CBB3F File Offset: 0x001C9D3F
 	public override void SetupDisplay()
 	{
 		byte currentValue = base.CurrentValue;
@@ -21,7 +21,7 @@ public class ObjectiveWear : BaseObjective
 		this.StatusText = "";
 	}
 
-	// Token: 0x06004900 RID: 18688 RVA: 0x001C937C File Offset: 0x001C757C
+	// Token: 0x06004986 RID: 18822 RVA: 0x001CBB70 File Offset: 0x001C9D70
 	public override void AddHooks()
 	{
 		QuestEventManager.Current.WearItem += this.Current_WearItem;
@@ -34,13 +34,13 @@ public class ObjectiveWear : BaseObjective
 		}
 	}
 
-	// Token: 0x06004901 RID: 18689 RVA: 0x001C93EC File Offset: 0x001C75EC
+	// Token: 0x06004987 RID: 18823 RVA: 0x001CBBE0 File Offset: 0x001C9DE0
 	public override void RemoveHooks()
 	{
 		QuestEventManager.Current.WearItem -= this.Current_WearItem;
 	}
 
-	// Token: 0x06004902 RID: 18690 RVA: 0x001C9404 File Offset: 0x001C7604
+	// Token: 0x06004988 RID: 18824 RVA: 0x001CBBF8 File Offset: 0x001C9DF8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_WearItem(ItemValue itemValue)
 	{
@@ -51,7 +51,7 @@ public class ObjectiveWear : BaseObjective
 		}
 	}
 
-	// Token: 0x06004903 RID: 18691 RVA: 0x001C9434 File Offset: 0x001C7634
+	// Token: 0x06004989 RID: 18825 RVA: 0x001CBC28 File Offset: 0x001C9E28
 	public override void Refresh()
 	{
 		if (base.Complete)
@@ -66,7 +66,7 @@ public class ObjectiveWear : BaseObjective
 		}
 	}
 
-	// Token: 0x06004904 RID: 18692 RVA: 0x001C9474 File Offset: 0x001C7674
+	// Token: 0x0600498A RID: 18826 RVA: 0x001CBC68 File Offset: 0x001C9E68
 	public override BaseObjective Clone()
 	{
 		ObjectiveWear objectiveWear = new ObjectiveWear();
@@ -74,11 +74,11 @@ public class ObjectiveWear : BaseObjective
 		return objectiveWear;
 	}
 
-	// Token: 0x040039E6 RID: 14822
+	// Token: 0x04003A77 RID: 14967
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue expectedItem = ItemValue.None;
 
-	// Token: 0x040039E7 RID: 14823
+	// Token: 0x04003A78 RID: 14968
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass expectedItemClass;
 }

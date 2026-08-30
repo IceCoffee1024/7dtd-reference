@@ -2,17 +2,17 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020004AF RID: 1199
+// Token: 0x020004B3 RID: 1203
 [Preserve]
 public class EntityFlying : EntityEnemy
 {
-	// Token: 0x060025F6 RID: 9718 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x06002618 RID: 9752 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsAirBorne()
 	{
 		return true;
 	}
 
-	// Token: 0x060025F7 RID: 9719 RVA: 0x000E8150 File Offset: 0x000E6350
+	// Token: 0x06002619 RID: 9753 RVA: 0x000E8DA8 File Offset: 0x000E6FA8
 	public override void MoveEntityHeaded(Vector3 _direction, bool _isDirAbsolute)
 	{
 		if (this.AttachedToEntity != null)

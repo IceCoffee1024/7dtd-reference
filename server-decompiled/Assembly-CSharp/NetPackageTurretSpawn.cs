@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200084F RID: 2127
+// Token: 0x0200085B RID: 2139
 [Preserve]
 public class NetPackageTurretSpawn : NetPackage
 {
-	// Token: 0x06003E26 RID: 15910 RVA: 0x00188BC9 File Offset: 0x00186DC9
+	// Token: 0x06003E8B RID: 16011 RVA: 0x0018AC99 File Offset: 0x00188E99
 	public NetPackageTurretSpawn Setup(int _entityType, Vector3 _pos, Vector3 _rot, ItemValue _itemValue, int _entityThatPlaced = -1)
 	{
 		this.entityType = _entityType;
@@ -17,7 +17,7 @@ public class NetPackageTurretSpawn : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003E27 RID: 15911 RVA: 0x00188BF4 File Offset: 0x00186DF4
+	// Token: 0x06003E8C RID: 16012 RVA: 0x0018ACC4 File Offset: 0x00188EC4
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.entityType = _reader.ReadInt32();
@@ -28,7 +28,7 @@ public class NetPackageTurretSpawn : NetPackage
 		this.entityThatPlaced = _reader.ReadInt32();
 	}
 
-	// Token: 0x06003E28 RID: 15912 RVA: 0x00188C48 File Offset: 0x00186E48
+	// Token: 0x06003E8D RID: 16013 RVA: 0x0018AD18 File Offset: 0x00188F18
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -39,7 +39,7 @@ public class NetPackageTurretSpawn : NetPackage
 		_writer.Write(this.entityThatPlaced);
 	}
 
-	// Token: 0x06003E29 RID: 15913 RVA: 0x00188C98 File Offset: 0x00186E98
+	// Token: 0x06003E8E RID: 16014 RVA: 0x0018AD68 File Offset: 0x00188F68
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -105,24 +105,24 @@ public class NetPackageTurretSpawn : NetPackage
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageVehicleCount>().Setup(), false, -1, -1, -1, null, 192, false);
 	}
 
-	// Token: 0x06003E2A RID: 15914 RVA: 0x000B8CB1 File Offset: 0x000B6EB1
+	// Token: 0x06003E8F RID: 16015 RVA: 0x000B93F5 File Offset: 0x000B75F5
 	public override int GetLength()
 	{
 		return 20;
 	}
 
-	// Token: 0x0400321C RID: 12828
+	// Token: 0x0400329D RID: 12957
 	public int entityType;
 
-	// Token: 0x0400321D RID: 12829
+	// Token: 0x0400329E RID: 12958
 	public Vector3 pos;
 
-	// Token: 0x0400321E RID: 12830
+	// Token: 0x0400329F RID: 12959
 	public Vector3 rot;
 
-	// Token: 0x0400321F RID: 12831
+	// Token: 0x040032A0 RID: 12960
 	public ItemValue itemValue;
 
-	// Token: 0x04003220 RID: 12832
+	// Token: 0x040032A1 RID: 12961
 	public int entityThatPlaced;
 }

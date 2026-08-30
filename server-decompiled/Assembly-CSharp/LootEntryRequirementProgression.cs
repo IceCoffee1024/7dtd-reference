@@ -3,11 +3,11 @@ using System.Globalization;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x0200061E RID: 1566
+// Token: 0x02000627 RID: 1575
 [Preserve]
 public class LootEntryRequirementProgression : BaseOperationLootEntryRequirement
 {
-	// Token: 0x060032C4 RID: 12996 RVA: 0x0014A40B File Offset: 0x0014860B
+	// Token: 0x06003317 RID: 13079 RVA: 0x0014C527 File Offset: 0x0014A727
 	public override void Init(XElement e)
 	{
 		base.Init(e);
@@ -15,7 +15,7 @@ public class LootEntryRequirementProgression : BaseOperationLootEntryRequirement
 		e.ParseAttribute("value", ref this.valueText);
 	}
 
-	// Token: 0x060032C5 RID: 12997 RVA: 0x0014A444 File Offset: 0x00148644
+	// Token: 0x06003318 RID: 13080 RVA: 0x0014C560 File Offset: 0x0014A760
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override float LeftSide(EntityPlayer player)
 	{
@@ -30,18 +30,18 @@ public class LootEntryRequirementProgression : BaseOperationLootEntryRequirement
 		return 0f;
 	}
 
-	// Token: 0x060032C6 RID: 12998 RVA: 0x0014A47C File Offset: 0x0014867C
+	// Token: 0x06003319 RID: 13081 RVA: 0x0014C598 File Offset: 0x0014A798
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override float RightSide(EntityPlayer player)
 	{
 		return StringParsers.ParseFloat(this.valueText, 0, -1, NumberStyles.Any);
 	}
 
-	// Token: 0x04002868 RID: 10344
+	// Token: 0x040028DB RID: 10459
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string progressionName;
 
-	// Token: 0x04002869 RID: 10345
+	// Token: 0x040028DC RID: 10460
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string valueText;
 }

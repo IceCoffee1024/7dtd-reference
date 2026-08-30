@@ -6,27 +6,63 @@ using UnityEngine;
 
 namespace Platform.Steam
 {
-	// Token: 0x02001C5E RID: 7262
+	// Token: 0x02001C85 RID: 7301
 	public class DownloadableContentValidator : IEntitlementValidator
 	{
-		// Token: 0x0600D6E6 RID: 55014 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600D876 RID: 55414 RVA: 0x004DC9D4 File Offset: 0x004DABD4
 		public void Init(IPlatform _owner)
 		{
+			this._owner = _owner;
 		}
 
-		// Token: 0x0600D6E7 RID: 55015 RVA: 0x004D65AF File Offset: 0x004D47AF
+		// Token: 0x0600D877 RID: 55415 RVA: 0x004DC9DD File Offset: 0x004DABDD
 		public bool IsAvailableOnPlatform(EntitlementSetEnum _dlcSet)
 		{
 			return _dlcSet == EntitlementSetEnum.None || DownloadableContentValidator.entitlementMap.ContainsKey(_dlcSet);
 		}
 
-		// Token: 0x0600D6E8 RID: 55016 RVA: 0x004D65C1 File Offset: 0x004D47C1
+		// Token: 0x0600D878 RID: 55416 RVA: 0x004DC9EF File Offset: 0x004DABEF
 		public bool IsEntitlementPurchasable(EntitlementSetEnum _dlcSet)
 		{
 			return DLCTitleStorageManager.Instance.IsDLCPurchasable(_dlcSet, DLCEnvironmentFlags.Dev | DLCEnvironmentFlags.Cert | DLCEnvironmentFlags.Retail);
 		}
 
-		// Token: 0x0600D6E9 RID: 55017 RVA: 0x004D65CF File Offset: 0x004D47CF
+		// Token: 0x0600D879 RID: 55417 RVA: 0x004DCA00 File Offset: 0x004DAC00
+		public string GetEntitlementSetId(EntitlementSetEnum _entitlementSet)
+		{
+			uint num;
+			if (!DownloadableContentValidator.entitlementMap.TryGetValue(_entitlementSet, out num))
+			{
+				return null;
+			}
+			return num.ToString();
+		}
+
+		// Token: 0x0600D87A RID: 55418 RVA: 0x004DCA28 File Offset: 0x004DAC28
+		public DateTime? GetAcquiredDate(EntitlementSetEnum _entitlementSet)
+		{
+			if (_entitlementSet == EntitlementSetEnum.None)
+			{
+				return null;
+			}
+			if (!DownloadableContentValidator.entitlementMap.ContainsKey(_entitlementSet))
+			{
+				return null;
+			}
+			if (this._owner.Api.ClientApiStatus != EApiStatus.Ok)
+			{
+				Log.Out("[DownloadableContentValidator] Ignored, game not fully loaded yet");
+				return null;
+			}
+			uint earliestPurchaseUnixTime = SteamApps.GetEarliestPurchaseUnixTime(new AppId_t(DownloadableContentValidator.entitlementMap[_entitlementSet]));
+			if (earliestPurchaseUnixTime == 0U)
+			{
+				return null;
+			}
+			return new DateTime?(DateTimeOffset.FromUnixTimeSeconds((long)((ulong)earliestPurchaseUnixTime)).ToUniversalTime().DateTime);
+		}
+
+		// Token: 0x0600D87B RID: 55419 RVA: 0x004DCAC0 File Offset: 0x004DACC0
 		public bool HasEntitlement(EntitlementSetEnum _dlcSet)
 		{
 			if (_dlcSet == EntitlementSetEnum.None)
@@ -37,7 +73,7 @@ namespace Platform.Steam
 			{
 				return false;
 			}
-			if (!XUiC_MainMenu.openedOnce)
+			if (this._owner.Api.ClientApiStatus != EApiStatus.Ok)
 			{
 				Log.Out("[DownloadableContentValidator] Ignored, game not fully loaded yet");
 				return false;
@@ -45,14 +81,14 @@ namespace Platform.Steam
 			return SteamApps.BIsDlcInstalled(new AppId_t(DownloadableContentValidator.entitlementMap[_dlcSet]));
 		}
 
-		// Token: 0x0600D6EA RID: 55018 RVA: 0x004D6610 File Offset: 0x004D4810
+		// Token: 0x0600D87C RID: 55420 RVA: 0x004DCB14 File Offset: 0x004DAD14
 		public bool OpenStore(EntitlementSetEnum _dlcSet, Action<EntitlementSetEnum> _onDlcPurchased)
 		{
 			if (!DownloadableContentValidator.entitlementMap.ContainsKey(_dlcSet))
 			{
 				return false;
 			}
-			if (!XUiC_MainMenu.openedOnce)
+			if (this._owner.Api.ClientApiStatus != EApiStatus.Ok)
 			{
 				Log.Out("[DownloadableContentValidator] Ignored, game not fully loaded yet");
 				return true;
@@ -67,7 +103,7 @@ namespace Platform.Steam
 			return true;
 		}
 
-		// Token: 0x0600D6EB RID: 55019 RVA: 0x004D668A File Offset: 0x004D488A
+		// Token: 0x0600D87D RID: 55421 RVA: 0x004DCB99 File Offset: 0x004DAD99
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator CheckDlcPurchases()
 		{
@@ -99,7 +135,7 @@ namespace Platform.Steam
 			yield break;
 		}
 
-		// Token: 0x0400A331 RID: 41777
+		// Token: 0x0400A462 RID: 42082
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Dictionary<EntitlementSetEnum, uint> entitlementMap = new Dictionary<EntitlementSetEnum, uint>
 		{
@@ -142,14 +178,22 @@ namespace Platform.Steam
 			{
 				EntitlementSetEnum.WorkingStiffCosmetic,
 				4767600U
+			},
+			{
+				EntitlementSetEnum.HenpocalypseCosmetic,
+				4924490U
 			}
 		};
 
-		// Token: 0x0400A332 RID: 41778
+		// Token: 0x0400A463 RID: 42083
+		[PublicizedFrom(EAccessModifier.Private)]
+		public IPlatform _owner;
+
+		// Token: 0x0400A464 RID: 42084
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly HashSet<EntitlementSetEnum> pendingDlcChecks = new HashSet<EntitlementSetEnum>();
 
-		// Token: 0x0400A333 RID: 41779
+		// Token: 0x0400A465 RID: 42085
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<EntitlementSetEnum, Action<EntitlementSetEnum>> dlcPurchaseCallbacks = new Dictionary<EntitlementSetEnum, Action<EntitlementSetEnum>>();
 	}

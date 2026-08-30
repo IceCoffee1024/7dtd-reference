@@ -4,7 +4,7 @@ using UnityEngine;
 // Token: 0x020000A3 RID: 163
 public class AnimatorRangedSpecialAttackState : StateMachineBehaviour
 {
-	// Token: 0x0600032F RID: 815 RVA: 0x000183A8 File Offset: 0x000165A8
+	// Token: 0x0600032F RID: 815 RVA: 0x0001842C File Offset: 0x0001662C
 	public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 		EntityAlive componentInParent = animator.GetComponentInParent<EntityAlive>();

@@ -5,11 +5,11 @@ using Epic.OnlineServices.Sanctions;
 
 namespace Platform.EOS
 {
-	// Token: 0x02001CC1 RID: 7361
+	// Token: 0x02001CE8 RID: 7400
 	public class AuthServer : IAuthenticationServer
 	{
-		// Token: 0x17001AF7 RID: 6903
-		// (get) Token: 0x0600DA0D RID: 55821 RVA: 0x004E19F9 File Offset: 0x004DFBF9
+		// Token: 0x17001B69 RID: 7017
+		// (get) Token: 0x0600DBA8 RID: 56232 RVA: 0x004E800D File Offset: 0x004E620D
 		public ConnectInterface connectInterface
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -19,8 +19,8 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x17001AF8 RID: 6904
-		// (get) Token: 0x0600DA0E RID: 55822 RVA: 0x004E1A10 File Offset: 0x004DFC10
+		// Token: 0x17001B6A RID: 7018
+		// (get) Token: 0x0600DBA9 RID: 56233 RVA: 0x004E8024 File Offset: 0x004E6224
 		public SanctionsInterface sanctionsInterface
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -30,13 +30,13 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DA0F RID: 55823 RVA: 0x004E1A27 File Offset: 0x004DFC27
+		// Token: 0x0600DBAA RID: 56234 RVA: 0x004E803B File Offset: 0x004E623B
 		public void Init(IPlatform _owner)
 		{
 			this.owner = _owner;
 		}
 
-		// Token: 0x0600DA10 RID: 55824 RVA: 0x004E1A30 File Offset: 0x004DFC30
+		// Token: 0x0600DBAB RID: 56235 RVA: 0x004E8044 File Offset: 0x004E6244
 		public EBeginUserAuthenticationResult AuthenticateUser(ClientInfo _cInfo)
 		{
 			UserIdentifierEos identifierEos = (UserIdentifierEos)_cInfo.CrossplatformId;
@@ -186,47 +186,47 @@ namespace Platform.EOS
 			return EBeginUserAuthenticationResult.Ok;
 		}
 
-		// Token: 0x0600DA11 RID: 55825 RVA: 0x004E1B24 File Offset: 0x004DFD24
+		// Token: 0x0600DBAC RID: 56236 RVA: 0x004E8138 File Offset: 0x004E6338
 		public void RemoveUser(ClientInfo _cInfo)
 		{
 			((SessionsHost)this.owner.ServerListAnnouncer).UnregisterUser(_cInfo);
 		}
 
-		// Token: 0x0600DA12 RID: 55826 RVA: 0x004E1B3C File Offset: 0x004DFD3C
+		// Token: 0x0600DBAD RID: 56237 RVA: 0x004E8150 File Offset: 0x004E6350
 		public void StartServer(AuthenticationSuccessfulCallbackDelegate _authSuccessfulDelegate, KickPlayerDelegate _kickPlayerDelegate)
 		{
 			this.authSuccessfulDelegate = _authSuccessfulDelegate;
 			this.kickPlayerDelegate = _kickPlayerDelegate;
 		}
 
-		// Token: 0x0600DA13 RID: 55827 RVA: 0x000876FD File Offset: 0x000858FD
+		// Token: 0x0600DBAE RID: 56238 RVA: 0x00087DB8 File Offset: 0x00085FB8
 		public void StartServerSteamGroups(SteamGroupStatusResponse _groupStatusResponseDelegate)
 		{
 			throw new NotImplementedException();
 		}
 
-		// Token: 0x0600DA14 RID: 55828 RVA: 0x004E1B4C File Offset: 0x004DFD4C
+		// Token: 0x0600DBAF RID: 56239 RVA: 0x004E8160 File Offset: 0x004E6360
 		public void StopServer()
 		{
 			this.authSuccessfulDelegate = null;
 			this.kickPlayerDelegate = null;
 		}
 
-		// Token: 0x0600DA15 RID: 55829 RVA: 0x000876FD File Offset: 0x000858FD
+		// Token: 0x0600DBB0 RID: 56240 RVA: 0x00087DB8 File Offset: 0x00085FB8
 		public bool RequestUserInGroupStatus(ClientInfo _cInfo, string _steamIdGroup)
 		{
 			throw new NotImplementedException();
 		}
 
-		// Token: 0x0400A4CA RID: 42186
+		// Token: 0x0400A5FD RID: 42493
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform owner;
 
-		// Token: 0x0400A4CB RID: 42187
+		// Token: 0x0400A5FE RID: 42494
 		[PublicizedFrom(EAccessModifier.Private)]
 		public AuthenticationSuccessfulCallbackDelegate authSuccessfulDelegate;
 
-		// Token: 0x0400A4CC RID: 42188
+		// Token: 0x0400A5FF RID: 42495
 		[PublicizedFrom(EAccessModifier.Private)]
 		public KickPlayerDelegate kickPlayerDelegate;
 	}

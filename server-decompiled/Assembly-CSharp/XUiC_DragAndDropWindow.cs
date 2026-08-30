@@ -3,12 +3,12 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F10 RID: 3856
+// Token: 0x02000F27 RID: 3879
 [Preserve]
 public class XUiC_DragAndDropWindow : XUiController
 {
-	// Token: 0x17000E20 RID: 3616
-	// (get) Token: 0x06007908 RID: 30984 RVA: 0x002D9F68 File Offset: 0x002D8168
+	// Token: 0x17000E3A RID: 3642
+	// (get) Token: 0x060079C0 RID: 31168 RVA: 0x002DDEF4 File Offset: 0x002DC0F4
 	public EntityPlayerLocal entityPlayer
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -28,7 +28,7 @@ public class XUiC_DragAndDropWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007909 RID: 30985 RVA: 0x002D9F86 File Offset: 0x002D8186
+	// Token: 0x060079C1 RID: 31169 RVA: 0x002DDF12 File Offset: 0x002DC112
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void DropCurrentItem()
 	{
@@ -36,7 +36,7 @@ public class XUiC_DragAndDropWindow : XUiController
 		this.CurrentStack = ItemStack.Empty;
 	}
 
-	// Token: 0x0600790A RID: 30986 RVA: 0x002D9FAC File Offset: 0x002D81AC
+	// Token: 0x060079C2 RID: 31170 RVA: 0x002DDF38 File Offset: 0x002DC138
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void DropCurrentItem(int _count)
 	{
@@ -52,9 +52,9 @@ public class XUiC_DragAndDropWindow : XUiController
 		this.DropCurrentItem();
 	}
 
-	// Token: 0x17000E21 RID: 3617
-	// (get) Token: 0x0600790B RID: 30987 RVA: 0x002DA011 File Offset: 0x002D8211
-	// (set) Token: 0x0600790C RID: 30988 RVA: 0x002DA01C File Offset: 0x002D821C
+	// Token: 0x17000E3B RID: 3643
+	// (get) Token: 0x060079C3 RID: 31171 RVA: 0x002DDF9D File Offset: 0x002DC19D
+	// (set) Token: 0x060079C4 RID: 31172 RVA: 0x002DDFA8 File Offset: 0x002DC1A8
 	public ItemStack CurrentStack
 	{
 		get
@@ -63,6 +63,7 @@ public class XUiC_DragAndDropWindow : XUiController
 		}
 		set
 		{
+			this.lastItemStack = this.itemStack;
 			this.itemStack = value;
 			this.ItemStackControl.ItemStack = value;
 			if (value != null && !value.IsEmpty())
@@ -77,7 +78,17 @@ public class XUiC_DragAndDropWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600790D RID: 30989 RVA: 0x002DA073 File Offset: 0x002D8273
+	// Token: 0x17000E3C RID: 3644
+	// (get) Token: 0x060079C5 RID: 31173 RVA: 0x002DE00B File Offset: 0x002DC20B
+	public ItemStack LastStack
+	{
+		get
+		{
+			return this.lastItemStack;
+		}
+	}
+
+	// Token: 0x060079C6 RID: 31174 RVA: 0x002DE013 File Offset: 0x002DC213
 	public override void Init()
 	{
 		base.Init();
@@ -87,14 +98,14 @@ public class XUiC_DragAndDropWindow : XUiController
 		this.xui.DragAndDropWindow = this;
 	}
 
-	// Token: 0x0600790E RID: 30990 RVA: 0x002DA0AF File Offset: 0x002D82AF
+	// Token: 0x060079C7 RID: 31175 RVA: 0x002DE04F File Offset: 0x002DC24F
 	public override void Cleanup()
 	{
 		base.Cleanup();
 		this.xui.DragAndDropWindow = null;
 	}
 
-	// Token: 0x0600790F RID: 30991 RVA: 0x002DA0C4 File Offset: 0x002D82C4
+	// Token: 0x060079C8 RID: 31176 RVA: 0x002DE064 File Offset: 0x002DC264
 	public override void Update(float _dt)
 	{
 		if (!this.InMenu)
@@ -109,7 +120,7 @@ public class XUiC_DragAndDropWindow : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x06007910 RID: 30992 RVA: 0x002DA124 File Offset: 0x002D8324
+	// Token: 0x060079C9 RID: 31177 RVA: 0x002DE0C4 File Offset: 0x002DC2C4
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -124,14 +135,14 @@ public class XUiC_DragAndDropWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007911 RID: 30993 RVA: 0x002DA175 File Offset: 0x002D8375
+	// Token: 0x060079CA RID: 31178 RVA: 0x002DE115 File Offset: 0x002DC315
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.PlaceItemBackInInventory();
 	}
 
-	// Token: 0x06007912 RID: 30994 RVA: 0x002DA184 File Offset: 0x002D8384
+	// Token: 0x060079CB RID: 31179 RVA: 0x002DE124 File Offset: 0x002DC324
 	public void PlaceItemBackInInventory()
 	{
 		if (!this.CurrentStack.IsEmpty())
@@ -147,7 +158,7 @@ public class XUiC_DragAndDropWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007913 RID: 30995 RVA: 0x002DA1F4 File Offset: 0x002D83F4
+	// Token: 0x060079CC RID: 31180 RVA: 0x002DE194 File Offset: 0x002DC394
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -159,7 +170,7 @@ public class XUiC_DragAndDropWindow : XUiController
 		return base.GetBindingValueInternal(ref _value, _bindingName);
 	}
 
-	// Token: 0x06007914 RID: 30996 RVA: 0x002DA23C File Offset: 0x002D843C
+	// Token: 0x060079CD RID: 31181 RVA: 0x002DE1DC File Offset: 0x002DC3DC
 	public override bool ParseAttribute(string _name, string _value)
 	{
 		if (_name == "position_offset")
@@ -178,24 +189,27 @@ public class XUiC_DragAndDropWindow : XUiController
 		return true;
 	}
 
-	// Token: 0x0400594D RID: 22861
-	[PublicizedFrom(EAccessModifier.Private)]
+	// Token: 0x040059FF RID: 23039
 	public XUiC_ItemStack ItemStackControl;
 
-	// Token: 0x0400594E RID: 22862
+	// Token: 0x04005A00 RID: 23040
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AudioClip placeSound;
 
-	// Token: 0x0400594F RID: 22863
+	// Token: 0x04005A01 RID: 23041
 	public Vector2i PositionOffset = new Vector2i(0, 0);
 
-	// Token: 0x04005950 RID: 22864
+	// Token: 0x04005A02 RID: 23042
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack itemStack = new ItemStack(new ItemValue(0, false), 0);
 
-	// Token: 0x04005951 RID: 22865
+	// Token: 0x04005A03 RID: 23043
+	[PublicizedFrom(EAccessModifier.Private)]
+	public ItemStack lastItemStack = new ItemStack(new ItemValue(0, false), 0);
+
+	// Token: 0x04005A04 RID: 23044
 	public bool InMenu;
 
-	// Token: 0x04005952 RID: 22866
+	// Token: 0x04005A05 RID: 23045
 	public XUiC_ItemStack.StackLocationTypes PickUpType;
 }

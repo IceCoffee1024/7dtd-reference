@@ -2,16 +2,16 @@
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x0200174A RID: 5962
+	// Token: 0x02001770 RID: 6000
 	public enum TerrainType : byte
 	{
-		// Token: 0x04008A7D RID: 35453
+		// Token: 0x04008B99 RID: 35737
 		plains,
-		// Token: 0x04008A7E RID: 35454
+		// Token: 0x04008B9A RID: 35738
 		hills,
-		// Token: 0x04008A7F RID: 35455
+		// Token: 0x04008B9B RID: 35739
 		mountains,
-		// Token: 0x04008A80 RID: 35456
+		// Token: 0x04008B9C RID: 35740
 		none = 255
 	}
 }

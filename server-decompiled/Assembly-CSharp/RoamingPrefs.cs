@@ -2,19 +2,19 @@
 using System.IO;
 using Platform;
 
-// Token: 0x020009FE RID: 2558
+// Token: 0x02000A0F RID: 2575
 public static class RoamingPrefs
 {
-	// Token: 0x1700082C RID: 2092
-	// (get) Token: 0x06004CE6 RID: 19686 RVA: 0x001D8368 File Offset: 0x001D6568
-	// (set) Token: 0x06004CE7 RID: 19687 RVA: 0x001D836F File Offset: 0x001D656F
+	// Token: 0x1700083E RID: 2110
+	// (get) Token: 0x06004D6C RID: 19820 RVA: 0x001DAE00 File Offset: 0x001D9000
+	// (set) Token: 0x06004D6D RID: 19821 RVA: 0x001DAE07 File Offset: 0x001D9007
 	public static PrefVersionStore Store
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06004CE8 RID: 19688 RVA: 0x001D8378 File Offset: 0x001D6578
+	// Token: 0x06004D6E RID: 19822 RVA: 0x001DAE10 File Offset: 0x001D9010
 	public static void Init()
 	{
 		if (!PlatformManager.MultiPlatform.UserDataRoaming.IsSupported || !PlatformManager.MultiPlatform.UserDataRoaming.IsRoamingOptional)
@@ -41,13 +41,13 @@ public static class RoamingPrefs
 		Log.Out("[RoamingPrefs] initialized");
 	}
 
-	// Token: 0x06004CE9 RID: 19689 RVA: 0x001D8498 File Offset: 0x001D6698
+	// Token: 0x06004D6F RID: 19823 RVA: 0x001DAF30 File Offset: 0x001D9130
 	public static void Destroy()
 	{
 		RoamingPrefs.Store = null;
 	}
 
-	// Token: 0x04003B7E RID: 15230
+	// Token: 0x04003C0F RID: 15375
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly EnumGamePrefs[] s_gamePrefs = new EnumGamePrefs[]
 	{

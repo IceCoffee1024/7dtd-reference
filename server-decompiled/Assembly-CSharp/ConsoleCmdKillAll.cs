@@ -2,32 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200022F RID: 559
+// Token: 0x02000232 RID: 562
 [Preserve]
 public class ConsoleCmdKillAll : ConsoleCmdAbstract
 {
-	// Token: 0x060010E7 RID: 4327 RVA: 0x0006B583 File Offset: 0x00069783
+	// Token: 0x060010F3 RID: 4339 RVA: 0x0006BB1F File Offset: 0x00069D1F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "killall" };
 	}
 
-	// Token: 0x060010E8 RID: 4328 RVA: 0x0006B593 File Offset: 0x00069793
+	// Token: 0x060010F4 RID: 4340 RVA: 0x0006BB2F File Offset: 0x00069D2F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Kill all entities";
 	}
 
-	// Token: 0x060010E9 RID: 4329 RVA: 0x0006B59A File Offset: 0x0006979A
+	// Token: 0x060010F5 RID: 4341 RVA: 0x0006BB36 File Offset: 0x00069D36
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Kills all matching entities (but never players)\nUsage:\n   killall (all enemies)\n   killall alive (all EntityAlive types except vehicles and turrets)\n   killall all (all types)";
 	}
 
-	// Token: 0x060010EA RID: 4330 RVA: 0x0006B5A4 File Offset: 0x000697A4
+	// Token: 0x060010F6 RID: 4342 RVA: 0x0006BB40 File Offset: 0x00069D40
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		bool flag = _params.Count > 0 && _params[0].EqualsCaseInsensitive("alive");

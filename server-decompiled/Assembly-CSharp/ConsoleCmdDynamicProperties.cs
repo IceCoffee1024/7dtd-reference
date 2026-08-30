@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200020F RID: 527
+// Token: 0x02000211 RID: 529
 [Preserve]
 public class ConsoleCmdDynamicProperties : ConsoleCmdAbstract
 {
 	// Token: 0x17000172 RID: 370
-	// (get) Token: 0x0600100D RID: 4109 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// (get) Token: 0x06001018 RID: 4120 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -18,7 +18,7 @@ public class ConsoleCmdDynamicProperties : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000173 RID: 371
-	// (get) Token: 0x0600100E RID: 4110 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// (get) Token: 0x06001019 RID: 4121 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -27,14 +27,14 @@ public class ConsoleCmdDynamicProperties : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600100F RID: 4111 RVA: 0x00066736 File Offset: 0x00064936
+	// Token: 0x0600101A RID: 4122 RVA: 0x00066C7E File Offset: 0x00064E7E
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "dynamicproperties", "dprop" };
 	}
 
-	// Token: 0x06001010 RID: 4112 RVA: 0x00066750 File Offset: 0x00064950
+	// Token: 0x0600101B RID: 4123 RVA: 0x00066C98 File Offset: 0x00064E98
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params[0] == "block")
@@ -51,7 +51,7 @@ public class ConsoleCmdDynamicProperties : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001011 RID: 4113 RVA: 0x0006679C File Offset: 0x0006499C
+	// Token: 0x0600101C RID: 4124 RVA: 0x00066CE4 File Offset: 0x00064EE4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

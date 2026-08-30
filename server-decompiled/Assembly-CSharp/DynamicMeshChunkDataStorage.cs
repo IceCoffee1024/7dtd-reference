@@ -3,16 +3,16 @@ using System.Collections.Concurrent;
 using System.IO;
 using Noemax.GZip;
 
-// Token: 0x0200035E RID: 862
+// Token: 0x02000362 RID: 866
 public class DynamicMeshChunkDataStorage<T> where T : DynamicMeshContainer
 {
-	// Token: 0x0600192F RID: 6447 RVA: 0x0008DF4C File Offset: 0x0008C14C
+	// Token: 0x0600194C RID: 6476 RVA: 0x0008E68C File Offset: 0x0008C88C
 	public DynamicMeshChunkDataStorage(int purgeInterval)
 	{
 		this.PurgeInterval = purgeInterval;
 	}
 
-	// Token: 0x06001930 RID: 6448 RVA: 0x0008DFB4 File Offset: 0x0008C1B4
+	// Token: 0x0600194D RID: 6477 RVA: 0x0008E6F4 File Offset: 0x0008C8F4
 	public void ClearQueues()
 	{
 		Log.Out("Clearing queues.");
@@ -25,20 +25,20 @@ public class DynamicMeshChunkDataStorage<T> where T : DynamicMeshContainer
 		Log.Out("Cleared queues.");
 	}
 
-	// Token: 0x06001931 RID: 6449 RVA: 0x0008DFF5 File Offset: 0x0008C1F5
+	// Token: 0x0600194E RID: 6478 RVA: 0x0008E735 File Offset: 0x0008C935
 	public bool IsReadyThreaded()
 	{
 		return this.MaxAllowedItems == 0 || this.LiveItems < this.MaxAllowedItems - 1;
 	}
 
-	// Token: 0x06001932 RID: 6450 RVA: 0x0008E011 File Offset: 0x0008C211
+	// Token: 0x0600194F RID: 6479 RVA: 0x0008E751 File Offset: 0x0008C951
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool ForceLoadItem(DynamicMeshChunkDataWrapper wrapper)
 	{
 		return this.TryLoadItem(wrapper, false);
 	}
 
-	// Token: 0x06001933 RID: 6451 RVA: 0x0008E01C File Offset: 0x0008C21C
+	// Token: 0x06001950 RID: 6480 RVA: 0x0008E75C File Offset: 0x0008C95C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryLoadItem(DynamicMeshChunkDataWrapper wrapper, bool releaseLock)
 	{
@@ -106,19 +106,19 @@ public class DynamicMeshChunkDataStorage<T> where T : DynamicMeshContainer
 		return true;
 	}
 
-	// Token: 0x06001934 RID: 6452 RVA: 0x0008E250 File Offset: 0x0008C450
+	// Token: 0x06001951 RID: 6481 RVA: 0x0008E990 File Offset: 0x0008CB90
 	public bool IsUpdating(T item)
 	{
 		return this.GetWrapper(item.Key).StateInfo.HasFlag(DynamicMeshStates.ThreadUpdating);
 	}
 
-	// Token: 0x06001935 RID: 6453 RVA: 0x0008E278 File Offset: 0x0008C478
+	// Token: 0x06001952 RID: 6482 RVA: 0x0008E9B8 File Offset: 0x0008CBB8
 	public void MarkAsUpdating(T item)
 	{
 		this.GetWrapper(item.Key).StateInfo |= DynamicMeshStates.ThreadUpdating;
 	}
 
-	// Token: 0x06001936 RID: 6454 RVA: 0x0008E298 File Offset: 0x0008C498
+	// Token: 0x06001953 RID: 6483 RVA: 0x0008E9D8 File Offset: 0x0008CBD8
 	public void MarkAsUpdated(T item)
 	{
 		if (item == null)
@@ -128,13 +128,13 @@ public class DynamicMeshChunkDataStorage<T> where T : DynamicMeshContainer
 		this.GetWrapper(item.Key).StateInfo &= ~DynamicMeshStates.ThreadUpdating;
 	}
 
-	// Token: 0x06001937 RID: 6455 RVA: 0x0008E2C2 File Offset: 0x0008C4C2
+	// Token: 0x06001954 RID: 6484 RVA: 0x0008EA02 File Offset: 0x0008CC02
 	public void MarkAsGenerating(T item)
 	{
 		this.GetWrapper(item.Key).StateInfo |= DynamicMeshStates.Generating;
 	}
 
-	// Token: 0x06001938 RID: 6456 RVA: 0x0008E2E6 File Offset: 0x0008C4E6
+	// Token: 0x06001955 RID: 6485 RVA: 0x0008EA26 File Offset: 0x0008CC26
 	public void MarkAsGenerated(T item)
 	{
 		if (item == null)
@@ -144,7 +144,7 @@ public class DynamicMeshChunkDataStorage<T> where T : DynamicMeshContainer
 		this.GetWrapper(item.Key).StateInfo &= ~DynamicMeshStates.Generating;
 	}
 
-	// Token: 0x06001939 RID: 6457 RVA: 0x0008E314 File Offset: 0x0008C514
+	// Token: 0x06001956 RID: 6486 RVA: 0x0008EA54 File Offset: 0x0008CC54
 	public bool SaveNetPackageData(int x, int z, byte[] data, int updateTime)
 	{
 		long itemKey = DynamicMeshUnity.GetItemKey(x, z);
@@ -193,7 +193,7 @@ public class DynamicMeshChunkDataStorage<T> where T : DynamicMeshContainer
 		return flag2;
 	}
 
-	// Token: 0x0600193A RID: 6458 RVA: 0x0008E478 File Offset: 0x0008C678
+	// Token: 0x06001957 RID: 6487 RVA: 0x0008EBB8 File Offset: 0x0008CDB8
 	public void AddSaveRequest(long key, DynamicMeshChunkData data)
 	{
 		if (!DynamicMeshManager.CONTENT_ENABLED)
@@ -217,7 +217,7 @@ public class DynamicMeshChunkDataStorage<T> where T : DynamicMeshContainer
 		this.ClearLock(wrapper, "_SAVERELEASE_");
 	}
 
-	// Token: 0x0600193B RID: 6459 RVA: 0x0008E514 File Offset: 0x0008C714
+	// Token: 0x06001958 RID: 6488 RVA: 0x0008EC54 File Offset: 0x0008CE54
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SaveItem(DynamicMeshChunkDataWrapper wrapper)
 	{
@@ -281,18 +281,18 @@ public class DynamicMeshChunkDataStorage<T> where T : DynamicMeshContainer
 		}
 	}
 
-	// Token: 0x0600193C RID: 6460 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06001959 RID: 6489 RVA: 0x000027FC File Offset: 0x000009FC
 	public void CleanUpAndSave()
 	{
 	}
 
-	// Token: 0x0600193D RID: 6461 RVA: 0x0008E744 File Offset: 0x0008C944
+	// Token: 0x0600195A RID: 6490 RVA: 0x0008EE84 File Offset: 0x0008D084
 	public void MarkForDeletion(long worldPosition)
 	{
 		this.GetWrapper(worldPosition).StateInfo |= DynamicMeshStates.MarkedForDelete;
 	}
 
-	// Token: 0x0600193E RID: 6462 RVA: 0x0008E75B File Offset: 0x0008C95B
+	// Token: 0x0600195B RID: 6491 RVA: 0x0008EE9B File Offset: 0x0008D09B
 	public void MarkForUnload(long worldPosition)
 	{
 		DynamicMeshChunkDataWrapper wrapper = this.GetWrapper(worldPosition);
@@ -301,7 +301,7 @@ public class DynamicMeshChunkDataStorage<T> where T : DynamicMeshContainer
 		wrapper.StateInfo |= DynamicMeshStates.UnloadMark3;
 	}
 
-	// Token: 0x0600193F RID: 6463 RVA: 0x0008E78F File Offset: 0x0008C98F
+	// Token: 0x0600195C RID: 6492 RVA: 0x0008EECF File Offset: 0x0008D0CF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool ReplaceData(DynamicMeshChunkDataWrapper wrapper, DynamicMeshChunkData data, string debug)
 	{
@@ -313,31 +313,31 @@ public class DynamicMeshChunkDataStorage<T> where T : DynamicMeshContainer
 		return true;
 	}
 
-	// Token: 0x06001940 RID: 6464 RVA: 0x0008E7BE File Offset: 0x0008C9BE
+	// Token: 0x0600195D RID: 6493 RVA: 0x0008EEFE File Offset: 0x0008D0FE
 	public bool ClearLock(DynamicMeshChunkDataWrapper wrapper, string debug)
 	{
 		this.ReleaseData(wrapper.Key, "CL_" + debug);
 		return wrapper.TryExit("ClearLock " + debug);
 	}
 
-	// Token: 0x06001941 RID: 6465 RVA: 0x0008E7F0 File Offset: 0x0008C9F0
+	// Token: 0x0600195E RID: 6494 RVA: 0x0008EF30 File Offset: 0x0008D130
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool ClearLock(long worldPosition, string debug)
 	{
 		return this.GetWrapper(worldPosition).TryExit(debug);
 	}
 
-	// Token: 0x06001942 RID: 6466 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600195F RID: 6495 RVA: 0x000027FC File Offset: 0x000009FC
 	public void LogMemoryUsage()
 	{
 	}
 
-	// Token: 0x06001943 RID: 6467 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06001960 RID: 6496 RVA: 0x000027FC File Offset: 0x000009FC
 	public void FreeMemory()
 	{
 	}
 
-	// Token: 0x06001944 RID: 6468 RVA: 0x0008E804 File Offset: 0x0008CA04
+	// Token: 0x06001961 RID: 6497 RVA: 0x0008EF44 File Offset: 0x0008D144
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool ReleaseData(DynamicMeshChunkDataWrapper wrapper, string debug)
 	{
@@ -360,7 +360,7 @@ public class DynamicMeshChunkDataStorage<T> where T : DynamicMeshContainer
 		return false;
 	}
 
-	// Token: 0x06001945 RID: 6469 RVA: 0x0008E86C File Offset: 0x0008CA6C
+	// Token: 0x06001962 RID: 6498 RVA: 0x0008EFAC File Offset: 0x0008D1AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool ReleaseData(long worldPosition, string debug)
 	{
@@ -394,7 +394,7 @@ public class DynamicMeshChunkDataStorage<T> where T : DynamicMeshContainer
 		return flag;
 	}
 
-	// Token: 0x06001946 RID: 6470 RVA: 0x0008E930 File Offset: 0x0008CB30
+	// Token: 0x06001963 RID: 6499 RVA: 0x0008F070 File Offset: 0x0008D270
 	public bool CollectBytes(long key, out byte[] data, out int length)
 	{
 		DynamicMeshChunkDataWrapper wrapper = this.GetWrapper(key);
@@ -427,7 +427,7 @@ public class DynamicMeshChunkDataStorage<T> where T : DynamicMeshContainer
 		return true;
 	}
 
-	// Token: 0x06001947 RID: 6471 RVA: 0x0008E9E0 File Offset: 0x0008CBE0
+	// Token: 0x06001964 RID: 6500 RVA: 0x0008F120 File Offset: 0x0008D320
 	public bool CollectItem(long worldPosition, out DynamicMeshChunkDataWrapper wrapper, out string debugMessage)
 	{
 		debugMessage = string.Empty;
@@ -450,7 +450,7 @@ public class DynamicMeshChunkDataStorage<T> where T : DynamicMeshContainer
 		return true;
 	}
 
-	// Token: 0x06001948 RID: 6472 RVA: 0x0008EA68 File Offset: 0x0008CC68
+	// Token: 0x06001965 RID: 6501 RVA: 0x0008F1A8 File Offset: 0x0008D3A8
 	public DynamicMeshChunkDataWrapper GetWrapper(long key)
 	{
 		DynamicMeshChunkDataWrapper dynamicMeshChunkDataWrapper;
@@ -466,7 +466,7 @@ public class DynamicMeshChunkDataStorage<T> where T : DynamicMeshContainer
 		return dynamicMeshChunkDataWrapper;
 	}
 
-	// Token: 0x06001949 RID: 6473 RVA: 0x0008EAC0 File Offset: 0x0008CCC0
+	// Token: 0x06001966 RID: 6502 RVA: 0x0008F200 File Offset: 0x0008D400
 	public byte[] GetFromPool(int length)
 	{
 		byte[] array = DynamicMeshChunkDataStorage<T>.Pool.Alloc(length);
@@ -478,7 +478,7 @@ public class DynamicMeshChunkDataStorage<T> where T : DynamicMeshContainer
 		return array;
 	}
 
-	// Token: 0x0600194A RID: 6474 RVA: 0x0008EAFF File Offset: 0x0008CCFF
+	// Token: 0x06001967 RID: 6503 RVA: 0x0008F23F File Offset: 0x0008D43F
 	public bool ManuallyReleaseBytes(byte[] bytes)
 	{
 		if (bytes != null)
@@ -490,54 +490,54 @@ public class DynamicMeshChunkDataStorage<T> where T : DynamicMeshContainer
 		return false;
 	}
 
-	// Token: 0x0600194B RID: 6475 RVA: 0x0008EB23 File Offset: 0x0008CD23
+	// Token: 0x06001968 RID: 6504 RVA: 0x0008F263 File Offset: 0x0008D463
 	public bool IsReadyToCollect(long worldPosition)
 	{
 		return this.GetWrapper(worldPosition).Data != null;
 	}
 
-	// Token: 0x04000FF8 RID: 4088
+	// Token: 0x0400100D RID: 4109
 	public ConcurrentDictionary<long, DynamicMeshChunkDataWrapper> ChunkData = new ConcurrentDictionary<long, DynamicMeshChunkDataWrapper>();
 
-	// Token: 0x04000FF9 RID: 4089
+	// Token: 0x0400100E RID: 4110
 	public ConcurrentStack<DynamicMeshChunkDataWrapper> LoadRequests = new ConcurrentStack<DynamicMeshChunkDataWrapper>();
 
-	// Token: 0x04000FFA RID: 4090
+	// Token: 0x0400100F RID: 4111
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DateTime NextCachePurge = DateTime.MinValue;
 
-	// Token: 0x04000FFB RID: 4091
+	// Token: 0x04001010 RID: 4112
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int PurgeInterval = 3;
 
-	// Token: 0x04000FFC RID: 4092
+	// Token: 0x04001011 RID: 4113
 	public int LiveItems;
 
-	// Token: 0x04000FFD RID: 4093
+	// Token: 0x04001012 RID: 4114
 	[PublicizedFrom(EAccessModifier.Private)]
 	public object _lock = new object();
 
-	// Token: 0x04000FFE RID: 4094
+	// Token: 0x04001013 RID: 4115
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MemoryStream FileMemoryStream = new MemoryStream();
 
-	// Token: 0x04000FFF RID: 4095
+	// Token: 0x04001014 RID: 4116
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] Buffer = new byte[2048];
 
-	// Token: 0x04001000 RID: 4096
+	// Token: 0x04001015 RID: 4117
 	public int MaxAllowedItems;
 
-	// Token: 0x04001001 RID: 4097
+	// Token: 0x04001016 RID: 4118
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly LoosePool<byte> Pool = new LoosePool<byte>();
 
-	// Token: 0x04001002 RID: 4098
+	// Token: 0x04001017 RID: 4119
 	public long BytesAllocated;
 
-	// Token: 0x04001003 RID: 4099
+	// Token: 0x04001018 RID: 4120
 	public long BytesReleased;
 
-	// Token: 0x04001004 RID: 4100
+	// Token: 0x04001019 RID: 4121
 	public int LargestAllocation;
 }

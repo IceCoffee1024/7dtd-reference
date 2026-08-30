@@ -5,17 +5,17 @@ using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000400 RID: 1024
+// Token: 0x02000404 RID: 1028
 [Preserve]
 public class AIDirectorAirDropComponent : AIDirectorComponent
 {
-	// Token: 0x06001FB5 RID: 8117 RVA: 0x000BFF09 File Offset: 0x000BE109
+	// Token: 0x06001FD2 RID: 8146 RVA: 0x000C0675 File Offset: 0x000BE875
 	public override void Connect()
 	{
 		base.Connect();
 	}
 
-	// Token: 0x06001FB6 RID: 8118 RVA: 0x000BFF14 File Offset: 0x000BE114
+	// Token: 0x06001FD3 RID: 8147 RVA: 0x000C0680 File Offset: 0x000BE880
 	public override void InitNewGame()
 	{
 		base.InitNewGame();
@@ -25,7 +25,7 @@ public class AIDirectorAirDropComponent : AIDirectorComponent
 		this.supplyCrates.Clear();
 	}
 
-	// Token: 0x06001FB7 RID: 8119 RVA: 0x000BFF64 File Offset: 0x000BE164
+	// Token: 0x06001FD4 RID: 8148 RVA: 0x000C06D0 File Offset: 0x000BE8D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong packDropFrequency()
 	{
@@ -38,7 +38,7 @@ public class AIDirectorAirDropComponent : AIDirectorComponent
 		}.Value;
 	}
 
-	// Token: 0x06001FB8 RID: 8120 RVA: 0x000BFFB4 File Offset: 0x000BE1B4
+	// Token: 0x06001FD5 RID: 8149 RVA: 0x000C0720 File Offset: 0x000BE920
 	public override void Tick(double _dt)
 	{
 		base.Tick(_dt);
@@ -75,7 +75,7 @@ public class AIDirectorAirDropComponent : AIDirectorComponent
 		}
 	}
 
-	// Token: 0x06001FB9 RID: 8121 RVA: 0x000C0084 File Offset: 0x000BE284
+	// Token: 0x06001FD6 RID: 8150 RVA: 0x000C07F0 File Offset: 0x000BE9F0
 	public override void Read(BinaryReader _stream, int _version)
 	{
 		base.Read(_stream, _version);
@@ -113,7 +113,7 @@ public class AIDirectorAirDropComponent : AIDirectorComponent
 		this.RefreshCrates(-1);
 	}
 
-	// Token: 0x06001FBA RID: 8122 RVA: 0x000C0154 File Offset: 0x000BE354
+	// Token: 0x06001FD7 RID: 8151 RVA: 0x000C08C0 File Offset: 0x000BEAC0
 	public override void Write(BinaryWriter _stream)
 	{
 		base.Write(_stream);
@@ -133,7 +133,7 @@ public class AIDirectorAirDropComponent : AIDirectorComponent
 		}
 	}
 
-	// Token: 0x06001FBB RID: 8123 RVA: 0x000C023C File Offset: 0x000BE43C
+	// Token: 0x06001FD8 RID: 8152 RVA: 0x000C09A8 File Offset: 0x000BEBA8
 	public bool SpawnAirDrop()
 	{
 		bool flag = false;
@@ -162,7 +162,7 @@ public class AIDirectorAirDropComponent : AIDirectorComponent
 		return flag;
 	}
 
-	// Token: 0x06001FBC RID: 8124 RVA: 0x000C02E0 File Offset: 0x000BE4E0
+	// Token: 0x06001FD9 RID: 8153 RVA: 0x000C0A4C File Offset: 0x000BEC4C
 	public void RemoveSupplyCrate(int entityId)
 	{
 		int num = -1;
@@ -183,7 +183,7 @@ public class AIDirectorAirDropComponent : AIDirectorComponent
 		Log.Warning(string.Format("{0} AIDirectorAirDropComponent: Attempted to remove supply crate cache with missing entityID {1}", GameManager.frameCount, entityId));
 	}
 
-	// Token: 0x06001FBD RID: 8125 RVA: 0x000C0378 File Offset: 0x000BE578
+	// Token: 0x06001FDA RID: 8154 RVA: 0x000C0AE4 File Offset: 0x000BECE4
 	public void SetSupplyCratePosition(int entityId, Vector3i blockPos)
 	{
 		foreach (AIDirectorAirDropComponent.SupplyCrateCache supplyCrateCache in this.supplyCrates)
@@ -197,7 +197,7 @@ public class AIDirectorAirDropComponent : AIDirectorComponent
 		Log.Warning(string.Format("Supply crate {0} not in the list, can't set position", entityId));
 	}
 
-	// Token: 0x06001FBE RID: 8126 RVA: 0x000C03EC File Offset: 0x000BE5EC
+	// Token: 0x06001FDB RID: 8155 RVA: 0x000C0B58 File Offset: 0x000BED58
 	public EntitySupplyCrate SpawnSupplyCrate(Vector3 spawnPos, ChunkManager.ChunkObserver chunkObserver)
 	{
 		if (this.Director.World == null)
@@ -223,7 +223,7 @@ public class AIDirectorAirDropComponent : AIDirectorComponent
 		return entity2 as EntitySupplyCrate;
 	}
 
-	// Token: 0x06001FBF RID: 8127 RVA: 0x000C04E0 File Offset: 0x000BE6E0
+	// Token: 0x06001FDC RID: 8156 RVA: 0x000C0C4C File Offset: 0x000BEE4C
 	public void RefreshCrates(int _shareWithClient = -1)
 	{
 		foreach (AIDirectorAirDropComponent.SupplyCrateCache supplyCrateCache in this.supplyCrates)
@@ -262,7 +262,7 @@ public class AIDirectorAirDropComponent : AIDirectorComponent
 		}
 	}
 
-	// Token: 0x06001FC0 RID: 8128 RVA: 0x000C06C4 File Offset: 0x000BE8C4
+	// Token: 0x06001FDD RID: 8157 RVA: 0x000C0E30 File Offset: 0x000BF030
 	public void AddSupplyCrate(int entityId)
 	{
 		using (List<AIDirectorAirDropComponent.SupplyCrateCache>.Enumerator enumerator = this.supplyCrates.GetEnumerator())
@@ -278,7 +278,7 @@ public class AIDirectorAirDropComponent : AIDirectorComponent
 		this.supplyCrates.Add(new AIDirectorAirDropComponent.SupplyCrateCache(entityId, Vector3i.zero, false));
 	}
 
-	// Token: 0x06001FC1 RID: 8129 RVA: 0x000C0730 File Offset: 0x000BE930
+	// Token: 0x06001FDE RID: 8158 RVA: 0x000C0E9C File Offset: 0x000BF09C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void AddSupplyCrate(AIDirectorAirDropComponent.SupplyCrateCache scc)
 	{
@@ -295,7 +295,7 @@ public class AIDirectorAirDropComponent : AIDirectorComponent
 		this.supplyCrates.Add(scc);
 	}
 
-	// Token: 0x06001FC2 RID: 8130 RVA: 0x000C0798 File Offset: 0x000BE998
+	// Token: 0x06001FDF RID: 8159 RVA: 0x000C0F04 File Offset: 0x000BF104
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong calcNextAirdrop(ulong currentTime)
 	{
@@ -306,54 +306,54 @@ public class AIDirectorAirDropComponent : AIDirectorComponent
 		return num3;
 	}
 
-	// Token: 0x0400156F RID: 5487
+	// Token: 0x04001584 RID: 5508
 	public List<AIDirectorAirDropComponent.SupplyCrateCache> supplyCrates = new List<AIDirectorAirDropComponent.SupplyCrateCache>();
 
-	// Token: 0x04001570 RID: 5488
+	// Token: 0x04001585 RID: 5509
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AIAirDrop activeAirDrop;
 
-	// Token: 0x04001571 RID: 5489
+	// Token: 0x04001586 RID: 5510
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong nextAirDropTime;
 
-	// Token: 0x04001572 RID: 5490
+	// Token: 0x04001587 RID: 5511
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong lastAirdropCheckTime;
 
-	// Token: 0x04001573 RID: 5491
+	// Token: 0x04001588 RID: 5512
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong lastFrequency;
 
-	// Token: 0x04001574 RID: 5492
+	// Token: 0x04001589 RID: 5513
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lastID = -1;
 
-	// Token: 0x04001575 RID: 5493
+	// Token: 0x0400158A RID: 5514
 	public static ulong MinTimeOfDay = 12000UL;
 
-	// Token: 0x04001576 RID: 5494
+	// Token: 0x0400158B RID: 5515
 	public static ulong MaxTimeOfDay = 12000UL;
 
-	// Token: 0x04001577 RID: 5495
+	// Token: 0x0400158C RID: 5516
 	public static int MinDayCount = 3;
 
-	// Token: 0x04001578 RID: 5496
+	// Token: 0x0400158D RID: 5517
 	public static int MaxDayCount = 3;
 
-	// Token: 0x04001579 RID: 5497
+	// Token: 0x0400158E RID: 5518
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string NavObjectClass = "supply_drop";
 
-	// Token: 0x0400157A RID: 5498
+	// Token: 0x0400158F RID: 5519
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string[] crateTypes = new string[] { "sc_General" };
 
-	// Token: 0x02000401 RID: 1025
+	// Token: 0x02000405 RID: 1029
 	[Preserve]
 	public class SupplyCrateCache
 	{
-		// Token: 0x06001FC5 RID: 8133 RVA: 0x000C0854 File Offset: 0x000BEA54
+		// Token: 0x06001FE2 RID: 8162 RVA: 0x000C0FC0 File Offset: 0x000BF1C0
 		public SupplyCrateCache(int id, Vector3i blockPos, bool requiresObserver)
 		{
 			this.entityId = id;
@@ -361,40 +361,40 @@ public class AIDirectorAirDropComponent : AIDirectorComponent
 			this.requiresObserver = requiresObserver;
 		}
 
-		// Token: 0x0400157B RID: 5499
+		// Token: 0x04001590 RID: 5520
 		public ChunkManager.ChunkObserver ChunkObserver;
 
-		// Token: 0x0400157C RID: 5500
+		// Token: 0x04001591 RID: 5521
 		public int entityId;
 
-		// Token: 0x0400157D RID: 5501
+		// Token: 0x04001592 RID: 5522
 		public Vector3i blockPos;
 
-		// Token: 0x0400157E RID: 5502
+		// Token: 0x04001593 RID: 5523
 		public bool requiresObserver;
 	}
 
-	// Token: 0x02000402 RID: 1026
+	// Token: 0x02000406 RID: 1030
 	[StructLayout(LayoutKind.Explicit)]
 	public struct UlongAsUshorts
 	{
-		// Token: 0x0400157F RID: 5503
+		// Token: 0x04001594 RID: 5524
 		[FieldOffset(0)]
 		public ulong Value;
 
-		// Token: 0x04001580 RID: 5504
+		// Token: 0x04001595 RID: 5525
 		[FieldOffset(0)]
 		public ushort MinDays;
 
-		// Token: 0x04001581 RID: 5505
+		// Token: 0x04001596 RID: 5526
 		[FieldOffset(2)]
 		public ushort MaxDays;
 
-		// Token: 0x04001582 RID: 5506
+		// Token: 0x04001597 RID: 5527
 		[FieldOffset(4)]
 		public ushort MinTime;
 
-		// Token: 0x04001583 RID: 5507
+		// Token: 0x04001598 RID: 5528
 		[FieldOffset(6)]
 		public ushort MaxTime;
 	}

@@ -1,24 +1,24 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200053D RID: 1341
+// Token: 0x02000542 RID: 1346
 public class DamageSourceEntity : DamageSource
 {
-	// Token: 0x06002C1A RID: 11290 RVA: 0x0011633A File Offset: 0x0011453A
+	// Token: 0x06002C44 RID: 11332 RVA: 0x001173D2 File Offset: 0x001155D2
 	public DamageSourceEntity(EnumDamageSource _damageSource, EnumDamageTypes _damageType, int _damageSourceEntityId)
 		: base(_damageSource, _damageType)
 	{
 		this.ownerEntityId = _damageSourceEntityId;
 	}
 
-	// Token: 0x06002C1B RID: 11291 RVA: 0x0011634B File Offset: 0x0011454B
+	// Token: 0x06002C45 RID: 11333 RVA: 0x001173E3 File Offset: 0x001155E3
 	public DamageSourceEntity(EnumDamageSource _damageSource, EnumDamageTypes _damageType, int _damageSourceEntityId, Vector3 _direction)
 		: base(_damageSource, _damageType, _direction)
 	{
 		this.ownerEntityId = _damageSourceEntityId;
 	}
 
-	// Token: 0x06002C1C RID: 11292 RVA: 0x0011635E File Offset: 0x0011455E
+	// Token: 0x06002C46 RID: 11334 RVA: 0x001173F6 File Offset: 0x001155F6
 	public DamageSourceEntity(EnumDamageSource _damageSource, EnumDamageTypes _damageType, int _damageSourceEntityId, Vector3 _direction, string _hitTransformName, Vector3 _hitTransformPosition, Vector2 _uvHit)
 		: this(_damageSource, _damageType, _damageSourceEntityId, _direction)
 	{
@@ -27,30 +27,30 @@ public class DamageSourceEntity : DamageSource
 		this.uvHit = _uvHit;
 	}
 
-	// Token: 0x06002C1D RID: 11293 RVA: 0x00116383 File Offset: 0x00114583
+	// Token: 0x06002C47 RID: 11335 RVA: 0x0011741B File Offset: 0x0011561B
 	public override Vector3 getHitTransformPosition()
 	{
 		return this.hitTransformPosition;
 	}
 
-	// Token: 0x06002C1E RID: 11294 RVA: 0x0011638B File Offset: 0x0011458B
+	// Token: 0x06002C48 RID: 11336 RVA: 0x00117423 File Offset: 0x00115623
 	public override string getHitTransformName()
 	{
 		return this.hitTransformName;
 	}
 
-	// Token: 0x06002C1F RID: 11295 RVA: 0x00116393 File Offset: 0x00114593
+	// Token: 0x06002C49 RID: 11337 RVA: 0x0011742B File Offset: 0x0011562B
 	public override Vector2 getUVHit()
 	{
 		return this.uvHit;
 	}
 
-	// Token: 0x040021B4 RID: 8628
+	// Token: 0x040021E6 RID: 8678
 	public Vector2 uvHit;
 
-	// Token: 0x040021B5 RID: 8629
+	// Token: 0x040021E7 RID: 8679
 	public string hitTransformName;
 
-	// Token: 0x040021B6 RID: 8630
+	// Token: 0x040021E8 RID: 8680
 	public Vector3 hitTransformPosition;
 }

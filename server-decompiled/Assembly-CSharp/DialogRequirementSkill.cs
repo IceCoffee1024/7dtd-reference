@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020002F9 RID: 761
+// Token: 0x020002FD RID: 765
 [Preserve]
 public class DialogRequirementSkill : BaseDialogRequirement
 {
-	// Token: 0x17000276 RID: 630
-	// (get) Token: 0x060015AF RID: 5551 RVA: 0x00081148 File Offset: 0x0007F348
+	// Token: 0x17000277 RID: 631
+	// (get) Token: 0x060015C2 RID: 5570 RVA: 0x000817FC File Offset: 0x0007F9FC
 	public override BaseDialogRequirement.RequirementTypes RequirementType
 	{
 		get
@@ -15,14 +15,14 @@ public class DialogRequirementSkill : BaseDialogRequirement
 		}
 	}
 
-	// Token: 0x060015B0 RID: 5552 RVA: 0x0008114C File Offset: 0x0007F34C
+	// Token: 0x060015C3 RID: 5571 RVA: 0x00081800 File Offset: 0x0007FA00
 	public override string GetRequiredDescription(EntityPlayer player)
 	{
 		ProgressionValue progressionValue = player.Progression.GetProgressionValue(base.ID);
 		return string.Format("({0} {1})", Localization.Get(progressionValue.ProgressionClass.NameKey, false, null), Convert.ToInt32(base.Value));
 	}
 
-	// Token: 0x060015B1 RID: 5553 RVA: 0x00081197 File Offset: 0x0007F397
+	// Token: 0x060015C4 RID: 5572 RVA: 0x0008184B File Offset: 0x0007FA4B
 	public override bool CheckRequirement(EntityPlayer player, EntityNPC talkingTo)
 	{
 		return player.Progression.GetProgressionValue(base.ID).Level > Convert.ToInt32(base.Value);

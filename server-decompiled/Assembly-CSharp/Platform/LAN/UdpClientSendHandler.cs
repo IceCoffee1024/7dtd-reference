@@ -4,16 +4,16 @@ using System.Net.Sockets;
 
 namespace Platform.LAN
 {
-	// Token: 0x02001CB0 RID: 7344
+	// Token: 0x02001CD7 RID: 7383
 	public class UdpClientSendHandler
 	{
-		// Token: 0x0600D98A RID: 55690 RVA: 0x004DE173 File Offset: 0x004DC373
+		// Token: 0x0600DB25 RID: 56101 RVA: 0x004E4787 File Offset: 0x004E2987
 		public UdpClientSendHandler(UdpClient _udpClient)
 		{
 			this.udpClient = _udpClient;
 		}
 
-		// Token: 0x0600D98B RID: 55691 RVA: 0x004DE184 File Offset: 0x004DC384
+		// Token: 0x0600DB26 RID: 56102 RVA: 0x004E4798 File Offset: 0x004E2998
 		public bool BeginSend(byte[] _message, int _length, IPEndPoint _endPoint)
 		{
 			try
@@ -34,14 +34,14 @@ namespace Platform.LAN
 			return false;
 		}
 
-		// Token: 0x0600D98C RID: 55692 RVA: 0x004DE208 File Offset: 0x004DC408
+		// Token: 0x0600DB27 RID: 56103 RVA: 0x004E481C File Offset: 0x004E2A1C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void CompleteSendAsync(IAsyncResult _result)
 		{
 			((UdpClientSendHandler)_result.AsyncState).CompleteSend(_result);
 		}
 
-		// Token: 0x0600D98D RID: 55693 RVA: 0x004DE21C File Offset: 0x004DC41C
+		// Token: 0x0600DB28 RID: 56104 RVA: 0x004E4830 File Offset: 0x004E2A30
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void CompleteSend(IAsyncResult _result)
 		{
@@ -63,10 +63,10 @@ namespace Platform.LAN
 			this.isComplete = true;
 		}
 
-		// Token: 0x0400A474 RID: 42100
+		// Token: 0x0400A5A7 RID: 42407
 		public readonly UdpClient udpClient;
 
-		// Token: 0x0400A475 RID: 42101
+		// Token: 0x0400A5A8 RID: 42408
 		public bool isComplete;
 	}
 }

@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200081F RID: 2079
+// Token: 0x0200082A RID: 2090
 [Preserve]
 public class NetPackagePlayerLaserSight : NetPackage
 {
-	// Token: 0x06003D04 RID: 15620 RVA: 0x00183B17 File Offset: 0x00181D17
+	// Token: 0x06003D63 RID: 15715 RVA: 0x00185EEF File Offset: 0x001840EF
 	public NetPackagePlayerLaserSight Setup(int _entityId, bool _laserSightActive, Vector3 _laserSightPosition)
 	{
 		this.entityId = _entityId;
@@ -15,7 +15,7 @@ public class NetPackagePlayerLaserSight : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D05 RID: 15621 RVA: 0x00183B2F File Offset: 0x00181D2F
+	// Token: 0x06003D64 RID: 15716 RVA: 0x00185F07 File Offset: 0x00184107
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.entityId = _reader.ReadInt32();
@@ -26,7 +26,7 @@ public class NetPackagePlayerLaserSight : NetPackage
 		}
 	}
 
-	// Token: 0x06003D06 RID: 15622 RVA: 0x00183B5D File Offset: 0x00181D5D
+	// Token: 0x06003D65 RID: 15717 RVA: 0x00185F35 File Offset: 0x00184135
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -38,7 +38,7 @@ public class NetPackagePlayerLaserSight : NetPackage
 		}
 	}
 
-	// Token: 0x06003D07 RID: 15623 RVA: 0x00183B94 File Offset: 0x00181D94
+	// Token: 0x06003D66 RID: 15718 RVA: 0x00185F6C File Offset: 0x0018416C
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -61,19 +61,19 @@ public class NetPackagePlayerLaserSight : NetPackage
 		}
 	}
 
-	// Token: 0x06003D08 RID: 15624 RVA: 0x00080B69 File Offset: 0x0007ED69
+	// Token: 0x06003D67 RID: 15719 RVA: 0x0008121D File Offset: 0x0007F41D
 	public override int GetLength()
 	{
 		return 8;
 	}
 
-	// Token: 0x04003148 RID: 12616
+	// Token: 0x040031C7 RID: 12743
 	public int entityId;
 
-	// Token: 0x04003149 RID: 12617
+	// Token: 0x040031C8 RID: 12744
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool laserSightActive;
 
-	// Token: 0x0400314A RID: 12618
+	// Token: 0x040031C9 RID: 12745
 	public Vector3 laserSightPosition;
 }

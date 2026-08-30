@@ -3,10 +3,10 @@ using System.IO;
 using Platform;
 using WorldGenerationEngineFinal;
 
-// Token: 0x020014C8 RID: 5320
+// Token: 0x020014E3 RID: 5347
 public static class UserDataManagement
 {
-	// Token: 0x0600A6E0 RID: 42720 RVA: 0x003E19F4 File Offset: 0x003DFBF4
+	// Token: 0x0600A7DD RID: 42973 RVA: 0x003E6D34 File Offset: 0x003E4F34
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static UserDataManagement.Result MoveWorld(SaveInfoProvider.WorldEntryInfo worldInfo, UserDataStorageType moveToStorageType)
 	{
@@ -45,7 +45,7 @@ public static class UserDataManagement
 		return UserDataManagement.Result.Success;
 	}
 
-	// Token: 0x0600A6E1 RID: 42721 RVA: 0x003E1ADC File Offset: 0x003DFCDC
+	// Token: 0x0600A7DE RID: 42974 RVA: 0x003E6E1C File Offset: 0x003E501C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static UserDataManagement.Result MoveSave(string sourceDir, string targetDir)
 	{
@@ -68,7 +68,7 @@ public static class UserDataManagement
 		return UserDataManagement.Result.Success;
 	}
 
-	// Token: 0x0600A6E2 RID: 42722 RVA: 0x003E1B78 File Offset: 0x003DFD78
+	// Token: 0x0600A7DF RID: 42975 RVA: 0x003E6EB8 File Offset: 0x003E50B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static UserDataManagement.Result CopySave(string sourceDir, string targetDir)
 	{
@@ -91,7 +91,7 @@ public static class UserDataManagement
 		return UserDataManagement.Result.Success;
 	}
 
-	// Token: 0x0600A6E3 RID: 42723 RVA: 0x003E1C14 File Offset: 0x003DFE14
+	// Token: 0x0600A7E0 RID: 42976 RVA: 0x003E6F54 File Offset: 0x003E5154
 	public static string GetSavePathTarget(SaveInfoProvider.SaveEntryInfo saveInfo, UserDataStorageType storageTarget)
 	{
 		SaveInfoProvider.WorldEntryInfo worldEntry = saveInfo.WorldEntry;
@@ -102,7 +102,7 @@ public static class UserDataManagement
 		return GameIO.GetSaveGameDir(worldEntry.Name, saveInfo.Name, storageTarget);
 	}
 
-	// Token: 0x0600A6E4 RID: 42724 RVA: 0x003E1C60 File Offset: 0x003DFE60
+	// Token: 0x0600A7E1 RID: 42977 RVA: 0x003E6FA0 File Offset: 0x003E51A0
 	public static void SetSaveArchived(string saveDir, bool shouldArchive)
 	{
 		try
@@ -131,7 +131,7 @@ public static class UserDataManagement
 		}
 	}
 
-	// Token: 0x0600A6E5 RID: 42725 RVA: 0x003E1D04 File Offset: 0x003DFF04
+	// Token: 0x0600A7E2 RID: 42978 RVA: 0x003E7044 File Offset: 0x003E5244
 	public static void SetSaveDataLimit(string saveDir, long reservedBytes)
 	{
 		try
@@ -159,44 +159,44 @@ public static class UserDataManagement
 		}
 	}
 
-	// Token: 0x020014C9 RID: 5321
+	// Token: 0x020014E4 RID: 5348
 	public enum Result
 	{
-		// Token: 0x04007BC9 RID: 31689
+		// Token: 0x04007CA2 RID: 31906
 		Success,
-		// Token: 0x04007BCA RID: 31690
+		// Token: 0x04007CA3 RID: 31907
 		TargetAlreadyExists,
-		// Token: 0x04007BCB RID: 31691
+		// Token: 0x04007CA4 RID: 31908
 		Exception,
-		// Token: 0x04007BCC RID: 31692
+		// Token: 0x04007CA5 RID: 31909
 		FailedToMoveSaves
 	}
 
-	// Token: 0x020014CA RID: 5322
+	// Token: 0x020014E5 RID: 5349
 	public struct SaveMoveResultInfo
 	{
-		// Token: 0x04007BCD RID: 31693
+		// Token: 0x04007CA6 RID: 31910
 		public UserDataManagement.Result Result;
 
-		// Token: 0x04007BCE RID: 31694
+		// Token: 0x04007CA7 RID: 31911
 		public string NewSaveDir;
 	}
 
-	// Token: 0x020014CB RID: 5323
+	// Token: 0x020014E6 RID: 5350
 	public struct SaveCopyResultInfo
 	{
-		// Token: 0x04007BCF RID: 31695
+		// Token: 0x04007CA8 RID: 31912
 		public UserDataManagement.Result Result;
 
-		// Token: 0x04007BD0 RID: 31696
+		// Token: 0x04007CA9 RID: 31913
 		public string NewSaveDir;
 	}
 
-	// Token: 0x020014CC RID: 5324
+	// Token: 0x020014E7 RID: 5351
 	public struct WorldMove
 	{
-		// Token: 0x17001370 RID: 4976
-		// (get) Token: 0x0600A6E6 RID: 42726 RVA: 0x003E1DBC File Offset: 0x003DFFBC
+		// Token: 0x170013A9 RID: 5033
+		// (get) Token: 0x0600A7E3 RID: 42979 RVA: 0x003E70FC File Offset: 0x003E52FC
 		public bool IsReady
 		{
 			get
@@ -205,7 +205,7 @@ public static class UserDataManagement
 			}
 		}
 
-		// Token: 0x0600A6E7 RID: 42727 RVA: 0x003E1DC7 File Offset: 0x003DFFC7
+		// Token: 0x0600A7E4 RID: 42980 RVA: 0x003E7107 File Offset: 0x003E5307
 		public WorldMove(SaveInfoProvider.WorldEntryInfo worldInfo, UserDataStorageType moveToStorageType)
 		{
 			if (!worldInfo.Moveable)
@@ -216,8 +216,8 @@ public static class UserDataManagement
 			this.moveToStorageType = moveToStorageType;
 		}
 
-		// Token: 0x17001371 RID: 4977
-		// (get) Token: 0x0600A6E8 RID: 42728 RVA: 0x003E1DEC File Offset: 0x003DFFEC
+		// Token: 0x170013AA RID: 5034
+		// (get) Token: 0x0600A7E5 RID: 42981 RVA: 0x003E712C File Offset: 0x003E532C
 		public int CountOfAssociatedSavesInSameStorage
 		{
 			get
@@ -234,7 +234,7 @@ public static class UserDataManagement
 			}
 		}
 
-		// Token: 0x0600A6E9 RID: 42729 RVA: 0x003E1E64 File Offset: 0x003E0064
+		// Token: 0x0600A7E6 RID: 42982 RVA: 0x003E71A4 File Offset: 0x003E53A4
 		public UserDataManagement.Result PerformMove()
 		{
 			UserDataManagement.Result result = UserDataManagement.MoveWorld(this.worldInfo, this.moveToStorageType);
@@ -264,18 +264,18 @@ public static class UserDataManagement
 			return result;
 		}
 
-		// Token: 0x04007BD1 RID: 31697
+		// Token: 0x04007CAA RID: 31914
 		public readonly SaveInfoProvider.WorldEntryInfo worldInfo;
 
-		// Token: 0x04007BD2 RID: 31698
+		// Token: 0x04007CAB RID: 31915
 		public readonly UserDataStorageType moveToStorageType;
 	}
 
-	// Token: 0x020014CD RID: 5325
+	// Token: 0x020014E8 RID: 5352
 	public struct GameSaveMove
 	{
-		// Token: 0x17001372 RID: 4978
-		// (get) Token: 0x0600A6EA RID: 42730 RVA: 0x003E1F50 File Offset: 0x003E0150
+		// Token: 0x170013AB RID: 5035
+		// (get) Token: 0x0600A7E7 RID: 42983 RVA: 0x003E7290 File Offset: 0x003E5490
 		public bool IsReady
 		{
 			get
@@ -284,8 +284,8 @@ public static class UserDataManagement
 			}
 		}
 
-		// Token: 0x17001373 RID: 4979
-		// (get) Token: 0x0600A6EB RID: 42731 RVA: 0x003E1F5B File Offset: 0x003E015B
+		// Token: 0x170013AC RID: 5036
+		// (get) Token: 0x0600A7E8 RID: 42984 RVA: 0x003E729B File Offset: 0x003E549B
 		public bool WorldRequiresMoving
 		{
 			get
@@ -294,13 +294,13 @@ public static class UserDataManagement
 			}
 		}
 
-		// Token: 0x0600A6EC RID: 42732 RVA: 0x003E1F6E File Offset: 0x003E016E
+		// Token: 0x0600A7E9 RID: 42985 RVA: 0x003E72AE File Offset: 0x003E54AE
 		public GameSaveMove(SaveInfoProvider.SaveEntryInfo saveInfo, UserDataStorageType moveToStorageType)
 		{
 			this = new UserDataManagement.GameSaveMove(saveInfo, saveInfo.Name, moveToStorageType);
 		}
 
-		// Token: 0x0600A6ED RID: 42733 RVA: 0x003E1F80 File Offset: 0x003E0180
+		// Token: 0x0600A7EA RID: 42986 RVA: 0x003E72C0 File Offset: 0x003E54C0
 		public GameSaveMove(SaveInfoProvider.SaveEntryInfo saveInfo, string targetName, UserDataStorageType moveToStorageType)
 		{
 			if (saveInfo.WorldEntry.Type == SaveInfoProvider.RemoteWorldsType && targetName != saveInfo.Name)
@@ -313,7 +313,7 @@ public static class UserDataManagement
 			this.moveToStorageType = moveToStorageType;
 		}
 
-		// Token: 0x0600A6EE RID: 42734 RVA: 0x003E1FE0 File Offset: 0x003E01E0
+		// Token: 0x0600A7EB RID: 42987 RVA: 0x003E7320 File Offset: 0x003E5520
 		public UserDataManagement.SaveMoveResultInfo PerformMove()
 		{
 			UserDataManagement.SaveMoveResultInfo saveMoveResultInfo;
@@ -342,24 +342,24 @@ public static class UserDataManagement
 			return saveMoveResultInfo;
 		}
 
-		// Token: 0x04007BD3 RID: 31699
+		// Token: 0x04007CAC RID: 31916
 		public readonly SaveInfoProvider.SaveEntryInfo saveInfo;
 
-		// Token: 0x04007BD4 RID: 31700
+		// Token: 0x04007CAD RID: 31917
 		public readonly SaveInfoProvider.WorldEntryInfo worldInfo;
 
-		// Token: 0x04007BD5 RID: 31701
+		// Token: 0x04007CAE RID: 31918
 		public readonly string targetName;
 
-		// Token: 0x04007BD6 RID: 31702
+		// Token: 0x04007CAF RID: 31919
 		public readonly UserDataStorageType moveToStorageType;
 	}
 
-	// Token: 0x020014CE RID: 5326
+	// Token: 0x020014E9 RID: 5353
 	public struct GameSaveCopy
 	{
-		// Token: 0x17001374 RID: 4980
-		// (get) Token: 0x0600A6EF RID: 42735 RVA: 0x003E20B3 File Offset: 0x003E02B3
+		// Token: 0x170013AD RID: 5037
+		// (get) Token: 0x0600A7EC RID: 42988 RVA: 0x003E73F3 File Offset: 0x003E55F3
 		public bool IsReady
 		{
 			get
@@ -368,8 +368,8 @@ public static class UserDataManagement
 			}
 		}
 
-		// Token: 0x17001375 RID: 4981
-		// (get) Token: 0x0600A6F0 RID: 42736 RVA: 0x003E20BE File Offset: 0x003E02BE
+		// Token: 0x170013AE RID: 5038
+		// (get) Token: 0x0600A7ED RID: 42989 RVA: 0x003E73FE File Offset: 0x003E55FE
 		public bool WorldRequiresMoving
 		{
 			get
@@ -378,7 +378,7 @@ public static class UserDataManagement
 			}
 		}
 
-		// Token: 0x0600A6F1 RID: 42737 RVA: 0x003E20D4 File Offset: 0x003E02D4
+		// Token: 0x0600A7EE RID: 42990 RVA: 0x003E7414 File Offset: 0x003E5614
 		public GameSaveCopy(SaveInfoProvider.SaveEntryInfo saveInfo, string targetName, UserDataStorageType moveToStorageType)
 		{
 			this.saveInfo = saveInfo;
@@ -391,7 +391,7 @@ public static class UserDataManagement
 			this.storageTarget = moveToStorageType;
 		}
 
-		// Token: 0x0600A6F2 RID: 42738 RVA: 0x003E2124 File Offset: 0x003E0324
+		// Token: 0x0600A7EF RID: 42991 RVA: 0x003E7464 File Offset: 0x003E5664
 		public UserDataManagement.SaveCopyResultInfo PerformCopy()
 		{
 			UserDataManagement.SaveCopyResultInfo saveCopyResultInfo;
@@ -420,16 +420,16 @@ public static class UserDataManagement
 			return saveCopyResultInfo;
 		}
 
-		// Token: 0x04007BD7 RID: 31703
+		// Token: 0x04007CB0 RID: 31920
 		public readonly SaveInfoProvider.SaveEntryInfo saveInfo;
 
-		// Token: 0x04007BD8 RID: 31704
+		// Token: 0x04007CB1 RID: 31921
 		public readonly SaveInfoProvider.WorldEntryInfo worldInfo;
 
-		// Token: 0x04007BD9 RID: 31705
+		// Token: 0x04007CB2 RID: 31922
 		public readonly string targetName;
 
-		// Token: 0x04007BDA RID: 31706
+		// Token: 0x04007CB3 RID: 31923
 		public readonly UserDataStorageType storageTarget;
 	}
 }

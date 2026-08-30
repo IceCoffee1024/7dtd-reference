@@ -4,10 +4,10 @@ using System.IO;
 using System.Security.Cryptography;
 using Force.Crc32;
 
-// Token: 0x02001409 RID: 5129
+// Token: 0x02001424 RID: 5156
 public static class IOUtils
 {
-	// Token: 0x0600A113 RID: 41235 RVA: 0x003C6C5C File Offset: 0x003C4E5C
+	// Token: 0x0600A210 RID: 41488 RVA: 0x003CBFA0 File Offset: 0x003CA1A0
 	public static byte[] CalcHashSync(string _filename, string _algorithmName = "MD5")
 	{
 		byte[] array;
@@ -21,7 +21,7 @@ public static class IOUtils
 		return array;
 	}
 
-	// Token: 0x0600A114 RID: 41236 RVA: 0x003C6CB4 File Offset: 0x003C4EB4
+	// Token: 0x0600A211 RID: 41489 RVA: 0x003CBFF8 File Offset: 0x003CA1F8
 	public static IEnumerator CalcHashCoroutine(string _filename, Action<byte[]> _resultCallback, int _maxTimePerFrameMs = 5, byte[] _buffer = null, string _algorithmName = "MD5")
 	{
 		MicroStopwatch msw = new MicroStopwatch(true);
@@ -59,7 +59,7 @@ public static class IOUtils
 		yield break;
 	}
 
-	// Token: 0x0600A115 RID: 41237 RVA: 0x003C6CE0 File Offset: 0x003C4EE0
+	// Token: 0x0600A212 RID: 41490 RVA: 0x003CC024 File Offset: 0x003CA224
 	public static IEnumerator CalcCrcCoroutine(string _filename, Action<uint> _resultCallback, int _maxTimePerFrameMs = 5, byte[] _buffer = null)
 	{
 		MicroStopwatch msw = new MicroStopwatch(true);
@@ -93,7 +93,7 @@ public static class IOUtils
 		yield break;
 	}
 
-	// Token: 0x0600A116 RID: 41238 RVA: 0x003C6D04 File Offset: 0x003C4F04
+	// Token: 0x0600A213 RID: 41491 RVA: 0x003CC048 File Offset: 0x003CA248
 	public static uint HashUint(this Crc32Algorithm _crcInstance)
 	{
 		if (_crcInstance == null)
@@ -104,10 +104,10 @@ public static class IOUtils
 		return (uint)(((int)hash[0] << 24) | ((int)hash[1] << 16) | ((int)hash[2] << 8) | (int)hash[3]);
 	}
 
-	// Token: 0x040078E3 RID: 30947
+	// Token: 0x040079BC RID: 31164
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int minBufferSize = 8192;
 
-	// Token: 0x040078E4 RID: 30948
+	// Token: 0x040079BD RID: 31165
 	public const int DefaultBufferSize = 32768;
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 [SharedBetweenAnimators]
 public class AnimatorStateRaycast : StateMachineBehaviour
 {
-	// Token: 0x06000338 RID: 824 RVA: 0x0001848C File Offset: 0x0001668C
+	// Token: 0x06000338 RID: 824 RVA: 0x00018510 File Offset: 0x00016710
 	public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 		EntityAlive componentInParent = animator.GetComponentInParent<EntityAlive>();

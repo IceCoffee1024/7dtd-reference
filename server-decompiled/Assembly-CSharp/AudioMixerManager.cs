@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 // Token: 0x020000B1 RID: 177
 public class AudioMixerManager : MonoBehaviour
 {
-	// Token: 0x0600036B RID: 875 RVA: 0x00018CA4 File Offset: 0x00016EA4
+	// Token: 0x0600036C RID: 876 RVA: 0x00018D68 File Offset: 0x00016F68
 	public void Update()
 	{
 		if (GameManager.Instance == null)
@@ -51,7 +51,7 @@ public class AudioMixerManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600036C RID: 876 RVA: 0x00018DA4 File Offset: 0x00016FA4
+	// Token: 0x0600036D RID: 877 RVA: 0x00018E68 File Offset: 0x00017068
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void transitionTo(AudioMixerManager.SnapshotController _snapshot)
 	{

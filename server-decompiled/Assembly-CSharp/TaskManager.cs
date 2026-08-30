@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading;
 
-// Token: 0x020012C1 RID: 4801
+// Token: 0x020012DB RID: 4827
 public class TaskManager
 {
-	// Token: 0x170011EF RID: 4591
-	// (get) Token: 0x0600983F RID: 38975 RVA: 0x0039CC6C File Offset: 0x0039AE6C
+	// Token: 0x17001228 RID: 4648
+	// (get) Token: 0x0600993A RID: 39226 RVA: 0x003A1EBC File Offset: 0x003A00BC
 	public static bool Pending
 	{
 		get
@@ -14,26 +14,26 @@ public class TaskManager
 		}
 	}
 
-	// Token: 0x06009840 RID: 38976 RVA: 0x0039CC78 File Offset: 0x0039AE78
+	// Token: 0x0600993B RID: 39227 RVA: 0x003A1EC8 File Offset: 0x003A00C8
 	public static void Init()
 	{
 		TaskManager.rootGroup = new TaskManager.TaskGroup(null);
 		TaskManager.tasks = new WorkBatch<TaskManager.Task>();
 	}
 
-	// Token: 0x06009841 RID: 38977 RVA: 0x0039CC8F File Offset: 0x0039AE8F
+	// Token: 0x0600993C RID: 39228 RVA: 0x003A1EDF File Offset: 0x003A00DF
 	public static void Destroy()
 	{
 		TaskManager.WaitOnGroup(TaskManager.rootGroup);
 	}
 
-	// Token: 0x06009842 RID: 38978 RVA: 0x0039CC9B File Offset: 0x0039AE9B
+	// Token: 0x0600993D RID: 39229 RVA: 0x003A1EEB File Offset: 0x003A00EB
 	public static void Update()
 	{
 		TaskManager.tasks.DoWork(new Action<TaskManager.Task>(TaskManager.CompleteTask));
 	}
 
-	// Token: 0x06009843 RID: 38979 RVA: 0x0039CCB3 File Offset: 0x0039AEB3
+	// Token: 0x0600993E RID: 39230 RVA: 0x003A1F03 File Offset: 0x003A0103
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void CompleteTask(TaskManager.Task _task)
 	{
@@ -44,19 +44,19 @@ public class TaskManager
 		}
 	}
 
-	// Token: 0x06009844 RID: 38980 RVA: 0x0039CCCE File Offset: 0x0039AECE
+	// Token: 0x0600993F RID: 39231 RVA: 0x003A1F1E File Offset: 0x003A011E
 	public static TaskManager.TaskGroup CreateGroup()
 	{
 		return new TaskManager.TaskGroup(TaskManager.rootGroup);
 	}
 
-	// Token: 0x06009845 RID: 38981 RVA: 0x0039CCDA File Offset: 0x0039AEDA
+	// Token: 0x06009940 RID: 39232 RVA: 0x003A1F2A File Offset: 0x003A012A
 	public static TaskManager.TaskGroup CreateGroup(TaskManager.TaskGroup _parent)
 	{
 		return new TaskManager.TaskGroup(_parent);
 	}
 
-	// Token: 0x06009846 RID: 38982 RVA: 0x0039CCE4 File Offset: 0x0039AEE4
+	// Token: 0x06009941 RID: 39233 RVA: 0x003A1F34 File Offset: 0x003A0134
 	public static void Schedule(Action _execute, Action _complete)
 	{
 		TaskManager.Task task = new TaskManager.Task(TaskManager.rootGroup, _execute, _complete);
@@ -64,7 +64,7 @@ public class TaskManager
 		ThreadManager.AddSingleTask(new ThreadManager.TaskFunctionDelegate(TaskManager.Execute), task, null, false);
 	}
 
-	// Token: 0x06009847 RID: 38983 RVA: 0x0039CD1C File Offset: 0x0039AF1C
+	// Token: 0x06009942 RID: 39234 RVA: 0x003A1F6C File Offset: 0x003A016C
 	public static void Schedule(TaskManager.TaskGroup _group, Action _execute, Action _complete)
 	{
 		TaskManager.Task task = new TaskManager.Task(_group, _execute, _complete);
@@ -72,7 +72,7 @@ public class TaskManager
 		ThreadManager.AddSingleTask(new ThreadManager.TaskFunctionDelegate(TaskManager.Execute), task, null, false);
 	}
 
-	// Token: 0x06009848 RID: 38984 RVA: 0x0039CD4D File Offset: 0x0039AF4D
+	// Token: 0x06009943 RID: 39235 RVA: 0x003A1F9D File Offset: 0x003A019D
 	public static void WaitOnGroup(TaskManager.TaskGroup _group)
 	{
 		if (!ThreadManager.MainThreadRef.Equals(Thread.CurrentThread))
@@ -87,7 +87,7 @@ public class TaskManager
 		}
 	}
 
-	// Token: 0x06009849 RID: 38985 RVA: 0x0039CD88 File Offset: 0x0039AF88
+	// Token: 0x06009944 RID: 39236 RVA: 0x003A1FD8 File Offset: 0x003A01D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void Execute(ThreadManager.TaskInfo _info)
 	{
@@ -101,7 +101,7 @@ public class TaskManager
 		TaskManager.OnTaskCompleted(task);
 	}
 
-	// Token: 0x0600984A RID: 38986 RVA: 0x0039CDC8 File Offset: 0x0039AFC8
+	// Token: 0x06009945 RID: 39237 RVA: 0x003A2018 File Offset: 0x003A0218
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void OnTaskCreated(TaskManager.Task task)
 	{
@@ -111,7 +111,7 @@ public class TaskManager
 		}
 	}
 
-	// Token: 0x0600984B RID: 38987 RVA: 0x0039CDF4 File Offset: 0x0039AFF4
+	// Token: 0x06009946 RID: 39238 RVA: 0x003A2044 File Offset: 0x003A0244
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void OnTaskCompleted(TaskManager.Task task)
 	{
@@ -121,19 +121,19 @@ public class TaskManager
 		}
 	}
 
-	// Token: 0x040072A6 RID: 29350
+	// Token: 0x0400737D RID: 29565
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static TaskManager.TaskGroup rootGroup;
 
-	// Token: 0x040072A7 RID: 29351
+	// Token: 0x0400737E RID: 29566
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static WorkBatch<TaskManager.Task> tasks;
 
-	// Token: 0x020012C2 RID: 4802
+	// Token: 0x020012DC RID: 4828
 	public class TaskGroup
 	{
-		// Token: 0x170011F0 RID: 4592
-		// (get) Token: 0x0600984D RID: 38989 RVA: 0x0039CE20 File Offset: 0x0039B020
+		// Token: 0x17001229 RID: 4649
+		// (get) Token: 0x06009948 RID: 39240 RVA: 0x003A2070 File Offset: 0x003A0270
 		public bool Pending
 		{
 			get
@@ -142,27 +142,27 @@ public class TaskManager
 			}
 		}
 
-		// Token: 0x0600984E RID: 38990 RVA: 0x0039CE32 File Offset: 0x0039B032
+		// Token: 0x06009949 RID: 39241 RVA: 0x003A2082 File Offset: 0x003A0282
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public TaskGroup(TaskManager.TaskGroup _parent)
 		{
 			this.parent = _parent;
 		}
 
-		// Token: 0x040072A8 RID: 29352
+		// Token: 0x0400737F RID: 29567
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public TaskManager.TaskGroup parent;
 
-		// Token: 0x040072A9 RID: 29353
+		// Token: 0x04007380 RID: 29568
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public int pending;
 	}
 
-	// Token: 0x020012C3 RID: 4803
+	// Token: 0x020012DD RID: 4829
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public class Task
 	{
-		// Token: 0x0600984F RID: 38991 RVA: 0x0039CE41 File Offset: 0x0039B041
+		// Token: 0x0600994A RID: 39242 RVA: 0x003A2091 File Offset: 0x003A0291
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public Task(TaskManager.TaskGroup _group, Action _execute, Action _complete)
 		{
@@ -171,15 +171,15 @@ public class TaskManager
 			this.Complete = _complete;
 		}
 
-		// Token: 0x040072AA RID: 29354
+		// Token: 0x04007381 RID: 29569
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public TaskManager.TaskGroup Group;
 
-		// Token: 0x040072AB RID: 29355
+		// Token: 0x04007382 RID: 29570
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public Action Execute;
 
-		// Token: 0x040072AC RID: 29356
+		// Token: 0x04007383 RID: 29571
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public Action Complete;
 	}

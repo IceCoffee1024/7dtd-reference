@@ -2,17 +2,17 @@
 using System.Security.Cryptography;
 using System.Text;
 
-// Token: 0x0200075C RID: 1884
+// Token: 0x02000766 RID: 1894
 public class AntiCheatEncryptionAuthClient
 {
-	// Token: 0x060037DE RID: 14302 RVA: 0x000876FD File Offset: 0x000858FD
+	// Token: 0x06003834 RID: 14388 RVA: 0x00087DB8 File Offset: 0x00085FB8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RSA GetSigningKey()
 	{
 		throw new NotImplementedException();
 	}
 
-	// Token: 0x060037DF RID: 14303 RVA: 0x0016ED2C File Offset: 0x0016CF2C
+	// Token: 0x06003835 RID: 14389 RVA: 0x00170F48 File Offset: 0x0016F148
 	public void StartKeyExchange()
 	{
 		Log.Out("[EncryptionAgreement] checking signing key");
@@ -43,7 +43,7 @@ public class AntiCheatEncryptionAuthClient
 		}
 	}
 
-	// Token: 0x060037E0 RID: 14304 RVA: 0x0016EE20 File Offset: 0x0016D020
+	// Token: 0x06003836 RID: 14390 RVA: 0x0017103C File Offset: 0x0016F23C
 	public void CompleteKeyExchange(byte[] protectedEncryptionKey, byte[] protectedIntegrityKey)
 	{
 		Log.Out("[EncryptionAgreement] received shared keys");
@@ -65,7 +65,7 @@ public class AntiCheatEncryptionAuthClient
 		this.keyExchangeSessionPair = null;
 	}
 
-	// Token: 0x04002DC5 RID: 11717
+	// Token: 0x04002E3D RID: 11837
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RSA keyExchangeSessionPair;
 }

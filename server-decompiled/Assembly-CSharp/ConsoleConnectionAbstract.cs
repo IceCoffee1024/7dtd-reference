@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020002C4 RID: 708
+// Token: 0x020002C8 RID: 712
 public abstract class ConsoleConnectionAbstract : IConsoleConnection
 {
-	// Token: 0x0600147A RID: 5242
+	// Token: 0x0600148C RID: 5260
 	public abstract void SendLines(List<string> _output);
 
-	// Token: 0x0600147B RID: 5243
+	// Token: 0x0600148D RID: 5261
 	public abstract void SendLine(string _text);
 
-	// Token: 0x0600147C RID: 5244
+	// Token: 0x0600148E RID: 5262
 	public abstract void SendLog(string _formattedMessage, string _plainMessage, string _trace, LogType _type, DateTime _timestamp, long _uptime);
 
-	// Token: 0x0600147D RID: 5245
+	// Token: 0x0600148F RID: 5263
 	public abstract string GetDescription();
 
-	// Token: 0x0600147E RID: 5246 RVA: 0x0007C016 File Offset: 0x0007A216
+	// Token: 0x06001490 RID: 5264 RVA: 0x0007C66E File Offset: 0x0007A86E
 	public void EnableLogLevel(LogType _type, bool _enable)
 	{
 		if (_enable)
@@ -28,19 +28,19 @@ public abstract class ConsoleConnectionAbstract : IConsoleConnection
 		this.enabledLogLevels.Remove(_type);
 	}
 
-	// Token: 0x0600147F RID: 5247 RVA: 0x0007C036 File Offset: 0x0007A236
+	// Token: 0x06001491 RID: 5265 RVA: 0x0007C68E File Offset: 0x0007A88E
 	public bool IsLogLevelEnabled(LogType _type)
 	{
 		return this.enabledLogLevels.Contains(_type);
 	}
 
-	// Token: 0x06001480 RID: 5248 RVA: 0x0007C044 File Offset: 0x0007A244
+	// Token: 0x06001492 RID: 5266 RVA: 0x0007C69C File Offset: 0x0007A89C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ConsoleConnectionAbstract()
 	{
 	}
 
-	// Token: 0x04000D9F RID: 3487
+	// Token: 0x04000DB0 RID: 3504
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<LogType> enabledLogLevels = new HashSet<LogType>
 	{

@@ -3,11 +3,11 @@ using SandboxOptions;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F73 RID: 3955
+// Token: 0x02000F8C RID: 3980
 [Preserve]
 public class XUiC_MapStats : XUiController
 {
-	// Token: 0x06007CC4 RID: 31940 RVA: 0x002F58A0 File Offset: 0x002F3AA0
+	// Token: 0x06007DB6 RID: 32182 RVA: 0x002FA074 File Offset: 0x002F8274
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -145,26 +145,26 @@ public class XUiC_MapStats : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x06007CC5 RID: 31941 RVA: 0x002A777D File Offset: 0x002A597D
+	// Token: 0x06007DB7 RID: 32183 RVA: 0x002AAC41 File Offset: 0x002A8E41
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 		base.RefreshBindings();
 	}
 
-	// Token: 0x04005C64 RID: 23652
+	// Token: 0x04005D2B RID: 23851
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<ulong> mapdaytimeFormatter = new CachedStringFormatter<ulong>((ulong _worldTime) => ValueDisplayFormatters.WorldTime(_worldTime, "{0}/{1:00}:{2:00}"));
 
-	// Token: 0x04005C65 RID: 23653
+	// Token: 0x04005D2C RID: 23852
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<float> tempFormatter = new CachedStringFormatter<float>((float _f) => ValueDisplayFormatters.Temperature(_f, -1));
 
-	// Token: 0x04005C66 RID: 23654
+	// Token: 0x04005D2D RID: 23853
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt mapwindFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x04005C67 RID: 23655
+	// Token: 0x04005D2E RID: 23854
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<int> levelFormatter = new CachedStringFormatter<int>((int _i) => _i.ToString("+0;-#"));
 }

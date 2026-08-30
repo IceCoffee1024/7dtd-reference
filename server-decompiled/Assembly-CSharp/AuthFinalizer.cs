@@ -1,18 +1,18 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000786 RID: 1926
+// Token: 0x02000790 RID: 1936
 [Preserve]
 public class AuthFinalizer : AuthorizerAbs
 {
-	// Token: 0x06003955 RID: 14677 RVA: 0x001764B6 File Offset: 0x001746B6
+	// Token: 0x060039AD RID: 14765 RVA: 0x00178736 File Offset: 0x00176936
 	public AuthFinalizer()
 	{
 		AuthFinalizer.Instance = this;
 	}
 
-	// Token: 0x170005E7 RID: 1511
-	// (get) Token: 0x06003956 RID: 14678 RVA: 0x001764C4 File Offset: 0x001746C4
+	// Token: 0x170005F1 RID: 1521
+	// (get) Token: 0x060039AE RID: 14766 RVA: 0x00178744 File Offset: 0x00176944
 	public override int Order
 	{
 		get
@@ -21,8 +21,8 @@ public class AuthFinalizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005E8 RID: 1512
-	// (get) Token: 0x06003957 RID: 14679 RVA: 0x001764CB File Offset: 0x001746CB
+	// Token: 0x170005F2 RID: 1522
+	// (get) Token: 0x060039AF RID: 14767 RVA: 0x0017874B File Offset: 0x0017694B
 	public override string AuthorizerName
 	{
 		get
@@ -31,8 +31,8 @@ public class AuthFinalizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005E9 RID: 1513
-	// (get) Token: 0x06003958 RID: 14680 RVA: 0x0001FF1E File Offset: 0x0001E11E
+	// Token: 0x170005F3 RID: 1523
+	// (get) Token: 0x060039B0 RID: 14768 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
 	public override string StateLocalizationKey
 	{
 		get
@@ -41,19 +41,19 @@ public class AuthFinalizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x06003959 RID: 14681 RVA: 0x001764D4 File Offset: 0x001746D4
+	// Token: 0x060039B1 RID: 14769 RVA: 0x00178754 File Offset: 0x00176954
 	public override ValueTuple<EAuthorizerSyncResult, GameUtils.KickPlayerData?> Authorize(ClientInfo _clientInfo)
 	{
 		_clientInfo.SendPackage(NetPackageManager.GetPackage<NetPackageAuthConfirmation>().Setup());
 		return new ValueTuple<EAuthorizerSyncResult, GameUtils.KickPlayerData?>(EAuthorizerSyncResult.WaitAsync, null);
 	}
 
-	// Token: 0x0600395A RID: 14682 RVA: 0x00175DA4 File Offset: 0x00173FA4
+	// Token: 0x060039B2 RID: 14770 RVA: 0x00178024 File Offset: 0x00176224
 	public void ReplyReceived(ClientInfo _cInfo)
 	{
 		this.authResponsesHandler.AuthorizationAccepted(this, _cInfo);
 	}
 
-	// Token: 0x04002EE5 RID: 12005
+	// Token: 0x04002F5E RID: 12126
 	public static AuthFinalizer Instance;
 }

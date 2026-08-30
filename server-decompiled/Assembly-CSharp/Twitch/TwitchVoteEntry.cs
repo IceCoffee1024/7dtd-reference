@@ -3,41 +3,41 @@ using System.Collections.Generic;
 
 namespace Twitch
 {
-	// Token: 0x02001840 RID: 6208
+	// Token: 0x02001866 RID: 6246
 	public class TwitchVoteEntry
 	{
-		// Token: 0x0600BF6D RID: 49005 RVA: 0x00471215 File Offset: 0x0046F415
+		// Token: 0x0600C0F2 RID: 49394 RVA: 0x00476FB1 File Offset: 0x004751B1
 		public TwitchVoteEntry(string voteCommand, TwitchVote voteClass)
 		{
 			this.VoteCommand = voteCommand;
 			this.VoteClass = voteClass;
 		}
 
-		// Token: 0x0400909F RID: 37023
+		// Token: 0x040091BB RID: 37307
 		public TwitchVote VoteClass;
 
-		// Token: 0x040090A0 RID: 37024
+		// Token: 0x040091BC RID: 37308
 		public string VoteCommand;
 
-		// Token: 0x040090A1 RID: 37025
+		// Token: 0x040091BD RID: 37309
 		public TwitchVotingManager Owner;
 
-		// Token: 0x040090A2 RID: 37026
+		// Token: 0x040091BE RID: 37310
 		public int VoteCount;
 
-		// Token: 0x040090A3 RID: 37027
+		// Token: 0x040091BF RID: 37311
 		public int Index = -1;
 
-		// Token: 0x040090A4 RID: 37028
+		// Token: 0x040091C0 RID: 37312
 		public bool UIDirty = true;
 
-		// Token: 0x040090A5 RID: 37029
+		// Token: 0x040091C1 RID: 37313
 		public bool Complete;
 
-		// Token: 0x040090A6 RID: 37030
+		// Token: 0x040091C2 RID: 37314
 		public List<string> VoterNames = new List<string>();
 
-		// Token: 0x040090A7 RID: 37031
+		// Token: 0x040091C3 RID: 37315
 		public List<int> ActiveSpawns = new List<int>();
 	}
 }

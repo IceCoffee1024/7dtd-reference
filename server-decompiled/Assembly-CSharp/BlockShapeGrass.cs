@@ -2,25 +2,25 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020001A7 RID: 423
+// Token: 0x020001A9 RID: 425
 [Preserve]
 public class BlockShapeGrass : BlockShapeBillboardAbstract
 {
-	// Token: 0x06000CC7 RID: 3271 RVA: 0x000504FB File Offset: 0x0004E6FB
+	// Token: 0x06000CD2 RID: 3282 RVA: 0x00050913 File Offset: 0x0004EB13
 	public BlockShapeGrass()
 	{
 		this.LightOpacity = 0;
 		this.IsOmitTerrainSnappingUp = true;
 	}
 
-	// Token: 0x06000CC8 RID: 3272 RVA: 0x00050511 File Offset: 0x0004E711
+	// Token: 0x06000CD3 RID: 3283 RVA: 0x00050929 File Offset: 0x0004EB29
 	public override void Init(Block _block)
 	{
 		base.Init(_block);
 		_block.IsDecoration = true;
 	}
 
-	// Token: 0x06000CC9 RID: 3273 RVA: 0x00050524 File Offset: 0x0004E724
+	// Token: 0x06000CD4 RID: 3284 RVA: 0x0005093C File Offset: 0x0004EB3C
 	public override void renderFull(Vector3i _worldPos, BlockValue _blockValue, Vector3 _drawPos, Vector3[] _vertices, LightingAround _lightingAround, TextureFullArray _textureFullArray, VoxelMesh[] _meshes, BlockShape.MeshPurpose _purpose = BlockShape.MeshPurpose.World)
 	{
 		Vector3 vector;
@@ -70,13 +70,13 @@ public class BlockShapeGrass : BlockShapeBillboardAbstract
 		BlockShapeBillboardPlant.AddCollider(voxelMesh, _drawPos, 0.85f);
 	}
 
-	// Token: 0x06000CCA RID: 3274 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000CD5 RID: 3285 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsMovementBlocked(BlockValue _blockValue, BlockFace crossingFace)
 	{
 		return false;
 	}
 
-	// Token: 0x06000CCB RID: 3275 RVA: 0x0003D066 File Offset: 0x0003B266
+	// Token: 0x06000CD6 RID: 3286 RVA: 0x0003D2C6 File Offset: 0x0003B4C6
 	public override float GetStepHeight(BlockValue _blockValue, BlockFace crossingFace)
 	{
 		return 0f;

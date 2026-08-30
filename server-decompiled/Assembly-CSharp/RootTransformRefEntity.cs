@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000509 RID: 1289
+// Token: 0x0200050E RID: 1294
 public class RootTransformRefEntity : RootTransformRef
 {
-	// Token: 0x06002A47 RID: 10823 RVA: 0x0010AC0D File Offset: 0x00108E0D
+	// Token: 0x06002A71 RID: 10865 RVA: 0x0010BC49 File Offset: 0x00109E49
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Start()
 	{
@@ -14,7 +14,7 @@ public class RootTransformRefEntity : RootTransformRef
 		}
 	}
 
-	// Token: 0x06002A48 RID: 10824 RVA: 0x0010AC30 File Offset: 0x00108E30
+	// Token: 0x06002A72 RID: 10866 RVA: 0x0010BC6C File Offset: 0x00109E6C
 	public static RootTransformRefEntity AddIfEntity(Transform _t)
 	{
 		Transform transform = RootTransformRefEntity.FindEntityUpwards(_t);
@@ -27,7 +27,7 @@ public class RootTransformRefEntity : RootTransformRef
 		return null;
 	}
 
-	// Token: 0x06002A49 RID: 10825 RVA: 0x0010AC60 File Offset: 0x00108E60
+	// Token: 0x06002A73 RID: 10867 RVA: 0x0010BC9C File Offset: 0x00109E9C
 	public static Transform FindEntityUpwards(Transform _t)
 	{
 		while (!_t.GetComponent<Entity>())
@@ -41,32 +41,32 @@ public class RootTransformRefEntity : RootTransformRef
 		return _t;
 	}
 
-	// Token: 0x06002A4A RID: 10826 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002A74 RID: 10868 RVA: 0x000027FC File Offset: 0x000009FC
 	public void GunOpen()
 	{
 	}
 
-	// Token: 0x06002A4B RID: 10827 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002A75 RID: 10869 RVA: 0x000027FC File Offset: 0x000009FC
 	public void GunClose()
 	{
 	}
 
-	// Token: 0x06002A4C RID: 10828 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002A76 RID: 10870 RVA: 0x000027FC File Offset: 0x000009FC
 	public void GunRemoveRound()
 	{
 	}
 
-	// Token: 0x06002A4D RID: 10829 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002A77 RID: 10871 RVA: 0x000027FC File Offset: 0x000009FC
 	public void GunLoadRound()
 	{
 	}
 
-	// Token: 0x06002A4E RID: 10830 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002A78 RID: 10872 RVA: 0x000027FC File Offset: 0x000009FC
 	public void GunCockBack()
 	{
 	}
 
-	// Token: 0x06002A4F RID: 10831 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002A79 RID: 10873 RVA: 0x000027FC File Offset: 0x000009FC
 	public void GunCockForward()
 	{
 	}

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
-// Token: 0x020010DF RID: 4319
+// Token: 0x020010F8 RID: 4344
 public class BindingMethodCache
 {
-	// Token: 0x17000FD1 RID: 4049
-	// (get) Token: 0x060088F6 RID: 35062 RVA: 0x00344539 File Offset: 0x00342739
+	// Token: 0x1700100A RID: 4106
+	// (get) Token: 0x060089E8 RID: 35304 RVA: 0x00348D5D File Offset: 0x00346F5D
 	public static BindingMethodCache Instance
 	{
 		get
@@ -21,7 +21,7 @@ public class BindingMethodCache
 		}
 	}
 
-	// Token: 0x060088F7 RID: 35063 RVA: 0x00344550 File Offset: 0x00342750
+	// Token: 0x060089E9 RID: 35305 RVA: 0x00348D74 File Offset: 0x00346F74
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BindingMethodCache.BindingMethodTypeCache getCacheForType(Type _type)
 	{
@@ -36,7 +36,7 @@ public class BindingMethodCache
 		return bindingMethodTypeCache;
 	}
 
-	// Token: 0x060088F8 RID: 35064 RVA: 0x0034459C File Offset: 0x0034279C
+	// Token: 0x060089EA RID: 35306 RVA: 0x00348DC0 File Offset: 0x00346FC0
 	public void RegisterCustomBindingMethod(string _bindingName, MethodInfo _method)
 	{
 		if (string.IsNullOrEmpty(_bindingName))
@@ -104,19 +104,19 @@ public class BindingMethodCache
 		}
 	}
 
-	// Token: 0x060088F9 RID: 35065 RVA: 0x0034472E File Offset: 0x0034292E
+	// Token: 0x060089EB RID: 35307 RVA: 0x00348F52 File Offset: 0x00347152
 	public bool TryGetBindingDelegate(XUiController _controller, string _bindingName, out XuiBindingDelegate _bindingDelegate)
 	{
 		return this.getCacheForType(_controller.GetType()).TryGetBindingDelegate(_bindingName, out _bindingDelegate);
 	}
 
-	// Token: 0x060088FA RID: 35066 RVA: 0x00344743 File Offset: 0x00342943
+	// Token: 0x060089EC RID: 35308 RVA: 0x00348F67 File Offset: 0x00347167
 	public void LogInitTotal()
 	{
 		Log.Out(string.Format("[XUi] BindingMethodCache total init time: {0:F3} ms", (float)this.mswInit.ElapsedMicroseconds / 1000f));
 	}
 
-	// Token: 0x060088FB RID: 35067 RVA: 0x0034476C File Offset: 0x0034296C
+	// Token: 0x060089ED RID: 35309 RVA: 0x00348F90 File Offset: 0x00347190
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool tryGetBindingObjectDelegate(MethodInfo _method, out XuiBindingDelegate _func)
 	{
@@ -157,7 +157,7 @@ public class BindingMethodCache
 		return true;
 	}
 
-	// Token: 0x060088FE RID: 35070 RVA: 0x0034491D File Offset: 0x00342B1D
+	// Token: 0x060089F0 RID: 35312 RVA: 0x00349141 File Offset: 0x00347341
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static XuiBindingDelegate <tryGetBindingObjectDelegate>g__GetBindingObjectDelegateCoreGeneric|16_0<TController, TValue>(MethodInfo _methodInner) where TController : XUiController
@@ -166,7 +166,7 @@ public class BindingMethodCache
 		return (XUiController _instance) => typedFunc((TController)((object)_instance));
 	}
 
-	// Token: 0x060088FF RID: 35071 RVA: 0x0034494A File Offset: 0x00342B4A
+	// Token: 0x060089F1 RID: 35313 RVA: 0x0034916E File Offset: 0x0034736E
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static XuiBindingDelegate <tryGetBindingObjectDelegate>g__GetBindingObjectDelegateCoreBool|16_1<TController>(MethodInfo _methodInner) where TController : XUiController
@@ -182,7 +182,7 @@ public class BindingMethodCache
 		};
 	}
 
-	// Token: 0x06008900 RID: 35072 RVA: 0x00344977 File Offset: 0x00342B77
+	// Token: 0x060089F2 RID: 35314 RVA: 0x0034919B File Offset: 0x0034739B
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static XuiBindingDelegate <tryGetBindingObjectDelegate>g__GetBindingObjectDelegateCoreInt|16_2<TController>(MethodInfo _methodInner) where TController : XUiController
@@ -211,66 +211,66 @@ public class BindingMethodCache
 		};
 	}
 
-	// Token: 0x040065D4 RID: 26068
+	// Token: 0x0400669B RID: 26267
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly MicroStopwatch mswInit = new MicroStopwatch(false);
 
-	// Token: 0x040065D5 RID: 26069
+	// Token: 0x0400669C RID: 26268
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<Type, BindingMethodCache.BindingMethodTypeCache> cachePerType = new Dictionary<Type, BindingMethodCache.BindingMethodTypeCache>(128);
 
-	// Token: 0x040065D6 RID: 26070
+	// Token: 0x0400669D RID: 26269
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<Type, Dictionary<string, XuiBindingDelegate>> customBindingDelegates = new Dictionary<Type, Dictionary<string, XuiBindingDelegate>>();
 
-	// Token: 0x040065D7 RID: 26071
+	// Token: 0x0400669E RID: 26270
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static BindingMethodCache instance;
 
-	// Token: 0x040065D8 RID: 26072
+	// Token: 0x0400669F RID: 26271
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly object boxed0 = 0;
 
-	// Token: 0x040065D9 RID: 26073
+	// Token: 0x040066A0 RID: 26272
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly object boxed1 = 1;
 
-	// Token: 0x040065DA RID: 26074
+	// Token: 0x040066A1 RID: 26273
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly object boxedFalse = false;
 
-	// Token: 0x040065DB RID: 26075
+	// Token: 0x040066A2 RID: 26274
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly object boxedTrue = true;
 
-	// Token: 0x020010E0 RID: 4320
+	// Token: 0x020010F9 RID: 4345
 	public class BindingMethodData
 	{
-		// Token: 0x06008901 RID: 35073 RVA: 0x003449A4 File Offset: 0x00342BA4
+		// Token: 0x060089F3 RID: 35315 RVA: 0x003491C8 File Offset: 0x003473C8
 		public BindingMethodData(string _definingController, XuiBindingDelegate _delegate)
 		{
 			this.DefiningController = _definingController;
 			this.Delegate = _delegate;
 		}
 
-		// Token: 0x040065DC RID: 26076
+		// Token: 0x040066A3 RID: 26275
 		public readonly string DefiningController;
 
-		// Token: 0x040065DD RID: 26077
+		// Token: 0x040066A4 RID: 26276
 		public readonly XuiBindingDelegate Delegate;
 	}
 
-	// Token: 0x020010E1 RID: 4321
+	// Token: 0x020010FA RID: 4346
 	public class BindingMethodTypeCache
 	{
-		// Token: 0x06008902 RID: 35074 RVA: 0x003449BA File Offset: 0x00342BBA
+		// Token: 0x060089F4 RID: 35316 RVA: 0x003491DE File Offset: 0x003473DE
 		public BindingMethodTypeCache(Type _controllerType, BindingMethodCache _owner)
 		{
 			this.controllerType = _controllerType;
 			this.initCacheForController(_owner);
 		}
 
-		// Token: 0x06008903 RID: 35075 RVA: 0x003449E4 File Offset: 0x00342BE4
+		// Token: 0x060089F5 RID: 35317 RVA: 0x00349208 File Offset: 0x00347408
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void initCacheForController(BindingMethodCache _owner)
 		{
@@ -300,7 +300,7 @@ public class BindingMethodCache
 			}
 		}
 
-		// Token: 0x06008904 RID: 35076 RVA: 0x00344B1C File Offset: 0x00342D1C
+		// Token: 0x060089F6 RID: 35318 RVA: 0x00349340 File Offset: 0x00347540
 		public bool TryGetBindingDelegate(string _bindingName, out XuiBindingDelegate _bindingDelegate)
 		{
 			BindingMethodCache.BindingMethodData bindingMethodData;
@@ -313,7 +313,7 @@ public class BindingMethodCache
 			return false;
 		}
 
-		// Token: 0x06008905 RID: 35077 RVA: 0x00344B48 File Offset: 0x00342D48
+		// Token: 0x060089F7 RID: 35319 RVA: 0x0034936C File Offset: 0x0034756C
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <initCacheForController>g__PropertyFoundCallback|3_0(PropertyInfo _property, bool _hasMultiple, XuiXmlBindingAttribute _bindingAttribute)
@@ -333,7 +333,7 @@ public class BindingMethodCache
 			this.<initCacheForController>g__MethodFoundCallback|3_1(getMethod, _hasMultiple, _bindingAttribute);
 		}
 
-		// Token: 0x06008906 RID: 35078 RVA: 0x00344BB0 File Offset: 0x00342DB0
+		// Token: 0x060089F8 RID: 35320 RVA: 0x003493D4 File Offset: 0x003475D4
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void <initCacheForController>g__MethodFoundCallback|3_1(MethodInfo _method, bool _hasMultiple, XuiXmlBindingAttribute _bindingAttribute)
@@ -369,11 +369,11 @@ public class BindingMethodCache
 			this.methods[_bindingAttribute.BindingName] = bindingMethodData;
 		}
 
-		// Token: 0x040065DE RID: 26078
+		// Token: 0x040066A5 RID: 26277
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Type controllerType;
 
-		// Token: 0x040065DF RID: 26079
+		// Token: 0x040066A6 RID: 26278
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<string, BindingMethodCache.BindingMethodData> methods = new Dictionary<string, BindingMethodCache.BindingMethodData>(64, StringComparer.Ordinal);
 	}

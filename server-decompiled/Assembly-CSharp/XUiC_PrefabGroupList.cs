@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FB1 RID: 4017
+// Token: 0x02000FCA RID: 4042
 [Preserve]
 public class XUiC_PrefabGroupList : XUiC_List<XUiC_PrefabGroupList.PrefabGroupEntry>
 {
-	// Token: 0x06007EC1 RID: 32449 RVA: 0x00301E9C File Offset: 0x0030009C
+	// Token: 0x06007FB3 RID: 32691 RVA: 0x00306670 File Offset: 0x00304870
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -40,7 +40,7 @@ public class XUiC_PrefabGroupList : XUiC_List<XUiC_PrefabGroupList.PrefabGroupEn
 		}
 	}
 
-	// Token: 0x06007EC2 RID: 32450 RVA: 0x00301F88 File Offset: 0x00300188
+	// Token: 0x06007FB4 RID: 32692 RVA: 0x0030675C File Offset: 0x0030495C
 	public override void RebuildList(bool _resetFilter = false)
 	{
 		this.allEntries.Clear();
@@ -56,7 +56,7 @@ public class XUiC_PrefabGroupList : XUiC_List<XUiC_PrefabGroupList.PrefabGroupEn
 		base.RebuildList(_resetFilter);
 	}
 
-	// Token: 0x06007EC3 RID: 32451 RVA: 0x00302054 File Offset: 0x00300254
+	// Token: 0x06007FB5 RID: 32693 RVA: 0x00306828 File Offset: 0x00304A28
 	public bool SelectByName(string _name)
 	{
 		if (!string.IsNullOrEmpty(_name))
@@ -73,22 +73,22 @@ public class XUiC_PrefabGroupList : XUiC_List<XUiC_PrefabGroupList.PrefabGroupEn
 		return false;
 	}
 
-	// Token: 0x04005DE6 RID: 24038
+	// Token: 0x04005EAD RID: 24237
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<string> groupsResult = new List<string>();
 
-	// Token: 0x02000FB2 RID: 4018
+	// Token: 0x02000FCB RID: 4043
 	[Preserve]
 	public class PrefabGroupEntry : XUiListEntry<XUiC_PrefabGroupList.PrefabGroupEntry>
 	{
-		// Token: 0x06007EC5 RID: 32453 RVA: 0x003020B6 File Offset: 0x003002B6
+		// Token: 0x06007FB7 RID: 32695 RVA: 0x0030688A File Offset: 0x00304A8A
 		public PrefabGroupEntry(string _name, string _filterString)
 		{
 			this.name = _name;
 			this.filterString = _filterString;
 		}
 
-		// Token: 0x06007EC6 RID: 32454 RVA: 0x003020CC File Offset: 0x003002CC
+		// Token: 0x06007FB8 RID: 32696 RVA: 0x003068A0 File Offset: 0x00304AA0
 		public override int CompareTo(XUiC_PrefabGroupList.PrefabGroupEntry _otherEntry)
 		{
 			if (_otherEntry == null)
@@ -98,25 +98,25 @@ public class XUiC_PrefabGroupList : XUiC_List<XUiC_PrefabGroupList.PrefabGroupEn
 			return string.Compare(this.name, _otherEntry.name, StringComparison.OrdinalIgnoreCase);
 		}
 
-		// Token: 0x06007EC7 RID: 32455 RVA: 0x003020E5 File Offset: 0x003002E5
+		// Token: 0x06007FB9 RID: 32697 RVA: 0x003068B9 File Offset: 0x00304AB9
 		public override bool MatchesSearch(string _searchString)
 		{
 			return this.name.IndexOf(_searchString, StringComparison.OrdinalIgnoreCase) >= 0;
 		}
 
-		// Token: 0x04005DE7 RID: 24039
+		// Token: 0x04005EAE RID: 24238
 		public readonly string name;
 
-		// Token: 0x04005DE8 RID: 24040
+		// Token: 0x04005EAF RID: 24239
 		public readonly string filterString;
 	}
 
-	// Token: 0x02000FB3 RID: 4019
+	// Token: 0x02000FCC RID: 4044
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class EntryController : XUiC_List<XUiC_PrefabGroupList.PrefabGroupEntry>.XUiC_ListEntry
 	{
-		// Token: 0x06007EC8 RID: 32456 RVA: 0x003020FA File Offset: 0x003002FA
+		// Token: 0x06007FBA RID: 32698 RVA: 0x003068CE File Offset: 0x00304ACE
 		[XuiXmlBinding("name")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingName()

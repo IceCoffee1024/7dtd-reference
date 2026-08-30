@@ -6,11 +6,11 @@ using System.Runtime.CompilerServices;
 using Platform;
 using UnityEngine;
 
-// Token: 0x02000C98 RID: 3224
+// Token: 0x02000CAA RID: 3242
 public class VehicleManager
 {
-	// Token: 0x17000A49 RID: 2633
-	// (get) Token: 0x0600630E RID: 25358 RVA: 0x0026E3C1 File Offset: 0x0026C5C1
+	// Token: 0x17000A5C RID: 2652
+	// (get) Token: 0x0600639A RID: 25498 RVA: 0x002712BD File Offset: 0x0026F4BD
 	public static VehicleManager Instance
 	{
 		get
@@ -19,20 +19,20 @@ public class VehicleManager
 		}
 	}
 
-	// Token: 0x0600630F RID: 25359 RVA: 0x0026E3C8 File Offset: 0x0026C5C8
+	// Token: 0x0600639B RID: 25499 RVA: 0x002712C4 File Offset: 0x0026F4C4
 	public VehicleManager()
 	{
 		this.vehiclesList = new List<EntityCreationData>();
 	}
 
-	// Token: 0x06006310 RID: 25360 RVA: 0x0026E3FC File Offset: 0x0026C5FC
+	// Token: 0x0600639C RID: 25500 RVA: 0x002712F8 File Offset: 0x0026F4F8
 	public static void Init()
 	{
 		VehicleManager.instance = new VehicleManager();
 		VehicleManager.instance.Load();
 	}
 
-	// Token: 0x06006311 RID: 25361 RVA: 0x0026E412 File Offset: 0x0026C612
+	// Token: 0x0600639D RID: 25501 RVA: 0x0027130E File Offset: 0x0026F50E
 	public void AddTrackedVehicle(EntityVehicle _vehicle)
 	{
 		if (!_vehicle)
@@ -47,7 +47,7 @@ public class VehicleManager
 		}
 	}
 
-	// Token: 0x06006312 RID: 25362 RVA: 0x0026E448 File Offset: 0x0026C648
+	// Token: 0x0600639E RID: 25502 RVA: 0x00271344 File Offset: 0x0026F544
 	public void RemoveTrackedVehicle(EntityVehicle _vehicle, EnumRemoveEntityReason _reason)
 	{
 		VehicleManager.VMLog("RemoveTrackedVehicle {0}, {1}", new object[] { _vehicle, _reason });
@@ -61,14 +61,14 @@ public class VehicleManager
 		this.UpdateVehicleWaypoints();
 	}
 
-	// Token: 0x06006313 RID: 25363 RVA: 0x0026E4C8 File Offset: 0x0026C6C8
+	// Token: 0x0600639F RID: 25503 RVA: 0x002713C4 File Offset: 0x0026F5C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TriggerSave()
 	{
 		this.saveTime = Mathf.Min(this.saveTime, 10f);
 	}
 
-	// Token: 0x06006314 RID: 25364 RVA: 0x0026E4E0 File Offset: 0x0026C6E0
+	// Token: 0x060063A0 RID: 25504 RVA: 0x002713DC File Offset: 0x0026F5DC
 	public void Update()
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -182,7 +182,7 @@ public class VehicleManager
 		}
 	}
 
-	// Token: 0x06006315 RID: 25365 RVA: 0x0026E800 File Offset: 0x0026CA00
+	// Token: 0x060063A1 RID: 25505 RVA: 0x002716FC File Offset: 0x0026F8FC
 	public void PhysicsWakeNear(Vector3 pos)
 	{
 		for (int i = 0; i < this.vehiclesActive.Count; i++)
@@ -195,7 +195,7 @@ public class VehicleManager
 		}
 	}
 
-	// Token: 0x06006316 RID: 25366 RVA: 0x0026E860 File Offset: 0x0026CA60
+	// Token: 0x060063A2 RID: 25506 RVA: 0x0027175C File Offset: 0x0026F95C
 	public void RemoveAllVehiclesFromMap()
 	{
 		for (int i = 0; i < this.vehiclesActive.Count; i++)
@@ -204,7 +204,7 @@ public class VehicleManager
 		}
 	}
 
-	// Token: 0x06006317 RID: 25367 RVA: 0x0026E8A0 File Offset: 0x0026CAA0
+	// Token: 0x060063A3 RID: 25507 RVA: 0x0027179C File Offset: 0x0026F99C
 	public void RemoveUnloadedVehicle(int id)
 	{
 		EntityCreationData entityCreationData = null;
@@ -224,7 +224,7 @@ public class VehicleManager
 		}
 	}
 
-	// Token: 0x06006318 RID: 25368 RVA: 0x0026E918 File Offset: 0x0026CB18
+	// Token: 0x060063A4 RID: 25508 RVA: 0x00271814 File Offset: 0x0026FA14
 	public void UpdateVehicleWaypoints()
 	{
 		foreach (EntityPlayer entityPlayer in GameManager.Instance.World.GetPlayers())
@@ -233,7 +233,7 @@ public class VehicleManager
 		}
 	}
 
-	// Token: 0x06006319 RID: 25369 RVA: 0x0026E97C File Offset: 0x0026CB7C
+	// Token: 0x060063A5 RID: 25509 RVA: 0x00271878 File Offset: 0x0026FA78
 	public void UpdateVehicleWaypointsForPlayer(int entityId)
 	{
 		this.GetVehiclesECDList();
@@ -254,7 +254,7 @@ public class VehicleManager
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageEntityWaypointList>().Setup(eWayPointListType.Vehicle, list), false, entityId, -1, -1, null, 192, false);
 	}
 
-	// Token: 0x0600631A RID: 25370 RVA: 0x0026EA58 File Offset: 0x0026CC58
+	// Token: 0x060063A6 RID: 25510 RVA: 0x00271954 File Offset: 0x0026FB54
 	public static void Cleanup()
 	{
 		if (VehicleManager.instance != null)
@@ -263,7 +263,7 @@ public class VehicleManager
 		}
 	}
 
-	// Token: 0x0600631B RID: 25371 RVA: 0x0026EA6B File Offset: 0x0026CC6B
+	// Token: 0x060063A7 RID: 25511 RVA: 0x00271967 File Offset: 0x0026FB67
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SaveAndClear()
 	{
@@ -275,7 +275,7 @@ public class VehicleManager
 		VehicleManager.instance = null;
 	}
 
-	// Token: 0x0600631C RID: 25372 RVA: 0x0026EA9B File Offset: 0x0026CC9B
+	// Token: 0x060063A8 RID: 25512 RVA: 0x00271997 File Offset: 0x0026FB97
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WaitOnSave()
 	{
@@ -286,7 +286,7 @@ public class VehicleManager
 		}
 	}
 
-	// Token: 0x0600631D RID: 25373 RVA: 0x0026EABC File Offset: 0x0026CCBC
+	// Token: 0x060063A9 RID: 25513 RVA: 0x002719B8 File Offset: 0x0026FBB8
 	public void Load()
 	{
 		string text = string.Format("{0}/{1}", GameIO.GetSaveGameDir(), "vehicles.dat");
@@ -326,7 +326,7 @@ public class VehicleManager
 		}
 	}
 
-	// Token: 0x0600631E RID: 25374 RVA: 0x0026EBEC File Offset: 0x0026CDEC
+	// Token: 0x060063AA RID: 25514 RVA: 0x00271AE8 File Offset: 0x0026FCE8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Save()
 	{
@@ -348,7 +348,7 @@ public class VehicleManager
 		}
 	}
 
-	// Token: 0x0600631F RID: 25375 RVA: 0x0026ECD0 File Offset: 0x0026CED0
+	// Token: 0x060063AB RID: 25515 RVA: 0x00271BCC File Offset: 0x0026FDCC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int SaveThread(ThreadManager.ThreadInfo _threadInfo)
 	{
@@ -365,7 +365,7 @@ public class VehicleManager
 		return -1;
 	}
 
-	// Token: 0x06006320 RID: 25376 RVA: 0x0026ED5C File Offset: 0x0026CF5C
+	// Token: 0x060063AC RID: 25516 RVA: 0x00271C58 File Offset: 0x0026FE58
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void read(PooledBinaryReader _br)
 	{
@@ -397,7 +397,7 @@ public class VehicleManager
 		}
 	}
 
-	// Token: 0x06006321 RID: 25377 RVA: 0x0026EE3C File Offset: 0x0026D03C
+	// Token: 0x060063AD RID: 25517 RVA: 0x00271D38 File Offset: 0x0026FF38
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void write(PooledBinaryWriter _bw)
 	{
@@ -423,7 +423,7 @@ public class VehicleManager
 		}
 	}
 
-	// Token: 0x06006322 RID: 25378 RVA: 0x0026EEFC File Offset: 0x0026D0FC
+	// Token: 0x060063AE RID: 25518 RVA: 0x00271DF8 File Offset: 0x0026FFF8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<EntityCreationData> GetVehiclesECDList()
 	{
@@ -439,7 +439,7 @@ public class VehicleManager
 		return this.vehiclesList;
 	}
 
-	// Token: 0x06006323 RID: 25379 RVA: 0x0026EF7C File Offset: 0x0026D17C
+	// Token: 0x060063AF RID: 25519 RVA: 0x00271E78 File Offset: 0x00270078
 	[return: TupleElementNames(new string[] { "entityId", "position" })]
 	public List<ValueTuple<int, Vector3>> GetVehiclePositionsList()
 	{
@@ -455,7 +455,7 @@ public class VehicleManager
 		return list;
 	}
 
-	// Token: 0x06006324 RID: 25380 RVA: 0x0026F016 File Offset: 0x0026D216
+	// Token: 0x060063B0 RID: 25520 RVA: 0x00271F12 File Offset: 0x00270112
 	public static int GetServerVehicleCount()
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -465,7 +465,7 @@ public class VehicleManager
 		return VehicleManager.serverVehicleCount;
 	}
 
-	// Token: 0x06006325 RID: 25381 RVA: 0x0026F049 File Offset: 0x0026D249
+	// Token: 0x060063B1 RID: 25521 RVA: 0x00271F45 File Offset: 0x00270145
 	public static void SetServerVehicleCount(int count)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -475,13 +475,13 @@ public class VehicleManager
 		VehicleManager.serverVehicleCount = count;
 	}
 
-	// Token: 0x06006326 RID: 25382 RVA: 0x0026F05E File Offset: 0x0026D25E
+	// Token: 0x060063B2 RID: 25522 RVA: 0x00271F5A File Offset: 0x0027015A
 	public static bool CanAddMoreVehicles()
 	{
 		return !(DeviceFlag.XBoxSeriesS | DeviceFlag.XBoxSeriesX | DeviceFlag.PS5).IsCurrent() || VehicleManager.GetServerVehicleCount() < 500;
 	}
 
-	// Token: 0x06006327 RID: 25383 RVA: 0x0026F078 File Offset: 0x0026D278
+	// Token: 0x060063B3 RID: 25523 RVA: 0x00271F74 File Offset: 0x00270174
 	[Conditional("DEBUG_VEHICLEMAN")]
 	public static void VMLog(string _format = "", params object[] _args)
 	{
@@ -490,47 +490,47 @@ public class VehicleManager
 		Log.Out(_format, _args);
 	}
 
-	// Token: 0x04004CE3 RID: 19683
+	// Token: 0x04004D81 RID: 19841
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cVersion = 1;
 
-	// Token: 0x04004CE4 RID: 19684
+	// Token: 0x04004D82 RID: 19842
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cSaveTime = 120f;
 
-	// Token: 0x04004CE5 RID: 19685
+	// Token: 0x04004D83 RID: 19843
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cChangeSaveDelay = 10f;
 
-	// Token: 0x04004CE6 RID: 19686
+	// Token: 0x04004D84 RID: 19844
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cMaxVehicles = 500;
 
-	// Token: 0x04004CE7 RID: 19687
+	// Token: 0x04004D85 RID: 19845
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int serverVehicleCount;
 
-	// Token: 0x04004CE8 RID: 19688
+	// Token: 0x04004D86 RID: 19846
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<EntityVehicle> vehiclesActive = new List<EntityVehicle>();
 
-	// Token: 0x04004CE9 RID: 19689
+	// Token: 0x04004D87 RID: 19847
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<EntityCreationData> vehiclesUnloaded = new List<EntityCreationData>();
 
-	// Token: 0x04004CEA RID: 19690
+	// Token: 0x04004D88 RID: 19848
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float saveTime = 120f;
 
-	// Token: 0x04004CEB RID: 19691
+	// Token: 0x04004D89 RID: 19849
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ThreadManager.ThreadInfo saveThread;
 
-	// Token: 0x04004CEC RID: 19692
+	// Token: 0x04004D8A RID: 19850
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static VehicleManager instance;
 
-	// Token: 0x04004CED RID: 19693
+	// Token: 0x04004D8B RID: 19851
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<EntityCreationData> vehiclesList;
 }

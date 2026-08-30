@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x02000E9C RID: 3740
-// (Invoke) Token: 0x060074B9 RID: 29881
+// Token: 0x02000EB1 RID: 3761
+// (Invoke) Token: 0x06007559 RID: 30041
 public delegate void XUiEvent_OnMouseUpDownEventHandler(XUiController _sender, bool _down);

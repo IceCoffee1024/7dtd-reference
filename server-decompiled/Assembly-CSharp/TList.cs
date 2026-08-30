@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading;
 
-// Token: 0x020014B5 RID: 5301
+// Token: 0x020014D0 RID: 5328
 public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 {
-	// Token: 0x1700135F RID: 4959
-	// (get) Token: 0x0600A641 RID: 42561 RVA: 0x003DE9C8 File Offset: 0x003DCBC8
-	// (set) Token: 0x0600A642 RID: 42562 RVA: 0x003DE9D8 File Offset: 0x003DCBD8
+	// Token: 0x17001398 RID: 5016
+	// (get) Token: 0x0600A73E RID: 42814 RVA: 0x003E3D08 File Offset: 0x003E1F08
+	// (set) Token: 0x0600A73F RID: 42815 RVA: 0x003E3D18 File Offset: 0x003E1F18
 	public bool Disposed
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -24,25 +24,25 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		}
 	}
 
-	// Token: 0x0600A643 RID: 42563 RVA: 0x003DE9EC File Offset: 0x003DCBEC
+	// Token: 0x0600A740 RID: 42816 RVA: 0x003E3D2C File Offset: 0x003E1F2C
 	public TList()
 	{
 		this.m_TList = new List<T>();
 	}
 
-	// Token: 0x0600A644 RID: 42564 RVA: 0x003DEA0A File Offset: 0x003DCC0A
+	// Token: 0x0600A741 RID: 42817 RVA: 0x003E3D4A File Offset: 0x003E1F4A
 	public TList(int capacity)
 	{
 		this.m_TList = new List<T>(capacity);
 	}
 
-	// Token: 0x0600A645 RID: 42565 RVA: 0x003DEA29 File Offset: 0x003DCC29
+	// Token: 0x0600A742 RID: 42818 RVA: 0x003E3D69 File Offset: 0x003E1F69
 	public TList(IEnumerable<T> collection)
 	{
 		this.m_TList = new List<T>(collection);
 	}
 
-	// Token: 0x0600A646 RID: 42566 RVA: 0x003DEA48 File Offset: 0x003DCC48
+	// Token: 0x0600A743 RID: 42819 RVA: 0x003E3D88 File Offset: 0x003E1F88
 	public IEnumerator GetEnumerator()
 	{
 		this.LockList.EnterReadLock();
@@ -64,7 +64,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		yield break;
 	}
 
-	// Token: 0x0600A647 RID: 42567 RVA: 0x003DEA57 File Offset: 0x003DCC57
+	// Token: 0x0600A744 RID: 42820 RVA: 0x003E3D97 File Offset: 0x003E1F97
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator<T> System.Collections.Generic.IEnumerable<T>.GetEnumerator()
 	{
@@ -87,14 +87,14 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		yield break;
 	}
 
-	// Token: 0x0600A648 RID: 42568 RVA: 0x003DEA66 File Offset: 0x003DCC66
+	// Token: 0x0600A745 RID: 42821 RVA: 0x003E3DA6 File Offset: 0x003E1FA6
 	public void Dispose()
 	{
 		this.Dispose(true);
 		GC.SuppressFinalize(this);
 	}
 
-	// Token: 0x0600A649 RID: 42569 RVA: 0x003DEA75 File Offset: 0x003DCC75
+	// Token: 0x0600A746 RID: 42822 RVA: 0x003E3DB5 File Offset: 0x003E1FB5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Dispose(bool disposing)
 	{
@@ -105,14 +105,14 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		this.Disposed = true;
 	}
 
-	// Token: 0x0600A64A RID: 42570 RVA: 0x003DEA8C File Offset: 0x003DCC8C
+	// Token: 0x0600A747 RID: 42823 RVA: 0x003E3DCC File Offset: 0x003E1FCC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ~TList()
 	{
 		this.Dispose(false);
 	}
 
-	// Token: 0x0600A64B RID: 42571 RVA: 0x003DEABC File Offset: 0x003DCCBC
+	// Token: 0x0600A748 RID: 42824 RVA: 0x003E3DFC File Offset: 0x003E1FFC
 	public void Add(T item)
 	{
 		this.LockList.EnterWriteLock();
@@ -126,7 +126,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		}
 	}
 
-	// Token: 0x0600A64C RID: 42572 RVA: 0x003DEB00 File Offset: 0x003DCD00
+	// Token: 0x0600A749 RID: 42825 RVA: 0x003E3E40 File Offset: 0x003E2040
 	public void AddRange(IEnumerable<T> collection)
 	{
 		this.LockList.EnterWriteLock();
@@ -140,7 +140,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		}
 	}
 
-	// Token: 0x0600A64D RID: 42573 RVA: 0x003DEB44 File Offset: 0x003DCD44
+	// Token: 0x0600A74A RID: 42826 RVA: 0x003E3E84 File Offset: 0x003E2084
 	public bool AddIfNotExist(T item)
 	{
 		this.LockList.EnterWriteLock();
@@ -164,7 +164,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return flag;
 	}
 
-	// Token: 0x0600A64E RID: 42574 RVA: 0x003DEB9C File Offset: 0x003DCD9C
+	// Token: 0x0600A74B RID: 42827 RVA: 0x003E3EDC File Offset: 0x003E20DC
 	public ReadOnlyCollection<T> AsReadOnly()
 	{
 		this.LockList.EnterReadLock();
@@ -180,7 +180,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return readOnlyCollection;
 	}
 
-	// Token: 0x0600A64F RID: 42575 RVA: 0x003DEBE0 File Offset: 0x003DCDE0
+	// Token: 0x0600A74C RID: 42828 RVA: 0x003E3F20 File Offset: 0x003E2120
 	public int BinarySearch(T item)
 	{
 		this.LockList.EnterReadLock();
@@ -196,7 +196,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return num;
 	}
 
-	// Token: 0x0600A650 RID: 42576 RVA: 0x003DEC24 File Offset: 0x003DCE24
+	// Token: 0x0600A74D RID: 42829 RVA: 0x003E3F64 File Offset: 0x003E2164
 	public int BinarySearch(T item, IComparer<T> comparer)
 	{
 		this.LockList.EnterReadLock();
@@ -212,7 +212,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return num;
 	}
 
-	// Token: 0x0600A651 RID: 42577 RVA: 0x003DEC6C File Offset: 0x003DCE6C
+	// Token: 0x0600A74E RID: 42830 RVA: 0x003E3FAC File Offset: 0x003E21AC
 	public int BinarySearch(int index, int count, T item, IComparer<T> comparer)
 	{
 		this.LockList.EnterReadLock();
@@ -228,9 +228,9 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return num;
 	}
 
-	// Token: 0x17001360 RID: 4960
-	// (get) Token: 0x0600A652 RID: 42578 RVA: 0x003DECB4 File Offset: 0x003DCEB4
-	// (set) Token: 0x0600A653 RID: 42579 RVA: 0x003DECF8 File Offset: 0x003DCEF8
+	// Token: 0x17001399 RID: 5017
+	// (get) Token: 0x0600A74F RID: 42831 RVA: 0x003E3FF4 File Offset: 0x003E21F4
+	// (set) Token: 0x0600A750 RID: 42832 RVA: 0x003E4038 File Offset: 0x003E2238
 	public int Capacity
 	{
 		get
@@ -261,7 +261,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		}
 	}
 
-	// Token: 0x0600A654 RID: 42580 RVA: 0x003DED3C File Offset: 0x003DCF3C
+	// Token: 0x0600A751 RID: 42833 RVA: 0x003E407C File Offset: 0x003E227C
 	public void Clear()
 	{
 		this.LockList.EnterReadLock();
@@ -275,7 +275,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		}
 	}
 
-	// Token: 0x0600A655 RID: 42581 RVA: 0x003DED80 File Offset: 0x003DCF80
+	// Token: 0x0600A752 RID: 42834 RVA: 0x003E40C0 File Offset: 0x003E22C0
 	public bool Contains(T item)
 	{
 		this.LockList.EnterReadLock();
@@ -291,7 +291,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return flag;
 	}
 
-	// Token: 0x0600A656 RID: 42582 RVA: 0x003DEDC4 File Offset: 0x003DCFC4
+	// Token: 0x0600A753 RID: 42835 RVA: 0x003E4104 File Offset: 0x003E2304
 	public List<TOutput> ConvertAll<TOutput>(Converter<T, TOutput> converter)
 	{
 		this.LockList.EnterReadLock();
@@ -307,7 +307,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return list;
 	}
 
-	// Token: 0x0600A657 RID: 42583 RVA: 0x003DEE08 File Offset: 0x003DD008
+	// Token: 0x0600A754 RID: 42836 RVA: 0x003E4148 File Offset: 0x003E2348
 	public void CopyTo(T[] array, int arrayIndex)
 	{
 		this.LockList.EnterReadLock();
@@ -321,8 +321,8 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		}
 	}
 
-	// Token: 0x17001361 RID: 4961
-	// (get) Token: 0x0600A658 RID: 42584 RVA: 0x003DEE4C File Offset: 0x003DD04C
+	// Token: 0x1700139A RID: 5018
+	// (get) Token: 0x0600A755 RID: 42837 RVA: 0x003E418C File Offset: 0x003E238C
 	public int Count
 	{
 		get
@@ -341,7 +341,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		}
 	}
 
-	// Token: 0x0600A659 RID: 42585 RVA: 0x003DEE90 File Offset: 0x003DD090
+	// Token: 0x0600A756 RID: 42838 RVA: 0x003E41D0 File Offset: 0x003E23D0
 	public bool Exists(Predicate<T> match)
 	{
 		this.LockList.EnterReadLock();
@@ -357,7 +357,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return flag;
 	}
 
-	// Token: 0x0600A65A RID: 42586 RVA: 0x003DEED4 File Offset: 0x003DD0D4
+	// Token: 0x0600A757 RID: 42839 RVA: 0x003E4214 File Offset: 0x003E2414
 	public T Find(Predicate<T> match)
 	{
 		this.LockList.EnterReadLock();
@@ -373,7 +373,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return t;
 	}
 
-	// Token: 0x0600A65B RID: 42587 RVA: 0x003DEF18 File Offset: 0x003DD118
+	// Token: 0x0600A758 RID: 42840 RVA: 0x003E4258 File Offset: 0x003E2458
 	public List<T> FindAll(Predicate<T> match)
 	{
 		this.LockList.EnterReadLock();
@@ -389,7 +389,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return list;
 	}
 
-	// Token: 0x0600A65C RID: 42588 RVA: 0x003DEF5C File Offset: 0x003DD15C
+	// Token: 0x0600A759 RID: 42841 RVA: 0x003E429C File Offset: 0x003E249C
 	public int FindIndex(Predicate<T> match)
 	{
 		this.LockList.EnterReadLock();
@@ -405,7 +405,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return num;
 	}
 
-	// Token: 0x0600A65D RID: 42589 RVA: 0x003DEFA0 File Offset: 0x003DD1A0
+	// Token: 0x0600A75A RID: 42842 RVA: 0x003E42E0 File Offset: 0x003E24E0
 	public int FindIndex(int startIndex, Predicate<T> match)
 	{
 		this.LockList.EnterReadLock();
@@ -421,7 +421,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return num;
 	}
 
-	// Token: 0x0600A65E RID: 42590 RVA: 0x003DEFE8 File Offset: 0x003DD1E8
+	// Token: 0x0600A75B RID: 42843 RVA: 0x003E4328 File Offset: 0x003E2528
 	public int FindIndex(int startIndex, int count, Predicate<T> match)
 	{
 		this.LockList.EnterReadLock();
@@ -437,7 +437,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return num;
 	}
 
-	// Token: 0x0600A65F RID: 42591 RVA: 0x003DF030 File Offset: 0x003DD230
+	// Token: 0x0600A75C RID: 42844 RVA: 0x003E4370 File Offset: 0x003E2570
 	public T FindLast(Predicate<T> match)
 	{
 		this.LockList.EnterReadLock();
@@ -453,7 +453,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return t;
 	}
 
-	// Token: 0x0600A660 RID: 42592 RVA: 0x003DF074 File Offset: 0x003DD274
+	// Token: 0x0600A75D RID: 42845 RVA: 0x003E43B4 File Offset: 0x003E25B4
 	public int FindLastIndex(Predicate<T> match)
 	{
 		this.LockList.EnterReadLock();
@@ -469,7 +469,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return num;
 	}
 
-	// Token: 0x0600A661 RID: 42593 RVA: 0x003DF0B8 File Offset: 0x003DD2B8
+	// Token: 0x0600A75E RID: 42846 RVA: 0x003E43F8 File Offset: 0x003E25F8
 	public int FindLastIndex(int startIndex, Predicate<T> match)
 	{
 		this.LockList.EnterReadLock();
@@ -485,7 +485,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return num;
 	}
 
-	// Token: 0x0600A662 RID: 42594 RVA: 0x003DF100 File Offset: 0x003DD300
+	// Token: 0x0600A75F RID: 42847 RVA: 0x003E4440 File Offset: 0x003E2640
 	public int FindLastIndex(int startIndex, int count, Predicate<T> match)
 	{
 		this.LockList.EnterReadLock();
@@ -501,7 +501,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return num;
 	}
 
-	// Token: 0x0600A663 RID: 42595 RVA: 0x003DF148 File Offset: 0x003DD348
+	// Token: 0x0600A760 RID: 42848 RVA: 0x003E4488 File Offset: 0x003E2688
 	public void ForEach(Action<T> action)
 	{
 		this.LockList.EnterWriteLock();
@@ -515,7 +515,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		}
 	}
 
-	// Token: 0x0600A664 RID: 42596 RVA: 0x003DF18C File Offset: 0x003DD38C
+	// Token: 0x0600A761 RID: 42849 RVA: 0x003E44CC File Offset: 0x003E26CC
 	public List<T> GetRange(int index, int count)
 	{
 		this.LockList.EnterReadLock();
@@ -531,7 +531,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return range;
 	}
 
-	// Token: 0x0600A665 RID: 42597 RVA: 0x003DF1D4 File Offset: 0x003DD3D4
+	// Token: 0x0600A762 RID: 42850 RVA: 0x003E4514 File Offset: 0x003E2714
 	public int IndexOf(T item)
 	{
 		this.LockList.EnterReadLock();
@@ -547,7 +547,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return num;
 	}
 
-	// Token: 0x0600A666 RID: 42598 RVA: 0x003DF218 File Offset: 0x003DD418
+	// Token: 0x0600A763 RID: 42851 RVA: 0x003E4558 File Offset: 0x003E2758
 	public int IndexOf(T item, int index)
 	{
 		this.LockList.EnterReadLock();
@@ -563,7 +563,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return num;
 	}
 
-	// Token: 0x0600A667 RID: 42599 RVA: 0x003DF260 File Offset: 0x003DD460
+	// Token: 0x0600A764 RID: 42852 RVA: 0x003E45A0 File Offset: 0x003E27A0
 	public int IndexOf(T item, int index, int count)
 	{
 		this.LockList.EnterReadLock();
@@ -579,7 +579,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return num;
 	}
 
-	// Token: 0x0600A668 RID: 42600 RVA: 0x003DF2A8 File Offset: 0x003DD4A8
+	// Token: 0x0600A765 RID: 42853 RVA: 0x003E45E8 File Offset: 0x003E27E8
 	public void Insert(int index, T item)
 	{
 		this.LockList.ExitWriteLock();
@@ -593,7 +593,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		}
 	}
 
-	// Token: 0x0600A669 RID: 42601 RVA: 0x003DF2EC File Offset: 0x003DD4EC
+	// Token: 0x0600A766 RID: 42854 RVA: 0x003E462C File Offset: 0x003E282C
 	public void InsertRange(int index, IEnumerable<T> range)
 	{
 		this.LockList.EnterWriteLock();
@@ -607,8 +607,8 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		}
 	}
 
-	// Token: 0x17001362 RID: 4962
-	// (get) Token: 0x0600A66A RID: 42602 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x1700139B RID: 5019
+	// (get) Token: 0x0600A767 RID: 42855 RVA: 0x00010E62 File Offset: 0x0000F062
 	public bool IsReadOnly
 	{
 		get
@@ -617,7 +617,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		}
 	}
 
-	// Token: 0x0600A66B RID: 42603 RVA: 0x003DF330 File Offset: 0x003DD530
+	// Token: 0x0600A768 RID: 42856 RVA: 0x003E4670 File Offset: 0x003E2870
 	public int LastIndexOf(T item)
 	{
 		this.LockList.EnterReadLock();
@@ -633,7 +633,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return num;
 	}
 
-	// Token: 0x0600A66C RID: 42604 RVA: 0x003DF374 File Offset: 0x003DD574
+	// Token: 0x0600A769 RID: 42857 RVA: 0x003E46B4 File Offset: 0x003E28B4
 	public int LastIndexOf(T item, int index)
 	{
 		this.LockList.EnterReadLock();
@@ -649,7 +649,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return num;
 	}
 
-	// Token: 0x0600A66D RID: 42605 RVA: 0x003DF3BC File Offset: 0x003DD5BC
+	// Token: 0x0600A76A RID: 42858 RVA: 0x003E46FC File Offset: 0x003E28FC
 	public int LastIndexOf(T item, int index, int count)
 	{
 		this.LockList.EnterReadLock();
@@ -665,7 +665,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return num;
 	}
 
-	// Token: 0x0600A66E RID: 42606 RVA: 0x003DF404 File Offset: 0x003DD604
+	// Token: 0x0600A76B RID: 42859 RVA: 0x003E4744 File Offset: 0x003E2944
 	public bool Remove(T item)
 	{
 		this.LockList.EnterWriteLock();
@@ -681,7 +681,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return flag;
 	}
 
-	// Token: 0x0600A66F RID: 42607 RVA: 0x003DF448 File Offset: 0x003DD648
+	// Token: 0x0600A76C RID: 42860 RVA: 0x003E4788 File Offset: 0x003E2988
 	public int RemoveAll(Predicate<T> match)
 	{
 		this.LockList.EnterWriteLock();
@@ -697,7 +697,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return num;
 	}
 
-	// Token: 0x0600A670 RID: 42608 RVA: 0x003DF48C File Offset: 0x003DD68C
+	// Token: 0x0600A76D RID: 42861 RVA: 0x003E47CC File Offset: 0x003E29CC
 	public void RemoveAt(int index)
 	{
 		this.LockList.EnterWriteLock();
@@ -711,7 +711,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		}
 	}
 
-	// Token: 0x0600A671 RID: 42609 RVA: 0x003DF4D0 File Offset: 0x003DD6D0
+	// Token: 0x0600A76E RID: 42862 RVA: 0x003E4810 File Offset: 0x003E2A10
 	public void RemoveRange(int index, int count)
 	{
 		this.LockList.EnterWriteLock();
@@ -725,7 +725,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		}
 	}
 
-	// Token: 0x0600A672 RID: 42610 RVA: 0x003DF514 File Offset: 0x003DD714
+	// Token: 0x0600A76F RID: 42863 RVA: 0x003E4854 File Offset: 0x003E2A54
 	public void Reverse()
 	{
 		this.LockList.EnterWriteLock();
@@ -739,7 +739,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		}
 	}
 
-	// Token: 0x0600A673 RID: 42611 RVA: 0x003DF558 File Offset: 0x003DD758
+	// Token: 0x0600A770 RID: 42864 RVA: 0x003E4898 File Offset: 0x003E2A98
 	public void Reverse(int index, int count)
 	{
 		this.LockList.EnterWriteLock();
@@ -753,7 +753,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		}
 	}
 
-	// Token: 0x0600A674 RID: 42612 RVA: 0x003DF59C File Offset: 0x003DD79C
+	// Token: 0x0600A771 RID: 42865 RVA: 0x003E48DC File Offset: 0x003E2ADC
 	public void Sort()
 	{
 		this.LockList.EnterWriteLock();
@@ -767,7 +767,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		}
 	}
 
-	// Token: 0x0600A675 RID: 42613 RVA: 0x003DF5E0 File Offset: 0x003DD7E0
+	// Token: 0x0600A772 RID: 42866 RVA: 0x003E4920 File Offset: 0x003E2B20
 	public void Sort(Comparison<T> comparison)
 	{
 		this.LockList.EnterWriteLock();
@@ -781,7 +781,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		}
 	}
 
-	// Token: 0x0600A676 RID: 42614 RVA: 0x003DF624 File Offset: 0x003DD824
+	// Token: 0x0600A773 RID: 42867 RVA: 0x003E4964 File Offset: 0x003E2B64
 	public void Sort(IComparer<T> comparer)
 	{
 		this.LockList.EnterWriteLock();
@@ -795,7 +795,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		}
 	}
 
-	// Token: 0x0600A677 RID: 42615 RVA: 0x003DF668 File Offset: 0x003DD868
+	// Token: 0x0600A774 RID: 42868 RVA: 0x003E49A8 File Offset: 0x003E2BA8
 	public void Sort(int index, int count, IComparer<T> comparer)
 	{
 		this.LockList.EnterWriteLock();
@@ -809,7 +809,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		}
 	}
 
-	// Token: 0x0600A678 RID: 42616 RVA: 0x003DF6AC File Offset: 0x003DD8AC
+	// Token: 0x0600A775 RID: 42869 RVA: 0x003E49EC File Offset: 0x003E2BEC
 	public T[] ToArray()
 	{
 		this.LockList.EnterReadLock();
@@ -825,7 +825,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return array;
 	}
 
-	// Token: 0x0600A679 RID: 42617 RVA: 0x003DF6F0 File Offset: 0x003DD8F0
+	// Token: 0x0600A776 RID: 42870 RVA: 0x003E4A30 File Offset: 0x003E2C30
 	public void TrimExcess()
 	{
 		this.LockList.EnterWriteLock();
@@ -839,7 +839,7 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		}
 	}
 
-	// Token: 0x0600A67A RID: 42618 RVA: 0x003DF734 File Offset: 0x003DD934
+	// Token: 0x0600A777 RID: 42871 RVA: 0x003E4A74 File Offset: 0x003E2C74
 	public bool TrueForAll(Predicate<T> match)
 	{
 		this.LockList.EnterWriteLock();
@@ -855,15 +855,15 @@ public class TList<T> : ICollection<T>, IEnumerable<T>, IEnumerable
 		return flag;
 	}
 
-	// Token: 0x04007B4E RID: 31566
+	// Token: 0x04007C27 RID: 31783
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<T> m_TList;
 
-	// Token: 0x04007B4F RID: 31567
+	// Token: 0x04007C28 RID: 31784
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ReaderWriterLockSlim LockList = new ReaderWriterLockSlim();
 
-	// Token: 0x04007B50 RID: 31568
+	// Token: 0x04007C29 RID: 31785
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_Disposed;
 }

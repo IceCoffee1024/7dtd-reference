@@ -3,11 +3,11 @@ using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020001A4 RID: 420
+// Token: 0x020001A6 RID: 422
 [Preserve]
 public class BlockShapeCube : BlockShape
 {
-	// Token: 0x06000CB5 RID: 3253 RVA: 0x0004FAEB File Offset: 0x0004DCEB
+	// Token: 0x06000CC0 RID: 3264 RVA: 0x0004FF03 File Offset: 0x0004E103
 	public BlockShapeCube()
 	{
 		this.IsSolidCube = true;
@@ -15,7 +15,7 @@ public class BlockShapeCube : BlockShape
 		this.IsRotatable = true;
 	}
 
-	// Token: 0x06000CB6 RID: 3254 RVA: 0x0004FB14 File Offset: 0x0004DD14
+	// Token: 0x06000CC1 RID: 3265 RVA: 0x0004FF2C File Offset: 0x0004E12C
 	public override void renderFace(Vector3i _worldPos, BlockValue _blockValue, Vector3 _drawPos, BlockFace _face, Vector3[] _vertices, LightingAround _lightingAround, TextureFullArray _textureFullArray, VoxelMesh[] _meshes, BlockShape.MeshPurpose _purpose = BlockShape.MeshPurpose.World)
 	{
 		byte meshIndex = _blockValue.Block.MeshIndex;
@@ -29,7 +29,7 @@ public class BlockShapeCube : BlockShape
 		}
 	}
 
-	// Token: 0x06000CB7 RID: 3255 RVA: 0x0004FC18 File Offset: 0x0004DE18
+	// Token: 0x06000CC2 RID: 3266 RVA: 0x00050030 File Offset: 0x0004E230
 	public override void renderFull(Vector3i _worldPos, BlockValue _blockValue, Vector3 _drawPos, Vector3[] _vertices, LightingAround _lightingAround, TextureFullArray _textureFullArray, VoxelMesh[] _meshes, BlockShape.MeshPurpose _purpose = BlockShape.MeshPurpose.World)
 	{
 		byte sun = _lightingAround[LightingAround.Pos.Middle].sun;
@@ -66,7 +66,7 @@ public class BlockShapeCube : BlockShape
 		voxelMesh.AddBlockSide(this.v[4], this.v[7], this.v[3], this.v[0], _blockValue, VoxelMesh.COLOR_BOTTOM, BlockFace.Bottom, sun, block, (int)meshIndex);
 	}
 
-	// Token: 0x06000CB8 RID: 3256 RVA: 0x00050105 File Offset: 0x0004E305
+	// Token: 0x06000CC3 RID: 3267 RVA: 0x0005051D File Offset: 0x0004E71D
 	public override int MapSideAndRotationToTextureIdx(BlockValue _blockValue, BlockFace _side)
 	{
 		if (_side == BlockFace.Bottom || _side == BlockFace.Top)
@@ -76,7 +76,7 @@ public class BlockShapeCube : BlockShape
 		return (int)(((_side - BlockFace.North + _blockValue.rotation) & 3) + 2);
 	}
 
-	// Token: 0x06000CB9 RID: 3257 RVA: 0x0005011F File Offset: 0x0004E31F
+	// Token: 0x06000CC4 RID: 3268 RVA: 0x00050537 File Offset: 0x0004E737
 	public override byte Rotate(bool _bLeft, int _rotation)
 	{
 		_rotation += (_bLeft ? (-1) : 1);
@@ -91,7 +91,7 @@ public class BlockShapeCube : BlockShape
 		return (byte)_rotation;
 	}
 
-	// Token: 0x06000CBA RID: 3258 RVA: 0x0005013C File Offset: 0x0004E33C
+	// Token: 0x06000CC5 RID: 3269 RVA: 0x00050554 File Offset: 0x0004E754
 	public override BlockValue RotateY(bool _bLeft, BlockValue _blockValue, int _rotCount)
 	{
 		for (int i = 0; i < _rotCount; i++)
@@ -135,7 +135,7 @@ public class BlockShapeCube : BlockShape
 		return _blockValue;
 	}
 
-	// Token: 0x06000CBB RID: 3259 RVA: 0x000501D4 File Offset: 0x0004E3D4
+	// Token: 0x06000CC6 RID: 3270 RVA: 0x000505EC File Offset: 0x0004E7EC
 	public override void CalculateCollisionHash(IncrementalHash calcHash)
 	{
 		int num = 1;
@@ -143,7 +143,7 @@ public class BlockShapeCube : BlockShape
 		calcHash.AppendDataNoAlloc(this.IsSolidCube);
 	}
 
-	// Token: 0x04000B5E RID: 2910
+	// Token: 0x04000B6B RID: 2923
 	public static readonly Vector3[] Cube = new Vector3[]
 	{
 		new Vector3(0f, 0f, 0f),
@@ -156,7 +156,7 @@ public class BlockShapeCube : BlockShape
 		new Vector3(1f, 0f, 1f)
 	};
 
-	// Token: 0x04000B5F RID: 2911
+	// Token: 0x04000B6C RID: 2924
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Vector3[] v = new Vector3[8];
 }

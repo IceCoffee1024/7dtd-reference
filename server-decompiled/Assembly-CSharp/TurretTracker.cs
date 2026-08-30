@@ -5,12 +5,12 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000C71 RID: 3185
+// Token: 0x02000C83 RID: 3203
 [Preserve]
 public class TurretTracker
 {
-	// Token: 0x17000A08 RID: 2568
-	// (get) Token: 0x060061CF RID: 25039 RVA: 0x00269586 File Offset: 0x00267786
+	// Token: 0x17000A1B RID: 2587
+	// (get) Token: 0x0600625A RID: 25178 RVA: 0x0026C45E File Offset: 0x0026A65E
 	public static TurretTracker Instance
 	{
 		get
@@ -19,14 +19,14 @@ public class TurretTracker
 		}
 	}
 
-	// Token: 0x060061D0 RID: 25040 RVA: 0x0026958D File Offset: 0x0026778D
+	// Token: 0x0600625B RID: 25179 RVA: 0x0026C465 File Offset: 0x0026A665
 	public static void Init()
 	{
 		TurretTracker.instance = new TurretTracker();
 		TurretTracker.instance.Load();
 	}
 
-	// Token: 0x060061D1 RID: 25041 RVA: 0x002695A4 File Offset: 0x002677A4
+	// Token: 0x0600625C RID: 25180 RVA: 0x0026C47C File Offset: 0x0026A67C
 	public void AddTrackedTurret(EntityTurret _turret)
 	{
 		if (!_turret)
@@ -45,7 +45,7 @@ public class TurretTracker
 		}
 	}
 
-	// Token: 0x060061D2 RID: 25042 RVA: 0x00269618 File Offset: 0x00267818
+	// Token: 0x0600625D RID: 25181 RVA: 0x0026C4F0 File Offset: 0x0026A6F0
 	public void RemoveTrackedTurret(EntityTurret _turret, EnumRemoveEntityReason _reason)
 	{
 		this.turretsActive.Remove(_turret);
@@ -57,13 +57,13 @@ public class TurretTracker
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageVehicleCount>().Setup(), false, -1, -1, -1, null, 192, false);
 	}
 
-	// Token: 0x060061D3 RID: 25043 RVA: 0x00269674 File Offset: 0x00267874
+	// Token: 0x0600625E RID: 25182 RVA: 0x0026C54C File Offset: 0x0026A74C
 	public void TriggerSave()
 	{
 		this.saveTime = Mathf.Min(this.saveTime, 10f);
 	}
 
-	// Token: 0x060061D4 RID: 25044 RVA: 0x0026968C File Offset: 0x0026788C
+	// Token: 0x0600625F RID: 25183 RVA: 0x0026C564 File Offset: 0x0026A764
 	public void Update()
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -87,7 +87,7 @@ public class TurretTracker
 		}
 	}
 
-	// Token: 0x060061D5 RID: 25045 RVA: 0x00269721 File Offset: 0x00267921
+	// Token: 0x06006260 RID: 25184 RVA: 0x0026C5F9 File Offset: 0x0026A7F9
 	public static void Cleanup()
 	{
 		if (TurretTracker.instance != null)
@@ -96,7 +96,7 @@ public class TurretTracker
 		}
 	}
 
-	// Token: 0x060061D6 RID: 25046 RVA: 0x00269734 File Offset: 0x00267934
+	// Token: 0x06006261 RID: 25185 RVA: 0x0026C60C File Offset: 0x0026A80C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SaveAndClear()
 	{
@@ -108,7 +108,7 @@ public class TurretTracker
 		TurretTracker.instance = null;
 	}
 
-	// Token: 0x060061D7 RID: 25047 RVA: 0x00269764 File Offset: 0x00267964
+	// Token: 0x06006262 RID: 25186 RVA: 0x0026C63C File Offset: 0x0026A83C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WaitOnSave()
 	{
@@ -119,7 +119,7 @@ public class TurretTracker
 		}
 	}
 
-	// Token: 0x060061D8 RID: 25048 RVA: 0x00269784 File Offset: 0x00267984
+	// Token: 0x06006263 RID: 25187 RVA: 0x0026C65C File Offset: 0x0026A85C
 	public void Load()
 	{
 		string text = string.Format("{0}/{1}", GameIO.GetSaveGameDir(), "turrets.dat");
@@ -160,7 +160,7 @@ public class TurretTracker
 		}
 	}
 
-	// Token: 0x060061D9 RID: 25049 RVA: 0x002698BC File Offset: 0x00267ABC
+	// Token: 0x06006264 RID: 25188 RVA: 0x0026C794 File Offset: 0x0026A994
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Save()
 	{
@@ -183,7 +183,7 @@ public class TurretTracker
 		}
 	}
 
-	// Token: 0x060061DA RID: 25050 RVA: 0x002699A8 File Offset: 0x00267BA8
+	// Token: 0x06006265 RID: 25189 RVA: 0x0026C880 File Offset: 0x0026AA80
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int SaveThread(ThreadManager.ThreadInfo _threadInfo)
 	{
@@ -204,7 +204,7 @@ public class TurretTracker
 		return -1;
 	}
 
-	// Token: 0x060061DB RID: 25051 RVA: 0x00269A3C File Offset: 0x00267C3C
+	// Token: 0x06006266 RID: 25190 RVA: 0x0026C914 File Offset: 0x0026AB14
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void read(PooledBinaryReader _br)
 	{
@@ -226,7 +226,7 @@ public class TurretTracker
 		}
 	}
 
-	// Token: 0x060061DC RID: 25052 RVA: 0x00269ADC File Offset: 0x00267CDC
+	// Token: 0x06006267 RID: 25191 RVA: 0x0026C9B4 File Offset: 0x0026ABB4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void write(PooledBinaryWriter _bw)
 	{
@@ -244,7 +244,7 @@ public class TurretTracker
 		}
 	}
 
-	// Token: 0x060061DD RID: 25053 RVA: 0x00269B48 File Offset: 0x00267D48
+	// Token: 0x06006268 RID: 25192 RVA: 0x0026CA20 File Offset: 0x0026AC20
 	public List<int> GetTurretsList()
 	{
 		List<int> list = new List<int>();
@@ -252,7 +252,7 @@ public class TurretTracker
 		return list;
 	}
 
-	// Token: 0x060061DE RID: 25054 RVA: 0x00269B64 File Offset: 0x00267D64
+	// Token: 0x06006269 RID: 25193 RVA: 0x0026CA3C File Offset: 0x0026AC3C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GetTurrets(List<int> _list)
 	{
@@ -266,7 +266,7 @@ public class TurretTracker
 		}
 	}
 
-	// Token: 0x060061DF RID: 25055 RVA: 0x00269BC6 File Offset: 0x00267DC6
+	// Token: 0x0600626A RID: 25194 RVA: 0x0026CA9E File Offset: 0x0026AC9E
 	public static int GetServerTurretCount()
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -276,7 +276,7 @@ public class TurretTracker
 		return TurretTracker.serverTurretCount;
 	}
 
-	// Token: 0x060061E0 RID: 25056 RVA: 0x00269BF9 File Offset: 0x00267DF9
+	// Token: 0x0600626B RID: 25195 RVA: 0x0026CAD1 File Offset: 0x0026ACD1
 	public static void SetServerTurretCount(int count)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -286,57 +286,57 @@ public class TurretTracker
 		TurretTracker.serverTurretCount = count;
 	}
 
-	// Token: 0x060061E1 RID: 25057 RVA: 0x00269C0E File Offset: 0x00267E0E
+	// Token: 0x0600626C RID: 25196 RVA: 0x0026CAE6 File Offset: 0x0026ACE6
 	public static bool CanAddMoreTurrets()
 	{
 		return !(DeviceFlag.XBoxSeriesS | DeviceFlag.XBoxSeriesX | DeviceFlag.PS5).IsCurrent() || TurretTracker.GetServerTurretCount() < 500;
 	}
 
-	// Token: 0x04004BF2 RID: 19442
+	// Token: 0x04004C8F RID: 19599
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cVersion = 1;
 
-	// Token: 0x04004BF3 RID: 19443
+	// Token: 0x04004C90 RID: 19600
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cSaveTime = 120f;
 
-	// Token: 0x04004BF4 RID: 19444
+	// Token: 0x04004C91 RID: 19601
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cChangeSaveDelay = 10f;
 
-	// Token: 0x04004BF5 RID: 19445
+	// Token: 0x04004C92 RID: 19602
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cMaxTurrets = 500;
 
-	// Token: 0x04004BF6 RID: 19446
+	// Token: 0x04004C93 RID: 19603
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int serverTurretCount;
 
-	// Token: 0x04004BF7 RID: 19447
+	// Token: 0x04004C94 RID: 19604
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<EntityTurret> turretsActive = new List<EntityTurret>();
 
-	// Token: 0x04004BF8 RID: 19448
+	// Token: 0x04004C95 RID: 19605
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<int> turretsUnloaded = new List<int>();
 
-	// Token: 0x04004BF9 RID: 19449
+	// Token: 0x04004C96 RID: 19606
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float saveTime = 120f;
 
-	// Token: 0x04004BFA RID: 19450
+	// Token: 0x04004C97 RID: 19607
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static TurretTracker instance;
 
-	// Token: 0x04004BFB RID: 19451
+	// Token: 0x04004C98 RID: 19608
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ThreadManager.ThreadInfo saveThread;
 
-	// Token: 0x04004BFC RID: 19452
+	// Token: 0x04004C99 RID: 19609
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cNameKey = "turrets";
 
-	// Token: 0x04004BFD RID: 19453
+	// Token: 0x04004C9A RID: 19610
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cThreadKey = "turretDataSave";
 }

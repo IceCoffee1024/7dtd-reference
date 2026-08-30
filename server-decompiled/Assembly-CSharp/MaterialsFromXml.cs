@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine;
 
-// Token: 0x02000D06 RID: 3334
+// Token: 0x02000D18 RID: 3352
 public class MaterialsFromXml
 {
-	// Token: 0x060065BF RID: 26047 RVA: 0x0027FA00 File Offset: 0x0027DC00
+	// Token: 0x0600664B RID: 26187 RVA: 0x00282910 File Offset: 0x00280B10
 	public static IEnumerator CreateMaterials(XmlFile _xmlFile)
 	{
 		XElement root = _xmlFile.XmlDoc.Root;

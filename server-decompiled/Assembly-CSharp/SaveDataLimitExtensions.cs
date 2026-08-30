@@ -1,15 +1,15 @@
 ﻿using System;
 
-// Token: 0x02000A01 RID: 2561
+// Token: 0x02000A12 RID: 2578
 public static class SaveDataLimitExtensions
 {
-	// Token: 0x06004CEF RID: 19695 RVA: 0x001D8560 File Offset: 0x001D6760
+	// Token: 0x06004D75 RID: 19829 RVA: 0x001DAFF8 File Offset: 0x001D91F8
 	public static bool IsSupported(this SaveDataLimitType saveDataLimitType)
 	{
 		return !PlatformOptimizations.LimitedSaveData || saveDataLimitType > SaveDataLimitType.Unlimited;
 	}
 
-	// Token: 0x06004CF0 RID: 19696 RVA: 0x001D8570 File Offset: 0x001D6770
+	// Token: 0x06004D76 RID: 19830 RVA: 0x001DB008 File Offset: 0x001D9208
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static long GetRegionSizeLimit(this SaveDataLimitType saveDataLimitType)
 	{
@@ -41,7 +41,7 @@ public static class SaveDataLimitExtensions
 		return num;
 	}
 
-	// Token: 0x06004CF1 RID: 19697 RVA: 0x001D8604 File Offset: 0x001D6804
+	// Token: 0x06004D77 RID: 19831 RVA: 0x001DB09C File Offset: 0x001D929C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool TryGetSaveDataLimitType(long regionLimit, out SaveDataLimitType saveDataLimitType)
 	{
@@ -62,7 +62,7 @@ public static class SaveDataLimitExtensions
 		return false;
 	}
 
-	// Token: 0x06004CF2 RID: 19698 RVA: 0x001D867C File Offset: 0x001D687C
+	// Token: 0x06004D78 RID: 19832 RVA: 0x001DB114 File Offset: 0x001D9314
 	public static long CalculateTotalSize(this SaveDataLimitType saveDataLimitType, Vector2i worldSize)
 	{
 		if (!saveDataLimitType.IsSupported())
@@ -78,18 +78,18 @@ public static class SaveDataLimitExtensions
 		return 104857600L + num + regionSizeLimit;
 	}
 
-	// Token: 0x06004CF3 RID: 19699 RVA: 0x001D86D8 File Offset: 0x001D68D8
+	// Token: 0x06004D79 RID: 19833 RVA: 0x001DB170 File Offset: 0x001D9370
 	public static bool TryCalculateSaveDataLimitType(long reservedBytes, Vector2i worldSize, out SaveDataLimitType saveDataLimitType)
 	{
 		long num = SaveDataLimitUtils.CalculatePlayerMapSize(worldSize);
 		return SaveDataLimitExtensions.TryGetSaveDataLimitType(reservedBytes - 104857600L - num, out saveDataLimitType);
 	}
 
-	// Token: 0x04003B87 RID: 15239
+	// Token: 0x04003C18 RID: 15384
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const long MB = 1048576L;
 
-	// Token: 0x04003B88 RID: 15240
+	// Token: 0x04003C19 RID: 15385
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const long FLAT_OVERHEAD = 104857600L;
 }

@@ -2,17 +2,17 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x020012A7 RID: 4775
+// Token: 0x020012C1 RID: 4801
 public class ReflectiveWater : MonoBehaviour
 {
-	// Token: 0x0600975C RID: 38748 RVA: 0x003969C8 File Offset: 0x00394BC8
+	// Token: 0x06009857 RID: 38999 RVA: 0x0039BC0C File Offset: 0x00399E0C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Awake()
 	{
 		this.gameManager = global::UnityEngine.Object.FindAnyObjectByType<GameManager>();
 	}
 
-	// Token: 0x0600975D RID: 38749 RVA: 0x003969D8 File Offset: 0x00394BD8
+	// Token: 0x06009858 RID: 39000 RVA: 0x0039BC1C File Offset: 0x00399E1C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnPreRender()
 	{
@@ -75,7 +75,7 @@ public class ReflectiveWater : MonoBehaviour
 		ReflectiveWater.s_InsideWater = false;
 	}
 
-	// Token: 0x0600975E RID: 38750 RVA: 0x00396B8C File Offset: 0x00394D8C
+	// Token: 0x06009859 RID: 39001 RVA: 0x0039BDD0 File Offset: 0x00399FD0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnDisable()
 	{
@@ -101,7 +101,7 @@ public class ReflectiveWater : MonoBehaviour
 		this.m_RefractionCameras.Clear();
 	}
 
-	// Token: 0x0600975F RID: 38751 RVA: 0x00396CA0 File Offset: 0x00394EA0
+	// Token: 0x0600985A RID: 39002 RVA: 0x0039BEE4 File Offset: 0x0039A0E4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Update()
 	{
@@ -130,7 +130,7 @@ public class ReflectiveWater : MonoBehaviour
 		MeshDescription.meshes[1].material.SetVector("_WaveScale4", vector2);
 	}
 
-	// Token: 0x06009760 RID: 38752 RVA: 0x00396E24 File Offset: 0x00395024
+	// Token: 0x0600985B RID: 39003 RVA: 0x0039C068 File Offset: 0x0039A268
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateCameraModes(Camera src, Camera dest)
 	{
@@ -162,7 +162,7 @@ public class ReflectiveWater : MonoBehaviour
 		dest.orthographicSize = src.orthographicSize;
 	}
 
-	// Token: 0x06009761 RID: 38753 RVA: 0x00396F04 File Offset: 0x00395104
+	// Token: 0x0600985C RID: 39004 RVA: 0x0039C148 File Offset: 0x0039A348
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CreateWaterObjects(Camera currentCamera, out Camera reflectionCamera, out Camera refractionCamera)
 	{
@@ -202,7 +202,7 @@ public class ReflectiveWater : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009762 RID: 38754 RVA: 0x00397088 File Offset: 0x00395288
+	// Token: 0x0600985D RID: 39005 RVA: 0x0039C2CC File Offset: 0x0039A4CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ReflectiveWater.WaterMode GetWaterMode()
 	{
@@ -213,7 +213,7 @@ public class ReflectiveWater : MonoBehaviour
 		return this.m_WaterMode;
 	}
 
-	// Token: 0x06009763 RID: 38755 RVA: 0x003970A8 File Offset: 0x003952A8
+	// Token: 0x0600985E RID: 39006 RVA: 0x0039C2EC File Offset: 0x0039A4EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ReflectiveWater.WaterMode FindHardwareWaterSupport()
 	{
@@ -238,7 +238,7 @@ public class ReflectiveWater : MonoBehaviour
 		return ReflectiveWater.WaterMode.Simple;
 	}
 
-	// Token: 0x06009764 RID: 38756 RVA: 0x00397106 File Offset: 0x00395306
+	// Token: 0x0600985F RID: 39007 RVA: 0x0039C34A File Offset: 0x0039A54A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float sgn(float a)
 	{
@@ -253,7 +253,7 @@ public class ReflectiveWater : MonoBehaviour
 		return 0f;
 	}
 
-	// Token: 0x06009765 RID: 38757 RVA: 0x0039712C File Offset: 0x0039532C
+	// Token: 0x06009860 RID: 39008 RVA: 0x0039C370 File Offset: 0x0039A570
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector4 CameraSpacePlane(Camera cam, Vector3 pos, Vector3 normal, float sideSign)
 	{
@@ -264,7 +264,7 @@ public class ReflectiveWater : MonoBehaviour
 		return new Vector4(vector3.x, vector3.y, vector3.z, -Vector3.Dot(vector2, vector3));
 	}
 
-	// Token: 0x06009766 RID: 38758 RVA: 0x00397194 File Offset: 0x00395394
+	// Token: 0x06009861 RID: 39009 RVA: 0x0039C3D8 File Offset: 0x0039A5D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void CalculateObliqueMatrix(ref Matrix4x4 projection, Vector4 clipPlane)
 	{
@@ -276,7 +276,7 @@ public class ReflectiveWater : MonoBehaviour
 		projection[14] = vector2.w - projection[15];
 	}
 
-	// Token: 0x06009767 RID: 38759 RVA: 0x00397240 File Offset: 0x00395440
+	// Token: 0x06009862 RID: 39010 RVA: 0x0039C484 File Offset: 0x0039A684
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void CalculateReflectionMatrix(ref Matrix4x4 reflectionMat, Vector4 plane)
 	{
@@ -298,72 +298,72 @@ public class ReflectiveWater : MonoBehaviour
 		reflectionMat.m33 = 1f;
 	}
 
-	// Token: 0x04007198 RID: 29080
+	// Token: 0x0400726F RID: 29295
 	public ReflectiveWater.WaterMode m_WaterMode = ReflectiveWater.WaterMode.Refractive;
 
-	// Token: 0x04007199 RID: 29081
+	// Token: 0x04007270 RID: 29296
 	public bool m_DisablePixelLights = true;
 
-	// Token: 0x0400719A RID: 29082
+	// Token: 0x04007271 RID: 29297
 	public int m_TextureSize = 256;
 
-	// Token: 0x0400719B RID: 29083
+	// Token: 0x04007272 RID: 29298
 	public float m_ClipPlaneOffset = 0.07f;
 
-	// Token: 0x0400719C RID: 29084
+	// Token: 0x04007273 RID: 29299
 	public LayerMask m_ReflectLayers = -1;
 
-	// Token: 0x0400719D RID: 29085
+	// Token: 0x04007274 RID: 29300
 	public LayerMask m_RefractLayers = -1;
 
-	// Token: 0x0400719E RID: 29086
+	// Token: 0x04007275 RID: 29301
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Hashtable m_ReflectionCameras = new Hashtable();
 
-	// Token: 0x0400719F RID: 29087
+	// Token: 0x04007276 RID: 29302
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Hashtable m_RefractionCameras = new Hashtable();
 
-	// Token: 0x040071A0 RID: 29088
+	// Token: 0x04007277 RID: 29303
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public RenderTexture m_ReflectionTexture;
 
-	// Token: 0x040071A1 RID: 29089
+	// Token: 0x04007278 RID: 29304
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public RenderTexture m_RefractionTexture;
 
-	// Token: 0x040071A2 RID: 29090
+	// Token: 0x04007279 RID: 29305
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public ReflectiveWater.WaterMode m_HardwareWaterSupport = ReflectiveWater.WaterMode.Refractive;
 
-	// Token: 0x040071A3 RID: 29091
+	// Token: 0x0400727A RID: 29306
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int m_OldReflectionTextureSize;
 
-	// Token: 0x040071A4 RID: 29092
+	// Token: 0x0400727B RID: 29307
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static bool s_InsideWater;
 
-	// Token: 0x040071A5 RID: 29093
+	// Token: 0x0400727C RID: 29308
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public GameManager gameManager;
 
-	// Token: 0x020012A8 RID: 4776
+	// Token: 0x020012C2 RID: 4802
 	public enum WaterMode
 	{
-		// Token: 0x040071A7 RID: 29095
+		// Token: 0x0400727E RID: 29310
 		Simple,
-		// Token: 0x040071A8 RID: 29096
+		// Token: 0x0400727F RID: 29311
 		Reflective,
-		// Token: 0x040071A9 RID: 29097
+		// Token: 0x04007280 RID: 29312
 		Refractive
 	}
 }

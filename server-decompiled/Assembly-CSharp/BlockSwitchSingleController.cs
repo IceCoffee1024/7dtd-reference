@@ -5,8 +5,8 @@ using UnityEngine;
 public class BlockSwitchSingleController : MonoBehaviour
 {
 	// Token: 0x17000067 RID: 103
-	// (get) Token: 0x06000614 RID: 1556 RVA: 0x0002B7CB File Offset: 0x000299CB
-	// (set) Token: 0x06000615 RID: 1557 RVA: 0x0002B7D3 File Offset: 0x000299D3
+	// (get) Token: 0x06000615 RID: 1557 RVA: 0x0002B88F File Offset: 0x00029A8F
+	// (set) Token: 0x06000616 RID: 1558 RVA: 0x0002B897 File Offset: 0x00029A97
 	public bool Activated
 	{
 		get
@@ -20,21 +20,21 @@ public class BlockSwitchSingleController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000616 RID: 1558 RVA: 0x0002B7E2 File Offset: 0x000299E2
+	// Token: 0x06000617 RID: 1559 RVA: 0x0002B8A6 File Offset: 0x00029AA6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
 		this.SetState();
 	}
 
-	// Token: 0x06000617 RID: 1559 RVA: 0x0002B7D3 File Offset: 0x000299D3
+	// Token: 0x06000618 RID: 1560 RVA: 0x0002B897 File Offset: 0x00029A97
 	public void SetState(bool _activated)
 	{
 		this.activated = _activated;
 		this.SetState();
 	}
 
-	// Token: 0x06000618 RID: 1560 RVA: 0x0002B7EA File Offset: 0x000299EA
+	// Token: 0x06000619 RID: 1561 RVA: 0x0002B8AE File Offset: 0x00029AAE
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void SetState()
 	{

@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000AE2 RID: 2786
+// Token: 0x02000AF4 RID: 2804
 [PublicizedFrom(EAccessModifier.Internal)]
 public class ChannelCalculator
 {
-	// Token: 0x06005301 RID: 21249 RVA: 0x001FBA03 File Offset: 0x001F9C03
+	// Token: 0x06005389 RID: 21385 RVA: 0x001FE673 File Offset: 0x001FC873
 	public ChannelCalculator(WorldBase _world)
 	{
 		this.world = _world;
 	}
 
-	// Token: 0x170008F8 RID: 2296
-	// (get) Token: 0x06005302 RID: 21250 RVA: 0x001FBA12 File Offset: 0x001F9C12
+	// Token: 0x1700090A RID: 2314
+	// (get) Token: 0x0600538A RID: 21386 RVA: 0x001FE682 File Offset: 0x001FC882
 	public static HashSet<Vector3i> list
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -26,8 +26,8 @@ public class ChannelCalculator
 		}
 	}
 
-	// Token: 0x170008F9 RID: 2297
-	// (get) Token: 0x06005303 RID: 21251 RVA: 0x001FBA2A File Offset: 0x001F9C2A
+	// Token: 0x1700090B RID: 2315
+	// (get) Token: 0x0600538B RID: 21387 RVA: 0x001FE69A File Offset: 0x001FC89A
 	public static List<Vector3i> list2
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -41,7 +41,7 @@ public class ChannelCalculator
 		}
 	}
 
-	// Token: 0x06005304 RID: 21252 RVA: 0x001FBA44 File Offset: 0x001F9C44
+	// Token: 0x0600538C RID: 21388 RVA: 0x001FE6B4 File Offset: 0x001FC8B4
 	public void BlockRemovedAt(Vector3i _pos, HashSet<Vector3i> _stab0Positions)
 	{
 		BlockValue block = this.world.GetBlock(_pos);
@@ -71,7 +71,7 @@ public class ChannelCalculator
 		}
 	}
 
-	// Token: 0x06005305 RID: 21253 RVA: 0x001FBB28 File Offset: 0x001F9D28
+	// Token: 0x0600538D RID: 21389 RVA: 0x001FE798 File Offset: 0x001FC998
 	public void BlockPlacedAt(Vector3i _pos, bool _isForceFullStab)
 	{
 		int num = 15;
@@ -125,7 +125,7 @@ public class ChannelCalculator
 		}
 	}
 
-	// Token: 0x06005306 RID: 21254 RVA: 0x001FBC90 File Offset: 0x001F9E90
+	// Token: 0x0600538E RID: 21390 RVA: 0x001FE900 File Offset: 0x001FCB00
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int getMaxStabilityAround(Vector3i _pos, out bool _bFromDownwards)
 	{
@@ -150,7 +150,7 @@ public class ChannelCalculator
 		return num;
 	}
 
-	// Token: 0x06005307 RID: 21255 RVA: 0x001FBD14 File Offset: 0x001F9F14
+	// Token: 0x0600538F RID: 21391 RVA: 0x001FE984 File Offset: 0x001FCB84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CalcChangedPositionsFromRemove(Vector3i _pos, List<Vector3i> _neighbors, HashSet<Vector3i> _stab0Positions, IChunk chunk = null)
 	{
@@ -192,7 +192,7 @@ public class ChannelCalculator
 		}
 	}
 
-	// Token: 0x06005308 RID: 21256 RVA: 0x001FBE58 File Offset: 0x001FA058
+	// Token: 0x06005390 RID: 21392 RVA: 0x001FEAC8 File Offset: 0x001FCCC8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsBlockSupportedByNeighbor(Vector3i _blockPos)
 	{
@@ -217,7 +217,7 @@ public class ChannelCalculator
 		return false;
 	}
 
-	// Token: 0x06005309 RID: 21257 RVA: 0x001FBF14 File Offset: 0x001FA114
+	// Token: 0x06005391 RID: 21393 RVA: 0x001FEB84 File Offset: 0x001FCD84
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ChangeStability(Vector3i _pos, int _stab, List<Vector3i> _changedPositions, HashSet<Vector3i> _stab0Positions = null, IChunk chunk = null)
 	{
@@ -264,16 +264,16 @@ public class ChannelCalculator
 		}
 	}
 
-	// Token: 0x040040B4 RID: 16564
+	// Token: 0x0400414A RID: 16714
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly WorldBase world;
 
-	// Token: 0x040040B5 RID: 16565
+	// Token: 0x0400414B RID: 16715
 	[ThreadStatic]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static HashSet<Vector3i> List;
 
-	// Token: 0x040040B6 RID: 16566
+	// Token: 0x0400414C RID: 16716
 	[ThreadStatic]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<Vector3i> List2;

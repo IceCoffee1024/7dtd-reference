@@ -3,17 +3,17 @@ using GamePath;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200042A RID: 1066
+// Token: 0x0200042E RID: 1070
 [Preserve]
 public class EAIApproachDistraction : EAIBase
 {
-	// Token: 0x060020C4 RID: 8388 RVA: 0x000C618D File Offset: 0x000C438D
+	// Token: 0x060020E1 RID: 8417 RVA: 0x000C6999 File Offset: 0x000C4B99
 	public EAIApproachDistraction()
 	{
 		this.MutexBits = 3;
 	}
 
-	// Token: 0x060020C5 RID: 8389 RVA: 0x000C619C File Offset: 0x000C439C
+	// Token: 0x060020E2 RID: 8418 RVA: 0x000C69A8 File Offset: 0x000C4BA8
 	public override bool CanExecute()
 	{
 		EntityItem pendingDistraction = this.theEntity.pendingDistraction;
@@ -37,7 +37,7 @@ public class EAIApproachDistraction : EAIBase
 		return true;
 	}
 
-	// Token: 0x060020C6 RID: 8390 RVA: 0x000C6238 File Offset: 0x000C4438
+	// Token: 0x060020E3 RID: 8419 RVA: 0x000C6A44 File Offset: 0x000C4C44
 	public override void Start()
 	{
 		this.theEntity.SetAttackTarget(null, 0);
@@ -48,7 +48,7 @@ public class EAIApproachDistraction : EAIBase
 		this.updatePath();
 	}
 
-	// Token: 0x060020C7 RID: 8391 RVA: 0x000C6290 File Offset: 0x000C4490
+	// Token: 0x060020E4 RID: 8420 RVA: 0x000C6A9C File Offset: 0x000C4C9C
 	public override bool Continue()
 	{
 		PathEntity path = this.theEntity.navigator.getPath();
@@ -60,7 +60,7 @@ public class EAIApproachDistraction : EAIBase
 		return !(distraction == null) && distraction.itemClass != null && (((this.theEntity.position - distraction.position).sqrMagnitude > 2.25f && (path == null || !path.isFinished())) || (distraction.itemClass.IsEatDistraction && distraction.IsDistractionActive));
 	}
 
-	// Token: 0x060020C8 RID: 8392 RVA: 0x000C6324 File Offset: 0x000C4524
+	// Token: 0x060020E5 RID: 8421 RVA: 0x000C6B30 File Offset: 0x000C4D30
 	public override void Update()
 	{
 		EntityItem distraction = this.theEntity.distraction;
@@ -104,7 +104,7 @@ public class EAIApproachDistraction : EAIBase
 		}
 	}
 
-	// Token: 0x060020C9 RID: 8393 RVA: 0x000C6430 File Offset: 0x000C4630
+	// Token: 0x060020E6 RID: 8422 RVA: 0x000C6C3C File Offset: 0x000C4E3C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updatePath()
 	{
@@ -116,7 +116,7 @@ public class EAIApproachDistraction : EAIBase
 		this.theEntity.FindPath(this.theEntity.distraction.position, this.theEntity.GetMoveSpeedAggro(), true, this);
 	}
 
-	// Token: 0x060020CA RID: 8394 RVA: 0x000C6490 File Offset: 0x000C4690
+	// Token: 0x060020E7 RID: 8423 RVA: 0x000C6C9C File Offset: 0x000C4E9C
 	public override void Reset()
 	{
 		this.theEntity.moveHelper.Stop();
@@ -126,19 +126,19 @@ public class EAIApproachDistraction : EAIBase
 		this.manager.lookTime = 2f;
 	}
 
-	// Token: 0x04001678 RID: 5752
+	// Token: 0x0400168D RID: 5773
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cCloseDist = 1.5f;
 
-	// Token: 0x04001679 RID: 5753
+	// Token: 0x0400168E RID: 5774
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cLookTime = 2f;
 
-	// Token: 0x0400167A RID: 5754
+	// Token: 0x0400168F RID: 5775
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hadPath;
 
-	// Token: 0x0400167B RID: 5755
+	// Token: 0x04001690 RID: 5776
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int pathRecalculateTicks;
 }

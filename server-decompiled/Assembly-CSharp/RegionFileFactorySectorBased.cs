@@ -1,21 +1,21 @@
 ﻿using System;
 
-// Token: 0x02000B92 RID: 2962
+// Token: 0x02000BA4 RID: 2980
 public class RegionFileFactorySectorBased : IRegionFilePlatformFactory
 {
-	// Token: 0x06005997 RID: 22935 RVA: 0x00226733 File Offset: 0x00224933
+	// Token: 0x06005A1F RID: 23071 RVA: 0x0022944F File Offset: 0x0022764F
 	public RegionFileAccessAbstract CreateRegionFileAccess()
 	{
 		return new RegionFileAccessSectorBased();
 	}
 
-	// Token: 0x06005998 RID: 22936 RVA: 0x0022673A File Offset: 0x0022493A
+	// Token: 0x06005A20 RID: 23072 RVA: 0x00229456 File Offset: 0x00227656
 	public IRegionFileChunkSnapshotUtil CreateSnapshotUtil(RegionFileAccessAbstract regionFileAccess)
 	{
 		return new ChunkSnapshotUtil(regionFileAccess);
 	}
 
-	// Token: 0x06005999 RID: 22937 RVA: 0x00226742 File Offset: 0x00224942
+	// Token: 0x06005A21 RID: 23073 RVA: 0x0022945E File Offset: 0x0022765E
 	public IRegionFileDebugUtil CreateDebugUtil()
 	{
 		return new RegionFileDebugUtilSectorBased();

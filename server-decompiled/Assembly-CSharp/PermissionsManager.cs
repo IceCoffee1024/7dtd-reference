@@ -3,10 +3,10 @@ using System.Collections;
 using System.Runtime.CompilerServices;
 using Platform;
 
-// Token: 0x02001292 RID: 4754
+// Token: 0x020012AC RID: 4780
 public class PermissionsManager
 {
-	// Token: 0x060096AA RID: 38570 RVA: 0x0038CE8C File Offset: 0x0038B08C
+	// Token: 0x060097A5 RID: 38821 RVA: 0x00391FE8 File Offset: 0x003901E8
 	public static EUserPerms GetPermissions(PermissionsManager.PermissionSources _sources = PermissionsManager.PermissionSources.All)
 	{
 		EUserPerms euserPerms = EUserPerms.All;
@@ -40,7 +40,7 @@ public class PermissionsManager
 		return euserPerms;
 	}
 
-	// Token: 0x060096AB RID: 38571 RVA: 0x0038CFAE File Offset: 0x0038B1AE
+	// Token: 0x060097A6 RID: 38822 RVA: 0x0039210A File Offset: 0x0039030A
 	public static IEnumerator ResolvePermissions(EUserPerms _perms, bool _canPrompt, CoroutineCancellationToken _cancellationToken = null)
 	{
 		PermissionsManager.<>c__DisplayClass5_0 CS$<>8__locals1 = new PermissionsManager.<>c__DisplayClass5_0();
@@ -108,7 +108,7 @@ public class PermissionsManager
 		yield break;
 	}
 
-	// Token: 0x060096AC RID: 38572 RVA: 0x0038CFCC File Offset: 0x0038B1CC
+	// Token: 0x060097A7 RID: 38823 RVA: 0x00392128 File Offset: 0x00390328
 	public static string GetPermissionDenyReason(EUserPerms _perms, PermissionsManager.PermissionSources _sources = PermissionsManager.PermissionSources.All)
 	{
 		if (_sources.HasFlag(PermissionsManager.PermissionSources.DebugMask))
@@ -152,35 +152,35 @@ public class PermissionsManager
 		return null;
 	}
 
-	// Token: 0x060096AD RID: 38573 RVA: 0x0038D17A File Offset: 0x0038B37A
+	// Token: 0x060097A8 RID: 38824 RVA: 0x003922D6 File Offset: 0x003904D6
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool IsAllowed(EUserPerms _checkPerms)
 	{
 		return PermissionsManager.GetPermissions(PermissionsManager.PermissionSources.All).HasFlag(_checkPerms);
 	}
 
-	// Token: 0x060096AE RID: 38574 RVA: 0x0038D193 File Offset: 0x0038B393
+	// Token: 0x060097A9 RID: 38825 RVA: 0x003922EF File Offset: 0x003904EF
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool IsMultiplayerAllowed()
 	{
 		return PermissionsManager.GetPermissions(PermissionsManager.PermissionSources.All).HasMultiplayer();
 	}
 
-	// Token: 0x060096AF RID: 38575 RVA: 0x0038D1A1 File Offset: 0x0038B3A1
+	// Token: 0x060097AA RID: 38826 RVA: 0x003922FD File Offset: 0x003904FD
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool IsCommunicationAllowed()
 	{
 		return PermissionsManager.GetPermissions(PermissionsManager.PermissionSources.All).HasCommunication();
 	}
 
-	// Token: 0x060096B0 RID: 38576 RVA: 0x0038D1AF File Offset: 0x0038B3AF
+	// Token: 0x060097AB RID: 38827 RVA: 0x0039230B File Offset: 0x0039050B
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool IsCrossplayAllowed()
 	{
 		return PermissionsManager.GetPermissions(PermissionsManager.PermissionSources.All).HasCrossplay();
 	}
 
-	// Token: 0x060096B1 RID: 38577 RVA: 0x0038D1C0 File Offset: 0x0038B3C0
+	// Token: 0x060097AC RID: 38828 RVA: 0x0039231C File Offset: 0x0039051C
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool CanHostMultiplayer()
 	{
@@ -188,32 +188,32 @@ public class PermissionsManager
 		return permissions.HasMultiplayer() && permissions.HasHostMultiplayer();
 	}
 
-	// Token: 0x040070D6 RID: 28886
+	// Token: 0x040071AB RID: 29099
 	public static EUserPerms DebugPermissionsMask = EUserPerms.All;
 
-	// Token: 0x040070D7 RID: 28887
+	// Token: 0x040071AC RID: 29100
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static TitleStorageOverridesManager.TSOverrides tsOverrides = default(TitleStorageOverridesManager.TSOverrides);
 
-	// Token: 0x040070D8 RID: 28888
+	// Token: 0x040071AD RID: 29101
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool resolvingPermissions;
 
-	// Token: 0x02001293 RID: 4755
+	// Token: 0x020012AD RID: 4781
 	[Flags]
 	public enum PermissionSources
 	{
-		// Token: 0x040070DA RID: 28890
+		// Token: 0x040071AF RID: 29103
 		Platform = 1,
-		// Token: 0x040070DB RID: 28891
+		// Token: 0x040071B0 RID: 29104
 		GamePrefs = 2,
-		// Token: 0x040070DC RID: 28892
+		// Token: 0x040071B1 RID: 29105
 		LaunchPrefs = 4,
-		// Token: 0x040070DD RID: 28893
+		// Token: 0x040071B2 RID: 29106
 		DebugMask = 8,
-		// Token: 0x040070DE RID: 28894
+		// Token: 0x040071B3 RID: 29107
 		TitleStorage = 16,
-		// Token: 0x040070DF RID: 28895
+		// Token: 0x040071B4 RID: 29108
 		All = 31
 	}
 }

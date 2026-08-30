@@ -6,35 +6,35 @@ using UniLinq;
 
 namespace DynamicMusic
 {
-	// Token: 0x020019F9 RID: 6649
+	// Token: 0x02001A20 RID: 6688
 	public abstract class AbstractConfiguration : IConfiguration
 	{
-		// Token: 0x17001856 RID: 6230
-		// (get) Token: 0x0600C98F RID: 51599 RVA: 0x0049F790 File Offset: 0x0049D990
-		// (set) Token: 0x0600C990 RID: 51600 RVA: 0x0049F798 File Offset: 0x0049D998
+		// Token: 0x170018C8 RID: 6344
+		// (get) Token: 0x0600CB18 RID: 51992 RVA: 0x004A5B84 File Offset: 0x004A3D84
+		// (set) Token: 0x0600CB19 RID: 51993 RVA: 0x004A5B8C File Offset: 0x004A3D8C
 		public virtual IList<SectionType> Sections
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x0600C991 RID: 51601
+		// Token: 0x0600CB1A RID: 51994
 		public abstract int CountFor(LayerType _layer);
 
-		// Token: 0x0600C992 RID: 51602 RVA: 0x0049F7A1 File Offset: 0x0049D9A1
+		// Token: 0x0600CB1B RID: 51995 RVA: 0x004A5B95 File Offset: 0x004A3D95
 		public AbstractConfiguration()
 		{
 			this.Sections = new List<SectionType>();
 			AbstractConfiguration.AllConfigurations.Add(this);
 		}
 
-		// Token: 0x0600C993 RID: 51603 RVA: 0x0049F7BF File Offset: 0x0049D9BF
+		// Token: 0x0600CB1C RID: 51996 RVA: 0x004A5BB3 File Offset: 0x004A3DB3
 		public static AbstractConfiguration CreateWrapper(string _type)
 		{
 			return (AbstractConfiguration)Activator.CreateInstance(ReflectionHelpers.GetTypeWithPrefix("DynamicMusic.", _type));
 		}
 
-		// Token: 0x0600C994 RID: 51604 RVA: 0x0049F7D8 File Offset: 0x0049D9D8
+		// Token: 0x0600CB1D RID: 51997 RVA: 0x004A5BCC File Offset: 0x004A3DCC
 		public virtual void ParseFromXml(XElement _xmlNode)
 		{
 			foreach (string text in _xmlNode.GetAttribute("sections").Split(',', StringSplitOptions.None))
@@ -43,7 +43,7 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600C995 RID: 51605 RVA: 0x0049F824 File Offset: 0x0049DA24
+		// Token: 0x0600CB1E RID: 51998 RVA: 0x004A5C18 File Offset: 0x004A3E18
 		public static T Get<T>(SectionType _sectionType) where T : IConfiguration
 		{
 			List<T> list = AbstractConfiguration.AllConfigurations.OfType<T>().ToList<T>().FindAll((T c) => c.Sections.Contains(_sectionType));
@@ -54,7 +54,7 @@ namespace DynamicMusic
 			return list[AbstractConfiguration.rng.RandomRange(list.Count)];
 		}
 
-		// Token: 0x0600C996 RID: 51606 RVA: 0x0049F888 File Offset: 0x0049DA88
+		// Token: 0x0600CB1F RID: 51999 RVA: 0x004A5C7C File Offset: 0x004A3E7C
 		public static int GetBufferSize(SectionType _sectionType, LayerType _layerType)
 		{
 			IEnumerable<int> enumerable = from c in AbstractConfiguration.AllConfigurations.OfType<IConfiguration>()
@@ -67,10 +67,10 @@ namespace DynamicMusic
 			return 0;
 		}
 
-		// Token: 0x04009955 RID: 39253
+		// Token: 0x04009A86 RID: 39558
 		public static IList<AbstractConfiguration> AllConfigurations = new List<AbstractConfiguration>();
 
-		// Token: 0x04009956 RID: 39254
+		// Token: 0x04009A87 RID: 39559
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static GameRandom rng = GameRandomManager.Instance.CreateGameRandom();
 	}

@@ -1,18 +1,18 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200097A RID: 2426
+// Token: 0x0200098B RID: 2443
 [Preserve]
 public class ObjectiveBuff : BaseObjective
 {
-	// Token: 0x06004711 RID: 18193 RVA: 0x001BE7BE File Offset: 0x001BC9BE
+	// Token: 0x06004797 RID: 18327 RVA: 0x001C0FB2 File Offset: 0x001BF1B2
 	public override void SetupObjective()
 	{
 		this.keyword = Localization.Get("ObjectiveBuff_keyword", false, null);
 		this.name = BuffManager.GetBuff(this.ID).Name;
 	}
 
-	// Token: 0x06004712 RID: 18194 RVA: 0x001BE7E8 File Offset: 0x001BC9E8
+	// Token: 0x06004798 RID: 18328 RVA: 0x001C0FDC File Offset: 0x001BF1DC
 	public override void SetupDisplay()
 	{
 		byte currentValue = base.CurrentValue;
@@ -20,17 +20,17 @@ public class ObjectiveBuff : BaseObjective
 		this.StatusText = "";
 	}
 
-	// Token: 0x06004713 RID: 18195 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004799 RID: 18329 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void AddHooks()
 	{
 	}
 
-	// Token: 0x06004714 RID: 18196 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600479A RID: 18330 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void RemoveHooks()
 	{
 	}
 
-	// Token: 0x06004715 RID: 18197 RVA: 0x001BE814 File Offset: 0x001BCA14
+	// Token: 0x0600479B RID: 18331 RVA: 0x001C1008 File Offset: 0x001BF208
 	public override void Refresh()
 	{
 		if (base.Complete)
@@ -45,7 +45,7 @@ public class ObjectiveBuff : BaseObjective
 		}
 	}
 
-	// Token: 0x06004716 RID: 18198 RVA: 0x001BE854 File Offset: 0x001BCA54
+	// Token: 0x0600479C RID: 18332 RVA: 0x001C1048 File Offset: 0x001BF248
 	public override BaseObjective Clone()
 	{
 		ObjectiveBuff objectiveBuff = new ObjectiveBuff();
@@ -53,7 +53,7 @@ public class ObjectiveBuff : BaseObjective
 		return objectiveBuff;
 	}
 
-	// Token: 0x06004717 RID: 18199 RVA: 0x001BE870 File Offset: 0x001BCA70
+	// Token: 0x0600479D RID: 18333 RVA: 0x001C1064 File Offset: 0x001BF264
 	public override string ParseBinding(string bindingName)
 	{
 		string id = this.ID;
@@ -65,7 +65,7 @@ public class ObjectiveBuff : BaseObjective
 		return "";
 	}
 
-	// Token: 0x040038D9 RID: 14553
+	// Token: 0x0400396A RID: 14698
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string name = "";
 }

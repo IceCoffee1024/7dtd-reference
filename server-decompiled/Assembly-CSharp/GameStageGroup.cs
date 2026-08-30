@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 
-// Token: 0x02000ADC RID: 2780
+// Token: 0x02000AEE RID: 2798
 public sealed class GameStageGroup
 {
-	// Token: 0x060052E4 RID: 21220 RVA: 0x001FB030 File Offset: 0x001F9230
+	// Token: 0x0600536C RID: 21356 RVA: 0x001FDCA0 File Offset: 0x001FBEA0
 	public GameStageGroup(GameStageDefinition _spawner)
 	{
 		this.spawner = _spawner;
 	}
 
-	// Token: 0x060052E5 RID: 21221 RVA: 0x001FB040 File Offset: 0x001F9240
+	// Token: 0x0600536D RID: 21357 RVA: 0x001FDCB0 File Offset: 0x001FBEB0
 	public static void AddGameStageGroup(string _fullName, GameStageGroup _group)
 	{
 		string text = GameStageGroup.CleanName(_fullName);
@@ -19,7 +19,7 @@ public sealed class GameStageGroup
 		GameStageGroup.groupsFullName.Add(_fullName, _group);
 	}
 
-	// Token: 0x060052E6 RID: 21222 RVA: 0x001FB06C File Offset: 0x001F926C
+	// Token: 0x0600536E RID: 21358 RVA: 0x001FDCDC File Offset: 0x001FBEDC
 	public static GameStageGroup TryGet(string _name)
 	{
 		GameStageGroup gameStageGroup;
@@ -30,15 +30,15 @@ public sealed class GameStageGroup
 		return null;
 	}
 
-	// Token: 0x060052E7 RID: 21223 RVA: 0x001FB08B File Offset: 0x001F928B
+	// Token: 0x0600536F RID: 21359 RVA: 0x001FDCFB File Offset: 0x001FBEFB
 	public static void Clear()
 	{
 		GameStageGroup.groups.Clear();
 		GameStageGroup.groupsFullName.Clear();
 	}
 
-	// Token: 0x170008F7 RID: 2295
-	// (get) Token: 0x060052E8 RID: 21224 RVA: 0x001FB0A1 File Offset: 0x001F92A1
+	// Token: 0x17000909 RID: 2313
+	// (get) Token: 0x06005370 RID: 21360 RVA: 0x001FDD11 File Offset: 0x001FBF11
 	public static Dictionary<string, GameStageGroup> Groups
 	{
 		get
@@ -47,7 +47,7 @@ public sealed class GameStageGroup
 		}
 	}
 
-	// Token: 0x060052E9 RID: 21225 RVA: 0x001FB0A8 File Offset: 0x001F92A8
+	// Token: 0x06005371 RID: 21361 RVA: 0x001FDD18 File Offset: 0x001FBF18
 	public static string CleanName(string _name)
 	{
 		if (_name.Length > 0 && char.IsDigit(_name[0]))
@@ -66,7 +66,7 @@ public sealed class GameStageGroup
 		return _name;
 	}
 
-	// Token: 0x060052EA RID: 21226 RVA: 0x001FB110 File Offset: 0x001F9310
+	// Token: 0x06005372 RID: 21362 RVA: 0x001FDD80 File Offset: 0x001FBF80
 	public static string MakeDisplayName(string _name)
 	{
 		bool flag = false;
@@ -87,21 +87,21 @@ public sealed class GameStageGroup
 		return _name;
 	}
 
-	// Token: 0x0400409D RID: 16541
+	// Token: 0x04004133 RID: 16691
 	public const string cDefaultGroupName = "GroupGenericZombie";
 
-	// Token: 0x0400409E RID: 16542
+	// Token: 0x04004134 RID: 16692
 	public readonly GameStageDefinition spawner;
 
-	// Token: 0x0400409F RID: 16543
+	// Token: 0x04004135 RID: 16693
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<string, GameStageGroup> groups = new Dictionary<string, GameStageGroup>();
 
-	// Token: 0x040040A0 RID: 16544
+	// Token: 0x04004136 RID: 16694
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<string, GameStageGroup> groupsFullName = new Dictionary<string, GameStageGroup>();
 
-	// Token: 0x040040A1 RID: 16545
+	// Token: 0x04004137 RID: 16695
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static StringBuilder stringBuilder = new StringBuilder();
 }

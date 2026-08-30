@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x020010D9 RID: 4313
+// Token: 0x020010F2 RID: 4338
 public abstract class BindingItem
 {
-	// Token: 0x060088DE RID: 35038 RVA: 0x00343D75 File Offset: 0x00341F75
+	// Token: 0x060089D0 RID: 35280 RVA: 0x00348599 File Offset: 0x00346799
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public BindingItem(string _sourceText)
 	{
@@ -11,13 +11,13 @@ public abstract class BindingItem
 		this.fieldName = _sourceText.Substring(1, _sourceText.Length - 2);
 	}
 
-	// Token: 0x060088DF RID: 35039
+	// Token: 0x060089D1 RID: 35281
 	public abstract string GetValue();
 
-	// Token: 0x040065C3 RID: 26051
+	// Token: 0x0400668A RID: 26250
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string fieldName;
 
-	// Token: 0x040065C4 RID: 26052
+	// Token: 0x0400668B RID: 26251
 	public readonly string SourceText;
 }

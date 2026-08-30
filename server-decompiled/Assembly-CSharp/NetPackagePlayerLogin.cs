@@ -2,12 +2,12 @@
 using System.Runtime.CompilerServices;
 using UnityEngine.Scripting;
 
-// Token: 0x02000820 RID: 2080
+// Token: 0x0200082B RID: 2091
 [Preserve]
 public class NetPackagePlayerLogin : NetPackage
 {
-	// Token: 0x1700065D RID: 1629
-	// (get) Token: 0x06003D0A RID: 15626 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000668 RID: 1640
+	// (get) Token: 0x06003D69 RID: 15721 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedBeforeAuth
 	{
 		get
@@ -16,7 +16,7 @@ public class NetPackagePlayerLogin : NetPackage
 		}
 	}
 
-	// Token: 0x06003D0B RID: 15627 RVA: 0x00183C7A File Offset: 0x00181E7A
+	// Token: 0x06003D6A RID: 15722 RVA: 0x00186052 File Offset: 0x00184252
 	public NetPackagePlayerLogin Setup(string _playerName, [TupleElementNames(new string[] { "userId", "token" })] ValueTuple<PlatformUserIdentifierAbs, string> _platformUserAndToken, [TupleElementNames(new string[] { "userId", "token" })] ValueTuple<PlatformUserIdentifierAbs, string> _crossplatformUserAndToken, string _version, string _compVersion, ulong _discordUserId)
 	{
 		this.playerName = _playerName;
@@ -28,7 +28,7 @@ public class NetPackagePlayerLogin : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D0C RID: 15628 RVA: 0x00183CAC File Offset: 0x00181EAC
+	// Token: 0x06003D6B RID: 15723 RVA: 0x00186084 File Offset: 0x00184284
 	public override void read(PooledBinaryReader _br)
 	{
 		Log.Out("NPPL.Read");
@@ -40,7 +40,7 @@ public class NetPackagePlayerLogin : NetPackage
 		this.discordUserId = _br.ReadUInt64();
 	}
 
-	// Token: 0x06003D0D RID: 15629 RVA: 0x00183D28 File Offset: 0x00181F28
+	// Token: 0x06003D6C RID: 15724 RVA: 0x00186100 File Offset: 0x00184300
 	public override void write(PooledBinaryWriter _bw)
 	{
 		Log.Out("NPPL.Write");
@@ -55,14 +55,14 @@ public class NetPackagePlayerLogin : NetPackage
 		_bw.Write(this.discordUserId);
 	}
 
-	// Token: 0x06003D0E RID: 15630 RVA: 0x00183DCE File Offset: 0x00181FCE
+	// Token: 0x06003D6D RID: 15725 RVA: 0x001861A6 File Offset: 0x001843A6
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		_callbacks.PlayerLoginRPC(base.Sender, this.playerName, this.platformUserAndToken, this.crossplatformUserAndToken, this.compVersion, this.discordUserId);
 	}
 
-	// Token: 0x1700065E RID: 1630
-	// (get) Token: 0x06003D0F RID: 15631 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000669 RID: 1641
+	// (get) Token: 0x06003D6E RID: 15726 RVA: 0x00020021 File Offset: 0x0001E221
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -71,35 +71,35 @@ public class NetPackagePlayerLogin : NetPackage
 		}
 	}
 
-	// Token: 0x06003D10 RID: 15632 RVA: 0x00183DFA File Offset: 0x00181FFA
+	// Token: 0x06003D6F RID: 15727 RVA: 0x001861D2 File Offset: 0x001843D2
 	public override int GetLength()
 	{
 		return 120;
 	}
 
-	// Token: 0x0400314B RID: 12619
+	// Token: 0x040031CA RID: 12746
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string playerName;
 
-	// Token: 0x0400314C RID: 12620
+	// Token: 0x040031CB RID: 12747
 	[TupleElementNames(new string[] { "userId", "token" })]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ValueTuple<PlatformUserIdentifierAbs, string> platformUserAndToken;
 
-	// Token: 0x0400314D RID: 12621
+	// Token: 0x040031CC RID: 12748
 	[TupleElementNames(new string[] { "userId", "token" })]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ValueTuple<PlatformUserIdentifierAbs, string> crossplatformUserAndToken;
 
-	// Token: 0x0400314E RID: 12622
+	// Token: 0x040031CD RID: 12749
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string version;
 
-	// Token: 0x0400314F RID: 12623
+	// Token: 0x040031CE RID: 12750
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string compVersion;
 
-	// Token: 0x04003150 RID: 12624
+	// Token: 0x040031CF RID: 12751
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong discordUserId;
 }

@@ -3,17 +3,17 @@ using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020001A1 RID: 417
+// Token: 0x020001A3 RID: 419
 [Preserve]
 public class BlockShapeBillboardPlant : BlockShapeBillboardRotatedAbstract
 {
-	// Token: 0x06000CA4 RID: 3236 RVA: 0x0004EFE4 File Offset: 0x0004D1E4
+	// Token: 0x06000CAF RID: 3247 RVA: 0x0004F3FC File Offset: 0x0004D5FC
 	public BlockShapeBillboardPlant()
 	{
 		this.boundsArr = new Bounds[] { BoundsUtils.BoundsForMinMax(0.3f, 0f, 0.3f, 0.7f, 1f, 0.7f) };
 	}
 
-	// Token: 0x06000CA5 RID: 3237 RVA: 0x0004F030 File Offset: 0x0004D230
+	// Token: 0x06000CB0 RID: 3248 RVA: 0x0004F448 File Offset: 0x0004D648
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void createVertices()
 	{
@@ -30,13 +30,13 @@ public class BlockShapeBillboardPlant : BlockShapeBillboardRotatedAbstract
 		};
 	}
 
-	// Token: 0x06000CA6 RID: 3238 RVA: 0x0004F121 File Offset: 0x0004D321
+	// Token: 0x06000CB1 RID: 3249 RVA: 0x0004F539 File Offset: 0x0004D739
 	public override Quaternion GetRotation(BlockValue _blockValue)
 	{
 		return Quaternion.AngleAxis((float)(20 * _blockValue.rotation), Vector3.up);
 	}
 
-	// Token: 0x06000CA7 RID: 3239 RVA: 0x0004F138 File Offset: 0x0004D338
+	// Token: 0x06000CB2 RID: 3250 RVA: 0x0004F550 File Offset: 0x0004D750
 	public override void renderFull(Vector3i _worldPos, BlockValue _blockValue, Vector3 _drawPos, Vector3[] _vertices, LightingAround _lightingAround, TextureFullArray _textureFullArray, VoxelMesh[] _meshes, BlockShape.MeshPurpose _purpose = BlockShape.MeshPurpose.World)
 	{
 		byte sun = _lightingAround[LightingAround.Pos.Middle].sun;
@@ -67,27 +67,27 @@ public class BlockShapeBillboardPlant : BlockShapeBillboardRotatedAbstract
 		MemoryPools.poolVector3.Free(array);
 	}
 
-	// Token: 0x06000CA8 RID: 3240 RVA: 0x0004E0DA File Offset: 0x0004C2DA
+	// Token: 0x06000CB3 RID: 3251 RVA: 0x0004E4F2 File Offset: 0x0004C6F2
 	public override Bounds[] GetBounds(BlockValue _blockValue)
 	{
 		return this.boundsArr;
 	}
 
-	// Token: 0x06000CA9 RID: 3241 RVA: 0x0004F2E5 File Offset: 0x0004D4E5
+	// Token: 0x06000CB4 RID: 3252 RVA: 0x0004F6FD File Offset: 0x0004D8FD
 	public override byte Rotate(bool _isLeft, int _rotation)
 	{
 		_rotation = (_rotation + (_isLeft ? (-1) : 1)) & 3;
 		return (byte)_rotation;
 	}
 
-	// Token: 0x06000CAA RID: 3242 RVA: 0x0004F2F6 File Offset: 0x0004D4F6
+	// Token: 0x06000CB5 RID: 3253 RVA: 0x0004F70E File Offset: 0x0004D90E
 	public override BlockValue RotateY(bool _bLeft, BlockValue _blockValue, int _rotCount)
 	{
 		_blockValue.rotation = (byte)(((int)_blockValue.rotation + _rotCount) & 3);
 		return _blockValue;
 	}
 
-	// Token: 0x06000CAB RID: 3243 RVA: 0x0004F30C File Offset: 0x0004D50C
+	// Token: 0x06000CB6 RID: 3254 RVA: 0x0004F724 File Offset: 0x0004D924
 	public static void RenderSpinMesh(VoxelMesh _mesh, Vector3 _drawPos, Vector3[] _vertices, Rect uvTex, byte _sunlight, byte _blocklight, BlockShapeBillboardPlant.RenderData _data)
 	{
 		float num = _drawPos.y;
@@ -140,7 +140,7 @@ public class BlockShapeBillboardPlant : BlockShapeBillboardRotatedAbstract
 		}
 	}
 
-	// Token: 0x06000CAC RID: 3244 RVA: 0x0004F53C File Offset: 0x0004D73C
+	// Token: 0x06000CB7 RID: 3255 RVA: 0x0004F954 File Offset: 0x0004DB54
 	public static void RenderGridMesh(VoxelMesh _mesh, Vector3 _drawPos, Vector3[] _vertices, Rect uvTex, byte _sunlight, byte _blocklight, BlockShapeBillboardPlant.RenderData _data)
 	{
 		float num = _drawPos.y;
@@ -219,7 +219,7 @@ public class BlockShapeBillboardPlant : BlockShapeBillboardRotatedAbstract
 		}
 	}
 
-	// Token: 0x06000CAD RID: 3245 RVA: 0x0004F8A0 File Offset: 0x0004DAA0
+	// Token: 0x06000CB8 RID: 3256 RVA: 0x0004FCB8 File Offset: 0x0004DEB8
 	public static void AddCollider(VoxelMesh _mesh, Vector3 _drawPos, float _height)
 	{
 		float num = _drawPos.x + 0.5f;
@@ -254,7 +254,7 @@ public class BlockShapeBillboardPlant : BlockShapeBillboardRotatedAbstract
 		_mesh.AddRectangleColliderPair(vector, vector2, vector3, vector4);
 	}
 
-	// Token: 0x06000CAE RID: 3246 RVA: 0x0004F9C0 File Offset: 0x0004DBC0
+	// Token: 0x06000CB9 RID: 3257 RVA: 0x0004FDD8 File Offset: 0x0004DFD8
 	public override void CalculateCollisionHash(IncrementalHash calcHash)
 	{
 		int num = 1;
@@ -270,36 +270,36 @@ public class BlockShapeBillboardPlant : BlockShapeBillboardRotatedAbstract
 		}
 	}
 
-	// Token: 0x04000B55 RID: 2901
+	// Token: 0x04000B62 RID: 2914
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float xzAdd = 0.35f;
 
-	// Token: 0x04000B56 RID: 2902
+	// Token: 0x04000B63 RID: 2915
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float yAdd = 0.15f;
 
-	// Token: 0x020001A2 RID: 418
+	// Token: 0x020001A4 RID: 420
 	public struct RenderData
 	{
-		// Token: 0x04000B57 RID: 2903
+		// Token: 0x04000B64 RID: 2916
 		public int count;
 
-		// Token: 0x04000B58 RID: 2904
+		// Token: 0x04000B65 RID: 2917
 		public int count2;
 
-		// Token: 0x04000B59 RID: 2905
+		// Token: 0x04000B66 RID: 2918
 		public float height;
 
-		// Token: 0x04000B5A RID: 2906
+		// Token: 0x04000B67 RID: 2919
 		public float rotation;
 
-		// Token: 0x04000B5B RID: 2907
+		// Token: 0x04000B68 RID: 2920
 		public float scale;
 
-		// Token: 0x04000B5C RID: 2908
+		// Token: 0x04000B69 RID: 2921
 		public float sideShift;
 
-		// Token: 0x04000B5D RID: 2909
+		// Token: 0x04000B6A RID: 2922
 		public float offsetY;
 	}
 }

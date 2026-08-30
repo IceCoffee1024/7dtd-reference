@@ -3,18 +3,18 @@ using GUI_2;
 using InControl;
 using Platform;
 
-// Token: 0x0200113C RID: 4412
+// Token: 0x02001155 RID: 4437
 public class XUiV_GamepadIcon : XUiV_Sprite
 {
-	// Token: 0x06008C28 RID: 35880 RVA: 0x00352282 File Offset: 0x00350482
+	// Token: 0x06008D1A RID: 36122 RVA: 0x00356AB6 File Offset: 0x00354CB6
 	public XUiV_GamepadIcon(XUi _xui, string _id)
 		: base(_xui, _id)
 	{
 	}
 
-	// Token: 0x17001060 RID: 4192
-	// (get) Token: 0x06008C29 RID: 35881 RVA: 0x0035229C File Offset: 0x0035049C
-	// (set) Token: 0x06008C2A RID: 35882 RVA: 0x003522C4 File Offset: 0x003504C4
+	// Token: 0x17001099 RID: 4249
+	// (get) Token: 0x06008D1B RID: 36123 RVA: 0x00356AD0 File Offset: 0x00354CD0
+	// (set) Token: 0x06008D1C RID: 36124 RVA: 0x00356AF8 File Offset: 0x00354CF8
 	[XuiXmlAttribute("button", false)]
 	public UIUtils.ButtonIcon Button
 	{
@@ -39,9 +39,9 @@ public class XUiV_GamepadIcon : XUiV_Sprite
 		}
 	}
 
-	// Token: 0x17001061 RID: 4193
-	// (get) Token: 0x06008C2B RID: 35883 RVA: 0x00352301 File Offset: 0x00350501
-	// (set) Token: 0x06008C2C RID: 35884 RVA: 0x00352309 File Offset: 0x00350509
+	// Token: 0x1700109A RID: 4250
+	// (get) Token: 0x06008D1D RID: 36125 RVA: 0x00356B35 File Offset: 0x00354D35
+	// (set) Token: 0x06008D1E RID: 36126 RVA: 0x00356B3D File Offset: 0x00354D3D
 	[XuiXmlAttribute("actionset", false)]
 	public XUiV_GamepadIcon.EActionSet ActionSet
 	{
@@ -60,9 +60,9 @@ public class XUiV_GamepadIcon : XUiV_Sprite
 		}
 	}
 
-	// Token: 0x17001062 RID: 4194
-	// (get) Token: 0x06008C2D RID: 35885 RVA: 0x00352322 File Offset: 0x00350522
-	// (set) Token: 0x06008C2E RID: 35886 RVA: 0x0035232A File Offset: 0x0035052A
+	// Token: 0x1700109B RID: 4251
+	// (get) Token: 0x06008D1F RID: 36127 RVA: 0x00356B56 File Offset: 0x00354D56
+	// (set) Token: 0x06008D20 RID: 36128 RVA: 0x00356B5E File Offset: 0x00354D5E
 	[XuiXmlAttribute("actionname", false)]
 	public string ActionName
 	{
@@ -81,9 +81,9 @@ public class XUiV_GamepadIcon : XUiV_Sprite
 		}
 	}
 
-	// Token: 0x17001063 RID: 4195
-	// (get) Token: 0x06008C2F RID: 35887 RVA: 0x00352348 File Offset: 0x00350548
-	// (set) Token: 0x06008C30 RID: 35888 RVA: 0x00352350 File Offset: 0x00350550
+	// Token: 0x1700109C RID: 4252
+	// (get) Token: 0x06008D21 RID: 36129 RVA: 0x00356B7C File Offset: 0x00354D7C
+	// (set) Token: 0x06008D22 RID: 36130 RVA: 0x00356B84 File Offset: 0x00354D84
 	[XuiXmlAttribute("action", false)]
 	public PlayerAction Action
 	{
@@ -102,7 +102,7 @@ public class XUiV_GamepadIcon : XUiV_Sprite
 		}
 	}
 
-	// Token: 0x06008C31 RID: 35889 RVA: 0x0035236C File Offset: 0x0035056C
+	// Token: 0x06008D23 RID: 36131 RVA: 0x00356BA0 File Offset: 0x00354DA0
 	public override void InitView()
 	{
 		base.UIAtlas = UIUtils.IconAtlas.Name;
@@ -111,14 +111,15 @@ public class XUiV_GamepadIcon : XUiV_Sprite
 		this.curInput = PlatformManager.NativePlatform.Input.CurrentInputStyle;
 	}
 
-	// Token: 0x06008C32 RID: 35890 RVA: 0x003523BF File Offset: 0x003505BF
+	// Token: 0x06008D24 RID: 36132 RVA: 0x00356BF3 File Offset: 0x00354DF3
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnLastInputStyleChanged(PlayerInputManager.InputStyle _style)
 	{
 		this.curInput = _style;
+		base.SetDirty();
 	}
 
-	// Token: 0x06008C33 RID: 35891 RVA: 0x003523C8 File Offset: 0x003505C8
+	// Token: 0x06008D25 RID: 36133 RVA: 0x00356C02 File Offset: 0x00354E02
 	public override void Cleanup()
 	{
 		base.Cleanup();
@@ -129,7 +130,7 @@ public class XUiV_GamepadIcon : XUiV_Sprite
 		}
 	}
 
-	// Token: 0x06008C34 RID: 35892 RVA: 0x003523FE File Offset: 0x003505FE
+	// Token: 0x06008D26 RID: 36134 RVA: 0x00356C38 File Offset: 0x00354E38
 	public override void Update(float _dt)
 	{
 		if (this.curInput != this.lastInputStyle)
@@ -140,7 +141,7 @@ public class XUiV_GamepadIcon : XUiV_Sprite
 		base.Update(_dt);
 	}
 
-	// Token: 0x06008C35 RID: 35893 RVA: 0x00352428 File Offset: 0x00350628
+	// Token: 0x06008D27 RID: 36135 RVA: 0x00356C64 File Offset: 0x00354E64
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateData()
 	{
@@ -180,49 +181,49 @@ public class XUiV_GamepadIcon : XUiV_Sprite
 		base.updateData();
 	}
 
-	// Token: 0x06008C36 RID: 35894 RVA: 0x0035251D File Offset: 0x0035071D
+	// Token: 0x06008D28 RID: 36136 RVA: 0x00356D59 File Offset: 0x00354F59
 	public override void SetDefaults(XUiController _parent)
 	{
 		base.SetDefaults(_parent);
 		base.KeepSourceAspectRatio = true;
 	}
 
-	// Token: 0x0400671D RID: 26397
+	// Token: 0x040067E7 RID: 26599
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlayerInputManager.InputStyle lastInputStyle = PlayerInputManager.InputStyle.Count;
 
-	// Token: 0x0400671E RID: 26398
+	// Token: 0x040067E8 RID: 26600
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlayerInputManager.InputStyle curInput;
 
-	// Token: 0x0400671F RID: 26399
+	// Token: 0x040067E9 RID: 26601
 	[PublicizedFrom(EAccessModifier.Private)]
 	public UIUtils.ButtonIcon? button;
 
-	// Token: 0x04006720 RID: 26400
+	// Token: 0x040067EA RID: 26602
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_GamepadIcon.EActionSet actionSet = XUiV_GamepadIcon.EActionSet.Gui;
 
-	// Token: 0x04006721 RID: 26401
+	// Token: 0x040067EB RID: 26603
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string actionName;
 
-	// Token: 0x04006722 RID: 26402
+	// Token: 0x040067EC RID: 26604
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlayerAction action;
 
-	// Token: 0x0200113D RID: 4413
+	// Token: 0x02001156 RID: 4438
 	public enum EActionSet
 	{
-		// Token: 0x04006724 RID: 26404
+		// Token: 0x040067EE RID: 26606
 		Global,
-		// Token: 0x04006725 RID: 26405
+		// Token: 0x040067EF RID: 26607
 		Local,
-		// Token: 0x04006726 RID: 26406
+		// Token: 0x040067F0 RID: 26608
 		Vehicle,
-		// Token: 0x04006727 RID: 26407
+		// Token: 0x040067F1 RID: 26609
 		Gui,
-		// Token: 0x04006728 RID: 26408
+		// Token: 0x040067F2 RID: 26610
 		Permanent
 	}
 }

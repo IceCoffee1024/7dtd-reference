@@ -3,10 +3,10 @@ using Steamworks;
 
 namespace Platform.Steam
 {
-	// Token: 0x02001C5A RID: 7258
+	// Token: 0x02001C81 RID: 7297
 	public class AuthenticationServer : IAuthenticationServer
 	{
-		// Token: 0x0600D6CB RID: 54987 RVA: 0x004D5F8B File Offset: 0x004D418B
+		// Token: 0x0600D85B RID: 55387 RVA: 0x004DC3AF File Offset: 0x004DA5AF
 		public void Init(IPlatform _owner)
 		{
 			this.owner = _owner;
@@ -24,7 +24,7 @@ namespace Platform.Steam
 			};
 		}
 
-		// Token: 0x0600D6CC RID: 54988 RVA: 0x004D5FB0 File Offset: 0x004D41B0
+		// Token: 0x0600D85C RID: 55388 RVA: 0x004DC3D4 File Offset: 0x004DA5D4
 		public EBeginUserAuthenticationResult AuthenticateUser(ClientInfo _cInfo)
 		{
 			Log.Out("[Steamworks.NET] Auth.AuthenticateUser()");
@@ -56,7 +56,7 @@ namespace Platform.Steam
 			return (EBeginUserAuthenticationResult)ebeginAuthSessionResult;
 		}
 
-		// Token: 0x0600D6CD RID: 54989 RVA: 0x004D606B File Offset: 0x004D426B
+		// Token: 0x0600D85D RID: 55389 RVA: 0x004DC48F File Offset: 0x004DA68F
 		public void RemoveUser(ClientInfo _cInfo)
 		{
 			if (this.owner.ServerListAnnouncer.GameServerInitialized)
@@ -65,7 +65,7 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0600D6CE RID: 54990 RVA: 0x004D609C File Offset: 0x004D429C
+		// Token: 0x0600D85E RID: 55390 RVA: 0x004DC4C0 File Offset: 0x004DA6C0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ValidateAuthTicketResponse(ValidateAuthTicketResponse_t _resp)
 		{
@@ -95,27 +95,27 @@ namespace Platform.Steam
 			kickPlayerDelegate(clientInfo, new GameUtils.KickPlayerData(GameUtils.EKickReason.PlatformAuthenticationFailed, (int)_resp.m_eAuthSessionResponse, default(DateTime), ""));
 		}
 
-		// Token: 0x0600D6CF RID: 54991 RVA: 0x004D6185 File Offset: 0x004D4385
+		// Token: 0x0600D85F RID: 55391 RVA: 0x004DC5A9 File Offset: 0x004DA7A9
 		public void StartServer(AuthenticationSuccessfulCallbackDelegate _authSuccessfulDelegate, KickPlayerDelegate _kickPlayerDelegate)
 		{
 			this.authSuccessfulDelegate = _authSuccessfulDelegate;
 			this.kickPlayerDelegate = _kickPlayerDelegate;
 		}
 
-		// Token: 0x0600D6D0 RID: 54992 RVA: 0x004D6195 File Offset: 0x004D4395
+		// Token: 0x0600D860 RID: 55392 RVA: 0x004DC5B9 File Offset: 0x004DA7B9
 		public void StartServerSteamGroups(SteamGroupStatusResponse _groupStatusResponseDelegate)
 		{
 			this.groupStatusResponseDelegate = _groupStatusResponseDelegate;
 		}
 
-		// Token: 0x0600D6D1 RID: 54993 RVA: 0x004D619E File Offset: 0x004D439E
+		// Token: 0x0600D861 RID: 55393 RVA: 0x004DC5C2 File Offset: 0x004DA7C2
 		public void StopServer()
 		{
 			this.authSuccessfulDelegate = null;
 			this.kickPlayerDelegate = null;
 		}
 
-		// Token: 0x0600D6D2 RID: 54994 RVA: 0x004D61B0 File Offset: 0x004D43B0
+		// Token: 0x0600D862 RID: 55394 RVA: 0x004DC5D4 File Offset: 0x004DA7D4
 		public bool RequestUserInGroupStatus(ClientInfo _cInfo, string _steamIdGroup)
 		{
 			UserIdentifierSteam userIdentifierSteam = (UserIdentifierSteam)_cInfo.PlatformId;
@@ -155,7 +155,7 @@ namespace Platform.Steam
 			return flag;
 		}
 
-		// Token: 0x0600D6D3 RID: 54995 RVA: 0x004D6288 File Offset: 0x004D4488
+		// Token: 0x0600D863 RID: 55395 RVA: 0x004DC6AC File Offset: 0x004DA8AC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void GsClientGroupStatus(GSClientGroupStatus_t _response)
 		{
@@ -169,27 +169,27 @@ namespace Platform.Steam
 			}
 		}
 
-		// Token: 0x0400A329 RID: 41769
+		// Token: 0x0400A45A RID: 42074
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform owner;
 
-		// Token: 0x0400A32A RID: 41770
+		// Token: 0x0400A45B RID: 42075
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Callback<ValidateAuthTicketResponse_t> m_validateAuthTicketResponse;
 
-		// Token: 0x0400A32B RID: 41771
+		// Token: 0x0400A45C RID: 42076
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Callback<GSClientGroupStatus_t> m_gsClientGroupStatus;
 
-		// Token: 0x0400A32C RID: 41772
+		// Token: 0x0400A45D RID: 42077
 		[PublicizedFrom(EAccessModifier.Private)]
 		public AuthenticationSuccessfulCallbackDelegate authSuccessfulDelegate;
 
-		// Token: 0x0400A32D RID: 41773
+		// Token: 0x0400A45E RID: 42078
 		[PublicizedFrom(EAccessModifier.Private)]
 		public KickPlayerDelegate kickPlayerDelegate;
 
-		// Token: 0x0400A32E RID: 41774
+		// Token: 0x0400A45F RID: 42079
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SteamGroupStatusResponse groupStatusResponseDelegate;
 	}

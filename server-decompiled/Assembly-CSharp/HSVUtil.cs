@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001401 RID: 5121
+// Token: 0x0200141C RID: 5148
 public static class HSVUtil
 {
-	// Token: 0x0600A0CE RID: 41166 RVA: 0x003C6276 File Offset: 0x003C4476
+	// Token: 0x0600A1CB RID: 41419 RVA: 0x003CB5BA File Offset: 0x003C97BA
 	public static HsvColor ConvertRgbToHsv(Color color)
 	{
 		return HSVUtil.ConvertRgbToHsv((double)((int)(color.r * 255f)), (double)((int)(color.g * 255f)), (double)((int)(color.b * 255f)));
 	}
 
-	// Token: 0x0600A0CF RID: 41167 RVA: 0x003C62A8 File Offset: 0x003C44A8
+	// Token: 0x0600A1CC RID: 41420 RVA: 0x003CB5EC File Offset: 0x003C97EC
 	public static HsvColor ConvertRgbToHsv(double r, double b, double g)
 	{
 		double num = 0.0;
@@ -58,7 +58,7 @@ public static class HSVUtil
 		};
 	}
 
-	// Token: 0x0600A0D0 RID: 41168 RVA: 0x003C63AC File Offset: 0x003C45AC
+	// Token: 0x0600A1CD RID: 41421 RVA: 0x003CB6F0 File Offset: 0x003C98F0
 	public static Color ConvertHsvToRgb(double h, double s, double v, float alpha)
 	{
 		double num;

@@ -7,10 +7,10 @@ using UnityEngine;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A65 RID: 6757
+	// Token: 0x02001A8C RID: 6796
 	public static class TrackerTests
 	{
-		// Token: 0x0600CB8D RID: 52109 RVA: 0x004A4950 File Offset: 0x004A2B50
+		// Token: 0x0600CD16 RID: 52502 RVA: 0x004AAD44 File Offset: 0x004A8F44
 		public static void Run(int num)
 		{
 			switch (num)
@@ -38,7 +38,7 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600CB8E RID: 52110 RVA: 0x004A49E1 File Offset: 0x004A2BE1
+		// Token: 0x0600CD17 RID: 52503 RVA: 0x004AADD5 File Offset: 0x004A8FD5
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerator MusicTimeTrackerTest()
 		{
@@ -61,7 +61,7 @@ namespace DynamicMusic
 			yield break;
 		}
 
-		// Token: 0x0600CB8F RID: 52111 RVA: 0x004A49E9 File Offset: 0x004A2BE9
+		// Token: 0x0600CD18 RID: 52504 RVA: 0x004AADDD File Offset: 0x004A8FDD
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerator DayTimeTrackerTest()
 		{
@@ -78,7 +78,7 @@ namespace DynamicMusic
 			yield break;
 		}
 
-		// Token: 0x0600CB90 RID: 52112 RVA: 0x004A49F1 File Offset: 0x004A2BF1
+		// Token: 0x0600CD19 RID: 52505 RVA: 0x004AADE5 File Offset: 0x004A8FE5
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerator PlayerTrackerTest()
 		{
@@ -94,7 +94,7 @@ namespace DynamicMusic
 			yield break;
 		}
 
-		// Token: 0x0600CB91 RID: 52113 RVA: 0x004A49F9 File Offset: 0x004A2BF9
+		// Token: 0x0600CD1A RID: 52506 RVA: 0x004AADED File Offset: 0x004A8FED
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerator SelectorTest()
 		{
@@ -110,7 +110,7 @@ namespace DynamicMusic
 			yield break;
 		}
 
-		// Token: 0x0600CB92 RID: 52114 RVA: 0x004A4A01 File Offset: 0x004A2C01
+		// Token: 0x0600CD1B RID: 52507 RVA: 0x004AADF5 File Offset: 0x004A8FF5
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerator ConductorTest()
 		{
@@ -125,7 +125,7 @@ namespace DynamicMusic
 			yield break;
 		}
 
-		// Token: 0x0600CB93 RID: 52115 RVA: 0x004A4A09 File Offset: 0x004A2C09
+		// Token: 0x0600CD1C RID: 52508 RVA: 0x004AADFD File Offset: 0x004A8FFD
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IEnumerator RealTimeConductorTest()
 		{
@@ -139,13 +139,13 @@ namespace DynamicMusic
 			yield break;
 		}
 
-		// Token: 0x04009A4C RID: 39500
+		// Token: 0x04009B7D RID: 39805
 		public static bool continueTest = false;
 
-		// Token: 0x04009A4D RID: 39501
+		// Token: 0x04009B7E RID: 39806
 		public static bool isFinished = false;
 
-		// Token: 0x04009A4E RID: 39502
+		// Token: 0x04009B7F RID: 39807
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static List<SectionType> sections = new List<SectionType>
 		{

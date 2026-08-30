@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007C6 RID: 1990
+// Token: 0x020007D1 RID: 2001
 [Preserve]
 public class NetPackageEmitSmell : NetPackage
 {
-	// Token: 0x06003AE5 RID: 15077 RVA: 0x0017C4BB File Offset: 0x0017A6BB
+	// Token: 0x06003B44 RID: 15172 RVA: 0x0017E893 File Offset: 0x0017CA93
 	public NetPackageEmitSmell Setup(int entityId, string smellName)
 	{
 		this.EntityId = entityId;
@@ -13,7 +13,7 @@ public class NetPackageEmitSmell : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003AE6 RID: 15078 RVA: 0x0017C4CC File Offset: 0x0017A6CC
+	// Token: 0x06003B45 RID: 15173 RVA: 0x0017E8A4 File Offset: 0x0017CAA4
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.EntityId = _reader.ReadInt32();
@@ -24,7 +24,7 @@ public class NetPackageEmitSmell : NetPackage
 		}
 	}
 
-	// Token: 0x06003AE7 RID: 15079 RVA: 0x0017C4FA File Offset: 0x0017A6FA
+	// Token: 0x06003B46 RID: 15174 RVA: 0x0017E8D2 File Offset: 0x0017CAD2
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -32,20 +32,20 @@ public class NetPackageEmitSmell : NetPackage
 		_writer.Write((this.SmellName != null) ? this.SmellName : "");
 	}
 
-	// Token: 0x06003AE8 RID: 15080 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06003B47 RID: 15175 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 	}
 
-	// Token: 0x06003AE9 RID: 15081 RVA: 0x00080B3A File Offset: 0x0007ED3A
+	// Token: 0x06003B48 RID: 15176 RVA: 0x000811EE File Offset: 0x0007F3EE
 	public override int GetLength()
 	{
 		return 10;
 	}
 
-	// Token: 0x04002FE6 RID: 12262
+	// Token: 0x04003065 RID: 12389
 	public int EntityId;
 
-	// Token: 0x04002FE7 RID: 12263
+	// Token: 0x04003066 RID: 12390
 	public string SmellName;
 }

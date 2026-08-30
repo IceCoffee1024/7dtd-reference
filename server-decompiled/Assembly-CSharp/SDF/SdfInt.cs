@@ -3,10 +3,10 @@ using System.IO;
 
 namespace SDF
 {
-	// Token: 0x0200166F RID: 5743
+	// Token: 0x02001695 RID: 5781
 	public class SdfInt : SdfTag
 	{
-		// Token: 0x0600B3E6 RID: 46054 RVA: 0x00432A9D File Offset: 0x00430C9D
+		// Token: 0x0600B569 RID: 46441 RVA: 0x00438815 File Offset: 0x00436A15
 		public SdfInt(string _name, int _value)
 		{
 			base.TagType = SdfTagType.Int;
@@ -14,7 +14,7 @@ namespace SDF
 			base.Value = _value;
 		}
 
-		// Token: 0x0600B3E7 RID: 46055 RVA: 0x00432ABF File Offset: 0x00430CBF
+		// Token: 0x0600B56A RID: 46442 RVA: 0x00438837 File Offset: 0x00436A37
 		public override void WritePayload(BinaryWriter bw)
 		{
 			bw.Write((int)base.Value);

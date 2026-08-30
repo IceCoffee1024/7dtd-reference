@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x02000AC9 RID: 2761
+// Token: 0x02000ADB RID: 2779
 public class BiomeSpawningClass
 {
-	// Token: 0x0600529A RID: 21146 RVA: 0x001F9721 File Offset: 0x001F7921
+	// Token: 0x06005320 RID: 21280 RVA: 0x001FC1B9 File Offset: 0x001FA3B9
 	public static void Cleanup()
 	{
 		BiomeSpawningClass.list.Clear();
 	}
 
-	// Token: 0x04004039 RID: 16441
+	// Token: 0x040040CE RID: 16590
 	public static DictionarySave<string, BiomeSpawnEntityGroupList> list = new DictionarySave<string, BiomeSpawnEntityGroupList>();
 }

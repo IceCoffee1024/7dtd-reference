@@ -4,11 +4,11 @@ using Unity.Collections.LowLevel.Unsafe;
 using Unity.Mathematics;
 using UnityEngine;
 
-// Token: 0x02000CBA RID: 3258
+// Token: 0x02000CCC RID: 3276
 public struct WaterDataHandle : IDisposable
 {
-	// Token: 0x17000A6C RID: 2668
-	// (get) Token: 0x060063FC RID: 25596 RVA: 0x00271E90 File Offset: 0x00270090
+	// Token: 0x17000A7F RID: 2687
+	// (get) Token: 0x06006488 RID: 25736 RVA: 0x00274D8C File Offset: 0x00272F8C
 	public UnsafeBitArraySetIndicesEnumerator ActiveVoxelIndices
 	{
 		get
@@ -17,8 +17,8 @@ public struct WaterDataHandle : IDisposable
 		}
 	}
 
-	// Token: 0x17000A6D RID: 2669
-	// (get) Token: 0x060063FD RID: 25597 RVA: 0x00271E9D File Offset: 0x0027009D
+	// Token: 0x17000A80 RID: 2688
+	// (get) Token: 0x06006489 RID: 25737 RVA: 0x00274D99 File Offset: 0x00272F99
 	public UnsafeParallelHashMap<int, int>.Enumerator FlowVoxels
 	{
 		get
@@ -27,8 +27,8 @@ public struct WaterDataHandle : IDisposable
 		}
 	}
 
-	// Token: 0x17000A6E RID: 2670
-	// (get) Token: 0x060063FE RID: 25598 RVA: 0x00271EAA File Offset: 0x002700AA
+	// Token: 0x17000A81 RID: 2689
+	// (get) Token: 0x0600648A RID: 25738 RVA: 0x00274DA6 File Offset: 0x00272FA6
 	public bool HasActiveWater
 	{
 		get
@@ -37,8 +37,8 @@ public struct WaterDataHandle : IDisposable
 		}
 	}
 
-	// Token: 0x17000A6F RID: 2671
-	// (get) Token: 0x060063FF RID: 25599 RVA: 0x00271EC3 File Offset: 0x002700C3
+	// Token: 0x17000A82 RID: 2690
+	// (get) Token: 0x0600648B RID: 25739 RVA: 0x00274DBF File Offset: 0x00272FBF
 	public bool HasFlows
 	{
 		get
@@ -47,7 +47,7 @@ public struct WaterDataHandle : IDisposable
 		}
 	}
 
-	// Token: 0x06006400 RID: 25600 RVA: 0x00271ED4 File Offset: 0x002700D4
+	// Token: 0x0600648C RID: 25740 RVA: 0x00274DD0 File Offset: 0x00272FD0
 	public static WaterDataHandle AllocateNew(Allocator allocator)
 	{
 		WaterDataHandle waterDataHandle = default(WaterDataHandle);
@@ -55,7 +55,7 @@ public struct WaterDataHandle : IDisposable
 		return waterDataHandle;
 	}
 
-	// Token: 0x06006401 RID: 25601 RVA: 0x00271EF4 File Offset: 0x002700F4
+	// Token: 0x0600648D RID: 25741 RVA: 0x00274DF0 File Offset: 0x00272FF0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Allocate(Allocator allocator)
 	{
@@ -69,50 +69,50 @@ public struct WaterDataHandle : IDisposable
 		this.voxelsToWakeup = new UnsafeParallelHashSet<int>(256, allocator);
 	}
 
-	// Token: 0x06006402 RID: 25602 RVA: 0x00271FA4 File Offset: 0x002701A4
+	// Token: 0x0600648E RID: 25742 RVA: 0x00274EA0 File Offset: 0x002730A0
 	public bool IsInGroundWater(int _x, int _y, int _z)
 	{
 		GroundWaterBounds groundWaterBounds = this.groundWaterHeights.Get(_x, _z);
 		return groundWaterBounds.IsGroundWater && _y >= (int)groundWaterBounds.bottom && _y <= (int)groundWaterBounds.waterHeight;
 	}
 
-	// Token: 0x06006403 RID: 25603 RVA: 0x00271FE1 File Offset: 0x002701E1
+	// Token: 0x0600648F RID: 25743 RVA: 0x00274EDD File Offset: 0x002730DD
 	public void SetVoxelActive(int _x, int _y, int _z)
 	{
 		this.activeVoxels.Set(WaterDataHandle.GetVoxelIndex(_x, _y, _z), true);
 	}
 
-	// Token: 0x06006404 RID: 25604 RVA: 0x00271FF7 File Offset: 0x002701F7
+	// Token: 0x06006490 RID: 25744 RVA: 0x00274EF3 File Offset: 0x002730F3
 	public void SetVoxelActive(int _index)
 	{
 		this.activeVoxels.Set(_index, true);
 	}
 
-	// Token: 0x06006405 RID: 25605 RVA: 0x00272006 File Offset: 0x00270206
+	// Token: 0x06006491 RID: 25745 RVA: 0x00274F02 File Offset: 0x00273102
 	public void EnqueueVoxelActive(int _x, int _y, int _z)
 	{
 		this.EnqueueVoxelActive(WaterDataHandle.GetVoxelIndex(_x, _y, _z));
 	}
 
-	// Token: 0x06006406 RID: 25606 RVA: 0x00272016 File Offset: 0x00270216
+	// Token: 0x06006492 RID: 25746 RVA: 0x00274F12 File Offset: 0x00273112
 	public void EnqueueVoxelActive(int _index)
 	{
 		this.activationsFromOtherChunks.AddThreadSafe(_index);
 	}
 
-	// Token: 0x06006407 RID: 25607 RVA: 0x00272024 File Offset: 0x00270224
+	// Token: 0x06006493 RID: 25747 RVA: 0x00274F20 File Offset: 0x00273120
 	public void EnqueueVoxelWakeup(int _x, int _y, int _z)
 	{
 		this.EnqueueVoxelWakeup(WaterDataHandle.GetVoxelIndex(_x, _y, _z));
 	}
 
-	// Token: 0x06006408 RID: 25608 RVA: 0x00272034 File Offset: 0x00270234
+	// Token: 0x06006494 RID: 25748 RVA: 0x00274F30 File Offset: 0x00273130
 	public void EnqueueVoxelWakeup(int _index)
 	{
 		this.voxelsToWakeup.Add(_index);
 	}
 
-	// Token: 0x06006409 RID: 25609 RVA: 0x00272044 File Offset: 0x00270244
+	// Token: 0x06006495 RID: 25749 RVA: 0x00274F40 File Offset: 0x00273140
 	public void ApplyEnqueuedActivations()
 	{
 		NativeArray<int> nativeArray = this.activationsFromOtherChunks.AsNativeArray();
@@ -124,20 +124,20 @@ public struct WaterDataHandle : IDisposable
 		this.activationsFromOtherChunks.Clear();
 	}
 
-	// Token: 0x0600640A RID: 25610 RVA: 0x0027208A File Offset: 0x0027028A
+	// Token: 0x06006496 RID: 25750 RVA: 0x00274F86 File Offset: 0x00273186
 	public void SetVoxelInactive(int _index)
 	{
 		this.activeVoxels.Set(_index, false);
 	}
 
-	// Token: 0x0600640B RID: 25611 RVA: 0x0027209C File Offset: 0x0027029C
+	// Token: 0x06006497 RID: 25751 RVA: 0x00274F98 File Offset: 0x00273198
 	public void SetVoxelMass(int _x, int _y, int _z, int _mass)
 	{
 		int voxelIndex = WaterDataHandle.GetVoxelIndex(_x, _y, _z);
 		this.SetVoxelMass(voxelIndex, _mass);
 	}
 
-	// Token: 0x0600640C RID: 25612 RVA: 0x002720BB File Offset: 0x002702BB
+	// Token: 0x06006498 RID: 25752 RVA: 0x00274FB7 File Offset: 0x002731B7
 	public void SetVoxelMass(int _index, int _mass)
 	{
 		if (_mass > 195)
@@ -151,7 +151,7 @@ public struct WaterDataHandle : IDisposable
 		this.voxelData.Set(_index, _mass);
 	}
 
-	// Token: 0x0600640D RID: 25613 RVA: 0x002720F0 File Offset: 0x002702F0
+	// Token: 0x06006499 RID: 25753 RVA: 0x00274FEC File Offset: 0x002731EC
 	public void SetVoxelSolid(int _x, int _y, int _z, BlockFaceFlag _flags)
 	{
 		int voxelIndex = WaterDataHandle.GetVoxelIndex(_x, _y, _z);
@@ -192,13 +192,13 @@ public struct WaterDataHandle : IDisposable
 		}
 	}
 
-	// Token: 0x0600640E RID: 25614 RVA: 0x0027223E File Offset: 0x0027043E
+	// Token: 0x0600649A RID: 25754 RVA: 0x0027513A File Offset: 0x0027333A
 	public void ApplyFlow(int _x, int _y, int _z, int _flow)
 	{
 		this.ApplyFlow(WaterDataHandle.GetVoxelIndex(_x, _y, _z), _flow);
 	}
 
-	// Token: 0x0600640F RID: 25615 RVA: 0x00272250 File Offset: 0x00270450
+	// Token: 0x0600649B RID: 25755 RVA: 0x0027514C File Offset: 0x0027334C
 	public void ApplyFlow(int _index, int _flow)
 	{
 		int num;
@@ -209,7 +209,7 @@ public struct WaterDataHandle : IDisposable
 		this.flowVoxels[_index] = _flow;
 	}
 
-	// Token: 0x06006410 RID: 25616 RVA: 0x00272280 File Offset: 0x00270480
+	// Token: 0x0600649C RID: 25756 RVA: 0x0027517C File Offset: 0x0027337C
 	public void EnqueueFlow(int _voxelIndex, int _flow)
 	{
 		this.flowsFromOtherChunks.AddThreadSafe(new WaterFlow
@@ -219,7 +219,7 @@ public struct WaterDataHandle : IDisposable
 		});
 	}
 
-	// Token: 0x06006411 RID: 25617 RVA: 0x002722B4 File Offset: 0x002704B4
+	// Token: 0x0600649D RID: 25757 RVA: 0x002751B0 File Offset: 0x002733B0
 	public void ApplyEnqueuedFlows()
 	{
 		NativeArray<WaterFlow> nativeArray = this.flowsFromOtherChunks.AsNativeArray();
@@ -231,7 +231,7 @@ public struct WaterDataHandle : IDisposable
 		this.flowsFromOtherChunks.Clear();
 	}
 
-	// Token: 0x06006412 RID: 25618 RVA: 0x00272308 File Offset: 0x00270508
+	// Token: 0x0600649E RID: 25758 RVA: 0x00275204 File Offset: 0x00273404
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int FindGroundWaterBottom(int _fromIndex)
 	{
@@ -254,7 +254,7 @@ public struct WaterDataHandle : IDisposable
 		return 0;
 	}
 
-	// Token: 0x06006413 RID: 25619 RVA: 0x0027236C File Offset: 0x0027056C
+	// Token: 0x0600649F RID: 25759 RVA: 0x00275268 File Offset: 0x00273468
 	public void InitializeFromChunk(Chunk _chunk, GroundWaterHeightMap _groundWaterHeightMap)
 	{
 		if (!this.voxelData.IsCreated || !this.activeVoxels.IsCreated)
@@ -307,7 +307,7 @@ public struct WaterDataHandle : IDisposable
 		}
 	}
 
-	// Token: 0x06006414 RID: 25620 RVA: 0x002724FC File Offset: 0x002706FC
+	// Token: 0x060064A0 RID: 25760 RVA: 0x002753F8 File Offset: 0x002735F8
 	public void Clear()
 	{
 		if (this.voxelData.IsCreated)
@@ -344,7 +344,7 @@ public struct WaterDataHandle : IDisposable
 		}
 	}
 
-	// Token: 0x06006415 RID: 25621 RVA: 0x002725CC File Offset: 0x002707CC
+	// Token: 0x060064A1 RID: 25761 RVA: 0x002754C8 File Offset: 0x002736C8
 	public void Dispose()
 	{
 		if (this.voxelData.IsCreated)
@@ -381,13 +381,13 @@ public struct WaterDataHandle : IDisposable
 		}
 	}
 
-	// Token: 0x06006416 RID: 25622 RVA: 0x0027269C File Offset: 0x0027089C
+	// Token: 0x060064A2 RID: 25762 RVA: 0x00275598 File Offset: 0x00273798
 	public int CalculateOwnedBytes()
 	{
 		return 0 + this.voxelData.CalculateOwnedBytes() + this.voxelState.CalculateOwnedBytes() + this.groundWaterHeights.CalculateOwnedBytes() + ProfilerUtils.CalculateUnsafeBitArrayBytes(this.activeVoxels) + ProfilerUtils.CalculateUnsafeParallelHashMapBytes<int, int>(this.flowVoxels) + this.flowsFromOtherChunks.CalculateOwnedBytes() + this.activationsFromOtherChunks.CalculateOwnedBytes() + ProfilerUtils.CalculateUnsafeParallelHashSetBytes<int>(this.voxelsToWakeup);
 	}
 
-	// Token: 0x06006417 RID: 25623 RVA: 0x0027270C File Offset: 0x0027090C
+	// Token: 0x060064A3 RID: 25763 RVA: 0x00275608 File Offset: 0x00273808
 	public string GetMemoryStats()
 	{
 		return string.Format("voxelData: {0:F2} KB, voxelState: {1:F2} KB, groundWaterHeights: {2:F2} KB, activeVoxels: ({3:F2} KB), flowVoxels: ({4},{5},{6:F2} KB), flowsFromOtherChunks: {7:F2} KB, activationsFromOtherChunks: {8:F2} KB, voxelsToWakeup {9:F2} KB, Total: {10:F2} MB", new object[]
@@ -406,13 +406,13 @@ public struct WaterDataHandle : IDisposable
 		});
 	}
 
-	// Token: 0x06006418 RID: 25624 RVA: 0x0027285B File Offset: 0x00270A5B
+	// Token: 0x060064A4 RID: 25764 RVA: 0x00275757 File Offset: 0x00273957
 	public static int GetVoxelIndex(int _x, int _y, int _z)
 	{
 		return _x + _y * 256 + _z * 16;
 	}
 
-	// Token: 0x06006419 RID: 25625 RVA: 0x0027286C File Offset: 0x00270A6C
+	// Token: 0x060064A5 RID: 25765 RVA: 0x00275768 File Offset: 0x00273968
 	public static int3 GetVoxelCoords(int index)
 	{
 		int3 @int = default(int3);
@@ -423,33 +423,33 @@ public struct WaterDataHandle : IDisposable
 		return @int;
 	}
 
-	// Token: 0x0600641A RID: 25626 RVA: 0x002728AE File Offset: 0x00270AAE
+	// Token: 0x060064A6 RID: 25766 RVA: 0x002757AA File Offset: 0x002739AA
 	public static int GetVoxelY(int _index)
 	{
 		return _index / 256;
 	}
 
-	// Token: 0x04004D95 RID: 19861
+	// Token: 0x04004E33 RID: 20019
 	public UnsafeChunkData<int> voxelData;
 
-	// Token: 0x04004D96 RID: 19862
+	// Token: 0x04004E34 RID: 20020
 	public UnsafeChunkData<WaterVoxelState> voxelState;
 
-	// Token: 0x04004D97 RID: 19863
+	// Token: 0x04004E35 RID: 20021
 	public UnsafeChunkXZMap<GroundWaterBounds> groundWaterHeights;
 
-	// Token: 0x04004D98 RID: 19864
+	// Token: 0x04004E36 RID: 20022
 	public UnsafeBitArray activeVoxels;
 
-	// Token: 0x04004D99 RID: 19865
+	// Token: 0x04004E37 RID: 20023
 	public UnsafeParallelHashMap<int, int> flowVoxels;
 
-	// Token: 0x04004D9A RID: 19866
+	// Token: 0x04004E38 RID: 20024
 	public UnsafeFixedBuffer<WaterFlow> flowsFromOtherChunks;
 
-	// Token: 0x04004D9B RID: 19867
+	// Token: 0x04004E39 RID: 20025
 	public UnsafeFixedBuffer<int> activationsFromOtherChunks;
 
-	// Token: 0x04004D9C RID: 19868
+	// Token: 0x04004E3A RID: 20026
 	public UnsafeParallelHashSet<int> voxelsToWakeup;
 }

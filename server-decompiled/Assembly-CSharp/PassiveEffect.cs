@@ -4,10 +4,10 @@ using System.Globalization;
 using System.Xml.Linq;
 using UnityEngine;
 
-// Token: 0x020006BA RID: 1722
+// Token: 0x020006C4 RID: 1732
 public class PassiveEffect
 {
-	// Token: 0x060035A0 RID: 13728 RVA: 0x00161CB0 File Offset: 0x0015FEB0
+	// Token: 0x060035F6 RID: 13814 RVA: 0x00163E88 File Offset: 0x00162088
 	public void ModifyValue(EntityAlive _ea, float _level, ref float _base_value, ref float _perc_value, FastTags<TagGroup.Global> _tags = default(FastTags<TagGroup.Global>), int _stackEffectMultiplier = 1)
 	{
 		if (this.CVarValues != null)
@@ -32,7 +32,7 @@ public class PassiveEffect
 		PassiveEffect.ModValue(this.Modifier, _level, ref _base_value, ref _perc_value, this.Levels, this.Values, (float)_stackEffectMultiplier, 0);
 	}
 
-	// Token: 0x060035A1 RID: 13729 RVA: 0x00161D48 File Offset: 0x0015FF48
+	// Token: 0x060035F7 RID: 13815 RVA: 0x00163F20 File Offset: 0x00162120
 	public void GetModifiedValueData(List<EffectManager.ModifierValuesAndSources> _modValueSource, EffectManager.ModifierValuesAndSources.ValueSourceType _sourceType, MinEffectController.SourceParentType _parentType, EntityAlive _ea, float _level, ref float _base_value, ref float _perc_value, FastTags<TagGroup.Global> _tags = default(FastTags<TagGroup.Global>), int _stackEffectMultiplier = 1, object _parentPointer = null)
 	{
 		float num = 0f;
@@ -79,13 +79,13 @@ public class PassiveEffect
 		_modValueSource.Add(modifierValuesAndSources);
 	}
 
-	// Token: 0x060035A2 RID: 13730 RVA: 0x00161E65 File Offset: 0x00160065
+	// Token: 0x060035F8 RID: 13816 RVA: 0x0016403D File Offset: 0x0016223D
 	public bool RequirementsMet(MinEventParams _params)
 	{
 		return this.hasMatchingTag(_params.Tags) && (this.Requirements == null || this.Requirements.IsValid(_params));
 	}
 
-	// Token: 0x060035A3 RID: 13731 RVA: 0x00161E90 File Offset: 0x00160090
+	// Token: 0x060035F9 RID: 13817 RVA: 0x00164068 File Offset: 0x00162268
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasMatchingTag(FastTags<TagGroup.Global> _tags)
 	{
@@ -115,7 +115,7 @@ public class PassiveEffect
 		}
 	}
 
-	// Token: 0x060035A4 RID: 13732 RVA: 0x00161F24 File Offset: 0x00160124
+	// Token: 0x060035FA RID: 13818 RVA: 0x001640FC File Offset: 0x001622FC
 	public static PassiveEffect ParsePassiveEffect(XElement _element)
 	{
 		string attribute = _element.GetAttribute("name");
@@ -263,7 +263,7 @@ public class PassiveEffect
 		return passiveEffect;
 	}
 
-	// Token: 0x060035A5 RID: 13733 RVA: 0x00162368 File Offset: 0x00160568
+	// Token: 0x060035FB RID: 13819 RVA: 0x00164540 File Offset: 0x00162740
 	public static PassiveEffect CreateEmptyPassiveEffect(PassiveEffects type)
 	{
 		return new PassiveEffect
@@ -274,7 +274,7 @@ public class PassiveEffect
 		};
 	}
 
-	// Token: 0x060035A6 RID: 13734 RVA: 0x00162398 File Offset: 0x00160598
+	// Token: 0x060035FC RID: 13820 RVA: 0x00164570 File Offset: 0x00162770
 	public void AddColoredInfoStrings(ref List<string> _infoList, float _level = -1f)
 	{
 		if (this.Levels == null)
@@ -293,7 +293,7 @@ public class PassiveEffect
 		_infoList.Add(this.GetDisplayValue(_level, 0f, 1f, 1f));
 	}
 
-	// Token: 0x060035A7 RID: 13735 RVA: 0x0016242C File Offset: 0x0016062C
+	// Token: 0x060035FD RID: 13821 RVA: 0x00164604 File Offset: 0x00162804
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ModValue(PassiveEffect.ValueModifierTypes _modifier, float _level, ref float _base_value, ref float _perc_value, float[] _levels, float[] _values, float _multiplier = 1f, int _seed = 0)
 	{
@@ -539,14 +539,14 @@ public class PassiveEffect
 		}
 	}
 
-	// Token: 0x060035A8 RID: 13736 RVA: 0x001617C9 File Offset: 0x0015F9C9
+	// Token: 0x060035FE RID: 13822 RVA: 0x001639A1 File Offset: 0x00161BA1
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static bool InLevelRange(float _level, float _min, float _max)
 	{
 		return _level >= _min && _level <= _max;
 	}
 
-	// Token: 0x060035A9 RID: 13737 RVA: 0x001629B8 File Offset: 0x00160BB8
+	// Token: 0x060035FF RID: 13823 RVA: 0x00164B90 File Offset: 0x00162D90
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string GetDisplayValue(float _level, float _base_value = 0f, float _perc_value = 1f, float _multiplier = 1f)
 	{
@@ -671,49 +671,49 @@ public class PassiveEffect
 		return null;
 	}
 
-	// Token: 0x04002B1B RID: 11035
+	// Token: 0x04002B8F RID: 11151
 	public PassiveEffects Type;
 
-	// Token: 0x04002B1C RID: 11036
+	// Token: 0x04002B90 RID: 11152
 	public PassiveEffect.ValueModifierTypes Modifier;
 
-	// Token: 0x04002B1D RID: 11037
+	// Token: 0x04002B91 RID: 11153
 	public string[] CVarValues;
 
-	// Token: 0x04002B1E RID: 11038
+	// Token: 0x04002B92 RID: 11154
 	public float[] Values;
 
-	// Token: 0x04002B1F RID: 11039
+	// Token: 0x04002B93 RID: 11155
 	public float[] Levels;
 
-	// Token: 0x04002B20 RID: 11040
+	// Token: 0x04002B94 RID: 11156
 	public RequirementGroup Requirements;
 
-	// Token: 0x04002B21 RID: 11041
+	// Token: 0x04002B95 RID: 11157
 	public FastTags<TagGroup.Global> Tags;
 
-	// Token: 0x04002B22 RID: 11042
+	// Token: 0x04002B96 RID: 11158
 	public bool MatchAnyTags = true;
 
-	// Token: 0x04002B23 RID: 11043
+	// Token: 0x04002B97 RID: 11159
 	public bool InvertTagCheck;
 
-	// Token: 0x020006BB RID: 1723
+	// Token: 0x020006C5 RID: 1733
 	public enum ValueModifierTypes
 	{
-		// Token: 0x04002B25 RID: 11045
+		// Token: 0x04002B99 RID: 11161
 		base_set,
-		// Token: 0x04002B26 RID: 11046
+		// Token: 0x04002B9A RID: 11162
 		base_add,
-		// Token: 0x04002B27 RID: 11047
+		// Token: 0x04002B9B RID: 11163
 		base_subtract,
-		// Token: 0x04002B28 RID: 11048
+		// Token: 0x04002B9C RID: 11164
 		perc_set,
-		// Token: 0x04002B29 RID: 11049
+		// Token: 0x04002B9D RID: 11165
 		perc_add,
-		// Token: 0x04002B2A RID: 11050
+		// Token: 0x04002B9E RID: 11166
 		perc_subtract,
-		// Token: 0x04002B2B RID: 11051
+		// Token: 0x04002B9F RID: 11167
 		COUNT
 	}
 }

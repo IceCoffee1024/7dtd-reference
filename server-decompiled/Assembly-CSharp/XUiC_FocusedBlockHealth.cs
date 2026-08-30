@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F1E RID: 3870
+// Token: 0x02000F35 RID: 3893
 [Preserve]
 public class XUiC_FocusedBlockHealth : XUiController
 {
-	// Token: 0x17000E30 RID: 3632
-	// (get) Token: 0x0600798C RID: 31116 RVA: 0x002DD806 File Offset: 0x002DBA06
-	// (set) Token: 0x0600798D RID: 31117 RVA: 0x002DD80E File Offset: 0x002DBA0E
+	// Token: 0x17000E4B RID: 3659
+	// (get) Token: 0x06007A45 RID: 31301 RVA: 0x002E17BA File Offset: 0x002DF9BA
+	// (set) Token: 0x06007A46 RID: 31302 RVA: 0x002E17C2 File Offset: 0x002DF9C2
 	public string Text
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -26,9 +26,9 @@ public class XUiC_FocusedBlockHealth : XUiController
 		}
 	}
 
-	// Token: 0x17000E31 RID: 3633
-	// (get) Token: 0x0600798E RID: 31118 RVA: 0x002DD835 File Offset: 0x002DBA35
-	// (set) Token: 0x0600798F RID: 31119 RVA: 0x002DD83D File Offset: 0x002DBA3D
+	// Token: 0x17000E4C RID: 3660
+	// (get) Token: 0x06007A47 RID: 31303 RVA: 0x002E17E9 File Offset: 0x002DF9E9
+	// (set) Token: 0x06007A48 RID: 31304 RVA: 0x002E17F1 File Offset: 0x002DF9F1
 	public float Fill
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -47,14 +47,14 @@ public class XUiC_FocusedBlockHealth : XUiController
 		}
 	}
 
-	// Token: 0x06007990 RID: 31120 RVA: 0x002DD856 File Offset: 0x002DBA56
+	// Token: 0x06007A49 RID: 31305 RVA: 0x002E180A File Offset: 0x002DFA0A
 	public override void Init()
 	{
 		base.Init();
 		XUiC_FocusedBlockHealth.ID = base.WindowGroup.Id;
 	}
 
-	// Token: 0x06007991 RID: 31121 RVA: 0x0008A091 File Offset: 0x00088291
+	// Token: 0x06007A4A RID: 31306 RVA: 0x0008A73D File Offset: 0x0008893D
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -65,7 +65,7 @@ public class XUiC_FocusedBlockHealth : XUiController
 		}
 	}
 
-	// Token: 0x06007992 RID: 31122 RVA: 0x002DD86E File Offset: 0x002DBA6E
+	// Token: 0x06007A4B RID: 31307 RVA: 0x002E1822 File Offset: 0x002DFA22
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -82,7 +82,7 @@ public class XUiC_FocusedBlockHealth : XUiController
 		return true;
 	}
 
-	// Token: 0x06007993 RID: 31123 RVA: 0x002DD8B0 File Offset: 0x002DBAB0
+	// Token: 0x06007A4C RID: 31308 RVA: 0x002E1864 File Offset: 0x002DFA64
 	public static void SetData(LocalPlayerUI _playerUi, string _text, float _fill)
 	{
 		if (_playerUi != null && _playerUi.xui != null)
@@ -104,20 +104,20 @@ public class XUiC_FocusedBlockHealth : XUiController
 		}
 	}
 
-	// Token: 0x06007994 RID: 31124 RVA: 0x002DD928 File Offset: 0x002DBB28
+	// Token: 0x06007A4D RID: 31309 RVA: 0x002E18DC File Offset: 0x002DFADC
 	public static bool IsWindowOpen(LocalPlayerUI _playerUi)
 	{
 		return _playerUi.windowManager.IsWindowOpen(XUiC_FocusedBlockHealth.ID);
 	}
 
-	// Token: 0x040059C1 RID: 22977
+	// Token: 0x04005A74 RID: 23156
 	public static string ID = "";
 
-	// Token: 0x040059C2 RID: 22978
+	// Token: 0x04005A75 RID: 23157
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string text = "";
 
-	// Token: 0x040059C3 RID: 22979
+	// Token: 0x04005A76 RID: 23158
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float fill;
 }

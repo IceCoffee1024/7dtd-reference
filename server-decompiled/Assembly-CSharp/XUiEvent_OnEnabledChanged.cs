@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x02000EA4 RID: 3748
-// (Invoke) Token: 0x060074D9 RID: 29913
+// Token: 0x02000EB9 RID: 3769
+// (Invoke) Token: 0x06007579 RID: 30073
 public delegate void XUiEvent_OnEnabledChanged(XUiController _sender, bool _enabled);

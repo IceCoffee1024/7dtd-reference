@@ -7,12 +7,12 @@ using UnityEngine;
 
 namespace Twitch
 {
-	// Token: 0x0200183B RID: 6203
+	// Token: 0x02001861 RID: 6241
 	public class TwitchViewerData
 	{
-		// Token: 0x1700172B RID: 5931
-		// (get) Token: 0x0600BF35 RID: 48949 RVA: 0x0046EF2B File Offset: 0x0046D12B
-		// (set) Token: 0x0600BF36 RID: 48950 RVA: 0x0046EF33 File Offset: 0x0046D133
+		// Token: 0x1700179D RID: 6045
+		// (get) Token: 0x0600C0BA RID: 49338 RVA: 0x00474CC7 File Offset: 0x00472EC7
+		// (set) Token: 0x0600C0BB RID: 49339 RVA: 0x00474CCF File Offset: 0x00472ECF
 		public float PointRate
 		{
 			get
@@ -26,13 +26,13 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BF37 RID: 48951 RVA: 0x0046EF4C File Offset: 0x0046D14C
+		// Token: 0x0600C0BC RID: 49340 RVA: 0x00474CE8 File Offset: 0x00472EE8
 		public TwitchViewerData(TwitchManager owner)
 		{
 			this.Owner = owner;
 		}
 
-		// Token: 0x0600BF38 RID: 48952 RVA: 0x0046F008 File Offset: 0x0046D208
+		// Token: 0x0600C0BD RID: 49341 RVA: 0x00474DA4 File Offset: 0x00472FA4
 		public int GetSubTierPoints(TwitchSubEventEntry.SubTierTypes tier)
 		{
 			if (tier == TwitchSubEventEntry.SubTierTypes.Tier2)
@@ -46,7 +46,7 @@ namespace Twitch
 			return this.SubPointAddTier3;
 		}
 
-		// Token: 0x0600BF39 RID: 48953 RVA: 0x0046F028 File Offset: 0x0046D228
+		// Token: 0x0600C0BE RID: 49342 RVA: 0x00474DC4 File Offset: 0x00472FC4
 		public string GetRandomActiveViewer()
 		{
 			string userName = this.Owner.Authentication.userName;
@@ -65,7 +65,7 @@ namespace Twitch
 			return "";
 		}
 
-		// Token: 0x0600BF3A RID: 48954 RVA: 0x0046F0E0 File Offset: 0x0046D2E0
+		// Token: 0x0600C0BF RID: 49343 RVA: 0x00474E7C File Offset: 0x0047307C
 		public int GetGiftSubTierPoints(TwitchSubEventEntry.SubTierTypes tier)
 		{
 			if (tier == TwitchSubEventEntry.SubTierTypes.Tier2)
@@ -79,7 +79,7 @@ namespace Twitch
 			return this.GiftSubPointAddTier3;
 		}
 
-		// Token: 0x0600BF3B RID: 48955 RVA: 0x0046F100 File Offset: 0x0046D300
+		// Token: 0x0600C0C0 RID: 49344 RVA: 0x00474E9C File Offset: 0x0047309C
 		public void SetupLocalization()
 		{
 			this.chatOutput_AddPPAll = Localization.Get("TwitchChat_AddPPAll", false, null);
@@ -90,7 +90,7 @@ namespace Twitch
 			this.ingameOutput_GiftedSubs = Localization.Get("TwitchInGame_GiftedSubs", false, null);
 		}
 
-		// Token: 0x0600BF3C RID: 48956 RVA: 0x0046F17C File Offset: 0x0046D37C
+		// Token: 0x0600C0C1 RID: 49345 RVA: 0x00474F18 File Offset: 0x00473118
 		public void Update(float deltaTime)
 		{
 			this.NextActionTime -= deltaTime;
@@ -133,7 +133,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BF3D RID: 48957 RVA: 0x0046F338 File Offset: 0x0046D538
+		// Token: 0x0600C0C2 RID: 49346 RVA: 0x004750D4 File Offset: 0x004732D4
 		public void AddGiftSubEntry(string userName, int userID, TwitchSubEventEntry.SubTierTypes tier, int total)
 		{
 			for (int i = 0; i < this.SubEntries.Count; i++)
@@ -147,7 +147,7 @@ namespace Twitch
 			this.SubEntries.Add(new GiftSubEntry(userName, userID, tier, total));
 		}
 
-		// Token: 0x0600BF3E RID: 48958 RVA: 0x0046F39C File Offset: 0x0046D59C
+		// Token: 0x0600C0C3 RID: 49347 RVA: 0x00475138 File Offset: 0x00473338
 		public ViewerEntry AddCredit(string name, int credit, bool displayNewTotal)
 		{
 			ViewerEntry viewerEntry = this.AddToViewerEntry(name, credit, TwitchAction.PointTypes.Bits);
@@ -162,7 +162,7 @@ namespace Twitch
 			return viewerEntry;
 		}
 
-		// Token: 0x0600BF3F RID: 48959 RVA: 0x0046F3E8 File Offset: 0x0046D5E8
+		// Token: 0x0600C0C4 RID: 49348 RVA: 0x00475184 File Offset: 0x00473384
 		public void AddPoints(string name, int points, bool isSpecial, bool displayNewTotal)
 		{
 			if (name == "")
@@ -213,7 +213,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BF40 RID: 48960 RVA: 0x0046F588 File Offset: 0x0046D788
+		// Token: 0x0600C0C5 RID: 49349 RVA: 0x00475324 File Offset: 0x00473524
 		public void AddPointsAll(int standardPoints, int specialPoints, bool announceToChat = true)
 		{
 			foreach (string text in this.ViewerEntries.Keys)
@@ -251,7 +251,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BF41 RID: 48961 RVA: 0x0046F6D8 File Offset: 0x0046D8D8
+		// Token: 0x0600C0C6 RID: 49350 RVA: 0x00475474 File Offset: 0x00473674
 		public void Write(BinaryWriter bw)
 		{
 			int num = 0;
@@ -278,7 +278,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BF42 RID: 48962 RVA: 0x0046F810 File Offset: 0x0046DA10
+		// Token: 0x0600C0C7 RID: 49351 RVA: 0x004755AC File Offset: 0x004737AC
 		public void WriteSpecial(BinaryWriter bw)
 		{
 			int num = 0;
@@ -307,7 +307,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BF43 RID: 48963 RVA: 0x0046F948 File Offset: 0x0046DB48
+		// Token: 0x0600C0C8 RID: 49352 RVA: 0x004756E4 File Offset: 0x004738E4
 		public void WriteExport(string savePath)
 		{
 			using (StreamWriter streamWriter = SdFile.CreateText(savePath))
@@ -316,7 +316,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BF44 RID: 48964 RVA: 0x0046F980 File Offset: 0x0046DB80
+		// Token: 0x0600C0C9 RID: 49353 RVA: 0x0047571C File Offset: 0x0047391C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void WriteExport(TextWriter tw)
 		{
@@ -331,7 +331,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BF45 RID: 48965 RVA: 0x0046FA4C File Offset: 0x0046DC4C
+		// Token: 0x0600C0CA RID: 49354 RVA: 0x004757E8 File Offset: 0x004739E8
 		public void LoadExport(TextReader tr)
 		{
 			tr.ReadLine();
@@ -360,7 +360,7 @@ namespace Twitch
 			dictionary.CopyTo<string, ViewerEntry>(this.ViewerEntries, true);
 		}
 
-		// Token: 0x0600BF46 RID: 48966 RVA: 0x0046FB0C File Offset: 0x0046DD0C
+		// Token: 0x0600C0CB RID: 49355 RVA: 0x004758A8 File Offset: 0x00473AA8
 		public void Read(BinaryReader br, byte currentVersion)
 		{
 			this.ViewerEntries.Clear();
@@ -389,7 +389,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BF47 RID: 48967 RVA: 0x0046FB90 File Offset: 0x0046DD90
+		// Token: 0x0600C0CC RID: 49356 RVA: 0x0047592C File Offset: 0x00473B2C
 		public void ReadSpecial(BinaryReader br, byte currentVersion)
 		{
 			int num = br.ReadInt32();
@@ -424,7 +424,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BF48 RID: 48968 RVA: 0x0046FC20 File Offset: 0x0046DE20
+		// Token: 0x0600C0CD RID: 49357 RVA: 0x004759BC File Offset: 0x00473BBC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void MoveStandardToSpecialPoints()
 		{
@@ -435,7 +435,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BF49 RID: 48969 RVA: 0x0046FCB0 File Offset: 0x0046DEB0
+		// Token: 0x0600C0CE RID: 49358 RVA: 0x00475A4C File Offset: 0x00473C4C
 		public void ResetAllStandardPoints()
 		{
 			foreach (string text in this.ViewerEntries.Keys)
@@ -444,7 +444,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BF4A RID: 48970 RVA: 0x0046FD18 File Offset: 0x0046DF18
+		// Token: 0x0600C0CF RID: 49359 RVA: 0x00475AB4 File Offset: 0x00473CB4
 		public void ResetAllSpecialPoints()
 		{
 			foreach (string text in this.ViewerEntries.Keys)
@@ -453,7 +453,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BF4B RID: 48971 RVA: 0x0046FD80 File Offset: 0x0046DF80
+		// Token: 0x0600C0D0 RID: 49360 RVA: 0x00475B1C File Offset: 0x00473D1C
 		public void Cleanup()
 		{
 			List<string> list = new List<string>();
@@ -483,7 +483,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BF4C RID: 48972 RVA: 0x0046FE90 File Offset: 0x0046E090
+		// Token: 0x0600C0D1 RID: 49361 RVA: 0x00475C2C File Offset: 0x00473E2C
 		public void ResetAllPoints()
 		{
 			foreach (string text in this.ViewerEntries.Keys)
@@ -493,7 +493,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BF4D RID: 48973 RVA: 0x0046FF10 File Offset: 0x0046E110
+		// Token: 0x0600C0D2 RID: 49362 RVA: 0x00475CAC File Offset: 0x00473EAC
 		public string GetPointTotals()
 		{
 			int num = 0;
@@ -509,14 +509,14 @@ namespace Twitch
 			return string.Format("PP: {0} SP: {1} BC: {2}", num, num2, num3);
 		}
 
-		// Token: 0x0600BF4E RID: 48974 RVA: 0x0046FFB4 File Offset: 0x0046E1B4
+		// Token: 0x0600C0D3 RID: 49363 RVA: 0x00475D50 File Offset: 0x00473F50
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ClearDisplayViewers()
 		{
 			this.ViewerEntries.Clear();
 		}
 
-		// Token: 0x0600BF4F RID: 48975 RVA: 0x0046FFC4 File Offset: 0x0046E1C4
+		// Token: 0x0600C0D4 RID: 49364 RVA: 0x00475D60 File Offset: 0x00473F60
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void IncrementViewerEntries()
 		{
@@ -561,7 +561,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BF50 RID: 48976 RVA: 0x00470168 File Offset: 0x0046E368
+		// Token: 0x0600C0D5 RID: 49365 RVA: 0x00475F04 File Offset: 0x00474104
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void AddToIDLookup(int viewerID, string viewerName, bool sendNewInChat = false)
 		{
@@ -577,7 +577,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BF51 RID: 48977 RVA: 0x004701C4 File Offset: 0x0046E3C4
+		// Token: 0x0600C0D6 RID: 49366 RVA: 0x00475F60 File Offset: 0x00474160
 		public ViewerEntry UpdateViewerEntry(int viewerID, string name, string color, bool isSub)
 		{
 			this.AddToIDLookup(viewerID, name, true);
@@ -608,13 +608,13 @@ namespace Twitch
 			return viewerEntry2;
 		}
 
-		// Token: 0x0600BF52 RID: 48978 RVA: 0x00470294 File Offset: 0x0046E494
+		// Token: 0x0600C0D7 RID: 49367 RVA: 0x00476030 File Offset: 0x00474230
 		public bool HasViewerEntry(string name)
 		{
 			return this.ViewerEntries.ContainsKey(name);
 		}
 
-		// Token: 0x0600BF53 RID: 48979 RVA: 0x004702A4 File Offset: 0x0046E4A4
+		// Token: 0x0600C0D8 RID: 49368 RVA: 0x00476040 File Offset: 0x00474240
 		public ViewerEntry GetViewerEntry(string name)
 		{
 			if (this.ViewerEntries.ContainsKey(name))
@@ -632,7 +632,7 @@ namespace Twitch
 			return viewerEntry;
 		}
 
-		// Token: 0x0600BF54 RID: 48980 RVA: 0x00470304 File Offset: 0x0046E504
+		// Token: 0x0600C0D9 RID: 49369 RVA: 0x004760A0 File Offset: 0x004742A0
 		public bool RemoveViewerEntry(string name)
 		{
 			if (this.ViewerEntries.ContainsKey(name))
@@ -643,7 +643,7 @@ namespace Twitch
 			return false;
 		}
 
-		// Token: 0x0600BF55 RID: 48981 RVA: 0x00470324 File Offset: 0x0046E524
+		// Token: 0x0600C0DA RID: 49370 RVA: 0x004760C0 File Offset: 0x004742C0
 		public ViewerEntry GetViewerEntry(string name, bool isSub)
 		{
 			if (this.ViewerEntries.ContainsKey(name))
@@ -661,7 +661,7 @@ namespace Twitch
 			return viewerEntry;
 		}
 
-		// Token: 0x0600BF56 RID: 48982 RVA: 0x00470388 File Offset: 0x0046E588
+		// Token: 0x0600C0DB RID: 49371 RVA: 0x00476124 File Offset: 0x00474324
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ViewerEntry AddToViewerEntry(string name, int points, TwitchAction.PointTypes pointType)
 		{
@@ -706,20 +706,20 @@ namespace Twitch
 			return null;
 		}
 
-		// Token: 0x0600BF57 RID: 48983 RVA: 0x0047048C File Offset: 0x0046E68C
+		// Token: 0x0600C0DC RID: 49372 RVA: 0x00476228 File Offset: 0x00474428
 		public bool HasPointsForAction(string username, TwitchAction action)
 		{
 			ViewerEntry viewerEntry = this.ViewerEntries[username];
 			return (action.SpecialOnly && viewerEntry.SpecialPoints >= (float)action.CurrentCost) || (!action.SpecialOnly && viewerEntry.CombinedPoints >= (float)action.CurrentCost);
 		}
 
-		// Token: 0x0600BF58 RID: 48984 RVA: 0x004704D7 File Offset: 0x0046E6D7
+		// Token: 0x0600C0DD RID: 49373 RVA: 0x00476273 File Offset: 0x00474473
 		public bool HandleInitialActionEntrySetup(string username, TwitchAction action, bool isRerun, bool isBitAction, out TwitchActionEntry actionEntry)
 		{
 			return this.HandleInitialActionEntrySetup(username, action, isRerun, isBitAction, 0, out actionEntry);
 		}
 
-		// Token: 0x0600BF59 RID: 48985 RVA: 0x004704E8 File Offset: 0x0046E6E8
+		// Token: 0x0600C0DE RID: 49374 RVA: 0x00476284 File Offset: 0x00474484
 		public bool HandleInitialActionEntrySetup(string username, TwitchAction action, bool isRerun, bool isBitAction, int bitsUsed, out TwitchActionEntry actionEntry)
 		{
 			ViewerEntry viewerEntry = this.ViewerEntries[username];
@@ -769,7 +769,7 @@ namespace Twitch
 			return false;
 		}
 
-		// Token: 0x0600BF5A RID: 48986 RVA: 0x004706E8 File Offset: 0x0046E8E8
+		// Token: 0x0600C0DF RID: 49375 RVA: 0x00476484 File Offset: 0x00474684
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public void ReimburseAction(TwitchActionEntry twitchActionEntry)
 		{
@@ -780,7 +780,7 @@ namespace Twitch
 			this.Owner.PushBalanceToExtensionQueue(viewerEntry.UserID.ToString(), viewerEntry.BitCredits);
 		}
 
-		// Token: 0x0600BF5B RID: 48987 RVA: 0x00470760 File Offset: 0x0046E960
+		// Token: 0x0600C0E0 RID: 49376 RVA: 0x004764FC File Offset: 0x004746FC
 		public void ReimburseAction(string userName, int pointsSpent, TwitchAction action)
 		{
 			ViewerEntry viewerEntry = this.ViewerEntries[userName];
@@ -798,87 +798,87 @@ namespace Twitch
 			this.Owner.PushBalanceToExtensionQueue(viewerEntry.UserID.ToString(), viewerEntry.BitCredits);
 		}
 
-		// Token: 0x0400903A RID: 36922
+		// Token: 0x04009156 RID: 37206
 		public TwitchManager Owner;
 
-		// Token: 0x0400903B RID: 36923
+		// Token: 0x04009157 RID: 37207
 		public static float ChattingAddedTimeAmount = 300f;
 
-		// Token: 0x0400903C RID: 36924
+		// Token: 0x04009158 RID: 37208
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float pointRate = 1f;
 
-		// Token: 0x0400903D RID: 36925
+		// Token: 0x04009159 RID: 37209
 		public float PointRateSubs = 2f;
 
-		// Token: 0x0400903E RID: 36926
+		// Token: 0x0400915A RID: 37210
 		public float NextActionTime;
 
-		// Token: 0x0400903F RID: 36927
+		// Token: 0x0400915B RID: 37211
 		public int StartingPoints = 100;
 
-		// Token: 0x04009040 RID: 36928
+		// Token: 0x0400915C RID: 37212
 		public float NonSubPointCap = 1000f;
 
-		// Token: 0x04009041 RID: 36929
+		// Token: 0x0400915D RID: 37213
 		public float SubPointCap = 2000f;
 
-		// Token: 0x04009042 RID: 36930
+		// Token: 0x0400915E RID: 37214
 		public int SubPointAddTier1 = 500;
 
-		// Token: 0x04009043 RID: 36931
+		// Token: 0x0400915F RID: 37215
 		public int SubPointAddTier2 = 1000;
 
-		// Token: 0x04009044 RID: 36932
+		// Token: 0x04009160 RID: 37216
 		public int SubPointAddTier3 = 2500;
 
-		// Token: 0x04009045 RID: 36933
+		// Token: 0x04009161 RID: 37217
 		public int GiftSubPointAddTier1 = 500;
 
-		// Token: 0x04009046 RID: 36934
+		// Token: 0x04009162 RID: 37218
 		public int GiftSubPointAddTier2 = 1000;
 
-		// Token: 0x04009047 RID: 36935
+		// Token: 0x04009163 RID: 37219
 		public int GiftSubPointAddTier3 = 2500;
 
-		// Token: 0x04009048 RID: 36936
+		// Token: 0x04009164 RID: 37220
 		public float ActionSpamDelay = 3f;
 
-		// Token: 0x04009049 RID: 36937
+		// Token: 0x04009165 RID: 37221
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string chatOutput_GiftedSubs;
 
-		// Token: 0x0400904A RID: 36938
+		// Token: 0x04009166 RID: 37222
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string chatOutput_AddPPAll;
 
-		// Token: 0x0400904B RID: 36939
+		// Token: 0x04009167 RID: 37223
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string chatOutput_AddSPAll;
 
-		// Token: 0x0400904C RID: 36940
+		// Token: 0x04009168 RID: 37224
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string chatOutput_ErrorAddingBitCredits;
 
-		// Token: 0x0400904D RID: 36941
+		// Token: 0x04009169 RID: 37225
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string chatOutput_ErrorAddingPoints;
 
-		// Token: 0x0400904E RID: 36942
+		// Token: 0x0400916A RID: 37226
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string ingameOutput_GiftedSubs;
 
-		// Token: 0x0400904F RID: 36943
+		// Token: 0x0400916B RID: 37227
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<string, ViewerEntry> ViewerEntries = new Dictionary<string, ViewerEntry>();
 
-		// Token: 0x04009050 RID: 36944
+		// Token: 0x0400916C RID: 37228
 		public Dictionary<int, string> IdToUsername = new Dictionary<int, string>();
 
-		// Token: 0x04009051 RID: 36945
+		// Token: 0x0400916D RID: 37229
 		public List<GiftSubEntry> SubEntries = new List<GiftSubEntry>();
 
-		// Token: 0x04009052 RID: 36946
+		// Token: 0x0400916E RID: 37230
 		public static char[] UsernameExcludeCharacters = new char[] { ';', '\\', ':' };
 	}
 }

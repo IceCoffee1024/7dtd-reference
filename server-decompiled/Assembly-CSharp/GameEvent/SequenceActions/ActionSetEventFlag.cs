@@ -3,18 +3,18 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x0200198F RID: 6543
+	// Token: 0x020019B5 RID: 6581
 	[Preserve]
 	public class ActionSetEventFlag : ActionBaseTargetAction
 	{
-		// Token: 0x0600C7DF RID: 51167 RVA: 0x00498B69 File Offset: 0x00496D69
+		// Token: 0x0600C966 RID: 51558 RVA: 0x0049EEC1 File Offset: 0x0049D0C1
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			GameEventManager.Current.SetGameEventFlag(this.eventFlag, this.enable, GameEventManager.GetFloatValue(target as EntityAlive, this.durationText, 0f), false);
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C7E0 RID: 51168 RVA: 0x00498B99 File Offset: 0x00496D99
+		// Token: 0x0600C967 RID: 51559 RVA: 0x0049EEF1 File Offset: 0x0049D0F1
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -23,7 +23,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseString(ActionSetEventFlag.PropDuration, ref this.durationText);
 		}
 
-		// Token: 0x0600C7E1 RID: 51169 RVA: 0x00498BD5 File Offset: 0x00496DD5
+		// Token: 0x0600C968 RID: 51560 RVA: 0x0049EF2D File Offset: 0x0049D12D
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -36,25 +36,25 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x0400978A RID: 38794
+		// Token: 0x040098B3 RID: 39091
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public GameEventManager.GameEventFlagTypes eventFlag = GameEventManager.GameEventFlagTypes.Invalid;
 
-		// Token: 0x0400978B RID: 38795
+		// Token: 0x040098B4 RID: 39092
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool enable;
 
-		// Token: 0x0400978C RID: 38796
+		// Token: 0x040098B5 RID: 39093
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string durationText;
 
-		// Token: 0x0400978D RID: 38797
+		// Token: 0x040098B6 RID: 39094
 		public static string PropEventFlag = "event_flag";
 
-		// Token: 0x0400978E RID: 38798
+		// Token: 0x040098B7 RID: 39095
 		public static string PropEnable = "enable";
 
-		// Token: 0x0400978F RID: 38799
+		// Token: 0x040098B8 RID: 39096
 		public static string PropDuration = "duration";
 	}
 }

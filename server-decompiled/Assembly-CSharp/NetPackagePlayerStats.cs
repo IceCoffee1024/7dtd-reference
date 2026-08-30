@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000825 RID: 2085
+// Token: 0x02000830 RID: 2096
 [Preserve]
 public class NetPackagePlayerStats : NetPackageEntityTargeted
 {
-	// Token: 0x06003D30 RID: 15664 RVA: 0x00184348 File Offset: 0x00182548
+	// Token: 0x06003D8F RID: 15759 RVA: 0x00186720 File Offset: 0x00184920
 	public NetPackagePlayerStats Setup(EntityAlive _entity)
 	{
 		base.Setup(_entity.entityId);
@@ -13,27 +13,27 @@ public class NetPackagePlayerStats : NetPackageEntityTargeted
 		return this;
 	}
 
-	// Token: 0x06003D31 RID: 15665 RVA: 0x00184364 File Offset: 0x00182564
+	// Token: 0x06003D90 RID: 15760 RVA: 0x0018673C File Offset: 0x0018493C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ~NetPackagePlayerStats()
 	{
 	}
 
-	// Token: 0x06003D32 RID: 15666 RVA: 0x0018438C File Offset: 0x0018258C
+	// Token: 0x06003D91 RID: 15761 RVA: 0x00186764 File Offset: 0x00184964
 	public override void read(PooledBinaryReader _reader)
 	{
 		base.read(_reader);
 		this.entityNetworkStats.read(_reader);
 	}
 
-	// Token: 0x06003D33 RID: 15667 RVA: 0x001843A1 File Offset: 0x001825A1
+	// Token: 0x06003D92 RID: 15762 RVA: 0x00186779 File Offset: 0x00184979
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
 		this.entityNetworkStats.write(_writer);
 	}
 
-	// Token: 0x06003D34 RID: 15668 RVA: 0x001843B8 File Offset: 0x001825B8
+	// Token: 0x06003D93 RID: 15763 RVA: 0x00186790 File Offset: 0x00184990
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -62,13 +62,13 @@ public class NetPackagePlayerStats : NetPackageEntityTargeted
 		}
 	}
 
-	// Token: 0x06003D35 RID: 15669 RVA: 0x00175819 File Offset: 0x00173A19
+	// Token: 0x06003D94 RID: 15764 RVA: 0x00177A99 File Offset: 0x00175C99
 	public override int GetLength()
 	{
 		return 60;
 	}
 
-	// Token: 0x0400315E RID: 12638
+	// Token: 0x040031DD RID: 12765
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityAlive.EntityNetworkStats entityNetworkStats = new EntityAlive.EntityNetworkStats();
 }

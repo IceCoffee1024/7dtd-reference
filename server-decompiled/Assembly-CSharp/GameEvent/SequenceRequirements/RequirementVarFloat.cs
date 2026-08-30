@@ -3,17 +3,17 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x02001921 RID: 6433
+	// Token: 0x02001947 RID: 6471
 	[Preserve]
 	public class RequirementVarFloat : BaseOperationRequirement
 	{
-		// Token: 0x0600C5E6 RID: 50662 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C76D RID: 51053 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
 		}
 
-		// Token: 0x0600C5E7 RID: 50663 RVA: 0x0048BC58 File Offset: 0x00489E58
+		// Token: 0x0600C76E RID: 51054 RVA: 0x00491FA4 File Offset: 0x004901A4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override object LeftSide(Entity target)
 		{
@@ -22,14 +22,14 @@ namespace GameEvent.SequenceRequirements
 			return num;
 		}
 
-		// Token: 0x0600C5E8 RID: 50664 RVA: 0x0048BC85 File Offset: 0x00489E85
+		// Token: 0x0600C76F RID: 51055 RVA: 0x00491FD1 File Offset: 0x004901D1
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override object RightSide(Entity target)
 		{
 			return GameEventManager.GetFloatValue(target as EntityAlive, this.valueText, 0f);
 		}
 
-		// Token: 0x0600C5E9 RID: 50665 RVA: 0x0048BCA2 File Offset: 0x00489EA2
+		// Token: 0x0600C770 RID: 51056 RVA: 0x00491FEE File Offset: 0x004901EE
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -37,7 +37,7 @@ namespace GameEvent.SequenceRequirements
 			properties.ParseString(RequirementVarFloat.PropValue, ref this.valueText);
 		}
 
-		// Token: 0x0600C5EA RID: 50666 RVA: 0x0048BCCD File Offset: 0x00489ECD
+		// Token: 0x0600C771 RID: 51057 RVA: 0x00492019 File Offset: 0x00490219
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseRequirement CloneChildSettings()
 		{
@@ -50,19 +50,19 @@ namespace GameEvent.SequenceRequirements
 			};
 		}
 
-		// Token: 0x040094F5 RID: 38133
+		// Token: 0x0400961E RID: 38430
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string varName;
 
-		// Token: 0x040094F6 RID: 38134
+		// Token: 0x0400961F RID: 38431
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string valueText;
 
-		// Token: 0x040094F7 RID: 38135
+		// Token: 0x04009620 RID: 38432
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropVarName = "var_name";
 
-		// Token: 0x040094F8 RID: 38136
+		// Token: 0x04009621 RID: 38433
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropValue = "value";
 	}

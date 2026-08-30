@@ -1,16 +1,16 @@
 ﻿using System;
 
-// Token: 0x02000CCB RID: 3275
+// Token: 0x02000CDD RID: 3293
 public static class WaterDebugPools
 {
-	// Token: 0x06006463 RID: 25699 RVA: 0x00274672 File Offset: 0x00272872
+	// Token: 0x060064EF RID: 25839 RVA: 0x0027756E File Offset: 0x0027576E
 	public static void CreatePools()
 	{
 		WaterDebugPools.rendererPool = new MemoryPooledObject<WaterDebugRenderer>(250);
 		WaterDebugPools.layerPool = new MemoryPooledObject<WaterDebugRendererLayer>(4000);
 	}
 
-	// Token: 0x06006464 RID: 25700 RVA: 0x00274692 File Offset: 0x00272892
+	// Token: 0x060064F0 RID: 25840 RVA: 0x0027758E File Offset: 0x0027578E
 	public static void Cleanup()
 	{
 		MemoryPooledObject<WaterDebugRenderer> memoryPooledObject = WaterDebugPools.rendererPool;
@@ -27,17 +27,17 @@ public static class WaterDebugPools
 		WaterDebugPools.layerPool = null;
 	}
 
-	// Token: 0x04004DDB RID: 19931
+	// Token: 0x04004E79 RID: 20089
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int maxActiveChunks = 250;
 
-	// Token: 0x04004DDC RID: 19932
+	// Token: 0x04004E7A RID: 20090
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int numLayers = 16;
 
-	// Token: 0x04004DDD RID: 19933
+	// Token: 0x04004E7B RID: 20091
 	public static MemoryPooledObject<WaterDebugRenderer> rendererPool;
 
-	// Token: 0x04004DDE RID: 19934
+	// Token: 0x04004E7C RID: 20092
 	public static MemoryPooledObject<WaterDebugRendererLayer> layerPool;
 }

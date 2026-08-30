@@ -2,24 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020007A6 RID: 1958
+// Token: 0x020007B0 RID: 1968
 [Preserve]
 public class NetPackageBlockLimitTracking : NetPackage
 {
-	// Token: 0x06003A2D RID: 14893 RVA: 0x00179CC3 File Offset: 0x00177EC3
+	// Token: 0x06003A85 RID: 14981 RVA: 0x0017BF43 File Offset: 0x0017A143
 	public NetPackageBlockLimitTracking()
 	{
 		this.amounts = new List<int>();
 	}
 
-	// Token: 0x06003A2E RID: 14894 RVA: 0x00179CD6 File Offset: 0x00177ED6
+	// Token: 0x06003A86 RID: 14982 RVA: 0x0017BF56 File Offset: 0x0017A156
 	public NetPackageBlockLimitTracking Setup(List<int> _amounts)
 	{
 		this.amounts = _amounts;
 		return this;
 	}
 
-	// Token: 0x06003A2F RID: 14895 RVA: 0x00179CE0 File Offset: 0x00177EE0
+	// Token: 0x06003A87 RID: 14983 RVA: 0x0017BF60 File Offset: 0x0017A160
 	public override void read(PooledBinaryReader _br)
 	{
 		this.amounts.Clear();
@@ -30,7 +30,7 @@ public class NetPackageBlockLimitTracking : NetPackage
 		}
 	}
 
-	// Token: 0x06003A30 RID: 14896 RVA: 0x00179D1C File Offset: 0x00177F1C
+	// Token: 0x06003A88 RID: 14984 RVA: 0x0017BF9C File Offset: 0x0017A19C
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -41,7 +41,7 @@ public class NetPackageBlockLimitTracking : NetPackage
 		}
 	}
 
-	// Token: 0x06003A31 RID: 14897 RVA: 0x00179D69 File Offset: 0x00177F69
+	// Token: 0x06003A89 RID: 14985 RVA: 0x0017BFE9 File Offset: 0x0017A1E9
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -52,12 +52,12 @@ public class NetPackageBlockLimitTracking : NetPackage
 		BlockLimitTracker.instance.UpdateClientAmounts(this.amounts);
 	}
 
-	// Token: 0x06003A32 RID: 14898 RVA: 0x00179D92 File Offset: 0x00177F92
+	// Token: 0x06003A8A RID: 14986 RVA: 0x0017C012 File Offset: 0x0017A212
 	public override int GetLength()
 	{
 		return 4 + this.amounts.Count * 4;
 	}
 
-	// Token: 0x04002F5C RID: 12124
+	// Token: 0x04002FD5 RID: 12245
 	public List<int> amounts;
 }

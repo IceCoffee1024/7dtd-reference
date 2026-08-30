@@ -1,230 +1,236 @@
 ﻿using System;
 
-// Token: 0x02000718 RID: 1816
+// Token: 0x02000722 RID: 1826
 public enum MinEventTypes
 {
-	// Token: 0x04002C42 RID: 11330
+	// Token: 0x04002CB7 RID: 11447
 	onSelfBuffStart,
-	// Token: 0x04002C43 RID: 11331
+	// Token: 0x04002CB8 RID: 11448
 	onSelfBuffUpdate,
-	// Token: 0x04002C44 RID: 11332
+	// Token: 0x04002CB9 RID: 11449
 	onSelfBuffFinish,
-	// Token: 0x04002C45 RID: 11333
+	// Token: 0x04002CBA RID: 11450
 	onSelfBuffRemove,
-	// Token: 0x04002C46 RID: 11334
+	// Token: 0x04002CBB RID: 11451
 	onSelfBuffStack,
-	// Token: 0x04002C47 RID: 11335
+	// Token: 0x04002CBC RID: 11452
 	onSelfProgressionUpdate,
-	// Token: 0x04002C48 RID: 11336
+	// Token: 0x04002CBD RID: 11453
 	onSelfChallengeCompleteUpdate,
-	// Token: 0x04002C49 RID: 11337
+	// Token: 0x04002CBE RID: 11454
 	onOtherDamagedSelf,
-	// Token: 0x04002C4A RID: 11338
+	// Token: 0x04002CBF RID: 11455
 	onOtherAttackedSelf,
-	// Token: 0x04002C4B RID: 11339
+	// Token: 0x04002CC0 RID: 11456
 	onOtherHealedSelf,
-	// Token: 0x04002C4C RID: 11340
+	// Token: 0x04002CC1 RID: 11457
 	onSelfDamagedOther,
-	// Token: 0x04002C4D RID: 11341
+	// Token: 0x04002CC2 RID: 11458
 	onSelfAttackedOther,
-	// Token: 0x04002C4E RID: 11342
+	// Token: 0x04002CC3 RID: 11459
 	onSelfVehicleAttackedOther,
-	// Token: 0x04002C4F RID: 11343
+	// Token: 0x04002CC4 RID: 11460
 	onSelfHealedOther,
-	// Token: 0x04002C50 RID: 11344
+	// Token: 0x04002CC5 RID: 11461
 	onSelfExplosionAttackedOther,
-	// Token: 0x04002C51 RID: 11345
+	// Token: 0x04002CC6 RID: 11462
 	onSelfExplosionDamagedOther,
-	// Token: 0x04002C52 RID: 11346
+	// Token: 0x04002CC7 RID: 11463
 	onSelfExplosionMissEntity,
-	// Token: 0x04002C53 RID: 11347
+	// Token: 0x04002CC8 RID: 11464
 	onSelfDamagedSelf,
-	// Token: 0x04002C54 RID: 11348
+	// Token: 0x04002CC9 RID: 11465
 	onSelfHealedSelf,
-	// Token: 0x04002C55 RID: 11349
+	// Token: 0x04002CCA RID: 11466
 	onSelfKilledOther,
-	// Token: 0x04002C56 RID: 11350
+	// Token: 0x04002CCB RID: 11467
 	onOtherKilledSelf,
-	// Token: 0x04002C57 RID: 11351
+	// Token: 0x04002CCC RID: 11468
 	onBlockKilledSelf,
-	// Token: 0x04002C58 RID: 11352
+	// Token: 0x04002CCD RID: 11469
 	onSelfKilledSelf,
-	// Token: 0x04002C59 RID: 11353
+	// Token: 0x04002CCE RID: 11470
 	onSelfDied,
-	// Token: 0x04002C5A RID: 11354
+	// Token: 0x04002CCF RID: 11471
 	onSelfPrimaryActionStart,
-	// Token: 0x04002C5B RID: 11355
+	// Token: 0x04002CD0 RID: 11472
 	onSelfPrimaryActionRayHit,
-	// Token: 0x04002C5C RID: 11356
+	// Token: 0x04002CD1 RID: 11473
 	onSelfPrimaryActionRayMiss,
-	// Token: 0x04002C5D RID: 11357
+	// Token: 0x04002CD2 RID: 11474
 	onSelfPrimaryActionGrazeHit,
-	// Token: 0x04002C5E RID: 11358
+	// Token: 0x04002CD3 RID: 11475
 	onSelfPrimaryActionGrazeMiss,
-	// Token: 0x04002C5F RID: 11359
+	// Token: 0x04002CD4 RID: 11476
 	onSelfPrimaryActionEnd,
-	// Token: 0x04002C60 RID: 11360
+	// Token: 0x04002CD5 RID: 11477
 	onSelfPrimaryActionUpdate,
-	// Token: 0x04002C61 RID: 11361
+	// Token: 0x04002CD6 RID: 11478
 	onSelfPrimaryActionMissEntity,
-	// Token: 0x04002C62 RID: 11362
+	// Token: 0x04002CD7 RID: 11479
 	onSelfSecondaryActionStart,
-	// Token: 0x04002C63 RID: 11363
+	// Token: 0x04002CD8 RID: 11480
 	onSelfSecondaryActionRayHit,
-	// Token: 0x04002C64 RID: 11364
+	// Token: 0x04002CD9 RID: 11481
 	onSelfSecondaryActionRayMiss,
-	// Token: 0x04002C65 RID: 11365
+	// Token: 0x04002CDA RID: 11482
 	onSelfSecondaryActionGrazeHit,
-	// Token: 0x04002C66 RID: 11366
+	// Token: 0x04002CDB RID: 11483
 	onSelfSecondaryActionGrazeMiss,
-	// Token: 0x04002C67 RID: 11367
+	// Token: 0x04002CDC RID: 11484
 	onSelfSecondaryActionEnd,
-	// Token: 0x04002C68 RID: 11368
+	// Token: 0x04002CDD RID: 11485
 	onSelfSecondaryActionUpdate,
-	// Token: 0x04002C69 RID: 11369
+	// Token: 0x04002CDE RID: 11486
 	onSelfSecondaryActionMissEntity,
-	// Token: 0x04002C6A RID: 11370
+	// Token: 0x04002CDF RID: 11487
 	onSelfAction2Start,
-	// Token: 0x04002C6B RID: 11371
+	// Token: 0x04002CE0 RID: 11488
 	onSelfAction2Update,
-	// Token: 0x04002C6C RID: 11372
+	// Token: 0x04002CE1 RID: 11489
 	onSelfAction2End,
-	// Token: 0x04002C6D RID: 11373
+	// Token: 0x04002CE2 RID: 11490
 	onSelfRepairBlock,
-	// Token: 0x04002C6E RID: 11374
+	// Token: 0x04002CE3 RID: 11491
 	onSelfPlaceBlock,
-	// Token: 0x04002C6F RID: 11375
+	// Token: 0x04002CE4 RID: 11492
 	onSelfUpgradedBlock,
-	// Token: 0x04002C70 RID: 11376
+	// Token: 0x04002CE5 RID: 11493
 	onSelfDamagedBlock,
-	// Token: 0x04002C71 RID: 11377
+	// Token: 0x04002CE6 RID: 11494
 	onSelfDestroyedBlock,
-	// Token: 0x04002C72 RID: 11378
+	// Token: 0x04002CE7 RID: 11495
 	onSelfHarvestBlock,
-	// Token: 0x04002C73 RID: 11379
+	// Token: 0x04002CE8 RID: 11496
 	onSelfHarvestOther,
-	// Token: 0x04002C74 RID: 11380
+	// Token: 0x04002CE9 RID: 11497
 	onOtherEnteredRange,
-	// Token: 0x04002C75 RID: 11381
+	// Token: 0x04002CEA RID: 11498
 	onOtherLeftRange,
-	// Token: 0x04002C76 RID: 11382
+	// Token: 0x04002CEB RID: 11499
 	onSelfRangedBurstShotStart,
-	// Token: 0x04002C77 RID: 11383
+	// Token: 0x04002CEC RID: 11500
 	onSelfRangedBurstShotEnd,
-	// Token: 0x04002C78 RID: 11384
+	// Token: 0x04002CED RID: 11501
 	onSelfEquipStart,
-	// Token: 0x04002C79 RID: 11385
+	// Token: 0x04002CEE RID: 11502
 	onSelfEquipChanged,
-	// Token: 0x04002C7A RID: 11386
+	// Token: 0x04002CEF RID: 11503
 	onSelfEquipUpdate,
-	// Token: 0x04002C7B RID: 11387
+	// Token: 0x04002CF0 RID: 11504
 	onSelfEquipStop,
-	// Token: 0x04002C7C RID: 11388
+	// Token: 0x04002CF1 RID: 11505
 	onReloadStart,
-	// Token: 0x04002C7D RID: 11389
+	// Token: 0x04002CF2 RID: 11506
 	onReloadUpdate,
-	// Token: 0x04002C7E RID: 11390
+	// Token: 0x04002CF3 RID: 11507
 	onReloadStop,
-	// Token: 0x04002C7F RID: 11391
+	// Token: 0x04002CF4 RID: 11508
 	onSelfFirstSpawn,
-	// Token: 0x04002C80 RID: 11392
+	// Token: 0x04002CF5 RID: 11509
 	onSelfRespawn,
-	// Token: 0x04002C81 RID: 11393
+	// Token: 0x04002CF6 RID: 11510
 	onSelfLeaveGame,
-	// Token: 0x04002C82 RID: 11394
+	// Token: 0x04002CF7 RID: 11511
 	onSelfEnteredGame,
-	// Token: 0x04002C83 RID: 11395
+	// Token: 0x04002CF8 RID: 11512
 	onSelfTeleported,
-	// Token: 0x04002C84 RID: 11396
+	// Token: 0x04002CF9 RID: 11513
 	onSelfJump,
-	// Token: 0x04002C85 RID: 11397
+	// Token: 0x04002CFA RID: 11514
 	onSelfLandJump,
-	// Token: 0x04002C86 RID: 11398
+	// Token: 0x04002CFB RID: 11515
 	onSelfRun,
-	// Token: 0x04002C87 RID: 11399
+	// Token: 0x04002CFC RID: 11516
 	onSelfWalk,
-	// Token: 0x04002C88 RID: 11400
+	// Token: 0x04002CFD RID: 11517
 	onSelfCrouch,
-	// Token: 0x04002C89 RID: 11401
+	// Token: 0x04002CFE RID: 11518
 	onSelfStand,
-	// Token: 0x04002C8A RID: 11402
+	// Token: 0x04002CFF RID: 11519
 	onSelfAimingGunStart,
-	// Token: 0x04002C8B RID: 11403
+	// Token: 0x04002D00 RID: 11520
 	onSelfAimingGunStop,
-	// Token: 0x04002C8C RID: 11404
+	// Token: 0x04002D01 RID: 11521
 	onSelfCrouchRun,
-	// Token: 0x04002C8D RID: 11405
+	// Token: 0x04002D02 RID: 11522
 	onSelfCrouchWalk,
-	// Token: 0x04002C8E RID: 11406
+	// Token: 0x04002D03 RID: 11523
 	onSelfSwimStart,
-	// Token: 0x04002C8F RID: 11407
+	// Token: 0x04002D04 RID: 11524
 	onSelfSwimStop,
-	// Token: 0x04002C90 RID: 11408
+	// Token: 0x04002D05 RID: 11525
 	onSelfSwimRun,
-	// Token: 0x04002C91 RID: 11409
+	// Token: 0x04002D06 RID: 11526
 	onSelfSwimIdle,
-	// Token: 0x04002C92 RID: 11410
+	// Token: 0x04002D07 RID: 11527
 	onSelfWaterSurface,
-	// Token: 0x04002C93 RID: 11411
+	// Token: 0x04002D08 RID: 11528
 	onSelfWaterSubmerge,
-	// Token: 0x04002C94 RID: 11412
+	// Token: 0x04002D09 RID: 11529
 	onSelfHoldingItemThrown,
-	// Token: 0x04002C95 RID: 11413
+	// Token: 0x04002D0A RID: 11530
 	onSelfHoldingItemCreated,
-	// Token: 0x04002C96 RID: 11414
+	// Token: 0x04002D0B RID: 11531
 	onSelfItemCrafted,
-	// Token: 0x04002C97 RID: 11415
+	// Token: 0x04002D0C RID: 11532
 	onSelfItemRepaired,
-	// Token: 0x04002C98 RID: 11416
+	// Token: 0x04002D0D RID: 11533
 	onSelfItemLooted,
-	// Token: 0x04002C99 RID: 11417
+	// Token: 0x04002D0E RID: 11534
 	onSelfItemLost,
-	// Token: 0x04002C9A RID: 11418
+	// Token: 0x04002D0F RID: 11535
 	onSelfItemGained,
-	// Token: 0x04002C9B RID: 11419
+	// Token: 0x04002D10 RID: 11536
 	onSelfItemSold,
-	// Token: 0x04002C9C RID: 11420
+	// Token: 0x04002D11 RID: 11537
 	onSelfItemBought,
-	// Token: 0x04002C9D RID: 11421
+	// Token: 0x04002D12 RID: 11538
 	onSelfItemActivate,
-	// Token: 0x04002C9E RID: 11422
+	// Token: 0x04002D13 RID: 11539
 	onSelfItemDeactivate,
-	// Token: 0x04002C9F RID: 11423
+	// Token: 0x04002D14 RID: 11540
 	onSelfItemJammedUse,
-	// Token: 0x04002CA0 RID: 11424
+	// Token: 0x04002D15 RID: 11541
 	onSelfChangedView,
-	// Token: 0x04002CA1 RID: 11425
+	// Token: 0x04002D16 RID: 11542
 	onSelfFallImpact,
-	// Token: 0x04002CA2 RID: 11426
+	// Token: 0x04002D17 RID: 11543
 	onProjectilePreImpact,
-	// Token: 0x04002CA3 RID: 11427
+	// Token: 0x04002D18 RID: 11544
 	onProjectileImpact,
-	// Token: 0x04002CA4 RID: 11428
+	// Token: 0x04002D19 RID: 11545
 	onPerkLevelChanged,
-	// Token: 0x04002CA5 RID: 11429
+	// Token: 0x04002D1A RID: 11546
 	onSelfEnteredBiome,
-	// Token: 0x04002CA6 RID: 11430
+	// Token: 0x04002D1B RID: 11547
 	onSelfLootContainer,
-	// Token: 0x04002CA7 RID: 11431
+	// Token: 0x04002D1C RID: 11548
 	onSelfOpenLootContainer,
-	// Token: 0x04002CA8 RID: 11432
+	// Token: 0x04002D1D RID: 11549
 	onSelfCloseLootContainer,
-	// Token: 0x04002CA9 RID: 11433
+	// Token: 0x04002D1E RID: 11550
 	onSelfBiomeLootStageMaxEntered,
-	// Token: 0x04002CAA RID: 11434
+	// Token: 0x04002D1F RID: 11551
 	onSelfBiomeLootStageMaxExited,
-	// Token: 0x04002CAB RID: 11435
+	// Token: 0x04002D20 RID: 11552
 	onDismember,
-	// Token: 0x04002CAC RID: 11436
+	// Token: 0x04002D21 RID: 11553
 	onCombatEntered,
-	// Token: 0x04002CAD RID: 11437
+	// Token: 0x04002D22 RID: 11554
 	onTrackedEntityLost,
-	// Token: 0x04002CAE RID: 11438
+	// Token: 0x04002D23 RID: 11555
 	onTreasureRadiusEntered,
-	// Token: 0x04002CAF RID: 11439
+	// Token: 0x04002D24 RID: 11556
 	onTreasureRadiusExited,
-	// Token: 0x04002CB0 RID: 11440
+	// Token: 0x04002D25 RID: 11557
 	onTreasureRadiusCompleted,
-	// Token: 0x04002CB1 RID: 11441
+	// Token: 0x04002D26 RID: 11558
+	onSelfPickupOther,
+	// Token: 0x04002D27 RID: 11559
+	onSelfDroppedOther,
+	// Token: 0x04002D28 RID: 11560
+	onSelfPickedUpByOther,
+	// Token: 0x04002D29 RID: 11561
 	COUNT
 }

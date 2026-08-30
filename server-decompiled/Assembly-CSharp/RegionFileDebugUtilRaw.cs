@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000B87 RID: 2951
+// Token: 0x02000B99 RID: 2969
 public class RegionFileDebugUtilRaw : IRegionFileDebugUtil
 {
-	// Token: 0x06005939 RID: 22841 RVA: 0x00221F78 File Offset: 0x00220178
+	// Token: 0x060059C1 RID: 22977 RVA: 0x00224C94 File Offset: 0x00222E94
 	public string GetLocationString(int chunkX, int chunkZ)
 	{
 		int num = (int)Math.Floor((double)chunkX / 8.0);

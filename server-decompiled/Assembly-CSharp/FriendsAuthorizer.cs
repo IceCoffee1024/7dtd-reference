@@ -2,12 +2,12 @@
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000780 RID: 1920
+// Token: 0x0200078A RID: 1930
 [Preserve]
 public class FriendsAuthorizer : AuthorizerAbs
 {
-	// Token: 0x170005D1 RID: 1489
-	// (get) Token: 0x06003925 RID: 14629 RVA: 0x00175E01 File Offset: 0x00174001
+	// Token: 0x170005DB RID: 1499
+	// (get) Token: 0x0600397D RID: 14717 RVA: 0x00178081 File Offset: 0x00176281
 	public override int Order
 	{
 		get
@@ -16,8 +16,8 @@ public class FriendsAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005D2 RID: 1490
-	// (get) Token: 0x06003926 RID: 14630 RVA: 0x00175E08 File Offset: 0x00174008
+	// Token: 0x170005DC RID: 1500
+	// (get) Token: 0x0600397E RID: 14718 RVA: 0x00178088 File Offset: 0x00176288
 	public override string AuthorizerName
 	{
 		get
@@ -26,8 +26,8 @@ public class FriendsAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005D3 RID: 1491
-	// (get) Token: 0x06003927 RID: 14631 RVA: 0x0001FF1E File Offset: 0x0001E11E
+	// Token: 0x170005DD RID: 1501
+	// (get) Token: 0x0600397F RID: 14719 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
 	public override string StateLocalizationKey
 	{
 		get
@@ -36,8 +36,8 @@ public class FriendsAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005D4 RID: 1492
-	// (get) Token: 0x06003928 RID: 14632 RVA: 0x00175E0F File Offset: 0x0017400F
+	// Token: 0x170005DE RID: 1502
+	// (get) Token: 0x06003980 RID: 14720 RVA: 0x0017808F File Offset: 0x0017628F
 	public override bool AuthorizerActive
 	{
 		get
@@ -46,7 +46,7 @@ public class FriendsAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x06003929 RID: 14633 RVA: 0x00175E28 File Offset: 0x00174028
+	// Token: 0x06003981 RID: 14721 RVA: 0x001780A8 File Offset: 0x001762A8
 	public override ValueTuple<EAuthorizerSyncResult, GameUtils.KickPlayerData?> Authorize(ClientInfo _clientInfo)
 	{
 		if (PlatformManager.NativePlatform.User.IsFriend(_clientInfo.PlatformId))

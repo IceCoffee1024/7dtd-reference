@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001993 RID: 6547
+	// Token: 0x020019B9 RID: 6585
 	[Preserve]
 	public class ActionSetInvestigationPosition : ActionBaseTargetAction
 	{
-		// Token: 0x0600C7EE RID: 51182 RVA: 0x00498D90 File Offset: 0x00496F90
+		// Token: 0x0600C975 RID: 51573 RVA: 0x0049F0E8 File Offset: 0x0049D2E8
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			EntityAlive entityAlive = target as EntityAlive;
@@ -18,7 +18,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C7EF RID: 51183 RVA: 0x00498DD2 File Offset: 0x00496FD2
+		// Token: 0x0600C976 RID: 51574 RVA: 0x0049F12A File Offset: 0x0049D32A
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -26,7 +26,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseBool(ActionSetInvestigationPosition.PropIsAlert, ref this.isAlert);
 		}
 
-		// Token: 0x0600C7F0 RID: 51184 RVA: 0x00498DFD File Offset: 0x00496FFD
+		// Token: 0x0600C977 RID: 51575 RVA: 0x0049F155 File Offset: 0x0049D355
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -38,19 +38,19 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009797 RID: 38807
+		// Token: 0x040098C0 RID: 39104
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float investigateTime;
 
-		// Token: 0x04009798 RID: 38808
+		// Token: 0x040098C1 RID: 39105
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool isAlert;
 
-		// Token: 0x04009799 RID: 38809
+		// Token: 0x040098C2 RID: 39106
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTime = "time";
 
-		// Token: 0x0400979A RID: 38810
+		// Token: 0x040098C3 RID: 39107
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropIsAlert = "is_alert";
 	}

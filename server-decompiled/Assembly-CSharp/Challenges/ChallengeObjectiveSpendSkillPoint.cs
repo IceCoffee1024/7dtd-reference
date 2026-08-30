@@ -4,12 +4,12 @@ using UnityEngine.Scripting;
 
 namespace Challenges
 {
-	// Token: 0x020018E7 RID: 6375
+	// Token: 0x0200190D RID: 6413
 	[Preserve]
 	public class ChallengeObjectiveSpendSkillPoint : BaseChallengeObjective
 	{
-		// Token: 0x17001810 RID: 6160
-		// (get) Token: 0x0600C489 RID: 50313 RVA: 0x0048791F File Offset: 0x00485B1F
+		// Token: 0x17001882 RID: 6274
+		// (get) Token: 0x0600C610 RID: 50704 RVA: 0x0048DC6B File Offset: 0x0048BE6B
 		public override ChallengeObjectiveType ObjectiveType
 		{
 			get
@@ -18,8 +18,8 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x17001811 RID: 6161
-		// (get) Token: 0x0600C48A RID: 50314 RVA: 0x00487923 File Offset: 0x00485B23
+		// Token: 0x17001883 RID: 6275
+		// (get) Token: 0x0600C611 RID: 50705 RVA: 0x0048DC6F File Offset: 0x0048BE6F
 		public override string DescriptionText
 		{
 			get
@@ -28,14 +28,14 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C48B RID: 50315 RVA: 0x0048794C File Offset: 0x00485B4C
+		// Token: 0x0600C612 RID: 50706 RVA: 0x0048DC98 File Offset: 0x0048BE98
 		public override void HandleOnCreated()
 		{
 			base.HandleOnCreated();
 			this.CreateRequirements();
 		}
 
-		// Token: 0x0600C48C RID: 50316 RVA: 0x0048795A File Offset: 0x00485B5A
+		// Token: 0x0600C613 RID: 50707 RVA: 0x0048DCA6 File Offset: 0x0048BEA6
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void CreateRequirements()
 		{
@@ -46,19 +46,19 @@ namespace Challenges
 			this.Owner.SetRequirementGroup(new RequirementObjectiveGroupWindowOpen("Skills"));
 		}
 
-		// Token: 0x0600C48D RID: 50317 RVA: 0x0048797A File Offset: 0x00485B7A
+		// Token: 0x0600C614 RID: 50708 RVA: 0x0048DCC6 File Offset: 0x0048BEC6
 		public override void HandleAddHooks()
 		{
 			QuestEventManager.Current.SkillPointSpent += this.Current_SkillPointSpent;
 		}
 
-		// Token: 0x0600C48E RID: 50318 RVA: 0x00487992 File Offset: 0x00485B92
+		// Token: 0x0600C615 RID: 50709 RVA: 0x0048DCDE File Offset: 0x0048BEDE
 		public override void HandleRemoveHooks()
 		{
 			QuestEventManager.Current.SkillPointSpent -= this.Current_SkillPointSpent;
 		}
 
-		// Token: 0x0600C48F RID: 50319 RVA: 0x004879AC File Offset: 0x00485BAC
+		// Token: 0x0600C616 RID: 50710 RVA: 0x0048DCF8 File Offset: 0x0048BEF8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Current_SkillPointSpent(string skillName)
 		{
@@ -74,7 +74,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C490 RID: 50320 RVA: 0x00487A0B File Offset: 0x00485C0B
+		// Token: 0x0600C617 RID: 50711 RVA: 0x0048DD57 File Offset: 0x0048BF57
 		public override void ParseElement(XElement e)
 		{
 			base.ParseElement(e);
@@ -84,7 +84,7 @@ namespace Challenges
 			}
 		}
 
-		// Token: 0x0600C491 RID: 50321 RVA: 0x00487A3C File Offset: 0x00485C3C
+		// Token: 0x0600C618 RID: 50712 RVA: 0x0048DD88 File Offset: 0x0048BF88
 		public override BaseChallengeObjective Clone()
 		{
 			return new ChallengeObjectiveSpendSkillPoint
@@ -93,7 +93,7 @@ namespace Challenges
 			};
 		}
 
-		// Token: 0x04009444 RID: 37956
+		// Token: 0x0400956D RID: 38253
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string progressionName = "";
 	}

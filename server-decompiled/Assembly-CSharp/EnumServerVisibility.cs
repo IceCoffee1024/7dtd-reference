@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x020011CF RID: 4559
+// Token: 0x020011EB RID: 4587
 public enum EnumServerVisibility
 {
-	// Token: 0x04006CA9 RID: 27817
+	// Token: 0x04006D82 RID: 28034
 	Private,
-	// Token: 0x04006CAA RID: 27818
+	// Token: 0x04006D83 RID: 28035
 	FriendsOnly,
-	// Token: 0x04006CAB RID: 27819
+	// Token: 0x04006D84 RID: 28036
 	Public
 }

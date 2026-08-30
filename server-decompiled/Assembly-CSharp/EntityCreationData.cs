@@ -4,16 +4,16 @@ using System.Xml;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000492 RID: 1170
+// Token: 0x02000496 RID: 1174
 [Preserve]
 public class EntityCreationData
 {
-	// Token: 0x06002423 RID: 9251 RVA: 0x000DC76C File Offset: 0x000DA96C
+	// Token: 0x06002445 RID: 9285 RVA: 0x000DD320 File Offset: 0x000DB520
 	public EntityCreationData()
 	{
 	}
 
-	// Token: 0x06002424 RID: 9252 RVA: 0x000DC80C File Offset: 0x000DAA0C
+	// Token: 0x06002446 RID: 9286 RVA: 0x000DD3C8 File Offset: 0x000DB5C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityCreationData(EntityCreationData _other)
 	{
@@ -53,15 +53,18 @@ public class EntityCreationData
 		this.overrideHeadSize = _other.overrideHeadSize;
 		this.isDancing = _other.isDancing;
 		this.orderState = _other.orderState;
+		this.stressAmount = _other.stressAmount;
+		this.requestedBy = _other.requestedBy;
+		this.requestKey = _other.requestKey;
 	}
 
-	// Token: 0x06002425 RID: 9253 RVA: 0x000DCA7C File Offset: 0x000DAC7C
+	// Token: 0x06002447 RID: 9287 RVA: 0x000DD664 File Offset: 0x000DB864
 	public EntityCreationData(XmlElement _entityElement)
 	{
 		this.readXml(_entityElement);
 	}
 
-	// Token: 0x06002426 RID: 9254 RVA: 0x000DCB24 File Offset: 0x000DAD24
+	// Token: 0x06002448 RID: 9288 RVA: 0x000DD710 File Offset: 0x000DB910
 	public void ApplyToEntity(Entity _e)
 	{
 		EntityAlive entityAlive = _e as EntityAlive;
@@ -112,6 +115,10 @@ public class EntityCreationData
 		{
 			entityDrone.OnApplyToEntity(this.orderState);
 		}
+		if (entityAlive)
+		{
+			entityAlive.StressAmount = this.stressAmount;
+		}
 		_e.SetSpawnerSource(this.spawnerSource);
 		if (this.bag != null)
 		{
@@ -136,7 +143,7 @@ public class EntityCreationData
 		}
 	}
 
-	// Token: 0x06002427 RID: 9255 RVA: 0x000DCD2C File Offset: 0x000DAF2C
+	// Token: 0x06002449 RID: 9289 RVA: 0x000DD92C File Offset: 0x000DBB2C
 	public EntityCreationData(Entity _e, bool _bNetworkWrite = true)
 	{
 		this.entityClass = _e.entityClass;
@@ -187,6 +194,7 @@ public class EntityCreationData
 					this.orderState = (int)entityDrone.OrderState;
 				}
 			}
+			this.stressAmount = entityAlive.StressAmount;
 			this.headState = entityAlive.GetHeadState();
 			this.overrideSize = entityAlive.OverrideSize;
 			this.overrideHeadSize = entityAlive.OverrideHeadSize;
@@ -223,16 +231,16 @@ public class EntityCreationData
 			pooledBinaryWriter.SetBaseStream(this.entityData);
 			_e.Write(pooledBinaryWriter, _bNetworkWrite);
 		}
-		this.readFileVersion = 35;
+		this.readFileVersion = 37;
 	}
 
-	// Token: 0x06002428 RID: 9256 RVA: 0x000DD0D8 File Offset: 0x000DB2D8
+	// Token: 0x0600244A RID: 9290 RVA: 0x000DDCEC File Offset: 0x000DBEEC
 	public EntityCreationData Clone()
 	{
 		return new EntityCreationData(this);
 	}
 
-	// Token: 0x06002429 RID: 9257 RVA: 0x000DD0E0 File Offset: 0x000DB2E0
+	// Token: 0x0600244B RID: 9291 RVA: 0x000DDCF4 File Offset: 0x000DBEF4
 	public void read(PooledBinaryReader _br, bool _bNetworkRead)
 	{
 		this.readFileVersion = _br.ReadByte();
@@ -433,12 +441,23 @@ public class EntityCreationData
 				this.orderState = _br.ReadInt32();
 			}
 		}
+		if (b >= 36)
+		{
+			this.stressAmount = _br.ReadSingle();
+		}
+		if (b >= 37)
+		{
+			this.requestedBy = (int)_br.ReadInt64();
+			byte[] array2 = new byte[16];
+			_br.Read(array2, 0, 16);
+			this.requestKey = new Guid(array2);
+		}
 	}
 
-	// Token: 0x0600242A RID: 9258 RVA: 0x000DD62C File Offset: 0x000DB82C
+	// Token: 0x0600244C RID: 9292 RVA: 0x000DE288 File Offset: 0x000DC488
 	public void write(PooledBinaryWriter _bw, bool _bNetworkWrite)
 	{
-		_bw.Write(35);
+		_bw.Write(37);
 		_bw.Write(this.entityClass);
 		_bw.Write(this.id);
 		_bw.Write(this.lifetime);
@@ -544,9 +563,12 @@ public class EntityCreationData
 			_bw.Write(this.belongsPlayerId);
 			_bw.Write(this.orderState);
 		}
+		_bw.Write(this.stressAmount);
+		_bw.Write((long)this.requestedBy);
+		_bw.Write(this.requestKey.ToByteArray());
 	}
 
-	// Token: 0x0600242B RID: 9259 RVA: 0x000DDA24 File Offset: 0x000DBC24
+	// Token: 0x0600244D RID: 9293 RVA: 0x000DE6AC File Offset: 0x000DC8AC
 	public void readXml(XmlElement _entityElement)
 	{
 		if (!_entityElement.HasAttribute("type"))
@@ -567,7 +589,7 @@ public class EntityCreationData
 		this.id = -1;
 	}
 
-	// Token: 0x0600242C RID: 9260 RVA: 0x000DDAC8 File Offset: 0x000DBCC8
+	// Token: 0x0600244E RID: 9294 RVA: 0x000DE750 File Offset: 0x000DC950
 	public void writeXml(StreamWriter _sw)
 	{
 		_sw.WriteLine(string.Concat(new string[]
@@ -590,7 +612,7 @@ public class EntityCreationData
 		}));
 	}
 
-	// Token: 0x0600242D RID: 9261 RVA: 0x000DDBB8 File Offset: 0x000DBDB8
+	// Token: 0x0600244F RID: 9295 RVA: 0x000DE840 File Offset: 0x000DCA40
 	public override string ToString()
 	{
 		return string.Concat(new string[]
@@ -605,133 +627,142 @@ public class EntityCreationData
 		});
 	}
 
-	// Token: 0x04001AC9 RID: 6857
+	// Token: 0x04001AE8 RID: 6888
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const int FileVersion = 35;
+	public const int FileVersion = 37;
 
-	// Token: 0x04001ACA RID: 6858
+	// Token: 0x04001AE9 RID: 6889
 	public int entityClass;
 
-	// Token: 0x04001ACB RID: 6859
+	// Token: 0x04001AEA RID: 6890
 	public Vector3 pos;
 
-	// Token: 0x04001ACC RID: 6860
+	// Token: 0x04001AEB RID: 6891
 	public Vector3 rot;
 
-	// Token: 0x04001ACD RID: 6861
+	// Token: 0x04001AEC RID: 6892
 	public int id;
 
-	// Token: 0x04001ACE RID: 6862
+	// Token: 0x04001AED RID: 6893
 	public bool onGround;
 
-	// Token: 0x04001ACF RID: 6863
+	// Token: 0x04001AEE RID: 6894
 	public EntityStats stats;
 
-	// Token: 0x04001AD0 RID: 6864
+	// Token: 0x04001AEF RID: 6895
 	public int deathTime;
 
-	// Token: 0x04001AD1 RID: 6865
+	// Token: 0x04001AF0 RID: 6896
 	public float lifetime = float.MaxValue;
 
-	// Token: 0x04001AD2 RID: 6866
+	// Token: 0x04001AF1 RID: 6897
 	public int belongsPlayerId = -1;
 
-	// Token: 0x04001AD3 RID: 6867
+	// Token: 0x04001AF2 RID: 6898
 	public int clientEntityId;
 
-	// Token: 0x04001AD4 RID: 6868
+	// Token: 0x04001AF3 RID: 6899
 	public ItemValue holdingItem = ItemValue.None;
 
-	// Token: 0x04001AD5 RID: 6869
+	// Token: 0x04001AF4 RID: 6900
 	public int teamNumber;
 
-	// Token: 0x04001AD6 RID: 6870
+	// Token: 0x04001AF5 RID: 6901
 	public string entityName = "";
 
-	// Token: 0x04001AD7 RID: 6871
+	// Token: 0x04001AF6 RID: 6902
 	public string skinTexture = "";
 
-	// Token: 0x04001AD8 RID: 6872
+	// Token: 0x04001AF7 RID: 6903
 	public Bag bag;
 
-	// Token: 0x04001AD9 RID: 6873
+	// Token: 0x04001AF8 RID: 6904
 	public TraderData traderData;
 
-	// Token: 0x04001ADA RID: 6874
+	// Token: 0x04001AF9 RID: 6905
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i homePosition;
 
-	// Token: 0x04001ADB RID: 6875
+	// Token: 0x04001AFA RID: 6906
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int homeRange = -1;
 
-	// Token: 0x04001ADC RID: 6876
+	// Token: 0x04001AFB RID: 6907
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EnumSpawnerSource spawnerSource;
 
-	// Token: 0x04001ADD RID: 6877
+	// Token: 0x04001AFC RID: 6908
 	public ItemStack itemStack = ItemStack.Empty;
 
-	// Token: 0x04001ADE RID: 6878
+	// Token: 0x04001AFD RID: 6909
 	public BlockValue[] blockValues;
 
-	// Token: 0x04001ADF RID: 6879
+	// Token: 0x04001AFE RID: 6910
 	public Vector3i[] blockPositions;
 
-	// Token: 0x04001AE0 RID: 6880
+	// Token: 0x04001AFF RID: 6911
 	public TextureFullArray[] textureFullArrays;
 
-	// Token: 0x04001AE1 RID: 6881
+	// Token: 0x04001B00 RID: 6912
 	public Vector3i blockPos;
 
-	// Token: 0x04001AE2 RID: 6882
+	// Token: 0x04001B01 RID: 6913
 	public Vector3 fallTreeDir;
 
-	// Token: 0x04001AE3 RID: 6883
+	// Token: 0x04001B02 RID: 6914
 	public int subType;
 
-	// Token: 0x04001AE4 RID: 6884
+	// Token: 0x04001B03 RID: 6915
 	public byte sleeperPose = byte.MaxValue;
 
-	// Token: 0x04001AE5 RID: 6885
+	// Token: 0x04001B04 RID: 6916
 	public PlayerProfile playerProfile;
 
-	// Token: 0x04001AE6 RID: 6886
+	// Token: 0x04001B05 RID: 6917
 	public BodyDamage bodyDamage;
 
-	// Token: 0x04001AE7 RID: 6887
+	// Token: 0x04001B06 RID: 6918
 	public bool isSleeper;
 
-	// Token: 0x04001AE8 RID: 6888
+	// Token: 0x04001B07 RID: 6919
 	public bool isSleeperPassive;
 
-	// Token: 0x04001AE9 RID: 6889
+	// Token: 0x04001B08 RID: 6920
 	public string spawnByName = "";
 
-	// Token: 0x04001AEA RID: 6890
+	// Token: 0x04001B09 RID: 6921
 	public int spawnById = -1;
 
-	// Token: 0x04001AEB RID: 6891
+	// Token: 0x04001B0A RID: 6922
 	public bool spawnByAllowShare;
 
-	// Token: 0x04001AEC RID: 6892
+	// Token: 0x04001B0B RID: 6923
 	public EModelBase.HeadStates headState;
 
-	// Token: 0x04001AED RID: 6893
+	// Token: 0x04001B0C RID: 6924
 	public float overrideSize = 1f;
 
-	// Token: 0x04001AEE RID: 6894
+	// Token: 0x04001B0D RID: 6925
 	public float overrideHeadSize = 1f;
 
-	// Token: 0x04001AEF RID: 6895
+	// Token: 0x04001B0E RID: 6926
 	public bool isDancing;
 
-	// Token: 0x04001AF0 RID: 6896
+	// Token: 0x04001B0F RID: 6927
 	public int orderState = -1;
 
-	// Token: 0x04001AF1 RID: 6897
+	// Token: 0x04001B10 RID: 6928
+	public float stressAmount;
+
+	// Token: 0x04001B11 RID: 6929
+	public int requestedBy = -1;
+
+	// Token: 0x04001B12 RID: 6930
+	public Guid requestKey;
+
+	// Token: 0x04001B13 RID: 6931
 	public byte readFileVersion;
 
-	// Token: 0x04001AF2 RID: 6898
+	// Token: 0x04001B14 RID: 6932
 	public MemoryStream entityData = new MemoryStream(0);
 }

@@ -6,12 +6,12 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200025D RID: 605
+// Token: 0x02000261 RID: 609
 [Preserve]
 public class ConsoleCmdPlayerVisitMap : ConsoleCmdAbstract
 {
-	// Token: 0x170001D9 RID: 473
-	// (get) Token: 0x06001203 RID: 4611 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x170001DA RID: 474
+	// (get) Token: 0x06001215 RID: 4629 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -20,28 +20,28 @@ public class ConsoleCmdPlayerVisitMap : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001204 RID: 4612 RVA: 0x00070913 File Offset: 0x0006EB13
+	// Token: 0x06001216 RID: 4630 RVA: 0x00070F6F File Offset: 0x0006F16F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "playervisitmap", "pvm" };
 	}
 
-	// Token: 0x06001205 RID: 4613 RVA: 0x0007092B File Offset: 0x0006EB2B
+	// Token: 0x06001217 RID: 4631 RVA: 0x00070F87 File Offset: 0x0006F187
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Teleports the player through a rectangular area with optional memory logging";
 	}
 
-	// Token: 0x06001206 RID: 4614 RVA: 0x00070932 File Offset: 0x0006EB32
+	// Token: 0x06001218 RID: 4632 RVA: 0x00070F8E File Offset: 0x0006F18E
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "<x1> <z1> <x2> <z2> : start teleporting through the area defined by the coorindates, should be such that x1 < x2 and z1 < z2\nstop : stop moving\nheight <int> : set the height off the ground to move the player to\nstepradius <int> : set distance between teleports in chunks, default is half the player's view dimension\nlogfile <prefix> : sets the file for the memory log to a temporary file with this prefix\nstepsperlog <int> : count of teleports between logs\ndumplog : dump the current log file to the game log";
 	}
 
-	// Token: 0x06001207 RID: 4615 RVA: 0x0007093C File Offset: 0x0006EB3C
+	// Token: 0x06001219 RID: 4633 RVA: 0x00070F98 File Offset: 0x0006F198
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (!GameManager.Instance.World.GetPrimaryPlayer())
@@ -154,7 +154,7 @@ public class ConsoleCmdPlayerVisitMap : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001208 RID: 4616 RVA: 0x00070BFC File Offset: 0x0006EDFC
+	// Token: 0x0600121A RID: 4634 RVA: 0x00071258 File Offset: 0x0006F458
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void StartTraversing()
 	{
@@ -169,7 +169,7 @@ public class ConsoleCmdPlayerVisitMap : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001209 RID: 4617 RVA: 0x00070C2D File Offset: 0x0006EE2D
+	// Token: 0x0600121B RID: 4635 RVA: 0x00071289 File Offset: 0x0006F489
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Stop()
 	{
@@ -182,7 +182,7 @@ public class ConsoleCmdPlayerVisitMap : ConsoleCmdAbstract
 		this.traverseCoroutine = null;
 	}
 
-	// Token: 0x0600120A RID: 4618 RVA: 0x00070C51 File Offset: 0x0006EE51
+	// Token: 0x0600121C RID: 4636 RVA: 0x000712AD File Offset: 0x0006F4AD
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator CoroutineTraverse()
 	{
@@ -261,7 +261,7 @@ public class ConsoleCmdPlayerVisitMap : ConsoleCmdAbstract
 		yield break;
 	}
 
-	// Token: 0x0600120B RID: 4619 RVA: 0x00070C60 File Offset: 0x0006EE60
+	// Token: 0x0600121D RID: 4637 RVA: 0x000712BC File Offset: 0x0006F4BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i chunkPosToBlockPos(int _x, int _z)
 	{
@@ -270,43 +270,43 @@ public class ConsoleCmdPlayerVisitMap : ConsoleCmdAbstract
 		return new Vector3i((float)num, GameManager.Instance.World.GetHeightAt((float)num, (float)num2) + (float)this.height, (float)num2);
 	}
 
-	// Token: 0x04000CFB RID: 3323
+	// Token: 0x04000D0C RID: 3340
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isRunning;
 
-	// Token: 0x04000CFC RID: 3324
+	// Token: 0x04000D0D RID: 3341
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Coroutine traverseCoroutine;
 
-	// Token: 0x04000CFD RID: 3325
+	// Token: 0x04000D0E RID: 3342
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int x1;
 
-	// Token: 0x04000CFE RID: 3326
+	// Token: 0x04000D0F RID: 3343
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int z1;
 
-	// Token: 0x04000CFF RID: 3327
+	// Token: 0x04000D10 RID: 3344
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int x2;
 
-	// Token: 0x04000D00 RID: 3328
+	// Token: 0x04000D11 RID: 3345
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int z2;
 
-	// Token: 0x04000D01 RID: 3329
+	// Token: 0x04000D12 RID: 3346
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int height = 10;
 
-	// Token: 0x04000D02 RID: 3330
+	// Token: 0x04000D13 RID: 3347
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int radius = -1;
 
-	// Token: 0x04000D03 RID: 3331
+	// Token: 0x04000D14 RID: 3348
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string logFilePath;
 
-	// Token: 0x04000D04 RID: 3332
+	// Token: 0x04000D15 RID: 3349
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int stepsPerLog = 1;
 }

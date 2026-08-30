@@ -1,16 +1,16 @@
 ﻿using System;
 
-// Token: 0x02000BD6 RID: 3030
+// Token: 0x02000BE8 RID: 3048
 public enum EnumRemoveEntityReason
 {
-	// Token: 0x040046F2 RID: 18162
+	// Token: 0x0400478E RID: 18318
 	Undef,
-	// Token: 0x040046F3 RID: 18163
+	// Token: 0x0400478F RID: 18319
 	Unloaded,
-	// Token: 0x040046F4 RID: 18164
+	// Token: 0x04004790 RID: 18320
 	Killed,
-	// Token: 0x040046F5 RID: 18165
+	// Token: 0x04004791 RID: 18321
 	Despawned,
-	// Token: 0x040046F6 RID: 18166
+	// Token: 0x04004792 RID: 18322
 	Captured
 }

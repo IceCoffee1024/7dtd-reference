@@ -2,11 +2,11 @@
 using System.Globalization;
 using System.Xml.Linq;
 
-// Token: 0x020006B8 RID: 1720
+// Token: 0x020006C2 RID: 1730
 public class EffectGroupDescription
 {
-	// Token: 0x17000555 RID: 1365
-	// (get) Token: 0x0600359A RID: 13722 RVA: 0x00161B02 File Offset: 0x0015FD02
+	// Token: 0x1700055E RID: 1374
+	// (get) Token: 0x060035F0 RID: 13808 RVA: 0x00163CDA File Offset: 0x00161EDA
 	public string Description
 	{
 		get
@@ -19,8 +19,8 @@ public class EffectGroupDescription
 		}
 	}
 
-	// Token: 0x17000556 RID: 1366
-	// (get) Token: 0x0600359B RID: 13723 RVA: 0x00161B26 File Offset: 0x0015FD26
+	// Token: 0x1700055F RID: 1375
+	// (get) Token: 0x060035F1 RID: 13809 RVA: 0x00163CFE File Offset: 0x00161EFE
 	public string LongDescription
 	{
 		get
@@ -29,7 +29,7 @@ public class EffectGroupDescription
 		}
 	}
 
-	// Token: 0x0600359C RID: 13724 RVA: 0x00161B35 File Offset: 0x0015FD35
+	// Token: 0x060035F2 RID: 13810 RVA: 0x00163D0D File Offset: 0x00161F0D
 	public EffectGroupDescription(int _minLevel, int _maxLevel, string _desc_key, string _description, string _long_desc_key)
 	{
 		this.MinLevel = _minLevel;
@@ -39,7 +39,7 @@ public class EffectGroupDescription
 		this.LongDescriptionKey = _long_desc_key;
 	}
 
-	// Token: 0x0600359D RID: 13725 RVA: 0x00161B64 File Offset: 0x0015FD64
+	// Token: 0x060035F3 RID: 13811 RVA: 0x00163D3C File Offset: 0x00161F3C
 	public static EffectGroupDescription ParseDescription(XElement _element)
 	{
 		if (!_element.HasAttribute("level") || (!_element.HasAttribute("desc_key") && !_element.HasAttribute("desc_base")))
@@ -72,20 +72,20 @@ public class EffectGroupDescription
 		return new EffectGroupDescription(num2, num, _element.GetAttribute("desc_key"), _element.GetAttribute("desc_base"), _element.HasAttribute("long_desc_key") ? _element.GetAttribute("long_desc_key") : "");
 	}
 
-	// Token: 0x04002B16 RID: 11030
+	// Token: 0x04002B8A RID: 11146
 	public readonly int MinLevel;
 
-	// Token: 0x04002B17 RID: 11031
+	// Token: 0x04002B8B RID: 11147
 	public readonly int MaxLevel;
 
-	// Token: 0x04002B18 RID: 11032
+	// Token: 0x04002B8C RID: 11148
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string DescriptionKey;
 
-	// Token: 0x04002B19 RID: 11033
+	// Token: 0x04002B8D RID: 11149
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string CustomDescription;
 
-	// Token: 0x04002B1A RID: 11034
+	// Token: 0x04002B8E RID: 11150
 	public readonly string LongDescriptionKey;
 }

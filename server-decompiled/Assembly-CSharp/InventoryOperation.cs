@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x02000570 RID: 1392
+// Token: 0x02000575 RID: 1397
 public class InventoryOperation
 {
-	// Token: 0x06002D81 RID: 11649 RVA: 0x001218F4 File Offset: 0x0011FAF4
+	// Token: 0x06002DAC RID: 11692 RVA: 0x001229B0 File Offset: 0x00120BB0
 	public static InventoryOperation CreateSetAbsolute(ItemStack _stack, int _index)
 	{
 		return new InventoryOperation
@@ -15,7 +15,7 @@ public class InventoryOperation
 		};
 	}
 
-	// Token: 0x06002D82 RID: 11650 RVA: 0x00121915 File Offset: 0x0011FB15
+	// Token: 0x06002DAD RID: 11693 RVA: 0x001229D1 File Offset: 0x00120BD1
 	public static InventoryOperation CreateSetRelative(ItemStack _stack, int _index)
 	{
 		return new InventoryOperation
@@ -26,7 +26,7 @@ public class InventoryOperation
 		};
 	}
 
-	// Token: 0x06002D83 RID: 11651 RVA: 0x00121936 File Offset: 0x0011FB36
+	// Token: 0x06002DAE RID: 11694 RVA: 0x001229F2 File Offset: 0x00120BF2
 	public static InventoryOperation CreateSetAll(ItemStack[] _newStacks)
 	{
 		return new InventoryOperation
@@ -36,7 +36,7 @@ public class InventoryOperation
 		};
 	}
 
-	// Token: 0x06002D84 RID: 11652 RVA: 0x00121950 File Offset: 0x0011FB50
+	// Token: 0x06002DAF RID: 11695 RVA: 0x00122A0C File Offset: 0x00120C0C
 	public static InventoryOperation Read(BinaryReader _br)
 	{
 		switch (_br.ReadInt16())
@@ -60,7 +60,7 @@ public class InventoryOperation
 		}
 	}
 
-	// Token: 0x06002D85 RID: 11653 RVA: 0x001219B8 File Offset: 0x0011FBB8
+	// Token: 0x06002DB0 RID: 11696 RVA: 0x00122A74 File Offset: 0x00120C74
 	public void Write(BinaryWriter _bw)
 	{
 		_bw.Write((short)this.Operation);
@@ -78,26 +78,26 @@ public class InventoryOperation
 		ItemStack.WriteArray(_bw, this.NewStacks);
 	}
 
-	// Token: 0x04002373 RID: 9075
+	// Token: 0x040023A5 RID: 9125
 	public InventoryOperation.EnumOperation Operation;
 
-	// Token: 0x04002374 RID: 9076
+	// Token: 0x040023A6 RID: 9126
 	public ItemStack Stack;
 
-	// Token: 0x04002375 RID: 9077
+	// Token: 0x040023A7 RID: 9127
 	public int Index;
 
-	// Token: 0x04002376 RID: 9078
+	// Token: 0x040023A8 RID: 9128
 	public ItemStack[] NewStacks;
 
-	// Token: 0x02000571 RID: 1393
+	// Token: 0x02000576 RID: 1398
 	public enum EnumOperation
 	{
-		// Token: 0x04002378 RID: 9080
+		// Token: 0x040023AA RID: 9130
 		SetAbsolute,
-		// Token: 0x04002379 RID: 9081
+		// Token: 0x040023AB RID: 9131
 		SetRelative,
-		// Token: 0x0400237A RID: 9082
+		// Token: 0x040023AC RID: 9132
 		SetAll
 	}
 }

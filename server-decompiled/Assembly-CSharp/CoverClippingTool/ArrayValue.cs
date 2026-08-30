@@ -4,17 +4,17 @@ using System.Xml.Linq;
 
 namespace CoverClippingTool
 {
-	// Token: 0x0200165C RID: 5724
+	// Token: 0x02001677 RID: 5751
 	public class ArrayValue
 	{
-		// Token: 0x0600B35F RID: 45919 RVA: 0x00430E8A File Offset: 0x0042F08A
+		// Token: 0x0600B45C RID: 46172 RVA: 0x004361CA File Offset: 0x004343CA
 		public ArrayValue(XElement element, List<Dictionary<string, PropertyValue>> items)
 		{
 			this.Element = element;
 			this.Items = items;
 		}
 
-		// Token: 0x0600B360 RID: 45920 RVA: 0x00430EA0 File Offset: 0x0042F0A0
+		// Token: 0x0600B45D RID: 46173 RVA: 0x004361E0 File Offset: 0x004343E0
 		public ArrayValue Clone()
 		{
 			ArrayValue arrayValue = new ArrayValue(this.Element, new List<Dictionary<string, PropertyValue>>());
@@ -30,10 +30,10 @@ namespace CoverClippingTool
 			return arrayValue;
 		}
 
-		// Token: 0x0400865C RID: 34396
+		// Token: 0x04008735 RID: 34613
 		public readonly List<Dictionary<string, PropertyValue>> Items;
 
-		// Token: 0x0400865D RID: 34397
+		// Token: 0x04008736 RID: 34614
 		public readonly XElement Element;
 	}
 }

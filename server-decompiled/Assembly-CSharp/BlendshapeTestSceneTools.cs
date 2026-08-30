@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001517 RID: 5399
+// Token: 0x02001532 RID: 5426
 public class BlendshapeTestSceneTools : MonoBehaviour
 {
-	// Token: 0x0600A959 RID: 43353 RVA: 0x003F2F38 File Offset: 0x003F1138
+	// Token: 0x0600AA56 RID: 43606 RVA: 0x003F8278 File Offset: 0x003F6478
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -17,7 +17,7 @@ public class BlendshapeTestSceneTools : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600A95A RID: 43354 RVA: 0x003F2F98 File Offset: 0x003F1198
+	// Token: 0x0600AA57 RID: 43607 RVA: 0x003F82D8 File Offset: 0x003F64D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -51,46 +51,46 @@ public class BlendshapeTestSceneTools : MonoBehaviour
 		Input.GetKeyUp(KeyCode.E);
 	}
 
-	// Token: 0x04007DB3 RID: 32179
+	// Token: 0x04007E8C RID: 32396
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Animator myAnim;
 
-	// Token: 0x04007DB4 RID: 32180
+	// Token: 0x04007E8D RID: 32397
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public AudioSource myAudio;
 
-	// Token: 0x04007DB5 RID: 32181
+	// Token: 0x04007E8E RID: 32398
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int layerIndex;
 
-	// Token: 0x04007DB6 RID: 32182
+	// Token: 0x04007E8F RID: 32399
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int maxLayers;
 
-	// Token: 0x04007DB7 RID: 32183
+	// Token: 0x04007E90 RID: 32400
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float turnRate = 200f;
 
-	// Token: 0x04007DB8 RID: 32184
+	// Token: 0x04007E91 RID: 32401
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float targetLayerWeight;
 
-	// Token: 0x04007DB9 RID: 32185
+	// Token: 0x04007E92 RID: 32402
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float endLayerWeight;
 
-	// Token: 0x04007DBA RID: 32186
+	// Token: 0x04007E93 RID: 32403
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int currentAnim;
 
-	// Token: 0x04007DBB RID: 32187
+	// Token: 0x04007E94 RID: 32404
 	public AudioClip[] audioClips;
 }

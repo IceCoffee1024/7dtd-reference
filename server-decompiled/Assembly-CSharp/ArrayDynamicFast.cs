@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02001367 RID: 4967
+// Token: 0x02001381 RID: 4993
 public class ArrayDynamicFast<T>
 {
-	// Token: 0x06009C97 RID: 40087 RVA: 0x003B3A4F File Offset: 0x003B1C4F
+	// Token: 0x06009D92 RID: 40338 RVA: 0x003B8D03 File Offset: 0x003B6F03
 	public ArrayDynamicFast(int _size)
 	{
 		this.Size = _size;
@@ -13,7 +13,7 @@ public class ArrayDynamicFast<T>
 		this.Count = 0;
 	}
 
-	// Token: 0x06009C98 RID: 40088 RVA: 0x003B3A80 File Offset: 0x003B1C80
+	// Token: 0x06009D93 RID: 40339 RVA: 0x003B8D34 File Offset: 0x003B6F34
 	public int Contains(T _v)
 	{
 		if (this.Count == 0)
@@ -44,7 +44,7 @@ public class ArrayDynamicFast<T>
 		return -1;
 	}
 
-	// Token: 0x06009C99 RID: 40089 RVA: 0x003B3B10 File Offset: 0x003B1D10
+	// Token: 0x06009D94 RID: 40340 RVA: 0x003B8DC4 File Offset: 0x003B6FC4
 	public void Clear()
 	{
 		for (int i = 0; i < this.Data.Length; i++)
@@ -53,7 +53,7 @@ public class ArrayDynamicFast<T>
 		}
 	}
 
-	// Token: 0x06009C9A RID: 40090 RVA: 0x003B3B3C File Offset: 0x003B1D3C
+	// Token: 0x06009D95 RID: 40341 RVA: 0x003B8DF0 File Offset: 0x003B6FF0
 	public void Add(int _idx, T _texId)
 	{
 		if (_idx == -1)
@@ -76,15 +76,15 @@ public class ArrayDynamicFast<T>
 		this.Count++;
 	}
 
-	// Token: 0x040076CE RID: 30414
+	// Token: 0x040077A6 RID: 30630
 	public T[] Data;
 
-	// Token: 0x040076CF RID: 30415
+	// Token: 0x040077A7 RID: 30631
 	public bool[] DataAvail;
 
-	// Token: 0x040076D0 RID: 30416
+	// Token: 0x040077A8 RID: 30632
 	public int Count;
 
-	// Token: 0x040076D1 RID: 30417
+	// Token: 0x040077A9 RID: 30633
 	public int Size;
 }

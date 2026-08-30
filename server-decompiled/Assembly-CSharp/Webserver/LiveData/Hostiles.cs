@@ -2,10 +2,10 @@
 
 namespace Webserver.LiveData
 {
-	// Token: 0x02001AE0 RID: 6880
+	// Token: 0x02001B07 RID: 6919
 	public class Hostiles : EntityFilterList<EntityEnemy>
 	{
-		// Token: 0x0600CE6B RID: 52843 RVA: 0x004B5244 File Offset: 0x004B3444
+		// Token: 0x0600CFF4 RID: 53236 RVA: 0x004BB638 File Offset: 0x004B9838
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override EntityEnemy predicate(Entity _e)
 		{
@@ -17,7 +17,7 @@ namespace Webserver.LiveData
 			return null;
 		}
 
-		// Token: 0x04009CBE RID: 40126
+		// Token: 0x04009DEF RID: 40431
 		public static readonly Hostiles Instance = new Hostiles();
 	}
 }

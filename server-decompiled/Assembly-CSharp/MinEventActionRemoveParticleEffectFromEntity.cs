@@ -2,11 +2,11 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006D4 RID: 1748
+// Token: 0x020006DE RID: 1758
 [Preserve]
 public class MinEventActionRemoveParticleEffectFromEntity : MinEventActionTargetedBase
 {
-	// Token: 0x060035EE RID: 13806 RVA: 0x00164C62 File Offset: 0x00162E62
+	// Token: 0x06003644 RID: 13892 RVA: 0x00166E3A File Offset: 0x0016503A
 	public override void Execute(MinEventParams _params)
 	{
 		if (_params.Self == null)
@@ -16,13 +16,13 @@ public class MinEventActionRemoveParticleEffectFromEntity : MinEventActionTarget
 		_params.Self.RemoveParticle(this.particleEffectName);
 	}
 
-	// Token: 0x060035EF RID: 13807 RVA: 0x00164C85 File Offset: 0x00162E85
+	// Token: 0x06003645 RID: 13893 RVA: 0x00166E5D File Offset: 0x0016505D
 	public override bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
 	{
 		return base.CanExecute(_eventType, _params) && _params.Self != null && this.particleEffectName != null;
 	}
 
-	// Token: 0x060035F0 RID: 13808 RVA: 0x00164CAC File Offset: 0x00162EAC
+	// Token: 0x06003646 RID: 13894 RVA: 0x00166E84 File Offset: 0x00165084
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -34,7 +34,7 @@ public class MinEventActionRemoveParticleEffectFromEntity : MinEventActionTarget
 		return flag;
 	}
 
-	// Token: 0x04002B69 RID: 11113
+	// Token: 0x04002BDD RID: 11229
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string particleEffectName;
 }

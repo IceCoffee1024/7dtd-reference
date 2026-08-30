@@ -2,18 +2,18 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020004DD RID: 1245
+// Token: 0x020004E2 RID: 1250
 [Preserve]
 public class EntityVBlimp : EntityDriveable
 {
-	// Token: 0x06002898 RID: 10392 RVA: 0x000FBD23 File Offset: 0x000F9F23
+	// Token: 0x060028C2 RID: 10434 RVA: 0x000FCD33 File Offset: 0x000FAF33
 	public override void Init(int _entityClass, EntityInstanceAssets _assets, EModelInstanceAssets _eModelAssets)
 	{
 		base.Init(_entityClass, _assets, _eModelAssets);
 		this.vehicleRB.useGravity = false;
 	}
 
-	// Token: 0x06002899 RID: 10393 RVA: 0x000FBD3C File Offset: 0x000F9F3C
+	// Token: 0x060028C3 RID: 10435 RVA: 0x000FCD4C File Offset: 0x000FAF4C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void PhysicsInputMove()
 	{
@@ -50,13 +50,13 @@ public class EntityVBlimp : EntityDriveable
 		}
 	}
 
-	// Token: 0x0600289A RID: 10394 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060028C4 RID: 10436 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SetWheelsForces(float motorTorque, float motorTorqueBase, float brakeTorque, float _friction)
 	{
 	}
 
-	// Token: 0x0600289B RID: 10395 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060028C5 RID: 10437 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateWheelsSteering()
 	{

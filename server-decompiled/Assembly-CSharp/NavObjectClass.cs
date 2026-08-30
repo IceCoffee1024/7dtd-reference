@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000747 RID: 1863
+// Token: 0x02000751 RID: 1873
 public class NavObjectClass
 {
-	// Token: 0x0600378E RID: 14222 RVA: 0x0016D5EC File Offset: 0x0016B7EC
+	// Token: 0x060037E4 RID: 14308 RVA: 0x0016F808 File Offset: 0x0016DA08
 	public static void Reset()
 	{
 		NavObjectClass.NavObjectClassList.Clear();
 	}
 
-	// Token: 0x0600378F RID: 14223 RVA: 0x0016D5F8 File Offset: 0x0016B7F8
+	// Token: 0x060037E5 RID: 14309 RVA: 0x0016F814 File Offset: 0x0016DA14
 	public NavObjectMapSettings GetMapSettings(bool isActive)
 	{
 		if (isActive)
@@ -20,7 +20,7 @@ public class NavObjectClass
 		return this.InactiveMapSettings;
 	}
 
-	// Token: 0x06003790 RID: 14224 RVA: 0x0016D60A File Offset: 0x0016B80A
+	// Token: 0x060037E6 RID: 14310 RVA: 0x0016F826 File Offset: 0x0016DA26
 	public NavObjectCompassSettings GetCompassSettings(bool isActive)
 	{
 		if (isActive)
@@ -30,7 +30,7 @@ public class NavObjectClass
 		return this.InactiveCompassSettings;
 	}
 
-	// Token: 0x06003791 RID: 14225 RVA: 0x0016D61C File Offset: 0x0016B81C
+	// Token: 0x060037E7 RID: 14311 RVA: 0x0016F838 File Offset: 0x0016DA38
 	public NavObjectScreenSettings GetOnScreenSettings(bool isActive)
 	{
 		if (isActive)
@@ -40,13 +40,13 @@ public class NavObjectClass
 		return this.InactiveOnScreenSettings;
 	}
 
-	// Token: 0x06003792 RID: 14226 RVA: 0x0016D62E File Offset: 0x0016B82E
+	// Token: 0x060037E8 RID: 14312 RVA: 0x0016F84A File Offset: 0x0016DA4A
 	public NavObjectClass(string name)
 	{
 		this.NavObjectClassName = name;
 	}
 
-	// Token: 0x06003793 RID: 14227 RVA: 0x0016D660 File Offset: 0x0016B860
+	// Token: 0x060037E9 RID: 14313 RVA: 0x0016F87C File Offset: 0x0016DA7C
 	public static NavObjectClass GetNavObjectClass(string className)
 	{
 		for (int i = 0; i < NavObjectClass.NavObjectClassList.Count; i++)
@@ -59,7 +59,7 @@ public class NavObjectClass
 		return null;
 	}
 
-	// Token: 0x06003794 RID: 14228 RVA: 0x0016D6A8 File Offset: 0x0016B8A8
+	// Token: 0x060037EA RID: 14314 RVA: 0x0016F8C4 File Offset: 0x0016DAC4
 	public void Init()
 	{
 		if (this.Properties.Values.ContainsKey("requirement_type"))
@@ -77,75 +77,75 @@ public class NavObjectClass
 		this.Properties.ParseBool("use_override_icon", ref this.UseOverrideIcon);
 	}
 
-	// Token: 0x04002D61 RID: 11617
+	// Token: 0x04002DD9 RID: 11737
 	public static List<NavObjectClass> NavObjectClassList = new List<NavObjectClass>();
 
-	// Token: 0x04002D62 RID: 11618
+	// Token: 0x04002DDA RID: 11738
 	public DynamicProperties Properties = new DynamicProperties();
 
-	// Token: 0x04002D63 RID: 11619
+	// Token: 0x04002DDB RID: 11739
 	public string NavObjectClassName = "";
 
-	// Token: 0x04002D64 RID: 11620
+	// Token: 0x04002DDC RID: 11740
 	public NavObjectClass.RequirementTypes RequirementType;
 
-	// Token: 0x04002D65 RID: 11621
+	// Token: 0x04002DDD RID: 11741
 	public string RequirementName = "";
 
-	// Token: 0x04002D66 RID: 11622
+	// Token: 0x04002DDE RID: 11742
 	public bool UseOverrideIcon;
 
-	// Token: 0x04002D67 RID: 11623
+	// Token: 0x04002DDF RID: 11743
 	public string Tag;
 
-	// Token: 0x04002D68 RID: 11624
+	// Token: 0x04002DE0 RID: 11744
 	public NavObjectMapSettings MapSettings;
 
-	// Token: 0x04002D69 RID: 11625
+	// Token: 0x04002DE1 RID: 11745
 	public NavObjectCompassSettings CompassSettings;
 
-	// Token: 0x04002D6A RID: 11626
+	// Token: 0x04002DE2 RID: 11746
 	public NavObjectScreenSettings OnScreenSettings;
 
-	// Token: 0x04002D6B RID: 11627
+	// Token: 0x04002DE3 RID: 11747
 	public NavObjectMapSettings InactiveMapSettings;
 
-	// Token: 0x04002D6C RID: 11628
+	// Token: 0x04002DE4 RID: 11748
 	public NavObjectCompassSettings InactiveCompassSettings;
 
-	// Token: 0x04002D6D RID: 11629
+	// Token: 0x04002DE5 RID: 11749
 	public NavObjectScreenSettings InactiveOnScreenSettings;
 
-	// Token: 0x02000748 RID: 1864
+	// Token: 0x02000752 RID: 1874
 	public enum RequirementTypes
 	{
-		// Token: 0x04002D6F RID: 11631
+		// Token: 0x04002DE7 RID: 11751
 		None,
-		// Token: 0x04002D70 RID: 11632
+		// Token: 0x04002DE8 RID: 11752
 		CVar,
-		// Token: 0x04002D71 RID: 11633
+		// Token: 0x04002DE9 RID: 11753
 		QuestBounds,
-		// Token: 0x04002D72 RID: 11634
+		// Token: 0x04002DEA RID: 11754
 		Tracking,
-		// Token: 0x04002D73 RID: 11635
+		// Token: 0x04002DEB RID: 11755
 		NoTag,
-		// Token: 0x04002D74 RID: 11636
+		// Token: 0x04002DEC RID: 11756
 		InParty,
-		// Token: 0x04002D75 RID: 11637
+		// Token: 0x04002DED RID: 11757
 		IsAlly,
-		// Token: 0x04002D76 RID: 11638
+		// Token: 0x04002DEE RID: 11758
 		IsPlayer,
-		// Token: 0x04002D77 RID: 11639
+		// Token: 0x04002DEF RID: 11759
 		IsVehicleOwner,
-		// Token: 0x04002D78 RID: 11640
+		// Token: 0x04002DF0 RID: 11760
 		IsOwner,
-		// Token: 0x04002D79 RID: 11641
+		// Token: 0x04002DF1 RID: 11761
 		NoActiveQuests,
-		// Token: 0x04002D7A RID: 11642
+		// Token: 0x04002DF2 RID: 11762
 		MinimumTreasureRadius,
-		// Token: 0x04002D7B RID: 11643
+		// Token: 0x04002DF3 RID: 11763
 		IsTwitchSpawnedSelf,
-		// Token: 0x04002D7C RID: 11644
+		// Token: 0x04002DF4 RID: 11764
 		IsTwitchSpawnedOther
 	}
 }

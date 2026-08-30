@@ -6,18 +6,18 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001988 RID: 6536
+	// Token: 0x020019AE RID: 6574
 	[Preserve]
 	public class ActionResetRegions : BaseAction
 	{
-		// Token: 0x0600C7BD RID: 51133 RVA: 0x00497F49 File Offset: 0x00496149
+		// Token: 0x0600C944 RID: 51524 RVA: 0x0049E2A1 File Offset: 0x0049C4A1
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			GameManager.Instance.StartCoroutine(this.HandleReset());
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C7BE RID: 51134 RVA: 0x00497F5D File Offset: 0x0049615D
+		// Token: 0x0600C945 RID: 51525 RVA: 0x0049E2B5 File Offset: 0x0049C4B5
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public IEnumerator HandleReset()
 		{
@@ -60,14 +60,14 @@ namespace GameEvent.SequenceActions
 			yield break;
 		}
 
-		// Token: 0x0600C7BF RID: 51135 RVA: 0x00497F6C File Offset: 0x0049616C
+		// Token: 0x0600C946 RID: 51526 RVA: 0x0049E2C4 File Offset: 0x0049C4C4
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseEnum<ActionResetRegions.ResetTypes>(ActionResetRegions.PropResetType, ref this.ResetType);
 		}
 
-		// Token: 0x0600C7C0 RID: 51136 RVA: 0x00497F86 File Offset: 0x00496186
+		// Token: 0x0600C947 RID: 51527 RVA: 0x0049E2DE File Offset: 0x0049C4DE
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -77,25 +77,25 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x0400975E RID: 38750
+		// Token: 0x04009887 RID: 39047
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ActionResetRegions.ResetTypes ResetType;
 
-		// Token: 0x0400975F RID: 38751
+		// Token: 0x04009888 RID: 39048
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropResetType = "reset_type";
 
-		// Token: 0x04009760 RID: 38752
+		// Token: 0x04009889 RID: 39049
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool isComplete;
 
-		// Token: 0x02001989 RID: 6537
+		// Token: 0x020019AF RID: 6575
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum ResetTypes
 		{
-			// Token: 0x04009762 RID: 38754
+			// Token: 0x0400988B RID: 39051
 			None,
-			// Token: 0x04009763 RID: 38755
+			// Token: 0x0400988C RID: 39052
 			Full
 		}
 	}

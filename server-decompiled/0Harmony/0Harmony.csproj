@@ -1,6 +1,6 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ProjectGuid>{B78A77E0-660F-4841-808D-9286E5408581}</ProjectGuid>
+    <ProjectGuid>{ADF6D6CC-2FEF-459F-BAD9-DD49A30DEEF8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>0Harmony</RootNamespace>
     <AssemblyName>0Harmony</AssemblyName>
@@ -118,34 +118,34 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Mono.Cecil">
-      <HintPath>..\..\runtime\Mods\0_TFP_Harmony\Mono.Cecil.dll</HintPath>
+      <HintPath>../../runtime/Mods/0_TFP_Harmony/Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil.Mdb">
-      <HintPath>..\..\runtime\Mods\0_TFP_Harmony\Mono.Cecil.Mdb.dll</HintPath>
+      <HintPath>../../runtime/Mods/0_TFP_Harmony/Mono.Cecil.Mdb.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil.Pdb">
-      <HintPath>..\..\runtime\Mods\0_TFP_Harmony\Mono.Cecil.Pdb.dll</HintPath>
+      <HintPath>../../runtime/Mods/0_TFP_Harmony/Mono.Cecil.Pdb.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil.Rocks">
-      <HintPath>..\..\runtime\Mods\0_TFP_Harmony\Mono.Cecil.Rocks.dll</HintPath>
+      <HintPath>../../runtime/Mods/0_TFP_Harmony/Mono.Cecil.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="MonoMod.Backports">
-      <HintPath>..\..\runtime\Mods\0_TFP_Harmony\MonoMod.Backports.dll</HintPath>
+      <HintPath>../../runtime/Mods/0_TFP_Harmony/MonoMod.Backports.dll</HintPath>
     </Reference>
     <Reference Include="MonoMod.Core">
-      <HintPath>..\..\runtime\Mods\0_TFP_Harmony\MonoMod.Core.dll</HintPath>
+      <HintPath>../../runtime/Mods/0_TFP_Harmony/MonoMod.Core.dll</HintPath>
     </Reference>
     <Reference Include="MonoMod.RuntimeDetour">
-      <HintPath>..\..\runtime\Mods\0_TFP_Harmony\MonoMod.RuntimeDetour.dll</HintPath>
+      <HintPath>../../runtime/Mods/0_TFP_Harmony/MonoMod.RuntimeDetour.dll</HintPath>
     </Reference>
     <Reference Include="MonoMod.Utils">
-      <HintPath>..\..\runtime\Mods\0_TFP_Harmony\MonoMod.Utils.dll</HintPath>
+      <HintPath>../../runtime/Mods/0_TFP_Harmony/MonoMod.Utils.dll</HintPath>
     </Reference>
     <Reference Include="System.Core">
-      <HintPath>..\..\runtime\7DaysToDieServer_Data\Managed\System.Core.dll</HintPath>
+      <HintPath>../../runtime/7DaysToDieServer_Data/Managed/System.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.ValueTuple">
-      <HintPath>..\..\runtime\Mods\0_TFP_Harmony\System.ValueTuple.dll</HintPath>
+      <HintPath>../../runtime/Mods/0_TFP_Harmony/System.ValueTuple.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020007F8 RID: 2040
+// Token: 0x02000803 RID: 2051
 [Preserve]
 public class NetPackageInventoryTransactionResponse : NetPackage
 {
-	// Token: 0x1700063E RID: 1598
-	// (get) Token: 0x06003C15 RID: 15381 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x17000649 RID: 1609
+	// (get) Token: 0x06003C74 RID: 15476 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -16,7 +16,7 @@ public class NetPackageInventoryTransactionResponse : NetPackage
 		}
 	}
 
-	// Token: 0x06003C16 RID: 15382 RVA: 0x001801A4 File Offset: 0x0017E3A4
+	// Token: 0x06003C75 RID: 15477 RVA: 0x0018257C File Offset: 0x0018077C
 	public NetPackageInventoryTransactionResponse Setup(bool _success, IList<Guid> _keys, IList<ItemStack[]> _inventoriesUpdated)
 	{
 		if (_keys == null != (_inventoriesUpdated == null) || (_keys != null && _keys.Count != _inventoriesUpdated.Count))
@@ -33,7 +33,7 @@ public class NetPackageInventoryTransactionResponse : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003C17 RID: 15383 RVA: 0x00180210 File Offset: 0x0017E410
+	// Token: 0x06003C76 RID: 15478 RVA: 0x001825E8 File Offset: 0x001807E8
 	public override void read(PooledBinaryReader _br)
 	{
 		this.success = _br.ReadBoolean();
@@ -56,7 +56,7 @@ public class NetPackageInventoryTransactionResponse : NetPackage
 		this.inventories = list2;
 	}
 
-	// Token: 0x06003C18 RID: 15384 RVA: 0x00180284 File Offset: 0x0017E484
+	// Token: 0x06003C77 RID: 15479 RVA: 0x0018265C File Offset: 0x0018085C
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -80,26 +80,26 @@ public class NetPackageInventoryTransactionResponse : NetPackage
 		}
 	}
 
-	// Token: 0x06003C19 RID: 15385 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06003C78 RID: 15480 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 	}
 
-	// Token: 0x06003C1A RID: 15386 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06003C79 RID: 15481 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override int GetLength()
 	{
 		return 0;
 	}
 
-	// Token: 0x0400309D RID: 12445
+	// Token: 0x0400311C RID: 12572
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool success;
 
-	// Token: 0x0400309E RID: 12446
+	// Token: 0x0400311D RID: 12573
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IList<Guid> keys;
 
-	// Token: 0x0400309F RID: 12447
+	// Token: 0x0400311E RID: 12574
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IList<ItemStack[]> inventories;
 }

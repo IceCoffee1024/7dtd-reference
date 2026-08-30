@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Text;
 
-// Token: 0x02001393 RID: 5011
+// Token: 0x020013AE RID: 5038
 public static class ByteLengthUtils
 {
-	// Token: 0x06009DD0 RID: 40400 RVA: 0x003B9544 File Offset: 0x003B7744
+	// Token: 0x06009ECD RID: 40653 RVA: 0x003BE888 File Offset: 0x003BCA88
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int GetBinaryWriter7BitEncodedIntLength(int value)
 	{
@@ -16,7 +16,7 @@ public static class ByteLengthUtils
 		return num + 1;
 	}
 
-	// Token: 0x06009DD1 RID: 40401 RVA: 0x003B956C File Offset: 0x003B776C
+	// Token: 0x06009ECE RID: 40654 RVA: 0x003BE8B0 File Offset: 0x003BCAB0
 	public static int GetBinaryWriterLength(this string text, Encoding encoding)
 	{
 		int byteCount = encoding.GetByteCount(text);

@@ -2,10 +2,10 @@
 using System.Diagnostics;
 using UnityEngine;
 
-// Token: 0x020014DA RID: 5338
+// Token: 0x020014F5 RID: 5365
 public class WaterClippingUtils
 {
-	// Token: 0x0600A7E9 RID: 42985 RVA: 0x003E77A8 File Offset: 0x003E59A8
+	// Token: 0x0600A8E6 RID: 43238 RVA: 0x003ECAE8 File Offset: 0x003EACE8
 	public static bool GetCubePlaneIntersectionEdgeLoop(Plane plane, ref Vector3[] intersectionPoints, out int count)
 	{
 		count = 0;
@@ -49,7 +49,7 @@ public class WaterClippingUtils
 		return true;
 	}
 
-	// Token: 0x0600A7EA RID: 42986 RVA: 0x003E7930 File Offset: 0x003E5B30
+	// Token: 0x0600A8E7 RID: 43239 RVA: 0x003ECC70 File Offset: 0x003EAE70
 	[Conditional("DEBUG_WATER_CLIPPING")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void DebugDrawIntersectionSurface(Plane plane, Vector3[] intersectionPoints, int count, Vector3 hullCenter)
@@ -74,7 +74,7 @@ public class WaterClippingUtils
 		}
 	}
 
-	// Token: 0x0600A7EB RID: 42987 RVA: 0x003E7A78 File Offset: 0x003E5C78
+	// Token: 0x0600A8E8 RID: 43240 RVA: 0x003ECDB8 File Offset: 0x003EAFB8
 	[Conditional("DEBUG_WATER_CLIPPING")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void DebugDrawCubeVertPlaneOffsets(Plane plane)
@@ -86,16 +86,16 @@ public class WaterClippingUtils
 		}
 	}
 
-	// Token: 0x04007C26 RID: 31782
+	// Token: 0x04007CFF RID: 31999
 	public const string PropWaterClipPlane = "WaterClipPlane";
 
-	// Token: 0x04007C27 RID: 31783
+	// Token: 0x04007D00 RID: 32000
 	public const string PropWaterFlow = "WaterFlow";
 
-	// Token: 0x04007C28 RID: 31784
+	// Token: 0x04007D01 RID: 32001
 	public static readonly Bounds CubeBounds = new Bounds(new Vector3(0.5f, 0.5f, 0.5f), Vector3.one);
 
-	// Token: 0x04007C29 RID: 31785
+	// Token: 0x04007D02 RID: 32002
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Vector3[] cubeVerts = new Vector3[]
 	{
@@ -109,7 +109,7 @@ public class WaterClippingUtils
 		new Vector3(1f, 0f, 1f)
 	};
 
-	// Token: 0x04007C2A RID: 31786
+	// Token: 0x04007D03 RID: 32003
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly int[] cubeEdges = new int[]
 	{
@@ -118,11 +118,11 @@ public class WaterClippingUtils
 		2, 6, 3, 7
 	};
 
-	// Token: 0x04007C2B RID: 31787
+	// Token: 0x04007D04 RID: 32004
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly float[] cubeVertDistances = new float[8];
 
-	// Token: 0x04007C2C RID: 31788
+	// Token: 0x04007D05 RID: 32005
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly float[] hullVertAngles = new float[6];
 }

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020007EC RID: 2028
+// Token: 0x020007F7 RID: 2039
 [Preserve]
 public class NetPackageGameEventResponse : NetPackage
 {
-	// Token: 0x06003BC7 RID: 15303 RVA: 0x0017F348 File Offset: 0x0017D548
+	// Token: 0x06003C26 RID: 15398 RVA: 0x00181720 File Offset: 0x0017F920
 	public NetPackageGameEventResponse Setup(string _event, int _targetEntityID, string _extraData, string _tag, NetPackageGameEventResponse.ResponseTypes _responseType, int _entitySpawnedID = -1, int _index = -1, bool _isDespawn = false, string _actionKey = "")
 	{
 		this.eventName = _event;
@@ -21,7 +21,7 @@ public class NetPackageGameEventResponse : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003BC8 RID: 15304 RVA: 0x0017F39C File Offset: 0x0017D59C
+	// Token: 0x06003C27 RID: 15399 RVA: 0x00181774 File Offset: 0x0017F974
 	public NetPackageGameEventResponse Setup(NetPackageGameEventResponse.ResponseTypes _responseType, int _entitySpawnedID = -1, int _index = -1, string _tag = "", bool _isDespawn = false)
 	{
 		this.eventName = "";
@@ -35,7 +35,7 @@ public class NetPackageGameEventResponse : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003BC9 RID: 15305 RVA: 0x0017F3EC File Offset: 0x0017D5EC
+	// Token: 0x06003C28 RID: 15400 RVA: 0x001817C4 File Offset: 0x0017F9C4
 	public NetPackageGameEventResponse Setup(NetPackageGameEventResponse.ResponseTypes _responseType, string _event, int _blockGroupID, List<Vector3i> _blockList, string _tag = "", bool _isDespawn = false)
 	{
 		this.eventName = _event;
@@ -49,7 +49,7 @@ public class NetPackageGameEventResponse : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003BCA RID: 15306 RVA: 0x0017F439 File Offset: 0x0017D639
+	// Token: 0x06003C29 RID: 15401 RVA: 0x00181811 File Offset: 0x0017FA11
 	public NetPackageGameEventResponse Setup(NetPackageGameEventResponse.ResponseTypes _responseType, Vector3i _blockPos)
 	{
 		this.eventName = "";
@@ -61,7 +61,7 @@ public class NetPackageGameEventResponse : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003BCB RID: 15307 RVA: 0x0017F474 File Offset: 0x0017D674
+	// Token: 0x06003C2A RID: 15402 RVA: 0x0018184C File Offset: 0x0017FA4C
 	public override void read(PooledBinaryReader _br)
 	{
 		this.eventName = _br.ReadString();
@@ -98,7 +98,7 @@ public class NetPackageGameEventResponse : NetPackage
 		}
 	}
 
-	// Token: 0x06003BCC RID: 15308 RVA: 0x0017F568 File Offset: 0x0017D768
+	// Token: 0x06003C2B RID: 15403 RVA: 0x00181940 File Offset: 0x0017FB40
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -144,7 +144,7 @@ public class NetPackageGameEventResponse : NetPackage
 		}
 	}
 
-	// Token: 0x06003BCD RID: 15309 RVA: 0x0017F680 File Offset: 0x0017D880
+	// Token: 0x06003C2C RID: 15404 RVA: 0x00181A58 File Offset: 0x0017FC58
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -201,8 +201,8 @@ public class NetPackageGameEventResponse : NetPackage
 		}
 	}
 
-	// Token: 0x17000634 RID: 1588
-	// (get) Token: 0x06003BCE RID: 15310 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x1700063F RID: 1599
+	// (get) Token: 0x06003C2D RID: 15405 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -211,86 +211,86 @@ public class NetPackageGameEventResponse : NetPackage
 		}
 	}
 
-	// Token: 0x06003BCF RID: 15311 RVA: 0x00104CB5 File Offset: 0x00102EB5
+	// Token: 0x06003C2E RID: 15406 RVA: 0x00105CC1 File Offset: 0x00103EC1
 	public override int GetLength()
 	{
 		return 30;
 	}
 
-	// Token: 0x0400306C RID: 12396
+	// Token: 0x040030EB RID: 12523
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string eventName;
 
-	// Token: 0x0400306D RID: 12397
+	// Token: 0x040030EC RID: 12524
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetPackageGameEventResponse.ResponseTypes responseType;
 
-	// Token: 0x0400306E RID: 12398
+	// Token: 0x040030ED RID: 12525
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int entitySpawnedID = -1;
 
-	// Token: 0x0400306F RID: 12399
+	// Token: 0x040030EE RID: 12526
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int targetEntityID = -1;
 
-	// Token: 0x04003070 RID: 12400
+	// Token: 0x040030EF RID: 12527
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string extraData;
 
-	// Token: 0x04003071 RID: 12401
+	// Token: 0x040030F0 RID: 12528
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string tag = "";
 
-	// Token: 0x04003072 RID: 12402
+	// Token: 0x040030F1 RID: 12529
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int index = -1;
 
-	// Token: 0x04003073 RID: 12403
+	// Token: 0x040030F2 RID: 12530
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string actionKey = "";
 
-	// Token: 0x04003074 RID: 12404
+	// Token: 0x040030F3 RID: 12531
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isDespawn;
 
-	// Token: 0x04003075 RID: 12405
+	// Token: 0x040030F4 RID: 12532
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Vector3i> blockList;
 
-	// Token: 0x04003076 RID: 12406
+	// Token: 0x040030F5 RID: 12533
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i blockPos;
 
-	// Token: 0x020007ED RID: 2029
+	// Token: 0x020007F8 RID: 2040
 	public enum ResponseTypes
 	{
-		// Token: 0x04003078 RID: 12408
+		// Token: 0x040030F7 RID: 12535
 		Denied,
-		// Token: 0x04003079 RID: 12409
+		// Token: 0x040030F8 RID: 12536
 		Approved,
-		// Token: 0x0400307A RID: 12410
+		// Token: 0x040030F9 RID: 12537
 		TwitchPartyActionApproved,
-		// Token: 0x0400307B RID: 12411
+		// Token: 0x040030FA RID: 12538
 		TwitchRefundNeeded,
-		// Token: 0x0400307C RID: 12412
+		// Token: 0x040030FB RID: 12539
 		TwitchSetOwner,
-		// Token: 0x0400307D RID: 12413
+		// Token: 0x040030FC RID: 12540
 		EntitySpawned,
-		// Token: 0x0400307E RID: 12414
+		// Token: 0x040030FD RID: 12541
 		EntityDespawned,
-		// Token: 0x0400307F RID: 12415
+		// Token: 0x040030FE RID: 12542
 		EntityKilled,
-		// Token: 0x04003080 RID: 12416
+		// Token: 0x040030FF RID: 12543
 		BlocksAdded,
-		// Token: 0x04003081 RID: 12417
+		// Token: 0x04003100 RID: 12544
 		BlocksRemoved,
-		// Token: 0x04003082 RID: 12418
+		// Token: 0x04003101 RID: 12545
 		BlockRemoved,
-		// Token: 0x04003083 RID: 12419
+		// Token: 0x04003102 RID: 12546
 		BlockDamaged,
-		// Token: 0x04003084 RID: 12420
+		// Token: 0x04003103 RID: 12547
 		ClientSequenceAction,
-		// Token: 0x04003085 RID: 12421
+		// Token: 0x04003104 RID: 12548
 		Completed
 	}
 }

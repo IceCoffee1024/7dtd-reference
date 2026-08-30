@@ -3,10 +3,10 @@ using System.Collections;
 using System.Xml;
 using System.Xml.Linq;
 
-// Token: 0x02000D12 RID: 3346
+// Token: 0x02000D24 RID: 3364
 public class PhysicsBodiesFromXml
 {
-	// Token: 0x060065FC RID: 26108 RVA: 0x00282A35 File Offset: 0x00280C35
+	// Token: 0x06006688 RID: 26248 RVA: 0x00285945 File Offset: 0x00283B45
 	public static IEnumerator Load(XmlFile xmlFile)
 	{
 		try
@@ -30,7 +30,7 @@ public class PhysicsBodiesFromXml
 		yield break;
 	}
 
-	// Token: 0x060065FD RID: 26109 RVA: 0x00282A44 File Offset: 0x00280C44
+	// Token: 0x06006689 RID: 26249 RVA: 0x00285954 File Offset: 0x00283B54
 	public static void Save(string path)
 	{
 		XmlDocument xmlDocument = new XmlDocument();

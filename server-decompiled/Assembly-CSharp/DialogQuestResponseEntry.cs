@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020002FD RID: 765
+// Token: 0x02000301 RID: 769
 [Preserve]
 public class DialogQuestResponseEntry : BaseResponseEntry
 {
-	// Token: 0x060015B9 RID: 5561 RVA: 0x00081208 File Offset: 0x0007F408
+	// Token: 0x060015CC RID: 5580 RVA: 0x000818BC File Offset: 0x0007FABC
 	public DialogQuestResponseEntry(string _questID, string _type, string _returnStatementID, int _listIndex, int _tier)
 	{
 		base.ID = _questID;
@@ -16,15 +16,15 @@ public class DialogQuestResponseEntry : BaseResponseEntry
 		this.ReturnStatementID = _returnStatementID;
 	}
 
-	// Token: 0x04000E94 RID: 3732
+	// Token: 0x04000EA5 RID: 3749
 	public int ListIndex = -1;
 
-	// Token: 0x04000E95 RID: 3733
+	// Token: 0x04000EA6 RID: 3750
 	public string ReturnStatementID = "";
 
-	// Token: 0x04000E96 RID: 3734
+	// Token: 0x04000EA7 RID: 3751
 	public string questType = "";
 
-	// Token: 0x04000E97 RID: 3735
+	// Token: 0x04000EA8 RID: 3752
 	public int Tier = -1;
 }

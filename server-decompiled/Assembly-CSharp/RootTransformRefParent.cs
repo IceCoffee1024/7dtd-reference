@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200147B RID: 5243
+// Token: 0x02001496 RID: 5270
 public class RootTransformRefParent : RootTransformRef
 {
-	// Token: 0x0600A45E RID: 42078 RVA: 0x003D3418 File Offset: 0x003D1618
+	// Token: 0x0600A55B RID: 42331 RVA: 0x003D875C File Offset: 0x003D695C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Awake()
 	{
@@ -15,7 +15,7 @@ public class RootTransformRefParent : RootTransformRef
 		this.RootTransform = this.FindTopTransform(base.transform);
 	}
 
-	// Token: 0x0600A45F RID: 42079 RVA: 0x003D343C File Offset: 0x003D163C
+	// Token: 0x0600A55C RID: 42332 RVA: 0x003D8780 File Offset: 0x003D6980
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform FindTopTransform(Transform _t)
 	{
@@ -27,7 +27,7 @@ public class RootTransformRefParent : RootTransformRef
 		return _t;
 	}
 
-	// Token: 0x0600A460 RID: 42080 RVA: 0x003D3460 File Offset: 0x003D1660
+	// Token: 0x0600A55D RID: 42333 RVA: 0x003D87A4 File Offset: 0x003D69A4
 	public static Transform FindRoot(Transform _t)
 	{
 		Transform transform = _t;

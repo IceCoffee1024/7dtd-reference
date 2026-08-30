@@ -2,16 +2,16 @@
 using System.IO;
 using UnityEngine;
 
-// Token: 0x02001494 RID: 5268
+// Token: 0x020014AF RID: 5295
 public static class StreamUtils
 {
-	// Token: 0x0600A502 RID: 42242 RVA: 0x003D6E78 File Offset: 0x003D5078
+	// Token: 0x0600A5FF RID: 42495 RVA: 0x003DC1B8 File Offset: 0x003DA3B8
 	public static long ReadInt64(Stream clientStream)
 	{
 		return (long)(clientStream.ReadByte() & 255) | ((long)(clientStream.ReadByte() & 255) << 8) | ((long)(clientStream.ReadByte() & 255) << 16) | ((long)(clientStream.ReadByte() & 255) << 24) | ((long)(clientStream.ReadByte() & 255) << 32) | ((long)(clientStream.ReadByte() & 255) << 40) | ((long)(clientStream.ReadByte() & 255) << 48) | ((long)(clientStream.ReadByte() & 255) << 56);
 	}
 
-	// Token: 0x0600A503 RID: 42243 RVA: 0x003D6F08 File Offset: 0x003D5108
+	// Token: 0x0600A600 RID: 42496 RVA: 0x003DC248 File Offset: 0x003DA448
 	public static void Write(Stream clientStream, long v)
 	{
 		clientStream.WriteByte((byte)(v & 255L));
@@ -24,13 +24,13 @@ public static class StreamUtils
 		clientStream.WriteByte((byte)((v >> 56) & 255L));
 	}
 
-	// Token: 0x0600A504 RID: 42244 RVA: 0x003D6FA1 File Offset: 0x003D51A1
+	// Token: 0x0600A601 RID: 42497 RVA: 0x003DC2E1 File Offset: 0x003DA4E1
 	public static int ReadInt32(Stream clientStream)
 	{
 		return 0 | (clientStream.ReadByte() & 255) | ((clientStream.ReadByte() & 255) << 8) | ((clientStream.ReadByte() & 255) << 16) | ((clientStream.ReadByte() & 255) << 24);
 	}
 
-	// Token: 0x0600A505 RID: 42245 RVA: 0x003D6FE0 File Offset: 0x003D51E0
+	// Token: 0x0600A602 RID: 42498 RVA: 0x003DC320 File Offset: 0x003DA520
 	public static int ReadInt32(byte[] buffer, ref int offset)
 	{
 		int num = 0;
@@ -48,7 +48,7 @@ public static class StreamUtils
 		return num5 | ((int)buffer[num2] << 24);
 	}
 
-	// Token: 0x0600A506 RID: 42246 RVA: 0x003D7028 File Offset: 0x003D5228
+	// Token: 0x0600A603 RID: 42499 RVA: 0x003DC368 File Offset: 0x003DA568
 	public static void Write(Stream clientStream, int v)
 	{
 		clientStream.WriteByte((byte)(v & 255));
@@ -57,7 +57,7 @@ public static class StreamUtils
 		clientStream.WriteByte((byte)((v >> 24) & 255));
 	}
 
-	// Token: 0x0600A507 RID: 42247 RVA: 0x003D7078 File Offset: 0x003D5278
+	// Token: 0x0600A604 RID: 42500 RVA: 0x003DC3B8 File Offset: 0x003DA5B8
 	public static void Write(byte[] buffer, int v, ref int offset)
 	{
 		int num = offset;
@@ -74,13 +74,13 @@ public static class StreamUtils
 		buffer[num] = (byte)((v >> 24) & 255);
 	}
 
-	// Token: 0x0600A508 RID: 42248 RVA: 0x003D70D9 File Offset: 0x003D52D9
+	// Token: 0x0600A605 RID: 42501 RVA: 0x003DC419 File Offset: 0x003DA619
 	public static ushort ReadUInt16(Stream clientStream)
 	{
 		return 0 | (ushort)(clientStream.ReadByte() & 255) | (ushort)((clientStream.ReadByte() & 255) << 8);
 	}
 
-	// Token: 0x0600A509 RID: 42249 RVA: 0x003D70FC File Offset: 0x003D52FC
+	// Token: 0x0600A606 RID: 42502 RVA: 0x003DC43C File Offset: 0x003DA63C
 	public static ushort ReadUInt16(byte[] buffer, ref int offset)
 	{
 		byte b = 0;
@@ -92,20 +92,20 @@ public static class StreamUtils
 		return num2 | (ushort)(buffer[num] << 8);
 	}
 
-	// Token: 0x0600A50A RID: 42250 RVA: 0x003D7127 File Offset: 0x003D5327
+	// Token: 0x0600A607 RID: 42503 RVA: 0x003DC467 File Offset: 0x003DA667
 	public static void Write(Stream clientStream, ushort v)
 	{
 		clientStream.WriteByte((byte)(v & 255));
 		clientStream.WriteByte((byte)((v >> 8) & 255));
 	}
 
-	// Token: 0x0600A50B RID: 42251 RVA: 0x003D7147 File Offset: 0x003D5347
+	// Token: 0x0600A608 RID: 42504 RVA: 0x003DC487 File Offset: 0x003DA687
 	public static short ReadInt16(Stream clientStream)
 	{
 		return 0 | (short)(clientStream.ReadByte() & 255) | (short)((clientStream.ReadByte() & 255) << 8);
 	}
 
-	// Token: 0x0600A50C RID: 42252 RVA: 0x003D716C File Offset: 0x003D536C
+	// Token: 0x0600A609 RID: 42505 RVA: 0x003DC4AC File Offset: 0x003DA6AC
 	public static short ReadInt16(byte[] buffer, ref int offset)
 	{
 		byte b = 0;
@@ -117,20 +117,20 @@ public static class StreamUtils
 		return num2 | (short)(buffer[num] << 8);
 	}
 
-	// Token: 0x0600A50D RID: 42253 RVA: 0x003D7127 File Offset: 0x003D5327
+	// Token: 0x0600A60A RID: 42506 RVA: 0x003DC467 File Offset: 0x003DA667
 	public static void Write(Stream clientStream, short v)
 	{
 		clientStream.WriteByte((byte)(v & 255));
 		clientStream.WriteByte((byte)((v >> 8) & 255));
 	}
 
-	// Token: 0x0600A50E RID: 42254 RVA: 0x003D7197 File Offset: 0x003D5397
+	// Token: 0x0600A60B RID: 42507 RVA: 0x003DC4D7 File Offset: 0x003DA6D7
 	public static byte ReadByte(Stream clientStream)
 	{
 		return (byte)clientStream.ReadByte();
 	}
 
-	// Token: 0x0600A50F RID: 42255 RVA: 0x003D71A0 File Offset: 0x003D53A0
+	// Token: 0x0600A60C RID: 42508 RVA: 0x003DC4E0 File Offset: 0x003DA6E0
 	public static byte ReadByte(byte[] buffer, ref int offset)
 	{
 		int num = offset;
@@ -138,13 +138,13 @@ public static class StreamUtils
 		return buffer[num];
 	}
 
-	// Token: 0x0600A510 RID: 42256 RVA: 0x003D71B8 File Offset: 0x003D53B8
+	// Token: 0x0600A60D RID: 42509 RVA: 0x003DC4F8 File Offset: 0x003DA6F8
 	public static void Write(Stream clientStream, byte _b)
 	{
 		clientStream.WriteByte(_b);
 	}
 
-	// Token: 0x0600A511 RID: 42257 RVA: 0x003D71C1 File Offset: 0x003D53C1
+	// Token: 0x0600A60E RID: 42510 RVA: 0x003DC501 File Offset: 0x003DA701
 	public static void Write(BinaryWriter _bw, Vector3 _v)
 	{
 		_bw.Write(_v.x);
@@ -152,13 +152,13 @@ public static class StreamUtils
 		_bw.Write(_v.z);
 	}
 
-	// Token: 0x0600A512 RID: 42258 RVA: 0x003D71EA File Offset: 0x003D53EA
+	// Token: 0x0600A60F RID: 42511 RVA: 0x003DC52A File Offset: 0x003DA72A
 	public static Vector3 ReadVector3(BinaryReader _br)
 	{
 		return new Vector3(_br.ReadSingle(), _br.ReadSingle(), _br.ReadSingle());
 	}
 
-	// Token: 0x0600A513 RID: 42259 RVA: 0x003D7203 File Offset: 0x003D5403
+	// Token: 0x0600A610 RID: 42512 RVA: 0x003DC543 File Offset: 0x003DA743
 	public static void Write(BinaryWriter _bw, Vector3i _v)
 	{
 		_bw.Write(_v.x);
@@ -166,39 +166,39 @@ public static class StreamUtils
 		_bw.Write(_v.z);
 	}
 
-	// Token: 0x0600A514 RID: 42260 RVA: 0x003D7229 File Offset: 0x003D5429
+	// Token: 0x0600A611 RID: 42513 RVA: 0x003DC569 File Offset: 0x003DA769
 	public static Vector3i ReadVector3i(BinaryReader _br)
 	{
 		return new Vector3i(_br.ReadInt32(), _br.ReadInt32(), _br.ReadInt32());
 	}
 
-	// Token: 0x0600A515 RID: 42261 RVA: 0x003D7242 File Offset: 0x003D5442
+	// Token: 0x0600A612 RID: 42514 RVA: 0x003DC582 File Offset: 0x003DA782
 	public static void Write(BinaryWriter _bw, Vector2 _v)
 	{
 		_bw.Write(_v.x);
 		_bw.Write(_v.y);
 	}
 
-	// Token: 0x0600A516 RID: 42262 RVA: 0x003D725E File Offset: 0x003D545E
+	// Token: 0x0600A613 RID: 42515 RVA: 0x003DC59E File Offset: 0x003DA79E
 	public static Vector2 ReadVector2(BinaryReader _br)
 	{
 		return new Vector2(_br.ReadSingle(), _br.ReadSingle());
 	}
 
-	// Token: 0x0600A517 RID: 42263 RVA: 0x003D7271 File Offset: 0x003D5471
+	// Token: 0x0600A614 RID: 42516 RVA: 0x003DC5B1 File Offset: 0x003DA7B1
 	public static void Write(BinaryWriter _bw, Vector2i _v)
 	{
 		_bw.Write(_v.x);
 		_bw.Write(_v.y);
 	}
 
-	// Token: 0x0600A518 RID: 42264 RVA: 0x003D728B File Offset: 0x003D548B
+	// Token: 0x0600A615 RID: 42517 RVA: 0x003DC5CB File Offset: 0x003DA7CB
 	public static Vector2i ReadVector2i(BinaryReader _br)
 	{
 		return new Vector2i(_br.ReadInt32(), _br.ReadInt32());
 	}
 
-	// Token: 0x0600A519 RID: 42265 RVA: 0x003D729E File Offset: 0x003D549E
+	// Token: 0x0600A616 RID: 42518 RVA: 0x003DC5DE File Offset: 0x003DA7DE
 	public static void Write(BinaryWriter _bw, Quaternion _q)
 	{
 		_bw.Write(_q.x);
@@ -207,19 +207,19 @@ public static class StreamUtils
 		_bw.Write(_q.w);
 	}
 
-	// Token: 0x0600A51A RID: 42266 RVA: 0x003D72D4 File Offset: 0x003D54D4
+	// Token: 0x0600A617 RID: 42519 RVA: 0x003DC614 File Offset: 0x003DA814
 	public static Quaternion ReadQuaterion(BinaryReader _br)
 	{
 		return new Quaternion(_br.ReadSingle(), _br.ReadSingle(), _br.ReadSingle(), _br.ReadSingle());
 	}
 
-	// Token: 0x0600A51B RID: 42267 RVA: 0x003D72F3 File Offset: 0x003D54F3
+	// Token: 0x0600A618 RID: 42520 RVA: 0x003DC633 File Offset: 0x003DA833
 	public static Color ReadColor(BinaryReader _br)
 	{
 		return new Color(_br.ReadSingle(), _br.ReadSingle(), _br.ReadSingle(), _br.ReadSingle());
 	}
 
-	// Token: 0x0600A51C RID: 42268 RVA: 0x003D7312 File Offset: 0x003D5512
+	// Token: 0x0600A619 RID: 42521 RVA: 0x003DC652 File Offset: 0x003DA852
 	public static void Write(BinaryWriter _bw, Color _c)
 	{
 		_bw.Write(_c.r);
@@ -228,21 +228,21 @@ public static class StreamUtils
 		_bw.Write(_c.a);
 	}
 
-	// Token: 0x0600A51D RID: 42269 RVA: 0x003D7348 File Offset: 0x003D5548
+	// Token: 0x0600A61A RID: 42522 RVA: 0x003DC688 File Offset: 0x003DA888
 	public static Color ReadColor32(BinaryReader _br)
 	{
 		uint num = _br.ReadUInt32();
 		return new Color(((num >> 24) & 255U) / 255f, ((num >> 16) & 255U) / 255f, ((num >> 8) & 255U) / 255f, (num & 255U) / 255f);
 	}
 
-	// Token: 0x0600A51E RID: 42270 RVA: 0x003D73A8 File Offset: 0x003D55A8
+	// Token: 0x0600A61B RID: 42523 RVA: 0x003DC6E8 File Offset: 0x003DA8E8
 	public static void WriteColor32(BinaryWriter _bw, Color _c)
 	{
 		uint num = ((uint)(_c.r * 255f) << 24) | ((uint)(_c.g * 255f) << 16) | ((uint)(_c.b * 255f) << 8) | (uint)(_c.a * 255f);
 		_bw.Write(num);
 	}
 
-	// Token: 0x0600A51F RID: 42271 RVA: 0x003D73FC File Offset: 0x003D55FC
+	// Token: 0x0600A61C RID: 42524 RVA: 0x003DC73C File Offset: 0x003DA93C
 	public static void Write(BinaryWriter _bw, string _s)
 	{
 		_bw.Write(_s != null);
@@ -252,7 +252,7 @@ public static class StreamUtils
 		}
 	}
 
-	// Token: 0x0600A520 RID: 42272 RVA: 0x003D7412 File Offset: 0x003D5612
+	// Token: 0x0600A61D RID: 42525 RVA: 0x003DC752 File Offset: 0x003DA952
 	public static string ReadString(BinaryReader _br)
 	{
 		if (!_br.ReadBoolean())
@@ -262,7 +262,7 @@ public static class StreamUtils
 		return _br.ReadString();
 	}
 
-	// Token: 0x0600A521 RID: 42273 RVA: 0x003D7424 File Offset: 0x003D5624
+	// Token: 0x0600A61E RID: 42526 RVA: 0x003DC764 File Offset: 0x003DA964
 	public static void Write7BitEncodedSignedInt(Stream _stream, int _value)
 	{
 		long num = (long)_value;
@@ -291,7 +291,7 @@ public static class StreamUtils
 		}
 	}
 
-	// Token: 0x0600A522 RID: 42274 RVA: 0x003D749C File Offset: 0x003D569C
+	// Token: 0x0600A61F RID: 42527 RVA: 0x003DC7DC File Offset: 0x003DA9DC
 	public static void Write7BitEncodedInt(Stream _stream, int _value)
 	{
 		do
@@ -308,7 +308,7 @@ public static class StreamUtils
 		while (_value != 0);
 	}
 
-	// Token: 0x0600A523 RID: 42275 RVA: 0x003D74D0 File Offset: 0x003D56D0
+	// Token: 0x0600A620 RID: 42528 RVA: 0x003DC810 File Offset: 0x003DAA10
 	public static int Read7BitEncodedSignedInt(Stream _stream)
 	{
 		int num = 0;
@@ -342,7 +342,7 @@ public static class StreamUtils
 		return -num;
 	}
 
-	// Token: 0x0600A524 RID: 42276 RVA: 0x003D7554 File Offset: 0x003D5754
+	// Token: 0x0600A621 RID: 42529 RVA: 0x003DC894 File Offset: 0x003DAA94
 	public static int Read7BitEncodedInt(Stream _stream)
 	{
 		int num = 0;
@@ -360,7 +360,7 @@ public static class StreamUtils
 		throw new FormatException("Illegal encoding for 7 bit encoded int");
 	}
 
-	// Token: 0x0600A525 RID: 42277 RVA: 0x003D75A0 File Offset: 0x003D57A0
+	// Token: 0x0600A622 RID: 42530 RVA: 0x003DC8E0 File Offset: 0x003DAAE0
 	public unsafe static Guid ReadGuid(BinaryReader _br)
 	{
 		Span<byte> span = new Span<byte>(stackalloc byte[(UIntPtr)16], 16);
@@ -371,7 +371,7 @@ public static class StreamUtils
 		return new Guid(span);
 	}
 
-	// Token: 0x0600A526 RID: 42278 RVA: 0x003D75DC File Offset: 0x003D57DC
+	// Token: 0x0600A623 RID: 42531 RVA: 0x003DC91C File Offset: 0x003DAB1C
 	public unsafe static void Write(BinaryWriter _bw, Guid _guid)
 	{
 		Span<byte> span = new Span<byte>(stackalloc byte[(UIntPtr)16], 16);
@@ -382,7 +382,7 @@ public static class StreamUtils
 		_bw.Write(span);
 	}
 
-	// Token: 0x0600A527 RID: 42279 RVA: 0x003D7618 File Offset: 0x003D5818
+	// Token: 0x0600A624 RID: 42532 RVA: 0x003DC958 File Offset: 0x003DAB58
 	public static void StreamCopy(Stream _source, Stream _destination, byte[] _tempBuf = null, bool _bFlush = true)
 	{
 		byte[] array = _tempBuf ?? MemoryPools.poolByte.Alloc(4096);
@@ -409,7 +409,7 @@ public static class StreamUtils
 		}
 	}
 
-	// Token: 0x0600A528 RID: 42280 RVA: 0x003D7678 File Offset: 0x003D5878
+	// Token: 0x0600A625 RID: 42533 RVA: 0x003DC9B8 File Offset: 0x003DABB8
 	public static void StreamCopy(Stream _source, Stream _destination, int _length, byte[] _tempBuf = null, bool _bFlush = true)
 	{
 		byte[] array = _tempBuf ?? MemoryPools.poolByte.Alloc(4096);
@@ -437,7 +437,7 @@ public static class StreamUtils
 		}
 	}
 
-	// Token: 0x0600A529 RID: 42281 RVA: 0x003D76E4 File Offset: 0x003D58E4
+	// Token: 0x0600A626 RID: 42534 RVA: 0x003DCA24 File Offset: 0x003DAC24
 	public static void WriteStreamToFile(Stream _source, string _fileName)
 	{
 		using (Stream stream = SdFile.Create(_fileName))
@@ -446,7 +446,7 @@ public static class StreamUtils
 		}
 	}
 
-	// Token: 0x0600A52A RID: 42282 RVA: 0x003D7720 File Offset: 0x003D5920
+	// Token: 0x0600A627 RID: 42535 RVA: 0x003DCA60 File Offset: 0x003DAC60
 	public static void WriteStreamToFile(Stream _source, string _fileName, int _length)
 	{
 		using (Stream stream = SdFile.Create(_fileName))

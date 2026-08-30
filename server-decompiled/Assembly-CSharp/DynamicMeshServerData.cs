@@ -1,20 +1,20 @@
 ﻿using System;
 
-// Token: 0x0200038B RID: 907
+// Token: 0x0200038F RID: 911
 public abstract class DynamicMeshServerData : NetPackage
 {
-	// Token: 0x06001B05 RID: 6917
+	// Token: 0x06001B22 RID: 6946
 	public abstract bool Prechecks();
 
-	// Token: 0x06001B06 RID: 6918 RVA: 0x0005F1CC File Offset: 0x0005D3CC
+	// Token: 0x06001B23 RID: 6947 RVA: 0x0005F714 File Offset: 0x0005D914
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public DynamicMeshServerData()
 	{
 	}
 
-	// Token: 0x04001166 RID: 4454
+	// Token: 0x0400117B RID: 4475
 	public int X;
 
-	// Token: 0x04001167 RID: 4455
+	// Token: 0x0400117C RID: 4476
 	public int Z;
 }

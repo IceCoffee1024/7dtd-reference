@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200097F RID: 2431
+// Token: 0x02000990 RID: 2448
 [Preserve]
 public class ObjectiveEntityKill : BaseObjective
 {
-	// Token: 0x17000784 RID: 1924
-	// (get) Token: 0x06004742 RID: 18242 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000796 RID: 1942
+	// (get) Token: 0x060047C8 RID: 18376 RVA: 0x00020021 File Offset: 0x0001E221
 	public override BaseObjective.ObjectiveValueTypes ObjectiveValueType
 	{
 		get
@@ -15,8 +15,8 @@ public class ObjectiveEntityKill : BaseObjective
 		}
 	}
 
-	// Token: 0x17000785 RID: 1925
-	// (get) Token: 0x06004743 RID: 18243 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000797 RID: 1943
+	// (get) Token: 0x060047C9 RID: 18377 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool RequiresZombies
 	{
 		get
@@ -25,7 +25,7 @@ public class ObjectiveEntityKill : BaseObjective
 		}
 	}
 
-	// Token: 0x06004744 RID: 18244 RVA: 0x001BF350 File Offset: 0x001BD550
+	// Token: 0x060047CA RID: 18378 RVA: 0x001C1B44 File Offset: 0x001BFD44
 	public override void SetupObjective()
 	{
 		this.neededKillCount = Convert.ToInt32(this.Value);
@@ -44,7 +44,7 @@ public class ObjectiveEntityKill : BaseObjective
 		}
 	}
 
-	// Token: 0x06004745 RID: 18245 RVA: 0x001BF3C0 File Offset: 0x001BD5C0
+	// Token: 0x060047CB RID: 18379 RVA: 0x001C1BB4 File Offset: 0x001BFDB4
 	public override void SetupDisplay()
 	{
 		this.keyword = Localization.Get("ObjectiveZombieKill_keyword", false, null);
@@ -56,19 +56,19 @@ public class ObjectiveEntityKill : BaseObjective
 		this.StatusText = string.Format("{0}/{1}", base.CurrentValue, this.neededKillCount);
 	}
 
-	// Token: 0x06004746 RID: 18246 RVA: 0x001BF462 File Offset: 0x001BD662
+	// Token: 0x060047CC RID: 18380 RVA: 0x001C1C56 File Offset: 0x001BFE56
 	public override void AddHooks()
 	{
 		QuestEventManager.Current.EntityKill += this.Current_EntityKill;
 	}
 
-	// Token: 0x06004747 RID: 18247 RVA: 0x001BF47A File Offset: 0x001BD67A
+	// Token: 0x060047CD RID: 18381 RVA: 0x001C1C6E File Offset: 0x001BFE6E
 	public override void RemoveHooks()
 	{
 		QuestEventManager.Current.EntityKill -= this.Current_EntityKill;
 	}
 
-	// Token: 0x06004748 RID: 18248 RVA: 0x001BF494 File Offset: 0x001BD694
+	// Token: 0x060047CE RID: 18382 RVA: 0x001C1C88 File Offset: 0x001BFE88
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_EntityKill(EntityAlive killedBy, EntityAlive killedEntity)
 	{
@@ -108,7 +108,7 @@ public class ObjectiveEntityKill : BaseObjective
 		}
 	}
 
-	// Token: 0x06004749 RID: 18249 RVA: 0x001BF54F File Offset: 0x001BD74F
+	// Token: 0x060047CF RID: 18383 RVA: 0x001C1D43 File Offset: 0x001BFF43
 	public override void Refresh()
 	{
 		if (base.Complete)
@@ -122,7 +122,7 @@ public class ObjectiveEntityKill : BaseObjective
 		}
 	}
 
-	// Token: 0x0600474A RID: 18250 RVA: 0x001BF588 File Offset: 0x001BD788
+	// Token: 0x060047D0 RID: 18384 RVA: 0x001C1D7C File Offset: 0x001BFF7C
 	public override BaseObjective Clone()
 	{
 		ObjectiveEntityKill objectiveEntityKill = new ObjectiveEntityKill();
@@ -132,7 +132,7 @@ public class ObjectiveEntityKill : BaseObjective
 		return objectiveEntityKill;
 	}
 
-	// Token: 0x0600474B RID: 18251 RVA: 0x001BF5BC File Offset: 0x001BD7BC
+	// Token: 0x060047D1 RID: 18385 RVA: 0x001C1DB0 File Offset: 0x001BFFB0
 	public override void ParseProperties(DynamicProperties properties)
 	{
 		base.ParseProperties(properties);
@@ -147,7 +147,7 @@ public class ObjectiveEntityKill : BaseObjective
 		this.targetTags = FastTags<TagGroup.Global>.Parse(text);
 	}
 
-	// Token: 0x0600474C RID: 18252 RVA: 0x001BF640 File Offset: 0x001BD840
+	// Token: 0x060047D2 RID: 18386 RVA: 0x001C1E34 File Offset: 0x001C0034
 	public override string ParseBinding(string bindingName)
 	{
 		string id = this.ID;
@@ -167,31 +167,31 @@ public class ObjectiveEntityKill : BaseObjective
 		return Convert.ToInt32(value).ToString() + " " + this.localizedName;
 	}
 
-	// Token: 0x040038EA RID: 14570
+	// Token: 0x0400397B RID: 14715
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string localizedName = "";
 
-	// Token: 0x040038EB RID: 14571
+	// Token: 0x0400397C RID: 14716
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int neededKillCount;
 
-	// Token: 0x040038EC RID: 14572
+	// Token: 0x0400397D RID: 14717
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string[] entityNames;
 
-	// Token: 0x040038ED RID: 14573
+	// Token: 0x0400397E RID: 14718
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> targetTags = FastTags<TagGroup.Global>.none;
 
-	// Token: 0x040038EE RID: 14574
+	// Token: 0x0400397F RID: 14719
 	public static string PropObjectiveKey = "objective_name_key";
 
-	// Token: 0x040038EF RID: 14575
+	// Token: 0x04003980 RID: 14720
 	public static string PropNeededCount = "needed_count";
 
-	// Token: 0x040038F0 RID: 14576
+	// Token: 0x04003981 RID: 14721
 	public static string PropEntityNames = "entity_names";
 
-	// Token: 0x040038F1 RID: 14577
+	// Token: 0x04003982 RID: 14722
 	public static string PropTargetTags = "target_tags";
 }

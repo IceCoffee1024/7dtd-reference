@@ -2,11 +2,11 @@
 
 namespace Platform.XBL.Save.MasterFileTable.V04
 {
-	// Token: 0x02001C43 RID: 7235
+	// Token: 0x02001C6A RID: 7274
 	public sealed class ContainerData : IDisposable, IMigratable
 	{
-		// Token: 0x17001A43 RID: 6723
-		// (get) Token: 0x0600D5FE RID: 54782 RVA: 0x0007FE9C File Offset: 0x0007E09C
+		// Token: 0x17001AB5 RID: 6837
+		// (get) Token: 0x0600D78E RID: 55182 RVA: 0x00080550 File Offset: 0x0007E750
 		public ushort Version
 		{
 			get
@@ -15,9 +15,9 @@ namespace Platform.XBL.Save.MasterFileTable.V04
 			}
 		}
 
-		// Token: 0x17001A44 RID: 6724
-		// (get) Token: 0x0600D5FF RID: 54783 RVA: 0x004D28A5 File Offset: 0x004D0AA5
-		// (set) Token: 0x0600D600 RID: 54784 RVA: 0x004D28AD File Offset: 0x004D0AAD
+		// Token: 0x17001AB6 RID: 6838
+		// (get) Token: 0x0600D78F RID: 55183 RVA: 0x004D8CC9 File Offset: 0x004D6EC9
+		// (set) Token: 0x0600D790 RID: 55184 RVA: 0x004D8CD1 File Offset: 0x004D6ED1
 		public Node RootNode
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
@@ -27,7 +27,7 @@ namespace Platform.XBL.Save.MasterFileTable.V04
 			Attributes = NodeAttributes.Directory
 		};
 
-		// Token: 0x0600D601 RID: 54785 RVA: 0x004D28B6 File Offset: 0x004D0AB6
+		// Token: 0x0600D791 RID: 55185 RVA: 0x004D8CDA File Offset: 0x004D6EDA
 		public void Write(PooledBinaryWriter writer)
 		{
 			this.RootNode.Attributes = NodeAttributes.Directory;
@@ -35,7 +35,7 @@ namespace Platform.XBL.Save.MasterFileTable.V04
 			this.RootNode.Write(writer);
 		}
 
-		// Token: 0x0600D602 RID: 54786 RVA: 0x004D28D7 File Offset: 0x004D0AD7
+		// Token: 0x0600D792 RID: 55186 RVA: 0x004D8CFB File Offset: 0x004D6EFB
 		public void Read(PooledBinaryReader reader)
 		{
 			reader.ReadUInt16();
@@ -43,7 +43,7 @@ namespace Platform.XBL.Save.MasterFileTable.V04
 			this.RootNode.Attributes = NodeAttributes.Directory;
 		}
 
-		// Token: 0x0600D603 RID: 54787 RVA: 0x004D28F8 File Offset: 0x004D0AF8
+		// Token: 0x0600D793 RID: 55187 RVA: 0x004D8D1C File Offset: 0x004D6F1C
 		public void Dispose()
 		{
 			Node rootNode = this.RootNode;
@@ -54,7 +54,7 @@ namespace Platform.XBL.Save.MasterFileTable.V04
 			this.RootNode = null;
 		}
 
-		// Token: 0x0400A2CD RID: 41677
+		// Token: 0x0400A3FE RID: 41982
 		public const ushort VERSION = 4;
 	}
 }

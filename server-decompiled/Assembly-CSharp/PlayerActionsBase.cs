@@ -4,19 +4,19 @@ using System.Reflection;
 using System.Threading.Tasks;
 using InControl;
 
-// Token: 0x02000558 RID: 1368
+// Token: 0x0200055D RID: 1373
 public abstract class PlayerActionsBase : PlayerActionSet
 {
-	// Token: 0x170004BF RID: 1215
-	// (get) Token: 0x06002C8B RID: 11403 RVA: 0x00119E65 File Offset: 0x00118065
-	// (set) Token: 0x06002C8A RID: 11402 RVA: 0x00119E5C File Offset: 0x0011805C
+	// Token: 0x170004C3 RID: 1219
+	// (get) Token: 0x06002CB5 RID: 11445 RVA: 0x0011AED9 File Offset: 0x001190D9
+	// (set) Token: 0x06002CB4 RID: 11444 RVA: 0x0011AED0 File Offset: 0x001190D0
 	public string Name
 	{
 		get; [PublicizedFrom(EAccessModifier.Protected)]
 		set;
 	}
 
-	// Token: 0x06002C8C RID: 11404 RVA: 0x00119E70 File Offset: 0x00118070
+	// Token: 0x06002CB6 RID: 11446 RVA: 0x0011AEE4 File Offset: 0x001190E4
 	public PlayerActionsBase()
 	{
 		FieldInfo field = typeof(PlayerActionSet).GetField("actionsByName", BindingFlags.Instance | BindingFlags.NonPublic);
@@ -62,7 +62,7 @@ public abstract class PlayerActionsBase : PlayerActionSet
 		this.InitActionSet();
 	}
 
-	// Token: 0x06002C8D RID: 11405 RVA: 0x00119F9C File Offset: 0x0011819C
+	// Token: 0x06002CB7 RID: 11447 RVA: 0x0011B010 File Offset: 0x00119210
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitActionSet()
 	{
@@ -71,25 +71,25 @@ public abstract class PlayerActionsBase : PlayerActionSet
 		this.CreateDefaultJoystickBindings();
 	}
 
-	// Token: 0x06002C8E RID: 11406
+	// Token: 0x06002CB8 RID: 11448
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract void CreateActions();
 
-	// Token: 0x06002C8F RID: 11407
+	// Token: 0x06002CB9 RID: 11449
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract void CreateDefaultKeyboardBindings();
 
-	// Token: 0x06002C90 RID: 11408
+	// Token: 0x06002CBA RID: 11450
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract void CreateDefaultJoystickBindings();
 
-	// Token: 0x06002C91 RID: 11409 RVA: 0x00119FB0 File Offset: 0x001181B0
+	// Token: 0x06002CBB RID: 11451 RVA: 0x0011B024 File Offset: 0x00119224
 	public void ResetControllerBindings()
 	{
 		this.AsyncResetControllerBindings();
 	}
 
-	// Token: 0x06002C92 RID: 11410 RVA: 0x00119FB8 File Offset: 0x001181B8
+	// Token: 0x06002CBC RID: 11452 RVA: 0x0011B02C File Offset: 0x0011922C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public async void AsyncResetControllerBindings()
 	{
@@ -111,6 +111,6 @@ public abstract class PlayerActionsBase : PlayerActionSet
 		this.CreateDefaultJoystickBindings();
 	}
 
-	// Token: 0x04002245 RID: 8773
+	// Token: 0x04002277 RID: 8823
 	public List<PlayerAction> ControllerRebindableActions = new List<PlayerAction>();
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 public abstract class AvatarCharacterController : AvatarMultiBodyController
 {
 	// Token: 0x1700004E RID: 78
-	// (get) Token: 0x06000413 RID: 1043 RVA: 0x0001EFA4 File Offset: 0x0001D1A4
+	// (get) Token: 0x06000414 RID: 1044 RVA: 0x0001F068 File Offset: 0x0001D268
 	public BodyAnimator CharacterBody
 	{
 		get
@@ -15,7 +15,7 @@ public abstract class AvatarCharacterController : AvatarMultiBodyController
 		}
 	}
 
-	// Token: 0x06000414 RID: 1044 RVA: 0x0001EFAC File Offset: 0x0001D1AC
+	// Token: 0x06000415 RID: 1045 RVA: 0x0001F070 File Offset: 0x0001D270
 	public override void SwitchModelAndView(string _modelName, bool _bFPV, bool _bMale)
 	{
 		if (this.characterBody != null && this.modelName != _modelName)
@@ -48,7 +48,7 @@ public abstract class AvatarCharacterController : AvatarMultiBodyController
 		base.SwitchModelAndView(_modelName, _bFPV, _bMale);
 	}
 
-	// Token: 0x06000415 RID: 1045 RVA: 0x0001F084 File Offset: 0x0001D284
+	// Token: 0x06000416 RID: 1046 RVA: 0x0001F148 File Offset: 0x0001D348
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void initBodyAnimator(BodyAnimator _body, bool _bFPV, bool _bMale)
 	{
@@ -64,18 +64,18 @@ public abstract class AvatarCharacterController : AvatarMultiBodyController
 		}
 	}
 
-	// Token: 0x06000416 RID: 1046
+	// Token: 0x06000417 RID: 1047
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract BodyAnimator createCharacterBody(Transform _bodyTransform);
 
-	// Token: 0x06000417 RID: 1047 RVA: 0x0001F121 File Offset: 0x0001D321
+	// Token: 0x06000418 RID: 1048 RVA: 0x0001F1E5 File Offset: 0x0001D3E5
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual HashSet<int> getJumpStates()
 	{
 		return new HashSet<int> { Animator.StringToHash("Base Layer.Jump") };
 	}
 
-	// Token: 0x06000418 RID: 1048 RVA: 0x0001F139 File Offset: 0x0001D339
+	// Token: 0x06000419 RID: 1049 RVA: 0x0001F1FD File Offset: 0x0001D3FD
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual HashSet<int> getDeathStates()
 	{
@@ -85,7 +85,7 @@ public abstract class AvatarCharacterController : AvatarMultiBodyController
 		return hashSet;
 	}
 
-	// Token: 0x06000419 RID: 1049 RVA: 0x0001F14C File Offset: 0x0001D34C
+	// Token: 0x0600041A RID: 1050 RVA: 0x0001F210 File Offset: 0x0001D410
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual HashSet<int> getReloadStates()
 	{
@@ -95,13 +95,13 @@ public abstract class AvatarCharacterController : AvatarMultiBodyController
 		return hashSet;
 	}
 
-	// Token: 0x0600041A RID: 1050 RVA: 0x0001F15F File Offset: 0x0001D35F
+	// Token: 0x0600041B RID: 1051 RVA: 0x0001F223 File Offset: 0x0001D423
 	public override Animator GetAnimator()
 	{
 		return this.characterBody.Animator;
 	}
 
-	// Token: 0x0600041B RID: 1051 RVA: 0x0001F16C File Offset: 0x0001D36C
+	// Token: 0x0600041C RID: 1052 RVA: 0x0001F230 File Offset: 0x0001D430
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual HashSet<int> getHitStates()
 	{
@@ -110,7 +110,7 @@ public abstract class AvatarCharacterController : AvatarMultiBodyController
 		return hashSet;
 	}
 
-	// Token: 0x0600041C RID: 1052 RVA: 0x0001F17C File Offset: 0x0001D37C
+	// Token: 0x0600041D RID: 1053 RVA: 0x0001F240 File Offset: 0x0001D440
 	public static void GetFirstPersonReloadStates(HashSet<int> hashSet)
 	{
 		hashSet.Add(Animator.StringToHash("Base Layer.fpvBlunderbussReload"));
@@ -133,7 +133,7 @@ public abstract class AvatarCharacterController : AvatarMultiBodyController
 		hashSet.Add(Animator.StringToHash("Base Layer.fpvCompoundBowReload"));
 	}
 
-	// Token: 0x0600041D RID: 1053 RVA: 0x0001F2BC File Offset: 0x0001D4BC
+	// Token: 0x0600041E RID: 1054 RVA: 0x0001F380 File Offset: 0x0001D580
 	public static void GetThirdPersonReloadStates(HashSet<int> hashSet)
 	{
 		hashSet.Add(Animator.StringToHash("TwoHandedOverlays.FemaleSawedOffShotgunReload"));
@@ -156,12 +156,12 @@ public abstract class AvatarCharacterController : AvatarMultiBodyController
 		hashSet.Add(Animator.StringToHash("TwoHandedOverlays.femaleCompoundBowReload"));
 	}
 
-	// Token: 0x0600041E RID: 1054 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600041F RID: 1055 RVA: 0x000027FC File Offset: 0x000009FC
 	public static void GetFirstPersonHitStates(HashSet<int> hashSet)
 	{
 	}
 
-	// Token: 0x0600041F RID: 1055 RVA: 0x0001F3FC File Offset: 0x0001D5FC
+	// Token: 0x06000420 RID: 1056 RVA: 0x0001F4C0 File Offset: 0x0001D6C0
 	public static void GetThirdPersonHitStates(HashSet<int> hashSet)
 	{
 		hashSet.Add(Animator.StringToHash("PainOverlays.femaleTwitchHeadLeft"));
@@ -170,12 +170,12 @@ public abstract class AvatarCharacterController : AvatarMultiBodyController
 		hashSet.Add(Animator.StringToHash("PainOverlays.femaleTwitchChestRight"));
 	}
 
-	// Token: 0x06000420 RID: 1056 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000421 RID: 1057 RVA: 0x000027FC File Offset: 0x000009FC
 	public static void GetFirstPersonDeathStates(HashSet<int> hashSet)
 	{
 	}
 
-	// Token: 0x06000421 RID: 1057 RVA: 0x0001F450 File Offset: 0x0001D650
+	// Token: 0x06000422 RID: 1058 RVA: 0x0001F514 File Offset: 0x0001D714
 	public static void GetThirdPersonDeathStates(HashSet<int> hashSet)
 	{
 		hashSet.Add(Animator.StringToHash("Base Layer.generic"));
@@ -212,7 +212,7 @@ public abstract class AvatarCharacterController : AvatarMultiBodyController
 		hashSet.Add(Animator.StringToHash("Base Layer.walkingRightLeg"));
 	}
 
-	// Token: 0x06000422 RID: 1058 RVA: 0x0001F680 File Offset: 0x0001D880
+	// Token: 0x06000423 RID: 1059 RVA: 0x0001F744 File Offset: 0x0001D944
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void _setTrigger(int _pid, bool _netsync = true)
 	{
@@ -227,7 +227,7 @@ public abstract class AvatarCharacterController : AvatarMultiBodyController
 		}
 	}
 
-	// Token: 0x06000423 RID: 1059 RVA: 0x0001F6B8 File Offset: 0x0001D8B8
+	// Token: 0x06000424 RID: 1060 RVA: 0x0001F77C File Offset: 0x0001D97C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void _resetTrigger(int _pid, bool _netsync = true)
 	{
@@ -242,7 +242,7 @@ public abstract class AvatarCharacterController : AvatarMultiBodyController
 		}
 	}
 
-	// Token: 0x06000424 RID: 1060 RVA: 0x0001F6F0 File Offset: 0x0001D8F0
+	// Token: 0x06000425 RID: 1061 RVA: 0x0001F7B4 File Offset: 0x0001D9B4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void _setFloat(int _pid, float _value, bool _netsync = true)
 	{
@@ -257,7 +257,7 @@ public abstract class AvatarCharacterController : AvatarMultiBodyController
 		}
 	}
 
-	// Token: 0x06000425 RID: 1061 RVA: 0x0001F72C File Offset: 0x0001D92C
+	// Token: 0x06000426 RID: 1062 RVA: 0x0001F7F0 File Offset: 0x0001D9F0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void _setBool(int _pid, bool _value, bool _netsync = true)
 	{
@@ -272,7 +272,7 @@ public abstract class AvatarCharacterController : AvatarMultiBodyController
 		}
 	}
 
-	// Token: 0x06000426 RID: 1062 RVA: 0x0001F768 File Offset: 0x0001D968
+	// Token: 0x06000427 RID: 1063 RVA: 0x0001F82C File Offset: 0x0001DA2C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void _setInt(int _pid, int _value, bool _netsync = true)
 	{
@@ -287,7 +287,7 @@ public abstract class AvatarCharacterController : AvatarMultiBodyController
 		}
 	}
 
-	// Token: 0x06000427 RID: 1063 RVA: 0x0001F7A2 File Offset: 0x0001D9A2
+	// Token: 0x06000428 RID: 1064 RVA: 0x0001F866 File Offset: 0x0001DA66
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public AvatarCharacterController()
 	{
@@ -306,7 +306,7 @@ public abstract class AvatarCharacterController : AvatarMultiBodyController
 	// Token: 0x020000C1 RID: 193
 	public class AnimationStates
 	{
-		// Token: 0x06000428 RID: 1064 RVA: 0x0001F7AA File Offset: 0x0001D9AA
+		// Token: 0x06000429 RID: 1065 RVA: 0x0001F86E File Offset: 0x0001DA6E
 		public AnimationStates(HashSet<int> _jumpStates, HashSet<int> _deathStates, HashSet<int> _reloadStates, HashSet<int> _hitStates)
 		{
 			this.JumpStates = _jumpStates;

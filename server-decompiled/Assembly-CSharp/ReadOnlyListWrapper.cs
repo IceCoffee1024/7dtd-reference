@@ -2,30 +2,30 @@
 using System.Collections;
 using System.Collections.Generic;
 
-// Token: 0x02001471 RID: 5233
+// Token: 0x0200148C RID: 5260
 public class ReadOnlyListWrapper<TIn, TOut> : IReadOnlyList<TOut>, IEnumerable<TOut>, IEnumerable, IReadOnlyCollection<TOut> where TIn : TOut
 {
-	// Token: 0x0600A422 RID: 42018 RVA: 0x003D1AEF File Offset: 0x003CFCEF
+	// Token: 0x0600A51F RID: 42271 RVA: 0x003D6E33 File Offset: 0x003D5033
 	public ReadOnlyListWrapper(IList<TIn> list)
 	{
 		this.m_list = list;
 	}
 
-	// Token: 0x0600A423 RID: 42019 RVA: 0x003D1AFE File Offset: 0x003CFCFE
+	// Token: 0x0600A520 RID: 42272 RVA: 0x003D6E42 File Offset: 0x003D5042
 	public IEnumerator<TOut> GetEnumerator()
 	{
 		return (IEnumerator<TOut>)this.m_list.GetEnumerator();
 	}
 
-	// Token: 0x0600A424 RID: 42020 RVA: 0x003D1B10 File Offset: 0x003CFD10
+	// Token: 0x0600A521 RID: 42273 RVA: 0x003D6E54 File Offset: 0x003D5054
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator System.Collections.IEnumerable.GetEnumerator()
 	{
 		return this.m_list.GetEnumerator();
 	}
 
-	// Token: 0x1700132C RID: 4908
-	// (get) Token: 0x0600A425 RID: 42021 RVA: 0x003D1B1D File Offset: 0x003CFD1D
+	// Token: 0x17001365 RID: 4965
+	// (get) Token: 0x0600A522 RID: 42274 RVA: 0x003D6E61 File Offset: 0x003D5061
 	public int Count
 	{
 		get
@@ -34,7 +34,7 @@ public class ReadOnlyListWrapper<TIn, TOut> : IReadOnlyList<TOut>, IEnumerable<T
 		}
 	}
 
-	// Token: 0x1700132D RID: 4909
+	// Token: 0x17001366 RID: 4966
 	public TOut this[int index]
 	{
 		get
@@ -43,7 +43,7 @@ public class ReadOnlyListWrapper<TIn, TOut> : IReadOnlyList<TOut>, IEnumerable<T
 		}
 	}
 
-	// Token: 0x04007A3E RID: 31294
+	// Token: 0x04007B17 RID: 31511
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly IList<TIn> m_list;
 }

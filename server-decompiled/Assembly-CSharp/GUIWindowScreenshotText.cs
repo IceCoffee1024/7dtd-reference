@@ -5,17 +5,17 @@ using System.Text;
 using InControl;
 using UnityEngine;
 
-// Token: 0x02001209 RID: 4617
+// Token: 0x02001225 RID: 4645
 public class GUIWindowScreenshotText : GUIWindow
 {
-	// Token: 0x0600935D RID: 37725 RVA: 0x0037BD18 File Offset: 0x00379F18
+	// Token: 0x06009461 RID: 37985 RVA: 0x00380FF4 File Offset: 0x0037F1F4
 	public GUIWindowScreenshotText()
 		: base(GUIWindowScreenshotText.ID)
 	{
 		this.alwaysUsesMouseCursor = true;
 	}
 
-	// Token: 0x0600935E RID: 37726 RVA: 0x0037BD2C File Offset: 0x00379F2C
+	// Token: 0x06009462 RID: 37986 RVA: 0x00381008 File Offset: 0x0037F208
 	public override void OnGUI()
 	{
 		base.OnGUI();
@@ -182,14 +182,14 @@ public class GUIWindowScreenshotText : GUIWindow
 		GUI.matrix = matrix4x;
 	}
 
-	// Token: 0x0600935F RID: 37727 RVA: 0x0037C454 File Offset: 0x0037A654
+	// Token: 0x06009463 RID: 37987 RVA: 0x00381730 File Offset: 0x0037F930
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CloseWindow()
 	{
 		this.windowManager.Close(this, false);
 	}
 
-	// Token: 0x06009360 RID: 37728 RVA: 0x0037C463 File Offset: 0x0037A663
+	// Token: 0x06009464 RID: 37988 RVA: 0x0038173F File Offset: 0x0037F93F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DoScreenshot()
 	{
@@ -197,7 +197,7 @@ public class GUIWindowScreenshotText : GUIWindow
 		ThreadManager.StartCoroutine(this.screenshotCo(null));
 	}
 
-	// Token: 0x06009361 RID: 37729 RVA: 0x0037C479 File Offset: 0x0037A679
+	// Token: 0x06009465 RID: 37989 RVA: 0x00381755 File Offset: 0x0037F955
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator screenshotCo(string _filename)
 	{
@@ -217,7 +217,7 @@ public class GUIWindowScreenshotText : GUIWindow
 		yield break;
 	}
 
-	// Token: 0x06009362 RID: 37730 RVA: 0x0037C490 File Offset: 0x0037A690
+	// Token: 0x06009466 RID: 37990 RVA: 0x0038176C File Offset: 0x0037F96C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void StoreAdditionalStats()
 	{
@@ -229,7 +229,7 @@ public class GUIWindowScreenshotText : GUIWindow
 		}
 	}
 
-	// Token: 0x06009363 RID: 37731 RVA: 0x0037C4E0 File Offset: 0x0037A6E0
+	// Token: 0x06009467 RID: 37991 RVA: 0x003817BC File Offset: 0x0037F9BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void StorePlayerStats(string _filenameBase)
 	{
@@ -244,7 +244,7 @@ public class GUIWindowScreenshotText : GUIWindow
 		SdFile.WriteAllText(_filenameBase, stringBuilder.ToString());
 	}
 
-	// Token: 0x06009364 RID: 37732 RVA: 0x0037C55C File Offset: 0x0037A75C
+	// Token: 0x06009468 RID: 37992 RVA: 0x00381838 File Offset: 0x0037FA38
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void writePlayerSkills(StringBuilder _sb, EntityPlayerLocal _epl)
 	{
@@ -308,7 +308,7 @@ public class GUIWindowScreenshotText : GUIWindow
 		_sb.AppendLine();
 	}
 
-	// Token: 0x06009365 RID: 37733 RVA: 0x0037C80C File Offset: 0x0037AA0C
+	// Token: 0x06009469 RID: 37993 RVA: 0x00381AE8 File Offset: 0x0037FCE8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void writePlayerBuffs(StringBuilder _sb, EntityPlayerLocal _epl)
 	{
@@ -333,7 +333,7 @@ public class GUIWindowScreenshotText : GUIWindow
 		_sb.AppendLine();
 	}
 
-	// Token: 0x06009366 RID: 37734 RVA: 0x0037C930 File Offset: 0x0037AB30
+	// Token: 0x0600946A RID: 37994 RVA: 0x00381C0C File Offset: 0x0037FE0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void writePlayerCVars(StringBuilder _sb, EntityPlayerLocal _epl)
 	{
@@ -354,7 +354,7 @@ public class GUIWindowScreenshotText : GUIWindow
 		_sb.AppendLine();
 	}
 
-	// Token: 0x06009367 RID: 37735 RVA: 0x0037C9D0 File Offset: 0x0037ABD0
+	// Token: 0x0600946B RID: 37995 RVA: 0x00381CAC File Offset: 0x0037FEAC
 	public override void OnOpen()
 	{
 		this.confirmed = false;
@@ -368,7 +368,7 @@ public class GUIWindowScreenshotText : GUIWindow
 		InputManager.Enabled = false;
 	}
 
-	// Token: 0x06009368 RID: 37736 RVA: 0x0037CA10 File Offset: 0x0037AC10
+	// Token: 0x0600946C RID: 37996 RVA: 0x00381CEC File Offset: 0x0037FEEC
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -376,7 +376,7 @@ public class GUIWindowScreenshotText : GUIWindow
 		InputManager.Enabled = true;
 	}
 
-	// Token: 0x06009369 RID: 37737 RVA: 0x0037CA28 File Offset: 0x0037AC28
+	// Token: 0x0600946D RID: 37997 RVA: 0x00381D04 File Offset: 0x0037FF04
 	public static void Open(LocalPlayerUI _playerUi, bool _savePerks)
 	{
 		GUIWindowScreenshotText window = _playerUi.windowManager.GetWindow<GUIWindowScreenshotText>(GUIWindowScreenshotText.ID);
@@ -388,54 +388,54 @@ public class GUIWindowScreenshotText : GUIWindow
 		_playerUi.windowManager.Open(window, false);
 	}
 
-	// Token: 0x04006E4F RID: 28239
+	// Token: 0x04006F28 RID: 28456
 	public static readonly string ID = "GUIWindowScreenshotText";
 
-	// Token: 0x04006E50 RID: 28240
+	// Token: 0x04006F29 RID: 28457
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int PosX = 20;
 
-	// Token: 0x04006E51 RID: 28241
+	// Token: 0x04006F2A RID: 28458
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int PosY = 70;
 
-	// Token: 0x04006E52 RID: 28242
+	// Token: 0x04006F2B RID: 28459
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int Width = 700;
 
-	// Token: 0x04006E53 RID: 28243
+	// Token: 0x04006F2C RID: 28460
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bFirstTime;
 
-	// Token: 0x04006E54 RID: 28244
+	// Token: 0x04006F2D RID: 28461
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string noteInput;
 
-	// Token: 0x04006E55 RID: 28245
+	// Token: 0x04006F2E RID: 28462
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool savePerks;
 
-	// Token: 0x04006E56 RID: 28246
+	// Token: 0x04006F2F RID: 28463
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool confirmed;
 
-	// Token: 0x04006E57 RID: 28247
+	// Token: 0x04006F30 RID: 28464
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2i lastResolution;
 
-	// Token: 0x04006E58 RID: 28248
+	// Token: 0x04006F31 RID: 28465
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GUIStyle labelStyle;
 
-	// Token: 0x04006E59 RID: 28249
+	// Token: 0x04006F32 RID: 28466
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lineHeight;
 
-	// Token: 0x04006E5A RID: 28250
+	// Token: 0x04006F33 RID: 28467
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int inputAreaHeight;
 
-	// Token: 0x04006E5B RID: 28251
+	// Token: 0x04006F34 RID: 28468
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NGuiWdwDebugPanels nGuiWdwDebugPanels;
 }

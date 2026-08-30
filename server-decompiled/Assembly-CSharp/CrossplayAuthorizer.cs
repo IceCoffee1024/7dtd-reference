@@ -2,12 +2,12 @@
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000783 RID: 1923
+// Token: 0x0200078D RID: 1933
 [Preserve]
 public class CrossplayAuthorizer : AuthorizerAbs
 {
-	// Token: 0x170005DD RID: 1501
-	// (get) Token: 0x0600393C RID: 14652 RVA: 0x00176214 File Offset: 0x00174414
+	// Token: 0x170005E7 RID: 1511
+	// (get) Token: 0x06003994 RID: 14740 RVA: 0x00178494 File Offset: 0x00176694
 	public override int Order
 	{
 		get
@@ -16,8 +16,8 @@ public class CrossplayAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005DE RID: 1502
-	// (get) Token: 0x0600393D RID: 14653 RVA: 0x0017621B File Offset: 0x0017441B
+	// Token: 0x170005E8 RID: 1512
+	// (get) Token: 0x06003995 RID: 14741 RVA: 0x0017849B File Offset: 0x0017669B
 	public override string AuthorizerName
 	{
 		get
@@ -26,8 +26,8 @@ public class CrossplayAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005DF RID: 1503
-	// (get) Token: 0x0600393E RID: 14654 RVA: 0x0001FF1E File Offset: 0x0001E11E
+	// Token: 0x170005E9 RID: 1513
+	// (get) Token: 0x06003996 RID: 14742 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
 	public override string StateLocalizationKey
 	{
 		get
@@ -36,7 +36,7 @@ public class CrossplayAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x0600393F RID: 14655 RVA: 0x00176224 File Offset: 0x00174424
+	// Token: 0x06003997 RID: 14743 RVA: 0x001784A4 File Offset: 0x001766A4
 	public override ValueTuple<EAuthorizerSyncResult, GameUtils.KickPlayerData?> Authorize(ClientInfo _clientInfo)
 	{
 		bool @bool = GamePrefs.GetBool(EnumGamePrefs.ServerAllowCrossplay);

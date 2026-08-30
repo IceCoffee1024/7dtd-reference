@@ -2,10 +2,10 @@
 using System.IO;
 using System.Xml.Linq;
 
-// Token: 0x020009FB RID: 2555
+// Token: 0x02000A0C RID: 2572
 public static class SdXDocument
 {
-	// Token: 0x06004CE2 RID: 19682 RVA: 0x001D8280 File Offset: 0x001D6480
+	// Token: 0x06004D68 RID: 19816 RVA: 0x001DAD18 File Offset: 0x001D8F18
 	public static XDocument Load(string filename)
 	{
 		XDocument xdocument;

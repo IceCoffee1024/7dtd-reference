@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EAF RID: 3759
+// Token: 0x02000EC4 RID: 3780
 [Preserve]
 public class XUiC_BackpackWindow : XUiController
 {
-	// Token: 0x17000DCF RID: 3535
-	// (get) Token: 0x06007581 RID: 30081 RVA: 0x002C210F File Offset: 0x002C030F
-	// (set) Token: 0x06007582 RID: 30082 RVA: 0x002C2118 File Offset: 0x002C0318
+	// Token: 0x17000DE9 RID: 3561
+	// (get) Token: 0x06007622 RID: 30242 RVA: 0x002C5633 File Offset: 0x002C3833
+	// (set) Token: 0x06007623 RID: 30243 RVA: 0x002C563C File Offset: 0x002C383C
 	public bool UserLockMode
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -38,7 +38,7 @@ public class XUiC_BackpackWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007583 RID: 30083 RVA: 0x002C219C File Offset: 0x002C039C
+	// Token: 0x06007624 RID: 30244 RVA: 0x002C56C0 File Offset: 0x002C38C0
 	public override void Init()
 	{
 		base.Init();
@@ -72,7 +72,7 @@ public class XUiC_BackpackWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007584 RID: 30084 RVA: 0x002C2294 File Offset: 0x002C0494
+	// Token: 0x06007625 RID: 30245 RVA: 0x002C57B8 File Offset: 0x002C39B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryGetMoveDestinationInventory(out IInventory _dstInventory)
 	{
@@ -96,14 +96,14 @@ public class XUiC_BackpackWindow : XUiController
 		return false;
 	}
 
-	// Token: 0x06007585 RID: 30085 RVA: 0x002C2310 File Offset: 0x002C0510
+	// Token: 0x06007626 RID: 30246 RVA: 0x002C5834 File Offset: 0x002C3A34
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnClearInventory_OnPress(XUiController _sender, int _mouseButton)
 	{
 		this.xui.playerUI.entityPlayer.EmptyBackpack();
 	}
 
-	// Token: 0x06007586 RID: 30086 RVA: 0x002C2328 File Offset: 0x002C0528
+	// Token: 0x06007627 RID: 30247 RVA: 0x002C584C File Offset: 0x002C3A4C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnSort_OnPress(PackedBoolArray _ignoredSlots)
 	{
@@ -119,7 +119,7 @@ public class XUiC_BackpackWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007587 RID: 30087 RVA: 0x002C2380 File Offset: 0x002C0580
+	// Token: 0x06007628 RID: 30248 RVA: 0x002C58A4 File Offset: 0x002C3AA4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ApplyLockedSlotStates(PackedBoolArray _lockedSlots)
 	{
@@ -130,7 +130,7 @@ public class XUiC_BackpackWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007588 RID: 30088 RVA: 0x002C23C8 File Offset: 0x002C05C8
+	// Token: 0x06007629 RID: 30249 RVA: 0x002C58EC File Offset: 0x002C3AEC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateLockedSlots(XUiC_ContainerStandardControls _csc)
 	{
@@ -154,7 +154,7 @@ public class XUiC_BackpackWindow : XUiController
 		_csc.LockedSlots = packedBoolArray;
 	}
 
-	// Token: 0x06007589 RID: 30089 RVA: 0x002C244C File Offset: 0x002C064C
+	// Token: 0x0600762A RID: 30250 RVA: 0x002C5970 File Offset: 0x002C3B70
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -191,7 +191,7 @@ public class XUiC_BackpackWindow : XUiController
 		return true;
 	}
 
-	// Token: 0x0600758A RID: 30090 RVA: 0x002C2548 File Offset: 0x002C0748
+	// Token: 0x0600762B RID: 30251 RVA: 0x002C5A6C File Offset: 0x002C3C6C
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -207,7 +207,7 @@ public class XUiC_BackpackWindow : XUiController
 		}, false));
 	}
 
-	// Token: 0x0600758B RID: 30091 RVA: 0x002C25F0 File Offset: 0x002C07F0
+	// Token: 0x0600762C RID: 30252 RVA: 0x002C5B14 File Offset: 0x002C3D14
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -218,14 +218,14 @@ public class XUiC_BackpackWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600758C RID: 30092 RVA: 0x002C2641 File Offset: 0x002C0841
+	// Token: 0x0600762D RID: 30253 RVA: 0x002C5B65 File Offset: 0x002C3D65
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 		this.UpdateInput();
 	}
 
-	// Token: 0x0600758D RID: 30093 RVA: 0x002C2650 File Offset: 0x002C0850
+	// Token: 0x0600762E RID: 30254 RVA: 0x002C5B74 File Offset: 0x002C3D74
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateInput()
 	{
@@ -236,33 +236,33 @@ public class XUiC_BackpackWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600758E RID: 30094 RVA: 0x0008AB7B File Offset: 0x00088D7B
+	// Token: 0x0600762F RID: 30255 RVA: 0x0008B2BB File Offset: 0x000894BB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlayerInventory_OnCurrencyChanged()
 	{
 		base.RefreshBindings();
 	}
 
-	// Token: 0x040056AE RID: 22190
+	// Token: 0x04005753 RID: 22355
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_Backpack backpackGrid;
 
-	// Token: 0x040056AF RID: 22191
+	// Token: 0x04005754 RID: 22356
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isHidden;
 
-	// Token: 0x040056B0 RID: 22192
+	// Token: 0x04005755 RID: 22357
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool userLockMode;
 
-	// Token: 0x040056B1 RID: 22193
+	// Token: 0x04005756 RID: 22358
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ContainerStandardControls standardControls;
 
-	// Token: 0x040056B2 RID: 22194
+	// Token: 0x04005757 RID: 22359
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt currencyFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x040056B3 RID: 22195
+	// Token: 0x04005758 RID: 22360
 	public static string defaultSelectedElement;
 }

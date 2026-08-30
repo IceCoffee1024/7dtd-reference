@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace Audio
 {
-	// Token: 0x02001AF0 RID: 6896
+	// Token: 0x02001B17 RID: 6935
 	public class PlayAndCleanup
 	{
-		// Token: 0x0600CE9C RID: 52892 RVA: 0x004B6004 File Offset: 0x004B4204
+		// Token: 0x0600D025 RID: 53285 RVA: 0x004BC3F8 File Offset: 0x004BA5F8
 		public PlayAndCleanup(LoopingPair _lp, string _soundGroupName)
 		{
 			this.lp = _lp;
@@ -24,7 +24,7 @@ namespace Audio
 			GameManager.Instance.StartCoroutine(this.StopBeginWhenDone(this.lp.sgoBegin.src.clip.length, _soundGroupName));
 		}
 
-		// Token: 0x0600CE9D RID: 52893 RVA: 0x004B610A File Offset: 0x004B430A
+		// Token: 0x0600D026 RID: 53286 RVA: 0x004BC4FE File Offset: 0x004BA6FE
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator StopBeginWhenDone(float waitTime, string soundGroupName)
 		{
@@ -57,7 +57,7 @@ namespace Audio
 			yield break;
 		}
 
-		// Token: 0x0600CE9E RID: 52894 RVA: 0x004B6128 File Offset: 0x004B4328
+		// Token: 0x0600D027 RID: 53287 RVA: 0x004BC51C File Offset: 0x004BA71C
 		public PlayAndCleanup(GameObject _go, AudioSource _source, float _occlusion = 0f, float delay = 0f, bool isLooping = false, bool hasLoopingAnalog = false, string soundGroupName = "")
 		{
 			this.go = _go;
@@ -90,7 +90,7 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600CE9F RID: 52895 RVA: 0x004B6254 File Offset: 0x004B4454
+		// Token: 0x0600D028 RID: 53288 RVA: 0x004BC648 File Offset: 0x004BA848
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator StopWhenDone(float waitTime, string soundGroupName)
 		{
@@ -111,15 +111,15 @@ namespace Audio
 			yield break;
 		}
 
-		// Token: 0x04009D5F RID: 40287
+		// Token: 0x04009E90 RID: 40592
 		[PublicizedFrom(EAccessModifier.Private)]
 		public GameObject go;
 
-		// Token: 0x04009D60 RID: 40288
+		// Token: 0x04009E91 RID: 40593
 		[PublicizedFrom(EAccessModifier.Private)]
 		public AudioSource src;
 
-		// Token: 0x04009D61 RID: 40289
+		// Token: 0x04009E92 RID: 40594
 		[PublicizedFrom(EAccessModifier.Private)]
 		public LoopingPair lp;
 	}

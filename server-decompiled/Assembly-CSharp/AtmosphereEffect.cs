@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000AE6 RID: 2790
+// Token: 0x02000AF8 RID: 2808
 public class AtmosphereEffect
 {
-	// Token: 0x06005327 RID: 21287 RVA: 0x001FD9A4 File Offset: 0x001FBBA4
+	// Token: 0x060053AF RID: 21423 RVA: 0x00200614 File Offset: 0x001FE814
 	public static AtmosphereEffect Load(string _folder, AtmosphereEffect _default)
 	{
 		AtmosphereEffect atmosphereEffect = new AtmosphereEffect();
@@ -27,25 +27,25 @@ public class AtmosphereEffect
 		return atmosphereEffect;
 	}
 
-	// Token: 0x040040D7 RID: 16599
+	// Token: 0x0400416D RID: 16749
 	public ColorSpectrum[] spectrums = new ColorSpectrum[6];
 
-	// Token: 0x02000AE7 RID: 2791
+	// Token: 0x02000AF9 RID: 2809
 	public enum ESpecIdx
 	{
-		// Token: 0x040040D9 RID: 16601
+		// Token: 0x0400416F RID: 16751
 		Sky,
-		// Token: 0x040040DA RID: 16602
+		// Token: 0x04004170 RID: 16752
 		Ambient,
-		// Token: 0x040040DB RID: 16603
+		// Token: 0x04004171 RID: 16753
 		Sun,
-		// Token: 0x040040DC RID: 16604
+		// Token: 0x04004172 RID: 16754
 		Moon,
-		// Token: 0x040040DD RID: 16605
+		// Token: 0x04004173 RID: 16755
 		Fog,
-		// Token: 0x040040DE RID: 16606
+		// Token: 0x04004174 RID: 16756
 		FogFade,
-		// Token: 0x040040DF RID: 16607
+		// Token: 0x04004175 RID: 16757
 		Count
 	}
 }

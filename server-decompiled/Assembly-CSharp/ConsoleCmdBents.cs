@@ -3,32 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020001EA RID: 490
+// Token: 0x020001EC RID: 492
 [Preserve]
 public class ConsoleCmdBents : ConsoleCmdAbstract
 {
-	// Token: 0x06000F26 RID: 3878 RVA: 0x00062B09 File Offset: 0x00060D09
+	// Token: 0x06000F31 RID: 3889 RVA: 0x00063051 File Offset: 0x00061251
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "bents" };
 	}
 
-	// Token: 0x06000F27 RID: 3879 RVA: 0x00062B19 File Offset: 0x00060D19
+	// Token: 0x06000F32 RID: 3890 RVA: 0x00063061 File Offset: 0x00061261
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Switches block entities on/off or counts them";
 	}
 
-	// Token: 0x06000F28 RID: 3880 RVA: 0x00062B20 File Offset: 0x00060D20
+	// Token: 0x06000F33 RID: 3891 RVA: 0x00063068 File Offset: 0x00061268
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Use 'on' or 'off', or 'info' to count";
 	}
 
-	// Token: 0x06000F29 RID: 3881 RVA: 0x00062B28 File Offset: 0x00060D28
+	// Token: 0x06000F34 RID: 3892 RVA: 0x00063070 File Offset: 0x00061270
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 0)
@@ -84,7 +84,7 @@ public class ConsoleCmdBents : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Unknown parameter");
 	}
 
-	// Token: 0x06000F2A RID: 3882 RVA: 0x00062DA4 File Offset: 0x00060FA4
+	// Token: 0x06000F35 RID: 3893 RVA: 0x000632EC File Offset: 0x000614EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setAll(bool _bOn, Transform _t = null)
 	{
@@ -110,7 +110,7 @@ public class ConsoleCmdBents : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F2B RID: 3883 RVA: 0x00062E58 File Offset: 0x00061058
+	// Token: 0x06000F36 RID: 3894 RVA: 0x000633A0 File Offset: 0x000615A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int countAll(Dictionary<string, int> _bentsPerName, Transform _t = null)
 	{
@@ -144,7 +144,7 @@ public class ConsoleCmdBents : ConsoleCmdAbstract
 		return num;
 	}
 
-	// Token: 0x04000C82 RID: 3202
+	// Token: 0x04000C8F RID: 3215
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<string, int> bentsPerName = new Dictionary<string, int>();
 }

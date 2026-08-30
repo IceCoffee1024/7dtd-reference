@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using Unity.Profiling;
 
-// Token: 0x020010EA RID: 4330
+// Token: 0x02001103 RID: 4355
 public class BindingsManager
 {
-	// Token: 0x06008949 RID: 35145 RVA: 0x00345F28 File Offset: 0x00344128
+	// Token: 0x06008A3B RID: 35387 RVA: 0x0034A74C File Offset: 0x0034894C
 	public void RefreshBindings()
 	{
 		using (this.pmControllerRefreshBindings.Auto())
@@ -17,7 +17,7 @@ public class BindingsManager
 		}
 	}
 
-	// Token: 0x0600894A RID: 35146 RVA: 0x00345F88 File Offset: 0x00344188
+	// Token: 0x06008A3C RID: 35388 RVA: 0x0034A7AC File Offset: 0x003489AC
 	public void AddBinding(IBindingInstance _info)
 	{
 		if (!this.bindingList.Contains(_info))
@@ -26,7 +26,7 @@ public class BindingsManager
 		}
 	}
 
-	// Token: 0x0600894B RID: 35147 RVA: 0x00345FA4 File Offset: 0x003441A4
+	// Token: 0x06008A3D RID: 35389 RVA: 0x0034A7C8 File Offset: 0x003489C8
 	public static IBindingInstance CreateBinding(XUiView _view, string _attribute, string _value)
 	{
 		IBindingInstance bindingInstance2;
@@ -48,7 +48,7 @@ public class BindingsManager
 		return bindingInstance2;
 	}
 
-	// Token: 0x0600894C RID: 35148 RVA: 0x00346008 File Offset: 0x00344208
+	// Token: 0x06008A3E RID: 35390 RVA: 0x0034A82C File Offset: 0x00348A2C
 	public static string ReplaceCVars(string _fullText)
 	{
 		string text4;
@@ -73,19 +73,19 @@ public class BindingsManager
 		return text4;
 	}
 
-	// Token: 0x040065EE RID: 26094
+	// Token: 0x040066B5 RID: 26293
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<IBindingInstance> bindingList = new List<IBindingInstance>();
 
-	// Token: 0x040065EF RID: 26095
+	// Token: 0x040066B6 RID: 26294
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ProfilerMarker pmControllerRefreshBindings = new ProfilerMarker("XC.RefreshBindings");
 
-	// Token: 0x040065F0 RID: 26096
+	// Token: 0x040066B7 RID: 26295
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ProfilerMarker pmControllerCreateBinding = new ProfilerMarker("XC.CreateBinding");
 
-	// Token: 0x040065F1 RID: 26097
+	// Token: 0x040066B8 RID: 26296
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker pmReplaceCvars = new ProfilerMarker("ParseCVars");
 }

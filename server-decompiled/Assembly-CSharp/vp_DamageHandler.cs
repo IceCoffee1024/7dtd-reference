@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Token: 0x02001591 RID: 5521
+// Token: 0x020015AC RID: 5548
 public class vp_DamageHandler : MonoBehaviour
 {
-	// Token: 0x170013D5 RID: 5077
-	// (get) Token: 0x0600AC91 RID: 44177 RVA: 0x00405E45 File Offset: 0x00404045
+	// Token: 0x1700140E RID: 5134
+	// (get) Token: 0x0600AD8E RID: 44430 RVA: 0x0040B185 File Offset: 0x00409385
 	public static Dictionary<Collider, vp_DamageHandler> DamageHandlersByCollider
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -21,8 +21,8 @@ public class vp_DamageHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170013D6 RID: 5078
-	// (get) Token: 0x0600AC92 RID: 44178 RVA: 0x00405E5F File Offset: 0x0040405F
+	// Token: 0x1700140F RID: 5135
+	// (get) Token: 0x0600AD8F RID: 44431 RVA: 0x0040B19F File Offset: 0x0040939F
 	public Transform Transform
 	{
 		get
@@ -35,8 +35,8 @@ public class vp_DamageHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170013D7 RID: 5079
-	// (get) Token: 0x0600AC93 RID: 44179 RVA: 0x00405E81 File Offset: 0x00404081
+	// Token: 0x17001410 RID: 5136
+	// (get) Token: 0x0600AD90 RID: 44432 RVA: 0x0040B1C1 File Offset: 0x004093C1
 	public vp_Respawner Respawner
 	{
 		get
@@ -49,9 +49,9 @@ public class vp_DamageHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170013D8 RID: 5080
-	// (get) Token: 0x0600AC94 RID: 44180 RVA: 0x00405EA3 File Offset: 0x004040A3
-	// (set) Token: 0x0600AC95 RID: 44181 RVA: 0x00405EC5 File Offset: 0x004040C5
+	// Token: 0x17001411 RID: 5137
+	// (get) Token: 0x0600AD91 RID: 44433 RVA: 0x0040B1E3 File Offset: 0x004093E3
+	// (set) Token: 0x0600AD92 RID: 44434 RVA: 0x0040B205 File Offset: 0x00409405
 	public Transform Source
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -70,9 +70,9 @@ public class vp_DamageHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170013D9 RID: 5081
-	// (get) Token: 0x0600AC96 RID: 44182 RVA: 0x00405ECE File Offset: 0x004040CE
-	// (set) Token: 0x0600AC97 RID: 44183 RVA: 0x00405EF0 File Offset: 0x004040F0
+	// Token: 0x17001412 RID: 5138
+	// (get) Token: 0x0600AD93 RID: 44435 RVA: 0x0040B20E File Offset: 0x0040940E
+	// (set) Token: 0x0600AD94 RID: 44436 RVA: 0x0040B230 File Offset: 0x00409430
 	public Transform OriginalSource
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -91,9 +91,9 @@ public class vp_DamageHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170013DA RID: 5082
-	// (get) Token: 0x0600AC98 RID: 44184 RVA: 0x00405EF9 File Offset: 0x004040F9
-	// (set) Token: 0x0600AC99 RID: 44185 RVA: 0x00405F01 File Offset: 0x00404101
+	// Token: 0x17001413 RID: 5139
+	// (get) Token: 0x0600AD95 RID: 44437 RVA: 0x0040B239 File Offset: 0x00409439
+	// (set) Token: 0x0600AD96 RID: 44438 RVA: 0x0040B241 File Offset: 0x00409441
 	[Obsolete("This property will be removed in an upcoming release.")]
 	public Transform Sender
 	{
@@ -107,7 +107,7 @@ public class vp_DamageHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AC9A RID: 44186 RVA: 0x00405F0A File Offset: 0x0040410A
+	// Token: 0x0600AD97 RID: 44439 RVA: 0x0040B24A File Offset: 0x0040944A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Awake()
 	{
@@ -116,27 +116,27 @@ public class vp_DamageHandler : MonoBehaviour
 		this.CheckForObsoleteParams();
 	}
 
-	// Token: 0x0600AC9B RID: 44187 RVA: 0x00405F2A File Offset: 0x0040412A
+	// Token: 0x0600AD98 RID: 44440 RVA: 0x0040B26A File Offset: 0x0040946A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
 		SceneManager.sceneLoaded += this.NotifyLevelWasLoaded;
 	}
 
-	// Token: 0x0600AC9C RID: 44188 RVA: 0x00405F3D File Offset: 0x0040413D
+	// Token: 0x0600AD99 RID: 44441 RVA: 0x0040B27D File Offset: 0x0040947D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnDisable()
 	{
 		SceneManager.sceneLoaded -= this.NotifyLevelWasLoaded;
 	}
 
-	// Token: 0x0600AC9D RID: 44189 RVA: 0x00405F50 File Offset: 0x00404150
+	// Token: 0x0600AD9A RID: 44442 RVA: 0x0040B290 File Offset: 0x00409490
 	public virtual void Damage(float damage)
 	{
 		this.Damage(new vp_DamageInfo(damage, null));
 	}
 
-	// Token: 0x0600AC9E RID: 44190 RVA: 0x00405F60 File Offset: 0x00404160
+	// Token: 0x0600AD9B RID: 44443 RVA: 0x0040B2A0 File Offset: 0x004094A0
 	public virtual void Damage(vp_DamageInfo damageInfo)
 	{
 		if (!base.enabled)
@@ -184,7 +184,7 @@ public class vp_DamageHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AC9F RID: 44191 RVA: 0x0040606C File Offset: 0x0040426C
+	// Token: 0x0600AD9C RID: 44444 RVA: 0x0040B3AC File Offset: 0x004095AC
 	public virtual void DieBySources(Transform[] sourceAndOriginalSource)
 	{
 		if (sourceAndOriginalSource.Length != 2)
@@ -197,7 +197,7 @@ public class vp_DamageHandler : MonoBehaviour
 		this.Die();
 	}
 
-	// Token: 0x0600ACA0 RID: 44192 RVA: 0x004060BC File Offset: 0x004042BC
+	// Token: 0x0600AD9D RID: 44445 RVA: 0x0040B3FC File Offset: 0x004095FC
 	public virtual void DieBySource(Transform source)
 	{
 		this.Source = source;
@@ -205,7 +205,7 @@ public class vp_DamageHandler : MonoBehaviour
 		this.Die();
 	}
 
-	// Token: 0x0600ACA1 RID: 44193 RVA: 0x004060E0 File Offset: 0x004042E0
+	// Token: 0x0600AD9E RID: 44446 RVA: 0x0040B420 File Offset: 0x00409620
 	public virtual void Die()
 	{
 		if (!base.enabled || !vp_Utility.IsActive(base.gameObject))
@@ -240,7 +240,7 @@ public class vp_DamageHandler : MonoBehaviour
 		this.m_InstaKill = false;
 	}
 
-	// Token: 0x0600ACA2 RID: 44194 RVA: 0x004061D8 File Offset: 0x004043D8
+	// Token: 0x0600AD9F RID: 44447 RVA: 0x0040B518 File Offset: 0x00409718
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Reset()
 	{
@@ -249,7 +249,7 @@ public class vp_DamageHandler : MonoBehaviour
 		this.OriginalSource = null;
 	}
 
-	// Token: 0x0600ACA3 RID: 44195 RVA: 0x004061F4 File Offset: 0x004043F4
+	// Token: 0x0600ADA0 RID: 44448 RVA: 0x0040B534 File Offset: 0x00409734
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void RemoveBulletHoles()
 	{
@@ -260,7 +260,7 @@ public class vp_DamageHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600ACA4 RID: 44196 RVA: 0x00406224 File Offset: 0x00404424
+	// Token: 0x0600ADA1 RID: 44449 RVA: 0x0040B564 File Offset: 0x00409764
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnCollisionEnter(Collision collision)
 	{
@@ -277,7 +277,7 @@ public class vp_DamageHandler : MonoBehaviour
 		this.Damage(num2);
 	}
 
-	// Token: 0x0600ACA5 RID: 44197 RVA: 0x00406285 File Offset: 0x00404485
+	// Token: 0x0600ADA2 RID: 44450 RVA: 0x0040B5C5 File Offset: 0x004097C5
 	public static vp_DamageHandler GetDamageHandlerOfCollider(Collider col)
 	{
 		if (!vp_DamageHandler.DamageHandlersByCollider.TryGetValue(col, out vp_DamageHandler.m_GetDamageHandlerOfColliderResult))
@@ -288,26 +288,26 @@ public class vp_DamageHandler : MonoBehaviour
 		return vp_DamageHandler.m_GetDamageHandlerOfColliderResult;
 	}
 
-	// Token: 0x0600ACA6 RID: 44198 RVA: 0x004062C3 File Offset: 0x004044C3
+	// Token: 0x0600ADA3 RID: 44451 RVA: 0x0040B603 File Offset: 0x00409803
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void NotifyLevelWasLoaded(Scene scene, LoadSceneMode mode)
 	{
 		vp_DamageHandler.DamageHandlersByCollider.Clear();
 	}
 
-	// Token: 0x0600ACA7 RID: 44199 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600ADA4 RID: 44452 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Respawn()
 	{
 	}
 
-	// Token: 0x0600ACA8 RID: 44200 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600ADA5 RID: 44453 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Reactivate()
 	{
 	}
 
-	// Token: 0x0600ACA9 RID: 44201 RVA: 0x004062D0 File Offset: 0x004044D0
+	// Token: 0x0600ADA6 RID: 44454 RVA: 0x0040B610 File Offset: 0x00409810
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CheckForObsoleteParams()
 	{
@@ -344,7 +344,7 @@ public class vp_DamageHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600ACAA RID: 44202 RVA: 0x004063D3 File Offset: 0x004045D3
+	// Token: 0x0600ADA7 RID: 44455 RVA: 0x0040B713 File Offset: 0x00409913
 	public bool CreateTempRespawner()
 	{
 		if (base.GetComponent<vp_Respawner>() || base.GetComponent<vp_PlayerRespawner>())
@@ -357,7 +357,7 @@ public class vp_DamageHandler : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x0600ACAB RID: 44203 RVA: 0x00406404 File Offset: 0x00404604
+	// Token: 0x0600ADA8 RID: 44456 RVA: 0x0040B744 File Offset: 0x00409944
 	public static int GenerateRespawnersForAllDamageHandlers()
 	{
 		vp_PlayerDamageHandler[] array = global::UnityEngine.Object.FindObjectsByType<vp_PlayerDamageHandler>(FindObjectsSortMode.None);
@@ -416,7 +416,7 @@ public class vp_DamageHandler : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x0600ACAC RID: 44204 RVA: 0x004065DE File Offset: 0x004047DE
+	// Token: 0x0600ADA9 RID: 44457 RVA: 0x0040B91E File Offset: 0x00409B1E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DisableOldParams()
 	{
@@ -427,7 +427,7 @@ public class vp_DamageHandler : MonoBehaviour
 		this.RespawnSound = null;
 	}
 
-	// Token: 0x0600ACAD RID: 44205 RVA: 0x00406610 File Offset: 0x00404810
+	// Token: 0x0600ADAA RID: 44458 RVA: 0x0040B950 File Offset: 0x00409B50
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void CreateRespawnerForDamageHandler(vp_DamageHandler damageHandler)
 	{
@@ -466,100 +466,100 @@ public class vp_DamageHandler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04008037 RID: 32823
+	// Token: 0x04008110 RID: 33040
 	public float MaxHealth = 1f;
 
-	// Token: 0x04008038 RID: 32824
+	// Token: 0x04008111 RID: 33041
 	public GameObject[] DeathSpawnObjects;
 
-	// Token: 0x04008039 RID: 32825
+	// Token: 0x04008112 RID: 33042
 	public float MinDeathDelay;
 
-	// Token: 0x0400803A RID: 32826
+	// Token: 0x04008113 RID: 33043
 	public float MaxDeathDelay;
 
-	// Token: 0x0400803B RID: 32827
+	// Token: 0x04008114 RID: 33044
 	public float CurrentHealth;
 
-	// Token: 0x0400803C RID: 32828
+	// Token: 0x04008115 RID: 33045
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_InstaKill;
 
-	// Token: 0x0400803D RID: 32829
+	// Token: 0x04008116 RID: 33046
 	public AudioClip DeathSound;
 
-	// Token: 0x0400803E RID: 32830
+	// Token: 0x04008117 RID: 33047
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AudioSource m_Audio;
 
-	// Token: 0x0400803F RID: 32831
+	// Token: 0x04008118 RID: 33048
 	public float ImpactDamageThreshold = 10f;
 
-	// Token: 0x04008040 RID: 32832
+	// Token: 0x04008119 RID: 33049
 	public float ImpactDamageMultiplier;
 
-	// Token: 0x04008041 RID: 32833
+	// Token: 0x0400811A RID: 33050
 	[HideInInspector]
 	public bool Respawns;
 
-	// Token: 0x04008042 RID: 32834
+	// Token: 0x0400811B RID: 33051
 	[HideInInspector]
 	public float MinRespawnTime = -99999f;
 
-	// Token: 0x04008043 RID: 32835
+	// Token: 0x0400811C RID: 33052
 	[HideInInspector]
 	public float MaxRespawnTime = -99999f;
 
-	// Token: 0x04008044 RID: 32836
+	// Token: 0x0400811D RID: 33053
 	[HideInInspector]
 	public float RespawnCheckRadius = -99999f;
 
-	// Token: 0x04008045 RID: 32837
+	// Token: 0x0400811E RID: 33054
 	[HideInInspector]
 	public AudioClip RespawnSound;
 
-	// Token: 0x04008046 RID: 32838
+	// Token: 0x0400811F RID: 33055
 	[HideInInspector]
 	public GameObject DeathEffect;
 
-	// Token: 0x04008047 RID: 32839
+	// Token: 0x04008120 RID: 33056
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public static Dictionary<Collider, vp_DamageHandler> m_DamageHandlersByCollider;
 
-	// Token: 0x04008048 RID: 32840
+	// Token: 0x04008121 RID: 33057
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public static vp_DamageHandler m_GetDamageHandlerOfColliderResult;
 
-	// Token: 0x04008049 RID: 32841
+	// Token: 0x04008122 RID: 33058
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_StartPosition;
 
-	// Token: 0x0400804A RID: 32842
+	// Token: 0x04008123 RID: 33059
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Quaternion m_StartRotation;
 
-	// Token: 0x0400804B RID: 32843
+	// Token: 0x04008124 RID: 33060
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_Transform;
 
-	// Token: 0x0400804C RID: 32844
+	// Token: 0x04008125 RID: 33061
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Respawner m_Respawner;
 
-	// Token: 0x0400804D RID: 32845
+	// Token: 0x04008126 RID: 33062
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_Source;
 
-	// Token: 0x0400804E RID: 32846
+	// Token: 0x04008127 RID: 33063
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_OriginalSource;

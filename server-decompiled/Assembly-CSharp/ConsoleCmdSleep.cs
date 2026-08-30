@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine.Scripting;
 
-// Token: 0x02000294 RID: 660
+// Token: 0x02000298 RID: 664
 [Preserve]
 public class ConsoleCmdSleep : ConsoleCmdAbstract
 {
-	// Token: 0x06001349 RID: 4937 RVA: 0x00075EAD File Offset: 0x000740AD
+	// Token: 0x0600135B RID: 4955 RVA: 0x00076509 File Offset: 0x00074709
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "sleep" };
 	}
 
-	// Token: 0x0600134A RID: 4938 RVA: 0x00075EBD File Offset: 0x000740BD
+	// Token: 0x0600135C RID: 4956 RVA: 0x00076519 File Offset: 0x00074719
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Makes the main thread sleep for the given number of seconds (allows decimals)";
 	}
 
-	// Token: 0x0600134B RID: 4939 RVA: 0x00075EC4 File Offset: 0x000740C4
+	// Token: 0x0600135D RID: 4957 RVA: 0x00076520 File Offset: 0x00074720
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		float num = 1f;

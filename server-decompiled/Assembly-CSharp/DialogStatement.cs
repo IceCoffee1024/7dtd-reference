@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x020002EB RID: 747
+// Token: 0x020002EF RID: 751
 public class DialogStatement : BaseStatement
 {
-	// Token: 0x06001576 RID: 5494 RVA: 0x000808A5 File Offset: 0x0007EAA5
+	// Token: 0x06001589 RID: 5513 RVA: 0x00080F59 File Offset: 0x0007F159
 	public DialogStatement(string newID)
 	{
 		this.ID = newID;
 		this.HeaderName = string.Format("Statement : {0}", newID);
 	}
 
-	// Token: 0x06001577 RID: 5495 RVA: 0x000808D0 File Offset: 0x0007EAD0
+	// Token: 0x0600158A RID: 5514 RVA: 0x00080F84 File Offset: 0x0007F184
 	public List<BaseResponseEntry> GetResponses()
 	{
 		List<BaseResponseEntry> list = new List<BaseResponseEntry>();
@@ -50,6 +50,6 @@ public class DialogStatement : BaseStatement
 		return list;
 	}
 
-	// Token: 0x04000E6B RID: 3691
+	// Token: 0x04000E7C RID: 3708
 	public List<BaseResponseEntry> ResponseEntries = new List<BaseResponseEntry>();
 }

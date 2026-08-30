@@ -2,20 +2,20 @@
 
 namespace Twitch
 {
-	// Token: 0x0200182F RID: 6191
+	// Token: 0x02001855 RID: 6229
 	public class TwitchMessageEntry
 	{
-		// Token: 0x0600BEFE RID: 48894 RVA: 0x0046E78B File Offset: 0x0046C98B
+		// Token: 0x0600C083 RID: 49283 RVA: 0x00474527 File Offset: 0x00472727
 		public TwitchMessageEntry(string msg, string sound)
 		{
 			this.Message = msg;
 			this.Sound = sound;
 		}
 
-		// Token: 0x04008FFB RID: 36859
+		// Token: 0x04009117 RID: 37143
 		public string Message = "";
 
-		// Token: 0x04008FFC RID: 36860
+		// Token: 0x04009118 RID: 37144
 		public string Sound = "";
 	}
 }

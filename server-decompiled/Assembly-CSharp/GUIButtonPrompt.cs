@@ -3,41 +3,41 @@ using Platform;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020011FE RID: 4606
+// Token: 0x0200121A RID: 4634
 public class GUIButtonPrompt : MonoBehaviour
 {
-	// Token: 0x060092F4 RID: 37620 RVA: 0x0037A193 File Offset: 0x00378393
+	// Token: 0x060093F8 RID: 37880 RVA: 0x0037F46F File Offset: 0x0037D66F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
 		this.image = base.GetComponent<Image>();
 	}
 
-	// Token: 0x060092F5 RID: 37621 RVA: 0x0037A1A1 File Offset: 0x003783A1
+	// Token: 0x060093F9 RID: 37881 RVA: 0x0037F47D File Offset: 0x0037D67D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
 		this.RefreshIcon();
 	}
 
-	// Token: 0x060092F6 RID: 37622 RVA: 0x0037A1AC File Offset: 0x003783AC
+	// Token: 0x060093FA RID: 37882 RVA: 0x0037F488 File Offset: 0x0037D688
 	public void RefreshIcon()
 	{
 		PlayerInputManager.InputStyle inputStyle = PlayerInputManager.InputStyleFromSelectedIconStyle();
 		this.image.sprite = ((inputStyle == PlayerInputManager.InputStyle.PS4) ? this.PSSprite : this.XBSprite);
 	}
 
-	// Token: 0x04006E0B RID: 28171
+	// Token: 0x04006EE4 RID: 28388
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Sprite XBSprite;
 
-	// Token: 0x04006E0C RID: 28172
+	// Token: 0x04006EE5 RID: 28389
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Sprite PSSprite;
 
-	// Token: 0x04006E0D RID: 28173
+	// Token: 0x04006EE6 RID: 28390
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Image image;

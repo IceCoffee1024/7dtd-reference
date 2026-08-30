@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000102 RID: 258
+// Token: 0x02000103 RID: 259
 public struct BlockActivationCommand
 {
-	// Token: 0x06000640 RID: 1600 RVA: 0x0002C931 File Offset: 0x0002AB31
+	// Token: 0x0600064A RID: 1610 RVA: 0x0002CBED File Offset: 0x0002ADED
 	public BlockActivationCommand(string _text, string _icon, bool _enabled, bool _highlighted = false, string _eventName = null)
 	{
 		this.text = _text;
@@ -16,27 +16,27 @@ public struct BlockActivationCommand
 		this.activateTime = -1f;
 	}
 
-	// Token: 0x040006FA RID: 1786
+	// Token: 0x040006FC RID: 1788
 	public string text;
 
-	// Token: 0x040006FB RID: 1787
+	// Token: 0x040006FD RID: 1789
 	public string icon;
 
-	// Token: 0x040006FC RID: 1788
+	// Token: 0x040006FE RID: 1790
 	public Color iconColor;
 
-	// Token: 0x040006FD RID: 1789
+	// Token: 0x040006FF RID: 1791
 	public bool enabled;
 
-	// Token: 0x040006FE RID: 1790
+	// Token: 0x04000700 RID: 1792
 	public bool highlighted;
 
-	// Token: 0x040006FF RID: 1791
+	// Token: 0x04000701 RID: 1793
 	public string eventName;
 
-	// Token: 0x04000700 RID: 1792
+	// Token: 0x04000702 RID: 1794
 	public float activateTime;
 
-	// Token: 0x04000701 RID: 1793
+	// Token: 0x04000703 RID: 1795
 	public static readonly BlockActivationCommand[] Empty = Array.Empty<BlockActivationCommand>();
 }

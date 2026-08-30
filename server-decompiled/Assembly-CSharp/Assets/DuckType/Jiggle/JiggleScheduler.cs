@@ -5,24 +5,24 @@ using UnityEngine;
 
 namespace Assets.DuckType.Jiggle
 {
-	// Token: 0x02001D37 RID: 7479
+	// Token: 0x02001D5F RID: 7519
 	public static class JiggleScheduler
 	{
-		// Token: 0x0600DCB8 RID: 56504 RVA: 0x004F316C File Offset: 0x004F136C
+		// Token: 0x0600DE59 RID: 56921 RVA: 0x004F9BE0 File Offset: 0x004F7DE0
 		public static void Register(Jiggle jiggleBone)
 		{
 			JiggleScheduler.s_Records[jiggleBone] = JiggleScheduler.GetHierarchyDepth(jiggleBone.transform);
 			JiggleScheduler.isDirty = true;
 		}
 
-		// Token: 0x0600DCB9 RID: 56505 RVA: 0x004F318A File Offset: 0x004F138A
+		// Token: 0x0600DE5A RID: 56922 RVA: 0x004F9BFE File Offset: 0x004F7DFE
 		public static void Deregister(Jiggle jiggleBone)
 		{
 			JiggleScheduler.s_Records.Remove(jiggleBone);
 			JiggleScheduler.isDirty = true;
 		}
 
-		// Token: 0x0600DCBA RID: 56506 RVA: 0x004F31A0 File Offset: 0x004F13A0
+		// Token: 0x0600DE5B RID: 56923 RVA: 0x004F9C14 File Offset: 0x004F7E14
 		public static void Update(Jiggle jiggle)
 		{
 			if (JiggleScheduler.isDirty)
@@ -42,7 +42,7 @@ namespace Assets.DuckType.Jiggle
 			}
 		}
 
-		// Token: 0x0600DCBB RID: 56507 RVA: 0x004F3228 File Offset: 0x004F1428
+		// Token: 0x0600DE5C RID: 56924 RVA: 0x004F9C9C File Offset: 0x004F7E9C
 		public static void FixedUpdate(Jiggle jiggle)
 		{
 			if (jiggle == JiggleScheduler.m_UpdateTriggerJiggle)
@@ -57,7 +57,7 @@ namespace Assets.DuckType.Jiggle
 			}
 		}
 
-		// Token: 0x0600DCBC RID: 56508 RVA: 0x004F329C File Offset: 0x004F149C
+		// Token: 0x0600DE5D RID: 56925 RVA: 0x004F9D10 File Offset: 0x004F7F10
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void UpdateOrderedRecords()
 		{
@@ -67,7 +67,7 @@ namespace Assets.DuckType.Jiggle
 			JiggleScheduler.m_UpdateTriggerJiggle = JiggleScheduler.s_OrderedRecords.FirstOrDefault<Jiggle>();
 		}
 
-		// Token: 0x0600DCBD RID: 56509 RVA: 0x004F330F File Offset: 0x004F150F
+		// Token: 0x0600DE5E RID: 56926 RVA: 0x004F9D83 File Offset: 0x004F7F83
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static int GetHierarchyDepth(Transform t)
 		{
@@ -78,19 +78,19 @@ namespace Assets.DuckType.Jiggle
 			return -1;
 		}
 
-		// Token: 0x0400A781 RID: 42881
+		// Token: 0x0400A8B6 RID: 43190
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Dictionary<Jiggle, int> s_Records = new Dictionary<Jiggle, int>();
 
-		// Token: 0x0400A782 RID: 42882
+		// Token: 0x0400A8B7 RID: 43191
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static List<Jiggle> s_OrderedRecords = new List<Jiggle>();
 
-		// Token: 0x0400A783 RID: 42883
+		// Token: 0x0400A8B8 RID: 43192
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Jiggle m_UpdateTriggerJiggle = null;
 
-		// Token: 0x0400A784 RID: 42884
+		// Token: 0x0400A8B9 RID: 43193
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool isDirty;
 	}

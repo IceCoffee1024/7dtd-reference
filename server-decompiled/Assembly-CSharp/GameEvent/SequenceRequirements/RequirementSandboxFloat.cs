@@ -4,25 +4,25 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x0200191E RID: 6430
+	// Token: 0x02001944 RID: 6468
 	[Preserve]
 	public class RequirementSandboxFloat : BaseOperationRequirement
 	{
-		// Token: 0x0600C5D4 RID: 50644 RVA: 0x0048BA2A File Offset: 0x00489C2A
+		// Token: 0x0600C75B RID: 51035 RVA: 0x00491D76 File Offset: 0x0048FF76
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override object LeftSide(Entity target)
 		{
 			return SandboxOptionManager.GetFloat(this.Option);
 		}
 
-		// Token: 0x0600C5D5 RID: 50645 RVA: 0x0048BA3C File Offset: 0x00489C3C
+		// Token: 0x0600C75C RID: 51036 RVA: 0x00491D88 File Offset: 0x0048FF88
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override object RightSide(Entity target)
 		{
 			return GameEventManager.GetFloatValue(target as EntityAlive, this.valueText, 0f);
 		}
 
-		// Token: 0x0600C5D6 RID: 50646 RVA: 0x0048BA59 File Offset: 0x00489C59
+		// Token: 0x0600C75D RID: 51037 RVA: 0x00491DA5 File Offset: 0x0048FFA5
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -30,7 +30,7 @@ namespace GameEvent.SequenceRequirements
 			properties.ParseString(RequirementSandboxFloat.PropValue, ref this.valueText);
 		}
 
-		// Token: 0x0600C5D7 RID: 50647 RVA: 0x0048BA84 File Offset: 0x00489C84
+		// Token: 0x0600C75E RID: 51038 RVA: 0x00491DD0 File Offset: 0x0048FFD0
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseRequirement CloneChildSettings()
 		{
@@ -43,19 +43,19 @@ namespace GameEvent.SequenceRequirements
 			};
 		}
 
-		// Token: 0x040094E9 RID: 38121
+		// Token: 0x04009612 RID: 38418
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public global::SandboxOptions.SandboxOptions Option = global::SandboxOptions.SandboxOptions.Max;
 
-		// Token: 0x040094EA RID: 38122
+		// Token: 0x04009613 RID: 38419
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string valueText;
 
-		// Token: 0x040094EB RID: 38123
+		// Token: 0x04009614 RID: 38420
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSandboxOption = "option";
 
-		// Token: 0x040094EC RID: 38124
+		// Token: 0x04009615 RID: 38421
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropValue = "value";
 	}

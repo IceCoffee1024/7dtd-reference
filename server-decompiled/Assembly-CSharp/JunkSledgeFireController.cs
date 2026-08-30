@@ -2,10 +2,10 @@
 using Audio;
 using UnityEngine;
 
-// Token: 0x020003CC RID: 972
+// Token: 0x020003D0 RID: 976
 public class JunkSledgeFireController : MiniTurretFireController
 {
-	// Token: 0x06001D5B RID: 7515 RVA: 0x000B16AC File Offset: 0x000AF8AC
+	// Token: 0x06001D78 RID: 7544 RVA: 0x000B1DF0 File Offset: 0x000AFFF0
 	public new void Update()
 	{
 		base.Update();
@@ -42,14 +42,14 @@ public class JunkSledgeFireController : MiniTurretFireController
 		this.timeCounter += Time.deltaTime;
 	}
 
-	// Token: 0x06001D5C RID: 7516 RVA: 0x000B187A File Offset: 0x000AFA7A
+	// Token: 0x06001D79 RID: 7545 RVA: 0x000B1FBE File Offset: 0x000B01BE
 	public override void Fire()
 	{
 		this.ArmState = JunkSledgeFireController.ArmStates.Extending;
 		Manager.Play(this.entityTurret, this.fireSound, 1f, true);
 	}
 
-	// Token: 0x06001D5D RID: 7517 RVA: 0x000B189C File Offset: 0x000AFA9C
+	// Token: 0x06001D7A RID: 7546 RVA: 0x000B1FE0 File Offset: 0x000B01E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void hitTarget()
 	{
@@ -63,46 +63,46 @@ public class JunkSledgeFireController : MiniTurretFireController
 		ItemActionAttack.Hit(Voxel.voxelRayHitInfo.Clone(), this.entityTurret.belongsPlayerId, EnumDamageTypes.Bashing, base.GetDamageBlock(this.entityTurret.OriginalItemValue, BlockValue.Air, entityAlive, 1), base.GetDamageEntity(this.entityTurret.OriginalItemValue, entityAlive, 1), 1f, this.entityTurret.OriginalItemValue.PercentUsesLeft, 0f, 0f, "metal", this.damageMultiplier, this.buffActions, new ItemActionAttack.AttackHitInfo(), 1, 0, 0f, null, null, ItemActionAttack.EnumAttackMode.RealNoHarvesting, null, this.entityTurret.entityId, this.entityTurret.OriginalItemValue, false, false, false, null);
 	}
 
-	// Token: 0x04001354 RID: 4948
+	// Token: 0x04001369 RID: 4969
 	public JunkSledgeFireController.ArmStates ArmState;
 
-	// Token: 0x04001355 RID: 4949
+	// Token: 0x0400136A RID: 4970
 	public Transform Arm1;
 
-	// Token: 0x04001356 RID: 4950
+	// Token: 0x0400136B RID: 4971
 	public float Arm1StartZ;
 
-	// Token: 0x04001357 RID: 4951
+	// Token: 0x0400136C RID: 4972
 	public float Arm1EndZ;
 
-	// Token: 0x04001358 RID: 4952
+	// Token: 0x0400136D RID: 4973
 	public Transform Arm2;
 
-	// Token: 0x04001359 RID: 4953
+	// Token: 0x0400136E RID: 4974
 	public float Arm2StartZ;
 
-	// Token: 0x0400135A RID: 4954
+	// Token: 0x0400136F RID: 4975
 	public float Arm2EndZ;
 
-	// Token: 0x0400135B RID: 4955
+	// Token: 0x04001370 RID: 4976
 	public float ExtentionTime;
 
-	// Token: 0x0400135C RID: 4956
+	// Token: 0x04001371 RID: 4977
 	public float RetractionTime;
 
-	// Token: 0x0400135D RID: 4957
+	// Token: 0x04001372 RID: 4978
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float timeCounter;
 
-	// Token: 0x020003CD RID: 973
+	// Token: 0x020003D1 RID: 977
 	public enum ArmStates
 	{
-		// Token: 0x0400135F RID: 4959
+		// Token: 0x04001374 RID: 4980
 		Idle,
-		// Token: 0x04001360 RID: 4960
+		// Token: 0x04001375 RID: 4981
 		Extending,
-		// Token: 0x04001361 RID: 4961
+		// Token: 0x04001376 RID: 4982
 		Retracting
 	}
 }

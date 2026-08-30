@@ -1,21 +1,21 @@
 ﻿using System;
 
-// Token: 0x02000B93 RID: 2963
+// Token: 0x02000BA5 RID: 2981
 public class RegionFileFactoryRaw : IRegionFilePlatformFactory
 {
-	// Token: 0x0600599B RID: 22939 RVA: 0x00226749 File Offset: 0x00224949
+	// Token: 0x06005A23 RID: 23075 RVA: 0x00229465 File Offset: 0x00227665
 	public RegionFileAccessAbstract CreateRegionFileAccess()
 	{
 		return new RegionFileAccessRaw();
 	}
 
-	// Token: 0x0600599C RID: 22940 RVA: 0x0022673A File Offset: 0x0022493A
+	// Token: 0x06005A24 RID: 23076 RVA: 0x00229456 File Offset: 0x00227656
 	public IRegionFileChunkSnapshotUtil CreateSnapshotUtil(RegionFileAccessAbstract regionFileAccess)
 	{
 		return new ChunkSnapshotUtil(regionFileAccess);
 	}
 
-	// Token: 0x0600599D RID: 22941 RVA: 0x00226750 File Offset: 0x00224950
+	// Token: 0x06005A25 RID: 23077 RVA: 0x0022946C File Offset: 0x0022766C
 	public IRegionFileDebugUtil CreateDebugUtil()
 	{
 		return new RegionFileDebugUtilRaw();

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine.Scripting;
 
-// Token: 0x0200086D RID: 2157
+// Token: 0x02000879 RID: 2169
 [Preserve]
 public class NetPackageWorldInfo : NetPackage
 {
-	// Token: 0x06003EE1 RID: 16097 RVA: 0x0018BBC1 File Offset: 0x00189DC1
+	// Token: 0x06003F46 RID: 16198 RVA: 0x0018DC91 File Offset: 0x0018BE91
 	public NetPackageWorldInfo Setup(string _gameMode, string _levelName, string _gameName, string _guid, PersistentPlayerList _playerList, ulong _ticks, bool _fixedSizeCC, bool _firstTimeJoin)
 	{
 		this.gameMode = _gameMode;
@@ -21,8 +21,8 @@ public class NetPackageWorldInfo : NetPackage
 		return this;
 	}
 
-	// Token: 0x1700068B RID: 1675
-	// (get) Token: 0x06003EE2 RID: 16098 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x17000697 RID: 1687
+	// (get) Token: 0x06003F47 RID: 16199 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -31,7 +31,7 @@ public class NetPackageWorldInfo : NetPackage
 		}
 	}
 
-	// Token: 0x06003EE3 RID: 16099 RVA: 0x0018BC04 File Offset: 0x00189E04
+	// Token: 0x06003F48 RID: 16200 RVA: 0x0018DCD4 File Offset: 0x0018BED4
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.gameMode = _reader.ReadString();
@@ -53,7 +53,7 @@ public class NetPackageWorldInfo : NetPackage
 		NetPackageWorldInfo.worldDataSize = _reader.ReadInt64();
 	}
 
-	// Token: 0x06003EE4 RID: 16100 RVA: 0x0018BCC4 File Offset: 0x00189EC4
+	// Token: 0x06003F49 RID: 16201 RVA: 0x0018DD94 File Offset: 0x0018BF94
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -74,19 +74,19 @@ public class NetPackageWorldInfo : NetPackage
 		_writer.Write(NetPackageWorldInfo.worldDataSize);
 	}
 
-	// Token: 0x06003EE5 RID: 16101 RVA: 0x0018BD64 File Offset: 0x00189F64
+	// Token: 0x06003F4A RID: 16202 RVA: 0x0018DE34 File Offset: 0x0018C034
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		_callbacks.WorldInfo(this.gameMode, this.levelName, this.gameName, this.guid, this.ppList, this.ticks, this.fixedSizeCC, this.firstTimeJoin, this.worldFileHashes, NetPackageWorldInfo.worldDataSize);
 	}
 
-	// Token: 0x06003EE6 RID: 16102 RVA: 0x0018BDB2 File Offset: 0x00189FB2
+	// Token: 0x06003F4B RID: 16203 RVA: 0x0018DE82 File Offset: 0x0018C082
 	public override int GetLength()
 	{
 		return 48 + NetPackageWorldInfo.worldHashesData.Length + 4 + 8;
 	}
 
-	// Token: 0x06003EE7 RID: 16103 RVA: 0x0018BDC4 File Offset: 0x00189FC4
+	// Token: 0x06003F4C RID: 16204 RVA: 0x0018DE94 File Offset: 0x0018C094
 	public static void PrepareWorldHashes()
 	{
 		NetPackageWorldInfo.worldHashesData = null;
@@ -123,47 +123,47 @@ public class NetPackageWorldInfo : NetPackage
 		}
 	}
 
-	// Token: 0x040032AD RID: 12973
+	// Token: 0x0400332E RID: 13102
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string gameMode;
 
-	// Token: 0x040032AE RID: 12974
+	// Token: 0x0400332F RID: 13103
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string levelName;
 
-	// Token: 0x040032AF RID: 12975
+	// Token: 0x04003330 RID: 13104
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string gameName;
 
-	// Token: 0x040032B0 RID: 12976
+	// Token: 0x04003331 RID: 13105
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string guid;
 
-	// Token: 0x040032B1 RID: 12977
+	// Token: 0x04003332 RID: 13106
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PersistentPlayerList ppList;
 
-	// Token: 0x040032B2 RID: 12978
+	// Token: 0x04003333 RID: 13107
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong ticks;
 
-	// Token: 0x040032B3 RID: 12979
+	// Token: 0x04003334 RID: 13108
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool fixedSizeCC;
 
-	// Token: 0x040032B4 RID: 12980
+	// Token: 0x04003335 RID: 13109
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool firstTimeJoin;
 
-	// Token: 0x040032B5 RID: 12981
+	// Token: 0x04003336 RID: 13110
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<string, uint> worldFileHashes;
 
-	// Token: 0x040032B6 RID: 12982
+	// Token: 0x04003337 RID: 13111
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static byte[] worldHashesData;
 
-	// Token: 0x040032B7 RID: 12983
+	// Token: 0x04003338 RID: 13112
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static long worldDataSize;
 }

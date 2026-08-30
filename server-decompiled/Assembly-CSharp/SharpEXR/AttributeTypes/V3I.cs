@@ -2,10 +2,10 @@
 
 namespace SharpEXR.AttributeTypes
 {
-	// Token: 0x020016C6 RID: 5830
+	// Token: 0x020016EC RID: 5868
 	public struct V3I
 	{
-		// Token: 0x0600B5B8 RID: 46520 RVA: 0x004394F3 File Offset: 0x004376F3
+		// Token: 0x0600B73B RID: 46907 RVA: 0x0043F26B File Offset: 0x0043D46B
 		public V3I(int v0, int v1, int v2)
 		{
 			this.V0 = v0;
@@ -13,7 +13,7 @@ namespace SharpEXR.AttributeTypes
 			this.V2 = v2;
 		}
 
-		// Token: 0x0600B5B9 RID: 46521 RVA: 0x0043950C File Offset: 0x0043770C
+		// Token: 0x0600B73C RID: 46908 RVA: 0x0043F284 File Offset: 0x0043D484
 		public override string ToString()
 		{
 			return string.Format("{0}: {1}, {2}, {3}", new object[]
@@ -25,8 +25,8 @@ namespace SharpEXR.AttributeTypes
 			});
 		}
 
-		// Token: 0x170015EF RID: 5615
-		// (get) Token: 0x0600B5BA RID: 46522 RVA: 0x0043956B File Offset: 0x0043776B
+		// Token: 0x17001661 RID: 5729
+		// (get) Token: 0x0600B73D RID: 46909 RVA: 0x0043F2E3 File Offset: 0x0043D4E3
 		public int X
 		{
 			get
@@ -35,8 +35,8 @@ namespace SharpEXR.AttributeTypes
 			}
 		}
 
-		// Token: 0x170015F0 RID: 5616
-		// (get) Token: 0x0600B5BB RID: 46523 RVA: 0x00439573 File Offset: 0x00437773
+		// Token: 0x17001662 RID: 5730
+		// (get) Token: 0x0600B73E RID: 46910 RVA: 0x0043F2EB File Offset: 0x0043D4EB
 		public int Y
 		{
 			get
@@ -45,8 +45,8 @@ namespace SharpEXR.AttributeTypes
 			}
 		}
 
-		// Token: 0x170015F1 RID: 5617
-		// (get) Token: 0x0600B5BC RID: 46524 RVA: 0x0043957B File Offset: 0x0043777B
+		// Token: 0x17001663 RID: 5731
+		// (get) Token: 0x0600B73F RID: 46911 RVA: 0x0043F2F3 File Offset: 0x0043D4F3
 		public int Z
 		{
 			get
@@ -55,13 +55,13 @@ namespace SharpEXR.AttributeTypes
 			}
 		}
 
-		// Token: 0x040087D0 RID: 34768
+		// Token: 0x040088EC RID: 35052
 		public int V0;
 
-		// Token: 0x040087D1 RID: 34769
+		// Token: 0x040088ED RID: 35053
 		public int V1;
 
-		// Token: 0x040087D2 RID: 34770
+		// Token: 0x040088EE RID: 35054
 		public int V2;
 	}
 }

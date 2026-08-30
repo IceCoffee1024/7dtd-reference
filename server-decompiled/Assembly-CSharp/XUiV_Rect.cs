@@ -1,18 +1,18 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001144 RID: 4420
+// Token: 0x0200115D RID: 4445
 public class XUiV_Rect : XUiView_WidgetBased
 {
-	// Token: 0x06008CCC RID: 36044 RVA: 0x00352644 File Offset: 0x00350844
+	// Token: 0x06008DBE RID: 36286 RVA: 0x00356E80 File Offset: 0x00355080
 	public XUiV_Rect(XUi _xui, string _id)
 		: base(_xui, _id)
 	{
 	}
 
-	// Token: 0x17001097 RID: 4247
-	// (get) Token: 0x06008CCD RID: 36045 RVA: 0x0035374F File Offset: 0x0035194F
-	// (set) Token: 0x06008CCE RID: 36046 RVA: 0x00353757 File Offset: 0x00351957
+	// Token: 0x170010D0 RID: 4304
+	// (get) Token: 0x06008DBF RID: 36287 RVA: 0x00357F8B File Offset: 0x0035618B
+	// (set) Token: 0x06008DC0 RID: 36288 RVA: 0x00357F93 File Offset: 0x00356193
 	[XuiXmlAttribute("disablefallthrough", false)]
 	public bool DisableFallthrough
 	{
@@ -26,8 +26,8 @@ public class XUiV_Rect : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x17001098 RID: 4248
-	// (get) Token: 0x06008CCF RID: 36047 RVA: 0x00353760 File Offset: 0x00351960
+	// Token: 0x170010D1 RID: 4305
+	// (get) Token: 0x06008DC1 RID: 36289 RVA: 0x00357F9C File Offset: 0x0035619C
 	public override bool HasAnyEvent
 	{
 		get
@@ -36,14 +36,14 @@ public class XUiV_Rect : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x06008CD0 RID: 36048 RVA: 0x00353772 File Offset: 0x00351972
+	// Token: 0x06008DC2 RID: 36290 RVA: 0x00357FAE File Offset: 0x003561AE
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void createComponents(GameObject _go)
 	{
 		_go.AddComponent<UIWidget>();
 	}
 
-	// Token: 0x06008CD1 RID: 36049 RVA: 0x0035377B File Offset: 0x0035197B
+	// Token: 0x06008DC3 RID: 36291 RVA: 0x00357FB7 File Offset: 0x003561B7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void captureComponents()
 	{
@@ -51,7 +51,7 @@ public class XUiV_Rect : XUiView_WidgetBased
 		this.widget = this.uiTransform.gameObject.GetComponent<UIWidget>();
 	}
 
-	// Token: 0x06008CD2 RID: 36050 RVA: 0x00353799 File Offset: 0x00351999
+	// Token: 0x06008DC4 RID: 36292 RVA: 0x00357FD5 File Offset: 0x003561D5
 	public override void InitView()
 	{
 		base.InitView();
@@ -60,7 +60,7 @@ public class XUiV_Rect : XUiView_WidgetBased
 		this.updateData();
 	}
 
-	// Token: 0x06008CD3 RID: 36051 RVA: 0x003537D0 File Offset: 0x003519D0
+	// Token: 0x06008DC5 RID: 36293 RVA: 0x0035800C File Offset: 0x0035620C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void refreshBoxCollider()
 	{
@@ -74,7 +74,7 @@ public class XUiV_Rect : XUiView_WidgetBased
 		this.collider.center = center;
 	}
 
-	// Token: 0x04006761 RID: 26465
+	// Token: 0x0400682B RID: 26667
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool disableFallthrough;
 }

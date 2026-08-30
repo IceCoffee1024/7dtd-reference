@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x020003A2 RID: 930
+// Token: 0x020003A6 RID: 934
 public class DynamicMeshSyncRequest
 {
-	// Token: 0x17000349 RID: 841
-	// (get) Token: 0x06001BB6 RID: 7094 RVA: 0x000A47BC File Offset: 0x000A29BC
+	// Token: 0x1700034D RID: 845
+	// (get) Token: 0x06001BD3 RID: 7123 RVA: 0x000A4EFC File Offset: 0x000A30FC
 	public int SecondsAlive
 	{
 		get
@@ -13,8 +13,8 @@ public class DynamicMeshSyncRequest
 		}
 	}
 
-	// Token: 0x1700034A RID: 842
-	// (get) Token: 0x06001BB7 RID: 7095 RVA: 0x000A47E4 File Offset: 0x000A29E4
+	// Token: 0x1700034E RID: 846
+	// (get) Token: 0x06001BD4 RID: 7124 RVA: 0x000A4F24 File Offset: 0x000A3124
 	public int SecondsAttempted
 	{
 		get
@@ -27,7 +27,7 @@ public class DynamicMeshSyncRequest
 		}
 	}
 
-	// Token: 0x06001BB8 RID: 7096 RVA: 0x000A481E File Offset: 0x000A2A1E
+	// Token: 0x06001BD5 RID: 7125 RVA: 0x000A4F5E File Offset: 0x000A315E
 	public static DynamicMeshSyncRequest Create(DynamicMeshItem item, bool isDelete)
 	{
 		return new DynamicMeshSyncRequest
@@ -37,7 +37,7 @@ public class DynamicMeshSyncRequest
 		};
 	}
 
-	// Token: 0x06001BB9 RID: 7097 RVA: 0x000A4833 File Offset: 0x000A2A33
+	// Token: 0x06001BD6 RID: 7126 RVA: 0x000A4F73 File Offset: 0x000A3173
 	public static DynamicMeshSyncRequest Create(DynamicMeshItem item, bool isDelete, int clientId)
 	{
 		return new DynamicMeshSyncRequest
@@ -48,7 +48,7 @@ public class DynamicMeshSyncRequest
 		};
 	}
 
-	// Token: 0x06001BBA RID: 7098 RVA: 0x000A484F File Offset: 0x000A2A4F
+	// Token: 0x06001BD7 RID: 7127 RVA: 0x000A4F8F File Offset: 0x000A318F
 	public bool TryGetData()
 	{
 		if (DynamicMeshThread.ChunkDataQueue.CollectBytes(this.Item.Key, out this.Data, out this.Length))
@@ -59,30 +59,30 @@ public class DynamicMeshSyncRequest
 		return false;
 	}
 
-	// Token: 0x040011DD RID: 4573
+	// Token: 0x040011F2 RID: 4594
 	public DynamicMeshItem Item;
 
-	// Token: 0x040011DE RID: 4574
+	// Token: 0x040011F3 RID: 4595
 	public bool IsDelete;
 
-	// Token: 0x040011DF RID: 4575
+	// Token: 0x040011F4 RID: 4596
 	public bool SyncComplete;
 
-	// Token: 0x040011E0 RID: 4576
+	// Token: 0x040011F5 RID: 4597
 	public byte[] Data;
 
-	// Token: 0x040011E1 RID: 4577
+	// Token: 0x040011F6 RID: 4598
 	public bool HasData;
 
-	// Token: 0x040011E2 RID: 4578
+	// Token: 0x040011F7 RID: 4599
 	public int Length;
 
-	// Token: 0x040011E3 RID: 4579
+	// Token: 0x040011F8 RID: 4600
 	public int ClientId = -1;
 
-	// Token: 0x040011E4 RID: 4580
+	// Token: 0x040011F9 RID: 4601
 	public DateTime? Initiated;
 
-	// Token: 0x040011E5 RID: 4581
+	// Token: 0x040011FA RID: 4602
 	public DateTime Created;
 }

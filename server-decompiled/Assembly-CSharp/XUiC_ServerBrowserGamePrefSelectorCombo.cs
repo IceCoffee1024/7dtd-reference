@@ -3,37 +3,37 @@ using System.Globalization;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DC4 RID: 3524
+// Token: 0x02000DD8 RID: 3544
 [Preserve]
 public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBrowserFilterControl
 {
-	// Token: 0x17000BD3 RID: 3027
-	// (get) Token: 0x06006BC3 RID: 27587 RVA: 0x002A0B26 File Offset: 0x0029ED26
-	// (set) Token: 0x06006BC4 RID: 27588 RVA: 0x002A0B2E File Offset: 0x0029ED2E
+	// Token: 0x17000BEB RID: 3051
+	// (get) Token: 0x06006C5E RID: 27742 RVA: 0x002A3CA6 File Offset: 0x002A1EA6
+	// (set) Token: 0x06006C5F RID: 27743 RVA: 0x002A3CAE File Offset: 0x002A1EAE
 	[XuiXmlAttribute("allow_custom", false)]
 	public bool AllowCustom
 	{
-		[PublicizedFrom(EAccessModifier.Private)]
+		[PublicizedFrom(EAccessModifier.Protected)]
 		get;
-		[PublicizedFrom(EAccessModifier.Private)]
+		[PublicizedFrom(EAccessModifier.Protected)]
 		set;
 	} = true;
 
-	// Token: 0x17000BD4 RID: 3028
-	// (get) Token: 0x06006BC5 RID: 27589 RVA: 0x002A0B37 File Offset: 0x0029ED37
-	// (set) Token: 0x06006BC6 RID: 27590 RVA: 0x002A0B3F File Offset: 0x0029ED3F
+	// Token: 0x17000BEC RID: 3052
+	// (get) Token: 0x06006C60 RID: 27744 RVA: 0x002A3CB7 File Offset: 0x002A1EB7
+	// (set) Token: 0x06006C61 RID: 27745 RVA: 0x002A3CBF File Offset: 0x002A1EBF
 	[XuiXmlAttribute("force_custom", false)]
 	public bool ForceCustom
 	{
-		[PublicizedFrom(EAccessModifier.Private)]
+		[PublicizedFrom(EAccessModifier.Protected)]
 		get;
-		[PublicizedFrom(EAccessModifier.Private)]
+		[PublicizedFrom(EAccessModifier.Protected)]
 		set;
 	}
 
-	// Token: 0x17000BD5 RID: 3029
-	// (get) Token: 0x06006BC7 RID: 27591 RVA: 0x002A0B48 File Offset: 0x0029ED48
-	// (set) Token: 0x06006BC8 RID: 27592 RVA: 0x002A0B50 File Offset: 0x0029ED50
+	// Token: 0x17000BED RID: 3053
+	// (get) Token: 0x06006C62 RID: 27746 RVA: 0x002A3CC8 File Offset: 0x002A1EC8
+	// (set) Token: 0x06006C63 RID: 27747 RVA: 0x002A3CD0 File Offset: 0x002A1ED0
 	[XuiXmlAttribute("default", false)]
 	public string DefaultValue
 	{
@@ -43,9 +43,9 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		set;
 	}
 
-	// Token: 0x17000BD6 RID: 3030
-	// (get) Token: 0x06006BC9 RID: 27593 RVA: 0x002A0B59 File Offset: 0x0029ED59
-	// (set) Token: 0x06006BCA RID: 27594 RVA: 0x002A0B61 File Offset: 0x0029ED61
+	// Token: 0x17000BEE RID: 3054
+	// (get) Token: 0x06006C64 RID: 27748 RVA: 0x002A3CD9 File Offset: 0x002A1ED9
+	// (set) Token: 0x06006C65 RID: 27749 RVA: 0x002A3CE1 File Offset: 0x002A1EE1
 	[XuiXmlAttribute("default_min", false)]
 	public string DefaultMin
 	{
@@ -55,9 +55,9 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		set;
 	}
 
-	// Token: 0x17000BD7 RID: 3031
-	// (get) Token: 0x06006BCB RID: 27595 RVA: 0x002A0B6A File Offset: 0x0029ED6A
-	// (set) Token: 0x06006BCC RID: 27596 RVA: 0x002A0B72 File Offset: 0x0029ED72
+	// Token: 0x17000BEF RID: 3055
+	// (get) Token: 0x06006C66 RID: 27750 RVA: 0x002A3CEA File Offset: 0x002A1EEA
+	// (set) Token: 0x06006C67 RID: 27751 RVA: 0x002A3CF2 File Offset: 0x002A1EF2
 	[XuiXmlAttribute("default_max", false)]
 	public string DefaultMax
 	{
@@ -67,9 +67,9 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		set;
 	}
 
-	// Token: 0x17000BD8 RID: 3032
-	// (get) Token: 0x06006BCD RID: 27597 RVA: 0x002A0B7B File Offset: 0x0029ED7B
-	// (set) Token: 0x06006BCE RID: 27598 RVA: 0x002A0B83 File Offset: 0x0029ED83
+	// Token: 0x17000BF0 RID: 3056
+	// (get) Token: 0x06006C68 RID: 27752 RVA: 0x002A3CFB File Offset: 0x002A1EFB
+	// (set) Token: 0x06006C69 RID: 27753 RVA: 0x002A3D03 File Offset: 0x002A1F03
 	[XuiXmlAttribute("default_string", false)]
 	public string DefaultString
 	{
@@ -79,8 +79,8 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		set;
 	}
 
-	// Token: 0x17000BD9 RID: 3033
-	// (get) Token: 0x06006BCF RID: 27599 RVA: 0x002A0B8C File Offset: 0x0029ED8C
+	// Token: 0x17000BF1 RID: 3057
+	// (get) Token: 0x06006C6A RID: 27754 RVA: 0x002A3D0C File Offset: 0x002A1F0C
 	public bool IsCustomRange
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -90,35 +90,35 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		}
 	}
 
-	// Token: 0x17000BDA RID: 3034
-	// (get) Token: 0x06006BD0 RID: 27600 RVA: 0x002A0BAB File Offset: 0x0029EDAB
-	// (set) Token: 0x06006BD1 RID: 27601 RVA: 0x002A0BB3 File Offset: 0x0029EDB3
+	// Token: 0x17000BF2 RID: 3058
+	// (get) Token: 0x06006C6B RID: 27755 RVA: 0x002A3D2B File Offset: 0x002A1F2B
+	// (set) Token: 0x06006C6C RID: 27756 RVA: 0x002A3D33 File Offset: 0x002A1F33
 	public GameInfoBool GameInfoBool
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	} = (GameInfoBool)(-1);
 
-	// Token: 0x17000BDB RID: 3035
-	// (get) Token: 0x06006BD2 RID: 27602 RVA: 0x002A0BBC File Offset: 0x0029EDBC
-	// (set) Token: 0x06006BD3 RID: 27603 RVA: 0x002A0BC4 File Offset: 0x0029EDC4
+	// Token: 0x17000BF3 RID: 3059
+	// (get) Token: 0x06006C6D RID: 27757 RVA: 0x002A3D3C File Offset: 0x002A1F3C
+	// (set) Token: 0x06006C6E RID: 27758 RVA: 0x002A3D44 File Offset: 0x002A1F44
 	public GameInfoInt GameInfoInt
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	} = (GameInfoInt)(-1);
 
-	// Token: 0x17000BDC RID: 3036
-	// (get) Token: 0x06006BD4 RID: 27604 RVA: 0x002A0BCD File Offset: 0x0029EDCD
-	// (set) Token: 0x06006BD5 RID: 27605 RVA: 0x002A0BD5 File Offset: 0x0029EDD5
+	// Token: 0x17000BF4 RID: 3060
+	// (get) Token: 0x06006C6F RID: 27759 RVA: 0x002A3D4D File Offset: 0x002A1F4D
+	// (set) Token: 0x06006C70 RID: 27760 RVA: 0x002A3D55 File Offset: 0x002A1F55
 	public GameInfoString GameInfoString
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	} = (GameInfoString)(-1);
 
-	// Token: 0x17000BDD RID: 3037
-	// (set) Token: 0x06006BD6 RID: 27606 RVA: 0x002A0BE0 File Offset: 0x0029EDE0
+	// Token: 0x17000BF5 RID: 3061
+	// (set) Token: 0x06006C71 RID: 27761 RVA: 0x002A3D60 File Offset: 0x002A1F60
 	public int? ValueRangeMin
 	{
 		set
@@ -134,8 +134,8 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		}
 	}
 
-	// Token: 0x17000BDE RID: 3038
-	// (set) Token: 0x06006BD7 RID: 27607 RVA: 0x002A0C28 File Offset: 0x0029EE28
+	// Token: 0x17000BF6 RID: 3062
+	// (set) Token: 0x06006C72 RID: 27762 RVA: 0x002A3DA8 File Offset: 0x002A1FA8
 	public int? ValueRangeMax
 	{
 		set
@@ -151,8 +151,8 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		}
 	}
 
-	// Token: 0x17000BDF RID: 3039
-	// (set) Token: 0x06006BD8 RID: 27608 RVA: 0x002A0C6F File Offset: 0x0029EE6F
+	// Token: 0x17000BF7 RID: 3063
+	// (set) Token: 0x06006C73 RID: 27763 RVA: 0x002A3DEF File Offset: 0x002A1FEF
 	public Func<int, int> CustomValuePreFilterModifierFunc
 	{
 		set
@@ -161,8 +161,8 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		}
 	}
 
-	// Token: 0x17000BE0 RID: 3040
-	// (set) Token: 0x06006BD9 RID: 27609 RVA: 0x002A0C78 File Offset: 0x0029EE78
+	// Token: 0x17000BF8 RID: 3064
+	// (set) Token: 0x06006C74 RID: 27764 RVA: 0x002A3DF8 File Offset: 0x002A1FF8
 	public Func<int, int> ValuePreDisplayModifierFunc
 	{
 		set
@@ -175,9 +175,9 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		}
 	}
 
-	// Token: 0x17000BE1 RID: 3041
-	// (get) Token: 0x06006BDA RID: 27610 RVA: 0x002A0C8F File Offset: 0x0029EE8F
-	// (set) Token: 0x06006BDB RID: 27611 RVA: 0x002A0C97 File Offset: 0x0029EE97
+	// Token: 0x17000BF9 RID: 3065
+	// (get) Token: 0x06006C75 RID: 27765 RVA: 0x002A3E0F File Offset: 0x002A200F
+	// (set) Token: 0x06006C76 RID: 27766 RVA: 0x002A3E17 File Offset: 0x002A2017
 	public bool Enabled
 	{
 		get
@@ -194,8 +194,8 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		}
 	}
 
-	// Token: 0x17000BE2 RID: 3042
-	// (get) Token: 0x06006BDC RID: 27612 RVA: 0x002A0CB5 File Offset: 0x0029EEB5
+	// Token: 0x17000BFA RID: 3066
+	// (get) Token: 0x06006C77 RID: 27767 RVA: 0x002A3E35 File Offset: 0x002A2035
 	[XuiXmlBinding("iscustomrange")]
 	public bool BindingIsCustomRange
 	{
@@ -206,8 +206,8 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		}
 	}
 
-	// Token: 0x17000BE3 RID: 3043
-	// (get) Token: 0x06006BDD RID: 27613 RVA: 0x002A0CD2 File Offset: 0x0029EED2
+	// Token: 0x17000BFB RID: 3067
+	// (get) Token: 0x06006C78 RID: 27768 RVA: 0x002A3E52 File Offset: 0x002A2052
 	[XuiXmlBinding("iscustomstring")]
 	public bool IsCustomString
 	{
@@ -218,8 +218,8 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		}
 	}
 
-	// Token: 0x17000BE4 RID: 3044
-	// (get) Token: 0x06006BDE RID: 27614 RVA: 0x002A0CEF File Offset: 0x0029EEEF
+	// Token: 0x17000BFC RID: 3068
+	// (get) Token: 0x06006C79 RID: 27769 RVA: 0x002A3E6F File Offset: 0x002A206F
 	[XuiXmlBinding("usecombo")]
 	public bool UseCombo
 	{
@@ -230,7 +230,7 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		}
 	}
 
-	// Token: 0x06006BDF RID: 27615 RVA: 0x002A0CFC File Offset: 0x0029EEFC
+	// Token: 0x06006C7A RID: 27770 RVA: 0x002A3E7C File Offset: 0x002A207C
 	public override void Init()
 	{
 		base.Init();
@@ -268,7 +268,7 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		this.setupOptions();
 	}
 
-	// Token: 0x06006BE0 RID: 27616 RVA: 0x002A0EB7 File Offset: 0x0029F0B7
+	// Token: 0x06006C7B RID: 27771 RVA: 0x002A4037 File Offset: 0x002A2237
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -279,7 +279,7 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006BE1 RID: 27617 RVA: 0x002A0EDC File Offset: 0x0029F0DC
+	// Token: 0x06006C7C RID: 27772 RVA: 0x002A405C File Offset: 0x002A225C
 	[XuiXmlAttribute("values", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeValues(string _value)
@@ -295,7 +295,7 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		}
 	}
 
-	// Token: 0x06006BE2 RID: 27618 RVA: 0x002A0F2C File Offset: 0x0029F12C
+	// Token: 0x06006C7D RID: 27773 RVA: 0x002A40AC File Offset: 0x002A22AC
 	[XuiXmlAttribute("display_names", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeDisplayNames(string _value)
@@ -311,7 +311,7 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		}
 	}
 
-	// Token: 0x06006BE3 RID: 27619 RVA: 0x002A0F7A File Offset: 0x0029F17A
+	// Token: 0x06006C7E RID: 27774 RVA: 0x002A40FA File Offset: 0x002A22FA
 	[XuiXmlAttribute("value_localization_prefix", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeValueLocalizationPrefix(string _value)
@@ -322,7 +322,7 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		}
 	}
 
-	// Token: 0x06006BE4 RID: 27620 RVA: 0x002A0F94 File Offset: 0x0029F194
+	// Token: 0x06006C7F RID: 27775 RVA: 0x002A4114 File Offset: 0x002A2314
 	[XuiXmlAttribute("allow_any", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setAllowAny(bool _value)
@@ -358,7 +358,7 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		this.controlCombo.SelectedIndex = this.controlCombo.SelectedIndex;
 	}
 
-	// Token: 0x06006BE5 RID: 27621 RVA: 0x00296000 File Offset: 0x00294200
+	// Token: 0x06006C80 RID: 27776 RVA: 0x00299154 File Offset: 0x00297354
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -369,8 +369,8 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		}
 	}
 
-	// Token: 0x06006BE6 RID: 27622 RVA: 0x002A1090 File Offset: 0x0029F290
-	[PublicizedFrom(EAccessModifier.Private)]
+	// Token: 0x06006C81 RID: 27777 RVA: 0x002A4210 File Offset: 0x002A2410
+	[PublicizedFrom(EAccessModifier.Protected)]
 	public string getGameInfoName()
 	{
 		switch (this.valueType)
@@ -385,9 +385,9 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		return null;
 	}
 
-	// Token: 0x06006BE7 RID: 27623 RVA: 0x002A10EC File Offset: 0x0029F2EC
-	[PublicizedFrom(EAccessModifier.Private)]
-	public void setupOptions()
+	// Token: 0x06006C82 RID: 27778 RVA: 0x002A426C File Offset: 0x002A246C
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public virtual void setupOptions()
 	{
 		this.controlCombo.Elements.Clear();
 		this.controlCombo.Elements.Add(new XUiC_ServerBrowserGamePrefSelectorCombo.GameOptionValue(XUiC_ServerBrowserGamePrefSelectorCombo.EOptionValueType.Custom, ""));
@@ -548,7 +548,7 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		this.setDefaultValues();
 	}
 
-	// Token: 0x06006BE8 RID: 27624 RVA: 0x002A15E2 File Offset: 0x0029F7E2
+	// Token: 0x06006C83 RID: 27779 RVA: 0x002A4762 File Offset: 0x002A2962
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ControlCombo_OnValueChanged(XUiController _sender, XUiC_ServerBrowserGamePrefSelectorCombo.GameOptionValue _oldValue, XUiC_ServerBrowserGamePrefSelectorCombo.GameOptionValue _newValue)
 	{
@@ -561,7 +561,7 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		onValueChanged(this);
 	}
 
-	// Token: 0x06006BE9 RID: 27625 RVA: 0x002A15FC File Offset: 0x0029F7FC
+	// Token: 0x06006C84 RID: 27780 RVA: 0x002A477C File Offset: 0x002A297C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public unsafe void ControlValue_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -601,7 +601,7 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		onValueChanged(this);
 	}
 
-	// Token: 0x06006BEA RID: 27626 RVA: 0x002A1720 File Offset: 0x0029F920
+	// Token: 0x06006C85 RID: 27781 RVA: 0x002A48A0 File Offset: 0x002A2AA0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ControlText_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -613,8 +613,8 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		onValueChanged(this);
 	}
 
-	// Token: 0x06006BEB RID: 27627 RVA: 0x002A1734 File Offset: 0x0029F934
-	[PublicizedFrom(EAccessModifier.Private)]
+	// Token: 0x06006C86 RID: 27782 RVA: 0x002A48B4 File Offset: 0x002A2AB4
+	[PublicizedFrom(EAccessModifier.Protected)]
 	public void setDefaultValues()
 	{
 		if (!this.ForceCustom && this.defaultOptionValue.Type != XUiC_ServerBrowserGamePrefSelectorCombo.EOptionValueType.Null)
@@ -630,7 +630,7 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		this.txtValueString.Text = this.DefaultString ?? "";
 	}
 
-	// Token: 0x06006BEC RID: 27628 RVA: 0x002A17DE File Offset: 0x0029F9DE
+	// Token: 0x06006C87 RID: 27783 RVA: 0x002A495E File Offset: 0x002A2B5E
 	public void Reset()
 	{
 		this.setDefaultValues();
@@ -643,7 +643,7 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		onValueChanged(this);
 	}
 
-	// Token: 0x06006BED RID: 27629 RVA: 0x002A1800 File Offset: 0x0029FA00
+	// Token: 0x06006C88 RID: 27784 RVA: 0x002A4980 File Offset: 0x002A2B80
 	public void SelectEntry(XUiC_ServerBrowserGamePrefSelectorCombo.GameOptionValue _value)
 	{
 		int num = this.controlCombo.Elements.IndexOf(_value);
@@ -659,13 +659,13 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		}
 	}
 
-	// Token: 0x06006BEE RID: 27630 RVA: 0x002A1840 File Offset: 0x0029FA40
+	// Token: 0x06006C89 RID: 27785 RVA: 0x002A49C0 File Offset: 0x002A2BC0
 	public XUiC_ServerBrowserGamePrefSelectorCombo.GameOptionValue GetSelection()
 	{
 		return this.controlCombo.Value;
 	}
 
-	// Token: 0x06006BEF RID: 27631 RVA: 0x002A1850 File Offset: 0x0029FA50
+	// Token: 0x06006C8A RID: 27786 RVA: 0x002A49D0 File Offset: 0x002A2BD0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ServersList.UiServerFilter getValueRangeFilter(string _filterName, int? _filterMin, int? _filterMax)
 	{
@@ -760,7 +760,7 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		return new XUiC_ServersList.UiServerFilter(_filterName, XUiC_ServersList.EnumServerLists.Regular, func, eserverFilterType, _filterMin.GetValueOrDefault(), _filterMax.GetValueOrDefault(), false, null);
 	}
 
-	// Token: 0x06006BF0 RID: 27632 RVA: 0x002A19D4 File Offset: 0x0029FBD4
+	// Token: 0x06006C8B RID: 27787 RVA: 0x002A4B54 File Offset: 0x002A2D54
 	public XUiC_ServersList.UiServerFilter GetFilter()
 	{
 		string gameInfoName = this.getGameInfoName();
@@ -827,88 +827,88 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 		}
 	}
 
-	// Token: 0x04005211 RID: 21009
-	[PublicizedFrom(EAccessModifier.Private)]
+	// Token: 0x040052B3 RID: 21171
+	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_ComboBoxList<XUiC_ServerBrowserGamePrefSelectorCombo.GameOptionValue> controlCombo;
 
-	// Token: 0x04005212 RID: 21010
+	// Token: 0x040052B4 RID: 21172
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtValueMin;
 
-	// Token: 0x04005213 RID: 21011
+	// Token: 0x040052B5 RID: 21173
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtValueMax;
 
-	// Token: 0x04005214 RID: 21012
+	// Token: 0x040052B6 RID: 21174
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtValueString;
 
-	// Token: 0x04005215 RID: 21013
-	[PublicizedFrom(EAccessModifier.Private)]
+	// Token: 0x040052B7 RID: 21175
+	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool allowAny = true;
 
-	// Token: 0x04005219 RID: 21017
-	[PublicizedFrom(EAccessModifier.Private)]
+	// Token: 0x040052BB RID: 21179
+	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_ServerBrowserGamePrefSelectorCombo.GameOptionValue defaultOptionValue;
 
-	// Token: 0x0400521D RID: 21021
+	// Token: 0x040052BF RID: 21183
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string[] valuesFromXml;
 
-	// Token: 0x0400521E RID: 21022
+	// Token: 0x040052C0 RID: 21184
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string[] namesFromXml;
 
-	// Token: 0x0400521F RID: 21023
+	// Token: 0x040052C1 RID: 21185
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string valueLocalizationPrefixFromXml;
 
-	// Token: 0x04005220 RID: 21024
+	// Token: 0x040052C2 RID: 21186
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int? valueRangeMin;
 
-	// Token: 0x04005221 RID: 21025
+	// Token: 0x040052C3 RID: 21187
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int? valueRangeMax;
 
-	// Token: 0x04005222 RID: 21026
-	[PublicizedFrom(EAccessModifier.Private)]
+	// Token: 0x040052C4 RID: 21188
+	[PublicizedFrom(EAccessModifier.Protected)]
 	public GamePrefs.EnumType valueType;
 
-	// Token: 0x04005223 RID: 21027
+	// Token: 0x040052C5 RID: 21189
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Func<int, int> customValuePreFilterModifierFunc;
 
-	// Token: 0x04005224 RID: 21028
+	// Token: 0x040052C6 RID: 21190
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Func<int, int> valuePreDisplayModifierFunc;
 
-	// Token: 0x04005225 RID: 21029
+	// Token: 0x040052C7 RID: 21191
 	public Action<IServerBrowserFilterControl> OnValueChanged;
 
-	// Token: 0x04005229 RID: 21033
+	// Token: 0x040052CB RID: 21195
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool enabled = true;
 
-	// Token: 0x02000DC5 RID: 3525
+	// Token: 0x02000DD9 RID: 3545
 	public enum EOptionValueType
 	{
-		// Token: 0x0400522B RID: 21035
+		// Token: 0x040052CD RID: 21197
 		Null,
-		// Token: 0x0400522C RID: 21036
+		// Token: 0x040052CE RID: 21198
 		Custom,
-		// Token: 0x0400522D RID: 21037
+		// Token: 0x040052CF RID: 21199
 		Any,
-		// Token: 0x0400522E RID: 21038
+		// Token: 0x040052D0 RID: 21200
 		Int,
-		// Token: 0x0400522F RID: 21039
+		// Token: 0x040052D1 RID: 21201
 		String
 	}
 
-	// Token: 0x02000DC6 RID: 3526
+	// Token: 0x02000DDA RID: 3546
 	public readonly struct GameOptionValue : IEquatable<XUiC_ServerBrowserGamePrefSelectorCombo.GameOptionValue>
 	{
-		// Token: 0x06006BF2 RID: 27634 RVA: 0x002A1C6C File Offset: 0x0029FE6C
+		// Token: 0x06006C8D RID: 27789 RVA: 0x002A4DEC File Offset: 0x002A2FEC
 		public GameOptionValue(XUiC_ServerBrowserGamePrefSelectorCombo.EOptionValueType _type, string _displayName)
 		{
 			this.Type = _type;
@@ -917,7 +917,7 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 			this.displayName = _displayName;
 		}
 
-		// Token: 0x06006BF3 RID: 27635 RVA: 0x002A1C8A File Offset: 0x0029FE8A
+		// Token: 0x06006C8E RID: 27790 RVA: 0x002A4E0A File Offset: 0x002A300A
 		public GameOptionValue(int _intValue, string _displayName)
 		{
 			this.Type = XUiC_ServerBrowserGamePrefSelectorCombo.EOptionValueType.Int;
@@ -926,7 +926,7 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 			this.displayName = _displayName;
 		}
 
-		// Token: 0x06006BF4 RID: 27636 RVA: 0x002A1CA8 File Offset: 0x0029FEA8
+		// Token: 0x06006C8F RID: 27791 RVA: 0x002A4E28 File Offset: 0x002A3028
 		public GameOptionValue(string _stringValue, string _displayName)
 		{
 			this.Type = XUiC_ServerBrowserGamePrefSelectorCombo.EOptionValueType.String;
@@ -935,13 +935,13 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 			this.displayName = _displayName;
 		}
 
-		// Token: 0x06006BF5 RID: 27637 RVA: 0x002A1CC6 File Offset: 0x0029FEC6
+		// Token: 0x06006C90 RID: 27792 RVA: 0x002A4E46 File Offset: 0x002A3046
 		public override string ToString()
 		{
 			return this.displayName;
 		}
 
-		// Token: 0x06006BF6 RID: 27638 RVA: 0x002A1CD0 File Offset: 0x0029FED0
+		// Token: 0x06006C91 RID: 27793 RVA: 0x002A4E50 File Offset: 0x002A3050
 		public bool Equals(XUiC_ServerBrowserGamePrefSelectorCombo.GameOptionValue _other)
 		{
 			if (this.Type != _other.Type)
@@ -962,7 +962,7 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 			}
 		}
 
-		// Token: 0x06006BF7 RID: 27639 RVA: 0x002A1D38 File Offset: 0x0029FF38
+		// Token: 0x06006C92 RID: 27794 RVA: 0x002A4EB8 File Offset: 0x002A30B8
 		public override bool Equals(object _obj)
 		{
 			if (_obj is XUiC_ServerBrowserGamePrefSelectorCombo.GameOptionValue)
@@ -973,22 +973,22 @@ public class XUiC_ServerBrowserGamePrefSelectorCombo : XUiController, IServerBro
 			return false;
 		}
 
-		// Token: 0x06006BF8 RID: 27640 RVA: 0x002A1D60 File Offset: 0x0029FF60
+		// Token: 0x06006C93 RID: 27795 RVA: 0x002A4EE0 File Offset: 0x002A30E0
 		public override int GetHashCode()
 		{
 			return (int)((((((this.Type * (XUiC_ServerBrowserGamePrefSelectorCombo.EOptionValueType)397) ^ (XUiC_ServerBrowserGamePrefSelectorCombo.EOptionValueType)this.IntValue) * (XUiC_ServerBrowserGamePrefSelectorCombo.EOptionValueType)397) ^ (XUiC_ServerBrowserGamePrefSelectorCombo.EOptionValueType)((this.StringValue != null) ? this.StringValue.GetHashCode() : 0)) * (XUiC_ServerBrowserGamePrefSelectorCombo.EOptionValueType)397) ^ (XUiC_ServerBrowserGamePrefSelectorCombo.EOptionValueType)((this.displayName != null) ? this.displayName.GetHashCode() : 0));
 		}
 
-		// Token: 0x04005230 RID: 21040
+		// Token: 0x040052D2 RID: 21202
 		public readonly XUiC_ServerBrowserGamePrefSelectorCombo.EOptionValueType Type;
 
-		// Token: 0x04005231 RID: 21041
+		// Token: 0x040052D3 RID: 21203
 		public readonly int IntValue;
 
-		// Token: 0x04005232 RID: 21042
+		// Token: 0x040052D4 RID: 21204
 		public readonly string StringValue;
 
-		// Token: 0x04005233 RID: 21043
+		// Token: 0x040052D5 RID: 21205
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string displayName;
 	}

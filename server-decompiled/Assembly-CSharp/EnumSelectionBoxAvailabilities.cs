@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x02000A56 RID: 2646
+// Token: 0x02000A67 RID: 2663
 public enum EnumSelectionBoxAvailabilities
 {
-	// Token: 0x04003D80 RID: 15744
+	// Token: 0x04003E11 RID: 15889
 	CanShowProperties,
-	// Token: 0x04003D81 RID: 15745
+	// Token: 0x04003E12 RID: 15890
 	CanResize,
-	// Token: 0x04003D82 RID: 15746
+	// Token: 0x04003E13 RID: 15891
 	CanMirror
 }

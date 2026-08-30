@@ -2,32 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200027A RID: 634
+// Token: 0x0200027E RID: 638
 [Preserve]
 public class ConsoleCmdSDCS : ConsoleCmdAbstract
 {
-	// Token: 0x060012C2 RID: 4802 RVA: 0x000747EF File Offset: 0x000729EF
+	// Token: 0x060012D4 RID: 4820 RVA: 0x00074E4B File Offset: 0x0007304B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Change a player's sex, race, and variant:\n  Usage:\n    sdcs                            : Show current archetype values\n    sdcs <sex|race|variant> <value> : Set the specified value\n  Examples :\n    sdcs sex <male|female>\n    sdcs race <white|black|asian|native>\n    sdcs variant <1|2|3|4>";
 	}
 
-	// Token: 0x060012C3 RID: 4803 RVA: 0x000747F6 File Offset: 0x000729F6
+	// Token: 0x060012D5 RID: 4821 RVA: 0x00074E52 File Offset: 0x00073052
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "sdcs" };
 	}
 
-	// Token: 0x060012C4 RID: 4804 RVA: 0x00074806 File Offset: 0x00072A06
+	// Token: 0x060012D6 RID: 4822 RVA: 0x00074E62 File Offset: 0x00073062
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Control entity sex, race, and variant";
 	}
 
-	// Token: 0x060012C5 RID: 4805 RVA: 0x00074810 File Offset: 0x00072A10
+	// Token: 0x060012D7 RID: 4823 RVA: 0x00074E6C File Offset: 0x0007306C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (GameManager.Instance.World.GetLocalPlayers().Count == 0)
@@ -112,39 +112,39 @@ public class ConsoleCmdSDCS : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0200027B RID: 635
+	// Token: 0x0200027F RID: 639
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum cTypes
 	{
-		// Token: 0x04000D42 RID: 3394
+		// Token: 0x04000D53 RID: 3411
 		Sex,
-		// Token: 0x04000D43 RID: 3395
+		// Token: 0x04000D54 RID: 3412
 		Race,
-		// Token: 0x04000D44 RID: 3396
+		// Token: 0x04000D55 RID: 3413
 		Variant
 	}
 
-	// Token: 0x0200027C RID: 636
+	// Token: 0x02000280 RID: 640
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum rTypes
 	{
-		// Token: 0x04000D46 RID: 3398
+		// Token: 0x04000D57 RID: 3415
 		White,
-		// Token: 0x04000D47 RID: 3399
+		// Token: 0x04000D58 RID: 3416
 		Black,
-		// Token: 0x04000D48 RID: 3400
+		// Token: 0x04000D59 RID: 3417
 		Asian,
-		// Token: 0x04000D49 RID: 3401
+		// Token: 0x04000D5A RID: 3418
 		Native
 	}
 
-	// Token: 0x0200027D RID: 637
+	// Token: 0x02000281 RID: 641
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum sTypes
 	{
-		// Token: 0x04000D4B RID: 3403
+		// Token: 0x04000D5C RID: 3420
 		Male,
-		// Token: 0x04000D4C RID: 3404
+		// Token: 0x04000D5D RID: 3421
 		Female
 	}
 }

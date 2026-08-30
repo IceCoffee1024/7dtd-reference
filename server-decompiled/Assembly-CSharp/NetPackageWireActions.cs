@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200085F RID: 2143
+// Token: 0x0200086B RID: 2155
 [Preserve]
 public class NetPackageWireActions : NetPackage
 {
-	// Token: 0x06003E8D RID: 16013 RVA: 0x0018A05F File Offset: 0x0018825F
+	// Token: 0x06003EF2 RID: 16114 RVA: 0x0018C12F File Offset: 0x0018A32F
 	public NetPackageWireActions Setup(NetPackageWireActions.WireActions _operation, Vector3i _tileEntityPosition, List<Vector3i> _wireChildren, int wiringEntity = -1)
 	{
 		this.currentOperation = _operation;
@@ -15,7 +15,7 @@ public class NetPackageWireActions : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003E8E RID: 16014 RVA: 0x0018A078 File Offset: 0x00188278
+	// Token: 0x06003EF3 RID: 16115 RVA: 0x0018C148 File Offset: 0x0018A348
 	public override void read(PooledBinaryReader _br)
 	{
 		this.currentOperation = (NetPackageWireActions.WireActions)_br.ReadByte();
@@ -32,7 +32,7 @@ public class NetPackageWireActions : NetPackage
 		}
 	}
 
-	// Token: 0x06003E8F RID: 16015 RVA: 0x0018A0E4 File Offset: 0x001882E4
+	// Token: 0x06003EF4 RID: 16116 RVA: 0x0018C1B4 File Offset: 0x0018A3B4
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -49,7 +49,7 @@ public class NetPackageWireActions : NetPackage
 		}
 	}
 
-	// Token: 0x06003E90 RID: 16016 RVA: 0x0018A160 File Offset: 0x00188360
+	// Token: 0x06003EF5 RID: 16117 RVA: 0x0018C230 File Offset: 0x0018A430
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -132,7 +132,7 @@ public class NetPackageWireActions : NetPackage
 		}
 	}
 
-	// Token: 0x06003E91 RID: 16017 RVA: 0x0018A374 File Offset: 0x00188574
+	// Token: 0x06003EF6 RID: 16118 RVA: 0x0018C444 File Offset: 0x0018A644
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileEntityPowered GetPoweredTileEntity(World _world, Vector3i tileEntityPosition)
 	{
@@ -157,36 +157,36 @@ public class NetPackageWireActions : NetPackage
 		return tileEntityPowered;
 	}
 
-	// Token: 0x06003E92 RID: 16018 RVA: 0x0017DEA0 File Offset: 0x0017C0A0
+	// Token: 0x06003EF7 RID: 16119 RVA: 0x00180278 File Offset: 0x0017E478
 	public override int GetLength()
 	{
 		return 12;
 	}
 
-	// Token: 0x0400324C RID: 12876
+	// Token: 0x040032CD RID: 13005
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i tileEntityPosition;
 
-	// Token: 0x0400324D RID: 12877
+	// Token: 0x040032CE RID: 13006
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int wiringEntityID;
 
-	// Token: 0x0400324E RID: 12878
+	// Token: 0x040032CF RID: 13007
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NetPackageWireActions.WireActions currentOperation;
 
-	// Token: 0x0400324F RID: 12879
+	// Token: 0x040032D0 RID: 13008
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Vector3i> wireChildren = new List<Vector3i>();
 
-	// Token: 0x02000860 RID: 2144
+	// Token: 0x0200086C RID: 2156
 	public enum WireActions
 	{
-		// Token: 0x04003251 RID: 12881
+		// Token: 0x040032D2 RID: 13010
 		SetParent,
-		// Token: 0x04003252 RID: 12882
+		// Token: 0x040032D3 RID: 13011
 		RemoveParent,
-		// Token: 0x04003253 RID: 12883
+		// Token: 0x040032D4 RID: 13012
 		SendWires
 	}
 }

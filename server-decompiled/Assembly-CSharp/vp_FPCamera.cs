@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020015D8 RID: 5592
+// Token: 0x020015F3 RID: 5619
 [RequireComponent(typeof(Camera))]
 [RequireComponent(typeof(AudioListener))]
 [Preserve]
 public class vp_FPCamera : vp_Component
 {
-	// Token: 0x17001407 RID: 5127
-	// (get) Token: 0x0600AE5A RID: 44634 RVA: 0x004104E9 File Offset: 0x0040E6E9
-	// (set) Token: 0x0600AE5B RID: 44635 RVA: 0x004104F1 File Offset: 0x0040E6F1
+	// Token: 0x17001440 RID: 5184
+	// (get) Token: 0x0600AF57 RID: 44887 RVA: 0x00415829 File Offset: 0x00413A29
+	// (set) Token: 0x0600AF58 RID: 44888 RVA: 0x00415831 File Offset: 0x00413A31
 	public bool DrawCameraCollisionDebugLine
 	{
 		get
@@ -24,8 +24,8 @@ public class vp_FPCamera : vp_Component
 		}
 	}
 
-	// Token: 0x17001408 RID: 5128
-	// (get) Token: 0x0600AE5C RID: 44636 RVA: 0x004104FA File Offset: 0x0040E6FA
+	// Token: 0x17001441 RID: 5185
+	// (get) Token: 0x0600AF59 RID: 44889 RVA: 0x0041583A File Offset: 0x00413A3A
 	public Vector3 CollisionVector
 	{
 		get
@@ -34,17 +34,17 @@ public class vp_FPCamera : vp_Component
 		}
 	}
 
-	// Token: 0x17001409 RID: 5129
-	// (get) Token: 0x0600AE5D RID: 44637 RVA: 0x00410502 File Offset: 0x0040E702
-	// (set) Token: 0x0600AE5E RID: 44638 RVA: 0x0041050A File Offset: 0x0040E70A
+	// Token: 0x17001442 RID: 5186
+	// (get) Token: 0x0600AF5A RID: 44890 RVA: 0x00415842 File Offset: 0x00413A42
+	// (set) Token: 0x0600AF5B RID: 44891 RVA: 0x0041584A File Offset: 0x00413A4A
 	public bool HasOverheadSpace
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x1700140A RID: 5130
-	// (get) Token: 0x0600AE5F RID: 44639 RVA: 0x00410513 File Offset: 0x0040E713
+	// Token: 0x17001443 RID: 5187
+	// (get) Token: 0x0600AF5C RID: 44892 RVA: 0x00415853 File Offset: 0x00413A53
 	public vp_FPPlayerEventHandler Player
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -58,8 +58,8 @@ public class vp_FPCamera : vp_Component
 		}
 	}
 
-	// Token: 0x1700140B RID: 5131
-	// (get) Token: 0x0600AE60 RID: 44640 RVA: 0x00410548 File Offset: 0x0040E748
+	// Token: 0x17001444 RID: 5188
+	// (get) Token: 0x0600AF5D RID: 44893 RVA: 0x00415888 File Offset: 0x00413A88
 	public Rigidbody FirstRigidBody
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -73,9 +73,9 @@ public class vp_FPCamera : vp_Component
 		}
 	}
 
-	// Token: 0x1700140C RID: 5132
-	// (get) Token: 0x0600AE61 RID: 44641 RVA: 0x00410574 File Offset: 0x0040E774
-	// (set) Token: 0x0600AE62 RID: 44642 RVA: 0x00410587 File Offset: 0x0040E787
+	// Token: 0x17001445 RID: 5189
+	// (get) Token: 0x0600AF5E RID: 44894 RVA: 0x004158B4 File Offset: 0x00413AB4
+	// (set) Token: 0x0600AF5F RID: 44895 RVA: 0x004158C7 File Offset: 0x00413AC7
 	public Vector2 Angle
 	{
 		get
@@ -89,8 +89,8 @@ public class vp_FPCamera : vp_Component
 		}
 	}
 
-	// Token: 0x1700140D RID: 5133
-	// (get) Token: 0x0600AE63 RID: 44643 RVA: 0x004105A1 File Offset: 0x0040E7A1
+	// Token: 0x17001446 RID: 5190
+	// (get) Token: 0x0600AF60 RID: 44896 RVA: 0x004158E1 File Offset: 0x00413AE1
 	public Vector3 Forward
 	{
 		get
@@ -99,9 +99,9 @@ public class vp_FPCamera : vp_Component
 		}
 	}
 
-	// Token: 0x1700140E RID: 5134
-	// (get) Token: 0x0600AE64 RID: 44644 RVA: 0x004105AE File Offset: 0x0040E7AE
-	// (set) Token: 0x0600AE65 RID: 44645 RVA: 0x004105B6 File Offset: 0x0040E7B6
+	// Token: 0x17001447 RID: 5191
+	// (get) Token: 0x0600AF61 RID: 44897 RVA: 0x004158EE File Offset: 0x00413AEE
+	// (set) Token: 0x0600AF62 RID: 44898 RVA: 0x004158F6 File Offset: 0x00413AF6
 	public float Pitch
 	{
 		get
@@ -118,9 +118,9 @@ public class vp_FPCamera : vp_Component
 		}
 	}
 
-	// Token: 0x1700140F RID: 5135
-	// (get) Token: 0x0600AE66 RID: 44646 RVA: 0x004105D0 File Offset: 0x0040E7D0
-	// (set) Token: 0x0600AE67 RID: 44647 RVA: 0x004105D8 File Offset: 0x0040E7D8
+	// Token: 0x17001448 RID: 5192
+	// (get) Token: 0x0600AF63 RID: 44899 RVA: 0x00415910 File Offset: 0x00413B10
+	// (set) Token: 0x0600AF64 RID: 44900 RVA: 0x00415918 File Offset: 0x00413B18
 	public float Yaw
 	{
 		get
@@ -133,9 +133,9 @@ public class vp_FPCamera : vp_Component
 		}
 	}
 
-	// Token: 0x17001410 RID: 5136
-	// (get) Token: 0x0600AE68 RID: 44648 RVA: 0x004105E1 File Offset: 0x0040E7E1
-	// (set) Token: 0x0600AE69 RID: 44649 RVA: 0x004105E9 File Offset: 0x0040E7E9
+	// Token: 0x17001449 RID: 5193
+	// (get) Token: 0x0600AF65 RID: 44901 RVA: 0x00415921 File Offset: 0x00413B21
+	// (set) Token: 0x0600AF66 RID: 44902 RVA: 0x00415929 File Offset: 0x00413B29
 	public virtual bool OnValue_CameraRelativeMovement3P
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -150,8 +150,8 @@ public class vp_FPCamera : vp_Component
 		}
 	}
 
-	// Token: 0x17001411 RID: 5137
-	// (get) Token: 0x0600AE6A RID: 44650 RVA: 0x004105F2 File Offset: 0x0040E7F2
+	// Token: 0x1700144A RID: 5194
+	// (get) Token: 0x0600AF67 RID: 44903 RVA: 0x00415932 File Offset: 0x00413B32
 	public float CurrentCameraDistance
 	{
 		get
@@ -160,18 +160,18 @@ public class vp_FPCamera : vp_Component
 		}
 	}
 
-	// Token: 0x17001412 RID: 5138
-	// (get) Token: 0x0600AE6B RID: 44651 RVA: 0x0041060A File Offset: 0x0040E80A
-	// (set) Token: 0x0600AE6C RID: 44652 RVA: 0x00410612 File Offset: 0x0040E812
+	// Token: 0x1700144B RID: 5195
+	// (get) Token: 0x0600AF68 RID: 44904 RVA: 0x0041594A File Offset: 0x00413B4A
+	// (set) Token: 0x0600AF69 RID: 44905 RVA: 0x00415952 File Offset: 0x00413B52
 	public float CameraCollisionDistance
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17001413 RID: 5139
-	// (get) Token: 0x0600AE6D RID: 44653 RVA: 0x0041061B File Offset: 0x0040E81B
-	// (set) Token: 0x0600AE6E RID: 44654 RVA: 0x00410624 File Offset: 0x0040E824
+	// Token: 0x1700144C RID: 5196
+	// (get) Token: 0x0600AF6A RID: 44906 RVA: 0x0041595B File Offset: 0x00413B5B
+	// (set) Token: 0x0600AF6B RID: 44907 RVA: 0x00415964 File Offset: 0x00413B64
 	public virtual bool OnValue_IsFirstPerson
 	{
 		get
@@ -212,8 +212,8 @@ public class vp_FPCamera : vp_Component
 		}
 	}
 
-	// Token: 0x17001414 RID: 5140
-	// (get) Token: 0x0600AE6F RID: 44655 RVA: 0x0010B91E File Offset: 0x00109B1E
+	// Token: 0x1700144D RID: 5197
+	// (get) Token: 0x0600AF6C RID: 44908 RVA: 0x0010C95A File Offset: 0x0010AB5A
 	public virtual Transform OnValue_CameraTransform
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -223,7 +223,7 @@ public class vp_FPCamera : vp_Component
 		}
 	}
 
-	// Token: 0x0600AE70 RID: 44656 RVA: 0x004107D0 File Offset: 0x0040E9D0
+	// Token: 0x0600AF6D RID: 44909 RVA: 0x00415B10 File Offset: 0x00413D10
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -243,7 +243,7 @@ public class vp_FPCamera : vp_Component
 		this.HasOverheadSpace = true;
 	}
 
-	// Token: 0x0600AE71 RID: 44657 RVA: 0x004108DC File Offset: 0x0040EADC
+	// Token: 0x0600AF6E RID: 44910 RVA: 0x00415C1C File Offset: 0x00413E1C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnEnable()
 	{
@@ -252,7 +252,7 @@ public class vp_FPCamera : vp_Component
 		vp_TargetEvent<float>.Register(base.Parent, "CameraGroundStomp", new Action<float>(this.OnMessage_CameraGroundStomp));
 	}
 
-	// Token: 0x0600AE72 RID: 44658 RVA: 0x0041092C File Offset: 0x0040EB2C
+	// Token: 0x0600AF6F RID: 44911 RVA: 0x00415C6C File Offset: 0x00413E6C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnDisable()
 	{
@@ -261,7 +261,7 @@ public class vp_FPCamera : vp_Component
 		vp_TargetEvent<float>.Unregister(base.Parent, "CameraGroundStomp", new Action<float>(this.OnMessage_CameraGroundStomp));
 	}
 
-	// Token: 0x0600AE73 RID: 44659 RVA: 0x00410979 File Offset: 0x0040EB79
+	// Token: 0x0600AF70 RID: 44912 RVA: 0x00415CB9 File Offset: 0x00413EB9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Start()
 	{
@@ -271,14 +271,14 @@ public class vp_FPCamera : vp_Component
 		this.SnapZoom();
 	}
 
-	// Token: 0x0600AE74 RID: 44660 RVA: 0x00410993 File Offset: 0x0040EB93
+	// Token: 0x0600AF71 RID: 44913 RVA: 0x00415CD3 File Offset: 0x00413ED3
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Init()
 	{
 		base.Init();
 	}
 
-	// Token: 0x0600AE75 RID: 44661 RVA: 0x0041099C File Offset: 0x0040EB9C
+	// Token: 0x0600AF72 RID: 44914 RVA: 0x00415CDC File Offset: 0x00413EDC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Update()
 	{
@@ -306,7 +306,7 @@ public class vp_FPCamera : vp_Component
 		}
 	}
 
-	// Token: 0x0600AE76 RID: 44662 RVA: 0x00410B10 File Offset: 0x0040ED10
+	// Token: 0x0600AF73 RID: 44915 RVA: 0x00415E50 File Offset: 0x00414050
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void FixedUpdate()
 	{
@@ -350,7 +350,7 @@ public class vp_FPCamera : vp_Component
 		}
 	}
 
-	// Token: 0x0600AE77 RID: 44663 RVA: 0x00410BB8 File Offset: 0x0040EDB8
+	// Token: 0x0600AF74 RID: 44916 RVA: 0x00415EF8 File Offset: 0x004140F8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void LateUpdate()
 	{
@@ -417,7 +417,7 @@ public class vp_FPCamera : vp_Component
 		base.Transform.localEulerAngles += vp_MathUtility.NaNSafeVector3(Vector3.forward * this.m_RotationSpring.State.z, default(Vector3));
 	}
 
-	// Token: 0x0600AE78 RID: 44664 RVA: 0x00410EC0 File Offset: 0x0040F0C0
+	// Token: 0x0600AF75 RID: 44917 RVA: 0x00416200 File Offset: 0x00414400
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update3rdPerson()
 	{
@@ -488,13 +488,13 @@ public class vp_FPCamera : vp_Component
 		}
 	}
 
-	// Token: 0x0600AE79 RID: 44665 RVA: 0x00411277 File Offset: 0x0040F477
+	// Token: 0x0600AF76 RID: 44918 RVA: 0x004165B7 File Offset: 0x004147B7
 	public void AlignCharacterToCamera()
 	{
 		this.targetRotation3P = base.Transform.eulerAngles.y;
 	}
 
-	// Token: 0x0600AE7A RID: 44666 RVA: 0x00411290 File Offset: 0x0040F490
+	// Token: 0x0600AF77 RID: 44919 RVA: 0x004165D0 File Offset: 0x004147D0
 	public virtual void DoCameraCollision()
 	{
 		this.HasOverheadSpace = true;
@@ -542,37 +542,37 @@ public class vp_FPCamera : vp_Component
 		}
 	}
 
-	// Token: 0x0600AE7B RID: 44667 RVA: 0x004116DC File Offset: 0x0040F8DC
+	// Token: 0x0600AF78 RID: 44920 RVA: 0x00416A1C File Offset: 0x00414C1C
 	public virtual void AddForce(Vector3 force)
 	{
 		this.m_PositionSpring.AddForce(force);
 	}
 
-	// Token: 0x0600AE7C RID: 44668 RVA: 0x004116EA File Offset: 0x0040F8EA
+	// Token: 0x0600AF79 RID: 44921 RVA: 0x00416A2A File Offset: 0x00414C2A
 	public virtual void AddForce(float x, float y, float z)
 	{
 		this.AddForce(new Vector3(x, y, z));
 	}
 
-	// Token: 0x0600AE7D RID: 44669 RVA: 0x004116FA File Offset: 0x0040F8FA
+	// Token: 0x0600AF7A RID: 44922 RVA: 0x00416A3A File Offset: 0x00414C3A
 	public virtual void AddForce2(Vector3 force)
 	{
 		this.m_PositionSpring2.AddForce(force);
 	}
 
-	// Token: 0x0600AE7E RID: 44670 RVA: 0x00411708 File Offset: 0x0040F908
+	// Token: 0x0600AF7B RID: 44923 RVA: 0x00416A48 File Offset: 0x00414C48
 	public void AddForce2(float x, float y, float z)
 	{
 		this.AddForce2(new Vector3(x, y, z));
 	}
 
-	// Token: 0x0600AE7F RID: 44671 RVA: 0x00411718 File Offset: 0x0040F918
+	// Token: 0x0600AF7C RID: 44924 RVA: 0x00416A58 File Offset: 0x00414C58
 	public virtual void AddRollForce(float force)
 	{
 		this.m_RotationSpring.AddForce(Vector3.forward * force);
 	}
 
-	// Token: 0x0600AE80 RID: 44672 RVA: 0x00411730 File Offset: 0x0040F930
+	// Token: 0x0600AF7D RID: 44925 RVA: 0x00416A70 File Offset: 0x00414C70
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void UpdateInput()
 	{
@@ -594,7 +594,7 @@ public class vp_FPCamera : vp_Component
 		this.m_Pitch = Mathf.Clamp(this.m_Pitch, -this.RotationPitchLimit.x, -this.RotationPitchLimit.y);
 	}
 
-	// Token: 0x0600AE81 RID: 44673 RVA: 0x004118D0 File Offset: 0x0040FAD0
+	// Token: 0x0600AF7E RID: 44926 RVA: 0x00416C10 File Offset: 0x00414E10
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void UpdateZoom()
 	{
@@ -607,26 +607,26 @@ public class vp_FPCamera : vp_Component
 		base.gameObject.GetComponent<Camera>().fieldOfView = Mathf.SmoothStep(base.gameObject.GetComponent<Camera>().fieldOfView, (float)Constants.cDefaultCameraFieldOfView + this.ZoomOffset, num);
 	}
 
-	// Token: 0x0600AE82 RID: 44674 RVA: 0x00411950 File Offset: 0x0040FB50
+	// Token: 0x0600AF7F RID: 44927 RVA: 0x00416C90 File Offset: 0x00414E90
 	public void RefreshZoom()
 	{
 		float num = 1f - (this.m_FinalZoomTime - Time.time) / this.RenderingZoomDamping;
 		base.gameObject.GetComponent<Camera>().fieldOfView = Mathf.SmoothStep(base.gameObject.GetComponent<Camera>().fieldOfView, (float)Constants.cDefaultCameraFieldOfView + this.ZoomOffset, num);
 	}
 
-	// Token: 0x0600AE83 RID: 44675 RVA: 0x004119AA File Offset: 0x0040FBAA
+	// Token: 0x0600AF80 RID: 44928 RVA: 0x00416CEA File Offset: 0x00414EEA
 	public virtual void Zoom()
 	{
 		this.m_FinalZoomTime = Time.time + this.RenderingZoomDamping;
 	}
 
-	// Token: 0x0600AE84 RID: 44676 RVA: 0x004119BE File Offset: 0x0040FBBE
+	// Token: 0x0600AF81 RID: 44929 RVA: 0x00416CFE File Offset: 0x00414EFE
 	public virtual void SnapZoom()
 	{
 		base.gameObject.GetComponent<Camera>().fieldOfView = (float)Constants.cDefaultCameraFieldOfView + this.ZoomOffset;
 	}
 
-	// Token: 0x0600AE85 RID: 44677 RVA: 0x004119E0 File Offset: 0x0040FBE0
+	// Token: 0x0600AF82 RID: 44930 RVA: 0x00416D20 File Offset: 0x00414F20
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void UpdateShakes()
 	{
@@ -680,7 +680,7 @@ public class vp_FPCamera : vp_Component
 		}
 	}
 
-	// Token: 0x0600AE86 RID: 44678 RVA: 0x00411D0C File Offset: 0x0040FF0C
+	// Token: 0x0600AF83 RID: 44931 RVA: 0x0041704C File Offset: 0x0041524C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void UpdateBob()
 	{
@@ -713,7 +713,7 @@ public class vp_FPCamera : vp_Component
 		this.DetectBobStep(this.m_BobSpeed, this.m_CurrentBobVal.y);
 	}
 
-	// Token: 0x0600AE87 RID: 44679 RVA: 0x00411FA8 File Offset: 0x004101A8
+	// Token: 0x0600AF84 RID: 44932 RVA: 0x004172E8 File Offset: 0x004154E8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void DetectBobStep(float speed, float upBob)
 	{
@@ -734,7 +734,7 @@ public class vp_FPCamera : vp_Component
 		this.m_BobWasElevating = flag;
 	}
 
-	// Token: 0x0600AE88 RID: 44680 RVA: 0x00411FFC File Offset: 0x004101FC
+	// Token: 0x0600AF85 RID: 44933 RVA: 0x0041733C File Offset: 0x0041553C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void UpdateSwaying()
 	{
@@ -742,7 +742,7 @@ public class vp_FPCamera : vp_Component
 		this.AddRollForce(vector.x * this.RotationStrafeRoll);
 	}
 
-	// Token: 0x0600AE89 RID: 44681 RVA: 0x0041204C File Offset: 0x0041024C
+	// Token: 0x0600AF86 RID: 44934 RVA: 0x0041738C File Offset: 0x0041558C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void UpdateEarthQuake()
 	{
@@ -764,7 +764,7 @@ public class vp_FPCamera : vp_Component
 		this.m_RotationSpring.AddForce(Vector3.forward * (-this.Player.CameraEarthQuakeForce.Get().x * 2f) * this.RotationEarthQuakeFactor);
 	}
 
-	// Token: 0x0600AE8A RID: 44682 RVA: 0x00412144 File Offset: 0x00410344
+	// Token: 0x0600AF87 RID: 44935 RVA: 0x00417484 File Offset: 0x00415684
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void UpdateSprings()
 	{
@@ -775,7 +775,7 @@ public class vp_FPCamera : vp_Component
 		base.Transform.position = position;
 	}
 
-	// Token: 0x0600AE8B RID: 44683 RVA: 0x0041218C File Offset: 0x0041038C
+	// Token: 0x0600AF88 RID: 44936 RVA: 0x004174CC File Offset: 0x004156CC
 	public virtual void DoBomb(Vector3 positionForce, float minRollForce, float maxRollForce)
 	{
 		this.AddForce2(positionForce);
@@ -787,7 +787,7 @@ public class vp_FPCamera : vp_Component
 		this.AddRollForce(num);
 	}
 
-	// Token: 0x0600AE8C RID: 44684 RVA: 0x004121C0 File Offset: 0x004103C0
+	// Token: 0x0600AF89 RID: 44937 RVA: 0x00417500 File Offset: 0x00415700
 	public override void Refresh()
 	{
 		if (!Application.isPlaying)
@@ -814,7 +814,7 @@ public class vp_FPCamera : vp_Component
 		}
 	}
 
-	// Token: 0x0600AE8D RID: 44685 RVA: 0x0041233C File Offset: 0x0041053C
+	// Token: 0x0600AF8A RID: 44938 RVA: 0x0041767C File Offset: 0x0041587C
 	public virtual void SnapSprings()
 	{
 		if (this.m_PositionSpring != null)
@@ -837,7 +837,7 @@ public class vp_FPCamera : vp_Component
 		}
 	}
 
-	// Token: 0x0600AE8E RID: 44686 RVA: 0x00412400 File Offset: 0x00410600
+	// Token: 0x0600AF8B RID: 44939 RVA: 0x00417740 File Offset: 0x00415940
 	public virtual void StopSprings()
 	{
 		if (this.m_PositionSpring != null)
@@ -856,7 +856,7 @@ public class vp_FPCamera : vp_Component
 		this.m_LastBobSpeed = 0f;
 	}
 
-	// Token: 0x0600AE8F RID: 44687 RVA: 0x0041245F File Offset: 0x0041065F
+	// Token: 0x0600AF8C RID: 44940 RVA: 0x0041779F File Offset: 0x0041599F
 	public virtual void Stop()
 	{
 		this.SnapSprings();
@@ -864,7 +864,7 @@ public class vp_FPCamera : vp_Component
 		this.Refresh();
 	}
 
-	// Token: 0x0600AE90 RID: 44688 RVA: 0x00412473 File Offset: 0x00410673
+	// Token: 0x0600AF8D RID: 44941 RVA: 0x004177B3 File Offset: 0x004159B3
 	public virtual void SetRotation(Vector2 eulerAngles, bool stopZoomAndSprings)
 	{
 		this.Angle = eulerAngles;
@@ -874,20 +874,20 @@ public class vp_FPCamera : vp_Component
 		}
 	}
 
-	// Token: 0x0600AE91 RID: 44689 RVA: 0x00412485 File Offset: 0x00410685
+	// Token: 0x0600AF8E RID: 44942 RVA: 0x004177C5 File Offset: 0x004159C5
 	public virtual void SetRotation(Vector2 eulerAngles)
 	{
 		this.Angle = eulerAngles;
 		this.Stop();
 	}
 
-	// Token: 0x0600AE92 RID: 44690 RVA: 0x00412494 File Offset: 0x00410694
+	// Token: 0x0600AF8F RID: 44943 RVA: 0x004177D4 File Offset: 0x004159D4
 	public virtual void SetRotation(Vector2 eulerAngles, bool stopZoomAndSprings, bool obsolete)
 	{
 		this.SetRotation(eulerAngles, stopZoomAndSprings);
 	}
 
-	// Token: 0x0600AE93 RID: 44691 RVA: 0x004124A0 File Offset: 0x004106A0
+	// Token: 0x0600AF90 RID: 44944 RVA: 0x004177E0 File Offset: 0x004159E0
 	public Vector3 GetLookPoint()
 	{
 		if (!this.Player.IsFirstPerson.Get() && Physics.Linecast(base.Transform.position, base.Transform.position + base.Transform.forward * 1000f, out this.m_LookPointHit, 1082195968) && !this.m_LookPointHit.collider.isTrigger && base.Root.InverseTransformPoint(this.m_LookPointHit.point).z > 0f)
@@ -897,8 +897,8 @@ public class vp_FPCamera : vp_Component
 		return base.Transform.position + base.Transform.forward * 1000f;
 	}
 
-	// Token: 0x17001415 RID: 5141
-	// (get) Token: 0x0600AE94 RID: 44692 RVA: 0x0041256E File Offset: 0x0041076E
+	// Token: 0x1700144E RID: 5198
+	// (get) Token: 0x0600AF91 RID: 44945 RVA: 0x004178AE File Offset: 0x00415AAE
 	public virtual Vector3 OnValue_LookPoint
 	{
 		get
@@ -907,8 +907,8 @@ public class vp_FPCamera : vp_Component
 		}
 	}
 
-	// Token: 0x17001416 RID: 5142
-	// (get) Token: 0x0600AE95 RID: 44693 RVA: 0x00412578 File Offset: 0x00410778
+	// Token: 0x1700144F RID: 5199
+	// (get) Token: 0x0600AF92 RID: 44946 RVA: 0x004178B8 File Offset: 0x00415AB8
 	public virtual Vector3 OnValue_CameraLookDirection
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -918,7 +918,7 @@ public class vp_FPCamera : vp_Component
 		}
 	}
 
-	// Token: 0x0600AE96 RID: 44694 RVA: 0x004125B4 File Offset: 0x004107B4
+	// Token: 0x0600AF93 RID: 44947 RVA: 0x004178F4 File Offset: 0x00415AF4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnMessage_FallImpact(float impact)
 	{
@@ -938,7 +938,7 @@ public class vp_FPCamera : vp_Component
 		}
 	}
 
-	// Token: 0x0600AE97 RID: 44695 RVA: 0x00412668 File Offset: 0x00410868
+	// Token: 0x0600AF94 RID: 44948 RVA: 0x004179A8 File Offset: 0x00415BA8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnMessage_HeadImpact(float impact)
 	{
@@ -948,21 +948,21 @@ public class vp_FPCamera : vp_Component
 		}
 	}
 
-	// Token: 0x0600AE98 RID: 44696 RVA: 0x004126BF File Offset: 0x004108BF
+	// Token: 0x0600AF95 RID: 44949 RVA: 0x004179FF File Offset: 0x00415BFF
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnMessage_CameraGroundStomp(float impact)
 	{
 		this.AddForce2(new Vector3(0f, -1f, 0f) * impact);
 	}
 
-	// Token: 0x0600AE99 RID: 44697 RVA: 0x004126E1 File Offset: 0x004108E1
+	// Token: 0x0600AF96 RID: 44950 RVA: 0x00417A21 File Offset: 0x00415C21
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnMessage_CameraBombShake(float impact)
 	{
 		this.DoBomb(new Vector3(1f, -10f, 1f) * impact, 1f, 2f);
 	}
 
-	// Token: 0x0600AE9A RID: 44698 RVA: 0x0041270D File Offset: 0x0041090D
+	// Token: 0x0600AF97 RID: 44951 RVA: 0x00417A4D File Offset: 0x00415C4D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnStart_Zoom()
 	{
@@ -973,16 +973,16 @@ public class vp_FPCamera : vp_Component
 		this.Player.Run.Stop(0f);
 	}
 
-	// Token: 0x0600AE9B RID: 44699 RVA: 0x00412733 File Offset: 0x00410933
+	// Token: 0x0600AF98 RID: 44952 RVA: 0x00417A73 File Offset: 0x00415C73
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool CanStart_Run()
 	{
 		return this.Player == null || !this.Player.Zoom.Active;
 	}
 
-	// Token: 0x17001417 RID: 5143
-	// (get) Token: 0x0600AE9C RID: 44700 RVA: 0x0041275A File Offset: 0x0041095A
-	// (set) Token: 0x0600AE9D RID: 44701 RVA: 0x00412762 File Offset: 0x00410962
+	// Token: 0x17001450 RID: 5200
+	// (get) Token: 0x0600AF99 RID: 44953 RVA: 0x00417A9A File Offset: 0x00415C9A
+	// (set) Token: 0x0600AF9A RID: 44954 RVA: 0x00417AA2 File Offset: 0x00415CA2
 	public virtual Vector2 OnValue_Rotation
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -997,14 +997,14 @@ public class vp_FPCamera : vp_Component
 		}
 	}
 
-	// Token: 0x0600AE9E RID: 44702 RVA: 0x0041276B File Offset: 0x0041096B
+	// Token: 0x0600AF9B RID: 44955 RVA: 0x00417AAB File Offset: 0x00415CAB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnMessage_Stop()
 	{
 		this.Stop();
 	}
 
-	// Token: 0x0600AE9F RID: 44703 RVA: 0x00412773 File Offset: 0x00410973
+	// Token: 0x0600AF9C RID: 44956 RVA: 0x00417AB3 File Offset: 0x00415CB3
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnStart_Dead()
 	{
@@ -1015,7 +1015,7 @@ public class vp_FPCamera : vp_Component
 		this.PositionOnDeath = base.Transform.position - this.m_Final3rdPersonCameraOffset;
 	}
 
-	// Token: 0x0600AEA0 RID: 44704 RVA: 0x004127A9 File Offset: 0x004109A9
+	// Token: 0x0600AF9D RID: 44957 RVA: 0x00417AE9 File Offset: 0x00415CE9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnStop_Dead()
 	{
@@ -1023,8 +1023,8 @@ public class vp_FPCamera : vp_Component
 		this.m_Current3rdPersonBlend = 0f;
 	}
 
-	// Token: 0x17001418 RID: 5144
-	// (get) Token: 0x0600AEA1 RID: 44705 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17001451 RID: 5201
+	// (get) Token: 0x0600AF9E RID: 44958 RVA: 0x00020021 File Offset: 0x0001E221
 	public virtual bool OnValue_IsLocal
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -1034,314 +1034,314 @@ public class vp_FPCamera : vp_Component
 		}
 	}
 
-	// Token: 0x0600AEA2 RID: 44706 RVA: 0x004127C1 File Offset: 0x004109C1
+	// Token: 0x0600AF9F RID: 44959 RVA: 0x00417B01 File Offset: 0x00415D01
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnMessage_CameraToggle3rdPerson()
 	{
 		this.m_Player.IsFirstPerson.Set(!this.m_Player.IsFirstPerson.Get());
 	}
 
-	// Token: 0x04008225 RID: 33317
+	// Token: 0x040082FE RID: 33534
 	public Vector3 DrivingPosition;
 
-	// Token: 0x04008226 RID: 33318
+	// Token: 0x040082FF RID: 33535
 	public vp_FPController FPController;
 
-	// Token: 0x04008227 RID: 33319
+	// Token: 0x04008300 RID: 33536
 	public float RenderingFieldOfView = 60f;
 
-	// Token: 0x04008228 RID: 33320
+	// Token: 0x04008301 RID: 33537
 	public float RenderingZoomDamping = 0.2f;
 
-	// Token: 0x04008229 RID: 33321
+	// Token: 0x04008302 RID: 33538
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_FinalZoomTime;
 
-	// Token: 0x0400822A RID: 33322
+	// Token: 0x04008303 RID: 33539
 	public float ZoomOffset;
 
-	// Token: 0x0400822B RID: 33323
+	// Token: 0x04008304 RID: 33540
 	public Vector3 PositionOffset = new Vector3(0f, 1.75f, 0.1f);
 
-	// Token: 0x0400822C RID: 33324
+	// Token: 0x04008305 RID: 33541
 	public Vector3 AimingPositionOffset = Vector3.zero;
 
-	// Token: 0x0400822D RID: 33325
+	// Token: 0x04008306 RID: 33542
 	public float PositionGroundLimit = 0.1f;
 
-	// Token: 0x0400822E RID: 33326
+	// Token: 0x04008307 RID: 33543
 	public float PositionSpringStiffness = 0.01f;
 
-	// Token: 0x0400822F RID: 33327
+	// Token: 0x04008308 RID: 33544
 	public float PositionSpringDamping = 0.25f;
 
-	// Token: 0x04008230 RID: 33328
+	// Token: 0x04008309 RID: 33545
 	public float PositionSpring2Stiffness = 0.95f;
 
-	// Token: 0x04008231 RID: 33329
+	// Token: 0x0400830A RID: 33546
 	public float PositionSpring2Damping = 0.25f;
 
-	// Token: 0x04008232 RID: 33330
+	// Token: 0x0400830B RID: 33547
 	public float PositionKneeling = 0.025f;
 
-	// Token: 0x04008233 RID: 33331
+	// Token: 0x0400830C RID: 33548
 	public int PositionKneelingSoftness = 1;
 
-	// Token: 0x04008234 RID: 33332
+	// Token: 0x0400830D RID: 33549
 	public float PositionEarthQuakeFactor = 1f;
 
-	// Token: 0x04008235 RID: 33333
+	// Token: 0x0400830E RID: 33550
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Spring m_PositionSpring;
 
-	// Token: 0x04008236 RID: 33334
+	// Token: 0x0400830F RID: 33551
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Spring m_PositionSpring2;
 
-	// Token: 0x04008237 RID: 33335
+	// Token: 0x04008310 RID: 33552
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_DrawCameraCollisionDebugLine;
 
-	// Token: 0x04008238 RID: 33336
+	// Token: 0x04008311 RID: 33553
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 PositionOnDeath = Vector3.zero;
 
-	// Token: 0x04008239 RID: 33337
+	// Token: 0x04008312 RID: 33554
 	public Vector2 RotationPitchLimit = new Vector2(90f, -90f);
 
-	// Token: 0x0400823A RID: 33338
+	// Token: 0x04008313 RID: 33555
 	public Vector2 RotationYawLimit = new Vector2(-360f, 360f);
 
-	// Token: 0x0400823B RID: 33339
+	// Token: 0x04008314 RID: 33556
 	public float RotationSpringStiffness = 0.01f;
 
-	// Token: 0x0400823C RID: 33340
+	// Token: 0x04008315 RID: 33557
 	public float RotationSpringDamping = 0.25f;
 
-	// Token: 0x0400823D RID: 33341
+	// Token: 0x04008316 RID: 33558
 	public float RotationKneeling = 0.025f;
 
-	// Token: 0x0400823E RID: 33342
+	// Token: 0x04008317 RID: 33559
 	public int RotationKneelingSoftness = 1;
 
-	// Token: 0x0400823F RID: 33343
+	// Token: 0x04008318 RID: 33560
 	public float RotationStrafeRoll = 0.01f;
 
-	// Token: 0x04008240 RID: 33344
+	// Token: 0x04008319 RID: 33561
 	public float RotationEarthQuakeFactor;
 
-	// Token: 0x04008241 RID: 33345
+	// Token: 0x0400831A RID: 33562
 	public Vector3 LookPoint = Vector3.zero;
 
-	// Token: 0x04008242 RID: 33346
+	// Token: 0x0400831B RID: 33563
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_Pitch;
 
-	// Token: 0x04008243 RID: 33347
+	// Token: 0x0400831C RID: 33564
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_Yaw;
 
-	// Token: 0x04008244 RID: 33348
+	// Token: 0x0400831D RID: 33565
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Spring m_RotationSpring;
 
-	// Token: 0x04008245 RID: 33349
+	// Token: 0x0400831E RID: 33566
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public RaycastHit m_LookPointHit;
 
-	// Token: 0x04008246 RID: 33350
+	// Token: 0x0400831F RID: 33567
 	public Vector3 Position3rdPersonOffset = new Vector3(0.5f, 0.1f, 0.75f);
 
-	// Token: 0x04008247 RID: 33351
+	// Token: 0x04008320 RID: 33568
 	public bool Locked3rdPerson;
 
-	// Token: 0x04008248 RID: 33352
+	// Token: 0x04008321 RID: 33569
 	public float m_Current3rdPersonBlend;
 
-	// Token: 0x04008249 RID: 33353
+	// Token: 0x04008322 RID: 33570
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_Final3rdPersonCameraOffset = Vector3.zero;
 
-	// Token: 0x0400824A RID: 33354
+	// Token: 0x04008323 RID: 33571
 	public float ShakeSpeed;
 
-	// Token: 0x0400824B RID: 33355
+	// Token: 0x04008324 RID: 33572
 	public Vector3 ShakeAmplitude = new Vector3(10f, 10f, 0f);
 
-	// Token: 0x0400824C RID: 33356
+	// Token: 0x04008325 RID: 33573
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_Shake = Vector3.zero;
 
-	// Token: 0x0400824D RID: 33357
+	// Token: 0x04008326 RID: 33574
 	public float ShakeSpeed2;
 
-	// Token: 0x0400824E RID: 33358
+	// Token: 0x04008327 RID: 33575
 	public Vector3 ShakeAmplitude2 = new Vector3(10f, 10f, 0f);
 
-	// Token: 0x0400824F RID: 33359
+	// Token: 0x04008328 RID: 33576
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_Shake2 = Vector3.zero;
 
-	// Token: 0x04008250 RID: 33360
+	// Token: 0x04008329 RID: 33577
 	public Vector4 BobRate = new Vector4(0f, 1.4f, 0f, 0.7f);
 
-	// Token: 0x04008251 RID: 33361
+	// Token: 0x0400832A RID: 33578
 	public Vector4 BobAmplitude = new Vector4(0f, 0.25f, 0f, 0.5f);
 
-	// Token: 0x04008252 RID: 33362
+	// Token: 0x0400832B RID: 33579
 	public float BobInputVelocityScale = 1f;
 
-	// Token: 0x04008253 RID: 33363
+	// Token: 0x0400832C RID: 33580
 	public float BobMaxInputVelocity = 100f;
 
-	// Token: 0x04008254 RID: 33364
+	// Token: 0x0400832D RID: 33581
 	public bool BobRequireGroundContact = true;
 
-	// Token: 0x04008255 RID: 33365
+	// Token: 0x0400832E RID: 33582
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_LastBobSpeed;
 
-	// Token: 0x04008256 RID: 33366
+	// Token: 0x0400832F RID: 33583
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector4 m_CurrentBobAmp = Vector4.zero;
 
-	// Token: 0x04008257 RID: 33367
+	// Token: 0x04008330 RID: 33584
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector4 m_CurrentBobVal = Vector4.zero;
 
-	// Token: 0x04008258 RID: 33368
+	// Token: 0x04008331 RID: 33585
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_BobSpeed;
 
-	// Token: 0x04008259 RID: 33369
+	// Token: 0x04008332 RID: 33586
 	public vp_FPCamera.BobStepDelegate BobStepCallback;
 
-	// Token: 0x0400825A RID: 33370
+	// Token: 0x04008333 RID: 33587
 	public float BobStepThreshold = 10f;
 
-	// Token: 0x0400825B RID: 33371
+	// Token: 0x04008334 RID: 33588
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_LastUpBob;
 
-	// Token: 0x0400825C RID: 33372
+	// Token: 0x04008335 RID: 33589
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_BobWasElevating;
 
-	// Token: 0x0400825D RID: 33373
+	// Token: 0x04008336 RID: 33590
 	public bool HasCollision = true;
 
-	// Token: 0x0400825E RID: 33374
+	// Token: 0x04008337 RID: 33591
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_CollisionVector = Vector3.zero;
 
-	// Token: 0x0400825F RID: 33375
+	// Token: 0x04008338 RID: 33592
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_CameraCollisionStartPos = Vector3.zero;
 
-	// Token: 0x04008260 RID: 33376
+	// Token: 0x04008339 RID: 33593
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_CameraCollisionEndPos = Vector3.zero;
 
-	// Token: 0x04008261 RID: 33377
+	// Token: 0x0400833A RID: 33594
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public RaycastHit m_CameraHit;
 
-	// Token: 0x04008262 RID: 33378
+	// Token: 0x0400833B RID: 33595
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<Vector3> cameraCollisionEndPosList = new List<Vector3>();
 
-	// Token: 0x04008264 RID: 33380
+	// Token: 0x0400833D RID: 33597
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_FPPlayerEventHandler m_Player;
 
-	// Token: 0x04008265 RID: 33381
+	// Token: 0x0400833E RID: 33598
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Rigidbody m_FirstRigidbody;
 
-	// Token: 0x04008266 RID: 33382
+	// Token: 0x0400833F RID: 33599
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cPlayerRotationSpeed = 16f;
 
-	// Token: 0x04008267 RID: 33383
+	// Token: 0x04008340 RID: 33600
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cCameraOffsetSpeed = 10f;
 
-	// Token: 0x04008268 RID: 33384
+	// Token: 0x04008341 RID: 33601
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 current3rdPersonOffset = Vector3.zero;
 
-	// Token: 0x04008269 RID: 33385
+	// Token: 0x04008342 RID: 33602
 	public float yaw3P;
 
-	// Token: 0x0400826A RID: 33386
+	// Token: 0x04008343 RID: 33603
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float pitch3P;
 
-	// Token: 0x0400826B RID: 33387
+	// Token: 0x04008344 RID: 33604
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float targetRotation3P;
 
-	// Token: 0x0400826C RID: 33388
+	// Token: 0x04008345 RID: 33605
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool _cameraRelative3PMovement;
 
-	// Token: 0x0400826D RID: 33389
+	// Token: 0x04008346 RID: 33606
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector2 shake3P;
 
-	// Token: 0x0400826F RID: 33391
+	// Token: 0x04008348 RID: 33608
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Camera thisCamera;
 
-	// Token: 0x04008270 RID: 33392
+	// Token: 0x04008349 RID: 33609
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_IsFirstPerson = true;
 
-	// Token: 0x04008271 RID: 33393
+	// Token: 0x0400834A RID: 33610
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool hasLateUpdateRan;
 
-	// Token: 0x04008272 RID: 33394
+	// Token: 0x0400834B RID: 33611
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Vector3 lastPos;
 
-	// Token: 0x020015D9 RID: 5593
-	// (Invoke) Token: 0x0600AEA5 RID: 44709
+	// Token: 0x020015F4 RID: 5620
+	// (Invoke) Token: 0x0600AFA2 RID: 44962
 	public delegate void BobStepDelegate();
 }

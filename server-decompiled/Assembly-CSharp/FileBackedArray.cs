@@ -9,10 +9,10 @@ using Platform;
 using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
 
-// Token: 0x02001374 RID: 4980
+// Token: 0x0200138E RID: 5006
 public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposable where T : struct, ValueType
 {
-	// Token: 0x06009CE6 RID: 40166 RVA: 0x003B4B60 File Offset: 0x003B2D60
+	// Token: 0x06009DE1 RID: 40417 RVA: 0x003B9E14 File Offset: 0x003B8014
 	public FileBackedArray(int length)
 	{
 		if (length <= 0)
@@ -29,7 +29,7 @@ public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposa
 		this.m_fileStreams = new ThreadLocal<FileStream>(new Func<FileStream>(this.CreateFileStream), true);
 	}
 
-	// Token: 0x06009CE7 RID: 40167 RVA: 0x003B4C38 File Offset: 0x003B2E38
+	// Token: 0x06009DE2 RID: 40418 RVA: 0x003B9EEC File Offset: 0x003B80EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Dispose(bool disposing)
 	{
@@ -66,21 +66,21 @@ public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposa
 		}
 	}
 
-	// Token: 0x06009CE8 RID: 40168 RVA: 0x003B4D4C File Offset: 0x003B2F4C
+	// Token: 0x06009DE3 RID: 40419 RVA: 0x003BA000 File Offset: 0x003B8200
 	public void Dispose()
 	{
 		this.Dispose(true);
 		GC.SuppressFinalize(this);
 	}
 
-	// Token: 0x06009CE9 RID: 40169 RVA: 0x003B4D5C File Offset: 0x003B2F5C
+	// Token: 0x06009DE4 RID: 40420 RVA: 0x003BA010 File Offset: 0x003B8210
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ~FileBackedArray()
 	{
 		this.Dispose(false);
 	}
 
-	// Token: 0x06009CEA RID: 40170 RVA: 0x003B4D8C File Offset: 0x003B2F8C
+	// Token: 0x06009DE5 RID: 40421 RVA: 0x003BA040 File Offset: 0x003B8240
 	[Conditional("DEVELOPMENT_BUILD")]
 	[Conditional("UNITY_EDITOR")]
 	[PublicizedFrom(EAccessModifier.Private)]
@@ -92,7 +92,7 @@ public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposa
 		}
 	}
 
-	// Token: 0x06009CEB RID: 40171 RVA: 0x003B4DA4 File Offset: 0x003B2FA4
+	// Token: 0x06009DE6 RID: 40422 RVA: 0x003BA058 File Offset: 0x003B8258
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CheckBounds(int start, int length)
 	{
@@ -106,7 +106,7 @@ public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposa
 		}
 	}
 
-	// Token: 0x06009CEC RID: 40172 RVA: 0x003B4E04 File Offset: 0x003B3004
+	// Token: 0x06009DE7 RID: 40423 RVA: 0x003BA0B8 File Offset: 0x003B82B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FileStream CreateFileStream()
 	{
@@ -119,7 +119,7 @@ public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposa
 		return fileStream;
 	}
 
-	// Token: 0x06009CED RID: 40173 RVA: 0x003B4E54 File Offset: 0x003B3054
+	// Token: 0x06009DE8 RID: 40424 RVA: 0x003BA108 File Offset: 0x003B8308
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FileStream GetFileStream()
 	{
@@ -132,8 +132,8 @@ public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposa
 		return value;
 	}
 
-	// Token: 0x17001274 RID: 4724
-	// (get) Token: 0x06009CEE RID: 40174 RVA: 0x003B4E9C File Offset: 0x003B309C
+	// Token: 0x170012AD RID: 4781
+	// (get) Token: 0x06009DE9 RID: 40425 RVA: 0x003BA150 File Offset: 0x003B8350
 	public int Length
 	{
 		get
@@ -142,7 +142,7 @@ public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposa
 		}
 	}
 
-	// Token: 0x06009CEF RID: 40175 RVA: 0x003B4EA4 File Offset: 0x003B30A4
+	// Token: 0x06009DEA RID: 40426 RVA: 0x003BA158 File Offset: 0x003B8358
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FileBackedArray<T>.FileBackedArrayHandle GetHandle(int start, int length, BackedArrayHandleMode mode)
 	{
@@ -150,7 +150,7 @@ public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposa
 		return new FileBackedArray<T>.FileBackedArrayHandle(this, this.m_valueSize, start, length, mode);
 	}
 
-	// Token: 0x06009CF0 RID: 40176 RVA: 0x003B4EC0 File Offset: 0x003B30C0
+	// Token: 0x06009DEB RID: 40427 RVA: 0x003BA174 File Offset: 0x003B8374
 	public IBackedArrayHandle GetMemory(int start, int length, out Memory<T> memory)
 	{
 		FileBackedArray<T>.FileBackedArrayHandle handle = this.GetHandle(start, length, BackedArrayHandleMode.ReadWrite);
@@ -158,7 +158,7 @@ public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposa
 		return handle;
 	}
 
-	// Token: 0x06009CF1 RID: 40177 RVA: 0x003B4EE4 File Offset: 0x003B30E4
+	// Token: 0x06009DEC RID: 40428 RVA: 0x003BA198 File Offset: 0x003B8398
 	public IBackedArrayHandle GetReadOnlyMemory(int start, int length, out ReadOnlyMemory<T> memory)
 	{
 		FileBackedArray<T>.FileBackedArrayHandle handle = this.GetHandle(start, length, BackedArrayHandleMode.ReadOnly);
@@ -166,7 +166,7 @@ public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposa
 		return handle;
 	}
 
-	// Token: 0x06009CF2 RID: 40178 RVA: 0x003B4F08 File Offset: 0x003B3108
+	// Token: 0x06009DED RID: 40429 RVA: 0x003BA1BC File Offset: 0x003B83BC
 	public unsafe IBackedArrayHandle GetMemoryUnsafe(int start, int length, out T* arrayPtr)
 	{
 		FileBackedArray<T>.FileBackedArrayHandle handle = this.GetHandle(start, length, BackedArrayHandleMode.ReadWrite);
@@ -174,7 +174,7 @@ public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposa
 		return handle;
 	}
 
-	// Token: 0x06009CF3 RID: 40179 RVA: 0x003B4F28 File Offset: 0x003B3128
+	// Token: 0x06009DEE RID: 40430 RVA: 0x003BA1DC File Offset: 0x003B83DC
 	public unsafe IBackedArrayHandle GetReadOnlyMemoryUnsafe(int start, int length, out T* arrayPtr)
 	{
 		FileBackedArray<T>.FileBackedArrayHandle handle = this.GetHandle(start, length, BackedArrayHandleMode.ReadOnly);
@@ -182,7 +182,7 @@ public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposa
 		return handle;
 	}
 
-	// Token: 0x06009CF4 RID: 40180 RVA: 0x003B4F48 File Offset: 0x003B3148
+	// Token: 0x06009DEF RID: 40431 RVA: 0x003BA1FC File Offset: 0x003B83FC
 	public IBackedArrayHandle GetSpan(int start, int length, out Span<T> span)
 	{
 		FileBackedArray<T>.FileBackedArrayHandle handle = this.GetHandle(start, length, BackedArrayHandleMode.ReadWrite);
@@ -190,7 +190,7 @@ public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposa
 		return handle;
 	}
 
-	// Token: 0x06009CF5 RID: 40181 RVA: 0x003B4F6C File Offset: 0x003B316C
+	// Token: 0x06009DF0 RID: 40432 RVA: 0x003BA220 File Offset: 0x003B8420
 	public IBackedArrayHandle GetReadOnlySpan(int start, int length, out ReadOnlySpan<T> span)
 	{
 		FileBackedArray<T>.FileBackedArrayHandle handle = this.GetHandle(start, length, BackedArrayHandleMode.ReadOnly);
@@ -198,9 +198,9 @@ public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposa
 		return handle;
 	}
 
-	// Token: 0x17001275 RID: 4725
-	// (get) Token: 0x06009CF6 RID: 40182 RVA: 0x003B4F90 File Offset: 0x003B3190
-	// (set) Token: 0x06009CF7 RID: 40183 RVA: 0x003B4F98 File Offset: 0x003B3198
+	// Token: 0x170012AE RID: 4782
+	// (get) Token: 0x06009DF1 RID: 40433 RVA: 0x003BA244 File Offset: 0x003B8444
+	// (set) Token: 0x06009DF2 RID: 40434 RVA: 0x003BA24C File Offset: 0x003B844C
 	public FileBackedArray<T>.OnWrittenHandler OnWritten
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -209,44 +209,44 @@ public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposa
 		set;
 	}
 
-	// Token: 0x04007700 RID: 30464
+	// Token: 0x040077D8 RID: 30680
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int FILE_STREAM_BUFFER_SIZE = 4096;
 
-	// Token: 0x04007701 RID: 30465
+	// Token: 0x040077D9 RID: 30681
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int m_length;
 
-	// Token: 0x04007702 RID: 30466
+	// Token: 0x040077DA RID: 30682
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int m_valueSize;
 
-	// Token: 0x04007703 RID: 30467
+	// Token: 0x040077DB RID: 30683
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly string m_filePath;
 
-	// Token: 0x04007704 RID: 30468
+	// Token: 0x040077DC RID: 30684
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FileStream m_fileStream;
 
-	// Token: 0x04007705 RID: 30469
+	// Token: 0x040077DD RID: 30685
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly object m_fileStreamsLock = new object();
 
-	// Token: 0x04007706 RID: 30470
+	// Token: 0x040077DE RID: 30686
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ThreadLocal<FileStream> m_fileStreams;
 
-	// Token: 0x02001375 RID: 4981
-	// (Invoke) Token: 0x06009CF9 RID: 40185
+	// Token: 0x0200138F RID: 5007
+	// (Invoke) Token: 0x06009DF4 RID: 40436
 	[PublicizedFrom(EAccessModifier.Private)]
 	public delegate void OnWrittenHandler(int start, ReadOnlySpan<T> span);
 
-	// Token: 0x02001376 RID: 4982
+	// Token: 0x02001390 RID: 5008
 	[PublicizedFrom(EAccessModifier.Private)]
 	public sealed class FileBackedArrayMemoryManager : MemoryManager<T>
 	{
-		// Token: 0x06009CFC RID: 40188 RVA: 0x003B4FA1 File Offset: 0x003B31A1
+		// Token: 0x06009DF7 RID: 40439 RVA: 0x003BA255 File Offset: 0x003B8455
 		public unsafe FileBackedArrayMemoryManager(T* ptr, int length, int valueSize)
 		{
 			this.m_ptr = ptr;
@@ -254,7 +254,7 @@ public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposa
 			this.m_valueSize = valueSize;
 		}
 
-		// Token: 0x06009CFD RID: 40189 RVA: 0x003B4FBE File Offset: 0x003B31BE
+		// Token: 0x06009DF8 RID: 40440 RVA: 0x003BA272 File Offset: 0x003B8472
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void Dispose(bool disposing)
 		{
@@ -263,41 +263,41 @@ public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposa
 			this.m_valueSize = 0;
 		}
 
-		// Token: 0x06009CFE RID: 40190 RVA: 0x003B4FD6 File Offset: 0x003B31D6
+		// Token: 0x06009DF9 RID: 40441 RVA: 0x003BA28A File Offset: 0x003B848A
 		public unsafe override Span<T> GetSpan()
 		{
 			return new Span<T>((void*)this.m_ptr, this.m_length);
 		}
 
-		// Token: 0x06009CFF RID: 40191 RVA: 0x003B4FEC File Offset: 0x003B31EC
+		// Token: 0x06009DFA RID: 40442 RVA: 0x003BA2A0 File Offset: 0x003B84A0
 		public unsafe override MemoryHandle Pin(int elementIndex = 0)
 		{
 			return new MemoryHandle((void*)(this.m_ptr + (IntPtr)(elementIndex * this.m_valueSize) * (IntPtr)sizeof(T) / (IntPtr)sizeof(T)), default(GCHandle), null);
 		}
 
-		// Token: 0x06009D00 RID: 40192 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x06009DFB RID: 40443 RVA: 0x000027FC File Offset: 0x000009FC
 		public override void Unpin()
 		{
 		}
 
-		// Token: 0x04007708 RID: 30472
+		// Token: 0x040077E0 RID: 30688
 		[PublicizedFrom(EAccessModifier.Private)]
 		public unsafe T* m_ptr;
 
-		// Token: 0x04007709 RID: 30473
+		// Token: 0x040077E1 RID: 30689
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int m_length;
 
-		// Token: 0x0400770A RID: 30474
+		// Token: 0x040077E2 RID: 30690
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int m_valueSize;
 	}
 
-	// Token: 0x02001377 RID: 4983
+	// Token: 0x02001391 RID: 5009
 	[PublicizedFrom(EAccessModifier.Private)]
 	public sealed class FileBackedArrayHandle : IBackedArrayHandle, IDisposable
 	{
-		// Token: 0x06009D01 RID: 40193 RVA: 0x003B5020 File Offset: 0x003B3220
+		// Token: 0x06009DFC RID: 40444 RVA: 0x003BA2D4 File Offset: 0x003B84D4
 		public unsafe FileBackedArrayHandle(FileBackedArray<T> array, int valueSize, int start, int length, BackedArrayHandleMode mode)
 		{
 			this.m_array = array;
@@ -342,7 +342,7 @@ public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposa
 			array2.OnWritten = (FileBackedArray<T>.OnWrittenHandler)Delegate.Combine(array2.OnWritten, new FileBackedArray<T>.OnWrittenHandler(this.OnWritten));
 		}
 
-		// Token: 0x06009D02 RID: 40194 RVA: 0x003B5188 File Offset: 0x003B3388
+		// Token: 0x06009DFD RID: 40445 RVA: 0x003BA43C File Offset: 0x003B863C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Dispose(bool disposing)
 		{
@@ -384,21 +384,21 @@ public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposa
 			this.m_array = null;
 		}
 
-		// Token: 0x06009D03 RID: 40195 RVA: 0x003B526C File Offset: 0x003B346C
+		// Token: 0x06009DFE RID: 40446 RVA: 0x003BA520 File Offset: 0x003B8720
 		public void Dispose()
 		{
 			this.Dispose(true);
 			GC.SuppressFinalize(this);
 		}
 
-		// Token: 0x06009D04 RID: 40196 RVA: 0x003B527C File Offset: 0x003B347C
+		// Token: 0x06009DFF RID: 40447 RVA: 0x003BA530 File Offset: 0x003B8730
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ~FileBackedArrayHandle()
 		{
 			this.Dispose(false);
 		}
 
-		// Token: 0x06009D05 RID: 40197 RVA: 0x003B52AC File Offset: 0x003B34AC
+		// Token: 0x06009E00 RID: 40448 RVA: 0x003BA560 File Offset: 0x003B8760
 		[Conditional("DEVELOPMENT_BUILD")]
 		[Conditional("UNITY_EDITOR")]
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -410,14 +410,14 @@ public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposa
 			}
 		}
 
-		// Token: 0x06009D06 RID: 40198 RVA: 0x003B52C1 File Offset: 0x003B34C1
+		// Token: 0x06009E01 RID: 40449 RVA: 0x003BA575 File Offset: 0x003B8775
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool IsDisposed()
 		{
 			return this.m_array == null;
 		}
 
-		// Token: 0x06009D07 RID: 40199 RVA: 0x003B52CC File Offset: 0x003B34CC
+		// Token: 0x06009E02 RID: 40450 RVA: 0x003BA580 File Offset: 0x003B8780
 		[Conditional("DEVELOPMENT_BUILD")]
 		[Conditional("UNITY_EDITOR")]
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -429,7 +429,7 @@ public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposa
 			}
 		}
 
-		// Token: 0x06009D08 RID: 40200 RVA: 0x003B52E8 File Offset: 0x003B34E8
+		// Token: 0x06009E03 RID: 40451 RVA: 0x003BA59C File Offset: 0x003B879C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnWritten(int start, ReadOnlySpan<T> span)
 		{
@@ -444,8 +444,8 @@ public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposa
 			readOnlySpan.CopyTo(span2);
 		}
 
-		// Token: 0x17001276 RID: 4726
-		// (get) Token: 0x06009D09 RID: 40201 RVA: 0x003B5352 File Offset: 0x003B3552
+		// Token: 0x170012AF RID: 4783
+		// (get) Token: 0x06009E04 RID: 40452 RVA: 0x003BA606 File Offset: 0x003B8806
 		public BackedArrayHandleMode Mode
 		{
 			get
@@ -454,7 +454,7 @@ public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposa
 			}
 		}
 
-		// Token: 0x06009D0A RID: 40202 RVA: 0x003B535C File Offset: 0x003B355C
+		// Token: 0x06009E05 RID: 40453 RVA: 0x003BA610 File Offset: 0x003B8810
 		[PublicizedFrom(EAccessModifier.Private)]
 		public unsafe void FlushInternal()
 		{
@@ -471,13 +471,13 @@ public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposa
 			onWritten(this.m_start, readOnlySpan);
 		}
 
-		// Token: 0x06009D0B RID: 40203 RVA: 0x003B53CA File Offset: 0x003B35CA
+		// Token: 0x06009E06 RID: 40454 RVA: 0x003BA67E File Offset: 0x003B887E
 		public void Flush()
 		{
 			this.FlushInternal();
 		}
 
-		// Token: 0x06009D0C RID: 40204 RVA: 0x003B53D2 File Offset: 0x003B35D2
+		// Token: 0x06009E07 RID: 40455 RVA: 0x003BA686 File Offset: 0x003B8886
 		public Memory<T> GetMemory()
 		{
 			if (this.m_memoryOwner == null)
@@ -487,7 +487,7 @@ public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposa
 			return this.m_memoryOwner.Memory;
 		}
 
-		// Token: 0x06009D0D RID: 40205 RVA: 0x003B5404 File Offset: 0x003B3604
+		// Token: 0x06009E08 RID: 40456 RVA: 0x003BA6B8 File Offset: 0x003B88B8
 		public ReadOnlyMemory<T> GetReadOnlyMemory()
 		{
 			if (this.m_memoryOwner == null)
@@ -497,53 +497,53 @@ public sealed class FileBackedArray<[IsUnmanaged] T> : IBackedArray<T>, IDisposa
 			return this.m_memoryOwner.Memory;
 		}
 
-		// Token: 0x06009D0E RID: 40206 RVA: 0x003B543B File Offset: 0x003B363B
+		// Token: 0x06009E09 RID: 40457 RVA: 0x003BA6EF File Offset: 0x003B88EF
 		public unsafe T* GetPtr()
 		{
 			return this.m_ptr;
 		}
 
-		// Token: 0x06009D0F RID: 40207 RVA: 0x003B5443 File Offset: 0x003B3643
+		// Token: 0x06009E0A RID: 40458 RVA: 0x003BA6F7 File Offset: 0x003B88F7
 		public unsafe Span<T> GetSpan()
 		{
 			return new Span<T>((void*)this.m_ptr, this.m_length);
 		}
 
-		// Token: 0x06009D10 RID: 40208 RVA: 0x003B5456 File Offset: 0x003B3656
+		// Token: 0x06009E0B RID: 40459 RVA: 0x003BA70A File Offset: 0x003B890A
 		public unsafe ReadOnlySpan<T> GetReadOnlySpan()
 		{
 			return new ReadOnlySpan<T>((void*)this.m_ptr, this.m_length);
 		}
 
-		// Token: 0x0400770B RID: 30475
+		// Token: 0x040077E3 RID: 30691
 		[PublicizedFrom(EAccessModifier.Private)]
 		public FileBackedArray<T> m_array;
 
-		// Token: 0x0400770C RID: 30476
+		// Token: 0x040077E4 RID: 30692
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly int m_valueSize;
 
-		// Token: 0x0400770D RID: 30477
+		// Token: 0x040077E5 RID: 30693
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int m_start;
 
-		// Token: 0x0400770E RID: 30478
+		// Token: 0x040077E6 RID: 30694
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int m_length;
 
-		// Token: 0x0400770F RID: 30479
+		// Token: 0x040077E7 RID: 30695
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly BackedArrayHandleMode m_mode;
 
-		// Token: 0x04007710 RID: 30480
+		// Token: 0x040077E8 RID: 30696
 		[PublicizedFrom(EAccessModifier.Private)]
 		public NativeArray<T> m_buffer;
 
-		// Token: 0x04007711 RID: 30481
+		// Token: 0x040077E9 RID: 30697
 		[PublicizedFrom(EAccessModifier.Private)]
 		public unsafe T* m_ptr;
 
-		// Token: 0x04007712 RID: 30482
+		// Token: 0x040077EA RID: 30698
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IMemoryOwner<T> m_memoryOwner;
 	}

@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001968 RID: 6504
+	// Token: 0x0200198E RID: 6542
 	[Preserve]
 	public class ActionModifyEntityStat : ActionBaseClientAction
 	{
-		// Token: 0x0600C720 RID: 50976 RVA: 0x00494D80 File Offset: 0x00492F80
+		// Token: 0x0600C8A7 RID: 51367 RVA: 0x0049B0C4 File Offset: 0x004992C4
 		public override void OnClientPerform(Entity target)
 		{
 			EntityAlive entityAlive = target as EntityAlive;
@@ -37,7 +37,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C721 RID: 50977 RVA: 0x00494EA0 File Offset: 0x004930A0
+		// Token: 0x0600C8A8 RID: 51368 RVA: 0x0049B1E4 File Offset: 0x004993E4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual float GetValue(float value, float original, float max)
 		{
@@ -76,7 +76,7 @@ namespace GameEvent.SequenceActions
 			return 0f;
 		}
 
-		// Token: 0x0600C722 RID: 50978 RVA: 0x00494F30 File Offset: 0x00493130
+		// Token: 0x0600C8A9 RID: 51369 RVA: 0x0049B274 File Offset: 0x00499474
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -86,7 +86,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseBool(ActionModifyEntityStat.PropIsPercent, ref this.isPercent);
 		}
 
-		// Token: 0x0600C723 RID: 50979 RVA: 0x00494F88 File Offset: 0x00493188
+		// Token: 0x0600C8AA RID: 51370 RVA: 0x0049B2CC File Offset: 0x004994CC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -99,67 +99,67 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040096BF RID: 38591
+		// Token: 0x040097E8 RID: 38888
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string valueText;
 
-		// Token: 0x040096C0 RID: 38592
+		// Token: 0x040097E9 RID: 38889
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ActionModifyEntityStat.StatTypes Stat;
 
-		// Token: 0x040096C1 RID: 38593
+		// Token: 0x040097EA RID: 38890
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ActionModifyEntityStat.OperationTypes operationType;
 
-		// Token: 0x040096C2 RID: 38594
+		// Token: 0x040097EB RID: 38891
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool isPercent;
 
-		// Token: 0x040096C3 RID: 38595
+		// Token: 0x040097EC RID: 38892
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropValue = "value";
 
-		// Token: 0x040096C4 RID: 38596
+		// Token: 0x040097ED RID: 38893
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropStat = "stat";
 
-		// Token: 0x040096C5 RID: 38597
+		// Token: 0x040097EE RID: 38894
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropOperation = "operation";
 
-		// Token: 0x040096C6 RID: 38598
+		// Token: 0x040097EF RID: 38895
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropIsPercent = "is_percent";
 
-		// Token: 0x02001969 RID: 6505
+		// Token: 0x0200198F RID: 6543
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum StatTypes
 		{
-			// Token: 0x040096C8 RID: 38600
+			// Token: 0x040097F1 RID: 38897
 			Health,
-			// Token: 0x040096C9 RID: 38601
+			// Token: 0x040097F2 RID: 38898
 			Stamina,
-			// Token: 0x040096CA RID: 38602
+			// Token: 0x040097F3 RID: 38899
 			Food,
-			// Token: 0x040096CB RID: 38603
+			// Token: 0x040097F4 RID: 38900
 			Water,
-			// Token: 0x040096CC RID: 38604
+			// Token: 0x040097F5 RID: 38901
 			SightRange
 		}
 
-		// Token: 0x0200196A RID: 6506
+		// Token: 0x02001990 RID: 6544
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum OperationTypes
 		{
-			// Token: 0x040096CE RID: 38606
+			// Token: 0x040097F7 RID: 38903
 			Set,
-			// Token: 0x040096CF RID: 38607
+			// Token: 0x040097F8 RID: 38904
 			SetMax,
-			// Token: 0x040096D0 RID: 38608
+			// Token: 0x040097F9 RID: 38905
 			Add,
-			// Token: 0x040096D1 RID: 38609
+			// Token: 0x040097FA RID: 38906
 			Subtract,
-			// Token: 0x040096D2 RID: 38610
+			// Token: 0x040097FB RID: 38907
 			Multiply
 		}
 	}

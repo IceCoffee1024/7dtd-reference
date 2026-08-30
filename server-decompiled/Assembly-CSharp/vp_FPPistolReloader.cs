@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020015E2 RID: 5602
+// Token: 0x020015FD RID: 5629
 public class vp_FPPistolReloader : vp_FPWeaponReloader
 {
-	// Token: 0x0600AF68 RID: 44904 RVA: 0x004171F4 File Offset: 0x004153F4
+	// Token: 0x0600B065 RID: 45157 RVA: 0x0041C534 File Offset: 0x0041A734
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnStart_Reload()
 	{
@@ -62,7 +62,7 @@ public class vp_FPPistolReloader : vp_FPWeaponReloader
 		}, this.m_Timer);
 	}
 
-	// Token: 0x040082F8 RID: 33528
+	// Token: 0x040083D1 RID: 33745
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public vp_Timer.Handle m_Timer = new vp_Timer.Handle();

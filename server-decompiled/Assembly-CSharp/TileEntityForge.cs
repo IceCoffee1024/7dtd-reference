@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000C5A RID: 3162
+// Token: 0x02000C6C RID: 3180
 public class TileEntityForge : TileEntity
 {
-	// Token: 0x06006077 RID: 24695 RVA: 0x00261BF0 File Offset: 0x0025FDF0
+	// Token: 0x06006102 RID: 24834 RVA: 0x00264AC8 File Offset: 0x00262CC8
 	public TileEntityForge(Chunk _chunk)
 		: base(_chunk)
 	{
@@ -17,13 +17,13 @@ public class TileEntityForge : TileEntity
 		this.fuelInForgeInTicks = 0;
 	}
 
-	// Token: 0x06006078 RID: 24696 RVA: 0x00261C65 File Offset: 0x0025FE65
+	// Token: 0x06006103 RID: 24835 RVA: 0x00264B3D File Offset: 0x00262D3D
 	public bool CanOperate(ulong _worldTimeInTicks)
 	{
 		return this.GetFuelLeft(_worldTimeInTicks) + this.GetFuelInStorage() > 0 && this.outputWeight > 0 && this.metalInForge > 0;
 	}
 
-	// Token: 0x06006079 RID: 24697 RVA: 0x00261C8C File Offset: 0x0025FE8C
+	// Token: 0x06006104 RID: 24836 RVA: 0x00264B64 File Offset: 0x00262D64
 	public override void UpdateTick(World world)
 	{
 		base.UpdateTick(world);
@@ -105,7 +105,7 @@ public class TileEntityForge : TileEntity
 		}
 	}
 
-	// Token: 0x0600607A RID: 24698 RVA: 0x00261FC8 File Offset: 0x002601C8
+	// Token: 0x06006105 RID: 24837 RVA: 0x00264EA0 File Offset: 0x002630A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateLightState(World world)
 	{
@@ -123,7 +123,7 @@ public class TileEntityForge : TileEntity
 		}
 	}
 
-	// Token: 0x0600607B RID: 24699 RVA: 0x00262048 File Offset: 0x00260248
+	// Token: 0x06006106 RID: 24838 RVA: 0x00264F20 File Offset: 0x00263120
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool moveDown(ItemStack[] _items)
 	{
@@ -144,7 +144,7 @@ public class TileEntityForge : TileEntity
 		return flag;
 	}
 
-	// Token: 0x0600607C RID: 24700 RVA: 0x002620A0 File Offset: 0x002602A0
+	// Token: 0x06006107 RID: 24839 RVA: 0x00264F78 File Offset: 0x00263178
 	public int GetFuelLeft(ulong _worldTimeInTicks)
 	{
 		if (_worldTimeInTicks == 0UL || this.lastTickTimeDataCalculated == 0UL)
@@ -155,25 +155,25 @@ public class TileEntityForge : TileEntity
 		return (int)Math.Max((float)this.fuelInForgeInTicks - num, 0f) / 20;
 	}
 
-	// Token: 0x0600607D RID: 24701 RVA: 0x002620EC File Offset: 0x002602EC
+	// Token: 0x06006108 RID: 24840 RVA: 0x00264FC4 File Offset: 0x002631C4
 	public override bool IsActive(World world)
 	{
 		return world.GetBlock(base.ToWorldPos()).meta > 0;
 	}
 
-	// Token: 0x0600607E RID: 24702 RVA: 0x00262110 File Offset: 0x00260310
+	// Token: 0x06006109 RID: 24841 RVA: 0x00264FE8 File Offset: 0x002631E8
 	public int GetInputWeight()
 	{
 		return this.inputMetal;
 	}
 
-	// Token: 0x0600607F RID: 24703 RVA: 0x00262118 File Offset: 0x00260318
+	// Token: 0x0600610A RID: 24842 RVA: 0x00264FF0 File Offset: 0x002631F0
 	public int GetFuelInStorage()
 	{
 		return this.fuelInStorageInTicks / 20;
 	}
 
-	// Token: 0x06006080 RID: 24704 RVA: 0x00262124 File Offset: 0x00260324
+	// Token: 0x0600610B RID: 24843 RVA: 0x00264FFC File Offset: 0x002631FC
 	public int GetMetalForgedSoFar(ulong _currentTickTime)
 	{
 		if (_currentTickTime == 0UL || this.lastTickTimeDataCalculated == 0UL || !this.CanOperate(_currentTickTime))
@@ -188,13 +188,13 @@ public class TileEntityForge : TileEntity
 		return Math.Min(this.moldedMetalSoFar + num, this.outputWeight);
 	}
 
-	// Token: 0x06006081 RID: 24705 RVA: 0x00262195 File Offset: 0x00260395
+	// Token: 0x0600610C RID: 24844 RVA: 0x0026506D File Offset: 0x0026326D
 	public int GetOutputWeight()
 	{
 		return this.outputWeight;
 	}
 
-	// Token: 0x06006082 RID: 24706 RVA: 0x002621A0 File Offset: 0x002603A0
+	// Token: 0x0600610D RID: 24845 RVA: 0x00265078 File Offset: 0x00263278
 	public int GetCurrentMetalInForge(ulong _currentTickTime)
 	{
 		if (_currentTickTime == 0UL || this.lastTickTimeDataCalculated == 0UL || !this.CanOperate(_currentTickTime))
@@ -205,32 +205,32 @@ public class TileEntityForge : TileEntity
 		return Math.Max(this.metalInForge - num, 0);
 	}
 
-	// Token: 0x06006083 RID: 24707 RVA: 0x002621E8 File Offset: 0x002603E8
+	// Token: 0x0600610E RID: 24846 RVA: 0x002650C0 File Offset: 0x002632C0
 	public float GetMoldTimeNeeded(ulong _currentTickTime)
 	{
 		return (float)(this.GetInputWeight() + this.GetCurrentMetalInForge(_currentTickTime)) / 2f;
 	}
 
-	// Token: 0x06006084 RID: 24708 RVA: 0x002621FF File Offset: 0x002603FF
+	// Token: 0x0600610F RID: 24847 RVA: 0x002650D7 File Offset: 0x002632D7
 	public ItemStack[] GetFuel()
 	{
 		return this.fuel;
 	}
 
-	// Token: 0x06006085 RID: 24709 RVA: 0x00262207 File Offset: 0x00260407
+	// Token: 0x06006110 RID: 24848 RVA: 0x002650DF File Offset: 0x002632DF
 	public void SetFuel(ItemStack[] _fuel)
 	{
 		this.fuel = ItemStack.Clone(_fuel);
 		this.setModified();
 	}
 
-	// Token: 0x06006086 RID: 24710 RVA: 0x0026221B File Offset: 0x0026041B
+	// Token: 0x06006111 RID: 24849 RVA: 0x002650F3 File Offset: 0x002632F3
 	public ItemStack[] GetInput()
 	{
 		return this.input;
 	}
 
-	// Token: 0x06006087 RID: 24711 RVA: 0x00262223 File Offset: 0x00260423
+	// Token: 0x06006112 RID: 24850 RVA: 0x002650FB File Offset: 0x002632FB
 	public void SetInput(ItemStack[] _input, bool _bSetModified = true)
 	{
 		this.input = ItemStack.Clone(_input);
@@ -240,13 +240,13 @@ public class TileEntityForge : TileEntity
 		}
 	}
 
-	// Token: 0x06006088 RID: 24712 RVA: 0x0026223A File Offset: 0x0026043A
+	// Token: 0x06006113 RID: 24851 RVA: 0x00265112 File Offset: 0x00263312
 	public ItemStack GetMold()
 	{
 		return this.mold;
 	}
 
-	// Token: 0x06006089 RID: 24713 RVA: 0x00262242 File Offset: 0x00260442
+	// Token: 0x06006114 RID: 24852 RVA: 0x0026511A File Offset: 0x0026331A
 	public void SetMold(ItemStack _mold)
 	{
 		this.mold = _mold;
@@ -255,19 +255,19 @@ public class TileEntityForge : TileEntity
 		this.setModified();
 	}
 
-	// Token: 0x0600608A RID: 24714 RVA: 0x0026225F File Offset: 0x0026045F
+	// Token: 0x06006115 RID: 24853 RVA: 0x00265137 File Offset: 0x00263337
 	public ItemStack GetOutput()
 	{
 		return this.output;
 	}
 
-	// Token: 0x0600608B RID: 24715 RVA: 0x00262267 File Offset: 0x00260467
+	// Token: 0x06006116 RID: 24854 RVA: 0x0026513F File Offset: 0x0026333F
 	public ItemValue GetBurningItemValue()
 	{
 		return this.burningItemValue;
 	}
 
-	// Token: 0x0600608C RID: 24716 RVA: 0x0026226F File Offset: 0x0026046F
+	// Token: 0x06006117 RID: 24855 RVA: 0x00265147 File Offset: 0x00263347
 	public void SetOutput(ItemStack _output, bool _bSetModified = true)
 	{
 		this.output = _output;
@@ -277,7 +277,7 @@ public class TileEntityForge : TileEntity
 		}
 	}
 
-	// Token: 0x0600608D RID: 24717 RVA: 0x00262281 File Offset: 0x00260481
+	// Token: 0x06006118 RID: 24856 RVA: 0x00265159 File Offset: 0x00263359
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void setModified()
 	{
@@ -285,7 +285,7 @@ public class TileEntityForge : TileEntity
 		base.setModified();
 	}
 
-	// Token: 0x0600608E RID: 24718 RVA: 0x00262290 File Offset: 0x00260490
+	// Token: 0x06006119 RID: 24857 RVA: 0x00265168 File Offset: 0x00263368
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void recalcStats()
 	{
@@ -315,7 +315,7 @@ public class TileEntityForge : TileEntity
 		}
 	}
 
-	// Token: 0x0600608F RID: 24719 RVA: 0x002623B4 File Offset: 0x002605B4
+	// Token: 0x0600611A RID: 24858 RVA: 0x0026528C File Offset: 0x0026348C
 	public override void read(PooledBinaryReader _br, TileEntity.StreamModeRead _eStreamMode)
 	{
 		base.read(_br, _eStreamMode);
@@ -493,7 +493,7 @@ public class TileEntityForge : TileEntity
 		this.recalcStats();
 	}
 
-	// Token: 0x06006090 RID: 24720 RVA: 0x0026282C File Offset: 0x00260A2C
+	// Token: 0x0600611B RID: 24859 RVA: 0x00265704 File Offset: 0x00263904
 	public override void write(PooledBinaryWriter _bw, TileEntity.StreamModeWrite _eStreamMode)
 	{
 		base.write(_bw, _eStreamMode);
@@ -559,93 +559,93 @@ public class TileEntityForge : TileEntity
 		}
 	}
 
-	// Token: 0x06006091 RID: 24721 RVA: 0x00080B69 File Offset: 0x0007ED69
+	// Token: 0x0600611C RID: 24860 RVA: 0x0008121D File Offset: 0x0007F41D
 	public override TileEntityType GetTileEntityType()
 	{
 		return TileEntityType.Forge;
 	}
 
-	// Token: 0x04004B51 RID: 19281
+	// Token: 0x04004BEE RID: 19438
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new const int Version = 18;
 
-	// Token: 0x04004B52 RID: 19282
+	// Token: 0x04004BEF RID: 19439
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cFuelBurnPerTick = 1f;
 
-	// Token: 0x04004B53 RID: 19283
+	// Token: 0x04004BF0 RID: 19440
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cMoldPerTick = 0.1f;
 
-	// Token: 0x04004B54 RID: 19284
+	// Token: 0x04004BF1 RID: 19441
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack[] fuel;
 
-	// Token: 0x04004B55 RID: 19285
+	// Token: 0x04004BF2 RID: 19442
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack[] input;
 
-	// Token: 0x04004B56 RID: 19286
+	// Token: 0x04004BF3 RID: 19443
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack mold;
 
-	// Token: 0x04004B57 RID: 19287
+	// Token: 0x04004BF4 RID: 19444
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack output;
 
-	// Token: 0x04004B58 RID: 19288
+	// Token: 0x04004BF5 RID: 19445
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int fuelInForgeInTicks;
 
-	// Token: 0x04004B59 RID: 19289
+	// Token: 0x04004BF6 RID: 19446
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int moldedMetalSoFar;
 
-	// Token: 0x04004B5A RID: 19290
+	// Token: 0x04004BF7 RID: 19447
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int metalInForge;
 
-	// Token: 0x04004B5B RID: 19291
+	// Token: 0x04004BF8 RID: 19448
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue burningItemValue;
 
-	// Token: 0x04004B5C RID: 19292
+	// Token: 0x04004BF9 RID: 19449
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong lastTickTime;
 
-	// Token: 0x04004B5D RID: 19293
+	// Token: 0x04004BFA RID: 19450
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong lastTickTimeDataCalculated;
 
-	// Token: 0x04004B5E RID: 19294
+	// Token: 0x04004BFB RID: 19451
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int inputMetal;
 
-	// Token: 0x04004B5F RID: 19295
+	// Token: 0x04004BFC RID: 19452
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int outputWeight;
 
-	// Token: 0x04004B60 RID: 19296
+	// Token: 0x04004BFD RID: 19453
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int fuelInStorageInTicks;
 
-	// Token: 0x04004B61 RID: 19297
+	// Token: 0x04004BFE RID: 19454
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue outputItem;
 
-	// Token: 0x04004B62 RID: 19298
+	// Token: 0x04004BFF RID: 19455
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack[] lastServerFuel;
 
-	// Token: 0x04004B63 RID: 19299
+	// Token: 0x04004C00 RID: 19456
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack[] lastServerInput;
 
-	// Token: 0x04004B64 RID: 19300
+	// Token: 0x04004C01 RID: 19457
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack lastServerMold = ItemStack.Empty;
 
-	// Token: 0x04004B65 RID: 19301
+	// Token: 0x04004C02 RID: 19458
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack lastServerOutput = ItemStack.Empty;
 }

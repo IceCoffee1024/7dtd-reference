@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x02001536 RID: 5430
+// Token: 0x02001551 RID: 5457
 public enum vp_GlobalEventMode
 {
-	// Token: 0x04007E34 RID: 32308
+	// Token: 0x04007F0D RID: 32525
 	DONT_REQUIRE_LISTENER,
-	// Token: 0x04007E35 RID: 32309
+	// Token: 0x04007F0E RID: 32526
 	REQUIRE_LISTENER
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000E9F RID: 3743
-// (Invoke) Token: 0x060074C5 RID: 29893
+// Token: 0x02000EB4 RID: 3764
+// (Invoke) Token: 0x06007565 RID: 30053
 public delegate void XUiEvent_OnDragEventHandler(XUiController _sender, EDragType _dragType, Vector2 _mousePositionDelta);

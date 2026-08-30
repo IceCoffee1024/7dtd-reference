@@ -1,19 +1,19 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001594 RID: 5524
+// Token: 0x020015AF RID: 5551
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(vp_DamageHandler))]
 public class vp_Grenade : MonoBehaviour
 {
-	// Token: 0x0600ACC5 RID: 44229 RVA: 0x00406DF2 File Offset: 0x00404FF2
+	// Token: 0x0600ADC2 RID: 44482 RVA: 0x0040C132 File Offset: 0x0040A332
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Awake()
 	{
 		this.m_Rigidbody = base.GetComponent<Rigidbody>();
 	}
 
-	// Token: 0x0600ACC6 RID: 44230 RVA: 0x00406E00 File Offset: 0x00405000
+	// Token: 0x0600ADC3 RID: 44483 RVA: 0x0040C140 File Offset: 0x0040A340
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -23,7 +23,7 @@ public class vp_Grenade : MonoBehaviour
 		}, null);
 	}
 
-	// Token: 0x0600ACC7 RID: 44231 RVA: 0x00406E1C File Offset: 0x0040501C
+	// Token: 0x0600ADC4 RID: 44484 RVA: 0x0040C15C File Offset: 0x0040A35C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
@@ -41,33 +41,33 @@ public class vp_Grenade : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600ACC8 RID: 44232 RVA: 0x00406E97 File Offset: 0x00405097
+	// Token: 0x0600ADC5 RID: 44485 RVA: 0x0040C1D7 File Offset: 0x0040A3D7
 	public void SetSource(Transform source)
 	{
 		this.m_Source = base.transform;
 		this.m_OriginalSource = source;
 	}
 
-	// Token: 0x0400806B RID: 32875
+	// Token: 0x04008144 RID: 33092
 	public float LifeTime = 3f;
 
-	// Token: 0x0400806C RID: 32876
+	// Token: 0x04008145 RID: 33093
 	public float RigidbodyForce = 10f;
 
-	// Token: 0x0400806D RID: 32877
+	// Token: 0x04008146 RID: 33094
 	public float RigidbodySpin;
 
-	// Token: 0x0400806E RID: 32878
+	// Token: 0x04008147 RID: 33095
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Rigidbody m_Rigidbody;
 
-	// Token: 0x0400806F RID: 32879
+	// Token: 0x04008148 RID: 33096
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_Source;
 
-	// Token: 0x04008070 RID: 32880
+	// Token: 0x04008149 RID: 33097
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_OriginalSource;

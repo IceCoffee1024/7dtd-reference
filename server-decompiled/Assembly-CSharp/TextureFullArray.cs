@@ -3,10 +3,10 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Token: 0x02000AED RID: 2797
+// Token: 0x02000AFF RID: 2815
 public struct TextureFullArray : IEquatable<TextureFullArray>
 {
-	// Token: 0x17000901 RID: 2305
+	// Token: 0x17000913 RID: 2323
 	public unsafe long this[int index]
 	{
 		get
@@ -27,14 +27,14 @@ public struct TextureFullArray : IEquatable<TextureFullArray>
 		}
 	}
 
-	// Token: 0x0600536C RID: 21356 RVA: 0x001FE253 File Offset: 0x001FC453
+	// Token: 0x060053F4 RID: 21492 RVA: 0x00200EC3 File Offset: 0x001FF0C3
 	public TextureFullArray(long _fillValue)
 	{
 		this.Fill(_fillValue);
 	}
 
-	// Token: 0x17000902 RID: 2306
-	// (get) Token: 0x0600536D RID: 21357 RVA: 0x001FE25C File Offset: 0x001FC45C
+	// Token: 0x17000914 RID: 2324
+	// (get) Token: 0x060053F5 RID: 21493 RVA: 0x00200ECC File Offset: 0x001FF0CC
 	public static TextureFullArray Default
 	{
 		get
@@ -43,7 +43,7 @@ public struct TextureFullArray : IEquatable<TextureFullArray>
 		}
 	}
 
-	// Token: 0x0600536E RID: 21358 RVA: 0x001FE264 File Offset: 0x001FC464
+	// Token: 0x060053F6 RID: 21494 RVA: 0x00200ED4 File Offset: 0x001FF0D4
 	public unsafe void Fill(long _fillValue)
 	{
 		for (int i = 0; i < 1; i++)
@@ -52,8 +52,8 @@ public struct TextureFullArray : IEquatable<TextureFullArray>
 		}
 	}
 
-	// Token: 0x17000903 RID: 2307
-	// (get) Token: 0x0600536F RID: 21359 RVA: 0x001FE28F File Offset: 0x001FC48F
+	// Token: 0x17000915 RID: 2325
+	// (get) Token: 0x060053F7 RID: 21495 RVA: 0x00200EFF File Offset: 0x001FF0FF
 	public bool IsDefault
 	{
 		get
@@ -62,7 +62,7 @@ public struct TextureFullArray : IEquatable<TextureFullArray>
 		}
 	}
 
-	// Token: 0x06005370 RID: 21360 RVA: 0x001FE29C File Offset: 0x001FC49C
+	// Token: 0x060053F8 RID: 21496 RVA: 0x00200F0C File Offset: 0x001FF10C
 	public unsafe void Read(BinaryReader _br, int count = 1)
 	{
 		int i;
@@ -81,7 +81,7 @@ public struct TextureFullArray : IEquatable<TextureFullArray>
 		}
 	}
 
-	// Token: 0x06005371 RID: 21361 RVA: 0x001FE2FC File Offset: 0x001FC4FC
+	// Token: 0x060053F9 RID: 21497 RVA: 0x00200F6C File Offset: 0x001FF16C
 	public unsafe void Write(BinaryWriter _bw)
 	{
 		for (int i = 0; i < 1; i++)
@@ -90,7 +90,7 @@ public struct TextureFullArray : IEquatable<TextureFullArray>
 		}
 	}
 
-	// Token: 0x06005372 RID: 21362 RVA: 0x001FE32C File Offset: 0x001FC52C
+	// Token: 0x060053FA RID: 21498 RVA: 0x00200F9C File Offset: 0x001FF19C
 	public unsafe bool Equals(TextureFullArray other)
 	{
 		for (int i = 0; i < 1; i++)
@@ -103,7 +103,7 @@ public struct TextureFullArray : IEquatable<TextureFullArray>
 		return true;
 	}
 
-	// Token: 0x06005373 RID: 21363 RVA: 0x001FE370 File Offset: 0x001FC570
+	// Token: 0x060053FB RID: 21499 RVA: 0x00200FE0 File Offset: 0x001FF1E0
 	public override bool Equals(object obj)
 	{
 		if (obj is TextureFullArray)
@@ -114,7 +114,7 @@ public struct TextureFullArray : IEquatable<TextureFullArray>
 		return false;
 	}
 
-	// Token: 0x06005374 RID: 21364 RVA: 0x001FE398 File Offset: 0x001FC598
+	// Token: 0x060053FC RID: 21500 RVA: 0x00201008 File Offset: 0x001FF208
 	public override int GetHashCode()
 	{
 		int num = 17;
@@ -125,33 +125,33 @@ public struct TextureFullArray : IEquatable<TextureFullArray>
 		return num;
 	}
 
-	// Token: 0x06005375 RID: 21365 RVA: 0x001FE3D0 File Offset: 0x001FC5D0
+	// Token: 0x060053FD RID: 21501 RVA: 0x00201040 File Offset: 0x001FF240
 	public static bool operator ==(TextureFullArray left, TextureFullArray right)
 	{
 		return left.Equals(right);
 	}
 
-	// Token: 0x06005376 RID: 21366 RVA: 0x001FE3DA File Offset: 0x001FC5DA
+	// Token: 0x060053FE RID: 21502 RVA: 0x0020104A File Offset: 0x001FF24A
 	public static bool operator !=(TextureFullArray left, TextureFullArray right)
 	{
 		return !left.Equals(right);
 	}
 
-	// Token: 0x040040FA RID: 16634
+	// Token: 0x04004190 RID: 16784
 	[FixedBuffer(typeof(long), 1)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TextureFullArray.<values>e__FixedBuffer values;
 
-	// Token: 0x040040FB RID: 16635
+	// Token: 0x04004191 RID: 16785
 	public static readonly TextureFullArray _default = new TextureFullArray(0L);
 
-	// Token: 0x02000AEE RID: 2798
+	// Token: 0x02000B00 RID: 2816
 	[CompilerGenerated]
 	[UnsafeValueType]
 	[StructLayout(LayoutKind.Sequential, Size = 8)]
 	public struct <values>e__FixedBuffer
 	{
-		// Token: 0x040040FC RID: 16636
+		// Token: 0x04004192 RID: 16786
 		public long FixedElementField;
 	}
 }

@@ -4,32 +4,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000295 RID: 661
+// Token: 0x02000299 RID: 665
 [Preserve]
 public class ConsoleCmdSleeper : ConsoleCmdAbstract
 {
-	// Token: 0x0600134D RID: 4941 RVA: 0x00075F27 File Offset: 0x00074127
+	// Token: 0x0600135F RID: 4959 RVA: 0x00076583 File Offset: 0x00074783
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "sleeper" };
 	}
 
-	// Token: 0x0600134E RID: 4942 RVA: 0x00075F37 File Offset: 0x00074137
+	// Token: 0x06001360 RID: 4960 RVA: 0x00076593 File Offset: 0x00074793
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Drawn or list sleeper info";
 	}
 
-	// Token: 0x0600134F RID: 4943 RVA: 0x00075F3E File Offset: 0x0007413E
+	// Token: 0x06001361 RID: 4961 RVA: 0x0007659A File Offset: 0x0007479A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "draw - toggle drawing for current player prefab\nlist - list for current player prefab\nlistall - list all\nr - reset all";
 	}
 
-	// Token: 0x06001350 RID: 4944 RVA: 0x00075F48 File Offset: 0x00074148
+	// Token: 0x06001362 RID: 4962 RVA: 0x000765A4 File Offset: 0x000747A4
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 0)
@@ -71,7 +71,7 @@ public class ConsoleCmdSleeper : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001351 RID: 4945 RVA: 0x00076010 File Offset: 0x00074210
+	// Token: 0x06001363 RID: 4963 RVA: 0x0007666C File Offset: 0x0007486C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LogInfo(bool onlyPlayer)
 	{
@@ -115,7 +115,7 @@ public class ConsoleCmdSleeper : ConsoleCmdAbstract
 		this.Print("Sleeper volumes {0} of {1}", new object[] { num, count });
 	}
 
-	// Token: 0x06001352 RID: 4946 RVA: 0x000760E9 File Offset: 0x000742E9
+	// Token: 0x06001364 RID: 4964 RVA: 0x00076745 File Offset: 0x00074945
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator DrawVolumes()
 	{
@@ -147,7 +147,7 @@ public class ConsoleCmdSleeper : ConsoleCmdAbstract
 		yield break;
 	}
 
-	// Token: 0x06001353 RID: 4947 RVA: 0x000760F8 File Offset: 0x000742F8
+	// Token: 0x06001365 RID: 4965 RVA: 0x00076754 File Offset: 0x00074954
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Reset()
 	{
@@ -160,7 +160,7 @@ public class ConsoleCmdSleeper : ConsoleCmdAbstract
 		this.Print("Reset all sleeper volumes", Array.Empty<object>());
 	}
 
-	// Token: 0x06001354 RID: 4948 RVA: 0x0007612C File Offset: 0x0007432C
+	// Token: 0x06001366 RID: 4966 RVA: 0x00076788 File Offset: 0x00074988
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Print(string _s, params object[] _values)
 	{
@@ -168,7 +168,7 @@ public class ConsoleCmdSleeper : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output(text);
 	}
 
-	// Token: 0x04000D5E RID: 3422
+	// Token: 0x04000D6F RID: 3439
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Coroutine drawVolumesCo;
 }

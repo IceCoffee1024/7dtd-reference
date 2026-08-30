@@ -1,9 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020012EB RID: 4843
+// Token: 0x02001305 RID: 4869
 public class WorldRefMono : MonoBehaviour
 {
-	// Token: 0x04007358 RID: 29528
+	// Token: 0x04007430 RID: 29744
 	public ChunkCluster ChunkCluster;
 }

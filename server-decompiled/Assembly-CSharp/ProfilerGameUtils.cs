@@ -2,10 +2,10 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x02001503 RID: 5379
+// Token: 0x0200151E RID: 5406
 public static class ProfilerGameUtils
 {
-	// Token: 0x0600A8F1 RID: 43249 RVA: 0x003F1A64 File Offset: 0x003EFC64
+	// Token: 0x0600A9EE RID: 43502 RVA: 0x003F6DA4 File Offset: 0x003F4FA4
 	public static bool TryGetFlyingPlayer(out EntityPlayerLocal player)
 	{
 		World world = GameManager.Instance.World;
@@ -31,7 +31,7 @@ public static class ProfilerGameUtils
 		return true;
 	}
 
-	// Token: 0x0600A8F2 RID: 43250 RVA: 0x003F1AF2 File Offset: 0x003EFCF2
+	// Token: 0x0600A9EF RID: 43503 RVA: 0x003F6E32 File Offset: 0x003F5032
 	public static IEnumerator WaitForSingleChunkToLoad(int chunkX, int chunkZ, ChunkConditions.Delegate chunkCondition)
 	{
 		ChunkCluster cc = GameManager.Instance.World.ChunkCache;
@@ -45,7 +45,7 @@ public static class ProfilerGameUtils
 		yield break;
 	}
 
-	// Token: 0x0600A8F3 RID: 43251 RVA: 0x003F1B0F File Offset: 0x003EFD0F
+	// Token: 0x0600A9F0 RID: 43504 RVA: 0x003F6E4F File Offset: 0x003F504F
 	public static IEnumerator WaitForSingleChunkToLoad(Chunk chunk, ChunkConditions.Delegate chunkCondition)
 	{
 		if (chunk == null)
@@ -64,7 +64,7 @@ public static class ProfilerGameUtils
 		yield break;
 	}
 
-	// Token: 0x0600A8F4 RID: 43252 RVA: 0x003F1B25 File Offset: 0x003EFD25
+	// Token: 0x0600A9F1 RID: 43505 RVA: 0x003F6E65 File Offset: 0x003F5065
 	public static IEnumerator WaitForChunksAroundObserverToLoad(ChunkManager.ChunkObserver observer, ChunkConditions.Delegate chunkCondition)
 	{
 		ChunkCluster cc = GameManager.Instance.World.ChunkCache;

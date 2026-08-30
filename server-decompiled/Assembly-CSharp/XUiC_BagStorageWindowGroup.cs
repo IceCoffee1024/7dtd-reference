@@ -2,20 +2,20 @@
 using Audio;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EB3 RID: 3763
+// Token: 0x02000EC8 RID: 3784
 [Preserve]
 public class XUiC_BagStorageWindowGroup : XUiController
 {
-	// Token: 0x17000DD6 RID: 3542
-	// (get) Token: 0x060075BD RID: 30141 RVA: 0x002C31A9 File Offset: 0x002C13A9
-	// (set) Token: 0x060075BE RID: 30142 RVA: 0x002C31B1 File Offset: 0x002C13B1
+	// Token: 0x17000DF0 RID: 3568
+	// (get) Token: 0x0600765E RID: 30302 RVA: 0x002C66CD File Offset: 0x002C48CD
+	// (set) Token: 0x0600765F RID: 30303 RVA: 0x002C66D5 File Offset: 0x002C48D5
 	public Bag Bag
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x060075BF RID: 30143 RVA: 0x002C31BC File Offset: 0x002C13BC
+	// Token: 0x06007660 RID: 30304 RVA: 0x002C66E0 File Offset: 0x002C48E0
 	public override void Init()
 	{
 		base.Init();
@@ -25,7 +25,7 @@ public class XUiC_BagStorageWindowGroup : XUiController
 		this.timerWindow = this.xui.GetChildByType<XUiC_Timer>();
 	}
 
-	// Token: 0x060075C0 RID: 30144 RVA: 0x002C3208 File Offset: 0x002C1408
+	// Token: 0x06007661 RID: 30305 RVA: 0x002C672C File Offset: 0x002C492C
 	public static void Open(XUi _xui, Entity _entity, Bag _bag, LootContainer _lootContainer, string _containerName = null, Action _onModified = null, Action _onClose = null, Func<bool> _interactionCheck = null, bool _runOpenTimer = false)
 	{
 		if (_containerName == null)
@@ -76,14 +76,14 @@ public class XUiC_BagStorageWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x060075C1 RID: 30145 RVA: 0x0029A7CC File Offset: 0x002989CC
+	// Token: 0x06007662 RID: 30306 RVA: 0x0029D92C File Offset: 0x0029BB2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OpenStorageWindow()
 	{
 		this.xui.playerUI.windowManager.Open(this.windowGroup, true);
 	}
 
-	// Token: 0x060075C2 RID: 30146 RVA: 0x002C33E6 File Offset: 0x002C15E6
+	// Token: 0x06007663 RID: 30307 RVA: 0x002C690A File Offset: 0x002C4B0A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CancelOpen()
 	{
@@ -95,7 +95,7 @@ public class XUiC_BagStorageWindowGroup : XUiController
 		this.ClearPendingState();
 	}
 
-	// Token: 0x060075C3 RID: 30147 RVA: 0x002C33FF File Offset: 0x002C15FF
+	// Token: 0x06007664 RID: 30308 RVA: 0x002C6923 File Offset: 0x002C4B23
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -105,7 +105,7 @@ public class XUiC_BagStorageWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x060075C4 RID: 30148 RVA: 0x002C343C File Offset: 0x002C163C
+	// Token: 0x06007665 RID: 30309 RVA: 0x002C6960 File Offset: 0x002C4B60
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -142,7 +142,7 @@ public class XUiC_BagStorageWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x060075C5 RID: 30149 RVA: 0x002C35A4 File Offset: 0x002C17A4
+	// Token: 0x06007666 RID: 30310 RVA: 0x002C6AC8 File Offset: 0x002C4CC8
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -159,7 +159,7 @@ public class XUiC_BagStorageWindowGroup : XUiController
 		this.ClearPendingState();
 	}
 
-	// Token: 0x060075C6 RID: 30150 RVA: 0x002C3624 File Offset: 0x002C1824
+	// Token: 0x06007667 RID: 30311 RVA: 0x002C6B48 File Offset: 0x002C4D48
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ClearPendingState()
 	{
@@ -177,41 +177,41 @@ public class XUiC_BagStorageWindowGroup : XUiController
 		this.checkInteraction = null;
 	}
 
-	// Token: 0x040056C6 RID: 22214
+	// Token: 0x0400576B RID: 22379
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_BagContainer containerWindow;
 
-	// Token: 0x040056C7 RID: 22215
+	// Token: 0x0400576C RID: 22380
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_WindowNonPagingHeader nonPagingHeaderWindow;
 
-	// Token: 0x040056C8 RID: 22216
+	// Token: 0x0400576D RID: 22381
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_Timer timerWindow;
 
-	// Token: 0x040056C9 RID: 22217
+	// Token: 0x0400576E RID: 22382
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool playOnOpenSound;
 
-	// Token: 0x040056CA RID: 22218
+	// Token: 0x0400576F RID: 22383
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool ignoreCloseSound;
 
-	// Token: 0x040056CB RID: 22219
+	// Token: 0x04005770 RID: 22384
 	public static string ID;
 
-	// Token: 0x040056CC RID: 22220
+	// Token: 0x04005771 RID: 22385
 	public Entity Entity;
 
-	// Token: 0x040056CE RID: 22222
+	// Token: 0x04005773 RID: 22387
 	[PublicizedFrom(EAccessModifier.Private)]
 	public LootContainer lootContainer;
 
-	// Token: 0x040056CF RID: 22223
+	// Token: 0x04005774 RID: 22388
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Action onCloseCallback;
 
-	// Token: 0x040056D0 RID: 22224
+	// Token: 0x04005775 RID: 22389
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Func<bool> checkInteraction;
 }

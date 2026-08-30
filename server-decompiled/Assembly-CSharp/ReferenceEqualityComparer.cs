@@ -2,17 +2,17 @@
 using System.Collections;
 using System.Threading;
 
-// Token: 0x02001472 RID: 5234
+// Token: 0x0200148D RID: 5261
 public class ReferenceEqualityComparer : IEqualityComparer
 {
-	// Token: 0x0600A427 RID: 42023 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x0600A524 RID: 42276 RVA: 0x0000640C File Offset: 0x0000460C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ReferenceEqualityComparer()
 	{
 	}
 
-	// Token: 0x1700132E RID: 4910
-	// (get) Token: 0x0600A428 RID: 42024 RVA: 0x003D1B44 File Offset: 0x003CFD44
+	// Token: 0x17001367 RID: 4967
+	// (get) Token: 0x0600A525 RID: 42277 RVA: 0x003D6E88 File Offset: 0x003D5088
 	public static ReferenceEqualityComparer Instance
 	{
 		get
@@ -26,14 +26,14 @@ public class ReferenceEqualityComparer : IEqualityComparer
 		}
 	}
 
-	// Token: 0x0600A429 RID: 42025 RVA: 0x003D1B70 File Offset: 0x003CFD70
+	// Token: 0x0600A526 RID: 42278 RVA: 0x003D6EB4 File Offset: 0x003D50B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool System.Collections.IEqualityComparer.Equals(object _x, object _y)
 	{
 		return _x == _y;
 	}
 
-	// Token: 0x0600A42A RID: 42026 RVA: 0x003D1B76 File Offset: 0x003CFD76
+	// Token: 0x0600A527 RID: 42279 RVA: 0x003D6EBA File Offset: 0x003D50BA
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int System.Collections.IEqualityComparer.GetHashCode(object _obj)
 	{
@@ -44,7 +44,7 @@ public class ReferenceEqualityComparer : IEqualityComparer
 		return 0;
 	}
 
-	// Token: 0x04007A3F RID: 31295
+	// Token: 0x04007B18 RID: 31512
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static ReferenceEqualityComparer instance;
 }

@@ -1,18 +1,18 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D46 RID: 3398
+// Token: 0x02000D59 RID: 3417
 [Preserve]
 public class ItemActionEntryFavorite : BaseItemActionEntry
 {
-	// Token: 0x06006778 RID: 26488 RVA: 0x0028D300 File Offset: 0x0028B500
+	// Token: 0x06006807 RID: 26631 RVA: 0x0029029C File Offset: 0x0028E49C
 	public ItemActionEntryFavorite(XUiController _controller, Recipe _recipe)
 		: base(_controller, "lblContextActionFavorite", "server_favorite", BaseItemActionEntry.GamepadShortCut.DPadRight, "crafting/craft_click_craft", "ui/ui_denied")
 	{
 		this.recipe = _recipe;
 	}
 
-	// Token: 0x06006779 RID: 26489 RVA: 0x0028D328 File Offset: 0x0028B528
+	// Token: 0x06006808 RID: 26632 RVA: 0x002902C4 File Offset: 0x0028E4C4
 	public override void OnActivated()
 	{
 		XUiC_RecipeEntry xuiC_RecipeEntry = (XUiC_RecipeEntry)base.ItemController;
@@ -38,7 +38,7 @@ public class ItemActionEntryFavorite : BaseItemActionEntry
 		}
 	}
 
-	// Token: 0x04004F53 RID: 20307
+	// Token: 0x04004FF1 RID: 20465
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Recipe recipe;
 }

@@ -1,31 +1,31 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x02000C29 RID: 3113
+// Token: 0x02000C3B RID: 3131
 public class ExtensionChunkDatabase : DatabaseWithFixedDS<long, byte[]>
 {
-	// Token: 0x06005ECB RID: 24267 RVA: 0x002587F8 File Offset: 0x002569F8
+	// Token: 0x06005F55 RID: 24405 RVA: 0x0025B6A8 File Offset: 0x002598A8
 	public ExtensionChunkDatabase(int _magicBytes, int AraSizeX, int AraSizeY, int ChunkSize)
 		: base(_magicBytes, 4, AraSizeX * AraSizeY / ChunkSize / ChunkSize, ChunkSize * ChunkSize, -1L, -1)
 	{
 		this.SizeOfDataSet = ChunkSize * ChunkSize;
 	}
 
-	// Token: 0x06005ECC RID: 24268 RVA: 0x0025881E File Offset: 0x00256A1E
+	// Token: 0x06005F56 RID: 24406 RVA: 0x0025B6CE File Offset: 0x002598CE
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override long readKey(BinaryReader _br)
 	{
 		return _br.ReadInt64();
 	}
 
-	// Token: 0x06005ECD RID: 24269 RVA: 0x00258826 File Offset: 0x00256A26
+	// Token: 0x06005F57 RID: 24407 RVA: 0x0025B6D6 File Offset: 0x002598D6
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void writeKey(BinaryWriter _bw, long _key)
 	{
 		_bw.Write(_key);
 	}
 
-	// Token: 0x06005ECE RID: 24270 RVA: 0x00258830 File Offset: 0x00256A30
+	// Token: 0x06005F58 RID: 24408 RVA: 0x0025B6E0 File Offset: 0x002598E0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void copyFromRead(byte[] _dataRead, byte[] _data)
 	{
@@ -35,7 +35,7 @@ public class ExtensionChunkDatabase : DatabaseWithFixedDS<long, byte[]>
 		}
 	}
 
-	// Token: 0x06005ECF RID: 24271 RVA: 0x00258854 File Offset: 0x00256A54
+	// Token: 0x06005F59 RID: 24409 RVA: 0x0025B704 File Offset: 0x00259904
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void copyToWrite(byte[] _data, byte[] _dataWrite)
 	{
@@ -45,14 +45,14 @@ public class ExtensionChunkDatabase : DatabaseWithFixedDS<long, byte[]>
 		}
 	}
 
-	// Token: 0x06005ED0 RID: 24272 RVA: 0x00258875 File Offset: 0x00256A75
+	// Token: 0x06005F5A RID: 24410 RVA: 0x0025B725 File Offset: 0x00259925
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override byte[] allocateDataStorage()
 	{
 		return new byte[this.SizeOfDataSet];
 	}
 
-	// Token: 0x04004A2C RID: 18988
+	// Token: 0x04004AC9 RID: 19145
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int SizeOfDataSet;
 }

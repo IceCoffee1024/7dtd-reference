@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020007BE RID: 1982
+// Token: 0x020007C9 RID: 1993
 [Preserve]
 public class NetPackageDropItemsContainer : NetPackage
 {
-	// Token: 0x06003AC2 RID: 15042 RVA: 0x0017BD74 File Offset: 0x00179F74
+	// Token: 0x06003B21 RID: 15137 RVA: 0x0017E14C File Offset: 0x0017C34C
 	public NetPackageDropItemsContainer Setup(int _droppedByID, string _containerEntity, Vector3 _worldPos, ItemStack[] _items)
 	{
 		this.droppedByID = _droppedByID;
@@ -16,7 +16,7 @@ public class NetPackageDropItemsContainer : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003AC3 RID: 15043 RVA: 0x0017BD94 File Offset: 0x00179F94
+	// Token: 0x06003B22 RID: 15138 RVA: 0x0017E16C File Offset: 0x0017C36C
 	public override void read(PooledBinaryReader _br)
 	{
 		this.droppedByID = _br.ReadInt32();
@@ -25,7 +25,7 @@ public class NetPackageDropItemsContainer : NetPackage
 		this.items = GameUtils.ReadItemStack(_br);
 	}
 
-	// Token: 0x06003AC4 RID: 15044 RVA: 0x0017BDC8 File Offset: 0x00179FC8
+	// Token: 0x06003B23 RID: 15139 RVA: 0x0017E1A0 File Offset: 0x0017C3A0
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -39,7 +39,7 @@ public class NetPackageDropItemsContainer : NetPackage
 		}
 	}
 
-	// Token: 0x06003AC5 RID: 15045 RVA: 0x0017BE30 File Offset: 0x0017A030
+	// Token: 0x06003B24 RID: 15140 RVA: 0x0017E208 File Offset: 0x0017C408
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -49,8 +49,8 @@ public class NetPackageDropItemsContainer : NetPackage
 		_world.GetGameManager().DropContentInLootContainerServer(this.droppedByID, this.containerEntity, this.worldPos, this.items, false, null);
 	}
 
-	// Token: 0x17000619 RID: 1561
-	// (get) Token: 0x06003AC6 RID: 15046 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000624 RID: 1572
+	// (get) Token: 0x06003B25 RID: 15141 RVA: 0x00020021 File Offset: 0x0001E221
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -59,25 +59,25 @@ public class NetPackageDropItemsContainer : NetPackage
 		}
 	}
 
-	// Token: 0x06003AC7 RID: 15047 RVA: 0x0017BE6E File Offset: 0x0017A06E
+	// Token: 0x06003B26 RID: 15142 RVA: 0x0017E246 File Offset: 0x0017C446
 	public override int GetLength()
 	{
 		return 16;
 	}
 
-	// Token: 0x04002FC4 RID: 12228
+	// Token: 0x04003043 RID: 12355
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int droppedByID;
 
-	// Token: 0x04002FC5 RID: 12229
+	// Token: 0x04003044 RID: 12356
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 worldPos;
 
-	// Token: 0x04002FC6 RID: 12230
+	// Token: 0x04003045 RID: 12357
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string containerEntity = "";
 
-	// Token: 0x04002FC7 RID: 12231
+	// Token: 0x04003046 RID: 12358
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack[] items;
 }

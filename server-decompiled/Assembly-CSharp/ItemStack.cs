@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 
-// Token: 0x02000576 RID: 1398
+// Token: 0x0200057B RID: 1403
 public class ItemStack
 {
-	// Token: 0x170004DE RID: 1246
-	// (get) Token: 0x06002D96 RID: 11670 RVA: 0x00121FD0 File Offset: 0x001201D0
+	// Token: 0x170004E2 RID: 1250
+	// (get) Token: 0x06002DC1 RID: 11713 RVA: 0x0012308C File Offset: 0x0012128C
 	public static ItemStack Empty
 	{
 		get
@@ -15,21 +15,21 @@ public class ItemStack
 		}
 	}
 
-	// Token: 0x06002D97 RID: 11671 RVA: 0x00121FDD File Offset: 0x001201DD
+	// Token: 0x06002DC2 RID: 11714 RVA: 0x00123099 File Offset: 0x00121299
 	public ItemStack()
 	{
 		this.itemValue = ItemValue.None;
 		this.count = 0;
 	}
 
-	// Token: 0x06002D98 RID: 11672 RVA: 0x00121FF7 File Offset: 0x001201F7
+	// Token: 0x06002DC3 RID: 11715 RVA: 0x001230B3 File Offset: 0x001212B3
 	public ItemStack(ItemValue _itemValue, int _count)
 	{
 		this.itemValue = _itemValue;
 		this.count = _count;
 	}
 
-	// Token: 0x06002D99 RID: 11673 RVA: 0x0012200D File Offset: 0x0012020D
+	// Token: 0x06002DC4 RID: 11716 RVA: 0x001230C9 File Offset: 0x001212C9
 	public ItemStack Clone()
 	{
 		if (this.itemValue != null)
@@ -39,7 +39,7 @@ public class ItemStack
 		return new ItemStack(ItemValue.None, this.count);
 	}
 
-	// Token: 0x06002D9A RID: 11674 RVA: 0x00122040 File Offset: 0x00120240
+	// Token: 0x06002DC5 RID: 11717 RVA: 0x001230FC File Offset: 0x001212FC
 	public static ItemStack[] CreateArray(int _size)
 	{
 		ItemStack[] array = new ItemStack[_size];
@@ -50,20 +50,20 @@ public class ItemStack
 		return array;
 	}
 
-	// Token: 0x06002D9B RID: 11675 RVA: 0x0012206B File Offset: 0x0012026B
+	// Token: 0x06002DC6 RID: 11718 RVA: 0x00123127 File Offset: 0x00121327
 	public bool IsEmpty()
 	{
 		return this.count < 1 || this.itemValue.type == 0;
 	}
 
-	// Token: 0x06002D9C RID: 11676 RVA: 0x00122086 File Offset: 0x00120286
+	// Token: 0x06002DC7 RID: 11719 RVA: 0x00123142 File Offset: 0x00121342
 	public void Clear()
 	{
 		this.itemValue.Clear();
 		this.count = 0;
 	}
 
-	// Token: 0x06002D9D RID: 11677 RVA: 0x0012209C File Offset: 0x0012029C
+	// Token: 0x06002DC8 RID: 11720 RVA: 0x00123158 File Offset: 0x00121358
 	public static int AddToItemStackArray(ItemStack[] _itemStackArr, ItemStack _itemStack, int maxItemCount = -1)
 	{
 		int num = -1;
@@ -91,7 +91,7 @@ public class ItemStack
 		return num;
 	}
 
-	// Token: 0x06002D9E RID: 11678 RVA: 0x00122112 File Offset: 0x00120312
+	// Token: 0x06002DC9 RID: 11721 RVA: 0x001231CE File Offset: 0x001213CE
 	public ItemStack ReadOld(BinaryReader _br)
 	{
 		this.itemValue.ReadOld(_br);
@@ -99,7 +99,7 @@ public class ItemStack
 		return this;
 	}
 
-	// Token: 0x06002D9F RID: 11679 RVA: 0x0012212D File Offset: 0x0012032D
+	// Token: 0x06002DCA RID: 11722 RVA: 0x001231E9 File Offset: 0x001213E9
 	public ItemStack Read(BinaryReader _br)
 	{
 		this.count = (int)_br.ReadUInt16();
@@ -114,7 +114,7 @@ public class ItemStack
 		return this;
 	}
 
-	// Token: 0x06002DA0 RID: 11680 RVA: 0x00122160 File Offset: 0x00120360
+	// Token: 0x06002DCB RID: 11723 RVA: 0x0012321C File Offset: 0x0012141C
 	public ItemStack ReadDelta(BinaryReader _br, ItemStack _last)
 	{
 		this.itemValue.Read(_br);
@@ -123,7 +123,7 @@ public class ItemStack
 		return this;
 	}
 
-	// Token: 0x06002DA1 RID: 11681 RVA: 0x00122190 File Offset: 0x00120390
+	// Token: 0x06002DCC RID: 11724 RVA: 0x0012324C File Offset: 0x0012144C
 	public void Write(BinaryWriter _bw)
 	{
 		int num = this.count;
@@ -138,7 +138,7 @@ public class ItemStack
 		}
 	}
 
-	// Token: 0x06002DA2 RID: 11682 RVA: 0x001221CE File Offset: 0x001203CE
+	// Token: 0x06002DCD RID: 11725 RVA: 0x0012328A File Offset: 0x0012148A
 	public void WriteDelta(BinaryWriter _bw, ItemStack _last)
 	{
 		this.itemValue.Write(_bw);
@@ -146,7 +146,7 @@ public class ItemStack
 		_last.count += this.count - _last.count;
 	}
 
-	// Token: 0x06002DA3 RID: 11683 RVA: 0x0012220C File Offset: 0x0012040C
+	// Token: 0x06002DCE RID: 11726 RVA: 0x001232C8 File Offset: 0x001214C8
 	public static ItemStack[] ReadArray(BinaryReader _br)
 	{
 		int num = (int)_br.ReadInt16();
@@ -162,7 +162,7 @@ public class ItemStack
 		return array;
 	}
 
-	// Token: 0x06002DA4 RID: 11684 RVA: 0x00122244 File Offset: 0x00120444
+	// Token: 0x06002DCF RID: 11727 RVA: 0x00123300 File Offset: 0x00121500
 	public static void WriteArray(BinaryWriter _bw, ItemStack[] _items)
 	{
 		if (_items == null)
@@ -177,30 +177,30 @@ public class ItemStack
 		}
 	}
 
-	// Token: 0x06002DA5 RID: 11685 RVA: 0x00122280 File Offset: 0x00120480
+	// Token: 0x06002DD0 RID: 11728 RVA: 0x0012333C File Offset: 0x0012153C
 	public override bool Equals(object _other)
 	{
 		ItemStack itemStack = _other as ItemStack;
 		return itemStack != null && itemStack.count == this.count && itemStack.itemValue.Equals(this.itemValue);
 	}
 
-	// Token: 0x06002DA6 RID: 11686 RVA: 0x001222BA File Offset: 0x001204BA
+	// Token: 0x06002DD1 RID: 11729 RVA: 0x00123376 File Offset: 0x00121576
 	public override int GetHashCode()
 	{
 		return this.itemValue.GetHashCode() * 13 + this.count;
 	}
 
-	// Token: 0x06002DA7 RID: 11687 RVA: 0x001222D4 File Offset: 0x001204D4
+	// Token: 0x06002DD2 RID: 11730 RVA: 0x00123390 File Offset: 0x00121590
 	public int StackTransferCount(ItemStack _other)
 	{
 		if (_other.itemValue.type != this.itemValue.type)
 		{
 			return 0;
 		}
-		return Math.Min(ItemClass.GetForId(this.itemValue.type).Stacknumber.Value - this.count, _other.count);
+		return Math.Min(ItemClass.GetForId(this.itemValue.type).MaxCount - this.count, _other.count);
 	}
 
-	// Token: 0x06002DA8 RID: 11688 RVA: 0x00122328 File Offset: 0x00120528
+	// Token: 0x06002DD3 RID: 11731 RVA: 0x001233E0 File Offset: 0x001215E0
 	public bool CanStackWith(ItemStack _other, bool allowPartialStack = false)
 	{
 		int num = _other.count;
@@ -215,31 +215,31 @@ public class ItemStack
 		return this.CanStackPartly(ref num);
 	}
 
-	// Token: 0x06002DA9 RID: 11689 RVA: 0x001223BA File Offset: 0x001205BA
+	// Token: 0x06002DD4 RID: 11732 RVA: 0x00123472 File Offset: 0x00121672
 	public bool CanStack(int _count)
 	{
-		return this.itemValue.type == 0 || ItemClass.GetForId(this.itemValue.type).Stacknumber.Value >= _count + this.count;
+		return this.itemValue.type == 0 || ItemClass.GetForId(this.itemValue.type).MaxCount >= _count + this.count;
 	}
 
-	// Token: 0x06002DAA RID: 11690 RVA: 0x001223F2 File Offset: 0x001205F2
+	// Token: 0x06002DD5 RID: 11733 RVA: 0x001234A5 File Offset: 0x001216A5
 	public bool CanStackPartlyWith(ItemStack _other, out int _count)
 	{
 		_count = _other.count;
 		return this.CanStackWith(_other, true) && this.CanStackPartly(ref _count);
 	}
 
-	// Token: 0x06002DAB RID: 11691 RVA: 0x0012240F File Offset: 0x0012060F
+	// Token: 0x06002DD6 RID: 11734 RVA: 0x001234C2 File Offset: 0x001216C2
 	public bool CanStackPartly(ref int _count)
 	{
 		if (this.itemValue.type == 0)
 		{
 			return false;
 		}
-		_count = Utils.FastMin(ItemClass.GetForId(this.itemValue.type).Stacknumber.Value - this.count, _count);
+		_count = Utils.FastMin(ItemClass.GetForId(this.itemValue.type).MaxCount - this.count, _count);
 		return _count > 0;
 	}
 
-	// Token: 0x06002DAC RID: 11692 RVA: 0x00122450 File Offset: 0x00120650
+	// Token: 0x06002DD7 RID: 11735 RVA: 0x00123500 File Offset: 0x00121700
 	public void Deactivate()
 	{
 		ItemClass forId = ItemClass.GetForId(this.itemValue.type);
@@ -249,7 +249,7 @@ public class ItemStack
 		}
 	}
 
-	// Token: 0x06002DAD RID: 11693 RVA: 0x00122480 File Offset: 0x00120680
+	// Token: 0x06002DD8 RID: 11736 RVA: 0x00123530 File Offset: 0x00121730
 	public static ItemStack[] Clone(IList<ItemStack> _itemStackArr)
 	{
 		if (_itemStackArr == null)
@@ -265,7 +265,7 @@ public class ItemStack
 		return array;
 	}
 
-	// Token: 0x06002DAE RID: 11694 RVA: 0x001224C8 File Offset: 0x001206C8
+	// Token: 0x06002DD9 RID: 11737 RVA: 0x00123578 File Offset: 0x00121778
 	public static ItemStack[] Clone(ItemStack[] _itemStackArr, int _startIdx, int _length)
 	{
 		if (_itemStackArr == null)
@@ -281,7 +281,7 @@ public class ItemStack
 		return array;
 	}
 
-	// Token: 0x06002DAF RID: 11695 RVA: 0x00122514 File Offset: 0x00120714
+	// Token: 0x06002DDA RID: 11738 RVA: 0x001235C4 File Offset: 0x001217C4
 	public static ItemStack FromString(string _s)
 	{
 		ItemStack empty = ItemStack.Empty;
@@ -303,14 +303,14 @@ public class ItemStack
 		return empty;
 	}
 
-	// Token: 0x06002DB0 RID: 11696 RVA: 0x00122573 File Offset: 0x00120773
+	// Token: 0x06002DDB RID: 11739 RVA: 0x00123623 File Offset: 0x00121823
 	public override string ToString()
 	{
 		ItemValue itemValue = this.itemValue;
 		return ((itemValue != null) ? itemValue.ToString() : null) + " cnt=" + this.count.ToString();
 	}
 
-	// Token: 0x06002DB1 RID: 11697 RVA: 0x0012259C File Offset: 0x0012079C
+	// Token: 0x06002DDC RID: 11740 RVA: 0x0012364C File Offset: 0x0012184C
 	public static bool IsEmpty(ItemStack[] _slots)
 	{
 		if (_slots == null || _slots.Length == 0)
@@ -327,19 +327,19 @@ public class ItemStack
 		return true;
 	}
 
-	// Token: 0x06002DB2 RID: 11698 RVA: 0x001225D0 File Offset: 0x001207D0
-	public bool CanMoveTo(XUiC_ItemStack.StackLocationTypes locationType)
+	// Token: 0x06002DDD RID: 11741 RVA: 0x00123680 File Offset: 0x00121880
+	public bool CanMoveTo(XUiC_ItemStack.StackLocationTypes locationType, int slotNumber = -1)
 	{
 		bool flag = true;
 		ItemClass itemClass = this.itemValue.ItemClass;
 		if (itemClass != null)
 		{
-			flag = itemClass.CanMoveToLocation(locationType);
+			flag = itemClass.CanMoveToLocation(locationType, slotNumber);
 		}
 		return flag;
 	}
 
-	// Token: 0x06002DB3 RID: 11699 RVA: 0x001225F7 File Offset: 0x001207F7
+	// Token: 0x06002DDE RID: 11742 RVA: 0x001236A8 File Offset: 0x001218A8
 	public void AdjustForSandboxOptions()
 	{
 		ItemValue itemValue = this.itemValue;
@@ -350,22 +350,22 @@ public class ItemStack
 		itemValue.AdjustForSandboxOptions();
 	}
 
-	// Token: 0x0400238B RID: 9099
+	// Token: 0x040023BD RID: 9149
 	public ItemValue itemValue;
 
-	// Token: 0x0400238C RID: 9100
+	// Token: 0x040023BE RID: 9150
 	public int count;
 
-	// Token: 0x02000577 RID: 1399
+	// Token: 0x0200057C RID: 1404
 	public enum EnumDragType
 	{
-		// Token: 0x0400238E RID: 9102
+		// Token: 0x040023C0 RID: 9152
 		DragTypeStart,
-		// Token: 0x0400238F RID: 9103
+		// Token: 0x040023C1 RID: 9153
 		DragTypeAdd,
-		// Token: 0x04002390 RID: 9104
+		// Token: 0x040023C2 RID: 9154
 		DragTypeExchange,
-		// Token: 0x04002391 RID: 9105
+		// Token: 0x040023C3 RID: 9155
 		DragTypeOther
 	}
 }

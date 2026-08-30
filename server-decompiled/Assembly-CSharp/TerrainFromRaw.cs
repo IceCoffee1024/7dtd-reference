@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Token: 0x02000C36 RID: 3126
+// Token: 0x02000C48 RID: 3144
 public class TerrainFromRaw : TerrainGeneratorWithBiomeResource
 {
-	// Token: 0x06005F2A RID: 24362 RVA: 0x00259DD8 File Offset: 0x00257FD8
+	// Token: 0x06005FB4 RID: 24500 RVA: 0x0025CC88 File Offset: 0x0025AE88
 	public void Init(HeightMap _heightMap, IBiomeProvider _biomeProvider, int _seed)
 	{
 		base.Init(null, _biomeProvider, _seed);
@@ -17,7 +17,7 @@ public class TerrainFromRaw : TerrainGeneratorWithBiomeResource
 		this.terrainHeightHalf = this.terrainHeight / 2;
 	}
 
-	// Token: 0x06005F2B RID: 24363 RVA: 0x00259E51 File Offset: 0x00258051
+	// Token: 0x06005FB5 RID: 24501 RVA: 0x0025CD01 File Offset: 0x0025AF01
 	[PublicizedFrom(EAccessModifier.Private)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public bool checkCoordinates(ref int _x, ref int _z)
@@ -31,7 +31,7 @@ public class TerrainFromRaw : TerrainGeneratorWithBiomeResource
 		return (ulong)_z < (ulong)((long)this.terrainHeight);
 	}
 
-	// Token: 0x06005F2C RID: 24364 RVA: 0x00259E88 File Offset: 0x00258088
+	// Token: 0x06005FB6 RID: 24502 RVA: 0x0025CD38 File Offset: 0x0025AF38
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void fillDensityInBlock(Chunk _chunk, int _x, int _y, int _z, BlockValue _bv)
 	{
@@ -78,7 +78,7 @@ public class TerrainFromRaw : TerrainGeneratorWithBiomeResource
 		_chunk.SetDensity(_x, _y, _z, b);
 	}
 
-	// Token: 0x06005F2D RID: 24365 RVA: 0x00259F41 File Offset: 0x00258141
+	// Token: 0x06005FB7 RID: 24503 RVA: 0x0025CDF1 File Offset: 0x0025AFF1
 	public override sbyte GetDensityAt(int _xWorld, int _yWorld, int _zWorld, BiomeDefinition _bd, float _biomeIntensity)
 	{
 		if (!this.checkCoordinates(ref _xWorld, ref _zWorld))
@@ -92,7 +92,7 @@ public class TerrainFromRaw : TerrainGeneratorWithBiomeResource
 		return MarchingCubes.DensityTerrain;
 	}
 
-	// Token: 0x06005F2E RID: 24366 RVA: 0x00259F71 File Offset: 0x00258171
+	// Token: 0x06005FB8 RID: 24504 RVA: 0x0025CE21 File Offset: 0x0025B021
 	public override byte GetTerrainHeightByteAt(int _x, int _z)
 	{
 		if (!this.checkCoordinates(ref _x, ref _z))
@@ -102,7 +102,7 @@ public class TerrainFromRaw : TerrainGeneratorWithBiomeResource
 		return (byte)(this.heightMap.GetAt(_x, _z) + 0.5f);
 	}
 
-	// Token: 0x06005F2F RID: 24367 RVA: 0x00259F95 File Offset: 0x00258195
+	// Token: 0x06005FB9 RID: 24505 RVA: 0x0025CE45 File Offset: 0x0025B045
 	public override float GetTerrainHeightAt(int _x, int _z)
 	{
 		if (!this.checkCoordinates(ref _x, ref _z))
@@ -112,7 +112,7 @@ public class TerrainFromRaw : TerrainGeneratorWithBiomeResource
 		return this.heightMap.GetAt(_x, _z);
 	}
 
-	// Token: 0x06005F30 RID: 24368 RVA: 0x00259FB8 File Offset: 0x002581B8
+	// Token: 0x06005FBA RID: 24506 RVA: 0x0025CE68 File Offset: 0x0025B068
 	public List<float[,]> ConvertToUnityHeightmap(int _sliceAtWidth)
 	{
 		int width = this.heightMap.GetWidth();
@@ -141,23 +141,23 @@ public class TerrainFromRaw : TerrainGeneratorWithBiomeResource
 		return list;
 	}
 
-	// Token: 0x04004A5C RID: 19036
+	// Token: 0x04004AF9 RID: 19193
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HeightMap heightMap;
 
-	// Token: 0x04004A5D RID: 19037
+	// Token: 0x04004AFA RID: 19194
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int terrainWidth;
 
-	// Token: 0x04004A5E RID: 19038
+	// Token: 0x04004AFB RID: 19195
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int terrainHeight;
 
-	// Token: 0x04004A5F RID: 19039
+	// Token: 0x04004AFC RID: 19196
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int terrainWidthHalf;
 
-	// Token: 0x04004A60 RID: 19040
+	// Token: 0x04004AFD RID: 19197
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int terrainHeightHalf;
 }

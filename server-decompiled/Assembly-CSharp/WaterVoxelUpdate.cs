@@ -1,12 +1,12 @@
 ﻿using System;
 using Unity.Mathematics;
 
-// Token: 0x02000CB7 RID: 3255
+// Token: 0x02000CC9 RID: 3273
 public struct WaterVoxelUpdate
 {
-	// Token: 0x04004D8E RID: 19854
+	// Token: 0x04004E2C RID: 20012
 	public int3 chunkPos;
 
-	// Token: 0x04004D8F RID: 19855
+	// Token: 0x04004E2D RID: 20013
 	public int mass;
 }

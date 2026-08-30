@@ -8,17 +8,17 @@ using Utf8Json.Resolvers;
 
 namespace Webserver.WebAPI.APIs.ServerState
 {
-	// Token: 0x02001AB5 RID: 6837
+	// Token: 0x02001ADC RID: 6876
 	[Preserve]
 	public class SandboxSettings : AbsRestApi
 	{
-		// Token: 0x0600CD79 RID: 52601 RVA: 0x004AF989 File Offset: 0x004ADB89
+		// Token: 0x0600CF02 RID: 52994 RVA: 0x004B5D7D File Offset: 0x004B3F7D
 		public SandboxSettings()
 			: base("SandboxSettings")
 		{
 		}
 
-		// Token: 0x0600CD7A RID: 52602 RVA: 0x004AF998 File Offset: 0x004ADB98
+		// Token: 0x0600CF03 RID: 52995 RVA: 0x004B5D8C File Offset: 0x004B3F8C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void HandleRestGet(RequestContext _context)
 		{
@@ -51,13 +51,13 @@ namespace Webserver.WebAPI.APIs.ServerState
 			AbsRestApi.SendEnvelopedResult(_context, ref jsonWriter, HttpStatusCode.OK, null, null, null);
 		}
 
-		// Token: 0x0600CD7B RID: 52603 RVA: 0x004AFA9C File Offset: 0x004ADC9C
+		// Token: 0x0600CF04 RID: 52996 RVA: 0x004B5E90 File Offset: 0x004B4090
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void logSandbox(ref JsonWriter _writer, SandboxOptionPreset _preset, bool _onlyChanged, bool _detailed)
 		{
 			JsonSerializer.SetDefaultResolver(StandardResolver.CamelCase);
 			bool flag = false;
-			for (int i = 0; i < 152; i++)
+			for (int i = 0; i < 165; i++)
 			{
 				global::SandboxOptions.SandboxOptions sandboxOptions = (global::SandboxOptions.SandboxOptions)i;
 				BaseSandboxOption baseSandboxOption;
@@ -69,12 +69,12 @@ namespace Webserver.WebAPI.APIs.ServerState
 					{
 						if (_onlyChanged)
 						{
-							goto IL_01B5;
+							goto IL_01B8;
 						}
 						num = defaultIndex;
 					}
-					string valueTextFromIndex = baseSandboxOption.GetValueTextFromIndex(num);
-					string valueTextFromIndex2 = baseSandboxOption.GetValueTextFromIndex(defaultIndex);
+					string valueTextFromIndex = baseSandboxOption.GetValueTextFromIndex(num, null);
+					string valueTextFromIndex2 = baseSandboxOption.GetValueTextFromIndex(defaultIndex, null);
 					if (flag)
 					{
 						_writer.WriteValueSeparator();
@@ -106,7 +106,7 @@ namespace Webserver.WebAPI.APIs.ServerState
 							}
 							else
 							{
-								this.logValue(ref _writer, j, obj, valueSet.GetDisplayAtIndex(j));
+								this.logValue(ref _writer, j, obj, valueSet.GetDisplayAtIndex(j, null));
 							}
 						}
 						_writer.WriteEndArray();
@@ -120,11 +120,11 @@ namespace Webserver.WebAPI.APIs.ServerState
 					}
 					_writer.WriteEndObject();
 				}
-				IL_01B5:;
+				IL_01B8:;
 			}
 		}
 
-		// Token: 0x0600CD7C RID: 52604 RVA: 0x004AFC70 File Offset: 0x004ADE70
+		// Token: 0x0600CF05 RID: 52997 RVA: 0x004B6064 File Offset: 0x004B4264
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void logValue(ref JsonWriter _writer, int _index, object _value, string _localizedValue)
 		{
@@ -135,84 +135,84 @@ namespace Webserver.WebAPI.APIs.ServerState
 			JsonSerializer.Serialize<SandboxSettings.SandboxOptionValue>(ref _writer, sandboxOptionValue);
 		}
 
-		// Token: 0x04009BDF RID: 39903
+		// Token: 0x04009D10 RID: 40208
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string QueryParamCode = "code";
 
-		// Token: 0x04009BE0 RID: 39904
+		// Token: 0x04009D11 RID: 40209
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string QueryParamOnlyChanged = "onlyChanged";
 
-		// Token: 0x04009BE1 RID: 39905
+		// Token: 0x04009D12 RID: 40210
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string QueryParamDetailed = "detailed";
 
-		// Token: 0x04009BE2 RID: 39906
+		// Token: 0x04009D13 RID: 40211
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonCodeKey = JsonWriter.GetEncodedPropertyNameWithBeginObject("code");
 
-		// Token: 0x04009BE3 RID: 39907
+		// Token: 0x04009D14 RID: 40212
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonOptionsKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("options");
 
-		// Token: 0x04009BE4 RID: 39908
+		// Token: 0x04009D15 RID: 40213
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonOptInternalKey = JsonWriter.GetEncodedPropertyNameWithBeginObject("key");
 
-		// Token: 0x04009BE5 RID: 39909
+		// Token: 0x04009D16 RID: 40214
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonOptDetailsKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("details");
 
-		// Token: 0x04009BE6 RID: 39910
+		// Token: 0x04009D17 RID: 40215
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonOptTypeKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("type");
 
-		// Token: 0x04009BE7 RID: 39911
+		// Token: 0x04009D18 RID: 40216
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonOptActiveValueKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("activeValue");
 
-		// Token: 0x04009BE8 RID: 39912
+		// Token: 0x04009D19 RID: 40217
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonOptDefaultValueKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("defaultValue");
 
-		// Token: 0x04009BE9 RID: 39913
+		// Token: 0x04009D1A RID: 40218
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly byte[] jsonOptValueSetKey = JsonWriter.GetEncodedPropertyNameWithPrefixValueSeparator("valueSet");
 
-		// Token: 0x02001AB6 RID: 6838
+		// Token: 0x02001ADD RID: 6877
 		[PublicizedFrom(EAccessModifier.Private)]
 		public struct SandboxOptionInfo
 		{
-			// Token: 0x04009BEA RID: 39914
+			// Token: 0x04009D1B RID: 40219
 			[UsedImplicitly]
 			public string CategoryName;
 
-			// Token: 0x04009BEB RID: 39915
+			// Token: 0x04009D1C RID: 40220
 			[UsedImplicitly]
 			public string InternalName;
 
-			// Token: 0x04009BEC RID: 39916
+			// Token: 0x04009D1D RID: 40221
 			[UsedImplicitly]
 			public string LocalizedName;
 
-			// Token: 0x04009BED RID: 39917
+			// Token: 0x04009D1E RID: 40222
 			[UsedImplicitly]
 			public string Description;
 		}
 
-		// Token: 0x02001AB7 RID: 6839
+		// Token: 0x02001ADE RID: 6878
 		[PublicizedFrom(EAccessModifier.Private)]
 		public struct SandboxOptionValue
 		{
-			// Token: 0x04009BEE RID: 39918
+			// Token: 0x04009D1F RID: 40223
 			[UsedImplicitly]
 			public int Index;
 
-			// Token: 0x04009BEF RID: 39919
+			// Token: 0x04009D20 RID: 40224
 			[UsedImplicitly]
 			public object Value;
 
-			// Token: 0x04009BF0 RID: 39920
+			// Token: 0x04009D21 RID: 40225
 			[UsedImplicitly]
 			public string LocalizedName;
 		}

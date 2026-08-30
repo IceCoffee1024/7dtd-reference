@@ -2,11 +2,11 @@
 
 namespace Twitch
 {
-	// Token: 0x020017D7 RID: 6103
+	// Token: 0x020017FD RID: 6141
 	public class TwitchActionEntry
 	{
-		// Token: 0x170016A5 RID: 5797
-		// (get) Token: 0x0600BC9C RID: 48284 RVA: 0x0045F9ED File Offset: 0x0045DBED
+		// Token: 0x17001717 RID: 5911
+		// (get) Token: 0x0600BE21 RID: 48673 RVA: 0x00465789 File Offset: 0x00463989
 		public int ActionCost
 		{
 			get
@@ -15,7 +15,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BC9D RID: 48285 RVA: 0x0045F9FC File Offset: 0x0045DBFC
+		// Token: 0x0600BE22 RID: 48674 RVA: 0x00465798 File Offset: 0x00463998
 		public TwitchActionHistoryEntry SetupHistoryEntry(ViewerEntry viewerEntry)
 		{
 			string text = ((this.Target != null) ? this.Target.EntityName : "");
@@ -29,49 +29,49 @@ namespace Twitch
 			return this.HistoryEntry;
 		}
 
-		// Token: 0x04008DE3 RID: 36323
+		// Token: 0x04008EFF RID: 36607
 		public string UserName;
 
-		// Token: 0x04008DE4 RID: 36324
+		// Token: 0x04008F00 RID: 36608
 		public EntityPlayer Target;
 
-		// Token: 0x04008DE5 RID: 36325
+		// Token: 0x04008F01 RID: 36609
 		public bool ReadyForRemove;
 
-		// Token: 0x04008DE6 RID: 36326
+		// Token: 0x04008F02 RID: 36610
 		public TwitchVoteEntry VoteEntry;
 
-		// Token: 0x04008DE7 RID: 36327
+		// Token: 0x04008F03 RID: 36611
 		public TwitchAction Action;
 
-		// Token: 0x04008DE8 RID: 36328
+		// Token: 0x04008F04 RID: 36612
 		public bool IsSent;
 
-		// Token: 0x04008DE9 RID: 36329
+		// Token: 0x04008F05 RID: 36613
 		public bool ChannelNotify = true;
 
-		// Token: 0x04008DEA RID: 36330
+		// Token: 0x04008F06 RID: 36614
 		public bool IsBitAction;
 
-		// Token: 0x04008DEB RID: 36331
+		// Token: 0x04008F07 RID: 36615
 		public bool IsReRun;
 
-		// Token: 0x04008DEC RID: 36332
+		// Token: 0x04008F08 RID: 36616
 		public bool IsRespawn;
 
-		// Token: 0x04008DED RID: 36333
+		// Token: 0x04008F09 RID: 36617
 		public int SpecialPointsUsed;
 
-		// Token: 0x04008DEE RID: 36334
+		// Token: 0x04008F0A RID: 36618
 		public int StandardPointsUsed;
 
-		// Token: 0x04008DEF RID: 36335
+		// Token: 0x04008F0B RID: 36619
 		public int BitsUsed;
 
-		// Token: 0x04008DF0 RID: 36336
+		// Token: 0x04008F0C RID: 36620
 		public int CreditsUsed;
 
-		// Token: 0x04008DF1 RID: 36337
+		// Token: 0x04008F0D RID: 36621
 		public TwitchActionHistoryEntry HistoryEntry;
 	}
 }

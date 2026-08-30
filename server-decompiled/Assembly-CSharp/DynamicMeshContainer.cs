@@ -1,27 +1,27 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000373 RID: 883
+// Token: 0x02000377 RID: 887
 public abstract class DynamicMeshContainer
 {
-	// Token: 0x06001A2A RID: 6698 RVA: 0x0009A86D File Offset: 0x00098A6D
+	// Token: 0x06001A47 RID: 6727 RVA: 0x0009AFAD File Offset: 0x000991AD
 	public string ToDebugLocation()
 	{
 		return this.WorldPosition.x.ToString() + " " + this.WorldPosition.z.ToString();
 	}
 
-	// Token: 0x06001A2B RID: 6699
+	// Token: 0x06001A48 RID: 6728
 	public abstract GameObject GetGameObject();
 
-	// Token: 0x06001A2C RID: 6700 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x06001A49 RID: 6729 RVA: 0x0000640C File Offset: 0x0000460C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public DynamicMeshContainer()
 	{
 	}
 
-	// Token: 0x040010AE RID: 4270
+	// Token: 0x040010C3 RID: 4291
 	public Vector3i WorldPosition;
 
-	// Token: 0x040010AF RID: 4271
+	// Token: 0x040010C4 RID: 4292
 	public long Key;
 }

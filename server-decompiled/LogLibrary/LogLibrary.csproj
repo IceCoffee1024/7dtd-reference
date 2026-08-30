@@ -1,6 +1,6 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ProjectGuid>{C2F45566-1589-4FD2-85C5-ED7AFCBC18EC}</ProjectGuid>
+    <ProjectGuid>{ADF6D6CC-2FEF-459F-BAD9-DD49A30DEEF6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>LogLibrary</RootNamespace>
     <AssemblyName>LogLibrary</AssemblyName>
@@ -20,8 +20,10 @@
     <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\runtime\7DaysToDieServer_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\UnityEngine.CoreModule\UnityEngine.CoreModule.csproj">
+      <Project>{ADF6D6CC-2FEF-459F-BAD9-DD49A30DEEF7}</Project>
+      <Name>UnityEngine.CoreModule</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
 </Project>

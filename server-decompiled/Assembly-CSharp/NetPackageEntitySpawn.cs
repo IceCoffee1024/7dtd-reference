@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020007DD RID: 2013
+// Token: 0x020007E8 RID: 2024
 [Preserve]
 public class NetPackageEntitySpawn : NetPackageEntityTargeted
 {
-	// Token: 0x1700062C RID: 1580
-	// (get) Token: 0x06003B75 RID: 15221 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x17000637 RID: 1591
+	// (get) Token: 0x06003BD4 RID: 15316 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -16,7 +16,7 @@ public class NetPackageEntitySpawn : NetPackageEntityTargeted
 		}
 	}
 
-	// Token: 0x06003B76 RID: 15222 RVA: 0x0017DFA1 File Offset: 0x0017C1A1
+	// Token: 0x06003BD5 RID: 15317 RVA: 0x00180379 File Offset: 0x0017E579
 	public NetPackageEntitySpawn Setup(EntityCreationData _es)
 	{
 		base.Setup(_es.id);
@@ -24,7 +24,7 @@ public class NetPackageEntitySpawn : NetPackageEntityTargeted
 		return this;
 	}
 
-	// Token: 0x06003B77 RID: 15223 RVA: 0x0017DFB7 File Offset: 0x0017C1B7
+	// Token: 0x06003BD6 RID: 15318 RVA: 0x0018038F File Offset: 0x0017E58F
 	public override void read(PooledBinaryReader _reader)
 	{
 		base.read(_reader);
@@ -32,14 +32,14 @@ public class NetPackageEntitySpawn : NetPackageEntityTargeted
 		this.es.read(_reader, true);
 	}
 
-	// Token: 0x06003B78 RID: 15224 RVA: 0x0017DFD8 File Offset: 0x0017C1D8
+	// Token: 0x06003BD7 RID: 15319 RVA: 0x001803B0 File Offset: 0x0017E5B0
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
 		this.es.write(_writer, true);
 	}
 
-	// Token: 0x06003B79 RID: 15225 RVA: 0x0017DFF0 File Offset: 0x0017C1F0
+	// Token: 0x06003BD8 RID: 15320 RVA: 0x001803C8 File Offset: 0x0017E5C8
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -64,12 +64,12 @@ public class NetPackageEntitySpawn : NetPackageEntityTargeted
 		});
 	}
 
-	// Token: 0x06003B7A RID: 15226 RVA: 0x000B8CB1 File Offset: 0x000B6EB1
+	// Token: 0x06003BD9 RID: 15321 RVA: 0x000B93F5 File Offset: 0x000B75F5
 	public override int GetLength()
 	{
 		return 20;
 	}
 
-	// Token: 0x04003035 RID: 12341
+	// Token: 0x040030B4 RID: 12468
 	public EntityCreationData es;
 }

@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
 
-// Token: 0x02000377 RID: 887
+// Token: 0x0200037B RID: 891
 public static class ListExtensions
 {
-	// Token: 0x06001A5C RID: 6748 RVA: 0x0009B69C File Offset: 0x0009989C
+	// Token: 0x06001A79 RID: 6777 RVA: 0x0009BDDC File Offset: 0x00099FDC
 	public static T[] GetInternalArray<T>(this List<T> list)
 	{
 		return ListExtensions.ArrayAccessor<T>.Getter(list);
 	}
 
-	// Token: 0x02000378 RID: 888
+	// Token: 0x0200037C RID: 892
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static class ArrayAccessor<T>
 	{
-		// Token: 0x06001A5D RID: 6749 RVA: 0x0009B6AC File Offset: 0x000998AC
+		// Token: 0x06001A7A RID: 6778 RVA: 0x0009BDEC File Offset: 0x00099FEC
 		[PublicizedFrom(EAccessModifier.Private)]
 		static ArrayAccessor()
 		{
@@ -28,7 +28,7 @@ public static class ListExtensions
 			ListExtensions.ArrayAccessor<T>.Getter = (Func<List<T>, T[]>)dynamicMethod.CreateDelegate(typeof(Func<List<T>, T[]>));
 		}
 
-		// Token: 0x040010C7 RID: 4295
+		// Token: 0x040010DC RID: 4316
 		public static Func<List<T>, T[]> Getter;
 	}
 }

@@ -4,10 +4,10 @@ using System.Globalization;
 
 namespace Twitch
 {
-	// Token: 0x02001802 RID: 6146
+	// Token: 0x02001828 RID: 6184
 	public class CooldownPreset
 	{
-		// Token: 0x0600BD8A RID: 48522 RVA: 0x00462D14 File Offset: 0x00460F14
+		// Token: 0x0600BF0F RID: 48911 RVA: 0x00468AB0 File Offset: 0x00466CB0
 		public void AddCooldownMaxEntry(int start, int end, int cooldownMax, int cooldownTime)
 		{
 			if (this.CooldownMaxEntries == null)
@@ -23,7 +23,7 @@ namespace Twitch
 			});
 		}
 
-		// Token: 0x0600BD8B RID: 48523 RVA: 0x00462D64 File Offset: 0x00460F64
+		// Token: 0x0600BF10 RID: 48912 RVA: 0x00468B00 File Offset: 0x00466D00
 		public void SetupCooldownInfo(int gameStage, EntityPlayerLocal localPlayer)
 		{
 			if (localPlayer == null)
@@ -56,7 +56,7 @@ namespace Twitch
 			this.NextCooldownTime = 180;
 		}
 
-		// Token: 0x0600BD8C RID: 48524 RVA: 0x00462E78 File Offset: 0x00461078
+		// Token: 0x0600BF11 RID: 48913 RVA: 0x00468C14 File Offset: 0x00466E14
 		public virtual void ParseProperties(DynamicProperties properties)
 		{
 			if (properties.Values.ContainsKey(CooldownPreset.PropName))
@@ -105,74 +105,74 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x04008E3F RID: 36415
+		// Token: 0x04008F5B RID: 36699
 		public static string PropName = "name";
 
-		// Token: 0x04008E40 RID: 36416
+		// Token: 0x04008F5C RID: 36700
 		public static string PropTitle = "title";
 
-		// Token: 0x04008E41 RID: 36417
+		// Token: 0x04008F5D RID: 36701
 		public static string PropTitleKey = "title_key";
 
-		// Token: 0x04008E42 RID: 36418
+		// Token: 0x04008F5E RID: 36702
 		public static string PropCooldownType = "cooldown_type";
 
-		// Token: 0x04008E43 RID: 36419
+		// Token: 0x04008F5F RID: 36703
 		public static string PropIsDefault = "is_default";
 
-		// Token: 0x04008E44 RID: 36420
+		// Token: 0x04008F60 RID: 36704
 		public static string PropStartCooldown = "start_cooldown";
 
-		// Token: 0x04008E45 RID: 36421
+		// Token: 0x04008F61 RID: 36705
 		public static string PropDeathCooldown = "death_cooldown";
 
-		// Token: 0x04008E46 RID: 36422
+		// Token: 0x04008F62 RID: 36706
 		public static string PropBMStartOffset = "bm_start_offset";
 
-		// Token: 0x04008E47 RID: 36423
+		// Token: 0x04008F63 RID: 36707
 		public static string PropBMEndOffset = "bm_end_offset";
 
-		// Token: 0x04008E48 RID: 36424
+		// Token: 0x04008F64 RID: 36708
 		public string Name;
 
-		// Token: 0x04008E49 RID: 36425
+		// Token: 0x04008F65 RID: 36709
 		public bool IsDefault;
 
-		// Token: 0x04008E4A RID: 36426
+		// Token: 0x04008F66 RID: 36710
 		public string Title;
 
-		// Token: 0x04008E4B RID: 36427
+		// Token: 0x04008F67 RID: 36711
 		public CooldownPreset.CooldownTypes CooldownType = CooldownPreset.CooldownTypes.Fill;
 
-		// Token: 0x04008E4C RID: 36428
+		// Token: 0x04008F68 RID: 36712
 		public float CooldownFillMax;
 
-		// Token: 0x04008E4D RID: 36429
+		// Token: 0x04008F69 RID: 36713
 		public int NextCooldownTime;
 
-		// Token: 0x04008E4E RID: 36430
+		// Token: 0x04008F6A RID: 36714
 		public int StartCooldownTime;
 
-		// Token: 0x04008E4F RID: 36431
+		// Token: 0x04008F6B RID: 36715
 		public int AfterDeathCooldownTime;
 
-		// Token: 0x04008E50 RID: 36432
+		// Token: 0x04008F6C RID: 36716
 		public int BMStartOffset;
 
-		// Token: 0x04008E51 RID: 36433
+		// Token: 0x04008F6D RID: 36717
 		public int BMEndOffset;
 
-		// Token: 0x04008E52 RID: 36434
+		// Token: 0x04008F6E RID: 36718
 		public List<TwitchCooldownEntry> CooldownMaxEntries = new List<TwitchCooldownEntry>();
 
-		// Token: 0x02001803 RID: 6147
+		// Token: 0x02001829 RID: 6185
 		public enum CooldownTypes
 		{
-			// Token: 0x04008E54 RID: 36436
+			// Token: 0x04008F70 RID: 36720
 			Always,
-			// Token: 0x04008E55 RID: 36437
+			// Token: 0x04008F71 RID: 36721
 			Fill,
-			// Token: 0x04008E56 RID: 36438
+			// Token: 0x04008F72 RID: 36722
 			None
 		}
 	}

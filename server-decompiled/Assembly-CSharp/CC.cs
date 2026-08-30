@@ -2,10 +2,10 @@
 using KinematicCharacterController;
 using UnityEngine;
 
-// Token: 0x020004FC RID: 1276
+// Token: 0x02000501 RID: 1281
 public class CC : ICharacterController
 {
-	// Token: 0x060029D0 RID: 10704 RVA: 0x001067A8 File Offset: 0x001049A8
+	// Token: 0x060029FA RID: 10746 RVA: 0x001077E4 File Offset: 0x001059E4
 	public void Move()
 	{
 		this.collisionFlags = CollisionFlags.None;
@@ -16,12 +16,12 @@ public class CC : ICharacterController
 		this.motor.Transform.SetPositionAndRotation(this.motor.TransientPosition, this.motor.TransientRotation);
 	}
 
-	// Token: 0x060029D1 RID: 10705 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060029FB RID: 10747 RVA: 0x000027FC File Offset: 0x000009FC
 	public void BeforeCharacterUpdate(float deltaTime)
 	{
 	}
 
-	// Token: 0x060029D2 RID: 10706 RVA: 0x00106818 File Offset: 0x00104A18
+	// Token: 0x060029FC RID: 10748 RVA: 0x00107854 File Offset: 0x00105A54
 	public bool OnCollisionOverlap(int nbOverlaps, Collider[] _colliders)
 	{
 		Vector3 position = this.motor.Transform.position;
@@ -66,7 +66,7 @@ public class CC : ICharacterController
 		return true;
 	}
 
-	// Token: 0x060029D3 RID: 10707 RVA: 0x001068F8 File Offset: 0x00104AF8
+	// Token: 0x060029FD RID: 10749 RVA: 0x00107934 File Offset: 0x00105B34
 	public float GetCollisionOverlapScale(Transform overlappedTransform)
 	{
 		if (overlappedTransform.gameObject.layer != 15)
@@ -80,12 +80,12 @@ public class CC : ICharacterController
 		return 0.5f;
 	}
 
-	// Token: 0x060029D4 RID: 10708 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060029FE RID: 10750 RVA: 0x000027FC File Offset: 0x000009FC
 	public void UpdateRotation(ref Quaternion currentRotation, float deltaTime)
 	{
 	}
 
-	// Token: 0x060029D5 RID: 10709 RVA: 0x00106934 File Offset: 0x00104B34
+	// Token: 0x060029FF RID: 10751 RVA: 0x00107970 File Offset: 0x00105B70
 	public void UpdateVelocity(ref Vector3 currentVelocity, float deltaTime)
 	{
 		if (this.vel.y <= 0.001f)
@@ -107,28 +107,28 @@ public class CC : ICharacterController
 		currentVelocity = this.vel;
 	}
 
-	// Token: 0x060029D6 RID: 10710 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002A00 RID: 10752 RVA: 0x000027FC File Offset: 0x000009FC
 	public void AfterCharacterUpdate(float deltaTime)
 	{
 	}
 
-	// Token: 0x060029D7 RID: 10711 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x06002A01 RID: 10753 RVA: 0x00020021 File Offset: 0x0001E221
 	public bool IsColliderValidForCollisions(Collider coll)
 	{
 		return true;
 	}
 
-	// Token: 0x060029D8 RID: 10712 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002A02 RID: 10754 RVA: 0x000027FC File Offset: 0x000009FC
 	public void OnDiscreteCollisionDetected(Collider hitCollider)
 	{
 	}
 
-	// Token: 0x060029D9 RID: 10713 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002A03 RID: 10755 RVA: 0x000027FC File Offset: 0x000009FC
 	public void OnGroundHit(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, ref HitStabilityReport hitStabilityReport)
 	{
 	}
 
-	// Token: 0x060029DA RID: 10714 RVA: 0x00106A2E File Offset: 0x00104C2E
+	// Token: 0x06002A04 RID: 10756 RVA: 0x00107A6A File Offset: 0x00105C6A
 	public void OnMovementHit(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, ref HitStabilityReport hitStabilityReport)
 	{
 		if (hitNormal.y >= 0.64f)
@@ -142,33 +142,33 @@ public class CC : ICharacterController
 		}
 	}
 
-	// Token: 0x060029DB RID: 10715 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002A05 RID: 10757 RVA: 0x000027FC File Offset: 0x000009FC
 	public void PostGroundingUpdate(float deltaTime)
 	{
 	}
 
-	// Token: 0x060029DC RID: 10716 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002A06 RID: 10758 RVA: 0x000027FC File Offset: 0x000009FC
 	public void ProcessHitStabilityReport(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, Vector3 atCharacterPosition, Quaternion atCharacterRotation, ref HitStabilityReport hitStabilityReport)
 	{
 	}
 
-	// Token: 0x04001FB9 RID: 8121
+	// Token: 0x04001FE8 RID: 8168
 	public Entity entity;
 
-	// Token: 0x04001FBA RID: 8122
+	// Token: 0x04001FE9 RID: 8169
 	public KinematicCharacterMotor motor;
 
-	// Token: 0x04001FBB RID: 8123
+	// Token: 0x04001FEA RID: 8170
 	public CollisionFlags collisionFlags;
 
-	// Token: 0x04001FBC RID: 8124
+	// Token: 0x04001FEB RID: 8171
 	public Vector3 vel;
 
-	// Token: 0x04001FBD RID: 8125
+	// Token: 0x04001FEC RID: 8172
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int tickCount;
 
-	// Token: 0x04001FBE RID: 8126
+	// Token: 0x04001FED RID: 8173
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hadWallOverlap;
 }

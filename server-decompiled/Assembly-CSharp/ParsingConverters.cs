@@ -3,12 +3,12 @@ using InControl;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020010F0 RID: 4336
+// Token: 0x02001109 RID: 4361
 [XuiXmlAttributeConvertersClass]
 [global::UnityEngine.Scripting.Preserve]
 public static class ParsingConverters
 {
-	// Token: 0x06008968 RID: 35176 RVA: 0x003468F4 File Offset: 0x00344AF4
+	// Token: 0x06008A5A RID: 35418 RVA: 0x0034B118 File Offset: 0x00349318
 	[XuiXmlAttributeConverter]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool parseColor(string _inputValue, out Color _outputValue)
@@ -32,7 +32,7 @@ public static class ParsingConverters
 		return true;
 	}
 
-	// Token: 0x06008969 RID: 35177 RVA: 0x00346948 File Offset: 0x00344B48
+	// Token: 0x06008A5B RID: 35419 RVA: 0x0034B16C File Offset: 0x0034936C
 	[XuiXmlAttributeConverter]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool parseColor32(string _inputValue, out Color32 _outputValue)
@@ -56,7 +56,7 @@ public static class ParsingConverters
 		return true;
 	}
 
-	// Token: 0x0600896A RID: 35178 RVA: 0x003469A1 File Offset: 0x00344BA1
+	// Token: 0x06008A5C RID: 35420 RVA: 0x0034B1C5 File Offset: 0x003493C5
 	[XuiXmlAttributeConverter]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool parseStringList(string _inputValue, out string[] _outputValue)
@@ -65,7 +65,7 @@ public static class ParsingConverters
 		return true;
 	}
 
-	// Token: 0x0600896B RID: 35179 RVA: 0x003469D2 File Offset: 0x00344BD2
+	// Token: 0x06008A5D RID: 35421 RVA: 0x0034B1F6 File Offset: 0x003493F6
 	[XuiXmlAttributeConverter]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool parseInputAction(string _value, out PlayerAction _outputValue)
@@ -79,7 +79,7 @@ public static class ParsingConverters
 		return _outputValue != null;
 	}
 
-	// Token: 0x0600896C RID: 35180 RVA: 0x00346A02 File Offset: 0x00344C02
+	// Token: 0x06008A5E RID: 35422 RVA: 0x0034B226 File Offset: 0x00349426
 	[XuiXmlAttributeConverter]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool parseColorToColor32(Color _inputValue, out Color32 _outputValue)
@@ -88,7 +88,7 @@ public static class ParsingConverters
 		return true;
 	}
 
-	// Token: 0x0600896D RID: 35181 RVA: 0x00346A11 File Offset: 0x00344C11
+	// Token: 0x06008A5F RID: 35423 RVA: 0x0034B235 File Offset: 0x00349435
 	[XuiXmlAttributeConverter]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool parseColor32ToColor(Color32 _inputValue, out Color _outputValue)
@@ -97,7 +97,7 @@ public static class ParsingConverters
 		return true;
 	}
 
-	// Token: 0x0600896E RID: 35182 RVA: 0x00346A20 File Offset: 0x00344C20
+	// Token: 0x06008A60 RID: 35424 RVA: 0x0034B244 File Offset: 0x00349444
 	[XuiXmlAttributeConverter]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool parseDoubleToFloat(double _inputValue, out float _outputValue)

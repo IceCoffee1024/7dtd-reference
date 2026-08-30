@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019C4 RID: 6596
+	// Token: 0x020019EB RID: 6635
 	[Preserve]
 	public class ActionRemoveSpawnedBlocks : BaseAction
 	{
-		// Token: 0x0600C8DF RID: 51423 RVA: 0x0049CA50 File Offset: 0x0049AC50
+		// Token: 0x0600CA68 RID: 51816 RVA: 0x004A2E44 File Offset: 0x004A1044
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			for (int i = 0; i < GameEventManager.Current.blockEntries.Count; i++)
@@ -22,7 +22,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C8E0 RID: 51424 RVA: 0x0049CAC0 File Offset: 0x0049ACC0
+		// Token: 0x0600CA69 RID: 51817 RVA: 0x004A2EB4 File Offset: 0x004A10B4
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -33,7 +33,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseBool(ActionRemoveSpawnedBlocks.PropDespawn, ref this.despawn);
 		}
 
-		// Token: 0x0600C8E1 RID: 51425 RVA: 0x0049CB15 File Offset: 0x0049AD15
+		// Token: 0x0600CA6A RID: 51818 RVA: 0x004A2F09 File Offset: 0x004A1109
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -44,19 +44,19 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009878 RID: 39032
+		// Token: 0x040099A9 RID: 39337
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool targetOnly;
 
-		// Token: 0x04009879 RID: 39033
+		// Token: 0x040099AA RID: 39338
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool despawn;
 
-		// Token: 0x0400987A RID: 39034
+		// Token: 0x040099AB RID: 39339
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTargetOnly = "target_only";
 
-		// Token: 0x0400987B RID: 39035
+		// Token: 0x040099AC RID: 39340
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropDespawn = "despawn";
 	}

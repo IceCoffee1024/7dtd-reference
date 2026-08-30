@@ -2,18 +2,18 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E36 RID: 3638
+// Token: 0x02000E4B RID: 3659
 [Preserve]
 public class XUiC_UiLimitsWindow : XUiController
 {
-	// Token: 0x06006FF6 RID: 28662 RVA: 0x0028AD37 File Offset: 0x00288F37
+	// Token: 0x06007096 RID: 28822 RVA: 0x0028DC1B File Offset: 0x0028BE1B
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 		base.handleDirtyUpdateDefault();
 	}
 
-	// Token: 0x06006FF7 RID: 28663 RVA: 0x002B1B28 File Offset: 0x002AFD28
+	// Token: 0x06007097 RID: 28823 RVA: 0x002B504C File Offset: 0x002B324C
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -23,8 +23,8 @@ public class XUiC_UiLimitsWindow : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x17000C9D RID: 3229
-	// (get) Token: 0x06006FF8 RID: 28664 RVA: 0x002B1B62 File Offset: 0x002AFD62
+	// Token: 0x17000CB6 RID: 3254
+	// (get) Token: 0x06007098 RID: 28824 RVA: 0x002B5086 File Offset: 0x002B3286
 	[XuiXmlBinding("height")]
 	public int Height
 	{
@@ -35,8 +35,8 @@ public class XUiC_UiLimitsWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000C9E RID: 3230
-	// (get) Token: 0x06006FF9 RID: 28665 RVA: 0x002B1B6F File Offset: 0x002AFD6F
+	// Token: 0x17000CB7 RID: 3255
+	// (get) Token: 0x06007099 RID: 28825 RVA: 0x002B5093 File Offset: 0x002B3293
 	[XuiXmlBinding("width_5_4")]
 	public int Width5x4
 	{
@@ -47,8 +47,8 @@ public class XUiC_UiLimitsWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000C9F RID: 3231
-	// (get) Token: 0x06006FFA RID: 28666 RVA: 0x002B1B79 File Offset: 0x002AFD79
+	// Token: 0x17000CB8 RID: 3256
+	// (get) Token: 0x0600709A RID: 28826 RVA: 0x002B509D File Offset: 0x002B329D
 	[XuiXmlBinding("width_4_3")]
 	public int Width4x3
 	{
@@ -59,8 +59,8 @@ public class XUiC_UiLimitsWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000CA0 RID: 3232
-	// (get) Token: 0x06006FFB RID: 28667 RVA: 0x002B1B83 File Offset: 0x002AFD83
+	// Token: 0x17000CB9 RID: 3257
+	// (get) Token: 0x0600709B RID: 28827 RVA: 0x002B50A7 File Offset: 0x002B32A7
 	[XuiXmlBinding("width_3_2")]
 	public int Width3x2
 	{
@@ -71,8 +71,8 @@ public class XUiC_UiLimitsWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000CA1 RID: 3233
-	// (get) Token: 0x06006FFC RID: 28668 RVA: 0x002B1B8D File Offset: 0x002AFD8D
+	// Token: 0x17000CBA RID: 3258
+	// (get) Token: 0x0600709C RID: 28828 RVA: 0x002B50B1 File Offset: 0x002B32B1
 	[XuiXmlBinding("width_16_10")]
 	public int Width16x10
 	{
@@ -83,8 +83,8 @@ public class XUiC_UiLimitsWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000CA2 RID: 3234
-	// (get) Token: 0x06006FFD RID: 28669 RVA: 0x002B1B99 File Offset: 0x002AFD99
+	// Token: 0x17000CBB RID: 3259
+	// (get) Token: 0x0600709D RID: 28829 RVA: 0x002B50BD File Offset: 0x002B32BD
 	[XuiXmlBinding("width_16_9")]
 	public int Width16x9
 	{
@@ -95,7 +95,7 @@ public class XUiC_UiLimitsWindow : XUiController
 		}
 	}
 
-	// Token: 0x06006FFE RID: 28670 RVA: 0x002B1BA8 File Offset: 0x002AFDA8
+	// Token: 0x0600709E RID: 28830 RVA: 0x002B50CC File Offset: 0x002B32CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int calcArWidth(int _ratioWidth, int _ratioHeight)
 	{
@@ -108,7 +108,7 @@ public class XUiC_UiLimitsWindow : XUiController
 		return num;
 	}
 
-	// Token: 0x04005467 RID: 21607
+	// Token: 0x0400550B RID: 21771
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float availableXuiHeight = 1f;
 }

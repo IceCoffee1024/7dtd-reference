@@ -2,10 +2,10 @@
 
 namespace Platform
 {
-	// Token: 0x02001B66 RID: 7014
+	// Token: 0x02001B8D RID: 7053
 	public static class ESaveGameProviderStatusExtensions
 	{
-		// Token: 0x0600D165 RID: 53605 RVA: 0x004C0F0E File Offset: 0x004BF10E
+		// Token: 0x0600D2F0 RID: 54000 RVA: 0x004C7302 File Offset: 0x004C5502
 		public static bool IsTerminal(this ESaveGameProviderStatus status)
 		{
 			switch (status)

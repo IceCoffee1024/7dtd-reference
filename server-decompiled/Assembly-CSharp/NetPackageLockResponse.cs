@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000803 RID: 2051
+// Token: 0x0200080E RID: 2062
 [Preserve]
 public class NetPackageLockResponse : NetPackage
 {
-	// Token: 0x17000649 RID: 1609
-	// (get) Token: 0x06003C60 RID: 15456 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x17000654 RID: 1620
+	// (get) Token: 0x06003CBF RID: 15551 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,7 +15,7 @@ public class NetPackageLockResponse : NetPackage
 		}
 	}
 
-	// Token: 0x06003C61 RID: 15457 RVA: 0x00181100 File Offset: 0x0017F300
+	// Token: 0x06003CC0 RID: 15552 RVA: 0x001834D8 File Offset: 0x001816D8
 	public unsafe NetPackageLockResponse Setup(bool _success, string _errorMsg, ReadOnlySpan<ILockTarget> _targets, ILockContext _context, ushort _channel = 0)
 	{
 		if (_targets == null || _targets.Length == 0)
@@ -36,7 +36,7 @@ public class NetPackageLockResponse : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003C62 RID: 15458 RVA: 0x00181194 File Offset: 0x0017F394
+	// Token: 0x06003CC1 RID: 15553 RVA: 0x0018356C File Offset: 0x0018176C
 	public NetPackageLockResponse Setup(bool _success, string _errorMsg, bool _isForceUnlocked)
 	{
 		this.locking = false;
@@ -49,7 +49,7 @@ public class NetPackageLockResponse : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003C63 RID: 15459 RVA: 0x001811D4 File Offset: 0x0017F3D4
+	// Token: 0x06003CC2 RID: 15554 RVA: 0x001835AC File Offset: 0x001817AC
 	public override void read(PooledBinaryReader _br)
 	{
 		this.locking = _br.ReadBoolean();
@@ -83,7 +83,7 @@ public class NetPackageLockResponse : NetPackage
 		this.context.Read(_br);
 	}
 
-	// Token: 0x06003C64 RID: 15460 RVA: 0x001812AC File Offset: 0x0017F4AC
+	// Token: 0x06003CC3 RID: 15555 RVA: 0x00183684 File Offset: 0x00181884
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -110,7 +110,7 @@ public class NetPackageLockResponse : NetPackage
 		this.context.Write(_bw);
 	}
 
-	// Token: 0x06003C65 RID: 15461 RVA: 0x00181370 File Offset: 0x0017F570
+	// Token: 0x06003CC4 RID: 15556 RVA: 0x00183748 File Offset: 0x00181948
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (!this.locking)
@@ -121,37 +121,37 @@ public class NetPackageLockResponse : NetPackage
 		LockManager.Instance.LockResponse(this.success, this.errorMsg, this.targets.AsSpan<ILockTarget>(), this.context, this.channel);
 	}
 
-	// Token: 0x06003C66 RID: 15462 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06003CC5 RID: 15557 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override int GetLength()
 	{
 		return 0;
 	}
 
-	// Token: 0x040030CB RID: 12491
+	// Token: 0x0400314A RID: 12618
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool locking;
 
-	// Token: 0x040030CC RID: 12492
+	// Token: 0x0400314B RID: 12619
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool success;
 
-	// Token: 0x040030CD RID: 12493
+	// Token: 0x0400314C RID: 12620
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string errorMsg = string.Empty;
 
-	// Token: 0x040030CE RID: 12494
+	// Token: 0x0400314D RID: 12621
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ILockTarget[] targets;
 
-	// Token: 0x040030CF RID: 12495
+	// Token: 0x0400314E RID: 12622
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ILockContext context;
 
-	// Token: 0x040030D0 RID: 12496
+	// Token: 0x0400314F RID: 12623
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ushort channel;
 
-	// Token: 0x040030D1 RID: 12497
+	// Token: 0x04003150 RID: 12624
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isForceUnlocked;
 }

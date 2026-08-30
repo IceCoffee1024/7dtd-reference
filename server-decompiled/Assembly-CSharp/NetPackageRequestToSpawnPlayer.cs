@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000837 RID: 2103
+// Token: 0x02000843 RID: 2115
 [Preserve]
 public class NetPackageRequestToSpawnPlayer : NetPackage
 {
-	// Token: 0x1700066B RID: 1643
-	// (get) Token: 0x06003D99 RID: 15769 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000677 RID: 1655
+	// (get) Token: 0x06003DFE RID: 15870 RVA: 0x00020021 File Offset: 0x0001E221
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,7 +15,7 @@ public class NetPackageRequestToSpawnPlayer : NetPackage
 		}
 	}
 
-	// Token: 0x06003D9A RID: 15770 RVA: 0x00186F9A File Offset: 0x0018519A
+	// Token: 0x06003DFF RID: 15871 RVA: 0x00188FBA File Offset: 0x001871BA
 	public NetPackageRequestToSpawnPlayer Setup(int _chunkViewDim, PlayerProfile _playerProfile, int _nearEntityId)
 	{
 		this.chunkViewDim = _chunkViewDim;
@@ -24,7 +24,7 @@ public class NetPackageRequestToSpawnPlayer : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D9B RID: 15771 RVA: 0x00186FB2 File Offset: 0x001851B2
+	// Token: 0x06003E00 RID: 15872 RVA: 0x00188FD2 File Offset: 0x001871D2
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.chunkViewDim = (int)_reader.ReadInt16();
@@ -32,7 +32,7 @@ public class NetPackageRequestToSpawnPlayer : NetPackage
 		this.nearEntityId = _reader.ReadInt32();
 	}
 
-	// Token: 0x06003D9C RID: 15772 RVA: 0x00186FD8 File Offset: 0x001851D8
+	// Token: 0x06003E01 RID: 15873 RVA: 0x00188FF8 File Offset: 0x001871F8
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -41,27 +41,27 @@ public class NetPackageRequestToSpawnPlayer : NetPackage
 		_writer.Write(this.nearEntityId);
 	}
 
-	// Token: 0x06003D9D RID: 15773 RVA: 0x00187006 File Offset: 0x00185206
+	// Token: 0x06003E02 RID: 15874 RVA: 0x00189026 File Offset: 0x00187226
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		_callbacks.RequestToSpawnPlayer(base.Sender, this.chunkViewDim, this.playerProfile, this.nearEntityId);
 	}
 
-	// Token: 0x06003D9E RID: 15774 RVA: 0x001757C8 File Offset: 0x001739C8
+	// Token: 0x06003E03 RID: 15875 RVA: 0x00177A48 File Offset: 0x00175C48
 	public override int GetLength()
 	{
 		return 50;
 	}
 
-	// Token: 0x040031D7 RID: 12759
+	// Token: 0x04003256 RID: 12886
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int chunkViewDim;
 
-	// Token: 0x040031D8 RID: 12760
+	// Token: 0x04003257 RID: 12887
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlayerProfile playerProfile;
 
-	// Token: 0x040031D9 RID: 12761
+	// Token: 0x04003258 RID: 12888
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int nearEntityId;
 }

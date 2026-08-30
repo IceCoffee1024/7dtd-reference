@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200101B RID: 4123
+// Token: 0x02001034 RID: 4148
 [Preserve]
 public class XUiC_SignInstanceWindow : XUiController
 {
-	// Token: 0x06008285 RID: 33413 RVA: 0x0031BF30 File Offset: 0x0031A130
+	// Token: 0x06008377 RID: 33655 RVA: 0x00320758 File Offset: 0x0031E958
 	public override void Init()
 	{
 		base.Init();
@@ -22,7 +22,7 @@ public class XUiC_SignInstanceWindow : XUiController
 		base.GetChildById("btnToggleLight").OnPress += this.HandleToggleLight;
 	}
 
-	// Token: 0x06008286 RID: 33414 RVA: 0x002F7098 File Offset: 0x002F5298
+	// Token: 0x06008378 RID: 33656 RVA: 0x002FB86C File Offset: 0x002F9A6C
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -32,7 +32,7 @@ public class XUiC_SignInstanceWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008287 RID: 33415 RVA: 0x0031BFF7 File Offset: 0x0031A1F7
+	// Token: 0x06008379 RID: 33657 RVA: 0x0032081F File Offset: 0x0031EA1F
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -41,7 +41,7 @@ public class XUiC_SignInstanceWindow : XUiController
 		this.CleanupPreview();
 	}
 
-	// Token: 0x06008288 RID: 33416 RVA: 0x0031C034 File Offset: 0x0031A234
+	// Token: 0x0600837A RID: 33658 RVA: 0x0032085C File Offset: 0x0031EA5C
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -52,7 +52,7 @@ public class XUiC_SignInstanceWindow : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06008289 RID: 33417 RVA: 0x0031C0A9 File Offset: 0x0031A2A9
+	// Token: 0x0600837B RID: 33659 RVA: 0x003208D1 File Offset: 0x0031EAD1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ComboBlendMode_OnValueChanged(XUiController _sender, SignCanvas.SignBlendMode _oldValue, SignCanvas.SignBlendMode _newValue)
 	{
@@ -65,7 +65,7 @@ public class XUiC_SignInstanceWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600828A RID: 33418 RVA: 0x0031C0E8 File Offset: 0x0031A2E8
+	// Token: 0x0600837C RID: 33660 RVA: 0x00320910 File Offset: 0x0031EB10
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ToggleShowOnImposter_OnValueChanged(XUiC_ToggleButton _sender, bool _newValue)
 	{
@@ -78,7 +78,7 @@ public class XUiC_SignInstanceWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600828B RID: 33419 RVA: 0x0031C138 File Offset: 0x0031A338
+	// Token: 0x0600837D RID: 33661 RVA: 0x00320960 File Offset: 0x0031EB60
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -102,7 +102,7 @@ public class XUiC_SignInstanceWindow : XUiController
 		return true;
 	}
 
-	// Token: 0x0600828C RID: 33420 RVA: 0x0031C214 File Offset: 0x0031A414
+	// Token: 0x0600837E RID: 33662 RVA: 0x00320A3C File Offset: 0x0031EC3C
 	public void InitialiseTo(TEFeatureCanvas sign)
 	{
 		this.signTileEntity = sign;
@@ -127,7 +127,7 @@ public class XUiC_SignInstanceWindow : XUiController
 		this.SetupPreview(sign);
 	}
 
-	// Token: 0x0600828D RID: 33421 RVA: 0x0031C318 File Offset: 0x0031A518
+	// Token: 0x0600837F RID: 33663 RVA: 0x00320B40 File Offset: 0x0031ED40
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetupPreview(TEFeatureCanvas sign)
 	{
@@ -207,7 +207,7 @@ public class XUiC_SignInstanceWindow : XUiController
 		this.RefreshPreviewRenderers();
 	}
 
-	// Token: 0x0600828E RID: 33422 RVA: 0x0031C78C File Offset: 0x0031A98C
+	// Token: 0x06008380 RID: 33664 RVA: 0x00320FB4 File Offset: 0x0031F1B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitializeDecalBackgroundMesh()
 	{
@@ -221,7 +221,7 @@ public class XUiC_SignInstanceWindow : XUiController
 		this.decalBackgroundMesh.GetComponent<Collider>().enabled = false;
 	}
 
-	// Token: 0x0600828F RID: 33423 RVA: 0x0031C838 File Offset: 0x0031AA38
+	// Token: 0x06008381 RID: 33665 RVA: 0x00321060 File Offset: 0x0031F260
 	public void RefreshPreviewRenderers()
 	{
 		if (this.signTileEntity == null || this.previewSignRenderers.Count == 0)
@@ -236,7 +236,7 @@ public class XUiC_SignInstanceWindow : XUiController
 		}, this.previewSignRenderers, this.signTileEntity.Canvas.BlendMode, this.renderCamera);
 	}
 
-	// Token: 0x06008290 RID: 33424 RVA: 0x0031C8A0 File Offset: 0x0031AAA0
+	// Token: 0x06008382 RID: 33666 RVA: 0x003210C8 File Offset: 0x0031F2C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Bounds ComputeBounds(GameObject go)
 	{
@@ -258,7 +258,7 @@ public class XUiC_SignInstanceWindow : XUiController
 		return bounds;
 	}
 
-	// Token: 0x06008291 RID: 33425 RVA: 0x0031C924 File Offset: 0x0031AB24
+	// Token: 0x06008383 RID: 33667 RVA: 0x0032114C File Offset: 0x0031F34C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CleanupPreview()
 	{
@@ -281,7 +281,7 @@ public class XUiC_SignInstanceWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008292 RID: 33426 RVA: 0x0031C9B0 File Offset: 0x0031ABB0
+	// Token: 0x06008384 RID: 33668 RVA: 0x003211D8 File Offset: 0x0031F3D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandlePreviewDragged(XUiController _sender, EDragType _dragType, Vector2 _mousePositionDelta)
 	{
@@ -302,14 +302,14 @@ public class XUiC_SignInstanceWindow : XUiController
 		this.ZoomCamera(_mousePositionDelta.y * 0.005f);
 	}
 
-	// Token: 0x06008293 RID: 33427 RVA: 0x0031C9FF File Offset: 0x0031ABFF
+	// Token: 0x06008385 RID: 33669 RVA: 0x00321227 File Offset: 0x0031F427
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandlePreviewScrolled(XUiController _sender, float _delta)
 	{
 		this.ZoomCamera(_delta);
 	}
 
-	// Token: 0x06008294 RID: 33428 RVA: 0x0031CA08 File Offset: 0x0031AC08
+	// Token: 0x06008386 RID: 33670 RVA: 0x00321230 File Offset: 0x0031F430
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OrbitCamera(Vector2 _mousePositionDelta)
 	{
@@ -323,7 +323,7 @@ public class XUiC_SignInstanceWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008295 RID: 33429 RVA: 0x0031CA94 File Offset: 0x0031AC94
+	// Token: 0x06008387 RID: 33671 RVA: 0x003212BC File Offset: 0x0031F4BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ZoomCamera(float _zoomDelta)
 	{
@@ -335,7 +335,7 @@ public class XUiC_SignInstanceWindow : XUiController
 		this.renderCamera.transform.position = this.renderCamera.transform.position.normalized * this.currentDistance;
 	}
 
-	// Token: 0x06008296 RID: 33430 RVA: 0x0031CB09 File Offset: 0x0031AD09
+	// Token: 0x06008388 RID: 33672 RVA: 0x00321331 File Offset: 0x0031F531
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleToggleLight(XUiController _sender, int _mouseButton)
 	{
@@ -345,7 +345,7 @@ public class XUiC_SignInstanceWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008297 RID: 33431 RVA: 0x0031CB34 File Offset: 0x0031AD34
+	// Token: 0x06008389 RID: 33673 RVA: 0x0032135C File Offset: 0x0031F55C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleRotationChanged(XUiController _sender)
 	{
@@ -358,55 +358,55 @@ public class XUiC_SignInstanceWindow : XUiController
 		}
 	}
 
-	// Token: 0x040060C2 RID: 24770
+	// Token: 0x04006189 RID: 24969
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TEFeatureCanvas signTileEntity;
 
-	// Token: 0x040060C3 RID: 24771
+	// Token: 0x0400618A RID: 24970
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxEnum<SignCanvas.SignBlendMode> comboBlendMode;
 
-	// Token: 0x040060C4 RID: 24772
+	// Token: 0x0400618B RID: 24971
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxInt cbxRotation;
 
-	// Token: 0x040060C5 RID: 24773
+	// Token: 0x0400618C RID: 24972
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ToggleButton toggleShowOnImposter;
 
-	// Token: 0x040060C6 RID: 24774
+	// Token: 0x0400618D RID: 24973
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RenderTextureSystem renderTextureSystem;
 
-	// Token: 0x040060C7 RID: 24775
+	// Token: 0x0400618E RID: 24974
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Camera renderCamera;
 
-	// Token: 0x040060C8 RID: 24776
+	// Token: 0x0400618F RID: 24975
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Texture previewTexture;
 
-	// Token: 0x040060C9 RID: 24777
+	// Token: 0x04006190 RID: 24976
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<SignRenderer> previewSignRenderers = new List<SignRenderer>();
 
-	// Token: 0x040060CA RID: 24778
+	// Token: 0x04006191 RID: 24977
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Light previewLight;
 
-	// Token: 0x040060CB RID: 24779
+	// Token: 0x04006192 RID: 24978
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float maxDistance;
 
-	// Token: 0x040060CC RID: 24780
+	// Token: 0x04006193 RID: 24979
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float minDistance;
 
-	// Token: 0x040060CD RID: 24781
+	// Token: 0x04006194 RID: 24980
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float currentDistance;
 
-	// Token: 0x040060CE RID: 24782
+	// Token: 0x04006195 RID: 24981
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject decalBackgroundMesh;
 }

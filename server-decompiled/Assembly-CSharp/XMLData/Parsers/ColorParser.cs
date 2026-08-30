@@ -5,10 +5,10 @@ using XMLData.Exceptions;
 
 namespace XMLData.Parsers
 {
-	// Token: 0x02001635 RID: 5685
+	// Token: 0x02001650 RID: 5712
 	public static class ColorParser
 	{
-		// Token: 0x0600B2D5 RID: 45781 RVA: 0x0042EAD4 File Offset: 0x0042CCD4
+		// Token: 0x0600B3D2 RID: 46034 RVA: 0x00433E14 File Offset: 0x00432014
 		public static Color Parse(string _value)
 		{
 			Match match = ColorParser.decimalMatcher.Match(_value);
@@ -46,13 +46,13 @@ namespace XMLData.Parsers
 			return new Color(num, num2, num3, 1f);
 		}
 
-		// Token: 0x0600B2D6 RID: 45782 RVA: 0x0042EC44 File Offset: 0x0042CE44
+		// Token: 0x0600B3D3 RID: 46035 RVA: 0x00433F84 File Offset: 0x00432184
 		public static string Unparse(Color _value)
 		{
 			return string.Format("{0},{1},{2}", _value.r.ToCultureInvariantString(), _value.g.ToCultureInvariantString(), _value.b.ToCultureInvariantString());
 		}
 
-		// Token: 0x04008612 RID: 34322
+		// Token: 0x040086EB RID: 34539
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Regex decimalMatcher = new Regex("^\\s*(\\d*\\.\\d+)\\s*,\\s*(\\d*\\.\\d+)\\s*,\\s*(\\d*\\.\\d+)\\s*$");
 	}

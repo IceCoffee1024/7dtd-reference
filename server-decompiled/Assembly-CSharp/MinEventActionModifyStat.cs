@@ -3,11 +3,11 @@ using System.Globalization;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x0200070B RID: 1803
+// Token: 0x02000715 RID: 1813
 [Preserve]
 public class MinEventActionModifyStat : MinEventActionTargetedBase
 {
-	// Token: 0x060036B3 RID: 14003 RVA: 0x00169368 File Offset: 0x00167568
+	// Token: 0x06003709 RID: 14089 RVA: 0x0016B540 File Offset: 0x00169740
 	public override void Execute(MinEventParams _params)
 	{
 		for (int i = 0; i < this.targets.Count; i++)
@@ -61,7 +61,7 @@ public class MinEventActionModifyStat : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x060036B4 RID: 14004 RVA: 0x001694D8 File Offset: 0x001676D8
+	// Token: 0x0600370A RID: 14090 RVA: 0x0016B6B0 File Offset: 0x001698B0
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -95,45 +95,45 @@ public class MinEventActionModifyStat : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002C11 RID: 11281
+	// Token: 0x04002C85 RID: 11397
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string statName;
 
-	// Token: 0x04002C12 RID: 11282
+	// Token: 0x04002C86 RID: 11398
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MinEventActionModifyStat.OperationTypes operation;
 
-	// Token: 0x04002C13 RID: 11283
+	// Token: 0x04002C87 RID: 11399
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float value;
 
-	// Token: 0x04002C14 RID: 11284
+	// Token: 0x04002C88 RID: 11400
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool cvarRef;
 
-	// Token: 0x04002C15 RID: 11285
+	// Token: 0x04002C89 RID: 11401
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string refCvarName;
 
-	// Token: 0x0200070C RID: 1804
+	// Token: 0x02000716 RID: 1814
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum OperationTypes
 	{
-		// Token: 0x04002C17 RID: 11287
+		// Token: 0x04002C8B RID: 11403
 		set,
-		// Token: 0x04002C18 RID: 11288
+		// Token: 0x04002C8C RID: 11404
 		setvalue,
-		// Token: 0x04002C19 RID: 11289
+		// Token: 0x04002C8D RID: 11405
 		add,
-		// Token: 0x04002C1A RID: 11290
+		// Token: 0x04002C8E RID: 11406
 		subtract,
-		// Token: 0x04002C1B RID: 11291
+		// Token: 0x04002C8F RID: 11407
 		multiply,
-		// Token: 0x04002C1C RID: 11292
+		// Token: 0x04002C90 RID: 11408
 		divide,
-		// Token: 0x04002C1D RID: 11293
+		// Token: 0x04002C91 RID: 11409
 		randomfloat,
-		// Token: 0x04002C1E RID: 11294
+		// Token: 0x04002C92 RID: 11410
 		randomint
 	}
 }

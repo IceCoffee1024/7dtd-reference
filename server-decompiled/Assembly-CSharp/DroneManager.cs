@@ -7,12 +7,12 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020003DC RID: 988
+// Token: 0x020003E0 RID: 992
 [Preserve]
 public class DroneManager
 {
-	// Token: 0x1700039A RID: 922
-	// (get) Token: 0x06001DEB RID: 7659 RVA: 0x000B5E5C File Offset: 0x000B405C
+	// Token: 0x1700039E RID: 926
+	// (get) Token: 0x06001E08 RID: 7688 RVA: 0x000B65A0 File Offset: 0x000B47A0
 	public static DroneManager Instance
 	{
 		get
@@ -21,14 +21,14 @@ public class DroneManager
 		}
 	}
 
-	// Token: 0x06001DED RID: 7661 RVA: 0x000B5EA2 File Offset: 0x000B40A2
+	// Token: 0x06001E0A RID: 7690 RVA: 0x000B65E6 File Offset: 0x000B47E6
 	public static void Init()
 	{
 		DroneManager.instance = new DroneManager();
 		DroneManager.instance.Load();
 	}
 
-	// Token: 0x06001DEE RID: 7662 RVA: 0x000B5EB8 File Offset: 0x000B40B8
+	// Token: 0x06001E0B RID: 7691 RVA: 0x000B65FC File Offset: 0x000B47FC
 	public void AddTrackedDrone(EntityDrone _drone)
 	{
 		if (!_drone)
@@ -44,7 +44,7 @@ public class DroneManager
 		}
 	}
 
-	// Token: 0x06001DEF RID: 7663 RVA: 0x000B5F10 File Offset: 0x000B4110
+	// Token: 0x06001E0C RID: 7692 RVA: 0x000B6654 File Offset: 0x000B4854
 	public void RemoveTrackedDrone(EntityDrone _drone, EnumRemoveEntityReason _reason)
 	{
 		this.dronesActive.Remove(_drone);
@@ -65,13 +65,13 @@ public class DroneManager
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageVehicleCount>().Setup(), false, -1, -1, -1, null, 192, false);
 	}
 
-	// Token: 0x06001DF0 RID: 7664 RVA: 0x000B5F98 File Offset: 0x000B4198
+	// Token: 0x06001E0D RID: 7693 RVA: 0x000B66DC File Offset: 0x000B48DC
 	public void TriggerSave()
 	{
 		this.saveTime = Mathf.Min(this.saveTime, 10f);
 	}
 
-	// Token: 0x06001DF1 RID: 7665 RVA: 0x000B5FB0 File Offset: 0x000B41B0
+	// Token: 0x06001E0E RID: 7694 RVA: 0x000B66F4 File Offset: 0x000B48F4
 	public void Update()
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -178,7 +178,7 @@ public class DroneManager
 		}
 	}
 
-	// Token: 0x06001DF2 RID: 7666 RVA: 0x000B631C File Offset: 0x000B451C
+	// Token: 0x06001E0F RID: 7695 RVA: 0x000B6A60 File Offset: 0x000B4C60
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityDrone CreateDroneEntity(EntityCreationData data, World world)
 	{
@@ -192,7 +192,7 @@ public class DroneManager
 		return entityDrone;
 	}
 
-	// Token: 0x06001DF3 RID: 7667 RVA: 0x000B6358 File Offset: 0x000B4558
+	// Token: 0x06001E10 RID: 7696 RVA: 0x000B6A9C File Offset: 0x000B4C9C
 	public EntityDrone LoadDrone(int _entityId, World world)
 	{
 		EntityDrone entityDrone = null;
@@ -207,14 +207,14 @@ public class DroneManager
 		return entityDrone;
 	}
 
-	// Token: 0x06001DF4 RID: 7668 RVA: 0x000B63BC File Offset: 0x000B45BC
+	// Token: 0x06001E11 RID: 7697 RVA: 0x000B6B00 File Offset: 0x000B4D00
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isValidDronePos(Vector3 pos)
 	{
 		return !float.IsNaN(pos.x) && !float.IsNaN(pos.y) && !float.IsNaN(pos.z);
 	}
 
-	// Token: 0x06001DF5 RID: 7669 RVA: 0x000B63E8 File Offset: 0x000B45E8
+	// Token: 0x06001E12 RID: 7698 RVA: 0x000B6B2C File Offset: 0x000B4D2C
 	public void RemoveAllDronesFromMap()
 	{
 		GameManager gameManager = GameManager.Instance;
@@ -249,13 +249,13 @@ public class DroneManager
 		this.UpdateWaypointsForAllPlayers();
 	}
 
-	// Token: 0x06001DF6 RID: 7670 RVA: 0x000B6518 File Offset: 0x000B4718
+	// Token: 0x06001E13 RID: 7699 RVA: 0x000B6C5C File Offset: 0x000B4E5C
 	public void ClearAllDronesForPlayer(EntityPlayer player)
 	{
 		this.ClearAllDronesForPlayer(player.entityId);
 	}
 
-	// Token: 0x06001DF7 RID: 7671 RVA: 0x000B6526 File Offset: 0x000B4726
+	// Token: 0x06001E14 RID: 7700 RVA: 0x000B6C6A File Offset: 0x000B4E6A
 	public void ClearAllDronesForPlayer(int entityId)
 	{
 		this.ClearUnloadedDrones(entityId);
@@ -264,13 +264,13 @@ public class DroneManager
 		this.UpdateWaypointsForPlayer(entityId);
 	}
 
-	// Token: 0x06001DF8 RID: 7672 RVA: 0x000B6543 File Offset: 0x000B4743
+	// Token: 0x06001E15 RID: 7701 RVA: 0x000B6C87 File Offset: 0x000B4E87
 	public void ClearUnloadedDrones(EntityPlayer player)
 	{
 		this.ClearUnloadedDrones(player.entityId);
 	}
 
-	// Token: 0x06001DF9 RID: 7673 RVA: 0x000B6554 File Offset: 0x000B4754
+	// Token: 0x06001E16 RID: 7702 RVA: 0x000B6C98 File Offset: 0x000B4E98
 	public void ClearUnloadedDrones(int entityId)
 	{
 		for (int i = this.dronesUnloaded.Count - 1; i >= 0; i--)
@@ -282,7 +282,7 @@ public class DroneManager
 		}
 	}
 
-	// Token: 0x06001DFA RID: 7674 RVA: 0x000B659C File Offset: 0x000B479C
+	// Token: 0x06001E17 RID: 7703 RVA: 0x000B6CE0 File Offset: 0x000B4EE0
 	public void ClearActiveDrones(int entityId)
 	{
 		for (int i = this.dronesActive.Count - 1; i >= 0; i--)
@@ -296,7 +296,7 @@ public class DroneManager
 		}
 	}
 
-	// Token: 0x06001DFB RID: 7675 RVA: 0x000B65FC File Offset: 0x000B47FC
+	// Token: 0x06001E18 RID: 7704 RVA: 0x000B6D40 File Offset: 0x000B4F40
 	public string LogActiveDrones()
 	{
 		string text = string.Empty;
@@ -319,7 +319,7 @@ public class DroneManager
 		return text;
 	}
 
-	// Token: 0x06001DFC RID: 7676 RVA: 0x000B669C File Offset: 0x000B489C
+	// Token: 0x06001E19 RID: 7705 RVA: 0x000B6DE0 File Offset: 0x000B4FE0
 	public string LogUnloadedDrones()
 	{
 		string text = string.Empty;
@@ -339,7 +339,7 @@ public class DroneManager
 		return text;
 	}
 
-	// Token: 0x06001DFD RID: 7677 RVA: 0x000B6718 File Offset: 0x000B4918
+	// Token: 0x06001E1A RID: 7706 RVA: 0x000B6E5C File Offset: 0x000B505C
 	public bool AssignUnloadedDrone(EntityPlayer player, int entityId)
 	{
 		for (int i = 0; i < this.dronesUnloaded.Count; i++)
@@ -357,7 +357,7 @@ public class DroneManager
 		return false;
 	}
 
-	// Token: 0x06001DFE RID: 7678 RVA: 0x000B6790 File Offset: 0x000B4990
+	// Token: 0x06001E1B RID: 7707 RVA: 0x000B6ED4 File Offset: 0x000B50D4
 	public EntityDrone GetActiveDronesWithId(int entityId)
 	{
 		for (int i = this.dronesActive.Count - 1; i >= 0; i--)
@@ -371,7 +371,7 @@ public class DroneManager
 		return null;
 	}
 
-	// Token: 0x06001DFF RID: 7679 RVA: 0x000B67D0 File Offset: 0x000B49D0
+	// Token: 0x06001E1C RID: 7708 RVA: 0x000B6F14 File Offset: 0x000B5114
 	public void RemoveActiveDrone(int entityId)
 	{
 		EntityDrone drone = this.GetActiveDronesWithId(entityId);
@@ -391,7 +391,7 @@ public class DroneManager
 		}
 	}
 
-	// Token: 0x06001E00 RID: 7680 RVA: 0x000B6878 File Offset: 0x000B4A78
+	// Token: 0x06001E1D RID: 7709 RVA: 0x000B6FBC File Offset: 0x000B51BC
 	public List<EntityCreationData> GetAllDronesECD()
 	{
 		List<EntityCreationData> list = new List<EntityCreationData>();
@@ -406,7 +406,7 @@ public class DroneManager
 		return list;
 	}
 
-	// Token: 0x06001E01 RID: 7681 RVA: 0x000B68E4 File Offset: 0x000B4AE4
+	// Token: 0x06001E1E RID: 7710 RVA: 0x000B7028 File Offset: 0x000B5228
 	public void UpdateWaypointsForAllPlayers()
 	{
 		foreach (EntityPlayer entityPlayer in GameManager.Instance.World.GetPlayers())
@@ -415,7 +415,7 @@ public class DroneManager
 		}
 	}
 
-	// Token: 0x06001E02 RID: 7682 RVA: 0x000B6948 File Offset: 0x000B4B48
+	// Token: 0x06001E1F RID: 7711 RVA: 0x000B708C File Offset: 0x000B528C
 	public void UpdateWaypointsForPlayer(int entityId)
 	{
 		EntityPlayer entityPlayer = (EntityPlayer)GameManager.Instance.World.GetEntity(entityId);
@@ -446,7 +446,7 @@ public class DroneManager
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageEntityWaypointList>().Setup(eWayPointListType.Drone, list), false, entityId, -1, -1, null, 192, false);
 	}
 
-	// Token: 0x06001E03 RID: 7683 RVA: 0x000B6A94 File Offset: 0x000B4C94
+	// Token: 0x06001E20 RID: 7712 RVA: 0x000B71D8 File Offset: 0x000B53D8
 	public void SpawnFollowingDronesForPLayer(int entityId, World world)
 	{
 		if ((EntityPlayer)GameManager.Instance.World.GetEntity(entityId) == null)
@@ -469,7 +469,7 @@ public class DroneManager
 		}
 	}
 
-	// Token: 0x06001E04 RID: 7684 RVA: 0x000B6B7C File Offset: 0x000B4D7C
+	// Token: 0x06001E21 RID: 7713 RVA: 0x000B72C0 File Offset: 0x000B54C0
 	public static void Cleanup()
 	{
 		if (DroneManager.instance != null)
@@ -478,7 +478,7 @@ public class DroneManager
 		}
 	}
 
-	// Token: 0x06001E05 RID: 7685 RVA: 0x000B6B8F File Offset: 0x000B4D8F
+	// Token: 0x06001E22 RID: 7714 RVA: 0x000B72D3 File Offset: 0x000B54D3
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SaveAndClear()
 	{
@@ -490,7 +490,7 @@ public class DroneManager
 		DroneManager.instance = null;
 	}
 
-	// Token: 0x06001E06 RID: 7686 RVA: 0x000B6BBF File Offset: 0x000B4DBF
+	// Token: 0x06001E23 RID: 7715 RVA: 0x000B7303 File Offset: 0x000B5503
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WaitOnSave()
 	{
@@ -501,7 +501,7 @@ public class DroneManager
 		}
 	}
 
-	// Token: 0x06001E07 RID: 7687 RVA: 0x000B6BE0 File Offset: 0x000B4DE0
+	// Token: 0x06001E24 RID: 7716 RVA: 0x000B7324 File Offset: 0x000B5524
 	public void Load()
 	{
 		string text = string.Format("{0}/{1}", GameIO.GetSaveGameDir(), "drones.dat");
@@ -542,7 +542,7 @@ public class DroneManager
 		}
 	}
 
-	// Token: 0x06001E08 RID: 7688 RVA: 0x000B6D18 File Offset: 0x000B4F18
+	// Token: 0x06001E25 RID: 7717 RVA: 0x000B745C File Offset: 0x000B565C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Save()
 	{
@@ -565,7 +565,7 @@ public class DroneManager
 		}
 	}
 
-	// Token: 0x06001E09 RID: 7689 RVA: 0x000B6E04 File Offset: 0x000B5004
+	// Token: 0x06001E26 RID: 7718 RVA: 0x000B7548 File Offset: 0x000B5748
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int SaveThread(ThreadManager.ThreadInfo _threadInfo)
 	{
@@ -586,7 +586,7 @@ public class DroneManager
 		return -1;
 	}
 
-	// Token: 0x06001E0A RID: 7690 RVA: 0x000B6E98 File Offset: 0x000B5098
+	// Token: 0x06001E27 RID: 7719 RVA: 0x000B75DC File Offset: 0x000B57DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void read(PooledBinaryReader _br)
 	{
@@ -610,7 +610,7 @@ public class DroneManager
 		}
 	}
 
-	// Token: 0x06001E0B RID: 7691 RVA: 0x000B6F40 File Offset: 0x000B5140
+	// Token: 0x06001E28 RID: 7720 RVA: 0x000B7684 File Offset: 0x000B5884
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void write(PooledBinaryWriter _bw)
 	{
@@ -643,7 +643,7 @@ public class DroneManager
 		}
 	}
 
-	// Token: 0x06001E0C RID: 7692 RVA: 0x000B700C File Offset: 0x000B520C
+	// Token: 0x06001E29 RID: 7721 RVA: 0x000B7750 File Offset: 0x000B5950
 	public List<EntityCreationData> GetDronesList()
 	{
 		List<EntityCreationData> list = new List<EntityCreationData>();
@@ -651,7 +651,7 @@ public class DroneManager
 		return list;
 	}
 
-	// Token: 0x06001E0D RID: 7693 RVA: 0x000B7028 File Offset: 0x000B5228
+	// Token: 0x06001E2A RID: 7722 RVA: 0x000B776C File Offset: 0x000B596C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GetDrones(List<EntityCreationData> _list)
 	{
@@ -669,7 +669,7 @@ public class DroneManager
 		}
 	}
 
-	// Token: 0x06001E0E RID: 7694 RVA: 0x000B70B4 File Offset: 0x000B52B4
+	// Token: 0x06001E2B RID: 7723 RVA: 0x000B77F8 File Offset: 0x000B59F8
 	[return: TupleElementNames(new string[] { "entityId", "position" })]
 	public List<ValueTuple<int, Vector3>> GetDronePositionsList()
 	{
@@ -689,7 +689,7 @@ public class DroneManager
 		return list;
 	}
 
-	// Token: 0x06001E0F RID: 7695 RVA: 0x000B7191 File Offset: 0x000B5391
+	// Token: 0x06001E2C RID: 7724 RVA: 0x000B78D5 File Offset: 0x000B5AD5
 	public static int GetServerDroneCount()
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -699,7 +699,7 @@ public class DroneManager
 		return DroneManager.serverDroneCount;
 	}
 
-	// Token: 0x06001E10 RID: 7696 RVA: 0x000B71C4 File Offset: 0x000B53C4
+	// Token: 0x06001E2D RID: 7725 RVA: 0x000B7908 File Offset: 0x000B5B08
 	public static void SetServerDroneCount(int count)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -709,13 +709,13 @@ public class DroneManager
 		DroneManager.serverDroneCount = count;
 	}
 
-	// Token: 0x06001E11 RID: 7697 RVA: 0x000B71D9 File Offset: 0x000B53D9
+	// Token: 0x06001E2E RID: 7726 RVA: 0x000B791D File Offset: 0x000B5B1D
 	public static bool CanAddMoreDrones()
 	{
 		return !(DeviceFlag.XBoxSeriesS | DeviceFlag.XBoxSeriesX | DeviceFlag.PS5).IsCurrent() || DroneManager.GetServerDroneCount() < 500;
 	}
 
-	// Token: 0x06001E12 RID: 7698 RVA: 0x000B71F4 File Offset: 0x000B53F4
+	// Token: 0x06001E2F RID: 7727 RVA: 0x000B7938 File Offset: 0x000B5B38
 	[Conditional("DEBUG_DRONEMAN")]
 	public static void VMLog(string _format = "", params object[] _args)
 	{
@@ -724,72 +724,72 @@ public class DroneManager
 		Log.Out(_format, _args);
 	}
 
-	// Token: 0x040013F8 RID: 5112
+	// Token: 0x0400140D RID: 5133
 	public static bool Debug_LocalControl;
 
-	// Token: 0x040013F9 RID: 5113
+	// Token: 0x0400140E RID: 5134
 	public static bool DebugLogEnabled;
 
-	// Token: 0x040013FA RID: 5114
+	// Token: 0x0400140F RID: 5135
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cVersion = 1;
 
-	// Token: 0x040013FB RID: 5115
+	// Token: 0x04001410 RID: 5136
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cSaveTime = 120f;
 
-	// Token: 0x040013FC RID: 5116
+	// Token: 0x04001411 RID: 5137
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cChangeSaveDelay = 10f;
 
-	// Token: 0x040013FD RID: 5117
+	// Token: 0x04001412 RID: 5138
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cMaxDrones = 500;
 
-	// Token: 0x040013FE RID: 5118
+	// Token: 0x04001413 RID: 5139
 	public const int cMaxActiveDronePlayerRange = 32;
 
-	// Token: 0x040013FF RID: 5119
+	// Token: 0x04001414 RID: 5140
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int serverDroneCount;
 
-	// Token: 0x04001400 RID: 5120
+	// Token: 0x04001415 RID: 5141
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<EntityDrone> dronesActive = new List<EntityDrone>();
 
-	// Token: 0x04001401 RID: 5121
+	// Token: 0x04001416 RID: 5142
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<EntityCreationData> dronesUnloaded = new List<EntityCreationData>();
 
-	// Token: 0x04001402 RID: 5122
+	// Token: 0x04001417 RID: 5143
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<EntityCreationData> dronesWithoutOwner = new List<EntityCreationData>();
 
-	// Token: 0x04001403 RID: 5123
+	// Token: 0x04001418 RID: 5144
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float saveTime = 120f;
 
-	// Token: 0x04001404 RID: 5124
+	// Token: 0x04001419 RID: 5145
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DroneManager instance;
 
-	// Token: 0x04001405 RID: 5125
+	// Token: 0x0400141A RID: 5146
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ThreadManager.ThreadInfo saveThread;
 
-	// Token: 0x04001406 RID: 5126
+	// Token: 0x0400141B RID: 5147
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<int> debugDronePlayerAssignment = new List<int>();
 
-	// Token: 0x04001407 RID: 5127
+	// Token: 0x0400141C RID: 5148
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cNameKey = "drones";
 
-	// Token: 0x04001408 RID: 5128
+	// Token: 0x0400141D RID: 5149
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cThreadKey = "droneDataSave";
 
-	// Token: 0x04001409 RID: 5129
+	// Token: 0x0400141E RID: 5150
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cStringName = "DroneManager";
 }

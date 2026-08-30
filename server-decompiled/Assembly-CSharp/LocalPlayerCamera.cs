@@ -1,21 +1,21 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200060A RID: 1546
+// Token: 0x02000613 RID: 1555
 [RequireComponent(typeof(Camera))]
 public class LocalPlayerCamera : MonoBehaviour
 {
 	// Token: 0x14000038 RID: 56
-	// (add) Token: 0x0600324A RID: 12874 RVA: 0x00147038 File Offset: 0x00145238
-	// (remove) Token: 0x0600324B RID: 12875 RVA: 0x00147070 File Offset: 0x00145270
+	// (add) Token: 0x0600329D RID: 12957 RVA: 0x0014915C File Offset: 0x0014735C
+	// (remove) Token: 0x0600329E RID: 12958 RVA: 0x00149194 File Offset: 0x00147394
 	public event Action<LocalPlayerCamera> PreCull;
 
 	// Token: 0x14000039 RID: 57
-	// (add) Token: 0x0600324C RID: 12876 RVA: 0x001470A8 File Offset: 0x001452A8
-	// (remove) Token: 0x0600324D RID: 12877 RVA: 0x001470E0 File Offset: 0x001452E0
+	// (add) Token: 0x0600329F RID: 12959 RVA: 0x001491CC File Offset: 0x001473CC
+	// (remove) Token: 0x060032A0 RID: 12960 RVA: 0x00149204 File Offset: 0x00147404
 	public event Action<LocalPlayerCamera> PreRender;
 
-	// Token: 0x0600324E RID: 12878 RVA: 0x00147118 File Offset: 0x00145318
+	// Token: 0x060032A1 RID: 12961 RVA: 0x0014923C File Offset: 0x0014743C
 	public static LocalPlayerCamera AddToCamera(Camera camera, LocalPlayerCamera.CameraType camType)
 	{
 		LocalPlayerCamera localPlayerCamera = camera.gameObject.AddMissingComponent<LocalPlayerCamera>();
@@ -26,7 +26,7 @@ public class LocalPlayerCamera : MonoBehaviour
 		return localPlayerCamera;
 	}
 
-	// Token: 0x0600324F RID: 12879 RVA: 0x0014713D File Offset: 0x0014533D
+	// Token: 0x060032A2 RID: 12962 RVA: 0x00149261 File Offset: 0x00147461
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Init(LocalPlayerCamera.CameraType camType)
 	{
@@ -40,13 +40,13 @@ public class LocalPlayerCamera : MonoBehaviour
 		this.localPlayer = base.GetComponentInParent<LocalPlayer>();
 	}
 
-	// Token: 0x06003250 RID: 12880 RVA: 0x0014717A File Offset: 0x0014537A
+	// Token: 0x060032A3 RID: 12963 RVA: 0x0014929E File Offset: 0x0014749E
 	public void SetUI(LocalPlayerUI ui)
 	{
 		this.playerUI = ui;
 	}
 
-	// Token: 0x06003251 RID: 12881 RVA: 0x00147183 File Offset: 0x00145383
+	// Token: 0x060032A4 RID: 12964 RVA: 0x001492A7 File Offset: 0x001474A7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
@@ -59,28 +59,28 @@ public class LocalPlayerCamera : MonoBehaviour
 		LocalPlayerManager.OnLocalPlayersChanged += this.HandleLocalPlayersChanged;
 	}
 
-	// Token: 0x06003252 RID: 12882 RVA: 0x001471C1 File Offset: 0x001453C1
+	// Token: 0x060032A5 RID: 12965 RVA: 0x001492E5 File Offset: 0x001474E5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDisable()
 	{
 		LocalPlayerManager.OnLocalPlayersChanged -= this.HandleLocalPlayersChanged;
 	}
 
-	// Token: 0x06003253 RID: 12883 RVA: 0x001471D4 File Offset: 0x001453D4
+	// Token: 0x060032A6 RID: 12966 RVA: 0x001492F8 File Offset: 0x001474F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsAttachedToLocalPlayer()
 	{
 		return this.localPlayer != null;
 	}
 
-	// Token: 0x06003254 RID: 12884 RVA: 0x001471E2 File Offset: 0x001453E2
+	// Token: 0x060032A7 RID: 12967 RVA: 0x00149306 File Offset: 0x00147506
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleLocalPlayersChanged()
 	{
 		this.ModifyCameraProperties();
 	}
 
-	// Token: 0x06003255 RID: 12885 RVA: 0x001471EC File Offset: 0x001453EC
+	// Token: 0x060032A8 RID: 12968 RVA: 0x00149310 File Offset: 0x00147510
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ModifyCameraProperties()
 	{
@@ -98,13 +98,13 @@ public class LocalPlayerCamera : MonoBehaviour
 		this.SetCameraDepth();
 	}
 
-	// Token: 0x06003256 RID: 12886 RVA: 0x00147248 File Offset: 0x00145448
+	// Token: 0x060032A9 RID: 12969 RVA: 0x0014936C File Offset: 0x0014756C
 	public void SetCameraDepth()
 	{
 		this.camera.depth = 1.01f + (float)this.playerUI.playerIndex * 0.01f + (float)this.uiChildIndex * 0.001f;
 	}
 
-	// Token: 0x06003257 RID: 12887 RVA: 0x0014727C File Offset: 0x0014547C
+	// Token: 0x060032AA RID: 12970 RVA: 0x001493A0 File Offset: 0x001475A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPreCull()
 	{
@@ -126,7 +126,7 @@ public class LocalPlayerCamera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06003258 RID: 12888 RVA: 0x001472FD File Offset: 0x001454FD
+	// Token: 0x060032AB RID: 12971 RVA: 0x00149421 File Offset: 0x00147621
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPreRender()
 	{
@@ -136,49 +136,49 @@ public class LocalPlayerCamera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040027B7 RID: 10167
+	// Token: 0x0400282A RID: 10282
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly float splitScreenFOVFactors = 1f;
 
-	// Token: 0x040027B8 RID: 10168
+	// Token: 0x0400282B RID: 10283
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Camera camera;
 
-	// Token: 0x040027B9 RID: 10169
+	// Token: 0x0400282C RID: 10284
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public LocalPlayerCamera.CameraType cameraType;
 
-	// Token: 0x040027BA RID: 10170
+	// Token: 0x0400282D RID: 10285
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public LocalPlayerUI playerUI;
 
-	// Token: 0x040027BB RID: 10171
+	// Token: 0x0400282E RID: 10286
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public EntityPlayerLocal entityPlayerLocal;
 
-	// Token: 0x040027BC RID: 10172
+	// Token: 0x0400282F RID: 10287
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public LocalPlayer localPlayer;
 
-	// Token: 0x040027BD RID: 10173
+	// Token: 0x04002830 RID: 10288
 	public int uiChildIndex;
 
-	// Token: 0x0200060B RID: 1547
+	// Token: 0x02000614 RID: 1556
 	public enum CameraType
 	{
-		// Token: 0x040027BF RID: 10175
+		// Token: 0x04002832 RID: 10290
 		None,
-		// Token: 0x040027C0 RID: 10176
+		// Token: 0x04002833 RID: 10291
 		Main,
-		// Token: 0x040027C1 RID: 10177
+		// Token: 0x04002834 RID: 10292
 		Weapon,
-		// Token: 0x040027C2 RID: 10178
+		// Token: 0x04002835 RID: 10293
 		UI
 	}
 }

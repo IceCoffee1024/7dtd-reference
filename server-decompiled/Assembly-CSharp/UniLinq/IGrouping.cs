@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 namespace UniLinq
 {
-	// Token: 0x0200178B RID: 6027
+	// Token: 0x020017B1 RID: 6065
 	public interface IGrouping<TKey, TElement> : IEnumerable<TElement>, IEnumerable
 	{
-		// Token: 0x17001675 RID: 5749
-		// (get) Token: 0x0600BB33 RID: 47923
+		// Token: 0x170016E7 RID: 5863
+		// (get) Token: 0x0600BCB6 RID: 48310
 		TKey Key { get; }
 	}
 }

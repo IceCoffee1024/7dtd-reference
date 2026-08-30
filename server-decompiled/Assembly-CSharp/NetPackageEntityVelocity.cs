@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020007E4 RID: 2020
+// Token: 0x020007EF RID: 2031
 [Preserve]
 public class NetPackageEntityVelocity : NetPackageEntityTargeted
 {
-	// Token: 0x1700062F RID: 1583
-	// (get) Token: 0x06003B9E RID: 15262 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x1700063A RID: 1594
+	// (get) Token: 0x06003BFD RID: 15357 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -16,7 +16,7 @@ public class NetPackageEntityVelocity : NetPackageEntityTargeted
 		}
 	}
 
-	// Token: 0x06003B9F RID: 15263 RVA: 0x0017E704 File Offset: 0x0017C904
+	// Token: 0x06003BFE RID: 15358 RVA: 0x00180ADC File Offset: 0x0017ECDC
 	public NetPackageEntityVelocity Setup(int _entityId, Vector3 _motion, bool _bAdd)
 	{
 		base.Setup(_entityId);
@@ -49,7 +49,7 @@ public class NetPackageEntityVelocity : NetPackageEntityTargeted
 		return this;
 	}
 
-	// Token: 0x06003BA0 RID: 15264 RVA: 0x0017E7BD File Offset: 0x0017C9BD
+	// Token: 0x06003BFF RID: 15359 RVA: 0x00180B95 File Offset: 0x0017ED95
 	public override void read(PooledBinaryReader _reader)
 	{
 		base.read(_reader);
@@ -57,7 +57,7 @@ public class NetPackageEntityVelocity : NetPackageEntityTargeted
 		this.motion = new Vector3(_reader.ReadSingle(), _reader.ReadSingle(), _reader.ReadSingle());
 	}
 
-	// Token: 0x06003BA1 RID: 15265 RVA: 0x0017E7F0 File Offset: 0x0017C9F0
+	// Token: 0x06003C00 RID: 15360 RVA: 0x00180BC8 File Offset: 0x0017EDC8
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -67,7 +67,7 @@ public class NetPackageEntityVelocity : NetPackageEntityTargeted
 		_writer.Write(this.motion.z);
 	}
 
-	// Token: 0x06003BA2 RID: 15266 RVA: 0x0017E844 File Offset: 0x0017CA44
+	// Token: 0x06003C01 RID: 15361 RVA: 0x00180C1C File Offset: 0x0017EE1C
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -88,21 +88,21 @@ public class NetPackageEntityVelocity : NetPackageEntityTargeted
 		entity.AddVelocity(this.motion);
 	}
 
-	// Token: 0x06003BA3 RID: 15267 RVA: 0x0017BE6E File Offset: 0x0017A06E
+	// Token: 0x06003C02 RID: 15362 RVA: 0x0017E246 File Offset: 0x0017C446
 	public override int GetLength()
 	{
 		return 16;
 	}
 
-	// Token: 0x04003045 RID: 12357
+	// Token: 0x040030C4 RID: 12484
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float max = 8f;
 
-	// Token: 0x04003046 RID: 12358
+	// Token: 0x040030C5 RID: 12485
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 motion;
 
-	// Token: 0x04003047 RID: 12359
+	// Token: 0x040030C6 RID: 12486
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bAdd;
 }

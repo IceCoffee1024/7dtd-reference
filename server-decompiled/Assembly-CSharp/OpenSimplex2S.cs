@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
-// Token: 0x020014F2 RID: 5362
+// Token: 0x0200150D RID: 5389
 public static class OpenSimplex2S
 {
-	// Token: 0x0600A883 RID: 43139 RVA: 0x003EBE80 File Offset: 0x003EA080
+	// Token: 0x0600A980 RID: 43392 RVA: 0x003F11C0 File Offset: 0x003EF3C0
 	public static float Noise2(long seed, double x, double y)
 	{
 		double num = 0.366025403784439 * (x + y);
@@ -13,7 +13,7 @@ public static class OpenSimplex2S
 		return OpenSimplex2S.Noise2_UnskewedBase(seed, num2, num3);
 	}
 
-	// Token: 0x0600A884 RID: 43140 RVA: 0x003EBEAC File Offset: 0x003EA0AC
+	// Token: 0x0600A981 RID: 43393 RVA: 0x003F11EC File Offset: 0x003EF3EC
 	public static float Noise2_ImproveX(long seed, double x, double y)
 	{
 		double num = x * 0.7071067811865476;
@@ -21,7 +21,7 @@ public static class OpenSimplex2S
 		return OpenSimplex2S.Noise2_UnskewedBase(seed, num2 + num, num2 - num);
 	}
 
-	// Token: 0x0600A885 RID: 43141 RVA: 0x003EBEE0 File Offset: 0x003EA0E0
+	// Token: 0x0600A982 RID: 43394 RVA: 0x003F1220 File Offset: 0x003EF420
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float Noise2_UnskewedBase(long seed, double xs, double ys)
 	{
@@ -130,7 +130,7 @@ public static class OpenSimplex2S
 		return num11;
 	}
 
-	// Token: 0x0600A886 RID: 43142 RVA: 0x003EC2FC File Offset: 0x003EA4FC
+	// Token: 0x0600A983 RID: 43395 RVA: 0x003F163C File Offset: 0x003EF83C
 	public static float Noise3_ImproveXY(long seed, double x, double y, double z)
 	{
 		double num = x + y;
@@ -142,7 +142,7 @@ public static class OpenSimplex2S
 		return OpenSimplex2S.Noise3_UnrotatedBase(seed, num4, num5, num6);
 	}
 
-	// Token: 0x0600A887 RID: 43143 RVA: 0x003EC348 File Offset: 0x003EA548
+	// Token: 0x0600A984 RID: 43396 RVA: 0x003F1688 File Offset: 0x003EF888
 	public static float Noise3_ImproveXZ(long seed, double x, double y, double z)
 	{
 		double num = x + z;
@@ -154,7 +154,7 @@ public static class OpenSimplex2S
 		return OpenSimplex2S.Noise3_UnrotatedBase(seed, num4, num6, num5);
 	}
 
-	// Token: 0x0600A888 RID: 43144 RVA: 0x003EC394 File Offset: 0x003EA594
+	// Token: 0x0600A985 RID: 43397 RVA: 0x003F16D4 File Offset: 0x003EF8D4
 	public static float Noise3_Fallback(long seed, double x, double y, double z)
 	{
 		double num = 0.6666666666666666 * (x + y + z);
@@ -164,7 +164,7 @@ public static class OpenSimplex2S
 		return OpenSimplex2S.Noise3_UnrotatedBase(seed, num2, num3, num4);
 	}
 
-	// Token: 0x0600A889 RID: 43145 RVA: 0x003EC3C4 File Offset: 0x003EA5C4
+	// Token: 0x0600A986 RID: 43398 RVA: 0x003F1704 File Offset: 0x003EF904
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float Noise3_UnrotatedBase(long seed, double xr, double yr, double zr)
 	{
@@ -320,7 +320,7 @@ public static class OpenSimplex2S
 		return num18;
 	}
 
-	// Token: 0x0600A88A RID: 43146 RVA: 0x003ECB24 File Offset: 0x003EAD24
+	// Token: 0x0600A987 RID: 43399 RVA: 0x003F1E64 File Offset: 0x003F0064
 	public static float Noise4_ImproveXYZ_ImproveXY(long seed, double x, double y, double z, double w)
 	{
 		double num = x + y;
@@ -334,7 +334,7 @@ public static class OpenSimplex2S
 		return OpenSimplex2S.Noise4_UnskewedBase(seed, num5, num6, num7, num8);
 	}
 
-	// Token: 0x0600A88B RID: 43147 RVA: 0x003ECB98 File Offset: 0x003EAD98
+	// Token: 0x0600A988 RID: 43400 RVA: 0x003F1ED8 File Offset: 0x003F00D8
 	public static float Noise4_ImproveXYZ_ImproveXZ(long seed, double x, double y, double z, double w)
 	{
 		double num = x + z;
@@ -348,7 +348,7 @@ public static class OpenSimplex2S
 		return OpenSimplex2S.Noise4_UnskewedBase(seed, num5, num7, num6, num8);
 	}
 
-	// Token: 0x0600A88C RID: 43148 RVA: 0x003ECC0C File Offset: 0x003EAE0C
+	// Token: 0x0600A989 RID: 43401 RVA: 0x003F1F4C File Offset: 0x003F014C
 	public static float Noise4_ImproveXYZ(long seed, double x, double y, double z, double w)
 	{
 		double num = x + y + z;
@@ -361,7 +361,7 @@ public static class OpenSimplex2S
 		return OpenSimplex2S.Noise4_UnskewedBase(seed, num4, num5, num6, num7);
 	}
 
-	// Token: 0x0600A88D RID: 43149 RVA: 0x003ECC64 File Offset: 0x003EAE64
+	// Token: 0x0600A98A RID: 43402 RVA: 0x003F1FA4 File Offset: 0x003F01A4
 	public static float Noise4_Fallback(long seed, double x, double y, double z, double w)
 	{
 		double num = 0.30901700258255005 * (x + y + z + w);
@@ -372,7 +372,7 @@ public static class OpenSimplex2S
 		return OpenSimplex2S.Noise4_UnskewedBase(seed, num2, num3, num4, num5);
 	}
 
-	// Token: 0x0600A88E RID: 43150 RVA: 0x003ECCA4 File Offset: 0x003EAEA4
+	// Token: 0x0600A98B RID: 43403 RVA: 0x003F1FE4 File Offset: 0x003F01E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float Noise4_UnskewedBase(long seed, double xs, double ys, double zs, double ws)
 	{
@@ -418,7 +418,7 @@ public static class OpenSimplex2S
 		return num19;
 	}
 
-	// Token: 0x0600A88F RID: 43151 RVA: 0x003ECE90 File Offset: 0x003EB090
+	// Token: 0x0600A98C RID: 43404 RVA: 0x003F21D0 File Offset: 0x003F03D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static float Grad(long seed, long xsvp, long ysvp, float dx, float dy)
@@ -428,7 +428,7 @@ public static class OpenSimplex2S
 		return OpenSimplex2S.GRADIENTS_2D[num2 | 0] * dx + OpenSimplex2S.GRADIENTS_2D[num2 | 1] * dy;
 	}
 
-	// Token: 0x0600A890 RID: 43152 RVA: 0x003ECED4 File Offset: 0x003EB0D4
+	// Token: 0x0600A98D RID: 43405 RVA: 0x003F2214 File Offset: 0x003F0414
 	[PublicizedFrom(EAccessModifier.Private)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static float Grad(long seed, long xrvp, long yrvp, long zrvp, float dx, float dy, float dz)
@@ -438,7 +438,7 @@ public static class OpenSimplex2S
 		return OpenSimplex2S.GRADIENTS_3D[num2 | 0] * dx + OpenSimplex2S.GRADIENTS_3D[num2 | 1] * dy + OpenSimplex2S.GRADIENTS_3D[num2 | 2] * dz;
 	}
 
-	// Token: 0x0600A891 RID: 43153 RVA: 0x003ECF28 File Offset: 0x003EB128
+	// Token: 0x0600A98E RID: 43406 RVA: 0x003F2268 File Offset: 0x003F0468
 	[PublicizedFrom(EAccessModifier.Private)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static float Grad(long seed, long xsvp, long ysvp, long zsvp, long wsvp, float dx, float dy, float dz, float dw)
@@ -448,7 +448,7 @@ public static class OpenSimplex2S
 		return OpenSimplex2S.GRADIENTS_4D[num2 | 0] * dx + OpenSimplex2S.GRADIENTS_4D[num2 | 1] * dy + (OpenSimplex2S.GRADIENTS_4D[num2 | 2] * dz + OpenSimplex2S.GRADIENTS_4D[num2 | 3] * dw);
 	}
 
-	// Token: 0x0600A892 RID: 43154 RVA: 0x003ECF8C File Offset: 0x003EB18C
+	// Token: 0x0600A98F RID: 43407 RVA: 0x003F22CC File Offset: 0x003F04CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static int FastFloor(double x)
@@ -461,7 +461,7 @@ public static class OpenSimplex2S
 		return num - 1;
 	}
 
-	// Token: 0x0600A893 RID: 43155 RVA: 0x003ECFA8 File Offset: 0x003EB1A8
+	// Token: 0x0600A990 RID: 43408 RVA: 0x003F22E8 File Offset: 0x003F04E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	static OpenSimplex2S()
 	{
@@ -1845,136 +1845,136 @@ public static class OpenSimplex2S
 		}
 	}
 
-	// Token: 0x04007C9D RID: 31901
+	// Token: 0x04007D76 RID: 32118
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const long PRIME_X = 5910200641878280303L;
 
-	// Token: 0x04007C9E RID: 31902
+	// Token: 0x04007D77 RID: 32119
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const long PRIME_Y = 6452764530575939509L;
 
-	// Token: 0x04007C9F RID: 31903
+	// Token: 0x04007D78 RID: 32120
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const long PRIME_Z = 6614699811220273867L;
 
-	// Token: 0x04007CA0 RID: 31904
+	// Token: 0x04007D79 RID: 32121
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const long PRIME_W = 6254464313819354443L;
 
-	// Token: 0x04007CA1 RID: 31905
+	// Token: 0x04007D7A RID: 32122
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const long HASH_MULTIPLIER = 6026932503003350773L;
 
-	// Token: 0x04007CA2 RID: 31906
+	// Token: 0x04007D7B RID: 32123
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const long SEED_FLIP_3D = -5968755714895566377L;
 
-	// Token: 0x04007CA3 RID: 31907
+	// Token: 0x04007D7C RID: 32124
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const double ROOT2OVER2 = 0.7071067811865476;
 
-	// Token: 0x04007CA4 RID: 31908
+	// Token: 0x04007D7D RID: 32125
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const double SKEW_2D = 0.366025403784439;
 
-	// Token: 0x04007CA5 RID: 31909
+	// Token: 0x04007D7E RID: 32126
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const double UNSKEW_2D = -0.21132486540518713;
 
-	// Token: 0x04007CA6 RID: 31910
+	// Token: 0x04007D7F RID: 32127
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const double ROOT3OVER3 = 0.577350269189626;
 
-	// Token: 0x04007CA7 RID: 31911
+	// Token: 0x04007D80 RID: 32128
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const double FALLBACK_ROTATE3 = 0.6666666666666666;
 
-	// Token: 0x04007CA8 RID: 31912
+	// Token: 0x04007D81 RID: 32129
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const double ROTATE3_ORTHOGONALIZER = -0.21132486540518713;
 
-	// Token: 0x04007CA9 RID: 31913
+	// Token: 0x04007D82 RID: 32130
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float SKEW_4D = 0.309017f;
 
-	// Token: 0x04007CAA RID: 31914
+	// Token: 0x04007D83 RID: 32131
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float UNSKEW_4D = -0.1381966f;
 
-	// Token: 0x04007CAB RID: 31915
+	// Token: 0x04007D84 RID: 32132
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int N_GRADS_2D_EXPONENT = 7;
 
-	// Token: 0x04007CAC RID: 31916
+	// Token: 0x04007D85 RID: 32133
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int N_GRADS_3D_EXPONENT = 8;
 
-	// Token: 0x04007CAD RID: 31917
+	// Token: 0x04007D86 RID: 32134
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int N_GRADS_4D_EXPONENT = 9;
 
-	// Token: 0x04007CAE RID: 31918
+	// Token: 0x04007D87 RID: 32135
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int N_GRADS_2D = 128;
 
-	// Token: 0x04007CAF RID: 31919
+	// Token: 0x04007D88 RID: 32136
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int N_GRADS_3D = 256;
 
-	// Token: 0x04007CB0 RID: 31920
+	// Token: 0x04007D89 RID: 32137
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int N_GRADS_4D = 512;
 
-	// Token: 0x04007CB1 RID: 31921
+	// Token: 0x04007D8A RID: 32138
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const double NORMALIZER_2D = 0.05481866495625118;
 
-	// Token: 0x04007CB2 RID: 31922
+	// Token: 0x04007D8B RID: 32139
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const double NORMALIZER_3D = 0.2781926117527186;
 
-	// Token: 0x04007CB3 RID: 31923
+	// Token: 0x04007D8C RID: 32140
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const double NORMALIZER_4D = 0.11127401889945551;
 
-	// Token: 0x04007CB4 RID: 31924
+	// Token: 0x04007D8D RID: 32141
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float RSQUARED_2D = 0.6666667f;
 
-	// Token: 0x04007CB5 RID: 31925
+	// Token: 0x04007D8E RID: 32142
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float RSQUARED_3D = 0.75f;
 
-	// Token: 0x04007CB6 RID: 31926
+	// Token: 0x04007D8F RID: 32143
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float RSQUARED_4D = 0.8f;
 
-	// Token: 0x04007CB7 RID: 31927
+	// Token: 0x04007D90 RID: 32144
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly float[] GRADIENTS_2D = new float[256];
 
-	// Token: 0x04007CB8 RID: 31928
+	// Token: 0x04007D91 RID: 32145
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly float[] GRADIENTS_3D;
 
-	// Token: 0x04007CB9 RID: 31929
+	// Token: 0x04007D92 RID: 32146
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly float[] GRADIENTS_4D;
 
-	// Token: 0x04007CBA RID: 31930
+	// Token: 0x04007D93 RID: 32147
 	[TupleElementNames(new string[] { "SecondaryIndexStart", "SecondaryIndexStop" })]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ValueTuple<short, short>[] LOOKUP_4D_A;
 
-	// Token: 0x04007CBB RID: 31931
+	// Token: 0x04007D94 RID: 32148
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly OpenSimplex2S.LatticeVertex4D[] LOOKUP_4D_B;
 
-	// Token: 0x020014F3 RID: 5363
+	// Token: 0x0200150E RID: 5390
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class LatticeVertex4D
 	{
-		// Token: 0x0600A894 RID: 43156 RVA: 0x003EE9AC File Offset: 0x003ECBAC
+		// Token: 0x0600A991 RID: 43409 RVA: 0x003F3CEC File Offset: 0x003F1EEC
 		public LatticeVertex4D(int xsv, int ysv, int zsv, int wsv)
 		{
 			this.xsvp = (long)xsv * 5910200641878280303L;
@@ -1988,28 +1988,28 @@ public static class OpenSimplex2S
 			this.dw = (float)(-(float)wsv) - num;
 		}
 
-		// Token: 0x04007CBC RID: 31932
+		// Token: 0x04007D95 RID: 32149
 		public readonly float dx;
 
-		// Token: 0x04007CBD RID: 31933
+		// Token: 0x04007D96 RID: 32150
 		public readonly float dy;
 
-		// Token: 0x04007CBE RID: 31934
+		// Token: 0x04007D97 RID: 32151
 		public readonly float dz;
 
-		// Token: 0x04007CBF RID: 31935
+		// Token: 0x04007D98 RID: 32152
 		public readonly float dw;
 
-		// Token: 0x04007CC0 RID: 31936
+		// Token: 0x04007D99 RID: 32153
 		public readonly long xsvp;
 
-		// Token: 0x04007CC1 RID: 31937
+		// Token: 0x04007D9A RID: 32154
 		public readonly long ysvp;
 
-		// Token: 0x04007CC2 RID: 31938
+		// Token: 0x04007D9B RID: 32155
 		public readonly long zsvp;
 
-		// Token: 0x04007CC3 RID: 31939
+		// Token: 0x04007D9C RID: 32156
 		public readonly long wsvp;
 	}
 }

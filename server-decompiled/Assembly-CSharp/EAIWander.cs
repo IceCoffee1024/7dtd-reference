@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000459 RID: 1113
+// Token: 0x0200045D RID: 1117
 [Preserve]
 public class EAIWander : EAIBase
 {
-	// Token: 0x060021E5 RID: 8677 RVA: 0x000C68F8 File Offset: 0x000C4AF8
+	// Token: 0x06002202 RID: 8706 RVA: 0x000C7104 File Offset: 0x000C5304
 	public override void Init(EntityAlive _theEntity)
 	{
 		base.Init(_theEntity);
 		this.MutexBits = 1;
 	}
 
-	// Token: 0x060021E6 RID: 8678 RVA: 0x000CD080 File Offset: 0x000CB280
+	// Token: 0x06002203 RID: 8707 RVA: 0x000CD81C File Offset: 0x000CBA1C
 	public override void SetData(Dictionary<string, string> data)
 	{
 		base.SetData(data);
@@ -24,7 +24,7 @@ public class EAIWander : EAIBase
 		base.GetData(data, "lookMax", ref this.lookMax);
 	}
 
-	// Token: 0x060021E7 RID: 8679 RVA: 0x000CD0DC File Offset: 0x000CB2DC
+	// Token: 0x06002204 RID: 8708 RVA: 0x000CD878 File Offset: 0x000CBA78
 	public override bool CanExecute()
 	{
 		if (this.theEntity.sleepingOrWakingUp)
@@ -65,7 +65,7 @@ public class EAIWander : EAIBase
 		return true;
 	}
 
-	// Token: 0x060021E8 RID: 8680 RVA: 0x000CD1D1 File Offset: 0x000CB3D1
+	// Token: 0x06002205 RID: 8709 RVA: 0x000CD96D File Offset: 0x000CBB6D
 	public override void Start()
 	{
 		this.time = 0f;
@@ -73,19 +73,19 @@ public class EAIWander : EAIBase
 		this.theEntity.renderFadeMax = this.fade;
 	}
 
-	// Token: 0x060021E9 RID: 8681 RVA: 0x000CD210 File Offset: 0x000CB410
+	// Token: 0x06002206 RID: 8710 RVA: 0x000CD9AC File Offset: 0x000CBBAC
 	public override bool Continue()
 	{
 		return this.theEntity.bodyDamage.CurrentStun == EnumEntityStunType.None && this.theEntity.moveHelper.BlockedTime <= 0.3f && this.time <= 30f && !this.theEntity.navigator.noPathAndNotPlanningOne();
 	}
 
-	// Token: 0x060021EA RID: 8682 RVA: 0x000CD26C File Offset: 0x000CB46C
+	// Token: 0x06002207 RID: 8711 RVA: 0x000CDA08 File Offset: 0x000CBC08
 	public override void Update()
 	{
 		this.time += 0.05f;
 	}
 
-	// Token: 0x060021EB RID: 8683 RVA: 0x000CD280 File Offset: 0x000CB480
+	// Token: 0x06002208 RID: 8712 RVA: 0x000CDA1C File Offset: 0x000CBC1C
 	public override void Reset()
 	{
 		this.manager.lookTime = base.Random.RandomRange(this.lookMin, this.lookMax);
@@ -93,27 +93,27 @@ public class EAIWander : EAIBase
 		this.theEntity.renderFadeMax = 1f;
 	}
 
-	// Token: 0x04001767 RID: 5991
+	// Token: 0x0400177D RID: 6013
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float fade = 1f;
 
-	// Token: 0x04001768 RID: 5992
+	// Token: 0x0400177E RID: 6014
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lookMin = 0.5f;
 
-	// Token: 0x04001769 RID: 5993
+	// Token: 0x0400177F RID: 6015
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lookMax = 5f;
 
-	// Token: 0x0400176A RID: 5994
+	// Token: 0x04001780 RID: 6016
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float executePercent = 0.2f;
 
-	// Token: 0x0400176B RID: 5995
+	// Token: 0x04001781 RID: 6017
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 position;
 
-	// Token: 0x0400176C RID: 5996
+	// Token: 0x04001782 RID: 6018
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float time;
 }

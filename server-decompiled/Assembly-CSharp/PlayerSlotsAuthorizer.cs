@@ -2,12 +2,12 @@
 using System.Collections.ObjectModel;
 using UnityEngine.Scripting;
 
-// Token: 0x0200077C RID: 1916
+// Token: 0x02000786 RID: 1926
 [Preserve]
 public class PlayerSlotsAuthorizer : AuthorizerAbs
 {
-	// Token: 0x170005C5 RID: 1477
-	// (get) Token: 0x0600390C RID: 14604 RVA: 0x00175944 File Offset: 0x00173B44
+	// Token: 0x170005CF RID: 1487
+	// (get) Token: 0x06003964 RID: 14692 RVA: 0x00177BC4 File Offset: 0x00175DC4
 	public override int Order
 	{
 		get
@@ -16,8 +16,8 @@ public class PlayerSlotsAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005C6 RID: 1478
-	// (get) Token: 0x0600390D RID: 14605 RVA: 0x00175948 File Offset: 0x00173B48
+	// Token: 0x170005D0 RID: 1488
+	// (get) Token: 0x06003965 RID: 14693 RVA: 0x00177BC8 File Offset: 0x00175DC8
 	public override string AuthorizerName
 	{
 		get
@@ -26,8 +26,8 @@ public class PlayerSlotsAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x170005C7 RID: 1479
-	// (get) Token: 0x0600390E RID: 14606 RVA: 0x0001FF1E File Offset: 0x0001E11E
+	// Token: 0x170005D1 RID: 1489
+	// (get) Token: 0x06003966 RID: 14694 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
 	public override string StateLocalizationKey
 	{
 		get
@@ -36,7 +36,7 @@ public class PlayerSlotsAuthorizer : AuthorizerAbs
 		}
 	}
 
-	// Token: 0x0600390F RID: 14607 RVA: 0x00175950 File Offset: 0x00173B50
+	// Token: 0x06003967 RID: 14695 RVA: 0x00177BD0 File Offset: 0x00175DD0
 	public override ValueTuple<EAuthorizerSyncResult, GameUtils.KickPlayerData?> Authorize(ClientInfo _clientInfo)
 	{
 		AdminTools adminTools = GameManager.Instance.adminTools;

@@ -5,7 +5,7 @@ using UnityEngine;
 [PublicizedFrom(EAccessModifier.Internal)]
 public class AnimatorStateTPVHolsterUnholster : StateMachineBehaviour
 {
-	// Token: 0x0600033D RID: 829 RVA: 0x00018546 File Offset: 0x00016746
+	// Token: 0x0600033D RID: 829 RVA: 0x000185CA File Offset: 0x000167CA
 	public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 		animator.GetComponentInParent<EntityAlive>() != null;

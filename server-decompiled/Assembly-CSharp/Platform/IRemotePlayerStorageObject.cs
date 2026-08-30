@@ -3,13 +3,13 @@ using System.IO;
 
 namespace Platform
 {
-	// Token: 0x02001B6F RID: 7023
+	// Token: 0x02001B96 RID: 7062
 	public interface IRemotePlayerStorageObject
 	{
-		// Token: 0x0600D17A RID: 53626
+		// Token: 0x0600D306 RID: 54022
 		void ReadInto(BinaryReader _reader);
 
-		// Token: 0x0600D17B RID: 53627
+		// Token: 0x0600D307 RID: 54023
 		void WriteFrom(BinaryWriter _writer);
 	}
 }

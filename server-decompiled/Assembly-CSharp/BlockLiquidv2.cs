@@ -2,36 +2,36 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200012B RID: 299
+// Token: 0x0200012C RID: 300
 [Preserve]
 public class BlockLiquidv2 : Block
 {
-	// Token: 0x060007F6 RID: 2038 RVA: 0x000389B5 File Offset: 0x00036BB5
+	// Token: 0x06000800 RID: 2048 RVA: 0x00038C15 File Offset: 0x00036E15
 	public BlockLiquidv2()
 	{
 		this.IsRandomlyTick = false;
 	}
 
-	// Token: 0x060007F7 RID: 2039 RVA: 0x0003342F File Offset: 0x0003162F
+	// Token: 0x06000801 RID: 2049 RVA: 0x000336EB File Offset: 0x000318EB
 	public override void LateInit()
 	{
 		base.LateInit();
 	}
 
-	// Token: 0x060007F8 RID: 2040 RVA: 0x000389C4 File Offset: 0x00036BC4
+	// Token: 0x06000802 RID: 2050 RVA: 0x00038C24 File Offset: 0x00036E24
 	public override int OnBlockDamaged(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _damagePoints, int _entityIdThatDamaged, ItemActionAttack.AttackHitInfo _attackHitInfo, bool _bUseHarvestTool, bool _bBypassMaxDamage, int _recDepth = 0)
 	{
 		_damagePoints = 0;
 		return base.OnBlockDamaged(_world, _bvRef, _blockValue, _damagePoints, _entityIdThatDamaged, _attackHitInfo, _bUseHarvestTool, _bBypassMaxDamage, _recDepth);
 	}
 
-	// Token: 0x060007F9 RID: 2041 RVA: 0x000389E9 File Offset: 0x00036BE9
+	// Token: 0x06000803 RID: 2051 RVA: 0x00038C49 File Offset: 0x00036E49
 	public override bool IsHealthShownInUI(HitInfoDetails _hit, BlockValue _bv)
 	{
 		return _bv.damage > 0;
 	}
 
-	// Token: 0x060007FA RID: 2042 RVA: 0x000389F4 File Offset: 0x00036BF4
+	// Token: 0x06000804 RID: 2052 RVA: 0x00038C54 File Offset: 0x00036E54
 	public override void OnNeighborBlockChange(WorldBase world, Vector3i _myBlockPos, BlockValue _myBlockValue, Vector3i _blockPosThatChanged, BlockValue _newNeighborBlockValue, BlockValue _oldNeighborBlockValue)
 	{
 		base.OnNeighborBlockChange(world, _myBlockPos, _myBlockValue, _blockPosThatChanged, _newNeighborBlockValue, _oldNeighborBlockValue);
@@ -71,25 +71,25 @@ public class BlockLiquidv2 : Block
 		this.ChangeThis(world, _myBlockValue, _myBlockPos, BlockLiquidv2.UpdateID.Awake, BlockLiquidv2.Emissions(_myBlockValue), BlockLiquidv2.Evap(_myBlockValue), BlockLiquidv2.FlowDirection.None);
 	}
 
-	// Token: 0x060007FB RID: 2043 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000805 RID: 2053 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsMovementBlocked(IBlockAccess world, Vector3i _blockPos, BlockValue _blockValue, BlockFace crossingFace)
 	{
 		return false;
 	}
 
-	// Token: 0x060007FC RID: 2044 RVA: 0x00038B77 File Offset: 0x00036D77
+	// Token: 0x06000806 RID: 2054 RVA: 0x00038DD7 File Offset: 0x00036FD7
 	public override ulong GetTickRate()
 	{
 		return 1UL;
 	}
 
-	// Token: 0x060007FD RID: 2045 RVA: 0x00038B7B File Offset: 0x00036D7B
+	// Token: 0x06000807 RID: 2055 RVA: 0x00038DDB File Offset: 0x00036FDB
 	public static void UpdateTime()
 	{
 		BlockLiquidv2.currentTime = Time.time;
 	}
 
-	// Token: 0x060007FE RID: 2046 RVA: 0x00038B88 File Offset: 0x00036D88
+	// Token: 0x06000808 RID: 2056 RVA: 0x00038DE8 File Offset: 0x00036FE8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool CheckUpdate()
 	{
@@ -102,21 +102,21 @@ public class BlockLiquidv2 : Block
 		return BlockLiquidv2.blockUpdates <= BlockLiquidv2.blockUpdatesPerSecond / 2;
 	}
 
-	// Token: 0x060007FF RID: 2047 RVA: 0x00038BD4 File Offset: 0x00036DD4
+	// Token: 0x06000809 RID: 2057 RVA: 0x00038E34 File Offset: 0x00037034
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ChangeThis(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, BlockLiquidv2.UpdateID _blockState)
 	{
 		this.ChangeThis(_world, _blockValue, _blockPos, _blockState, BlockLiquidv2.Emissions(_blockValue), BlockLiquidv2.Evap(_blockValue), BlockLiquidv2.Flow(_blockValue));
 	}
 
-	// Token: 0x06000800 RID: 2048 RVA: 0x00038BF3 File Offset: 0x00036DF3
+	// Token: 0x0600080A RID: 2058 RVA: 0x00038E53 File Offset: 0x00037053
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ChangeThis(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, BlockLiquidv2.UpdateID _blockState, int _emissions, int _evaporation)
 	{
 		this.ChangeThis(_world, _blockValue, _blockPos, _blockState, _emissions, 0, BlockLiquidv2.Flow(_blockValue));
 	}
 
-	// Token: 0x06000801 RID: 2049 RVA: 0x00038C0C File Offset: 0x00036E0C
+	// Token: 0x0600080B RID: 2059 RVA: 0x00038E6C File Offset: 0x0003706C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ChangeThis(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, BlockLiquidv2.UpdateID _blockState, int _emissions, int _evaporation, BlockLiquidv2.FlowDirection _flowDirection)
 	{
@@ -150,7 +150,7 @@ public class BlockLiquidv2 : Block
 		}
 	}
 
-	// Token: 0x06000802 RID: 2050 RVA: 0x00038CC0 File Offset: 0x00036EC0
+	// Token: 0x0600080C RID: 2060 RVA: 0x00038F20 File Offset: 0x00037120
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ChangeToAir(WorldBase _world, Vector3i _blockPos)
 	{
@@ -165,14 +165,14 @@ public class BlockLiquidv2 : Block
 		}
 	}
 
-	// Token: 0x06000803 RID: 2051 RVA: 0x00038D30 File Offset: 0x00036F30
+	// Token: 0x0600080D RID: 2061 RVA: 0x00038F90 File Offset: 0x00037190
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockLiquidv2.UpdateID State(BlockValue _blockValue)
 	{
 		return (BlockLiquidv2.UpdateID)_blockValue.meta;
 	}
 
-	// Token: 0x06000804 RID: 2052 RVA: 0x00038D39 File Offset: 0x00036F39
+	// Token: 0x0600080E RID: 2062 RVA: 0x00038F99 File Offset: 0x00037199
 	public static int Emissions(BlockValue _blockValue)
 	{
 		if (_blockValue.rotation != 8)
@@ -182,7 +182,7 @@ public class BlockLiquidv2 : Block
 		return (int)_blockValue.meta2;
 	}
 
-	// Token: 0x06000805 RID: 2053 RVA: 0x00038D52 File Offset: 0x00036F52
+	// Token: 0x0600080F RID: 2063 RVA: 0x00038FB2 File Offset: 0x000371B2
 	public static int Evap(BlockValue _blockValue)
 	{
 		if (_blockValue.damage <= 45)
@@ -192,7 +192,7 @@ public class BlockLiquidv2 : Block
 		return 0;
 	}
 
-	// Token: 0x06000806 RID: 2054 RVA: 0x00038D66 File Offset: 0x00036F66
+	// Token: 0x06000810 RID: 2064 RVA: 0x00038FC6 File Offset: 0x000371C6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void IncEvap(ref BlockValue _blockValue)
 	{
@@ -203,7 +203,7 @@ public class BlockLiquidv2 : Block
 		_blockValue.damage++;
 	}
 
-	// Token: 0x06000807 RID: 2055 RVA: 0x00038D84 File Offset: 0x00036F84
+	// Token: 0x06000811 RID: 2065 RVA: 0x00038FE4 File Offset: 0x000371E4
 	public static BlockLiquidv2.FlowDirection Flow(BlockValue _blockValue)
 	{
 		if (_blockValue.damage > 50)
@@ -213,7 +213,7 @@ public class BlockLiquidv2 : Block
 		return BlockLiquidv2.FlowDirection.None;
 	}
 
-	// Token: 0x06000808 RID: 2056 RVA: 0x00038D9C File Offset: 0x00036F9C
+	// Token: 0x06000812 RID: 2066 RVA: 0x00038FFC File Offset: 0x000371FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i GetFlowDirection(BlockLiquidv2.FlowDirection _flowDirection)
 	{
@@ -236,14 +236,14 @@ public class BlockLiquidv2 : Block
 		return zero;
 	}
 
-	// Token: 0x06000809 RID: 2057 RVA: 0x00038DF0 File Offset: 0x00036FF0
+	// Token: 0x06000813 RID: 2067 RVA: 0x00039050 File Offset: 0x00037250
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsAir(BlockValue _blockValue)
 	{
 		return _blockValue.isair;
 	}
 
-	// Token: 0x0600080A RID: 2058 RVA: 0x00038DFC File Offset: 0x00036FFC
+	// Token: 0x06000814 RID: 2068 RVA: 0x0003905C File Offset: 0x0003725C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsPlant(BlockValue _blockValue)
 	{
@@ -256,7 +256,7 @@ public class BlockLiquidv2 : Block
 		return block.blockMaterial.IsPlant;
 	}
 
-	// Token: 0x0600080B RID: 2059 RVA: 0x00038E44 File Offset: 0x00037044
+	// Token: 0x06000815 RID: 2069 RVA: 0x000390A4 File Offset: 0x000372A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool HasHoles(BlockValue _blockValue)
 	{
@@ -289,14 +289,14 @@ public class BlockLiquidv2 : Block
 		return false;
 	}
 
-	// Token: 0x0600080C RID: 2060 RVA: 0x00038F5C File Offset: 0x0003715C
+	// Token: 0x06000816 RID: 2070 RVA: 0x000391BC File Offset: 0x000373BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsWater(BlockValue _blockValue)
 	{
 		return _blockValue.type == this.blockID;
 	}
 
-	// Token: 0x0600080D RID: 2061 RVA: 0x00038F6D File Offset: 0x0003716D
+	// Token: 0x06000817 RID: 2071 RVA: 0x000391CD File Offset: 0x000373CD
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockLiquidv2.FlowDirection GetFlowDirection(Vector3i _dir)
 	{
@@ -319,7 +319,7 @@ public class BlockLiquidv2 : Block
 		return BlockLiquidv2.FlowDirection.None;
 	}
 
-	// Token: 0x0600080E RID: 2062 RVA: 0x00038F9C File Offset: 0x0003719C
+	// Token: 0x06000818 RID: 2072 RVA: 0x000391FC File Offset: 0x000373FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockValue GetBlock(WorldBase _world, Vector3i _blockPos)
 	{
@@ -331,7 +331,7 @@ public class BlockLiquidv2 : Block
 		return block;
 	}
 
-	// Token: 0x0600080F RID: 2063 RVA: 0x00038FDC File Offset: 0x000371DC
+	// Token: 0x06000819 RID: 2073 RVA: 0x0003923C File Offset: 0x0003743C
 	public override void DoExchangeAction(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, string _action, int _itemCount)
 	{
 		if (_blockValue.rotation != 8)
@@ -413,7 +413,7 @@ public class BlockLiquidv2 : Block
 		}
 	}
 
-	// Token: 0x06000810 RID: 2064 RVA: 0x000391A4 File Offset: 0x000373A4
+	// Token: 0x0600081A RID: 2074 RVA: 0x00039404 File Offset: 0x00037604
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool CheckDeepWater_Expensive(WorldBase world, Vector3i _blockPos)
 	{
@@ -432,7 +432,7 @@ public class BlockLiquidv2 : Block
 		return num >= 6;
 	}
 
-	// Token: 0x06000811 RID: 2065 RVA: 0x00039214 File Offset: 0x00037414
+	// Token: 0x0600081B RID: 2075 RVA: 0x00039474 File Offset: 0x00037674
 	public override bool UpdateTick(WorldBase world, Vector3i _blockPos, BlockValue _blockValue, bool _bRandomTick, ulong _ticksIfLoaded, GameRandom _rnd)
 	{
 		if (this.State(_blockValue) == BlockLiquidv2.UpdateID.Sleep)
@@ -756,7 +756,7 @@ public class BlockLiquidv2 : Block
 		return true;
 	}
 
-	// Token: 0x06000812 RID: 2066 RVA: 0x00039BEC File Offset: 0x00037DEC
+	// Token: 0x0600081C RID: 2076 RVA: 0x00039E4C File Offset: 0x0003804C
 	public override void OnBlockAdded(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -785,7 +785,7 @@ public class BlockLiquidv2 : Block
 		}
 	}
 
-	// Token: 0x06000813 RID: 2067 RVA: 0x00039CA4 File Offset: 0x00037EA4
+	// Token: 0x0600081D RID: 2077 RVA: 0x00039F04 File Offset: 0x00038104
 	public static void WaterDataToPlaceholderBlock(WaterValue _data, out BlockValue _bv)
 	{
 		if ((float)_data.GetMass() > 195f)
@@ -801,7 +801,7 @@ public class BlockLiquidv2 : Block
 		_bv = BlockValue.Air;
 	}
 
-	// Token: 0x06000814 RID: 2068 RVA: 0x00039D00 File Offset: 0x00037F00
+	// Token: 0x0600081E RID: 2078 RVA: 0x00039F60 File Offset: 0x00038160
 	public static void WaterDataToBlockValue(WaterValue _data, out BlockValue _bv)
 	{
 		if ((float)_data.GetMass() > 195f)
@@ -817,19 +817,19 @@ public class BlockLiquidv2 : Block
 		_bv = BlockValue.Air;
 	}
 
-	// Token: 0x06000815 RID: 2069 RVA: 0x00039D5B File Offset: 0x00037F5B
+	// Token: 0x0600081F RID: 2079 RVA: 0x00039FBB File Offset: 0x000381BB
 	public static void SetBlockState(ref BlockValue _blockValue, BlockLiquidv2.UpdateID _blockState)
 	{
 		_blockValue.meta = (byte)_blockState;
 	}
 
-	// Token: 0x06000816 RID: 2070 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000820 RID: 2080 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetWaterRPC()
 	{
 	}
 
-	// Token: 0x06000817 RID: 2071 RVA: 0x00039D68 File Offset: 0x00037F68
+	// Token: 0x06000821 RID: 2081 RVA: 0x00039FC8 File Offset: 0x000381C8
 	// Note: this type is marked as 'beforefieldinit'.
 	[PublicizedFrom(EAccessModifier.Private)]
 	static BlockLiquidv2()
@@ -871,70 +871,70 @@ public class BlockLiquidv2 : Block
 		BlockLiquidv2.currentTime = 0f;
 	}
 
-	// Token: 0x0400092D RID: 2349
-	public static Color Color = new Color32(0, 105, 148, byte.MaxValue);
-
-	// Token: 0x0400092E RID: 2350
-	[PublicizedFrom(EAccessModifier.Private)]
-	public static int fallSet = 0;
-
 	// Token: 0x0400092F RID: 2351
-	[PublicizedFrom(EAccessModifier.Private)]
-	public static int MAX_EMISSIONS = 3;
+	public static Color Color = new Color32(0, 105, 148, byte.MaxValue);
 
 	// Token: 0x04000930 RID: 2352
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const int ZERO_EMISSIONS = 0;
+	public static int fallSet = 0;
 
 	// Token: 0x04000931 RID: 2353
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const int ZERO_EVAPORATION = 0;
+	public static int MAX_EMISSIONS = 3;
 
 	// Token: 0x04000932 RID: 2354
 	[PublicizedFrom(EAccessModifier.Private)]
-	public const int AUTO_GENERATED = 8;
+	public const int ZERO_EMISSIONS = 0;
 
 	// Token: 0x04000933 RID: 2355
-	public static int blockUpdatesPerSecond = 16;
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const int ZERO_EVAPORATION = 0;
 
 	// Token: 0x04000934 RID: 2356
-	public static int blockUpdates = 0;
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const int AUTO_GENERATED = 8;
 
 	// Token: 0x04000935 RID: 2357
-	[PublicizedFrom(EAccessModifier.Private)]
-	public static float blockUpdateTimer = 0f;
+	public static int blockUpdatesPerSecond = 16;
 
 	// Token: 0x04000936 RID: 2358
-	[PublicizedFrom(EAccessModifier.Private)]
-	public static Vector3i[,] fallDirsSet;
+	public static int blockUpdates = 0;
 
 	// Token: 0x04000937 RID: 2359
 	[PublicizedFrom(EAccessModifier.Private)]
+	public static float blockUpdateTimer = 0f;
+
+	// Token: 0x04000938 RID: 2360
+	[PublicizedFrom(EAccessModifier.Private)]
+	public static Vector3i[,] fallDirsSet;
+
+	// Token: 0x04000939 RID: 2361
+	[PublicizedFrom(EAccessModifier.Private)]
 	public static float currentTime;
 
-	// Token: 0x0200012C RID: 300
+	// Token: 0x0200012D RID: 301
 	public enum UpdateID
 	{
-		// Token: 0x04000939 RID: 2361
-		Sleep,
-		// Token: 0x0400093A RID: 2362
-		Evaporate,
 		// Token: 0x0400093B RID: 2363
+		Sleep,
+		// Token: 0x0400093C RID: 2364
+		Evaporate,
+		// Token: 0x0400093D RID: 2365
 		Awake
 	}
 
-	// Token: 0x0200012D RID: 301
+	// Token: 0x0200012E RID: 302
 	public enum FlowDirection
 	{
-		// Token: 0x0400093D RID: 2365
-		None,
-		// Token: 0x0400093E RID: 2366
-		North,
 		// Token: 0x0400093F RID: 2367
-		East,
+		None,
 		// Token: 0x04000940 RID: 2368
-		South,
+		North,
 		// Token: 0x04000941 RID: 2369
+		East,
+		// Token: 0x04000942 RID: 2370
+		South,
+		// Token: 0x04000943 RID: 2371
 		West
 	}
 }

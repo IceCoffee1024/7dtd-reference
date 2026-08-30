@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007DC RID: 2012
+// Token: 0x020007E7 RID: 2023
 [Preserve]
 public class NetPackageEntitySetPartActive : NetPackage
 {
-	// Token: 0x06003B6F RID: 15215 RVA: 0x0017DEA4 File Offset: 0x0017C0A4
+	// Token: 0x06003BCE RID: 15310 RVA: 0x0018027C File Offset: 0x0017E47C
 	public NetPackageEntitySetPartActive Setup(Entity entity, string partName, bool active)
 	{
 		this.id = entity.entityId;
@@ -14,7 +14,7 @@ public class NetPackageEntitySetPartActive : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003B70 RID: 15216 RVA: 0x0017DEC1 File Offset: 0x0017C0C1
+	// Token: 0x06003BCF RID: 15311 RVA: 0x00180299 File Offset: 0x0017E499
 	public override void read(PooledBinaryReader _br)
 	{
 		this.id = _br.ReadInt32();
@@ -22,7 +22,7 @@ public class NetPackageEntitySetPartActive : NetPackage
 		this.partName = _br.ReadString();
 	}
 
-	// Token: 0x06003B71 RID: 15217 RVA: 0x0017DEE7 File Offset: 0x0017C0E7
+	// Token: 0x06003BD0 RID: 15312 RVA: 0x001802BF File Offset: 0x0017E4BF
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -31,7 +31,7 @@ public class NetPackageEntitySetPartActive : NetPackage
 		_bw.Write(this.partName ?? "");
 	}
 
-	// Token: 0x06003B72 RID: 15218 RVA: 0x0017DF20 File Offset: 0x0017C120
+	// Token: 0x06003BD1 RID: 15313 RVA: 0x001802F8 File Offset: 0x0017E4F8
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -52,21 +52,21 @@ public class NetPackageEntitySetPartActive : NetPackage
 		entity.SetTransformActive(this.partName, this.active);
 	}
 
-	// Token: 0x06003B73 RID: 15219 RVA: 0x000B8CB1 File Offset: 0x000B6EB1
+	// Token: 0x06003BD2 RID: 15314 RVA: 0x000B93F5 File Offset: 0x000B75F5
 	public override int GetLength()
 	{
 		return 20;
 	}
 
-	// Token: 0x04003032 RID: 12338
+	// Token: 0x040030B1 RID: 12465
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int id;
 
-	// Token: 0x04003033 RID: 12339
+	// Token: 0x040030B2 RID: 12466
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool active;
 
-	// Token: 0x04003034 RID: 12340
+	// Token: 0x040030B3 RID: 12467
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string partName;
 }

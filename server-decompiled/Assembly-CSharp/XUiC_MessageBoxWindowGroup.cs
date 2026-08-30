@@ -6,13 +6,13 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D34 RID: 3380
+// Token: 0x02000D46 RID: 3398
 [global::UnityEngine.Scripting.Preserve]
 public class XUiC_MessageBoxWindowGroup : XUiController
 {
-	// Token: 0x17000AD6 RID: 2774
-	// (get) Token: 0x060066D4 RID: 26324 RVA: 0x0028ACE4 File Offset: 0x00288EE4
-	// (set) Token: 0x060066D5 RID: 26325 RVA: 0x0028ACEC File Offset: 0x00288EEC
+	// Token: 0x17000AE9 RID: 2793
+	// (get) Token: 0x06006760 RID: 26464 RVA: 0x0028DBC8 File Offset: 0x0028BDC8
+	// (set) Token: 0x06006761 RID: 26465 RVA: 0x0028DBD0 File Offset: 0x0028BDD0
 	[XuiXmlBinding("msgTitle")]
 	public string Title
 	{
@@ -22,9 +22,9 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 		set;
 	} = "";
 
-	// Token: 0x17000AD7 RID: 2775
-	// (get) Token: 0x060066D6 RID: 26326 RVA: 0x0028ACF5 File Offset: 0x00288EF5
-	// (set) Token: 0x060066D7 RID: 26327 RVA: 0x0028ACFD File Offset: 0x00288EFD
+	// Token: 0x17000AEA RID: 2794
+	// (get) Token: 0x06006762 RID: 26466 RVA: 0x0028DBD9 File Offset: 0x0028BDD9
+	// (set) Token: 0x06006763 RID: 26467 RVA: 0x0028DBE1 File Offset: 0x0028BDE1
 	[XuiXmlBinding("msgText")]
 	public string Text
 	{
@@ -34,9 +34,9 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 		set;
 	} = "";
 
-	// Token: 0x17000AD8 RID: 2776
-	// (get) Token: 0x060066D8 RID: 26328 RVA: 0x0028AD06 File Offset: 0x00288F06
-	// (set) Token: 0x060066D9 RID: 26329 RVA: 0x0028AD0E File Offset: 0x00288F0E
+	// Token: 0x17000AEB RID: 2795
+	// (get) Token: 0x06006764 RID: 26468 RVA: 0x0028DBEA File Offset: 0x0028BDEA
+	// (set) Token: 0x06006765 RID: 26469 RVA: 0x0028DBF2 File Offset: 0x0028BDF2
 	[XuiXmlBinding("msgIcon")]
 	public string Icon
 	{
@@ -46,8 +46,8 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 		set;
 	} = "";
 
-	// Token: 0x17000AD9 RID: 2777
-	// (get) Token: 0x060066DA RID: 26330 RVA: 0x0028AD17 File Offset: 0x00288F17
+	// Token: 0x17000AEC RID: 2796
+	// (get) Token: 0x06006766 RID: 26470 RVA: 0x0028DBFB File Offset: 0x0028BDFB
 	public XUiC_MessageBoxWindowGroup.MessageButton[] Buttons
 	{
 		get
@@ -56,21 +56,21 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x060066DB RID: 26331 RVA: 0x0028AD1F File Offset: 0x00288F1F
+	// Token: 0x06006767 RID: 26471 RVA: 0x0028DC03 File Offset: 0x0028BE03
 	public override void Init()
 	{
 		base.Init();
 		XUiC_MessageBoxWindowGroup.id = base.WindowGroup.Id;
 	}
 
-	// Token: 0x060066DC RID: 26332 RVA: 0x0028AD37 File Offset: 0x00288F37
+	// Token: 0x06006768 RID: 26472 RVA: 0x0028DC1B File Offset: 0x0028BE1B
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 		base.handleDirtyUpdateDefault();
 	}
 
-	// Token: 0x060066DD RID: 26333 RVA: 0x0028AD48 File Offset: 0x00288F48
+	// Token: 0x06006769 RID: 26473 RVA: 0x0028DC2C File Offset: 0x0028BE2C
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -80,7 +80,7 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 		this.xui.playerUI.CursorController.SetCursorHidden(false);
 	}
 
-	// Token: 0x060066DE RID: 26334 RVA: 0x0028AD9C File Offset: 0x00288F9C
+	// Token: 0x0600676A RID: 26474 RVA: 0x0028DC80 File Offset: 0x0028BE80
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -108,7 +108,7 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 		}
 	}
 
-	// Token: 0x060066DF RID: 26335 RVA: 0x0028AE60 File Offset: 0x00289060
+	// Token: 0x0600676B RID: 26475 RVA: 0x0028DD44 File Offset: 0x0028BF44
 	[XuiBindEvent("OnPress", "fullScreenCollider")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FullScreenCollider_OnPress(XUiController _sender, int _mouseButton)
@@ -125,7 +125,7 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 		messageButton.Execute();
 	}
 
-	// Token: 0x060066E0 RID: 26336 RVA: 0x0028AEAC File Offset: 0x002890AC
+	// Token: 0x0600676C RID: 26476 RVA: 0x0028DD90 File Offset: 0x0028BF90
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void showMessage(string _title, string _text, string _icon = "", bool _openMainMenuOnClose = true, bool _modal = true, int _buttonOnOutsideClick = -1, int _buttonOnExternalClose = -1)
 	{
@@ -149,7 +149,7 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 		this.xui.playerUI.windowManager.Open(base.WindowGroup, _modal);
 	}
 
-	// Token: 0x060066E1 RID: 26337 RVA: 0x0028AF4C File Offset: 0x0028914C
+	// Token: 0x0600676D RID: 26477 RVA: 0x0028DE30 File Offset: 0x0028C030
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void openPage()
 	{
@@ -162,14 +162,14 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 		item(this.urlBoxData.Item2);
 	}
 
-	// Token: 0x060066E2 RID: 26338 RVA: 0x0028AF7B File Offset: 0x0028917B
+	// Token: 0x0600676E RID: 26478 RVA: 0x0028DE5F File Offset: 0x0028C05F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void cancelOpenPage()
 	{
 		this.urlBoxData.Item1 = null;
 	}
 
-	// Token: 0x060066E3 RID: 26339 RVA: 0x0028AF8C File Offset: 0x0028918C
+	// Token: 0x0600676F RID: 26479 RVA: 0x0028DE70 File Offset: 0x0028C070
 	public static void ShowCustom(XUi _xuiInstance, string _title, string _text, string _icon, Action<XUiC_MessageBoxWindowGroup> _setupCallback, bool _openMainMenuOnClose = true, bool _modal = true, int _buttonOnOutsideClick = -1, int _buttonOnExternalClose = -1)
 	{
 		XUiC_MessageBoxWindowGroup xuiC_MessageBoxWindowGroup = (XUiC_MessageBoxWindowGroup)_xuiInstance.FindWindowGroupByName(XUiC_MessageBoxWindowGroup.id);
@@ -184,7 +184,7 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 		xuiC_MessageBoxWindowGroup.showMessage(_title, _text, _icon, _openMainMenuOnClose, _modal, _buttonOnOutsideClick, _buttonOnExternalClose);
 	}
 
-	// Token: 0x060066E4 RID: 26340 RVA: 0x0028AFE8 File Offset: 0x002891E8
+	// Token: 0x06006770 RID: 26480 RVA: 0x0028DECC File Offset: 0x0028C0CC
 	public static void ShowOk(XUi _xuiInstance, string _title, string _text, string _icon = "", Action _onOk = null, bool _openMainMenuOnClose = true, bool _modal = true, bool _confirmOnOutsideClick = false)
 	{
 		XUiC_MessageBoxWindowGroup xuiC_MessageBoxWindowGroup = (XUiC_MessageBoxWindowGroup)_xuiInstance.FindWindowGroupByName(XUiC_MessageBoxWindowGroup.id);
@@ -196,7 +196,7 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 		xuiC_MessageBoxWindowGroup.showMessage(_title, _text, _icon, _openMainMenuOnClose, _modal, _confirmOnOutsideClick ? 0 : (-1), 0);
 	}
 
-	// Token: 0x060066E5 RID: 26341 RVA: 0x0028B05C File Offset: 0x0028925C
+	// Token: 0x06006771 RID: 26481 RVA: 0x0028DF40 File Offset: 0x0028C140
 	public static void ShowOkCancel(XUi _xuiInstance, string _title, string _text, string _icon = "", Action _onOk = null, Action _onCancel = null, bool _openMainMenuOnClose = true, bool _modal = true, bool _cancelOnOutsideClick = false)
 	{
 		XUiC_MessageBoxWindowGroup xuiC_MessageBoxWindowGroup = (XUiC_MessageBoxWindowGroup)_xuiInstance.FindWindowGroupByName(XUiC_MessageBoxWindowGroup.id);
@@ -209,7 +209,7 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 		xuiC_MessageBoxWindowGroup.showMessage(_title, _text, _icon, _openMainMenuOnClose, _modal, _cancelOnOutsideClick ? 2 : (-1), 2);
 	}
 
-	// Token: 0x060066E6 RID: 26342 RVA: 0x0028B0F0 File Offset: 0x002892F0
+	// Token: 0x06006772 RID: 26482 RVA: 0x0028DFD4 File Offset: 0x0028C1D4
 	public static void ShowConfirmCancel(XUi _xuiInstance, string _title, string _text, string _icon = "", Action _onConfirm = null, Action _onCancel = null, float _confirmHoldTime = 0f, bool _openMainMenuOnClose = true, bool _modal = true, bool _cancelOnOutsideClick = false)
 	{
 		XUiC_MessageBoxWindowGroup xuiC_MessageBoxWindowGroup = (XUiC_MessageBoxWindowGroup)_xuiInstance.FindWindowGroupByName(XUiC_MessageBoxWindowGroup.id);
@@ -222,7 +222,7 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 		xuiC_MessageBoxWindowGroup.showMessage(_title, _text, _icon, _openMainMenuOnClose, _modal, _cancelOnOutsideClick ? 2 : (-1), 2);
 	}
 
-	// Token: 0x060066E7 RID: 26343 RVA: 0x0028B184 File Offset: 0x00289384
+	// Token: 0x06006773 RID: 26483 RVA: 0x0028E068 File Offset: 0x0028C268
 	public static void ShowUrlConfirmationDialog(XUi _xuiInstance, string _url, bool _modal = false, Func<string, bool> _browserOpenMethod = null, string _title = null, string _text = null, string _icon = "", string _displayUrl = null, bool _cancelOnOutsideClick = false)
 	{
 		XUiC_MessageBoxWindowGroup xuiC_MessageBoxWindowGroup = (XUiC_MessageBoxWindowGroup)_xuiInstance.FindWindowGroupByName(XUiC_MessageBoxWindowGroup.id);
@@ -264,7 +264,7 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 		xuiC_MessageBoxWindowGroup.showMessage(_title, _text, _icon, flag, _modal, _cancelOnOutsideClick ? 2 : (-1), 2);
 	}
 
-	// Token: 0x060066E8 RID: 26344 RVA: 0x0028B2DC File Offset: 0x002894DC
+	// Token: 0x06006774 RID: 26484 RVA: 0x0028E1C0 File Offset: 0x0028C3C0
 	public static void ShowNetworkError(XUi _xuiInstance, NetworkConnectionError _error, bool _confirmOnOutsideClick = false)
 	{
 		string text = _error.ToStringCached<NetworkConnectionError>();
@@ -309,63 +309,63 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 		XUiC_MessageBoxWindowGroup.ShowOk(_xuiInstance, Localization.Get("mmLblErrorServerInit", false, null), text, "", null, true, true, _confirmOnOutsideClick);
 	}
 
-	// Token: 0x060066E9 RID: 26345 RVA: 0x0028B3D6 File Offset: 0x002895D6
+	// Token: 0x06006775 RID: 26485 RVA: 0x0028E2BA File Offset: 0x0028C4BA
 	public static void Close(XUi _xuiInstance)
 	{
 		_xuiInstance.playerUI.windowManager.Close(XUiC_MessageBoxWindowGroup.id);
 	}
 
-	// Token: 0x060066EA RID: 26346 RVA: 0x0028B3ED File Offset: 0x002895ED
+	// Token: 0x06006776 RID: 26486 RVA: 0x0028E2D1 File Offset: 0x0028C4D1
 	public static bool IsShowing(XUi _xuiInstance)
 	{
 		return _xuiInstance.playerUI.windowManager.IsWindowOpen(XUiC_MessageBoxWindowGroup.id);
 	}
 
-	// Token: 0x04004EFD RID: 20221
+	// Token: 0x04004F9B RID: 20379
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string id = "";
 
-	// Token: 0x04004F01 RID: 20225
+	// Token: 0x04004F9F RID: 20383
 	[XuiBindComponent("buttons.", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_MessageBoxWindowGroup.MessageButton[] buttons;
 
-	// Token: 0x04004F02 RID: 20226
+	// Token: 0x04004FA0 RID: 20384
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_FullScreenCollider fullScreenCollider;
 
-	// Token: 0x04004F03 RID: 20227
+	// Token: 0x04004FA1 RID: 20385
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int pressButtonOnOutsideClick = -1;
 
-	// Token: 0x04004F04 RID: 20228
+	// Token: 0x04004FA2 RID: 20386
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int pressButtonOnExternalClose = -1;
 
-	// Token: 0x04004F05 RID: 20229
+	// Token: 0x04004FA3 RID: 20387
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isClosingByAction;
 
-	// Token: 0x04004F06 RID: 20230
+	// Token: 0x04004FA4 RID: 20388
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool openMainMenuOnClose;
 
-	// Token: 0x04004F07 RID: 20231
+	// Token: 0x04004FA5 RID: 20389
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool windowGroupEscCloseableBefore;
 
-	// Token: 0x04004F08 RID: 20232
+	// Token: 0x04004FA6 RID: 20390
 	[TupleElementNames(new string[] { "prevModalWindow", "url", "browserOpenMethod" })]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ValueTuple<GUIWindow, string, Func<string, bool>> urlBoxData;
 
-	// Token: 0x02000D35 RID: 3381
+	// Token: 0x02000D47 RID: 3399
 	[global::UnityEngine.Scripting.Preserve]
 	public class MessageButton : XUiController
 	{
-		// Token: 0x17000ADA RID: 2778
-		// (get) Token: 0x060066ED RID: 26349 RVA: 0x0028B447 File Offset: 0x00289647
+		// Token: 0x17000AED RID: 2797
+		// (get) Token: 0x06006779 RID: 26489 RVA: 0x0028E32B File Offset: 0x0028C52B
 		[XuiXmlBinding("msg_btn_used")]
 		public bool IsUsed
 		{
@@ -375,9 +375,9 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 			}
 		}
 
-		// Token: 0x17000ADB RID: 2779
-		// (get) Token: 0x060066EE RID: 26350 RVA: 0x0028B457 File Offset: 0x00289657
-		// (set) Token: 0x060066EF RID: 26351 RVA: 0x0028B468 File Offset: 0x00289668
+		// Token: 0x17000AEE RID: 2798
+		// (get) Token: 0x0600677A RID: 26490 RVA: 0x0028E33B File Offset: 0x0028C53B
+		// (set) Token: 0x0600677B RID: 26491 RVA: 0x0028E34C File Offset: 0x0028C54C
 		[XuiXmlBinding("msg_btn_caption_raw")]
 		public string Caption
 		{
@@ -396,8 +396,8 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 			}
 		}
 
-		// Token: 0x17000ADC RID: 2780
-		// (get) Token: 0x060066F0 RID: 26352 RVA: 0x0028B487 File Offset: 0x00289687
+		// Token: 0x17000AEF RID: 2799
+		// (get) Token: 0x0600677C RID: 26492 RVA: 0x0028E36B File Offset: 0x0028C56B
 		[XuiXmlBinding("msg_btn_caption")]
 		public string CaptionWithSuffix
 		{
@@ -407,9 +407,9 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 			}
 		}
 
-		// Token: 0x17000ADD RID: 2781
-		// (get) Token: 0x060066F1 RID: 26353 RVA: 0x0028B4BE File Offset: 0x002896BE
-		// (set) Token: 0x060066F2 RID: 26354 RVA: 0x0028B4C6 File Offset: 0x002896C6
+		// Token: 0x17000AF0 RID: 2800
+		// (get) Token: 0x0600677D RID: 26493 RVA: 0x0028E3A2 File Offset: 0x0028C5A2
+		// (set) Token: 0x0600677E RID: 26494 RVA: 0x0028E3AA File Offset: 0x0028C5AA
 		public PlayerAction Hotkey
 		{
 			get
@@ -427,8 +427,8 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 			}
 		}
 
-		// Token: 0x17000ADE RID: 2782
-		// (get) Token: 0x060066F3 RID: 26355 RVA: 0x0028B4E0 File Offset: 0x002896E0
+		// Token: 0x17000AF1 RID: 2801
+		// (get) Token: 0x0600677F RID: 26495 RVA: 0x0028E3C4 File Offset: 0x0028C5C4
 		[XuiXmlBinding("msg_btn_action")]
 		public string HotkeyAction
 		{
@@ -439,8 +439,8 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 			}
 		}
 
-		// Token: 0x17000ADF RID: 2783
-		// (get) Token: 0x060066F4 RID: 26356 RVA: 0x0028B4FD File Offset: 0x002896FD
+		// Token: 0x17000AF2 RID: 2802
+		// (get) Token: 0x06006780 RID: 26496 RVA: 0x0028E3E1 File Offset: 0x0028C5E1
 		[XuiXmlBinding("msg_btn_hashotkey")]
 		public bool HasHotkey
 		{
@@ -450,9 +450,9 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 			}
 		}
 
-		// Token: 0x17000AE0 RID: 2784
-		// (get) Token: 0x060066F5 RID: 26357 RVA: 0x0028B508 File Offset: 0x00289708
-		// (set) Token: 0x060066F6 RID: 26358 RVA: 0x0028B510 File Offset: 0x00289710
+		// Token: 0x17000AF3 RID: 2803
+		// (get) Token: 0x06006781 RID: 26497 RVA: 0x0028E3EC File Offset: 0x0028C5EC
+		// (set) Token: 0x06006782 RID: 26498 RVA: 0x0028E3F4 File Offset: 0x0028C5F4
 		public Action Callback
 		{
 			get
@@ -465,9 +465,9 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 			}
 		}
 
-		// Token: 0x17000AE1 RID: 2785
-		// (get) Token: 0x060066F7 RID: 26359 RVA: 0x0028B519 File Offset: 0x00289719
-		// (set) Token: 0x060066F8 RID: 26360 RVA: 0x0028B521 File Offset: 0x00289721
+		// Token: 0x17000AF4 RID: 2804
+		// (get) Token: 0x06006783 RID: 26499 RVA: 0x0028E3FD File Offset: 0x0028C5FD
+		// (set) Token: 0x06006784 RID: 26500 RVA: 0x0028E405 File Offset: 0x0028C605
 		[XuiXmlBinding("msg_btn_enabled")]
 		public bool Enabled
 		{
@@ -486,9 +486,9 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 			}
 		}
 
-		// Token: 0x17000AE2 RID: 2786
-		// (get) Token: 0x060066F9 RID: 26361 RVA: 0x0028B53B File Offset: 0x0028973B
-		// (set) Token: 0x060066FA RID: 26362 RVA: 0x0028B543 File Offset: 0x00289743
+		// Token: 0x17000AF5 RID: 2805
+		// (get) Token: 0x06006785 RID: 26501 RVA: 0x0028E41F File Offset: 0x0028C61F
+		// (set) Token: 0x06006786 RID: 26502 RVA: 0x0028E427 File Offset: 0x0028C627
 		[XuiXmlBinding("msg_btn_enableddelay")]
 		public float EnabledDelay
 		{
@@ -507,9 +507,9 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 			}
 		}
 
-		// Token: 0x17000AE3 RID: 2787
-		// (get) Token: 0x060066FB RID: 26363 RVA: 0x0028B562 File Offset: 0x00289762
-		// (set) Token: 0x060066FC RID: 26364 RVA: 0x0028B56A File Offset: 0x0028976A
+		// Token: 0x17000AF6 RID: 2806
+		// (get) Token: 0x06006787 RID: 26503 RVA: 0x0028E446 File Offset: 0x0028C646
+		// (set) Token: 0x06006788 RID: 26504 RVA: 0x0028E44E File Offset: 0x0028C64E
 		[XuiXmlBinding("msg_btn_hold_time")]
 		public float HoldTime
 		{
@@ -528,8 +528,8 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 			}
 		}
 
-		// Token: 0x17000AE4 RID: 2788
-		// (get) Token: 0x060066FD RID: 26365 RVA: 0x0028B589 File Offset: 0x00289789
+		// Token: 0x17000AF7 RID: 2807
+		// (get) Token: 0x06006789 RID: 26505 RVA: 0x0028E46D File Offset: 0x0028C66D
 		public bool HoldToConfirm
 		{
 			get
@@ -538,7 +538,7 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 			}
 		}
 
-		// Token: 0x060066FE RID: 26366 RVA: 0x0028B598 File Offset: 0x00289798
+		// Token: 0x0600678A RID: 26506 RVA: 0x0028E47C File Offset: 0x0028C67C
 		public void Clear()
 		{
 			this.Caption = "";
@@ -549,19 +549,19 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 			this.HoldTime = 0f;
 		}
 
-		// Token: 0x060066FF RID: 26367 RVA: 0x0028B5D0 File Offset: 0x002897D0
+		// Token: 0x0600678B RID: 26507 RVA: 0x0028E4B4 File Offset: 0x0028C6B4
 		public void DefaultConfirm(string _captionKey, Action _callback, bool _enabled = true, float _enabledDelay = 0f, float _holdTime = 0f, bool _holdTimeOnKbdMouse = false)
 		{
 			this.Set(_captionKey, this.xui.playerUI.playerInput.GUIActions.Submit, _callback, _enabled, _enabledDelay, _holdTime, _holdTimeOnKbdMouse);
 		}
 
-		// Token: 0x06006700 RID: 26368 RVA: 0x0028B5FB File Offset: 0x002897FB
+		// Token: 0x0600678C RID: 26508 RVA: 0x0028E4DF File Offset: 0x0028C6DF
 		public void DefaultCancel(string _captionKey, Action _callback, bool _enabled = true, float _enabledDelay = 0f, float _holdTime = 0f, bool _holdTimeOnKbdMouse = false)
 		{
 			this.Set(_captionKey, this.xui.playerUI.playerInput.GUIActions.Cancel, _callback, _enabled, _enabledDelay, _holdTime, _holdTimeOnKbdMouse);
 		}
 
-		// Token: 0x06006701 RID: 26369 RVA: 0x0028B628 File Offset: 0x00289828
+		// Token: 0x0600678D RID: 26509 RVA: 0x0028E50C File Offset: 0x0028C70C
 		public void Set(string _captionKey, PlayerAction _hotkey, Action _callback, bool _enabled = true, float _enabledDelay = 0f, float _holdTime = 0f, bool _holdTimeOnKbdMouse = false)
 		{
 			this.Caption = Localization.Get(_captionKey, false, null);
@@ -577,7 +577,7 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 			this.HoldTime = _holdTime;
 		}
 
-		// Token: 0x06006702 RID: 26370 RVA: 0x0028B68B File Offset: 0x0028988B
+		// Token: 0x0600678E RID: 26510 RVA: 0x0028E56F File Offset: 0x0028C76F
 		[XuiBindEvent("OnPress", "button")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void OnButtonPressed(XUiController _sender, int _mouseButton)
@@ -590,7 +590,7 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 			this.Execute();
 		}
 
-		// Token: 0x06006703 RID: 26371 RVA: 0x0028B6A4 File Offset: 0x002898A4
+		// Token: 0x0600678F RID: 26511 RVA: 0x0028E588 File Offset: 0x0028C788
 		public override void Update(float _dt)
 		{
 			base.Update(_dt);
@@ -619,13 +619,13 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 			this.wasPressedThisFrame = false;
 		}
 
-		// Token: 0x06006704 RID: 26372 RVA: 0x0028B744 File Offset: 0x00289944
+		// Token: 0x06006790 RID: 26512 RVA: 0x0028E628 File Offset: 0x0028C828
 		public void Execute()
 		{
 			ThreadManager.StartCoroutine(this.executeCallbackLater(this.Callback));
 		}
 
-		// Token: 0x06006705 RID: 26373 RVA: 0x0028B758 File Offset: 0x00289958
+		// Token: 0x06006791 RID: 26513 RVA: 0x0028E63C File Offset: 0x0028C83C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator executeCallbackLater(Action _callback)
 		{
@@ -639,41 +639,41 @@ public class XUiC_MessageBoxWindowGroup : XUiController
 			yield break;
 		}
 
-		// Token: 0x04004F09 RID: 20233
+		// Token: 0x04004FA7 RID: 20391
 		[XuiBindParent(true)]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly XUiC_MessageBoxWindowGroup owner;
 
-		// Token: 0x04004F0A RID: 20234
+		// Token: 0x04004FA8 RID: 20392
 		[XuiBindComponent(true)]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly XUiC_Button button;
 
-		// Token: 0x04004F0B RID: 20235
+		// Token: 0x04004FA9 RID: 20393
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string caption;
 
-		// Token: 0x04004F0C RID: 20236
+		// Token: 0x04004FAA RID: 20394
 		[PublicizedFrom(EAccessModifier.Private)]
 		public PlayerAction hotkey;
 
-		// Token: 0x04004F0D RID: 20237
+		// Token: 0x04004FAB RID: 20395
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Action callback;
 
-		// Token: 0x04004F0E RID: 20238
+		// Token: 0x04004FAC RID: 20396
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool enabled;
 
-		// Token: 0x04004F0F RID: 20239
+		// Token: 0x04004FAD RID: 20397
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float enabledDelay;
 
-		// Token: 0x04004F10 RID: 20240
+		// Token: 0x04004FAE RID: 20398
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float holdTime;
 
-		// Token: 0x04004F11 RID: 20241
+		// Token: 0x04004FAF RID: 20399
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool wasPressedThisFrame;
 	}

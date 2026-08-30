@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000354 RID: 852
+// Token: 0x02000358 RID: 856
 [Preserve]
 public class AdminSpeedConsoleCmd : ConsoleCmdAbstract
 {
-	// Token: 0x170002E9 RID: 745
-	// (get) Token: 0x060018A4 RID: 6308 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x170002ED RID: 749
+	// (get) Token: 0x060018C1 RID: 6337 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -17,8 +17,8 @@ public class AdminSpeedConsoleCmd : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x170002EA RID: 746
-	// (get) Token: 0x060018A5 RID: 6309 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// Token: 0x170002EE RID: 750
+	// (get) Token: 0x060018C2 RID: 6338 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -27,7 +27,7 @@ public class AdminSpeedConsoleCmd : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060018A6 RID: 6310 RVA: 0x0008B77C File Offset: 0x0008997C
+	// Token: 0x060018C3 RID: 6339 RVA: 0x0008BEBC File Offset: 0x0008A0BC
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		this.parameters = _params;
@@ -42,7 +42,7 @@ public class AdminSpeedConsoleCmd : ConsoleCmdAbstract
 		Log.Out("Admin speed: " + num.ToString());
 	}
 
-	// Token: 0x060018A7 RID: 6311 RVA: 0x0008B7FB File Offset: 0x000899FB
+	// Token: 0x060018C4 RID: 6340 RVA: 0x0008BF3B File Offset: 0x0008A13B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string GetParam(List<string> _params, int index)
 	{
@@ -57,7 +57,7 @@ public class AdminSpeedConsoleCmd : ConsoleCmdAbstract
 		return _params[index];
 	}
 
-	// Token: 0x060018A8 RID: 6312 RVA: 0x0008B814 File Offset: 0x00089A14
+	// Token: 0x060018C5 RID: 6341 RVA: 0x0008BF54 File Offset: 0x0008A154
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int GetParamAsInt(int index)
 	{
@@ -74,7 +74,7 @@ public class AdminSpeedConsoleCmd : ConsoleCmdAbstract
 		return num;
 	}
 
-	// Token: 0x060018A9 RID: 6313 RVA: 0x0008B852 File Offset: 0x00089A52
+	// Token: 0x060018C6 RID: 6342 RVA: 0x0008BF92 File Offset: 0x0008A192
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -85,18 +85,18 @@ public class AdminSpeedConsoleCmd : ConsoleCmdAbstract
 		};
 	}
 
-	// Token: 0x060018AA RID: 6314 RVA: 0x0008B86A File Offset: 0x00089A6A
+	// Token: 0x060018C7 RID: 6343 RVA: 0x0008BFAA File Offset: 0x0008A1AA
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return AdminSpeedConsoleCmd.info;
 	}
 
-	// Token: 0x04000FB7 RID: 4023
+	// Token: 0x04000FCC RID: 4044
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string info = "AdminSpeed";
 
-	// Token: 0x04000FB8 RID: 4024
+	// Token: 0x04000FCD RID: 4045
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<string> parameters;
 }

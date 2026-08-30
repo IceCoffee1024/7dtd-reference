@@ -1,114 +1,114 @@
 ﻿using System;
 
-// Token: 0x02000771 RID: 1905
+// Token: 0x0200077B RID: 1915
 public enum GameInfoInt
 {
-	// Token: 0x04002E97 RID: 11927
+	// Token: 0x04002F10 RID: 12048
 	Port,
-	// Token: 0x04002E98 RID: 11928
+	// Token: 0x04002F11 RID: 12049
 	CurrentPlayers,
-	// Token: 0x04002E99 RID: 11929
+	// Token: 0x04002F12 RID: 12050
 	MaxPlayers,
-	// Token: 0x04002E9A RID: 11930
+	// Token: 0x04002F13 RID: 12051
 	FreePlayerSlots,
-	// Token: 0x04002E9B RID: 11931
+	// Token: 0x04002F14 RID: 12052
 	GameDifficulty,
-	// Token: 0x04002E9C RID: 11932
+	// Token: 0x04002F15 RID: 12053
 	DayNightLength,
-	// Token: 0x04002E9D RID: 11933
+	// Token: 0x04002F16 RID: 12054
 	BloodMoonFrequency,
-	// Token: 0x04002E9E RID: 11934
+	// Token: 0x04002F17 RID: 12055
 	BloodMoonRange,
-	// Token: 0x04002E9F RID: 11935
+	// Token: 0x04002F18 RID: 12056
 	BloodMoonWarning,
-	// Token: 0x04002EA0 RID: 11936
+	// Token: 0x04002F19 RID: 12057
 	ZombiesRun,
-	// Token: 0x04002EA1 RID: 11937
+	// Token: 0x04002F1A RID: 12058
 	ZombieFeralSense,
-	// Token: 0x04002EA2 RID: 11938
+	// Token: 0x04002F1B RID: 12059
 	ZombieMove,
-	// Token: 0x04002EA3 RID: 11939
+	// Token: 0x04002F1C RID: 12060
 	ZombieMoveNight,
-	// Token: 0x04002EA4 RID: 11940
+	// Token: 0x04002F1D RID: 12061
 	ZombieFeralMove,
-	// Token: 0x04002EA5 RID: 11941
+	// Token: 0x04002F1E RID: 12062
 	ZombieBMMove,
-	// Token: 0x04002EA6 RID: 11942
+	// Token: 0x04002F1F RID: 12063
 	XPMultiplier,
-	// Token: 0x04002EA7 RID: 11943
+	// Token: 0x04002F20 RID: 12064
 	DayCount,
-	// Token: 0x04002EA8 RID: 11944
+	// Token: 0x04002F21 RID: 12065
 	Ping,
-	// Token: 0x04002EA9 RID: 11945
+	// Token: 0x04002F22 RID: 12066
 	DropOnDeath,
-	// Token: 0x04002EAA RID: 11946
+	// Token: 0x04002F23 RID: 12067
 	DropOnQuit,
-	// Token: 0x04002EAB RID: 11947
+	// Token: 0x04002F24 RID: 12068
 	BloodMoonEnemyCount,
-	// Token: 0x04002EAC RID: 11948
+	// Token: 0x04002F25 RID: 12069
 	EnemyDifficulty,
-	// Token: 0x04002EAD RID: 11949
+	// Token: 0x04002F26 RID: 12070
 	PlayerKillingMode,
-	// Token: 0x04002EAE RID: 11950
+	// Token: 0x04002F27 RID: 12071
 	CurrentServerTime,
-	// Token: 0x04002EAF RID: 11951
+	// Token: 0x04002F28 RID: 12072
 	DayLightLength,
-	// Token: 0x04002EB0 RID: 11952
+	// Token: 0x04002F29 RID: 12073
 	BlockDurabilityModifier,
-	// Token: 0x04002EB1 RID: 11953
+	// Token: 0x04002F2A RID: 12074
 	BlockDamagePlayer,
-	// Token: 0x04002EB2 RID: 11954
+	// Token: 0x04002F2B RID: 12075
 	BlockDamageAI,
-	// Token: 0x04002EB3 RID: 11955
+	// Token: 0x04002F2C RID: 12076
 	BlockDamageAIBM,
-	// Token: 0x04002EB4 RID: 11956
+	// Token: 0x04002F2D RID: 12077
 	AirDropFrequency,
-	// Token: 0x04002EB5 RID: 11957
+	// Token: 0x04002F2E RID: 12078
 	LootAbundance,
-	// Token: 0x04002EB6 RID: 11958
+	// Token: 0x04002F2F RID: 12079
 	LootRespawnDays,
-	// Token: 0x04002EB7 RID: 11959
+	// Token: 0x04002F30 RID: 12080
 	MaxSpawnedZombies,
-	// Token: 0x04002EB8 RID: 11960
+	// Token: 0x04002F31 RID: 12081
 	LandClaimCount,
-	// Token: 0x04002EB9 RID: 11961
+	// Token: 0x04002F32 RID: 12082
 	LandClaimSize,
-	// Token: 0x04002EBA RID: 11962
+	// Token: 0x04002F33 RID: 12083
 	LandClaimDeadZone,
-	// Token: 0x04002EBB RID: 11963
+	// Token: 0x04002F34 RID: 12084
 	LandClaimExpiryTime,
-	// Token: 0x04002EBC RID: 11964
+	// Token: 0x04002F35 RID: 12085
 	LandClaimDecayMode,
-	// Token: 0x04002EBD RID: 11965
+	// Token: 0x04002F36 RID: 12086
 	LandClaimOnlineDurabilityModifier,
-	// Token: 0x04002EBE RID: 11966
+	// Token: 0x04002F37 RID: 12087
 	LandClaimOfflineDurabilityModifier,
-	// Token: 0x04002EBF RID: 11967
+	// Token: 0x04002F38 RID: 12088
 	LandClaimOfflineDelay,
-	// Token: 0x04002EC0 RID: 11968
+	// Token: 0x04002F39 RID: 12089
 	PartySharedKillRange,
-	// Token: 0x04002EC1 RID: 11969
+	// Token: 0x04002F3A RID: 12090
 	MaxSpawnedAnimals,
-	// Token: 0x04002EC2 RID: 11970
+	// Token: 0x04002F3B RID: 12091
 	ServerVisibility,
-	// Token: 0x04002EC3 RID: 11971
+	// Token: 0x04002F3C RID: 12092
 	BedrollExpiryTime,
-	// Token: 0x04002EC4 RID: 11972
+	// Token: 0x04002F3D RID: 12093
 	BedrollDeadZoneSize,
-	// Token: 0x04002EC5 RID: 11973
+	// Token: 0x04002F3E RID: 12094
 	WorldSize,
-	// Token: 0x04002EC6 RID: 11974
+	// Token: 0x04002F3F RID: 12095
 	MaxChunkAge,
-	// Token: 0x04002EC7 RID: 11975
+	// Token: 0x04002F40 RID: 12096
 	DeathPenalty,
-	// Token: 0x04002EC8 RID: 11976
+	// Token: 0x04002F41 RID: 12097
 	QuestProgressionDailyLimit,
-	// Token: 0x04002EC9 RID: 11977
+	// Token: 0x04002F42 RID: 12098
 	AllowSpawnNearFriend,
-	// Token: 0x04002ECA RID: 11978
+	// Token: 0x04002F43 RID: 12099
 	StormFreq,
-	// Token: 0x04002ECB RID: 11979
+	// Token: 0x04002F44 RID: 12100
 	AISmellMode,
-	// Token: 0x04002ECC RID: 11980
+	// Token: 0x04002F45 RID: 12101
 	JarRefund
 }

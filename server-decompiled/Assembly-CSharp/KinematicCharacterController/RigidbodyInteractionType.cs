@@ -2,14 +2,14 @@
 
 namespace KinematicCharacterController
 {
-	// Token: 0x02001D27 RID: 7463
+	// Token: 0x02001D4F RID: 7503
 	public enum RigidbodyInteractionType
 	{
-		// Token: 0x0400A6B7 RID: 42679
+		// Token: 0x0400A7EC RID: 42988
 		None,
-		// Token: 0x0400A6B8 RID: 42680
+		// Token: 0x0400A7ED RID: 42989
 		Kinematic,
-		// Token: 0x0400A6B9 RID: 42681
+		// Token: 0x0400A7EE RID: 42990
 		SimulatedDynamic
 	}
 }

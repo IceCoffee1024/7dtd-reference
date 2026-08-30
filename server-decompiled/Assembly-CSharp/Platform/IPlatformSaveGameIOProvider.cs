@@ -4,61 +4,61 @@ using System.IO;
 
 namespace Platform
 {
-	// Token: 0x02001B64 RID: 7012
+	// Token: 0x02001B8B RID: 7051
 	public interface IPlatformSaveGameIOProvider
 	{
-		// Token: 0x0600D153 RID: 53587
+		// Token: 0x0600D2DE RID: 53982
 		void ManagedFileRead(SaveDataManagedPath path, Stream dest);
 
-		// Token: 0x0600D154 RID: 53588
+		// Token: 0x0600D2DF RID: 53983
 		void ManagedFileWrite(SaveDataManagedPath path, Stream src);
 
-		// Token: 0x0600D155 RID: 53589
+		// Token: 0x0600D2E0 RID: 53984
 		void ManagedFileCopy(SaveDataManagedPath sourceFileName, SaveDataManagedPath destFileName, bool overwrite = false);
 
-		// Token: 0x0600D156 RID: 53590
+		// Token: 0x0600D2E1 RID: 53985
 		void ManagedFileDelete(SaveDataManagedPath path);
 
-		// Token: 0x0600D157 RID: 53591
+		// Token: 0x0600D2E2 RID: 53986
 		bool ManagedFileExists(SaveDataManagedPath path);
 
-		// Token: 0x0600D158 RID: 53592
+		// Token: 0x0600D2E3 RID: 53987
 		DateTime ManagedFileGetLastWriteTimeUtc(SaveDataManagedPath path);
 
-		// Token: 0x0600D159 RID: 53593
+		// Token: 0x0600D2E4 RID: 53988
 		void ManagedFileMove(SaveDataManagedPath sourceFileName, SaveDataManagedPath destFileName);
 
-		// Token: 0x0600D15A RID: 53594
+		// Token: 0x0600D2E5 RID: 53989
 		SdDirectoryInfo ManagedDirectoryCreateDirectory(SaveDataManagedPath path);
 
-		// Token: 0x0600D15B RID: 53595
+		// Token: 0x0600D2E6 RID: 53990
 		DateTime ManagedDirectoryGetLastWriteTimeUtc(SaveDataManagedPath path);
 
-		// Token: 0x0600D15C RID: 53596
+		// Token: 0x0600D2E7 RID: 53991
 		bool ManagedDirectoryExists(SaveDataManagedPath path);
 
-		// Token: 0x0600D15D RID: 53597
+		// Token: 0x0600D2E8 RID: 53992
 		IEnumerable<SaveDataManagedPath> ManagedDirectoryEnumerateDirectories(SaveDataManagedPath path, string searchPattern, SearchOption searchOption);
 
-		// Token: 0x0600D15E RID: 53598
+		// Token: 0x0600D2E9 RID: 53993
 		IEnumerable<SaveDataManagedPath> ManagedDirectoryEnumerateFiles(SaveDataManagedPath path, string searchPattern, SearchOption searchOption);
 
-		// Token: 0x0600D15F RID: 53599
+		// Token: 0x0600D2EA RID: 53994
 		IEnumerable<SaveDataManagedPath> ManagedDirectoryEnumerateFileSystemEntries(SaveDataManagedPath path, string searchPattern, SearchOption searchOption);
 
-		// Token: 0x0600D160 RID: 53600
+		// Token: 0x0600D2EB RID: 53995
 		void ManagedDirectoryDelete(SaveDataManagedPath path, bool recursive);
 
-		// Token: 0x0600D161 RID: 53601
+		// Token: 0x0600D2EC RID: 53996
 		long ManagedFileInfoLength(SaveDataManagedPath path);
 
-		// Token: 0x0600D162 RID: 53602
+		// Token: 0x0600D2ED RID: 53997
 		IEnumerable<SdDirectoryInfo> ManagedDirectoryInfoEnumerateDirectories(SaveDataManagedPath path, string searchPattern, SearchOption searchOption);
 
-		// Token: 0x0600D163 RID: 53603
+		// Token: 0x0600D2EE RID: 53998
 		IEnumerable<SdFileInfo> ManagedDirectoryInfoEnumerateFiles(SaveDataManagedPath path, string searchPattern, SearchOption searchOption);
 
-		// Token: 0x0600D164 RID: 53604
+		// Token: 0x0600D2EF RID: 53999
 		IEnumerable<SdFileSystemInfo> ManagedDirectoryInfoEnumerateFileSystemInfos(SaveDataManagedPath path, string searchPattern, SearchOption searchOption);
 	}
 }

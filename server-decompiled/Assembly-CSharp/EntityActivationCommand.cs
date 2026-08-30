@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020003EE RID: 1006
+// Token: 0x020003F2 RID: 1010
 [Preserve]
 public struct EntityActivationCommand
 {
-	// Token: 0x06001E78 RID: 7800 RVA: 0x000B8F70 File Offset: 0x000B7170
+	// Token: 0x06001E95 RID: 7829 RVA: 0x000B96B4 File Offset: 0x000B78B4
 	public EntityActivationCommand(string _commandId, string _icon, string _eventName = null, string _customCommandText = null)
 	{
 		this.commandId = _commandId;
@@ -23,24 +23,24 @@ public struct EntityActivationCommand
 		this.commandText = Localization.Get("entitycommand_" + this.commandText, false, null);
 	}
 
-	// Token: 0x04001465 RID: 5221
+	// Token: 0x0400147A RID: 5242
 	public string commandId;
 
-	// Token: 0x04001466 RID: 5222
+	// Token: 0x0400147B RID: 5243
 	public string icon;
 
-	// Token: 0x04001467 RID: 5223
+	// Token: 0x0400147C RID: 5244
 	public Color iconColor;
 
-	// Token: 0x04001468 RID: 5224
+	// Token: 0x0400147D RID: 5245
 	public bool enabled;
 
-	// Token: 0x04001469 RID: 5225
+	// Token: 0x0400147E RID: 5246
 	public string eventName;
 
-	// Token: 0x0400146A RID: 5226
+	// Token: 0x0400147F RID: 5247
 	public float activateTime;
 
-	// Token: 0x0400146B RID: 5227
+	// Token: 0x04001480 RID: 5248
 	public string commandText;
 }

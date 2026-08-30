@@ -1,81 +1,81 @@
 ﻿using System;
 
-// Token: 0x02000C4F RID: 3151
+// Token: 0x02000C61 RID: 3169
 public interface ITileEntityLootable : ITileEntity, ILockTarget, IInventory
 {
-	// Token: 0x170009B7 RID: 2487
-	// (get) Token: 0x06005FD1 RID: 24529
-	// (set) Token: 0x06005FD2 RID: 24530
+	// Token: 0x170009CA RID: 2506
+	// (get) Token: 0x0600605B RID: 24667
+	// (set) Token: 0x0600605C RID: 24668
 	string lootListName { get; set; }
 
-	// Token: 0x170009B8 RID: 2488
-	// (get) Token: 0x06005FD3 RID: 24531
+	// Token: 0x170009CB RID: 2507
+	// (get) Token: 0x0600605D RID: 24669
 	float LootStageMod { get; }
 
-	// Token: 0x170009B9 RID: 2489
-	// (get) Token: 0x06005FD4 RID: 24532
+	// Token: 0x170009CC RID: 2508
+	// (get) Token: 0x0600605E RID: 24670
 	float LootStageBonus { get; }
 
-	// Token: 0x170009BA RID: 2490
-	// (get) Token: 0x06005FD5 RID: 24533
-	// (set) Token: 0x06005FD6 RID: 24534
+	// Token: 0x170009CD RID: 2509
+	// (get) Token: 0x0600605F RID: 24671
+	// (set) Token: 0x06006060 RID: 24672
 	bool bPlayerStorage { get; set; }
 
-	// Token: 0x170009BB RID: 2491
-	// (get) Token: 0x06005FD7 RID: 24535
-	// (set) Token: 0x06005FD8 RID: 24536
+	// Token: 0x170009CE RID: 2510
+	// (get) Token: 0x06006061 RID: 24673
+	// (set) Token: 0x06006062 RID: 24674
 	PreferenceTracker preferences { get; set; }
 
-	// Token: 0x170009BC RID: 2492
-	// (get) Token: 0x06005FD9 RID: 24537
-	// (set) Token: 0x06005FDA RID: 24538
+	// Token: 0x170009CF RID: 2511
+	// (get) Token: 0x06006063 RID: 24675
+	// (set) Token: 0x06006064 RID: 24676
 	bool bTouched { get; set; }
 
-	// Token: 0x170009BD RID: 2493
-	// (get) Token: 0x06005FDB RID: 24539
-	// (set) Token: 0x06005FDC RID: 24540
+	// Token: 0x170009D0 RID: 2512
+	// (get) Token: 0x06006065 RID: 24677
+	// (set) Token: 0x06006066 RID: 24678
 	ulong worldTimeTouched { get; set; }
 
-	// Token: 0x170009BE RID: 2494
-	// (get) Token: 0x06005FDD RID: 24541
-	// (set) Token: 0x06005FDE RID: 24542
+	// Token: 0x170009D1 RID: 2513
+	// (get) Token: 0x06006067 RID: 24679
+	// (set) Token: 0x06006068 RID: 24680
 	bool bWasTouched { get; set; }
 
-	// Token: 0x170009BF RID: 2495
-	// (get) Token: 0x06005FDF RID: 24543
-	// (set) Token: 0x06005FE0 RID: 24544
+	// Token: 0x170009D2 RID: 2514
+	// (get) Token: 0x06006069 RID: 24681
+	// (set) Token: 0x0600606A RID: 24682
 	ItemStack[] items { get; set; }
 
-	// Token: 0x06005FE1 RID: 24545
+	// Token: 0x0600606B RID: 24683
 	Vector2i GetContainerSize();
 
-	// Token: 0x06005FE2 RID: 24546
+	// Token: 0x0600606C RID: 24684
 	void SetContainerSize(Vector2i _containerSize, bool _clearItems = true);
 
-	// Token: 0x06005FE3 RID: 24547
+	// Token: 0x0600606D RID: 24685
 	void UpdateSlot(int _idx, ItemStack _item);
 
-	// Token: 0x06005FE4 RID: 24548
+	// Token: 0x0600606E RID: 24686
 	void RemoveItem(ItemValue _itemValue);
 
-	// Token: 0x06005FE5 RID: 24549
+	// Token: 0x0600606F RID: 24687
 	int RemoveItems(ItemValue _itemValue, int _count);
 
-	// Token: 0x06005FE6 RID: 24550
+	// Token: 0x06006070 RID: 24688
 	bool IsEmpty();
 
-	// Token: 0x06005FE7 RID: 24551
+	// Token: 0x06006071 RID: 24689
 	void SetEmpty();
 
-	// Token: 0x06005FE8 RID: 24552
+	// Token: 0x06006072 RID: 24690
 	bool ShouldDestroyOnClose();
 
-	// Token: 0x170009C0 RID: 2496
-	// (get) Token: 0x06005FE9 RID: 24553
+	// Token: 0x170009D3 RID: 2515
+	// (get) Token: 0x06006073 RID: 24691
 	bool HasSlotLocksSupport { get; }
 
-	// Token: 0x170009C1 RID: 2497
-	// (get) Token: 0x06005FEA RID: 24554
-	// (set) Token: 0x06005FEB RID: 24555
+	// Token: 0x170009D4 RID: 2516
+	// (get) Token: 0x06006074 RID: 24692
+	// (set) Token: 0x06006075 RID: 24693
 	PackedBoolArray SlotLocks { get; set; }
 }

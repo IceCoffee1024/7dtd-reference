@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000A5B RID: 2651
+// Token: 0x02000A6C RID: 2668
 public static class ImposterSignFactory
 {
-	// Token: 0x06005051 RID: 20561 RVA: 0x001EB608 File Offset: 0x001E9808
+	// Token: 0x060050D7 RID: 20695 RVA: 0x001EE0A0 File Offset: 0x001EC2A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Transform GetPrefab(bool isDecal)
 	{
@@ -23,7 +23,7 @@ public static class ImposterSignFactory
 		return ImposterSignFactory.canvasPrefab;
 	}
 
-	// Token: 0x06005052 RID: 20562 RVA: 0x001EB660 File Offset: 0x001E9860
+	// Token: 0x060050D8 RID: 20696 RVA: 0x001EE0F8 File Offset: 0x001EC2F8
 	public static SignCanvas Create(GameObject _parent, ImposterCanvas _data)
 	{
 		ImposterSignFactory.<>c__DisplayClass5_0 CS$<>8__locals1 = new ImposterSignFactory.<>c__DisplayClass5_0();
@@ -52,7 +52,7 @@ public static class ImposterSignFactory
 		return CS$<>8__locals1.canvas;
 	}
 
-	// Token: 0x06005053 RID: 20563 RVA: 0x001EB806 File Offset: 0x001E9A06
+	// Token: 0x060050D9 RID: 20697 RVA: 0x001EE29E File Offset: 0x001EC49E
 	public static void Destroy(ImposterCanvas _data)
 	{
 		if (((_data != null) ? _data.Canvas : null) == null)
@@ -63,7 +63,7 @@ public static class ImposterSignFactory
 		_data.Canvas = null;
 	}
 
-	// Token: 0x06005054 RID: 20564 RVA: 0x001EB830 File Offset: 0x001E9A30
+	// Token: 0x060050DA RID: 20698 RVA: 0x001EE2C8 File Offset: 0x001EC4C8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector4 ComputeAspectST(float canvasAspect)
 	{
@@ -72,19 +72,19 @@ public static class ImposterSignFactory
 		return new Vector4(num, num2, -num * 0.5f, -num2 * 0.5f);
 	}
 
-	// Token: 0x04003D98 RID: 15768
+	// Token: 0x04003E29 RID: 15913
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string CanvasPrefabPath = "@:Entities/Crafting/sign_canvas_imposter_Prefab.prefab";
 
-	// Token: 0x04003D99 RID: 15769
+	// Token: 0x04003E2A RID: 15914
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string DecalPrefabPath = "@:Entities/Crafting/sign_decal_imposter_Prefab.prefab";
 
-	// Token: 0x04003D9A RID: 15770
+	// Token: 0x04003E2B RID: 15915
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Transform canvasPrefab;
 
-	// Token: 0x04003D9B RID: 15771
+	// Token: 0x04003E2C RID: 15916
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Transform decalPrefab;
 }

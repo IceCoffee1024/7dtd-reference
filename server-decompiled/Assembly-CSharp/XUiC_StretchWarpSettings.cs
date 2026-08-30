@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001030 RID: 4144
+// Token: 0x02001049 RID: 4169
 [Preserve]
 public class XUiC_StretchWarpSettings : XUiC_SignWarpSettings
 {
-	// Token: 0x17000F2D RID: 3885
-	// (get) Token: 0x0600836E RID: 33646 RVA: 0x00321611 File Offset: 0x0031F811
+	// Token: 0x17000F66 RID: 3942
+	// (get) Token: 0x06008460 RID: 33888 RVA: 0x00325E39 File Offset: 0x00324039
 	public override SignData.SignWarp CurrentWarp
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -17,7 +17,7 @@ public class XUiC_StretchWarpSettings : XUiC_SignWarpSettings
 		}
 	}
 
-	// Token: 0x0600836F RID: 33647 RVA: 0x0032161C File Offset: 0x0031F81C
+	// Token: 0x06008461 RID: 33889 RVA: 0x00325E44 File Offset: 0x00324044
 	public override void Init()
 	{
 		base.Init();
@@ -60,7 +60,7 @@ public class XUiC_StretchWarpSettings : XUiC_SignWarpSettings
 		base.SetDefaultValue("cbxExponent", stretchWarp.exponent);
 	}
 
-	// Token: 0x06008370 RID: 33648 RVA: 0x00321810 File Offset: 0x0031FA10
+	// Token: 0x06008462 RID: 33890 RVA: 0x00326038 File Offset: 0x00324238
 	public override void SetWarp(SignData.SignWarp warp)
 	{
 		this.currentWarp = warp as SignData.StretchWarp;
@@ -82,7 +82,7 @@ public class XUiC_StretchWarpSettings : XUiC_SignWarpSettings
 		this.cbxExponent.Value = (double)this.currentWarp.exponent;
 	}
 
-	// Token: 0x06008371 RID: 33649 RVA: 0x00321940 File Offset: 0x0031FB40
+	// Token: 0x06008463 RID: 33891 RVA: 0x00326168 File Offset: 0x00324368
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnValueChangedGeneric(string _changeDescription)
 	{
@@ -108,31 +108,31 @@ public class XUiC_StretchWarpSettings : XUiC_SignWarpSettings
 		onLayerSettingsChanged();
 	}
 
-	// Token: 0x0400615D RID: 24925
+	// Token: 0x04006224 RID: 25124
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignData.StretchWarp currentWarp;
 
-	// Token: 0x0400615E RID: 24926
+	// Token: 0x04006225 RID: 25125
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxOffsetX;
 
-	// Token: 0x0400615F RID: 24927
+	// Token: 0x04006226 RID: 25126
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxOffsetY;
 
-	// Token: 0x04006160 RID: 24928
+	// Token: 0x04006227 RID: 25127
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxRotation;
 
-	// Token: 0x04006161 RID: 24929
+	// Token: 0x04006228 RID: 25128
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxDistance;
 
-	// Token: 0x04006162 RID: 24930
+	// Token: 0x04006229 RID: 25129
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxWidth;
 
-	// Token: 0x04006163 RID: 24931
+	// Token: 0x0400622A RID: 25130
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxExponent;
 }

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200098C RID: 2444
+// Token: 0x0200099D RID: 2461
 [Preserve]
 public class ObjectivePOIBlockActivate : BaseObjective
 {
-	// Token: 0x17000794 RID: 1940
-	// (get) Token: 0x060047E2 RID: 18402 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x170007A6 RID: 1958
+	// (get) Token: 0x06004868 RID: 18536 RVA: 0x00020021 File Offset: 0x0001E221
 	public override BaseObjective.ObjectiveValueTypes ObjectiveValueType
 	{
 		get
@@ -17,8 +17,8 @@ public class ObjectivePOIBlockActivate : BaseObjective
 		}
 	}
 
-	// Token: 0x17000795 RID: 1941
-	// (get) Token: 0x060047E3 RID: 18403 RVA: 0x001BE8E8 File Offset: 0x001BCAE8
+	// Token: 0x170007A7 RID: 1959
+	// (get) Token: 0x06004869 RID: 18537 RVA: 0x001C10DC File Offset: 0x001BF2DC
 	public override bool UpdateUI
 	{
 		get
@@ -27,20 +27,20 @@ public class ObjectivePOIBlockActivate : BaseObjective
 		}
 	}
 
-	// Token: 0x060047E4 RID: 18404 RVA: 0x001C23C7 File Offset: 0x001C05C7
+	// Token: 0x0600486A RID: 18538 RVA: 0x001C4BBB File Offset: 0x001C2DBB
 	public override void SetupQuestTag()
 	{
 		base.OwnerQuest.AddQuestTag(QuestEventManager.restorePowerTag);
 	}
 
-	// Token: 0x060047E5 RID: 18405 RVA: 0x001C23D9 File Offset: 0x001C05D9
+	// Token: 0x0600486B RID: 18539 RVA: 0x001C4BCD File Offset: 0x001C2DCD
 	public override void SetupObjective()
 	{
 		this.keyword = Localization.Get("ObjectiveRestorePower_keyword", false, null);
 		base.OwnerQuest.AddQuestTag(QuestEventManager.restorePowerTag);
 	}
 
-	// Token: 0x060047E6 RID: 18406 RVA: 0x001C2400 File Offset: 0x001C0600
+	// Token: 0x0600486C RID: 18540 RVA: 0x001C4BF4 File Offset: 0x001C2DF4
 	public override void SetupDisplay()
 	{
 		base.Description = this.keyword;
@@ -52,7 +52,7 @@ public class ObjectivePOIBlockActivate : BaseObjective
 		this.StatusText = string.Format("{0}/{1}", base.CurrentValue, this.neededCount);
 	}
 
-	// Token: 0x060047E7 RID: 18407 RVA: 0x001C2454 File Offset: 0x001C0654
+	// Token: 0x0600486D RID: 18541 RVA: 0x001C4C48 File Offset: 0x001C2E48
 	public override void AddHooks()
 	{
 		QuestEventManager.Current.AddObjectiveToBeUpdated(this);
@@ -62,7 +62,7 @@ public class ObjectivePOIBlockActivate : BaseObjective
 		QuestEventManager.Current.BlockActivate += this.Current_BlockActivate;
 	}
 
-	// Token: 0x060047E8 RID: 18408 RVA: 0x001C24C4 File Offset: 0x001C06C4
+	// Token: 0x0600486E RID: 18542 RVA: 0x001C4CB8 File Offset: 0x001C2EB8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_BlockDestroy(Block block, Vector3i blockPos)
 	{
@@ -77,7 +77,7 @@ public class ObjectivePOIBlockActivate : BaseObjective
 		base.OwnerQuest.CloseQuest(Quest.QuestState.Failed, null);
 	}
 
-	// Token: 0x060047E9 RID: 18409 RVA: 0x001C24EC File Offset: 0x001C06EC
+	// Token: 0x0600486F RID: 18543 RVA: 0x001C4CE0 File Offset: 0x001C2EE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Current_BlockActivate(string blockname, Vector3i blockPos)
 	{
@@ -104,7 +104,7 @@ public class ObjectivePOIBlockActivate : BaseObjective
 		}
 	}
 
-	// Token: 0x060047EA RID: 18410 RVA: 0x001C25AC File Offset: 0x001C07AC
+	// Token: 0x06004870 RID: 18544 RVA: 0x001C4DA0 File Offset: 0x001C2FA0
 	public void AddActivatedBlock(Vector3i blockPos)
 	{
 		NavObjectManager.Instance.UnRegisterNavObjectByPosition(blockPos.ToVector3() + Vector3.one * 0.5f, this.NavObjectName);
@@ -113,7 +113,7 @@ public class ObjectivePOIBlockActivate : BaseObjective
 		this.activateList.Remove(blockPos);
 	}
 
-	// Token: 0x060047EB RID: 18411 RVA: 0x001C2604 File Offset: 0x001C0804
+	// Token: 0x06004871 RID: 18545 RVA: 0x001C4DF8 File Offset: 0x001C2FF8
 	public override void RemoveHooks()
 	{
 		QuestEventManager questEventManager = QuestEventManager.Current;
@@ -127,7 +127,7 @@ public class ObjectivePOIBlockActivate : BaseObjective
 		}
 	}
 
-	// Token: 0x060047EC RID: 18412 RVA: 0x001C2668 File Offset: 0x001C0868
+	// Token: 0x06004872 RID: 18546 RVA: 0x001C4E5C File Offset: 0x001C305C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ClearNavObjects()
 	{
@@ -142,7 +142,7 @@ public class ObjectivePOIBlockActivate : BaseObjective
 		this.activateList.Clear();
 	}
 
-	// Token: 0x060047ED RID: 18413 RVA: 0x001C26D8 File Offset: 0x001C08D8
+	// Token: 0x06004873 RID: 18547 RVA: 0x001C4ECC File Offset: 0x001C30CC
 	public override void Refresh()
 	{
 		if (this.neededCount == -1)
@@ -173,7 +173,7 @@ public class ObjectivePOIBlockActivate : BaseObjective
 		}
 	}
 
-	// Token: 0x060047EE RID: 18414 RVA: 0x001C27CC File Offset: 0x001C09CC
+	// Token: 0x06004874 RID: 18548 RVA: 0x001C4FC0 File Offset: 0x001C31C0
 	public override void Update(float deltaTime)
 	{
 		if (Time.time > this.updateTime)
@@ -209,7 +209,7 @@ public class ObjectivePOIBlockActivate : BaseObjective
 		}
 	}
 
-	// Token: 0x060047EF RID: 18415 RVA: 0x001C2934 File Offset: 0x001C0B34
+	// Token: 0x06004875 RID: 18549 RVA: 0x001C5128 File Offset: 0x001C3328
 	public override bool SetupActivationList(Vector3 prefabPos, List<Vector3i> newActivateList)
 	{
 		Vector3 zero = Vector3.zero;
@@ -233,7 +233,7 @@ public class ObjectivePOIBlockActivate : BaseObjective
 		return true;
 	}
 
-	// Token: 0x060047F0 RID: 18416 RVA: 0x001C29FC File Offset: 0x001C0BFC
+	// Token: 0x06004876 RID: 18550 RVA: 0x001C51F0 File Offset: 0x001C33F0
 	public override BaseObjective Clone()
 	{
 		ObjectivePOIBlockActivate objectivePOIBlockActivate = new ObjectivePOIBlockActivate();
@@ -244,7 +244,7 @@ public class ObjectivePOIBlockActivate : BaseObjective
 		return objectivePOIBlockActivate;
 	}
 
-	// Token: 0x060047F1 RID: 18417 RVA: 0x001C2A3C File Offset: 0x001C0C3C
+	// Token: 0x06004877 RID: 18551 RVA: 0x001C5230 File Offset: 0x001C3430
 	public override void ParseProperties(DynamicProperties properties)
 	{
 		base.ParseProperties(properties);
@@ -255,29 +255,29 @@ public class ObjectivePOIBlockActivate : BaseObjective
 		properties.ParseString(ObjectivePOIBlockActivate.PropEventComplete, ref this.completeEvent);
 	}
 
-	// Token: 0x0400392D RID: 14637
+	// Token: 0x040039BE RID: 14782
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string localizedName = "";
 
-	// Token: 0x0400392E RID: 14638
+	// Token: 0x040039BF RID: 14783
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int neededCount = -1;
 
-	// Token: 0x0400392F RID: 14639
+	// Token: 0x040039C0 RID: 14784
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string completeEvent = "";
 
-	// Token: 0x04003930 RID: 14640
+	// Token: 0x040039C1 RID: 14785
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Vector3i> activateList;
 
-	// Token: 0x04003931 RID: 14641
+	// Token: 0x040039C2 RID: 14786
 	public static string PropBlockName = "block_index";
 
-	// Token: 0x04003932 RID: 14642
+	// Token: 0x040039C3 RID: 14787
 	public static string PropEventComplete = "complete_event";
 
-	// Token: 0x04003933 RID: 14643
+	// Token: 0x040039C4 RID: 14788
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new float updateTime;
 }

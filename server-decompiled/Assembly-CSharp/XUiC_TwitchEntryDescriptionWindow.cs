@@ -5,13 +5,13 @@ using Platform;
 using Twitch;
 using UnityEngine.Scripting;
 
-// Token: 0x02001084 RID: 4228
+// Token: 0x0200109D RID: 4253
 [Preserve]
 public class XUiC_TwitchEntryDescriptionWindow : XUiController
 {
-	// Token: 0x17000F93 RID: 3987
-	// (get) Token: 0x06008669 RID: 34409 RVA: 0x00335156 File Offset: 0x00333356
-	// (set) Token: 0x0600866A RID: 34410 RVA: 0x0033515E File Offset: 0x0033335E
+	// Token: 0x17000FCC RID: 4044
+	// (get) Token: 0x0600875B RID: 34651 RVA: 0x0033997E File Offset: 0x00337B7E
+	// (set) Token: 0x0600875C RID: 34652 RVA: 0x00339986 File Offset: 0x00337B86
 	public TwitchAction CurrentTwitchActionEntry
 	{
 		get
@@ -25,9 +25,9 @@ public class XUiC_TwitchEntryDescriptionWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000F94 RID: 3988
-	// (get) Token: 0x0600866B RID: 34411 RVA: 0x0033516D File Offset: 0x0033336D
-	// (set) Token: 0x0600866C RID: 34412 RVA: 0x00335175 File Offset: 0x00333375
+	// Token: 0x17000FCD RID: 4045
+	// (get) Token: 0x0600875D RID: 34653 RVA: 0x00339995 File Offset: 0x00337B95
+	// (set) Token: 0x0600875E RID: 34654 RVA: 0x0033999D File Offset: 0x00337B9D
 	public TwitchVote CurrentTwitchVoteEntry
 	{
 		get
@@ -41,9 +41,9 @@ public class XUiC_TwitchEntryDescriptionWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000F95 RID: 3989
-	// (get) Token: 0x0600866D RID: 34413 RVA: 0x00335184 File Offset: 0x00333384
-	// (set) Token: 0x0600866E RID: 34414 RVA: 0x0033518C File Offset: 0x0033338C
+	// Token: 0x17000FCE RID: 4046
+	// (get) Token: 0x0600875F RID: 34655 RVA: 0x003399AC File Offset: 0x00337BAC
+	// (set) Token: 0x06008760 RID: 34656 RVA: 0x003399B4 File Offset: 0x00337BB4
 	public TwitchActionHistoryEntry CurrentTwitchActionHistoryEntry
 	{
 		get
@@ -57,7 +57,7 @@ public class XUiC_TwitchEntryDescriptionWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600866F RID: 34415 RVA: 0x0033519C File Offset: 0x0033339C
+	// Token: 0x06008761 RID: 34657 RVA: 0x003399C4 File Offset: 0x00337BC4
 	public override void Init()
 	{
 		base.Init();
@@ -129,7 +129,7 @@ public class XUiC_TwitchEntryDescriptionWindow : XUiController
 		base.registerForInputStyleChanges();
 	}
 
-	// Token: 0x06008670 RID: 34416 RVA: 0x00335710 File Offset: 0x00333910
+	// Token: 0x06008762 RID: 34658 RVA: 0x00339F38 File Offset: 0x00338138
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -189,7 +189,7 @@ public class XUiC_TwitchEntryDescriptionWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008671 RID: 34417 RVA: 0x003358AA File Offset: 0x00333AAA
+	// Token: 0x06008763 RID: 34659 RVA: 0x0033A0D2 File Offset: 0x003382D2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnDecrease_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -200,7 +200,7 @@ public class XUiC_TwitchEntryDescriptionWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008672 RID: 34418 RVA: 0x003358C5 File Offset: 0x00333AC5
+	// Token: 0x06008764 RID: 34660 RVA: 0x0033A0ED File Offset: 0x003382ED
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnIncrease_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -211,7 +211,7 @@ public class XUiC_TwitchEntryDescriptionWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008673 RID: 34419 RVA: 0x003358E0 File Offset: 0x00333AE0
+	// Token: 0x06008765 RID: 34661 RVA: 0x0033A108 File Offset: 0x00338308
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RectStat_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -223,7 +223,7 @@ public class XUiC_TwitchEntryDescriptionWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008674 RID: 34420 RVA: 0x00335903 File Offset: 0x00333B03
+	// Token: 0x06008766 RID: 34662 RVA: 0x0033A12B File Offset: 0x0033832B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnRefund_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -234,7 +234,7 @@ public class XUiC_TwitchEntryDescriptionWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008675 RID: 34421 RVA: 0x0033591E File Offset: 0x00333B1E
+	// Token: 0x06008767 RID: 34663 RVA: 0x0033A146 File Offset: 0x00338346
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnRetry_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -245,7 +245,7 @@ public class XUiC_TwitchEntryDescriptionWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008676 RID: 34422 RVA: 0x0033593C File Offset: 0x00333B3C
+	// Token: 0x06008768 RID: 34664 RVA: 0x0033A164 File Offset: 0x00338364
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnEnable_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -293,7 +293,7 @@ public class XUiC_TwitchEntryDescriptionWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008677 RID: 34423 RVA: 0x00335AB0 File Offset: 0x00333CB0
+	// Token: 0x06008769 RID: 34665 RVA: 0x0033A2D8 File Offset: 0x003384D8
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -302,7 +302,7 @@ public class XUiC_TwitchEntryDescriptionWindow : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06008678 RID: 34424 RVA: 0x00335AE0 File Offset: 0x00333CE0
+	// Token: 0x0600876A RID: 34666 RVA: 0x0033A308 File Offset: 0x00338508
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -311,14 +311,14 @@ public class XUiC_TwitchEntryDescriptionWindow : XUiController
 		TwitchManager.Current.ResetPrices();
 	}
 
-	// Token: 0x06008679 RID: 34425 RVA: 0x0008AB7B File Offset: 0x00088D7B
+	// Token: 0x0600876B RID: 34667 RVA: 0x0008B2BB File Offset: 0x000894BB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Stats_StatsChanged()
 	{
 		base.RefreshBindings();
 	}
 
-	// Token: 0x0600867A RID: 34426 RVA: 0x00335B14 File Offset: 0x00333D14
+	// Token: 0x0600876C RID: 34668 RVA: 0x0033A33C File Offset: 0x0033853C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -1195,7 +1195,7 @@ public class XUiC_TwitchEntryDescriptionWindow : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x0600867B RID: 34427 RVA: 0x00337254 File Offset: 0x00335454
+	// Token: 0x0600876D RID: 34669 RVA: 0x0033BA7C File Offset: 0x00339C7C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string GetHistoryPointCost()
 	{
@@ -1216,7 +1216,7 @@ public class XUiC_TwitchEntryDescriptionWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600867C RID: 34428 RVA: 0x0033730C File Offset: 0x0033550C
+	// Token: 0x0600876E RID: 34670 RVA: 0x0033BB34 File Offset: 0x00339D34
 	public void SetTwitchAction(XUiC_TwitchActionEntry twitchInfoEntry)
 	{
 		this.actionEntry = twitchInfoEntry;
@@ -1232,7 +1232,7 @@ public class XUiC_TwitchEntryDescriptionWindow : XUiController
 		this.CurrentTwitchActionEntry = null;
 	}
 
-	// Token: 0x0600867D RID: 34429 RVA: 0x00337360 File Offset: 0x00335560
+	// Token: 0x0600876F RID: 34671 RVA: 0x0033BB88 File Offset: 0x00339D88
 	public void SetTwitchVote(XUiC_TwitchVoteInfoEntry twitchInfoEntry)
 	{
 		this.voteEntry = twitchInfoEntry;
@@ -1248,7 +1248,7 @@ public class XUiC_TwitchEntryDescriptionWindow : XUiController
 		this.CurrentTwitchVoteEntry = null;
 	}
 
-	// Token: 0x0600867E RID: 34430 RVA: 0x003373B4 File Offset: 0x003355B4
+	// Token: 0x06008770 RID: 34672 RVA: 0x0033BBDC File Offset: 0x00339DDC
 	public void SetTwitchHistory(XUiC_TwitchActionHistoryEntry twitchInfoEntry)
 	{
 		this.historyEntry = twitchInfoEntry;
@@ -1264,7 +1264,7 @@ public class XUiC_TwitchEntryDescriptionWindow : XUiController
 		this.CurrentTwitchActionHistoryEntry = null;
 	}
 
-	// Token: 0x0600867F RID: 34431 RVA: 0x00337405 File Offset: 0x00335605
+	// Token: 0x06008771 RID: 34673 RVA: 0x0033BC2D File Offset: 0x00339E2D
 	public void ClearEntries()
 	{
 		this.actionEntry = null;
@@ -1275,254 +1275,254 @@ public class XUiC_TwitchEntryDescriptionWindow : XUiController
 		this.CurrentTwitchActionHistoryEntry = null;
 	}
 
-	// Token: 0x040063DA RID: 25562
+	// Token: 0x040064A1 RID: 25761
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TwitchActionEntry actionEntry;
 
-	// Token: 0x040063DB RID: 25563
+	// Token: 0x040064A2 RID: 25762
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TwitchVoteInfoEntry voteEntry;
 
-	// Token: 0x040063DC RID: 25564
+	// Token: 0x040064A3 RID: 25763
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TwitchActionHistoryEntry historyEntry;
 
-	// Token: 0x040063DD RID: 25565
+	// Token: 0x040064A4 RID: 25764
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button btnEnable;
 
-	// Token: 0x040063DE RID: 25566
+	// Token: 0x040064A5 RID: 25765
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Button btnRefund;
 
-	// Token: 0x040063DF RID: 25567
+	// Token: 0x040064A6 RID: 25766
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnRetry;
 
-	// Token: 0x040063E0 RID: 25568
+	// Token: 0x040064A7 RID: 25767
 	public XUiC_TwitchEntryListWindow OwnerList;
 
-	// Token: 0x040063E1 RID: 25569
+	// Token: 0x040064A8 RID: 25768
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TwitchAction currentTwitchActionEntry;
 
-	// Token: 0x040063E2 RID: 25570
+	// Token: 0x040064A9 RID: 25769
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TwitchVote currentTwitchVoteEntry;
 
-	// Token: 0x040063E3 RID: 25571
+	// Token: 0x040064AA RID: 25770
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TwitchActionHistoryEntry currentTwitchActionHistoryEntry;
 
-	// Token: 0x040063E4 RID: 25572
+	// Token: 0x040064AB RID: 25771
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblStartGamestage;
 
-	// Token: 0x040063E5 RID: 25573
+	// Token: 0x040064AC RID: 25772
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblEndGamestage;
 
-	// Token: 0x040063E6 RID: 25574
+	// Token: 0x040064AD RID: 25773
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblPointCost;
 
-	// Token: 0x040063E7 RID: 25575
+	// Token: 0x040064AE RID: 25774
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblCooldown;
 
-	// Token: 0x040063E8 RID: 25576
+	// Token: 0x040064AF RID: 25775
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblRandomDaily;
 
-	// Token: 0x040063E9 RID: 25577
+	// Token: 0x040064B0 RID: 25776
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblIsPositive;
 
-	// Token: 0x040063EA RID: 25578
+	// Token: 0x040064B1 RID: 25777
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblPointType;
 
-	// Token: 0x040063EB RID: 25579
+	// Token: 0x040064B2 RID: 25778
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblEnableAction;
 
-	// Token: 0x040063EC RID: 25580
+	// Token: 0x040064B3 RID: 25779
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblDisableAction;
 
-	// Token: 0x040063ED RID: 25581
+	// Token: 0x040064B4 RID: 25780
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblEnableVote;
 
-	// Token: 0x040063EE RID: 25582
+	// Token: 0x040064B5 RID: 25781
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblDisableVote;
 
-	// Token: 0x040063EF RID: 25583
+	// Token: 0x040064B6 RID: 25782
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblActionEmpty;
 
-	// Token: 0x040063F0 RID: 25584
+	// Token: 0x040064B7 RID: 25783
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblVoteEmpty;
 
-	// Token: 0x040063F1 RID: 25585
+	// Token: 0x040064B8 RID: 25784
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblActionHistoryEmpty;
 
-	// Token: 0x040063F2 RID: 25586
+	// Token: 0x040064B9 RID: 25785
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblLeaderboardEmpty;
 
-	// Token: 0x040063F3 RID: 25587
+	// Token: 0x040064BA RID: 25786
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblHistoryTargetTitle;
 
-	// Token: 0x040063F4 RID: 25588
+	// Token: 0x040064BB RID: 25787
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblHistoryStateTitle;
 
-	// Token: 0x040063F5 RID: 25589
+	// Token: 0x040064BC RID: 25788
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblHistoryTimeStampTitle;
 
-	// Token: 0x040063F6 RID: 25590
+	// Token: 0x040064BD RID: 25789
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblRefund;
 
-	// Token: 0x040063F7 RID: 25591
+	// Token: 0x040064BE RID: 25790
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblNoRefund;
 
-	// Token: 0x040063F8 RID: 25592
+	// Token: 0x040064BF RID: 25791
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblRetry;
 
-	// Token: 0x040063F9 RID: 25593
+	// Token: 0x040064C0 RID: 25792
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblNoRetry;
 
-	// Token: 0x040063FA RID: 25594
+	// Token: 0x040064C1 RID: 25793
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblRetryActionUnavailable;
 
-	// Token: 0x040063FB RID: 25595
+	// Token: 0x040064C2 RID: 25794
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblLeaderboardStats;
 
-	// Token: 0x040063FC RID: 25596
+	// Token: 0x040064C3 RID: 25795
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblShowBitTotal;
 
-	// Token: 0x040063FD RID: 25597
+	// Token: 0x040064C4 RID: 25796
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblDiscountCost;
 
-	// Token: 0x040063FE RID: 25598
+	// Token: 0x040064C5 RID: 25797
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblIncreasePrice;
 
-	// Token: 0x040063FF RID: 25599
+	// Token: 0x040064C6 RID: 25798
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblDecreasePrice;
 
-	// Token: 0x04006400 RID: 25600
+	// Token: 0x040064C7 RID: 25799
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblEnableAction_Controller;
 
-	// Token: 0x04006401 RID: 25601
+	// Token: 0x040064C8 RID: 25800
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblDisableAction_Controller;
 
-	// Token: 0x04006402 RID: 25602
+	// Token: 0x040064C9 RID: 25801
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblEnableVote_Controller;
 
-	// Token: 0x04006403 RID: 25603
+	// Token: 0x040064CA RID: 25802
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblDisableVote_Controller;
 
-	// Token: 0x04006404 RID: 25604
+	// Token: 0x040064CB RID: 25803
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblIncreasePrice_Controller;
 
-	// Token: 0x04006405 RID: 25605
+	// Token: 0x040064CC RID: 25804
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblDecreasePrice_Controller;
 
-	// Token: 0x04006406 RID: 25606
+	// Token: 0x040064CD RID: 25805
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblTopKiller;
 
-	// Token: 0x04006407 RID: 25607
+	// Token: 0x040064CE RID: 25806
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblTopGood;
 
-	// Token: 0x04006408 RID: 25608
+	// Token: 0x040064CF RID: 25807
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblTopEvil;
 
-	// Token: 0x04006409 RID: 25609
+	// Token: 0x040064D0 RID: 25808
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblCurrentGood;
 
-	// Token: 0x0400640A RID: 25610
+	// Token: 0x040064D1 RID: 25809
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblMostBits;
 
-	// Token: 0x0400640B RID: 25611
+	// Token: 0x040064D2 RID: 25810
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblTotalBits;
 
-	// Token: 0x0400640C RID: 25612
+	// Token: 0x040064D3 RID: 25811
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblTotalBad;
 
-	// Token: 0x0400640D RID: 25613
+	// Token: 0x040064D4 RID: 25812
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblTotalGood;
 
-	// Token: 0x0400640E RID: 25614
+	// Token: 0x040064D5 RID: 25813
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblTotalActions;
 
-	// Token: 0x0400640F RID: 25615
+	// Token: 0x040064D6 RID: 25814
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblLargestPimpPot;
 
-	// Token: 0x04006410 RID: 25616
+	// Token: 0x040064D7 RID: 25815
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblTrue;
 
-	// Token: 0x04006411 RID: 25617
+	// Token: 0x040064D8 RID: 25816
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblFalse;
 
-	// Token: 0x04006412 RID: 25618
+	// Token: 0x040064D9 RID: 25817
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblPointsPP;
 
-	// Token: 0x04006413 RID: 25619
+	// Token: 0x040064DA RID: 25818
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblPointsSP;
 
-	// Token: 0x04006414 RID: 25620
+	// Token: 0x040064DB RID: 25819
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lblPointsBits;
 
-	// Token: 0x04006415 RID: 25621
+	// Token: 0x040064DC RID: 25820
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TwitchLeaderboardStats stats;
 
-	// Token: 0x04006416 RID: 25622
+	// Token: 0x040064DD RID: 25821
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool showBitTotal;
 
-	// Token: 0x04006417 RID: 25623
+	// Token: 0x040064DE RID: 25822
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly string DayTimeFormatString = Localization.Get("xuiDay", false, null) + "{0}, {1:00}:{2:00}";
 
-	// Token: 0x04006418 RID: 25624
+	// Token: 0x040064DF RID: 25823
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<ulong> daytimeFormatter = new CachedStringFormatter<ulong>((ulong _worldTime) => ValueDisplayFormatters.WorldTime(_worldTime, XUiC_TwitchEntryDescriptionWindow.DayTimeFormatString));
 }

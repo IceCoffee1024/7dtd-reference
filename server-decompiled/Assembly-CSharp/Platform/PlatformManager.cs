@@ -6,56 +6,56 @@ using UnityEngine;
 
 namespace Platform
 {
-	// Token: 0x02001BAB RID: 7083
+	// Token: 0x02001BD2 RID: 7122
 	public static class PlatformManager
 	{
-		// Token: 0x170019C8 RID: 6600
-		// (get) Token: 0x0600D261 RID: 53857 RVA: 0x004C2428 File Offset: 0x004C0628
-		// (set) Token: 0x0600D262 RID: 53858 RVA: 0x004C242F File Offset: 0x004C062F
+		// Token: 0x17001A3A RID: 6714
+		// (get) Token: 0x0600D3EF RID: 54255 RVA: 0x004C881C File Offset: 0x004C6A1C
+		// (set) Token: 0x0600D3F0 RID: 54256 RVA: 0x004C8823 File Offset: 0x004C6A23
 		public static EDeviceType DeviceType
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x170019C9 RID: 6601
-		// (get) Token: 0x0600D263 RID: 53859 RVA: 0x004C2437 File Offset: 0x004C0637
-		// (set) Token: 0x0600D264 RID: 53860 RVA: 0x004C243E File Offset: 0x004C063E
+		// Token: 0x17001A3B RID: 6715
+		// (get) Token: 0x0600D3F1 RID: 54257 RVA: 0x004C882B File Offset: 0x004C6A2B
+		// (set) Token: 0x0600D3F2 RID: 54258 RVA: 0x004C8832 File Offset: 0x004C6A32
 		public static IPlatform MultiPlatform
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x170019CA RID: 6602
-		// (get) Token: 0x0600D265 RID: 53861 RVA: 0x004C2446 File Offset: 0x004C0646
-		// (set) Token: 0x0600D266 RID: 53862 RVA: 0x004C244D File Offset: 0x004C064D
+		// Token: 0x17001A3C RID: 6716
+		// (get) Token: 0x0600D3F3 RID: 54259 RVA: 0x004C883A File Offset: 0x004C6A3A
+		// (set) Token: 0x0600D3F4 RID: 54260 RVA: 0x004C8841 File Offset: 0x004C6A41
 		public static IPlatform NativePlatform
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x170019CB RID: 6603
-		// (get) Token: 0x0600D267 RID: 53863 RVA: 0x004C2455 File Offset: 0x004C0655
-		// (set) Token: 0x0600D268 RID: 53864 RVA: 0x004C245C File Offset: 0x004C065C
+		// Token: 0x17001A3D RID: 6717
+		// (get) Token: 0x0600D3F5 RID: 54261 RVA: 0x004C8849 File Offset: 0x004C6A49
+		// (set) Token: 0x0600D3F6 RID: 54262 RVA: 0x004C8850 File Offset: 0x004C6A50
 		public static IPlatform CrossplatformPlatform
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x170019CC RID: 6604
-		// (get) Token: 0x0600D269 RID: 53865 RVA: 0x004C2464 File Offset: 0x004C0664
-		// (set) Token: 0x0600D26A RID: 53866 RVA: 0x004C246B File Offset: 0x004C066B
+		// Token: 0x17001A3E RID: 6718
+		// (get) Token: 0x0600D3F7 RID: 54263 RVA: 0x004C8858 File Offset: 0x004C6A58
+		// (set) Token: 0x0600D3F8 RID: 54264 RVA: 0x004C885F File Offset: 0x004C6A5F
 		public static ClientLobbyManager ClientLobbyManager
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x170019CD RID: 6605
-		// (get) Token: 0x0600D26B RID: 53867 RVA: 0x004C2473 File Offset: 0x004C0673
+		// Token: 0x17001A3F RID: 6719
+		// (get) Token: 0x0600D3F9 RID: 54265 RVA: 0x004C8867 File Offset: 0x004C6A67
 		public static PlatformUserIdentifierAbs InternalLocalUserIdentifier
 		{
 			get
@@ -75,7 +75,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600D26C RID: 53868 RVA: 0x004C24A8 File Offset: 0x004C06A8
+		// Token: 0x0600D3FA RID: 54266 RVA: 0x004C889C File Offset: 0x004C6A9C
 		public static bool Init()
 		{
 			if (PlatformManager.initialized)
@@ -171,7 +171,7 @@ namespace Platform
 			return true;
 		}
 
-		// Token: 0x0600D26D RID: 53869 RVA: 0x004C27B0 File Offset: 0x004C09B0
+		// Token: 0x0600D3FB RID: 54267 RVA: 0x004C8BA4 File Offset: 0x004C6DA4
 		public static void Update()
 		{
 			IPlatform nativePlatform = PlatformManager.NativePlatform;
@@ -199,7 +199,7 @@ namespace Platform
 			PlatformUserManager.Update();
 		}
 
-		// Token: 0x0600D26E RID: 53870 RVA: 0x004C284C File Offset: 0x004C0A4C
+		// Token: 0x0600D3FC RID: 54268 RVA: 0x004C8C40 File Offset: 0x004C6E40
 		public static void LateUpdate()
 		{
 			IPlatform nativePlatform = PlatformManager.NativePlatform;
@@ -226,7 +226,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600D26F RID: 53871 RVA: 0x004C28E4 File Offset: 0x004C0AE4
+		// Token: 0x0600D3FD RID: 54269 RVA: 0x004C8CD8 File Offset: 0x004C6ED8
 		public static void Destroy()
 		{
 			PlatformUserManager.Destroy();
@@ -258,19 +258,19 @@ namespace Platform
 			PlatformManager.NativePlatform = null;
 		}
 
-		// Token: 0x0600D270 RID: 53872 RVA: 0x004C299C File Offset: 0x004C0B9C
+		// Token: 0x0600D3FE RID: 54270 RVA: 0x004C8D90 File Offset: 0x004C6F90
 		public static string PlatformStringFromEnum(EPlatformIdentifier _platformIdentifier)
 		{
 			return _platformIdentifier.ToStringCached<EPlatformIdentifier>();
 		}
 
-		// Token: 0x0600D271 RID: 53873 RVA: 0x004C29A4 File Offset: 0x004C0BA4
+		// Token: 0x0600D3FF RID: 54271 RVA: 0x004C8D98 File Offset: 0x004C6F98
 		public static bool TryPlatformIdentifierFromString(string _platformName, out EPlatformIdentifier _platformIdentifier)
 		{
 			return EnumUtils.TryParse<EPlatformIdentifier>(_platformName, out _platformIdentifier, true);
 		}
 
-		// Token: 0x0600D272 RID: 53874 RVA: 0x004C29B0 File Offset: 0x004C0BB0
+		// Token: 0x0600D400 RID: 54272 RVA: 0x004C8DA4 File Offset: 0x004C6FA4
 		public static IPlatform InstanceForPlatformIdentifier(EPlatformIdentifier _platformIdentifier)
 		{
 			IPlatform platform;
@@ -281,19 +281,19 @@ namespace Platform
 			return platform;
 		}
 
-		// Token: 0x0600D273 RID: 53875 RVA: 0x004C29CF File Offset: 0x004C0BCF
+		// Token: 0x0600D401 RID: 54273 RVA: 0x004C8DC3 File Offset: 0x004C6FC3
 		public static bool IsPlatformLoaded(EPlatformIdentifier _platformIdentifier)
 		{
 			return PlatformManager.serverPlatforms.ContainsKey(_platformIdentifier);
 		}
 
-		// Token: 0x0600D274 RID: 53876 RVA: 0x004C29DC File Offset: 0x004C0BDC
+		// Token: 0x0600D402 RID: 54274 RVA: 0x004C8DD0 File Offset: 0x004C6FD0
 		public static string GetPlatformDisplayName(EPlatformIdentifier _platformIdentifier)
 		{
 			return Localization.Get("platformName" + _platformIdentifier.ToStringCached<EPlatformIdentifier>(), false, null);
 		}
 
-		// Token: 0x0600D275 RID: 53877 RVA: 0x004C29F8 File Offset: 0x004C0BF8
+		// Token: 0x0600D403 RID: 54275 RVA: 0x004C8DEC File Offset: 0x004C6FEC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool initPlatformFromIdentifier(EPlatformIdentifier _platformIdentifier, string _logName, out IPlatform _target)
 		{
@@ -321,7 +321,7 @@ namespace Platform
 			return true;
 		}
 
-		// Token: 0x0600D276 RID: 53878 RVA: 0x004C2AA0 File Offset: 0x004C0CA0
+		// Token: 0x0600D404 RID: 54276 RVA: 0x004C8E94 File Offset: 0x004C7094
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void FindSupportedPlatforms()
 		{
@@ -394,7 +394,7 @@ namespace Platform
 			}, false);
 		}
 
-		// Token: 0x0600D277 RID: 53879 RVA: 0x004C2B2C File Offset: 0x004C0D2C
+		// Token: 0x0600D405 RID: 54277 RVA: 0x004C8F20 File Offset: 0x004C7120
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void GetCommandLineOverrides(PlatformConfiguration _platforms)
 		{
@@ -415,7 +415,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600D278 RID: 53880 RVA: 0x004C2B9C File Offset: 0x004C0D9C
+		// Token: 0x0600D406 RID: 54278 RVA: 0x004C8F90 File Offset: 0x004C7190
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static PlatformConfiguration DetectPlatform()
 		{
@@ -429,29 +429,29 @@ namespace Platform
 			return platformConfiguration2;
 		}
 
-		// Token: 0x0400A01C RID: 40988
+		// Token: 0x0400A14D RID: 41293
 		public const string PlatformConfigFileName = "platform.cfg";
 
-		// Token: 0x0400A022 RID: 40994
+		// Token: 0x0400A153 RID: 41299
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Dictionary<EPlatformIdentifier, IPlatform> serverPlatforms = new EnumDictionary<EPlatformIdentifier, IPlatform>();
 
-		// Token: 0x0400A023 RID: 40995
+		// Token: 0x0400A154 RID: 41300
 		public static readonly ReadOnlyDictionary<EPlatformIdentifier, IPlatform> ServerPlatforms = new ReadOnlyDictionary<EPlatformIdentifier, IPlatform>(PlatformManager.serverPlatforms);
 
-		// Token: 0x0400A024 RID: 40996
+		// Token: 0x0400A155 RID: 41301
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool initialized;
 
-		// Token: 0x0400A025 RID: 40997
+		// Token: 0x0400A156 RID: 41302
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly Dictionary<EPlatformIdentifier, Type> supportedPlatforms = new EnumDictionary<EPlatformIdentifier, Type>();
 
-		// Token: 0x0400A026 RID: 40998
+		// Token: 0x0400A157 RID: 41303
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static string supportedPlatformsString;
 
-		// Token: 0x0400A027 RID: 40999
+		// Token: 0x0400A158 RID: 41304
 		public static readonly Dictionary<EPlatformIdentifier, AbsUserIdentifierFactory> UserIdentifierFactories = new EnumDictionary<EPlatformIdentifier, AbsUserIdentifierFactory>();
 	}
 }

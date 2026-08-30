@@ -1,26 +1,26 @@
 ﻿using System;
 
-// Token: 0x02000441 RID: 1089
+// Token: 0x02000445 RID: 1093
 public readonly struct AIFocus<T> where T : struct, IFocusTarget
 {
-	// Token: 0x06002144 RID: 8516 RVA: 0x000C8A47 File Offset: 0x000C6C47
+	// Token: 0x06002161 RID: 8545 RVA: 0x000C9253 File Offset: 0x000C7453
 	public AIFocus(bool thisIsDumb)
 	{
 		this.FocusTargets = new T[4];
 	}
 
-	// Token: 0x06002145 RID: 8517 RVA: 0x000C8A55 File Offset: 0x000C6C55
+	// Token: 0x06002162 RID: 8546 RVA: 0x000C9261 File Offset: 0x000C7461
 	public void SetFocus(FocusPriority priority, T newTarget)
 	{
 		this.FocusTargets[(int)priority] = newTarget;
 	}
 
-	// Token: 0x06002146 RID: 8518 RVA: 0x000C8A64 File Offset: 0x000C6C64
+	// Token: 0x06002163 RID: 8547 RVA: 0x000C9270 File Offset: 0x000C7470
 	public void ClearFocus(FocusPriority priority)
 	{
 		this.FocusTargets[(int)priority] = new T();
 	}
 
-	// Token: 0x040016E5 RID: 5861
+	// Token: 0x040016FA RID: 5882
 	public readonly T[] FocusTargets;
 }

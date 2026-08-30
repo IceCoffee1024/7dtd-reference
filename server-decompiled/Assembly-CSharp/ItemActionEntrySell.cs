@@ -3,11 +3,11 @@ using Audio;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D4F RID: 3407
+// Token: 0x02000D62 RID: 3426
 [Preserve]
 public class ItemActionEntrySell : BaseItemActionEntry
 {
-	// Token: 0x06006799 RID: 26521 RVA: 0x0028EC00 File Offset: 0x0028CE00
+	// Token: 0x06006828 RID: 26664 RVA: 0x00291B9C File Offset: 0x0028FD9C
 	public ItemActionEntrySell(XUiController _controller)
 		: base(_controller, "OVERRIDDEN BELOW", "OVERRIDDEN BELOW", BaseItemActionEntry.GamepadShortCut.None, "", "ui/ui_denied")
 	{
@@ -33,7 +33,7 @@ public class ItemActionEntrySell : BaseItemActionEntry
 		base.IconName = "ui_game_symbol_coin";
 	}
 
-	// Token: 0x0600679A RID: 26522 RVA: 0x0028ECCC File Offset: 0x0028CECC
+	// Token: 0x06006829 RID: 26665 RVA: 0x00291C68 File Offset: 0x0028FE68
 	public override void RefreshEnabled()
 	{
 		XUiC_ItemStack xuiC_ItemStack = (XUiC_ItemStack)base.ItemController;
@@ -71,7 +71,7 @@ public class ItemActionEntrySell : BaseItemActionEntry
 		base.Enabled = this.state == ItemActionEntrySell.StateTypes.Normal;
 	}
 
-	// Token: 0x0600679B RID: 26523 RVA: 0x0028EE20 File Offset: 0x0028D020
+	// Token: 0x0600682A RID: 26666 RVA: 0x00291DBC File Offset: 0x0028FFBC
 	public override void OnDisabledActivate()
 	{
 		EntityPlayerLocal entityPlayer = base.ItemController.xui.playerUI.entityPlayer;
@@ -95,7 +95,7 @@ public class ItemActionEntrySell : BaseItemActionEntry
 		Manager.PlayInsidePlayerHead("ui_denied", -1, 0f, false, false);
 	}
 
-	// Token: 0x0600679C RID: 26524 RVA: 0x0028EECC File Offset: 0x0028D0CC
+	// Token: 0x0600682B RID: 26667 RVA: 0x00291E68 File Offset: 0x00290068
 	public override void OnActivated()
 	{
 		TraderData traderData = base.ItemController.xui.Trader.TraderData;
@@ -138,7 +138,7 @@ public class ItemActionEntrySell : BaseItemActionEntry
 							{
 								if (traderData.PrimaryInventory[i].Item.itemValue.type == xuiC_ItemStack.ItemStack.itemValue.type)
 								{
-									int num5 = forId.Stacknumber.Value - traderData.PrimaryInventory[i].Item.count;
+									int num5 = forId.MaxCount - traderData.PrimaryInventory[i].Item.count;
 									num4 -= num5;
 									if (num4 <= 0)
 									{
@@ -185,7 +185,7 @@ public class ItemActionEntrySell : BaseItemActionEntry
 				{
 					int count = xuiC_ItemStack.InfoWindow.BuySellCounter.Count;
 					int primaryItemCount = traderData.GetPrimaryItemCount(xuiC_ItemStack.ItemStack.itemValue);
-					int num7 = forId.Stacknumber.Value * TraderInfo.TraderBuyLimit;
+					int num7 = forId.MaxCount * TraderInfo.TraderBuyLimit;
 					int num8 = Math.Min(num7 - primaryItemCount, count);
 					if (num7 > 0 && num8 <= 0)
 					{
@@ -261,29 +261,29 @@ public class ItemActionEntrySell : BaseItemActionEntry
 		}
 	}
 
-	// Token: 0x04004F64 RID: 20324
+	// Token: 0x04005002 RID: 20482
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly bool isOwner;
 
-	// Token: 0x04004F65 RID: 20325
+	// Token: 0x04005003 RID: 20483
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemActionEntrySell.StateTypes state;
 
-	// Token: 0x02000D50 RID: 3408
+	// Token: 0x02000D63 RID: 3427
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum StateTypes
 	{
-		// Token: 0x04004F67 RID: 20327
+		// Token: 0x04005005 RID: 20485
 		Normal,
-		// Token: 0x04004F68 RID: 20328
+		// Token: 0x04005006 RID: 20486
 		ItemNotSellable,
-		// Token: 0x04004F69 RID: 20329
+		// Token: 0x04005007 RID: 20487
 		ItemNotSellableVending,
-		// Token: 0x04004F6A RID: 20330
+		// Token: 0x04005008 RID: 20488
 		PriceTooLow,
-		// Token: 0x04004F6B RID: 20331
+		// Token: 0x04005009 RID: 20489
 		NotEnoughItems,
-		// Token: 0x04004F6C RID: 20332
+		// Token: 0x0400500A RID: 20490
 		NotBundleSize
 	}
 }

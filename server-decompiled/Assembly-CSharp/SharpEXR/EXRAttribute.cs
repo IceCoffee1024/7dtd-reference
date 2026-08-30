@@ -4,59 +4,59 @@ using SharpEXR.AttributeTypes;
 
 namespace SharpEXR
 {
-	// Token: 0x0200169D RID: 5789
+	// Token: 0x020016C3 RID: 5827
 	public class EXRAttribute
 	{
-		// Token: 0x170015C5 RID: 5573
-		// (get) Token: 0x0600B493 RID: 46227 RVA: 0x00434C51 File Offset: 0x00432E51
-		// (set) Token: 0x0600B494 RID: 46228 RVA: 0x00434C59 File Offset: 0x00432E59
+		// Token: 0x17001637 RID: 5687
+		// (get) Token: 0x0600B616 RID: 46614 RVA: 0x0043A9C9 File Offset: 0x00438BC9
+		// (set) Token: 0x0600B617 RID: 46615 RVA: 0x0043A9D1 File Offset: 0x00438BD1
 		public string Name
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x170015C6 RID: 5574
-		// (get) Token: 0x0600B495 RID: 46229 RVA: 0x00434C62 File Offset: 0x00432E62
-		// (set) Token: 0x0600B496 RID: 46230 RVA: 0x00434C6A File Offset: 0x00432E6A
+		// Token: 0x17001638 RID: 5688
+		// (get) Token: 0x0600B618 RID: 46616 RVA: 0x0043A9DA File Offset: 0x00438BDA
+		// (set) Token: 0x0600B619 RID: 46617 RVA: 0x0043A9E2 File Offset: 0x00438BE2
 		public string Type
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x170015C7 RID: 5575
-		// (get) Token: 0x0600B497 RID: 46231 RVA: 0x00434C73 File Offset: 0x00432E73
-		// (set) Token: 0x0600B498 RID: 46232 RVA: 0x00434C7B File Offset: 0x00432E7B
+		// Token: 0x17001639 RID: 5689
+		// (get) Token: 0x0600B61A RID: 46618 RVA: 0x0043A9EB File Offset: 0x00438BEB
+		// (set) Token: 0x0600B61B RID: 46619 RVA: 0x0043A9F3 File Offset: 0x00438BF3
 		public int Size
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x170015C8 RID: 5576
-		// (get) Token: 0x0600B499 RID: 46233 RVA: 0x00434C84 File Offset: 0x00432E84
-		// (set) Token: 0x0600B49A RID: 46234 RVA: 0x00434C8C File Offset: 0x00432E8C
+		// Token: 0x1700163A RID: 5690
+		// (get) Token: 0x0600B61C RID: 46620 RVA: 0x0043A9FC File Offset: 0x00438BFC
+		// (set) Token: 0x0600B61D RID: 46621 RVA: 0x0043AA04 File Offset: 0x00438C04
 		public object Value
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x0600B49C RID: 46236 RVA: 0x00434C95 File Offset: 0x00432E95
+		// Token: 0x0600B61F RID: 46623 RVA: 0x0043AA0D File Offset: 0x00438C0D
 		public static bool Read(EXRFile file, IEXRReader reader, out EXRAttribute attribute)
 		{
 			attribute = new EXRAttribute();
 			return attribute.Read(file, reader);
 		}
 
-		// Token: 0x0600B49D RID: 46237 RVA: 0x00434CA7 File Offset: 0x00432EA7
+		// Token: 0x0600B620 RID: 46624 RVA: 0x0043AA1F File Offset: 0x00438C1F
 		public override string ToString()
 		{
 			return this.Value.ToString();
 		}
 
-		// Token: 0x0600B49E RID: 46238 RVA: 0x00434CB4 File Offset: 0x00432EB4
+		// Token: 0x0600B621 RID: 46625 RVA: 0x0043AA2C File Offset: 0x00438C2C
 		public bool Read(EXRFile file, IEXRReader reader)
 		{
 			int maxNameLength = file.Version.MaxNameLength;

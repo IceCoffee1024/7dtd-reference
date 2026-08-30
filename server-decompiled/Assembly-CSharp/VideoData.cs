@@ -1,24 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000C9B RID: 3227
+// Token: 0x02000CAD RID: 3245
 public class VideoData
 {
-	// Token: 0x0600633C RID: 25404 RVA: 0x0026F4B7 File Offset: 0x0026D6B7
+	// Token: 0x060063C8 RID: 25544 RVA: 0x002723B3 File Offset: 0x002705B3
 	public VideoData()
 	{
 		this.subtitles = new List<VideoSubtitle>();
 	}
 
-	// Token: 0x04004CFA RID: 19706
+	// Token: 0x04004D98 RID: 19864
 	public string name;
 
-	// Token: 0x04004CFB RID: 19707
+	// Token: 0x04004D99 RID: 19865
 	public string url;
 
-	// Token: 0x04004CFC RID: 19708
+	// Token: 0x04004D9A RID: 19866
 	public float defaultSubtitleDuration;
 
-	// Token: 0x04004CFD RID: 19709
+	// Token: 0x04004D9B RID: 19867
 	public List<VideoSubtitle> subtitles;
 }

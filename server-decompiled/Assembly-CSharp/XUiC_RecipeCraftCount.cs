@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FF0 RID: 4080
+// Token: 0x02001009 RID: 4105
 [Preserve]
 public class XUiC_RecipeCraftCount : XUiC_Counter
 {
-	// Token: 0x0600809C RID: 32924 RVA: 0x0030E22C File Offset: 0x0030C42C
+	// Token: 0x0600818E RID: 33166 RVA: 0x00312A58 File Offset: 0x00310C58
 	public override void Init()
 	{
 		base.Init();
@@ -18,7 +18,7 @@ public class XUiC_RecipeCraftCount : XUiC_Counter
 		}
 	}
 
-	// Token: 0x0600809D RID: 32925 RVA: 0x0030E26C File Offset: 0x0030C46C
+	// Token: 0x0600818F RID: 33167 RVA: 0x00312A98 File Offset: 0x00310C98
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleRecipeChanged(Recipe _recipe, XUiC_RecipeEntry recipeEntry)
 	{
@@ -30,7 +30,7 @@ public class XUiC_RecipeCraftCount : XUiC_Counter
 		}
 	}
 
-	// Token: 0x0600809E RID: 32926 RVA: 0x0030E28B File Offset: 0x0030C48B
+	// Token: 0x06008190 RID: 33168 RVA: 0x00312AB7 File Offset: 0x00310CB7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void HandleMaxCountOnPress(XUiController _sender, int _mouseButton)
 	{
@@ -38,7 +38,7 @@ public class XUiC_RecipeCraftCount : XUiC_Counter
 		base.HandleCountChangedEvent();
 	}
 
-	// Token: 0x0600809F RID: 32927 RVA: 0x0030E29F File Offset: 0x0030C49F
+	// Token: 0x06008191 RID: 33169 RVA: 0x00312ACB File Offset: 0x00310CCB
 	public void CalculateMaxCount()
 	{
 		this.MaxCount = this.calcMaxCraftable();
@@ -49,7 +49,7 @@ public class XUiC_RecipeCraftCount : XUiC_Counter
 		base.RefreshBindings();
 	}
 
-	// Token: 0x060080A0 RID: 32928 RVA: 0x0030E2D0 File Offset: 0x0030C4D0
+	// Token: 0x06008192 RID: 33170 RVA: 0x00312AFC File Offset: 0x00310CFC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int calcMaxCraftable()
 	{
@@ -130,7 +130,7 @@ public class XUiC_RecipeCraftCount : XUiC_Counter
 		return Mathf.Clamp(num, 1, 10000);
 	}
 
-	// Token: 0x060080A1 RID: 32929 RVA: 0x0030E534 File Offset: 0x0030C734
+	// Token: 0x06008193 RID: 33171 RVA: 0x00312D60 File Offset: 0x00310F60
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -140,7 +140,7 @@ public class XUiC_RecipeCraftCount : XUiC_Counter
 		}
 	}
 
-	// Token: 0x060080A2 RID: 32930 RVA: 0x0030E54C File Offset: 0x0030C74C
+	// Token: 0x06008194 RID: 33172 RVA: 0x00312D78 File Offset: 0x00310F78
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -153,7 +153,7 @@ public class XUiC_RecipeCraftCount : XUiC_Counter
 		((XUiV_Label)this.counter.ViewComponent).Text = (this.textInput.Text = base.Count.ToString());
 	}
 
-	// Token: 0x060080A3 RID: 32931 RVA: 0x0030E5DB File Offset: 0x0030C7DB
+	// Token: 0x06008195 RID: 33173 RVA: 0x00312E07 File Offset: 0x00311007
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -161,28 +161,28 @@ public class XUiC_RecipeCraftCount : XUiC_Counter
 		this.xui.PlayerInventory.OnToolbeltItemsChanged -= this.PlayerInventory_OnToolbeltItemsChanged;
 	}
 
-	// Token: 0x060080A4 RID: 32932 RVA: 0x0030E61B File Offset: 0x0030C81B
+	// Token: 0x06008196 RID: 33174 RVA: 0x00312E47 File Offset: 0x00311047
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlayerInventory_OnToolbeltItemsChanged()
 	{
 		this.CalculateMaxCount();
 	}
 
-	// Token: 0x060080A5 RID: 32933 RVA: 0x0030E61B File Offset: 0x0030C81B
+	// Token: 0x06008197 RID: 33175 RVA: 0x00312E47 File Offset: 0x00311047
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlayerInventory_OnBackpackItemsChanged()
 	{
 		this.CalculateMaxCount();
 	}
 
-	// Token: 0x060080A6 RID: 32934 RVA: 0x0030E623 File Offset: 0x0030C823
+	// Token: 0x06008198 RID: 33176 RVA: 0x00312E4F File Offset: 0x0031104F
 	public void RefreshCounts()
 	{
 		this.CalculateMaxCount();
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060080A7 RID: 32935 RVA: 0x0030E634 File Offset: 0x0030C834
+	// Token: 0x06008199 RID: 33177 RVA: 0x00312E60 File Offset: 0x00311060
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -199,11 +199,11 @@ public class XUiC_RecipeCraftCount : XUiC_Counter
 		return true;
 	}
 
-	// Token: 0x04005F42 RID: 24386
+	// Token: 0x04006009 RID: 24585
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int maxAllowed = 10000;
 
-	// Token: 0x04005F43 RID: 24387
+	// Token: 0x0400600A RID: 24586
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Recipe recipe;
 }

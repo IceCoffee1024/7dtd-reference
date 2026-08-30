@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001996 RID: 6550
+	// Token: 0x020019BC RID: 6588
 	[Preserve]
 	public class ActionAddPlayerLevel : ActionBaseClientAction
 	{
-		// Token: 0x0600C7F8 RID: 51192 RVA: 0x0049918C File Offset: 0x0049738C
+		// Token: 0x0600C97F RID: 51583 RVA: 0x0049F4E4 File Offset: 0x0049D6E4
 		public override void OnClientPerform(Entity target)
 		{
 			EntityPlayer entityPlayer = target as EntityPlayer;
@@ -21,14 +21,14 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C7F9 RID: 51193 RVA: 0x004991E3 File Offset: 0x004973E3
+		// Token: 0x0600C980 RID: 51584 RVA: 0x0049F53B File Offset: 0x0049D73B
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseString(ActionAddPlayerLevel.PropNewLevel, ref this.addedLevelsText);
 		}
 
-		// Token: 0x0600C7FA RID: 51194 RVA: 0x004991FD File Offset: 0x004973FD
+		// Token: 0x0600C981 RID: 51585 RVA: 0x0049F555 File Offset: 0x0049D755
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -38,11 +38,11 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040097A7 RID: 38823
+		// Token: 0x040098D0 RID: 39120
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string addedLevelsText;
 
-		// Token: 0x040097A8 RID: 38824
+		// Token: 0x040098D1 RID: 39121
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropNewLevel = "levels";
 	}

@@ -1,68 +1,68 @@
 ﻿using System;
 
-// Token: 0x02000516 RID: 1302
+// Token: 0x0200051B RID: 1307
 public enum EnumDamageTypes
 {
-	// Token: 0x040020A4 RID: 8356
+	// Token: 0x040020D3 RID: 8403
 	None,
-	// Token: 0x040020A5 RID: 8357
+	// Token: 0x040020D4 RID: 8404
 	Piercing,
-	// Token: 0x040020A6 RID: 8358
+	// Token: 0x040020D5 RID: 8405
 	Slashing,
-	// Token: 0x040020A7 RID: 8359
+	// Token: 0x040020D6 RID: 8406
 	Bashing,
-	// Token: 0x040020A8 RID: 8360
+	// Token: 0x040020D7 RID: 8407
 	Crushing,
-	// Token: 0x040020A9 RID: 8361
+	// Token: 0x040020D8 RID: 8408
 	Corrosive,
-	// Token: 0x040020AA RID: 8362
+	// Token: 0x040020D9 RID: 8409
 	Heat,
-	// Token: 0x040020AB RID: 8363
+	// Token: 0x040020DA RID: 8410
 	Cold,
-	// Token: 0x040020AC RID: 8364
+	// Token: 0x040020DB RID: 8411
 	Radiation,
-	// Token: 0x040020AD RID: 8365
+	// Token: 0x040020DC RID: 8412
 	Toxic,
-	// Token: 0x040020AE RID: 8366
+	// Token: 0x040020DD RID: 8413
 	Electrical,
-	// Token: 0x040020AF RID: 8367
+	// Token: 0x040020DE RID: 8414
 	Disease,
-	// Token: 0x040020B0 RID: 8368
+	// Token: 0x040020DF RID: 8415
 	Infection,
-	// Token: 0x040020B1 RID: 8369
+	// Token: 0x040020E0 RID: 8416
 	Starvation,
-	// Token: 0x040020B2 RID: 8370
+	// Token: 0x040020E1 RID: 8417
 	Dehydration,
-	// Token: 0x040020B3 RID: 8371
+	// Token: 0x040020E2 RID: 8418
 	Falling,
-	// Token: 0x040020B4 RID: 8372
+	// Token: 0x040020E3 RID: 8419
 	Suffocation,
-	// Token: 0x040020B5 RID: 8373
+	// Token: 0x040020E4 RID: 8420
 	BloodLoss,
-	// Token: 0x040020B6 RID: 8374
+	// Token: 0x040020E5 RID: 8421
 	Sprain,
-	// Token: 0x040020B7 RID: 8375
+	// Token: 0x040020E6 RID: 8422
 	Break,
-	// Token: 0x040020B8 RID: 8376
+	// Token: 0x040020E7 RID: 8423
 	Stun,
-	// Token: 0x040020B9 RID: 8377
+	// Token: 0x040020E8 RID: 8424
 	Concuss,
-	// Token: 0x040020BA RID: 8378
+	// Token: 0x040020E9 RID: 8425
 	KnockOut,
-	// Token: 0x040020BB RID: 8379
+	// Token: 0x040020EA RID: 8426
 	BlackOut,
-	// Token: 0x040020BC RID: 8380
+	// Token: 0x040020EB RID: 8427
 	KnockDown,
-	// Token: 0x040020BD RID: 8381
+	// Token: 0x040020EC RID: 8428
 	BarbedWire,
-	// Token: 0x040020BE RID: 8382
+	// Token: 0x040020ED RID: 8429
 	Suicide,
-	// Token: 0x040020BF RID: 8383
+	// Token: 0x040020EE RID: 8430
 	VehicleInside,
-	// Token: 0x040020C0 RID: 8384
+	// Token: 0x040020EF RID: 8431
 	Weather,
-	// Token: 0x040020C1 RID: 8385
+	// Token: 0x040020F0 RID: 8432
 	Special,
-	// Token: 0x040020C2 RID: 8386
+	// Token: 0x040020F1 RID: 8433
 	COUNT
 }

@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FEF RID: 4079
+// Token: 0x02001008 RID: 4104
 [Preserve]
 public class XUiC_RadialEntry : XUiController
 {
-	// Token: 0x06008093 RID: 32915 RVA: 0x0030E0AC File Offset: 0x0030C2AC
+	// Token: 0x06008185 RID: 33157 RVA: 0x003128D8 File Offset: 0x00310AD8
 	public override void Init()
 	{
 		base.Init();
@@ -25,20 +25,20 @@ public class XUiC_RadialEntry : XUiController
 		}
 	}
 
-	// Token: 0x06008094 RID: 32916 RVA: 0x0030E132 File Offset: 0x0030C332
+	// Token: 0x06008186 RID: 33158 RVA: 0x0031295E File Offset: 0x00310B5E
 	public void SetHighlighted(bool _highlighted)
 	{
 		this.background.Color = (_highlighted ? this.highlightColor : this.backgroundColor);
 	}
 
-	// Token: 0x06008095 RID: 32917 RVA: 0x0030E150 File Offset: 0x0030C350
+	// Token: 0x06008187 RID: 33159 RVA: 0x0031297C File Offset: 0x00310B7C
 	public void SetSprite(string _sprite, Color _color)
 	{
 		this.icon.SpriteName = _sprite;
 		this.icon.Color = _color;
 	}
 
-	// Token: 0x06008096 RID: 32918 RVA: 0x0030E16A File Offset: 0x0030C36A
+	// Token: 0x06008188 RID: 33160 RVA: 0x00312996 File Offset: 0x00310B96
 	public void SetText(string _text)
 	{
 		if (this.text != null)
@@ -48,26 +48,26 @@ public class XUiC_RadialEntry : XUiController
 		}
 	}
 
-	// Token: 0x06008097 RID: 32919 RVA: 0x0030E196 File Offset: 0x0030C396
+	// Token: 0x06008189 RID: 33161 RVA: 0x003129C2 File Offset: 0x00310BC2
 	public void SetAtlas(string _atlas)
 	{
 		this.icon.UIAtlas = _atlas;
 	}
 
-	// Token: 0x06008098 RID: 32920 RVA: 0x0030E1A4 File Offset: 0x0030C3A4
+	// Token: 0x0600818A RID: 33162 RVA: 0x003129D0 File Offset: 0x00310BD0
 	public void ResetScale()
 	{
 		this.SetScale(1f, true);
 	}
 
-	// Token: 0x06008099 RID: 32921 RVA: 0x0030E1B4 File Offset: 0x0030C3B4
+	// Token: 0x0600818B RID: 33163 RVA: 0x003129E0 File Offset: 0x00310BE0
 	public void SetScale(float _scale, bool _instant = false)
 	{
 		float num = (_instant ? 0f : 0.15f);
 		TweenScale.Begin(this.viewComponent.UiTransform.gameObject, num, Vector3.one * _scale);
 	}
 
-	// Token: 0x0600809A RID: 32922 RVA: 0x0030E1F4 File Offset: 0x0030C3F4
+	// Token: 0x0600818C RID: 33164 RVA: 0x00312A20 File Offset: 0x00310C20
 	public override bool ParseAttribute(string _name, string _value)
 	{
 		bool flag = base.ParseAttribute(_name, _value);
@@ -79,32 +79,32 @@ public class XUiC_RadialEntry : XUiController
 		return flag;
 	}
 
-	// Token: 0x04005F3A RID: 24378
+	// Token: 0x04006001 RID: 24577
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite icon;
 
-	// Token: 0x04005F3B RID: 24379
+	// Token: 0x04006002 RID: 24578
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite background;
 
-	// Token: 0x04005F3C RID: 24380
+	// Token: 0x04006003 RID: 24579
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label text;
 
-	// Token: 0x04005F3D RID: 24381
+	// Token: 0x04006004 RID: 24580
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color backgroundColor;
 
-	// Token: 0x04005F3E RID: 24382
+	// Token: 0x04006005 RID: 24581
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color highlightColor;
 
-	// Token: 0x04005F3F RID: 24383
+	// Token: 0x04006006 RID: 24582
 	public string SelectionText;
 
-	// Token: 0x04005F40 RID: 24384
+	// Token: 0x04006007 RID: 24583
 	public int MenuItemIndex;
 
-	// Token: 0x04005F41 RID: 24385
+	// Token: 0x04006008 RID: 24584
 	public int CommandIndex;
 }

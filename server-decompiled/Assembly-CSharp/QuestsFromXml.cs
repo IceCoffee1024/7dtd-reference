@@ -5,10 +5,10 @@ using System.Xml.Linq;
 using Quests.Requirements;
 using UnityEngine;
 
-// Token: 0x02000D16 RID: 3350
+// Token: 0x02000D28 RID: 3368
 public class QuestsFromXml
 {
-	// Token: 0x0600660D RID: 26125 RVA: 0x00282C54 File Offset: 0x00280E54
+	// Token: 0x06006699 RID: 26265 RVA: 0x00285B64 File Offset: 0x00283D64
 	public static IEnumerator CreateQuests(XmlFile xmlFile)
 	{
 		QuestClass.s_Quests.Clear();
@@ -22,7 +22,7 @@ public class QuestsFromXml
 		yield break;
 	}
 
-	// Token: 0x0600660E RID: 26126 RVA: 0x00282C64 File Offset: 0x00280E64
+	// Token: 0x0600669A RID: 26266 RVA: 0x00285B74 File Offset: 0x00283D74
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseNode(XElement root)
 	{
@@ -55,17 +55,13 @@ public class QuestsFromXml
 		{
 			Quest.MaxQuestTier = Convert.ToInt32(root.GetAttribute("max_quest_tier"));
 		}
-		if (root.HasAttribute("quests_per_tier"))
-		{
-			Quest.QuestsPerTier = Convert.ToInt32(root.GetAttribute("quests_per_tier"));
-		}
 		if (root.HasAttribute("starter_quest"))
 		{
 			Quest.StarterQuest = root.GetAttribute("starter_quest");
 		}
 	}
 
-	// Token: 0x0600660F RID: 26127 RVA: 0x00282DD0 File Offset: 0x00280FD0
+	// Token: 0x0600669B RID: 26267 RVA: 0x00285CB4 File Offset: 0x00283EB4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseQuest(XElement e)
 	{
@@ -147,7 +143,7 @@ public class QuestsFromXml
 		questClass.Init();
 	}
 
-	// Token: 0x06006610 RID: 26128 RVA: 0x0028305C File Offset: 0x0028125C
+	// Token: 0x0600669C RID: 26268 RVA: 0x00285F40 File Offset: 0x00284140
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static BaseQuestAction ParseAction(QuestClass questClass, XElement e)
 	{
@@ -195,7 +191,7 @@ public class QuestsFromXml
 		return baseQuestAction;
 	}
 
-	// Token: 0x06006611 RID: 26129 RVA: 0x002831C4 File Offset: 0x002813C4
+	// Token: 0x0600669D RID: 26269 RVA: 0x002860A8 File Offset: 0x002842A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseEvent(QuestClass questClass, XElement e)
 	{
@@ -242,7 +238,7 @@ public class QuestsFromXml
 		questClass.AddEvent(questEvent);
 	}
 
-	// Token: 0x06006612 RID: 26130 RVA: 0x00283328 File Offset: 0x00281528
+	// Token: 0x0600669E RID: 26270 RVA: 0x0028620C File Offset: 0x0028440C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static BaseRequirement ParseRequirement(QuestClass questClass, XElement e)
 	{
@@ -284,7 +280,7 @@ public class QuestsFromXml
 		return baseRequirement;
 	}
 
-	// Token: 0x06006613 RID: 26131 RVA: 0x00283490 File Offset: 0x00281690
+	// Token: 0x0600669F RID: 26271 RVA: 0x00286374 File Offset: 0x00284574
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseObjective(QuestClass quest, XElement e)
 	{
@@ -346,7 +342,7 @@ public class QuestsFromXml
 		}
 	}
 
-	// Token: 0x06006614 RID: 26132 RVA: 0x00283668 File Offset: 0x00281868
+	// Token: 0x060066A0 RID: 26272 RVA: 0x0028654C File Offset: 0x0028474C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseObjectiveModifier(QuestClass quest, BaseObjective objective, XElement e)
 	{
@@ -380,7 +376,7 @@ public class QuestsFromXml
 		}
 	}
 
-	// Token: 0x06006615 RID: 26133 RVA: 0x00283750 File Offset: 0x00281950
+	// Token: 0x060066A1 RID: 26273 RVA: 0x00286634 File Offset: 0x00284834
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseReward(QuestClass quest, QuestTierReward tierReward, XElement e)
 	{
@@ -472,7 +468,7 @@ public class QuestsFromXml
 		baseReward.SetupGlobalRewardSettings();
 	}
 
-	// Token: 0x06006616 RID: 26134 RVA: 0x002839E8 File Offset: 0x00281BE8
+	// Token: 0x060066A2 RID: 26274 RVA: 0x002868CC File Offset: 0x00284ACC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseCriteria(QuestClass quest, BaseQuestCriteria.CriteriaTypes criteriaType, XElement e)
 	{
@@ -503,7 +499,7 @@ public class QuestsFromXml
 		}
 	}
 
-	// Token: 0x06006617 RID: 26135 RVA: 0x00283ACC File Offset: 0x00281CCC
+	// Token: 0x060066A3 RID: 26275 RVA: 0x002869B0 File Offset: 0x00284BB0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseQuestList(XElement e)
 	{
@@ -554,7 +550,7 @@ public class QuestsFromXml
 		}
 	}
 
-	// Token: 0x06006618 RID: 26136 RVA: 0x00283CB8 File Offset: 0x00281EB8
+	// Token: 0x060066A4 RID: 26276 RVA: 0x00286B9C File Offset: 0x00284D9C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseQuestItems(XElement e)
 	{
@@ -621,7 +617,7 @@ public class QuestsFromXml
 		}
 	}
 
-	// Token: 0x06006619 RID: 26137 RVA: 0x00283F30 File Offset: 0x00282130
+	// Token: 0x060066A5 RID: 26277 RVA: 0x00286E14 File Offset: 0x00285014
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseQuestTierRewards(XElement e)
 	{
@@ -642,7 +638,7 @@ public class QuestsFromXml
 		}
 	}
 
-	// Token: 0x0600661A RID: 26138 RVA: 0x00284018 File Offset: 0x00282218
+	// Token: 0x060066A6 RID: 26278 RVA: 0x00286EFC File Offset: 0x002850FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseQuestVariable(QuestClass owner, XElement e)
 	{

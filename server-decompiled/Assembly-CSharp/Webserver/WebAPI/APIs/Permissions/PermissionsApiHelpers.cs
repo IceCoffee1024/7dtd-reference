@@ -3,10 +3,10 @@ using System.Net;
 
 namespace Webserver.WebAPI.APIs.Permissions
 {
-	// Token: 0x02001ABC RID: 6844
+	// Token: 0x02001AE3 RID: 6883
 	public static class PermissionsApiHelpers
 	{
-		// Token: 0x0600CD98 RID: 52632 RVA: 0x004B042C File Offset: 0x004AE62C
+		// Token: 0x0600CF21 RID: 53025 RVA: 0x004B6820 File Offset: 0x004B4A20
 		public static bool TryParseId(RequestContext _context, byte[] _jsonInputData, out PlatformUserIdentifierAbs _userId, out string _groupId)
 		{
 			string requestPath = _context.RequestPath;

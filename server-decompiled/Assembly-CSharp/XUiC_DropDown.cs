@@ -4,22 +4,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E6C RID: 3692
+// Token: 0x02000E81 RID: 3713
 [Preserve]
 public class XUiC_DropDown : XUiController
 {
-	// Token: 0x140000AB RID: 171
-	// (add) Token: 0x06007299 RID: 29337 RVA: 0x002B9BF4 File Offset: 0x002B7DF4
-	// (remove) Token: 0x0600729A RID: 29338 RVA: 0x002B9C2C File Offset: 0x002B7E2C
+	// Token: 0x140000AC RID: 172
+	// (add) Token: 0x06007339 RID: 29497 RVA: 0x002BD118 File Offset: 0x002BB318
+	// (remove) Token: 0x0600733A RID: 29498 RVA: 0x002BD150 File Offset: 0x002BB350
 	public event XUiEvent_InputOnSubmitEventHandler OnSubmitHandler;
 
-	// Token: 0x140000AC RID: 172
-	// (add) Token: 0x0600729B RID: 29339 RVA: 0x002B9C64 File Offset: 0x002B7E64
-	// (remove) Token: 0x0600729C RID: 29340 RVA: 0x002B9C9C File Offset: 0x002B7E9C
+	// Token: 0x140000AD RID: 173
+	// (add) Token: 0x0600733B RID: 29499 RVA: 0x002BD188 File Offset: 0x002BB388
+	// (remove) Token: 0x0600733C RID: 29500 RVA: 0x002BD1C0 File Offset: 0x002BB3C0
 	public event XUiC_DropDown.XUiEvent_InputOnChangedEventHandler OnChangeHandler;
 
-	// Token: 0x17000D3F RID: 3391
-	// (get) Token: 0x0600729D RID: 29341 RVA: 0x002B9CD1 File Offset: 0x002B7ED1
+	// Token: 0x17000D58 RID: 3416
+	// (get) Token: 0x0600733D RID: 29501 RVA: 0x002BD1F5 File Offset: 0x002BB3F5
 	public int PageLength
 	{
 		get
@@ -33,9 +33,9 @@ public class XUiC_DropDown : XUiController
 		}
 	}
 
-	// Token: 0x17000D40 RID: 3392
-	// (get) Token: 0x0600729E RID: 29342 RVA: 0x002B9CE1 File Offset: 0x002B7EE1
-	// (set) Token: 0x0600729F RID: 29343 RVA: 0x002B9CE9 File Offset: 0x002B7EE9
+	// Token: 0x17000D59 RID: 3417
+	// (get) Token: 0x0600733E RID: 29502 RVA: 0x002BD205 File Offset: 0x002BB405
+	// (set) Token: 0x0600733F RID: 29503 RVA: 0x002BD20D File Offset: 0x002BB40D
 	[XuiXmlBinding("dropdown_open")]
 	public bool DropdownOpen
 	{
@@ -54,9 +54,9 @@ public class XUiC_DropDown : XUiController
 		}
 	}
 
-	// Token: 0x17000D41 RID: 3393
-	// (get) Token: 0x060072A0 RID: 29344 RVA: 0x002B9D03 File Offset: 0x002B7F03
-	// (set) Token: 0x060072A1 RID: 29345 RVA: 0x002B9D0C File Offset: 0x002B7F0C
+	// Token: 0x17000D5A RID: 3418
+	// (get) Token: 0x06007340 RID: 29504 RVA: 0x002BD227 File Offset: 0x002BB427
+	// (set) Token: 0x06007341 RID: 29505 RVA: 0x002BD230 File Offset: 0x002BB430
 	public int Page
 	{
 		get
@@ -75,8 +75,8 @@ public class XUiC_DropDown : XUiController
 		}
 	}
 
-	// Token: 0x17000D42 RID: 3394
-	// (get) Token: 0x060072A2 RID: 29346 RVA: 0x002B9D3F File Offset: 0x002B7F3F
+	// Token: 0x17000D5B RID: 3419
+	// (get) Token: 0x06007342 RID: 29506 RVA: 0x002BD263 File Offset: 0x002BB463
 	public int LastPage
 	{
 		get
@@ -85,8 +85,8 @@ public class XUiC_DropDown : XUiController
 		}
 	}
 
-	// Token: 0x17000D43 RID: 3395
-	// (get) Token: 0x060072A3 RID: 29347 RVA: 0x002B9D62 File Offset: 0x002B7F62
+	// Token: 0x17000D5C RID: 3420
+	// (get) Token: 0x06007343 RID: 29507 RVA: 0x002BD286 File Offset: 0x002BB486
 	public int EntryCount
 	{
 		get
@@ -95,9 +95,9 @@ public class XUiC_DropDown : XUiController
 		}
 	}
 
-	// Token: 0x17000D44 RID: 3396
-	// (get) Token: 0x060072A4 RID: 29348 RVA: 0x002B9D6F File Offset: 0x002B7F6F
-	// (set) Token: 0x060072A5 RID: 29349 RVA: 0x002B9D7C File Offset: 0x002B7F7C
+	// Token: 0x17000D5D RID: 3421
+	// (get) Token: 0x06007344 RID: 29508 RVA: 0x002BD293 File Offset: 0x002BB493
+	// (set) Token: 0x06007345 RID: 29509 RVA: 0x002BD2A0 File Offset: 0x002BB4A0
 	public string Text
 	{
 		get
@@ -115,9 +115,9 @@ public class XUiC_DropDown : XUiController
 		}
 	}
 
-	// Token: 0x17000D45 RID: 3397
-	// (get) Token: 0x060072A6 RID: 29350 RVA: 0x002B9DA4 File Offset: 0x002B7FA4
-	// (set) Token: 0x060072A7 RID: 29351 RVA: 0x002B9DAC File Offset: 0x002B7FAC
+	// Token: 0x17000D5E RID: 3422
+	// (get) Token: 0x06007346 RID: 29510 RVA: 0x002BD2C8 File Offset: 0x002BB4C8
+	// (set) Token: 0x06007347 RID: 29511 RVA: 0x002BD2D0 File Offset: 0x002BB4D0
 	[XuiXmlAttribute("dropdown_hovercolor", false)]
 	public Color DropdownHoverColor
 	{
@@ -136,9 +136,9 @@ public class XUiC_DropDown : XUiController
 		}
 	}
 
-	// Token: 0x17000D46 RID: 3398
-	// (get) Token: 0x060072A8 RID: 29352 RVA: 0x002B9DCB File Offset: 0x002B7FCB
-	// (set) Token: 0x060072A9 RID: 29353 RVA: 0x002B9DD3 File Offset: 0x002B7FD3
+	// Token: 0x17000D5F RID: 3423
+	// (get) Token: 0x06007348 RID: 29512 RVA: 0x002BD2EF File Offset: 0x002BB4EF
+	// (set) Token: 0x06007349 RID: 29513 RVA: 0x002BD2F7 File Offset: 0x002BB4F7
 	[XuiXmlAttribute("dropdown_textcolor", false)]
 	public Color DropdownTextColor
 	{
@@ -157,8 +157,8 @@ public class XUiC_DropDown : XUiController
 		}
 	}
 
-	// Token: 0x17000D47 RID: 3399
-	// (get) Token: 0x060072AA RID: 29354 RVA: 0x002B9DF2 File Offset: 0x002B7FF2
+	// Token: 0x17000D60 RID: 3424
+	// (get) Token: 0x0600734A RID: 29514 RVA: 0x002BD316 File Offset: 0x002BB516
 	[XuiXmlBinding("valid_input")]
 	public bool ValidInput
 	{
@@ -168,9 +168,9 @@ public class XUiC_DropDown : XUiController
 		}
 	}
 
-	// Token: 0x17000D48 RID: 3400
-	// (get) Token: 0x060072AB RID: 29355 RVA: 0x002B9E19 File Offset: 0x002B8019
-	// (set) Token: 0x060072AC RID: 29356 RVA: 0x002B9E21 File Offset: 0x002B8021
+	// Token: 0x17000D61 RID: 3425
+	// (get) Token: 0x0600734B RID: 29515 RVA: 0x002BD33D File Offset: 0x002BB53D
+	// (set) Token: 0x0600734C RID: 29516 RVA: 0x002BD345 File Offset: 0x002BB545
 	[XuiXmlAttribute("thumbareasize", false)]
 	public float ThumbAreaSize
 	{
@@ -189,9 +189,9 @@ public class XUiC_DropDown : XUiController
 		}
 	}
 
-	// Token: 0x17000D49 RID: 3401
-	// (get) Token: 0x060072AD RID: 29357 RVA: 0x002B9E40 File Offset: 0x002B8040
-	// (set) Token: 0x060072AE RID: 29358 RVA: 0x002B9E48 File Offset: 0x002B8048
+	// Token: 0x17000D62 RID: 3426
+	// (get) Token: 0x0600734D RID: 29517 RVA: 0x002BD364 File Offset: 0x002BB564
+	// (set) Token: 0x0600734E RID: 29518 RVA: 0x002BD36C File Offset: 0x002BB56C
 	[XuiXmlAttribute("sortentries", false)]
 	public bool SortEntries
 	{
@@ -210,9 +210,9 @@ public class XUiC_DropDown : XUiController
 		}
 	}
 
-	// Token: 0x17000D4A RID: 3402
-	// (get) Token: 0x060072AF RID: 29359 RVA: 0x002B9E62 File Offset: 0x002B8062
-	// (set) Token: 0x060072B0 RID: 29360 RVA: 0x002B9E6A File Offset: 0x002B806A
+	// Token: 0x17000D63 RID: 3427
+	// (get) Token: 0x0600734F RID: 29519 RVA: 0x002BD386 File Offset: 0x002BB586
+	// (set) Token: 0x06007350 RID: 29520 RVA: 0x002BD38E File Offset: 0x002BB58E
 	[XuiXmlAttribute("clearonopen", false)]
 	public bool ClearOnOpen
 	{
@@ -231,9 +231,9 @@ public class XUiC_DropDown : XUiController
 		}
 	}
 
-	// Token: 0x17000D4B RID: 3403
-	// (get) Token: 0x060072B1 RID: 29361 RVA: 0x002B9E84 File Offset: 0x002B8084
-	// (set) Token: 0x060072B2 RID: 29362 RVA: 0x002B9E8C File Offset: 0x002B808C
+	// Token: 0x17000D64 RID: 3428
+	// (get) Token: 0x06007351 RID: 29521 RVA: 0x002BD3A8 File Offset: 0x002BB5A8
+	// (set) Token: 0x06007352 RID: 29522 RVA: 0x002BD3B0 File Offset: 0x002BB5B0
 	[XuiXmlAttribute("allowcustomvalue", false)]
 	public bool AllowCustomValue
 	{
@@ -252,8 +252,8 @@ public class XUiC_DropDown : XUiController
 		}
 	}
 
-	// Token: 0x17000D4C RID: 3404
-	// (get) Token: 0x060072B3 RID: 29363 RVA: 0x002B9EA6 File Offset: 0x002B80A6
+	// Token: 0x17000D65 RID: 3429
+	// (get) Token: 0x06007353 RID: 29523 RVA: 0x002BD3CA File Offset: 0x002BB5CA
 	[XuiXmlBinding("thumb_size")]
 	public int ThumbSize
 	{
@@ -264,8 +264,8 @@ public class XUiC_DropDown : XUiController
 		}
 	}
 
-	// Token: 0x17000D4D RID: 3405
-	// (get) Token: 0x060072B4 RID: 29364 RVA: 0x002B9EBD File Offset: 0x002B80BD
+	// Token: 0x17000D66 RID: 3430
+	// (get) Token: 0x06007354 RID: 29524 RVA: 0x002BD3E1 File Offset: 0x002BB5E1
 	[XuiXmlBinding("thumb_position")]
 	public int ThumbPosition
 	{
@@ -276,7 +276,7 @@ public class XUiC_DropDown : XUiController
 		}
 	}
 
-	// Token: 0x060072B5 RID: 29365 RVA: 0x002B9EDC File Offset: 0x002B80DC
+	// Token: 0x06007355 RID: 29525 RVA: 0x002BD400 File Offset: 0x002BB600
 	public override void Init()
 	{
 		base.Init();
@@ -310,14 +310,14 @@ public class XUiC_DropDown : XUiController
 		}
 	}
 
-	// Token: 0x060072B6 RID: 29366 RVA: 0x002B9FAD File Offset: 0x002B81AD
+	// Token: 0x06007356 RID: 29526 RVA: 0x002BD4D1 File Offset: 0x002BB6D1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnDropdown_OnPress(XUiController _sender, int _mouseButton)
 	{
 		this.DropdownOpen = !this.DropdownOpen;
 	}
 
-	// Token: 0x060072B7 RID: 29367 RVA: 0x002B9FBE File Offset: 0x002B81BE
+	// Token: 0x06007357 RID: 29527 RVA: 0x002BD4E2 File Offset: 0x002BB6E2
 	[XuiBindEvent("OnInputSelectedHandler", "TextInput")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnInputSelected(XUiController _sender, bool _selected)
@@ -330,7 +330,7 @@ public class XUiC_DropDown : XUiController
 		ThreadManager.StartCoroutine(this.closeDropdownLater());
 	}
 
-	// Token: 0x060072B8 RID: 29368 RVA: 0x002B9FD7 File Offset: 0x002B81D7
+	// Token: 0x06007358 RID: 29528 RVA: 0x002BD4FB File Offset: 0x002BB6FB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator closeDropdownLater()
 	{
@@ -346,7 +346,7 @@ public class XUiC_DropDown : XUiController
 		yield break;
 	}
 
-	// Token: 0x060072B9 RID: 29369 RVA: 0x002B9FE6 File Offset: 0x002B81E6
+	// Token: 0x06007359 RID: 29529 RVA: 0x002BD50A File Offset: 0x002BB70A
 	[XuiBindEvent("OnSubmitHandler", "TextInput")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnInputSubmit(XUiController _sender, string _text)
@@ -357,7 +357,7 @@ public class XUiC_DropDown : XUiController
 		this.sendSubmitEvent();
 	}
 
-	// Token: 0x060072BA RID: 29370 RVA: 0x002BA00B File Offset: 0x002B820B
+	// Token: 0x0600735A RID: 29530 RVA: 0x002BD52F File Offset: 0x002BB72F
 	[XuiBindEvent("OnChangeHandler", "TextInput")]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnInputChanged(XUiController _sender, string _text, bool _changeFromCode)
@@ -367,7 +367,7 @@ public class XUiC_DropDown : XUiController
 		this.sendChangedEvent(_changeFromCode);
 	}
 
-	// Token: 0x060072BB RID: 29371 RVA: 0x002BA020 File Offset: 0x002B8220
+	// Token: 0x0600735B RID: 29531 RVA: 0x002BD544 File Offset: 0x002BB744
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void sendChangedEvent(bool _changeFromCode)
 	{
@@ -379,7 +379,7 @@ public class XUiC_DropDown : XUiController
 		onChangeHandler(this, this.Text, this.ValidInput, _changeFromCode);
 	}
 
-	// Token: 0x060072BC RID: 29372 RVA: 0x002BA040 File Offset: 0x002B8240
+	// Token: 0x0600735C RID: 29532 RVA: 0x002BD564 File Offset: 0x002BB764
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void sendSubmitEvent()
 	{
@@ -391,7 +391,7 @@ public class XUiC_DropDown : XUiController
 		onSubmitHandler(this, this.Text);
 	}
 
-	// Token: 0x060072BD RID: 29373 RVA: 0x002BA05C File Offset: 0x002B825C
+	// Token: 0x0600735D RID: 29533 RVA: 0x002BD580 File Offset: 0x002BB780
 	public void UpdateFilteredList()
 	{
 		XUiC_TextInput textInput = this.TextInput;
@@ -422,7 +422,7 @@ public class XUiC_DropDown : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060072BE RID: 29374 RVA: 0x002BA118 File Offset: 0x002B8318
+	// Token: 0x0600735E RID: 29534 RVA: 0x002BD63C File Offset: 0x002BB83C
 	[XuiBindEvent("OnScroll", null)]
 	[XuiBindEvent("OnScroll", "listEntryControllers")]
 	[PublicizedFrom(EAccessModifier.Private)]
@@ -436,21 +436,21 @@ public class XUiC_DropDown : XUiController
 		this.handlePageUp();
 	}
 
-	// Token: 0x060072BF RID: 29375 RVA: 0x002BA131 File Offset: 0x002B8331
+	// Token: 0x0600735F RID: 29535 RVA: 0x002BD655 File Offset: 0x002BB855
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void handlePageDownPress(XUiController _sender, int _mouseButton)
 	{
 		this.handlePageDown();
 	}
 
-	// Token: 0x060072C0 RID: 29376 RVA: 0x002BA13A File Offset: 0x002B833A
+	// Token: 0x06007360 RID: 29536 RVA: 0x002BD65E File Offset: 0x002BB85E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void handlePageUpPress(XUiController _sender, int _mouseButton)
 	{
 		this.handlePageUp();
 	}
 
-	// Token: 0x060072C1 RID: 29377 RVA: 0x002BA144 File Offset: 0x002B8344
+	// Token: 0x06007361 RID: 29537 RVA: 0x002BD668 File Offset: 0x002BB868
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool handlePageDown()
 	{
@@ -467,7 +467,7 @@ public class XUiC_DropDown : XUiController
 		return false;
 	}
 
-	// Token: 0x060072C2 RID: 29378 RVA: 0x002BA188 File Offset: 0x002B8388
+	// Token: 0x06007362 RID: 29538 RVA: 0x002BD6AC File Offset: 0x002BB8AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool handlePageUp()
 	{
@@ -484,7 +484,7 @@ public class XUiC_DropDown : XUiController
 		return false;
 	}
 
-	// Token: 0x060072C3 RID: 29379 RVA: 0x002BA1E0 File Offset: 0x002B83E0
+	// Token: 0x06007363 RID: 29539 RVA: 0x002BD704 File Offset: 0x002BB904
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateCurrentPageContents()
 	{
@@ -495,7 +495,7 @@ public class XUiC_DropDown : XUiController
 		}
 	}
 
-	// Token: 0x060072C4 RID: 29380 RVA: 0x002BA238 File Offset: 0x002B8438
+	// Token: 0x06007364 RID: 29540 RVA: 0x002BD75C File Offset: 0x002BB95C
 	public override void Update(float _dt)
 	{
 		if (this.IsDirty)
@@ -515,7 +515,7 @@ public class XUiC_DropDown : XUiController
 		}
 	}
 
-	// Token: 0x060072C5 RID: 29381 RVA: 0x002BA2A6 File Offset: 0x002B84A6
+	// Token: 0x06007365 RID: 29541 RVA: 0x002BD7CA File Offset: 0x002BB9CA
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -528,69 +528,69 @@ public class XUiC_DropDown : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x04005586 RID: 21894
+	// Token: 0x0400562A RID: 22058
 	public readonly List<string> AllEntries = new List<string>();
 
-	// Token: 0x04005587 RID: 21895
+	// Token: 0x0400562B RID: 22059
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<string> filteredEntries = new List<string>();
 
-	// Token: 0x04005588 RID: 21896
+	// Token: 0x0400562C RID: 22060
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_DropDown.Entry[] listEntryControllers;
 
-	// Token: 0x04005589 RID: 21897
+	// Token: 0x0400562D RID: 22061
 	[XuiBindComponent("input", false)]
 	public readonly XUiC_TextInput TextInput;
 
-	// Token: 0x0400558A RID: 21898
+	// Token: 0x0400562E RID: 22062
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Func<bool> handlePageDownAction;
 
-	// Token: 0x0400558B RID: 21899
+	// Token: 0x0400562F RID: 22063
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Func<bool> handlePageUpAction;
 
-	// Token: 0x0400558C RID: 21900
+	// Token: 0x04005630 RID: 22064
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float thumbAreaSize;
 
-	// Token: 0x0400558D RID: 21901
+	// Token: 0x04005631 RID: 22065
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color dropdownHoverColor;
 
-	// Token: 0x0400558E RID: 21902
+	// Token: 0x04005632 RID: 22066
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color dropdownTextColor;
 
-	// Token: 0x0400558F RID: 21903
+	// Token: 0x04005633 RID: 22067
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool sortEntries;
 
-	// Token: 0x04005590 RID: 21904
+	// Token: 0x04005634 RID: 22068
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool clearOnOpen;
 
-	// Token: 0x04005591 RID: 21905
+	// Token: 0x04005635 RID: 22069
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool allowCustomValue = true;
 
-	// Token: 0x04005592 RID: 21906
+	// Token: 0x04005636 RID: 22070
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int page;
 
-	// Token: 0x04005593 RID: 21907
+	// Token: 0x04005637 RID: 22071
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool dropdownOpen;
 
-	// Token: 0x02000E6D RID: 3693
+	// Token: 0x02000E82 RID: 3714
 	[Preserve]
 	public class Entry : XUiController
 	{
-		// Token: 0x17000D4E RID: 3406
-		// (get) Token: 0x060072C7 RID: 29383 RVA: 0x002BA2FA File Offset: 0x002B84FA
-		// (set) Token: 0x060072C8 RID: 29384 RVA: 0x002BA30B File Offset: 0x002B850B
+		// Token: 0x17000D67 RID: 3431
+		// (get) Token: 0x06007367 RID: 29543 RVA: 0x002BD81E File Offset: 0x002BBA1E
+		// (set) Token: 0x06007368 RID: 29544 RVA: 0x002BD82F File Offset: 0x002BBA2F
 		[XuiXmlBinding("name")]
 		public string Text
 		{
@@ -609,8 +609,8 @@ public class XUiC_DropDown : XUiController
 			}
 		}
 
-		// Token: 0x17000D4F RID: 3407
-		// (get) Token: 0x060072C9 RID: 29385 RVA: 0x002BA32A File Offset: 0x002B852A
+		// Token: 0x17000D68 RID: 3432
+		// (get) Token: 0x06007369 RID: 29545 RVA: 0x002BD84E File Offset: 0x002BBA4E
 		[XuiXmlBinding("textcolor")]
 		public Color TextColor
 		{
@@ -628,7 +628,7 @@ public class XUiC_DropDown : XUiController
 			}
 		}
 
-		// Token: 0x060072CA RID: 29386 RVA: 0x002BA368 File Offset: 0x002B8568
+		// Token: 0x0600736A RID: 29546 RVA: 0x002BD88C File Offset: 0x002BBA8C
 		public override void OnOpen()
 		{
 			base.OnOpen();
@@ -636,7 +636,7 @@ public class XUiC_DropDown : XUiController
 			this.IsDirty = true;
 		}
 
-		// Token: 0x060072CB RID: 29387 RVA: 0x002BA37E File Offset: 0x002B857E
+		// Token: 0x0600736B RID: 29547 RVA: 0x002BD8A2 File Offset: 0x002BBAA2
 		[XuiBindEvent("OnPress", null)]
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public void OnPressed(XUiController _sender, int _mouseButton)
@@ -647,7 +647,7 @@ public class XUiC_DropDown : XUiController
 			this.Owner.sendSubmitEvent();
 		}
 
-		// Token: 0x060072CC RID: 29388 RVA: 0x002BA3B4 File Offset: 0x002B85B4
+		// Token: 0x0600736C RID: 29548 RVA: 0x002BD8D8 File Offset: 0x002BBAD8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnHovered(bool _isOver)
 		{
@@ -656,26 +656,26 @@ public class XUiC_DropDown : XUiController
 			this.IsDirty = true;
 		}
 
-		// Token: 0x060072CD RID: 29389 RVA: 0x0028AD37 File Offset: 0x00288F37
+		// Token: 0x0600736D RID: 29549 RVA: 0x0028DC1B File Offset: 0x0028BE1B
 		public override void Update(float _dt)
 		{
 			base.Update(_dt);
 			base.handleDirtyUpdateDefault();
 		}
 
-		// Token: 0x04005594 RID: 21908
+		// Token: 0x04005638 RID: 22072
 		public XUiC_DropDown Owner;
 
-		// Token: 0x04005595 RID: 21909
+		// Token: 0x04005639 RID: 22073
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string text;
 
-		// Token: 0x04005596 RID: 21910
+		// Token: 0x0400563A RID: 22074
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool hovered;
 	}
 
-	// Token: 0x02000E6E RID: 3694
-	// (Invoke) Token: 0x060072D0 RID: 29392
+	// Token: 0x02000E83 RID: 3715
+	// (Invoke) Token: 0x06007370 RID: 29552
 	public delegate void XUiEvent_InputOnChangedEventHandler(XUiController _sender, string _text, bool _validInput, bool _changeFromCode);
 }

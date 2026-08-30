@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F92 RID: 3986
+// Token: 0x02000FAB RID: 4011
 [Preserve]
 public class XUiC_PoiList : XUiC_List<XUiC_PoiList.PoiListEntry>
 {
-	// Token: 0x17000E91 RID: 3729
-	// (get) Token: 0x06007DC2 RID: 32194 RVA: 0x002FD453 File Offset: 0x002FB653
-	// (set) Token: 0x06007DC3 RID: 32195 RVA: 0x002FD45B File Offset: 0x002FB65B
+	// Token: 0x17000ECA RID: 3786
+	// (get) Token: 0x06007EB4 RID: 32436 RVA: 0x00301C27 File Offset: 0x002FFE27
+	// (set) Token: 0x06007EB5 RID: 32437 RVA: 0x00301C2F File Offset: 0x002FFE2F
 	public bool FilterSmallPois
 	{
 		get
@@ -26,9 +26,9 @@ public class XUiC_PoiList : XUiC_List<XUiC_PoiList.PoiListEntry>
 		}
 	}
 
-	// Token: 0x17000E92 RID: 3730
-	// (get) Token: 0x06007DC4 RID: 32196 RVA: 0x002FD474 File Offset: 0x002FB674
-	// (set) Token: 0x06007DC5 RID: 32197 RVA: 0x002FD47C File Offset: 0x002FB67C
+	// Token: 0x17000ECB RID: 3787
+	// (get) Token: 0x06007EB6 RID: 32438 RVA: 0x00301C48 File Offset: 0x002FFE48
+	// (set) Token: 0x06007EB7 RID: 32439 RVA: 0x00301C50 File Offset: 0x002FFE50
 	public int FilterTier
 	{
 		get
@@ -45,25 +45,25 @@ public class XUiC_PoiList : XUiC_List<XUiC_PoiList.PoiListEntry>
 		}
 	}
 
-	// Token: 0x17000E93 RID: 3731
-	// (get) Token: 0x06007DC6 RID: 32198 RVA: 0x002FD495 File Offset: 0x002FB695
-	// (set) Token: 0x06007DC7 RID: 32199 RVA: 0x002FD49D File Offset: 0x002FB69D
+	// Token: 0x17000ECC RID: 3788
+	// (get) Token: 0x06007EB8 RID: 32440 RVA: 0x00301C69 File Offset: 0x002FFE69
+	// (set) Token: 0x06007EB9 RID: 32441 RVA: 0x00301C71 File Offset: 0x002FFE71
 	public int MinTier
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000E94 RID: 3732
-	// (get) Token: 0x06007DC8 RID: 32200 RVA: 0x002FD4A6 File Offset: 0x002FB6A6
-	// (set) Token: 0x06007DC9 RID: 32201 RVA: 0x002FD4AE File Offset: 0x002FB6AE
+	// Token: 0x17000ECD RID: 3789
+	// (get) Token: 0x06007EBA RID: 32442 RVA: 0x00301C7A File Offset: 0x002FFE7A
+	// (set) Token: 0x06007EBB RID: 32443 RVA: 0x00301C82 File Offset: 0x002FFE82
 	public int MaxTier
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06007DCA RID: 32202 RVA: 0x002FD4B8 File Offset: 0x002FB6B8
+	// Token: 0x06007EBC RID: 32444 RVA: 0x00301C8C File Offset: 0x002FFE8C
 	public override void RebuildList(bool _resetFilter = false)
 	{
 		this.allEntries.Clear();
@@ -92,7 +92,7 @@ public class XUiC_PoiList : XUiC_List<XUiC_PoiList.PoiListEntry>
 		base.RebuildList(_resetFilter);
 	}
 
-	// Token: 0x06007DCB RID: 32203 RVA: 0x002FD5D4 File Offset: 0x002FB7D4
+	// Token: 0x06007EBD RID: 32445 RVA: 0x00301DA8 File Offset: 0x002FFFA8
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -103,33 +103,33 @@ public class XUiC_PoiList : XUiC_List<XUiC_PoiList.PoiListEntry>
 		this.openedBefore = true;
 	}
 
-	// Token: 0x04005D45 RID: 23877
+	// Token: 0x04005E0C RID: 24076
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int SmallPoiVolumeLimit = 100;
 
-	// Token: 0x04005D46 RID: 23878
+	// Token: 0x04005E0D RID: 24077
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool filterSmallPois = true;
 
-	// Token: 0x04005D47 RID: 23879
+	// Token: 0x04005E0E RID: 24078
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int filterTier = -1;
 
-	// Token: 0x04005D48 RID: 23880
+	// Token: 0x04005E0F RID: 24079
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool openedBefore;
 
-	// Token: 0x02000F93 RID: 3987
+	// Token: 0x02000FAC RID: 4012
 	[Preserve]
 	public class PoiListEntry : XUiListEntry<XUiC_PoiList.PoiListEntry>
 	{
-		// Token: 0x06007DCD RID: 32205 RVA: 0x002FD615 File Offset: 0x002FB815
+		// Token: 0x06007EBF RID: 32447 RVA: 0x00301DE9 File Offset: 0x002FFFE9
 		public PoiListEntry(PrefabInstance _prefabInstance)
 		{
 			this.prefabInstance = _prefabInstance;
 		}
 
-		// Token: 0x06007DCE RID: 32206 RVA: 0x002FD624 File Offset: 0x002FB824
+		// Token: 0x06007EC0 RID: 32448 RVA: 0x00301DF8 File Offset: 0x002FFFF8
 		public override int CompareTo(XUiC_PoiList.PoiListEntry _otherEntry)
 		{
 			if (_otherEntry == null)
@@ -149,7 +149,7 @@ public class XUiC_PoiList : XUiC_List<XUiC_PoiList.PoiListEntry>
 			return this.prefabInstance.boundingBoxPosition.z - _otherEntry.prefabInstance.boundingBoxPosition.z;
 		}
 
-		// Token: 0x06007DCF RID: 32207 RVA: 0x002FD6A0 File Offset: 0x002FB8A0
+		// Token: 0x06007EC1 RID: 32449 RVA: 0x00301E74 File Offset: 0x00300074
 		public override bool MatchesSearch(string _searchString)
 		{
 			Prefab prefab = this.prefabInstance.prefab;
@@ -162,16 +162,16 @@ public class XUiC_PoiList : XUiC_List<XUiC_PoiList.PoiListEntry>
 			return biomeInWorld != null && biomeInWorld.LocalizedName.ContainsCaseInsensitive(_searchString);
 		}
 
-		// Token: 0x04005D4B RID: 23883
+		// Token: 0x04005E12 RID: 24082
 		public readonly PrefabInstance prefabInstance;
 	}
 
-	// Token: 0x02000F94 RID: 3988
+	// Token: 0x02000FAD RID: 4013
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class EntryController : XUiC_List<XUiC_PoiList.PoiListEntry>.XUiC_ListEntry
 	{
-		// Token: 0x06007DD0 RID: 32208 RVA: 0x002FD710 File Offset: 0x002FB910
+		// Token: 0x06007EC2 RID: 32450 RVA: 0x00301EE4 File Offset: 0x003000E4
 		[XuiXmlBinding("name")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingName()
@@ -180,7 +180,7 @@ public class XUiC_PoiList : XUiC_List<XUiC_PoiList.PoiListEntry>
 			return ((entryData != null) ? entryData.prefabInstance.prefab.PrefabName : null) ?? "";
 		}
 
-		// Token: 0x06007DD1 RID: 32209 RVA: 0x002FD737 File Offset: 0x002FB937
+		// Token: 0x06007EC3 RID: 32451 RVA: 0x00301F0B File Offset: 0x0030010B
 		[XuiXmlBinding("localizedname")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingLocalizedName()
@@ -189,7 +189,7 @@ public class XUiC_PoiList : XUiC_List<XUiC_PoiList.PoiListEntry>
 			return ((entryData != null) ? entryData.prefabInstance.prefab.LocalizedName : null) ?? "";
 		}
 
-		// Token: 0x06007DD2 RID: 32210 RVA: 0x002FD760 File Offset: 0x002FB960
+		// Token: 0x06007EC4 RID: 32452 RVA: 0x00301F34 File Offset: 0x00300134
 		[XuiXmlBinding("coords")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingCoords()

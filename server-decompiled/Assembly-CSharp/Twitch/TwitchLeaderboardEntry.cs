@@ -2,10 +2,10 @@
 
 namespace Twitch
 {
-	// Token: 0x0200181A RID: 6170
+	// Token: 0x02001840 RID: 6208
 	public class TwitchLeaderboardEntry
 	{
-		// Token: 0x0600BDEC RID: 48620 RVA: 0x00464876 File Offset: 0x00462A76
+		// Token: 0x0600BF71 RID: 49009 RVA: 0x0046A612 File Offset: 0x00468812
 		public TwitchLeaderboardEntry(string username, string usercolor, int kills)
 		{
 			this.UserName = username;
@@ -13,13 +13,13 @@ namespace Twitch
 			this.Kills = kills;
 		}
 
-		// Token: 0x04008ED8 RID: 36568
+		// Token: 0x04008FF4 RID: 36852
 		public string UserName;
 
-		// Token: 0x04008ED9 RID: 36569
+		// Token: 0x04008FF5 RID: 36853
 		public string UserColor;
 
-		// Token: 0x04008EDA RID: 36570
+		// Token: 0x04008FF6 RID: 36854
 		public int Kills;
 	}
 }

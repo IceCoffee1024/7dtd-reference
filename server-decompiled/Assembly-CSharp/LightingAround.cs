@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000B3E RID: 2878
+// Token: 0x02000B50 RID: 2896
 public class LightingAround
 {
-	// Token: 0x06005753 RID: 22355 RVA: 0x00215D24 File Offset: 0x00213F24
+	// Token: 0x060057DB RID: 22491 RVA: 0x00218A40 File Offset: 0x00216C40
 	public LightingAround(byte _sun, byte _block, byte _stabilityMiddle)
 	{
 		Lighting lighting = new Lighting(_sun, _block, _stabilityMiddle);
@@ -13,7 +13,7 @@ public class LightingAround
 		}
 	}
 
-	// Token: 0x06005754 RID: 22356 RVA: 0x00215D68 File Offset: 0x00213F68
+	// Token: 0x060057DC RID: 22492 RVA: 0x00218A84 File Offset: 0x00216C84
 	public void SetStab(byte _stab)
 	{
 		for (int i = 0; i < 9; i++)
@@ -22,7 +22,7 @@ public class LightingAround
 		}
 	}
 
-	// Token: 0x17000938 RID: 2360
+	// Token: 0x1700094A RID: 2378
 	public Lighting this[LightingAround.Pos _pos]
 	{
 		get
@@ -35,34 +35,34 @@ public class LightingAround
 		}
 	}
 
-	// Token: 0x0400433B RID: 17211
+	// Token: 0x040043D6 RID: 17366
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cCount = 9;
 
-	// Token: 0x0400433C RID: 17212
+	// Token: 0x040043D7 RID: 17367
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Lighting[] lights = new Lighting[9];
 
-	// Token: 0x02000B3F RID: 2879
+	// Token: 0x02000B51 RID: 2897
 	public enum Pos
 	{
-		// Token: 0x0400433E RID: 17214
+		// Token: 0x040043D9 RID: 17369
 		Middle,
-		// Token: 0x0400433F RID: 17215
+		// Token: 0x040043DA RID: 17370
 		X0Y0Z0,
-		// Token: 0x04004340 RID: 17216
+		// Token: 0x040043DB RID: 17371
 		X1Y0Z0,
-		// Token: 0x04004341 RID: 17217
+		// Token: 0x040043DC RID: 17372
 		X1Y0Z1,
-		// Token: 0x04004342 RID: 17218
+		// Token: 0x040043DD RID: 17373
 		X0Y0Z1,
-		// Token: 0x04004343 RID: 17219
+		// Token: 0x040043DE RID: 17374
 		X0Y1Z0,
-		// Token: 0x04004344 RID: 17220
+		// Token: 0x040043DF RID: 17375
 		X1Y1Z0,
-		// Token: 0x04004345 RID: 17221
+		// Token: 0x040043E0 RID: 17376
 		X1Y1Z1,
-		// Token: 0x04004346 RID: 17222
+		// Token: 0x040043E1 RID: 17377
 		X0Y1Z1
 	}
 }

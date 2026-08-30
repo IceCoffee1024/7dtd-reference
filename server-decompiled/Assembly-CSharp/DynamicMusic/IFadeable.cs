@@ -2,13 +2,13 @@
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A4A RID: 6730
+	// Token: 0x02001A71 RID: 6769
 	public interface IFadeable
 	{
-		// Token: 0x0600CB58 RID: 52056
+		// Token: 0x0600CCE1 RID: 52449
 		void FadeIn();
 
-		// Token: 0x0600CB59 RID: 52057
+		// Token: 0x0600CCE2 RID: 52450
 		void FadeOut();
 	}
 }

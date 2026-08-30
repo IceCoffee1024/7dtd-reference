@@ -9,30 +9,30 @@ using UnityEngine.Scripting;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A02 RID: 6658
+	// Token: 0x02001A29 RID: 6697
 	[Preserve]
 	public abstract class LayeredContent : Content
 	{
-		// Token: 0x1700185F RID: 6239
-		// (get) Token: 0x0600C9BF RID: 51647 RVA: 0x0049FAA1 File Offset: 0x0049DCA1
-		// (set) Token: 0x0600C9C0 RID: 51648 RVA: 0x0049FAA9 File Offset: 0x0049DCA9
+		// Token: 0x170018D1 RID: 6353
+		// (get) Token: 0x0600CB48 RID: 52040 RVA: 0x004A5E95 File Offset: 0x004A4095
+		// (set) Token: 0x0600CB49 RID: 52041 RVA: 0x004A5E9D File Offset: 0x004A409D
 		public LayerType Layer
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x0600C9C1 RID: 51649 RVA: 0x0049FAB2 File Offset: 0x0049DCB2
+		// Token: 0x0600CB4A RID: 52042 RVA: 0x004A5EA6 File Offset: 0x004A40A6
 		public LayeredContent()
 		{
 			this.clips = new EnumDictionary<PlacementType, IClipAdapter>();
 		}
 
-		// Token: 0x0600C9C2 RID: 51650
+		// Token: 0x0600CB4B RID: 52043
 		public abstract float GetSample(PlacementType _placement, int _idx, params float[] _params);
 
-		// Token: 0x17001860 RID: 6240
-		// (get) Token: 0x0600C9C3 RID: 51651 RVA: 0x0049FAC8 File Offset: 0x0049DCC8
+		// Token: 0x170018D2 RID: 6354
+		// (get) Token: 0x0600CB4C RID: 52044 RVA: 0x004A5EBC File Offset: 0x004A40BC
 		public override bool IsLoaded
 		{
 			get
@@ -51,7 +51,7 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600C9C4 RID: 51652 RVA: 0x0049FB28 File Offset: 0x0049DD28
+		// Token: 0x0600CB4D RID: 52045 RVA: 0x004A5F1C File Offset: 0x004A411C
 		public override IEnumerator Load()
 		{
 			foreach (IClipAdapter clipAdapter in this.clips.Values)
@@ -63,7 +63,7 @@ namespace DynamicMusic
 			yield break;
 		}
 
-		// Token: 0x0600C9C5 RID: 51653 RVA: 0x0049FB38 File Offset: 0x0049DD38
+		// Token: 0x0600CB4E RID: 52046 RVA: 0x004A5F2C File Offset: 0x004A412C
 		public void LoadImmediate()
 		{
 			foreach (IClipAdapter clipAdapter in this.clips.Values)
@@ -72,7 +72,7 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600C9C6 RID: 51654 RVA: 0x0049FB90 File Offset: 0x0049DD90
+		// Token: 0x0600CB4F RID: 52047 RVA: 0x004A5F84 File Offset: 0x004A4184
 		public override void Unload()
 		{
 			foreach (IClipAdapter clipAdapter in this.clips.Values)
@@ -81,7 +81,7 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600C9C7 RID: 51655 RVA: 0x0049FBE8 File Offset: 0x0049DDE8
+		// Token: 0x0600CB50 RID: 52048 RVA: 0x004A5FDC File Offset: 0x004A41DC
 		public override void ParseFromXml(XElement _xmlNode)
 		{
 			base.ParseFromXml(_xmlNode);
@@ -89,7 +89,7 @@ namespace DynamicMusic
 			this.Layer = EnumUtils.Parse<LayerType>(_xmlNode.Parent.GetAttribute("name"), false);
 		}
 
-		// Token: 0x0600C9C8 RID: 51656 RVA: 0x0049FC44 File Offset: 0x0049DE44
+		// Token: 0x0600CB51 RID: 52049 RVA: 0x004A6038 File Offset: 0x004A4238
 		public void SetData(string _clipAdapterType, int _num, SectionType _section, LayerType _layer, bool loopOnly = false)
 		{
 			base.Name = _num.ToString("000") + DMSConstants.SectionAbbrvs[_section] + DMSConstants.LayerAbbrvs[_layer];
@@ -103,7 +103,7 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600C9C9 RID: 51657 RVA: 0x0049FCB8 File Offset: 0x0049DEB8
+		// Token: 0x0600CB52 RID: 52050 RVA: 0x004A60AC File Offset: 0x004A42AC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void AddClipAdapter(string _clipAdapterType, int _num, SectionType _section, LayerType _layer, PlacementType _placement)
 		{
@@ -112,14 +112,14 @@ namespace DynamicMusic
 			this.clips.Add(_placement, clipAdapter);
 		}
 
-		// Token: 0x0600C9CA RID: 51658 RVA: 0x0049FCEB File Offset: 0x0049DEEB
+		// Token: 0x0600CB53 RID: 52051 RVA: 0x004A60DF File Offset: 0x004A42DF
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static IClipAdapter CreateClipAdapter(string _type)
 		{
 			return (IClipAdapter)Activator.CreateInstance(ReflectionHelpers.GetTypeWithPrefix("DynamicMusic.", _type));
 		}
 
-		// Token: 0x0600C9CB RID: 51659 RVA: 0x0049FD04 File Offset: 0x0049DF04
+		// Token: 0x0600CB54 RID: 52052 RVA: 0x004A60F8 File Offset: 0x004A42F8
 		public static T Get<T>(SectionType _section, LayerType _layer) where T : LayeredContent
 		{
 			(from e in Content.AllContent.OfType<T>()
@@ -135,7 +135,7 @@ namespace DynamicMusic
 			return default(T);
 		}
 
-		// Token: 0x0600C9CC RID: 51660 RVA: 0x0049FD8C File Offset: 0x0049DF8C
+		// Token: 0x0600CB55 RID: 52053 RVA: 0x004A6180 File Offset: 0x004A4380
 		public static void ReadyQueuesImmediate()
 		{
 			LayeredContent.queueFor.Clear();
@@ -162,7 +162,7 @@ namespace DynamicMusic
 			}
 		}
 
-		// Token: 0x0600C9CD RID: 51661 RVA: 0x0049FEBC File Offset: 0x0049E0BC
+		// Token: 0x0600CB56 RID: 52054 RVA: 0x004A62B0 File Offset: 0x004A44B0
 		public static void ClearQueues()
 		{
 			foreach (ContentQueue contentQueue in LayeredContent.queueFor.Values)
@@ -172,11 +172,11 @@ namespace DynamicMusic
 			LayeredContent.queueFor.Clear();
 		}
 
-		// Token: 0x04009978 RID: 39288
+		// Token: 0x04009AA9 RID: 39593
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Dictionary<Tuple<SectionType, LayerType>, ContentQueue> queueFor = new Dictionary<Tuple<SectionType, LayerType>, ContentQueue>();
 
-		// Token: 0x04009979 RID: 39289
+		// Token: 0x04009AAA RID: 39594
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public EnumDictionary<PlacementType, IClipAdapter> clips;
 	}

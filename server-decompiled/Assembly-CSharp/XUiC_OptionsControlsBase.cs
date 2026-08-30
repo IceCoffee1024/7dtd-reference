@@ -6,16 +6,16 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D91 RID: 3473
+// Token: 0x02000DA5 RID: 3493
 [global::UnityEngine.Scripting.Preserve]
 public abstract class XUiC_OptionsControlsBase : XUiC_OptionsDialogBase
 {
-	// Token: 0x14000094 RID: 148
-	// (add) Token: 0x060069FF RID: 27135 RVA: 0x002989E8 File Offset: 0x00296BE8
-	// (remove) Token: 0x06006A00 RID: 27136 RVA: 0x00298A1C File Offset: 0x00296C1C
+	// Token: 0x14000095 RID: 149
+	// (add) Token: 0x06006A99 RID: 27289 RVA: 0x0029BA9C File Offset: 0x00299C9C
+	// (remove) Token: 0x06006A9A RID: 27290 RVA: 0x0029BAD0 File Offset: 0x00299CD0
 	public static event Action OnSettingsChanged;
 
-	// Token: 0x06006A01 RID: 27137 RVA: 0x00298A50 File Offset: 0x00296C50
+	// Token: 0x06006A9B RID: 27291 RVA: 0x0029BB04 File Offset: 0x00299D04
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void doResetToDefaultsInternal()
 	{
@@ -26,11 +26,11 @@ public abstract class XUiC_OptionsControlsBase : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x06006A02 RID: 27138
+	// Token: 0x06006A9C RID: 27292
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract void createControlsEntries();
 
-	// Token: 0x06006A03 RID: 27139 RVA: 0x00298A8A File Offset: 0x00296C8A
+	// Token: 0x06006A9D RID: 27293 RVA: 0x0029BB3E File Offset: 0x00299D3E
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void afterChangesSaved()
 	{
@@ -46,7 +46,7 @@ public abstract class XUiC_OptionsControlsBase : XUiC_OptionsDialogBase
 		onSettingsChanged();
 	}
 
-	// Token: 0x06006A04 RID: 27140 RVA: 0x00298AB4 File Offset: 0x00296CB4
+	// Token: 0x06006A9E RID: 27294 RVA: 0x0029BB68 File Offset: 0x00299D68
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void storeCurrentBindings()
 	{
@@ -57,7 +57,7 @@ public abstract class XUiC_OptionsControlsBase : XUiC_OptionsDialogBase
 		}
 	}
 
-	// Token: 0x06006A05 RID: 27141 RVA: 0x00298B20 File Offset: 0x00296D20
+	// Token: 0x06006A9F RID: 27295 RVA: 0x0029BBD4 File Offset: 0x00299DD4
 	public override void OnOpen()
 	{
 		if (!this.initialized)
@@ -69,7 +69,7 @@ public abstract class XUiC_OptionsControlsBase : XUiC_OptionsDialogBase
 		base.OnOpen();
 	}
 
-	// Token: 0x06006A06 RID: 27142 RVA: 0x00298B49 File Offset: 0x00296D49
+	// Token: 0x06006AA0 RID: 27296 RVA: 0x0029BBFD File Offset: 0x00299DFD
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator storeBindingsLater()
 	{
@@ -79,34 +79,34 @@ public abstract class XUiC_OptionsControlsBase : XUiC_OptionsDialogBase
 		yield break;
 	}
 
-	// Token: 0x06006A07 RID: 27143 RVA: 0x00298B58 File Offset: 0x00296D58
+	// Token: 0x06006AA1 RID: 27297 RVA: 0x0029BC0C File Offset: 0x00299E0C
 	public override void OnClose()
 	{
 		base.OnClose();
 		PlatformManager.NativePlatform.Input.LoadActionSetsFromStrings(this.actionBindingsOnOpen);
 	}
 
-	// Token: 0x06006A08 RID: 27144 RVA: 0x00298B75 File Offset: 0x00296D75
+	// Token: 0x06006AA2 RID: 27298 RVA: 0x0029BC29 File Offset: 0x00299E29
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiC_OptionsControlsBase()
 	{
 	}
 
-	// Token: 0x040050B8 RID: 20664
+	// Token: 0x04005159 RID: 20825
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool initialized;
 
-	// Token: 0x040050B9 RID: 20665
+	// Token: 0x0400515A RID: 20826
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly List<string> actionBindingsOnOpen = new List<string>();
 
-	// Token: 0x02000D92 RID: 3474
+	// Token: 0x02000DA6 RID: 3494
 	[global::UnityEngine.Scripting.Preserve]
 	public class XUiC_BindingEntry : XUiController
 	{
-		// Token: 0x17000B70 RID: 2928
-		// (get) Token: 0x06006A09 RID: 27145 RVA: 0x00298B88 File Offset: 0x00296D88
-		// (set) Token: 0x06006A0A RID: 27146 RVA: 0x00298B90 File Offset: 0x00296D90
+		// Token: 0x17000B88 RID: 2952
+		// (get) Token: 0x06006AA3 RID: 27299 RVA: 0x0029BC3C File Offset: 0x00299E3C
+		// (set) Token: 0x06006AA4 RID: 27300 RVA: 0x0029BC44 File Offset: 0x00299E44
 		public PlayerAction Action
 		{
 			get
@@ -133,9 +133,9 @@ public abstract class XUiC_OptionsControlsBase : XUiC_OptionsDialogBase
 			}
 		}
 
-		// Token: 0x17000B71 RID: 2929
-		// (get) Token: 0x06006A0B RID: 27147 RVA: 0x00298C0A File Offset: 0x00296E0A
-		// (set) Token: 0x06006A0C RID: 27148 RVA: 0x00298C12 File Offset: 0x00296E12
+		// Token: 0x17000B89 RID: 2953
+		// (get) Token: 0x06006AA5 RID: 27301 RVA: 0x0029BCBE File Offset: 0x00299EBE
+		// (set) Token: 0x06006AA6 RID: 27302 RVA: 0x0029BCC6 File Offset: 0x00299EC6
 		[XuiXmlAttribute("for_controller", false)]
 		public bool IsControllerBinding
 		{
@@ -154,8 +154,8 @@ public abstract class XUiC_OptionsControlsBase : XUiC_OptionsDialogBase
 			}
 		}
 
-		// Token: 0x17000B72 RID: 2930
-		// (get) Token: 0x06006A0D RID: 27149 RVA: 0x00298C2C File Offset: 0x00296E2C
+		// Token: 0x17000B8A RID: 2954
+		// (get) Token: 0x06006AA7 RID: 27303 RVA: 0x0029BCE0 File Offset: 0x00299EE0
 		[XuiXmlBinding("has_action")]
 		public bool HasAction
 		{
@@ -165,8 +165,8 @@ public abstract class XUiC_OptionsControlsBase : XUiC_OptionsDialogBase
 			}
 		}
 
-		// Token: 0x17000B73 RID: 2931
-		// (get) Token: 0x06006A0E RID: 27150 RVA: 0x00298C37 File Offset: 0x00296E37
+		// Token: 0x17000B8B RID: 2955
+		// (get) Token: 0x06006AA8 RID: 27304 RVA: 0x0029BCEB File Offset: 0x00299EEB
 		[XuiXmlBinding("allow_rebind")]
 		public bool AllowRebind
 		{
@@ -177,8 +177,8 @@ public abstract class XUiC_OptionsControlsBase : XUiC_OptionsDialogBase
 			}
 		}
 
-		// Token: 0x17000B74 RID: 2932
-		// (get) Token: 0x06006A0F RID: 27151 RVA: 0x00298C4A File Offset: 0x00296E4A
+		// Token: 0x17000B8C RID: 2956
+		// (get) Token: 0x06006AA9 RID: 27305 RVA: 0x0029BCFE File Offset: 0x00299EFE
 		[XuiXmlBinding("action_label")]
 		public string ActionLabel
 		{
@@ -189,8 +189,8 @@ public abstract class XUiC_OptionsControlsBase : XUiC_OptionsDialogBase
 			}
 		}
 
-		// Token: 0x17000B75 RID: 2933
-		// (get) Token: 0x06006A10 RID: 27152 RVA: 0x00298C67 File Offset: 0x00296E67
+		// Token: 0x17000B8D RID: 2957
+		// (get) Token: 0x06006AAA RID: 27306 RVA: 0x0029BD1B File Offset: 0x00299F1B
 		[XuiXmlBinding("action_description")]
 		public string ActionDescription
 		{
@@ -201,8 +201,8 @@ public abstract class XUiC_OptionsControlsBase : XUiC_OptionsDialogBase
 			}
 		}
 
-		// Token: 0x17000B76 RID: 2934
-		// (get) Token: 0x06006A11 RID: 27153 RVA: 0x00298C84 File Offset: 0x00296E84
+		// Token: 0x17000B8E RID: 2958
+		// (get) Token: 0x06006AAB RID: 27307 RVA: 0x0029BD38 File Offset: 0x00299F38
 		[XuiXmlBinding("action_binding")]
 		public string ActionBinding
 		{
@@ -212,21 +212,21 @@ public abstract class XUiC_OptionsControlsBase : XUiC_OptionsDialogBase
 			}
 		}
 
-		// Token: 0x06006A12 RID: 27154 RVA: 0x00298C95 File Offset: 0x00296E95
+		// Token: 0x06006AAC RID: 27308 RVA: 0x0029BD49 File Offset: 0x00299F49
 		public override void Init()
 		{
 			base.Init();
 			base.registerForInputStyleChanges();
 		}
 
-		// Token: 0x06006A13 RID: 27155 RVA: 0x00298CA3 File Offset: 0x00296EA3
+		// Token: 0x06006AAD RID: 27309 RVA: 0x0029BD57 File Offset: 0x00299F57
 		public override void OnOpen()
 		{
 			base.OnOpen();
 			this.frameOpened = Time.frameCount;
 		}
 
-		// Token: 0x06006A14 RID: 27156 RVA: 0x00298CB8 File Offset: 0x00296EB8
+		// Token: 0x06006AAE RID: 27310 RVA: 0x0029BD6C File Offset: 0x00299F6C
 		public override void Update(float _dt)
 		{
 			base.Update(_dt);
@@ -238,7 +238,7 @@ public abstract class XUiC_OptionsControlsBase : XUiC_OptionsDialogBase
 			}
 		}
 
-		// Token: 0x06006A15 RID: 27157 RVA: 0x00298D0B File Offset: 0x00296F0B
+		// Token: 0x06006AAF RID: 27311 RVA: 0x0029BDBF File Offset: 0x00299FBF
 		public override void Cleanup()
 		{
 			base.Cleanup();
@@ -248,7 +248,7 @@ public abstract class XUiC_OptionsControlsBase : XUiC_OptionsDialogBase
 			}
 		}
 
-		// Token: 0x06006A16 RID: 27158 RVA: 0x00298D32 File Offset: 0x00296F32
+		// Token: 0x06006AB0 RID: 27312 RVA: 0x0029BDE6 File Offset: 0x00299FE6
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void inputStyleChanged(PlayerInputManager.InputStyle _oldStyle, PlayerInputManager.InputStyle _newStyle)
 		{
@@ -256,7 +256,7 @@ public abstract class XUiC_OptionsControlsBase : XUiC_OptionsDialogBase
 			this.IsDirty = true;
 		}
 
-		// Token: 0x06006A17 RID: 27159 RVA: 0x00298D43 File Offset: 0x00296F43
+		// Token: 0x06006AB1 RID: 27313 RVA: 0x0029BDF7 File Offset: 0x00299FF7
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void actionBindingsChanged()
 		{
@@ -268,7 +268,7 @@ public abstract class XUiC_OptionsControlsBase : XUiC_OptionsDialogBase
 			this.parentControls.SetChanged();
 		}
 
-		// Token: 0x06006A18 RID: 27160 RVA: 0x00298D67 File Offset: 0x00296F67
+		// Token: 0x06006AB2 RID: 27314 RVA: 0x0029BE1B File Offset: 0x0029A01B
 		public void ResetToDefault()
 		{
 			PlayerAction playerAction = this.action;
@@ -279,7 +279,7 @@ public abstract class XUiC_OptionsControlsBase : XUiC_OptionsDialogBase
 			playerAction.ResetBindings();
 		}
 
-		// Token: 0x06006A19 RID: 27161 RVA: 0x00298D79 File Offset: 0x00296F79
+		// Token: 0x06006AB3 RID: 27315 RVA: 0x0029BE2D File Offset: 0x0029A02D
 		[XuiBindEvent("OnPress", "button")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void newBindingClick(XUiController _sender, int _mouseButton)
@@ -291,7 +291,7 @@ public abstract class XUiC_OptionsControlsBase : XUiC_OptionsDialogBase
 			XUiC_OptionsControlsNewBinding.GetNewBinding(this.xui, this.action, this.isControllerBinding);
 		}
 
-		// Token: 0x06006A1A RID: 27162 RVA: 0x00298DA8 File Offset: 0x00296FA8
+		// Token: 0x06006AB4 RID: 27316 RVA: 0x0029BE5C File Offset: 0x0029A05C
 		[XuiBindEvent("OnPress", "unbind")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void unbindButtonClick(XUiController _sender, int _mouseButton)
@@ -303,37 +303,37 @@ public abstract class XUiC_OptionsControlsBase : XUiC_OptionsDialogBase
 			this.action.UnbindBindingsOfType(this.isControllerBinding);
 		}
 
-		// Token: 0x040050BA RID: 20666
+		// Token: 0x0400515B RID: 20827
 		[XuiBindParent(true)]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly XUiC_OptionsDialogBase parentControls;
 
-		// Token: 0x040050BB RID: 20667
+		// Token: 0x0400515C RID: 20828
 		[PublicizedFrom(EAccessModifier.Private)]
 		public PlayerAction action;
 
-		// Token: 0x040050BC RID: 20668
+		// Token: 0x0400515D RID: 20829
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isControllerBinding;
 
-		// Token: 0x040050BD RID: 20669
+		// Token: 0x0400515E RID: 20830
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int frameOpened;
 
-		// Token: 0x040050BE RID: 20670
+		// Token: 0x0400515F RID: 20831
 		[PublicizedFrom(EAccessModifier.Private)]
 		public PlayerActionData.ActionUserData actionData;
 
-		// Token: 0x040050BF RID: 20671
+		// Token: 0x04005160 RID: 20832
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingString;
 
-		// Token: 0x040050C0 RID: 20672
+		// Token: 0x04005161 RID: 20833
 		[XuiBindComponent("unbind", true)]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly XUiC_Button unbind;
 
-		// Token: 0x040050C1 RID: 20673
+		// Token: 0x04005162 RID: 20834
 		[XuiBindComponent("background", true)]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly XUiC_Button button;

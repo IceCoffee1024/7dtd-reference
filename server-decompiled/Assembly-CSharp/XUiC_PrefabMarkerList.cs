@@ -3,18 +3,18 @@ using PrefabVolumes;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FB6 RID: 4022
+// Token: 0x02000FCF RID: 4047
 [Preserve]
 public class XUiC_PrefabMarkerList : XUiC_List<XUiC_PrefabMarkerList.PrefabMarkerEntry>
 {
-	// Token: 0x06007EE9 RID: 32489 RVA: 0x00302EAC File Offset: 0x003010AC
+	// Token: 0x06007FDB RID: 32731 RVA: 0x00307680 File Offset: 0x00305880
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.RebuildList(false);
 	}
 
-	// Token: 0x06007EEA RID: 32490 RVA: 0x00302EBC File Offset: 0x003010BC
+	// Token: 0x06007FDC RID: 32732 RVA: 0x00307690 File Offset: 0x00305890
 	public override void RebuildList(bool _resetFilter = false)
 	{
 		if (PrefabEditModeManager.Instance.VoxelPrefab == null)
@@ -30,7 +30,7 @@ public class XUiC_PrefabMarkerList : XUiC_List<XUiC_PrefabMarkerList.PrefabMarke
 		base.RebuildList(_resetFilter);
 	}
 
-	// Token: 0x06007EEB RID: 32491 RVA: 0x00302F40 File Offset: 0x00301140
+	// Token: 0x06007FDD RID: 32733 RVA: 0x00307714 File Offset: 0x00305914
 	public bool SelectByMarker(Marker _marker)
 	{
 		if (_marker == null)
@@ -48,12 +48,12 @@ public class XUiC_PrefabMarkerList : XUiC_List<XUiC_PrefabMarkerList.PrefabMarke
 		return false;
 	}
 
-	// Token: 0x02000FB7 RID: 4023
+	// Token: 0x02000FD0 RID: 4048
 	[Preserve]
 	public class PrefabMarkerEntry : XUiListEntry<XUiC_PrefabMarkerList.PrefabMarkerEntry>
 	{
-		// Token: 0x17000EAC RID: 3756
-		// (get) Token: 0x06007EED RID: 32493 RVA: 0x00302F8E File Offset: 0x0030118E
+		// Token: 0x17000EE5 RID: 3813
+		// (get) Token: 0x06007FDF RID: 32735 RVA: 0x00307762 File Offset: 0x00305962
 		public Marker Marker
 		{
 			get
@@ -62,14 +62,14 @@ public class XUiC_PrefabMarkerList : XUiC_List<XUiC_PrefabMarkerList.PrefabMarke
 			}
 		}
 
-		// Token: 0x06007EEE RID: 32494 RVA: 0x00302FA0 File Offset: 0x003011A0
+		// Token: 0x06007FE0 RID: 32736 RVA: 0x00307774 File Offset: 0x00305974
 		public PrefabMarkerEntry(XUiC_PrefabMarkerList _parentList, SelectionBox _box)
 		{
 			this.parentList = _parentList;
 			this.Box = _box;
 		}
 
-		// Token: 0x06007EEF RID: 32495 RVA: 0x00302FB8 File Offset: 0x003011B8
+		// Token: 0x06007FE1 RID: 32737 RVA: 0x0030778C File Offset: 0x0030598C
 		public override int CompareTo(XUiC_PrefabMarkerList.PrefabMarkerEntry _otherEntry)
 		{
 			if (_otherEntry == null)
@@ -84,30 +84,30 @@ public class XUiC_PrefabMarkerList : XUiC_List<XUiC_PrefabMarkerList.PrefabMarke
 			return string.Compare(this.Box.name, _otherEntry.Box.name, StringComparison.Ordinal);
 		}
 
-		// Token: 0x06007EF0 RID: 32496 RVA: 0x00303008 File Offset: 0x00301208
+		// Token: 0x06007FE2 RID: 32738 RVA: 0x003077DC File Offset: 0x003059DC
 		public override bool MatchesSearch(string _searchString)
 		{
 			return this.Marker.GroupName.IndexOf(_searchString, StringComparison.OrdinalIgnoreCase) >= 0;
 		}
 
-		// Token: 0x04005DF8 RID: 24056
+		// Token: 0x04005EBF RID: 24255
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly XUiC_PrefabMarkerList parentList;
 
-		// Token: 0x04005DF9 RID: 24057
+		// Token: 0x04005EC0 RID: 24256
 		public readonly SelectionBox Box;
 
-		// Token: 0x04005DFA RID: 24058
+		// Token: 0x04005EC1 RID: 24257
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly CachedStringFormatterXuiRgbaColor colorFormatter = new CachedStringFormatterXuiRgbaColor();
 	}
 
-	// Token: 0x02000FB8 RID: 4024
+	// Token: 0x02000FD1 RID: 4049
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class EntryController : XUiC_List<XUiC_PrefabMarkerList.PrefabMarkerEntry>.XUiC_ListEntry
 	{
-		// Token: 0x06007EF2 RID: 32498 RVA: 0x0030302E File Offset: 0x0030122E
+		// Token: 0x06007FE4 RID: 32740 RVA: 0x00307802 File Offset: 0x00305A02
 		[XuiXmlBinding("groupname")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingGroupName()
@@ -116,7 +116,7 @@ public class XUiC_PrefabMarkerList : XUiC_List<XUiC_PrefabMarkerList.PrefabMarke
 			return ((entryData != null) ? entryData.Marker.GroupName : null) ?? "";
 		}
 
-		// Token: 0x06007EF3 RID: 32499 RVA: 0x00303050 File Offset: 0x00301250
+		// Token: 0x06007FE5 RID: 32741 RVA: 0x00307824 File Offset: 0x00305A24
 		[XuiXmlBinding("markertype")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingMarkerType()
@@ -125,7 +125,7 @@ public class XUiC_PrefabMarkerList : XUiC_List<XUiC_PrefabMarkerList.PrefabMarke
 			return ((entryData != null) ? entryData.Marker.MarkerType.ToString() : null) ?? "";
 		}
 
-		// Token: 0x06007EF4 RID: 32500 RVA: 0x0030308C File Offset: 0x0030128C
+		// Token: 0x06007FE6 RID: 32742 RVA: 0x00307860 File Offset: 0x00305A60
 		[XuiXmlBinding("groupcolor")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingGroupColor()
@@ -139,7 +139,7 @@ public class XUiC_PrefabMarkerList : XUiC_List<XUiC_PrefabMarkerList.PrefabMarke
 			return groupColor.ToXuiColorString();
 		}
 
-		// Token: 0x06007EF5 RID: 32501 RVA: 0x003030D0 File Offset: 0x003012D0
+		// Token: 0x06007FE7 RID: 32743 RVA: 0x003078A4 File Offset: 0x00305AA4
 		[XuiXmlBinding("markersize")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingMarkerSize()

@@ -3,11 +3,11 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200095C RID: 2396
+// Token: 0x0200096D RID: 2413
 [Preserve]
 public class QuestActionSpawnGSEnemy : BaseQuestAction
 {
-	// Token: 0x06004627 RID: 17959 RVA: 0x001BC006 File Offset: 0x001BA206
+	// Token: 0x060046AD RID: 18093 RVA: 0x001BE7FA File Offset: 0x001BC9FA
 	public override void PerformAction(Quest ownerQuest)
 	{
 		if (!GameStats.GetBool(EnumGameStats.EnemySpawnMode))
@@ -17,7 +17,7 @@ public class QuestActionSpawnGSEnemy : BaseQuestAction
 		this.HandleSpawnEnemies(ownerQuest);
 	}
 
-	// Token: 0x06004628 RID: 17960 RVA: 0x001BC01C File Offset: 0x001BA21C
+	// Token: 0x060046AE RID: 18094 RVA: 0x001BE810 File Offset: 0x001BCA10
 	public void HandleSpawnEnemies(Quest ownerQuest)
 	{
 		if (this.Value != null && this.Value != "" && !int.TryParse(this.Value, out this.count) && this.Value.Contains("-"))
@@ -31,7 +31,7 @@ public class QuestActionSpawnGSEnemy : BaseQuestAction
 		GameManager.Instance.StartCoroutine(this.SpawnEnemies(ownerQuest));
 	}
 
-	// Token: 0x06004629 RID: 17961 RVA: 0x001BC0B7 File Offset: 0x001BA2B7
+	// Token: 0x060046AF RID: 18095 RVA: 0x001BE8AB File Offset: 0x001BCAAB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator SpawnEnemies(Quest ownerQuest)
 	{
@@ -67,7 +67,7 @@ public class QuestActionSpawnGSEnemy : BaseQuestAction
 		yield break;
 	}
 
-	// Token: 0x0600462A RID: 17962 RVA: 0x001BC0D0 File Offset: 0x001BA2D0
+	// Token: 0x060046B0 RID: 18096 RVA: 0x001BE8C4 File Offset: 0x001BCAC4
 	public static void SpawnQuestEntity(int spawnedEntityID, int entityIDQuestHolder, EntityPlayer player = null)
 	{
 		World world = GameManager.Instance.World;
@@ -89,7 +89,7 @@ public class QuestActionSpawnGSEnemy : BaseQuestAction
 		(entity as EntityAlive).SetAttackTarget(player, 200);
 	}
 
-	// Token: 0x0600462B RID: 17963 RVA: 0x001BC224 File Offset: 0x001BA424
+	// Token: 0x060046B1 RID: 18097 RVA: 0x001BEA18 File Offset: 0x001BCC18
 	public override BaseQuestAction Clone()
 	{
 		QuestActionSpawnGSEnemy questActionSpawnGSEnemy = new QuestActionSpawnGSEnemy();
@@ -97,7 +97,7 @@ public class QuestActionSpawnGSEnemy : BaseQuestAction
 		return questActionSpawnGSEnemy;
 	}
 
-	// Token: 0x0600462C RID: 17964 RVA: 0x001BC240 File Offset: 0x001BA440
+	// Token: 0x060046B2 RID: 18098 RVA: 0x001BEA34 File Offset: 0x001BCC34
 	public override void ParseProperties(DynamicProperties properties)
 	{
 		base.ParseProperties(properties);
@@ -111,13 +111,13 @@ public class QuestActionSpawnGSEnemy : BaseQuestAction
 		}
 	}
 
-	// Token: 0x0400384B RID: 14411
+	// Token: 0x040038DC RID: 14556
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int count = 1;
 
-	// Token: 0x0400384C RID: 14412
+	// Token: 0x040038DD RID: 14557
 	public static string PropGameStageID = "gamestage_list";
 
-	// Token: 0x0400384D RID: 14413
+	// Token: 0x040038DE RID: 14558
 	public static string PropCount = "count";
 }

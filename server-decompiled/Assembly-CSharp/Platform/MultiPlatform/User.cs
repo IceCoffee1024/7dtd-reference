@@ -4,16 +4,16 @@ using System.Collections.Generic;
 
 namespace Platform.MultiPlatform
 {
-	// Token: 0x02001C99 RID: 7321
+	// Token: 0x02001CC0 RID: 7360
 	public class User : IUserClient
 	{
-		// Token: 0x0600D8F3 RID: 55539 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DA8B RID: 55947 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Init(IPlatform _owner)
 		{
 		}
 
-		// Token: 0x17001AD9 RID: 6873
-		// (get) Token: 0x0600D8F4 RID: 55540 RVA: 0x004DCCE8 File Offset: 0x004DAEE8
+		// Token: 0x17001B4B RID: 6987
+		// (get) Token: 0x0600DA8C RID: 55948 RVA: 0x004E32E4 File Offset: 0x004E14E4
 		public EUserStatus UserStatus
 		{
 			get
@@ -27,9 +27,9 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x14000139 RID: 313
-		// (add) Token: 0x0600D8F5 RID: 55541 RVA: 0x004DCD1C File Offset: 0x004DAF1C
-		// (remove) Token: 0x0600D8F6 RID: 55542 RVA: 0x004DCD84 File Offset: 0x004DAF84
+		// Token: 0x1400013A RID: 314
+		// (add) Token: 0x0600DA8D RID: 55949 RVA: 0x004E3318 File Offset: 0x004E1518
+		// (remove) Token: 0x0600DA8E RID: 55950 RVA: 0x004E3380 File Offset: 0x004E1580
 		public event Action<IPlatform> UserLoggedIn
 		{
 			add
@@ -58,9 +58,9 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x1400013A RID: 314
-		// (add) Token: 0x0600D8F7 RID: 55543 RVA: 0x004DCDEC File Offset: 0x004DAFEC
-		// (remove) Token: 0x0600D8F8 RID: 55544 RVA: 0x004DCE28 File Offset: 0x004DB028
+		// Token: 0x1400013B RID: 315
+		// (add) Token: 0x0600DA8F RID: 55951 RVA: 0x004E33E8 File Offset: 0x004E15E8
+		// (remove) Token: 0x0600DA90 RID: 55952 RVA: 0x004E3424 File Offset: 0x004E1624
 		public event UserBlocksChangedCallback UserBlocksChanged
 		{
 			add
@@ -85,8 +85,8 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001ADA RID: 6874
-		// (get) Token: 0x0600D8F9 RID: 55545 RVA: 0x004C2473 File Offset: 0x004C0673
+		// Token: 0x17001B4C RID: 6988
+		// (get) Token: 0x0600DA91 RID: 55953 RVA: 0x004C8867 File Offset: 0x004C6A67
 		public PlatformUserIdentifierAbs PlatformUserId
 		{
 			get
@@ -106,7 +106,7 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x0600D8FA RID: 55546 RVA: 0x004DCE64 File Offset: 0x004DB064
+		// Token: 0x0600DA92 RID: 55954 RVA: 0x004E3460 File Offset: 0x004E1660
 		public void Login(LoginUserCallback _delegate)
 		{
 			PlatformManager.NativePlatform.User.Login(delegate(IPlatform _nativePlatform, EApiStatusReason _nativeReason, string _statusReasonAdditionalText)
@@ -131,7 +131,7 @@ namespace Platform.MultiPlatform
 			});
 		}
 
-		// Token: 0x0600D8FB RID: 55547 RVA: 0x004DCE9C File Offset: 0x004DB09C
+		// Token: 0x0600DA93 RID: 55955 RVA: 0x004E3498 File Offset: 0x004E1698
 		public void PlayOffline(LoginUserCallback _delegate)
 		{
 			PlatformManager.NativePlatform.User.PlayOffline(delegate(IPlatform _nativePlatform, EApiStatusReason _nativeReason, string _statusReasonAdditionalText)
@@ -151,7 +151,7 @@ namespace Platform.MultiPlatform
 			});
 		}
 
-		// Token: 0x0600D8FC RID: 55548 RVA: 0x004DCED1 File Offset: 0x004DB0D1
+		// Token: 0x0600DA94 RID: 55956 RVA: 0x004E34CD File Offset: 0x004E16CD
 		public void StartAdvertisePlaying(GameServerInfo _serverInfo)
 		{
 			IPlatform crossplatformPlatform = PlatformManager.CrossplatformPlatform;
@@ -166,7 +166,7 @@ namespace Platform.MultiPlatform
 			PlatformManager.NativePlatform.User.StartAdvertisePlaying(_serverInfo);
 		}
 
-		// Token: 0x0600D8FD RID: 55549 RVA: 0x004DCEFF File Offset: 0x004DB0FF
+		// Token: 0x0600DA95 RID: 55957 RVA: 0x004E34FB File Offset: 0x004E16FB
 		public void StopAdvertisePlaying()
 		{
 			IPlatform crossplatformPlatform = PlatformManager.CrossplatformPlatform;
@@ -181,19 +181,19 @@ namespace Platform.MultiPlatform
 			PlatformManager.NativePlatform.User.StopAdvertisePlaying();
 		}
 
-		// Token: 0x0600D8FE RID: 55550 RVA: 0x000876FD File Offset: 0x000858FD
+		// Token: 0x0600DA96 RID: 55958 RVA: 0x00087DB8 File Offset: 0x00085FB8
 		public void GetLoginTicket(Action<bool, byte[], string> _callback)
 		{
 			throw new NotImplementedException();
 		}
 
-		// Token: 0x0600D8FF RID: 55551 RVA: 0x000876FD File Offset: 0x000858FD
+		// Token: 0x0600DA97 RID: 55959 RVA: 0x00087DB8 File Offset: 0x00085FB8
 		public string GetFriendName(PlatformUserIdentifierAbs _playerId)
 		{
 			throw new NotImplementedException();
 		}
 
-		// Token: 0x0600D900 RID: 55552 RVA: 0x004DCF2C File Offset: 0x004DB12C
+		// Token: 0x0600DA98 RID: 55960 RVA: 0x004E3528 File Offset: 0x004E1728
 		public bool IsFriend(PlatformUserIdentifierAbs _playerId)
 		{
 			if (_playerId == null)
@@ -209,7 +209,7 @@ namespace Platform.MultiPlatform
 			return user != null && user.IsFriend(_playerId);
 		}
 
-		// Token: 0x0600D901 RID: 55553 RVA: 0x004DCF64 File Offset: 0x004DB164
+		// Token: 0x0600DA99 RID: 55961 RVA: 0x004E3560 File Offset: 0x004E1760
 		public bool CanShowProfile(PlatformUserIdentifierAbs _playerId)
 		{
 			if (!PlatformManager.NativePlatform.User.CanShowProfile(_playerId))
@@ -231,7 +231,7 @@ namespace Platform.MultiPlatform
 			return true;
 		}
 
-		// Token: 0x0600D902 RID: 55554 RVA: 0x004DCFC0 File Offset: 0x004DB1C0
+		// Token: 0x0600DA9A RID: 55962 RVA: 0x004E35BC File Offset: 0x004E17BC
 		public void ShowProfile(PlatformUserIdentifierAbs _playerId)
 		{
 			if (PlatformManager.NativePlatform.User.CanShowProfile(_playerId))
@@ -257,8 +257,8 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x17001ADB RID: 6875
-		// (get) Token: 0x0600D903 RID: 55555 RVA: 0x004DD040 File Offset: 0x004DB240
+		// Token: 0x17001B4D RID: 6989
+		// (get) Token: 0x0600DA9B RID: 55963 RVA: 0x004E363C File Offset: 0x004E183C
 		public EUserPerms Permissions
 		{
 			get
@@ -283,7 +283,7 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x0600D904 RID: 55556 RVA: 0x004DD0B0 File Offset: 0x004DB2B0
+		// Token: 0x0600DA9C RID: 55964 RVA: 0x004E36AC File Offset: 0x004E18AC
 		public string GetPermissionDenyReason(EUserPerms _perms)
 		{
 			IPlatform crossplatformPlatform = PlatformManager.CrossplatformPlatform;
@@ -310,7 +310,7 @@ namespace Platform.MultiPlatform
 			return null;
 		}
 
-		// Token: 0x0600D905 RID: 55557 RVA: 0x004DD102 File Offset: 0x004DB302
+		// Token: 0x0600DA9D RID: 55965 RVA: 0x004E36FE File Offset: 0x004E18FE
 		public IEnumerator ResolvePermissions(EUserPerms _perms, bool _canPrompt, CoroutineCancellationToken _cancellationToken = null)
 		{
 			if (_canPrompt && this.UserStatus != EUserStatus.LoggedIn)
@@ -359,7 +359,7 @@ namespace Platform.MultiPlatform
 			yield break;
 		}
 
-		// Token: 0x0600D906 RID: 55558 RVA: 0x004DD126 File Offset: 0x004DB326
+		// Token: 0x0600DA9E RID: 55966 RVA: 0x004E3722 File Offset: 0x004E1922
 		public IEnumerator ResolveUserBlocks(IReadOnlyList<IPlatformUserBlockedResults> _results)
 		{
 			if (GameManager.IsDedicatedServer)
@@ -394,7 +394,7 @@ namespace Platform.MultiPlatform
 			yield break;
 		}
 
-		// Token: 0x0600D907 RID: 55559 RVA: 0x004DD13C File Offset: 0x004DB33C
+		// Token: 0x0600DA9F RID: 55967 RVA: 0x004E3738 File Offset: 0x004E1938
 		public EMatchmakingGroup GetMatchmakingGroup()
 		{
 			IUserClient user = PlatformManager.NativePlatform.User;
@@ -405,7 +405,7 @@ namespace Platform.MultiPlatform
 			return user.GetMatchmakingGroup();
 		}
 
-		// Token: 0x0600D908 RID: 55560 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DAA0 RID: 55968 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Destroy()
 		{
 		}

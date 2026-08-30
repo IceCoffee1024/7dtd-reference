@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FCD RID: 4045
+// Token: 0x02000FE6 RID: 4070
 [Preserve]
 public class XUiC_QuestObjectivesWindow : XUiController
 {
-	// Token: 0x17000EBA RID: 3770
-	// (get) Token: 0x06007F81 RID: 32641 RVA: 0x00305CBD File Offset: 0x00303EBD
-	// (set) Token: 0x06007F82 RID: 32642 RVA: 0x00305CC5 File Offset: 0x00303EC5
+	// Token: 0x17000EF3 RID: 3827
+	// (get) Token: 0x06008073 RID: 32883 RVA: 0x0030A491 File Offset: 0x00308691
+	// (set) Token: 0x06008074 RID: 32884 RVA: 0x0030A499 File Offset: 0x00308699
 	public Quest CurrentQuest
 	{
 		get
@@ -22,14 +22,14 @@ public class XUiC_QuestObjectivesWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007F83 RID: 32643 RVA: 0x00305CEB File Offset: 0x00303EEB
+	// Token: 0x06008075 RID: 32885 RVA: 0x0030A4BF File Offset: 0x003086BF
 	public override void Init()
 	{
 		base.Init();
 		this.objectiveList = base.GetChildByType<XUiC_QuestObjectiveList>();
 	}
 
-	// Token: 0x06007F84 RID: 32644 RVA: 0x00305D00 File Offset: 0x00303F00
+	// Token: 0x06008076 RID: 32886 RVA: 0x0030A4D4 File Offset: 0x003086D4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -170,7 +170,7 @@ public class XUiC_QuestObjectivesWindow : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x06007F85 RID: 32645 RVA: 0x00306100 File Offset: 0x00304300
+	// Token: 0x06008077 RID: 32887 RVA: 0x0030A8D4 File Offset: 0x00308AD4
 	public override bool ParseAttribute(string name, string value)
 	{
 		bool flag = base.ParseAttribute(name, value);
@@ -200,7 +200,7 @@ public class XUiC_QuestObjectivesWindow : XUiController
 		return flag;
 	}
 
-	// Token: 0x06007F86 RID: 32646 RVA: 0x00306192 File Offset: 0x00304392
+	// Token: 0x06008078 RID: 32888 RVA: 0x0030A966 File Offset: 0x00308B66
 	public void SetQuest(XUiC_QuestEntry questEntry)
 	{
 		this.entry = questEntry;
@@ -213,35 +213,35 @@ public class XUiC_QuestObjectivesWindow : XUiController
 		this.CurrentQuest = null;
 	}
 
-	// Token: 0x04005E5F RID: 24159
+	// Token: 0x04005F26 RID: 24358
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string defaultReqColor = "DECEA3";
 
-	// Token: 0x04005E60 RID: 24160
+	// Token: 0x04005F27 RID: 24359
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string missingReqColor = "FF0000";
 
-	// Token: 0x04005E61 RID: 24161
+	// Token: 0x04005F28 RID: 24360
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string questlimitedColor = "255,0,0,255";
 
-	// Token: 0x04005E62 RID: 24162
+	// Token: 0x04005F29 RID: 24361
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string questlimitedcompleteColor = "255,255,255,255";
 
-	// Token: 0x04005E63 RID: 24163
+	// Token: 0x04005F2A RID: 24362
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_QuestEntry entry;
 
-	// Token: 0x04005E64 RID: 24164
+	// Token: 0x04005F2B RID: 24363
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_QuestObjectiveList objectiveList;
 
-	// Token: 0x04005E65 RID: 24165
+	// Token: 0x04005F2C RID: 24364
 	[PublicizedFrom(EAccessModifier.Private)]
 	public QuestClass questClass;
 
-	// Token: 0x04005E66 RID: 24166
+	// Token: 0x04005F2D RID: 24365
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Quest currentQuest;
 }

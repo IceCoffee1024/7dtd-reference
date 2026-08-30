@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000CDC RID: 3292
+// Token: 0x02000CEE RID: 3310
 public class FlatArea
 {
-	// Token: 0x17000A80 RID: 2688
-	// (get) Token: 0x060064C4 RID: 25796 RVA: 0x002761DE File Offset: 0x002743DE
+	// Token: 0x17000A93 RID: 2707
+	// (get) Token: 0x06006550 RID: 25936 RVA: 0x002790DA File Offset: 0x002772DA
 	public int Height
 	{
 		get
@@ -15,8 +15,8 @@ public class FlatArea
 		}
 	}
 
-	// Token: 0x17000A81 RID: 2689
-	// (get) Token: 0x060064C5 RID: 25797 RVA: 0x002761EB File Offset: 0x002743EB
+	// Token: 0x17000A94 RID: 2708
+	// (get) Token: 0x06006551 RID: 25937 RVA: 0x002790E7 File Offset: 0x002772E7
 	public int MinX
 	{
 		get
@@ -25,8 +25,8 @@ public class FlatArea
 		}
 	}
 
-	// Token: 0x17000A82 RID: 2690
-	// (get) Token: 0x060064C6 RID: 25798 RVA: 0x002761F8 File Offset: 0x002743F8
+	// Token: 0x17000A95 RID: 2709
+	// (get) Token: 0x06006552 RID: 25938 RVA: 0x002790F4 File Offset: 0x002772F4
 	public int MaxX
 	{
 		get
@@ -35,8 +35,8 @@ public class FlatArea
 		}
 	}
 
-	// Token: 0x17000A83 RID: 2691
-	// (get) Token: 0x060064C7 RID: 25799 RVA: 0x0027620E File Offset: 0x0027440E
+	// Token: 0x17000A96 RID: 2710
+	// (get) Token: 0x06006553 RID: 25939 RVA: 0x0027910A File Offset: 0x0027730A
 	public int MinZ
 	{
 		get
@@ -45,8 +45,8 @@ public class FlatArea
 		}
 	}
 
-	// Token: 0x17000A84 RID: 2692
-	// (get) Token: 0x060064C8 RID: 25800 RVA: 0x0027621B File Offset: 0x0027441B
+	// Token: 0x17000A97 RID: 2711
+	// (get) Token: 0x06006554 RID: 25940 RVA: 0x00279117 File Offset: 0x00277317
 	public int MaxZ
 	{
 		get
@@ -55,8 +55,8 @@ public class FlatArea
 		}
 	}
 
-	// Token: 0x17000A85 RID: 2693
-	// (get) Token: 0x060064C9 RID: 25801 RVA: 0x00276231 File Offset: 0x00274431
+	// Token: 0x17000A98 RID: 2712
+	// (get) Token: 0x06006555 RID: 25941 RVA: 0x0027912D File Offset: 0x0027732D
 	public Vector3 Center
 	{
 		get
@@ -65,14 +65,14 @@ public class FlatArea
 		}
 	}
 
-	// Token: 0x060064CA RID: 25802 RVA: 0x0027625F File Offset: 0x0027445F
+	// Token: 0x06006556 RID: 25942 RVA: 0x0027915B File Offset: 0x0027735B
 	public FlatArea(Vector3i _position, int _size)
 	{
 		this.position = _position;
 		this.size = _size;
 	}
 
-	// Token: 0x060064CB RID: 25803 RVA: 0x00276278 File Offset: 0x00274478
+	// Token: 0x06006557 RID: 25943 RVA: 0x00279174 File Offset: 0x00277374
 	public bool IsValid(World world, BiomeFilterTypes biomeFilter = BiomeFilterTypes.AnyBiome, string[] biomeNames = null, ChunkProtectionLevel maxAllowedChunkProtectionLevel = ChunkProtectionLevel.NearLandClaim)
 	{
 		this.maxChunkProtectionLevel = ChunkProtectionLevel.None;
@@ -133,13 +133,13 @@ public class FlatArea
 		return !world.ChunkCache.ChunkProvider.GetDynamicPrefabDecorator().HasPrefabsAtXZ(this.MinX, this.MaxX, this.MinZ, this.MaxZ);
 	}
 
-	// Token: 0x060064CC RID: 25804 RVA: 0x002763E2 File Offset: 0x002745E2
+	// Token: 0x06006558 RID: 25944 RVA: 0x002792DE File Offset: 0x002774DE
 	public bool IsInArea(int _x, int _z)
 	{
 		return _x >= this.MinX && _x <= this.MaxX && _z >= this.MinZ && _z <= this.MaxZ;
 	}
 
-	// Token: 0x060064CD RID: 25805 RVA: 0x00276410 File Offset: 0x00274610
+	// Token: 0x06006559 RID: 25945 RVA: 0x0027930C File Offset: 0x0027750C
 	public List<Vector2i> GetPositions()
 	{
 		List<Vector2i> list = new List<Vector2i>();
@@ -153,31 +153,31 @@ public class FlatArea
 		return list;
 	}
 
-	// Token: 0x060064CE RID: 25806 RVA: 0x00276460 File Offset: 0x00274660
+	// Token: 0x0600655A RID: 25946 RVA: 0x0027935C File Offset: 0x0027755C
 	public Vector3 GetRandomPosition(float margin = 0f)
 	{
 		return new Vector3(global::UnityEngine.Random.Range((float)this.MinX + margin, (float)this.MaxX - margin + 1f), (float)this.Height, global::UnityEngine.Random.Range((float)this.MinZ + margin, (float)this.MaxZ - margin + 1f));
 	}
 
-	// Token: 0x060064CF RID: 25807 RVA: 0x002764B4 File Offset: 0x002746B4
+	// Token: 0x0600655B RID: 25947 RVA: 0x002793B0 File Offset: 0x002775B0
 	public override bool Equals(object obj)
 	{
 		FlatArea flatArea = obj as FlatArea;
 		return flatArea != null && this.position == flatArea.position && this.size == flatArea.size;
 	}
 
-	// Token: 0x060064D0 RID: 25808 RVA: 0x000111D7 File Offset: 0x0000F3D7
+	// Token: 0x0600655C RID: 25948 RVA: 0x000111D7 File Offset: 0x0000F3D7
 	public override int GetHashCode()
 	{
 		return base.GetHashCode();
 	}
 
-	// Token: 0x04004E32 RID: 20018
+	// Token: 0x04004ED0 RID: 20176
 	public Vector3i position;
 
-	// Token: 0x04004E33 RID: 20019
+	// Token: 0x04004ED1 RID: 20177
 	public int size;
 
-	// Token: 0x04004E34 RID: 20020
+	// Token: 0x04004ED2 RID: 20178
 	public ChunkProtectionLevel maxChunkProtectionLevel;
 }

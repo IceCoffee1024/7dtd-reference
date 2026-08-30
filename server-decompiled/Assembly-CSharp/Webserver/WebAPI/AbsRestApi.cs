@@ -8,31 +8,31 @@ using Webserver.Permissions;
 
 namespace Webserver.WebAPI
 {
-	// Token: 0x02001AA4 RID: 6820
+	// Token: 0x02001ACB RID: 6859
 	public abstract class AbsRestApi : AbsWebAPI
 	{
-		// Token: 0x0600CD13 RID: 52499 RVA: 0x004AD51D File Offset: 0x004AB71D
+		// Token: 0x0600CE9C RID: 52892 RVA: 0x004B3911 File Offset: 0x004B1B11
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public AbsRestApi(string _name = null)
 			: this(null, _name)
 		{
 		}
 
-		// Token: 0x0600CD14 RID: 52500 RVA: 0x004AD527 File Offset: 0x004AB727
+		// Token: 0x0600CE9D RID: 52893 RVA: 0x004B391B File Offset: 0x004B1B1B
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public AbsRestApi(Web _parentWeb, string _name = null)
 			: base(_parentWeb, _name)
 		{
 		}
 
-		// Token: 0x0600CD15 RID: 52501 RVA: 0x004AD531 File Offset: 0x004AB731
+		// Token: 0x0600CE9E RID: 52894 RVA: 0x004B3925 File Offset: 0x004B1B25
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void RegisterPermissions()
 		{
 			AdminWebModules.Instance.AddKnownModule(new AdminWebModules.WebModule(this.CachedApiModuleName, this.DefaultPermissionLevel(), this.DefaultMethodPermissionLevels(), true));
 		}
 
-		// Token: 0x0600CD16 RID: 52502 RVA: 0x004AD558 File Offset: 0x004AB758
+		// Token: 0x0600CE9F RID: 52895 RVA: 0x004B394C File Offset: 0x004B1B4C
 		public sealed override void HandleRequest(RequestContext _context)
 		{
 			IDictionary<string, object> dictionary = null;
@@ -127,35 +127,35 @@ namespace Webserver.WebAPI
 			}
 		}
 
-		// Token: 0x0600CD17 RID: 52503 RVA: 0x004AD790 File Offset: 0x004AB990
+		// Token: 0x0600CEA0 RID: 52896 RVA: 0x004B3B84 File Offset: 0x004B1D84
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void HandleRestGet(RequestContext _context)
 		{
 			AbsRestApi.SendEmptyResponse(_context, HttpStatusCode.MethodNotAllowed, null, "Unsupported", null);
 		}
 
-		// Token: 0x0600CD18 RID: 52504 RVA: 0x004AD7A4 File Offset: 0x004AB9A4
+		// Token: 0x0600CEA1 RID: 52897 RVA: 0x004B3B98 File Offset: 0x004B1D98
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void HandleRestPost(RequestContext _context, IDictionary<string, object> _jsonInput, byte[] _jsonInputData)
 		{
 			AbsRestApi.SendEmptyResponse(_context, HttpStatusCode.MethodNotAllowed, _jsonInputData, "Unsupported", null);
 		}
 
-		// Token: 0x0600CD19 RID: 52505 RVA: 0x004AD7A4 File Offset: 0x004AB9A4
+		// Token: 0x0600CEA2 RID: 52898 RVA: 0x004B3B98 File Offset: 0x004B1D98
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void HandleRestPut(RequestContext _context, IDictionary<string, object> _jsonInput, byte[] _jsonInputData)
 		{
 			AbsRestApi.SendEmptyResponse(_context, HttpStatusCode.MethodNotAllowed, _jsonInputData, "Unsupported", null);
 		}
 
-		// Token: 0x0600CD1A RID: 52506 RVA: 0x004AD790 File Offset: 0x004AB990
+		// Token: 0x0600CEA3 RID: 52899 RVA: 0x004B3B84 File Offset: 0x004B1D84
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void HandleRestDelete(RequestContext _context)
 		{
 			AbsRestApi.SendEmptyResponse(_context, HttpStatusCode.MethodNotAllowed, null, "Unsupported", null);
 		}
 
-		// Token: 0x0600CD1B RID: 52507 RVA: 0x004AD7B8 File Offset: 0x004AB9B8
+		// Token: 0x0600CEA4 RID: 52900 RVA: 0x004B3BAC File Offset: 0x004B1DAC
 		public override bool Authorized(RequestContext _context)
 		{
 			AdminWebModules.WebModule module = AdminWebModules.Instance.GetModule(this.CachedApiModuleName);
@@ -175,8 +175,8 @@ namespace Webserver.WebAPI
 			return module.LevelGlobal >= _context.PermissionLevel;
 		}
 
-		// Token: 0x17001907 RID: 6407
-		// (get) Token: 0x0600CD1C RID: 52508 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x17001979 RID: 6521
+		// (get) Token: 0x0600CEA5 RID: 52901 RVA: 0x00010E62 File Offset: 0x0000F062
 		public virtual bool AllowPostWithId
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -186,27 +186,27 @@ namespace Webserver.WebAPI
 			}
 		}
 
-		// Token: 0x0600CD1D RID: 52509 RVA: 0x004AD82E File Offset: 0x004ABA2E
+		// Token: 0x0600CEA6 RID: 52902 RVA: 0x004B3C22 File Offset: 0x004B1E22
 		public virtual int[] DefaultMethodPermissionLevels()
 		{
 			return new int[] { -2147483647, int.MinValue, int.MinValue, int.MinValue, int.MinValue };
 		}
 
-		// Token: 0x0600CD1E RID: 52510 RVA: 0x004AD841 File Offset: 0x004ABA41
+		// Token: 0x0600CEA7 RID: 52903 RVA: 0x004B3C35 File Offset: 0x004B1E35
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static void PrepareEnvelopedResult(out JsonWriter _writer)
 		{
 			WebUtils.PrepareEnvelopedResult(out _writer);
 		}
 
-		// Token: 0x0600CD1F RID: 52511 RVA: 0x004AD849 File Offset: 0x004ABA49
+		// Token: 0x0600CEA8 RID: 52904 RVA: 0x004B3C3D File Offset: 0x004B1E3D
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static void SendEnvelopedResult(RequestContext _context, ref JsonWriter _writer, HttpStatusCode _statusCode = HttpStatusCode.OK, byte[] _jsonInputData = null, string _errorCode = null, Exception _exception = null)
 		{
 			WebUtils.SendEnvelopedResult(_context, ref _writer, _statusCode, _jsonInputData, _errorCode, _exception);
 		}
 
-		// Token: 0x0600CD20 RID: 52512 RVA: 0x004AD858 File Offset: 0x004ABA58
+		// Token: 0x0600CEA9 RID: 52905 RVA: 0x004B3C4C File Offset: 0x004B1E4C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static void SendEmptyResponse(RequestContext _context, HttpStatusCode _statusCode = HttpStatusCode.OK, byte[] _jsonInputData = null, string _errorCode = null, Exception _exception = null)
 		{
@@ -216,14 +216,14 @@ namespace Webserver.WebAPI
 			AbsRestApi.SendEnvelopedResult(_context, ref jsonWriter, _statusCode, _jsonInputData, _errorCode, _exception);
 		}
 
-		// Token: 0x0600CD21 RID: 52513 RVA: 0x004AD885 File Offset: 0x004ABA85
+		// Token: 0x0600CEAA RID: 52906 RVA: 0x004B3C79 File Offset: 0x004B1E79
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static void SendEmptyResponse(RequestContext _context, HttpStatusCode _statusCode, byte[] _jsonInputData, EApiErrorCode _errorCode, Exception _exception = null)
 		{
 			AbsRestApi.SendEmptyResponse(_context, _statusCode, _jsonInputData, _errorCode.ToStringCached<EApiErrorCode>(), _exception);
 		}
 
-		// Token: 0x04009B70 RID: 39792
+		// Token: 0x04009CA1 RID: 40097
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly CustomSampler jsonDeserializeSampler = CustomSampler.Create("JSON_Deserialize", false);
 	}

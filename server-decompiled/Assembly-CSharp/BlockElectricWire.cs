@@ -4,17 +4,17 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200011C RID: 284
+// Token: 0x0200011D RID: 285
 [Preserve]
 public class BlockElectricWire : BlockPowered
 {
-	// Token: 0x06000779 RID: 1913 RVA: 0x0003542B File Offset: 0x0003362B
+	// Token: 0x06000783 RID: 1923 RVA: 0x0003571B File Offset: 0x0003391B
 	public BlockElectricWire()
 	{
 		this.HasTileEntity = true;
 	}
 
-	// Token: 0x0600077A RID: 1914 RVA: 0x0003543C File Offset: 0x0003363C
+	// Token: 0x06000784 RID: 1924 RVA: 0x0003572C File Offset: 0x0003392C
 	public override void Init()
 	{
 		base.Init();
@@ -26,7 +26,7 @@ public class BlockElectricWire : BlockPowered
 		this.brokenPercentage = 0.25f;
 	}
 
-	// Token: 0x0600077B RID: 1915 RVA: 0x0003549E File Offset: 0x0003369E
+	// Token: 0x06000785 RID: 1925 RVA: 0x0003578E File Offset: 0x0003398E
 	public override TileEntityPowered CreateTileEntity(Chunk chunk)
 	{
 		return new TileEntityPoweredMeleeTrap(chunk)
@@ -35,7 +35,7 @@ public class BlockElectricWire : BlockPowered
 		};
 	}
 
-	// Token: 0x0600077C RID: 1916 RVA: 0x000354B0 File Offset: 0x000336B0
+	// Token: 0x06000786 RID: 1926 RVA: 0x000357A0 File Offset: 0x000339A0
 	public override void OnBlockAdded(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(_world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -58,7 +58,7 @@ public class BlockElectricWire : BlockPowered
 		}
 	}
 
-	// Token: 0x0600077D RID: 1917 RVA: 0x0003552C File Offset: 0x0003372C
+	// Token: 0x06000787 RID: 1927 RVA: 0x0003581C File Offset: 0x00033A1C
 	public override int OnBlockDamaged(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _damagePoints, int _entityIdThatDamaged, ItemActionAttack.AttackHitInfo _attackHitInfo, bool _bUseHarvestTool, bool _bBypassMaxDamage, int _recDepth = 0)
 	{
 		if ((_blockValue.meta & 2) > 0 && 1f - (float)_blockValue.damage / (float)_blockValue.Block.MaxDamage > this.brokenPercentage)
@@ -103,11 +103,11 @@ public class BlockElectricWire : BlockPowered
 		return base.OnBlockDamaged(_world, _bvRef, _blockValue, _damagePoints, _entityIdThatDamaged, _attackHitInfo, _bUseHarvestTool, _bBypassMaxDamage, _recDepth);
 	}
 
-	// Token: 0x040008E6 RID: 2278
+	// Token: 0x040008E8 RID: 2280
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<string> buffActions;
 
-	// Token: 0x040008E7 RID: 2279
+	// Token: 0x040008E9 RID: 2281
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float brokenPercentage;
 }

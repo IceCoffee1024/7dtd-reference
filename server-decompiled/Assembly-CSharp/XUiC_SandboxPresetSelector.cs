@@ -2,17 +2,17 @@
 using SandboxOptions;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E2A RID: 3626
+// Token: 0x02000E3F RID: 3647
 [Preserve]
 public class XUiC_SandboxPresetSelector : XUiController
 {
-	// Token: 0x1400009E RID: 158
-	// (add) Token: 0x06006F7C RID: 28540 RVA: 0x002AFB14 File Offset: 0x002ADD14
-	// (remove) Token: 0x06006F7D RID: 28541 RVA: 0x002AFB4C File Offset: 0x002ADD4C
+	// Token: 0x1400009F RID: 159
+	// (add) Token: 0x0600701C RID: 28700 RVA: 0x002B3038 File Offset: 0x002B1238
+	// (remove) Token: 0x0600701D RID: 28701 RVA: 0x002B3070 File Offset: 0x002B1270
 	public event SandboxPresetSelectionChangedDelegate SandboxPresetSelectionChanged;
 
-	// Token: 0x17000C88 RID: 3208
-	// (get) Token: 0x06006F7E RID: 28542 RVA: 0x002AFB81 File Offset: 0x002ADD81
+	// Token: 0x17000CA1 RID: 3233
+	// (get) Token: 0x0600701E RID: 28702 RVA: 0x002B30A5 File Offset: 0x002B12A5
 	[XuiXmlBinding("description")]
 	public string Description
 	{
@@ -24,8 +24,8 @@ public class XUiC_SandboxPresetSelector : XUiController
 		}
 	}
 
-	// Token: 0x17000C89 RID: 3209
-	// (get) Token: 0x06006F7F RID: 28543 RVA: 0x002AFBA3 File Offset: 0x002ADDA3
+	// Token: 0x17000CA2 RID: 3234
+	// (get) Token: 0x0600701F RID: 28703 RVA: 0x002B30C7 File Offset: 0x002B12C7
 	[XuiXmlBinding("icon")]
 	public string Icon
 	{
@@ -37,8 +37,8 @@ public class XUiC_SandboxPresetSelector : XUiController
 		}
 	}
 
-	// Token: 0x17000C8A RID: 3210
-	// (get) Token: 0x06006F80 RID: 28544 RVA: 0x002AFBC5 File Offset: 0x002ADDC5
+	// Token: 0x17000CA3 RID: 3235
+	// (get) Token: 0x06007020 RID: 28704 RVA: 0x002B30E9 File Offset: 0x002B12E9
 	[XuiXmlBinding("difficulty")]
 	public int Difficulty
 	{
@@ -54,8 +54,8 @@ public class XUiC_SandboxPresetSelector : XUiController
 		}
 	}
 
-	// Token: 0x17000C8B RID: 3211
-	// (get) Token: 0x06006F81 RID: 28545 RVA: 0x002AFBDD File Offset: 0x002ADDDD
+	// Token: 0x17000CA4 RID: 3236
+	// (get) Token: 0x06007021 RID: 28705 RVA: 0x002B3101 File Offset: 0x002B1301
 	[XuiXmlBinding("userpreset")]
 	public bool IsUserPreset
 	{
@@ -67,8 +67,8 @@ public class XUiC_SandboxPresetSelector : XUiController
 		}
 	}
 
-	// Token: 0x17000C8C RID: 3212
-	// (get) Token: 0x06006F82 RID: 28546 RVA: 0x002AFBF5 File Offset: 0x002ADDF5
+	// Token: 0x17000CA5 RID: 3237
+	// (get) Token: 0x06007022 RID: 28706 RVA: 0x002B3119 File Offset: 0x002B1319
 	[XuiXmlBinding("custompreset")]
 	public bool IsCustomPreset
 	{
@@ -80,8 +80,8 @@ public class XUiC_SandboxPresetSelector : XUiController
 		}
 	}
 
-	// Token: 0x17000C8D RID: 3213
-	// (get) Token: 0x06006F83 RID: 28547 RVA: 0x002AFC0D File Offset: 0x002ADE0D
+	// Token: 0x17000CA6 RID: 3238
+	// (get) Token: 0x06007023 RID: 28707 RVA: 0x002B3131 File Offset: 0x002B1331
 	public SandboxPresetInfo SelectedPreset
 	{
 		get
@@ -90,7 +90,7 @@ public class XUiC_SandboxPresetSelector : XUiController
 		}
 	}
 
-	// Token: 0x06006F84 RID: 28548 RVA: 0x002AFC1C File Offset: 0x002ADE1C
+	// Token: 0x06007024 RID: 28708 RVA: 0x002B3140 File Offset: 0x002B1340
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updatePresetGroups(bool _allowCustom = false)
 	{
@@ -111,7 +111,7 @@ public class XUiC_SandboxPresetSelector : XUiController
 		this.selectGroupByName(text);
 	}
 
-	// Token: 0x06006F85 RID: 28549 RVA: 0x002AFD04 File Offset: 0x002ADF04
+	// Token: 0x06007025 RID: 28709 RVA: 0x002B3228 File Offset: 0x002B1428
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updatePresetsForSelectedGroup(string _selectPreset = null, bool _forceChangedCallback = false)
 	{
@@ -139,7 +139,7 @@ public class XUiC_SandboxPresetSelector : XUiController
 		}
 	}
 
-	// Token: 0x06006F86 RID: 28550 RVA: 0x002AFE50 File Offset: 0x002AE050
+	// Token: 0x06007026 RID: 28710 RVA: 0x002B3374 File Offset: 0x002B1574
 	[XuiBindEvent("OnValueChanged", "cbxPresetGroups")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxPresetGroups_OnValueChanged(XUiController _sender, SandboxPresetGroupData _oldValue, SandboxPresetGroupData _newValue)
@@ -148,7 +148,7 @@ public class XUiC_SandboxPresetSelector : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006F87 RID: 28551 RVA: 0x002AFE61 File Offset: 0x002AE061
+	// Token: 0x06007027 RID: 28711 RVA: 0x002B3385 File Offset: 0x002B1585
 	[XuiBindEvent("OnValueChanged", "cbxPreset")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxPreset_OnValueChanged(XUiController _sender, SandboxPresetInfo _oldValue, SandboxPresetInfo _newValue)
@@ -162,14 +162,14 @@ public class XUiC_SandboxPresetSelector : XUiController
 		sandboxPresetSelectionChanged(_oldValue, _newValue);
 	}
 
-	// Token: 0x06006F88 RID: 28552 RVA: 0x002AFE7C File Offset: 0x002AE07C
+	// Token: 0x06007028 RID: 28712 RVA: 0x002B33A0 File Offset: 0x002B15A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void selectGroupByName(string _groupName)
 	{
 		this.cbxPresetGroups.SelectedIndex = this.cbxPresetGroups.Elements.FindIndex((SandboxPresetGroupData _data) => _data.InternalName == _groupName);
 	}
 
-	// Token: 0x06006F89 RID: 28553 RVA: 0x002AFEC0 File Offset: 0x002AE0C0
+	// Token: 0x06007029 RID: 28713 RVA: 0x002B33E4 File Offset: 0x002B15E4
 	public void SelectPresetByName(string _presetName, string _tryForceGroup = null, bool _forceChangedCallback = false)
 	{
 		SandboxOptionPreset sandboxOptionPreset = this.sandboxManager.GetPreset(_presetName);
@@ -188,7 +188,7 @@ public class XUiC_SandboxPresetSelector : XUiController
 		this.updatePresetsForSelectedGroup(sandboxOptionPreset.Name, _forceChangedCallback);
 	}
 
-	// Token: 0x06006F8A RID: 28554 RVA: 0x002AFF1E File Offset: 0x002AE11E
+	// Token: 0x0600702A RID: 28714 RVA: 0x002B3442 File Offset: 0x002B1642
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -196,32 +196,32 @@ public class XUiC_SandboxPresetSelector : XUiController
 		this.updatePresetsForSelectedGroup(null, false);
 	}
 
-	// Token: 0x06006F8B RID: 28555 RVA: 0x0028AD37 File Offset: 0x00288F37
+	// Token: 0x0600702B RID: 28715 RVA: 0x0028DC1B File Offset: 0x0028BE1B
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 		base.handleDirtyUpdateDefault();
 	}
 
-	// Token: 0x04005419 RID: 21529
+	// Token: 0x040054BD RID: 21693
 	[XuiBindComponent("cbxPresetGroup", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<SandboxPresetGroupData> cbxPresetGroups;
 
-	// Token: 0x0400541A RID: 21530
+	// Token: 0x040054BE RID: 21694
 	[XuiBindComponent("cbxPreset", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<SandboxPresetInfo> cbxPreset;
 
-	// Token: 0x0400541B RID: 21531
+	// Token: 0x040054BF RID: 21695
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly SandboxOptionManager sandboxManager = SandboxOptionManager.Current;
 
-	// Token: 0x0400541C RID: 21532
+	// Token: 0x040054C0 RID: 21696
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string sandBoxPresetDescription;
 
-	// Token: 0x0400541D RID: 21533
+	// Token: 0x040054C1 RID: 21697
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string sandBoxValuesTemplate;
 }

@@ -1,19 +1,19 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020003D6 RID: 982
+// Token: 0x020003DA RID: 986
 public class SpotlightController : MonoBehaviour, IPowerSystemCamera
 {
-	// Token: 0x17000399 RID: 921
-	// (get) Token: 0x06001DBD RID: 7613 RVA: 0x000B542D File Offset: 0x000B362D
-	// (set) Token: 0x06001DBE RID: 7614 RVA: 0x000B5435 File Offset: 0x000B3635
+	// Token: 0x1700039D RID: 925
+	// (get) Token: 0x06001DDA RID: 7642 RVA: 0x000B5B71 File Offset: 0x000B3D71
+	// (set) Token: 0x06001DDB RID: 7643 RVA: 0x000B5B79 File Offset: 0x000B3D79
 	public int UserAccessingId
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	} = -1;
 
-	// Token: 0x06001DBF RID: 7615 RVA: 0x000B5440 File Offset: 0x000B3640
+	// Token: 0x06001DDC RID: 7644 RVA: 0x000B5B84 File Offset: 0x000B3D84
 	public void Init(DynamicProperties _properties)
 	{
 		if (this.initialized)
@@ -41,7 +41,7 @@ public class SpotlightController : MonoBehaviour, IPowerSystemCamera
 		}
 	}
 
-	// Token: 0x06001DC0 RID: 7616 RVA: 0x000B54F8 File Offset: 0x000B36F8
+	// Token: 0x06001DDD RID: 7645 RVA: 0x000B5C3C File Offset: 0x000B3E3C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -95,7 +95,7 @@ public class SpotlightController : MonoBehaviour, IPowerSystemCamera
 		}
 	}
 
-	// Token: 0x06001DC1 RID: 7617 RVA: 0x000B56F8 File Offset: 0x000B38F8
+	// Token: 0x06001DDE RID: 7646 RVA: 0x000B5E3C File Offset: 0x000B403C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateEmissionColor(bool isPowered)
 	{
@@ -121,43 +121,43 @@ public class SpotlightController : MonoBehaviour, IPowerSystemCamera
 		}
 	}
 
-	// Token: 0x06001DC2 RID: 7618 RVA: 0x000B5791 File Offset: 0x000B3991
+	// Token: 0x06001DDF RID: 7647 RVA: 0x000B5ED5 File Offset: 0x000B40D5
 	public void SetPitch(float pitch)
 	{
 		this.TileEntity.CenteredPitch = pitch;
 	}
 
-	// Token: 0x06001DC3 RID: 7619 RVA: 0x000B579F File Offset: 0x000B399F
+	// Token: 0x06001DE0 RID: 7648 RVA: 0x000B5EE3 File Offset: 0x000B40E3
 	public void SetYaw(float yaw)
 	{
 		this.TileEntity.CenteredYaw = yaw;
 	}
 
-	// Token: 0x06001DC4 RID: 7620 RVA: 0x000B57AD File Offset: 0x000B39AD
+	// Token: 0x06001DE1 RID: 7649 RVA: 0x000B5EF1 File Offset: 0x000B40F1
 	public float GetPitch()
 	{
 		return this.TileEntity.CenteredPitch;
 	}
 
-	// Token: 0x06001DC5 RID: 7621 RVA: 0x000B57BA File Offset: 0x000B39BA
+	// Token: 0x06001DE2 RID: 7650 RVA: 0x000B5EFE File Offset: 0x000B40FE
 	public float GetYaw()
 	{
 		return this.TileEntity.CenteredYaw;
 	}
 
-	// Token: 0x06001DC6 RID: 7622 RVA: 0x0001FF1E File Offset: 0x0001E11E
+	// Token: 0x06001DE3 RID: 7651 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
 	public Transform GetCameraTransform()
 	{
 		return null;
 	}
 
-	// Token: 0x06001DC7 RID: 7623 RVA: 0x000B57C7 File Offset: 0x000B39C7
+	// Token: 0x06001DE4 RID: 7652 RVA: 0x000B5F0B File Offset: 0x000B410B
 	public void SetUserAccessing(int userAccessingId)
 	{
 		this.UserAccessingId = userAccessingId;
 	}
 
-	// Token: 0x06001DC8 RID: 7624 RVA: 0x000B57D0 File Offset: 0x000B39D0
+	// Token: 0x06001DE5 RID: 7653 RVA: 0x000B5F14 File Offset: 0x000B4114
 	public void SetConeColor(Color _color)
 	{
 		if (this.ConeMaterial != null)
@@ -166,13 +166,13 @@ public class SpotlightController : MonoBehaviour, IPowerSystemCamera
 		}
 	}
 
-	// Token: 0x06001DC9 RID: 7625 RVA: 0x000B57F1 File Offset: 0x000B39F1
+	// Token: 0x06001DE6 RID: 7654 RVA: 0x000B5F35 File Offset: 0x000B4135
 	public Color GetOriginalConeColor()
 	{
 		return this.ConeColor;
 	}
 
-	// Token: 0x06001DCA RID: 7626 RVA: 0x000B57F9 File Offset: 0x000B39F9
+	// Token: 0x06001DE7 RID: 7655 RVA: 0x000B5F3D File Offset: 0x000B413D
 	public void SetConeActive(bool _active)
 	{
 		if (this.Cone != null)
@@ -181,76 +181,76 @@ public class SpotlightController : MonoBehaviour, IPowerSystemCamera
 		}
 	}
 
-	// Token: 0x06001DCB RID: 7627 RVA: 0x000B581A File Offset: 0x000B3A1A
+	// Token: 0x06001DE8 RID: 7656 RVA: 0x000B5F5E File Offset: 0x000B415E
 	public bool GetConeActive()
 	{
 		return this.Cone != null && this.Cone.gameObject.activeSelf;
 	}
 
-	// Token: 0x06001DCC RID: 7628 RVA: 0x000B583C File Offset: 0x000B3A3C
+	// Token: 0x06001DE9 RID: 7657 RVA: 0x000B5F80 File Offset: 0x000B4180
 	public bool HasCone()
 	{
 		return this.Cone != null;
 	}
 
-	// Token: 0x06001DCD RID: 7629 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06001DEA RID: 7658 RVA: 0x00010E62 File Offset: 0x0000F062
 	public bool HasLaser()
 	{
 		return false;
 	}
 
-	// Token: 0x06001DCE RID: 7630 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06001DEB RID: 7659 RVA: 0x000027FC File Offset: 0x000009FC
 	public void SetLaserColor(Color _color)
 	{
 	}
 
-	// Token: 0x06001DCF RID: 7631 RVA: 0x000AEC5D File Offset: 0x000ACE5D
+	// Token: 0x06001DEC RID: 7660 RVA: 0x000AF39D File Offset: 0x000AD59D
 	public Color GetOriginalLaserColor()
 	{
 		return Color.black;
 	}
 
-	// Token: 0x06001DD0 RID: 7632 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06001DED RID: 7661 RVA: 0x000027FC File Offset: 0x000009FC
 	public void SetLaserActive(bool _active)
 	{
 	}
 
-	// Token: 0x06001DD1 RID: 7633 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06001DEE RID: 7662 RVA: 0x00010E62 File Offset: 0x0000F062
 	public bool GetLaserActive()
 	{
 		return false;
 	}
 
-	// Token: 0x040013DC RID: 5084
+	// Token: 0x040013F1 RID: 5105
 	public AutoTurretYawLerp YawController;
 
-	// Token: 0x040013DD RID: 5085
+	// Token: 0x040013F2 RID: 5106
 	public AutoTurretPitchLerp PitchController;
 
-	// Token: 0x040013DE RID: 5086
+	// Token: 0x040013F3 RID: 5107
 	public LightLOD LightScript;
 
-	// Token: 0x040013DF RID: 5087
+	// Token: 0x040013F4 RID: 5108
 	public Transform Cone;
 
-	// Token: 0x040013E0 RID: 5088
+	// Token: 0x040013F5 RID: 5109
 	public Material ConeMaterial;
 
-	// Token: 0x040013E1 RID: 5089
+	// Token: 0x040013F6 RID: 5110
 	public Color ConeColor;
 
-	// Token: 0x040013E2 RID: 5090
+	// Token: 0x040013F7 RID: 5111
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float degreesPerSecond = 11.25f;
 
-	// Token: 0x040013E3 RID: 5091
+	// Token: 0x040013F8 RID: 5112
 	public bool IsOn;
 
-	// Token: 0x040013E4 RID: 5092
+	// Token: 0x040013F9 RID: 5113
 	public TileEntityPowered TileEntity;
 
-	// Token: 0x040013E6 RID: 5094
+	// Token: 0x040013FB RID: 5115
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool initialized;

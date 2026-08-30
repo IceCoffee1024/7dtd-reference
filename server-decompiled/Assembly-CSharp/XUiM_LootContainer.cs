@@ -2,13 +2,13 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Token: 0x02001110 RID: 4368
+// Token: 0x02001129 RID: 4393
 public class XUiM_LootContainer : XUiModel
 {
-	// Token: 0x060089E3 RID: 35299 RVA: 0x0034A014 File Offset: 0x00348214
+	// Token: 0x06008AD5 RID: 35541 RVA: 0x0034E838 File Offset: 0x0034CA38
 	public static bool AddItem(ItemStack _itemStack, XUi _xui)
 	{
-		if (!_itemStack.CanMoveTo(XUiC_ItemStack.StackLocationTypes.LootContainer))
+		if (!_itemStack.CanMoveTo(XUiC_ItemStack.StackLocationTypes.LootContainer, -1))
 		{
 			return false;
 		}
@@ -20,7 +20,7 @@ public class XUiM_LootContainer : XUiModel
 		return _itemStack.count > 0 && _xui.LootContainer.AddItem(_itemStack);
 	}
 
-	// Token: 0x060089E4 RID: 35300 RVA: 0x0034A054 File Offset: 0x00348254
+	// Token: 0x06008AD6 RID: 35542 RVA: 0x0034E878 File Offset: 0x0034CA78
 	public static bool TakeAll(XUi _xui)
 	{
 		XUiM_PlayerInventory playerInventory = _xui.PlayerInventory;
@@ -42,7 +42,7 @@ public class XUiM_LootContainer : XUiModel
 		return flag;
 	}
 
-	// Token: 0x060089E5 RID: 35301 RVA: 0x0034A0C0 File Offset: 0x003482C0
+	// Token: 0x06008AD7 RID: 35543 RVA: 0x0034E8E4 File Offset: 0x0034CAE4
 	[return: TupleElementNames(new string[] { "_allMoved", "_anyMoved" })]
 	public static ValueTuple<bool, bool> StashItems(XUiController _srcWindow, XUiC_ItemStackGrid _srcGrid, IInventory _dstInventory, int _ignoreSlots, PackedBoolArray _ignoredSlots, XUiM_LootContainer.EItemMoveKind _moveKind, bool _startBottomRight)
 	{
@@ -120,24 +120,24 @@ public class XUiM_LootContainer : XUiModel
 		return new ValueTuple<bool, bool>(flag, flag2);
 	}
 
-	// Token: 0x04006631 RID: 26161
+	// Token: 0x040066F8 RID: 26360
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float lastStashTime;
 
-	// Token: 0x04006632 RID: 26162
+	// Token: 0x040066F9 RID: 26361
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float SecondClickMaxDelaySec = 2f;
 
-	// Token: 0x02001111 RID: 4369
+	// Token: 0x0200112A RID: 4394
 	public enum EItemMoveKind
 	{
-		// Token: 0x04006634 RID: 26164
+		// Token: 0x040066FB RID: 26363
 		All,
-		// Token: 0x04006635 RID: 26165
+		// Token: 0x040066FC RID: 26364
 		FillOnly,
-		// Token: 0x04006636 RID: 26166
+		// Token: 0x040066FD RID: 26365
 		FillAndCreate,
-		// Token: 0x04006637 RID: 26167
+		// Token: 0x040066FE RID: 26366
 		FillOnlyFirstCreateSecond
 	}
 }

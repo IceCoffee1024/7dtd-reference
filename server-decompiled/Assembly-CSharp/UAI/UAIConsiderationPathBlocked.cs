@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace UAI
 {
-	// Token: 0x0200174F RID: 5967
+	// Token: 0x02001775 RID: 6005
 	[Preserve]
 	public class UAIConsiderationPathBlocked : UAIConsiderationBase
 	{
-		// Token: 0x0600B8BF RID: 47295 RVA: 0x0044FEA0 File Offset: 0x0044E0A0
+		// Token: 0x0600BA42 RID: 47682 RVA: 0x00455C18 File Offset: 0x00453E18
 		public override float GetScore(Context _context, object target)
 		{
 			Vector3i zero = Vector3i.zero;
@@ -20,7 +20,7 @@ namespace UAI
 			return 0f;
 		}
 
-		// Token: 0x0600B8C0 RID: 47296 RVA: 0x0044FEF0 File Offset: 0x0044E0F0
+		// Token: 0x0600BA43 RID: 47683 RVA: 0x00455C68 File Offset: 0x00453E68
 		public bool IsPathUsageBlocked(Context _context)
 		{
 			EntityAlive self = _context.Self;
@@ -44,7 +44,7 @@ namespace UAI
 			return self.GetDistanceSq(targetPos) < 256f || distanceSq > distanceSq2;
 		}
 
-		// Token: 0x0600B8C1 RID: 47297 RVA: 0x0044FF7C File Offset: 0x0044E17C
+		// Token: 0x0600BA44 RID: 47684 RVA: 0x00455CF4 File Offset: 0x00453EF4
 		public static bool CanAttackBlocks(EntityAlive theEntity, out Vector3i attackPos)
 		{
 			float num;
@@ -52,7 +52,7 @@ namespace UAI
 			return UAIConsiderationPathBlocked.CanAttackBlocks(theEntity, UAIConsiderationPathBlocked.GetTargetYaw(theEntity), out num, out attackPos, out blockValue);
 		}
 
-		// Token: 0x0600B8C2 RID: 47298 RVA: 0x0044FF9C File Offset: 0x0044E19C
+		// Token: 0x0600BA45 RID: 47685 RVA: 0x00455D14 File Offset: 0x00453F14
 		public static bool CanAttackBlocks(EntityAlive theEntity, float yawAngle, out float attackAngle, out Vector3i attackAddPos, out BlockValue attackBlockValue)
 		{
 			int num = Utils.Fastfloor(theEntity.position.x);
@@ -131,7 +131,7 @@ namespace UAI
 			return flag;
 		}
 
-		// Token: 0x0600B8C3 RID: 47299 RVA: 0x00450216 File Offset: 0x0044E416
+		// Token: 0x0600BA46 RID: 47686 RVA: 0x00455F8E File Offset: 0x0045418E
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool isPosBlocked(EntityAlive theEntity, int _x, int _y, int _z, out BlockValue attackBlockValue)
 		{
@@ -139,7 +139,7 @@ namespace UAI
 			return attackBlockValue.Block.IsMovementBlocked(theEntity.world, new Vector3i(_x, _y, _z), attackBlockValue, BlockFace.None);
 		}
 
-		// Token: 0x0600B8C4 RID: 47300 RVA: 0x00450253 File Offset: 0x0044E453
+		// Token: 0x0600BA47 RID: 47687 RVA: 0x00455FCB File Offset: 0x004541CB
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static float GetTargetYaw(EntityAlive theEntity)
 		{
@@ -150,7 +150,7 @@ namespace UAI
 			return theEntity.YawForTarget(UAIConsiderationPathBlocked.GetTargetPos(theEntity));
 		}
 
-		// Token: 0x0600B8C5 RID: 47301 RVA: 0x0045027C File Offset: 0x0044E47C
+		// Token: 0x0600BA48 RID: 47688 RVA: 0x00455FF4 File Offset: 0x004541F4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static Vector3 GetTargetPos(EntityAlive theEntity)
 		{

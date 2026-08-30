@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace Twitch
 {
-	// Token: 0x020017D8 RID: 6104
+	// Token: 0x020017FE RID: 6142
 	public class TwitchActionPreset
 	{
-		// Token: 0x0600BC9F RID: 48287 RVA: 0x0045FA8E File Offset: 0x0045DC8E
+		// Token: 0x0600BE24 RID: 48676 RVA: 0x0046582A File Offset: 0x00463A2A
 		public void AddCooldownModifier(TwitchActionCooldownModifier modifier)
 		{
 			if (this.ActionCooldownModifiers == null)
@@ -16,7 +16,7 @@ namespace Twitch
 			this.ActionCooldownModifiers.Add(modifier);
 		}
 
-		// Token: 0x0600BCA0 RID: 48288 RVA: 0x0045FAB0 File Offset: 0x0045DCB0
+		// Token: 0x0600BE25 RID: 48677 RVA: 0x0046584C File Offset: 0x00463A4C
 		public void HandleCooldowns()
 		{
 			foreach (TwitchAction twitchAction in TwitchActionManager.TwitchActions.Values)
@@ -56,40 +56,40 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x04008DF2 RID: 36338
+		// Token: 0x04008F0E RID: 36622
 		public string Name;
 
-		// Token: 0x04008DF3 RID: 36339
+		// Token: 0x04008F0F RID: 36623
 		public bool IsEnabled = true;
 
-		// Token: 0x04008DF4 RID: 36340
+		// Token: 0x04008F10 RID: 36624
 		public bool IsDefault;
 
-		// Token: 0x04008DF5 RID: 36341
+		// Token: 0x04008F11 RID: 36625
 		public bool IsEmpty;
 
-		// Token: 0x04008DF6 RID: 36342
+		// Token: 0x04008F12 RID: 36626
 		public string Title;
 
-		// Token: 0x04008DF7 RID: 36343
+		// Token: 0x04008F13 RID: 36627
 		public string Description;
 
-		// Token: 0x04008DF8 RID: 36344
+		// Token: 0x04008F14 RID: 36628
 		public bool AllowPointGeneration = true;
 
-		// Token: 0x04008DF9 RID: 36345
+		// Token: 0x04008F15 RID: 36629
 		public bool UseHelperReward = true;
 
-		// Token: 0x04008DFA RID: 36346
+		// Token: 0x04008F16 RID: 36630
 		public bool ShowNewCommands = true;
 
-		// Token: 0x04008DFB RID: 36347
+		// Token: 0x04008F17 RID: 36631
 		public List<TwitchActionCooldownModifier> ActionCooldownModifiers;
 
-		// Token: 0x04008DFC RID: 36348
+		// Token: 0x04008F18 RID: 36632
 		public List<string> AddedActions = new List<string>();
 
-		// Token: 0x04008DFD RID: 36349
+		// Token: 0x04008F19 RID: 36633
 		public List<string> RemovedActions = new List<string>();
 	}
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001C1 RID: 449
+// Token: 0x020001C3 RID: 451
 public class BlockToolTerrainSmoothing : IBlockTool
 {
-	// Token: 0x06000DC5 RID: 3525 RVA: 0x0005AC76 File Offset: 0x00058E76
+	// Token: 0x06000DD0 RID: 3536 RVA: 0x0005B0F6 File Offset: 0x000592F6
 	public BlockToolTerrainSmoothing(BlockTools.Brush _brush, NguiWdwTerrainEditor _parentWindow)
 	{
 		this.brush = _brush;
@@ -13,12 +13,12 @@ public class BlockToolTerrainSmoothing : IBlockTool
 		this.SetUp22DegreeRules();
 	}
 
-	// Token: 0x06000DC6 RID: 3526 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000DD1 RID: 3537 RVA: 0x000027FC File Offset: 0x000009FC
 	public void CheckSpecialKeys(Event ev, PlayerActionsLocal playerActions)
 	{
 	}
 
-	// Token: 0x06000DC7 RID: 3527 RVA: 0x0005AC9C File Offset: 0x00058E9C
+	// Token: 0x06000DD2 RID: 3538 RVA: 0x0005B11C File Offset: 0x0005931C
 	public void CheckKeys(ItemInventoryData _data, WorldRayHitInfo _hitInfo, PlayerActionsLocal playerActions)
 	{
 		if (_data == null || _data.actionData == null || _data.actionData[0] == null)
@@ -38,19 +38,19 @@ public class BlockToolTerrainSmoothing : IBlockTool
 		}
 	}
 
-	// Token: 0x06000DC8 RID: 3528 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000DD3 RID: 3539 RVA: 0x00010E62 File Offset: 0x0000F062
 	public bool ConsumeScrollWheel(ItemInventoryData _data, float _scrollWheelInput, PlayerActionsLocal _playerInput)
 	{
 		return false;
 	}
 
-	// Token: 0x06000DC9 RID: 3529 RVA: 0x00031E8B File Offset: 0x0003008B
+	// Token: 0x06000DD4 RID: 3540 RVA: 0x00032147 File Offset: 0x00030347
 	public string GetDebugOutput()
 	{
 		return "";
 	}
 
-	// Token: 0x06000DCA RID: 3530 RVA: 0x0005AD23 File Offset: 0x00058F23
+	// Token: 0x06000DD5 RID: 3541 RVA: 0x0005B1A3 File Offset: 0x000593A3
 	public bool ExecuteAttackAction(ItemInventoryData _data, bool _bReleased, PlayerActionsLocal playerActions)
 	{
 		this.isButtonDown = true;
@@ -58,7 +58,7 @@ public class BlockToolTerrainSmoothing : IBlockTool
 		return true;
 	}
 
-	// Token: 0x06000DCB RID: 3531 RVA: 0x0005AD34 File Offset: 0x00058F34
+	// Token: 0x06000DD6 RID: 3542 RVA: 0x0005B1B4 File Offset: 0x000593B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SmoothTerrain(WorldRayHitInfo _hitInfo)
 	{
@@ -93,7 +93,7 @@ public class BlockToolTerrainSmoothing : IBlockTool
 		}
 	}
 
-	// Token: 0x06000DCC RID: 3532 RVA: 0x0005AE68 File Offset: 0x00059068
+	// Token: 0x06000DD7 RID: 3543 RVA: 0x0005B2E8 File Offset: 0x000594E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SnapTerrain22(WorldRayHitInfo _hitInfo)
 	{
@@ -127,7 +127,7 @@ public class BlockToolTerrainSmoothing : IBlockTool
 		}
 	}
 
-	// Token: 0x06000DCD RID: 3533 RVA: 0x0005AFA0 File Offset: 0x000591A0
+	// Token: 0x06000DD8 RID: 3544 RVA: 0x0005B420 File Offset: 0x00059620
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetUp22DegreeRules()
 	{
@@ -164,7 +164,7 @@ public class BlockToolTerrainSmoothing : IBlockTool
 		}));
 	}
 
-	// Token: 0x06000DCE RID: 3534 RVA: 0x0005B08C File Offset: 0x0005928C
+	// Token: 0x06000DD9 RID: 3545 RVA: 0x0005B50C File Offset: 0x0005970C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public sbyte GetOutputBasedOnRuleset22(Vector3i _pos, ItemInventoryData _data)
 	{
@@ -210,7 +210,7 @@ public class BlockToolTerrainSmoothing : IBlockTool
 		return sbyte.MinValue;
 	}
 
-	// Token: 0x06000DCF RID: 3535 RVA: 0x0005B168 File Offset: 0x00059368
+	// Token: 0x06000DDA RID: 3546 RVA: 0x0005B5E8 File Offset: 0x000597E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SnapTerrain45(WorldRayHitInfo _hitInfo)
 	{
@@ -248,13 +248,13 @@ public class BlockToolTerrainSmoothing : IBlockTool
 		}
 	}
 
-	// Token: 0x06000DD0 RID: 3536 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000DDB RID: 3547 RVA: 0x00010E62 File Offset: 0x0000F062
 	public bool ExecuteUseAction(ItemInventoryData _data, bool _bReleased, PlayerActionsLocal playerActions)
 	{
 		return false;
 	}
 
-	// Token: 0x06000DD1 RID: 3537 RVA: 0x0005B2AC File Offset: 0x000594AC
+	// Token: 0x06000DDC RID: 3548 RVA: 0x0005B72C File Offset: 0x0005992C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int AirNeighborCount(Vector3i _pos, ItemInventoryData _data)
 	{
@@ -272,7 +272,7 @@ public class BlockToolTerrainSmoothing : IBlockTool
 		return num;
 	}
 
-	// Token: 0x06000DD2 RID: 3538 RVA: 0x0005B31C File Offset: 0x0005951C
+	// Token: 0x06000DDD RID: 3549 RVA: 0x0005B79C File Offset: 0x0005999C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public sbyte GetAverageLockedDensity(Vector3i _pos, ItemInventoryData _data)
 	{
@@ -286,7 +286,7 @@ public class BlockToolTerrainSmoothing : IBlockTool
 		return (sbyte)(num / (cubesInBrush.Length + 1));
 	}
 
-	// Token: 0x06000DD3 RID: 3539 RVA: 0x0005B388 File Offset: 0x00059588
+	// Token: 0x06000DDE RID: 3550 RVA: 0x0005B808 File Offset: 0x00059A08
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public sbyte GetAverageDensity(Vector3i _pos, ItemInventoryData _data)
 	{
@@ -303,7 +303,7 @@ public class BlockToolTerrainSmoothing : IBlockTool
 		return (sbyte)((num6 + (float)_data.world.GetDensity(_pos.x, _pos.y, _pos.z + 1)) / num2);
 	}
 
-	// Token: 0x06000DD4 RID: 3540 RVA: 0x0005B468 File Offset: 0x00059668
+	// Token: 0x06000DDF RID: 3551 RVA: 0x0005B8E8 File Offset: 0x00059AE8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public sbyte[] GetLocalDensityMap(Vector3i blockTargetPos, ItemInventoryData data, Vector3i[] localArea)
 	{
@@ -315,7 +315,7 @@ public class BlockToolTerrainSmoothing : IBlockTool
 		return array;
 	}
 
-	// Token: 0x06000DD5 RID: 3541 RVA: 0x0005B4C0 File Offset: 0x000596C0
+	// Token: 0x06000DE0 RID: 3552 RVA: 0x0005B940 File Offset: 0x00059B40
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool HasValidNeighbor(Vector3i _pos, sbyte _denThreshold, ItemInventoryData _data)
 	{
@@ -326,29 +326,29 @@ public class BlockToolTerrainSmoothing : IBlockTool
 		return _denThreshold >= 0 && (_data.world.GetDensity(_pos.x - 1, _pos.y, _pos.z) >= _denThreshold || _data.world.GetDensity(_pos.x + 1, _pos.y, _pos.z) >= _denThreshold || _data.world.GetDensity(_pos.x, _pos.y - 1, _pos.z) >= _denThreshold || _data.world.GetDensity(_pos.x, _pos.y + 1, _pos.z) >= _denThreshold || _data.world.GetDensity(_pos.x, _pos.y, _pos.z - 1) >= _denThreshold || _data.world.GetDensity(_pos.x, _pos.y, _pos.z + 1) >= _denThreshold);
 	}
 
-	// Token: 0x06000DD6 RID: 3542 RVA: 0x0005B690 File Offset: 0x00059890
+	// Token: 0x06000DE1 RID: 3553 RVA: 0x0005BB10 File Offset: 0x00059D10
 	public override string ToString()
 	{
 		return "Smooth Terrain";
 	}
 
-	// Token: 0x04000BE4 RID: 3044
+	// Token: 0x04000BF1 RID: 3057
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockTools.Brush brush;
 
-	// Token: 0x04000BE5 RID: 3045
+	// Token: 0x04000BF2 RID: 3058
 	[PublicizedFrom(EAccessModifier.Private)]
 	public NguiWdwTerrainEditor parentWindow;
 
-	// Token: 0x04000BE6 RID: 3046
+	// Token: 0x04000BF3 RID: 3059
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemInventoryData lastData;
 
-	// Token: 0x04000BE7 RID: 3047
+	// Token: 0x04000BF4 RID: 3060
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isButtonDown;
 
-	// Token: 0x04000BE8 RID: 3048
+	// Token: 0x04000BF5 RID: 3061
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockMaskRules<sbyte?, char> blockMaskRuleset;
 }

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using Audio;
 using UnityEngine;
 
-// Token: 0x02000C5F RID: 3167
+// Token: 0x02000C71 RID: 3185
 public class TileEntityPowered : TileEntity, IPowered
 {
-	// Token: 0x170009D4 RID: 2516
-	// (get) Token: 0x060060A5 RID: 24741 RVA: 0x00263828 File Offset: 0x00261A28
-	// (set) Token: 0x060060A6 RID: 24742 RVA: 0x0026387C File Offset: 0x00261A7C
+	// Token: 0x170009E7 RID: 2535
+	// (get) Token: 0x06006130 RID: 24880 RVA: 0x00266710 File Offset: 0x00264910
+	// (set) Token: 0x06006131 RID: 24881 RVA: 0x00266764 File Offset: 0x00264964
 	public int RequiredPower
 	{
 		get
@@ -28,8 +28,8 @@ public class TileEntityPowered : TileEntity, IPowered
 		}
 	}
 
-	// Token: 0x170009D5 RID: 2517
-	// (get) Token: 0x060060A7 RID: 24743 RVA: 0x00263885 File Offset: 0x00261A85
+	// Token: 0x170009E8 RID: 2536
+	// (get) Token: 0x06006132 RID: 24882 RVA: 0x0026676D File Offset: 0x0026496D
 	public virtual int PowerUsed
 	{
 		get
@@ -38,8 +38,8 @@ public class TileEntityPowered : TileEntity, IPowered
 		}
 	}
 
-	// Token: 0x170009D6 RID: 2518
-	// (get) Token: 0x060060A8 RID: 24744 RVA: 0x0026388D File Offset: 0x00261A8D
+	// Token: 0x170009E9 RID: 2537
+	// (get) Token: 0x06006133 RID: 24883 RVA: 0x00266775 File Offset: 0x00264975
 	public int ChildCount
 	{
 		get
@@ -48,9 +48,9 @@ public class TileEntityPowered : TileEntity, IPowered
 		}
 	}
 
-	// Token: 0x170009D7 RID: 2519
-	// (get) Token: 0x060060A9 RID: 24745 RVA: 0x0026389A File Offset: 0x00261A9A
-	// (set) Token: 0x060060AA RID: 24746 RVA: 0x002638A2 File Offset: 0x00261AA2
+	// Token: 0x170009EA RID: 2538
+	// (get) Token: 0x06006134 RID: 24884 RVA: 0x00266782 File Offset: 0x00264982
+	// (set) Token: 0x06006135 RID: 24885 RVA: 0x0026678A File Offset: 0x0026498A
 	public bool IsPlayerPlaced
 	{
 		get
@@ -64,8 +64,8 @@ public class TileEntityPowered : TileEntity, IPowered
 		}
 	}
 
-	// Token: 0x170009D8 RID: 2520
-	// (get) Token: 0x060060AB RID: 24747 RVA: 0x002638B1 File Offset: 0x00261AB1
+	// Token: 0x170009EB RID: 2539
+	// (get) Token: 0x06006136 RID: 24886 RVA: 0x00266799 File Offset: 0x00264999
 	public bool IsPowered
 	{
 		get
@@ -78,9 +78,9 @@ public class TileEntityPowered : TileEntity, IPowered
 		}
 	}
 
-	// Token: 0x170009D9 RID: 2521
-	// (get) Token: 0x060060AC RID: 24748 RVA: 0x002638DB File Offset: 0x00261ADB
-	// (set) Token: 0x060060AD RID: 24749 RVA: 0x002638E4 File Offset: 0x00261AE4
+	// Token: 0x170009EC RID: 2540
+	// (get) Token: 0x06006137 RID: 24887 RVA: 0x002667C3 File Offset: 0x002649C3
+	// (set) Token: 0x06006138 RID: 24888 RVA: 0x002667CC File Offset: 0x002649CC
 	public Transform BlockTransform
 	{
 		get
@@ -109,31 +109,31 @@ public class TileEntityPowered : TileEntity, IPowered
 		}
 	}
 
-	// Token: 0x060060AE RID: 24750 RVA: 0x002639BC File Offset: 0x00261BBC
+	// Token: 0x06006139 RID: 24889 RVA: 0x002668A4 File Offset: 0x00264AA4
 	public TileEntityPowered(Chunk _chunk)
 		: base(_chunk)
 	{
 	}
 
-	// Token: 0x060060AF RID: 24751 RVA: 0x00263A1D File Offset: 0x00261C1D
+	// Token: 0x0600613A RID: 24890 RVA: 0x00266905 File Offset: 0x00264B05
 	public Vector3i GetParent()
 	{
 		return this.parentPosition;
 	}
 
-	// Token: 0x060060B0 RID: 24752 RVA: 0x00263A25 File Offset: 0x00261C25
+	// Token: 0x0600613B RID: 24891 RVA: 0x0026690D File Offset: 0x00264B0D
 	public bool HasParent()
 	{
 		return this.parentPosition.y != -9999;
 	}
 
-	// Token: 0x060060B1 RID: 24753 RVA: 0x00263A3C File Offset: 0x00261C3C
+	// Token: 0x0600613C RID: 24892 RVA: 0x00266924 File Offset: 0x00264B24
 	public PowerItem GetPowerItem()
 	{
 		return this.PowerItem;
 	}
 
-	// Token: 0x060060B2 RID: 24754 RVA: 0x00263A44 File Offset: 0x00261C44
+	// Token: 0x0600613D RID: 24893 RVA: 0x0026692C File Offset: 0x00264B2C
 	public override void OnReadComplete()
 	{
 		base.OnReadComplete();
@@ -141,7 +141,7 @@ public class TileEntityPowered : TileEntity, IPowered
 		this.CheckForNewWires();
 	}
 
-	// Token: 0x060060B3 RID: 24755 RVA: 0x00263A58 File Offset: 0x00261C58
+	// Token: 0x0600613E RID: 24894 RVA: 0x00266940 File Offset: 0x00264B40
 	public override void read(PooledBinaryReader _br, TileEntity.StreamModeRead _eStreamMode)
 	{
 		base.read(_br, _eStreamMode);
@@ -192,7 +192,7 @@ public class TileEntityPowered : TileEntity, IPowered
 		}
 	}
 
-	// Token: 0x060060B4 RID: 24756 RVA: 0x00263B88 File Offset: 0x00261D88
+	// Token: 0x0600613F RID: 24895 RVA: 0x00266A70 File Offset: 0x00264C70
 	public override void write(PooledBinaryWriter _bw, TileEntity.StreamModeWrite _eStreamMode)
 	{
 		base.write(_bw, _eStreamMode);
@@ -213,7 +213,7 @@ public class TileEntityPowered : TileEntity, IPowered
 		_bw.Write(this.CenteredYaw);
 	}
 
-	// Token: 0x060060B5 RID: 24757 RVA: 0x00263C2C File Offset: 0x00261E2C
+	// Token: 0x06006140 RID: 24896 RVA: 0x00266B14 File Offset: 0x00264D14
 	public void CheckForNewWires()
 	{
 		if (GameManager.Instance == null)
@@ -234,7 +234,7 @@ public class TileEntityPowered : TileEntity, IPowered
 		}
 	}
 
-	// Token: 0x060060B6 RID: 24758 RVA: 0x00263CB4 File Offset: 0x00261EB4
+	// Token: 0x06006141 RID: 24897 RVA: 0x00266B9C File Offset: 0x00264D9C
 	public void DrawWires()
 	{
 		if (this.BlockTransform == null)
@@ -348,14 +348,14 @@ public class TileEntityPowered : TileEntity, IPowered
 		this.wiresDirty = false;
 	}
 
-	// Token: 0x060060B7 RID: 24759 RVA: 0x00264197 File Offset: 0x00262397
+	// Token: 0x06006142 RID: 24898 RVA: 0x0026707F File Offset: 0x0026527F
 	public void AddWireData(Vector3i child)
 	{
 		this.wireDataList.Add(child);
 		this.SendWireData();
 	}
 
-	// Token: 0x060060B8 RID: 24760 RVA: 0x002641AC File Offset: 0x002623AC
+	// Token: 0x06006143 RID: 24899 RVA: 0x00267094 File Offset: 0x00265294
 	public void SendWireData()
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -366,7 +366,7 @@ public class TileEntityPowered : TileEntity, IPowered
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackageWireActions>().Setup(NetPackageWireActions.WireActions.SendWires, base.ToWorldPos(), this.wireDataList, -1), false);
 	}
 
-	// Token: 0x060060B9 RID: 24761 RVA: 0x00264220 File Offset: 0x00262420
+	// Token: 0x06006144 RID: 24900 RVA: 0x00267108 File Offset: 0x00265308
 	public void CreateWireDataFromPowerItem()
 	{
 		this.wireDataList.Clear();
@@ -379,7 +379,7 @@ public class TileEntityPowered : TileEntity, IPowered
 		}
 	}
 
-	// Token: 0x060060BA RID: 24762 RVA: 0x00264280 File Offset: 0x00262480
+	// Token: 0x06006145 RID: 24901 RVA: 0x00267168 File Offset: 0x00265368
 	public void RemoveWires()
 	{
 		for (int i = 0; i < this.currentWireNodes.Count; i++)
@@ -389,19 +389,19 @@ public class TileEntityPowered : TileEntity, IPowered
 		this.currentWireNodes.Clear();
 	}
 
-	// Token: 0x060060BB RID: 24763 RVA: 0x002642C4 File Offset: 0x002624C4
+	// Token: 0x06006146 RID: 24902 RVA: 0x002671AC File Offset: 0x002653AC
 	public void MarkWireDirty()
 	{
 		this.wiresDirty = true;
 	}
 
-	// Token: 0x060060BC RID: 24764 RVA: 0x002642CD File Offset: 0x002624CD
+	// Token: 0x06006147 RID: 24903 RVA: 0x002671B5 File Offset: 0x002653B5
 	public void MarkChanged()
 	{
 		base.SetModified();
 	}
 
-	// Token: 0x060060BD RID: 24765 RVA: 0x002642D8 File Offset: 0x002624D8
+	// Token: 0x06006148 RID: 24904 RVA: 0x002671C0 File Offset: 0x002653C0
 	public void InitializePowerData()
 	{
 		if (GameManager.Instance == null)
@@ -431,7 +431,7 @@ public class TileEntityPowered : TileEntity, IPowered
 		}
 	}
 
-	// Token: 0x060060BE RID: 24766 RVA: 0x00264384 File Offset: 0x00262584
+	// Token: 0x06006149 RID: 24905 RVA: 0x0026726C File Offset: 0x0026546C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void SetValuesFromBlock(ushort blockID)
 	{
@@ -443,7 +443,7 @@ public class TileEntityPowered : TileEntity, IPowered
 		this.RequiredPower = 5;
 	}
 
-	// Token: 0x060060BF RID: 24767 RVA: 0x002643DC File Offset: 0x002625DC
+	// Token: 0x0600614A RID: 24906 RVA: 0x002672C4 File Offset: 0x002654C4
 	public override void UpdateTick(World world)
 	{
 		base.UpdateTick(world);
@@ -461,7 +461,7 @@ public class TileEntityPowered : TileEntity, IPowered
 		}
 	}
 
-	// Token: 0x060060C0 RID: 24768 RVA: 0x00264430 File Offset: 0x00262630
+	// Token: 0x0600614B RID: 24907 RVA: 0x00267318 File Offset: 0x00265518
 	public PowerItem CreatePowerItemForTileEntity(ushort blockID)
 	{
 		if (this.PowerItem == null)
@@ -475,14 +475,14 @@ public class TileEntityPowered : TileEntity, IPowered
 		return this.PowerItem;
 	}
 
-	// Token: 0x060060C1 RID: 24769 RVA: 0x00264490 File Offset: 0x00262690
+	// Token: 0x0600614C RID: 24908 RVA: 0x00267378 File Offset: 0x00265578
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual PowerItem CreatePowerItem()
 	{
 		return PowerItem.CreateItem(this.PowerItemType);
 	}
 
-	// Token: 0x060060C2 RID: 24770 RVA: 0x0026449D File Offset: 0x0026269D
+	// Token: 0x0600614D RID: 24909 RVA: 0x00267385 File Offset: 0x00265585
 	public override void OnUnload(World world)
 	{
 		base.OnUnload(world);
@@ -493,37 +493,37 @@ public class TileEntityPowered : TileEntity, IPowered
 		this.RemoveWires();
 	}
 
-	// Token: 0x060060C3 RID: 24771 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x0600614E RID: 24910 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool Activate(bool activated)
 	{
 		return false;
 	}
 
-	// Token: 0x060060C4 RID: 24772 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x0600614F RID: 24911 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool ActivateOnce()
 	{
 		return false;
 	}
 
-	// Token: 0x060060C5 RID: 24773 RVA: 0x002644C4 File Offset: 0x002626C4
+	// Token: 0x06006150 RID: 24912 RVA: 0x002673AC File Offset: 0x002655AC
 	public Vector3 GetWireOffset()
 	{
 		return this.WireOffset;
 	}
 
-	// Token: 0x060060C6 RID: 24774 RVA: 0x00263885 File Offset: 0x00261A85
+	// Token: 0x06006151 RID: 24913 RVA: 0x0026676D File Offset: 0x0026496D
 	public int GetRequiredPower()
 	{
 		return this.RequiredPower;
 	}
 
-	// Token: 0x060060C7 RID: 24775 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x06006152 RID: 24914 RVA: 0x00020021 File Offset: 0x0001E221
 	public virtual bool CanHaveParent(IPowered powered)
 	{
 		return true;
 	}
 
-	// Token: 0x060060C8 RID: 24776 RVA: 0x002644CC File Offset: 0x002626CC
+	// Token: 0x06006153 RID: 24915 RVA: 0x002673B4 File Offset: 0x002655B4
 	public void SetParentWithWireTool(IPowered newParentTE, int wiringEntityID)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -553,7 +553,7 @@ public class TileEntityPowered : TileEntity, IPowered
 		base.SetModified();
 	}
 
-	// Token: 0x060060C9 RID: 24777 RVA: 0x002645FC File Offset: 0x002627FC
+	// Token: 0x06006154 RID: 24916 RVA: 0x002674E4 File Offset: 0x002656E4
 	public void RemoveParentWithWiringTool(int wiringEntityID)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -584,7 +584,7 @@ public class TileEntityPowered : TileEntity, IPowered
 		base.SetModified();
 	}
 
-	// Token: 0x060060CA RID: 24778 RVA: 0x00264719 File Offset: 0x00262919
+	// Token: 0x06006155 RID: 24917 RVA: 0x00267601 File Offset: 0x00265801
 	public void SetWireData(List<Vector3i> wireChildren)
 	{
 		this.wireDataList = wireChildren;
@@ -592,19 +592,19 @@ public class TileEntityPowered : TileEntity, IPowered
 		this.DrawWires();
 	}
 
-	// Token: 0x060060CB RID: 24779 RVA: 0x001AFF0C File Offset: 0x001AE10C
+	// Token: 0x06006156 RID: 24918 RVA: 0x001B24E4 File Offset: 0x001B06E4
 	public override TileEntityType GetTileEntityType()
 	{
 		return TileEntityType.Powered;
 	}
 
-	// Token: 0x060060CC RID: 24780 RVA: 0x00048695 File Offset: 0x00046895
+	// Token: 0x06006157 RID: 24919 RVA: 0x00048AAD File Offset: 0x00046CAD
 	public override bool CanLockLocally(ILockContext _context, ushort _channel)
 	{
 		return LocalPlayerUI.GetUIForPrimaryPlayer() != null;
 	}
 
-	// Token: 0x060060CD RID: 24781 RVA: 0x00264730 File Offset: 0x00262930
+	// Token: 0x06006158 RID: 24920 RVA: 0x00267618 File Offset: 0x00265818
 	public override void OnLockedLocal(bool _success, ILockContext _context, ushort _channel)
 	{
 		LocalPlayerUI uiforPrimaryPlayer = LocalPlayerUI.GetUIForPrimaryPlayer();
@@ -617,66 +617,66 @@ public class TileEntityPowered : TileEntity, IPowered
 		uiforPrimaryPlayer.windowManager.Open(this.WindowGroupToOpen, true);
 	}
 
-	// Token: 0x04004B7F RID: 19327
+	// Token: 0x04004C1C RID: 19484
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public const int ver = 1;
 
-	// Token: 0x04004B80 RID: 19328
+	// Token: 0x04004C1D RID: 19485
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool wiresDirty;
 
-	// Token: 0x04004B81 RID: 19329
+	// Token: 0x04004C1E RID: 19486
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool isPlayerPlaced;
 
-	// Token: 0x04004B82 RID: 19330
+	// Token: 0x04004C1F RID: 19487
 	public PowerItem.PowerItemTypes PowerItemType = PowerItem.PowerItemTypes.Consumer;
 
-	// Token: 0x04004B83 RID: 19331
+	// Token: 0x04004C20 RID: 19488
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public PowerItem PowerItem;
 
-	// Token: 0x04004B84 RID: 19332
+	// Token: 0x04004C21 RID: 19489
 	public Vector3 WireOffset = Vector3.zero;
 
-	// Token: 0x04004B85 RID: 19333
+	// Token: 0x04004C22 RID: 19490
 	public float CenteredPitch;
 
-	// Token: 0x04004B86 RID: 19334
+	// Token: 0x04004C23 RID: 19491
 	public float CenteredYaw;
 
-	// Token: 0x04004B87 RID: 19335
+	// Token: 0x04004C24 RID: 19492
 	public string WindowGroupToOpen = string.Empty;
 
-	// Token: 0x04004B88 RID: 19336
+	// Token: 0x04004C25 RID: 19493
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool needBlockData;
 
-	// Token: 0x04004B89 RID: 19337
+	// Token: 0x04004C26 RID: 19494
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int requiredPower;
 
-	// Token: 0x04004B8A RID: 19338
+	// Token: 0x04004C27 RID: 19495
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isPowered;
 
-	// Token: 0x04004B8B RID: 19339
+	// Token: 0x04004C28 RID: 19496
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform blockTransform;
 
-	// Token: 0x04004B8C RID: 19340
+	// Token: 0x04004C29 RID: 19497
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<IWireNode> currentWireNodes = new List<IWireNode>();
 
-	// Token: 0x04004B8D RID: 19341
+	// Token: 0x04004C2A RID: 19498
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Vector3i> wireDataList = new List<Vector3i>();
 
-	// Token: 0x04004B8E RID: 19342
+	// Token: 0x04004C2B RID: 19499
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool activateDirty;
 
-	// Token: 0x04004B8F RID: 19343
+	// Token: 0x04004C2C RID: 19500
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i parentPosition = new Vector3i(-9999, -9999, -9999);
 }

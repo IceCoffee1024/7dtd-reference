@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020007E1 RID: 2017
+// Token: 0x020007EC RID: 2028
 [Preserve]
 public class NetPackageEntityStealth : NetPackage
 {
-	// Token: 0x1700062E RID: 1582
-	// (get) Token: 0x06003B8B RID: 15243 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x17000639 RID: 1593
+	// (get) Token: 0x06003BEA RID: 15338 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,7 +15,7 @@ public class NetPackageEntityStealth : NetPackage
 		}
 	}
 
-	// Token: 0x06003B8C RID: 15244 RVA: 0x0017E3E8 File Offset: 0x0017C5E8
+	// Token: 0x06003BEB RID: 15339 RVA: 0x001807C0 File Offset: 0x0017E9C0
 	public NetPackageEntityStealth Setup(EntityPlayer player, bool _isCrouching)
 	{
 		this.id = player.entityId;
@@ -23,7 +23,7 @@ public class NetPackageEntityStealth : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003B8D RID: 15245 RVA: 0x0017E404 File Offset: 0x0017C604
+	// Token: 0x06003BEC RID: 15340 RVA: 0x001807DC File Offset: 0x0017E9DC
 	public NetPackageEntityStealth Setup(EntityPlayerLocal player, int _smellRadius, bool _eating, bool _sheltered)
 	{
 		this.id = player.entityId;
@@ -39,7 +39,7 @@ public class NetPackageEntityStealth : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003B8E RID: 15246 RVA: 0x0017E45B File Offset: 0x0017C65B
+	// Token: 0x06003BED RID: 15341 RVA: 0x00180833 File Offset: 0x0017EA33
 	public NetPackageEntityStealth Setup(EntityPlayer player, int _lightLevel, int _noiseVolume, bool _isAlert)
 	{
 		this.id = player.entityId;
@@ -51,14 +51,14 @@ public class NetPackageEntityStealth : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003B8F RID: 15247 RVA: 0x0017E491 File Offset: 0x0017C691
+	// Token: 0x06003BEE RID: 15342 RVA: 0x00180869 File Offset: 0x0017EA69
 	public override void read(PooledBinaryReader _br)
 	{
 		this.id = _br.ReadInt32();
 		this.data = _br.ReadUInt16();
 	}
 
-	// Token: 0x06003B90 RID: 15248 RVA: 0x0017E4AB File Offset: 0x0017C6AB
+	// Token: 0x06003BEF RID: 15343 RVA: 0x00180883 File Offset: 0x0017EA83
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -66,7 +66,7 @@ public class NetPackageEntityStealth : NetPackage
 		_bw.Write(this.data);
 	}
 
-	// Token: 0x06003B91 RID: 15249 RVA: 0x0017E4CC File Offset: 0x0017C6CC
+	// Token: 0x06003BF0 RID: 15344 RVA: 0x001808A4 File Offset: 0x0017EAA4
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -98,41 +98,41 @@ public class NetPackageEntityStealth : NetPackage
 		entityPlayer.Crouching = (this.data & 1) > 0;
 	}
 
-	// Token: 0x06003B92 RID: 15250 RVA: 0x000B8CB1 File Offset: 0x000B6EB1
+	// Token: 0x06003BF1 RID: 15345 RVA: 0x000B93F5 File Offset: 0x000B75F5
 	public override int GetLength()
 	{
 		return 20;
 	}
 
-	// Token: 0x0400303C RID: 12348
+	// Token: 0x040030BB RID: 12475
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int id;
 
-	// Token: 0x0400303D RID: 12349
+	// Token: 0x040030BC RID: 12476
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cFIsCrouching = 1;
 
-	// Token: 0x0400303E RID: 12350
+	// Token: 0x040030BD RID: 12477
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cFIsSmellData = 2;
 
-	// Token: 0x0400303F RID: 12351
+	// Token: 0x040030BE RID: 12478
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cFIsEating = 4;
 
-	// Token: 0x04003040 RID: 12352
+	// Token: 0x040030BF RID: 12479
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cFIsSheltered = 8;
 
-	// Token: 0x04003041 RID: 12353
+	// Token: 0x040030C0 RID: 12480
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort cFIsAlert = 32768;
 
-	// Token: 0x04003042 RID: 12354
+	// Token: 0x040030C1 RID: 12481
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ushort data;
 
-	// Token: 0x04003043 RID: 12355
+	// Token: 0x040030C2 RID: 12482
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cSmellRadiusMin = -1;
 }

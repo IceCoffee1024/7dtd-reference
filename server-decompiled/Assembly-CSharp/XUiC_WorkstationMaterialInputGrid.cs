@@ -2,18 +2,18 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020010B8 RID: 4280
+// Token: 0x020010D1 RID: 4305
 [Preserve]
 public class XUiC_WorkstationMaterialInputGrid : XUiC_WorkstationInputGrid
 {
-	// Token: 0x0600882B RID: 34859 RVA: 0x00340259 File Offset: 0x0033E459
+	// Token: 0x0600891D RID: 35101 RVA: 0x00344A89 File Offset: 0x00342C89
 	public override void Init()
 	{
 		base.Init();
 		this.materialWindow = this.windowGroup.Controller.GetChildByType<XUiC_WorkstationMaterialInputWindow>();
 	}
 
-	// Token: 0x0600882C RID: 34860 RVA: 0x00340278 File Offset: 0x0033E478
+	// Token: 0x0600891E RID: 35102 RVA: 0x00344AA8 File Offset: 0x00342CA8
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -35,26 +35,26 @@ public class XUiC_WorkstationMaterialInputGrid : XUiC_WorkstationInputGrid
 		this.workstationData.GetIsBurning();
 	}
 
-	// Token: 0x0600882D RID: 34861 RVA: 0x002E9A1E File Offset: 0x002E7C1E
+	// Token: 0x0600891F RID: 35103 RVA: 0x002ED702 File Offset: 0x002EB902
 	public override ItemStack[] GetSlots()
 	{
 		return this.getUISlots();
 	}
 
-	// Token: 0x0600882E RID: 34862 RVA: 0x002C27A6 File Offset: 0x002C09A6
+	// Token: 0x06008920 RID: 35104 RVA: 0x002C5CCA File Offset: 0x002C3ECA
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override ItemStack[] getUISlots()
 	{
 		return this.items;
 	}
 
-	// Token: 0x0600882F RID: 34863 RVA: 0x0034035C File Offset: 0x0033E55C
+	// Token: 0x06008921 RID: 35105 RVA: 0x00344B8C File Offset: 0x00342D8C
 	public override bool HasRequirement(Recipe recipe)
 	{
 		return this.materialWindow != null && this.materialWindow.HasRequirement(recipe);
 	}
 
-	// Token: 0x06008830 RID: 34864 RVA: 0x00340374 File Offset: 0x0033E574
+	// Token: 0x06008922 RID: 35106 RVA: 0x00344BA4 File Offset: 0x00342DA4
 	public override void SetSlots(ItemStack[] stackList)
 	{
 		this.items = stackList;
@@ -62,7 +62,7 @@ public class XUiC_WorkstationMaterialInputGrid : XUiC_WorkstationInputGrid
 		this.materialWindow.SetMaterialWeights(this.items);
 	}
 
-	// Token: 0x06008831 RID: 34865 RVA: 0x0034039C File Offset: 0x0033E59C
+	// Token: 0x06008923 RID: 35107 RVA: 0x00344BCC File Offset: 0x00342DCC
 	public void SetWeight(ItemValue iv, int count)
 	{
 		ItemClass itemClass = iv.ItemClass;
@@ -91,9 +91,9 @@ public class XUiC_WorkstationMaterialInputGrid : XUiC_WorkstationInputGrid
 			{
 				ItemStack itemStack2 = this.items[i].Clone();
 				itemStack2.count += count;
-				if (iv.ItemClass.Stacknumber.Value < itemStack2.count)
+				if (iv.ItemClass.MaxCount < itemStack2.count)
 				{
-					itemStack2.count = iv.ItemClass.Stacknumber.Value;
+					itemStack2.count = iv.ItemClass.MaxCount;
 				}
 				this.items[i] = itemStack2;
 				break;
@@ -103,7 +103,7 @@ public class XUiC_WorkstationMaterialInputGrid : XUiC_WorkstationInputGrid
 		this.UpdateBackend(this.items);
 	}
 
-	// Token: 0x06008832 RID: 34866 RVA: 0x003404AC File Offset: 0x0033E6AC
+	// Token: 0x06008924 RID: 35108 RVA: 0x00344CD0 File Offset: 0x00342ED0
 	public int GetWeight(string materialName)
 	{
 		int num = 0;
@@ -123,7 +123,7 @@ public class XUiC_WorkstationMaterialInputGrid : XUiC_WorkstationInputGrid
 		return num;
 	}
 
-	// Token: 0x0400653A RID: 25914
+	// Token: 0x04006601 RID: 26113
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_WorkstationMaterialInputWindow materialWindow;
 }

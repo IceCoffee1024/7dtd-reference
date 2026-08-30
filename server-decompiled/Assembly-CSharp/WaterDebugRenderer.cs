@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000CCE RID: 3278
+// Token: 0x02000CE0 RID: 3296
 public class WaterDebugRenderer : IMemoryPoolableObject
 {
-	// Token: 0x06006477 RID: 25719 RVA: 0x00274D30 File Offset: 0x00272F30
+	// Token: 0x06006503 RID: 25859 RVA: 0x00277C2C File Offset: 0x00275E2C
 	public void SetChunkOrigin(Vector3 _origin)
 	{
 		this.chunkOrigin = _origin;
@@ -16,7 +16,7 @@ public class WaterDebugRenderer : IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x06006478 RID: 25720 RVA: 0x00274D90 File Offset: 0x00272F90
+	// Token: 0x06006504 RID: 25860 RVA: 0x00277C8C File Offset: 0x00275E8C
 	public void SetWater(int _x, int _y, int _z, float mass)
 	{
 		int num = _y / 16;
@@ -24,7 +24,7 @@ public class WaterDebugRenderer : IMemoryPoolableObject
 		this.GetOrCreateLayer(num).SetWater(_x, num2, _z, mass);
 	}
 
-	// Token: 0x06006479 RID: 25721 RVA: 0x00274DB8 File Offset: 0x00272FB8
+	// Token: 0x06006505 RID: 25861 RVA: 0x00277CB4 File Offset: 0x00275EB4
 	public void LoadFromChunk(Chunk chunk)
 	{
 		this.SetChunkOrigin(chunk.GetWorldPos());
@@ -44,7 +44,7 @@ public class WaterDebugRenderer : IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x0600647A RID: 25722 RVA: 0x00274E28 File Offset: 0x00273028
+	// Token: 0x06006506 RID: 25862 RVA: 0x00277D24 File Offset: 0x00275F24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WaterDebugRendererLayer GetOrCreateLayer(int layerIndex)
 	{
@@ -62,7 +62,7 @@ public class WaterDebugRenderer : IMemoryPoolableObject
 		return waterDebugRendererLayer;
 	}
 
-	// Token: 0x0600647B RID: 25723 RVA: 0x00274EB0 File Offset: 0x002730B0
+	// Token: 0x06006507 RID: 25863 RVA: 0x00277DAC File Offset: 0x00275FAC
 	public void Draw()
 	{
 		for (int i = 0; i < this.numActiveLayers; i++)
@@ -72,7 +72,7 @@ public class WaterDebugRenderer : IMemoryPoolableObject
 		}
 	}
 
-	// Token: 0x0600647C RID: 25724 RVA: 0x00274EE4 File Offset: 0x002730E4
+	// Token: 0x06006508 RID: 25864 RVA: 0x00277DE0 File Offset: 0x00275FE0
 	public void Clear()
 	{
 		for (int i = 0; i < this.numActiveLayers; i++)
@@ -86,35 +86,35 @@ public class WaterDebugRenderer : IMemoryPoolableObject
 		this.numActiveLayers = 0;
 	}
 
-	// Token: 0x0600647D RID: 25725 RVA: 0x00274F38 File Offset: 0x00273138
+	// Token: 0x06006509 RID: 25865 RVA: 0x00277E34 File Offset: 0x00276034
 	public void Cleanup()
 	{
 		this.Clear();
 	}
 
-	// Token: 0x0600647E RID: 25726 RVA: 0x00274F38 File Offset: 0x00273138
+	// Token: 0x0600650A RID: 25866 RVA: 0x00277E34 File Offset: 0x00276034
 	public void Reset()
 	{
 		this.Clear();
 	}
 
-	// Token: 0x04004DF6 RID: 19958
+	// Token: 0x04004E94 RID: 20116
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int numLayers = 16;
 
-	// Token: 0x04004DF7 RID: 19959
+	// Token: 0x04004E95 RID: 20117
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 chunkOrigin = Vector3.zero;
 
-	// Token: 0x04004DF8 RID: 19960
+	// Token: 0x04004E96 RID: 20118
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WaterDebugRendererLayer[] layers = new WaterDebugRendererLayer[16];
 
-	// Token: 0x04004DF9 RID: 19961
+	// Token: 0x04004E97 RID: 20119
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] activeLayers = new int[16];
 
-	// Token: 0x04004DFA RID: 19962
+	// Token: 0x04004E98 RID: 20120
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int numActiveLayers;
 }

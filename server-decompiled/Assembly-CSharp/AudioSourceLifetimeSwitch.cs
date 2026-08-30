@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020004F9 RID: 1273
+// Token: 0x020004FE RID: 1278
 public class AudioSourceLifetimeSwitch : MonoBehaviour
 {
-	// Token: 0x060029A5 RID: 10661 RVA: 0x00106408 File Offset: 0x00104608
+	// Token: 0x060029CF RID: 10703 RVA: 0x00107442 File Offset: 0x00105642
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Start()
 	{
@@ -12,7 +12,7 @@ public class AudioSourceLifetimeSwitch : MonoBehaviour
 		this.audio = base.transform.GetComponent<AudioSource>();
 	}
 
-	// Token: 0x060029A6 RID: 10662 RVA: 0x0010642C File Offset: 0x0010462C
+	// Token: 0x060029D0 RID: 10704 RVA: 0x00107468 File Offset: 0x00105668
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Update()
 	{
@@ -46,30 +46,30 @@ public class AudioSourceLifetimeSwitch : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001FB0 RID: 8112
+	// Token: 0x04001FDF RID: 8159
 	public float TurnOffDelayAfterEntityDies = 5f;
 
-	// Token: 0x04001FB1 RID: 8113
+	// Token: 0x04001FE0 RID: 8160
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform entityRoot;
 
-	// Token: 0x04001FB2 RID: 8114
+	// Token: 0x04001FE1 RID: 8161
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Entity entity;
 
-	// Token: 0x04001FB3 RID: 8115
+	// Token: 0x04001FE2 RID: 8162
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public AudioSource audio;
 
-	// Token: 0x04001FB4 RID: 8116
+	// Token: 0x04001FE3 RID: 8163
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float delay;
 
-	// Token: 0x04001FB5 RID: 8117
+	// Token: 0x04001FE4 RID: 8164
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bFirstUpdate = true;

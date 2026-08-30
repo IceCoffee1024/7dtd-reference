@@ -6,12 +6,12 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000105 RID: 261
+// Token: 0x02000106 RID: 262
 [Preserve]
 public class Block
 {
 	// Token: 0x17000069 RID: 105
-	// (get) Token: 0x06000642 RID: 1602 RVA: 0x0002C97A File Offset: 0x0002AB7A
+	// (get) Token: 0x0600064C RID: 1612 RVA: 0x0002CC36 File Offset: 0x0002AE36
 	public static bool BlocksLoaded
 	{
 		get
@@ -20,7 +20,7 @@ public class Block
 		}
 	}
 
-	// Token: 0x06000643 RID: 1603 RVA: 0x0002C984 File Offset: 0x0002AB84
+	// Token: 0x0600064D RID: 1613 RVA: 0x0002CC40 File Offset: 0x0002AE40
 	public static Dictionary<string, int> BlockIdsByName()
 	{
 		Dictionary<string, int> dictionary = new Dictionary<string, int>();
@@ -32,8 +32,8 @@ public class Block
 	}
 
 	// Token: 0x1700006A RID: 106
-	// (get) Token: 0x06000644 RID: 1604 RVA: 0x0002C9F0 File Offset: 0x0002ABF0
-	// (set) Token: 0x06000645 RID: 1605 RVA: 0x0002CA11 File Offset: 0x0002AC11
+	// (get) Token: 0x0600064E RID: 1614 RVA: 0x0002CCAC File Offset: 0x0002AEAC
+	// (set) Token: 0x0600064F RID: 1615 RVA: 0x0002CCCD File Offset: 0x0002AECD
 	public DynamicProperties Properties
 	{
 		get
@@ -51,7 +51,7 @@ public class Block
 	}
 
 	// Token: 0x1700006B RID: 107
-	// (get) Token: 0x06000646 RID: 1606 RVA: 0x0002CA1C File Offset: 0x0002AC1C
+	// (get) Token: 0x06000650 RID: 1616 RVA: 0x0002CCD8 File Offset: 0x0002AED8
 	public RecipeUnlockData[] UnlockedBy
 	{
 		get
@@ -80,7 +80,7 @@ public class Block
 	}
 
 	// Token: 0x1700006C RID: 108
-	// (get) Token: 0x06000647 RID: 1607 RVA: 0x0002CAAA File Offset: 0x0002ACAA
+	// (get) Token: 0x06000651 RID: 1617 RVA: 0x0002CD66 File Offset: 0x0002AF66
 	public bool IsCollideMovement
 	{
 		get
@@ -90,7 +90,7 @@ public class Block
 	}
 
 	// Token: 0x1700006D RID: 109
-	// (get) Token: 0x06000648 RID: 1608 RVA: 0x0002CAB7 File Offset: 0x0002ACB7
+	// (get) Token: 0x06000652 RID: 1618 RVA: 0x0002CD73 File Offset: 0x0002AF73
 	public bool IsCollideSight
 	{
 		get
@@ -100,7 +100,7 @@ public class Block
 	}
 
 	// Token: 0x1700006E RID: 110
-	// (get) Token: 0x06000649 RID: 1609 RVA: 0x0002CAC4 File Offset: 0x0002ACC4
+	// (get) Token: 0x06000653 RID: 1619 RVA: 0x0002CD80 File Offset: 0x0002AF80
 	public bool IsCollideBullets
 	{
 		get
@@ -110,7 +110,7 @@ public class Block
 	}
 
 	// Token: 0x1700006F RID: 111
-	// (get) Token: 0x0600064A RID: 1610 RVA: 0x0002CAD1 File Offset: 0x0002ACD1
+	// (get) Token: 0x06000654 RID: 1620 RVA: 0x0002CD8D File Offset: 0x0002AF8D
 	public bool IsCollideRockets
 	{
 		get
@@ -120,7 +120,7 @@ public class Block
 	}
 
 	// Token: 0x17000070 RID: 112
-	// (get) Token: 0x0600064B RID: 1611 RVA: 0x0002CADE File Offset: 0x0002ACDE
+	// (get) Token: 0x06000655 RID: 1621 RVA: 0x0002CD9A File Offset: 0x0002AF9A
 	public bool IsCollideMelee
 	{
 		get
@@ -130,7 +130,7 @@ public class Block
 	}
 
 	// Token: 0x17000071 RID: 113
-	// (get) Token: 0x0600064C RID: 1612 RVA: 0x0002CAEC File Offset: 0x0002ACEC
+	// (get) Token: 0x06000656 RID: 1622 RVA: 0x0002CDA8 File Offset: 0x0002AFA8
 	public bool IsCollideArrows
 	{
 		get
@@ -140,8 +140,8 @@ public class Block
 	}
 
 	// Token: 0x17000072 RID: 114
-	// (get) Token: 0x0600064D RID: 1613 RVA: 0x0002CAFA File Offset: 0x0002ACFA
-	// (set) Token: 0x0600064E RID: 1614 RVA: 0x0002CB11 File Offset: 0x0002AD11
+	// (get) Token: 0x06000657 RID: 1623 RVA: 0x0002CDB6 File Offset: 0x0002AFB6
+	// (set) Token: 0x06000658 RID: 1624 RVA: 0x0002CDCD File Offset: 0x0002AFCD
 	public bool IsNotifyOnLoadUnload
 	{
 		get
@@ -155,8 +155,8 @@ public class Block
 	}
 
 	// Token: 0x17000073 RID: 115
-	// (get) Token: 0x0600064F RID: 1615 RVA: 0x0002CB1A File Offset: 0x0002AD1A
-	// (set) Token: 0x06000650 RID: 1616 RVA: 0x0002CB22 File Offset: 0x0002AD22
+	// (get) Token: 0x06000659 RID: 1625 RVA: 0x0002CDD6 File Offset: 0x0002AFD6
+	// (set) Token: 0x0600065A RID: 1626 RVA: 0x0002CDDE File Offset: 0x0002AFDE
 	public List<ShapesFromXml.ShapeCategory> ShapeCategories
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
@@ -164,7 +164,7 @@ public class Block
 	}
 
 	// Token: 0x17000074 RID: 116
-	// (get) Token: 0x06000651 RID: 1617 RVA: 0x00010E62 File Offset: 0x0000F062
+	// (get) Token: 0x0600065B RID: 1627 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool AllowBlockTriggers
 	{
 		get
@@ -173,7 +173,7 @@ public class Block
 		}
 	}
 
-	// Token: 0x06000652 RID: 1618 RVA: 0x0002CB2C File Offset: 0x0002AD2C
+	// Token: 0x0600065C RID: 1628 RVA: 0x0002CDE8 File Offset: 0x0002AFE8
 	public Block()
 	{
 		this.shape = new BlockShapeCube();
@@ -183,7 +183,7 @@ public class Block
 		this.MeshIndex = 0;
 	}
 
-	// Token: 0x06000653 RID: 1619 RVA: 0x0002CCF0 File Offset: 0x0002AEF0
+	// Token: 0x0600065D RID: 1629 RVA: 0x0002CFAC File Offset: 0x0002B1AC
 	public static Vector3 StringToVector3(string _input)
 	{
 		Vector3 zero = Vector3.zero;
@@ -206,7 +206,7 @@ public class Block
 		return zero;
 	}
 
-	// Token: 0x06000654 RID: 1620 RVA: 0x0002CDAC File Offset: 0x0002AFAC
+	// Token: 0x0600065E RID: 1630 RVA: 0x0002D068 File Offset: 0x0002B268
 	public virtual void Init()
 	{
 		if (Block.nameToBlockCaseInsensitive.ContainsKey(this.blockName))
@@ -788,7 +788,7 @@ public class Block
 		this.Properties.ParseString(Block.PropSoundHitAdditional, ref this.SoundHitAdditional);
 	}
 
-	// Token: 0x06000655 RID: 1621 RVA: 0x0002E86C File Offset: 0x0002CA6C
+	// Token: 0x0600065F RID: 1631 RVA: 0x0002EB28 File Offset: 0x0002CD28
 	public virtual void LateInit()
 	{
 		this.shape.LateInit();
@@ -881,7 +881,7 @@ public class Block
 		}
 	}
 
-	// Token: 0x06000656 RID: 1622 RVA: 0x0002EC0C File Offset: 0x0002CE0C
+	// Token: 0x06000660 RID: 1632 RVA: 0x0002EEC8 File Offset: 0x0002D0C8
 	public static void InitStatic()
 	{
 		Block.nameToBlock = new Dictionary<string, Block>();
@@ -895,7 +895,7 @@ public class Block
 		}
 	}
 
-	// Token: 0x06000657 RID: 1623 RVA: 0x0002EC68 File Offset: 0x0002CE68
+	// Token: 0x06000661 RID: 1633 RVA: 0x0002EF24 File Offset: 0x0002D124
 	public static void LateInitAll()
 	{
 		for (int i = 0; i < Block.MAX_BLOCKS; i++)
@@ -934,7 +934,7 @@ public class Block
 		}
 	}
 
-	// Token: 0x06000658 RID: 1624 RVA: 0x0002ED43 File Offset: 0x0002CF43
+	// Token: 0x06000662 RID: 1634 RVA: 0x0002EFFF File Offset: 0x0002D1FF
 	public static void OnWorldUnloaded()
 	{
 		if (PlatformOptimizations.FileBackedBlockProperties)
@@ -948,13 +948,13 @@ public class Block
 		}
 	}
 
-	// Token: 0x06000659 RID: 1625 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x06000663 RID: 1635 RVA: 0x00020021 File Offset: 0x0001E221
 	public virtual bool FilterIndexType(BlockValue bv)
 	{
 		return true;
 	}
 
-	// Token: 0x0600065A RID: 1626 RVA: 0x0002ED62 File Offset: 0x0002CF62
+	// Token: 0x06000664 RID: 1636 RVA: 0x0002F01E File Offset: 0x0002D21E
 	public Vector2 GetPathOffset(int _rotation)
 	{
 		if (this.PathType != -1)
@@ -964,7 +964,7 @@ public class Block
 		return this.shape.GetPathOffset(_rotation);
 	}
 
-	// Token: 0x0600065B RID: 1627 RVA: 0x0002ED7F File Offset: 0x0002CF7F
+	// Token: 0x06000665 RID: 1637 RVA: 0x0002F03B File Offset: 0x0002D23B
 	public static void Cleanup()
 	{
 		Block.nameToBlock = null;
@@ -975,7 +975,7 @@ public class Block
 		Block.fullMappingDataForClients = null;
 	}
 
-	// Token: 0x0600065C RID: 1628 RVA: 0x0002EDA8 File Offset: 0x0002CFA8
+	// Token: 0x06000666 RID: 1638 RVA: 0x0002F064 File Offset: 0x0002D264
 	public void CopyDroppedFrom(Block _other)
 	{
 		foreach (KeyValuePair<EnumDropEvent, List<Block.SItemDropProb>> keyValuePair in _other.itemsToDrop)
@@ -1008,32 +1008,32 @@ public class Block
 		}
 	}
 
-	// Token: 0x0600065D RID: 1629 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x06000667 RID: 1639 RVA: 0x0002F168 File Offset: 0x0002D368
 	public virtual BlockFace getInventoryFace()
 	{
 		return BlockFace.North;
 	}
 
-	// Token: 0x0600065E RID: 1630 RVA: 0x0002EEAF File Offset: 0x0002D0AF
+	// Token: 0x06000668 RID: 1640 RVA: 0x0002F16B File Offset: 0x0002D36B
 	public virtual byte GetLightValue(BlockValue _blockValue)
 	{
 		return this.lightValue;
 	}
 
-	// Token: 0x0600065F RID: 1631 RVA: 0x0002EEB7 File Offset: 0x0002D0B7
+	// Token: 0x06000669 RID: 1641 RVA: 0x0002F173 File Offset: 0x0002D373
 	public virtual Block SetLightValue(float _lightValueInPercent)
 	{
 		this.lightValue = (byte)(15f * _lightValueInPercent);
 		return this;
 	}
 
-	// Token: 0x06000660 RID: 1632 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x0600066A RID: 1642 RVA: 0x00020021 File Offset: 0x0001E221
 	public virtual bool UseBuffsWhenWalkedOn(World world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		return true;
 	}
 
-	// Token: 0x06000661 RID: 1633 RVA: 0x0002EEC8 File Offset: 0x0002D0C8
+	// Token: 0x0600066B RID: 1643 RVA: 0x0002F184 File Offset: 0x0002D384
 	public virtual bool IsMovementBlocked(IBlockAccess _world, Vector3i _blockPos, BlockValue _blockValue, BlockFace _face)
 	{
 		if (this.isMultiBlock && _blockValue.ischild)
@@ -1061,7 +1061,7 @@ public class Block
 		}
 	}
 
-	// Token: 0x06000662 RID: 1634 RVA: 0x0002EF70 File Offset: 0x0002D170
+	// Token: 0x0600066C RID: 1644 RVA: 0x0002F22C File Offset: 0x0002D42C
 	public virtual bool IsSeeThrough(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		if (!this.isMultiBlock || !_blockValue.ischild)
@@ -1078,7 +1078,7 @@ public class Block
 		return this.IsSeeThrough(_world, parentPos, block);
 	}
 
-	// Token: 0x06000663 RID: 1635 RVA: 0x0002F000 File Offset: 0x0002D200
+	// Token: 0x0600066D RID: 1645 RVA: 0x0002F2BC File Offset: 0x0002D4BC
 	public virtual bool IsMovementBlocked(IBlockAccess _world, Vector3i _blockPos, BlockValue _blockValue, BlockFaceFlag _sides)
 	{
 		if (this.isMultiBlock && _blockValue.ischild)
@@ -1109,7 +1109,7 @@ public class Block
 		}
 	}
 
-	// Token: 0x06000664 RID: 1636 RVA: 0x0002F0B8 File Offset: 0x0002D2B8
+	// Token: 0x0600066E RID: 1646 RVA: 0x0002F374 File Offset: 0x0002D574
 	public bool IsMovementBlocked(IBlockAccess _world, Vector3i _blockPos, BlockValue _blockValue, Vector3 _entityPos)
 	{
 		if (this.isMultiBlock && _blockValue.ischild)
@@ -1141,7 +1141,7 @@ public class Block
 		}
 	}
 
-	// Token: 0x06000665 RID: 1637 RVA: 0x0002F174 File Offset: 0x0002D374
+	// Token: 0x0600066F RID: 1647 RVA: 0x0002F430 File Offset: 0x0002D630
 	public bool IsMovementBlockedAny(IBlockAccess _world, Vector3i _blockPos, BlockValue _blockValue, Vector3 _entityPos)
 	{
 		if (this.isMultiBlock && _blockValue.ischild)
@@ -1173,7 +1173,7 @@ public class Block
 		}
 	}
 
-	// Token: 0x06000666 RID: 1638 RVA: 0x0002F230 File Offset: 0x0002D430
+	// Token: 0x06000670 RID: 1648 RVA: 0x0002F4EC File Offset: 0x0002D6EC
 	public virtual float GetStepHeight(IBlockAccess world, Vector3i blockPos, BlockValue blockDef, BlockFace stepFace)
 	{
 		if (!this.IsCollideMovement)
@@ -1183,7 +1183,7 @@ public class Block
 		return this.shape.GetStepHeight(blockDef, stepFace);
 	}
 
-	// Token: 0x06000667 RID: 1639 RVA: 0x0002F250 File Offset: 0x0002D450
+	// Token: 0x06000671 RID: 1649 RVA: 0x0002F50C File Offset: 0x0002D70C
 	public float MinStepHeight(BlockValue blockDef, BlockFaceFlag stepSides)
 	{
 		float num = -1f;
@@ -1204,7 +1204,7 @@ public class Block
 		return Math.Max(num, 0f);
 	}
 
-	// Token: 0x06000668 RID: 1640 RVA: 0x0002F2B4 File Offset: 0x0002D4B4
+	// Token: 0x06000672 RID: 1650 RVA: 0x0002F570 File Offset: 0x0002D770
 	public float MaxStepHeight(BlockValue blockDef, BlockFaceFlag stepSides)
 	{
 		float num = -1f;
@@ -1225,27 +1225,27 @@ public class Block
 		return Math.Max(num, 0f);
 	}
 
-	// Token: 0x06000669 RID: 1641 RVA: 0x0002F318 File Offset: 0x0002D518
+	// Token: 0x06000673 RID: 1651 RVA: 0x0002F5D4 File Offset: 0x0002D7D4
 	public float MinStepHeight(Vector3i blockPos, BlockValue blockDef, Vector3 entityPos)
 	{
 		BlockFaceFlag blockFaceFlag = BlockFaceFlags.FrontSidesFromPosition(blockPos, entityPos);
 		return this.MinStepHeight(blockDef, blockFaceFlag);
 	}
 
-	// Token: 0x0600066A RID: 1642 RVA: 0x0002F338 File Offset: 0x0002D538
+	// Token: 0x06000674 RID: 1652 RVA: 0x0002F5F4 File Offset: 0x0002D7F4
 	public float MaxStepHeight(Vector3i blockPos, BlockValue blockDef, Vector3 entityPos)
 	{
 		BlockFaceFlag blockFaceFlag = BlockFaceFlags.FrontSidesFromPosition(blockPos, entityPos);
 		return this.MaxStepHeight(blockDef, blockFaceFlag);
 	}
 
-	// Token: 0x0600066B RID: 1643 RVA: 0x0002F355 File Offset: 0x0002D555
+	// Token: 0x06000675 RID: 1653 RVA: 0x0002F611 File Offset: 0x0002D811
 	public virtual float GetHardness()
 	{
 		return this.blockMaterial.Hardness.Value;
 	}
 
-	// Token: 0x0600066C RID: 1644 RVA: 0x0002F368 File Offset: 0x0002D568
+	// Token: 0x06000676 RID: 1654 RVA: 0x0002F624 File Offset: 0x0002D824
 	public virtual int GetWeight()
 	{
 		int num = 0;
@@ -1256,19 +1256,19 @@ public class Block
 		return num;
 	}
 
-	// Token: 0x0600066D RID: 1645 RVA: 0x0002F38C File Offset: 0x0002D58C
+	// Token: 0x06000677 RID: 1655 RVA: 0x0002F648 File Offset: 0x0002D848
 	public Block.UVMode GetUVMode(int side, int channel)
 	{
 		return (Block.UVMode)((ulong)(this.UVModesPerSide[channel] >> side * this.cUVModeBits) & (ulong)((long)this.cUVModeMask));
 	}
 
-	// Token: 0x0600066E RID: 1646 RVA: 0x0002F3AC File Offset: 0x0002D5AC
+	// Token: 0x06000678 RID: 1656 RVA: 0x0002F668 File Offset: 0x0002D868
 	public virtual Rect getUVRectFromSideAndMetadata(int _meshIndex, BlockFace _side, Vector3[] _vertices, BlockValue _blockValue)
 	{
 		return this.getUVRectFromSideAndMetadata(_meshIndex, _side, (_vertices != null) ? _vertices[0] : Vector3.zero, _blockValue);
 	}
 
-	// Token: 0x0600066F RID: 1647 RVA: 0x0002F3CC File Offset: 0x0002D5CC
+	// Token: 0x06000679 RID: 1657 RVA: 0x0002F688 File Offset: 0x0002D888
 	public virtual Rect getUVRectFromSideAndMetadata(int _meshIndex, BlockFace _side, Vector3 _worldPos, BlockValue _blockValue)
 	{
 		int sideTextureId = this.GetSideTextureId(_blockValue, _side, 0);
@@ -1308,7 +1308,7 @@ public class Block
 		}
 	}
 
-	// Token: 0x06000670 RID: 1648 RVA: 0x0002F760 File Offset: 0x0002D960
+	// Token: 0x0600067A RID: 1658 RVA: 0x0002FA1C File Offset: 0x0002DC1C
 	public virtual void GetCollidingAABB(BlockValue _blockValue, int _x, int _y, int _z, float _distortedAddY, Bounds _aabb, List<Bounds> _aabbList)
 	{
 		Block.staticList_IntersectRayWithBlockList.Clear();
@@ -1323,7 +1323,7 @@ public class Block
 		}
 	}
 
-	// Token: 0x06000671 RID: 1649 RVA: 0x0002F7BC File Offset: 0x0002D9BC
+	// Token: 0x0600067B RID: 1659 RVA: 0x0002FA78 File Offset: 0x0002DC78
 	public virtual bool HasCollidingAABB(BlockValue _blockValue, int _x, int _y, int _z, float _distortedAddY, Bounds _aabb)
 	{
 		Block.staticList_IntersectRayWithBlockList.Clear();
@@ -1339,7 +1339,7 @@ public class Block
 		return false;
 	}
 
-	// Token: 0x06000672 RID: 1650 RVA: 0x0002F814 File Offset: 0x0002DA14
+	// Token: 0x0600067C RID: 1660 RVA: 0x0002FAD0 File Offset: 0x0002DCD0
 	public virtual void GetCollisionAABB(BlockValue _blockValue, int _x, int _y, int _z, float _distortedAddY, List<Bounds> _result)
 	{
 		Vector3 vector = new Vector3(0f, _distortedAddY, 0f);
@@ -1351,24 +1351,24 @@ public class Block
 		}
 	}
 
-	// Token: 0x06000673 RID: 1651 RVA: 0x0002F890 File Offset: 0x0002DA90
+	// Token: 0x0600067D RID: 1661 RVA: 0x0002FB4C File Offset: 0x0002DD4C
 	public virtual IList<Bounds> GetClipBoundsList(BlockValue _blockValue, Vector3 _blockPos)
 	{
 		return this.shape.GetBounds(_blockValue);
 	}
 
-	// Token: 0x06000674 RID: 1652 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x0600067E RID: 1662 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool UpdateTick(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool _bRandomTick, ulong _ticksIfLoaded, GameRandom _rnd)
 	{
 		return false;
 	}
 
-	// Token: 0x06000675 RID: 1653 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600067F RID: 1663 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void DoExchangeAction(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, string _action, int _itemCount)
 	{
 	}
 
-	// Token: 0x06000676 RID: 1654 RVA: 0x0002F89E File Offset: 0x0002DA9E
+	// Token: 0x06000680 RID: 1664 RVA: 0x0002FB5A File Offset: 0x0002DD5A
 	public virtual void OnBlockLoaded(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		if (!_blockValue.ischild)
@@ -1377,7 +1377,7 @@ public class Block
 		}
 	}
 
-	// Token: 0x06000677 RID: 1655 RVA: 0x0002F8B7 File Offset: 0x0002DAB7
+	// Token: 0x06000681 RID: 1665 RVA: 0x0002FB73 File Offset: 0x0002DD73
 	public virtual void OnBlockUnloaded(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		if (!_blockValue.ischild)
@@ -1390,12 +1390,12 @@ public class Block
 		}
 	}
 
-	// Token: 0x06000678 RID: 1656 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000682 RID: 1666 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void OnNeighborBlockChange(WorldBase world, Vector3i _myBlockPos, BlockValue _myBlockValue, Vector3i _blockPosThatChanged, BlockValue _newNeighborBlockValue, BlockValue _oldNeighborBlockValue)
 	{
 	}
 
-	// Token: 0x06000679 RID: 1657 RVA: 0x0002F8E4 File Offset: 0x0002DAE4
+	// Token: 0x06000683 RID: 1667 RVA: 0x0002FBA0 File Offset: 0x0002DDA0
 	public static bool CanFallBelow(WorldBase _world, int _x, int _y, int _z)
 	{
 		BlockValue block = _world.GetBlock(_x, _y - 1, _z);
@@ -1403,13 +1403,13 @@ public class Block
 		return block.isair || !block2.StabilitySupport;
 	}
 
-	// Token: 0x0600067A RID: 1658 RVA: 0x0002F919 File Offset: 0x0002DB19
+	// Token: 0x06000684 RID: 1668 RVA: 0x0002FBD5 File Offset: 0x0002DDD5
 	public virtual ulong GetTickRate()
 	{
 		return 10UL;
 	}
 
-	// Token: 0x0600067B RID: 1659 RVA: 0x0002F920 File Offset: 0x0002DB20
+	// Token: 0x06000685 RID: 1669 RVA: 0x0002FBDC File Offset: 0x0002DDDC
 	public virtual void OnBlockAdded(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		if (_blockValue.ischild)
@@ -1438,12 +1438,12 @@ public class Block
 		}
 	}
 
-	// Token: 0x0600067C RID: 1660 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000686 RID: 1670 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void OnBlockReset(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 	}
 
-	// Token: 0x0600067D RID: 1661 RVA: 0x0002FA04 File Offset: 0x0002DC04
+	// Token: 0x06000687 RID: 1671 RVA: 0x0002FCC0 File Offset: 0x0002DEC0
 	public virtual void OnBlockRemoved(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		if (!_blockValue.ischild)
@@ -1466,7 +1466,7 @@ public class Block
 		}
 	}
 
-	// Token: 0x0600067E RID: 1662 RVA: 0x0002FA94 File Offset: 0x0002DC94
+	// Token: 0x06000688 RID: 1672 RVA: 0x0002FD50 File Offset: 0x0002DF50
 	public virtual void OnBlockValueChanged(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		if (_oldBlockValue.ischild)
@@ -1481,13 +1481,13 @@ public class Block
 		}
 	}
 
-	// Token: 0x0600067F RID: 1663 RVA: 0x0002FAF3 File Offset: 0x0002DCF3
+	// Token: 0x06000689 RID: 1673 RVA: 0x0002FDAF File Offset: 0x0002DFAF
 	public virtual void OnBlockEntityTransformBeforeActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		this.shape.OnBlockEntityTransformBeforeActivated(_world, _blockPos, _blockValue, _ebcd);
 	}
 
-	// Token: 0x06000680 RID: 1664 RVA: 0x0002FB08 File Offset: 0x0002DD08
+	// Token: 0x0600068A RID: 1674 RVA: 0x0002FDC4 File Offset: 0x0002DFC4
 	public virtual void OnBlockEntityTransformAfterActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		this.shape.OnBlockEntityTransformAfterActivated(_world, _blockPos, _blockValue, _ebcd);
@@ -1511,18 +1511,18 @@ public class Block
 		}
 	}
 
-	// Token: 0x06000681 RID: 1665 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600068B RID: 1675 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void ForceAnimationState(BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 	}
 
-	// Token: 0x06000682 RID: 1666 RVA: 0x0002FBC8 File Offset: 0x0002DDC8
+	// Token: 0x0600068C RID: 1676 RVA: 0x0002FE84 File Offset: 0x0002E084
 	public virtual int DamageBlock(WorldBase _world, BlockValueRef _blockValueRef, BlockValue _blockValue, int _damagePoints, int _entityIdThatDamaged, ItemActionAttack.AttackHitInfo _attackHitInfo = null, bool _bUseHarvestTool = false, bool _bBypassMaxDamage = false)
 	{
 		return this.OnBlockDamaged(_world, _blockValueRef, _blockValue, _damagePoints, _entityIdThatDamaged, _attackHitInfo, _bUseHarvestTool, _bBypassMaxDamage, 0);
 	}
 
-	// Token: 0x06000683 RID: 1667 RVA: 0x0002FBEC File Offset: 0x0002DDEC
+	// Token: 0x0600068D RID: 1677 RVA: 0x0002FEA8 File Offset: 0x0002E0A8
 	public virtual int OnBlockDamaged(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _damagePoints, int _entityIdThatDamaged, ItemActionAttack.AttackHitInfo _attackHitInfo, bool _bUseHarvestTool, bool _bBypassMaxDamage, int _recDepth = 0)
 	{
 		ChunkCluster chunkCache = _world.ChunkCache;
@@ -1703,7 +1703,7 @@ public class Block
 		}
 	}
 
-	// Token: 0x06000684 RID: 1668 RVA: 0x00030100 File Offset: 0x0002E300
+	// Token: 0x0600068E RID: 1678 RVA: 0x000303BC File Offset: 0x0002E5BC
 	public virtual bool IsHealthShownInUI(HitInfoDetails _hit, BlockValue _bv)
 	{
 		if (this.isMultiBlock && _bv.ischild)
@@ -1731,14 +1731,14 @@ public class Block
 		}
 	}
 
-	// Token: 0x06000685 RID: 1669 RVA: 0x000301B7 File Offset: 0x0002E3B7
+	// Token: 0x0600068F RID: 1679 RVA: 0x00030473 File Offset: 0x0002E673
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte convertRotation(BlockValue _oldBV, BlockValue _newBV)
 	{
 		return _oldBV.rotation;
 	}
 
-	// Token: 0x06000686 RID: 1670 RVA: 0x000301C0 File Offset: 0x0002E3C0
+	// Token: 0x06000690 RID: 1680 RVA: 0x0003047C File Offset: 0x0002E67C
 	public void AddDroppedId(EnumDropEvent _eEvent, string _name, int _minCount, int _maxCount, float _prob, float _resourceScale, float _stickChance, string _toolCategory, string _tag)
 	{
 		List<Block.SItemDropProb> list;
@@ -1751,13 +1751,13 @@ public class Block
 		list.Add(new Block.SItemDropProb(_name, _minCount, _maxCount, _prob, _resourceScale, _stickChance, _toolCategory, _tag));
 	}
 
-	// Token: 0x06000687 RID: 1671 RVA: 0x0003020B File Offset: 0x0002E40B
+	// Token: 0x06000691 RID: 1681 RVA: 0x000304C7 File Offset: 0x0002E6C7
 	public bool HasItemsToDropForEvent(EnumDropEvent _eEvent)
 	{
 		return this.itemsToDrop.ContainsKey(_eEvent);
 	}
 
-	// Token: 0x06000688 RID: 1672 RVA: 0x0003021C File Offset: 0x0002E41C
+	// Token: 0x06000692 RID: 1682 RVA: 0x000304D8 File Offset: 0x0002E6D8
 	public void DropItemsOnEvent(WorldBase _world, BlockValue _blockValue, EnumDropEvent _eEvent, float _overallProb, Vector3 _dropPos, Vector3 _randomPosAdd, float _lifetime, int _entityId, bool _bGetSameItemIfNoneFound)
 	{
 		GameRandom gameRandom = _world.GetGameRandom();
@@ -1834,13 +1834,13 @@ public class Block
 		}
 	}
 
-	// Token: 0x06000689 RID: 1673 RVA: 0x00030507 File Offset: 0x0002E707
+	// Token: 0x06000693 RID: 1683 RVA: 0x000307C3 File Offset: 0x0002E9C3
 	public float GetExplosionResistance()
 	{
 		return this.blockMaterial.ExplosionResistance;
 	}
 
-	// Token: 0x0600068A RID: 1674 RVA: 0x00030514 File Offset: 0x0002E714
+	// Token: 0x06000694 RID: 1684 RVA: 0x000307D0 File Offset: 0x0002E9D0
 	public bool intersectRayWithBlock(BlockValue _blockValue, int _x, int _y, int _z, Ray _ray, out Vector3 _hitPoint, World _world)
 	{
 		Block.staticList_IntersectRayWithBlockList.Clear();
@@ -1857,7 +1857,7 @@ public class Block
 		return false;
 	}
 
-	// Token: 0x0600068B RID: 1675 RVA: 0x00030590 File Offset: 0x0002E790
+	// Token: 0x06000695 RID: 1685 RVA: 0x0003084C File Offset: 0x0002EA4C
 	public virtual Block.DestroyedResult OnBlockDestroyedByExplosion(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _playerThatStartedExpl)
 	{
 		ChunkCluster chunkCache = _world.ChunkCache;
@@ -1868,13 +1868,13 @@ public class Block
 		return Block.DestroyedResult.Downgrade;
 	}
 
-	// Token: 0x0600068C RID: 1676 RVA: 0x000305BE File Offset: 0x0002E7BE
+	// Token: 0x06000696 RID: 1686 RVA: 0x0003087A File Offset: 0x0002EA7A
 	public virtual void OnBlockStartsToFall(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		_world.SetBlockRPC(_blockPos, BlockValue.Air);
 	}
 
-	// Token: 0x0600068D RID: 1677 RVA: 0x000305D4 File Offset: 0x0002E7D4
+	// Token: 0x06000697 RID: 1687 RVA: 0x00030890 File Offset: 0x0002EA90
 	public virtual bool CanPlaceBlockAt(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool _bOmitCollideCheck = false)
 	{
 		if (_blockPos.y > 253)
@@ -1904,7 +1904,7 @@ public class Block
 		return (!block.isMultiBlock || _blockPos.y + block.multiBlockPos.dim.y < 254) && (GameManager.Instance.IsEditMode() || !block.bRestrictSubmergedPlacement || !this.IsUnderwater(_world, _blockPos, _blockValue)) && (GameManager.Instance.IsEditMode() || _bOmitCollideCheck || !this.overlapsWithOtherBlock(_world, _blockPos, _blockValue));
 	}
 
-	// Token: 0x0600068E RID: 1678 RVA: 0x000306C8 File Offset: 0x0002E8C8
+	// Token: 0x06000698 RID: 1688 RVA: 0x00030984 File Offset: 0x0002EB84
 	public Vector3i GetFreePlacementPosition(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityAlive _entityPlacing)
 	{
 		Vector3i vector3i = _blockPos;
@@ -1927,7 +1927,7 @@ public class Block
 		return vector3i;
 	}
 
-	// Token: 0x0600068F RID: 1679 RVA: 0x00030750 File Offset: 0x0002E950
+	// Token: 0x06000699 RID: 1689 RVA: 0x00030A0C File Offset: 0x0002EC0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool overlapsWithOtherBlock(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
@@ -1949,13 +1949,13 @@ public class Block
 		return false;
 	}
 
-	// Token: 0x06000690 RID: 1680 RVA: 0x000307EE File Offset: 0x0002E9EE
+	// Token: 0x0600069A RID: 1690 RVA: 0x00030AAA File Offset: 0x0002ECAA
 	public bool CanBlocksReplaceOrGroundCover()
 	{
 		return this.CanBlocksReplace || this.blockMaterial.IsGroundCover;
 	}
 
-	// Token: 0x06000691 RID: 1681 RVA: 0x00030808 File Offset: 0x0002EA08
+	// Token: 0x0600069B RID: 1691 RVA: 0x00030AC4 File Offset: 0x0002ECC4
 	public bool IsUnderwater(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		if (this.isMultiBlock)
@@ -1977,13 +1977,13 @@ public class Block
 		return false;
 	}
 
-	// Token: 0x06000692 RID: 1682 RVA: 0x00030890 File Offset: 0x0002EA90
+	// Token: 0x0600069C RID: 1692 RVA: 0x00030B4C File Offset: 0x0002ED4C
 	public virtual BlockValue OnBlockPlaced(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, GameRandom _rnd)
 	{
 		return _blockValue;
 	}
 
-	// Token: 0x06000693 RID: 1683 RVA: 0x00030894 File Offset: 0x0002EA94
+	// Token: 0x0600069D RID: 1693 RVA: 0x00030B50 File Offset: 0x0002ED50
 	public virtual void OnBlockPlaceBefore(WorldBase _world, ref BlockPlacement.Result _bpResult, EntityAlive _ea, GameRandom _rnd)
 	{
 		DynamicMeshManager.ChunkChanged(_bpResult.blockPos, (_ea != null) ? _ea.entityId : (-2), _bpResult.blockValue.type);
@@ -2028,7 +2028,7 @@ public class Block
 		}
 	}
 
-	// Token: 0x06000694 RID: 1684 RVA: 0x000309A8 File Offset: 0x0002EBA8
+	// Token: 0x0600069E RID: 1694 RVA: 0x00030C64 File Offset: 0x0002EE64
 	public virtual void PlaceBlock(WorldBase _world, BlockPlacement.Result _result, EntityAlive _ea)
 	{
 		Block block = _result.blockValue.Block;
@@ -2056,7 +2056,7 @@ public class Block
 		}
 	}
 
-	// Token: 0x06000695 RID: 1685 RVA: 0x00030A74 File Offset: 0x0002EC74
+	// Token: 0x0600069F RID: 1695 RVA: 0x00030D30 File Offset: 0x0002EF30
 	public virtual void PlaceProp(WorldBase _world, BlockPlacement.Result _result, EntityAlive _ea)
 	{
 		BlockPlacement.EnumPlacement placement = _result.placement;
@@ -2084,13 +2084,13 @@ public class Block
 			.Build());
 	}
 
-	// Token: 0x06000696 RID: 1686 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x060006A0 RID: 1696 RVA: 0x0002F168 File Offset: 0x0002D368
 	public virtual Block.DestroyedResult OnBlockDestroyedBy(WorldBase _world, BlockValueRef _bvRef, BlockValue _blockValue, int _entityId, bool _bUseHarvestTool)
 	{
 		return Block.DestroyedResult.Downgrade;
 	}
 
-	// Token: 0x06000697 RID: 1687 RVA: 0x00030BA0 File Offset: 0x0002EDA0
+	// Token: 0x060006A1 RID: 1697 RVA: 0x00030E5C File Offset: 0x0002F05C
 	public virtual ItemStack OnBlockPickedUp(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, int _entityId)
 	{
 		ItemValue itemValue;
@@ -2117,7 +2117,7 @@ public class Block
 		return new ItemStack(itemValue, 1);
 	}
 
-	// Token: 0x06000698 RID: 1688 RVA: 0x00030C34 File Offset: 0x0002EE34
+	// Token: 0x060006A2 RID: 1698 RVA: 0x00030EF0 File Offset: 0x0002F0F0
 	public virtual bool OnBlockActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		bool flag = this.CanPickup;
@@ -2150,7 +2150,7 @@ public class Block
 		return false;
 	}
 
-	// Token: 0x06000699 RID: 1689 RVA: 0x00030D48 File Offset: 0x0002EF48
+	// Token: 0x060006A3 RID: 1699 RVA: 0x00031004 File Offset: 0x0002F204
 	public void PickupOrDrop(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayer _player, bool forcePickup)
 	{
 		if (_player == null)
@@ -2174,78 +2174,78 @@ public class Block
 		_world.GetGameManager().PickupBlockServer(_blockPos, _blockValue, _player.entityId, null);
 	}
 
-	// Token: 0x0600069A RID: 1690 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060006A4 RID: 1700 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool OnEntityCollidedWithBlock(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, Entity _entity)
 	{
 		return false;
 	}
 
-	// Token: 0x0600069B RID: 1691 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060006A5 RID: 1701 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void OnEntityWalking(WorldBase _world, int _x, int _y, int _z, BlockValue _blockValue, Entity entity)
 	{
 	}
 
-	// Token: 0x0600069C RID: 1692 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x060006A6 RID: 1702 RVA: 0x00020021 File Offset: 0x0001E221
 	public virtual bool CanPlantStay(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		return true;
 	}
 
-	// Token: 0x0600069D RID: 1693 RVA: 0x00030DCB File Offset: 0x0002EFCB
+	// Token: 0x060006A7 RID: 1703 RVA: 0x00031087 File Offset: 0x0002F287
 	public void SetBlockName(string _blockName)
 	{
 		this.blockName = _blockName;
 	}
 
-	// Token: 0x0600069E RID: 1694 RVA: 0x00030DD4 File Offset: 0x0002EFD4
+	// Token: 0x060006A8 RID: 1704 RVA: 0x00031090 File Offset: 0x0002F290
 	public string GetBlockName()
 	{
 		return this.blockName;
 	}
 
-	// Token: 0x0600069F RID: 1695 RVA: 0x00030DDC File Offset: 0x0002EFDC
+	// Token: 0x060006A9 RID: 1705 RVA: 0x00031098 File Offset: 0x0002F298
 	public static HashSet<string> GetAutoShapeMaterials()
 	{
 		return Block.autoShapeMaterials;
 	}
 
-	// Token: 0x060006A0 RID: 1696 RVA: 0x00030DE3 File Offset: 0x0002EFE3
+	// Token: 0x060006AA RID: 1706 RVA: 0x0003109F File Offset: 0x0002F29F
 	public EAutoShapeType GetAutoShapeType()
 	{
 		return this.AutoShapeType;
 	}
 
-	// Token: 0x060006A1 RID: 1697 RVA: 0x00030DEB File Offset: 0x0002EFEB
+	// Token: 0x060006AB RID: 1707 RVA: 0x000310A7 File Offset: 0x0002F2A7
 	public string GetAutoShapeBlockName()
 	{
 		return this.autoShapeBaseName;
 	}
 
-	// Token: 0x060006A2 RID: 1698 RVA: 0x00030DF3 File Offset: 0x0002EFF3
+	// Token: 0x060006AC RID: 1708 RVA: 0x000310AF File Offset: 0x0002F2AF
 	public string GetAutoShapeShapeName()
 	{
 		return this.autoShapeShapeName;
 	}
 
-	// Token: 0x060006A3 RID: 1699 RVA: 0x00030DFB File Offset: 0x0002EFFB
+	// Token: 0x060006AD RID: 1709 RVA: 0x000310B7 File Offset: 0x0002F2B7
 	public Block GetAutoShapeHelperBlock()
 	{
 		return this.autoShapeHelper;
 	}
 
-	// Token: 0x060006A4 RID: 1700 RVA: 0x00030E03 File Offset: 0x0002F003
+	// Token: 0x060006AE RID: 1710 RVA: 0x000310BF File Offset: 0x0002F2BF
 	public string GetLocalizedAutoShapeShapeName()
 	{
 		return Localization.Get("shape" + this.GetAutoShapeShapeName(), false, null);
 	}
 
-	// Token: 0x060006A5 RID: 1701 RVA: 0x00030E1C File Offset: 0x0002F01C
+	// Token: 0x060006AF RID: 1711 RVA: 0x000310D8 File Offset: 0x0002F2D8
 	public bool AutoShapeSupportsShapeName(string _shapeName)
 	{
 		return this.AutoShapeType == EAutoShapeType.Helper && this.ContainsAlternateBlock(this.autoShapeBaseName + ":" + _shapeName);
 	}
 
-	// Token: 0x060006A6 RID: 1702 RVA: 0x00030E40 File Offset: 0x0002F040
+	// Token: 0x060006B0 RID: 1712 RVA: 0x000310FC File Offset: 0x0002F2FC
 	public int AutoShapeAlternateShapeNameIndex(string _shapeName)
 	{
 		if (this.AutoShapeType == EAutoShapeType.Helper)
@@ -2255,7 +2255,7 @@ public class Block
 		return -1;
 	}
 
-	// Token: 0x060006A7 RID: 1703 RVA: 0x00030E64 File Offset: 0x0002F064
+	// Token: 0x060006B1 RID: 1713 RVA: 0x00031120 File Offset: 0x0002F320
 	public virtual string GetLocalizedBlockName()
 	{
 		if (this.localizedBlockName != null)
@@ -2269,7 +2269,7 @@ public class Block
 		return this.localizedBlockName = Localization.Get(this.GetBlockName(), false, null);
 	}
 
-	// Token: 0x060006A8 RID: 1704 RVA: 0x00030EC4 File Offset: 0x0002F0C4
+	// Token: 0x060006B2 RID: 1714 RVA: 0x00031180 File Offset: 0x0002F380
 	public virtual string GetLocalizedBlockName(ItemValue _itemValueRef)
 	{
 		if (this.AutoShapeType != EAutoShapeType.Helper || _itemValueRef.ToBlockValue(false).Equals(BlockValue.Air))
@@ -2280,20 +2280,20 @@ public class Block
 		return this.placeAltBlockClasses[_itemValueRef.Meta].GetLocalizedBlockName();
 	}
 
-	// Token: 0x060006A9 RID: 1705 RVA: 0x00030F10 File Offset: 0x0002F110
+	// Token: 0x060006B3 RID: 1715 RVA: 0x000311CC File Offset: 0x0002F3CC
 	public string GetIconName()
 	{
 		return this.CustomIcon ?? this.GetBlockName();
 	}
 
-	// Token: 0x060006AA RID: 1706 RVA: 0x00030F22 File Offset: 0x0002F122
+	// Token: 0x060006B4 RID: 1716 RVA: 0x000311DE File Offset: 0x0002F3DE
 	public void SetSideTextureId(int _textureId, int channel)
 	{
 		this.textureInfos[channel].singleTextureId = _textureId;
 		this.textureInfos[channel].bTextureForEachSide = false;
 	}
 
-	// Token: 0x060006AB RID: 1707 RVA: 0x00030F48 File Offset: 0x0002F148
+	// Token: 0x060006B5 RID: 1717 RVA: 0x00031204 File Offset: 0x0002F404
 	public void SetSideTextureId(string[] _texIds, int channel)
 	{
 		this.textureInfos[channel].sideTextureIds = new int[_texIds.Length];
@@ -2304,7 +2304,7 @@ public class Block
 		this.textureInfos[channel].bTextureForEachSide = true;
 	}
 
-	// Token: 0x060006AC RID: 1708 RVA: 0x00030FAC File Offset: 0x0002F1AC
+	// Token: 0x060006B6 RID: 1718 RVA: 0x00031268 File Offset: 0x0002F468
 	public int GetSideTextureId(BlockValue _blockValue, BlockFace _side, int channel)
 	{
 		if (this.textureInfos[channel].bTextureForEachSide)
@@ -2319,7 +2319,7 @@ public class Block
 		return this.textureInfos[channel].singleTextureId;
 	}
 
-	// Token: 0x060006AD RID: 1709 RVA: 0x00031018 File Offset: 0x0002F218
+	// Token: 0x060006B7 RID: 1719 RVA: 0x000312D4 File Offset: 0x0002F4D4
 	public MaterialBlock GetMaterialForSide(BlockValue _blockValue, BlockFace _side)
 	{
 		MaterialBlock materialBlock = null;
@@ -2336,7 +2336,7 @@ public class Block
 		return materialBlock;
 	}
 
-	// Token: 0x060006AE RID: 1710 RVA: 0x00031085 File Offset: 0x0002F285
+	// Token: 0x060006B8 RID: 1720 RVA: 0x00031341 File Offset: 0x0002F541
 	public int GetUiBackgroundTextureId(BlockValue _blockValue, BlockFace _side, int channel = 0)
 	{
 		if (this.uiBackgroundTextureId < 0)
@@ -2346,7 +2346,7 @@ public class Block
 		return this.uiBackgroundTextureId;
 	}
 
-	// Token: 0x060006AF RID: 1711 RVA: 0x000310A0 File Offset: 0x0002F2A0
+	// Token: 0x060006B9 RID: 1721 RVA: 0x0003135C File Offset: 0x0002F55C
 	public string GetParticleForSide(BlockValue _blockValue, BlockFace _side)
 	{
 		MaterialBlock materialForSide = this.GetMaterialForSide(_blockValue, _side);
@@ -2361,7 +2361,7 @@ public class Block
 		return null;
 	}
 
-	// Token: 0x060006B0 RID: 1712 RVA: 0x000310DC File Offset: 0x0002F2DC
+	// Token: 0x060006BA RID: 1722 RVA: 0x00031398 File Offset: 0x0002F598
 	public string GetDestroyParticle(BlockValue _blockValue)
 	{
 		if (this.blockMaterial.ParticleDestroyCategory != null)
@@ -2379,7 +2379,7 @@ public class Block
 		return null;
 	}
 
-	// Token: 0x060006B1 RID: 1713 RVA: 0x00031138 File Offset: 0x0002F338
+	// Token: 0x060006BB RID: 1723 RVA: 0x000313F4 File Offset: 0x0002F5F4
 	public Color GetColorForSide(BlockValue _blockValue, BlockFace _side)
 	{
 		TextureAtlas textureAtlas = MeshDescription.meshes[(int)_blockValue.Block.MeshIndex].textureAtlas;
@@ -2391,7 +2391,7 @@ public class Block
 		return Color.gray;
 	}
 
-	// Token: 0x060006B2 RID: 1714 RVA: 0x00031190 File Offset: 0x0002F390
+	// Token: 0x060006BC RID: 1724 RVA: 0x0003144C File Offset: 0x0002F64C
 	public Color GetMapColor(BlockValue _blockValue, Vector3 _normal, int _yPos)
 	{
 		Color color;
@@ -2424,55 +2424,55 @@ public class Block
 		return color;
 	}
 
-	// Token: 0x060006B3 RID: 1715 RVA: 0x000312C6 File Offset: 0x0002F4C6
+	// Token: 0x060006BD RID: 1725 RVA: 0x00031582 File Offset: 0x0002F782
 	public static bool CanDrop(BlockValue _blockValue)
 	{
 		return !_blockValue.Equals(BlockValue.Air);
 	}
 
-	// Token: 0x060006B4 RID: 1716 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060006BE RID: 1726 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool IsElevator()
 	{
 		return false;
 	}
 
-	// Token: 0x060006B5 RID: 1717 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060006BF RID: 1727 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool IsElevator(int rotation)
 	{
 		return false;
 	}
 
-	// Token: 0x060006B6 RID: 1718 RVA: 0x000312D7 File Offset: 0x0002F4D7
+	// Token: 0x060006C0 RID: 1728 RVA: 0x00031593 File Offset: 0x0002F793
 	public virtual bool IsPlant()
 	{
 		return this.blockMaterial.IsPlant || this.bIsPlant;
 	}
 
-	// Token: 0x060006B7 RID: 1719 RVA: 0x000312EE File Offset: 0x0002F4EE
+	// Token: 0x060006C1 RID: 1729 RVA: 0x000315AA File Offset: 0x0002F7AA
 	public bool HasTag(BlockTags _tag)
 	{
 		return this.BlockTag == _tag;
 	}
 
-	// Token: 0x060006B8 RID: 1720 RVA: 0x000312F9 File Offset: 0x0002F4F9
+	// Token: 0x060006C2 RID: 1730 RVA: 0x000315B5 File Offset: 0x0002F7B5
 	public bool HasAnyFastTags(FastTags<TagGroup.Global> _tags)
 	{
 		return this.Tags.Test_AnySet(_tags);
 	}
 
-	// Token: 0x060006B9 RID: 1721 RVA: 0x00031307 File Offset: 0x0002F507
+	// Token: 0x060006C3 RID: 1731 RVA: 0x000315C3 File Offset: 0x0002F7C3
 	public bool HasAllFastTags(FastTags<TagGroup.Global> _tags)
 	{
 		return this.Tags.Test_AllSet(_tags);
 	}
 
-	// Token: 0x060006BA RID: 1722 RVA: 0x00031315 File Offset: 0x0002F515
+	// Token: 0x060006C4 RID: 1732 RVA: 0x000315D1 File Offset: 0x0002F7D1
 	public virtual bool CanRepair(BlockValue _blockValue)
 	{
 		return _blockValue.damage > 0;
 	}
 
-	// Token: 0x060006BB RID: 1723 RVA: 0x00031320 File Offset: 0x0002F520
+	// Token: 0x060006C5 RID: 1733 RVA: 0x000315DC File Offset: 0x0002F7DC
 	public virtual string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		Block block = _blockValue.Block;
@@ -2501,7 +2501,7 @@ public class Block
 		return string.Format(Localization.Get("pickupPrompt", false, null), Localization.Get(text, false, null));
 	}
 
-	// Token: 0x060006BC RID: 1724 RVA: 0x000313E8 File Offset: 0x0002F5E8
+	// Token: 0x060006C6 RID: 1734 RVA: 0x000316A4 File Offset: 0x0002F8A4
 	public void SpawnDowngradeFX(WorldBase _world, BlockValue _blockValue, BlockValueRef _bvRef, Color _color, int _entityIdThatCaused)
 	{
 		Block block = _blockValue.Block;
@@ -2513,7 +2513,7 @@ public class Block
 		this.SpawnDestroyParticleEffect(_world, _blockValue, _bvRef, 1f, _color, _entityIdThatCaused);
 	}
 
-	// Token: 0x060006BD RID: 1725 RVA: 0x00031430 File Offset: 0x0002F630
+	// Token: 0x060006C7 RID: 1735 RVA: 0x000316EC File Offset: 0x0002F8EC
 	public void SpawnDestroyFX(WorldBase _world, BlockValue _blockValue, BlockValueRef _bvRef, Color _color, int _entityIdThatCaused)
 	{
 		Block block = _blockValue.Block;
@@ -2525,7 +2525,7 @@ public class Block
 		this.SpawnDestroyParticleEffect(_world, _blockValue, _bvRef, 1f, _color, _entityIdThatCaused);
 	}
 
-	// Token: 0x060006BE RID: 1726 RVA: 0x00031478 File Offset: 0x0002F678
+	// Token: 0x060006C8 RID: 1736 RVA: 0x00031734 File Offset: 0x0002F934
 	public virtual void SpawnDestroyParticleEffect(WorldBase _world, BlockValue _blockValue, BlockValueRef _bvRef, float _lightValue, Color _color, int _entityIdThatCaused)
 	{
 		if (this.deathParticleName != null)
@@ -2541,14 +2541,14 @@ public class Block
 		}
 	}
 
-	// Token: 0x060006BF RID: 1727 RVA: 0x00031570 File Offset: 0x0002F770
+	// Token: 0x060006C9 RID: 1737 RVA: 0x0003182C File Offset: 0x0002FA2C
 	public void SpawnFX(WorldBase _world, BlockValueRef _bvRef, float _lightValue, Color _color, int _entityIdThatCaused, string _fxName)
 	{
 		string[] array = _fxName.Split(',', StringSplitOptions.None);
 		_world.GetGameManager().SpawnParticleEffectServer(new ParticleEffect(array[0], World.blockToTransformPos(_world, _bvRef) + new Vector3(0f, 0.5f, 0f), _lightValue, _color, array[1], null, true, 1f, ""), _entityIdThatCaused, false, true);
 	}
 
-	// Token: 0x060006C0 RID: 1728 RVA: 0x000315D4 File Offset: 0x0002F7D4
+	// Token: 0x060006CA RID: 1738 RVA: 0x00031890 File Offset: 0x0002FA90
 	public static BlockValue GetBlockValue(string _blockName, bool _caseInsensitive = false)
 	{
 		Block blockByName = Block.GetBlockByName(_blockName, _caseInsensitive);
@@ -2559,7 +2559,7 @@ public class Block
 		return BlockValue.Air;
 	}
 
-	// Token: 0x060006C1 RID: 1729 RVA: 0x000315F8 File Offset: 0x0002F7F8
+	// Token: 0x060006CB RID: 1739 RVA: 0x000318B4 File Offset: 0x0002FAB4
 	public static Block GetBlockByName(string _blockname, bool _caseInsensitive = false)
 	{
 		if (Block.nameToBlock == null)
@@ -2578,7 +2578,7 @@ public class Block
 		return block;
 	}
 
-	// Token: 0x060006C2 RID: 1730 RVA: 0x00031630 File Offset: 0x0002F830
+	// Token: 0x060006CC RID: 1740 RVA: 0x000318EC File Offset: 0x0002FAEC
 	public BlockValue ToBlockValue()
 	{
 		return new BlockValue
@@ -2587,7 +2587,7 @@ public class Block
 		};
 	}
 
-	// Token: 0x060006C3 RID: 1731 RVA: 0x00031654 File Offset: 0x0002F854
+	// Token: 0x060006CD RID: 1741 RVA: 0x00031910 File Offset: 0x0002FB10
 	public static BlockValue GetBlockValue(int _blockType)
 	{
 		if (Block.list[_blockType] == null)
@@ -2600,7 +2600,7 @@ public class Block
 		};
 	}
 
-	// Token: 0x060006C4 RID: 1732 RVA: 0x00031684 File Offset: 0x0002F884
+	// Token: 0x060006CE RID: 1742 RVA: 0x00031940 File Offset: 0x0002FB40
 	public BlockValue GetBlockValueFromProperty(string _propValue)
 	{
 		BlockValue blockValue = BlockValue.Air;
@@ -2616,14 +2616,14 @@ public class Block
 		return blockValue;
 	}
 
-	// Token: 0x060006C5 RID: 1733 RVA: 0x00031713 File Offset: 0x0002F913
+	// Token: 0x060006CF RID: 1743 RVA: 0x000319CF File Offset: 0x0002FBCF
 	public virtual bool ShowModelOnFall()
 	{
 		return this.bShowModelOnFall;
 	}
 
 	// Token: 0x17000075 RID: 117
-	// (get) Token: 0x060006C6 RID: 1734 RVA: 0x0003171C File Offset: 0x0002F91C
+	// (get) Token: 0x060006D0 RID: 1744 RVA: 0x000319D8 File Offset: 0x0002FBD8
 	public BlockActivationCommand[] CustomCmds
 	{
 		get
@@ -2676,7 +2676,7 @@ public class Block
 		}
 	}
 
-	// Token: 0x060006C7 RID: 1735 RVA: 0x0003191C File Offset: 0x0002FB1C
+	// Token: 0x060006D1 RID: 1745 RVA: 0x00031BD8 File Offset: 0x0002FDD8
 	public virtual bool HasBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		bool flag = this.CanPickup;
@@ -2687,7 +2687,7 @@ public class Block
 		return flag || this.CustomCmds.Length != 0;
 	}
 
-	// Token: 0x060006C8 RID: 1736 RVA: 0x00031970 File Offset: 0x0002FB70
+	// Token: 0x060006D2 RID: 1746 RVA: 0x00031C2C File Offset: 0x0002FE2C
 	public virtual BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		bool flag = false;
@@ -2708,7 +2708,7 @@ public class Block
 		return this.cmds;
 	}
 
-	// Token: 0x060006C9 RID: 1737 RVA: 0x000319DC File Offset: 0x0002FBDC
+	// Token: 0x060006D3 RID: 1747 RVA: 0x00031C98 File Offset: 0x0002FE98
 	public virtual bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (_commandName == this.cmds[0].text || _commandName == this.cmds[1].text)
@@ -2719,13 +2719,13 @@ public class Block
 		return false;
 	}
 
-	// Token: 0x060006CA RID: 1738 RVA: 0x00031A2C File Offset: 0x0002FC2C
+	// Token: 0x060006D4 RID: 1748 RVA: 0x00031CE8 File Offset: 0x0002FEE8
 	public virtual void RenderDecorations(Vector3i _worldPos, BlockValue _blockValue, Vector3 _drawPos, Vector3[] _vertices, LightingAround _lightingAround, TextureFullArray _textureFullArray, VoxelMesh[] _meshes, INeighborBlockCache _nBlocks)
 	{
 		this.shape.renderDecorations(_worldPos, _blockValue, _drawPos, _vertices, _lightingAround, _textureFullArray, _meshes, _nBlocks);
 	}
 
-	// Token: 0x060006CB RID: 1739 RVA: 0x00031A54 File Offset: 0x0002FC54
+	// Token: 0x060006D5 RID: 1749 RVA: 0x00031D10 File Offset: 0x0002FF10
 	public int GetActivationDistanceSq()
 	{
 		int num = this.activationDistance;
@@ -2736,7 +2736,7 @@ public class Block
 		return num * num;
 	}
 
-	// Token: 0x060006CC RID: 1740 RVA: 0x00031A7C File Offset: 0x0002FC7C
+	// Token: 0x060006D6 RID: 1750 RVA: 0x00031D38 File Offset: 0x0002FF38
 	public int GetPlacementDistanceSq()
 	{
 		int num = this.placementDistance;
@@ -2751,61 +2751,61 @@ public class Block
 		return num * num;
 	}
 
-	// Token: 0x060006CD RID: 1741 RVA: 0x00031AB0 File Offset: 0x0002FCB0
+	// Token: 0x060006D7 RID: 1751 RVA: 0x00031D6C File Offset: 0x0002FF6C
 	public virtual void CheckUpdate(BlockValue _oldBV, BlockValue _newBV, out bool bUpdateMesh, out bool bUpdateNotify, out bool bUpdateLight)
 	{
 		bUpdateMesh = (bUpdateNotify = (bUpdateLight = true));
 	}
 
-	// Token: 0x060006CE RID: 1742 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x060006D8 RID: 1752 RVA: 0x00020021 File Offset: 0x0001E221
 	public virtual bool RotateVerticesOnCollisionCheck(BlockValue _blockValue)
 	{
 		return true;
 	}
 
-	// Token: 0x060006CF RID: 1743 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060006D9 RID: 1753 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool ActivateBlock(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool isOn, bool isPowered)
 	{
 		return false;
 	}
 
-	// Token: 0x060006D0 RID: 1744 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060006DA RID: 1754 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool ActivateBlockOnce(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		return false;
 	}
 
-	// Token: 0x060006D1 RID: 1745 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060006DB RID: 1755 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void OnTriggerAddedFromPrefab(BlockTrigger _trigger, Vector3i _blockPos, BlockValue _blockValue, FastTags<TagGroup.Global> _questTags)
 	{
 	}
 
-	// Token: 0x060006D2 RID: 1746 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060006DC RID: 1756 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void OnTriggerRefresh(BlockTrigger _trigger, BlockValue _bv, FastTags<TagGroup.Global> questTag)
 	{
 	}
 
-	// Token: 0x060006D3 RID: 1747 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060006DD RID: 1757 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void OnTriggerChanged(BlockTrigger _trigger, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 	}
 
-	// Token: 0x060006D4 RID: 1748 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060006DE RID: 1758 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void OnTriggerChanged(BlockTrigger _trigger, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, List<BlockChangeInfo> _blockChanges)
 	{
 	}
 
-	// Token: 0x060006D5 RID: 1749 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060006DF RID: 1759 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void OnTriggered(EntityPlayer _player, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, List<BlockChangeInfo> _blockChanges, BlockTrigger _triggeredBy)
 	{
 	}
 
-	// Token: 0x060006D6 RID: 1750 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060006E0 RID: 1760 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void Refresh(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 	}
 
-	// Token: 0x060006D7 RID: 1751 RVA: 0x00031ACC File Offset: 0x0002FCCC
+	// Token: 0x060006E1 RID: 1761 RVA: 0x00031D88 File Offset: 0x0002FF88
 	public void HandleTrigger(EntityPlayer _player, World _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsClient)
@@ -2820,13 +2820,13 @@ public class Block
 		}
 	}
 
-	// Token: 0x060006D8 RID: 1752 RVA: 0x00031B55 File Offset: 0x0002FD55
+	// Token: 0x060006E2 RID: 1762 RVA: 0x00031E11 File Offset: 0x00030011
 	public override string ToString()
 	{
 		return this.blockName + " " + this.blockID.ToString();
 	}
 
-	// Token: 0x060006D9 RID: 1753 RVA: 0x00031B74 File Offset: 0x0002FD74
+	// Token: 0x060006E3 RID: 1763 RVA: 0x00031E30 File Offset: 0x00030030
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void assignIdsLinear()
 	{
@@ -2836,7 +2836,7 @@ public class Block
 		Block.assignLeftOverBlocks(array, list);
 	}
 
-	// Token: 0x060006DA RID: 1754 RVA: 0x00031BAC File Offset: 0x0002FDAC
+	// Token: 0x060006E4 RID: 1764 RVA: 0x00031E68 File Offset: 0x00030068
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void assignId(Block _b, int _id, bool[] _usedIds)
 	{
@@ -2845,7 +2845,7 @@ public class Block
 		_usedIds[_id] = true;
 	}
 
-	// Token: 0x060006DB RID: 1755 RVA: 0x00031BC4 File Offset: 0x0002FDC4
+	// Token: 0x060006E5 RID: 1765 RVA: 0x00031E80 File Offset: 0x00030080
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void assignLeftOverBlocks(bool[] _usedIds, List<Block> _unassignedBlocks)
 	{
@@ -2888,7 +2888,7 @@ public class Block
 		});
 	}
 
-	// Token: 0x060006DC RID: 1756 RVA: 0x00031D00 File Offset: 0x0002FF00
+	// Token: 0x060006E6 RID: 1766 RVA: 0x00031FBC File Offset: 0x000301BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void assignIdsFromMapping()
 	{
@@ -2909,7 +2909,7 @@ public class Block
 		Block.assignLeftOverBlocks(array, list);
 	}
 
-	// Token: 0x060006DD RID: 1757 RVA: 0x00031D9C File Offset: 0x0002FF9C
+	// Token: 0x060006E7 RID: 1767 RVA: 0x00032058 File Offset: 0x00030258
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void createFullMappingForClients()
 	{
@@ -2921,7 +2921,7 @@ public class Block
 		Block.fullMappingDataForClients = nameIdMapping.SaveToArray();
 	}
 
-	// Token: 0x060006DE RID: 1758 RVA: 0x00031E18 File Offset: 0x00030018
+	// Token: 0x060006E8 RID: 1768 RVA: 0x000320D4 File Offset: 0x000302D4
 	public static void AssignIds()
 	{
 		if (Block.nameToBlock.Count > Block.MAX_BLOCKS)
@@ -2941,19 +2941,19 @@ public class Block
 		Block.createFullMappingForClients();
 	}
 
-	// Token: 0x060006DF RID: 1759 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060006E9 RID: 1769 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool IsTileEntitySavedInPrefab()
 	{
 		return false;
 	}
 
-	// Token: 0x060006E0 RID: 1760 RVA: 0x00031E8B File Offset: 0x0003008B
+	// Token: 0x060006EA RID: 1770 RVA: 0x00032147 File Offset: 0x00030347
 	public virtual string GetCustomDescription(Vector3i _blockPos, BlockValue _bv)
 	{
 		return "";
 	}
 
-	// Token: 0x060006E1 RID: 1761 RVA: 0x00031E92 File Offset: 0x00030092
+	// Token: 0x060006EB RID: 1771 RVA: 0x0003214E File Offset: 0x0003034E
 	public string GetPlaceAltBlockValue(WorldBase _world)
 	{
 		if (this.placeAltBlockNames != null && this.placeAltBlockNames.Length != 0)
@@ -2963,7 +2963,7 @@ public class Block
 		return string.Empty;
 	}
 
-	// Token: 0x060006E2 RID: 1762 RVA: 0x00031EC6 File Offset: 0x000300C6
+	// Token: 0x060006EC RID: 1772 RVA: 0x00032182 File Offset: 0x00030382
 	public Block GetAltBlock(int _typeId)
 	{
 		this.GetAltBlocks();
@@ -2974,19 +2974,19 @@ public class Block
 		return Block.list[0];
 	}
 
-	// Token: 0x060006E3 RID: 1763 RVA: 0x00031EF0 File Offset: 0x000300F0
+	// Token: 0x060006ED RID: 1773 RVA: 0x000321AC File Offset: 0x000303AC
 	public BlockValue GetAltBlockValue(int typeID)
 	{
 		return this.GetAltBlock(typeID).ToBlockValue();
 	}
 
-	// Token: 0x060006E4 RID: 1764 RVA: 0x00031EFE File Offset: 0x000300FE
+	// Token: 0x060006EE RID: 1774 RVA: 0x000321BA File Offset: 0x000303BA
 	public string[] GetAltBlockNames()
 	{
 		return this.placeAltBlockNames;
 	}
 
-	// Token: 0x060006E5 RID: 1765 RVA: 0x00031F08 File Offset: 0x00030108
+	// Token: 0x060006EF RID: 1775 RVA: 0x000321C4 File Offset: 0x000303C4
 	public Block[] GetAltBlocks()
 	{
 		if (this.placeAltBlockClasses == null && this.placeAltBlockNames != null)
@@ -3000,13 +3000,13 @@ public class Block
 		return this.placeAltBlockClasses;
 	}
 
-	// Token: 0x060006E6 RID: 1766 RVA: 0x00031F67 File Offset: 0x00030167
+	// Token: 0x060006F0 RID: 1776 RVA: 0x00032223 File Offset: 0x00030423
 	public int AlternateBlockCount()
 	{
 		return this.placeAltBlockNames.Length;
 	}
 
-	// Token: 0x060006E7 RID: 1767 RVA: 0x00031F74 File Offset: 0x00030174
+	// Token: 0x060006F1 RID: 1777 RVA: 0x00032230 File Offset: 0x00030430
 	public bool ContainsAlternateBlock(string block)
 	{
 		for (int i = 0; i < this.placeAltBlockNames.Length; i++)
@@ -3019,7 +3019,7 @@ public class Block
 		return false;
 	}
 
-	// Token: 0x060006E8 RID: 1768 RVA: 0x00031FA8 File Offset: 0x000301A8
+	// Token: 0x060006F2 RID: 1778 RVA: 0x00032264 File Offset: 0x00030464
 	public int GetAlternateBlockIndex(string block)
 	{
 		for (int i = 0; i < this.placeAltBlockNames.Length; i++)
@@ -3032,7 +3032,7 @@ public class Block
 		return -1;
 	}
 
-	// Token: 0x060006E9 RID: 1769 RVA: 0x00031FDC File Offset: 0x000301DC
+	// Token: 0x060006F3 RID: 1779 RVA: 0x00032298 File Offset: 0x00030498
 	public static void GetShapeCategories(IEnumerable<Block> _altBlocks, List<ShapesFromXml.ShapeCategory> _targetList)
 	{
 		_targetList.Clear();
@@ -3052,7 +3052,7 @@ public class Block
 		_targetList.Sort();
 	}
 
-	// Token: 0x060006EA RID: 1770 RVA: 0x0003207C File Offset: 0x0003027C
+	// Token: 0x060006F4 RID: 1780 RVA: 0x00032338 File Offset: 0x00030538
 	public int GetShownMaxDamage()
 	{
 		BlockCompositeTileEntity blockCompositeTileEntity = this as BlockCompositeTileEntity;
@@ -3063,7 +3063,7 @@ public class Block
 		return this.MaxDamage;
 	}
 
-	// Token: 0x060006EB RID: 1771 RVA: 0x000320AD File Offset: 0x000302AD
+	// Token: 0x060006F5 RID: 1781 RVA: 0x00032369 File Offset: 0x00030569
 	public bool SupportsRotation(byte _rotation)
 	{
 		if (_rotation < 4)
@@ -3081,7 +3081,7 @@ public class Block
 		return (this.AllowedRotations & EBlockRotationClasses.Basic45) > EBlockRotationClasses.None;
 	}
 
-	// Token: 0x060006EC RID: 1772 RVA: 0x000320EC File Offset: 0x000302EC
+	// Token: 0x060006F6 RID: 1782 RVA: 0x000323A8 File Offset: 0x000305A8
 	public bool SupportsRotationFromMask(int rotationMask)
 	{
 		for (int i = 0; i < 28; i++)
@@ -3094,7 +3094,7 @@ public class Block
 		return false;
 	}
 
-	// Token: 0x060006ED RID: 1773 RVA: 0x00032120 File Offset: 0x00030320
+	// Token: 0x060006F7 RID: 1783 RVA: 0x000323DC File Offset: 0x000305DC
 	public void RotateHoldingBlock(ItemClassBlock.ItemBlockInventoryData _blockInventoryData, bool _increaseRotation, bool _playSoundOnRotation = true)
 	{
 		if (_blockInventoryData.mode == BlockPlacement.EnumRotationMode.Auto)
@@ -3112,7 +3112,7 @@ public class Block
 		}
 	}
 
-	// Token: 0x060006EE RID: 1774 RVA: 0x00032210 File Offset: 0x00030410
+	// Token: 0x060006F8 RID: 1784 RVA: 0x000324CC File Offset: 0x000306CC
 	public void GroundAlign(BlockEntityData _data)
 	{
 		if (!_data.bHasTransform)
@@ -3192,7 +3192,7 @@ public class Block
 		gameObject.SetActive(true);
 	}
 
-	// Token: 0x060006EF RID: 1775 RVA: 0x00032498 File Offset: 0x00030698
+	// Token: 0x060006F9 RID: 1785 RVA: 0x00032754 File Offset: 0x00030954
 	public static void CacheStats()
 	{
 		DynamicPropertiesCache propertiesCache = Block.PropertiesCache;
@@ -3203,7 +3203,7 @@ public class Block
 		propertiesCache.Stats();
 	}
 
-	// Token: 0x060006F0 RID: 1776 RVA: 0x000324AC File Offset: 0x000306AC
+	// Token: 0x060006FA RID: 1786 RVA: 0x00032768 File Offset: 0x00030968
 	public void GetCollisionCollisionHash(IncrementalHash calcHash)
 	{
 		calcHash.AppendDataNoAlloc(1);
@@ -3215,21 +3215,21 @@ public class Block
 		this.shape.CalculateCollisionHash(calcHash);
 	}
 
-	// Token: 0x060006F1 RID: 1777 RVA: 0x00032509 File Offset: 0x00030709
+	// Token: 0x060006FB RID: 1787 RVA: 0x000327C5 File Offset: 0x000309C5
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void takeItemWithTimer(Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player, float _takeDelay)
 	{
 		Block.TakeItemWithTimer(_blockPos, _blockValue, _player, _takeDelay, new Func<Vector3i, EntityPlayerLocal, bool>(this.takeItemWithTimerCanTake));
 	}
 
-	// Token: 0x060006F2 RID: 1778 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x060006FC RID: 1788 RVA: 0x00020021 File Offset: 0x0001E221
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool takeItemWithTimerCanTake(Vector3i _blockPos, EntityAlive _player)
 	{
 		return true;
 	}
 
-	// Token: 0x060006F3 RID: 1779 RVA: 0x00032524 File Offset: 0x00030724
+	// Token: 0x060006FD RID: 1789 RVA: 0x000327E0 File Offset: 0x000309E0
 	public static void TakeItemWithTimer(Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player, float _takeDelay, Func<Vector3i, EntityPlayerLocal, bool> _canTakeCallback = null)
 	{
 		if (_blockValue.damage > 0)
@@ -3248,7 +3248,7 @@ public class Block
 		XUiC_Timer.OpenTimer(playerUI.xui, _takeDelay, timerEventData, -1f, "", true);
 	}
 
-	// Token: 0x060006F4 RID: 1780 RVA: 0x000325C8 File Offset: 0x000307C8
+	// Token: 0x060006FE RID: 1790 RVA: 0x00032884 File Offset: 0x00030A84
 	public static void TakeItemWithTimerDone(TimerEventData _timerData)
 	{
 		World world = GameManager.Instance.World;
@@ -3282,1021 +3282,1021 @@ public class Block
 		world.SetBlockRPC(vector3i, BlockValue.Air);
 	}
 
-	// Token: 0x0400070E RID: 1806
+	// Token: 0x04000710 RID: 1808
 	public const int cAirId = 0;
 
-	// Token: 0x0400070F RID: 1807
+	// Token: 0x04000711 RID: 1809
 	public const int cTerrainStartId = 1;
 
-	// Token: 0x04000710 RID: 1808
+	// Token: 0x04000712 RID: 1810
 	public const int cTerrainEndId = 239;
 
-	// Token: 0x04000711 RID: 1809
+	// Token: 0x04000713 RID: 1811
 	public const int cTerrainIdCount = 239;
 
-	// Token: 0x04000712 RID: 1810
+	// Token: 0x04000714 RID: 1812
 	public const int cWaterId = 240;
 
-	// Token: 0x04000713 RID: 1811
+	// Token: 0x04000715 RID: 1813
 	public const int cWaterPOIId = 241;
 
-	// Token: 0x04000714 RID: 1812
+	// Token: 0x04000716 RID: 1814
 	public const int cWaterDataId = 242;
 
-	// Token: 0x04000715 RID: 1813
+	// Token: 0x04000717 RID: 1815
 	public const int cGeneralStartId = 256;
 
-	// Token: 0x04000716 RID: 1814
+	// Token: 0x04000718 RID: 1816
 	public static int MAX_BLOCKS = 65536;
 
-	// Token: 0x04000717 RID: 1815
+	// Token: 0x04000719 RID: 1817
 	public static int ItemsStartHere = Block.MAX_BLOCKS;
 
-	// Token: 0x04000718 RID: 1816
+	// Token: 0x0400071A RID: 1818
 	public static bool FallInstantly = false;
 
-	// Token: 0x04000719 RID: 1817
+	// Token: 0x0400071B RID: 1819
 	public const int BlockFaceDrawn_Top = 1;
 
-	// Token: 0x0400071A RID: 1818
+	// Token: 0x0400071C RID: 1820
 	public const int BlockFaceDrawn_Bottom = 2;
 
-	// Token: 0x0400071B RID: 1819
+	// Token: 0x0400071D RID: 1821
 	public const int BlockFaceDrawn_North = 4;
 
-	// Token: 0x0400071C RID: 1820
+	// Token: 0x0400071E RID: 1822
 	public const int BlockFaceDrawn_West = 8;
 
-	// Token: 0x0400071D RID: 1821
+	// Token: 0x0400071F RID: 1823
 	public const int BlockFaceDrawn_South = 16;
 
-	// Token: 0x0400071E RID: 1822
+	// Token: 0x04000720 RID: 1824
 	public const int BlockFaceDrawn_East = 32;
 
-	// Token: 0x0400071F RID: 1823
+	// Token: 0x04000721 RID: 1825
 	public const int BlockFaceDrawn_AllORD = 63;
 
-	// Token: 0x04000720 RID: 1824
+	// Token: 0x04000722 RID: 1826
 	public const int BlockFaceDrawn_All = 255;
 
-	// Token: 0x04000721 RID: 1825
+	// Token: 0x04000723 RID: 1827
 	public static float cWaterLevel = 62.88f;
 
-	// Token: 0x04000722 RID: 1826
+	// Token: 0x04000724 RID: 1828
 	public static string PropCanPickup = "CanPickup";
 
-	// Token: 0x04000723 RID: 1827
+	// Token: 0x04000725 RID: 1829
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropPickupTarget = "PickupTarget";
 
-	// Token: 0x04000724 RID: 1828
+	// Token: 0x04000726 RID: 1830
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropPickupSource = "PickupSource";
 
-	// Token: 0x04000725 RID: 1829
-	public static string PropPlaceAltBlockValue = "PlaceAltBlockValue";
-
-	// Token: 0x04000726 RID: 1830
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropPlaceShapeCategories = "ShapeCategories";
-
 	// Token: 0x04000727 RID: 1831
-	public static string PropSiblingBlock = "SiblingBlock";
+	public static string PropPlaceAltBlockValue = "PlaceAltBlockValue";
 
 	// Token: 0x04000728 RID: 1832
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropFuelValue = "FuelValue";
+	public static string PropPlaceShapeCategories = "ShapeCategories";
 
 	// Token: 0x04000729 RID: 1833
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropWeight = "Weight";
+	public static string PropSiblingBlock = "SiblingBlock";
 
 	// Token: 0x0400072A RID: 1834
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropCanMobsSpawnOn = "CanMobsSpawnOn";
+	public static string PropFuelValue = "FuelValue";
 
 	// Token: 0x0400072B RID: 1835
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropCanPlayersSpawnOn = "CanPlayersSpawnOn";
+	public static string PropWeight = "Weight";
 
 	// Token: 0x0400072C RID: 1836
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropIndexName = "IndexName";
+	public static string PropCanMobsSpawnOn = "CanMobsSpawnOn";
 
 	// Token: 0x0400072D RID: 1837
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropCanBlocksReplace = "CanBlocksReplace";
+	public static string PropCanPlayersSpawnOn = "CanPlayersSpawnOn";
 
 	// Token: 0x0400072E RID: 1838
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropCanDecorateOnSlopes = "CanDecorateOnSlopes";
+	public static string PropIndexName = "IndexName";
 
 	// Token: 0x0400072F RID: 1839
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropSlopeMax = "SlopeMax";
+	public static string PropCanBlocksReplace = "CanBlocksReplace";
 
 	// Token: 0x04000730 RID: 1840
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropIsProp = "IsProp";
+	public static string PropCanDecorateOnSlopes = "CanDecorateOnSlopes";
 
 	// Token: 0x04000731 RID: 1841
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropIsTerrainDecoration = "IsTerrainDecoration";
+	public static string PropSlopeMax = "SlopeMax";
 
 	// Token: 0x04000732 RID: 1842
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropIsDecoration = "IsDecoration";
+	public static string PropIsProp = "IsProp";
 
 	// Token: 0x04000733 RID: 1843
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropDistantDecoration = "IsDistantDecoration";
+	public static string PropIsTerrainDecoration = "IsTerrainDecoration";
 
 	// Token: 0x04000734 RID: 1844
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropBigDecorationRadius = "BigDecorationRadius";
+	public static string PropIsDecoration = "IsDecoration";
 
 	// Token: 0x04000735 RID: 1845
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropSmallDecorationRadius = "SmallDecorationRadius";
+	public static string PropDistantDecoration = "IsDistantDecoration";
 
 	// Token: 0x04000736 RID: 1846
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropGndAlign = "GndAlign";
+	public static string PropBigDecorationRadius = "BigDecorationRadius";
 
 	// Token: 0x04000737 RID: 1847
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropIgnoreKeystoneOverlay = "IgnoreKeystoneOverlay";
+	public static string PropSmallDecorationRadius = "SmallDecorationRadius";
 
 	// Token: 0x04000738 RID: 1848
-	public static string PropUpgradeBlockClass = "UpgradeBlock";
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public static string PropGndAlign = "GndAlign";
 
 	// Token: 0x04000739 RID: 1849
-	public static string PropUpgradeBlockToBlock = "ToBlock";
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public static string PropIgnoreKeystoneOverlay = "IgnoreKeystoneOverlay";
 
 	// Token: 0x0400073A RID: 1850
-	public static string PropUpgradeBlockItemCount = "ItemCount";
+	public static string PropUpgradeBlockClass = "UpgradeBlock";
 
 	// Token: 0x0400073B RID: 1851
-	public static string PropDowngradeBlock = "DowngradeBlock";
+	public static string PropUpgradeBlockToBlock = "ToBlock";
 
 	// Token: 0x0400073C RID: 1852
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropLPScale = "LPHardnessScale";
+	public static string PropUpgradeBlockItemCount = "ItemCount";
 
 	// Token: 0x0400073D RID: 1853
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropMapColor = "MapColor";
+	public static string PropDowngradeBlock = "DowngradeBlock";
 
 	// Token: 0x0400073E RID: 1854
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropMapColor2 = "MapColor2";
+	public static string PropLPScale = "LPHardnessScale";
 
 	// Token: 0x0400073F RID: 1855
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropGroupName = "Group";
+	public static string PropMapColor = "MapColor";
 
 	// Token: 0x04000740 RID: 1856
-	public static string PropCustomIcon = "CustomIcon";
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public static string PropMapColor2 = "MapColor2";
 
 	// Token: 0x04000741 RID: 1857
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropCustomIconTint = "CustomIconTint";
+	public static string PropGroupName = "Group";
 
 	// Token: 0x04000742 RID: 1858
+	public static string PropCustomIcon = "CustomIcon";
+
+	// Token: 0x04000743 RID: 1859
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public static string PropCustomIconTint = "CustomIconTint";
+
+	// Token: 0x04000744 RID: 1860
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropPlacementWireframe = "PlacementWireframe";
 
-	// Token: 0x04000743 RID: 1859
+	// Token: 0x04000745 RID: 1861
 	public static string PropMultiBlockDim = "MultiBlockDim";
 
-	// Token: 0x04000744 RID: 1860
+	// Token: 0x04000746 RID: 1862
 	public static string PropOversizedBounds = "OversizedBounds";
 
-	// Token: 0x04000745 RID: 1861
+	// Token: 0x04000747 RID: 1863
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static string PropTerrainAlignment = "TerrainAlignment";
 
-	// Token: 0x04000746 RID: 1862
+	// Token: 0x04000748 RID: 1864
 	public static string PropMultiBlockLayer = "MultiBlockLayer";
 
-	// Token: 0x04000747 RID: 1863
+	// Token: 0x04000749 RID: 1865
 	public static string PropMultiBlockLayer0 = "MultiBlockLayer0";
 
-	// Token: 0x04000748 RID: 1864
-	public static string PropDisableCover = "DisableCover";
-
-	// Token: 0x04000749 RID: 1865
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropIsPlant = "IsPlant";
-
 	// Token: 0x0400074A RID: 1866
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropHeatMapStrength = "HeatMapStrength";
+	public static string PropDisableCover = "DisableCover";
 
 	// Token: 0x0400074B RID: 1867
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropFallDamage = "FallDamage";
+	public static string PropIsPlant = "IsPlant";
 
 	// Token: 0x0400074C RID: 1868
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropBuffsWhenWalkedOn = "BuffsWhenWalkedOn";
+	public static string PropHeatMapStrength = "HeatMapStrength";
 
 	// Token: 0x0400074D RID: 1869
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropRadiusEffect = "ActiveRadiusEffects";
+	public static string PropFallDamage = "FallDamage";
 
 	// Token: 0x0400074E RID: 1870
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropCount = "Count";
+	public static string PropBuffsWhenWalkedOn = "BuffsWhenWalkedOn";
 
 	// Token: 0x0400074F RID: 1871
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropAllowAllRotations = "AllowAllRotations";
+	public static string PropRadiusEffect = "ActiveRadiusEffects";
 
 	// Token: 0x04000750 RID: 1872
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropActivationDistance = "ActivationDistance";
+	public static string PropCount = "Count";
 
 	// Token: 0x04000751 RID: 1873
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropPlacementDistance = "PlacementDistance";
+	public static string PropAllowAllRotations = "AllowAllRotations";
 
 	// Token: 0x04000752 RID: 1874
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropIsReplaceRandom = "IsReplaceRandom";
+	public static string PropActivationDistance = "ActivationDistance";
 
 	// Token: 0x04000753 RID: 1875
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropCraftExpValue = "CraftComponentExpValue";
+	public static string PropPlacementDistance = "PlacementDistance";
 
 	// Token: 0x04000754 RID: 1876
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropCraftTimeValue = "CraftComponentTimeValue";
+	public static string PropIsReplaceRandom = "IsReplaceRandom";
 
 	// Token: 0x04000755 RID: 1877
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropLootExpValue = "LootExpValue";
+	public static string PropCraftExpValue = "CraftComponentExpValue";
 
 	// Token: 0x04000756 RID: 1878
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropDestroyExpValue = "DestroyExpValue";
+	public static string PropCraftTimeValue = "CraftComponentTimeValue";
 
 	// Token: 0x04000757 RID: 1879
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropParticleOnDeath = "ParticleOnDeath";
+	public static string PropLootExpValue = "LootExpValue";
 
 	// Token: 0x04000758 RID: 1880
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropPlaceExpValue = "PlaceExpValue";
+	public static string PropDestroyExpValue = "DestroyExpValue";
 
 	// Token: 0x04000759 RID: 1881
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropUpgradeExpValue = "UpgradeExpValue";
+	public static string PropParticleOnDeath = "ParticleOnDeath";
 
 	// Token: 0x0400075A RID: 1882
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropEconomicValue = "EconomicValue";
+	public static string PropPlaceExpValue = "PlaceExpValue";
 
 	// Token: 0x0400075B RID: 1883
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropEconomicSellScale = "EconomicSellScale";
+	public static string PropUpgradeExpValue = "UpgradeExpValue";
 
 	// Token: 0x0400075C RID: 1884
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropEconomicBundleSize = "EconomicBundleSize";
+	public static string PropEconomicValue = "EconomicValue";
 
 	// Token: 0x0400075D RID: 1885
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropSellableToTrader = "SellableToTrader";
+	public static string PropEconomicSellScale = "EconomicSellScale";
 
 	// Token: 0x0400075E RID: 1886
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropTraderStageTemplate = "TraderStageTemplate";
+	public static string PropEconomicBundleSize = "EconomicBundleSize";
 
 	// Token: 0x0400075F RID: 1887
-	public static string PropResourceScale = "ResourceScale";
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public static string PropSellableToTrader = "SellableToTrader";
 
 	// Token: 0x04000760 RID: 1888
-	public static string PropMaxDamage = "MaxDamage";
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public static string PropTraderStageTemplate = "TraderStageTemplate";
 
 	// Token: 0x04000761 RID: 1889
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropStartDamage = "StartDamage";
+	public static string PropResourceScale = "ResourceScale";
 
 	// Token: 0x04000762 RID: 1890
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropStage2Health = "Stage2Health";
+	public static string PropMaxDamage = "MaxDamage";
 
 	// Token: 0x04000763 RID: 1891
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropDamage = "Damage";
+	public static string PropStartDamage = "StartDamage";
 
 	// Token: 0x04000764 RID: 1892
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropExplosionAffected = "ExplosionAffected";
+	public static string PropStage2Health = "Stage2Health";
 
 	// Token: 0x04000765 RID: 1893
-	public static string PropDescriptionKey = "DescriptionKey";
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public static string PropDamage = "Damage";
 
 	// Token: 0x04000766 RID: 1894
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropActionSkillGroup = "ActionSkillGroup";
+	public static string PropExplosionAffected = "ExplosionAffected";
 
 	// Token: 0x04000767 RID: 1895
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropCraftingSkillGroup = "CraftingSkillGroup";
+	public static string PropDescriptionKey = "DescriptionKey";
 
 	// Token: 0x04000768 RID: 1896
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropShowModelOnFall = "ShowModelOnFall";
+	public static string PropActionSkillGroup = "ActionSkillGroup";
 
 	// Token: 0x04000769 RID: 1897
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropLightOpacity = "LightOpacity";
+	public static string PropCraftingSkillGroup = "CraftingSkillGroup";
 
 	// Token: 0x0400076A RID: 1898
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public static string PropHarvestOverdamage = "HarvestOverdamage";
+	public static string PropShowModelOnFall = "ShowModelOnFall";
 
 	// Token: 0x0400076B RID: 1899
-	public static string PropTintColor = "TintColor";
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public static string PropLightOpacity = "LightOpacity";
 
 	// Token: 0x0400076C RID: 1900
-	public static string PropCreativeMode = "CreativeMode";
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public static string PropHarvestOverdamage = "HarvestOverdamage";
 
 	// Token: 0x0400076D RID: 1901
-	public static string PropFilterTag = "FilterTags";
+	public static string PropTintColor = "TintColor";
 
 	// Token: 0x0400076E RID: 1902
-	public static string PropTag = "Tags";
+	public static string PropCreativeMode = "CreativeMode";
 
 	// Token: 0x0400076F RID: 1903
-	public static string PropCreativeSort1 = "SortOrder1";
+	public static string PropFilterTag = "FilterTags";
 
 	// Token: 0x04000770 RID: 1904
-	public static string PropCreativeSort2 = "SortOrder2";
+	public static string PropTag = "Tags";
 
 	// Token: 0x04000771 RID: 1905
-	public static string PropDisplayType = "DisplayType";
+	public static string PropCreativeSort1 = "SortOrder1";
 
 	// Token: 0x04000772 RID: 1906
-	public static string PropUnlockedBy = "UnlockedBy";
+	public static string PropCreativeSort2 = "SortOrder2";
 
 	// Token: 0x04000773 RID: 1907
-	public static string PropNoScrapping = "NoScrapping";
+	public static string PropDisplayType = "DisplayType";
 
 	// Token: 0x04000774 RID: 1908
-	public static string PropVehicleHitScale = "VehicleHitScale";
+	public static string PropUnlockedBy = "UnlockedBy";
 
 	// Token: 0x04000775 RID: 1909
-	public static string PropItemTypeIcon = "ItemTypeIcon";
+	public static string PropNoScrapping = "NoScrapping";
 
 	// Token: 0x04000776 RID: 1910
-	public static string PropAutoShape = "AutoShape";
+	public static string PropVehicleHitScale = "VehicleHitScale";
 
 	// Token: 0x04000777 RID: 1911
-	public static string PropBlockAddedEvent = "AddedEvent";
+	public static string PropItemTypeIcon = "ItemTypeIcon";
 
 	// Token: 0x04000778 RID: 1912
-	public static string PropBlockDestroyedEvent = "DestroyedEvent";
+	public static string PropAutoShape = "AutoShape";
 
 	// Token: 0x04000779 RID: 1913
-	public static string PropBlockDowngradeEvent = "DowngradeEvent";
+	public static string PropBlockAddedEvent = "AddedEvent";
 
 	// Token: 0x0400077A RID: 1914
-	public static string PropBlockDowngradedToEvent = "DowngradedToEvent";
+	public static string PropBlockDestroyedEvent = "DestroyedEvent";
 
 	// Token: 0x0400077B RID: 1915
-	public static string PropIsTemporaryBlock = "IsTemporaryBlock";
+	public static string PropBlockDowngradeEvent = "DowngradeEvent";
 
 	// Token: 0x0400077C RID: 1916
-	public static string PropRefundOnUnload = "RefundOnUnload";
+	public static string PropBlockDowngradedToEvent = "DowngradedToEvent";
 
 	// Token: 0x0400077D RID: 1917
-	public static string PropSoundPickup = "SoundPickup";
+	public static string PropIsTemporaryBlock = "IsTemporaryBlock";
 
 	// Token: 0x0400077E RID: 1918
-	public static string PropSoundPlace = "SoundPlace";
+	public static string PropRefundOnUnload = "RefundOnUnload";
 
 	// Token: 0x0400077F RID: 1919
-	public static string PropSoundHitAdditional = "SoundHitAdditional";
+	public static string PropSoundPickup = "SoundPickup";
 
 	// Token: 0x04000780 RID: 1920
-	public static string PropCustomCommandName = "CustomCommandName";
+	public static string PropSoundPlace = "SoundPlace";
 
 	// Token: 0x04000781 RID: 1921
-	public static string PropCustomCommandIcon = "CustomCommandIcon";
+	public static string PropSoundHitAdditional = "SoundHitAdditional";
 
 	// Token: 0x04000782 RID: 1922
-	public static string PropCustomCommandIconColor = "CustomCommandIconColor";
+	public static string PropCustomCommandName = "CustomCommandName";
 
 	// Token: 0x04000783 RID: 1923
-	public static string PropCustomCommandEvent = "CustomCommandEvent";
+	public static string PropCustomCommandIcon = "CustomCommandIcon";
 
 	// Token: 0x04000784 RID: 1924
-	public static string PropCustomCommandActivateTime = "CustomCommandActivateTime";
+	public static string PropCustomCommandIconColor = "CustomCommandIconColor";
 
 	// Token: 0x04000785 RID: 1925
-	public static NameIdMapping nameIdMapping;
+	public static string PropCustomCommandEvent = "CustomCommandEvent";
 
 	// Token: 0x04000786 RID: 1926
-	public static byte[] fullMappingDataForClients;
+	public static string PropCustomCommandActivateTime = "CustomCommandActivateTime";
 
 	// Token: 0x04000787 RID: 1927
-	[PublicizedFrom(EAccessModifier.Private)]
-	public static Dictionary<string, Block> nameToBlock;
+	public static NameIdMapping nameIdMapping;
 
 	// Token: 0x04000788 RID: 1928
-	[PublicizedFrom(EAccessModifier.Private)]
-	public static Dictionary<string, Block> nameToBlockCaseInsensitive;
+	public static byte[] fullMappingDataForClients;
 
 	// Token: 0x04000789 RID: 1929
 	[PublicizedFrom(EAccessModifier.Private)]
-	public static Dictionary<string, string[]> groupNameStringToGroupNames;
+	public static Dictionary<string, Block> nameToBlock;
 
 	// Token: 0x0400078A RID: 1930
 	[PublicizedFrom(EAccessModifier.Private)]
-	public static HashSet<string> autoShapeMaterials;
+	public static Dictionary<string, Block> nameToBlockCaseInsensitive;
 
 	// Token: 0x0400078B RID: 1931
-	public static Block[] list;
+	[PublicizedFrom(EAccessModifier.Private)]
+	public static Dictionary<string, string[]> groupNameStringToGroupNames;
 
 	// Token: 0x0400078C RID: 1932
-	public static DynamicPropertiesCache PropertiesCache;
+	[PublicizedFrom(EAccessModifier.Private)]
+	public static HashSet<string> autoShapeMaterials;
 
 	// Token: 0x0400078D RID: 1933
-	public static string defaultBlockDescriptionKey = "";
+	public static Block[] list;
 
 	// Token: 0x0400078E RID: 1934
-	public int blockID;
+	public static DynamicPropertiesCache PropertiesCache;
 
 	// Token: 0x0400078F RID: 1935
+	public static string defaultBlockDescriptionKey = "";
+
+	// Token: 0x04000790 RID: 1936
+	public int blockID;
+
+	// Token: 0x04000791 RID: 1937
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DynamicProperties dynamicProperties;
 
-	// Token: 0x04000790 RID: 1936
+	// Token: 0x04000792 RID: 1938
 	public BlockShape shape;
 
-	// Token: 0x04000791 RID: 1937
+	// Token: 0x04000793 RID: 1939
 	public int BlockingType;
 
-	// Token: 0x04000792 RID: 1938
+	// Token: 0x04000794 RID: 1940
 	public BlockValue SiblingBlock;
 
-	// Token: 0x04000793 RID: 1939
+	// Token: 0x04000795 RID: 1941
 	public BlockTags BlockTag;
 
-	// Token: 0x04000794 RID: 1940
+	// Token: 0x04000796 RID: 1942
 	public BlockPlacement BlockPlacementHelper;
 
-	// Token: 0x04000795 RID: 1941
+	// Token: 0x04000797 RID: 1943
 	public bool CanBlocksReplace;
 
-	// Token: 0x04000796 RID: 1942
+	// Token: 0x04000798 RID: 1944
 	public float LPHardnessScale;
 
-	// Token: 0x04000797 RID: 1943
+	// Token: 0x04000799 RID: 1945
 	public float MovementFactor;
 
-	// Token: 0x04000798 RID: 1944
+	// Token: 0x0400079A RID: 1946
 	public bool CanPickup;
 
-	// Token: 0x04000799 RID: 1945
+	// Token: 0x0400079B RID: 1947
 	public string PickedUpItemValue;
 
-	// Token: 0x0400079A RID: 1946
+	// Token: 0x0400079C RID: 1948
 	public string PickupTarget;
 
-	// Token: 0x0400079B RID: 1947
+	// Token: 0x0400079D RID: 1949
 	public string PickupSource;
 
-	// Token: 0x0400079C RID: 1948
+	// Token: 0x0400079E RID: 1950
 	public byte BlocksMovement;
 
-	// Token: 0x0400079D RID: 1949
+	// Token: 0x0400079F RID: 1951
 	public int FuelValue;
 
-	// Token: 0x0400079E RID: 1950
+	// Token: 0x040007A0 RID: 1952
 	public DataItem<int> Weight;
 
-	// Token: 0x0400079F RID: 1951
+	// Token: 0x040007A1 RID: 1953
 	public bool CanMobsSpawnOn;
 
-	// Token: 0x040007A0 RID: 1952
+	// Token: 0x040007A2 RID: 1954
 	public bool CanPlayersSpawnOn;
 
-	// Token: 0x040007A1 RID: 1953
+	// Token: 0x040007A3 RID: 1955
 	public string IndexName;
 
-	// Token: 0x040007A2 RID: 1954
+	// Token: 0x040007A4 RID: 1956
 	public bool CanDecorateOnSlopes;
 
-	// Token: 0x040007A3 RID: 1955
+	// Token: 0x040007A5 RID: 1957
 	public float SlopeMaxCos;
 
-	// Token: 0x040007A4 RID: 1956
+	// Token: 0x040007A6 RID: 1958
 	public bool IsProp;
 
-	// Token: 0x040007A5 RID: 1957
+	// Token: 0x040007A7 RID: 1959
 	public bool IsTerrainDecoration;
 
-	// Token: 0x040007A6 RID: 1958
+	// Token: 0x040007A8 RID: 1960
 	public bool IsDecoration;
 
-	// Token: 0x040007A7 RID: 1959
+	// Token: 0x040007A9 RID: 1961
 	public bool IsDistantDecoration;
 
-	// Token: 0x040007A8 RID: 1960
+	// Token: 0x040007AA RID: 1962
 	public int BigDecorationRadius;
 
-	// Token: 0x040007A9 RID: 1961
+	// Token: 0x040007AB RID: 1963
 	public int SmallDecorationRadius;
 
-	// Token: 0x040007AA RID: 1962
+	// Token: 0x040007AC RID: 1964
 	public float GroundAlignDistance;
 
-	// Token: 0x040007AB RID: 1963
+	// Token: 0x040007AD RID: 1965
 	public bool IgnoreKeystoneOverlay;
 
-	// Token: 0x040007AC RID: 1964
+	// Token: 0x040007AE RID: 1966
 	public bool IsLimited;
 
-	// Token: 0x040007AD RID: 1965
+	// Token: 0x040007AF RID: 1967
 	public const int cPathScan = -1;
 
-	// Token: 0x040007AE RID: 1966
+	// Token: 0x040007B0 RID: 1968
 	public const int cPathSolid = 1;
 
-	// Token: 0x040007AF RID: 1967
+	// Token: 0x040007B1 RID: 1969
 	public int PathType;
 
-	// Token: 0x040007B0 RID: 1968
+	// Token: 0x040007B2 RID: 1970
 	public float PathOffsetX;
 
-	// Token: 0x040007B1 RID: 1969
+	// Token: 0x040007B3 RID: 1971
 	public float PathOffsetZ;
 
-	// Token: 0x040007B2 RID: 1970
+	// Token: 0x040007B4 RID: 1972
 	public BlockFaceFlag WaterFlowMask = BlockFaceFlag.All;
 
-	// Token: 0x040007B3 RID: 1971
+	// Token: 0x040007B5 RID: 1973
 	public bool WaterClipEnabled;
 
-	// Token: 0x040007B4 RID: 1972
+	// Token: 0x040007B6 RID: 1974
 	public Plane WaterClipPlane;
 
-	// Token: 0x040007B5 RID: 1973
+	// Token: 0x040007B7 RID: 1975
 	public BlockValue DowngradeBlock;
 
-	// Token: 0x040007B6 RID: 1974
+	// Token: 0x040007B8 RID: 1976
 	public BlockValue LockpickDowngradeBlock;
 
-	// Token: 0x040007B7 RID: 1975
+	// Token: 0x040007B9 RID: 1977
 	public BlockValue UpgradeBlock;
 
-	// Token: 0x040007B8 RID: 1976
+	// Token: 0x040007BA RID: 1978
 	public string[] GroupNames = new string[] { "Decor/Miscellaneous" };
 
-	// Token: 0x040007B9 RID: 1977
+	// Token: 0x040007BB RID: 1979
 	public string CustomIcon;
 
-	// Token: 0x040007BA RID: 1978
+	// Token: 0x040007BC RID: 1980
 	public Color CustomIconTint;
 
-	// Token: 0x040007BB RID: 1979
+	// Token: 0x040007BD RID: 1981
 	public bool bHasPlacementWireframe;
 
-	// Token: 0x040007BC RID: 1980
+	// Token: 0x040007BE RID: 1982
 	public bool bUserHidden;
 
-	// Token: 0x040007BD RID: 1981
+	// Token: 0x040007BF RID: 1983
 	public float FallDamage;
 
-	// Token: 0x040007BE RID: 1982
+	// Token: 0x040007C0 RID: 1984
 	public float HeatMapStrength;
 
-	// Token: 0x040007BF RID: 1983
+	// Token: 0x040007C1 RID: 1985
 	public string[] BuffsWhenWalkedOn;
 
-	// Token: 0x040007C0 RID: 1984
+	// Token: 0x040007C2 RID: 1986
 	public BlockRadiusEffect[] RadiusEffects;
 
-	// Token: 0x040007C1 RID: 1985
+	// Token: 0x040007C3 RID: 1987
 	public string DescriptionKey;
 
-	// Token: 0x040007C2 RID: 1986
+	// Token: 0x040007C4 RID: 1988
 	public string CraftingSkillGroup = "";
 
-	// Token: 0x040007C3 RID: 1987
+	// Token: 0x040007C5 RID: 1989
 	public string ActionSkillGroup = "";
 
-	// Token: 0x040007C4 RID: 1988
+	// Token: 0x040007C6 RID: 1990
 	public bool IsReplaceRandom = true;
 
-	// Token: 0x040007C5 RID: 1989
+	// Token: 0x040007C7 RID: 1991
 	public float CraftComponentExp = 1f;
 
-	// Token: 0x040007C6 RID: 1990
+	// Token: 0x040007C8 RID: 1992
 	public float CraftComponentTime = 1f;
 
-	// Token: 0x040007C7 RID: 1991
+	// Token: 0x040007C9 RID: 1993
 	public float LootExp = 1f;
 
-	// Token: 0x040007C8 RID: 1992
+	// Token: 0x040007CA RID: 1994
 	public float DestroyExp = 1f;
 
-	// Token: 0x040007C9 RID: 1993
+	// Token: 0x040007CB RID: 1995
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string deathParticleName;
 
-	// Token: 0x040007CA RID: 1994
+	// Token: 0x040007CC RID: 1996
 	public float EconomicValue;
 
-	// Token: 0x040007CB RID: 1995
+	// Token: 0x040007CD RID: 1997
 	public float EconomicSellScale = 1f;
 
-	// Token: 0x040007CC RID: 1996
+	// Token: 0x040007CE RID: 1998
 	public int EconomicBundleSize = 1;
 
-	// Token: 0x040007CD RID: 1997
+	// Token: 0x040007CF RID: 1999
 	public bool SellableToTrader = true;
 
-	// Token: 0x040007CE RID: 1998
+	// Token: 0x040007D0 RID: 2000
 	public string TraderStageTemplate;
 
-	// Token: 0x040007CF RID: 1999
+	// Token: 0x040007D1 RID: 2001
 	public float PlaceExp = 1f;
 
-	// Token: 0x040007D0 RID: 2000
+	// Token: 0x040007D2 RID: 2002
 	public float UpgradeExp = 1f;
 
-	// Token: 0x040007D1 RID: 2001
+	// Token: 0x040007D3 RID: 2003
 	public int Count = 1;
 
-	// Token: 0x040007D2 RID: 2002
+	// Token: 0x040007D4 RID: 2004
 	public int Stacknumber = 500;
 
-	// Token: 0x040007D3 RID: 2003
+	// Token: 0x040007D5 RID: 2005
 	public bool HarvestOverdamage;
 
-	// Token: 0x040007D4 RID: 2004
+	// Token: 0x040007D6 RID: 2006
 	public bool SelectAlternates;
 
-	// Token: 0x040007D5 RID: 2005
+	// Token: 0x040007D7 RID: 2007
 	public EnumCreativeMode CreativeMode;
 
-	// Token: 0x040007D6 RID: 2006
+	// Token: 0x040007D8 RID: 2008
 	public string[] FilterTags;
 
-	// Token: 0x040007D7 RID: 2007
+	// Token: 0x040007D9 RID: 2009
 	public bool NoScrapping;
 
-	// Token: 0x040007D8 RID: 2008
+	// Token: 0x040007DA RID: 2010
 	public string SortOrder;
 
-	// Token: 0x040007D9 RID: 2009
-	public string DisplayType = "defaultBlock";
-
-	// Token: 0x040007DA RID: 2010
-	[PublicizedFrom(EAccessModifier.Private)]
-	public RecipeUnlockData[] unlockedBy;
-
 	// Token: 0x040007DB RID: 2011
-	public string ItemTypeIcon = "";
+	public string DisplayType = "defaultBlock";
 
 	// Token: 0x040007DC RID: 2012
 	[PublicizedFrom(EAccessModifier.Private)]
-	public EAutoShapeType AutoShapeType;
+	public RecipeUnlockData[] unlockedBy;
 
 	// Token: 0x040007DD RID: 2013
-	[PublicizedFrom(EAccessModifier.Private)]
-	public string autoShapeBaseName;
+	public string ItemTypeIcon = "";
 
 	// Token: 0x040007DE RID: 2014
 	[PublicizedFrom(EAccessModifier.Private)]
-	public string autoShapeShapeName;
+	public EAutoShapeType AutoShapeType;
 
 	// Token: 0x040007DF RID: 2015
 	[PublicizedFrom(EAccessModifier.Private)]
-	public Block autoShapeHelper;
+	public string autoShapeBaseName;
 
 	// Token: 0x040007E0 RID: 2016
-	public float VehicleHitScale;
+	[PublicizedFrom(EAccessModifier.Private)]
+	public string autoShapeShapeName;
 
 	// Token: 0x040007E1 RID: 2017
 	[PublicizedFrom(EAccessModifier.Private)]
-	public Color MapColor;
+	public Block autoShapeHelper;
 
 	// Token: 0x040007E2 RID: 2018
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool bMapColorSet;
+	public float VehicleHitScale;
 
 	// Token: 0x040007E3 RID: 2019
 	[PublicizedFrom(EAccessModifier.Private)]
-	public Color MapColor2;
+	public Color MapColor;
 
 	// Token: 0x040007E4 RID: 2020
 	[PublicizedFrom(EAccessModifier.Private)]
-	public bool bMapColor2Set;
+	public bool bMapColorSet;
 
 	// Token: 0x040007E5 RID: 2021
 	[PublicizedFrom(EAccessModifier.Private)]
-	public float MapSpecular;
+	public Color MapColor2;
 
 	// Token: 0x040007E6 RID: 2022
 	[PublicizedFrom(EAccessModifier.Private)]
-	public Vector2i MapElevMinMax;
+	public bool bMapColor2Set;
 
 	// Token: 0x040007E7 RID: 2023
 	[PublicizedFrom(EAccessModifier.Private)]
-	public byte lightValue;
+	public float MapSpecular;
 
 	// Token: 0x040007E8 RID: 2024
-	public int lightOpacity;
+	[PublicizedFrom(EAccessModifier.Private)]
+	public Vector2i MapElevMinMax;
 
 	// Token: 0x040007E9 RID: 2025
-	public Color tintColor = Color.clear;
+	[PublicizedFrom(EAccessModifier.Private)]
+	public byte lightValue;
 
 	// Token: 0x040007EA RID: 2026
-	public Color defaultTintColor = Color.clear;
+	public int lightOpacity;
 
 	// Token: 0x040007EB RID: 2027
-	public Vector3 tintColorV = Vector3.one;
+	public Color tintColor = Color.clear;
 
 	// Token: 0x040007EC RID: 2028
-	public byte MeshIndex;
+	public Color defaultTintColor = Color.clear;
 
 	// Token: 0x040007ED RID: 2029
-	public List<Block.SItemNameCount> RepairItems;
+	public Vector3 tintColorV = Vector3.one;
 
 	// Token: 0x040007EE RID: 2030
-	public List<Block.SItemNameCount> RepairItemsMeshDamage;
+	public byte MeshIndex;
 
 	// Token: 0x040007EF RID: 2031
-	public bool bRestrictSubmergedPlacement;
+	public List<Block.SItemNameCount> RepairItems;
 
 	// Token: 0x040007F0 RID: 2032
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public string blockAddedEvent;
+	public List<Block.SItemNameCount> RepairItemsMeshDamage;
 
 	// Token: 0x040007F1 RID: 2033
-	[PublicizedFrom(EAccessModifier.Protected)]
-	public string blockDestroyedEvent;
+	public bool bRestrictSubmergedPlacement;
 
 	// Token: 0x040007F2 RID: 2034
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public string blockDowngradeEvent;
+	public string blockAddedEvent;
 
 	// Token: 0x040007F3 RID: 2035
 	[PublicizedFrom(EAccessModifier.Protected)]
-	public string blockDowngradedToEvent;
+	public string blockDestroyedEvent;
 
 	// Token: 0x040007F4 RID: 2036
-	public bool IsTemporaryBlock;
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public string blockDowngradeEvent;
 
 	// Token: 0x040007F5 RID: 2037
-	public bool RefundOnUnload;
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public string blockDowngradedToEvent;
 
 	// Token: 0x040007F6 RID: 2038
-	public string SoundPickup = "craft_take_item";
+	public bool IsTemporaryBlock;
 
 	// Token: 0x040007F7 RID: 2039
-	public string SoundPlace = "craft_place_item";
+	public bool RefundOnUnload;
 
 	// Token: 0x040007F8 RID: 2040
-	public string SoundHitAdditional;
+	public string SoundPickup = "craft_take_item";
 
 	// Token: 0x040007F9 RID: 2041
-	public bool isMultiBlock;
+	public string SoundPlace = "craft_place_item";
 
 	// Token: 0x040007FA RID: 2042
-	public Block.MultiBlockArray multiBlockPos;
+	public string SoundHitAdditional;
 
 	// Token: 0x040007FB RID: 2043
-	public bool isOversized;
+	public bool isMultiBlock;
 
 	// Token: 0x040007FC RID: 2044
-	public Bounds oversizedBounds;
+	public Block.MultiBlockArray multiBlockPos;
 
 	// Token: 0x040007FD RID: 2045
-	public TerrainAlignmentMode terrainAlignmentMode;
+	public bool isOversized;
 
 	// Token: 0x040007FE RID: 2046
-	public const int BT_All = 255;
+	public Bounds oversizedBounds;
 
 	// Token: 0x040007FF RID: 2047
-	public const int BT_None = 0;
+	public TerrainAlignmentMode terrainAlignmentMode;
 
 	// Token: 0x04000800 RID: 2048
-	public const int BT_Sight = 1;
+	public const int BT_All = 255;
 
 	// Token: 0x04000801 RID: 2049
-	public const int BT_Movement = 2;
+	public const int BT_None = 0;
 
 	// Token: 0x04000802 RID: 2050
-	public const int BT_Bullets = 4;
+	public const int BT_Sight = 1;
 
 	// Token: 0x04000803 RID: 2051
-	public const int BT_Rockets = 8;
+	public const int BT_Movement = 2;
 
 	// Token: 0x04000804 RID: 2052
-	public const int BT_Melee = 16;
+	public const int BT_Bullets = 4;
 
 	// Token: 0x04000805 RID: 2053
-	public const int BT_Arrows = 32;
+	public const int BT_Rockets = 8;
 
 	// Token: 0x04000806 RID: 2054
-	public bool IsCheckCollideWithEntity;
+	public const int BT_Melee = 16;
 
 	// Token: 0x04000807 RID: 2055
-	public bool DisableCover;
+	public const int BT_Arrows = 32;
 
 	// Token: 0x04000808 RID: 2056
+	public bool IsCheckCollideWithEntity;
+
+	// Token: 0x04000809 RID: 2057
+	public bool DisableCover;
+
+	// Token: 0x0400080A RID: 2058
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Block.TextureInfo[] textureInfos = new Block.TextureInfo[1];
 
-	// Token: 0x04000809 RID: 2057
+	// Token: 0x0400080B RID: 2059
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int uiBackgroundTextureId = -1;
 
-	// Token: 0x0400080A RID: 2058
-	public int TerrainTAIndex = 1;
-
-	// Token: 0x0400080B RID: 2059
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool bNotifyOnLoadUnload;
-
 	// Token: 0x0400080C RID: 2060
-	[PublicizedFrom(EAccessModifier.Private)]
-	public bool bIsPlant;
+	public int TerrainTAIndex = 1;
 
 	// Token: 0x0400080D RID: 2061
 	[PublicizedFrom(EAccessModifier.Private)]
-	public bool bShowModelOnFall;
+	public bool bNotifyOnLoadUnload;
 
 	// Token: 0x0400080E RID: 2062
-	public Dictionary<EnumDropEvent, List<Block.SItemDropProb>> itemsToDrop = new EnumDictionary<EnumDropEvent, List<Block.SItemDropProb>>();
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool bIsPlant;
 
 	// Token: 0x0400080F RID: 2063
-	public bool IsSleeperBlock;
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool bShowModelOnFall;
 
 	// Token: 0x04000810 RID: 2064
-	public bool IsRandomlyTick;
+	public Dictionary<EnumDropEvent, List<Block.SItemDropProb>> itemsToDrop = new EnumDictionary<EnumDropEvent, List<Block.SItemDropProb>>();
 
 	// Token: 0x04000811 RID: 2065
+	public bool IsSleeperBlock;
+
+	// Token: 0x04000812 RID: 2066
+	public bool IsRandomlyTick;
+
+	// Token: 0x04000813 RID: 2067
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string[] placeAltBlockNames;
 
-	// Token: 0x04000812 RID: 2066
+	// Token: 0x04000814 RID: 2068
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Block[] placeAltBlockClasses;
 
-	// Token: 0x04000814 RID: 2068
+	// Token: 0x04000816 RID: 2070
 	public MaterialBlock blockMaterial;
 
-	// Token: 0x04000815 RID: 2069
+	// Token: 0x04000817 RID: 2071
 	public bool StabilitySupport = true;
 
-	// Token: 0x04000816 RID: 2070
+	// Token: 0x04000818 RID: 2072
 	public bool StabilityIgnore;
 
-	// Token: 0x04000817 RID: 2071
+	// Token: 0x04000819 RID: 2073
 	public bool StabilityFull;
 
-	// Token: 0x04000818 RID: 2072
+	// Token: 0x0400081A RID: 2074
 	public sbyte Density;
 
-	// Token: 0x04000819 RID: 2073
+	// Token: 0x0400081B RID: 2075
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string blockName;
 
-	// Token: 0x0400081A RID: 2074
+	// Token: 0x0400081C RID: 2076
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string localizedBlockName;
 
-	// Token: 0x0400081B RID: 2075
+	// Token: 0x0400081D RID: 2077
 	public float ResourceScale;
 
-	// Token: 0x0400081C RID: 2076
+	// Token: 0x0400081E RID: 2078
 	public int MaxDamage;
 
-	// Token: 0x0400081D RID: 2077
+	// Token: 0x0400081F RID: 2079
 	public int MaxDamagePlusDowngrades;
 
-	// Token: 0x0400081E RID: 2078
+	// Token: 0x04000820 RID: 2080
 	public int StartDamage;
 
-	// Token: 0x0400081F RID: 2079
+	// Token: 0x04000821 RID: 2081
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int Stage2Health;
 
-	// Token: 0x04000820 RID: 2080
+	// Token: 0x04000822 RID: 2082
 	public float Damage;
 
-	// Token: 0x04000821 RID: 2081
+	// Token: 0x04000823 RID: 2083
 	public bool IsExplosionAffected;
 
-	// Token: 0x04000822 RID: 2082
+	// Token: 0x04000824 RID: 2084
 	public EBlockRotationClasses AllowedRotations;
 
-	// Token: 0x04000823 RID: 2083
+	// Token: 0x04000825 RID: 2085
 	public bool PlaceRandomRotation;
 
-	// Token: 0x04000824 RID: 2084
+	// Token: 0x04000826 RID: 2086
 	public string CustomPlaceSound;
 
-	// Token: 0x04000825 RID: 2085
+	// Token: 0x04000827 RID: 2087
 	public string UpgradeSound;
 
-	// Token: 0x04000826 RID: 2086
+	// Token: 0x04000828 RID: 2088
 	public string DowngradeFX;
 
-	// Token: 0x04000827 RID: 2087
+	// Token: 0x04000829 RID: 2089
 	public string DestroyFX;
 
-	// Token: 0x04000828 RID: 2088
+	// Token: 0x0400082A RID: 2090
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int activationDistance;
 
-	// Token: 0x04000829 RID: 2089
+	// Token: 0x0400082B RID: 2091
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int placementDistance;
 
-	// Token: 0x0400082A RID: 2090
+	// Token: 0x0400082C RID: 2092
 	public int cUVModeBits = 2;
 
-	// Token: 0x0400082B RID: 2091
+	// Token: 0x0400082D RID: 2093
 	public int cUVModeMask = 3;
 
-	// Token: 0x0400082C RID: 2092
+	// Token: 0x0400082E RID: 2094
 	public int cUVModeSides = 7;
 
-	// Token: 0x0400082D RID: 2093
+	// Token: 0x0400082F RID: 2095
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly uint[] UVModesPerSide = new uint[1];
 
-	// Token: 0x0400082E RID: 2094
+	// Token: 0x04000830 RID: 2096
 	public bool bImposterExclude;
 
-	// Token: 0x0400082F RID: 2095
+	// Token: 0x04000831 RID: 2097
 	public bool bImposterExcludeAndStop;
 
-	// Token: 0x04000830 RID: 2096
+	// Token: 0x04000832 RID: 2098
 	public int ImposterExchange;
 
-	// Token: 0x04000831 RID: 2097
+	// Token: 0x04000833 RID: 2099
 	public byte ImposterExchangeTexIdx;
 
-	// Token: 0x04000832 RID: 2098
+	// Token: 0x04000834 RID: 2100
 	public bool bImposterDontBlock;
 
-	// Token: 0x04000833 RID: 2099
+	// Token: 0x04000835 RID: 2101
 	public int MergeIntoId;
 
-	// Token: 0x04000834 RID: 2100
+	// Token: 0x04000836 RID: 2102
 	public int[] MergeIntoTexIds;
 
-	// Token: 0x04000835 RID: 2101
+	// Token: 0x04000837 RID: 2103
 	public int MirrorSibling;
 
-	// Token: 0x04000836 RID: 2102
+	// Token: 0x04000838 RID: 2104
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static List<Bounds> staticList_IntersectRayWithBlockList = new List<Bounds>();
 
-	// Token: 0x04000837 RID: 2103
+	// Token: 0x04000839 RID: 2105
 	public BlockFace HandleFace = BlockFace.None;
 
-	// Token: 0x04000838 RID: 2104
+	// Token: 0x0400083A RID: 2106
 	public bool EnablePassThroughDamage;
 
-	// Token: 0x04000839 RID: 2105
+	// Token: 0x0400083B RID: 2107
 	public List<BlockFace> RemovePaintOnDowngrade;
 
-	// Token: 0x0400083A RID: 2106
+	// Token: 0x0400083C RID: 2108
 	public FastTags<TagGroup.Global> Tags;
 
-	// Token: 0x0400083B RID: 2107
+	// Token: 0x0400083D RID: 2109
 	public bool HasTileEntity;
 
-	// Token: 0x0400083C RID: 2108
+	// Token: 0x0400083E RID: 2110
 	public Block.EnumDisplayInfo DisplayInfo;
 
-	// Token: 0x0400083D RID: 2109
+	// Token: 0x0400083F RID: 2111
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockActivationCommand[] cmds = new BlockActivationCommand[]
 	{
 		new BlockActivationCommand("take", "hand", false, false, null)
 	};
 
-	// Token: 0x0400083E RID: 2110
+	// Token: 0x04000840 RID: 2112
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<ItemStack> itemsDropped = new List<ItemStack>();
 
-	// Token: 0x0400083F RID: 2111
+	// Token: 0x04000841 RID: 2113
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockActivationCommand[] customCmds;
 
-	// Token: 0x04000840 RID: 2112
+	// Token: 0x04000842 RID: 2114
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<string, int> fixedBlockIds = new Dictionary<string, int>
 	{
@@ -4306,10 +4306,10 @@ public class Block
 		{ "waterdata", 242 }
 	};
 
-	// Token: 0x02000106 RID: 262
+	// Token: 0x02000107 RID: 263
 	public struct SItemDropProb
 	{
-		// Token: 0x060006F6 RID: 1782 RVA: 0x00032B69 File Offset: 0x00030D69
+		// Token: 0x06000700 RID: 1792 RVA: 0x00032E25 File Offset: 0x00031025
 		public SItemDropProb(string _name, int _minCount, int _maxCount, float _prob, float _resourceScale, float _stickChance, string _toolCategory, string _tag)
 		{
 			this.name = _name;
@@ -4322,54 +4322,54 @@ public class Block
 			this.tag = _tag;
 		}
 
-		// Token: 0x04000841 RID: 2113
+		// Token: 0x04000843 RID: 2115
 		public string name;
 
-		// Token: 0x04000842 RID: 2114
+		// Token: 0x04000844 RID: 2116
 		public int minCount;
 
-		// Token: 0x04000843 RID: 2115
+		// Token: 0x04000845 RID: 2117
 		public int maxCount;
 
-		// Token: 0x04000844 RID: 2116
+		// Token: 0x04000846 RID: 2118
 		public float prob;
 
-		// Token: 0x04000845 RID: 2117
+		// Token: 0x04000847 RID: 2119
 		public float resourceScale;
 
-		// Token: 0x04000846 RID: 2118
+		// Token: 0x04000848 RID: 2120
 		public float stickChance;
 
-		// Token: 0x04000847 RID: 2119
+		// Token: 0x04000849 RID: 2121
 		public string toolCategory;
 
-		// Token: 0x04000848 RID: 2120
+		// Token: 0x0400084A RID: 2122
 		public string tag;
 	}
 
-	// Token: 0x02000107 RID: 263
+	// Token: 0x02000108 RID: 264
 	public struct SItemNameCount
 	{
-		// Token: 0x04000849 RID: 2121
+		// Token: 0x0400084B RID: 2123
 		public string ItemName;
 
-		// Token: 0x0400084A RID: 2122
+		// Token: 0x0400084C RID: 2124
 		public int Count;
 	}
 
-	// Token: 0x02000108 RID: 264
+	// Token: 0x02000109 RID: 265
 	public class MultiBlockArray
 	{
 		// Token: 0x17000076 RID: 118
-		// (get) Token: 0x060006F7 RID: 1783 RVA: 0x00032BA8 File Offset: 0x00030DA8
-		// (set) Token: 0x060006F8 RID: 1784 RVA: 0x00032BB0 File Offset: 0x00030DB0
+		// (get) Token: 0x06000701 RID: 1793 RVA: 0x00032E64 File Offset: 0x00031064
+		// (set) Token: 0x06000702 RID: 1794 RVA: 0x00032E6C File Offset: 0x0003106C
 		public Vector3i[] pos
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x060006F9 RID: 1785 RVA: 0x00032BB9 File Offset: 0x00030DB9
+		// Token: 0x06000703 RID: 1795 RVA: 0x00032E75 File Offset: 0x00031075
 		public MultiBlockArray(Vector3i _dim, List<Vector3i> _pos)
 		{
 			this.dim = _dim;
@@ -4377,7 +4377,7 @@ public class Block
 			this.Length = _pos.Count;
 		}
 
-		// Token: 0x060006FA RID: 1786 RVA: 0x00032BE0 File Offset: 0x00030DE0
+		// Token: 0x06000704 RID: 1796 RVA: 0x00032E9C File Offset: 0x0003109C
 		public BoundsInt GetBlockBounds()
 		{
 			Vector3Int vector3Int = new Vector3Int(int.MaxValue, int.MaxValue, int.MaxValue);
@@ -4392,7 +4392,7 @@ public class Block
 			return boundsInt;
 		}
 
-		// Token: 0x060006FB RID: 1787 RVA: 0x00032C6C File Offset: 0x00030E6C
+		// Token: 0x06000705 RID: 1797 RVA: 0x00032F28 File Offset: 0x00031128
 		public Vector3i Get(int _idx, int _blockId, int _rotation)
 		{
 			Vector3 vector = Block.list[_blockId].shape.GetRotation(new BlockValue
@@ -4403,13 +4403,13 @@ public class Block
 			return new Vector3i(Mathf.RoundToInt(vector.x), Mathf.RoundToInt(vector.y), Mathf.RoundToInt(vector.z));
 		}
 
-		// Token: 0x060006FC RID: 1788 RVA: 0x00032CE1 File Offset: 0x00030EE1
+		// Token: 0x06000706 RID: 1798 RVA: 0x00032F9D File Offset: 0x0003119D
 		public Vector3i GetParentPos(Vector3i _childPos, BlockValue _blockValue)
 		{
 			return new Vector3i(_childPos.x + _blockValue.parentx, _childPos.y + _blockValue.parenty, _childPos.z + _blockValue.parentz);
 		}
 
-		// Token: 0x060006FD RID: 1789 RVA: 0x00032D14 File Offset: 0x00030F14
+		// Token: 0x06000707 RID: 1799 RVA: 0x00032FD0 File Offset: 0x000311D0
 		public void AddChilds(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 		{
 			ChunkCluster chunkCache = _world.ChunkCache;
@@ -4456,7 +4456,7 @@ public class Block
 			}
 		}
 
-		// Token: 0x060006FE RID: 1790 RVA: 0x00032E6C File Offset: 0x0003106C
+		// Token: 0x06000708 RID: 1800 RVA: 0x00033128 File Offset: 0x00031328
 		public void RemoveChilds(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 		{
 			ChunkCluster chunkCache = _world.ChunkCache;
@@ -4475,7 +4475,7 @@ public class Block
 			}
 		}
 
-		// Token: 0x060006FF RID: 1791 RVA: 0x00032F08 File Offset: 0x00031108
+		// Token: 0x06000709 RID: 1801 RVA: 0x000331C4 File Offset: 0x000313C4
 		public void RemoveParentBlock(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 		{
 			ChunkCluster chunkCache = _world.ChunkCache;
@@ -4491,7 +4491,7 @@ public class Block
 			}
 		}
 
-		// Token: 0x06000700 RID: 1792 RVA: 0x00032F60 File Offset: 0x00031160
+		// Token: 0x0600070A RID: 1802 RVA: 0x0003321C File Offset: 0x0003141C
 		public bool ContainsPos(WorldBase _world, Vector3i _parentPos, BlockValue _blockValue, Vector3i _posToCheck)
 		{
 			if (_world.ChunkCache == null)
@@ -4509,7 +4509,7 @@ public class Block
 			return false;
 		}
 
-		// Token: 0x06000701 RID: 1793 RVA: 0x00032FB4 File Offset: 0x000311B4
+		// Token: 0x0600070B RID: 1803 RVA: 0x00033270 File Offset: 0x00031470
 		public bool ToParentLocalPos(out Vector3i localOffset, WorldBase _world, Vector3i _parentPos, BlockValue _blockValue, Vector3i _posToCheck)
 		{
 			localOffset = Vector3i.zero;
@@ -4529,7 +4529,7 @@ public class Block
 			return false;
 		}
 
-		// Token: 0x06000702 RID: 1794 RVA: 0x00033024 File Offset: 0x00031224
+		// Token: 0x0600070C RID: 1804 RVA: 0x000332E0 File Offset: 0x000314E0
 		public Bounds CalcBounds(int _blockId, int _rotation)
 		{
 			Quaternion rotation = Block.list[_blockId].shape.GetRotation(new BlockValue
@@ -4550,61 +4550,61 @@ public class Block
 			return bounds;
 		}
 
-		// Token: 0x0400084B RID: 2123
+		// Token: 0x0400084D RID: 2125
 		public int Length;
 
-		// Token: 0x0400084C RID: 2124
+		// Token: 0x0400084E RID: 2126
 		public Vector3i dim;
 	}
 
-	// Token: 0x02000109 RID: 265
+	// Token: 0x0200010A RID: 266
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct TextureInfo
 	{
-		// Token: 0x0400084E RID: 2126
+		// Token: 0x04000850 RID: 2128
 		public bool bTextureForEachSide;
 
-		// Token: 0x0400084F RID: 2127
+		// Token: 0x04000851 RID: 2129
 		public int singleTextureId;
 
-		// Token: 0x04000850 RID: 2128
+		// Token: 0x04000852 RID: 2130
 		public int[] sideTextureIds;
 	}
 
-	// Token: 0x0200010A RID: 266
+	// Token: 0x0200010B RID: 267
 	public enum UVMode : byte
 	{
-		// Token: 0x04000852 RID: 2130
-		Default,
-		// Token: 0x04000853 RID: 2131
-		Global,
 		// Token: 0x04000854 RID: 2132
+		Default,
+		// Token: 0x04000855 RID: 2133
+		Global,
+		// Token: 0x04000856 RID: 2134
 		Local
 	}
 
-	// Token: 0x0200010B RID: 267
+	// Token: 0x0200010C RID: 268
 	public enum EnumDisplayInfo
 	{
-		// Token: 0x04000856 RID: 2134
-		None,
-		// Token: 0x04000857 RID: 2135
-		Name,
 		// Token: 0x04000858 RID: 2136
-		Description,
+		None,
 		// Token: 0x04000859 RID: 2137
+		Name,
+		// Token: 0x0400085A RID: 2138
+		Description,
+		// Token: 0x0400085B RID: 2139
 		Custom
 	}
 
-	// Token: 0x0200010C RID: 268
+	// Token: 0x0200010D RID: 269
 	public enum DestroyedResult
 	{
-		// Token: 0x0400085B RID: 2139
-		None,
-		// Token: 0x0400085C RID: 2140
-		Keep,
 		// Token: 0x0400085D RID: 2141
-		Downgrade,
+		None,
 		// Token: 0x0400085E RID: 2142
+		Keep,
+		// Token: 0x0400085F RID: 2143
+		Downgrade,
+		// Token: 0x04000860 RID: 2144
 		Remove
 	}
 }

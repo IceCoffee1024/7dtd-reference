@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x020015D1 RID: 5585
+// Token: 0x020015EC RID: 5612
 public class vp_WeaponPickup : vp_Pickup
 {
-	// Token: 0x0600AE1A RID: 44570 RVA: 0x0040F208 File Offset: 0x0040D408
+	// Token: 0x0600AF17 RID: 44823 RVA: 0x00414548 File Offset: 0x00412748
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool TryGive(vp_FPPlayerEventHandler player)
 	{
@@ -23,6 +23,6 @@ public class vp_WeaponPickup : vp_Pickup
 		return true;
 	}
 
-	// Token: 0x04008206 RID: 33286
+	// Token: 0x040082DF RID: 33503
 	public int AmmoIncluded;
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020013BF RID: 5055
+// Token: 0x020013DA RID: 5082
 public class Detonator : MonoBehaviour
 {
-	// Token: 0x06009E9C RID: 40604 RVA: 0x003BC3BF File Offset: 0x003BA5BF
+	// Token: 0x06009F99 RID: 40857 RVA: 0x003C1703 File Offset: 0x003BF903
 	public void StartCountdown()
 	{
 		if (base.isActiveAndEnabled)
@@ -15,7 +15,7 @@ public class Detonator : MonoBehaviour
 		base.gameObject.SetActive(true);
 	}
 
-	// Token: 0x06009E9D RID: 40605 RVA: 0x003BC3DD File Offset: 0x003BA5DD
+	// Token: 0x06009F9A RID: 40858 RVA: 0x003C1721 File Offset: 0x003BF921
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
@@ -24,14 +24,14 @@ public class Detonator : MonoBehaviour
 		base.gameObject.SetActive(true);
 	}
 
-	// Token: 0x06009E9E RID: 40606 RVA: 0x003BC401 File Offset: 0x003BA601
+	// Token: 0x06009F9B RID: 40859 RVA: 0x003C1745 File Offset: 0x003BF945
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDisable()
 	{
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06009E9F RID: 40607 RVA: 0x003BC410 File Offset: 0x003BA610
+	// Token: 0x06009F9C RID: 40860 RVA: 0x003C1754 File Offset: 0x003BF954
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -45,31 +45,31 @@ public class Detonator : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04007802 RID: 30722
+	// Token: 0x040078DB RID: 30939
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Light _light;
 
-	// Token: 0x04007803 RID: 30723
+	// Token: 0x040078DC RID: 30940
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AnimationCurve _timeRate;
 
-	// Token: 0x04007804 RID: 30724
+	// Token: 0x040078DD RID: 30941
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AnimationCurve _lightIntensity;
 
-	// Token: 0x04007805 RID: 30725
+	// Token: 0x040078DE RID: 30942
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float _animTime;
 
-	// Token: 0x04007806 RID: 30726
+	// Token: 0x040078DF RID: 30943
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float _animTimeDetonator;
 
-	// Token: 0x04007807 RID: 30727
+	// Token: 0x040078E0 RID: 30944
 	public float PulseRateScale = 1f;
 }

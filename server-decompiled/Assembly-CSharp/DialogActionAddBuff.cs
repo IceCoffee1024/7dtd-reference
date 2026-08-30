@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020002DE RID: 734
+// Token: 0x020002E2 RID: 738
 [Preserve]
 public class DialogActionAddBuff : BaseDialogAction
 {
-	// Token: 0x17000259 RID: 601
-	// (get) Token: 0x0600153F RID: 5439 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x1700025A RID: 602
+	// (get) Token: 0x06001552 RID: 5458 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override BaseDialogAction.ActionTypes ActionType
 	{
 		get
@@ -15,7 +15,7 @@ public class DialogActionAddBuff : BaseDialogAction
 		}
 	}
 
-	// Token: 0x06001540 RID: 5440 RVA: 0x0007FAC0 File Offset: 0x0007DCC0
+	// Token: 0x06001553 RID: 5459 RVA: 0x0008017C File Offset: 0x0007E37C
 	public override void PerformAction(EntityPlayer player)
 	{
 		EntityPlayer primaryPlayer = GameManager.Instance.World.GetPrimaryPlayer();
@@ -48,7 +48,7 @@ public class DialogActionAddBuff : BaseDialogAction
 		}
 	}
 
-	// Token: 0x04000E44 RID: 3652
+	// Token: 0x04000E55 RID: 3669
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string name = "";
 }

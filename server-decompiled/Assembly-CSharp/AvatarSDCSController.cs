@@ -7,7 +7,7 @@ using UnityEngine.Scripting;
 [Preserve]
 public class AvatarSDCSController : LegacyAvatarController
 {
-	// Token: 0x06000521 RID: 1313 RVA: 0x00023294 File Offset: 0x00021494
+	// Token: 0x06000522 RID: 1314 RVA: 0x00023358 File Offset: 0x00021558
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void assignStates()
 	{
@@ -18,7 +18,7 @@ public class AvatarSDCSController : LegacyAvatarController
 		AvatarCharacterController.GetThirdPersonHitStates(this.hitStates = new HashSet<int>());
 	}
 
-	// Token: 0x06000522 RID: 1314 RVA: 0x000232FC File Offset: 0x000214FC
+	// Token: 0x06000523 RID: 1315 RVA: 0x000233C0 File Offset: 0x000215C0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void assignParts(bool _bFPV)
 	{
@@ -67,7 +67,7 @@ public class AvatarSDCSController : LegacyAvatarController
 		}
 	}
 
-	// Token: 0x06000523 RID: 1315 RVA: 0x00022B4D File Offset: 0x00020D4D
+	// Token: 0x06000524 RID: 1316 RVA: 0x00022C11 File Offset: 0x00020E11
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Update()
 	{
@@ -78,13 +78,13 @@ public class AvatarSDCSController : LegacyAvatarController
 		base.Update();
 	}
 
-	// Token: 0x06000524 RID: 1316 RVA: 0x00023531 File Offset: 0x00021731
+	// Token: 0x06000525 RID: 1317 RVA: 0x000235F5 File Offset: 0x000217F5
 	public override void SetInRightHand(Transform _transform)
 	{
 		base.SetInRightHand(_transform);
 	}
 
-	// Token: 0x06000525 RID: 1317 RVA: 0x0002353C File Offset: 0x0002173C
+	// Token: 0x06000526 RID: 1318 RVA: 0x00023600 File Offset: 0x00021800
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void setLayerWeights()
 	{
@@ -118,7 +118,7 @@ public class AvatarSDCSController : LegacyAvatarController
 		}
 	}
 
-	// Token: 0x06000526 RID: 1318 RVA: 0x00023670 File Offset: 0x00021870
+	// Token: 0x06000527 RID: 1319 RVA: 0x00023734 File Offset: 0x00021934
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateLayerStateInfo()
 	{
@@ -130,7 +130,7 @@ public class AvatarSDCSController : LegacyAvatarController
 		}
 	}
 
-	// Token: 0x06000527 RID: 1319 RVA: 0x00023710 File Offset: 0x00021910
+	// Token: 0x06000528 RID: 1320 RVA: 0x000237D4 File Offset: 0x000219D4
 	public override void SwitchModelAndView(string _modelName, bool _bFPV, bool _bMale)
 	{
 		string text = (_bFPV ? "baseRigFP" : _modelName);
@@ -175,7 +175,7 @@ public class AvatarSDCSController : LegacyAvatarController
 		this._setBool(AvatarController.isAliveHash, this.entity.IsAlive(), true);
 	}
 
-	// Token: 0x06000528 RID: 1320 RVA: 0x000238D8 File Offset: 0x00021AD8
+	// Token: 0x06000529 RID: 1321 RVA: 0x0002399C File Offset: 0x00021B9C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool HasParameter(string paramName)
 	{
@@ -190,13 +190,13 @@ public class AvatarSDCSController : LegacyAvatarController
 		return false;
 	}
 
-	// Token: 0x06000529 RID: 1321 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600052A RID: 1322 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateSpineRotation()
 	{
 	}
 
-	// Token: 0x0600052A RID: 1322 RVA: 0x00023912 File Offset: 0x00021B12
+	// Token: 0x0600052B RID: 1323 RVA: 0x000239D6 File Offset: 0x00021BD6
 	public override Transform GetRightHandTransform()
 	{
 		if (this.rightHand == null)
@@ -206,7 +206,7 @@ public class AvatarSDCSController : LegacyAvatarController
 		return this.rightHand;
 	}
 
-	// Token: 0x0600052B RID: 1323 RVA: 0x0002393F File Offset: 0x00021B3F
+	// Token: 0x0600052C RID: 1324 RVA: 0x00023A03 File Offset: 0x00021C03
 	public override Transform GetMeshTransform()
 	{
 		if (!(this.meshTransform != null))
@@ -216,13 +216,13 @@ public class AvatarSDCSController : LegacyAvatarController
 		return this.meshTransform;
 	}
 
-	// Token: 0x0600052C RID: 1324 RVA: 0x0002395C File Offset: 0x00021B5C
+	// Token: 0x0600052D RID: 1325 RVA: 0x00023A20 File Offset: 0x00021C20
 	public override bool IsAnimationHitRunning()
 	{
 		return base.IsAnimationHitRunning() || this.hitStates.Contains(this.painLayer.fullPathHash);
 	}
 
-	// Token: 0x0600052D RID: 1325 RVA: 0x00023980 File Offset: 0x00021B80
+	// Token: 0x0600052E RID: 1326 RVA: 0x00023A44 File Offset: 0x00021C44
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void LateUpdate()
 	{

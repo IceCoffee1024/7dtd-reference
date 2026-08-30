@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 
-// Token: 0x020009F4 RID: 2548
+// Token: 0x02000A05 RID: 2565
 public static class SdDirectoryInfoExtensions
 {
-	// Token: 0x06004C67 RID: 19559 RVA: 0x001D70E0 File Offset: 0x001D52E0
+	// Token: 0x06004CED RID: 19693 RVA: 0x001D98C8 File Offset: 0x001D7AC8
 	public static bool IsDirEmpty(this SdDirectoryInfo possiblyEmptyDir)
 	{
 		bool flag;

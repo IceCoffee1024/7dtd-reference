@@ -1,20 +1,20 @@
 ﻿using System;
 
-// Token: 0x0200135C RID: 4956
+// Token: 0x02001376 RID: 4982
 public enum SpectrumWeatherType
 {
-	// Token: 0x04007630 RID: 30256
+	// Token: 0x04007708 RID: 30472
 	Biome,
-	// Token: 0x04007631 RID: 30257
+	// Token: 0x04007709 RID: 30473
 	Snowy,
-	// Token: 0x04007632 RID: 30258
+	// Token: 0x0400770A RID: 30474
 	Stormy,
-	// Token: 0x04007633 RID: 30259
+	// Token: 0x0400770B RID: 30475
 	Rainy,
-	// Token: 0x04007634 RID: 30260
+	// Token: 0x0400770C RID: 30476
 	Foggy,
-	// Token: 0x04007635 RID: 30261
+	// Token: 0x0400770D RID: 30477
 	BloodMoon,
-	// Token: 0x04007636 RID: 30262
+	// Token: 0x0400770E RID: 30478
 	None
 }

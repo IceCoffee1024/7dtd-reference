@@ -3,11 +3,11 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200058A RID: 1418
+// Token: 0x0200058F RID: 1423
 [Preserve]
 public class ItemActionActivate : ItemAction
 {
-	// Token: 0x06002EB1 RID: 11953 RVA: 0x00127168 File Offset: 0x00125368
+	// Token: 0x06002EDF RID: 11999 RVA: 0x00128258 File Offset: 0x00126458
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		if (!_bReleased)
@@ -33,19 +33,19 @@ public class ItemActionActivate : ItemAction
 		_actionData.invData.holdingEntity.inventory.holdingItem.OnHoldingItemActivated(_actionData.invData.holdingEntity.inventory.holdingItemData);
 	}
 
-	// Token: 0x06002EB2 RID: 11954 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002EE0 RID: 12000 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool AllowConcurrentActions()
 	{
 		return false;
 	}
 
-	// Token: 0x06002EB3 RID: 11955 RVA: 0x0012725F File Offset: 0x0012545F
+	// Token: 0x06002EE1 RID: 12001 RVA: 0x0012834F File Offset: 0x0012654F
 	public override bool IsActionRunning(ItemActionData _actionData)
 	{
 		return _actionData.HasExecuted;
 	}
 
-	// Token: 0x06002EB4 RID: 11956 RVA: 0x00127267 File Offset: 0x00125467
+	// Token: 0x06002EE2 RID: 12002 RVA: 0x00128357 File Offset: 0x00126557
 	public override void CancelAction(ItemActionData _actionData)
 	{
 		base.CancelAction(_actionData);

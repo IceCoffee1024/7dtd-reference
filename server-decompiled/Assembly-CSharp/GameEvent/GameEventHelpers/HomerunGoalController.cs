@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace GameEvent.GameEventHelpers
 {
-	// Token: 0x02001928 RID: 6440
+	// Token: 0x0200194E RID: 6478
 	public class HomerunGoalController : MonoBehaviour
 	{
-		// Token: 0x0600C60F RID: 50703 RVA: 0x0048C458 File Offset: 0x0048A658
+		// Token: 0x0600C796 RID: 51094 RVA: 0x004927A4 File Offset: 0x004909A4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Update()
 		{
@@ -66,41 +66,41 @@ namespace GameEvent.GameEventHelpers
 			}
 		}
 
-		// Token: 0x0400950E RID: 38158
+		// Token: 0x04009637 RID: 38455
 		public HomerunData Owner;
 
-		// Token: 0x0400950F RID: 38159
+		// Token: 0x04009638 RID: 38456
 		public Vector3 position;
 
-		// Token: 0x04009510 RID: 38160
+		// Token: 0x04009639 RID: 38457
 		public bool ReadyForDelete;
 
-		// Token: 0x04009511 RID: 38161
+		// Token: 0x0400963A RID: 38458
 		public int ScoreAdded = 1;
 
-		// Token: 0x04009512 RID: 38162
+		// Token: 0x0400963B RID: 38459
 		public float Size = 2f;
 
-		// Token: 0x04009513 RID: 38163
+		// Token: 0x0400963C RID: 38460
 		public Vector3 StartPosition;
 
-		// Token: 0x04009514 RID: 38164
+		// Token: 0x0400963D RID: 38461
 		public HomerunGoalController.Direction direction;
 
-		// Token: 0x02001929 RID: 6441
+		// Token: 0x0200194F RID: 6479
 		public enum Direction
 		{
-			// Token: 0x04009516 RID: 38166
+			// Token: 0x0400963F RID: 38463
 			YPositive,
-			// Token: 0x04009517 RID: 38167
+			// Token: 0x04009640 RID: 38464
 			XPositive,
-			// Token: 0x04009518 RID: 38168
+			// Token: 0x04009641 RID: 38465
 			XNegative,
-			// Token: 0x04009519 RID: 38169
+			// Token: 0x04009642 RID: 38466
 			ZPositive,
-			// Token: 0x0400951A RID: 38170
+			// Token: 0x04009643 RID: 38467
 			ZNegative,
-			// Token: 0x0400951B RID: 38171
+			// Token: 0x04009644 RID: 38468
 			Max
 		}
 	}

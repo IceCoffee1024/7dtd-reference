@@ -2,18 +2,18 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FCA RID: 4042
+// Token: 0x02000FE3 RID: 4067
 [Preserve]
 public class XUiC_QuestObjectiveEntry : XUiController
 {
-	// Token: 0x17000EB6 RID: 3766
-	// (get) Token: 0x06007F6A RID: 32618 RVA: 0x003052F8 File Offset: 0x003034F8
-	// (set) Token: 0x06007F6B RID: 32619 RVA: 0x00305300 File Offset: 0x00303500
+	// Token: 0x17000EEF RID: 3823
+	// (get) Token: 0x0600805C RID: 32860 RVA: 0x00309ACC File Offset: 0x00307CCC
+	// (set) Token: 0x0600805D RID: 32861 RVA: 0x00309AD4 File Offset: 0x00307CD4
 	public XUiC_QuestObjectiveList Owner { get; set; }
 
-	// Token: 0x17000EB7 RID: 3767
-	// (get) Token: 0x06007F6C RID: 32620 RVA: 0x00305309 File Offset: 0x00303509
-	// (set) Token: 0x06007F6D RID: 32621 RVA: 0x00305314 File Offset: 0x00303514
+	// Token: 0x17000EF0 RID: 3824
+	// (get) Token: 0x0600805E RID: 32862 RVA: 0x00309ADD File Offset: 0x00307CDD
+	// (set) Token: 0x0600805F RID: 32863 RVA: 0x00309AE8 File Offset: 0x00307CE8
 	public BaseObjective Objective
 	{
 		get
@@ -36,14 +36,14 @@ public class XUiC_QuestObjectiveEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007F6E RID: 32622 RVA: 0x0008AB7B File Offset: 0x00088D7B
+	// Token: 0x06008060 RID: 32864 RVA: 0x0008B2BB File Offset: 0x000894BB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Objective_ValueChanged()
 	{
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06007F6F RID: 32623 RVA: 0x00305373 File Offset: 0x00303573
+	// Token: 0x06008061 RID: 32865 RVA: 0x00309B47 File Offset: 0x00307D47
 	public void SetIsTracker()
 	{
 		this.isTracker = true;
@@ -51,8 +51,8 @@ public class XUiC_QuestObjectiveEntry : XUiController
 		this.incompleteColor = Utils.ColorToHex(StringParsers.ParseColor(this.incompleteColor));
 	}
 
-	// Token: 0x17000EB8 RID: 3768
-	// (get) Token: 0x06007F70 RID: 32624 RVA: 0x003053B2 File Offset: 0x003035B2
+	// Token: 0x17000EF1 RID: 3825
+	// (get) Token: 0x06008062 RID: 32866 RVA: 0x00309B86 File Offset: 0x00307D86
 	public static string OptionalKeyword
 	{
 		get
@@ -65,7 +65,7 @@ public class XUiC_QuestObjectiveEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007F71 RID: 32625 RVA: 0x003053DC File Offset: 0x003035DC
+	// Token: 0x06008063 RID: 32867 RVA: 0x00309BB0 File Offset: 0x00307DB0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -224,14 +224,14 @@ public class XUiC_QuestObjectiveEntry : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x06007F72 RID: 32626 RVA: 0x0008A069 File Offset: 0x00088269
+	// Token: 0x06008064 RID: 32868 RVA: 0x0008A715 File Offset: 0x00088915
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleOnCountChanged(XUiController _sender, OnCountChangedEventArgs _e)
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007F73 RID: 32627 RVA: 0x00305770 File Offset: 0x00303970
+	// Token: 0x06008065 RID: 32869 RVA: 0x00309F44 File Offset: 0x00308144
 	public override void Update(float _dt)
 	{
 		if (this.objective != null && this.objective.OwnerQuest.CurrentState == Quest.QuestState.InProgress && this.objective.UpdateUI && Time.time > this.updateTime)
@@ -243,7 +243,7 @@ public class XUiC_QuestObjectiveEntry : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x06007F74 RID: 32628 RVA: 0x003057D8 File Offset: 0x003039D8
+	// Token: 0x06008066 RID: 32870 RVA: 0x00309FAC File Offset: 0x003081AC
 	public override bool ParseAttribute(string name, string value)
 	{
 		uint num = <PrivateImplementationDetails>.ComputeStringHash(name);
@@ -323,55 +323,55 @@ public class XUiC_QuestObjectiveEntry : XUiController
 		return base.ParseAttribute(name, value);
 	}
 
-	// Token: 0x04005E47 RID: 24135
+	// Token: 0x04005F0E RID: 24334
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string notstartedIconName = "";
 
-	// Token: 0x04005E48 RID: 24136
+	// Token: 0x04005F0F RID: 24335
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string completeIconName = "";
 
-	// Token: 0x04005E49 RID: 24137
+	// Token: 0x04005F10 RID: 24336
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string incompleteIconName = "";
 
-	// Token: 0x04005E4A RID: 24138
+	// Token: 0x04005F11 RID: 24337
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string completeColor = "0,255,0,255";
 
-	// Token: 0x04005E4B RID: 24139
+	// Token: 0x04005F12 RID: 24338
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string incompleteColor = "255,0,0,255";
 
-	// Token: 0x04005E4C RID: 24140
+	// Token: 0x04005F13 RID: 24339
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string warningColor = "255,255,0,255";
 
-	// Token: 0x04005E4D RID: 24141
+	// Token: 0x04005F14 RID: 24340
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string inactiveColor = "160,160,160,255";
 
-	// Token: 0x04005E4E RID: 24142
+	// Token: 0x04005F15 RID: 24341
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string originalColor = "255,255,255,255";
 
-	// Token: 0x04005E4F RID: 24143
+	// Token: 0x04005F16 RID: 24342
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BaseObjective objective;
 
-	// Token: 0x04005E50 RID: 24144
+	// Token: 0x04005F17 RID: 24343
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isTracker;
 
-	// Token: 0x04005E51 RID: 24145
+	// Token: 0x04005F18 RID: 24344
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string optionalKeyword = "";
 
-	// Token: 0x04005E53 RID: 24147
+	// Token: 0x04005F1A RID: 24346
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<string> objectiveOptionalFormatter = new CachedStringFormatter<string>((string _s) => "(" + _s + ") ");
 
-	// Token: 0x04005E54 RID: 24148
+	// Token: 0x04005F1B RID: 24347
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float updateTime;
 }

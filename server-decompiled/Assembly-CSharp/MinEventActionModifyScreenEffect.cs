@@ -3,11 +3,11 @@ using System.Globalization;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x02000705 RID: 1797
+// Token: 0x0200070F RID: 1807
 [Preserve]
 public class MinEventActionModifyScreenEffect : MinEventActionBase
 {
-	// Token: 0x060036A2 RID: 13986 RVA: 0x00168D40 File Offset: 0x00166F40
+	// Token: 0x060036F8 RID: 14072 RVA: 0x0016AF18 File Offset: 0x00169118
 	public override void Execute(MinEventParams _params)
 	{
 		EntityPlayerLocal entityPlayerLocal = _params.Self as EntityPlayerLocal;
@@ -17,13 +17,13 @@ public class MinEventActionModifyScreenEffect : MinEventActionBase
 		}
 	}
 
-	// Token: 0x060036A3 RID: 13987 RVA: 0x00168D7F File Offset: 0x00166F7F
+	// Token: 0x060036F9 RID: 14073 RVA: 0x0016AF57 File Offset: 0x00169157
 	public override bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
 	{
 		return base.CanExecute(_eventType, _params) && _params.Self is EntityPlayerLocal && this.effect_name != "";
 	}
 
-	// Token: 0x060036A4 RID: 13988 RVA: 0x00168DAC File Offset: 0x00166FAC
+	// Token: 0x060036FA RID: 14074 RVA: 0x0016AF84 File Offset: 0x00169184
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -49,15 +49,15 @@ public class MinEventActionModifyScreenEffect : MinEventActionBase
 		return flag;
 	}
 
-	// Token: 0x04002C06 RID: 11270
+	// Token: 0x04002C7A RID: 11386
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string effect_name = "";
 
-	// Token: 0x04002C07 RID: 11271
+	// Token: 0x04002C7B RID: 11387
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float intensity = 1f;
 
-	// Token: 0x04002C08 RID: 11272
+	// Token: 0x04002C7C RID: 11388
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float fade = 4f;
 }

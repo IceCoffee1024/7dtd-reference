@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D54 RID: 3412
+// Token: 0x02000D67 RID: 3431
 [Preserve]
 public class ItemActionEntryTake : BaseItemActionEntry
 {
-	// Token: 0x060067A6 RID: 26534 RVA: 0x0028F81D File Offset: 0x0028DA1D
+	// Token: 0x06006835 RID: 26677 RVA: 0x002927B1 File Offset: 0x002909B1
 	public ItemActionEntryTake(XUiController _controller)
 		: base(_controller, "lblContextActionTake", "ui_game_symbol_hand", BaseItemActionEntry.GamepadShortCut.DPadUp, "crafting/craft_click_craft", "ui/ui_denied")
 	{
 	}
 
-	// Token: 0x060067A7 RID: 26535 RVA: 0x0028F83C File Offset: 0x0028DA3C
+	// Token: 0x06006836 RID: 26678 RVA: 0x002927D0 File Offset: 0x002909D0
 	public override void RefreshEnabled()
 	{
 		ItemStack itemStack = this.getItemStack();
@@ -24,7 +24,7 @@ public class ItemActionEntryTake : BaseItemActionEntry
 		base.Enabled = num >= 1;
 	}
 
-	// Token: 0x060067A8 RID: 26536 RVA: 0x0028F894 File Offset: 0x0028DA94
+	// Token: 0x06006837 RID: 26679 RVA: 0x00292828 File Offset: 0x00290A28
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack getItemStack()
 	{
@@ -58,7 +58,7 @@ public class ItemActionEntryTake : BaseItemActionEntry
 		return itemStack;
 	}
 
-	// Token: 0x060067A9 RID: 26537 RVA: 0x0028F8EC File Offset: 0x0028DAEC
+	// Token: 0x06006838 RID: 26680 RVA: 0x00292880 File Offset: 0x00290A80
 	public override void OnActivated()
 	{
 		XUiController itemController = base.ItemController;

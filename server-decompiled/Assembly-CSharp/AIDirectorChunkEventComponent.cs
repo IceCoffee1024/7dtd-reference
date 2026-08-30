@@ -4,18 +4,18 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200040A RID: 1034
+// Token: 0x0200040E RID: 1038
 [Preserve]
 public class AIDirectorChunkEventComponent : AIDirectorHordeComponent
 {
-	// Token: 0x06001FFF RID: 8191 RVA: 0x000C1F89 File Offset: 0x000C0189
+	// Token: 0x0600201C RID: 8220 RVA: 0x000C2725 File Offset: 0x000C0925
 	public void Clear()
 	{
 		this.activeChunks.Clear();
 		this.checkChunks.Clear();
 	}
 
-	// Token: 0x06002000 RID: 8192 RVA: 0x000C1FA4 File Offset: 0x000C01A4
+	// Token: 0x0600201D RID: 8221 RVA: 0x000C2740 File Offset: 0x000C0940
 	public override void Tick(double _dt)
 	{
 		base.Tick(_dt);
@@ -44,7 +44,7 @@ public class AIDirectorChunkEventComponent : AIDirectorHordeComponent
 		this.TickActiveSpawns(num);
 	}
 
-	// Token: 0x06002001 RID: 8193 RVA: 0x000C209C File Offset: 0x000C029C
+	// Token: 0x0600201E RID: 8222 RVA: 0x000C2838 File Offset: 0x000C0A38
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TickActiveSpawns(float dt)
 	{
@@ -67,7 +67,7 @@ public class AIDirectorChunkEventComponent : AIDirectorHordeComponent
 		}
 	}
 
-	// Token: 0x06002002 RID: 8194 RVA: 0x000C2154 File Offset: 0x000C0354
+	// Token: 0x0600201F RID: 8223 RVA: 0x000C28F0 File Offset: 0x000C0AF0
 	public override void Read(BinaryReader _stream, int _outerVersion)
 	{
 		if (_outerVersion >= 5)
@@ -85,7 +85,7 @@ public class AIDirectorChunkEventComponent : AIDirectorHordeComponent
 		}
 	}
 
-	// Token: 0x06002003 RID: 8195 RVA: 0x000C21B0 File Offset: 0x000C03B0
+	// Token: 0x06002020 RID: 8224 RVA: 0x000C294C File Offset: 0x000C0B4C
 	public override void Write(BinaryWriter _stream)
 	{
 		_stream.Write(1);
@@ -97,14 +97,14 @@ public class AIDirectorChunkEventComponent : AIDirectorHordeComponent
 		}
 	}
 
-	// Token: 0x06002004 RID: 8196 RVA: 0x000C2230 File Offset: 0x000C0430
+	// Token: 0x06002021 RID: 8225 RVA: 0x000C29CC File Offset: 0x000C0BCC
 	public int GetActiveCount()
 	{
 		return this.activeChunks.Count;
 	}
 
-	// Token: 0x170003BA RID: 954
-	// (get) Token: 0x06002005 RID: 8197 RVA: 0x000C223D File Offset: 0x000C043D
+	// Token: 0x170003BE RID: 958
+	// (get) Token: 0x06002022 RID: 8226 RVA: 0x000C29D9 File Offset: 0x000C0BD9
 	public bool HasAnySpawns
 	{
 		get
@@ -113,7 +113,7 @@ public class AIDirectorChunkEventComponent : AIDirectorHordeComponent
 		}
 	}
 
-	// Token: 0x06002006 RID: 8198 RVA: 0x000C2250 File Offset: 0x000C0450
+	// Token: 0x06002023 RID: 8227 RVA: 0x000C29EC File Offset: 0x000C0BEC
 	public AIDirectorChunkData GetChunkDataFromPosition(Vector3i _position, bool _createIfNeeded)
 	{
 		int num = World.toChunkXZ(_position.x) / 5;
@@ -132,7 +132,7 @@ public class AIDirectorChunkEventComponent : AIDirectorHordeComponent
 		return aidirectorChunkData;
 	}
 
-	// Token: 0x06002007 RID: 8199 RVA: 0x000C22A8 File Offset: 0x000C04A8
+	// Token: 0x06002024 RID: 8228 RVA: 0x000C2A44 File Offset: 0x000C0C44
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void StartCooldownOnNeighbors(Vector3i _position, bool _isLong)
 	{
@@ -151,7 +151,7 @@ public class AIDirectorChunkEventComponent : AIDirectorHordeComponent
 		}
 	}
 
-	// Token: 0x06002008 RID: 8200 RVA: 0x000C232C File Offset: 0x000C052C
+	// Token: 0x06002025 RID: 8229 RVA: 0x000C2AC8 File Offset: 0x000C0CC8
 	public void NotifyEvent(AIDirectorChunkEvent _chunkEvent)
 	{
 		AIDirectorChunkData chunkDataFromPosition = this.GetChunkDataFromPosition(_chunkEvent.Position, true);
@@ -165,7 +165,7 @@ public class AIDirectorChunkEventComponent : AIDirectorHordeComponent
 		}
 	}
 
-	// Token: 0x06002009 RID: 8201 RVA: 0x000C2370 File Offset: 0x000C0570
+	// Token: 0x06002026 RID: 8230 RVA: 0x000C2B0C File Offset: 0x000C0D0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CheckToSpawn()
 	{
@@ -177,7 +177,7 @@ public class AIDirectorChunkEventComponent : AIDirectorHordeComponent
 		}
 	}
 
-	// Token: 0x0600200A RID: 8202 RVA: 0x000C23AC File Offset: 0x000C05AC
+	// Token: 0x06002027 RID: 8231 RVA: 0x000C2B48 File Offset: 0x000C0D48
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CheckToSpawn(AIDirectorChunkData _chunkData)
 	{
@@ -202,7 +202,7 @@ public class AIDirectorChunkEventComponent : AIDirectorHordeComponent
 		}
 	}
 
-	// Token: 0x0600200B RID: 8203 RVA: 0x000C243C File Offset: 0x000C063C
+	// Token: 0x06002028 RID: 8232 RVA: 0x000C2BD8 File Offset: 0x000C0DD8
 	public void SpawnScouts(Vector3 targetPos)
 	{
 		Vector3 vector;
@@ -242,7 +242,7 @@ public class AIDirectorChunkEventComponent : AIDirectorHordeComponent
 		}
 	}
 
-	// Token: 0x0600200C RID: 8204 RVA: 0x000C250C File Offset: 0x000C070C
+	// Token: 0x06002029 RID: 8233 RVA: 0x000C2CA8 File Offset: 0x000C0EA8
 	public AIScoutHordeSpawner.IHorde CreateHorde(Vector3 startPos)
 	{
 		AIDirectorChunkEventComponent.Horde horde = new AIDirectorChunkEventComponent.Horde(this, startPos);
@@ -250,49 +250,49 @@ public class AIDirectorChunkEventComponent : AIDirectorHordeComponent
 		return horde;
 	}
 
-	// Token: 0x040015C5 RID: 5573
+	// Token: 0x040015DA RID: 5594
 	public const int cVersion = 1;
 
-	// Token: 0x040015C6 RID: 5574
+	// Token: 0x040015DB RID: 5595
 	public const int cChunksPerArea = 5;
 
-	// Token: 0x040015C7 RID: 5575
+	// Token: 0x040015DC RID: 5596
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cEventDelay = 5f;
 
-	// Token: 0x040015C8 RID: 5576
+	// Token: 0x040015DD RID: 5597
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cActivityLevelToSpawn = 25f;
 
-	// Token: 0x040015C9 RID: 5577
+	// Token: 0x040015DE RID: 5598
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cSpawnChance = 0.2f;
 
-	// Token: 0x040015CA RID: 5578
+	// Token: 0x040015DF RID: 5599
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<long, AIDirectorChunkData> activeChunks = new Dictionary<long, AIDirectorChunkData>();
 
-	// Token: 0x040015CB RID: 5579
+	// Token: 0x040015E0 RID: 5600
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<long> removeChunks = new List<long>();
 
-	// Token: 0x040015CC RID: 5580
+	// Token: 0x040015E1 RID: 5601
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<AIScoutHordeSpawner> scoutSpawnList = new List<AIScoutHordeSpawner>();
 
-	// Token: 0x040015CD RID: 5581
+	// Token: 0x040015E2 RID: 5602
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<AIDirectorChunkEventComponent.Horde> hordeSpawnList = new List<AIDirectorChunkEventComponent.Horde>();
 
-	// Token: 0x040015CE RID: 5582
+	// Token: 0x040015E3 RID: 5603
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<AIDirectorChunkData> checkChunks = new List<AIDirectorChunkData>();
 
-	// Token: 0x040015CF RID: 5583
+	// Token: 0x040015E4 RID: 5604
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float spawnDelay;
 
-	// Token: 0x040015D0 RID: 5584
+	// Token: 0x040015E5 RID: 5605
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int[] neighbors = new int[]
 	{
@@ -300,19 +300,19 @@ public class AIDirectorChunkEventComponent : AIDirectorHordeComponent
 		1, -1, -1, 1, 1, 1
 	};
 
-	// Token: 0x0200040B RID: 1035
+	// Token: 0x0200040F RID: 1039
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class Horde : AIScoutHordeSpawner.IHorde
 	{
-		// Token: 0x0600200F RID: 8207 RVA: 0x000C2586 File Offset: 0x000C0786
+		// Token: 0x0600202C RID: 8236 RVA: 0x000C2D22 File Offset: 0x000C0F22
 		public Horde(AIDirectorChunkEventComponent outer, Vector3 pos)
 		{
 			this._outer = outer;
 			this._pos = pos;
 		}
 
-		// Token: 0x06002010 RID: 8208 RVA: 0x000C259C File Offset: 0x000C079C
+		// Token: 0x0600202D RID: 8237 RVA: 0x000C2D38 File Offset: 0x000C0F38
 		public void SpawnMore(int size)
 		{
 			int num = this._numSpawned + size;
@@ -327,7 +327,7 @@ public class AIDirectorChunkEventComponent : AIDirectorHordeComponent
 			this._horde.numToSpawn = num2;
 		}
 
-		// Token: 0x06002011 RID: 8209 RVA: 0x000C2615 File Offset: 0x000C0815
+		// Token: 0x0600202E RID: 8238 RVA: 0x000C2DB1 File Offset: 0x000C0FB1
 		public void SetSpawnPos(Vector3 pos)
 		{
 			if (this._horde != null)
@@ -337,7 +337,7 @@ public class AIDirectorChunkEventComponent : AIDirectorHordeComponent
 			this._pos = pos;
 		}
 
-		// Token: 0x06002012 RID: 8210 RVA: 0x000C2632 File Offset: 0x000C0832
+		// Token: 0x0600202F RID: 8239 RVA: 0x000C2DCE File Offset: 0x000C0FCE
 		public void Destroy()
 		{
 			if (this._horde != null)
@@ -348,7 +348,7 @@ public class AIDirectorChunkEventComponent : AIDirectorHordeComponent
 			this._destroy = true;
 		}
 
-		// Token: 0x06002013 RID: 8211 RVA: 0x000C2655 File Offset: 0x000C0855
+		// Token: 0x06002030 RID: 8240 RVA: 0x000C2DF1 File Offset: 0x000C0FF1
 		public bool Tick(double dt)
 		{
 			if (this._destroy)
@@ -363,8 +363,8 @@ public class AIDirectorChunkEventComponent : AIDirectorHordeComponent
 			return false;
 		}
 
-		// Token: 0x170003BB RID: 955
-		// (get) Token: 0x06002014 RID: 8212 RVA: 0x000C268A File Offset: 0x000C088A
+		// Token: 0x170003BF RID: 959
+		// (get) Token: 0x06002031 RID: 8241 RVA: 0x000C2E26 File Offset: 0x000C1026
 		public bool canSpawnMore
 		{
 			get
@@ -373,8 +373,8 @@ public class AIDirectorChunkEventComponent : AIDirectorHordeComponent
 			}
 		}
 
-		// Token: 0x170003BC RID: 956
-		// (get) Token: 0x06002015 RID: 8213 RVA: 0x000C2696 File Offset: 0x000C0896
+		// Token: 0x170003C0 RID: 960
+		// (get) Token: 0x06002032 RID: 8242 RVA: 0x000C2E32 File Offset: 0x000C1032
 		public bool isSpawning
 		{
 			get
@@ -383,23 +383,23 @@ public class AIDirectorChunkEventComponent : AIDirectorHordeComponent
 			}
 		}
 
-		// Token: 0x040015D1 RID: 5585
+		// Token: 0x040015E6 RID: 5606
 		[PublicizedFrom(EAccessModifier.Private)]
 		public AIDirectorChunkEventComponent _outer;
 
-		// Token: 0x040015D2 RID: 5586
+		// Token: 0x040015E7 RID: 5607
 		[PublicizedFrom(EAccessModifier.Private)]
 		public AIHordeSpawner _horde;
 
-		// Token: 0x040015D3 RID: 5587
+		// Token: 0x040015E8 RID: 5608
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector3 _pos;
 
-		// Token: 0x040015D4 RID: 5588
+		// Token: 0x040015E9 RID: 5609
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int _numSpawned;
 
-		// Token: 0x040015D5 RID: 5589
+		// Token: 0x040015EA RID: 5610
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool _destroy;
 	}

@@ -3,17 +3,17 @@ using System.Collections.Generic;
 
 namespace Platform.LAN
 {
-	// Token: 0x02001CA9 RID: 7337
+	// Token: 0x02001CD0 RID: 7376
 	public class LANServerCacheControl
 	{
-		// Token: 0x0600D968 RID: 55656 RVA: 0x004DDB7D File Offset: 0x004DBD7D
+		// Token: 0x0600DB03 RID: 56067 RVA: 0x004E4191 File Offset: 0x004E2391
 		public LANServerCacheControl(TimeSpan updateInterval, TimeSpan timeout)
 		{
 			this.timeout = timeout;
 			this.updateInterval = updateInterval;
 		}
 
-		// Token: 0x0600D969 RID: 55657 RVA: 0x004DDBA0 File Offset: 0x004DBDA0
+		// Token: 0x0600DB04 RID: 56068 RVA: 0x004E41B4 File Offset: 0x004E23B4
 		public bool IsUpdateRequired(string addressString, int port)
 		{
 			LANServerCacheControl.ServerKey serverKey = new LANServerCacheControl.ServerKey(addressString, port);
@@ -43,7 +43,7 @@ namespace Platform.LAN
 			return false;
 		}
 
-		// Token: 0x0600D96A RID: 55658 RVA: 0x004DDC8C File Offset: 0x004DBE8C
+		// Token: 0x0600DB05 RID: 56069 RVA: 0x004E42A0 File Offset: 0x004E24A0
 		public void SetUpdated(string addressString, int port)
 		{
 			LANServerCacheControl.ServerKey serverKey = new LANServerCacheControl.ServerKey(addressString, port);
@@ -61,62 +61,62 @@ namespace Platform.LAN
 			this.lastServerUpdateTimes[serverKey] = updateTimes;
 		}
 
-		// Token: 0x0600D96B RID: 55659 RVA: 0x004DDCF9 File Offset: 0x004DBEF9
+		// Token: 0x0600DB06 RID: 56070 RVA: 0x004E430D File Offset: 0x004E250D
 		public void Clear()
 		{
 			this.lastServerUpdateTimes.Clear();
 		}
 
-		// Token: 0x0400A456 RID: 42070
+		// Token: 0x0400A589 RID: 42377
 		[PublicizedFrom(EAccessModifier.Private)]
 		public TimeSpan timeout;
 
-		// Token: 0x0400A457 RID: 42071
+		// Token: 0x0400A58A RID: 42378
 		[PublicizedFrom(EAccessModifier.Private)]
 		public TimeSpan updateInterval;
 
-		// Token: 0x0400A458 RID: 42072
+		// Token: 0x0400A58B RID: 42379
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<LANServerCacheControl.ServerKey, LANServerCacheControl.UpdateTimes> lastServerUpdateTimes = new Dictionary<LANServerCacheControl.ServerKey, LANServerCacheControl.UpdateTimes>();
 
-		// Token: 0x02001CAA RID: 7338
+		// Token: 0x02001CD1 RID: 7377
 		[PublicizedFrom(EAccessModifier.Private)]
 		public struct ServerKey : IEquatable<LANServerCacheControl.ServerKey>
 		{
-			// Token: 0x0600D96C RID: 55660 RVA: 0x004DDD06 File Offset: 0x004DBF06
+			// Token: 0x0600DB07 RID: 56071 RVA: 0x004E431A File Offset: 0x004E251A
 			public ServerKey(string _ipAddress, int _port)
 			{
 				this.ipAddress = _ipAddress;
 				this.port = _port;
 			}
 
-			// Token: 0x0600D96D RID: 55661 RVA: 0x004DDD16 File Offset: 0x004DBF16
+			// Token: 0x0600DB08 RID: 56072 RVA: 0x004E432A File Offset: 0x004E252A
 			public override int GetHashCode()
 			{
 				return this.ipAddress.GetHashCode() ^ this.port;
 			}
 
-			// Token: 0x0600D96E RID: 55662 RVA: 0x004DDD2A File Offset: 0x004DBF2A
+			// Token: 0x0600DB09 RID: 56073 RVA: 0x004E433E File Offset: 0x004E253E
 			public bool Equals(LANServerCacheControl.ServerKey _other)
 			{
 				return this.ipAddress.Equals(_other.ipAddress) && this.port == _other.port;
 			}
 
-			// Token: 0x0400A459 RID: 42073
+			// Token: 0x0400A58C RID: 42380
 			public readonly string ipAddress;
 
-			// Token: 0x0400A45A RID: 42074
+			// Token: 0x0400A58D RID: 42381
 			public readonly int port;
 		}
 
-		// Token: 0x02001CAB RID: 7339
+		// Token: 0x02001CD2 RID: 7378
 		[PublicizedFrom(EAccessModifier.Private)]
 		public struct UpdateTimes
 		{
-			// Token: 0x0400A45B RID: 42075
+			// Token: 0x0400A58E RID: 42382
 			public DateTime lastServerCheckedTime;
 
-			// Token: 0x0400A45C RID: 42076
+			// Token: 0x0400A58F RID: 42383
 			public DateTime lastRulesUpdateTime;
 		}
 	}

@@ -2,10 +2,10 @@
 using System.IO;
 using System.Xml.Linq;
 
-// Token: 0x020009FC RID: 2556
+// Token: 0x02000A0D RID: 2573
 public static class SdXDocumentExtensions
 {
-	// Token: 0x06004CE3 RID: 19683 RVA: 0x001D82B8 File Offset: 0x001D64B8
+	// Token: 0x06004D69 RID: 19817 RVA: 0x001DAD50 File Offset: 0x001D8F50
 	public static void SdSave(this XDocument xmlDoc, string filename)
 	{
 		using (Stream stream = SdFile.Open(filename, FileMode.Create, FileAccess.Write, FileShare.Read))

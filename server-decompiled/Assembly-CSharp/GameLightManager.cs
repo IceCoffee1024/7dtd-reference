@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02001325 RID: 4901
+// Token: 0x0200133F RID: 4927
 public class GameLightManager
 {
-	// Token: 0x06009A9F RID: 39583 RVA: 0x003A6273 File Offset: 0x003A4473
+	// Token: 0x06009B9A RID: 39834 RVA: 0x003AB50B File Offset: 0x003A970B
 	public static GameLightManager Create(EntityPlayerLocal player)
 	{
 		GameLightManager gameLightManager = new GameLightManager();
@@ -14,7 +14,7 @@ public class GameLightManager
 		return gameLightManager;
 	}
 
-	// Token: 0x06009AA0 RID: 39584 RVA: 0x003A6287 File Offset: 0x003A4487
+	// Token: 0x06009B9B RID: 39835 RVA: 0x003AB51F File Offset: 0x003A971F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Init()
 	{
@@ -22,7 +22,7 @@ public class GameLightManager
 		this.UpdateLightInit();
 	}
 
-	// Token: 0x06009AA1 RID: 39585 RVA: 0x003A6295 File Offset: 0x003A4495
+	// Token: 0x06009B9C RID: 39836 RVA: 0x003AB52D File Offset: 0x003A972D
 	public void Destroy()
 	{
 		this.lights.Clear();
@@ -32,7 +32,7 @@ public class GameLightManager
 		GameLightManager.Instance = null;
 	}
 
-	// Token: 0x06009AA2 RID: 39586 RVA: 0x003A62C4 File Offset: 0x003A44C4
+	// Token: 0x06009B9D RID: 39837 RVA: 0x003AB55C File Offset: 0x003A975C
 	public void FrameUpdate()
 	{
 		if (GameManager.IsDedicatedServer)
@@ -112,7 +112,7 @@ public class GameLightManager
 		this.UpdateLightFrameUpdate();
 	}
 
-	// Token: 0x06009AA3 RID: 39587 RVA: 0x003A64A4 File Offset: 0x003A46A4
+	// Token: 0x06009B9E RID: 39838 RVA: 0x003AB73C File Offset: 0x003A993C
 	public void AddLight(LightLOD lightLOD)
 	{
 		this.lights.Add(lightLOD);
@@ -124,7 +124,7 @@ public class GameLightManager
 		}
 	}
 
-	// Token: 0x06009AA4 RID: 39588 RVA: 0x003A64DB File Offset: 0x003A46DB
+	// Token: 0x06009B9F RID: 39839 RVA: 0x003AB773 File Offset: 0x003A9973
 	public void RemoveLight(LightLOD lightLOD)
 	{
 		if (this.isUpdating)
@@ -141,7 +141,7 @@ public class GameLightManager
 		}
 	}
 
-	// Token: 0x06009AA5 RID: 39589 RVA: 0x003A650C File Offset: 0x003A470C
+	// Token: 0x06009BA0 RID: 39840 RVA: 0x003AB7A4 File Offset: 0x003A99A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RemoveLightFromLists(LightLOD lightLOD)
 	{
@@ -159,7 +159,7 @@ public class GameLightManager
 		this.priorityLights.Remove(lightLOD);
 	}
 
-	// Token: 0x06009AA6 RID: 39590 RVA: 0x003A6565 File Offset: 0x003A4765
+	// Token: 0x06009BA1 RID: 39841 RVA: 0x003AB7FD File Offset: 0x003A99FD
 	public void MakeLightAPriority(LightLOD lightLOD)
 	{
 		if (lightLOD.priority <= 0f)
@@ -169,19 +169,19 @@ public class GameLightManager
 		}
 	}
 
-	// Token: 0x06009AA7 RID: 39591 RVA: 0x003A658B File Offset: 0x003A478B
+	// Token: 0x06009BA2 RID: 39842 RVA: 0x003AB823 File Offset: 0x003A9A23
 	public Vector3 CameraPos()
 	{
 		return this.player.cameraTransform.position;
 	}
 
-	// Token: 0x06009AA8 RID: 39592 RVA: 0x003A659D File Offset: 0x003A479D
+	// Token: 0x06009BA3 RID: 39843 RVA: 0x003AB835 File Offset: 0x003A9A35
 	public void HandleWaterLevelChanged()
 	{
 		this.isWaterLevelChanged = true;
 	}
 
-	// Token: 0x06009AA9 RID: 39593 RVA: 0x003A65A8 File Offset: 0x003A47A8
+	// Token: 0x06009BA4 RID: 39844 RVA: 0x003AB840 File Offset: 0x003A9A40
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateLightInit()
 	{
@@ -195,7 +195,7 @@ public class GameLightManager
 		}
 	}
 
-	// Token: 0x06009AAA RID: 39594 RVA: 0x003A65FC File Offset: 0x003A47FC
+	// Token: 0x06009BA5 RID: 39845 RVA: 0x003AB894 File Offset: 0x003A9A94
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateLightCleanup()
 	{
@@ -210,13 +210,13 @@ public class GameLightManager
 		}
 	}
 
-	// Token: 0x06009AAB RID: 39595 RVA: 0x003A664C File Offset: 0x003A484C
+	// Token: 0x06009BA6 RID: 39846 RVA: 0x003AB8E4 File Offset: 0x003A9AE4
 	public void AddUpdateLight(UpdateLight _ul)
 	{
 		this.newULs.Add(_ul);
 	}
 
-	// Token: 0x06009AAC RID: 39596 RVA: 0x003A665C File Offset: 0x003A485C
+	// Token: 0x06009BA7 RID: 39847 RVA: 0x003AB8F4 File Offset: 0x003A9AF4
 	public void RemoveUpdateLight(UpdateLight _ul)
 	{
 		bool flag;
@@ -240,7 +240,7 @@ public class GameLightManager
 		}
 	}
 
-	// Token: 0x06009AAD RID: 39597 RVA: 0x003A66E8 File Offset: 0x003A48E8
+	// Token: 0x06009BA8 RID: 39848 RVA: 0x003AB980 File Offset: 0x003A9B80
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateLightFrameUpdate()
 	{
@@ -301,70 +301,70 @@ public class GameLightManager
 		this.newULs.RemoveRange(0, num2);
 	}
 
-	// Token: 0x04007478 RID: 29816
+	// Token: 0x04007550 RID: 30032
 	public static GameLightManager Instance;
 
-	// Token: 0x04007479 RID: 29817
+	// Token: 0x04007551 RID: 30033
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal player;
 
-	// Token: 0x0400747A RID: 29818
+	// Token: 0x04007552 RID: 30034
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<LightLOD> lights = new List<LightLOD>();
 
-	// Token: 0x0400747B RID: 29819
+	// Token: 0x04007553 RID: 30035
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<LightLOD> priorityLights = new List<LightLOD>();
 
-	// Token: 0x0400747C RID: 29820
+	// Token: 0x04007554 RID: 30036
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<LightLOD> removeLights = new List<LightLOD>();
 
-	// Token: 0x0400747D RID: 29821
+	// Token: 0x04007555 RID: 30037
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lightUpdateIndex;
 
-	// Token: 0x0400747E RID: 29822
+	// Token: 0x04007556 RID: 30038
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isUpdating;
 
-	// Token: 0x0400747F RID: 29823
+	// Token: 0x04007557 RID: 30039
 	[PublicizedFrom(EAccessModifier.Private)]
 	public volatile bool isWaterLevelChanged;
 
-	// Token: 0x04007480 RID: 29824
+	// Token: 0x04007558 RID: 30040
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<UpdateLight> newULs = new List<UpdateLight>(512);
 
-	// Token: 0x04007481 RID: 29825
+	// Token: 0x04007559 RID: 30041
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cFastULGroups = 4;
 
-	// Token: 0x04007482 RID: 29826
+	// Token: 0x0400755A RID: 30042
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cFastULGroupMask = 3;
 
-	// Token: 0x04007483 RID: 29827
+	// Token: 0x0400755B RID: 30043
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<UpdateLight>[] fastULs = new List<UpdateLight>[4];
 
-	// Token: 0x04007484 RID: 29828
+	// Token: 0x0400755C RID: 30044
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int fastULUpdateIndex;
 
-	// Token: 0x04007485 RID: 29829
+	// Token: 0x0400755D RID: 30045
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cULGroups = 64;
 
-	// Token: 0x04007486 RID: 29830
+	// Token: 0x0400755E RID: 30046
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cSlowULGroupMask = 63;
 
-	// Token: 0x04007487 RID: 29831
+	// Token: 0x0400755F RID: 30047
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<UpdateLight>[] slowULs = new List<UpdateLight>[64];
 
-	// Token: 0x04007488 RID: 29832
+	// Token: 0x04007560 RID: 30048
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int slowULUpdateIndex;
 }

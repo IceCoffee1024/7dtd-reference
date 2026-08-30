@@ -4,11 +4,11 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020001EF RID: 495
+// Token: 0x020001F1 RID: 497
 [Preserve]
 public class ConsoleCmdCCPhysics : ConsoleCmdAbstract
 {
-	// Token: 0x06000F4A RID: 3914 RVA: 0x0006357C File Offset: 0x0006177C
+	// Token: 0x06000F55 RID: 3925 RVA: 0x00063AC4 File Offset: 0x00061CC4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -16,7 +16,7 @@ public class ConsoleCmdCCPhysics : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000147 RID: 327
-	// (get) Token: 0x06000F4B RID: 3915 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// (get) Token: 0x06000F56 RID: 3926 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -26,7 +26,7 @@ public class ConsoleCmdCCPhysics : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000148 RID: 328
-	// (get) Token: 0x06000F4C RID: 3916 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// (get) Token: 0x06000F57 RID: 3927 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -35,7 +35,7 @@ public class ConsoleCmdCCPhysics : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F4D RID: 3917 RVA: 0x0006358C File Offset: 0x0006178C
+	// Token: 0x06000F58 RID: 3928 RVA: 0x00063AD4 File Offset: 0x00061CD4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
@@ -43,7 +43,7 @@ public class ConsoleCmdCCPhysics : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000149 RID: 329
-	// (get) Token: 0x06000F4E RID: 3918 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// (get) Token: 0x06000F59 RID: 3929 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -53,7 +53,7 @@ public class ConsoleCmdCCPhysics : ConsoleCmdAbstract
 	}
 
 	// Token: 0x1700014A RID: 330
-	// (get) Token: 0x06000F4F RID: 3919 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// (get) Token: 0x06000F5A RID: 3930 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -63,7 +63,7 @@ public class ConsoleCmdCCPhysics : ConsoleCmdAbstract
 	}
 
 	// Token: 0x1700014B RID: 331
-	// (get) Token: 0x06000F50 RID: 3920 RVA: 0x0006110A File Offset: 0x0005F30A
+	// (get) Token: 0x06000F5B RID: 3931 RVA: 0x00061652 File Offset: 0x0005F852
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -72,7 +72,7 @@ public class ConsoleCmdCCPhysics : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06000F51 RID: 3921 RVA: 0x00063594 File Offset: 0x00061794
+	// Token: 0x06000F5C RID: 3932 RVA: 0x00063ADC File Offset: 0x00061CDC
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 0)
@@ -100,18 +100,18 @@ public class ConsoleCmdCCPhysics : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Physics layer interaction changes " + (ConsoleCmdCCPhysics.EnableCCPhysicsChanges ? "enabled" : "disabled") + ". Reloading the game session may be necessary to fully apply.");
 	}
 
-	// Token: 0x04000C83 RID: 3203
+	// Token: 0x04000C90 RID: 3216
 	public static bool ClientVerification = true;
 
-	// Token: 0x04000C84 RID: 3204
+	// Token: 0x04000C91 RID: 3217
 	public static bool AllowSendToPeer = true;
 
-	// Token: 0x04000C85 RID: 3205
+	// Token: 0x04000C92 RID: 3218
 	public static bool AllowReceiveFromPeer = true;
 
-	// Token: 0x04000C86 RID: 3206
+	// Token: 0x04000C93 RID: 3219
 	public static bool DisablePeerAction = false;
 
-	// Token: 0x04000C87 RID: 3207
+	// Token: 0x04000C94 RID: 3220
 	public static bool EnableCCPhysicsChanges = true;
 }

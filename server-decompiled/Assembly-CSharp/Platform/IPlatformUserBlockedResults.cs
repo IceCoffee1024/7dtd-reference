@@ -2,17 +2,17 @@
 
 namespace Platform
 {
-	// Token: 0x02001B89 RID: 7049
+	// Token: 0x02001BB0 RID: 7088
 	public interface IPlatformUserBlockedResults
 	{
-		// Token: 0x170019B1 RID: 6577
-		// (get) Token: 0x0600D1DD RID: 53725
+		// Token: 0x17001A23 RID: 6691
+		// (get) Token: 0x0600D369 RID: 54121
 		IPlatformUser User { get; }
 
-		// Token: 0x0600D1DE RID: 53726
+		// Token: 0x0600D36A RID: 54122
 		void Block(EBlockType blockType);
 
-		// Token: 0x0600D1DF RID: 53727 RVA: 0x004C1460 File Offset: 0x004BF660
+		// Token: 0x0600D36B RID: 54123 RVA: 0x004C7854 File Offset: 0x004C5A54
 		void BlockAll()
 		{
 			foreach (EBlockType eblockType in EnumUtils.Values<EBlockType>())
@@ -21,7 +21,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600D1E0 RID: 53728
+		// Token: 0x0600D36C RID: 54124
 		void Error();
 	}
 }

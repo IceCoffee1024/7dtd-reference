@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020009E7 RID: 2535
+// Token: 0x020009F8 RID: 2552
 [Preserve]
 public class RewardTreasureItem : BaseReward
 {
-	// Token: 0x06004BA1 RID: 19361 RVA: 0x001D593B File Offset: 0x001D3B3B
+	// Token: 0x06004C27 RID: 19495 RVA: 0x001D8123 File Offset: 0x001D6323
 	public override void SetupReward()
 	{
 		base.Description = ItemClass.GetItemClass(base.ID, false).Name;
@@ -14,7 +14,7 @@ public class RewardTreasureItem : BaseReward
 		base.IconAtlas = "ItemIconAtlas";
 	}
 
-	// Token: 0x06004BA2 RID: 19362 RVA: 0x001D5978 File Offset: 0x001D3B78
+	// Token: 0x06004C28 RID: 19496 RVA: 0x001D8160 File Offset: 0x001D6360
 	public override void GiveReward(EntityPlayer player)
 	{
 		if (base.OwnerQuest == null)
@@ -66,7 +66,7 @@ public class RewardTreasureItem : BaseReward
 		}
 	}
 
-	// Token: 0x06004BA3 RID: 19363 RVA: 0x001D5AFC File Offset: 0x001D3CFC
+	// Token: 0x06004C29 RID: 19497 RVA: 0x001D82E4 File Offset: 0x001D64E4
 	public override BaseReward Clone()
 	{
 		RewardTreasureItem rewardTreasureItem = new RewardTreasureItem();

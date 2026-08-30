@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200133A RID: 4922
+// Token: 0x02001354 RID: 4948
 [RequireComponent(typeof(SkinnedMeshRenderer))]
 public class Morphable : MonoBehaviour
 {
-	// Token: 0x06009B24 RID: 39716 RVA: 0x003A9D90 File Offset: 0x003A7F90
+	// Token: 0x06009C1F RID: 39967 RVA: 0x003AF038 File Offset: 0x003AD238
 	public void MorphHeadgear(Archetype archetype, bool _ignoreDlcEntitlements)
 	{
 		SkinnedMeshRenderer component = base.GetComponent<SkinnedMeshRenderer>();
@@ -38,13 +38,13 @@ public class Morphable : MonoBehaviour
 		assetRequestTask.Release();
 	}
 
-	// Token: 0x04007509 RID: 29961
+	// Token: 0x040075E1 RID: 30177
 	public string MorphSetPath;
 
-	// Token: 0x0400750A RID: 29962
+	// Token: 0x040075E2 RID: 30178
 	public string MorphName;
 
-	// Token: 0x0400750B RID: 29963
+	// Token: 0x040075E3 RID: 30179
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static string cMeshPrefix = "MeshMorph-";

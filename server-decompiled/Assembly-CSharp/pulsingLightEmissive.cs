@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001587 RID: 5511
+// Token: 0x020015A2 RID: 5538
 public class pulsingLightEmissive : LightState
 {
-	// Token: 0x170013CF RID: 5071
-	// (get) Token: 0x0600AC57 RID: 44119 RVA: 0x00146DA8 File Offset: 0x00144FA8
+	// Token: 0x17001408 RID: 5128
+	// (get) Token: 0x0600AD54 RID: 44372 RVA: 0x00148ECC File Offset: 0x001470CC
 	public override float Intensity
 	{
 		get
@@ -14,8 +14,8 @@ public class pulsingLightEmissive : LightState
 		}
 	}
 
-	// Token: 0x170013D0 RID: 5072
-	// (get) Token: 0x0600AC58 RID: 44120 RVA: 0x00146DD2 File Offset: 0x00144FD2
+	// Token: 0x17001409 RID: 5129
+	// (get) Token: 0x0600AD55 RID: 44373 RVA: 0x00148EF6 File Offset: 0x001470F6
 	public override float Emissive
 	{
 		get

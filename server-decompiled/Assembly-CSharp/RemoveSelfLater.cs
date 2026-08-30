@@ -2,17 +2,17 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x02001476 RID: 5238
+// Token: 0x02001491 RID: 5265
 public class RemoveSelfLater : MonoBehaviour
 {
-	// Token: 0x0600A442 RID: 42050 RVA: 0x003D2AAF File Offset: 0x003D0CAF
+	// Token: 0x0600A53F RID: 42303 RVA: 0x003D7DF3 File Offset: 0x003D5FF3
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
 		base.StartCoroutine(this.remove());
 	}
 
-	// Token: 0x0600A443 RID: 42051 RVA: 0x003D2ABE File Offset: 0x003D0CBE
+	// Token: 0x0600A540 RID: 42304 RVA: 0x003D7E02 File Offset: 0x003D6002
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator remove()
 	{
@@ -21,6 +21,6 @@ public class RemoveSelfLater : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x04007A43 RID: 31299
+	// Token: 0x04007B1C RID: 31516
 	public float WaitSeconds = 1f;
 }

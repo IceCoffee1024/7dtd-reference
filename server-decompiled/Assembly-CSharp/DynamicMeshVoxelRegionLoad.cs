@@ -7,20 +7,20 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x020003B4 RID: 948
+// Token: 0x020003B8 RID: 952
 public class DynamicMeshVoxelRegionLoad
 {
-	// Token: 0x1700035C RID: 860
-	// (get) Token: 0x06001C7C RID: 7292 RVA: 0x000AA3FD File Offset: 0x000A85FD
-	// (set) Token: 0x06001C7D RID: 7293 RVA: 0x000AA405 File Offset: 0x000A8605
+	// Token: 0x17000360 RID: 864
+	// (get) Token: 0x06001C99 RID: 7321 RVA: 0x000AAB3D File Offset: 0x000A8D3D
+	// (set) Token: 0x06001C9A RID: 7322 RVA: 0x000AAB45 File Offset: 0x000A8D45
 	public Vector3i WorldPosition { get; set; }
 
-	// Token: 0x1700035D RID: 861
-	// (get) Token: 0x06001C7E RID: 7294 RVA: 0x000AA40E File Offset: 0x000A860E
-	// (set) Token: 0x06001C7F RID: 7295 RVA: 0x000AA416 File Offset: 0x000A8616
+	// Token: 0x17000361 RID: 865
+	// (get) Token: 0x06001C9B RID: 7323 RVA: 0x000AAB4E File Offset: 0x000A8D4E
+	// (set) Token: 0x06001C9C RID: 7324 RVA: 0x000AAB56 File Offset: 0x000A8D56
 	public List<VoxelMesh> Meshes { get; set; }
 
-	// Token: 0x06001C80 RID: 7296 RVA: 0x000AA41F File Offset: 0x000A861F
+	// Token: 0x06001C9D RID: 7325 RVA: 0x000AAB5F File Offset: 0x000A8D5F
 	public static DynamicMeshVoxelRegionLoad Create(Vector3i position, List<VoxelMesh> meshes)
 	{
 		return new DynamicMeshVoxelRegionLoad
@@ -30,7 +30,7 @@ public class DynamicMeshVoxelRegionLoad
 		};
 	}
 
-	// Token: 0x06001C81 RID: 7297 RVA: 0x000AA434 File Offset: 0x000A8634
+	// Token: 0x06001C9E RID: 7326 RVA: 0x000AAB74 File Offset: 0x000A8D74
 	public IEnumerator CreateMeshCoroutine(DynamicMeshRegion region)
 	{
 		DateTime start = DateTime.Now;
@@ -65,7 +65,7 @@ public class DynamicMeshVoxelRegionLoad
 		yield break;
 	}
 
-	// Token: 0x06001C82 RID: 7298 RVA: 0x000AA44A File Offset: 0x000A864A
+	// Token: 0x06001C9F RID: 7327 RVA: 0x000AAB8A File Offset: 0x000A8D8A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator CreateOpaqueGo(VoxelMesh vm, GameObject parent, MeshTiming time)
 	{
@@ -92,7 +92,7 @@ public class DynamicMeshVoxelRegionLoad
 		yield break;
 	}
 
-	// Token: 0x06001C83 RID: 7299 RVA: 0x000AA470 File Offset: 0x000A8670
+	// Token: 0x06001CA0 RID: 7328 RVA: 0x000AABB0 File Offset: 0x000A8DB0
 	public IEnumerator copyToMesh(Mesh _mesh, ArrayListMP<Vector3> _vertices, ArrayListMP<int> _indices, ArrayListMP<Vector2> _uvs, ArrayListMP<Vector2> _uvCracks, ArrayListMP<Vector3> _normals, ArrayListMP<Vector4> _tangents, ArrayListMP<Color> _colorVertices, MeshTiming time)
 	{
 		DateTime start = DateTime.Now;
@@ -191,7 +191,7 @@ public class DynamicMeshVoxelRegionLoad
 		yield break;
 	}
 
-	// Token: 0x06001C84 RID: 7300 RVA: 0x000AA4D0 File Offset: 0x000A86D0
+	// Token: 0x06001CA1 RID: 7329 RVA: 0x000AAC10 File Offset: 0x000A8E10
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CreateTerrainGo(VoxelMeshTerrain terrain, GameObject parent, MeshTiming time)
 	{
@@ -219,7 +219,7 @@ public class DynamicMeshVoxelRegionLoad
 		DynamicMeshVoxelLoad.CopyTerrain(terrain, mesh, component, time, null);
 	}
 
-	// Token: 0x06001C85 RID: 7301 RVA: 0x000AA580 File Offset: 0x000A8780
+	// Token: 0x06001CA2 RID: 7330 RVA: 0x000AACC0 File Offset: 0x000A8EC0
 	public static DynamicMeshLoadResult LoadRegionFromFile(BinaryReader reader, DyMeshRegionLoadRequest load)
 	{
 		DynamicMeshLoadResult dynamicMeshLoadResult = DynamicMeshVoxelRegionLoad.ReadVoxelMesh(reader, load.OpaqueMesh);
@@ -245,7 +245,7 @@ public class DynamicMeshVoxelRegionLoad
 		return DynamicMeshLoadResult.Ok;
 	}
 
-	// Token: 0x06001C86 RID: 7302 RVA: 0x000AA664 File Offset: 0x000A8864
+	// Token: 0x06001CA3 RID: 7331 RVA: 0x000AADA4 File Offset: 0x000A8FA4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static DynamicMeshLoadResult ReadVoxelMesh(BinaryReader reader, MeshLists cache)
 	{
@@ -348,7 +348,7 @@ public class DynamicMeshVoxelRegionLoad
 		return DynamicMeshLoadResult.Error;
 	}
 
-	// Token: 0x06001C87 RID: 7303 RVA: 0x000AAA48 File Offset: 0x000A8C48
+	// Token: 0x06001CA4 RID: 7332 RVA: 0x000AB188 File Offset: 0x000A9388
 	public static DynamicMeshLoadResult ReadTerrainMesh(BinaryReader reader, MeshLists cache)
 	{
 		if (reader.ReadInt32() == 0)
@@ -450,14 +450,14 @@ public class DynamicMeshVoxelRegionLoad
 		return DynamicMeshLoadResult.Ok;
 	}
 
-	// Token: 0x06001C88 RID: 7304 RVA: 0x000AAEA9 File Offset: 0x000A90A9
+	// Token: 0x06001CA5 RID: 7333 RVA: 0x000AB5E9 File Offset: 0x000A97E9
 	public static void SaveRegionToFile(BinaryWriter _bw, VoxelMesh meshes, VoxelMeshTerrain terrain, Vector3i worldPos, int updateTime, DynamicMeshChunkProcessor builder, DynamicMeshRegion region)
 	{
 		DynamicMeshVoxelRegionLoad.WriteOpaqueMesh(_bw, meshes);
 		DynamicMeshVoxelRegionLoad.WriteTerrainVoxelMeshesToDisk(_bw, terrain);
 	}
 
-	// Token: 0x06001C89 RID: 7305 RVA: 0x000AAEBC File Offset: 0x000A90BC
+	// Token: 0x06001CA6 RID: 7334 RVA: 0x000AB5FC File Offset: 0x000A97FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void WriteTerrainVoxelMeshesToDisk(BinaryWriter writer, VoxelMeshTerrain mesh)
 	{
@@ -577,7 +577,7 @@ public class DynamicMeshVoxelRegionLoad
 		}
 	}
 
-	// Token: 0x06001C8A RID: 7306 RVA: 0x000AB42C File Offset: 0x000A962C
+	// Token: 0x06001CA7 RID: 7335 RVA: 0x000ABB6C File Offset: 0x000A9D6C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void WriteOpaqueMesh(BinaryWriter writer, VoxelMesh mesh)
 	{
@@ -668,10 +668,10 @@ public class DynamicMeshVoxelRegionLoad
 		}
 	}
 
-	// Token: 0x0400127D RID: 4733
+	// Token: 0x04001292 RID: 4754
 	public static ConcurrentDictionary<int, int> TileLinks = new ConcurrentDictionary<int, int>();
 
-	// Token: 0x0400127E RID: 4734
+	// Token: 0x04001293 RID: 4755
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<Bounds> bounds = new List<Bounds>(10);
 }

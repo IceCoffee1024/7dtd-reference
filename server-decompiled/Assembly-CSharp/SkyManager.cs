@@ -3,11 +3,11 @@ using System.Runtime.CompilerServices;
 using PI.NGSS;
 using UnityEngine;
 
-// Token: 0x02001353 RID: 4947
+// Token: 0x0200136D RID: 4973
 public class SkyManager : MonoBehaviour
 {
-	// Token: 0x17001259 RID: 4697
-	// (get) Token: 0x06009B9B RID: 39835 RVA: 0x003ACB32 File Offset: 0x003AAD32
+	// Token: 0x17001292 RID: 4754
+	// (get) Token: 0x06009C96 RID: 40086 RVA: 0x003B1DDA File Offset: 0x003AFFDA
 	public static Transform SunLightT
 	{
 		get
@@ -16,13 +16,13 @@ public class SkyManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009B9C RID: 39836 RVA: 0x003ACB39 File Offset: 0x003AAD39
+	// Token: 0x06009C97 RID: 40087 RVA: 0x003B1DE1 File Offset: 0x003AFFE1
 	public static bool IsBloodMoonVisible()
 	{
 		return GameUtils.IsBloodMoonTime(new ValueTuple<int, int>(SkyManager.duskTime - 4, SkyManager.dawnTime + 2), (int)SkyManager.TimeOfDay(), SkyManager.bloodmoonDay, (int)SkyManager.dayCount);
 	}
 
-	// Token: 0x06009B9D RID: 39837 RVA: 0x003ACB64 File Offset: 0x003AAD64
+	// Token: 0x06009C98 RID: 40088 RVA: 0x003B1E0C File Offset: 0x003B000C
 	public static float BloodMoonVisiblePercent()
 	{
 		int num = (int)SkyManager.dayCount;
@@ -44,7 +44,7 @@ public class SkyManager : MonoBehaviour
 		return 0f;
 	}
 
-	// Token: 0x06009B9E RID: 39838 RVA: 0x003ACBD9 File Offset: 0x003AADD9
+	// Token: 0x06009C99 RID: 40089 RVA: 0x003B1E81 File Offset: 0x003B0081
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
@@ -52,7 +52,7 @@ public class SkyManager : MonoBehaviour
 		GameStats.OnChangedDelegates += this.OnGameStatsChanged;
 	}
 
-	// Token: 0x06009B9F RID: 39839 RVA: 0x003ACBFD File Offset: 0x003AADFD
+	// Token: 0x06009C9A RID: 40090 RVA: 0x003B1EA5 File Offset: 0x003B00A5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDestroy()
 	{
@@ -60,7 +60,7 @@ public class SkyManager : MonoBehaviour
 		GameStats.OnChangedDelegates -= this.OnGameStatsChanged;
 	}
 
-	// Token: 0x06009BA0 RID: 39840 RVA: 0x003ACC24 File Offset: 0x003AAE24
+	// Token: 0x06009C9B RID: 40091 RVA: 0x003B1ECC File Offset: 0x003B00CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnShadowDistanceChanged(int optionsShadowDistance)
 	{
@@ -82,7 +82,7 @@ public class SkyManager : MonoBehaviour
 		SkyManager.moonLight.shadowCustomResolution = num;
 	}
 
-	// Token: 0x06009BA1 RID: 39841 RVA: 0x003ACC7D File Offset: 0x003AAE7D
+	// Token: 0x06009C9C RID: 40092 RVA: 0x003B1F25 File Offset: 0x003B0125
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnGameStatsChanged(EnumGameStats _gameState, object _newValue)
 	{
@@ -102,14 +102,14 @@ public class SkyManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009BA2 RID: 39842 RVA: 0x003ACCB7 File Offset: 0x003AAEB7
+	// Token: 0x06009C9D RID: 40093 RVA: 0x003B1F5F File Offset: 0x003B015F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Start()
 	{
 		SkyManager.Reset();
 	}
 
-	// Token: 0x06009BA3 RID: 39843 RVA: 0x003ACCBE File Offset: 0x003AAEBE
+	// Token: 0x06009C9E RID: 40094 RVA: 0x003B1F66 File Offset: 0x003B0166
 	public static void Loaded(GameObject _obj)
 	{
 		_obj.SetActive(true);
@@ -118,7 +118,7 @@ public class SkyManager : MonoBehaviour
 		SkyManager.Reset();
 	}
 
-	// Token: 0x06009BA4 RID: 39844 RVA: 0x003ACCEC File Offset: 0x003AAEEC
+	// Token: 0x06009C9F RID: 40095 RVA: 0x003B1F94 File Offset: 0x003B0194
 	public static void Cleanup()
 	{
 		if (SkyManager.skyManager != null)
@@ -127,7 +127,7 @@ public class SkyManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009BA5 RID: 39845 RVA: 0x003ACD0C File Offset: 0x003AAF0C
+	// Token: 0x06009CA0 RID: 40096 RVA: 0x003B1FB4 File Offset: 0x003B01B4
 	public static void SetSkyEnabled(bool _enabled)
 	{
 		if (_enabled)
@@ -144,58 +144,58 @@ public class SkyManager : MonoBehaviour
 		SkyManager.cloudsSphere.gameObject.SetActive(_enabled);
 	}
 
-	// Token: 0x06009BA6 RID: 39846 RVA: 0x003ACD93 File Offset: 0x003AAF93
+	// Token: 0x06009CA1 RID: 40097 RVA: 0x003B203B File Offset: 0x003B023B
 	public static Color GetSkyColor()
 	{
 		return SkyManager.SkyColor;
 	}
 
-	// Token: 0x06009BA7 RID: 39847 RVA: 0x003ACD9A File Offset: 0x003AAF9A
+	// Token: 0x06009CA2 RID: 40098 RVA: 0x003B2042 File Offset: 0x003B0242
 	public static void SetSkyColor(Color c)
 	{
 		SkyManager.SkyColor = c;
 	}
 
-	// Token: 0x06009BA8 RID: 39848 RVA: 0x003ACDA2 File Offset: 0x003AAFA2
+	// Token: 0x06009CA3 RID: 40099 RVA: 0x003B204A File Offset: 0x003B024A
 	public static void SetGameTime(ulong _time)
 	{
 		SkyManager.dayCount = _time / 24000f + 1f;
 		SkyManager.timeOfDay = _time;
 	}
 
-	// Token: 0x06009BA9 RID: 39849 RVA: 0x003ACDBE File Offset: 0x003AAFBE
+	// Token: 0x06009CA4 RID: 40100 RVA: 0x003B2066 File Offset: 0x003B0266
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static float TimeOfDay()
 	{
 		return SkyManager.timeOfDay % 24000UL / 1000f;
 	}
 
-	// Token: 0x06009BAA RID: 39850 RVA: 0x003ACDD4 File Offset: 0x003AAFD4
+	// Token: 0x06009CA5 RID: 40101 RVA: 0x003B207C File Offset: 0x003B027C
 	public static float GetTimeOfDayAsMinutes()
 	{
 		return SkyManager.TimeOfDay() / 24f * (float)GamePrefs.GetInt(EnumGamePrefs.DayNightLength);
 	}
 
-	// Token: 0x06009BAB RID: 39851 RVA: 0x003ACDEA File Offset: 0x003AAFEA
+	// Token: 0x06009CA6 RID: 40102 RVA: 0x003B2092 File Offset: 0x003B0292
 	public static void SetCloudTextures(Texture _mainTex, Texture _blendTex)
 	{
 		SkyManager.cloudMainTex = _mainTex;
 		SkyManager.cloudBlendTex = _blendTex;
 	}
 
-	// Token: 0x06009BAC RID: 39852 RVA: 0x003ACDF8 File Offset: 0x003AAFF8
+	// Token: 0x06009CA7 RID: 40103 RVA: 0x003B20A0 File Offset: 0x003B02A0
 	public static void SetCloudTransition(float t)
 	{
 		SkyManager.cloudTransition = t;
 	}
 
-	// Token: 0x06009BAD RID: 39853 RVA: 0x003ACE00 File Offset: 0x003AB000
+	// Token: 0x06009CA8 RID: 40104 RVA: 0x003B20A8 File Offset: 0x003B02A8
 	public static Color GetFogColor()
 	{
 		return SkyManager.fogColor;
 	}
 
-	// Token: 0x06009BAE RID: 39854 RVA: 0x003ACE07 File Offset: 0x003AB007
+	// Token: 0x06009CA9 RID: 40105 RVA: 0x003B20AF File Offset: 0x003B02AF
 	public static void SetFogColor(Color c)
 	{
 		if (SkyManager.fogDebugColor.a > 0f)
@@ -205,13 +205,13 @@ public class SkyManager : MonoBehaviour
 		SkyManager.fogColor = c;
 	}
 
-	// Token: 0x06009BAF RID: 39855 RVA: 0x003ACE27 File Offset: 0x003AB027
+	// Token: 0x06009CAA RID: 40106 RVA: 0x003B20CF File Offset: 0x003B02CF
 	public static float GetFogDensity()
 	{
 		return SkyManager.fogDensity;
 	}
 
-	// Token: 0x06009BB0 RID: 39856 RVA: 0x003ACE30 File Offset: 0x003AB030
+	// Token: 0x06009CAB RID: 40107 RVA: 0x003B20D8 File Offset: 0x003B02D8
 	public static void SetFogDensity(float density)
 	{
 		if (SkyManager.fogDebugDensity >= 0f)
@@ -227,19 +227,19 @@ public class SkyManager : MonoBehaviour
 		SkyManager.fogLightScale = 1f - num * 1.7f;
 	}
 
-	// Token: 0x06009BB1 RID: 39857 RVA: 0x003ACE7E File Offset: 0x003AB07E
+	// Token: 0x06009CAC RID: 40108 RVA: 0x003B2126 File Offset: 0x003B0326
 	public static float GetFogStart()
 	{
 		return SkyManager.fogStart;
 	}
 
-	// Token: 0x06009BB2 RID: 39858 RVA: 0x003ACE85 File Offset: 0x003AB085
+	// Token: 0x06009CAD RID: 40109 RVA: 0x003B212D File Offset: 0x003B032D
 	public static float GetFogEnd()
 	{
 		return SkyManager.fogEnd;
 	}
 
-	// Token: 0x06009BB3 RID: 39859 RVA: 0x003ACE8C File Offset: 0x003AB08C
+	// Token: 0x06009CAE RID: 40110 RVA: 0x003B2134 File Offset: 0x003B0334
 	public static void SetFogFade(float start, float end)
 	{
 		float num = 1f;
@@ -263,7 +263,7 @@ public class SkyManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009BB4 RID: 39860 RVA: 0x003ACF21 File Offset: 0x003AB121
+	// Token: 0x06009CAF RID: 40111 RVA: 0x003B21C9 File Offset: 0x003B03C9
 	public static void SetFogDebug(float density = -1f, float start = -3.4028235E+38f, float end = -3.4028235E+38f)
 	{
 		SkyManager.fogDebugDensity = density;
@@ -272,20 +272,20 @@ public class SkyManager : MonoBehaviour
 		SkyManager.SetFogDensity(0f);
 	}
 
-	// Token: 0x06009BB5 RID: 39861 RVA: 0x003ACF3F File Offset: 0x003AB13F
+	// Token: 0x06009CB0 RID: 40112 RVA: 0x003B21E7 File Offset: 0x003B03E7
 	public static void SetFogDebugColor(Color color = default(Color))
 	{
 		SkyManager.fogDebugColor = color;
 		SkyManager.SetFogColor(Color.gray);
 	}
 
-	// Token: 0x06009BB6 RID: 39862 RVA: 0x003ACF51 File Offset: 0x003AB151
+	// Token: 0x06009CB1 RID: 40113 RVA: 0x003B21F9 File Offset: 0x003B03F9
 	public static void Reset()
 	{
 		SkyManager.bNeedsReset = true;
 	}
 
-	// Token: 0x06009BB7 RID: 39863 RVA: 0x003ACF5C File Offset: 0x003AB15C
+	// Token: 0x06009CB2 RID: 40114 RVA: 0x003B2204 File Offset: 0x003B0404
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ClearStatics()
 	{
@@ -309,7 +309,7 @@ public class SkyManager : MonoBehaviour
 		SkyManager.atmosphereMtrl = null;
 	}
 
-	// Token: 0x06009BB8 RID: 39864 RVA: 0x003ACFE4 File Offset: 0x003AB1E4
+	// Token: 0x06009CB3 RID: 40115 RVA: 0x003B228C File Offset: 0x003B048C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Init()
 	{
@@ -375,7 +375,7 @@ public class SkyManager : MonoBehaviour
 		SkyManager.dawnTime = valueTuple.Item2;
 	}
 
-	// Token: 0x06009BB9 RID: 39865 RVA: 0x003AD218 File Offset: 0x003AB418
+	// Token: 0x06009CB4 RID: 40116 RVA: 0x003B24C0 File Offset: 0x003B06C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void GetMaterialAndTransform(string objectName, ref Transform trans, ref Material mtrl)
 	{
@@ -391,14 +391,14 @@ public class SkyManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009BBA RID: 39866 RVA: 0x003AD25C File Offset: 0x003AB45C
+	// Token: 0x06009CB5 RID: 40117 RVA: 0x003B2504 File Offset: 0x003B0704
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GetMainCamera()
 	{
 		SkyManager.mainCamera = Camera.main;
 	}
 
-	// Token: 0x06009BBB RID: 39867 RVA: 0x003AD268 File Offset: 0x003AB468
+	// Token: 0x06009CB6 RID: 40118 RVA: 0x003B2510 File Offset: 0x003B0710
 	public static bool IsDark()
 	{
 		if (SkyManager.isAllTimeNight)
@@ -413,31 +413,31 @@ public class SkyManager : MonoBehaviour
 		return num < (float)SkyManager.dawnTime || num > (float)SkyManager.duskTime;
 	}
 
-	// Token: 0x06009BBC RID: 39868 RVA: 0x003AD2A1 File Offset: 0x003AB4A1
+	// Token: 0x06009CB7 RID: 40119 RVA: 0x003B2549 File Offset: 0x003B0749
 	public static float GetDawnTime()
 	{
 		return (float)SkyManager.dawnTime;
 	}
 
-	// Token: 0x06009BBD RID: 39869 RVA: 0x003AD2A9 File Offset: 0x003AB4A9
+	// Token: 0x06009CB8 RID: 40120 RVA: 0x003B2551 File Offset: 0x003B0751
 	public static float GetDawnTimeAsMinutes()
 	{
 		return (float)SkyManager.dawnTime / 24f * (float)GamePrefs.GetInt(EnumGamePrefs.DayNightLength);
 	}
 
-	// Token: 0x06009BBE RID: 39870 RVA: 0x003AD2C0 File Offset: 0x003AB4C0
+	// Token: 0x06009CB9 RID: 40121 RVA: 0x003B2568 File Offset: 0x003B0768
 	public static float GetDuskTime()
 	{
 		return (float)SkyManager.duskTime;
 	}
 
-	// Token: 0x06009BBF RID: 39871 RVA: 0x003AD2C8 File Offset: 0x003AB4C8
+	// Token: 0x06009CBA RID: 40122 RVA: 0x003B2570 File Offset: 0x003B0770
 	public static float GetDuskTimeAsMinutes()
 	{
 		return (float)SkyManager.duskTime / 24f * (float)GamePrefs.GetInt(EnumGamePrefs.DayNightLength);
 	}
 
-	// Token: 0x06009BC0 RID: 39872 RVA: 0x003AD2E0 File Offset: 0x003AB4E0
+	// Token: 0x06009CBB RID: 40123 RVA: 0x003B2588 File Offset: 0x003B0788
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float CalcDayPercent()
 	{
@@ -467,7 +467,7 @@ public class SkyManager : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06009BC1 RID: 39873 RVA: 0x003AD390 File Offset: 0x003AB590
+	// Token: 0x06009CBC RID: 40124 RVA: 0x003B2638 File Offset: 0x003B0838
 	public static void TriggerLightning(Vector3 _position)
 	{
 		if (!SkyManager.triggerLightning)
@@ -487,7 +487,7 @@ public class SkyManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009BC2 RID: 39874 RVA: 0x003AD430 File Offset: 0x003AB630
+	// Token: 0x06009CBD RID: 40125 RVA: 0x003B26D8 File Offset: 0x003B08D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateSunMoonAngles()
 	{
@@ -631,7 +631,7 @@ public class SkyManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009BC3 RID: 39875 RVA: 0x003AD8F8 File Offset: 0x003ABAF8
+	// Token: 0x06009CBE RID: 40126 RVA: 0x003B2BA0 File Offset: 0x003B0DA0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateSunShaftSettings()
 	{
@@ -652,19 +652,19 @@ public class SkyManager : MonoBehaviour
 		SkyManager.sunShaftSettings.sunPosition = vector * -100000f;
 	}
 
-	// Token: 0x06009BC4 RID: 39876 RVA: 0x003AD9CF File Offset: 0x003ABBCF
+	// Token: 0x06009CBF RID: 40127 RVA: 0x003B2C77 File Offset: 0x003B0E77
 	public static SunShaftsEffect.SunSettings GetSunShaftSettings()
 	{
 		return SkyManager.sunShaftSettings;
 	}
 
-	// Token: 0x06009BC5 RID: 39877 RVA: 0x003AD9D6 File Offset: 0x003ABBD6
+	// Token: 0x06009CC0 RID: 40128 RVA: 0x003B2C7E File Offset: 0x003B0E7E
 	public static float GetLuma(Color color)
 	{
 		return 0.2126f * color.r + 0.7152f * color.g + 0.0722f * color.b;
 	}
 
-	// Token: 0x06009BC6 RID: 39878 RVA: 0x003AD9FE File Offset: 0x003ABBFE
+	// Token: 0x06009CC1 RID: 40129 RVA: 0x003B2CA6 File Offset: 0x003B0EA6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool VerifyCamera()
 	{
@@ -683,14 +683,14 @@ public class SkyManager : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06009BC7 RID: 39879 RVA: 0x003ADA2C File Offset: 0x003ABC2C
+	// Token: 0x06009CC2 RID: 40130 RVA: 0x003B2CD4 File Offset: 0x003B0ED4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool VerifyValidMaterials()
 	{
 		return !(SkyManager.atmosphereMtrl == null) && !(SkyManager.cloudsSphere == null) && !(SkyManager.atmosphereSphere == null) && !(SkyManager.moonLight == null) && !(SkyManager.sunLight == null) && !(SkyManager.moonSpriteT == null) && !(SkyManager.moonSpriteMat == null);
 	}
 
-	// Token: 0x06009BC8 RID: 39880 RVA: 0x003ADAA3 File Offset: 0x003ABCA3
+	// Token: 0x06009CC3 RID: 40131 RVA: 0x003B2D4B File Offset: 0x003B0F4B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ResetIfNeeded()
 	{
@@ -702,7 +702,7 @@ public class SkyManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009BC9 RID: 39881 RVA: 0x003ADAC0 File Offset: 0x003ABCC0
+	// Token: 0x06009CC4 RID: 40132 RVA: 0x003B2D68 File Offset: 0x003B0F68
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateFogShader()
 	{
@@ -712,7 +712,7 @@ public class SkyManager : MonoBehaviour
 		this.fogParams.w = Mathf.Pow(SkyManager.GetFogDensity(), 2f);
 	}
 
-	// Token: 0x06009BCA RID: 39882 RVA: 0x003ADB18 File Offset: 0x003ABD18
+	// Token: 0x06009CC5 RID: 40133 RVA: 0x003B2DC0 File Offset: 0x003B0FC0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateShaderGlobals()
 	{
@@ -729,7 +729,7 @@ public class SkyManager : MonoBehaviour
 		Shader.SetGlobalFloat("_DayPercent", SkyManager.dayPercent);
 	}
 
-	// Token: 0x06009BCB RID: 39883 RVA: 0x003ADBD0 File Offset: 0x003ABDD0
+	// Token: 0x06009CC6 RID: 40134 RVA: 0x003B2E78 File Offset: 0x003B1078
 	public void Update()
 	{
 		if (SkyManager.parent == null)
@@ -882,25 +882,25 @@ public class SkyManager : MonoBehaviour
 		SkyManager.WasBloodMoon = flag;
 	}
 
-	// Token: 0x06009BCC RID: 39884 RVA: 0x003AE271 File Offset: 0x003AC471
+	// Token: 0x06009CC7 RID: 40135 RVA: 0x003B3519 File Offset: 0x003B1719
 	public static float GetSunAngle()
 	{
 		return SkyManager.sunDirV.y;
 	}
 
-	// Token: 0x06009BCD RID: 39885 RVA: 0x003AE27D File Offset: 0x003AC47D
+	// Token: 0x06009CC8 RID: 40136 RVA: 0x003B3525 File Offset: 0x003B1725
 	public static Vector3 GetSunDirection()
 	{
 		return SkyManager.sunDirV;
 	}
 
-	// Token: 0x06009BCE RID: 39886 RVA: 0x003AE284 File Offset: 0x003AC484
+	// Token: 0x06009CC9 RID: 40137 RVA: 0x003B352C File Offset: 0x003B172C
 	public static float GetSunPercent()
 	{
 		return -SkyManager.sunDirV.y;
 	}
 
-	// Token: 0x06009BCF RID: 39887 RVA: 0x003AE291 File Offset: 0x003AC491
+	// Token: 0x06009CCA RID: 40138 RVA: 0x003B3539 File Offset: 0x003B1739
 	public static Vector3 GetSunLightDirection()
 	{
 		if (!(SkyManager.sunLight == null))
@@ -910,13 +910,13 @@ public class SkyManager : MonoBehaviour
 		return Vector3.down;
 	}
 
-	// Token: 0x06009BD0 RID: 39888 RVA: 0x003AE2B0 File Offset: 0x003AC4B0
+	// Token: 0x06009CCB RID: 40139 RVA: 0x003B3558 File Offset: 0x003B1758
 	public static float GetSunIntensity()
 	{
 		return SkyManager.sunIntensity;
 	}
 
-	// Token: 0x06009BD1 RID: 39889 RVA: 0x003AE2B7 File Offset: 0x003AC4B7
+	// Token: 0x06009CCC RID: 40140 RVA: 0x003B355F File Offset: 0x003B175F
 	public static Color GetSunLightColor()
 	{
 		if (SkyManager.sunLight)
@@ -926,7 +926,7 @@ public class SkyManager : MonoBehaviour
 		return Color.black;
 	}
 
-	// Token: 0x06009BD2 RID: 39890 RVA: 0x003AE2D5 File Offset: 0x003AC4D5
+	// Token: 0x06009CCD RID: 40141 RVA: 0x003B357D File Offset: 0x003B177D
 	public static void SetSunColor(Color color)
 	{
 		if (SkyManager.sunLight != null)
@@ -935,7 +935,7 @@ public class SkyManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009BD3 RID: 39891 RVA: 0x003AE2F0 File Offset: 0x003AC4F0
+	// Token: 0x06009CCE RID: 40142 RVA: 0x003B3598 File Offset: 0x003B1798
 	public static void SetSunIntensity(float _intensity)
 	{
 		SkyManager.sunIntensity = _intensity;
@@ -952,418 +952,418 @@ public class SkyManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06009BD4 RID: 39892 RVA: 0x003AE383 File Offset: 0x003AC583
+	// Token: 0x06009CCF RID: 40143 RVA: 0x003B362B File Offset: 0x003B182B
 	public static void SetWeatherLightScale(float _scale)
 	{
 		SkyManager.weatherLightScale = _scale;
 	}
 
-	// Token: 0x06009BD5 RID: 39893 RVA: 0x003AE38B File Offset: 0x003AC58B
+	// Token: 0x06009CD0 RID: 40144 RVA: 0x003B3633 File Offset: 0x003B1833
 	public static float GetMoonAmbientScale(float add, float mpy)
 	{
 		return Utils.FastLerp(add + SkyManager.moonBright * mpy, 1f, SkyManager.dayPercent * 3.030303f);
 	}
 
-	// Token: 0x06009BD6 RID: 39894 RVA: 0x003AE3AB File Offset: 0x003AC5AB
+	// Token: 0x06009CD1 RID: 40145 RVA: 0x003B3653 File Offset: 0x003B1853
 	public static float GetMoonBrightness()
 	{
 		return SkyManager.moonLightColor.grayscale * SkyManager.moonBright;
 	}
 
-	// Token: 0x06009BD7 RID: 39895 RVA: 0x003AE3BD File Offset: 0x003AC5BD
+	// Token: 0x06009CD2 RID: 40146 RVA: 0x003B3665 File Offset: 0x003B1865
 	public static Color GetMoonLightColor()
 	{
 		return SkyManager.moonLightColor;
 	}
 
-	// Token: 0x06009BD8 RID: 39896 RVA: 0x003AE3C4 File Offset: 0x003AC5C4
+	// Token: 0x06009CD3 RID: 40147 RVA: 0x003B366C File Offset: 0x003B186C
 	public static Vector3 GetMoonDirection()
 	{
 		return SkyManager.moonLightRot * Vector3.forward;
 	}
 
-	// Token: 0x06009BD9 RID: 39897 RVA: 0x003AE3D5 File Offset: 0x003AC5D5
+	// Token: 0x06009CD4 RID: 40148 RVA: 0x003B367D File Offset: 0x003B187D
 	public static void SetMoonLightColor(Color color)
 	{
 		SkyManager.moonLightColor = color;
 	}
 
-	// Token: 0x06009BDA RID: 39898 RVA: 0x003AE3DD File Offset: 0x003AC5DD
+	// Token: 0x06009CD5 RID: 40149 RVA: 0x003B3685 File Offset: 0x003B1885
 	public static float GetWorldRotation()
 	{
 		return SkyManager.worldRotation;
 	}
 
-	// Token: 0x04007589 RID: 30089
+	// Token: 0x04007661 RID: 30305
 	public static SkyManager skyManager;
 
-	// Token: 0x0400758A RID: 30090
+	// Token: 0x04007662 RID: 30306
 	public static float dayCount;
 
-	// Token: 0x0400758B RID: 30091
+	// Token: 0x04007663 RID: 30307
 	public static bool indoorFogOn = true;
 
-	// Token: 0x0400758C RID: 30092
+	// Token: 0x04007664 RID: 30308
 	public static bool isAllTimeDay = false;
 
-	// Token: 0x0400758D RID: 30093
+	// Token: 0x04007665 RID: 30309
 	public static bool isAllTimeNight = false;
 
-	// Token: 0x0400758E RID: 30094
+	// Token: 0x04007666 RID: 30310
 	public static Material atmosphereMtrl;
 
-	// Token: 0x0400758F RID: 30095
+	// Token: 0x04007667 RID: 30311
 	public static Transform atmosphereSphere;
 
-	// Token: 0x04007590 RID: 30096
+	// Token: 0x04007668 RID: 30312
 	public static Material cloudsSphereMtrl;
 
-	// Token: 0x04007591 RID: 30097
+	// Token: 0x04007669 RID: 30313
 	public static Transform cloudsSphere;
 
-	// Token: 0x04007592 RID: 30098
+	// Token: 0x0400766A RID: 30314
 	public static bool bUpdateSunMoonNow = false;
 
-	// Token: 0x04007593 RID: 30099
+	// Token: 0x0400766B RID: 30315
 	public static float sSunFadeHeight = 0.1f;
 
-	// Token: 0x04007594 RID: 30100
+	// Token: 0x0400766C RID: 30316
 	public static float dayPercent;
 
-	// Token: 0x04007595 RID: 30101
+	// Token: 0x0400766D RID: 30317
 	public static GameRandom random;
 
-	// Token: 0x04007596 RID: 30102
+	// Token: 0x0400766E RID: 30318
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float sMaxSunIntensity = 0.7f;
 
-	// Token: 0x04007597 RID: 30103
+	// Token: 0x0400766F RID: 30319
 	public float maxSunIntensity = 0.7f;
 
-	// Token: 0x04007598 RID: 30104
+	// Token: 0x04007670 RID: 30320
 	public float sunHeight = 0.1f;
 
-	// Token: 0x04007599 RID: 30105
+	// Token: 0x04007671 RID: 30321
 	public float moonHeight = 0.095f;
 
-	// Token: 0x0400759A RID: 30106
+	// Token: 0x04007672 RID: 30322
 	public float sunFadeHeight = 0.1f;
 
-	// Token: 0x0400759B RID: 30107
+	// Token: 0x04007673 RID: 30323
 	public float cloudSpeed = 0.05f;
 
-	// Token: 0x0400759C RID: 30108
+	// Token: 0x04007674 RID: 30324
 	public float ShowFogDensity;
 
-	// Token: 0x0400759D RID: 30109
+	// Token: 0x04007675 RID: 30325
 	public Color ShowSkyColor;
 
-	// Token: 0x0400759E RID: 30110
+	// Token: 0x04007676 RID: 30326
 	public Color ShowFogColor;
 
-	// Token: 0x0400759F RID: 30111
+	// Token: 0x04007677 RID: 30327
 	public float maxFarClippingPlane = 1500f;
 
-	// Token: 0x040075A0 RID: 30112
+	// Token: 0x04007678 RID: 30328
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static int dawnTime = 4;
 
-	// Token: 0x040075A1 RID: 30113
+	// Token: 0x04007679 RID: 30329
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static int duskTime = 22;
 
-	// Token: 0x040075A2 RID: 30114
+	// Token: 0x0400767A RID: 30330
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static ulong timeOfDay;
 
-	// Token: 0x040075A3 RID: 30115
+	// Token: 0x0400767B RID: 30331
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static int bloodmoonDay = 7;
 
-	// Token: 0x040075A4 RID: 30116
+	// Token: 0x0400767C RID: 30332
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float cloudTransition = 0f;
 
-	// Token: 0x040075A5 RID: 30117
+	// Token: 0x0400767D RID: 30333
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float fogDensity;
 
-	// Token: 0x040075A6 RID: 30118
+	// Token: 0x0400767E RID: 30334
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float fogLightScale;
 
-	// Token: 0x040075A7 RID: 30119
+	// Token: 0x0400767F RID: 30335
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float fogStart = 20f;
 
-	// Token: 0x040075A8 RID: 30120
+	// Token: 0x04007680 RID: 30336
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float fogEnd = 80f;
 
-	// Token: 0x040075A9 RID: 30121
+	// Token: 0x04007681 RID: 30337
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float fogDebugDensity = -1f;
 
-	// Token: 0x040075AA RID: 30122
+	// Token: 0x04007682 RID: 30338
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float fogDebugStart;
 
-	// Token: 0x040075AB RID: 30123
+	// Token: 0x04007683 RID: 30339
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float fogDebugEnd;
 
-	// Token: 0x040075AC RID: 30124
+	// Token: 0x04007684 RID: 30340
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Color fogDebugColor;
 
-	// Token: 0x040075AD RID: 30125
+	// Token: 0x04007685 RID: 30341
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float worldRotationTime = 0f;
 
-	// Token: 0x040075AE RID: 30126
+	// Token: 0x04007686 RID: 30342
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float worldRotation = 0f;
 
-	// Token: 0x040075AF RID: 30127
+	// Token: 0x04007687 RID: 30343
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float worldRotationTarget = 0f;
 
-	// Token: 0x040075B0 RID: 30128
+	// Token: 0x04007688 RID: 30344
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float sunIntensity = 1f;
 
-	// Token: 0x040075B1 RID: 30129
+	// Token: 0x04007689 RID: 30345
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float starIntensity = 1f;
 
-	// Token: 0x040075B2 RID: 30130
+	// Token: 0x0400768A RID: 30346
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float weatherLightScale;
 
-	// Token: 0x040075B3 RID: 30131
+	// Token: 0x0400768B RID: 30347
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static bool bNeedsReset;
 
-	// Token: 0x040075B4 RID: 30132
+	// Token: 0x0400768C RID: 30348
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Color SkyColor;
 
-	// Token: 0x040075B5 RID: 30133
+	// Token: 0x0400768D RID: 30349
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Color fogColor;
 
-	// Token: 0x040075B6 RID: 30134
+	// Token: 0x0400768E RID: 30350
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Transform sunLightT;
 
-	// Token: 0x040075B7 RID: 30135
+	// Token: 0x0400768F RID: 30351
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Light sunLight;
 
-	// Token: 0x040075B8 RID: 30136
+	// Token: 0x04007690 RID: 30352
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Vector3 sunDirV;
 
-	// Token: 0x040075B9 RID: 30137
+	// Token: 0x04007691 RID: 30353
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Vector3 sunMoonDirV;
 
-	// Token: 0x040075BA RID: 30138
+	// Token: 0x04007692 RID: 30354
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly float[] sMoonPhases = new float[] { 0.05f, 0.35f, 0.55f, 0.7f, 1.4f, 1.63f, 1.82f };
 
-	// Token: 0x040075BB RID: 30139
+	// Token: 0x04007693 RID: 30355
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly float[] sMoonBrights = new float[] { 1f, 0.65f, 0.45f, 0.25f, 0.4f, 0.6f, 0.9f };
 
-	// Token: 0x040075BC RID: 30140
+	// Token: 0x04007694 RID: 30356
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Transform moonLightT;
 
-	// Token: 0x040075BD RID: 30141
+	// Token: 0x04007695 RID: 30357
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Light moonLight;
 
-	// Token: 0x040075BE RID: 30142
+	// Token: 0x04007696 RID: 30358
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Transform moonSpriteT;
 
-	// Token: 0x040075BF RID: 30143
+	// Token: 0x04007697 RID: 30359
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Material moonSpriteMat;
 
-	// Token: 0x040075C0 RID: 30144
+	// Token: 0x04007698 RID: 30360
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float moonBright;
 
-	// Token: 0x040075C1 RID: 30145
+	// Token: 0x04007699 RID: 30361
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Color moonLightColor;
 
-	// Token: 0x040075C2 RID: 30146
+	// Token: 0x0400769A RID: 30362
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Quaternion moonLightRot;
 
-	// Token: 0x040075C3 RID: 30147
+	// Token: 0x0400769B RID: 30363
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Texture cloudMainTex;
 
-	// Token: 0x040075C4 RID: 30148
+	// Token: 0x0400769C RID: 30364
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Texture cloudMainTexOld;
 
-	// Token: 0x040075C5 RID: 30149
+	// Token: 0x0400769D RID: 30365
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Texture cloudBlendTex;
 
-	// Token: 0x040075C6 RID: 30150
+	// Token: 0x0400769E RID: 30366
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Texture cloudBlendTexOld;
 
-	// Token: 0x040075C7 RID: 30151
+	// Token: 0x0400769F RID: 30367
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static GameObject parent;
 
-	// Token: 0x040075C8 RID: 30152
+	// Token: 0x040076A0 RID: 30368
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Camera mainCamera;
 
-	// Token: 0x040075C9 RID: 30153
+	// Token: 0x040076A1 RID: 30369
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static NGSS_FrustumShadows_7DTD frustumShadows;
 
-	// Token: 0x040075CA RID: 30154
+	// Token: 0x040076A2 RID: 30370
 	public static bool WasBloodMoon = false;
 
-	// Token: 0x040075CB RID: 30155
+	// Token: 0x040076A3 RID: 30371
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cWorldRotationUpdateFreq = 0.2f;
 
-	// Token: 0x040075CC RID: 30156
+	// Token: 0x040076A4 RID: 30372
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cStarRotationSpeed = 0.004f;
 
-	// Token: 0x040075CD RID: 30157
+	// Token: 0x040076A5 RID: 30373
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bUpdateShaders;
 
-	// Token: 0x040075CE RID: 30158
+	// Token: 0x040076A6 RID: 30374
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector4 fogParams;
 
-	// Token: 0x040075CF RID: 30159
+	// Token: 0x040076A7 RID: 30375
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 sunAxis;
 
-	// Token: 0x040075D0 RID: 30160
+	// Token: 0x040076A8 RID: 30376
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 sunStartV;
 
-	// Token: 0x040075D1 RID: 30161
+	// Token: 0x040076A9 RID: 30377
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 moonStartV;
 
-	// Token: 0x040075D2 RID: 30162
+	// Token: 0x040076AA RID: 30378
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 starAxis;
 
-	// Token: 0x040075D3 RID: 30163
+	// Token: 0x040076AB RID: 30379
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static bool triggerLightning;
 
-	// Token: 0x040075D4 RID: 30164
+	// Token: 0x040076AC RID: 30380
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static int lightningFlashes;
 
-	// Token: 0x040075D5 RID: 30165
+	// Token: 0x040076AD RID: 30381
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float[] lightningEndTimes = new float[] { 1f, 2f, 3f, 4f, 5f };
 
-	// Token: 0x040075D6 RID: 30166
+	// Token: 0x040076AE RID: 30382
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static int lightningIndex;
 
-	// Token: 0x040075D7 RID: 30167
+	// Token: 0x040076AF RID: 30383
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Vector2 lightningDir;
 
-	// Token: 0x040075D8 RID: 30168
+	// Token: 0x040076B0 RID: 30384
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Vector2 lightningDirVel;
 
-	// Token: 0x040075D9 RID: 30169
+	// Token: 0x040076B1 RID: 30385
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static float lightningIntensity;
 
-	// Token: 0x040075DA RID: 30170
+	// Token: 0x040076B2 RID: 30386
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static SunShaftsEffect.SunSettings sunShaftSettings;
 
-	// Token: 0x040075DB RID: 30171
+	// Token: 0x040076B3 RID: 30387
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 targetSkyPosition;
 
-	// Token: 0x040075DC RID: 30172
+	// Token: 0x040076B4 RID: 30388
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bMovingSky = true;

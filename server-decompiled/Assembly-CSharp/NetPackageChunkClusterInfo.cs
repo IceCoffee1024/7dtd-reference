@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020007AF RID: 1967
+// Token: 0x020007B9 RID: 1977
 [Preserve]
 public class NetPackageChunkClusterInfo : NetPackage
 {
-	// Token: 0x17000609 RID: 1545
-	// (get) Token: 0x06003A5A RID: 14938 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x17000613 RID: 1555
+	// (get) Token: 0x06003AB2 RID: 15026 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -16,7 +16,7 @@ public class NetPackageChunkClusterInfo : NetPackage
 		}
 	}
 
-	// Token: 0x06003A5B RID: 14939 RVA: 0x0017A74C File Offset: 0x0017894C
+	// Token: 0x06003AB3 RID: 15027 RVA: 0x0017C9CC File Offset: 0x0017ABCC
 	public NetPackageChunkClusterInfo Setup(ChunkCluster _chunkCluster)
 	{
 		this.name = _chunkCluster.Name;
@@ -27,7 +27,7 @@ public class NetPackageChunkClusterInfo : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003A5C RID: 14940 RVA: 0x0017A79C File Offset: 0x0017899C
+	// Token: 0x06003AB4 RID: 15028 RVA: 0x0017CA1C File Offset: 0x0017AC1C
 	public override void read(PooledBinaryReader _br)
 	{
 		this.name = _br.ReadString();
@@ -37,7 +37,7 @@ public class NetPackageChunkClusterInfo : NetPackage
 		this.pos = StreamUtils.ReadVector3(_br);
 	}
 
-	// Token: 0x06003A5D RID: 14941 RVA: 0x0017A7FC File Offset: 0x001789FC
+	// Token: 0x06003AB5 RID: 15029 RVA: 0x0017CA7C File Offset: 0x0017AC7C
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -50,35 +50,35 @@ public class NetPackageChunkClusterInfo : NetPackage
 		StreamUtils.Write(_bw, this.pos);
 	}
 
-	// Token: 0x06003A5E RID: 14942 RVA: 0x0017A878 File Offset: 0x00178A78
+	// Token: 0x06003AB6 RID: 15030 RVA: 0x0017CAF8 File Offset: 0x0017ACF8
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		_callbacks.ChunkClusterInfo(this.name, this.bInfinite, this.cMinPos, this.cMaxPos, this.pos);
 	}
 
-	// Token: 0x06003A5F RID: 14943 RVA: 0x0017A89E File Offset: 0x00178A9E
+	// Token: 0x06003AB7 RID: 15031 RVA: 0x0017CB1E File Offset: 0x0017AD1E
 	public override int GetLength()
 	{
 		return 40;
 	}
 
-	// Token: 0x04002F85 RID: 12165
+	// Token: 0x04002FFE RID: 12286
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string name;
 
-	// Token: 0x04002F86 RID: 12166
+	// Token: 0x04002FFF RID: 12287
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2i cMinPos;
 
-	// Token: 0x04002F87 RID: 12167
+	// Token: 0x04003000 RID: 12288
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2i cMaxPos;
 
-	// Token: 0x04002F88 RID: 12168
+	// Token: 0x04003001 RID: 12289
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bInfinite;
 
-	// Token: 0x04002F89 RID: 12169
+	// Token: 0x04003002 RID: 12290
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 pos;
 }

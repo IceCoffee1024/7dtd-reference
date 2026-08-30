@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001986 RID: 6534
+	// Token: 0x020019AC RID: 6572
 	[Preserve]
 	public class ActionResetMap : ActionBaseClientAction
 	{
-		// Token: 0x0600C7B2 RID: 51122 RVA: 0x004976C4 File Offset: 0x004958C4
+		// Token: 0x0600C939 RID: 51513 RVA: 0x0049DA08 File Offset: 0x0049BC08
 		public override void OnClientPerform(Entity target)
 		{
 			EntityPlayerLocal entityPlayerLocal = target as EntityPlayerLocal;
@@ -34,7 +34,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C7B3 RID: 51123 RVA: 0x00497773 File Offset: 0x00495973
+		// Token: 0x0600C93A RID: 51514 RVA: 0x0049DAB7 File Offset: 0x0049BCB7
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -42,7 +42,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseBool(ActionResetMap.PropRemoveWaypoints, ref this.removeWaypoints);
 		}
 
-		// Token: 0x0600C7B4 RID: 51124 RVA: 0x0049779E File Offset: 0x0049599E
+		// Token: 0x0600C93B RID: 51515 RVA: 0x0049DAE2 File Offset: 0x0049BCE2
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -53,19 +53,19 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009746 RID: 38726
+		// Token: 0x0400986F RID: 39023
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool removeDiscovery;
 
-		// Token: 0x04009747 RID: 38727
+		// Token: 0x04009870 RID: 39024
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool removeWaypoints;
 
-		// Token: 0x04009748 RID: 38728
+		// Token: 0x04009871 RID: 39025
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropRemoveDiscovery = "remove_discovery";
 
-		// Token: 0x04009749 RID: 38729
+		// Token: 0x04009872 RID: 39026
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropRemoveWaypoints = "remove_waypoints";
 	}

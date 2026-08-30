@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Xml.Linq;
 
-// Token: 0x02000BF8 RID: 3064
+// Token: 0x02000C0A RID: 3082
 public class WorldCreationData
 {
-	// Token: 0x06005D7F RID: 23935 RVA: 0x00245864 File Offset: 0x00243A64
+	// Token: 0x06005E09 RID: 24073 RVA: 0x00248608 File Offset: 0x00246808
 	public WorldCreationData(string _levelDir)
 	{
 		try
@@ -24,7 +24,7 @@ public class WorldCreationData
 		}
 	}
 
-	// Token: 0x06005D80 RID: 23936 RVA: 0x0024590C File Offset: 0x00243B0C
+	// Token: 0x06005E0A RID: 24074 RVA: 0x002486B0 File Offset: 0x002468B0
 	public void Apply(World _world, WorldState _worldState)
 	{
 		if (this.Properties.Values.ContainsKey("ProviderId"))
@@ -33,18 +33,18 @@ public class WorldCreationData
 		}
 	}
 
-	// Token: 0x0400483D RID: 18493
+	// Token: 0x040048D9 RID: 18649
 	public const string PropProviderId = "ProviderId";
 
-	// Token: 0x0400483E RID: 18494
+	// Token: 0x040048DA RID: 18650
 	public const string PropWorldEnvironment = "WorldEnvironment";
 
-	// Token: 0x0400483F RID: 18495
+	// Token: 0x040048DB RID: 18651
 	public const string PropWorldEnvironment_Prefab = "Prefab";
 
-	// Token: 0x04004840 RID: 18496
+	// Token: 0x040048DC RID: 18652
 	public const string PropWorldEnvironment_Class = "Class";
 
-	// Token: 0x04004841 RID: 18497
+	// Token: 0x040048DD RID: 18653
 	public DynamicProperties Properties = new DynamicProperties();
 }

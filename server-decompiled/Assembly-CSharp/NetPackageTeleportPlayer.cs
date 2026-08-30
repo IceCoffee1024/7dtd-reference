@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200084C RID: 2124
+// Token: 0x02000858 RID: 2136
 [Preserve]
 public class NetPackageTeleportPlayer : NetPackage
 {
-	// Token: 0x06003E0F RID: 15887 RVA: 0x00188592 File Offset: 0x00186792
+	// Token: 0x06003E74 RID: 15988 RVA: 0x0018A5C6 File Offset: 0x001887C6
 	public NetPackageTeleportPlayer Setup(Vector3 _newPos, Vector3? _viewDirection = null, bool _onlyIfNotFlying = false)
 	{
 		this.pos = _newPos;
@@ -15,7 +15,7 @@ public class NetPackageTeleportPlayer : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003E10 RID: 15888 RVA: 0x001885AC File Offset: 0x001867AC
+	// Token: 0x06003E75 RID: 15989 RVA: 0x0018A5E0 File Offset: 0x001887E0
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.pos = new Vector3(_reader.ReadSingle(), _reader.ReadSingle(), _reader.ReadSingle());
@@ -30,7 +30,7 @@ public class NetPackageTeleportPlayer : NetPackage
 		this.onlyIfNotFlying = _reader.ReadBoolean();
 	}
 
-	// Token: 0x06003E11 RID: 15889 RVA: 0x0018861C File Offset: 0x0018681C
+	// Token: 0x06003E76 RID: 15990 RVA: 0x0018A650 File Offset: 0x00188850
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -47,7 +47,7 @@ public class NetPackageTeleportPlayer : NetPackage
 		_writer.Write(this.onlyIfNotFlying);
 	}
 
-	// Token: 0x06003E12 RID: 15890 RVA: 0x001886D8 File Offset: 0x001868D8
+	// Token: 0x06003E77 RID: 15991 RVA: 0x0018A70C File Offset: 0x0018890C
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -63,21 +63,21 @@ public class NetPackageTeleportPlayer : NetPackage
 		Log.Out("Discarding " + base.GetType().Name + " (no local player)");
 	}
 
-	// Token: 0x06003E13 RID: 15891 RVA: 0x000F8E8A File Offset: 0x000F708A
+	// Token: 0x06003E78 RID: 15992 RVA: 0x000F9E96 File Offset: 0x000F8096
 	public override int GetLength()
 	{
 		return 13;
 	}
 
-	// Token: 0x04003213 RID: 12819
+	// Token: 0x04003292 RID: 12946
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector3 pos;
 
-	// Token: 0x04003214 RID: 12820
+	// Token: 0x04003293 RID: 12947
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Vector3? viewDirection;
 
-	// Token: 0x04003215 RID: 12821
+	// Token: 0x04003294 RID: 12948
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool onlyIfNotFlying;
 }

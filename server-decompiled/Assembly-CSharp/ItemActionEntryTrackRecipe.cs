@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D55 RID: 3413
+// Token: 0x02000D68 RID: 3432
 [Preserve]
 public class ItemActionEntryTrackRecipe : BaseItemActionEntry
 {
-	// Token: 0x060067AA RID: 26538 RVA: 0x0028F934 File Offset: 0x0028DB34
+	// Token: 0x06006839 RID: 26681 RVA: 0x002928C8 File Offset: 0x00290AC8
 	public ItemActionEntryTrackRecipe(XUiController _controller, int _craftingTier)
 		: base(_controller, "lblContextActionTrack", "ui_game_symbol_compass", BaseItemActionEntry.GamepadShortCut.DPadLeft, "crafting/craft_click_craft", "ui/ui_denied")
 	{
@@ -14,7 +14,7 @@ public class ItemActionEntryTrackRecipe : BaseItemActionEntry
 		this.selectedCraftingTier = _craftingTier;
 	}
 
-	// Token: 0x060067AB RID: 26539 RVA: 0x0028F980 File Offset: 0x0028DB80
+	// Token: 0x0600683A RID: 26682 RVA: 0x00292914 File Offset: 0x00290B14
 	public override void OnActivated()
 	{
 		Recipe recipe = ((XUiC_RecipeEntry)base.ItemController).Recipe;
@@ -36,7 +36,7 @@ public class ItemActionEntryTrackRecipe : BaseItemActionEntry
 		xui.Recipes.ResetToPreviousTracked(entityPlayer);
 	}
 
-	// Token: 0x04004F6F RID: 20335
+	// Token: 0x0400500D RID: 20493
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int selectedCraftingTier;
 }

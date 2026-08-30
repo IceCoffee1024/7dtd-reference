@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000A06 RID: 2566
+// Token: 0x02000A17 RID: 2583
 public readonly struct SaveDataSlot : IEquatable<SaveDataSlot>, IComparable<SaveDataSlot>, IComparable
 {
-	// Token: 0x06004D1F RID: 19743 RVA: 0x001D9054 File Offset: 0x001D7254
+	// Token: 0x06004DA5 RID: 19877 RVA: 0x001DBAEC File Offset: 0x001D9CEC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SaveDataSlot(SaveDataType type, StringSpan slotPath)
 	{
@@ -18,14 +18,14 @@ public readonly struct SaveDataSlot : IEquatable<SaveDataSlot>, IComparable<Save
 		}
 	}
 
-	// Token: 0x06004D20 RID: 19744 RVA: 0x001D911F File Offset: 0x001D731F
+	// Token: 0x06004DA6 RID: 19878 RVA: 0x001DBBB7 File Offset: 0x001D9DB7
 	public SaveDataSlot(SaveDataManagedPath managedPath)
 	{
 		this.m_internalPath = managedPath;
 	}
 
-	// Token: 0x17000834 RID: 2100
-	// (get) Token: 0x06004D21 RID: 19745 RVA: 0x001D9128 File Offset: 0x001D7328
+	// Token: 0x17000846 RID: 2118
+	// (get) Token: 0x06004DA7 RID: 19879 RVA: 0x001DBBC0 File Offset: 0x001D9DC0
 	public SaveDataType Type
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -35,8 +35,8 @@ public readonly struct SaveDataSlot : IEquatable<SaveDataSlot>, IComparable<Save
 		}
 	}
 
-	// Token: 0x17000835 RID: 2101
-	// (get) Token: 0x06004D22 RID: 19746 RVA: 0x001D9135 File Offset: 0x001D7335
+	// Token: 0x17000847 RID: 2119
+	// (get) Token: 0x06004DA8 RID: 19880 RVA: 0x001DBBCD File Offset: 0x001D9DCD
 	public StringSpan SlotPath
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -46,7 +46,7 @@ public readonly struct SaveDataSlot : IEquatable<SaveDataSlot>, IComparable<Save
 		}
 	}
 
-	// Token: 0x06004D23 RID: 19747 RVA: 0x001D9142 File Offset: 0x001D7342
+	// Token: 0x06004DA9 RID: 19881 RVA: 0x001DBBDA File Offset: 0x001D9DDA
 	public SaveDataSlot GetSimpleSlot()
 	{
 		if (!(this.m_internalPath.PathRelativeToSlot == "d"))
@@ -56,7 +56,7 @@ public readonly struct SaveDataSlot : IEquatable<SaveDataSlot>, IComparable<Save
 		return this;
 	}
 
-	// Token: 0x06004D24 RID: 19748 RVA: 0x001D9178 File Offset: 0x001D7378
+	// Token: 0x06004DAA RID: 19882 RVA: 0x001DBC10 File Offset: 0x001D9E10
 	public override string ToString()
 	{
 		if (this.SlotPath.Length != 0)
@@ -66,7 +66,7 @@ public readonly struct SaveDataSlot : IEquatable<SaveDataSlot>, IComparable<Save
 		return this.Type.ToStringCached<SaveDataType>();
 	}
 
-	// Token: 0x06004D25 RID: 19749 RVA: 0x001D91D0 File Offset: 0x001D73D0
+	// Token: 0x06004DAB RID: 19883 RVA: 0x001DBC68 File Offset: 0x001D9E68
 	public bool Equals(SaveDataSlot other)
 	{
 		if (other.m_internalPath == null)
@@ -76,7 +76,7 @@ public readonly struct SaveDataSlot : IEquatable<SaveDataSlot>, IComparable<Save
 		return this.Type == other.Type && this.SlotPath == other.SlotPath;
 	}
 
-	// Token: 0x06004D26 RID: 19750 RVA: 0x001D9210 File Offset: 0x001D7410
+	// Token: 0x06004DAC RID: 19884 RVA: 0x001DBCA8 File Offset: 0x001D9EA8
 	public override bool Equals(object obj)
 	{
 		if (obj is SaveDataSlot)
@@ -87,25 +87,25 @@ public readonly struct SaveDataSlot : IEquatable<SaveDataSlot>, IComparable<Save
 		return false;
 	}
 
-	// Token: 0x06004D27 RID: 19751 RVA: 0x001D9238 File Offset: 0x001D7438
+	// Token: 0x06004DAD RID: 19885 RVA: 0x001DBCD0 File Offset: 0x001D9ED0
 	public override int GetHashCode()
 	{
 		return (int)((this.Type * (SaveDataType)397) ^ (SaveDataType)this.SlotPath.GetHashCode());
 	}
 
-	// Token: 0x06004D28 RID: 19752 RVA: 0x001D9266 File Offset: 0x001D7466
+	// Token: 0x06004DAE RID: 19886 RVA: 0x001DBCFE File Offset: 0x001D9EFE
 	public static bool operator ==(SaveDataSlot left, SaveDataSlot right)
 	{
 		return left.Equals(right);
 	}
 
-	// Token: 0x06004D29 RID: 19753 RVA: 0x001D9270 File Offset: 0x001D7470
+	// Token: 0x06004DAF RID: 19887 RVA: 0x001DBD08 File Offset: 0x001D9F08
 	public static bool operator !=(SaveDataSlot left, SaveDataSlot right)
 	{
 		return !left.Equals(right);
 	}
 
-	// Token: 0x06004D2A RID: 19754 RVA: 0x001D9280 File Offset: 0x001D7480
+	// Token: 0x06004DB0 RID: 19888 RVA: 0x001DBD18 File Offset: 0x001D9F18
 	public int CompareTo(SaveDataSlot other)
 	{
 		int num = this.Type.CompareTo(other.Type);
@@ -116,7 +116,7 @@ public readonly struct SaveDataSlot : IEquatable<SaveDataSlot>, IComparable<Save
 		return this.SlotPath.CompareTo(other.SlotPath, StringComparison.Ordinal);
 	}
 
-	// Token: 0x06004D2B RID: 19755 RVA: 0x001D92CC File Offset: 0x001D74CC
+	// Token: 0x06004DB1 RID: 19889 RVA: 0x001DBD64 File Offset: 0x001D9F64
 	public int CompareTo(object obj)
 	{
 		if (obj == null)
@@ -131,39 +131,39 @@ public readonly struct SaveDataSlot : IEquatable<SaveDataSlot>, IComparable<Save
 		throw new ArgumentException("Object must be of type SaveDataSlot");
 	}
 
-	// Token: 0x06004D2C RID: 19756 RVA: 0x001D9301 File Offset: 0x001D7501
+	// Token: 0x06004DB2 RID: 19890 RVA: 0x001DBD99 File Offset: 0x001D9F99
 	public static bool operator <(SaveDataSlot left, SaveDataSlot right)
 	{
 		return left.CompareTo(right) < 0;
 	}
 
-	// Token: 0x06004D2D RID: 19757 RVA: 0x001D930E File Offset: 0x001D750E
+	// Token: 0x06004DB3 RID: 19891 RVA: 0x001DBDA6 File Offset: 0x001D9FA6
 	public static bool operator >(SaveDataSlot left, SaveDataSlot right)
 	{
 		return left.CompareTo(right) > 0;
 	}
 
-	// Token: 0x06004D2E RID: 19758 RVA: 0x001D931B File Offset: 0x001D751B
+	// Token: 0x06004DB4 RID: 19892 RVA: 0x001DBDB3 File Offset: 0x001D9FB3
 	public static bool operator <=(SaveDataSlot left, SaveDataSlot right)
 	{
 		return left.CompareTo(right) <= 0;
 	}
 
-	// Token: 0x06004D2F RID: 19759 RVA: 0x001D932B File Offset: 0x001D752B
+	// Token: 0x06004DB5 RID: 19893 RVA: 0x001DBDC3 File Offset: 0x001D9FC3
 	public static bool operator >=(SaveDataSlot left, SaveDataSlot right)
 	{
 		return left.CompareTo(right) >= 0;
 	}
 
-	// Token: 0x04003B99 RID: 15257
+	// Token: 0x04003C2A RID: 15402
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string DUMMY_POSTFIX_WITHOUT_SLASH = "d";
 
-	// Token: 0x04003B9A RID: 15258
+	// Token: 0x04003C2B RID: 15403
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string DUMMY_POSTFIX_WITH_SLASH = "/d";
 
-	// Token: 0x04003B9B RID: 15259
+	// Token: 0x04003C2C RID: 15404
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly SaveDataManagedPath m_internalPath;
 }

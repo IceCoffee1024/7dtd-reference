@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000693 RID: 1683
+// Token: 0x0200069D RID: 1693
 [Preserve]
 public class TimeOfDay : TargetedCompareRequirementBase
 {
-	// Token: 0x06003514 RID: 13588 RVA: 0x0015EE7C File Offset: 0x0015D07C
+	// Token: 0x0600356A RID: 13674 RVA: 0x00161054 File Offset: 0x0015F254
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -26,17 +26,17 @@ public class TimeOfDay : TargetedCompareRequirementBase
 		return RequirementBase.compareValues(num, this.operation, this.timeValue);
 	}
 
-	// Token: 0x06003515 RID: 13589 RVA: 0x0015EF12 File Offset: 0x0015D112
+	// Token: 0x0600356B RID: 13675 RVA: 0x001610EA File Offset: 0x0015F2EA
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("time of day {0}{1} {2}", this.invert ? "NOT " : "", this.operation.ToStringCached<RequirementBase.OperationTypes>(), this.value.ToCultureInvariantString()));
 	}
 
-	// Token: 0x04002AE3 RID: 10979
+	// Token: 0x04002B57 RID: 11095
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isSetup;
 
-	// Token: 0x04002AE4 RID: 10980
+	// Token: 0x04002B58 RID: 11096
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ulong timeValue;
 }

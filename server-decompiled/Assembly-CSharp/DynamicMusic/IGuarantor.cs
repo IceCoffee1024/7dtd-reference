@@ -2,11 +2,11 @@
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A4D RID: 6733
+	// Token: 0x02001A74 RID: 6772
 	public interface IGuarantor
 	{
-		// Token: 0x170018AB RID: 6315
-		// (get) Token: 0x0600CB5B RID: 52059
+		// Token: 0x1700191D RID: 6429
+		// (get) Token: 0x0600CCE4 RID: 52452
 		bool IsPlayGuaranteed { get; }
 	}
 }

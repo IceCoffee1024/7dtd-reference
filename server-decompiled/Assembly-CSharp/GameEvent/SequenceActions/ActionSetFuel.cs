@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001990 RID: 6544
+	// Token: 0x020019B6 RID: 6582
 	[Preserve]
 	public class ActionSetFuel : ActionBaseTargetAction
 	{
-		// Token: 0x0600C7E4 RID: 51172 RVA: 0x00498C3C File Offset: 0x00496E3C
+		// Token: 0x0600C96B RID: 51563 RVA: 0x0049EF94 File Offset: 0x0049D194
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			EntityVehicle entityVehicle = target as EntityVehicle;
@@ -36,14 +36,14 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.InComplete;
 		}
 
-		// Token: 0x0600C7E5 RID: 51173 RVA: 0x00498CC4 File Offset: 0x00496EC4
+		// Token: 0x0600C96C RID: 51564 RVA: 0x0049F01C File Offset: 0x0049D21C
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseEnum<ActionSetFuel.FuelSettingTypes>(ActionSetFuel.PropFuelSettingType, ref this.SettingType);
 		}
 
-		// Token: 0x0600C7E6 RID: 51174 RVA: 0x00498CDE File Offset: 0x00496EDE
+		// Token: 0x0600C96D RID: 51565 RVA: 0x0049F036 File Offset: 0x0049D236
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -54,21 +54,21 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009790 RID: 38800
+		// Token: 0x040098B9 RID: 39097
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ActionSetFuel.FuelSettingTypes SettingType;
 
-		// Token: 0x04009791 RID: 38801
+		// Token: 0x040098BA RID: 39098
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropFuelSettingType = "setting_type";
 
-		// Token: 0x02001991 RID: 6545
+		// Token: 0x020019B7 RID: 6583
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum FuelSettingTypes
 		{
-			// Token: 0x04009793 RID: 38803
+			// Token: 0x040098BC RID: 39100
 			Remove,
-			// Token: 0x04009794 RID: 38804
+			// Token: 0x040098BD RID: 39101
 			Fill
 		}
 	}

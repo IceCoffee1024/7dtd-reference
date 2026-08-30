@@ -3,11 +3,11 @@ using GamePath;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000449 RID: 1097
+// Token: 0x0200044D RID: 1101
 [Preserve]
 public class EAIPathTest : EAIBase
 {
-	// Token: 0x06002181 RID: 8577 RVA: 0x000CAA33 File Offset: 0x000C8C33
+	// Token: 0x0600219E RID: 8606 RVA: 0x000CB23F File Offset: 0x000C943F
 	public override void Init(EntityAlive _theEntity)
 	{
 		base.Init(_theEntity);
@@ -15,7 +15,7 @@ public class EAIPathTest : EAIBase
 		this.banditEntity = _theEntity as EntityBandit;
 	}
 
-	// Token: 0x06002182 RID: 8578 RVA: 0x000CAA4F File Offset: 0x000C8C4F
+	// Token: 0x0600219F RID: 8607 RVA: 0x000CB25B File Offset: 0x000C945B
 	public void SetTargetMove(Vector3 _targetWorld, EntityAlive _targetYaw, bool _canBreakBlocks)
 	{
 		if (this.banditEntity != null)
@@ -28,7 +28,7 @@ public class EAIPathTest : EAIBase
 		}
 	}
 
-	// Token: 0x06002183 RID: 8579 RVA: 0x000CAA82 File Offset: 0x000C8C82
+	// Token: 0x060021A0 RID: 8608 RVA: 0x000CB28E File Offset: 0x000C948E
 	public void CancelTargetMove()
 	{
 		this.targetWorldPosition = Vector3.zero;
@@ -36,19 +36,19 @@ public class EAIPathTest : EAIBase
 		this.cancel = true;
 	}
 
-	// Token: 0x06002184 RID: 8580 RVA: 0x000CAA9D File Offset: 0x000C8C9D
+	// Token: 0x060021A1 RID: 8609 RVA: 0x000CB2A9 File Offset: 0x000C94A9
 	public override bool CanExecute()
 	{
 		return this.newTarget;
 	}
 
-	// Token: 0x06002185 RID: 8581 RVA: 0x000CAAA5 File Offset: 0x000C8CA5
+	// Token: 0x060021A2 RID: 8610 RVA: 0x000CB2B1 File Offset: 0x000C94B1
 	public override bool Continue()
 	{
 		return !this.cancel;
 	}
 
-	// Token: 0x06002186 RID: 8582 RVA: 0x000CAAB0 File Offset: 0x000C8CB0
+	// Token: 0x060021A3 RID: 8611 RVA: 0x000CB2BC File Offset: 0x000C94BC
 	public override void Update()
 	{
 		base.Update();
@@ -83,27 +83,27 @@ public class EAIPathTest : EAIBase
 		}
 	}
 
-	// Token: 0x04001718 RID: 5912
+	// Token: 0x0400172D RID: 5933
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityBandit banditEntity;
 
-	// Token: 0x04001719 RID: 5913
+	// Token: 0x0400172E RID: 5934
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 targetWorldPosition;
 
-	// Token: 0x0400171A RID: 5914
+	// Token: 0x0400172F RID: 5935
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityAlive targetYaw;
 
-	// Token: 0x0400171B RID: 5915
+	// Token: 0x04001730 RID: 5936
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool newTarget;
 
-	// Token: 0x0400171C RID: 5916
+	// Token: 0x04001731 RID: 5937
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool cancel;
 
-	// Token: 0x0400171D RID: 5917
+	// Token: 0x04001732 RID: 5938
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool canBreakBlocks;
 }

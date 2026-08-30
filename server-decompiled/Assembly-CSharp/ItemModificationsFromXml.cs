@@ -6,10 +6,10 @@ using System.Xml.Linq;
 using UnityEngine;
 using XMLData.Item;
 
-// Token: 0x020006B1 RID: 1713
+// Token: 0x020006BB RID: 1723
 public class ItemModificationsFromXml
 {
-	// Token: 0x06003573 RID: 13683 RVA: 0x001603F3 File Offset: 0x0015E5F3
+	// Token: 0x060035C9 RID: 13769 RVA: 0x001625CB File Offset: 0x001607CB
 	public static IEnumerator Load(XmlFile xmlFile)
 	{
 		XElement root = xmlFile.XmlDoc.Root;
@@ -21,7 +21,7 @@ public class ItemModificationsFromXml
 		yield break;
 	}
 
-	// Token: 0x06003574 RID: 13684 RVA: 0x00160404 File Offset: 0x0015E604
+	// Token: 0x060035CA RID: 13770 RVA: 0x001625DC File Offset: 0x001607DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseNode(XElement root)
 	{
@@ -31,7 +31,7 @@ public class ItemModificationsFromXml
 		}
 	}
 
-	// Token: 0x06003575 RID: 13685 RVA: 0x00160458 File Offset: 0x0015E658
+	// Token: 0x060035CB RID: 13771 RVA: 0x00162630 File Offset: 0x00160830
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ParseModifier(XElement _element)
 	{
@@ -56,7 +56,7 @@ public class ItemModificationsFromXml
 		ItemModificationsFromXml.parseItem(_element, itemClassModifier);
 	}
 
-	// Token: 0x06003576 RID: 13686 RVA: 0x0016053C File Offset: 0x0015E73C
+	// Token: 0x060035CC RID: 13772 RVA: 0x00162714 File Offset: 0x00160914
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void parseItem(XElement elementItem, ItemClassModifier item)
 	{

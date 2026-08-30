@@ -1,78 +1,80 @@
 ﻿using System;
 
-// Token: 0x0200117F RID: 4479
+// Token: 0x02001199 RID: 4505
 public enum EntitlementSetEnum
 {
-	// Token: 0x040069AB RID: 27051
+	// Token: 0x04006A7A RID: 27258
 	None,
-	// Token: 0x040069AC RID: 27052
+	// Token: 0x04006A7B RID: 27259
 	MarauderCosmetic,
-	// Token: 0x040069AD RID: 27053
+	// Token: 0x04006A7C RID: 27260
 	HoarderCosmetic,
-	// Token: 0x040069AE RID: 27054
+	// Token: 0x04006A7D RID: 27261
 	DesertCosmetic,
-	// Token: 0x040069AF RID: 27055
+	// Token: 0x04006A7E RID: 27262
 	PirateCosmetic,
-	// Token: 0x040069B0 RID: 27056
+	// Token: 0x04006A7F RID: 27263
 	HellreaverCosmetic,
-	// Token: 0x040069B1 RID: 27057
+	// Token: 0x04006A80 RID: 27264
 	ButcherCosmetic,
-	// Token: 0x040069B2 RID: 27058
+	// Token: 0x04006A81 RID: 27265
 	ClassicSurvivorCosmetic,
-	// Token: 0x040069B3 RID: 27059
+	// Token: 0x04006A82 RID: 27266
 	WinterCosmetic,
-	// Token: 0x040069B4 RID: 27060
+	// Token: 0x04006A83 RID: 27267
 	WorkingStiffCosmetic,
-	// Token: 0x040069B5 RID: 27061
+	// Token: 0x04006A84 RID: 27268
 	CasualCosmetic,
-	// Token: 0x040069B6 RID: 27062
+	// Token: 0x04006A85 RID: 27269
 	BeachCosmetic,
-	// Token: 0x040069B7 RID: 27063
+	// Token: 0x04006A86 RID: 27270
 	MonsterMaskCosmetics,
-	// Token: 0x040069B8 RID: 27064
+	// Token: 0x04006A87 RID: 27271
 	StoryMaskCosmetics,
-	// Token: 0x040069B9 RID: 27065
+	// Token: 0x04006A88 RID: 27272
 	ChristmasCosmetics,
-	// Token: 0x040069BA RID: 27066
+	// Token: 0x04006A89 RID: 27273
 	CrimsonWarlordCosmetic,
-	// Token: 0x040069BB RID: 27067
+	// Token: 0x04006A8A RID: 27274
 	SamuraiCosmetic,
-	// Token: 0x040069BC RID: 27068
+	// Token: 0x04006A8B RID: 27275
+	HenpocalypseCosmetic,
+	// Token: 0x04006A8C RID: 27276
 	TwitchPimpHatBlueCosmetic,
-	// Token: 0x040069BD RID: 27069
+	// Token: 0x04006A8D RID: 27277
 	TwitchPimpHatPurpleCosmetic,
-	// Token: 0x040069BE RID: 27070
+	// Token: 0x04006A8E RID: 27278
 	TwitchWatcherCosmetic,
-	// Token: 0x040069BF RID: 27071
+	// Token: 0x04006A8F RID: 27279
 	TwitchCrackABookStoreGearOutfitCosmetic,
-	// Token: 0x040069C0 RID: 27072
+	// Token: 0x04006A90 RID: 27280
 	TwitchMoPowerStoreGearOutfitCosmetic,
-	// Token: 0x040069C1 RID: 27073
+	// Token: 0x04006A91 RID: 27281
 	TwitchPassNGasStoreGearOutfitCosmetic,
-	// Token: 0x040069C2 RID: 27074
+	// Token: 0x04006A92 RID: 27282
 	TwitchPopNPillsStoreGearOutfitCosmetic,
-	// Token: 0x040069C3 RID: 27075
+	// Token: 0x04006A93 RID: 27283
 	TwitchSavageCountryStoreGearOutfitCosmetic,
-	// Token: 0x040069C4 RID: 27076
+	// Token: 0x04006A94 RID: 27284
 	TwitchShamwayStoreGearOutfitCosmetic,
-	// Token: 0x040069C5 RID: 27077
+	// Token: 0x04006A95 RID: 27285
 	TwitchShotgunMessiahStoreGearOutfitCosmetic,
-	// Token: 0x040069C6 RID: 27078
+	// Token: 0x04006A96 RID: 27286
 	TwitchWorkingStiffsStoreGearOutfitCosmetic,
-	// Token: 0x040069C7 RID: 27079
+	// Token: 0x04006A97 RID: 27287
 	TwitchCrackABookStoreGearHatCosmetic,
-	// Token: 0x040069C8 RID: 27080
+	// Token: 0x04006A98 RID: 27288
 	TwitchMoPowerStoreGearHatCosmetic,
-	// Token: 0x040069C9 RID: 27081
+	// Token: 0x04006A99 RID: 27289
 	TwitchPassNGasStoreGearHatCosmetic,
-	// Token: 0x040069CA RID: 27082
+	// Token: 0x04006A9A RID: 27290
 	TwitchPopNPillsStoreGearHatCosmetic,
-	// Token: 0x040069CB RID: 27083
+	// Token: 0x04006A9B RID: 27291
 	TwitchSavageCountryStoreGearHatCosmetic,
-	// Token: 0x040069CC RID: 27084
+	// Token: 0x04006A9C RID: 27292
 	TwitchShamwayStoreGearHatCosmetic,
-	// Token: 0x040069CD RID: 27085
+	// Token: 0x04006A9D RID: 27293
 	TwitchShotgunMessiahStoreGearHatCosmetic,
-	// Token: 0x040069CE RID: 27086
+	// Token: 0x04006A9E RID: 27294
 	TwitchWorkingStiffsStoreGearHatCosmetic
 }

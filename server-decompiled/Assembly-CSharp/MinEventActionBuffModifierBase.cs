@@ -3,10 +3,10 @@ using System.Globalization;
 using System.Linq;
 using System.Xml.Linq;
 
-// Token: 0x020006C3 RID: 1731
+// Token: 0x020006CD RID: 1741
 public class MinEventActionBuffModifierBase : MinEventActionTargetedBase
 {
-	// Token: 0x060035BE RID: 13758 RVA: 0x0016356C File Offset: 0x0016176C
+	// Token: 0x06003614 RID: 13844 RVA: 0x00165744 File Offset: 0x00163944
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -52,7 +52,7 @@ public class MinEventActionBuffModifierBase : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x060035BF RID: 13759 RVA: 0x001636D4 File Offset: 0x001618D4
+	// Token: 0x06003615 RID: 13845 RVA: 0x001658AC File Offset: 0x00163AAC
 	public override void ParseXMLPostProcess()
 	{
 		base.ParseXMLPostProcess();
@@ -70,7 +70,7 @@ public class MinEventActionBuffModifierBase : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x060035C0 RID: 13760 RVA: 0x00163778 File Offset: 0x00161978
+	// Token: 0x06003616 RID: 13846 RVA: 0x00165950 File Offset: 0x00163B50
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Remove(MinEventParams _params)
 	{
@@ -89,15 +89,15 @@ public class MinEventActionBuffModifierBase : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x04002B37 RID: 11063
+	// Token: 0x04002BAB RID: 11179
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string[] buffNames;
 
-	// Token: 0x04002B38 RID: 11064
+	// Token: 0x04002BAC RID: 11180
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float[] buffWeights;
 
-	// Token: 0x04002B39 RID: 11065
+	// Token: 0x04002BAD RID: 11181
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool buffOneOnly;
 }

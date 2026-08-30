@@ -1,34 +1,34 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200154D RID: 5453
+// Token: 0x02001568 RID: 5480
 public static class vp_TargetEvent
 {
-	// Token: 0x0600AAB0 RID: 43696 RVA: 0x003FA758 File Offset: 0x003F8958
+	// Token: 0x0600ABAD RID: 43949 RVA: 0x003FFA98 File Offset: 0x003FDC98
 	public static void Register(object target, string eventName, Action callback)
 	{
 		vp_TargetEventHandler.Register(target, eventName, callback, 0);
 	}
 
-	// Token: 0x0600AAB1 RID: 43697 RVA: 0x003FA763 File Offset: 0x003F8963
+	// Token: 0x0600ABAE RID: 43950 RVA: 0x003FFAA3 File Offset: 0x003FDCA3
 	public static void Unregister(object target, string eventName, Action callback)
 	{
 		vp_TargetEventHandler.Unregister(target, eventName, callback);
 	}
 
-	// Token: 0x0600AAB2 RID: 43698 RVA: 0x003FA76D File Offset: 0x003F896D
+	// Token: 0x0600ABAF RID: 43951 RVA: 0x003FFAAD File Offset: 0x003FDCAD
 	public static void Unregister(object target)
 	{
 		vp_TargetEventHandler.Unregister(target, null, null);
 	}
 
-	// Token: 0x0600AAB3 RID: 43699 RVA: 0x003FA777 File Offset: 0x003F8977
+	// Token: 0x0600ABB0 RID: 43952 RVA: 0x003FFAB7 File Offset: 0x003FDCB7
 	public static void Unregister(Component component)
 	{
 		vp_TargetEventHandler.Unregister(component);
 	}
 
-	// Token: 0x0600AAB4 RID: 43700 RVA: 0x003FA780 File Offset: 0x003F8980
+	// Token: 0x0600ABB1 RID: 43953 RVA: 0x003FFAC0 File Offset: 0x003FDCC0
 	public static void Send(object target, string eventName, vp_TargetEventOptions options = vp_TargetEventOptions.DontRequireReceiver)
 	{
 		for (;;)
@@ -52,7 +52,7 @@ public static class vp_TargetEvent
 		vp_TargetEventHandler.OnNoReceiver(eventName, options);
 	}
 
-	// Token: 0x0600AAB5 RID: 43701 RVA: 0x003FA7D4 File Offset: 0x003F89D4
+	// Token: 0x0600ABB2 RID: 43954 RVA: 0x003FFB14 File Offset: 0x003FDD14
 	public static void SendUpwards(Component target, string eventName, vp_TargetEventOptions options = vp_TargetEventOptions.DontRequireReceiver)
 	{
 		for (;;)

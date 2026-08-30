@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020015AE RID: 5550
+// Token: 0x020015C9 RID: 5577
 [Serializable]
 public class vp_UnitBankInstance : vp_ItemInstance
 {
-	// Token: 0x170013EC RID: 5100
-	// (get) Token: 0x0600AD5D RID: 44381 RVA: 0x00409FBE File Offset: 0x004081BE
-	// (set) Token: 0x0600AD5E RID: 44382 RVA: 0x00409FEA File Offset: 0x004081EA
+	// Token: 0x17001425 RID: 5157
+	// (get) Token: 0x0600AE5A RID: 44634 RVA: 0x0040F2FE File Offset: 0x0040D4FE
+	// (set) Token: 0x0600AE5B RID: 44635 RVA: 0x0040F32A File Offset: 0x0040D52A
 	public int Capacity
 	{
 		get
@@ -24,7 +24,7 @@ public class vp_UnitBankInstance : vp_ItemInstance
 		}
 	}
 
-	// Token: 0x0600AD5F RID: 44383 RVA: 0x00409FF9 File Offset: 0x004081F9
+	// Token: 0x0600AE5C RID: 44636 RVA: 0x0040F339 File Offset: 0x0040D539
 	public vp_UnitBankInstance(vp_UnitBankType unitBankType, int id, vp_Inventory inventory)
 		: base(unitBankType, id)
 	{
@@ -32,7 +32,7 @@ public class vp_UnitBankInstance : vp_ItemInstance
 		this.m_Inventory = inventory;
 	}
 
-	// Token: 0x0600AD60 RID: 44384 RVA: 0x0040A01D File Offset: 0x0040821D
+	// Token: 0x0600AE5D RID: 44637 RVA: 0x0040F35D File Offset: 0x0040D55D
 	public vp_UnitBankInstance(vp_UnitType unitType, vp_Inventory inventory)
 		: base(null, 0)
 	{
@@ -40,7 +40,7 @@ public class vp_UnitBankInstance : vp_ItemInstance
 		this.m_Inventory = inventory;
 	}
 
-	// Token: 0x0600AD61 RID: 44385 RVA: 0x0040A03C File Offset: 0x0040823C
+	// Token: 0x0600AE5E RID: 44638 RVA: 0x0040F37C File Offset: 0x0040D57C
 	public virtual bool TryRemoveUnits(int amount)
 	{
 		if (this.Count <= 0)
@@ -56,7 +56,7 @@ public class vp_UnitBankInstance : vp_ItemInstance
 		return true;
 	}
 
-	// Token: 0x0600AD62 RID: 44386 RVA: 0x0040A06C File Offset: 0x0040826C
+	// Token: 0x0600AE5F RID: 44639 RVA: 0x0040F3AC File Offset: 0x0040D5AC
 	public virtual bool TryGiveUnits(int amount)
 	{
 		if (this.Type != null && !((vp_UnitBankType)this.Type).Reloadable)
@@ -85,8 +85,8 @@ public class vp_UnitBankInstance : vp_ItemInstance
 		return true;
 	}
 
-	// Token: 0x170013ED RID: 5101
-	// (get) Token: 0x0600AD63 RID: 44387 RVA: 0x0040A0F8 File Offset: 0x004082F8
+	// Token: 0x17001426 RID: 5158
+	// (get) Token: 0x0600AE60 RID: 44640 RVA: 0x0040F438 File Offset: 0x0040D638
 	public virtual bool IsInternal
 	{
 		get
@@ -95,7 +95,7 @@ public class vp_UnitBankInstance : vp_ItemInstance
 		}
 	}
 
-	// Token: 0x0600AD64 RID: 44388 RVA: 0x0040A108 File Offset: 0x00408308
+	// Token: 0x0600AE61 RID: 44641 RVA: 0x0040F448 File Offset: 0x0040D648
 	public virtual bool DoAddUnits(int amount)
 	{
 		this.m_PrevCount = this.Count;
@@ -108,7 +108,7 @@ public class vp_UnitBankInstance : vp_ItemInstance
 		return this.m_Result;
 	}
 
-	// Token: 0x0600AD65 RID: 44389 RVA: 0x0040A198 File Offset: 0x00408398
+	// Token: 0x0600AE62 RID: 44642 RVA: 0x0040F4D8 File Offset: 0x0040D6D8
 	public virtual bool DoRemoveUnits(int amount)
 	{
 		this.m_PrevCount = this.Count;
@@ -121,7 +121,7 @@ public class vp_UnitBankInstance : vp_ItemInstance
 		return this.m_Result;
 	}
 
-	// Token: 0x0600AD66 RID: 44390 RVA: 0x0040A234 File Offset: 0x00408434
+	// Token: 0x0600AE63 RID: 44643 RVA: 0x0040F574 File Offset: 0x0040D774
 	public virtual int ClampToCapacity()
 	{
 		int count = this.Count;
@@ -133,35 +133,35 @@ public class vp_UnitBankInstance : vp_ItemInstance
 		return count - this.Count;
 	}
 
-	// Token: 0x040080F4 RID: 33012
+	// Token: 0x040081CD RID: 33229
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const int UNLIMITED = -1;
 
-	// Token: 0x040080F5 RID: 33013
+	// Token: 0x040081CE RID: 33230
 	[SerializeField]
 	public vp_UnitType UnitType;
 
-	// Token: 0x040080F6 RID: 33014
+	// Token: 0x040081CF RID: 33231
 	[SerializeField]
 	public int Count;
 
-	// Token: 0x040080F7 RID: 33015
+	// Token: 0x040081D0 RID: 33232
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int m_Capacity = -1;
 
-	// Token: 0x040080F8 RID: 33016
+	// Token: 0x040081D1 RID: 33233
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public vp_Inventory m_Inventory;
 
-	// Token: 0x040080F9 RID: 33017
+	// Token: 0x040081D2 RID: 33234
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_Result;
 
-	// Token: 0x040080FA RID: 33018
+	// Token: 0x040081D3 RID: 33235
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public int m_PrevCount;

@@ -1,32 +1,32 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001200 RID: 4608
+// Token: 0x0200121C RID: 4636
 public abstract class GUIWindow
 {
-	// Token: 0x060092FA RID: 37626 RVA: 0x0037A20B File Offset: 0x0037840B
+	// Token: 0x060093FE RID: 37886 RVA: 0x0037F4E7 File Offset: 0x0037D6E7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public GUIWindow(string _id)
 	{
 		this.Id = _id;
 	}
 
-	// Token: 0x060092FB RID: 37627 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060093FF RID: 37887 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void OnGUI()
 	{
 	}
 
-	// Token: 0x060092FC RID: 37628 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009400 RID: 37888 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void Update()
 	{
 	}
 
-	// Token: 0x060092FD RID: 37629 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009401 RID: 37889 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void OnOpen()
 	{
 	}
 
-	// Token: 0x060092FE RID: 37630 RVA: 0x0037A225 File Offset: 0x00378425
+	// Token: 0x06009402 RID: 37890 RVA: 0x0037F501 File Offset: 0x0037D701
 	public virtual void OnClose()
 	{
 		Action onWindowClose = this.OnWindowClose;
@@ -37,37 +37,37 @@ public abstract class GUIWindow
 		this.OnWindowClose = null;
 	}
 
-	// Token: 0x060092FF RID: 37631 RVA: 0x0037A23F File Offset: 0x0037843F
+	// Token: 0x06009403 RID: 37891 RVA: 0x0037F51B File Offset: 0x0037D71B
 	public virtual PlayerActionsBase GetActionSet()
 	{
 		return this.playerUI.playerInput.GUIActions;
 	}
 
-	// Token: 0x06009300 RID: 37632 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x06009404 RID: 37892 RVA: 0x00020021 File Offset: 0x0001E221
 	public virtual bool HasActionSet()
 	{
 		return true;
 	}
 
-	// Token: 0x06009301 RID: 37633 RVA: 0x0037A254 File Offset: 0x00378454
+	// Token: 0x06009405 RID: 37893 RVA: 0x0037F530 File Offset: 0x0037D730
 	public override bool Equals(object _obj)
 	{
 		GUIWindow guiwindow = _obj as GUIWindow;
 		return guiwindow != null && guiwindow.Id.Equals(this.Id);
 	}
 
-	// Token: 0x06009302 RID: 37634 RVA: 0x0037A27E File Offset: 0x0037847E
+	// Token: 0x06009406 RID: 37894 RVA: 0x0037F55A File Offset: 0x0037D75A
 	public override int GetHashCode()
 	{
 		return this.Id.GetHashCode();
 	}
 
-	// Token: 0x06009303 RID: 37635 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06009407 RID: 37895 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void Cleanup()
 	{
 	}
 
-	// Token: 0x06009304 RID: 37636 RVA: 0x0037A28C File Offset: 0x0037848C
+	// Token: 0x06009408 RID: 37896 RVA: 0x0037F568 File Offset: 0x0037D768
 	public static Matrix4x4 UiScaleMatrix(out float _targetScale, out float _actualScale, float _x = 0f, float _y = 0f, float _clampMin = 0.4f, float _clampMax = 2f)
 	{
 		_targetScale = (float)Screen.height / 1080f;
@@ -78,36 +78,36 @@ public abstract class GUIWindow
 		return matrix;
 	}
 
-	// Token: 0x04006E0F RID: 28175
+	// Token: 0x04006EE8 RID: 28392
 	public readonly string Id;
 
-	// Token: 0x04006E10 RID: 28176
+	// Token: 0x04006EE9 RID: 28393
 	public bool bActionSetEnabled;
 
-	// Token: 0x04006E11 RID: 28177
+	// Token: 0x04006EEA RID: 28394
 	public bool isShowing;
 
-	// Token: 0x04006E12 RID: 28178
+	// Token: 0x04006EEB RID: 28395
 	public bool isModal;
 
-	// Token: 0x04006E13 RID: 28179
+	// Token: 0x04006EEC RID: 28396
 	public bool alwaysUsesMouseCursor;
 
-	// Token: 0x04006E14 RID: 28180
+	// Token: 0x04006EED RID: 28397
 	public bool isEscClosable;
 
-	// Token: 0x04006E15 RID: 28181
+	// Token: 0x04006EEE RID: 28398
 	public bool isInputActive;
 
-	// Token: 0x04006E16 RID: 28182
+	// Token: 0x04006EEF RID: 28399
 	public GUIWindowManager windowManager;
 
-	// Token: 0x04006E17 RID: 28183
+	// Token: 0x04006EF0 RID: 28400
 	public LocalPlayerUI playerUI;
 
-	// Token: 0x04006E18 RID: 28184
+	// Token: 0x04006EF1 RID: 28401
 	public string openWindowOnEsc = string.Empty;
 
-	// Token: 0x04006E19 RID: 28185
+	// Token: 0x04006EF2 RID: 28402
 	public Action OnWindowClose;
 }

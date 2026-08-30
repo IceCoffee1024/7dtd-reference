@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x0200018A RID: 394
+// Token: 0x0200018C RID: 396
 public class TileEntityCompositeData
 {
-	// Token: 0x06000C08 RID: 3080 RVA: 0x0004BA63 File Offset: 0x00049C63
+	// Token: 0x06000C13 RID: 3091 RVA: 0x0004BE7B File Offset: 0x0004A07B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void Init()
 	{
@@ -30,13 +30,13 @@ public class TileEntityCompositeData
 		}, false);
 	}
 
-	// Token: 0x06000C09 RID: 3081 RVA: 0x0004BAA2 File Offset: 0x00049CA2
+	// Token: 0x06000C14 RID: 3092 RVA: 0x0004BEBA File Offset: 0x0004A0BA
 	public static void Cleanup()
 	{
 		TileEntityCompositeData.FeaturesByBlock.Clear();
 	}
 
-	// Token: 0x06000C0A RID: 3082 RVA: 0x0004BAB0 File Offset: 0x00049CB0
+	// Token: 0x06000C15 RID: 3093 RVA: 0x0004BEC8 File Offset: 0x0004A0C8
 	public static TileEntityCompositeData ParseBlock(BlockCompositeTileEntity _block)
 	{
 		DynamicProperties dynamicProperties;
@@ -47,7 +47,7 @@ public class TileEntityCompositeData
 		return new TileEntityCompositeData(_block, dynamicProperties);
 	}
 
-	// Token: 0x06000C0B RID: 3083 RVA: 0x0004BAF8 File Offset: 0x00049CF8
+	// Token: 0x06000C16 RID: 3094 RVA: 0x0004BF10 File Offset: 0x0004A110
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileEntityCompositeData(BlockCompositeTileEntity _block, DynamicProperties _compositeProps)
 	{
@@ -108,19 +108,19 @@ public class TileEntityCompositeData
 		TileEntityCompositeData.FeaturesByBlock[_block] = this;
 	}
 
-	// Token: 0x06000C0C RID: 3084 RVA: 0x0004BD1C File Offset: 0x00049F1C
+	// Token: 0x06000C17 RID: 3095 RVA: 0x0004C134 File Offset: 0x0004A334
 	public int GetFeatureIndex(ReadOnlyMemory<char> _featureName)
 	{
 		return this.featureIndexByName.GetValueOrDefault(_featureName, -1);
 	}
 
-	// Token: 0x06000C0D RID: 3085 RVA: 0x0004BD2B File Offset: 0x00049F2B
+	// Token: 0x06000C18 RID: 3096 RVA: 0x0004C143 File Offset: 0x0004A343
 	public int GetFeatureIndex(int _featureNameHash)
 	{
 		return this.featureIndexByHash.GetValueOrDefault(_featureNameHash, -1);
 	}
 
-	// Token: 0x06000C0E RID: 3086 RVA: 0x0004BD3C File Offset: 0x00049F3C
+	// Token: 0x06000C19 RID: 3097 RVA: 0x0004C154 File Offset: 0x0004A354
 	public int GetFeatureIndex<T>() where T : class
 	{
 		Type typeFromHandle = typeof(T);
@@ -142,25 +142,25 @@ public class TileEntityCompositeData
 		return -1;
 	}
 
-	// Token: 0x06000C0F RID: 3087 RVA: 0x0004BDB4 File Offset: 0x00049FB4
+	// Token: 0x06000C1A RID: 3098 RVA: 0x0004C1CC File Offset: 0x0004A3CC
 	public bool HasFeature(ReadOnlyMemory<char> _featureName)
 	{
 		return this.GetFeatureIndex(_featureName) >= 0;
 	}
 
-	// Token: 0x06000C10 RID: 3088 RVA: 0x0004BDC3 File Offset: 0x00049FC3
+	// Token: 0x06000C1B RID: 3099 RVA: 0x0004C1DB File Offset: 0x0004A3DB
 	public bool HasFeature(int _featureNameHash)
 	{
 		return this.GetFeatureIndex(_featureNameHash) >= 0;
 	}
 
-	// Token: 0x06000C11 RID: 3089 RVA: 0x0004BDD2 File Offset: 0x00049FD2
+	// Token: 0x06000C1C RID: 3100 RVA: 0x0004C1EA File Offset: 0x0004A3EA
 	public bool HasFeature<T>() where T : class
 	{
 		return this.GetFeatureIndex<T>() >= 0;
 	}
 
-	// Token: 0x06000C12 RID: 3090 RVA: 0x0004BDE0 File Offset: 0x00049FE0
+	// Token: 0x06000C1D RID: 3101 RVA: 0x0004C1F8 File Offset: 0x0004A3F8
 	public bool TryGetFeatureData<T>(out TileEntityFeatureData featureData) where T : class, ITileEntityFeature
 	{
 		int featureIndex = this.GetFeatureIndex<T>();
@@ -173,7 +173,7 @@ public class TileEntityCompositeData
 		return false;
 	}
 
-	// Token: 0x06000C13 RID: 3091 RVA: 0x0004BE0C File Offset: 0x0004A00C
+	// Token: 0x06000C1E RID: 3102 RVA: 0x0004C224 File Offset: 0x0004A424
 	public void PrintConfig()
 	{
 		Log.Out("Composite block: " + this.Block.GetBlockName() + ":");
@@ -207,56 +207,56 @@ public class TileEntityCompositeData
 		}
 	}
 
-	// Token: 0x04000AD3 RID: 2771
+	// Token: 0x04000AE0 RID: 2784
 	public static readonly Dictionary<BlockCompositeTileEntity, TileEntityCompositeData> FeaturesByBlock = new Dictionary<BlockCompositeTileEntity, TileEntityCompositeData>();
 
-	// Token: 0x04000AD4 RID: 2772
+	// Token: 0x04000AE1 RID: 2785
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly Dictionary<string, Type> knownFeatures = new Dictionary<string, Type>();
 
-	// Token: 0x04000AD5 RID: 2773
+	// Token: 0x04000AE2 RID: 2786
 	public readonly BlockCompositeTileEntity Block;
 
-	// Token: 0x04000AD6 RID: 2774
+	// Token: 0x04000AE3 RID: 2787
 	public readonly DynamicProperties CompositeProps;
 
-	// Token: 0x04000AD7 RID: 2775
+	// Token: 0x04000AE4 RID: 2788
 	public readonly List<TileEntityFeatureData> Features = new List<TileEntityFeatureData>();
 
-	// Token: 0x04000AD8 RID: 2776
+	// Token: 0x04000AE5 RID: 2789
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<Type, int> featureIndexByType = new Dictionary<Type, int>();
 
-	// Token: 0x04000AD9 RID: 2777
+	// Token: 0x04000AE6 RID: 2790
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<ReadOnlyMemory<char>, int> featureIndexByName = new Dictionary<ReadOnlyMemory<char>, int>(TileEntityCompositeData.MemStringEqualityComparer.Instance);
 
-	// Token: 0x04000ADA RID: 2778
+	// Token: 0x04000AE7 RID: 2791
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<int, int> featureIndexByHash = new Dictionary<int, int>();
 
-	// Token: 0x0200018B RID: 395
+	// Token: 0x0200018D RID: 397
 	public class MemStringEqualityComparer : IEqualityComparer<ReadOnlyMemory<char>>
 	{
-		// Token: 0x06000C15 RID: 3093 RVA: 0x0000640C File Offset: 0x0000460C
+		// Token: 0x06000C20 RID: 3104 RVA: 0x0000640C File Offset: 0x0000460C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public MemStringEqualityComparer()
 		{
 		}
 
-		// Token: 0x06000C16 RID: 3094 RVA: 0x0004BFBA File Offset: 0x0004A1BA
+		// Token: 0x06000C21 RID: 3105 RVA: 0x0004C3D2 File Offset: 0x0004A5D2
 		public int GetHashCode(ReadOnlyMemory<char> _obj)
 		{
 			return _obj.Span.GetStableHashCode();
 		}
 
-		// Token: 0x06000C17 RID: 3095 RVA: 0x0004BFC8 File Offset: 0x0004A1C8
+		// Token: 0x06000C22 RID: 3106 RVA: 0x0004C3E0 File Offset: 0x0004A5E0
 		public bool Equals(ReadOnlyMemory<char> _x, ReadOnlyMemory<char> _y)
 		{
 			return _x.Span.Equals(_y.Span, StringComparison.Ordinal);
 		}
 
-		// Token: 0x04000ADB RID: 2779
+		// Token: 0x04000AE8 RID: 2792
 		public static readonly TileEntityCompositeData.MemStringEqualityComparer Instance = new TileEntityCompositeData.MemStringEqualityComparer();
 	}
 }

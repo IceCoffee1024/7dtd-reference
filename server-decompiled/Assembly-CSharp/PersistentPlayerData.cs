@@ -7,12 +7,12 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020008E7 RID: 2279
+// Token: 0x020008F3 RID: 2291
 [Preserve]
 public class PersistentPlayerData
 {
-	// Token: 0x170006E8 RID: 1768
-	// (get) Token: 0x060041F9 RID: 16889 RVA: 0x0019BCA4 File Offset: 0x00199EA4
+	// Token: 0x170006F4 RID: 1780
+	// (get) Token: 0x0600425E RID: 16990 RVA: 0x0019DD7C File Offset: 0x0019BF7C
 	public PlatformUserIdentifierAbs PrimaryId
 	{
 		get
@@ -21,8 +21,8 @@ public class PersistentPlayerData
 		}
 	}
 
-	// Token: 0x170006E9 RID: 1769
-	// (get) Token: 0x060041FA RID: 16890 RVA: 0x0019BCB1 File Offset: 0x00199EB1
+	// Token: 0x170006F5 RID: 1781
+	// (get) Token: 0x0600425F RID: 16991 RVA: 0x0019DD89 File Offset: 0x0019BF89
 	public IPlatformUserData PlatformData
 	{
 		get
@@ -31,8 +31,8 @@ public class PersistentPlayerData
 		}
 	}
 
-	// Token: 0x170006EA RID: 1770
-	// (get) Token: 0x060041FB RID: 16891 RVA: 0x0019BCBE File Offset: 0x00199EBE
+	// Token: 0x170006F6 RID: 1782
+	// (get) Token: 0x06004260 RID: 16992 RVA: 0x0019DD96 File Offset: 0x0019BF96
 	public PlatformUserIdentifierAbs NativeId
 	{
 		get
@@ -41,8 +41,8 @@ public class PersistentPlayerData
 		}
 	}
 
-	// Token: 0x170006EB RID: 1771
-	// (get) Token: 0x060041FC RID: 16892 RVA: 0x0019BCCB File Offset: 0x00199ECB
+	// Token: 0x170006F7 RID: 1783
+	// (get) Token: 0x06004261 RID: 16993 RVA: 0x0019DDA3 File Offset: 0x0019BFA3
 	public EPlayGroup PlayGroup
 	{
 		get
@@ -51,22 +51,22 @@ public class PersistentPlayerData
 		}
 	}
 
-	// Token: 0x060041FD RID: 16893 RVA: 0x0019BCD8 File Offset: 0x00199ED8
+	// Token: 0x06004262 RID: 16994 RVA: 0x0019DDB0 File Offset: 0x0019BFB0
 	public PersistentPlayerData(PlatformUserIdentifierAbs _primaryId, PlatformUserIdentifierAbs _nativeId, AuthoredText _playerName, EPlayGroup _playGroup)
 	{
 		this.PlayerData = new PlayerData(_primaryId, _nativeId, _playerName, _playGroup);
 		this.PlayerName = new PersistentPlayerName(_playerName);
 	}
 
-	// Token: 0x060041FE RID: 16894 RVA: 0x0019BD53 File Offset: 0x00199F53
+	// Token: 0x06004263 RID: 16995 RVA: 0x0019DE2B File Offset: 0x0019C02B
 	public void Update(PlatformUserIdentifierAbs _nativeId, AuthoredText _playerName, EPlayGroup _playGroup)
 	{
 		this.PlayerData = new PlayerData(this.PrimaryId, _nativeId, _playerName, _playGroup);
 		this.PlayerName.Update(_playerName);
 	}
 
-	// Token: 0x170006EC RID: 1772
-	// (get) Token: 0x060041FF RID: 16895 RVA: 0x0019BD75 File Offset: 0x00199F75
+	// Token: 0x170006F8 RID: 1784
+	// (get) Token: 0x06004264 RID: 16996 RVA: 0x0019DE4D File Offset: 0x0019C04D
 	public Vector3i MostRecentBackpackPosition
 	{
 		get
@@ -80,7 +80,7 @@ public class PersistentPlayerData
 		}
 	}
 
-	// Token: 0x06004200 RID: 16896 RVA: 0x0019BDB0 File Offset: 0x00199FB0
+	// Token: 0x06004265 RID: 16997 RVA: 0x0019DE88 File Offset: 0x0019C088
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RefreshSortedBackpacksList()
 	{
@@ -97,7 +97,7 @@ public class PersistentPlayerData
 		this.sortedBackpacksDirty = false;
 	}
 
-	// Token: 0x06004201 RID: 16897 RVA: 0x0019BE54 File Offset: 0x0019A054
+	// Token: 0x06004266 RID: 16998 RVA: 0x0019DF2C File Offset: 0x0019C12C
 	public void AddDroppedBackpack(int backpackEntityId, Vector3i pos, uint timestamp)
 	{
 		this.backpacksByID[backpackEntityId] = new PersistentPlayerData.ProtectedBackpack(backpackEntityId, pos, timestamp);
@@ -121,7 +121,7 @@ public class PersistentPlayerData
 		}
 	}
 
-	// Token: 0x06004202 RID: 16898 RVA: 0x0019BF14 File Offset: 0x0019A114
+	// Token: 0x06004267 RID: 16999 RVA: 0x0019DFEC File Offset: 0x0019C1EC
 	public bool TryUpdateBackpackPosition(int entityID, Vector3i pos)
 	{
 		PersistentPlayerData.ProtectedBackpack protectedBackpack;
@@ -133,7 +133,7 @@ public class PersistentPlayerData
 		return true;
 	}
 
-	// Token: 0x06004203 RID: 16899 RVA: 0x0019BF4D File Offset: 0x0019A14D
+	// Token: 0x06004268 RID: 17000 RVA: 0x0019E025 File Offset: 0x0019C225
 	public bool TryRemoveDroppedBackpack(int entityID)
 	{
 		if (this.backpacksByID.Remove(entityID))
@@ -145,7 +145,7 @@ public class PersistentPlayerData
 		return false;
 	}
 
-	// Token: 0x06004204 RID: 16900 RVA: 0x0019BF70 File Offset: 0x0019A170
+	// Token: 0x06004269 RID: 17001 RVA: 0x0019E048 File Offset: 0x0019C248
 	public void ProcessBackpacks(Action<PersistentPlayerData.ProtectedBackpack> action)
 	{
 		foreach (PersistentPlayerData.ProtectedBackpack protectedBackpack in this.backpacksByID.Values)
@@ -154,7 +154,7 @@ public class PersistentPlayerData
 		}
 	}
 
-	// Token: 0x06004205 RID: 16901 RVA: 0x0019BFC8 File Offset: 0x0019A1C8
+	// Token: 0x0600426A RID: 17002 RVA: 0x0019E0A0 File Offset: 0x0019C2A0
 	public void RemoveBackpacks(Predicate<PersistentPlayerData.ProtectedBackpack> shouldRemove)
 	{
 		this.RefreshSortedBackpacksList();
@@ -167,7 +167,7 @@ public class PersistentPlayerData
 		}
 	}
 
-	// Token: 0x06004206 RID: 16902 RVA: 0x0019C01D File Offset: 0x0019A21D
+	// Token: 0x0600426B RID: 17003 RVA: 0x0019E0F5 File Offset: 0x0019C2F5
 	public void ClearDroppedBackpacks()
 	{
 		this.backpacksByID.Clear();
@@ -175,7 +175,7 @@ public class PersistentPlayerData
 		this.sortedBackpacksDirty = true;
 	}
 
-	// Token: 0x06004207 RID: 16903 RVA: 0x0019C03C File Offset: 0x0019A23C
+	// Token: 0x0600426C RID: 17004 RVA: 0x0019E114 File Offset: 0x0019C314
 	public List<Vector3i> GetDroppedBackpackPositions()
 	{
 		List<Vector3i> list = new List<Vector3i>();
@@ -186,7 +186,7 @@ public class PersistentPlayerData
 		return list;
 	}
 
-	// Token: 0x06004208 RID: 16904 RVA: 0x0019C09C File Offset: 0x0019A29C
+	// Token: 0x0600426D RID: 17005 RVA: 0x0019E174 File Offset: 0x0019C374
 	public void AddVendingMachinePosition(Vector3i pos)
 	{
 		if (!this.OwnedVendingMachinePositions.Contains(pos))
@@ -195,14 +195,14 @@ public class PersistentPlayerData
 		}
 	}
 
-	// Token: 0x06004209 RID: 16905 RVA: 0x0019C0B8 File Offset: 0x0019A2B8
+	// Token: 0x0600426E RID: 17006 RVA: 0x0019E190 File Offset: 0x0019C390
 	public bool TryRemoveVendingMachinePosition(Vector3i pos)
 	{
 		return this.OwnedVendingMachinePositions.Remove(pos);
 	}
 
-	// Token: 0x170006ED RID: 1773
-	// (get) Token: 0x0600420A RID: 16906 RVA: 0x0019C0C6 File Offset: 0x0019A2C6
+	// Token: 0x170006F9 RID: 1785
+	// (get) Token: 0x0600426F RID: 17007 RVA: 0x0019E19E File Offset: 0x0019C39E
 	public bool HasBedrollPos
 	{
 		get
@@ -211,8 +211,8 @@ public class PersistentPlayerData
 		}
 	}
 
-	// Token: 0x170006EE RID: 1774
-	// (get) Token: 0x0600420B RID: 16907 RVA: 0x0019C0E0 File Offset: 0x0019A2E0
+	// Token: 0x170006FA RID: 1786
+	// (get) Token: 0x06004270 RID: 17008 RVA: 0x0019E1B8 File Offset: 0x0019C3B8
 	public double OfflineHours
 	{
 		get
@@ -225,8 +225,8 @@ public class PersistentPlayerData
 		}
 	}
 
-	// Token: 0x170006EF RID: 1775
-	// (get) Token: 0x0600420C RID: 16908 RVA: 0x0019C118 File Offset: 0x0019A318
+	// Token: 0x170006FB RID: 1787
+	// (get) Token: 0x06004271 RID: 17009 RVA: 0x0019E1F0 File Offset: 0x0019C3F0
 	public double OfflineMinutes
 	{
 		get
@@ -239,19 +239,19 @@ public class PersistentPlayerData
 		}
 	}
 
-	// Token: 0x0600420D RID: 16909 RVA: 0x0019C150 File Offset: 0x0019A350
+	// Token: 0x06004272 RID: 17010 RVA: 0x0019E228 File Offset: 0x0019C428
 	public bool IsAlly(PlatformUserIdentifierAbs other)
 	{
 		return GameManager.Instance.persistentPlayers.Allies.IsAlly(this.PrimaryId, other);
 	}
 
-	// Token: 0x0600420E RID: 16910 RVA: 0x0019C16D File Offset: 0x0019A36D
+	// Token: 0x06004273 RID: 17011 RVA: 0x0019E245 File Offset: 0x0019C445
 	public bool IsAlly(PersistentPlayerData other)
 	{
 		return GameManager.Instance.persistentPlayers.Allies.IsAlly(this.PrimaryId, (other != null) ? other.PrimaryId : null);
 	}
 
-	// Token: 0x0600420F RID: 16911 RVA: 0x0019C195 File Offset: 0x0019A395
+	// Token: 0x06004274 RID: 17012 RVA: 0x0019E26D File Offset: 0x0019C46D
 	public void AddLandProtectionBlock(Vector3i pos)
 	{
 		if (this.LPBlocks == null)
@@ -261,7 +261,7 @@ public class PersistentPlayerData
 		this.LPBlocks.Add(pos);
 	}
 
-	// Token: 0x06004210 RID: 16912 RVA: 0x0019C1B6 File Offset: 0x0019A3B6
+	// Token: 0x06004275 RID: 17013 RVA: 0x0019E28E File Offset: 0x0019C48E
 	public List<Vector3i> GetLandProtectionBlocks()
 	{
 		if (this.LPBlocks == null)
@@ -271,7 +271,7 @@ public class PersistentPlayerData
 		return this.LPBlocks;
 	}
 
-	// Token: 0x06004211 RID: 16913 RVA: 0x0019C1D1 File Offset: 0x0019A3D1
+	// Token: 0x06004276 RID: 17014 RVA: 0x0019E2A9 File Offset: 0x0019C4A9
 	public bool GetLandProtectionBlock(out Vector3i _blockPos)
 	{
 		_blockPos = Vector3i.zero;
@@ -283,13 +283,13 @@ public class PersistentPlayerData
 		return false;
 	}
 
-	// Token: 0x06004212 RID: 16914 RVA: 0x0019C209 File Offset: 0x0019A409
+	// Token: 0x06004277 RID: 17015 RVA: 0x0019E2E1 File Offset: 0x0019C4E1
 	public void RemoveLandProtectionBlock(Vector3i pos)
 	{
 		this.LPBlocks.Remove(pos);
 	}
 
-	// Token: 0x06004213 RID: 16915 RVA: 0x0019C218 File Offset: 0x0019A418
+	// Token: 0x06004278 RID: 17016 RVA: 0x0019E2F0 File Offset: 0x0019C4F0
 	public void ClearBedroll()
 	{
 		Entity entity = GameManager.Instance.World.GetEntity(this.EntityId);
@@ -304,7 +304,7 @@ public class PersistentPlayerData
 		}
 	}
 
-	// Token: 0x06004214 RID: 16916 RVA: 0x0019C2A0 File Offset: 0x0019A4A0
+	// Token: 0x06004279 RID: 17017 RVA: 0x0019E378 File Offset: 0x0019C578
 	public void ShowBedrollOnMap()
 	{
 		if (GameManager.Instance.IsEditMode())
@@ -325,7 +325,7 @@ public class PersistentPlayerData
 		}
 	}
 
-	// Token: 0x06004215 RID: 16917 RVA: 0x0019C318 File Offset: 0x0019A518
+	// Token: 0x0600427A RID: 17018 RVA: 0x0019E3F0 File Offset: 0x0019C5F0
 	public void AddQuestPosition(int questCode, Quest.PositionDataTypes positionDataType, Vector3 position)
 	{
 		Vector3i vector3i = World.worldToBlockPos(position);
@@ -345,7 +345,7 @@ public class PersistentPlayerData
 		this.questPositionsChanged = true;
 	}
 
-	// Token: 0x06004216 RID: 16918 RVA: 0x0019C3B0 File Offset: 0x0019A5B0
+	// Token: 0x0600427B RID: 17019 RVA: 0x0019E488 File Offset: 0x0019C688
 	public void RemovePositionsForQuest(int questCode)
 	{
 		List<QuestPositionData> list = new List<QuestPositionData>();
@@ -363,7 +363,7 @@ public class PersistentPlayerData
 		this.questPositionsChanged = true;
 	}
 
-	// Token: 0x06004217 RID: 16919 RVA: 0x0019C45C File Offset: 0x0019A65C
+	// Token: 0x0600427C RID: 17020 RVA: 0x0019E534 File Offset: 0x0019C734
 	public void UpdatePositionFromEntity()
 	{
 		if (this.EntityId == -1)
@@ -378,7 +378,7 @@ public class PersistentPlayerData
 		this.Position = new Vector3i(entity.position);
 	}
 
-	// Token: 0x06004218 RID: 16920 RVA: 0x0019C4A4 File Offset: 0x0019A6A4
+	// Token: 0x0600427D RID: 17021 RVA: 0x0019E57C File Offset: 0x0019C77C
 	public void Write(BinaryWriter stream)
 	{
 		this.UpdatePositionFromEntity();
@@ -430,7 +430,7 @@ public class PersistentPlayerData
 		}
 	}
 
-	// Token: 0x06004219 RID: 16921 RVA: 0x0019C744 File Offset: 0x0019A944
+	// Token: 0x0600427E RID: 17022 RVA: 0x0019E81C File Offset: 0x0019CA1C
 	public static PersistentPlayerData Read(BinaryReader stream)
 	{
 		PlatformUserIdentifierAbs platformUserIdentifierAbs = PlatformUserIdentifierAbs.FromStream(stream, false, true);
@@ -477,7 +477,7 @@ public class PersistentPlayerData
 		return persistentPlayerData;
 	}
 
-	// Token: 0x0600421A RID: 16922 RVA: 0x0019C90C File Offset: 0x0019AB0C
+	// Token: 0x0600427F RID: 17023 RVA: 0x0019E9E4 File Offset: 0x0019CBE4
 	public void Write(XmlElement _root)
 	{
 		XmlElement xmlElement = _root.AddXmlElement("player");
@@ -540,7 +540,7 @@ public class PersistentPlayerData
 		}
 	}
 
-	// Token: 0x0600421B RID: 16923 RVA: 0x0019CD80 File Offset: 0x0019AF80
+	// Token: 0x06004280 RID: 17024 RVA: 0x0019EE58 File Offset: 0x0019D058
 	public static PersistentPlayerData ReadXML(XmlElement root, int readVersion, out HashSet<PlatformUserIdentifierAbs> legacyACL)
 	{
 		legacyACL = null;
@@ -751,63 +751,63 @@ public class PersistentPlayerData
 		return persistentPlayerData;
 	}
 
-	// Token: 0x04003543 RID: 13635
+	// Token: 0x040035C4 RID: 13764
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int MaxTrackedBackpacks = 3;
 
-	// Token: 0x04003544 RID: 13636
+	// Token: 0x040035C5 RID: 13765
 	public PlayerData PlayerData;
 
-	// Token: 0x04003545 RID: 13637
+	// Token: 0x040035C6 RID: 13766
 	public readonly PersistentPlayerName PlayerName;
 
-	// Token: 0x04003546 RID: 13638
+	// Token: 0x040035C7 RID: 13767
 	public DateTime LastLogin;
 
-	// Token: 0x04003547 RID: 13639
+	// Token: 0x040035C8 RID: 13768
 	public int EntityId = -1;
 
-	// Token: 0x04003548 RID: 13640
+	// Token: 0x040035C9 RID: 13769
 	public List<Vector3i> LPBlocks;
 
-	// Token: 0x04003549 RID: 13641
+	// Token: 0x040035CA RID: 13770
 	public const int cBedrollUnsetY = 2147483647;
 
-	// Token: 0x0400354A RID: 13642
+	// Token: 0x040035CB RID: 13771
 	public Vector3i BedrollPos = new Vector3i(0, int.MaxValue, 0);
 
-	// Token: 0x0400354B RID: 13643
+	// Token: 0x040035CC RID: 13772
 	public Vector3i Position;
 
-	// Token: 0x0400354C RID: 13644
+	// Token: 0x040035CD RID: 13773
 	public List<QuestPositionData> QuestPositions = new List<QuestPositionData>();
 
-	// Token: 0x0400354D RID: 13645
+	// Token: 0x040035CE RID: 13774
 	public bool questPositionsChanged;
 
-	// Token: 0x0400354E RID: 13646
+	// Token: 0x040035CF RID: 13775
 	public List<Vector3i> OwnedVendingMachinePositions = new List<Vector3i>();
 
-	// Token: 0x0400354F RID: 13647
+	// Token: 0x040035D0 RID: 13776
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<int, PersistentPlayerData.ProtectedBackpack> backpacksByID = new Dictionary<int, PersistentPlayerData.ProtectedBackpack>();
 
-	// Token: 0x04003550 RID: 13648
+	// Token: 0x040035D1 RID: 13777
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool sortedBackpacksDirty = true;
 
-	// Token: 0x04003551 RID: 13649
+	// Token: 0x040035D2 RID: 13778
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<PersistentPlayerData.ProtectedBackpack> backpacksSortedByTimestamp = new List<PersistentPlayerData.ProtectedBackpack>();
 
-	// Token: 0x020008E8 RID: 2280
-	// (Invoke) Token: 0x0600421D RID: 16925
+	// Token: 0x020008F4 RID: 2292
+	// (Invoke) Token: 0x06004282 RID: 17026
 	public delegate void PlayerEventHandler(PersistentPlayerData ppData, PersistentPlayerData otherPlayer, EnumPersistentPlayerDataReason reason);
 
-	// Token: 0x020008E9 RID: 2281
+	// Token: 0x020008F5 RID: 2293
 	public struct ProtectedBackpack
 	{
-		// Token: 0x06004220 RID: 16928 RVA: 0x0019D55C File Offset: 0x0019B75C
+		// Token: 0x06004285 RID: 17029 RVA: 0x0019F634 File Offset: 0x0019D834
 		public ProtectedBackpack(int entityID, Vector3i position, uint timestamp)
 		{
 			this.EntityID = entityID;
@@ -815,13 +815,13 @@ public class PersistentPlayerData
 			this.Timestamp = timestamp;
 		}
 
-		// Token: 0x04003552 RID: 13650
+		// Token: 0x040035D3 RID: 13779
 		public readonly int EntityID;
 
-		// Token: 0x04003553 RID: 13651
+		// Token: 0x040035D4 RID: 13780
 		public readonly Vector3i Position;
 
-		// Token: 0x04003554 RID: 13652
+		// Token: 0x040035D5 RID: 13781
 		public readonly uint Timestamp;
 	}
 }

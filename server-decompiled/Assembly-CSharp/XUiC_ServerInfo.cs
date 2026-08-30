@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using SandboxOptions;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DCE RID: 3534
+// Token: 0x02000DE3 RID: 3555
 [Preserve]
 public class XUiC_ServerInfo : XUiController
 {
-	// Token: 0x17000BE8 RID: 3048
-	// (get) Token: 0x06006C2C RID: 27692 RVA: 0x002A2794 File Offset: 0x002A0994
-	// (set) Token: 0x06006C2D RID: 27693 RVA: 0x002A27A5 File Offset: 0x002A09A5
+	// Token: 0x17000C01 RID: 3073
+	// (get) Token: 0x06006CCB RID: 27851 RVA: 0x002A5C28 File Offset: 0x002A3E28
+	// (set) Token: 0x06006CCC RID: 27852 RVA: 0x002A5C39 File Offset: 0x002A3E39
 	[XuiXmlBinding("serverurl")]
 	public string ServerUrl
 	{
@@ -26,9 +26,9 @@ public class XUiC_ServerInfo : XUiController
 		}
 	}
 
-	// Token: 0x17000BE9 RID: 3049
-	// (get) Token: 0x06006C2E RID: 27694 RVA: 0x002A27B5 File Offset: 0x002A09B5
-	// (set) Token: 0x06006C2F RID: 27695 RVA: 0x002A27BD File Offset: 0x002A09BD
+	// Token: 0x17000C02 RID: 3074
+	// (get) Token: 0x06006CCD RID: 27853 RVA: 0x002A5C49 File Offset: 0x002A3E49
+	// (set) Token: 0x06006CCE RID: 27854 RVA: 0x002A5C51 File Offset: 0x002A3E51
 	[XuiXmlBinding("serverurlhovered")]
 	public bool ServerUrlHovered
 	{
@@ -45,9 +45,9 @@ public class XUiC_ServerInfo : XUiController
 		}
 	}
 
-	// Token: 0x17000BEA RID: 3050
-	// (get) Token: 0x06006C30 RID: 27696 RVA: 0x002A27CD File Offset: 0x002A09CD
-	// (set) Token: 0x06006C31 RID: 27697 RVA: 0x002A27DE File Offset: 0x002A09DE
+	// Token: 0x17000C03 RID: 3075
+	// (get) Token: 0x06006CCF RID: 27855 RVA: 0x002A5C61 File Offset: 0x002A3E61
+	// (set) Token: 0x06006CD0 RID: 27856 RVA: 0x002A5C72 File Offset: 0x002A3E72
 	[XuiXmlBinding("serverdescription")]
 	public string ServerDescription
 	{
@@ -64,9 +64,9 @@ public class XUiC_ServerInfo : XUiController
 		}
 	}
 
-	// Token: 0x17000BEB RID: 3051
-	// (get) Token: 0x06006C32 RID: 27698 RVA: 0x002A27EE File Offset: 0x002A09EE
-	// (set) Token: 0x06006C33 RID: 27699 RVA: 0x002A27FF File Offset: 0x002A09FF
+	// Token: 0x17000C04 RID: 3076
+	// (get) Token: 0x06006CD1 RID: 27857 RVA: 0x002A5C82 File Offset: 0x002A3E82
+	// (set) Token: 0x06006CD2 RID: 27858 RVA: 0x002A5C93 File Offset: 0x002A3E93
 	[XuiXmlBinding("serversandboxcode")]
 	public string ServerSandboxCode
 	{
@@ -81,8 +81,8 @@ public class XUiC_ServerInfo : XUiController
 		}
 	}
 
-	// Token: 0x17000BEC RID: 3052
-	// (get) Token: 0x06006C34 RID: 27700 RVA: 0x002A2810 File Offset: 0x002A0A10
+	// Token: 0x17000C05 RID: 3077
+	// (get) Token: 0x06006CD3 RID: 27859 RVA: 0x002A5CA4 File Offset: 0x002A3EA4
 	[XuiXmlBinding("sandboxpreset")]
 	public string SandboxPreset
 	{
@@ -102,8 +102,8 @@ public class XUiC_ServerInfo : XUiController
 		}
 	}
 
-	// Token: 0x17000BED RID: 3053
-	// (get) Token: 0x06006C35 RID: 27701 RVA: 0x002A286C File Offset: 0x002A0A6C
+	// Token: 0x17000C06 RID: 3078
+	// (get) Token: 0x06006CD4 RID: 27860 RVA: 0x002A5D00 File Offset: 0x002A3F00
 	[XuiXmlBinding("showip")]
 	public bool ShowIp
 	{
@@ -114,7 +114,7 @@ public class XUiC_ServerInfo : XUiController
 		}
 	}
 
-	// Token: 0x06006C36 RID: 27702 RVA: 0x002A2878 File Offset: 0x002A0A78
+	// Token: 0x06006CD5 RID: 27861 RVA: 0x002A5D0C File Offset: 0x002A3F0C
 	public override void Init()
 	{
 		base.Init();
@@ -150,14 +150,14 @@ public class XUiC_ServerInfo : XUiController
 		}
 	}
 
-	// Token: 0x06006C37 RID: 27703 RVA: 0x0028AD37 File Offset: 0x00288F37
+	// Token: 0x06006CD6 RID: 27862 RVA: 0x0028DC1B File Offset: 0x0028BE1B
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
 		base.handleDirtyUpdateDefault();
 	}
 
-	// Token: 0x06006C38 RID: 27704 RVA: 0x002A295B File Offset: 0x002A0B5B
+	// Token: 0x06006CD7 RID: 27863 RVA: 0x002A5DEF File Offset: 0x002A3FEF
 	public void InitializeForListFilter(XUiC_ServersList.EnumServerLists _mode)
 	{
 		if (_mode == XUiC_ServersList.EnumServerLists.Peer || _mode == XUiC_ServersList.EnumServerLists.Friends || _mode == XUiC_ServersList.EnumServerLists.History)
@@ -168,7 +168,7 @@ public class XUiC_ServerInfo : XUiController
 		this.setDisplayMode(XUiC_ServerInfo.DisplayMode.Dedicated);
 	}
 
-	// Token: 0x06006C39 RID: 27705 RVA: 0x002A2978 File Offset: 0x002A0B78
+	// Token: 0x06006CD8 RID: 27864 RVA: 0x002A5E0C File Offset: 0x002A400C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setDisplayMode(XUiC_ServerInfo.DisplayMode _mode)
 	{
@@ -179,7 +179,7 @@ public class XUiC_ServerInfo : XUiController
 		}
 	}
 
-	// Token: 0x06006C3A RID: 27706 RVA: 0x002A2994 File Offset: 0x002A0B94
+	// Token: 0x06006CD9 RID: 27865 RVA: 0x002A5E28 File Offset: 0x002A4028
 	public void SetServerInfo(GameServerInfo _gameInfo)
 	{
 		foreach (XUiC_ServerBrowserGamePrefInfo xuiC_ServerBrowserGamePrefInfo in this.infoFields)
@@ -220,7 +220,7 @@ public class XUiC_ServerInfo : XUiController
 		}, true, false, GeneratedTextManager.TextFilteringMode.FilterWithSafeString, GeneratedTextManager.BbCodeSupportMode.SupportedAndAddEscapes);
 	}
 
-	// Token: 0x06006C3B RID: 27707 RVA: 0x002A2AC0 File Offset: 0x002A0CC0
+	// Token: 0x06006CDA RID: 27866 RVA: 0x002A5F54 File Offset: 0x002A4154
 	[XuiBindEvent("OnHover", "lblServerUrl")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UrlController_OnHover(XUiController _sender, bool _isOver)
@@ -228,7 +228,7 @@ public class XUiC_ServerInfo : XUiController
 		this.ServerUrlHovered = _isOver;
 	}
 
-	// Token: 0x06006C3C RID: 27708 RVA: 0x002A2ACC File Offset: 0x002A0CCC
+	// Token: 0x06006CDB RID: 27867 RVA: 0x002A5F60 File Offset: 0x002A4160
 	[XuiBindEvent("OnPress", "lblServerUrl")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UrlController_OnPress(XUiController _sender, int _mouseButton)
@@ -236,46 +236,46 @@ public class XUiC_ServerInfo : XUiController
 		XUiC_MessageBoxWindowGroup.ShowUrlConfirmationDialog(this.xui, this.unfilteredUrlText, false, null, null, null, "", this.ServerUrl, false);
 	}
 
-	// Token: 0x04005255 RID: 21077
+	// Token: 0x040052F8 RID: 21240
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<XUiC_ServerBrowserGamePrefInfo> infoFields = new List<XUiC_ServerBrowserGamePrefInfo>();
 
-	// Token: 0x04005256 RID: 21078
+	// Token: 0x040052F9 RID: 21241
 	[XuiBindComponent("ServerWebsiteURL", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiController lblServerUrl;
 
-	// Token: 0x04005257 RID: 21079
+	// Token: 0x040052FA RID: 21242
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ServerInfo.DisplayMode displayMode;
 
-	// Token: 0x04005258 RID: 21080
+	// Token: 0x040052FB RID: 21243
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string unfilteredUrlText;
 
-	// Token: 0x04005259 RID: 21081
+	// Token: 0x040052FC RID: 21244
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string serverUrl;
 
-	// Token: 0x0400525A RID: 21082
+	// Token: 0x040052FD RID: 21245
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string serverDescription;
 
-	// Token: 0x0400525B RID: 21083
+	// Token: 0x040052FE RID: 21246
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool serverUrlHovered;
 
-	// Token: 0x0400525C RID: 21084
+	// Token: 0x040052FF RID: 21247
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string serverSandboxCode;
 
-	// Token: 0x02000DCF RID: 3535
+	// Token: 0x02000DE4 RID: 3556
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum DisplayMode
 	{
-		// Token: 0x0400525E RID: 21086
+		// Token: 0x04005301 RID: 21249
 		Dedicated,
-		// Token: 0x0400525F RID: 21087
+		// Token: 0x04005302 RID: 21250
 		Peer
 	}
 }

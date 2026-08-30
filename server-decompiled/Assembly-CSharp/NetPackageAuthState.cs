@@ -2,12 +2,12 @@
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x020007A3 RID: 1955
+// Token: 0x020007AD RID: 1965
 [Preserve]
 public class NetPackageAuthState : NetPackage
 {
-	// Token: 0x17000600 RID: 1536
-	// (get) Token: 0x06003A16 RID: 14870 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x1700060A RID: 1546
+	// (get) Token: 0x06003A6E RID: 14958 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool FlushQueue
 	{
 		get
@@ -16,8 +16,8 @@ public class NetPackageAuthState : NetPackage
 		}
 	}
 
-	// Token: 0x17000601 RID: 1537
-	// (get) Token: 0x06003A17 RID: 14871 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x1700060B RID: 1547
+	// (get) Token: 0x06003A6F RID: 14959 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -26,8 +26,8 @@ public class NetPackageAuthState : NetPackage
 		}
 	}
 
-	// Token: 0x17000602 RID: 1538
-	// (get) Token: 0x06003A18 RID: 14872 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x1700060C RID: 1548
+	// (get) Token: 0x06003A70 RID: 14960 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedBeforeAuth
 	{
 		get
@@ -36,27 +36,27 @@ public class NetPackageAuthState : NetPackage
 		}
 	}
 
-	// Token: 0x06003A19 RID: 14873 RVA: 0x001799FC File Offset: 0x00177BFC
+	// Token: 0x06003A71 RID: 14961 RVA: 0x0017BC7C File Offset: 0x00179E7C
 	public NetPackageAuthState Setup(string _authStateKey)
 	{
 		this.stateKey = _authStateKey ?? "";
 		return this;
 	}
 
-	// Token: 0x06003A1A RID: 14874 RVA: 0x00179A0F File Offset: 0x00177C0F
+	// Token: 0x06003A72 RID: 14962 RVA: 0x0017BC8F File Offset: 0x00179E8F
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.stateKey = _reader.ReadString();
 	}
 
-	// Token: 0x06003A1B RID: 14875 RVA: 0x00179A1D File Offset: 0x00177C1D
+	// Token: 0x06003A73 RID: 14963 RVA: 0x0017BC9D File Offset: 0x00179E9D
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
 		_writer.Write(this.stateKey);
 	}
 
-	// Token: 0x06003A1C RID: 14876 RVA: 0x00179A34 File Offset: 0x00177C34
+	// Token: 0x06003A74 RID: 14964 RVA: 0x0017BCB4 File Offset: 0x00179EB4
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsConnected)
@@ -74,13 +74,13 @@ public class NetPackageAuthState : NetPackage
 		}
 	}
 
-	// Token: 0x06003A1D RID: 14877 RVA: 0x0007FE9C File Offset: 0x0007E09C
+	// Token: 0x06003A75 RID: 14965 RVA: 0x00080550 File Offset: 0x0007E750
 	public override int GetLength()
 	{
 		return 4;
 	}
 
-	// Token: 0x04002F58 RID: 12120
+	// Token: 0x04002FD1 RID: 12241
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string stateKey;
 }

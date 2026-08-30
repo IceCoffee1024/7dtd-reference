@@ -1,81 +1,172 @@
 ﻿using System;
 
-// Token: 0x020009FA RID: 2554
+// Token: 0x02000A0B RID: 2571
 public static class SdPlayerPrefs
 {
-	// Token: 0x06004CD3 RID: 19667 RVA: 0x001D81AA File Offset: 0x001D63AA
+	// Token: 0x06004D59 RID: 19801 RVA: 0x001DA994 File Offset: 0x001D8B94
 	public static float GetFloat(string key)
 	{
-		return SaveDataUtils.SaveDataPrefs.GetFloat(key);
+		float @float;
+		try
+		{
+			@float = SaveDataUtils.SaveDataPrefs.GetFloat(key);
+		}
+		catch (Exception ex)
+		{
+			throw new Exception("GetFloat(\"" + key + "\")", ex);
+		}
+		return @float;
 	}
 
-	// Token: 0x06004CD4 RID: 19668 RVA: 0x001D81B7 File Offset: 0x001D63B7
+	// Token: 0x06004D5A RID: 19802 RVA: 0x001DA9D8 File Offset: 0x001D8BD8
 	public static float GetFloat(string key, float defaultValue)
 	{
-		return SaveDataUtils.SaveDataPrefs.GetFloat(key, defaultValue);
+		float @float;
+		try
+		{
+			@float = SaveDataUtils.SaveDataPrefs.GetFloat(key, defaultValue);
+		}
+		catch (Exception ex)
+		{
+			throw new Exception(string.Format("{0}(\"{1}\", {2})", "GetFloat", key, defaultValue), ex);
+		}
+		return @float;
 	}
 
-	// Token: 0x06004CD5 RID: 19669 RVA: 0x001D81C5 File Offset: 0x001D63C5
+	// Token: 0x06004D5B RID: 19803 RVA: 0x001DAA24 File Offset: 0x001D8C24
 	public static void SetFloat(string key, float value)
 	{
-		SaveDataUtils.SaveDataPrefs.SetFloat(key, value);
+		try
+		{
+			SaveDataUtils.SaveDataPrefs.SetFloat(key, value);
+		}
+		catch (Exception ex)
+		{
+			throw new Exception(string.Format("{0}(\"{1}\", {2})", "SetFloat", key, value), ex);
+		}
 	}
 
-	// Token: 0x06004CD6 RID: 19670 RVA: 0x001D81D3 File Offset: 0x001D63D3
+	// Token: 0x06004D5C RID: 19804 RVA: 0x001DAA70 File Offset: 0x001D8C70
 	public static int GetInt(string key)
 	{
-		return SaveDataUtils.SaveDataPrefs.GetInt(key);
+		int @int;
+		try
+		{
+			@int = SaveDataUtils.SaveDataPrefs.GetInt(key);
+		}
+		catch (Exception ex)
+		{
+			throw new Exception("GetInt(\"" + key + "\")", ex);
+		}
+		return @int;
 	}
 
-	// Token: 0x06004CD7 RID: 19671 RVA: 0x001D81E0 File Offset: 0x001D63E0
+	// Token: 0x06004D5D RID: 19805 RVA: 0x001DAAB4 File Offset: 0x001D8CB4
 	public static int GetInt(string key, int defaultValue)
 	{
-		return SaveDataUtils.SaveDataPrefs.GetInt(key, defaultValue);
+		int @int;
+		try
+		{
+			@int = SaveDataUtils.SaveDataPrefs.GetInt(key, defaultValue);
+		}
+		catch (Exception ex)
+		{
+			throw new Exception(string.Format("{0}(\"{1}\", {2})", "GetInt", key, defaultValue), ex);
+		}
+		return @int;
 	}
 
-	// Token: 0x06004CD8 RID: 19672 RVA: 0x001D81EE File Offset: 0x001D63EE
+	// Token: 0x06004D5E RID: 19806 RVA: 0x001DAB00 File Offset: 0x001D8D00
 	public static void SetInt(string key, int value)
 	{
-		SaveDataUtils.SaveDataPrefs.SetInt(key, value);
+		try
+		{
+			SaveDataUtils.SaveDataPrefs.SetInt(key, value);
+		}
+		catch (Exception ex)
+		{
+			throw new Exception(string.Format("{0}(\"{1}\", {2})", "SetInt", key, value), ex);
+		}
 	}
 
-	// Token: 0x06004CD9 RID: 19673 RVA: 0x001D81FC File Offset: 0x001D63FC
+	// Token: 0x06004D5F RID: 19807 RVA: 0x001DAB4C File Offset: 0x001D8D4C
 	public static string GetString(string key)
 	{
-		return SaveDataUtils.SaveDataPrefs.GetString(key);
+		string @string;
+		try
+		{
+			@string = SaveDataUtils.SaveDataPrefs.GetString(key);
+		}
+		catch (Exception ex)
+		{
+			throw new Exception("GetString(\"" + key + "\")", ex);
+		}
+		return @string;
 	}
 
-	// Token: 0x06004CDA RID: 19674 RVA: 0x001D8209 File Offset: 0x001D6409
+	// Token: 0x06004D60 RID: 19808 RVA: 0x001DAB90 File Offset: 0x001D8D90
 	public static string GetString(string key, string defaultValue)
 	{
-		return SaveDataUtils.SaveDataPrefs.GetString(key, defaultValue);
+		string @string;
+		try
+		{
+			@string = SaveDataUtils.SaveDataPrefs.GetString(key, defaultValue);
+		}
+		catch (Exception ex)
+		{
+			throw new Exception(string.Concat(new string[] { "GetString(\"", key, "\", \"", defaultValue, "\")" }), ex);
+		}
+		return @string;
 	}
 
-	// Token: 0x06004CDB RID: 19675 RVA: 0x001D8217 File Offset: 0x001D6417
+	// Token: 0x06004D61 RID: 19809 RVA: 0x001DABF0 File Offset: 0x001D8DF0
 	public static void SetString(string key, string value)
 	{
-		SaveDataUtils.SaveDataPrefs.SetString(key, value);
+		try
+		{
+			SaveDataUtils.SaveDataPrefs.SetString(key, value);
+		}
+		catch (Exception ex)
+		{
+			throw new Exception(string.Concat(new string[] { "SetString(\"", key, "\", \"", value, "\")" }), ex);
+		}
 	}
 
-	// Token: 0x06004CDC RID: 19676 RVA: 0x001D8225 File Offset: 0x001D6425
+	// Token: 0x06004D62 RID: 19810 RVA: 0x001DAC50 File Offset: 0x001D8E50
 	public static bool HasKey(string key)
 	{
-		return SaveDataUtils.SaveDataPrefs.HasKey(key);
+		bool flag;
+		try
+		{
+			flag = SaveDataUtils.SaveDataPrefs.HasKey(key);
+		}
+		catch (Exception ex)
+		{
+			throw new Exception("HasKey(\"" + key + "\")", ex);
+		}
+		return flag;
 	}
 
-	// Token: 0x06004CDD RID: 19677 RVA: 0x001D8232 File Offset: 0x001D6432
+	// Token: 0x06004D63 RID: 19811 RVA: 0x001DAC94 File Offset: 0x001D8E94
 	public static void DeleteKey(string key)
 	{
-		SaveDataUtils.SaveDataPrefs.DeleteKey(key);
+		try
+		{
+			SaveDataUtils.SaveDataPrefs.DeleteKey(key);
+		}
+		catch (Exception ex)
+		{
+			throw new Exception("DeleteKey(\"" + key + "\")", ex);
+		}
 	}
 
-	// Token: 0x06004CDE RID: 19678 RVA: 0x001D823F File Offset: 0x001D643F
+	// Token: 0x06004D64 RID: 19812 RVA: 0x001DACD8 File Offset: 0x001D8ED8
 	public static void DeleteAll()
 	{
 		SaveDataUtils.SaveDataPrefs.DeleteAll();
 	}
 
-	// Token: 0x06004CDF RID: 19679 RVA: 0x001D824B File Offset: 0x001D644B
+	// Token: 0x06004D65 RID: 19813 RVA: 0x001DACE4 File Offset: 0x001D8EE4
 	public static void Save()
 	{
 		SaveDataUtils.SaveDataPrefs.Save();
@@ -87,15 +178,15 @@ public static class SdPlayerPrefs
 		store.Save();
 	}
 
-	// Token: 0x06004CE0 RID: 19680 RVA: 0x001D8266 File Offset: 0x001D6466
+	// Token: 0x06004D66 RID: 19814 RVA: 0x001DACFF File Offset: 0x001D8EFF
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void Load()
 	{
 		SaveDataUtils.SaveDataPrefs.Load();
 	}
 
-	// Token: 0x1700082B RID: 2091
-	// (get) Token: 0x06004CE1 RID: 19681 RVA: 0x001D8272 File Offset: 0x001D6472
+	// Token: 0x1700083D RID: 2109
+	// (get) Token: 0x06004D67 RID: 19815 RVA: 0x001DAD0B File Offset: 0x001D8F0B
 	public static bool CanLoad
 	{
 		[PublicizedFrom(EAccessModifier.Internal)]

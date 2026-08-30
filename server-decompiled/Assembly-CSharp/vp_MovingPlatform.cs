@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020015AF RID: 5551
+// Token: 0x020015CA RID: 5578
 [RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(Rigidbody))]
 public class vp_MovingPlatform : MonoBehaviour
 {
-	// Token: 0x170013EE RID: 5102
-	// (get) Token: 0x0600AD67 RID: 44391 RVA: 0x0040A281 File Offset: 0x00408481
+	// Token: 0x17001427 RID: 5159
+	// (get) Token: 0x0600AE64 RID: 44644 RVA: 0x0040F5C1 File Offset: 0x0040D7C1
 	public int TargetedWaypoint
 	{
 		get
@@ -18,7 +18,7 @@ public class vp_MovingPlatform : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD68 RID: 44392 RVA: 0x0040A28C File Offset: 0x0040848C
+	// Token: 0x0600AE65 RID: 44645 RVA: 0x0040F5CC File Offset: 0x0040D7CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -68,7 +68,7 @@ public class vp_MovingPlatform : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD69 RID: 44393 RVA: 0x0040A478 File Offset: 0x00408678
+	// Token: 0x0600AE66 RID: 44646 RVA: 0x0040F7B8 File Offset: 0x0040D9B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void FixedUpdate()
 	{
@@ -78,7 +78,7 @@ public class vp_MovingPlatform : MonoBehaviour
 		this.UpdateVelocity();
 	}
 
-	// Token: 0x0600AD6A RID: 44394 RVA: 0x0040A494 File Offset: 0x00408694
+	// Token: 0x0600AE67 RID: 44647 RVA: 0x0040F7D4 File Offset: 0x0040D9D4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void UpdatePath()
 	{
@@ -143,7 +143,7 @@ public class vp_MovingPlatform : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD6B RID: 44395 RVA: 0x0040A592 File Offset: 0x00408792
+	// Token: 0x0600AE68 RID: 44648 RVA: 0x0040F8D2 File Offset: 0x0040DAD2
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnStart()
 	{
@@ -153,7 +153,7 @@ public class vp_MovingPlatform : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD6C RID: 44396 RVA: 0x0040A5B3 File Offset: 0x004087B3
+	// Token: 0x0600AE69 RID: 44649 RVA: 0x0040F8F3 File Offset: 0x0040DAF3
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnArriveAtWaypoint()
 	{
@@ -163,7 +163,7 @@ public class vp_MovingPlatform : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD6D RID: 44397 RVA: 0x0040A5D4 File Offset: 0x004087D4
+	// Token: 0x0600AE6A RID: 44650 RVA: 0x0040F914 File Offset: 0x0040DB14
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnArriveAtDestination()
 	{
@@ -176,7 +176,7 @@ public class vp_MovingPlatform : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD6E RID: 44398 RVA: 0x0040A610 File Offset: 0x00408810
+	// Token: 0x0600AE6B RID: 44651 RVA: 0x0040F950 File Offset: 0x0040DB50
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnStop()
 	{
@@ -194,7 +194,7 @@ public class vp_MovingPlatform : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD6F RID: 44399 RVA: 0x0040A68C File Offset: 0x0040888C
+	// Token: 0x0600AE6C RID: 44652 RVA: 0x0040F9CC File Offset: 0x0040DBCC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void UpdateMovement()
 	{
@@ -227,7 +227,7 @@ public class vp_MovingPlatform : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD70 RID: 44400 RVA: 0x0040A838 File Offset: 0x00408A38
+	// Token: 0x0600AE6D RID: 44653 RVA: 0x0040FB78 File Offset: 0x0040DD78
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void UpdateRotation()
 	{
@@ -254,7 +254,7 @@ public class vp_MovingPlatform : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD71 RID: 44401 RVA: 0x0040AA6C File Offset: 0x00408C6C
+	// Token: 0x0600AE6E RID: 44654 RVA: 0x0040FDAC File Offset: 0x0040DFAC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void UpdateVelocity()
 	{
@@ -265,7 +265,7 @@ public class vp_MovingPlatform : MonoBehaviour
 		this.m_PrevAngle = this.m_Transform.eulerAngles;
 	}
 
-	// Token: 0x0600AD72 RID: 44402 RVA: 0x0040AB04 File Offset: 0x00408D04
+	// Token: 0x0600AE6F RID: 44655 RVA: 0x0040FE44 File Offset: 0x0040E044
 	public void GoTo(int targetWayPoint)
 	{
 		if (Time.time < this.m_NextAllowedMoveTime)
@@ -291,7 +291,7 @@ public class vp_MovingPlatform : MonoBehaviour
 		this.m_Moving = true;
 	}
 
-	// Token: 0x0600AD73 RID: 44403 RVA: 0x0040AB68 File Offset: 0x00408D68
+	// Token: 0x0600AE70 RID: 44656 RVA: 0x0040FEA8 File Offset: 0x0040E0A8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float GetDistanceLeft()
 	{
@@ -302,7 +302,7 @@ public class vp_MovingPlatform : MonoBehaviour
 		return Vector3.Distance(this.m_Transform.position, this.m_Waypoints[this.m_NextWaypoint].position);
 	}
 
-	// Token: 0x0600AD74 RID: 44404 RVA: 0x0040ABA4 File Offset: 0x00408DA4
+	// Token: 0x0600AE71 RID: 44657 RVA: 0x0040FEE4 File Offset: 0x0040E0E4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void GoToNextWaypoint()
 	{
@@ -335,7 +335,7 @@ public class vp_MovingPlatform : MonoBehaviour
 		this.m_Moving = true;
 	}
 
-	// Token: 0x0600AD75 RID: 44405 RVA: 0x0040AC99 File Offset: 0x00408E99
+	// Token: 0x0600AE72 RID: 44658 RVA: 0x0040FFD9 File Offset: 0x0040E1D9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int GetValidWaypoint(int wayPoint)
 	{
@@ -350,7 +350,7 @@ public class vp_MovingPlatform : MonoBehaviour
 		return wayPoint;
 	}
 
-	// Token: 0x0600AD76 RID: 44406 RVA: 0x0040ACC0 File Offset: 0x00408EC0
+	// Token: 0x0600AE73 RID: 44659 RVA: 0x00410000 File Offset: 0x0040E200
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnTriggerEnter(Collider col)
 	{
@@ -362,7 +362,7 @@ public class vp_MovingPlatform : MonoBehaviour
 		this.TryAutoStart();
 	}
 
-	// Token: 0x0600AD77 RID: 44407 RVA: 0x0040ACD8 File Offset: 0x00408ED8
+	// Token: 0x0600AE74 RID: 44660 RVA: 0x00410018 File Offset: 0x0040E218
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnTriggerStay(Collider col)
 	{
@@ -377,7 +377,7 @@ public class vp_MovingPlatform : MonoBehaviour
 		this.TrySnapPlayerToTop();
 	}
 
-	// Token: 0x0600AD78 RID: 44408 RVA: 0x0040ACF4 File Offset: 0x00408EF4
+	// Token: 0x0600AE75 RID: 44661 RVA: 0x00410034 File Offset: 0x0040E234
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool GetPlayer(Collider col)
 	{
@@ -402,7 +402,7 @@ public class vp_MovingPlatform : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x0600AD79 RID: 44409 RVA: 0x0040AD68 File Offset: 0x00408F68
+	// Token: 0x0600AE76 RID: 44662 RVA: 0x004100A8 File Offset: 0x0040E2A8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void TryPushPlayer()
 	{
@@ -429,7 +429,7 @@ public class vp_MovingPlatform : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD7A RID: 44410 RVA: 0x0040AE68 File Offset: 0x00409068
+	// Token: 0x0600AE77 RID: 44663 RVA: 0x004101A8 File Offset: 0x0040E3A8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void TrySnapPlayerToTop()
 	{
@@ -458,7 +458,7 @@ public class vp_MovingPlatform : MonoBehaviour
 		this.m_PlayerToPush.Position.Set(vector);
 	}
 
-	// Token: 0x0600AD7B RID: 44411 RVA: 0x0040B04F File Offset: 0x0040924F
+	// Token: 0x0600AE78 RID: 44664 RVA: 0x0041038F File Offset: 0x0040E58F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void TryAutoStart()
 	{
@@ -473,187 +473,187 @@ public class vp_MovingPlatform : MonoBehaviour
 		this.GoTo(this.MoveAutoStartTarget);
 	}
 
-	// Token: 0x040080FB RID: 33019
+	// Token: 0x040081D4 RID: 33236
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_Transform;
 
-	// Token: 0x040080FC RID: 33020
+	// Token: 0x040081D5 RID: 33237
 	public vp_MovingPlatform.PathMoveType PathType;
 
-	// Token: 0x040080FD RID: 33021
+	// Token: 0x040081D6 RID: 33238
 	public GameObject PathWaypoints;
 
-	// Token: 0x040080FE RID: 33022
+	// Token: 0x040081D7 RID: 33239
 	public vp_MovingPlatform.Direction PathDirection;
 
-	// Token: 0x040080FF RID: 33023
+	// Token: 0x040081D8 RID: 33240
 	public int MoveAutoStartTarget = 1000;
 
-	// Token: 0x04008100 RID: 33024
+	// Token: 0x040081D9 RID: 33241
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public List<Transform> m_Waypoints = new List<Transform>();
 
-	// Token: 0x04008101 RID: 33025
+	// Token: 0x040081DA RID: 33242
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public int m_NextWaypoint;
 
-	// Token: 0x04008102 RID: 33026
+	// Token: 0x040081DB RID: 33243
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_CurrentTargetPosition = Vector3.zero;
 
-	// Token: 0x04008103 RID: 33027
+	// Token: 0x040081DC RID: 33244
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_CurrentTargetAngle = Vector3.zero;
 
-	// Token: 0x04008104 RID: 33028
+	// Token: 0x040081DD RID: 33245
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public int m_TargetedWayPoint;
 
-	// Token: 0x04008105 RID: 33029
+	// Token: 0x040081DE RID: 33246
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_TravelDistance;
 
-	// Token: 0x04008106 RID: 33030
+	// Token: 0x040081DF RID: 33247
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_OriginalAngle = Vector3.zero;
 
-	// Token: 0x04008107 RID: 33031
+	// Token: 0x040081E0 RID: 33248
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public int m_CurrentWaypoint;
 
-	// Token: 0x04008108 RID: 33032
+	// Token: 0x040081E1 RID: 33249
 	public float MoveSpeed = 0.1f;
 
-	// Token: 0x04008109 RID: 33033
+	// Token: 0x040081E2 RID: 33250
 	public float MoveReturnDelay;
 
-	// Token: 0x0400810A RID: 33034
+	// Token: 0x040081E3 RID: 33251
 	public float MoveCooldown;
 
-	// Token: 0x0400810B RID: 33035
+	// Token: 0x040081E4 RID: 33252
 	public vp_MovingPlatform.MovementInterpolationMode MoveInterpolationMode;
 
-	// Token: 0x0400810C RID: 33036
+	// Token: 0x040081E5 RID: 33253
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_Moving;
 
-	// Token: 0x0400810D RID: 33037
+	// Token: 0x040081E6 RID: 33254
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_NextAllowedMoveTime;
 
-	// Token: 0x0400810E RID: 33038
+	// Token: 0x040081E7 RID: 33255
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_MoveTime;
 
-	// Token: 0x0400810F RID: 33039
+	// Token: 0x040081E8 RID: 33256
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Timer.Handle m_ReturnDelayTimer = new vp_Timer.Handle();
 
-	// Token: 0x04008110 RID: 33040
+	// Token: 0x040081E9 RID: 33257
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_PrevPos = Vector3.zero;
 
-	// Token: 0x04008111 RID: 33041
+	// Token: 0x040081EA RID: 33258
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AnimationCurve m_EaseInOutCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
 
-	// Token: 0x04008112 RID: 33042
+	// Token: 0x040081EB RID: 33259
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AnimationCurve m_LinearCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
 
-	// Token: 0x04008113 RID: 33043
+	// Token: 0x040081EC RID: 33260
 	public float RotationEaseAmount = 0.1f;
 
-	// Token: 0x04008114 RID: 33044
+	// Token: 0x040081ED RID: 33261
 	public Vector3 RotationSpeed = Vector3.zero;
 
-	// Token: 0x04008115 RID: 33045
+	// Token: 0x040081EE RID: 33262
 	public vp_MovingPlatform.RotateInterpolationMode RotationInterpolationMode;
 
-	// Token: 0x04008116 RID: 33046
+	// Token: 0x040081EF RID: 33263
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_PrevAngle = Vector3.zero;
 
-	// Token: 0x04008117 RID: 33047
+	// Token: 0x040081F0 RID: 33264
 	public AudioClip SoundStart;
 
-	// Token: 0x04008118 RID: 33048
+	// Token: 0x040081F1 RID: 33265
 	public AudioClip SoundStop;
 
-	// Token: 0x04008119 RID: 33049
+	// Token: 0x040081F2 RID: 33266
 	public AudioClip SoundMove;
 
-	// Token: 0x0400811A RID: 33050
+	// Token: 0x040081F3 RID: 33267
 	public AudioClip SoundWaypoint;
 
-	// Token: 0x0400811B RID: 33051
+	// Token: 0x040081F4 RID: 33268
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AudioSource m_Audio;
 
-	// Token: 0x0400811C RID: 33052
+	// Token: 0x040081F5 RID: 33269
 	public bool PhysicsSnapPlayerToTopOnIntersect = true;
 
-	// Token: 0x0400811D RID: 33053
+	// Token: 0x040081F6 RID: 33270
 	public float m_PhysicsPushForce = 2f;
 
-	// Token: 0x0400811E RID: 33054
+	// Token: 0x040081F7 RID: 33271
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Rigidbody m_RigidBody;
 
-	// Token: 0x0400811F RID: 33055
+	// Token: 0x040081F8 RID: 33272
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Collider m_Collider;
 
-	// Token: 0x04008120 RID: 33056
+	// Token: 0x040081F9 RID: 33273
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Collider m_PlayerCollider;
 
-	// Token: 0x04008121 RID: 33057
+	// Token: 0x040081FA RID: 33274
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_PlayerEventHandler m_PlayerToPush;
 
-	// Token: 0x04008122 RID: 33058
+	// Token: 0x040081FB RID: 33275
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_PhysicsCurrentMoveVelocity;
 
-	// Token: 0x04008123 RID: 33059
+	// Token: 0x040081FC RID: 33276
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public float m_PhysicsCurrentRotationVelocity;
 
-	// Token: 0x04008124 RID: 33060
+	// Token: 0x040081FD RID: 33277
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Dictionary<Collider, vp_PlayerEventHandler> m_KnownPlayers = new Dictionary<Collider, vp_PlayerEventHandler>();
 
-	// Token: 0x020015B0 RID: 5552
+	// Token: 0x020015CB RID: 5579
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class WaypointComparer : IComparer
 	{
-		// Token: 0x0600AD7E RID: 44414 RVA: 0x0040B16C File Offset: 0x0040936C
+		// Token: 0x0600AE7B RID: 44667 RVA: 0x004104AC File Offset: 0x0040E6AC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int System.Collections.IComparer.Compare(object x, object y)
 		{
@@ -661,55 +661,55 @@ public class vp_MovingPlatform : MonoBehaviour
 		}
 	}
 
-	// Token: 0x020015B1 RID: 5553
+	// Token: 0x020015CC RID: 5580
 	public enum PathMoveType
 	{
-		// Token: 0x04008126 RID: 33062
+		// Token: 0x040081FF RID: 33279
 		PingPong,
-		// Token: 0x04008127 RID: 33063
+		// Token: 0x04008200 RID: 33280
 		Loop,
-		// Token: 0x04008128 RID: 33064
+		// Token: 0x04008201 RID: 33281
 		Target
 	}
 
-	// Token: 0x020015B2 RID: 5554
+	// Token: 0x020015CD RID: 5581
 	public enum Direction
 	{
-		// Token: 0x0400812A RID: 33066
+		// Token: 0x04008203 RID: 33283
 		Forward,
-		// Token: 0x0400812B RID: 33067
+		// Token: 0x04008204 RID: 33284
 		Backwards,
-		// Token: 0x0400812C RID: 33068
+		// Token: 0x04008205 RID: 33285
 		Direct
 	}
 
-	// Token: 0x020015B3 RID: 5555
+	// Token: 0x020015CE RID: 5582
 	public enum MovementInterpolationMode
 	{
-		// Token: 0x0400812E RID: 33070
+		// Token: 0x04008207 RID: 33287
 		EaseInOut,
-		// Token: 0x0400812F RID: 33071
+		// Token: 0x04008208 RID: 33288
 		EaseIn,
-		// Token: 0x04008130 RID: 33072
+		// Token: 0x04008209 RID: 33289
 		EaseOut,
-		// Token: 0x04008131 RID: 33073
+		// Token: 0x0400820A RID: 33290
 		EaseOut2,
-		// Token: 0x04008132 RID: 33074
+		// Token: 0x0400820B RID: 33291
 		Slerp,
-		// Token: 0x04008133 RID: 33075
+		// Token: 0x0400820C RID: 33292
 		Lerp
 	}
 
-	// Token: 0x020015B4 RID: 5556
+	// Token: 0x020015CF RID: 5583
 	public enum RotateInterpolationMode
 	{
-		// Token: 0x04008135 RID: 33077
+		// Token: 0x0400820E RID: 33294
 		SyncToMovement,
-		// Token: 0x04008136 RID: 33078
+		// Token: 0x0400820F RID: 33295
 		EaseOut,
-		// Token: 0x04008137 RID: 33079
+		// Token: 0x04008210 RID: 33296
 		CustomEaseOut,
-		// Token: 0x04008138 RID: 33080
+		// Token: 0x04008211 RID: 33297
 		CustomRotate
 	}
 }

@@ -4,21 +4,21 @@ using System.Threading;
 
 namespace Platform.MultiPlatform
 {
-	// Token: 0x02001C98 RID: 7320
+	// Token: 0x02001CBF RID: 7359
 	public class ServerListAnnouncer : IMasterServerAnnouncer
 	{
-		// Token: 0x0600D8EB RID: 55531 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DA83 RID: 55939 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Init(IPlatform _owner)
 		{
 		}
 
-		// Token: 0x0600D8EC RID: 55532 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600DA84 RID: 55940 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Update()
 		{
 		}
 
-		// Token: 0x17001AD8 RID: 6872
-		// (get) Token: 0x0600D8ED RID: 55533 RVA: 0x004DC980 File Offset: 0x004DAB80
+		// Token: 0x17001B4A RID: 6986
+		// (get) Token: 0x0600DA85 RID: 55941 RVA: 0x004E2F7C File Offset: 0x004E117C
 		public bool GameServerInitialized
 		{
 			get
@@ -43,7 +43,7 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x0600D8EE RID: 55534 RVA: 0x004DC9EC File Offset: 0x004DABEC
+		// Token: 0x0600DA86 RID: 55942 RVA: 0x004E2FE8 File Offset: 0x004E11E8
 		public string GetServerPorts()
 		{
 			string text = "";
@@ -96,7 +96,7 @@ namespace Platform.MultiPlatform
 			return text;
 		}
 
-		// Token: 0x0600D8EF RID: 55535 RVA: 0x004DCB04 File Offset: 0x004DAD04
+		// Token: 0x0600DA87 RID: 55943 RVA: 0x004E3100 File Offset: 0x004E1300
 		public void AdvertiseServer(Action _onServerRegistered)
 		{
 			if (PlatformManager.NativePlatform.ServerListAnnouncer != null)
@@ -135,7 +135,7 @@ namespace Platform.MultiPlatform
 			this.onServerRegistered = _onServerRegistered;
 		}
 
-		// Token: 0x0600D8F0 RID: 55536 RVA: 0x004DCC24 File Offset: 0x004DAE24
+		// Token: 0x0600DA88 RID: 55944 RVA: 0x004E3220 File Offset: 0x004E1420
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void serverRegisteredCallback()
 		{
@@ -150,7 +150,7 @@ namespace Platform.MultiPlatform
 			}
 		}
 
-		// Token: 0x0600D8F1 RID: 55537 RVA: 0x004DCC4C File Offset: 0x004DAE4C
+		// Token: 0x0600DA89 RID: 55945 RVA: 0x004E3248 File Offset: 0x004E1448
 		public void StopServer()
 		{
 			foreach (KeyValuePair<EPlatformIdentifier, IPlatform> keyValuePair in PlatformManager.ServerPlatforms)
@@ -181,11 +181,11 @@ namespace Platform.MultiPlatform
 			serverListAnnouncer3.StopServer();
 		}
 
-		// Token: 0x0400A432 RID: 42034
+		// Token: 0x0400A565 RID: 42341
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int platformsAdvertising;
 
-		// Token: 0x0400A433 RID: 42035
+		// Token: 0x0400A566 RID: 42342
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Action onServerRegistered;
 	}

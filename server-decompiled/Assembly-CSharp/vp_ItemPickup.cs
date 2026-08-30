@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020015A9 RID: 5545
+// Token: 0x020015C4 RID: 5572
 [RequireComponent(typeof(SphereCollider))]
 [Serializable]
 public class vp_ItemPickup : MonoBehaviour
 {
-	// Token: 0x170013E9 RID: 5097
-	// (get) Token: 0x0600AD4A RID: 44362 RVA: 0x00409707 File Offset: 0x00407907
+	// Token: 0x17001422 RID: 5154
+	// (get) Token: 0x0600AE47 RID: 44615 RVA: 0x0040EA47 File Offset: 0x0040CC47
 	public Type ItemType
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -22,8 +22,8 @@ public class vp_ItemPickup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170013EA RID: 5098
-	// (get) Token: 0x0600AD4B RID: 44363 RVA: 0x00409733 File Offset: 0x00407933
+	// Token: 0x17001423 RID: 5155
+	// (get) Token: 0x0600AE48 RID: 44616 RVA: 0x0040EA73 File Offset: 0x0040CC73
 	public vp_ItemType ItemTypeObject
 	{
 		get
@@ -36,8 +36,8 @@ public class vp_ItemPickup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170013EB RID: 5099
-	// (get) Token: 0x0600AD4C RID: 44364 RVA: 0x0040975A File Offset: 0x0040795A
+	// Token: 0x17001424 RID: 5156
+	// (get) Token: 0x0600AE49 RID: 44617 RVA: 0x0040EA9A File Offset: 0x0040CC9A
 	public AudioSource Audio
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -55,7 +55,7 @@ public class vp_ItemPickup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD4D RID: 44365 RVA: 0x00409798 File Offset: 0x00407998
+	// Token: 0x0600AE4A RID: 44618 RVA: 0x0040EAD8 File Offset: 0x0040CCD8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Awake()
 	{
@@ -73,7 +73,7 @@ public class vp_ItemPickup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD4E RID: 44366 RVA: 0x0040983C File Offset: 0x00407A3C
+	// Token: 0x0600AE4B RID: 44619 RVA: 0x0040EB7C File Offset: 0x0040CD7C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Update()
 	{
@@ -97,7 +97,7 @@ public class vp_ItemPickup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD4F RID: 44367 RVA: 0x004098B4 File Offset: 0x00407AB4
+	// Token: 0x0600AE4C RID: 44620 RVA: 0x0040EBF4 File Offset: 0x0040CDF4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
@@ -118,7 +118,7 @@ public class vp_ItemPickup : MonoBehaviour
 		vp_GlobalEvent<vp_ItemPickup>.Send("NetworkRespawnPickup", this);
 	}
 
-	// Token: 0x0600AD50 RID: 44368 RVA: 0x00409928 File Offset: 0x00407B28
+	// Token: 0x0600AE4D RID: 44621 RVA: 0x0040EC68 File Offset: 0x0040CE68
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnTriggerEnter(Collider col)
 	{
@@ -137,7 +137,7 @@ public class vp_ItemPickup : MonoBehaviour
 		this.TryGiveTo(col);
 	}
 
-	// Token: 0x0600AD51 RID: 44369 RVA: 0x00409958 File Offset: 0x00407B58
+	// Token: 0x0600AE4E RID: 44622 RVA: 0x0040EC98 File Offset: 0x0040CE98
 	public void TryGiveTo(Collider col)
 	{
 		if (this.m_Depleted)
@@ -193,14 +193,14 @@ public class vp_ItemPickup : MonoBehaviour
 		this.OnFail(col.transform);
 	}
 
-	// Token: 0x0600AD52 RID: 44370 RVA: 0x00409BA9 File Offset: 0x00407DA9
+	// Token: 0x0600AE4F RID: 44623 RVA: 0x0040EEE9 File Offset: 0x0040D0E9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnTriggerExit()
 	{
 		this.m_AlreadyFailed = false;
 	}
 
-	// Token: 0x0600AD53 RID: 44371 RVA: 0x00409BB4 File Offset: 0x00407DB4
+	// Token: 0x0600AE50 RID: 44624 RVA: 0x0040EEF4 File Offset: 0x0040D0F4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnSuccess(Transform recipient)
 	{
@@ -241,14 +241,14 @@ public class vp_ItemPickup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD54 RID: 44372 RVA: 0x003F4C47 File Offset: 0x003F2E47
+	// Token: 0x0600AE51 RID: 44625 RVA: 0x003F9F87 File Offset: 0x003F8187
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Die()
 	{
 		vp_Utility.Activate(base.gameObject, false);
 	}
 
-	// Token: 0x0600AD55 RID: 44373 RVA: 0x00409D64 File Offset: 0x00407F64
+	// Token: 0x0600AE52 RID: 44626 RVA: 0x0040F0A4 File Offset: 0x0040D2A4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnFail(Transform recipient)
 	{
@@ -284,129 +284,129 @@ public class vp_ItemPickup : MonoBehaviour
 		vp_GlobalEvent<Transform, string>.Send("HUDText", recipient, text);
 	}
 
-	// Token: 0x040080DA RID: 32986
+	// Token: 0x040081B3 RID: 33203
 	public int ID;
 
-	// Token: 0x040080DB RID: 32987
+	// Token: 0x040081B4 RID: 33204
 	public int Amount;
 
-	// Token: 0x040080DC RID: 32988
+	// Token: 0x040081B5 RID: 33205
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Type m_ItemType;
 
-	// Token: 0x040080DD RID: 32989
+	// Token: 0x040081B6 RID: 33206
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_ItemType m_ItemTypeObject;
 
-	// Token: 0x040080DE RID: 32990
+	// Token: 0x040081B7 RID: 33207
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AudioSource m_Audio;
 
-	// Token: 0x040080DF RID: 32991
+	// Token: 0x040081B8 RID: 33208
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public vp_ItemPickup.ItemSection m_Item;
 
-	// Token: 0x040080E0 RID: 32992
+	// Token: 0x040081B9 RID: 33209
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public vp_ItemPickup.RecipientTagsSection m_Recipient;
 
-	// Token: 0x040080E1 RID: 32993
+	// Token: 0x040081BA RID: 33210
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public vp_ItemPickup.SoundSection m_Sound;
 
-	// Token: 0x040080E2 RID: 32994
+	// Token: 0x040081BB RID: 33211
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public vp_ItemPickup.MessageSection m_Messages;
 
-	// Token: 0x040080E3 RID: 32995
+	// Token: 0x040081BC RID: 33212
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_Depleted;
 
-	// Token: 0x040080E4 RID: 32996
+	// Token: 0x040081BD RID: 33213
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public int m_PickedUpAmount;
 
-	// Token: 0x040080E5 RID: 32997
+	// Token: 0x040081BE RID: 33214
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Rigidbody m_Rigidbody;
 
-	// Token: 0x040080E6 RID: 32998
+	// Token: 0x040081BF RID: 33215
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_Transform;
 
-	// Token: 0x040080E7 RID: 32999
+	// Token: 0x040081C0 RID: 33216
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public string MissingItemTypeError = "Warning: {0} has no ItemType object!";
 
-	// Token: 0x040080E8 RID: 33000
+	// Token: 0x040081C1 RID: 33217
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_AlreadyFailed;
 
-	// Token: 0x040080E9 RID: 33001
+	// Token: 0x040081C2 RID: 33218
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static Dictionary<Collider, vp_Inventory> m_ColliderInventories = new Dictionary<Collider, vp_Inventory>();
 
-	// Token: 0x020015AA RID: 5546
+	// Token: 0x020015C5 RID: 5573
 	[Serializable]
 	public class ItemSection
 	{
-		// Token: 0x040080EA RID: 33002
+		// Token: 0x040081C3 RID: 33219
 		public vp_ItemType Type;
 	}
 
-	// Token: 0x020015AB RID: 5547
+	// Token: 0x020015C6 RID: 5574
 	[Serializable]
 	public class RecipientTagsSection
 	{
-		// Token: 0x040080EB RID: 33003
+		// Token: 0x040081C4 RID: 33220
 		public List<string> Tags = new List<string>();
 	}
 
-	// Token: 0x020015AC RID: 5548
+	// Token: 0x020015C7 RID: 5575
 	[Serializable]
 	public class SoundSection
 	{
-		// Token: 0x040080EC RID: 33004
+		// Token: 0x040081C5 RID: 33221
 		public AudioClip PickupSound;
 
-		// Token: 0x040080ED RID: 33005
+		// Token: 0x040081C6 RID: 33222
 		public bool PickupSoundSlomo = true;
 
-		// Token: 0x040080EE RID: 33006
+		// Token: 0x040081C7 RID: 33223
 		public AudioClip PickupFailSound;
 
-		// Token: 0x040080EF RID: 33007
+		// Token: 0x040081C8 RID: 33224
 		public bool FailSoundSlomo = true;
 	}
 
-	// Token: 0x020015AD RID: 5549
+	// Token: 0x020015C8 RID: 5576
 	[Serializable]
 	public class MessageSection
 	{
-		// Token: 0x040080F0 RID: 33008
+		// Token: 0x040081C9 RID: 33225
 		public string SuccessSingle = "Picked up {2}.";
 
-		// Token: 0x040080F1 RID: 33009
+		// Token: 0x040081CA RID: 33226
 		public string SuccessMultiple = "Picked up {4} {1}s.";
 
-		// Token: 0x040080F2 RID: 33010
+		// Token: 0x040081CB RID: 33227
 		public string FailSingle = "Can't pick up {2} right now.";
 
-		// Token: 0x040080F3 RID: 33011
+		// Token: 0x040081CC RID: 33228
 		public string FailMultiple = "Can't pick up {4} {1}s right now.";
 	}
 }

@@ -2,11 +2,11 @@
 using Discord.Sdk;
 using UnityEngine.Scripting;
 
-// Token: 0x02000350 RID: 848
+// Token: 0x02000354 RID: 852
 [Preserve]
 public class XUiC_DiscordVoiceControls : XUiController
 {
-	// Token: 0x0600188D RID: 6285 RVA: 0x0008B204 File Offset: 0x00089404
+	// Token: 0x060018AA RID: 6314 RVA: 0x0008B944 File Offset: 0x00089B44
 	public override void Init()
 	{
 		base.Init();
@@ -35,7 +35,7 @@ public class XUiC_DiscordVoiceControls : XUiController
 		}
 	}
 
-	// Token: 0x0600188E RID: 6286 RVA: 0x0008B319 File Offset: 0x00089519
+	// Token: 0x060018AB RID: 6315 RVA: 0x0008BA59 File Offset: 0x00089C59
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onVoiceStateChanged(bool _self, ulong _userId)
 	{
@@ -46,35 +46,35 @@ public class XUiC_DiscordVoiceControls : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x0600188F RID: 6287 RVA: 0x0008A069 File Offset: 0x00088269
+	// Token: 0x060018AC RID: 6316 RVA: 0x0008A715 File Offset: 0x00088915
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onSelfMuteStateChanged(bool _selfMute, bool _selfDeaf)
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06001890 RID: 6288 RVA: 0x0008A069 File Offset: 0x00088269
+	// Token: 0x060018AD RID: 6317 RVA: 0x0008A715 File Offset: 0x00088915
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onLobbyStateChanged(DiscordManager.LobbyInfo _lobby, bool _isReady, bool _isJoined)
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06001891 RID: 6289 RVA: 0x0008A069 File Offset: 0x00088269
+	// Token: 0x060018AE RID: 6318 RVA: 0x0008A715 File Offset: 0x00088915
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onCallChanged(DiscordManager.CallInfo _newCall)
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06001892 RID: 6290 RVA: 0x0008A069 File Offset: 0x00088269
+	// Token: 0x060018AF RID: 6319 RVA: 0x0008A715 File Offset: 0x00088915
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onCallStatusChanged(DiscordManager.CallInfo _call, Call.Status _callStatus)
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06001893 RID: 6291 RVA: 0x0008A091 File Offset: 0x00088291
+	// Token: 0x060018B0 RID: 6320 RVA: 0x0008A73D File Offset: 0x0008893D
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -85,7 +85,7 @@ public class XUiC_DiscordVoiceControls : XUiController
 		}
 	}
 
-	// Token: 0x06001894 RID: 6292 RVA: 0x0008B328 File Offset: 0x00089528
+	// Token: 0x060018B1 RID: 6321 RVA: 0x0008BA68 File Offset: 0x00089C68
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{

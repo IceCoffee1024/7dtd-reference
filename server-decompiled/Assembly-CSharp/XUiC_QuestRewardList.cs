@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FD2 RID: 4050
+// Token: 0x02000FEB RID: 4075
 [Preserve]
 public class XUiC_QuestRewardList : XUiController
 {
-	// Token: 0x17000EC6 RID: 3782
-	// (get) Token: 0x06007FAE RID: 32686 RVA: 0x00306E1B File Offset: 0x0030501B
-	// (set) Token: 0x06007FAF RID: 32687 RVA: 0x00306E23 File Offset: 0x00305023
+	// Token: 0x17000EFF RID: 3839
+	// (get) Token: 0x060080A0 RID: 32928 RVA: 0x0030B64F File Offset: 0x0030984F
+	// (set) Token: 0x060080A1 RID: 32929 RVA: 0x0030B657 File Offset: 0x00309857
 	public Quest Quest
 	{
 		get
@@ -22,7 +22,7 @@ public class XUiC_QuestRewardList : XUiController
 		}
 	}
 
-	// Token: 0x06007FB0 RID: 32688 RVA: 0x00306E34 File Offset: 0x00305034
+	// Token: 0x060080A2 RID: 32930 RVA: 0x0030B668 File Offset: 0x00309868
 	public override void Init()
 	{
 		base.Init();
@@ -37,7 +37,7 @@ public class XUiC_QuestRewardList : XUiController
 		}
 	}
 
-	// Token: 0x06007FB1 RID: 32689 RVA: 0x00306E74 File Offset: 0x00305074
+	// Token: 0x060080A3 RID: 32931 RVA: 0x0030B6A8 File Offset: 0x003098A8
 	public override void Update(float _dt)
 	{
 		if (this.IsDirty)
@@ -98,11 +98,11 @@ public class XUiC_QuestRewardList : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x04005E85 RID: 24197
+	// Token: 0x04005F4C RID: 24396
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Quest quest;
 
-	// Token: 0x04005E86 RID: 24198
+	// Token: 0x04005F4D RID: 24397
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiController> rewardEntries = new List<XUiController>();
 }

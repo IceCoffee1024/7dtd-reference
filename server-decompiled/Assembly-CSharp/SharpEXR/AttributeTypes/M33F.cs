@@ -2,10 +2,10 @@
 
 namespace SharpEXR.AttributeTypes
 {
-	// Token: 0x020016BE RID: 5822
+	// Token: 0x020016E4 RID: 5860
 	public struct M33F
 	{
-		// Token: 0x0600B5A3 RID: 46499 RVA: 0x004391C0 File Offset: 0x004373C0
+		// Token: 0x0600B726 RID: 46886 RVA: 0x0043EF38 File Offset: 0x0043D138
 		public M33F(float v0, float v1, float v2, float v3, float v4, float v5, float v6, float v7, float v8)
 		{
 			this.Values = new float[9];
@@ -20,7 +20,7 @@ namespace SharpEXR.AttributeTypes
 			this.Values[8] = v8;
 		}
 
-		// Token: 0x040087BF RID: 34751
+		// Token: 0x040088DB RID: 35035
 		public readonly float[] Values;
 	}
 }

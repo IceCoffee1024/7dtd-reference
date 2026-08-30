@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019A6 RID: 6566
+	// Token: 0x020019CC RID: 6604
 	[Preserve]
 	public class ActionTeleportNearby : ActionBaseTeleport
 	{
-		// Token: 0x0600C845 RID: 51269 RVA: 0x0049A3F4 File Offset: 0x004985F4
+		// Token: 0x0600C9CC RID: 51660 RVA: 0x004A074C File Offset: 0x0049E94C
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			World world = GameManager.Instance.World;
@@ -21,7 +21,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.InComplete;
 		}
 
-		// Token: 0x0600C846 RID: 51270 RVA: 0x0049A43A File Offset: 0x0049863A
+		// Token: 0x0600C9CD RID: 51661 RVA: 0x004A0792 File Offset: 0x0049E992
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{

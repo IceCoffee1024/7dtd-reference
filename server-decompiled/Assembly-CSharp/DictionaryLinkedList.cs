@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x020013C5 RID: 5061
+// Token: 0x020013E0 RID: 5088
 public class DictionaryLinkedList<T, S>
 {
-	// Token: 0x06009EB7 RID: 40631 RVA: 0x003BC9DE File Offset: 0x003BABDE
+	// Token: 0x06009FB4 RID: 40884 RVA: 0x003C1D22 File Offset: 0x003BFF22
 	public DictionaryLinkedList()
 	{
 		this.dict = new Dictionary<T, S>();
 	}
 
-	// Token: 0x06009EB8 RID: 40632 RVA: 0x003BCA07 File Offset: 0x003BAC07
+	// Token: 0x06009FB5 RID: 40885 RVA: 0x003C1D4B File Offset: 0x003BFF4B
 	public DictionaryLinkedList(IEqualityComparer<T> _comparer)
 	{
 		this.dict = new Dictionary<T, S>(_comparer);
 	}
 
-	// Token: 0x06009EB9 RID: 40633 RVA: 0x003BCA34 File Offset: 0x003BAC34
+	// Token: 0x06009FB6 RID: 40886 RVA: 0x003C1D78 File Offset: 0x003BFF78
 	public void Add(T _key, S _value)
 	{
 		this.dict.Add(_key, _value);
@@ -24,7 +24,7 @@ public class DictionaryLinkedList<T, S>
 		this.indices.Add(_key, linkedListNode);
 	}
 
-	// Token: 0x06009EBA RID: 40634 RVA: 0x003BCA68 File Offset: 0x003BAC68
+	// Token: 0x06009FB7 RID: 40887 RVA: 0x003C1DAC File Offset: 0x003BFFAC
 	public void Set(T _key, S _value)
 	{
 		if (this.dict.ContainsKey(_key))
@@ -34,7 +34,7 @@ public class DictionaryLinkedList<T, S>
 		this.Add(_key, _value);
 	}
 
-	// Token: 0x06009EBB RID: 40635 RVA: 0x003BCA88 File Offset: 0x003BAC88
+	// Token: 0x06009FB8 RID: 40888 RVA: 0x003C1DCC File Offset: 0x003BFFCC
 	public void Remove(T _key)
 	{
 		if (this.dict.ContainsKey(_key))
@@ -47,7 +47,7 @@ public class DictionaryLinkedList<T, S>
 		}
 	}
 
-	// Token: 0x06009EBC RID: 40636 RVA: 0x003BCAE3 File Offset: 0x003BACE3
+	// Token: 0x06009FB9 RID: 40889 RVA: 0x003C1E27 File Offset: 0x003C0027
 	public void Clear()
 	{
 		this.list.Clear();
@@ -55,8 +55,8 @@ public class DictionaryLinkedList<T, S>
 		this.indices.Clear();
 	}
 
-	// Token: 0x170012A0 RID: 4768
-	// (get) Token: 0x06009EBD RID: 40637 RVA: 0x003BCB06 File Offset: 0x003BAD06
+	// Token: 0x170012D9 RID: 4825
+	// (get) Token: 0x06009FBA RID: 40890 RVA: 0x003C1E4A File Offset: 0x003C004A
 	public int Count
 	{
 		get
@@ -65,13 +65,13 @@ public class DictionaryLinkedList<T, S>
 		}
 	}
 
-	// Token: 0x04007810 RID: 30736
+	// Token: 0x040078E9 RID: 30953
 	public Dictionary<T, S> dict;
 
-	// Token: 0x04007811 RID: 30737
+	// Token: 0x040078EA RID: 30954
 	public LinkedList<S> list = new LinkedList<S>();
 
-	// Token: 0x04007812 RID: 30738
+	// Token: 0x040078EB RID: 30955
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<T, LinkedListNode<S>> indices = new Dictionary<T, LinkedListNode<S>>();
 }

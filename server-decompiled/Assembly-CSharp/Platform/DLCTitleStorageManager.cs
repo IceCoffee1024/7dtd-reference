@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace Platform
 {
-	// Token: 0x02001B1F RID: 6943
+	// Token: 0x02001B46 RID: 6982
 	public class DLCTitleStorageManager
 	{
-		// Token: 0x1700193B RID: 6459
-		// (get) Token: 0x0600CFAA RID: 53162 RVA: 0x004BF0F4 File Offset: 0x004BD2F4
+		// Token: 0x170019AD RID: 6573
+		// (get) Token: 0x0600D133 RID: 53555 RVA: 0x004C54E8 File Offset: 0x004C36E8
 		public static DLCTitleStorageManager Instance
 		{
 			get
@@ -23,20 +23,20 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600CFAB RID: 53163 RVA: 0x004BF10A File Offset: 0x004BD30A
+		// Token: 0x0600D134 RID: 53556 RVA: 0x004C54FE File Offset: 0x004C36FE
 		[PublicizedFrom(EAccessModifier.Private)]
 		public DLCTitleStorageManager()
 		{
 		}
 
-		// Token: 0x0600CFAC RID: 53164 RVA: 0x004BF120 File Offset: 0x004BD320
+		// Token: 0x0600D135 RID: 53557 RVA: 0x004C5514 File Offset: 0x004C3714
 		public bool IsDLCPurchasable(EntitlementSetEnum _dlcSet, DLCEnvironmentFlags _dlcEnvironments)
 		{
 			DLCTitleStorageManager.CatalogEntry catalogEntry;
 			return _dlcSet != EntitlementSetEnum.None && this.dlcPurchasability.TryGetValue(_dlcSet, out catalogEntry) && (catalogEntry.environments & _dlcEnvironments) != DLCEnvironmentFlags.None && (!_dlcEnvironments.HasFlag(DLCEnvironmentFlags.Retail) || catalogEntry.retailDate == null || !(catalogEntry.retailDate.Value > DateTime.Now));
 		}
 
-		// Token: 0x0600CFAD RID: 53165 RVA: 0x004BF18C File Offset: 0x004BD38C
+		// Token: 0x0600D136 RID: 53558 RVA: 0x004C5580 File Offset: 0x004C3780
 		public void FetchFromSource()
 		{
 			if (!this.fetchAttempted)
@@ -54,7 +54,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600CFAE RID: 53166 RVA: 0x004BF1DD File Offset: 0x004BD3DD
+		// Token: 0x0600D137 RID: 53559 RVA: 0x004C55D1 File Offset: 0x004C37D1
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator RequestDataCo()
 		{
@@ -91,7 +91,7 @@ namespace Platform
 			yield break;
 		}
 
-		// Token: 0x0600CFAF RID: 53167 RVA: 0x004BF1EC File Offset: 0x004BD3EC
+		// Token: 0x0600D138 RID: 53560 RVA: 0x004C55E0 File Offset: 0x004C37E0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static string GetLocalPlatformNetworkString()
 		{
@@ -120,28 +120,28 @@ namespace Platform
 			return null;
 		}
 
-		// Token: 0x04009EF4 RID: 40692
+		// Token: 0x0400A025 RID: 40997
 		public const string RFSUri = "DLCConfiguration";
 
-		// Token: 0x04009EF5 RID: 40693
+		// Token: 0x0400A026 RID: 40998
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static DLCTitleStorageManager instance;
 
-		// Token: 0x04009EF6 RID: 40694
+		// Token: 0x0400A027 RID: 40999
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<EntitlementSetEnum, DLCTitleStorageManager.CatalogEntry> dlcPurchasability = new Dictionary<EntitlementSetEnum, DLCTitleStorageManager.CatalogEntry>();
 
-		// Token: 0x04009EF7 RID: 40695
+		// Token: 0x0400A028 RID: 41000
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool fetchAttempted;
 
-		// Token: 0x02001B20 RID: 6944
+		// Token: 0x02001B47 RID: 6983
 		public struct CatalogEntry
 		{
-			// Token: 0x04009EF8 RID: 40696
+			// Token: 0x0400A029 RID: 41001
 			public DLCEnvironmentFlags environments;
 
-			// Token: 0x04009EF9 RID: 40697
+			// Token: 0x0400A02A RID: 41002
 			public DateTime? retailDate;
 		}
 	}

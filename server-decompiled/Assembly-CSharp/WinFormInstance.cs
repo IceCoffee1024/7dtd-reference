@@ -4,10 +4,10 @@ using System.Windows.Forms;
 using UnityEngine;
 using UnityEngine.Profiling;
 
-// Token: 0x020002CE RID: 718
+// Token: 0x020002D2 RID: 722
 public class WinFormInstance : IConsoleServer
 {
-	// Token: 0x060014C1 RID: 5313 RVA: 0x0007D8F0 File Offset: 0x0007BAF0
+	// Token: 0x060014D3 RID: 5331 RVA: 0x0007DF48 File Offset: 0x0007C148
 	public WinFormInstance()
 	{
 		try
@@ -29,7 +29,7 @@ public class WinFormInstance : IConsoleServer
 		}
 	}
 
-	// Token: 0x060014C2 RID: 5314 RVA: 0x0007D984 File Offset: 0x0007BB84
+	// Token: 0x060014D4 RID: 5332 RVA: 0x0007DFDC File Offset: 0x0007C1DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void windowThreadMain()
 	{
@@ -42,7 +42,7 @@ public class WinFormInstance : IConsoleServer
 		Log.Out("WinThread ended");
 	}
 
-	// Token: 0x060014C3 RID: 5315 RVA: 0x0007D9D9 File Offset: 0x0007BBD9
+	// Token: 0x060014D5 RID: 5333 RVA: 0x0007E031 File Offset: 0x0007C231
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ApplicationOnThreadException(object _sender, ThreadExceptionEventArgs _threadExceptionEventArgs)
 	{
@@ -50,7 +50,7 @@ public class WinFormInstance : IConsoleServer
 		Log.Exception(_threadExceptionEventArgs.Exception);
 	}
 
-	// Token: 0x060014C4 RID: 5316 RVA: 0x0007D9F0 File Offset: 0x0007BBF0
+	// Token: 0x060014D6 RID: 5334 RVA: 0x0007E048 File Offset: 0x0007C248
 	public void Disconnect()
 	{
 		if (this.form == null)
@@ -65,7 +65,7 @@ public class WinFormInstance : IConsoleServer
 		Log.Out("Ended Terminal Window");
 	}
 
-	// Token: 0x060014C5 RID: 5317 RVA: 0x0007DA2C File Offset: 0x0007BC2C
+	// Token: 0x060014D7 RID: 5335 RVA: 0x0007E084 File Offset: 0x0007C284
 	public void SendLine(string _line)
 	{
 		if (_line != null && this.form != null)
@@ -74,7 +74,7 @@ public class WinFormInstance : IConsoleServer
 		}
 	}
 
-	// Token: 0x060014C6 RID: 5318 RVA: 0x0007DA45 File Offset: 0x0007BC45
+	// Token: 0x060014D8 RID: 5336 RVA: 0x0007E09D File Offset: 0x0007C29D
 	public void SendLog(string _formattedMessage, string _plainMessage, string _trace, LogType _type, DateTime _timestamp, long _uptime)
 	{
 		if (_formattedMessage != null && this.form != null)
@@ -83,15 +83,15 @@ public class WinFormInstance : IConsoleServer
 		}
 	}
 
-	// Token: 0x04000DC4 RID: 3524
+	// Token: 0x04000DD5 RID: 3541
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Thread windowThread;
 
-	// Token: 0x04000DC5 RID: 3525
+	// Token: 0x04000DD6 RID: 3542
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool stopThread;
 
-	// Token: 0x04000DC6 RID: 3526
+	// Token: 0x04000DD7 RID: 3543
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WinFormConnection form;
 }

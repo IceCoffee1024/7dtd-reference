@@ -4,16 +4,16 @@ using UnityEngine;
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x020016D5 RID: 5845
+	// Token: 0x020016FB RID: 5883
 	public class HighwayPlanner
 	{
-		// Token: 0x0600B5EA RID: 46570 RVA: 0x0043AB75 File Offset: 0x00438D75
+		// Token: 0x0600B76D RID: 46957 RVA: 0x004408ED File Offset: 0x0043EAED
 		public HighwayPlanner(WorldBuilder _worldBuilder)
 		{
 			this.worldBuilder = _worldBuilder;
 		}
 
-		// Token: 0x0600B5EB RID: 46571 RVA: 0x0043AB90 File Offset: 0x00438D90
+		// Token: 0x0600B76E RID: 46958 RVA: 0x00440908 File Offset: 0x0043EB08
 		public void Plan(DynamicProperties thisWorldProperties, int worldSeed)
 		{
 			this.worldBuilder.SetTaskMessage(this.worldBuilder.messageHighways);
@@ -39,7 +39,7 @@ namespace WorldGenerationEngineFinal
 			Log.Out(string.Format("HighwayPlanner Plan in {0}, r={1:x}", (float)microStopwatch.ElapsedMilliseconds * 0.001f, Rand.Instance.PeekSample()));
 		}
 
-		// Token: 0x0600B5EC RID: 46572 RVA: 0x0043ACB4 File Offset: 0x00438EB4
+		// Token: 0x0600B76F RID: 46959 RVA: 0x00440A2C File Offset: 0x0043EC2C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void CleanupHighwayConnections(List<Township> _townships)
 		{
@@ -116,7 +116,7 @@ namespace WorldGenerationEngineFinal
 			Log.Out(string.Format("HighwayPlanner cleanupHighwayConnections in {0}, r={1:x}", (float)microStopwatch.ElapsedMilliseconds * 0.001f, Rand.Instance.PeekSample()));
 		}
 
-		// Token: 0x0600B5ED RID: 46573 RVA: 0x0043B048 File Offset: 0x00439248
+		// Token: 0x0600B770 RID: 46960 RVA: 0x00440DC0 File Offset: 0x0043EFC0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void RunTownshipDirtRoads()
 		{
@@ -191,7 +191,7 @@ namespace WorldGenerationEngineFinal
 			Log.Out(string.Format("HighwayPlanner runTownshipDirtRoads, countryTownships {0}, in {1}, r={2:x}", list.Count, (float)microStopwatch.ElapsedMilliseconds * 0.001f, Rand.Instance.PeekSample()));
 		}
 
-		// Token: 0x0600B5EE RID: 46574 RVA: 0x0043B3DC File Offset: 0x004395DC
+		// Token: 0x0600B771 RID: 46961 RVA: 0x00441154 File Offset: 0x0043F354
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ConnectClosest(Township _township, List<Township> highwayTownships)
 		{
@@ -265,7 +265,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B5EF RID: 46575 RVA: 0x0043B600 File Offset: 0x00439800
+		// Token: 0x0600B772 RID: 46962 RVA: 0x00441378 File Offset: 0x0043F578
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void ConnectSelf(Township _township)
 		{
@@ -317,7 +317,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B5F0 RID: 46576 RVA: 0x0043B7B4 File Offset: 0x004399B4
+		// Token: 0x0600B773 RID: 46963 RVA: 0x0044152C File Offset: 0x0043F72C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SetTileExits(Path path)
 		{
@@ -325,7 +325,7 @@ namespace WorldGenerationEngineFinal
 			this.SetTileExit(path, path.EndPosition);
 		}
 
-		// Token: 0x0600B5F1 RID: 46577 RVA: 0x0043B7D0 File Offset: 0x004399D0
+		// Token: 0x0600B774 RID: 46964 RVA: 0x00441548 File Offset: 0x0043F748
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SetTileExit(Path currentPath, Vector2i exit)
 		{
@@ -375,7 +375,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B5F2 RID: 46578 RVA: 0x0043B970 File Offset: 0x00439B70
+		// Token: 0x0600B775 RID: 46965 RVA: 0x004416E8 File Offset: 0x0043F8E8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void GetPathToTownship(StreetTile gateway, Township otherTownship)
 		{
@@ -406,22 +406,22 @@ namespace WorldGenerationEngineFinal
 			this.getPathToTownshipResult = path;
 		}
 
-		// Token: 0x04008809 RID: 34825
+		// Token: 0x04008925 RID: 35109
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly WorldBuilder worldBuilder;
 
-		// Token: 0x0400880A RID: 34826
+		// Token: 0x04008926 RID: 35110
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly List<HighwayPlanner.ExitConnection> ExitConnections = new List<HighwayPlanner.ExitConnection>();
 
-		// Token: 0x0400880B RID: 34827
+		// Token: 0x04008927 RID: 35111
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Path getPathToTownshipResult;
 
-		// Token: 0x020016D6 RID: 5846
+		// Token: 0x020016FC RID: 5884
 		public class ExitConnection
 		{
-			// Token: 0x0600B5F3 RID: 46579 RVA: 0x0043BA8C File Offset: 0x00439C8C
+			// Token: 0x0600B776 RID: 46966 RVA: 0x00441804 File Offset: 0x0043FA04
 			public ExitConnection(StreetTile parent, Vector2i worldPos, Path connectedPath = null)
 			{
 				this.ParentTile = parent;
@@ -429,11 +429,11 @@ namespace WorldGenerationEngineFinal
 				parent.SetExitUsed(this.ExitDir);
 			}
 
-			// Token: 0x0400880C RID: 34828
+			// Token: 0x04008928 RID: 35112
 			[PublicizedFrom(EAccessModifier.Private)]
 			public StreetTile ParentTile;
 
-			// Token: 0x0400880D RID: 34829
+			// Token: 0x04008929 RID: 35113
 			[PublicizedFrom(EAccessModifier.Private)]
 			public int ExitDir;
 		}

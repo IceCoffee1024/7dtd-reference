@@ -4,10 +4,10 @@ using System.Linq.Expressions;
 using System.Reflection;
 using UnityEngine.Scripting;
 
-// Token: 0x02001474 RID: 5236
+// Token: 0x0200148F RID: 5263
 public static class ReflectionHelpers
 {
-	// Token: 0x0600A42F RID: 42031 RVA: 0x003D1BD8 File Offset: 0x003CFDD8
+	// Token: 0x0600A52C RID: 42284 RVA: 0x003D6F1C File Offset: 0x003D511C
 	public static void FindTypesImplementingBase(Type _searchType, Action<Type> _typeFoundCallback, bool _allowAbstract = false)
 	{
 		try
@@ -76,7 +76,7 @@ public static class ReflectionHelpers
 		}
 	}
 
-	// Token: 0x0600A430 RID: 42032 RVA: 0x003D1E38 File Offset: 0x003D0038
+	// Token: 0x0600A52D RID: 42285 RVA: 0x003D717C File Offset: 0x003D537C
 	public static T Instantiate<T>(Type _type) where T : class
 	{
 		try
@@ -100,7 +100,7 @@ public static class ReflectionHelpers
 		return default(T);
 	}
 
-	// Token: 0x0600A431 RID: 42033 RVA: 0x003D1EFC File Offset: 0x003D00FC
+	// Token: 0x0600A52E RID: 42286 RVA: 0x003D7240 File Offset: 0x003D5440
 	public static Type GetTypeWithPrefix(string _prefix, string _name)
 	{
 		int num = _name.IndexOfAny(ReflectionHelpers.classnameEndMarkers);
@@ -140,7 +140,7 @@ public static class ReflectionHelpers
 		return null;
 	}
 
-	// Token: 0x0600A432 RID: 42034 RVA: 0x003D1FE8 File Offset: 0x003D01E8
+	// Token: 0x0600A52F RID: 42287 RVA: 0x003D732C File Offset: 0x003D552C
 	public static void FindTypesWithAttribute<T>(Action<Type, bool, T> _typeFoundCallback, bool _allowAbstract = false) where T : Attribute
 	{
 		Type typeFromHandle = typeof(T);
@@ -212,7 +212,7 @@ public static class ReflectionHelpers
 		}
 	}
 
-	// Token: 0x0600A433 RID: 42035 RVA: 0x003D2260 File Offset: 0x003D0460
+	// Token: 0x0600A530 RID: 42288 RVA: 0x003D75A4 File Offset: 0x003D57A4
 	public static void GetMethodsWithAttribute<T>(Action<MethodInfo, bool, T> _methodFoundCallback) where T : Attribute
 	{
 		Type typeFromHandle = typeof(T);
@@ -293,7 +293,7 @@ public static class ReflectionHelpers
 		}
 	}
 
-	// Token: 0x0600A434 RID: 42036 RVA: 0x003D24FC File Offset: 0x003D06FC
+	// Token: 0x0600A531 RID: 42289 RVA: 0x003D7840 File Offset: 0x003D5A40
 	public static void GetMethodsWithAttribute<T>(Type _containingType, Action<MethodInfo, bool, T> _methodFoundCallback, bool _declaredOnly = true, bool _allowInstance = true, bool _allowStatic = true) where T : Attribute
 	{
 		Type typeFromHandle = typeof(T);
@@ -350,7 +350,7 @@ public static class ReflectionHelpers
 		}
 	}
 
-	// Token: 0x0600A435 RID: 42037 RVA: 0x003D25FC File Offset: 0x003D07FC
+	// Token: 0x0600A532 RID: 42290 RVA: 0x003D7940 File Offset: 0x003D5B40
 	public static void GetPropertiesWithAttribute<T>(Type _containingType, Action<PropertyInfo, bool, T> _propertyFoundCallback, bool _declaredOnly = true, bool _allowInstance = true, bool _allowStatic = true) where T : Attribute
 	{
 		Type typeFromHandle = typeof(T);
@@ -407,7 +407,7 @@ public static class ReflectionHelpers
 		}
 	}
 
-	// Token: 0x0600A436 RID: 42038 RVA: 0x003D26FC File Offset: 0x003D08FC
+	// Token: 0x0600A533 RID: 42291 RVA: 0x003D7A40 File Offset: 0x003D5C40
 	public static void GetFieldsWithAttribute<T>(Type _containingType, Action<FieldInfo, bool, T> _fieldFoundCallback, bool _declaredOnly = true, bool _allowInstance = true, bool _allowStatic = true) where T : Attribute
 	{
 		Type typeFromHandle = typeof(T);
@@ -464,7 +464,7 @@ public static class ReflectionHelpers
 		}
 	}
 
-	// Token: 0x0600A437 RID: 42039 RVA: 0x003D27FC File Offset: 0x003D09FC
+	// Token: 0x0600A534 RID: 42292 RVA: 0x003D7B40 File Offset: 0x003D5D40
 	public static bool MemberHasAttribute<T>(MemberInfo _memberInfo, Type _attributeType, out T _attribute, out bool _hasMultiple) where T : Attribute
 	{
 		_hasMultiple = false;
@@ -487,13 +487,13 @@ public static class ReflectionHelpers
 		return _attribute != null;
 	}
 
-	// Token: 0x0600A438 RID: 42040 RVA: 0x003D2888 File Offset: 0x003D0A88
+	// Token: 0x0600A535 RID: 42293 RVA: 0x003D7BCC File Offset: 0x003D5DCC
 	public static bool MethodCompatibleWithDelegate<TDelegateType>(MethodInfo _method, bool _openDelegate = false) where TDelegateType : Delegate
 	{
 		return ReflectionHelpers.MethodCompatibleWithDelegate(typeof(TDelegateType), _method, _openDelegate);
 	}
 
-	// Token: 0x0600A439 RID: 42041 RVA: 0x003D289C File Offset: 0x003D0A9C
+	// Token: 0x0600A536 RID: 42294 RVA: 0x003D7BE0 File Offset: 0x003D5DE0
 	public static bool MethodCompatibleWithDelegate(Type _delegateType, MethodInfo _method, bool _openDelegate = false)
 	{
 		MethodInfo method = _delegateType.GetMethod("Invoke");
@@ -530,7 +530,7 @@ public static class ReflectionHelpers
 		return true;
 	}
 
-	// Token: 0x0600A43A RID: 42042 RVA: 0x003D2944 File Offset: 0x003D0B44
+	// Token: 0x0600A537 RID: 42295 RVA: 0x003D7C88 File Offset: 0x003D5E88
 	public static string GetAssemblyNameWithLocation(Assembly _assembly, string _manualLocation = null)
 	{
 		AssemblyName assemblyName = new AssemblyName(_assembly.FullName);
@@ -546,13 +546,13 @@ public static class ReflectionHelpers
 		return assemblyName.Name;
 	}
 
-	// Token: 0x0600A43B RID: 42043 RVA: 0x003D2993 File Offset: 0x003D0B93
+	// Token: 0x0600A538 RID: 42296 RVA: 0x003D7CD7 File Offset: 0x003D5ED7
 	public static MethodInfo GetMethodInfo(Expression<Action> _expression)
 	{
 		return ReflectionHelpers.GetMethodInfo(_expression);
 	}
 
-	// Token: 0x0600A43C RID: 42044 RVA: 0x003D299B File Offset: 0x003D0B9B
+	// Token: 0x0600A539 RID: 42297 RVA: 0x003D7CDF File Offset: 0x003D5EDF
 	public static MethodInfo GetMethodInfo(LambdaExpression _expression)
 	{
 		MethodCallExpression methodCallExpression = _expression.Body as MethodCallExpression;
@@ -563,7 +563,7 @@ public static class ReflectionHelpers
 		return methodCallExpression.Method;
 	}
 
-	// Token: 0x04007A41 RID: 31297
+	// Token: 0x04007B1A RID: 31514
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly char[] classnameEndMarkers = new char[] { '`', ',' };
 }

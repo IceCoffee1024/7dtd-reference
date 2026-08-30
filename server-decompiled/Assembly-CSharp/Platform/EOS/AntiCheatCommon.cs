@@ -2,10 +2,10 @@
 
 namespace Platform.EOS
 {
-	// Token: 0x02001CBA RID: 7354
+	// Token: 0x02001CE1 RID: 7393
 	public static class AntiCheatCommon
 	{
-		// Token: 0x0600D9C6 RID: 55750 RVA: 0x004DF830 File Offset: 0x004DDA30
+		// Token: 0x0600DB61 RID: 56161 RVA: 0x004E5E44 File Offset: 0x004E4044
 		public static void Init()
 		{
 			if (AntiCheatCommon.initialized)
@@ -18,7 +18,7 @@ namespace Platform.EOS
 			AntiCheatCommon.initialized = true;
 		}
 
-		// Token: 0x0600D9C7 RID: 55751 RVA: 0x004DF880 File Offset: 0x004DDA80
+		// Token: 0x0600DB62 RID: 56162 RVA: 0x004E5E94 File Offset: 0x004E4094
 		public static ClientInfo IntPtrToClientInfo(IntPtr _ptr, string _messageIfNull = null)
 		{
 			int num = _ptr.ToInt32();
@@ -30,23 +30,23 @@ namespace Platform.EOS
 			return clientInfo;
 		}
 
-		// Token: 0x0600D9C8 RID: 55752 RVA: 0x004DF8C2 File Offset: 0x004DDAC2
+		// Token: 0x0600DB63 RID: 56163 RVA: 0x004E5ED6 File Offset: 0x004E40D6
 		public static IntPtr ClientInfoToIntPtr(ClientInfo _clientInfo)
 		{
 			return new IntPtr(_clientInfo.ClientNumber);
 		}
 
-		// Token: 0x0400A4A2 RID: 42146
+		// Token: 0x0400A5D5 RID: 42453
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool initialized;
 
-		// Token: 0x0400A4A3 RID: 42147
+		// Token: 0x0400A5D6 RID: 42454
 		public static bool NoEacCmdLine;
 
-		// Token: 0x0400A4A4 RID: 42148
+		// Token: 0x0400A5D7 RID: 42455
 		public static bool DebugEacVerbose;
 
-		// Token: 0x0400A4A5 RID: 42149
+		// Token: 0x0400A5D8 RID: 42456
 		public static readonly object LockObject = new object();
 	}
 }

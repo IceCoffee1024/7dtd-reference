@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Platform
 {
-	// Token: 0x02001B60 RID: 7008
+	// Token: 0x02001B87 RID: 7047
 	public static class PlatformMemoryStat
 	{
-		// Token: 0x0600D12E RID: 53550 RVA: 0x004C0B6D File Offset: 0x004BED6D
+		// Token: 0x0600D2B9 RID: 53945 RVA: 0x004C6F61 File Offset: 0x004C5161
 		public static IPlatformMemoryStat<T> Create<T>(string name)
 		{
 			IPlatformMemoryStat<T> platformMemoryStat = PlatformMemoryStat<T>.Create(name);
@@ -15,7 +15,7 @@ namespace Platform
 			return platformMemoryStat;
 		}
 
-		// Token: 0x0600D12F RID: 53551 RVA: 0x004C0B87 File Offset: 0x004BED87
+		// Token: 0x0600D2BA RID: 53946 RVA: 0x004C6F7B File Offset: 0x004C517B
 		public static IPlatformMemoryStat<long> CreateBytes(string name)
 		{
 			IPlatformMemoryStat<long> platformMemoryStat = PlatformMemoryStat.CreateInt64(name);
@@ -24,7 +24,7 @@ namespace Platform
 			return platformMemoryStat;
 		}
 
-		// Token: 0x0600D130 RID: 53552 RVA: 0x004C0BB3 File Offset: 0x004BEDB3
+		// Token: 0x0600D2BB RID: 53947 RVA: 0x004C6FA7 File Offset: 0x004C51A7
 		public static IPlatformMemoryStat<int> CreateInt32(string name)
 		{
 			IPlatformMemoryStat<int> platformMemoryStat = PlatformMemoryStat<int>.Create(name);
@@ -33,7 +33,7 @@ namespace Platform
 			return platformMemoryStat;
 		}
 
-		// Token: 0x0600D131 RID: 53553 RVA: 0x004C0BDF File Offset: 0x004BEDDF
+		// Token: 0x0600D2BC RID: 53948 RVA: 0x004C6FD3 File Offset: 0x004C51D3
 		public static IPlatformMemoryStat<uint> CreateUInt32(string name)
 		{
 			IPlatformMemoryStat<uint> platformMemoryStat = PlatformMemoryStat<uint>.Create(name);
@@ -42,7 +42,7 @@ namespace Platform
 			return platformMemoryStat;
 		}
 
-		// Token: 0x0600D132 RID: 53554 RVA: 0x004C0C0B File Offset: 0x004BEE0B
+		// Token: 0x0600D2BD RID: 53949 RVA: 0x004C6FFF File Offset: 0x004C51FF
 		public static IPlatformMemoryStat<long> CreateInt64(string name)
 		{
 			IPlatformMemoryStat<long> platformMemoryStat = PlatformMemoryStat<long>.Create(name);
@@ -51,7 +51,7 @@ namespace Platform
 			return platformMemoryStat;
 		}
 
-		// Token: 0x0600D133 RID: 53555 RVA: 0x004C0C37 File Offset: 0x004BEE37
+		// Token: 0x0600D2BE RID: 53950 RVA: 0x004C702B File Offset: 0x004C522B
 		public static IPlatformMemoryStat<ulong> CreateUInt64(string name)
 		{
 			IPlatformMemoryStat<ulong> platformMemoryStat = PlatformMemoryStat<ulong>.Create(name);
@@ -60,7 +60,7 @@ namespace Platform
 			return platformMemoryStat;
 		}
 
-		// Token: 0x0600D134 RID: 53556 RVA: 0x004C0C63 File Offset: 0x004BEE63
+		// Token: 0x0600D2BF RID: 53951 RVA: 0x004C7057 File Offset: 0x004C5257
 		public static IPlatformMemoryStat<float> CreateFloat(string name)
 		{
 			IPlatformMemoryStat<float> platformMemoryStat = PlatformMemoryStat<float>.Create(name);
@@ -69,7 +69,7 @@ namespace Platform
 			return platformMemoryStat;
 		}
 
-		// Token: 0x0600D135 RID: 53557 RVA: 0x004C0C8F File Offset: 0x004BEE8F
+		// Token: 0x0600D2C0 RID: 53952 RVA: 0x004C7083 File Offset: 0x004C5283
 		public static IPlatformMemoryStat<double> CreateDouble(string name)
 		{
 			IPlatformMemoryStat<double> platformMemoryStat = PlatformMemoryStat<double>.Create(name);
@@ -78,7 +78,7 @@ namespace Platform
 			return platformMemoryStat;
 		}
 
-		// Token: 0x0600D136 RID: 53558 RVA: 0x004C0CBB File Offset: 0x004BEEBB
+		// Token: 0x0600D2C1 RID: 53953 RVA: 0x004C70AF File Offset: 0x004C52AF
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <Create>g__RenderValue|0_0<T>(StringBuilder builder, T value)
@@ -86,7 +86,7 @@ namespace Platform
 			builder.AppendFormat("{0}", value);
 		}
 
-		// Token: 0x0600D137 RID: 53559 RVA: 0x004C0CCF File Offset: 0x004BEECF
+		// Token: 0x0600D2C2 RID: 53954 RVA: 0x004C70C3 File Offset: 0x004C52C3
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <CreateBytes>g__RenderValue|1_0(StringBuilder builder, long value)
@@ -94,7 +94,7 @@ namespace Platform
 			PlatformMemoryStat.<CreateBytes>g__RenderSize|1_2(builder, value);
 		}
 
-		// Token: 0x0600D138 RID: 53560 RVA: 0x004C0CD8 File Offset: 0x004BEED8
+		// Token: 0x0600D2C3 RID: 53955 RVA: 0x004C70CC File Offset: 0x004C52CC
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <CreateBytes>g__RenderDelta|1_1(StringBuilder builder, long current, long last)
@@ -106,7 +106,7 @@ namespace Platform
 			PlatformMemoryStat.<CreateBytes>g__RenderSize|1_2(builder, current - last);
 		}
 
-		// Token: 0x0600D139 RID: 53561 RVA: 0x004C0CE8 File Offset: 0x004BEEE8
+		// Token: 0x0600D2C4 RID: 53956 RVA: 0x004C70DC File Offset: 0x004C52DC
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <CreateBytes>g__RenderSize|1_2(StringBuilder builder, long sizeBytes)
@@ -129,7 +129,7 @@ namespace Platform
 			throw new InvalidOperationException("Should not be reachable... Are there enough prefixes?");
 		}
 
-		// Token: 0x0600D13A RID: 53562 RVA: 0x004C0D90 File Offset: 0x004BEF90
+		// Token: 0x0600D2C5 RID: 53957 RVA: 0x004C7184 File Offset: 0x004C5384
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <CreateInt32>g__RenderValue|2_0(StringBuilder builder, int value)
@@ -137,7 +137,7 @@ namespace Platform
 			builder.AppendFormat("{0}", value);
 		}
 
-		// Token: 0x0600D13B RID: 53563 RVA: 0x004C0DA4 File Offset: 0x004BEFA4
+		// Token: 0x0600D2C6 RID: 53958 RVA: 0x004C7198 File Offset: 0x004C5398
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <CreateInt32>g__RenderDelta|2_1(StringBuilder builder, int current, int last)
@@ -154,7 +154,7 @@ namespace Platform
 			builder.AppendFormat("-{0}", last - current);
 		}
 
-		// Token: 0x0600D13C RID: 53564 RVA: 0x004C0DD8 File Offset: 0x004BEFD8
+		// Token: 0x0600D2C7 RID: 53959 RVA: 0x004C71CC File Offset: 0x004C53CC
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <CreateUInt32>g__RenderValue|3_0(StringBuilder builder, uint value)
@@ -162,7 +162,7 @@ namespace Platform
 			builder.AppendFormat("{0}", value);
 		}
 
-		// Token: 0x0600D13D RID: 53565 RVA: 0x004C0DEC File Offset: 0x004BEFEC
+		// Token: 0x0600D2C8 RID: 53960 RVA: 0x004C71E0 File Offset: 0x004C53E0
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <CreateUInt32>g__RenderDelta|3_1(StringBuilder builder, uint current, uint last)
@@ -179,7 +179,7 @@ namespace Platform
 			builder.AppendFormat("-{0}", last - current);
 		}
 
-		// Token: 0x0600D13E RID: 53566 RVA: 0x004C0E20 File Offset: 0x004BF020
+		// Token: 0x0600D2C9 RID: 53961 RVA: 0x004C7214 File Offset: 0x004C5414
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <CreateInt64>g__RenderValue|4_0(StringBuilder builder, long value)
@@ -187,7 +187,7 @@ namespace Platform
 			builder.AppendFormat("{0}", value);
 		}
 
-		// Token: 0x0600D13F RID: 53567 RVA: 0x004C0E34 File Offset: 0x004BF034
+		// Token: 0x0600D2CA RID: 53962 RVA: 0x004C7228 File Offset: 0x004C5428
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <CreateInt64>g__RenderDelta|4_1(StringBuilder builder, long current, long last)
@@ -204,7 +204,7 @@ namespace Platform
 			builder.AppendFormat("-{0}", last - current);
 		}
 
-		// Token: 0x0600D140 RID: 53568 RVA: 0x004C0E68 File Offset: 0x004BF068
+		// Token: 0x0600D2CB RID: 53963 RVA: 0x004C725C File Offset: 0x004C545C
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <CreateUInt64>g__RenderValue|5_0(StringBuilder builder, ulong value)
@@ -212,7 +212,7 @@ namespace Platform
 			builder.AppendFormat("{0}", value);
 		}
 
-		// Token: 0x0600D141 RID: 53569 RVA: 0x004C0E7C File Offset: 0x004BF07C
+		// Token: 0x0600D2CC RID: 53964 RVA: 0x004C7270 File Offset: 0x004C5470
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <CreateUInt64>g__RenderDelta|5_1(StringBuilder builder, ulong current, ulong last)
@@ -229,7 +229,7 @@ namespace Platform
 			builder.AppendFormat("-{0}", last - current);
 		}
 
-		// Token: 0x0600D142 RID: 53570 RVA: 0x004C0EB0 File Offset: 0x004BF0B0
+		// Token: 0x0600D2CD RID: 53965 RVA: 0x004C72A4 File Offset: 0x004C54A4
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <CreateFloat>g__RenderValue|6_0(StringBuilder builder, float value)
@@ -237,7 +237,7 @@ namespace Platform
 			builder.AppendFormat("{0}", value);
 		}
 
-		// Token: 0x0600D143 RID: 53571 RVA: 0x004C0EC4 File Offset: 0x004BF0C4
+		// Token: 0x0600D2CE RID: 53966 RVA: 0x004C72B8 File Offset: 0x004C54B8
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <CreateFloat>g__RenderDelta|6_1(StringBuilder builder, float current, float last)
@@ -249,7 +249,7 @@ namespace Platform
 			builder.AppendFormat("{0}", current - last);
 		}
 
-		// Token: 0x0600D144 RID: 53572 RVA: 0x004C0EDF File Offset: 0x004BF0DF
+		// Token: 0x0600D2CF RID: 53967 RVA: 0x004C72D3 File Offset: 0x004C54D3
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <CreateDouble>g__RenderValue|7_0(StringBuilder builder, double value)
@@ -257,7 +257,7 @@ namespace Platform
 			builder.AppendFormat("{0}", value);
 		}
 
-		// Token: 0x0600D145 RID: 53573 RVA: 0x004C0EF3 File Offset: 0x004BF0F3
+		// Token: 0x0600D2D0 RID: 53968 RVA: 0x004C72E7 File Offset: 0x004C54E7
 		[CompilerGenerated]
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void <CreateDouble>g__RenderDelta|7_1(StringBuilder builder, double current, double last)

@@ -6,10 +6,10 @@ using System.Linq;
 using System.Xml.Linq;
 using UnityEngine;
 
-// Token: 0x02000CE5 RID: 3301
+// Token: 0x02000CF7 RID: 3319
 public class BlocksFromXml
 {
-	// Token: 0x060064F6 RID: 25846 RVA: 0x0027778C File Offset: 0x0027598C
+	// Token: 0x06006582 RID: 25986 RVA: 0x0027A680 File Offset: 0x00278880
 	public static IEnumerator CreateBlocks(XmlFile _xmlFile, bool _fillLookupTable, bool _bEditMode = false)
 	{
 		XElement root = _xmlFile.XmlDoc.Root;
@@ -64,7 +64,7 @@ public class BlocksFromXml
 		yield break;
 	}
 
-	// Token: 0x060064F7 RID: 25847 RVA: 0x002777A4 File Offset: 0x002759A4
+	// Token: 0x06006583 RID: 25987 RVA: 0x0027A698 File Offset: 0x00278898
 	public static void ParseBlock(bool _bEditMode, XElement elementBlock)
 	{
 		DynamicProperties dynamicProperties = BlocksFromXml.ParseProperties(elementBlock);
@@ -79,7 +79,7 @@ public class BlocksFromXml
 		BlocksFromXml.InitBlock(block);
 	}
 
-	// Token: 0x060064F8 RID: 25848 RVA: 0x002777E8 File Offset: 0x002759E8
+	// Token: 0x06006584 RID: 25988 RVA: 0x0027A6DC File Offset: 0x002788DC
 	public static void ParseExtendedBlock(XElement elementBlock, out string extendedBlockName, out string excludedPropertiesList)
 	{
 		IEnumerable<XElement> enumerable = from e in elementBlock.Elements(XNames.property)
@@ -96,7 +96,7 @@ public class BlocksFromXml
 		excludedPropertiesList = null;
 	}
 
-	// Token: 0x060064F9 RID: 25849 RVA: 0x00277858 File Offset: 0x00275A58
+	// Token: 0x06006585 RID: 25989 RVA: 0x0027A74C File Offset: 0x0027894C
 	public static DynamicProperties ParseProperties(XElement elementBlock)
 	{
 		string text;
@@ -107,7 +107,7 @@ public class BlocksFromXml
 		return dynamicProperties;
 	}
 
-	// Token: 0x060064FA RID: 25850 RVA: 0x00277880 File Offset: 0x00275A80
+	// Token: 0x06006586 RID: 25990 RVA: 0x0027A774 File Offset: 0x00278974
 	public static DynamicProperties CreateProperties(string extendedBlockName = null, string excludedPropertiesList = null)
 	{
 		DynamicProperties dynamicProperties = new DynamicProperties();
@@ -131,7 +131,7 @@ public class BlocksFromXml
 		return dynamicProperties;
 	}
 
-	// Token: 0x060064FB RID: 25851 RVA: 0x0027790C File Offset: 0x00275B0C
+	// Token: 0x06006587 RID: 25991 RVA: 0x0027A800 File Offset: 0x00278A00
 	public static void LoadProperties(DynamicProperties properties, XElement elementBlock)
 	{
 		foreach (XElement xelement in elementBlock.Elements(XNames.property))
@@ -144,7 +144,7 @@ public class BlocksFromXml
 		}
 	}
 
-	// Token: 0x060064FC RID: 25852 RVA: 0x002779A0 File Offset: 0x00275BA0
+	// Token: 0x06006588 RID: 25992 RVA: 0x0027A894 File Offset: 0x00278A94
 	public static Block CreateBlock(bool _bEditMode, string blockName, DynamicProperties properties)
 	{
 		Block block;
@@ -416,7 +416,7 @@ public class BlocksFromXml
 		return block;
 	}
 
-	// Token: 0x060064FD RID: 25853 RVA: 0x002782E4 File Offset: 0x002764E4
+	// Token: 0x06006589 RID: 25993 RVA: 0x0027B1D8 File Offset: 0x002793D8
 	public static void ParseItemDrops(Block block, XElement elementBlock, out bool dropExtendsOff)
 	{
 		dropExtendsOff = false;
@@ -457,7 +457,7 @@ public class BlocksFromXml
 		}
 	}
 
-	// Token: 0x060064FE RID: 25854 RVA: 0x00278440 File Offset: 0x00276640
+	// Token: 0x0600658A RID: 25994 RVA: 0x0027B334 File Offset: 0x00279534
 	public static void LoadExtendedItemDrops(Block block)
 	{
 		if (block.Properties.Values.ContainsKey("Extends"))
@@ -467,14 +467,14 @@ public class BlocksFromXml
 		}
 	}
 
-	// Token: 0x060064FF RID: 25855 RVA: 0x00278487 File Offset: 0x00276687
+	// Token: 0x0600658B RID: 25995 RVA: 0x0027B37B File Offset: 0x0027957B
 	public static void InitBlock(Block block)
 	{
 		block.shape.Init(block);
 		block.Init();
 	}
 
-	// Token: 0x06006500 RID: 25856 RVA: 0x0027849C File Offset: 0x0027669C
+	// Token: 0x0600658C RID: 25996 RVA: 0x0027B390 File Offset: 0x00279590
 	public static bool FindExternalModels(XmlFile _xmlFile, string _meshName, Dictionary<string, string> _referencedModels)
 	{
 		try
@@ -530,7 +530,7 @@ public class BlocksFromXml
 		return true;
 	}
 
-	// Token: 0x06006501 RID: 25857 RVA: 0x00278710 File Offset: 0x00276910
+	// Token: 0x0600658D RID: 25997 RVA: 0x0027B604 File Offset: 0x00279804
 	public static HashSet<int> GetTextureIdsForMesh(XmlFile _xmlFile, string _meshName)
 	{
 		HashSet<int> hashSet = new HashSet<int>();

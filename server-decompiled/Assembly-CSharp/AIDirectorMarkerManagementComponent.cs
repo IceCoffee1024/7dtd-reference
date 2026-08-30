@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000412 RID: 1042
+// Token: 0x02000416 RID: 1046
 [Preserve]
 public class AIDirectorMarkerManagementComponent : AIDirectorComponent
 {
-	// Token: 0x0600203C RID: 8252 RVA: 0x000C34EC File Offset: 0x000C16EC
+	// Token: 0x06002059 RID: 8281 RVA: 0x000C3C88 File Offset: 0x000C1E88
 	public override void Tick(double _dt)
 	{
 		base.Tick(_dt);
 		this.TickMarkers(_dt);
 	}
 
-	// Token: 0x0600203D RID: 8253 RVA: 0x000C34FC File Offset: 0x000C16FC
+	// Token: 0x0600205A RID: 8282 RVA: 0x000C3C98 File Offset: 0x000C1E98
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TickMarkers(double _dt)
 	{
@@ -30,7 +30,7 @@ public class AIDirectorMarkerManagementComponent : AIDirectorComponent
 		}
 	}
 
-	// Token: 0x0600203E RID: 8254 RVA: 0x000C3570 File Offset: 0x000C1770
+	// Token: 0x0600205B RID: 8283 RVA: 0x000C3D0C File Offset: 0x000C1F0C
 	public IAIDirectorMarker FindBestMarker(Vector3 _pos, ref double _inOutIntensity)
 	{
 		IAIDirectorMarker iaidirectorMarker = null;
@@ -52,7 +52,7 @@ public class AIDirectorMarkerManagementComponent : AIDirectorComponent
 		return iaidirectorMarker;
 	}
 
-	// Token: 0x0400160E RID: 5646
+	// Token: 0x04001623 RID: 5667
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<IAIDirectorMarker> markers = new List<IAIDirectorMarker>(256);
 }

@@ -3,29 +3,29 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x020018FD RID: 6397
+	// Token: 0x02001923 RID: 6435
 	[Preserve]
 	public class BaseRequirement
 	{
-		// Token: 0x0600C52E RID: 50478 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C6B5 RID: 50869 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual void OnInit()
 		{
 		}
 
-		// Token: 0x0600C52F RID: 50479 RVA: 0x0048A566 File Offset: 0x00488766
+		// Token: 0x0600C6B6 RID: 50870 RVA: 0x004908B2 File Offset: 0x0048EAB2
 		public void Init()
 		{
 			this.OnInit();
 		}
 
-		// Token: 0x0600C530 RID: 50480 RVA: 0x0001FF5D File Offset: 0x0001E15D
+		// Token: 0x0600C6B7 RID: 50871 RVA: 0x00020021 File Offset: 0x0001E221
 		public virtual bool CanPerform(Entity target)
 		{
 			return true;
 		}
 
-		// Token: 0x0600C531 RID: 50481 RVA: 0x0048A570 File Offset: 0x00488770
+		// Token: 0x0600C6B8 RID: 50872 RVA: 0x004908BC File Offset: 0x0048EABC
 		public virtual void ParseProperties(DynamicProperties properties)
 		{
 			this.Properties = properties;
@@ -36,7 +36,7 @@ namespace GameEvent.SequenceRequirements
 			}
 		}
 
-		// Token: 0x0600C532 RID: 50482 RVA: 0x0048A5C0 File Offset: 0x004887C0
+		// Token: 0x0600C6B9 RID: 50873 RVA: 0x0049090C File Offset: 0x0048EB0C
 		public virtual BaseRequirement Clone()
 		{
 			BaseRequirement baseRequirement = this.CloneChildSettings();
@@ -48,23 +48,23 @@ namespace GameEvent.SequenceRequirements
 			return baseRequirement;
 		}
 
-		// Token: 0x0600C533 RID: 50483 RVA: 0x0001FF1E File Offset: 0x0001E11E
+		// Token: 0x0600C6BA RID: 50874 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public virtual BaseRequirement CloneChildSettings()
 		{
 			return null;
 		}
 
-		// Token: 0x040094A0 RID: 38048
+		// Token: 0x040095C9 RID: 38345
 		public DynamicProperties Properties;
 
-		// Token: 0x040094A1 RID: 38049
+		// Token: 0x040095CA RID: 38346
 		public GameEventActionSequence Owner;
 
-		// Token: 0x040094A2 RID: 38050
+		// Token: 0x040095CB RID: 38347
 		public bool Invert;
 
-		// Token: 0x040094A3 RID: 38051
+		// Token: 0x040095CC RID: 38348
 		public static string PropInvert = "invert";
 	}
 }

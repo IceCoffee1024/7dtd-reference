@@ -3,11 +3,11 @@ using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020006D9 RID: 1753
+// Token: 0x020006E3 RID: 1763
 [Preserve]
 public class MinEventActionAttachPrefabToEntity : MinEventActionTargetedBase
 {
-	// Token: 0x060035FE RID: 13822 RVA: 0x00165250 File Offset: 0x00163450
+	// Token: 0x06003654 RID: 13908 RVA: 0x00167428 File Offset: 0x00165628
 	public override void Execute(MinEventParams _params)
 	{
 		if (_params.Self == null)
@@ -42,13 +42,13 @@ public class MinEventActionAttachPrefabToEntity : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x060035FF RID: 13823 RVA: 0x00165367 File Offset: 0x00163567
+	// Token: 0x06003655 RID: 13909 RVA: 0x0016753F File Offset: 0x0016573F
 	public override bool CanExecute(MinEventTypes _eventType, MinEventParams _params)
 	{
 		return base.CanExecute(_eventType, _params) && _params.Self != null && this.goToInstantiate != null;
 	}
 
-	// Token: 0x06003600 RID: 13824 RVA: 0x00165390 File Offset: 0x00163590
+	// Token: 0x06003656 RID: 13910 RVA: 0x00167568 File Offset: 0x00165768
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -84,27 +84,27 @@ public class MinEventActionAttachPrefabToEntity : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002B72 RID: 11122
+	// Token: 0x04002BE6 RID: 11238
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject goToInstantiate;
 
-	// Token: 0x04002B73 RID: 11123
+	// Token: 0x04002BE7 RID: 11239
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string prefab;
 
-	// Token: 0x04002B74 RID: 11124
+	// Token: 0x04002BE8 RID: 11240
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string parent_transform_path;
 
-	// Token: 0x04002B75 RID: 11125
+	// Token: 0x04002BE9 RID: 11241
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 local_offset = new Vector3(0f, 0f, 0f);
 
-	// Token: 0x04002B76 RID: 11126
+	// Token: 0x04002BEA RID: 11242
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 local_rotation = new Vector3(0f, 0f, 0f);
 
-	// Token: 0x04002B77 RID: 11127
+	// Token: 0x04002BEB RID: 11243
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 local_scale = new Vector3(1f, 1f, 1f);
 }

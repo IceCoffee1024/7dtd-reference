@@ -2,10 +2,10 @@
 
 namespace Webserver.LiveData
 {
-	// Token: 0x02001ADE RID: 6878
+	// Token: 0x02001B05 RID: 6917
 	public class Animals : EntityFilterList<EntityAnimal>
 	{
-		// Token: 0x0600CE64 RID: 52836 RVA: 0x004B5124 File Offset: 0x004B3324
+		// Token: 0x0600CFED RID: 53229 RVA: 0x004BB518 File Offset: 0x004B9718
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override EntityAnimal predicate(Entity _e)
 		{
@@ -17,7 +17,7 @@ namespace Webserver.LiveData
 			return null;
 		}
 
-		// Token: 0x04009CBD RID: 40125
+		// Token: 0x04009DEE RID: 40430
 		public static readonly Animals Instance = new Animals();
 	}
 }

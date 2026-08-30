@@ -3,12 +3,12 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019E0 RID: 6624
+	// Token: 0x02001A07 RID: 6663
 	[Preserve]
 	public class BaseWait : BaseAction
 	{
-		// Token: 0x1700184E RID: 6222
-		// (get) Token: 0x0600C960 RID: 51552 RVA: 0x00010E62 File Offset: 0x0000F062
+		// Token: 0x170018C0 RID: 6336
+		// (get) Token: 0x0600CAE9 RID: 51945 RVA: 0x00010E62 File Offset: 0x0000F062
 		public override bool UseRequirements
 		{
 			get
@@ -17,7 +17,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C961 RID: 51553 RVA: 0x0049EE2C File Offset: 0x0049D02C
+		// Token: 0x0600CAEA RID: 51946 RVA: 0x004A5220 File Offset: 0x004A3420
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			if (this.Requirements != null)
@@ -49,14 +49,14 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C962 RID: 51554 RVA: 0x0049EEC5 File Offset: 0x0049D0C5
+		// Token: 0x0600CAEB RID: 51947 RVA: 0x004A52B9 File Offset: 0x004A34B9
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseEnum<BaseWait.ConditionTypes>(BaseWait.PropConditionType, ref this.ConditionType);
 		}
 
-		// Token: 0x0600C963 RID: 51555 RVA: 0x0049EEDF File Offset: 0x0049D0DF
+		// Token: 0x0600CAEC RID: 51948 RVA: 0x004A52D3 File Offset: 0x004A34D3
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -66,18 +66,18 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040098ED RID: 39149
+		// Token: 0x04009A1E RID: 39454
 		public BaseWait.ConditionTypes ConditionType = BaseWait.ConditionTypes.All;
 
-		// Token: 0x040098EE RID: 39150
+		// Token: 0x04009A1F RID: 39455
 		public static string PropConditionType = "condition_type";
 
-		// Token: 0x020019E1 RID: 6625
+		// Token: 0x02001A08 RID: 6664
 		public enum ConditionTypes
 		{
-			// Token: 0x040098F0 RID: 39152
+			// Token: 0x04009A21 RID: 39457
 			Any,
-			// Token: 0x040098F1 RID: 39153
+			// Token: 0x04009A22 RID: 39458
 			All
 		}
 	}

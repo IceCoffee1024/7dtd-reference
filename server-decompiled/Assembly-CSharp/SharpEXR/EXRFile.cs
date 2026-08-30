@@ -5,46 +5,46 @@ using SharpEXR.AttributeTypes;
 
 namespace SharpEXR
 {
-	// Token: 0x0200169F RID: 5791
+	// Token: 0x020016C5 RID: 5829
 	public class EXRFile
 	{
-		// Token: 0x170015C9 RID: 5577
-		// (get) Token: 0x0600B49F RID: 46239 RVA: 0x00435BCC File Offset: 0x00433DCC
-		// (set) Token: 0x0600B4A0 RID: 46240 RVA: 0x00435BD4 File Offset: 0x00433DD4
+		// Token: 0x1700163B RID: 5691
+		// (get) Token: 0x0600B622 RID: 46626 RVA: 0x0043B944 File Offset: 0x00439B44
+		// (set) Token: 0x0600B623 RID: 46627 RVA: 0x0043B94C File Offset: 0x00439B4C
 		public EXRVersion Version
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x170015CA RID: 5578
-		// (get) Token: 0x0600B4A1 RID: 46241 RVA: 0x00435BDD File Offset: 0x00433DDD
-		// (set) Token: 0x0600B4A2 RID: 46242 RVA: 0x00435BE5 File Offset: 0x00433DE5
+		// Token: 0x1700163C RID: 5692
+		// (get) Token: 0x0600B624 RID: 46628 RVA: 0x0043B955 File Offset: 0x00439B55
+		// (set) Token: 0x0600B625 RID: 46629 RVA: 0x0043B95D File Offset: 0x00439B5D
 		public List<EXRHeader> Headers
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x170015CB RID: 5579
-		// (get) Token: 0x0600B4A3 RID: 46243 RVA: 0x00435BEE File Offset: 0x00433DEE
-		// (set) Token: 0x0600B4A4 RID: 46244 RVA: 0x00435BF6 File Offset: 0x00433DF6
+		// Token: 0x1700163D RID: 5693
+		// (get) Token: 0x0600B626 RID: 46630 RVA: 0x0043B966 File Offset: 0x00439B66
+		// (set) Token: 0x0600B627 RID: 46631 RVA: 0x0043B96E File Offset: 0x00439B6E
 		public List<OffsetTable> OffsetTables
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x170015CC RID: 5580
-		// (get) Token: 0x0600B4A5 RID: 46245 RVA: 0x00435BFF File Offset: 0x00433DFF
-		// (set) Token: 0x0600B4A6 RID: 46246 RVA: 0x00435C07 File Offset: 0x00433E07
+		// Token: 0x1700163E RID: 5694
+		// (get) Token: 0x0600B628 RID: 46632 RVA: 0x0043B977 File Offset: 0x00439B77
+		// (set) Token: 0x0600B629 RID: 46633 RVA: 0x0043B97F File Offset: 0x00439B7F
 		public List<EXRPart> Parts
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x0600B4A8 RID: 46248 RVA: 0x00435C10 File Offset: 0x00433E10
+		// Token: 0x0600B62B RID: 46635 RVA: 0x0043B988 File Offset: 0x00439B88
 		public void Read(IEXRReader reader)
 		{
 			if (reader.ReadInt32() != 20000630)
@@ -100,7 +100,7 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x0600B4A9 RID: 46249 RVA: 0x00435D98 File Offset: 0x00433F98
+		// Token: 0x0600B62C RID: 46636 RVA: 0x0043BB10 File Offset: 0x00439D10
 		public static int GetScanLinesPerBlock(EXRCompression compression)
 		{
 			switch (compression)
@@ -117,7 +117,7 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x0600B4AA RID: 46250 RVA: 0x00435DC0 File Offset: 0x00433FC0
+		// Token: 0x0600B62D RID: 46637 RVA: 0x0043BB38 File Offset: 0x00439D38
 		public static int GetBytesPerPixel(ImageDestFormat format)
 		{
 			switch (format)
@@ -151,7 +151,7 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x0600B4AB RID: 46251 RVA: 0x00435E3C File Offset: 0x0043403C
+		// Token: 0x0600B62E RID: 46638 RVA: 0x0043BBB4 File Offset: 0x00439DB4
 		public static int GetBitsPerPixel(ImageDestFormat format)
 		{
 			switch (format)
@@ -182,7 +182,7 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x0600B4AC RID: 46252 RVA: 0x00435EB0 File Offset: 0x004340B0
+		// Token: 0x0600B62F RID: 46639 RVA: 0x0043BC28 File Offset: 0x00439E28
 		public static EXRFile FromFile(string file)
 		{
 			EXRReader exrreader = new EXRReader(new FileStream(file, FileMode.Open, FileAccess.Read), false);
@@ -191,7 +191,7 @@ namespace SharpEXR
 			return exrfile;
 		}
 
-		// Token: 0x0600B4AD RID: 46253 RVA: 0x00435ED8 File Offset: 0x004340D8
+		// Token: 0x0600B630 RID: 46640 RVA: 0x0043BC50 File Offset: 0x00439E50
 		public static EXRFile FromStream(Stream stream)
 		{
 			EXRReader exrreader = new EXRReader(new BinaryReader(stream));
@@ -200,7 +200,7 @@ namespace SharpEXR
 			return exrfile;
 		}
 
-		// Token: 0x0600B4AE RID: 46254 RVA: 0x00435F00 File Offset: 0x00434100
+		// Token: 0x0600B631 RID: 46641 RVA: 0x0043BC78 File Offset: 0x00439E78
 		public static EXRFile FromReader(IEXRReader reader)
 		{
 			EXRFile exrfile = new EXRFile();

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000233 RID: 563
+// Token: 0x02000236 RID: 566
 [Preserve]
 public class ConsoleCmdListPlayerIds : ConsoleCmdAbstract
 {
-	// Token: 0x060010FE RID: 4350 RVA: 0x0006BF79 File Offset: 0x0006A179
+	// Token: 0x0600110A RID: 4362 RVA: 0x0006C515 File Offset: 0x0006A715
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -15,7 +15,7 @@ public class ConsoleCmdListPlayerIds : ConsoleCmdAbstract
 	}
 
 	// Token: 0x170001AA RID: 426
-	// (get) Token: 0x060010FF RID: 4351 RVA: 0x0006110A File Offset: 0x0005F30A
+	// (get) Token: 0x0600110B RID: 4363 RVA: 0x00061652 File Offset: 0x0005F852
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -25,7 +25,7 @@ public class ConsoleCmdListPlayerIds : ConsoleCmdAbstract
 	}
 
 	// Token: 0x170001AB RID: 427
-	// (get) Token: 0x06001100 RID: 4352 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// (get) Token: 0x0600110C RID: 4364 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -34,14 +34,14 @@ public class ConsoleCmdListPlayerIds : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001101 RID: 4353 RVA: 0x0006BF91 File Offset: 0x0006A191
+	// Token: 0x0600110D RID: 4365 RVA: 0x0006C52D File Offset: 0x0006A72D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Lists all players with their IDs for ingame commands";
 	}
 
-	// Token: 0x06001102 RID: 4354 RVA: 0x0006BF98 File Offset: 0x0006A198
+	// Token: 0x0600110E RID: 4366 RVA: 0x0006C534 File Offset: 0x0006A734
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		World world = GameManager.Instance.World;

@@ -5,11 +5,11 @@ using Steamworks;
 
 namespace Platform.Steam
 {
-	// Token: 0x02001C61 RID: 7265
+	// Token: 0x02001C88 RID: 7304
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public class JoinSessionGameInviteListener : IJoinSessionGameInviteListener
 	{
-		// Token: 0x0600D6F9 RID: 55033 RVA: 0x004D6A3D File Offset: 0x004D4C3D
+		// Token: 0x0600D88B RID: 55435 RVA: 0x004DCF59 File Offset: 0x004DB159
 		public void Init(IPlatform _owner)
 		{
 			if (this.m_friends_serverchange == null)
@@ -30,7 +30,7 @@ namespace Platform.Steam
 			};
 		}
 
-		// Token: 0x0600D6FA RID: 55034 RVA: 0x004D6A78 File Offset: 0x004D4C78
+		// Token: 0x0600D88C RID: 55436 RVA: 0x004DCF94 File Offset: 0x004DB194
 		[return: TupleElementNames(new string[] { "invite", "password" })]
 		public ValueTuple<string, string> TakePendingInvite()
 		{
@@ -41,7 +41,7 @@ namespace Platform.Steam
 			return new ValueTuple<string, string>(text, text2);
 		}
 
-		// Token: 0x0600D6FB RID: 55035 RVA: 0x004D6AA6 File Offset: 0x004D4CA6
+		// Token: 0x0600D88D RID: 55437 RVA: 0x004DCFC2 File Offset: 0x004DB1C2
 		public IEnumerator ConnectToInvite(string _invite, string _password = null, Action<bool> _onFinished = null)
 		{
 			if (string.IsNullOrEmpty(_invite))
@@ -77,19 +77,19 @@ namespace Platform.Steam
 			yield break;
 		}
 
-		// Token: 0x0600D6FC RID: 55036 RVA: 0x004D6AC3 File Offset: 0x004D4CC3
+		// Token: 0x0600D88E RID: 55438 RVA: 0x004DCFDF File Offset: 0x004DB1DF
 		public string GetListenerIdentifier()
 		{
 			return "STM";
 		}
 
-		// Token: 0x0600D6FD RID: 55037 RVA: 0x004D6ACA File Offset: 0x004D4CCA
+		// Token: 0x0600D88F RID: 55439 RVA: 0x004DCFE6 File Offset: 0x004DB1E6
 		public void SetLobby(CSteamID _lobbyId)
 		{
 			this.pendingInvite = "Lobby:" + _lobbyId.m_SteamID.ToString();
 		}
 
-		// Token: 0x0600D6FE RID: 55038 RVA: 0x004D6AE8 File Offset: 0x004D4CE8
+		// Token: 0x0600D890 RID: 55440 RVA: 0x004DD004 File Offset: 0x004DB204
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Friends_GameServerChangeRequested(GameServerChangeRequested_t _value)
 		{
@@ -98,19 +98,19 @@ namespace Platform.Steam
 			this.pendingPassword = _value.m_rgchPassword;
 		}
 
-		// Token: 0x0400A337 RID: 41783
+		// Token: 0x0400A469 RID: 42089
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string LobbyMarker = "Lobby:";
 
-		// Token: 0x0400A338 RID: 41784
+		// Token: 0x0400A46A RID: 42090
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string pendingInvite;
 
-		// Token: 0x0400A339 RID: 41785
+		// Token: 0x0400A46B RID: 42091
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string pendingPassword;
 
-		// Token: 0x0400A33A RID: 41786
+		// Token: 0x0400A46C RID: 42092
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Callback<GameServerChangeRequested_t> m_friends_serverchange;
 	}

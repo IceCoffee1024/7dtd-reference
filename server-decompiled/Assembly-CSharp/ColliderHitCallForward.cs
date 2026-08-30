@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020004FE RID: 1278
+// Token: 0x02000503 RID: 1283
 public class ColliderHitCallForward : MonoBehaviour
 {
-	// Token: 0x060029F0 RID: 10736 RVA: 0x00106B67 File Offset: 0x00104D67
+	// Token: 0x06002A1A RID: 10778 RVA: 0x00107BA3 File Offset: 0x00105DA3
 	public void OnControllerColliderHit(ControllerColliderHit hit)
 	{
 		if (this.Entity != null)
@@ -13,6 +13,6 @@ public class ColliderHitCallForward : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001FC0 RID: 8128
+	// Token: 0x04001FEF RID: 8175
 	public Entity Entity;
 }

@@ -6,18 +6,18 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Scripting;
 
-// Token: 0x020001AA RID: 426
+// Token: 0x020001AC RID: 428
 [Preserve]
 public class BlockShapeModelEntity : BlockShapeInvisible
 {
-	// Token: 0x06000CD3 RID: 3283 RVA: 0x0005091A File Offset: 0x0004EB1A
+	// Token: 0x06000CDE RID: 3294 RVA: 0x00050D32 File Offset: 0x0004EF32
 	public BlockShapeModelEntity()
 	{
 		this.IsRotatable = true;
 		this.IsNotifyOnLoadUnload = true;
 	}
 
-	// Token: 0x06000CD4 RID: 3284 RVA: 0x0005093C File Offset: 0x0004EB3C
+	// Token: 0x06000CDF RID: 3295 RVA: 0x00050D54 File Offset: 0x0004EF54
 	public override void Init(Block _block)
 	{
 		base.Init(_block);
@@ -65,7 +65,7 @@ public class BlockShapeModelEntity : BlockShapeInvisible
 		GameObjectPool.Instance.AddPooledObject(this.modelName, new GameObjectPool.LoadCallback(this.PoolLoadCallback), new GameObjectPool.CreateCallback(this.PoolCreateOnceToAllCallBack), new GameObjectPool.CreateCallback(this.PoolCreateCallBack));
 	}
 
-	// Token: 0x06000CD5 RID: 3285 RVA: 0x00050B33 File Offset: 0x0004ED33
+	// Token: 0x06000CE0 RID: 3296 RVA: 0x00050F4B File Offset: 0x0004F14B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform PoolLoadCallback()
 	{
@@ -77,7 +77,7 @@ public class BlockShapeModelEntity : BlockShapeInvisible
 		return prefab;
 	}
 
-	// Token: 0x06000CD6 RID: 3286 RVA: 0x00050B6C File Offset: 0x0004ED6C
+	// Token: 0x06000CE1 RID: 3297 RVA: 0x00050F84 File Offset: 0x0004F184
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PoolCreateOnceToAllCallBack(GameObject obj)
 	{
@@ -105,7 +105,7 @@ public class BlockShapeModelEntity : BlockShapeInvisible
 		}
 	}
 
-	// Token: 0x06000CD7 RID: 3287 RVA: 0x00050D2C File Offset: 0x0004EF2C
+	// Token: 0x06000CE2 RID: 3298 RVA: 0x00051144 File Offset: 0x0004F344
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PoolCreateCallBack(GameObject obj)
 	{
@@ -211,7 +211,7 @@ public class BlockShapeModelEntity : BlockShapeInvisible
 		}
 	}
 
-	// Token: 0x06000CD8 RID: 3288 RVA: 0x00050F70 File Offset: 0x0004F170
+	// Token: 0x06000CE3 RID: 3299 RVA: 0x00051388 File Offset: 0x0004F588
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform getPrefab()
 	{
@@ -241,7 +241,7 @@ public class BlockShapeModelEntity : BlockShapeInvisible
 		return transform;
 	}
 
-	// Token: 0x06000CD9 RID: 3289 RVA: 0x00051010 File Offset: 0x0004F210
+	// Token: 0x06000CE4 RID: 3300 RVA: 0x00051428 File Offset: 0x0004F628
 	public Transform CloneModel(BlockValue _blockValue, Transform _parent)
 	{
 		Transform transform = global::UnityEngine.Object.Instantiate<Transform>(this.getPrefab());
@@ -258,7 +258,7 @@ public class BlockShapeModelEntity : BlockShapeInvisible
 		return transform;
 	}
 
-	// Token: 0x06000CDA RID: 3290 RVA: 0x00051090 File Offset: 0x0004F290
+	// Token: 0x06000CE5 RID: 3301 RVA: 0x000514A8 File Offset: 0x0004F6A8
 	public static Vector3 GetOffsetForMultiblock(Vector3 modelOffset, Vector3i multiBlockSize)
 	{
 		Vector3 vector = modelOffset;
@@ -277,7 +277,7 @@ public class BlockShapeModelEntity : BlockShapeInvisible
 		return vector;
 	}
 
-	// Token: 0x06000CDB RID: 3291 RVA: 0x000510F8 File Offset: 0x0004F2F8
+	// Token: 0x06000CE6 RID: 3302 RVA: 0x00051510 File Offset: 0x0004F710
 	public Vector3 GetRotatedOffset(Block block, Quaternion rot)
 	{
 		Vector3 vector = rot * this.modelOffset;
@@ -300,13 +300,13 @@ public class BlockShapeModelEntity : BlockShapeInvisible
 		return vector;
 	}
 
-	// Token: 0x06000CDC RID: 3292 RVA: 0x0005118D File Offset: 0x0004F38D
+	// Token: 0x06000CE7 RID: 3303 RVA: 0x000515A5 File Offset: 0x0004F7A5
 	public override Quaternion GetRotation(BlockValue _blockValue)
 	{
 		return BlockShapeNew.GetRotationStatic((int)_blockValue.rotation);
 	}
 
-	// Token: 0x06000CDD RID: 3293 RVA: 0x0005119C File Offset: 0x0004F39C
+	// Token: 0x06000CE8 RID: 3304 RVA: 0x000515B4 File Offset: 0x0004F7B4
 	public override Bounds[] GetBounds(BlockValue _blockValue)
 	{
 		if (!this.isCustomBounds)
@@ -321,7 +321,7 @@ public class BlockShapeModelEntity : BlockShapeInvisible
 		return this.boundsArr;
 	}
 
-	// Token: 0x06000CDE RID: 3294 RVA: 0x00051308 File Offset: 0x0004F508
+	// Token: 0x06000CE9 RID: 3305 RVA: 0x00051720 File Offset: 0x0004F920
 	public override BlockValue RotateY(bool _bLeft, BlockValue _blockValue, int _rotCount)
 	{
 		if (_bLeft)
@@ -341,7 +341,7 @@ public class BlockShapeModelEntity : BlockShapeInvisible
 		return _blockValue;
 	}
 
-	// Token: 0x06000CDF RID: 3295 RVA: 0x0005135F File Offset: 0x0004F55F
+	// Token: 0x06000CEA RID: 3306 RVA: 0x00051777 File Offset: 0x0004F977
 	public override byte Rotate(bool _bLeft, int _rotation)
 	{
 		_rotation += (_bLeft ? (-1) : 1);
@@ -356,7 +356,7 @@ public class BlockShapeModelEntity : BlockShapeInvisible
 		return (byte)_rotation;
 	}
 
-	// Token: 0x06000CE0 RID: 3296 RVA: 0x00051380 File Offset: 0x0004F580
+	// Token: 0x06000CEB RID: 3307 RVA: 0x00051798 File Offset: 0x0004F998
 	public override BlockValue MirrorY(bool _bAlongX, BlockValue _blockValue)
 	{
 		if (!_bAlongX)
@@ -446,7 +446,7 @@ public class BlockShapeModelEntity : BlockShapeInvisible
 		return _blockValue;
 	}
 
-	// Token: 0x06000CE1 RID: 3297 RVA: 0x00051530 File Offset: 0x0004F730
+	// Token: 0x06000CEC RID: 3308 RVA: 0x00051948 File Offset: 0x0004FB48
 	public override void OnBlockValueChanged(WorldBase _world, Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		base.OnBlockValueChanged(_world, _blockPos, _oldBlockValue, _newBlockValue);
@@ -486,7 +486,7 @@ public class BlockShapeModelEntity : BlockShapeInvisible
 		}
 	}
 
-	// Token: 0x06000CE2 RID: 3298 RVA: 0x0005160C File Offset: 0x0004F80C
+	// Token: 0x06000CED RID: 3309 RVA: 0x00051A24 File Offset: 0x0004FC24
 	public override void OnBlockAdded(WorldBase world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockAdded(world, _chunk, _blockPos, _blockValue);
@@ -497,7 +497,7 @@ public class BlockShapeModelEntity : BlockShapeInvisible
 		this.registerSleepers(_blockPos, _blockValue);
 	}
 
-	// Token: 0x06000CE3 RID: 3299 RVA: 0x00051644 File Offset: 0x0004F844
+	// Token: 0x06000CEE RID: 3310 RVA: 0x00051A5C File Offset: 0x0004FC5C
 	public override void OnBlockRemoved(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockRemoved(_world, _chunk, _blockPos, _blockValue);
@@ -509,7 +509,7 @@ public class BlockShapeModelEntity : BlockShapeInvisible
 		}
 	}
 
-	// Token: 0x06000CE4 RID: 3300 RVA: 0x00051680 File Offset: 0x0004F880
+	// Token: 0x06000CEF RID: 3311 RVA: 0x00051A98 File Offset: 0x0004FC98
 	public override void OnBlockLoaded(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockLoaded(_world, _blockPos, _blockValue);
@@ -530,7 +530,7 @@ public class BlockShapeModelEntity : BlockShapeInvisible
 		this.registerSleepers(_blockPos, _blockValue);
 	}
 
-	// Token: 0x06000CE5 RID: 3301 RVA: 0x000516D0 File Offset: 0x0004F8D0
+	// Token: 0x06000CF0 RID: 3312 RVA: 0x00051AE8 File Offset: 0x0004FCE8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void registerSleepers(Vector3i _blockPos, BlockValue _blockValue)
 	{
@@ -544,7 +544,7 @@ public class BlockShapeModelEntity : BlockShapeInvisible
 		}
 	}
 
-	// Token: 0x06000CE6 RID: 3302 RVA: 0x00051738 File Offset: 0x0004F938
+	// Token: 0x06000CF1 RID: 3313 RVA: 0x00051B50 File Offset: 0x0004FD50
 	public override void OnBlockEntityTransformBeforeActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		base.OnBlockEntityTransformBeforeActivated(_world, _blockPos, _blockValue, _ebcd);
@@ -572,13 +572,13 @@ public class BlockShapeModelEntity : BlockShapeInvisible
 		}
 	}
 
-	// Token: 0x06000CE7 RID: 3303 RVA: 0x000517F4 File Offset: 0x0004F9F4
+	// Token: 0x06000CF2 RID: 3314 RVA: 0x00051C0C File Offset: 0x0004FE0C
 	public override bool UseRepairDamageState(BlockValue _blockValue)
 	{
 		return this.damageStates.Count > 1 && this.GetDamageStateIndex(_blockValue) == this.damageStates.Count - 1;
 	}
 
-	// Token: 0x06000CE8 RID: 3304 RVA: 0x00051820 File Offset: 0x0004FA20
+	// Token: 0x06000CF3 RID: 3315 RVA: 0x00051C38 File Offset: 0x0004FE38
 	public void UpdateDamageState(BlockValue _oldBlockValue, BlockValue _newBlockValue, BlockEntityData _data, bool bPlayEffects = true)
 	{
 		int damageStateIndex = this.GetDamageStateIndex(_oldBlockValue);
@@ -635,7 +635,7 @@ public class BlockShapeModelEntity : BlockShapeInvisible
 		}
 	}
 
-	// Token: 0x06000CE9 RID: 3305 RVA: 0x00051978 File Offset: 0x0004FB78
+	// Token: 0x06000CF4 RID: 3316 RVA: 0x00051D90 File Offset: 0x0004FF90
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int GetDamageStateIndex(BlockValue _blockValue)
 	{
@@ -651,26 +651,26 @@ public class BlockShapeModelEntity : BlockShapeInvisible
 		return num2;
 	}
 
-	// Token: 0x06000CEA RID: 3306 RVA: 0x000519CD File Offset: 0x0004FBCD
+	// Token: 0x06000CF5 RID: 3317 RVA: 0x00051DE5 File Offset: 0x0004FFE5
 	public float GetNextDamageStateDownHealth(BlockValue _blockValue)
 	{
 		return this.damageStates[Utils.FastMin(this.GetDamageStateCount() - 1, this.GetDamageStateIndex(_blockValue) + 1)].health;
 	}
 
-	// Token: 0x06000CEB RID: 3307 RVA: 0x000519F5 File Offset: 0x0004FBF5
+	// Token: 0x06000CF6 RID: 3318 RVA: 0x00051E0D File Offset: 0x0005000D
 	public float GetNextDamageStateUpHealth(BlockValue _blockValue)
 	{
 		return this.damageStates[Utils.FastMax(0, this.GetDamageStateIndex(_blockValue) - 1)].health;
 	}
 
-	// Token: 0x06000CEC RID: 3308 RVA: 0x00051A16 File Offset: 0x0004FC16
+	// Token: 0x06000CF7 RID: 3319 RVA: 0x00051E2E File Offset: 0x0005002E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int GetDamageStateCount()
 	{
 		return this.damageStates.Count;
 	}
 
-	// Token: 0x06000CED RID: 3309 RVA: 0x00051A23 File Offset: 0x0004FC23
+	// Token: 0x06000CF8 RID: 3320 RVA: 0x00051E3B File Offset: 0x0005003B
 	public bool IsObstructionForDamageState(BlockValue _blockValue)
 	{
 		if (this.damageStates.Count > 0)
@@ -682,7 +682,7 @@ public class BlockShapeModelEntity : BlockShapeInvisible
 		return true;
 	}
 
-	// Token: 0x06000CEE RID: 3310 RVA: 0x00051A5C File Offset: 0x0004FC5C
+	// Token: 0x06000CF9 RID: 3321 RVA: 0x00051E74 File Offset: 0x00050074
 	public override float GetStepHeight(BlockValue _blockValue, BlockFace crossingFace)
 	{
 		if (this.isCustomBounds && _blockValue.Block.IsCollideMovement)
@@ -692,7 +692,7 @@ public class BlockShapeModelEntity : BlockShapeInvisible
 		return base.GetStepHeight(_blockValue, crossingFace);
 	}
 
-	// Token: 0x06000CEF RID: 3311 RVA: 0x00051A94 File Offset: 0x0004FC94
+	// Token: 0x06000CFA RID: 3322 RVA: 0x00051EAC File Offset: 0x000500AC
 	public override void CalculateCollisionHash(IncrementalHash calcHash)
 	{
 		int num = 1;
@@ -707,51 +707,51 @@ public class BlockShapeModelEntity : BlockShapeInvisible
 		}
 	}
 
-	// Token: 0x04000B60 RID: 2912
+	// Token: 0x04000B6D RID: 2925
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string PropDamagedMesh = "MeshDamage";
 
-	// Token: 0x04000B61 RID: 2913
+	// Token: 0x04000B6E RID: 2926
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string cMissingPrefabEntityPath = "@:Entities/Misc/block_missingPrefab.prefab";
 
-	// Token: 0x04000B62 RID: 2914
+	// Token: 0x04000B6F RID: 2927
 	public string modelName;
 
-	// Token: 0x04000B63 RID: 2915
+	// Token: 0x04000B70 RID: 2928
 	public Vector3 modelOffset;
 
-	// Token: 0x04000B64 RID: 2916
+	// Token: 0x04000B71 RID: 2929
 	public int censorMode;
 
-	// Token: 0x04000B65 RID: 2917
+	// Token: 0x04000B72 RID: 2930
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string modelNameWithPath;
 
-	// Token: 0x04000B66 RID: 2918
+	// Token: 0x04000B73 RID: 2931
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float LODCullScale = 1f;
 
-	// Token: 0x04000B67 RID: 2919
+	// Token: 0x04000B74 RID: 2932
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new Bounds bounds;
 
-	// Token: 0x04000B68 RID: 2920
+	// Token: 0x04000B75 RID: 2933
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isCustomBounds;
 
-	// Token: 0x04000B69 RID: 2921
+	// Token: 0x04000B76 RID: 2934
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<BlockShapeModelEntity.DamageState> damageStates;
 
-	// Token: 0x020001AB RID: 427
+	// Token: 0x020001AD RID: 429
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct DamageState
 	{
-		// Token: 0x04000B6A RID: 2922
+		// Token: 0x04000B77 RID: 2935
 		public string objName;
 
-		// Token: 0x04000B6B RID: 2923
+		// Token: 0x04000B78 RID: 2936
 		public float health;
 	}
 }

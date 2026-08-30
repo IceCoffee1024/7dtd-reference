@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001147 RID: 4423
+// Token: 0x02001160 RID: 4448
 public class XUiV_Sprite : XUiV_ImageBased
 {
-	// Token: 0x170010A1 RID: 4257
-	// (get) Token: 0x06008CFC RID: 36092 RVA: 0x00354213 File Offset: 0x00352413
+	// Token: 0x170010DA RID: 4314
+	// (get) Token: 0x06008DEE RID: 36334 RVA: 0x00358A4F File Offset: 0x00356C4F
 	public UISprite Sprite
 	{
 		get
@@ -14,9 +14,9 @@ public class XUiV_Sprite : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010A2 RID: 4258
-	// (get) Token: 0x06008CFD RID: 36093 RVA: 0x0035421B File Offset: 0x0035241B
-	// (set) Token: 0x06008CFE RID: 36094 RVA: 0x00354223 File Offset: 0x00352423
+	// Token: 0x170010DB RID: 4315
+	// (get) Token: 0x06008DEF RID: 36335 RVA: 0x00358A57 File Offset: 0x00356C57
+	// (set) Token: 0x06008DF0 RID: 36336 RVA: 0x00358A5F File Offset: 0x00356C5F
 	[XuiXmlAttribute("atlas", false)]
 	public string UIAtlas
 	{
@@ -36,9 +36,9 @@ public class XUiV_Sprite : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010A3 RID: 4259
-	// (get) Token: 0x06008CFF RID: 36095 RVA: 0x00354248 File Offset: 0x00352448
-	// (set) Token: 0x06008D00 RID: 36096 RVA: 0x00354250 File Offset: 0x00352450
+	// Token: 0x170010DC RID: 4316
+	// (get) Token: 0x06008DF1 RID: 36337 RVA: 0x00358A84 File Offset: 0x00356C84
+	// (set) Token: 0x06008DF2 RID: 36338 RVA: 0x00358A8C File Offset: 0x00356C8C
 	[XuiXmlAttribute("sprite", false)]
 	public string SpriteName
 	{
@@ -57,9 +57,9 @@ public class XUiV_Sprite : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010A4 RID: 4260
-	// (get) Token: 0x06008D01 RID: 36097 RVA: 0x0035426E File Offset: 0x0035246E
-	// (set) Token: 0x06008D02 RID: 36098 RVA: 0x00354276 File Offset: 0x00352476
+	// Token: 0x170010DD RID: 4317
+	// (get) Token: 0x06008DF3 RID: 36339 RVA: 0x00358AAA File Offset: 0x00356CAA
+	// (set) Token: 0x06008DF4 RID: 36340 RVA: 0x00358AB2 File Offset: 0x00356CB2
 	[XuiXmlAttribute("color", false)]
 	public Color Color
 	{
@@ -78,9 +78,9 @@ public class XUiV_Sprite : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010A5 RID: 4261
-	// (get) Token: 0x06008D03 RID: 36099 RVA: 0x00354294 File Offset: 0x00352494
-	// (set) Token: 0x06008D04 RID: 36100 RVA: 0x0035429C File Offset: 0x0035249C
+	// Token: 0x170010DE RID: 4318
+	// (get) Token: 0x06008DF5 RID: 36341 RVA: 0x00358AD0 File Offset: 0x00356CD0
+	// (set) Token: 0x06008DF6 RID: 36342 RVA: 0x00358AD8 File Offset: 0x00356CD8
 	[XuiXmlAttribute("filldirection", false)]
 	public UIBasicSprite.FillDirection FillDirection
 	{
@@ -99,9 +99,9 @@ public class XUiV_Sprite : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010A6 RID: 4262
-	// (get) Token: 0x06008D05 RID: 36101 RVA: 0x003542B5 File Offset: 0x003524B5
-	// (set) Token: 0x06008D06 RID: 36102 RVA: 0x003542BD File Offset: 0x003524BD
+	// Token: 0x170010DF RID: 4319
+	// (get) Token: 0x06008DF7 RID: 36343 RVA: 0x00358AF1 File Offset: 0x00356CF1
+	// (set) Token: 0x06008DF8 RID: 36344 RVA: 0x00358AF9 File Offset: 0x00356CF9
 	[XuiXmlAttribute("fillspritepad", false)]
 	public bool FillSpritePad
 	{
@@ -120,9 +120,9 @@ public class XUiV_Sprite : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010A7 RID: 4263
-	// (get) Token: 0x06008D07 RID: 36103 RVA: 0x003542D6 File Offset: 0x003524D6
-	// (set) Token: 0x06008D08 RID: 36104 RVA: 0x003542DE File Offset: 0x003524DE
+	// Token: 0x170010E0 RID: 4320
+	// (get) Token: 0x06008DF9 RID: 36345 RVA: 0x00358B12 File Offset: 0x00356D12
+	// (set) Token: 0x06008DFA RID: 36346 RVA: 0x00358B1A File Offset: 0x00356D1A
 	[XuiXmlAttribute("fillinvert", false)]
 	public bool FillInvert
 	{
@@ -141,9 +141,9 @@ public class XUiV_Sprite : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x170010A8 RID: 4264
-	// (get) Token: 0x06008D09 RID: 36105 RVA: 0x003542F7 File Offset: 0x003524F7
-	// (set) Token: 0x06008D0A RID: 36106 RVA: 0x003542FF File Offset: 0x003524FF
+	// Token: 0x170010E1 RID: 4321
+	// (get) Token: 0x06008DFB RID: 36347 RVA: 0x00358B33 File Offset: 0x00356D33
+	// (set) Token: 0x06008DFC RID: 36348 RVA: 0x00358B3B File Offset: 0x00356D3B
 	[XuiXmlAttribute("fill", false)]
 	public float Fill
 	{
@@ -166,20 +166,20 @@ public class XUiV_Sprite : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x06008D0B RID: 36107 RVA: 0x0035433E File Offset: 0x0035253E
+	// Token: 0x06008DFD RID: 36349 RVA: 0x00358B7A File Offset: 0x00356D7A
 	public XUiV_Sprite(XUi _xui, string _id)
 		: base(_xui, _id)
 	{
 	}
 
-	// Token: 0x06008D0C RID: 36108 RVA: 0x00354369 File Offset: 0x00352569
+	// Token: 0x06008DFE RID: 36350 RVA: 0x00358BA5 File Offset: 0x00356DA5
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void createComponents(GameObject _go)
 	{
 		_go.AddComponent<UISprite>();
 	}
 
-	// Token: 0x06008D0D RID: 36109 RVA: 0x00354374 File Offset: 0x00352574
+	// Token: 0x06008DFF RID: 36351 RVA: 0x00358BB0 File Offset: 0x00356DB0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void captureComponents()
 	{
@@ -187,14 +187,14 @@ public class XUiV_Sprite : XUiV_ImageBased
 		this.widget = (this.sprite = this.uiTransform.GetComponent<UISprite>());
 	}
 
-	// Token: 0x06008D0E RID: 36110 RVA: 0x003543A1 File Offset: 0x003525A1
+	// Token: 0x06008E00 RID: 36352 RVA: 0x00358BDD File Offset: 0x00356DDD
 	public override void InitView()
 	{
 		base.InitView();
 		this.updateData();
 	}
 
-	// Token: 0x06008D0F RID: 36111 RVA: 0x003543AF File Offset: 0x003525AF
+	// Token: 0x06008E01 RID: 36353 RVA: 0x00358BEB File Offset: 0x00356DEB
 	public override void SetDefaults(XUiController _parent)
 	{
 		base.SetDefaults(_parent);
@@ -203,7 +203,7 @@ public class XUiV_Sprite : XUiV_ImageBased
 		this.FillDirection = UIBasicSprite.FillDirection.Horizontal;
 	}
 
-	// Token: 0x06008D10 RID: 36112 RVA: 0x003543D0 File Offset: 0x003525D0
+	// Token: 0x06008E02 RID: 36354 RVA: 0x00358C0C File Offset: 0x00356E0C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateData()
 	{
@@ -239,14 +239,14 @@ public class XUiV_Sprite : XUiV_ImageBased
 		base.updateData();
 	}
 
-	// Token: 0x06008D11 RID: 36113 RVA: 0x00354527 File Offset: 0x00352727
+	// Token: 0x06008E03 RID: 36355 RVA: 0x00358D63 File Offset: 0x00356F63
 	public void SetSpriteImmediately(string _spriteName)
 	{
 		this.spriteName = _spriteName;
 		this.applyAtlasAndSprite(true);
 	}
 
-	// Token: 0x06008D12 RID: 36114 RVA: 0x00354538 File Offset: 0x00352738
+	// Token: 0x06008E04 RID: 36356 RVA: 0x00358D74 File Offset: 0x00356F74
 	public void SetColorImmediately(Color _color)
 	{
 		if (this.sprite != null)
@@ -255,7 +255,7 @@ public class XUiV_Sprite : XUiV_ImageBased
 		}
 	}
 
-	// Token: 0x06008D13 RID: 36115 RVA: 0x00354554 File Offset: 0x00352754
+	// Token: 0x06008E05 RID: 36357 RVA: 0x00358D90 File Offset: 0x00356F90
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool applyAtlasAndSprite(bool _force = false)
 	{
@@ -273,7 +273,7 @@ public class XUiV_Sprite : XUiV_ImageBased
 		return true;
 	}
 
-	// Token: 0x06008D14 RID: 36116 RVA: 0x003545EB File Offset: 0x003527EB
+	// Token: 0x06008E06 RID: 36358 RVA: 0x00358E27 File Offset: 0x00357027
 	[XuiXmlAttribute("gradient_start", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeGradientStart(Color _value)
@@ -281,7 +281,7 @@ public class XUiV_Sprite : XUiV_ImageBased
 		this.gradientStart = new Color?(_value);
 	}
 
-	// Token: 0x06008D15 RID: 36117 RVA: 0x003545F9 File Offset: 0x003527F9
+	// Token: 0x06008E07 RID: 36359 RVA: 0x00358E35 File Offset: 0x00357035
 	[XuiXmlAttribute("gradient_end", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void attributeGradientEnd(Color _value)
@@ -289,47 +289,47 @@ public class XUiV_Sprite : XUiV_ImageBased
 		this.gradientEnd = new Color?(_value);
 	}
 
-	// Token: 0x0400676D RID: 26477
+	// Token: 0x04006837 RID: 26679
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string uiAtlas = string.Empty;
 
-	// Token: 0x0400676E RID: 26478
+	// Token: 0x04006838 RID: 26680
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool uiAtlasChanged;
 
-	// Token: 0x0400676F RID: 26479
+	// Token: 0x04006839 RID: 26681
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string spriteName = string.Empty;
 
-	// Token: 0x04006770 RID: 26480
+	// Token: 0x0400683A RID: 26682
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Color color = Color.white;
 
-	// Token: 0x04006771 RID: 26481
+	// Token: 0x0400683B RID: 26683
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color? gradientStart;
 
-	// Token: 0x04006772 RID: 26482
+	// Token: 0x0400683C RID: 26684
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color? gradientEnd;
 
-	// Token: 0x04006773 RID: 26483
+	// Token: 0x0400683D RID: 26685
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public UIBasicSprite.FillDirection fillDirection;
 
-	// Token: 0x04006774 RID: 26484
+	// Token: 0x0400683E RID: 26686
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool fillSpritePad;
 
-	// Token: 0x04006775 RID: 26485
+	// Token: 0x0400683F RID: 26687
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool fillInvert;
 
-	// Token: 0x04006776 RID: 26486
+	// Token: 0x04006840 RID: 26688
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float fillAmount;
 
-	// Token: 0x04006777 RID: 26487
+	// Token: 0x04006841 RID: 26689
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public UISprite sprite;
 }

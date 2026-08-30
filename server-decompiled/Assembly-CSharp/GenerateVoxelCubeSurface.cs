@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000CA3 RID: 3235
+// Token: 0x02000CB5 RID: 3253
 public class GenerateVoxelCubeSurface
 {
-	// Token: 0x0600635D RID: 25437 RVA: 0x0026FD63 File Offset: 0x0026DF63
+	// Token: 0x060063E9 RID: 25577 RVA: 0x00272C5F File Offset: 0x00270E5F
 	public static IEnumerable<Vector3i> GenerateCubeSurfacePositions(Vector3i origin, int radius)
 	{
 		if (radius <= 0)
@@ -46,7 +46,7 @@ public class GenerateVoxelCubeSurface
 		yield break;
 	}
 
-	// Token: 0x0600635E RID: 25438 RVA: 0x0026FD7A File Offset: 0x0026DF7A
+	// Token: 0x060063EA RID: 25578 RVA: 0x00272C76 File Offset: 0x00270E76
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerable<Vector3i> GenerateCubeSurfaceTop(Vector3i origin, int radius)
 	{
@@ -63,7 +63,7 @@ public class GenerateVoxelCubeSurface
 		yield break;
 	}
 
-	// Token: 0x0600635F RID: 25439 RVA: 0x0026FD91 File Offset: 0x0026DF91
+	// Token: 0x060063EB RID: 25579 RVA: 0x00272C8D File Offset: 0x00270E8D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerable<Vector3i> GenerateCubeSurfaceBottom(Vector3i origin, int radius)
 	{
@@ -80,7 +80,7 @@ public class GenerateVoxelCubeSurface
 		yield break;
 	}
 
-	// Token: 0x06006360 RID: 25440 RVA: 0x0026FDA8 File Offset: 0x0026DFA8
+	// Token: 0x060063EC RID: 25580 RVA: 0x00272CA4 File Offset: 0x00270EA4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerable<Vector3i> GenerateCubeSurfaceRight(Vector3i origin, int radius)
 	{
@@ -97,7 +97,7 @@ public class GenerateVoxelCubeSurface
 		yield break;
 	}
 
-	// Token: 0x06006361 RID: 25441 RVA: 0x0026FDBF File Offset: 0x0026DFBF
+	// Token: 0x060063ED RID: 25581 RVA: 0x00272CBB File Offset: 0x00270EBB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerable<Vector3i> GenerateCubeSurfaceLeft(Vector3i origin, int radius)
 	{
@@ -114,7 +114,7 @@ public class GenerateVoxelCubeSurface
 		yield break;
 	}
 
-	// Token: 0x06006362 RID: 25442 RVA: 0x0026FDD6 File Offset: 0x0026DFD6
+	// Token: 0x060063EE RID: 25582 RVA: 0x00272CD2 File Offset: 0x00270ED2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerable<Vector3i> GenerateCubeSurfaceFront(Vector3i origin, int radius)
 	{
@@ -131,7 +131,7 @@ public class GenerateVoxelCubeSurface
 		yield break;
 	}
 
-	// Token: 0x06006363 RID: 25443 RVA: 0x0026FDED File Offset: 0x0026DFED
+	// Token: 0x060063EF RID: 25583 RVA: 0x00272CE9 File Offset: 0x00270EE9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerable<Vector3i> GenerateCubeSurfaceBack(Vector3i origin, int radius)
 	{
@@ -148,7 +148,7 @@ public class GenerateVoxelCubeSurface
 		yield break;
 	}
 
-	// Token: 0x06006364 RID: 25444 RVA: 0x0026FE04 File Offset: 0x0026E004
+	// Token: 0x060063F0 RID: 25584 RVA: 0x00272D00 File Offset: 0x00270F00
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerable<Vector3i> GenerateXZ(Vector3i min, int xLength, int zLength)
 	{
@@ -171,7 +171,7 @@ public class GenerateVoxelCubeSurface
 		yield break;
 	}
 
-	// Token: 0x06006365 RID: 25445 RVA: 0x0026FE22 File Offset: 0x0026E022
+	// Token: 0x060063F1 RID: 25585 RVA: 0x00272D1E File Offset: 0x00270F1E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerable<Vector3i> GenerateYZ(Vector3i min, int yLength, int zLength)
 	{
@@ -193,7 +193,7 @@ public class GenerateVoxelCubeSurface
 		yield break;
 	}
 
-	// Token: 0x06006366 RID: 25446 RVA: 0x0026FE40 File Offset: 0x0026E040
+	// Token: 0x060063F2 RID: 25586 RVA: 0x00272D3C File Offset: 0x00270F3C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerable<Vector3i> GenerateXY(Vector3i min, int xLength, int yLength)
 	{

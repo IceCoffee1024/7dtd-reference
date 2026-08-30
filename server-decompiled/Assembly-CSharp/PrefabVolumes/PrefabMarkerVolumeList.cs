@@ -6,17 +6,17 @@ using System.Text;
 
 namespace PrefabVolumes
 {
-	// Token: 0x02001892 RID: 6290
+	// Token: 0x020018B8 RID: 6328
 	public class PrefabMarkerVolumeList : PrefabVolumeListAbs<PrefabMarkerVolumeList, Marker>
 	{
-		// Token: 0x0600C1CC RID: 49612 RVA: 0x0047CA75 File Offset: 0x0047AC75
+		// Token: 0x0600C353 RID: 50003 RVA: 0x00482BA1 File Offset: 0x00480DA1
 		public PrefabMarkerVolumeList(Prefab _owner)
 			: base(_owner)
 		{
 		}
 
-		// Token: 0x17001790 RID: 6032
-		// (get) Token: 0x0600C1CD RID: 49613 RVA: 0x00080065 File Offset: 0x0007E265
+		// Token: 0x17001802 RID: 6146
+		// (get) Token: 0x0600C354 RID: 50004 RVA: 0x00080719 File Offset: 0x0007E919
 		public override PrefabVolumeAbs.EVolumeType VolumeType
 		{
 			get
@@ -25,8 +25,8 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x17001791 RID: 6033
-		// (get) Token: 0x0600C1CE RID: 49614 RVA: 0x0047CA7E File Offset: 0x0047AC7E
+		// Token: 0x17001803 RID: 6147
+		// (get) Token: 0x0600C355 RID: 50005 RVA: 0x00482BAA File Offset: 0x00480DAA
 		public override SelectionCategory SelectionCategory
 		{
 			[PublicizedFrom(EAccessModifier.Protected)]
@@ -36,7 +36,7 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C1CF RID: 49615 RVA: 0x0047CA8C File Offset: 0x0047AC8C
+		// Token: 0x0600C356 RID: 50006 RVA: 0x00482BB8 File Offset: 0x00480DB8
 		public override void ReadFromProperties(DynamicProperties _properties)
 		{
 			this.List.Clear();
@@ -138,7 +138,7 @@ namespace PrefabVolumes
 			}
 		}
 
-		// Token: 0x0600C1D0 RID: 49616 RVA: 0x0047CDEC File Offset: 0x0047AFEC
+		// Token: 0x0600C357 RID: 50007 RVA: 0x00482F18 File Offset: 0x00481118
 		public override void WriteToProperties(DynamicProperties _properties)
 		{
 			StringBuilder stringBuilder = new StringBuilder();
@@ -196,7 +196,7 @@ namespace PrefabVolumes
 			_properties.Values.Remove("POIMarkerPartSpawnChance");
 		}
 
-		// Token: 0x0600C1D1 RID: 49617 RVA: 0x0047D0F4 File Offset: 0x0047B2F4
+		// Token: 0x0600C358 RID: 50008 RVA: 0x00483220 File Offset: 0x00481420
 		[return: TupleElementNames(new string[] { "volumeIndex", "volume", "box" })]
 		public override ValueTuple<int, PrefabVolumeAbs, SelectionBox> AddNewVolume(string _prefabInstanceName, Vector3i _bbPos, Vector3i _startPos, Vector3i _size)
 		{
@@ -209,7 +209,7 @@ namespace PrefabVolumes
 			return new ValueTuple<int, PrefabVolumeAbs, SelectionBox>(item2, item, selectionBox);
 		}
 
-		// Token: 0x0600C1D2 RID: 49618 RVA: 0x0047D144 File Offset: 0x0047B344
+		// Token: 0x0600C359 RID: 50009 RVA: 0x00483270 File Offset: 0x00481470
 		public override void SetVolume(PrefabInstance _prefabInstance, int _index, Marker _volumeSettings)
 		{
 			base.SetVolume(_prefabInstance, _index, _volumeSettings);
@@ -240,7 +240,7 @@ namespace PrefabVolumes
 			selectionBox2.FacingDirection = (float)num;
 		}
 
-		// Token: 0x0600C1D3 RID: 49619 RVA: 0x0047D1E8 File Offset: 0x0047B3E8
+		// Token: 0x0600C35A RID: 50010 RVA: 0x00483314 File Offset: 0x00481514
 		public override SelectionBox AddSelectionBox(Marker _volume, string _name, Vector3i _pos)
 		{
 			SelectionBox selectionBox = base.AddSelectionBox(_volume, _name, _pos);

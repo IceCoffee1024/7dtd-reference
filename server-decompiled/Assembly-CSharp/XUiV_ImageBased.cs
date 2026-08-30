@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200113F RID: 4415
+// Token: 0x02001158 RID: 4440
 public abstract class XUiV_ImageBased : XUiView_WidgetBased
 {
-	// Token: 0x1700106C RID: 4204
-	// (get) Token: 0x06008C53 RID: 35923 RVA: 0x003528FD File Offset: 0x00350AFD
-	// (set) Token: 0x06008C54 RID: 35924 RVA: 0x00352905 File Offset: 0x00350B05
+	// Token: 0x170010A5 RID: 4261
+	// (get) Token: 0x06008D45 RID: 36165 RVA: 0x00357139 File Offset: 0x00355339
+	// (set) Token: 0x06008D46 RID: 36166 RVA: 0x00357141 File Offset: 0x00355341
 	[XuiXmlAttribute("keepsourceaspectratio", false)]
 	public bool KeepSourceAspectRatio
 	{
@@ -25,9 +25,9 @@ public abstract class XUiV_ImageBased : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x1700106D RID: 4205
-	// (get) Token: 0x06008C55 RID: 35925 RVA: 0x00351D51 File Offset: 0x0034FF51
-	// (set) Token: 0x06008C56 RID: 35926 RVA: 0x0035291E File Offset: 0x00350B1E
+	// Token: 0x170010A6 RID: 4262
+	// (get) Token: 0x06008D47 RID: 36167 RVA: 0x00356585 File Offset: 0x00354785
+	// (set) Token: 0x06008D48 RID: 36168 RVA: 0x0035715A File Offset: 0x0035535A
 	[XuiXmlAttribute("type", false)]
 	public virtual UIBasicSprite.Type Type
 	{
@@ -46,9 +46,9 @@ public abstract class XUiV_ImageBased : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x1700106E RID: 4206
-	// (get) Token: 0x06008C57 RID: 35927 RVA: 0x00352937 File Offset: 0x00350B37
-	// (set) Token: 0x06008C58 RID: 35928 RVA: 0x0035293F File Offset: 0x00350B3F
+	// Token: 0x170010A7 RID: 4263
+	// (get) Token: 0x06008D49 RID: 36169 RVA: 0x00357173 File Offset: 0x00355373
+	// (set) Token: 0x06008D4A RID: 36170 RVA: 0x0035717B File Offset: 0x0035537B
 	[XuiXmlAttribute("fillcenter", false)]
 	public bool FillCenter
 	{
@@ -67,9 +67,9 @@ public abstract class XUiV_ImageBased : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x1700106F RID: 4207
-	// (get) Token: 0x06008C59 RID: 35929 RVA: 0x00352958 File Offset: 0x00350B58
-	// (set) Token: 0x06008C5A RID: 35930 RVA: 0x00352960 File Offset: 0x00350B60
+	// Token: 0x170010A8 RID: 4264
+	// (get) Token: 0x06008D4B RID: 36171 RVA: 0x00357194 File Offset: 0x00355394
+	// (set) Token: 0x06008D4C RID: 36172 RVA: 0x0035719C File Offset: 0x0035539C
 	[XuiXmlAttribute("flip", false)]
 	public UIBasicSprite.Flip Flip
 	{
@@ -88,9 +88,9 @@ public abstract class XUiV_ImageBased : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x17001070 RID: 4208
-	// (get) Token: 0x06008C5B RID: 35931 RVA: 0x00352979 File Offset: 0x00350B79
-	// (set) Token: 0x06008C5C RID: 35932 RVA: 0x00352981 File Offset: 0x00350B81
+	// Token: 0x170010A9 RID: 4265
+	// (get) Token: 0x06008D4D RID: 36173 RVA: 0x003571B5 File Offset: 0x003553B5
+	// (set) Token: 0x06008D4E RID: 36174 RVA: 0x003571BD File Offset: 0x003553BD
 	[XuiXmlAttribute("globalopacitymod", false)]
 	public float GlobalOpacityModifier
 	{
@@ -109,9 +109,9 @@ public abstract class XUiV_ImageBased : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x17001071 RID: 4209
-	// (get) Token: 0x06008C5D RID: 35933 RVA: 0x0035299F File Offset: 0x00350B9F
-	// (set) Token: 0x06008C5E RID: 35934 RVA: 0x003529A7 File Offset: 0x00350BA7
+	// Token: 0x170010AA RID: 4266
+	// (get) Token: 0x06008D4F RID: 36175 RVA: 0x003571DB File Offset: 0x003553DB
+	// (set) Token: 0x06008D50 RID: 36176 RVA: 0x003571E3 File Offset: 0x003553E3
 	[XuiXmlAttribute("foregroundlayer", false)]
 	public bool ForegroundLayer
 	{
@@ -130,8 +130,8 @@ public abstract class XUiV_ImageBased : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x17001072 RID: 4210
-	// (get) Token: 0x06008C5F RID: 35935 RVA: 0x003529C0 File Offset: 0x00350BC0
+	// Token: 0x170010AB RID: 4267
+	// (get) Token: 0x06008D51 RID: 36177 RVA: 0x003571FC File Offset: 0x003553FC
 	public float GlobalOpacitySetting
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -145,7 +145,7 @@ public abstract class XUiV_ImageBased : XUiView_WidgetBased
 		}
 	}
 
-	// Token: 0x06008C60 RID: 35936 RVA: 0x003529E4 File Offset: 0x00350BE4
+	// Token: 0x06008D52 RID: 36178 RVA: 0x00357220 File Offset: 0x00355420
 	public override void Update(float _dt)
 	{
 		float globalOpacitySetting = this.GlobalOpacitySetting;
@@ -157,7 +157,7 @@ public abstract class XUiV_ImageBased : XUiView_WidgetBased
 		base.Update(_dt);
 	}
 
-	// Token: 0x06008C61 RID: 35937 RVA: 0x00352A1C File Offset: 0x00350C1C
+	// Token: 0x06008D53 RID: 36179 RVA: 0x00357258 File Offset: 0x00355458
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Color opacityModColor(Color _origColor)
 	{
@@ -174,13 +174,13 @@ public abstract class XUiV_ImageBased : XUiView_WidgetBased
 		return new Color(_origColor.r, _origColor.g, _origColor.b, num);
 	}
 
-	// Token: 0x06008C62 RID: 35938 RVA: 0x00352A76 File Offset: 0x00350C76
+	// Token: 0x06008D54 RID: 36180 RVA: 0x003572B2 File Offset: 0x003554B2
 	public XUiV_ImageBased(XUi _xui, string _id)
 		: base(_xui, _id)
 	{
 	}
 
-	// Token: 0x06008C63 RID: 35939 RVA: 0x00352A8B File Offset: 0x00350C8B
+	// Token: 0x06008D55 RID: 36181 RVA: 0x003572C7 File Offset: 0x003554C7
 	public override void SetDefaults(XUiController _parent)
 	{
 		base.SetDefaults(_parent);
@@ -188,31 +188,31 @@ public abstract class XUiV_ImageBased : XUiView_WidgetBased
 		this.Type = UIBasicSprite.Type.Simple;
 	}
 
-	// Token: 0x04006731 RID: 26417
+	// Token: 0x040067FB RID: 26619
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool keepSourceAspectRatio;
 
-	// Token: 0x04006732 RID: 26418
+	// Token: 0x040067FC RID: 26620
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public UIBasicSprite.Type type;
 
-	// Token: 0x04006733 RID: 26419
+	// Token: 0x040067FD RID: 26621
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public UIBasicSprite.Flip flip;
 
-	// Token: 0x04006734 RID: 26420
+	// Token: 0x040067FE RID: 26622
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool fillCenter;
 
-	// Token: 0x04006735 RID: 26421
+	// Token: 0x040067FF RID: 26623
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool foregroundLayer;
 
-	// Token: 0x04006736 RID: 26422
+	// Token: 0x04006800 RID: 26624
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float globalOpacityModifier = 1f;
 
-	// Token: 0x04006737 RID: 26423
+	// Token: 0x04006801 RID: 26625
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float previousGlobalOpacity;
 }

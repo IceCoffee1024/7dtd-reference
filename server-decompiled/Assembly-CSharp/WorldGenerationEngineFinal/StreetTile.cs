@@ -7,18 +7,18 @@ using UnityEngine;
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x0200170A RID: 5898
+	// Token: 0x02001730 RID: 5936
 	public class StreetTile
 	{
-		// Token: 0x0600B70D RID: 46861 RVA: 0x0044248B File Offset: 0x0044068B
+		// Token: 0x0600B890 RID: 47248 RVA: 0x00448203 File Offset: 0x00446403
 		public void SetTownship(Township _township)
 		{
 			this.Township = _township;
 			this.GetData().IsCity = _township != null && !_township.IsWilderness();
 		}
 
-		// Token: 0x170015FA RID: 5626
-		// (get) Token: 0x0600B70E RID: 46862 RVA: 0x004424AE File Offset: 0x004406AE
+		// Token: 0x1700166C RID: 5740
+		// (get) Token: 0x0600B891 RID: 47249 RVA: 0x00448226 File Offset: 0x00446426
 		public int GroupID
 		{
 			get
@@ -31,8 +31,8 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x170015FB RID: 5627
-		// (get) Token: 0x0600B70F RID: 46863 RVA: 0x004424C5 File Offset: 0x004406C5
+		// Token: 0x1700166D RID: 5741
+		// (get) Token: 0x0600B892 RID: 47250 RVA: 0x0044823D File Offset: 0x0044643D
 		public bool IsValidForStreetTile
 		{
 			get
@@ -41,8 +41,8 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x170015FC RID: 5628
-		// (get) Token: 0x0600B710 RID: 46864 RVA: 0x004424FC File Offset: 0x004406FC
+		// Token: 0x1700166E RID: 5742
+		// (get) Token: 0x0600B893 RID: 47251 RVA: 0x00448274 File Offset: 0x00446474
 		public bool IsValidForGateway
 		{
 			get
@@ -51,8 +51,8 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x170015FD RID: 5629
-		// (get) Token: 0x0600B711 RID: 46865 RVA: 0x00442539 File Offset: 0x00440739
+		// Token: 0x1700166F RID: 5743
+		// (get) Token: 0x0600B894 RID: 47252 RVA: 0x004482B1 File Offset: 0x004464B1
 		public bool HasPrefabs
 		{
 			get
@@ -61,8 +61,8 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x170015FE RID: 5630
-		// (get) Token: 0x0600B712 RID: 46866 RVA: 0x00442553 File Offset: 0x00440753
+		// Token: 0x17001670 RID: 5744
+		// (get) Token: 0x0600B895 RID: 47253 RVA: 0x004482CB File Offset: 0x004464CB
 		public bool HasStreetTilePrefab
 		{
 			get
@@ -71,8 +71,8 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x170015FF RID: 5631
-		// (get) Token: 0x0600B713 RID: 46867 RVA: 0x0044256D File Offset: 0x0044076D
+		// Token: 0x17001671 RID: 5745
+		// (get) Token: 0x0600B896 RID: 47254 RVA: 0x004482E5 File Offset: 0x004464E5
 		public Vector2i WorldPositionMax
 		{
 			[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -82,8 +82,8 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x17001600 RID: 5632
-		// (get) Token: 0x0600B714 RID: 46868 RVA: 0x00442589 File Offset: 0x00440789
+		// Token: 0x17001672 RID: 5746
+		// (get) Token: 0x0600B897 RID: 47255 RVA: 0x00448301 File Offset: 0x00446501
 		public BiomeType BiomeType
 		{
 			get
@@ -92,8 +92,8 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x17001601 RID: 5633
-		// (get) Token: 0x0600B715 RID: 46869 RVA: 0x0044259C File Offset: 0x0044079C
+		// Token: 0x17001673 RID: 5747
+		// (get) Token: 0x0600B898 RID: 47256 RVA: 0x00448314 File Offset: 0x00446514
 		public float PositionHeight
 		{
 			get
@@ -102,8 +102,8 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x17001602 RID: 5634
-		// (get) Token: 0x0600B716 RID: 46870 RVA: 0x004425AF File Offset: 0x004407AF
+		// Token: 0x17001674 RID: 5748
+		// (get) Token: 0x0600B899 RID: 47257 RVA: 0x00448327 File Offset: 0x00446527
 		public TerrainType TerrainType
 		{
 			get
@@ -112,8 +112,8 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x17001603 RID: 5635
-		// (get) Token: 0x0600B717 RID: 46871 RVA: 0x004425C2 File Offset: 0x004407C2
+		// Token: 0x17001675 RID: 5749
+		// (get) Token: 0x0600B89A RID: 47258 RVA: 0x0044833A File Offset: 0x0044653A
 		public int RoadExitCount
 		{
 			get
@@ -126,21 +126,21 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B718 RID: 46872 RVA: 0x004425EA File Offset: 0x004407EA
+		// Token: 0x0600B89B RID: 47259 RVA: 0x00448362 File Offset: 0x00446562
 		public bool HasRoadExit(int _dir)
 		{
 			return this.RoadShape >= 0 && (this.worldBuilder.StreetTileShared.RoadShapeExitsPerRotation[this.RoadShape][this.Rotations] & (1 << _dir)) > 0;
 		}
 
-		// Token: 0x0600B719 RID: 46873 RVA: 0x00442623 File Offset: 0x00440823
+		// Token: 0x0600B89C RID: 47260 RVA: 0x0044839B File Offset: 0x0044659B
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int GetRoadExits(int _shape, int _rotations)
 		{
 			return this.worldBuilder.StreetTileShared.RoadShapeExitsPerRotation[_shape][_rotations];
 		}
 
-		// Token: 0x17001604 RID: 5636
-		// (get) Token: 0x0600B71A RID: 46874 RVA: 0x0044263D File Offset: 0x0044083D
+		// Token: 0x17001676 RID: 5750
+		// (get) Token: 0x0600B89D RID: 47261 RVA: 0x004483B5 File Offset: 0x004465B5
 		public string PrefabName
 		{
 			get
@@ -153,9 +153,9 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x17001605 RID: 5637
-		// (get) Token: 0x0600B71B RID: 46875 RVA: 0x00442665 File Offset: 0x00440865
-		// (set) Token: 0x0600B71C RID: 46876 RVA: 0x0044266D File Offset: 0x0044086D
+		// Token: 0x17001677 RID: 5751
+		// (get) Token: 0x0600B89E RID: 47262 RVA: 0x004483DD File Offset: 0x004465DD
+		// (set) Token: 0x0600B89F RID: 47263 RVA: 0x004483E5 File Offset: 0x004465E5
 		public int Rotations
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -174,7 +174,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B71D RID: 46877 RVA: 0x00442680 File Offset: 0x00440880
+		// Token: 0x0600B8A0 RID: 47264 RVA: 0x004483F8 File Offset: 0x004465F8
 		public StreetTile(WorldBuilder _worldBuilder, Vector2i gridPosition)
 		{
 			this.worldBuilder = _worldBuilder;
@@ -196,7 +196,7 @@ namespace WorldGenerationEngineFinal
 			this.UpdateValidity();
 		}
 
-		// Token: 0x0600B71E RID: 46878 RVA: 0x0044279C File Offset: 0x0044099C
+		// Token: 0x0600B8A1 RID: 47265 RVA: 0x00448514 File Offset: 0x00446714
 		public void UpdateValidity()
 		{
 			float positionHeight = this.PositionHeight;
@@ -240,14 +240,14 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B71F RID: 46879 RVA: 0x004428FC File Offset: 0x00440AFC
+		// Token: 0x0600B8A2 RID: 47266 RVA: 0x00448674 File Offset: 0x00446874
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ref StreetTileData GetData()
 		{
 			return this.worldBuilder.data.GetStreetTileDataWorld(this.WorldPosition.x, this.WorldPosition.y);
 		}
 
-		// Token: 0x0600B720 RID: 46880 RVA: 0x00442924 File Offset: 0x00440B24
+		// Token: 0x0600B8A3 RID: 47267 RVA: 0x0044869C File Offset: 0x0044689C
 		public Stamp GetStamp()
 		{
 			Color32 color = ((this.District.type == District.Type.Gateway) ? new Color32(byte.MaxValue, 0, 204, byte.MaxValue) : new Color32(byte.MaxValue, 0, 0, byte.MaxValue));
@@ -261,7 +261,7 @@ namespace WorldGenerationEngineFinal
 			return new Stamp(this.worldBuilder, this.worldBuilder.StampManager.GetStamp(this.worldBuilder.StreetTileShared.RoadShapes[num], null), translationData, color, 0.1f, false, "");
 		}
 
-		// Token: 0x0600B721 RID: 46881 RVA: 0x004429E8 File Offset: 0x00440BE8
+		// Token: 0x0600B8A4 RID: 47268 RVA: 0x00448760 File Offset: 0x00446960
 		public StreetTile[] GetNeighbors()
 		{
 			if (this.neighbors4Way == null)
@@ -275,7 +275,7 @@ namespace WorldGenerationEngineFinal
 			return this.neighbors4Way;
 		}
 
-		// Token: 0x0600B722 RID: 46882 RVA: 0x00442A40 File Offset: 0x00440C40
+		// Token: 0x0600B8A5 RID: 47269 RVA: 0x004487B8 File Offset: 0x004469B8
 		public int GetNeighborCount()
 		{
 			if (this.neighbors4Way == null)
@@ -293,7 +293,7 @@ namespace WorldGenerationEngineFinal
 			return num;
 		}
 
-		// Token: 0x0600B723 RID: 46883 RVA: 0x00442A7C File Offset: 0x00440C7C
+		// Token: 0x0600B8A6 RID: 47270 RVA: 0x004487F4 File Offset: 0x004469F4
 		public StreetTile[] GetNeighborsDiagonal()
 		{
 			if (this.neighborsDiagonal == null)
@@ -307,7 +307,7 @@ namespace WorldGenerationEngineFinal
 			return this.neighborsDiagonal;
 		}
 
-		// Token: 0x0600B724 RID: 46884 RVA: 0x00442AD4 File Offset: 0x00440CD4
+		// Token: 0x0600B8A7 RID: 47271 RVA: 0x0044884C File Offset: 0x00446A4C
 		public StreetTile[] GetNeighbors8Way()
 		{
 			if (this.neighbors8Way == null)
@@ -321,13 +321,13 @@ namespace WorldGenerationEngineFinal
 			return this.neighbors8Way;
 		}
 
-		// Token: 0x0600B725 RID: 46885 RVA: 0x00442B2B File Offset: 0x00440D2B
+		// Token: 0x0600B8A8 RID: 47272 RVA: 0x004488A3 File Offset: 0x00446AA3
 		public StreetTile GetNeighbor(Vector2i direction)
 		{
 			return this.worldBuilder.GetStreetTileGrid(this.GridPosition + direction);
 		}
 
-		// Token: 0x0600B726 RID: 46886 RVA: 0x00442B44 File Offset: 0x00440D44
+		// Token: 0x0600B8A9 RID: 47273 RVA: 0x004488BC File Offset: 0x00446ABC
 		public bool HasNeighbor(StreetTile otherTile)
 		{
 			StreetTile[] neighbors = this.GetNeighbors();
@@ -341,7 +341,7 @@ namespace WorldGenerationEngineFinal
 			return false;
 		}
 
-		// Token: 0x0600B727 RID: 46887 RVA: 0x00442B6F File Offset: 0x00440D6F
+		// Token: 0x0600B8AA RID: 47274 RVA: 0x004488E7 File Offset: 0x00446AE7
 		public StreetTile GetNeighbor(int _dir)
 		{
 			if (this.neighbors4Way == null)
@@ -351,7 +351,7 @@ namespace WorldGenerationEngineFinal
 			return this.neighbors4Way[_dir];
 		}
 
-		// Token: 0x0600B728 RID: 46888 RVA: 0x00442B88 File Offset: 0x00440D88
+		// Token: 0x0600B8AB RID: 47275 RVA: 0x00448900 File Offset: 0x00446B00
 		public int GetNeighborDir(StreetTile otherTile)
 		{
 			if (this.neighbors4Way == null)
@@ -368,7 +368,7 @@ namespace WorldGenerationEngineFinal
 			return -1;
 		}
 
-		// Token: 0x0600B729 RID: 46889 RVA: 0x00442BC0 File Offset: 0x00440DC0
+		// Token: 0x0600B8AC RID: 47276 RVA: 0x00448938 File Offset: 0x00446B38
 		public bool HasExitTo(StreetTile otherTile)
 		{
 			if (this.Township == null && this.District == null)
@@ -383,7 +383,7 @@ namespace WorldGenerationEngineFinal
 			return neighborDir >= 0 && this.HasRoadExit(neighborDir);
 		}
 
-		// Token: 0x0600B72A RID: 46890 RVA: 0x00442C08 File Offset: 0x00440E08
+		// Token: 0x0600B8AD RID: 47277 RVA: 0x00448980 File Offset: 0x00446B80
 		public void SetPathingConstraintsForTile(bool allBlocked = false)
 		{
 			if (this.Township != null && this.District != null)
@@ -409,7 +409,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B72B RID: 46891 RVA: 0x00442CB4 File Offset: 0x00440EB4
+		// Token: 0x0600B8AE RID: 47278 RVA: 0x00448A2C File Offset: 0x00446C2C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void HighwayExitInit()
 		{
@@ -420,7 +420,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B72C RID: 46892 RVA: 0x00442CEC File Offset: 0x00440EEC
+		// Token: 0x0600B8AF RID: 47279 RVA: 0x00448A64 File Offset: 0x00446C64
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector2i HighwayExitFromDir(int _dir)
 		{
@@ -448,7 +448,7 @@ namespace WorldGenerationEngineFinal
 			return vector2i;
 		}
 
-		// Token: 0x0600B72D RID: 46893 RVA: 0x00442DA0 File Offset: 0x00440FA0
+		// Token: 0x0600B8B0 RID: 47280 RVA: 0x00448B18 File Offset: 0x00446D18
 		public int GetHighwayExitDir(Vector2i _worldPos)
 		{
 			for (int i = 0; i < 4; i++)
@@ -461,14 +461,14 @@ namespace WorldGenerationEngineFinal
 			return 0;
 		}
 
-		// Token: 0x0600B72E RID: 46894 RVA: 0x00442DCB File Offset: 0x00440FCB
+		// Token: 0x0600B8B1 RID: 47281 RVA: 0x00448B43 File Offset: 0x00446D43
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public Vector2i GetHighwayExitPos(int _dir)
 		{
 			return this.highwayExitPositions[_dir];
 		}
 
-		// Token: 0x0600B72F RID: 46895 RVA: 0x00442DDC File Offset: 0x00440FDC
+		// Token: 0x0600B8B2 RID: 47282 RVA: 0x00448B54 File Offset: 0x00446D54
 		public List<Vector2i> GetHighwayExits(bool _isGateway = false)
 		{
 			List<Vector2i> list = new List<Vector2i>();
@@ -505,7 +505,7 @@ namespace WorldGenerationEngineFinal
 			return list;
 		}
 
-		// Token: 0x0600B730 RID: 46896 RVA: 0x00442E70 File Offset: 0x00441070
+		// Token: 0x0600B8B3 RID: 47283 RVA: 0x00448BE8 File Offset: 0x00446DE8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SetRoadShape(int _exits)
 		{
@@ -526,7 +526,7 @@ namespace WorldGenerationEngineFinal
 			this.Rotations = 0;
 		}
 
-		// Token: 0x0600B731 RID: 46897 RVA: 0x00442ED4 File Offset: 0x004410D4
+		// Token: 0x0600B8B4 RID: 47284 RVA: 0x00448C4C File Offset: 0x00446E4C
 		public int CountAllDistrictExits()
 		{
 			int num = 0;
@@ -539,7 +539,7 @@ namespace WorldGenerationEngineFinal
 			return num;
 		}
 
-		// Token: 0x0600B732 RID: 46898 RVA: 0x00442F24 File Offset: 0x00441124
+		// Token: 0x0600B8B5 RID: 47285 RVA: 0x00448C9C File Offset: 0x00446E9C
 		public int CountDistrictExitsBetween(StreetTile _neighbor)
 		{
 			int num = 0;
@@ -563,14 +563,14 @@ namespace WorldGenerationEngineFinal
 			return num;
 		}
 
-		// Token: 0x0600B733 RID: 46899 RVA: 0x00442FC5 File Offset: 0x004411C5
+		// Token: 0x0600B8B6 RID: 47286 RVA: 0x00448D3D File Offset: 0x00446F3D
 		public void CalcConnectedDistrictTiles(List<StreetTile> _tiles)
 		{
 			_tiles.Add(this);
 			this.CalcConnectedDistrictNeighbors(_tiles);
 		}
 
-		// Token: 0x0600B734 RID: 46900 RVA: 0x00442FD5 File Offset: 0x004411D5
+		// Token: 0x0600B8B7 RID: 47287 RVA: 0x00448D4D File Offset: 0x00446F4D
 		public int CalcConnectedDistrictTilesCount(List<StreetTile> _tiles)
 		{
 			this.CalcConnectedDistrictNeighbors(_tiles);
@@ -579,7 +579,7 @@ namespace WorldGenerationEngineFinal
 			return num;
 		}
 
-		// Token: 0x0600B735 RID: 46901 RVA: 0x00442FEC File Offset: 0x004411EC
+		// Token: 0x0600B8B8 RID: 47288 RVA: 0x00448D64 File Offset: 0x00446F64
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void CalcConnectedDistrictNeighbors(List<StreetTile> _tiles)
 		{
@@ -597,7 +597,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B736 RID: 46902 RVA: 0x00443054 File Offset: 0x00441254
+		// Token: 0x0600B8B9 RID: 47289 RVA: 0x00448DCC File Offset: 0x00446FCC
 		public int CountDistrictExits()
 		{
 			int num = 0;
@@ -615,7 +615,7 @@ namespace WorldGenerationEngineFinal
 			return num;
 		}
 
-		// Token: 0x0600B737 RID: 46903 RVA: 0x004430AC File Offset: 0x004412AC
+		// Token: 0x0600B8BA RID: 47290 RVA: 0x00448E24 File Offset: 0x00447024
 		public bool ChangeLConnectionToCap(GameRandom _rand)
 		{
 			if (this.ConnectedExits != 3 && this.ConnectedExits != 6 && this.ConnectedExits != 12 && this.ConnectedExits != 9)
@@ -655,7 +655,7 @@ namespace WorldGenerationEngineFinal
 			return flag;
 		}
 
-		// Token: 0x0600B738 RID: 46904 RVA: 0x004431C4 File Offset: 0x004413C4
+		// Token: 0x0600B8BB RID: 47291 RVA: 0x00448F3C File Offset: 0x0044713C
 		public void SetExitsToMyTownship()
 		{
 			int num = 0;
@@ -670,13 +670,13 @@ namespace WorldGenerationEngineFinal
 			this.SetExits(num);
 		}
 
-		// Token: 0x0600B739 RID: 46905 RVA: 0x00443208 File Offset: 0x00441408
+		// Token: 0x0600B8BC RID: 47292 RVA: 0x00448F80 File Offset: 0x00447180
 		public int GetExitUsedCount()
 		{
 			return this.UsedExitList.Count<Vector2i>();
 		}
 
-		// Token: 0x0600B73A RID: 46906 RVA: 0x00443218 File Offset: 0x00441418
+		// Token: 0x0600B8BD RID: 47293 RVA: 0x00448F90 File Offset: 0x00447190
 		public void SetExits(int _exits)
 		{
 			this.ConnectedExits = _exits;
@@ -692,14 +692,14 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B73B RID: 46907 RVA: 0x00443269 File Offset: 0x00441469
+		// Token: 0x0600B8BE RID: 47294 RVA: 0x00448FE1 File Offset: 0x004471E1
 		public void SetExitUsed(int _dir)
 		{
 			this.ConnectedExits |= 1 << _dir;
 			this.SetExits(this.ConnectedExits);
 		}
 
-		// Token: 0x0600B73C RID: 46908 RVA: 0x0044328C File Offset: 0x0044148C
+		// Token: 0x0600B8BF RID: 47295 RVA: 0x00449004 File Offset: 0x00447204
 		public bool SetExitUsed(Vector2i exit)
 		{
 			for (int i = 0; i < 4; i++)
@@ -713,14 +713,14 @@ namespace WorldGenerationEngineFinal
 			return false;
 		}
 
-		// Token: 0x0600B73D RID: 46909 RVA: 0x004432BE File Offset: 0x004414BE
+		// Token: 0x0600B8C0 RID: 47296 RVA: 0x00449036 File Offset: 0x00447236
 		public void SetExitUnUsed(int _dir)
 		{
 			this.ConnectedExits &= ~(1 << _dir);
 			this.SetExits(this.ConnectedExits);
 		}
 
-		// Token: 0x0600B73E RID: 46910 RVA: 0x004432E0 File Offset: 0x004414E0
+		// Token: 0x0600B8C1 RID: 47297 RVA: 0x00449058 File Offset: 0x00447258
 		public void SetExitUnUsed(Vector2i _exit)
 		{
 			for (int i = 0; i < 4; i++)
@@ -733,7 +733,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B73F RID: 46911 RVA: 0x00443310 File Offset: 0x00441510
+		// Token: 0x0600B8C2 RID: 47298 RVA: 0x00449088 File Offset: 0x00447288
 		public void SetExitUnUsedAndFromNeighbor(int _dir)
 		{
 			this.SetExitUnUsed(_dir);
@@ -745,8 +745,8 @@ namespace WorldGenerationEngineFinal
 			neighbor.SetExitUnUsed((_dir + 2) & 3);
 		}
 
-		// Token: 0x17001606 RID: 5638
-		// (get) Token: 0x0600B740 RID: 46912 RVA: 0x0044332F File Offset: 0x0044152F
+		// Token: 0x17001678 RID: 5752
+		// (get) Token: 0x0600B8C3 RID: 47299 RVA: 0x004490A7 File Offset: 0x004472A7
 		public bool ContainsHighway
 		{
 			get
@@ -755,7 +755,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B741 RID: 46913 RVA: 0x0044333F File Offset: 0x0044153F
+		// Token: 0x0600B8C4 RID: 47300 RVA: 0x004490B7 File Offset: 0x004472B7
 		public void AddHighway(Path _path)
 		{
 			if (!this.ConnectedHighways.Contains(_path))
@@ -765,7 +765,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B742 RID: 46914 RVA: 0x00443371 File Offset: 0x00441571
+		// Token: 0x0600B8C5 RID: 47301 RVA: 0x004490E9 File Offset: 0x004472E9
 		public void RemoveHighway(Path _path)
 		{
 			if (this.ConnectedHighways.Remove(_path))
@@ -774,7 +774,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B743 RID: 46915 RVA: 0x00443398 File Offset: 0x00441598
+		// Token: 0x0600B8C6 RID: 47302 RVA: 0x00449110 File Offset: 0x00447310
 		public bool SpawnPrefabs()
 		{
 			if (this.District == null || this.District.name == "wilderness")
@@ -795,7 +795,7 @@ namespace WorldGenerationEngineFinal
 			return true;
 		}
 
-		// Token: 0x0600B744 RID: 46916 RVA: 0x00443420 File Offset: 0x00441620
+		// Token: 0x0600B8C7 RID: 47303 RVA: 0x00449198 File Offset: 0x00447398
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool spawnStreetTile(Vector2i tileMinPositionWorld, string streetPrefabName, int baseRotations)
 		{
@@ -847,13 +847,13 @@ namespace WorldGenerationEngineFinal
 			return true;
 		}
 
-		// Token: 0x0600B745 RID: 46917 RVA: 0x004435B7 File Offset: 0x004417B7
+		// Token: 0x0600B8C8 RID: 47304 RVA: 0x0044932F File Offset: 0x0044752F
 		public void SmoothWildernessTerrain()
 		{
 			this.SmoothTerrainRect(this.WildernessPOIPos, this.WildernessPOISize.x, this.WildernessPOISize.y, this.WildernessPOIHeight, 18);
 		}
 
-		// Token: 0x0600B746 RID: 46918 RVA: 0x004435E4 File Offset: 0x004417E4
+		// Token: 0x0600B8C9 RID: 47305 RVA: 0x0044935C File Offset: 0x0044755C
 		public void SmoothTownshipTerrain()
 		{
 			if (this.Township != null && this.District != null)
@@ -864,7 +864,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B747 RID: 46919 RVA: 0x0044364C File Offset: 0x0044184C
+		// Token: 0x0600B8CA RID: 47306 RVA: 0x004493C4 File Offset: 0x004475C4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SmoothTerrainRect(Vector2i _startPos, int _sizeX, int _sizeY, int _height, int _fadeRange)
 		{
@@ -903,7 +903,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B748 RID: 46920 RVA: 0x004437B4 File Offset: 0x004419B4
+		// Token: 0x0600B8CB RID: 47307 RVA: 0x0044952C File Offset: 0x0044772C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SmoothTerrainCircle(Vector2i _centerPos, int _size, int _height)
 		{
@@ -938,7 +938,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B749 RID: 46921 RVA: 0x004438D1 File Offset: 0x00441AD1
+		// Token: 0x0600B8CC RID: 47308 RVA: 0x00449649 File Offset: 0x00447849
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static float SmoothStep(float from, float to, double t)
 		{
@@ -946,7 +946,7 @@ namespace WorldGenerationEngineFinal
 			return (float)((double)to * t + (double)from * (1.0 - t));
 		}
 
-		// Token: 0x0600B74A RID: 46922 RVA: 0x00443908 File Offset: 0x00441B08
+		// Token: 0x0600B8CD RID: 47309 RVA: 0x00449680 File Offset: 0x00447880
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool spawnWildernessPrefab()
 		{
@@ -969,7 +969,7 @@ namespace WorldGenerationEngineFinal
 			return false;
 		}
 
-		// Token: 0x0600B74B RID: 46923 RVA: 0x004439DC File Offset: 0x00441BDC
+		// Token: 0x0600B8CE RID: 47310 RVA: 0x00449754 File Offset: 0x00447954
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool spawnWildernessPrefab(PrefabData prefab, GameRandom rndm)
 		{
@@ -1124,7 +1124,7 @@ namespace WorldGenerationEngineFinal
 			return true;
 		}
 
-		// Token: 0x0600B74C RID: 46924 RVA: 0x0044400F File Offset: 0x0044220F
+		// Token: 0x0600B8CF RID: 47311 RVA: 0x00449D87 File Offset: 0x00447F87
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void AddPrefab(PrefabDataInstance pdi)
 		{
@@ -1137,8 +1137,8 @@ namespace WorldGenerationEngineFinal
 			this.worldBuilder.PrefabManager.AddUsedPrefabWorld(-1, pdi);
 		}
 
-		// Token: 0x17001607 RID: 5639
-		// (get) Token: 0x0600B74D RID: 46925 RVA: 0x00444044 File Offset: 0x00442244
+		// Token: 0x17001679 RID: 5753
+		// (get) Token: 0x0600B8D0 RID: 47312 RVA: 0x00449DBC File Offset: 0x00447FBC
 		public bool NeedsWildernessSmoothing
 		{
 			get
@@ -1147,7 +1147,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B74E RID: 46926 RVA: 0x00444054 File Offset: 0x00442254
+		// Token: 0x0600B8D1 RID: 47313 RVA: 0x00449DCC File Offset: 0x00447FCC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int getMedianHeight(List<int> heights)
 		{
@@ -1161,7 +1161,7 @@ namespace WorldGenerationEngineFinal
 			return heights[num];
 		}
 
-		// Token: 0x0600B74F RID: 46927 RVA: 0x00444090 File Offset: 0x00442290
+		// Token: 0x0600B8D2 RID: 47314 RVA: 0x00449E08 File Offset: 0x00448008
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int getAverageHeight(List<int> heights)
 		{
@@ -1173,21 +1173,21 @@ namespace WorldGenerationEngineFinal
 			return num / heights.Count;
 		}
 
-		// Token: 0x0600B750 RID: 46928 RVA: 0x004440E8 File Offset: 0x004422E8
+		// Token: 0x0600B8D3 RID: 47315 RVA: 0x00449E60 File Offset: 0x00448060
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int getHeightCeil(int x, int y)
 		{
 			return Mathf.CeilToInt(this.worldBuilder.GetHeight(x, y));
 		}
 
-		// Token: 0x0600B751 RID: 46929 RVA: 0x004440FC File Offset: 0x004422FC
+		// Token: 0x0600B8D4 RID: 47316 RVA: 0x00449E74 File Offset: 0x00448074
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int subHalfWorld(int pos)
 		{
 			return pos - this.worldBuilder.WorldSize / 2;
 		}
 
-		// Token: 0x0600B752 RID: 46930 RVA: 0x00444110 File Offset: 0x00442310
+		// Token: 0x0600B8D5 RID: 47317 RVA: 0x00449E88 File Offset: 0x00448088
 		[PublicizedFrom(EAccessModifier.Private)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public int distanceSqr(Vector2i v1, Vector2i v2)
@@ -1197,7 +1197,7 @@ namespace WorldGenerationEngineFinal
 			return num * num + num2 * num2;
 		}
 
-		// Token: 0x0600B753 RID: 46931 RVA: 0x00444140 File Offset: 0x00442340
+		// Token: 0x0600B8D6 RID: 47318 RVA: 0x00449EB8 File Offset: 0x004480B8
 		[PublicizedFrom(EAccessModifier.Private)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public int distanceSqr(int x1, int y1, int x2, int y2)
@@ -1207,7 +1207,7 @@ namespace WorldGenerationEngineFinal
 			return num * num + num2 * num2;
 		}
 
-		// Token: 0x0600B754 RID: 46932 RVA: 0x0044415C File Offset: 0x0044235C
+		// Token: 0x0600B8D7 RID: 47319 RVA: 0x00449ED4 File Offset: 0x004480D4
 		[PublicizedFrom(EAccessModifier.Private)]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public float distSqr(Vector2 v1, Vector2 v2)
@@ -1217,7 +1217,7 @@ namespace WorldGenerationEngineFinal
 			return num * num + num2 * num2;
 		}
 
-		// Token: 0x0600B755 RID: 46933 RVA: 0x0044418C File Offset: 0x0044238C
+		// Token: 0x0600B8D8 RID: 47320 RVA: 0x00449F04 File Offset: 0x00448104
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SpawnMarkerPartsAndPrefabs(PrefabData _parentPrefab, Vector3i _parentPosition, int _parentRotations, int _depth, float totalDensityLeft)
 		{
@@ -1626,7 +1626,7 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x0600B756 RID: 46934 RVA: 0x00445200 File Offset: 0x00443400
+		// Token: 0x0600B8D9 RID: 47321 RVA: 0x0044AF78 File Offset: 0x00449178
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SpawnMarkerPartsAndPrefabsWilderness(PrefabData _parentPrefab, Vector3i _parentPosition, int _parentRotations)
 		{
@@ -1752,7 +1752,7 @@ namespace WorldGenerationEngineFinal
 			GameRandomManager.Instance.FreeGameRandom(gameRandom);
 		}
 
-		// Token: 0x0600B757 RID: 46935 RVA: 0x00445818 File Offset: 0x00443A18
+		// Token: 0x0600B8DA RID: 47322 RVA: 0x0044B590 File Offset: 0x00449790
 		public int GetNumTownshipNeighbors()
 		{
 			int num = 0;
@@ -1767,193 +1767,193 @@ namespace WorldGenerationEngineFinal
 			return num;
 		}
 
-		// Token: 0x040088D1 RID: 35025
+		// Token: 0x040089ED RID: 35309
 		public const int TileSize = 150;
 
-		// Token: 0x040088D2 RID: 35026
+		// Token: 0x040089EE RID: 35310
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int TileSizeHalf = 75;
 
-		// Token: 0x040088D3 RID: 35027
+		// Token: 0x040089EF RID: 35311
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cDensityRadius = 190f;
 
-		// Token: 0x040088D4 RID: 35028
+		// Token: 0x040089F0 RID: 35312
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cDensityBase = 6f;
 
-		// Token: 0x040088D5 RID: 35029
+		// Token: 0x040089F1 RID: 35313
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cDensityMid = 20f;
 
-		// Token: 0x040088D6 RID: 35030
+		// Token: 0x040089F2 RID: 35314
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cDensityMidScale = 1.3f;
 
-		// Token: 0x040088D7 RID: 35031
+		// Token: 0x040089F3 RID: 35315
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cDensityBudget = 62f;
 
-		// Token: 0x040088D8 RID: 35032
+		// Token: 0x040089F4 RID: 35316
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cDensityRetry = 18f;
 
-		// Token: 0x040088D9 RID: 35033
+		// Token: 0x040089F5 RID: 35317
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int cRadiationEdgeSize = 1;
 
-		// Token: 0x040088DA RID: 35034
+		// Token: 0x040089F6 RID: 35318
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cHeightDiffMax = 20f;
 
-		// Token: 0x040088DB RID: 35035
+		// Token: 0x040089F7 RID: 35319
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int partDepthLimit = 20;
 
-		// Token: 0x040088DC RID: 35036
+		// Token: 0x040089F8 RID: 35320
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int poiDepthLimit = 5;
 
-		// Token: 0x040088DD RID: 35037
+		// Token: 0x040089F9 RID: 35321
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int cTilePadInside = 20;
 
-		// Token: 0x040088DE RID: 35038
+		// Token: 0x040089FA RID: 35322
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int cTileSizeInside = 110;
 
-		// Token: 0x040088DF RID: 35039
+		// Token: 0x040089FB RID: 35323
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cSmoothFullRadius = 1.8f;
 
-		// Token: 0x040088E0 RID: 35040
+		// Token: 0x040089FC RID: 35324
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float cSmoothFadeRadius = 3.2f;
 
-		// Token: 0x040088E1 RID: 35041
+		// Token: 0x040089FD RID: 35325
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly WorldBuilder worldBuilder;
 
-		// Token: 0x040088E2 RID: 35042
+		// Token: 0x040089FE RID: 35326
 		public Township Township;
 
-		// Token: 0x040088E3 RID: 35043
+		// Token: 0x040089FF RID: 35327
 		public District District;
 
-		// Token: 0x040088E4 RID: 35044
+		// Token: 0x04008A00 RID: 35328
 		public readonly List<PrefabDataInstance> StreetTilePrefabDatas = new List<PrefabDataInstance>();
 
-		// Token: 0x040088E5 RID: 35045
+		// Token: 0x04008A01 RID: 35329
 		public readonly Vector2i GridPosition;
 
-		// Token: 0x040088E6 RID: 35046
+		// Token: 0x04008A02 RID: 35330
 		public readonly Vector2i WorldPosition;
 
-		// Token: 0x040088E7 RID: 35047
+		// Token: 0x04008A03 RID: 35331
 		public readonly Vector2i WorldPositionCenter;
 
-		// Token: 0x040088E8 RID: 35048
+		// Token: 0x04008A04 RID: 35332
 		public readonly Rect Area;
 
-		// Token: 0x040088E9 RID: 35049
+		// Token: 0x04008A05 RID: 35333
 		public bool OverlapsRadiation;
 
-		// Token: 0x040088EA RID: 35050
+		// Token: 0x04008A06 RID: 35334
 		public bool OverlapsBiomes;
 
-		// Token: 0x040088EB RID: 35051
+		// Token: 0x04008A07 RID: 35335
 		public bool HasSteepSlope;
 
-		// Token: 0x040088EC RID: 35052
+		// Token: 0x04008A08 RID: 35336
 		public bool AllIsWater;
 
-		// Token: 0x040088ED RID: 35053
+		// Token: 0x04008A09 RID: 35337
 		public bool HasTrader;
 
-		// Token: 0x040088EE RID: 35054
+		// Token: 0x04008A0A RID: 35338
 		public bool HasFeature;
 
-		// Token: 0x040088EF RID: 35055
+		// Token: 0x04008A0B RID: 35339
 		public Vector2i WildernessPOIPos;
 
-		// Token: 0x040088F0 RID: 35056
+		// Token: 0x04008A0C RID: 35340
 		public Vector2i WildernessPOICenter;
 
-		// Token: 0x040088F1 RID: 35057
+		// Token: 0x04008A0D RID: 35341
 		public Vector2i WildernessPOISize;
 
-		// Token: 0x040088F2 RID: 35058
+		// Token: 0x04008A0E RID: 35342
 		public int WildernessPOIHeight;
 
-		// Token: 0x040088F3 RID: 35059
+		// Token: 0x04008A0F RID: 35343
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Vector2i[] highwayExitPositions;
 
-		// Token: 0x040088F4 RID: 35060
+		// Token: 0x04008A10 RID: 35344
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int RoadShape;
 
-		// Token: 0x040088F5 RID: 35061
+		// Token: 0x04008A11 RID: 35345
 		public int ConnectedExits;
 
-		// Token: 0x040088F6 RID: 35062
+		// Token: 0x04008A12 RID: 35346
 		public readonly List<Vector2i> UsedExitList = new List<Vector2i>();
 
-		// Token: 0x040088F7 RID: 35063
+		// Token: 0x04008A13 RID: 35347
 		public readonly List<Path> ConnectedHighways = new List<Path>();
 
-		// Token: 0x040088F8 RID: 35064
+		// Token: 0x04008A14 RID: 35348
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<Bounds> partBounds = new List<Bounds>();
 
-		// Token: 0x040088F9 RID: 35065
+		// Token: 0x04008A15 RID: 35349
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int rotations;
 
-		// Token: 0x040088FA RID: 35066
+		// Token: 0x04008A16 RID: 35350
 		[PublicizedFrom(EAccessModifier.Private)]
 		public StreetTile[] neighbors4Way;
 
-		// Token: 0x040088FB RID: 35067
+		// Token: 0x04008A17 RID: 35351
 		[PublicizedFrom(EAccessModifier.Private)]
 		public StreetTile[] neighborsDiagonal;
 
-		// Token: 0x040088FC RID: 35068
+		// Token: 0x04008A18 RID: 35352
 		[PublicizedFrom(EAccessModifier.Private)]
 		public StreetTile[] neighbors8Way;
 
-		// Token: 0x040088FD RID: 35069
+		// Token: 0x04008A19 RID: 35353
 		public bool Used;
 
-		// Token: 0x040088FE RID: 35070
+		// Token: 0x04008A1A RID: 35354
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isFullyBlocked;
 
-		// Token: 0x040088FF RID: 35071
+		// Token: 0x04008A1B RID: 35355
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isPartBlocked;
 
-		// Token: 0x04008900 RID: 35072
+		// Token: 0x04008A1C RID: 35356
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static List<StreetTile> tempTiles = new List<StreetTile>();
 
-		// Token: 0x04008901 RID: 35073
+		// Token: 0x04008A1D RID: 35357
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static List<StreetTile> tempTiles2 = new List<StreetTile>();
 
-		// Token: 0x0200170B RID: 5899
+		// Token: 0x02001731 RID: 5937
 		[PublicizedFrom(EAccessModifier.Private)]
 		public enum RoadShapeTypes
 		{
-			// Token: 0x04008903 RID: 35075
+			// Token: 0x04008A1F RID: 35359
 			straight,
-			// Token: 0x04008904 RID: 35076
+			// Token: 0x04008A20 RID: 35360
 			t,
-			// Token: 0x04008905 RID: 35077
+			// Token: 0x04008A21 RID: 35361
 			intersection,
-			// Token: 0x04008906 RID: 35078
+			// Token: 0x04008A22 RID: 35362
 			cap,
-			// Token: 0x04008907 RID: 35079
+			// Token: 0x04008A23 RID: 35363
 			corner
 		}
 	}

@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace JBooth.MicroSplat
 {
-	// Token: 0x02001D12 RID: 7442
+	// Token: 0x02001D3A RID: 7482
 	public class MicroSplatRuntimeUtil
 	{
-		// Token: 0x0600DC00 RID: 56320 RVA: 0x004EDBB0 File Offset: 0x004EBDB0
+		// Token: 0x0600DDA1 RID: 56737 RVA: 0x004F4624 File Offset: 0x004F2824
 		public static Vector2 UnityUVScaleToUVScale(Vector2 uv, Terrain t)
 		{
 			float x = t.terrainData.size.x;
@@ -16,7 +16,7 @@ namespace JBooth.MicroSplat
 			return uv;
 		}
 
-		// Token: 0x0600DC01 RID: 56321 RVA: 0x004EDC0C File Offset: 0x004EBE0C
+		// Token: 0x0600DDA2 RID: 56738 RVA: 0x004F4680 File Offset: 0x004F2880
 		public static Vector2 UVScaleToUnityUVScale(Vector2 uv, Terrain t)
 		{
 			float x = t.terrainData.size.x;

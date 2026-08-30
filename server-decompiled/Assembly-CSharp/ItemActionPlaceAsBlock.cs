@@ -4,11 +4,11 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005B9 RID: 1465
+// Token: 0x020005BE RID: 1470
 [Preserve]
 public class ItemActionPlaceAsBlock : ItemAction
 {
-	// Token: 0x06002FAB RID: 12203 RVA: 0x00131EE4 File Offset: 0x001300E4
+	// Token: 0x06002FD9 RID: 12249 RVA: 0x00132F54 File Offset: 0x00131154
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -30,7 +30,7 @@ public class ItemActionPlaceAsBlock : ItemAction
 		this.changeItemTo = null;
 	}
 
-	// Token: 0x06002FAC RID: 12204 RVA: 0x00131F94 File Offset: 0x00130194
+	// Token: 0x06002FDA RID: 12250 RVA: 0x00133004 File Offset: 0x00131204
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		if (!_bReleased)
@@ -136,7 +136,7 @@ public class ItemActionPlaceAsBlock : ItemAction
 		(invData.holdingEntity as EntityPlayerLocal).DropTimeDelay = 0.5f;
 	}
 
-	// Token: 0x06002FAD RID: 12205 RVA: 0x001323CF File Offset: 0x001305CF
+	// Token: 0x06002FDB RID: 12251 RVA: 0x0013343F File Offset: 0x0013163F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public IEnumerator decInventoryLater(ItemInventoryData data, int index)
 	{
@@ -152,23 +152,23 @@ public class ItemActionPlaceAsBlock : ItemAction
 		yield break;
 	}
 
-	// Token: 0x06002FAE RID: 12206 RVA: 0x001306A9 File Offset: 0x0012E8A9
+	// Token: 0x06002FDC RID: 12252 RVA: 0x00131719 File Offset: 0x0012F919
 	public override RenderCubeType GetFocusType(ItemActionData _actionData)
 	{
 		return RenderCubeType.FullBlockBothSides;
 	}
 
-	// Token: 0x06002FAF RID: 12207 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002FDD RID: 12253 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsFocusBlockInside()
 	{
 		return false;
 	}
 
-	// Token: 0x040024D7 RID: 9431
+	// Token: 0x0400250B RID: 9483
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public BlockValue blockToPlace;
 
-	// Token: 0x040024D8 RID: 9432
+	// Token: 0x0400250C RID: 9484
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string changeItemTo;
 }

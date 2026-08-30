@@ -4,13 +4,13 @@ using Challenges;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EC4 RID: 3780
+// Token: 0x02000ED9 RID: 3801
 [Preserve]
 public class XUiC_ChallengeEntryList : XUiController
 {
-	// Token: 0x17000DED RID: 3565
-	// (get) Token: 0x0600769A RID: 30362 RVA: 0x002C93F5 File Offset: 0x002C75F5
-	// (set) Token: 0x0600769B RID: 30363 RVA: 0x002C93FC File Offset: 0x002C75FC
+	// Token: 0x17000E07 RID: 3591
+	// (get) Token: 0x0600773B RID: 30523 RVA: 0x002CC919 File Offset: 0x002CAB19
+	// (set) Token: 0x0600773C RID: 30524 RVA: 0x002CC920 File Offset: 0x002CAB20
 	public static XUiC_ChallengeEntry SelectedEntry
 	{
 		get
@@ -37,7 +37,7 @@ public class XUiC_ChallengeEntryList : XUiController
 		}
 	}
 
-	// Token: 0x0600769C RID: 30364 RVA: 0x002C9458 File Offset: 0x002C7658
+	// Token: 0x0600773D RID: 30525 RVA: 0x002CC97C File Offset: 0x002CAB7C
 	public override void Init()
 	{
 		base.Init();
@@ -54,7 +54,7 @@ public class XUiC_ChallengeEntryList : XUiController
 		}
 	}
 
-	// Token: 0x0600769D RID: 30365 RVA: 0x002C94DC File Offset: 0x002C76DC
+	// Token: 0x0600773E RID: 30526 RVA: 0x002CCA00 File Offset: 0x002CAC00
 	public override void Update(float _dt)
 	{
 		if (this.IsDirty)
@@ -156,19 +156,19 @@ public class XUiC_ChallengeEntryList : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x0600769E RID: 30366 RVA: 0x0008A069 File Offset: 0x00088269
+	// Token: 0x0600773F RID: 30527 RVA: 0x0008A715 File Offset: 0x00088915
 	public void MarkDirty()
 	{
 		this.IsDirty = true;
 	}
 
-	// Token: 0x0600769F RID: 30367 RVA: 0x002C97A0 File Offset: 0x002C79A0
+	// Token: 0x06007740 RID: 30528 RVA: 0x002CCCC4 File Offset: 0x002CAEC4
 	public void UnSelect()
 	{
 		XUiC_ChallengeEntryList.SelectedEntry = null;
 	}
 
-	// Token: 0x060076A0 RID: 30368 RVA: 0x002C97A8 File Offset: 0x002C79A8
+	// Token: 0x06007741 RID: 30529 RVA: 0x002CCCCC File Offset: 0x002CAECC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPressEntry(XUiController _sender, int _mouseButton)
 	{
@@ -191,14 +191,14 @@ public class XUiC_ChallengeEntryList : XUiController
 		}
 	}
 
-	// Token: 0x060076A1 RID: 30369 RVA: 0x002C9821 File Offset: 0x002C7A21
+	// Token: 0x06007742 RID: 30530 RVA: 0x002CCD45 File Offset: 0x002CAF45
 	public void SetChallengeEntryList(List<Challenge> newChallengeList)
 	{
 		this.challengeList = newChallengeList;
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060076A2 RID: 30370 RVA: 0x002C9834 File Offset: 0x002C7A34
+	// Token: 0x06007743 RID: 30531 RVA: 0x002CCD58 File Offset: 0x002CAF58
 	public void SetEntryByChallenge(Challenge newChallenge)
 	{
 		for (int i = 0; i < this.entryList.Count; i++)
@@ -212,42 +212,42 @@ public class XUiC_ChallengeEntryList : XUiController
 		}
 	}
 
-	// Token: 0x060076A3 RID: 30371 RVA: 0x002C9877 File Offset: 0x002C7A77
+	// Token: 0x06007744 RID: 30532 RVA: 0x002CCD9B File Offset: 0x002CAF9B
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.player = this.xui.playerUI.entityPlayer;
 	}
 
-	// Token: 0x060076A4 RID: 30372 RVA: 0x002C9895 File Offset: 0x002C7A95
+	// Token: 0x06007745 RID: 30533 RVA: 0x002CCDB9 File Offset: 0x002CAFB9
 	public override void OnClose()
 	{
 		base.OnClose();
 	}
 
-	// Token: 0x0400575D RID: 22365
+	// Token: 0x04005802 RID: 22530
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal player;
 
-	// Token: 0x0400575E RID: 22366
+	// Token: 0x04005803 RID: 22531
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XUiC_ChallengeEntry> entryList = new List<XUiC_ChallengeEntry>();
 
-	// Token: 0x0400575F RID: 22367
+	// Token: 0x04005804 RID: 22532
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static XUiC_ChallengeEntry selectedEntry;
 
-	// Token: 0x04005760 RID: 22368
+	// Token: 0x04005805 RID: 22533
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Challenge> challengeList;
 
-	// Token: 0x04005761 RID: 22369
+	// Token: 0x04005806 RID: 22534
 	public XUiC_ChallengeEntryListWindow ChallengeEntryListWindow;
 
-	// Token: 0x04005762 RID: 22370
+	// Token: 0x04005807 RID: 22535
 	public XUiC_ChallengeGroupEntry Owner;
 
-	// Token: 0x04005763 RID: 22371
+	// Token: 0x04005808 RID: 22536
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static XUiC_ChallengeWindowGroup journalWindowGroup;
 }

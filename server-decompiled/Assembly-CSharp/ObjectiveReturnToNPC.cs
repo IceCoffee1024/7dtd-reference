@@ -2,26 +2,26 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200099C RID: 2460
+// Token: 0x020009AD RID: 2477
 [Preserve]
 public class ObjectiveReturnToNPC : ObjectiveRandomGoto
 {
-	// Token: 0x06004884 RID: 18564 RVA: 0x001C6312 File Offset: 0x001C4512
+	// Token: 0x0600490A RID: 18698 RVA: 0x001C8B06 File Offset: 0x001C6D06
 	public override void SetupObjective()
 	{
 		this.keyword = Localization.Get("ObjectiveReturnToTrader_keyword", false, null) + ((base.OwnerQuest.CurrentState == Quest.QuestState.NotStarted) ? "" : ":");
 		this.completeWithinRange = false;
 	}
 
-	// Token: 0x06004885 RID: 18565 RVA: 0x001C634B File Offset: 0x001C454B
+	// Token: 0x0600490B RID: 18699 RVA: 0x001C8B3F File Offset: 0x001C6D3F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SetupIcon()
 	{
 		this.icon = "ui_game_symbol_quest";
 	}
 
-	// Token: 0x170007AD RID: 1965
-	// (get) Token: 0x06004886 RID: 18566 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x170007BF RID: 1983
+	// (get) Token: 0x0600490C RID: 18700 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool PlayObjectiveComplete
 	{
 		get
@@ -30,7 +30,7 @@ public class ObjectiveReturnToNPC : ObjectiveRandomGoto
 		}
 	}
 
-	// Token: 0x06004887 RID: 18567 RVA: 0x001C6358 File Offset: 0x001C4558
+	// Token: 0x0600490D RID: 18701 RVA: 0x001C8B4C File Offset: 0x001C6D4C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override Vector3 GetPosition()
 	{
@@ -52,7 +52,7 @@ public class ObjectiveReturnToNPC : ObjectiveRandomGoto
 		return Vector3.zero;
 	}
 
-	// Token: 0x06004888 RID: 18568 RVA: 0x001C63F8 File Offset: 0x001C45F8
+	// Token: 0x0600490E RID: 18702 RVA: 0x001C8BEC File Offset: 0x001C6DEC
 	public override void OnStart()
 	{
 		base.OnStart();
@@ -62,7 +62,7 @@ public class ObjectiveReturnToNPC : ObjectiveRandomGoto
 		}
 	}
 
-	// Token: 0x06004889 RID: 18569 RVA: 0x001C6428 File Offset: 0x001C4628
+	// Token: 0x0600490F RID: 18703 RVA: 0x001C8C1C File Offset: 0x001C6E1C
 	public override BaseObjective Clone()
 	{
 		ObjectiveReturnToNPC objectiveReturnToNPC = new ObjectiveReturnToNPC();

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Token: 0x020015B8 RID: 5560
+// Token: 0x020015D3 RID: 5587
 [Serializable]
 public class vp_Respawner : MonoBehaviour
 {
-	// Token: 0x170013EF RID: 5103
-	// (get) Token: 0x0600AD8A RID: 44426 RVA: 0x0040B41E File Offset: 0x0040961E
+	// Token: 0x17001428 RID: 5160
+	// (get) Token: 0x0600AE87 RID: 44679 RVA: 0x0041075E File Offset: 0x0040E95E
 	public static Dictionary<Collider, vp_Respawner> RespawnersByCollider
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -22,7 +22,7 @@ public class vp_Respawner : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD8B RID: 44427 RVA: 0x0040B438 File Offset: 0x00409638
+	// Token: 0x0600AE88 RID: 44680 RVA: 0x00410778 File Offset: 0x0040E978
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Awake()
 	{
@@ -42,21 +42,21 @@ public class vp_Respawner : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD8C RID: 44428 RVA: 0x0040B4CF File Offset: 0x004096CF
+	// Token: 0x0600AE89 RID: 44681 RVA: 0x0041080F File Offset: 0x0040EA0F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
 		SceneManager.sceneLoaded += this.NotifyLevelWasLoaded;
 	}
 
-	// Token: 0x0600AD8D RID: 44429 RVA: 0x0040B4E2 File Offset: 0x004096E2
+	// Token: 0x0600AE8A RID: 44682 RVA: 0x00410822 File Offset: 0x0040EA22
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnDisable()
 	{
 		SceneManager.sceneLoaded -= this.NotifyLevelWasLoaded;
 	}
 
-	// Token: 0x0600AD8E RID: 44430 RVA: 0x0040B4F8 File Offset: 0x004096F8
+	// Token: 0x0600AE8B RID: 44683 RVA: 0x00410838 File Offset: 0x0040EA38
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void SpawnFX()
 	{
@@ -81,14 +81,14 @@ public class vp_Respawner : MonoBehaviour
 		this.m_IsInitialSpawnOnAwake = false;
 	}
 
-	// Token: 0x0600AD8F RID: 44431 RVA: 0x0040B593 File Offset: 0x00409793
+	// Token: 0x0600AE8C RID: 44684 RVA: 0x004108D3 File Offset: 0x0040EAD3
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Die()
 	{
 		vp_Timer.In(global::UnityEngine.Random.Range(this.MinRespawnTime, this.MaxRespawnTime), new vp_Timer.Callback(this.PickSpawnPoint), this.m_RespawnTimer);
 	}
 
-	// Token: 0x0600AD90 RID: 44432 RVA: 0x0040B5C0 File Offset: 0x004097C0
+	// Token: 0x0600AE8D RID: 44685 RVA: 0x00410900 File Offset: 0x0040EB00
 	public virtual void PickSpawnPoint()
 	{
 		if (this == null)
@@ -151,7 +151,7 @@ public class vp_Respawner : MonoBehaviour
 		this.Respawn();
 	}
 
-	// Token: 0x0600AD91 RID: 44433 RVA: 0x0040B77E File Offset: 0x0040997E
+	// Token: 0x0600AE8E RID: 44686 RVA: 0x00410ABE File Offset: 0x0040ECBE
 	public virtual void PickSpawnPoint(Vector3 position, Quaternion rotation)
 	{
 		this.Placement.Position = position;
@@ -159,7 +159,7 @@ public class vp_Respawner : MonoBehaviour
 		this.Respawn();
 	}
 
-	// Token: 0x0600AD92 RID: 44434 RVA: 0x0040B7A0 File Offset: 0x004099A0
+	// Token: 0x0600AE8F RID: 44687 RVA: 0x00410AE0 File Offset: 0x0040ECE0
 	public virtual void Respawn()
 	{
 		this.LastRespawnTime = Time.time;
@@ -174,7 +174,7 @@ public class vp_Respawner : MonoBehaviour
 		this.Placement.Rotation = this.m_InitialRotation;
 	}
 
-	// Token: 0x0600AD93 RID: 44435 RVA: 0x0040B81C File Offset: 0x00409A1C
+	// Token: 0x0600AE90 RID: 44688 RVA: 0x00410B5C File Offset: 0x0040ED5C
 	public virtual void Reset()
 	{
 		if (!Application.isPlaying)
@@ -189,7 +189,7 @@ public class vp_Respawner : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AD94 RID: 44436 RVA: 0x0040B882 File Offset: 0x00409A82
+	// Token: 0x0600AE91 RID: 44689 RVA: 0x00410BC2 File Offset: 0x0040EDC2
 	public static vp_Respawner GetRespawnerOfCollider(Collider col)
 	{
 		if (!vp_Respawner.RespawnersByCollider.TryGetValue(col, out vp_Respawner.m_GetRespawnerOfColliderResult))
@@ -200,103 +200,103 @@ public class vp_Respawner : MonoBehaviour
 		return vp_Respawner.m_GetRespawnerOfColliderResult;
 	}
 
-	// Token: 0x0600AD95 RID: 44437 RVA: 0x0040B8C0 File Offset: 0x00409AC0
+	// Token: 0x0600AE92 RID: 44690 RVA: 0x00410C00 File Offset: 0x0040EE00
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void NotifyLevelWasLoaded(Scene scene, LoadSceneMode mode)
 	{
 		vp_Respawner.RespawnersByCollider.Clear();
 	}
 
-	// Token: 0x04008143 RID: 33091
+	// Token: 0x0400821C RID: 33308
 	public vp_Respawner.SpawnMode m_SpawnMode;
 
-	// Token: 0x04008144 RID: 33092
+	// Token: 0x0400821D RID: 33309
 	public string SpawnPointTag = "";
 
-	// Token: 0x04008145 RID: 33093
+	// Token: 0x0400821E RID: 33310
 	public vp_Respawner.ObstructionSolver m_ObstructionSolver;
 
-	// Token: 0x04008146 RID: 33094
+	// Token: 0x0400821F RID: 33311
 	public float ObstructionRadius = 1f;
 
-	// Token: 0x04008147 RID: 33095
+	// Token: 0x04008220 RID: 33312
 	public float MinRespawnTime = 3f;
 
-	// Token: 0x04008148 RID: 33096
+	// Token: 0x04008221 RID: 33313
 	public float MaxRespawnTime = 3f;
 
-	// Token: 0x04008149 RID: 33097
+	// Token: 0x04008222 RID: 33314
 	public float LastRespawnTime;
 
-	// Token: 0x0400814A RID: 33098
+	// Token: 0x04008223 RID: 33315
 	public bool SpawnOnAwake;
 
-	// Token: 0x0400814B RID: 33099
+	// Token: 0x04008224 RID: 33316
 	public AudioClip SpawnSound;
 
-	// Token: 0x0400814C RID: 33100
+	// Token: 0x04008225 RID: 33317
 	public GameObject[] SpawnFXPrefabs;
 
-	// Token: 0x0400814D RID: 33101
+	// Token: 0x04008226 RID: 33318
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 m_InitialPosition = Vector3.zero;
 
-	// Token: 0x0400814E RID: 33102
+	// Token: 0x04008227 RID: 33319
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Quaternion m_InitialRotation;
 
-	// Token: 0x0400814F RID: 33103
+	// Token: 0x04008228 RID: 33320
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Placement Placement = new vp_Placement();
 
-	// Token: 0x04008150 RID: 33104
+	// Token: 0x04008229 RID: 33321
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Transform m_Transform;
 
-	// Token: 0x04008151 RID: 33105
+	// Token: 0x0400822A RID: 33322
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AudioSource m_Audio;
 
-	// Token: 0x04008152 RID: 33106
+	// Token: 0x0400822B RID: 33323
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_IsInitialSpawnOnAwake;
 
-	// Token: 0x04008153 RID: 33107
+	// Token: 0x0400822C RID: 33324
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Timer.Handle m_RespawnTimer = new vp_Timer.Handle();
 
-	// Token: 0x04008154 RID: 33108
+	// Token: 0x0400822D RID: 33325
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public static Dictionary<Collider, vp_Respawner> m_RespawnersByCollider;
 
-	// Token: 0x04008155 RID: 33109
+	// Token: 0x0400822E RID: 33326
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public static vp_Respawner m_GetRespawnerOfColliderResult;
 
-	// Token: 0x020015B9 RID: 5561
+	// Token: 0x020015D4 RID: 5588
 	public enum SpawnMode
 	{
-		// Token: 0x04008157 RID: 33111
+		// Token: 0x04008230 RID: 33328
 		SamePosition,
-		// Token: 0x04008158 RID: 33112
+		// Token: 0x04008231 RID: 33329
 		SpawnPoint
 	}
 
-	// Token: 0x020015BA RID: 5562
+	// Token: 0x020015D5 RID: 5589
 	public enum ObstructionSolver
 	{
-		// Token: 0x0400815A RID: 33114
+		// Token: 0x04008233 RID: 33331
 		Wait,
-		// Token: 0x0400815B RID: 33115
+		// Token: 0x04008234 RID: 33332
 		AdjustPlacement
 	}
 }

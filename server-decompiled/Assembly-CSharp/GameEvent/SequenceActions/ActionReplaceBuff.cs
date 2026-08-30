@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001982 RID: 6530
+	// Token: 0x020019A8 RID: 6568
 	[Preserve]
 	public class ActionReplaceBuff : ActionBaseTargetAction
 	{
-		// Token: 0x0600C795 RID: 51093 RVA: 0x00496E70 File Offset: 0x00495070
+		// Token: 0x0600C91C RID: 51484 RVA: 0x0049D1B4 File Offset: 0x0049B3B4
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			EntityAlive entityAlive = target as EntityAlive;
@@ -19,7 +19,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C796 RID: 51094 RVA: 0x00496ECE File Offset: 0x004950CE
+		// Token: 0x0600C91D RID: 51485 RVA: 0x0049D212 File Offset: 0x0049B412
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -27,7 +27,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseString(ActionReplaceBuff.PropReplaceWithBuffName, ref this.replaceWithBuff);
 		}
 
-		// Token: 0x0600C797 RID: 51095 RVA: 0x00496EF9 File Offset: 0x004950F9
+		// Token: 0x0600C91E RID: 51486 RVA: 0x0049D23D File Offset: 0x0049B43D
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -39,19 +39,19 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009733 RID: 38707
+		// Token: 0x0400985C RID: 39004
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string replaceBuff = "";
 
-		// Token: 0x04009734 RID: 38708
+		// Token: 0x0400985D RID: 39005
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string replaceWithBuff = "";
 
-		// Token: 0x04009735 RID: 38709
+		// Token: 0x0400985E RID: 39006
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropReplaceBuffName = "replace_buff";
 
-		// Token: 0x04009736 RID: 38710
+		// Token: 0x0400985F RID: 39007
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropReplaceWithBuffName = "replace_with_buff";
 	}

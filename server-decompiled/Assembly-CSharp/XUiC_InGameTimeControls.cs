@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F31 RID: 3889
+// Token: 0x02000F48 RID: 3912
 [Preserve]
 public class XUiC_InGameTimeControls : XUiController
 {
-	// Token: 0x17000E38 RID: 3640
-	// (get) Token: 0x06007A23 RID: 31267 RVA: 0x002DFFEB File Offset: 0x002DE1EB
+	// Token: 0x17000E53 RID: 3667
+	// (get) Token: 0x06007ADC RID: 31452 RVA: 0x002E3F9F File Offset: 0x002E219F
 	public static bool HasWorld
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -17,8 +17,8 @@ public class XUiC_InGameTimeControls : XUiController
 		}
 	}
 
-	// Token: 0x17000E39 RID: 3641
-	// (get) Token: 0x06007A24 RID: 31268 RVA: 0x002E1557 File Offset: 0x002DF757
+	// Token: 0x17000E54 RID: 3668
+	// (get) Token: 0x06007ADD RID: 31453 RVA: 0x002E550B File Offset: 0x002E370B
 	public static int CurrentSpeed
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -28,7 +28,7 @@ public class XUiC_InGameTimeControls : XUiController
 		}
 	}
 
-	// Token: 0x06007A25 RID: 31269 RVA: 0x002E1560 File Offset: 0x002DF760
+	// Token: 0x06007ADE RID: 31454 RVA: 0x002E5514 File Offset: 0x002E3714
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -40,7 +40,7 @@ public class XUiC_InGameTimeControls : XUiController
 		return base.GetBindingValueInternal(ref _value, _bindingName);
 	}
 
-	// Token: 0x06007A26 RID: 31270 RVA: 0x002E1598 File Offset: 0x002DF798
+	// Token: 0x06007ADF RID: 31455 RVA: 0x002E554C File Offset: 0x002E374C
 	public override void Init()
 	{
 		base.Init();
@@ -110,14 +110,14 @@ public class XUiC_InGameTimeControls : XUiController
 		}
 	}
 
-	// Token: 0x06007A27 RID: 31271 RVA: 0x002E17B0 File Offset: 0x002DF9B0
+	// Token: 0x06007AE0 RID: 31456 RVA: 0x002E5764 File Offset: 0x002E3964
 	public override void Cleanup()
 	{
 		GameStats.OnChangedDelegates -= this.onGameStatsChanged;
 		base.Cleanup();
 	}
 
-	// Token: 0x06007A28 RID: 31272 RVA: 0x002E17CC File Offset: 0x002DF9CC
+	// Token: 0x06007AE1 RID: 31457 RVA: 0x002E5780 File Offset: 0x002E3980
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void onGameStatsChanged(EnumGameStats _stat, object _value)
 	{
@@ -132,7 +132,7 @@ public class XUiC_InGameTimeControls : XUiController
 		}
 	}
 
-	// Token: 0x06007A29 RID: 31273 RVA: 0x002E17F4 File Offset: 0x002DF9F4
+	// Token: 0x06007AE2 RID: 31458 RVA: 0x002E57A8 File Offset: 0x002E39A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setDay(int _day)
 	{
@@ -144,7 +144,7 @@ public class XUiC_InGameTimeControls : XUiController
 		GameManager.Instance.World.SetTimeJump(num + (ulong)((long)(_day - 1) * 24000L), true);
 	}
 
-	// Token: 0x06007A2A RID: 31274 RVA: 0x002E1844 File Offset: 0x002DFA44
+	// Token: 0x06007AE3 RID: 31459 RVA: 0x002E57F8 File Offset: 0x002E39F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setTime(float _dayTime)
 	{
@@ -157,7 +157,7 @@ public class XUiC_InGameTimeControls : XUiController
 		GameManager.Instance.World.SetTimeJump(num * 24000UL + (ulong)((long)num2), true);
 	}
 
-	// Token: 0x06007A2B RID: 31275 RVA: 0x002E18A4 File Offset: 0x002DFAA4
+	// Token: 0x06007AE4 RID: 31460 RVA: 0x002E5858 File Offset: 0x002E3A58
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setSpeed(int _value)
 	{
@@ -169,7 +169,7 @@ public class XUiC_InGameTimeControls : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06007A2C RID: 31276 RVA: 0x002E18C4 File Offset: 0x002DFAC4
+	// Token: 0x06007AE5 RID: 31461 RVA: 0x002E5878 File Offset: 0x002E3A78
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnTimeSkipBackPressed(XUiController _sender, int _mouseButton)
 	{
@@ -185,28 +185,28 @@ public class XUiC_InGameTimeControls : XUiController
 		}
 	}
 
-	// Token: 0x06007A2D RID: 31277 RVA: 0x002E1920 File Offset: 0x002DFB20
+	// Token: 0x06007AE6 RID: 31462 RVA: 0x002E58D4 File Offset: 0x002E3AD4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnTimeSlowerPressed(XUiController _sender, int _mouseButton)
 	{
 		this.setSpeed((int)MathUtils.ToPreviousPowerOfTwo((uint)XUiC_InGameTimeControls.CurrentSpeed, false));
 	}
 
-	// Token: 0x06007A2E RID: 31278 RVA: 0x002E1933 File Offset: 0x002DFB33
+	// Token: 0x06007AE7 RID: 31463 RVA: 0x002E58E7 File Offset: 0x002E3AE7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnTimePlayPausePressed(XUiController _sender, int _mouseButton)
 	{
 		this.setSpeed((XUiC_InGameTimeControls.CurrentSpeed == 0) ? this.lastNonZeroSpeed : 0);
 	}
 
-	// Token: 0x06007A2F RID: 31279 RVA: 0x002E194B File Offset: 0x002DFB4B
+	// Token: 0x06007AE8 RID: 31464 RVA: 0x002E58FF File Offset: 0x002E3AFF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnTimeFasterPressed(XUiController _sender, int _mouseButton)
 	{
 		this.setSpeed((int)MathUtils.ToNextPowerOfTwo((uint)XUiC_InGameTimeControls.CurrentSpeed, false));
 	}
 
-	// Token: 0x06007A30 RID: 31280 RVA: 0x002E1960 File Offset: 0x002DFB60
+	// Token: 0x06007AE9 RID: 31465 RVA: 0x002E5914 File Offset: 0x002E3B14
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnTimeSkipForwardPressed(XUiController _sender, int _mouseButton)
 	{
@@ -222,7 +222,7 @@ public class XUiC_InGameTimeControls : XUiController
 		}
 	}
 
-	// Token: 0x06007A31 RID: 31281 RVA: 0x002E19BC File Offset: 0x002DFBBC
+	// Token: 0x06007AEA RID: 31466 RVA: 0x002E5970 File Offset: 0x002E3B70
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -241,23 +241,23 @@ public class XUiC_InGameTimeControls : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x04005A49 RID: 23113
+	// Token: 0x04005AFC RID: 23292
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly float[] skipHours = new float[] { 0f, 4f, 12f, 22f };
 
-	// Token: 0x04005A4A RID: 23114
+	// Token: 0x04005AFD RID: 23293
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxInt cbxDay;
 
-	// Token: 0x04005A4B RID: 23115
+	// Token: 0x04005AFE RID: 23294
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxTime;
 
-	// Token: 0x04005A4C RID: 23116
+	// Token: 0x04005AFF RID: 23295
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxInt cbxSpeed;
 
-	// Token: 0x04005A4D RID: 23117
+	// Token: 0x04005B00 RID: 23296
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lastNonZeroSpeed = 1;
 }

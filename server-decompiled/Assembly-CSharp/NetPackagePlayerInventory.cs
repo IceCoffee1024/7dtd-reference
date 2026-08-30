@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200081D RID: 2077
+// Token: 0x02000828 RID: 2088
 [Preserve]
 public class NetPackagePlayerInventory : NetPackage
 {
-	// Token: 0x06003CF4 RID: 15604 RVA: 0x00183678 File Offset: 0x00181878
+	// Token: 0x06003D53 RID: 15699 RVA: 0x00185A50 File Offset: 0x00183C50
 	public NetPackagePlayerInventory Setup(EntityPlayerLocal _player, bool _changedToolbelt, bool _changedBag, bool _changedEquipment, bool _changedDragAndDropItem)
 	{
 		if (_changedToolbelt)
@@ -28,8 +28,8 @@ public class NetPackagePlayerInventory : NetPackage
 		return this;
 	}
 
-	// Token: 0x1700065B RID: 1627
-	// (get) Token: 0x06003CF5 RID: 15605 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000666 RID: 1638
+	// (get) Token: 0x06003D54 RID: 15700 RVA: 0x00020021 File Offset: 0x0001E221
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -38,7 +38,7 @@ public class NetPackagePlayerInventory : NetPackage
 		}
 	}
 
-	// Token: 0x06003CF6 RID: 15606 RVA: 0x00183708 File Offset: 0x00181908
+	// Token: 0x06003D55 RID: 15701 RVA: 0x00185AE0 File Offset: 0x00183CE0
 	public override void read(PooledBinaryReader _reader)
 	{
 		if (_reader.ReadBoolean())
@@ -78,7 +78,7 @@ public class NetPackagePlayerInventory : NetPackage
 		}
 	}
 
-	// Token: 0x06003CF7 RID: 15607 RVA: 0x001837FC File Offset: 0x001819FC
+	// Token: 0x06003D56 RID: 15702 RVA: 0x00185BD4 File Offset: 0x00183DD4
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -115,7 +115,7 @@ public class NetPackagePlayerInventory : NetPackage
 		}
 	}
 
-	// Token: 0x06003CF8 RID: 15608 RVA: 0x00183904 File Offset: 0x00181B04
+	// Token: 0x06003D57 RID: 15703 RVA: 0x00185CDC File Offset: 0x00183EDC
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		PlayerDataFile latestPlayerData = base.Sender.latestPlayerData;
@@ -138,25 +138,25 @@ public class NetPackagePlayerInventory : NetPackage
 		latestPlayerData.bModifiedSinceLastSave = true;
 	}
 
-	// Token: 0x06003CF9 RID: 15609 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06003D58 RID: 15704 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override int GetLength()
 	{
 		return 0;
 	}
 
-	// Token: 0x04003142 RID: 12610
+	// Token: 0x040031C1 RID: 12737
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack[] toolbelt;
 
-	// Token: 0x04003143 RID: 12611
+	// Token: 0x040031C2 RID: 12738
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Bag bag;
 
-	// Token: 0x04003144 RID: 12612
+	// Token: 0x040031C3 RID: 12739
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Equipment equipment;
 
-	// Token: 0x04003145 RID: 12613
+	// Token: 0x040031C4 RID: 12740
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack dragAndDropItem;
 }

@@ -2,11 +2,11 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x02000B61 RID: 2913
+// Token: 0x02000B73 RID: 2931
 public class MeshDescriptionCollection : MonoBehaviour
 {
-	// Token: 0x17000946 RID: 2374
-	// (get) Token: 0x06005830 RID: 22576 RVA: 0x0021B5E7 File Offset: 0x002197E7
+	// Token: 0x17000958 RID: 2392
+	// (get) Token: 0x060058B8 RID: 22712 RVA: 0x0021E303 File Offset: 0x0021C503
 	public MeshDescription[] Meshes
 	{
 		get
@@ -15,7 +15,7 @@ public class MeshDescriptionCollection : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06005831 RID: 22577 RVA: 0x0021B5F0 File Offset: 0x002197F0
+	// Token: 0x060058B9 RID: 22713 RVA: 0x0021E30C File Offset: 0x0021C50C
 	public void Init()
 	{
 		MeshDescription meshDescription = this.meshes[0];
@@ -36,13 +36,13 @@ public class MeshDescriptionCollection : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06005832 RID: 22578 RVA: 0x0021B6AE File Offset: 0x002198AE
+	// Token: 0x060058BA RID: 22714 RVA: 0x0021E3CA File Offset: 0x0021C5CA
 	public void UnloadTextureArrays(int _index)
 	{
 		this.currentMeshes[_index].UnloadTextureArrays(_index);
 	}
 
-	// Token: 0x06005833 RID: 22579 RVA: 0x0021B6BE File Offset: 0x002198BE
+	// Token: 0x060058BB RID: 22715 RVA: 0x0021E3DA File Offset: 0x0021C5DA
 	public IEnumerator LoadTextureArrays(bool _isReload = false)
 	{
 		MicroStopwatch ms = new MicroStopwatch(true);
@@ -71,7 +71,7 @@ public class MeshDescriptionCollection : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06005834 RID: 22580 RVA: 0x0021B6D4 File Offset: 0x002198D4
+	// Token: 0x060058BC RID: 22716 RVA: 0x0021E3F0 File Offset: 0x0021C5F0
 	public IEnumerator LoadTextureArraysForQuality(bool _isReload = false)
 	{
 		if (GameManager.IsDedicatedServer)
@@ -93,7 +93,7 @@ public class MeshDescriptionCollection : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06005835 RID: 22581 RVA: 0x0021B6EC File Offset: 0x002198EC
+	// Token: 0x060058BD RID: 22717 RVA: 0x0021E408 File Offset: 0x0021C608
 	public void SetTextureArraysFilter()
 	{
 		if (GameManager.IsDedicatedServer)
@@ -110,25 +110,25 @@ public class MeshDescriptionCollection : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06005836 RID: 22582 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060058BE RID: 22718 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Cleanup()
 	{
 	}
 
-	// Token: 0x0400443F RID: 17471
+	// Token: 0x040044DA RID: 17626
 	public MeshDescription[] meshes;
 
-	// Token: 0x04004440 RID: 17472
+	// Token: 0x040044DB RID: 17627
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public MeshDescription[] currentMeshes;
 
-	// Token: 0x04004441 RID: 17473
+	// Token: 0x040044DC RID: 17628
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int quality = -1;
 
-	// Token: 0x04004442 RID: 17474
+	// Token: 0x040044DD RID: 17629
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static int[] filterToAnisoLevel = new int[] { 1, 2, 4, 8, 9 };

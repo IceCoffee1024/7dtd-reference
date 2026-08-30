@@ -4,13 +4,13 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000185 RID: 389
+// Token: 0x02000187 RID: 391
 [Preserve]
 public class TileEntityComposite : TileEntity
 {
 	// Token: 0x170000EF RID: 239
-	// (get) Token: 0x06000BCB RID: 3019 RVA: 0x0004A7D0 File Offset: 0x000489D0
-	// (set) Token: 0x06000BCC RID: 3020 RVA: 0x0004A7D8 File Offset: 0x000489D8
+	// (get) Token: 0x06000BD6 RID: 3030 RVA: 0x0004ABE8 File Offset: 0x00048DE8
+	// (set) Token: 0x06000BD7 RID: 3031 RVA: 0x0004ABF0 File Offset: 0x00048DF0
 	public IFeatureTriggerCapability.ETriggerRole TriggerRole
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
@@ -18,8 +18,8 @@ public class TileEntityComposite : TileEntity
 	}
 
 	// Token: 0x170000F0 RID: 240
-	// (get) Token: 0x06000BCD RID: 3021 RVA: 0x0004A7E1 File Offset: 0x000489E1
-	// (set) Token: 0x06000BCE RID: 3022 RVA: 0x0004A7E9 File Offset: 0x000489E9
+	// (get) Token: 0x06000BD8 RID: 3032 RVA: 0x0004ABF9 File Offset: 0x00048DF9
+	// (set) Token: 0x06000BD9 RID: 3033 RVA: 0x0004AC01 File Offset: 0x00048E01
 	public bool OverridesPhysicalChecks
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
@@ -27,7 +27,7 @@ public class TileEntityComposite : TileEntity
 	}
 
 	// Token: 0x170000F1 RID: 241
-	// (get) Token: 0x06000BCF RID: 3023 RVA: 0x0004A7F2 File Offset: 0x000489F2
+	// (get) Token: 0x06000BDA RID: 3034 RVA: 0x0004AC0A File Offset: 0x00048E0A
 	public TileEntityCompositeData TeData
 	{
 		get
@@ -37,7 +37,7 @@ public class TileEntityComposite : TileEntity
 	}
 
 	// Token: 0x170000F2 RID: 242
-	// (get) Token: 0x06000BD0 RID: 3024 RVA: 0x0004A7FA File Offset: 0x000489FA
+	// (get) Token: 0x06000BDB RID: 3035 RVA: 0x0004AC12 File Offset: 0x00048E12
 	public bool PlayerPlaced
 	{
 		get
@@ -47,7 +47,7 @@ public class TileEntityComposite : TileEntity
 	}
 
 	// Token: 0x170000F3 RID: 243
-	// (get) Token: 0x06000BD1 RID: 3025 RVA: 0x0004A805 File Offset: 0x00048A05
+	// (get) Token: 0x06000BDC RID: 3036 RVA: 0x0004AC1D File Offset: 0x00048E1D
 	public bool LocalPlayerIsOwner
 	{
 		get
@@ -57,27 +57,27 @@ public class TileEntityComposite : TileEntity
 	}
 
 	// Token: 0x170000F4 RID: 244
-	// (get) Token: 0x06000BD2 RID: 3026 RVA: 0x0004A821 File Offset: 0x00048A21
-	// (set) Token: 0x06000BD3 RID: 3027 RVA: 0x0004A829 File Offset: 0x00048A29
+	// (get) Token: 0x06000BDD RID: 3037 RVA: 0x0004AC39 File Offset: 0x00048E39
+	// (set) Token: 0x06000BDE RID: 3038 RVA: 0x0004AC41 File Offset: 0x00048E41
 	public PlatformUserIdentifierAbs Owner
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06000BD4 RID: 3028 RVA: 0x0004A832 File Offset: 0x00048A32
+	// Token: 0x06000BDF RID: 3039 RVA: 0x0004AC4A File Offset: 0x00048E4A
 	public override TileEntityType GetTileEntityType()
 	{
 		return TileEntityType.Composite;
 	}
 
-	// Token: 0x06000BD5 RID: 3029 RVA: 0x0004A836 File Offset: 0x00048A36
+	// Token: 0x06000BE0 RID: 3040 RVA: 0x0004AC4E File Offset: 0x00048E4E
 	public TileEntityComposite(Chunk _chunk)
 		: base(_chunk)
 	{
 	}
 
-	// Token: 0x06000BD6 RID: 3030 RVA: 0x0004A83F File Offset: 0x00048A3F
+	// Token: 0x06000BE1 RID: 3041 RVA: 0x0004AC57 File Offset: 0x00048E57
 	public TileEntityComposite(Chunk _chunk, BlockValue _blockValue)
 		: base(_chunk)
 	{
@@ -85,9 +85,9 @@ public class TileEntityComposite : TileEntity
 		TileEntityLegacyUtils.MigrateLegacyMetadata(this, _blockValue);
 	}
 
-	// Token: 0x06000BD7 RID: 3031 RVA: 0x0004A861 File Offset: 0x00048A61
-	public TileEntityComposite(BlockCompositeTileEntity _block, TileEntityLegacyUtils.LegacyState _state)
-		: base(null)
+	// Token: 0x06000BE2 RID: 3042 RVA: 0x0004AC79 File Offset: 0x00048E79
+	public TileEntityComposite(Chunk _chunk, BlockCompositeTileEntity _block, TileEntityLegacyUtils.LegacyState _state)
+		: base(_chunk)
 	{
 		this.chunkPos = _state.chunkPos;
 		this.heapMapLastTime = _state.heapMapLastTime;
@@ -95,14 +95,14 @@ public class TileEntityComposite : TileEntity
 		this.InitModulesFromBlock(_block);
 	}
 
-	// Token: 0x06000BD8 RID: 3032 RVA: 0x0004A895 File Offset: 0x00048A95
+	// Token: 0x06000BE3 RID: 3043 RVA: 0x0004ACAD File Offset: 0x00048EAD
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileEntityComposite(TileEntityComposite _original)
 		: base(null)
 	{
 	}
 
-	// Token: 0x06000BD9 RID: 3033 RVA: 0x0004A8A0 File Offset: 0x00048AA0
+	// Token: 0x06000BE4 RID: 3044 RVA: 0x0004ACB8 File Offset: 0x00048EB8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitModulesFromBlock(BlockCompositeTileEntity _block)
 	{
@@ -127,7 +127,7 @@ public class TileEntityComposite : TileEntity
 		this.PrecomputeCapabilities();
 	}
 
-	// Token: 0x06000BDA RID: 3034 RVA: 0x0004A9A0 File Offset: 0x00048BA0
+	// Token: 0x06000BE5 RID: 3045 RVA: 0x0004ADB8 File Offset: 0x00048FB8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PrecomputeCapabilities()
 	{
@@ -144,7 +144,7 @@ public class TileEntityComposite : TileEntity
 		}
 	}
 
-	// Token: 0x06000BDB RID: 3035 RVA: 0x0004AA03 File Offset: 0x00048C03
+	// Token: 0x06000BE6 RID: 3046 RVA: 0x0004AE1B File Offset: 0x0004901B
 	public override TileEntity Clone()
 	{
 		TileEntityComposite tileEntityComposite = new TileEntityComposite(this);
@@ -152,7 +152,7 @@ public class TileEntityComposite : TileEntity
 		return tileEntityComposite;
 	}
 
-	// Token: 0x06000BDC RID: 3036 RVA: 0x0004AA14 File Offset: 0x00048C14
+	// Token: 0x06000BE7 RID: 3047 RVA: 0x0004AE2C File Offset: 0x0004902C
 	public override void CopyFrom(TileEntity _other)
 	{
 		TileEntityComposite tileEntityComposite = _other as TileEntityComposite;
@@ -171,7 +171,7 @@ public class TileEntityComposite : TileEntity
 		}
 	}
 
-	// Token: 0x06000BDD RID: 3037 RVA: 0x0004AA84 File Offset: 0x00048C84
+	// Token: 0x06000BE8 RID: 3048 RVA: 0x0004AE9C File Offset: 0x0004909C
 	public override void UpdateTick(World _world)
 	{
 		base.UpdateTick(_world);
@@ -182,7 +182,7 @@ public class TileEntityComposite : TileEntity
 		}
 	}
 
-	// Token: 0x06000BDE RID: 3038 RVA: 0x0004AAB8 File Offset: 0x00048CB8
+	// Token: 0x06000BE9 RID: 3049 RVA: 0x0004AED0 File Offset: 0x000490D0
 	public void SetBlockEntityData(BlockEntityData _blockEntityData)
 	{
 		ITileEntityFeature[] array = this.modulesInternalOrder;
@@ -192,7 +192,7 @@ public class TileEntityComposite : TileEntity
 		}
 	}
 
-	// Token: 0x06000BDF RID: 3039 RVA: 0x0004AAE4 File Offset: 0x00048CE4
+	// Token: 0x06000BEA RID: 3050 RVA: 0x0004AEFC File Offset: 0x000490FC
 	public override void OnRemove(World _world)
 	{
 		ITileEntityFeature[] array = this.modulesInternalOrder;
@@ -203,7 +203,7 @@ public class TileEntityComposite : TileEntity
 		base.OnRemove(_world);
 	}
 
-	// Token: 0x06000BE0 RID: 3040 RVA: 0x0004AB18 File Offset: 0x00048D18
+	// Token: 0x06000BEB RID: 3051 RVA: 0x0004AF30 File Offset: 0x00049130
 	public override void OnLoad()
 	{
 		ITileEntityFeature[] array = this.modulesInternalOrder;
@@ -214,7 +214,7 @@ public class TileEntityComposite : TileEntity
 		base.OnLoad();
 	}
 
-	// Token: 0x06000BE1 RID: 3041 RVA: 0x0004AB48 File Offset: 0x00048D48
+	// Token: 0x06000BEC RID: 3052 RVA: 0x0004AF60 File Offset: 0x00049160
 	public override void OnUnload(World _world)
 	{
 		ITileEntityFeature[] array = this.modulesInternalOrder;
@@ -225,7 +225,7 @@ public class TileEntityComposite : TileEntity
 		base.OnUnload(_world);
 	}
 
-	// Token: 0x06000BE2 RID: 3042 RVA: 0x0004AB7C File Offset: 0x00048D7C
+	// Token: 0x06000BED RID: 3053 RVA: 0x0004AF94 File Offset: 0x00049194
 	public override void OnDestroy()
 	{
 		ITileEntityFeature[] array = this.modulesInternalOrder;
@@ -236,7 +236,7 @@ public class TileEntityComposite : TileEntity
 		base.OnDestroy();
 	}
 
-	// Token: 0x06000BE3 RID: 3043 RVA: 0x0004ABAC File Offset: 0x00048DAC
+	// Token: 0x06000BEE RID: 3054 RVA: 0x0004AFC4 File Offset: 0x000491C4
 	public void OnBlockTriggered(EntityPlayer _player, Vector3i _blockPos, BlockValue _blockValue, List<BlockChangeInfo> _blockChanges, BlockTrigger _triggeredBy)
 	{
 		if (this.TriggerRole == IFeatureTriggerCapability.ETriggerRole.None || this.TriggerRole == IFeatureTriggerCapability.ETriggerRole.Source)
@@ -253,7 +253,7 @@ public class TileEntityComposite : TileEntity
 		}
 	}
 
-	// Token: 0x06000BE4 RID: 3044 RVA: 0x0004ABFC File Offset: 0x00048DFC
+	// Token: 0x06000BEF RID: 3055 RVA: 0x0004B014 File Offset: 0x00049214
 	public IEnumerable<IFeaturePhysicalCapabilities> GetOverridesPhysicalChecksModules()
 	{
 		if (!this.OverridesPhysicalChecks)
@@ -273,7 +273,7 @@ public class TileEntityComposite : TileEntity
 		yield break;
 	}
 
-	// Token: 0x06000BE5 RID: 3045 RVA: 0x0004AC0C File Offset: 0x00048E0C
+	// Token: 0x06000BF0 RID: 3056 RVA: 0x0004B024 File Offset: 0x00049224
 	public override void UpgradeDowngradeFrom(TileEntity _other)
 	{
 		base.UpgradeDowngradeFrom(_other);
@@ -290,7 +290,7 @@ public class TileEntityComposite : TileEntity
 		}
 	}
 
-	// Token: 0x06000BE6 RID: 3046 RVA: 0x0004AC58 File Offset: 0x00048E58
+	// Token: 0x06000BF1 RID: 3057 RVA: 0x0004B070 File Offset: 0x00049270
 	public override void ReplacedBy(BlockValue _bvOld, BlockValue _bvNew, TileEntity _teNew)
 	{
 		base.ReplacedBy(_bvOld, _bvNew, _teNew);
@@ -301,7 +301,7 @@ public class TileEntityComposite : TileEntity
 		}
 	}
 
-	// Token: 0x06000BE7 RID: 3047 RVA: 0x0004AC90 File Offset: 0x00048E90
+	// Token: 0x06000BF2 RID: 3058 RVA: 0x0004B0A8 File Offset: 0x000492A8
 	public override void Reset(FastTags<TagGroup.Global> _questTags)
 	{
 		base.Reset(_questTags);
@@ -312,20 +312,20 @@ public class TileEntityComposite : TileEntity
 		}
 	}
 
-	// Token: 0x06000BE8 RID: 3048 RVA: 0x0004ACC2 File Offset: 0x00048EC2
+	// Token: 0x06000BF3 RID: 3059 RVA: 0x0004B0DA File Offset: 0x000492DA
 	public override bool IsActive(World world)
 	{
 		return base.IsActive(world);
 	}
 
-	// Token: 0x06000BE9 RID: 3049 RVA: 0x0004ACCB File Offset: 0x00048ECB
+	// Token: 0x06000BF4 RID: 3060 RVA: 0x0004B0E3 File Offset: 0x000492E3
 	public void SetOwner(PlatformUserIdentifierAbs _userIdentifier)
 	{
 		this.Owner = _userIdentifier;
 		base.SetModified();
 	}
 
-	// Token: 0x06000BEA RID: 3050 RVA: 0x0004ACDC File Offset: 0x00048EDC
+	// Token: 0x06000BF5 RID: 3061 RVA: 0x0004B0F4 File Offset: 0x000492F4
 	public string GetActivationText(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityAlive _entityFocusing, string _activateHotkeyMarkup, string _focusedTileEntityName)
 	{
 		ITileEntityFeature[] array = this.modulesCustomOrder;
@@ -340,7 +340,7 @@ public class TileEntityComposite : TileEntity
 		return null;
 	}
 
-	// Token: 0x06000BEB RID: 3051 RVA: 0x0004AD18 File Offset: 0x00048F18
+	// Token: 0x06000BF6 RID: 3062 RVA: 0x0004B130 File Offset: 0x00049330
 	public BlockActivationCommand[] InitBlockActivationCommands()
 	{
 		List<ValueTuple<BlockActivationCommand, int>> commands = new List<ValueTuple<BlockActivationCommand, int>>();
@@ -413,7 +413,7 @@ public class TileEntityComposite : TileEntity
 		return array2;
 	}
 
-	// Token: 0x06000BEC RID: 3052 RVA: 0x0004AE6C File Offset: 0x0004906C
+	// Token: 0x06000BF7 RID: 3063 RVA: 0x0004B284 File Offset: 0x00049484
 	public bool UpdateBlockActivationCommands(BlockActivationCommand[] _commands, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityAlive _entityFocusing)
 	{
 		int frameCount = Time.frameCount;
@@ -456,7 +456,7 @@ public class TileEntityComposite : TileEntity
 		return this.lastUpdateHadEnabledCommands;
 	}
 
-	// Token: 0x06000BED RID: 3053 RVA: 0x0004AF9C File Offset: 0x0004919C
+	// Token: 0x06000BF8 RID: 3064 RVA: 0x0004B3B4 File Offset: 0x000495B4
 	public void OnBlockAdded(Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _owner)
 	{
 		this.Owner = _owner;
@@ -466,7 +466,7 @@ public class TileEntityComposite : TileEntity
 		}
 	}
 
-	// Token: 0x06000BEE RID: 3054 RVA: 0x0004AFD4 File Offset: 0x000491D4
+	// Token: 0x06000BF9 RID: 3065 RVA: 0x0004B3EC File Offset: 0x000495EC
 	public void OnBlockValueChanged(Vector3i _blockPos, BlockValue _oldBlockValue, BlockValue _newBlockValue)
 	{
 		for (int i = 0; i < this.modulesInternalOrder.Length; i++)
@@ -475,7 +475,7 @@ public class TileEntityComposite : TileEntity
 		}
 	}
 
-	// Token: 0x06000BEF RID: 3055 RVA: 0x0004B004 File Offset: 0x00049204
+	// Token: 0x06000BFA RID: 3066 RVA: 0x0004B41C File Offset: 0x0004961C
 	public void OnBlockReset(Vector3i _blockPos, BlockValue _blockValue)
 	{
 		for (int i = 0; i < this.modulesInternalOrder.Length; i++)
@@ -484,7 +484,7 @@ public class TileEntityComposite : TileEntity
 		}
 	}
 
-	// Token: 0x06000BF0 RID: 3056 RVA: 0x0004B034 File Offset: 0x00049234
+	// Token: 0x06000BFB RID: 3067 RVA: 0x0004B44C File Offset: 0x0004964C
 	public void OnBlockStartsToFall(Vector3i _blockPos, BlockValue _blockValue)
 	{
 		for (int i = 0; i < this.modulesInternalOrder.Length; i++)
@@ -493,7 +493,7 @@ public class TileEntityComposite : TileEntity
 		}
 	}
 
-	// Token: 0x06000BF1 RID: 3057 RVA: 0x0004B064 File Offset: 0x00049264
+	// Token: 0x06000BFC RID: 3068 RVA: 0x0004B47C File Offset: 0x0004967C
 	public Block.DestroyedResult OnBlockDestroyedBy(Vector3i _blockPos, BlockValue _blockValue, int _entityId, bool _bUseHarvestTool)
 	{
 		Block.DestroyedResult destroyedResult = Block.DestroyedResult.None;
@@ -508,7 +508,7 @@ public class TileEntityComposite : TileEntity
 		return destroyedResult;
 	}
 
-	// Token: 0x06000BF2 RID: 3058 RVA: 0x0004B0A0 File Offset: 0x000492A0
+	// Token: 0x06000BFD RID: 3069 RVA: 0x0004B4B8 File Offset: 0x000496B8
 	public Block.DestroyedResult OnBlockDestroyedByExplosion(Vector3i _blockPos, BlockValue _blockValue, int _playerThatStartedExpl)
 	{
 		Block.DestroyedResult destroyedResult = Block.DestroyedResult.None;
@@ -523,7 +523,7 @@ public class TileEntityComposite : TileEntity
 		return destroyedResult;
 	}
 
-	// Token: 0x06000BF3 RID: 3059 RVA: 0x0004B0DC File Offset: 0x000492DC
+	// Token: 0x06000BFE RID: 3070 RVA: 0x0004B4F4 File Offset: 0x000496F4
 	public bool OnBlockActivated(BlockActivationCommand[] _commands, string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		ReadOnlyMemory<char> readOnlyMemory;
@@ -546,7 +546,7 @@ public class TileEntityComposite : TileEntity
 		return feature != null && feature.OnBlockActivated(readOnlyMemory2.Span, _world, _blockPos, _blockValue, _player);
 	}
 
-	// Token: 0x06000BF4 RID: 3060 RVA: 0x0004B180 File Offset: 0x00049380
+	// Token: 0x06000BFF RID: 3071 RVA: 0x0004B598 File Offset: 0x00049798
 	public ITileEntityFeature GetFeature(ReadOnlyMemory<char> _featureName)
 	{
 		int featureIndex = this.teData.GetFeatureIndex(_featureName);
@@ -557,7 +557,7 @@ public class TileEntityComposite : TileEntity
 		return this.modulesInternalOrder[featureIndex];
 	}
 
-	// Token: 0x06000BF5 RID: 3061 RVA: 0x0004B1A8 File Offset: 0x000493A8
+	// Token: 0x06000C00 RID: 3072 RVA: 0x0004B5C0 File Offset: 0x000497C0
 	public T GetFeature<T>() where T : class
 	{
 		int featureIndex = this.teData.GetFeatureIndex<T>();
@@ -568,7 +568,7 @@ public class TileEntityComposite : TileEntity
 		return (T)((object)this.modulesInternalOrder[featureIndex]);
 	}
 
-	// Token: 0x06000BF6 RID: 3062 RVA: 0x0004B1DC File Offset: 0x000493DC
+	// Token: 0x06000C01 RID: 3073 RVA: 0x0004B5F4 File Offset: 0x000497F4
 	public static bool SplitFullCommandName(string _fullCommandName, out ReadOnlyMemory<char> _moduleName, out ReadOnlyMemory<char> _commandName)
 	{
 		int num = _fullCommandName.IndexOf(':');
@@ -583,7 +583,7 @@ public class TileEntityComposite : TileEntity
 		return true;
 	}
 
-	// Token: 0x06000BF7 RID: 3063 RVA: 0x0004B224 File Offset: 0x00049424
+	// Token: 0x06000C02 RID: 3074 RVA: 0x0004B63C File Offset: 0x0004983C
 	public override string ToString()
 	{
 		return string.Format(string.Concat(new string[]
@@ -597,13 +597,13 @@ public class TileEntityComposite : TileEntity
 		}), Array.Empty<object>());
 	}
 
-	// Token: 0x06000BF8 RID: 3064 RVA: 0x0004B296 File Offset: 0x00049496
+	// Token: 0x06000C03 RID: 3075 RVA: 0x0004B6AE File Offset: 0x000498AE
 	public override void read(PooledBinaryReader _br, TileEntity.StreamModeRead _eStreamMode)
 	{
 		this.read(_br, _eStreamMode, null);
 	}
 
-	// Token: 0x06000BF9 RID: 3065 RVA: 0x0004B2A4 File Offset: 0x000494A4
+	// Token: 0x06000C04 RID: 3076 RVA: 0x0004B6BC File Offset: 0x000498BC
 	public void read(PooledBinaryReader _br, TileEntity.StreamModeRead _eStreamMode, int[] _blockIdMapping)
 	{
 		base.read(_br, _eStreamMode);
@@ -776,7 +776,7 @@ public class TileEntityComposite : TileEntity
 		}
 	}
 
-	// Token: 0x06000BFA RID: 3066 RVA: 0x0004B7DC File Offset: 0x000499DC
+	// Token: 0x06000C05 RID: 3077 RVA: 0x0004BBF4 File Offset: 0x00049DF4
 	public override void write(PooledBinaryWriter _bw, TileEntity.StreamModeWrite _eStreamMode)
 	{
 		base.write(_bw, _eStreamMode);
@@ -799,46 +799,46 @@ public class TileEntityComposite : TileEntity
 		_bw.FinalizeSizeMarker(ref streamWriteSizeMarker);
 	}
 
-	// Token: 0x04000AB8 RID: 2744
+	// Token: 0x04000AC5 RID: 2757
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new const int Version = 18;
 
-	// Token: 0x04000AB9 RID: 2745
+	// Token: 0x04000AC6 RID: 2758
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileEntityCompositeData teData;
 
-	// Token: 0x04000ABA RID: 2746
+	// Token: 0x04000AC7 RID: 2759
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ITileEntityFeature[] modulesCustomOrder;
 
-	// Token: 0x04000ABB RID: 2747
+	// Token: 0x04000AC8 RID: 2760
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ITileEntityFeature[] modulesInternalOrder;
 
-	// Token: 0x04000ABF RID: 2751
+	// Token: 0x04000ACC RID: 2764
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int lastUpdateFrameOfBlockActivationCommands;
 
-	// Token: 0x04000AC0 RID: 2752
+	// Token: 0x04000ACD RID: 2765
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool lastUpdateHadEnabledCommands;
 
-	// Token: 0x04000AC1 RID: 2753
+	// Token: 0x04000ACE RID: 2766
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const char ModuleCommandSeparator = ':';
 
-	// Token: 0x04000AC2 RID: 2754
+	// Token: 0x04000ACF RID: 2767
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string TriggerCommandModule = "IFeatureTriggerCapability";
 
-	// Token: 0x02000186 RID: 390
+	// Token: 0x02000188 RID: 392
 	public enum EBlockCommandOrder
 	{
-		// Token: 0x04000AC4 RID: 2756
+		// Token: 0x04000AD1 RID: 2769
 		First,
-		// Token: 0x04000AC5 RID: 2757
+		// Token: 0x04000AD2 RID: 2770
 		Normal,
-		// Token: 0x04000AC6 RID: 2758
+		// Token: 0x04000AD3 RID: 2771
 		Last
 	}
 }

@@ -2,16 +2,16 @@
 
 namespace SharpEXR
 {
-	// Token: 0x020016AD RID: 5805
+	// Token: 0x020016D3 RID: 5843
 	public enum ImageSourceFormat
 	{
-		// Token: 0x04008781 RID: 34689
+		// Token: 0x0400889D RID: 34973
 		SingleRGBA,
-		// Token: 0x04008782 RID: 34690
+		// Token: 0x0400889E RID: 34974
 		HalfRGBA,
-		// Token: 0x04008783 RID: 34691
+		// Token: 0x0400889F RID: 34975
 		SingleRGB,
-		// Token: 0x04008784 RID: 34692
+		// Token: 0x040088A0 RID: 34976
 		HalfRGB
 	}
 }

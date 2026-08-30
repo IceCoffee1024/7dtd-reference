@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020002FC RID: 764
+// Token: 0x02000300 RID: 768
 [Preserve]
 public class DialogResponseEntry : BaseResponseEntry
 {
-	// Token: 0x060015B8 RID: 5560 RVA: 0x000811F1 File Offset: 0x0007F3F1
+	// Token: 0x060015CB RID: 5579 RVA: 0x000818A5 File Offset: 0x0007FAA5
 	public DialogResponseEntry(string _ID)
 	{
 		base.ID = _ID;

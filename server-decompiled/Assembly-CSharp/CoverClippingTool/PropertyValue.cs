@@ -3,26 +3,26 @@ using System.Xml.Linq;
 
 namespace CoverClippingTool
 {
-	// Token: 0x0200165B RID: 5723
+	// Token: 0x02001676 RID: 5750
 	public struct PropertyValue
 	{
-		// Token: 0x0600B35D RID: 45917 RVA: 0x00430E67 File Offset: 0x0042F067
+		// Token: 0x0600B45A RID: 46170 RVA: 0x004361A7 File Offset: 0x004343A7
 		public PropertyValue(XElement element, string value)
 		{
 			this.Element = element;
 			this.Value = value;
 		}
 
-		// Token: 0x0600B35E RID: 45918 RVA: 0x00430E77 File Offset: 0x0042F077
+		// Token: 0x0600B45B RID: 46171 RVA: 0x004361B7 File Offset: 0x004343B7
 		public PropertyValue Clone()
 		{
 			return new PropertyValue(this.Element, this.Value);
 		}
 
-		// Token: 0x0400865A RID: 34394
+		// Token: 0x04008733 RID: 34611
 		public readonly string Value;
 
-		// Token: 0x0400865B RID: 34395
+		// Token: 0x04008734 RID: 34612
 		public readonly XElement Element;
 	}
 }

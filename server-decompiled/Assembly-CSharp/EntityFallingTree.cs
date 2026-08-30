@@ -6,11 +6,11 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Scripting;
 
-// Token: 0x020004AC RID: 1196
+// Token: 0x020004B0 RID: 1200
 [Preserve]
 public class EntityFallingTree : Entity
 {
-	// Token: 0x060025D4 RID: 9684 RVA: 0x000E74F3 File Offset: 0x000E56F3
+	// Token: 0x060025F6 RID: 9718 RVA: 0x000E814B File Offset: 0x000E634B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -20,19 +20,19 @@ public class EntityFallingTree : Entity
 		this.treeRB.isKinematic = this.isEntityRemote;
 	}
 
-	// Token: 0x060025D5 RID: 9685 RVA: 0x000E752C File Offset: 0x000E572C
+	// Token: 0x060025F7 RID: 9719 RVA: 0x000E8184 File Offset: 0x000E6384
 	public Vector3i GetBlockPos()
 	{
 		return this.treeBlockPos;
 	}
 
-	// Token: 0x060025D6 RID: 9686 RVA: 0x000E7534 File Offset: 0x000E5734
+	// Token: 0x060025F8 RID: 9720 RVA: 0x000E818C File Offset: 0x000E638C
 	public Vector3 GetFallTreeDir()
 	{
 		return this.fallTreeDir;
 	}
 
-	// Token: 0x060025D7 RID: 9687 RVA: 0x000E753C File Offset: 0x000E573C
+	// Token: 0x060025F9 RID: 9721 RVA: 0x000E8194 File Offset: 0x000E6394
 	public void SetBlockPos(Vector3i _blockPos, Vector3 _fallTreeDir)
 	{
 		this.treeBlockPos = _blockPos;
@@ -77,21 +77,21 @@ public class EntityFallingTree : Entity
 		this.collHeight *= 0.9f;
 	}
 
-	// Token: 0x060025D8 RID: 9688 RVA: 0x000E766D File Offset: 0x000E586D
+	// Token: 0x060025FA RID: 9722 RVA: 0x000E82C5 File Offset: 0x000E64C5
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnCollisionEnter(Collision collision)
 	{
 		this.Collide(collision);
 	}
 
-	// Token: 0x060025D9 RID: 9689 RVA: 0x000E766D File Offset: 0x000E586D
+	// Token: 0x060025FB RID: 9723 RVA: 0x000E82C5 File Offset: 0x000E64C5
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnCollisionStay(Collision collision)
 	{
 		this.Collide(collision);
 	}
 
-	// Token: 0x060025DA RID: 9690 RVA: 0x000E7678 File Offset: 0x000E5878
+	// Token: 0x060025FC RID: 9724 RVA: 0x000E82D0 File Offset: 0x000E64D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Collide(Collision collision)
 	{
@@ -128,7 +128,7 @@ public class EntityFallingTree : Entity
 		}
 	}
 
-	// Token: 0x060025DB RID: 9691 RVA: 0x000E77B0 File Offset: 0x000E59B0
+	// Token: 0x060025FD RID: 9725 RVA: 0x000E8408 File Offset: 0x000E6608
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void collidedWith(Transform _other)
 	{
@@ -155,14 +155,14 @@ public class EntityFallingTree : Entity
 		}
 	}
 
-	// Token: 0x060025DC RID: 9692 RVA: 0x000E7850 File Offset: 0x000E5A50
+	// Token: 0x060025FE RID: 9726 RVA: 0x000E84A8 File Offset: 0x000E66A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool treeCanDamageEntity(Entity _entity)
 	{
 		return !this.hitEntities.Contains(_entity.entityId) && !(_entity is EntityPlayer) && !(_entity is EntitySupplyCrate);
 	}
 
-	// Token: 0x060025DD RID: 9693 RVA: 0x000E787D File Offset: 0x000E5A7D
+	// Token: 0x060025FF RID: 9727 RVA: 0x000E84D5 File Offset: 0x000E66D5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator onEntityDamageLater(Entity _entity, int _damage)
 	{
@@ -174,7 +174,7 @@ public class EntityFallingTree : Entity
 		yield break;
 	}
 
-	// Token: 0x060025DE RID: 9694 RVA: 0x000E7894 File Offset: 0x000E5A94
+	// Token: 0x06002600 RID: 9728 RVA: 0x000E84EC File Offset: 0x000E66EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CreateMesh()
 	{
@@ -241,7 +241,7 @@ public class EntityFallingTree : Entity
 		}
 	}
 
-	// Token: 0x060025DF RID: 9695 RVA: 0x000E7C40 File Offset: 0x000E5E40
+	// Token: 0x06002601 RID: 9729 RVA: 0x000E8898 File Offset: 0x000E6A98
 	public override void OnUpdateEntity()
 	{
 		base.OnUpdateEntity();
@@ -278,7 +278,7 @@ public class EntityFallingTree : Entity
 		}
 	}
 
-	// Token: 0x060025E0 RID: 9696 RVA: 0x000E7D64 File Offset: 0x000E5F64
+	// Token: 0x06002602 RID: 9730 RVA: 0x000E89BC File Offset: 0x000E6BBC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DestroyTree()
 	{
@@ -294,19 +294,19 @@ public class EntityFallingTree : Entity
 		}
 	}
 
-	// Token: 0x060025E1 RID: 9697 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002603 RID: 9731 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool CanCollideWith(Entity _other)
 	{
 		return false;
 	}
 
-	// Token: 0x060025E2 RID: 9698 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x06002604 RID: 9732 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsQRotationUsed()
 	{
 		return true;
 	}
 
-	// Token: 0x060025E3 RID: 9699 RVA: 0x000E7DE8 File Offset: 0x000E5FE8
+	// Token: 0x06002605 RID: 9733 RVA: 0x000E8A40 File Offset: 0x000E6C40
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateTransform()
 	{
@@ -360,13 +360,13 @@ public class EntityFallingTree : Entity
 		this.SetRotation(transform.eulerAngles);
 	}
 
-	// Token: 0x060025E4 RID: 9700 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002606 RID: 9734 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsSavedToFile()
 	{
 		return false;
 	}
 
-	// Token: 0x060025E5 RID: 9701 RVA: 0x000E7FA2 File Offset: 0x000E61A2
+	// Token: 0x06002607 RID: 9735 RVA: 0x000E8BFA File Offset: 0x000E6DFA
 	public override void OnEntityUnload()
 	{
 		if (this.treeTransform != null)
@@ -377,7 +377,7 @@ public class EntityFallingTree : Entity
 		base.OnEntityUnload();
 	}
 
-	// Token: 0x060025E6 RID: 9702 RVA: 0x000E7FCF File Offset: 0x000E61CF
+	// Token: 0x06002608 RID: 9736 RVA: 0x000E8C27 File Offset: 0x000E6E27
 	public override void MarkToUnload()
 	{
 		base.MarkToUnload();
@@ -387,87 +387,87 @@ public class EntityFallingTree : Entity
 		}
 	}
 
-	// Token: 0x04001C20 RID: 7200
+	// Token: 0x04001C42 RID: 7234
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cMassScale = 5f;
 
-	// Token: 0x04001C21 RID: 7201
+	// Token: 0x04001C43 RID: 7235
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3i treeBlockPos;
 
-	// Token: 0x04001C22 RID: 7202
+	// Token: 0x04001C44 RID: 7236
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public BlockValue treeBV;
 
-	// Token: 0x04001C23 RID: 7203
+	// Token: 0x04001C45 RID: 7237
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 fallTreeDir;
 
-	// Token: 0x04001C24 RID: 7204
+	// Token: 0x04001C46 RID: 7238
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform treeTransform;
 
-	// Token: 0x04001C25 RID: 7205
+	// Token: 0x04001C47 RID: 7239
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Rigidbody treeRB;
 
-	// Token: 0x04001C26 RID: 7206
+	// Token: 0x04001C48 RID: 7240
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<MeshRenderer> rendererList = new List<MeshRenderer>();
 
-	// Token: 0x04001C27 RID: 7207
+	// Token: 0x04001C49 RID: 7241
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float collHeight;
 
-	// Token: 0x04001C28 RID: 7208
+	// Token: 0x04001C4A RID: 7242
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool isMeshCreated;
 
-	// Token: 0x04001C29 RID: 7209
+	// Token: 0x04001C4B RID: 7243
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float timeToRemoveTree = -1f;
 
-	// Token: 0x04001C2A RID: 7210
+	// Token: 0x04001C4C RID: 7244
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float timeToEnableDamage;
 
-	// Token: 0x04001C2B RID: 7211
+	// Token: 0x04001C4D RID: 7245
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<int> hitEntities = new List<int>();
 
-	// Token: 0x04001C2C RID: 7212
+	// Token: 0x04001C4E RID: 7246
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float fade = 1f;
 
-	// Token: 0x04001C2D RID: 7213
+	// Token: 0x04001C4F RID: 7247
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float targetFade = 1f;
 
-	// Token: 0x04001C2E RID: 7214
+	// Token: 0x04001C50 RID: 7248
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public List<Material> mats = new List<Material>();
 
-	// Token: 0x020004AD RID: 1197
+	// Token: 0x020004B1 RID: 1201
 	[Preserve]
 	public class NetPackageTreeFade : NetPackage
 	{
-		// Token: 0x1700043D RID: 1085
-		// (get) Token: 0x060025E8 RID: 9704 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+		// Token: 0x17000441 RID: 1089
+		// (get) Token: 0x0600260A RID: 9738 RVA: 0x0002F168 File Offset: 0x0002D368
 		public override NetPackageDirection PackageDirection
 		{
 			get
@@ -476,27 +476,27 @@ public class EntityFallingTree : Entity
 			}
 		}
 
-		// Token: 0x060025E9 RID: 9705 RVA: 0x000E8051 File Offset: 0x000E6251
+		// Token: 0x0600260B RID: 9739 RVA: 0x000E8CA9 File Offset: 0x000E6EA9
 		public EntityFallingTree.NetPackageTreeFade Setup(Entity entity)
 		{
 			this.entityId = entity.entityId;
 			return this;
 		}
 
-		// Token: 0x060025EA RID: 9706 RVA: 0x000E8060 File Offset: 0x000E6260
+		// Token: 0x0600260C RID: 9740 RVA: 0x000E8CB8 File Offset: 0x000E6EB8
 		public override void read(PooledBinaryReader _reader)
 		{
 			this.entityId = _reader.ReadInt32();
 		}
 
-		// Token: 0x060025EB RID: 9707 RVA: 0x000E806E File Offset: 0x000E626E
+		// Token: 0x0600260D RID: 9741 RVA: 0x000E8CC6 File Offset: 0x000E6EC6
 		public override void write(PooledBinaryWriter _writer)
 		{
 			base.write(_writer);
 			_writer.Write(this.entityId);
 		}
 
-		// Token: 0x060025EC RID: 9708 RVA: 0x000E8084 File Offset: 0x000E6284
+		// Token: 0x0600260E RID: 9742 RVA: 0x000E8CDC File Offset: 0x000E6EDC
 		public override void ProcessPackage(World _world, GameManager _callbacks)
 		{
 			if (_world == null)
@@ -510,13 +510,13 @@ public class EntityFallingTree : Entity
 			}
 		}
 
-		// Token: 0x060025ED RID: 9709 RVA: 0x0007FE9C File Offset: 0x0007E09C
+		// Token: 0x0600260F RID: 9743 RVA: 0x00080550 File Offset: 0x0007E750
 		public override int GetLength()
 		{
 			return 4;
 		}
 
-		// Token: 0x04001C2F RID: 7215
+		// Token: 0x04001C51 RID: 7249
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int entityId;
 	}

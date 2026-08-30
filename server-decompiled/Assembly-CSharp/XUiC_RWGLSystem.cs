@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E20 RID: 3616
+// Token: 0x02000E35 RID: 3637
 [Preserve]
 public class XUiC_RWGLSystem : XUiController
 {

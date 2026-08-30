@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x02000682 RID: 1666
+// Token: 0x0200068C RID: 1676
 [Preserve]
 public class RequirementItemModTier : RequirementBase
 {
-	// Token: 0x060034DC RID: 13532 RVA: 0x0015E30C File Offset: 0x0015C50C
+	// Token: 0x06003532 RID: 13618 RVA: 0x001604E8 File Offset: 0x0015E6E8
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -26,10 +26,14 @@ public class RequirementItemModTier : RequirementBase
 		for (int i = 0; i < _params.ItemValue.Modifications.Length; i++)
 		{
 			ItemValue itemValue2 = _params.ItemValue.Modifications[i];
-			if (itemValue2 != ItemValue.None && itemValue2.ItemClass != null && itemValue2.ItemClass.Name != null && itemValue2.ItemClass.Name.EqualsCaseInsensitive(this.modName))
+			if (itemValue2 != null && itemValue2 != ItemValue.None)
 			{
-				itemValue = itemValue2;
-				break;
+				ItemClass itemClass = itemValue2.ItemClass;
+				if (itemClass != null && itemClass.Name != null && itemClass.Name.EqualsCaseInsensitive(this.modName))
+				{
+					itemValue = itemValue2;
+					break;
+				}
 			}
 		}
 		if (!this.invert)
@@ -39,13 +43,13 @@ public class RequirementItemModTier : RequirementBase
 		return !RequirementBase.compareValues((float)itemValue.Quality, this.operation, this.value);
 	}
 
-	// Token: 0x060034DD RID: 13533 RVA: 0x0015E3DE File Offset: 0x0015C5DE
+	// Token: 0x06003533 RID: 13619 RVA: 0x001605B5 File Offset: 0x0015E7B5
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("Item Mod tier {0}{1} {2}", this.invert ? "NOT " : "", this.operation.ToStringCached<RequirementBase.OperationTypes>(), this.value.ToCultureInvariantString()));
 	}
 
-	// Token: 0x060034DE RID: 13534 RVA: 0x0015E41C File Offset: 0x0015C61C
+	// Token: 0x06003534 RID: 13620 RVA: 0x001605F4 File Offset: 0x0015E7F4
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -57,7 +61,7 @@ public class RequirementItemModTier : RequirementBase
 		return flag;
 	}
 
-	// Token: 0x04002AD6 RID: 10966
+	// Token: 0x04002B4A RID: 11082
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string modName;
 }

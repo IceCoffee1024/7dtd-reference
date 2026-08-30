@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using Audio;
 using UnityEngine.Scripting;
 
-// Token: 0x02000D42 RID: 3394
+// Token: 0x02000D55 RID: 3413
 [Preserve]
 public class ItemActionEntryCraft : BaseItemActionEntry
 {
-	// Token: 0x0600676B RID: 26475 RVA: 0x0028C7FC File Offset: 0x0028A9FC
+	// Token: 0x060067FA RID: 26618 RVA: 0x0028F798 File Offset: 0x0028D998
 	public ItemActionEntryCraft(XUiController _controller, XUiC_RecipeCraftCount _recipeCraftCount, int _craftingTier)
 		: base(_controller, "lblContextActionCraft", "ui_game_symbol_hammer", BaseItemActionEntry.GamepadShortCut.DPadUp, "crafting/craft_click_craft", "ui/ui_denied")
 	{
@@ -22,7 +22,7 @@ public class ItemActionEntryCraft : BaseItemActionEntry
 		}
 	}
 
-	// Token: 0x0600676C RID: 26476 RVA: 0x0028C88C File Offset: 0x0028AA8C
+	// Token: 0x060067FB RID: 26619 RVA: 0x0028F828 File Offset: 0x0028DA28
 	public override void RefreshEnabled()
 	{
 		base.Enabled = true;
@@ -93,7 +93,7 @@ public class ItemActionEntryCraft : BaseItemActionEntry
 		}
 	}
 
-	// Token: 0x0600676D RID: 26477 RVA: 0x0028CA84 File Offset: 0x0028AC84
+	// Token: 0x060067FC RID: 26620 RVA: 0x0028FA20 File Offset: 0x0028DC20
 	public override void OnActivated()
 	{
 		Recipe recipe = ((XUiC_RecipeEntry)base.ItemController).Recipe;
@@ -191,7 +191,7 @@ public class ItemActionEntryCraft : BaseItemActionEntry
 		xuiC_CraftingWindowGroup.WindowGroup.Controller.SetAllChildrenDirty();
 	}
 
-	// Token: 0x0600676E RID: 26478 RVA: 0x0028CD1C File Offset: 0x0028AF1C
+	// Token: 0x060067FD RID: 26621 RVA: 0x0028FCB8 File Offset: 0x0028DEB8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasItems(XUi _xui, Recipe _recipe)
 	{
@@ -255,7 +255,7 @@ public class ItemActionEntryCraft : BaseItemActionEntry
 		return flag;
 	}
 
-	// Token: 0x0600676F RID: 26479 RVA: 0x0028CF54 File Offset: 0x0028B154
+	// Token: 0x060067FE RID: 26622 RVA: 0x0028FEF0 File Offset: 0x0028E0F0
 	public override void OnDisabledActivate()
 	{
 		EntityPlayerLocal entityPlayer = base.ItemController.xui.playerUI.entityPlayer;
@@ -277,7 +277,7 @@ public class ItemActionEntryCraft : BaseItemActionEntry
 		}
 	}
 
-	// Token: 0x06006770 RID: 26480 RVA: 0x0028CFE0 File Offset: 0x0028B1E0
+	// Token: 0x060067FF RID: 26623 RVA: 0x0028FF7C File Offset: 0x0028E17C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void warnQueueFull()
 	{
@@ -285,39 +285,39 @@ public class ItemActionEntryCraft : BaseItemActionEntry
 		Manager.PlayInsidePlayerHead("ui_denied", -1, 0f, false, false);
 	}
 
-	// Token: 0x04004F48 RID: 20296
+	// Token: 0x04004FE6 RID: 20454
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemActionEntryCraft.StateTypes state;
 
-	// Token: 0x04004F49 RID: 20297
+	// Token: 0x04004FE7 RID: 20455
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string otherMessage = "";
 
-	// Token: 0x04004F4A RID: 20298
+	// Token: 0x04004FE8 RID: 20456
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly int craftingTier;
 
-	// Token: 0x04004F4B RID: 20299
+	// Token: 0x04004FE9 RID: 20457
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_RecipeCraftCount craftCountControl;
 
-	// Token: 0x04004F4C RID: 20300
+	// Token: 0x04004FEA RID: 20458
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<ItemStack> tempIngredientList = new List<ItemStack>();
 
-	// Token: 0x02000D43 RID: 3395
+	// Token: 0x02000D56 RID: 3414
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum StateTypes
 	{
-		// Token: 0x04004F4E RID: 20302
+		// Token: 0x04004FEC RID: 20460
 		Normal,
-		// Token: 0x04004F4F RID: 20303
+		// Token: 0x04004FED RID: 20461
 		RecipeLocked,
-		// Token: 0x04004F50 RID: 20304
+		// Token: 0x04004FEE RID: 20462
 		NotEnoughMaterials,
-		// Token: 0x04004F51 RID: 20305
+		// Token: 0x04004FEF RID: 20463
 		WrongWorkStation,
-		// Token: 0x04004F52 RID: 20306
+		// Token: 0x04004FF0 RID: 20464
 		Other
 	}
 }

@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000AE5 RID: 2789
+// Token: 0x02000AF7 RID: 2807
 public class StabilityInitializer
 {
-	// Token: 0x0600531D RID: 21277 RVA: 0x001FD02D File Offset: 0x001FB22D
+	// Token: 0x060053A5 RID: 21413 RVA: 0x001FFC9D File Offset: 0x001FDE9D
 	public StabilityInitializer(WorldBase _world)
 	{
 		this.world = _world;
 	}
 
-	// Token: 0x0600531E RID: 21278 RVA: 0x001FD03C File Offset: 0x001FB23C
+	// Token: 0x060053A6 RID: 21414 RVA: 0x001FFCAC File Offset: 0x001FDEAC
 	public void DistributeStability(Chunk _chunk)
 	{
 		int maxHeight = (int)_chunk.GetMaxHeight();
@@ -39,7 +39,7 @@ public class StabilityInitializer
 		_chunk.StopStabilityCalculation = false;
 	}
 
-	// Token: 0x0600531F RID: 21279 RVA: 0x001FD0CC File Offset: 0x001FB2CC
+	// Token: 0x060053A7 RID: 21415 RVA: 0x001FFD3C File Offset: 0x001FDF3C
 	public void BlockRemovedAt(int _worldX, int _worldY, int _worldZ)
 	{
 		Chunk chunk = (Chunk)this.world.GetChunkFromWorldPos(_worldX, _worldY, _worldZ);
@@ -67,7 +67,7 @@ public class StabilityInitializer
 		}
 	}
 
-	// Token: 0x06005320 RID: 21280 RVA: 0x001FD1EC File Offset: 0x001FB3EC
+	// Token: 0x060053A8 RID: 21416 RVA: 0x001FFE5C File Offset: 0x001FE05C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void unspreadVertical(Chunk _chunk, int _blockX, int _y, int _blockZ, int _stab, HashSet<Vector3i> _list)
 	{
@@ -119,7 +119,7 @@ public class StabilityInitializer
 		}
 	}
 
-	// Token: 0x06005321 RID: 21281 RVA: 0x001FD354 File Offset: 0x001FB554
+	// Token: 0x060053A9 RID: 21417 RVA: 0x001FFFC4 File Offset: 0x001FE1C4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void unspreadHorizontal(Chunk _chunk, int _blockX, int _y, int _blockZ, int _stab, HashSet<Vector3i> _list)
 	{
@@ -164,7 +164,7 @@ public class StabilityInitializer
 		}
 	}
 
-	// Token: 0x06005322 RID: 21282 RVA: 0x001FD48C File Offset: 0x001FB68C
+	// Token: 0x060053AA RID: 21418 RVA: 0x002000FC File Offset: 0x001FE2FC
 	public void BlockPlacedAt(int _worldX, int _worldY, int _worldZ, BlockValue _blockValue)
 	{
 		int num = 0;
@@ -202,7 +202,7 @@ public class StabilityInitializer
 		}
 	}
 
-	// Token: 0x06005323 RID: 21283 RVA: 0x001FD5A4 File Offset: 0x001FB7A4
+	// Token: 0x060053AB RID: 21419 RVA: 0x00200214 File Offset: 0x001FE414
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void spreadVertical(Chunk _chunk, int _blockX, int _y, int _blockZ, int _stab)
 	{
@@ -268,7 +268,7 @@ public class StabilityInitializer
 		}
 	}
 
-	// Token: 0x06005324 RID: 21284 RVA: 0x001FD6FC File Offset: 0x001FB8FC
+	// Token: 0x060053AC RID: 21420 RVA: 0x0020036C File Offset: 0x001FE56C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void spreadHorizontal(Chunk _chunk, int _blockX, int _y, int _blockZ, int _stab)
 	{
@@ -329,7 +329,7 @@ public class StabilityInitializer
 		}
 	}
 
-	// Token: 0x06005325 RID: 21285 RVA: 0x001FD81C File Offset: 0x001FBA1C
+	// Token: 0x060053AD RID: 21421 RVA: 0x0020048C File Offset: 0x001FE68C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void clearDown(Chunk _chunk, int _blockX, int _y, int _blockZ, int _stabStop)
 	{
@@ -351,7 +351,7 @@ public class StabilityInitializer
 		}
 	}
 
-	// Token: 0x06005326 RID: 21286 RVA: 0x001FD89C File Offset: 0x001FBA9C
+	// Token: 0x060053AE RID: 21422 RVA: 0x0020050C File Offset: 0x001FE70C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void clearHorizontal(Chunk _chunk, int _blockX, int _y, int _blockZ, int _stabStop)
 	{
@@ -384,10 +384,10 @@ public class StabilityInitializer
 		}
 	}
 
-	// Token: 0x040040D5 RID: 16597
+	// Token: 0x0400416B RID: 16747
 	public const byte MaxStability = 15;
 
-	// Token: 0x040040D6 RID: 16598
+	// Token: 0x0400416C RID: 16748
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WorldBase world;
 }

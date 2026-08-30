@@ -3,19 +3,19 @@ using System.Collections.Generic;
 
 namespace Platform
 {
-	// Token: 0x02001B69 RID: 7017
+	// Token: 0x02001B90 RID: 7056
 	public interface IPlayerInteractionsRecorder
 	{
-		// Token: 0x0600D167 RID: 53607
+		// Token: 0x0600D2F2 RID: 54002
 		void Init(IPlatform owner);
 
-		// Token: 0x0600D168 RID: 53608
+		// Token: 0x0600D2F3 RID: 54003
 		void RecordPlayerInteraction(PlayerInteraction interaction);
 
-		// Token: 0x0600D169 RID: 53609
+		// Token: 0x0600D2F4 RID: 54004
 		void RecordPlayerInteractions(IEnumerable<PlayerInteraction> interactions);
 
-		// Token: 0x0600D16A RID: 53610
+		// Token: 0x0600D2F5 RID: 54005
 		void Destroy();
 	}
 }

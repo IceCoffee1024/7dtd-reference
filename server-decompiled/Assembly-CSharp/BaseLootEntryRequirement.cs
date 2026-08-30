@@ -2,16 +2,16 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x02000619 RID: 1561
+// Token: 0x02000622 RID: 1570
 [Preserve]
 public class BaseLootEntryRequirement
 {
-	// Token: 0x060032B4 RID: 12980 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06003307 RID: 13063 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void Init(XElement e)
 	{
 	}
 
-	// Token: 0x060032B5 RID: 12981 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x06003308 RID: 13064 RVA: 0x00020021 File Offset: 0x0001E221
 	public virtual bool CheckRequirement(EntityPlayer player)
 	{
 		return true;

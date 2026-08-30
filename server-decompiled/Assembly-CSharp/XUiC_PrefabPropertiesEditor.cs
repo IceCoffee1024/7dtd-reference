@@ -4,13 +4,13 @@ using System.Diagnostics;
 using System.Globalization;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FB9 RID: 4025
+// Token: 0x02000FD2 RID: 4050
 [Preserve]
 public class XUiC_PrefabPropertiesEditor : XUiController
 {
-	// Token: 0x17000EAD RID: 3757
-	// (get) Token: 0x06007EF7 RID: 32503 RVA: 0x00303132 File Offset: 0x00301332
-	// (set) Token: 0x06007EF8 RID: 32504 RVA: 0x0030313C File Offset: 0x0030133C
+	// Token: 0x17000EE6 RID: 3814
+	// (get) Token: 0x06007FE9 RID: 32745 RVA: 0x00307906 File Offset: 0x00305B06
+	// (set) Token: 0x06007FEA RID: 32746 RVA: 0x00307910 File Offset: 0x00305B10
 	public Prefab Prefab
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -32,7 +32,7 @@ public class XUiC_PrefabPropertiesEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007EF9 RID: 32505 RVA: 0x00303184 File Offset: 0x00301384
+	// Token: 0x06007FEB RID: 32747 RVA: 0x00307958 File Offset: 0x00305B58
 	public override void Init()
 	{
 		base.Init();
@@ -65,7 +65,7 @@ public class XUiC_PrefabPropertiesEditor : XUiController
 		((XUiC_SimpleButton)base.GetChildById("btnOpenInEditor")).OnPressed += this.BtnOpenInEditor_OnOnPressed;
 	}
 
-	// Token: 0x06007EFA RID: 32506 RVA: 0x003032E0 File Offset: 0x003014E0
+	// Token: 0x06007FEC RID: 32748 RVA: 0x00307AB4 File Offset: 0x00305CB4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void featureChangedCallback(XUiC_PrefabFeatureEditorList _list, string _featureName, bool _selected)
 	{
@@ -75,7 +75,7 @@ public class XUiC_PrefabPropertiesEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007EFB RID: 32507 RVA: 0x003032F5 File Offset: 0x003014F5
+	// Token: 0x06007FED RID: 32749 RVA: 0x00307AC9 File Offset: 0x00305CC9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnOpenInEditor_OnOnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -83,14 +83,14 @@ public class XUiC_PrefabPropertiesEditor : XUiController
 		this.xui.playerUI.windowManager.Close(this.windowGroup, false);
 	}
 
-	// Token: 0x06007EFC RID: 32508 RVA: 0x00088DF5 File Offset: 0x00086FF5
+	// Token: 0x06007FEE RID: 32750 RVA: 0x00089495 File Offset: 0x00087695
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnCancel_OnPressed(XUiController _sender, int _mouseButton)
 	{
 		this.xui.playerUI.windowManager.Close(this.windowGroup, false);
 	}
 
-	// Token: 0x06007EFD RID: 32509 RVA: 0x00303334 File Offset: 0x00301534
+	// Token: 0x06007FEF RID: 32751 RVA: 0x00307B08 File Offset: 0x00305D08
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnSave_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -102,7 +102,7 @@ public class XUiC_PrefabPropertiesEditor : XUiController
 		this.xui.playerUI.windowManager.Close(this.windowGroup, false);
 	}
 
-	// Token: 0x06007EFE RID: 32510 RVA: 0x00303394 File Offset: 0x00301594
+	// Token: 0x06007FF0 RID: 32752 RVA: 0x00307B68 File Offset: 0x00305D68
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -121,7 +121,7 @@ public class XUiC_PrefabPropertiesEditor : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007EFF RID: 32511 RVA: 0x00303424 File Offset: 0x00301624
+	// Token: 0x06007FF1 RID: 32753 RVA: 0x00307BF8 File Offset: 0x00305DF8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxDifficultyTier_OnValueChanged(XUiController _sender, long _oldvalue, long _newvalue)
 	{
@@ -137,7 +137,7 @@ public class XUiC_PrefabPropertiesEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007F00 RID: 32512 RVA: 0x00303464 File Offset: 0x00301664
+	// Token: 0x06007FF2 RID: 32754 RVA: 0x00307C38 File Offset: 0x00305E38
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TxtThemeRepeatDistance_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -167,7 +167,7 @@ public class XUiC_PrefabPropertiesEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007F01 RID: 32513 RVA: 0x00303510 File Offset: 0x00301710
+	// Token: 0x06007FF3 RID: 32755 RVA: 0x00307CE4 File Offset: 0x00305EE4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TxtDuplicateRepeatDistance_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -197,7 +197,7 @@ public class XUiC_PrefabPropertiesEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007F02 RID: 32514 RVA: 0x003035BB File Offset: 0x003017BB
+	// Token: 0x06007FF4 RID: 32756 RVA: 0x00307D8F File Offset: 0x00305F8F
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -205,7 +205,7 @@ public class XUiC_PrefabPropertiesEditor : XUiController
 		this.prefab = null;
 	}
 
-	// Token: 0x06007F03 RID: 32515 RVA: 0x0008A091 File Offset: 0x00088291
+	// Token: 0x06007FF5 RID: 32757 RVA: 0x0008A73D File Offset: 0x0008893D
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -216,7 +216,7 @@ public class XUiC_PrefabPropertiesEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007F04 RID: 32516 RVA: 0x003035E8 File Offset: 0x003017E8
+	// Token: 0x06007FF6 RID: 32758 RVA: 0x00307DBC File Offset: 0x00305FBC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -233,7 +233,7 @@ public class XUiC_PrefabPropertiesEditor : XUiController
 		return true;
 	}
 
-	// Token: 0x06007F05 RID: 32517 RVA: 0x00303664 File Offset: 0x00301864
+	// Token: 0x06007FF7 RID: 32759 RVA: 0x00307E38 File Offset: 0x00306038
 	public static void Show(XUi _xui, XUiC_PrefabPropertiesEditor.EPropertiesFrom _from, PathAbstractions.AbstractedLocation _prefabLocation)
 	{
 		XUiC_PrefabPropertiesEditor childByType = ((XUiWindowGroup)_xui.playerUI.windowManager.GetWindow(XUiC_PrefabPropertiesEditor.ID)).Controller.GetChildByType<XUiC_PrefabPropertiesEditor>();
@@ -250,39 +250,39 @@ public class XUiC_PrefabPropertiesEditor : XUiController
 		_xui.playerUI.windowManager.Open(XUiC_PrefabPropertiesEditor.ID, true);
 	}
 
-	// Token: 0x04005DFB RID: 24059
+	// Token: 0x04005EC2 RID: 24258
 	public static string ID = "";
 
-	// Token: 0x04005DFC RID: 24060
+	// Token: 0x04005EC3 RID: 24259
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<XUiC_PrefabFeatureEditorList> featureLists = new List<XUiC_PrefabFeatureEditorList>();
 
-	// Token: 0x04005DFD RID: 24061
+	// Token: 0x04005EC4 RID: 24260
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxInt cbxDifficultyTier;
 
-	// Token: 0x04005DFE RID: 24062
+	// Token: 0x04005EC5 RID: 24261
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtThemeRepeatDistance;
 
-	// Token: 0x04005DFF RID: 24063
+	// Token: 0x04005EC6 RID: 24262
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtDuplicateRepeatDistance;
 
-	// Token: 0x04005E00 RID: 24064
+	// Token: 0x04005EC7 RID: 24263
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_PrefabPropertiesEditor.EPropertiesFrom propertiesFrom;
 
-	// Token: 0x04005E01 RID: 24065
+	// Token: 0x04005EC8 RID: 24264
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Prefab prefab;
 
-	// Token: 0x02000FBA RID: 4026
+	// Token: 0x02000FD3 RID: 4051
 	public enum EPropertiesFrom
 	{
-		// Token: 0x04005E03 RID: 24067
+		// Token: 0x04005ECA RID: 24266
 		LoadedPrefab,
-		// Token: 0x04005E04 RID: 24068
+		// Token: 0x04005ECB RID: 24267
 		FileBrowserSelection
 	}
 }

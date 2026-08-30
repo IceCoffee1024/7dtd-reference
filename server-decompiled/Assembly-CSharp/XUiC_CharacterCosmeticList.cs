@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using GUI_2;
 using UnityEngine.Scripting;
 
-// Token: 0x02000ECB RID: 3787
+// Token: 0x02000EE0 RID: 3808
 [Preserve]
 public class XUiC_CharacterCosmeticList : XUiController
 {
-	// Token: 0x17000DF7 RID: 3575
-	// (get) Token: 0x060076E0 RID: 30432 RVA: 0x002CAA0C File Offset: 0x002C8C0C
-	// (set) Token: 0x060076E1 RID: 30433 RVA: 0x002CAA14 File Offset: 0x002C8C14
+	// Token: 0x17000E11 RID: 3601
+	// (get) Token: 0x06007781 RID: 30593 RVA: 0x002CDF30 File Offset: 0x002CC130
+	// (set) Token: 0x06007782 RID: 30594 RVA: 0x002CDF38 File Offset: 0x002CC138
 	public XUiC_CharacterCosmeticEntry SelectedEntry
 	{
 		get
@@ -32,14 +32,14 @@ public class XUiC_CharacterCosmeticList : XUiController
 		}
 	}
 
-	// Token: 0x060076E2 RID: 30434 RVA: 0x002CAA67 File Offset: 0x002C8C67
+	// Token: 0x06007783 RID: 30595 RVA: 0x002CDF8B File Offset: 0x002CC18B
 	public override void Init()
 	{
 		base.Init();
 		this.entryList = base.GetChildrenByType<XUiC_CharacterCosmeticEntry>(null);
 	}
 
-	// Token: 0x060076E3 RID: 30435 RVA: 0x002CAA7C File Offset: 0x002C8C7C
+	// Token: 0x06007784 RID: 30596 RVA: 0x002CDFA0 File Offset: 0x002CC1A0
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -47,14 +47,14 @@ public class XUiC_CharacterCosmeticList : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060076E4 RID: 30436 RVA: 0x002CAAA1 File Offset: 0x002C8CA1
+	// Token: 0x06007785 RID: 30597 RVA: 0x002CDFC5 File Offset: 0x002CC1C5
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.xui.PlayerEquipment.Equipment.ClearTempCosmeticSlot();
 	}
 
-	// Token: 0x060076E5 RID: 30437 RVA: 0x002CAABE File Offset: 0x002C8CBE
+	// Token: 0x06007786 RID: 30598 RVA: 0x002CDFE2 File Offset: 0x002CC1E2
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -62,7 +62,7 @@ public class XUiC_CharacterCosmeticList : XUiController
 		bool isVisible = base.ViewComponent.IsVisible;
 	}
 
-	// Token: 0x060076E6 RID: 30438 RVA: 0x002CAAEC File Offset: 0x002C8CEC
+	// Token: 0x06007787 RID: 30599 RVA: 0x002CE010 File Offset: 0x002CC210
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateCallouts(bool _holdingItem)
 	{
@@ -81,7 +81,7 @@ public class XUiC_CharacterCosmeticList : XUiController
 		}
 	}
 
-	// Token: 0x060076E7 RID: 30439 RVA: 0x002CAB5C File Offset: 0x002C8D5C
+	// Token: 0x06007788 RID: 30600 RVA: 0x002CE080 File Offset: 0x002CC280
 	public void SetCosmeticList(List<ItemClass> _currentItems, EquipmentSlots slot)
 	{
 		this.currentItems = _currentItems;
@@ -149,7 +149,7 @@ public class XUiC_CharacterCosmeticList : XUiController
 		this.entryList[0].SelectCursorElement(true, false);
 	}
 
-	// Token: 0x060076E8 RID: 30440 RVA: 0x002CAD20 File Offset: 0x002C8F20
+	// Token: 0x06007789 RID: 30601 RVA: 0x002CE244 File Offset: 0x002CC444
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnPressCosmetic(XUiController _sender, int _mouseButton)
 	{
@@ -164,7 +164,7 @@ public class XUiC_CharacterCosmeticList : XUiController
 		}
 	}
 
-	// Token: 0x060076E9 RID: 30441 RVA: 0x002CAD48 File Offset: 0x002C8F48
+	// Token: 0x0600778A RID: 30602 RVA: 0x002CE26C File Offset: 0x002CC46C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetTempCosmeticSlot(XUiC_CharacterCosmeticEntry _entry)
 	{
@@ -187,27 +187,27 @@ public class XUiC_CharacterCosmeticList : XUiController
 		((XUiC_CharacterCosmeticWindowGroup)base.WindowGroup.Controller).ResetPreview();
 	}
 
-	// Token: 0x060076EA RID: 30442 RVA: 0x002CADEA File Offset: 0x002C8FEA
+	// Token: 0x0600778B RID: 30603 RVA: 0x002CE30E File Offset: 0x002CC50E
 	public void SetEmptyCosmetic()
 	{
 		this.SelectedEntry = this.entryList[0];
 	}
 
-	// Token: 0x04005791 RID: 22417
+	// Token: 0x04005836 RID: 22582
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal player;
 
-	// Token: 0x04005792 RID: 22418
+	// Token: 0x04005837 RID: 22583
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CharacterCosmeticEntry[] entryList;
 
-	// Token: 0x04005793 RID: 22419
+	// Token: 0x04005838 RID: 22584
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_CharacterCosmeticEntry selectedEntry;
 
-	// Token: 0x04005794 RID: 22420
+	// Token: 0x04005839 RID: 22585
 	public XUiC_CharacterCosmeticsListWindow Owner;
 
-	// Token: 0x04005795 RID: 22421
+	// Token: 0x0400583A RID: 22586
 	public List<ItemClass> currentItems;
 }

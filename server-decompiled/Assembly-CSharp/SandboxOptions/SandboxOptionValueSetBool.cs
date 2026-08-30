@@ -2,10 +2,10 @@
 
 namespace SandboxOptions
 {
-	// Token: 0x02001879 RID: 6265
+	// Token: 0x0200189F RID: 6303
 	public class SandboxOptionValueSetBool : SandboxOptionValueSet
 	{
-		// Token: 0x0600C10E RID: 49422 RVA: 0x0047A118 File Offset: 0x00478318
+		// Token: 0x0600C294 RID: 49812 RVA: 0x0048021C File Offset: 0x0047E41C
 		public override bool GetValue(int index, out object val)
 		{
 			bool flag;
@@ -14,7 +14,7 @@ namespace SandboxOptions
 			return boolValue;
 		}
 
-		// Token: 0x0600C10F RID: 49423 RVA: 0x0047A136 File Offset: 0x00478336
+		// Token: 0x0600C295 RID: 49813 RVA: 0x0048023A File Offset: 0x0047E43A
 		public override bool GetBoolValue(int index, out bool val)
 		{
 			if (index >= 0 && index < this.BoolValues.Length)
@@ -26,13 +26,13 @@ namespace SandboxOptions
 			return false;
 		}
 
-		// Token: 0x0600C110 RID: 49424 RVA: 0x0047A157 File Offset: 0x00478357
+		// Token: 0x0600C296 RID: 49814 RVA: 0x0048025B File Offset: 0x0047E45B
 		public override bool GetBoolValue(int index)
 		{
 			return this.BoolValues[index];
 		}
 
-		// Token: 0x0600C111 RID: 49425 RVA: 0x0047A164 File Offset: 0x00478364
+		// Token: 0x0600C297 RID: 49815 RVA: 0x00480268 File Offset: 0x0047E468
 		public override int GetBoolIndex(bool val)
 		{
 			for (int i = 0; i < this.BoolValues.Length; i++)
@@ -45,35 +45,35 @@ namespace SandboxOptions
 			return -1;
 		}
 
-		// Token: 0x0600C112 RID: 49426 RVA: 0x0047A192 File Offset: 0x00478392
+		// Token: 0x0600C298 RID: 49816 RVA: 0x00480296 File Offset: 0x0047E496
 		public override bool IsValidIndex(int index)
 		{
 			return index >= 0 && index < this.BoolValues.Length;
 		}
 
-		// Token: 0x0600C113 RID: 49427 RVA: 0x0047A1A5 File Offset: 0x004783A5
+		// Token: 0x0600C299 RID: 49817 RVA: 0x004802A9 File Offset: 0x0047E4A9
 		public override int GetValueCount()
 		{
 			return this.BoolValues.Length;
 		}
 
-		// Token: 0x0600C114 RID: 49428 RVA: 0x0047A1AF File Offset: 0x004783AF
-		public override string GetDisplayAtIndex(int index)
+		// Token: 0x0600C29A RID: 49818 RVA: 0x004802B3 File Offset: 0x0047E4B3
+		public override string GetDisplayAtIndex(int index, string languageName = null)
 		{
 			if (index < 0 || index >= this.DisplayValues.Length)
 			{
 				return "";
 			}
-			return Localization.Get(this.DisplayValues[index], false, null);
+			return Localization.Get(this.DisplayValues[index], false, languageName);
 		}
 
-		// Token: 0x0600C115 RID: 49429 RVA: 0x0047A1D5 File Offset: 0x004783D5
+		// Token: 0x0600C29B RID: 49819 RVA: 0x004802D9 File Offset: 0x0047E4D9
 		public override string GetValueListString()
 		{
 			return string.Join<bool>(", ", this.BoolValues);
 		}
 
-		// Token: 0x04009285 RID: 37509
+		// Token: 0x040093AE RID: 37806
 		public bool[] BoolValues;
 	}
 }

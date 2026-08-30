@@ -3,12 +3,12 @@ using UnityEngine.Scripting;
 
 namespace RaycastPathing
 {
-	// Token: 0x020018A9 RID: 6313
+	// Token: 0x020018CF RID: 6351
 	[Preserve]
 	public class FloodFillNodeScore
 	{
-		// Token: 0x170017CA RID: 6090
-		// (get) Token: 0x0600C274 RID: 49780 RVA: 0x0047E8EC File Offset: 0x0047CAEC
+		// Token: 0x1700183C RID: 6204
+		// (get) Token: 0x0600C3FB RID: 50171 RVA: 0x00484A18 File Offset: 0x00482C18
 		public float F
 		{
 			get
@@ -17,10 +17,10 @@ namespace RaycastPathing
 			}
 		}
 
-		// Token: 0x04009313 RID: 37651
+		// Token: 0x0400943C RID: 37948
 		public float G;
 
-		// Token: 0x04009314 RID: 37652
+		// Token: 0x0400943D RID: 37949
 		public float H;
 	}
 }

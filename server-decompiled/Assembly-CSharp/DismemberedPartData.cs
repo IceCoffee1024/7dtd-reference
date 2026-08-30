@@ -5,8 +5,8 @@ using UnityEngine;
 public class DismemberedPartData
 {
 	// Token: 0x1700005E RID: 94
-	// (get) Token: 0x060005B2 RID: 1458 RVA: 0x0002942E File Offset: 0x0002762E
-	// (set) Token: 0x060005B3 RID: 1459 RVA: 0x00029436 File Offset: 0x00027636
+	// (get) Token: 0x060005B3 RID: 1459 RVA: 0x000294F2 File Offset: 0x000276F2
+	// (set) Token: 0x060005B4 RID: 1460 RVA: 0x000294FA File Offset: 0x000276FA
 	public Vector3 rot
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
@@ -14,15 +14,15 @@ public class DismemberedPartData
 	}
 
 	// Token: 0x1700005F RID: 95
-	// (get) Token: 0x060005B4 RID: 1460 RVA: 0x0002943F File Offset: 0x0002763F
-	// (set) Token: 0x060005B5 RID: 1461 RVA: 0x00029447 File Offset: 0x00027647
+	// (get) Token: 0x060005B5 RID: 1461 RVA: 0x00029503 File Offset: 0x00027703
+	// (set) Token: 0x060005B6 RID: 1462 RVA: 0x0002950B File Offset: 0x0002770B
 	public bool hasRotOffset
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x060005B6 RID: 1462 RVA: 0x00029450 File Offset: 0x00027650
+	// Token: 0x060005B7 RID: 1463 RVA: 0x00029514 File Offset: 0x00027714
 	public void SetRot(Vector3 _rot)
 	{
 		this.hasRotOffset = true;
@@ -30,11 +30,11 @@ public class DismemberedPartData
 	}
 
 	// Token: 0x17000060 RID: 96
-	// (get) Token: 0x060005B7 RID: 1463 RVA: 0x00029460 File Offset: 0x00027660
-	// (set) Token: 0x060005B8 RID: 1464 RVA: 0x00029468 File Offset: 0x00027668
+	// (get) Token: 0x060005B8 RID: 1464 RVA: 0x00029524 File Offset: 0x00027724
+	// (set) Token: 0x060005B9 RID: 1465 RVA: 0x0002952C File Offset: 0x0002772C
 	public bool Invalid { get; set; }
 
-	// Token: 0x060005B9 RID: 1465 RVA: 0x00029471 File Offset: 0x00027671
+	// Token: 0x060005BA RID: 1466 RVA: 0x00029535 File Offset: 0x00027735
 	public string Log()
 	{
 		return string.Format(" property: {0} prefabPath: {1} target: {2} damageTag {3}", new object[] { this.propertyKey, this.prefabPath, this.targetBone, this.damageTypeKey });

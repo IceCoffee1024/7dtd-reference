@@ -3,11 +3,11 @@ using System.Globalization;
 using System.Xml.Linq;
 using UnityEngine;
 
-// Token: 0x02000D0A RID: 3338
+// Token: 0x02000D1C RID: 3356
 [PublicizedFrom(EAccessModifier.Internal)]
 public static class TriggerEffectDualsenseParsers
 {
-	// Token: 0x060065CE RID: 26062 RVA: 0x002809D8 File Offset: 0x0027EBD8
+	// Token: 0x0600665A RID: 26202 RVA: 0x002838E8 File Offset: 0x00281AE8
 	public static bool ParseWeaponEffects(string effectType, XElement elementTriggerEffect, string name, out byte[] strengths, out TriggerEffectManager.EffectDualsense effectTypeDualsense, out byte frequency, out byte strength, out byte position, out byte endPosition, out byte amplitude)
 	{
 		effectTypeDualsense = TriggerEffectManager.EffectDualsense.Off;
@@ -26,7 +26,7 @@ public static class TriggerEffectDualsenseParsers
 		return TriggerEffectDualsenseParsers.ParseStartEndPosition(effectType, elementTriggerEffect, name, out position, out endPosition) && TriggerEffectDualsenseParsers.ParseStrength(effectType, elementTriggerEffect, name, out strength);
 	}
 
-	// Token: 0x060065CF RID: 26063 RVA: 0x00280A54 File Offset: 0x0027EC54
+	// Token: 0x0600665B RID: 26203 RVA: 0x00283964 File Offset: 0x00281B64
 	public static bool ParseStrength(string effectType, XElement elementTriggerEffect, string name, out byte strength)
 	{
 		string text;
@@ -49,7 +49,7 @@ public static class TriggerEffectDualsenseParsers
 		return true;
 	}
 
-	// Token: 0x060065D0 RID: 26064 RVA: 0x00280B24 File Offset: 0x0027ED24
+	// Token: 0x0600665C RID: 26204 RVA: 0x00283A34 File Offset: 0x00281C34
 	public static bool ParseStartEndPosition(string effectType, XElement elementTriggerEffect, string name, out byte startPosition, out byte endPosition)
 	{
 		string text;
@@ -93,7 +93,7 @@ public static class TriggerEffectDualsenseParsers
 		return true;
 	}
 
-	// Token: 0x060065D1 RID: 26065 RVA: 0x00280CCC File Offset: 0x0027EECC
+	// Token: 0x0600665D RID: 26205 RVA: 0x00283BDC File Offset: 0x00281DDC
 	public static bool ParseStartEndStrengths(string effectType, XElement elementTriggerEffect, string name, out byte startStrength, out byte endStrength)
 	{
 		string text;
@@ -137,7 +137,7 @@ public static class TriggerEffectDualsenseParsers
 		return true;
 	}
 
-	// Token: 0x060065D2 RID: 26066 RVA: 0x00280E74 File Offset: 0x0027F074
+	// Token: 0x0600665E RID: 26206 RVA: 0x00283D84 File Offset: 0x00281F84
 	public static bool ParsePosition(string effectType, XElement elementTriggerEffect, string name, out byte position)
 	{
 		string text;
@@ -160,7 +160,7 @@ public static class TriggerEffectDualsenseParsers
 		return true;
 	}
 
-	// Token: 0x060065D3 RID: 26067 RVA: 0x00280F44 File Offset: 0x0027F144
+	// Token: 0x0600665F RID: 26207 RVA: 0x00283E54 File Offset: 0x00282054
 	public static bool ParseAmplitude(string effectType, XElement elementTriggerEffect, string name, out byte amplitude)
 	{
 		string text;
@@ -183,7 +183,7 @@ public static class TriggerEffectDualsenseParsers
 		return true;
 	}
 
-	// Token: 0x060065D4 RID: 26068 RVA: 0x00281010 File Offset: 0x0027F210
+	// Token: 0x06006660 RID: 26208 RVA: 0x00283F20 File Offset: 0x00282120
 	public static bool ParseFrequency(string effectType, XElement elementTriggerEffect, string name, out byte frequency)
 	{
 		string text;
@@ -201,7 +201,7 @@ public static class TriggerEffectDualsenseParsers
 		return true;
 	}
 
-	// Token: 0x060065D5 RID: 26069 RVA: 0x002810A4 File Offset: 0x0027F2A4
+	// Token: 0x06006661 RID: 26209 RVA: 0x00283FB4 File Offset: 0x002821B4
 	public static bool ParseEffectStrengths(string effectType, XElement elementTriggerEffect, string name, out byte[] strengths)
 	{
 		string text;

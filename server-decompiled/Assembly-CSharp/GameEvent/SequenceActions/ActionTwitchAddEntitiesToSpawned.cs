@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019D4 RID: 6612
+	// Token: 0x020019FB RID: 6651
 	[Preserve]
 	public class ActionTwitchAddEntitiesToSpawned : ActionBaseTargetAction
 	{
-		// Token: 0x0600C929 RID: 51497 RVA: 0x0049E2C4 File Offset: 0x0049C4C4
+		// Token: 0x0600CAB2 RID: 51890 RVA: 0x004A46B8 File Offset: 0x004A28B8
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			EntityPlayer entityPlayer = base.Owner.Target as EntityPlayer;
@@ -43,7 +43,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C92A RID: 51498 RVA: 0x0049E420 File Offset: 0x0049C620
+		// Token: 0x0600CAB3 RID: 51891 RVA: 0x004A4814 File Offset: 0x004A2A14
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{

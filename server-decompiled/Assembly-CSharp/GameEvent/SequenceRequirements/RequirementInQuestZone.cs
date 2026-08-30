@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x0200190F RID: 6415
+	// Token: 0x02001935 RID: 6453
 	[Preserve]
 	public class RequirementInQuestZone : BaseRequirement
 	{
-		// Token: 0x0600C595 RID: 50581 RVA: 0x0048B160 File Offset: 0x00489360
+		// Token: 0x0600C71C RID: 50972 RVA: 0x004914AC File Offset: 0x0048F6AC
 		public override bool CanPerform(Entity target)
 		{
 			World world = GameManager.Instance.World;
@@ -21,7 +21,7 @@ namespace GameEvent.SequenceRequirements
 			return this.Invert;
 		}
 
-		// Token: 0x0600C596 RID: 50582 RVA: 0x0048B1AE File Offset: 0x004893AE
+		// Token: 0x0600C71D RID: 50973 RVA: 0x004914FA File Offset: 0x0048F6FA
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseRequirement CloneChildSettings()
 		{

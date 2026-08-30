@@ -4,17 +4,17 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FFE RID: 4094
+// Token: 0x02001017 RID: 4119
 [Preserve]
 public class XUiC_RequiredItemStack : XUiC_ItemStack
 {
-	// Token: 0x140000DA RID: 218
-	// (add) Token: 0x06008159 RID: 33113 RVA: 0x00312E58 File Offset: 0x00311058
-	// (remove) Token: 0x0600815A RID: 33114 RVA: 0x00312E90 File Offset: 0x00311090
+	// Token: 0x140000DB RID: 219
+	// (add) Token: 0x0600824B RID: 33355 RVA: 0x00317688 File Offset: 0x00315888
+	// (remove) Token: 0x0600824C RID: 33356 RVA: 0x003176C0 File Offset: 0x003158C0
 	public event XUiEvent_RequiredSlotFailedSwapEventHandler FailedSwap;
 
-	// Token: 0x17000EF8 RID: 3832
-	// (get) Token: 0x0600815B RID: 33115 RVA: 0x00312EC5 File Offset: 0x003110C5
+	// Token: 0x17000F31 RID: 3889
+	// (get) Token: 0x0600824D RID: 33357 RVA: 0x003176F5 File Offset: 0x003158F5
 	public bool HasAllowedItemClass
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -24,8 +24,8 @@ public class XUiC_RequiredItemStack : XUiC_ItemStack
 		}
 	}
 
-	// Token: 0x17000EF9 RID: 3833
-	// (get) Token: 0x0600815C RID: 33116 RVA: 0x00312EEE File Offset: 0x003110EE
+	// Token: 0x17000F32 RID: 3890
+	// (get) Token: 0x0600824E RID: 33358 RVA: 0x0031771E File Offset: 0x0031591E
 	public override string ItemIcon
 	{
 		get
@@ -38,8 +38,8 @@ public class XUiC_RequiredItemStack : XUiC_ItemStack
 		}
 	}
 
-	// Token: 0x17000EFA RID: 3834
-	// (get) Token: 0x0600815D RID: 33117 RVA: 0x00312F20 File Offset: 0x00311120
+	// Token: 0x17000F33 RID: 3891
+	// (get) Token: 0x0600824F RID: 33359 RVA: 0x00317750 File Offset: 0x00315950
 	public override string ItemIconColor
 	{
 		get
@@ -59,7 +59,7 @@ public class XUiC_RequiredItemStack : XUiC_ItemStack
 		}
 	}
 
-	// Token: 0x0600815E RID: 33118 RVA: 0x00312F6C File Offset: 0x0031116C
+	// Token: 0x06008250 RID: 33360 RVA: 0x0031779C File Offset: 0x0031599C
 	public bool ItemAllowed(ItemStack _stack)
 	{
 		bool flag;
@@ -84,7 +84,7 @@ public class XUiC_RequiredItemStack : XUiC_ItemStack
 		return flag;
 	}
 
-	// Token: 0x0600815F RID: 33119 RVA: 0x00313017 File Offset: 0x00311217
+	// Token: 0x06008251 RID: 33361 RVA: 0x00317847 File Offset: 0x00315A47
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool CanSwap(ItemStack _stack)
 	{
@@ -105,7 +105,7 @@ public class XUiC_RequiredItemStack : XUiC_ItemStack
 		return flag;
 	}
 
-	// Token: 0x06008160 RID: 33120 RVA: 0x00313048 File Offset: 0x00311248
+	// Token: 0x06008252 RID: 33362 RVA: 0x00317878 File Offset: 0x00315A78
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void HandleDropOne()
 	{
@@ -118,7 +118,7 @@ public class XUiC_RequiredItemStack : XUiC_ItemStack
 		base.PlayPlaceSound(null);
 	}
 
-	// Token: 0x06008161 RID: 33121 RVA: 0x0031308C File Offset: 0x0031128C
+	// Token: 0x06008253 RID: 33363 RVA: 0x003178BC File Offset: 0x00315ABC
 	public bool TryStack(ItemStack _stack, int _countToPlace = -1)
 	{
 		if (_stack.IsEmpty())
@@ -153,7 +153,7 @@ public class XUiC_RequiredItemStack : XUiC_ItemStack
 				return false;
 			}
 			ItemClass itemClassOrMissing = this.itemStack.itemValue.ItemClassOrMissing;
-			int num = ((this.OverrideStackCount == -1) ? itemClassOrMissing.Stacknumber.Value : Mathf.Min(itemClassOrMissing.Stacknumber.Value, this.OverrideStackCount)) - this.itemStack.count;
+			int num = ((this.OverrideStackCount == -1) ? itemClassOrMissing.MaxCount : Mathf.Min(itemClassOrMissing.MaxCount, this.OverrideStackCount)) - this.itemStack.count;
 			if (num <= 0)
 			{
 				return false;
@@ -171,20 +171,20 @@ public class XUiC_RequiredItemStack : XUiC_ItemStack
 		}
 	}
 
-	// Token: 0x06008162 RID: 33122 RVA: 0x003131B2 File Offset: 0x003113B2
+	// Token: 0x06008254 RID: 33364 RVA: 0x003179D8 File Offset: 0x00315BD8
 	public void ClearAllowedItemClasses()
 	{
 		this.IsDirty = true;
 		this.allowedItemClasses.Clear();
 	}
 
-	// Token: 0x06008163 RID: 33123 RVA: 0x003131C6 File Offset: 0x003113C6
+	// Token: 0x06008255 RID: 33365 RVA: 0x003179EC File Offset: 0x00315BEC
 	public void SetAllowedItemClassSingle(string _itemClassName)
 	{
 		this.SetAllowedItemClassSingle(ItemClass.GetItemClass(_itemClassName, false));
 	}
 
-	// Token: 0x06008164 RID: 33124 RVA: 0x003131D5 File Offset: 0x003113D5
+	// Token: 0x06008256 RID: 33366 RVA: 0x003179FB File Offset: 0x00315BFB
 	public void SetAllowedItemClassSingle(ItemClass _itemClass)
 	{
 		this.IsDirty = true;
@@ -195,7 +195,7 @@ public class XUiC_RequiredItemStack : XUiC_ItemStack
 		}
 	}
 
-	// Token: 0x06008165 RID: 33125 RVA: 0x003131F8 File Offset: 0x003113F8
+	// Token: 0x06008257 RID: 33367 RVA: 0x00317A1E File Offset: 0x00315C1E
 	public void SetAllowedItemClasses(ItemClass[] _itemClasses)
 	{
 		this.IsDirty = true;
@@ -203,7 +203,7 @@ public class XUiC_RequiredItemStack : XUiC_ItemStack
 		this.allowedItemClasses.AddRange(_itemClasses);
 	}
 
-	// Token: 0x06008166 RID: 33126 RVA: 0x00313218 File Offset: 0x00311418
+	// Token: 0x06008258 RID: 33368 RVA: 0x00317A40 File Offset: 0x00315C40
 	public static void ParseItemClassesFromString(IList<ItemClass> _targetList, string _itemClassesString)
 	{
 		XUiC_RequiredItemStack.<>c__DisplayClass22_0 CS$<>8__locals1;
@@ -225,7 +225,7 @@ public class XUiC_RequiredItemStack : XUiC_ItemStack
 		}
 	}
 
-	// Token: 0x06008168 RID: 33128 RVA: 0x0031328C File Offset: 0x0031148C
+	// Token: 0x0600825A RID: 33370 RVA: 0x00317AB4 File Offset: 0x00315CB4
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void <ParseItemClassesFromString>g__ParseTagsBasedEntry|22_0(string _text, ref XUiC_RequiredItemStack.<>c__DisplayClass22_0 A_1)
@@ -241,7 +241,7 @@ public class XUiC_RequiredItemStack : XUiC_ItemStack
 		}
 	}
 
-	// Token: 0x06008169 RID: 33129 RVA: 0x00313334 File Offset: 0x00311534
+	// Token: 0x0600825B RID: 33371 RVA: 0x00317B5C File Offset: 0x00315D5C
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void <ParseItemClassesFromString>g__AddItemClassByName|22_1(string _itemClassName, ref XUiC_RequiredItemStack.<>c__DisplayClass22_0 A_1)
@@ -255,7 +255,7 @@ public class XUiC_RequiredItemStack : XUiC_ItemStack
 		XUiC_RequiredItemStack.<ParseItemClassesFromString>g__AddItemClass|22_2(itemClass, ref A_1);
 	}
 
-	// Token: 0x0600816A RID: 33130 RVA: 0x0031336E File Offset: 0x0031156E
+	// Token: 0x0600825C RID: 33372 RVA: 0x00317B96 File Offset: 0x00315D96
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public static void <ParseItemClassesFromString>g__AddItemClass|22_2(ItemClass _itemClass, ref XUiC_RequiredItemStack.<>c__DisplayClass22_0 A_1)
@@ -267,29 +267,29 @@ public class XUiC_RequiredItemStack : XUiC_ItemStack
 		A_1._targetList.Add(_itemClass);
 	}
 
-	// Token: 0x04005FB6 RID: 24502
+	// Token: 0x0400607D RID: 24701
 	public XUiC_RequiredItemStack.RequiredTypes RequiredType;
 
-	// Token: 0x04005FB7 RID: 24503
+	// Token: 0x0400607E RID: 24702
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<ItemClass> allowedItemClasses = new List<ItemClass>();
 
-	// Token: 0x04005FB8 RID: 24504
+	// Token: 0x0400607F RID: 24703
 	public bool RequiredItemOnly = true;
 
-	// Token: 0x04005FB9 RID: 24505
+	// Token: 0x04006080 RID: 24704
 	public bool TakeOnly;
 
-	// Token: 0x02000FFF RID: 4095
+	// Token: 0x02001018 RID: 4120
 	public enum RequiredTypes
 	{
-		// Token: 0x04005FBB RID: 24507
+		// Token: 0x04006082 RID: 24706
 		ItemClass,
-		// Token: 0x04005FBC RID: 24508
+		// Token: 0x04006083 RID: 24707
 		IsPart,
-		// Token: 0x04005FBD RID: 24509
+		// Token: 0x04006084 RID: 24708
 		HasQuality,
-		// Token: 0x04005FBE RID: 24510
+		// Token: 0x04006085 RID: 24709
 		HasQualityNoParts
 	}
 }

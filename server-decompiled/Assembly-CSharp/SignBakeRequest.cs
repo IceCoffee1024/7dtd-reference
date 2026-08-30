@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000AAD RID: 2733
+// Token: 0x02000ABE RID: 2750
 public readonly struct SignBakeRequest : IComparable<SignBakeRequest>
 {
-	// Token: 0x060051EF RID: 20975 RVA: 0x001F4780 File Offset: 0x001F2980
+	// Token: 0x06005275 RID: 21109 RVA: 0x001F7218 File Offset: 0x001F5418
 	public SignBakeRequest(int groupIndex, int tier, float groupMinDistanceSquared)
 	{
 		this.GroupIndex = groupIndex;
@@ -11,7 +11,7 @@ public readonly struct SignBakeRequest : IComparable<SignBakeRequest>
 		this.GroupMinDistanceSquared = groupMinDistanceSquared;
 	}
 
-	// Token: 0x060051F0 RID: 20976 RVA: 0x001F4798 File Offset: 0x001F2998
+	// Token: 0x06005276 RID: 21110 RVA: 0x001F7230 File Offset: 0x001F5430
 	public int CompareTo(SignBakeRequest other)
 	{
 		int num = this.Tier.CompareTo(other.Tier);
@@ -22,12 +22,12 @@ public readonly struct SignBakeRequest : IComparable<SignBakeRequest>
 		return this.GroupMinDistanceSquared.CompareTo(other.GroupMinDistanceSquared);
 	}
 
-	// Token: 0x04003F7C RID: 16252
+	// Token: 0x0400400D RID: 16397
 	public readonly int GroupIndex;
 
-	// Token: 0x04003F7D RID: 16253
+	// Token: 0x0400400E RID: 16398
 	public readonly int Tier;
 
-	// Token: 0x04003F7E RID: 16254
+	// Token: 0x0400400F RID: 16399
 	public readonly float GroupMinDistanceSquared;
 }

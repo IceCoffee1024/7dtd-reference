@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x0200136F RID: 4975
+// Token: 0x02001389 RID: 5001
 public enum BackedArrayHandleMode
 {
-	// Token: 0x040076EF RID: 30447
+	// Token: 0x040077C7 RID: 30663
 	ReadOnly,
-	// Token: 0x040076F0 RID: 30448
+	// Token: 0x040077C8 RID: 30664
 	ReadWrite
 }

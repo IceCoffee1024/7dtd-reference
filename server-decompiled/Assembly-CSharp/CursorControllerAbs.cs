@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using Audio;
 using UnityEngine;
 
-// Token: 0x020012B2 RID: 4786
+// Token: 0x020012CC RID: 4812
 public abstract class CursorControllerAbs : MonoBehaviour, IGamePrefsChangedListener
 {
-	// Token: 0x170011D2 RID: 4562
-	// (get) Token: 0x06009784 RID: 38788 RVA: 0x0039948F File Offset: 0x0039768F
+	// Token: 0x1700120B RID: 4619
+	// (get) Token: 0x0600987F RID: 39039 RVA: 0x0039E6D3 File Offset: 0x0039C8D3
 	public static bool PrefabReady
 	{
 		get
@@ -17,9 +17,9 @@ public abstract class CursorControllerAbs : MonoBehaviour, IGamePrefsChangedList
 		}
 	}
 
-	// Token: 0x170011D3 RID: 4563
-	// (get) Token: 0x06009785 RID: 38789 RVA: 0x0039949C File Offset: 0x0039769C
-	// (set) Token: 0x06009786 RID: 38790 RVA: 0x003994A4 File Offset: 0x003976A4
+	// Token: 0x1700120C RID: 4620
+	// (get) Token: 0x06009880 RID: 39040 RVA: 0x0039E6E0 File Offset: 0x0039C8E0
+	// (set) Token: 0x06009881 RID: 39041 RVA: 0x0039E6E8 File Offset: 0x0039C8E8
 	public virtual XUiView HoverTarget
 	{
 		get
@@ -33,36 +33,36 @@ public abstract class CursorControllerAbs : MonoBehaviour, IGamePrefsChangedList
 		}
 	}
 
-	// Token: 0x170011D4 RID: 4564
-	// (get) Token: 0x06009787 RID: 38791 RVA: 0x003994B7 File Offset: 0x003976B7
-	// (set) Token: 0x06009788 RID: 38792 RVA: 0x003994BF File Offset: 0x003976BF
+	// Token: 0x1700120D RID: 4621
+	// (get) Token: 0x06009882 RID: 39042 RVA: 0x0039E6FB File Offset: 0x0039C8FB
+	// (set) Token: 0x06009883 RID: 39043 RVA: 0x0039E703 File Offset: 0x0039C903
 	public XUiView navigationTarget
 	{
 		get; [PublicizedFrom(EAccessModifier.Protected)]
 		set;
 	}
 
-	// Token: 0x170011D5 RID: 4565
-	// (get) Token: 0x06009789 RID: 38793 RVA: 0x003994C8 File Offset: 0x003976C8
-	// (set) Token: 0x0600978A RID: 38794 RVA: 0x003994D0 File Offset: 0x003976D0
+	// Token: 0x1700120E RID: 4622
+	// (get) Token: 0x06009884 RID: 39044 RVA: 0x0039E70C File Offset: 0x0039C90C
+	// (set) Token: 0x06009885 RID: 39045 RVA: 0x0039E714 File Offset: 0x0039C914
 	public XUiView navigationTargetLater
 	{
 		get; [PublicizedFrom(EAccessModifier.Protected)]
 		set;
 	}
 
-	// Token: 0x170011D6 RID: 4566
-	// (get) Token: 0x0600978B RID: 38795 RVA: 0x003994D9 File Offset: 0x003976D9
-	// (set) Token: 0x0600978C RID: 38796 RVA: 0x003994E1 File Offset: 0x003976E1
+	// Token: 0x1700120F RID: 4623
+	// (get) Token: 0x06009886 RID: 39046 RVA: 0x0039E71D File Offset: 0x0039C91D
+	// (set) Token: 0x06009887 RID: 39047 RVA: 0x0039E725 File Offset: 0x0039C925
 	public XUiView lockNavigationToView
 	{
 		get; [PublicizedFrom(EAccessModifier.Protected)]
 		set;
 	}
 
-	// Token: 0x170011D7 RID: 4567
-	// (get) Token: 0x0600978D RID: 38797 RVA: 0x003994EA File Offset: 0x003976EA
-	// (set) Token: 0x0600978E RID: 38798 RVA: 0x003994F2 File Offset: 0x003976F2
+	// Token: 0x17001210 RID: 4624
+	// (get) Token: 0x06009888 RID: 39048 RVA: 0x0039E72E File Offset: 0x0039C92E
+	// (set) Token: 0x06009889 RID: 39049 RVA: 0x0039E736 File Offset: 0x0039C936
 	public bool Locked
 	{
 		get
@@ -75,9 +75,9 @@ public abstract class CursorControllerAbs : MonoBehaviour, IGamePrefsChangedList
 		}
 	}
 
-	// Token: 0x170011D8 RID: 4568
-	// (get) Token: 0x0600978F RID: 38799 RVA: 0x003994FB File Offset: 0x003976FB
-	// (set) Token: 0x06009790 RID: 38800 RVA: 0x00399503 File Offset: 0x00397703
+	// Token: 0x17001211 RID: 4625
+	// (get) Token: 0x0600988A RID: 39050 RVA: 0x0039E73F File Offset: 0x0039C93F
+	// (set) Token: 0x0600988B RID: 39051 RVA: 0x0039E747 File Offset: 0x0039C947
 	public bool VirtualCursorHidden
 	{
 		get
@@ -94,8 +94,8 @@ public abstract class CursorControllerAbs : MonoBehaviour, IGamePrefsChangedList
 		}
 	}
 
-	// Token: 0x170011D9 RID: 4569
-	// (get) Token: 0x06009791 RID: 38801 RVA: 0x0039951B File Offset: 0x0039771B
+	// Token: 0x17001212 RID: 4626
+	// (get) Token: 0x0600988C RID: 39052 RVA: 0x0039E75F File Offset: 0x0039C95F
 	public XUiView CurrentTarget
 	{
 		get
@@ -108,8 +108,8 @@ public abstract class CursorControllerAbs : MonoBehaviour, IGamePrefsChangedList
 		}
 	}
 
-	// Token: 0x170011DA RID: 4570
-	// (get) Token: 0x06009792 RID: 38802 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x17001213 RID: 4627
+	// (get) Token: 0x0600988D RID: 39053 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool CursorModeActive
 	{
 		get
@@ -118,56 +118,56 @@ public abstract class CursorControllerAbs : MonoBehaviour, IGamePrefsChangedList
 		}
 	}
 
-	// Token: 0x06009793 RID: 38803
+	// Token: 0x0600988E RID: 39054
 	public abstract Vector2 GetScreenPosition();
 
-	// Token: 0x06009794 RID: 38804
+	// Token: 0x0600988F RID: 39055
 	public abstract Vector2 GetLocalScreenPosition();
 
-	// Token: 0x06009795 RID: 38805
+	// Token: 0x06009890 RID: 39056
 	public abstract void SetScreenPosition(Vector2 _newPosition);
 
-	// Token: 0x06009796 RID: 38806
+	// Token: 0x06009891 RID: 39057
 	public abstract void SetScreenPosition(float _x, float _y);
 
-	// Token: 0x06009797 RID: 38807
+	// Token: 0x06009892 RID: 39058
 	public abstract void SetNavigationTarget(XUiView _view);
 
-	// Token: 0x06009798 RID: 38808
+	// Token: 0x06009893 RID: 39059
 	public abstract void SetNavigationTargetLater(XUiView _view);
 
-	// Token: 0x06009799 RID: 38809
+	// Token: 0x06009894 RID: 39060
 	public abstract void ResetNavigationTarget();
 
-	// Token: 0x0600979A RID: 38810
+	// Token: 0x06009895 RID: 39061
 	public abstract void ResetToCenter();
 
-	// Token: 0x0600979B RID: 38811
+	// Token: 0x06009896 RID: 39062
 	public abstract void SetNavigationLockView(XUiView _view, XUiView _viewToSelect = null);
 
-	// Token: 0x0600979C RID: 38812
+	// Token: 0x06009897 RID: 39063
 	public abstract bool IsWithinNavigationLockView(XUiView _view);
 
-	// Token: 0x0600979D RID: 38813
+	// Token: 0x06009898 RID: 39064
 	public abstract void RefreshSelection();
 
-	// Token: 0x0600979E RID: 38814
+	// Token: 0x06009899 RID: 39065
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract void OnVirtualCursorVisibleChanged();
 
-	// Token: 0x0600979F RID: 38815 RVA: 0x00399532 File Offset: 0x00397732
+	// Token: 0x0600989A RID: 39066 RVA: 0x0039E776 File Offset: 0x0039C976
 	public void SetGUIActions(PlayerActionsGUI _guiActions)
 	{
 		this.guiActions = _guiActions;
 	}
 
-	// Token: 0x060097A0 RID: 38816 RVA: 0x0039953B File Offset: 0x0039773B
+	// Token: 0x0600989B RID: 39067 RVA: 0x0039E77F File Offset: 0x0039C97F
 	public void SetWindowManager(GUIWindowManager _windowManager)
 	{
 		this.windowManager = _windowManager;
 	}
 
-	// Token: 0x060097A1 RID: 38817 RVA: 0x00399544 File Offset: 0x00397744
+	// Token: 0x0600989C RID: 39068 RVA: 0x0039E788 File Offset: 0x0039C988
 	public static void UpdateGamePrefs()
 	{
 		CursorControllerAbs.bSnapCursor = GamePrefs.GetBool(EnumGamePrefs.OptionsControllerCursorSnap);
@@ -175,7 +175,7 @@ public abstract class CursorControllerAbs : MonoBehaviour, IGamePrefsChangedList
 		CursorControllerAbs.hoverSpeed = GamePrefs.GetFloat(EnumGamePrefs.OptionsControllerCursorHoverSensitivity);
 	}
 
-	// Token: 0x060097A2 RID: 38818 RVA: 0x00399573 File Offset: 0x00397773
+	// Token: 0x0600989D RID: 39069 RVA: 0x0039E7B7 File Offset: 0x0039C9B7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void AwakeBase()
 	{
@@ -185,7 +185,7 @@ public abstract class CursorControllerAbs : MonoBehaviour, IGamePrefsChangedList
 		CursorControllerAbs.softCursors.Add(this);
 	}
 
-	// Token: 0x060097A3 RID: 38819 RVA: 0x0039959C File Offset: 0x0039779C
+	// Token: 0x0600989E RID: 39070 RVA: 0x0039E7E0 File Offset: 0x0039C9E0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void DestroyBase()
 	{
@@ -194,7 +194,7 @@ public abstract class CursorControllerAbs : MonoBehaviour, IGamePrefsChangedList
 		CursorControllerAbs.softCursors.Remove(this);
 	}
 
-	// Token: 0x060097A4 RID: 38820 RVA: 0x003995C4 File Offset: 0x003977C4
+	// Token: 0x0600989F RID: 39071 RVA: 0x0039E808 File Offset: 0x0039CA08
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void InitCursorBounds()
 	{
@@ -209,10 +209,10 @@ public abstract class CursorControllerAbs : MonoBehaviour, IGamePrefsChangedList
 		this.cursorBuffer = bounds.extents;
 	}
 
-	// Token: 0x060097A5 RID: 38821
+	// Token: 0x060098A0 RID: 39072
 	public abstract void UpdateMoveSpeed();
 
-	// Token: 0x060097A6 RID: 38822 RVA: 0x0039966E File Offset: 0x0039786E
+	// Token: 0x060098A1 RID: 39073 RVA: 0x0039E8B2 File Offset: 0x0039CAB2
 	public void UpdateBounds(string _boundsName, Bounds _bounds)
 	{
 		_bounds.Expand(this.cursorBuffer);
@@ -220,14 +220,14 @@ public abstract class CursorControllerAbs : MonoBehaviour, IGamePrefsChangedList
 		this.RefreshBounds();
 	}
 
-	// Token: 0x060097A7 RID: 38823 RVA: 0x00399690 File Offset: 0x00397890
+	// Token: 0x060098A2 RID: 39074 RVA: 0x0039E8D4 File Offset: 0x0039CAD4
 	public void RemoveBounds(string _boundsName)
 	{
 		this.activeBounds.Remove(_boundsName);
 		this.RefreshBounds();
 	}
 
-	// Token: 0x060097A8 RID: 38824 RVA: 0x003996A8 File Offset: 0x003978A8
+	// Token: 0x060098A3 RID: 39075 RVA: 0x0039E8EC File Offset: 0x0039CAEC
 	public void RefreshBounds()
 	{
 		this.currentBounds.size = Vector3.zero;
@@ -253,14 +253,14 @@ public abstract class CursorControllerAbs : MonoBehaviour, IGamePrefsChangedList
 		this.currentBounds.Encapsulate(new Vector3((float)this.uiCamera.cachedCamera.pixelWidth, (float)this.uiCamera.cachedCamera.pixelHeight));
 	}
 
-	// Token: 0x060097A9 RID: 38825 RVA: 0x00399794 File Offset: 0x00397994
+	// Token: 0x060098A4 RID: 39076 RVA: 0x0039E9D8 File Offset: 0x0039CBD8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void OnResolutionChanged(int _width, int _height)
 	{
 		base.StartCoroutine(this.RefreshBoundsNextFrame());
 	}
 
-	// Token: 0x060097AA RID: 38826 RVA: 0x003997A3 File Offset: 0x003979A3
+	// Token: 0x060098A5 RID: 39077 RVA: 0x0039E9E7 File Offset: 0x0039CBE7
 	public void OnGamePrefChanged(EnumGamePrefs _enum)
 	{
 		if (_enum == EnumGamePrefs.OptionsInterfaceSensitivity)
@@ -280,7 +280,7 @@ public abstract class CursorControllerAbs : MonoBehaviour, IGamePrefsChangedList
 		CursorControllerAbs.hoverSpeed = GamePrefs.GetFloat(_enum);
 	}
 
-	// Token: 0x060097AB RID: 38827 RVA: 0x003997DC File Offset: 0x003979DC
+	// Token: 0x060098A6 RID: 39078 RVA: 0x0039EA20 File Offset: 0x0039CC20
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public IEnumerator RefreshBoundsNextFrame()
 	{
@@ -289,13 +289,13 @@ public abstract class CursorControllerAbs : MonoBehaviour, IGamePrefsChangedList
 		yield break;
 	}
 
-	// Token: 0x060097AC RID: 38828
+	// Token: 0x060098A7 RID: 39079
 	public abstract void SetCursorHidden(bool _hidden);
 
-	// Token: 0x060097AD RID: 38829
+	// Token: 0x060098A8 RID: 39080
 	public abstract bool GetCursorHidden();
 
-	// Token: 0x060097AE RID: 38830 RVA: 0x003997EC File Offset: 0x003979EC
+	// Token: 0x060098A9 RID: 39081 RVA: 0x0039EA30 File Offset: 0x0039CC30
 	public bool GetMouseButtonDown(UICamera.MouseButton _mouseButton)
 	{
 		if (this.guiActions == null)
@@ -319,7 +319,7 @@ public abstract class CursorControllerAbs : MonoBehaviour, IGamePrefsChangedList
 		}
 	}
 
-	// Token: 0x060097AF RID: 38831 RVA: 0x0039987C File Offset: 0x00397A7C
+	// Token: 0x060098AA RID: 39082 RVA: 0x0039EAC0 File Offset: 0x0039CCC0
 	public bool GetMouseButton(UICamera.MouseButton _mouseButton)
 	{
 		if (this.guiActions == null)
@@ -343,7 +343,7 @@ public abstract class CursorControllerAbs : MonoBehaviour, IGamePrefsChangedList
 		}
 	}
 
-	// Token: 0x060097B0 RID: 38832 RVA: 0x0039990C File Offset: 0x00397B0C
+	// Token: 0x060098AB RID: 39083 RVA: 0x0039EB50 File Offset: 0x0039CD50
 	public bool GetMouseButtonUp(UICamera.MouseButton _mouseButton)
 	{
 		if (this.guiActions == null)
@@ -363,7 +363,7 @@ public abstract class CursorControllerAbs : MonoBehaviour, IGamePrefsChangedList
 		}
 	}
 
-	// Token: 0x060097B1 RID: 38833 RVA: 0x00399994 File Offset: 0x00397B94
+	// Token: 0x060098AC RID: 39084 RVA: 0x0039EBD8 File Offset: 0x0039CDD8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void DebugDrawBound(Bounds _bound)
 	{
@@ -381,13 +381,13 @@ public abstract class CursorControllerAbs : MonoBehaviour, IGamePrefsChangedList
 		Debug.DrawLine(vector3, vector2);
 	}
 
-	// Token: 0x060097B2 RID: 38834 RVA: 0x00399A47 File Offset: 0x00397C47
+	// Token: 0x060098AD RID: 39085 RVA: 0x0039EC8B File Offset: 0x0039CE8B
 	public static void SetCursor(CursorControllerAbs.ECursorType _cursorType)
 	{
 		SoftCursor.SetCursor(_cursorType);
 	}
 
-	// Token: 0x060097B3 RID: 38835 RVA: 0x00399A4F File Offset: 0x00397C4F
+	// Token: 0x060098AE RID: 39086 RVA: 0x0039EC93 File Offset: 0x0039CE93
 	public static void LoadStaticData(LoadManager.LoadGroup _loadGroup)
 	{
 		LoadManager.LoadAssetFromResources<GameObject>(CursorControllerAbs.softCursorPrefabPath, delegate(GameObject _asset)
@@ -396,7 +396,7 @@ public abstract class CursorControllerAbs : MonoBehaviour, IGamePrefsChangedList
 		}, null, false, true);
 	}
 
-	// Token: 0x060097B4 RID: 38836 RVA: 0x00399A80 File Offset: 0x00397C80
+	// Token: 0x060098AF RID: 39087 RVA: 0x0039ECC4 File Offset: 0x0039CEC4
 	public static CursorControllerAbs AddSoftCursor(UICamera _camera, PlayerActionsGUI _guiActions, GUIWindowManager _windowManager)
 	{
 		GameObject gameObject = _camera.gameObject.AddChild(CursorControllerAbs.softCursorPrefab);
@@ -414,143 +414,143 @@ public abstract class CursorControllerAbs : MonoBehaviour, IGamePrefsChangedList
 		return component;
 	}
 
-	// Token: 0x060097B5 RID: 38837 RVA: 0x00399B13 File Offset: 0x00397D13
+	// Token: 0x060098B0 RID: 39088 RVA: 0x0039ED57 File Offset: 0x0039CF57
 	public void PlayPagingSound()
 	{
 		Manager.PlayXUiSound(this.pagingSound, 1f);
 	}
 
-	// Token: 0x060097B6 RID: 38838 RVA: 0x00399B25 File Offset: 0x00397D25
+	// Token: 0x060098B1 RID: 39089 RVA: 0x0039ED69 File Offset: 0x0039CF69
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public CursorControllerAbs()
 	{
 	}
 
-	// Token: 0x040071DB RID: 29147
+	// Token: 0x040072B2 RID: 29362
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly string softCursorPrefabPath = "Prefabs/SoftCursor";
 
-	// Token: 0x040071DC RID: 29148
+	// Token: 0x040072B3 RID: 29363
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static GameObject softCursorPrefab;
 
-	// Token: 0x040071DD RID: 29149
+	// Token: 0x040072B4 RID: 29364
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public static List<CursorControllerAbs> softCursors = new List<CursorControllerAbs>();
 
-	// Token: 0x040071DE RID: 29150
+	// Token: 0x040072B5 RID: 29365
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public UICamera uiCamera;
 
-	// Token: 0x040071DF RID: 29151
+	// Token: 0x040072B6 RID: 29366
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public PlayerActionsGUI guiActions;
 
-	// Token: 0x040071E0 RID: 29152
+	// Token: 0x040072B7 RID: 29367
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public GUIWindowManager windowManager;
 
-	// Token: 0x040071E1 RID: 29153
+	// Token: 0x040072B8 RID: 29368
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public UISprite cursor;
 
-	// Token: 0x040071E2 RID: 29154
+	// Token: 0x040072B9 RID: 29369
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Bounds cursorWorldBounds;
 
-	// Token: 0x040071E3 RID: 29155
+	// Token: 0x040072BA RID: 29370
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Vector3 cursorBuffer;
 
-	// Token: 0x040071E4 RID: 29156
+	// Token: 0x040072BB RID: 29371
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Dictionary<string, Bounds> activeBounds = new Dictionary<string, Bounds>();
 
-	// Token: 0x040071E5 RID: 29157
+	// Token: 0x040072BC RID: 29372
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Bounds currentBounds;
 
-	// Token: 0x040071E6 RID: 29158
+	// Token: 0x040072BD RID: 29373
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AudioClip cursorSelectSound;
 
-	// Token: 0x040071E7 RID: 29159
+	// Token: 0x040072BE RID: 29374
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public AudioClip pagingSound;
 
-	// Token: 0x040071E8 RID: 29160
+	// Token: 0x040072BF RID: 29375
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public XUiView hoverTarget;
 
-	// Token: 0x040071E9 RID: 29161
+	// Token: 0x040072C0 RID: 29376
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool bHasHoverTarget;
 
-	// Token: 0x040071EA RID: 29162
+	// Token: 0x040072C1 RID: 29377
 	public static bool bSnapCursor;
 
-	// Token: 0x040071EB RID: 29163
+	// Token: 0x040072C2 RID: 29378
 	public static float regularSpeed = 1f;
 
-	// Token: 0x040071EC RID: 29164
+	// Token: 0x040072C3 RID: 29379
 	public static float hoverSpeed = 1f;
 
-	// Token: 0x040071F0 RID: 29168
+	// Token: 0x040072C7 RID: 29383
 	[SerializeField]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public AnimationCurve accelerationCurve;
 
-	// Token: 0x040071F1 RID: 29169
+	// Token: 0x040072C8 RID: 29384
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool _locked;
 
-	// Token: 0x040071F2 RID: 29170
+	// Token: 0x040072C9 RID: 29385
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool _virtualCursorHidden;
 
-	// Token: 0x040071F3 RID: 29171
+	// Token: 0x040072CA RID: 29386
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public static bool FreeCursorEnabled = true;
 
-	// Token: 0x020012B3 RID: 4787
+	// Token: 0x020012CD RID: 4813
 	public enum InputType
 	{
-		// Token: 0x040071F5 RID: 29173
+		// Token: 0x040072CC RID: 29388
 		Controller,
-		// Token: 0x040071F6 RID: 29174
+		// Token: 0x040072CD RID: 29389
 		Mouse,
-		// Token: 0x040071F7 RID: 29175
+		// Token: 0x040072CE RID: 29390
 		Both
 	}
 
-	// Token: 0x020012B4 RID: 4788
+	// Token: 0x020012CE RID: 4814
 	public enum ECursorType
 	{
-		// Token: 0x040071F9 RID: 29177
+		// Token: 0x040072D0 RID: 29392
 		None,
-		// Token: 0x040071FA RID: 29178
+		// Token: 0x040072D1 RID: 29393
 		Default,
-		// Token: 0x040071FB RID: 29179
+		// Token: 0x040072D2 RID: 29394
 		Map,
-		// Token: 0x040071FC RID: 29180
+		// Token: 0x040072D3 RID: 29395
 		Count
 	}
 }

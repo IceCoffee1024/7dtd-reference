@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Xml.Linq;
 
-// Token: 0x02000CE1 RID: 3297
+// Token: 0x02000CF3 RID: 3315
 public class BiomeSpawningFromXml
 {
-	// Token: 0x060064E6 RID: 25830 RVA: 0x002770C6 File Offset: 0x002752C6
+	// Token: 0x06006572 RID: 25970 RVA: 0x00279FC2 File Offset: 0x002781C2
 	public static IEnumerator Load(XmlFile _xmlFile)
 	{
 		XElement root = _xmlFile.XmlDoc.Root;
@@ -55,12 +55,13 @@ public class BiomeSpawningFromXml
 					{
 						edaytime = EnumUtils.Parse<EDaytime>(xelement2.GetAttribute("time"), false);
 					}
-					bool flag = false;
-					if (xelement2.HasAttribute("isanimal"))
+					BiomeSpawnEntityGroupData.eType eType = BiomeSpawnEntityGroupData.eType.Normal;
+					string attribute3 = xelement2.GetAttribute("type");
+					if (attribute3.Length > 0)
 					{
-						flag = StringParsers.ParseBool(xelement2.GetAttribute("isanimal"), 0, -1, true);
+						eType = EnumUtils.Parse<BiomeSpawnEntityGroupData.eType>(attribute3, true);
 					}
-					BiomeSpawnEntityGroupData biomeSpawnEntityGroupData = new BiomeSpawnEntityGroupData(hashCode, num, array, edaytime, flag);
+					BiomeSpawnEntityGroupData biomeSpawnEntityGroupData = new BiomeSpawnEntityGroupData(hashCode, num, array, edaytime, eType);
 					string text = xelement2.GetAttribute("tags");
 					if (text.Length > 0)
 					{
@@ -71,16 +72,16 @@ public class BiomeSpawningFromXml
 					{
 						biomeSpawnEntityGroupData.noPOITags = FastTags<TagGroup.Poi>.Parse(text);
 					}
-					string attribute3 = xelement2.GetAttribute("entitygroup");
-					if (attribute3.Length == 0)
+					string attribute4 = xelement2.GetAttribute("entitygroup");
+					if (attribute4.Length == 0)
 					{
 						throw new Exception("Missing attribute 'entitygroup' in entitygroup of biome '" + attribute + "'");
 					}
-					if (!EntityGroups.list.ContainsKey(attribute3))
+					if (!EntityGroups.list.ContainsKey(attribute4))
 					{
-						throw new Exception("Entity group '" + attribute3 + "' not existing!");
+						throw new Exception("Entity group '" + attribute4 + "' not existing!");
 					}
-					biomeSpawnEntityGroupData.entityGroupName = attribute3;
+					biomeSpawnEntityGroupData.entityGroupName = attribute4;
 					biomeSpawnEntityGroupList.list.Add(biomeSpawnEntityGroupData);
 				}
 			}

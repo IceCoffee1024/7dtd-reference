@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020002DF RID: 735
+// Token: 0x020002E3 RID: 739
 [Preserve]
 public class DialogActionAddItem : BaseDialogAction
 {
-	// Token: 0x1700025A RID: 602
-	// (get) Token: 0x06001542 RID: 5442 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x1700025B RID: 603
+	// (get) Token: 0x06001555 RID: 5461 RVA: 0x00020021 File Offset: 0x0001E221
 	public override BaseDialogAction.ActionTypes ActionType
 	{
 		get
@@ -16,7 +16,7 @@ public class DialogActionAddItem : BaseDialogAction
 		}
 	}
 
-	// Token: 0x06001543 RID: 5443 RVA: 0x0007FBB4 File Offset: 0x0007DDB4
+	// Token: 0x06001556 RID: 5462 RVA: 0x00080270 File Offset: 0x0007E470
 	public override void PerformAction(EntityPlayer player)
 	{
 		ItemValue item = ItemClass.GetItem(base.ID, false);
@@ -56,7 +56,7 @@ public class DialogActionAddItem : BaseDialogAction
 		LocalPlayerUI.primaryUI.xui.PlayerInventory.AddItem(new ItemStack(itemValue, num));
 	}
 
-	// Token: 0x04000E45 RID: 3653
+	// Token: 0x04000E56 RID: 3670
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string name = "";
 }

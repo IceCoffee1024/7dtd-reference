@@ -5,14 +5,14 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E33 RID: 3635
+// Token: 0x02000E48 RID: 3656
 [Preserve]
 [PublicizedFrom(EAccessModifier.Internal)]
 public class XUiC_SDCSPreviewWindow : XUiController
 {
-	// Token: 0x17000C9B RID: 3227
-	// (get) Token: 0x06006FDB RID: 28635 RVA: 0x002B0C59 File Offset: 0x002AEE59
-	// (set) Token: 0x06006FDC RID: 28636 RVA: 0x002B0C61 File Offset: 0x002AEE61
+	// Token: 0x17000CB4 RID: 3252
+	// (get) Token: 0x0600707B RID: 28795 RVA: 0x002B417D File Offset: 0x002B237D
+	// (set) Token: 0x0600707C RID: 28796 RVA: 0x002B4185 File Offset: 0x002B2385
 	[XuiXmlAttribute("can_zoom", false)]
 	public bool CanZoom
 	{
@@ -22,9 +22,9 @@ public class XUiC_SDCSPreviewWindow : XUiController
 		set;
 	} = true;
 
-	// Token: 0x17000C9C RID: 3228
-	// (get) Token: 0x06006FDD RID: 28637 RVA: 0x002B0C6A File Offset: 0x002AEE6A
-	// (set) Token: 0x06006FDE RID: 28638 RVA: 0x002B0C72 File Offset: 0x002AEE72
+	// Token: 0x17000CB5 RID: 3253
+	// (get) Token: 0x0600707D RID: 28797 RVA: 0x002B418E File Offset: 0x002B238E
+	// (set) Token: 0x0600707E RID: 28798 RVA: 0x002B4196 File Offset: 0x002B2396
 	[XuiXmlAttribute("gamepad_rotation_mode", false)]
 	public XUiC_SDCSPreviewWindow.eGamepadRotationMode GamepadRotationMode
 	{
@@ -34,7 +34,7 @@ public class XUiC_SDCSPreviewWindow : XUiController
 		set;
 	}
 
-	// Token: 0x06006FDF RID: 28639 RVA: 0x002B0C7C File Offset: 0x002AEE7C
+	// Token: 0x0600707F RID: 28799 RVA: 0x002B41A0 File Offset: 0x002B23A0
 	public override void Init()
 	{
 		base.Init();
@@ -44,7 +44,7 @@ public class XUiC_SDCSPreviewWindow : XUiController
 		base.OnDrag += this.OnDragged;
 	}
 
-	// Token: 0x06006FE0 RID: 28640 RVA: 0x002B0CD9 File Offset: 0x002AEED9
+	// Token: 0x06007080 RID: 28800 RVA: 0x002B41FD File Offset: 0x002B23FD
 	public override void Cleanup()
 	{
 		base.Cleanup();
@@ -52,7 +52,7 @@ public class XUiC_SDCSPreviewWindow : XUiController
 		base.OnDrag -= this.OnDragged;
 	}
 
-	// Token: 0x06006FE1 RID: 28641 RVA: 0x002B0D05 File Offset: 0x002AEF05
+	// Token: 0x06007081 RID: 28801 RVA: 0x002B4229 File Offset: 0x002B2429
 	[XuiBindEvent("OnPress", "zoomButton")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ZoomButton_OnPress(XUiController _sender, int _mouseButton)
@@ -60,7 +60,7 @@ public class XUiC_SDCSPreviewWindow : XUiController
 		this.toggleHeadZoom();
 	}
 
-	// Token: 0x06006FE2 RID: 28642 RVA: 0x002B0D0D File Offset: 0x002AEF0D
+	// Token: 0x06007082 RID: 28802 RVA: 0x002B4231 File Offset: 0x002B2431
 	[XuiBindEvent("OnVisiblity", null)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void visibilityChanged(XUiController _sender, bool _visibleSelf, bool _visibleInScene)
@@ -73,7 +73,7 @@ public class XUiC_SDCSPreviewWindow : XUiController
 		this.endViz();
 	}
 
-	// Token: 0x06006FE3 RID: 28643 RVA: 0x002B0D1F File Offset: 0x002AEF1F
+	// Token: 0x06007083 RID: 28803 RVA: 0x002B4243 File Offset: 0x002B2443
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void startViz()
 	{
@@ -81,7 +81,7 @@ public class XUiC_SDCSPreviewWindow : XUiController
 		QualitySettings.pixelLightCount = 4;
 	}
 
-	// Token: 0x06006FE4 RID: 28644 RVA: 0x002B0D32 File Offset: 0x002AEF32
+	// Token: 0x06007084 RID: 28804 RVA: 0x002B4256 File Offset: 0x002B2456
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void endViz()
 	{
@@ -92,7 +92,7 @@ public class XUiC_SDCSPreviewWindow : XUiController
 		QualitySettings.pixelLightCount = this.originalPixelLightCount;
 	}
 
-	// Token: 0x06006FE5 RID: 28645 RVA: 0x002B0D6C File Offset: 0x002AEF6C
+	// Token: 0x06007085 RID: 28805 RVA: 0x002B4290 File Offset: 0x002B2490
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -118,7 +118,7 @@ public class XUiC_SDCSPreviewWindow : XUiController
 		}
 	}
 
-	// Token: 0x06006FE6 RID: 28646 RVA: 0x002B0DFC File Offset: 0x002AEFFC
+	// Token: 0x06007086 RID: 28806 RVA: 0x002B4320 File Offset: 0x002B2520
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateController()
 	{
@@ -148,7 +148,7 @@ public class XUiC_SDCSPreviewWindow : XUiController
 		}
 	}
 
-	// Token: 0x06006FE7 RID: 28647 RVA: 0x002B0EDC File Offset: 0x002AF0DC
+	// Token: 0x06007087 RID: 28807 RVA: 0x002B4400 File Offset: 0x002B2600
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDragged(XUiController _sender, EDragType _dragType, Vector2 _mousePositionDelta)
 	{
@@ -159,7 +159,7 @@ public class XUiC_SDCSPreviewWindow : XUiController
 		}
 	}
 
-	// Token: 0x06006FE8 RID: 28648 RVA: 0x002B0F10 File Offset: 0x002AF110
+	// Token: 0x06007088 RID: 28808 RVA: 0x002B4434 File Offset: 0x002B2634
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void cameraVerticalPan(float _value)
 	{
@@ -175,7 +175,7 @@ public class XUiC_SDCSPreviewWindow : XUiController
 		}
 	}
 
-	// Token: 0x06006FE9 RID: 28649 RVA: 0x002B100C File Offset: 0x002AF20C
+	// Token: 0x06007089 RID: 28809 RVA: 0x002B4530 File Offset: 0x002B2730
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void cameraRotate(float _value)
 	{
@@ -183,13 +183,13 @@ public class XUiC_SDCSPreviewWindow : XUiController
 		this.renderTextureSystem.LightGO.transform.RotateAround(this.previewTransform.transform.position, Vector3.up, _value);
 	}
 
-	// Token: 0x06006FEA RID: 28650 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600708A RID: 28810 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnScrolled(XUiController _sender, float _delta)
 	{
 	}
 
-	// Token: 0x06006FEB RID: 28651 RVA: 0x002B106C File Offset: 0x002AF26C
+	// Token: 0x0600708B RID: 28811 RVA: 0x002B4590 File Offset: 0x002B2790
 	public void MakePreview()
 	{
 		SDCSUtils.CreateVizUI(this.Archetype, ref this.previewTransform, ref this.uiBoneCatalog);
@@ -203,7 +203,7 @@ public class XUiC_SDCSPreviewWindow : XUiController
 		this.textPreview.Texture = this.renderTexture;
 	}
 
-	// Token: 0x06006FEC RID: 28652 RVA: 0x002B1148 File Offset: 0x002AF348
+	// Token: 0x0600708C RID: 28812 RVA: 0x002B466C File Offset: 0x002B286C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void toggleHeadZoom()
 	{
@@ -246,7 +246,7 @@ public class XUiC_SDCSPreviewWindow : XUiController
 		}
 	}
 
-	// Token: 0x06006FED RID: 28653 RVA: 0x002B11CC File Offset: 0x002AF3CC
+	// Token: 0x0600708D RID: 28813 RVA: 0x002B46F0 File Offset: 0x002B28F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setToFullBodyZoom()
 	{
@@ -256,7 +256,7 @@ public class XUiC_SDCSPreviewWindow : XUiController
 		this.setCameraInitialRotationOffset();
 	}
 
-	// Token: 0x06006FEE RID: 28654 RVA: 0x002B1250 File Offset: 0x002AF450
+	// Token: 0x0600708E RID: 28814 RVA: 0x002B4774 File Offset: 0x002B2974
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setToHeadZoom()
 	{
@@ -267,7 +267,7 @@ public class XUiC_SDCSPreviewWindow : XUiController
 		this.setCameraInitialRotationOffset();
 	}
 
-	// Token: 0x06006FEF RID: 28655 RVA: 0x002B12FC File Offset: 0x002AF4FC
+	// Token: 0x0600708F RID: 28815 RVA: 0x002B4820 File Offset: 0x002B2A20
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setToChestZoom()
 	{
@@ -278,7 +278,7 @@ public class XUiC_SDCSPreviewWindow : XUiController
 		this.setCameraInitialRotationOffset();
 	}
 
-	// Token: 0x06006FF0 RID: 28656 RVA: 0x002B13A8 File Offset: 0x002AF5A8
+	// Token: 0x06007090 RID: 28816 RVA: 0x002B48CC File Offset: 0x002B2ACC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setToEyeZoom()
 	{
@@ -289,7 +289,7 @@ public class XUiC_SDCSPreviewWindow : XUiController
 		this.setCameraInitialRotationOffset();
 	}
 
-	// Token: 0x06006FF1 RID: 28657 RVA: 0x002B1434 File Offset: 0x002AF634
+	// Token: 0x06007091 RID: 28817 RVA: 0x002B4958 File Offset: 0x002B2B58
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setCameraInitialRotationOffset()
 	{
@@ -301,7 +301,7 @@ public class XUiC_SDCSPreviewWindow : XUiController
 		}
 	}
 
-	// Token: 0x06006FF2 RID: 28658 RVA: 0x002B14B4 File Offset: 0x002AF6B4
+	// Token: 0x06007092 RID: 28818 RVA: 0x002B49D8 File Offset: 0x002B2BD8
 	public void ZoomToHead()
 	{
 		if (this.state == XUiC_SDCSPreviewWindow.ZoomStates.Head)
@@ -316,7 +316,7 @@ public class XUiC_SDCSPreviewWindow : XUiController
 		this.setToHeadZoom();
 	}
 
-	// Token: 0x06006FF3 RID: 28659 RVA: 0x002B1514 File Offset: 0x002AF714
+	// Token: 0x06007093 RID: 28819 RVA: 0x002B4A38 File Offset: 0x002B2C38
 	public void ZoomToEye()
 	{
 		if (PlatformManager.NativePlatform.Input.CurrentInputStyle != PlayerInputManager.InputStyle.Keyboard && this.xui.playerUI.playerInput.GUIActions.TriggerAxis.Value != 0f)
@@ -327,7 +327,7 @@ public class XUiC_SDCSPreviewWindow : XUiController
 		this.setToEyeZoom();
 	}
 
-	// Token: 0x06006FF4 RID: 28660 RVA: 0x002B1568 File Offset: 0x002AF768
+	// Token: 0x06007094 RID: 28820 RVA: 0x002B4A8C File Offset: 0x002B2C8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void init()
 	{
@@ -412,107 +412,107 @@ public class XUiC_SDCSPreviewWindow : XUiController
 		this.renderCamera.transform.localPosition = new Vector3(0f, -0.75f, 0f);
 	}
 
-	// Token: 0x04005448 RID: 21576
+	// Token: 0x040054EC RID: 21740
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RenderTextureSystem renderTextureSystem;
 
-	// Token: 0x04005449 RID: 21577
+	// Token: 0x040054ED RID: 21741
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Texture textPreview;
 
-	// Token: 0x0400544A RID: 21578
+	// Token: 0x040054EE RID: 21742
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RenderTexture renderTexture;
 
-	// Token: 0x0400544B RID: 21579
+	// Token: 0x040054EF RID: 21743
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Camera renderCamera;
 
-	// Token: 0x0400544C RID: 21580
+	// Token: 0x040054F0 RID: 21744
 	public Transform TargetTransform;
 
-	// Token: 0x0400544D RID: 21581
+	// Token: 0x040054F1 RID: 21745
 	public GameObject RotateTable;
 
-	// Token: 0x0400544E RID: 21582
+	// Token: 0x040054F2 RID: 21746
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject previewTransform;
 
-	// Token: 0x0400544F RID: 21583
+	// Token: 0x040054F3 RID: 21747
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lastProfile;
 
-	// Token: 0x04005450 RID: 21584
+	// Token: 0x040054F4 RID: 21748
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lastFieldOfView;
 
-	// Token: 0x04005451 RID: 21585
+	// Token: 0x040054F5 RID: 21749
 	public Archetype Archetype;
 
-	// Token: 0x04005452 RID: 21586
+	// Token: 0x040054F6 RID: 21750
 	[PublicizedFrom(EAccessModifier.Private)]
 	public CharacterGazeController characterGazeController;
 
-	// Token: 0x04005453 RID: 21587
+	// Token: 0x040054F7 RID: 21751
 	[XuiBindComponent("zoomButton", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button zoomButton;
 
-	// Token: 0x04005454 RID: 21588
+	// Token: 0x040054F8 RID: 21752
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 originalCamPosition;
 
-	// Token: 0x04005455 RID: 21589
+	// Token: 0x040054F9 RID: 21753
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 originalLightPosition;
 
-	// Token: 0x04005456 RID: 21590
+	// Token: 0x040054FA RID: 21754
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Quaternion originalCamRotation;
 
-	// Token: 0x04005457 RID: 21591
+	// Token: 0x040054FB RID: 21755
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Quaternion originalLightRotation;
 
-	// Token: 0x04005459 RID: 21593
+	// Token: 0x040054FD RID: 21757
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int originalPixelLightCount;
 
-	// Token: 0x0400545B RID: 21595
+	// Token: 0x040054FF RID: 21759
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SDCSUtils.TransformCatalog uiBoneCatalog;
 
-	// Token: 0x0400545C RID: 21596
+	// Token: 0x04005500 RID: 21760
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SDCSPreviewWindow.ZoomStates state = XUiC_SDCSPreviewWindow.ZoomStates.FullBody;
 
-	// Token: 0x0400545D RID: 21597
+	// Token: 0x04005501 RID: 21761
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float baseOrtho = 1f;
 
-	// Token: 0x02000E34 RID: 3636
+	// Token: 0x02000E49 RID: 3657
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum eGamepadRotationMode
 	{
-		// Token: 0x0400545F RID: 21599
+		// Token: 0x04005503 RID: 21763
 		Bumper,
-		// Token: 0x04005460 RID: 21600
+		// Token: 0x04005504 RID: 21764
 		Trigger,
-		// Token: 0x04005461 RID: 21601
+		// Token: 0x04005505 RID: 21765
 		RightStick
 	}
 
-	// Token: 0x02000E35 RID: 3637
+	// Token: 0x02000E4A RID: 3658
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum ZoomStates
 	{
-		// Token: 0x04005463 RID: 21603
+		// Token: 0x04005507 RID: 21767
 		Eyes,
-		// Token: 0x04005464 RID: 21604
+		// Token: 0x04005508 RID: 21768
 		Head,
-		// Token: 0x04005465 RID: 21605
+		// Token: 0x04005509 RID: 21769
 		Chest,
-		// Token: 0x04005466 RID: 21606
+		// Token: 0x0400550A RID: 21770
 		FullBody
 	}
 }

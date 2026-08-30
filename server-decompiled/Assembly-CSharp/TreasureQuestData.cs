@@ -2,38 +2,38 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000968 RID: 2408
+// Token: 0x02000979 RID: 2425
 [Preserve]
 public class TreasureQuestData : BaseQuestData
 {
-	// Token: 0x17000765 RID: 1893
-	// (get) Token: 0x0600465F RID: 18015 RVA: 0x001BC8AD File Offset: 0x001BAAAD
-	// (set) Token: 0x06004660 RID: 18016 RVA: 0x001BC8B5 File Offset: 0x001BAAB5
+	// Token: 0x17000777 RID: 1911
+	// (get) Token: 0x060046E5 RID: 18149 RVA: 0x001BF0A1 File Offset: 0x001BD2A1
+	// (set) Token: 0x060046E6 RID: 18150 RVA: 0x001BF0A9 File Offset: 0x001BD2A9
 	public int BlocksPerReduction
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000766 RID: 1894
-	// (get) Token: 0x06004661 RID: 18017 RVA: 0x001BC8BE File Offset: 0x001BAABE
-	// (set) Token: 0x06004662 RID: 18018 RVA: 0x001BC8C6 File Offset: 0x001BAAC6
+	// Token: 0x17000778 RID: 1912
+	// (get) Token: 0x060046E7 RID: 18151 RVA: 0x001BF0B2 File Offset: 0x001BD2B2
+	// (set) Token: 0x060046E8 RID: 18152 RVA: 0x001BF0BA File Offset: 0x001BD2BA
 	public Vector3i Position
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000767 RID: 1895
-	// (get) Token: 0x06004663 RID: 18019 RVA: 0x001BC8CF File Offset: 0x001BAACF
-	// (set) Token: 0x06004664 RID: 18020 RVA: 0x001BC8D7 File Offset: 0x001BAAD7
+	// Token: 0x17000779 RID: 1913
+	// (get) Token: 0x060046E9 RID: 18153 RVA: 0x001BF0C3 File Offset: 0x001BD2C3
+	// (set) Token: 0x060046EA RID: 18154 RVA: 0x001BF0CB File Offset: 0x001BD2CB
 	public Vector3 TreasureOffset
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06004665 RID: 18021 RVA: 0x001BC8E0 File Offset: 0x001BAAE0
+	// Token: 0x060046EB RID: 18155 RVA: 0x001BF0D4 File Offset: 0x001BD2D4
 	public TreasureQuestData(int _questCode, int _entityID, int _blocksPerReduction, Vector3i _position, Vector3 _treasureOffset)
 	{
 		this.questCode = _questCode;
@@ -43,7 +43,7 @@ public class TreasureQuestData : BaseQuestData
 		this.BlocksPerReduction = _blocksPerReduction;
 	}
 
-	// Token: 0x06004666 RID: 18022 RVA: 0x001BC912 File Offset: 0x001BAB12
+	// Token: 0x060046EC RID: 18156 RVA: 0x001BF106 File Offset: 0x001BD306
 	public void AddSharedQuester(int _entityID, int _blocksPerReduction)
 	{
 		if (_blocksPerReduction < this.BlocksPerReduction)
@@ -53,7 +53,7 @@ public class TreasureQuestData : BaseQuestData
 		base.AddSharedQuester(_entityID);
 	}
 
-	// Token: 0x06004667 RID: 18023 RVA: 0x001BC930 File Offset: 0x001BAB30
+	// Token: 0x060046ED RID: 18157 RVA: 0x001BF124 File Offset: 0x001BD324
 	public void SendBlocksPerReductionUpdate(int _newBlocksPerReduction)
 	{
 		this.BlocksPerReduction = _newBlocksPerReduction;
@@ -76,20 +76,20 @@ public class TreasureQuestData : BaseQuestData
 		}
 	}
 
-	// Token: 0x06004668 RID: 18024 RVA: 0x001BC9ED File Offset: 0x001BABED
+	// Token: 0x060046EE RID: 18158 RVA: 0x001BF1E1 File Offset: 0x001BD3E1
 	public void UpdatePosition(Vector3i _pos)
 	{
 		this.Position = _pos;
 	}
 
-	// Token: 0x06004669 RID: 18025 RVA: 0x001BC9F6 File Offset: 0x001BABF6
+	// Token: 0x060046EF RID: 18159 RVA: 0x001BF1EA File Offset: 0x001BD3EA
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void RemoveFromDictionary()
 	{
 		QuestEventManager.Current.TreasureQuestDictionary.Remove(this.questCode);
 	}
 
-	// Token: 0x0600466A RID: 18026 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060046F0 RID: 18160 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnRemove(EntityPlayer player)
 	{

@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001939 RID: 6457
+	// Token: 0x0200195F RID: 6495
 	[Preserve]
 	public class ActionAddPlayerToGroup : BaseAction
 	{
-		// Token: 0x0600C65C RID: 50780 RVA: 0x0048EC38 File Offset: 0x0048CE38
+		// Token: 0x0600C7E3 RID: 51171 RVA: 0x00494F84 File Offset: 0x00493184
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			List<Entity> list = new List<Entity>();
@@ -34,7 +34,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C65D RID: 50781 RVA: 0x0048ED12 File Offset: 0x0048CF12
+		// Token: 0x0600C7E4 RID: 51172 RVA: 0x0049505E File Offset: 0x0049325E
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -43,7 +43,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseBool(ActionAddPlayerToGroup.PropTwitchNegative, ref this.twitchNegative);
 		}
 
-		// Token: 0x0600C65E RID: 50782 RVA: 0x0048ED4E File Offset: 0x0048CF4E
+		// Token: 0x0600C7E5 RID: 51173 RVA: 0x0049509A File Offset: 0x0049329A
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -55,27 +55,27 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009583 RID: 38275
+		// Token: 0x040096AC RID: 38572
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string groupName = "";
 
-		// Token: 0x04009584 RID: 38276
+		// Token: 0x040096AD RID: 38573
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string playerName = "";
 
-		// Token: 0x04009585 RID: 38277
+		// Token: 0x040096AE RID: 38574
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool twitchNegative = true;
 
-		// Token: 0x04009586 RID: 38278
+		// Token: 0x040096AF RID: 38575
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropGroupName = "group_name";
 
-		// Token: 0x04009587 RID: 38279
+		// Token: 0x040096B0 RID: 38576
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropPlayerName = "player_name";
 
-		// Token: 0x04009588 RID: 38280
+		// Token: 0x040096B1 RID: 38577
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTwitchNegative = "twitch_negative";
 	}

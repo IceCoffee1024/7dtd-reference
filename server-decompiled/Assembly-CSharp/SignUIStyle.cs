@@ -1,26 +1,26 @@
 ﻿using System;
 
-// Token: 0x02000A7B RID: 2683
+// Token: 0x02000A8C RID: 2700
 public enum SignUIStyle : byte
 {
-	// Token: 0x04003E2A RID: 15914
+	// Token: 0x04003EBB RID: 16059
 	Standard,
-	// Token: 0x04003E2B RID: 15915
+	// Token: 0x04003EBC RID: 16060
 	MainCanvas,
-	// Token: 0x04003E2C RID: 15916
+	// Token: 0x04003EBD RID: 16061
 	LayerSelectHighlight,
-	// Token: 0x04003E2D RID: 15917
+	// Token: 0x04003EBE RID: 16062
 	LayerHoverHighlight,
-	// Token: 0x04003E2E RID: 15918
+	// Token: 0x04003EBF RID: 16063
 	LayerThumbnail,
-	// Token: 0x04003E2F RID: 15919
+	// Token: 0x04003EC0 RID: 16064
 	LayerThumbnailInvalid,
-	// Token: 0x04003E30 RID: 15920
+	// Token: 0x04003EC1 RID: 16065
 	MaskThumbnail,
-	// Token: 0x04003E31 RID: 15921
+	// Token: 0x04003EC2 RID: 16066
 	MaskThumbnailInvalid,
-	// Token: 0x04003E32 RID: 15922
+	// Token: 0x04003EC3 RID: 16067
 	AddLayer,
-	// Token: 0x04003E33 RID: 15923
+	// Token: 0x04003EC4 RID: 16068
 	Baked
 }

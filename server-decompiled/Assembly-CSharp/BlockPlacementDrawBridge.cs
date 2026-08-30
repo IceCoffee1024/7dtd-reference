@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020000F6 RID: 246
+// Token: 0x020000F7 RID: 247
 [Preserve]
 public class BlockPlacementDrawBridge : BlockPlacementTowardsPlacer
 {
-	// Token: 0x06000630 RID: 1584 RVA: 0x0002C300 File Offset: 0x0002A500
+	// Token: 0x0600063A RID: 1594 RVA: 0x0002C5BC File Offset: 0x0002A7BC
 	public override byte LimitRotation(BlockPlacement.EnumRotationMode _mode, ref int _localRot, HitInfoDetails _hitInfo, bool _bAdd, BlockValue _bv, byte _rotation)
 	{
 		if (_mode != BlockPlacement.EnumRotationMode.Auto)

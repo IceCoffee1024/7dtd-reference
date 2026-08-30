@@ -3,11 +3,11 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000ECE RID: 3790
+// Token: 0x02000EE3 RID: 3811
 [Preserve]
 public class XUiC_CharacterCosmeticWindow : XUiController
 {
-	// Token: 0x060076FC RID: 30460 RVA: 0x002CB4FC File Offset: 0x002C96FC
+	// Token: 0x0600779E RID: 30622 RVA: 0x002CEB80 File Offset: 0x002CCD80
 	public override void Init()
 	{
 		base.Init();
@@ -19,7 +19,7 @@ public class XUiC_CharacterCosmeticWindow : XUiController
 		this.xui.OnShutdown += this.HandleUIShutdown;
 	}
 
-	// Token: 0x060076FD RID: 30461 RVA: 0x002CB590 File Offset: 0x002C9790
+	// Token: 0x0600779F RID: 30623 RVA: 0x002CEC14 File Offset: 0x002CCE14
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleUIShutdown()
 	{
@@ -28,14 +28,14 @@ public class XUiC_CharacterCosmeticWindow : XUiController
 		XUiM_PlayerEquipment.HandleRefreshEquipment -= this.XUiM_PlayerEquipment_HandleRefreshEquipment;
 	}
 
-	// Token: 0x060076FE RID: 30462 RVA: 0x002CB5E1 File Offset: 0x002C97E1
+	// Token: 0x060077A0 RID: 30624 RVA: 0x002CEC65 File Offset: 0x002CCE65
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PreviewFrame_OnHover(XUiController _sender, bool _isOver)
 	{
 		this.isMouseOverPreview = _isOver;
 	}
 
-	// Token: 0x060076FF RID: 30463 RVA: 0x002CB5EC File Offset: 0x002C97EC
+	// Token: 0x060077A1 RID: 30625 RVA: 0x002CEC70 File Offset: 0x002CCE70
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PreviewFrame_OnPress(XUiController _sender, int _mouseButton)
 	{
@@ -50,13 +50,13 @@ public class XUiC_CharacterCosmeticWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007700 RID: 30464 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060077A2 RID: 30626 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void XUiM_PlayerEquipment_HandleRefreshEquipment(XUiM_PlayerEquipment _playerEquipment)
 	{
 	}
 
-	// Token: 0x06007701 RID: 30465 RVA: 0x002CB668 File Offset: 0x002C9868
+	// Token: 0x060077A3 RID: 30627 RVA: 0x002CECEC File Offset: 0x002CCEEC
 	public override void Update(float _dt)
 	{
 		if (GameManager.Instance == null || GameManager.Instance.World == null)
@@ -160,7 +160,7 @@ public class XUiC_CharacterCosmeticWindow : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x06007702 RID: 30466 RVA: 0x002CB8AC File Offset: 0x002C9AAC
+	// Token: 0x060077A4 RID: 30628 RVA: 0x002CEF30 File Offset: 0x002CD130
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -252,7 +252,7 @@ public class XUiC_CharacterCosmeticWindow : XUiController
 		this.xui.CalloutWindow.EnableCallouts(XUiC_GamepadCalloutWindow.CalloutType.CharacterPreview, 0f);
 	}
 
-	// Token: 0x06007703 RID: 30467 RVA: 0x002CBE8C File Offset: 0x002CA08C
+	// Token: 0x060077A5 RID: 30629 RVA: 0x002CF510 File Offset: 0x002CD710
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void XUiM_PlayerEquipment_HandleRefreshEquipment1(XUiM_PlayerEquipment playerEquipment)
 	{
@@ -263,7 +263,7 @@ public class XUiC_CharacterCosmeticWindow : XUiController
 		this.MakePreview();
 	}
 
-	// Token: 0x06007704 RID: 30468 RVA: 0x002CBEA0 File Offset: 0x002CA0A0
+	// Token: 0x060077A6 RID: 30630 RVA: 0x002CF524 File Offset: 0x002CD724
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -283,7 +283,7 @@ public class XUiC_CharacterCosmeticWindow : XUiController
 		this.xui.CalloutWindow.DisableCallouts(XUiC_GamepadCalloutWindow.CalloutType.CharacterPreview);
 	}
 
-	// Token: 0x06007705 RID: 30469 RVA: 0x002CBF44 File Offset: 0x002CA144
+	// Token: 0x060077A7 RID: 30631 RVA: 0x002CF5C8 File Offset: 0x002CD7C8
 	public void MakePreview()
 	{
 		if (this.ep == null)
@@ -312,7 +312,7 @@ public class XUiC_CharacterCosmeticWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007706 RID: 30470 RVA: 0x002CC04C File Offset: 0x002CA24C
+	// Token: 0x060077A8 RID: 30632 RVA: 0x002CF6D0 File Offset: 0x002CD8D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BeginCursorLock()
 	{
@@ -326,14 +326,14 @@ public class XUiC_CharacterCosmeticWindow : XUiController
 		this.xui.playerUI.CursorController.VirtualCursorHidden = true;
 	}
 
-	// Token: 0x06007707 RID: 30471 RVA: 0x002CC0B5 File Offset: 0x002CA2B5
+	// Token: 0x060077A9 RID: 30633 RVA: 0x002CF739 File Offset: 0x002CD939
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void MaintainCursorLock()
 	{
 		this.xui.playerUI.CursorController.SetScreenPosition(this.lockedCursorPos);
 	}
 
-	// Token: 0x06007708 RID: 30472 RVA: 0x002CC0D2 File Offset: 0x002CA2D2
+	// Token: 0x060077AA RID: 30634 RVA: 0x002CF756 File Offset: 0x002CD956
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void EndCursorLock()
 	{
@@ -345,7 +345,7 @@ public class XUiC_CharacterCosmeticWindow : XUiController
 		this.xui.playerUI.CursorController.VirtualCursorHidden = this.prevCursorHidden;
 	}
 
-	// Token: 0x06007709 RID: 30473 RVA: 0x002CC100 File Offset: 0x002CA300
+	// Token: 0x060077AB RID: 30635 RVA: 0x002CF784 File Offset: 0x002CD984
 	[XuiBindEvent("OnPressed", "btnClearAll")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnClearAll_OnPress(XUiController _sender, int _mouseButton)
@@ -366,106 +366,106 @@ public class XUiC_CharacterCosmeticWindow : XUiController
 		}
 	}
 
-	// Token: 0x0400579E RID: 22430
+	// Token: 0x04005844 RID: 22596
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Label lblName;
 
-	// Token: 0x0400579F RID: 22431
+	// Token: 0x04005845 RID: 22597
 	[XuiBindComponent("btnClearAll", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_SimpleButton btnClearAll;
 
-	// Token: 0x040057A0 RID: 22432
+	// Token: 0x04005846 RID: 22598
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController previewFrame;
 
-	// Token: 0x040057A1 RID: 22433
+	// Token: 0x04005847 RID: 22599
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Texture textPreview;
 
-	// Token: 0x040057A2 RID: 22434
+	// Token: 0x04005848 RID: 22600
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayer ep;
 
-	// Token: 0x040057A3 RID: 22435
+	// Token: 0x04005849 RID: 22601
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Camera cam;
 
-	// Token: 0x040057A4 RID: 22436
+	// Token: 0x0400584A RID: 22602
 	public RuntimeAnimatorController animationController;
 
-	// Token: 0x040057A5 RID: 22437
+	// Token: 0x0400584B RID: 22603
 	public float atlasResolutionScale;
 
-	// Token: 0x040057A6 RID: 22438
+	// Token: 0x0400584C RID: 22604
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly RenderTextureSystem renderTextureSystem = new RenderTextureSystem();
 
-	// Token: 0x040057A7 RID: 22439
+	// Token: 0x0400584D RID: 22605
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isPreviewDirty;
 
-	// Token: 0x040057A8 RID: 22440
+	// Token: 0x0400584E RID: 22606
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayer player;
 
-	// Token: 0x040057A9 RID: 22441
+	// Token: 0x0400584F RID: 22607
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform characterPivot;
 
-	// Token: 0x040057AA RID: 22442
+	// Token: 0x04005850 RID: 22608
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float DragRotateSpeed = 0.4f;
 
-	// Token: 0x040057AB RID: 22443
+	// Token: 0x04005851 RID: 22609
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float ControllerRotateSpeed = 200f;
 
-	// Token: 0x040057AC RID: 22444
+	// Token: 0x04005852 RID: 22610
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isMouseOverPreview;
 
-	// Token: 0x040057AD RID: 22445
+	// Token: 0x04005853 RID: 22611
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isDragging;
 
-	// Token: 0x040057AE RID: 22446
+	// Token: 0x04005854 RID: 22612
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 lastMousePos;
 
-	// Token: 0x040057AF RID: 22447
+	// Token: 0x04005855 RID: 22613
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float RotationStickDeadzone = 0.15f;
 
-	// Token: 0x040057B0 RID: 22448
+	// Token: 0x04005856 RID: 22614
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const bool InvertRotationStick = true;
 
-	// Token: 0x040057B1 RID: 22449
+	// Token: 0x04005857 RID: 22615
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool cursorLockActive;
 
-	// Token: 0x040057B2 RID: 22450
+	// Token: 0x04005858 RID: 22616
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 lockedCursorPos;
 
-	// Token: 0x040057B3 RID: 22451
+	// Token: 0x04005859 RID: 22617
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool prevCursorHidden;
 
-	// Token: 0x040057B4 RID: 22452
+	// Token: 0x0400585A RID: 22618
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject previewSDCSObj;
 
-	// Token: 0x040057B5 RID: 22453
+	// Token: 0x0400585B RID: 22619
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SDCSUtils.TransformCatalog transformCatalog;
 
-	// Token: 0x040057B6 RID: 22454
+	// Token: 0x0400585C RID: 22620
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Camera renderCamera;
 
-	// Token: 0x040057B7 RID: 22455
+	// Token: 0x0400585D RID: 22621
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float updateTime;
 }

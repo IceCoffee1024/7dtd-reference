@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x020008A8 RID: 2216
+// Token: 0x020008B4 RID: 2228
 public class TraderManager
 {
-	// Token: 0x0600403F RID: 16447 RVA: 0x001913C8 File Offset: 0x0018F5C8
+	// Token: 0x060040A4 RID: 16548 RVA: 0x001934AC File Offset: 0x001916AC
 	public TraderManager(WorldBase _world)
 	{
 		this.world = _world;
 		this.Random = GameRandomManager.Instance.CreateGameRandom((int)DateTime.Now.Ticks);
 	}
 
-	// Token: 0x06004040 RID: 16448 RVA: 0x00191400 File Offset: 0x0018F600
+	// Token: 0x060040A5 RID: 16549 RVA: 0x001934E4 File Offset: 0x001916E4
 	public bool TraderInventoryRequested(TraderData trader, int _entityIdThatOpenedIt)
 	{
 		TraderInfo traderInfo = TraderInfo.traderInfoList[trader.TraderID];
@@ -44,7 +44,7 @@ public class TraderManager
 		return true;
 	}
 
-	// Token: 0x06004041 RID: 16449 RVA: 0x001914C8 File Offset: 0x0018F6C8
+	// Token: 0x060040A6 RID: 16550 RVA: 0x001935AC File Offset: 0x001917AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleFullReset(TraderData trader, TraderInfo info)
 	{
@@ -61,9 +61,9 @@ public class TraderManager
 					for (int j = 0; j < trader.PrimaryInventory.Count; j++)
 					{
 						ItemStack item = trader.PrimaryInventory[j].Item;
-						if (item.itemValue.type == itemStack.itemValue.type && item.count < forId.Stacknumber.Value)
+						if (item.itemValue.type == itemStack.itemValue.type && item.count < forId.MaxCount)
 						{
-							int num = Math.Min(forId.Stacknumber.Value - item.count, itemStack.count);
+							int num = Math.Min(forId.MaxCount - item.count, itemStack.count);
 							item.count += num;
 							itemStack.count -= num;
 							if (itemStack.count == 0)
@@ -85,19 +85,19 @@ public class TraderManager
 		}
 	}
 
-	// Token: 0x040033D8 RID: 13272
+	// Token: 0x04003459 RID: 13401
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WorldBase world;
 
-	// Token: 0x040033D9 RID: 13273
+	// Token: 0x0400345A RID: 13402
 	public GameRandom Random;
 
-	// Token: 0x040033DA RID: 13274
+	// Token: 0x0400345B RID: 13403
 	public static float[] QuestTierMod;
 
-	// Token: 0x040033DB RID: 13275
+	// Token: 0x0400345C RID: 13404
 	public static Dictionary<string, TraderStageTemplateGroup> TraderStageTemplates = new Dictionary<string, TraderStageTemplateGroup>();
 
-	// Token: 0x040033DC RID: 13276
+	// Token: 0x0400345D RID: 13405
 	public static bool VendingEnabled = true;
 }

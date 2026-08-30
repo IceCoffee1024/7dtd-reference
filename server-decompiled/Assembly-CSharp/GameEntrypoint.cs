@@ -2,33 +2,35 @@
 using System.Collections;
 using System.Diagnostics;
 using System.Threading;
+using BhvrAnalyticsServices;
 using BhvrAnalyticsServices.Interfaces;
 using BhvrAnalyticsServices.Services;
 using Platform;
 using SandboxOptions;
 using Services;
+using Services.Analytics;
 using UnityEngine;
 
-// Token: 0x02001182 RID: 4482
+// Token: 0x0200119C RID: 4508
 public class GameEntrypoint : MonoBehaviour
 {
-	// Token: 0x17001108 RID: 4360
-	// (get) Token: 0x06008F1E RID: 36638 RVA: 0x0035DF9C File Offset: 0x0035C19C
-	// (set) Token: 0x06008F1F RID: 36639 RVA: 0x0035DFA3 File Offset: 0x0035C1A3
+	// Token: 0x17001141 RID: 4417
+	// (get) Token: 0x06009018 RID: 36888 RVA: 0x00362B78 File Offset: 0x00360D78
+	// (set) Token: 0x06009019 RID: 36889 RVA: 0x00362B7F File Offset: 0x00360D7F
 	public static bool EntrypointSuccess
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06008F20 RID: 36640 RVA: 0x0035DFAB File Offset: 0x0035C1AB
+	// Token: 0x0600901A RID: 36890 RVA: 0x00362B87 File Offset: 0x00360D87
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
 		ThreadManager.RunCoroutineSync(GameEntrypoint.EntrypointCoroutine());
 	}
 
-	// Token: 0x06008F21 RID: 36641 RVA: 0x0035DFB8 File Offset: 0x0035C1B8
+	// Token: 0x0600901B RID: 36891 RVA: 0x00362B94 File Offset: 0x00360D94
 	public static bool FirstFrameInit()
 	{
 		Cursor.visible = false;
@@ -57,13 +59,19 @@ public class GameEntrypoint : MonoBehaviour
 			return false;
 		}
 		ServiceProvider.Init();
-		ServiceProvider.Instance.Register(typeof(IAnalyticsService), AnalyticsServiceFactory.CreateAnalyticsService(AnalyticsServiceFactory.LoadServiceConfiguration()));
+		LogLevel logLevel = LogLevel.None;
+		string launchArgument = GameUtils.GetLaunchArgument("analyticsLogLevel");
+		if (launchArgument != null)
+		{
+			EnumUtils.TryParse<LogLevel>(launchArgument, out logLevel, true);
+		}
+		ServiceProvider.Instance.Register(typeof(IAnalyticsService), AnalyticsServiceFactory.CreateAnalyticsService(AnalyticsServiceFactory.LoadServiceConfiguration(GameManager.IsDedicatedServer), EventTypes.VersionDictionary, logLevel));
 		ServiceProvider.Instance.Get<IAnalyticsService>().StartService();
 		Application.targetFrameRate = (int)PlatformApplicationManager.Application.GetCurrentRefreshRate().value;
 		return true;
 	}
 
-	// Token: 0x06008F22 RID: 36642 RVA: 0x0035E078 File Offset: 0x0035C278
+	// Token: 0x0600901C RID: 36892 RVA: 0x00362C79 File Offset: 0x00360E79
 	public static IEnumerator EntrypointCoroutine()
 	{
 		if (GameEntrypoint.s_entrypointEntered)
@@ -96,7 +104,7 @@ public class GameEntrypoint : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06008F23 RID: 36643 RVA: 0x0035E080 File Offset: 0x0035C280
+	// Token: 0x0600901D RID: 36893 RVA: 0x00362C81 File Offset: 0x00360E81
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator EntrypointCoroutineInternal()
 	{
@@ -135,7 +143,7 @@ public class GameEntrypoint : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06008F24 RID: 36644 RVA: 0x0035E088 File Offset: 0x0035C288
+	// Token: 0x0600901E RID: 36894 RVA: 0x00362C8C File Offset: 0x00360E8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool HasPrefCollisions()
 	{
@@ -151,7 +159,7 @@ public class GameEntrypoint : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06008F25 RID: 36645 RVA: 0x0035E118 File Offset: 0x0035C318
+	// Token: 0x0600901F RID: 36895 RVA: 0x00362D1C File Offset: 0x00360F1C
 	[Conditional("NEVER_DEFINED")]
 	public static void ProfileSection(string identifier)
 	{
@@ -166,7 +174,7 @@ public class GameEntrypoint : MonoBehaviour
 		GameEntrypoint.s_profileIdentifier = identifier;
 	}
 
-	// Token: 0x06008F26 RID: 36646 RVA: 0x0035E144 File Offset: 0x0035C344
+	// Token: 0x06009020 RID: 36896 RVA: 0x00362D48 File Offset: 0x00360F48
 	[Conditional("PROFILE_GAME_ENTRYPOINT")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ProfileSectionEnd()
@@ -180,7 +188,7 @@ public class GameEntrypoint : MonoBehaviour
 		GameEntrypoint.s_profileIdentifier = null;
 	}
 
-	// Token: 0x06008F27 RID: 36647 RVA: 0x0035E194 File Offset: 0x0035C394
+	// Token: 0x06009021 RID: 36897 RVA: 0x00362D98 File Offset: 0x00360F98
 	[Conditional("PROFILE_GAME_ENTRYPOINT")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void ProfileEnd()
@@ -193,27 +201,27 @@ public class GameEntrypoint : MonoBehaviour
 		GameEntrypoint.s_profileTotal = null;
 	}
 
-	// Token: 0x040069D4 RID: 27092
+	// Token: 0x04006AA4 RID: 27300
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static bool s_entrypointEntered;
 
-	// Token: 0x040069D5 RID: 27093
+	// Token: 0x04006AA5 RID: 27301
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static bool s_entrypointFinished;
 
-	// Token: 0x040069D7 RID: 27095
+	// Token: 0x04006AA7 RID: 27303
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static MicroStopwatch s_profileTotal;
 
-	// Token: 0x040069D8 RID: 27096
+	// Token: 0x04006AA8 RID: 27304
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static MicroStopwatch s_profileSection;
 
-	// Token: 0x040069D9 RID: 27097
+	// Token: 0x04006AA9 RID: 27305
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static string s_profileIdentifier;

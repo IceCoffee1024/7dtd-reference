@@ -3,32 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000337 RID: 823
+// Token: 0x0200033B RID: 827
 [Preserve]
 public class XUiC_DiscordBlockedUsersList : XUiC_List<XUiC_DiscordBlockedUsersList.Entry>
 {
-	// Token: 0x060017DF RID: 6111 RVA: 0x00088E13 File Offset: 0x00087013
+	// Token: 0x060017F4 RID: 6132 RVA: 0x000894B3 File Offset: 0x000876B3
 	public override void Init()
 	{
 		base.Init();
 		DiscordManager.Instance.FriendsListChanged += this.discordFriendsListChanged;
 	}
 
-	// Token: 0x060017E0 RID: 6112 RVA: 0x00088E31 File Offset: 0x00087031
+	// Token: 0x060017F5 RID: 6133 RVA: 0x000894D1 File Offset: 0x000876D1
 	public override void Cleanup()
 	{
 		base.Cleanup();
 		DiscordManager.Instance.FriendsListChanged -= this.discordFriendsListChanged;
 	}
 
-	// Token: 0x060017E1 RID: 6113 RVA: 0x00088E4F File Offset: 0x0008704F
+	// Token: 0x060017F6 RID: 6134 RVA: 0x000894EF File Offset: 0x000876EF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void discordFriendsListChanged()
 	{
 		this.UpdateList();
 	}
 
-	// Token: 0x060017E2 RID: 6114 RVA: 0x00088E58 File Offset: 0x00087058
+	// Token: 0x060017F7 RID: 6135 RVA: 0x000894F8 File Offset: 0x000876F8
 	public void UpdateList()
 	{
 		int page = base.Page;
@@ -36,7 +36,7 @@ public class XUiC_DiscordBlockedUsersList : XUiC_List<XUiC_DiscordBlockedUsersLi
 		base.Page = page;
 	}
 
-	// Token: 0x060017E3 RID: 6115 RVA: 0x00088E7C File Offset: 0x0008707C
+	// Token: 0x060017F8 RID: 6136 RVA: 0x0008951C File Offset: 0x0008771C
 	public override void RebuildList(bool _resetFilter = false)
 	{
 		this.allEntries.Clear();
@@ -52,7 +52,7 @@ public class XUiC_DiscordBlockedUsersList : XUiC_List<XUiC_DiscordBlockedUsersLi
 		base.RebuildList(_resetFilter);
 	}
 
-	// Token: 0x060017E4 RID: 6116 RVA: 0x00088F1C File Offset: 0x0008711C
+	// Token: 0x060017F9 RID: 6137 RVA: 0x000895BC File Offset: 0x000877BC
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -62,21 +62,21 @@ public class XUiC_DiscordBlockedUsersList : XUiC_List<XUiC_DiscordBlockedUsersLi
 		}
 	}
 
-	// Token: 0x04000F6E RID: 3950
+	// Token: 0x04000F7F RID: 3967
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly HashSet<DiscordManager.DiscordUser> users = new HashSet<DiscordManager.DiscordUser>();
 
-	// Token: 0x02000338 RID: 824
+	// Token: 0x0200033C RID: 828
 	[Preserve]
 	public class Entry : XUiListEntry<XUiC_DiscordBlockedUsersList.Entry>
 	{
-		// Token: 0x060017E6 RID: 6118 RVA: 0x00088F4B File Offset: 0x0008714B
+		// Token: 0x060017FB RID: 6139 RVA: 0x000895EB File Offset: 0x000877EB
 		public Entry(DiscordManager.DiscordUser _discordUser)
 		{
 			this.User = _discordUser;
 		}
 
-		// Token: 0x060017E7 RID: 6119 RVA: 0x00088F5A File Offset: 0x0008715A
+		// Token: 0x060017FC RID: 6140 RVA: 0x000895FA File Offset: 0x000877FA
 		public override int CompareTo(XUiC_DiscordBlockedUsersList.Entry _otherEntry)
 		{
 			if (_otherEntry == null)
@@ -94,7 +94,7 @@ public class XUiC_DiscordBlockedUsersList : XUiC_List<XUiC_DiscordBlockedUsersLi
 			return string.Compare(this.User.DisplayName, _otherEntry.User.DisplayName, StringComparison.OrdinalIgnoreCase);
 		}
 
-		// Token: 0x060017E8 RID: 6120 RVA: 0x00088F91 File Offset: 0x00087191
+		// Token: 0x060017FD RID: 6141 RVA: 0x00089631 File Offset: 0x00087831
 		public override bool MatchesSearch(string _searchString)
 		{
 			if (string.IsNullOrEmpty(_searchString))
@@ -105,16 +105,16 @@ public class XUiC_DiscordBlockedUsersList : XUiC_List<XUiC_DiscordBlockedUsersLi
 			return user != null && user.DisplayName.ContainsCaseInsensitive(_searchString);
 		}
 
-		// Token: 0x04000F6F RID: 3951
+		// Token: 0x04000F80 RID: 3968
 		public readonly DiscordManager.DiscordUser User;
 	}
 
-	// Token: 0x02000339 RID: 825
+	// Token: 0x0200033D RID: 829
 	[Preserve]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class DiscordBlockedUsersListEntryController : XUiC_List<XUiC_DiscordBlockedUsersList.Entry>.XUiC_ListEntry
 	{
-		// Token: 0x060017E9 RID: 6121 RVA: 0x00088FB4 File Offset: 0x000871B4
+		// Token: 0x060017FE RID: 6142 RVA: 0x00089654 File Offset: 0x00087854
 		public override void Init()
 		{
 			base.Init();
@@ -152,7 +152,7 @@ public class XUiC_DiscordBlockedUsersList : XUiC_List<XUiC_DiscordBlockedUsersLi
 			}
 		}
 
-		// Token: 0x060017EA RID: 6122 RVA: 0x0008900D File Offset: 0x0008720D
+		// Token: 0x060017FF RID: 6143 RVA: 0x000896AD File Offset: 0x000878AD
 		public override void SetEntry(XUiC_DiscordBlockedUsersList.Entry _data)
 		{
 			base.SetEntry(_data);
@@ -174,7 +174,7 @@ public class XUiC_DiscordBlockedUsersList : XUiC_List<XUiC_DiscordBlockedUsersLi
 			xuiV_TextureBased.Texture = texture;
 		}
 
-		// Token: 0x060017EB RID: 6123 RVA: 0x00089042 File Offset: 0x00087242
+		// Token: 0x06001800 RID: 6144 RVA: 0x000896E2 File Offset: 0x000878E2
 		[XuiXmlBinding("displayname")]
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string bindingDisplayName()
@@ -193,7 +193,7 @@ public class XUiC_DiscordBlockedUsersList : XUiC_List<XUiC_DiscordBlockedUsersLi
 			return text ?? "";
 		}
 
-		// Token: 0x04000F70 RID: 3952
+		// Token: 0x04000F81 RID: 3969
 		[PublicizedFrom(EAccessModifier.Private)]
 		public XUiV_Texture avatarTexture;
 	}

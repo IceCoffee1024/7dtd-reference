@@ -12,20 +12,20 @@ using PrefabVolumes;
 using Twitch;
 using UnityEngine;
 
-// Token: 0x02000BD9 RID: 3033
+// Token: 0x02000BEB RID: 3051
 public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 {
 	// Token: 0x14000084 RID: 132
-	// (add) Token: 0x06005B6D RID: 23405 RVA: 0x002387B4 File Offset: 0x002369B4
-	// (remove) Token: 0x06005B6E RID: 23406 RVA: 0x002387EC File Offset: 0x002369EC
+	// (add) Token: 0x06005BF6 RID: 23542 RVA: 0x0023B4D0 File Offset: 0x002396D0
+	// (remove) Token: 0x06005BF7 RID: 23543 RVA: 0x0023B508 File Offset: 0x00239708
 	public event World.OnEntityLoadedDelegate EntityLoadedDelegates;
 
 	// Token: 0x14000085 RID: 133
-	// (add) Token: 0x06005B6F RID: 23407 RVA: 0x00238824 File Offset: 0x00236A24
-	// (remove) Token: 0x06005B70 RID: 23408 RVA: 0x0023885C File Offset: 0x00236A5C
+	// (add) Token: 0x06005BF8 RID: 23544 RVA: 0x0023B540 File Offset: 0x00239740
+	// (remove) Token: 0x06005BF9 RID: 23545 RVA: 0x0023B578 File Offset: 0x00239778
 	public event World.OnEntityUnloadedDelegate EntityUnloadedDelegates;
 
-	// Token: 0x06005B72 RID: 23410 RVA: 0x00238A50 File Offset: 0x00236C50
+	// Token: 0x06005BFB RID: 23547 RVA: 0x0023B76C File Offset: 0x0023996C
 	public virtual void Init(IGameManager _gameManager, WorldBiomes _biomes)
 	{
 		this.gameManager = _gameManager;
@@ -44,7 +44,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		this.BiomeAtmosphereEffects.Init(this);
 	}
 
-	// Token: 0x06005B73 RID: 23411 RVA: 0x00238ADA File Offset: 0x00236CDA
+	// Token: 0x06005BFC RID: 23548 RVA: 0x0023B7F6 File Offset: 0x002399F6
 	public IEnumerator LoadWorld(string _levelName, PathAbstractions.AbstractedLocation _worldLocation, bool _fixedSizeCC = false)
 	{
 		Log.Out(string.Format("World.Load: {0} {1}", _levelName, _worldLocation));
@@ -174,6 +174,14 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 			this.wallVolumes.Clear();
 			IL_051D:
 			SleeperVolume.WorldInit();
+			if (this.worldState.weatherManagerState != null)
+			{
+				using (PooledBinaryReader pooledBinaryReader6 = MemoryPools.poolBinaryReader.AllocSync(false))
+				{
+					pooledBinaryReader6.SetBaseStream(this.worldState.weatherManagerState);
+					WeatherManager.Load(pooledBinaryReader6, (int)this.worldState.weatherManagerState.Length);
+				}
+			}
 		}
 		DecoManager.Instance.IsEnabled = _levelName != "Empty";
 		yield return null;
@@ -264,7 +272,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		yield break;
 	}
 
-	// Token: 0x06005B74 RID: 23412 RVA: 0x00238B00 File Offset: 0x00236D00
+	// Token: 0x06005BFD RID: 23549 RVA: 0x0023B81C File Offset: 0x00239A1C
 	public void Save()
 	{
 		ChunkCluster chunkCache = this.ChunkCache;
@@ -287,20 +295,20 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		SaveDataUtils.SaveDataManager.CommitAsync();
 	}
 
-	// Token: 0x06005B75 RID: 23413 RVA: 0x00238BAD File Offset: 0x00236DAD
+	// Token: 0x06005BFE RID: 23550 RVA: 0x0023B8C9 File Offset: 0x00239AC9
 	public void SaveDecorations()
 	{
 		DecoManager.Instance.Save();
 	}
 
-	// Token: 0x06005B76 RID: 23414 RVA: 0x00238BB9 File Offset: 0x00236DB9
+	// Token: 0x06005BFF RID: 23551 RVA: 0x0023B8D5 File Offset: 0x00239AD5
 	public void SaveWorldState()
 	{
 		this.worldState.SetFrom(this, this.ChunkCache.ChunkProvider.GetProviderId());
 		this.worldState.Save(GameIO.GetSaveGameDir() + "/main.ttw");
 	}
 
-	// Token: 0x06005B77 RID: 23415 RVA: 0x00238BF4 File Offset: 0x00236DF4
+	// Token: 0x06005C00 RID: 23552 RVA: 0x0023B910 File Offset: 0x00239B10
 	public virtual void UnloadWorld(bool _bUnloadRespawnableEntities)
 	{
 		Log.Out("World.Unload");
@@ -335,7 +343,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005B78 RID: 23416 RVA: 0x00238CE0 File Offset: 0x00236EE0
+	// Token: 0x06005C01 RID: 23553 RVA: 0x0023B9FC File Offset: 0x00239BFC
 	public virtual void Cleanup()
 	{
 		Log.Out("World.Cleanup");
@@ -420,7 +428,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005B79 RID: 23417 RVA: 0x00238ECC File Offset: 0x002370CC
+	// Token: 0x06005C02 RID: 23554 RVA: 0x0023BBE8 File Offset: 0x00239DE8
 	public void ClearCaches()
 	{
 		this.m_ChunkManager.FreePools();
@@ -432,8 +440,8 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x17000986 RID: 2438
-	// (get) Token: 0x06005B7A RID: 23418 RVA: 0x00238EFE File Offset: 0x002370FE
+	// Token: 0x17000999 RID: 2457
+	// (get) Token: 0x06005C03 RID: 23555 RVA: 0x0023BC1A File Offset: 0x00239E1A
 	public string Guid
 	{
 		get
@@ -446,13 +454,13 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005B7B RID: 23419 RVA: 0x00238F15 File Offset: 0x00237115
+	// Token: 0x06005C04 RID: 23556 RVA: 0x0023BC31 File Offset: 0x00239E31
 	public long GetNextChunkToProvide()
 	{
 		return this.m_ChunkManager.GetNextChunkToProvide();
 	}
 
-	// Token: 0x06005B7C RID: 23420 RVA: 0x00238F22 File Offset: 0x00237122
+	// Token: 0x06005C05 RID: 23557 RVA: 0x0023BC3E File Offset: 0x00239E3E
 	public virtual IEnumerator CreateChunkCluster(EnumChunkProviderId _chunkProviderId, string _clusterName, PathAbstractions.AbstractedLocation _worldLocation, bool _bFixedSize, Action<ChunkCluster> _resultHandler)
 	{
 		ChunkCluster cc = new ChunkCluster(this, _clusterName);
@@ -465,7 +473,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		yield break;
 	}
 
-	// Token: 0x06005B7D RID: 23421 RVA: 0x00238F56 File Offset: 0x00237156
+	// Token: 0x06005C06 RID: 23558 RVA: 0x0023BC72 File Offset: 0x00239E72
 	public override void AddLocalPlayer(EntityPlayerLocal _localPlayer)
 	{
 		if (!this.m_LocalPlayerEntities.Contains(_localPlayer))
@@ -478,32 +486,32 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005B7E RID: 23422 RVA: 0x00238F85 File Offset: 0x00237185
+	// Token: 0x06005C07 RID: 23559 RVA: 0x0023BCA1 File Offset: 0x00239EA1
 	public override void RemoveLocalPlayer(EntityPlayerLocal _localPlayer)
 	{
 		this.m_LocalPlayerEntities.Remove(_localPlayer);
 	}
 
-	// Token: 0x06005B7F RID: 23423 RVA: 0x00238F94 File Offset: 0x00237194
+	// Token: 0x06005C08 RID: 23560 RVA: 0x0023BCB0 File Offset: 0x00239EB0
 	public override List<EntityPlayerLocal> GetLocalPlayers()
 	{
 		return this.m_LocalPlayerEntities;
 	}
 
-	// Token: 0x06005B80 RID: 23424 RVA: 0x00238F9C File Offset: 0x0023719C
+	// Token: 0x06005C09 RID: 23561 RVA: 0x0023BCB8 File Offset: 0x00239EB8
 	public override bool IsLocalPlayer(int _playerId)
 	{
 		Entity entity = this.GetEntity(_playerId);
 		return entity != null && entity is EntityPlayerLocal;
 	}
 
-	// Token: 0x06005B81 RID: 23425 RVA: 0x00238FC5 File Offset: 0x002371C5
+	// Token: 0x06005C0A RID: 23562 RVA: 0x0023BCE1 File Offset: 0x00239EE1
 	public override EntityPlayerLocal GetLocalPlayerFromID(int _playerId)
 	{
 		return this.GetEntity(_playerId) as EntityPlayerLocal;
 	}
 
-	// Token: 0x06005B82 RID: 23426 RVA: 0x00238FD4 File Offset: 0x002371D4
+	// Token: 0x06005C0B RID: 23563 RVA: 0x0023BCF0 File Offset: 0x00239EF0
 	public override EntityPlayerLocal GetClosestLocalPlayer(Vector3 _position)
 	{
 		EntityPlayerLocal entityPlayerLocal = this.GetPrimaryPlayer();
@@ -523,25 +531,25 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return entityPlayerLocal;
 	}
 
-	// Token: 0x06005B83 RID: 23427 RVA: 0x00239049 File Offset: 0x00237249
+	// Token: 0x06005C0C RID: 23564 RVA: 0x0023BD65 File Offset: 0x00239F65
 	public override Vector3 GetVectorToClosestLocalPlayer(Vector3 _position)
 	{
 		return this.GetClosestLocalPlayer(_position).GetPosition() - _position;
 	}
 
-	// Token: 0x06005B84 RID: 23428 RVA: 0x00239060 File Offset: 0x00237260
+	// Token: 0x06005C0D RID: 23565 RVA: 0x0023BD7C File Offset: 0x00239F7C
 	public override float GetSquaredDistanceToClosestLocalPlayer(Vector3 _position)
 	{
 		return this.GetVectorToClosestLocalPlayer(_position).sqrMagnitude;
 	}
 
-	// Token: 0x06005B85 RID: 23429 RVA: 0x0023907C File Offset: 0x0023727C
+	// Token: 0x06005C0E RID: 23566 RVA: 0x0023BD98 File Offset: 0x00239F98
 	public override float GetDistanceToClosestLocalPlayer(Vector3 _position)
 	{
 		return this.GetVectorToClosestLocalPlayer(_position).magnitude;
 	}
 
-	// Token: 0x06005B86 RID: 23430 RVA: 0x00239098 File Offset: 0x00237298
+	// Token: 0x06005C0F RID: 23567 RVA: 0x0023BDB4 File Offset: 0x00239FB4
 	public void SetLocalPlayer(EntityPlayerLocal _thePlayer)
 	{
 		this.m_LocalPlayerEntity = _thePlayer;
@@ -550,13 +558,13 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		OcclusionManager.Instance.SetSourceDepthCamera(_thePlayer.playerCamera);
 	}
 
-	// Token: 0x06005B87 RID: 23431 RVA: 0x002390C5 File Offset: 0x002372C5
+	// Token: 0x06005C10 RID: 23568 RVA: 0x0023BDE1 File Offset: 0x00239FE1
 	public override EntityPlayerLocal GetPrimaryPlayer()
 	{
 		return this.m_LocalPlayerEntity;
 	}
 
-	// Token: 0x06005B88 RID: 23432 RVA: 0x002390CD File Offset: 0x002372CD
+	// Token: 0x06005C11 RID: 23569 RVA: 0x0023BDE9 File Offset: 0x00239FE9
 	public int GetPrimaryPlayerId()
 	{
 		if (!(this.m_LocalPlayerEntity != null))
@@ -566,13 +574,13 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return this.m_LocalPlayerEntity.entityId;
 	}
 
-	// Token: 0x06005B89 RID: 23433 RVA: 0x002390EA File Offset: 0x002372EA
+	// Token: 0x06005C12 RID: 23570 RVA: 0x0023BE06 File Offset: 0x0023A006
 	public override List<EntityPlayer> GetPlayers()
 	{
 		return this.Players.list;
 	}
 
-	// Token: 0x06005B8A RID: 23434 RVA: 0x002390F8 File Offset: 0x002372F8
+	// Token: 0x06005C13 RID: 23571 RVA: 0x0023BE14 File Offset: 0x0023A014
 	public void GetSunAndBlockColors(Vector3i _worldBlockPos, out byte sunLight, out byte blockLight)
 	{
 		sunLight = 0;
@@ -588,7 +596,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005B8B RID: 23435 RVA: 0x00239154 File Offset: 0x00237354
+	// Token: 0x06005C14 RID: 23572 RVA: 0x0023BE70 File Offset: 0x0023A070
 	public override float GetLightBrightness(Vector3i blockPos)
 	{
 		IChunk chunkFromWorldPos = base.GetChunkFromWorldPos(blockPos);
@@ -606,7 +614,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return 0.65f;
 	}
 
-	// Token: 0x06005B8C RID: 23436 RVA: 0x002391B0 File Offset: 0x002373B0
+	// Token: 0x06005C15 RID: 23573 RVA: 0x0023BECC File Offset: 0x0023A0CC
 	public override int GetBlockLightValue(Vector3i blockPos)
 	{
 		ChunkCluster chunkCache = this.ChunkCache;
@@ -625,7 +633,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return 0;
 	}
 
-	// Token: 0x06005B8D RID: 23437 RVA: 0x0023920C File Offset: 0x0023740C
+	// Token: 0x06005C16 RID: 23574 RVA: 0x0023BF28 File Offset: 0x0023A128
 	public override sbyte GetDensity(int _x, int _y, int _z)
 	{
 		ChunkCluster chunkCache = this.ChunkCache;
@@ -641,7 +649,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return MarchingCubes.DensityAir;
 	}
 
-	// Token: 0x06005B8E RID: 23438 RVA: 0x00239254 File Offset: 0x00237454
+	// Token: 0x06005C17 RID: 23575 RVA: 0x0023BF70 File Offset: 0x0023A170
 	public void SetDensity(Vector3i _pos, sbyte _density, bool _bFoceDensity = false)
 	{
 		ChunkCluster chunkCache = this.ChunkCache;
@@ -652,7 +660,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		chunkCache.SetDensity(_pos, _density, _bFoceDensity);
 	}
 
-	// Token: 0x06005B8F RID: 23439 RVA: 0x00239278 File Offset: 0x00237478
+	// Token: 0x06005C18 RID: 23576 RVA: 0x0023BF94 File Offset: 0x0023A194
 	public long GetTexture(int _x, int _y, int _z, int channel = 0)
 	{
 		Chunk chunk = (Chunk)this.ChunkCache.GetChunkFromWorldPos(_x, _y, _z);
@@ -663,7 +671,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return 0L;
 	}
 
-	// Token: 0x06005B90 RID: 23440 RVA: 0x002392BC File Offset: 0x002374BC
+	// Token: 0x06005C19 RID: 23577 RVA: 0x0023BFD8 File Offset: 0x0023A1D8
 	public TextureFullArray GetTextureFullArray(int _x, int _y, int _z)
 	{
 		Chunk chunk = (Chunk)this.ChunkCache.GetChunkFromWorldPos(_x, _y, _z);
@@ -674,13 +682,13 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return new TextureFullArray(0L);
 	}
 
-	// Token: 0x06005B91 RID: 23441 RVA: 0x00239301 File Offset: 0x00237501
+	// Token: 0x06005C1A RID: 23578 RVA: 0x0023C01D File Offset: 0x0023A21D
 	public void SetTexture(int _x, int _y, int _z, long _tex, int channel = 0)
 	{
 		this.ChunkCache.SetTextureFull(new Vector3i(_x, _y, _z), _tex, channel);
 	}
 
-	// Token: 0x06005B92 RID: 23442 RVA: 0x0023931C File Offset: 0x0023751C
+	// Token: 0x06005C1B RID: 23579 RVA: 0x0023C038 File Offset: 0x0023A238
 	public override byte GetStability(int worldX, int worldY, int worldZ)
 	{
 		IChunk chunkSync = this.GetChunkSync(World.toChunkXZ(worldX), World.toChunkXZ(worldZ));
@@ -691,13 +699,13 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return 0;
 	}
 
-	// Token: 0x06005B93 RID: 23443 RVA: 0x00239359 File Offset: 0x00237559
+	// Token: 0x06005C1C RID: 23580 RVA: 0x0023C075 File Offset: 0x0023A275
 	public override byte GetStability(Vector3i _pos)
 	{
 		return this.GetStability(_pos.x, _pos.y, _pos.z);
 	}
 
-	// Token: 0x06005B94 RID: 23444 RVA: 0x00239374 File Offset: 0x00237574
+	// Token: 0x06005C1D RID: 23581 RVA: 0x0023C090 File Offset: 0x0023A290
 	public override void SetStability(int worldX, int worldY, int worldZ, byte stab)
 	{
 		IChunk chunkSync = this.GetChunkSync(World.toChunkXZ(worldX), World.toChunkXZ(worldZ));
@@ -707,13 +715,13 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005B95 RID: 23445 RVA: 0x002393B1 File Offset: 0x002375B1
+	// Token: 0x06005C1E RID: 23582 RVA: 0x0023C0CD File Offset: 0x0023A2CD
 	public override void SetStability(Vector3i _pos, byte stab)
 	{
 		this.SetStability(_pos.x, _pos.y, _pos.z, stab);
 	}
 
-	// Token: 0x06005B96 RID: 23446 RVA: 0x002393CC File Offset: 0x002375CC
+	// Token: 0x06005C1F RID: 23583 RVA: 0x0023C0E8 File Offset: 0x0023A2E8
 	public override byte GetHeight(int worldX, int worldZ)
 	{
 		IChunk chunkSync = this.GetChunkSync(World.toChunkXZ(worldX), World.toChunkXZ(worldZ));
@@ -724,7 +732,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return 0;
 	}
 
-	// Token: 0x06005B97 RID: 23447 RVA: 0x00239404 File Offset: 0x00237604
+	// Token: 0x06005C20 RID: 23584 RVA: 0x0023C120 File Offset: 0x0023A320
 	public byte GetTerrainHeight(int worldX, int worldZ)
 	{
 		Chunk chunk = (Chunk)this.GetChunkSync(World.toChunkXZ(worldX), World.toChunkXZ(worldZ));
@@ -735,7 +743,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return 0;
 	}
 
-	// Token: 0x06005B98 RID: 23448 RVA: 0x00239440 File Offset: 0x00237640
+	// Token: 0x06005C21 RID: 23585 RVA: 0x0023C15C File Offset: 0x0023A35C
 	public float GetHeightAt(float worldX, float worldZ)
 	{
 		IChunkProvider chunkProvider = this.ChunkCache.ChunkProvider;
@@ -747,7 +755,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return 0f;
 	}
 
-	// Token: 0x06005B99 RID: 23449 RVA: 0x0023947C File Offset: 0x0023767C
+	// Token: 0x06005C22 RID: 23586 RVA: 0x0023C198 File Offset: 0x0023A398
 	public bool GetWaterAt(float worldX, float worldZ)
 	{
 		ChunkProviderGenerateWorldFromRaw chunkProviderGenerateWorldFromRaw = this.ChunkCache.ChunkProvider as ChunkProviderGenerateWorldFromRaw;
@@ -773,7 +781,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return poiForColor != null && poiForColor.m_BlockValue.type == 240;
 	}
 
-	// Token: 0x06005B9A RID: 23450 RVA: 0x002394F8 File Offset: 0x002376F8
+	// Token: 0x06005C23 RID: 23587 RVA: 0x0023C214 File Offset: 0x0023A414
 	public override bool IsWater(int _x, int _y, int _z)
 	{
 		if (_y < 256)
@@ -790,19 +798,19 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return false;
 	}
 
-	// Token: 0x06005B9B RID: 23451 RVA: 0x0023953A File Offset: 0x0023773A
+	// Token: 0x06005C24 RID: 23588 RVA: 0x0023C256 File Offset: 0x0023A456
 	public override bool IsWater(Vector3i _pos)
 	{
 		return this.IsWater(_pos.x, _pos.y, _pos.z);
 	}
 
-	// Token: 0x06005B9C RID: 23452 RVA: 0x00239554 File Offset: 0x00237754
+	// Token: 0x06005C25 RID: 23589 RVA: 0x0023C270 File Offset: 0x0023A470
 	public override bool IsWater(Vector3 _pos)
 	{
 		return this.IsWater(World.worldToBlockPos(_pos));
 	}
 
-	// Token: 0x06005B9D RID: 23453 RVA: 0x00239564 File Offset: 0x00237764
+	// Token: 0x06005C26 RID: 23590 RVA: 0x0023C280 File Offset: 0x0023A480
 	public override bool IsAir(int _x, int _y, int _z)
 	{
 		if (_y < 256)
@@ -819,7 +827,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return true;
 	}
 
-	// Token: 0x06005B9E RID: 23454 RVA: 0x002395A8 File Offset: 0x002377A8
+	// Token: 0x06005C27 RID: 23591 RVA: 0x0023C2C4 File Offset: 0x0023A4C4
 	public bool CheckForLevelNearbyHeights(float worldX, float worldZ, int distance)
 	{
 		IChunkProvider chunkProvider = this.ChunkCache.ChunkProvider;
@@ -870,7 +878,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return false;
 	}
 
-	// Token: 0x06005B9F RID: 23455 RVA: 0x00239688 File Offset: 0x00237888
+	// Token: 0x06005C28 RID: 23592 RVA: 0x0023C3A4 File Offset: 0x0023A5A4
 	public bool FindRandomSpawnPointNearRandomPlayer(int maxLightValue, out int x, out int y, out int z)
 	{
 		if (this.Players.list.Count == 0)
@@ -891,13 +899,13 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return this.FindRandomSpawnPointNearPlayer(entity, maxLightValue, out x, out y, out z, 32);
 	}
 
-	// Token: 0x06005BA0 RID: 23456 RVA: 0x00239718 File Offset: 0x00237918
+	// Token: 0x06005C29 RID: 23593 RVA: 0x0023C434 File Offset: 0x0023A634
 	public bool FindRandomSpawnPointNearPlayer(Entity _entityPlayer, int maxLightValue, out int x, out int y, out int z, int maxDistance)
 	{
 		return this.FindRandomSpawnPointNearPosition(_entityPlayer.GetPosition(), maxLightValue, out x, out y, out z, new Vector3((float)maxDistance, (float)maxDistance, (float)maxDistance), true, false);
 	}
 
-	// Token: 0x06005BA1 RID: 23457 RVA: 0x00239748 File Offset: 0x00237948
+	// Token: 0x06005C2A RID: 23594 RVA: 0x0023C464 File Offset: 0x0023A664
 	public bool FindRandomSpawnPointNearPositionUnderground(Vector3 _pos, int maxLightValue, out int x, out int y, out int z, Vector3 maxDistance)
 	{
 		x = (y = (z = 0));
@@ -927,7 +935,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return false;
 	}
 
-	// Token: 0x06005BA2 RID: 23458 RVA: 0x00239884 File Offset: 0x00237A84
+	// Token: 0x06005C2B RID: 23595 RVA: 0x0023C5A0 File Offset: 0x0023A7A0
 	public bool FindRandomSpawnPointNearPosition(Vector3 _pos, int maxLightValue, out int x, out int y, out int z, Vector3 maxDistance, bool _bOnGround, bool _bIgnoreCanMobsSpawnOn = false)
 	{
 		x = (y = (z = 0));
@@ -962,7 +970,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return false;
 	}
 
-	// Token: 0x06005BA3 RID: 23459 RVA: 0x00239A00 File Offset: 0x00237C00
+	// Token: 0x06005C2C RID: 23596 RVA: 0x0023C71C File Offset: 0x0023A91C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isPositionInRangeOfBedrolls(Vector3 _position)
 	{
@@ -983,7 +991,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return false;
 	}
 
-	// Token: 0x06005BA4 RID: 23460 RVA: 0x00239A8C File Offset: 0x00237C8C
+	// Token: 0x06005C2D RID: 23597 RVA: 0x0023C7A8 File Offset: 0x0023A9A8
 	public bool GetRandomSpawnPositionMinMaxToRandomPlayer(int _minRange, int _maxRange, bool _bConsiderBedrolls, out EntityPlayer _player, out Vector3 _position)
 	{
 		_position = Vector3.zero;
@@ -1052,13 +1060,13 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return false;
 	}
 
-	// Token: 0x06005BA5 RID: 23461 RVA: 0x00239CD0 File Offset: 0x00237ED0
+	// Token: 0x06005C2E RID: 23598 RVA: 0x0023C9EC File Offset: 0x0023ABEC
 	public bool GetMobRandomSpawnPosWithWater(Vector3 _targetPos, int _minRange, int _maxRange, int _minPlayerRange, bool _checkBedrolls, out Vector3 _position)
 	{
 		return this.GetRandomSpawnPositionMinMaxToPosition(_targetPos, _minRange, _maxRange, _minPlayerRange, _checkBedrolls, out _position, -1, true, 20, false, EnumLandClaimOwner.None, false) || this.GetRandomSpawnPositionMinMaxToPosition(_targetPos, _minRange, _maxRange, _minPlayerRange, _checkBedrolls, out _position, -1, false, 20, false, EnumLandClaimOwner.None, false);
 	}
 
-	// Token: 0x06005BA6 RID: 23462 RVA: 0x00239D14 File Offset: 0x00237F14
+	// Token: 0x06005C2F RID: 23599 RVA: 0x0023CA30 File Offset: 0x0023AC30
 	public bool GetRandomSpawnPositionMinMaxToPosition(Vector3 _targetPos, int _minRange, int _maxRange, int _minPlayerRange, bool _checkBedrolls, out Vector3 _position, int _forPlayerEntityId = -1, bool _checkWater = true, int _retryCount = 50, bool _checkLandClaim = false, EnumLandClaimOwner _maxLandClaimType = EnumLandClaimOwner.None, bool _useSquareRadius = false)
 	{
 		_position = Vector3.zero;
@@ -1131,7 +1139,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return false;
 	}
 
-	// Token: 0x06005BA7 RID: 23463 RVA: 0x00239FA8 File Offset: 0x002381A8
+	// Token: 0x06005C30 RID: 23600 RVA: 0x0023CCC4 File Offset: 0x0023AEC4
 	public bool GetRandomSpawnPositionInAreaMinMaxToPlayers(Rect _area, int _minDistance, int UNUSED_maxDistance, bool _checkBedrolls, out Vector3 _position, out Chunk _chunk)
 	{
 		_position = Vector3.zero;
@@ -1180,7 +1188,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return false;
 	}
 
-	// Token: 0x06005BA8 RID: 23464 RVA: 0x0023A188 File Offset: 0x00238388
+	// Token: 0x06005C31 RID: 23601 RVA: 0x0023CEA4 File Offset: 0x0023B0A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isPositionFarFromPlayers(Vector3 _position, int _minDistance)
 	{
@@ -1195,7 +1203,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return true;
 	}
 
-	// Token: 0x06005BA9 RID: 23465 RVA: 0x0023A1D4 File Offset: 0x002383D4
+	// Token: 0x06005C32 RID: 23602 RVA: 0x0023CEF0 File Offset: 0x0023B0F0
 	public Vector3 FindSupportingBlockPos(Vector3 pos)
 	{
 		Vector3i vector3i = World.worldToBlockPos(pos);
@@ -1245,7 +1253,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return pos;
 	}
 
-	// Token: 0x06005BAA RID: 23466 RVA: 0x0023A380 File Offset: 0x00238580
+	// Token: 0x06005C33 RID: 23603 RVA: 0x0023D09C File Offset: 0x0023B29C
 	public float GetTerrainOffset(Vector3i _blockPos)
 	{
 		float num = 0f;
@@ -1258,14 +1266,14 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return num;
 	}
 
-	// Token: 0x06005BAB RID: 23467 RVA: 0x0023A3DC File Offset: 0x002385DC
+	// Token: 0x06005C34 RID: 23604 RVA: 0x0023D0F8 File Offset: 0x0023B2F8
 	public bool IsInPlayfield(Chunk _c)
 	{
 		ChunkCluster chunkCache = this.ChunkCache;
 		return !chunkCache.IsFixedSize || this.IsEditor() || (_c.X > chunkCache.ChunkMinPos.x && _c.Z > chunkCache.ChunkMinPos.y && _c.X < chunkCache.ChunkMaxPos.x && _c.Z < chunkCache.ChunkMaxPos.y);
 	}
 
-	// Token: 0x06005BAC RID: 23468 RVA: 0x0023A454 File Offset: 0x00238654
+	// Token: 0x06005C35 RID: 23605 RVA: 0x0023D170 File Offset: 0x0023B370
 	public override BlockValue GetBlock(int x, int y, int z)
 	{
 		ChunkCluster chunkCache = this.ChunkCache;
@@ -1276,13 +1284,13 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return chunkCache.GetBlock(x, y, z);
 	}
 
-	// Token: 0x06005BAD RID: 23469 RVA: 0x0023A47A File Offset: 0x0023867A
+	// Token: 0x06005C36 RID: 23606 RVA: 0x0023D196 File Offset: 0x0023B396
 	public WaterValue GetWater(int _x, int _y, int _z)
 	{
 		return this.GetWater(new Vector3i(_x, _y, _z));
 	}
 
-	// Token: 0x06005BAE RID: 23470 RVA: 0x0023A48C File Offset: 0x0023868C
+	// Token: 0x06005C37 RID: 23607 RVA: 0x0023D1A8 File Offset: 0x0023B3A8
 	public WaterValue GetWater(Vector3i _pos)
 	{
 		ChunkCluster chunkCache = this.ChunkCache;
@@ -1293,7 +1301,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return chunkCache.GetWater(_pos);
 	}
 
-	// Token: 0x06005BAF RID: 23471 RVA: 0x0023A4B0 File Offset: 0x002386B0
+	// Token: 0x06005C38 RID: 23608 RVA: 0x0023D1CC File Offset: 0x0023B3CC
 	public float GetWaterPercent(Vector3i _pos)
 	{
 		ChunkCluster chunkCache = this.ChunkCache;
@@ -1304,7 +1312,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return chunkCache.GetWater(_pos).GetMassPercent();
 	}
 
-	// Token: 0x06005BB0 RID: 23472 RVA: 0x0023A4DC File Offset: 0x002386DC
+	// Token: 0x06005C39 RID: 23609 RVA: 0x0023D1F8 File Offset: 0x0023B3F8
 	public override PropValue GetProp(int chunkX, int chunkZ, int propId)
 	{
 		ChunkCluster chunkCache = this.ChunkCache;
@@ -1315,7 +1323,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return chunkCache.GetProp(chunkX, chunkZ, propId);
 	}
 
-	// Token: 0x06005BB1 RID: 23473 RVA: 0x0023A504 File Offset: 0x00238704
+	// Token: 0x06005C3A RID: 23610 RVA: 0x0023D220 File Offset: 0x0023B420
 	public override PropValue GetProp(long chunkKey, int propId)
 	{
 		ChunkCluster chunkCache = this.ChunkCache;
@@ -1326,7 +1334,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return chunkCache.GetProp(chunkKey, propId);
 	}
 
-	// Token: 0x06005BB2 RID: 23474 RVA: 0x0023A529 File Offset: 0x00238729
+	// Token: 0x06005C3B RID: 23611 RVA: 0x0023D245 File Offset: 0x0023B445
 	public void HandleWaterLevelChanged(Vector3i _pos, float _waterPercent)
 	{
 		GameLightManager instance = GameLightManager.Instance;
@@ -1337,13 +1345,13 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		instance.HandleWaterLevelChanged();
 	}
 
-	// Token: 0x06005BB3 RID: 23475 RVA: 0x0023A53A File Offset: 0x0023873A
+	// Token: 0x06005C3C RID: 23612 RVA: 0x0023D256 File Offset: 0x0023B456
 	public BiomeDefinition GetBiome(string _name)
 	{
 		return this.Biomes.GetBiome(_name);
 	}
 
-	// Token: 0x06005BB4 RID: 23476 RVA: 0x0023A548 File Offset: 0x00238748
+	// Token: 0x06005C3D RID: 23613 RVA: 0x0023D264 File Offset: 0x0023B464
 	public BiomeDefinition GetBiome(int _x, int _z)
 	{
 		Chunk chunk = (Chunk)base.GetChunkFromWorldPos(_x, _z);
@@ -1355,7 +1363,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return null;
 	}
 
-	// Token: 0x06005BB5 RID: 23477 RVA: 0x0023A588 File Offset: 0x00238788
+	// Token: 0x06005C3E RID: 23614 RVA: 0x0023D2A4 File Offset: 0x0023B4A4
 	public BiomeDefinition GetBiomeInWorld(int _x, int _z)
 	{
 		ChunkCluster chunkCache = this.ChunkCache;
@@ -1371,7 +1379,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return null;
 	}
 
-	// Token: 0x06005BB6 RID: 23478 RVA: 0x0023A5C0 File Offset: 0x002387C0
+	// Token: 0x06005C3F RID: 23615 RVA: 0x0023D2DC File Offset: 0x0023B4DC
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public override IChunk GetChunkSync(int chunkX, int chunkZ)
 	{
@@ -1383,7 +1391,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return chunkCache.GetChunkSync(chunkX, chunkZ);
 	}
 
-	// Token: 0x06005BB7 RID: 23479 RVA: 0x0023A5E4 File Offset: 0x002387E4
+	// Token: 0x06005C40 RID: 23616 RVA: 0x0023D300 File Offset: 0x0023B500
 	public override IChunk GetChunkSync(long _key)
 	{
 		ChunkCluster chunkCache = this.ChunkCache;
@@ -1394,13 +1402,13 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return chunkCache.GetChunkSync(_key);
 	}
 
-	// Token: 0x06005BB8 RID: 23480 RVA: 0x0023A604 File Offset: 0x00238804
+	// Token: 0x06005C41 RID: 23617 RVA: 0x0023D320 File Offset: 0x0023B520
 	public bool IsChunkAreaLoaded(Vector3 _position)
 	{
 		return this.IsChunkAreaLoaded(Utils.Fastfloor(_position.x), 0, Utils.Fastfloor(_position.z));
 	}
 
-	// Token: 0x06005BB9 RID: 23481 RVA: 0x0023A624 File Offset: 0x00238824
+	// Token: 0x06005C42 RID: 23618 RVA: 0x0023D340 File Offset: 0x0023B540
 	public bool IsChunkAreaLoaded(int _blockPosX, int _, int _blockPosZ)
 	{
 		int num = World.toChunkXZ(_blockPosX - 8);
@@ -1420,13 +1428,13 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return true;
 	}
 
-	// Token: 0x06005BBA RID: 23482 RVA: 0x0023A67D File Offset: 0x0023887D
+	// Token: 0x06005C43 RID: 23619 RVA: 0x0023D399 File Offset: 0x0023B599
 	public bool IsChunkAreaCollidersLoaded(Vector3 _position)
 	{
 		return this.IsChunkAreaCollidersLoaded(Utils.Fastfloor(_position.x), Utils.Fastfloor(_position.z));
 	}
 
-	// Token: 0x06005BBB RID: 23483 RVA: 0x0023A69C File Offset: 0x0023889C
+	// Token: 0x06005C44 RID: 23620 RVA: 0x0023D3B8 File Offset: 0x0023B5B8
 	public bool IsChunkAreaCollidersLoaded(int _blockPosX, int _blockPosZ)
 	{
 		int num = World.toChunkXZ(_blockPosX - 8);
@@ -1447,61 +1455,61 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return true;
 	}
 
-	// Token: 0x06005BBC RID: 23484 RVA: 0x0020785F File Offset: 0x00205A5F
+	// Token: 0x06005C45 RID: 23621 RVA: 0x0020A57B File Offset: 0x0020877B
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static int toChunkXZ(int _v)
 	{
 		return _v >> 4;
 	}
 
-	// Token: 0x06005BBD RID: 23485 RVA: 0x0023A709 File Offset: 0x00238909
+	// Token: 0x06005C46 RID: 23622 RVA: 0x0023D425 File Offset: 0x0023B625
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector2i toChunkXZ(Vector2i _v)
 	{
 		return new Vector2i(_v.x >> 4, _v.y >> 4);
 	}
 
-	// Token: 0x06005BBE RID: 23486 RVA: 0x0023A720 File Offset: 0x00238920
+	// Token: 0x06005C47 RID: 23623 RVA: 0x0023D43C File Offset: 0x0023B63C
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector2i toChunkXZ(Vector3 _v)
 	{
 		return new Vector2i(Utils.Fastfloor(_v.x) >> 4, Utils.Fastfloor(_v.z) >> 4);
 	}
 
-	// Token: 0x06005BBF RID: 23487 RVA: 0x0023A741 File Offset: 0x00238941
+	// Token: 0x06005C48 RID: 23624 RVA: 0x0023D45D File Offset: 0x0023B65D
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector2i toChunkXZ(Vector3i _v)
 	{
 		return new Vector2i(_v.x >> 4, _v.z >> 4);
 	}
 
-	// Token: 0x06005BC0 RID: 23488 RVA: 0x0023A758 File Offset: 0x00238958
+	// Token: 0x06005C49 RID: 23625 RVA: 0x0023D474 File Offset: 0x0023B674
 	public static Vector3i toChunkXYZCube(Vector3 _v)
 	{
 		return new Vector3i(Utils.Fastfloor(_v.x) >> 4, Utils.Fastfloor(_v.y) >> 4, Utils.Fastfloor(_v.z) >> 4);
 	}
 
-	// Token: 0x06005BC1 RID: 23489 RVA: 0x0023A786 File Offset: 0x00238986
+	// Token: 0x06005C4A RID: 23626 RVA: 0x0023D4A2 File Offset: 0x0023B6A2
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector3i toChunkXYZ(Vector3i _v)
 	{
 		return new Vector3i(_v.x >> 4, _v.y >> 8, _v.z >> 4);
 	}
 
-	// Token: 0x06005BC2 RID: 23490 RVA: 0x0023A7A5 File Offset: 0x002389A5
+	// Token: 0x06005C4B RID: 23627 RVA: 0x0023D4C1 File Offset: 0x0023B6C1
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static int toChunkY(int _v)
 	{
 		return _v >> 8;
 	}
 
-	// Token: 0x06005BC3 RID: 23491 RVA: 0x0023A7AA File Offset: 0x002389AA
+	// Token: 0x06005C4C RID: 23628 RVA: 0x0023D4C6 File Offset: 0x0023B6C6
 	public static Vector3 toChunkXyzWorldPos(Vector3i _v)
 	{
 		return new Vector3((float)(_v.x & -16), (float)(_v.y & -256), (float)(_v.z & -16));
 	}
 
-	// Token: 0x06005BC4 RID: 23492 RVA: 0x0023A7D2 File Offset: 0x002389D2
+	// Token: 0x06005C4D RID: 23629 RVA: 0x0023D4EE File Offset: 0x0023B6EE
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector3i toBlock(Vector3i _p)
 	{
@@ -1511,28 +1519,28 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return _p;
 	}
 
-	// Token: 0x06005BC5 RID: 23493 RVA: 0x0023A808 File Offset: 0x00238A08
+	// Token: 0x06005C4E RID: 23630 RVA: 0x0023D524 File Offset: 0x0023B724
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector3i toBlock(int _x, int _y, int _z)
 	{
 		return new Vector3i(_x & 15, _y & 255, _z & 15);
 	}
 
-	// Token: 0x06005BC6 RID: 23494 RVA: 0x00207859 File Offset: 0x00205A59
+	// Token: 0x06005C4F RID: 23631 RVA: 0x0020A575 File Offset: 0x00208775
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static int toBlockXZ(int _v)
 	{
 		return _v & 15;
 	}
 
-	// Token: 0x06005BC7 RID: 23495 RVA: 0x0023A81E File Offset: 0x00238A1E
+	// Token: 0x06005C50 RID: 23632 RVA: 0x0023D53A File Offset: 0x0023B73A
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static int toBlockY(int _v)
 	{
 		return _v & 255;
 	}
 
-	// Token: 0x06005BC8 RID: 23496 RVA: 0x0023A828 File Offset: 0x00238A28
+	// Token: 0x06005C51 RID: 23633 RVA: 0x0023D544 File Offset: 0x0023B744
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector3 blockToTransformPos(WorldBase _world, BlockValueRef _bvRef)
 	{
@@ -1554,14 +1562,14 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return vector;
 	}
 
-	// Token: 0x06005BC9 RID: 23497 RVA: 0x0023A87C File Offset: 0x00238A7C
+	// Token: 0x06005C52 RID: 23634 RVA: 0x0023D598 File Offset: 0x0023B798
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector3 blockToTransformPos(Vector3i _blockPos)
 	{
 		return new Vector3((float)_blockPos.x + 0.5f, (float)_blockPos.y, (float)_blockPos.z + 0.5f);
 	}
 
-	// Token: 0x06005BCA RID: 23498 RVA: 0x0023A8A4 File Offset: 0x00238AA4
+	// Token: 0x06005C53 RID: 23635 RVA: 0x0023D5C0 File Offset: 0x0023B7C0
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector3 blockToTransformPos(WorldBase _world, PropRef _propRef)
 	{
@@ -1570,39 +1578,39 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return chunkSync.GetWorldPos().ToVector3CenterXZ() + prop.transform.position;
 	}
 
-	// Token: 0x06005BCB RID: 23499 RVA: 0x0023A8E2 File Offset: 0x00238AE2
+	// Token: 0x06005C54 RID: 23636 RVA: 0x0023D5FE File Offset: 0x0023B7FE
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static Vector3i worldToBlockPos(Vector3 _worldPos)
 	{
 		return new Vector3i(Utils.Fastfloor(_worldPos.x), Utils.Fastfloor(_worldPos.y), Utils.Fastfloor(_worldPos.z));
 	}
 
-	// Token: 0x06005BCC RID: 23500 RVA: 0x0023A90A File Offset: 0x00238B0A
+	// Token: 0x06005C55 RID: 23637 RVA: 0x0023D626 File Offset: 0x0023B826
 	public override void SetBlocksRPC(List<BlockChangeInfo> _blockChangeInfo)
 	{
 		this.gameManager.SetBlocksRPC(_blockChangeInfo, null);
 	}
 
-	// Token: 0x06005BCD RID: 23501 RVA: 0x0023A919 File Offset: 0x00238B19
+	// Token: 0x06005C56 RID: 23638 RVA: 0x0023D635 File Offset: 0x0023B835
 	public BlockValue SetBlock(Vector3i _blockPos, BlockValue _blockValue, bool bNotify, bool updateLight)
 	{
 		return this.ChunkCache.SetBlock(_blockPos, _blockValue, bNotify, updateLight);
 	}
 
-	// Token: 0x06005BCE RID: 23502 RVA: 0x0023A930 File Offset: 0x00238B30
+	// Token: 0x06005C57 RID: 23639 RVA: 0x0023D64C File Offset: 0x0023B84C
 	public override void SetPropsRPC(List<PropChangeInfo> _changes)
 	{
 		this.gameManager.SetPropsRPC(_changes, null);
 	}
 
-	// Token: 0x06005BCF RID: 23503 RVA: 0x0023A93F File Offset: 0x00238B3F
+	// Token: 0x06005C58 RID: 23640 RVA: 0x0023D65B File Offset: 0x0023B85B
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public bool IsDaytime()
 	{
 		return !this.IsDark();
 	}
 
-	// Token: 0x06005BD0 RID: 23504 RVA: 0x0023A94C File Offset: 0x00238B4C
+	// Token: 0x06005C59 RID: 23641 RVA: 0x0023D668 File Offset: 0x0023B868
 	public bool IsDark()
 	{
 		if (SkyManager.isAllTimeDay)
@@ -1617,7 +1625,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return num < (float)this.DawnHour || num > (float)this.DuskHour;
 	}
 
-	// Token: 0x06005BD1 RID: 23505 RVA: 0x0023A998 File Offset: 0x00238B98
+	// Token: 0x06005C5A RID: 23642 RVA: 0x0023D6B4 File Offset: 0x0023B8B4
 	public override TileEntity GetTileEntity(Vector3i _pos)
 	{
 		ChunkCluster chunkCache = this.ChunkCache;
@@ -1634,7 +1642,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return chunk.GetTileEntity(vector3i);
 	}
 
-	// Token: 0x06005BD2 RID: 23506 RVA: 0x0023A9F4 File Offset: 0x00238BF4
+	// Token: 0x06005C5B RID: 23643 RVA: 0x0023D710 File Offset: 0x0023B910
 	public void RemoveTileEntity(TileEntity _te)
 	{
 		Chunk chunk = _te.GetChunk();
@@ -1646,7 +1654,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		Log.Error("RemoveTileEntity: chunk not found!");
 	}
 
-	// Token: 0x06005BD3 RID: 23507 RVA: 0x0023AA20 File Offset: 0x00238C20
+	// Token: 0x06005C5C RID: 23644 RVA: 0x0023D73C File Offset: 0x0023B93C
 	public BlockTrigger GetBlockTrigger(Vector3i _pos)
 	{
 		ChunkCluster chunkCache = this.ChunkCache;
@@ -1663,7 +1671,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return chunk.GetBlockTrigger(vector3i);
 	}
 
-	// Token: 0x06005BD4 RID: 23508 RVA: 0x0023AA7C File Offset: 0x00238C7C
+	// Token: 0x06005C5D RID: 23645 RVA: 0x0023D798 File Offset: 0x0023B998
 	public void OnUpdateTick(float _partialTicks, ArraySegment<long> _activeChunks)
 	{
 		this.updateChunkAddedRemovedCallbacks();
@@ -1727,7 +1735,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		this.TickSleeperVolumes();
 	}
 
-	// Token: 0x06005BD5 RID: 23509 RVA: 0x0023ACA2 File Offset: 0x00238EA2
+	// Token: 0x06005C5E RID: 23646 RVA: 0x0023D9BE File Offset: 0x0023BBBE
 	public bool UncullPOI(PrefabInstance _pi)
 	{
 		if (_pi.AddChunksToUncull(this, this.chunksToUncull))
@@ -1742,7 +1750,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return false;
 	}
 
-	// Token: 0x06005BD6 RID: 23510 RVA: 0x0023ACE2 File Offset: 0x00238EE2
+	// Token: 0x06005C5F RID: 23647 RVA: 0x0023D9FE File Offset: 0x0023BBFE
 	public void UncullChunk(Chunk _c)
 	{
 		if (_c.IsInternalBlocksCulled)
@@ -1751,7 +1759,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005BD7 RID: 23511 RVA: 0x0023ACF8 File Offset: 0x00238EF8
+	// Token: 0x06005C60 RID: 23648 RVA: 0x0023DA14 File Offset: 0x0023BC14
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void checkPOIUnculling()
 	{
@@ -1781,7 +1789,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005BD8 RID: 23512 RVA: 0x0023ADC4 File Offset: 0x00238FC4
+	// Token: 0x06005C61 RID: 23649 RVA: 0x0023DAE0 File Offset: 0x0023BCE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateChunksToUncull()
 	{
@@ -1835,7 +1843,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005BD9 RID: 23513 RVA: 0x0023AFC4 File Offset: 0x002391C4
+	// Token: 0x06005C62 RID: 23650 RVA: 0x0023DCE0 File Offset: 0x0023BEE0
 	public Vector3[] GetRandomSpawnPointPositions(int _count)
 	{
 		Vector3[] array = new Vector3[_count];
@@ -1870,7 +1878,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return array;
 	}
 
-	// Token: 0x06005BDA RID: 23514 RVA: 0x0023B068 File Offset: 0x00239268
+	// Token: 0x06005C63 RID: 23651 RVA: 0x0023DD84 File Offset: 0x0023BF84
 	public Vector3 ClipBoundsMove(Entity _entity, Bounds _aabb, Vector3 move, Vector3 expandDir, float stepHeight)
 	{
 		if (stepHeight > 0f)
@@ -2042,7 +2050,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return move;
 	}
 
-	// Token: 0x06005BDB RID: 23515 RVA: 0x0023B644 File Offset: 0x00239844
+	// Token: 0x06005C64 RID: 23652 RVA: 0x0023E360 File Offset: 0x0023C560
 	public List<Bounds> GetCollidingBounds(Entity _entity, Bounds _aabb, List<Bounds> collidingBoundingBoxes)
 	{
 		int num = Utils.Fastfloor(_aabb.min.x - 0.5f);
@@ -2183,7 +2191,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return collidingBoundingBoxes;
 	}
 
-	// Token: 0x06005BDC RID: 23516 RVA: 0x0023BA3C File Offset: 0x00239C3C
+	// Token: 0x06005C65 RID: 23653 RVA: 0x0023E758 File Offset: 0x0023C958
 	public List<Entity> GetEntitiesInBounds(Entity _excludeEntity, Bounds _aabbOfEntity)
 	{
 		this.entitiesWithinAABBExcludingEntity.Clear();
@@ -2205,7 +2213,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return this.entitiesWithinAABBExcludingEntity;
 	}
 
-	// Token: 0x06005BDD RID: 23517 RVA: 0x0023BB10 File Offset: 0x00239D10
+	// Token: 0x06005C66 RID: 23654 RVA: 0x0023E82C File Offset: 0x0023CA2C
 	public List<Entity> GetEntitiesInBounds(Entity _excludeEntity, Bounds _aabbOfEntity, bool _isAlive)
 	{
 		this.entitiesWithinAABBExcludingEntity.Clear();
@@ -2227,7 +2235,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return this.entitiesWithinAABBExcludingEntity;
 	}
 
-	// Token: 0x06005BDE RID: 23518 RVA: 0x0023BBE4 File Offset: 0x00239DE4
+	// Token: 0x06005C67 RID: 23655 RVA: 0x0023E900 File Offset: 0x0023CB00
 	public List<EntityAlive> GetLivingEntitiesInBounds(EntityAlive _excludeEntity, Bounds _aabbOfEntity)
 	{
 		this.livingEntitiesWithinAABBExcludingEntity.Clear();
@@ -2249,7 +2257,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return this.livingEntitiesWithinAABBExcludingEntity;
 	}
 
-	// Token: 0x06005BDF RID: 23519 RVA: 0x0023BCB8 File Offset: 0x00239EB8
+	// Token: 0x06005C68 RID: 23656 RVA: 0x0023E9D4 File Offset: 0x0023CBD4
 	public void GetEntitiesInBounds(FastTags<TagGroup.Global> _tags, Bounds _bb, List<Entity> _list)
 	{
 		int num = Utils.Fastfloor((_bb.min.x - 5f) / 16f);
@@ -2269,7 +2277,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005BE0 RID: 23520 RVA: 0x0023BD78 File Offset: 0x00239F78
+	// Token: 0x06005C69 RID: 23657 RVA: 0x0023EA94 File Offset: 0x0023CC94
 	public List<Entity> GetEntitiesInBounds(Type _class, Bounds _bb, List<Entity> _list)
 	{
 		int num = Utils.Fastfloor((_bb.min.x - 5f) / 16f);
@@ -2290,7 +2298,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return _list;
 	}
 
-	// Token: 0x06005BE1 RID: 23521 RVA: 0x0023BE38 File Offset: 0x0023A038
+	// Token: 0x06005C6A RID: 23658 RVA: 0x0023EB54 File Offset: 0x0023CD54
 	public void GetEntitiesAround(EntityFlags _mask, Vector3 _pos, float _radius, List<Entity> _list)
 	{
 		int num = Utils.Fastfloor((_pos.x - _radius) / 16f);
@@ -2310,7 +2318,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005BE2 RID: 23522 RVA: 0x0023BED0 File Offset: 0x0023A0D0
+	// Token: 0x06005C6B RID: 23659 RVA: 0x0023EBEC File Offset: 0x0023CDEC
 	public void GetEntitiesAround(EntityFlags _flags, EntityFlags _mask, Vector3 _pos, float _radius, List<Entity> _list)
 	{
 		_flags &= _mask;
@@ -2331,7 +2339,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005BE3 RID: 23523 RVA: 0x0023BF74 File Offset: 0x0023A174
+	// Token: 0x06005C6C RID: 23660 RVA: 0x0023EC90 File Offset: 0x0023CE90
 	public int GetEntityAliveCount(EntityFlags _flags, EntityFlags _mask)
 	{
 		int num = 0;
@@ -2346,7 +2354,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return num;
 	}
 
-	// Token: 0x06005BE4 RID: 23524 RVA: 0x0023BFB8 File Offset: 0x0023A1B8
+	// Token: 0x06005C6D RID: 23661 RVA: 0x0023ECD4 File Offset: 0x0023CED4
 	public void GetPlayersAround(Vector3 _pos, float _radius, List<EntityPlayer> _list)
 	{
 		float num = _radius * _radius;
@@ -2360,7 +2368,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005BE5 RID: 23525 RVA: 0x0023C018 File Offset: 0x0023A218
+	// Token: 0x06005C6E RID: 23662 RVA: 0x0023ED34 File Offset: 0x0023CF34
 	public void SetEntitiesVisibleNearToLocalPlayer()
 	{
 		EntityPlayerLocal primaryPlayer = this.GetPrimaryPlayer();
@@ -2380,7 +2388,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005BE6 RID: 23526 RVA: 0x0023C0AC File Offset: 0x0023A2AC
+	// Token: 0x06005C6F RID: 23663 RVA: 0x0023EDC8 File Offset: 0x0023CFC8
 	public void TickEntities(float _partialTicks)
 	{
 		int frameCount = Time.frameCount;
@@ -2423,19 +2431,19 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		this.tickEntitySliceCount = (this.tickEntityList.Count - num3) / num2 + 1;
 	}
 
-	// Token: 0x06005BE7 RID: 23527 RVA: 0x0023C1C5 File Offset: 0x0023A3C5
+	// Token: 0x06005C70 RID: 23664 RVA: 0x0023EEE1 File Offset: 0x0023D0E1
 	public void TickEntitiesFlush()
 	{
 		this.TickEntitiesSlice(this.tickEntityList.Count);
 	}
 
-	// Token: 0x06005BE8 RID: 23528 RVA: 0x0023C1D8 File Offset: 0x0023A3D8
+	// Token: 0x06005C71 RID: 23665 RVA: 0x0023EEF4 File Offset: 0x0023D0F4
 	public void TickEntitiesSlice()
 	{
 		this.TickEntitiesSlice(this.tickEntitySliceCount);
 	}
 
-	// Token: 0x06005BE9 RID: 23529 RVA: 0x0023C1E8 File Offset: 0x0023A3E8
+	// Token: 0x06005C72 RID: 23666 RVA: 0x0023EF04 File Offset: 0x0023D104
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TickEntitiesSlice(int count)
 	{
@@ -2451,7 +2459,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		this.tickEntityIndex = num;
 	}
 
-	// Token: 0x06005BEA RID: 23530 RVA: 0x0023C248 File Offset: 0x0023A448
+	// Token: 0x06005C73 RID: 23667 RVA: 0x0023EF64 File Offset: 0x0023D164
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TickEntity(Entity e, float _partialTicks)
 	{
@@ -2519,7 +2527,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005BEB RID: 23531 RVA: 0x0023C3E0 File Offset: 0x0023A5E0
+	// Token: 0x06005C74 RID: 23668 RVA: 0x0023F0FC File Offset: 0x0023D2FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TickEntityRemove(Entity e)
 	{
@@ -2530,7 +2538,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005BEC RID: 23532 RVA: 0x0023C410 File Offset: 0x0023A610
+	// Token: 0x06005C75 RID: 23669 RVA: 0x0023F12C File Offset: 0x0023D32C
 	public void EntityActivityUpdate()
 	{
 		List<EntityPlayer> list = this.Players.list;
@@ -2600,7 +2608,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005BED RID: 23533 RVA: 0x0023C6C0 File Offset: 0x0023A8C0
+	// Token: 0x06005C76 RID: 23670 RVA: 0x0023F3DC File Offset: 0x0023D5DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void addToChunk(Entity e)
 	{
@@ -2614,7 +2622,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005BEE RID: 23534 RVA: 0x0023C6F4 File Offset: 0x0023A8F4
+	// Token: 0x06005C77 RID: 23671 RVA: 0x0023F410 File Offset: 0x0023D610
 	public override void UnloadEntities(List<Entity> _entityList, bool _forceUnload = false)
 	{
 		for (int i = _entityList.Count - 1; i >= 0; i--)
@@ -2627,7 +2635,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005BEF RID: 23535 RVA: 0x0023C74C File Offset: 0x0023A94C
+	// Token: 0x06005C78 RID: 23672 RVA: 0x0023F468 File Offset: 0x0023D668
 	public override Entity RemoveEntity(int _entityId, EnumRemoveEntityReason _reason)
 	{
 		Entity entity = this.GetEntity(_entityId);
@@ -2639,7 +2647,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return entity;
 	}
 
-	// Token: 0x06005BF0 RID: 23536 RVA: 0x0023C77C File Offset: 0x0023A97C
+	// Token: 0x06005C79 RID: 23673 RVA: 0x0023F498 File Offset: 0x0023D698
 	public void unloadEntity(Entity _e, EnumRemoveEntityReason _reason)
 	{
 		EnumRemoveEntityReason unloadReason = _e.unloadReason;
@@ -2738,7 +2746,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		LightManager.EntityRemovedFromWorld(_e, this);
 	}
 
-	// Token: 0x06005BF1 RID: 23537 RVA: 0x0023C9EC File Offset: 0x0023ABEC
+	// Token: 0x06005C7A RID: 23674 RVA: 0x0023F708 File Offset: 0x0023D908
 	public override Entity GetEntity(int _entityId)
 	{
 		EntityAsyncManager entityAsyncManager = this.entityAsyncManager;
@@ -2751,7 +2759,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return entity;
 	}
 
-	// Token: 0x06005BF2 RID: 23538 RVA: 0x0023CA20 File Offset: 0x0023AC20
+	// Token: 0x06005C7B RID: 23675 RVA: 0x0023F73C File Offset: 0x0023D93C
 	public override void ChangeClientEntityIdToServer(int _clientEntityId, int _serverEntityId)
 	{
 		Entity entity = this.GetEntity(_clientEntityId);
@@ -2764,7 +2772,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005BF3 RID: 23539 RVA: 0x0023CA68 File Offset: 0x0023AC68
+	// Token: 0x06005C7C RID: 23676 RVA: 0x0023F784 File Offset: 0x0023D984
 	public void SpawnEntityInWorld(Entity _entity)
 	{
 		if (_entity == null)
@@ -2848,7 +2856,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005BF4 RID: 23540 RVA: 0x0023CC58 File Offset: 0x0023AE58
+	// Token: 0x06005C7D RID: 23677 RVA: 0x0023F974 File Offset: 0x0023DB74
 	public void AddEntityToMap(Entity _entity)
 	{
 		if (_entity == null)
@@ -2905,7 +2913,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005BF5 RID: 23541 RVA: 0x0023CDD8 File Offset: 0x0023AFD8
+	// Token: 0x06005C7E RID: 23678 RVA: 0x0023FAF4 File Offset: 0x0023DCF4
 	public void RemoveEntityFromMap(Entity _entity, EnumRemoveEntityReason _reason)
 	{
 		if (_entity == null)
@@ -2981,7 +2989,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005BF6 RID: 23542 RVA: 0x0023CEF0 File Offset: 0x0023B0F0
+	// Token: 0x06005C7F RID: 23679 RVA: 0x0023FC0C File Offset: 0x0023DE0C
 	public void RefreshEntitiesOnMap()
 	{
 		foreach (Entity entity in this.Entities.list)
@@ -2991,7 +2999,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005BF7 RID: 23543 RVA: 0x0023CF50 File Offset: 0x0023B150
+	// Token: 0x06005C80 RID: 23680 RVA: 0x0023FC6C File Offset: 0x0023DE6C
 	public void LockAreaMasterChunksAround(Vector3i _blockPos, ulong _worldTimeToLock)
 	{
 		for (int i = -2; i <= 2; i++)
@@ -3012,7 +3020,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005BF8 RID: 23544 RVA: 0x0023D008 File Offset: 0x0023B208
+	// Token: 0x06005C81 RID: 23681 RVA: 0x0023FD24 File Offset: 0x0023DF24
 	public bool IsWaterInBounds(Bounds _aabb)
 	{
 		Vector3 min = _aabb.min;
@@ -3039,7 +3047,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return false;
 	}
 
-	// Token: 0x06005BF9 RID: 23545 RVA: 0x0023D0C4 File Offset: 0x0023B2C4
+	// Token: 0x06005C82 RID: 23682 RVA: 0x0023FDE0 File Offset: 0x0023DFE0
 	public bool IsMaterialInBounds(Bounds _aabb, MaterialBlock _material)
 	{
 		int num = Utils.Fastfloor(_aabb.min.x);
@@ -3064,7 +3072,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return false;
 	}
 
-	// Token: 0x06005BFA RID: 23546 RVA: 0x0023D1A0 File Offset: 0x0023B3A0
+	// Token: 0x06005C83 RID: 23683 RVA: 0x0023FEBC File Offset: 0x0023E0BC
 	public void ClearFallingBlocksForChunks(HashSetLong chunks)
 	{
 		this.resetTempPositions.Clear();
@@ -3109,7 +3117,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005BFB RID: 23547 RVA: 0x0023D30C File Offset: 0x0023B50C
+	// Token: 0x06005C84 RID: 23684 RVA: 0x00240028 File Offset: 0x0023E228
 	public override void AddFallingBlocks(IList<Vector3i> _list)
 	{
 		for (int i = 0; i < _list.Count; i++)
@@ -3118,7 +3126,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005BFC RID: 23548 RVA: 0x0023D338 File Offset: 0x0023B538
+	// Token: 0x06005C85 RID: 23685 RVA: 0x00240054 File Offset: 0x0023E254
 	public void AddFallingBlock(Vector3i _blockPos, bool includeOversized = false)
 	{
 		if (!this.fallingBlockSet.Contains(_blockPos))
@@ -3134,7 +3142,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005BFD RID: 23549 RVA: 0x0023D3AC File Offset: 0x0023B5AC
+	// Token: 0x06005C86 RID: 23686 RVA: 0x002400C8 File Offset: 0x0023E2C8
 	public void LetBlocksFall()
 	{
 		if (this.fallingBlocks.Count == 0)
@@ -3204,7 +3212,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		this.processedBlocks.Clear();
 	}
 
-	// Token: 0x06005BFE RID: 23550 RVA: 0x0023D638 File Offset: 0x0023B838
+	// Token: 0x06005C87 RID: 23687 RVA: 0x00240354 File Offset: 0x0023E554
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GroupFallingBlocks()
 	{
@@ -3275,7 +3283,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005BFF RID: 23551 RVA: 0x0023DA14 File Offset: 0x0023BC14
+	// Token: 0x06005C88 RID: 23688 RVA: 0x00240730 File Offset: 0x0023E930
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CreateFallingBlockGroup(List<Vector3i> groupBlocks)
 	{
@@ -3299,7 +3307,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C00 RID: 23552 RVA: 0x0023DB60 File Offset: 0x0023BD60
+	// Token: 0x06005C89 RID: 23689 RVA: 0x0024087C File Offset: 0x0023EA7C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockValue[] GetBlockValues(List<Vector3i> groupBlocks)
 	{
@@ -3311,7 +3319,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return array;
 	}
 
-	// Token: 0x06005C01 RID: 23553 RVA: 0x0023DBA0 File Offset: 0x0023BDA0
+	// Token: 0x06005C8A RID: 23690 RVA: 0x002408BC File Offset: 0x0023EABC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TextureFullArray[] GetBlockTextureFullArrays(List<Vector3i> groupBlocks)
 	{
@@ -3323,31 +3331,31 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return array;
 	}
 
-	// Token: 0x06005C02 RID: 23554 RVA: 0x0023DBFC File Offset: 0x0023BDFC
+	// Token: 0x06005C8B RID: 23691 RVA: 0x00240918 File Offset: 0x0023EB18
 	public override IGameManager GetGameManager()
 	{
 		return this.gameManager;
 	}
 
-	// Token: 0x06005C03 RID: 23555 RVA: 0x0023DC04 File Offset: 0x0023BE04
+	// Token: 0x06005C8C RID: 23692 RVA: 0x00240920 File Offset: 0x0023EB20
 	public override Manager GetAudioManager()
 	{
 		return this.audioManager;
 	}
 
-	// Token: 0x06005C04 RID: 23556 RVA: 0x0023DC0C File Offset: 0x0023BE0C
+	// Token: 0x06005C8D RID: 23693 RVA: 0x00240928 File Offset: 0x0023EB28
 	public override AIDirector GetAIDirector()
 	{
 		return this.aiDirector;
 	}
 
-	// Token: 0x06005C05 RID: 23557 RVA: 0x0023DC14 File Offset: 0x0023BE14
+	// Token: 0x06005C8E RID: 23694 RVA: 0x00240930 File Offset: 0x0023EB30
 	public override bool IsRemote()
 	{
 		return !SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer;
 	}
 
-	// Token: 0x06005C06 RID: 23558 RVA: 0x0023DC24 File Offset: 0x0023BE24
+	// Token: 0x06005C8F RID: 23695 RVA: 0x00240940 File Offset: 0x0023EB40
 	public EntityPlayer GetClosestPlayer(float _x, float _y, float _z, int _notFromThisTeam, double _maxDistance)
 	{
 		float num = -1f;
@@ -3368,13 +3376,13 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return entityPlayer;
 	}
 
-	// Token: 0x06005C07 RID: 23559 RVA: 0x0023DCBE File Offset: 0x0023BEBE
+	// Token: 0x06005C90 RID: 23696 RVA: 0x002409DA File Offset: 0x0023EBDA
 	public EntityPlayer GetClosestPlayer(Entity _entity, float _distMax, bool _isDead)
 	{
 		return this.GetClosestPlayer(_entity.position, _distMax, _isDead);
 	}
 
-	// Token: 0x06005C08 RID: 23560 RVA: 0x0023DCD0 File Offset: 0x0023BED0
+	// Token: 0x06005C91 RID: 23697 RVA: 0x002409EC File Offset: 0x0023EBEC
 	public EntityPlayer GetClosestPlayer(Vector3 _pos, float _distMax, bool _isDead)
 	{
 		if (_distMax < 0f)
@@ -3400,7 +3408,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return entityPlayer;
 	}
 
-	// Token: 0x06005C09 RID: 23561 RVA: 0x0023DD58 File Offset: 0x0023BF58
+	// Token: 0x06005C92 RID: 23698 RVA: 0x00240A74 File Offset: 0x0023EC74
 	public EntityPlayer GetClosestPlayerSeen(EntityAlive _entity, float _distMax, float lightMin)
 	{
 		Vector3 position = _entity.position;
@@ -3427,7 +3435,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return entityPlayer;
 	}
 
-	// Token: 0x06005C0A RID: 23562 RVA: 0x0023DE04 File Offset: 0x0023C004
+	// Token: 0x06005C93 RID: 23699 RVA: 0x00240B20 File Offset: 0x0023ED20
 	public bool IsPlayerAliveAndNear(Vector3 _pos, float _distMax)
 	{
 		float num = _distMax * _distMax;
@@ -3442,37 +3450,37 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return false;
 	}
 
-	// Token: 0x06005C0B RID: 23563 RVA: 0x0023DE6E File Offset: 0x0023C06E
+	// Token: 0x06005C94 RID: 23700 RVA: 0x00240B8A File Offset: 0x0023ED8A
 	public override WorldBlockTicker GetWBT()
 	{
 		return this.worldBlockTicker;
 	}
 
-	// Token: 0x06005C0C RID: 23564 RVA: 0x0023DE76 File Offset: 0x0023C076
+	// Token: 0x06005C95 RID: 23701 RVA: 0x00240B92 File Offset: 0x0023ED92
 	public override bool IsOpenSkyAbove(int _x, int _y, int _z)
 	{
 		return this.ChunkCache == null || ((Chunk)this.GetChunkSync(_x >> 4, _z >> 4)).IsOpenSkyAbove(_x & 15, _y, _z & 15);
 	}
 
-	// Token: 0x06005C0D RID: 23565 RVA: 0x0005A6B6 File Offset: 0x000588B6
+	// Token: 0x06005C96 RID: 23702 RVA: 0x0005AB36 File Offset: 0x00058D36
 	public override bool IsEditor()
 	{
 		return GameManager.Instance.IsEditMode();
 	}
 
-	// Token: 0x06005C0E RID: 23566 RVA: 0x0023DEA1 File Offset: 0x0023C0A1
+	// Token: 0x06005C97 RID: 23703 RVA: 0x00240BBD File Offset: 0x0023EDBD
 	public int GetGameMode()
 	{
 		return GameStats.GetInt(EnumGameStats.GameModeId);
 	}
 
-	// Token: 0x06005C0F RID: 23567 RVA: 0x0023DEA9 File Offset: 0x0023C0A9
+	// Token: 0x06005C98 RID: 23704 RVA: 0x00240BC5 File Offset: 0x0023EDC5
 	public SpawnManagerDynamic GetDynamiceSpawnManager()
 	{
 		return this.dynamicSpawnManager;
 	}
 
-	// Token: 0x06005C10 RID: 23568 RVA: 0x0023DEB4 File Offset: 0x0023C0B4
+	// Token: 0x06005C99 RID: 23705 RVA: 0x00240BD0 File Offset: 0x0023EDD0
 	public override bool CanPlaceLandProtectionBlockAt(Vector3i blockPos, PersistentPlayerData lpRelative)
 	{
 		if (GameStats.GetInt(EnumGameStats.GameModeId) != 1)
@@ -3518,7 +3526,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return true;
 	}
 
-	// Token: 0x06005C11 RID: 23569 RVA: 0x0023DFEC File Offset: 0x0023C1EC
+	// Token: 0x06005C9A RID: 23706 RVA: 0x00240D08 File Offset: 0x0023EF08
 	public bool IsEmptyPosition(Vector3i blockPos)
 	{
 		if (this.IsWithinTraderArea(blockPos))
@@ -3558,13 +3566,13 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return true;
 	}
 
-	// Token: 0x06005C12 RID: 23570 RVA: 0x0023E0E6 File Offset: 0x0023C2E6
+	// Token: 0x06005C9B RID: 23707 RVA: 0x00240E02 File Offset: 0x0023F002
 	public override bool CanPickupBlockAt(Vector3i blockPos, PersistentPlayerData lpRelative)
 	{
 		return (World.SandboxUseTraderArea != TraderAreaStates.Default || !this.IsWithinTraderArea(blockPos)) && this.CanPlaceBlockAt(blockPos, lpRelative, false);
 	}
 
-	// Token: 0x06005C13 RID: 23571 RVA: 0x0023E104 File Offset: 0x0023C304
+	// Token: 0x06005C9C RID: 23708 RVA: 0x00240E20 File Offset: 0x0023F020
 	public override bool CanPlaceBlockAt(Vector3i blockPos, PersistentPlayerData lpRelative, bool traderAllowed = false)
 	{
 		if (!traderAllowed && World.SandboxUseTraderArea == TraderAreaStates.Default && this.IsWithinTraderArea(blockPos))
@@ -3608,7 +3616,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return true;
 	}
 
-	// Token: 0x06005C14 RID: 23572 RVA: 0x0023E220 File Offset: 0x0023C420
+	// Token: 0x06005C9D RID: 23709 RVA: 0x00240F3C File Offset: 0x0023F13C
 	public override float GetLandProtectionHardnessModifier(Vector3i blockPos, EntityAlive lpRelative, PersistentPlayerData ppData)
 	{
 		if (GameStats.GetInt(EnumGameStats.GameModeId) != 1)
@@ -3669,7 +3677,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return num7;
 	}
 
-	// Token: 0x06005C15 RID: 23573 RVA: 0x0023E3A4 File Offset: 0x0023C5A4
+	// Token: 0x06005C9E RID: 23710 RVA: 0x002410C0 File Offset: 0x0023F2C0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float GetLandProtectionHardnessModifier(Chunk chunk, Vector3i blockPos, PersistentPlayerData lpRelative, int halfClaimSize)
 	{
@@ -3711,13 +3719,13 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return num;
 	}
 
-	// Token: 0x06005C16 RID: 23574 RVA: 0x0023E4F2 File Offset: 0x0023C6F2
+	// Token: 0x06005C9F RID: 23711 RVA: 0x0024120E File Offset: 0x0023F40E
 	public override bool IsMyLandProtectedBlock(Vector3i worldBlockPos, PersistentPlayerData lpRelative)
 	{
 		return this.IsMyLandProtectedBlock(worldBlockPos, lpRelative, World.SandboxUseTraderArea == TraderAreaStates.Claimable);
 	}
 
-	// Token: 0x06005C17 RID: 23575 RVA: 0x0023E504 File Offset: 0x0023C704
+	// Token: 0x06005CA0 RID: 23712 RVA: 0x00241220 File Offset: 0x0023F420
 	public override bool IsMyLandProtectedBlock(Vector3i worldBlockPos, PersistentPlayerData lpRelative, bool traderAllowed = false)
 	{
 		if (GameStats.GetInt(EnumGameStats.GameModeId) != 1)
@@ -3757,7 +3765,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return false;
 	}
 
-	// Token: 0x06005C18 RID: 23576 RVA: 0x0023E604 File Offset: 0x0023C804
+	// Token: 0x06005CA1 RID: 23713 RVA: 0x00241320 File Offset: 0x0023F520
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsLandProtectedBlock(Chunk chunk, Vector3i blockPos, PersistentPlayerData lpRelative, int claimSize, int deadZone, bool forKeystone)
 	{
@@ -3803,7 +3811,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return false;
 	}
 
-	// Token: 0x06005C19 RID: 23577 RVA: 0x0023E70C File Offset: 0x0023C90C
+	// Token: 0x06005CA2 RID: 23714 RVA: 0x00241428 File Offset: 0x0023F628
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool IsMyLandClaimInChunk(Chunk chunk, Vector3i blockPos, PersistentPlayerData lpRelative, int claimSize, int deadZone, bool forKeystone)
 	{
@@ -3849,7 +3857,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return false;
 	}
 
-	// Token: 0x06005C1A RID: 23578 RVA: 0x0023E828 File Offset: 0x0023CA28
+	// Token: 0x06005CA3 RID: 23715 RVA: 0x00241544 File Offset: 0x0023F744
 	public override EnumLandClaimOwner GetLandClaimOwner(Vector3i worldBlockPos, PersistentPlayerData lpRelative)
 	{
 		if (GameStats.GetInt(EnumGameStats.GameModeId) != 1)
@@ -3890,7 +3898,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return EnumLandClaimOwner.None;
 	}
 
-	// Token: 0x06005C1B RID: 23579 RVA: 0x0023E928 File Offset: 0x0023CB28
+	// Token: 0x06005CA4 RID: 23716 RVA: 0x00241644 File Offset: 0x0023F844
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EnumLandClaimOwner GetLandClaimOwner(Chunk chunk, Vector3i blockPos, PersistentPlayerData lpRelative, int claimSize, int deadZone, bool forKeystone)
 	{
@@ -3933,7 +3941,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return EnumLandClaimOwner.None;
 	}
 
-	// Token: 0x06005C1C RID: 23580 RVA: 0x0023EA08 File Offset: 0x0023CC08
+	// Token: 0x06005CA5 RID: 23717 RVA: 0x00241724 File Offset: 0x0023F924
 	public bool GetLandClaimOwnerInParty(EntityPlayer player, PersistentPlayerData lpRelative)
 	{
 		if (GameStats.GetInt(EnumGameStats.GameModeId) != 1)
@@ -3974,7 +3982,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return false;
 	}
 
-	// Token: 0x06005C1D RID: 23581 RVA: 0x0023EB0C File Offset: 0x0023CD0C
+	// Token: 0x06005CA6 RID: 23718 RVA: 0x00241828 File Offset: 0x0023FA28
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool GetLandClaimOwnerInParty(Chunk chunk, EntityPlayer player, Vector3i blockPos, PersistentPlayerData lpRelative, int claimSize, int deadZone)
 	{
@@ -4024,14 +4032,14 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return false;
 	}
 
-	// Token: 0x06005C1E RID: 23582 RVA: 0x0023EC5C File Offset: 0x0023CE5C
+	// Token: 0x06005CA7 RID: 23719 RVA: 0x00241978 File Offset: 0x0023FB78
 	public bool IsLandProtectionValidForPlayer(PersistentPlayerData ppData)
 	{
 		double num = (double)GameStats.GetInt(EnumGameStats.LandClaimExpiryTime) * 24.0;
 		return ppData.OfflineHours <= num;
 	}
 
-	// Token: 0x06005C1F RID: 23583 RVA: 0x0023EC88 File Offset: 0x0023CE88
+	// Token: 0x06005CA8 RID: 23720 RVA: 0x002419A4 File Offset: 0x0023FBA4
 	public float GetLandProtectionHardnessModifierForPlayer(PersistentPlayerData ppData)
 	{
 		float num = (float)GameStats.GetInt(EnumGameStats.LandClaimOnlineDurabilityModifier);
@@ -4070,7 +4078,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return Mathf.Max(1f, (float)((1.0 - num6) * (1.0 - num6)) * num4);
 	}
 
-	// Token: 0x06005C20 RID: 23584 RVA: 0x0023ED94 File Offset: 0x0023CF94
+	// Token: 0x06005CA9 RID: 23721 RVA: 0x00241AB0 File Offset: 0x0023FCB0
 	public float GetDecorationOffsetY(Vector3i _blockPos)
 	{
 		sbyte density = base.GetDensity(_blockPos);
@@ -4078,7 +4086,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return MarchingCubes.GetDecorationOffsetY(density, density2);
 	}
 
-	// Token: 0x06005C21 RID: 23585 RVA: 0x0023EDC0 File Offset: 0x0023CFC0
+	// Token: 0x06005CAA RID: 23722 RVA: 0x00241ADC File Offset: 0x0023FCDC
 	public EnumDecoAllowed GetDecoAllowedAt(int _x, int _z)
 	{
 		Chunk chunk = (Chunk)base.GetChunkFromWorldPos(_x, _z);
@@ -4089,7 +4097,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return EnumDecoAllowed.Nothing;
 	}
 
-	// Token: 0x06005C22 RID: 23586 RVA: 0x0023EDF8 File Offset: 0x0023CFF8
+	// Token: 0x06005CAB RID: 23723 RVA: 0x00241B14 File Offset: 0x0023FD14
 	public void SetDecoAllowedAt(int _x, int _z, EnumDecoAllowed _decoAllowed)
 	{
 		Chunk chunk = (Chunk)base.GetChunkFromWorldPos(_x, _z);
@@ -4099,7 +4107,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C23 RID: 23587 RVA: 0x0023EE2C File Offset: 0x0023D02C
+	// Token: 0x06005CAC RID: 23724 RVA: 0x00241B48 File Offset: 0x0023FD48
 	public Vector3 GetTerrainNormalAt(int _x, int _z)
 	{
 		Chunk chunk = (Chunk)base.GetChunkFromWorldPos(_x, _z);
@@ -4110,13 +4118,13 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return Vector3.zero;
 	}
 
-	// Token: 0x06005C24 RID: 23588 RVA: 0x0023EE62 File Offset: 0x0023D062
+	// Token: 0x06005CAD RID: 23725 RVA: 0x00241B7E File Offset: 0x0023FD7E
 	public bool GetWorldExtent(out Vector3i _minSize, out Vector3i _maxSize)
 	{
 		return this.ChunkCache.ChunkProvider.GetWorldExtent(out _minSize, out _maxSize);
 	}
 
-	// Token: 0x06005C25 RID: 23589 RVA: 0x0023EE78 File Offset: 0x0023D078
+	// Token: 0x06005CAE RID: 23726 RVA: 0x00241B94 File Offset: 0x0023FD94
 	public virtual bool IsPositionAvailable(Vector3 _position)
 	{
 		ChunkCluster chunkCache = this.ChunkCache;
@@ -4137,7 +4145,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return true;
 	}
 
-	// Token: 0x06005C26 RID: 23590 RVA: 0x0023EEDC File Offset: 0x0023D0DC
+	// Token: 0x06005CAF RID: 23727 RVA: 0x00241BF8 File Offset: 0x0023FDF8
 	public bool GetBiomeIntensity(Vector3i _position, out BiomeIntensity _biomeIntensity)
 	{
 		Chunk chunk = (Chunk)base.GetChunkFromWorldPos(_position);
@@ -4150,7 +4158,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return false;
 	}
 
-	// Token: 0x06005C27 RID: 23591 RVA: 0x0023EF34 File Offset: 0x0023D134
+	// Token: 0x06005CB0 RID: 23728 RVA: 0x00241C50 File Offset: 0x0023FE50
 	public bool CanMobsSpawnAtPos(Vector3 _pos)
 	{
 		Vector3i vector3i = World.worldToBlockPos(_pos);
@@ -4158,7 +4166,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return chunk != null && chunk.CanMobsSpawnAtPos(World.toBlockXZ(vector3i.x), World.toBlockY(vector3i.y), World.toBlockXZ(vector3i.z), false, true);
 	}
 
-	// Token: 0x06005C28 RID: 23592 RVA: 0x0023EF84 File Offset: 0x0023D184
+	// Token: 0x06005CB1 RID: 23729 RVA: 0x00241CA0 File Offset: 0x0023FEA0
 	public bool CanSleeperSpawnAtPos(Vector3 _pos, bool _checkBelow)
 	{
 		Vector3i vector3i = World.worldToBlockPos(_pos);
@@ -4166,7 +4174,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return chunk != null && chunk.CanSleeperSpawnAtPos(World.toBlockXZ(vector3i.x), World.toBlockY(vector3i.y), World.toBlockXZ(vector3i.z), _checkBelow);
 	}
 
-	// Token: 0x06005C29 RID: 23593 RVA: 0x0023EFD4 File Offset: 0x0023D1D4
+	// Token: 0x06005CB2 RID: 23730 RVA: 0x00241CF0 File Offset: 0x0023FEF0
 	public bool CanPlayersSpawnAtPos(Vector3 _pos, bool _bAllowToSpawnOnAirPos = false)
 	{
 		Vector3i vector3i = World.worldToBlockPos(_pos);
@@ -4174,7 +4182,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return chunk != null && chunk.CanPlayersSpawnAtPos(World.toBlockXZ(vector3i.x), World.toBlockY(vector3i.y), World.toBlockXZ(vector3i.z), _bAllowToSpawnOnAirPos);
 	}
 
-	// Token: 0x06005C2A RID: 23594 RVA: 0x0023F024 File Offset: 0x0023D224
+	// Token: 0x06005CB3 RID: 23731 RVA: 0x00241D40 File Offset: 0x0023FF40
 	public void CheckEntityCollisionWithBlocks(Entity _entity)
 	{
 		if (!_entity.CanCollideWithBlocks())
@@ -4192,7 +4200,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C2B RID: 23595 RVA: 0x0023F05C File Offset: 0x0023D25C
+	// Token: 0x06005CB4 RID: 23732 RVA: 0x00241D78 File Offset: 0x0023FF78
 	public void OnChunkAdded(Chunk _c)
 	{
 		List<long> list = this.newlyLoadedChunksThisUpdate;
@@ -4202,7 +4210,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C2C RID: 23596 RVA: 0x0023F0A8 File Offset: 0x0023D2A8
+	// Token: 0x06005CB5 RID: 23733 RVA: 0x00241DC4 File Offset: 0x0023FFC4
 	public void OnChunkBeforeRemove(Chunk _c)
 	{
 		List<long> list = this.newlyLoadedChunksThisUpdate;
@@ -4217,7 +4225,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		GameManager.Instance.prefabLODManager.TriggerUpdate();
 	}
 
-	// Token: 0x06005C2D RID: 23597 RVA: 0x0023F118 File Offset: 0x0023D318
+	// Token: 0x06005CB6 RID: 23734 RVA: 0x00241E34 File Offset: 0x00240034
 	public void OnChunkBeforeSave(Chunk _c)
 	{
 		if (this.worldBlockTicker != null)
@@ -4226,7 +4234,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C2E RID: 23598 RVA: 0x0023F130 File Offset: 0x0023D330
+	// Token: 0x06005CB7 RID: 23735 RVA: 0x00241E4C File Offset: 0x0024004C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateChunkAddedRemovedCallbacks()
 	{
@@ -4255,19 +4263,19 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C2F RID: 23599 RVA: 0x0023F1E8 File Offset: 0x0023D3E8
+	// Token: 0x06005CB8 RID: 23736 RVA: 0x00241F04 File Offset: 0x00240104
 	public override ulong GetWorldTime()
 	{
 		return this.worldTime;
 	}
 
-	// Token: 0x06005C30 RID: 23600 RVA: 0x0023F1F0 File Offset: 0x0023D3F0
+	// Token: 0x06005CB9 RID: 23737 RVA: 0x00241F0C File Offset: 0x0024010C
 	public override WorldCreationData GetWorldCreationData()
 	{
 		return this.wcd;
 	}
 
-	// Token: 0x06005C31 RID: 23601 RVA: 0x0023F1F8 File Offset: 0x0023D3F8
+	// Token: 0x06005CBA RID: 23738 RVA: 0x00241F14 File Offset: 0x00240114
 	public bool IsEntityInRange(int _entityId, int _refEntity, int _range)
 	{
 		Entity entity;
@@ -4275,14 +4283,14 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return _entityId == _refEntity || (this.Entities.dict.TryGetValue(_entityId, out entity) && this.Entities.dict.TryGetValue(_refEntity, out entity2) && entity.GetDistanceSq(entity2) <= (float)(_range * _range));
 	}
 
-	// Token: 0x06005C32 RID: 23602 RVA: 0x0023F248 File Offset: 0x0023D448
+	// Token: 0x06005CBB RID: 23739 RVA: 0x00241F64 File Offset: 0x00240164
 	public bool IsEntityInRange(int _entityId, Vector3 _position, int _range)
 	{
 		Entity entity;
 		return this.Entities.dict.TryGetValue(_entityId, out entity) && entity.GetDistanceSq(_position) <= (float)(_range * _range);
 	}
 
-	// Token: 0x06005C33 RID: 23603 RVA: 0x0023F27C File Offset: 0x0023D47C
+	// Token: 0x06005CBC RID: 23740 RVA: 0x00241F98 File Offset: 0x00240198
 	public bool IsPositionInBounds(Vector3 position)
 	{
 		Vector3i vector3i;
@@ -4304,7 +4312,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return boundsInt.Contains(Vector3Int.RoundToInt(position));
 	}
 
-	// Token: 0x06005C34 RID: 23604 RVA: 0x0023F348 File Offset: 0x0023D548
+	// Token: 0x06005CBD RID: 23741 RVA: 0x00242064 File Offset: 0x00240264
 	public float InBoundsForPlayersPercent(Vector3 _pos)
 	{
 		Vector3i vector3i;
@@ -4340,7 +4348,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return Utils.FastMin(num, num2);
 	}
 
-	// Token: 0x06005C35 RID: 23605 RVA: 0x0023F458 File Offset: 0x0023D658
+	// Token: 0x06005CBE RID: 23742 RVA: 0x00242174 File Offset: 0x00240374
 	public bool AdjustBoundsForPlayers(ref Vector3 _pos, float _padPercent)
 	{
 		Vector3i vector3i;
@@ -4383,7 +4391,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return flag;
 	}
 
-	// Token: 0x06005C36 RID: 23606 RVA: 0x0023F550 File Offset: 0x0023D750
+	// Token: 0x06005CBF RID: 23743 RVA: 0x0024226C File Offset: 0x0024046C
 	public bool IsPositionRadiated(Vector3 position)
 	{
 		IChunkProvider chunkProvider = this.ChunkCache.ChunkProvider;
@@ -4391,13 +4399,13 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return chunkProvider != null && (biomeProvider = chunkProvider.GetBiomeProvider()) != null && biomeProvider.GetRadiationAt((int)position.x, (int)position.z) > 0f;
 	}
 
-	// Token: 0x06005C37 RID: 23607 RVA: 0x0023F593 File Offset: 0x0023D793
+	// Token: 0x06005CC0 RID: 23744 RVA: 0x002422AF File Offset: 0x002404AF
 	public bool IsPositionWithinPOI(Vector3 position, int offset)
 	{
 		return this.ChunkCache.ChunkProvider.GetDynamicPrefabDecorator().GetPrefabFromWorldPosInsideWithOffset((int)position.x, (int)position.z, offset) != null;
 	}
 
-	// Token: 0x06005C38 RID: 23608 RVA: 0x0023F5BC File Offset: 0x0023D7BC
+	// Token: 0x06005CC1 RID: 23745 RVA: 0x002422D8 File Offset: 0x002404D8
 	public PrefabInstance GetPOIAtPosition(Vector3 _position, FastTags<TagGroup.Poi>? _excludeTags = null, FastTags<TagGroup.Poi>? _requiredTags = null)
 	{
 		DynamicPrefabDecorator dynamicPrefabDecorator = this.ChunkCache.ChunkProvider.GetDynamicPrefabDecorator();
@@ -4408,7 +4416,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return dynamicPrefabDecorator.GetPrefabAtPosition(_position, _excludeTags, _requiredTags);
 	}
 
-	// Token: 0x06005C39 RID: 23609 RVA: 0x0023F5E8 File Offset: 0x0023D7E8
+	// Token: 0x06005CC2 RID: 23746 RVA: 0x00242304 File Offset: 0x00240504
 	public void GetPOIsAtXZ(int _xMin, int _xMax, int _zMin, int _zMax, List<PrefabInstance> _list)
 	{
 		DynamicPrefabDecorator dynamicPrefabDecorator = this.ChunkCache.ChunkProvider.GetDynamicPrefabDecorator();
@@ -4418,7 +4426,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C3A RID: 23610 RVA: 0x0023F618 File Offset: 0x0023D818
+	// Token: 0x06005CC3 RID: 23747 RVA: 0x00242334 File Offset: 0x00240534
 	public Vector3 ClampToValidWorldPos(Vector3 position)
 	{
 		Vector3i vector3i;
@@ -4440,7 +4448,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return new Vector3(num, num2, num3);
 	}
 
-	// Token: 0x06005C3B RID: 23611 RVA: 0x0023F70C File Offset: 0x0023D90C
+	// Token: 0x06005CC4 RID: 23748 RVA: 0x00242428 File Offset: 0x00240628
 	public Vector3 ClampToValidWorldPosForMap(Vector2 position)
 	{
 		Vector3i vector3i;
@@ -4451,7 +4459,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return new Vector2(num, num2);
 	}
 
-	// Token: 0x06005C3C RID: 23612 RVA: 0x0023F762 File Offset: 0x0023D962
+	// Token: 0x06005CC5 RID: 23749 RVA: 0x0024247E File Offset: 0x0024067E
 	public void ObjectOnMapAdd(MapObject _mo)
 	{
 		if (this.objectsOnMap != null)
@@ -4460,7 +4468,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C3D RID: 23613 RVA: 0x0023F778 File Offset: 0x0023D978
+	// Token: 0x06005CC6 RID: 23750 RVA: 0x00242494 File Offset: 0x00240694
 	public void ObjectOnMapRemove(EnumMapObjectType _type, int _key)
 	{
 		if (this.objectsOnMap != null)
@@ -4469,7 +4477,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C3E RID: 23614 RVA: 0x0023F78F File Offset: 0x0023D98F
+	// Token: 0x06005CC7 RID: 23751 RVA: 0x002424AB File Offset: 0x002406AB
 	public void ObjectOnMapRemove(EnumMapObjectType _type, Vector3 _position)
 	{
 		if (this.objectsOnMap != null)
@@ -4478,7 +4486,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C3F RID: 23615 RVA: 0x0023F7A6 File Offset: 0x0023D9A6
+	// Token: 0x06005CC8 RID: 23752 RVA: 0x002424C2 File Offset: 0x002406C2
 	public void ObjectOnMapRemove(EnumMapObjectType _type)
 	{
 		if (this.objectsOnMap != null)
@@ -4487,7 +4495,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C40 RID: 23616 RVA: 0x0023F7BC File Offset: 0x0023D9BC
+	// Token: 0x06005CC9 RID: 23753 RVA: 0x002424D8 File Offset: 0x002406D8
 	public List<MapObject> GetObjectOnMapList(EnumMapObjectType _type)
 	{
 		if (this.objectsOnMap != null)
@@ -4497,7 +4505,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return new List<MapObject>();
 	}
 
-	// Token: 0x06005C41 RID: 23617 RVA: 0x0023F7D8 File Offset: 0x0023D9D8
+	// Token: 0x06005CCA RID: 23754 RVA: 0x002424F4 File Offset: 0x002406F4
 	public void DebugAddSpawnedEntity(Entity entity)
 	{
 		if (this.GetPrimaryPlayer() == null || !(entity is EntityAlive))
@@ -4517,13 +4525,13 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C42 RID: 23618 RVA: 0x0023F87C File Offset: 0x0023DA7C
+	// Token: 0x06005CCB RID: 23755 RVA: 0x00242598 File Offset: 0x00240798
 	public static void SetWorldAreas(List<TraderArea> _traders)
 	{
 		World.traderAreas = _traders;
 	}
 
-	// Token: 0x06005C43 RID: 23619 RVA: 0x0023F884 File Offset: 0x0023DA84
+	// Token: 0x06005CCC RID: 23756 RVA: 0x002425A0 File Offset: 0x002407A0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetupTraders()
 	{
@@ -4542,8 +4550,8 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x17000987 RID: 2439
-	// (get) Token: 0x06005C44 RID: 23620 RVA: 0x0023F8E0 File Offset: 0x0023DAE0
+	// Token: 0x1700099A RID: 2458
+	// (get) Token: 0x06005CCD RID: 23757 RVA: 0x002425FC File Offset: 0x002407FC
 	public List<TraderArea> TraderAreas
 	{
 		get
@@ -4557,13 +4565,13 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C45 RID: 23621 RVA: 0x0023F909 File Offset: 0x0023DB09
+	// Token: 0x06005CCE RID: 23758 RVA: 0x00242625 File Offset: 0x00240825
 	public bool IsWithinTraderArea(Vector3i _worldBlockPos)
 	{
 		return this.GetTraderAreaAt(_worldBlockPos) != null;
 	}
 
-	// Token: 0x06005C46 RID: 23622 RVA: 0x0023F918 File Offset: 0x0023DB18
+	// Token: 0x06005CCF RID: 23759 RVA: 0x00242634 File Offset: 0x00240834
 	public bool IsWithinTraderPlacingProtection(Vector3i _worldBlockPos)
 	{
 		if (World.SandboxUseTraderArea != TraderAreaStates.Default)
@@ -4574,7 +4582,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return dynamicPrefabDecorator != null && dynamicPrefabDecorator.GetTraderAtPosition(_worldBlockPos, 2) != null;
 	}
 
-	// Token: 0x06005C47 RID: 23623 RVA: 0x0023F950 File Offset: 0x0023DB50
+	// Token: 0x06005CD0 RID: 23760 RVA: 0x0024266C File Offset: 0x0024086C
 	public bool IsWithinTraderPlacingProtection(Bounds _bounds)
 	{
 		if (World.SandboxUseTraderArea != TraderAreaStates.Default)
@@ -4592,7 +4600,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return false;
 	}
 
-	// Token: 0x06005C48 RID: 23624 RVA: 0x0023F9AC File Offset: 0x0023DBAC
+	// Token: 0x06005CD1 RID: 23761 RVA: 0x002426C8 File Offset: 0x002408C8
 	public bool IsWithinTraderArea(Vector3i _minPos, Vector3i _maxPos)
 	{
 		if (World.SandboxUseTraderArea == TraderAreaStates.Claimable)
@@ -4603,7 +4611,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return dynamicPrefabDecorator != null && dynamicPrefabDecorator.IsWithinTraderArea(_minPos, _maxPos);
 	}
 
-	// Token: 0x06005C49 RID: 23625 RVA: 0x0023F9E4 File Offset: 0x0023DBE4
+	// Token: 0x06005CD2 RID: 23762 RVA: 0x00242700 File Offset: 0x00240900
 	public TraderArea GetTraderAreaAt(Vector3i _pos)
 	{
 		DynamicPrefabDecorator dynamicPrefabDecorator = this.ChunkCache.ChunkProvider.GetDynamicPrefabDecorator();
@@ -4614,7 +4622,18 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return null;
 	}
 
-	// Token: 0x06005C4A RID: 23626 RVA: 0x0023FA10 File Offset: 0x0023DC10
+	// Token: 0x06005CD3 RID: 23763 RVA: 0x0024272C File Offset: 0x0024092C
+	public TraderArea GetTraderAreaOuterAt(Vector3i _pos, int offset)
+	{
+		DynamicPrefabDecorator dynamicPrefabDecorator = this.ChunkCache.ChunkProvider.GetDynamicPrefabDecorator();
+		if (dynamicPrefabDecorator != null)
+		{
+			return dynamicPrefabDecorator.GetTraderOuterAtPosition(_pos, 3);
+		}
+		return null;
+	}
+
+	// Token: 0x06005CD4 RID: 23764 RVA: 0x00242758 File Offset: 0x00240958
 	public override int AddSleeperVolume(SleeperVolume _sleeperVolume)
 	{
 		Dictionary<int, SleeperVolume> dictionary = this.sleeperVolumes;
@@ -4638,7 +4657,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return num2;
 	}
 
-	// Token: 0x06005C4B RID: 23627 RVA: 0x0023FAA4 File Offset: 0x0023DCA4
+	// Token: 0x06005CD5 RID: 23765 RVA: 0x002427EC File Offset: 0x002409EC
 	public override int FindSleeperVolume(Vector3i mins, Vector3i maxs)
 	{
 		Dictionary<int, SleeperVolume> dictionary = this.sleeperVolumes;
@@ -4658,7 +4677,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return num2;
 	}
 
-	// Token: 0x06005C4C RID: 23628 RVA: 0x0023FAFC File Offset: 0x0023DCFC
+	// Token: 0x06005CD6 RID: 23766 RVA: 0x00242844 File Offset: 0x00240A44
 	public override SleeperVolume GetSleeperVolume(int index)
 	{
 		Dictionary<int, SleeperVolume> dictionary = this.sleeperVolumes;
@@ -4675,7 +4694,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return sleeperVolume2;
 	}
 
-	// Token: 0x06005C4D RID: 23629 RVA: 0x0023FB60 File Offset: 0x0023DD60
+	// Token: 0x06005CD7 RID: 23767 RVA: 0x002428A8 File Offset: 0x00240AA8
 	public void GetAllSleeperVolumes(List<ValueTuple<int, SleeperVolume>> _volumes)
 	{
 		Dictionary<int, SleeperVolume> dictionary = this.sleeperVolumes;
@@ -4693,7 +4712,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C4E RID: 23630 RVA: 0x0023FBF4 File Offset: 0x0023DDF4
+	// Token: 0x06005CD8 RID: 23768 RVA: 0x0024293C File Offset: 0x00240B3C
 	public void CheckSleeperVolumeTouching(EntityPlayer _player)
 	{
 		if (!GameStats.GetBool(EnumGameStats.IsSpawnEnemies))
@@ -4721,7 +4740,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C4F RID: 23631 RVA: 0x0023FC94 File Offset: 0x0023DE94
+	// Token: 0x06005CD9 RID: 23769 RVA: 0x002429DC File Offset: 0x00240BDC
 	public void CheckSleeperVolumeNoise(Vector3 position)
 	{
 		if (!GameStats.GetBool(EnumGameStats.IsSpawnEnemies))
@@ -4749,7 +4768,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C50 RID: 23632 RVA: 0x0023FD40 File Offset: 0x0023DF40
+	// Token: 0x06005CDA RID: 23770 RVA: 0x00242A88 File Offset: 0x00240C88
 	public void WriteSleeperVolumes(BinaryWriter _bw)
 	{
 		Dictionary<int, SleeperVolume> dictionary = this.sleeperVolumes;
@@ -4770,7 +4789,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C51 RID: 23633 RVA: 0x0023FDF0 File Offset: 0x0023DFF0
+	// Token: 0x06005CDB RID: 23771 RVA: 0x00242B38 File Offset: 0x00240D38
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ReadSleeperVolumes(int _version, BinaryReader _br)
 	{
@@ -4826,7 +4845,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		this.nextSleeperVolumeId = _br.ReadInt32();
 	}
 
-	// Token: 0x06005C52 RID: 23634 RVA: 0x0023FF78 File Offset: 0x0023E178
+	// Token: 0x06005CDC RID: 23772 RVA: 0x00242CC0 File Offset: 0x00240EC0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetupSleeperVolumes()
 	{
@@ -4836,7 +4855,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C53 RID: 23635 RVA: 0x0023FFD0 File Offset: 0x0023E1D0
+	// Token: 0x06005CDD RID: 23773 RVA: 0x00242D18 File Offset: 0x00240F18
 	public void NotifySleeperVolumesEntityDied(EntityAlive entity)
 	{
 		Dictionary<int, SleeperVolume> dictionary = this.sleeperVolumes;
@@ -4849,7 +4868,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C54 RID: 23636 RVA: 0x00240050 File Offset: 0x0023E250
+	// Token: 0x06005CDE RID: 23774 RVA: 0x00242D98 File Offset: 0x00240F98
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TickSleeperVolumes()
 	{
@@ -4864,7 +4883,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C55 RID: 23637 RVA: 0x002400D4 File Offset: 0x0023E2D4
+	// Token: 0x06005CDF RID: 23775 RVA: 0x00242E1C File Offset: 0x0024101C
 	public void RemoveSleeperVolumesFor(PrefabInstance _prefabInstance)
 	{
 		Dictionary<int, SleeperVolume> dictionary = this.sleeperVolumes;
@@ -4882,7 +4901,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C56 RID: 23638 RVA: 0x00240174 File Offset: 0x0023E374
+	// Token: 0x06005CE0 RID: 23776 RVA: 0x00242EBC File Offset: 0x002410BC
 	public override int AddTriggerVolume(TriggerVolume _triggerVolume)
 	{
 		Dictionary<int, TriggerVolume> dictionary = this.triggerVolumes;
@@ -4906,7 +4925,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return num2;
 	}
 
-	// Token: 0x06005C57 RID: 23639 RVA: 0x00240208 File Offset: 0x0023E408
+	// Token: 0x06005CE1 RID: 23777 RVA: 0x00242F50 File Offset: 0x00241150
 	public override void ResetTriggerVolumes(long chunkKey)
 	{
 		Vector2i vector2i = WorldChunkCache.extractXZ(chunkKey);
@@ -4924,7 +4943,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C58 RID: 23640 RVA: 0x002402B0 File Offset: 0x0023E4B0
+	// Token: 0x06005CE2 RID: 23778 RVA: 0x00242FF8 File Offset: 0x002411F8
 	public override void ResetSleeperVolumes(long chunkKey)
 	{
 		Vector2i vector2i = WorldChunkCache.extractXZ(chunkKey);
@@ -4942,7 +4961,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C59 RID: 23641 RVA: 0x00240358 File Offset: 0x0023E558
+	// Token: 0x06005CE3 RID: 23779 RVA: 0x002430A0 File Offset: 0x002412A0
 	public void ResetSleeperVolumes()
 	{
 		Dictionary<int, SleeperVolume> dictionary = this.sleeperVolumes;
@@ -4955,7 +4974,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C5A RID: 23642 RVA: 0x002403D8 File Offset: 0x0023E5D8
+	// Token: 0x06005CE4 RID: 23780 RVA: 0x00243120 File Offset: 0x00241320
 	public override int FindTriggerVolume(Vector3i mins, Vector3i maxs)
 	{
 		Dictionary<int, TriggerVolume> dictionary = this.triggerVolumes;
@@ -4975,7 +4994,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return num2;
 	}
 
-	// Token: 0x06005C5B RID: 23643 RVA: 0x00240430 File Offset: 0x0023E630
+	// Token: 0x06005CE5 RID: 23781 RVA: 0x00243178 File Offset: 0x00241378
 	public override TriggerVolume GetTriggerVolume(int index)
 	{
 		Dictionary<int, TriggerVolume> dictionary = this.triggerVolumes;
@@ -4992,7 +5011,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return triggerVolume2;
 	}
 
-	// Token: 0x06005C5C RID: 23644 RVA: 0x00240494 File Offset: 0x0023E694
+	// Token: 0x06005CE6 RID: 23782 RVA: 0x002431DC File Offset: 0x002413DC
 	public void CheckTriggerVolumeTrigger(EntityPlayer _player)
 	{
 		Vector3i blockPosition = _player.GetBlockPosition();
@@ -5016,7 +5035,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C5D RID: 23645 RVA: 0x00240528 File Offset: 0x0023E728
+	// Token: 0x06005CE7 RID: 23783 RVA: 0x00243270 File Offset: 0x00241470
 	public void WriteTriggerVolumes(BinaryWriter _bw)
 	{
 		Dictionary<int, TriggerVolume> dictionary = this.triggerVolumes;
@@ -5037,7 +5056,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C5E RID: 23646 RVA: 0x002405D8 File Offset: 0x0023E7D8
+	// Token: 0x06005CE8 RID: 23784 RVA: 0x00243320 File Offset: 0x00241520
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ReadTriggerVolumes(int _version, BinaryReader _br)
 	{
@@ -5093,7 +5112,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		this.nextTriggerVolumeId = _br.ReadInt32();
 	}
 
-	// Token: 0x06005C5F RID: 23647 RVA: 0x00240760 File Offset: 0x0023E960
+	// Token: 0x06005CE9 RID: 23785 RVA: 0x002434A8 File Offset: 0x002416A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetupTriggerVolumes()
 	{
@@ -5103,7 +5122,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C60 RID: 23648 RVA: 0x002407B8 File Offset: 0x0023E9B8
+	// Token: 0x06005CEA RID: 23786 RVA: 0x00243500 File Offset: 0x00241700
 	public void RemoveTriggerVolumesFor(PrefabInstance prefabInstance)
 	{
 		this.triggerManager.RemoveFromUpdateList(prefabInstance);
@@ -5121,7 +5140,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C61 RID: 23649 RVA: 0x0024085C File Offset: 0x0023EA5C
+	// Token: 0x06005CEB RID: 23787 RVA: 0x002435A4 File Offset: 0x002417A4
 	public override int AddWallVolume(WallVolume _wallVolume)
 	{
 		Dictionary<int, WallVolume> dictionary = this.wallVolumes;
@@ -5150,7 +5169,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return num2;
 	}
 
-	// Token: 0x06005C62 RID: 23650 RVA: 0x00240928 File Offset: 0x0023EB28
+	// Token: 0x06005CEC RID: 23788 RVA: 0x00243670 File Offset: 0x00241870
 	public void AddWallVolumeAt(int _index, WallVolume _wallVolume)
 	{
 		Dictionary<int, WallVolume> dictionary = this.wallVolumes;
@@ -5176,7 +5195,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C63 RID: 23651 RVA: 0x002409D0 File Offset: 0x0023EBD0
+	// Token: 0x06005CED RID: 23789 RVA: 0x00243718 File Offset: 0x00241918
 	public void RemoveWallVolumeAt(int _index)
 	{
 		Dictionary<int, WallVolume> dictionary = this.wallVolumes;
@@ -5199,7 +5218,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C64 RID: 23652 RVA: 0x00240A7C File Offset: 0x0023EC7C
+	// Token: 0x06005CEE RID: 23790 RVA: 0x002437C4 File Offset: 0x002419C4
 	public override int FindWallVolume(Vector3i mins, Vector3i maxs)
 	{
 		Dictionary<int, WallVolume> dictionary = this.wallVolumes;
@@ -5219,7 +5238,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return num2;
 	}
 
-	// Token: 0x06005C65 RID: 23653 RVA: 0x00240AD4 File Offset: 0x0023ECD4
+	// Token: 0x06005CEF RID: 23791 RVA: 0x0024381C File Offset: 0x00241A1C
 	public override WallVolume GetWallVolume(int index)
 	{
 		Dictionary<int, WallVolume> dictionary = this.wallVolumes;
@@ -5236,7 +5255,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return wallVolume2;
 	}
 
-	// Token: 0x06005C66 RID: 23654 RVA: 0x00240B38 File Offset: 0x0023ED38
+	// Token: 0x06005CF0 RID: 23792 RVA: 0x00243880 File Offset: 0x00241A80
 	public override List<ValueTuple<int, WallVolume>> GetAllWallVolumes()
 	{
 		Dictionary<int, WallVolume> dictionary = this.wallVolumes;
@@ -5258,7 +5277,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return list2;
 	}
 
-	// Token: 0x06005C67 RID: 23655 RVA: 0x00240BDC File Offset: 0x0023EDDC
+	// Token: 0x06005CF1 RID: 23793 RVA: 0x00243924 File Offset: 0x00241B24
 	public override bool HasWallVolumes(List<int> _wallVolumeIds)
 	{
 		Dictionary<int, WallVolume> dictionary = this.wallVolumes;
@@ -5277,7 +5296,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return flag2;
 	}
 
-	// Token: 0x06005C68 RID: 23656 RVA: 0x00240C64 File Offset: 0x0023EE64
+	// Token: 0x06005CF2 RID: 23794 RVA: 0x002439AC File Offset: 0x00241BAC
 	public void WriteWallVolumes(BinaryWriter _bw)
 	{
 		Dictionary<int, WallVolume> dictionary = this.wallVolumes;
@@ -5298,7 +5317,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C69 RID: 23657 RVA: 0x00240D14 File Offset: 0x0023EF14
+	// Token: 0x06005CF3 RID: 23795 RVA: 0x00243A5C File Offset: 0x00241C5C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ReadWallVolumes(int _version, BinaryReader _br)
 	{
@@ -5354,7 +5373,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		this.nextWallVolumeId = _br.ReadInt32();
 	}
 
-	// Token: 0x06005C6A RID: 23658 RVA: 0x00240E9C File Offset: 0x0023F09C
+	// Token: 0x06005CF4 RID: 23796 RVA: 0x00243BE4 File Offset: 0x00241DE4
 	public void SetWallVolumesForClient(List<ValueTuple<int, WallVolume>> wallVolumeData)
 	{
 		this.wallVolumes.Clear();
@@ -5368,7 +5387,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C6B RID: 23659 RVA: 0x00240F24 File Offset: 0x0023F124
+	// Token: 0x06005CF5 RID: 23797 RVA: 0x00243C6C File Offset: 0x00241E6C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetupWallVolumes()
 	{
@@ -5378,7 +5397,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C6C RID: 23660 RVA: 0x00240F7C File Offset: 0x0023F17C
+	// Token: 0x06005CF6 RID: 23798 RVA: 0x00243CC4 File Offset: 0x00241EC4
 	public void RemoveWallVolumesFor(PrefabInstance prefabInstance)
 	{
 		Dictionary<int, WallVolume> dictionary = this.wallVolumes;
@@ -5400,13 +5419,13 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C6D RID: 23661 RVA: 0x0024104C File Offset: 0x0023F24C
+	// Token: 0x06005CF7 RID: 23799 RVA: 0x00243D94 File Offset: 0x00241F94
 	public void AddBlockData(Vector3i v3i, object bd)
 	{
 		this.blockData.Add(v3i, bd);
 	}
 
-	// Token: 0x06005C6E RID: 23662 RVA: 0x0024105C File Offset: 0x0023F25C
+	// Token: 0x06005CF8 RID: 23800 RVA: 0x00243DA4 File Offset: 0x00241FA4
 	public object GetBlockData(Vector3i v3i)
 	{
 		object obj;
@@ -5417,31 +5436,31 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return obj;
 	}
 
-	// Token: 0x06005C6F RID: 23663 RVA: 0x0024107C File Offset: 0x0023F27C
+	// Token: 0x06005CF9 RID: 23801 RVA: 0x00243DC4 File Offset: 0x00241FC4
 	public void ClearBlockData(Vector3i v3i)
 	{
 		this.blockData.Remove(v3i);
 	}
 
-	// Token: 0x06005C70 RID: 23664 RVA: 0x0024108B File Offset: 0x0023F28B
+	// Token: 0x06005CFA RID: 23802 RVA: 0x00243DD3 File Offset: 0x00241FD3
 	public void RebuildTerrain(HashSetLong _chunks, Vector3i _areaStart, Vector3i _areaSize, bool _bStopStabilityUpdate, bool _bRegenerateChunk, bool _bFillEmptyBlocks, bool _isReset = false)
 	{
 		this.ChunkCache.ChunkProvider.RebuildTerrain(_chunks, _areaStart, _areaSize, _bStopStabilityUpdate, _bRegenerateChunk, _bFillEmptyBlocks, _isReset);
 	}
 
-	// Token: 0x06005C71 RID: 23665 RVA: 0x002410A8 File Offset: 0x0023F2A8
+	// Token: 0x06005CFB RID: 23803 RVA: 0x00243DF0 File Offset: 0x00241FF0
 	public override GameRandom GetGameRandom()
 	{
 		return this.rand;
 	}
 
-	// Token: 0x06005C72 RID: 23666 RVA: 0x002410B0 File Offset: 0x0023F2B0
+	// Token: 0x06005CFC RID: 23804 RVA: 0x00243DF8 File Offset: 0x00241FF8
 	public float RandomRange(float _min, float _max)
 	{
 		return this.rand.RandomFloat * (_max - _min) + _min;
 	}
 
-	// Token: 0x06005C73 RID: 23667 RVA: 0x002410C4 File Offset: 0x0023F2C4
+	// Token: 0x06005CFD RID: 23805 RVA: 0x00243E0C File Offset: 0x0024200C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DuskDawnInit()
 	{
@@ -5450,7 +5469,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		this.DawnHour = valueTuple.Item2;
 	}
 
-	// Token: 0x06005C74 RID: 23668 RVA: 0x002410F6 File Offset: 0x0023F2F6
+	// Token: 0x06005CFE RID: 23806 RVA: 0x00243E3E File Offset: 0x0024203E
 	public void SetTime(ulong _time)
 	{
 		this.worldTime = _time;
@@ -5460,7 +5479,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C75 RID: 23669 RVA: 0x00241117 File Offset: 0x0023F317
+	// Token: 0x06005CFF RID: 23807 RVA: 0x00243E5F File Offset: 0x0024205F
 	public void SetTimeJump(ulong _time, bool _isSeek = false)
 	{
 		this.SetTime(_time);
@@ -5471,13 +5490,13 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C76 RID: 23670 RVA: 0x00241143 File Offset: 0x0023F343
+	// Token: 0x06005D00 RID: 23808 RVA: 0x00243E8B File Offset: 0x0024208B
 	public bool IsWorldEvent(World.WorldEvent _event)
 	{
 		return _event == World.WorldEvent.BloodMoon && this.isEventBloodMoon;
 	}
 
-	// Token: 0x06005C77 RID: 23671 RVA: 0x00241150 File Offset: 0x0023F350
+	// Token: 0x06005D01 RID: 23809 RVA: 0x00243E98 File Offset: 0x00242098
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WorldEventUpdateTime()
 	{
@@ -5526,13 +5545,13 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		}
 	}
 
-	// Token: 0x06005C78 RID: 23672 RVA: 0x00241280 File Offset: 0x0023F480
+	// Token: 0x06005D02 RID: 23810 RVA: 0x00243FC8 File Offset: 0x002421C8
 	public override void AddPendingDowngradeBlock(BlockValueRef _bvRef)
 	{
 		this.pendingUpgradeDowngradeBlocks.Add(_bvRef);
 	}
 
-	// Token: 0x06005C79 RID: 23673 RVA: 0x0024128F File Offset: 0x0023F48F
+	// Token: 0x06005D03 RID: 23811 RVA: 0x00243FD7 File Offset: 0x002421D7
 	public override bool TryRetrieveAndRemovePendingDowngradeBlock(BlockValueRef _bvRef)
 	{
 		if (this.pendingUpgradeDowngradeBlocks.Contains(_bvRef))
@@ -5543,7 +5562,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return false;
 	}
 
-	// Token: 0x06005C7A RID: 23674 RVA: 0x002412AF File Offset: 0x0023F4AF
+	// Token: 0x06005D04 RID: 23812 RVA: 0x00243FF7 File Offset: 0x002421F7
 	public IEnumerator ResetPOIS(List<PrefabInstance> prefabInstances, FastTags<TagGroup.Global> questTags, int entityID, int[] sharedWith, QuestClass questClass)
 	{
 		long playerChunkKey = 0L;
@@ -5602,7 +5621,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		yield break;
 	}
 
-	// Token: 0x06005C7B RID: 23675 RVA: 0x002412DC File Offset: 0x0023F4DC
+	// Token: 0x06005D05 RID: 23813 RVA: 0x00244024 File Offset: 0x00242224
 	public bool IsRandomWorld()
 	{
 		bool flag = false;
@@ -5613,218 +5632,218 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		return flag;
 	}
 
-	// Token: 0x04004700 RID: 18176
+	// Token: 0x0400479C RID: 18332
 	public const int cCollisionBlocks = 5;
 
-	// Token: 0x04004703 RID: 18179
+	// Token: 0x0400479F RID: 18335
 	public ulong worldTime;
 
-	// Token: 0x04004704 RID: 18180
+	// Token: 0x040047A0 RID: 18336
 	public int DawnHour;
 
-	// Token: 0x04004705 RID: 18181
+	// Token: 0x040047A1 RID: 18337
 	public int DuskHour;
 
-	// Token: 0x04004706 RID: 18182
+	// Token: 0x040047A2 RID: 18338
 	public float Gravity = 0.08f;
 
-	// Token: 0x04004707 RID: 18183
+	// Token: 0x040047A3 RID: 18339
 	public DictionaryList<int, Entity> Entities = new DictionaryList<int, Entity>();
 
-	// Token: 0x04004708 RID: 18184
+	// Token: 0x040047A4 RID: 18340
 	public DictionaryList<int, EntityPlayer> Players = new DictionaryList<int, EntityPlayer>();
 
-	// Token: 0x04004709 RID: 18185
+	// Token: 0x040047A5 RID: 18341
 	public List<EntityAlive> EntityAlives = new List<EntityAlive>();
 
-	// Token: 0x0400470A RID: 18186
+	// Token: 0x040047A6 RID: 18342
 	public EntityAsyncManager entityAsyncManager;
 
-	// Token: 0x0400470B RID: 18187
+	// Token: 0x040047A7 RID: 18343
 	public NetEntityDistribution entityDistributer;
 
-	// Token: 0x0400470C RID: 18188
+	// Token: 0x040047A8 RID: 18344
 	public NetEntityPackageQueue netEntityPackageQueue;
 
-	// Token: 0x0400470D RID: 18189
+	// Token: 0x040047A9 RID: 18345
 	public AIDirector aiDirector;
 
-	// Token: 0x0400470E RID: 18190
+	// Token: 0x040047AA RID: 18346
 	public Manager audioManager;
 
-	// Token: 0x0400470F RID: 18191
+	// Token: 0x040047AB RID: 18347
 	public Conductor dmsConductor;
 
-	// Token: 0x04004710 RID: 18192
+	// Token: 0x040047AC RID: 18348
 	public IGameManager gameManager;
 
-	// Token: 0x04004711 RID: 18193
+	// Token: 0x040047AD RID: 18349
 	public int Seed;
 
-	// Token: 0x04004712 RID: 18194
+	// Token: 0x040047AE RID: 18350
 	public WorldBiomes Biomes;
 
-	// Token: 0x04004713 RID: 18195
+	// Token: 0x040047AF RID: 18351
 	public SpawnManagerBiomes biomeSpawnManager;
 
-	// Token: 0x04004714 RID: 18196
+	// Token: 0x040047B0 RID: 18352
 	public BiomeIntensity LocalPlayerBiomeIntensityStandingOn = BiomeIntensity.Default;
 
-	// Token: 0x04004715 RID: 18197
+	// Token: 0x040047B1 RID: 18353
 	public WorldCreationData wcd;
 
-	// Token: 0x04004716 RID: 18198
+	// Token: 0x040047B2 RID: 18354
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WorldState worldState;
 
-	// Token: 0x04004717 RID: 18199
+	// Token: 0x040047B3 RID: 18355
 	public ChunkManager m_ChunkManager;
 
-	// Token: 0x04004718 RID: 18200
+	// Token: 0x040047B4 RID: 18356
 	public SharedChunkObserverCache m_SharedChunkObserverCache;
 
-	// Token: 0x04004719 RID: 18201
+	// Token: 0x040047B5 RID: 18357
 	public readonly PrefabCache m_PrefabCache = new PrefabCache();
 
-	// Token: 0x0400471A RID: 18202
+	// Token: 0x040047B6 RID: 18358
 	public EventPrefabsClient m_EventPrefabsClient;
 
-	// Token: 0x0400471B RID: 18203
+	// Token: 0x040047B7 RID: 18359
 	public WorldEnvironment m_WorldEnvironment;
 
-	// Token: 0x0400471C RID: 18204
+	// Token: 0x040047B8 RID: 18360
 	public BiomeAtmosphereEffects BiomeAtmosphereEffects;
 
-	// Token: 0x0400471D RID: 18205
+	// Token: 0x040047B9 RID: 18361
 	public FlatAreaManager FlatAreaManager;
 
-	// Token: 0x0400471E RID: 18206
+	// Token: 0x040047BA RID: 18362
 	public static bool IsSplatMapAvailable;
 
-	// Token: 0x0400471F RID: 18207
+	// Token: 0x040047BB RID: 18363
 	public List<SSpawnedEntity> Last4Spawned = new List<SSpawnedEntity>();
 
-	// Token: 0x04004720 RID: 18208
+	// Token: 0x040047BC RID: 18364
 	public int playerEntityUpdateCount;
 
-	// Token: 0x04004721 RID: 18209
+	// Token: 0x040047BD RID: 18365
 	public int clientLastEntityId;
 
-	// Token: 0x04004722 RID: 18210
+	// Token: 0x040047BE RID: 18366
 	public Transform EntitiesTransform;
 
-	// Token: 0x04004723 RID: 18211
+	// Token: 0x040047BF RID: 18367
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameRandom rand;
 
-	// Token: 0x04004724 RID: 18212
+	// Token: 0x040047C0 RID: 18368
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isUnityTerrainConfigured;
 
-	// Token: 0x04004725 RID: 18213
+	// Token: 0x040047C1 RID: 18369
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<EntityPlayerLocal> m_LocalPlayerEntities = new List<EntityPlayerLocal>();
 
-	// Token: 0x04004726 RID: 18214
+	// Token: 0x040047C2 RID: 18370
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayerLocal m_LocalPlayerEntity;
 
-	// Token: 0x04004727 RID: 18215
+	// Token: 0x040047C3 RID: 18371
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Entity> entitiesWithinAABBExcludingEntity = new List<Entity>();
 
-	// Token: 0x04004728 RID: 18216
+	// Token: 0x040047C4 RID: 18372
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<EntityAlive> livingEntitiesWithinAABBExcludingEntity = new List<EntityAlive>();
 
-	// Token: 0x04004729 RID: 18217
+	// Token: 0x040047C5 RID: 18373
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MapObjectManager objectsOnMap;
 
-	// Token: 0x0400472A RID: 18218
+	// Token: 0x040047C6 RID: 18374
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SpawnManagerDynamic dynamicSpawnManager;
 
-	// Token: 0x0400472B RID: 18219
+	// Token: 0x040047C7 RID: 18375
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WorldBlockTicker worldBlockTicker;
 
-	// Token: 0x0400472C RID: 18220
+	// Token: 0x040047C8 RID: 18376
 	public const int SleeperVolumeWorldStateSaveVersion = 1;
 
-	// Token: 0x0400472D RID: 18221
+	// Token: 0x040047C9 RID: 18377
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int nextSleeperVolumeId;
 
-	// Token: 0x0400472E RID: 18222
+	// Token: 0x040047CA RID: 18378
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<int, SleeperVolume> sleeperVolumes = new Dictionary<int, SleeperVolume>();
 
-	// Token: 0x0400472F RID: 18223
+	// Token: 0x040047CB RID: 18379
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<VolumeKey, int> sleeperVolumeMap = new Dictionary<VolumeKey, int>();
 
-	// Token: 0x04004730 RID: 18224
+	// Token: 0x040047CC RID: 18380
 	public const int TriggerVolumeWorldStateSaveVersion = 1;
 
-	// Token: 0x04004731 RID: 18225
+	// Token: 0x040047CD RID: 18381
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int nextTriggerVolumeId;
 
-	// Token: 0x04004732 RID: 18226
+	// Token: 0x040047CE RID: 18382
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<int, TriggerVolume> triggerVolumes = new Dictionary<int, TriggerVolume>();
 
-	// Token: 0x04004733 RID: 18227
+	// Token: 0x040047CF RID: 18383
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<VolumeKey, int> triggerVolumeMap = new Dictionary<VolumeKey, int>();
 
-	// Token: 0x04004734 RID: 18228
+	// Token: 0x040047D0 RID: 18384
 	public const int WallVolumeWorldStateSaveVersion = 1;
 
-	// Token: 0x04004735 RID: 18229
+	// Token: 0x040047D1 RID: 18385
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int nextWallVolumeId;
 
-	// Token: 0x04004736 RID: 18230
+	// Token: 0x040047D2 RID: 18386
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<int, WallVolume> wallVolumes = new Dictionary<int, WallVolume>();
 
-	// Token: 0x04004737 RID: 18231
+	// Token: 0x040047D3 RID: 18387
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<VolumeKey, int> wallVolumeMap = new Dictionary<VolumeKey, int>();
 
-	// Token: 0x04004738 RID: 18232
+	// Token: 0x040047D4 RID: 18388
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<Vector3i, object> blockData = new Dictionary<Vector3i, object>();
 
-	// Token: 0x04004739 RID: 18233
+	// Token: 0x040047D5 RID: 18389
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<long> newlyLoadedChunksThisUpdate = new List<long>();
 
-	// Token: 0x0400473A RID: 18234
+	// Token: 0x040047D6 RID: 18390
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<long, ulong> areaMasterChunksToLock = new Dictionary<long, ulong>();
 
-	// Token: 0x0400473B RID: 18235
+	// Token: 0x040047D7 RID: 18391
 	public TriggerManager triggerManager;
 
-	// Token: 0x0400473C RID: 18236
+	// Token: 0x040047D8 RID: 18392
 	public static bool BiomeProgressionEnabled = true;
 
-	// Token: 0x0400473D RID: 18237
+	// Token: 0x040047D9 RID: 18393
 	public static bool TemperatureSurvival = true;
 
-	// Token: 0x0400473E RID: 18238
+	// Token: 0x040047DA RID: 18394
 	public static bool MapEnabled = true;
 
-	// Token: 0x0400473F RID: 18239
+	// Token: 0x040047DB RID: 18395
 	public static int BloodMoonWarningHour = 8;
 
-	// Token: 0x04004740 RID: 18240
+	// Token: 0x040047DC RID: 18396
 	public static float StormFrequency = 1f;
 
-	// Token: 0x04004741 RID: 18241
+	// Token: 0x040047DD RID: 18397
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int[][] supportOrder = new int[][]
 	{
@@ -5838,7 +5857,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		new int[] { 6, 0, 7, 5, 1, 2, 4, 3 }
 	};
 
-	// Token: 0x04004742 RID: 18242
+	// Token: 0x040047DE RID: 18398
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int[] supportOffsets = new int[]
 	{
@@ -5846,158 +5865,158 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 		-1, -1, -1, 0, -1, 1
 	};
 
-	// Token: 0x04004743 RID: 18243
+	// Token: 0x040047DF RID: 18399
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MicroStopwatch msUnculling = new MicroStopwatch();
 
-	// Token: 0x04004744 RID: 18244
+	// Token: 0x040047E0 RID: 18400
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSetList<Chunk> chunksToUncull = new HashSetList<Chunk>();
 
-	// Token: 0x04004745 RID: 18245
+	// Token: 0x040047E1 RID: 18401
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSetList<Chunk> chunksToRegenerate = new HashSetList<Chunk>();
 
-	// Token: 0x04004746 RID: 18246
+	// Token: 0x040047E2 RID: 18402
 	[PublicizedFrom(EAccessModifier.Private)]
 	public World.ClipBlock[] _clipBlocks = new World.ClipBlock[32];
 
-	// Token: 0x04004747 RID: 18247
+	// Token: 0x040047E3 RID: 18403
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Bounds[] _clipBounds = new Bounds[16];
 
-	// Token: 0x04004748 RID: 18248
+	// Token: 0x040047E4 RID: 18404
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cCollCacheSize = 50;
 
-	// Token: 0x04004749 RID: 18249
+	// Token: 0x040047E5 RID: 18405
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockValue[,,] collBlockCache = new BlockValue[50, 50, 50];
 
-	// Token: 0x0400474A RID: 18250
+	// Token: 0x040047E6 RID: 18406
 	[PublicizedFrom(EAccessModifier.Private)]
 	public sbyte[,,] collDensityCache = new sbyte[50, 50, 50];
 
-	// Token: 0x0400474B RID: 18251
+	// Token: 0x040047E7 RID: 18407
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int tickEntityFrameCount;
 
-	// Token: 0x0400474C RID: 18252
+	// Token: 0x040047E8 RID: 18408
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float tickEntityFrameCountAverage = 1f;
 
-	// Token: 0x0400474D RID: 18253
+	// Token: 0x040047E9 RID: 18409
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Entity> tickEntityList = new List<Entity>();
 
-	// Token: 0x0400474E RID: 18254
+	// Token: 0x040047EA RID: 18410
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float tickEntityPartialTicks;
 
-	// Token: 0x0400474F RID: 18255
+	// Token: 0x040047EB RID: 18411
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int tickEntityIndex;
 
-	// Token: 0x04004750 RID: 18256
+	// Token: 0x040047EC RID: 18412
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int tickEntitySliceCount;
 
-	// Token: 0x04004751 RID: 18257
+	// Token: 0x040047ED RID: 18413
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Queue<Vector3i> fallingBlocks = new Queue<Vector3i>();
 
-	// Token: 0x04004752 RID: 18258
+	// Token: 0x040047EE RID: 18414
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public HashSet<Vector3i> fallingBlockSet = new HashSet<Vector3i>();
 
-	// Token: 0x04004753 RID: 18259
+	// Token: 0x040047EF RID: 18415
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public Queue<List<Vector3i>> fallingGroups = new Queue<List<Vector3i>>();
 
-	// Token: 0x04004754 RID: 18260
+	// Token: 0x040047F0 RID: 18416
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public HashSet<Vector3i> groupedBlocks = new HashSet<Vector3i>();
 
-	// Token: 0x04004755 RID: 18261
+	// Token: 0x040047F1 RID: 18417
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public HashSet<Vector3i> processedBlocks = new HashSet<Vector3i>();
 
-	// Token: 0x04004756 RID: 18262
+	// Token: 0x040047F2 RID: 18418
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Vector3i> resetTempPositions = new List<Vector3i>();
 
-	// Token: 0x04004757 RID: 18263
+	// Token: 0x040047F3 RID: 18419
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<List<Vector3i>> resetTempGroups = new List<List<Vector3i>>();
 
-	// Token: 0x04004758 RID: 18264
+	// Token: 0x040047F4 RID: 18420
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Chunk> m_lpChunkList = new List<Chunk>();
 
-	// Token: 0x04004759 RID: 18265
+	// Token: 0x040047F5 RID: 18421
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cWorldNavExtent = 2900;
 
-	// Token: 0x0400475A RID: 18266
+	// Token: 0x040047F6 RID: 18422
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cWorldRWGBorder = 90;
 
-	// Token: 0x0400475B RID: 18267
+	// Token: 0x040047F7 RID: 18423
 	public const float cEdgeHard = 50f;
 
-	// Token: 0x0400475C RID: 18268
+	// Token: 0x040047F8 RID: 18424
 	public const float cEdgeSoft = 80f;
 
-	// Token: 0x0400475D RID: 18269
+	// Token: 0x040047F9 RID: 18425
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cEdgeMinWorldSize = 1024;
 
-	// Token: 0x0400475E RID: 18270
+	// Token: 0x040047FA RID: 18426
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<TraderArea> traderAreas;
 
-	// Token: 0x0400475F RID: 18271
+	// Token: 0x040047FB RID: 18427
 	public static TraderAreaStates SandboxUseTraderArea = TraderAreaStates.Default;
 
-	// Token: 0x04004760 RID: 18272
+	// Token: 0x040047FC RID: 18428
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cTraderPlacingProtection = 2;
 
-	// Token: 0x04004761 RID: 18273
+	// Token: 0x040047FD RID: 18429
 	public bool isEventBloodMoon;
 
-	// Token: 0x04004762 RID: 18274
+	// Token: 0x040047FE RID: 18430
 	public ulong eventWorldTime;
 
-	// Token: 0x04004763 RID: 18275
+	// Token: 0x040047FF RID: 18431
 	public int WorldDay;
 
-	// Token: 0x04004764 RID: 18276
+	// Token: 0x04004800 RID: 18432
 	public int WorldHour;
 
-	// Token: 0x04004765 RID: 18277
+	// Token: 0x04004801 RID: 18433
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public HashSet<BlockValueRef> pendingUpgradeDowngradeBlocks = new HashSet<BlockValueRef>();
 
-	// Token: 0x02000BDA RID: 3034
-	// (Invoke) Token: 0x06005C7E RID: 23678
+	// Token: 0x02000BEC RID: 3052
+	// (Invoke) Token: 0x06005D08 RID: 23816
 	public delegate void OnEntityLoadedDelegate(Entity _entity);
 
-	// Token: 0x02000BDB RID: 3035
-	// (Invoke) Token: 0x06005C82 RID: 23682
+	// Token: 0x02000BED RID: 3053
+	// (Invoke) Token: 0x06005D0C RID: 23820
 	public delegate void OnEntityUnloadedDelegate(Entity _entity, EnumRemoveEntityReason _reason);
 
-	// Token: 0x02000BDC RID: 3036
+	// Token: 0x02000BEE RID: 3054
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class ClipBlock
 	{
-		// Token: 0x06005C85 RID: 23685 RVA: 0x0024141B File Offset: 0x0023F61B
+		// Token: 0x06005D0F RID: 23823 RVA: 0x00244163 File Offset: 0x00242363
 		public static void ResetStorage()
 		{
 			World.ClipBlock._storageIndex = 0;
 		}
 
-		// Token: 0x06005C86 RID: 23686 RVA: 0x00241424 File Offset: 0x0023F624
+		// Token: 0x06005D10 RID: 23824 RVA: 0x0024416C File Offset: 0x0024236C
 		public static World.ClipBlock New(BlockValue _value, Block _block, float _yDistort, Vector3 _blockPos, Bounds _bounds)
 		{
 			World.ClipBlock clipBlock = World.ClipBlock._storage[World.ClipBlock._storageIndex];
@@ -6011,7 +6030,7 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 			return clipBlock;
 		}
 
-		// Token: 0x06005C87 RID: 23687 RVA: 0x0024146C File Offset: 0x0023F66C
+		// Token: 0x06005D11 RID: 23825 RVA: 0x002441B4 File Offset: 0x002423B4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void Init(BlockValue _value, Block _block, float _yDistort, Vector3 _blockPos, Bounds _bounds)
 		{
@@ -6025,53 +6044,53 @@ public class World : WorldBase, IBlockAccess, IChunkAccess, IChunkCallback
 			this.bmaxs = bounds.max;
 		}
 
-		// Token: 0x04004766 RID: 18278
+		// Token: 0x04004802 RID: 18434
 		public const int kMaxBlocks = 32;
 
-		// Token: 0x04004767 RID: 18279
+		// Token: 0x04004803 RID: 18435
 		public BlockValue value;
 
-		// Token: 0x04004768 RID: 18280
+		// Token: 0x04004804 RID: 18436
 		public Vector3 pos;
 
-		// Token: 0x04004769 RID: 18281
+		// Token: 0x04004805 RID: 18437
 		public Block block;
 
-		// Token: 0x0400476A RID: 18282
+		// Token: 0x04004806 RID: 18438
 		public Vector3 bmins;
 
-		// Token: 0x0400476B RID: 18283
+		// Token: 0x04004807 RID: 18439
 		public Vector3 bmaxs;
 
-		// Token: 0x0400476C RID: 18284
+		// Token: 0x04004808 RID: 18440
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static int _storageIndex = 0;
 
-		// Token: 0x0400476D RID: 18285
+		// Token: 0x04004809 RID: 18441
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static World.ClipBlock[] _storage = new World.ClipBlock[32];
 	}
 
-	// Token: 0x02000BDD RID: 3037
+	// Token: 0x02000BEF RID: 3055
 	public struct GroupBounds
 	{
-		// Token: 0x06005C8A RID: 23690 RVA: 0x002414F8 File Offset: 0x0023F6F8
+		// Token: 0x06005D14 RID: 23828 RVA: 0x00244240 File Offset: 0x00242440
 		public bool IsWithinSize(int maxSize)
 		{
 			return this.max.x - this.min.x + 1 <= maxSize && this.max.y - this.min.y + 1 <= maxSize && this.max.z - this.min.z + 1 <= maxSize;
 		}
 
-		// Token: 0x0400476E RID: 18286
+		// Token: 0x0400480A RID: 18442
 		public Vector3i min;
 
-		// Token: 0x0400476F RID: 18287
+		// Token: 0x0400480B RID: 18443
 		public Vector3i max;
 	}
 
-	// Token: 0x02000BDE RID: 3038
+	// Token: 0x02000BF0 RID: 3056
 	public enum WorldEvent
 	{
-		// Token: 0x04004771 RID: 18289
+		// Token: 0x0400480D RID: 18445
 		BloodMoon
 	}
 }

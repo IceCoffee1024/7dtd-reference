@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000506 RID: 1286
+// Token: 0x0200050B RID: 1291
 public class ParticleLifetimeSwitch : MonoBehaviour
 {
-	// Token: 0x06002A32 RID: 10802 RVA: 0x00109D2F File Offset: 0x00107F2F
+	// Token: 0x06002A5C RID: 10844 RVA: 0x0010AD6B File Offset: 0x00108F6B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Start()
 	{
@@ -12,7 +12,7 @@ public class ParticleLifetimeSwitch : MonoBehaviour
 		this.particles = base.transform.GetComponent<ParticleSystem>();
 	}
 
-	// Token: 0x06002A33 RID: 10803 RVA: 0x00109D54 File Offset: 0x00107F54
+	// Token: 0x06002A5D RID: 10845 RVA: 0x0010AD90 File Offset: 0x00108F90
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void Update()
 	{
@@ -46,30 +46,30 @@ public class ParticleLifetimeSwitch : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400201C RID: 8220
+	// Token: 0x0400204B RID: 8267
 	public float TurnOffDelayAfterEntityDies = 5f;
 
-	// Token: 0x0400201D RID: 8221
+	// Token: 0x0400204C RID: 8268
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Transform entityRoot;
 
-	// Token: 0x0400201E RID: 8222
+	// Token: 0x0400204D RID: 8269
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Entity entity;
 
-	// Token: 0x0400201F RID: 8223
+	// Token: 0x0400204E RID: 8270
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public ParticleSystem particles;
 
-	// Token: 0x04002020 RID: 8224
+	// Token: 0x0400204F RID: 8271
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float delay;
 
-	// Token: 0x04002021 RID: 8225
+	// Token: 0x04002050 RID: 8272
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bFirstUpdate = true;

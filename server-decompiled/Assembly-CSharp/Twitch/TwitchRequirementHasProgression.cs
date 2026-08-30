@@ -3,17 +3,17 @@ using UnityEngine.Scripting;
 
 namespace Twitch
 {
-	// Token: 0x02001835 RID: 6197
+	// Token: 0x0200185B RID: 6235
 	[Preserve]
 	public class TwitchRequirementHasProgression : BaseTwitchOperationRequirement
 	{
-		// Token: 0x0600BF16 RID: 48918 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600C09B RID: 49307 RVA: 0x000027FC File Offset: 0x000009FC
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
 		}
 
-		// Token: 0x0600BF17 RID: 48919 RVA: 0x0046EA84 File Offset: 0x0046CC84
+		// Token: 0x0600C09C RID: 49308 RVA: 0x00474820 File Offset: 0x00472A20
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override object LeftSide(Entity entity)
 		{
@@ -25,14 +25,14 @@ namespace Twitch
 			return 0;
 		}
 
-		// Token: 0x0600BF18 RID: 48920 RVA: 0x0046EABE File Offset: 0x0046CCBE
+		// Token: 0x0600C09D RID: 49309 RVA: 0x0047485A File Offset: 0x00472A5A
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override object RightSide(Entity entity)
 		{
 			return this.Level;
 		}
 
-		// Token: 0x0600BF19 RID: 48921 RVA: 0x0046EACB File Offset: 0x0046CCCB
+		// Token: 0x0600C09E RID: 49310 RVA: 0x00474867 File Offset: 0x00472A67
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool CheckPerk(EntityPlayer player, string buffName)
 		{
@@ -43,7 +43,7 @@ namespace Twitch
 			return this.Invert;
 		}
 
-		// Token: 0x0600BF1A RID: 48922 RVA: 0x0046EAF7 File Offset: 0x0046CCF7
+		// Token: 0x0600C09F RID: 49311 RVA: 0x00474893 File Offset: 0x00472A93
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -51,19 +51,19 @@ namespace Twitch
 			properties.ParseInt(TwitchRequirementHasProgression.PropLevel, ref this.Level);
 		}
 
-		// Token: 0x04009024 RID: 36900
+		// Token: 0x04009140 RID: 37184
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string SkillName = "";
 
-		// Token: 0x04009025 RID: 36901
+		// Token: 0x04009141 RID: 37185
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int Level = 1;
 
-		// Token: 0x04009026 RID: 36902
+		// Token: 0x04009142 RID: 37186
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSkillName = "skill_name";
 
-		// Token: 0x04009027 RID: 36903
+		// Token: 0x04009143 RID: 37187
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropLevel = "level";
 	}

@@ -1,20 +1,20 @@
 ﻿using System;
 
-// Token: 0x02000C3F RID: 3135
+// Token: 0x02000C51 RID: 3153
 public struct WaterInfo
 {
-	// Token: 0x04004A9D RID: 19101
+	// Token: 0x04004B3A RID: 19258
 	public Vector3i pos;
 
-	// Token: 0x04004A9E RID: 19102
+	// Token: 0x04004B3B RID: 19259
 	public int minX;
 
-	// Token: 0x04004A9F RID: 19103
+	// Token: 0x04004B3C RID: 19260
 	public int maxX;
 
-	// Token: 0x04004AA0 RID: 19104
+	// Token: 0x04004B3D RID: 19261
 	public int minZ;
 
-	// Token: 0x04004AA1 RID: 19105
+	// Token: 0x04004B3E RID: 19262
 	public int maxZ;
 }

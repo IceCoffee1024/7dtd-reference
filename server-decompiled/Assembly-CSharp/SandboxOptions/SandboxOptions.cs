@@ -2,314 +2,340 @@
 
 namespace SandboxOptions
 {
-	// Token: 0x02001873 RID: 6259
+	// Token: 0x02001899 RID: 6297
 	public enum SandboxOptions
 	{
-		// Token: 0x040091C3 RID: 37315
+		// Token: 0x040092DF RID: 37599
 		RangedDamage,
-		// Token: 0x040091C4 RID: 37316
+		// Token: 0x040092E0 RID: 37600
 		MeleeDamage,
-		// Token: 0x040091C5 RID: 37317
+		// Token: 0x040092E1 RID: 37601
 		BlockDamage,
-		// Token: 0x040091C6 RID: 37318
+		// Token: 0x040092E2 RID: 37602
 		TerrainDamage,
-		// Token: 0x040091C7 RID: 37319
+		// Token: 0x040092E3 RID: 37603
 		HeadshotMultiplier,
-		// Token: 0x040091C8 RID: 37320
+		// Token: 0x040092E4 RID: 37604
 		CrouchSpeed,
-		// Token: 0x040091C9 RID: 37321
+		// Token: 0x040092E5 RID: 37605
 		WalkSpeed,
-		// Token: 0x040091CA RID: 37322
+		// Token: 0x040092E6 RID: 37606
 		RunSpeed,
-		// Token: 0x040091CB RID: 37323
+		// Token: 0x040092E7 RID: 37607
 		JumpStrength,
-		// Token: 0x040091CC RID: 37324
+		// Token: 0x040092E8 RID: 37608
 		StaminaUsage,
-		// Token: 0x040091CD RID: 37325
+		// Token: 0x040092E9 RID: 37609
 		StaminaRegen,
-		// Token: 0x040091CE RID: 37326
+		// Token: 0x040092EA RID: 37610
 		PlayerLevelBonusApplied,
-		// Token: 0x040091CF RID: 37327
+		// Token: 0x040092EB RID: 37611
 		JarRefund,
-		// Token: 0x040091D0 RID: 37328
+		// Token: 0x040092EC RID: 37612
 		ShowHealthBars,
-		// Token: 0x040091D1 RID: 37329
+		// Token: 0x040092ED RID: 37613
 		ShowEnemyDamage,
-		// Token: 0x040091D2 RID: 37330
+		// Token: 0x040092EE RID: 37614
 		NewbieCoat,
-		// Token: 0x040091D3 RID: 37331
+		// Token: 0x040092EF RID: 37615
 		HeadshotMode,
-		// Token: 0x040091D4 RID: 37332
+		// Token: 0x040092F0 RID: 37616
 		IncomingDamage,
-		// Token: 0x040091D5 RID: 37333
+		// Token: 0x040092F1 RID: 37617
 		XPMultiplier,
-		// Token: 0x040091D6 RID: 37334
+		// Token: 0x040092F2 RID: 37618
 		ShowXP,
-		// Token: 0x040091D7 RID: 37335
+		// Token: 0x040092F3 RID: 37619
 		EncumbranceModifier,
-		// Token: 0x040091D8 RID: 37336
+		// Token: 0x040092F4 RID: 37620
 		ItemDegradation,
-		// Token: 0x040091D9 RID: 37337
+		// Token: 0x040092F5 RID: 37621
 		LoseItemsOnDeathType,
-		// Token: 0x040091DA RID: 37338
+		// Token: 0x040092F6 RID: 37622
 		LoseItemsOnDeathCount,
-		// Token: 0x040091DB RID: 37339
+		// Token: 0x040092F7 RID: 37623
 		DegradeItemsOnDeath,
-		// Token: 0x040091DC RID: 37340
+		// Token: 0x040092F8 RID: 37624
 		DegradeAmountOnDeath,
-		// Token: 0x040091DD RID: 37341
+		// Token: 0x040092F9 RID: 37625
 		DeathPenalty,
-		// Token: 0x040091DE RID: 37342
+		// Token: 0x040092FA RID: 37626
 		DropOnDeath,
-		// Token: 0x040091DF RID: 37343
+		// Token: 0x040092FB RID: 37627
 		DropOnQuit,
-		// Token: 0x040091E0 RID: 37344
+		// Token: 0x040092FC RID: 37628
 		InfectionRate,
-		// Token: 0x040091E1 RID: 37345
+		// Token: 0x040092FD RID: 37629
 		EnemySpawnMode,
-		// Token: 0x040091E2 RID: 37346
+		// Token: 0x040092FE RID: 37630
 		EntityDamage,
-		// Token: 0x040091E3 RID: 37347
+		// Token: 0x040092FF RID: 37631
 		BlockDamageAI,
-		// Token: 0x040091E4 RID: 37348
+		// Token: 0x04009300 RID: 37632
 		BlockDamageAIBM,
-		// Token: 0x040091E5 RID: 37349
+		// Token: 0x04009301 RID: 37633
 		ZombieMove,
-		// Token: 0x040091E6 RID: 37350
+		// Token: 0x04009302 RID: 37634
 		ZombieMoveNight,
-		// Token: 0x040091E7 RID: 37351
+		// Token: 0x04009303 RID: 37635
 		ZombieFeralMove,
-		// Token: 0x040091E8 RID: 37352
+		// Token: 0x04009304 RID: 37636
 		ZombieBMMove,
-		// Token: 0x040091E9 RID: 37353
+		// Token: 0x04009305 RID: 37637
 		ZombieFeralSense,
-		// Token: 0x040091EA RID: 37354
+		// Token: 0x04009306 RID: 37638
 		AISmellMode,
-		// Token: 0x040091EB RID: 37355
+		// Token: 0x04009307 RID: 37639
 		AllowZombieDigging,
-		// Token: 0x040091EC RID: 37356
+		// Token: 0x04009308 RID: 37640
 		ZombieRageChance,
-		// Token: 0x040091ED RID: 37357
+		// Token: 0x04009309 RID: 37641
 		EntityIncomingDamage,
-		// Token: 0x040091EE RID: 37358
+		// Token: 0x0400930A RID: 37642
 		MaxEnemyTier,
-		// Token: 0x040091EF RID: 37359
-		BiomeZombieRespawn,
-		// Token: 0x040091F0 RID: 37360
-		BiomeAnimalRespawn,
-		// Token: 0x040091F1 RID: 37361
-		BiomeEnemyDensity,
-		// Token: 0x040091F2 RID: 37362
+		// Token: 0x0400930B RID: 37643
+		BiomeDayZombieRespawn,
+		// Token: 0x0400930C RID: 37644
+		BiomeDayAnimalRespawn,
+		// Token: 0x0400930D RID: 37645
+		BiomeDayEnemyDensity,
+		// Token: 0x0400930E RID: 37646
 		ZombiesEatAnimals,
-		// Token: 0x040091F3 RID: 37363
+		// Token: 0x0400930F RID: 37647
 		BloodMoonFrequency,
-		// Token: 0x040091F4 RID: 37364
+		// Token: 0x04009310 RID: 37648
 		BloodMoonRange,
-		// Token: 0x040091F5 RID: 37365
+		// Token: 0x04009311 RID: 37649
 		BloodMoonWarning,
-		// Token: 0x040091F6 RID: 37366
+		// Token: 0x04009312 RID: 37650
 		BloodMoonEnemyCount,
-		// Token: 0x040091F7 RID: 37367
+		// Token: 0x04009313 RID: 37651
 		AirDropFrequency,
-		// Token: 0x040091F8 RID: 37368
+		// Token: 0x04009314 RID: 37652
 		AirDropMarker,
-		// Token: 0x040091F9 RID: 37369
+		// Token: 0x04009315 RID: 37653
 		AirDropRandomTime,
-		// Token: 0x040091FA RID: 37370
+		// Token: 0x04009316 RID: 37654
 		BiomeProgression,
-		// Token: 0x040091FB RID: 37371
+		// Token: 0x04009317 RID: 37655
 		TemperatureSurvival,
-		// Token: 0x040091FC RID: 37372
+		// Token: 0x04009318 RID: 37656
 		StormFreq,
-		// Token: 0x040091FD RID: 37373
+		// Token: 0x04009319 RID: 37657
 		StormWarning,
-		// Token: 0x040091FE RID: 37374
+		// Token: 0x0400931A RID: 37658
 		HeatMapSensitivity,
-		// Token: 0x040091FF RID: 37375
+		// Token: 0x0400931B RID: 37659
 		GlobalGSModifier,
-		// Token: 0x04009200 RID: 37376
+		// Token: 0x0400931C RID: 37660
 		BiomeGSModifier,
-		// Token: 0x04009201 RID: 37377
+		// Token: 0x0400931D RID: 37661
 		GlobalLSModifier,
-		// Token: 0x04009202 RID: 37378
+		// Token: 0x0400931E RID: 37662
 		BiomeLSModifier,
-		// Token: 0x04009203 RID: 37379
+		// Token: 0x0400931F RID: 37663
 		POITierLSModifier,
-		// Token: 0x04009204 RID: 37380
+		// Token: 0x04009320 RID: 37664
 		GlobalTSModifier,
-		// Token: 0x04009205 RID: 37381
+		// Token: 0x04009321 RID: 37665
 		DayNightLength,
-		// Token: 0x04009206 RID: 37382
+		// Token: 0x04009322 RID: 37666
 		DayLightLength,
-		// Token: 0x04009207 RID: 37383
+		// Token: 0x04009323 RID: 37667
 		AllowMap,
-		// Token: 0x04009208 RID: 37384
+		// Token: 0x04009324 RID: 37668
 		AllowCompass,
-		// Token: 0x04009209 RID: 37385
+		// Token: 0x04009325 RID: 37669
 		AllowScreenMarkers,
-		// Token: 0x0400920A RID: 37386
+		// Token: 0x04009326 RID: 37670
 		ShowLocationInfo,
-		// Token: 0x0400920B RID: 37387
+		// Token: 0x04009327 RID: 37671
 		ShowDayTime,
-		// Token: 0x0400920C RID: 37388
+		// Token: 0x04009328 RID: 37672
 		WorkstationsInTheWild,
-		// Token: 0x0400920D RID: 37389
+		// Token: 0x04009329 RID: 37673
 		MaxTechType,
-		// Token: 0x0400920E RID: 37390
+		// Token: 0x0400932A RID: 37674
 		LootRespawnDays,
-		// Token: 0x0400920F RID: 37391
+		// Token: 0x0400932B RID: 37675
 		LootTimer,
-		// Token: 0x04009210 RID: 37392
+		// Token: 0x0400932C RID: 37676
 		LootMaxTier,
-		// Token: 0x04009211 RID: 37393
+		// Token: 0x0400932D RID: 37677
 		GlobalLootCount,
-		// Token: 0x04009212 RID: 37394
+		// Token: 0x0400932E RID: 37678
 		FoodLootCount,
-		// Token: 0x04009213 RID: 37395
+		// Token: 0x0400932F RID: 37679
 		DrinkLootCount,
-		// Token: 0x04009214 RID: 37396
+		// Token: 0x04009330 RID: 37680
 		MedicalLootCount,
-		// Token: 0x04009215 RID: 37397
+		// Token: 0x04009331 RID: 37681
 		AmmoLootCount,
-		// Token: 0x04009216 RID: 37398
+		// Token: 0x04009332 RID: 37682
 		ResourceLootCount,
-		// Token: 0x04009217 RID: 37399
+		// Token: 0x04009333 RID: 37683
 		ArmorLootCount,
-		// Token: 0x04009218 RID: 37400
+		// Token: 0x04009334 RID: 37684
 		MeleeLootCount,
-		// Token: 0x04009219 RID: 37401
+		// Token: 0x04009335 RID: 37685
 		RangedLootCount,
-		// Token: 0x0400921A RID: 37402
+		// Token: 0x04009336 RID: 37686
 		DukesLootCount,
-		// Token: 0x0400921B RID: 37403
+		// Token: 0x04009337 RID: 37687
 		CraftingMagazinesLootCount,
-		// Token: 0x0400921C RID: 37404
+		// Token: 0x04009338 RID: 37688
 		TreasureMapChance,
-		// Token: 0x0400921D RID: 37405
+		// Token: 0x04009339 RID: 37689
 		LootBagChance,
-		// Token: 0x0400921E RID: 37406
+		// Token: 0x0400933A RID: 37690
 		CropOutput,
-		// Token: 0x0400921F RID: 37407
+		// Token: 0x0400933B RID: 37691
 		SeedDropOutput,
-		// Token: 0x04009220 RID: 37408
+		// Token: 0x0400933C RID: 37692
 		CropGrowthSpeed,
-		// Token: 0x04009221 RID: 37409
+		// Token: 0x0400933D RID: 37693
 		BackpackCrafting,
-		// Token: 0x04009222 RID: 37410
+		// Token: 0x0400933E RID: 37694
 		WorkstationCrafting,
-		// Token: 0x04009223 RID: 37411
+		// Token: 0x0400933F RID: 37695
 		CraftingProgression,
-		// Token: 0x04009224 RID: 37412
+		// Token: 0x04009340 RID: 37696
 		CraftingTime,
-		// Token: 0x04009225 RID: 37413
+		// Token: 0x04009341 RID: 37697
 		CraftingInput,
-		// Token: 0x04009226 RID: 37414
+		// Token: 0x04009342 RID: 37698
 		CraftingOutput,
-		// Token: 0x04009227 RID: 37415
+		// Token: 0x04009343 RID: 37699
 		CraftingMaxTier,
-		// Token: 0x04009228 RID: 37416
+		// Token: 0x04009344 RID: 37700
 		MiningOutput,
-		// Token: 0x04009229 RID: 37417
+		// Token: 0x04009345 RID: 37701
 		HarvestingOutput,
-		// Token: 0x0400922A RID: 37418
+		// Token: 0x04009346 RID: 37702
 		ScrappingOutput,
-		// Token: 0x0400922B RID: 37419
+		// Token: 0x04009347 RID: 37703
 		SmeltingType,
-		// Token: 0x0400922C RID: 37420
+		// Token: 0x04009348 RID: 37704
 		DewCollectorTime,
-		// Token: 0x0400922D RID: 37421
+		// Token: 0x04009349 RID: 37705
 		DewCollectorOutput,
-		// Token: 0x0400922E RID: 37422
+		// Token: 0x0400934A RID: 37706
 		DewCollectorInput,
-		// Token: 0x0400922F RID: 37423
+		// Token: 0x0400934B RID: 37707
 		ApiaryTime,
-		// Token: 0x04009230 RID: 37424
+		// Token: 0x0400934C RID: 37708
 		ApiaryOutput,
-		// Token: 0x04009231 RID: 37425
+		// Token: 0x0400934D RID: 37709
 		ApiaryInput,
-		// Token: 0x04009232 RID: 37426
+		// Token: 0x0400934E RID: 37710
 		BookLootCount,
-		// Token: 0x04009233 RID: 37427
+		// Token: 0x0400934F RID: 37711
 		CrouchRunSpeed,
-		// Token: 0x04009234 RID: 37428
+		// Token: 0x04009350 RID: 37712
 		RepairTypes,
-		// Token: 0x04009235 RID: 37429
+		// Token: 0x04009351 RID: 37713
 		MaxDegradationAmount,
-		// Token: 0x04009236 RID: 37430
+		// Token: 0x04009352 RID: 37714
 		PointsPerMagazine,
-		// Token: 0x04009237 RID: 37431
+		// Token: 0x04009353 RID: 37715
 		SkillGainRate,
-		// Token: 0x04009238 RID: 37432
+		// Token: 0x04009354 RID: 37716
 		SkillPointsPerLevel,
-		// Token: 0x04009239 RID: 37433
+		// Token: 0x04009355 RID: 37717
 		QuestsEnabled,
-		// Token: 0x0400923A RID: 37434
+		// Token: 0x04009356 RID: 37718
 		IntroQuestEnabled,
-		// Token: 0x0400923B RID: 37435
+		// Token: 0x04009357 RID: 37719
 		TraderToTraderQuestsEnabled,
-		// Token: 0x0400923C RID: 37436
+		// Token: 0x04009358 RID: 37720
 		StarterSkillPoints,
-		// Token: 0x0400923D RID: 37437
+		// Token: 0x04009359 RID: 37721
 		QuestsPerTier,
-		// Token: 0x0400923E RID: 37438
+		// Token: 0x0400935A RID: 37722
 		QuestProgressionDailyLimit,
-		// Token: 0x0400923F RID: 37439
+		// Token: 0x0400935B RID: 37723
 		BuriedQuestsEnabled,
-		// Token: 0x04009240 RID: 37440
+		// Token: 0x0400935C RID: 37724
 		POIQuestsEnabled,
-		// Token: 0x04009241 RID: 37441
+		// Token: 0x0400935D RID: 37725
 		TraderDialog,
-		// Token: 0x04009242 RID: 37442
+		// Token: 0x0400935E RID: 37726
 		TraderHours,
-		// Token: 0x04009243 RID: 37443
+		// Token: 0x0400935F RID: 37727
 		TradersEnabled,
-		// Token: 0x04009244 RID: 37444
+		// Token: 0x04009360 RID: 37728
 		VendingEnabled,
-		// Token: 0x04009245 RID: 37445
+		// Token: 0x04009361 RID: 37729
 		TraderSellPrices,
-		// Token: 0x04009246 RID: 37446
+		// Token: 0x04009362 RID: 37730
 		TraderBuyPrices,
-		// Token: 0x04009247 RID: 37447
+		// Token: 0x04009363 RID: 37731
 		TraderProtection,
-		// Token: 0x04009248 RID: 37448
+		// Token: 0x04009364 RID: 37732
 		TraderResetInterval,
-		// Token: 0x04009249 RID: 37449
+		// Token: 0x04009365 RID: 37733
 		TraderItemAbundance,
-		// Token: 0x0400924A RID: 37450
+		// Token: 0x04009366 RID: 37734
 		TraderBuyLimit,
-		// Token: 0x0400924B RID: 37451
+		// Token: 0x04009367 RID: 37735
 		TraderMaxTier,
-		// Token: 0x0400924C RID: 37452
+		// Token: 0x04009368 RID: 37736
 		VendingResetInterval,
-		// Token: 0x0400924D RID: 37453
+		// Token: 0x04009369 RID: 37737
 		VendingItemAbundance,
-		// Token: 0x0400924E RID: 37454
+		// Token: 0x0400936A RID: 37738
 		ChallengesEnabled,
-		// Token: 0x0400924F RID: 37455
+		// Token: 0x0400936B RID: 37739
 		IntroChallengesEnabled,
-		// Token: 0x04009250 RID: 37456
+		// Token: 0x0400936C RID: 37740
 		VehicleFuelUsage,
-		// Token: 0x04009251 RID: 37457
+		// Token: 0x0400936D RID: 37741
 		VehicleEntityDamage,
-		// Token: 0x04009252 RID: 37458
+		// Token: 0x0400936E RID: 37742
 		VehicleBlockDamage,
-		// Token: 0x04009253 RID: 37459
+		// Token: 0x0400936F RID: 37743
 		VehicleSelfDamage,
-		// Token: 0x04009254 RID: 37460
+		// Token: 0x04009370 RID: 37744
 		ElectricalOutput,
-		// Token: 0x04009255 RID: 37461
+		// Token: 0x04009371 RID: 37745
 		SillyCelebrate,
-		// Token: 0x04009256 RID: 37462
+		// Token: 0x04009372 RID: 37746
 		SillyBigHeads,
-		// Token: 0x04009257 RID: 37463
+		// Token: 0x04009373 RID: 37747
 		SillyTinyZombies,
-		// Token: 0x04009258 RID: 37464
+		// Token: 0x04009374 RID: 37748
 		SillySounds,
-		// Token: 0x04009259 RID: 37465
+		// Token: 0x04009375 RID: 37749
 		SillyLowGravity,
-		// Token: 0x0400925A RID: 37466
+		// Token: 0x04009376 RID: 37750
 		SillyBlackandWhite,
-		// Token: 0x0400925B RID: 37467
+		// Token: 0x04009377 RID: 37751
+		ChickenCoopTime,
+		// Token: 0x04009378 RID: 37752
+		ChickenCoopOutput,
+		// Token: 0x04009379 RID: 37753
+		ChickenCoopInput,
+		// Token: 0x0400937A RID: 37754
+		BiomeDayAnimalDensity,
+		// Token: 0x0400937B RID: 37755
+		BiomeNightZombieRespawn,
+		// Token: 0x0400937C RID: 37756
+		BiomeNightAnimalRespawn,
+		// Token: 0x0400937D RID: 37757
+		BiomeNightEnemyDensity,
+		// Token: 0x0400937E RID: 37758
+		BiomeNightAnimalDensity,
+		// Token: 0x0400937F RID: 37759
+		InfectionChance,
+		// Token: 0x04009380 RID: 37760
+		HungerMultiplier,
+		// Token: 0x04009381 RID: 37761
+		ThirstMultiplier,
+		// Token: 0x04009382 RID: 37762
+		StackSizeMultiplier,
+		// Token: 0x04009383 RID: 37763
+		FullChickenStressEvent,
+		// Token: 0x04009384 RID: 37764
 		Max
 	}
 }

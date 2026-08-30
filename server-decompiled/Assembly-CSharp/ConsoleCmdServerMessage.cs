@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x0200027F RID: 639
+// Token: 0x02000283 RID: 643
 [Preserve]
 public class ConsoleCmdServerMessage : ConsoleCmdAbstract
 {
-	// Token: 0x170001F9 RID: 505
-	// (get) Token: 0x060012CE RID: 4814 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// Token: 0x170001FA RID: 506
+	// (get) Token: 0x060012E0 RID: 4832 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -17,21 +17,21 @@ public class ConsoleCmdServerMessage : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060012CF RID: 4815 RVA: 0x00074AE4 File Offset: 0x00072CE4
+	// Token: 0x060012E1 RID: 4833 RVA: 0x00075140 File Offset: 0x00073340
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "say" };
 	}
 
-	// Token: 0x060012D0 RID: 4816 RVA: 0x00074AF4 File Offset: 0x00072CF4
+	// Token: 0x060012E2 RID: 4834 RVA: 0x00075150 File Offset: 0x00073350
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Sends a message to all connected clients";
 	}
 
-	// Token: 0x060012D1 RID: 4817 RVA: 0x00074AFC File Offset: 0x00072CFC
+	// Token: 0x060012E3 RID: 4835 RVA: 0x00075158 File Offset: 0x00073358
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count < 1)

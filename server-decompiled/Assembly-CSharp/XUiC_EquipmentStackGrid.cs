@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using Audio;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F1C RID: 3868
+// Token: 0x02000F33 RID: 3891
 [Preserve]
 public class XUiC_EquipmentStackGrid : XUiController
 {
-	// Token: 0x06007976 RID: 31094 RVA: 0x002DD198 File Offset: 0x002DB398
+	// Token: 0x06007A2F RID: 31279 RVA: 0x002E114C File Offset: 0x002DF34C
 	public override void Init()
 	{
 		base.Init();
@@ -18,7 +18,7 @@ public class XUiC_EquipmentStackGrid : XUiController
 		this.xui.OnShutdown += this.handleShutdown;
 	}
 
-	// Token: 0x06007977 RID: 31095 RVA: 0x002DD1E9 File Offset: 0x002DB3E9
+	// Token: 0x06007A30 RID: 31280 RVA: 0x002E119D File Offset: 0x002DF39D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void XUiM_PlayerEquipment_HandleRefreshEquipment(XUiM_PlayerEquipment _playerEquipment)
 	{
@@ -28,7 +28,7 @@ public class XUiC_EquipmentStackGrid : XUiController
 		}
 	}
 
-	// Token: 0x06007978 RID: 31096 RVA: 0x002DD200 File Offset: 0x002DB400
+	// Token: 0x06007A31 RID: 31281 RVA: 0x002E11B4 File Offset: 0x002DF3B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void handleShutdown()
 	{
@@ -36,7 +36,7 @@ public class XUiC_EquipmentStackGrid : XUiController
 		this.xui.OnShutdown -= this.handleShutdown;
 	}
 
-	// Token: 0x06007979 RID: 31097 RVA: 0x002DD22C File Offset: 0x002DB42C
+	// Token: 0x06007A32 RID: 31282 RVA: 0x002E11E0 File Offset: 0x002DF3E0
 	public void RegisterExtraSlots(IEnumerable<XUiC_EquipmentStack> _slots)
 	{
 		foreach (XUiC_EquipmentStack xuiC_EquipmentStack in _slots)
@@ -50,7 +50,7 @@ public class XUiC_EquipmentStackGrid : XUiController
 		}
 	}
 
-	// Token: 0x0600797A RID: 31098 RVA: 0x002DD2A8 File Offset: 0x002DB4A8
+	// Token: 0x06007A33 RID: 31283 RVA: 0x002E125C File Offset: 0x002DF45C
 	public override void Update(float _dt)
 	{
 		if (GameManager.Instance == null && GameManager.Instance.World == null)
@@ -66,7 +66,7 @@ public class XUiC_EquipmentStackGrid : XUiController
 		base.Update(_dt);
 	}
 
-	// Token: 0x0600797B RID: 31099 RVA: 0x002DD300 File Offset: 0x002DB500
+	// Token: 0x06007A34 RID: 31284 RVA: 0x002E12B4 File Offset: 0x002DF4B4
 	public virtual ItemValue[] GetSlots()
 	{
 		Equipment equipment = this.xui.PlayerEquipment.Equipment;
@@ -78,7 +78,7 @@ public class XUiC_EquipmentStackGrid : XUiController
 		return array;
 	}
 
-	// Token: 0x0600797C RID: 31100 RVA: 0x002DD348 File Offset: 0x002DB548
+	// Token: 0x06007A35 RID: 31285 RVA: 0x002E12FC File Offset: 0x002DF4FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void SetStacks(ItemValue[] _stackList)
 	{
@@ -102,7 +102,7 @@ public class XUiC_EquipmentStackGrid : XUiController
 		}
 	}
 
-	// Token: 0x0600797D RID: 31101 RVA: 0x002DD3C8 File Offset: 0x002DB5C8
+	// Token: 0x06007A36 RID: 31286 RVA: 0x002E137C File Offset: 0x002DF57C
 	public void HandleSlotChangedEvent(int _slotNumber, ItemStack _stack)
 	{
 		if (this.items == null)
@@ -129,7 +129,7 @@ public class XUiC_EquipmentStackGrid : XUiController
 		QuestEventManager.Current.WoreItem(_stack.itemValue);
 	}
 
-	// Token: 0x0600797E RID: 31102 RVA: 0x002DD49C File Offset: 0x002DB69C
+	// Token: 0x06007A37 RID: 31287 RVA: 0x002E1450 File Offset: 0x002DF650
 	public XUiC_EquipmentStack GetSlot(EquipmentSlots _slotType)
 	{
 		XUiC_EquipmentStack xuiC_EquipmentStack;
@@ -137,7 +137,7 @@ public class XUiC_EquipmentStackGrid : XUiController
 		return xuiC_EquipmentStack;
 	}
 
-	// Token: 0x0600797F RID: 31103 RVA: 0x002DD4B9 File Offset: 0x002DB6B9
+	// Token: 0x06007A38 RID: 31288 RVA: 0x002E146D File Offset: 0x002DF66D
 	public override void OnOpen()
 	{
 		if (base.ViewComponent != null && !base.ViewComponent.IsVisible)
@@ -147,7 +147,7 @@ public class XUiC_EquipmentStackGrid : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007980 RID: 31104 RVA: 0x002DD4E4 File Offset: 0x002DB6E4
+	// Token: 0x06007A39 RID: 31289 RVA: 0x002E1498 File Offset: 0x002DF698
 	public override void OnClose()
 	{
 		foreach (KeyValuePair<EquipmentSlots, XUiC_EquipmentStack> keyValuePair in this.itemControllers)
@@ -163,11 +163,11 @@ public class XUiC_EquipmentStackGrid : XUiController
 		}
 	}
 
-	// Token: 0x040059B8 RID: 22968
+	// Token: 0x04005A6B RID: 23147
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly EnumDictionary<EquipmentSlots, XUiC_EquipmentStack> itemControllers = new EnumDictionary<EquipmentSlots, XUiC_EquipmentStack>();
 
-	// Token: 0x040059B9 RID: 22969
+	// Token: 0x04005A6C RID: 23148
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue[] items;
 }

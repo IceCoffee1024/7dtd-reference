@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-// Token: 0x020013A6 RID: 5030
+// Token: 0x020013C1 RID: 5057
 public abstract class DatabaseWithFixedDS<KEY, DATA> where KEY : struct where DATA : class
 {
-	// Token: 0x06009E17 RID: 40471 RVA: 0x003BA358 File Offset: 0x003B8558
+	// Token: 0x06009F14 RID: 40724 RVA: 0x003BF69C File Offset: 0x003BD89C
 	public DatabaseWithFixedDS(int _magicBytes, int _sizeofKey, int _maxCountOfDataSets, int _sizeOfDataSet, KEY _invalidKeyValue, int _oldMaxCountOfDataSets = -1)
 	{
 		this.magicBytes = _magicBytes;
@@ -17,7 +17,7 @@ public abstract class DatabaseWithFixedDS<KEY, DATA> where KEY : struct where DA
 		this.invalidKeyValue = _invalidKeyValue;
 	}
 
-	// Token: 0x06009E18 RID: 40472 RVA: 0x003BA3BC File Offset: 0x003B85BC
+	// Token: 0x06009F15 RID: 40725 RVA: 0x003BF700 File Offset: 0x003BD900
 	public List<KEY> GetAllKeys()
 	{
 		DictionaryKeyList<KEY, int> dictionaryKeyList = this.catalog;
@@ -29,7 +29,7 @@ public abstract class DatabaseWithFixedDS<KEY, DATA> where KEY : struct where DA
 		return list;
 	}
 
-	// Token: 0x06009E19 RID: 40473 RVA: 0x003BA404 File Offset: 0x003B8604
+	// Token: 0x06009F16 RID: 40726 RVA: 0x003BF748 File Offset: 0x003BD948
 	public DATA GetDS(KEY _key)
 	{
 		DictionaryKeyList<KEY, int> dictionaryKeyList = this.catalog;
@@ -49,7 +49,7 @@ public abstract class DatabaseWithFixedDS<KEY, DATA> where KEY : struct where DA
 		return data;
 	}
 
-	// Token: 0x06009E1A RID: 40474 RVA: 0x003BA46C File Offset: 0x003B866C
+	// Token: 0x06009F17 RID: 40727 RVA: 0x003BF7B0 File Offset: 0x003BD9B0
 	public void SetDS(KEY _key, DATA _data)
 	{
 		DictionaryKeyList<KEY, int> dictionaryKeyList = this.catalog;
@@ -81,7 +81,7 @@ public abstract class DatabaseWithFixedDS<KEY, DATA> where KEY : struct where DA
 		}
 	}
 
-	// Token: 0x06009E1B RID: 40475 RVA: 0x003BA5B4 File Offset: 0x003B87B4
+	// Token: 0x06009F18 RID: 40728 RVA: 0x003BF8F8 File Offset: 0x003BDAF8
 	public bool ContainsDS(KEY _key)
 	{
 		DictionaryKeyList<KEY, int> dictionaryKeyList = this.catalog;
@@ -93,7 +93,7 @@ public abstract class DatabaseWithFixedDS<KEY, DATA> where KEY : struct where DA
 		return flag2;
 	}
 
-	// Token: 0x06009E1C RID: 40476 RVA: 0x003BA604 File Offset: 0x003B8804
+	// Token: 0x06009F19 RID: 40729 RVA: 0x003BF948 File Offset: 0x003BDB48
 	public int CountDS()
 	{
 		DictionaryKeyList<KEY, int> dictionaryKeyList = this.catalog;
@@ -105,7 +105,7 @@ public abstract class DatabaseWithFixedDS<KEY, DATA> where KEY : struct where DA
 		return count;
 	}
 
-	// Token: 0x06009E1D RID: 40477 RVA: 0x003BA650 File Offset: 0x003B8850
+	// Token: 0x06009F1A RID: 40730 RVA: 0x003BF994 File Offset: 0x003BDB94
 	public virtual void Clear()
 	{
 		DictionaryKeyList<KEY, int> dictionaryKeyList = this.catalog;
@@ -117,7 +117,7 @@ public abstract class DatabaseWithFixedDS<KEY, DATA> where KEY : struct where DA
 		}
 	}
 
-	// Token: 0x06009E1E RID: 40478 RVA: 0x003BA6AC File Offset: 0x003B88AC
+	// Token: 0x06009F1B RID: 40731 RVA: 0x003BF9F0 File Offset: 0x003BDBF0
 	public void Load(string _dir, string _filename)
 	{
 		try
@@ -155,7 +155,7 @@ public abstract class DatabaseWithFixedDS<KEY, DATA> where KEY : struct where DA
 		}
 	}
 
-	// Token: 0x06009E1F RID: 40479 RVA: 0x003BA7E4 File Offset: 0x003B89E4
+	// Token: 0x06009F1C RID: 40732 RVA: 0x003BFB28 File Offset: 0x003BDD28
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void read(BinaryReader _br, uint _version)
 	{
@@ -224,7 +224,7 @@ public abstract class DatabaseWithFixedDS<KEY, DATA> where KEY : struct where DA
 		}
 	}
 
-	// Token: 0x06009E20 RID: 40480 RVA: 0x003BAA30 File Offset: 0x003B8C30
+	// Token: 0x06009F1D RID: 40733 RVA: 0x003BFD74 File Offset: 0x003BDF74
 	public void Save(string _dir, string _filename)
 	{
 		try
@@ -258,7 +258,7 @@ public abstract class DatabaseWithFixedDS<KEY, DATA> where KEY : struct where DA
 		}
 	}
 
-	// Token: 0x06009E21 RID: 40481 RVA: 0x003BAB60 File Offset: 0x003B8D60
+	// Token: 0x06009F1E RID: 40734 RVA: 0x003BFEA4 File Offset: 0x003BE0A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void write(BinaryWriter _bw)
 	{
@@ -313,75 +313,75 @@ public abstract class DatabaseWithFixedDS<KEY, DATA> where KEY : struct where DA
 		}
 	}
 
-	// Token: 0x06009E22 RID: 40482
+	// Token: 0x06009F1F RID: 40735
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract KEY readKey(BinaryReader _br);
 
-	// Token: 0x06009E23 RID: 40483
+	// Token: 0x06009F20 RID: 40736
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract void writeKey(BinaryWriter _bw, KEY _key);
 
-	// Token: 0x06009E24 RID: 40484
+	// Token: 0x06009F21 RID: 40737
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract void copyFromRead(byte[] _dataRead, DATA _data);
 
-	// Token: 0x06009E25 RID: 40485
+	// Token: 0x06009F22 RID: 40738
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract void copyToWrite(DATA _data, byte[] _dataWrite);
 
-	// Token: 0x06009E26 RID: 40486
+	// Token: 0x06009F23 RID: 40739
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public abstract DATA allocateDataStorage();
 
-	// Token: 0x040077AA RID: 30634
+	// Token: 0x04007883 RID: 30851
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cHeaderSize = 16;
 
-	// Token: 0x040077AB RID: 30635
+	// Token: 0x04007884 RID: 30852
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int VERSION = 3;
 
-	// Token: 0x040077AC RID: 30636
+	// Token: 0x04007885 RID: 30853
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int magicBytes;
 
-	// Token: 0x040077AD RID: 30637
+	// Token: 0x04007886 RID: 30854
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int sizeofKey;
 
-	// Token: 0x040077AE RID: 30638
+	// Token: 0x04007887 RID: 30855
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int maxCountOfDataSets;
 
-	// Token: 0x040077AF RID: 30639
+	// Token: 0x04007888 RID: 30856
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int oldMaxCountOfDataSets;
 
-	// Token: 0x040077B0 RID: 30640
+	// Token: 0x04007889 RID: 30857
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int sizeOfDataSet;
 
-	// Token: 0x040077B1 RID: 30641
+	// Token: 0x0400788A RID: 30858
 	[PublicizedFrom(EAccessModifier.Private)]
 	public KEY invalidKeyValue;
 
-	// Token: 0x040077B2 RID: 30642
+	// Token: 0x0400788B RID: 30859
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DictionaryKeyList<KEY, int> catalog = new DictionaryKeyList<KEY, int>();
 
-	// Token: 0x040077B3 RID: 30643
+	// Token: 0x0400788C RID: 30860
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DictionarySave<KEY, DATA> database = new DictionarySave<KEY, DATA>();
 
-	// Token: 0x040077B4 RID: 30644
+	// Token: 0x0400788D RID: 30861
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<KEY, bool> dirty = new Dictionary<KEY, bool>();
 
-	// Token: 0x040077B5 RID: 30645
+	// Token: 0x0400788E RID: 30862
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] arrayReadBuf;
 
-	// Token: 0x040077B6 RID: 30646
+	// Token: 0x0400788F RID: 30863
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] arrayWriteBuf;
 }

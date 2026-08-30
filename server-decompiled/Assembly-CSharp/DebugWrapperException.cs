@@ -1,20 +1,20 @@
 ﻿using System;
 
-// Token: 0x020013B8 RID: 5048
+// Token: 0x020013D3 RID: 5075
 public class DebugWrapperException : Exception
 {
-	// Token: 0x06009E7B RID: 40571 RVA: 0x003BBEDB File Offset: 0x003BA0DB
+	// Token: 0x06009F78 RID: 40824 RVA: 0x003C121F File Offset: 0x003BF41F
 	public DebugWrapperException()
 	{
 	}
 
-	// Token: 0x06009E7C RID: 40572 RVA: 0x003BBEE3 File Offset: 0x003BA0E3
+	// Token: 0x06009F79 RID: 40825 RVA: 0x003C1227 File Offset: 0x003BF427
 	public DebugWrapperException(string message)
 		: base(message)
 	{
 	}
 
-	// Token: 0x06009E7D RID: 40573 RVA: 0x003BBEEC File Offset: 0x003BA0EC
+	// Token: 0x06009F7A RID: 40826 RVA: 0x003C1230 File Offset: 0x003BF430
 	public DebugWrapperException(string message, Exception innerException)
 		: base(message, innerException)
 	{

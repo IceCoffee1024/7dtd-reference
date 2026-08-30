@@ -7,11 +7,11 @@ using XMLEditing;
 
 namespace CoverClippingTool
 {
-	// Token: 0x0200165F RID: 5727
+	// Token: 0x0200167A RID: 5754
 	public class BlockShapeInfo
 	{
-		// Token: 0x17001570 RID: 5488
-		// (get) Token: 0x0600B364 RID: 45924 RVA: 0x00431083 File Offset: 0x0042F283
+		// Token: 0x170015A9 RID: 5545
+		// (get) Token: 0x0600B461 RID: 46177 RVA: 0x004363C3 File Offset: 0x004345C3
 		public bool HasPendingChanges
 		{
 			get
@@ -20,8 +20,8 @@ namespace CoverClippingTool
 			}
 		}
 
-		// Token: 0x17001571 RID: 5489
-		// (get) Token: 0x0600B365 RID: 45925 RVA: 0x004310AC File Offset: 0x0042F2AC
+		// Token: 0x170015AA RID: 5546
+		// (get) Token: 0x0600B462 RID: 46178 RVA: 0x004363EC File Offset: 0x004345EC
 		public Vector3 RenderOffset
 		{
 			get
@@ -57,13 +57,13 @@ namespace CoverClippingTool
 			}
 		}
 
-		// Token: 0x0600B366 RID: 45926 RVA: 0x0043116D File Offset: 0x0042F36D
+		// Token: 0x0600B463 RID: 46179 RVA: 0x004364AD File Offset: 0x004346AD
 		public void RevertChanges()
 		{
 			this.modifiedCoverFaceMask = this.CoverFaceMask;
 		}
 
-		// Token: 0x0600B367 RID: 45927 RVA: 0x0043117C File Offset: 0x0042F37C
+		// Token: 0x0600B464 RID: 46180 RVA: 0x004364BC File Offset: 0x004346BC
 		public bool SaveChanges()
 		{
 			if (this.HasPendingChanges)
@@ -133,7 +133,7 @@ namespace CoverClippingTool
 			return false;
 		}
 
-		// Token: 0x0600B368 RID: 45928 RVA: 0x00431468 File Offset: 0x0042F668
+		// Token: 0x0600B465 RID: 46181 RVA: 0x004367A8 File Offset: 0x004349A8
 		public BlockShapeInfo(string name, BlockShapeInfo extends, ShapeDataSet dataSet, XElement element, ShapeData shapeData)
 		{
 			this.Name = name;
@@ -275,7 +275,7 @@ namespace CoverClippingTool
 			this.BlockBounds = new BoundsInt(Vector3Int.zero, Vector3Int.zero);
 		}
 
-		// Token: 0x0600B369 RID: 45929 RVA: 0x004319C8 File Offset: 0x0042FBC8
+		// Token: 0x0600B466 RID: 46182 RVA: 0x00436D08 File Offset: 0x00434F08
 		public static string SerializeCoverMaskValue(BlockFaceFlag coverFaceMask)
 		{
 			string text = string.Empty;
@@ -289,67 +289,67 @@ namespace CoverClippingTool
 			return text;
 		}
 
-		// Token: 0x04008664 RID: 34404
+		// Token: 0x0400873D RID: 34621
 		public static readonly Vector3 PlacerModelOffset = new Vector3(0.5f, 0f, 0.5f);
 
-		// Token: 0x04008665 RID: 34405
+		// Token: 0x0400873E RID: 34622
 		public static readonly Vector3 DefaultModelOffset = new Vector3(0f, 0.5f, 0f);
 
-		// Token: 0x04008666 RID: 34406
+		// Token: 0x0400873F RID: 34623
 		public readonly string Name;
 
-		// Token: 0x04008667 RID: 34407
+		// Token: 0x04008740 RID: 34624
 		public readonly BlockShapeInfo Extends;
 
-		// Token: 0x04008668 RID: 34408
+		// Token: 0x04008741 RID: 34625
 		public readonly DataSource Source;
 
-		// Token: 0x04008669 RID: 34409
+		// Token: 0x04008742 RID: 34626
 		public readonly XElement Element;
 
-		// Token: 0x0400866A RID: 34410
+		// Token: 0x04008743 RID: 34627
 		public readonly XDocument Doc;
 
-		// Token: 0x0400866B RID: 34411
+		// Token: 0x04008744 RID: 34628
 		public readonly string ModelName;
 
-		// Token: 0x0400866C RID: 34412
+		// Token: 0x04008745 RID: 34629
 		public readonly Vector3 ModelOffset;
 
-		// Token: 0x0400866D RID: 34413
+		// Token: 0x04008746 RID: 34630
 		public readonly Vector3i MultiBlockDim;
 
-		// Token: 0x0400866E RID: 34414
+		// Token: 0x04008747 RID: 34631
 		public readonly bool IsOversized;
 
-		// Token: 0x0400866F RID: 34415
+		// Token: 0x04008748 RID: 34632
 		public readonly Bounds OversizeBounds;
 
-		// Token: 0x04008670 RID: 34416
+		// Token: 0x04008749 RID: 34633
 		public readonly Block.MultiBlockArray MultiBlockArray;
 
-		// Token: 0x04008671 RID: 34417
+		// Token: 0x0400874A RID: 34634
 		public BlockFaceFlag CoverFaceMask;
 
-		// Token: 0x04008672 RID: 34418
+		// Token: 0x0400874B RID: 34635
 		public XElement CoverFaceMaskElement;
 
-		// Token: 0x04008673 RID: 34419
+		// Token: 0x0400874C RID: 34636
 		public readonly Dictionary<Vector3i, BlockFaceFlag> CoverFaceMaskMulti = new Dictionary<Vector3i, BlockFaceFlag>();
 
-		// Token: 0x04008674 RID: 34420
+		// Token: 0x0400874D RID: 34637
 		public XElement CoverFaceMaskMultiElement;
 
-		// Token: 0x04008675 RID: 34421
+		// Token: 0x0400874E RID: 34638
 		public readonly BoundsInt BlockBounds;
 
-		// Token: 0x04008676 RID: 34422
+		// Token: 0x0400874F RID: 34639
 		public BlockFaceFlag modifiedCoverFaceMask;
 
-		// Token: 0x04008677 RID: 34423
+		// Token: 0x04008750 RID: 34640
 		public readonly Dictionary<Vector3i, BlockFaceFlag> modifiedCoverFaceMaskMulti = new Dictionary<Vector3i, BlockFaceFlag>();
 
-		// Token: 0x04008678 RID: 34424
+		// Token: 0x04008751 RID: 34641
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly BlockFaceFlag[] cubeSideGizmoFaceFlags = new BlockFaceFlag[]
 		{
@@ -361,7 +361,7 @@ namespace CoverClippingTool
 			BlockFaceFlag.East
 		};
 
-		// Token: 0x04008679 RID: 34425
+		// Token: 0x04008752 RID: 34642
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly char[] cubeSideGizmoFaceChars = new char[] { 'T', 'B', 'N', 'W', 'S', 'E' };
 	}

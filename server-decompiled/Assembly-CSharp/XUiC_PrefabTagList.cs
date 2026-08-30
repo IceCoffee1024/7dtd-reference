@@ -1,25 +1,25 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000FBC RID: 4028
+// Token: 0x02000FD5 RID: 4053
 [Preserve]
 public class XUiC_PrefabTagList : XUiC_PrefabFeatureEditorList
 {
-	// Token: 0x06007F0D RID: 32525 RVA: 0x0030375C File Offset: 0x0030195C
+	// Token: 0x06007FFF RID: 32767 RVA: 0x00307F30 File Offset: 0x00306130
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool FeatureEnabled(string _featureName)
 	{
 		return this.EditPrefab.Tags.Test_AllSet(FastTags<TagGroup.Poi>.GetTag(_featureName));
 	}
 
-	// Token: 0x06007F0E RID: 32526 RVA: 0x00303782 File Offset: 0x00301982
+	// Token: 0x06008000 RID: 32768 RVA: 0x00307F56 File Offset: 0x00306156
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void AddNewFeature(string _featureName)
 	{
 		this.EditPrefab.Tags |= FastTags<TagGroup.Poi>.GetTag(_featureName);
 	}
 
-	// Token: 0x06007F0F RID: 32527 RVA: 0x003037A0 File Offset: 0x003019A0
+	// Token: 0x06008001 RID: 32769 RVA: 0x00307F74 File Offset: 0x00306174
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void ToggleFeature(string _featureName)
 	{
@@ -35,7 +35,7 @@ public class XUiC_PrefabTagList : XUiC_PrefabFeatureEditorList
 		this.RebuildList(false);
 	}
 
-	// Token: 0x06007F10 RID: 32528 RVA: 0x00303809 File Offset: 0x00301A09
+	// Token: 0x06008002 RID: 32770 RVA: 0x00307FDD File Offset: 0x003061DD
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void GetSupportedFeatures()
 	{

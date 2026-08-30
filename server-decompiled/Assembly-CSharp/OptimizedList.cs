@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x0200144F RID: 5199
+// Token: 0x0200146A RID: 5226
 [Serializable]
 public class OptimizedList<T>
 {
-	// Token: 0x0600A2F3 RID: 41715 RVA: 0x003CD06C File Offset: 0x003CB26C
+	// Token: 0x0600A3F0 RID: 41968 RVA: 0x003D23B0 File Offset: 0x003D05B0
 	public OptimizedList()
 		: this(10)
 	{
 		this.IsValueType = typeof(T).IsValueType;
 	}
 
-	// Token: 0x0600A2F4 RID: 41716 RVA: 0x003CD08B File Offset: 0x003CB28B
+	// Token: 0x0600A3F1 RID: 41969 RVA: 0x003D23CF File Offset: 0x003D05CF
 	public OptimizedList(int Capacity)
 	{
 		this.Count = 0;
@@ -22,7 +22,7 @@ public class OptimizedList<T>
 		this.IsValueType = typeof(T).IsValueType;
 	}
 
-	// Token: 0x0600A2F5 RID: 41717 RVA: 0x003CD0CC File Offset: 0x003CB2CC
+	// Token: 0x0600A3F2 RID: 41970 RVA: 0x003D2410 File Offset: 0x003D0610
 	public OptimizedList(OptimizedList<T> L)
 	{
 		if (L.Count == 0)
@@ -40,7 +40,7 @@ public class OptimizedList<T>
 		this.AddRange(L);
 	}
 
-	// Token: 0x0600A2F6 RID: 41718 RVA: 0x003CD14C File Offset: 0x003CB34C
+	// Token: 0x0600A3F3 RID: 41971 RVA: 0x003D2490 File Offset: 0x003D0690
 	public OptimizedList(T[] L)
 	{
 		if (L.Length == 0)
@@ -58,7 +58,7 @@ public class OptimizedList<T>
 		this.AddRange(L);
 	}
 
-	// Token: 0x0600A2F7 RID: 41719 RVA: 0x003CD1BF File Offset: 0x003CB3BF
+	// Token: 0x0600A3F4 RID: 41972 RVA: 0x003D2503 File Offset: 0x003D0703
 	public OptimizedList(int Capacity, int DoubleSize)
 	{
 		this.Count = 0;
@@ -68,7 +68,7 @@ public class OptimizedList<T>
 		this.IsValueType = typeof(T).IsValueType;
 	}
 
-	// Token: 0x0600A2F8 RID: 41720 RVA: 0x003CD200 File Offset: 0x003CB400
+	// Token: 0x0600A3F5 RID: 41973 RVA: 0x003D2544 File Offset: 0x003D0744
 	public T Last()
 	{
 		if (this.Count > 0)
@@ -78,7 +78,7 @@ public class OptimizedList<T>
 		return default(T);
 	}
 
-	// Token: 0x0600A2F9 RID: 41721 RVA: 0x003CD234 File Offset: 0x003CB434
+	// Token: 0x0600A3F6 RID: 41974 RVA: 0x003D2578 File Offset: 0x003D0778
 	public void Add(T value)
 	{
 		if (this.length == this.Count)
@@ -94,7 +94,7 @@ public class OptimizedList<T>
 		array2[count] = value;
 	}
 
-	// Token: 0x0600A2FA RID: 41722 RVA: 0x003CD2B8 File Offset: 0x003CB4B8
+	// Token: 0x0600A3F7 RID: 41975 RVA: 0x003D25FC File Offset: 0x003D07FC
 	public void Add(ref T value)
 	{
 		if (this.length == this.Count)
@@ -110,7 +110,7 @@ public class OptimizedList<T>
 		array2[count] = value;
 	}
 
-	// Token: 0x0600A2FB RID: 41723 RVA: 0x003CD344 File Offset: 0x003CB544
+	// Token: 0x0600A3F8 RID: 41976 RVA: 0x003D2688 File Offset: 0x003D0888
 	public void AddSafe(T value)
 	{
 		T[] array = this.array;
@@ -119,7 +119,7 @@ public class OptimizedList<T>
 		array[count] = value;
 	}
 
-	// Token: 0x0600A2FC RID: 41724 RVA: 0x003CD370 File Offset: 0x003CB570
+	// Token: 0x0600A3F9 RID: 41977 RVA: 0x003D26B4 File Offset: 0x003D08B4
 	public void AddSafe(T valueA, T valueB, T valueC, T valueD)
 	{
 		if (this.length - (this.Count + 4) <= 0)
@@ -147,7 +147,7 @@ public class OptimizedList<T>
 		array5[num] = valueD;
 	}
 
-	// Token: 0x0600A2FD RID: 41725 RVA: 0x003CD454 File Offset: 0x003CB654
+	// Token: 0x0600A3FA RID: 41978 RVA: 0x003D2798 File Offset: 0x003D0998
 	public void AddRange(T[] values)
 	{
 		int num = values.Length;
@@ -162,7 +162,7 @@ public class OptimizedList<T>
 		this.Count += num;
 	}
 
-	// Token: 0x0600A2FE RID: 41726 RVA: 0x003CD4D4 File Offset: 0x003CB6D4
+	// Token: 0x0600A3FB RID: 41979 RVA: 0x003D2818 File Offset: 0x003D0A18
 	public void AddRange(OptimizedList<T> values)
 	{
 		if (values == null || values.Count == 0)
@@ -181,7 +181,7 @@ public class OptimizedList<T>
 		this.Count += num;
 	}
 
-	// Token: 0x0600A2FF RID: 41727 RVA: 0x003CD564 File Offset: 0x003CB764
+	// Token: 0x0600A3FC RID: 41980 RVA: 0x003D28A8 File Offset: 0x003D0AA8
 	public bool Remove(T obj)
 	{
 		int num = Array.IndexOf<T>(this.array, obj, 0, this.Count);
@@ -198,7 +198,7 @@ public class OptimizedList<T>
 		return false;
 	}
 
-	// Token: 0x0600A300 RID: 41728 RVA: 0x003CD5DC File Offset: 0x003CB7DC
+	// Token: 0x0600A3FD RID: 41981 RVA: 0x003D2920 File Offset: 0x003D0B20
 	public void RemoveAt(int index)
 	{
 		if (index >= this.Count)
@@ -213,13 +213,13 @@ public class OptimizedList<T>
 		this.array[this.Count] = default(T);
 	}
 
-	// Token: 0x0600A301 RID: 41729 RVA: 0x003CD641 File Offset: 0x003CB841
+	// Token: 0x0600A3FE RID: 41982 RVA: 0x003D2985 File Offset: 0x003D0B85
 	public bool Contains(T obj)
 	{
 		return Array.IndexOf<T>(this.array, obj, 0, this.Count) >= 0;
 	}
 
-	// Token: 0x0600A302 RID: 41730 RVA: 0x003CD65C File Offset: 0x003CB85C
+	// Token: 0x0600A3FF RID: 41983 RVA: 0x003D29A0 File Offset: 0x003D0BA0
 	public void Set(T[] values)
 	{
 		this.array = values;
@@ -227,7 +227,7 @@ public class OptimizedList<T>
 		this.Count = this.length;
 	}
 
-	// Token: 0x0600A303 RID: 41731 RVA: 0x003CD67A File Offset: 0x003CB87A
+	// Token: 0x0600A400 RID: 41984 RVA: 0x003D29BE File Offset: 0x003D0BBE
 	public void Clear()
 	{
 		if (this.Count > 0)
@@ -237,7 +237,7 @@ public class OptimizedList<T>
 		this.Count = 0;
 	}
 
-	// Token: 0x0600A304 RID: 41732 RVA: 0x003CD6A0 File Offset: 0x003CB8A0
+	// Token: 0x0600A401 RID: 41985 RVA: 0x003D29E4 File Offset: 0x003D0BE4
 	public T[] ToArray()
 	{
 		if (this.Count == 0)
@@ -249,7 +249,7 @@ public class OptimizedList<T>
 		return array;
 	}
 
-	// Token: 0x0600A305 RID: 41733 RVA: 0x003CD6D8 File Offset: 0x003CB8D8
+	// Token: 0x0600A402 RID: 41986 RVA: 0x003D2A1C File Offset: 0x003D0C1C
 	public void CheckArray(int Size)
 	{
 		if (this.length - (this.Count + Size) <= 0)
@@ -261,13 +261,13 @@ public class OptimizedList<T>
 		}
 	}
 
-	// Token: 0x0600A306 RID: 41734 RVA: 0x003CD747 File Offset: 0x003CB947
+	// Token: 0x0600A403 RID: 41987 RVA: 0x003D2A8B File Offset: 0x003D0C8B
 	public void Sort(IComparer<T> comparer)
 	{
 		this.Sort(0, this.Count, comparer);
 	}
 
-	// Token: 0x0600A307 RID: 41735 RVA: 0x003CD757 File Offset: 0x003CB957
+	// Token: 0x0600A404 RID: 41988 RVA: 0x003D2A9B File Offset: 0x003D0C9B
 	public void Sort(int index, int count, IComparer<T> comparer)
 	{
 		if (this.length - index < count)
@@ -277,8 +277,8 @@ public class OptimizedList<T>
 		Array.Sort<T>(this.array, index, count, comparer);
 	}
 
-	// Token: 0x17001315 RID: 4885
-	// (get) Token: 0x0600A308 RID: 41736 RVA: 0x003CD773 File Offset: 0x003CB973
+	// Token: 0x1700134E RID: 4942
+	// (get) Token: 0x0600A405 RID: 41989 RVA: 0x003D2AB7 File Offset: 0x003D0CB7
 	public int Length
 	{
 		get
@@ -287,18 +287,18 @@ public class OptimizedList<T>
 		}
 	}
 
-	// Token: 0x040079D4 RID: 31188
+	// Token: 0x04007AAD RID: 31405
 	public T[] array;
 
-	// Token: 0x040079D5 RID: 31189
+	// Token: 0x04007AAE RID: 31406
 	public int Count;
 
-	// Token: 0x040079D6 RID: 31190
+	// Token: 0x04007AAF RID: 31407
 	public int length;
 
-	// Token: 0x040079D7 RID: 31191
+	// Token: 0x04007AB0 RID: 31408
 	public int DoubleSize;
 
-	// Token: 0x040079D8 RID: 31192
+	// Token: 0x04007AB1 RID: 31409
 	public bool IsValueType;
 }

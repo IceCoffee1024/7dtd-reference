@@ -6,30 +6,30 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EB1 RID: 3761
+// Token: 0x02000EC6 RID: 3782
 [Preserve]
 public class XUiC_BagContainer : XUiC_ItemStackGrid
 {
-	// Token: 0x17000DD0 RID: 3536
-	// (get) Token: 0x06007597 RID: 30103 RVA: 0x002C271E File Offset: 0x002C091E
-	// (set) Token: 0x06007598 RID: 30104 RVA: 0x002C2726 File Offset: 0x002C0926
+	// Token: 0x17000DEA RID: 3562
+	// (get) Token: 0x06007638 RID: 30264 RVA: 0x002C5C42 File Offset: 0x002C3E42
+	// (set) Token: 0x06007639 RID: 30265 RVA: 0x002C5C4A File Offset: 0x002C3E4A
 	public Bag Bag
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000DD1 RID: 3537
-	// (get) Token: 0x06007599 RID: 30105 RVA: 0x002C272F File Offset: 0x002C092F
-	// (set) Token: 0x0600759A RID: 30106 RVA: 0x002C2737 File Offset: 0x002C0937
+	// Token: 0x17000DEB RID: 3563
+	// (get) Token: 0x0600763A RID: 30266 RVA: 0x002C5C53 File Offset: 0x002C3E53
+	// (set) Token: 0x0600763B RID: 30267 RVA: 0x002C5C5B File Offset: 0x002C3E5B
 	public Vector2i GridCellSize
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000DD2 RID: 3538
-	// (get) Token: 0x0600759B RID: 30107 RVA: 0x00080065 File Offset: 0x0007E265
+	// Token: 0x17000DEC RID: 3564
+	// (get) Token: 0x0600763C RID: 30268 RVA: 0x00080719 File Offset: 0x0007E919
 	public override XUiC_ItemStack.StackLocationTypes StackLocation
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -39,9 +39,9 @@ public class XUiC_BagContainer : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x17000DD3 RID: 3539
-	// (get) Token: 0x0600759C RID: 30108 RVA: 0x002C2740 File Offset: 0x002C0940
-	// (set) Token: 0x0600759D RID: 30109 RVA: 0x002C2748 File Offset: 0x002C0948
+	// Token: 0x17000DED RID: 3565
+	// (get) Token: 0x0600763D RID: 30269 RVA: 0x002C5C64 File Offset: 0x002C3E64
+	// (set) Token: 0x0600763E RID: 30270 RVA: 0x002C5C6C File Offset: 0x002C3E6C
 	public bool UserLockMode
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -71,25 +71,25 @@ public class XUiC_BagContainer : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x0600759E RID: 30110 RVA: 0x002C27A6 File Offset: 0x002C09A6
+	// Token: 0x0600763F RID: 30271 RVA: 0x002C5CCA File Offset: 0x002C3ECA
 	public override ItemStack[] GetSlots()
 	{
 		return this.items;
 	}
 
-	// Token: 0x0600759F RID: 30111 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06007640 RID: 30272 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateBackend(ItemStack[] _stackList)
 	{
 	}
 
-	// Token: 0x060075A0 RID: 30112 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06007641 RID: 30273 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SetStacks(ItemStack[] _stackList)
 	{
 	}
 
-	// Token: 0x060075A1 RID: 30113 RVA: 0x002C27B0 File Offset: 0x002C09B0
+	// Token: 0x06007642 RID: 30274 RVA: 0x002C5CD4 File Offset: 0x002C3ED4
 	public override void Init()
 	{
 		base.Init();
@@ -141,7 +141,7 @@ public class XUiC_BagContainer : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x060075A2 RID: 30114 RVA: 0x002C28E0 File Offset: 0x002C0AE0
+	// Token: 0x06007643 RID: 30275 RVA: 0x002C5E04 File Offset: 0x002C4004
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void btnSort_OnPress(PackedBoolArray _ignoredSlots)
 	{
@@ -153,7 +153,7 @@ public class XUiC_BagContainer : XUiC_ItemStackGrid
 		this.Bag.SetSlots(array);
 	}
 
-	// Token: 0x060075A3 RID: 30115 RVA: 0x002C2918 File Offset: 0x002C0B18
+	// Token: 0x06007644 RID: 30276 RVA: 0x002C5E3C File Offset: 0x002C403C
 	public void SetBag(Bag _bag, LootContainer _lootContainer, string _containerName, Action _onModified = null)
 	{
 		if (_bag == null || _lootContainer == null)
@@ -196,7 +196,7 @@ public class XUiC_BagContainer : XUiC_ItemStackGrid
 		base.RefreshBindings();
 	}
 
-	// Token: 0x060075A4 RID: 30116 RVA: 0x002C2AB4 File Offset: 0x002C0CB4
+	// Token: 0x06007645 RID: 30277 RVA: 0x002C5FD8 File Offset: 0x002C41D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateInput()
 	{
@@ -207,7 +207,7 @@ public class XUiC_BagContainer : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x060075A5 RID: 30117 RVA: 0x002C2B08 File Offset: 0x002C0D08
+	// Token: 0x06007646 RID: 30278 RVA: 0x002C602C File Offset: 0x002C422C
 	public override void Update(float _dt)
 	{
 		if (GameManager.Instance == null || GameManager.Instance.World == null)
@@ -248,7 +248,7 @@ public class XUiC_BagContainer : XUiC_ItemStackGrid
 		this.UpdateInput();
 	}
 
-	// Token: 0x060075A6 RID: 30118 RVA: 0x002C2CBC File Offset: 0x002C0EBC
+	// Token: 0x06007647 RID: 30279 RVA: 0x002C61E0 File Offset: 0x002C43E0
 	public void HandleBagSlotChangedEvent(int _slotNumber, ItemStack _stack)
 	{
 		if (this.Bag == null)
@@ -258,7 +258,7 @@ public class XUiC_BagContainer : XUiC_ItemStackGrid
 		this.Bag.SetSlot(_slotNumber, _stack, true);
 	}
 
-	// Token: 0x060075A7 RID: 30119 RVA: 0x002C2CD8 File Offset: 0x002C0ED8
+	// Token: 0x06007648 RID: 30280 RVA: 0x002C61FC File Offset: 0x002C43FC
 	public void OnBagItemChangedInternal()
 	{
 		if (this.Bag == null)
@@ -278,7 +278,7 @@ public class XUiC_BagContainer : XUiC_ItemStackGrid
 		action();
 	}
 
-	// Token: 0x060075A8 RID: 30120 RVA: 0x002C2D22 File Offset: 0x002C0F22
+	// Token: 0x06007649 RID: 30281 RVA: 0x002C6246 File Offset: 0x002C4446
 	public void SetItemInSlot(int _i, ItemStack _stack)
 	{
 		if (_i >= this.itemControllers.Length)
@@ -288,7 +288,7 @@ public class XUiC_BagContainer : XUiC_ItemStackGrid
 		this.itemControllers[_i].ItemStack = _stack;
 	}
 
-	// Token: 0x060075A9 RID: 30121 RVA: 0x002C2D3E File Offset: 0x002C0F3E
+	// Token: 0x0600764A RID: 30282 RVA: 0x002C6262 File Offset: 0x002C4462
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -297,7 +297,7 @@ public class XUiC_BagContainer : XUiC_ItemStackGrid
 		this.IsDirty = true;
 	}
 
-	// Token: 0x060075AA RID: 30122 RVA: 0x002C2D5B File Offset: 0x002C0F5B
+	// Token: 0x0600764B RID: 30283 RVA: 0x002C627F File Offset: 0x002C447F
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -310,7 +310,7 @@ public class XUiC_BagContainer : XUiC_ItemStackGrid
 		this.onBagModified = null;
 	}
 
-	// Token: 0x060075AB RID: 30123 RVA: 0x002C2D97 File Offset: 0x002C0F97
+	// Token: 0x0600764C RID: 30284 RVA: 0x002C62BB File Offset: 0x002C44BB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public IEnumerator closeInventoryLater()
 	{
@@ -321,10 +321,10 @@ public class XUiC_BagContainer : XUiC_ItemStackGrid
 		yield break;
 	}
 
-	// Token: 0x060075AC RID: 30124 RVA: 0x002C2DA6 File Offset: 0x002C0FA6
+	// Token: 0x0600764D RID: 30285 RVA: 0x002C62CA File Offset: 0x002C44CA
 	public bool AddItem(ItemStack _itemStack)
 	{
-		if (!_itemStack.CanMoveTo(XUiC_ItemStack.StackLocationTypes.Backpack))
+		if (!_itemStack.CanMoveTo(XUiC_ItemStack.StackLocationTypes.Backpack, -1))
 		{
 			return false;
 		}
@@ -336,7 +336,7 @@ public class XUiC_BagContainer : XUiC_ItemStackGrid
 		return _itemStack.count > 0 && this.Bag.AddItem(_itemStack);
 	}
 
-	// Token: 0x060075AD RID: 30125 RVA: 0x002C2DE2 File Offset: 0x002C0FE2
+	// Token: 0x0600764E RID: 30286 RVA: 0x002C6307 File Offset: 0x002C4507
 	public override bool ParseAttribute(string _name, string _value)
 	{
 		if (_name == "window_grid_width_difference")
@@ -347,7 +347,7 @@ public class XUiC_BagContainer : XUiC_ItemStackGrid
 		return base.ParseAttribute(_name, _value);
 	}
 
-	// Token: 0x060075AE RID: 30126 RVA: 0x002C2E0C File Offset: 0x002C100C
+	// Token: 0x0600764F RID: 30287 RVA: 0x002C6330 File Offset: 0x002C4530
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -419,7 +419,7 @@ public class XUiC_BagContainer : XUiC_ItemStackGrid
 		return base.GetBindingValueInternal(ref _value, _bindingName);
 	}
 
-	// Token: 0x060075AF RID: 30127 RVA: 0x002C2FD4 File Offset: 0x002C11D4
+	// Token: 0x06007650 RID: 30288 RVA: 0x002C64F8 File Offset: 0x002C46F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ApplyLockedSlotStates(PackedBoolArray _lockedSlots)
 	{
@@ -430,7 +430,7 @@ public class XUiC_BagContainer : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x060075B0 RID: 30128 RVA: 0x002C3014 File Offset: 0x002C1214
+	// Token: 0x06007651 RID: 30289 RVA: 0x002C6538 File Offset: 0x002C4738
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateLockedSlots(XUiC_ContainerStandardControls _csc)
 	{
@@ -454,47 +454,47 @@ public class XUiC_BagContainer : XUiC_ItemStackGrid
 		_csc.LockedSlots = packedBoolArray;
 	}
 
-	// Token: 0x040056B6 RID: 22198
+	// Token: 0x0400575B RID: 22363
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isClosing;
 
-	// Token: 0x040056B7 RID: 22199
+	// Token: 0x0400575C RID: 22364
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Window window;
 
-	// Token: 0x040056B8 RID: 22200
+	// Token: 0x0400575D RID: 22365
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Grid grid;
 
-	// Token: 0x040056B9 RID: 22201
+	// Token: 0x0400575E RID: 22366
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool userLockMode;
 
-	// Token: 0x040056BA RID: 22202
+	// Token: 0x0400575F RID: 22367
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ContainerStandardControls standardControls;
 
-	// Token: 0x040056BC RID: 22204
+	// Token: 0x04005761 RID: 22369
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string containerName;
 
-	// Token: 0x040056BD RID: 22205
+	// Token: 0x04005762 RID: 22370
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Action onBagModified;
 
-	// Token: 0x040056BF RID: 22207
+	// Token: 0x04005764 RID: 22372
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int windowWidth;
 
-	// Token: 0x040056C0 RID: 22208
+	// Token: 0x04005765 RID: 22373
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int windowGridWidthDifference;
 
-	// Token: 0x040056C1 RID: 22209
+	// Token: 0x04005766 RID: 22374
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool activeKeyDown;
 
-	// Token: 0x040056C2 RID: 22210
+	// Token: 0x04005767 RID: 22375
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool wasReleased;
 }

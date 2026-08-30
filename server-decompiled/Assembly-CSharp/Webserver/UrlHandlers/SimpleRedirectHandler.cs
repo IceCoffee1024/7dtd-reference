@@ -2,23 +2,23 @@
 
 namespace Webserver.UrlHandlers
 {
-	// Token: 0x02001ACF RID: 6863
+	// Token: 0x02001AF6 RID: 6902
 	public class SimpleRedirectHandler : AbsHandler
 	{
-		// Token: 0x0600CE11 RID: 52753 RVA: 0x004B3260 File Offset: 0x004B1460
+		// Token: 0x0600CF9A RID: 53146 RVA: 0x004B9654 File Offset: 0x004B7854
 		public SimpleRedirectHandler(string _target)
 			: base(null, 0)
 		{
 			this.target = _target;
 		}
 
-		// Token: 0x0600CE12 RID: 52754 RVA: 0x004B3271 File Offset: 0x004B1471
+		// Token: 0x0600CF9B RID: 53147 RVA: 0x004B9665 File Offset: 0x004B7865
 		public override void HandleRequest(RequestContext _context)
 		{
 			_context.Response.Redirect(this.target);
 		}
 
-		// Token: 0x04009C7E RID: 40062
+		// Token: 0x04009DAF RID: 40367
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string target;
 	}

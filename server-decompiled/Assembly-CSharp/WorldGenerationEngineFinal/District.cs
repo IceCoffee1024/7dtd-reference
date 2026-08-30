@@ -4,15 +4,15 @@ using UnityEngine;
 
 namespace WorldGenerationEngineFinal
 {
-	// Token: 0x020016CF RID: 5839
+	// Token: 0x020016F5 RID: 5877
 	public class District
 	{
-		// Token: 0x0600B5D9 RID: 46553 RVA: 0x0043A1C7 File Offset: 0x004383C7
+		// Token: 0x0600B75C RID: 46940 RVA: 0x0043FF3F File Offset: 0x0043E13F
 		public District()
 		{
 		}
 
-		// Token: 0x0600B5DA RID: 46554 RVA: 0x0043A1E8 File Offset: 0x004383E8
+		// Token: 0x0600B75D RID: 46941 RVA: 0x0043FF60 File Offset: 0x0043E160
 		public District(District _other)
 		{
 			this.name = _other.name;
@@ -25,7 +25,7 @@ namespace WorldGenerationEngineFinal
 			this.Init();
 		}
 
-		// Token: 0x0600B5DB RID: 46555 RVA: 0x0043A26C File Offset: 0x0043846C
+		// Token: 0x0600B75E RID: 46942 RVA: 0x0043FFE4 File Offset: 0x0043E1E4
 		public void Init()
 		{
 			this.type = District.Type.None;
@@ -63,52 +63,52 @@ namespace WorldGenerationEngineFinal
 			}
 		}
 
-		// Token: 0x040087F1 RID: 34801
+		// Token: 0x0400890D RID: 35085
 		public string name;
 
-		// Token: 0x040087F2 RID: 34802
+		// Token: 0x0400890E RID: 35086
 		public string prefabName;
 
-		// Token: 0x040087F3 RID: 34803
+		// Token: 0x0400890F RID: 35087
 		public District.Type type;
 
-		// Token: 0x040087F4 RID: 34804
+		// Token: 0x04008910 RID: 35088
 		public FastTags<TagGroup.Poi> tag;
 
-		// Token: 0x040087F5 RID: 34805
+		// Token: 0x04008911 RID: 35089
 		public FastTags<TagGroup.Poi> townships;
 
-		// Token: 0x040087F6 RID: 34806
+		// Token: 0x04008912 RID: 35090
 		public float weight = 0.5f;
 
-		// Token: 0x040087F7 RID: 34807
+		// Token: 0x04008913 RID: 35091
 		public float spawnOrder;
 
-		// Token: 0x040087F8 RID: 34808
+		// Token: 0x04008914 RID: 35092
 		public Color preview_color;
 
-		// Token: 0x040087F9 RID: 34809
+		// Token: 0x04008915 RID: 35093
 		public bool spawnCustomSizePrefabs;
 
-		// Token: 0x040087FA RID: 34810
+		// Token: 0x04008916 RID: 35094
 		public List<string> avoidedNeighborDistricts = new List<string>();
 
-		// Token: 0x020016D0 RID: 5840
+		// Token: 0x020016F6 RID: 5878
 		public enum Type
 		{
-			// Token: 0x040087FC RID: 34812
+			// Token: 0x04008918 RID: 35096
 			None,
-			// Token: 0x040087FD RID: 34813
+			// Token: 0x04008919 RID: 35097
 			Commercial,
-			// Token: 0x040087FE RID: 34814
+			// Token: 0x0400891A RID: 35098
 			Downtown,
-			// Token: 0x040087FF RID: 34815
+			// Token: 0x0400891B RID: 35099
 			Gateway,
-			// Token: 0x04008800 RID: 34816
+			// Token: 0x0400891C RID: 35100
 			Industrial,
-			// Token: 0x04008801 RID: 34817
+			// Token: 0x0400891D RID: 35101
 			Residential,
-			// Token: 0x04008802 RID: 34818
+			// Token: 0x0400891E RID: 35102
 			Rural
 		}
 	}

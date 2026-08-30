@@ -2,12 +2,12 @@
 
 namespace SharpEXR.AttributeTypes
 {
-	// Token: 0x020016C7 RID: 5831
+	// Token: 0x020016ED RID: 5869
 	public enum EnvMap
 	{
-		// Token: 0x040087D4 RID: 34772
+		// Token: 0x040088F0 RID: 35056
 		LatLong,
-		// Token: 0x040087D5 RID: 34773
+		// Token: 0x040088F1 RID: 35057
 		Cube
 	}
 }

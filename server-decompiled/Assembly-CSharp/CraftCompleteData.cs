@@ -1,15 +1,15 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x020002D3 RID: 723
+// Token: 0x020002D7 RID: 727
 public class CraftCompleteData
 {
-	// Token: 0x060014DF RID: 5343 RVA: 0x0007E21B File Offset: 0x0007C41B
+	// Token: 0x060014F1 RID: 5361 RVA: 0x0007E873 File Offset: 0x0007CA73
 	public CraftCompleteData()
 	{
 	}
 
-	// Token: 0x060014E0 RID: 5344 RVA: 0x0007E23C File Offset: 0x0007C43C
+	// Token: 0x060014F2 RID: 5362 RVA: 0x0007E894 File Offset: 0x0007CA94
 	public CraftCompleteData(int crafterEntityID, ItemStack craftedItemStack, string recipeName, string itemScrapped, int craftExpGain, ushort recipeUsedCount)
 	{
 		this.CrafterEntityID = crafterEntityID;
@@ -20,7 +20,7 @@ public class CraftCompleteData
 		this.CraftExpGain = craftExpGain;
 	}
 
-	// Token: 0x060014E1 RID: 5345 RVA: 0x0007E294 File Offset: 0x0007C494
+	// Token: 0x060014F3 RID: 5363 RVA: 0x0007E8EC File Offset: 0x0007CAEC
 	public void Write(BinaryWriter _bw)
 	{
 		_bw.Write(1);
@@ -32,7 +32,7 @@ public class CraftCompleteData
 		_bw.Write(this.ItemScrapped);
 	}
 
-	// Token: 0x060014E2 RID: 5346 RVA: 0x0007E2F0 File Offset: 0x0007C4F0
+	// Token: 0x060014F4 RID: 5364 RVA: 0x0007E948 File Offset: 0x0007CB48
 	public void Read(BinaryReader _br)
 	{
 		_br.ReadUInt16();
@@ -44,7 +44,7 @@ public class CraftCompleteData
 		this.ItemScrapped = _br.ReadString();
 	}
 
-	// Token: 0x060014E3 RID: 5347 RVA: 0x0007E354 File Offset: 0x0007C554
+	// Token: 0x060014F5 RID: 5365 RVA: 0x0007E9AC File Offset: 0x0007CBAC
 	public void ReadLegacy(BinaryReader _br)
 	{
 		this.CrafterEntityID = _br.ReadInt32();
@@ -55,25 +55,25 @@ public class CraftCompleteData
 		this.ItemScrapped = _br.ReadString();
 	}
 
-	// Token: 0x04000DE7 RID: 3559
+	// Token: 0x04000DF8 RID: 3576
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const ushort Version = 1;
 
-	// Token: 0x04000DE8 RID: 3560
+	// Token: 0x04000DF9 RID: 3577
 	public int CrafterEntityID;
 
-	// Token: 0x04000DE9 RID: 3561
+	// Token: 0x04000DFA RID: 3578
 	public ItemStack CraftedItemStack;
 
-	// Token: 0x04000DEA RID: 3562
+	// Token: 0x04000DFB RID: 3579
 	public string RecipeName = "";
 
-	// Token: 0x04000DEB RID: 3563
+	// Token: 0x04000DFC RID: 3580
 	public string ItemScrapped = "";
 
-	// Token: 0x04000DEC RID: 3564
+	// Token: 0x04000DFD RID: 3581
 	public ushort RecipeUsedCount;
 
-	// Token: 0x04000DED RID: 3565
+	// Token: 0x04000DFE RID: 3582
 	public int CraftExpGain;
 }

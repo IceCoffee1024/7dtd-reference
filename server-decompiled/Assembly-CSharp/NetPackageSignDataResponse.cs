@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000844 RID: 2116
+// Token: 0x02000850 RID: 2128
 [Preserve]
 public class NetPackageSignDataResponse : NetPackage
 {
-	// Token: 0x1700066E RID: 1646
-	// (get) Token: 0x06003DE2 RID: 15842 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x1700067A RID: 1658
+	// (get) Token: 0x06003E47 RID: 15943 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,8 +15,8 @@ public class NetPackageSignDataResponse : NetPackage
 		}
 	}
 
-	// Token: 0x1700066F RID: 1647
-	// (get) Token: 0x06003DE3 RID: 15843 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x1700067B RID: 1659
+	// (get) Token: 0x06003E48 RID: 15944 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool Compress
 	{
 		get
@@ -25,7 +25,7 @@ public class NetPackageSignDataResponse : NetPackage
 		}
 	}
 
-	// Token: 0x06003DE4 RID: 15844 RVA: 0x00187FA6 File Offset: 0x001861A6
+	// Token: 0x06003E49 RID: 15945 RVA: 0x00189FC6 File Offset: 0x001881C6
 	public NetPackageSignDataResponse Setup(byte[] _data, bool _isLastBatch)
 	{
 		this.data = _data;
@@ -33,7 +33,7 @@ public class NetPackageSignDataResponse : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003DE5 RID: 15845 RVA: 0x00187FB8 File Offset: 0x001861B8
+	// Token: 0x06003E4A RID: 15946 RVA: 0x00189FD8 File Offset: 0x001881D8
 	public override void read(PooledBinaryReader _reader)
 	{
 		this.isLastBatch = _reader.ReadBoolean();
@@ -41,7 +41,7 @@ public class NetPackageSignDataResponse : NetPackage
 		this.data = ((num > 0) ? _reader.ReadBytes(num) : null);
 	}
 
-	// Token: 0x06003DE6 RID: 15846 RVA: 0x00187FEC File Offset: 0x001861EC
+	// Token: 0x06003E4B RID: 15947 RVA: 0x0018A00C File Offset: 0x0018820C
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -54,23 +54,25 @@ public class NetPackageSignDataResponse : NetPackage
 		}
 	}
 
-	// Token: 0x06003DE7 RID: 15847 RVA: 0x00188037 File Offset: 0x00186237
+	// Token: 0x06003E4C RID: 15948 RVA: 0x0018A057 File Offset: 0x00188257
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		SignDataManager.Instance.ProcessSignDataBatchReceived(this.data, this.isLastBatch);
 	}
 
-	// Token: 0x06003DE8 RID: 15848 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06003E4D RID: 15949 RVA: 0x0018A06F File Offset: 0x0018826F
 	public override int GetLength()
 	{
-		return 0;
+		int num = 7;
+		byte[] array = this.data;
+		return num + ((array != null) ? array.Length : 0);
 	}
 
-	// Token: 0x04003201 RID: 12801
+	// Token: 0x04003280 RID: 12928
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte[] data;
 
-	// Token: 0x04003202 RID: 12802
+	// Token: 0x04003281 RID: 12929
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isLastBatch;
 }

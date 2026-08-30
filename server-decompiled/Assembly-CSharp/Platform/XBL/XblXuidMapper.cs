@@ -5,20 +5,20 @@ using System.Threading;
 
 namespace Platform.XBL
 {
-	// Token: 0x02001BFA RID: 7162
+	// Token: 0x02001C21 RID: 7201
 	public static class XblXuidMapper
 	{
-		// Token: 0x14000130 RID: 304
-		// (add) Token: 0x0600D452 RID: 54354 RVA: 0x004C95D4 File Offset: 0x004C77D4
-		// (remove) Token: 0x0600D453 RID: 54355 RVA: 0x004C9608 File Offset: 0x004C7808
+		// Token: 0x14000131 RID: 305
+		// (add) Token: 0x0600D5E0 RID: 54752 RVA: 0x004CF9C8 File Offset: 0x004CDBC8
+		// (remove) Token: 0x0600D5E1 RID: 54753 RVA: 0x004CF9FC File Offset: 0x004CDBFC
 		public static event XblXuidMapper.XuidMappedHandler XuidMapped;
 
-		// Token: 0x14000131 RID: 305
-		// (add) Token: 0x0600D454 RID: 54356 RVA: 0x004C963C File Offset: 0x004C783C
-		// (remove) Token: 0x0600D455 RID: 54357 RVA: 0x004C9670 File Offset: 0x004C7870
+		// Token: 0x14000132 RID: 306
+		// (add) Token: 0x0600D5E2 RID: 54754 RVA: 0x004CFA30 File Offset: 0x004CDC30
+		// (remove) Token: 0x0600D5E3 RID: 54755 RVA: 0x004CFA64 File Offset: 0x004CDC64
 		public static event XblXuidMapper.UserIdentifierMappedHandler UserIdentifierMapped;
 
-		// Token: 0x0600D457 RID: 54359 RVA: 0x004C9715 File Offset: 0x004C7915
+		// Token: 0x0600D5E5 RID: 54757 RVA: 0x004CFB09 File Offset: 0x004CDD09
 		public static void Enable()
 		{
 			if (XblXuidMapper.s_enabled)
@@ -29,7 +29,7 @@ namespace Platform.XBL
 			Log.Out("[XBL-XuidMapper] Enabled.");
 		}
 
-		// Token: 0x0600D458 RID: 54360 RVA: 0x004C9730 File Offset: 0x004C7930
+		// Token: 0x0600D5E6 RID: 54758 RVA: 0x004CFB24 File Offset: 0x004CDD24
 		public static ulong GetXuid(PlatformUserIdentifierAbs userId)
 		{
 			if (!XblXuidMapper.s_enabled)
@@ -59,7 +59,7 @@ namespace Platform.XBL
 			return 0UL;
 		}
 
-		// Token: 0x0600D459 RID: 54361 RVA: 0x004C97C8 File Offset: 0x004C79C8
+		// Token: 0x0600D5E7 RID: 54759 RVA: 0x004CFBBC File Offset: 0x004CDDBC
 		public static void SetXuid(PlatformUserIdentifierAbs userId, ulong xuid)
 		{
 			if (xuid == 0UL)
@@ -117,7 +117,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D45A RID: 54362 RVA: 0x004C99A0 File Offset: 0x004C7BA0
+		// Token: 0x0600D5E8 RID: 54760 RVA: 0x004CFD94 File Offset: 0x004CDF94
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static void ResolveXuid(XblXuidMapper.XuidState xuidState)
 		{
@@ -167,7 +167,7 @@ namespace Platform.XBL
 			CS$<>8__locals1.<ResolveXuid>g__ProcessNextId|1();
 		}
 
-		// Token: 0x0600D45B RID: 54363 RVA: 0x004C9B50 File Offset: 0x004C7D50
+		// Token: 0x0600D5E9 RID: 54761 RVA: 0x004CFF44 File Offset: 0x004CE144
 		public static void ResolveUserIdentifiers(IReadOnlyCollection<ulong> xuids)
 		{
 			XblXuidMapper.<>c__DisplayClass25_0 CS$<>8__locals1 = new XblXuidMapper.<>c__DisplayClass25_0();
@@ -196,7 +196,7 @@ namespace Platform.XBL
 			XblXuidMapper.s_mappingService.ReverseQueryMappedAccountsDetails(CS$<>8__locals1.requests, new MappedAccountsReverseQueryCallback(CS$<>8__locals1.<ResolveUserIdentifiers>g__ResolveUserIdentifiersCallback|1));
 		}
 
-		// Token: 0x0600D45C RID: 54364 RVA: 0x004C9C84 File Offset: 0x004C7E84
+		// Token: 0x0600D5EA RID: 54762 RVA: 0x004D0078 File Offset: 0x004CE278
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static XblXuidMapper.XuidState GetXuidState(PlatformUserIdentifierAbs userId)
 		{
@@ -247,7 +247,7 @@ namespace Platform.XBL
 			return xuidState2;
 		}
 
-		// Token: 0x0600D45D RID: 54365 RVA: 0x004C9DE8 File Offset: 0x004C7FE8
+		// Token: 0x0600D5EB RID: 54763 RVA: 0x004D01DC File Offset: 0x004CE3DC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static XblXuidMapper.XuidState GetXuidState(ulong xuid)
 		{
@@ -276,7 +276,7 @@ namespace Platform.XBL
 			return xuidState2;
 		}
 
-		// Token: 0x0600D45E RID: 54366 RVA: 0x004C9E78 File Offset: 0x004C8078
+		// Token: 0x0600D5EC RID: 54764 RVA: 0x004D026C File Offset: 0x004CE46C
 		public static void ResolveXuids(IReadOnlyList<XuidResolveRequest> _requests, Action<IReadOnlyList<XuidResolveRequest>> _onComplete)
 		{
 			XblXuidMapper.<>c__DisplayClass29_0 CS$<>8__locals1 = new XblXuidMapper.<>c__DisplayClass29_0();
@@ -355,70 +355,70 @@ namespace Platform.XBL
 			userIdentifierMappingService.QueryMappedAccountsDetails(list, new MappedAccountsQueryCallback(CS$<>8__locals1.<ResolveXuids>g__Callback|0));
 		}
 
-		// Token: 0x0400A1B7 RID: 41399
+		// Token: 0x0400A2E8 RID: 41704
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool s_enabled;
 
-		// Token: 0x0400A1B8 RID: 41400
+		// Token: 0x0400A2E9 RID: 41705
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static IUserIdentifierMappingService s_mappingService;
 
-		// Token: 0x0400A1B9 RID: 41401
+		// Token: 0x0400A2EA RID: 41706
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly XblXuidMapper.XuidState EmptyXuidState = new XblXuidMapper.XuidState();
 
-		// Token: 0x0400A1BC RID: 41404
+		// Token: 0x0400A2ED RID: 41709
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly OneToManyDictionary<XblXuidMapper.XuidState, PlatformUserIdentifierAbs> s_xuidStateToUserId = new OneToManyDictionary<XblXuidMapper.XuidState, PlatformUserIdentifierAbs>();
 
-		// Token: 0x0400A1BD RID: 41405
+		// Token: 0x0400A2EE RID: 41710
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly BiDictionary<XblXuidMapper.XuidState, ulong> s_xuidStateToXuid = new BiDictionary<XblXuidMapper.XuidState, ulong>();
 
-		// Token: 0x0400A1BE RID: 41406
+		// Token: 0x0400A2EF RID: 41711
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly ReaderWriterLockSlim s_xuidStateDictionaryLock = new ReaderWriterLockSlim();
 
-		// Token: 0x0400A1BF RID: 41407
+		// Token: 0x0400A2F0 RID: 41712
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly HashSet<PlatformUserIdentifierAbs> s_userIdsWithNoXblMapping = new HashSet<PlatformUserIdentifierAbs>();
 
-		// Token: 0x0400A1C0 RID: 41408
+		// Token: 0x0400A2F1 RID: 41713
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly ReaderWriterLockSlim s_userIdsWithNoXblMappingLock = new ReaderWriterLockSlim();
 
-		// Token: 0x0400A1C1 RID: 41409
+		// Token: 0x0400A2F2 RID: 41714
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly HashSet<ulong> s_xuidsCheckedForUserIdentifiers = new HashSet<ulong>();
 
-		// Token: 0x0400A1C2 RID: 41410
+		// Token: 0x0400A2F3 RID: 41715
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly ReaderWriterLockSlim s_xuidsCheckedForUserIdentifiersLock = new ReaderWriterLockSlim();
 
-		// Token: 0x0400A1C3 RID: 41411
+		// Token: 0x0400A2F4 RID: 41716
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly List<PlatformUserIdentifierAbs> s_xuidMappedResultTemp = new List<PlatformUserIdentifierAbs>();
 
-		// Token: 0x0400A1C4 RID: 41412
+		// Token: 0x0400A2F5 RID: 41717
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly object s_xuidMappedResultTempLock = new object();
 
-		// Token: 0x02001BFB RID: 7163
-		// (Invoke) Token: 0x0600D460 RID: 54368
+		// Token: 0x02001C22 RID: 7202
+		// (Invoke) Token: 0x0600D5EE RID: 54766
 		public delegate void XuidMappedHandler(IReadOnlyCollection<PlatformUserIdentifierAbs> userIds, ulong xuid);
 
-		// Token: 0x02001BFC RID: 7164
-		// (Invoke) Token: 0x0600D464 RID: 54372
+		// Token: 0x02001C23 RID: 7203
+		// (Invoke) Token: 0x0600D5F2 RID: 54770
 		public delegate void UserIdentifierMappedHandler(ulong xuid, PlatformUserIdentifierAbs userId);
 
-		// Token: 0x02001BFD RID: 7165
+		// Token: 0x02001C24 RID: 7204
 		[PublicizedFrom(EAccessModifier.Private)]
 		public sealed class XuidState
 		{
-			// Token: 0x0400A1C5 RID: 41413
+			// Token: 0x0400A2F6 RID: 41718
 			public int AttemptsCompleted;
 
-			// Token: 0x0400A1C6 RID: 41414
+			// Token: 0x0400A2F7 RID: 41719
 			public bool InProgress;
 		}
 	}

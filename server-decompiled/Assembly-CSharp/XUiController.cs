@@ -5,13 +5,13 @@ using Unity.Profiling;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000EA6 RID: 3750
+// Token: 0x02000EBB RID: 3771
 [Preserve]
 public class XUiController : IXUiElement
 {
-	// Token: 0x17000DBD RID: 3517
-	// (get) Token: 0x060074E0 RID: 29920 RVA: 0x002BED34 File Offset: 0x002BCF34
-	// (set) Token: 0x060074E1 RID: 29921 RVA: 0x002BED3C File Offset: 0x002BCF3C
+	// Token: 0x17000DD6 RID: 3542
+	// (get) Token: 0x06007580 RID: 30080 RVA: 0x002C2260 File Offset: 0x002C0460
+	// (set) Token: 0x06007581 RID: 30081 RVA: 0x002C2268 File Offset: 0x002C0468
 	public XUiView ViewComponent
 	{
 		get
@@ -24,9 +24,9 @@ public class XUiController : IXUiElement
 		}
 	}
 
-	// Token: 0x17000DBE RID: 3518
-	// (get) Token: 0x060074E2 RID: 29922 RVA: 0x002BED45 File Offset: 0x002BCF45
-	// (set) Token: 0x060074E3 RID: 29923 RVA: 0x002BED50 File Offset: 0x002BCF50
+	// Token: 0x17000DD7 RID: 3543
+	// (get) Token: 0x06007582 RID: 30082 RVA: 0x002C2271 File Offset: 0x002C0471
+	// (set) Token: 0x06007583 RID: 30083 RVA: 0x002C227C File Offset: 0x002C047C
 	public XUiController Parent
 	{
 		get
@@ -54,8 +54,8 @@ public class XUiController : IXUiElement
 		}
 	}
 
-	// Token: 0x17000DBF RID: 3519
-	// (get) Token: 0x060074E4 RID: 29924 RVA: 0x002BED9C File Offset: 0x002BCF9C
+	// Token: 0x17000DD8 RID: 3544
+	// (get) Token: 0x06007584 RID: 30084 RVA: 0x002C22C8 File Offset: 0x002C04C8
 	public List<XUiController> Children
 	{
 		get
@@ -64,9 +64,9 @@ public class XUiController : IXUiElement
 		}
 	}
 
-	// Token: 0x17000DC0 RID: 3520
-	// (get) Token: 0x060074E5 RID: 29925 RVA: 0x002BEDA4 File Offset: 0x002BCFA4
-	// (set) Token: 0x060074E6 RID: 29926 RVA: 0x002BEDAC File Offset: 0x002BCFAC
+	// Token: 0x17000DD9 RID: 3545
+	// (get) Token: 0x06007585 RID: 30085 RVA: 0x002C22D0 File Offset: 0x002C04D0
+	// (set) Token: 0x06007586 RID: 30086 RVA: 0x002C22D8 File Offset: 0x002C04D8
 	public XUiWindowGroup WindowGroup
 	{
 		get
@@ -79,8 +79,8 @@ public class XUiController : IXUiElement
 		}
 	}
 
-	// Token: 0x17000DC1 RID: 3521
-	// (get) Token: 0x060074E7 RID: 29927 RVA: 0x002BEDB5 File Offset: 0x002BCFB5
+	// Token: 0x17000DDA RID: 3546
+	// (get) Token: 0x06007587 RID: 30087 RVA: 0x002C22E1 File Offset: 0x002C04E1
 	public bool IsOpen
 	{
 		get
@@ -89,19 +89,19 @@ public class XUiController : IXUiElement
 		}
 	}
 
-	// Token: 0x060074E8 RID: 29928 RVA: 0x002BEDC2 File Offset: 0x002BCFC2
+	// Token: 0x06007588 RID: 30088 RVA: 0x002C22EE File Offset: 0x002C04EE
 	public void AutoBindComponents()
 	{
 		AutoBindCache.Instance.BindComponents(this);
 	}
 
-	// Token: 0x060074E9 RID: 29929 RVA: 0x002BEDCF File Offset: 0x002BCFCF
+	// Token: 0x06007589 RID: 30089 RVA: 0x002C22FB File Offset: 0x002C04FB
 	public void AutoBindEvents()
 	{
 		AutoBindCache.Instance.BindEvents(this);
 	}
 
-	// Token: 0x060074EA RID: 29930 RVA: 0x002BEDDC File Offset: 0x002BCFDC
+	// Token: 0x0600758A RID: 30090 RVA: 0x002C2308 File Offset: 0x002C0508
 	public virtual void Init()
 	{
 		if (this.viewComponent != null)
@@ -117,13 +117,14 @@ public class XUiController : IXUiElement
 		this.curInputStyle = PlatformManager.NativePlatform.Input.CurrentInputStyle;
 	}
 
-	// Token: 0x060074EB RID: 29931 RVA: 0x002BEE5C File Offset: 0x002BD05C
+	// Token: 0x0600758B RID: 30091 RVA: 0x002C2388 File Offset: 0x002C0588
 	public virtual void Update(float _dt)
 	{
 		XUiView xuiView = this.viewComponent;
 		bool isShowing = this.windowGroup.isShowing;
-		if (this.curInputStyle != this.lastInputStyle)
+		if (this.forceInputStyleChange || this.curInputStyle != this.lastInputStyle)
 		{
+			this.forceInputStyleChange = false;
 			PlayerInputManager.InputStyle inputStyle = this.lastInputStyle;
 			this.lastInputStyle = this.curInputStyle;
 			this.RefreshBindings();
@@ -150,7 +151,7 @@ public class XUiController : IXUiElement
 		}
 	}
 
-	// Token: 0x060074EC RID: 29932 RVA: 0x002BEF54 File Offset: 0x002BD154
+	// Token: 0x0600758C RID: 30092 RVA: 0x002C2490 File Offset: 0x002C0690
 	public bool TryGetChildController(Type _controllerType, ReadOnlyMemory<char> _id, out XUiController _child)
 	{
 		if ((_id.IsEmpty || (this.viewComponent != null && _id.Span.Equals(this.viewComponent.ID, StringComparison.OrdinalIgnoreCase))) && _controllerType.IsInstanceOfType(this))
@@ -169,7 +170,7 @@ public class XUiController : IXUiElement
 		return false;
 	}
 
-	// Token: 0x060074ED RID: 29933 RVA: 0x002BEFD4 File Offset: 0x002BD1D4
+	// Token: 0x0600758D RID: 30093 RVA: 0x002C2510 File Offset: 0x002C0710
 	public bool TryGetChildController<T>(ReadOnlyMemory<char> _id, out T _child) where T : XUiController
 	{
 		if (_id.IsEmpty || (this.viewComponent != null && _id.Span.Equals(this.viewComponent.ID, StringComparison.OrdinalIgnoreCase)))
@@ -192,13 +193,13 @@ public class XUiController : IXUiElement
 		return false;
 	}
 
-	// Token: 0x060074EE RID: 29934 RVA: 0x002BF063 File Offset: 0x002BD263
+	// Token: 0x0600758E RID: 30094 RVA: 0x002C259F File Offset: 0x002C079F
 	public bool TryGetChildController<T>(string _id, out T _child) where T : XUiController
 	{
 		return this.TryGetChildController<T>(_id.AsMemory(), out _child);
 	}
 
-	// Token: 0x060074EF RID: 29935 RVA: 0x002BF074 File Offset: 0x002BD274
+	// Token: 0x0600758F RID: 30095 RVA: 0x002C25B0 File Offset: 0x002C07B0
 	public XUiController[] GetChildControllers(Type _controllerType, ReadOnlyMemory<char> _id, List<XUiController> _list = null)
 	{
 		List<XUiController> list = _list ?? new List<XUiController>();
@@ -220,7 +221,7 @@ public class XUiController : IXUiElement
 		return list.ToArray();
 	}
 
-	// Token: 0x060074F0 RID: 29936 RVA: 0x002BF104 File Offset: 0x002BD304
+	// Token: 0x06007590 RID: 30096 RVA: 0x002C2640 File Offset: 0x002C0840
 	public T[] GetChildControllers<T>(ReadOnlyMemory<char> _id, List<T> _list = null) where T : XUiController
 	{
 		List<T> list = _list ?? new List<T>();
@@ -245,13 +246,13 @@ public class XUiController : IXUiElement
 		return list.ToArray();
 	}
 
-	// Token: 0x060074F1 RID: 29937 RVA: 0x002BF19E File Offset: 0x002BD39E
+	// Token: 0x06007591 RID: 30097 RVA: 0x002C26DA File Offset: 0x002C08DA
 	public T[] GetChildControllers<T>(string _id, List<T> _list = null) where T : XUiController
 	{
 		return this.GetChildControllers<T>(_id.AsMemory(), _list);
 	}
 
-	// Token: 0x060074F2 RID: 29938 RVA: 0x002BF1B0 File Offset: 0x002BD3B0
+	// Token: 0x06007592 RID: 30098 RVA: 0x002C26EC File Offset: 0x002C08EC
 	public bool TryGetChildView(Type _viewType, ReadOnlyMemory<char> _id, out XUiView _child)
 	{
 		if (this.viewComponent != null && (_id.IsEmpty || _id.Span.Equals(this.viewComponent.ID, StringComparison.OrdinalIgnoreCase)) && _viewType.IsInstanceOfType(this.viewComponent))
@@ -270,7 +271,7 @@ public class XUiController : IXUiElement
 		return false;
 	}
 
-	// Token: 0x060074F3 RID: 29939 RVA: 0x002BF238 File Offset: 0x002BD438
+	// Token: 0x06007593 RID: 30099 RVA: 0x002C2774 File Offset: 0x002C0974
 	public bool TryGetChildView<T>(ReadOnlyMemory<char> _id, out T _child) where T : XUiView
 	{
 		T t = this.viewComponent as T;
@@ -290,13 +291,13 @@ public class XUiController : IXUiElement
 		return false;
 	}
 
-	// Token: 0x060074F4 RID: 29940 RVA: 0x002BF2C4 File Offset: 0x002BD4C4
+	// Token: 0x06007594 RID: 30100 RVA: 0x002C2800 File Offset: 0x002C0A00
 	public bool TryGetChildView<T>(string _id, out T _child) where T : XUiView
 	{
 		return this.TryGetChildView<T>(_id.AsMemory(), out _child);
 	}
 
-	// Token: 0x060074F5 RID: 29941 RVA: 0x002BF2D4 File Offset: 0x002BD4D4
+	// Token: 0x06007595 RID: 30101 RVA: 0x002C2810 File Offset: 0x002C0A10
 	public XUiView[] GetChildViews(Type _viewType, ReadOnlyMemory<char> _id, List<XUiView> _list = null)
 	{
 		List<XUiView> list = _list ?? new List<XUiView>();
@@ -318,7 +319,7 @@ public class XUiController : IXUiElement
 		return list.ToArray();
 	}
 
-	// Token: 0x060074F6 RID: 29942 RVA: 0x002BF370 File Offset: 0x002BD570
+	// Token: 0x06007596 RID: 30102 RVA: 0x002C28AC File Offset: 0x002C0AAC
 	public T[] GetChildViews<T>(ReadOnlyMemory<char> _id, List<T> _list = null) where T : XUiView
 	{
 		List<T> list = _list ?? new List<T>();
@@ -341,13 +342,13 @@ public class XUiController : IXUiElement
 		return list.ToArray();
 	}
 
-	// Token: 0x060074F7 RID: 29943 RVA: 0x002BF407 File Offset: 0x002BD607
+	// Token: 0x06007597 RID: 30103 RVA: 0x002C2943 File Offset: 0x002C0B43
 	public T[] GetChildViews<T>(string _id, List<T> _list = null) where T : XUiView
 	{
 		return this.GetChildViews<T>(_id.AsMemory(), _list);
 	}
 
-	// Token: 0x060074F8 RID: 29944 RVA: 0x002BF418 File Offset: 0x002BD618
+	// Token: 0x06007598 RID: 30104 RVA: 0x002C2954 File Offset: 0x002C0B54
 	public bool TryGetChildByIdAndType<T>(string _id, out T _child) where T : XUiController
 	{
 		if (this.viewComponent != null && string.Equals(this.viewComponent.ID, _id, StringComparison.OrdinalIgnoreCase))
@@ -370,7 +371,7 @@ public class XUiController : IXUiElement
 		return false;
 	}
 
-	// Token: 0x060074F9 RID: 29945 RVA: 0x002BF494 File Offset: 0x002BD694
+	// Token: 0x06007599 RID: 30105 RVA: 0x002C29D0 File Offset: 0x002C0BD0
 	public XUiController GetChildById(string _id)
 	{
 		if (this.viewComponent != null && string.Equals(this.viewComponent.ID, _id, StringComparison.OrdinalIgnoreCase))
@@ -388,7 +389,7 @@ public class XUiController : IXUiElement
 		return null;
 	}
 
-	// Token: 0x060074FA RID: 29946 RVA: 0x002BF4F0 File Offset: 0x002BD6F0
+	// Token: 0x0600759A RID: 30106 RVA: 0x002C2A2C File Offset: 0x002C0C2C
 	public XUiController[] GetChildrenById(string _id, List<XUiController> _list = null)
 	{
 		List<XUiController> list = _list ?? new List<XUiController>();
@@ -410,7 +411,7 @@ public class XUiController : IXUiElement
 		return list.ToArray();
 	}
 
-	// Token: 0x060074FB RID: 29947 RVA: 0x002BF564 File Offset: 0x002BD764
+	// Token: 0x0600759B RID: 30107 RVA: 0x002C2AA0 File Offset: 0x002C0CA0
 	public T GetChildByType<T>() where T : XUiController
 	{
 		T t = this as T;
@@ -429,7 +430,7 @@ public class XUiController : IXUiElement
 		return default(T);
 	}
 
-	// Token: 0x060074FC RID: 29948 RVA: 0x002BF5E4 File Offset: 0x002BD7E4
+	// Token: 0x0600759C RID: 30108 RVA: 0x002C2B20 File Offset: 0x002C0D20
 	public T[] GetChildrenByType<T>(List<T> _list = null) where T : XUiController
 	{
 		List<T> list = _list ?? new List<T>();
@@ -452,7 +453,7 @@ public class XUiController : IXUiElement
 		return list.ToArray();
 	}
 
-	// Token: 0x060074FD RID: 29949 RVA: 0x002BF66C File Offset: 0x002BD86C
+	// Token: 0x0600759D RID: 30109 RVA: 0x002C2BA8 File Offset: 0x002C0DA8
 	public T[] GetChildrenByViewType<T>(List<T> _list = null) where T : XUiView
 	{
 		List<T> list = _list ?? new List<T>();
@@ -475,7 +476,7 @@ public class XUiController : IXUiElement
 		return list.ToArray();
 	}
 
-	// Token: 0x060074FE RID: 29950 RVA: 0x002BF6F8 File Offset: 0x002BD8F8
+	// Token: 0x0600759E RID: 30110 RVA: 0x002C2C34 File Offset: 0x002C0E34
 	public T GetParentByType<T>() where T : XUiController
 	{
 		T t = this as T;
@@ -491,7 +492,7 @@ public class XUiController : IXUiElement
 		return xuiController.GetParentByType<T>();
 	}
 
-	// Token: 0x060074FF RID: 29951 RVA: 0x002BF734 File Offset: 0x002BD934
+	// Token: 0x0600759F RID: 30111 RVA: 0x002C2C70 File Offset: 0x002C0E70
 	public bool TryGetParentController(Type _controllerType, out XUiController _parent)
 	{
 		if (_controllerType.IsInstanceOfType(this))
@@ -507,7 +508,7 @@ public class XUiController : IXUiElement
 		return false;
 	}
 
-	// Token: 0x06007500 RID: 29952 RVA: 0x002BF760 File Offset: 0x002BD960
+	// Token: 0x060075A0 RID: 30112 RVA: 0x002C2C9C File Offset: 0x002C0E9C
 	public bool TryGetParentController<T>(out T _parent) where T : XUiController
 	{
 		T t = this as T;
@@ -524,7 +525,7 @@ public class XUiController : IXUiElement
 		return false;
 	}
 
-	// Token: 0x06007501 RID: 29953 RVA: 0x002BF7A7 File Offset: 0x002BD9A7
+	// Token: 0x060075A1 RID: 30113 RVA: 0x002C2CE3 File Offset: 0x002C0EE3
 	public bool TryGetParentView(Type _viewType, out XUiView _parent)
 	{
 		if (_viewType.IsInstanceOfType(this.viewComponent))
@@ -540,7 +541,7 @@ public class XUiController : IXUiElement
 		return false;
 	}
 
-	// Token: 0x06007502 RID: 29954 RVA: 0x002BF7DC File Offset: 0x002BD9DC
+	// Token: 0x060075A2 RID: 30114 RVA: 0x002C2D18 File Offset: 0x002C0F18
 	public bool TryGetParentView<T>(out T _parent) where T : XUiView
 	{
 		T t = this.viewComponent as T;
@@ -557,19 +558,19 @@ public class XUiController : IXUiElement
 		return false;
 	}
 
-	// Token: 0x06007503 RID: 29955 RVA: 0x002BF828 File Offset: 0x002BDA28
+	// Token: 0x060075A3 RID: 30115 RVA: 0x002C2D64 File Offset: 0x002C0F64
 	public bool IsChildOf(XUiController _controller)
 	{
 		return this.Parent != null && (this.Parent == _controller || this.Parent.IsChildOf(_controller));
 	}
 
-	// Token: 0x06007504 RID: 29956 RVA: 0x002BF84B File Offset: 0x002BDA4B
+	// Token: 0x060075A4 RID: 30116 RVA: 0x002C2D87 File Offset: 0x002C0F87
 	public bool IsSelfOrChildOf(XUiController _controller)
 	{
 		return this == _controller || this.IsChildOf(_controller);
 	}
 
-	// Token: 0x06007505 RID: 29957 RVA: 0x002BF85C File Offset: 0x002BDA5C
+	// Token: 0x060075A5 RID: 30117 RVA: 0x002C2D98 File Offset: 0x002C0F98
 	public XUiV_Window GetParentWindow()
 	{
 		XUiV_Window xuiV_Window = this.ViewComponent as XUiV_Window;
@@ -585,67 +586,67 @@ public class XUiController : IXUiElement
 		return xuiController.GetParentWindow();
 	}
 
-	// Token: 0x140000BF RID: 191
-	// (add) Token: 0x06007506 RID: 29958 RVA: 0x002BF88C File Offset: 0x002BDA8C
-	// (remove) Token: 0x06007507 RID: 29959 RVA: 0x002BF8C4 File Offset: 0x002BDAC4
+	// Token: 0x140000C0 RID: 192
+	// (add) Token: 0x060075A6 RID: 30118 RVA: 0x002C2DC8 File Offset: 0x002C0FC8
+	// (remove) Token: 0x060075A7 RID: 30119 RVA: 0x002C2E00 File Offset: 0x002C1000
 	public event XUiEvent_OnMouseUpDownEventHandler OnMouseUpDown;
 
-	// Token: 0x140000C0 RID: 192
-	// (add) Token: 0x06007508 RID: 29960 RVA: 0x002BF8FC File Offset: 0x002BDAFC
-	// (remove) Token: 0x06007509 RID: 29961 RVA: 0x002BF934 File Offset: 0x002BDB34
+	// Token: 0x140000C1 RID: 193
+	// (add) Token: 0x060075A8 RID: 30120 RVA: 0x002C2E38 File Offset: 0x002C1038
+	// (remove) Token: 0x060075A9 RID: 30121 RVA: 0x002C2E70 File Offset: 0x002C1070
 	public event XUiEvent_OnPressEventHandler OnPress;
 
-	// Token: 0x140000C1 RID: 193
-	// (add) Token: 0x0600750A RID: 29962 RVA: 0x002BF96C File Offset: 0x002BDB6C
-	// (remove) Token: 0x0600750B RID: 29963 RVA: 0x002BF9A4 File Offset: 0x002BDBA4
+	// Token: 0x140000C2 RID: 194
+	// (add) Token: 0x060075AA RID: 30122 RVA: 0x002C2EA8 File Offset: 0x002C10A8
+	// (remove) Token: 0x060075AB RID: 30123 RVA: 0x002C2EE0 File Offset: 0x002C10E0
 	public event XUiEvent_OnPressEventHandler OnDoubleClick;
 
-	// Token: 0x140000C2 RID: 194
-	// (add) Token: 0x0600750C RID: 29964 RVA: 0x002BF9DC File Offset: 0x002BDBDC
-	// (remove) Token: 0x0600750D RID: 29965 RVA: 0x002BFA14 File Offset: 0x002BDC14
+	// Token: 0x140000C3 RID: 195
+	// (add) Token: 0x060075AC RID: 30124 RVA: 0x002C2F18 File Offset: 0x002C1118
+	// (remove) Token: 0x060075AD RID: 30125 RVA: 0x002C2F50 File Offset: 0x002C1150
 	public event XUiEvent_OnPressEventHandler OnRightPress;
 
-	// Token: 0x140000C3 RID: 195
-	// (add) Token: 0x0600750E RID: 29966 RVA: 0x002BFA4C File Offset: 0x002BDC4C
-	// (remove) Token: 0x0600750F RID: 29967 RVA: 0x002BFA84 File Offset: 0x002BDC84
+	// Token: 0x140000C4 RID: 196
+	// (add) Token: 0x060075AE RID: 30126 RVA: 0x002C2F88 File Offset: 0x002C1188
+	// (remove) Token: 0x060075AF RID: 30127 RVA: 0x002C2FC0 File Offset: 0x002C11C0
 	public event XUiEvent_OnHoverEventHandler OnHover;
 
-	// Token: 0x140000C4 RID: 196
-	// (add) Token: 0x06007510 RID: 29968 RVA: 0x002BFABC File Offset: 0x002BDCBC
-	// (remove) Token: 0x06007511 RID: 29969 RVA: 0x002BFAF4 File Offset: 0x002BDCF4
+	// Token: 0x140000C5 RID: 197
+	// (add) Token: 0x060075B0 RID: 30128 RVA: 0x002C2FF8 File Offset: 0x002C11F8
+	// (remove) Token: 0x060075B1 RID: 30129 RVA: 0x002C3030 File Offset: 0x002C1230
 	public event XUiEvent_OnDragEventHandler OnDrag;
 
-	// Token: 0x140000C5 RID: 197
-	// (add) Token: 0x06007512 RID: 29970 RVA: 0x002BFB2C File Offset: 0x002BDD2C
-	// (remove) Token: 0x06007513 RID: 29971 RVA: 0x002BFB64 File Offset: 0x002BDD64
+	// Token: 0x140000C6 RID: 198
+	// (add) Token: 0x060075B2 RID: 30130 RVA: 0x002C3068 File Offset: 0x002C1268
+	// (remove) Token: 0x060075B3 RID: 30131 RVA: 0x002C30A0 File Offset: 0x002C12A0
 	public event XUiEvent_OnHeldHandler OnHold;
 
-	// Token: 0x140000C6 RID: 198
-	// (add) Token: 0x06007514 RID: 29972 RVA: 0x002BFB9C File Offset: 0x002BDD9C
-	// (remove) Token: 0x06007515 RID: 29973 RVA: 0x002BFBD4 File Offset: 0x002BDDD4
+	// Token: 0x140000C7 RID: 199
+	// (add) Token: 0x060075B4 RID: 30132 RVA: 0x002C30D8 File Offset: 0x002C12D8
+	// (remove) Token: 0x060075B5 RID: 30133 RVA: 0x002C3110 File Offset: 0x002C1310
 	public event XUiEvent_OnScrollEventHandler OnScroll;
 
-	// Token: 0x140000C7 RID: 199
-	// (add) Token: 0x06007516 RID: 29974 RVA: 0x002BFC0C File Offset: 0x002BDE0C
-	// (remove) Token: 0x06007517 RID: 29975 RVA: 0x002BFC44 File Offset: 0x002BDE44
+	// Token: 0x140000C8 RID: 200
+	// (add) Token: 0x060075B6 RID: 30134 RVA: 0x002C3148 File Offset: 0x002C1348
+	// (remove) Token: 0x060075B7 RID: 30135 RVA: 0x002C3180 File Offset: 0x002C1380
 	public event XUiEvent_OnSelectEventHandler OnSelect;
 
-	// Token: 0x140000C8 RID: 200
-	// (add) Token: 0x06007518 RID: 29976 RVA: 0x002BFC7C File Offset: 0x002BDE7C
-	// (remove) Token: 0x06007519 RID: 29977 RVA: 0x002BFCB4 File Offset: 0x002BDEB4
+	// Token: 0x140000C9 RID: 201
+	// (add) Token: 0x060075B8 RID: 30136 RVA: 0x002C31B8 File Offset: 0x002C13B8
+	// (remove) Token: 0x060075B9 RID: 30137 RVA: 0x002C31F0 File Offset: 0x002C13F0
 	public event XUiEvent_OnVisibilityChanged OnVisiblity;
 
-	// Token: 0x140000C9 RID: 201
-	// (add) Token: 0x0600751A RID: 29978 RVA: 0x002BFCEC File Offset: 0x002BDEEC
-	// (remove) Token: 0x0600751B RID: 29979 RVA: 0x002BFD24 File Offset: 0x002BDF24
+	// Token: 0x140000CA RID: 202
+	// (add) Token: 0x060075BA RID: 30138 RVA: 0x002C3228 File Offset: 0x002C1428
+	// (remove) Token: 0x060075BB RID: 30139 RVA: 0x002C3260 File Offset: 0x002C1460
 	public event XUiEvent_OnEnabledChanged OnEnabled;
 
-	// Token: 0x140000CA RID: 202
-	// (add) Token: 0x0600751C RID: 29980 RVA: 0x002BFD5C File Offset: 0x002BDF5C
-	// (remove) Token: 0x0600751D RID: 29981 RVA: 0x002BFD94 File Offset: 0x002BDF94
+	// Token: 0x140000CB RID: 203
+	// (add) Token: 0x060075BC RID: 30140 RVA: 0x002C3298 File Offset: 0x002C1498
+	// (remove) Token: 0x060075BD RID: 30141 RVA: 0x002C32D0 File Offset: 0x002C14D0
 	public event XUiEvent_OnInteraction OnInteraction;
 
-	// Token: 0x0600751E RID: 29982 RVA: 0x002BFDC9 File Offset: 0x002BDFC9
+	// Token: 0x060075BE RID: 30142 RVA: 0x002C3305 File Offset: 0x002C1505
 	public void MouseUpDown(bool _pressed)
 	{
 		XUiEvent_OnMouseUpDownEventHandler onMouseUpDown = this.OnMouseUpDown;
@@ -661,7 +662,7 @@ public class XUiController : IXUiElement
 		onInteraction(this, EXUiControllerInteractionType.MouseUpDown);
 	}
 
-	// Token: 0x0600751F RID: 29983 RVA: 0x002BFDF4 File Offset: 0x002BDFF4
+	// Token: 0x060075BF RID: 30143 RVA: 0x002C3330 File Offset: 0x002C1530
 	public virtual void Pressed(int _mouseButton)
 	{
 		if (_mouseButton != -1)
@@ -695,7 +696,7 @@ public class XUiController : IXUiElement
 		onInteraction2(this, EXUiControllerInteractionType.LeftClick);
 	}
 
-	// Token: 0x06007520 RID: 29984 RVA: 0x002BFE55 File Offset: 0x002BE055
+	// Token: 0x060075C0 RID: 30144 RVA: 0x002C3391 File Offset: 0x002C1591
 	public void DoubleClicked(int _mouseButton)
 	{
 		XUiEvent_OnPressEventHandler onDoubleClick = this.OnDoubleClick;
@@ -711,7 +712,7 @@ public class XUiController : IXUiElement
 		onInteraction(this, EXUiControllerInteractionType.DoubleClick);
 	}
 
-	// Token: 0x06007521 RID: 29985 RVA: 0x002BFE7C File Offset: 0x002BE07C
+	// Token: 0x060075C1 RID: 30145 RVA: 0x002C33B8 File Offset: 0x002C15B8
 	public void Hovered(bool _isOver)
 	{
 		XUiEvent_OnHoverEventHandler onHover = this.OnHover;
@@ -727,7 +728,7 @@ public class XUiController : IXUiElement
 		this.OnHovered(_isOver);
 	}
 
-	// Token: 0x06007522 RID: 29986 RVA: 0x002BFEAB File Offset: 0x002BE0AB
+	// Token: 0x060075C2 RID: 30146 RVA: 0x002C33E7 File Offset: 0x002C15E7
 	public void Scrolled(float _delta)
 	{
 		XUiEvent_OnScrollEventHandler onScroll = this.OnScroll;
@@ -743,7 +744,7 @@ public class XUiController : IXUiElement
 		onInteraction(this, EXUiControllerInteractionType.Scroll);
 	}
 
-	// Token: 0x06007523 RID: 29987 RVA: 0x002BFED2 File Offset: 0x002BE0D2
+	// Token: 0x060075C3 RID: 30147 RVA: 0x002C340E File Offset: 0x002C160E
 	public void Selected(bool _selected)
 	{
 		XUiEvent_OnSelectEventHandler onSelect = this.OnSelect;
@@ -759,7 +760,7 @@ public class XUiController : IXUiElement
 		onInteraction(this, EXUiControllerInteractionType.Select);
 	}
 
-	// Token: 0x06007524 RID: 29988 RVA: 0x002BFEFC File Offset: 0x002BE0FC
+	// Token: 0x060075C4 RID: 30148 RVA: 0x002C3438 File Offset: 0x002C1638
 	public void Dragged(Vector2 _mouseDelta, EDragType _dragType)
 	{
 		if (this.viewComponent.ID == "btn2")
@@ -779,7 +780,7 @@ public class XUiController : IXUiElement
 		onInteraction(this, EXUiControllerInteractionType.Drag);
 	}
 
-	// Token: 0x06007525 RID: 29989 RVA: 0x002BFF65 File Offset: 0x002BE165
+	// Token: 0x060075C5 RID: 30149 RVA: 0x002C34A1 File Offset: 0x002C16A1
 	public void Held(EHoldType _event, float _holdDuration, float _deltaSinceLastTimedEvent = -1f)
 	{
 		XUiEvent_OnHeldHandler onHold = this.OnHold;
@@ -795,13 +796,13 @@ public class XUiController : IXUiElement
 		onInteraction(this, EXUiControllerInteractionType.Held);
 	}
 
-	// Token: 0x06007526 RID: 29990 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060075C6 RID: 30150 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnHovered(bool _isOver)
 	{
 	}
 
-	// Token: 0x06007527 RID: 29991 RVA: 0x002BFF90 File Offset: 0x002BE190
+	// Token: 0x060075C7 RID: 30151 RVA: 0x002C34CC File Offset: 0x002C16CC
 	public virtual void OnOpen()
 	{
 		for (int i = 0; i < this.children.Count; i++)
@@ -821,7 +822,7 @@ public class XUiController : IXUiElement
 		this.RefreshBindings();
 	}
 
-	// Token: 0x06007528 RID: 29992 RVA: 0x002BFFF0 File Offset: 0x002BE1F0
+	// Token: 0x060075C8 RID: 30152 RVA: 0x002C352C File Offset: 0x002C172C
 	public virtual void OnClose()
 	{
 		for (int i = 0; i < this.children.Count; i++)
@@ -841,7 +842,7 @@ public class XUiController : IXUiElement
 		onInteraction(this, EXUiControllerInteractionType.Close);
 	}
 
-	// Token: 0x06007529 RID: 29993 RVA: 0x002C0048 File Offset: 0x002BE248
+	// Token: 0x060075C9 RID: 30153 RVA: 0x002C3584 File Offset: 0x002C1784
 	public void OnVisibilityChanged(bool _parentVisibleInScene)
 	{
 		bool isVisible = this.viewComponent.IsVisible;
@@ -863,7 +864,7 @@ public class XUiController : IXUiElement
 		}
 	}
 
-	// Token: 0x0600752A RID: 29994 RVA: 0x002C00CB File Offset: 0x002BE2CB
+	// Token: 0x060075CA RID: 30154 RVA: 0x002C3607 File Offset: 0x002C1807
 	public void OnEnabledChanged(bool _enabled)
 	{
 		XUiEvent_OnEnabledChanged onEnabled = this.OnEnabled;
@@ -879,7 +880,7 @@ public class XUiController : IXUiElement
 		onInteraction(this, EXUiControllerInteractionType.EnabledChanged);
 	}
 
-	// Token: 0x0600752B RID: 29995 RVA: 0x002C00F4 File Offset: 0x002BE2F4
+	// Token: 0x060075CB RID: 30155 RVA: 0x002C3630 File Offset: 0x002C1830
 	public virtual void OnCursorSelected(bool _isActualElement)
 	{
 		XUiV_ScrollView xuiV_ScrollView;
@@ -895,7 +896,7 @@ public class XUiController : IXUiElement
 		xuiController.OnCursorSelected(false);
 	}
 
-	// Token: 0x0600752C RID: 29996 RVA: 0x002C012B File Offset: 0x002BE32B
+	// Token: 0x060075CC RID: 30156 RVA: 0x002C3667 File Offset: 0x002C1867
 	public virtual void OnCursorUnSelected()
 	{
 		XUiController xuiController = this.parent;
@@ -906,7 +907,7 @@ public class XUiController : IXUiElement
 		xuiController.OnCursorUnSelected();
 	}
 
-	// Token: 0x0600752D RID: 29997 RVA: 0x002C013D File Offset: 0x002BE33D
+	// Token: 0x060075CD RID: 30157 RVA: 0x002C3679 File Offset: 0x002C1879
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool handleDirtyUpdateDefault()
 	{
@@ -919,7 +920,7 @@ public class XUiController : IXUiElement
 		return true;
 	}
 
-	// Token: 0x0600752E RID: 29998 RVA: 0x002C0157 File Offset: 0x002BE357
+	// Token: 0x060075CE RID: 30158 RVA: 0x002C3693 File Offset: 0x002C1893
 	public virtual bool ParseAttribute(string _name, string _value)
 	{
 		if (_name == "always_update")
@@ -930,7 +931,7 @@ public class XUiController : IXUiElement
 		return false;
 	}
 
-	// Token: 0x0600752F RID: 29999 RVA: 0x002C0178 File Offset: 0x002BE378
+	// Token: 0x060075CF RID: 30159 RVA: 0x002C36B4 File Offset: 0x002C18B4
 	public bool GetBindingValue(ref string _value, string _bindingName)
 	{
 		bool bindingValueInternal;
@@ -946,8 +947,8 @@ public class XUiController : IXUiElement
 		return bindingValueInternal;
 	}
 
-	// Token: 0x17000DC2 RID: 3522
-	// (get) Token: 0x06007530 RID: 30000 RVA: 0x002C01C0 File Offset: 0x002BE3C0
+	// Token: 0x17000DDB RID: 3547
+	// (get) Token: 0x060075D0 RID: 30160 RVA: 0x002C36FC File Offset: 0x002C18FC
 	[XuiXmlBinding("is_online")]
 	public bool IsOnline
 	{
@@ -957,8 +958,8 @@ public class XUiController : IXUiElement
 		}
 	}
 
-	// Token: 0x17000DC3 RID: 3523
-	// (get) Token: 0x06007531 RID: 30001 RVA: 0x002C01D4 File Offset: 0x002BE3D4
+	// Token: 0x17000DDC RID: 3548
+	// (get) Token: 0x060075D1 RID: 30161 RVA: 0x002C3710 File Offset: 0x002C1910
 	[XuiXmlBinding("system_time")]
 	public DateTime SystemTime
 	{
@@ -968,12 +969,23 @@ public class XUiController : IXUiElement
 		}
 	}
 
-	// Token: 0x06007532 RID: 30002 RVA: 0x002C01DC File Offset: 0x002BE3DC
+	// Token: 0x17000DDD RID: 3549
+	// (get) Token: 0x060075D2 RID: 30162 RVA: 0x002C3717 File Offset: 0x002C1917
+	[XuiXmlBinding("gamelanguage")]
+	public string Language
+	{
+		get
+		{
+			return Localization.ActiveLanguage;
+		}
+	}
+
+	// Token: 0x060075D3 RID: 30163 RVA: 0x002C3720 File Offset: 0x002C1920
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
 		uint num = <PrivateImplementationDetails>.ComputeStringHash(_bindingName);
-		if (num <= 2161620009U)
+		if (num <= 2577987401U)
 		{
 			if (num <= 820250566U)
 			{
@@ -1034,11 +1046,11 @@ public class XUiController : IXUiElement
 			}
 			else if (num != 1899437583U)
 			{
-				if (num == 2161620009U)
+				if (num == 2577987401U)
 				{
-					if (_bindingName == "gamelanguage")
+					if (_bindingName == "is_editmode")
 					{
-						_value = Localization.ActiveLanguage;
+						_value = GameManager.Instance.IsEditMode().ToString();
 						return true;
 					}
 				}
@@ -1049,93 +1061,85 @@ public class XUiController : IXUiElement
 				return true;
 			}
 		}
-		else if (num <= 2799769034U)
+		else if (num <= 2934648263U)
 		{
-			if (num <= 2745931225U)
+			if (num <= 2759425756U)
 			{
-				if (num != 2577987401U)
+				if (num != 2745931225U)
 				{
-					if (num == 2745931225U)
+					if (num == 2759425756U)
 					{
-						if (_bindingName == "is_server")
+						if (_bindingName == "is_prefab_editor")
 						{
-							_value = SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer.ToString();
+							_value = PrefabEditModeManager.Instance.IsActive().ToString();
 							return true;
 						}
 					}
 				}
-				else if (_bindingName == "is_editmode")
+				else if (_bindingName == "is_server")
 				{
-					_value = GameManager.Instance.IsEditMode().ToString();
+					_value = SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer.ToString();
 					return true;
 				}
 			}
-			else if (num != 2759425756U)
+			else if (num != 2799769034U)
 			{
-				if (num == 2799769034U)
+				if (num == 2934648263U)
 				{
-					if (_bindingName == "is_ps5")
+					if (_bindingName == "is_console")
 					{
-						_value = DeviceFlag.PS5.IsCurrent().ToString();
+						_value = (DeviceFlag.XBoxSeriesS | DeviceFlag.XBoxSeriesX | DeviceFlag.PS5).IsCurrent().ToString();
 						return true;
 					}
 				}
 			}
-			else if (_bindingName == "is_prefab_editor")
+			else if (_bindingName == "is_ps5")
 			{
-				_value = PrefabEditModeManager.Instance.IsActive().ToString();
+				_value = DeviceFlag.PS5.IsCurrent().ToString();
 				return true;
 			}
 		}
-		else if (num <= 2963904327U)
+		else if (num <= 3445481009U)
 		{
-			if (num != 2934648263U)
+			if (num != 2963904327U)
 			{
-				if (num == 2963904327U)
+				if (num == 3445481009U)
 				{
-					if (_bindingName == "is_release")
-					{
-						_value = "true";
-						return true;
-					}
-				}
-			}
-			else if (_bindingName == "is_console")
-			{
-				_value = (DeviceFlag.XBoxSeriesS | DeviceFlag.XBoxSeriesX | DeviceFlag.PS5).IsCurrent().ToString();
-				return true;
-			}
-		}
-		else if (num != 3445481009U)
-		{
-			if (num != 3556752319U)
-			{
-				if (num == 4180283068U)
-				{
-					if (_bindingName == "inputstyle")
+					if (_bindingName == "is_controller_input")
 					{
 						this.registerForInputStyleChanges();
-						_value = this.lastInputStyle.ToStringCached<PlayerInputManager.InputStyle>();
+						_value = (this.lastInputStyle != PlayerInputManager.InputStyle.Keyboard).ToString();
 						return true;
 					}
 				}
 			}
-			else if (_bindingName == "is_creative")
+			else if (_bindingName == "is_release")
 			{
-				_value = (GameStats.GetBool(EnumGameStats.IsCreativeMenuEnabled) || GamePrefs.GetBool(EnumGamePrefs.CreativeMenuEnabled)).ToString();
+				_value = "true";
 				return true;
 			}
 		}
-		else if (_bindingName == "is_controller_input")
+		else if (num != 3556752319U)
 		{
-			this.registerForInputStyleChanges();
-			_value = (this.lastInputStyle != PlayerInputManager.InputStyle.Keyboard).ToString();
+			if (num == 4180283068U)
+			{
+				if (_bindingName == "inputstyle")
+				{
+					this.registerForInputStyleChanges();
+					_value = this.lastInputStyle.ToStringCached<PlayerInputManager.InputStyle>();
+					return true;
+				}
+			}
+		}
+		else if (_bindingName == "is_creative")
+		{
+			_value = (GameStats.GetBool(EnumGameStats.IsCreativeMenuEnabled) || GamePrefs.GetBool(EnumGamePrefs.CreativeMenuEnabled)).ToString();
 			return true;
 		}
 		return false;
 	}
 
-	// Token: 0x06007533 RID: 30003 RVA: 0x002C05B8 File Offset: 0x002BE7B8
+	// Token: 0x060075D4 RID: 30164 RVA: 0x002C3AD4 File Offset: 0x002C1CD4
 	public void RefreshBindingsSelfAndChildren()
 	{
 		for (int i = 0; i < this.children.Count; i++)
@@ -1145,13 +1149,13 @@ public class XUiController : IXUiElement
 		this.Bindings.RefreshBindings();
 	}
 
-	// Token: 0x06007534 RID: 30004 RVA: 0x002C05F7 File Offset: 0x002BE7F7
+	// Token: 0x060075D5 RID: 30165 RVA: 0x002C3B13 File Offset: 0x002C1D13
 	public void RefreshBindings()
 	{
 		this.Bindings.RefreshBindings();
 	}
 
-	// Token: 0x06007535 RID: 30005 RVA: 0x002C0604 File Offset: 0x002BE804
+	// Token: 0x060075D6 RID: 30166 RVA: 0x002C3B20 File Offset: 0x002C1D20
 	public virtual void Cleanup()
 	{
 		foreach (XUiController xuiController in this.children)
@@ -1174,7 +1178,7 @@ public class XUiController : IXUiElement
 		xuiView.Cleanup();
 	}
 
-	// Token: 0x06007536 RID: 30006 RVA: 0x002C069C File Offset: 0x002BE89C
+	// Token: 0x060075D7 RID: 30167 RVA: 0x002C3BB8 File Offset: 0x002C1DB8
 	public void FindNavigatableChildren(List<XUiView> _views)
 	{
 		foreach (XUiController xuiController in this.children)
@@ -1187,7 +1191,7 @@ public class XUiController : IXUiElement
 		}
 	}
 
-	// Token: 0x06007537 RID: 30007 RVA: 0x002C0708 File Offset: 0x002BE908
+	// Token: 0x060075D8 RID: 30168 RVA: 0x002C3C24 File Offset: 0x002C1E24
 	public bool TryFindFirstNavigableView(out XUiView _foundView)
 	{
 		_foundView = null;
@@ -1214,7 +1218,7 @@ public class XUiController : IXUiElement
 		return false;
 	}
 
-	// Token: 0x06007538 RID: 30008 RVA: 0x002C07A0 File Offset: 0x002BE9A0
+	// Token: 0x060075D9 RID: 30169 RVA: 0x002C3CBC File Offset: 0x002C1EBC
 	public bool SelectCursorElement(bool _withDelay = false, bool _overrideCursorMode = false)
 	{
 		if (this.ViewComponent == null)
@@ -1243,7 +1247,7 @@ public class XUiController : IXUiElement
 		return true;
 	}
 
-	// Token: 0x06007539 RID: 30009 RVA: 0x002C07F8 File Offset: 0x002BE9F8
+	// Token: 0x060075DA RID: 30170 RVA: 0x002C3D14 File Offset: 0x002C1F14
 	public void SetAllChildrenDirty()
 	{
 		for (int i = 0; i < this.children.Count; i++)
@@ -1258,8 +1262,8 @@ public class XUiController : IXUiElement
 		this.IsDirty = true;
 	}
 
-	// Token: 0x17000DC4 RID: 3524
-	// (get) Token: 0x0600753A RID: 30010 RVA: 0x002C0844 File Offset: 0x002BEA44
+	// Token: 0x17000DDE RID: 3550
+	// (get) Token: 0x060075DB RID: 30171 RVA: 0x002C3D60 File Offset: 0x002C1F60
 	public PlayerInputManager.InputStyle CurrentInputStyle
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -1269,7 +1273,7 @@ public class XUiController : IXUiElement
 		}
 	}
 
-	// Token: 0x0600753B RID: 30011 RVA: 0x002C084C File Offset: 0x002BEA4C
+	// Token: 0x060075DC RID: 30172 RVA: 0x002C3D68 File Offset: 0x002C1F68
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void registerForInputStyleChanges()
 	{
@@ -1281,20 +1285,21 @@ public class XUiController : IXUiElement
 		PlatformManager.NativePlatform.Input.OnLastInputStyleChanged += this.OnLastInputStyleChanged;
 	}
 
-	// Token: 0x0600753C RID: 30012 RVA: 0x002C0879 File Offset: 0x002BEA79
+	// Token: 0x060075DD RID: 30173 RVA: 0x002C3D95 File Offset: 0x002C1F95
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnLastInputStyleChanged(PlayerInputManager.InputStyle _style)
 	{
 		this.curInputStyle = _style;
+		this.forceInputStyleChange = true;
 	}
 
-	// Token: 0x0600753D RID: 30013 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060075DE RID: 30174 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void inputStyleChanged(PlayerInputManager.InputStyle _oldStyle, PlayerInputManager.InputStyle _newStyle)
 	{
 	}
 
-	// Token: 0x0600753E RID: 30014 RVA: 0x002C0884 File Offset: 0x002BEA84
+	// Token: 0x060075DF RID: 30175 RVA: 0x002C3DA8 File Offset: 0x002C1FA8
 	public void ForceInputStyleChange(PlayerInputManager.InputStyle _oldStyle, PlayerInputManager.InputStyle _newStyle)
 	{
 		if (this.registeredForInputStyleChanges)
@@ -1307,8 +1312,8 @@ public class XUiController : IXUiElement
 		}
 	}
 
-	// Token: 0x17000DC5 RID: 3525
-	// (get) Token: 0x0600753F RID: 30015 RVA: 0x001290F5 File Offset: 0x001272F5
+	// Token: 0x17000DDF RID: 3551
+	// (get) Token: 0x060075E0 RID: 30176 RVA: 0x0012A165 File Offset: 0x00128365
 	public XUiController Controller
 	{
 		get
@@ -1317,67 +1322,71 @@ public class XUiController : IXUiElement
 		}
 	}
 
-	// Token: 0x06007540 RID: 30016 RVA: 0x002C08E8 File Offset: 0x002BEAE8
+	// Token: 0x060075E1 RID: 30177 RVA: 0x002C3E0C File Offset: 0x002C200C
 	public string GetXuiHierarchy()
 	{
 		return XUiUtils.GetXuiHierarchy(this);
 	}
 
-	// Token: 0x04005667 RID: 22119
+	// Token: 0x0400570B RID: 22283
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiView viewComponent;
 
-	// Token: 0x04005668 RID: 22120
+	// Token: 0x0400570C RID: 22284
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiController parent;
 
-	// Token: 0x04005669 RID: 22121
+	// Token: 0x0400570D RID: 22285
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public readonly List<XUiController> children = new List<XUiController>();
 
-	// Token: 0x0400566A RID: 22122
+	// Token: 0x0400570E RID: 22286
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public XUiWindowGroup windowGroup;
 
-	// Token: 0x0400566B RID: 22123
+	// Token: 0x0400570F RID: 22287
 	public bool AlwaysUpdate;
 
-	// Token: 0x0400566C RID: 22124
+	// Token: 0x04005710 RID: 22288
 	public bool IsDirty;
 
-	// Token: 0x0400566D RID: 22125
+	// Token: 0x04005711 RID: 22289
 	public object CustomData;
 
-	// Token: 0x0400566E RID: 22126
+	// Token: 0x04005712 RID: 22290
 	public readonly ObservableDictionary<string, object> CustomAttributes = new ObservableDictionary<string, object>();
 
-	// Token: 0x0400566F RID: 22127
+	// Token: 0x04005713 RID: 22291
 	public XUi xui;
 
-	// Token: 0x04005670 RID: 22128
+	// Token: 0x04005714 RID: 22292
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ProfilerMarker pmControllerUpdate = new ProfilerMarker("XC.Update");
 
-	// Token: 0x04005671 RID: 22129
+	// Token: 0x04005715 RID: 22293
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ProfilerMarker pmVcUpdate = new ProfilerMarker("VC");
 
-	// Token: 0x04005672 RID: 22130
+	// Token: 0x04005716 RID: 22294
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ProfilerMarker pmVcNamedUpdate;
 
-	// Token: 0x0400567F RID: 22143
+	// Token: 0x04005723 RID: 22307
 	public readonly BindingsManager Bindings = new BindingsManager();
 
-	// Token: 0x04005680 RID: 22144
+	// Token: 0x04005724 RID: 22308
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool forceInputStyleChange;
+
+	// Token: 0x04005725 RID: 22309
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlayerInputManager.InputStyle lastInputStyle = PlayerInputManager.InputStyle.Count;
 
-	// Token: 0x04005681 RID: 22145
+	// Token: 0x04005726 RID: 22310
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PlayerInputManager.InputStyle curInputStyle;
 
-	// Token: 0x04005682 RID: 22146
+	// Token: 0x04005727 RID: 22311
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool registeredForInputStyleChanges;
 }

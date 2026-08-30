@@ -2,16 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 
-// Token: 0x0200146E RID: 5230
+// Token: 0x02001489 RID: 5257
 public class ReadOnlyDictionaryWrapper<TKey, TValueIn, TValueOut> : IReadOnlyDictionary<TKey, TValueOut>, IEnumerable<KeyValuePair<TKey, TValueOut>>, IEnumerable, IReadOnlyCollection<KeyValuePair<TKey, TValueOut>> where TValueIn : TValueOut
 {
-	// Token: 0x0600A409 RID: 41993 RVA: 0x003D177C File Offset: 0x003CF97C
+	// Token: 0x0600A506 RID: 42246 RVA: 0x003D6AC0 File Offset: 0x003D4CC0
 	public ReadOnlyDictionaryWrapper(IReadOnlyDictionary<TKey, TValueIn> dict)
 	{
 		this.m_dict = dict;
 	}
 
-	// Token: 0x0600A40A RID: 41994 RVA: 0x003D178B File Offset: 0x003CF98B
+	// Token: 0x0600A507 RID: 42247 RVA: 0x003D6ACF File Offset: 0x003D4CCF
 	public IEnumerator<KeyValuePair<TKey, TValueOut>> GetEnumerator()
 	{
 		foreach (KeyValuePair<TKey, TValueIn> keyValuePair in this.m_dict)
@@ -28,15 +28,15 @@ public class ReadOnlyDictionaryWrapper<TKey, TValueIn, TValueOut> : IReadOnlyDic
 		yield break;
 	}
 
-	// Token: 0x0600A40B RID: 41995 RVA: 0x003D179A File Offset: 0x003CF99A
+	// Token: 0x0600A508 RID: 42248 RVA: 0x003D6ADE File Offset: 0x003D4CDE
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator System.Collections.IEnumerable.GetEnumerator()
 	{
 		return this.m_dict.GetEnumerator();
 	}
 
-	// Token: 0x17001324 RID: 4900
-	// (get) Token: 0x0600A40C RID: 41996 RVA: 0x003D17A7 File Offset: 0x003CF9A7
+	// Token: 0x1700135D RID: 4957
+	// (get) Token: 0x0600A509 RID: 42249 RVA: 0x003D6AEB File Offset: 0x003D4CEB
 	public int Count
 	{
 		get
@@ -45,13 +45,13 @@ public class ReadOnlyDictionaryWrapper<TKey, TValueIn, TValueOut> : IReadOnlyDic
 		}
 	}
 
-	// Token: 0x0600A40D RID: 41997 RVA: 0x003D17B4 File Offset: 0x003CF9B4
+	// Token: 0x0600A50A RID: 42250 RVA: 0x003D6AF8 File Offset: 0x003D4CF8
 	public bool ContainsKey(TKey key)
 	{
 		return this.m_dict.ContainsKey(key);
 	}
 
-	// Token: 0x0600A40E RID: 41998 RVA: 0x003D17C4 File Offset: 0x003CF9C4
+	// Token: 0x0600A50B RID: 42251 RVA: 0x003D6B08 File Offset: 0x003D4D08
 	public bool TryGetValue(TKey key, out TValueOut value)
 	{
 		TValueIn tvalueIn;
@@ -60,7 +60,7 @@ public class ReadOnlyDictionaryWrapper<TKey, TValueIn, TValueOut> : IReadOnlyDic
 		return flag;
 	}
 
-	// Token: 0x17001325 RID: 4901
+	// Token: 0x1700135E RID: 4958
 	public TValueOut this[TKey key]
 	{
 		get
@@ -69,8 +69,8 @@ public class ReadOnlyDictionaryWrapper<TKey, TValueIn, TValueOut> : IReadOnlyDic
 		}
 	}
 
-	// Token: 0x17001326 RID: 4902
-	// (get) Token: 0x0600A410 RID: 42000 RVA: 0x003D1808 File Offset: 0x003CFA08
+	// Token: 0x1700135F RID: 4959
+	// (get) Token: 0x0600A50D RID: 42253 RVA: 0x003D6B4C File Offset: 0x003D4D4C
 	public IEnumerable<TKey> Keys
 	{
 		get
@@ -79,8 +79,8 @@ public class ReadOnlyDictionaryWrapper<TKey, TValueIn, TValueOut> : IReadOnlyDic
 		}
 	}
 
-	// Token: 0x17001327 RID: 4903
-	// (get) Token: 0x0600A411 RID: 42001 RVA: 0x003D1815 File Offset: 0x003CFA15
+	// Token: 0x17001360 RID: 4960
+	// (get) Token: 0x0600A50E RID: 42254 RVA: 0x003D6B59 File Offset: 0x003D4D59
 	public IEnumerable<TValueOut> Values
 	{
 		get
@@ -95,7 +95,7 @@ public class ReadOnlyDictionaryWrapper<TKey, TValueIn, TValueOut> : IReadOnlyDic
 		}
 	}
 
-	// Token: 0x04007A34 RID: 31284
+	// Token: 0x04007B0D RID: 31501
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly IReadOnlyDictionary<TKey, TValueIn> m_dict;
 }

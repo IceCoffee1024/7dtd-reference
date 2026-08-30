@@ -4,21 +4,21 @@ using MusicUtils.Enums;
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A4F RID: 6735
+	// Token: 0x02001A76 RID: 6774
 	public interface ILayerMixer
 	{
-		// Token: 0x170018AC RID: 6316
-		// (get) Token: 0x0600CB5D RID: 52061
-		// (set) Token: 0x0600CB5E RID: 52062
+		// Token: 0x1700191E RID: 6430
+		// (get) Token: 0x0600CCE6 RID: 52454
+		// (set) Token: 0x0600CCE7 RID: 52455
 		SectionType Sect { get; set; }
 
-		// Token: 0x170018AD RID: 6317
+		// Token: 0x1700191F RID: 6431
 		float this[int _idx] { get; }
 
-		// Token: 0x0600CB60 RID: 52064
+		// Token: 0x0600CCE9 RID: 52457
 		IEnumerator Load();
 
-		// Token: 0x0600CB61 RID: 52065
+		// Token: 0x0600CCEA RID: 52458
 		void Unload();
 	}
 }

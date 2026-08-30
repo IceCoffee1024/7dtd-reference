@@ -3,18 +3,18 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x0200197A RID: 6522
+	// Token: 0x020019A0 RID: 6560
 	[Preserve]
 	public class ActionRemoveDeathBuffs : ActionBaseTargetAction
 	{
-		// Token: 0x0600C76F RID: 51055 RVA: 0x0049642A File Offset: 0x0049462A
+		// Token: 0x0600C8F6 RID: 51446 RVA: 0x0049C76E File Offset: 0x0049A96E
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
 			this.tags = FastTags<TagGroup.Global>.Parse(this.excludeTags);
 		}
 
-		// Token: 0x0600C770 RID: 51056 RVA: 0x00496440 File Offset: 0x00494640
+		// Token: 0x0600C8F7 RID: 51447 RVA: 0x0049C784 File Offset: 0x0049A984
 		public override BaseAction.ActionCompleteStates PerformTargetAction(Entity target)
 		{
 			EntityAlive entityAlive = target as EntityAlive;
@@ -25,7 +25,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C771 RID: 51057 RVA: 0x0049646F File Offset: 0x0049466F
+		// Token: 0x0600C8F8 RID: 51448 RVA: 0x0049C7B3 File Offset: 0x0049A9B3
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -35,7 +35,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C772 RID: 51058 RVA: 0x004964A0 File Offset: 0x004946A0
+		// Token: 0x0600C8F9 RID: 51449 RVA: 0x0049C7E4 File Offset: 0x0049A9E4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -47,15 +47,15 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x0400971E RID: 38686
+		// Token: 0x04009847 RID: 38983
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string excludeTags = "";
 
-		// Token: 0x0400971F RID: 38687
+		// Token: 0x04009848 RID: 38984
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public FastTags<TagGroup.Global> tags;
 
-		// Token: 0x04009720 RID: 38688
+		// Token: 0x04009849 RID: 38985
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropExcludeTags = "exclude_tags";
 	}

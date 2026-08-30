@@ -4,11 +4,11 @@ using System.Globalization;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000221 RID: 545
+// Token: 0x02000224 RID: 548
 [Preserve]
 public class ConsoleCmdGiveQuest : ConsoleCmdAbstract
 {
-	// Token: 0x06001090 RID: 4240 RVA: 0x0006922D File Offset: 0x0006742D
+	// Token: 0x0600109C RID: 4252 RVA: 0x000697C9 File Offset: 0x000679C9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -16,7 +16,7 @@ public class ConsoleCmdGiveQuest : ConsoleCmdAbstract
 	}
 
 	// Token: 0x1700019A RID: 410
-	// (get) Token: 0x06001091 RID: 4241 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// (get) Token: 0x0600109D RID: 4253 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -26,7 +26,7 @@ public class ConsoleCmdGiveQuest : ConsoleCmdAbstract
 	}
 
 	// Token: 0x1700019B RID: 411
-	// (get) Token: 0x06001092 RID: 4242 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// (get) Token: 0x0600109E RID: 4254 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -35,21 +35,21 @@ public class ConsoleCmdGiveQuest : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001093 RID: 4243 RVA: 0x0006923D File Offset: 0x0006743D
+	// Token: 0x0600109F RID: 4255 RVA: 0x000697D9 File Offset: 0x000679D9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Gives a quest to the player or add to quest tier";
 	}
 
-	// Token: 0x06001094 RID: 4244 RVA: 0x00069244 File Offset: 0x00067444
+	// Token: 0x060010A0 RID: 4256 RVA: 0x000697E0 File Offset: 0x000679E0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "givequest commands:\ncomplete - complete all quests\ntieradd <points> - add the points to your quest tier (default is 10)\n<quest name> - gives you the quest";
 	}
 
-	// Token: 0x06001095 RID: 4245 RVA: 0x0006924C File Offset: 0x0006744C
+	// Token: 0x060010A1 RID: 4257 RVA: 0x000697E8 File Offset: 0x000679E8
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (GameManager.IsDedicatedServer)

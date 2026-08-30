@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020006A9 RID: 1705
+// Token: 0x020006B3 RID: 1715
 [Preserve]
 public class InSafeZone : TargetedCompareRequirementBase
 {
-	// Token: 0x0600355A RID: 13658 RVA: 0x0015FE84 File Offset: 0x0015E084
+	// Token: 0x060035B0 RID: 13744 RVA: 0x0016205C File Offset: 0x0016025C
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -25,7 +25,7 @@ public class InSafeZone : TargetedCompareRequirementBase
 		return !entityPlayer.TwitchSafe;
 	}
 
-	// Token: 0x0600355B RID: 13659 RVA: 0x0015FEC5 File Offset: 0x0015E0C5
+	// Token: 0x060035B1 RID: 13745 RVA: 0x0016209D File Offset: 0x0016029D
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("Is {0} In Safe Zone", this.invert ? "NOT " : ""));

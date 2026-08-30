@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020013E6 RID: 5094
+// Token: 0x02001401 RID: 5121
 public class FPS
 {
-	// Token: 0x06009FD7 RID: 40919 RVA: 0x003C0D35 File Offset: 0x003BEF35
+	// Token: 0x0600A0D4 RID: 41172 RVA: 0x003C6079 File Offset: 0x003C4279
 	public FPS(float _restartTime)
 	{
 		this.restartTime = _restartTime;
 		this.timeleft = _restartTime;
 	}
 
-	// Token: 0x06009FD8 RID: 40920 RVA: 0x003C0D58 File Offset: 0x003BEF58
+	// Token: 0x0600A0D5 RID: 41173 RVA: 0x003C609C File Offset: 0x003C429C
 	public bool Update()
 	{
 		this.timeleft -= Time.unscaledDeltaTime;
@@ -28,22 +28,22 @@ public class FPS
 		return false;
 	}
 
-	// Token: 0x04007856 RID: 30806
+	// Token: 0x0400792F RID: 31023
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float accum;
 
-	// Token: 0x04007857 RID: 30807
+	// Token: 0x04007930 RID: 31024
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int frames;
 
-	// Token: 0x04007858 RID: 30808
+	// Token: 0x04007931 RID: 31025
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float timeleft;
 
-	// Token: 0x04007859 RID: 30809
+	// Token: 0x04007932 RID: 31026
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float restartTime = 0.5f;
 
-	// Token: 0x0400785A RID: 30810
+	// Token: 0x04007933 RID: 31027
 	public float Counter;
 }

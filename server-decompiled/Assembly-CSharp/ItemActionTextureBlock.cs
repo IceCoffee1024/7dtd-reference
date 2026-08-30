@@ -7,17 +7,17 @@ using Unity.Profiling;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005D5 RID: 1493
+// Token: 0x020005DA RID: 1498
 [Preserve]
 public class ItemActionTextureBlock : ItemActionRanged
 {
-	// Token: 0x06003082 RID: 12418 RVA: 0x0013A58A File Offset: 0x0013878A
+	// Token: 0x060030B0 RID: 12464 RVA: 0x0013B5FA File Offset: 0x001397FA
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionTextureBlock.ItemActionTextureBlockData(_invData, _indexInEntityOfAction, "Muzzle/Particle1");
 	}
 
-	// Token: 0x06003083 RID: 12419 RVA: 0x0013A598 File Offset: 0x00138798
+	// Token: 0x060030B1 RID: 12465 RVA: 0x0013B608 File Offset: 0x00139808
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -31,7 +31,7 @@ public class ItemActionTextureBlock : ItemActionRanged
 		}
 	}
 
-	// Token: 0x06003084 RID: 12420 RVA: 0x0013A60C File Offset: 0x0013880C
+	// Token: 0x060030B2 RID: 12466 RVA: 0x0013B67C File Offset: 0x0013987C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override int getUserData(ItemActionData _actionData)
 	{
@@ -49,7 +49,7 @@ public class ItemActionTextureBlock : ItemActionRanged
 		return ((int)(color.r * 255f) & 255) | (((int)(color.g * 255f) << 8) & 65280) | (((int)(color.b * 255f) << 16) & 16711680);
 	}
 
-	// Token: 0x06003085 RID: 12421 RVA: 0x0013A69C File Offset: 0x0013889C
+	// Token: 0x060030B3 RID: 12467 RVA: 0x0013B70C File Offset: 0x0013990C
 	public override void ItemActionEffects(GameManager _gameManager, ItemActionData _actionData, int _firingState, Vector3 _startPos, Vector3 _direction, int _userData = 0)
 	{
 		base.ItemActionEffects(_gameManager, _actionData, _firingState, _startPos, _direction, _userData);
@@ -67,7 +67,7 @@ public class ItemActionTextureBlock : ItemActionRanged
 		}
 	}
 
-	// Token: 0x06003086 RID: 12422 RVA: 0x0013A741 File Offset: 0x00138941
+	// Token: 0x060030B4 RID: 12468 RVA: 0x0013B7B1 File Offset: 0x001399B1
 	public override void StartHolding(ItemActionData _data)
 	{
 		base.StartHolding(_data);
@@ -75,13 +75,13 @@ public class ItemActionTextureBlock : ItemActionRanged
 		itemActionTextureBlockData.idx = itemActionTextureBlockData.invData.itemValue.Meta;
 	}
 
-	// Token: 0x06003087 RID: 12423 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060030B5 RID: 12469 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool ConsumeScrollWheel(ItemActionData _actionData, float _scrollWheelInput, PlayerActionsLocal _playerInput)
 	{
 		return false;
 	}
 
-	// Token: 0x06003088 RID: 12424 RVA: 0x0013A768 File Offset: 0x00138968
+	// Token: 0x060030B6 RID: 12470 RVA: 0x0013B7D8 File Offset: 0x001399D8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool checkAmmo(ItemActionData _actionData)
 	{
@@ -93,7 +93,7 @@ public class ItemActionTextureBlock : ItemActionRanged
 		return holdingEntity.bag.GetItemCount(this.currentMagazineItem, -1, -1, true) > 0 || holdingEntity.inventory.GetItemCount(this.currentMagazineItem, false, -1, -1, true) > 0;
 	}
 
-	// Token: 0x06003089 RID: 12425 RVA: 0x0013A7D0 File Offset: 0x001389D0
+	// Token: 0x060030B7 RID: 12471 RVA: 0x0013B840 File Offset: 0x00139A40
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool decreaseAmmo(ItemActionData _actionData)
 	{
@@ -123,13 +123,13 @@ public class ItemActionTextureBlock : ItemActionRanged
 		return false;
 	}
 
-	// Token: 0x0600308A RID: 12426 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060030B8 RID: 12472 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void ConsumeAmmo(ItemActionData _actionData)
 	{
 	}
 
-	// Token: 0x0600308B RID: 12427 RVA: 0x0013A878 File Offset: 0x00138A78
+	// Token: 0x060030B9 RID: 12473 RVA: 0x0013B8E8 File Offset: 0x00139AE8
 	public override void OnHoldingUpdate(ItemActionData _actionData)
 	{
 		base.OnHoldingUpdate(_actionData);
@@ -141,7 +141,7 @@ public class ItemActionTextureBlock : ItemActionRanged
 		}
 	}
 
-	// Token: 0x0600308C RID: 12428 RVA: 0x0013A8E8 File Offset: 0x00138AE8
+	// Token: 0x060030BA RID: 12474 RVA: 0x0013B958 File Offset: 0x00139B58
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		ItemValue holdingItemItemValue = _actionData.invData.holdingEntity.inventory.holdingItemItemValue;
@@ -157,7 +157,7 @@ public class ItemActionTextureBlock : ItemActionRanged
 		base.ExecuteAction(_actionData, _bReleased);
 	}
 
-	// Token: 0x0600308D RID: 12429 RVA: 0x0013A99E File Offset: 0x00138B9E
+	// Token: 0x060030BB RID: 12475 RVA: 0x0013BA0E File Offset: 0x00139C0E
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override Vector3 fireShot(int _shotIdx, ItemActionRanged.ItemActionDataRanged _actionData, ref bool hitEntity)
 	{
@@ -166,21 +166,21 @@ public class ItemActionTextureBlock : ItemActionRanged
 		return Vector3.zero;
 	}
 
-	// Token: 0x0600308E RID: 12430 RVA: 0x0013A9BB File Offset: 0x00138BBB
+	// Token: 0x060030BC RID: 12476 RVA: 0x0013BA2B File Offset: 0x00139C2B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Vector3 ProjectVectorOnPlane(Vector3 planeNormal, Vector3 vector)
 	{
 		return vector - Vector3.Dot(vector, planeNormal) * planeNormal;
 	}
 
-	// Token: 0x0600308F RID: 12431 RVA: 0x0013A9D0 File Offset: 0x00138BD0
+	// Token: 0x060030BD RID: 12477 RVA: 0x0013BA40 File Offset: 0x00139C40
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool checkBlockCanBeChanged(World _world, Vector3i _blockPos, PersistentPlayerData lpRelative)
 	{
 		return _world.CanPlaceBlockAt(_blockPos, lpRelative, false);
 	}
 
-	// Token: 0x06003090 RID: 12432 RVA: 0x0013A9DC File Offset: 0x00138BDC
+	// Token: 0x060030BE RID: 12478 RVA: 0x0013BA4C File Offset: 0x00139C4C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool checkBlockCanBePainted(World _world, Vector3i _blockPos, BlockValue _blockValue, PersistentPlayerData _lpRelative)
 	{
@@ -192,7 +192,7 @@ public class ItemActionTextureBlock : ItemActionRanged
 		return block.shape is BlockShapeNew && block.MeshIndex == 0 && this.checkBlockCanBeChanged(_world, _blockPos, _lpRelative);
 	}
 
-	// Token: 0x06003091 RID: 12433 RVA: 0x0013AA20 File Offset: 0x00138C20
+	// Token: 0x060030BF RID: 12479 RVA: 0x0013BA90 File Offset: 0x00139C90
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void getParentBlock(ref BlockValue _blockValue, ref Vector3i _blockPos, ChunkCluster _cc)
 	{
@@ -205,7 +205,7 @@ public class ItemActionTextureBlock : ItemActionRanged
 		}
 	}
 
-	// Token: 0x06003092 RID: 12434 RVA: 0x0013AA88 File Offset: 0x00138C88
+	// Token: 0x060030C0 RID: 12480 RVA: 0x0013BAF8 File Offset: 0x00139CF8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int getCurrentPaintIdx(ChunkCluster _cc, Vector3i _blockPos, BlockFace _blockFace, BlockValue _blockValue, int _channel)
 	{
@@ -218,7 +218,7 @@ public class ItemActionTextureBlock : ItemActionRanged
 		return GameUtils.FindPaintIdForBlockFace(_blockValue, _blockFace, out text, _channel);
 	}
 
-	// Token: 0x06003093 RID: 12435 RVA: 0x0013AAB4 File Offset: 0x00138CB4
+	// Token: 0x060030C1 RID: 12481 RVA: 0x0013BB24 File Offset: 0x00139D24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemActionTextureBlock.EPaintResult paintFace(ChunkCluster _cc, int _entityId, ItemActionTextureBlock.ItemActionTextureBlockData _actionData, Vector3i _blockPos, BlockFace _blockFace, BlockValue _blockValue, ItemActionTextureBlock.ChannelMask _channelMask)
 	{
@@ -242,7 +242,7 @@ public class ItemActionTextureBlock : ItemActionRanged
 		return epaintResult;
 	}
 
-	// Token: 0x06003094 RID: 12436 RVA: 0x0013AB1C File Offset: 0x00138D1C
+	// Token: 0x060030C2 RID: 12482 RVA: 0x0013BB8C File Offset: 0x00139D8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemActionTextureBlock.EPaintResult paintBlock(World _world, ChunkCluster _cc, int _entityId, ItemActionTextureBlock.ItemActionTextureBlockData _actionData, Vector3i _blockPos, BlockFace _blockFace, BlockValue _blockValue, PersistentPlayerData _lpRelative, ItemActionTextureBlock.ChannelMask _channelMask)
 	{
@@ -284,7 +284,7 @@ public class ItemActionTextureBlock : ItemActionRanged
 		return ItemActionTextureBlock.EPaintResult.Painted;
 	}
 
-	// Token: 0x06003095 RID: 12437 RVA: 0x0013ABE0 File Offset: 0x00138DE0
+	// Token: 0x060030C3 RID: 12483 RVA: 0x0013BC50 File Offset: 0x00139E50
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void floodFill(World _world, ChunkCluster _cc, int _entityId, ItemActionTextureBlock.ItemActionTextureBlockData _actionData, PersistentPlayerData _lpRelative, int _sourcePaint, Vector3 _hitPosition, Vector3 _hitFaceNormal, Vector3 _dir1, Vector3 _dir2, int _channel)
 	{
@@ -350,7 +350,7 @@ public class ItemActionTextureBlock : ItemActionRanged
 		this.positionsToCheck.Clear();
 	}
 
-	// Token: 0x06003096 RID: 12438 RVA: 0x0013AE77 File Offset: 0x00139077
+	// Token: 0x060030C4 RID: 12484 RVA: 0x0013BEE7 File Offset: 0x0013A0E7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator fireShotLater(int _shotIdx, ItemActionRanged.ItemActionDataRanged _actionData)
 	{
@@ -527,7 +527,7 @@ public class ItemActionTextureBlock : ItemActionRanged
 		yield break;
 	}
 
-	// Token: 0x06003097 RID: 12439 RVA: 0x0013AE90 File Offset: 0x00139090
+	// Token: 0x060030C5 RID: 12485 RVA: 0x0013BF00 File Offset: 0x0013A100
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int getHitBlockFace(ItemActionRanged.ItemActionDataRanged _actionData, out Vector3i blockPos, out BlockValue bv, out BlockFace blockFace, out WorldRayHitInfo hitInfo)
 	{
@@ -622,7 +622,7 @@ public class ItemActionTextureBlock : ItemActionRanged
 		return num;
 	}
 
-	// Token: 0x06003098 RID: 12440 RVA: 0x0013B118 File Offset: 0x00139318
+	// Token: 0x060030C6 RID: 12486 RVA: 0x0013C188 File Offset: 0x0013A388
 	public void CopyTextureFromWorld(ItemActionTextureBlock.ItemActionTextureBlockData _actionData)
 	{
 		if (!(_actionData.invData.holdingEntity is EntityPlayerLocal))
@@ -666,7 +666,7 @@ public class ItemActionTextureBlock : ItemActionRanged
 		GameManager.ShowTooltip(entityPlayerLocal, Localization.Get("ttPaintTextureIsLocked", false, null), false, false, 0f);
 	}
 
-	// Token: 0x06003099 RID: 12441 RVA: 0x0013B214 File Offset: 0x00139414
+	// Token: 0x060030C7 RID: 12487 RVA: 0x0013C284 File Offset: 0x0013A484
 	public void CopyBlockFromWorld(ItemActionRanged.ItemActionDataRanged _actionData)
 	{
 		if (!(_actionData.invData.holdingEntity is EntityPlayerLocal))
@@ -701,7 +701,7 @@ public class ItemActionTextureBlock : ItemActionRanged
 		_actionData.invData.holdingEntity.inventory.AddItem(itemStack);
 	}
 
-	// Token: 0x0600309A RID: 12442 RVA: 0x00137389 File Offset: 0x00135589
+	// Token: 0x060030C8 RID: 12488 RVA: 0x001383F9 File Offset: 0x001365F9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void onHoldingEntityFired(ItemActionData _actionData)
 	{
@@ -713,7 +713,7 @@ public class ItemActionTextureBlock : ItemActionRanged
 		_actionData.invData.holdingEntity.RightArmAnimationAttack = true;
 	}
 
-	// Token: 0x0600309B RID: 12443 RVA: 0x0013B304 File Offset: 0x00139504
+	// Token: 0x060030C9 RID: 12489 RVA: 0x0013C374 File Offset: 0x0013A574
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void replacePaintInCurrentPrefab(Vector3i _blockPos, BlockFace _blockFace, int _searchPaintId, int _replacePaintId, int _channel)
 	{
@@ -764,7 +764,7 @@ public class ItemActionTextureBlock : ItemActionRanged
 		}
 	}
 
-	// Token: 0x0600309C RID: 12444 RVA: 0x0013B46C File Offset: 0x0013966C
+	// Token: 0x060030CA RID: 12490 RVA: 0x0013C4DC File Offset: 0x0013A6DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void replacePaintInCurrentSelection(Vector3i _blockPos, BlockFace _blockFace, int _searchPaintId, int _replacePaintId, int _channel)
 	{
@@ -811,19 +811,19 @@ public class ItemActionTextureBlock : ItemActionRanged
 		}
 	}
 
-	// Token: 0x0600309D RID: 12445 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060030CB RID: 12491 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override EnumCameraShake GetCameraShakeType(ItemActionData _actionData)
 	{
 		return EnumCameraShake.None;
 	}
 
-	// Token: 0x0600309E RID: 12446 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x060030CC RID: 12492 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool ShowAmmoInUI()
 	{
 		return true;
 	}
 
-	// Token: 0x0600309F RID: 12447 RVA: 0x0013B5C4 File Offset: 0x001397C4
+	// Token: 0x060030CD RID: 12493 RVA: 0x0013C634 File Offset: 0x0013A834
 	public override void SetupRadial(XUiC_Radial _xuiRadialWindow, EntityPlayerLocal _epl)
 	{
 		ItemActionTextureBlock.ItemActionTextureBlockData itemActionTextureBlockData = (ItemActionTextureBlock.ItemActionTextureBlockData)_epl.inventory.holdingItemData.actionData[1];
@@ -848,7 +848,7 @@ public class ItemActionTextureBlock : ItemActionRanged
 		_xuiRadialWindow.SetCommonData(UIUtils.ButtonIcon.FaceButtonNorth, new XUiC_Radial.CommandHandlerDelegate(this.handleRadialCommand), new XUiC_Radial.RadialContextHoldingSlotIndex(_epl.inventory.holdingItemIdx), -1, false, new XUiC_Radial.RadialStillValidDelegate(XUiC_Radial.RadialValidSameHoldingSlotIndex));
 	}
 
-	// Token: 0x060030A0 RID: 12448 RVA: 0x0013B7A4 File Offset: 0x001399A4
+	// Token: 0x060030CE RID: 12494 RVA: 0x0013C814 File Offset: 0x0013AA14
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new void handleRadialCommand(XUiC_Radial _sender, int _commandIndex, XUiC_Radial.RadialContextAbs _context)
 	{
@@ -922,74 +922,74 @@ public class ItemActionTextureBlock : ItemActionRanged
 		}
 	}
 
-	// Token: 0x040025A1 RID: 9633
+	// Token: 0x040025D5 RID: 9685
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_MarkerGetHitBlockFace = new ProfilerMarker("ItemActionTextureBlock.getHitBlockFace");
 
-	// Token: 0x040025A2 RID: 9634
+	// Token: 0x040025D6 RID: 9686
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ProfilerMarker s_MarkerAutoChannel = new ProfilerMarker("ItemActionTextureBlock.autoChannel");
 
-	// Token: 0x040025A3 RID: 9635
+	// Token: 0x040025D7 RID: 9687
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float rayCastDelay;
 
-	// Token: 0x040025A4 RID: 9636
+	// Token: 0x040025D8 RID: 9688
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bRemoveTexture;
 
-	// Token: 0x040025A5 RID: 9637
+	// Token: 0x040025D9 RID: 9689
 	public int DefaultTextureID = 1;
 
-	// Token: 0x040025A6 RID: 9638
+	// Token: 0x040025DA RID: 9690
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<Vector3i, bool> visitedPositions = new Dictionary<Vector3i, bool>();
 
-	// Token: 0x040025A7 RID: 9639
+	// Token: 0x040025DB RID: 9691
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<Vector2i, bool> visitedRays = new Dictionary<Vector2i, bool>();
 
-	// Token: 0x040025A8 RID: 9640
+	// Token: 0x040025DC RID: 9692
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Stack<Vector2i> positionsToCheck = new Stack<Vector2i>();
 
-	// Token: 0x040025A9 RID: 9641
+	// Token: 0x040025DD RID: 9693
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly WorldRayHitInfo worldRayHitInfo = new WorldRayHitInfo();
 
-	// Token: 0x040025AA RID: 9642
+	// Token: 0x040025DE RID: 9694
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemValue currentMagazineItem;
 
-	// Token: 0x020005D6 RID: 1494
+	// Token: 0x020005DB RID: 1499
 	public enum EnumPaintMode
 	{
-		// Token: 0x040025AC RID: 9644
+		// Token: 0x040025E0 RID: 9696
 		Single,
-		// Token: 0x040025AD RID: 9645
+		// Token: 0x040025E1 RID: 9697
 		Multiple,
-		// Token: 0x040025AE RID: 9646
+		// Token: 0x040025E2 RID: 9698
 		Spray,
-		// Token: 0x040025AF RID: 9647
+		// Token: 0x040025E3 RID: 9699
 		Fill
 	}
 
-	// Token: 0x020005D7 RID: 1495
+	// Token: 0x020005DC RID: 1500
 	public struct ChannelMask
 	{
-		// Token: 0x060030A3 RID: 12451 RVA: 0x0013BA0D File Offset: 0x00139C0D
+		// Token: 0x060030D1 RID: 12497 RVA: 0x0013CA7D File Offset: 0x0013AC7D
 		public ChannelMask(int channel)
 		{
 			this.channelMask = 1 << channel;
 		}
 
-		// Token: 0x060030A4 RID: 12452 RVA: 0x0013BA1B File Offset: 0x00139C1B
+		// Token: 0x060030D2 RID: 12498 RVA: 0x0013CA8B File Offset: 0x0013AC8B
 		public bool IncludesChannel(int _channel)
 		{
 			return (this.channelMask & (1 << _channel)) != 0;
 		}
 
-		// Token: 0x060030A5 RID: 12453 RVA: 0x0013BA2D File Offset: 0x00139C2D
+		// Token: 0x060030D3 RID: 12499 RVA: 0x0013CA9D File Offset: 0x0013AC9D
 		public void ToggleChannel(int _channel)
 		{
 			if (this.channelMask != 1 << _channel)
@@ -998,59 +998,59 @@ public class ItemActionTextureBlock : ItemActionRanged
 			}
 		}
 
-		// Token: 0x060030A6 RID: 12454 RVA: 0x0013BA0D File Offset: 0x00139C0D
+		// Token: 0x060030D4 RID: 12500 RVA: 0x0013CA7D File Offset: 0x0013AC7D
 		public void SetExclusiveChannel(int _channel)
 		{
 			this.channelMask = 1 << _channel;
 		}
 
-		// Token: 0x040025B0 RID: 9648
+		// Token: 0x040025E4 RID: 9700
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int channelMask;
 	}
 
-	// Token: 0x020005D8 RID: 1496
+	// Token: 0x020005DD RID: 1501
 	public class ItemActionTextureBlockData : ItemActionRanged.ItemActionDataRanged
 	{
-		// Token: 0x060030A7 RID: 12455 RVA: 0x0013BA50 File Offset: 0x00139C50
+		// Token: 0x060030D5 RID: 12501 RVA: 0x0013CAC0 File Offset: 0x0013ACC0
 		public ItemActionTextureBlockData(ItemInventoryData _invData, int _indexInEntityOfAction, string _particleTransform)
 			: base(_invData, _indexInEntityOfAction)
 		{
 		}
 
-		// Token: 0x040025B1 RID: 9649
+		// Token: 0x040025E5 RID: 9701
 		public int idx = 1;
 
-		// Token: 0x040025B2 RID: 9650
+		// Token: 0x040025E6 RID: 9702
 		public bool bAutoChannel;
 
-		// Token: 0x040025B3 RID: 9651
+		// Token: 0x040025E7 RID: 9703
 		public ItemActionTextureBlock.ChannelMask channelMask = new ItemActionTextureBlock.ChannelMask(0);
 
-		// Token: 0x040025B4 RID: 9652
+		// Token: 0x040025E8 RID: 9704
 		public ItemActionTextureBlock.EnumPaintMode paintMode;
 
-		// Token: 0x040025B5 RID: 9653
+		// Token: 0x040025E9 RID: 9705
 		public bool bReplacePaintNextTime;
 
-		// Token: 0x040025B6 RID: 9654
+		// Token: 0x040025EA RID: 9706
 		public bool bPaintAllSides;
 
-		// Token: 0x040025B7 RID: 9655
+		// Token: 0x040025EB RID: 9707
 		public float lastTimeReplacePaintShown;
 	}
 
-	// Token: 0x020005D9 RID: 1497
+	// Token: 0x020005DE RID: 1502
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum EPaintResult
 	{
-		// Token: 0x040025B9 RID: 9657
+		// Token: 0x040025ED RID: 9709
 		CanNotPaint,
-		// Token: 0x040025BA RID: 9658
+		// Token: 0x040025EE RID: 9710
 		Painted,
-		// Token: 0x040025BB RID: 9659
+		// Token: 0x040025EF RID: 9711
 		SamePaint,
-		// Token: 0x040025BC RID: 9660
+		// Token: 0x040025F0 RID: 9712
 		NoPaintAvailable
 	}
 }

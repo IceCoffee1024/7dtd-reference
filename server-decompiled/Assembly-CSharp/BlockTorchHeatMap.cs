@@ -2,17 +2,17 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200015B RID: 347
+// Token: 0x0200015C RID: 348
 [Preserve]
 public class BlockTorchHeatMap : BlockTorch
 {
-	// Token: 0x0600098B RID: 2443 RVA: 0x00041FE1 File Offset: 0x000401E1
+	// Token: 0x06000995 RID: 2453 RVA: 0x00042241 File Offset: 0x00040441
 	public BlockTorchHeatMap()
 	{
 		this.IsRandomlyTick = true;
 	}
 
-	// Token: 0x0600098C RID: 2444 RVA: 0x00041FF0 File Offset: 0x000401F0
+	// Token: 0x06000996 RID: 2454 RVA: 0x00042250 File Offset: 0x00040450
 	public override bool UpdateTick(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool _bRandomTick, ulong _ticksIfLoaded, GameRandom _rnd)
 	{
 		base.UpdateTick(_world, _blockPos, _blockValue, _bRandomTick, _ticksIfLoaded, _rnd);
@@ -29,7 +29,7 @@ public class BlockTorchHeatMap : BlockTorch
 		return true;
 	}
 
-	// Token: 0x0600098D RID: 2445 RVA: 0x00042048 File Offset: 0x00040248
+	// Token: 0x06000997 RID: 2455 RVA: 0x000422A8 File Offset: 0x000404A8
 	public override void OnBlockEntityTransformAfterActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		base.OnBlockEntityTransformAfterActivated(_world, _blockPos, _blockValue, _ebcd);

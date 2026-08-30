@@ -2,16 +2,16 @@
 using Platform;
 using UnityEngine;
 
-// Token: 0x020012A5 RID: 4773
+// Token: 0x020012BF RID: 4799
 public class POIWaypoint : Waypoint
 {
-	// Token: 0x06009750 RID: 38736 RVA: 0x00395E12 File Offset: 0x00394012
+	// Token: 0x0600984B RID: 38987 RVA: 0x0039B056 File Offset: 0x00399256
 	public POIWaypoint()
 	{
 		this.IsSaved = false;
 	}
 
-	// Token: 0x06009751 RID: 38737 RVA: 0x00395E24 File Offset: 0x00394024
+	// Token: 0x0600984C RID: 38988 RVA: 0x0039B068 File Offset: 0x00399268
 	public static bool TrySet(EntityPlayer player, int prefabInstanceId, bool hiddenOnCompass)
 	{
 		if (player.isEntityRemote)
@@ -54,7 +54,7 @@ public class POIWaypoint : Waypoint
 		return false;
 	}
 
-	// Token: 0x06009752 RID: 38738 RVA: 0x00395FA0 File Offset: 0x003941A0
+	// Token: 0x0600984D RID: 38989 RVA: 0x0039B1E4 File Offset: 0x003993E4
 	public static void Remove(int prefabInstanceId)
 	{
 		foreach (EntityPlayer entityPlayer in GameManager.Instance.World.Players.list)
@@ -63,7 +63,7 @@ public class POIWaypoint : Waypoint
 		}
 	}
 
-	// Token: 0x06009753 RID: 38739 RVA: 0x00396000 File Offset: 0x00394200
+	// Token: 0x0600984E RID: 38990 RVA: 0x0039B244 File Offset: 0x00399444
 	public static void Remove(EntityPlayer player, int prefabInstanceId)
 	{
 		if (player.isEntityRemote)
@@ -90,7 +90,7 @@ public class POIWaypoint : Waypoint
 		}
 	}
 
-	// Token: 0x06009754 RID: 38740 RVA: 0x003960C4 File Offset: 0x003942C4
+	// Token: 0x0600984F RID: 38991 RVA: 0x0039B308 File Offset: 0x00399508
 	public static void ClearAll(EntityPlayer localPlayer)
 	{
 		if (localPlayer.isEntityRemote)
@@ -118,6 +118,6 @@ public class POIWaypoint : Waypoint
 		}
 	}
 
-	// Token: 0x04007193 RID: 29075
+	// Token: 0x0400726A RID: 29290
 	public int prefabInstanceId;
 }

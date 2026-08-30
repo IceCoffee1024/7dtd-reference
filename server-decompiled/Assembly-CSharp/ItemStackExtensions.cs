@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000578 RID: 1400
+// Token: 0x0200057D RID: 1405
 public static class ItemStackExtensions
 {
-	// Token: 0x06002DB4 RID: 11700 RVA: 0x0012260C File Offset: 0x0012080C
+	// Token: 0x06002DDF RID: 11743 RVA: 0x001236BC File Offset: 0x001218BC
 	public static int GetArrayHashCode(this ItemStack[] _items)
 	{
 		if (_items == null)

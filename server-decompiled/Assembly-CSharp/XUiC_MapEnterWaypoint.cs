@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F6B RID: 3947
+// Token: 0x02000F84 RID: 3972
 [Preserve]
 public class XUiC_MapEnterWaypoint : XUiController
 {
-	// Token: 0x06007C9E RID: 31902 RVA: 0x002F4C20 File Offset: 0x002F2E20
+	// Token: 0x06007D90 RID: 32144 RVA: 0x002F93F4 File Offset: 0x002F75F4
 	public override void Init()
 	{
 		base.Init();
@@ -20,21 +20,21 @@ public class XUiC_MapEnterWaypoint : XUiController
 		}
 	}
 
-	// Token: 0x06007C9F RID: 31903 RVA: 0x002F4C8A File Offset: 0x002F2E8A
+	// Token: 0x06007D91 RID: 32145 RVA: 0x002F945E File Offset: 0x002F765E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void waypointOnInputAbortedHandler(XUiController _sender)
 	{
 		((XUiC_MapArea)this.xui.GetWindow("mapArea").Controller).closeAllPopups();
 	}
 
-	// Token: 0x06007CA0 RID: 31904 RVA: 0x002F4CAB File Offset: 0x002F2EAB
+	// Token: 0x06007D92 RID: 32146 RVA: 0x002F947F File Offset: 0x002F767F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void waypointOnSubmitHandler(XUiController _sender, string _text)
 	{
 		((XUiC_MapArea)this.xui.GetWindow("mapArea").Controller).OnWaypointCreated(_text);
 	}
 
-	// Token: 0x06007CA1 RID: 31905 RVA: 0x002F4CCD File Offset: 0x002F2ECD
+	// Token: 0x06007D93 RID: 32147 RVA: 0x002F94A1 File Offset: 0x002F76A1
 	public void Show(Vector2i _position)
 	{
 		XUiV_Window window = this.xui.GetWindow("mapAreaEnterWaypointName");
@@ -44,7 +44,7 @@ public class XUiC_MapEnterWaypoint : XUiController
 		this.txtInput.SelectOrVirtualKeyboard(true);
 	}
 
-	// Token: 0x04005C4F RID: 23631
+	// Token: 0x04005D16 RID: 23830
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtInput;
 }

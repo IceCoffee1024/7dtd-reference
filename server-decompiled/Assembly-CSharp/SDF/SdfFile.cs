@@ -4,17 +4,17 @@ using System.IO;
 
 namespace SDF
 {
-	// Token: 0x0200166B RID: 5739
+	// Token: 0x02001691 RID: 5777
 	public class SdfFile
 	{
-		// Token: 0x0600B3CF RID: 46031 RVA: 0x004324FA File Offset: 0x004306FA
+		// Token: 0x0600B552 RID: 46418 RVA: 0x00438272 File Offset: 0x00436472
 		public SdfFile(string path)
 		{
 			this.data = new SdfData();
 			this.filePath = path;
 		}
 
-		// Token: 0x0600B3D0 RID: 46032 RVA: 0x00432514 File Offset: 0x00430714
+		// Token: 0x0600B553 RID: 46419 RVA: 0x0043828C File Offset: 0x0043648C
 		public void Load()
 		{
 			try
@@ -34,7 +34,7 @@ namespace SDF
 			}
 		}
 
-		// Token: 0x0600B3D1 RID: 46033 RVA: 0x0043259C File Offset: 0x0043079C
+		// Token: 0x0600B554 RID: 46420 RVA: 0x00438314 File Offset: 0x00436514
 		public void Save()
 		{
 			try
@@ -58,27 +58,27 @@ namespace SDF
 			}
 		}
 
-		// Token: 0x0600B3D2 RID: 46034 RVA: 0x00432634 File Offset: 0x00430834
+		// Token: 0x0600B555 RID: 46421 RVA: 0x004383AC File Offset: 0x004365AC
 		public void Set(string name, int val)
 		{
 			this.data.Add(new SdfInt(name, val));
 			this.valuesChanged = true;
 		}
 
-		// Token: 0x0600B3D3 RID: 46035 RVA: 0x00432650 File Offset: 0x00430850
+		// Token: 0x0600B556 RID: 46422 RVA: 0x004383C8 File Offset: 0x004365C8
 		public void Set(string name, float val)
 		{
 			this.data.Add(new SdfFloat(name, val));
 			this.valuesChanged = true;
 		}
 
-		// Token: 0x0600B3D4 RID: 46036 RVA: 0x0043266C File Offset: 0x0043086C
+		// Token: 0x0600B557 RID: 46423 RVA: 0x004383E4 File Offset: 0x004365E4
 		public void Set(string name, string val)
 		{
 			this.Set(name, val, false);
 		}
 
-		// Token: 0x0600B3D5 RID: 46037 RVA: 0x00432677 File Offset: 0x00430877
+		// Token: 0x0600B558 RID: 46424 RVA: 0x004383EF File Offset: 0x004365EF
 		public void Set(string name, string val, bool isBinary)
 		{
 			if (!isBinary)
@@ -92,38 +92,38 @@ namespace SDF
 			this.valuesChanged = true;
 		}
 
-		// Token: 0x0600B3D6 RID: 46038 RVA: 0x004326AB File Offset: 0x004308AB
+		// Token: 0x0600B559 RID: 46425 RVA: 0x00438423 File Offset: 0x00436623
 		public void Set(string name, byte[] byteArray)
 		{
 			this.data.Add(new SdfByteArray(name, byteArray));
 		}
 
-		// Token: 0x0600B3D7 RID: 46039 RVA: 0x004326C0 File Offset: 0x004308C0
+		// Token: 0x0600B55A RID: 46426 RVA: 0x00438438 File Offset: 0x00436638
 		public void Set(string name, bool val)
 		{
 			this.data.Add(new SdfBool(name, val));
 			this.valuesChanged = true;
 		}
 
-		// Token: 0x0600B3D8 RID: 46040 RVA: 0x004326DC File Offset: 0x004308DC
+		// Token: 0x0600B55B RID: 46427 RVA: 0x00438454 File Offset: 0x00436654
 		public float? GetFloat(string name)
 		{
 			return this.data.GetFloat(name);
 		}
 
-		// Token: 0x0600B3D9 RID: 46041 RVA: 0x004326EA File Offset: 0x004308EA
+		// Token: 0x0600B55C RID: 46428 RVA: 0x00438462 File Offset: 0x00436662
 		public int? GetInt(string name)
 		{
 			return this.data.GetInt(name);
 		}
 
-		// Token: 0x0600B3DA RID: 46042 RVA: 0x004326F8 File Offset: 0x004308F8
+		// Token: 0x0600B55D RID: 46429 RVA: 0x00438470 File Offset: 0x00436670
 		public string GetString(string name)
 		{
 			return this.GetString(name, false);
 		}
 
-		// Token: 0x0600B3DB RID: 46043 RVA: 0x00432702 File Offset: 0x00430902
+		// Token: 0x0600B55E RID: 46430 RVA: 0x0043847A File Offset: 0x0043667A
 		public string GetString(string name, bool isBinary)
 		{
 			if (!isBinary)
@@ -133,26 +133,26 @@ namespace SDF
 			return Utils.FromBase64(this.data.GetString(name));
 		}
 
-		// Token: 0x0600B3DC RID: 46044 RVA: 0x00432725 File Offset: 0x00430925
+		// Token: 0x0600B55F RID: 46431 RVA: 0x0043849D File Offset: 0x0043669D
 		public byte[] GetByteArray(string name)
 		{
 			return this.data.GetByteArray(name);
 		}
 
-		// Token: 0x0600B3DD RID: 46045 RVA: 0x00432733 File Offset: 0x00430933
+		// Token: 0x0600B560 RID: 46432 RVA: 0x004384AB File Offset: 0x004366AB
 		public bool? GetBool(string name)
 		{
 			return this.data.GetBool(name);
 		}
 
-		// Token: 0x0600B3DE RID: 46046 RVA: 0x00432741 File Offset: 0x00430941
+		// Token: 0x0600B561 RID: 46433 RVA: 0x004384B9 File Offset: 0x004366B9
 		public void Remove(string name)
 		{
 			this.data.Remove(name);
 			this.valuesChanged = true;
 		}
 
-		// Token: 0x0600B3DF RID: 46047 RVA: 0x00432758 File Offset: 0x00430958
+		// Token: 0x0600B562 RID: 46434 RVA: 0x004384D0 File Offset: 0x004366D0
 		public string[] GetKeys()
 		{
 			string[] array = new string[this.data.Nodes.Count];
@@ -160,7 +160,7 @@ namespace SDF
 			return array;
 		}
 
-		// Token: 0x0600B3E0 RID: 46048 RVA: 0x00432790 File Offset: 0x00430990
+		// Token: 0x0600B563 RID: 46435 RVA: 0x00438508 File Offset: 0x00436708
 		public string[] GetStoredGamePrefs()
 		{
 			string[] array = new string[this.data.Nodes.Count];
@@ -168,7 +168,7 @@ namespace SDF
 			return array;
 		}
 
-		// Token: 0x0600B3E1 RID: 46049 RVA: 0x004327C8 File Offset: 0x004309C8
+		// Token: 0x0600B564 RID: 46436 RVA: 0x00438540 File Offset: 0x00436740
 		public void CopyFrom(SdfFile other)
 		{
 			foreach (KeyValuePair<string, SdfTag> keyValuePair in other.data.Nodes)
@@ -183,15 +183,15 @@ namespace SDF
 			this.valuesChanged = true;
 		}
 
-		// Token: 0x0400869D RID: 34461
+		// Token: 0x040087B9 RID: 34745
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly SdfData data;
 
-		// Token: 0x0400869E RID: 34462
+		// Token: 0x040087BA RID: 34746
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly string filePath;
 
-		// Token: 0x0400869F RID: 34463
+		// Token: 0x040087BB RID: 34747
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool valuesChanged;
 	}

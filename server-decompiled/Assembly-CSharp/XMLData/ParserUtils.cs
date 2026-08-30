@@ -7,10 +7,10 @@ using XMLData.Exceptions;
 
 namespace XMLData
 {
-	// Token: 0x02001619 RID: 5657
+	// Token: 0x02001634 RID: 5684
 	public static class ParserUtils
 	{
-		// Token: 0x0600B17B RID: 45435 RVA: 0x00422DD4 File Offset: 0x00420FD4
+		// Token: 0x0600B278 RID: 45688 RVA: 0x00428114 File Offset: 0x00426314
 		[PublicizedFrom(EAccessModifier.Private)]
 		static ParserUtils()
 		{
@@ -19,19 +19,19 @@ namespace XMLData
 			ParserUtils.ci.NumberFormat.NumberGroupSeparator = ",";
 		}
 
-		// Token: 0x0600B17C RID: 45436 RVA: 0x00422E31 File Offset: 0x00421031
+		// Token: 0x0600B279 RID: 45689 RVA: 0x00428171 File Offset: 0x00426371
 		public static bool TryParseFloat(string _s, out float _result)
 		{
 			return float.TryParse(_s, NumberStyles.Any, ParserUtils.ci, out _result);
 		}
 
-		// Token: 0x0600B17D RID: 45437 RVA: 0x00422E44 File Offset: 0x00421044
+		// Token: 0x0600B27A RID: 45690 RVA: 0x00428184 File Offset: 0x00426384
 		public static bool TryParseDouble(string _s, out double _result)
 		{
 			return double.TryParse(_s, NumberStyles.Any, ParserUtils.ci, out _result);
 		}
 
-		// Token: 0x0600B17E RID: 45438 RVA: 0x00422E58 File Offset: 0x00421058
+		// Token: 0x0600B27B RID: 45691 RVA: 0x00428198 File Offset: 0x00426398
 		public static bool ParseBoolAttribute(PositionXmlElement _elem, string _attrName, bool _mandatory, bool _defaultValue)
 		{
 			if (_elem.HasAttribute(_attrName))
@@ -57,7 +57,7 @@ namespace XMLData
 			}
 		}
 
-		// Token: 0x0600B17F RID: 45439 RVA: 0x00422EEC File Offset: 0x004210EC
+		// Token: 0x0600B27C RID: 45692 RVA: 0x0042822C File Offset: 0x0042642C
 		public static string ParseStringAttribute(PositionXmlElement _elem, string _attrName, bool _mandatory, string _defaultValue = null)
 		{
 			if (_elem.HasAttribute(_attrName))
@@ -71,7 +71,7 @@ namespace XMLData
 			return _defaultValue;
 		}
 
-		// Token: 0x0600B180 RID: 45440 RVA: 0x00422F4C File Offset: 0x0042114C
+		// Token: 0x0600B27D RID: 45693 RVA: 0x0042828C File Offset: 0x0042648C
 		public static string ParseStringAttribute(XElement _elem, string _attrName, bool _mandatory, string _defaultValue = null)
 		{
 			if (_elem.HasAttribute(_attrName))
@@ -93,7 +93,7 @@ namespace XMLData
 			return _defaultValue;
 		}
 
-		// Token: 0x0600B181 RID: 45441 RVA: 0x00422FC0 File Offset: 0x004211C0
+		// Token: 0x0600B27E RID: 45694 RVA: 0x00428300 File Offset: 0x00426500
 		public static int ParseIntAttribute(PositionXmlElement _elem, string _attrName, bool _mandatory, int _defaultValue = 0)
 		{
 			if (_elem.HasAttribute(_attrName))
@@ -122,7 +122,7 @@ namespace XMLData
 			}
 		}
 
-		// Token: 0x0600B182 RID: 45442 RVA: 0x00423048 File Offset: 0x00421248
+		// Token: 0x0600B27F RID: 45695 RVA: 0x00428388 File Offset: 0x00426588
 		public static void ParseRangeAttribute<T>(PositionXmlElement _elem, string _attrName, bool _mandatory, ref Range<T> _defaultAndOutput, bool _allowFixedValue, ParserUtils.ConverterDelegate<T> _converter)
 		{
 			if (!_elem.HasAttribute(_attrName))
@@ -193,11 +193,11 @@ namespace XMLData
 			}
 		}
 
-		// Token: 0x04008543 RID: 34115
+		// Token: 0x0400861C RID: 34332
 		public static readonly CultureInfo ci = (CultureInfo)CultureInfo.CurrentCulture.Clone();
 
-		// Token: 0x0200161A RID: 5658
-		// (Invoke) Token: 0x0600B184 RID: 45444
+		// Token: 0x02001635 RID: 5685
+		// (Invoke) Token: 0x0600B281 RID: 45697
 		public delegate bool ConverterDelegate<T>(string _in, out T _out);
 	}
 }

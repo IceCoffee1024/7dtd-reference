@@ -5,7 +5,7 @@ using UnityEngine;
 // Token: 0x020000EE RID: 238
 public class HazardDamageController : MonoBehaviour
 {
-	// Token: 0x0600061A RID: 1562 RVA: 0x0002B810 File Offset: 0x00029A10
+	// Token: 0x0600061B RID: 1563 RVA: 0x0002B8D4 File Offset: 0x00029AD4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -28,7 +28,7 @@ public class HazardDamageController : MonoBehaviour
 		this.CollidersThisFrame.Clear();
 	}
 
-	// Token: 0x0600061B RID: 1563 RVA: 0x0002B890 File Offset: 0x00029A90
+	// Token: 0x0600061C RID: 1564 RVA: 0x0002B954 File Offset: 0x00029B54
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnTriggerEnter(Collider other)
 	{
@@ -46,7 +46,7 @@ public class HazardDamageController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600061C RID: 1564 RVA: 0x0002B890 File Offset: 0x00029A90
+	// Token: 0x0600061D RID: 1565 RVA: 0x0002B954 File Offset: 0x00029B54
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnTriggerStay(Collider other)
 	{
@@ -64,7 +64,7 @@ public class HazardDamageController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600061D RID: 1565 RVA: 0x0002B890 File Offset: 0x00029A90
+	// Token: 0x0600061E RID: 1566 RVA: 0x0002B954 File Offset: 0x00029B54
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnTriggerExit(Collider other)
 	{
@@ -82,7 +82,7 @@ public class HazardDamageController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600061E RID: 1566 RVA: 0x0002B8C8 File Offset: 0x00029AC8
+	// Token: 0x0600061F RID: 1567 RVA: 0x0002B98C File Offset: 0x00029B8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void touched(Collider collider)
 	{

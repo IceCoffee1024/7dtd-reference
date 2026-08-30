@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x0200081B RID: 2075
+// Token: 0x02000826 RID: 2086
 [Preserve]
 public class NetPackagePlayerEquipment : NetPackageEntityTargeted
 {
-	// Token: 0x06003CE7 RID: 15591 RVA: 0x001834C0 File Offset: 0x001816C0
+	// Token: 0x06003D46 RID: 15686 RVA: 0x00185898 File Offset: 0x00183A98
 	public NetPackagePlayerEquipment Setup(EntityAlive _entity)
 	{
 		base.Setup(_entity.entityId);
@@ -13,21 +13,21 @@ public class NetPackagePlayerEquipment : NetPackageEntityTargeted
 		return this;
 	}
 
-	// Token: 0x06003CE8 RID: 15592 RVA: 0x001834DB File Offset: 0x001816DB
+	// Token: 0x06003D47 RID: 15687 RVA: 0x001858B3 File Offset: 0x00183AB3
 	public override void read(PooledBinaryReader _reader)
 	{
 		base.read(_reader);
 		this.equipment = Equipment.Read(_reader);
 	}
 
-	// Token: 0x06003CE9 RID: 15593 RVA: 0x001834F0 File Offset: 0x001816F0
+	// Token: 0x06003D48 RID: 15688 RVA: 0x001858C8 File Offset: 0x00183AC8
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
 		this.equipment.Write(_writer);
 	}
 
-	// Token: 0x06003CEA RID: 15594 RVA: 0x00183508 File Offset: 0x00181708
+	// Token: 0x06003D49 RID: 15689 RVA: 0x001858E0 File Offset: 0x00183AE0
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -51,12 +51,12 @@ public class NetPackagePlayerEquipment : NetPackageEntityTargeted
 		}
 	}
 
-	// Token: 0x06003CEB RID: 15595 RVA: 0x00175819 File Offset: 0x00173A19
+	// Token: 0x06003D4A RID: 15690 RVA: 0x00177A99 File Offset: 0x00175C99
 	public override int GetLength()
 	{
 		return 60;
 	}
 
-	// Token: 0x0400313D RID: 12605
+	// Token: 0x040031BC RID: 12732
 	public Equipment equipment;
 }

@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02001024 RID: 4132
+// Token: 0x0200103D RID: 4157
 [Preserve]
 public class XUiC_SignPolygonSettings : XUiC_SignLayerSettings
 {
-	// Token: 0x06008309 RID: 33545 RVA: 0x0031F140 File Offset: 0x0031D340
+	// Token: 0x060083FB RID: 33787 RVA: 0x00323968 File Offset: 0x00321B68
 	public override void Init()
 	{
 		base.Init();
@@ -54,7 +54,7 @@ public class XUiC_SignPolygonSettings : XUiC_SignLayerSettings
 		base.SetDefaultValue("cbxDilate", polygonSignLayer.dilate);
 	}
 
-	// Token: 0x0600830A RID: 33546 RVA: 0x0031F380 File Offset: 0x0031D580
+	// Token: 0x060083FC RID: 33788 RVA: 0x00323BA8 File Offset: 0x00321DA8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnModeChanged(XUiController _sender)
 	{
@@ -62,7 +62,7 @@ public class XUiC_SignPolygonSettings : XUiC_SignLayerSettings
 		this.OnValueChangedGeneric("Changed Shape Mode");
 	}
 
-	// Token: 0x0600830B RID: 33547 RVA: 0x0031F394 File Offset: 0x0031D594
+	// Token: 0x060083FD RID: 33789 RVA: 0x00323BBC File Offset: 0x00321DBC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateDefaultDilate()
 	{
@@ -98,7 +98,7 @@ public class XUiC_SignPolygonSettings : XUiC_SignLayerSettings
 		this.cbxDilate.Value = 0.0;
 	}
 
-	// Token: 0x0600830C RID: 33548 RVA: 0x0031F47C File Offset: 0x0031D67C
+	// Token: 0x060083FE RID: 33790 RVA: 0x00323CA4 File Offset: 0x00321EA4
 	public override void SetLayer(SignData.SignLayer layer)
 	{
 		this.currentLayer = layer as SignData.PolygonSignLayer;
@@ -127,7 +127,7 @@ public class XUiC_SignPolygonSettings : XUiC_SignLayerSettings
 		this.cbxFrequencyRow.ViewComponent.IsVisible = this.currentLayer.shapeMode == SignData.PolygonSignLayer.ShapeMode.Ripple;
 	}
 
-	// Token: 0x0600830D RID: 33549 RVA: 0x0031F654 File Offset: 0x0031D854
+	// Token: 0x060083FF RID: 33791 RVA: 0x00323E7C File Offset: 0x0032207C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnValueChangedGeneric(string _changeDescription)
 	{
@@ -156,51 +156,51 @@ public class XUiC_SignPolygonSettings : XUiC_SignLayerSettings
 		onLayerSettingsChanged();
 	}
 
-	// Token: 0x04006115 RID: 24853
+	// Token: 0x040061DC RID: 25052
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<string> cbxMode;
 
-	// Token: 0x04006116 RID: 24854
+	// Token: 0x040061DD RID: 25053
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxInt cbxSides;
 
-	// Token: 0x04006117 RID: 24855
+	// Token: 0x040061DE RID: 25054
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxSmoothness;
 
-	// Token: 0x04006118 RID: 24856
+	// Token: 0x040061DF RID: 25055
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxStarify;
 
-	// Token: 0x04006119 RID: 24857
+	// Token: 0x040061E0 RID: 25056
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxSoftness;
 
-	// Token: 0x0400611A RID: 24858
+	// Token: 0x040061E1 RID: 25057
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxDilate;
 
-	// Token: 0x0400611B RID: 24859
+	// Token: 0x040061E2 RID: 25058
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController cbxFrequencyRow;
 
-	// Token: 0x0400611C RID: 24860
+	// Token: 0x040061E3 RID: 25059
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxFrequency;
 
-	// Token: 0x0400611D RID: 24861
+	// Token: 0x040061E4 RID: 25060
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignData.PolygonSignLayer currentLayer;
 
-	// Token: 0x0400611E RID: 24862
+	// Token: 0x040061E5 RID: 25061
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float defaultMaxSoftness;
 
-	// Token: 0x0400611F RID: 24863
+	// Token: 0x040061E6 RID: 25062
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float defaultMinDilate;
 
-	// Token: 0x04006120 RID: 24864
+	// Token: 0x040061E7 RID: 25063
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float defaultMaxDilate;
 }

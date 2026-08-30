@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x020008BE RID: 2238
-// (Invoke) Token: 0x060040B8 RID: 16568
+// Token: 0x020008CA RID: 2250
+// (Invoke) Token: 0x0600411D RID: 16669
 public delegate void OnPartyChanged(Party _affectedParty, EntityPlayer _player);

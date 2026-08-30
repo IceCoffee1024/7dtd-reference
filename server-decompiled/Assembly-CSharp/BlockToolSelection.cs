@@ -5,11 +5,11 @@ using Audio;
 using Platform;
 using UnityEngine;
 
-// Token: 0x020001BC RID: 444
+// Token: 0x020001BE RID: 446
 public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 {
 	// Token: 0x17000103 RID: 259
-	// (get) Token: 0x06000D61 RID: 3425 RVA: 0x00057AAC File Offset: 0x00055CAC
+	// (get) Token: 0x06000D6C RID: 3436 RVA: 0x00057F2C File Offset: 0x0005612C
 	public SelectionBox SelectionBox
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -27,7 +27,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		}
 	}
 
-	// Token: 0x06000D62 RID: 3426 RVA: 0x00057B04 File Offset: 0x00055D04
+	// Token: 0x06000D6D RID: 3437 RVA: 0x00057F84 File Offset: 0x00056184
 	public BlockToolSelection()
 	{
 		BlockToolSelection.Instance = this;
@@ -141,7 +141,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		Origin.OriginChanged = (Action<Vector3>)Delegate.Combine(Origin.OriginChanged, new Action<Vector3>(this.OnOriginChanged));
 	}
 
-	// Token: 0x06000D63 RID: 3427 RVA: 0x00057F80 File Offset: 0x00056180
+	// Token: 0x06000D6E RID: 3438 RVA: 0x00058400 File Offset: 0x00056600
 	public void CheckSpecialKeys(Event ev, PlayerActionsLocal playerActions)
 	{
 		if (this.hitInfo == null)
@@ -229,7 +229,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		}
 	}
 
-	// Token: 0x06000D64 RID: 3428 RVA: 0x00058278 File Offset: 0x00056478
+	// Token: 0x06000D6F RID: 3439 RVA: 0x000586F8 File Offset: 0x000568F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void rotatePreviewAroundY()
 	{
@@ -248,14 +248,14 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		this.SelectionEnd = vector3i + this.clipboard.size - Vector3i.one;
 	}
 
-	// Token: 0x06000D65 RID: 3429 RVA: 0x0005839A File Offset: 0x0005659A
+	// Token: 0x06000D70 RID: 3440 RVA: 0x0005881A File Offset: 0x00056A1A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void removeBlockPreview()
 	{
 		this.previewGORot3.transform.DestroyChildren();
 	}
 
-	// Token: 0x06000D66 RID: 3430 RVA: 0x000583AC File Offset: 0x000565AC
+	// Token: 0x06000D71 RID: 3441 RVA: 0x0005882C File Offset: 0x00056A2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void createBlockPreviewFrom(Prefab _prefab)
 	{
@@ -293,7 +293,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		this.selectionRotCenter = this.SelectionMin.ToVector3() - vector;
 	}
 
-	// Token: 0x06000D67 RID: 3431 RVA: 0x0005861C File Offset: 0x0005681C
+	// Token: 0x06000D72 RID: 3442 RVA: 0x00058A9C File Offset: 0x00056C9C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnOriginChanged(Vector3 _newOrigin)
 	{
@@ -304,7 +304,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		this.previewGORot1.transform.position = this.SelectionMin.ToVector3() - Origin.position;
 	}
 
-	// Token: 0x06000D68 RID: 3432 RVA: 0x00058660 File Offset: 0x00056860
+	// Token: 0x06000D73 RID: 3443 RVA: 0x00058AE0 File Offset: 0x00056CE0
 	public void RotateFocusedBlock(WorldRayHitInfo _hitInfo, PlayerActionsLocal _playerActions)
 	{
 		if (!_hitInfo.bHitValid)
@@ -320,7 +320,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		}
 	}
 
-	// Token: 0x06000D69 RID: 3433 RVA: 0x00058700 File Offset: 0x00056900
+	// Token: 0x06000D74 RID: 3444 RVA: 0x00058B80 File Offset: 0x00056D80
 	public void CheckKeys(ItemInventoryData _data, WorldRayHitInfo _hitInfo, PlayerActionsLocal playerActions)
 	{
 		if (LocalPlayerUI.primaryUI.windowManager.IsInputActive())
@@ -463,7 +463,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		}
 	}
 
-	// Token: 0x06000D6A RID: 3434 RVA: 0x00058BE0 File Offset: 0x00056DE0
+	// Token: 0x06000D75 RID: 3445 RVA: 0x00059060 File Offset: 0x00057260
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasSameShape(int _blockId1, int _blockId2)
 	{
@@ -472,7 +472,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		return !(block.shape.GetType() != block2.shape.GetType()) && (!(block.shape is BlockShapeNew) || block.Properties.GetValue("Model") == block2.Properties.GetValue("Model"));
 	}
 
-	// Token: 0x06000D6B RID: 3435 RVA: 0x00058C50 File Offset: 0x00056E50
+	// Token: 0x06000D76 RID: 3446 RVA: 0x000590D0 File Offset: 0x000572D0
 	public bool ConsumeScrollWheel(ItemInventoryData _data, float _scrollWheelInput, PlayerActionsLocal _playerInput)
 	{
 		if ((_playerInput.Reload.IsPressed || _playerInput.PermanentActions.Reload.IsPressed) && _data is ItemClassBlock.ItemBlockInventoryData && Mathf.Abs(_scrollWheelInput) >= 0.001f)
@@ -484,7 +484,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		return false;
 	}
 
-	// Token: 0x06000D6C RID: 3436 RVA: 0x00058CFC File Offset: 0x00056EFC
+	// Token: 0x06000D77 RID: 3447 RVA: 0x0005917C File Offset: 0x0005737C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i createBlockMoveVector(Vector3 _relPlayerAxis)
 	{
@@ -500,7 +500,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		return zero;
 	}
 
-	// Token: 0x06000D6D RID: 3437 RVA: 0x00058D64 File Offset: 0x00056F64
+	// Token: 0x06000D78 RID: 3448 RVA: 0x000591E4 File Offset: 0x000573E4
 	public bool ExecuteUseAction(ItemInventoryData _data, bool _bReleased, PlayerActionsLocal playerActions)
 	{
 		if (!(_data is ItemClassBlock.ItemBlockInventoryData))
@@ -643,7 +643,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		return true;
 	}
 
-	// Token: 0x06000D6E RID: 3438 RVA: 0x0005925C File Offset: 0x0005745C
+	// Token: 0x06000D79 RID: 3449 RVA: 0x000596DC File Offset: 0x000578DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool PlaceBlock(ItemInventoryData _data, BlockPlacement.Result result, ItemClassBlock.ItemBlockInventoryData data, Block block, BlockValue blockValue)
 	{
@@ -685,7 +685,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		return true;
 	}
 
-	// Token: 0x06000D6F RID: 3439 RVA: 0x00059449 File Offset: 0x00057649
+	// Token: 0x06000D7A RID: 3450 RVA: 0x000598C9 File Offset: 0x00057AC9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool PlaceProp(ItemInventoryData _data, BlockPlacement.Result result, ItemClassBlock.ItemBlockInventoryData data, Block block, BlockValue blockValue)
 	{
@@ -693,7 +693,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		return true;
 	}
 
-	// Token: 0x06000D70 RID: 3440 RVA: 0x00059460 File Offset: 0x00057660
+	// Token: 0x06000D7B RID: 3451 RVA: 0x000598E0 File Offset: 0x00057AE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator decInventoryLater(ItemInventoryData data, int index)
 	{
@@ -719,7 +719,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		yield break;
 	}
 
-	// Token: 0x06000D71 RID: 3441 RVA: 0x00059478 File Offset: 0x00057678
+	// Token: 0x06000D7C RID: 3452 RVA: 0x000598F8 File Offset: 0x00057AF8
 	public bool ExecuteAttackAction(ItemInventoryData _data, bool _bReleased, PlayerActionsLocal playerActions)
 	{
 		if (!_bReleased)
@@ -763,7 +763,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		return flag;
 	}
 
-	// Token: 0x06000D72 RID: 3442 RVA: 0x000595D8 File Offset: 0x000577D8
+	// Token: 0x06000D7D RID: 3453 RVA: 0x00059A58 File Offset: 0x00057C58
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void rotateSelectionAroundY()
 	{
@@ -783,8 +783,8 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 	}
 
 	// Token: 0x17000104 RID: 260
-	// (get) Token: 0x06000D73 RID: 3443 RVA: 0x00059713 File Offset: 0x00057913
-	// (set) Token: 0x06000D74 RID: 3444 RVA: 0x00059720 File Offset: 0x00057920
+	// (get) Token: 0x06000D7E RID: 3454 RVA: 0x00059B93 File Offset: 0x00057D93
+	// (set) Token: 0x06000D7F RID: 3455 RVA: 0x00059BA0 File Offset: 0x00057DA0
 	public bool SelectionActive
 	{
 		get
@@ -801,8 +801,8 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 	}
 
 	// Token: 0x17000105 RID: 261
-	// (get) Token: 0x06000D75 RID: 3445 RVA: 0x0005973C File Offset: 0x0005793C
-	// (set) Token: 0x06000D76 RID: 3446 RVA: 0x00059744 File Offset: 0x00057944
+	// (get) Token: 0x06000D80 RID: 3456 RVA: 0x00059BBC File Offset: 0x00057DBC
+	// (set) Token: 0x06000D81 RID: 3457 RVA: 0x00059BC4 File Offset: 0x00057DC4
 	public int SelectionLockMode
 	{
 		get
@@ -835,7 +835,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 	}
 
 	// Token: 0x17000106 RID: 262
-	// (get) Token: 0x06000D77 RID: 3447 RVA: 0x000597C8 File Offset: 0x000579C8
+	// (get) Token: 0x06000D82 RID: 3458 RVA: 0x00059C48 File Offset: 0x00057E48
 	public Vector3i SelectionMin
 	{
 		get
@@ -845,8 +845,8 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 	}
 
 	// Token: 0x17000107 RID: 263
-	// (get) Token: 0x06000D78 RID: 3448 RVA: 0x0005982B File Offset: 0x00057A2B
-	// (set) Token: 0x06000D79 RID: 3449 RVA: 0x00059833 File Offset: 0x00057A33
+	// (get) Token: 0x06000D83 RID: 3459 RVA: 0x00059CAB File Offset: 0x00057EAB
+	// (set) Token: 0x06000D84 RID: 3460 RVA: 0x00059CB3 File Offset: 0x00057EB3
 	public Vector3i SelectionStart
 	{
 		get
@@ -864,8 +864,8 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 	}
 
 	// Token: 0x17000108 RID: 264
-	// (get) Token: 0x06000D7A RID: 3450 RVA: 0x00059850 File Offset: 0x00057A50
-	// (set) Token: 0x06000D7B RID: 3451 RVA: 0x00059858 File Offset: 0x00057A58
+	// (get) Token: 0x06000D85 RID: 3461 RVA: 0x00059CD0 File Offset: 0x00057ED0
+	// (set) Token: 0x06000D86 RID: 3462 RVA: 0x00059CD8 File Offset: 0x00057ED8
 	public Vector3i SelectionEnd
 	{
 		get
@@ -883,7 +883,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 	}
 
 	// Token: 0x17000109 RID: 265
-	// (get) Token: 0x06000D7C RID: 3452 RVA: 0x00059878 File Offset: 0x00057A78
+	// (get) Token: 0x06000D87 RID: 3463 RVA: 0x00059CF8 File Offset: 0x00057EF8
 	public Vector3i SelectionSize
 	{
 		get
@@ -892,12 +892,12 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		}
 	}
 
-	// Token: 0x06000D7D RID: 3453 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000D88 RID: 3464 RVA: 0x000027FC File Offset: 0x000009FC
 	public void SelectionSizeSet(Vector3i _size)
 	{
 	}
 
-	// Token: 0x06000D7E RID: 3454 RVA: 0x000598E4 File Offset: 0x00057AE4
+	// Token: 0x06000D89 RID: 3465 RVA: 0x00059D64 File Offset: 0x00057F64
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateSelection()
 	{
@@ -906,7 +906,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		this.SelectionBox.SetPositionAndSize(new Vector3i(vector2), new Vector3i(vector));
 	}
 
-	// Token: 0x06000D7F RID: 3455 RVA: 0x00059974 File Offset: 0x00057B74
+	// Token: 0x06000D8A RID: 3466 RVA: 0x00059DF4 File Offset: 0x00057FF4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool setBlock(Vector3i _blockPos, BlockValue _blockValue)
 	{
@@ -935,7 +935,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		return true;
 	}
 
-	// Token: 0x06000D80 RID: 3456 RVA: 0x00059A50 File Offset: 0x00057C50
+	// Token: 0x06000D8B RID: 3467 RVA: 0x00059ED0 File Offset: 0x000580D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void addToUndo(Vector3i _blockPos, BlockValue _oldBlockValue)
 	{
@@ -950,7 +950,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		}
 	}
 
-	// Token: 0x06000D81 RID: 3457 RVA: 0x00059AC4 File Offset: 0x00057CC4
+	// Token: 0x06000D8C RID: 3468 RVA: 0x00059F44 File Offset: 0x00058144
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void blockUndoRedo(bool _redo)
 	{
@@ -966,7 +966,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		this.EndUndo(!_redo);
 	}
 
-	// Token: 0x06000D82 RID: 3458 RVA: 0x00059B28 File Offset: 0x00057D28
+	// Token: 0x06000D8D RID: 3469 RVA: 0x00059FA8 File Offset: 0x000581A8
 	public void BeginUndo()
 	{
 		this.undoChanges = new List<BlockChangeInfo>();
@@ -977,7 +977,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		}
 	}
 
-	// Token: 0x06000D83 RID: 3459 RVA: 0x00059B65 File Offset: 0x00057D65
+	// Token: 0x06000D8E RID: 3470 RVA: 0x00059FE5 File Offset: 0x000581E5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void undoBlockChangeDelegate(Vector3i pos, BlockValue bvOld, sbyte oldDens, TextureFullArray oldTex, BlockValue bvNew)
 	{
@@ -987,7 +987,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		}
 	}
 
-	// Token: 0x06000D84 RID: 3460 RVA: 0x00059B94 File Offset: 0x00057D94
+	// Token: 0x06000D8F RID: 3471 RVA: 0x0005A014 File Offset: 0x00058214
 	public void EndUndo(bool _bRedo = false)
 	{
 		ChunkCluster chunkCache = GameManager.Instance.World.ChunkCache;
@@ -1010,14 +1010,14 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		this.undoChanges = null;
 	}
 
-	// Token: 0x06000D85 RID: 3461 RVA: 0x00059C1D File Offset: 0x00057E1D
+	// Token: 0x06000D90 RID: 3472 RVA: 0x0005A09D File Offset: 0x0005829D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i blockCopy(Prefab _storage)
 	{
 		return _storage.CopyFromWorldWithEntities(GameManager.Instance.World, this.SelectionStart, this.SelectionEnd, null);
 	}
 
-	// Token: 0x06000D86 RID: 3462 RVA: 0x00059C3C File Offset: 0x00057E3C
+	// Token: 0x06000D91 RID: 3473 RVA: 0x0005A0BC File Offset: 0x000582BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void blockPaste(Vector3i _destPos, Prefab _storage)
 	{
@@ -1029,7 +1029,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		this.EndUndo(false);
 	}
 
-	// Token: 0x06000D87 RID: 3463 RVA: 0x00059C94 File Offset: 0x00057E94
+	// Token: 0x06000D92 RID: 3474 RVA: 0x0005A114 File Offset: 0x00058314
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i sizeFromPositions(Vector3i _posStart, Vector3i _posEnd)
 	{
@@ -1038,7 +1038,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		return new Vector3i(Math.Abs(vector3i2.x - vector3i.x) + 1, Math.Abs(vector3i2.y - vector3i.y) + 1, Math.Abs(vector3i2.z - vector3i.z) + 1);
 	}
 
-	// Token: 0x06000D88 RID: 3464 RVA: 0x00059D58 File Offset: 0x00057F58
+	// Token: 0x06000D93 RID: 3475 RVA: 0x0005A1D8 File Offset: 0x000583D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void union(Vector3i _pos1Start, Vector3i _pos1End, Vector3i _pos2Start, Vector3i _pos2End, out Vector3i _unionStart, out Vector3i _unionEnd)
 	{
@@ -1046,14 +1046,14 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		_unionEnd = new Vector3i(Utils.FastMax(_pos1Start.x, _pos1End.x, _pos2Start.x, _pos2End.x), Utils.FastMax(_pos1Start.y, _pos1End.y, _pos2Start.y, _pos2End.y), Utils.FastMax(_pos1Start.z, _pos1End.z, _pos2Start.z, _pos2End.z));
 	}
 
-	// Token: 0x06000D89 RID: 3465 RVA: 0x00059E31 File Offset: 0x00058031
+	// Token: 0x06000D94 RID: 3476 RVA: 0x0005A2B1 File Offset: 0x000584B1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isPrefabActive()
 	{
 		return GameManager.Instance.GetDynamicPrefabDecorator() != null && GameManager.Instance.GetDynamicPrefabDecorator().ActivePrefab != null;
 	}
 
-	// Token: 0x06000D8A RID: 3466 RVA: 0x00059E53 File Offset: 0x00058053
+	// Token: 0x06000D95 RID: 3477 RVA: 0x0005A2D3 File Offset: 0x000584D3
 	public bool OnSelectionBoxActivated(SelectionBox _box, bool _bActivated)
 	{
 		this.SelectionBox.SetVisible(_bActivated);
@@ -1064,7 +1064,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		return true;
 	}
 
-	// Token: 0x06000D8B RID: 3467 RVA: 0x00059E6C File Offset: 0x0005806C
+	// Token: 0x06000D96 RID: 3478 RVA: 0x0005A2EC File Offset: 0x000584EC
 	public void OnSelectionBoxMoved(SelectionBox _box, Vector3 _moveVector)
 	{
 		Vector3i vector3i = new Vector3i(_moveVector);
@@ -1079,7 +1079,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		}
 	}
 
-	// Token: 0x06000D8C RID: 3468 RVA: 0x00059EF4 File Offset: 0x000580F4
+	// Token: 0x06000D97 RID: 3479 RVA: 0x0005A374 File Offset: 0x00058574
 	public void OnSelectionBoxSized(SelectionBox _box, int _dTop, int _dBottom, int _dNorth, int _dSouth, int _dEast, int _dWest)
 	{
 		if (this.SelectionLockMode == 2)
@@ -1153,7 +1153,7 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		}
 	}
 
-	// Token: 0x06000D8D RID: 3469 RVA: 0x0005A278 File Offset: 0x00058478
+	// Token: 0x06000D98 RID: 3480 RVA: 0x0005A6F8 File Offset: 0x000588F8
 	public void OnSelectionBoxMirrored(Vector3i _selAxis)
 	{
 		EnumMirrorAlong enumMirrorAlong = EnumMirrorAlong.XAxis;
@@ -1178,24 +1178,24 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		prefab.CopyIntoRPC(GameManager.Instance, this.SelectionMin, this.copyPasteAirBlocks);
 	}
 
-	// Token: 0x06000D8E RID: 3470 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000D99 RID: 3481 RVA: 0x00010E62 File Offset: 0x0000F062
 	public bool OnSelectionBoxDelete(SelectionBox _box, bool _checkCanDeleteOnly)
 	{
 		return false;
 	}
 
-	// Token: 0x06000D8F RID: 3471 RVA: 0x0005A31D File Offset: 0x0005851D
+	// Token: 0x06000D9A RID: 3482 RVA: 0x0005A79D File Offset: 0x0005899D
 	public bool OnSelectionBoxIsAvailable(EnumSelectionBoxAvailabilities _criteria)
 	{
 		return _criteria == EnumSelectionBoxAvailabilities.CanResize || _criteria == EnumSelectionBoxAvailabilities.CanMirror;
 	}
 
-	// Token: 0x06000D90 RID: 3472 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000D9B RID: 3483 RVA: 0x000027FC File Offset: 0x000009FC
 	public void OnSelectionBoxShowProperties(bool _bVisible, GUIWindowManager _windowManager)
 	{
 	}
 
-	// Token: 0x06000D91 RID: 3473 RVA: 0x0005A329 File Offset: 0x00058529
+	// Token: 0x06000D9C RID: 3484 RVA: 0x0005A7A9 File Offset: 0x000589A9
 	public void OnSelectionBoxRotated(SelectionBox _box)
 	{
 		if (this.SelectionLockMode == 2)
@@ -1206,12 +1206,12 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		this.rotateSelectionAroundY();
 	}
 
-	// Token: 0x06000D92 RID: 3474 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000D9D RID: 3485 RVA: 0x000027FC File Offset: 0x000009FC
 	public void OnSelectionBoxUserDataChanged(SelectionBox _box)
 	{
 	}
 
-	// Token: 0x06000D93 RID: 3475 RVA: 0x0005A344 File Offset: 0x00058544
+	// Token: 0x06000D9E RID: 3486 RVA: 0x0005A7C4 File Offset: 0x000589C4
 	public string GetDebugOutput()
 	{
 		if (this.SelectionActive)
@@ -1221,13 +1221,13 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		return "-";
 	}
 
-	// Token: 0x06000D94 RID: 3476 RVA: 0x0005A391 File Offset: 0x00058591
+	// Token: 0x06000D9F RID: 3487 RVA: 0x0005A811 File Offset: 0x00058A11
 	public Dictionary<string, NGuiAction> GetActions()
 	{
 		return this.actions;
 	}
 
-	// Token: 0x06000D95 RID: 3477 RVA: 0x0005A39C File Offset: 0x0005859C
+	// Token: 0x06000DA0 RID: 3488 RVA: 0x0005A81C File Offset: 0x00058A1C
 	public void LoadPrefabIntoClipboard(Prefab _prefab)
 	{
 		this.clipboard = _prefab;
@@ -1240,100 +1240,100 @@ public class BlockToolSelection : ISelectionBoxCallback, IBlockTool
 		this.createBlockPreviewFrom(this.clipboard);
 	}
 
-	// Token: 0x04000BB3 RID: 2995
+	// Token: 0x04000BC0 RID: 3008
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cBlockUndoRedoCount = 100;
 
-	// Token: 0x04000BB4 RID: 2996
+	// Token: 0x04000BC1 RID: 3009
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Color colActive = new Color(1f, 0f, 0f, 0.5f);
 
-	// Token: 0x04000BB5 RID: 2997
+	// Token: 0x04000BC2 RID: 3010
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Color colInactive = new Color(0f, 0f, 1f, 0.5f);
 
-	// Token: 0x04000BB6 RID: 2998
+	// Token: 0x04000BC3 RID: 3011
 	public static BlockToolSelection Instance;
 
-	// Token: 0x04000BB7 RID: 2999
+	// Token: 0x04000BC4 RID: 3012
 	public Prefab clipboard = new Prefab();
 
-	// Token: 0x04000BB8 RID: 3000
+	// Token: 0x04000BC5 RID: 3013
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i m_selectionStartPoint;
 
-	// Token: 0x04000BB9 RID: 3001
+	// Token: 0x04000BC6 RID: 3014
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i m_SelectionEndPoint;
 
-	// Token: 0x04000BBA RID: 3002
+	// Token: 0x04000BC7 RID: 3015
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int m_iSelectionLockMode;
 
-	// Token: 0x04000BBB RID: 3003
+	// Token: 0x04000BC8 RID: 3016
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<List<BlockChangeInfo>> undoQueue = new List<List<BlockChangeInfo>>();
 
-	// Token: 0x04000BBC RID: 3004
+	// Token: 0x04000BC9 RID: 3017
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<List<BlockChangeInfo>> redoQueue = new List<List<BlockChangeInfo>>();
 
-	// Token: 0x04000BBD RID: 3005
+	// Token: 0x04000BCA RID: 3018
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lastBuildTime;
 
-	// Token: 0x04000BBE RID: 3006
+	// Token: 0x04000BCB RID: 3019
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string SelectionBoxName = "SingleInstance";
 
-	// Token: 0x04000BBF RID: 3007
+	// Token: 0x04000BCC RID: 3020
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<string, NGuiAction> actions;
 
-	// Token: 0x04000BC0 RID: 3008
+	// Token: 0x04000BCD RID: 3021
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject previewGOParent;
 
-	// Token: 0x04000BC1 RID: 3009
+	// Token: 0x04000BCE RID: 3022
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject previewGORot1;
 
-	// Token: 0x04000BC2 RID: 3010
+	// Token: 0x04000BCF RID: 3023
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject previewGORot2;
 
-	// Token: 0x04000BC3 RID: 3011
+	// Token: 0x04000BD0 RID: 3024
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject previewGORot3;
 
-	// Token: 0x04000BC4 RID: 3012
+	// Token: 0x04000BD1 RID: 3025
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool copyPasteAirBlocks = true;
 
-	// Token: 0x04000BC5 RID: 3013
+	// Token: 0x04000BD2 RID: 3026
 	public PlayerActionsLocal playerInput;
 
-	// Token: 0x04000BC6 RID: 3014
+	// Token: 0x04000BD3 RID: 3027
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 selectionRotCenter;
 
-	// Token: 0x04000BC7 RID: 3015
+	// Token: 0x04000BD4 RID: 3028
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 offsetToMin;
 
-	// Token: 0x04000BC8 RID: 3016
+	// Token: 0x04000BD5 RID: 3029
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 offsetToMax;
 
-	// Token: 0x04000BC9 RID: 3017
+	// Token: 0x04000BD6 RID: 3030
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WorldRayHitInfo hitInfo;
 
-	// Token: 0x04000BCA RID: 3018
+	// Token: 0x04000BD7 RID: 3031
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bWaitForRelease;
 
-	// Token: 0x04000BCB RID: 3019
+	// Token: 0x04000BD8 RID: 3032
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<BlockChangeInfo> undoChanges = new List<BlockChangeInfo>();
 }

@@ -5,11 +5,11 @@ using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200070D RID: 1805
+// Token: 0x02000717 RID: 1815
 [Preserve]
 public class MinEventActionModifyStats : MinEventActionTargetedBase
 {
-	// Token: 0x060036B6 RID: 14006 RVA: 0x00169597 File Offset: 0x00167797
+	// Token: 0x0600370C RID: 14092 RVA: 0x0016B76F File Offset: 0x0016996F
 	public override void Execute(MinEventParams _params)
 	{
 		if (this.Delay > 0f)
@@ -20,7 +20,7 @@ public class MinEventActionModifyStats : MinEventActionTargetedBase
 		this.execute(_params);
 	}
 
-	// Token: 0x060036B7 RID: 14007 RVA: 0x001695C6 File Offset: 0x001677C6
+	// Token: 0x0600370D RID: 14093 RVA: 0x0016B79E File Offset: 0x0016999E
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator executeDelayed(float delaySeconds, MinEventParams _params)
 	{
@@ -29,7 +29,7 @@ public class MinEventActionModifyStats : MinEventActionTargetedBase
 		yield break;
 	}
 
-	// Token: 0x060036B8 RID: 14008 RVA: 0x001695E4 File Offset: 0x001677E4
+	// Token: 0x0600370E RID: 14094 RVA: 0x0016B7BC File Offset: 0x001699BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void execute(MinEventParams _params)
 	{
@@ -146,7 +146,7 @@ public class MinEventActionModifyStats : MinEventActionTargetedBase
 		}
 	}
 
-	// Token: 0x060036B9 RID: 14009 RVA: 0x00169948 File Offset: 0x00167B48
+	// Token: 0x0600370F RID: 14095 RVA: 0x0016BB20 File Offset: 0x00169D20
 	public override bool ParseXmlAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXmlAttribute(_attribute);
@@ -185,49 +185,49 @@ public class MinEventActionModifyStats : MinEventActionTargetedBase
 		return flag;
 	}
 
-	// Token: 0x04002C1F RID: 11295
+	// Token: 0x04002C93 RID: 11411
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string statName;
 
-	// Token: 0x04002C20 RID: 11296
+	// Token: 0x04002C94 RID: 11412
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MinEventActionModifyStats.OperationTypes operation;
 
-	// Token: 0x04002C21 RID: 11297
+	// Token: 0x04002C95 RID: 11413
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float value;
 
-	// Token: 0x04002C22 RID: 11298
+	// Token: 0x04002C96 RID: 11414
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string valueType;
 
-	// Token: 0x04002C23 RID: 11299
+	// Token: 0x04002C97 RID: 11415
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool cvarRef;
 
-	// Token: 0x04002C24 RID: 11300
+	// Token: 0x04002C98 RID: 11416
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string refCvarName;
 
-	// Token: 0x0200070E RID: 1806
+	// Token: 0x02000718 RID: 1816
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum OperationTypes
 	{
-		// Token: 0x04002C26 RID: 11302
+		// Token: 0x04002C9A RID: 11418
 		set,
-		// Token: 0x04002C27 RID: 11303
+		// Token: 0x04002C9B RID: 11419
 		setvalue,
-		// Token: 0x04002C28 RID: 11304
+		// Token: 0x04002C9C RID: 11420
 		add,
-		// Token: 0x04002C29 RID: 11305
+		// Token: 0x04002C9D RID: 11421
 		subtract,
-		// Token: 0x04002C2A RID: 11306
+		// Token: 0x04002C9E RID: 11422
 		multiply,
-		// Token: 0x04002C2B RID: 11307
+		// Token: 0x04002C9F RID: 11423
 		divide,
-		// Token: 0x04002C2C RID: 11308
+		// Token: 0x04002CA0 RID: 11424
 		randomfloat,
-		// Token: 0x04002C2D RID: 11309
+		// Token: 0x04002CA1 RID: 11425
 		randomint
 	}
 }

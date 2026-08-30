@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 
-// Token: 0x02000413 RID: 1043
+// Token: 0x02000417 RID: 1047
 public struct AIDirectorPlayerInventory : IEquatable<AIDirectorPlayerInventory>
 {
-	// Token: 0x06002040 RID: 8256 RVA: 0x000C35F8 File Offset: 0x000C17F8
+	// Token: 0x0600205D RID: 8285 RVA: 0x000C3D94 File Offset: 0x000C1F94
 	public static AIDirectorPlayerInventory FromEntity(EntityAlive entity)
 	{
 		AIDirectorPlayerInventory aidirectorPlayerInventory;
@@ -14,25 +14,25 @@ public struct AIDirectorPlayerInventory : IEquatable<AIDirectorPlayerInventory>
 		return aidirectorPlayerInventory;
 	}
 
-	// Token: 0x06002041 RID: 8257 RVA: 0x000C362C File Offset: 0x000C182C
+	// Token: 0x0600205E RID: 8286 RVA: 0x000C3DC8 File Offset: 0x000C1FC8
 	public bool Equals(AIDirectorPlayerInventory other)
 	{
 		return this.bag != null == (other.bag != null) && this.belt != null == (other.belt != null) && AIDirectorPlayerInventory.OrderIndependantEquals(this.bag, other.bag) && AIDirectorPlayerInventory.OrderIndependantEquals(this.belt, other.belt);
 	}
 
-	// Token: 0x06002042 RID: 8258 RVA: 0x0001FF1E File Offset: 0x0001E11E
+	// Token: 0x0600205F RID: 8287 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
 	public static List<AIDirectorPlayerInventory.ItemId> TrackedItemsFromBag(Bag bag)
 	{
 		return null;
 	}
 
-	// Token: 0x06002043 RID: 8259 RVA: 0x0001FF1E File Offset: 0x0001E11E
+	// Token: 0x06002060 RID: 8288 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
 	public static List<AIDirectorPlayerInventory.ItemId> TrackedItemsFromInventory(Inventory inv)
 	{
 		return null;
 	}
 
-	// Token: 0x06002044 RID: 8260 RVA: 0x000C368C File Offset: 0x000C188C
+	// Token: 0x06002061 RID: 8289 RVA: 0x000C3E28 File Offset: 0x000C2028
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void AppendId(List<AIDirectorPlayerInventory.ItemId> list, AIDirectorPlayerInventory.ItemId id)
 	{
@@ -49,7 +49,7 @@ public struct AIDirectorPlayerInventory : IEquatable<AIDirectorPlayerInventory>
 		list.Add(id);
 	}
 
-	// Token: 0x06002045 RID: 8261 RVA: 0x000C36E4 File Offset: 0x000C18E4
+	// Token: 0x06002062 RID: 8290 RVA: 0x000C3E80 File Offset: 0x000C2080
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool OrderIndependantEquals(List<AIDirectorPlayerInventory.ItemId> a, List<AIDirectorPlayerInventory.ItemId> b)
 	{
@@ -76,16 +76,16 @@ public struct AIDirectorPlayerInventory : IEquatable<AIDirectorPlayerInventory>
 		return true;
 	}
 
-	// Token: 0x0400160F RID: 5647
+	// Token: 0x04001624 RID: 5668
 	public List<AIDirectorPlayerInventory.ItemId> bag;
 
-	// Token: 0x04001610 RID: 5648
+	// Token: 0x04001625 RID: 5669
 	public List<AIDirectorPlayerInventory.ItemId> belt;
 
-	// Token: 0x02000414 RID: 1044
+	// Token: 0x02000418 RID: 1048
 	public struct ItemId : IEquatable<AIDirectorPlayerInventory.ItemId>
 	{
-		// Token: 0x06002046 RID: 8262 RVA: 0x000C3738 File Offset: 0x000C1938
+		// Token: 0x06002063 RID: 8291 RVA: 0x000C3ED4 File Offset: 0x000C20D4
 		public static AIDirectorPlayerInventory.ItemId FromStack(ItemStack stack)
 		{
 			AIDirectorPlayerInventory.ItemId itemId;
@@ -94,7 +94,7 @@ public struct AIDirectorPlayerInventory : IEquatable<AIDirectorPlayerInventory>
 			return itemId;
 		}
 
-		// Token: 0x06002047 RID: 8263 RVA: 0x000C3768 File Offset: 0x000C1968
+		// Token: 0x06002064 RID: 8292 RVA: 0x000C3F04 File Offset: 0x000C2104
 		public static AIDirectorPlayerInventory.ItemId Read(BinaryReader stream)
 		{
 			AIDirectorPlayerInventory.ItemId itemId;
@@ -103,26 +103,26 @@ public struct AIDirectorPlayerInventory : IEquatable<AIDirectorPlayerInventory>
 			return itemId;
 		}
 
-		// Token: 0x06002048 RID: 8264 RVA: 0x000C3790 File Offset: 0x000C1990
+		// Token: 0x06002065 RID: 8293 RVA: 0x000C3F2C File Offset: 0x000C212C
 		public void Write(BinaryWriter stream)
 		{
 			stream.Write((short)this.id);
 			stream.Write((short)this.count);
 		}
 
-		// Token: 0x06002049 RID: 8265 RVA: 0x000C37AC File Offset: 0x000C19AC
+		// Token: 0x06002066 RID: 8294 RVA: 0x000C3F48 File Offset: 0x000C2148
 		public bool Equals(AIDirectorPlayerInventory.ItemId other)
 		{
 			return this.id == other.id && this.count == other.count;
 		}
 
-		// Token: 0x04001611 RID: 5649
+		// Token: 0x04001626 RID: 5670
 		public const int kNetworkSize = 4;
 
-		// Token: 0x04001612 RID: 5650
+		// Token: 0x04001627 RID: 5671
 		public int id;
 
-		// Token: 0x04001613 RID: 5651
+		// Token: 0x04001628 RID: 5672
 		public int count;
 	}
 }

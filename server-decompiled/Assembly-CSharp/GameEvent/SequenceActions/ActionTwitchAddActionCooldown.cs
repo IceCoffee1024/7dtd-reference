@@ -5,11 +5,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019D2 RID: 6610
+	// Token: 0x020019F9 RID: 6649
 	[Preserve]
 	public class ActionTwitchAddActionCooldown : ActionBaseClientAction
 	{
-		// Token: 0x0600C923 RID: 51491 RVA: 0x0049E07C File Offset: 0x0049C27C
+		// Token: 0x0600CAAC RID: 51884 RVA: 0x004A4470 File Offset: 0x004A2670
 		public override bool CanPerform(Entity target)
 		{
 			EntityPlayer entityPlayer = target as EntityPlayer;
@@ -20,7 +20,7 @@ namespace GameEvent.SequenceActions
 			return base.CanPerform(target);
 		}
 
-		// Token: 0x0600C924 RID: 51492 RVA: 0x0049E0C8 File Offset: 0x0049C2C8
+		// Token: 0x0600CAAD RID: 51885 RVA: 0x004A44BC File Offset: 0x004A26BC
 		public override void OnClientPerform(Entity target)
 		{
 			TwitchManager twitchManager = TwitchManager.Current;
@@ -77,7 +77,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C925 RID: 51493 RVA: 0x0049E21C File Offset: 0x0049C41C
+		// Token: 0x0600CAAE RID: 51886 RVA: 0x004A4610 File Offset: 0x004A2810
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -86,7 +86,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseEnum<ActionTwitchAddActionCooldown.SearchTypes>(ActionTwitchAddActionCooldown.PropSearchType, ref this.searchType);
 		}
 
-		// Token: 0x0600C926 RID: 51494 RVA: 0x0049E258 File Offset: 0x0049C458
+		// Token: 0x0600CAAF RID: 51887 RVA: 0x004A464C File Offset: 0x004A284C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -98,36 +98,36 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040098AE RID: 39086
+		// Token: 0x040099DF RID: 39391
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float cooldownTime = 5f;
 
-		// Token: 0x040098AF RID: 39087
+		// Token: 0x040099E0 RID: 39392
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string twitchActions = "";
 
-		// Token: 0x040098B0 RID: 39088
+		// Token: 0x040099E1 RID: 39393
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public ActionTwitchAddActionCooldown.SearchTypes searchType;
 
-		// Token: 0x040098B1 RID: 39089
+		// Token: 0x040099E2 RID: 39394
 		public static string PropTime = "time";
 
-		// Token: 0x040098B2 RID: 39090
+		// Token: 0x040099E3 RID: 39395
 		public static string PropTwitchActions = "action_name";
 
-		// Token: 0x040098B3 RID: 39091
+		// Token: 0x040099E4 RID: 39396
 		public static string PropSearchType = "search_type";
 
-		// Token: 0x020019D3 RID: 6611
+		// Token: 0x020019FA RID: 6650
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public enum SearchTypes
 		{
-			// Token: 0x040098B5 RID: 39093
+			// Token: 0x040099E6 RID: 39398
 			Name,
-			// Token: 0x040098B6 RID: 39094
+			// Token: 0x040099E7 RID: 39399
 			Positive,
-			// Token: 0x040098B7 RID: 39095
+			// Token: 0x040099E8 RID: 39400
 			Negative
 		}
 	}

@@ -11,17 +11,17 @@ using UnityEngine.Networking;
 
 namespace Twitch
 {
-	// Token: 0x020017B2 RID: 6066
+	// Token: 0x020017D8 RID: 6104
 	public class ExtensionListener
 	{
-		// Token: 0x0600BBE6 RID: 48102 RVA: 0x0045B8D0 File Offset: 0x00459AD0
+		// Token: 0x0600BD6B RID: 48491 RVA: 0x0046166C File Offset: 0x0045F86C
 		public ExtensionListener()
 		{
 			this.listener = new HttpListener();
 			this.listener.Prefixes.Add("http://localhost:52775/");
 		}
 
-		// Token: 0x0600BBE7 RID: 48103 RVA: 0x0045B93C File Offset: 0x00459B3C
+		// Token: 0x0600BD6C RID: 48492 RVA: 0x004616D8 File Offset: 0x0045F8D8
 		public void StopListener()
 		{
 			this.listener.Stop();
@@ -34,7 +34,7 @@ namespace Twitch
 			votingManager2.VoteStarted = (OnGameEventVoteAction)Delegate.Remove(votingManager2.VoteStarted, new OnGameEventVoteAction(this.pushConfig));
 		}
 
-		// Token: 0x0600BBE8 RID: 48104 RVA: 0x0045B9D6 File Offset: 0x00459BD6
+		// Token: 0x0600BD6D RID: 48493 RVA: 0x00461772 File Offset: 0x0045F972
 		public void RunListener()
 		{
 			Task.Run(delegate
@@ -43,7 +43,7 @@ namespace Twitch
 			});
 		}
 
-		// Token: 0x0600BBE9 RID: 48105 RVA: 0x0045B9EC File Offset: 0x00459BEC
+		// Token: 0x0600BD6E RID: 48494 RVA: 0x00461788 File Offset: 0x0045F988
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void StartListener()
 		{
@@ -110,19 +110,19 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BBEA RID: 48106 RVA: 0x0045BC8E File Offset: 0x00459E8E
+		// Token: 0x0600BD6F RID: 48495 RVA: 0x00461A2A File Offset: 0x0045FC2A
 		public void OnPartyChanged()
 		{
 			this.pushConfigChanges = true;
 		}
 
-		// Token: 0x0600BBEB RID: 48107 RVA: 0x0045BC97 File Offset: 0x00459E97
+		// Token: 0x0600BD70 RID: 48496 RVA: 0x00461A33 File Offset: 0x0045FC33
 		public bool HasCommand()
 		{
 			return this.commands.Count > 0;
 		}
 
-		// Token: 0x0600BBEC RID: 48108 RVA: 0x0045BCA8 File Offset: 0x00459EA8
+		// Token: 0x0600BD71 RID: 48497 RVA: 0x00461A44 File Offset: 0x0045FC44
 		public TwitchExtensionCommand GetCommand()
 		{
 			Queue<TwitchExtensionCommand> queue = this.commands;
@@ -134,7 +134,7 @@ namespace Twitch
 			return twitchExtensionCommand;
 		}
 
-		// Token: 0x0600BBED RID: 48109 RVA: 0x0045BCF0 File Offset: 0x00459EF0
+		// Token: 0x0600BD72 RID: 48498 RVA: 0x00461A8C File Offset: 0x0045FC8C
 		public void Update()
 		{
 			if (!this.isConnected)
@@ -149,7 +149,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BBEE RID: 48110 RVA: 0x0045BD2E File Offset: 0x00459F2E
+		// Token: 0x0600BD73 RID: 48499 RVA: 0x00461ACA File Offset: 0x0045FCCA
 		public void UpdateCooldown()
 		{
 			if (!this.JWT.Equals(string.Empty))
@@ -159,7 +159,7 @@ namespace Twitch
 			}
 		}
 
-		// Token: 0x0600BBEF RID: 48111 RVA: 0x0045BD5C File Offset: 0x00459F5C
+		// Token: 0x0600BD74 RID: 48500 RVA: 0x00461AF8 File Offset: 0x0045FCF8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string GetPubSubStatus()
 		{
@@ -187,21 +187,21 @@ namespace Twitch
 			return "online";
 		}
 
-		// Token: 0x0600BBF0 RID: 48112 RVA: 0x0045BC8E File Offset: 0x00459E8E
+		// Token: 0x0600BD75 RID: 48501 RVA: 0x00461A2A File Offset: 0x0045FC2A
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void pushConfig()
 		{
 			this.pushConfigChanges = true;
 		}
 
-		// Token: 0x0600BBF1 RID: 48113 RVA: 0x0045BDEF File Offset: 0x00459FEF
+		// Token: 0x0600BD76 RID: 48502 RVA: 0x00461B8B File Offset: 0x0045FD8B
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void setConfig(string status)
 		{
 			GameManager.Instance.StartCoroutine(this.pushConfig(status, (status != "offline") ? this.getCommands() : string.Empty));
 		}
 
-		// Token: 0x0600BBF2 RID: 48114 RVA: 0x0045BE20 File Offset: 0x0045A020
+		// Token: 0x0600BD77 RID: 48503 RVA: 0x00461BBC File Offset: 0x0045FDBC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string getCommands()
 		{
@@ -307,7 +307,7 @@ namespace Twitch
 			return stringBuilder.ToString();
 		}
 
-		// Token: 0x0600BBF3 RID: 48115 RVA: 0x0045C164 File Offset: 0x0045A364
+		// Token: 0x0600BD78 RID: 48504 RVA: 0x00461F00 File Offset: 0x00460100
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator pushConfig(string status, string cmds)
 		{
@@ -407,7 +407,7 @@ namespace Twitch
 			yield break;
 		}
 
-		// Token: 0x0600BBF4 RID: 48116 RVA: 0x0045C181 File Offset: 0x0045A381
+		// Token: 0x0600BD79 RID: 48505 RVA: 0x00461F1D File Offset: 0x0046011D
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator notifyStatusChange(string body)
 		{
@@ -432,7 +432,7 @@ namespace Twitch
 			yield break;
 		}
 
-		// Token: 0x0600BBF5 RID: 48117 RVA: 0x0045C197 File Offset: 0x0045A397
+		// Token: 0x0600BD7A RID: 48506 RVA: 0x00461F33 File Offset: 0x00460133
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string constructDevConfigContent(List<string> eventTypes, List<string> players)
 		{
@@ -443,7 +443,7 @@ namespace Twitch
 			});
 		}
 
-		// Token: 0x0600BBF6 RID: 48118 RVA: 0x0045C1B4 File Offset: 0x0045A3B4
+		// Token: 0x0600BD7B RID: 48507 RVA: 0x00461F50 File Offset: 0x00460150
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string constructBroadcasterConfigContent(string status, string cmds)
 		{
@@ -462,7 +462,7 @@ namespace Twitch
 			return JsonConvert.SerializeObject(setConfigRequestData);
 		}
 
-		// Token: 0x0600BBF7 RID: 48119 RVA: 0x0045C268 File Offset: 0x0045A468
+		// Token: 0x0600BD7C RID: 48508 RVA: 0x00462004 File Offset: 0x00460204
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string constructStatusMessage(string status, string cmds, List<string> party)
 		{
@@ -482,81 +482,81 @@ namespace Twitch
 			return JsonConvert.SerializeObject(pubSubStatusRequestData);
 		}
 
-		// Token: 0x04008CB6 RID: 36022
+		// Token: 0x04008DD2 RID: 36306
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string EXTENSION_ID = "k6ji189bf7i4ge8il4iczzw7kpgmjt";
 
-		// Token: 0x04008CB7 RID: 36023
+		// Token: 0x04008DD3 RID: 36307
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string URL = "http://localhost:52775/";
 
-		// Token: 0x04008CB8 RID: 36024
+		// Token: 0x04008DD4 RID: 36308
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly HttpListener listener;
 
-		// Token: 0x04008CB9 RID: 36025
+		// Token: 0x04008DD5 RID: 36309
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool pushConfigChanges;
 
-		// Token: 0x04008CBA RID: 36026
+		// Token: 0x04008DD6 RID: 36310
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string JWT = string.Empty;
 
-		// Token: 0x04008CBB RID: 36027
+		// Token: 0x04008DD7 RID: 36311
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string opaqueId;
 
-		// Token: 0x04008CBC RID: 36028
+		// Token: 0x04008DD8 RID: 36312
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string userId;
 
-		// Token: 0x04008CBD RID: 36029
+		// Token: 0x04008DD9 RID: 36313
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string displayName = string.Empty;
 
-		// Token: 0x04008CBE RID: 36030
+		// Token: 0x04008DDA RID: 36314
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string broadcaster_type = string.Empty;
 
-		// Token: 0x04008CBF RID: 36031
+		// Token: 0x04008DDB RID: 36315
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool inBeta;
 
-		// Token: 0x04008CC0 RID: 36032
+		// Token: 0x04008DDC RID: 36316
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float lastUpdate;
 
-		// Token: 0x04008CC1 RID: 36033
+		// Token: 0x04008DDD RID: 36317
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isConnected;
 
-		// Token: 0x04008CC2 RID: 36034
+		// Token: 0x04008DDE RID: 36318
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Queue<TwitchExtensionCommand> commands = new Queue<TwitchExtensionCommand>();
 
-		// Token: 0x04008CC3 RID: 36035
+		// Token: 0x04008DDF RID: 36319
 		[PublicizedFrom(EAccessModifier.Private)]
 		public List<TwitchAction> tempCommandList = new List<TwitchAction>();
 
-		// Token: 0x020017B3 RID: 6067
+		// Token: 0x020017D9 RID: 6105
 		[Serializable]
 		public class BitCmdVerifyResponse
 		{
-			// Token: 0x04008CC4 RID: 36036
+			// Token: 0x04008DE0 RID: 36320
 			public bool canSend;
 
-			// Token: 0x04008CC5 RID: 36037
+			// Token: 0x04008DE1 RID: 36321
 			public string userId;
 
-			// Token: 0x04008CC6 RID: 36038
+			// Token: 0x04008DE2 RID: 36322
 			public string command;
 		}
 
-		// Token: 0x020017B4 RID: 6068
+		// Token: 0x020017DA RID: 6106
 		[Serializable]
 		public class InBetaResponse
 		{
-			// Token: 0x04008CC7 RID: 36039
+			// Token: 0x04008DE3 RID: 36323
 			public bool inBeta;
 		}
 	}

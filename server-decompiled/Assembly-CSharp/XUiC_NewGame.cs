@@ -8,13 +8,13 @@ using Unity.Profiling;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000E08 RID: 3592
+// Token: 0x02000E1D RID: 3613
 [Preserve]
 public class XUiC_NewGame : XUiC_NewContinueBase
 {
-	// Token: 0x17000C45 RID: 3141
-	// (get) Token: 0x06006E52 RID: 28242 RVA: 0x002AB6F4 File Offset: 0x002A98F4
-	// (set) Token: 0x06006E53 RID: 28243 RVA: 0x002AB6FC File Offset: 0x002A98FC
+	// Token: 0x17000C5E RID: 3166
+	// (get) Token: 0x06006EF2 RID: 28402 RVA: 0x002AEC08 File Offset: 0x002ACE08
+	// (set) Token: 0x06006EF3 RID: 28403 RVA: 0x002AEC10 File Offset: 0x002ACE10
 	[XuiXmlBinding("gamenametooltip")]
 	public string GameNameTooltip
 	{
@@ -33,9 +33,9 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x17000C46 RID: 3142
-	// (get) Token: 0x06006E54 RID: 28244 RVA: 0x002AB71B File Offset: 0x002A991B
-	// (set) Token: 0x06006E55 RID: 28245 RVA: 0x002AB723 File Offset: 0x002A9923
+	// Token: 0x17000C5F RID: 3167
+	// (get) Token: 0x06006EF4 RID: 28404 RVA: 0x002AEC2F File Offset: 0x002ACE2F
+	// (set) Token: 0x06006EF5 RID: 28405 RVA: 0x002AEC37 File Offset: 0x002ACE37
 	[XuiXmlBinding("gamenamevalid")]
 	public bool ValidGameName
 	{
@@ -54,8 +54,8 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x17000C47 RID: 3143
-	// (get) Token: 0x06006E56 RID: 28246 RVA: 0x002AB73D File Offset: 0x002A993D
+	// Token: 0x17000C60 RID: 3168
+	// (get) Token: 0x06006EF6 RID: 28406 RVA: 0x002AEC51 File Offset: 0x002ACE51
 	[XuiXmlBinding("countynamevalid")]
 	public bool CountyNameValid
 	{
@@ -67,8 +67,8 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x17000C48 RID: 3144
-	// (get) Token: 0x06006E57 RID: 28247 RVA: 0x002AB750 File Offset: 0x002A9950
+	// Token: 0x17000C61 RID: 3169
+	// (get) Token: 0x06006EF7 RID: 28407 RVA: 0x002AEC64 File Offset: 0x002ACE64
 	public GameMode SelectedGameMode
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -83,8 +83,8 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x17000C49 RID: 3145
-	// (get) Token: 0x06006E58 RID: 28248 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x17000C62 RID: 3170
+	// (get) Token: 0x06006EF8 RID: 28408 RVA: 0x00010E62 File Offset: 0x0000F062
 	[XuiXmlBinding("iscontinuegame")]
 	public bool IsContinueGame
 	{
@@ -95,8 +95,8 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x17000C4A RID: 3146
-	// (get) Token: 0x06006E59 RID: 28249 RVA: 0x002AB763 File Offset: 0x002A9963
+	// Token: 0x17000C63 RID: 3171
+	// (get) Token: 0x06006EF9 RID: 28409 RVA: 0x002AEC77 File Offset: 0x002ACE77
 	[XuiXmlBinding("worldtype")]
 	public XUiC_NewGame.EWorldType WorldType
 	{
@@ -112,8 +112,8 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x17000C4B RID: 3147
-	// (get) Token: 0x06006E5A RID: 28250 RVA: 0x002AB776 File Offset: 0x002A9976
+	// Token: 0x17000C64 RID: 3172
+	// (get) Token: 0x06006EFA RID: 28410 RVA: 0x002AEC8A File Offset: 0x002ACE8A
 	[XuiXmlBinding("saveStorageTooltip")]
 	public string SaveStorageTooltipKey
 	{
@@ -124,8 +124,8 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x17000C4C RID: 3148
-	// (get) Token: 0x06006E5B RID: 28251 RVA: 0x002AB77E File Offset: 0x002A997E
+	// Token: 0x17000C65 RID: 3173
+	// (get) Token: 0x06006EFB RID: 28411 RVA: 0x002AEC92 File Offset: 0x002ACE92
 	[XuiXmlBinding("saveDataLimitTooltip")]
 	public string SaveDataLimitTooltipKey
 	{
@@ -136,8 +136,8 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x17000C4D RID: 3149
-	// (get) Token: 0x06006E5C RID: 28252 RVA: 0x002AB788 File Offset: 0x002A9988
+	// Token: 0x17000C66 RID: 3174
+	// (get) Token: 0x06006EFC RID: 28412 RVA: 0x002AEC9C File Offset: 0x002ACE9C
 	public XUiC_NewGame.GameWorldInfo? SelectedWorld
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -148,8 +148,8 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x17000C4E RID: 3150
-	// (get) Token: 0x06006E5D RID: 28253 RVA: 0x002AB7B4 File Offset: 0x002A99B4
+	// Token: 0x17000C67 RID: 3175
+	// (get) Token: 0x06006EFD RID: 28413 RVA: 0x002AECC8 File Offset: 0x002ACEC8
 	public GameUtils.WorldInfo SelectedWorldInfo
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -164,8 +164,8 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x17000C4F RID: 3151
-	// (get) Token: 0x06006E5E RID: 28254 RVA: 0x002AB7E0 File Offset: 0x002A99E0
+	// Token: 0x17000C68 RID: 3176
+	// (get) Token: 0x06006EFE RID: 28414 RVA: 0x002AECF4 File Offset: 0x002ACEF4
 	[XuiXmlBinding("worldgameversion")]
 	public string WorldGameVersion
 	{
@@ -185,8 +185,8 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x17000C50 RID: 3152
-	// (get) Token: 0x06006E5F RID: 28255 RVA: 0x002AB840 File Offset: 0x002A9A40
+	// Token: 0x17000C69 RID: 3177
+	// (get) Token: 0x06006EFF RID: 28415 RVA: 0x002AED54 File Offset: 0x002ACF54
 	[XuiXmlBinding("differentworldversion")]
 	public bool DifferentWorldVersion
 	{
@@ -198,8 +198,8 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x17000C51 RID: 3153
-	// (get) Token: 0x06006E60 RID: 28256 RVA: 0x002AB87C File Offset: 0x002A9A7C
+	// Token: 0x17000C6A RID: 3178
+	// (get) Token: 0x06006F00 RID: 28416 RVA: 0x002AED90 File Offset: 0x002ACF90
 	[XuiXmlBinding("mapsize")]
 	public string MapSize
 	{
@@ -215,8 +215,8 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x17000C52 RID: 3154
-	// (get) Token: 0x06006E61 RID: 28257 RVA: 0x002AB8C3 File Offset: 0x002A9AC3
+	// Token: 0x17000C6B RID: 3179
+	// (get) Token: 0x06006F01 RID: 28417 RVA: 0x002AEDD7 File Offset: 0x002ACFD7
 	[XuiXmlBinding("isgenerateworld")]
 	public bool IsGenerateWorld
 	{
@@ -227,8 +227,8 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x17000C53 RID: 3155
-	// (get) Token: 0x06006E62 RID: 28258 RVA: 0x002AB8D0 File Offset: 0x002A9AD0
+	// Token: 0x17000C6C RID: 3180
+	// (get) Token: 0x06006F02 RID: 28418 RVA: 0x002AEDE4 File Offset: 0x002ACFE4
 	[XuiXmlBinding("worldstorageusesdatalimit")]
 	public bool WorldStorageUsesDataLimit
 	{
@@ -240,8 +240,8 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x17000C54 RID: 3156
-	// (get) Token: 0x06006E63 RID: 28259 RVA: 0x002AB905 File Offset: 0x002A9B05
+	// Token: 0x17000C6D RID: 3181
+	// (get) Token: 0x06006F03 RID: 28419 RVA: 0x002AEE19 File Offset: 0x002AD019
 	public override bool PlayIntroMovie
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -251,8 +251,8 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x17000C55 RID: 3157
-	// (get) Token: 0x06006E64 RID: 28260 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000C6E RID: 3182
+	// (get) Token: 0x06006F04 RID: 28420 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowChangingCreativeMode
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -262,7 +262,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x06006E65 RID: 28261 RVA: 0x002AB911 File Offset: 0x002A9B11
+	// Token: 0x06006F05 RID: 28421 RVA: 0x002AEE25 File Offset: 0x002AD025
 	public override void Init()
 	{
 		base.Init();
@@ -271,7 +271,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		SaveDataLimitUIHelper.AddComboBox(this.cbxSaveDataLimit);
 	}
 
-	// Token: 0x06006E66 RID: 28262 RVA: 0x002AB954 File Offset: 0x002A9B54
+	// Token: 0x06006F06 RID: 28422 RVA: 0x002AEE68 File Offset: 0x002AD068
 	public override void OnOpen()
 	{
 		using (this.pmOnOpen.Auto())
@@ -331,7 +331,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x06006E67 RID: 28263 RVA: 0x002ABBCC File Offset: 0x002A9DCC
+	// Token: 0x06006F07 RID: 28423 RVA: 0x002AF0E0 File Offset: 0x002AD2E0
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -339,7 +339,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		this.worldGenerationControls.OnWorldSizeChanged -= this.updateBarPendingValue;
 	}
 
-	// Token: 0x06006E68 RID: 28264 RVA: 0x002ABC0B File Offset: 0x002A9E0B
+	// Token: 0x06006F08 RID: 28424 RVA: 0x002AF11F File Offset: 0x002AD31F
 	[XuiBindEvent("OnPress", "btnGenerateWorld")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnRwgPreviewerOnOnPressed(XUiController _sender, int _mouseButton)
@@ -347,7 +347,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		XUiC_WorldGenerationWindow.Open(this.xui, XUiC_NewGame.ID);
 	}
 
-	// Token: 0x06006E69 RID: 28265 RVA: 0x002ABC1D File Offset: 0x002A9E1D
+	// Token: 0x06006F09 RID: 28425 RVA: 0x002AF131 File Offset: 0x002AD331
 	[XuiBindEvent("OnValueChanged", "cbxGameMode")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxGameMode_OnValueChanged(XUiController _sender, GameMode _oldValue, GameMode _newValue)
@@ -355,7 +355,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		this.gameModeChanged(_newValue);
 	}
 
-	// Token: 0x06006E6A RID: 28266 RVA: 0x002ABC26 File Offset: 0x002A9E26
+	// Token: 0x06006F0A RID: 28426 RVA: 0x002AF13A File Offset: 0x002AD33A
 	[XuiBindEvent("OnValueChanged", "cbxWorldType")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxWorldType_OnValueChanged(XUiController _sender, XUiC_NewGame.EWorldType _oldValue, XUiC_NewGame.EWorldType _newValue)
@@ -365,7 +365,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		this.validateStartable();
 	}
 
-	// Token: 0x06006E6B RID: 28267 RVA: 0x002ABC3C File Offset: 0x002A9E3C
+	// Token: 0x06006F0B RID: 28427 RVA: 0x002AF150 File Offset: 0x002AD350
 	[XuiBindEvent("OnValueChanged", "cbxWorldName")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxWorldName_OnValueChanged(XUiController _sender, XUiC_NewGame.GameWorldInfo _oldValue, XUiC_NewGame.GameWorldInfo _newValue)
@@ -385,7 +385,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		this.validateStartable();
 	}
 
-	// Token: 0x06006E6C RID: 28268 RVA: 0x002ABCA7 File Offset: 0x002A9EA7
+	// Token: 0x06006F0C RID: 28428 RVA: 0x002AF1BB File Offset: 0x002AD3BB
 	[XuiBindEvent("OnChangeHandler", "txtGameName")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TxtGameName_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
@@ -394,7 +394,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		this.validateStartable();
 	}
 
-	// Token: 0x06006E6D RID: 28269 RVA: 0x002ABCB7 File Offset: 0x002A9EB7
+	// Token: 0x06006F0D RID: 28429 RVA: 0x002AF1CB File Offset: 0x002AD3CB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxSaveDataLimit_OnValueChanged()
 	{
@@ -402,7 +402,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		this.updateBarPendingValue();
 	}
 
-	// Token: 0x06006E6E RID: 28270 RVA: 0x002ABCC6 File Offset: 0x002A9EC6
+	// Token: 0x06006F0E RID: 28430 RVA: 0x002AF1DA File Offset: 0x002AD3DA
 	[XuiBindEvent("OnValueChanged", "cbxGameSaveStorage")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxGameSaveStorage_OnValueChanged(XUiController _sender, UserDataStorageType _oldValue, UserDataStorageType _newValue)
@@ -414,7 +414,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		this.validateStartable();
 	}
 
-	// Token: 0x06006E6F RID: 28271 RVA: 0x002ABCF2 File Offset: 0x002A9EF2
+	// Token: 0x06006F0F RID: 28431 RVA: 0x002AF206 File Offset: 0x002AD406
 	[XuiBindEvent("OnGameSaveStorageChanged", "worldGenerationControls")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void worldGenerationGameSaveStorageChanged(UserDataStorageType _newValue)
@@ -425,7 +425,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		this.validateStartable();
 	}
 
-	// Token: 0x06006E70 RID: 28272 RVA: 0x002ABD13 File Offset: 0x002A9F13
+	// Token: 0x06006F10 RID: 28432 RVA: 0x002AF227 File Offset: 0x002AD427
 	[XuiBindEvent("OnWorldStorageChanged", "worldGenerationControls")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void worldGenerationWorldSaveStorageChanged()
@@ -434,7 +434,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		this.validateStartable();
 	}
 
-	// Token: 0x06006E71 RID: 28273 RVA: 0x002ABD24 File Offset: 0x002A9F24
+	// Token: 0x06006F11 RID: 28433 RVA: 0x002AF238 File Offset: 0x002AD438
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void createWorldList()
 	{
@@ -495,7 +495,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x06006E72 RID: 28274 RVA: 0x002ABF0C File Offset: 0x002AA10C
+	// Token: 0x06006F12 RID: 28434 RVA: 0x002AF420 File Offset: 0x002AD620
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateWorlds()
 	{
@@ -516,7 +516,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		this.CbxWorldName_OnValueChanged(this.cbxWorldName, default(XUiC_NewGame.GameWorldInfo), this.SelectedWorld.Value);
 	}
 
-	// Token: 0x06006E73 RID: 28275 RVA: 0x002ABFD4 File Offset: 0x002AA1D4
+	// Token: 0x06006F13 RID: 28435 RVA: 0x002AF4E8 File Offset: 0x002AD6E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void selectWorld(string _worldName)
 	{
@@ -541,7 +541,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		this.CbxWorldName_OnValueChanged(this.cbxWorldName, default(XUiC_NewGame.GameWorldInfo), this.SelectedWorld.Value);
 	}
 
-	// Token: 0x06006E74 RID: 28276 RVA: 0x002AC0CC File Offset: 0x002AA2CC
+	// Token: 0x06006F14 RID: 28436 RVA: 0x002AF5E0 File Offset: 0x002AD7E0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnOpenSandboxSettingsRequested()
 	{
@@ -549,7 +549,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		base.OnOpenSandboxSettingsRequested();
 	}
 
-	// Token: 0x06006E75 RID: 28277 RVA: 0x002AC0E8 File Offset: 0x002AA2E8
+	// Token: 0x06006F15 RID: 28437 RVA: 0x002AF5FC File Offset: 0x002AD7FC
 	[XuiBindEvent("OnPress", "btnDefaults")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnDefaults_OnPressed(XUiController _sender, int _mouseButton)
@@ -560,7 +560,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		this.Settings.UpdateServerEnabledState();
 	}
 
-	// Token: 0x06006E76 RID: 28278 RVA: 0x002AC124 File Offset: 0x002AA324
+	// Token: 0x06006F16 RID: 28438 RVA: 0x002AF638 File Offset: 0x002AD838
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnDataManagementWindowClosed()
 	{
@@ -580,7 +580,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06006E77 RID: 28279 RVA: 0x002AC190 File Offset: 0x002AA390
+	// Token: 0x06006F17 RID: 28439 RVA: 0x002AF6A4 File Offset: 0x002AD8A4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateBarPendingValue()
 	{
@@ -594,7 +594,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		this.validateStartable();
 	}
 
-	// Token: 0x06006E78 RID: 28280 RVA: 0x002AC1E0 File Offset: 0x002AA3E0
+	// Token: 0x06006F18 RID: 28440 RVA: 0x002AF6F4 File Offset: 0x002AD8F4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override IEnumerator startGameCo()
 	{
@@ -657,10 +657,14 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		{
 			XUiC_MessageBoxWindowGroup.ShowNetworkError(this.xui, networkConnectionError, false);
 		}
+		else
+		{
+			XUiC_NewContinueBase.LastStartedNewGame = true;
+		}
 		yield break;
 	}
 
-	// Token: 0x06006E79 RID: 28281 RVA: 0x002AC1F0 File Offset: 0x002AA3F0
+	// Token: 0x06006F19 RID: 28441 RVA: 0x002AF704 File Offset: 0x002AD904
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void gameModeChanged(GameMode _newMode)
 	{
@@ -674,7 +678,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		this.validateStartable();
 	}
 
-	// Token: 0x06006E7A RID: 28282 RVA: 0x002AC248 File Offset: 0x002AA448
+	// Token: 0x06006F1A RID: 28442 RVA: 0x002AF75C File Offset: 0x002AD95C
 	[XuiBindEvent("OnCountyNameChanged", "worldGenerationControls")]
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void validateStartable()
@@ -691,7 +695,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		base.ValidStartableState = flag;
 	}
 
-	// Token: 0x06006E7B RID: 28283 RVA: 0x002AC2A8 File Offset: 0x002AA4A8
+	// Token: 0x06006F1B RID: 28443 RVA: 0x002AF7BC File Offset: 0x002AD9BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool validateGameName(string _worldName)
 	{
@@ -725,7 +729,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		return this.ValidGameName;
 	}
 
-	// Token: 0x06006E7C RID: 28284 RVA: 0x002AC38C File Offset: 0x002AA58C
+	// Token: 0x06006F1C RID: 28444 RVA: 0x002AF8A0 File Offset: 0x002ADAA0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool validateWorld(out string _worldName)
 	{
@@ -750,7 +754,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		return flag2 && flag;
 	}
 
-	// Token: 0x06006E7D RID: 28285 RVA: 0x002AC42C File Offset: 0x002AA62C
+	// Token: 0x06006F1D RID: 28445 RVA: 0x002AF940 File Offset: 0x002ADB40
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool validateStorage()
 	{
@@ -781,7 +785,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		return flag && flag2;
 	}
 
-	// Token: 0x06006E7E RID: 28286 RVA: 0x002AC510 File Offset: 0x002AA710
+	// Token: 0x06006F1E RID: 28446 RVA: 0x002AFA24 File Offset: 0x002ADC24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateInput()
 	{
@@ -795,7 +799,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x06006E7F RID: 28287 RVA: 0x002AC56A File Offset: 0x002AA76A
+	// Token: 0x06006F1F RID: 28447 RVA: 0x002AFA7E File Offset: 0x002ADC7E
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -803,7 +807,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		this.updateInput();
 	}
 
-	// Token: 0x06006E80 RID: 28288 RVA: 0x002AC580 File Offset: 0x002AA780
+	// Token: 0x06006F20 RID: 28448 RVA: 0x002AFA94 File Offset: 0x002ADC94
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void doLoadSaveGameAutomation()
 	{
@@ -840,7 +844,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		}
 	}
 
-	// Token: 0x06006E83 RID: 28291 RVA: 0x002AC670 File Offset: 0x002AA870
+	// Token: 0x06006F23 RID: 28451 RVA: 0x002AFB84 File Offset: 0x002ADD84
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool <updateWorlds>g__CanAddWorld|66_0(XUiC_NewGame.GameWorldInfo _worldInfo)
@@ -871,7 +875,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		return true;
 	}
 
-	// Token: 0x06006E84 RID: 28292 RVA: 0x002AC6DC File Offset: 0x002AA8DC
+	// Token: 0x06006F24 RID: 28452 RVA: 0x002AFBF0 File Offset: 0x002ADDF0
 	[CompilerGenerated]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long <updateBarPendingValue>g__CalculatePendingSaveSize|71_0()
@@ -892,98 +896,98 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 		return SaveDataLimitUIHelper.CurrentValue.CalculateTotalSize(worldSize);
 	}
 
-	// Token: 0x0400538B RID: 21387
+	// Token: 0x0400542F RID: 21551
 	public static string ID = "";
 
-	// Token: 0x0400538C RID: 21388
+	// Token: 0x04005430 RID: 21552
 	[XuiBindComponent("cbxGameMode", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<GameMode> cbxGameMode;
 
-	// Token: 0x0400538D RID: 21389
+	// Token: 0x04005431 RID: 21553
 	[XuiBindComponent("cbxWorldType", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxEnum<XUiC_NewGame.EWorldType> cbxWorldType;
 
-	// Token: 0x0400538E RID: 21390
+	// Token: 0x04005432 RID: 21554
 	[XuiBindComponent("cbxWorldName", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxList<XUiC_NewGame.GameWorldInfo> cbxWorldName;
 
-	// Token: 0x0400538F RID: 21391
+	// Token: 0x04005433 RID: 21555
 	[XuiBindComponent("txtGameName", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_TextInput txtGameName;
 
-	// Token: 0x04005390 RID: 21392
+	// Token: 0x04005434 RID: 21556
 	[XuiBindComponent("btnDefaults", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnDefaults;
 
-	// Token: 0x04005391 RID: 21393
+	// Token: 0x04005435 RID: 21557
 	[XuiBindComponent("btnGenerateWorld", false)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnGenerateWorld;
 
-	// Token: 0x04005392 RID: 21394
+	// Token: 0x04005436 RID: 21558
 	[XuiBindComponent("cbxSaveDataLimit", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxEnum<SaveDataLimitType> cbxSaveDataLimit;
 
-	// Token: 0x04005393 RID: 21395
+	// Token: 0x04005437 RID: 21559
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string saveDataLimitTooltipKey = string.Empty;
 
-	// Token: 0x04005394 RID: 21396
+	// Token: 0x04005438 RID: 21560
 	[XuiBindComponent("cbxGameSaveStorage", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ComboBoxEnum<UserDataStorageType> cbxGameSaveStorage;
 
-	// Token: 0x04005395 RID: 21397
+	// Token: 0x04005439 RID: 21561
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string saveStorageTooltipKey = string.Empty;
 
-	// Token: 0x04005396 RID: 21398
+	// Token: 0x0400543A RID: 21562
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_WorldGenerationWindow worldGenerationControls;
 
-	// Token: 0x04005397 RID: 21399
+	// Token: 0x0400543B RID: 21563
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly Dictionary<EnumGameMode, List<XUiC_NewGame.GameWorldInfo>> worldsPerMode = new EnumDictionary<EnumGameMode, List<XUiC_NewGame.GameWorldInfo>>();
 
-	// Token: 0x04005398 RID: 21400
+	// Token: 0x0400543C RID: 21564
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long pendingPreviewSize;
 
-	// Token: 0x04005399 RID: 21401
+	// Token: 0x0400543D RID: 21565
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string gameNameTooltip = "";
 
-	// Token: 0x0400539A RID: 21402
+	// Token: 0x0400543E RID: 21566
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool validGameName;
 
-	// Token: 0x0400539B RID: 21403
+	// Token: 0x0400543F RID: 21567
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly ProfilerMarker pmOnOpen = new ProfilerMarker("OnOpen");
 
-	// Token: 0x02000E09 RID: 3593
+	// Token: 0x02000E1E RID: 3614
 	public enum EWorldType
 	{
-		// Token: 0x0400539D RID: 21405
+		// Token: 0x04005441 RID: 21569
 		Handmade,
-		// Token: 0x0400539E RID: 21406
+		// Token: 0x04005442 RID: 21570
 		ExistingRandom,
-		// Token: 0x0400539F RID: 21407
+		// Token: 0x04005443 RID: 21571
 		CreateRandom
 	}
 
-	// Token: 0x02000E0A RID: 3594
+	// Token: 0x02000E1F RID: 3615
 	public struct GameWorldInfo
 	{
-		// Token: 0x17000C56 RID: 3158
-		// (get) Token: 0x06006E85 RID: 28293 RVA: 0x002AC74A File Offset: 0x002AA94A
+		// Token: 0x17000C6F RID: 3183
+		// (get) Token: 0x06006F25 RID: 28453 RVA: 0x002AFC5E File Offset: 0x002ADE5E
 		public bool IsRandomWorld
 		{
 			get
@@ -993,7 +997,7 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 			}
 		}
 
-		// Token: 0x06006E86 RID: 28294 RVA: 0x002AC760 File Offset: 0x002AA960
+		// Token: 0x06006F26 RID: 28454 RVA: 0x002AFC74 File Offset: 0x002ADE74
 		public override string ToString()
 		{
 			if (PlatformManager.MultiPlatform.UserDataRoaming.IsRoamingOptional && this.Location.Type == PathAbstractions.EAbstractedLocationType.UserDataPath)
@@ -1003,19 +1007,19 @@ public class XUiC_NewGame : XUiC_NewContinueBase
 			return this.RealName;
 		}
 
-		// Token: 0x040053A0 RID: 21408
+		// Token: 0x04005444 RID: 21572
 		public string RealName;
 
-		// Token: 0x040053A1 RID: 21409
+		// Token: 0x04005445 RID: 21573
 		public string CustName;
 
-		// Token: 0x040053A2 RID: 21410
+		// Token: 0x04005446 RID: 21574
 		public string Description;
 
-		// Token: 0x040053A3 RID: 21411
+		// Token: 0x04005447 RID: 21575
 		public GameUtils.WorldInfo WorldInfo;
 
-		// Token: 0x040053A4 RID: 21412
+		// Token: 0x04005448 RID: 21576
 		public PathAbstractions.AbstractedLocation Location;
 	}
 }

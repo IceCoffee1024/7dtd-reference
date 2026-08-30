@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200101A RID: 4122
+// Token: 0x02001033 RID: 4147
 [Preserve]
 public class XUiC_SignInfoWindow : XUiController
 {
-	// Token: 0x06008277 RID: 33399 RVA: 0x0031B9C4 File Offset: 0x00319BC4
+	// Token: 0x06008369 RID: 33641 RVA: 0x003201EC File Offset: 0x0031E3EC
 	public override void Init()
 	{
 		base.Init();
@@ -33,7 +33,7 @@ public class XUiC_SignInfoWindow : XUiController
 		this.galleryWindow = this.windowGroup.Controller.GetChildByType<XUiC_SignGalleryWindow>();
 	}
 
-	// Token: 0x06008278 RID: 33400 RVA: 0x0031BB1C File Offset: 0x00319D1C
+	// Token: 0x0600836A RID: 33642 RVA: 0x00320344 File Offset: 0x0031E544
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnExport_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -45,7 +45,7 @@ public class XUiC_SignInfoWindow : XUiController
 		Log.Out("Sign png saved to: " + text);
 	}
 
-	// Token: 0x06008279 RID: 33401 RVA: 0x0031BB6C File Offset: 0x00319D6C
+	// Token: 0x0600836B RID: 33643 RVA: 0x00320394 File Offset: 0x0031E594
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnEdit_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -57,7 +57,7 @@ public class XUiC_SignInfoWindow : XUiController
 		XUiC_SignEditorWindow.Open(this.xui.playerUI, this.signData, this.signId);
 	}
 
-	// Token: 0x0600827A RID: 33402 RVA: 0x0031BBC0 File Offset: 0x00319DC0
+	// Token: 0x0600836C RID: 33644 RVA: 0x003203E8 File Offset: 0x0031E5E8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DuplicateSign()
 	{
@@ -73,7 +73,7 @@ public class XUiC_SignInfoWindow : XUiController
 		this.galleryWindow.RefreshAndSelect(globalSignId);
 	}
 
-	// Token: 0x0600827B RID: 33403 RVA: 0x0031BC44 File Offset: 0x00319E44
+	// Token: 0x0600836D RID: 33645 RVA: 0x0032046C File Offset: 0x0031E66C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DeleteSign()
 	{
@@ -85,7 +85,7 @@ public class XUiC_SignInfoWindow : XUiController
 		this.confirmationPrompt.ShowPrompt(Localization.Get("lblSignDeleteTitle", false, null), Localization.Get("lblSignDeleteMessage", false, null), Localization.Get("xuiCancel", false, null), Localization.Get("xuiConfirm", false, null), new Action<XUiC_ConfirmationPrompt.Result>(this.OnDeletionPromptResult));
 	}
 
-	// Token: 0x0600827C RID: 33404 RVA: 0x0031BCB0 File Offset: 0x00319EB0
+	// Token: 0x0600836E RID: 33646 RVA: 0x003204D8 File Offset: 0x0031E6D8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDeletionPromptResult(XUiC_ConfirmationPrompt.Result result)
 	{
@@ -101,14 +101,14 @@ public class XUiC_SignInfoWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600827D RID: 33405 RVA: 0x0031BD0C File Offset: 0x00319F0C
+	// Token: 0x0600836F RID: 33647 RVA: 0x00320534 File Offset: 0x0031E734
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnWillRender(Material mat)
 	{
 		SignDataManager.Instance.TryApplyRenderingData(this.signId, 1f, mat, null, SignUIStyle.Standard);
 	}
 
-	// Token: 0x0600827E RID: 33406 RVA: 0x0031BD27 File Offset: 0x00319F27
+	// Token: 0x06008370 RID: 33648 RVA: 0x0032054F File Offset: 0x0031E74F
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -119,7 +119,7 @@ public class XUiC_SignInfoWindow : XUiController
 		}
 	}
 
-	// Token: 0x0600827F RID: 33407 RVA: 0x0031BD52 File Offset: 0x00319F52
+	// Token: 0x06008371 RID: 33649 RVA: 0x0032057A File Offset: 0x0031E77A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateInputs()
 	{
@@ -137,7 +137,7 @@ public class XUiC_SignInfoWindow : XUiController
 		}
 	}
 
-	// Token: 0x06008280 RID: 33408 RVA: 0x0031BD90 File Offset: 0x00319F90
+	// Token: 0x06008372 RID: 33650 RVA: 0x003205B8 File Offset: 0x0031E7B8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -170,7 +170,7 @@ public class XUiC_SignInfoWindow : XUiController
 		return true;
 	}
 
-	// Token: 0x06008281 RID: 33409 RVA: 0x0031BE78 File Offset: 0x0031A078
+	// Token: 0x06008373 RID: 33651 RVA: 0x003206A0 File Offset: 0x0031E8A0
 	public void SetSignInfo(GlobalSignId signId)
 	{
 		SignData signData;
@@ -186,39 +186,39 @@ public class XUiC_SignInfoWindow : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x040060B9 RID: 24761
+	// Token: 0x04006180 RID: 24960
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GlobalSignId signId = GlobalSignId.InvalidId;
 
-	// Token: 0x040060BA RID: 24762
+	// Token: 0x04006181 RID: 24961
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignData signData;
 
-	// Token: 0x040060BB RID: 24763
+	// Token: 0x04006182 RID: 24962
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Texture signMaterial;
 
-	// Token: 0x040060BC RID: 24764
+	// Token: 0x04006183 RID: 24963
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnEdit;
 
-	// Token: 0x040060BD RID: 24765
+	// Token: 0x04006184 RID: 24964
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnDuplicate;
 
-	// Token: 0x040060BE RID: 24766
+	// Token: 0x04006185 RID: 24965
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnDelete;
 
-	// Token: 0x040060BF RID: 24767
+	// Token: 0x04006186 RID: 24966
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnExport;
 
-	// Token: 0x040060C0 RID: 24768
+	// Token: 0x04006187 RID: 24967
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SignGalleryWindow galleryWindow;
 
-	// Token: 0x040060C1 RID: 24769
+	// Token: 0x04006188 RID: 24968
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ConfirmationPrompt confirmationPrompt;
 }

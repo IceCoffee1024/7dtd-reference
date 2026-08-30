@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020002A9 RID: 681
+// Token: 0x020002AD RID: 685
 [Preserve]
 public class ConsoleCmdTeleportPoi : ConsoleCmdAbstract
 {
-	// Token: 0x060013BC RID: 5052 RVA: 0x00078450 File Offset: 0x00076650
+	// Token: 0x060013CE RID: 5070 RVA: 0x00078AAC File Offset: 0x00076CAC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "tppoi" };
 	}
 
-	// Token: 0x17000223 RID: 547
-	// (get) Token: 0x060013BD RID: 5053 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000224 RID: 548
+	// (get) Token: 0x060013CF RID: 5071 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -23,14 +23,14 @@ public class ConsoleCmdTeleportPoi : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060013BE RID: 5054 RVA: 0x00078460 File Offset: 0x00076660
+	// Token: 0x060013D0 RID: 5072 RVA: 0x00078ABC File Offset: 0x00076CBC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Open POI Teleporter window";
 	}
 
-	// Token: 0x060013BF RID: 5055 RVA: 0x00078468 File Offset: 0x00076668
+	// Token: 0x060013D1 RID: 5073 RVA: 0x00078AC4 File Offset: 0x00076CC4
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (!_senderInfo.IsLocalGame)

@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x020010C4 RID: 4292
+// Token: 0x020010DD RID: 4317
 public class CraftingCategoryDisplayEntry
 {
-	// Token: 0x04006576 RID: 25974
+	// Token: 0x0400663D RID: 26173
 	public string Name = "";
 
-	// Token: 0x04006577 RID: 25975
+	// Token: 0x0400663E RID: 26174
 	public string Icon = "";
 
-	// Token: 0x04006578 RID: 25976
+	// Token: 0x0400663F RID: 26175
 	public string DisplayName = "";
 }

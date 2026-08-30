@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x0200193C RID: 6460
+	// Token: 0x02001962 RID: 6498
 	[Preserve]
 	public class ActionAddSkillPoints : ActionBaseClientAction
 	{
-		// Token: 0x0600C66B RID: 50795 RVA: 0x0048EFC4 File Offset: 0x0048D1C4
+		// Token: 0x0600C7F2 RID: 51186 RVA: 0x00495310 File Offset: 0x00493510
 		public override void OnClientPerform(Entity target)
 		{
 			EntityPlayer entityPlayer = target as EntityPlayer;
@@ -22,14 +22,14 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C66C RID: 50796 RVA: 0x0048F001 File Offset: 0x0048D201
+		// Token: 0x0600C7F3 RID: 51187 RVA: 0x0049534D File Offset: 0x0049354D
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseString(ActionAddSkillPoints.PropSkillPoints, ref this.skillPointsText);
 		}
 
-		// Token: 0x0600C66D RID: 50797 RVA: 0x0048F01B File Offset: 0x0048D21B
+		// Token: 0x0600C7F4 RID: 51188 RVA: 0x00495367 File Offset: 0x00493567
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -39,11 +39,11 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009593 RID: 38291
+		// Token: 0x040096BC RID: 38588
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string skillPointsText = "";
 
-		// Token: 0x04009594 RID: 38292
+		// Token: 0x040096BD RID: 38589
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSkillPoints = "skill_points";
 	}

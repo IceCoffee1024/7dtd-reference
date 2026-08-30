@@ -1,5 +1,5 @@
 ﻿using System;
 
-// Token: 0x020009B9 RID: 2489
-// (Invoke) Token: 0x060049D6 RID: 18902
+// Token: 0x020009CA RID: 2506
+// (Invoke) Token: 0x06004A5C RID: 19036
 public delegate void QuestEvent_ItemValueActionEvent(ItemValue stack);

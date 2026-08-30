@@ -10,11 +10,11 @@ using Webserver.FileCache;
 
 namespace MapRendering
 {
-	// Token: 0x02001A87 RID: 6791
+	// Token: 0x02001AAE RID: 6830
 	public class MapRenderer
 	{
-		// Token: 0x170018F6 RID: 6390
-		// (get) Token: 0x0600CC87 RID: 52359 RVA: 0x004A7E47 File Offset: 0x004A6047
+		// Token: 0x17001968 RID: 6504
+		// (get) Token: 0x0600CE10 RID: 52752 RVA: 0x004AE23B File Offset: 0x004AC43B
 		public static bool Enabled
 		{
 			get
@@ -23,7 +23,7 @@ namespace MapRendering
 			}
 		}
 
-		// Token: 0x0600CC88 RID: 52360 RVA: 0x004A7E64 File Offset: 0x004A6064
+		// Token: 0x0600CE11 RID: 52753 RVA: 0x004AE258 File Offset: 0x004AC458
 		[PublicizedFrom(EAccessModifier.Private)]
 		public MapRenderer()
 		{
@@ -41,8 +41,8 @@ namespace MapRendering
 			this.renderCoroutineRef = ThreadManager.StartCoroutine(this.renderCoroutine());
 		}
 
-		// Token: 0x170018F7 RID: 6391
-		// (get) Token: 0x0600CC89 RID: 52361 RVA: 0x004A7F45 File Offset: 0x004A6145
+		// Token: 0x17001969 RID: 6505
+		// (get) Token: 0x0600CE12 RID: 52754 RVA: 0x004AE339 File Offset: 0x004AC539
 		public static bool HasInstance
 		{
 			get
@@ -51,8 +51,8 @@ namespace MapRendering
 			}
 		}
 
-		// Token: 0x170018F8 RID: 6392
-		// (get) Token: 0x0600CC8A RID: 52362 RVA: 0x004A7F4F File Offset: 0x004A614F
+		// Token: 0x1700196A RID: 6506
+		// (get) Token: 0x0600CE13 RID: 52755 RVA: 0x004AE343 File Offset: 0x004AC543
 		public static MapRenderer Instance
 		{
 			get
@@ -66,13 +66,13 @@ namespace MapRendering
 			}
 		}
 
-		// Token: 0x0600CC8B RID: 52363 RVA: 0x004A7F65 File Offset: 0x004A6165
+		// Token: 0x0600CE14 RID: 52756 RVA: 0x004AE359 File Offset: 0x004AC559
 		public static AbstractCache GetTileCache()
 		{
 			return MapRenderer.Instance.cache;
 		}
 
-		// Token: 0x0600CC8C RID: 52364 RVA: 0x004A7F74 File Offset: 0x004A6174
+		// Token: 0x0600CE15 RID: 52757 RVA: 0x004AE368 File Offset: 0x004AC568
 		public static void Shutdown()
 		{
 			if (MapRenderer.instance == null)
@@ -88,7 +88,7 @@ namespace MapRendering
 			MapRenderer.instance = null;
 		}
 
-		// Token: 0x0600CC8D RID: 52365 RVA: 0x004A7FC0 File Offset: 0x004A61C0
+		// Token: 0x0600CE16 RID: 52758 RVA: 0x004AE3B4 File Offset: 0x004AC5B4
 		public static void RenderSingleChunk(Chunk _chunk)
 		{
 			if (!MapRenderer.renderingEnabled || MapRenderer.instance == null)
@@ -127,7 +127,7 @@ namespace MapRendering
 			}, _chunk);
 		}
 
-		// Token: 0x0600CC8E RID: 52366 RVA: 0x004A7FF8 File Offset: 0x004A61F8
+		// Token: 0x0600CE17 RID: 52759 RVA: 0x004AE3EC File Offset: 0x004AC5EC
 		public void RenderFullMap()
 		{
 			MicroStopwatch microStopwatch = new MicroStopwatch();
@@ -228,7 +228,7 @@ namespace MapRendering
 			Log.Out(string.Format("World extent: {0} - {1}", vector2i3, vector2i4));
 		}
 
-		// Token: 0x0600CC8F RID: 52367 RVA: 0x004A8364 File Offset: 0x004A6564
+		// Token: 0x0600CE18 RID: 52760 RVA: 0x004AE758 File Offset: 0x004AC958
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void SaveAllBlockMaps()
 		{
@@ -238,7 +238,7 @@ namespace MapRendering
 			}
 		}
 
-		// Token: 0x0600CC90 RID: 52368 RVA: 0x004A838E File Offset: 0x004A658E
+		// Token: 0x0600CE19 RID: 52761 RVA: 0x004AE782 File Offset: 0x004AC982
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator renderCoroutine()
 		{
@@ -261,7 +261,7 @@ namespace MapRendering
 			yield break;
 		}
 
-		// Token: 0x0600CC91 RID: 52369 RVA: 0x004A83A0 File Offset: 0x004A65A0
+		// Token: 0x0600CE1A RID: 52762 RVA: 0x004AE794 File Offset: 0x004AC994
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void RenderDirtyChunks()
 		{
@@ -302,7 +302,7 @@ namespace MapRendering
 			this.SaveAllBlockMaps();
 		}
 
-		// Token: 0x0600CC92 RID: 52370 RVA: 0x004A855C File Offset: 0x004A675C
+		// Token: 0x0600CE1B RID: 52763 RVA: 0x004AE950 File Offset: 0x004ACB50
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void RenderZoomLevel(Vector2i _innerBlock)
 		{
@@ -326,7 +326,7 @@ namespace MapRendering
 			}
 		}
 
-		// Token: 0x0600CC93 RID: 52371 RVA: 0x004A8630 File Offset: 0x004A6830
+		// Token: 0x0600CE1C RID: 52764 RVA: 0x004AEA24 File Offset: 0x004ACC24
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void getBlockNumber(Vector2i _innerPos, out Vector2i _block, out Vector2i _blockOffset, int _scaleFactor, int _offsetSize)
 		{
@@ -338,7 +338,7 @@ namespace MapRendering
 			_blockOffset.y = (_innerPos.y + 16777216) % _scaleFactor * _offsetSize;
 		}
 
-		// Token: 0x0600CC94 RID: 52372 RVA: 0x004A86B8 File Offset: 0x004A68B8
+		// Token: 0x0600CE1D RID: 52765 RVA: 0x004AEAAC File Offset: 0x004ACCAC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void WriteMapInfo()
 		{
@@ -354,7 +354,7 @@ namespace MapRendering
 			File.WriteAllBytes(Constants.MapDirectory + "/mapinfo.json", jsonWriter.ToUtf8ByteArray());
 		}
 
-		// Token: 0x0600CC95 RID: 52373 RVA: 0x004A873C File Offset: 0x004A693C
+		// Token: 0x0600CE1E RID: 52766 RVA: 0x004AEB30 File Offset: 0x004ACD30
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool LoadMapInfo()
 		{
@@ -386,7 +386,7 @@ namespace MapRendering
 			return false;
 		}
 
-		// Token: 0x0600CC96 RID: 52374 RVA: 0x004A87FC File Offset: 0x004A69FC
+		// Token: 0x0600CE1F RID: 52767 RVA: 0x004AEBF0 File Offset: 0x004ACDF0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void getWorldExtent(RegionFileManager _rfm, out Vector2i _minChunk, out Vector2i _maxChunk, out Vector2i _minPos, out Vector2i _maxPos, out int _widthChunks, out int _heightChunks, out int _widthPix, out int _heightPix)
 		{
@@ -434,7 +434,7 @@ namespace MapRendering
 			_heightPix = _heightChunks * 16;
 		}
 
-		// Token: 0x0600CC97 RID: 52375 RVA: 0x004A88F8 File Offset: 0x004A6AF8
+		// Token: 0x0600CE20 RID: 52768 RVA: 0x004AECEC File Offset: 0x004ACEEC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static Color32 shortColorToColor32(ushort _col)
 		{
@@ -444,58 +444,58 @@ namespace MapRendering
 			return new Color32(b, b2, b3, byte.MaxValue);
 		}
 
-		// Token: 0x04009AE8 RID: 39656
+		// Token: 0x04009C19 RID: 39961
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static MapRenderer instance;
 
-		// Token: 0x04009AE9 RID: 39657
+		// Token: 0x04009C1A RID: 39962
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static readonly object lockObject = new object();
 
-		// Token: 0x04009AEA RID: 39658
+		// Token: 0x04009C1B RID: 39963
 		public static bool renderingEnabled = true;
 
-		// Token: 0x04009AEB RID: 39659
+		// Token: 0x04009C1C RID: 39964
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly MapTileCache cache = new MapTileCache(Constants.MapBlockSize);
 
-		// Token: 0x04009AEC RID: 39660
+		// Token: 0x04009C1D RID: 39965
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Dictionary<Vector2i, Color32[]> dirtyChunks = new Dictionary<Vector2i, Color32[]>();
 
-		// Token: 0x04009AED RID: 39661
+		// Token: 0x04009C1E RID: 39966
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly MicroStopwatch msw = new MicroStopwatch();
 
-		// Token: 0x04009AEE RID: 39662
+		// Token: 0x04009C1F RID: 39967
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly MapRenderBlockBuffer[] zoomLevelBuffers;
 
-		// Token: 0x04009AEF RID: 39663
+		// Token: 0x04009C20 RID: 39968
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Coroutine renderCoroutineRef;
 
-		// Token: 0x04009AF0 RID: 39664
+		// Token: 0x04009C21 RID: 39969
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool renderingFullMap;
 
-		// Token: 0x04009AF1 RID: 39665
+		// Token: 0x04009C22 RID: 39970
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float renderTimeout = float.MaxValue;
 
-		// Token: 0x04009AF2 RID: 39666
+		// Token: 0x04009C23 RID: 39971
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool shutdown;
 
-		// Token: 0x04009AF3 RID: 39667
+		// Token: 0x04009C24 RID: 39972
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly WaitForSeconds coroutineDelay = new WaitForSeconds(0.2f);
 
-		// Token: 0x04009AF4 RID: 39668
+		// Token: 0x04009C25 RID: 39973
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly List<Vector2i> chunksToRender = new List<Vector2i>();
 
-		// Token: 0x04009AF5 RID: 39669
+		// Token: 0x04009C26 RID: 39974
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly List<Vector2i> chunksRendered = new List<Vector2i>();
 	}

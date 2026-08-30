@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000457 RID: 1111
+// Token: 0x0200045B RID: 1115
 [Preserve]
 public class EAITaskList
 {
-	// Token: 0x060021D5 RID: 8661 RVA: 0x000CCC9C File Offset: 0x000CAE9C
+	// Token: 0x060021F2 RID: 8690 RVA: 0x000CD438 File Offset: 0x000CB638
 	public EAITaskList(EAIManager _manager)
 	{
 		this.allTasks = new List<EAITaskEntry>();
@@ -14,13 +14,13 @@ public class EAITaskList
 		this.executeDelayScale = 0.85f + _manager.random.RandomFloat * 0.25f;
 	}
 
-	// Token: 0x060021D6 RID: 8662 RVA: 0x000CCCED File Offset: 0x000CAEED
+	// Token: 0x060021F3 RID: 8691 RVA: 0x000CD489 File Offset: 0x000CB689
 	public void AddTask(int _priority, EAIBase _eai)
 	{
 		this.allTasks.Add(new EAITaskEntry(_priority, _eai));
 	}
 
-	// Token: 0x060021D7 RID: 8663 RVA: 0x000CCD04 File Offset: 0x000CAF04
+	// Token: 0x060021F4 RID: 8692 RVA: 0x000CD4A0 File Offset: 0x000CB6A0
 	public void AddTaskList(EAITaskList _taskList)
 	{
 		for (int i = 0; i < _taskList.Tasks.Count; i++)
@@ -29,7 +29,7 @@ public class EAITaskList
 		}
 	}
 
-	// Token: 0x060021D8 RID: 8664 RVA: 0x000CCD3E File Offset: 0x000CAF3E
+	// Token: 0x060021F5 RID: 8693 RVA: 0x000CD4DA File Offset: 0x000CB6DA
 	public void RemoveTask(EAITaskEntry _entry)
 	{
 		this.allTasks.Remove(_entry);
@@ -39,8 +39,8 @@ public class EAITaskList
 		}
 	}
 
-	// Token: 0x170003E4 RID: 996
-	// (get) Token: 0x060021D9 RID: 8665 RVA: 0x000CCD68 File Offset: 0x000CAF68
+	// Token: 0x170003E8 RID: 1000
+	// (get) Token: 0x060021F6 RID: 8694 RVA: 0x000CD504 File Offset: 0x000CB704
 	public List<EAITaskEntry> Tasks
 	{
 		get
@@ -49,13 +49,13 @@ public class EAITaskList
 		}
 	}
 
-	// Token: 0x060021DA RID: 8666 RVA: 0x000CCD70 File Offset: 0x000CAF70
+	// Token: 0x060021F7 RID: 8695 RVA: 0x000CD50C File Offset: 0x000CB70C
 	public List<EAITaskEntry> GetExecutingTasks()
 	{
 		return this.executingTasks;
 	}
 
-	// Token: 0x060021DB RID: 8667 RVA: 0x000CCD78 File Offset: 0x000CAF78
+	// Token: 0x060021F8 RID: 8696 RVA: 0x000CD514 File Offset: 0x000CB714
 	public T GetTask<T>() where T : class
 	{
 		for (int i = 0; i < this.allTasks.Count; i++)
@@ -69,7 +69,7 @@ public class EAITaskList
 		return default(T);
 	}
 
-	// Token: 0x060021DC RID: 8668 RVA: 0x000CCDCC File Offset: 0x000CAFCC
+	// Token: 0x060021F9 RID: 8697 RVA: 0x000CD568 File Offset: 0x000CB768
 	public void OnUpdateTasks()
 	{
 		this.startedTasks.Clear();
@@ -123,7 +123,7 @@ public class EAITaskList
 		}
 	}
 
-	// Token: 0x060021DD RID: 8669 RVA: 0x000CCF54 File Offset: 0x000CB154
+	// Token: 0x060021FA RID: 8698 RVA: 0x000CD6F0 File Offset: 0x000CB8F0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isBestTask(EAITaskEntry _task)
 	{
@@ -150,14 +150,14 @@ public class EAITaskList
 		return true;
 	}
 
-	// Token: 0x060021DE RID: 8670 RVA: 0x000CCFB0 File Offset: 0x000CB1B0
+	// Token: 0x060021FB RID: 8699 RVA: 0x000CD74C File Offset: 0x000CB94C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool areTasksCompatible(EAITaskEntry _task, EAITaskEntry _other)
 	{
 		return (_task.action.MutexBits & _other.action.MutexBits) == 0;
 	}
 
-	// Token: 0x060021DF RID: 8671 RVA: 0x000CCFCC File Offset: 0x000CB1CC
+	// Token: 0x060021FC RID: 8700 RVA: 0x000CD768 File Offset: 0x000CB968
 	public void StopAllTasks()
 	{
 		this.allTasks.Clear();
@@ -165,19 +165,19 @@ public class EAITaskList
 		this.startedTasks.Clear();
 	}
 
-	// Token: 0x04001762 RID: 5986
+	// Token: 0x04001778 RID: 6008
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<EAITaskEntry> allTasks;
 
-	// Token: 0x04001763 RID: 5987
+	// Token: 0x04001779 RID: 6009
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<EAITaskEntry> executingTasks;
 
-	// Token: 0x04001764 RID: 5988
+	// Token: 0x0400177A RID: 6010
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<EAITaskEntry> startedTasks = new List<EAITaskEntry>();
 
-	// Token: 0x04001765 RID: 5989
+	// Token: 0x0400177B RID: 6011
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float executeDelayScale;
 }

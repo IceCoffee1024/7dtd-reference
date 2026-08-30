@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000126 RID: 294
+// Token: 0x02000127 RID: 295
 public class BlockProjectileMoveScript : ProjectileMoveScript
 {
-	// Token: 0x060007C3 RID: 1987 RVA: 0x00037154 File Offset: 0x00035354
+	// Token: 0x060007CD RID: 1997 RVA: 0x00037444 File Offset: 0x00035644
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void checkCollision()
 	{
@@ -67,10 +67,11 @@ public class BlockProjectileMoveScript : ProjectileMoveScript
 				}
 				DamageSourceEntity damageSourceEntity = new DamageSourceEntity(EnumDamageSource.External, EnumDamageTypes.Piercing, this.ProjectileOwnerID)
 				{
-					AttackingItem = this.itemValueProjectile
+					AttackingItem = this.itemValueProjectile,
+					bIgnorePartyShare = true,
+					bTrapKillXP = true
 				};
 				int num2 = (int)this.GetProjectileDamageEntity();
-				bool flag2 = component.IsDead();
 				component.DamageEntity(damageSourceEntity, num2, false, 1f);
 				if (this.itemActionProjectile.BuffActions != null)
 				{
@@ -79,18 +80,6 @@ public class BlockProjectileMoveScript : ProjectileMoveScript
 					{
 						string text2 = ((text != null) ? GameUtils.GetChildTransformPath(entityAlive2.transform, Voxel.voxelRayHitInfo.transform) : null);
 						ItemAction.ExecuteBuffActions(this.itemActionProjectile.BuffActions, -1, entityAlive2, false, damageSourceEntity.GetEntityDamageBodyPart(entityAlive2), text2);
-					}
-				}
-				if (!flag2 && component.IsDead())
-				{
-					EntityPlayer entityPlayer = instance.World.GetEntity(this.ProjectileOwnerID) as EntityPlayer;
-					if (entityPlayer != null && EntityClass.list.ContainsKey(component.entityClass))
-					{
-						float value = EffectManager.GetValue(PassiveEffects.ElectricalTrapXP, entityPlayer.inventory.holdingItemItemValue, 0f, entityPlayer, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false);
-						if (value > 0f)
-						{
-							entityPlayer.AddKillXP(component as EntityAlive, this.itemValueProjectile, value);
-						}
 					}
 				}
 			}
@@ -108,7 +97,7 @@ public class BlockProjectileMoveScript : ProjectileMoveScript
 		}
 	}
 
-	// Token: 0x060007C4 RID: 1988 RVA: 0x000374F3 File Offset: 0x000356F3
+	// Token: 0x060007CE RID: 1998 RVA: 0x00037753 File Offset: 0x00035953
 	public float GetProjectileDamageEntity()
 	{
 		return this.itemActionProjectile.GetDamageEntity(this.itemValueProjectile, null, 0);

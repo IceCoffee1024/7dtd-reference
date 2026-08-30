@@ -7,7 +7,7 @@ using UnityEngine.Scripting;
 public class AvatarLocalPlayerController : AvatarCharacterController
 {
 	// Token: 0x17000050 RID: 80
-	// (get) Token: 0x060004CC RID: 1228 RVA: 0x000213B8 File Offset: 0x0001F5B8
+	// (get) Token: 0x060004CD RID: 1229 RVA: 0x0002147C File Offset: 0x0001F67C
 	public BodyAnimator FPSArms
 	{
 		get
@@ -16,7 +16,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		}
 	}
 
-	// Token: 0x060004CD RID: 1229 RVA: 0x000213C0 File Offset: 0x0001F5C0
+	// Token: 0x060004CE RID: 1230 RVA: 0x00021484 File Offset: 0x0001F684
 	public override void SwitchModelAndView(string _modelName, bool _bFPV, bool _bMale)
 	{
 		base.SwitchModelAndView(_modelName, _bFPV, _bMale);
@@ -72,7 +72,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		}
 	}
 
-	// Token: 0x060004CE RID: 1230 RVA: 0x0002156D File Offset: 0x0001F76D
+	// Token: 0x060004CF RID: 1231 RVA: 0x00021631 File Offset: 0x0001F831
 	public void TPVResetAnimPose()
 	{
 		if (this.anim)
@@ -82,7 +82,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		}
 	}
 
-	// Token: 0x060004CF RID: 1231 RVA: 0x00021590 File Offset: 0x0001F790
+	// Token: 0x060004D0 RID: 1232 RVA: 0x00021654 File Offset: 0x0001F854
 	public override void SetInRightHand(Transform _transform)
 	{
 		base.SetInRightHand(_transform);
@@ -97,7 +97,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		}
 	}
 
-	// Token: 0x060004D0 RID: 1232 RVA: 0x000215E9 File Offset: 0x0001F7E9
+	// Token: 0x060004D1 RID: 1233 RVA: 0x000216AD File Offset: 0x0001F8AD
 	public override Transform GetActiveModelRoot()
 	{
 		if (base.PrimaryBody == null || base.PrimaryBody.Parts == null)
@@ -107,7 +107,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		return base.PrimaryBody.Parts.BodyObj.transform;
 	}
 
-	// Token: 0x060004D1 RID: 1233 RVA: 0x00021618 File Offset: 0x0001F818
+	// Token: 0x060004D2 RID: 1234 RVA: 0x000216DC File Offset: 0x0001F8DC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void avatarVisibilityChanged(BodyAnimator _body, bool _bVisible)
 	{
@@ -127,7 +127,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		}
 	}
 
-	// Token: 0x060004D2 RID: 1234 RVA: 0x00021668 File Offset: 0x0001F868
+	// Token: 0x060004D3 RID: 1235 RVA: 0x0002172C File Offset: 0x0001F92C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void LateUpdate()
 	{
@@ -143,7 +143,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		}
 	}
 
-	// Token: 0x060004D3 RID: 1235 RVA: 0x000216B8 File Offset: 0x0001F8B8
+	// Token: 0x060004D4 RID: 1236 RVA: 0x0002177C File Offset: 0x0001F97C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override BodyAnimator createCharacterBody(Transform _bodyTransform)
 	{
@@ -151,7 +151,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		return new UMACharacterBodyAnimator(base.Entity, animationStates, _bodyTransform, BodyAnimator.EnumState.Disabled);
 	}
 
-	// Token: 0x060004D4 RID: 1236 RVA: 0x000216F1 File Offset: 0x0001F8F1
+	// Token: 0x060004D5 RID: 1237 RVA: 0x000217B5 File Offset: 0x0001F9B5
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void initBodyAnimator(BodyAnimator _body, bool _bFPV, bool _bMale)
 	{
@@ -162,7 +162,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		}
 	}
 
-	// Token: 0x060004D5 RID: 1237 RVA: 0x00021718 File Offset: 0x0001F918
+	// Token: 0x060004D6 RID: 1238 RVA: 0x000217DC File Offset: 0x0001F9DC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual BodyAnimator createFPSArms(Transform _fpsArmsTransform)
 	{
@@ -170,7 +170,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		return new FirstPersonAnimator(base.Entity, animationStates, _fpsArmsTransform, BodyAnimator.EnumState.Disabled);
 	}
 
-	// Token: 0x060004D6 RID: 1238 RVA: 0x00021751 File Offset: 0x0001F951
+	// Token: 0x060004D7 RID: 1239 RVA: 0x00021815 File Offset: 0x0001FA15
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void _setTrigger(int _pid, bool _netsync = true)
 	{
@@ -181,7 +181,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		}
 	}
 
-	// Token: 0x060004D7 RID: 1239 RVA: 0x00021775 File Offset: 0x0001F975
+	// Token: 0x060004D8 RID: 1240 RVA: 0x00021839 File Offset: 0x0001FA39
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void _resetTrigger(int _pid, bool _netsync = true)
 	{
@@ -192,7 +192,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		}
 	}
 
-	// Token: 0x060004D8 RID: 1240 RVA: 0x00021799 File Offset: 0x0001F999
+	// Token: 0x060004D9 RID: 1241 RVA: 0x0002185D File Offset: 0x0001FA5D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void _setFloat(int _pid, float _value, bool _netsync = true)
 	{
@@ -203,7 +203,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		}
 	}
 
-	// Token: 0x060004D9 RID: 1241 RVA: 0x000217BF File Offset: 0x0001F9BF
+	// Token: 0x060004DA RID: 1242 RVA: 0x00021883 File Offset: 0x0001FA83
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void _setBool(int _pid, bool _value, bool _netsync = true)
 	{
@@ -214,7 +214,7 @@ public class AvatarLocalPlayerController : AvatarCharacterController
 		}
 	}
 
-	// Token: 0x060004DA RID: 1242 RVA: 0x000217E5 File Offset: 0x0001F9E5
+	// Token: 0x060004DB RID: 1243 RVA: 0x000218A9 File Offset: 0x0001FAA9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void _setInt(int _pid, int _value, bool _netsync = true)
 	{

@@ -1,6 +1,6 @@
 ﻿using System;
 
-// Token: 0x02001211 RID: 4625
+// Token: 0x0200122D RID: 4653
 public class InputAxisHelper
 {
 }

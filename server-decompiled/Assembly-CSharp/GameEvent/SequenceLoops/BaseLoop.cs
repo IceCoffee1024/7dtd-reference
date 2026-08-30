@@ -5,11 +5,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceLoops
 {
-	// Token: 0x02001924 RID: 6436
+	// Token: 0x0200194A RID: 6474
 	[Preserve]
 	public class BaseLoop : BaseAction
 	{
-		// Token: 0x0600C5FB RID: 50683 RVA: 0x0048BE88 File Offset: 0x0048A088
+		// Token: 0x0600C782 RID: 51074 RVA: 0x004921D4 File Offset: 0x004903D4
 		public override void SetActionKeyData(int _actionIndex, BaseAction _parent, string prefix = "")
 		{
 			base.SetActionKeyData(_actionIndex, _parent, prefix);
@@ -19,7 +19,7 @@ namespace GameEvent.SequenceLoops
 			}
 		}
 
-		// Token: 0x0600C5FC RID: 50684 RVA: 0x0048BECC File Offset: 0x0048A0CC
+		// Token: 0x0600C783 RID: 51075 RVA: 0x00492218 File Offset: 0x00490418
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
@@ -41,7 +41,7 @@ namespace GameEvent.SequenceLoops
 			this.PhaseMax = 0;
 		}
 
-		// Token: 0x0600C5FD RID: 50685 RVA: 0x0048BF58 File Offset: 0x0048A158
+		// Token: 0x0600C784 RID: 51076 RVA: 0x004922A4 File Offset: 0x004904A4
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public BaseAction.ActionCompleteStates HandleActions()
 		{
@@ -102,7 +102,7 @@ namespace GameEvent.SequenceLoops
 			return BaseAction.ActionCompleteStates.InComplete;
 		}
 
-		// Token: 0x0600C5FE RID: 50686 RVA: 0x0048C11C File Offset: 0x0048A31C
+		// Token: 0x0600C785 RID: 51077 RVA: 0x00492468 File Offset: 0x00490668
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnReset()
 		{
@@ -114,7 +114,7 @@ namespace GameEvent.SequenceLoops
 			}
 		}
 
-		// Token: 0x0600C5FF RID: 50687 RVA: 0x0048C160 File Offset: 0x0048A360
+		// Token: 0x0600C786 RID: 51078 RVA: 0x004924AC File Offset: 0x004906AC
 		public override void HandleTemplateInit(GameEventActionSequence seq)
 		{
 			base.HandleTemplateInit(seq);
@@ -124,7 +124,7 @@ namespace GameEvent.SequenceLoops
 			}
 		}
 
-		// Token: 0x0600C600 RID: 50688 RVA: 0x0048C19C File Offset: 0x0048A39C
+		// Token: 0x0600C787 RID: 51079 RVA: 0x004924E8 File Offset: 0x004906E8
 		public override BaseAction Clone()
 		{
 			BaseLoop baseLoop = (BaseLoop)base.Clone();
@@ -136,13 +136,13 @@ namespace GameEvent.SequenceLoops
 			return baseLoop;
 		}
 
-		// Token: 0x04009501 RID: 38145
+		// Token: 0x0400962A RID: 38442
 		public List<BaseAction> Actions = new List<BaseAction>();
 
-		// Token: 0x04009502 RID: 38146
+		// Token: 0x0400962B RID: 38443
 		public int PhaseMax = 1;
 
-		// Token: 0x04009503 RID: 38147
+		// Token: 0x0400962C RID: 38444
 		public int CurrentPhase;
 	}
 }

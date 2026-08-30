@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace GearVariants
 {
-	// Token: 0x020016CA RID: 5834
+	// Token: 0x020016F0 RID: 5872
 	[Serializable]
 	public class SexGearTables
 	{
-		// Token: 0x0600B5C4 RID: 46532 RVA: 0x00439A4B File Offset: 0x00437C4B
+		// Token: 0x0600B747 RID: 46919 RVA: 0x0043F7C3 File Offset: 0x0043D9C3
 		public StringTable2D GetTable(GearVariantMatrixSO.GearPart part)
 		{
 			switch (part)
@@ -24,7 +24,7 @@ namespace GearVariants
 			}
 		}
 
-		// Token: 0x0600B5C5 RID: 46533 RVA: 0x00439A7C File Offset: 0x00437C7C
+		// Token: 0x0600B748 RID: 46920 RVA: 0x0043F7F4 File Offset: 0x0043D9F4
 		public void EnsureShapes()
 		{
 			while (this.gearGuids.Count < this.gearPaths.Count)
@@ -40,7 +40,7 @@ namespace GearVariants
 			this.feet.EnsureShapeSymmetric(this.gearPaths, this.gearGuids);
 		}
 
-		// Token: 0x0600B5C6 RID: 46534 RVA: 0x00439B40 File Offset: 0x00437D40
+		// Token: 0x0600B749 RID: 46921 RVA: 0x0043F8B8 File Offset: 0x0043DAB8
 		public void ApplyUnifiedReorder(IList<string> newOrder)
 		{
 			if (newOrder == null)
@@ -77,19 +77,19 @@ namespace GearVariants
 			this.feet.ApplyReorder(array);
 		}
 
-		// Token: 0x040087DC RID: 34780
+		// Token: 0x040088F8 RID: 35064
 		public List<string> gearPaths = new List<string>();
 
-		// Token: 0x040087DD RID: 34781
+		// Token: 0x040088F9 RID: 35065
 		public List<string> gearGuids = new List<string>();
 
-		// Token: 0x040087DE RID: 34782
+		// Token: 0x040088FA RID: 35066
 		public StringTable2D head = new StringTable2D();
 
-		// Token: 0x040087DF RID: 34783
+		// Token: 0x040088FB RID: 35067
 		public StringTable2D hands = new StringTable2D();
 
-		// Token: 0x040087E0 RID: 34784
+		// Token: 0x040088FC RID: 35068
 		public StringTable2D feet = new StringTable2D();
 	}
 }

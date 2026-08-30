@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace GearVariants
 {
-	// Token: 0x020016CB RID: 5835
+	// Token: 0x020016F1 RID: 5873
 	public class GearVariantMatrixSO : ScriptableObject
 	{
-		// Token: 0x170015F2 RID: 5618
-		// (get) Token: 0x0600B5C8 RID: 46536 RVA: 0x00439CAC File Offset: 0x00437EAC
+		// Token: 0x17001664 RID: 5732
+		// (get) Token: 0x0600B74B RID: 46923 RVA: 0x0043FA24 File Offset: 0x0043DC24
 		public static GearVariantMatrixSO Instance
 		{
 			get
@@ -25,7 +25,7 @@ namespace GearVariants
 			}
 		}
 
-		// Token: 0x0600B5C9 RID: 46537 RVA: 0x00439CDC File Offset: 0x00437EDC
+		// Token: 0x0600B74C RID: 46924 RVA: 0x0043FA54 File Offset: 0x0043DC54
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void EnsureIndex(GearVariantMatrixSO.Sex sex)
 		{
@@ -66,7 +66,7 @@ namespace GearVariants
 			}
 		}
 
-		// Token: 0x0600B5CA RID: 46538 RVA: 0x00439DC2 File Offset: 0x00437FC2
+		// Token: 0x0600B74D RID: 46925 RVA: 0x0043FB3A File Offset: 0x0043DD3A
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SexGearTables GetSexTables(GearVariantMatrixSO.Sex sex)
 		{
@@ -77,7 +77,7 @@ namespace GearVariants
 			return this.male;
 		}
 
-		// Token: 0x0600B5CB RID: 46539 RVA: 0x00439DD4 File Offset: 0x00437FD4
+		// Token: 0x0600B74E RID: 46926 RVA: 0x0043FB4C File Offset: 0x0043DD4C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool TryParseSex(string sexName, out GearVariantMatrixSO.Sex sex)
 		{
@@ -96,7 +96,7 @@ namespace GearVariants
 			return true;
 		}
 
-		// Token: 0x0600B5CC RID: 46540 RVA: 0x00439E14 File Offset: 0x00438014
+		// Token: 0x0600B74F RID: 46927 RVA: 0x0043FB8C File Offset: 0x0043DD8C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static bool TryParsePart(string partName, out GearVariantMatrixSO.GearPart part)
 		{
@@ -135,7 +135,7 @@ namespace GearVariants
 			return true;
 		}
 
-		// Token: 0x0600B5CD RID: 46541 RVA: 0x00439EA7 File Offset: 0x004380A7
+		// Token: 0x0600B750 RID: 46928 RVA: 0x0043FC1F File Offset: 0x0043DE1F
 		[PublicizedFrom(EAccessModifier.Private)]
 		public StringTable2D GetTable(GearVariantMatrixSO.Sex sex, GearVariantMatrixSO.GearPart part)
 		{
@@ -147,7 +147,7 @@ namespace GearVariants
 			return sexTables.GetTable(part);
 		}
 
-		// Token: 0x0600B5CE RID: 46542 RVA: 0x00439EBC File Offset: 0x004380BC
+		// Token: 0x0600B751 RID: 46929 RVA: 0x0043FC34 File Offset: 0x0043DE34
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool TryGetIndices(GearVariantMatrixSO.Sex sex, string sourceGearPath, string targetBodyPath, out int row, out int col)
 		{
@@ -162,7 +162,7 @@ namespace GearVariants
 			return dictionary != null && dictionary.TryGetValue(sourceGearPath, out row) && dictionary.TryGetValue(targetBodyPath, out col);
 		}
 
-		// Token: 0x0600B5CF RID: 46543 RVA: 0x00439F18 File Offset: 0x00438118
+		// Token: 0x0600B752 RID: 46930 RVA: 0x0043FC90 File Offset: 0x0043DE90
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string GetVariantOrEmpty(GearVariantMatrixSO.Sex sex, GearVariantMatrixSO.GearPart part, string sourceGearPath, string targetBodyPath)
 		{
@@ -198,7 +198,7 @@ namespace GearVariants
 			return string.Empty;
 		}
 
-		// Token: 0x0600B5D0 RID: 46544 RVA: 0x00439FB4 File Offset: 0x004381B4
+		// Token: 0x0600B753 RID: 46931 RVA: 0x0043FD2C File Offset: 0x0043DF2C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool TryGetVariant(GearVariantMatrixSO.Sex sex, GearVariantMatrixSO.GearPart part, string sourceGearPath, string targetBodyPath, out string variant)
 		{
@@ -231,7 +231,7 @@ namespace GearVariants
 			return true;
 		}
 
-		// Token: 0x0600B5D1 RID: 46545 RVA: 0x0043A040 File Offset: 0x00438240
+		// Token: 0x0600B754 RID: 46932 RVA: 0x0043FDB8 File Offset: 0x0043DFB8
 		public string GetVariantOrEmpty(string sex, string part, string sourceGearPath, string targetBodyPath)
 		{
 			GearVariantMatrixSO.GearPart gearPart;
@@ -247,7 +247,7 @@ namespace GearVariants
 			return this.GetVariantOrEmpty(sex2, gearPart, sourceGearPath, targetBodyPath);
 		}
 
-		// Token: 0x0600B5D2 RID: 46546 RVA: 0x0043A078 File Offset: 0x00438278
+		// Token: 0x0600B755 RID: 46933 RVA: 0x0043FDF0 File Offset: 0x0043DFF0
 		public bool TryGetVariant(string sex, string part, string sourceGearPath, string targetBodyPath, out string variant)
 		{
 			GearVariantMatrixSO.GearPart gearPart;
@@ -265,7 +265,7 @@ namespace GearVariants
 			return this.TryGetVariant(sex2, gearPart, sourceGearPath, targetBodyPath, out variant);
 		}
 
-		// Token: 0x0600B5D3 RID: 46547 RVA: 0x0043A0BA File Offset: 0x004382BA
+		// Token: 0x0600B756 RID: 46934 RVA: 0x0043FE32 File Offset: 0x0043E032
 		public void EnsureShapes()
 		{
 			SexGearTables sexGearTables = this.male;
@@ -281,56 +281,56 @@ namespace GearVariants
 			sexGearTables2.EnsureShapes();
 		}
 
-		// Token: 0x040087E1 RID: 34785
+		// Token: 0x040088FD RID: 35069
 		[Header("Sex: Male")]
 		public SexGearTables male = new SexGearTables();
 
-		// Token: 0x040087E2 RID: 34786
+		// Token: 0x040088FE RID: 35070
 		[Header("Sex: Female")]
 		public SexGearTables female = new SexGearTables();
 
-		// Token: 0x040087E3 RID: 34787
+		// Token: 0x040088FF RID: 35071
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public static GearVariantMatrixSO _instance;
 
-		// Token: 0x040087E4 RID: 34788
+		// Token: 0x04008900 RID: 35072
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public Dictionary<string, int> _maleIndex;
 
-		// Token: 0x040087E5 RID: 34789
+		// Token: 0x04008901 RID: 35073
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int _maleIndexVersionRow;
 
-		// Token: 0x040087E6 RID: 34790
+		// Token: 0x04008902 RID: 35074
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public Dictionary<string, int> _femaleIndex;
 
-		// Token: 0x040087E7 RID: 34791
+		// Token: 0x04008903 RID: 35075
 		[PublicizedFrom(EAccessModifier.Private)]
 		[NonSerialized]
 		public int _femaleIndexVersionRow;
 
-		// Token: 0x020016CC RID: 5836
+		// Token: 0x020016F2 RID: 5874
 		public enum GearPart
 		{
-			// Token: 0x040087E9 RID: 34793
+			// Token: 0x04008905 RID: 35077
 			Head,
-			// Token: 0x040087EA RID: 34794
+			// Token: 0x04008906 RID: 35078
 			Hands,
-			// Token: 0x040087EB RID: 34795
+			// Token: 0x04008907 RID: 35079
 			Feet
 		}
 
-		// Token: 0x020016CD RID: 5837
+		// Token: 0x020016F3 RID: 5875
 		public enum Sex
 		{
-			// Token: 0x040087ED RID: 34797
+			// Token: 0x04008909 RID: 35081
 			Male,
-			// Token: 0x040087EE RID: 34798
+			// Token: 0x0400890A RID: 35082
 			Female
 		}
 	}

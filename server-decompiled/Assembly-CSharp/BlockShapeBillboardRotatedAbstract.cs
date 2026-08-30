@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x020001A3 RID: 419
+// Token: 0x020001A5 RID: 421
 public abstract class BlockShapeBillboardRotatedAbstract : BlockShapeRotatedAbstract
 {
-	// Token: 0x06000CAF RID: 3247 RVA: 0x0004FA1F File Offset: 0x0004DC1F
+	// Token: 0x06000CBA RID: 3258 RVA: 0x0004FE37 File Offset: 0x0004E037
 	public BlockShapeBillboardRotatedAbstract()
 	{
 		this.IsSolidCube = false;
@@ -12,32 +12,32 @@ public abstract class BlockShapeBillboardRotatedAbstract : BlockShapeRotatedAbst
 		this.LightOpacity = 0;
 	}
 
-	// Token: 0x06000CB0 RID: 3248 RVA: 0x0004FA43 File Offset: 0x0004DC43
+	// Token: 0x06000CBB RID: 3259 RVA: 0x0004FE5B File Offset: 0x0004E05B
 	public override void Init(Block _block)
 	{
 		base.Init(_block);
 		_block.IsDecoration = true;
 	}
 
-	// Token: 0x06000CB1 RID: 3249 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x06000CBC RID: 3260 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsRenderDecoration()
 	{
 		return true;
 	}
 
-	// Token: 0x06000CB2 RID: 3250 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000CBD RID: 3261 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool isRenderFace(BlockValue _blockValue, BlockFace _face, BlockValue _adjBlockValue)
 	{
 		return false;
 	}
 
-	// Token: 0x06000CB3 RID: 3251 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06000CBE RID: 3262 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override int getFacesDrawnFullBitfield(BlockValue _blockValue)
 	{
 		return 0;
 	}
 
-	// Token: 0x06000CB4 RID: 3252 RVA: 0x0004FA54 File Offset: 0x0004DC54
+	// Token: 0x06000CBF RID: 3263 RVA: 0x0004FE6C File Offset: 0x0004E06C
 	public override BlockValue RotateY(bool _bLeft, BlockValue _blockValue, int _rotCount)
 	{
 		for (int i = 0; i < _rotCount; i++)

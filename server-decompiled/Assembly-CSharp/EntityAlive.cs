@@ -12,13 +12,13 @@ using UAI;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200046F RID: 1135
+// Token: 0x02000473 RID: 1139
 [Preserve]
 public abstract class EntityAlive : Entity
 {
-	// Token: 0x170003ED RID: 1005
-	// (get) Token: 0x0600221F RID: 8735 RVA: 0x000CDF38 File Offset: 0x000CC138
-	// (set) Token: 0x06002220 RID: 8736 RVA: 0x000CDF43 File Offset: 0x000CC143
+	// Token: 0x170003F1 RID: 1009
+	// (get) Token: 0x0600223C RID: 8764 RVA: 0x000CE6D4 File Offset: 0x000CC8D4
+	// (set) Token: 0x0600223D RID: 8765 RVA: 0x000CE6DF File Offset: 0x000CC8DF
 	public bool IsEquipping
 	{
 		get
@@ -39,8 +39,8 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x170003EE RID: 1006
-	// (get) Token: 0x06002221 RID: 8737 RVA: 0x000CDF6E File Offset: 0x000CC16E
+	// Token: 0x170003F2 RID: 1010
+	// (get) Token: 0x0600223E RID: 8766 RVA: 0x000CE70A File Offset: 0x000CC90A
 	public bool HasAI
 	{
 		get
@@ -49,8 +49,8 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x170003EF RID: 1007
-	// (get) Token: 0x06002222 RID: 8738 RVA: 0x000CDF76 File Offset: 0x000CC176
+	// Token: 0x170003F3 RID: 1011
+	// (get) Token: 0x0600223F RID: 8767 RVA: 0x000CE712 File Offset: 0x000CC912
 	public static bool IsHeadshotOnly
 	{
 		get
@@ -59,8 +59,8 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x170003F0 RID: 1008
-	// (get) Token: 0x06002223 RID: 8739 RVA: 0x000CDF80 File Offset: 0x000CC180
+	// Token: 0x170003F4 RID: 1012
+	// (get) Token: 0x06002240 RID: 8768 RVA: 0x000CE71C File Offset: 0x000CC91C
 	public static bool IsHeadshotFinisher
 	{
 		get
@@ -69,8 +69,8 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x170003F1 RID: 1009
-	// (get) Token: 0x06002224 RID: 8740 RVA: 0x000CDF8A File Offset: 0x000CC18A
+	// Token: 0x170003F5 RID: 1013
+	// (get) Token: 0x06002241 RID: 8769 RVA: 0x000CE726 File Offset: 0x000CC926
 	public static bool IsCelebrate
 	{
 		get
@@ -79,8 +79,8 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x170003F2 RID: 1010
-	// (get) Token: 0x06002225 RID: 8741 RVA: 0x000CDF94 File Offset: 0x000CC194
+	// Token: 0x170003F6 RID: 1014
+	// (get) Token: 0x06002242 RID: 8770 RVA: 0x000CE730 File Offset: 0x000CC930
 	public static bool IsCelebrateHeadshot
 	{
 		get
@@ -89,9 +89,9 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x170003F3 RID: 1011
-	// (get) Token: 0x06002226 RID: 8742 RVA: 0x000CDF9E File Offset: 0x000CC19E
-	// (set) Token: 0x06002227 RID: 8743 RVA: 0x000CDFA8 File Offset: 0x000CC1A8
+	// Token: 0x170003F7 RID: 1015
+	// (get) Token: 0x06002243 RID: 8771 RVA: 0x000CE73A File Offset: 0x000CC93A
+	// (set) Token: 0x06002244 RID: 8772 RVA: 0x000CE744 File Offset: 0x000CC944
 	public bool IsDancing
 	{
 		get
@@ -116,7 +116,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002228 RID: 8744 RVA: 0x000CE03A File Offset: 0x000CC23A
+	// Token: 0x06002245 RID: 8773 RVA: 0x000CE7D6 File Offset: 0x000CC9D6
 	public void BeginDynamicRagdoll(DynamicRagdollFlags flags, FloatRange stunTime)
 	{
 		this._dynamicRagdoll = flags;
@@ -124,7 +124,7 @@ public abstract class EntityAlive : Entity
 		this._dynamicRagdollStunTime = stunTime.Random(this.rand);
 	}
 
-	// Token: 0x06002229 RID: 8745 RVA: 0x000CE064 File Offset: 0x000CC264
+	// Token: 0x06002246 RID: 8774 RVA: 0x000CE800 File Offset: 0x000CCA00
 	public void ActivateDynamicRagdoll()
 	{
 		if (this._dynamicRagdoll.HasFlag(DynamicRagdollFlags.Active))
@@ -147,7 +147,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x0600222A RID: 8746 RVA: 0x000CE15C File Offset: 0x000CC35C
+	// Token: 0x06002247 RID: 8775 RVA: 0x000CE8F8 File Offset: 0x000CCAF8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -175,7 +175,7 @@ public abstract class EntityAlive : Entity
 		this.droppedBackpackPositions = new List<Vector3i>();
 	}
 
-	// Token: 0x0600222B RID: 8747 RVA: 0x000CE253 File Offset: 0x000CC453
+	// Token: 0x06002248 RID: 8776 RVA: 0x000CE9EF File Offset: 0x000CCBEF
 	public override void Init(int _entityClass, EntityInstanceAssets _assets, EModelInstanceAssets _eModelAssets)
 	{
 		base.Init(_entityClass, _assets, _eModelAssets);
@@ -184,7 +184,7 @@ public abstract class EntityAlive : Entity
 		this.InitPostCommon();
 	}
 
-	// Token: 0x0600222C RID: 8748 RVA: 0x000CE274 File Offset: 0x000CC474
+	// Token: 0x06002249 RID: 8777 RVA: 0x000CEA10 File Offset: 0x000CCC10
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitPostCommon()
 	{
@@ -225,7 +225,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x0600222D RID: 8749 RVA: 0x000CE390 File Offset: 0x000CC590
+	// Token: 0x0600224A RID: 8778 RVA: 0x000CEB2C File Offset: 0x000CCD2C
 	public override void PostInit()
 	{
 		base.PostInit();
@@ -241,7 +241,7 @@ public abstract class EntityAlive : Entity
 		GameEventManager.Current.HandleSpawnModifier(this);
 	}
 
-	// Token: 0x0600222E RID: 8750 RVA: 0x000CE3F7 File Offset: 0x000CC5F7
+	// Token: 0x0600224B RID: 8779 RVA: 0x000CEB93 File Offset: 0x000CCD93
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ApplySpawnState()
 	{
@@ -252,7 +252,7 @@ public abstract class EntityAlive : Entity
 		this.ExecuteDismember(true);
 	}
 
-	// Token: 0x0600222F RID: 8751 RVA: 0x000CE41D File Offset: 0x000CC61D
+	// Token: 0x0600224C RID: 8780 RVA: 0x000CEBB9 File Offset: 0x000CCDB9
 	public virtual void InitInventory()
 	{
 		if (this.inventory == null)
@@ -261,7 +261,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002230 RID: 8752 RVA: 0x000CE438 File Offset: 0x000CC638
+	// Token: 0x0600224D RID: 8781 RVA: 0x000CEBD4 File Offset: 0x000CCDD4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void switchModelView(EnumEntityModelView modelView)
 	{
@@ -269,23 +269,23 @@ public abstract class EntityAlive : Entity
 		this.ReassignEquipmentTransforms();
 	}
 
-	// Token: 0x06002231 RID: 8753 RVA: 0x000CE458 File Offset: 0x000CC658
+	// Token: 0x0600224E RID: 8782 RVA: 0x000CEBF4 File Offset: 0x000CCDF4
 	public virtual void ReassignEquipmentTransforms()
 	{
 		if (this.isFirstTimeEquipmentReassigned)
 		{
-			this.Buffs.SetCustomVar("_equipReload", 0f, true, CVarOperation.set);
+			this.Buffs.SetCustomVar("_equipReload", 0f, true, CVarOperation.set, false);
 			this.isFirstTimeEquipmentReassigned = false;
 		}
 		else
 		{
-			this.Buffs.SetCustomVar("_equipReload", 1f, true, CVarOperation.set);
+			this.Buffs.SetCustomVar("_equipReload", 1f, true, CVarOperation.set, false);
 		}
 		this.equipment.InitializeEquipmentTransforms();
-		this.Buffs.SetCustomVar("_equipReload", 0f, true, CVarOperation.set);
+		this.Buffs.SetCustomVar("_equipReload", 0f, true, CVarOperation.set, false);
 	}
 
-	// Token: 0x06002232 RID: 8754 RVA: 0x000CE4C8 File Offset: 0x000CC6C8
+	// Token: 0x0600224F RID: 8783 RVA: 0x000CEC68 File Offset: 0x000CCE68
 	public override void CopyPropertiesFromEntityClass()
 	{
 		base.CopyPropertiesFromEntityClass();
@@ -440,6 +440,7 @@ public abstract class EntityAlive : Entity
 		entityClass.Properties.ParseString(EntityClass.PropSoundLand, ref this.soundLand);
 		entityClass.Properties.ParseString(EntityClass.PropSoundPlayerLandThump, ref this.soundLandThump);
 		entityClass.Properties.ParseString(EntityClass.PropSoundHurt, ref this.soundHurt);
+		entityClass.Properties.ParseString(EntityClass.PropSoundDistressed, ref this.soundDistressed);
 		entityClass.Properties.ParseString(EntityClass.PropSoundHurtSmall, ref this.soundHurtSmall);
 		entityClass.Properties.ParseString(EntityClass.PropSoundDrownPain, ref this.soundDrownPain);
 		entityClass.Properties.ParseString(EntityClass.PropSoundDrownDeath, ref this.soundDrownDeath);
@@ -580,7 +581,7 @@ public abstract class EntityAlive : Entity
 							if (!StringParsers.TryParseRange(text6, out floatRange9, null, ','))
 							{
 								Log.Error(string.Format("Expected 'ragePer' parameter as range(min,min-max) {0}, skipping", array2[j]));
-								goto IL_0E01;
+								goto IL_0E17;
 							}
 							floatRange7 = floatRange9;
 						}
@@ -590,7 +591,7 @@ public abstract class EntityAlive : Entity
 							if (!StringParsers.TryParseRange(text6, out floatRange10, null, ','))
 							{
 								Log.Error(string.Format("Expected 'rageTime' parameter as range(min,min-max) {0}, skipping", array2[j]));
-								goto IL_0E01;
+								goto IL_0E17;
 							}
 							floatRange8 = floatRange10;
 						}
@@ -600,21 +601,21 @@ public abstract class EntityAlive : Entity
 							if (!StringParsers.TryParseRange(text6, out intRange4, null, ','))
 							{
 								Log.Error("Expected 'difficulty' parameter as range(min,min-max) " + text5 + ", skipping");
-								goto IL_0E01;
+								goto IL_0E17;
 							}
 							intRange3 = intRange4;
 						}
 						this._destroyBlockBehaviors.Add(new EntityAlive.DestroyBlockBehavior(text5, array2[j], num6, floatRange7, floatRange8, intRange3));
 					}
 				}
-				IL_0E01:;
+				IL_0E17:;
 			}
 		}
 		this.distractionResistance = EffectManager.GetValue(PassiveEffects.DistractionResistance, null, 0f, this, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false);
 		this.distractionResistanceWithTarget = EffectManager.GetValue(PassiveEffects.DistractionResistance, null, 0f, this, null, EntityAlive.DistractionResistanceWithTargetTags, true, true, true, true, true, 1, true, false);
 	}
 
-	// Token: 0x06002233 RID: 8755 RVA: 0x000CF34C File Offset: 0x000CD54C
+	// Token: 0x06002250 RID: 8784 RVA: 0x000CFB04 File Offset: 0x000CDD04
 	public void SetInventorySlots(string _handItemName)
 	{
 		if (_handItemName.Contains(" "))
@@ -647,7 +648,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002234 RID: 8756 RVA: 0x000CF3F8 File Offset: 0x000CD5F8
+	// Token: 0x06002251 RID: 8785 RVA: 0x000CFBB0 File Offset: 0x000CDDB0
 	public static int GetSpawnWalkType(EntityClass _entityClass)
 	{
 		int num = 0;
@@ -655,7 +656,7 @@ public abstract class EntityAlive : Entity
 		return num;
 	}
 
-	// Token: 0x06002235 RID: 8757 RVA: 0x000CF41C File Offset: 0x000CD61C
+	// Token: 0x06002252 RID: 8786 RVA: 0x000CFBD4 File Offset: 0x000CDDD4
 	public override void VisiblityCheck(float _distanceSqr, bool _isZoom)
 	{
 		if ((this.entityFlags & EntityFlags.AIHearing) > EntityFlags.None)
@@ -674,14 +675,14 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002236 RID: 8758 RVA: 0x000CF477 File Offset: 0x000CD677
+	// Token: 0x06002253 RID: 8787 RVA: 0x000CFC2F File Offset: 0x000CDE2F
 	public virtual void SetSleeper()
 	{
 		this.IsSleeper = true;
 		this.aiManager.pathCostScale += 0.2f;
 	}
 
-	// Token: 0x06002237 RID: 8759 RVA: 0x000CF497 File Offset: 0x000CD697
+	// Token: 0x06002254 RID: 8788 RVA: 0x000CFC4F File Offset: 0x000CDE4F
 	public void SetSleeperSight(float angle, float range)
 	{
 		if (angle < 0f)
@@ -696,7 +697,7 @@ public abstract class EntityAlive : Entity
 		this.sleeperSightRange = range;
 	}
 
-	// Token: 0x06002238 RID: 8760 RVA: 0x000CF4D7 File Offset: 0x000CD6D7
+	// Token: 0x06002255 RID: 8789 RVA: 0x000CFC8F File Offset: 0x000CDE8F
 	public void SetSleeperHearing(float percent)
 	{
 		if (percent < 0.001f)
@@ -708,7 +709,7 @@ public abstract class EntityAlive : Entity
 		this.sleeperNoiseToWake *= percent;
 	}
 
-	// Token: 0x06002239 RID: 8761 RVA: 0x000CF510 File Offset: 0x000CD710
+	// Token: 0x06002256 RID: 8790 RVA: 0x000CFCC8 File Offset: 0x000CDEC8
 	public int GetSleeperDisturbedLevel(float dist, float lightLevel)
 	{
 		float num = dist / this.sightRangeBase;
@@ -728,7 +729,7 @@ public abstract class EntityAlive : Entity
 		return 0;
 	}
 
-	// Token: 0x0600223A RID: 8762 RVA: 0x000CF578 File Offset: 0x000CD778
+	// Token: 0x06002257 RID: 8791 RVA: 0x000CFD30 File Offset: 0x000CDF30
 	public void GetSleeperDebugScale(float dist, out float wake, out float groan)
 	{
 		float num = dist / this.sightRangeBase;
@@ -736,8 +737,8 @@ public abstract class EntityAlive : Entity
 		groan = Mathf.Lerp(this.sightGroanThresholdAtRange.x, this.sightGroanThresholdAtRange.y, num);
 	}
 
-	// Token: 0x170003F4 RID: 1012
-	// (get) Token: 0x0600223B RID: 8763 RVA: 0x000CF5CA File Offset: 0x000CD7CA
+	// Token: 0x170003F8 RID: 1016
+	// (get) Token: 0x06002258 RID: 8792 RVA: 0x000CFD82 File Offset: 0x000CDF82
 	public bool sleepingOrWakingUp
 	{
 		get
@@ -746,7 +747,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x0600223C RID: 8764 RVA: 0x000CF5D4 File Offset: 0x000CD7D4
+	// Token: 0x06002259 RID: 8793 RVA: 0x000CFD8C File Offset: 0x000CDF8C
 	public void TriggerSleeperPose(int _pose, bool _returningToSleep = false)
 	{
 		if (this.IsDead())
@@ -772,13 +773,13 @@ public abstract class EntityAlive : Entity
 		this.sleeperLookDir = Quaternion.AngleAxis(this.rotation.y, Vector3.up) * this.SleeperSpawnLookDir;
 	}
 
-	// Token: 0x0600223D RID: 8765 RVA: 0x000CF675 File Offset: 0x000CD875
+	// Token: 0x0600225A RID: 8794 RVA: 0x000CFE2D File Offset: 0x000CE02D
 	public void ResumeSleeperPose()
 	{
 		this.TriggerSleeperPose(this.lastSleeperPose, true);
 	}
 
-	// Token: 0x0600223E RID: 8766 RVA: 0x000CF684 File Offset: 0x000CD884
+	// Token: 0x0600225B RID: 8795 RVA: 0x000CFE3C File Offset: 0x000CE03C
 	public void ConditionalTriggerSleeperWakeUp()
 	{
 		if (this.IsSleeping && !this.IsDead())
@@ -798,7 +799,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x0600223F RID: 8767 RVA: 0x000CF730 File Offset: 0x000CD930
+	// Token: 0x0600225C RID: 8796 RVA: 0x000CFEE8 File Offset: 0x000CE0E8
 	public void SetSleeperActive()
 	{
 		if (this.IsSleeperPassive)
@@ -811,7 +812,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002240 RID: 8768 RVA: 0x000CF786 File Offset: 0x000CD986
+	// Token: 0x0600225D RID: 8797 RVA: 0x000CFF3E File Offset: 0x000CE13E
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void InitStats()
 	{
@@ -819,14 +820,14 @@ public abstract class EntityAlive : Entity
 		this.startOfFrameStats = new EntityStats(this);
 	}
 
-	// Token: 0x06002241 RID: 8769 RVA: 0x000CF7A0 File Offset: 0x000CD9A0
+	// Token: 0x0600225E RID: 8798 RVA: 0x000CFF58 File Offset: 0x000CE158
 	public void SetStats(EntityStats _stats)
 	{
 		this.entityStats.CopyFrom(_stats);
 	}
 
-	// Token: 0x170003F5 RID: 1013
-	// (get) Token: 0x06002242 RID: 8770 RVA: 0x000CF7AE File Offset: 0x000CD9AE
+	// Token: 0x170003F9 RID: 1017
+	// (get) Token: 0x0600225F RID: 8799 RVA: 0x000CFF66 File Offset: 0x000CE166
 	public EntityStats Stats
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -836,8 +837,8 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x170003F6 RID: 1014
-	// (get) Token: 0x06002243 RID: 8771 RVA: 0x000CF7B6 File Offset: 0x000CD9B6
+	// Token: 0x170003FA RID: 1018
+	// (get) Token: 0x06002260 RID: 8800 RVA: 0x000CFF6E File Offset: 0x000CE16E
 	public EntityStats StartOfFrameStats
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -847,25 +848,25 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002244 RID: 8772 RVA: 0x000CF7BE File Offset: 0x000CD9BE
+	// Token: 0x06002261 RID: 8801 RVA: 0x000CFF76 File Offset: 0x000CE176
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual ItemValue GetHandItem()
 	{
 		return this.handItem;
 	}
 
-	// Token: 0x06002245 RID: 8773 RVA: 0x000CF7C6 File Offset: 0x000CD9C6
+	// Token: 0x06002262 RID: 8802 RVA: 0x000CFF7E File Offset: 0x000CE17E
 	public bool IsHoldingLight()
 	{
 		return this.inventory.IsFlashlightOn;
 	}
 
-	// Token: 0x06002246 RID: 8774 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002263 RID: 8803 RVA: 0x000027FC File Offset: 0x000009FC
 	public void CycleActivatableItems()
 	{
 	}
 
-	// Token: 0x06002247 RID: 8775 RVA: 0x000CF7D4 File Offset: 0x000CD9D4
+	// Token: 0x06002264 RID: 8804 RVA: 0x000CFF8C File Offset: 0x000CE18C
 	public List<ItemValue> GetActivatableItemPool()
 	{
 		List<ItemValue> list = new List<ItemValue>();
@@ -873,7 +874,7 @@ public abstract class EntityAlive : Entity
 		return list;
 	}
 
-	// Token: 0x06002248 RID: 8776 RVA: 0x000CF7F0 File Offset: 0x000CD9F0
+	// Token: 0x06002265 RID: 8805 RVA: 0x000CFFA8 File Offset: 0x000CE1A8
 	public void CollectActivatableItems(List<ItemValue> _pool)
 	{
 		if (this.inventory != null)
@@ -890,7 +891,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002249 RID: 8777 RVA: 0x000CF848 File Offset: 0x000CDA48
+	// Token: 0x06002266 RID: 8806 RVA: 0x000D0000 File Offset: 0x000CE200
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void GetActivatableItems(ItemValue _item, List<ItemValue> _itemPool)
 	{
@@ -917,7 +918,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x0600224A RID: 8778 RVA: 0x000CF8AC File Offset: 0x000CDAAC
+	// Token: 0x06002267 RID: 8807 RVA: 0x000D0064 File Offset: 0x000CE264
 	public override void OnUpdatePosition(float _partialTicks)
 	{
 		float num = Utils.DeltaAngle(this.rotation.y, this.prevRotation.y);
@@ -940,7 +941,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x0600224B RID: 8779 RVA: 0x000CF9C0 File Offset: 0x000CDBC0
+	// Token: 0x06002268 RID: 8808 RVA: 0x000D0178 File Offset: 0x000CE378
 	public void Snore()
 	{
 		if (!this.isSnore && this.isGroan && this.snoreGroanCD <= 0)
@@ -955,7 +956,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x0600224C RID: 8780 RVA: 0x000CFA2C File Offset: 0x000CDC2C
+	// Token: 0x06002269 RID: 8809 RVA: 0x000D01E4 File Offset: 0x000CE3E4
 	public void Groan()
 	{
 		if (!this.isGroan && this.snoreGroanCD <= 0)
@@ -979,14 +980,26 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x0600224D RID: 8781 RVA: 0x000CFAB8 File Offset: 0x000CDCB8
+	// Token: 0x0600226A RID: 8810 RVA: 0x000D0270 File Offset: 0x000CE470
 	public override void OnUpdateEntity()
 	{
 		base.OnUpdateEntity();
-		this.Buffs.SetCustomVar("_underwater", this.inWaterPercent, true, CVarOperation.set);
+		this.Buffs.SetCustomVar("_underwater", this.inWaterPercent, true, CVarOperation.set, false);
 		if (this.Buffs != null)
 		{
 			this.Buffs.Tick();
+		}
+		if (this.StressAmount > 0f)
+		{
+			if (base.EntityClass.PickupStressCvar != "")
+			{
+				this.SetCVar(base.EntityClass.PickupStressCvar, this.StressAmount);
+			}
+			if (base.EntityClass.PickupStressBuff != "")
+			{
+				this.Buffs.AddBuff(base.EntityClass.PickupStressBuff, -1, true, false, -1f);
+			}
+			this.StressAmount = 0f;
 		}
 		this.OnUpdateLive();
 		if (!this.IsSleeping && (!this.isEntityRemote || !(this is EntityPlayer)) && this.inventory != null)
@@ -1101,7 +1114,7 @@ public abstract class EntityAlive : Entity
 			}
 			if (!this.isAlert && !flag)
 			{
-				this.Buffs.SetCustomVar(EntityAlive.notAlertedId, 1f, true, CVarOperation.set);
+				this.Buffs.SetCustomVar(EntityAlive.notAlertedId, 1f, true, CVarOperation.set, false);
 				this.notAlertDelayTicks = 4;
 			}
 			else
@@ -1112,7 +1125,7 @@ public abstract class EntityAlive : Entity
 				}
 				if (this.notAlertDelayTicks == 0)
 				{
-					this.Buffs.SetCustomVar(EntityAlive.notAlertedId, 0f, true, CVarOperation.set);
+					this.Buffs.SetCustomVar(EntityAlive.notAlertedId, 0f, true, CVarOperation.set, false);
 				}
 			}
 		}
@@ -1136,7 +1149,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x0600224E RID: 8782 RVA: 0x000CFF1C File Offset: 0x000CE11C
+	// Token: 0x0600226B RID: 8811 RVA: 0x000D0754 File Offset: 0x000CE954
 	public override void KillLootContainer()
 	{
 		if (!this.isEntityRemote && this.IsDead() && !this.corpseBlockValue.isair && this.deathUpdateTime < this.timeStayAfterDeath)
@@ -1146,7 +1159,7 @@ public abstract class EntityAlive : Entity
 		base.KillLootContainer();
 	}
 
-	// Token: 0x0600224F RID: 8783 RVA: 0x000CFF68 File Offset: 0x000CE168
+	// Token: 0x0600226C RID: 8812 RVA: 0x000D07A0 File Offset: 0x000CE9A0
 	public override void Kill(DamageResponse _dmResponse)
 	{
 		this.NotifySleeperDeath();
@@ -1171,14 +1184,14 @@ public abstract class EntityAlive : Entity
 		base.Kill(_dmResponse);
 	}
 
-	// Token: 0x06002250 RID: 8784 RVA: 0x000CFFD4 File Offset: 0x000CE1D4
+	// Token: 0x0600226D RID: 8813 RVA: 0x000D080C File Offset: 0x000CEA0C
 	public override void SetDead()
 	{
 		base.SetDead();
 		this.Stats.Health.Value = 0f;
 	}
 
-	// Token: 0x06002251 RID: 8785 RVA: 0x000CFFF1 File Offset: 0x000CE1F1
+	// Token: 0x0600226E RID: 8814 RVA: 0x000D0829 File Offset: 0x000CEA29
 	public void NotifySleeperDeath()
 	{
 		if (!this.isEntityRemote && this.IsSleeper)
@@ -1187,13 +1200,13 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002252 RID: 8786 RVA: 0x000D000F File Offset: 0x000CE20F
+	// Token: 0x0600226F RID: 8815 RVA: 0x000D0847 File Offset: 0x000CEA47
 	public void ClearEntityThatKilledMe()
 	{
 		this.entityThatKilledMe = null;
 	}
 
-	// Token: 0x06002253 RID: 8787 RVA: 0x000D0018 File Offset: 0x000CE218
+	// Token: 0x06002270 RID: 8816 RVA: 0x000D0850 File Offset: 0x000CEA50
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void ClientKill(DamageResponse _dmResponse)
 	{
@@ -1222,6 +1235,11 @@ public abstract class EntityAlive : Entity
 			EntityAlive entityAlive = this.entityThatKilledMe;
 			this.HandleClientDeath((_dmResponse.Source != null) ? _dmResponse.Source.BlockPosition : base.GetBlockPosition());
 			this.OnEntityDeath();
+			if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
+			{
+				this.AwardKillXPServer(_dmResponse.Source, entityAlive);
+				this.PartyShareKillServer(_dmResponse.Source, entityAlive);
+			}
 			if (@object == null && base.EntityClass.bIsEnemyEntity && entityAlive is EntityPlayer && (EffectManager.GetValue(PassiveEffects.CelebrationKill, null, 0f, this.entityThatKilledMe, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false) > 0f || EntityAlive.IsCelebrate || (EntityAlive.IsCelebrateHeadshot && _dmResponse.Source != null && _dmResponse.HitBodyPart == EnumBodyPartHit.Head)))
 			{
 				if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -1240,19 +1258,74 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002254 RID: 8788 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002271 RID: 8817 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void HandleClientDeath(Vector3i attackPos)
 	{
 	}
 
-	// Token: 0x06002255 RID: 8789 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002272 RID: 8818 RVA: 0x000D0AC4 File Offset: 0x000CECC4
+	[PublicizedFrom(EAccessModifier.Private)]
+	public void AwardKillXPServer(DamageSource _source, EntityAlive _killingEntity)
+	{
+		if (_source == null || _source.BuffClass != null)
+		{
+			return;
+		}
+		EntityPlayer entityPlayer = _killingEntity as EntityPlayer;
+		if (!entityPlayer || entityPlayer == this)
+		{
+			return;
+		}
+		if (!EntityClass.list.ContainsKey(this.entityClass))
+		{
+			return;
+		}
+		float num = _source.KillXPScale;
+		if (_source.bTrapKillXP)
+		{
+			num *= EffectManager.GetValue(PassiveEffects.ElectricalTrapXP, entityPlayer.inventory.holdingItemItemValue, 0f, entityPlayer, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false);
+		}
+		if (num <= 0f)
+		{
+			return;
+		}
+		entityPlayer.AddKillXP(this, _source.AttackingItem, num);
+	}
+
+	// Token: 0x06002273 RID: 8819 RVA: 0x000D0B60 File Offset: 0x000CED60
+	[PublicizedFrom(EAccessModifier.Private)]
+	public void PartyShareKillServer(DamageSource _source, EntityAlive _killingEntity)
+	{
+		if (!(_killingEntity is EntityPlayer) || _killingEntity == this)
+		{
+			return;
+		}
+		if (_source != null)
+		{
+			if (_source.bIgnorePartyShare || _source.bTrapKillXP || (int)_source.KillXPScale != 1)
+			{
+				return;
+			}
+			if (_source.BuffClass != null)
+			{
+				EntityBuffs buffs = this.Buffs;
+				if (buffs != null && buffs.GetCustomVar("ETrapHit") == (float)1)
+				{
+					return;
+				}
+			}
+		}
+		GameManager.Instance.SharedKillServer(this.entityId, _killingEntity.entityId, 1f);
+	}
+
+	// Token: 0x06002274 RID: 8820 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEntityTargeted(EntityAlive target)
 	{
 	}
 
-	// Token: 0x06002256 RID: 8790 RVA: 0x000D0268 File Offset: 0x000CE468
+	// Token: 0x06002275 RID: 8821 RVA: 0x000D0BE0 File Offset: 0x000CEDE0
 	public void ForceHoldingWeaponUpdate()
 	{
 		if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsConnected)
@@ -1270,37 +1343,37 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002257 RID: 8791 RVA: 0x000D02E9 File Offset: 0x000CE4E9
+	// Token: 0x06002276 RID: 8822 RVA: 0x000D0C61 File Offset: 0x000CEE61
 	public virtual void SetHoldingItemTransform(Transform _transform)
 	{
 		this.emodel.SetInRightHand(_transform);
 		this.ForceHoldingWeaponUpdate();
 	}
 
-	// Token: 0x06002258 RID: 8792 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002277 RID: 8823 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void OnHoldingItemChanged()
 	{
 	}
 
-	// Token: 0x06002259 RID: 8793 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002278 RID: 8824 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void UpdateCameraFOV(bool _bLerpPosition)
 	{
 	}
 
-	// Token: 0x0600225A RID: 8794 RVA: 0x000D02FD File Offset: 0x000CE4FD
+	// Token: 0x06002279 RID: 8825 RVA: 0x000D0C75 File Offset: 0x000CEE75
 	public virtual int GetCameraFOV()
 	{
 		return GamePrefs.GetInt(EnumGamePrefs.OptionsGfxFOV);
 	}
 
-	// Token: 0x0600225B RID: 8795 RVA: 0x000D0306 File Offset: 0x000CE506
+	// Token: 0x0600227A RID: 8826 RVA: 0x000D0C7E File Offset: 0x000CEE7E
 	public virtual float GetWetnessRate()
 	{
 		return this.inWaterPercent;
 	}
 
-	// Token: 0x0600225C RID: 8796 RVA: 0x000D0310 File Offset: 0x000CE510
+	// Token: 0x0600227B RID: 8827 RVA: 0x000D0C88 File Offset: 0x000CEE88
 	public float GetAmountEnclosed()
 	{
 		Vector3 position = this.position;
@@ -1320,7 +1393,7 @@ public abstract class EntityAlive : Entity
 		return 1f;
 	}
 
-	// Token: 0x0600225D RID: 8797 RVA: 0x000D03AB File Offset: 0x000CE5AB
+	// Token: 0x0600227C RID: 8828 RVA: 0x000D0D23 File Offset: 0x000CEF23
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnHeadUnderwaterStateChanged(bool _bUnderwater)
 	{
@@ -1333,9 +1406,9 @@ public abstract class EntityAlive : Entity
 		this.FireEvent(MinEventTypes.onSelfWaterSurface, true);
 	}
 
-	// Token: 0x170003F7 RID: 1015
-	// (get) Token: 0x0600225E RID: 8798 RVA: 0x000D03CA File Offset: 0x000CE5CA
-	// (set) Token: 0x0600225F RID: 8799 RVA: 0x000D03D2 File Offset: 0x000CE5D2
+	// Token: 0x170003FB RID: 1019
+	// (get) Token: 0x0600227D RID: 8829 RVA: 0x000D0D42 File Offset: 0x000CEF42
+	// (set) Token: 0x0600227E RID: 8830 RVA: 0x000D0D4A File Offset: 0x000CEF4A
 	public virtual bool JetpackActive
 	{
 		get
@@ -1352,9 +1425,9 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x170003F8 RID: 1016
-	// (get) Token: 0x06002260 RID: 8800 RVA: 0x000D03FA File Offset: 0x000CE5FA
-	// (set) Token: 0x06002261 RID: 8801 RVA: 0x000D0402 File Offset: 0x000CE602
+	// Token: 0x170003FC RID: 1020
+	// (get) Token: 0x0600227F RID: 8831 RVA: 0x000D0D72 File Offset: 0x000CEF72
+	// (set) Token: 0x06002280 RID: 8832 RVA: 0x000D0D7A File Offset: 0x000CEF7A
 	public virtual bool JetpackWearing
 	{
 		get
@@ -1371,9 +1444,9 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x170003F9 RID: 1017
-	// (get) Token: 0x06002262 RID: 8802 RVA: 0x000D042A File Offset: 0x000CE62A
-	// (set) Token: 0x06002263 RID: 8803 RVA: 0x000D0432 File Offset: 0x000CE632
+	// Token: 0x170003FD RID: 1021
+	// (get) Token: 0x06002281 RID: 8833 RVA: 0x000D0DA2 File Offset: 0x000CEFA2
+	// (set) Token: 0x06002282 RID: 8834 RVA: 0x000D0DAA File Offset: 0x000CEFAA
 	public virtual bool ParachuteWearing
 	{
 		get
@@ -1390,9 +1463,9 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x170003FA RID: 1018
-	// (get) Token: 0x06002264 RID: 8804 RVA: 0x000D045A File Offset: 0x000CE65A
-	// (set) Token: 0x06002265 RID: 8805 RVA: 0x000D0494 File Offset: 0x000CE694
+	// Token: 0x170003FE RID: 1022
+	// (get) Token: 0x06002283 RID: 8835 RVA: 0x000D0DD2 File Offset: 0x000CEFD2
+	// (set) Token: 0x06002284 RID: 8836 RVA: 0x000D0E0C File Offset: 0x000CF00C
 	public virtual bool AimingGun
 	{
 		get
@@ -1426,7 +1499,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002266 RID: 8806 RVA: 0x000D0538 File Offset: 0x000CE738
+	// Token: 0x06002285 RID: 8837 RVA: 0x000D0EB0 File Offset: 0x000CF0B0
 	public virtual Vector3 GetChestTransformPosition()
 	{
 		if (this.IsCrouching || this.bodyDamage.CurrentStun == EnumEntityStunType.Kneel || this.bodyDamage.CurrentStun == EnumEntityStunType.Prone)
@@ -1436,9 +1509,9 @@ public abstract class EntityAlive : Entity
 		return base.transform.position + new Vector3(0f, this.GetEyeHeight() * 0.95f, 0f);
 	}
 
-	// Token: 0x170003FB RID: 1019
-	// (get) Token: 0x06002267 RID: 8807 RVA: 0x000D05C0 File Offset: 0x000CE7C0
-	// (set) Token: 0x06002268 RID: 8808 RVA: 0x000D05C8 File Offset: 0x000CE7C8
+	// Token: 0x170003FF RID: 1023
+	// (get) Token: 0x06002286 RID: 8838 RVA: 0x000D0F38 File Offset: 0x000CF138
+	// (set) Token: 0x06002287 RID: 8839 RVA: 0x000D0F40 File Offset: 0x000CF140
 	public virtual bool MovementRunning
 	{
 		get
@@ -1454,9 +1527,9 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x170003FC RID: 1020
-	// (get) Token: 0x06002269 RID: 8809 RVA: 0x000D05DA File Offset: 0x000CE7DA
-	// (set) Token: 0x0600226A RID: 8810 RVA: 0x000D05E4 File Offset: 0x000CE7E4
+	// Token: 0x17000400 RID: 1024
+	// (get) Token: 0x06002288 RID: 8840 RVA: 0x000D0F52 File Offset: 0x000CF152
+	// (set) Token: 0x06002289 RID: 8841 RVA: 0x000D0F5C File Offset: 0x000CF15C
 	public virtual bool Crouching
 	{
 		get
@@ -1473,14 +1546,14 @@ public abstract class EntityAlive : Entity
 					this.emodel.avatarController.SetCrouching(value);
 				}
 				this.CurrentStanceTag = (this.bCrouching ? EntityAlive.StanceTagCrouching : EntityAlive.StanceTagStanding);
-				this.Buffs.SetCustomVar("_crouching", (float)(this.bCrouching ? 1 : 0), true, CVarOperation.set);
+				this.Buffs.SetCustomVar("_crouching", (float)(this.bCrouching ? 1 : 0), true, CVarOperation.set, false);
 				this.bEntityAliveFlagsChanged |= !this.isEntityRemote;
 			}
 		}
 	}
 
-	// Token: 0x170003FD RID: 1021
-	// (get) Token: 0x0600226B RID: 8811 RVA: 0x000D0674 File Offset: 0x000CE874
+	// Token: 0x17000401 RID: 1025
+	// (get) Token: 0x0600228A RID: 8842 RVA: 0x000D0FED File Offset: 0x000CF1ED
 	public bool IsCrouching
 	{
 		get
@@ -1489,9 +1562,9 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x170003FE RID: 1022
-	// (get) Token: 0x0600226C RID: 8812 RVA: 0x000D0688 File Offset: 0x000CE888
-	// (set) Token: 0x0600226D RID: 8813 RVA: 0x000D06CC File Offset: 0x000CE8CC
+	// Token: 0x17000402 RID: 1026
+	// (get) Token: 0x0600228B RID: 8843 RVA: 0x000D1000 File Offset: 0x000CF200
+	// (set) Token: 0x0600228C RID: 8844 RVA: 0x000D1044 File Offset: 0x000CF244
 	public virtual bool Jumping
 	{
 		get
@@ -1520,9 +1593,9 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x170003FF RID: 1023
-	// (get) Token: 0x0600226E RID: 8814 RVA: 0x000D075E File Offset: 0x000CE95E
-	// (set) Token: 0x0600226F RID: 8815 RVA: 0x000D0768 File Offset: 0x000CE968
+	// Token: 0x17000403 RID: 1027
+	// (get) Token: 0x0600228D RID: 8845 RVA: 0x000D10D6 File Offset: 0x000CF2D6
+	// (set) Token: 0x0600228E RID: 8846 RVA: 0x000D10E0 File Offset: 0x000CF2E0
 	public bool Climbing
 	{
 		get
@@ -1546,13 +1619,13 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002270 RID: 8816 RVA: 0x000D07E6 File Offset: 0x000CE9E6
+	// Token: 0x0600228F RID: 8847 RVA: 0x000D115E File Offset: 0x000CF35E
 	public virtual bool CanNavigatePath()
 	{
 		return this.onGround || this.isSwimming || this.bInElevator || this.Climbing;
 	}
 
-	// Token: 0x06002271 RID: 8817 RVA: 0x000D0808 File Offset: 0x000CEA08
+	// Token: 0x06002290 RID: 8848 RVA: 0x000D1180 File Offset: 0x000CF380
 	public AvatarController.ActionState GetAnimActionState()
 	{
 		if (this.emodel.avatarController)
@@ -1562,7 +1635,7 @@ public abstract class EntityAlive : Entity
 		return AvatarController.ActionState.None;
 	}
 
-	// Token: 0x06002272 RID: 8818 RVA: 0x000D0830 File Offset: 0x000CEA30
+	// Token: 0x06002291 RID: 8849 RVA: 0x000D11A8 File Offset: 0x000CF3A8
 	public virtual void StartAnimAction(int _animType)
 	{
 		if (this.emodel.avatarController)
@@ -1584,7 +1657,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002273 RID: 8819 RVA: 0x000D08B5 File Offset: 0x000CEAB5
+	// Token: 0x06002292 RID: 8850 RVA: 0x000D122D File Offset: 0x000CF42D
 	public virtual void ContinueAnimAction(int _animType)
 	{
 		if (this.emodel.avatarController)
@@ -1594,9 +1667,9 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x17000400 RID: 1024
-	// (get) Token: 0x06002274 RID: 8820 RVA: 0x000D08F0 File Offset: 0x000CEAF0
-	// (set) Token: 0x06002275 RID: 8821 RVA: 0x000D0917 File Offset: 0x000CEB17
+	// Token: 0x17000404 RID: 1028
+	// (get) Token: 0x06002293 RID: 8851 RVA: 0x000D1268 File Offset: 0x000CF468
+	// (set) Token: 0x06002294 RID: 8852 RVA: 0x000D128F File Offset: 0x000CF48F
 	public virtual bool RightArmAnimationAttack
 	{
 		get
@@ -1612,9 +1685,9 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x17000401 RID: 1025
-	// (get) Token: 0x06002276 RID: 8822 RVA: 0x000D0951 File Offset: 0x000CEB51
-	// (set) Token: 0x06002277 RID: 8823 RVA: 0x000D0978 File Offset: 0x000CEB78
+	// Token: 0x17000405 RID: 1029
+	// (get) Token: 0x06002295 RID: 8853 RVA: 0x000D12C9 File Offset: 0x000CF4C9
+	// (set) Token: 0x06002296 RID: 8854 RVA: 0x000D12F0 File Offset: 0x000CF4F0
 	public virtual bool RightArmAnimationUse
 	{
 		get
@@ -1630,9 +1703,9 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x17000402 RID: 1026
-	// (get) Token: 0x06002278 RID: 8824 RVA: 0x000D09B0 File Offset: 0x000CEBB0
-	// (set) Token: 0x06002279 RID: 8825 RVA: 0x000D09D8 File Offset: 0x000CEBD8
+	// Token: 0x17000406 RID: 1030
+	// (get) Token: 0x06002297 RID: 8855 RVA: 0x000D1328 File Offset: 0x000CF528
+	// (set) Token: 0x06002298 RID: 8856 RVA: 0x000D1350 File Offset: 0x000CF550
 	public virtual bool SpecialAttack
 	{
 		get
@@ -1649,9 +1722,9 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x17000403 RID: 1027
-	// (get) Token: 0x0600227A RID: 8826 RVA: 0x000D0A33 File Offset: 0x000CEC33
-	// (set) Token: 0x0600227B RID: 8827 RVA: 0x000D0A5A File Offset: 0x000CEC5A
+	// Token: 0x17000407 RID: 1031
+	// (get) Token: 0x06002299 RID: 8857 RVA: 0x000D13AB File Offset: 0x000CF5AB
+	// (set) Token: 0x0600229A RID: 8858 RVA: 0x000D13D2 File Offset: 0x000CF5D2
 	public virtual bool SpecialAttack2
 	{
 		get
@@ -1668,9 +1741,9 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x17000404 RID: 1028
-	// (get) Token: 0x0600227C RID: 8828 RVA: 0x000D0A97 File Offset: 0x000CEC97
-	// (set) Token: 0x0600227D RID: 8829 RVA: 0x000D0ABE File Offset: 0x000CECBE
+	// Token: 0x17000408 RID: 1032
+	// (get) Token: 0x0600229B RID: 8859 RVA: 0x000D140F File Offset: 0x000CF60F
+	// (set) Token: 0x0600229C RID: 8860 RVA: 0x000D1436 File Offset: 0x000CF636
 	public virtual bool Raging
 	{
 		get
@@ -1686,9 +1759,9 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x17000405 RID: 1029
-	// (get) Token: 0x0600227E RID: 8830 RVA: 0x000D0AF8 File Offset: 0x000CECF8
-	// (set) Token: 0x0600227F RID: 8831 RVA: 0x000D0B34 File Offset: 0x000CED34
+	// Token: 0x17000409 RID: 1033
+	// (get) Token: 0x0600229D RID: 8861 RVA: 0x000D1470 File Offset: 0x000CF670
+	// (set) Token: 0x0600229E RID: 8862 RVA: 0x000D14AC File Offset: 0x000CF6AC
 	public virtual bool Electrocuted
 	{
 		get
@@ -1709,9 +1782,9 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x17000406 RID: 1030
-	// (get) Token: 0x06002280 RID: 8832 RVA: 0x000D0BBB File Offset: 0x000CEDBB
-	// (set) Token: 0x06002281 RID: 8833 RVA: 0x000D0BE2 File Offset: 0x000CEDE2
+	// Token: 0x1700040A RID: 1034
+	// (get) Token: 0x0600229F RID: 8863 RVA: 0x000D1533 File Offset: 0x000CF733
+	// (set) Token: 0x060022A0 RID: 8864 RVA: 0x000D155A File Offset: 0x000CF75A
 	public virtual bool HarvestingAnimation
 	{
 		get
@@ -1724,7 +1797,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002282 RID: 8834 RVA: 0x000D0BFB File Offset: 0x000CEDFB
+	// Token: 0x060022A1 RID: 8865 RVA: 0x000D1573 File Offset: 0x000CF773
 	public virtual void StartHarvestingAnim(float _length, bool _weaponFireTrigger)
 	{
 		if (this.emodel != null && this.emodel.avatarController != null)
@@ -1733,9 +1806,9 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x17000407 RID: 1031
-	// (get) Token: 0x06002283 RID: 8835 RVA: 0x000D0C30 File Offset: 0x000CEE30
-	// (set) Token: 0x06002284 RID: 8836 RVA: 0x000D0C38 File Offset: 0x000CEE38
+	// Token: 0x1700040B RID: 1035
+	// (get) Token: 0x060022A2 RID: 8866 RVA: 0x000D15A8 File Offset: 0x000CF7A8
+	// (set) Token: 0x060022A3 RID: 8867 RVA: 0x000D15B0 File Offset: 0x000CF7B0
 	public bool IsEating
 	{
 		get
@@ -1761,7 +1834,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002285 RID: 8837 RVA: 0x000D0CB8 File Offset: 0x000CEEB8
+	// Token: 0x060022A4 RID: 8868 RVA: 0x000D1630 File Offset: 0x000CF830
 	public virtual void SetVehicleAnimation(int _animHash, int _pose)
 	{
 		if (this.emodel && this.emodel.avatarController)
@@ -1779,7 +1852,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002286 RID: 8838 RVA: 0x000D0D23 File Offset: 0x000CEF23
+	// Token: 0x060022A5 RID: 8869 RVA: 0x000D169B File Offset: 0x000CF89B
 	public virtual int GetVehicleAnimation()
 	{
 		if (this.emodel && this.emodel.avatarController)
@@ -1789,9 +1862,9 @@ public abstract class EntityAlive : Entity
 		return -1;
 	}
 
-	// Token: 0x17000408 RID: 1032
-	// (get) Token: 0x06002287 RID: 8839 RVA: 0x000D0D56 File Offset: 0x000CEF56
-	// (set) Token: 0x06002288 RID: 8840 RVA: 0x000D0D5E File Offset: 0x000CEF5E
+	// Token: 0x1700040C RID: 1036
+	// (get) Token: 0x060022A6 RID: 8870 RVA: 0x000D16CE File Offset: 0x000CF8CE
+	// (set) Token: 0x060022A7 RID: 8871 RVA: 0x000D16D6 File Offset: 0x000CF8D6
 	public virtual int Died
 	{
 		get
@@ -1808,9 +1881,9 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x17000409 RID: 1033
-	// (get) Token: 0x06002289 RID: 8841 RVA: 0x000D0D86 File Offset: 0x000CEF86
-	// (set) Token: 0x0600228A RID: 8842 RVA: 0x000D0D8E File Offset: 0x000CEF8E
+	// Token: 0x1700040D RID: 1037
+	// (get) Token: 0x060022A8 RID: 8872 RVA: 0x000D16FE File Offset: 0x000CF8FE
+	// (set) Token: 0x060022A9 RID: 8873 RVA: 0x000D1706 File Offset: 0x000CF906
 	public virtual int Score
 	{
 		get
@@ -1827,9 +1900,9 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x1700040A RID: 1034
-	// (get) Token: 0x0600228B RID: 8843 RVA: 0x000D0DB6 File Offset: 0x000CEFB6
-	// (set) Token: 0x0600228C RID: 8844 RVA: 0x000D0DBE File Offset: 0x000CEFBE
+	// Token: 0x1700040E RID: 1038
+	// (get) Token: 0x060022AA RID: 8874 RVA: 0x000D172E File Offset: 0x000CF92E
+	// (set) Token: 0x060022AB RID: 8875 RVA: 0x000D1736 File Offset: 0x000CF936
 	public virtual int KilledZombies
 	{
 		get
@@ -1846,9 +1919,9 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x1700040B RID: 1035
-	// (get) Token: 0x0600228D RID: 8845 RVA: 0x000D0DE6 File Offset: 0x000CEFE6
-	// (set) Token: 0x0600228E RID: 8846 RVA: 0x000D0DEE File Offset: 0x000CEFEE
+	// Token: 0x1700040F RID: 1039
+	// (get) Token: 0x060022AC RID: 8876 RVA: 0x000D175E File Offset: 0x000CF95E
+	// (set) Token: 0x060022AD RID: 8877 RVA: 0x000D1766 File Offset: 0x000CF966
 	public virtual int KilledPlayers
 	{
 		get
@@ -1865,9 +1938,9 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x1700040C RID: 1036
-	// (get) Token: 0x0600228F RID: 8847 RVA: 0x000D0E16 File Offset: 0x000CF016
-	// (set) Token: 0x06002290 RID: 8848 RVA: 0x000D0E1E File Offset: 0x000CF01E
+	// Token: 0x17000410 RID: 1040
+	// (get) Token: 0x060022AE RID: 8878 RVA: 0x000D178E File Offset: 0x000CF98E
+	// (set) Token: 0x060022AF RID: 8879 RVA: 0x000D1796 File Offset: 0x000CF996
 	public virtual int TeamNumber
 	{
 		get
@@ -1888,8 +1961,8 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x1700040D RID: 1037
-	// (get) Token: 0x06002291 RID: 8849 RVA: 0x000D0E5B File Offset: 0x000CF05B
+	// Token: 0x17000411 RID: 1041
+	// (get) Token: 0x060022B0 RID: 8880 RVA: 0x000D17D3 File Offset: 0x000CF9D3
 	public virtual string EntityName
 	{
 		get
@@ -1898,7 +1971,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002292 RID: 8850 RVA: 0x000D0E63 File Offset: 0x000CF063
+	// Token: 0x060022B1 RID: 8881 RVA: 0x000D17DB File Offset: 0x000CF9DB
 	public override void SetEntityName(string _name)
 	{
 		if (!_name.Equals(this.entityName))
@@ -1909,9 +1982,9 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x1700040E RID: 1038
-	// (get) Token: 0x06002293 RID: 8851 RVA: 0x000D0E96 File Offset: 0x000CF096
-	// (set) Token: 0x06002294 RID: 8852 RVA: 0x000D0E9E File Offset: 0x000CF09E
+	// Token: 0x17000412 RID: 1042
+	// (get) Token: 0x060022B2 RID: 8882 RVA: 0x000D180E File Offset: 0x000CFA0E
+	// (set) Token: 0x060022B3 RID: 8883 RVA: 0x000D1816 File Offset: 0x000CFA16
 	public virtual int DeathHealth
 	{
 		get
@@ -1928,9 +2001,9 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x1700040F RID: 1039
-	// (get) Token: 0x06002295 RID: 8853 RVA: 0x000D0EC6 File Offset: 0x000CF0C6
-	// (set) Token: 0x06002296 RID: 8854 RVA: 0x000D0ECE File Offset: 0x000CF0CE
+	// Token: 0x17000413 RID: 1043
+	// (get) Token: 0x060022B4 RID: 8884 RVA: 0x000D183E File Offset: 0x000CFA3E
+	// (set) Token: 0x060022B5 RID: 8885 RVA: 0x000D1846 File Offset: 0x000CFA46
 	public virtual bool Spawned
 	{
 		get
@@ -1948,9 +2021,9 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x17000410 RID: 1040
-	// (get) Token: 0x06002297 RID: 8855 RVA: 0x000D0EFC File Offset: 0x000CF0FC
-	// (set) Token: 0x06002298 RID: 8856 RVA: 0x000D0F04 File Offset: 0x000CF104
+	// Token: 0x17000414 RID: 1044
+	// (get) Token: 0x060022B6 RID: 8886 RVA: 0x000D1874 File Offset: 0x000CFA74
+	// (set) Token: 0x060022B7 RID: 8887 RVA: 0x000D187C File Offset: 0x000CFA7C
 	public bool IsBreakingBlocks
 	{
 		get
@@ -1967,14 +2040,14 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002299 RID: 8857 RVA: 0x000D0EC6 File Offset: 0x000CF0C6
+	// Token: 0x060022B8 RID: 8888 RVA: 0x000D183E File Offset: 0x000CFA3E
 	public override bool IsSpawned()
 	{
 		return this.bSpawned;
 	}
 
-	// Token: 0x17000411 RID: 1041
-	// (get) Token: 0x0600229A RID: 8858 RVA: 0x000D0F2C File Offset: 0x000CF12C
+	// Token: 0x17000415 RID: 1045
+	// (get) Token: 0x060022B9 RID: 8889 RVA: 0x000D18A4 File Offset: 0x000CFAA4
 	public virtual EntityBedrollPositionList SpawnPoints
 	{
 		get
@@ -1983,13 +2056,13 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x0600229B RID: 8859 RVA: 0x000D0F34 File Offset: 0x000CF134
+	// Token: 0x060022BA RID: 8890 RVA: 0x000D18AC File Offset: 0x000CFAAC
 	public virtual void RemoveIKTargets()
 	{
 		this.emodel.RemoveIKController();
 	}
 
-	// Token: 0x0600229C RID: 8860 RVA: 0x000D0F44 File Offset: 0x000CF144
+	// Token: 0x060022BB RID: 8891 RVA: 0x000D18BC File Offset: 0x000CFABC
 	public virtual void SetIKTargets(List<IKController.Target> targets)
 	{
 		IKController ikcontroller = this.emodel.AddIKController();
@@ -1999,13 +2072,13 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x0600229D RID: 8861 RVA: 0x000D0F6C File Offset: 0x000CF16C
+	// Token: 0x060022BC RID: 8892 RVA: 0x000D18E4 File Offset: 0x000CFAE4
 	public virtual List<Vector3i> GetDroppedBackpackPositions()
 	{
 		return this.droppedBackpackPositions;
 	}
 
-	// Token: 0x0600229E RID: 8862 RVA: 0x000D0F74 File Offset: 0x000CF174
+	// Token: 0x060022BD RID: 8893 RVA: 0x000D18EC File Offset: 0x000CFAEC
 	public virtual Vector3i GetLastDroppedBackpackPosition()
 	{
 		if (this.droppedBackpackPositions == null)
@@ -2020,7 +2093,7 @@ public abstract class EntityAlive : Entity
 		return list[list.Count - 1];
 	}
 
-	// Token: 0x0600229F RID: 8863 RVA: 0x000D0FAC File Offset: 0x000CF1AC
+	// Token: 0x060022BE RID: 8894 RVA: 0x000D1924 File Offset: 0x000CFB24
 	public virtual bool EqualsDroppedBackpackPositions(Vector3i position)
 	{
 		if (this.droppedBackpackPositions != null)
@@ -2037,7 +2110,7 @@ public abstract class EntityAlive : Entity
 		return false;
 	}
 
-	// Token: 0x060022A0 RID: 8864 RVA: 0x000D1014 File Offset: 0x000CF214
+	// Token: 0x060022BF RID: 8895 RVA: 0x000D198C File Offset: 0x000CFB8C
 	public virtual void SetDroppedBackpackPositions(List<Vector3i> positions)
 	{
 		this.droppedBackpackPositions.Clear();
@@ -2047,15 +2120,15 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x060022A1 RID: 8865 RVA: 0x000D1030 File Offset: 0x000CF230
+	// Token: 0x060022C0 RID: 8896 RVA: 0x000D19A8 File Offset: 0x000CFBA8
 	public virtual void ClearDroppedBackpackPositions()
 	{
 		this.droppedBackpackPositions.Clear();
 	}
 
-	// Token: 0x17000412 RID: 1042
-	// (get) Token: 0x060022A2 RID: 8866 RVA: 0x000D103D File Offset: 0x000CF23D
-	// (set) Token: 0x060022A3 RID: 8867 RVA: 0x000D1050 File Offset: 0x000CF250
+	// Token: 0x17000416 RID: 1046
+	// (get) Token: 0x060022C1 RID: 8897 RVA: 0x000D19B5 File Offset: 0x000CFBB5
+	// (set) Token: 0x060022C2 RID: 8898 RVA: 0x000D19C8 File Offset: 0x000CFBC8
 	public virtual int Health
 	{
 		get
@@ -2068,9 +2141,9 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x17000413 RID: 1043
-	// (get) Token: 0x060022A4 RID: 8868 RVA: 0x000D1064 File Offset: 0x000CF264
-	// (set) Token: 0x060022A5 RID: 8869 RVA: 0x000D1076 File Offset: 0x000CF276
+	// Token: 0x17000417 RID: 1047
+	// (get) Token: 0x060022C3 RID: 8899 RVA: 0x000D19DC File Offset: 0x000CFBDC
+	// (set) Token: 0x060022C4 RID: 8900 RVA: 0x000D19EE File Offset: 0x000CFBEE
 	public virtual float Stamina
 	{
 		get
@@ -2083,9 +2156,9 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x17000414 RID: 1044
-	// (get) Token: 0x060022A6 RID: 8870 RVA: 0x000D1089 File Offset: 0x000CF289
-	// (set) Token: 0x060022A7 RID: 8871 RVA: 0x000D109B File Offset: 0x000CF29B
+	// Token: 0x17000418 RID: 1048
+	// (get) Token: 0x060022C5 RID: 8901 RVA: 0x000D1A01 File Offset: 0x000CFC01
+	// (set) Token: 0x060022C6 RID: 8902 RVA: 0x000D1A13 File Offset: 0x000CFC13
 	public virtual float Water
 	{
 		get
@@ -2098,26 +2171,26 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x060022A8 RID: 8872 RVA: 0x000D10AE File Offset: 0x000CF2AE
+	// Token: 0x060022C7 RID: 8903 RVA: 0x000D1A26 File Offset: 0x000CFC26
 	public virtual int GetMaxHealth()
 	{
 		return (int)this.Stats.Health.Max;
 	}
 
-	// Token: 0x060022A9 RID: 8873 RVA: 0x000D10C1 File Offset: 0x000CF2C1
+	// Token: 0x060022C8 RID: 8904 RVA: 0x000D1A39 File Offset: 0x000CFC39
 	public virtual int GetMaxStamina()
 	{
 		return (int)this.Stats.Stamina.Max;
 	}
 
-	// Token: 0x060022AA RID: 8874 RVA: 0x000D10D4 File Offset: 0x000CF2D4
+	// Token: 0x060022C9 RID: 8905 RVA: 0x000D1A4C File Offset: 0x000CFC4C
 	public virtual int GetMaxWater()
 	{
 		return (int)this.Stats.Water.Max;
 	}
 
-	// Token: 0x17000415 RID: 1045
-	// (get) Token: 0x060022AB RID: 8875 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000419 RID: 1049
+	// (get) Token: 0x060022CA RID: 8906 RVA: 0x00020021 File Offset: 0x0001E221
 	public virtual bool IsValidAimAssistSlowdownTarget
 	{
 		get
@@ -2126,8 +2199,8 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x17000416 RID: 1046
-	// (get) Token: 0x060022AC RID: 8876 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x1700041A RID: 1050
+	// (get) Token: 0x060022CB RID: 8907 RVA: 0x00020021 File Offset: 0x0001E221
 	public virtual bool IsValidAimAssistSnapTarget
 	{
 		get
@@ -2136,9 +2209,9 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x17000417 RID: 1047
-	// (get) Token: 0x060022AD RID: 8877 RVA: 0x000D10E7 File Offset: 0x000CF2E7
-	// (set) Token: 0x060022AE RID: 8878 RVA: 0x000D10EF File Offset: 0x000CF2EF
+	// Token: 0x1700041B RID: 1051
+	// (get) Token: 0x060022CC RID: 8908 RVA: 0x000D1A5F File Offset: 0x000CFC5F
+	// (set) Token: 0x060022CD RID: 8909 RVA: 0x000D1A67 File Offset: 0x000CFC67
 	public virtual EModelBase.HeadStates CurrentHeadState
 	{
 		get
@@ -2156,13 +2229,13 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x060022AF RID: 8879 RVA: 0x00040D24 File Offset: 0x0003EF24
+	// Token: 0x060022CE RID: 8910 RVA: 0x00040F84 File Offset: 0x0003F184
 	public virtual float GetStaminaMultiplier()
 	{
 		return 1f;
 	}
 
-	// Token: 0x060022B0 RID: 8880 RVA: 0x000D1124 File Offset: 0x000CF324
+	// Token: 0x060022CF RID: 8911 RVA: 0x000D1A9C File Offset: 0x000CFC9C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void SetMovementState()
 	{
@@ -2175,7 +2248,7 @@ public abstract class EntityAlive : Entity
 		this.MovementState = ((num2 > this.moveSpeedAggro * this.moveSpeedAggro) ? 3 : ((num2 > this.moveSpeed * this.moveSpeed) ? 2 : ((num2 > 0.001f) ? 1 : 0)));
 	}
 
-	// Token: 0x060022B1 RID: 8881 RVA: 0x000D1190 File Offset: 0x000CF390
+	// Token: 0x060022D0 RID: 8912 RVA: 0x000D1B08 File Offset: 0x000CFD08
 	public virtual void OnUpdateLive()
 	{
 		this.Stats.Health.RegenerationAmount = 0f;
@@ -2327,7 +2400,7 @@ public abstract class EntityAlive : Entity
 		this.checkForTeleportOutOfTraderArea();
 	}
 
-	// Token: 0x060022B2 RID: 8882 RVA: 0x000D15B8 File Offset: 0x000CF7B8
+	// Token: 0x060022D1 RID: 8913 RVA: 0x000D1F30 File Offset: 0x000D0130
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void checkForTeleportOutOfTraderArea()
 	{
@@ -2402,7 +2475,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x060022B3 RID: 8883 RVA: 0x000D187C File Offset: 0x000CFA7C
+	// Token: 0x060022D2 RID: 8914 RVA: 0x000D21F4 File Offset: 0x000D03F4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void StartJump()
 	{
@@ -2426,21 +2499,21 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x060022B4 RID: 8884 RVA: 0x000D190C File Offset: 0x000CFB0C
+	// Token: 0x060022D3 RID: 8915 RVA: 0x000D2284 File Offset: 0x000D0484
 	public virtual void SetJumpDistance(float _distance, float _heightDiff)
 	{
 		this.jumpDistance = _distance;
 		this.jumpHeightDiff = _heightDiff;
 	}
 
-	// Token: 0x060022B5 RID: 8885 RVA: 0x000D191C File Offset: 0x000CFB1C
+	// Token: 0x060022D4 RID: 8916 RVA: 0x000D2294 File Offset: 0x000D0494
 	public virtual void SetSwimValues(float _durationTicks, Vector3 _motion)
 	{
 		this.jumpSwimDurationTicks = Mathf.Clamp(_durationTicks / this.swimSpeed - 6f, 3f, 20f);
 		this.jumpSwimMotion = _motion;
 	}
 
-	// Token: 0x060022B6 RID: 8886 RVA: 0x000D1948 File Offset: 0x000CFB48
+	// Token: 0x060022D5 RID: 8917 RVA: 0x000D22C0 File Offset: 0x000D04C0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void UpdateJump()
 	{
@@ -2501,7 +2574,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x060022B7 RID: 8887 RVA: 0x000D1A80 File Offset: 0x000CFC80
+	// Token: 0x060022D6 RID: 8918 RVA: 0x000D23F8 File Offset: 0x000D05F8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void StartJumpSwimMotion()
 	{
@@ -2527,7 +2600,7 @@ public abstract class EntityAlive : Entity
 		this.motion.y = 0f;
 	}
 
-	// Token: 0x060022B8 RID: 8888 RVA: 0x000D1C0C File Offset: 0x000CFE0C
+	// Token: 0x060022D7 RID: 8919 RVA: 0x000D2584 File Offset: 0x000D0784
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void FaceJumpTo()
 	{
@@ -2536,7 +2609,7 @@ public abstract class EntityAlive : Entity
 		base.SeekYaw(num, 0f, 0f);
 	}
 
-	// Token: 0x060022B9 RID: 8889 RVA: 0x000D1C6C File Offset: 0x000CFE6C
+	// Token: 0x060022D8 RID: 8920 RVA: 0x000D25E4 File Offset: 0x000D07E4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void StartJumpMotion()
 	{
@@ -2547,7 +2620,7 @@ public abstract class EntityAlive : Entity
 		this.motion.y = Utils.FastMax(num2 * 0.5f, num2 + this.jumpHeightDiff / num);
 	}
 
-	// Token: 0x060022BA RID: 8890 RVA: 0x000D1CF0 File Offset: 0x000CFEF0
+	// Token: 0x060022D9 RID: 8921 RVA: 0x000D2668 File Offset: 0x000D0868
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void JumpMove()
 	{
@@ -2571,7 +2644,7 @@ public abstract class EntityAlive : Entity
 		this.motion.y = this.motion.y * 0.91f;
 	}
 
-	// Token: 0x060022BB RID: 8891 RVA: 0x000D1DE0 File Offset: 0x000CFFE0
+	// Token: 0x060022DA RID: 8922 RVA: 0x000D2758 File Offset: 0x000D0958
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void EndJump()
 	{
@@ -2583,7 +2656,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x060022BC RID: 8892 RVA: 0x000D1E1C File Offset: 0x000D001C
+	// Token: 0x060022DB RID: 8923 RVA: 0x000D2794 File Offset: 0x000D0994
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool CalcIfSwimming()
 	{
@@ -2591,7 +2664,7 @@ public abstract class EntityAlive : Entity
 		return this.inWaterPercent >= num;
 	}
 
-	// Token: 0x060022BD RID: 8893 RVA: 0x000D1E52 File Offset: 0x000D0052
+	// Token: 0x060022DC RID: 8924 RVA: 0x000D27CA File Offset: 0x000D09CA
 	public override void SwimChanged()
 	{
 		if (this.emodel.avatarController)
@@ -2600,7 +2673,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x060022BE RID: 8894 RVA: 0x000D1E7C File Offset: 0x000D007C
+	// Token: 0x060022DD RID: 8925 RVA: 0x000D27F4 File Offset: 0x000D09F4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Update()
 	{
@@ -2623,7 +2696,7 @@ public abstract class EntityAlive : Entity
 		}
 		if (this.isHeadUnderwater != (this.Buffs.GetCustomVar("_underwater") == 1f))
 		{
-			this.Buffs.SetCustomVar("_underwater", (float)(this.isHeadUnderwater ? 1 : 0), true, CVarOperation.set);
+			this.Buffs.SetCustomVar("_underwater", (float)(this.isHeadUnderwater ? 1 : 0), true, CVarOperation.set, false);
 		}
 		this.MinEventContext.Area = this.boundingBox;
 		this.MinEventContext.Biome = this.biomeStandingOn;
@@ -2650,14 +2723,14 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x060022BF RID: 8895 RVA: 0x000D20A4 File Offset: 0x000D02A4
+	// Token: 0x060022DE RID: 8926 RVA: 0x000D2A1D File Offset: 0x000D0C1D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LateUpdate()
 	{
 		this.startOfFrameStats.CopyFrom(this.entityStats);
 	}
 
-	// Token: 0x060022C0 RID: 8896 RVA: 0x000D20B8 File Offset: 0x000D02B8
+	// Token: 0x060022DF RID: 8927 RVA: 0x000D2A30 File Offset: 0x000D0C30
 	public virtual void OnDeathUpdate()
 	{
 		if (this.deathUpdateTime < this.timeStayAfterDeath)
@@ -2680,14 +2753,14 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x060022C1 RID: 8897 RVA: 0x000D2194 File Offset: 0x000D0394
+	// Token: 0x060022E0 RID: 8928 RVA: 0x000D2B0C File Offset: 0x000D0D0C
 	public void NotifyRootMotion(Animator animator)
 	{
 		this.accumulatedRootMotion += animator.deltaPosition;
 	}
 
-	// Token: 0x17000418 RID: 1048
-	// (get) Token: 0x060022C2 RID: 8898 RVA: 0x000D21AD File Offset: 0x000D03AD
+	// Token: 0x1700041C RID: 1052
+	// (get) Token: 0x060022E1 RID: 8929 RVA: 0x000D2B25 File Offset: 0x000D0D25
 	public virtual float MaxVelocity
 	{
 		get
@@ -2696,7 +2769,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x060022C3 RID: 8899 RVA: 0x000D21B4 File Offset: 0x000D03B4
+	// Token: 0x060022E2 RID: 8930 RVA: 0x000D2B2C File Offset: 0x000D0D2C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void DefaultMoveEntity(Vector3 _direction, bool _isDirAbsolute)
 	{
@@ -2797,7 +2870,7 @@ public abstract class EntityAlive : Entity
 		this.motion.y = this.motion.y * 0.98f;
 	}
 
-	// Token: 0x060022C4 RID: 8900 RVA: 0x000D2518 File Offset: 0x000D0718
+	// Token: 0x060022E3 RID: 8931 RVA: 0x000D2E90 File Offset: 0x000D1090
 	public virtual void MoveEntityHeaded(Vector3 _direction, bool _isDirAbsolute)
 	{
 		if (this.AttachedToEntity != null)
@@ -2906,7 +2979,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x060022C5 RID: 8901 RVA: 0x000D2870 File Offset: 0x000D0A70
+	// Token: 0x060022E4 RID: 8932 RVA: 0x000D31E8 File Offset: 0x000D13E8
 	public float GetPassiveEffectSpeedModifier()
 	{
 		if (this.IsCrouching)
@@ -2927,13 +3000,13 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x060022C6 RID: 8902 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060022E5 RID: 8933 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool CalcStrafeYawOffset(float _moveX, float _moveZ, ref float _desiredyaw, ref float _yawOffset)
 	{
 		return false;
 	}
 
-	// Token: 0x060022C7 RID: 8903 RVA: 0x000D2924 File Offset: 0x000D0B24
+	// Token: 0x060022E6 RID: 8934 RVA: 0x000D329C File Offset: 0x000D149C
 	public void SetMoveForward(float _moveForward)
 	{
 		this.moveDirection.x = 0f;
@@ -2951,7 +3024,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x060022C8 RID: 8904 RVA: 0x000D29BC File Offset: 0x000D0BBC
+	// Token: 0x060022E7 RID: 8935 RVA: 0x000D3334 File Offset: 0x000D1534
 	public void SetMoveForwardWithModifiers(float _speedModifier, float _speedScale, float _strafeAngle, bool _climb)
 	{
 		Vector3 vector = new Vector3(0f, 0f, 1f);
@@ -2971,7 +3044,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x060022C9 RID: 8905 RVA: 0x000D2A70 File Offset: 0x000D0C70
+	// Token: 0x060022E8 RID: 8936 RVA: 0x000D33E8 File Offset: 0x000D15E8
 	public void AddMotion(float dir, float speed)
 	{
 		float num = dir * 0.017453292f;
@@ -2979,7 +3052,7 @@ public abstract class EntityAlive : Entity
 		this.accumulatedRootMotion.z = this.accumulatedRootMotion.z + Mathf.Cos(num) * speed;
 	}
 
-	// Token: 0x060022CA RID: 8906 RVA: 0x000D2AB4 File Offset: 0x000D0CB4
+	// Token: 0x060022E9 RID: 8937 RVA: 0x000D342C File Offset: 0x000D162C
 	public void MakeMotionMoveToward(float x, float z, float minMotion, float maxMotion)
 	{
 		if (this.RootMotion)
@@ -3003,7 +3076,7 @@ public abstract class EntityAlive : Entity
 		this.isMoveDirAbsolute = true;
 	}
 
-	// Token: 0x060022CB RID: 8907 RVA: 0x000D2B68 File Offset: 0x000D0D68
+	// Token: 0x060022EA RID: 8938 RVA: 0x000D34E0 File Offset: 0x000D16E0
 	public bool IsInFrontOfMe(Vector3 _position)
 	{
 		Vector3 headPosition = this.getHeadPosition();
@@ -3014,7 +3087,7 @@ public abstract class EntityAlive : Entity
 		return angleBetween >= -num && angleBetween <= num;
 	}
 
-	// Token: 0x060022CC RID: 8908 RVA: 0x000D2BAC File Offset: 0x000D0DAC
+	// Token: 0x060022EB RID: 8939 RVA: 0x000D3524 File Offset: 0x000D1724
 	public bool IsInViewCone(Vector3 _position)
 	{
 		Vector3 headPosition = this.getHeadPosition();
@@ -3036,7 +3109,7 @@ public abstract class EntityAlive : Entity
 		return angleBetween >= -num && angleBetween <= num;
 	}
 
-	// Token: 0x060022CD RID: 8909 RVA: 0x000D2C08 File Offset: 0x000D0E08
+	// Token: 0x060022EC RID: 8940 RVA: 0x000D3580 File Offset: 0x000D1780
 	public void DrawViewCone()
 	{
 		Vector3 vector;
@@ -3061,7 +3134,7 @@ public abstract class EntityAlive : Entity
 		Debug.DrawRay(vector2, vector4, new Color(0.6f, 0.6f, 0.3f), 0.1f);
 	}
 
-	// Token: 0x060022CE RID: 8910 RVA: 0x000D2CF0 File Offset: 0x000D0EF0
+	// Token: 0x060022ED RID: 8941 RVA: 0x000D3668 File Offset: 0x000D1868
 	public bool CanSee(Vector3 _pos)
 	{
 		Vector3 headPosition = this.getHeadPosition();
@@ -3088,7 +3161,7 @@ public abstract class EntityAlive : Entity
 		return flag;
 	}
 
-	// Token: 0x060022CF RID: 8911 RVA: 0x000D2D8C File Offset: 0x000D0F8C
+	// Token: 0x060022EE RID: 8942 RVA: 0x000D3704 File Offset: 0x000D1904
 	public bool CanEntityBeSeen(Entity _other, bool checkViewCone = true)
 	{
 		Vector3 headPosition = this.getHeadPosition();
@@ -3148,7 +3221,7 @@ public abstract class EntityAlive : Entity
 		return flag;
 	}
 
-	// Token: 0x060022D0 RID: 8912 RVA: 0x000D2F28 File Offset: 0x000D1128
+	// Token: 0x060022EF RID: 8943 RVA: 0x000D38A0 File Offset: 0x000D1AA0
 	public virtual float GetSeeDistance()
 	{
 		this.senseScale = 1f;
@@ -3167,7 +3240,7 @@ public abstract class EntityAlive : Entity
 		return this.sightRange;
 	}
 
-	// Token: 0x060022D1 RID: 8913 RVA: 0x000D2FA8 File Offset: 0x000D11A8
+	// Token: 0x060022F0 RID: 8944 RVA: 0x000D3920 File Offset: 0x000D1B20
 	public bool CanSeeStealth(float dist, float lightLevel)
 	{
 		float num = dist / this.sightRange;
@@ -3175,14 +3248,14 @@ public abstract class EntityAlive : Entity
 		return lightLevel > num2;
 	}
 
-	// Token: 0x060022D2 RID: 8914 RVA: 0x000D2FE4 File Offset: 0x000D11E4
+	// Token: 0x060022F1 RID: 8945 RVA: 0x000D395C File Offset: 0x000D1B5C
 	public float GetSeeStealthDebugScale(float dist)
 	{
 		float num = dist / this.sightRange;
 		return Utils.FastLerp(this.sightLightThreshold.x, this.sightLightThreshold.y, num);
 	}
 
-	// Token: 0x060022D3 RID: 8915 RVA: 0x000D3018 File Offset: 0x000D1218
+	// Token: 0x060022F2 RID: 8946 RVA: 0x000D3990 File Offset: 0x000D1B90
 	public override void SetAlive()
 	{
 		if (this.IsDead())
@@ -3203,20 +3276,20 @@ public abstract class EntityAlive : Entity
 		this.emodel.SetAlive();
 	}
 
-	// Token: 0x060022D4 RID: 8916 RVA: 0x000D30B8 File Offset: 0x000D12B8
+	// Token: 0x060022F3 RID: 8947 RVA: 0x000D3A30 File Offset: 0x000D1C30
 	public float YawForTarget(Entity _otherEntity)
 	{
 		return this.YawForTarget(_otherEntity.GetPosition());
 	}
 
-	// Token: 0x060022D5 RID: 8917 RVA: 0x000D30C8 File Offset: 0x000D12C8
+	// Token: 0x060022F4 RID: 8948 RVA: 0x000D3A40 File Offset: 0x000D1C40
 	public float YawForTarget(Vector3 target)
 	{
 		float num = target.x - this.position.x;
 		return -(float)(Math.Atan2((double)(target.z - this.position.z), (double)num) * 180.0 / 3.141592653589793) + 90f;
 	}
 
-	// Token: 0x060022D6 RID: 8918 RVA: 0x000D3120 File Offset: 0x000D1320
+	// Token: 0x060022F5 RID: 8949 RVA: 0x000D3A98 File Offset: 0x000D1C98
 	public void RotateTo(Entity _otherEntity, float _dYaw, float _dPitch)
 	{
 		float num = _otherEntity.position.x - this.position.x;
@@ -3238,7 +3311,7 @@ public abstract class EntityAlive : Entity
 		this.rotation.y = EntityAlive.UpdateRotation(this.rotation.y, num5, _dYaw);
 	}
 
-	// Token: 0x060022D7 RID: 8919 RVA: 0x000D3268 File Offset: 0x000D1468
+	// Token: 0x060022F6 RID: 8950 RVA: 0x000D3BE0 File Offset: 0x000D1DE0
 	public void RotateTo(float _x, float _y, float _z, float _dYaw, float _dPitch)
 	{
 		float num = _x - this.position.x;
@@ -3253,7 +3326,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x060022D8 RID: 8920 RVA: 0x000D3338 File Offset: 0x000D1538
+	// Token: 0x060022F7 RID: 8951 RVA: 0x000D3CB0 File Offset: 0x000D1EB0
 	public static float UpdateRotation(float _curRotation, float _intendedRotation, float _maxIncr)
 	{
 		float num;
@@ -3275,7 +3348,7 @@ public abstract class EntityAlive : Entity
 		return _curRotation + num;
 	}
 
-	// Token: 0x060022D9 RID: 8921 RVA: 0x000D3380 File Offset: 0x000D1580
+	// Token: 0x060022F8 RID: 8952 RVA: 0x000D3CF8 File Offset: 0x000D1EF8
 	public override float GetEyeHeight()
 	{
 		if (this.walkType == 21)
@@ -3293,13 +3366,13 @@ public abstract class EntityAlive : Entity
 		return base.height * 0.5f;
 	}
 
-	// Token: 0x060022DA RID: 8922 RVA: 0x000D33CE File Offset: 0x000D15CE
+	// Token: 0x060022F9 RID: 8953 RVA: 0x000D3D46 File Offset: 0x000D1F46
 	public virtual float GetSpeedModifier()
 	{
 		return this.speedModifier;
 	}
 
-	// Token: 0x060022DB RID: 8923 RVA: 0x000D33D8 File Offset: 0x000D15D8
+	// Token: 0x060022FA RID: 8954 RVA: 0x000D3D50 File Offset: 0x000D1F50
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void fallHitGround(float _distance, Vector3 _fallMotion)
 	{
@@ -3323,7 +3396,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x060022DC RID: 8924 RVA: 0x000D3498 File Offset: 0x000D1698
+	// Token: 0x060022FB RID: 8955 RVA: 0x000D3E10 File Offset: 0x000D2010
 	public bool NotifyDestroyedBlock(ItemActionAttack.AttackHitInfo attackHitInfo)
 	{
 		if (attackHitInfo == null || this.moveHelper == null || this.moveHelper.BlockedFlags <= 0)
@@ -3374,14 +3447,14 @@ public abstract class EntityAlive : Entity
 		return flag;
 	}
 
-	// Token: 0x060022DD RID: 8925 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060022FC RID: 8956 RVA: 0x00010E62 File Offset: 0x0000F062
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool ExecuteDestroyBlockBehavior(EntityAlive.DestroyBlockBehavior behavior, ItemActionAttack.AttackHitInfo attackHitInfo)
 	{
 		return false;
 	}
 
-	// Token: 0x060022DE RID: 8926 RVA: 0x000D3608 File Offset: 0x000D1808
+	// Token: 0x060022FD RID: 8957 RVA: 0x000D3F80 File Offset: 0x000D2180
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool ChooseFallBehavior(float _distance, Vector3 _fallMotion)
 	{
@@ -3424,14 +3497,14 @@ public abstract class EntityAlive : Entity
 		return flag;
 	}
 
-	// Token: 0x060022DF RID: 8927 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060022FE RID: 8958 RVA: 0x00010E62 File Offset: 0x0000F062
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool ExecuteFallBehavior(EntityAlive.FallBehavior behavior, float _distance, Vector3 _fallMotion)
 	{
 		return false;
 	}
 
-	// Token: 0x060022E0 RID: 8928 RVA: 0x000D3740 File Offset: 0x000D1940
+	// Token: 0x060022FF RID: 8959 RVA: 0x000D40B8 File Offset: 0x000D22B8
 	public virtual void PlayHitGroundSound(float impactSpeed = 1f)
 	{
 		float num = Mathf.Lerp(0.3f, 1f, impactSpeed);
@@ -3448,19 +3521,19 @@ public abstract class EntityAlive : Entity
 		this.PlayOneShot("entityhitsground", false, false, false, null, num);
 	}
 
-	// Token: 0x060022E1 RID: 8929 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x06002300 RID: 8960 RVA: 0x00020021 File Offset: 0x0001E221
 	public virtual bool FriendlyFireCheck(EntityAlive other)
 	{
 		return true;
 	}
 
-	// Token: 0x060022E2 RID: 8930 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002301 RID: 8961 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool HasImmunity(BuffClass _buffClass)
 	{
 		return false;
 	}
 
-	// Token: 0x060022E3 RID: 8931 RVA: 0x000D37AC File Offset: 0x000D19AC
+	// Token: 0x06002302 RID: 8962 RVA: 0x000D4124 File Offset: 0x000D2324
 	public int CalculateBlockDamage(BlockDamage block, int defaultBlockDamage, out bool bypassMaxDamage)
 	{
 		if (this.stompsSpikes && block.HasTag(BlockTags.Spike))
@@ -3472,7 +3545,7 @@ public abstract class EntityAlive : Entity
 		return defaultBlockDamage;
 	}
 
-	// Token: 0x060022E4 RID: 8932 RVA: 0x000D37CC File Offset: 0x000D19CC
+	// Token: 0x06002303 RID: 8963 RVA: 0x000D4144 File Offset: 0x000D2344
 	public override int DamageEntity(DamageSource _damageSource, int _strength, bool _criticalHit, float _impulseScale = 1f)
 	{
 		if (_damageSource.damageType == EnumDamageTypes.Suicide && this.emodel && this.emodel.avatarController is AvatarZombieController)
@@ -3545,43 +3618,43 @@ public abstract class EntityAlive : Entity
 		return damageResponse.ModStrength;
 	}
 
-	// Token: 0x060022E5 RID: 8933 RVA: 0x000D3A27 File Offset: 0x000D1C27
+	// Token: 0x06002304 RID: 8964 RVA: 0x000D439F File Offset: 0x000D259F
 	public virtual void SetDamagedTarget(EntityAlive _attackTarget)
 	{
 		this.damagedTarget = _attackTarget;
 	}
 
-	// Token: 0x060022E6 RID: 8934 RVA: 0x000D3A30 File Offset: 0x000D1C30
+	// Token: 0x06002305 RID: 8965 RVA: 0x000D43A8 File Offset: 0x000D25A8
 	public virtual void ClearDamagedTarget()
 	{
 		this.damagedTarget = null;
 	}
 
-	// Token: 0x060022E7 RID: 8935 RVA: 0x000D3A39 File Offset: 0x000D1C39
+	// Token: 0x06002306 RID: 8966 RVA: 0x000D43B1 File Offset: 0x000D25B1
 	public EntityAlive GetDamagedTarget()
 	{
 		return this.damagedTarget;
 	}
 
-	// Token: 0x060022E8 RID: 8936 RVA: 0x000D3A41 File Offset: 0x000D1C41
+	// Token: 0x06002307 RID: 8967 RVA: 0x000D43B9 File Offset: 0x000D25B9
 	public override bool IsDead()
 	{
 		return base.IsDead() || this.RecordedDamage.Fatal;
 	}
 
-	// Token: 0x060022E9 RID: 8937 RVA: 0x000D3A58 File Offset: 0x000D1C58
+	// Token: 0x06002308 RID: 8968 RVA: 0x000D43D0 File Offset: 0x000D25D0
 	public override bool CanLockOnServer(int _lockingPlayerID, ILockContext _context, ushort _channel)
 	{
 		return !this.IsDead() && base.CanLockOnServer(_lockingPlayerID, _context, _channel);
 	}
 
-	// Token: 0x060022EA RID: 8938 RVA: 0x000D3A6D File Offset: 0x000D1C6D
+	// Token: 0x06002309 RID: 8969 RVA: 0x000D43E5 File Offset: 0x000D25E5
 	public override bool CanLockLocally(ILockContext _context, ushort _channel)
 	{
 		return !this.IsDead() && base.CanLockLocally(_context, _channel);
 	}
 
-	// Token: 0x060022EB RID: 8939 RVA: 0x000D3A84 File Offset: 0x000D1C84
+	// Token: 0x0600230A RID: 8970 RVA: 0x000D43FC File Offset: 0x000D25FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual DamageResponse damageEntityLocal(DamageSource _damageSource, int _strength, bool _criticalHit, float impulseScale)
 	{
@@ -3732,7 +3805,7 @@ public abstract class EntityAlive : Entity
 		return damageResponse;
 	}
 
-	// Token: 0x060022EC RID: 8940 RVA: 0x000D3FDC File Offset: 0x000D21DC
+	// Token: 0x0600230B RID: 8971 RVA: 0x000D4954 File Offset: 0x000D2B54
 	public override void FireAttackedEvents(DamageResponse _dmResponse)
 	{
 		base.FireAttackedEvents(_dmResponse);
@@ -3756,8 +3829,8 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x17000419 RID: 1049
-	// (get) Token: 0x060022ED RID: 8941 RVA: 0x000D409C File Offset: 0x000D229C
+	// Token: 0x1700041D RID: 1053
+	// (get) Token: 0x0600230C RID: 8972 RVA: 0x000D4A14 File Offset: 0x000D2C14
 	public virtual bool IsImmuneToLegDamage
 	{
 		get
@@ -3767,7 +3840,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x060022EE RID: 8942 RVA: 0x000D4100 File Offset: 0x000D2300
+	// Token: 0x0600230D RID: 8973 RVA: 0x000D4A78 File Offset: 0x000D2C78
 	public override void ProcessDamageResponse(DamageResponse _dmResponse)
 	{
 		if (Time.time - this.lastAliveTime < 1f)
@@ -3793,7 +3866,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x060022EF RID: 8943 RVA: 0x000D4214 File Offset: 0x000D2414
+	// Token: 0x0600230E RID: 8974 RVA: 0x000D4B8C File Offset: 0x000D2D8C
 	public virtual void ProcessDamageResponseLocal(DamageResponse _dmResponse)
 	{
 		if (this.emodel == null)
@@ -4079,7 +4152,7 @@ public abstract class EntityAlive : Entity
 		this.RecordedDamage = _dmResponse;
 	}
 
-	// Token: 0x060022F0 RID: 8944 RVA: 0x000D4C04 File Offset: 0x000D2E04
+	// Token: 0x0600230F RID: 8975 RVA: 0x000D557C File Offset: 0x000D377C
 	public string GetArmorImpactSound(EquipmentSlots _slot, bool _grazingHit, bool _includeCosmetic = true)
 	{
 		ItemClass itemClass = null;
@@ -4103,7 +4176,7 @@ public abstract class EntityAlive : Entity
 		return itemClass.SoundImpactHit;
 	}
 
-	// Token: 0x060022F1 RID: 8945 RVA: 0x000D4C5C File Offset: 0x000D2E5C
+	// Token: 0x06002310 RID: 8976 RVA: 0x000D55D4 File Offset: 0x000D37D4
 	public string GetArmorMaterial(EquipmentSlots _slot, bool _includeCosmetic = true)
 	{
 		ItemClass itemClass = null;
@@ -4127,56 +4200,56 @@ public abstract class EntityAlive : Entity
 		return string.Empty;
 	}
 
-	// Token: 0x060022F2 RID: 8946 RVA: 0x000D4CB5 File Offset: 0x000D2EB5
+	// Token: 0x06002311 RID: 8977 RVA: 0x000D562D File Offset: 0x000D382D
 	public EntityAlive GetRevengeTarget()
 	{
 		return this.revengeEntity;
 	}
 
-	// Token: 0x060022F3 RID: 8947 RVA: 0x000D4CBD File Offset: 0x000D2EBD
+	// Token: 0x06002312 RID: 8978 RVA: 0x000D5635 File Offset: 0x000D3835
 	public void SetRevengeTarget(EntityAlive _other)
 	{
 		this.revengeEntity = _other;
 		this.revengeTimer = ((this.revengeEntity == null) ? 0 : 500);
 	}
 
-	// Token: 0x060022F4 RID: 8948 RVA: 0x000D4CE2 File Offset: 0x000D2EE2
+	// Token: 0x06002313 RID: 8979 RVA: 0x000D565A File Offset: 0x000D385A
 	public void SetRevengeTimer(int ticks)
 	{
 		this.revengeTimer = ticks;
 	}
 
-	// Token: 0x060022F5 RID: 8949 RVA: 0x000BBB3C File Offset: 0x000B9D3C
+	// Token: 0x06002314 RID: 8980 RVA: 0x000BC280 File Offset: 0x000BA480
 	public override bool CanBePushed()
 	{
 		return !this.IsDead();
 	}
 
-	// Token: 0x060022F6 RID: 8950 RVA: 0x000D4CEB File Offset: 0x000D2EEB
+	// Token: 0x06002315 RID: 8981 RVA: 0x000D5663 File Offset: 0x000D3863
 	public override bool CanCollideWith(Entity _other)
 	{
 		return !this.IsDead() && !(_other is EntityItem) && !(_other is EntitySupplyCrate);
 	}
 
-	// Token: 0x060022F7 RID: 8951 RVA: 0x000D4D0B File Offset: 0x000D2F0B
+	// Token: 0x06002316 RID: 8982 RVA: 0x000D5683 File Offset: 0x000D3883
 	public override bool CanCollideWithBlocks()
 	{
 		return !this.IsSleeping;
 	}
 
-	// Token: 0x060022F8 RID: 8952 RVA: 0x000D4D18 File Offset: 0x000D2F18
+	// Token: 0x06002317 RID: 8983 RVA: 0x000D5690 File Offset: 0x000D3890
 	public void DoRagdoll(in DamageResponse _dmResponse)
 	{
 		this.emodel.DoRagdoll(in _dmResponse, EModelBase.RagdollMode.Default, _dmResponse.StunDuration);
 	}
 
-	// Token: 0x060022F9 RID: 8953 RVA: 0x000D4D2D File Offset: 0x000D2F2D
+	// Token: 0x06002318 RID: 8984 RVA: 0x000D56A5 File Offset: 0x000D38A5
 	public void DoRagdoll(in DamageResponse _dmResponse, EModelBase.RagdollMode _mode)
 	{
 		this.emodel.DoRagdoll(in _dmResponse, _mode, _dmResponse.StunDuration);
 	}
 
-	// Token: 0x060022FA RID: 8954 RVA: 0x000D4D44 File Offset: 0x000D2F44
+	// Token: 0x06002319 RID: 8985 RVA: 0x000D56BC File Offset: 0x000D38BC
 	public void AddScore(int _diedMySelfTimes, int _zombieKills, int _playerKills, int _otherTeamnumber, int _conditions)
 	{
 		this.KilledZombies += _zombieKills;
@@ -4225,7 +4298,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x060022FB RID: 8955 RVA: 0x000D4E2C File Offset: 0x000D302C
+	// Token: 0x0600231A RID: 8986 RVA: 0x000D57A4 File Offset: 0x000D39A4
 	public virtual void AwardKill(EntityAlive killer)
 	{
 		if (killer != null && killer != this)
@@ -4258,7 +4331,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x060022FC RID: 8956 RVA: 0x000D4ED4 File Offset: 0x000D30D4
+	// Token: 0x0600231B RID: 8987 RVA: 0x000D584C File Offset: 0x000D3A4C
 	public virtual void OnEntityDeath()
 	{
 		if (this.deathUpdateTime != 0)
@@ -4313,14 +4386,14 @@ public abstract class EntityAlive : Entity
 		this.entityThatKilledMe = null;
 	}
 
-	// Token: 0x060022FD RID: 8957 RVA: 0x000D506A File Offset: 0x000D326A
+	// Token: 0x0600231C RID: 8988 RVA: 0x000D59E2 File Offset: 0x000D3BE2
 	public void Disintegrate()
 	{
 		this.timeStayAfterDeath = 0;
 		this.isDisintegrated = true;
 	}
 
-	// Token: 0x060022FE RID: 8958 RVA: 0x000D507A File Offset: 0x000D327A
+	// Token: 0x0600231D RID: 8989 RVA: 0x000D59F2 File Offset: 0x000D3BF2
 	public virtual void PlayGiveUpSound()
 	{
 		if (this.soundGiveUp != null)
@@ -4329,13 +4402,13 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x060022FF RID: 8959 RVA: 0x000D5099 File Offset: 0x000D3299
+	// Token: 0x0600231E RID: 8990 RVA: 0x000D5A11 File Offset: 0x000D3C11
 	public virtual Vector3 GetCameraLook(float _t)
 	{
 		return this.GetLookVector();
 	}
 
-	// Token: 0x06002300 RID: 8960 RVA: 0x000D50A4 File Offset: 0x000D32A4
+	// Token: 0x0600231F RID: 8991 RVA: 0x000D5A1C File Offset: 0x000D3C1C
 	public Vector3 GetForwardVector()
 	{
 		float num = Mathf.Cos(this.rotation.y * 0.0175f - 3.1415927f);
@@ -4345,7 +4418,7 @@ public abstract class EntityAlive : Entity
 		return new Vector3(num2 * num3, num4, num * num3);
 	}
 
-	// Token: 0x06002301 RID: 8961 RVA: 0x000D510C File Offset: 0x000D330C
+	// Token: 0x06002320 RID: 8992 RVA: 0x000D5A84 File Offset: 0x000D3C84
 	public Vector2 GetForwardVector2()
 	{
 		float num = this.rotation.y * 0.017453292f;
@@ -4353,7 +4426,7 @@ public abstract class EntityAlive : Entity
 		return new Vector2(Mathf.Sin(num), num2);
 	}
 
-	// Token: 0x06002302 RID: 8962 RVA: 0x000D513C File Offset: 0x000D333C
+	// Token: 0x06002321 RID: 8993 RVA: 0x000D5AB4 File Offset: 0x000D3CB4
 	public virtual Vector3 GetLookVector()
 	{
 		float num = Mathf.Cos(this.rotation.y * 0.0175f - 3.1415927f);
@@ -4363,114 +4436,121 @@ public abstract class EntityAlive : Entity
 		return new Vector3(num2 * num3, num4, num * num3);
 	}
 
-	// Token: 0x06002303 RID: 8963 RVA: 0x000D5099 File Offset: 0x000D3299
+	// Token: 0x06002322 RID: 8994 RVA: 0x000D5A11 File Offset: 0x000D3C11
 	public virtual Vector3 GetLookVector(Vector3 _altLookVector)
 	{
 		return this.GetLookVector();
 	}
 
-	// Token: 0x06002304 RID: 8964 RVA: 0x000D51BC File Offset: 0x000D33BC
+	// Token: 0x06002323 RID: 8995 RVA: 0x000D5B34 File Offset: 0x000D3D34
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int GetSoundRandomTicks()
 	{
 		return this.rand.RandomRange(this.soundRandomTicks / 2, this.soundRandomTicks);
 	}
 
-	// Token: 0x06002305 RID: 8965 RVA: 0x000D51D7 File Offset: 0x000D33D7
+	// Token: 0x06002324 RID: 8996 RVA: 0x000D5B4F File Offset: 0x000D3D4F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int GetSoundAlertTicks()
 	{
 		return this.rand.RandomRange(this.soundAlertTicks / 2, this.soundAlertTicks);
 	}
 
-	// Token: 0x06002306 RID: 8966 RVA: 0x000D51F2 File Offset: 0x000D33F2
+	// Token: 0x06002325 RID: 8997 RVA: 0x000D5B6A File Offset: 0x000D3D6A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string GetSoundRandom()
 	{
 		return this.soundRandom;
 	}
 
-	// Token: 0x06002307 RID: 8967 RVA: 0x000D51FA File Offset: 0x000D33FA
+	// Token: 0x06002326 RID: 8998 RVA: 0x000D5B72 File Offset: 0x000D3D72
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual string GetSoundJump()
 	{
 		return this.soundJump;
 	}
 
-	// Token: 0x06002308 RID: 8968 RVA: 0x000D5202 File Offset: 0x000D3402
+	// Token: 0x06002327 RID: 8999 RVA: 0x000D5B7A File Offset: 0x000D3D7A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual string GetSoundHurt(DamageSource _damageSource, int _damageStrength)
 	{
 		return this.soundHurt;
 	}
 
-	// Token: 0x06002309 RID: 8969 RVA: 0x000D520A File Offset: 0x000D340A
+	// Token: 0x06002328 RID: 9000 RVA: 0x000D5B82 File Offset: 0x000D3D82
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string GetSoundHurtSmall()
 	{
 		return this.soundHurtSmall;
 	}
 
-	// Token: 0x0600230A RID: 8970 RVA: 0x000D5202 File Offset: 0x000D3402
+	// Token: 0x06002329 RID: 9001 RVA: 0x000D5B7A File Offset: 0x000D3D7A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string GetSoundHurt()
 	{
 		return this.soundHurt;
 	}
 
-	// Token: 0x0600230B RID: 8971 RVA: 0x000D5212 File Offset: 0x000D3412
+	// Token: 0x0600232A RID: 9002 RVA: 0x000D5B8A File Offset: 0x000D3D8A
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public string GetSoundDistressed()
+	{
+		return this.soundDistressed;
+	}
+
+	// Token: 0x0600232B RID: 9003 RVA: 0x000D5B92 File Offset: 0x000D3D92
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string GetSoundDrownPain()
 	{
 		return this.soundDrownPain;
 	}
 
-	// Token: 0x0600230C RID: 8972 RVA: 0x000D521A File Offset: 0x000D341A
+	// Token: 0x0600232C RID: 9004 RVA: 0x000D5B9A File Offset: 0x000D3D9A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual string GetSoundDeath(DamageSource _damageSource)
 	{
 		return this.soundDeath;
 	}
 
-	// Token: 0x0600230D RID: 8973 RVA: 0x000D5222 File Offset: 0x000D3422
+	// Token: 0x0600232D RID: 9005 RVA: 0x000D5BA2 File Offset: 0x000D3DA2
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual string GetSoundAttack()
 	{
 		return this.soundAttack;
 	}
 
-	// Token: 0x0600230E RID: 8974 RVA: 0x000D522A File Offset: 0x000D342A
+	// Token: 0x0600232E RID: 9006 RVA: 0x000D5BAA File Offset: 0x000D3DAA
 	public virtual string GetSoundAlert()
 	{
 		return this.soundAlert;
 	}
 
-	// Token: 0x0600230F RID: 8975 RVA: 0x000D5232 File Offset: 0x000D3432
+	// Token: 0x0600232F RID: 9007 RVA: 0x000D5BB2 File Offset: 0x000D3DB2
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual string GetSoundStamina()
 	{
 		return this.soundStamina;
 	}
 
-	// Token: 0x06002310 RID: 8976 RVA: 0x000D523A File Offset: 0x000D343A
+	// Token: 0x06002330 RID: 9008 RVA: 0x000D5BBA File Offset: 0x000D3DBA
 	public virtual string GetSoundSense()
 	{
 		return this.soundSense;
 	}
 
-	// Token: 0x06002311 RID: 8977 RVA: 0x000D5242 File Offset: 0x000D3442
+	// Token: 0x06002331 RID: 9009 RVA: 0x000D5BC2 File Offset: 0x000D3DC2
 	public virtual Ray GetLookRay()
 	{
 		return new Ray(this.position + new Vector3(0f, this.GetEyeHeight(), 0f), this.GetLookVector());
 	}
 
-	// Token: 0x06002312 RID: 8978 RVA: 0x000D526F File Offset: 0x000D346F
+	// Token: 0x06002332 RID: 9010 RVA: 0x000D5BEF File Offset: 0x000D3DEF
 	public virtual Ray GetMeleeRay()
 	{
 		return this.GetLookRay();
 	}
 
-	// Token: 0x06002313 RID: 8979 RVA: 0x000D5278 File Offset: 0x000D3478
+	// Token: 0x06002333 RID: 9011 RVA: 0x000D5BF8 File Offset: 0x000D3DF8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void dropItemOnDeath()
 	{
@@ -4500,7 +4580,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002314 RID: 8980 RVA: 0x000D53AC File Offset: 0x000D35AC
+	// Token: 0x06002334 RID: 9012 RVA: 0x000D5D2C File Offset: 0x000D3F2C
 	public virtual Vector3 GetDropPosition()
 	{
 		if (this.ParachuteWearing || this.JetpackWearing)
@@ -4510,7 +4590,7 @@ public abstract class EntityAlive : Entity
 		return base.transform.position + base.transform.forward + Vector3.up + Origin.position;
 	}
 
-	// Token: 0x06002315 RID: 8981 RVA: 0x000D5432 File Offset: 0x000D3632
+	// Token: 0x06002335 RID: 9013 RVA: 0x000D5DB2 File Offset: 0x000D3FB2
 	public virtual void OnFired()
 	{
 		if (this.emodel.avatarController != null)
@@ -4519,7 +4599,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002316 RID: 8982 RVA: 0x000D5457 File Offset: 0x000D3657
+	// Token: 0x06002336 RID: 9014 RVA: 0x000D5DD7 File Offset: 0x000D3FD7
 	public virtual void OnReloadStart()
 	{
 		if (this.emodel.avatarController != null)
@@ -4528,18 +4608,18 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002317 RID: 8983 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002337 RID: 9015 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void OnReloadEnd()
 	{
 	}
 
-	// Token: 0x06002318 RID: 8984 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002338 RID: 9016 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool WillForceToFollow(EntityAlive _other)
 	{
 		return false;
 	}
 
-	// Token: 0x06002319 RID: 8985 RVA: 0x000D547C File Offset: 0x000D367C
+	// Token: 0x06002339 RID: 9017 RVA: 0x000D5DFC File Offset: 0x000D3FFC
 	public void AddHealth(int _v)
 	{
 		if (this.Health <= 0)
@@ -4549,7 +4629,7 @@ public abstract class EntityAlive : Entity
 		this.Health += _v;
 	}
 
-	// Token: 0x0600231A RID: 8986 RVA: 0x000D5496 File Offset: 0x000D3696
+	// Token: 0x0600233A RID: 9018 RVA: 0x000D5E16 File Offset: 0x000D4016
 	public void AddStamina(float _v)
 	{
 		if (this.entityStats.Stamina != null && this.Health > 0)
@@ -4558,31 +4638,31 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x0600231B RID: 8987 RVA: 0x000D54C6 File Offset: 0x000D36C6
+	// Token: 0x0600233B RID: 9019 RVA: 0x000D5E46 File Offset: 0x000D4046
 	public void AddWater(float _v)
 	{
 		this.Stats.Water.Value += _v;
 	}
 
-	// Token: 0x0600231C RID: 8988 RVA: 0x000D54E0 File Offset: 0x000D36E0
+	// Token: 0x0600233C RID: 9020 RVA: 0x000D5E60 File Offset: 0x000D4060
 	public int GetTicksNoPlayerAdjacent()
 	{
 		return this.ticksNoPlayerAdjacent;
 	}
 
-	// Token: 0x0600231D RID: 8989 RVA: 0x000D54E8 File Offset: 0x000D36E8
+	// Token: 0x0600233D RID: 9021 RVA: 0x000D5E68 File Offset: 0x000D4068
 	public bool CanSee(EntityAlive _other)
 	{
 		return this.seeCache.CanSee(_other);
 	}
 
-	// Token: 0x0600231E RID: 8990 RVA: 0x000D54F6 File Offset: 0x000D36F6
+	// Token: 0x0600233E RID: 9022 RVA: 0x000D5E76 File Offset: 0x000D4076
 	public void SetCanSee(EntityAlive _other)
 	{
 		this.seeCache.SetCanSee(_other);
 	}
 
-	// Token: 0x0600231F RID: 8991 RVA: 0x000D5504 File Offset: 0x000D3704
+	// Token: 0x0600233F RID: 9023 RVA: 0x000D5E84 File Offset: 0x000D4084
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void updateTasks()
 	{
@@ -4637,13 +4717,13 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002320 RID: 8992 RVA: 0x000D567F File Offset: 0x000D387F
+	// Token: 0x06002340 RID: 9024 RVA: 0x000D5FFF File Offset: 0x000D41FF
 	public PathNavigate getNavigator()
 	{
 		return this.navigator;
 	}
 
-	// Token: 0x06002321 RID: 8993 RVA: 0x000D5688 File Offset: 0x000D3888
+	// Token: 0x06002341 RID: 9025 RVA: 0x000D6008 File Offset: 0x000D4208
 	public void FindPath(Vector3 targetPos, float moveSpeed, bool canBreak, EAIBase behavior)
 	{
 		Vector3 vector = targetPos - this.position;
@@ -4661,64 +4741,64 @@ public abstract class EntityAlive : Entity
 		PathFinderThread.Instance.FindPath(this, targetPos, moveSpeed, canBreak, behavior);
 	}
 
-	// Token: 0x06002322 RID: 8994 RVA: 0x000D5720 File Offset: 0x000D3920
+	// Token: 0x06002342 RID: 9026 RVA: 0x000D60A0 File Offset: 0x000D42A0
 	public bool isWithinHomeDistanceCurrentPosition()
 	{
 		return this.isWithinHomeDistance(Utils.Fastfloor(this.position.x), Utils.Fastfloor(this.position.y), Utils.Fastfloor(this.position.z));
 	}
 
-	// Token: 0x06002323 RID: 8995 RVA: 0x000D5758 File Offset: 0x000D3958
+	// Token: 0x06002343 RID: 9027 RVA: 0x000D60D8 File Offset: 0x000D42D8
 	public bool isWithinHomeDistance(int _x, int _y, int _z)
 	{
 		return this.maximumHomeDistance < 0 || this.homePosition.getDistanceSquared(_x, _y, _z) < (float)(this.maximumHomeDistance * this.maximumHomeDistance);
 	}
 
-	// Token: 0x06002324 RID: 8996 RVA: 0x000D5783 File Offset: 0x000D3983
+	// Token: 0x06002344 RID: 9028 RVA: 0x000D6103 File Offset: 0x000D4303
 	public void setHomeArea(Vector3i _pos, int _maxDistance)
 	{
 		this.homePosition.position = _pos;
 		this.maximumHomeDistance = _maxDistance;
 	}
 
-	// Token: 0x06002325 RID: 8997 RVA: 0x000D5798 File Offset: 0x000D3998
+	// Token: 0x06002345 RID: 9029 RVA: 0x000D6118 File Offset: 0x000D4318
 	public ChunkCoordinates getHomePosition()
 	{
 		return this.homePosition;
 	}
 
-	// Token: 0x06002326 RID: 8998 RVA: 0x000D57A0 File Offset: 0x000D39A0
+	// Token: 0x06002346 RID: 9030 RVA: 0x000D6120 File Offset: 0x000D4320
 	public int getMaximumHomeDistance()
 	{
 		return this.maximumHomeDistance;
 	}
 
-	// Token: 0x06002327 RID: 8999 RVA: 0x000D57A8 File Offset: 0x000D39A8
+	// Token: 0x06002347 RID: 9031 RVA: 0x000D6128 File Offset: 0x000D4328
 	public void detachHome()
 	{
 		this.maximumHomeDistance = -1;
 	}
 
-	// Token: 0x06002328 RID: 9000 RVA: 0x000D57B1 File Offset: 0x000D39B1
+	// Token: 0x06002348 RID: 9032 RVA: 0x000D6131 File Offset: 0x000D4331
 	public bool hasHome()
 	{
 		return this.maximumHomeDistance >= 0;
 	}
 
-	// Token: 0x06002329 RID: 9001 RVA: 0x000D57BF File Offset: 0x000D39BF
+	// Token: 0x06002349 RID: 9033 RVA: 0x000D613F File Offset: 0x000D433F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool canDespawn()
 	{
 		return !this.IsClientControlled() && base.GetSpawnerSource() != EnumSpawnerSource.StaticSpawner && !this.IsSleeping;
 	}
 
-	// Token: 0x0600232A RID: 9002 RVA: 0x000D57DD File Offset: 0x000D39DD
+	// Token: 0x0600234A RID: 9034 RVA: 0x000D615D File Offset: 0x000D435D
 	public void ResetDespawnTime()
 	{
 		this.ticksNoPlayerAdjacent = 0;
 		this.seeCache.SetLastTimePlayerSeen();
 	}
 
-	// Token: 0x0600232B RID: 9003 RVA: 0x000D57F4 File Offset: 0x000D39F4
+	// Token: 0x0600234B RID: 9035 RVA: 0x000D6174 File Offset: 0x000D4374
 	public void CheckDespawn()
 	{
 		if (this.isEntityRemote)
@@ -4829,7 +4909,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x0600232C RID: 9004 RVA: 0x000D5A04 File Offset: 0x000D3C04
+	// Token: 0x0600234C RID: 9036 RVA: 0x000D6384 File Offset: 0x000D4584
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Despawn()
 	{
@@ -4837,26 +4917,26 @@ public abstract class EntityAlive : Entity
 		this.MarkToUnload();
 	}
 
-	// Token: 0x0600232D RID: 9005 RVA: 0x000D5A13 File Offset: 0x000D3C13
+	// Token: 0x0600234D RID: 9037 RVA: 0x000D6393 File Offset: 0x000D4593
 	public void ForceDespawn()
 	{
 		this.Despawn();
 	}
 
-	// Token: 0x0600232E RID: 9006 RVA: 0x000D5A1B File Offset: 0x000D3C1B
+	// Token: 0x0600234E RID: 9038 RVA: 0x000D639B File Offset: 0x000D459B
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public EntityAlive GetAttackTarget()
 	{
 		return this.attackTarget;
 	}
 
-	// Token: 0x0600232F RID: 9007 RVA: 0x000D5A23 File Offset: 0x000D3C23
+	// Token: 0x0600234F RID: 9039 RVA: 0x000D63A3 File Offset: 0x000D45A3
 	public virtual Vector3 GetAttackTargetHitPosition()
 	{
 		return this.attackTarget.getChestPosition();
 	}
 
-	// Token: 0x06002330 RID: 9008 RVA: 0x000D5A30 File Offset: 0x000D3C30
+	// Token: 0x06002350 RID: 9040 RVA: 0x000D63B0 File Offset: 0x000D45B0
 	public EntityAlive GetAttackTargetLocal()
 	{
 		if (this.isEntityRemote)
@@ -4866,7 +4946,7 @@ public abstract class EntityAlive : Entity
 		return this.attackTarget;
 	}
 
-	// Token: 0x06002331 RID: 9009 RVA: 0x000D5A48 File Offset: 0x000D3C48
+	// Token: 0x06002351 RID: 9041 RVA: 0x000D63C8 File Offset: 0x000D45C8
 	public void SetAttackTarget(EntityAlive _attackTarget, int _attackTargetTime)
 	{
 		if (_attackTarget == this.attackTarget)
@@ -4896,14 +4976,14 @@ public abstract class EntityAlive : Entity
 		this.attackTargetTime = _attackTargetTime;
 	}
 
-	// Token: 0x06002332 RID: 9010 RVA: 0x000D5B12 File Offset: 0x000D3D12
+	// Token: 0x06002352 RID: 9042 RVA: 0x000D6492 File Offset: 0x000D4692
 	public void SetAttackTargetClient(EntityAlive _attackTarget)
 	{
 		this.attackTargetClient = _attackTarget;
 	}
 
-	// Token: 0x1700041A RID: 1050
-	// (get) Token: 0x06002333 RID: 9011 RVA: 0x000D5B1B File Offset: 0x000D3D1B
+	// Token: 0x1700041E RID: 1054
+	// (get) Token: 0x06002353 RID: 9043 RVA: 0x000D649B File Offset: 0x000D469B
 	public bool HasInvestigatePosition
 	{
 		get
@@ -4912,8 +4992,8 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x1700041B RID: 1051
-	// (get) Token: 0x06002334 RID: 9012 RVA: 0x000D5B26 File Offset: 0x000D3D26
+	// Token: 0x1700041F RID: 1055
+	// (get) Token: 0x06002354 RID: 9044 RVA: 0x000D64A6 File Offset: 0x000D46A6
 	public Vector3 InvestigatePosition
 	{
 		get
@@ -4922,13 +5002,13 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002335 RID: 9013 RVA: 0x000D5B2E File Offset: 0x000D3D2E
+	// Token: 0x06002355 RID: 9045 RVA: 0x000D64AE File Offset: 0x000D46AE
 	public int GetInvestigatePositionTicks()
 	{
 		return this.investigatePositionTicks;
 	}
 
-	// Token: 0x06002336 RID: 9014 RVA: 0x000D5B38 File Offset: 0x000D3D38
+	// Token: 0x06002356 RID: 9046 RVA: 0x000D64B8 File Offset: 0x000D46B8
 	public void ClearInvestigatePosition()
 	{
 		this.investigatePos = Vector3.zero;
@@ -4942,14 +5022,14 @@ public abstract class EntityAlive : Entity
 		this.SetAlertTicks(num);
 	}
 
-	// Token: 0x06002337 RID: 9015 RVA: 0x000D5B84 File Offset: 0x000D3D84
+	// Token: 0x06002357 RID: 9047 RVA: 0x000D6504 File Offset: 0x000D4704
 	public int CalcInvestigateTicks(int _ticks, EntityAlive _investigateEntity)
 	{
 		float value = EffectManager.GetValue(PassiveEffects.EnemySearchDuration, null, 1f, _investigateEntity, null, EntityClass.list[this.entityClass].Tags, true, true, true, true, true, 1, true, false);
 		return (int)((float)_ticks / value);
 	}
 
-	// Token: 0x06002338 RID: 9016 RVA: 0x000D5BC6 File Offset: 0x000D3DC6
+	// Token: 0x06002358 RID: 9048 RVA: 0x000D6546 File Offset: 0x000D4746
 	public void SetInvestigatePosition(Vector3 pos, int ticks, bool isAlert = true)
 	{
 		this.investigatePos = pos;
@@ -4957,20 +5037,20 @@ public abstract class EntityAlive : Entity
 		this.isInvestigateAlert = isAlert;
 	}
 
-	// Token: 0x06002339 RID: 9017 RVA: 0x000D5BDD File Offset: 0x000D3DDD
+	// Token: 0x06002359 RID: 9049 RVA: 0x000D655D File Offset: 0x000D475D
 	public int GetAlertTicks()
 	{
 		return this.alertTicks;
 	}
 
-	// Token: 0x0600233A RID: 9018 RVA: 0x000D5BE5 File Offset: 0x000D3DE5
+	// Token: 0x0600235A RID: 9050 RVA: 0x000D6565 File Offset: 0x000D4765
 	public void SetAlertTicks(int ticks)
 	{
 		this.alertTicks = ticks;
 	}
 
-	// Token: 0x1700041C RID: 1052
-	// (get) Token: 0x0600233B RID: 9019 RVA: 0x000D5BEE File Offset: 0x000D3DEE
+	// Token: 0x17000420 RID: 1056
+	// (get) Token: 0x0600235B RID: 9051 RVA: 0x000D656E File Offset: 0x000D476E
 	public virtual bool IsAlert
 	{
 		get
@@ -4983,14 +5063,14 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x0600233C RID: 9020 RVA: 0x000D5C05 File Offset: 0x000D3E05
+	// Token: 0x0600235C RID: 9052 RVA: 0x000D6585 File Offset: 0x000D4785
 	public EntitySeeCache GetEntitySenses()
 	{
 		return this.seeCache;
 	}
 
-	// Token: 0x1700041D RID: 1053
-	// (get) Token: 0x0600233D RID: 9021 RVA: 0x000D5C0D File Offset: 0x000D3E0D
+	// Token: 0x17000421 RID: 1057
+	// (get) Token: 0x0600235D RID: 9053 RVA: 0x000D658D File Offset: 0x000D478D
 	public virtual bool IsRunning
 	{
 		get
@@ -4999,7 +5079,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x0600233E RID: 9022 RVA: 0x000D5C24 File Offset: 0x000D3E24
+	// Token: 0x0600235E RID: 9054 RVA: 0x000D65A4 File Offset: 0x000D47A4
 	public virtual float GetMoveSpeed()
 	{
 		if (this.IsBloodMoon || this.world.IsDark())
@@ -5009,7 +5089,7 @@ public abstract class EntityAlive : Entity
 		return EffectManager.GetValue(PassiveEffects.CrouchSpeed, null, this.moveSpeed, this, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false);
 	}
 
-	// Token: 0x0600233F RID: 9023 RVA: 0x000D5C90 File Offset: 0x000D3E90
+	// Token: 0x0600235F RID: 9055 RVA: 0x000D6610 File Offset: 0x000D4810
 	public virtual float GetMoveSpeedAggro()
 	{
 		if (this.IsBloodMoon || this.world.IsDark())
@@ -5019,74 +5099,74 @@ public abstract class EntityAlive : Entity
 		return EffectManager.GetValue(PassiveEffects.WalkSpeed, null, this.moveSpeedAggro, this, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false);
 	}
 
-	// Token: 0x06002340 RID: 9024 RVA: 0x000D5CFC File Offset: 0x000D3EFC
+	// Token: 0x06002360 RID: 9056 RVA: 0x000D667C File Offset: 0x000D487C
 	public float GetMoveSpeedPanic()
 	{
 		return EffectManager.GetValue(PassiveEffects.RunSpeed, null, this.moveSpeedPanic, this, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false);
 	}
 
-	// Token: 0x06002341 RID: 9025 RVA: 0x000D5D2D File Offset: 0x000D3F2D
+	// Token: 0x06002361 RID: 9057 RVA: 0x000D66AD File Offset: 0x000D48AD
 	public override float GetWeight()
 	{
 		return this.weight;
 	}
 
-	// Token: 0x06002342 RID: 9026 RVA: 0x000D5D35 File Offset: 0x000D3F35
+	// Token: 0x06002362 RID: 9058 RVA: 0x000D66B5 File Offset: 0x000D48B5
 	public override float GetPushFactor()
 	{
 		return this.pushFactor;
 	}
 
-	// Token: 0x06002343 RID: 9027 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x06002363 RID: 9059 RVA: 0x00020021 File Offset: 0x0001E221
 	public virtual bool CanEntityJump()
 	{
 		return true;
 	}
 
-	// Token: 0x06002344 RID: 9028 RVA: 0x000D5D3D File Offset: 0x000D3F3D
+	// Token: 0x06002364 RID: 9060 RVA: 0x000D66BD File Offset: 0x000D48BD
 	public void SetMaxViewAngle(float _angle)
 	{
 		this.maxViewAngle = _angle;
 	}
 
-	// Token: 0x06002345 RID: 9029 RVA: 0x000D5D46 File Offset: 0x000D3F46
+	// Token: 0x06002365 RID: 9061 RVA: 0x000D66C6 File Offset: 0x000D48C6
 	public virtual float GetMaxViewAngle()
 	{
 		return this.maxViewAngle;
 	}
 
-	// Token: 0x06002346 RID: 9030 RVA: 0x000D5D4E File Offset: 0x000D3F4E
+	// Token: 0x06002366 RID: 9062 RVA: 0x000D66CE File Offset: 0x000D48CE
 	public void SetSightLightThreshold(Vector2 _threshold)
 	{
 		this.sightLightThreshold = _threshold;
 	}
 
-	// Token: 0x06002347 RID: 9031 RVA: 0x000D5D57 File Offset: 0x000D3F57
+	// Token: 0x06002367 RID: 9063 RVA: 0x000D66D7 File Offset: 0x000D48D7
 	public int GetModelLayer()
 	{
 		return this.emodel.GetModelTransform().gameObject.layer;
 	}
 
-	// Token: 0x06002348 RID: 9032 RVA: 0x000D5D6E File Offset: 0x000D3F6E
+	// Token: 0x06002368 RID: 9064 RVA: 0x000D66EE File Offset: 0x000D48EE
 	public virtual void SetModelLayer(int _layerId, bool force = false, string[] excludeTags = null)
 	{
 		Utils.SetLayerRecursively(this.emodel.GetModelTransform().gameObject, _layerId);
 	}
 
-	// Token: 0x06002349 RID: 9033 RVA: 0x000D5D86 File Offset: 0x000D3F86
+	// Token: 0x06002369 RID: 9065 RVA: 0x000D6706 File Offset: 0x000D4906
 	public virtual void SetColliderLayer(int _layerId, bool _force = false)
 	{
 		Utils.SetColliderLayerRecursively(this.emodel.GetModelTransform().gameObject, _layerId);
 	}
 
-	// Token: 0x0600234A RID: 9034 RVA: 0x00080B3A File Offset: 0x0007ED3A
+	// Token: 0x0600236A RID: 9066 RVA: 0x000811EE File Offset: 0x0007F3EE
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual int GetMaxAttackTime()
 	{
 		return 10;
 	}
 
-	// Token: 0x0600234B RID: 9035 RVA: 0x000D5D9E File Offset: 0x000D3F9E
+	// Token: 0x0600236B RID: 9067 RVA: 0x000D671E File Offset: 0x000D491E
 	public int GetAttackTimeoutTicks()
 	{
 		if (!this.world.IsDark())
@@ -5096,20 +5176,20 @@ public abstract class EntityAlive : Entity
 		return this.attackTimeoutNight;
 	}
 
-	// Token: 0x0600234C RID: 9036 RVA: 0x000D5DBA File Offset: 0x000D3FBA
+	// Token: 0x0600236C RID: 9068 RVA: 0x000D673A File Offset: 0x000D493A
 	public override void MarkToUnload()
 	{
 		base.MarkToUnload();
 		this.deathUpdateTime = this.timeStayAfterDeath;
 	}
 
-	// Token: 0x0600234D RID: 9037 RVA: 0x000D5DCE File Offset: 0x000D3FCE
+	// Token: 0x0600236D RID: 9069 RVA: 0x000D674E File Offset: 0x000D494E
 	public override bool IsMarkedForUnload()
 	{
 		return base.IsMarkedForUnload() && this.deathUpdateTime >= this.timeStayAfterDeath;
 	}
 
-	// Token: 0x0600234E RID: 9038 RVA: 0x000D5DEC File Offset: 0x000D3FEC
+	// Token: 0x0600236E RID: 9070 RVA: 0x000D676C File Offset: 0x000D496C
 	public virtual bool IsAttackValid()
 	{
 		if (!(this is EntityPlayer))
@@ -5126,26 +5206,26 @@ public abstract class EntityAlive : Entity
 		return (!(this.emodel != null) || !(this.emodel.avatarController != null) || !this.emodel.avatarController.IsAttackPrevented()) && !this.IsDead() && (this.painResistPercent >= 1f || (this.hasBeenAttackedTime <= 0 && (this.emodel.avatarController == null || !this.emodel.avatarController.IsAnimationHitRunning())));
 	}
 
-	// Token: 0x0600234F RID: 9039 RVA: 0x000D5EAA File Offset: 0x000D40AA
+	// Token: 0x0600236F RID: 9071 RVA: 0x000D682A File Offset: 0x000D4A2A
 	public virtual bool IsAttackImpact()
 	{
 		return this.emodel && this.emodel.avatarController && this.emodel.avatarController.IsAttackImpact();
 	}
 
-	// Token: 0x06002350 RID: 9040 RVA: 0x000D5EDD File Offset: 0x000D40DD
+	// Token: 0x06002370 RID: 9072 RVA: 0x000D685D File Offset: 0x000D4A5D
 	public virtual void ShowHoldingItem(bool _show)
 	{
 		this.inventory.ShowRightHand(_show);
 	}
 
-	// Token: 0x06002351 RID: 9041 RVA: 0x000D5EEB File Offset: 0x000D40EB
+	// Token: 0x06002371 RID: 9073 RVA: 0x000D686B File Offset: 0x000D4A6B
 	public virtual bool IsHoldingItemInUse(int _actionIndex)
 	{
 		ItemAction itemAction = this.inventory.holdingItem.Actions[_actionIndex];
 		return itemAction != null && itemAction.IsActionRunning(this.inventory.holdingItemData.actionData[_actionIndex]);
 	}
 
-	// Token: 0x06002352 RID: 9042 RVA: 0x000D5F20 File Offset: 0x000D4120
+	// Token: 0x06002372 RID: 9074 RVA: 0x000D68A0 File Offset: 0x000D4AA0
 	public virtual bool UseHoldingItem(int _actionIndex, bool _isReleased)
 	{
 		if (!_isReleased)
@@ -5172,13 +5252,13 @@ public abstract class EntityAlive : Entity
 		return true;
 	}
 
-	// Token: 0x06002353 RID: 9043 RVA: 0x000D5FD0 File Offset: 0x000D41D0
+	// Token: 0x06002373 RID: 9075 RVA: 0x000D6950 File Offset: 0x000D4B50
 	public bool Attack(bool _isReleased)
 	{
 		return this.UseHoldingItem(0, _isReleased);
 	}
 
-	// Token: 0x06002354 RID: 9044 RVA: 0x000D5FDC File Offset: 0x000D41DC
+	// Token: 0x06002374 RID: 9076 RVA: 0x000D695C File Offset: 0x000D4B5C
 	public Entity GetTargetIfAttackedNow()
 	{
 		if (!this.IsAttackValid())
@@ -5227,7 +5307,7 @@ public abstract class EntityAlive : Entity
 		return null;
 	}
 
-	// Token: 0x06002355 RID: 9045 RVA: 0x000D6100 File Offset: 0x000D4300
+	// Token: 0x06002375 RID: 9077 RVA: 0x000D6A80 File Offset: 0x000D4C80
 	public virtual float GetBlockDamageScale(bool isTerrain)
 	{
 		if (this.IsBloodMoon)
@@ -5237,13 +5317,13 @@ public abstract class EntityAlive : Entity
 		return ItemActionAttack.EntityBlockDamagePercent;
 	}
 
-	// Token: 0x06002356 RID: 9046 RVA: 0x000D6115 File Offset: 0x000D4315
+	// Token: 0x06002376 RID: 9078 RVA: 0x000D6A95 File Offset: 0x000D4C95
 	public virtual void PlayStepSound(float _volume)
 	{
 		this.internalPlayStepSound(_volume);
 	}
 
-	// Token: 0x06002357 RID: 9047 RVA: 0x000D6120 File Offset: 0x000D4320
+	// Token: 0x06002377 RID: 9079 RVA: 0x000D6AA0 File Offset: 0x000D4CA0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void internalPlayStepSound(float _volume)
 	{
@@ -5321,7 +5401,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002358 RID: 9048 RVA: 0x000D634C File Offset: 0x000D454C
+	// Token: 0x06002378 RID: 9080 RVA: 0x000D6CCC File Offset: 0x000D4ECC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void updateStepSound(float _distX, float _distZ, float _rotYDelta)
 	{
@@ -5366,7 +5446,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002359 RID: 9049 RVA: 0x000D6480 File Offset: 0x000D4680
+	// Token: 0x06002379 RID: 9081 RVA: 0x000D6E00 File Offset: 0x000D5000
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void updatePlayerLandSound(float _distXZ, float _diffY)
 	{
@@ -5392,7 +5472,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x0600235A RID: 9050 RVA: 0x000D6510 File Offset: 0x000D4710
+	// Token: 0x0600237A RID: 9082 RVA: 0x000D6E90 File Offset: 0x000D5090
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void updateCurrentBlockPosAndValue()
 	{
@@ -5453,10 +5533,14 @@ public abstract class EntityAlive : Entity
 				if (!this.blockValueStandingOn.isair)
 				{
 					block.OnEntityWalking(this.world, this.blockPosStandingOn.x, this.blockPosStandingOn.y, this.blockPosStandingOn.z, this.blockValueStandingOn, this);
-					if (GameManager.bPhysicsActive && !this.blockValueStandingOn.ischild && !this.blockValueStandingOn.Block.isOversized && this.world.GetStability(this.blockPosStandingOn) == 0 && Block.CanFallBelow(this.world, this.blockPosStandingOn.x, this.blockPosStandingOn.y, this.blockPosStandingOn.z))
+					if (GameManager.bPhysicsActive && !this.blockValueStandingOn.ischild && !this.blockValueStandingOn.Block.isOversized)
 					{
-						Log.Warning("EntityAlive {0} AddFallingBlock stab 0 happens?", new object[] { this.EntityName });
-						this.world.AddFallingBlock(this.blockPosStandingOn, false);
+						Chunk chunk = (Chunk)this.world.GetChunkFromWorldPos(vector3i.x, vector3i.z);
+						if (chunk != null && !chunk.StopStabilityCalculation && chunk.GetStability(World.toBlockXZ(this.blockPosStandingOn.x), World.toBlockY(this.blockPosStandingOn.y), World.toBlockXZ(this.blockPosStandingOn.z)) == 0 && Block.CanFallBelow(this.world, this.blockPosStandingOn.x, this.blockPosStandingOn.y, this.blockPosStandingOn.z))
+						{
+							Log.Warning("EntityAlive {0} AddFallingBlock stab 0 happens?", new object[] { this.EntityName });
+							this.world.AddFallingBlock(this.blockPosStandingOn, false);
+						}
 					}
 				}
 				BlockValue block2 = this.world.GetBlock(this.blockPosStandingOn + Vector3i.up);
@@ -5469,13 +5553,13 @@ public abstract class EntityAlive : Entity
 		this.HandleLootStageMaxCheck();
 	}
 
-	// Token: 0x0600235B RID: 9051 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600237B RID: 9083 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void HandleLootStageMaxCheck()
 	{
 	}
 
-	// Token: 0x0600235C RID: 9052 RVA: 0x000D68B4 File Offset: 0x000D4AB4
+	// Token: 0x0600237C RID: 9084 RVA: 0x000D7294 File Offset: 0x000D5494
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CalcIfInElevator()
 	{
@@ -5495,21 +5579,21 @@ public abstract class EntityAlive : Entity
 		this.bInElevator |= block.IsElevator((int)blockValue.rotation);
 	}
 
-	// Token: 0x0600235D RID: 9053 RVA: 0x000D6966 File Offset: 0x000D4B66
+	// Token: 0x0600237D RID: 9085 RVA: 0x000D7346 File Offset: 0x000D5546
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual float getNextStepSoundDistance()
 	{
 		return 1.5f;
 	}
 
-	// Token: 0x0600235E RID: 9054 RVA: 0x000D696D File Offset: 0x000D4B6D
+	// Token: 0x0600237E RID: 9086 RVA: 0x000D734D File Offset: 0x000D554D
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void onNewBiomeEntered(BiomeDefinition _biome)
 	{
 		this.biomeStandingOn = _biome;
 	}
 
-	// Token: 0x0600235F RID: 9055 RVA: 0x000D6978 File Offset: 0x000D4B78
+	// Token: 0x0600237F RID: 9087 RVA: 0x000D7358 File Offset: 0x000D5558
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void updateSpeedForwardAndStrafe(Vector3 _dist, float _partialTicks)
 	{
@@ -5534,7 +5618,7 @@ public abstract class EntityAlive : Entity
 		this.SetMovementState();
 	}
 
-	// Token: 0x06002360 RID: 9056 RVA: 0x000D6A9B File Offset: 0x000D4C9B
+	// Token: 0x06002380 RID: 9088 RVA: 0x000D747B File Offset: 0x000D567B
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void PlayStepSound(string stepSound, float _volume)
 	{
@@ -5546,7 +5630,7 @@ public abstract class EntityAlive : Entity
 		Manager.Play(this, stepSound, 1f, false);
 	}
 
-	// Token: 0x06002361 RID: 9057 RVA: 0x000D6AC4 File Offset: 0x000D4CC4
+	// Token: 0x06002381 RID: 9089 RVA: 0x000D74A4 File Offset: 0x000D56A4
 	public void SetLookPosition(Vector3 _lookPos)
 	{
 		if ((this.lookAtPosition - _lookPos).sqrMagnitude < 0.0016f)
@@ -5564,44 +5648,44 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002362 RID: 9058 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x06002382 RID: 9090 RVA: 0x00020021 File Offset: 0x0001E221
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool isRadiationSensitive()
 	{
 		return true;
 	}
 
-	// Token: 0x06002363 RID: 9059 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x06002383 RID: 9091 RVA: 0x00020021 File Offset: 0x0001E221
 	public virtual bool IsAimingGunPossible()
 	{
 		return true;
 	}
 
-	// Token: 0x06002364 RID: 9060 RVA: 0x000D6B57 File Offset: 0x000D4D57
+	// Token: 0x06002384 RID: 9092 RVA: 0x000D7537 File Offset: 0x000D5737
 	public int GetDeathTime()
 	{
 		return this.deathUpdateTime;
 	}
 
-	// Token: 0x06002365 RID: 9061 RVA: 0x000D6B5F File Offset: 0x000D4D5F
+	// Token: 0x06002385 RID: 9093 RVA: 0x000D753F File Offset: 0x000D573F
 	public void SetDeathTime(int _deathTime)
 	{
 		this.deathUpdateTime = _deathTime;
 	}
 
-	// Token: 0x06002366 RID: 9062 RVA: 0x000D6B68 File Offset: 0x000D4D68
+	// Token: 0x06002386 RID: 9094 RVA: 0x000D7548 File Offset: 0x000D5748
 	public int GetTimeStayAfterDeath()
 	{
 		return this.timeStayAfterDeath;
 	}
 
-	// Token: 0x06002367 RID: 9063 RVA: 0x000D6B70 File Offset: 0x000D4D70
+	// Token: 0x06002387 RID: 9095 RVA: 0x000D7550 File Offset: 0x000D5750
 	public bool IsCorpse()
 	{
 		return this.emodel && this.emodel.IsRagdollDead && (float)this.deathUpdateTime > 70f;
 	}
 
-	// Token: 0x06002368 RID: 9064 RVA: 0x000D6BA0 File Offset: 0x000D4DA0
+	// Token: 0x06002388 RID: 9096 RVA: 0x000D7580 File Offset: 0x000D5780
 	public override void OnAddedToWorld()
 	{
 		if (!(this is EntityPlayerLocal))
@@ -5620,7 +5704,7 @@ public abstract class EntityAlive : Entity
 		this.StartStopLivingSound();
 	}
 
-	// Token: 0x06002369 RID: 9065 RVA: 0x000D6BF4 File Offset: 0x000D4DF4
+	// Token: 0x06002389 RID: 9097 RVA: 0x000D75D4 File Offset: 0x000D57D4
 	public override void OnEntityUnload()
 	{
 		if (!(this is EntityPlayerLocal))
@@ -5638,14 +5722,14 @@ public abstract class EntityAlive : Entity
 		this.seeCache = null;
 	}
 
-	// Token: 0x0600236A RID: 9066 RVA: 0x000D6C4B File Offset: 0x000D4E4B
+	// Token: 0x0600238A RID: 9098 RVA: 0x000D762B File Offset: 0x000D582B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float GetDamageFraction(float _damage)
 	{
 		return _damage / (float)this.GetMaxHealth();
 	}
 
-	// Token: 0x0600236B RID: 9067 RVA: 0x000D6C58 File Offset: 0x000D4E58
+	// Token: 0x0600238B RID: 9099 RVA: 0x000D7638 File Offset: 0x000D5838
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float GetDismemberChance(ref DamageResponse _dmResponse, float damagePer)
 	{
@@ -5694,7 +5778,7 @@ public abstract class EntityAlive : Entity
 		return num2;
 	}
 
-	// Token: 0x0600236C RID: 9068 RVA: 0x000D6DBC File Offset: 0x000D4FBC
+	// Token: 0x0600238C RID: 9100 RVA: 0x000D779C File Offset: 0x000D599C
 	public virtual void CheckDismember(ref DamageResponse _dmResponse, float damagePer)
 	{
 		bool flag = _dmResponse.HitBodyPart.IsLeg();
@@ -5737,7 +5821,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x0600236D RID: 9069 RVA: 0x000D6F1C File Offset: 0x000D511C
+	// Token: 0x0600238D RID: 9101 RVA: 0x000D78FC File Offset: 0x000D5AFC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ApplyLocalBodyDamage(DamageResponse _dmResponse)
 	{
@@ -5808,7 +5892,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x0600236E RID: 9070 RVA: 0x000D70D8 File Offset: 0x000D52D8
+	// Token: 0x0600238E RID: 9102 RVA: 0x000D7AB8 File Offset: 0x000D5CB8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void ExecuteDismember(bool restoreState)
 	{
@@ -5827,7 +5911,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x0600236F RID: 9071 RVA: 0x000D7174 File Offset: 0x000D5374
+	// Token: 0x0600238F RID: 9103 RVA: 0x000D7B54 File Offset: 0x000D5D54
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetupCrawler()
 	{
@@ -5853,13 +5937,13 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002370 RID: 9072 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002390 RID: 9104 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void TurnIntoCrawler()
 	{
 	}
 
-	// Token: 0x06002371 RID: 9073 RVA: 0x000D721D File Offset: 0x000D541D
+	// Token: 0x06002391 RID: 9105 RVA: 0x000D7BFD File Offset: 0x000D5DFD
 	public void ClearStun()
 	{
 		this.bodyDamage.CurrentStun = EnumEntityStunType.None;
@@ -5867,14 +5951,14 @@ public abstract class EntityAlive : Entity
 		this.SetCVar("_stunned", 0f);
 	}
 
-	// Token: 0x06002372 RID: 9074 RVA: 0x000D724B File Offset: 0x000D544B
+	// Token: 0x06002392 RID: 9106 RVA: 0x000D7C2B File Offset: 0x000D5E2B
 	public void SetStun(EnumEntityStunType stun)
 	{
 		this.bodyDamage.CurrentStun = stun;
 		this.SetCVar("_stunned", 1f);
 	}
 
-	// Token: 0x06002373 RID: 9075 RVA: 0x000D7269 File Offset: 0x000D5469
+	// Token: 0x06002393 RID: 9107 RVA: 0x000D7C49 File Offset: 0x000D5E49
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void onSpawnStateChanged()
 	{
@@ -5885,7 +5969,7 @@ public abstract class EntityAlive : Entity
 		this.StartStopLivingSound();
 	}
 
-	// Token: 0x06002374 RID: 9076 RVA: 0x000D727C File Offset: 0x000D547C
+	// Token: 0x06002394 RID: 9108 RVA: 0x000D7C5C File Offset: 0x000D5E5C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void StartStopLivingSound()
 	{
@@ -5911,7 +5995,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002375 RID: 9077 RVA: 0x000D7314 File Offset: 0x000D5514
+	// Token: 0x06002395 RID: 9109 RVA: 0x000D7CF4 File Offset: 0x000D5EF4
 	public void CrouchHeightFixedUpdate()
 	{
 		if (this.crouchType == 0)
@@ -5995,7 +6079,7 @@ public abstract class EntityAlive : Entity
 		this.crouchBendPer = Mathf.MoveTowards(this.crouchBendPer, this.crouchBendPerTarget, 0.099999994f);
 	}
 
-	// Token: 0x06002376 RID: 9078 RVA: 0x000D7590 File Offset: 0x000D5790
+	// Token: 0x06002396 RID: 9110 RVA: 0x000D7F70 File Offset: 0x000D6170
 	public void SetWalkType(int _walkType)
 	{
 		if (this.walkType == 21)
@@ -6018,32 +6102,32 @@ public abstract class EntityAlive : Entity
 		this.emodel.avatarController.SetWalkType(_walkType, true);
 	}
 
-	// Token: 0x06002377 RID: 9079 RVA: 0x000D75F5 File Offset: 0x000D57F5
+	// Token: 0x06002397 RID: 9111 RVA: 0x000D7FD5 File Offset: 0x000D61D5
 	public int GetWalkType()
 	{
 		return this.walkType;
 	}
 
-	// Token: 0x06002378 RID: 9080 RVA: 0x000D75FD File Offset: 0x000D57FD
+	// Token: 0x06002398 RID: 9112 RVA: 0x000D7FDD File Offset: 0x000D61DD
 	public bool IsWalkTypeACrawl()
 	{
 		return this.walkType >= 20;
 	}
 
-	// Token: 0x06002379 RID: 9081 RVA: 0x000D760C File Offset: 0x000D580C
+	// Token: 0x06002399 RID: 9113 RVA: 0x000D7FEC File Offset: 0x000D61EC
 	public string GetRightHandTransformName()
 	{
 		return this.rightHandTransformName;
 	}
 
-	// Token: 0x0600237A RID: 9082 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x0600239A RID: 9114 RVA: 0x00020021 File Offset: 0x0001E221
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool isGameMessageOnDeath()
 	{
 		return true;
 	}
 
-	// Token: 0x0600237B RID: 9083 RVA: 0x000D7614 File Offset: 0x000D5814
+	// Token: 0x0600239B RID: 9115 RVA: 0x000D7FF4 File Offset: 0x000D61F4
 	public override float GetLightBrightness()
 	{
 		Vector3i blockPosition = base.GetBlockPosition();
@@ -6052,7 +6136,7 @@ public abstract class EntityAlive : Entity
 		return Utils.FastMax(this.world.GetLightBrightness(blockPosition), this.world.GetLightBrightness(vector3i));
 	}
 
-	// Token: 0x0600237C RID: 9084 RVA: 0x000D7664 File Offset: 0x000D5864
+	// Token: 0x0600239C RID: 9116 RVA: 0x000D8044 File Offset: 0x000D6244
 	public virtual float GetLightLevel()
 	{
 		EntityAlive entityAlive = this.AttachedToEntity as EntityAlive;
@@ -6063,7 +6147,7 @@ public abstract class EntityAlive : Entity
 		return this.inventory.GetLightLevel();
 	}
 
-	// Token: 0x0600237D RID: 9085 RVA: 0x000D7698 File Offset: 0x000D5898
+	// Token: 0x0600239D RID: 9117 RVA: 0x000D8078 File Offset: 0x000D6278
 	public override int AttachToEntity(Entity _other, int slot = -1)
 	{
 		slot = base.AttachToEntity(_other, slot);
@@ -6091,7 +6175,7 @@ public abstract class EntityAlive : Entity
 		return slot;
 	}
 
-	// Token: 0x0600237E RID: 9086 RVA: 0x000D774C File Offset: 0x000D594C
+	// Token: 0x0600239E RID: 9118 RVA: 0x000D812C File Offset: 0x000D632C
 	public override void Detach()
 	{
 		if (this.saveInventory != null)
@@ -6104,14 +6188,15 @@ public abstract class EntityAlive : Entity
 		this.bPlayerStatsChanged |= !this.isEntityRemote;
 	}
 
-	// Token: 0x0600237F RID: 9087 RVA: 0x000D77A1 File Offset: 0x000D59A1
+	// Token: 0x0600239F RID: 9119 RVA: 0x000D8181 File Offset: 0x000D6381
 	public override void Write(BinaryWriter _bw, bool _bNetworkWrite)
 	{
 		base.Write(_bw, _bNetworkWrite);
 		_bw.Write(this.deathHealth);
+		_bw.Write(this.StressAmount);
 	}
 
-	// Token: 0x06002380 RID: 9088 RVA: 0x000D77B7 File Offset: 0x000D59B7
+	// Token: 0x060023A0 RID: 9120 RVA: 0x000D81A3 File Offset: 0x000D63A3
 	public override void Read(byte _version, BinaryReader _br)
 	{
 		base.Read(_version, _br);
@@ -6119,15 +6204,19 @@ public abstract class EntityAlive : Entity
 		{
 			this.deathHealth = _br.ReadInt32();
 		}
+		if (_version >= 36)
+		{
+			this.StressAmount = _br.ReadSingle();
+		}
 	}
 
-	// Token: 0x06002381 RID: 9089 RVA: 0x000D77D2 File Offset: 0x000D59D2
+	// Token: 0x060023A1 RID: 9121 RVA: 0x000D81CF File Offset: 0x000D63CF
 	public override string ToString()
 	{
 		return string.Format("[type={0}, name={1}, id={2}]", base.GetType().Name, GameUtils.SafeStringFormat(this.EntityName), this.entityId);
 	}
 
-	// Token: 0x06002382 RID: 9090 RVA: 0x000D7800 File Offset: 0x000D5A00
+	// Token: 0x060023A2 RID: 9122 RVA: 0x000D81FC File Offset: 0x000D63FC
 	public virtual void FireEvent(MinEventTypes _eventType, bool useInventory = true)
 	{
 		MinEffectController effects = EntityClass.list[this.entityClass].Effects;
@@ -6151,7 +6240,7 @@ public abstract class EntityAlive : Entity
 		this.Buffs.FireEvent(_eventType, this.MinEventContext);
 	}
 
-	// Token: 0x06002383 RID: 9091 RVA: 0x000D78AA File Offset: 0x000D5AAA
+	// Token: 0x060023A3 RID: 9123 RVA: 0x000D82A6 File Offset: 0x000D64A6
 	public float GetCVar(string _varName)
 	{
 		if (this.Buffs == null)
@@ -6161,22 +6250,22 @@ public abstract class EntityAlive : Entity
 		return this.Buffs.GetCustomVar(_varName);
 	}
 
-	// Token: 0x06002384 RID: 9092 RVA: 0x000D78C6 File Offset: 0x000D5AC6
+	// Token: 0x060023A4 RID: 9124 RVA: 0x000D82C2 File Offset: 0x000D64C2
 	public void SetCVar(string _varName, float _value)
 	{
 		if (this.Buffs == null)
 		{
 			return;
 		}
-		this.Buffs.SetCustomVar(_varName, _value, true, CVarOperation.set);
+		this.Buffs.SetCustomVar(_varName, _value, true, CVarOperation.set, false);
 	}
 
-	// Token: 0x06002385 RID: 9093 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060023A5 RID: 9125 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void BuffAdded(BuffValue _buff)
 	{
 	}
 
-	// Token: 0x06002386 RID: 9094 RVA: 0x000D78E0 File Offset: 0x000D5AE0
+	// Token: 0x060023A6 RID: 9126 RVA: 0x000D82E0 File Offset: 0x000D64E0
 	public override void OnCollisionForward(Transform t, Collision collision, bool isStay)
 	{
 		if (!this.emodel.IsRagdollActive)
@@ -6247,7 +6336,7 @@ public abstract class EntityAlive : Entity
 		Manager.BroadcastPlay(vector + Origin.position, text, 0f);
 	}
 
-	// Token: 0x06002387 RID: 9095 RVA: 0x000D7A9C File Offset: 0x000D5C9C
+	// Token: 0x060023A7 RID: 9127 RVA: 0x000D849C File Offset: 0x000D669C
 	public void AddParticle(string _name, Transform _t)
 	{
 		if (this.particles.ContainsKey(_name))
@@ -6258,7 +6347,7 @@ public abstract class EntityAlive : Entity
 		this.particles.Add(_name, _t);
 	}
 
-	// Token: 0x06002388 RID: 9096 RVA: 0x000D7AC8 File Offset: 0x000D5CC8
+	// Token: 0x060023A8 RID: 9128 RVA: 0x000D84C8 File Offset: 0x000D66C8
 	public bool RemoveParticle(string _name)
 	{
 		Transform transform;
@@ -6273,14 +6362,14 @@ public abstract class EntityAlive : Entity
 		return false;
 	}
 
-	// Token: 0x06002389 RID: 9097 RVA: 0x000D7AFC File Offset: 0x000D5CFC
+	// Token: 0x060023A9 RID: 9129 RVA: 0x000D84FC File Offset: 0x000D66FC
 	public bool HasParticle(string _name)
 	{
 		Transform transform;
 		return this.particles.TryGetValue(_name, out transform);
 	}
 
-	// Token: 0x0600238A RID: 9098 RVA: 0x000D7B1C File Offset: 0x000D5D1C
+	// Token: 0x060023AA RID: 9130 RVA: 0x000D851C File Offset: 0x000D671C
 	public void AddPart(string _name, Transform _t)
 	{
 		if (this.parts.ContainsKey(_name))
@@ -6291,7 +6380,7 @@ public abstract class EntityAlive : Entity
 		this.parts.Add(_name, _t);
 	}
 
-	// Token: 0x0600238B RID: 9099 RVA: 0x000D7B48 File Offset: 0x000D5D48
+	// Token: 0x060023AB RID: 9131 RVA: 0x000D8548 File Offset: 0x000D6748
 	public void RemovePart(string _name)
 	{
 		Transform transform;
@@ -6306,7 +6395,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x0600238C RID: 9100 RVA: 0x000D7B98 File Offset: 0x000D5D98
+	// Token: 0x060023AC RID: 9132 RVA: 0x000D8598 File Offset: 0x000D6798
 	public void SetPartActive(string _name, bool isActive)
 	{
 		Transform transform;
@@ -6337,19 +6426,19 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x0600238D RID: 9101 RVA: 0x000D7C3C File Offset: 0x000D5E3C
+	// Token: 0x060023AD RID: 9133 RVA: 0x000D863C File Offset: 0x000D683C
 	public OwnedEntityData GetOwnedEntity(int _entityId)
 	{
 		return this.ownedEntities.Find((OwnedEntityData e) => e.Id == _entityId);
 	}
 
-	// Token: 0x0600238E RID: 9102 RVA: 0x000D7C6D File Offset: 0x000D5E6D
+	// Token: 0x060023AE RID: 9134 RVA: 0x000D866D File Offset: 0x000D686D
 	public bool HasOwnedEntity(int _entityId)
 	{
 		return this.GetOwnedEntity(_entityId) != null;
 	}
 
-	// Token: 0x0600238F RID: 9103 RVA: 0x000D7C7C File Offset: 0x000D5E7C
+	// Token: 0x060023AF RID: 9135 RVA: 0x000D867C File Offset: 0x000D687C
 	public void AddOwnedEntity(OwnedEntityData _data)
 	{
 		if (!this.HasOwnedEntity(_data.Id) && _data != null)
@@ -6362,13 +6451,13 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002390 RID: 9104 RVA: 0x000D7CEC File Offset: 0x000D5EEC
+	// Token: 0x060023B0 RID: 9136 RVA: 0x000D86EC File Offset: 0x000D68EC
 	public void AddOwnedEntity(Entity _entity)
 	{
 		this.AddOwnedEntity(new OwnedEntityData(_entity));
 	}
 
-	// Token: 0x06002391 RID: 9105 RVA: 0x000D7CFC File Offset: 0x000D5EFC
+	// Token: 0x060023B1 RID: 9137 RVA: 0x000D86FC File Offset: 0x000D68FC
 	public void RemoveOwnedEntity(OwnedEntityData _data)
 	{
 		if (_data != null)
@@ -6381,19 +6470,19 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002392 RID: 9106 RVA: 0x000D7D5F File Offset: 0x000D5F5F
+	// Token: 0x060023B2 RID: 9138 RVA: 0x000D875F File Offset: 0x000D695F
 	public void RemoveOwnedEntity(int _entityId)
 	{
 		this.RemoveOwnedEntity(this.GetOwnedEntity(_entityId));
 	}
 
-	// Token: 0x06002393 RID: 9107 RVA: 0x000D7D6E File Offset: 0x000D5F6E
+	// Token: 0x060023B3 RID: 9139 RVA: 0x000D876E File Offset: 0x000D696E
 	public void RemoveOwnedEntity(Entity _entity)
 	{
 		this.RemoveOwnedEntity(_entity.entityId);
 	}
 
-	// Token: 0x06002394 RID: 9108 RVA: 0x000D7D7C File Offset: 0x000D5F7C
+	// Token: 0x060023B4 RID: 9140 RVA: 0x000D877C File Offset: 0x000D697C
 	public List<OwnedEntityData> GetOwnedEntities(int _classId)
 	{
 		List<OwnedEntityData> list = new List<OwnedEntityData>();
@@ -6408,7 +6497,7 @@ public abstract class EntityAlive : Entity
 		return list;
 	}
 
-	// Token: 0x06002395 RID: 9109 RVA: 0x000D7DC3 File Offset: 0x000D5FC3
+	// Token: 0x060023B5 RID: 9141 RVA: 0x000D87C3 File Offset: 0x000D69C3
 	public void HandleSetNavName()
 	{
 		if (this.NavObject != null)
@@ -6417,7 +6506,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002396 RID: 9110 RVA: 0x000D7DE0 File Offset: 0x000D5FE0
+	// Token: 0x060023B6 RID: 9142 RVA: 0x000D87E0 File Offset: 0x000D69E0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateDynamicRagdoll()
 	{
@@ -6441,19 +6530,19 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x06002397 RID: 9111 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060023B7 RID: 9143 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void AnalyticsSendDeath(DamageResponse _dmResponse)
 	{
 	}
 
-	// Token: 0x06002398 RID: 9112 RVA: 0x0004E124 File Offset: 0x0004C324
+	// Token: 0x060023B8 RID: 9144 RVA: 0x0004E53C File Offset: 0x0004C73C
 	public virtual string MakeDebugNameInfo()
 	{
 		return string.Empty;
 	}
 
-	// Token: 0x06002399 RID: 9113 RVA: 0x000D7E94 File Offset: 0x000D6094
+	// Token: 0x060023B9 RID: 9145 RVA: 0x000D8894 File Offset: 0x000D6A94
 	public static void SetupAllDebugNameHUDs(bool _isAdd)
 	{
 		List<Entity> list = GameManager.Instance.World.Entities.list;
@@ -6467,7 +6556,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x0600239A RID: 9114 RVA: 0x000D7EE4 File Offset: 0x000D60E4
+	// Token: 0x060023BA RID: 9146 RVA: 0x000D88E4 File Offset: 0x000D6AE4
 	public void SetupDebugNameHUD(bool _isAdd)
 	{
 		if (this is EntityPlayer)
@@ -6489,7 +6578,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x0600239B RID: 9115 RVA: 0x000D7F31 File Offset: 0x000D6131
+	// Token: 0x060023BB RID: 9147 RVA: 0x000D8931 File Offset: 0x000D6B31
 	public EModelBase.HeadStates GetHeadState()
 	{
 		if (base.EntityClass.CanBigHead)
@@ -6499,7 +6588,7 @@ public abstract class EntityAlive : Entity
 		return EModelBase.HeadStates.Standard;
 	}
 
-	// Token: 0x0600239C RID: 9116 RVA: 0x000D7F50 File Offset: 0x000D6150
+	// Token: 0x060023BC RID: 9148 RVA: 0x000D8950 File Offset: 0x000D6B50
 	public void SetBigHead()
 	{
 		if ((this is EntityAnimal || this is EntityEnemy || this is EntityTrader) && base.EntityClass.CanBigHead && this.emodel.HeadState == EModelBase.HeadStates.Standard)
@@ -6509,7 +6598,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x0600239D RID: 9117 RVA: 0x000D7FAB File Offset: 0x000D61AB
+	// Token: 0x060023BD RID: 9149 RVA: 0x000D89AB File Offset: 0x000D6BAB
 	public void ForceBigHead()
 	{
 		if ((this is EntityAnimal || this is EntityEnemy || this is EntityTrader) && base.EntityClass.CanBigHead && this.emodel.HeadState == EModelBase.HeadStates.Standard)
@@ -6518,7 +6607,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x0600239E RID: 9118 RVA: 0x000D7FEC File Offset: 0x000D61EC
+	// Token: 0x060023BE RID: 9150 RVA: 0x000D89EC File Offset: 0x000D6BEC
 	public void ResetHead()
 	{
 		if ((this is EntityAnimal || this is EntityEnemy || this is EntityTrader) && base.EntityClass.CanBigHead && (this.emodel.HeadState == EModelBase.HeadStates.BigHead || this.emodel.HeadState == EModelBase.HeadStates.Growing))
@@ -6527,7 +6616,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x0600239F RID: 9119 RVA: 0x000D8050 File Offset: 0x000D6250
+	// Token: 0x060023BF RID: 9151 RVA: 0x000D8A50 File Offset: 0x000D6C50
 	public void ForceResetHead()
 	{
 		if ((this is EntityAnimal || this is EntityEnemy || this is EntityTrader) && base.EntityClass.CanBigHead && (this.emodel.HeadState == EModelBase.HeadStates.BigHead || this.emodel.HeadState == EModelBase.HeadStates.Growing))
@@ -6536,7 +6625,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x060023A0 RID: 9120 RVA: 0x000D80AA File Offset: 0x000D62AA
+	// Token: 0x060023C0 RID: 9152 RVA: 0x000D8AAA File Offset: 0x000D6CAA
 	public void SetDancing(bool enabled)
 	{
 		if (base.EntityClass.DanceTypeID != 0)
@@ -6547,7 +6636,7 @@ public abstract class EntityAlive : Entity
 		this.IsDancing = false;
 	}
 
-	// Token: 0x060023A1 RID: 9121 RVA: 0x000D80C8 File Offset: 0x000D62C8
+	// Token: 0x060023C1 RID: 9153 RVA: 0x000D8AC8 File Offset: 0x000D6CC8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public IEnumerator resetHeadLater(EModelBase model)
 	{
@@ -6560,7 +6649,7 @@ public abstract class EntityAlive : Entity
 		yield break;
 	}
 
-	// Token: 0x060023A2 RID: 9122 RVA: 0x000D80D7 File Offset: 0x000D62D7
+	// Token: 0x060023C2 RID: 9154 RVA: 0x000D8AD7 File Offset: 0x000D6CD7
 	public void SetSpawnByData(int newSpawnByID, string newSpawnByName)
 	{
 		this.spawnById = newSpawnByID;
@@ -6568,7 +6657,7 @@ public abstract class EntityAlive : Entity
 		this.bPlayerStatsChanged |= !this.isEntityRemote;
 	}
 
-	// Token: 0x060023A3 RID: 9123 RVA: 0x000D80FD File Offset: 0x000D62FD
+	// Token: 0x060023C3 RID: 9155 RVA: 0x000D8AFD File Offset: 0x000D6CFD
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void SetHeadSize(float overrideHeadSize)
 	{
@@ -6576,7 +6665,7 @@ public abstract class EntityAlive : Entity
 		this.emodel.SetHeadScale(overrideHeadSize);
 	}
 
-	// Token: 0x060023A4 RID: 9124 RVA: 0x000D8112 File Offset: 0x000D6312
+	// Token: 0x060023C4 RID: 9156 RVA: 0x000D8B12 File Offset: 0x000D6D12
 	public void SetVehiclePoseMode(int _pose)
 	{
 		this.vehiclePoseMode = _pose;
@@ -6587,7 +6676,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x060023A5 RID: 9125 RVA: 0x000D8138 File Offset: 0x000D6338
+	// Token: 0x060023C5 RID: 9157 RVA: 0x000D8B38 File Offset: 0x000D6D38
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void updateNetworkStats()
 	{
@@ -6617,7 +6706,7 @@ public abstract class EntityAlive : Entity
 		}
 	}
 
-	// Token: 0x060023A6 RID: 9126 RVA: 0x000D81D8 File Offset: 0x000D63D8
+	// Token: 0x060023C6 RID: 9158 RVA: 0x000D8BD8 File Offset: 0x000D6DD8
 	public void EnqueueNetworkStats(EntityAlive.EntityNetworkStats netStats)
 	{
 		EntityAlive.NetworkStatChange networkStatChange = new EntityAlive.NetworkStatChange();
@@ -6625,7 +6714,7 @@ public abstract class EntityAlive : Entity
 		this.networkStatsUpdateQueue.Add(networkStatChange);
 	}
 
-	// Token: 0x060023A7 RID: 9127 RVA: 0x000D8200 File Offset: 0x000D6400
+	// Token: 0x060023C7 RID: 9159 RVA: 0x000D8C00 File Offset: 0x000D6E00
 	public void EnqueueNetworkHoldingData(ItemStack holdingItemStack, byte holdingItemIndex)
 	{
 		EntityAlive.NetworkStatChange networkStatChange = new EntityAlive.NetworkStatChange();
@@ -6637,7 +6726,7 @@ public abstract class EntityAlive : Entity
 		this.networkStatsUpdateQueue.Add(networkStatChange);
 	}
 
-	// Token: 0x060023A8 RID: 9128 RVA: 0x000D823C File Offset: 0x000D643C
+	// Token: 0x060023C8 RID: 9160 RVA: 0x000D8C3C File Offset: 0x000D6E3C
 	public virtual bool GetAimTarget(out Vector3 aimTarget)
 	{
 		EntityAlive attackTargetLocal = this.GetAttackTargetLocal();
@@ -6650,7 +6739,7 @@ public abstract class EntityAlive : Entity
 		return false;
 	}
 
-	// Token: 0x060023A9 RID: 9129 RVA: 0x000D8274 File Offset: 0x000D6474
+	// Token: 0x060023C9 RID: 9161 RVA: 0x000D8C74 File Offset: 0x000D6E74
 	public virtual bool GetHeadLookTarget(out Vector3 lookTarget)
 	{
 		EntityAlive attackTargetLocal = this.GetAttackTargetLocal();
@@ -6663,1332 +6752,1402 @@ public abstract class EntityAlive : Entity
 		return false;
 	}
 
-	// Token: 0x060023AA RID: 9130 RVA: 0x000D82B4 File Offset: 0x000D64B4
+	// Token: 0x060023CA RID: 9162 RVA: 0x000D8CB3 File Offset: 0x000D6EB3
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public override void InitLocalActivationCommands(Action<EntityActivationCommand> _addCallback)
+	{
+		if (base.EntityClass.PickupItem != "")
+		{
+			_addCallback(new EntityActivationCommand("grab", "hand", null, null));
+		}
+	}
+
+	// Token: 0x060023CB RID: 9163 RVA: 0x000D8CE4 File Offset: 0x000D6EE4
+	public override bool AllowActivationCommand(ReadOnlySpan<char> _commandName, EntityPlayerLocal _playerFocusing)
+	{
+		if (base.CommandIs(_commandName, "grab"))
+		{
+			return !this.IsDead() && _playerFocusing.inventory.UsingBareHand() && base.EntityClass.PickupItem != "";
+		}
+		return base.AllowActivationCommand(_commandName, _playerFocusing);
+	}
+
+	// Token: 0x060023CC RID: 9164 RVA: 0x00010E62 File Offset: 0x0000F062
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public virtual bool grabDisabled()
+	{
+		return false;
+	}
+
+	// Token: 0x060023CD RID: 9165 RVA: 0x000D8D34 File Offset: 0x000D6F34
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public override void OnEntityActivated(EntityActivationCommand _command, EntityPlayerLocal _playerFocusing)
+	{
+		if (base.CommandIs(_command.commandId, "grab") && !this.grabDisabled())
+		{
+			ItemStack itemStack = new ItemStack(ItemClass.GetItem(base.EntityClass.PickupItem, false), 1);
+			_playerFocusing.inventory.SetItem(_playerFocusing.inventory.holdingItemIdx, itemStack);
+			_playerFocusing.MinEventContext.Other = this;
+			_playerFocusing.FireEvent(MinEventTypes.onSelfPickupOther, true);
+			this.MinEventContext.Other = _playerFocusing;
+			this.FireEvent(MinEventTypes.onSelfPickedUpByOther, true);
+			if (base.EntityClass.PickupStressCvar != "")
+			{
+				_playerFocusing.Buffs.SetCustomVar(base.EntityClass.PickupStressCvar, this.GetCVar(base.EntityClass.PickupStressCvar), true, CVarOperation.set, true);
+			}
+			base.Collect(_playerFocusing.entityId);
+		}
+	}
+
+	// Token: 0x060023CE RID: 9166 RVA: 0x000D8E0D File Offset: 0x000D700D
+	public override string GetActivationText()
+	{
+		if (base.EntityClass.PickupItem != "")
+		{
+			return string.Format(Localization.Get("overlayChickenGrab", false, null), Array.Empty<object>());
+		}
+		return string.Empty;
+	}
+
+	// Token: 0x060023CF RID: 9167 RVA: 0x000027FC File Offset: 0x000009FC
+	public virtual void ClearDistressed()
+	{
+	}
+
+	// Token: 0x060023D0 RID: 9168 RVA: 0x000D8E44 File Offset: 0x000D7044
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public EntityAlive()
 	{
 	}
 
-	// Token: 0x040017EA RID: 6122
+	// Token: 0x04001800 RID: 6144
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cTraderTeleportCheckTime = 0.1f;
 
-	// Token: 0x040017EB RID: 6123
+	// Token: 0x04001801 RID: 6145
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float cDamageImmunityOnRespawnSeconds = 1f;
 
-	// Token: 0x040017EC RID: 6124
+	// Token: 0x04001802 RID: 6146
 	public static readonly FastTags<TagGroup.Global> DistractionResistanceWithTargetTags = FastTags<TagGroup.Global>.GetTag("with_target");
 
-	// Token: 0x040017ED RID: 6125
+	// Token: 0x04001803 RID: 6147
 	public static readonly FastTags<TagGroup.Global> CoverWorthTags = FastTags<TagGroup.Global>.GetTag("coverWorthy");
 
-	// Token: 0x040017EE RID: 6126
+	// Token: 0x04001804 RID: 6148
 	public static readonly int FeralTagBit = FastTags<TagGroup.Global>.GetBit("feral");
 
-	// Token: 0x040017EF RID: 6127
+	// Token: 0x04001805 RID: 6149
 	public static readonly int FallingBuffTagBit = FastTags<TagGroup.Global>.GetBit("buffPlayerFallingDamage");
 
-	// Token: 0x040017F0 RID: 6128
+	// Token: 0x04001806 RID: 6150
 	public static readonly FastTags<TagGroup.Global> StanceTagCrouching = FastTags<TagGroup.Global>.GetTag("crouching");
 
-	// Token: 0x040017F1 RID: 6129
+	// Token: 0x04001807 RID: 6151
 	public static readonly FastTags<TagGroup.Global> StanceTagStanding = FastTags<TagGroup.Global>.GetTag("standing");
 
-	// Token: 0x040017F2 RID: 6130
+	// Token: 0x04001808 RID: 6152
 	public static readonly FastTags<TagGroup.Global> MovementTagIdle = FastTags<TagGroup.Global>.GetTag("idle");
 
-	// Token: 0x040017F3 RID: 6131
+	// Token: 0x04001809 RID: 6153
 	public static readonly FastTags<TagGroup.Global> MovementTagWalking = FastTags<TagGroup.Global>.GetTag("walking");
 
-	// Token: 0x040017F4 RID: 6132
+	// Token: 0x0400180A RID: 6154
 	public static readonly FastTags<TagGroup.Global> MovementTagRunning = FastTags<TagGroup.Global>.GetTag("running");
 
-	// Token: 0x040017F5 RID: 6133
+	// Token: 0x0400180B RID: 6155
 	public static readonly FastTags<TagGroup.Global> MovementTagFloating = FastTags<TagGroup.Global>.GetTag("floating");
 
-	// Token: 0x040017F6 RID: 6134
+	// Token: 0x0400180C RID: 6156
 	public static readonly FastTags<TagGroup.Global> MovementTagSwimming = FastTags<TagGroup.Global>.GetTag("swimming");
 
-	// Token: 0x040017F7 RID: 6135
+	// Token: 0x0400180D RID: 6157
 	public static readonly FastTags<TagGroup.Global> MovementTagSwimmingRun = FastTags<TagGroup.Global>.GetTag("swimmingRun");
 
-	// Token: 0x040017F8 RID: 6136
+	// Token: 0x0400180E RID: 6158
 	public static readonly FastTags<TagGroup.Global> MovementTagJumping = FastTags<TagGroup.Global>.GetTag("jumping");
 
-	// Token: 0x040017F9 RID: 6137
+	// Token: 0x0400180F RID: 6159
 	public static readonly FastTags<TagGroup.Global> MovementTagFalling = FastTags<TagGroup.Global>.GetTag("falling");
 
-	// Token: 0x040017FA RID: 6138
+	// Token: 0x04001810 RID: 6160
 	public static readonly FastTags<TagGroup.Global> MovementTagClimbing = FastTags<TagGroup.Global>.GetTag("climbing");
 
-	// Token: 0x040017FB RID: 6139
+	// Token: 0x04001811 RID: 6161
 	public static readonly FastTags<TagGroup.Global> MovementTagDriving = FastTags<TagGroup.Global>.GetTag("driving");
 
-	// Token: 0x040017FC RID: 6140
+	// Token: 0x04001812 RID: 6162
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly float[] moveSpeedRandomness = new float[] { 0.2f, 1f, 1.1f, 1.2f, 1.35f, 1.5f };
 
-	// Token: 0x040017FD RID: 6141
+	// Token: 0x04001813 RID: 6163
 	public const float CLIMB_LADDER_SPEED = 1234f;
 
-	// Token: 0x040017FE RID: 6142
+	// Token: 0x04001814 RID: 6164
 	public static ulong HitDelay = 11000UL;
 
-	// Token: 0x040017FF RID: 6143
+	// Token: 0x04001815 RID: 6165
 	public static float HitSoundDistance = 10f;
 
-	// Token: 0x04001800 RID: 6144
-	public MinEventParams MinEventContext = new MinEventParams();
-
-	// Token: 0x04001801 RID: 6145
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int equippingCount;
-
-	// Token: 0x04001802 RID: 6146
-	public bool IsSleeper;
-
-	// Token: 0x04001803 RID: 6147
-	public bool IsSleeping;
-
-	// Token: 0x04001804 RID: 6148
-	public bool IsSleeperPassive;
-
-	// Token: 0x04001805 RID: 6149
-	public bool SleeperSupressLivingSounds;
-
-	// Token: 0x04001806 RID: 6150
-	public Vector3 SleeperSpawnPosition;
-
-	// Token: 0x04001807 RID: 6151
-	public Vector3 SleeperSpawnLookDir;
-
-	// Token: 0x04001808 RID: 6152
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public float accumulatedDamageResisted;
-
-	// Token: 0x04001809 RID: 6153
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int pendingSleepTrigger = -1;
-
-	// Token: 0x0400180A RID: 6154
-	public int lastSleeperPose;
-
-	// Token: 0x0400180B RID: 6155
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Vector3 sleeperLookDir;
-
-	// Token: 0x0400180C RID: 6156
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public float sleeperSightRange;
-
-	// Token: 0x0400180D RID: 6157
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float sleeperViewAngle;
-
-	// Token: 0x0400180E RID: 6158
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Vector2 sightLightThreshold;
-
-	// Token: 0x0400180F RID: 6159
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Vector2 sightWakeThresholdAtRange;
-
-	// Token: 0x04001810 RID: 6160
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Vector2 sightGroanThresholdAtRange;
-
-	// Token: 0x04001811 RID: 6161
-	public float sleeperNoiseToSense;
-
-	// Token: 0x04001812 RID: 6162
-	public float sleeperNoiseToWake;
-
-	// Token: 0x04001813 RID: 6163
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool isSnore;
-
-	// Token: 0x04001814 RID: 6164
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool isGroan;
-
-	// Token: 0x04001815 RID: 6165
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool isGroanSilent;
-
 	// Token: 0x04001816 RID: 6166
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float sleeperNoiseToSenseSoundChance;
+	public MinEventParams MinEventContext = new MinEventParams();
 
 	// Token: 0x04001817 RID: 6167
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public int snoreGroanCD;
+	public int equippingCount;
 
 	// Token: 0x04001818 RID: 6168
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public const int kSnoreGroanMinCD = 20;
+	public bool IsSleeper;
 
 	// Token: 0x04001819 RID: 6169
-	public EntityPlayer noisePlayer;
+	public bool IsSleeping;
 
 	// Token: 0x0400181A RID: 6170
-	public float noisePlayerDistance;
+	public bool IsSleeperPassive;
 
 	// Token: 0x0400181B RID: 6171
-	public float noisePlayerVolume;
+	public bool SleeperSupressLivingSounds;
 
 	// Token: 0x0400181C RID: 6172
-	public EntityPlayer attractPlayer;
+	public Vector3 SleeperSpawnPosition;
 
 	// Token: 0x0400181D RID: 6173
-	public float attractPlayerDistance;
+	public Vector3 SleeperSpawnLookDir;
 
 	// Token: 0x0400181E RID: 6174
-	public int attractPlayerTimeoutTicks;
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public float accumulatedDamageResisted;
 
 	// Token: 0x0400181F RID: 6175
-	public EntityPlayer smellPlayer;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public int pendingSleepTrigger = -1;
 
 	// Token: 0x04001820 RID: 6176
-	public float smellPlayerDistance;
+	public int lastSleeperPose;
 
 	// Token: 0x04001821 RID: 6177
-	public int smellPlayerTimeoutTicks;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Vector3 sleeperLookDir;
 
 	// Token: 0x04001822 RID: 6178
-	public EntityItem pendingDistraction;
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public float sleeperSightRange;
 
 	// Token: 0x04001823 RID: 6179
-	public float pendingDistractionDistanceSq;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float sleeperViewAngle;
 
 	// Token: 0x04001824 RID: 6180
-	public EntityItem distraction;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Vector2 sightLightThreshold;
 
 	// Token: 0x04001825 RID: 6181
-	public float distractionResistance;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Vector2 sightWakeThresholdAtRange;
 
 	// Token: 0x04001826 RID: 6182
-	public float distractionResistanceWithTarget;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Vector2 sightGroanThresholdAtRange;
 
 	// Token: 0x04001827 RID: 6183
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public const float cSwimGravityPer = 0.025f;
+	public float sleeperNoiseToSense;
 
 	// Token: 0x04001828 RID: 6184
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public const float cSwimDragY = 0.91f;
+	public float sleeperNoiseToWake;
 
 	// Token: 0x04001829 RID: 6185
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float cSwimDrag = 0.91f;
+	public bool isSnore;
 
 	// Token: 0x0400182A RID: 6186
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float cSwimAnimDelay = 6f;
+	public bool isGroan;
 
 	// Token: 0x0400182B RID: 6187
-	[PublicizedFrom(EAccessModifier.Protected)]
+	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public int jumpTicks;
+	public bool isGroanSilent;
 
 	// Token: 0x0400182C RID: 6188
-	[PublicizedFrom(EAccessModifier.Protected)]
+	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public EntityAlive.JumpState jumpState;
+	public float sleeperNoiseToSenseSoundChance;
 
 	// Token: 0x0400182D RID: 6189
-	[PublicizedFrom(EAccessModifier.Protected)]
+	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public int jumpStateTicks;
+	public int snoreGroanCD;
 
 	// Token: 0x0400182E RID: 6190
-	[PublicizedFrom(EAccessModifier.Protected)]
+	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float jumpDistance;
+	public const int kSnoreGroanMinCD = 20;
 
 	// Token: 0x0400182F RID: 6191
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public float jumpHeightDiff;
+	public EntityPlayer noisePlayer;
 
 	// Token: 0x04001830 RID: 6192
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public float jumpSwimDurationTicks;
+	public float noisePlayerDistance;
 
 	// Token: 0x04001831 RID: 6193
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public Vector3 jumpSwimMotion;
+	public float noisePlayerVolume;
 
 	// Token: 0x04001832 RID: 6194
-	public float jumpDelay;
+	public EntityPlayer attractPlayer;
 
 	// Token: 0x04001833 RID: 6195
-	public float jumpMaxDistance;
+	public float attractPlayerDistance;
 
 	// Token: 0x04001834 RID: 6196
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool jumpIsMoving;
+	public int attractPlayerTimeoutTicks;
 
 	// Token: 0x04001835 RID: 6197
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float landWaterLevel;
+	public EntityPlayer smellPlayer;
 
 	// Token: 0x04001836 RID: 6198
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int ticksNoPlayerAdjacent;
+	public float smellPlayerDistance;
 
 	// Token: 0x04001837 RID: 6199
-	public int hasBeenAttackedTime;
+	public int smellPlayerTimeoutTicks;
 
 	// Token: 0x04001838 RID: 6200
-	public float painHitsFelt;
+	public EntityItem pendingDistraction;
 
 	// Token: 0x04001839 RID: 6201
-	public float painResistPercent;
+	public float pendingDistractionDistanceSq;
 
 	// Token: 0x0400183A RID: 6202
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public int attackingTime;
+	public EntityItem distraction;
 
 	// Token: 0x0400183B RID: 6203
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public EntityAlive revengeEntity;
+	public float distractionResistance;
 
 	// Token: 0x0400183C RID: 6204
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int revengeTimer;
+	public float distractionResistanceWithTarget;
 
 	// Token: 0x0400183D RID: 6205
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool targetAlertChanged;
+	public const float cSwimGravityPer = 0.025f;
 
 	// Token: 0x0400183E RID: 6206
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float lastAliveTime;
+	public const float cSwimDragY = 0.91f;
 
 	// Token: 0x0400183F RID: 6207
-	[PublicizedFrom(EAccessModifier.Protected)]
+	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool alertEnabled = true;
+	public const float cSwimDrag = 0.91f;
 
 	// Token: 0x04001840 RID: 6208
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public int alertTicks;
+	public const float cSwimAnimDelay = 6f;
 
 	// Token: 0x04001841 RID: 6209
-	[PublicizedFrom(EAccessModifier.Private)]
+	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
-	public static string notAlertedId = "_notAlerted";
+	public int jumpTicks;
 
 	// Token: 0x04001842 RID: 6210
-	[PublicizedFrom(EAccessModifier.Private)]
+	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
-	public int notAlertDelayTicks;
+	public EntityAlive.JumpState jumpState;
 
 	// Token: 0x04001843 RID: 6211
-	[PublicizedFrom(EAccessModifier.Private)]
+	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
-	public bool isAlert;
+	public int jumpStateTicks;
 
 	// Token: 0x04001844 RID: 6212
-	[PublicizedFrom(EAccessModifier.Private)]
+	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
-	public Vector3 investigatePos;
+	public float jumpDistance;
 
 	// Token: 0x04001845 RID: 6213
-	[PublicizedFrom(EAccessModifier.Private)]
+	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
-	public int investigatePositionTicks;
+	public float jumpHeightDiff;
 
 	// Token: 0x04001846 RID: 6214
-	[PublicizedFrom(EAccessModifier.Private)]
+	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
-	public bool isInvestigateAlert;
+	public float jumpSwimDurationTicks;
 
 	// Token: 0x04001847 RID: 6215
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
-	public bool hasAI;
+	public Vector3 jumpSwimMotion;
 
 	// Token: 0x04001848 RID: 6216
-	public EAIManager aiManager;
+	public float jumpDelay;
 
 	// Token: 0x04001849 RID: 6217
-	public List<string> AIPackages;
+	public float jumpMaxDistance;
 
 	// Token: 0x0400184A RID: 6218
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Context utilityAIContext;
+	public bool jumpIsMoving;
 
 	// Token: 0x0400184B RID: 6219
-	public EntityPlayer aiClosestPlayer;
-
-	// Token: 0x0400184C RID: 6220
-	public float aiClosestPlayerDistSq;
-
-	// Token: 0x0400184D RID: 6221
-	public float aiActiveScale;
-
-	// Token: 0x0400184E RID: 6222
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float aiActiveDelay;
+	public float landWaterLevel;
+
+	// Token: 0x0400184C RID: 6220
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public int ticksNoPlayerAdjacent;
+
+	// Token: 0x0400184D RID: 6221
+	public int hasBeenAttackedTime;
+
+	// Token: 0x0400184E RID: 6222
+	public float painHitsFelt;
 
 	// Token: 0x0400184F RID: 6223
-	public bool IsBloodMoon;
+	public float painResistPercent;
 
 	// Token: 0x04001850 RID: 6224
-	public bool IsFeral;
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public int attackingTime;
 
 	// Token: 0x04001851 RID: 6225
-	public bool IsBreakingDoors;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public EntityAlive revengeEntity;
 
 	// Token: 0x04001852 RID: 6226
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool m_isBreakingBlocks;
+	public int revengeTimer;
 
 	// Token: 0x04001853 RID: 6227
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool m_isEating;
+	public bool targetAlertChanged;
 
 	// Token: 0x04001854 RID: 6228
-	public Vector3 ChaseReturnLocation;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float lastAliveTime;
 
 	// Token: 0x04001855 RID: 6229
-	public bool IsScoutZombie;
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public bool alertEnabled = true;
 
 	// Token: 0x04001856 RID: 6230
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public EntityLookHelper lookHelper;
+	public int alertTicks;
 
 	// Token: 0x04001857 RID: 6231
-	public EntityMoveHelper moveHelper;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public static string notAlertedId = "_notAlerted";
 
 	// Token: 0x04001858 RID: 6232
-	public PathNavigate navigator;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public int notAlertDelayTicks;
 
 	// Token: 0x04001859 RID: 6233
-	public bool bCanClimbLadders;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool isAlert;
 
 	// Token: 0x0400185A RID: 6234
-	public bool bCanClimbVertical;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Vector3 investigatePos;
 
 	// Token: 0x0400185B RID: 6235
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public EntityAlive damagedTarget;
+	public int investigatePositionTicks;
 
 	// Token: 0x0400185C RID: 6236
-	[PublicizedFrom(EAccessModifier.Protected)]
+	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public EntityAlive attackTarget;
+	public bool isInvestigateAlert;
 
 	// Token: 0x0400185D RID: 6237
-	[PublicizedFrom(EAccessModifier.Private)]
+	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
-	public int attackTargetTime;
+	public bool hasAI;
 
 	// Token: 0x0400185E RID: 6238
-	public EntityAlive attackTargetClient;
+	public EAIManager aiManager;
 
 	// Token: 0x0400185F RID: 6239
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public EntityAlive attackTargetLast;
+	public List<string> AIPackages;
 
 	// Token: 0x04001860 RID: 6240
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public EntitySeeCache seeCache;
+	public Context utilityAIContext;
 
 	// Token: 0x04001861 RID: 6241
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public ChunkCoordinates homePosition;
+	public EntityPlayer aiClosestPlayer;
 
 	// Token: 0x04001862 RID: 6242
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int maximumHomeDistance;
+	public float aiClosestPlayerDistSq;
 
 	// Token: 0x04001863 RID: 6243
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float jumpMovementFactor = 0.02f;
+	public float aiActiveScale;
 
 	// Token: 0x04001864 RID: 6244
-	[PublicizedFrom(EAccessModifier.Protected)]
+	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float landMovementFactor = 0.1f;
+	public float aiActiveDelay;
 
 	// Token: 0x04001865 RID: 6245
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public float jumpMotionYValue = 0.419f;
+	public bool IsBloodMoon;
 
 	// Token: 0x04001866 RID: 6246
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float stepSoundDistanceRemaining;
+	public bool IsFeral;
 
 	// Token: 0x04001867 RID: 6247
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float stepSoundRotYRemaining;
+	public bool IsBreakingDoors;
 
 	// Token: 0x04001868 RID: 6248
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float nextSwimDistance;
+	public bool m_isBreakingBlocks;
 
 	// Token: 0x04001869 RID: 6249
-	public Inventory inventory;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool m_isEating;
 
 	// Token: 0x0400186A RID: 6250
-	public Inventory saveInventory;
+	public Vector3 ChaseReturnLocation;
 
 	// Token: 0x0400186B RID: 6251
-	public Equipment equipment;
+	public bool IsScoutZombie;
 
 	// Token: 0x0400186C RID: 6252
-	public ChallengeJournal challengeJournal;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public EntityLookHelper lookHelper;
 
 	// Token: 0x0400186D RID: 6253
-	public int ExperienceValue;
+	public EntityMoveHelper moveHelper;
 
 	// Token: 0x0400186E RID: 6254
-	public int deathUpdateTime;
+	public PathNavigate navigator;
 
 	// Token: 0x0400186F RID: 6255
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public EntityAlive entityThatKilledMe;
+	public bool bCanClimbLadders;
 
 	// Token: 0x04001870 RID: 6256
-	public bool bPlayerStatsChanged;
+	public bool bCanClimbVertical;
 
 	// Token: 0x04001871 RID: 6257
-	public bool bEntityAliveFlagsChanged;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public EntityAlive damagedTarget;
 
 	// Token: 0x04001872 RID: 6258
-	public bool bPlayerTwitchChanged;
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public EntityAlive attackTarget;
 
 	// Token: 0x04001873 RID: 6259
-	public bool bPlayerEquipmentChanged;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public int attackTargetTime;
 
 	// Token: 0x04001874 RID: 6260
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public Dictionary<EnumDamageSource, ulong> damageSourceTimeouts = new EnumDictionary<EnumDamageSource, ulong>();
+	public EntityAlive attackTargetClient;
 
 	// Token: 0x04001875 RID: 6261
-	[PublicizedFrom(EAccessModifier.Protected)]
+	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public int traderTeleportStreak = 1;
+	public EntityAlive attackTargetLast;
 
 	// Token: 0x04001876 RID: 6262
-	[PublicizedFrom(EAccessModifier.Protected)]
+	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool bJetpackWearing;
+	public EntitySeeCache seeCache;
 
 	// Token: 0x04001877 RID: 6263
-	[PublicizedFrom(EAccessModifier.Protected)]
+	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool bJetpackActive;
+	public ChunkCoordinates homePosition;
 
 	// Token: 0x04001878 RID: 6264
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool bParachuteWearing;
+	public int maximumHomeDistance;
 
 	// Token: 0x04001879 RID: 6265
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool bAimingGun;
+	public float jumpMovementFactor = 0.02f;
 
 	// Token: 0x0400187A RID: 6266
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
-	public bool bMovementRunning;
+	public float landMovementFactor = 0.1f;
 
 	// Token: 0x0400187B RID: 6267
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
-	public bool bCrouching;
+	public float jumpMotionYValue = 0.419f;
 
 	// Token: 0x0400187C RID: 6268
-	[PublicizedFrom(EAccessModifier.Protected)]
+	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool bJumping;
+	public float stepSoundDistanceRemaining;
 
 	// Token: 0x0400187D RID: 6269
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool bClimbing;
+	public float stepSoundRotYRemaining;
 
 	// Token: 0x0400187E RID: 6270
-	[PublicizedFrom(EAccessModifier.Protected)]
+	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public int died;
+	public float nextSwimDistance;
 
 	// Token: 0x0400187F RID: 6271
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public int score;
+	public Inventory inventory;
 
 	// Token: 0x04001880 RID: 6272
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public int killedZombies;
+	public Inventory saveInventory;
 
 	// Token: 0x04001881 RID: 6273
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public int killedPlayers;
+	public Equipment equipment;
 
 	// Token: 0x04001882 RID: 6274
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public int teamNumber;
+	public ChallengeJournal challengeJournal;
 
 	// Token: 0x04001883 RID: 6275
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public string entityName = string.Empty;
+	public int ExperienceValue;
 
 	// Token: 0x04001884 RID: 6276
-	public string DebugNameInfo = string.Empty;
+	public int deathUpdateTime;
 
 	// Token: 0x04001885 RID: 6277
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
-	public int damageLocationBits;
+	public EntityAlive entityThatKilledMe;
 
 	// Token: 0x04001886 RID: 6278
+	public bool bPlayerStatsChanged;
+
+	// Token: 0x04001887 RID: 6279
+	public bool bEntityAliveFlagsChanged;
+
+	// Token: 0x04001888 RID: 6280
+	public bool bPlayerTwitchChanged;
+
+	// Token: 0x04001889 RID: 6281
+	public bool bPlayerEquipmentChanged;
+
+	// Token: 0x0400188A RID: 6282
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public Dictionary<EnumDamageSource, ulong> damageSourceTimeouts = new EnumDictionary<EnumDamageSource, ulong>();
+
+	// Token: 0x0400188B RID: 6283
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public int traderTeleportStreak = 1;
+
+	// Token: 0x0400188C RID: 6284
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public bool bJetpackWearing;
+
+	// Token: 0x0400188D RID: 6285
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public bool bJetpackActive;
+
+	// Token: 0x0400188E RID: 6286
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool bParachuteWearing;
+
+	// Token: 0x0400188F RID: 6287
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool bAimingGun;
+
+	// Token: 0x04001890 RID: 6288
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public bool bMovementRunning;
+
+	// Token: 0x04001891 RID: 6289
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public bool bCrouching;
+
+	// Token: 0x04001892 RID: 6290
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public bool bJumping;
+
+	// Token: 0x04001893 RID: 6291
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool bClimbing;
+
+	// Token: 0x04001894 RID: 6292
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public int died;
+
+	// Token: 0x04001895 RID: 6293
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public int score;
+
+	// Token: 0x04001896 RID: 6294
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public int killedZombies;
+
+	// Token: 0x04001897 RID: 6295
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public int killedPlayers;
+
+	// Token: 0x04001898 RID: 6296
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public int teamNumber;
+
+	// Token: 0x04001899 RID: 6297
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public string entityName = string.Empty;
+
+	// Token: 0x0400189A RID: 6298
+	public string DebugNameInfo = string.Empty;
+
+	// Token: 0x0400189B RID: 6299
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public int damageLocationBits;
+
+	// Token: 0x0400189C RID: 6300
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool bSpawned;
 
-	// Token: 0x04001887 RID: 6279
+	// Token: 0x0400189D RID: 6301
 	public bool bReplicatedAlertFlag;
 
-	// Token: 0x04001888 RID: 6280
+	// Token: 0x0400189E RID: 6302
 	public int vehiclePoseMode = -1;
 
-	// Token: 0x04001889 RID: 6281
+	// Token: 0x0400189F RID: 6303
 	public byte factionId;
 
-	// Token: 0x0400188A RID: 6282
-	public byte factionRank;
-
-	// Token: 0x0400188B RID: 6283
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int ticksToCheckSeenByPlayer;
-
-	// Token: 0x0400188C RID: 6284
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool wasSeenByPlayer;
-
-	// Token: 0x0400188D RID: 6285
-	public DamageResponse RecordedDamage;
-
-	// Token: 0x0400188E RID: 6286
-	public float moveSpeed;
-
-	// Token: 0x0400188F RID: 6287
-	public float moveSpeedNight;
-
-	// Token: 0x04001890 RID: 6288
-	public float moveSpeedAggro;
-
-	// Token: 0x04001891 RID: 6289
-	public float moveSpeedAggroMax;
-
-	// Token: 0x04001892 RID: 6290
-	public float moveSpeedPanic;
-
-	// Token: 0x04001893 RID: 6291
-	public float moveSpeedPanicMax;
-
-	// Token: 0x04001894 RID: 6292
-	public float swimSpeed;
-
-	// Token: 0x04001895 RID: 6293
-	public Vector2 swimStrokeRate;
-
-	// Token: 0x04001896 RID: 6294
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public ItemValue handItem;
-
-	// Token: 0x04001897 RID: 6295
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public string soundSpawn;
-
-	// Token: 0x04001898 RID: 6296
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public string soundSleeperGroan;
-
-	// Token: 0x04001899 RID: 6297
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public string soundSleeperSnore;
-
-	// Token: 0x0400189A RID: 6298
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public string soundDeath;
-
-	// Token: 0x0400189B RID: 6299
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public string soundAlert;
-
-	// Token: 0x0400189C RID: 6300
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public string soundAttack;
-
-	// Token: 0x0400189D RID: 6301
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public string soundLiving;
-
-	// Token: 0x0400189E RID: 6302
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public string soundRandom;
-
-	// Token: 0x0400189F RID: 6303
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public string soundSense;
-
 	// Token: 0x040018A0 RID: 6304
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public string soundGiveUp;
+	public byte factionRank;
 
 	// Token: 0x040018A1 RID: 6305
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public string soundStepType;
+	public int ticksToCheckSeenByPlayer;
 
 	// Token: 0x040018A2 RID: 6306
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public string soundStamina;
+	public bool wasSeenByPlayer;
 
 	// Token: 0x040018A3 RID: 6307
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public string soundJump;
+	public DamageResponse RecordedDamage;
 
 	// Token: 0x040018A4 RID: 6308
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public string soundLand;
+	public float moveSpeed;
 
 	// Token: 0x040018A5 RID: 6309
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public string soundLandThump;
+	public float moveSpeedNight;
 
 	// Token: 0x040018A6 RID: 6310
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public string soundHurt;
+	public float moveSpeedAggro;
 
 	// Token: 0x040018A7 RID: 6311
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public string soundHurtSmall;
+	public float moveSpeedAggroMax;
 
 	// Token: 0x040018A8 RID: 6312
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public string soundDrownPain;
+	public float moveSpeedPanic;
 
 	// Token: 0x040018A9 RID: 6313
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public string soundDrownDeath;
+	public float moveSpeedPanicMax;
 
 	// Token: 0x040018AA RID: 6314
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public string soundWaterSurface;
+	public float swimSpeed;
 
 	// Token: 0x040018AB RID: 6315
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int soundDelayTicks;
+	public Vector2 swimStrokeRate;
 
 	// Token: 0x040018AC RID: 6316
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public int soundLivingID = -1;
+	public ItemValue handItem;
 
 	// Token: 0x040018AD RID: 6317
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public const float cSoundRandomMaxDist = 20f;
+	public string soundSpawn;
 
 	// Token: 0x040018AE RID: 6318
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public int soundAlertTicks;
+	public string soundSleeperGroan;
 
 	// Token: 0x040018AF RID: 6319
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public int soundRandomTicks;
+	public string soundSleeperSnore;
 
 	// Token: 0x040018B0 RID: 6320
-	public int classMaxHealth;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public string soundDeath;
 
 	// Token: 0x040018B1 RID: 6321
-	public int classMaxStamina;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public string soundAlert;
 
 	// Token: 0x040018B2 RID: 6322
-	public int classMaxFood;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public string soundAttack;
 
 	// Token: 0x040018B3 RID: 6323
-	public int classMaxWater;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public string soundLiving;
 
 	// Token: 0x040018B4 RID: 6324
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float weight;
+	public string soundRandom;
 
 	// Token: 0x040018B5 RID: 6325
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float pushFactor;
+	public string soundSense;
 
 	// Token: 0x040018B6 RID: 6326
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float maxViewAngle;
+	public string soundGiveUp;
 
 	// Token: 0x040018B7 RID: 6327
-	public float sightRangeBase;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public string soundStepType;
 
 	// Token: 0x040018B8 RID: 6328
-	[PublicizedFrom(EAccessModifier.Protected)]
+	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float sightRange;
+	public string soundStamina;
 
 	// Token: 0x040018B9 RID: 6329
-	public float senseScale;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public string soundJump;
 
 	// Token: 0x040018BA RID: 6330
-	public int timeStayAfterDeath;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public string soundLand;
 
 	// Token: 0x040018BB RID: 6331
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public BlockValue corpseBlockValue;
+	public string soundLandThump;
 
 	// Token: 0x040018BC RID: 6332
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float corpseBlockChance;
+	public string soundHurt;
 
 	// Token: 0x040018BD RID: 6333
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public int attackTimeoutDay;
+	public string soundDistressed;
 
 	// Token: 0x040018BE RID: 6334
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public int attackTimeoutNight;
+	public string soundHurtSmall;
 
 	// Token: 0x040018BF RID: 6335
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public string particleOnDeath;
+	public string soundDrownPain;
 
 	// Token: 0x040018C0 RID: 6336
-	[PublicizedFrom(EAccessModifier.Private)]
+	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
-	public string particleOnDestroy;
+	public string soundDrownDeath;
 
 	// Token: 0x040018C1 RID: 6337
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
-	public EntityBedrollPositionList spawnPoints;
+	public string soundWaterSurface;
 
 	// Token: 0x040018C2 RID: 6338
-	[PublicizedFrom(EAccessModifier.Protected)]
+	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public List<Vector3i> droppedBackpackPositions;
+	public int soundDelayTicks;
 
 	// Token: 0x040018C3 RID: 6339
-	[PublicizedFrom(EAccessModifier.Protected)]
+	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float speedModifier = 1f;
+	public int soundLivingID = -1;
 
 	// Token: 0x040018C4 RID: 6340
-	[PublicizedFrom(EAccessModifier.Protected)]
+	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Vector3 accumulatedRootMotion;
+	public const float cSoundRandomMaxDist = 20f;
 
 	// Token: 0x040018C5 RID: 6341
-	public Vector3 moveDirection;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public int soundAlertTicks;
 
 	// Token: 0x040018C6 RID: 6342
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool isMoveDirAbsolute;
+	public int soundRandomTicks;
 
 	// Token: 0x040018C7 RID: 6343
-	public Vector3 lookAtPosition;
+	public int classMaxHealth;
 
 	// Token: 0x040018C8 RID: 6344
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Vector3i blockPosStandingOn;
+	public int classMaxStamina;
 
 	// Token: 0x040018C9 RID: 6345
-	public BlockValue blockValueStandingOn;
+	public int classMaxFood;
 
 	// Token: 0x040018CA RID: 6346
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool blockStandingOnChanged;
+	public int classMaxWater;
 
 	// Token: 0x040018CB RID: 6347
-	public BiomeDefinition biomeStandingOn;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float weight;
 
 	// Token: 0x040018CC RID: 6348
-	public bool IsMale;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float pushFactor;
 
 	// Token: 0x040018CD RID: 6349
-	public int crouchType;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float maxViewAngle;
 
 	// Token: 0x040018CE RID: 6350
-	public float crouchBendPer;
+	public float sightRangeBase;
 
 	// Token: 0x040018CF RID: 6351
-	public float crouchBendPerTarget;
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public float sightRange;
 
 	// Token: 0x040018D0 RID: 6352
-	public const int cWalkTypeSwim = -1;
+	public float senseScale;
 
 	// Token: 0x040018D1 RID: 6353
-	public const int cWalkTypeFat = 1;
+	public int timeStayAfterDeath;
 
 	// Token: 0x040018D2 RID: 6354
-	public const int cWalkTypeCripple = 5;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public BlockValue corpseBlockValue;
 
 	// Token: 0x040018D3 RID: 6355
-	public const int cWalkTypeCrouch = 8;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float corpseBlockChance;
 
 	// Token: 0x040018D4 RID: 6356
-	public const int cWalkTypeBandit = 15;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public int attackTimeoutDay;
 
 	// Token: 0x040018D5 RID: 6357
-	public const int cWalkTypeCrawlFirst = 20;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public int attackTimeoutNight;
 
 	// Token: 0x040018D6 RID: 6358
-	public const int cWalkTypeCrawler = 21;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public string particleOnDeath;
 
 	// Token: 0x040018D7 RID: 6359
-	public const int cWalkTypeSpider = 22;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public string particleOnDestroy;
 
 	// Token: 0x040018D8 RID: 6360
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
-	public int walkType;
+	public EntityBedrollPositionList spawnPoints;
 
 	// Token: 0x040018D9 RID: 6361
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
-	public int walkTypeBeforeCrouch;
+	public List<Vector3i> droppedBackpackPositions;
 
 	// Token: 0x040018DA RID: 6362
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public float speedModifier = 1f;
+
+	// Token: 0x040018DB RID: 6363
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public Vector3 accumulatedRootMotion;
+
+	// Token: 0x040018DC RID: 6364
+	public Vector3 moveDirection;
+
+	// Token: 0x040018DD RID: 6365
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool isMoveDirAbsolute;
+
+	// Token: 0x040018DE RID: 6366
+	public Vector3 lookAtPosition;
+
+	// Token: 0x040018DF RID: 6367
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Vector3i blockPosStandingOn;
+
+	// Token: 0x040018E0 RID: 6368
+	public BlockValue blockValueStandingOn;
+
+	// Token: 0x040018E1 RID: 6369
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool blockStandingOnChanged;
+
+	// Token: 0x040018E2 RID: 6370
+	public BiomeDefinition biomeStandingOn;
+
+	// Token: 0x040018E3 RID: 6371
+	public bool IsMale;
+
+	// Token: 0x040018E4 RID: 6372
+	public int crouchType;
+
+	// Token: 0x040018E5 RID: 6373
+	public float crouchBendPer;
+
+	// Token: 0x040018E6 RID: 6374
+	public float crouchBendPerTarget;
+
+	// Token: 0x040018E7 RID: 6375
+	public const int cWalkTypeSwim = -1;
+
+	// Token: 0x040018E8 RID: 6376
+	public const int cWalkTypeFat = 1;
+
+	// Token: 0x040018E9 RID: 6377
+	public const int cWalkTypeCripple = 5;
+
+	// Token: 0x040018EA RID: 6378
+	public const int cWalkTypeCrouch = 8;
+
+	// Token: 0x040018EB RID: 6379
+	public const int cWalkTypeBandit = 15;
+
+	// Token: 0x040018EC RID: 6380
+	public const int cWalkTypeCrawlFirst = 20;
+
+	// Token: 0x040018ED RID: 6381
+	public const int cWalkTypeCrawler = 21;
+
+	// Token: 0x040018EE RID: 6382
+	public const int cWalkTypeSpider = 22;
+
+	// Token: 0x040018EF RID: 6383
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public int walkType;
+
+	// Token: 0x040018F0 RID: 6384
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public int walkTypeBeforeCrouch;
+
+	// Token: 0x040018F1 RID: 6385
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public string rightHandTransformName;
 
-	// Token: 0x040018DB RID: 6363
+	// Token: 0x040018F2 RID: 6386
 	public int pingToServer;
 
-	// Token: 0x040018DC RID: 6364
+	// Token: 0x040018F3 RID: 6387
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public List<ItemStack> itemsOnEnterGame = new List<ItemStack>();
 
-	// Token: 0x040018DD RID: 6365
+	// Token: 0x040018F4 RID: 6388
 	public Utils.EnumHitDirection lastHitDirection = Utils.EnumHitDirection.None;
 
-	// Token: 0x040018DE RID: 6366
+	// Token: 0x040018F5 RID: 6389
 	public Vector3 lastHitImpactDir = Vector3.zero;
 
-	// Token: 0x040018DF RID: 6367
+	// Token: 0x040018F6 RID: 6390
 	public Vector3 lastHitEntityFwd = Vector3.zero;
 
-	// Token: 0x040018E0 RID: 6368
+	// Token: 0x040018F7 RID: 6391
 	public bool lastHitRanged;
 
-	// Token: 0x040018E1 RID: 6369
+	// Token: 0x040018F8 RID: 6392
 	public float lastHitForce;
 
-	// Token: 0x040018E2 RID: 6370
+	// Token: 0x040018F9 RID: 6393
 	public DamageResponse lastDamageResponse;
 
-	// Token: 0x040018E3 RID: 6371
+	// Token: 0x040018FA RID: 6394
 	public bool canDisintegrate;
 
-	// Token: 0x040018E4 RID: 6372
+	// Token: 0x040018FB RID: 6395
 	public bool isDisintegrated;
 
-	// Token: 0x040018E5 RID: 6373
+	// Token: 0x040018FC RID: 6396
 	public float CreationTimeSinceLevelLoad;
 
-	// Token: 0x040018E6 RID: 6374
+	// Token: 0x040018FD RID: 6397
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public EntityStats entityStats;
 
-	// Token: 0x040018E7 RID: 6375
+	// Token: 0x040018FE RID: 6398
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public EntityStats startOfFrameStats;
 
-	// Token: 0x040018E8 RID: 6376
+	// Token: 0x040018FF RID: 6399
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float proneRefillRate;
 
-	// Token: 0x040018E9 RID: 6377
+	// Token: 0x04001900 RID: 6400
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float kneelRefillRate;
 
-	// Token: 0x040018EA RID: 6378
+	// Token: 0x04001901 RID: 6401
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float proneRefillCounter;
 
-	// Token: 0x040018EB RID: 6379
+	// Token: 0x04001902 RID: 6402
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float kneelRefillCounter;
 
-	// Token: 0x040018EC RID: 6380
+	// Token: 0x04001903 RID: 6403
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int deathHealth;
 
-	// Token: 0x040018ED RID: 6381
-	public BodyDamage bodyDamage;
-
-	// Token: 0x040018EE RID: 6382
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool stompsSpikes;
-
-	// Token: 0x040018EF RID: 6383
-	public float OverrideSize = 1f;
-
-	// Token: 0x040018F0 RID: 6384
-	public float OverrideHeadSize = 1f;
-
-	// Token: 0x040018F1 RID: 6385
-	public float OverrideHeadDismemberScaleTime = 1.5f;
-
-	// Token: 0x040018F2 RID: 6386
-	public float OverridePitch;
-
-	// Token: 0x040018F3 RID: 6387
-	public static EntityAlive.HeadShotOnlyModes HeadshotMode = EntityAlive.HeadShotOnlyModes.None;
-
-	// Token: 0x040018F4 RID: 6388
-	public static EntityAlive.CelebrateModes CelebrateMode = EntityAlive.CelebrateModes.Disabled;
-
-	// Token: 0x040018F5 RID: 6389
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool isDancing;
-
-	// Token: 0x040018F6 RID: 6390
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float lastTimeTraderStationChecked;
-
-	// Token: 0x040018F7 RID: 6391
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool lerpForwardSpeed;
-
-	// Token: 0x040018F8 RID: 6392
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float speedForwardTarget;
-
-	// Token: 0x040018F9 RID: 6393
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float speedForwardTargetStep = 1f;
-
-	// Token: 0x040018FA RID: 6394
-	public EntityBuffs Buffs;
-
-	// Token: 0x040018FB RID: 6395
-	public Progression Progression;
-
-	// Token: 0x040018FC RID: 6396
-	public FastTags<TagGroup.Global> CurrentStanceTag = EntityAlive.StanceTagStanding;
-
-	// Token: 0x040018FD RID: 6397
-	public FastTags<TagGroup.Global> CurrentMovementTag = FastTags<TagGroup.Global>.none;
-
-	// Token: 0x040018FE RID: 6398
-	public float renderFadeMax = 1f;
-
-	// Token: 0x040018FF RID: 6399
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float renderFade;
-
-	// Token: 0x04001900 RID: 6400
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public float renderFadeTarget;
-
-	// Token: 0x04001901 RID: 6401
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public readonly List<EntityAlive.FallBehavior> fallBehaviors = new List<EntityAlive.FallBehavior>();
-
-	// Token: 0x04001902 RID: 6402
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool disableFallBehaviorUntilOnGround;
-
-	// Token: 0x04001903 RID: 6403
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public readonly List<EntityAlive.DestroyBlockBehavior> _destroyBlockBehaviors = new List<EntityAlive.DestroyBlockBehavior>();
-
 	// Token: 0x04001904 RID: 6404
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public DynamicRagdollFlags _dynamicRagdoll;
+	public BodyDamage bodyDamage;
 
 	// Token: 0x04001905 RID: 6405
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float _dynamicRagdollStunTime;
+	public bool stompsSpikes;
 
 	// Token: 0x04001906 RID: 6406
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Vector3 _dynamicRagdollRootMotion;
+	public float OverrideSize = 1f;
 
 	// Token: 0x04001907 RID: 6407
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public readonly List<Vector3> _ragdollPositionsPrev = new List<Vector3>();
+	public float OverrideHeadSize = 1f;
 
 	// Token: 0x04001908 RID: 6408
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public readonly List<Vector3> _ragdollPositionsCur = new List<Vector3>();
+	public float OverrideHeadDismemberScaleTime = 1.5f;
 
 	// Token: 0x04001909 RID: 6409
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool isFirstTimeEquipmentReassigned = true;
+	public float OverridePitch;
 
 	// Token: 0x0400190A RID: 6410
-	public bool CrouchingLocked;
+	public static EntityAlive.HeadShotOnlyModes HeadshotMode = EntityAlive.HeadShotOnlyModes.None;
 
 	// Token: 0x0400190B RID: 6411
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public EModelBase.HeadStates currentHeadState;
+	public static EntityAlive.CelebrateModes CelebrateMode = EntityAlive.CelebrateModes.Disabled;
 
 	// Token: 0x0400190C RID: 6412
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public static readonly List<EntityAlive.WeightBehavior> weightBehaviorTemp = new List<EntityAlive.WeightBehavior>();
+	public bool isDancing;
 
 	// Token: 0x0400190D RID: 6413
-	public static bool ShowDebugDisplayHit = false;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float lastTimeTraderStationChecked;
 
 	// Token: 0x0400190E RID: 6414
-	public static float DebugDisplayHitSize = 0.005f;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool lerpForwardSpeed;
 
 	// Token: 0x0400190F RID: 6415
-	public static float DebugDisplayHitTime = 10f;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float speedForwardTarget;
 
 	// Token: 0x04001910 RID: 6416
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public static FastTags<TagGroup.Global> noheadTag = FastTags<TagGroup.Global>.Parse("noHead");
+	public float speedForwardTargetStep = 1f;
 
 	// Token: 0x04001911 RID: 6417
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public bool bPlayHurtSound;
+	public EntityBuffs Buffs;
 
 	// Token: 0x04001912 RID: 6418
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public bool bBeenWounded;
+	public Progression Progression;
 
 	// Token: 0x04001913 RID: 6419
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public int woundedStrength;
+	public FastTags<TagGroup.Global> CurrentStanceTag = EntityAlive.StanceTagStanding;
 
 	// Token: 0x04001914 RID: 6420
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public DamageSource woundedDamageSource;
+	public FastTags<TagGroup.Global> CurrentMovementTag = FastTags<TagGroup.Global>.none;
 
 	// Token: 0x04001915 RID: 6421
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int despawnDelayCounter;
+	public float renderFadeMax = 1f;
 
 	// Token: 0x04001916 RID: 6422
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool isDespawnWhenPlayerFar;
+	public float renderFade;
 
 	// Token: 0x04001917 RID: 6423
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool m_addedToWorld;
+	public float renderFadeTarget;
 
 	// Token: 0x04001918 RID: 6424
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int saveHoldingItemIdxBeforeAttach;
+	public float StressAmount;
 
 	// Token: 0x04001919 RID: 6425
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public float impactSoundTime;
+	public readonly List<EntityAlive.FallBehavior> fallBehaviors = new List<EntityAlive.FallBehavior>();
 
 	// Token: 0x0400191A RID: 6426
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Dictionary<Transform, EntityAlive.ImpactData> impacts = new Dictionary<Transform, EntityAlive.ImpactData>();
+	public bool disableFallBehaviorUntilOnGround;
 
 	// Token: 0x0400191B RID: 6427
-	public const string cParticlePrefix = "Ptl_";
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public readonly List<EntityAlive.DestroyBlockBehavior> _destroyBlockBehaviors = new List<EntityAlive.DestroyBlockBehavior>();
 
 	// Token: 0x0400191C RID: 6428
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Dictionary<string, Transform> particles = new Dictionary<string, Transform>();
+	public DynamicRagdollFlags _dynamicRagdoll;
 
 	// Token: 0x0400191D RID: 6429
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Dictionary<string, Transform> parts = new Dictionary<string, Transform>();
+	public float _dynamicRagdollStunTime;
 
 	// Token: 0x0400191E RID: 6430
-	public List<OwnedEntityData> ownedEntities = new List<OwnedEntityData>();
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Vector3 _dynamicRagdollRootMotion;
 
 	// Token: 0x0400191F RID: 6431
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
+	public readonly List<Vector3> _ragdollPositionsPrev = new List<Vector3>();
+
+	// Token: 0x04001920 RID: 6432
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public readonly List<Vector3> _ragdollPositionsCur = new List<Vector3>();
+
+	// Token: 0x04001921 RID: 6433
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool isFirstTimeEquipmentReassigned = true;
+
+	// Token: 0x04001922 RID: 6434
+	public bool CrouchingLocked;
+
+	// Token: 0x04001923 RID: 6435
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public EModelBase.HeadStates currentHeadState;
+
+	// Token: 0x04001924 RID: 6436
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public static readonly List<EntityAlive.WeightBehavior> weightBehaviorTemp = new List<EntityAlive.WeightBehavior>();
+
+	// Token: 0x04001925 RID: 6437
+	public static bool ShowDebugDisplayHit = false;
+
+	// Token: 0x04001926 RID: 6438
+	public static float DebugDisplayHitSize = 0.005f;
+
+	// Token: 0x04001927 RID: 6439
+	public static float DebugDisplayHitTime = 10f;
+
+	// Token: 0x04001928 RID: 6440
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public static FastTags<TagGroup.Global> noheadTag = FastTags<TagGroup.Global>.Parse("noHead");
+
+	// Token: 0x04001929 RID: 6441
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool bPlayHurtSound;
+
+	// Token: 0x0400192A RID: 6442
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public bool bBeenWounded;
+
+	// Token: 0x0400192B RID: 6443
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public int woundedStrength;
+
+	// Token: 0x0400192C RID: 6444
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public DamageSource woundedDamageSource;
+
+	// Token: 0x0400192D RID: 6445
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public int despawnDelayCounter;
+
+	// Token: 0x0400192E RID: 6446
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool isDespawnWhenPlayerFar;
+
+	// Token: 0x0400192F RID: 6447
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool m_addedToWorld;
+
+	// Token: 0x04001930 RID: 6448
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public int saveHoldingItemIdxBeforeAttach;
+
+	// Token: 0x04001931 RID: 6449
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public float impactSoundTime;
+
+	// Token: 0x04001932 RID: 6450
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Dictionary<Transform, EntityAlive.ImpactData> impacts = new Dictionary<Transform, EntityAlive.ImpactData>();
+
+	// Token: 0x04001933 RID: 6451
+	public const string cParticlePrefix = "Ptl_";
+
+	// Token: 0x04001934 RID: 6452
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Dictionary<string, Transform> particles = new Dictionary<string, Transform>();
+
+	// Token: 0x04001935 RID: 6453
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Dictionary<string, Transform> parts = new Dictionary<string, Transform>();
+
+	// Token: 0x04001936 RID: 6454
+	public List<OwnedEntityData> ownedEntities = new List<OwnedEntityData>();
+
+	// Token: 0x04001937 RID: 6455
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
 	public List<EntityAlive.NetworkStatChange> networkStatsUpdateQueue = new List<EntityAlive.NetworkStatChange>();
 
-	// Token: 0x02000470 RID: 1136
+	// Token: 0x02000474 RID: 1140
 	public enum JumpState
 	{
-		// Token: 0x04001921 RID: 6433
+		// Token: 0x04001939 RID: 6457
 		Off,
-		// Token: 0x04001922 RID: 6434
+		// Token: 0x0400193A RID: 6458
 		Climb,
-		// Token: 0x04001923 RID: 6435
+		// Token: 0x0400193B RID: 6459
 		Leap,
-		// Token: 0x04001924 RID: 6436
+		// Token: 0x0400193C RID: 6460
 		Air,
-		// Token: 0x04001925 RID: 6437
+		// Token: 0x0400193D RID: 6461
 		Land,
-		// Token: 0x04001926 RID: 6438
+		// Token: 0x0400193E RID: 6462
 		SwimStart,
-		// Token: 0x04001927 RID: 6439
+		// Token: 0x0400193F RID: 6463
 		Swim
 	}
 
-	// Token: 0x02000471 RID: 1137
+	// Token: 0x02000475 RID: 1141
 	public enum HeadShotOnlyModes
 	{
-		// Token: 0x04001929 RID: 6441
+		// Token: 0x04001941 RID: 6465
 		None,
-		// Token: 0x0400192A RID: 6442
+		// Token: 0x04001942 RID: 6466
 		HeadshotOnly,
-		// Token: 0x0400192B RID: 6443
+		// Token: 0x04001943 RID: 6467
 		HeadshotFinisher
 	}
 
-	// Token: 0x02000472 RID: 1138
+	// Token: 0x02000476 RID: 1142
 	public enum CelebrateModes
 	{
-		// Token: 0x0400192D RID: 6445
+		// Token: 0x04001945 RID: 6469
 		Disabled,
-		// Token: 0x0400192E RID: 6446
+		// Token: 0x04001946 RID: 6470
 		Enabled,
-		// Token: 0x0400192F RID: 6447
+		// Token: 0x04001947 RID: 6471
 		HeadshotOnly
 	}
 
-	// Token: 0x02000473 RID: 1139
+	// Token: 0x02000477 RID: 1143
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class FallBehavior
 	{
-		// Token: 0x060023AC RID: 9132 RVA: 0x000D8595 File Offset: 0x000D6795
+		// Token: 0x060023D2 RID: 9170 RVA: 0x000D9125 File Offset: 0x000D7325
 		public FallBehavior(string name, EntityAlive.FallBehavior.Op type, FloatRange height, float weight, FloatRange ragePer, FloatRange rageTime, IntRange difficulty)
 		{
 			this.Name = name;
@@ -8000,50 +8159,50 @@ public abstract class EntityAlive : Entity
 			this.Difficulty = difficulty;
 		}
 
-		// Token: 0x04001930 RID: 6448
+		// Token: 0x04001948 RID: 6472
 		public string Name;
 
-		// Token: 0x04001931 RID: 6449
+		// Token: 0x04001949 RID: 6473
 		public readonly EntityAlive.FallBehavior.Op ResponseOp;
 
-		// Token: 0x04001932 RID: 6450
+		// Token: 0x0400194A RID: 6474
 		public readonly FloatRange Height;
 
-		// Token: 0x04001933 RID: 6451
+		// Token: 0x0400194B RID: 6475
 		public readonly float Weight;
 
-		// Token: 0x04001934 RID: 6452
+		// Token: 0x0400194C RID: 6476
 		public readonly FloatRange RagePer;
 
-		// Token: 0x04001935 RID: 6453
+		// Token: 0x0400194D RID: 6477
 		public readonly FloatRange RageTime;
 
-		// Token: 0x04001936 RID: 6454
+		// Token: 0x0400194E RID: 6478
 		public readonly IntRange Difficulty;
 
-		// Token: 0x02000474 RID: 1140
+		// Token: 0x02000478 RID: 1144
 		public enum Op
 		{
-			// Token: 0x04001938 RID: 6456
+			// Token: 0x04001950 RID: 6480
 			None,
-			// Token: 0x04001939 RID: 6457
+			// Token: 0x04001951 RID: 6481
 			Land,
-			// Token: 0x0400193A RID: 6458
+			// Token: 0x04001952 RID: 6482
 			LandLow,
-			// Token: 0x0400193B RID: 6459
+			// Token: 0x04001953 RID: 6483
 			LandHard,
-			// Token: 0x0400193C RID: 6460
+			// Token: 0x04001954 RID: 6484
 			Stumble,
-			// Token: 0x0400193D RID: 6461
+			// Token: 0x04001955 RID: 6485
 			Ragdoll
 		}
 	}
 
-	// Token: 0x02000475 RID: 1141
+	// Token: 0x02000479 RID: 1145
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public class DestroyBlockBehavior
 	{
-		// Token: 0x060023AD RID: 9133 RVA: 0x000D85D4 File Offset: 0x000D67D4
+		// Token: 0x060023D3 RID: 9171 RVA: 0x000D9164 File Offset: 0x000D7364
 		public DestroyBlockBehavior(string name, EntityAlive.DestroyBlockBehavior.Op type, float weight, FloatRange ragePer, FloatRange rageTime, IntRange difficulty)
 		{
 			this.Name = name;
@@ -8054,95 +8213,95 @@ public abstract class EntityAlive : Entity
 			this.Difficulty = difficulty;
 		}
 
-		// Token: 0x0400193E RID: 6462
+		// Token: 0x04001956 RID: 6486
 		public string Name;
 
-		// Token: 0x0400193F RID: 6463
+		// Token: 0x04001957 RID: 6487
 		public readonly EntityAlive.DestroyBlockBehavior.Op ResponseOp;
 
-		// Token: 0x04001940 RID: 6464
+		// Token: 0x04001958 RID: 6488
 		public readonly float Weight;
 
-		// Token: 0x04001941 RID: 6465
+		// Token: 0x04001959 RID: 6489
 		public readonly FloatRange RagePer;
 
-		// Token: 0x04001942 RID: 6466
+		// Token: 0x0400195A RID: 6490
 		public readonly FloatRange RageTime;
 
-		// Token: 0x04001943 RID: 6467
+		// Token: 0x0400195B RID: 6491
 		public readonly IntRange Difficulty = new IntRange(int.MinValue, int.MaxValue);
 
-		// Token: 0x02000476 RID: 1142
+		// Token: 0x0200047A RID: 1146
 		public enum Op
 		{
-			// Token: 0x04001945 RID: 6469
+			// Token: 0x0400195D RID: 6493
 			None,
-			// Token: 0x04001946 RID: 6470
+			// Token: 0x0400195E RID: 6494
 			Ragdoll,
-			// Token: 0x04001947 RID: 6471
+			// Token: 0x0400195F RID: 6495
 			Stumble
 		}
 	}
 
-	// Token: 0x02000477 RID: 1143
+	// Token: 0x0200047B RID: 1147
 	public enum EnumApproachState
 	{
-		// Token: 0x04001949 RID: 6473
+		// Token: 0x04001961 RID: 6497
 		Ok,
-		// Token: 0x0400194A RID: 6474
+		// Token: 0x04001962 RID: 6498
 		TooFarAway,
-		// Token: 0x0400194B RID: 6475
+		// Token: 0x04001963 RID: 6499
 		BlockedByWorldMesh,
-		// Token: 0x0400194C RID: 6476
+		// Token: 0x04001964 RID: 6500
 		BlockedByEntity,
-		// Token: 0x0400194D RID: 6477
+		// Token: 0x04001965 RID: 6501
 		Unknown
 	}
 
-	// Token: 0x02000478 RID: 1144
+	// Token: 0x0200047C RID: 1148
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct WeightBehavior
 	{
-		// Token: 0x0400194E RID: 6478
+		// Token: 0x04001966 RID: 6502
 		public float weight;
 
-		// Token: 0x0400194F RID: 6479
+		// Token: 0x04001967 RID: 6503
 		public int index;
 	}
 
-	// Token: 0x02000479 RID: 1145
+	// Token: 0x0200047D RID: 1149
 	[PublicizedFrom(EAccessModifier.Private)]
 	public struct ImpactData
 	{
-		// Token: 0x04001950 RID: 6480
+		// Token: 0x04001968 RID: 6504
 		public int count;
 	}
 
-	// Token: 0x0200047A RID: 1146
+	// Token: 0x0200047E RID: 1150
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class NetworkStatChange
 	{
-		// Token: 0x04001951 RID: 6481
+		// Token: 0x04001969 RID: 6505
 		public EntityAlive.EntityNetworkStats m_NetworkStats;
 
-		// Token: 0x04001952 RID: 6482
+		// Token: 0x0400196A RID: 6506
 		public EntityAlive.EntityNetworkHoldingData m_HoldingData;
 	}
 
-	// Token: 0x0200047B RID: 1147
+	// Token: 0x0200047F RID: 1151
 	public class EntityNetworkHoldingData
 	{
-		// Token: 0x04001953 RID: 6483
+		// Token: 0x0400196B RID: 6507
 		public ItemStack m_HoldingItemStack;
 
-		// Token: 0x04001954 RID: 6484
+		// Token: 0x0400196C RID: 6508
 		public byte m_HoldingItemIndex;
 	}
 
-	// Token: 0x0200047C RID: 1148
+	// Token: 0x02000480 RID: 1152
 	public class EntityNetworkStats
 	{
-		// Token: 0x060023B1 RID: 9137 RVA: 0x000D862C File Offset: 0x000D682C
+		// Token: 0x060023D7 RID: 9175 RVA: 0x000D91BC File Offset: 0x000D73BC
 		public void FillFromEntity(EntityAlive _entity)
 		{
 			this.killed = _entity.Died;
@@ -8189,7 +8348,7 @@ public abstract class EntityAlive : Entity
 			this.totalTimePlayed = 0f;
 		}
 
-		// Token: 0x060023B2 RID: 9138 RVA: 0x000D87FC File Offset: 0x000D69FC
+		// Token: 0x060023D8 RID: 9176 RVA: 0x000D938C File Offset: 0x000D758C
 		public void ToEntity(EntityAlive _entity)
 		{
 			_entity.Died = this.killed;
@@ -8235,7 +8394,7 @@ public abstract class EntityAlive : Entity
 			}
 		}
 
-		// Token: 0x060023B3 RID: 9139 RVA: 0x000D89A8 File Offset: 0x000D6BA8
+		// Token: 0x060023D9 RID: 9177 RVA: 0x000D9538 File Offset: 0x000D7738
 		public void read(PooledBinaryReader _reader)
 		{
 			this.killed = _reader.ReadInt32();
@@ -8270,7 +8429,7 @@ public abstract class EntityAlive : Entity
 			}
 		}
 
-		// Token: 0x060023B4 RID: 9140 RVA: 0x000D8AE8 File Offset: 0x000D6CE8
+		// Token: 0x060023DA RID: 9178 RVA: 0x000D9678 File Offset: 0x000D7878
 		public void write(PooledBinaryWriter _writer)
 		{
 			_writer.Write(this.killed);
@@ -8303,93 +8462,93 @@ public abstract class EntityAlive : Entity
 			}
 		}
 
-		// Token: 0x060023B5 RID: 9141 RVA: 0x000D8C1D File Offset: 0x000D6E1D
+		// Token: 0x060023DB RID: 9179 RVA: 0x000D97AD File Offset: 0x000D79AD
 		public void SetName(string name)
 		{
 			this.entityName = name;
 		}
 
-		// Token: 0x04001955 RID: 6485
+		// Token: 0x0400196D RID: 6509
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int experience;
 
-		// Token: 0x04001956 RID: 6486
+		// Token: 0x0400196E RID: 6510
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int level;
 
-		// Token: 0x04001957 RID: 6487
+		// Token: 0x0400196F RID: 6511
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int killed;
 
-		// Token: 0x04001958 RID: 6488
+		// Token: 0x04001970 RID: 6512
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int killedZombies;
 
-		// Token: 0x04001959 RID: 6489
+		// Token: 0x04001971 RID: 6513
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int killedPlayers;
 
-		// Token: 0x0400195A RID: 6490
+		// Token: 0x04001972 RID: 6514
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ItemStack holdingItemStack;
 
-		// Token: 0x0400195B RID: 6491
+		// Token: 0x04001973 RID: 6515
 		[PublicizedFrom(EAccessModifier.Private)]
 		public byte holdingItemIndex;
 
-		// Token: 0x0400195C RID: 6492
+		// Token: 0x04001974 RID: 6516
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int deathHealth;
 
-		// Token: 0x0400195D RID: 6493
+		// Token: 0x04001975 RID: 6517
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int teamNumber;
 
-		// Token: 0x0400195E RID: 6494
+		// Token: 0x04001976 RID: 6518
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool hasProgression;
 
-		// Token: 0x0400195F RID: 6495
+		// Token: 0x04001977 RID: 6519
 		[PublicizedFrom(EAccessModifier.Private)]
 		public byte[] progressionsData;
 
-		// Token: 0x04001960 RID: 6496
+		// Token: 0x04001978 RID: 6520
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int attachedToEntityId;
 
-		// Token: 0x04001961 RID: 6497
+		// Token: 0x04001979 RID: 6521
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string entityName;
 
-		// Token: 0x04001962 RID: 6498
+		// Token: 0x0400197A RID: 6522
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float distanceWalked;
 
-		// Token: 0x04001963 RID: 6499
+		// Token: 0x0400197B RID: 6523
 		[PublicizedFrom(EAccessModifier.Private)]
 		public uint totalItemsCrafted;
 
-		// Token: 0x04001964 RID: 6500
+		// Token: 0x0400197C RID: 6524
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float longestLife;
 
-		// Token: 0x04001965 RID: 6501
+		// Token: 0x0400197D RID: 6525
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float currentLife;
 
-		// Token: 0x04001966 RID: 6502
+		// Token: 0x0400197E RID: 6526
 		[PublicizedFrom(EAccessModifier.Private)]
 		public float totalTimePlayed;
 
-		// Token: 0x04001967 RID: 6503
+		// Token: 0x0400197F RID: 6527
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int vehiclePose;
 
-		// Token: 0x04001968 RID: 6504
+		// Token: 0x04001980 RID: 6528
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isSpectator;
 
-		// Token: 0x04001969 RID: 6505
+		// Token: 0x04001981 RID: 6529
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool isPlayer;
 	}

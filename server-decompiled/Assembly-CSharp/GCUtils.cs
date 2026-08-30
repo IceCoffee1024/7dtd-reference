@@ -4,16 +4,16 @@ using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 
-// Token: 0x020013F4 RID: 5108
+// Token: 0x0200140F RID: 5135
 public static class GCUtils
 {
-	// Token: 0x0600A060 RID: 41056 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600A15D RID: 41309 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void PreUnload()
 	{
 	}
 
-	// Token: 0x0600A061 RID: 41057 RVA: 0x003C3263 File Offset: 0x003C1463
+	// Token: 0x0600A15E RID: 41310 RVA: 0x003C85A7 File Offset: 0x003C67A7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void PostUnload()
 	{
@@ -21,13 +21,13 @@ public static class GCUtils
 		GC.Collect();
 	}
 
-	// Token: 0x0600A062 RID: 41058 RVA: 0x003C326F File Offset: 0x003C146F
+	// Token: 0x0600A15F RID: 41311 RVA: 0x003C85B3 File Offset: 0x003C67B3
 	public static void UnloadAndCollectStart()
 	{
 		ThreadManager.StartCoroutine(GCUtils.UnloadAndCollectCo());
 	}
 
-	// Token: 0x0600A063 RID: 41059 RVA: 0x003C327C File Offset: 0x003C147C
+	// Token: 0x0600A160 RID: 41312 RVA: 0x003C85C0 File Offset: 0x003C67C0
 	public static IEnumerator UnloadAndCollectCo()
 	{
 		Interlocked.Increment(ref GCUtils.m_working);
@@ -55,7 +55,7 @@ public static class GCUtils
 		yield break;
 	}
 
-	// Token: 0x0600A064 RID: 41060 RVA: 0x003C3284 File Offset: 0x003C1484
+	// Token: 0x0600A161 RID: 41313 RVA: 0x003C85C8 File Offset: 0x003C67C8
 	public static IEnumerator WaitForIdle()
 	{
 		while (GCUtils.m_working > 0)
@@ -65,7 +65,7 @@ public static class GCUtils
 		yield break;
 	}
 
-	// Token: 0x040078A0 RID: 30880
+	// Token: 0x04007979 RID: 31097
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static int m_working;
 }

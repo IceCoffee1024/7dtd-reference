@@ -3,17 +3,17 @@ using System.Collections;
 using System.Diagnostics;
 using UnityEngine;
 
-// Token: 0x02000B20 RID: 2848
+// Token: 0x02000B32 RID: 2866
 public class ChunkProviderGenerateWorldFromImage : ChunkProviderGenerateWorld
 {
-	// Token: 0x0600565E RID: 22110 RVA: 0x00211F44 File Offset: 0x00210144
+	// Token: 0x060056E6 RID: 22246 RVA: 0x00214C60 File Offset: 0x00212E60
 	public ChunkProviderGenerateWorldFromImage(string _levelName, PathAbstractions.AbstractedLocation _worldLocation, bool _bLoadDTM = true)
 		: base(_levelName, _worldLocation, false)
 	{
 		this.bLoadDTM = _bLoadDTM;
 	}
 
-	// Token: 0x0600565F RID: 22111 RVA: 0x00211F56 File Offset: 0x00210156
+	// Token: 0x060056E7 RID: 22247 RVA: 0x00214C72 File Offset: 0x00212E72
 	public override void Cleanup()
 	{
 		HeightMap heightMap = this.heightMap;
@@ -31,7 +31,7 @@ public class ChunkProviderGenerateWorldFromImage : ChunkProviderGenerateWorld
 		base.Cleanup();
 	}
 
-	// Token: 0x06005660 RID: 22112 RVA: 0x00211F8E File Offset: 0x0021018E
+	// Token: 0x060056E8 RID: 22248 RVA: 0x00214CAA File Offset: 0x00212EAA
 	public override IEnumerator Init(World _world)
 	{
 		if (this.bLoadDTM)
@@ -77,7 +77,7 @@ public class ChunkProviderGenerateWorldFromImage : ChunkProviderGenerateWorld
 		yield break;
 	}
 
-	// Token: 0x06005661 RID: 22113 RVA: 0x00211FA4 File Offset: 0x002101A4
+	// Token: 0x060056E9 RID: 22249 RVA: 0x00214CC0 File Offset: 0x00212EC0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public unsafe void loadDTM()
 	{
@@ -122,7 +122,7 @@ public class ChunkProviderGenerateWorldFromImage : ChunkProviderGenerateWorld
 		Resources.UnloadAsset(texture2D);
 	}
 
-	// Token: 0x06005662 RID: 22114 RVA: 0x002121E4 File Offset: 0x002103E4
+	// Token: 0x060056EA RID: 22250 RVA: 0x00214F00 File Offset: 0x00213100
 	public override void ReloadAllChunks()
 	{
 		this.loadDTM();
@@ -130,13 +130,13 @@ public class ChunkProviderGenerateWorldFromImage : ChunkProviderGenerateWorld
 		base.ReloadAllChunks();
 	}
 
-	// Token: 0x06005663 RID: 22115 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x060056EB RID: 22251 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override EnumChunkProviderId GetProviderId()
 	{
 		return EnumChunkProviderId.GenerateFromDtm;
 	}
 
-	// Token: 0x06005664 RID: 22116 RVA: 0x00212238 File Offset: 0x00210438
+	// Token: 0x060056EC RID: 22252 RVA: 0x00214F54 File Offset: 0x00213154
 	public override bool GetWorldExtent(out Vector3i _minSize, out Vector3i _maxSize)
 	{
 		_minSize = new Vector3i(this.m_Dtm.MinPos.x, 0, this.m_Dtm.MinPos.y);
@@ -144,7 +144,7 @@ public class ChunkProviderGenerateWorldFromImage : ChunkProviderGenerateWorld
 		return true;
 	}
 
-	// Token: 0x06005665 RID: 22117 RVA: 0x002122A4 File Offset: 0x002104A4
+	// Token: 0x060056ED RID: 22253 RVA: 0x00214FC0 File Offset: 0x002131C0
 	public override int GetPOIBlockIdOverride(int _x, int _z)
 	{
 		WorldDecoratorPOIFromImage worldDecoratorPOIFromImage = (WorldDecoratorPOIFromImage)this.m_Decorators[0];
@@ -168,7 +168,7 @@ public class ChunkProviderGenerateWorldFromImage : ChunkProviderGenerateWorld
 		return poiForColor.m_BlockValue.type;
 	}
 
-	// Token: 0x06005666 RID: 22118 RVA: 0x00212328 File Offset: 0x00210528
+	// Token: 0x060056EE RID: 22254 RVA: 0x00215044 File Offset: 0x00213244
 	public override float GetPOIHeightOverride(int x, int z)
 	{
 		WorldDecoratorPOIFromImage worldDecoratorPOIFromImage = (WorldDecoratorPOIFromImage)this.m_Decorators[0];
@@ -190,18 +190,18 @@ public class ChunkProviderGenerateWorldFromImage : ChunkProviderGenerateWorld
 		return (float)poiForColor.m_YPosFill;
 	}
 
-	// Token: 0x040042A9 RID: 17065
+	// Token: 0x04004344 RID: 17220
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ArrayWithOffset<byte> m_Dtm;
 
-	// Token: 0x040042AA RID: 17066
+	// Token: 0x04004345 RID: 17221
 	public IBackedArray<ushort> rawdata;
 
-	// Token: 0x040042AB RID: 17067
+	// Token: 0x04004346 RID: 17222
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HeightMap heightMap;
 
-	// Token: 0x040042AC RID: 17068
+	// Token: 0x04004347 RID: 17223
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bLoadDTM;
 }

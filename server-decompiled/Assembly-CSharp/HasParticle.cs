@@ -2,11 +2,11 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x020006A1 RID: 1697
+// Token: 0x020006AB RID: 1707
 [Preserve]
 public class HasParticle : TargetedCompareRequirementBase
 {
-	// Token: 0x0600353D RID: 13629 RVA: 0x0015F808 File Offset: 0x0015DA08
+	// Token: 0x06003593 RID: 13715 RVA: 0x001619E0 File Offset: 0x0015FBE0
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -20,7 +20,7 @@ public class HasParticle : TargetedCompareRequirementBase
 		return !_params.Self.HasParticle(this.particleName);
 	}
 
-	// Token: 0x0600353E RID: 13630 RVA: 0x0015F844 File Offset: 0x0015DA44
+	// Token: 0x06003594 RID: 13716 RVA: 0x00161A1C File Offset: 0x0015FC1C
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -32,7 +32,7 @@ public class HasParticle : TargetedCompareRequirementBase
 		return flag;
 	}
 
-	// Token: 0x04002AEA RID: 10986
+	// Token: 0x04002B5E RID: 11102
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string particleName = "";
 }

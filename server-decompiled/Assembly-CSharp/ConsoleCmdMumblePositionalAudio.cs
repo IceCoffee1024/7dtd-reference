@@ -2,33 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x02000245 RID: 581
+// Token: 0x02000249 RID: 585
 [Preserve]
 public class ConsoleCmdMumblePositionalAudio : ConsoleCmdAbstract
 {
-	// Token: 0x06001172 RID: 4466 RVA: 0x0006E665 File Offset: 0x0006C865
+	// Token: 0x06001184 RID: 4484 RVA: 0x0006ECC1 File Offset: 0x0006CEC1
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "mumblepositionalaudio", "mpa" };
 	}
 
-	// Token: 0x06001173 RID: 4467 RVA: 0x0006E67D File Offset: 0x0006C87D
+	// Token: 0x06001185 RID: 4485 RVA: 0x0006ECD9 File Offset: 0x0006CED9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Mumble Positional Audio related tools";
 	}
 
-	// Token: 0x06001174 RID: 4468 RVA: 0x0006E684 File Offset: 0x0006C884
+	// Token: 0x06001186 RID: 4486 RVA: 0x0006ECE0 File Offset: 0x0006CEE0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "\r\n\t\t\t|Usage:\r\n\t\t\t|  1. mpa enable\r\n\t\t\t|  2. mpa disable\r\n\t\t\t|  3. mpa reinit\r\n\t\t\t".Unindent(true);
 	}
 
-	// Token: 0x170001C2 RID: 450
-	// (get) Token: 0x06001175 RID: 4469 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x170001C3 RID: 451
+	// (get) Token: 0x06001187 RID: 4487 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -37,7 +37,7 @@ public class ConsoleCmdMumblePositionalAudio : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001176 RID: 4470 RVA: 0x0006E694 File Offset: 0x0006C894
+	// Token: 0x06001188 RID: 4488 RVA: 0x0006ECF0 File Offset: 0x0006CEF0
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count != 1)

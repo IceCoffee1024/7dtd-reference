@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Text;
 
-// Token: 0x020009F5 RID: 2549
+// Token: 0x02000A06 RID: 2566
 public class SdEncoding
 {
-	// Token: 0x04003B6E RID: 15214
+	// Token: 0x04003BFF RID: 15359
 	public static readonly Encoding UTF8NoBOM = new UTF8Encoding(false, true);
 }

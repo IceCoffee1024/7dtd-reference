@@ -1,39 +1,39 @@
 ﻿using System;
 using UnityEngine.Networking;
 
-// Token: 0x02000877 RID: 2167
+// Token: 0x02000883 RID: 2179
 public interface INetworkClient
 {
-	// Token: 0x06003F0E RID: 16142
+	// Token: 0x06003F73 RID: 16243
 	void Update();
 
-	// Token: 0x06003F0F RID: 16143
+	// Token: 0x06003F74 RID: 16244
 	void LateUpdate();
 
-	// Token: 0x06003F10 RID: 16144
+	// Token: 0x06003F75 RID: 16245
 	void Connect(GameServerInfo _gsi);
 
-	// Token: 0x06003F11 RID: 16145
+	// Token: 0x06003F76 RID: 16246
 	void Disconnect();
 
-	// Token: 0x06003F12 RID: 16146
+	// Token: 0x06003F77 RID: 16247
 	NetworkError SendData(int _channel, ArrayListMP<byte> _data);
 
-	// Token: 0x06003F13 RID: 16147
+	// Token: 0x06003F78 RID: 16248
 	void SetLatencySimulation(bool _enable, int _min, int _max);
 
-	// Token: 0x06003F14 RID: 16148
+	// Token: 0x06003F79 RID: 16249
 	void SetPacketLossSimulation(bool _enable, int _chance);
 
-	// Token: 0x06003F15 RID: 16149
+	// Token: 0x06003F7A RID: 16250
 	void EnableStatistics();
 
-	// Token: 0x06003F16 RID: 16150
+	// Token: 0x06003F7B RID: 16251
 	void DisableStatistics();
 
-	// Token: 0x06003F17 RID: 16151
+	// Token: 0x06003F7C RID: 16252
 	string PrintNetworkStatistics();
 
-	// Token: 0x06003F18 RID: 16152
+	// Token: 0x06003F7D RID: 16253
 	void ResetNetworkStatistics();
 }

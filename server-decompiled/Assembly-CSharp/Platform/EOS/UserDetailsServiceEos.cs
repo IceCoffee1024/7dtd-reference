@@ -3,17 +3,17 @@ using System.Collections.Generic;
 
 namespace Platform.EOS
 {
-	// Token: 0x02001D00 RID: 7424
+	// Token: 0x02001D28 RID: 7464
 	public class UserDetailsServiceEos : IUserDetailsService
 	{
-		// Token: 0x0600DB89 RID: 56201 RVA: 0x004EB1FD File Offset: 0x004E93FD
+		// Token: 0x0600DD2A RID: 56618 RVA: 0x004F1C71 File Offset: 0x004EFE71
 		public void Init(IPlatform owner)
 		{
 			this.idMapper = (EosUserIdMapper)owner.IdMappingService;
 			this.user = (User)owner.User;
 		}
 
-		// Token: 0x0600DB8A RID: 56202 RVA: 0x004EB224 File Offset: 0x004E9424
+		// Token: 0x0600DD2B RID: 56619 RVA: 0x004F1C98 File Offset: 0x004EFE98
 		public void RequestUserDetailsUpdate(IReadOnlyList<UserDetailsRequest> requestedUsers, UserDetailsRequestCompleteHandler onComplete)
 		{
 			UserDetailsServiceEos.<>c__DisplayClass3_0 CS$<>8__locals1 = new UserDetailsServiceEos.<>c__DisplayClass3_0();
@@ -65,11 +65,11 @@ namespace Platform.EOS
 			this.idMapper.QueryMappedAccountsDetails(list, new MappedAccountsQueryCallback(CS$<>8__locals1.<RequestUserDetailsUpdate>g__OnAccountsMapped|0));
 		}
 
-		// Token: 0x0400A5E1 RID: 42465
+		// Token: 0x0400A716 RID: 42774
 		[PublicizedFrom(EAccessModifier.Private)]
 		public EosUserIdMapper idMapper;
 
-		// Token: 0x0400A5E2 RID: 42466
+		// Token: 0x0400A717 RID: 42775
 		[PublicizedFrom(EAccessModifier.Private)]
 		public User user;
 	}

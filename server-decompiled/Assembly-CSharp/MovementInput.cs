@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200125E RID: 4702
+// Token: 0x02001278 RID: 4728
 public class MovementInput
 {
-	// Token: 0x0600956C RID: 38252 RVA: 0x0038494D File Offset: 0x00382B4D
+	// Token: 0x06009667 RID: 38503 RVA: 0x00389AA9 File Offset: 0x00387CA9
 	public bool IsMoving()
 	{
 		return Mathf.Abs(this.moveStrafe) > 0.05f || Mathf.Abs(this.moveForward) > 0.05f;
 	}
 
-	// Token: 0x0600956D RID: 38253 RVA: 0x00384978 File Offset: 0x00382B78
+	// Token: 0x06009668 RID: 38504 RVA: 0x00389AD4 File Offset: 0x00387CD4
 	public void Clear()
 	{
 		this.moveStrafe = 0f;
@@ -24,7 +24,7 @@ public class MovementInput
 		this.downToggle = false;
 	}
 
-	// Token: 0x0600956E RID: 38254 RVA: 0x003849D4 File Offset: 0x00382BD4
+	// Token: 0x06009669 RID: 38505 RVA: 0x00389B30 File Offset: 0x00387D30
 	public void Copy(MovementInput _other)
 	{
 		_other.moveStrafe = this.moveStrafe;
@@ -42,54 +42,54 @@ public class MovementInput
 		_other.bCameraPositionLocked = this.bCameraPositionLocked;
 	}
 
-	// Token: 0x0600956F RID: 38255 RVA: 0x00384A80 File Offset: 0x00382C80
+	// Token: 0x0600966A RID: 38506 RVA: 0x00389BDC File Offset: 0x00387DDC
 	public bool Equals(MovementInput _other)
 	{
 		return this.moveStrafe == _other.moveStrafe && this.moveForward == _other.moveForward && this.rotation.Equals(_other.rotation) && this.cameraRotation.Equals(_other.cameraRotation) && this.jump == _other.jump && this.sneak == _other.sneak && this.down == _other.down && this.downToggle == _other.downToggle && this.useItemOnBackAction == _other.useItemOnBackAction && this.running == _other.running;
 	}
 
-	// Token: 0x04006FCB RID: 28619
+	// Token: 0x040070A0 RID: 28832
 	public float moveStrafe;
 
-	// Token: 0x04006FCC RID: 28620
+	// Token: 0x040070A1 RID: 28833
 	public float moveForward;
 
-	// Token: 0x04006FCD RID: 28621
+	// Token: 0x040070A2 RID: 28834
 	public Vector3 rotation;
 
-	// Token: 0x04006FCE RID: 28622
+	// Token: 0x040070A3 RID: 28835
 	public Vector3 cameraRotation;
 
-	// Token: 0x04006FCF RID: 28623
+	// Token: 0x040070A4 RID: 28836
 	public float cameraDistance;
 
-	// Token: 0x04006FD0 RID: 28624
+	// Token: 0x040070A5 RID: 28837
 	public bool running;
 
-	// Token: 0x04006FD1 RID: 28625
+	// Token: 0x040070A6 RID: 28838
 	public bool jump;
 
-	// Token: 0x04006FD2 RID: 28626
+	// Token: 0x040070A7 RID: 28839
 	public bool sneak;
 
-	// Token: 0x04006FD3 RID: 28627
+	// Token: 0x040070A8 RID: 28840
 	public bool useItemOnBackAction;
 
-	// Token: 0x04006FD4 RID: 28628
+	// Token: 0x040070A9 RID: 28841
 	public bool down;
 
-	// Token: 0x04006FD5 RID: 28629
+	// Token: 0x040070AA RID: 28842
 	public bool downToggle;
 
-	// Token: 0x04006FD6 RID: 28630
+	// Token: 0x040070AB RID: 28843
 	public bool bDetachedCameraMove;
 
-	// Token: 0x04006FD7 RID: 28631
+	// Token: 0x040070AC RID: 28844
 	public bool bCameraChange;
 
-	// Token: 0x04006FD8 RID: 28632
+	// Token: 0x040070AD RID: 28845
 	public bool bCameraPositionLocked;
 
-	// Token: 0x04006FD9 RID: 28633
+	// Token: 0x040070AE RID: 28846
 	public bool lastInputController;
 }

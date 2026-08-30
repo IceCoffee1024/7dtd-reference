@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000435 RID: 1077
+// Token: 0x02000439 RID: 1081
 [Preserve]
 public class EAIDodge : EAIBase
 {
-	// Token: 0x06002106 RID: 8454 RVA: 0x000C75F7 File Offset: 0x000C57F7
+	// Token: 0x06002123 RID: 8483 RVA: 0x000C7E03 File Offset: 0x000C6003
 	public override void Init(EntityAlive _theEntity)
 	{
 		base.Init(_theEntity);
@@ -16,7 +16,7 @@ public class EAIDodge : EAIBase
 		this.actionkDuration = 1f;
 	}
 
-	// Token: 0x06002107 RID: 8455 RVA: 0x000C7624 File Offset: 0x000C5824
+	// Token: 0x06002124 RID: 8484 RVA: 0x000C7E30 File Offset: 0x000C6030
 	public override void SetData(Dictionary<string, string> data)
 	{
 		base.SetData(data);
@@ -33,7 +33,7 @@ public class EAIDodge : EAIBase
 		base.GetData(data, "unreachableRange", ref this.unreachableRange);
 	}
 
-	// Token: 0x06002108 RID: 8456 RVA: 0x000C76C0 File Offset: 0x000C58C0
+	// Token: 0x06002125 RID: 8485 RVA: 0x000C7ECC File Offset: 0x000C60CC
 	public override bool CanExecute()
 	{
 		if (this.theEntity.IsDancing)
@@ -60,20 +60,20 @@ public class EAIDodge : EAIBase
 		return !(this.entityTarget == null) && this.InRange() && this.theEntity.CanSee(this.entityTarget);
 	}
 
-	// Token: 0x06002109 RID: 8457 RVA: 0x000C77C7 File Offset: 0x000C59C7
+	// Token: 0x06002126 RID: 8486 RVA: 0x000C7FD3 File Offset: 0x000C61D3
 	public override void Start()
 	{
 		this.actionTime = 0f;
 		this.theEntity.emodel.avatarController.StartAnimationDodge(base.Random.RandomFloat);
 	}
 
-	// Token: 0x0600210A RID: 8458 RVA: 0x000C77F4 File Offset: 0x000C59F4
+	// Token: 0x06002127 RID: 8487 RVA: 0x000C8000 File Offset: 0x000C6200
 	public override bool Continue()
 	{
 		return this.entityTarget && this.entityTarget.IsAlive() && this.actionTime < this.actionkDuration && this.theEntity.hasBeenAttackedTime <= 0;
 	}
 
-	// Token: 0x0600210B RID: 8459 RVA: 0x000C7834 File Offset: 0x000C5A34
+	// Token: 0x06002128 RID: 8488 RVA: 0x000C8040 File Offset: 0x000C6240
 	public override void Update()
 	{
 		this.actionTime += 0.05f;
@@ -87,12 +87,12 @@ public class EAIDodge : EAIBase
 		}
 	}
 
-	// Token: 0x0600210C RID: 8460 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002129 RID: 8489 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void Reset()
 	{
 	}
 
-	// Token: 0x0600210D RID: 8461 RVA: 0x000C7890 File Offset: 0x000C5A90
+	// Token: 0x0600212A RID: 8490 RVA: 0x000C809C File Offset: 0x000C629C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool InRange()
 	{
@@ -100,7 +100,7 @@ public class EAIDodge : EAIBase
 		return distanceSq >= this.minRange * this.minRange && distanceSq <= this.maxRange * this.maxRange;
 	}
 
-	// Token: 0x0600210E RID: 8462 RVA: 0x000C78D4 File Offset: 0x000C5AD4
+	// Token: 0x0600212B RID: 8491 RVA: 0x000C80E0 File Offset: 0x000C62E0
 	public override string ToString()
 	{
 		bool flag = this.entityTarget && this.InRange();
@@ -113,47 +113,47 @@ public class EAIDodge : EAIBase
 		});
 	}
 
-	// Token: 0x040016B5 RID: 5813
+	// Token: 0x040016CA RID: 5834
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> tags;
 
-	// Token: 0x040016B6 RID: 5814
+	// Token: 0x040016CB RID: 5835
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float maxXZDistance = 100f;
 
-	// Token: 0x040016B7 RID: 5815
+	// Token: 0x040016CC RID: 5836
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float baseCooldown;
 
-	// Token: 0x040016B8 RID: 5816
+	// Token: 0x040016CD RID: 5837
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float cooldown;
 
-	// Token: 0x040016B9 RID: 5817
+	// Token: 0x040016CE RID: 5838
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityAlive entityTarget;
 
-	// Token: 0x040016BA RID: 5818
+	// Token: 0x040016CF RID: 5839
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float actionTime;
 
-	// Token: 0x040016BB RID: 5819
+	// Token: 0x040016D0 RID: 5840
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float actionkDuration;
 
-	// Token: 0x040016BC RID: 5820
+	// Token: 0x040016D1 RID: 5841
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float minRange = 4f;
 
-	// Token: 0x040016BD RID: 5821
+	// Token: 0x040016D2 RID: 5842
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float maxRange = 25f;
 
-	// Token: 0x040016BE RID: 5822
+	// Token: 0x040016D3 RID: 5843
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float unreachableRange;
 
-	// Token: 0x040016BF RID: 5823
+	// Token: 0x040016D4 RID: 5844
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static List<Entity> entityList = new List<Entity>();
 }

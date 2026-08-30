@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x02000661 RID: 1633
+// Token: 0x0200066A RID: 1642
 [Preserve]
 public class CVarCompare : TargetedCompareRequirementBase
 {
-	// Token: 0x06003486 RID: 13446 RVA: 0x0015CD54 File Offset: 0x0015AF54
+	// Token: 0x060034D9 RID: 13529 RVA: 0x0015EEC4 File Offset: 0x0015D0C4
 	public override bool IsValid(MinEventParams _params)
 	{
 		return base.IsValid(_params) && this.invert != RequirementBase.compareValues(this.target.Buffs.GetCustomVar(this.cvarCompareName), this.operation, this.value);
 	}
 
-	// Token: 0x06003487 RID: 13447 RVA: 0x0015CD93 File Offset: 0x0015AF93
+	// Token: 0x060034DA RID: 13530 RVA: 0x0015EF03 File Offset: 0x0015D103
 	public override void GetInfoStrings(ref List<string> list)
 	{
 		list.Add(string.Format("cvar.{0} {1} {2}", this.cvarCompareName, this.operation.ToStringCached<RequirementBase.OperationTypes>(), this.value.ToCultureInvariantString()));
 	}
 
-	// Token: 0x06003488 RID: 13448 RVA: 0x0015CDC4 File Offset: 0x0015AFC4
+	// Token: 0x060034DB RID: 13531 RVA: 0x0015EF34 File Offset: 0x0015D134
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -31,7 +31,7 @@ public class CVarCompare : TargetedCompareRequirementBase
 		return flag;
 	}
 
-	// Token: 0x04002AAF RID: 10927
+	// Token: 0x04002B23 RID: 11043
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public string cvarCompareName;
 }

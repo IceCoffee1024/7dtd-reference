@@ -4,42 +4,42 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-// Token: 0x02000A19 RID: 2585
+// Token: 0x02000A2A RID: 2602
 public class SaveDataManager_Placeholder : ISaveDataManager
 {
-	// Token: 0x06004E08 RID: 19976 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004E8E RID: 20110 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Init()
 	{
 	}
 
-	// Token: 0x06004E09 RID: 19977 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06004E8F RID: 20111 RVA: 0x00010E62 File Offset: 0x0000F062
 	public SaveDataWriteMode GetWriteMode()
 	{
 		return SaveDataWriteMode.None;
 	}
 
-	// Token: 0x06004E0A RID: 19978 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004E90 RID: 20112 RVA: 0x000027FC File Offset: 0x000009FC
 	public void SetWriteMode(SaveDataWriteMode writeMode)
 	{
 	}
 
-	// Token: 0x06004E0B RID: 19979 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004E91 RID: 20113 RVA: 0x000027FC File Offset: 0x000009FC
 	public void Cleanup()
 	{
 	}
 
-	// Token: 0x06004E0C RID: 19980 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004E92 RID: 20114 RVA: 0x000027FC File Offset: 0x000009FC
 	public void RegisterRegionFileManager(RegionFileManager regionFileManager)
 	{
 	}
 
-	// Token: 0x06004E0D RID: 19981 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004E93 RID: 20115 RVA: 0x000027FC File Offset: 0x000009FC
 	public void DeregisterRegionFileManager(RegionFileManager regionFileManager)
 	{
 	}
 
-	// Token: 0x17000858 RID: 2136
-	// (get) Token: 0x06004E0E RID: 19982 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x1700086A RID: 2154
+	// (get) Token: 0x06004E94 RID: 20116 RVA: 0x00010E62 File Offset: 0x0000F062
 	public bool AppliesSaveSizeLimit
 	{
 		get
@@ -48,32 +48,32 @@ public class SaveDataManager_Placeholder : ISaveDataManager
 		}
 	}
 
-	// Token: 0x06004E0F RID: 19983 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06004E95 RID: 20117 RVA: 0x00010E62 File Offset: 0x0000F062
 	public int CommitAsync()
 	{
 		return 0;
 	}
 
-	// Token: 0x06004E10 RID: 19984 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06004E96 RID: 20118 RVA: 0x00010E62 File Offset: 0x0000F062
 	public bool IsCommitPending(int token)
 	{
 		return false;
 	}
 
-	// Token: 0x06004E11 RID: 19985 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004E97 RID: 20119 RVA: 0x000027FC File Offset: 0x000009FC
 	public void CommitSync()
 	{
 	}
 
-	// Token: 0x06004E12 RID: 19986 RVA: 0x001DC89D File Offset: 0x001DAA9D
+	// Token: 0x06004E98 RID: 20120 RVA: 0x001DF335 File Offset: 0x001DD535
 	public IEnumerator CommitCoroutine(Action<double> progressFeedback = null)
 	{
 		yield break;
 	}
 
 	// Token: 0x1400007B RID: 123
-	// (add) Token: 0x06004E13 RID: 19987 RVA: 0x000027FC File Offset: 0x000009FC
-	// (remove) Token: 0x06004E14 RID: 19988 RVA: 0x000027FC File Offset: 0x000009FC
+	// (add) Token: 0x06004E99 RID: 20121 RVA: 0x000027FC File Offset: 0x000009FC
+	// (remove) Token: 0x06004E9A RID: 20122 RVA: 0x000027FC File Offset: 0x000009FC
 	public event Action CommitStarted
 	{
 		add
@@ -85,8 +85,8 @@ public class SaveDataManager_Placeholder : ISaveDataManager
 	}
 
 	// Token: 0x1400007C RID: 124
-	// (add) Token: 0x06004E15 RID: 19989 RVA: 0x000027FC File Offset: 0x000009FC
-	// (remove) Token: 0x06004E16 RID: 19990 RVA: 0x000027FC File Offset: 0x000009FC
+	// (add) Token: 0x06004E9B RID: 20123 RVA: 0x000027FC File Offset: 0x000009FC
+	// (remove) Token: 0x06004E9C RID: 20124 RVA: 0x000027FC File Offset: 0x000009FC
 	public event Action CommitFinished
 	{
 		add
@@ -97,84 +97,84 @@ public class SaveDataManager_Placeholder : ISaveDataManager
 		}
 	}
 
-	// Token: 0x06004E17 RID: 19991 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06004E9D RID: 20125 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual bool ShouldLimitSize()
 	{
 		return false;
 	}
 
-	// Token: 0x06004E18 RID: 19992 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004E9E RID: 20126 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void UpdateSizes()
 	{
 	}
 
-	// Token: 0x06004E19 RID: 19993 RVA: 0x001DC8A8 File Offset: 0x001DAAA8
+	// Token: 0x06004E9F RID: 20127 RVA: 0x001DF340 File Offset: 0x001DD540
 	public virtual SaveDataSizes GetSizes()
 	{
 		return default(SaveDataSizes);
 	}
 
-	// Token: 0x06004E1A RID: 19994 RVA: 0x001DC8BE File Offset: 0x001DAABE
+	// Token: 0x06004EA0 RID: 20128 RVA: 0x001DF356 File Offset: 0x001DD556
 	public virtual Stream ManagedFileOpen(SaveDataManagedPath path, FileMode mode, FileAccess access, FileShare share)
 	{
 		return File.Open(path.GetOriginalPath(), mode, access, share);
 	}
 
-	// Token: 0x06004E1B RID: 19995 RVA: 0x001DC8CF File Offset: 0x001DAACF
+	// Token: 0x06004EA1 RID: 20129 RVA: 0x001DF367 File Offset: 0x001DD567
 	public virtual void ManagedFileDelete(SaveDataManagedPath path)
 	{
 		File.Delete(path.GetOriginalPath());
 	}
 
-	// Token: 0x06004E1C RID: 19996 RVA: 0x001DC8DC File Offset: 0x001DAADC
+	// Token: 0x06004EA2 RID: 20130 RVA: 0x001DF374 File Offset: 0x001DD574
 	public virtual bool ManagedFileExists(SaveDataManagedPath path)
 	{
 		return File.Exists(path.GetOriginalPath());
 	}
 
-	// Token: 0x06004E1D RID: 19997 RVA: 0x001DC8E9 File Offset: 0x001DAAE9
+	// Token: 0x06004EA3 RID: 20131 RVA: 0x001DF381 File Offset: 0x001DD581
 	public virtual DateTime ManagedFileGetLastWriteTimeUtc(SaveDataManagedPath path)
 	{
 		return File.GetLastWriteTimeUtc(path.GetOriginalPath());
 	}
 
-	// Token: 0x06004E1E RID: 19998 RVA: 0x001DC8F6 File Offset: 0x001DAAF6
+	// Token: 0x06004EA4 RID: 20132 RVA: 0x001DF38E File Offset: 0x001DD58E
 	public virtual SdDirectoryInfo ManagedDirectoryCreateDirectory(SaveDataManagedPath path)
 	{
 		return new SdDirectoryInfo(Directory.CreateDirectory(path.GetOriginalPath()));
 	}
 
-	// Token: 0x06004E1F RID: 19999 RVA: 0x001DC908 File Offset: 0x001DAB08
+	// Token: 0x06004EA5 RID: 20133 RVA: 0x001DF3A0 File Offset: 0x001DD5A0
 	public virtual DateTime ManagedDirectoryGetLastWriteTimeUtc(SaveDataManagedPath path)
 	{
 		return Directory.GetLastWriteTimeUtc(path.GetOriginalPath());
 	}
 
-	// Token: 0x06004E20 RID: 20000 RVA: 0x001DC915 File Offset: 0x001DAB15
+	// Token: 0x06004EA6 RID: 20134 RVA: 0x001DF3AD File Offset: 0x001DD5AD
 	public virtual bool ManagedDirectoryExists(SaveDataManagedPath path)
 	{
 		return Directory.Exists(path.GetOriginalPath());
 	}
 
-	// Token: 0x06004E21 RID: 20001 RVA: 0x001DC922 File Offset: 0x001DAB22
+	// Token: 0x06004EA7 RID: 20135 RVA: 0x001DF3BA File Offset: 0x001DD5BA
 	public virtual IEnumerable<SaveDataManagedPath> ManagedDirectoryEnumerateDirectories(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 	{
 		return SaveDataManager_Placeholder.ConvertPathsToManagedPaths(Directory.EnumerateDirectories(path.GetOriginalPath(), searchPattern, searchOption));
 	}
 
-	// Token: 0x06004E22 RID: 20002 RVA: 0x001DC936 File Offset: 0x001DAB36
+	// Token: 0x06004EA8 RID: 20136 RVA: 0x001DF3CE File Offset: 0x001DD5CE
 	public virtual IEnumerable<SaveDataManagedPath> ManagedDirectoryEnumerateFiles(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 	{
 		return SaveDataManager_Placeholder.ConvertPathsToManagedPaths(Directory.EnumerateFiles(path.GetOriginalPath(), searchPattern, searchOption));
 	}
 
-	// Token: 0x06004E23 RID: 20003 RVA: 0x001DC94A File Offset: 0x001DAB4A
+	// Token: 0x06004EA9 RID: 20137 RVA: 0x001DF3E2 File Offset: 0x001DD5E2
 	public virtual IEnumerable<SaveDataManagedPath> ManagedDirectoryEnumerateFileSystemEntries(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 	{
 		return SaveDataManager_Placeholder.ConvertPathsToManagedPaths(Directory.EnumerateFileSystemEntries(path.GetOriginalPath(), searchPattern, searchOption));
 	}
 
-	// Token: 0x06004E24 RID: 20004 RVA: 0x001DC95E File Offset: 0x001DAB5E
+	// Token: 0x06004EAA RID: 20138 RVA: 0x001DF3F6 File Offset: 0x001DD5F6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerable<SaveDataManagedPath> ConvertPathsToManagedPaths(IEnumerable<string> paths)
 	{
@@ -194,38 +194,38 @@ public class SaveDataManager_Placeholder : ISaveDataManager
 		yield break;
 	}
 
-	// Token: 0x06004E25 RID: 20005 RVA: 0x001DC96E File Offset: 0x001DAB6E
+	// Token: 0x06004EAB RID: 20139 RVA: 0x001DF406 File Offset: 0x001DD606
 	public virtual void ManagedDirectoryDelete(SaveDataManagedPath path, bool recursive)
 	{
 		Directory.Delete(path.GetOriginalPath(), recursive);
 	}
 
-	// Token: 0x06004E26 RID: 20006 RVA: 0x001DC97C File Offset: 0x001DAB7C
+	// Token: 0x06004EAC RID: 20140 RVA: 0x001DF414 File Offset: 0x001DD614
 	public long ManagedFileInfoLength(SaveDataManagedPath path)
 	{
 		return new FileInfo(path.GetOriginalPath()).Length;
 	}
 
-	// Token: 0x06004E27 RID: 20007 RVA: 0x001DC98E File Offset: 0x001DAB8E
+	// Token: 0x06004EAD RID: 20141 RVA: 0x001DF426 File Offset: 0x001DD626
 	public virtual IEnumerable<SdDirectoryInfo> ManagedDirectoryInfoEnumerateDirectories(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 	{
 		return from x in new DirectoryInfo(path.GetOriginalPath()).EnumerateDirectories(searchPattern, searchOption)
 			select new SdDirectoryInfo(x);
 	}
 
-	// Token: 0x06004E28 RID: 20008 RVA: 0x001DC9C6 File Offset: 0x001DABC6
+	// Token: 0x06004EAE RID: 20142 RVA: 0x001DF45E File Offset: 0x001DD65E
 	public virtual IEnumerable<SdFileInfo> ManagedDirectoryInfoEnumerateFiles(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 	{
 		return from x in new DirectoryInfo(path.GetOriginalPath()).EnumerateFiles(searchPattern, searchOption)
 			select new SdFileInfo(x);
 	}
 
-	// Token: 0x06004E29 RID: 20009 RVA: 0x001DC9FE File Offset: 0x001DABFE
+	// Token: 0x06004EAF RID: 20143 RVA: 0x001DF496 File Offset: 0x001DD696
 	public virtual IEnumerable<SdFileSystemInfo> ManagedDirectoryInfoEnumerateFileSystemInfos(SaveDataManagedPath path, string searchPattern, SearchOption searchOption)
 	{
 		return new DirectoryInfo(path.GetOriginalPath()).EnumerateFileSystemInfos(searchPattern, searchOption).Select<FileSystemInfo, SdFileSystemInfo>(new Func<FileSystemInfo, SdFileSystemInfo>(SdDirectoryInfo.WrapFileSystemInfo));
 	}
 
-	// Token: 0x04003C26 RID: 15398
+	// Token: 0x04003CB7 RID: 15543
 	public static readonly SaveDataManager_Placeholder Instance = new SaveDataManager_Placeholder();
 }

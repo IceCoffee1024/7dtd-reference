@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x0200199A RID: 6554
+	// Token: 0x020019C0 RID: 6592
 	[Preserve]
 	public class ActionSetWeather : BaseAction
 	{
-		// Token: 0x0600C80C RID: 51212 RVA: 0x0049952C File Offset: 0x0049772C
+		// Token: 0x0600C993 RID: 51603 RVA: 0x0049F884 File Offset: 0x0049DA84
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			float floatValue = GameEventManager.GetFloatValue(base.Owner.Target as EntityAlive, this.timeText, 60f);
@@ -15,7 +15,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C80D RID: 51213 RVA: 0x0049956C File Offset: 0x0049776C
+		// Token: 0x0600C994 RID: 51604 RVA: 0x0049F8C4 File Offset: 0x0049DAC4
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -23,7 +23,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseString(ActionSetWeather.PropWeatherGroup, ref this.weatherGroup);
 		}
 
-		// Token: 0x0600C80E RID: 51214 RVA: 0x00499597 File Offset: 0x00497797
+		// Token: 0x0600C995 RID: 51605 RVA: 0x0049F8EF File Offset: 0x0049DAEF
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -34,19 +34,19 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040097B9 RID: 38841
+		// Token: 0x040098E2 RID: 39138
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string timeText;
 
-		// Token: 0x040097BA RID: 38842
+		// Token: 0x040098E3 RID: 39139
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string weatherGroup = "default";
 
-		// Token: 0x040097BB RID: 38843
+		// Token: 0x040098E4 RID: 39140
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTime = "time";
 
-		// Token: 0x040097BC RID: 38844
+		// Token: 0x040098E5 RID: 39141
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropWeatherGroup = "weather_group";
 	}

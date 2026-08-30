@@ -6,19 +6,19 @@ using UnityEngine;
 [PublicizedFrom(EAccessModifier.Internal)]
 public class AudioTrigger
 {
-	// Token: 0x06000386 RID: 902 RVA: 0x00019F76 File Offset: 0x00018176
+	// Token: 0x06000387 RID: 903 RVA: 0x0001A03A File Offset: 0x0001823A
 	public AudioTrigger(AudioObject.Trigger _trigger)
 	{
 		this.trigger = _trigger;
 	}
 
-	// Token: 0x06000387 RID: 903 RVA: 0x00019F90 File Offset: 0x00018190
+	// Token: 0x06000388 RID: 904 RVA: 0x0001A054 File Offset: 0x00018254
 	public void Add(AudioObject _audioObject)
 	{
 		this.sound.Add(_audioObject);
 	}
 
-	// Token: 0x06000388 RID: 904 RVA: 0x00019FA0 File Offset: 0x000181A0
+	// Token: 0x06000389 RID: 905 RVA: 0x0001A064 File Offset: 0x00018264
 	public void Update()
 	{
 		float fixedDeltaTime = Time.fixedDeltaTime;
@@ -28,7 +28,7 @@ public class AudioTrigger
 		}
 	}
 
-	// Token: 0x06000389 RID: 905 RVA: 0x00019FE0 File Offset: 0x000181E0
+	// Token: 0x0600038A RID: 906 RVA: 0x0001A0A4 File Offset: 0x000182A4
 	public void SetVolume(float _vol)
 	{
 		for (int i = this.sound.Count - 1; i >= 0; i--)
@@ -37,7 +37,7 @@ public class AudioTrigger
 		}
 	}
 
-	// Token: 0x0600038A RID: 906 RVA: 0x0001A018 File Offset: 0x00018218
+	// Token: 0x0600038B RID: 907 RVA: 0x0001A0DC File Offset: 0x000182DC
 	public void Pause()
 	{
 		for (int i = this.sound.Count - 1; i >= 0; i--)
@@ -46,7 +46,7 @@ public class AudioTrigger
 		}
 	}
 
-	// Token: 0x0600038B RID: 907 RVA: 0x0001A050 File Offset: 0x00018250
+	// Token: 0x0600038C RID: 908 RVA: 0x0001A114 File Offset: 0x00018314
 	public void UnPause()
 	{
 		for (int i = this.sound.Count - 1; i >= 0; i--)
@@ -55,7 +55,7 @@ public class AudioTrigger
 		}
 	}
 
-	// Token: 0x0600038C RID: 908 RVA: 0x0001A088 File Offset: 0x00018288
+	// Token: 0x0600038D RID: 909 RVA: 0x0001A14C File Offset: 0x0001834C
 	public void TurnOff()
 	{
 		for (int i = this.sound.Count - 1; i >= 0; i--)

@@ -3,32 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200028B RID: 651
+// Token: 0x0200028F RID: 655
 [Preserve]
 public class ConsoleCmdShowClouds : ConsoleCmdAbstract
 {
-	// Token: 0x06001317 RID: 4887 RVA: 0x00075937 File Offset: 0x00073B37
+	// Token: 0x06001329 RID: 4905 RVA: 0x00075F93 File Offset: 0x00074193
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "showClouds" };
 	}
 
-	// Token: 0x06001318 RID: 4888 RVA: 0x00075947 File Offset: 0x00073B47
+	// Token: 0x0600132A RID: 4906 RVA: 0x00075FA3 File Offset: 0x000741A3
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Artist command to show one layer of clouds.";
 	}
 
-	// Token: 0x06001319 RID: 4889 RVA: 0x0007594E File Offset: 0x00073B4E
+	// Token: 0x0600132B RID: 4907 RVA: 0x00075FAA File Offset: 0x000741AA
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "type \"showClouds myCloudTexture\" where \"myCloudTexture\" is the name of the texture you want to see.\ntype \"showClouds\" to turn off this view.\nNote: cloud textures MUST be locasted at ./resources/textures/environment/spectrums/default\n";
 	}
 
-	// Token: 0x0600131A RID: 4890 RVA: 0x00075955 File Offset: 0x00073B55
+	// Token: 0x0600132C RID: 4908 RVA: 0x00075FB1 File Offset: 0x000741B1
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count != 0)

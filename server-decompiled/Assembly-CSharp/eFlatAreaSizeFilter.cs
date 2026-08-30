@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x02000CDB RID: 3291
+// Token: 0x02000CED RID: 3309
 public enum eFlatAreaSizeFilter
 {
-	// Token: 0x04004E2E RID: 20014
+	// Token: 0x04004ECC RID: 20172
 	All,
-	// Token: 0x04004E2F RID: 20015
+	// Token: 0x04004ECD RID: 20173
 	Small,
-	// Token: 0x04004E30 RID: 20016
+	// Token: 0x04004ECE RID: 20174
 	Large,
-	// Token: 0x04004E31 RID: 20017
+	// Token: 0x04004ECF RID: 20175
 	Count
 }

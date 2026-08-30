@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x02001188 RID: 4488
+// Token: 0x020011A2 RID: 4514
 public enum EnumWaypointInviteMode
 {
-	// Token: 0x040069F3 RID: 27123
+	// Token: 0x04006AC3 RID: 27331
 	Friends,
-	// Token: 0x040069F4 RID: 27124
+	// Token: 0x04006AC4 RID: 27332
 	Everyone
 }

@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x020008EE RID: 2286
+// Token: 0x020008FA RID: 2298
 public enum EnumColliderMode
 {
-	// Token: 0x04003565 RID: 13669
+	// Token: 0x040035E6 RID: 13798
 	Disabled,
-	// Token: 0x04003566 RID: 13670
+	// Token: 0x040035E7 RID: 13799
 	Collision,
-	// Token: 0x04003567 RID: 13671
+	// Token: 0x040035E8 RID: 13800
 	Ragdoll,
-	// Token: 0x04003568 RID: 13672
+	// Token: 0x040035E9 RID: 13801
 	RagdollDead
 }

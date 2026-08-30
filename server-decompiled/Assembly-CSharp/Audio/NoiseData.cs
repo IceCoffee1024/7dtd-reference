@@ -2,10 +2,10 @@
 
 namespace Audio
 {
-	// Token: 0x02001AF3 RID: 6899
+	// Token: 0x02001B1A RID: 6938
 	public class NoiseData
 	{
-		// Token: 0x0600CEAC RID: 52908 RVA: 0x004B64CF File Offset: 0x004B46CF
+		// Token: 0x0600D035 RID: 53301 RVA: 0x004BC8C3 File Offset: 0x004BAAC3
 		public NoiseData()
 		{
 			this.volume = 0f;
@@ -15,19 +15,19 @@ namespace Audio
 			this.crouchMuffle = 1f;
 		}
 
-		// Token: 0x04009D6C RID: 40300
+		// Token: 0x04009E9D RID: 40605
 		public float volume;
 
-		// Token: 0x04009D6D RID: 40301
+		// Token: 0x04009E9E RID: 40606
 		public float time;
 
-		// Token: 0x04009D6E RID: 40302
+		// Token: 0x04009E9F RID: 40607
 		public float heatMapStrength;
 
-		// Token: 0x04009D6F RID: 40303
+		// Token: 0x04009EA0 RID: 40608
 		public ulong heatMapTime;
 
-		// Token: 0x04009D70 RID: 40304
+		// Token: 0x04009EA1 RID: 40609
 		public float crouchMuffle;
 	}
 }

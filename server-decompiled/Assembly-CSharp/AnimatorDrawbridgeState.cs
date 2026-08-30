@@ -4,14 +4,14 @@ using UnityEngine;
 // Token: 0x0200009C RID: 156
 public class AnimatorDrawbridgeState : AnimatorDoorState
 {
-	// Token: 0x0600030A RID: 778 RVA: 0x000173F7 File Offset: 0x000155F7
+	// Token: 0x0600030A RID: 778 RVA: 0x00017407 File Offset: 0x00015607
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
 		this.mask = LayerMask.GetMask(new string[] { "Physics", "CC Physics", "CC Local Physics" });
 	}
 
-	// Token: 0x0600030B RID: 779 RVA: 0x00017428 File Offset: 0x00015628
+	// Token: 0x0600030B RID: 779 RVA: 0x00017438 File Offset: 0x00015638
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool CheckForObstacles()
 	{

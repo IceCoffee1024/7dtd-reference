@@ -1,8 +1,8 @@
 ﻿using System;
 
-// Token: 0x02001210 RID: 4624
+// Token: 0x0200122C RID: 4652
 public interface IItemDataDragSource
 {
-	// Token: 0x06009385 RID: 37765
+	// Token: 0x06009489 RID: 38025
 	int DragSourceGetPrice(ItemStack _data);
 }

@@ -2,43 +2,43 @@
 
 namespace DynamicMusic
 {
-	// Token: 0x02001A58 RID: 6744
+	// Token: 0x02001A7F RID: 6783
 	public interface IPlayable
 	{
-		// Token: 0x170018AF RID: 6319
-		// (get) Token: 0x0600CB68 RID: 52072
-		// (set) Token: 0x0600CB67 RID: 52071
+		// Token: 0x17001921 RID: 6433
+		// (get) Token: 0x0600CCF1 RID: 52465
+		// (set) Token: 0x0600CCF0 RID: 52464
 		float Volume { get; set; }
 
-		// Token: 0x170018B0 RID: 6320
-		// (get) Token: 0x0600CB69 RID: 52073
+		// Token: 0x17001922 RID: 6434
+		// (get) Token: 0x0600CCF2 RID: 52466
 		bool IsDone { get; }
 
-		// Token: 0x170018B1 RID: 6321
-		// (get) Token: 0x0600CB6A RID: 52074
+		// Token: 0x17001923 RID: 6435
+		// (get) Token: 0x0600CCF3 RID: 52467
 		bool IsPaused { get; }
 
-		// Token: 0x170018B2 RID: 6322
-		// (get) Token: 0x0600CB6B RID: 52075
+		// Token: 0x17001924 RID: 6436
+		// (get) Token: 0x0600CCF4 RID: 52468
 		bool IsPlaying { get; }
 
-		// Token: 0x170018B3 RID: 6323
-		// (get) Token: 0x0600CB6C RID: 52076
+		// Token: 0x17001925 RID: 6437
+		// (get) Token: 0x0600CCF5 RID: 52469
 		bool IsReady { get; }
 
-		// Token: 0x0600CB6D RID: 52077
+		// Token: 0x0600CCF6 RID: 52470
 		void Init();
 
-		// Token: 0x0600CB6E RID: 52078
+		// Token: 0x0600CCF7 RID: 52471
 		void Play();
 
-		// Token: 0x0600CB6F RID: 52079
+		// Token: 0x0600CCF8 RID: 52472
 		void Pause();
 
-		// Token: 0x0600CB70 RID: 52080
+		// Token: 0x0600CCF9 RID: 52473
 		void UnPause();
 
-		// Token: 0x0600CB71 RID: 52081
+		// Token: 0x0600CCFA RID: 52474
 		void Stop();
 	}
 }

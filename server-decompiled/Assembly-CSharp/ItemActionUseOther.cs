@@ -4,17 +4,17 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020005DE RID: 1502
+// Token: 0x020005E3 RID: 1507
 [Preserve]
 public class ItemActionUseOther : ItemAction
 {
-	// Token: 0x060030D3 RID: 12499 RVA: 0x0013D172 File Offset: 0x0013B372
+	// Token: 0x06003101 RID: 12545 RVA: 0x0013E1E2 File Offset: 0x0013C3E2
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionUseOther.FeedInventoryData(_invData, _indexInEntityOfAction);
 	}
 
-	// Token: 0x060030D4 RID: 12500 RVA: 0x0013D17C File Offset: 0x0013B37C
+	// Token: 0x06003102 RID: 12546 RVA: 0x0013E1EC File Offset: 0x0013C3EC
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -41,7 +41,7 @@ public class ItemActionUseOther : ItemAction
 		this.CreateItemCount = 1;
 	}
 
-	// Token: 0x060030D5 RID: 12501 RVA: 0x0013D238 File Offset: 0x0013B438
+	// Token: 0x06003103 RID: 12547 RVA: 0x0013E2A8 File Offset: 0x0013C4A8
 	public override void StopHolding(ItemActionData _data)
 	{
 		base.StopHolding(_data);
@@ -56,7 +56,7 @@ public class ItemActionUseOther : ItemAction
 		}
 	}
 
-	// Token: 0x060030D6 RID: 12502 RVA: 0x0013D298 File Offset: 0x0013B498
+	// Token: 0x06003104 RID: 12548 RVA: 0x0013E308 File Offset: 0x0013C508
 	public override bool CanExecute(ItemActionData _actionData)
 	{
 		if (Time.time - _actionData.lastUseTime < this.Delay)
@@ -88,7 +88,7 @@ public class ItemActionUseOther : ItemAction
 		return base.CanExecute(_actionData);
 	}
 
-	// Token: 0x060030D7 RID: 12503 RVA: 0x0013D3D4 File Offset: 0x0013B5D4
+	// Token: 0x06003105 RID: 12549 RVA: 0x0013E444 File Offset: 0x0013C644
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		if (!_bReleased)
@@ -164,20 +164,20 @@ public class ItemActionUseOther : ItemAction
 		feedInventoryData.TargetEntity = null;
 	}
 
-	// Token: 0x060030D8 RID: 12504 RVA: 0x0013D710 File Offset: 0x0013B910
+	// Token: 0x06003106 RID: 12550 RVA: 0x0013E780 File Offset: 0x0013C980
 	public override bool IsActionRunning(ItemActionData _actionData)
 	{
 		ItemActionUseOther.FeedInventoryData feedInventoryData = (ItemActionUseOther.FeedInventoryData)_actionData;
 		return feedInventoryData.bFeedingStarted && Time.time - feedInventoryData.lastUseTime < this.Delay;
 	}
 
-	// Token: 0x060030D9 RID: 12505 RVA: 0x0013D743 File Offset: 0x0013B943
+	// Token: 0x06003107 RID: 12551 RVA: 0x0013E7B3 File Offset: 0x0013C9B3
 	public override void OnHoldingUpdate(ItemActionData _actionData)
 	{
 		ItemActionUseOther.FeedInventoryData feedInventoryData = (ItemActionUseOther.FeedInventoryData)_actionData;
 	}
 
-	// Token: 0x060030DA RID: 12506 RVA: 0x0013D74C File Offset: 0x0013B94C
+	// Token: 0x06003108 RID: 12552 RVA: 0x0013E7BC File Offset: 0x0013C9BC
 	public static Entity GetEntityFromHit(WorldRayHitInfo hitInfo)
 	{
 		Transform hitRootTransform = GameUtils.GetHitRootTransform(hitInfo.tag, hitInfo.transform);
@@ -188,14 +188,14 @@ public class ItemActionUseOther : ItemAction
 		return null;
 	}
 
-	// Token: 0x060030DB RID: 12507 RVA: 0x0013D77C File Offset: 0x0013B97C
+	// Token: 0x06003109 RID: 12553 RVA: 0x0013E7EC File Offset: 0x0013C9EC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool canShowOverlay(ItemActionData _actionData)
 	{
 		return this.isValidEntityToHeal((ItemActionUseOther.FeedInventoryData)_actionData);
 	}
 
-	// Token: 0x060030DC RID: 12508 RVA: 0x0013D78A File Offset: 0x0013B98A
+	// Token: 0x0600310A RID: 12554 RVA: 0x0013E7FA File Offset: 0x0013C9FA
 	public override ItemClass.EnumCrosshairType GetCrosshairType(ItemActionData _actionData)
 	{
 		if (this.isValidEntityToHeal((ItemActionUseOther.FeedInventoryData)_actionData))
@@ -205,14 +205,14 @@ public class ItemActionUseOther : ItemAction
 		return ItemClass.EnumCrosshairType.Plus;
 	}
 
-	// Token: 0x060030DD RID: 12509 RVA: 0x0013D77C File Offset: 0x0013B97C
+	// Token: 0x0600310B RID: 12555 RVA: 0x0013E7EC File Offset: 0x0013C9EC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isShowOverlay(ItemActionData _actionData)
 	{
 		return this.isValidEntityToHeal((ItemActionUseOther.FeedInventoryData)_actionData);
 	}
 
-	// Token: 0x060030DE RID: 12510 RVA: 0x0013D7A0 File Offset: 0x0013B9A0
+	// Token: 0x0600310C RID: 12556 RVA: 0x0013E810 File Offset: 0x0013CA10
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void getOverlayData(ItemActionData _actionData, out float _perc, out string _text)
 	{
@@ -226,14 +226,14 @@ public class ItemActionUseOther : ItemAction
 		_text = string.Format("{0}/{1}", feedInventoryData.TargetEntity.Stats.Health.Value.ToCultureInvariantString(), feedInventoryData.TargetEntity.Stats.Health.Max.ToCultureInvariantString());
 	}
 
-	// Token: 0x060030DF RID: 12511 RVA: 0x0013D834 File Offset: 0x0013BA34
+	// Token: 0x0600310D RID: 12557 RVA: 0x0013E8A4 File Offset: 0x0013CAA4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isValidEntityToHeal(ItemActionUseOther.FeedInventoryData _actionData)
 	{
 		return _actionData.TargetEntity != null;
 	}
 
-	// Token: 0x060030E0 RID: 12512 RVA: 0x0013D844 File Offset: 0x0013BA44
+	// Token: 0x0600310E RID: 12558 RVA: 0x0013E8B4 File Offset: 0x0013CAB4
 	public override void OnHUD(ItemActionData _actionData, int _x, int _y)
 	{
 		ItemActionUseOther.FeedInventoryData feedInventoryData = (ItemActionUseOther.FeedInventoryData)_actionData;
@@ -273,43 +273,43 @@ public class ItemActionUseOther : ItemAction
 		}
 	}
 
-	// Token: 0x040025D9 RID: 9689
+	// Token: 0x0400260D RID: 9741
 	public new string CreateItem;
 
-	// Token: 0x040025DA RID: 9690
+	// Token: 0x0400260E RID: 9742
 	public int CreateItemCount;
 
-	// Token: 0x040025DB RID: 9691
+	// Token: 0x0400260F RID: 9743
 	public new bool Consume;
 
-	// Token: 0x040025DC RID: 9692
+	// Token: 0x04002610 RID: 9744
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> noMedBuffsTag = FastTags<TagGroup.Global>.Parse("noMedBuffs");
 
-	// Token: 0x040025DD RID: 9693
+	// Token: 0x04002611 RID: 9745
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> medicalItemTag = FastTags<TagGroup.Global>.Parse("medical");
 
-	// Token: 0x040025DE RID: 9694
+	// Token: 0x04002612 RID: 9746
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> stopBleed = FastTags<TagGroup.Global>.Parse("stopsBleeding");
 
-	// Token: 0x020005DF RID: 1503
+	// Token: 0x020005E4 RID: 1508
 	public class FeedInventoryData : ItemActionAttackData
 	{
-		// Token: 0x060030E2 RID: 12514 RVA: 0x00129694 File Offset: 0x00127894
+		// Token: 0x06003110 RID: 12560 RVA: 0x0012A704 File Offset: 0x00128904
 		public FeedInventoryData(ItemInventoryData _invData, int _indexInEntityOfAction)
 			: base(_invData, _indexInEntityOfAction)
 		{
 		}
 
-		// Token: 0x040025DF RID: 9695
+		// Token: 0x04002613 RID: 9747
 		public bool bFeedingStarted;
 
-		// Token: 0x040025E0 RID: 9696
+		// Token: 0x04002614 RID: 9748
 		public EntityAlive TargetEntity;
 
-		// Token: 0x040025E1 RID: 9697
+		// Token: 0x04002615 RID: 9749
 		public Ray ray;
 	}
 }

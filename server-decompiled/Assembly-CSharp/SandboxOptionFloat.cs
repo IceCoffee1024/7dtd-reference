@@ -3,11 +3,11 @@ using System.Xml.Linq;
 using SandboxOptions;
 using UnityEngine.Scripting;
 
-// Token: 0x020006B0 RID: 1712
+// Token: 0x020006BA RID: 1722
 [Preserve]
 public class SandboxOptionFloat : TargetedCompareRequirementBase
 {
-	// Token: 0x06003570 RID: 13680 RVA: 0x0016034C File Offset: 0x0015E54C
+	// Token: 0x060035C6 RID: 13766 RVA: 0x00162524 File Offset: 0x00160724
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -22,7 +22,7 @@ public class SandboxOptionFloat : TargetedCompareRequirementBase
 		return RequirementBase.compareValues(@float, this.operation, this.value);
 	}
 
-	// Token: 0x06003571 RID: 13681 RVA: 0x001603A0 File Offset: 0x0015E5A0
+	// Token: 0x060035C7 RID: 13767 RVA: 0x00162578 File Offset: 0x00160778
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -34,7 +34,7 @@ public class SandboxOptionFloat : TargetedCompareRequirementBase
 		return flag;
 	}
 
-	// Token: 0x04002AF8 RID: 11000
+	// Token: 0x04002B6C RID: 11116
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public global::SandboxOptions.SandboxOptions Option = global::SandboxOptions.SandboxOptions.BiomeProgression;
 }

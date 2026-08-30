@@ -2,11 +2,11 @@
 using System.Xml.Linq;
 using UnityEngine.Scripting;
 
-// Token: 0x02000680 RID: 1664
+// Token: 0x0200068A RID: 1674
 [Preserve]
 public class EntityTagCompare : TargetedCompareRequirementBase
 {
-	// Token: 0x060034D6 RID: 13526 RVA: 0x0015E178 File Offset: 0x0015C378
+	// Token: 0x0600352C RID: 13612 RVA: 0x00160354 File Offset: 0x0015E554
 	public override bool IsValid(MinEventParams _params)
 	{
 		if (!base.IsValid(_params))
@@ -31,7 +31,7 @@ public class EntityTagCompare : TargetedCompareRequirementBase
 		}
 	}
 
-	// Token: 0x060034D7 RID: 13527 RVA: 0x0015E1F8 File Offset: 0x0015C3F8
+	// Token: 0x0600352D RID: 13613 RVA: 0x001603D4 File Offset: 0x0015E5D4
 	public override bool ParseXAttribute(XAttribute _attribute)
 	{
 		bool flag = base.ParseXAttribute(_attribute);
@@ -52,11 +52,11 @@ public class EntityTagCompare : TargetedCompareRequirementBase
 		return flag;
 	}
 
-	// Token: 0x04002AD4 RID: 10964
+	// Token: 0x04002B48 RID: 11080
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> tagsToCompare;
 
-	// Token: 0x04002AD5 RID: 10965
+	// Token: 0x04002B49 RID: 11081
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hasAllTags;
 }

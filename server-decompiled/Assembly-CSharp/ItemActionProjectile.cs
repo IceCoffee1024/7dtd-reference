@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020005BB RID: 1467
+// Token: 0x020005C0 RID: 1472
 [Preserve]
 public class ItemActionProjectile : ItemActionAttack
 {
-	// Token: 0x06002FB7 RID: 12215 RVA: 0x001324D0 File Offset: 0x001306D0
+	// Token: 0x06002FE5 RID: 12261 RVA: 0x00133540 File Offset: 0x00131740
 	public override void ReadFrom(DynamicProperties _props)
 	{
 		base.ReadFrom(_props);
@@ -19,29 +19,29 @@ public class ItemActionProjectile : ItemActionAttack
 		this.Properties.ParseFloat("CollisionRadius", ref this.collisionRadius);
 	}
 
-	// Token: 0x06002FB8 RID: 12216 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002FE6 RID: 12262 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 	}
 
-	// Token: 0x040024DD RID: 9437
+	// Token: 0x04002511 RID: 9489
 	public new ExplosionData Explosion;
 
-	// Token: 0x040024DE RID: 9438
+	// Token: 0x04002512 RID: 9490
 	public new float Velocity;
 
-	// Token: 0x040024DF RID: 9439
+	// Token: 0x04002513 RID: 9491
 	public new float FlyTime;
 
-	// Token: 0x040024E0 RID: 9440
+	// Token: 0x04002514 RID: 9492
 	public new float LifeTime;
 
-	// Token: 0x040024E1 RID: 9441
+	// Token: 0x04002515 RID: 9493
 	public float DeadTime;
 
-	// Token: 0x040024E2 RID: 9442
+	// Token: 0x04002516 RID: 9494
 	public float Gravity;
 
-	// Token: 0x040024E3 RID: 9443
+	// Token: 0x04002517 RID: 9495
 	public float collisionRadius;
 }

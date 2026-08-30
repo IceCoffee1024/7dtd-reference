@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200014E RID: 334
+// Token: 0x0200014F RID: 335
 [Preserve]
 public class BlockSpawnEntity : Block
 {
-	// Token: 0x06000935 RID: 2357 RVA: 0x0004046C File Offset: 0x0003E66C
+	// Token: 0x0600093F RID: 2367 RVA: 0x000406CC File Offset: 0x0003E8CC
 	public override void Init()
 	{
 		base.Init();
@@ -18,7 +18,7 @@ public class BlockSpawnEntity : Block
 		this.spawnClasses = base.Properties.Values["SpawnClass"].Split(',', StringSplitOptions.None);
 	}
 
-	// Token: 0x06000936 RID: 2358 RVA: 0x000404D0 File Offset: 0x0003E6D0
+	// Token: 0x06000940 RID: 2368 RVA: 0x00040730 File Offset: 0x0003E930
 	public override void OnBlockAdded(WorldBase _world, Chunk _chunk, Vector3i _blockPos, BlockValue _blockValue, PlatformUserIdentifierAbs _addedByPlayer)
 	{
 		base.OnBlockAdded(_world, _chunk, _blockPos, _blockValue, _addedByPlayer);
@@ -35,7 +35,7 @@ public class BlockSpawnEntity : Block
 		}
 	}
 
-	// Token: 0x06000937 RID: 2359 RVA: 0x000405AC File Offset: 0x0003E7AC
+	// Token: 0x06000941 RID: 2369 RVA: 0x0004080C File Offset: 0x0003EA0C
 	public override void OnBlockLoaded(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue)
 	{
 		base.OnBlockLoaded(_world, _blockPos, _blockValue);
@@ -63,7 +63,7 @@ public class BlockSpawnEntity : Block
 		}
 	}
 
-	// Token: 0x06000938 RID: 2360 RVA: 0x00040624 File Offset: 0x0003E824
+	// Token: 0x06000942 RID: 2370 RVA: 0x00040884 File Offset: 0x0003EA84
 	public override void OnBlockEntityTransformAfterActivated(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, BlockEntityData _ebcd)
 	{
 		base.OnBlockEntityTransformAfterActivated(_world, _blockPos, _blockValue, _ebcd);
@@ -81,7 +81,7 @@ public class BlockSpawnEntity : Block
 		}
 	}
 
-	// Token: 0x06000939 RID: 2361 RVA: 0x00040684 File Offset: 0x0003E884
+	// Token: 0x06000943 RID: 2371 RVA: 0x000408E4 File Offset: 0x0003EAE4
 	public override bool UpdateTick(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, bool _bRandomTick, ulong _ticksIfLoaded, GameRandom _rnd)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -121,13 +121,13 @@ public class BlockSpawnEntity : Block
 		return base.UpdateTick(_world, _blockPos, _blockValue, _bRandomTick, _ticksIfLoaded, _rnd);
 	}
 
-	// Token: 0x0600093A RID: 2362 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x06000944 RID: 2372 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool HasBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		return true;
 	}
 
-	// Token: 0x0600093B RID: 2363 RVA: 0x0004081C File Offset: 0x0003EA1C
+	// Token: 0x06000945 RID: 2373 RVA: 0x00040A7C File Offset: 0x0003EC7C
 	public override string GetActivationText(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		if (!_world.IsEditor())
@@ -140,7 +140,7 @@ public class BlockSpawnEntity : Block
 		return string.Format(Localization.Get("editBlockSpawnEntity", false, null), text, ((int)meta < this.spawnClasses.Length) ? this.spawnClasses[(int)_blockValue.meta] : "-");
 	}
 
-	// Token: 0x0600093C RID: 2364 RVA: 0x000408A1 File Offset: 0x0003EAA1
+	// Token: 0x06000946 RID: 2374 RVA: 0x00040B01 File Offset: 0x0003ED01
 	public override bool OnBlockActivated(string _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
 	{
 		if (!(_commandName == "edit"))
@@ -155,17 +155,17 @@ public class BlockSpawnEntity : Block
 		return true;
 	}
 
-	// Token: 0x0600093D RID: 2365 RVA: 0x000408CD File Offset: 0x0003EACD
+	// Token: 0x06000947 RID: 2375 RVA: 0x00040B2D File Offset: 0x0003ED2D
 	public override BlockActivationCommand[] GetBlockActivationCommands(WorldBase _world, BlockValue _blockValue, Vector3i _blockPos, EntityAlive _entityFocusing)
 	{
 		this.cmds[0].enabled = _world.IsEditor();
 		return this.cmds;
 	}
 
-	// Token: 0x040009B3 RID: 2483
+	// Token: 0x040009B5 RID: 2485
 	public string[] spawnClasses;
 
-	// Token: 0x040009B4 RID: 2484
+	// Token: 0x040009B6 RID: 2486
 	[PublicizedFrom(EAccessModifier.Private)]
 	public new BlockActivationCommand[] cmds = new BlockActivationCommand[]
 	{

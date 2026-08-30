@@ -2,22 +2,22 @@
 
 namespace MusicUtils
 {
-	// Token: 0x020019E9 RID: 6633
+	// Token: 0x02001A10 RID: 6672
 	public static class ThreatLevelConstants
 	{
-		// Token: 0x04009905 RID: 39173
+		// Token: 0x04009A36 RID: 39478
 		public const float cMinThreatLevel = 0f;
 
-		// Token: 0x04009906 RID: 39174
+		// Token: 0x04009A37 RID: 39479
 		public const float cMaxThreatLevel = 1f;
 
-		// Token: 0x04009907 RID: 39175
+		// Token: 0x04009A38 RID: 39480
 		public const float cCombatThreshold = 0.75f;
 
-		// Token: 0x04009908 RID: 39176
+		// Token: 0x04009A39 RID: 39481
 		public const float cSuspenseThreshold = 0.25f;
 
-		// Token: 0x04009909 RID: 39177
+		// Token: 0x04009A3A RID: 39482
 		public const float cCombatReadyThreshold = 0.5f;
 	}
 }

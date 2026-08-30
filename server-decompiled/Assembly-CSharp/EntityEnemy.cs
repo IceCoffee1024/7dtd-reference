@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020004A6 RID: 1190
+// Token: 0x020004AA RID: 1194
 public abstract class EntityEnemy : EntityAlive
 {
-	// Token: 0x06002578 RID: 9592 RVA: 0x000DDFF0 File Offset: 0x000DC1F0
+	// Token: 0x0600259A RID: 9626 RVA: 0x000DEC78 File Offset: 0x000DCE78
 	public override void Init(int _entityClass, EntityInstanceAssets _assets, EModelInstanceAssets _eModelAssets)
 	{
 		base.Init(_entityClass, _assets, _eModelAssets);
 	}
 
-	// Token: 0x06002579 RID: 9593 RVA: 0x000E4953 File Offset: 0x000E2B53
+	// Token: 0x0600259B RID: 9627 RVA: 0x000E55E3 File Offset: 0x000E37E3
 	public override void PostInit()
 	{
 		base.PostInit();
@@ -20,53 +20,53 @@ public abstract class EntityEnemy : EntityAlive
 		}
 	}
 
-	// Token: 0x0600257A RID: 9594 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x0600259C RID: 9628 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsDrawMapIcon()
 	{
 		return true;
 	}
 
-	// Token: 0x0600257B RID: 9595 RVA: 0x000E497E File Offset: 0x000E2B7E
+	// Token: 0x0600259D RID: 9629 RVA: 0x000E560E File Offset: 0x000E380E
 	public override Vector3 GetMapIconScale()
 	{
 		return new Vector3(0.75f, 0.75f, 1f);
 	}
 
-	// Token: 0x0600257C RID: 9596 RVA: 0x000E4994 File Offset: 0x000E2B94
+	// Token: 0x0600259E RID: 9630 RVA: 0x000E5624 File Offset: 0x000E3824
 	public override bool IsSavedToFile()
 	{
 		return (base.GetSpawnerSource() != EnumSpawnerSource.Dynamic || this.IsDead()) && base.IsSavedToFile();
 	}
 
-	// Token: 0x0600257D RID: 9597 RVA: 0x000E49AF File Offset: 0x000E2BAF
+	// Token: 0x0600259F RID: 9631 RVA: 0x000E563F File Offset: 0x000E383F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool canDespawn()
 	{
 		return (!this.IsHordeZombie || this.world.GetPlayers().Count == 0) && base.canDespawn();
 	}
 
-	// Token: 0x0600257E RID: 9598 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060025A0 RID: 9632 RVA: 0x00010E62 File Offset: 0x0000F062
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isRadiationSensitive()
 	{
 		return false;
 	}
 
-	// Token: 0x0600257F RID: 9599 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x060025A1 RID: 9633 RVA: 0x00020021 File Offset: 0x0001E221
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isDetailedHeadBodyColliders()
 	{
 		return true;
 	}
 
-	// Token: 0x06002580 RID: 9600 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060025A2 RID: 9634 RVA: 0x00010E62 File Offset: 0x0000F062
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isGameMessageOnDeath()
 	{
 		return false;
 	}
 
-	// Token: 0x06002581 RID: 9601 RVA: 0x000E49D3 File Offset: 0x000E2BD3
+	// Token: 0x060025A3 RID: 9635 RVA: 0x000E5663 File Offset: 0x000E3863
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void OnEntityTargeted(EntityAlive target)
 	{
@@ -77,18 +77,18 @@ public abstract class EntityEnemy : EntityAlive
 		}
 	}
 
-	// Token: 0x06002582 RID: 9602 RVA: 0x000D8E2C File Offset: 0x000D702C
+	// Token: 0x060025A4 RID: 9636 RVA: 0x000D99BC File Offset: 0x000D7BBC
 	public override int DamageEntity(DamageSource _damageSource, int _strength, bool _criticalHit, float _impulseScale)
 	{
 		return base.DamageEntity(_damageSource, _strength, _criticalHit, _impulseScale);
 	}
 
-	// Token: 0x06002583 RID: 9603 RVA: 0x000DA6BC File Offset: 0x000D88BC
+	// Token: 0x060025A5 RID: 9637 RVA: 0x000DB194 File Offset: 0x000D9394
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public EntityEnemy()
 	{
 	}
 
-	// Token: 0x04001BD7 RID: 7127
+	// Token: 0x04001BF9 RID: 7161
 	public bool IsHordeZombie;
 }

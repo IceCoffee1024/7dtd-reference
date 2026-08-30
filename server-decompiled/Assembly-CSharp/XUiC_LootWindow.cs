@@ -7,12 +7,12 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F64 RID: 3940
+// Token: 0x02000F7D RID: 3965
 [Preserve]
 public class XUiC_LootWindow : XUiController
 {
-	// Token: 0x17000E73 RID: 3699
-	// (get) Token: 0x06007C2F RID: 31791 RVA: 0x002F02A1 File Offset: 0x002EE4A1
+	// Token: 0x17000EAC RID: 3756
+	// (get) Token: 0x06007D21 RID: 32033 RVA: 0x002F4A75 File Offset: 0x002F2C75
 	public int ContainerSlotsCount
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -22,9 +22,9 @@ public class XUiC_LootWindow : XUiController
 		}
 	}
 
-	// Token: 0x17000E74 RID: 3700
-	// (get) Token: 0x06007C30 RID: 31792 RVA: 0x002F02BA File Offset: 0x002EE4BA
-	// (set) Token: 0x06007C31 RID: 31793 RVA: 0x002F02C4 File Offset: 0x002EE4C4
+	// Token: 0x17000EAD RID: 3757
+	// (get) Token: 0x06007D22 RID: 32034 RVA: 0x002F4A8E File Offset: 0x002F2C8E
+	// (set) Token: 0x06007D23 RID: 32035 RVA: 0x002F4A98 File Offset: 0x002F2C98
 	public bool UserLockMode
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -57,7 +57,7 @@ public class XUiC_LootWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007C32 RID: 31794 RVA: 0x002F034C File Offset: 0x002EE54C
+	// Token: 0x06007D24 RID: 32036 RVA: 0x002F4B20 File Offset: 0x002F2D20
 	public override void Init()
 	{
 		base.Init();
@@ -117,7 +117,7 @@ public class XUiC_LootWindow : XUiController
 		base.registerForInputStyleChanges();
 	}
 
-	// Token: 0x06007C33 RID: 31795 RVA: 0x002F0440 File Offset: 0x002EE640
+	// Token: 0x06007D25 RID: 32037 RVA: 0x002F4C14 File Offset: 0x002F2E14
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -162,7 +162,7 @@ public class XUiC_LootWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007C34 RID: 31796 RVA: 0x002F0664 File Offset: 0x002EE864
+	// Token: 0x06007D26 RID: 32038 RVA: 0x002F4E38 File Offset: 0x002F3038
 	public void SetTileEntityChest(string _lootContainerName, ITileEntityLootable _te, bool _playOpenSound = true)
 	{
 		this.te = _te;
@@ -189,7 +189,7 @@ public class XUiC_LootWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007C35 RID: 31797 RVA: 0x002F0734 File Offset: 0x002EE934
+	// Token: 0x06007D27 RID: 32039 RVA: 0x002F4F08 File Offset: 0x002F3108
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -207,7 +207,7 @@ public class XUiC_LootWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007C36 RID: 31798 RVA: 0x002F07F4 File Offset: 0x002EE9F4
+	// Token: 0x06007D28 RID: 32040 RVA: 0x002F4FC8 File Offset: 0x002F31C8
 	public override void OnClose()
 	{
 		this.wasReleased = false;
@@ -229,7 +229,7 @@ public class XUiC_LootWindow : XUiController
 		base.OnClose();
 	}
 
-	// Token: 0x06007C37 RID: 31799 RVA: 0x002F08B8 File Offset: 0x002EEAB8
+	// Token: 0x06007D29 RID: 32041 RVA: 0x002F508C File Offset: 0x002F328C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void playSound(string _soundName)
 	{
@@ -240,7 +240,7 @@ public class XUiC_LootWindow : XUiController
 		Manager.BroadcastPlayByLocalPlayer(this.te.ToWorldPos().ToVector3() + Vector3.one * 0.5f, _soundName);
 	}
 
-	// Token: 0x06007C38 RID: 31800 RVA: 0x002F08F6 File Offset: 0x002EEAF6
+	// Token: 0x06007D2A RID: 32042 RVA: 0x002F50CA File Offset: 0x002F32CA
 	public PreferenceTracker GetPreferenceTrackerFromTileEntity()
 	{
 		ITileEntityLootable tileEntityLootable = this.te;
@@ -251,7 +251,7 @@ public class XUiC_LootWindow : XUiController
 		return tileEntityLootable.preferences;
 	}
 
-	// Token: 0x06007C39 RID: 31801 RVA: 0x002F0909 File Offset: 0x002EEB09
+	// Token: 0x06007D2B RID: 32043 RVA: 0x002F50DD File Offset: 0x002F32DD
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator closeInventoryLater()
 	{
@@ -262,7 +262,7 @@ public class XUiC_LootWindow : XUiController
 		yield break;
 	}
 
-	// Token: 0x06007C3A RID: 31802 RVA: 0x002F0918 File Offset: 0x002EEB18
+	// Token: 0x06007D2C RID: 32044 RVA: 0x002F50EC File Offset: 0x002F32EC
 	public override bool ParseAttribute(string _name, string _value)
 	{
 		if (_name == "window_grid_width_difference")
@@ -273,7 +273,7 @@ public class XUiC_LootWindow : XUiController
 		return base.ParseAttribute(_name, _value);
 	}
 
-	// Token: 0x06007C3B RID: 31803 RVA: 0x002F0940 File Offset: 0x002EEB40
+	// Token: 0x06007D2D RID: 32045 RVA: 0x002F5114 File Offset: 0x002F3314
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string _value, string _bindingName)
 	{
@@ -351,7 +351,7 @@ public class XUiC_LootWindow : XUiController
 		return base.GetBindingValueInternal(ref _value, _bindingName);
 	}
 
-	// Token: 0x06007C3C RID: 31804 RVA: 0x002F0B46 File Offset: 0x002EED46
+	// Token: 0x06007D2E RID: 32046 RVA: 0x002F531A File Offset: 0x002F351A
 	[XuiXmlBinding("userlockmode")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bindingUserLockMode()
@@ -359,7 +359,7 @@ public class XUiC_LootWindow : XUiController
 		return this.UserLockMode;
 	}
 
-	// Token: 0x06007C3D RID: 31805 RVA: 0x002F0B4E File Offset: 0x002EED4E
+	// Token: 0x06007D2F RID: 32047 RVA: 0x002F5322 File Offset: 0x002F3522
 	[XuiXmlBinding("container_slots")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int bindingContainerSlots()
@@ -367,7 +367,7 @@ public class XUiC_LootWindow : XUiController
 		return this.ContainerSlotsCount;
 	}
 
-	// Token: 0x06007C3E RID: 31806 RVA: 0x002F0B58 File Offset: 0x002EED58
+	// Token: 0x06007D30 RID: 32048 RVA: 0x002F532C File Offset: 0x002F352C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ApplyLockedSlotStates(PackedBoolArray _lockedSlots)
 	{
@@ -378,7 +378,7 @@ public class XUiC_LootWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007C3F RID: 31807 RVA: 0x002F0BA0 File Offset: 0x002EEDA0
+	// Token: 0x06007D31 RID: 32049 RVA: 0x002F5374 File Offset: 0x002F3574
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void UpdateLockedSlots(XUiC_ContainerStandardControls _csc)
 	{
@@ -402,51 +402,51 @@ public class XUiC_LootWindow : XUiController
 		_csc.LockedSlots = packedBoolArray;
 	}
 
-	// Token: 0x04005BE8 RID: 23528
+	// Token: 0x04005CAF RID: 23727
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ITileEntityLootable te;
 
-	// Token: 0x04005BE9 RID: 23529
+	// Token: 0x04005CB0 RID: 23728
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_LootContainer lootContainer;
 
-	// Token: 0x04005BEA RID: 23530
+	// Token: 0x04005CB1 RID: 23729
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool userLockMode;
 
-	// Token: 0x04005BEB RID: 23531
+	// Token: 0x04005CB2 RID: 23730
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ContainerStandardControls standardControls;
 
-	// Token: 0x04005BEC RID: 23532
+	// Token: 0x04005CB3 RID: 23731
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string lootContainerName;
 
-	// Token: 0x04005BED RID: 23533
+	// Token: 0x04005CB4 RID: 23732
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2i containerSlotsSize;
 
-	// Token: 0x04005BEE RID: 23534
+	// Token: 0x04005CB5 RID: 23733
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int windowWidth;
 
-	// Token: 0x04005BEF RID: 23535
+	// Token: 0x04005CB6 RID: 23734
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int windowGridWidthDifference;
 
-	// Token: 0x04005BF0 RID: 23536
+	// Token: 0x04005CB7 RID: 23735
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool playOpenSound;
 
-	// Token: 0x04005BF1 RID: 23537
+	// Token: 0x04005CB8 RID: 23736
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isClosing;
 
-	// Token: 0x04005BF2 RID: 23538
+	// Token: 0x04005CB9 RID: 23737
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool activeKeyDown;
 
-	// Token: 0x04005BF3 RID: 23539
+	// Token: 0x04005CBA RID: 23738
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool wasReleased;
 }

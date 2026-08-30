@@ -1,29 +1,29 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200140C RID: 5132
+// Token: 0x02001427 RID: 5159
 [CreateAssetMenu(menuName = "Gradients/Lightbar Gradient Data")]
 [Serializable]
 public class LightbarGradients : ScriptableObject
 {
-	// Token: 0x040078FC RID: 30972
+	// Token: 0x040079D5 RID: 31189
 	public Gradient timeOfDayGradient;
 
-	// Token: 0x040078FD RID: 30973
+	// Token: 0x040079D6 RID: 31190
 	public Gradient dayGradient;
 
-	// Token: 0x040078FE RID: 30974
+	// Token: 0x040079D7 RID: 31191
 	public Gradient nightGradient;
 
-	// Token: 0x040078FF RID: 30975
+	// Token: 0x040079D8 RID: 31192
 	public Gradient cloudDayGradient;
 
-	// Token: 0x04007900 RID: 30976
+	// Token: 0x040079D9 RID: 31193
 	public Gradient cloudNightGradient;
 
-	// Token: 0x04007901 RID: 30977
+	// Token: 0x040079DA RID: 31194
 	public Gradient bloodmoonGradient;
 
-	// Token: 0x04007902 RID: 30978
+	// Token: 0x040079DB RID: 31195
 	public Color mainMenuColor;
 }

@@ -2,26 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200029C RID: 668
+// Token: 0x020002A0 RID: 672
 [Preserve]
 public class ConsoleCmdSpectatorMode : ConsoleCmdAbstract
 {
-	// Token: 0x06001379 RID: 4985 RVA: 0x000771A4 File Offset: 0x000753A4
+	// Token: 0x0600138B RID: 5003 RVA: 0x00077800 File Offset: 0x00075A00
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "enables/disables spectator mode";
 	}
 
-	// Token: 0x0600137A RID: 4986 RVA: 0x000771AB File Offset: 0x000753AB
+	// Token: 0x0600138C RID: 5004 RVA: 0x00077807 File Offset: 0x00075A07
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "spectator", "spectatormode", "sm" };
 	}
 
-	// Token: 0x17000218 RID: 536
-	// (get) Token: 0x0600137B RID: 4987 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000219 RID: 537
+	// (get) Token: 0x0600138D RID: 5005 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -30,7 +30,7 @@ public class ConsoleCmdSpectatorMode : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600137C RID: 4988 RVA: 0x000771CC File Offset: 0x000753CC
+	// Token: 0x0600138E RID: 5006 RVA: 0x00077828 File Offset: 0x00075A28
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (GameManager.IsDedicatedServer)

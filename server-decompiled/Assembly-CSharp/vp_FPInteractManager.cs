@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020015DD RID: 5597
+// Token: 0x020015F8 RID: 5624
 public class vp_FPInteractManager : MonoBehaviour
 {
-	// Token: 0x1700143E RID: 5182
-	// (get) Token: 0x0600AF24 RID: 44836 RVA: 0x00415C8D File Offset: 0x00413E8D
-	// (set) Token: 0x0600AF25 RID: 44837 RVA: 0x00415C95 File Offset: 0x00413E95
+	// Token: 0x17001477 RID: 5239
+	// (get) Token: 0x0600B021 RID: 45089 RVA: 0x0041AFCD File Offset: 0x004191CD
+	// (set) Token: 0x0600B022 RID: 45090 RVA: 0x0041AFD5 File Offset: 0x004191D5
 	public float CrosshairTimeoutTimer { get; set; }
 
-	// Token: 0x0600AF26 RID: 44838 RVA: 0x00415C9E File Offset: 0x00413E9E
+	// Token: 0x0600B023 RID: 45091 RVA: 0x0041AFDE File Offset: 0x004191DE
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Awake()
 	{
@@ -18,7 +18,7 @@ public class vp_FPInteractManager : MonoBehaviour
 		this.m_Camera = base.GetComponentInChildren<vp_FPCamera>();
 	}
 
-	// Token: 0x0600AF27 RID: 44839 RVA: 0x00415CB8 File Offset: 0x00413EB8
+	// Token: 0x0600B024 RID: 45092 RVA: 0x0041AFF8 File Offset: 0x004191F8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnEnable()
 	{
@@ -28,7 +28,7 @@ public class vp_FPInteractManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AF28 RID: 44840 RVA: 0x00415CD4 File Offset: 0x00413ED4
+	// Token: 0x0600B025 RID: 45093 RVA: 0x0041B014 File Offset: 0x00419214
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnDisable()
 	{
@@ -38,13 +38,13 @@ public class vp_FPInteractManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AF29 RID: 44841 RVA: 0x00415CF0 File Offset: 0x00413EF0
+	// Token: 0x0600B026 RID: 45094 RVA: 0x0041B030 File Offset: 0x00419230
 	public virtual void OnStart_Dead()
 	{
 		this.ShouldFinishInteraction();
 	}
 
-	// Token: 0x0600AF2A RID: 44842 RVA: 0x00415CFC File Offset: 0x00413EFC
+	// Token: 0x0600B027 RID: 45095 RVA: 0x0041B03C File Offset: 0x0041923C
 	public virtual void LateUpdate()
 	{
 		if (this.m_Player.Dead.Active)
@@ -58,7 +58,7 @@ public class vp_FPInteractManager : MonoBehaviour
 		this.InteractCrosshair();
 	}
 
-	// Token: 0x0600AF2B RID: 44843 RVA: 0x00415D68 File Offset: 0x00413F68
+	// Token: 0x0600B028 RID: 45096 RVA: 0x0041B0A8 File Offset: 0x004192A8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool CanStart_Interact()
 	{
@@ -88,7 +88,7 @@ public class vp_FPInteractManager : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x0600AF2C RID: 44844 RVA: 0x00415DCC File Offset: 0x00413FCC
+	// Token: 0x0600B029 RID: 45097 RVA: 0x0041B10C File Offset: 0x0041930C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool ShouldFinishInteraction()
 	{
@@ -103,7 +103,7 @@ public class vp_FPInteractManager : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x0600AF2D RID: 44845 RVA: 0x00415E38 File Offset: 0x00414038
+	// Token: 0x0600B02A RID: 45098 RVA: 0x0041B178 File Offset: 0x00419378
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void InteractCrosshair()
 	{
@@ -148,7 +148,7 @@ public class vp_FPInteractManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600AF2E RID: 44846 RVA: 0x00415F94 File Offset: 0x00414194
+	// Token: 0x0600B02B RID: 45099 RVA: 0x0041B2D4 File Offset: 0x004194D4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool FindInteractable(out vp_Interactable interactable)
 	{
@@ -169,7 +169,7 @@ public class vp_FPInteractManager : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x0600AF2F RID: 44847 RVA: 0x00416080 File Offset: 0x00414280
+	// Token: 0x0600B02C RID: 45100 RVA: 0x0041B3C0 File Offset: 0x004195C0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void ResetCrosshair(bool reset = true)
 	{
@@ -185,7 +185,7 @@ public class vp_FPInteractManager : MonoBehaviour
 		this.m_CurrentCrosshairInteractable = null;
 	}
 
-	// Token: 0x0600AF30 RID: 44848 RVA: 0x004160F0 File Offset: 0x004142F0
+	// Token: 0x0600B02D RID: 45101 RVA: 0x0041B430 File Offset: 0x00419630
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void OnControllerColliderHit(ControllerColliderHit hit)
 	{
@@ -210,9 +210,9 @@ public class vp_FPInteractManager : MonoBehaviour
 		hit.gameObject.SendMessage("TryInteract", this.m_Player, SendMessageOptions.DontRequireReceiver);
 	}
 
-	// Token: 0x1700143F RID: 5183
-	// (get) Token: 0x0600AF31 RID: 44849 RVA: 0x0041617B File Offset: 0x0041437B
-	// (set) Token: 0x0600AF32 RID: 44850 RVA: 0x00416183 File Offset: 0x00414383
+	// Token: 0x17001478 RID: 5240
+	// (get) Token: 0x0600B02E RID: 45102 RVA: 0x0041B4BB File Offset: 0x004196BB
+	// (set) Token: 0x0600B02F RID: 45103 RVA: 0x0041B4C3 File Offset: 0x004196C3
 	public virtual vp_Interactable OnValue_Interactable
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -227,9 +227,9 @@ public class vp_FPInteractManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17001440 RID: 5184
-	// (get) Token: 0x0600AF33 RID: 44851 RVA: 0x0041618C File Offset: 0x0041438C
-	// (set) Token: 0x0600AF34 RID: 44852 RVA: 0x00416194 File Offset: 0x00414394
+	// Token: 0x17001479 RID: 5241
+	// (get) Token: 0x0600B030 RID: 45104 RVA: 0x0041B4CC File Offset: 0x004196CC
+	// (set) Token: 0x0600B031 RID: 45105 RVA: 0x0041B4D4 File Offset: 0x004196D4
 	public virtual bool OnValue_CanInteract
 	{
 		[PublicizedFrom(EAccessModifier.Protected)]
@@ -244,56 +244,56 @@ public class vp_FPInteractManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040082D7 RID: 33495
+	// Token: 0x040083B0 RID: 33712
 	public float InteractDistance = 2f;
 
-	// Token: 0x040082D8 RID: 33496
+	// Token: 0x040083B1 RID: 33713
 	public float InteractDistance3rdPerson = 3f;
 
-	// Token: 0x040082D9 RID: 33497
+	// Token: 0x040083B2 RID: 33714
 	public float MaxInteractDistance = 25f;
 
-	// Token: 0x040082DB RID: 33499
+	// Token: 0x040083B4 RID: 33716
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_FPPlayerEventHandler m_Player;
 
-	// Token: 0x040082DC RID: 33500
+	// Token: 0x040083B5 RID: 33717
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_FPCamera m_Camera;
 
-	// Token: 0x040082DD RID: 33501
+	// Token: 0x040083B6 RID: 33718
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Interactable m_CurrentInteractable;
 
-	// Token: 0x040082DE RID: 33502
+	// Token: 0x040083B7 RID: 33719
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Texture m_OriginalCrosshair;
 
-	// Token: 0x040082DF RID: 33503
+	// Token: 0x040083B8 RID: 33720
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Interactable m_LastInteractable;
 
-	// Token: 0x040082E0 RID: 33504
+	// Token: 0x040083B9 RID: 33721
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public Dictionary<Collider, vp_Interactable> m_Interactables = new Dictionary<Collider, vp_Interactable>();
 
-	// Token: 0x040082E1 RID: 33505
+	// Token: 0x040083BA RID: 33722
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Interactable m_CurrentCrosshairInteractable;
 
-	// Token: 0x040082E2 RID: 33506
+	// Token: 0x040083BB RID: 33723
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public vp_Timer.Handle m_ShowTextTimer = new vp_Timer.Handle();
 
-	// Token: 0x040082E3 RID: 33507
+	// Token: 0x040083BC RID: 33724
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool m_CanInteract;

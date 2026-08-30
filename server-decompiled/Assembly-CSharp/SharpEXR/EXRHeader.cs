@@ -4,25 +4,25 @@ using SharpEXR.AttributeTypes;
 
 namespace SharpEXR
 {
-	// Token: 0x020016A1 RID: 5793
+	// Token: 0x020016C7 RID: 5831
 	public class EXRHeader
 	{
-		// Token: 0x170015CD RID: 5581
-		// (get) Token: 0x0600B4B2 RID: 46258 RVA: 0x00435F6C File Offset: 0x0043416C
-		// (set) Token: 0x0600B4B3 RID: 46259 RVA: 0x00435F74 File Offset: 0x00434174
+		// Token: 0x1700163F RID: 5695
+		// (get) Token: 0x0600B635 RID: 46645 RVA: 0x0043BCE4 File Offset: 0x00439EE4
+		// (set) Token: 0x0600B636 RID: 46646 RVA: 0x0043BCEC File Offset: 0x00439EEC
 		public Dictionary<string, EXRAttribute> Attributes
 		{
 			get; [PublicizedFrom(EAccessModifier.Protected)]
 			set;
 		}
 
-		// Token: 0x0600B4B4 RID: 46260 RVA: 0x00435F7D File Offset: 0x0043417D
+		// Token: 0x0600B637 RID: 46647 RVA: 0x0043BCF5 File Offset: 0x00439EF5
 		public EXRHeader()
 		{
 			this.Attributes = new Dictionary<string, EXRAttribute>();
 		}
 
-		// Token: 0x0600B4B5 RID: 46261 RVA: 0x00435F90 File Offset: 0x00434190
+		// Token: 0x0600B638 RID: 46648 RVA: 0x0043BD08 File Offset: 0x00439F08
 		public void Read(EXRFile file, IEXRReader reader)
 		{
 			EXRAttribute exrattribute;
@@ -32,7 +32,7 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x0600B4B6 RID: 46262 RVA: 0x00435FBC File Offset: 0x004341BC
+		// Token: 0x0600B639 RID: 46649 RVA: 0x0043BD34 File Offset: 0x00439F34
 		public bool TryGetAttribute<T>(string name, out T result)
 		{
 			EXRAttribute exrattribute;
@@ -55,8 +55,8 @@ namespace SharpEXR
 			return false;
 		}
 
-		// Token: 0x170015CE RID: 5582
-		// (get) Token: 0x0600B4B7 RID: 46263 RVA: 0x0043605F File Offset: 0x0043425F
+		// Token: 0x17001640 RID: 5696
+		// (get) Token: 0x0600B63A RID: 46650 RVA: 0x0043BDD7 File Offset: 0x00439FD7
 		public bool IsEmpty
 		{
 			get
@@ -65,8 +65,8 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x170015CF RID: 5583
-		// (get) Token: 0x0600B4B8 RID: 46264 RVA: 0x00436070 File Offset: 0x00434270
+		// Token: 0x17001641 RID: 5697
+		// (get) Token: 0x0600B63B RID: 46651 RVA: 0x0043BDE8 File Offset: 0x00439FE8
 		public int ChunkCount
 		{
 			get
@@ -80,8 +80,8 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x170015D0 RID: 5584
-		// (get) Token: 0x0600B4B9 RID: 46265 RVA: 0x00436098 File Offset: 0x00434298
+		// Token: 0x17001642 RID: 5698
+		// (get) Token: 0x0600B63C RID: 46652 RVA: 0x0043BE10 File Offset: 0x0043A010
 		public Box2I DataWindow
 		{
 			get
@@ -95,8 +95,8 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x170015D1 RID: 5585
-		// (get) Token: 0x0600B4BA RID: 46266 RVA: 0x004360C0 File Offset: 0x004342C0
+		// Token: 0x17001643 RID: 5699
+		// (get) Token: 0x0600B63D RID: 46653 RVA: 0x0043BE38 File Offset: 0x0043A038
 		public EXRCompression Compression
 		{
 			get
@@ -110,8 +110,8 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x170015D2 RID: 5586
-		// (get) Token: 0x0600B4BB RID: 46267 RVA: 0x004360E8 File Offset: 0x004342E8
+		// Token: 0x17001644 RID: 5700
+		// (get) Token: 0x0600B63E RID: 46654 RVA: 0x0043BE60 File Offset: 0x0043A060
 		public PartType Type
 		{
 			get
@@ -125,8 +125,8 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x170015D3 RID: 5587
-		// (get) Token: 0x0600B4BC RID: 46268 RVA: 0x00436110 File Offset: 0x00434310
+		// Token: 0x17001645 RID: 5701
+		// (get) Token: 0x0600B63F RID: 46655 RVA: 0x0043BE88 File Offset: 0x0043A088
 		public ChannelList Channels
 		{
 			get
@@ -140,8 +140,8 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x170015D4 RID: 5588
-		// (get) Token: 0x0600B4BD RID: 46269 RVA: 0x00436138 File Offset: 0x00434338
+		// Token: 0x17001646 RID: 5702
+		// (get) Token: 0x0600B640 RID: 46656 RVA: 0x0043BEB0 File Offset: 0x0043A0B0
 		public Chromaticities Chromaticities
 		{
 			get
@@ -157,7 +157,7 @@ namespace SharpEXR
 			}
 		}
 
-		// Token: 0x04008749 RID: 34633
+		// Token: 0x04008865 RID: 34917
 		public static readonly Chromaticities DefaultChromaticities = new Chromaticities(0.64f, 0.33f, 0.3f, 0.6f, 0.15f, 0.06f, 0.3127f, 0.329f);
 	}
 }

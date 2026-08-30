@@ -5,11 +5,11 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F5F RID: 3935
+// Token: 0x02000F78 RID: 3960
 [Preserve]
 public class XUiC_LightEditor : XUiController
 {
-	// Token: 0x06007BE3 RID: 31715 RVA: 0x002ED754 File Offset: 0x002EB954
+	// Token: 0x06007CD5 RID: 31957 RVA: 0x002F1F28 File Offset: 0x002F0128
 	public static void Open(LocalPlayerUI _playerUi, TileEntityLight _te, Vector3i _blockPos, World _world, BlockLight _block)
 	{
 		XUiC_LightEditor childByType = _playerUi.xui.FindWindowGroupByName(XUiC_LightEditor.ID).GetChildByType<XUiC_LightEditor>();
@@ -56,7 +56,7 @@ public class XUiC_LightEditor : XUiController
 		childByType.CopyUIValues(out childByType.startValues);
 	}
 
-	// Token: 0x06007BE4 RID: 31716 RVA: 0x002ED934 File Offset: 0x002EBB34
+	// Token: 0x06007CD6 RID: 31958 RVA: 0x002F2108 File Offset: 0x002F0308
 	public override void Init()
 	{
 		base.Init();
@@ -114,7 +114,7 @@ public class XUiC_LightEditor : XUiController
 		this.txtHex.OnChangeHandler += this.TxtHex_OnChangeHandler;
 	}
 
-	// Token: 0x06007BE5 RID: 31717 RVA: 0x002EDDC0 File Offset: 0x002EBFC0
+	// Token: 0x06007CD7 RID: 31959 RVA: 0x002F2594 File Offset: 0x002F0794
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnPaste_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -143,7 +143,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007BE6 RID: 31718 RVA: 0x002EDF89 File Offset: 0x002EC189
+	// Token: 0x06007CD8 RID: 31960 RVA: 0x002F275D File Offset: 0x002F095D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnCopy_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -153,7 +153,7 @@ public class XUiC_LightEditor : XUiController
 		this.btnPaste.ViewComponent.IsVisible = true;
 	}
 
-	// Token: 0x06007BE7 RID: 31719 RVA: 0x002EDFC0 File Offset: 0x002EC1C0
+	// Token: 0x06007CD9 RID: 31961 RVA: 0x002F2794 File Offset: 0x002F0994
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CopyUIValues(out XUiC_LightEditor.LightValues values)
 	{
@@ -173,13 +173,13 @@ public class XUiC_LightEditor : XUiController
 		values.stateDelay = (float)this.cbxDelay.Value;
 	}
 
-	// Token: 0x06007BE8 RID: 31720 RVA: 0x002EE090 File Offset: 0x002EC290
+	// Token: 0x06007CDA RID: 31962 RVA: 0x002F2864 File Offset: 0x002F0A64
 	public void AssignRate(float _rate)
 	{
 		this.cbxRate.Value = (double)_rate;
 	}
 
-	// Token: 0x06007BE9 RID: 31721 RVA: 0x002EE09F File Offset: 0x002EC29F
+	// Token: 0x06007CDB RID: 31963 RVA: 0x002F2873 File Offset: 0x002F0A73
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnOnOff_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -190,7 +190,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007BEA RID: 31722 RVA: 0x002EE0DC File Offset: 0x002EC2DC
+	// Token: 0x06007CDC RID: 31964 RVA: 0x002F28B0 File Offset: 0x002F0AB0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TxtHex_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -211,7 +211,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007BEB RID: 31723 RVA: 0x002EE178 File Offset: 0x002EC378
+	// Token: 0x06007CDD RID: 31965 RVA: 0x002F294C File Offset: 0x002F0B4C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TxtColorB_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -238,7 +238,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007BEC RID: 31724 RVA: 0x002EE258 File Offset: 0x002EC458
+	// Token: 0x06007CDE RID: 31966 RVA: 0x002F2A2C File Offset: 0x002F0C2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TxtColorG_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -265,7 +265,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007BED RID: 31725 RVA: 0x002EE338 File Offset: 0x002EC538
+	// Token: 0x06007CDF RID: 31967 RVA: 0x002F2B0C File Offset: 0x002F0D0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TxtColorR_OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -292,69 +292,69 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007BEE RID: 31726 RVA: 0x002EE415 File Offset: 0x002EC615
+	// Token: 0x06007CE0 RID: 31968 RVA: 0x002F2BE9 File Offset: 0x002F0DE9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxLightType_OnValueChanged(XUiController _sender, LightType _oldValue, LightType _newValue)
 	{
 		this.SetType(_newValue);
 	}
 
-	// Token: 0x06007BEF RID: 31727 RVA: 0x002EE41E File Offset: 0x002EC61E
+	// Token: 0x06007CE1 RID: 31969 RVA: 0x002F2BF2 File Offset: 0x002F0DF2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxColorPresetList_OnValueChanged(XUiController _sender, string _oldValue, string _newValue)
 	{
 		this.SetPreset(_newValue);
 	}
 
-	// Token: 0x06007BF0 RID: 31728 RVA: 0x002EE427 File Offset: 0x002EC627
+	// Token: 0x06007CE2 RID: 31970 RVA: 0x002F2BFB File Offset: 0x002F0DFB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxRange_OnValueChanged(XUiController _sender, double _oldValue, double _newValue)
 	{
 		this.SetRange((float)_newValue);
 	}
 
-	// Token: 0x06007BF1 RID: 31729 RVA: 0x002EE431 File Offset: 0x002EC631
+	// Token: 0x06007CE3 RID: 31971 RVA: 0x002F2C05 File Offset: 0x002F0E05
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxIntensity_OnValueChanged(XUiController _sender, double _oldValue, double _newValue)
 	{
 		this.SetIntensity((float)_newValue);
 	}
 
-	// Token: 0x06007BF2 RID: 31730 RVA: 0x002EE43B File Offset: 0x002EC63B
+	// Token: 0x06007CE4 RID: 31972 RVA: 0x002F2C0F File Offset: 0x002F0E0F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxAngle_OnValueChanged(XUiController _sender, double _oldValue, double _newValue)
 	{
 		this.SetAngle((float)_newValue);
 	}
 
-	// Token: 0x06007BF3 RID: 31731 RVA: 0x002EE445 File Offset: 0x002EC645
+	// Token: 0x06007CE5 RID: 31973 RVA: 0x002F2C19 File Offset: 0x002F0E19
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxRate_OnValueChanged(XUiController _sender, double _oldValue, double _newValue)
 	{
 		this.SetRate((float)_newValue);
 	}
 
-	// Token: 0x06007BF4 RID: 31732 RVA: 0x002EE44F File Offset: 0x002EC64F
+	// Token: 0x06007CE6 RID: 31974 RVA: 0x002F2C23 File Offset: 0x002F0E23
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxLightState_OnValueChanged(XUiController _sender, LightStateType _oldValue, LightStateType _newValue)
 	{
 		this.SetState(_newValue);
 	}
 
-	// Token: 0x06007BF5 RID: 31733 RVA: 0x002EE458 File Offset: 0x002EC658
+	// Token: 0x06007CE7 RID: 31975 RVA: 0x002F2C2C File Offset: 0x002F0E2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxLightShadow_OnValueChanged(XUiController _sender, LightShadows _oldValue, LightShadows _newValue)
 	{
 		this.SetShadow(_newValue);
 	}
 
-	// Token: 0x06007BF6 RID: 31734 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06007CE8 RID: 31976 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void CbxDelay_OnValueChanged(XUiController _sender, double _oldValue, double _newValue)
 	{
 	}
 
-	// Token: 0x06007BF7 RID: 31735 RVA: 0x002EE464 File Offset: 0x002EC664
+	// Token: 0x06007CE9 RID: 31977 RVA: 0x002F2C38 File Offset: 0x002F0E38
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnRestore_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -383,14 +383,14 @@ public class XUiC_LightEditor : XUiController
 		this.SetLightFromValues(this.defaultValues);
 	}
 
-	// Token: 0x06007BF8 RID: 31736 RVA: 0x002A4621 File Offset: 0x002A2821
+	// Token: 0x06007CEA RID: 31978 RVA: 0x002A7AB5 File Offset: 0x002A5CB5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnCancel_OnPressed(XUiController _sender, int _mouseButton)
 	{
 		this.xui.playerUI.windowManager.Close(base.WindowGroup, false);
 	}
 
-	// Token: 0x06007BF9 RID: 31737 RVA: 0x002EE5D4 File Offset: 0x002EC7D4
+	// Token: 0x06007CEB RID: 31979 RVA: 0x002F2DA8 File Offset: 0x002F0FA8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BtnSave_OnPressed(XUiController _sender, int _mouseButton)
 	{
@@ -434,7 +434,7 @@ public class XUiC_LightEditor : XUiController
 		this.xui.playerUI.windowManager.Close("lightProperties");
 	}
 
-	// Token: 0x06007BFA RID: 31738 RVA: 0x002EE792 File Offset: 0x002EC992
+	// Token: 0x06007CEC RID: 31980 RVA: 0x002F2F66 File Offset: 0x002F1166
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OpenLightType()
 	{
@@ -444,7 +444,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007BFB RID: 31739 RVA: 0x002EE7B8 File Offset: 0x002EC9B8
+	// Token: 0x06007CED RID: 31981 RVA: 0x002F2F8C File Offset: 0x002F118C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OpenLightShadows()
 	{
@@ -454,7 +454,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007BFC RID: 31740 RVA: 0x002EE7DE File Offset: 0x002EC9DE
+	// Token: 0x06007CEE RID: 31982 RVA: 0x002F2FB2 File Offset: 0x002F11B2
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OpenRange()
 	{
@@ -464,7 +464,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007BFD RID: 31741 RVA: 0x002EE805 File Offset: 0x002ECA05
+	// Token: 0x06007CEF RID: 31983 RVA: 0x002F2FD9 File Offset: 0x002F11D9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OpenIntensity()
 	{
@@ -474,7 +474,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007BFE RID: 31742 RVA: 0x002EE82C File Offset: 0x002ECA2C
+	// Token: 0x06007CF0 RID: 31984 RVA: 0x002F3000 File Offset: 0x002F1200
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OpenSelectedColor()
 	{
@@ -484,7 +484,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007BFF RID: 31743 RVA: 0x002EE852 File Offset: 0x002ECA52
+	// Token: 0x06007CF1 RID: 31985 RVA: 0x002F3026 File Offset: 0x002F1226
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OpenAngle()
 	{
@@ -494,7 +494,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007C00 RID: 31744 RVA: 0x002EE888 File Offset: 0x002ECA88
+	// Token: 0x06007CF2 RID: 31986 RVA: 0x002F305C File Offset: 0x002F125C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OpenColorRGB()
 	{
@@ -507,7 +507,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007C01 RID: 31745 RVA: 0x002EE8F9 File Offset: 0x002ECAF9
+	// Token: 0x06007CF3 RID: 31987 RVA: 0x002F30CD File Offset: 0x002F12CD
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OpenHex()
 	{
@@ -517,7 +517,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007C02 RID: 31746 RVA: 0x002EE920 File Offset: 0x002ECB20
+	// Token: 0x06007CF4 RID: 31988 RVA: 0x002F30F4 File Offset: 0x002F12F4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OpenState()
 	{
@@ -531,7 +531,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007C03 RID: 31747 RVA: 0x002EE978 File Offset: 0x002ECB78
+	// Token: 0x06007CF5 RID: 31989 RVA: 0x002F314C File Offset: 0x002F134C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OpenRate()
 	{
@@ -541,7 +541,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007C04 RID: 31748 RVA: 0x002EE99F File Offset: 0x002ECB9F
+	// Token: 0x06007CF6 RID: 31990 RVA: 0x002F3173 File Offset: 0x002F1373
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OpenDelay()
 	{
@@ -551,7 +551,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007C05 RID: 31749 RVA: 0x002EE9C8 File Offset: 0x002ECBC8
+	// Token: 0x06007CF7 RID: 31991 RVA: 0x002F319C File Offset: 0x002F139C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OpenAllValues()
 	{
@@ -572,7 +572,7 @@ public class XUiC_LightEditor : XUiController
 		this.OpenDelay();
 	}
 
-	// Token: 0x06007C06 RID: 31750 RVA: 0x002EEA48 File Offset: 0x002ECC48
+	// Token: 0x06007CF8 RID: 31992 RVA: 0x002F321C File Offset: 0x002F141C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LoadDefaultValues()
 	{
@@ -586,7 +586,7 @@ public class XUiC_LightEditor : XUiController
 		this.defaultValues = this.MakeValues(component);
 	}
 
-	// Token: 0x06007C07 RID: 31751 RVA: 0x002EEAC8 File Offset: 0x002ECCC8
+	// Token: 0x06007CF9 RID: 31993 RVA: 0x002F329C File Offset: 0x002F149C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_LightEditor.LightValues MakeValues(LightLOD _lightLOD)
 	{
@@ -605,7 +605,7 @@ public class XUiC_LightEditor : XUiController
 		return lightValues;
 	}
 
-	// Token: 0x06007C08 RID: 31752 RVA: 0x002EEB58 File Offset: 0x002ECD58
+	// Token: 0x06007CFA RID: 31994 RVA: 0x002F332C File Offset: 0x002F152C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetType(LightType _newType)
 	{
@@ -632,7 +632,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007C09 RID: 31753 RVA: 0x002EEBE4 File Offset: 0x002ECDE4
+	// Token: 0x06007CFB RID: 31995 RVA: 0x002F33B8 File Offset: 0x002F15B8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetPreset(string _newPreset)
 	{
@@ -648,7 +648,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007C0A RID: 31754 RVA: 0x002EEC8C File Offset: 0x002ECE8C
+	// Token: 0x06007CFC RID: 31996 RVA: 0x002F3460 File Offset: 0x002F1660
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetRange(float _newRange)
 	{
@@ -662,7 +662,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007C0B RID: 31755 RVA: 0x002EECDB File Offset: 0x002ECEDB
+	// Token: 0x06007CFD RID: 31997 RVA: 0x002F34AF File Offset: 0x002F16AF
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetIntensity(float _newIntensity)
 	{
@@ -672,7 +672,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007C0C RID: 31756 RVA: 0x002EECF7 File Offset: 0x002ECEF7
+	// Token: 0x06007CFE RID: 31998 RVA: 0x002F34CB File Offset: 0x002F16CB
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetAngle(float _newAngle)
 	{
@@ -682,7 +682,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007C0D RID: 31757 RVA: 0x002EED13 File Offset: 0x002ECF13
+	// Token: 0x06007CFF RID: 31999 RVA: 0x002F34E7 File Offset: 0x002F16E7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetRate(float _newRate)
 	{
@@ -692,7 +692,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007C0E RID: 31758 RVA: 0x002EED30 File Offset: 0x002ECF30
+	// Token: 0x06007D00 RID: 32000 RVA: 0x002F3504 File Offset: 0x002F1704
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetState(LightStateType _newState)
 	{
@@ -712,7 +712,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007C0F RID: 31759 RVA: 0x002EEDC4 File Offset: 0x002ECFC4
+	// Token: 0x06007D01 RID: 32001 RVA: 0x002F3598 File Offset: 0x002F1798
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetShadow(LightShadows _newShadow)
 	{
@@ -722,7 +722,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007C10 RID: 31760 RVA: 0x002EEDE0 File Offset: 0x002ECFE0
+	// Token: 0x06007D02 RID: 32002 RVA: 0x002F35B4 File Offset: 0x002F17B4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetDelay(float _newDelay)
 	{
@@ -732,7 +732,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007C11 RID: 31761 RVA: 0x002EEE00 File Offset: 0x002ED000
+	// Token: 0x06007D03 RID: 32003 RVA: 0x002F35D4 File Offset: 0x002F17D4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetRGB(Color32 color)
 	{
@@ -741,7 +741,7 @@ public class XUiC_LightEditor : XUiController
 		this.txtColorB.Text = color.b.ToString();
 	}
 
-	// Token: 0x06007C12 RID: 31762 RVA: 0x002EEE54 File Offset: 0x002ED054
+	// Token: 0x06007D04 RID: 32004 RVA: 0x002F3628 File Offset: 0x002F1828
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetHex(Color32 color)
 	{
@@ -751,7 +751,7 @@ public class XUiC_LightEditor : XUiController
 		this.txtHex.Text = text + text2 + text3;
 	}
 
-	// Token: 0x06007C13 RID: 31763 RVA: 0x002EEF20 File Offset: 0x002ED120
+	// Token: 0x06007D05 RID: 32005 RVA: 0x002F36F4 File Offset: 0x002F18F4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetLightFromValues(XUiC_LightEditor.LightValues values)
 	{
@@ -770,7 +770,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007C14 RID: 31764 RVA: 0x002EEFF2 File Offset: 0x002ED1F2
+	// Token: 0x06007D06 RID: 32006 RVA: 0x002F37C6 File Offset: 0x002F19C6
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetEmissiveColor(Color _color)
 	{
@@ -780,7 +780,7 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007C15 RID: 31765 RVA: 0x002EF010 File Offset: 0x002ED210
+	// Token: 0x06007D07 RID: 32007 RVA: 0x002F37E4 File Offset: 0x002F19E4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ColorPicker_OnSelectedColorChanged(Color color)
 	{
@@ -794,7 +794,7 @@ public class XUiC_LightEditor : XUiController
 		this.SetEmissiveColor(color);
 	}
 
-	// Token: 0x06007C16 RID: 31766 RVA: 0x002EF090 File Offset: 0x002ED290
+	// Token: 0x06007D08 RID: 32008 RVA: 0x002F3864 File Offset: 0x002F1A64
 	public override void OnClose()
 	{
 		Log.Out("CLOSE " + this.startValues.stateType.ToString());
@@ -806,14 +806,14 @@ public class XUiC_LightEditor : XUiController
 		}
 	}
 
-	// Token: 0x06007C17 RID: 31767 RVA: 0x002EF0ED File Offset: 0x002ED2ED
+	// Token: 0x06007D09 RID: 32009 RVA: 0x002F38C1 File Offset: 0x002F1AC1
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.isOpen = true;
 	}
 
-	// Token: 0x04005B9F RID: 23455
+	// Token: 0x04005C66 RID: 23654
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<string, Color> ColorPresets = new Dictionary<string, Color>
 	{
@@ -879,197 +879,197 @@ public class XUiC_LightEditor : XUiController
 		}
 	};
 
-	// Token: 0x04005BA0 RID: 23456
+	// Token: 0x04005C67 RID: 23655
 	public static string ID = "";
 
-	// Token: 0x04005BA1 RID: 23457
+	// Token: 0x04005C68 RID: 23656
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<LightType> cbxLightType;
 
-	// Token: 0x04005BA2 RID: 23458
+	// Token: 0x04005C69 RID: 23657
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxList<string> cbxColorPresetList;
 
-	// Token: 0x04005BA3 RID: 23459
+	// Token: 0x04005C6A RID: 23658
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxEnum<LightShadows> cbxLightShadow;
 
-	// Token: 0x04005BA4 RID: 23460
+	// Token: 0x04005C6B RID: 23659
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxEnum<LightStateType> cbxLightState;
 
-	// Token: 0x04005BA5 RID: 23461
+	// Token: 0x04005C6C RID: 23660
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxRange;
 
-	// Token: 0x04005BA6 RID: 23462
+	// Token: 0x04005C6D RID: 23661
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxIntensity;
 
-	// Token: 0x04005BA7 RID: 23463
+	// Token: 0x04005C6E RID: 23662
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxAngle;
 
-	// Token: 0x04005BA8 RID: 23464
+	// Token: 0x04005C6F RID: 23663
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxRate;
 
-	// Token: 0x04005BA9 RID: 23465
+	// Token: 0x04005C70 RID: 23664
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ComboBoxFloat cbxDelay;
 
-	// Token: 0x04005BAA RID: 23466
+	// Token: 0x04005C71 RID: 23665
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ColorPicker colorPicker;
 
-	// Token: 0x04005BAB RID: 23467
+	// Token: 0x04005C72 RID: 23666
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiView panelAngle;
 
-	// Token: 0x04005BAC RID: 23468
+	// Token: 0x04005C73 RID: 23667
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiView panelRate;
 
-	// Token: 0x04005BAD RID: 23469
+	// Token: 0x04005C74 RID: 23668
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiView panelDelay;
 
-	// Token: 0x04005BAE RID: 23470
+	// Token: 0x04005C75 RID: 23669
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnOk;
 
-	// Token: 0x04005BAF RID: 23471
+	// Token: 0x04005C76 RID: 23670
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnCopy;
 
-	// Token: 0x04005BB0 RID: 23472
+	// Token: 0x04005C77 RID: 23671
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnPaste;
 
-	// Token: 0x04005BB1 RID: 23473
+	// Token: 0x04005C78 RID: 23672
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnCancel;
 
-	// Token: 0x04005BB2 RID: 23474
+	// Token: 0x04005C79 RID: 23673
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnRestore;
 
-	// Token: 0x04005BB3 RID: 23475
+	// Token: 0x04005C7A RID: 23674
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_SimpleButton btnOnOff;
 
-	// Token: 0x04005BB4 RID: 23476
+	// Token: 0x04005C7B RID: 23675
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtColorR;
 
-	// Token: 0x04005BB5 RID: 23477
+	// Token: 0x04005C7C RID: 23676
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtColorG;
 
-	// Token: 0x04005BB6 RID: 23478
+	// Token: 0x04005C7D RID: 23677
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtColorB;
 
-	// Token: 0x04005BB7 RID: 23479
+	// Token: 0x04005C7E RID: 23678
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtHex;
 
-	// Token: 0x04005BB8 RID: 23480
+	// Token: 0x04005C7F RID: 23679
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TileEntityLight tileEntityLight;
 
-	// Token: 0x04005BB9 RID: 23481
+	// Token: 0x04005C80 RID: 23680
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool isOpen;
 
-	// Token: 0x04005BBA RID: 23482
+	// Token: 0x04005C81 RID: 23681
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool shouldChangePreset = true;
 
-	// Token: 0x04005BBB RID: 23483
+	// Token: 0x04005C82 RID: 23682
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_LightEditor.LightValues startValues;
 
-	// Token: 0x04005BBC RID: 23484
+	// Token: 0x04005C83 RID: 23683
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_LightEditor.LightValues defaultValues;
 
-	// Token: 0x04005BBD RID: 23485
+	// Token: 0x04005C84 RID: 23684
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool hasCopiedValues;
 
-	// Token: 0x04005BBE RID: 23486
+	// Token: 0x04005C85 RID: 23685
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static XUiC_LightEditor.LightValues copyValues;
 
-	// Token: 0x04005BBF RID: 23487
+	// Token: 0x04005C86 RID: 23686
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string copyColorPreset;
 
-	// Token: 0x04005BC0 RID: 23488
+	// Token: 0x04005C87 RID: 23687
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WireFrameSphere rangeGizmo;
 
-	// Token: 0x04005BC1 RID: 23489
+	// Token: 0x04005C88 RID: 23688
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i blockPos;
 
-	// Token: 0x04005BC2 RID: 23490
+	// Token: 0x04005C89 RID: 23689
 	[PublicizedFrom(EAccessModifier.Private)]
 	public World world;
 
-	// Token: 0x04005BC3 RID: 23491
+	// Token: 0x04005C8A RID: 23690
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Chunk chunk;
 
-	// Token: 0x04005BC4 RID: 23492
+	// Token: 0x04005C8B RID: 23691
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockLight block;
 
-	// Token: 0x04005BC5 RID: 23493
+	// Token: 0x04005C8C RID: 23692
 	public LightLOD lightLOD;
 
-	// Token: 0x04005BC6 RID: 23494
+	// Token: 0x04005C8D RID: 23693
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Light light;
 
-	// Token: 0x02000F60 RID: 3936
+	// Token: 0x02000F79 RID: 3961
 	public struct LightValues
 	{
-		// Token: 0x06007C1A RID: 31770 RVA: 0x002EF3F8 File Offset: 0x002ED5F8
+		// Token: 0x06007D0C RID: 32012 RVA: 0x002F3BCC File Offset: 0x002F1DCC
 		public bool IsEqual(XUiC_LightEditor.LightValues other)
 		{
 			return this.type == other.type && this.shadows == other.shadows && this.range == other.range && this.intensity == other.intensity && !(this.color != other.color) && this.spotAngle == other.spotAngle && !(this.emissiveColor != other.emissiveColor) && this.stateType == other.stateType && this.stateRate == other.stateRate && this.stateDelay == other.stateDelay;
 		}
 
-		// Token: 0x04005BC7 RID: 23495
+		// Token: 0x04005C8E RID: 23694
 		public LightType type;
 
-		// Token: 0x04005BC8 RID: 23496
+		// Token: 0x04005C8F RID: 23695
 		public LightShadows shadows;
 
-		// Token: 0x04005BC9 RID: 23497
+		// Token: 0x04005C90 RID: 23696
 		public float range;
 
-		// Token: 0x04005BCA RID: 23498
+		// Token: 0x04005C91 RID: 23697
 		public float intensity;
 
-		// Token: 0x04005BCB RID: 23499
+		// Token: 0x04005C92 RID: 23698
 		public Color color;
 
-		// Token: 0x04005BCC RID: 23500
+		// Token: 0x04005C93 RID: 23699
 		public float spotAngle;
 
-		// Token: 0x04005BCD RID: 23501
+		// Token: 0x04005C94 RID: 23700
 		public Color emissiveColor;
 
-		// Token: 0x04005BCE RID: 23502
+		// Token: 0x04005C95 RID: 23701
 		public LightStateType stateType;
 
-		// Token: 0x04005BCF RID: 23503
+		// Token: 0x04005C96 RID: 23702
 		public float stateRate;
 
-		// Token: 0x04005BD0 RID: 23504
+		// Token: 0x04005C97 RID: 23703
 		public float stateDelay;
 	}
 }

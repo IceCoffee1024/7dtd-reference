@@ -7,12 +7,12 @@ using Twitch;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020004C1 RID: 1217
+// Token: 0x020004C5 RID: 1221
 [Preserve]
 public class EntityPlayer : EntityAlive
 {
-	// Token: 0x1700044A RID: 1098
-	// (get) Token: 0x06002680 RID: 9856 RVA: 0x000EB5C7 File Offset: 0x000E97C7
+	// Token: 0x1700044E RID: 1102
+	// (get) Token: 0x060026A2 RID: 9890 RVA: 0x000EC21B File Offset: 0x000EA41B
 	public PersistentPlayerData PersistentPlayerData
 	{
 		get
@@ -26,8 +26,8 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x1700044B RID: 1099
-	// (get) Token: 0x06002681 RID: 9857 RVA: 0x000EB5E4 File Offset: 0x000E97E4
+	// Token: 0x1700044F RID: 1103
+	// (get) Token: 0x060026A3 RID: 9891 RVA: 0x000EC238 File Offset: 0x000EA438
 	public string PlayerDisplayName
 	{
 		get
@@ -46,22 +46,22 @@ public class EntityPlayer : EntityAlive
 	}
 
 	// Token: 0x1400001C RID: 28
-	// (add) Token: 0x06002682 RID: 9858 RVA: 0x000EB620 File Offset: 0x000E9820
-	// (remove) Token: 0x06002683 RID: 9859 RVA: 0x000EB658 File Offset: 0x000E9858
+	// (add) Token: 0x060026A4 RID: 9892 RVA: 0x000EC274 File Offset: 0x000EA474
+	// (remove) Token: 0x060026A5 RID: 9893 RVA: 0x000EC2AC File Offset: 0x000EA4AC
 	public event EntityPlayer.OnPlayerTeleportDelegate PlayerTeleportedDelegates;
 
-	// Token: 0x1700044C RID: 1100
-	// (get) Token: 0x06002684 RID: 9860 RVA: 0x000EB68D File Offset: 0x000E988D
-	// (set) Token: 0x06002685 RID: 9861 RVA: 0x000EB695 File Offset: 0x000E9895
+	// Token: 0x17000450 RID: 1104
+	// (get) Token: 0x060026A6 RID: 9894 RVA: 0x000EC2E1 File Offset: 0x000EA4E1
+	// (set) Token: 0x060026A7 RID: 9895 RVA: 0x000EC2E9 File Offset: 0x000EA4E9
 	public int CarryCapacity
 	{
 		get; [PublicizedFrom(EAccessModifier.Protected)]
 		set;
 	}
 
-	// Token: 0x1700044D RID: 1101
-	// (get) Token: 0x06002686 RID: 9862 RVA: 0x000EB69E File Offset: 0x000E989E
-	// (set) Token: 0x06002687 RID: 9863 RVA: 0x000EB6A8 File Offset: 0x000E98A8
+	// Token: 0x17000451 RID: 1105
+	// (get) Token: 0x060026A8 RID: 9896 RVA: 0x000EC2F2 File Offset: 0x000EA4F2
+	// (set) Token: 0x060026A9 RID: 9897 RVA: 0x000EC2FC File Offset: 0x000EA4FC
 	public bool TwitchEnabled
 	{
 		get
@@ -82,9 +82,9 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x1700044E RID: 1102
-	// (get) Token: 0x06002688 RID: 9864 RVA: 0x000EB6FE File Offset: 0x000E98FE
-	// (set) Token: 0x06002689 RID: 9865 RVA: 0x000EB708 File Offset: 0x000E9908
+	// Token: 0x17000452 RID: 1106
+	// (get) Token: 0x060026AA RID: 9898 RVA: 0x000EC352 File Offset: 0x000EA552
+	// (set) Token: 0x060026AB RID: 9899 RVA: 0x000EC35C File Offset: 0x000EA55C
 	public bool TwitchSafe
 	{
 		get
@@ -107,9 +107,9 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x1700044F RID: 1103
-	// (get) Token: 0x0600268A RID: 9866 RVA: 0x000EB76F File Offset: 0x000E996F
-	// (set) Token: 0x0600268B RID: 9867 RVA: 0x000EB777 File Offset: 0x000E9977
+	// Token: 0x17000453 RID: 1107
+	// (get) Token: 0x060026AC RID: 9900 RVA: 0x000EC3C3 File Offset: 0x000EA5C3
+	// (set) Token: 0x060026AD RID: 9901 RVA: 0x000EC3CB File Offset: 0x000EA5CB
 	public TwitchVoteLockTypes TwitchVoteLock
 	{
 		get
@@ -126,9 +126,9 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x17000450 RID: 1104
-	// (get) Token: 0x0600268C RID: 9868 RVA: 0x000EB79F File Offset: 0x000E999F
-	// (set) Token: 0x0600268D RID: 9869 RVA: 0x000EB7A7 File Offset: 0x000E99A7
+	// Token: 0x17000454 RID: 1108
+	// (get) Token: 0x060026AE RID: 9902 RVA: 0x000EC3F3 File Offset: 0x000EA5F3
+	// (set) Token: 0x060026AF RID: 9903 RVA: 0x000EC3FB File Offset: 0x000EA5FB
 	public bool TwitchVisionDisabled
 	{
 		get
@@ -145,9 +145,9 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x17000451 RID: 1105
-	// (get) Token: 0x0600268E RID: 9870 RVA: 0x000EB7CF File Offset: 0x000E99CF
-	// (set) Token: 0x0600268F RID: 9871 RVA: 0x000EB7D7 File Offset: 0x000E99D7
+	// Token: 0x17000455 RID: 1109
+	// (get) Token: 0x060026B0 RID: 9904 RVA: 0x000EC423 File Offset: 0x000EA623
+	// (set) Token: 0x060026B1 RID: 9905 RVA: 0x000EC42B File Offset: 0x000EA62B
 	public EntityPlayer.TwitchActionsStates TwitchActionsEnabled
 	{
 		get
@@ -164,9 +164,9 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x17000452 RID: 1106
-	// (get) Token: 0x06002690 RID: 9872 RVA: 0x000EB7FF File Offset: 0x000E99FF
-	// (set) Token: 0x06002691 RID: 9873 RVA: 0x000EB807 File Offset: 0x000E9A07
+	// Token: 0x17000456 RID: 1110
+	// (get) Token: 0x060026B2 RID: 9906 RVA: 0x000EC453 File Offset: 0x000EA653
+	// (set) Token: 0x060026B3 RID: 9907 RVA: 0x000EC45B File Offset: 0x000EA65B
 	public bool IsSpectator
 	{
 		get
@@ -182,8 +182,8 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x17000453 RID: 1107
-	// (get) Token: 0x06002692 RID: 9874 RVA: 0x000EB840 File Offset: 0x000E9A40
+	// Token: 0x17000457 RID: 1111
+	// (get) Token: 0x060026B4 RID: 9908 RVA: 0x000EC494 File Offset: 0x000EA694
 	public bool IsFriendOfLocalPlayer
 	{
 		get
@@ -198,9 +198,9 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x17000454 RID: 1108
-	// (get) Token: 0x06002693 RID: 9875 RVA: 0x000EB87F File Offset: 0x000E9A7F
-	// (set) Token: 0x06002694 RID: 9876 RVA: 0x000EB888 File Offset: 0x000E9A88
+	// Token: 0x17000458 RID: 1112
+	// (get) Token: 0x060026B5 RID: 9909 RVA: 0x000EC4D3 File Offset: 0x000EA6D3
+	// (set) Token: 0x060026B6 RID: 9910 RVA: 0x000EC4DC File Offset: 0x000EA6DC
 	public Vector3i markerPosition
 	{
 		get
@@ -234,31 +234,31 @@ public class EntityPlayer : EntityAlive
 	}
 
 	// Token: 0x1400001D RID: 29
-	// (add) Token: 0x06002695 RID: 9877 RVA: 0x000EB92C File Offset: 0x000E9B2C
-	// (remove) Token: 0x06002696 RID: 9878 RVA: 0x000EB964 File Offset: 0x000E9B64
+	// (add) Token: 0x060026B7 RID: 9911 RVA: 0x000EC580 File Offset: 0x000EA780
+	// (remove) Token: 0x060026B8 RID: 9912 RVA: 0x000EC5B8 File Offset: 0x000EA7B8
 	public event QuestJournal_QuestEvent QuestAccepted;
 
 	// Token: 0x1400001E RID: 30
-	// (add) Token: 0x06002697 RID: 9879 RVA: 0x000EB99C File Offset: 0x000E9B9C
-	// (remove) Token: 0x06002698 RID: 9880 RVA: 0x000EB9D4 File Offset: 0x000E9BD4
+	// (add) Token: 0x060026B9 RID: 9913 RVA: 0x000EC5F0 File Offset: 0x000EA7F0
+	// (remove) Token: 0x060026BA RID: 9914 RVA: 0x000EC628 File Offset: 0x000EA828
 	public event QuestJournal_QuestEvent QuestChanged;
 
 	// Token: 0x1400001F RID: 31
-	// (add) Token: 0x06002699 RID: 9881 RVA: 0x000EBA0C File Offset: 0x000E9C0C
-	// (remove) Token: 0x0600269A RID: 9882 RVA: 0x000EBA44 File Offset: 0x000E9C44
+	// (add) Token: 0x060026BB RID: 9915 RVA: 0x000EC660 File Offset: 0x000EA860
+	// (remove) Token: 0x060026BC RID: 9916 RVA: 0x000EC698 File Offset: 0x000EA898
 	public event QuestJournal_QuestEvent QuestRemoved;
 
 	// Token: 0x14000020 RID: 32
-	// (add) Token: 0x0600269B RID: 9883 RVA: 0x000EBA7C File Offset: 0x000E9C7C
-	// (remove) Token: 0x0600269C RID: 9884 RVA: 0x000EBAB4 File Offset: 0x000E9CB4
+	// (add) Token: 0x060026BD RID: 9917 RVA: 0x000EC6D0 File Offset: 0x000EA8D0
+	// (remove) Token: 0x060026BE RID: 9918 RVA: 0x000EC708 File Offset: 0x000EA908
 	public event QuestJournal_QuestSharedEvent SharedQuestAdded;
 
 	// Token: 0x14000021 RID: 33
-	// (add) Token: 0x0600269D RID: 9885 RVA: 0x000EBAEC File Offset: 0x000E9CEC
-	// (remove) Token: 0x0600269E RID: 9886 RVA: 0x000EBB24 File Offset: 0x000E9D24
+	// (add) Token: 0x060026BF RID: 9919 RVA: 0x000EC740 File Offset: 0x000EA940
+	// (remove) Token: 0x060026C0 RID: 9920 RVA: 0x000EC778 File Offset: 0x000EA978
 	public event QuestJournal_QuestSharedEvent SharedQuestRemoved;
 
-	// Token: 0x0600269F RID: 9887 RVA: 0x000EBB59 File Offset: 0x000E9D59
+	// Token: 0x060026C1 RID: 9921 RVA: 0x000EC7AD File Offset: 0x000EA9AD
 	public void TriggerQuestAddedEvent(Quest _q)
 	{
 		QuestJournal_QuestEvent questAccepted = this.QuestAccepted;
@@ -269,7 +269,7 @@ public class EntityPlayer : EntityAlive
 		questAccepted(_q);
 	}
 
-	// Token: 0x060026A0 RID: 9888 RVA: 0x000EBB6C File Offset: 0x000E9D6C
+	// Token: 0x060026C2 RID: 9922 RVA: 0x000EC7C0 File Offset: 0x000EA9C0
 	public void TriggerQuestChangedEvent(Quest _q)
 	{
 		QuestJournal_QuestEvent questChanged = this.QuestChanged;
@@ -280,7 +280,7 @@ public class EntityPlayer : EntityAlive
 		questChanged(_q);
 	}
 
-	// Token: 0x060026A1 RID: 9889 RVA: 0x000EBB7F File Offset: 0x000E9D7F
+	// Token: 0x060026C3 RID: 9923 RVA: 0x000EC7D3 File Offset: 0x000EA9D3
 	public void TriggerQuestRemovedEvent(Quest _q)
 	{
 		QuestJournal_QuestEvent questRemoved = this.QuestRemoved;
@@ -291,7 +291,7 @@ public class EntityPlayer : EntityAlive
 		questRemoved(_q);
 	}
 
-	// Token: 0x060026A2 RID: 9890 RVA: 0x000EBB92 File Offset: 0x000E9D92
+	// Token: 0x060026C4 RID: 9924 RVA: 0x000EC7E6 File Offset: 0x000EA9E6
 	public void TriggerSharedQuestAddedEvent(SharedQuestEntry _entry)
 	{
 		if (this.SharedQuestAdded != null)
@@ -302,7 +302,7 @@ public class EntityPlayer : EntityAlive
 		Log.Warning(string.Format("No SharedQuestAdded listeners! Player: {0}", this));
 	}
 
-	// Token: 0x060026A3 RID: 9891 RVA: 0x000EBBB9 File Offset: 0x000E9DB9
+	// Token: 0x060026C5 RID: 9925 RVA: 0x000EC80D File Offset: 0x000EAA0D
 	public void TriggerSharedQuestRemovedEvent(SharedQuestEntry _entry)
 	{
 		QuestJournal_QuestSharedEvent sharedQuestRemoved = this.SharedQuestRemoved;
@@ -313,9 +313,9 @@ public class EntityPlayer : EntityAlive
 		sharedQuestRemoved(_entry);
 	}
 
-	// Token: 0x17000455 RID: 1109
-	// (get) Token: 0x060026A4 RID: 9892 RVA: 0x000EBBCC File Offset: 0x000E9DCC
-	// (set) Token: 0x060026A5 RID: 9893 RVA: 0x000EBBD4 File Offset: 0x000E9DD4
+	// Token: 0x17000459 RID: 1113
+	// (get) Token: 0x060026C6 RID: 9926 RVA: 0x000EC820 File Offset: 0x000EAA20
+	// (set) Token: 0x060026C7 RID: 9927 RVA: 0x000EC828 File Offset: 0x000EAA28
 	public Vector3i RentedVMPosition
 	{
 		get
@@ -347,9 +347,9 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x17000456 RID: 1110
-	// (get) Token: 0x060026A6 RID: 9894 RVA: 0x000EBC60 File Offset: 0x000E9E60
-	// (set) Token: 0x060026A7 RID: 9895 RVA: 0x000EBCC3 File Offset: 0x000E9EC3
+	// Token: 0x1700045A RID: 1114
+	// (get) Token: 0x060026C8 RID: 9928 RVA: 0x000EC8B4 File Offset: 0x000EAAB4
+	// (set) Token: 0x060026C9 RID: 9929 RVA: 0x000EC917 File Offset: 0x000EAB17
 	public bool IsAdmin
 	{
 		get
@@ -375,7 +375,7 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x060026A8 RID: 9896 RVA: 0x000EBCD8 File Offset: 0x000E9ED8
+	// Token: 0x060026CA RID: 9930 RVA: 0x000EC92C File Offset: 0x000EAB2C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Awake()
 	{
@@ -386,7 +386,7 @@ public class EntityPlayer : EntityAlive
 		this.bWillRespawn = true;
 	}
 
-	// Token: 0x060026A9 RID: 9897 RVA: 0x000EBD38 File Offset: 0x000E9F38
+	// Token: 0x060026CB RID: 9931 RVA: 0x000EC98C File Offset: 0x000EAB8C
 	public override void Init(int _entityClass, EntityInstanceAssets _assets, EModelInstanceAssets _eModelAssets)
 	{
 		this.gameStageBornAtWorldTime = ulong.MaxValue;
@@ -403,7 +403,7 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x060026AA RID: 9898 RVA: 0x000EBD9C File Offset: 0x000E9F9C
+	// Token: 0x060026CC RID: 9932 RVA: 0x000EC9F0 File Offset: 0x000EABF0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void InitStats()
 	{
@@ -411,8 +411,8 @@ public class EntityPlayer : EntityAlive
 		this.startOfFrameStats = new PlayerEntityStats(this);
 	}
 
-	// Token: 0x17000457 RID: 1111
-	// (get) Token: 0x060026AB RID: 9899 RVA: 0x000EBDB6 File Offset: 0x000E9FB6
+	// Token: 0x1700045B RID: 1115
+	// (get) Token: 0x060026CD RID: 9933 RVA: 0x000ECA0A File Offset: 0x000EAC0A
 	public PlayerEntityStats PlayerStats
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -422,13 +422,13 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x060026AC RID: 9900 RVA: 0x000EBDC3 File Offset: 0x000E9FC3
+	// Token: 0x060026CE RID: 9934 RVA: 0x000ECA17 File Offset: 0x000EAC17
 	public override void CopyPropertiesFromEntityClass()
 	{
 		base.CopyPropertiesFromEntityClass();
 	}
 
-	// Token: 0x060026AD RID: 9901 RVA: 0x000EBDCB File Offset: 0x000E9FCB
+	// Token: 0x060026CF RID: 9935 RVA: 0x000ECA1F File Offset: 0x000EAC1F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Start()
 	{
@@ -436,7 +436,7 @@ public class EntityPlayer : EntityAlive
 		this.SetVisible(this.Spawned);
 	}
 
-	// Token: 0x060026AE RID: 9902 RVA: 0x000EBDE0 File Offset: 0x000E9FE0
+	// Token: 0x060026D0 RID: 9936 RVA: 0x000ECA34 File Offset: 0x000EAC34
 	public override void SetAlive()
 	{
 		bool flag = this.IsDead();
@@ -453,7 +453,7 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x060026AF RID: 9903 RVA: 0x000EBE3D File Offset: 0x000EA03D
+	// Token: 0x060026D1 RID: 9937 RVA: 0x000ECA91 File Offset: 0x000EAC91
 	public override void SetDead()
 	{
 		base.SetDead();
@@ -463,8 +463,8 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x17000458 RID: 1112
-	// (get) Token: 0x060026B0 RID: 9904 RVA: 0x000EBE70 File Offset: 0x000EA070
+	// Token: 0x1700045C RID: 1116
+	// (get) Token: 0x060026D2 RID: 9938 RVA: 0x000ECAC4 File Offset: 0x000EACC4
 	public int unModifiedGameStage
 	{
 		get
@@ -475,8 +475,8 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x17000459 RID: 1113
-	// (get) Token: 0x060026B1 RID: 9905 RVA: 0x000EBEE8 File Offset: 0x000EA0E8
+	// Token: 0x1700045D RID: 1117
+	// (get) Token: 0x060026D3 RID: 9939 RVA: 0x000ECB3C File Offset: 0x000EAD3C
 	public int gameStage
 	{
 		get
@@ -500,7 +500,7 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x060026B2 RID: 9906 RVA: 0x000EC034 File Offset: 0x000EA234
+	// Token: 0x060026D4 RID: 9940 RVA: 0x000ECC88 File Offset: 0x000EAE88
 	public int GetTraderStage(int tier)
 	{
 		int num = Mathf.Max(0, tier - 1);
@@ -508,7 +508,7 @@ public class EntityPlayer : EntityAlive
 		return Utils.FastMax(Mathf.FloorToInt(EffectManager.GetValue(PassiveEffects.TraderStage, null, (float)this.Progression.Level * (1f + num2), this, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false) * EntityPlayer.GlobalTraderStageModifier), 1);
 	}
 
-	// Token: 0x060026B3 RID: 9907 RVA: 0x000EC0A4 File Offset: 0x000EA2A4
+	// Token: 0x060026D5 RID: 9941 RVA: 0x000ECCF8 File Offset: 0x000EAEF8
 	public int GetLootStage(float containerMod, float containerBonus)
 	{
 		float num = 0f;
@@ -537,7 +537,7 @@ public class EntityPlayer : EntityAlive
 		return Utils.FastMax(Mathf.FloorToInt(EffectManager.GetValue(PassiveEffects.LootStage, null, (float)this.Progression.Level * (1f + num + containerMod) + (num2 + containerBonus), this, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false) * EntityPlayer.GlobalLootStageModifier), 1);
 	}
 
-	// Token: 0x060026B4 RID: 9908 RVA: 0x000EC26F File Offset: 0x000EA46F
+	// Token: 0x060026D6 RID: 9942 RVA: 0x000ECEC3 File Offset: 0x000EB0C3
 	public int GetHighestPartyLootStage(float containerMod, float containerBonus)
 	{
 		if (this.Party != null)
@@ -547,8 +547,8 @@ public class EntityPlayer : EntityAlive
 		return this.GetLootStage(containerMod, containerBonus);
 	}
 
-	// Token: 0x1700045A RID: 1114
-	// (get) Token: 0x060026B5 RID: 9909 RVA: 0x000EC28F File Offset: 0x000EA48F
+	// Token: 0x1700045E RID: 1118
+	// (get) Token: 0x060026D7 RID: 9943 RVA: 0x000ECEE3 File Offset: 0x000EB0E3
 	public int HighestPartyGameStage
 	{
 		get
@@ -561,8 +561,8 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x1700045B RID: 1115
-	// (get) Token: 0x060026B6 RID: 9910 RVA: 0x000EC2AB File Offset: 0x000EA4AB
+	// Token: 0x1700045F RID: 1119
+	// (get) Token: 0x060026D8 RID: 9944 RVA: 0x000ECEFF File Offset: 0x000EB0FF
 	public int PartyGameStage
 	{
 		get
@@ -575,19 +575,19 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x060026B7 RID: 9911 RVA: 0x000EC2C7 File Offset: 0x000EA4C7
+	// Token: 0x060026D9 RID: 9945 RVA: 0x000ECF1B File Offset: 0x000EB11B
 	public void TurnOffLightFlares()
 	{
 		this.inventory.TurnOffLightFlares();
 	}
 
-	// Token: 0x060026B8 RID: 9912 RVA: 0x000EB3A8 File Offset: 0x000E95A8
+	// Token: 0x060026DA RID: 9946 RVA: 0x000EBFFC File Offset: 0x000EA1FC
 	public override float GetSeeDistance()
 	{
 		return 80f;
 	}
 
-	// Token: 0x060026B9 RID: 9913 RVA: 0x000EC2D4 File Offset: 0x000EA4D4
+	// Token: 0x060026DB RID: 9947 RVA: 0x000ECF28 File Offset: 0x000EB128
 	public float DetectUsScale(EntityAlive _entity)
 	{
 		if (this.prefab != null && this.prefab.prefab.DifficultyTier >= 1 && Time.time - this.prefabTimeIn > 60f && _entity.GetSpawnerSource() == EnumSpawnerSource.Biome && _entity is EntityEnemy)
@@ -597,7 +597,7 @@ public class EntityPlayer : EntityAlive
 		return 1f;
 	}
 
-	// Token: 0x060026BA RID: 9914 RVA: 0x000EC32C File Offset: 0x000EA52C
+	// Token: 0x060026DC RID: 9948 RVA: 0x000ECF80 File Offset: 0x000EB180
 	public override Vector3 getHeadPosition()
 	{
 		if (!(this.emodel != null) || !(this.emodel.GetHeadTransform() != null))
@@ -607,7 +607,7 @@ public class EntityPlayer : EntityAlive
 		return this.emodel.GetHeadTransform().position + Origin.position;
 	}
 
-	// Token: 0x060026BB RID: 9915 RVA: 0x000EC3AC File Offset: 0x000EA5AC
+	// Token: 0x060026DD RID: 9949 RVA: 0x000ED000 File Offset: 0x000EB200
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Update()
 	{
@@ -677,7 +677,7 @@ public class EntityPlayer : EntityAlive
 		this.HasUpdated = true;
 	}
 
-	// Token: 0x060026BC RID: 9916 RVA: 0x000EC5D4 File Offset: 0x000EA7D4
+	// Token: 0x060026DE RID: 9950 RVA: 0x000ED228 File Offset: 0x000EB428
 	public override float GetSpeedModifier()
 	{
 		float num;
@@ -721,8 +721,8 @@ public class EntityPlayer : EntityAlive
 		return num2;
 	}
 
-	// Token: 0x1700045C RID: 1116
-	// (get) Token: 0x060026BD RID: 9917 RVA: 0x000EC6E9 File Offset: 0x000EA8E9
+	// Token: 0x17000460 RID: 1120
+	// (get) Token: 0x060026DF RID: 9951 RVA: 0x000ED33D File Offset: 0x000EB53D
 	public override float MaxVelocity
 	{
 		get
@@ -735,7 +735,7 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x060026BE RID: 9918 RVA: 0x000EC6FE File Offset: 0x000EA8FE
+	// Token: 0x060026E0 RID: 9952 RVA: 0x000ED352 File Offset: 0x000EB552
 	public override Vector3 GetVelocityPerSecond()
 	{
 		if (this.AttachedToEntity)
@@ -745,13 +745,13 @@ public class EntityPlayer : EntityAlive
 		return this.averageVel * 20f;
 	}
 
-	// Token: 0x060026BF RID: 9919 RVA: 0x000EC729 File Offset: 0x000EA929
+	// Token: 0x060026E1 RID: 9953 RVA: 0x000ED37D File Offset: 0x000EB57D
 	public Color GetTeamColor()
 	{
 		return Constants.cTeamColors[this.TeamNumber];
 	}
 
-	// Token: 0x060026C0 RID: 9920 RVA: 0x000EC73C File Offset: 0x000EA93C
+	// Token: 0x060026E2 RID: 9954 RVA: 0x000ED390 File Offset: 0x000EB590
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void StartJumpMotion()
 	{
@@ -760,7 +760,7 @@ public class EntityPlayer : EntityAlive
 		this.motion.y = EffectManager.GetValue(PassiveEffects.JumpStrength, null, this.jumpStrength, this, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false) * base.Stats.Stamina.ValuePercent * @float;
 	}
 
-	// Token: 0x060026C1 RID: 9921 RVA: 0x000EC798 File Offset: 0x000EA998
+	// Token: 0x060026E3 RID: 9955 RVA: 0x000ED3EC File Offset: 0x000EB5EC
 	public override void OnUpdateLive()
 	{
 		base.Stats.Stamina.RegenerationAmount = 0f;
@@ -769,7 +769,7 @@ public class EntityPlayer : EntityAlive
 		this.CheckSleeperTriggers();
 	}
 
-	// Token: 0x060026C2 RID: 9922 RVA: 0x000EC7C6 File Offset: 0x000EA9C6
+	// Token: 0x060026E4 RID: 9956 RVA: 0x000ED41A File Offset: 0x000EB61A
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void CheckSleeperTriggers()
 	{
@@ -780,7 +780,7 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x060026C3 RID: 9923 RVA: 0x000EC7F5 File Offset: 0x000EA9F5
+	// Token: 0x060026E5 RID: 9957 RVA: 0x000ED449 File Offset: 0x000EB649
 	public override int DamageEntity(DamageSource _damageSource, int _strength, bool _criticalHit, float _impulseScale = 1f)
 	{
 		if (GameStats.GetBool(EnumGameStats.IsPlayerDamageEnabled) && ItemActionAttack.IncomingDamageModifier > 0f)
@@ -790,12 +790,12 @@ public class EntityPlayer : EntityAlive
 		return 0;
 	}
 
-	// Token: 0x060026C4 RID: 9924 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060026E6 RID: 9958 RVA: 0x000027FC File Offset: 0x000009FC
 	public override void CheckDismember(ref DamageResponse _dmResponse, float damagePer)
 	{
 	}
 
-	// Token: 0x060026C5 RID: 9925 RVA: 0x000EC819 File Offset: 0x000EAA19
+	// Token: 0x060026E7 RID: 9959 RVA: 0x000ED46D File Offset: 0x000EB66D
 	public override void PlayOneShot(string clipName, bool sound_in_head = false, bool serverSignalOnly = false, bool isUnique = false, AnimationEvent _animEvent = null, float volumeScale = 1f)
 	{
 		if (!this.isSpectator || sound_in_head)
@@ -804,7 +804,7 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x060026C6 RID: 9926 RVA: 0x000EC838 File Offset: 0x000EAA38
+	// Token: 0x060026E8 RID: 9960 RVA: 0x000ED48C File Offset: 0x000EB68C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string GetSoundHurt(DamageSource _damageSource, int _damageStrength)
 	{
@@ -820,7 +820,7 @@ public class EntityPlayer : EntityAlive
 		return base.GetSoundHurtSmall();
 	}
 
-	// Token: 0x060026C7 RID: 9927 RVA: 0x000EC875 File Offset: 0x000EAA75
+	// Token: 0x060026E9 RID: 9961 RVA: 0x000ED4C9 File Offset: 0x000EB6C9
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string GetSoundDeath(DamageSource _damageSource)
 	{
@@ -831,30 +831,30 @@ public class EntityPlayer : EntityAlive
 		return this.soundDrownDeath;
 	}
 
-	// Token: 0x060026C8 RID: 9928 RVA: 0x000EC897 File Offset: 0x000EAA97
+	// Token: 0x060026EA RID: 9962 RVA: 0x000ED4EB File Offset: 0x000EB6EB
 	public bool CanHeal()
 	{
 		return this.Health > 0 && this.Health < this.GetMaxHealth();
 	}
 
-	// Token: 0x060026C9 RID: 9929 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060026EB RID: 9963 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsSavedToFile()
 	{
 		return false;
 	}
 
-	// Token: 0x060026CA RID: 9930 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x060026EC RID: 9964 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsSavedToNetwork()
 	{
 		return false;
 	}
 
-	// Token: 0x060026CB RID: 9931 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060026ED RID: 9965 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void EnableCamera(bool _b)
 	{
 	}
 
-	// Token: 0x060026CC RID: 9932 RVA: 0x000EC8B2 File Offset: 0x000EAAB2
+	// Token: 0x060026EE RID: 9966 RVA: 0x000ED506 File Offset: 0x000EB706
 	public virtual void Respawn(RespawnType _reason)
 	{
 		this.lastRespawnReason = _reason;
@@ -862,7 +862,7 @@ public class EntityPlayer : EntityAlive
 		this.InitBreadcrumbs();
 	}
 
-	// Token: 0x060026CD RID: 9933 RVA: 0x000EC8D0 File Offset: 0x000EAAD0
+	// Token: 0x060026EF RID: 9967 RVA: 0x000ED524 File Offset: 0x000EB724
 	public virtual void Teleport(Vector3 _pos, float _dir = -3.4028235E+38f)
 	{
 		if (this.AttachedToEntity)
@@ -881,7 +881,7 @@ public class EntityPlayer : EntityAlive
 		this.Respawn(RespawnType.Teleport);
 	}
 
-	// Token: 0x060026CE RID: 9934 RVA: 0x000EC931 File Offset: 0x000EAB31
+	// Token: 0x060026F0 RID: 9968 RVA: 0x000ED585 File Offset: 0x000EB785
 	public void InvokeTeleportDelegates()
 	{
 		EntityPlayer.OnPlayerTeleportDelegate playerTeleportedDelegates = this.PlayerTeleportedDelegates;
@@ -892,18 +892,18 @@ public class EntityPlayer : EntityAlive
 		playerTeleportedDelegates();
 	}
 
-	// Token: 0x060026CF RID: 9935 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x060026F1 RID: 9969 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void BeforePlayerRespawn(RespawnType _type)
 	{
 	}
 
-	// Token: 0x060026D0 RID: 9936 RVA: 0x000EC943 File Offset: 0x000EAB43
+	// Token: 0x060026F2 RID: 9970 RVA: 0x000ED597 File Offset: 0x000EB797
 	public virtual void AfterPlayerRespawn(RespawnType _type)
 	{
 		this.InvokeTeleportDelegates();
 	}
 
-	// Token: 0x060026D1 RID: 9937 RVA: 0x000EC94C File Offset: 0x000EAB4C
+	// Token: 0x060026F3 RID: 9971 RVA: 0x000ED5A0 File Offset: 0x000EB7A0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void onSpawnStateChanged()
 	{
@@ -930,7 +930,7 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x060026D2 RID: 9938 RVA: 0x000ECA04 File Offset: 0x000EAC04
+	// Token: 0x060026F4 RID: 9972 RVA: 0x000ED658 File Offset: 0x000EB858
 	public override int AttachToEntity(Entity _other, int slot = -1)
 	{
 		slot = base.AttachToEntity(_other, slot);
@@ -943,14 +943,14 @@ public class EntityPlayer : EntityAlive
 		return slot;
 	}
 
-	// Token: 0x060026D3 RID: 9939 RVA: 0x000ECA43 File Offset: 0x000EAC43
+	// Token: 0x060026F5 RID: 9973 RVA: 0x000ED697 File Offset: 0x000EB897
 	public override void Detach()
 	{
 		base.Detach();
 		this.emodel.GetModelTransformParent().localPosition = this.attachedModelPos;
 	}
 
-	// Token: 0x060026D4 RID: 9940 RVA: 0x000ECA64 File Offset: 0x000EAC64
+	// Token: 0x060026F6 RID: 9974 RVA: 0x000ED6B8 File Offset: 0x000EB8B8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void onNewPrefabEntered(PrefabInstance _prefabInstance)
 	{
@@ -986,15 +986,15 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x060026D5 RID: 9941 RVA: 0x000ECB86 File Offset: 0x000EAD86
+	// Token: 0x060026F7 RID: 9975 RVA: 0x000ED7DA File Offset: 0x000EB9DA
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void StartJumpSwimMotion()
 	{
 		this.motion.y = this.motion.y + 0.04f;
 	}
 
-	// Token: 0x1700045D RID: 1117
-	// (get) Token: 0x060026D6 RID: 9942 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x17000461 RID: 1121
+	// (get) Token: 0x060026F8 RID: 9976 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool IsImmuneToLegDamage
 	{
 		get
@@ -1003,45 +1003,45 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x060026D7 RID: 9943 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x060026F9 RID: 9977 RVA: 0x00020021 File Offset: 0x0001E221
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool isDetailedHeadBodyColliders()
 	{
 		return true;
 	}
 
-	// Token: 0x060026D8 RID: 9944 RVA: 0x000ECB9C File Offset: 0x000EAD9C
+	// Token: 0x060026FA RID: 9978 RVA: 0x000ED7F0 File Offset: 0x000EB9F0
 	public override int GetLayerForMapIcon()
 	{
 		return 19;
 	}
 
-	// Token: 0x060026D9 RID: 9945 RVA: 0x000ECBA0 File Offset: 0x000EADA0
+	// Token: 0x060026FB RID: 9979 RVA: 0x000ED7F4 File Offset: 0x000EB9F4
 	public override bool CanMapIconBeSelected()
 	{
 		return GameStats.GetBool(EnumGameStats.IsSpawnNearOtherPlayer);
 	}
 
-	// Token: 0x060026DA RID: 9946 RVA: 0x000ECBA9 File Offset: 0x000EADA9
+	// Token: 0x060026FC RID: 9980 RVA: 0x000ED7FD File Offset: 0x000EB9FD
 	public override bool IsDrawMapIcon()
 	{
 		return base.IsSpawned() && ((this.IsFriendOfLocalPlayer && GameStats.GetBool(EnumGameStats.ShowFriendPlayerOnMap)) || GameStats.GetBool(EnumGameStats.ShowAllPlayersOnMap) || this.IsInPartyOfLocalPlayer);
 	}
 
-	// Token: 0x060026DB RID: 9947 RVA: 0x000BCED3 File Offset: 0x000BB0D3
+	// Token: 0x060026FD RID: 9981 RVA: 0x000BD617 File Offset: 0x000BB817
 	public override Color GetMapIconColor()
 	{
 		return Color.white;
 	}
 
-	// Token: 0x060026DC RID: 9948 RVA: 0x000ECBD7 File Offset: 0x000EADD7
+	// Token: 0x060026FE RID: 9982 RVA: 0x000ED82B File Offset: 0x000EBA2B
 	public override Vector3 GetMapIconScale()
 	{
 		return new Vector3(1.5f, 1.5f, 1.5f);
 	}
 
-	// Token: 0x1700045E RID: 1118
-	// (get) Token: 0x060026DD RID: 9949 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000462 RID: 1122
+	// (get) Token: 0x060026FF RID: 9983 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsAlert
 	{
 		get
@@ -1050,13 +1050,13 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x060026DE RID: 9950 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x06002700 RID: 9984 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsClientControlled()
 	{
 		return true;
 	}
 
-	// Token: 0x060026DF RID: 9951 RVA: 0x000ECBF0 File Offset: 0x000EADF0
+	// Token: 0x06002701 RID: 9985 RVA: 0x000ED844 File Offset: 0x000EBA44
 	public bool IsFriendsWith(EntityPlayer _other)
 	{
 		PersistentPlayerData playerDataFromEntityID = GameManager.Instance.persistentPlayers.GetPlayerDataFromEntityID(this.entityId);
@@ -1064,13 +1064,13 @@ public class EntityPlayer : EntityAlive
 		return playerDataFromEntityID2 != null && playerDataFromEntityID2.IsAlly(playerDataFromEntityID);
 	}
 
-	// Token: 0x060026E0 RID: 9952 RVA: 0x000ECC3A File Offset: 0x000EAE3A
+	// Token: 0x06002702 RID: 9986 RVA: 0x000ED88E File Offset: 0x000EBA8E
 	public bool IsSafeZoneActive()
 	{
 		return this.Progression.Level <= GamePrefs.GetInt(EnumGamePrefs.PlayerSafeZoneLevel) && this.spawnPoints.Count == 0;
 	}
 
-	// Token: 0x060026E1 RID: 9953 RVA: 0x000ECC60 File Offset: 0x000EAE60
+	// Token: 0x06002703 RID: 9987 RVA: 0x000ED8B4 File Offset: 0x000EBAB4
 	public override void OnEntityUnload()
 	{
 		if (!this.world.IsEditor() && this.prefab != null)
@@ -1081,7 +1081,7 @@ public class EntityPlayer : EntityAlive
 		this.ChunkObserver = null;
 	}
 
-	// Token: 0x060026E2 RID: 9954 RVA: 0x000ECCA0 File Offset: 0x000EAEA0
+	// Token: 0x06002704 RID: 9988 RVA: 0x000ED8F4 File Offset: 0x000EBAF4
 	public override void OnUpdateEntity()
 	{
 		base.OnUpdateEntity();
@@ -1121,14 +1121,14 @@ public class EntityPlayer : EntityAlive
 		{
 			this.CarryCapacity = (int)EffectManager.GetValue(PassiveEffects.CarryCapacity, null, 0f, this, null, default(FastTags<TagGroup.Global>), true, true, true, true, true, 1, true, false);
 			int num = this.bag.GetUsedSlotCount() - this.CarryCapacity;
-			this.Buffs.SetCustomVar("_carrycapacity", (float)this.CarryCapacity, true, CVarOperation.set);
-			this.Buffs.SetCustomVar("_encumbrance", Mathf.Max((float)num, 0f) / (float)(this.bag.GetSlots().Length - this.CarryCapacity), true, CVarOperation.set);
-			this.Buffs.SetCustomVar("_encumberedslots", Mathf.Max((float)num, 0f), true, CVarOperation.set);
+			this.Buffs.SetCustomVar("_carrycapacity", (float)this.CarryCapacity, true, CVarOperation.set, false);
+			this.Buffs.SetCustomVar("_encumbrance", Mathf.Max((float)num, 0f) / (float)(this.bag.GetSlots().Length - this.CarryCapacity), true, CVarOperation.set, false);
+			this.Buffs.SetCustomVar("_encumberedslots", Mathf.Max((float)num, 0f), true, CVarOperation.set, false);
 		}
 		this.PrefabTick();
 	}
 
-	// Token: 0x060026E3 RID: 9955 RVA: 0x000ECE90 File Offset: 0x000EB090
+	// Token: 0x06002705 RID: 9989 RVA: 0x000EDAE8 File Offset: 0x000EBCE8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PrefabTick()
 	{
@@ -1186,14 +1186,14 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x060026E4 RID: 9956 RVA: 0x000ED035 File Offset: 0x000EB235
+	// Token: 0x06002706 RID: 9990 RVA: 0x000EDC8D File Offset: 0x000EBE8D
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void InitBreadcrumbs()
 	{
 		this.breadcrumbs.Fill(this.position);
 	}
 
-	// Token: 0x060026E5 RID: 9957 RVA: 0x000ED048 File Offset: 0x000EB248
+	// Token: 0x06002707 RID: 9991 RVA: 0x000EDCA0 File Offset: 0x000EBEA0
 	public Vector3 GetBreadcrumbPos(float distance)
 	{
 		int num = (int)(distance + 0.5f);
@@ -1209,7 +1209,7 @@ public class EntityPlayer : EntityAlive
 		return this.breadcrumbs[num2 & 31];
 	}
 
-	// Token: 0x060026E6 RID: 9958 RVA: 0x000ED083 File Offset: 0x000EB283
+	// Token: 0x06002708 RID: 9992 RVA: 0x000EDCDB File Offset: 0x000EBEDB
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void updateStepSound(float _distX, float _distZ, float _rotYDelta)
 	{
@@ -1219,7 +1219,7 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x060026E7 RID: 9959 RVA: 0x000ED09E File Offset: 0x000EB29E
+	// Token: 0x06002709 RID: 9993 RVA: 0x000EDCF6 File Offset: 0x000EBEF6
 	public override float GetBlockDamageScale(bool isTerrain)
 	{
 		if (!isTerrain)
@@ -1229,7 +1229,7 @@ public class EntityPlayer : EntityAlive
 		return ItemActionAttack.TerrainDamagePercent;
 	}
 
-	// Token: 0x060026E8 RID: 9960 RVA: 0x000ED0AE File Offset: 0x000EB2AE
+	// Token: 0x0600270A RID: 9994 RVA: 0x000EDD06 File Offset: 0x000EBF06
 	public override void SetDamagedTarget(EntityAlive _attackTarget)
 	{
 		base.SetDamagedTarget(_attackTarget);
@@ -1240,7 +1240,7 @@ public class EntityPlayer : EntityAlive
 		this.IsBloodMoonDead = false;
 	}
 
-	// Token: 0x060026E9 RID: 9961 RVA: 0x000ED0D8 File Offset: 0x000EB2D8
+	// Token: 0x0600270B RID: 9995 RVA: 0x000EDD30 File Offset: 0x000EBF30
 	public override void VisiblityCheck(float _distanceSqr, bool _masterIsZooming)
 	{
 		if (!this.Spawned)
@@ -1263,7 +1263,7 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x060026EA RID: 9962 RVA: 0x000ED147 File Offset: 0x000EB347
+	// Token: 0x0600270C RID: 9996 RVA: 0x000EDD9F File Offset: 0x000EBF9F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetVisible(bool _isVisible)
 	{
@@ -1275,26 +1275,26 @@ public class EntityPlayer : EntityAlive
 		this.emodel.SetVisible(_isVisible, !this.world.IsRemote());
 	}
 
-	// Token: 0x060026EB RID: 9963 RVA: 0x000ED179 File Offset: 0x000EB379
+	// Token: 0x0600270D RID: 9997 RVA: 0x000EDDD1 File Offset: 0x000EBFD1
 	public override void Kill(DamageResponse _dmResponse)
 	{
 		base.Kill(_dmResponse);
 		this.currentLife = 0f;
 	}
 
-	// Token: 0x060026EC RID: 9964 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600270E RID: 9998 RVA: 0x000027FC File Offset: 0x000009FC
 	public virtual void OnHUD()
 	{
 	}
 
-	// Token: 0x060026ED RID: 9965 RVA: 0x000ED190 File Offset: 0x000EB390
+	// Token: 0x0600270F RID: 9999 RVA: 0x000EDDE8 File Offset: 0x000EBFE8
 	public void ServerNetSendRangeCheckedDamage(Vector3 _origin, float _maxRange, DamageSourceEntity _damageSource, int _strength, bool _isCritical, List<string> _buffActions, string _buffActionsContext, ParticleEffect particleEffect)
 	{
 		NetPackageRangeCheckDamageEntity netPackageRangeCheckDamageEntity = NetPackageManager.GetPackage<NetPackageRangeCheckDamageEntity>().Setup(this.entityId, _origin, _maxRange, _damageSource, _strength, _isCritical, _buffActions, _buffActionsContext, particleEffect);
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(netPackageRangeCheckDamageEntity, false, this.entityId, -1, -1, null, 192, false);
 	}
 
-	// Token: 0x060026EE RID: 9966 RVA: 0x000ED1DE File Offset: 0x000EB3DE
+	// Token: 0x06002710 RID: 10000 RVA: 0x000EDE36 File Offset: 0x000EC036
 	public override AttachedToEntitySlotExit FindValidExitPosition(List<AttachedToEntitySlotExit> candidatePositions)
 	{
 		this.lastVehiclePositionOnDismount = this.position;
@@ -1303,7 +1303,7 @@ public class EntityPlayer : EntityAlive
 		return base.FindValidExitPosition(candidatePositions);
 	}
 
-	// Token: 0x060026EF RID: 9967 RVA: 0x000ED208 File Offset: 0x000EB408
+	// Token: 0x06002711 RID: 10001 RVA: 0x000EDE60 File Offset: 0x000EC060
 	public override void CheckPosition()
 	{
 		base.CheckPosition();
@@ -1336,7 +1336,7 @@ public class EntityPlayer : EntityAlive
 		this.Teleport(fallingSavePosition, float.MinValue);
 	}
 
-	// Token: 0x060026F0 RID: 9968 RVA: 0x000ED2F0 File Offset: 0x000EB4F0
+	// Token: 0x06002712 RID: 10002 RVA: 0x000EDF48 File Offset: 0x000EC148
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 GetFallingSavePosition()
 	{
@@ -1378,7 +1378,7 @@ public class EntityPlayer : EntityAlive
 		return position;
 	}
 
-	// Token: 0x060026F1 RID: 9969 RVA: 0x000ED4D8 File Offset: 0x000EB6D8
+	// Token: 0x06002713 RID: 10003 RVA: 0x000EE130 File Offset: 0x000EC330
 	public override bool FriendlyFireCheck(EntityAlive other)
 	{
 		bool flag = true;
@@ -1419,9 +1419,9 @@ public class EntityPlayer : EntityAlive
 		return flag;
 	}
 
-	// Token: 0x1700045F RID: 1119
-	// (get) Token: 0x060026F2 RID: 9970 RVA: 0x000ED5A8 File Offset: 0x000EB7A8
-	// (set) Token: 0x060026F3 RID: 9971 RVA: 0x000ED5B0 File Offset: 0x000EB7B0
+	// Token: 0x17000463 RID: 1123
+	// (get) Token: 0x06002714 RID: 10004 RVA: 0x000EE200 File Offset: 0x000EC400
+	// (set) Token: 0x06002715 RID: 10005 RVA: 0x000EE208 File Offset: 0x000EC408
 	public Party Party
 	{
 		get
@@ -1442,8 +1442,8 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x17000460 RID: 1120
-	// (get) Token: 0x060026F4 RID: 9972 RVA: 0x000ED5FD File Offset: 0x000EB7FD
+	// Token: 0x17000464 RID: 1124
+	// (get) Token: 0x06002716 RID: 10006 RVA: 0x000EE255 File Offset: 0x000EC455
 	public CompanionGroup Companions
 	{
 		get
@@ -1456,25 +1456,25 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x060026F5 RID: 9973 RVA: 0x000ED618 File Offset: 0x000EB818
+	// Token: 0x06002717 RID: 10007 RVA: 0x000EE270 File Offset: 0x000EC470
 	public bool IsInParty()
 	{
 		return this.Party != null;
 	}
 
-	// Token: 0x060026F6 RID: 9974 RVA: 0x000ED623 File Offset: 0x000EB823
+	// Token: 0x06002718 RID: 10008 RVA: 0x000EE27B File Offset: 0x000EC47B
 	public bool IsPartyLead()
 	{
 		return this.Party != null && this.Party.Leader == this;
 	}
 
-	// Token: 0x060026F7 RID: 9975 RVA: 0x000ED640 File Offset: 0x000EB840
+	// Token: 0x06002719 RID: 10009 RVA: 0x000EE298 File Offset: 0x000EC498
 	public bool HasTwitchMember()
 	{
 		return this.Party != null && this.Party.HasTwitchMember;
 	}
 
-	// Token: 0x060026F8 RID: 9976 RVA: 0x000ED657 File Offset: 0x000EB857
+	// Token: 0x0600271A RID: 10010 RVA: 0x000EE2AF File Offset: 0x000EC4AF
 	public TwitchVoteLockTypes HasTwitchVoteLockMember()
 	{
 		if (this.Party != null)
@@ -1484,7 +1484,7 @@ public class EntityPlayer : EntityAlive
 		return TwitchVoteLockTypes.None;
 	}
 
-	// Token: 0x060026F9 RID: 9977 RVA: 0x000ED66E File Offset: 0x000EB86E
+	// Token: 0x0600271B RID: 10011 RVA: 0x000EE2C6 File Offset: 0x000EC4C6
 	public void CreateParty()
 	{
 		this.Party = new Party();
@@ -1493,7 +1493,7 @@ public class EntityPlayer : EntityAlive
 		this.HandleOnPartyJoined();
 	}
 
-	// Token: 0x060026FA RID: 9978 RVA: 0x000ED69C File Offset: 0x000EB89C
+	// Token: 0x0600271C RID: 10012 RVA: 0x000EE2F4 File Offset: 0x000EC4F4
 	public void LeaveParty()
 	{
 		Party party = this.Party;
@@ -1516,26 +1516,26 @@ public class EntityPlayer : EntityAlive
 	}
 
 	// Token: 0x14000022 RID: 34
-	// (add) Token: 0x060026FB RID: 9979 RVA: 0x000ED730 File Offset: 0x000EB930
-	// (remove) Token: 0x060026FC RID: 9980 RVA: 0x000ED768 File Offset: 0x000EB968
+	// (add) Token: 0x0600271D RID: 10013 RVA: 0x000EE388 File Offset: 0x000EC588
+	// (remove) Token: 0x0600271E RID: 10014 RVA: 0x000EE3C0 File Offset: 0x000EC5C0
 	public event OnPartyChanged PartyJoined;
 
 	// Token: 0x14000023 RID: 35
-	// (add) Token: 0x060026FD RID: 9981 RVA: 0x000ED7A0 File Offset: 0x000EB9A0
-	// (remove) Token: 0x060026FE RID: 9982 RVA: 0x000ED7D8 File Offset: 0x000EB9D8
+	// (add) Token: 0x0600271F RID: 10015 RVA: 0x000EE3F8 File Offset: 0x000EC5F8
+	// (remove) Token: 0x06002720 RID: 10016 RVA: 0x000EE430 File Offset: 0x000EC630
 	public event OnPartyChanged PartyChanged;
 
 	// Token: 0x14000024 RID: 36
-	// (add) Token: 0x060026FF RID: 9983 RVA: 0x000ED810 File Offset: 0x000EBA10
-	// (remove) Token: 0x06002700 RID: 9984 RVA: 0x000ED848 File Offset: 0x000EBA48
+	// (add) Token: 0x06002721 RID: 10017 RVA: 0x000EE468 File Offset: 0x000EC668
+	// (remove) Token: 0x06002722 RID: 10018 RVA: 0x000EE4A0 File Offset: 0x000EC6A0
 	public event OnPartyChanged PartyLeave;
 
 	// Token: 0x14000025 RID: 37
-	// (add) Token: 0x06002701 RID: 9985 RVA: 0x000ED880 File Offset: 0x000EBA80
-	// (remove) Token: 0x06002702 RID: 9986 RVA: 0x000ED8B8 File Offset: 0x000EBAB8
+	// (add) Token: 0x06002723 RID: 10019 RVA: 0x000EE4D8 File Offset: 0x000EC6D8
+	// (remove) Token: 0x06002724 RID: 10020 RVA: 0x000EE510 File Offset: 0x000EC710
 	public event OnPartyChanged InvitedToParty;
 
-	// Token: 0x06002703 RID: 9987 RVA: 0x000ED8F0 File Offset: 0x000EBAF0
+	// Token: 0x06002725 RID: 10021 RVA: 0x000EE548 File Offset: 0x000EC748
 	public void RemovePartyInvite(int playerEntityID)
 	{
 		EntityPlayer entityPlayer = GameManager.Instance.World.GetEntity(playerEntityID) as EntityPlayer;
@@ -1545,13 +1545,13 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x06002704 RID: 9988 RVA: 0x000ED92E File Offset: 0x000EBB2E
+	// Token: 0x06002726 RID: 10022 RVA: 0x000EE586 File Offset: 0x000EC786
 	public void RemoveAllPartyInvites()
 	{
 		this.partyInvites.Clear();
 	}
 
-	// Token: 0x06002705 RID: 9989 RVA: 0x000ED93C File Offset: 0x000EBB3C
+	// Token: 0x06002727 RID: 10023 RVA: 0x000EE594 File Offset: 0x000EC794
 	public void AddPartyInvite(int playerEntityID)
 	{
 		EntityPlayer entityPlayer = GameManager.Instance.World.GetEntity(playerEntityID) as EntityPlayer;
@@ -1565,14 +1565,14 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x06002706 RID: 9990 RVA: 0x000ED990 File Offset: 0x000EBB90
+	// Token: 0x06002728 RID: 10024 RVA: 0x000EE5E8 File Offset: 0x000EC7E8
 	public bool HasPendingPartyInvite(int playerEntityID)
 	{
 		EntityPlayer entityPlayer = GameManager.Instance.World.GetEntity(playerEntityID) as EntityPlayer;
 		return this.partyInvites.Contains(entityPlayer);
 	}
 
-	// Token: 0x06002707 RID: 9991 RVA: 0x000ED9BF File Offset: 0x000EBBBF
+	// Token: 0x06002729 RID: 10025 RVA: 0x000EE617 File Offset: 0x000EC817
 	public void HandleOnPartyJoined()
 	{
 		OnPartyChanged partyJoined = this.PartyJoined;
@@ -1583,7 +1583,7 @@ public class EntityPlayer : EntityAlive
 		partyJoined(this.party, this);
 	}
 
-	// Token: 0x06002708 RID: 9992 RVA: 0x000ED9D8 File Offset: 0x000EBBD8
+	// Token: 0x0600272A RID: 10026 RVA: 0x000EE630 File Offset: 0x000EC830
 	public void HandleOnPartyChanged()
 	{
 		OnPartyChanged partyChanged = this.PartyChanged;
@@ -1594,7 +1594,7 @@ public class EntityPlayer : EntityAlive
 		partyChanged(this.party, this);
 	}
 
-	// Token: 0x06002709 RID: 9993 RVA: 0x000ED9F1 File Offset: 0x000EBBF1
+	// Token: 0x0600272B RID: 10027 RVA: 0x000EE649 File Offset: 0x000EC849
 	public void HandleOnPartyLeave(Party _oldParty)
 	{
 		OnPartyChanged partyLeave = this.PartyLeave;
@@ -1605,7 +1605,7 @@ public class EntityPlayer : EntityAlive
 		partyLeave(_oldParty, this);
 	}
 
-	// Token: 0x0600270A RID: 9994 RVA: 0x000EDA05 File Offset: 0x000EBC05
+	// Token: 0x0600272C RID: 10028 RVA: 0x000EE65D File Offset: 0x000EC85D
 	public void PartyDisconnect()
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -1614,7 +1614,7 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x0600270B RID: 9995 RVA: 0x000EDA1C File Offset: 0x000EBC1C
+	// Token: 0x0600272D RID: 10029 RVA: 0x000EE674 File Offset: 0x000EC874
 	public void SetPrefabsAroundNear(Dictionary<int, PrefabInstance> _prefabsAround)
 	{
 		this.prefabsAroundNear.Clear();
@@ -1624,13 +1624,13 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x0600270C RID: 9996 RVA: 0x000EDA88 File Offset: 0x000EBC88
+	// Token: 0x0600272E RID: 10030 RVA: 0x000EE6E0 File Offset: 0x000EC8E0
 	public Dictionary<int, PrefabInstance> GetPrefabsAroundNear()
 	{
 		return this.prefabsAroundNear;
 	}
 
-	// Token: 0x0600270D RID: 9997 RVA: 0x000EDA90 File Offset: 0x000EBC90
+	// Token: 0x0600272F RID: 10031 RVA: 0x000EE6E8 File Offset: 0x000EC8E8
 	public void AddKillXP(EntityAlive killedEntity, ItemValue itemUsed, float xpModifier = 1f)
 	{
 		int num = EntityClass.list[killedEntity.entityClass].ExperienceValue;
@@ -1647,19 +1647,13 @@ public class EntityPlayer : EntityAlive
 		{
 			this.Progression.AddLevelExp(num, "_xpFromKill", Progression.XPTypes.Kill, true, true, this.entityId, itemUsed);
 			this.bPlayerStatsChanged = true;
+			return;
 		}
-		else
-		{
-			NetPackageEntityAddExpClient netPackageEntityAddExpClient = NetPackageManager.GetPackage<NetPackageEntityAddExpClient>().Setup(this.entityId, num, Progression.XPTypes.Kill, itemUsed);
-			SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(netPackageEntityAddExpClient, false, this.entityId, -1, -1, null, 192, false);
-		}
-		if (xpModifier == 1f)
-		{
-			GameManager.Instance.SharedKillServer(killedEntity.entityId, this.entityId, xpModifier);
-		}
+		NetPackageEntityAddExpClient netPackageEntityAddExpClient = NetPackageManager.GetPackage<NetPackageEntityAddExpClient>().Setup(this.entityId, num, Progression.XPTypes.Kill, itemUsed);
+		SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(netPackageEntityAddExpClient, false, this.entityId, -1, -1, null, 192, false);
 	}
 
-	// Token: 0x0600270E RID: 9998 RVA: 0x000EDB8C File Offset: 0x000EBD8C
+	// Token: 0x06002730 RID: 10032 RVA: 0x000EE7C4 File Offset: 0x000EC9C4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void HandleClientDeath(Vector3i attackPos)
 	{
@@ -1684,7 +1678,7 @@ public class EntityPlayer : EntityAlive
 		}
 	}
 
-	// Token: 0x0600270F RID: 9999 RVA: 0x000EDC68 File Offset: 0x000EBE68
+	// Token: 0x06002731 RID: 10033 RVA: 0x000EE8A0 File Offset: 0x000ECAA0
 	public void HandleTwitchActionsTempEnabled(EntityPlayer.TwitchActionsStates newState)
 	{
 		if (this.twitchActionsEnabled == EntityPlayer.TwitchActionsStates.Disabled)
@@ -1694,7 +1688,7 @@ public class EntityPlayer : EntityAlive
 		this.TwitchActionsEnabled = newState;
 	}
 
-	// Token: 0x06002710 RID: 10000 RVA: 0x000EDC7C File Offset: 0x000EBE7C
+	// Token: 0x06002732 RID: 10034 RVA: 0x000EE8B4 File Offset: 0x000ECAB4
 	public bool IsReloadCancelled()
 	{
 		if (this.inventory.holdingItemData.actionData != null)
@@ -1712,7 +1706,7 @@ public class EntityPlayer : EntityAlive
 		return false;
 	}
 
-	// Token: 0x06002711 RID: 10001 RVA: 0x000EDCFC File Offset: 0x000EBEFC
+	// Token: 0x06002733 RID: 10035 RVA: 0x000EE934 File Offset: 0x000ECB34
 	public void SetLaserSightData(bool _laserSightActive, Vector3 _laserSightPosition)
 	{
 		if (_laserSightActive == this.laserSightActive && (this.laserSightPosition - _laserSightPosition).sqrMagnitude < 0.0016f)
@@ -1729,333 +1723,333 @@ public class EntityPlayer : EntityAlive
 		SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackagePlayerLaserSight>().Setup(this.entityId, _laserSightActive, _laserSightPosition), false);
 	}
 
-	// Token: 0x04001C92 RID: 7314
+	// Token: 0x04001CB5 RID: 7349
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly FastTags<TagGroup.Global> STAMINA_LOSS_TAGS = FastTags<TagGroup.Global>.GetTag("Athletics");
 
-	// Token: 0x04001C93 RID: 7315
+	// Token: 0x04001CB6 RID: 7350
 	public float jumpStrength = 0.451f;
 
-	// Token: 0x04001C94 RID: 7316
+	// Token: 0x04001CB7 RID: 7351
 	public SpawnPosition lastSpawnPosition = SpawnPosition.Undef;
 
-	// Token: 0x04001C95 RID: 7317
-	public PlayerProfile playerProfile;
-
-	// Token: 0x04001C96 RID: 7318
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public PersistentPlayerName cachedPlayerName;
-
-	// Token: 0x04001C97 RID: 7319
-	public static float EncumbranceModifier = 1f;
-
-	// Token: 0x04001C98 RID: 7320
-	public static float GlobalGameStageModifier = 1f;
-
-	// Token: 0x04001C99 RID: 7321
-	public static float BiomeGameStageModifier = 1f;
-
-	// Token: 0x04001C9A RID: 7322
-	public static float GlobalLootStageModifier = 1f;
-
-	// Token: 0x04001C9B RID: 7323
-	public static float BiomeLootStageModifier = 1f;
-
-	// Token: 0x04001C9C RID: 7324
-	public static float POITierLootStageModifier = 1f;
-
-	// Token: 0x04001C9D RID: 7325
-	public static float GlobalTraderStageModifier = 1f;
-
-	// Token: 0x04001C9E RID: 7326
-	public static float FallDamageModifier = 1f;
-
-	// Token: 0x04001C9F RID: 7327
-	public List<EntityAlive> aiClosest = new List<EntityAlive>();
-
-	// Token: 0x04001CA0 RID: 7328
-	public AIDirectorBloodMoonParty bloodMoonParty;
-
-	// Token: 0x04001CA1 RID: 7329
-	public bool IsBloodMoonDead;
-
-	// Token: 0x04001CA2 RID: 7330
-	public PlayerStealth Stealth;
-
-	// Token: 0x04001CA3 RID: 7331
-	public const long cSpawnPointKeyInvalid = -1L;
-
-	// Token: 0x04001CA4 RID: 7332
-	public long selectedSpawnPointKey = -1L;
-
-	// Token: 0x04001CA5 RID: 7333
-	public ulong LastZombieAttackTime;
-
-	// Token: 0x04001CA6 RID: 7334
-	public bool IsInPartyOfLocalPlayer;
-
-	// Token: 0x04001CA7 RID: 7335
-	public uint totalItemsCrafted;
-
-	// Token: 0x04001CA8 RID: 7336
-	public float longestLife;
-
-	// Token: 0x04001CA9 RID: 7337
-	public float currentLife;
-
-	// Token: 0x04001CAA RID: 7338
-	public float totalTimePlayed;
-
-	// Token: 0x04001CAB RID: 7339
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public int longestLifeLived;
-
-	// Token: 0x04001CAC RID: 7340
-	public ChunkManager.ChunkObserver ChunkObserver;
-
-	// Token: 0x04001CAD RID: 7341
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public RespawnType lastRespawnReason = RespawnType.Unknown;
-
-	// Token: 0x04001CAE RID: 7342
-	public int SpawnedTicks;
-
-	// Token: 0x04001CAF RID: 7343
-	public ulong gameStageBornAtWorldTime;
-
-	// Token: 0x04001CB0 RID: 7344
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Vector3i m_MarkerPosition = Vector3i.zero;
-
-	// Token: 0x04001CB1 RID: 7345
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public NavObject navMarker;
-
-	// Token: 0x04001CB2 RID: 7346
-	public bool navMarkerHidden;
-
-	// Token: 0x04001CB3 RID: 7347
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public NavObject navVending;
-
-	// Token: 0x04001CB4 RID: 7348
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public float lastTimePrefabChecked;
-
-	// Token: 0x04001CB5 RID: 7349
-	public PrefabInstance prefab;
-
-	// Token: 0x04001CB6 RID: 7350
-	public PrefabInstance enteredPrefab;
-
-	// Token: 0x04001CB7 RID: 7351
-	public bool prefabInfoEntered;
-
 	// Token: 0x04001CB8 RID: 7352
-	public float prefabTimeIn;
+	public PlayerProfile playerProfile;
 
 	// Token: 0x04001CB9 RID: 7353
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public bool bModelVisible = true;
+	public PersistentPlayerName cachedPlayerName;
+
+	// Token: 0x04001CBA RID: 7354
+	public static float EncumbranceModifier = 1f;
+
+	// Token: 0x04001CBB RID: 7355
+	public static float GlobalGameStageModifier = 1f;
 
 	// Token: 0x04001CBC RID: 7356
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public bool twitchEnabled;
+	public static float BiomeGameStageModifier = 1f;
 
 	// Token: 0x04001CBD RID: 7357
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public bool twitchSafe;
+	public static float GlobalLootStageModifier = 1f;
 
 	// Token: 0x04001CBE RID: 7358
-	public bool IsInTrader;
+	public static float BiomeLootStageModifier = 1f;
 
 	// Token: 0x04001CBF RID: 7359
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public TwitchVoteLockTypes twitchVoteLock;
+	public static float POITierLootStageModifier = 1f;
 
 	// Token: 0x04001CC0 RID: 7360
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public bool twitchVisionDisabled;
+	public static float GlobalTraderStageModifier = 1f;
 
 	// Token: 0x04001CC1 RID: 7361
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public EntityPlayer.TwitchActionsStates twitchActionsEnabled = EntityPlayer.TwitchActionsStates.Enabled;
+	public static float FallDamageModifier = 1f;
 
 	// Token: 0x04001CC2 RID: 7362
-	[PublicizedFrom(EAccessModifier.Protected)]
-	[NonSerialized]
-	public bool isSpectator;
+	public List<EntityAlive> aiClosest = new List<EntityAlive>();
 
 	// Token: 0x04001CC3 RID: 7363
-	public WaypointCollection Waypoints = new WaypointCollection();
+	public AIDirectorBloodMoonParty bloodMoonParty;
 
 	// Token: 0x04001CC4 RID: 7364
-	public List<Waypoint> WaypointInvites = new List<Waypoint>();
+	public bool IsBloodMoonDead;
 
 	// Token: 0x04001CC5 RID: 7365
-	public QuestJournal QuestJournal = new QuestJournal();
+	public PlayerStealth Stealth;
+
+	// Token: 0x04001CC6 RID: 7366
+	public const long cSpawnPointKeyInvalid = -1L;
+
+	// Token: 0x04001CC7 RID: 7367
+	public long selectedSpawnPointKey = -1L;
+
+	// Token: 0x04001CC8 RID: 7368
+	public ulong LastZombieAttackTime;
+
+	// Token: 0x04001CC9 RID: 7369
+	public bool IsInPartyOfLocalPlayer;
+
+	// Token: 0x04001CCA RID: 7370
+	public uint totalItemsCrafted;
 
 	// Token: 0x04001CCB RID: 7371
-	public List<ushort> favoriteCreativeStacks = new List<ushort>();
+	public float longestLife;
 
 	// Token: 0x04001CCC RID: 7372
-	public List<string> favoriteShapes = new List<string>();
+	public float currentLife;
 
 	// Token: 0x04001CCD RID: 7373
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Vector3i m_rentedVMPosition = Vector3i.zero;
+	public float totalTimePlayed;
 
 	// Token: 0x04001CCE RID: 7374
-	public ulong RentalEndTime;
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public int longestLifeLived;
 
 	// Token: 0x04001CCF RID: 7375
-	public int RentalEndDay;
+	public ChunkManager.ChunkObserver ChunkObserver;
 
 	// Token: 0x04001CD0 RID: 7376
-	[PublicizedFrom(EAccessModifier.Private)]
+	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
-	public Vector3 averageVel;
+	public RespawnType lastRespawnReason = RespawnType.Unknown;
 
 	// Token: 0x04001CD1 RID: 7377
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public Vector3 averagVelLastPos;
+	public int SpawnedTicks;
 
 	// Token: 0x04001CD2 RID: 7378
-	[PublicizedFrom(EAccessModifier.Private)]
-	[NonSerialized]
-	public const int cBreadcrumbMask = 31;
+	public ulong gameStageBornAtWorldTime;
 
 	// Token: 0x04001CD3 RID: 7379
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Vector3[] breadcrumbs = new Vector3[32];
+	public Vector3i m_MarkerPosition = Vector3i.zero;
 
 	// Token: 0x04001CD4 RID: 7380
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
-	public Vector3 breadcrumbLastPos;
+	public NavObject navMarker;
 
 	// Token: 0x04001CD5 RID: 7381
+	public bool navMarkerHidden;
+
+	// Token: 0x04001CD6 RID: 7382
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public NavObject navVending;
+
+	// Token: 0x04001CD7 RID: 7383
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public float lastTimePrefabChecked;
+
+	// Token: 0x04001CD8 RID: 7384
+	public PrefabInstance prefab;
+
+	// Token: 0x04001CD9 RID: 7385
+	public PrefabInstance enteredPrefab;
+
+	// Token: 0x04001CDA RID: 7386
+	public bool prefabInfoEntered;
+
+	// Token: 0x04001CDB RID: 7387
+	public float prefabTimeIn;
+
+	// Token: 0x04001CDC RID: 7388
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public bool bModelVisible = true;
+
+	// Token: 0x04001CDF RID: 7391
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public bool twitchEnabled;
+
+	// Token: 0x04001CE0 RID: 7392
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public bool twitchSafe;
+
+	// Token: 0x04001CE1 RID: 7393
+	public bool IsInTrader;
+
+	// Token: 0x04001CE2 RID: 7394
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public TwitchVoteLockTypes twitchVoteLock;
+
+	// Token: 0x04001CE3 RID: 7395
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public bool twitchVisionDisabled;
+
+	// Token: 0x04001CE4 RID: 7396
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public EntityPlayer.TwitchActionsStates twitchActionsEnabled = EntityPlayer.TwitchActionsStates.Enabled;
+
+	// Token: 0x04001CE5 RID: 7397
+	[PublicizedFrom(EAccessModifier.Protected)]
+	[NonSerialized]
+	public bool isSpectator;
+
+	// Token: 0x04001CE6 RID: 7398
+	public WaypointCollection Waypoints = new WaypointCollection();
+
+	// Token: 0x04001CE7 RID: 7399
+	public List<Waypoint> WaypointInvites = new List<Waypoint>();
+
+	// Token: 0x04001CE8 RID: 7400
+	public QuestJournal QuestJournal = new QuestJournal();
+
+	// Token: 0x04001CEE RID: 7406
+	public List<ushort> favoriteCreativeStacks = new List<ushort>();
+
+	// Token: 0x04001CEF RID: 7407
+	public List<string> favoriteShapes = new List<string>();
+
+	// Token: 0x04001CF0 RID: 7408
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Vector3i m_rentedVMPosition = Vector3i.zero;
+
+	// Token: 0x04001CF1 RID: 7409
+	public ulong RentalEndTime;
+
+	// Token: 0x04001CF2 RID: 7410
+	public int RentalEndDay;
+
+	// Token: 0x04001CF3 RID: 7411
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Vector3 averageVel;
+
+	// Token: 0x04001CF4 RID: 7412
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Vector3 averagVelLastPos;
+
+	// Token: 0x04001CF5 RID: 7413
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public const int cBreadcrumbMask = 31;
+
+	// Token: 0x04001CF6 RID: 7414
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Vector3[] breadcrumbs = new Vector3[32];
+
+	// Token: 0x04001CF7 RID: 7415
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public Vector3 breadcrumbLastPos;
+
+	// Token: 0x04001CF8 RID: 7416
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int breadcrumbIndex;
 
-	// Token: 0x04001CD6 RID: 7382
+	// Token: 0x04001CF9 RID: 7417
 	public static float WalkSpeedModifier = 1f;
 
-	// Token: 0x04001CD7 RID: 7383
+	// Token: 0x04001CFA RID: 7418
 	public static float RunSpeedModifier = 1f;
 
-	// Token: 0x04001CD8 RID: 7384
+	// Token: 0x04001CFB RID: 7419
 	public static float CrouchSpeedModifier = 1f;
 
-	// Token: 0x04001CD9 RID: 7385
+	// Token: 0x04001CFC RID: 7420
 	public static float CrouchRunSpeedModifier = 1f;
 
-	// Token: 0x04001CDA RID: 7386
+	// Token: 0x04001CFD RID: 7421
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public bool isAdmin;
 
-	// Token: 0x04001CDB RID: 7387
+	// Token: 0x04001CFE RID: 7422
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3i lastChunkPos = new Vector3i(int.MinValue, int.MinValue, int.MinValue);
 
-	// Token: 0x04001CDC RID: 7388
+	// Token: 0x04001CFF RID: 7423
 	public bool HasUpdated;
 
-	// Token: 0x04001CDD RID: 7389
+	// Token: 0x04001D00 RID: 7424
 	public FastTags<TagGroup.Global> generalTags = FastTags<TagGroup.Global>.none;
 
-	// Token: 0x04001CDE RID: 7390
+	// Token: 0x04001D01 RID: 7425
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 attachedModelPos;
 
-	// Token: 0x04001CDF RID: 7391
+	// Token: 0x04001D02 RID: 7426
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int visiblityCheckTicks;
 
-	// Token: 0x04001CE0 RID: 7392
+	// Token: 0x04001D03 RID: 7427
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 lastVehiclePositionOnDismount = Vector3.zero;
 
-	// Token: 0x04001CE1 RID: 7393
+	// Token: 0x04001D04 RID: 7428
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float timeOfVehicleDismount;
 
-	// Token: 0x04001CE2 RID: 7394
+	// Token: 0x04001D05 RID: 7429
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float vehicleTeleportThresholdSeconds = 10f;
 
-	// Token: 0x04001CE3 RID: 7395
+	// Token: 0x04001D06 RID: 7430
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool forcedDetach;
 
-	// Token: 0x04001CE4 RID: 7396
+	// Token: 0x04001D07 RID: 7431
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Party party;
 
-	// Token: 0x04001CE5 RID: 7397
+	// Token: 0x04001D08 RID: 7432
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public CompanionGroup companions;
 
-	// Token: 0x04001CEA RID: 7402
+	// Token: 0x04001D0D RID: 7437
 	public List<EntityPlayer> partyInvites = new List<EntityPlayer>();
 
-	// Token: 0x04001CEB RID: 7403
+	// Token: 0x04001D0E RID: 7438
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Dictionary<int, PrefabInstance> prefabsAroundNear = new Dictionary<int, PrefabInstance>();
 
-	// Token: 0x04001CEC RID: 7404
+	// Token: 0x04001D0F RID: 7439
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool laserSightActive;
 
-	// Token: 0x04001CED RID: 7405
+	// Token: 0x04001D10 RID: 7440
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector3 laserSightPosition;
 
-	// Token: 0x020004C2 RID: 1218
-	// (Invoke) Token: 0x06002715 RID: 10005
+	// Token: 0x020004C6 RID: 1222
+	// (Invoke) Token: 0x06002737 RID: 10039
 	public delegate void OnPlayerTeleportDelegate();
 
-	// Token: 0x020004C3 RID: 1219
+	// Token: 0x020004C7 RID: 1223
 	public enum TwitchActionsStates
 	{
-		// Token: 0x04001CEF RID: 7407
+		// Token: 0x04001D12 RID: 7442
 		Disabled,
-		// Token: 0x04001CF0 RID: 7408
+		// Token: 0x04001D13 RID: 7443
 		Enabled,
-		// Token: 0x04001CF1 RID: 7409
+		// Token: 0x04001D14 RID: 7444
 		TempDisabled,
-		// Token: 0x04001CF2 RID: 7410
+		// Token: 0x04001D15 RID: 7445
 		TempDisabledEnding
 	}
 }

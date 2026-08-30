@@ -2,11 +2,11 @@
 using System.Collections;
 using UnityEngine.Scripting;
 
-// Token: 0x020007EF RID: 2031
+// Token: 0x020007FA RID: 2042
 [Preserve]
 public class NetPackageGameStats : NetPackage
 {
-	// Token: 0x06003BD7 RID: 15319 RVA: 0x0017F96C File Offset: 0x0017DB6C
+	// Token: 0x06003C36 RID: 15414 RVA: 0x00181D44 File Offset: 0x0017FF44
 	public NetPackageGameStats Setup(GameStats _gs)
 	{
 		using (PooledBinaryWriter pooledBinaryWriter = MemoryPools.poolBinaryWriter.AllocSync(false))
@@ -17,21 +17,21 @@ public class NetPackageGameStats : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003BD8 RID: 15320 RVA: 0x0017F9B8 File Offset: 0x0017DBB8
+	// Token: 0x06003C37 RID: 15415 RVA: 0x00181D90 File Offset: 0x0017FF90
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public ~NetPackageGameStats()
 	{
 		MemoryPools.poolMemoryStream.FreeSync(this.ms);
 	}
 
-	// Token: 0x06003BD9 RID: 15321 RVA: 0x0017F9F0 File Offset: 0x0017DBF0
+	// Token: 0x06003C38 RID: 15416 RVA: 0x00181DC8 File Offset: 0x0017FFC8
 	public override void read(PooledBinaryReader _reader)
 	{
 		int num = (int)_reader.ReadInt16();
 		StreamUtils.StreamCopy(_reader.BaseStream, this.ms, num, null, true);
 	}
 
-	// Token: 0x06003BDA RID: 15322 RVA: 0x0017FA18 File Offset: 0x0017DC18
+	// Token: 0x06003C39 RID: 15417 RVA: 0x00181DF0 File Offset: 0x0017FFF0
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -39,13 +39,13 @@ public class NetPackageGameStats : NetPackage
 		this.ms.WriteTo(_writer.BaseStream);
 	}
 
-	// Token: 0x06003BDB RID: 15323 RVA: 0x0017FA44 File Offset: 0x0017DC44
+	// Token: 0x06003C3A RID: 15418 RVA: 0x00181E1C File Offset: 0x0018001C
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		ThreadManager.StartCoroutine(this.readStatsCo());
 	}
 
-	// Token: 0x06003BDC RID: 15324 RVA: 0x0017FA52 File Offset: 0x0017DC52
+	// Token: 0x06003C3B RID: 15419 RVA: 0x00181E2A File Offset: 0x0018002A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IEnumerator readStatsCo()
 	{
@@ -71,14 +71,14 @@ public class NetPackageGameStats : NetPackage
 		yield break;
 	}
 
-	// Token: 0x06003BDD RID: 15325 RVA: 0x0017FA61 File Offset: 0x0017DC61
+	// Token: 0x06003C3C RID: 15420 RVA: 0x00181E39 File Offset: 0x00180039
 	public override int GetLength()
 	{
 		return (int)this.ms.Length;
 	}
 
-	// Token: 0x17000635 RID: 1589
-	// (get) Token: 0x06003BDE RID: 15326 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x17000640 RID: 1600
+	// (get) Token: 0x06003C3D RID: 15421 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -87,7 +87,7 @@ public class NetPackageGameStats : NetPackage
 		}
 	}
 
-	// Token: 0x04003089 RID: 12425
+	// Token: 0x04003108 RID: 12552
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PooledExpandableMemoryStream ms = MemoryPools.poolMemoryStream.AllocSync(true);
 }

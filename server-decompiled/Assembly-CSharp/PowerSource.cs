@@ -3,12 +3,12 @@ using System.IO;
 using Audio;
 using UnityEngine;
 
-// Token: 0x02000907 RID: 2311
+// Token: 0x02000913 RID: 2323
 public class PowerSource : PowerItem
 {
-	// Token: 0x17000718 RID: 1816
-	// (get) Token: 0x060042F1 RID: 17137 RVA: 0x001A19F8 File Offset: 0x0019FBF8
-	// (set) Token: 0x060042F2 RID: 17138 RVA: 0x001A1A00 File Offset: 0x0019FC00
+	// Token: 0x17000724 RID: 1828
+	// (get) Token: 0x06004356 RID: 17238 RVA: 0x001A3AD0 File Offset: 0x001A1CD0
+	// (set) Token: 0x06004357 RID: 17239 RVA: 0x001A3AD8 File Offset: 0x001A1CD8
 	public bool IsOn
 	{
 		get
@@ -35,7 +35,7 @@ public class PowerSource : PowerItem
 		}
 	}
 
-	// Token: 0x060042F3 RID: 17139 RVA: 0x001A1A58 File Offset: 0x0019FC58
+	// Token: 0x06004358 RID: 17240 RVA: 0x001A3B30 File Offset: 0x001A1D30
 	public PowerSource()
 	{
 		this.Stacks = new ItemStack[6];
@@ -45,8 +45,8 @@ public class PowerSource : PowerItem
 		}
 	}
 
-	// Token: 0x17000719 RID: 1817
-	// (get) Token: 0x060042F4 RID: 17140 RVA: 0x001A19F8 File Offset: 0x0019FBF8
+	// Token: 0x17000725 RID: 1829
+	// (get) Token: 0x06004359 RID: 17241 RVA: 0x001A3AD0 File Offset: 0x001A1CD0
 	public override bool IsPowered
 	{
 		get
@@ -55,8 +55,8 @@ public class PowerSource : PowerItem
 		}
 	}
 
-	// Token: 0x1700071A RID: 1818
-	// (get) Token: 0x060042F5 RID: 17141 RVA: 0x00031E8B File Offset: 0x0003008B
+	// Token: 0x17000726 RID: 1830
+	// (get) Token: 0x0600435A RID: 17242 RVA: 0x00032147 File Offset: 0x00030347
 	public virtual string OnSound
 	{
 		get
@@ -65,8 +65,8 @@ public class PowerSource : PowerItem
 		}
 	}
 
-	// Token: 0x1700071B RID: 1819
-	// (get) Token: 0x060042F6 RID: 17142 RVA: 0x00031E8B File Offset: 0x0003008B
+	// Token: 0x17000727 RID: 1831
+	// (get) Token: 0x0600435B RID: 17243 RVA: 0x00032147 File Offset: 0x00030347
 	public virtual string OffSound
 	{
 		get
@@ -75,7 +75,7 @@ public class PowerSource : PowerItem
 		}
 	}
 
-	// Token: 0x060042F7 RID: 17143 RVA: 0x001A1AA2 File Offset: 0x0019FCA2
+	// Token: 0x0600435C RID: 17244 RVA: 0x001A3B7A File Offset: 0x001A1D7A
 	public void Refresh()
 	{
 		if (this.TileEntity != null)
@@ -84,13 +84,13 @@ public class PowerSource : PowerItem
 		}
 	}
 
-	// Token: 0x060042F8 RID: 17144 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x0600435D RID: 17245 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool CanParent(PowerItem newParent)
 	{
 		return false;
 	}
 
-	// Token: 0x060042F9 RID: 17145 RVA: 0x001A1AC0 File Offset: 0x0019FCC0
+	// Token: 0x0600435E RID: 17246 RVA: 0x001A3B98 File Offset: 0x001A1D98
 	public override void read(BinaryReader _br, byte _version)
 	{
 		base.read(_br, _version);
@@ -100,7 +100,7 @@ public class PowerSource : PowerItem
 		this.hasChangesLocal = true;
 	}
 
-	// Token: 0x060042FA RID: 17146 RVA: 0x001A1B09 File Offset: 0x0019FD09
+	// Token: 0x0600435F RID: 17247 RVA: 0x001A3BE1 File Offset: 0x001A1DE1
 	public override void write(BinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -109,7 +109,7 @@ public class PowerSource : PowerItem
 		GameUtils.WriteItemStack(_bw, this.Stacks);
 	}
 
-	// Token: 0x060042FB RID: 17147 RVA: 0x001A1B38 File Offset: 0x0019FD38
+	// Token: 0x06004360 RID: 17248 RVA: 0x001A3C10 File Offset: 0x001A1E10
 	public virtual void Update()
 	{
 		this.HandleSendPower();
@@ -123,7 +123,7 @@ public class PowerSource : PowerItem
 		}
 	}
 
-	// Token: 0x060042FC RID: 17148 RVA: 0x001A1B88 File Offset: 0x0019FD88
+	// Token: 0x06004361 RID: 17249 RVA: 0x001A3C60 File Offset: 0x001A1E60
 	public virtual void HandleSendPower()
 	{
 		if (this.IsOn)
@@ -158,20 +158,20 @@ public class PowerSource : PowerItem
 		}
 	}
 
-	// Token: 0x060042FD RID: 17149 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06004362 RID: 17250 RVA: 0x00010E62 File Offset: 0x0000F062
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual bool ShouldAutoTurnOff()
 	{
 		return false;
 	}
 
-	// Token: 0x060042FE RID: 17150 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06004363 RID: 17251 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void TickPowerGeneration()
 	{
 	}
 
-	// Token: 0x060042FF RID: 17151 RVA: 0x001A1C68 File Offset: 0x0019FE68
+	// Token: 0x06004364 RID: 17252 RVA: 0x001A3D40 File Offset: 0x001A1F40
 	public override void SetValuesFromBlock()
 	{
 		base.SetValuesFromBlock();
@@ -183,14 +183,14 @@ public class PowerSource : PowerItem
 		this.RequiredPower = (this.MaxPower = (this.MaxOutput = this.OutputPerStack * this.SlotCount));
 	}
 
-	// Token: 0x06004300 RID: 17152 RVA: 0x001A1CE5 File Offset: 0x0019FEE5
+	// Token: 0x06004365 RID: 17253 RVA: 0x001A3DBD File Offset: 0x001A1FBD
 	public void SetSlots(ItemStack[] _stacks)
 	{
 		this.Stacks = _stacks;
 		this.RefreshPowerStats();
 	}
 
-	// Token: 0x06004301 RID: 17153 RVA: 0x001A1CF4 File Offset: 0x0019FEF4
+	// Token: 0x06004366 RID: 17254 RVA: 0x001A3DCC File Offset: 0x001A1FCC
 	public bool TryAddItemToSlot(ItemClass itemClass, ItemStack itemStack)
 	{
 		if (!this.IsOn)
@@ -208,7 +208,7 @@ public class PowerSource : PowerItem
 		return false;
 	}
 
-	// Token: 0x06004302 RID: 17154 RVA: 0x001A1D40 File Offset: 0x0019FF40
+	// Token: 0x06004367 RID: 17255 RVA: 0x001A3E18 File Offset: 0x001A2018
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void RefreshPowerStats()
 	{
@@ -238,7 +238,7 @@ public class PowerSource : PowerItem
 		}
 	}
 
-	// Token: 0x06004303 RID: 17155 RVA: 0x001A1E46 File Offset: 0x001A0046
+	// Token: 0x06004368 RID: 17256 RVA: 0x001A3F1E File Offset: 0x001A211E
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void HandleOnOffSound()
 	{
@@ -248,34 +248,34 @@ public class PowerSource : PowerItem
 		}
 	}
 
-	// Token: 0x040035DD RID: 13789
+	// Token: 0x0400365E RID: 13918
 	public ushort OutputPerStack;
 
-	// Token: 0x040035DE RID: 13790
+	// Token: 0x0400365F RID: 13919
 	public ushort SlotCount;
 
-	// Token: 0x040035DF RID: 13791
+	// Token: 0x04003660 RID: 13920
 	public ushort MaxOutput;
 
-	// Token: 0x040035E0 RID: 13792
+	// Token: 0x04003661 RID: 13921
 	public ushort MaxPower = 60000;
 
-	// Token: 0x040035E1 RID: 13793
+	// Token: 0x04003662 RID: 13922
 	public ushort LastPowerUsed;
 
-	// Token: 0x040035E2 RID: 13794
+	// Token: 0x04003663 RID: 13923
 	public ushort CurrentPower;
 
-	// Token: 0x040035E3 RID: 13795
+	// Token: 0x04003664 RID: 13924
 	public ushort LastCurrentPower;
 
-	// Token: 0x040035E4 RID: 13796
+	// Token: 0x04003665 RID: 13925
 	public ItemStack[] Stacks;
 
-	// Token: 0x040035E5 RID: 13797
+	// Token: 0x04003666 RID: 13926
 	public static float PowerOutputModifier = 1f;
 
-	// Token: 0x040035E6 RID: 13798
+	// Token: 0x04003667 RID: 13927
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public bool isOn;
 }

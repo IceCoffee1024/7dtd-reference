@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x02000BBF RID: 3007
+// Token: 0x02000BD1 RID: 3025
 public enum TraderAreaStates
 {
-	// Token: 0x04004628 RID: 17960
+	// Token: 0x040046C4 RID: 18116
 	Default,
-	// Token: 0x04004629 RID: 17961
+	// Token: 0x040046C5 RID: 18117
 	Claimable,
-	// Token: 0x0400462A RID: 17962
+	// Token: 0x040046C6 RID: 18118
 	NotClaimable
 }

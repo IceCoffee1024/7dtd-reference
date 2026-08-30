@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001577 RID: 5495
+// Token: 0x02001592 RID: 5522
 public static class vp_TimeUtility
 {
-	// Token: 0x170013C8 RID: 5064
-	// (get) Token: 0x0600ABBB RID: 43963 RVA: 0x003FEC94 File Offset: 0x003FCE94
-	// (set) Token: 0x0600ABBC RID: 43964 RVA: 0x003FEC9B File Offset: 0x003FCE9B
+	// Token: 0x17001401 RID: 5121
+	// (get) Token: 0x0600ACB8 RID: 44216 RVA: 0x00403FD4 File Offset: 0x004021D4
+	// (set) Token: 0x0600ACB9 RID: 44217 RVA: 0x00403FDB File Offset: 0x004021DB
 	public static float TimeScale
 	{
 		get
@@ -21,8 +21,8 @@ public static class vp_TimeUtility
 		}
 	}
 
-	// Token: 0x170013C9 RID: 5065
-	// (get) Token: 0x0600ABBD RID: 43965 RVA: 0x003FECBB File Offset: 0x003FCEBB
+	// Token: 0x17001402 RID: 5122
+	// (get) Token: 0x0600ACBA RID: 44218 RVA: 0x00403FFB File Offset: 0x004021FB
 	public static float AdjustedTimeScale
 	{
 		get
@@ -31,7 +31,7 @@ public static class vp_TimeUtility
 		}
 	}
 
-	// Token: 0x0600ABBE RID: 43966 RVA: 0x003FECD4 File Offset: 0x003FCED4
+	// Token: 0x0600ACBB RID: 44219 RVA: 0x00404014 File Offset: 0x00402214
 	public static void FadeTimeScale(float targetTimeScale, float fadeSpeed)
 	{
 		if (vp_TimeUtility.TimeScale == targetTimeScale)
@@ -46,7 +46,7 @@ public static class vp_TimeUtility
 		}
 	}
 
-	// Token: 0x0600ABBF RID: 43967 RVA: 0x003FED28 File Offset: 0x003FCF28
+	// Token: 0x0600ACBC RID: 44220 RVA: 0x00404068 File Offset: 0x00402268
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float ClampTimeScale(float t)
 	{
@@ -65,9 +65,9 @@ public static class vp_TimeUtility
 		return t;
 	}
 
-	// Token: 0x170013CA RID: 5066
-	// (get) Token: 0x0600ABC0 RID: 43968 RVA: 0x003FED9A File Offset: 0x003FCF9A
-	// (set) Token: 0x0600ABC1 RID: 43969 RVA: 0x003FEDA4 File Offset: 0x003FCFA4
+	// Token: 0x17001403 RID: 5123
+	// (get) Token: 0x0600ACBD RID: 44221 RVA: 0x004040DA File Offset: 0x004022DA
+	// (set) Token: 0x0600ACBE RID: 44222 RVA: 0x004040E4 File Offset: 0x004022E4
 	public static bool Paused
 	{
 		get
@@ -101,22 +101,22 @@ public static class vp_TimeUtility
 		}
 	}
 
-	// Token: 0x04007EE4 RID: 32484
+	// Token: 0x04007FBD RID: 32701
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float m_MinTimeScale = 0.1f;
 
-	// Token: 0x04007EE5 RID: 32485
+	// Token: 0x04007FBE RID: 32702
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float m_MaxTimeScale = 1f;
 
-	// Token: 0x04007EE6 RID: 32486
+	// Token: 0x04007FBF RID: 32703
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool m_Paused = false;
 
-	// Token: 0x04007EE7 RID: 32487
+	// Token: 0x04007FC0 RID: 32704
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static float m_TimeScaleOnPause = 1f;
 
-	// Token: 0x04007EE8 RID: 32488
+	// Token: 0x04007FC1 RID: 32705
 	public static float InitialFixedTimeStep = Time.fixedDeltaTime;
 }

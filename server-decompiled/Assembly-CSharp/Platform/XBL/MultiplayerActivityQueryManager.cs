@@ -6,16 +6,16 @@ using Unity.XGamingRuntime.Interop;
 
 namespace Platform.XBL
 {
-	// Token: 0x02001BD0 RID: 7120
+	// Token: 0x02001BF7 RID: 7159
 	public class MultiplayerActivityQueryManager
 	{
-		// Token: 0x0600D332 RID: 54066 RVA: 0x004C57CD File Offset: 0x004C39CD
+		// Token: 0x0600D4C0 RID: 54464 RVA: 0x004CBBC1 File Offset: 0x004C9DC1
 		public MultiplayerActivityQueryManager(Unity.XGamingRuntime.XblContextHandle xblContextHandle)
 		{
 			this.xblContextHandle = xblContextHandle;
 		}
 
-		// Token: 0x0600D333 RID: 54067 RVA: 0x004C5808 File Offset: 0x004C3A08
+		// Token: 0x0600D4C1 RID: 54465 RVA: 0x004CBBFC File Offset: 0x004C9DFC
 		public void GetActivityAsync(ulong[] xuids, MultiplayerActivityQueryManager.OnGetActivityComplete callback)
 		{
 			int num = (xuids.Length + 30 - 1) / 30;
@@ -44,7 +44,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D334 RID: 54068 RVA: 0x004C58CC File Offset: 0x004C3ACC
+		// Token: 0x0600D4C2 RID: 54466 RVA: 0x004CBCC0 File Offset: 0x004C9EC0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void StartBatch(MultiplayerActivityQueryManager.Request request, ulong[] xuids)
 		{
@@ -73,7 +73,7 @@ namespace Platform.XBL
 			});
 		}
 
-		// Token: 0x0600D335 RID: 54069 RVA: 0x004C5914 File Offset: 0x004C3B14
+		// Token: 0x0600D4C3 RID: 54467 RVA: 0x004CBD08 File Offset: 0x004C9F08
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void CompleteBatch(MultiplayerActivityQueryManager.Request request, XblMultiplayerActivityInfo[] batchResults)
 		{
@@ -97,7 +97,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D336 RID: 54070 RVA: 0x004C59C4 File Offset: 0x004C3BC4
+		// Token: 0x0600D4C4 RID: 54468 RVA: 0x004CBDB8 File Offset: 0x004C9FB8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void RetryBatchesTask(ThreadManager.TaskInfo taskInfo)
 		{
@@ -124,7 +124,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D337 RID: 54071 RVA: 0x004C5A5C File Offset: 0x004C3C5C
+		// Token: 0x0600D4C5 RID: 54469 RVA: 0x004CBE50 File Offset: 0x004CA050
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void RetryExitHandler(ThreadManager.TaskInfo _ti, Exception _e)
 		{
@@ -135,51 +135,51 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0400A0A6 RID: 41126
+		// Token: 0x0400A1D7 RID: 41431
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int batchMax = 30;
 
-		// Token: 0x0400A0A7 RID: 41127
+		// Token: 0x0400A1D8 RID: 41432
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int backoffSeconds = 20;
 
-		// Token: 0x0400A0A8 RID: 41128
+		// Token: 0x0400A1D9 RID: 41433
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const int burstLimit = 20;
 
-		// Token: 0x0400A0A9 RID: 41129
+		// Token: 0x0400A1DA RID: 41434
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static int nextRequestId;
 
-		// Token: 0x0400A0AA RID: 41130
+		// Token: 0x0400A1DB RID: 41435
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Unity.XGamingRuntime.XblContextHandle xblContextHandle;
 
-		// Token: 0x0400A0AB RID: 41131
+		// Token: 0x0400A1DC RID: 41436
 		[PublicizedFrom(EAccessModifier.Private)]
 		public object pendingLock = new object();
 
-		// Token: 0x0400A0AC RID: 41132
+		// Token: 0x0400A1DD RID: 41437
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Dictionary<int, MultiplayerActivityQueryManager.Request> pendingRequests = new Dictionary<int, MultiplayerActivityQueryManager.Request>();
 
-		// Token: 0x0400A0AD RID: 41133
+		// Token: 0x0400A1DE RID: 41438
 		[PublicizedFrom(EAccessModifier.Private)]
 		public object retryLock = new object();
 
-		// Token: 0x0400A0AE RID: 41134
+		// Token: 0x0400A1DF RID: 41439
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Queue<MultiplayerActivityQueryManager.RequestBatch> retryQueue = new Queue<MultiplayerActivityQueryManager.RequestBatch>();
 
-		// Token: 0x0400A0AF RID: 41135
+		// Token: 0x0400A1E0 RID: 41440
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ThreadManager.TaskInfo retryTask;
 
-		// Token: 0x02001BD1 RID: 7121
+		// Token: 0x02001BF8 RID: 7160
 		[PublicizedFrom(EAccessModifier.Private)]
 		public class Request
 		{
-			// Token: 0x0600D338 RID: 54072 RVA: 0x004C5AA0 File Offset: 0x004C3CA0
+			// Token: 0x0600D4C6 RID: 54470 RVA: 0x004CBE94 File Offset: 0x004CA094
 			public Request(ulong[] xuids, int batchCount, MultiplayerActivityQueryManager.OnGetActivityComplete callback)
 			{
 				this.id = Interlocked.Increment(ref MultiplayerActivityQueryManager.nextRequestId);
@@ -188,42 +188,42 @@ namespace Platform.XBL
 				this.callback = callback;
 			}
 
-			// Token: 0x0400A0B0 RID: 41136
+			// Token: 0x0400A1E1 RID: 41441
 			public int id;
 
-			// Token: 0x0400A0B1 RID: 41137
+			// Token: 0x0400A1E2 RID: 41442
 			public ulong[] xuids;
 
-			// Token: 0x0400A0B2 RID: 41138
+			// Token: 0x0400A1E3 RID: 41443
 			public MultiplayerActivityQueryManager.OnGetActivityComplete callback;
 
-			// Token: 0x0400A0B3 RID: 41139
+			// Token: 0x0400A1E4 RID: 41444
 			public List<XblMultiplayerActivityInfo> results = new List<XblMultiplayerActivityInfo>();
 
-			// Token: 0x0400A0B4 RID: 41140
+			// Token: 0x0400A1E5 RID: 41445
 			public int batchesPending;
 		}
 
-		// Token: 0x02001BD2 RID: 7122
+		// Token: 0x02001BF9 RID: 7161
 		[PublicizedFrom(EAccessModifier.Private)]
 		public struct RequestBatch
 		{
-			// Token: 0x0600D339 RID: 54073 RVA: 0x004C5AD8 File Offset: 0x004C3CD8
+			// Token: 0x0600D4C7 RID: 54471 RVA: 0x004CBECC File Offset: 0x004CA0CC
 			public RequestBatch(ulong[] xuidBatch, MultiplayerActivityQueryManager.Request request)
 			{
 				this.xuids = xuidBatch;
 				this.request = request;
 			}
 
-			// Token: 0x0400A0B5 RID: 41141
+			// Token: 0x0400A1E6 RID: 41446
 			public ulong[] xuids;
 
-			// Token: 0x0400A0B6 RID: 41142
+			// Token: 0x0400A1E7 RID: 41447
 			public MultiplayerActivityQueryManager.Request request;
 		}
 
-		// Token: 0x02001BD3 RID: 7123
-		// (Invoke) Token: 0x0600D33B RID: 54075
+		// Token: 0x02001BFA RID: 7162
+		// (Invoke) Token: 0x0600D4C9 RID: 54473
 		public delegate void OnGetActivityComplete(ulong[] requestedXuids, List<XblMultiplayerActivityInfo> results);
 	}
 }

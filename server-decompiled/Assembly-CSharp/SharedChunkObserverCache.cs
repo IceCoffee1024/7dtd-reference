@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000B9A RID: 2970
+// Token: 0x02000BAC RID: 2988
 public class SharedChunkObserverCache
 {
-	// Token: 0x17000963 RID: 2403
-	// (get) Token: 0x060059D7 RID: 22999 RVA: 0x002284B0 File Offset: 0x002266B0
+	// Token: 0x17000975 RID: 2421
+	// (get) Token: 0x06005A5F RID: 23135 RVA: 0x0022B200 File Offset: 0x00229400
 	public IThreadingSemantics ThreadingSemantics
 	{
 		get
@@ -15,7 +15,7 @@ public class SharedChunkObserverCache
 		}
 	}
 
-	// Token: 0x060059D8 RID: 23000 RVA: 0x002284B8 File Offset: 0x002266B8
+	// Token: 0x06005A60 RID: 23136 RVA: 0x0022B208 File Offset: 0x00229408
 	public SharedChunkObserverCache(ChunkManager _chunkManager, int _viewDim, IThreadingSemantics _threadingSemantics)
 	{
 		this.chunkManager = _chunkManager;
@@ -23,7 +23,7 @@ public class SharedChunkObserverCache
 		this.threadingSemantics = _threadingSemantics;
 	}
 
-	// Token: 0x060059D9 RID: 23001 RVA: 0x002284E0 File Offset: 0x002266E0
+	// Token: 0x06005A61 RID: 23137 RVA: 0x0022B230 File Offset: 0x00229430
 	public ISharedChunkObserver GetSharedObserverForChunk(Vector2i chunkPos)
 	{
 		return this.threadingSemantics.Synchronize<SharedChunkObserverCache.SharedChunkObserver>(delegate
@@ -46,7 +46,7 @@ public class SharedChunkObserverCache
 		});
 	}
 
-	// Token: 0x060059DA RID: 23002 RVA: 0x00228518 File Offset: 0x00226718
+	// Token: 0x06005A62 RID: 23138 RVA: 0x0022B268 File Offset: 0x00229468
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void removeChunkObserver(SharedChunkObserverCache.SharedChunkObserver observer)
 	{
@@ -60,27 +60,27 @@ public class SharedChunkObserverCache
 		this.chunkManager.RemoveChunkObserver(observer.chunkRef);
 	}
 
-	// Token: 0x04004576 RID: 17782
+	// Token: 0x04004611 RID: 17937
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IThreadingSemantics threadingSemantics;
 
-	// Token: 0x04004577 RID: 17783
+	// Token: 0x04004612 RID: 17938
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<Vector2i, SharedChunkObserverCache.SharedChunkObserver> observers = new Dictionary<Vector2i, SharedChunkObserverCache.SharedChunkObserver>();
 
-	// Token: 0x04004578 RID: 17784
+	// Token: 0x04004613 RID: 17939
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ChunkManager chunkManager;
 
-	// Token: 0x04004579 RID: 17785
+	// Token: 0x04004614 RID: 17940
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int viewDim;
 
-	// Token: 0x02000B9B RID: 2971
+	// Token: 0x02000BAD RID: 2989
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class SharedChunkObserver : ISharedChunkObserver, IDisposable
 	{
-		// Token: 0x060059DB RID: 23003 RVA: 0x00228566 File Offset: 0x00226766
+		// Token: 0x06005A63 RID: 23139 RVA: 0x0022B2B6 File Offset: 0x002294B6
 		public SharedChunkObserver(SharedChunkObserverCache _cache, ChunkManager.ChunkObserver _chunkRef, SharedChunkObserverCache.SharedChunkObserver.RemoveObserver _removeObserverDelegate, Vector2i _chunkPos)
 		{
 			this.cache = _cache;
@@ -90,7 +90,7 @@ public class SharedChunkObserverCache
 			this.refCount = 1;
 		}
 
-		// Token: 0x060059DC RID: 23004 RVA: 0x00228592 File Offset: 0x00226792
+		// Token: 0x06005A64 RID: 23140 RVA: 0x0022B2E2 File Offset: 0x002294E2
 		public void Reference()
 		{
 			if (this.cache.ThreadingSemantics.InterlockedAdd(ref this.refCount, 1) < 2)
@@ -99,7 +99,7 @@ public class SharedChunkObserverCache
 			}
 		}
 
-		// Token: 0x060059DD RID: 23005 RVA: 0x002285B9 File Offset: 0x002267B9
+		// Token: 0x06005A65 RID: 23141 RVA: 0x0022B309 File Offset: 0x00229509
 		public void Dispose()
 		{
 			if (this.cache.ThreadingSemantics.InterlockedAdd(ref this.refCount, -1) == 0)
@@ -108,8 +108,8 @@ public class SharedChunkObserverCache
 			}
 		}
 
-		// Token: 0x17000964 RID: 2404
-		// (get) Token: 0x060059DE RID: 23006 RVA: 0x002285E0 File Offset: 0x002267E0
+		// Token: 0x17000976 RID: 2422
+		// (get) Token: 0x06005A66 RID: 23142 RVA: 0x0022B330 File Offset: 0x00229530
 		public Vector2i ChunkPos
 		{
 			get
@@ -118,8 +118,8 @@ public class SharedChunkObserverCache
 			}
 		}
 
-		// Token: 0x17000965 RID: 2405
-		// (get) Token: 0x060059DF RID: 23007 RVA: 0x002285E8 File Offset: 0x002267E8
+		// Token: 0x17000977 RID: 2423
+		// (get) Token: 0x06005A67 RID: 23143 RVA: 0x0022B338 File Offset: 0x00229538
 		public SharedChunkObserverCache Owner
 		{
 			get
@@ -128,25 +128,25 @@ public class SharedChunkObserverCache
 			}
 		}
 
-		// Token: 0x0400457A RID: 17786
+		// Token: 0x04004615 RID: 17941
 		public Vector2i chunkPos;
 
-		// Token: 0x0400457B RID: 17787
+		// Token: 0x04004616 RID: 17942
 		public int refCount;
 
-		// Token: 0x0400457C RID: 17788
+		// Token: 0x04004617 RID: 17943
 		public ChunkManager.ChunkObserver chunkRef;
 
-		// Token: 0x0400457D RID: 17789
+		// Token: 0x04004618 RID: 17944
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SharedChunkObserverCache cache;
 
-		// Token: 0x0400457E RID: 17790
+		// Token: 0x04004619 RID: 17945
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SharedChunkObserverCache.SharedChunkObserver.RemoveObserver removeObserver;
 
-		// Token: 0x02000B9C RID: 2972
-		// (Invoke) Token: 0x060059E1 RID: 23009
+		// Token: 0x02000BAE RID: 2990
+		// (Invoke) Token: 0x06005A69 RID: 23145
 		public delegate void RemoveObserver(SharedChunkObserverCache.SharedChunkObserver observer);
 	}
 }

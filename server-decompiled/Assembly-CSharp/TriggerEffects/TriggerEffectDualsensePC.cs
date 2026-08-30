@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace TriggerEffects
 {
-	// Token: 0x02001669 RID: 5737
+	// Token: 0x0200168F RID: 5775
 	public static class TriggerEffectDualsensePC
 	{
-		// Token: 0x17001592 RID: 5522
-		// (get) Token: 0x0600B3BE RID: 46014 RVA: 0x00431E5F File Offset: 0x0043005F
-		// (set) Token: 0x0600B3BF RID: 46015 RVA: 0x00431E66 File Offset: 0x00430066
+		// Token: 0x17001604 RID: 5636
+		// (get) Token: 0x0600B541 RID: 46401 RVA: 0x00437BD8 File Offset: 0x00435DD8
+		// (set) Token: 0x0600B542 RID: 46402 RVA: 0x00437BDF File Offset: 0x00435DDF
 		public static TriggerEffectDualsensePC.APIState _apiState
 		{
 			[PublicizedFrom(EAccessModifier.Private)]
@@ -17,7 +17,7 @@ namespace TriggerEffects
 			set;
 		}
 
-		// Token: 0x0600B3C0 RID: 46016 RVA: 0x00431E6E File Offset: 0x0043006E
+		// Token: 0x0600B543 RID: 46403 RVA: 0x00437BE7 File Offset: 0x00435DE7
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void SetTriggerEffectVibration(int userID, TriggerEffectManager.GamepadTrigger trigger, byte position, byte amplitude, byte frequency)
 		{
@@ -27,7 +27,7 @@ namespace TriggerEffects
 			}
 		}
 
-		// Token: 0x0600B3C1 RID: 46017 RVA: 0x00431E94 File Offset: 0x00430094
+		// Token: 0x0600B544 RID: 46404 RVA: 0x00437C0D File Offset: 0x00435E0D
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void ResetControllerIdentification()
 		{
@@ -40,7 +40,7 @@ namespace TriggerEffects
 			}
 		}
 
-		// Token: 0x0600B3C2 RID: 46018 RVA: 0x00431ECC File Offset: 0x004300CC
+		// Token: 0x0600B545 RID: 46405 RVA: 0x00437C44 File Offset: 0x00435E44
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void SetControllerIdentification()
 		{
@@ -53,7 +53,7 @@ namespace TriggerEffects
 			}
 		}
 
-		// Token: 0x0600B3C3 RID: 46019 RVA: 0x00431F2A File Offset: 0x0043012A
+		// Token: 0x0600B546 RID: 46406 RVA: 0x00437CA2 File Offset: 0x00435EA2
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void SetLightbar(int userId, byte colorR, byte colorG, byte colorB)
 		{
@@ -63,7 +63,7 @@ namespace TriggerEffects
 			}
 		}
 
-		// Token: 0x0600B3C4 RID: 46020 RVA: 0x00431F4E File Offset: 0x0043014E
+		// Token: 0x0600B547 RID: 46407 RVA: 0x00437CC6 File Offset: 0x00435EC6
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void SetWeaponEffect(int userID, TriggerEffectManager.GamepadTrigger trigger, byte startPosition, byte endPosition, byte strength)
 		{
@@ -73,7 +73,7 @@ namespace TriggerEffects
 			}
 		}
 
-		// Token: 0x0600B3C5 RID: 46021 RVA: 0x00431F74 File Offset: 0x00430174
+		// Token: 0x0600B548 RID: 46408 RVA: 0x00437CEC File Offset: 0x00435EEC
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void SetTriggerEffectVibrationMultiplePosition(int userID, TriggerEffectManager.GamepadTrigger trigger, byte[] amplitudes, byte frequency)
 		{
@@ -83,7 +83,7 @@ namespace TriggerEffects
 			}
 		}
 
-		// Token: 0x0600B3C6 RID: 46022 RVA: 0x00431F9C File Offset: 0x0043019C
+		// Token: 0x0600B549 RID: 46409 RVA: 0x00437D14 File Offset: 0x00435F14
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void LibShutdown()
 		{
@@ -115,7 +115,7 @@ namespace TriggerEffects
 			}
 		}
 
-		// Token: 0x0600B3C7 RID: 46023 RVA: 0x00432050 File Offset: 0x00430250
+		// Token: 0x0600B54A RID: 46410 RVA: 0x00437DC8 File Offset: 0x00435FC8
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void InitTriggerEffectManager(ref bool[] controllersConnected)
 		{
@@ -159,7 +159,7 @@ namespace TriggerEffects
 			}
 		}
 
-		// Token: 0x0600B3C8 RID: 46024 RVA: 0x00432124 File Offset: 0x00430324
+		// Token: 0x0600B54B RID: 46411 RVA: 0x00437E9C File Offset: 0x0043609C
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void PCTriggerUpdate(bool stateChanged, TriggerEffectManager.TriggerEffectDS currentEffectLeft, TriggerEffectManager.TriggerEffectDS currentEffectRight)
 		{
@@ -189,7 +189,7 @@ namespace TriggerEffects
 			}
 		}
 
-		// Token: 0x0600B3C9 RID: 46025 RVA: 0x004321E8 File Offset: 0x004303E8
+		// Token: 0x0600B54C RID: 46412 RVA: 0x00437F60 File Offset: 0x00436160
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void PCConnectedUpdate(ref bool[] controllersConnected, TriggerEffectManager.TriggerEffectDS currentEffectLeft, TriggerEffectManager.TriggerEffectDS currentEffectRight)
 		{
@@ -221,7 +221,7 @@ namespace TriggerEffects
 			}
 		}
 
-		// Token: 0x0600B3CA RID: 46026 RVA: 0x00432298 File Offset: 0x00430498
+		// Token: 0x0600B54D RID: 46413 RVA: 0x00438010 File Offset: 0x00436210
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static bool ApplyEffectDualsenseOnPC(int userId, TriggerEffectManager.GamepadTrigger trigger, TriggerEffectManager.TriggerEffectDS effect)
 		{
@@ -261,7 +261,7 @@ namespace TriggerEffects
 			return flag;
 		}
 
-		// Token: 0x0600B3CB RID: 46027 RVA: 0x004323C4 File Offset: 0x004305C4
+		// Token: 0x0600B54E RID: 46414 RVA: 0x0043813C File Offset: 0x0043633C
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void ApplyImmediate(TriggerEffectManager.GamepadTrigger trigger, TriggerEffectManager.ControllerTriggerEffect currentEffect)
 		{
@@ -274,7 +274,7 @@ namespace TriggerEffects
 			}
 		}
 
-		// Token: 0x0600B3CC RID: 46028 RVA: 0x00432404 File Offset: 0x00430604
+		// Token: 0x0600B54F RID: 46415 RVA: 0x0043817C File Offset: 0x0043637C
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void DualsensePCSetEffectToOff()
 		{
@@ -295,7 +295,7 @@ namespace TriggerEffects
 			}
 		}
 
-		// Token: 0x0600B3CD RID: 46029 RVA: 0x00432488 File Offset: 0x00430688
+		// Token: 0x0600B550 RID: 46416 RVA: 0x00438200 File Offset: 0x00436400
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void EnableVibration()
 		{
@@ -308,7 +308,7 @@ namespace TriggerEffects
 			}
 		}
 
-		// Token: 0x0600B3CE RID: 46030 RVA: 0x004324C0 File Offset: 0x004306C0
+		// Token: 0x0600B551 RID: 46417 RVA: 0x00438238 File Offset: 0x00436438
 		[PublicizedFrom(EAccessModifier.Internal)]
 		public static void SetDualSenseVibration(byte _smallMotor, byte _largeMotor)
 		{
@@ -321,14 +321,14 @@ namespace TriggerEffects
 			}
 		}
 
-		// Token: 0x0200166A RID: 5738
+		// Token: 0x02001690 RID: 5776
 		public enum APIState
 		{
-			// Token: 0x0400869A RID: 34458
+			// Token: 0x040087B6 RID: 34742
 			UnInit,
-			// Token: 0x0400869B RID: 34459
+			// Token: 0x040087B7 RID: 34743
 			OK,
-			// Token: 0x0400869C RID: 34460
+			// Token: 0x040087B8 RID: 34744
 			Error
 		}
 	}

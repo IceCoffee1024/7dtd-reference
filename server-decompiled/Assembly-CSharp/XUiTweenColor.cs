@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200112E RID: 4398
+// Token: 0x02001147 RID: 4423
 public class XUiTweenColor : XUiTweenAbs
 {
-	// Token: 0x17000FF0 RID: 4080
-	// (get) Token: 0x06008AFC RID: 35580 RVA: 0x0034EAFB File Offset: 0x0034CCFB
-	// (set) Token: 0x06008AFD RID: 35581 RVA: 0x0034EB03 File Offset: 0x0034CD03
+	// Token: 0x17001029 RID: 4137
+	// (get) Token: 0x06008BEE RID: 35822 RVA: 0x0035332F File Offset: 0x0035152F
+	// (set) Token: 0x06008BEF RID: 35823 RVA: 0x00353337 File Offset: 0x00351537
 	[XuiXmlAttribute("start", false)]
 	public Color Start
 	{
@@ -24,9 +24,9 @@ public class XUiTweenColor : XUiTweenAbs
 		}
 	}
 
-	// Token: 0x17000FF1 RID: 4081
-	// (get) Token: 0x06008AFE RID: 35582 RVA: 0x0034EB2B File Offset: 0x0034CD2B
-	// (set) Token: 0x06008AFF RID: 35583 RVA: 0x0034EB33 File Offset: 0x0034CD33
+	// Token: 0x1700102A RID: 4138
+	// (get) Token: 0x06008BF0 RID: 35824 RVA: 0x0035335F File Offset: 0x0035155F
+	// (set) Token: 0x06008BF1 RID: 35825 RVA: 0x00353367 File Offset: 0x00351567
 	[XuiXmlAttribute("end", false)]
 	public Color End
 	{
@@ -44,7 +44,7 @@ public class XUiTweenColor : XUiTweenAbs
 		}
 	}
 
-	// Token: 0x06008B00 RID: 35584 RVA: 0x0034EB5C File Offset: 0x0034CD5C
+	// Token: 0x06008BF2 RID: 35826 RVA: 0x00353390 File Offset: 0x00351590
 	[XuiXmlAttribute("play_to", false)]
 	public void AttributePlayToEnd(Color _value)
 	{
@@ -64,13 +64,13 @@ public class XUiTweenColor : XUiTweenAbs
 		this.tween.PlayForward();
 	}
 
-	// Token: 0x06008B01 RID: 35585 RVA: 0x0034EC10 File Offset: 0x0034CE10
+	// Token: 0x06008BF3 RID: 35827 RVA: 0x00353444 File Offset: 0x00351644
 	public XUiTweenColor(XUiView _targetView)
 		: base(_targetView)
 	{
 	}
 
-	// Token: 0x06008B02 RID: 35586 RVA: 0x0034EC2F File Offset: 0x0034CE2F
+	// Token: 0x06008BF4 RID: 35828 RVA: 0x00353463 File Offset: 0x00351663
 	public override void CreateTween(GameObject _uiGameObject)
 	{
 		this.tween = _uiGameObject.AddMissingComponent<TweenColor>();
@@ -79,15 +79,15 @@ public class XUiTweenColor : XUiTweenAbs
 		base.setCommonTweenValues(this.tween);
 	}
 
-	// Token: 0x0400669A RID: 26266
+	// Token: 0x04006764 RID: 26468
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TweenColor tween;
 
-	// Token: 0x0400669B RID: 26267
+	// Token: 0x04006765 RID: 26469
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color start = Color.black;
 
-	// Token: 0x0400669C RID: 26268
+	// Token: 0x04006766 RID: 26470
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color end = Color.white;
 }

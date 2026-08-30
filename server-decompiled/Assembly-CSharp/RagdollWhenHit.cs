@@ -6,7 +6,7 @@ using UnityEngine;
 public class RagdollWhenHit : RootTransformRefEntity
 {
 	// Token: 0x17000064 RID: 100
-	// (get) Token: 0x06000607 RID: 1543 RVA: 0x0002B56F File Offset: 0x0002976F
+	// (get) Token: 0x06000608 RID: 1544 RVA: 0x0002B633 File Offset: 0x00029833
 	public Entity theEntity
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -20,7 +20,7 @@ public class RagdollWhenHit : RootTransformRefEntity
 		}
 	}
 
-	// Token: 0x06000608 RID: 1544 RVA: 0x0002B5A4 File Offset: 0x000297A4
+	// Token: 0x06000609 RID: 1545 RVA: 0x0002B668 File Offset: 0x00029868
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Start()
 	{
@@ -49,14 +49,14 @@ public class RagdollWhenHit : RootTransformRefEntity
 		this._offset = component3.center;
 	}
 
-	// Token: 0x06000609 RID: 1545 RVA: 0x0002B657 File Offset: 0x00029857
+	// Token: 0x0600060A RID: 1546 RVA: 0x0002B71B File Offset: 0x0002991B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
 		this._pos = base.transform.position;
 	}
 
-	// Token: 0x0600060A RID: 1546 RVA: 0x0002B66C File Offset: 0x0002986C
+	// Token: 0x0600060B RID: 1547 RVA: 0x0002B730 File Offset: 0x00029930
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LateUpdate()
 	{

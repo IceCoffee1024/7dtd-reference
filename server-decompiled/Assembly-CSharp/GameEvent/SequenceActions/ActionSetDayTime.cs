@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x0200198E RID: 6542
+	// Token: 0x020019B4 RID: 6580
 	[Preserve]
 	public class ActionSetDayTime : BaseAction
 	{
-		// Token: 0x0600C7DA RID: 51162 RVA: 0x00498A50 File Offset: 0x00496C50
+		// Token: 0x0600C961 RID: 51553 RVA: 0x0049EDA8 File Offset: 0x0049CFA8
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			World world = GameManager.Instance.World;
@@ -20,7 +20,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C7DB RID: 51163 RVA: 0x00498AC5 File Offset: 0x00496CC5
+		// Token: 0x0600C962 RID: 51554 RVA: 0x0049EE1D File Offset: 0x0049D01D
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -29,7 +29,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseInt(ActionSetDayTime.PropMinutes, ref this.minutes);
 		}
 
-		// Token: 0x0600C7DC RID: 51164 RVA: 0x00498B01 File Offset: 0x00496D01
+		// Token: 0x0600C963 RID: 51555 RVA: 0x0049EE59 File Offset: 0x0049D059
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -41,25 +41,25 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x04009784 RID: 38788
+		// Token: 0x040098AD RID: 39085
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int day = -1;
 
-		// Token: 0x04009785 RID: 38789
+		// Token: 0x040098AE RID: 39086
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int hours = -1;
 
-		// Token: 0x04009786 RID: 38790
+		// Token: 0x040098AF RID: 39087
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public int minutes = -1;
 
-		// Token: 0x04009787 RID: 38791
+		// Token: 0x040098B0 RID: 39088
 		public static string PropDay = "day";
 
-		// Token: 0x04009788 RID: 38792
+		// Token: 0x040098B1 RID: 39089
 		public static string PropHours = "hours";
 
-		// Token: 0x04009789 RID: 38793
+		// Token: 0x040098B2 RID: 39090
 		public static string PropMinutes = "minutes";
 	}
 }

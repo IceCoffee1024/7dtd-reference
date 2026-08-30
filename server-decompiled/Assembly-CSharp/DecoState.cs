@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x02000C09 RID: 3081
+// Token: 0x02000C1B RID: 3099
 public enum DecoState
 {
-	// Token: 0x040048F1 RID: 18673
+	// Token: 0x0400498E RID: 18830
 	GeneratedActive,
-	// Token: 0x040048F2 RID: 18674
+	// Token: 0x0400498F RID: 18831
 	GeneratedInactive,
-	// Token: 0x040048F3 RID: 18675
+	// Token: 0x04004990 RID: 18832
 	Dynamic
 }

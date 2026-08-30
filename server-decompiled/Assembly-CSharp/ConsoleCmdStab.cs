@@ -2,32 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x020002A3 RID: 675
+// Token: 0x020002A7 RID: 679
 [Preserve]
 public class ConsoleCmdStab : ConsoleCmdAbstract
 {
-	// Token: 0x0600139C RID: 5020 RVA: 0x00077BB7 File Offset: 0x00075DB7
+	// Token: 0x060013AE RID: 5038 RVA: 0x00078213 File Offset: 0x00076413
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "stab" };
 	}
 
-	// Token: 0x0600139D RID: 5021 RVA: 0x00077BC7 File Offset: 0x00075DC7
+	// Token: 0x060013AF RID: 5039 RVA: 0x00078223 File Offset: 0x00076423
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "stability";
 	}
 
-	// Token: 0x0600139E RID: 5022 RVA: 0x00031E8B File Offset: 0x0003008B
+	// Token: 0x060013B0 RID: 5040 RVA: 0x00032147 File Offset: 0x00030347
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "";
 	}
 
-	// Token: 0x0600139F RID: 5023 RVA: 0x00077BD0 File Offset: 0x00075DD0
+	// Token: 0x060013B1 RID: 5041 RVA: 0x0007822C File Offset: 0x0007642C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Running stability");

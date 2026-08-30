@@ -5,10 +5,10 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x02000BCD RID: 3021
+// Token: 0x02000BDF RID: 3039
 public class VoxelMesh
 {
-	// Token: 0x06005AEC RID: 23276 RVA: 0x00232B54 File Offset: 0x00230D54
+	// Token: 0x06005B75 RID: 23413 RVA: 0x00235870 File Offset: 0x00233A70
 	public VoxelMesh(int _meshIndex, int _minSize = 1024, VoxelMesh.CreateFlags _flags = VoxelMesh.CreateFlags.Default)
 	{
 		this.meshIndex = _meshIndex;
@@ -29,7 +29,7 @@ public class VoxelMesh
 		}
 	}
 
-	// Token: 0x06005AED RID: 23277 RVA: 0x00232C13 File Offset: 0x00230E13
+	// Token: 0x06005B76 RID: 23414 RVA: 0x0023592F File Offset: 0x00233B2F
 	public static VoxelMesh Create(int _meshIdx, VoxelMesh.EnumMeshType _meshType, int _minSize = 500)
 	{
 		if (_meshType == VoxelMesh.EnumMeshType.Terrain)
@@ -43,13 +43,13 @@ public class VoxelMesh
 		return new VoxelMesh(_meshIdx, _minSize, VoxelMesh.CreateFlags.Default);
 	}
 
-	// Token: 0x06005AEE RID: 23278 RVA: 0x00232C36 File Offset: 0x00230E36
+	// Token: 0x06005B77 RID: 23415 RVA: 0x00235952 File Offset: 0x00233B52
 	public void SetTemperature(float _temperature)
 	{
 		this.temperature = _temperature;
 	}
 
-	// Token: 0x06005AEF RID: 23279 RVA: 0x00232C40 File Offset: 0x00230E40
+	// Token: 0x06005B78 RID: 23416 RVA: 0x0023595C File Offset: 0x00233B5C
 	public virtual void Write(BinaryWriter _bw)
 	{
 		_bw.Write((uint)this.m_Vertices.Count);
@@ -95,7 +95,7 @@ public class VoxelMesh
 		}
 	}
 
-	// Token: 0x06005AF0 RID: 23280 RVA: 0x00232EAC File Offset: 0x002310AC
+	// Token: 0x06005B79 RID: 23417 RVA: 0x00235BC8 File Offset: 0x00233DC8
 	public virtual void Read(BinaryReader _br)
 	{
 		uint num = _br.ReadUInt32();
@@ -162,7 +162,7 @@ public class VoxelMesh
 		this.m_Tangents.Clear();
 	}
 
-	// Token: 0x06005AF1 RID: 23281 RVA: 0x002330C0 File Offset: 0x002312C0
+	// Token: 0x06005B7A RID: 23418 RVA: 0x00235DDC File Offset: 0x00233FDC
 	public static float BlockFaceToColor(BlockFace _blockFace)
 	{
 		switch (_blockFace)
@@ -184,14 +184,14 @@ public class VoxelMesh
 		}
 	}
 
-	// Token: 0x06005AF2 RID: 23282 RVA: 0x00233116 File Offset: 0x00231316
+	// Token: 0x06005B7B RID: 23419 RVA: 0x00235E32 File Offset: 0x00234032
 	public static void CreateMeshFilter(int _meshIndex, int _yOffset, GameObject _gameObject, string _meshTag, bool _bAllowLOD, out MeshFilter _mf, out MeshRenderer _mr, out MeshCollider _mc)
 	{
 		VoxelMesh.CreateMeshFilter(_meshIndex, _yOffset, _gameObject, _meshTag, _bAllowLOD, out _mf, out _mr);
 		VoxelMesh.CreateMeshCollider(_meshIndex, _gameObject, _meshTag, out _mc);
 	}
 
-	// Token: 0x06005AF3 RID: 23283 RVA: 0x00233134 File Offset: 0x00231334
+	// Token: 0x06005B7C RID: 23420 RVA: 0x00235E50 File Offset: 0x00234050
 	public static void CreateMeshFilter(int _meshIndex, int _yOffset, GameObject _gameObject, string _meshTag, bool _bAllowLOD, out MeshFilter _mf, out MeshRenderer _mr)
 	{
 		_mf = null;
@@ -230,7 +230,7 @@ public class VoxelMesh
 		}
 	}
 
-	// Token: 0x06005AF4 RID: 23284 RVA: 0x00233208 File Offset: 0x00231408
+	// Token: 0x06005B7D RID: 23421 RVA: 0x00235F24 File Offset: 0x00234124
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void CreateMeshCollider(int _meshIndex, GameObject _gameObject, string _meshTag, out MeshCollider _mc)
 	{
@@ -249,7 +249,7 @@ public class VoxelMesh
 		}
 	}
 
-	// Token: 0x06005AF5 RID: 23285 RVA: 0x00233280 File Offset: 0x00231480
+	// Token: 0x06005B7E RID: 23422 RVA: 0x00235F9C File Offset: 0x0023419C
 	public static Mesh GetPooledMesh()
 	{
 		int num = VoxelMesh.meshPool.Count;
@@ -268,7 +268,7 @@ public class VoxelMesh
 		return mesh;
 	}
 
-	// Token: 0x06005AF6 RID: 23286 RVA: 0x002332CB File Offset: 0x002314CB
+	// Token: 0x06005B7F RID: 23423 RVA: 0x00235FE7 File Offset: 0x002341E7
 	public static void AddPooledMesh(Mesh mesh)
 	{
 		if (!mesh)
@@ -284,7 +284,7 @@ public class VoxelMesh
 		global::UnityEngine.Object.Destroy(mesh);
 	}
 
-	// Token: 0x06005AF7 RID: 23287 RVA: 0x00233300 File Offset: 0x00231500
+	// Token: 0x06005B80 RID: 23424 RVA: 0x0023601C File Offset: 0x0023421C
 	public virtual int CopyToMesh(MeshFilter _mf, MeshRenderer _mr, int _lodLevel, Action _onCopyComplete = null)
 	{
 		VoxelMesh.<>c__DisplayClass39_0 CS$<>8__locals1 = new VoxelMesh.<>c__DisplayClass39_0();
@@ -380,7 +380,7 @@ public class VoxelMesh
 		return this.m_Triangles;
 	}
 
-	// Token: 0x06005AF8 RID: 23288 RVA: 0x002334D0 File Offset: 0x002316D0
+	// Token: 0x06005B81 RID: 23425 RVA: 0x002361EC File Offset: 0x002343EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void copyToMesh(Mesh _mesh, ArrayListMP<Vector3> _vertices, ArrayListMP<int> _indices, ArrayListMP<Vector2> _uvs, ArrayListMP<Vector2> _uvCracks, ArrayListMP<Vector3> _normals, ArrayListMP<Vector4> _tangents, ArrayListMP<Color> _colorVertices, Action _onCopyComplete = null)
 	{
@@ -437,7 +437,7 @@ public class VoxelMesh
 		}
 	}
 
-	// Token: 0x06005AF9 RID: 23289 RVA: 0x00233668 File Offset: 0x00231868
+	// Token: 0x06005B82 RID: 23426 RVA: 0x00236384 File Offset: 0x00234584
 	public virtual int CopyToColliders(MeshCollider _meshCollider, out Mesh mesh)
 	{
 		if (this.m_CollIndices == null)
@@ -457,7 +457,7 @@ public class VoxelMesh
 		return this.m_CollIndices.Count / 3;
 	}
 
-	// Token: 0x06005AFA RID: 23290 RVA: 0x002336DC File Offset: 0x002318DC
+	// Token: 0x06005B83 RID: 23427 RVA: 0x002363F8 File Offset: 0x002345F8
 	public Mesh ResetMesh(MeshCollider _meshCollider)
 	{
 		Mesh mesh = GameManager.Instance.World.m_ChunkManager.BakeCancelAndGetMesh(_meshCollider);
@@ -472,7 +472,7 @@ public class VoxelMesh
 		return mesh;
 	}
 
-	// Token: 0x06005AFB RID: 23291 RVA: 0x00233717 File Offset: 0x00231917
+	// Token: 0x06005B84 RID: 23428 RVA: 0x00236433 File Offset: 0x00234633
 	public virtual void GetColorForTextureId(int _subMeshIdx, ref Transvoxel.BuildVertex _data)
 	{
 		_data.color = Color.black;
@@ -482,13 +482,13 @@ public class VoxelMesh
 		_data.uv4 = Vector2.zero;
 	}
 
-	// Token: 0x06005AFC RID: 23292 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06005B85 RID: 23429 RVA: 0x00010E62 File Offset: 0x0000F062
 	public virtual int FindOrCreateSubMesh(int _t0, int _t1, int _t2)
 	{
 		return 0;
 	}
 
-	// Token: 0x06005AFD RID: 23293 RVA: 0x00233750 File Offset: 0x00231950
+	// Token: 0x06005B86 RID: 23430 RVA: 0x0023646C File Offset: 0x0023466C
 	public virtual void AddIndices(int _i0, int _i1, int _i2, int _submesh)
 	{
 		this.m_Indices.Add(_i0);
@@ -496,7 +496,7 @@ public class VoxelMesh
 		this.m_Indices.Add(_i2);
 	}
 
-	// Token: 0x06005AFE RID: 23294 RVA: 0x00233778 File Offset: 0x00231978
+	// Token: 0x06005B87 RID: 23431 RVA: 0x00236494 File Offset: 0x00234694
 	public virtual void ClearMesh()
 	{
 		this.CurTriangleIndex = 0;
@@ -525,7 +525,7 @@ public class VoxelMesh
 		}
 	}
 
-	// Token: 0x06005AFF RID: 23295 RVA: 0x00233828 File Offset: 0x00231A28
+	// Token: 0x06005B88 RID: 23432 RVA: 0x00236544 File Offset: 0x00234744
 	public virtual void SizeToChunkDefaults(int _meshIndex)
 	{
 		int num;
@@ -554,7 +554,7 @@ public class VoxelMesh
 		}
 	}
 
-	// Token: 0x06005B00 RID: 23296 RVA: 0x002338E0 File Offset: 0x00231AE0
+	// Token: 0x06005B89 RID: 23433 RVA: 0x002365FC File Offset: 0x002347FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void GetDefaultSizes(int _meshIndex, out int _vertMax, out int _indexMax, out int _colliderMax)
 	{
@@ -598,13 +598,13 @@ public class VoxelMesh
 		}
 	}
 
-	// Token: 0x06005B01 RID: 23297 RVA: 0x002339A5 File Offset: 0x00231BA5
+	// Token: 0x06005B8A RID: 23434 RVA: 0x002366C1 File Offset: 0x002348C1
 	public virtual void Finished()
 	{
 		this.m_Triangles = this.m_Indices.Count / 3;
 	}
 
-	// Token: 0x06005B02 RID: 23298 RVA: 0x002339BC File Offset: 0x00231BBC
+	// Token: 0x06005B8B RID: 23435 RVA: 0x002366D8 File Offset: 0x002348D8
 	public virtual Color[] UpdateColors(byte _suncolor, byte _blockcolor)
 	{
 		for (int i = 0; i < this.m_ColorVertices.Count; i++)
@@ -614,34 +614,34 @@ public class VoxelMesh
 		return this.m_ColorVertices.ToArray();
 	}
 
-	// Token: 0x06005B03 RID: 23299 RVA: 0x00233A04 File Offset: 0x00231C04
+	// Token: 0x06005B8C RID: 23436 RVA: 0x00236720 File Offset: 0x00234920
 	public void AddBlockSide(Vector3 v1, Vector3 v2, Vector3 v3, Vector3 v4, BlockValue _blockValue, BlockFace blockFace, Lighting _lighting, int meshIndex)
 	{
 		Color color = _lighting.ToColor();
 		this.AddQuadWithCracks(v1, color, v2, color, v3, color, v4, color, _blockValue.Block.getUVRectFromSideAndMetadata(meshIndex, blockFace, v1, _blockValue), WorldConstants.MapDamageToUVRect(_blockValue), false);
 	}
 
-	// Token: 0x06005B04 RID: 23300 RVA: 0x00233A44 File Offset: 0x00231C44
+	// Token: 0x06005B8D RID: 23437 RVA: 0x00236760 File Offset: 0x00234960
 	public void AddBlockSide(Vector3 v1, Vector3 v2, Vector3 v3, Vector3 v4, BlockValue _blockValue, float colorBlockFace, BlockFace blockFace, byte sunlight, byte blocklight, int meshIndex)
 	{
 		Color color = Lighting.ToColor((int)sunlight, (int)blocklight, colorBlockFace);
 		this.AddQuadWithCracks(v1, color, v2, color, v3, color, v4, color, _blockValue.Block.getUVRectFromSideAndMetadata(meshIndex, blockFace, v1, _blockValue), WorldConstants.MapDamageToUVRect(_blockValue), false);
 	}
 
-	// Token: 0x06005B05 RID: 23301 RVA: 0x00233A88 File Offset: 0x00231C88
+	// Token: 0x06005B8E RID: 23438 RVA: 0x002367A4 File Offset: 0x002349A4
 	public void AddBlockSideTri(Vector3 v1, Vector3 v2, Vector3 v3, int _meshIdx, BlockValue _blockValue, float colorBlockFace, BlockFace blockFace, byte sunlight, byte blocklight)
 	{
 		Color color = Lighting.ToColor((int)sunlight, (int)blocklight, colorBlockFace);
 		this.AddTriWithCracks(v1, color, v2, color, v3, color, WorldConstants.MapBlockToUVRect(_meshIdx, _blockValue, blockFace), WorldConstants.MapDamageToUVRect(_blockValue), false);
 	}
 
-	// Token: 0x06005B06 RID: 23302 RVA: 0x00233AC0 File Offset: 0x00231CC0
+	// Token: 0x06005B8F RID: 23439 RVA: 0x002367DC File Offset: 0x002349DC
 	public void AddBlockSideTri(Vector3 v1, Color c1, Vector3 v2, Color c2, Vector3 v3, Color c3, Rect uv1, Rect uv2)
 	{
 		this.AddTriWithCracks(v1, c1, v2, c2, v3, c3, uv1, uv2, false);
 	}
 
-	// Token: 0x06005B07 RID: 23303 RVA: 0x00233AE4 File Offset: 0x00231CE4
+	// Token: 0x06005B90 RID: 23440 RVA: 0x00236800 File Offset: 0x00234A00
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public void AddQuad(Vector3 _v0, Vector2 _uv0, Vector3 _v1, Vector2 _uv1, Vector3 _v2, Vector2 _uv3, Vector3 _v3, Vector2 _uv4, byte sunlight, byte blocklight, float sideColor)
 	{
@@ -691,7 +691,7 @@ public class VoxelMesh
 		this.CurTriangleIndex += 4;
 	}
 
-	// Token: 0x06005B08 RID: 23304 RVA: 0x00233D9C File Offset: 0x00231F9C
+	// Token: 0x06005B91 RID: 23441 RVA: 0x00236AB8 File Offset: 0x00234CB8
 	public void CreateFromQuadList(Vector3[] _vertices, Color _color)
 	{
 		this.m_Vertices.Add(_vertices[0]);
@@ -751,7 +751,7 @@ public class VoxelMesh
 		this.CurTriangleIndex += 5;
 	}
 
-	// Token: 0x06005B09 RID: 23305 RVA: 0x0023426C File Offset: 0x0023246C
+	// Token: 0x06005B92 RID: 23442 RVA: 0x00236F88 File Offset: 0x00235188
 	public void AddBasicQuad(Vector3[] _vertices, Color _color, Vector2 _UVdata, bool bForceNormalsUp = false, bool bAlternateWinding = false)
 	{
 		if (this.m_Vertices.Count > 786428)
@@ -828,7 +828,7 @@ public class VoxelMesh
 		this.CurTriangleIndex += 4;
 	}
 
-	// Token: 0x06005B0A RID: 23306 RVA: 0x00234720 File Offset: 0x00232920
+	// Token: 0x06005B93 RID: 23443 RVA: 0x0023743C File Offset: 0x0023563C
 	public void AddQuadNoCollision(Vector3 _v0, Vector3 _v1, Vector3 _v2, Vector3 _v3, Color _color, Rect _uvTex)
 	{
 		if (this.m_Vertices.Count > 786428)
@@ -874,7 +874,7 @@ public class VoxelMesh
 		this.CurTriangleIndex += 4;
 	}
 
-	// Token: 0x06005B0B RID: 23307 RVA: 0x00234A2C File Offset: 0x00232C2C
+	// Token: 0x06005B94 RID: 23444 RVA: 0x00237748 File Offset: 0x00235948
 	public void AddQuadWithCracks(Vector3 _v0, Color _c0, Vector3 _v1, Color _c1, Vector3 _v2, Color _c2, Vector3 _v3, Color _c3, Rect _uvTex, Rect _uvOverlay, bool bSwitchUvHorizontal)
 	{
 		if (this.m_Vertices.Count > 786428)
@@ -962,7 +962,7 @@ public class VoxelMesh
 		this.CurTriangleIndex += 4;
 	}
 
-	// Token: 0x06005B0C RID: 23308 RVA: 0x00234FD0 File Offset: 0x002331D0
+	// Token: 0x06005B95 RID: 23445 RVA: 0x00237CEC File Offset: 0x00235EEC
 	public void AddRectangle(Vector3 _v0, Vector2 _uv0, Color _c0, Vector3 _v1, Vector2 _uv1, Color _c1, Vector3 _v2, Vector2 _uv2, Color _c2, Vector3 _v3, Vector2 _uv3, Color _c3, Rect _uvTex, Rect _uvOverlay)
 	{
 		if (this.m_Vertices.Count > 786428)
@@ -1014,7 +1014,7 @@ public class VoxelMesh
 		this.CurTriangleIndex += 4;
 	}
 
-	// Token: 0x06005B0D RID: 23309 RVA: 0x00235418 File Offset: 0x00233618
+	// Token: 0x06005B96 RID: 23446 RVA: 0x00238134 File Offset: 0x00236334
 	public void AddRectangle(Vector3 _v0, Vector2 _uv0, Vector3 _v1, Vector2 _uv1, Vector3 _v2, Vector2 _uv2, Vector3 _v3, Vector2 _uv3, Vector3 _normal, Vector3 _normalTop, Vector4 _tangent, Rect _uvTex, byte _sunlight, byte _blocklight)
 	{
 		if (this.m_Vertices.Count > 786428)
@@ -1071,7 +1071,7 @@ public class VoxelMesh
 		this.CurTriangleIndex += 4;
 	}
 
-	// Token: 0x06005B0E RID: 23310 RVA: 0x002357B0 File Offset: 0x002339B0
+	// Token: 0x06005B97 RID: 23447 RVA: 0x002384CC File Offset: 0x002366CC
 	public void AddRectangleColliderPair(Vector3 _v0, Vector3 _v1, Vector3 _v2, Vector3 _v3)
 	{
 		if (this.m_CollVertices.Count > 786428)
@@ -1098,7 +1098,7 @@ public class VoxelMesh
 		this.m_CollIndices[num2 + 11] = num;
 	}
 
-	// Token: 0x06005B0F RID: 23311 RVA: 0x002358EC File Offset: 0x00233AEC
+	// Token: 0x06005B98 RID: 23448 RVA: 0x00238608 File Offset: 0x00236808
 	public void AddColoredRectangle(Vector3 _v0, Color _c0, Vector3 _v1, Color _c1, Vector3 _v2, Color _c2, Vector3 _v3, Color _c3)
 	{
 		if (this.m_Vertices.Count > 786428)
@@ -1142,7 +1142,7 @@ public class VoxelMesh
 		this.CurTriangleIndex += 4;
 	}
 
-	// Token: 0x06005B10 RID: 23312 RVA: 0x00235B44 File Offset: 0x00233D44
+	// Token: 0x06005B99 RID: 23449 RVA: 0x00238860 File Offset: 0x00236A60
 	public void AddTriWithCracks(Vector3 _v0, Color _c0, Vector3 _v1, Color _c1, Vector3 _v2, Color _c2, Rect uvTex, Rect uvOverlay, bool bSwitchUvHorizontal)
 	{
 		if (this.m_Vertices.Count > 786429)
@@ -1195,7 +1195,7 @@ public class VoxelMesh
 		this.CurTriangleIndex += 3;
 	}
 
-	// Token: 0x06005B11 RID: 23313 RVA: 0x00235E80 File Offset: 0x00234080
+	// Token: 0x06005B9A RID: 23450 RVA: 0x00238B9C File Offset: 0x00236D9C
 	public void AddTriangle(Vector3 _v0, Vector2 _uv0, Color _c0, Vector3 _v1, Vector2 _uv1, Color _c1, Vector3 _v2, Vector2 _uv2, Color _c2, Rect uvTex, Rect uvOverlay)
 	{
 		if (this.m_Vertices.Count > 786429)
@@ -1234,7 +1234,7 @@ public class VoxelMesh
 		this.CurTriangleIndex += 3;
 	}
 
-	// Token: 0x06005B12 RID: 23314 RVA: 0x00236194 File Offset: 0x00234394
+	// Token: 0x06005B9B RID: 23451 RVA: 0x00238EB0 File Offset: 0x002370B0
 	public virtual void AddMesh(Vector3 _drawPos, int _count, Vector3[] _vertices, Vector3[] _normals, ArrayListMP<int> _indices, ArrayListMP<Vector2> _uvs, byte _sunlight, byte _blocklight, VoxelMesh _specialColliders, int damage)
 	{
 		if (_count + this.m_Vertices.Count > 786432)
@@ -1265,9 +1265,9 @@ public class VoxelMesh
 		}
 	}
 
-	// Token: 0x17000979 RID: 2425
-	// (get) Token: 0x06005B13 RID: 23315 RVA: 0x002362DA File Offset: 0x002344DA
-	// (set) Token: 0x06005B14 RID: 23316 RVA: 0x002362E2 File Offset: 0x002344E2
+	// Token: 0x1700098C RID: 2444
+	// (get) Token: 0x06005B9C RID: 23452 RVA: 0x00238FF6 File Offset: 0x002371F6
+	// (set) Token: 0x06005B9D RID: 23453 RVA: 0x00238FFE File Offset: 0x002371FE
 	public ArrayListMP<int> Indices
 	{
 		get
@@ -1280,9 +1280,9 @@ public class VoxelMesh
 		}
 	}
 
-	// Token: 0x1700097A RID: 2426
-	// (get) Token: 0x06005B15 RID: 23317 RVA: 0x002362EB File Offset: 0x002344EB
-	// (set) Token: 0x06005B16 RID: 23318 RVA: 0x002362F3 File Offset: 0x002344F3
+	// Token: 0x1700098D RID: 2445
+	// (get) Token: 0x06005B9E RID: 23454 RVA: 0x00239007 File Offset: 0x00237207
+	// (set) Token: 0x06005B9F RID: 23455 RVA: 0x0023900F File Offset: 0x0023720F
 	public ArrayListMP<Vector2> Uvs
 	{
 		get
@@ -1295,9 +1295,9 @@ public class VoxelMesh
 		}
 	}
 
-	// Token: 0x1700097B RID: 2427
-	// (get) Token: 0x06005B17 RID: 23319 RVA: 0x002362FC File Offset: 0x002344FC
-	// (set) Token: 0x06005B18 RID: 23320 RVA: 0x00236304 File Offset: 0x00234504
+	// Token: 0x1700098E RID: 2446
+	// (get) Token: 0x06005BA0 RID: 23456 RVA: 0x00239018 File Offset: 0x00237218
+	// (set) Token: 0x06005BA1 RID: 23457 RVA: 0x00239020 File Offset: 0x00237220
 	public ArrayListMP<Vector2> Uvs3
 	{
 		get
@@ -1310,9 +1310,9 @@ public class VoxelMesh
 		}
 	}
 
-	// Token: 0x1700097C RID: 2428
-	// (get) Token: 0x06005B19 RID: 23321 RVA: 0x0023630D File Offset: 0x0023450D
-	// (set) Token: 0x06005B1A RID: 23322 RVA: 0x00236315 File Offset: 0x00234515
+	// Token: 0x1700098F RID: 2447
+	// (get) Token: 0x06005BA2 RID: 23458 RVA: 0x00239029 File Offset: 0x00237229
+	// (set) Token: 0x06005BA3 RID: 23459 RVA: 0x00239031 File Offset: 0x00237231
 	public ArrayListMP<Vector2> Uvs4
 	{
 		get
@@ -1325,9 +1325,9 @@ public class VoxelMesh
 		}
 	}
 
-	// Token: 0x1700097D RID: 2429
-	// (get) Token: 0x06005B1B RID: 23323 RVA: 0x0023631E File Offset: 0x0023451E
-	// (set) Token: 0x06005B1C RID: 23324 RVA: 0x00236326 File Offset: 0x00234526
+	// Token: 0x17000990 RID: 2448
+	// (get) Token: 0x06005BA4 RID: 23460 RVA: 0x0023903A File Offset: 0x0023723A
+	// (set) Token: 0x06005BA5 RID: 23461 RVA: 0x00239042 File Offset: 0x00237242
 	public ArrayListMP<Vector3> Vertices
 	{
 		get
@@ -1340,9 +1340,9 @@ public class VoxelMesh
 		}
 	}
 
-	// Token: 0x1700097E RID: 2430
-	// (get) Token: 0x06005B1D RID: 23325 RVA: 0x0023632F File Offset: 0x0023452F
-	// (set) Token: 0x06005B1E RID: 23326 RVA: 0x00236337 File Offset: 0x00234537
+	// Token: 0x17000991 RID: 2449
+	// (get) Token: 0x06005BA6 RID: 23462 RVA: 0x0023904B File Offset: 0x0023724B
+	// (set) Token: 0x06005BA7 RID: 23463 RVA: 0x00239053 File Offset: 0x00237253
 	public ArrayListMP<Vector3> Normals
 	{
 		get
@@ -1355,9 +1355,9 @@ public class VoxelMesh
 		}
 	}
 
-	// Token: 0x1700097F RID: 2431
-	// (get) Token: 0x06005B1F RID: 23327 RVA: 0x00236340 File Offset: 0x00234540
-	// (set) Token: 0x06005B20 RID: 23328 RVA: 0x00236348 File Offset: 0x00234548
+	// Token: 0x17000992 RID: 2450
+	// (get) Token: 0x06005BA8 RID: 23464 RVA: 0x0023905C File Offset: 0x0023725C
+	// (set) Token: 0x06005BA9 RID: 23465 RVA: 0x00239064 File Offset: 0x00237264
 	public ArrayListMP<Vector4> Tangents
 	{
 		get
@@ -1370,9 +1370,9 @@ public class VoxelMesh
 		}
 	}
 
-	// Token: 0x17000980 RID: 2432
-	// (get) Token: 0x06005B21 RID: 23329 RVA: 0x00236351 File Offset: 0x00234551
-	// (set) Token: 0x06005B22 RID: 23330 RVA: 0x00236359 File Offset: 0x00234559
+	// Token: 0x17000993 RID: 2451
+	// (get) Token: 0x06005BAA RID: 23466 RVA: 0x0023906D File Offset: 0x0023726D
+	// (set) Token: 0x06005BAB RID: 23467 RVA: 0x00239075 File Offset: 0x00237275
 	public ArrayListMP<Color> ColorVertices
 	{
 		get
@@ -1385,8 +1385,8 @@ public class VoxelMesh
 		}
 	}
 
-	// Token: 0x17000981 RID: 2433
-	// (get) Token: 0x06005B23 RID: 23331 RVA: 0x00236362 File Offset: 0x00234562
+	// Token: 0x17000994 RID: 2452
+	// (get) Token: 0x06005BAC RID: 23468 RVA: 0x0023907E File Offset: 0x0023727E
 	public ArrayListMP<int> CollIndices
 	{
 		get
@@ -1395,8 +1395,8 @@ public class VoxelMesh
 		}
 	}
 
-	// Token: 0x17000982 RID: 2434
-	// (get) Token: 0x06005B24 RID: 23332 RVA: 0x0023636A File Offset: 0x0023456A
+	// Token: 0x17000995 RID: 2453
+	// (get) Token: 0x06005BAD RID: 23469 RVA: 0x00239086 File Offset: 0x00237286
 	public ArrayListMP<Vector3> CollVertices
 	{
 		get
@@ -1405,8 +1405,8 @@ public class VoxelMesh
 		}
 	}
 
-	// Token: 0x17000983 RID: 2435
-	// (get) Token: 0x06005B25 RID: 23333 RVA: 0x00236374 File Offset: 0x00234574
+	// Token: 0x17000996 RID: 2454
+	// (get) Token: 0x06005BAE RID: 23470 RVA: 0x00239090 File Offset: 0x00237290
 	public int Size
 	{
 		get
@@ -1420,8 +1420,8 @@ public class VoxelMesh
 		}
 	}
 
-	// Token: 0x17000984 RID: 2436
-	// (get) Token: 0x06005B26 RID: 23334 RVA: 0x002363F2 File Offset: 0x002345F2
+	// Token: 0x17000997 RID: 2455
+	// (get) Token: 0x06005BAF RID: 23471 RVA: 0x0023910E File Offset: 0x0023730E
 	public int Triangles
 	{
 		get
@@ -1430,7 +1430,7 @@ public class VoxelMesh
 		}
 	}
 
-	// Token: 0x06005B27 RID: 23335 RVA: 0x002363FC File Offset: 0x002345FC
+	// Token: 0x06005BB0 RID: 23472 RVA: 0x00239118 File Offset: 0x00237318
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static void calculateMeshTangentsDummy(Mesh mesh)
 	{
@@ -1443,7 +1443,7 @@ public class VoxelMesh
 		mesh.tangents = array;
 	}
 
-	// Token: 0x06005B28 RID: 23336 RVA: 0x00236438 File Offset: 0x00234638
+	// Token: 0x06005BB1 RID: 23473 RVA: 0x00239154 File Offset: 0x00237354
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static void calculateMeshNormalsDummy(Mesh mesh)
 	{
@@ -1456,12 +1456,12 @@ public class VoxelMesh
 		mesh.normals = array;
 	}
 
-	// Token: 0x06005B29 RID: 23337 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06005BB2 RID: 23474 RVA: 0x000027FC File Offset: 0x000009FC
 	public void CheckVertexLimit(int _count)
 	{
 	}
 
-	// Token: 0x06005B2A RID: 23338 RVA: 0x00236474 File Offset: 0x00234674
+	// Token: 0x06005BB3 RID: 23475 RVA: 0x00239190 File Offset: 0x00237390
 	public void AddRectXYFacingNorth(float _x, float _y, float _z, int _xAdd, int _yAdd)
 	{
 		int count = this.m_Vertices.Count;
@@ -1477,7 +1477,7 @@ public class VoxelMesh
 		this.m_Indices.Add(count);
 	}
 
-	// Token: 0x06005B2B RID: 23339 RVA: 0x0023653C File Offset: 0x0023473C
+	// Token: 0x06005BB4 RID: 23476 RVA: 0x00239258 File Offset: 0x00237458
 	public void AddRectXYFacingNorth(float _x, float _y, float _z, int _xAdd, int _yAdd, Color _c)
 	{
 		int count = this.m_Vertices.Count;
@@ -1498,7 +1498,7 @@ public class VoxelMesh
 		this.m_Indices.Add(count);
 	}
 
-	// Token: 0x06005B2C RID: 23340 RVA: 0x00236644 File Offset: 0x00234844
+	// Token: 0x06005BB5 RID: 23477 RVA: 0x00239360 File Offset: 0x00237560
 	public void AddRectXYFacingSouth(float _x, float _y, float _z, int _xAdd, int _zAdd)
 	{
 		int count = this.m_Vertices.Count;
@@ -1514,7 +1514,7 @@ public class VoxelMesh
 		this.m_Indices.Add(count);
 	}
 
-	// Token: 0x06005B2D RID: 23341 RVA: 0x0023670C File Offset: 0x0023490C
+	// Token: 0x06005BB6 RID: 23478 RVA: 0x00239428 File Offset: 0x00237628
 	public void AddRectXYFacingSouth(float _x, float _y, float _z, int _xAdd, int _zAdd, Color _c)
 	{
 		int count = this.m_Vertices.Count;
@@ -1535,7 +1535,7 @@ public class VoxelMesh
 		this.m_Indices.Add(count);
 	}
 
-	// Token: 0x06005B2E RID: 23342 RVA: 0x00236814 File Offset: 0x00234A14
+	// Token: 0x06005BB7 RID: 23479 RVA: 0x00239530 File Offset: 0x00237730
 	public void AddRectYZFacingWest(float _x, float _y, float _z, int _yAdd, int _zAdd)
 	{
 		int count = this.m_Vertices.Count;
@@ -1551,7 +1551,7 @@ public class VoxelMesh
 		this.m_Indices.Add(count);
 	}
 
-	// Token: 0x06005B2F RID: 23343 RVA: 0x002368DC File Offset: 0x00234ADC
+	// Token: 0x06005BB8 RID: 23480 RVA: 0x002395F8 File Offset: 0x002377F8
 	public void AddRectYZFacingWest(float _x, float _y, float _z, int _yAdd, int _zAdd, Color _c)
 	{
 		int count = this.m_Vertices.Count;
@@ -1572,7 +1572,7 @@ public class VoxelMesh
 		this.m_Indices.Add(count);
 	}
 
-	// Token: 0x06005B30 RID: 23344 RVA: 0x002369E4 File Offset: 0x00234BE4
+	// Token: 0x06005BB9 RID: 23481 RVA: 0x00239700 File Offset: 0x00237900
 	public void AddRectYZFacingEast(float _x, float _y, float _z, int _yAdd, int _zAdd)
 	{
 		int count = this.m_Vertices.Count;
@@ -1588,7 +1588,7 @@ public class VoxelMesh
 		this.m_Indices.Add(count);
 	}
 
-	// Token: 0x06005B31 RID: 23345 RVA: 0x00236AAC File Offset: 0x00234CAC
+	// Token: 0x06005BBA RID: 23482 RVA: 0x002397C8 File Offset: 0x002379C8
 	public void AddRectYZFacingEast(float _x, float _y, float _z, int _yAdd, int _zAdd, Color _c)
 	{
 		int count = this.m_Vertices.Count;
@@ -1609,7 +1609,7 @@ public class VoxelMesh
 		this.m_Indices.Add(count);
 	}
 
-	// Token: 0x06005B32 RID: 23346 RVA: 0x00236BB4 File Offset: 0x00234DB4
+	// Token: 0x06005BBB RID: 23483 RVA: 0x002398D0 File Offset: 0x00237AD0
 	public void AddRectXZFacingUp(float _x, float _y, float _z, int _xAdd, int _zAdd)
 	{
 		int count = this.m_Vertices.Count;
@@ -1625,7 +1625,7 @@ public class VoxelMesh
 		this.m_Indices.Add(count);
 	}
 
-	// Token: 0x06005B33 RID: 23347 RVA: 0x00236C7C File Offset: 0x00234E7C
+	// Token: 0x06005BBC RID: 23484 RVA: 0x00239998 File Offset: 0x00237B98
 	public void AddRectXZFacingUp(float _x, float _y, float _z, int _xAdd, int _zAdd, Color _c)
 	{
 		int count = this.m_Vertices.Count;
@@ -1646,7 +1646,7 @@ public class VoxelMesh
 		this.m_Indices.Add(count);
 	}
 
-	// Token: 0x06005B34 RID: 23348 RVA: 0x00236D84 File Offset: 0x00234F84
+	// Token: 0x06005BBD RID: 23485 RVA: 0x00239AA0 File Offset: 0x00237CA0
 	public void AddRectXZFacingDown(float _x, float _y, float _z, int _xAdd, int _zAdd)
 	{
 		int count = this.m_Vertices.Count;
@@ -1662,7 +1662,7 @@ public class VoxelMesh
 		this.m_Indices.Add(count);
 	}
 
-	// Token: 0x06005B35 RID: 23349 RVA: 0x00236E4C File Offset: 0x0023504C
+	// Token: 0x06005BBE RID: 23486 RVA: 0x00239B68 File Offset: 0x00237D68
 	public void AddRectXZFacingDown(float _x, float _y, float _z, int _xAdd, int _zAdd, Color _c)
 	{
 		int count = this.m_Vertices.Count;
@@ -1683,7 +1683,7 @@ public class VoxelMesh
 		this.m_Indices.Add(count);
 	}
 
-	// Token: 0x06005B36 RID: 23350 RVA: 0x00236F52 File Offset: 0x00235152
+	// Token: 0x06005BBF RID: 23487 RVA: 0x00239C6E File Offset: 0x00237E6E
 	public static float GetTemperature(BiomeDefinition bd)
 	{
 		if (bd == null)
@@ -1693,7 +1693,7 @@ public class VoxelMesh
 		return 0f;
 	}
 
-	// Token: 0x06005B37 RID: 23351 RVA: 0x00236F64 File Offset: 0x00235164
+	// Token: 0x06005BC0 RID: 23488 RVA: 0x00239C80 File Offset: 0x00237E80
 	public void ClearTemperatureValues()
 	{
 		for (int i = 0; i < this.m_ColorVertices.Count; i++)
@@ -1702,120 +1702,120 @@ public class VoxelMesh
 		}
 	}
 
-	// Token: 0x0400469D RID: 18077
+	// Token: 0x04004739 RID: 18233
 	public static float COLOR_SOUTH = 0.9f;
 
-	// Token: 0x0400469E RID: 18078
+	// Token: 0x0400473A RID: 18234
 	public static float COLOR_WEST = 0.8f;
 
-	// Token: 0x0400469F RID: 18079
+	// Token: 0x0400473B RID: 18235
 	public static float COLOR_NORTH = 0.7f;
 
-	// Token: 0x040046A0 RID: 18080
+	// Token: 0x0400473C RID: 18236
 	public static float COLOR_EAST = 0.85f;
 
-	// Token: 0x040046A1 RID: 18081
+	// Token: 0x0400473D RID: 18237
 	public static float COLOR_TOP = 1f;
 
-	// Token: 0x040046A2 RID: 18082
+	// Token: 0x0400473E RID: 18238
 	public static float COLOR_BOTTOM = 0.65f;
 
-	// Token: 0x040046A3 RID: 18083
+	// Token: 0x0400473F RID: 18239
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly ConditionalWeakTable<MeshFilter, VoxelMesh.MeshFilterState> m_meshFilterStates = new ConditionalWeakTable<MeshFilter, VoxelMesh.MeshFilterState>();
 
-	// Token: 0x040046A4 RID: 18084
+	// Token: 0x04004740 RID: 18240
 	public ArrayListMP<Vector3> m_Vertices;
 
-	// Token: 0x040046A5 RID: 18085
+	// Token: 0x04004741 RID: 18241
 	public ArrayListMP<int> m_Indices;
 
-	// Token: 0x040046A6 RID: 18086
+	// Token: 0x04004742 RID: 18242
 	public ArrayListMP<Vector2> m_Uvs;
 
-	// Token: 0x040046A7 RID: 18087
+	// Token: 0x04004743 RID: 18243
 	public ArrayListMP<Vector2> UvsCrack;
 
-	// Token: 0x040046A8 RID: 18088
+	// Token: 0x04004744 RID: 18244
 	public ArrayListMP<Vector2> m_Uvs3;
 
-	// Token: 0x040046A9 RID: 18089
+	// Token: 0x04004745 RID: 18245
 	public ArrayListMP<Vector2> m_Uvs4;
 
-	// Token: 0x040046AA RID: 18090
+	// Token: 0x04004746 RID: 18246
 	public ArrayListMP<Vector3> m_Normals;
 
-	// Token: 0x040046AB RID: 18091
+	// Token: 0x04004747 RID: 18247
 	public ArrayListMP<Vector4> m_Tangents;
 
-	// Token: 0x040046AC RID: 18092
+	// Token: 0x04004748 RID: 18248
 	public ArrayListMP<Color> m_ColorVertices;
 
-	// Token: 0x040046AD RID: 18093
+	// Token: 0x04004749 RID: 18249
 	public ArrayListMP<Vector3> m_CollVertices;
 
-	// Token: 0x040046AE RID: 18094
+	// Token: 0x0400474A RID: 18250
 	public ArrayListMP<int> m_CollIndices;
 
-	// Token: 0x040046AF RID: 18095
+	// Token: 0x0400474B RID: 18251
 	public int CurTriangleIndex;
 
-	// Token: 0x040046B0 RID: 18096
+	// Token: 0x0400474C RID: 18252
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public int m_Triangles;
 
-	// Token: 0x040046B1 RID: 18097
+	// Token: 0x0400474D RID: 18253
 	public int meshIndex;
 
-	// Token: 0x040046B2 RID: 18098
+	// Token: 0x0400474E RID: 18254
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cTemperatureDefault = -10f;
 
-	// Token: 0x040046B3 RID: 18099
+	// Token: 0x0400474F RID: 18255
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float temperature;
 
-	// Token: 0x040046B4 RID: 18100
+	// Token: 0x04004750 RID: 18256
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cPoolMeshMax = 250;
 
-	// Token: 0x040046B5 RID: 18101
+	// Token: 0x04004751 RID: 18257
 	public static List<Mesh> meshPool = new List<Mesh>();
 
-	// Token: 0x02000BCE RID: 3022
+	// Token: 0x02000BE0 RID: 3040
 	public enum EnumMeshType
 	{
-		// Token: 0x040046B7 RID: 18103
+		// Token: 0x04004753 RID: 18259
 		Blocks,
-		// Token: 0x040046B8 RID: 18104
+		// Token: 0x04004754 RID: 18260
 		Models,
-		// Token: 0x040046B9 RID: 18105
+		// Token: 0x04004755 RID: 18261
 		Terrain,
-		// Token: 0x040046BA RID: 18106
+		// Token: 0x04004756 RID: 18262
 		Decals
 	}
 
-	// Token: 0x02000BCF RID: 3023
+	// Token: 0x02000BE1 RID: 3041
 	[PublicizedFrom(EAccessModifier.Private)]
 	public class MeshFilterState
 	{
-		// Token: 0x040046BB RID: 18107
+		// Token: 0x04004757 RID: 18263
 		public int NextGeneration;
 
-		// Token: 0x040046BC RID: 18108
+		// Token: 0x04004758 RID: 18264
 		public int AppliedGeneration = -1;
 	}
 
-	// Token: 0x02000BD0 RID: 3024
+	// Token: 0x02000BE2 RID: 3042
 	public enum CreateFlags
 	{
-		// Token: 0x040046BE RID: 18110
+		// Token: 0x0400475A RID: 18266
 		None,
-		// Token: 0x040046BF RID: 18111
+		// Token: 0x0400475B RID: 18267
 		Collider,
-		// Token: 0x040046C0 RID: 18112
+		// Token: 0x0400475C RID: 18268
 		Cracks,
-		// Token: 0x040046C1 RID: 18113
+		// Token: 0x0400475D RID: 18269
 		Default
 	}
 }

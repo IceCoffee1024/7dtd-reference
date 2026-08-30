@@ -5,7 +5,7 @@ using UnityEngine;
 // Token: 0x020000DB RID: 219
 public class UMACharacterBodyAnimator : BodyAnimator
 {
-	// Token: 0x0600058B RID: 1419 RVA: 0x000276EC File Offset: 0x000258EC
+	// Token: 0x0600058C RID: 1420 RVA: 0x000277B0 File Offset: 0x000259B0
 	public UMACharacterBodyAnimator(EntityAlive _entity, AvatarCharacterController.AnimationStates _animStates, Transform _bodyTransform, BodyAnimator.EnumState _defaultState)
 	{
 		Transform transform = _bodyTransform.FindInChilds((_entity.emodel is EModelSDCS) ? "RightWeapon" : "Gunjoint", false);
@@ -15,7 +15,7 @@ public class UMACharacterBodyAnimator : BodyAnimator
 		this.hitStates = _animStates.HitStates;
 	}
 
-	// Token: 0x0600058C RID: 1420 RVA: 0x0002774C File Offset: 0x0002594C
+	// Token: 0x0600058D RID: 1421 RVA: 0x00027810 File Offset: 0x00025A10
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void assignLayerWeights()
 	{
@@ -51,7 +51,7 @@ public class UMACharacterBodyAnimator : BodyAnimator
 		}
 	}
 
-	// Token: 0x0600058D RID: 1421 RVA: 0x00027844 File Offset: 0x00025A44
+	// Token: 0x0600058E RID: 1422 RVA: 0x00027908 File Offset: 0x00025B08
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void cacheLayerStateInfo()
 	{
@@ -65,7 +65,7 @@ public class UMACharacterBodyAnimator : BodyAnimator
 		}
 	}
 
-	// Token: 0x0600058E RID: 1422 RVA: 0x0002788D File Offset: 0x00025A8D
+	// Token: 0x0600058F RID: 1423 RVA: 0x00027951 File Offset: 0x00025B51
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override AnimatorStateInfo getCachedLayerStateInfo(int _layer)
 	{
@@ -80,7 +80,7 @@ public class UMACharacterBodyAnimator : BodyAnimator
 		return base.getCachedLayerStateInfo(_layer);
 	}
 
-	// Token: 0x0600058F RID: 1423 RVA: 0x000278AC File Offset: 0x00025AAC
+	// Token: 0x06000590 RID: 1424 RVA: 0x00027970 File Offset: 0x00025B70
 	public override void SetDrunk(float _numBeers)
 	{
 		if (base.Animator && this.Entity.AttachedToEntity == null && this.avatarController != null)
@@ -89,7 +89,7 @@ public class UMACharacterBodyAnimator : BodyAnimator
 		}
 	}
 
-	// Token: 0x06000590 RID: 1424 RVA: 0x000278FC File Offset: 0x00025AFC
+	// Token: 0x06000591 RID: 1425 RVA: 0x000279C0 File Offset: 0x00025BC0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void updateSpineRotation()
 	{
@@ -107,7 +107,7 @@ public class UMACharacterBodyAnimator : BodyAnimator
 		}
 	}
 
-	// Token: 0x06000591 RID: 1425 RVA: 0x000279F3 File Offset: 0x00025BF3
+	// Token: 0x06000592 RID: 1426 RVA: 0x00027AB7 File Offset: 0x00025CB7
 	public override void StartDeathAnimation(EnumBodyPartHit _bodyPart, int _movementState, float random)
 	{
 		base.StartDeathAnimation(_bodyPart, _movementState, random);
@@ -115,14 +115,14 @@ public class UMACharacterBodyAnimator : BodyAnimator
 		this.didDeathTransition = false;
 	}
 
-	// Token: 0x06000592 RID: 1426 RVA: 0x00027A0C File Offset: 0x00025C0C
+	// Token: 0x06000593 RID: 1427 RVA: 0x00027AD0 File Offset: 0x00025CD0
 	public override void Update()
 	{
 		base.Update();
 		this.updateSpineRotation();
 	}
 
-	// Token: 0x06000593 RID: 1427 RVA: 0x00027A1C File Offset: 0x00025C1C
+	// Token: 0x06000594 RID: 1428 RVA: 0x00027AE0 File Offset: 0x00025CE0
 	public override void LateUpdate()
 	{
 		base.LateUpdate();

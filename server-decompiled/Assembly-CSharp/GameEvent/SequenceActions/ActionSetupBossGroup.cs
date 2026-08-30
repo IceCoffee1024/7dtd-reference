@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001999 RID: 6553
+	// Token: 0x020019BF RID: 6591
 	[Preserve]
 	public class ActionSetupBossGroup : BaseAction
 	{
-		// Token: 0x0600C807 RID: 51207 RVA: 0x00499394 File Offset: 0x00497594
+		// Token: 0x0600C98E RID: 51598 RVA: 0x0049F6EC File Offset: 0x0049D8EC
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			List<Entity> entityGroup = base.Owner.GetEntityGroup(this.bossGroupName);
@@ -31,7 +31,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C808 RID: 51208 RVA: 0x00499448 File Offset: 0x00497648
+		// Token: 0x0600C98F RID: 51599 RVA: 0x0049F7A0 File Offset: 0x0049D9A0
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -41,7 +41,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseEnum<BossGroup.BossGroupTypes>(ActionSetupBossGroup.PropGroupType, ref this.bossGroupType);
 		}
 
-		// Token: 0x0600C809 RID: 51209 RVA: 0x004994A0 File Offset: 0x004976A0
+		// Token: 0x0600C990 RID: 51600 RVA: 0x0049F7F8 File Offset: 0x0049D9F8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -54,35 +54,35 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040097B1 RID: 38833
+		// Token: 0x040098DA RID: 39130
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string minionGroupName = "";
 
-		// Token: 0x040097B2 RID: 38834
+		// Token: 0x040098DB RID: 39131
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string bossGroupName = "";
 
-		// Token: 0x040097B3 RID: 38835
+		// Token: 0x040098DC RID: 39132
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string bossIcon1 = "";
 
-		// Token: 0x040097B4 RID: 38836
+		// Token: 0x040098DD RID: 39133
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public BossGroup.BossGroupTypes bossGroupType;
 
-		// Token: 0x040097B5 RID: 38837
+		// Token: 0x040098DE RID: 39134
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropMinionGroupName = "minion_group_name";
 
-		// Token: 0x040097B6 RID: 38838
+		// Token: 0x040098DF RID: 39135
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropBossGroupName = "boss_group_name";
 
-		// Token: 0x040097B7 RID: 38839
+		// Token: 0x040098E0 RID: 39136
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropBossIcon1 = "boss_icon1";
 
-		// Token: 0x040097B8 RID: 38840
+		// Token: 0x040098E1 RID: 39137
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropGroupType = "group_type";
 	}

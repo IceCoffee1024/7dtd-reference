@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000848 RID: 2120
+// Token: 0x02000854 RID: 2132
 [Preserve]
 public class NetPackageSleeperPassiveChange : NetPackageEntityTargeted
 {
-	// Token: 0x17000670 RID: 1648
-	// (get) Token: 0x06003DF7 RID: 15863 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x1700067C RID: 1660
+	// (get) Token: 0x06003E5C RID: 15964 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override NetPackageDirection PackageDirection
 	{
 		get
@@ -15,14 +15,14 @@ public class NetPackageSleeperPassiveChange : NetPackageEntityTargeted
 		}
 	}
 
-	// Token: 0x06003DF8 RID: 15864 RVA: 0x0018831E File Offset: 0x0018651E
+	// Token: 0x06003E5D RID: 15965 RVA: 0x0018A352 File Offset: 0x00188552
 	public new NetPackageSleeperPassiveChange Setup(int targetId)
 	{
 		base.Setup(targetId);
 		return this;
 	}
 
-	// Token: 0x06003DF9 RID: 15865 RVA: 0x00188328 File Offset: 0x00186528
+	// Token: 0x06003E5E RID: 15966 RVA: 0x0018A35C File Offset: 0x0018855C
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null || !_world.IsRemote())
@@ -37,7 +37,7 @@ public class NetPackageSleeperPassiveChange : NetPackageEntityTargeted
 		entityAlive.IsSleeperPassive = false;
 	}
 
-	// Token: 0x06003DFA RID: 15866 RVA: 0x00080B69 File Offset: 0x0007ED69
+	// Token: 0x06003E5F RID: 15967 RVA: 0x0008121D File Offset: 0x0007F41D
 	public override int GetLength()
 	{
 		return 8;

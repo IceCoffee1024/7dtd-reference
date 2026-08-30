@@ -2,12 +2,12 @@
 
 namespace CoverClippingTool
 {
-	// Token: 0x02001657 RID: 5719
+	// Token: 0x02001672 RID: 5746
 	public enum DataSource
 	{
-		// Token: 0x0400864C RID: 34380
+		// Token: 0x04008725 RID: 34597
 		Block,
-		// Token: 0x0400864D RID: 34381
+		// Token: 0x04008726 RID: 34598
 		Shape
 	}
 }

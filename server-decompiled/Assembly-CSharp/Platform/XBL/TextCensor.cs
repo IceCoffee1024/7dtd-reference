@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace Platform.XBL
 {
-	// Token: 0x02001BDF RID: 7135
+	// Token: 0x02001C06 RID: 7174
 	public class TextCensor : ITextCensor
 	{
-		// Token: 0x0600D399 RID: 54169 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600D527 RID: 54567 RVA: 0x000027FC File Offset: 0x000009FC
 		public void Init(IPlatform _owner)
 		{
 		}
 
-		// Token: 0x0600D39A RID: 54170 RVA: 0x004C6FC4 File Offset: 0x004C51C4
+		// Token: 0x0600D528 RID: 54568 RVA: 0x004CD3B8 File Offset: 0x004CB5B8
 		public void Update()
 		{
 			if (this.fetchStarted)
@@ -30,7 +30,7 @@ namespace Platform.XBL
 			}
 		}
 
-		// Token: 0x0600D39B RID: 54171 RVA: 0x004C6FEE File Offset: 0x004C51EE
+		// Token: 0x0600D529 RID: 54569 RVA: 0x004CD3E2 File Offset: 0x004CB5E2
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IEnumerator RetrieveBannedWords()
 		{
@@ -47,7 +47,7 @@ namespace Platform.XBL
 			yield break;
 		}
 
-		// Token: 0x0600D39C RID: 54172 RVA: 0x004C7000 File Offset: 0x004C5200
+		// Token: 0x0600D52A RID: 54570 RVA: 0x004CD3F4 File Offset: 0x004CB5F4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void StorageProviderCallback(IRemoteFileStorage.EFileDownloadResult _result, string _errorDetails, byte[] _data)
 		{
@@ -84,7 +84,7 @@ namespace Platform.XBL
 			this.fetchComplete = true;
 		}
 
-		// Token: 0x0600D39D RID: 54173 RVA: 0x004C70E0 File Offset: 0x004C52E0
+		// Token: 0x0600D52B RID: 54571 RVA: 0x004CD4D4 File Offset: 0x004CB6D4
 		public void CensorProfanity(string _input, PlatformUserIdentifierAbs _author, Action<CensoredTextResult> _callback)
 		{
 			if (string.IsNullOrEmpty(_input) || _input.Length == 0 || !this.fetchComplete)
@@ -125,27 +125,27 @@ namespace Platform.XBL
 			});
 		}
 
-		// Token: 0x0400A0E1 RID: 41185
+		// Token: 0x0400A212 RID: 41490
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string isAlpNum = "^[a-zA-Z0-9]+$";
 
-		// Token: 0x0400A0E2 RID: 41186
+		// Token: 0x0400A213 RID: 41491
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string nonAlphabeticBefore = "(?<![a-zA-Z])";
 
-		// Token: 0x0400A0E3 RID: 41187
+		// Token: 0x0400A214 RID: 41492
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string nonAlphabeticAfter = "(?![a-zA-Z])";
 
-		// Token: 0x0400A0E4 RID: 41188
+		// Token: 0x0400A215 RID: 41493
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool fetchStarted;
 
-		// Token: 0x0400A0E5 RID: 41189
+		// Token: 0x0400A216 RID: 41494
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool fetchComplete;
 
-		// Token: 0x0400A0E6 RID: 41190
+		// Token: 0x0400A217 RID: 41495
 		[PublicizedFrom(EAccessModifier.Private)]
 		public HashSet<string> bannedPatterns = new HashSet<string>();
 	}

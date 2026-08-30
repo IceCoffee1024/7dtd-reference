@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Platform
 {
-	// Token: 0x02001B5F RID: 7007
+	// Token: 0x02001B86 RID: 7046
 	public sealed class PlatformMemoryStat<T> : IPlatformMemoryStat<T>, IPlatformMemoryStat
 	{
-		// Token: 0x0600D120 RID: 53536 RVA: 0x004C098F File Offset: 0x004BEB8F
+		// Token: 0x0600D2AB RID: 53931 RVA: 0x004C6D83 File Offset: 0x004C4F83
 		[PublicizedFrom(EAccessModifier.Private)]
 		public PlatformMemoryStat(string name)
 		{
@@ -16,11 +16,11 @@ namespace Platform
 			this.Name = name;
 		}
 
-		// Token: 0x1700199F RID: 6559
-		// (get) Token: 0x0600D121 RID: 53537 RVA: 0x004C09B4 File Offset: 0x004BEBB4
+		// Token: 0x17001A11 RID: 6673
+		// (get) Token: 0x0600D2AC RID: 53932 RVA: 0x004C6DA8 File Offset: 0x004C4FA8
 		public string Name { get; }
 
-		// Token: 0x0600D122 RID: 53538 RVA: 0x004C09BC File Offset: 0x004BEBBC
+		// Token: 0x0600D2AD RID: 53933 RVA: 0x004C6DB0 File Offset: 0x004C4FB0
 		public void UpdateLast()
 		{
 			foreach (KeyValuePair<MemoryStatColumn, T> keyValuePair in this.m_columnValues)
@@ -34,7 +34,7 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x0600D123 RID: 53539 RVA: 0x004C0A28 File Offset: 0x004BEC28
+		// Token: 0x0600D2AE RID: 53934 RVA: 0x004C6E1C File Offset: 0x004C501C
 		public void RenderColumn(StringBuilder builder, MemoryStatColumn column, bool delta)
 		{
 			T t;
@@ -65,22 +65,22 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x14000123 RID: 291
-		// (add) Token: 0x0600D124 RID: 53540 RVA: 0x004C0A7C File Offset: 0x004BEC7C
-		// (remove) Token: 0x0600D125 RID: 53541 RVA: 0x004C0AB4 File Offset: 0x004BECB4
+		// Token: 0x14000124 RID: 292
+		// (add) Token: 0x0600D2AF RID: 53935 RVA: 0x004C6E70 File Offset: 0x004C5070
+		// (remove) Token: 0x0600D2B0 RID: 53936 RVA: 0x004C6EA8 File Offset: 0x004C50A8
 		public event PlatformMemoryColumnChangedHandler<T> ColumnSetAfter;
 
-		// Token: 0x170019A0 RID: 6560
-		// (get) Token: 0x0600D126 RID: 53542 RVA: 0x004C0AE9 File Offset: 0x004BECE9
-		// (set) Token: 0x0600D127 RID: 53543 RVA: 0x004C0AF1 File Offset: 0x004BECF1
+		// Token: 0x17001A12 RID: 6674
+		// (get) Token: 0x0600D2B1 RID: 53937 RVA: 0x004C6EDD File Offset: 0x004C50DD
+		// (set) Token: 0x0600D2B2 RID: 53938 RVA: 0x004C6EE5 File Offset: 0x004C50E5
 		public PlatformMemoryRenderValue<T> RenderValue { get; set; }
 
-		// Token: 0x170019A1 RID: 6561
-		// (get) Token: 0x0600D128 RID: 53544 RVA: 0x004C0AFA File Offset: 0x004BECFA
-		// (set) Token: 0x0600D129 RID: 53545 RVA: 0x004C0B02 File Offset: 0x004BED02
+		// Token: 0x17001A13 RID: 6675
+		// (get) Token: 0x0600D2B3 RID: 53939 RVA: 0x004C6EEE File Offset: 0x004C50EE
+		// (set) Token: 0x0600D2B4 RID: 53940 RVA: 0x004C6EF6 File Offset: 0x004C50F6
 		public PlatformMemoryRenderDelta<T> RenderDelta { get; set; }
 
-		// Token: 0x0600D12A RID: 53546 RVA: 0x004C0B0B File Offset: 0x004BED0B
+		// Token: 0x0600D2B5 RID: 53941 RVA: 0x004C6EFF File Offset: 0x004C50FF
 		public void Set(MemoryStatColumn column, T value)
 		{
 			this.m_columnValues[column] = value;
@@ -96,29 +96,29 @@ namespace Platform
 			columnSetAfter(column, value);
 		}
 
-		// Token: 0x0600D12B RID: 53547 RVA: 0x004C0B47 File Offset: 0x004BED47
+		// Token: 0x0600D2B6 RID: 53942 RVA: 0x004C6F3B File Offset: 0x004C513B
 		public bool TryGet(MemoryStatColumn column, out T value)
 		{
 			return this.m_columnValues.TryGetValue(column, out value);
 		}
 
-		// Token: 0x0600D12C RID: 53548 RVA: 0x004C0B56 File Offset: 0x004BED56
+		// Token: 0x0600D2B7 RID: 53943 RVA: 0x004C6F4A File Offset: 0x004C514A
 		public bool TryGetLast(MemoryStatColumn column, out T value)
 		{
 			return this.m_columnLastValues.TryGetValue(column, out value);
 		}
 
-		// Token: 0x0600D12D RID: 53549 RVA: 0x004C0B65 File Offset: 0x004BED65
+		// Token: 0x0600D2B8 RID: 53944 RVA: 0x004C6F59 File Offset: 0x004C5159
 		public static IPlatformMemoryStat<T> Create(string name)
 		{
 			return new PlatformMemoryStat<T>(name);
 		}
 
-		// Token: 0x04009F8E RID: 40846
+		// Token: 0x0400A0BF RID: 41151
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly EnumDictionary<MemoryStatColumn, T> m_columnValues;
 
-		// Token: 0x04009F8F RID: 40847
+		// Token: 0x0400A0C0 RID: 41152
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly EnumDictionary<MemoryStatColumn, T> m_columnLastValues;
 	}

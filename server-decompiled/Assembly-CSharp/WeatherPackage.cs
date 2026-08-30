@@ -1,15 +1,15 @@
 ﻿using System;
 
-// Token: 0x0200135B RID: 4955
+// Token: 0x02001375 RID: 4981
 public class WeatherPackage
 {
-	// Token: 0x06009C10 RID: 39952 RVA: 0x003B0378 File Offset: 0x003AE578
+	// Token: 0x06009D0B RID: 40203 RVA: 0x003B5620 File Offset: 0x003B3820
 	public WeatherPackage()
 	{
 		this.param = new float[5];
 	}
 
-	// Token: 0x06009C11 RID: 39953 RVA: 0x003B038C File Offset: 0x003AE58C
+	// Token: 0x06009D0C RID: 40204 RVA: 0x003B5634 File Offset: 0x003B3834
 	public void CopyTo(WeatherManager.BiomeWeather _bw)
 	{
 		_bw.remainingSeconds = this.remainingSeconds;
@@ -19,7 +19,7 @@ public class WeatherPackage
 		}
 	}
 
-	// Token: 0x06009C12 RID: 39954 RVA: 0x003B03D0 File Offset: 0x003AE5D0
+	// Token: 0x06009D0D RID: 40205 RVA: 0x003B5678 File Offset: 0x003B3878
 	public override string ToString()
 	{
 		string text = string.Format("id {0}, grp {1}, rsec {2}, params ", this.biomeId, this.groupIndex, this.remainingSeconds);
@@ -30,15 +30,15 @@ public class WeatherPackage
 		return text;
 	}
 
-	// Token: 0x0400762B RID: 30251
+	// Token: 0x04007703 RID: 30467
 	public byte biomeId;
 
-	// Token: 0x0400762C RID: 30252
+	// Token: 0x04007704 RID: 30468
 	public byte groupIndex;
 
-	// Token: 0x0400762D RID: 30253
+	// Token: 0x04007705 RID: 30469
 	public byte remainingSeconds;
 
-	// Token: 0x0400762E RID: 30254
+	// Token: 0x04007706 RID: 30470
 	public float[] param;
 }

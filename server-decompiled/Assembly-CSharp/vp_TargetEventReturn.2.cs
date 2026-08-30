@@ -1,28 +1,28 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02001552 RID: 5458
+// Token: 0x0200156D RID: 5485
 public static class vp_TargetEventReturn<T, R>
 {
-	// Token: 0x0600AACB RID: 43723 RVA: 0x003FAB18 File Offset: 0x003F8D18
+	// Token: 0x0600ABC8 RID: 43976 RVA: 0x003FFE58 File Offset: 0x003FE058
 	public static void Register(object target, string eventName, Func<T, R> callback)
 	{
 		vp_TargetEventHandler.Register(target, eventName, callback, 5);
 	}
 
-	// Token: 0x0600AACC RID: 43724 RVA: 0x003FA763 File Offset: 0x003F8963
+	// Token: 0x0600ABC9 RID: 43977 RVA: 0x003FFAA3 File Offset: 0x003FDCA3
 	public static void Unregister(object target, string eventName, Func<T, R> callback)
 	{
 		vp_TargetEventHandler.Unregister(target, eventName, callback);
 	}
 
-	// Token: 0x0600AACD RID: 43725 RVA: 0x003FA76D File Offset: 0x003F896D
+	// Token: 0x0600ABCA RID: 43978 RVA: 0x003FFAAD File Offset: 0x003FDCAD
 	public static void Unregister(object target)
 	{
 		vp_TargetEventHandler.Unregister(target, null, null);
 	}
 
-	// Token: 0x0600AACE RID: 43726 RVA: 0x003FAB24 File Offset: 0x003F8D24
+	// Token: 0x0600ABCB RID: 43979 RVA: 0x003FFE64 File Offset: 0x003FE064
 	public static R Send(object target, string eventName, T arg, vp_TargetEventOptions options = vp_TargetEventOptions.DontRequireReceiver)
 	{
 		R r;
@@ -49,7 +49,7 @@ public static class vp_TargetEventReturn<T, R>
 		return r;
 	}
 
-	// Token: 0x0600AACF RID: 43727 RVA: 0x003FAB84 File Offset: 0x003F8D84
+	// Token: 0x0600ABCC RID: 43980 RVA: 0x003FFEC4 File Offset: 0x003FE0C4
 	public static R SendUpwards(Component target, string eventName, T arg, vp_TargetEventOptions options = vp_TargetEventOptions.DontRequireReceiver)
 	{
 		R r;

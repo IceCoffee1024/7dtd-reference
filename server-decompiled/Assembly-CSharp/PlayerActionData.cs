@@ -1,115 +1,115 @@
 ﻿using System;
 
-// Token: 0x02000552 RID: 1362
+// Token: 0x02000557 RID: 1367
 public class PlayerActionData
 {
-	// Token: 0x0400221B RID: 8731
+	// Token: 0x0400224D RID: 8781
 	public static readonly PlayerActionData.ActionTab TabMovement = new PlayerActionData.ActionTab("inpTabPlayerControl", 0);
 
-	// Token: 0x0400221C RID: 8732
+	// Token: 0x0400224E RID: 8782
 	public static readonly PlayerActionData.ActionTab TabToolbelt = new PlayerActionData.ActionTab("inpTabToolbelt", 10);
 
-	// Token: 0x0400221D RID: 8733
+	// Token: 0x0400224F RID: 8783
 	public static readonly PlayerActionData.ActionTab TabVehicle = new PlayerActionData.ActionTab("inpTabVehicle", 15);
 
-	// Token: 0x0400221E RID: 8734
+	// Token: 0x04002250 RID: 8784
 	public static readonly PlayerActionData.ActionTab TabMenus = new PlayerActionData.ActionTab("inpTabMenus", 20);
 
-	// Token: 0x0400221F RID: 8735
+	// Token: 0x04002251 RID: 8785
 	public static readonly PlayerActionData.ActionTab TabUi = new PlayerActionData.ActionTab("inpTabUi", 30);
 
-	// Token: 0x04002220 RID: 8736
+	// Token: 0x04002252 RID: 8786
 	public static readonly PlayerActionData.ActionTab TabOther = new PlayerActionData.ActionTab("inpTabOther", 40);
 
-	// Token: 0x04002221 RID: 8737
+	// Token: 0x04002253 RID: 8787
 	public static readonly PlayerActionData.ActionTab TabEdit = new PlayerActionData.ActionTab("inpTabEdit", 50);
 
-	// Token: 0x04002222 RID: 8738
+	// Token: 0x04002254 RID: 8788
 	public static readonly PlayerActionData.ActionTab TabGlobal = new PlayerActionData.ActionTab("inpTabGlobal", 60);
 
-	// Token: 0x04002223 RID: 8739
+	// Token: 0x04002255 RID: 8789
 	public static readonly PlayerActionData.ActionGroup GroupPlayerControl = new PlayerActionData.ActionGroup("inpGrpPlayerControlName", null, 0, PlayerActionData.TabMovement);
 
-	// Token: 0x04002224 RID: 8740
+	// Token: 0x04002256 RID: 8790
 	public static readonly PlayerActionData.ActionGroup GroupToolbelt = new PlayerActionData.ActionGroup("inpGrpToolbeltName", null, 10, PlayerActionData.TabToolbelt);
 
-	// Token: 0x04002225 RID: 8741
+	// Token: 0x04002257 RID: 8791
 	public static readonly PlayerActionData.ActionGroup GroupVehicle = new PlayerActionData.ActionGroup("inpGrpVehicleName", null, 15, PlayerActionData.TabVehicle);
 
-	// Token: 0x04002226 RID: 8742
+	// Token: 0x04002258 RID: 8792
 	public static readonly PlayerActionData.ActionGroup GroupMenu = new PlayerActionData.ActionGroup("inpGrpMenuName", null, 20, PlayerActionData.TabMenus);
 
-	// Token: 0x04002227 RID: 8743
+	// Token: 0x04002259 RID: 8793
 	public static readonly PlayerActionData.ActionGroup GroupDialogs = new PlayerActionData.ActionGroup("inpGrpDialogsName", null, 30, PlayerActionData.TabMenus);
 
-	// Token: 0x04002228 RID: 8744
+	// Token: 0x0400225A RID: 8794
 	public static readonly PlayerActionData.ActionGroup GroupUI = new PlayerActionData.ActionGroup("inpGrpUiName", null, 40, PlayerActionData.TabUi);
 
-	// Token: 0x04002229 RID: 8745
+	// Token: 0x0400225B RID: 8795
 	public static readonly PlayerActionData.ActionGroup GroupMp = new PlayerActionData.ActionGroup("inpGrpMpName", null, 50, PlayerActionData.TabOther);
 
-	// Token: 0x0400222A RID: 8746
+	// Token: 0x0400225C RID: 8796
 	public static readonly PlayerActionData.ActionGroup GroupAdmin = new PlayerActionData.ActionGroup("inpGrpAdminName", null, 60, PlayerActionData.TabOther);
 
-	// Token: 0x0400222B RID: 8747
+	// Token: 0x0400225D RID: 8797
 	public static readonly PlayerActionData.ActionGroup GroupGlobalFunctions = new PlayerActionData.ActionGroup("inpGrpGlobalFunctionsName", null, 80, PlayerActionData.TabGlobal);
 
-	// Token: 0x0400222C RID: 8748
+	// Token: 0x0400225E RID: 8798
 	public static readonly PlayerActionData.ActionGroup GroupDebugFunctions = new PlayerActionData.ActionGroup("inpGrpDebugFunctionsName", null, 100, PlayerActionData.TabGlobal);
 
-	// Token: 0x0400222D RID: 8749
+	// Token: 0x0400225F RID: 8799
 	public static readonly PlayerActionData.ActionGroup GroupEditCamera = new PlayerActionData.ActionGroup("inpGrpCameraName", null, 20, PlayerActionData.TabEdit);
 
-	// Token: 0x0400222E RID: 8750
+	// Token: 0x04002260 RID: 8800
 	public static readonly PlayerActionData.ActionGroup GroupEditSelection = new PlayerActionData.ActionGroup("inpGrpSelectionName", null, 40, PlayerActionData.TabEdit);
 
-	// Token: 0x0400222F RID: 8751
+	// Token: 0x04002261 RID: 8801
 	public static readonly PlayerActionData.ActionGroup GroupEditOther = new PlayerActionData.ActionGroup("inpGrpOtherName", null, 60, PlayerActionData.TabEdit);
 
-	// Token: 0x02000553 RID: 1363
+	// Token: 0x02000558 RID: 1368
 	public enum EAppliesToInputType
 	{
-		// Token: 0x04002231 RID: 8753
+		// Token: 0x04002263 RID: 8803
 		None,
-		// Token: 0x04002232 RID: 8754
+		// Token: 0x04002264 RID: 8804
 		KbdMouseOnly,
-		// Token: 0x04002233 RID: 8755
+		// Token: 0x04002265 RID: 8805
 		ControllerOnly,
-		// Token: 0x04002234 RID: 8756
+		// Token: 0x04002266 RID: 8806
 		Both
 	}
 
-	// Token: 0x02000554 RID: 1364
+	// Token: 0x02000559 RID: 1369
 	public class ActionSetUserData
 	{
-		// Token: 0x06002C7F RID: 11391 RVA: 0x00119C92 File Offset: 0x00117E92
+		// Token: 0x06002CA9 RID: 11433 RVA: 0x0011AD06 File Offset: 0x00118F06
 		public ActionSetUserData(params PlayerActionsBase[] _bindingsConflictWithSet)
 		{
 			this.bindingsConflictWithSet = _bindingsConflictWithSet;
 		}
 
-		// Token: 0x04002235 RID: 8757
+		// Token: 0x04002267 RID: 8807
 		public readonly PlayerActionsBase[] bindingsConflictWithSet;
 	}
 
-	// Token: 0x02000555 RID: 1365
+	// Token: 0x0200055A RID: 1370
 	public class ActionTab : IComparable<PlayerActionData.ActionTab>
 	{
-		// Token: 0x06002C80 RID: 11392 RVA: 0x00119CA1 File Offset: 0x00117EA1
+		// Token: 0x06002CAA RID: 11434 RVA: 0x0011AD15 File Offset: 0x00118F15
 		public ActionTab(string _tabNameKey, int _tabPriority)
 		{
 			this.tabNameKey = _tabNameKey;
 			this.tabPriority = _tabPriority;
 		}
 
-		// Token: 0x06002C81 RID: 11393 RVA: 0x00119CB8 File Offset: 0x00117EB8
+		// Token: 0x06002CAB RID: 11435 RVA: 0x0011AD2C File Offset: 0x00118F2C
 		public int CompareTo(PlayerActionData.ActionTab _other)
 		{
 			return this.tabPriority.CompareTo(_other.tabPriority);
 		}
 
-		// Token: 0x170004BA RID: 1210
-		// (get) Token: 0x06002C82 RID: 11394 RVA: 0x00119CD9 File Offset: 0x00117ED9
+		// Token: 0x170004BE RID: 1214
+		// (get) Token: 0x06002CAC RID: 11436 RVA: 0x0011AD4D File Offset: 0x00118F4D
 		public string LocalizedName
 		{
 			get
@@ -118,18 +118,18 @@ public class PlayerActionData
 			}
 		}
 
-		// Token: 0x04002236 RID: 8758
+		// Token: 0x04002268 RID: 8808
 		public readonly string tabNameKey;
 
-		// Token: 0x04002237 RID: 8759
+		// Token: 0x04002269 RID: 8809
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly int tabPriority;
 	}
 
-	// Token: 0x02000556 RID: 1366
+	// Token: 0x0200055B RID: 1371
 	public class ActionGroup : IComparable<PlayerActionData.ActionGroup>
 	{
-		// Token: 0x06002C83 RID: 11395 RVA: 0x00119CE8 File Offset: 0x00117EE8
+		// Token: 0x06002CAD RID: 11437 RVA: 0x0011AD5C File Offset: 0x00118F5C
 		public ActionGroup(string _groupNameKey, string _groupDescKey, int _groupPriority, PlayerActionData.ActionTab _actionTab)
 		{
 			this.groupNameKey = _groupNameKey;
@@ -138,14 +138,14 @@ public class PlayerActionData
 			this.actionTab = _actionTab;
 		}
 
-		// Token: 0x06002C84 RID: 11396 RVA: 0x00119D3C File Offset: 0x00117F3C
+		// Token: 0x06002CAE RID: 11438 RVA: 0x0011ADB0 File Offset: 0x00118FB0
 		public int CompareTo(PlayerActionData.ActionGroup _other)
 		{
 			return this.groupPriority.CompareTo(_other.groupPriority);
 		}
 
-		// Token: 0x170004BB RID: 1211
-		// (get) Token: 0x06002C85 RID: 11397 RVA: 0x00119D5D File Offset: 0x00117F5D
+		// Token: 0x170004BF RID: 1215
+		// (get) Token: 0x06002CAF RID: 11439 RVA: 0x0011ADD1 File Offset: 0x00118FD1
 		public string LocalizedName
 		{
 			get
@@ -154,8 +154,8 @@ public class PlayerActionData
 			}
 		}
 
-		// Token: 0x170004BC RID: 1212
-		// (get) Token: 0x06002C86 RID: 11398 RVA: 0x00119D6C File Offset: 0x00117F6C
+		// Token: 0x170004C0 RID: 1216
+		// (get) Token: 0x06002CB0 RID: 11440 RVA: 0x0011ADE0 File Offset: 0x00118FE0
 		public string LocalizedDescription
 		{
 			get
@@ -169,24 +169,24 @@ public class PlayerActionData
 			}
 		}
 
-		// Token: 0x04002238 RID: 8760
+		// Token: 0x0400226A RID: 8810
 		public readonly string groupNameKey;
 
-		// Token: 0x04002239 RID: 8761
+		// Token: 0x0400226B RID: 8811
 		public readonly string groupDescKey;
 
-		// Token: 0x0400223A RID: 8762
+		// Token: 0x0400226C RID: 8812
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly int groupPriority;
 
-		// Token: 0x0400223B RID: 8763
+		// Token: 0x0400226D RID: 8813
 		public readonly PlayerActionData.ActionTab actionTab;
 	}
 
-	// Token: 0x02000557 RID: 1367
+	// Token: 0x0200055C RID: 1372
 	public class ActionUserData
 	{
-		// Token: 0x06002C87 RID: 11399 RVA: 0x00119D98 File Offset: 0x00117F98
+		// Token: 0x06002CB1 RID: 11441 RVA: 0x0011AE0C File Offset: 0x0011900C
 		public ActionUserData(string _actionNameKey, string _actionDescKey, PlayerActionData.ActionGroup _actionGroup, PlayerActionData.EAppliesToInputType _appliesToInputType = PlayerActionData.EAppliesToInputType.Both, bool _allowRebind = true, bool _allowMultipleRebindings = false, bool _doNotDisplay = false, bool _defaultOnStartup = true)
 		{
 			this.actionNameKey = _actionNameKey;
@@ -203,8 +203,8 @@ public class PlayerActionData
 			}
 		}
 
-		// Token: 0x170004BD RID: 1213
-		// (get) Token: 0x06002C88 RID: 11400 RVA: 0x00119E1E File Offset: 0x0011801E
+		// Token: 0x170004C1 RID: 1217
+		// (get) Token: 0x06002CB2 RID: 11442 RVA: 0x0011AE92 File Offset: 0x00119092
 		public string LocalizedName
 		{
 			get
@@ -213,8 +213,8 @@ public class PlayerActionData
 			}
 		}
 
-		// Token: 0x170004BE RID: 1214
-		// (get) Token: 0x06002C89 RID: 11401 RVA: 0x00119E30 File Offset: 0x00118030
+		// Token: 0x170004C2 RID: 1218
+		// (get) Token: 0x06002CB3 RID: 11443 RVA: 0x0011AEA4 File Offset: 0x001190A4
 		public string LocalizedDescription
 		{
 			get
@@ -228,28 +228,28 @@ public class PlayerActionData
 			}
 		}
 
-		// Token: 0x0400223C RID: 8764
+		// Token: 0x0400226E RID: 8814
 		public readonly string actionNameKey;
 
-		// Token: 0x0400223D RID: 8765
+		// Token: 0x0400226F RID: 8815
 		public readonly string actionDescKey;
 
-		// Token: 0x0400223E RID: 8766
+		// Token: 0x04002270 RID: 8816
 		public readonly PlayerActionData.ActionGroup actionGroup;
 
-		// Token: 0x0400223F RID: 8767
+		// Token: 0x04002271 RID: 8817
 		public readonly PlayerActionData.EAppliesToInputType appliesToInputType;
 
-		// Token: 0x04002240 RID: 8768
+		// Token: 0x04002272 RID: 8818
 		public readonly bool allowRebind;
 
-		// Token: 0x04002241 RID: 8769
+		// Token: 0x04002273 RID: 8819
 		public readonly bool allowMultipleBindings;
 
-		// Token: 0x04002242 RID: 8770
+		// Token: 0x04002274 RID: 8820
 		public readonly bool doNotDisplay;
 
-		// Token: 0x04002243 RID: 8771
+		// Token: 0x04002275 RID: 8821
 		public readonly bool defaultOnStartup;
 	}
 }

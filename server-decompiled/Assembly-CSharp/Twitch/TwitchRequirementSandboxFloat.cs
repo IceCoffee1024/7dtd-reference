@@ -4,25 +4,25 @@ using UnityEngine.Scripting;
 
 namespace Twitch
 {
-	// Token: 0x02001838 RID: 6200
+	// Token: 0x0200185E RID: 6238
 	[Preserve]
 	public class TwitchRequirementSandboxFloat : BaseTwitchOperationRequirement
 	{
-		// Token: 0x0600BF23 RID: 48931 RVA: 0x0046EBEF File Offset: 0x0046CDEF
+		// Token: 0x0600C0A8 RID: 49320 RVA: 0x0047498B File Offset: 0x00472B8B
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override object LeftSide(Entity target)
 		{
 			return SandboxOptionManager.GetFloat(this.sandboxOption);
 		}
 
-		// Token: 0x0600BF24 RID: 48932 RVA: 0x0046EC01 File Offset: 0x0046CE01
+		// Token: 0x0600C0A9 RID: 49321 RVA: 0x0047499D File Offset: 0x00472B9D
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override object RightSide(Entity target)
 		{
 			return this.value;
 		}
 
-		// Token: 0x0600BF25 RID: 48933 RVA: 0x0046EC10 File Offset: 0x0046CE10
+		// Token: 0x0600C0AA RID: 49322 RVA: 0x004749AC File Offset: 0x00472BAC
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -32,19 +32,19 @@ namespace Twitch
 			properties.ParseFloat(TwitchRequirementSandboxFloat.PropValue, ref this.value);
 		}
 
-		// Token: 0x0400902A RID: 36906
+		// Token: 0x04009146 RID: 37190
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public global::SandboxOptions.SandboxOptions sandboxOption;
 
-		// Token: 0x0400902B RID: 36907
+		// Token: 0x04009147 RID: 37191
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float value;
 
-		// Token: 0x0400902C RID: 36908
+		// Token: 0x04009148 RID: 37192
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropSandbox = "sandbox_option";
 
-		// Token: 0x0400902D RID: 36909
+		// Token: 0x04009149 RID: 37193
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropValue = "value";
 	}

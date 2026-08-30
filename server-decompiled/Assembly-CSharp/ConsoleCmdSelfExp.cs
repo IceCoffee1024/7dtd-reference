@@ -4,26 +4,26 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200027E RID: 638
+// Token: 0x02000282 RID: 642
 [Preserve]
 public class ConsoleCmdSelfExp : ConsoleCmdAbstract
 {
-	// Token: 0x060012C7 RID: 4807 RVA: 0x00074A0A File Offset: 0x00072C0A
+	// Token: 0x060012D9 RID: 4825 RVA: 0x00075066 File Offset: 0x00073266
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "giveselfxp" };
 	}
 
-	// Token: 0x060012C8 RID: 4808 RVA: 0x00074A1A File Offset: 0x00072C1A
+	// Token: 0x060012DA RID: 4826 RVA: 0x00075076 File Offset: 0x00073276
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Give yourself experience\nUsage:\n   giveselfxp <number> [1 (use xp bonuses)]";
 	}
 
-	// Token: 0x170001F7 RID: 503
-	// (get) Token: 0x060012C9 RID: 4809 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x170001F8 RID: 504
+	// (get) Token: 0x060012DB RID: 4827 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -32,8 +32,8 @@ public class ConsoleCmdSelfExp : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x170001F8 RID: 504
-	// (get) Token: 0x060012CA RID: 4810 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// Token: 0x170001F9 RID: 505
+	// (get) Token: 0x060012DC RID: 4828 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -42,7 +42,7 @@ public class ConsoleCmdSelfExp : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060012CB RID: 4811 RVA: 0x00074A24 File Offset: 0x00072C24
+	// Token: 0x060012DD RID: 4829 RVA: 0x00075080 File Offset: 0x00073280
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (GameManager.IsDedicatedServer)
@@ -70,7 +70,7 @@ public class ConsoleCmdSelfExp : ConsoleCmdAbstract
 		GameManager.Instance.World.GetPrimaryPlayer().Progression.AddLevelExp((int)num, "_xpOther", Progression.XPTypes.Debug, flag, true, -1, null);
 	}
 
-	// Token: 0x060012CC RID: 4812 RVA: 0x00074ADD File Offset: 0x00072CDD
+	// Token: 0x060012DE RID: 4830 RVA: 0x00075139 File Offset: 0x00073339
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

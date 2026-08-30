@@ -4,12 +4,12 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020002AE RID: 686
+// Token: 0x020002B2 RID: 690
 [Preserve]
 public class ConsoleCmdThirsty : ConsoleCmdAbstract
 {
-	// Token: 0x17000225 RID: 549
-	// (get) Token: 0x060013D8 RID: 5080 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000226 RID: 550
+	// (get) Token: 0x060013EA RID: 5098 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -18,14 +18,14 @@ public class ConsoleCmdThirsty : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060013D9 RID: 5081 RVA: 0x00079164 File Offset: 0x00077364
+	// Token: 0x060013EB RID: 5099 RVA: 0x000797C0 File Offset: 0x000779C0
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "thirsty" };
 	}
 
-	// Token: 0x060013DA RID: 5082 RVA: 0x00079174 File Offset: 0x00077374
+	// Token: 0x060013EC RID: 5100 RVA: 0x000797D0 File Offset: 0x000779D0
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		EntityPlayer primaryPlayer = GameManager.Instance.World.GetPrimaryPlayer();
@@ -40,7 +40,7 @@ public class ConsoleCmdThirsty : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060013DB RID: 5083 RVA: 0x000791EB File Offset: 0x000773EB
+	// Token: 0x060013ED RID: 5101 RVA: 0x00079847 File Offset: 0x00077A47
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 
-// Token: 0x02000483 RID: 1155
+// Token: 0x02000487 RID: 1159
 public class EntityAsyncManager
 {
-	// Token: 0x060023D7 RID: 9175 RVA: 0x000D910B File Offset: 0x000D730B
+	// Token: 0x060023F8 RID: 9208 RVA: 0x000D9BE3 File Offset: 0x000D7DE3
 	public EntityAsyncManager(NetEntityPackageQueue netEntityPackageQueue)
 	{
 		this.netEntityPackageQueue = netEntityPackageQueue;
 	}
 
-	// Token: 0x060023D8 RID: 9176 RVA: 0x000D9134 File Offset: 0x000D7334
+	// Token: 0x060023F9 RID: 9209 RVA: 0x000D9C0C File Offset: 0x000D7E0C
 	public EntityAsyncManager.EntityCreateHandle StartCreateEntity(EntityCreationData _ecd, Action<EntityAsyncManager.EntityCreateHandle> _onComplete = null)
 	{
 		EntityFactory.CreateEntityOperation createEntityOperation = EntityFactory.CreateEntityAsync(_ecd);
@@ -24,7 +24,7 @@ public class EntityAsyncManager
 		return entityCreateHandle;
 	}
 
-	// Token: 0x060023D9 RID: 9177 RVA: 0x000D9190 File Offset: 0x000D7390
+	// Token: 0x060023FA RID: 9210 RVA: 0x000D9C68 File Offset: 0x000D7E68
 	public void Update()
 	{
 		EntityAsyncManager.EntityCreateHandle entityCreateHandle;
@@ -45,14 +45,14 @@ public class EntityAsyncManager
 		}
 	}
 
-	// Token: 0x060023DA RID: 9178 RVA: 0x000D91D8 File Offset: 0x000D73D8
+	// Token: 0x060023FB RID: 9211 RVA: 0x000D9CB0 File Offset: 0x000D7EB0
 	public bool IsEntityPending(int _entityId)
 	{
 		EntityAsyncManager.EntityCreateHandle entityCreateHandle;
 		return this.requestIdMap.TryGetValue(_entityId, out entityCreateHandle) && !entityCreateHandle.IsCompleted;
 	}
 
-	// Token: 0x060023DB RID: 9179 RVA: 0x000D9200 File Offset: 0x000D7400
+	// Token: 0x060023FC RID: 9212 RVA: 0x000D9CD8 File Offset: 0x000D7ED8
 	public void EnsureEntity(int _entityId)
 	{
 		EntityAsyncManager.EntityCreateHandle entityCreateHandle;
@@ -65,7 +65,7 @@ public class EntityAsyncManager
 		this.requestIdMap.Remove(entityCreateHandle.Id);
 	}
 
-	// Token: 0x060023DC RID: 9180 RVA: 0x000D924C File Offset: 0x000D744C
+	// Token: 0x060023FD RID: 9213 RVA: 0x000D9D24 File Offset: 0x000D7F24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnCreateEntityRequestFinalized(int id)
 	{
@@ -73,7 +73,7 @@ public class EntityAsyncManager
 		this.netEntityPackageQueue.ProcessPackagesForEntity(id);
 	}
 
-	// Token: 0x060023DD RID: 9181 RVA: 0x000D9268 File Offset: 0x000D7468
+	// Token: 0x060023FE RID: 9214 RVA: 0x000D9D40 File Offset: 0x000D7F40
 	public void CompletePendingCreateTasks()
 	{
 		if (this.requestQueue.Count == 0)
@@ -89,13 +89,13 @@ public class EntityAsyncManager
 		this.requestIdMap.Clear();
 	}
 
-	// Token: 0x060023DE RID: 9182 RVA: 0x000D92C5 File Offset: 0x000D74C5
+	// Token: 0x060023FF RID: 9215 RVA: 0x000D9D9D File Offset: 0x000D7F9D
 	public void Cleanup()
 	{
 		this.CompletePendingCreateTasks();
 	}
 
-	// Token: 0x060023DF RID: 9183 RVA: 0x000D92CD File Offset: 0x000D74CD
+	// Token: 0x06002400 RID: 9216 RVA: 0x000D9DA5 File Offset: 0x000D7FA5
 	[Conditional("DEBUG_ENTITY_ASYNC")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void LogDebug(string message)
@@ -103,46 +103,46 @@ public class EntityAsyncManager
 		Log.Out("[EntityAsync] " + message);
 	}
 
-	// Token: 0x060023E0 RID: 9184 RVA: 0x000D92CD File Offset: 0x000D74CD
+	// Token: 0x06002401 RID: 9217 RVA: 0x000D9DA5 File Offset: 0x000D7FA5
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void LogInfo(string message)
 	{
 		Log.Out("[EntityAsync] " + message);
 	}
 
-	// Token: 0x060023E1 RID: 9185 RVA: 0x000D92DF File Offset: 0x000D74DF
+	// Token: 0x06002402 RID: 9218 RVA: 0x000D9DB7 File Offset: 0x000D7FB7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void LogWarning(string message)
 	{
 		Log.Warning("[EntityAsync] " + message);
 	}
 
-	// Token: 0x04001974 RID: 6516
+	// Token: 0x0400198B RID: 6539
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Queue<EntityAsyncManager.EntityCreateHandle> requestQueue = new Queue<EntityAsyncManager.EntityCreateHandle>(64);
 
-	// Token: 0x04001975 RID: 6517
+	// Token: 0x0400198C RID: 6540
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Dictionary<int, EntityAsyncManager.EntityCreateHandle> requestIdMap = new Dictionary<int, EntityAsyncManager.EntityCreateHandle>(64);
 
-	// Token: 0x04001976 RID: 6518
+	// Token: 0x0400198D RID: 6541
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly NetEntityPackageQueue netEntityPackageQueue;
 
-	// Token: 0x02000484 RID: 1156
+	// Token: 0x02000488 RID: 1160
 	public class EntityCreateHandle
 	{
-		// Token: 0x17000420 RID: 1056
-		// (get) Token: 0x060023E2 RID: 9186 RVA: 0x000D92F1 File Offset: 0x000D74F1
-		// (set) Token: 0x060023E3 RID: 9187 RVA: 0x000D92F9 File Offset: 0x000D74F9
+		// Token: 0x17000424 RID: 1060
+		// (get) Token: 0x06002403 RID: 9219 RVA: 0x000D9DC9 File Offset: 0x000D7FC9
+		// (set) Token: 0x06002404 RID: 9220 RVA: 0x000D9DD1 File Offset: 0x000D7FD1
 		public bool IsCompleted
 		{
 			get; [PublicizedFrom(EAccessModifier.Private)]
 			set;
 		}
 
-		// Token: 0x17000421 RID: 1057
-		// (get) Token: 0x060023E4 RID: 9188 RVA: 0x000D9302 File Offset: 0x000D7502
+		// Token: 0x17000425 RID: 1061
+		// (get) Token: 0x06002405 RID: 9221 RVA: 0x000D9DDA File Offset: 0x000D7FDA
 		public int Id
 		{
 			get
@@ -151,8 +151,8 @@ public class EntityAsyncManager
 			}
 		}
 
-		// Token: 0x17000422 RID: 1058
-		// (get) Token: 0x060023E5 RID: 9189 RVA: 0x000D930F File Offset: 0x000D750F
+		// Token: 0x17000426 RID: 1062
+		// (get) Token: 0x06002406 RID: 9222 RVA: 0x000D9DE7 File Offset: 0x000D7FE7
 		public string DebugInfo
 		{
 			get
@@ -161,8 +161,8 @@ public class EntityAsyncManager
 			}
 		}
 
-		// Token: 0x17000423 RID: 1059
-		// (get) Token: 0x060023E6 RID: 9190 RVA: 0x000D931C File Offset: 0x000D751C
+		// Token: 0x17000427 RID: 1063
+		// (get) Token: 0x06002407 RID: 9223 RVA: 0x000D9DF4 File Offset: 0x000D7FF4
 		public Entity Entity
 		{
 			get
@@ -171,7 +171,7 @@ public class EntityAsyncManager
 			}
 		}
 
-		// Token: 0x060023E7 RID: 9191 RVA: 0x000D9329 File Offset: 0x000D7529
+		// Token: 0x06002408 RID: 9224 RVA: 0x000D9E01 File Offset: 0x000D8001
 		public EntityCreateHandle(EntityAsyncManager manager, EntityFactory.CreateEntityOperation op, Action<EntityAsyncManager.EntityCreateHandle> onComplete)
 		{
 			this.manager = manager;
@@ -179,7 +179,7 @@ public class EntityAsyncManager
 			this.onComplete = onComplete;
 		}
 
-		// Token: 0x060023E8 RID: 9192 RVA: 0x000D9348 File Offset: 0x000D7548
+		// Token: 0x06002409 RID: 9225 RVA: 0x000D9E20 File Offset: 0x000D8020
 		public bool TryComplete()
 		{
 			if (this.IsCompleted)
@@ -208,7 +208,7 @@ public class EntityAsyncManager
 			return true;
 		}
 
-		// Token: 0x060023E9 RID: 9193 RVA: 0x000D93C0 File Offset: 0x000D75C0
+		// Token: 0x0600240A RID: 9226 RVA: 0x000D9E98 File Offset: 0x000D8098
 		public Entity WaitForComplete()
 		{
 			this.op.WaitForLoadingComplete();
@@ -219,15 +219,15 @@ public class EntityAsyncManager
 			return this.op.entity;
 		}
 
-		// Token: 0x04001977 RID: 6519
+		// Token: 0x0400198E RID: 6542
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly EntityAsyncManager manager;
 
-		// Token: 0x04001978 RID: 6520
+		// Token: 0x0400198F RID: 6543
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly EntityFactory.CreateEntityOperation op;
 
-		// Token: 0x04001979 RID: 6521
+		// Token: 0x04001990 RID: 6544
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Action<EntityAsyncManager.EntityCreateHandle> onComplete;
 	}

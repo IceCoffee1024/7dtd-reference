@@ -13,10 +13,10 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x020011EC RID: 4588
+// Token: 0x02001208 RID: 4616
 public class GameUtils
 {
-	// Token: 0x06009256 RID: 37462 RVA: 0x003752C0 File Offset: 0x003734C0
+	// Token: 0x0600935A RID: 37722 RVA: 0x0037A58C File Offset: 0x0037878C
 	public static bool FindMasterBlockForEntityModelBlock(World _world, Vector3 _dirNormalized, string _phsxTag, Vector3 _hitPointPos, Transform _hitTransform, WorldRayHitInfo _hitInfo)
 	{
 		ChunkCluster chunkCache = _world.ChunkCache;
@@ -83,7 +83,7 @@ public class GameUtils
 		return false;
 	}
 
-	// Token: 0x06009257 RID: 37463 RVA: 0x00375640 File Offset: 0x00373840
+	// Token: 0x0600935B RID: 37723 RVA: 0x0037A90C File Offset: 0x00378B0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool checkChunk(ChunkCluster cc, int cX, int cZ, Transform parentTransform, Vector3 localHitPos, Vector3 localDirNormalized, WorldRayHitInfo _hitInfo, out BlockEntityData _ebcd)
 	{
@@ -114,7 +114,7 @@ public class GameUtils
 		return false;
 	}
 
-	// Token: 0x06009258 RID: 37464 RVA: 0x0037574C File Offset: 0x0037394C
+	// Token: 0x0600935C RID: 37724 RVA: 0x0037AA18 File Offset: 0x00378C18
 	public static void EnableRagdoll(GameObject _model, bool _bEnable, bool _bUseGravity)
 	{
 		foreach (Rigidbody rigidbody in _model.GetComponentsInChildren<Rigidbody>())
@@ -129,7 +129,7 @@ public class GameUtils
 		}
 	}
 
-	// Token: 0x06009259 RID: 37465 RVA: 0x003757A0 File Offset: 0x003739A0
+	// Token: 0x0600935D RID: 37725 RVA: 0x0037AA6C File Offset: 0x00378C6C
 	public static Entity GetHitRootEntity(string _tag, Transform _hitTransform)
 	{
 		if (_tag.StartsWith("E_BP_"))
@@ -158,7 +158,7 @@ public class GameUtils
 		return null;
 	}
 
-	// Token: 0x0600925A RID: 37466 RVA: 0x00375808 File Offset: 0x00373A08
+	// Token: 0x0600935E RID: 37726 RVA: 0x0037AAD4 File Offset: 0x00378CD4
 	public static Transform GetHitRootTransform(string _tag, Transform _hitTransform)
 	{
 		if (!_tag.StartsWith("E_BP_"))
@@ -181,7 +181,7 @@ public class GameUtils
 		return RootTransformRefEntity.FindEntityUpwards(_hitTransform);
 	}
 
-	// Token: 0x0600925B RID: 37467 RVA: 0x0037585E File Offset: 0x00373A5E
+	// Token: 0x0600935F RID: 37727 RVA: 0x0037AB2A File Offset: 0x00378D2A
 	public static string GetTransformPath(Transform _t)
 	{
 		if (!_t)
@@ -195,7 +195,7 @@ public class GameUtils
 		return GameUtils.GetTransformPath(_t.parent) + "/" + _t.name;
 	}
 
-	// Token: 0x0600925C RID: 37468 RVA: 0x003758A0 File Offset: 0x00373AA0
+	// Token: 0x06009360 RID: 37728 RVA: 0x0037AB6C File Offset: 0x00378D6C
 	public static string GetChildTransformPath(Transform _parent, Transform _child)
 	{
 		if (_child.parent == null)
@@ -209,7 +209,7 @@ public class GameUtils
 		return GameUtils.GetChildTransformPath(_parent, _child.parent) + "/" + _child.name;
 	}
 
-	// Token: 0x0600925D RID: 37469 RVA: 0x00375928 File Offset: 0x00373B28
+	// Token: 0x06009361 RID: 37729 RVA: 0x0037ABF4 File Offset: 0x00378DF4
 	public static void FindTagInChilds(Transform _parent, string _tag, List<Transform> _list)
 	{
 		int childCount = _parent.childCount;
@@ -224,7 +224,7 @@ public class GameUtils
 		}
 	}
 
-	// Token: 0x0600925E RID: 37470 RVA: 0x00375968 File Offset: 0x00373B68
+	// Token: 0x06009362 RID: 37730 RVA: 0x0037AC34 File Offset: 0x00378E34
 	public static Transform FindTagInChilds(Transform _parent, string _tag)
 	{
 		int childCount = _parent.childCount;
@@ -247,7 +247,7 @@ public class GameUtils
 		return null;
 	}
 
-	// Token: 0x0600925F RID: 37471 RVA: 0x003759C4 File Offset: 0x00373BC4
+	// Token: 0x06009363 RID: 37731 RVA: 0x0037AC90 File Offset: 0x00378E90
 	public static Transform FindTagInDirectChilds(Transform _parent, string _tag)
 	{
 		int childCount = _parent.childCount;
@@ -262,7 +262,7 @@ public class GameUtils
 		return null;
 	}
 
-	// Token: 0x06009260 RID: 37472 RVA: 0x003759F8 File Offset: 0x00373BF8
+	// Token: 0x06009364 RID: 37732 RVA: 0x0037ACC4 File Offset: 0x00378EC4
 	public static Transform FindChildWithPartialName(Transform root, params string[] names)
 	{
 		foreach (string text in names)
@@ -283,7 +283,7 @@ public class GameUtils
 		return null;
 	}
 
-	// Token: 0x06009261 RID: 37473 RVA: 0x00375A58 File Offset: 0x00373C58
+	// Token: 0x06009365 RID: 37733 RVA: 0x0037AD24 File Offset: 0x00378F24
 	public static void FindDeepChildWithPartialName(Transform root, string name, ref List<Transform> found)
 	{
 		if (root.name.ContainsCaseInsensitive(name))
@@ -296,14 +296,14 @@ public class GameUtils
 		}
 	}
 
-	// Token: 0x06009262 RID: 37474 RVA: 0x00375A9A File Offset: 0x00373C9A
+	// Token: 0x06009366 RID: 37734 RVA: 0x0037AD66 File Offset: 0x00378F66
 	[Conditional("UNITY_EDITOR")]
 	public static void HideObjectInEditor(GameObject _obj)
 	{
 		global::UnityEngine.Object.DontDestroyOnLoad(_obj);
 	}
 
-	// Token: 0x06009263 RID: 37475 RVA: 0x00375AA4 File Offset: 0x00373CA4
+	// Token: 0x06009367 RID: 37735 RVA: 0x0037AD70 File Offset: 0x00378F70
 	public static bool IsColliderWithinBlock(Vector3i blockPosition, BlockValue blockValue)
 	{
 		int num = 3899400;
@@ -359,13 +359,13 @@ public class GameUtils
 		return false;
 	}
 
-	// Token: 0x06009264 RID: 37476 RVA: 0x00375C80 File Offset: 0x00373E80
+	// Token: 0x06009368 RID: 37736 RVA: 0x0037AF4C File Offset: 0x0037914C
 	public static Vector3 GetMultiBlockBoundsOffset(Vector3 multiBlockDim)
 	{
 		return new Vector3((multiBlockDim.x % 2f == 0f) ? (-0.5f) : 0f, multiBlockDim.y / 2f - 0.5f, (multiBlockDim.z % 2f == 0f) ? (-0.5f) : 0f);
 	}
 
-	// Token: 0x06009265 RID: 37477 RVA: 0x00375CE4 File Offset: 0x00373EE4
+	// Token: 0x06009369 RID: 37737 RVA: 0x0037AFB0 File Offset: 0x003791B0
 	public static Bounds GetBlockPlacementBounds(Block block)
 	{
 		if (block.isOversized)
@@ -380,7 +380,7 @@ public class GameUtils
 		return new Bounds(Vector3.zero, Vector3.one);
 	}
 
-	// Token: 0x06009266 RID: 37478 RVA: 0x00375D38 File Offset: 0x00373F38
+	// Token: 0x0600936A RID: 37738 RVA: 0x0037B004 File Offset: 0x00379204
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool TryFindEntityData(Vector3i entityWorldHitPosition, Transform entityParentTransform, out BlockEntityData ebcd)
 	{
@@ -411,12 +411,12 @@ public class GameUtils
 		return false;
 	}
 
-	// Token: 0x06009267 RID: 37479 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x0600936B RID: 37739 RVA: 0x000027FC File Offset: 0x000009FC
 	public static void DebugDrawPathFromEntity(Entity _e, PathEntity _path, Color _color)
 	{
 	}
 
-	// Token: 0x06009268 RID: 37480 RVA: 0x00375E08 File Offset: 0x00374008
+	// Token: 0x0600936C RID: 37740 RVA: 0x0037B0D4 File Offset: 0x003792D4
 	public static void CreateEmptyFlatLevel(string _worldName, PathAbstractions.AbstractedLocation _worldLocation, int _worldSize, int _terrainHeight = 60)
 	{
 		SdDirectory.CreateDirectory(_worldLocation.FullPath);
@@ -428,7 +428,7 @@ public class GameUtils
 		GameUtils.CreateWorldFilesForFlatLevel(_worldName, _worldSize, _worldLocation, _terrainHeight);
 	}
 
-	// Token: 0x06009269 RID: 37481 RVA: 0x00375E5C File Offset: 0x0037405C
+	// Token: 0x0600936D RID: 37741 RVA: 0x0037B128 File Offset: 0x00379328
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void CreateWorldFilesForFlatLevel(string _worldName, int _worldSize, PathAbstractions.AbstractedLocation _worldLocation, int _terrainHeight)
 	{
@@ -467,7 +467,7 @@ public class GameUtils
 		GameUtils.CreateEmptySplatMap(_worldSize, _worldLocation);
 	}
 
-	// Token: 0x0600926A RID: 37482 RVA: 0x00375FDC File Offset: 0x003741DC
+	// Token: 0x0600936E RID: 37742 RVA: 0x0037B2A8 File Offset: 0x003794A8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void CreateSimpleRadiationMap(int _worldSize, PathAbstractions.AbstractedLocation _worldLocation, int _radiationBorderSize = 128, int _downScale = 16)
 	{
@@ -491,7 +491,7 @@ public class GameUtils
 		SdFile.WriteAllBytes(_worldLocation.FullPath + "/radiation.png", texture2D.EncodeToPNG());
 	}
 
-	// Token: 0x0600926B RID: 37483 RVA: 0x0037608C File Offset: 0x0037428C
+	// Token: 0x0600936F RID: 37743 RVA: 0x0037B358 File Offset: 0x00379558
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void CreateEmptySplatMap(int _worldSize, PathAbstractions.AbstractedLocation _worldLocation)
 	{
@@ -507,7 +507,7 @@ public class GameUtils
 		Log.Out(string.Format("Write tex took {0} ms", microStopwatch.ElapsedMilliseconds));
 	}
 
-	// Token: 0x0600926C RID: 37484 RVA: 0x00376130 File Offset: 0x00374330
+	// Token: 0x06009370 RID: 37744 RVA: 0x0037B3FC File Offset: 0x003795FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void CreateForestBiomeMap(int _worldSize, PathAbstractions.AbstractedLocation _worldLocation, BiomeDefinition.BiomeType _biome = BiomeDefinition.BiomeType.PineForest)
 	{
@@ -520,7 +520,7 @@ public class GameUtils
 		Log.Out(string.Format("Write tex took {0} ms", microStopwatch.ElapsedMilliseconds));
 	}
 
-	// Token: 0x0600926D RID: 37485 RVA: 0x003761A8 File Offset: 0x003743A8
+	// Token: 0x06009371 RID: 37745 RVA: 0x0037B474 File Offset: 0x00379674
 	public static void DeleteWorld(PathAbstractions.AbstractedLocation _worldLocation)
 	{
 		if (string.IsNullOrEmpty(_worldLocation.Name))
@@ -538,49 +538,49 @@ public class GameUtils
 		PathAbstractions.WorldsSearchPaths.InvalidateCache();
 	}
 
-	// Token: 0x0600926E RID: 37486 RVA: 0x00376228 File Offset: 0x00374428
+	// Token: 0x06009372 RID: 37746 RVA: 0x0037B4F4 File Offset: 0x003796F4
 	public static int WorldTimeToDays(ulong _worldTime)
 	{
 		return (int)(_worldTime / 24000UL + 1UL);
 	}
 
-	// Token: 0x0600926F RID: 37487 RVA: 0x00376236 File Offset: 0x00374436
+	// Token: 0x06009373 RID: 37747 RVA: 0x0037B502 File Offset: 0x00379702
 	public static int WorldTimeToHours(ulong _worldTime)
 	{
 		return (int)(_worldTime / 1000UL) % 24;
 	}
 
-	// Token: 0x06009270 RID: 37488 RVA: 0x00376244 File Offset: 0x00374444
+	// Token: 0x06009374 RID: 37748 RVA: 0x0037B510 File Offset: 0x00379710
 	public static int WorldTimeToMinutes(ulong _worldTime)
 	{
 		return (int)(_worldTime / 1000.0 * 60.0) % 60;
 	}
 
-	// Token: 0x06009271 RID: 37489 RVA: 0x00376261 File Offset: 0x00374461
+	// Token: 0x06009375 RID: 37749 RVA: 0x0037B52D File Offset: 0x0037972D
 	public static float WorldTimeToTotalSeconds(float _worldTime)
 	{
 		return _worldTime * 3.6f;
 	}
 
-	// Token: 0x06009272 RID: 37490 RVA: 0x0037626A File Offset: 0x0037446A
+	// Token: 0x06009376 RID: 37750 RVA: 0x0037B536 File Offset: 0x00379736
 	public static uint WorldTimeToTotalMinutes(ulong _worldTime)
 	{
 		return (uint)(_worldTime * 0.06);
 	}
 
-	// Token: 0x06009273 RID: 37491 RVA: 0x0037627A File Offset: 0x0037447A
+	// Token: 0x06009377 RID: 37751 RVA: 0x0037B546 File Offset: 0x00379746
 	public static int WorldTimeToTotalHours(ulong _worldTime)
 	{
 		return (int)(_worldTime / 1000UL);
 	}
 
-	// Token: 0x06009274 RID: 37492 RVA: 0x00376285 File Offset: 0x00374485
+	// Token: 0x06009378 RID: 37752 RVA: 0x0037B551 File Offset: 0x00379751
 	public static ulong TotalMinutesToWorldTime(uint _totalMinutes)
 	{
 		return (ulong)(_totalMinutes / 0.06);
 	}
 
-	// Token: 0x06009275 RID: 37493 RVA: 0x00376298 File Offset: 0x00374498
+	// Token: 0x06009379 RID: 37753 RVA: 0x0037B564 File Offset: 0x00379764
 	[return: TupleElementNames(new string[] { "Days", "Hours", "Minutes" })]
 	public static ValueTuple<int, int, int> WorldTimeToElements(ulong _worldTime)
 	{
@@ -590,7 +590,7 @@ public class GameUtils
 		return new ValueTuple<int, int, int>(num, num2, num3);
 	}
 
-	// Token: 0x06009276 RID: 37494 RVA: 0x003762D8 File Offset: 0x003744D8
+	// Token: 0x0600937A RID: 37754 RVA: 0x0037B5A4 File Offset: 0x003797A4
 	public static string WorldTimeToString(ulong _worldTime)
 	{
 		ValueTuple<int, int, int> valueTuple = GameUtils.WorldTimeToElements(_worldTime);
@@ -600,7 +600,7 @@ public class GameUtils
 		return string.Format("{0} {1:D2}:{2:D2}", item, item2, item3);
 	}
 
-	// Token: 0x06009277 RID: 37495 RVA: 0x0037631C File Offset: 0x0037451C
+	// Token: 0x0600937B RID: 37755 RVA: 0x0037B5E8 File Offset: 0x003797E8
 	public static string WorldTimeToHourMinutesString(ulong _worldTime)
 	{
 		ValueTuple<int, int, int> valueTuple = GameUtils.WorldTimeToElements(_worldTime);
@@ -609,7 +609,7 @@ public class GameUtils
 		return string.Format("{0:D2}:{1:D2}", item, item2);
 	}
 
-	// Token: 0x06009278 RID: 37496 RVA: 0x00376354 File Offset: 0x00374554
+	// Token: 0x0600937C RID: 37756 RVA: 0x0037B620 File Offset: 0x00379820
 	public static string WorldTimeDeltaToString(ulong _worldTime)
 	{
 		ValueTuple<int, int, int> valueTuple = GameUtils.WorldTimeToElements(_worldTime);
@@ -619,7 +619,7 @@ public class GameUtils
 		return string.Format("{0} {1:D2}:{2:D2}", item - 1, item2, item3);
 	}
 
-	// Token: 0x06009279 RID: 37497 RVA: 0x00376399 File Offset: 0x00374599
+	// Token: 0x0600937D RID: 37757 RVA: 0x0037B665 File Offset: 0x00379865
 	public static ulong DayTimeToWorldTime(int _day, int _hours, int _minutes)
 	{
 		if (_day < 1)
@@ -629,7 +629,7 @@ public class GameUtils
 		return (ulong)((long)(_day - 1) * 24000L + (long)(_hours * 1000) + (long)(_minutes * 1000 / 60));
 	}
 
-	// Token: 0x0600927A RID: 37498 RVA: 0x003763C2 File Offset: 0x003745C2
+	// Token: 0x0600937E RID: 37758 RVA: 0x0037B68E File Offset: 0x0037988E
 	public static ulong DaysToWorldTime(int _day)
 	{
 		if (_day < 1)
@@ -639,13 +639,13 @@ public class GameUtils
 		return (ulong)(((long)_day - 1L) * 24000L);
 	}
 
-	// Token: 0x0600927B RID: 37499 RVA: 0x003763D7 File Offset: 0x003745D7
+	// Token: 0x0600937F RID: 37759 RVA: 0x0037B6A3 File Offset: 0x003798A3
 	public static ulong DaysToWorldTimeMidnight(int _day)
 	{
 		return GameUtils.DaysToWorldTime(_day) + 16000UL;
 	}
 
-	// Token: 0x0600927C RID: 37500 RVA: 0x003763E8 File Offset: 0x003745E8
+	// Token: 0x06009380 RID: 37760 RVA: 0x0037B6B4 File Offset: 0x003798B4
 	[return: TupleElementNames(new string[] { "duskHour", "dawnHour" })]
 	public static ValueTuple<int, int> CalcDuskDawnHours(int _dayLightLength)
 	{
@@ -671,7 +671,7 @@ public class GameUtils
 		return valueTuple;
 	}
 
-	// Token: 0x0600927D RID: 37501 RVA: 0x00376458 File Offset: 0x00374658
+	// Token: 0x06009381 RID: 37761 RVA: 0x0037B724 File Offset: 0x00379924
 	public static bool IsBloodMoonTime(ulong _worldTime, [TupleElementNames(new string[] { "duskHour", "dawnHour" })] ValueTuple<int, int> _duskDawnTimes, int _bmDay)
 	{
 		ValueTuple<int, int, int> valueTuple = GameUtils.WorldTimeToElements(_worldTime);
@@ -680,7 +680,7 @@ public class GameUtils
 		return GameUtils.IsBloodMoonTime(_duskDawnTimes, item2, _bmDay, item);
 	}
 
-	// Token: 0x0600927E RID: 37502 RVA: 0x00376481 File Offset: 0x00374681
+	// Token: 0x06009382 RID: 37762 RVA: 0x0037B74D File Offset: 0x0037994D
 	public static bool IsBloodMoonTime([TupleElementNames(new string[] { "duskHour", "dawnHour" })] ValueTuple<int, int> _duskDawnTimes, int _hour, int _bmDay, int _day)
 	{
 		if (_day == _bmDay)
@@ -697,7 +697,7 @@ public class GameUtils
 		return false;
 	}
 
-	// Token: 0x0600927F RID: 37503 RVA: 0x003764A8 File Offset: 0x003746A8
+	// Token: 0x06009383 RID: 37763 RVA: 0x0037B774 File Offset: 0x00379974
 	public static List<string> GetWorldFilesToTransmitToClient(string _worldFolder)
 	{
 		string[] files = SdDirectory.GetFiles(_worldFolder);
@@ -708,7 +708,7 @@ public class GameUtils
 		return GameUtils.GetWorldFilesToTransmitToClient(files);
 	}
 
-	// Token: 0x06009280 RID: 37504 RVA: 0x003764DC File Offset: 0x003746DC
+	// Token: 0x06009384 RID: 37764 RVA: 0x0037B7A8 File Offset: 0x003799A8
 	public static List<string> GetWorldFilesToTransmitToClient(ICollection<string> _files)
 	{
 		HashSet<string> hashSet = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
@@ -728,14 +728,14 @@ public class GameUtils
 		return list;
 	}
 
-	// Token: 0x06009281 RID: 37505 RVA: 0x003765D8 File Offset: 0x003747D8
+	// Token: 0x06009385 RID: 37765 RVA: 0x0037B8A4 File Offset: 0x00379AA4
 	public static void DebugOutputGamePrefs(GameUtils.OutputDelegate _output)
 	{
 		SortedList<string, string> sortedList = new SortedList<string, string>();
-		for (int num = 0; num != 315; num++)
+		for (int num = 0; num != 316; num++)
 		{
 			string text = ((EnumGamePrefs)num).ToStringCached<EnumGamePrefs>();
-			if (!text.Contains("Password") && text != "ServerHistoryCache")
+			if (!text.Contains("Password") && !text.Contains("Token") && text != "ServerHistoryCache")
 			{
 				SortedList<string, string> sortedList2 = sortedList;
 				string text2 = text;
@@ -751,7 +751,7 @@ public class GameUtils
 		}
 	}
 
-	// Token: 0x06009282 RID: 37506 RVA: 0x00376688 File Offset: 0x00374888
+	// Token: 0x06009386 RID: 37766 RVA: 0x0037B964 File Offset: 0x00379B64
 	public static void DebugOutputGameStats(GameUtils.OutputDelegate _output)
 	{
 		SortedList<string, string> sortedList = new SortedList<string, string>();
@@ -771,7 +771,7 @@ public class GameUtils
 		}
 	}
 
-	// Token: 0x06009283 RID: 37507 RVA: 0x0037671C File Offset: 0x0037491C
+	// Token: 0x06009387 RID: 37767 RVA: 0x0037B9F8 File Offset: 0x00379BF8
 	public static void KickPlayerForClientInfo(ClientInfo _cInfo, GameUtils.KickPlayerData _kickData)
 	{
 		_cInfo.SendPackage(NetPackageManager.GetPackage<NetPackagePlayerDenied>().Setup(_kickData));
@@ -782,7 +782,7 @@ public class GameUtils
 		ThreadManager.StartCoroutine(GameUtils.disconnectLater(0.5f, _cInfo));
 	}
 
-	// Token: 0x06009284 RID: 37508 RVA: 0x00376776 File Offset: 0x00374976
+	// Token: 0x06009388 RID: 37768 RVA: 0x0037BA52 File Offset: 0x00379C52
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static IEnumerator disconnectLater(float _delayInSec, ClientInfo _clientInfo)
 	{
@@ -792,19 +792,19 @@ public class GameUtils
 		yield break;
 	}
 
-	// Token: 0x06009285 RID: 37509 RVA: 0x0037678C File Offset: 0x0037498C
+	// Token: 0x06009389 RID: 37769 RVA: 0x0037BA68 File Offset: 0x00379C68
 	public static void ForceDisconnect()
 	{
 		GameUtils.ForceDisconnect(new GameUtils.KickPlayerData(GameUtils.EKickReason.InternalNetConnectionError, 0, default(DateTime), ""));
 	}
 
-	// Token: 0x06009286 RID: 37510 RVA: 0x003767B4 File Offset: 0x003749B4
+	// Token: 0x0600938A RID: 37770 RVA: 0x0037BA90 File Offset: 0x00379C90
 	public static void ForceDisconnect(GameUtils.KickPlayerData _kickData)
 	{
 		ThreadManager.StartCoroutine(GameUtils.ForceDisconnectRoutine(0.5f, _kickData));
 	}
 
-	// Token: 0x06009287 RID: 37511 RVA: 0x003767C7 File Offset: 0x003749C7
+	// Token: 0x0600938B RID: 37771 RVA: 0x0037BAA3 File Offset: 0x00379CA3
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public static IEnumerator ForceDisconnectRoutine(float delay, GameUtils.KickPlayerData kickData)
 	{
@@ -818,7 +818,7 @@ public class GameUtils
 		yield break;
 	}
 
-	// Token: 0x06009288 RID: 37512 RVA: 0x003767E0 File Offset: 0x003749E0
+	// Token: 0x0600938C RID: 37772 RVA: 0x0037BABC File Offset: 0x00379CBC
 	public static void WriteItemStack(BinaryWriter _bw, IList<ItemStack> _itemStack)
 	{
 		_bw.Write((ushort)_itemStack.Count);
@@ -828,7 +828,7 @@ public class GameUtils
 		}
 	}
 
-	// Token: 0x06009289 RID: 37513 RVA: 0x00376818 File Offset: 0x00374A18
+	// Token: 0x0600938D RID: 37773 RVA: 0x0037BAF4 File Offset: 0x00379CF4
 	public static ItemStack[] ReadItemStackOld(BinaryReader _br)
 	{
 		int num = (int)_br.ReadUInt16();
@@ -844,7 +844,7 @@ public class GameUtils
 		return array;
 	}
 
-	// Token: 0x0600928A RID: 37514 RVA: 0x00376868 File Offset: 0x00374A68
+	// Token: 0x0600938E RID: 37774 RVA: 0x0037BB44 File Offset: 0x00379D44
 	public static ItemStack[] ReadItemStack(BinaryReader _br)
 	{
 		int num = (int)_br.ReadUInt16();
@@ -860,7 +860,7 @@ public class GameUtils
 		return array;
 	}
 
-	// Token: 0x0600928B RID: 37515 RVA: 0x003768B8 File Offset: 0x00374AB8
+	// Token: 0x0600938F RID: 37775 RVA: 0x0037BB94 File Offset: 0x00379D94
 	public static void WriteItemValueArray(BinaryWriter _bw, ItemValue[] _items)
 	{
 		_bw.Write((ushort)_items.Length);
@@ -875,7 +875,7 @@ public class GameUtils
 		}
 	}
 
-	// Token: 0x0600928C RID: 37516 RVA: 0x003768F8 File Offset: 0x00374AF8
+	// Token: 0x06009390 RID: 37776 RVA: 0x0037BBD4 File Offset: 0x00379DD4
 	public static ItemValue[] ReadItemValueArray(BinaryReader _br)
 	{
 		ItemValue[] array = new ItemValue[(int)_br.ReadUInt16()];
@@ -890,7 +890,7 @@ public class GameUtils
 		return array;
 	}
 
-	// Token: 0x0600928D RID: 37517 RVA: 0x0037693C File Offset: 0x00374B3C
+	// Token: 0x06009391 RID: 37777 RVA: 0x0037BC18 File Offset: 0x00379E18
 	public static void HarvestOnAttack(ItemActionData _actionData, Dictionary<string, ItemActionAttack.Bonuses> ToolBonuses)
 	{
 		if (_actionData.invData.world.IsEditor() || !(_actionData.invData.holdingEntity is EntityPlayerLocal) || _actionData.attackDetails == null || _actionData.attackDetails.itemsToDrop == null)
@@ -1063,7 +1063,7 @@ public class GameUtils
 		_actionData.attackDetails.blockBeingDamaged = BlockValue.Air;
 	}
 
-	// Token: 0x0600928E RID: 37518 RVA: 0x00377088 File Offset: 0x00375288
+	// Token: 0x06009392 RID: 37778 RVA: 0x0037C364 File Offset: 0x0037A564
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool collectHarvestedItem(ItemActionData _actionData, ItemValue _iv, int _count, float _prob, bool _bScaleCountOnDamage = true)
 	{
@@ -1100,7 +1100,7 @@ public class GameUtils
 		return false;
 	}
 
-	// Token: 0x0600928F RID: 37519 RVA: 0x00377238 File Offset: 0x00375438
+	// Token: 0x06009393 RID: 37779 RVA: 0x0037C514 File Offset: 0x0037A714
 	public static void DrawCube(Vector3 _pos, Color _col)
 	{
 		global::UnityEngine.Debug.DrawLine(_pos + new Vector3(0.1f, 0.1f, 0.1f), _pos + new Vector3(0.9f, 0.1f, 0.1f), _col, 10f);
@@ -1117,13 +1117,13 @@ public class GameUtils
 		global::UnityEngine.Debug.DrawLine(_pos + new Vector3(0.9f, 0.1f, 0.9f), _pos + new Vector3(0.9f, 0.9f, 0.9f), _col, 10f);
 	}
 
-	// Token: 0x06009290 RID: 37520 RVA: 0x00377539 File Offset: 0x00375739
+	// Token: 0x06009394 RID: 37780 RVA: 0x0037C815 File Offset: 0x0037AA15
 	public static string SafeStringFormat(string _s)
 	{
 		return _s.Replace("{", "{{").Replace("}", "}}");
 	}
 
-	// Token: 0x06009291 RID: 37521 RVA: 0x0037755C File Offset: 0x0037575C
+	// Token: 0x06009395 RID: 37781 RVA: 0x0037C838 File Offset: 0x0037AA38
 	public static Vector3 GetNormalFromHitInfo(Vector3i _blockPos, Collider _hitCollider, int _hitTriangleIdx, out Vector3 _hitFaceCenter)
 	{
 		_hitFaceCenter = Vector3.zero;
@@ -1155,7 +1155,7 @@ public class GameUtils
 		return vector4;
 	}
 
-	// Token: 0x06009292 RID: 37522 RVA: 0x003776A0 File Offset: 0x003758A0
+	// Token: 0x06009396 RID: 37782 RVA: 0x0037C97C File Offset: 0x0037AB7C
 	public static BlockFace GetBlockFaceFromHitInfo(Vector3i _blockPos, BlockValue _blockValue, Collider _hitCollider, int _hitTriangleIdx, out Vector3 _hitFaceCenter, out Vector3 _hitFaceNormal)
 	{
 		_hitFaceCenter = Vector3.zero;
@@ -1276,7 +1276,7 @@ public class GameUtils
 		return BlockFace.None;
 	}
 
-	// Token: 0x06009293 RID: 37523 RVA: 0x00377B0C File Offset: 0x00375D0C
+	// Token: 0x06009397 RID: 37783 RVA: 0x0037CDE8 File Offset: 0x0037AFE8
 	public static string GetLaunchArgument(string _argumentName)
 	{
 		if (GameUtils.arguments == null)
@@ -1311,31 +1311,31 @@ public class GameUtils
 		return null;
 	}
 
-	// Token: 0x06009294 RID: 37524 RVA: 0x00377BBC File Offset: 0x00375DBC
+	// Token: 0x06009398 RID: 37784 RVA: 0x0037CE98 File Offset: 0x0037B098
 	public static bool IsBlockOrTerrain(string _tag)
 	{
 		return _tag == "B_Mesh" || _tag == "T_Mesh" || _tag == "T_Mesh_B" || _tag == "T_Block" || _tag == "T_Deco";
 	}
 
-	// Token: 0x06009295 RID: 37525 RVA: 0x00377C0C File Offset: 0x00375E0C
+	// Token: 0x06009399 RID: 37785 RVA: 0x0037CEE8 File Offset: 0x0037B0E8
 	public static bool IsBlockOrTerrain(Component component)
 	{
 		return component.CompareTag("B_Mesh") || component.CompareTag("T_Mesh") || component.CompareTag("T_Mesh_B") || component.CompareTag("T_Block") || component.CompareTag("T_Deco");
 	}
 
-	// Token: 0x06009296 RID: 37526 RVA: 0x00377C5C File Offset: 0x00375E5C
+	// Token: 0x0600939A RID: 37786 RVA: 0x0037CF38 File Offset: 0x0037B138
 	public static ulong Vector3iToUInt64(Vector3i _v)
 	{
 		return (ulong)(((long)((_v.x + 32768) & 65535) << 32) | ((long)((_v.y + 32768) & 65535) << 16) | ((long)(_v.z + 32768) & 65535L));
 	}
 
-	// Token: 0x06009297 RID: 37527 RVA: 0x00377CAB File Offset: 0x00375EAB
+	// Token: 0x0600939B RID: 37787 RVA: 0x0037CF87 File Offset: 0x0037B187
 	public static Vector3i UInt64ToVector3i(ulong _fullValue)
 	{
 		return new Vector3i((int)((_fullValue >> 32) & 65535UL) - 32768, (int)((_fullValue >> 16) & 65535UL) - 32768, (int)(_fullValue & 65535UL) - 32768);
 	}
 
-	// Token: 0x06009298 RID: 37528 RVA: 0x00377CE8 File Offset: 0x00375EE8
+	// Token: 0x0600939C RID: 37788 RVA: 0x0037CFC4 File Offset: 0x0037B1C4
 	public static char ValidateGameNameInput(string _text, int _charIndex, char _addedChar)
 	{
 		if (_addedChar >= 'Ā')
@@ -1357,7 +1357,7 @@ public class GameUtils
 		return '\0';
 	}
 
-	// Token: 0x06009299 RID: 37529 RVA: 0x00377D3C File Offset: 0x00375F3C
+	// Token: 0x0600939D RID: 37789 RVA: 0x0037D018 File Offset: 0x0037B218
 	public static char ValidateHexInput(string _text, int _charIndex, char _addedChar)
 	{
 		if ((_addedChar >= 'a' && _addedChar <= 'f') || (_addedChar >= 'A' && _addedChar <= 'F') || (_addedChar >= '0' && _addedChar <= '9'))
@@ -1367,7 +1367,7 @@ public class GameUtils
 		return '\0';
 	}
 
-	// Token: 0x0600929A RID: 37530 RVA: 0x00377D60 File Offset: 0x00375F60
+	// Token: 0x0600939E RID: 37790 RVA: 0x0037D03C File Offset: 0x0037B23C
 	public static bool ValidateGameName(string _gameName)
 	{
 		string text = _gameName.Trim();
@@ -1385,7 +1385,7 @@ public class GameUtils
 		return !_gameName.EndsWith(".");
 	}
 
-	// Token: 0x0600929B RID: 37531 RVA: 0x00377DC0 File Offset: 0x00375FC0
+	// Token: 0x0600939F RID: 37791 RVA: 0x0037D09C File Offset: 0x0037B29C
 	public static PrefabInstance FindPrefabForBlockPos(List<PrefabInstance> prefabs, Vector3i hitPointBlockPos)
 	{
 		for (int i = 0; i < prefabs.Count; i++)
@@ -1398,7 +1398,7 @@ public class GameUtils
 		return null;
 	}
 
-	// Token: 0x0600929C RID: 37532 RVA: 0x00377E78 File Offset: 0x00376078
+	// Token: 0x060093A0 RID: 37792 RVA: 0x0037D154 File Offset: 0x0037B354
 	public static int FindPaintIdForBlockFace(BlockValue _bv, BlockFace blockFace, out string _name, int _channel)
 	{
 		int sideTextureId = _bv.Block.GetSideTextureId(_bv, blockFace, _channel);
@@ -1414,7 +1414,7 @@ public class GameUtils
 		return 0;
 	}
 
-	// Token: 0x0600929D RID: 37533 RVA: 0x00377ED8 File Offset: 0x003760D8
+	// Token: 0x060093A1 RID: 37793 RVA: 0x0037D1B4 File Offset: 0x0037B3B4
 	public static Vector3i Mirror(EnumMirrorAlong _axis, Vector3i _pos, Vector3i _prefabSize)
 	{
 		if (_axis == EnumMirrorAlong.XAxis)
@@ -1428,7 +1428,7 @@ public class GameUtils
 		return new Vector3i(_pos.x, _prefabSize.y - _pos.y - 1, _pos.z);
 	}
 
-	// Token: 0x0600929E RID: 37534 RVA: 0x00377F50 File Offset: 0x00376150
+	// Token: 0x060093A2 RID: 37794 RVA: 0x0037D22C File Offset: 0x0037B42C
 	public static Vector3 Mirror(EnumMirrorAlong _axis, Vector3 _pos, Vector3i _prefabSize)
 	{
 		if (_axis == EnumMirrorAlong.XAxis)
@@ -1442,13 +1442,13 @@ public class GameUtils
 		return new Vector3(_pos.x, (float)_prefabSize.y - _pos.y, _pos.z);
 	}
 
-	// Token: 0x0600929F RID: 37535 RVA: 0x00377FC5 File Offset: 0x003761C5
+	// Token: 0x060093A3 RID: 37795 RVA: 0x0037D2A1 File Offset: 0x0037B4A1
 	public static void TakeScreenShot(GameUtils.EScreenshotMode _screenshotMode, string _overrideScreenshotFilePath = null, float _borderPerc = 0f, bool _b4to3 = false, int _rescaleToW = 0, int _rescaleToH = 0, bool _isSaveTGA = false)
 	{
 		ThreadManager.StartCoroutine(GameUtils.TakeScreenshotEnum(_screenshotMode, _overrideScreenshotFilePath, _borderPerc, _b4to3, _rescaleToW, _rescaleToH, _isSaveTGA));
 	}
 
-	// Token: 0x060092A0 RID: 37536 RVA: 0x00377FDC File Offset: 0x003761DC
+	// Token: 0x060093A4 RID: 37796 RVA: 0x0037D2B8 File Offset: 0x0037B4B8
 	public static IEnumerator TakeScreenshotEnum(GameUtils.EScreenshotMode _screenshotMode, string _overrideScreenshotFilePath = null, float _borderPerc = 0f, bool _b4to3 = false, int _rescaleToW = 0, int _rescaleToH = 0, bool _isSaveTGA = false)
 	{
 		yield return new WaitForEndOfFrame();
@@ -1503,7 +1503,7 @@ public class GameUtils
 		yield break;
 	}
 
-	// Token: 0x060092A1 RID: 37537 RVA: 0x00378018 File Offset: 0x00376218
+	// Token: 0x060093A5 RID: 37797 RVA: 0x0037D2F4 File Offset: 0x0037B4F4
 	public static Rect GetScreenshotRect(float _borderPerc = 0f, bool _b4to3 = false)
 	{
 		float num = 0f;
@@ -1527,7 +1527,7 @@ public class GameUtils
 		return new Rect(num, num2, num3, num4);
 	}
 
-	// Token: 0x060092A2 RID: 37538 RVA: 0x0037809E File Offset: 0x0037629E
+	// Token: 0x060093A6 RID: 37798 RVA: 0x0037D37A File Offset: 0x0037B57A
 	public static void StartPlaytesting(string _prefabName)
 	{
 		if (string.IsNullOrEmpty(_prefabName))
@@ -1539,7 +1539,7 @@ public class GameUtils
 		ThreadManager.StartCoroutine(GameUtils.startPlaytestLater(_prefabName));
 	}
 
-	// Token: 0x060092A3 RID: 37539 RVA: 0x003780C5 File Offset: 0x003762C5
+	// Token: 0x060093A7 RID: 37799 RVA: 0x0037D3A1 File Offset: 0x0037B5A1
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator startPlaytestLater(string _prefabName)
 	{
@@ -1560,19 +1560,19 @@ public class GameUtils
 		yield break;
 	}
 
-	// Token: 0x060092A4 RID: 37540 RVA: 0x003780D4 File Offset: 0x003762D4
+	// Token: 0x060093A8 RID: 37800 RVA: 0x0037D3B0 File Offset: 0x0037B5B0
 	public static bool IsPlaytesting()
 	{
 		return GamePrefs.GetString(EnumGamePrefs.GameWorld) == "Playtesting";
 	}
 
-	// Token: 0x060092A5 RID: 37541 RVA: 0x003780E7 File Offset: 0x003762E7
+	// Token: 0x060093A9 RID: 37801 RVA: 0x0037D3C3 File Offset: 0x0037B5C3
 	public static bool IsWorldEditor()
 	{
 		return GameModeEditWorld.TypeName.Equals(GamePrefs.GetString(EnumGamePrefs.GameMode)) && GamePrefs.GetString(EnumGamePrefs.GameName) == "WorldEditor";
 	}
 
-	// Token: 0x060092A6 RID: 37542 RVA: 0x0037810F File Offset: 0x0037630F
+	// Token: 0x060093AA RID: 37802 RVA: 0x0037D3EB File Offset: 0x0037B5EB
 	public static void StartSinglePrefabEditingWithMessage(XUi _xui = null)
 	{
 		GameUtils.StartSinglePrefabEditing(delegate(NetworkConnectionError _error)
@@ -1584,7 +1584,7 @@ public class GameUtils
 		});
 	}
 
-	// Token: 0x060092A7 RID: 37543 RVA: 0x00378130 File Offset: 0x00376330
+	// Token: 0x060093AB RID: 37803 RVA: 0x0037D40C File Offset: 0x0037B60C
 	public static void StartSinglePrefabEditing(Action<NetworkConnectionError> _callback = null)
 	{
 		if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
@@ -1597,7 +1597,7 @@ public class GameUtils
 		ThreadManager.StartCoroutine(GameUtils.startSinglePrefabEditingLater(0f, _callback));
 	}
 
-	// Token: 0x060092A8 RID: 37544 RVA: 0x0037817C File Offset: 0x0037637C
+	// Token: 0x060093AC RID: 37804 RVA: 0x0037D458 File Offset: 0x0037B658
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static IEnumerator startSinglePrefabEditingLater(float _delay, Action<NetworkConnectionError> _callback)
 	{
@@ -1619,19 +1619,19 @@ public class GameUtils
 		yield break;
 	}
 
-	// Token: 0x060092A9 RID: 37545 RVA: 0x00378192 File Offset: 0x00376392
+	// Token: 0x060093AD RID: 37805 RVA: 0x0037D46E File Offset: 0x0037B66E
 	public static float GetOreNoiseAt(PerlinNoise _noise, int _x, int _y, int _z)
 	{
 		return ((float)_noise.Noise((double)((float)_x * 0.05f), (double)((float)_y * 0.05f), (double)((float)_z * 0.05f)) - 0.333f) * 3f;
 	}
 
-	// Token: 0x060092AA RID: 37546 RVA: 0x003781C2 File Offset: 0x003763C2
+	// Token: 0x060093AE RID: 37806 RVA: 0x0037D49E File Offset: 0x0037B69E
 	public static bool CheckOreNoiseAt(PerlinNoise _noise, int _x, int _y, int _z)
 	{
 		return GameUtils.GetOreNoiseAt(_noise, _x, _y, _z) > 0f;
 	}
 
-	// Token: 0x060092AB RID: 37547 RVA: 0x003781D4 File Offset: 0x003763D4
+	// Token: 0x060093AF RID: 37807 RVA: 0x0037D4B0 File Offset: 0x0037B6B0
 	public static Color32 UIntToColor(uint color, bool _includeAlpha = false)
 	{
 		if (_includeAlpha)
@@ -1641,7 +1641,7 @@ public class GameUtils
 		return new Color32((byte)(color >> 16), (byte)(color >> 8), (byte)color, byte.MaxValue);
 	}
 
-	// Token: 0x060092AC RID: 37548 RVA: 0x00378204 File Offset: 0x00376404
+	// Token: 0x060093B0 RID: 37808 RVA: 0x0037D4E0 File Offset: 0x0037B6E0
 	public static uint ColorToUInt(Color32 color, bool _includeAlpha = false)
 	{
 		if (_includeAlpha)
@@ -1651,7 +1651,7 @@ public class GameUtils
 		return (uint)(((int)color.r << 16) | ((int)color.g << 8) | (int)color.b);
 	}
 
-	// Token: 0x060092AD RID: 37549 RVA: 0x00378254 File Offset: 0x00376454
+	// Token: 0x060093B1 RID: 37809 RVA: 0x0037D530 File Offset: 0x0037B730
 	public static void WaterFloodFill(GridCompressedData<byte> _cols, byte[] _waterChunks16x16Height, int _width, HeightMap _heightMap, int _posX, int _maxY, int _posZ, byte _colWater, byte _colBorder, List<Vector2i> _listPos, int _minX = -2147483648, int _maxX = 2147483647, int _minZ = -2147483648, int _maxZ = 2147483647, int _worldScale = 1)
 	{
 		int num = _heightMap.GetHeight() * _worldScale;
@@ -1705,7 +1705,7 @@ public class GameUtils
 		while (_listPos.Count > 0);
 	}
 
-	// Token: 0x060092AE RID: 37550 RVA: 0x003783FC File Offset: 0x003765FC
+	// Token: 0x060093B2 RID: 37810 RVA: 0x0037D6D8 File Offset: 0x0037B8D8
 	public static GameUtils.EPlayerHomeType CheckForAnyPlayerHome(World world, Vector3i BoxMin, Vector3i BoxMax)
 	{
 		double num = (double)GameStats.GetInt(EnumGameStats.LandClaimExpiryTime) * 24.0;
@@ -1744,7 +1744,7 @@ public class GameUtils
 		return GameUtils.EPlayerHomeType.None;
 	}
 
-	// Token: 0x060092AF RID: 37551 RVA: 0x003785EC File Offset: 0x003767EC
+	// Token: 0x060093B3 RID: 37811 RVA: 0x0037D8C8 File Offset: 0x0037BAC8
 	public static Transform FindDeepChild(Transform _parent, string _transformName)
 	{
 		Transform transform = _parent.Find(_transformName);
@@ -1764,7 +1764,7 @@ public class GameUtils
 		return transform;
 	}
 
-	// Token: 0x060092B0 RID: 37552 RVA: 0x0037863C File Offset: 0x0037683C
+	// Token: 0x060093B4 RID: 37812 RVA: 0x0037D918 File Offset: 0x0037BB18
 	public static Transform FindDeepChildActive(Transform _parent, string _transformName)
 	{
 		Transform transform = _parent.Find(_transformName);
@@ -1788,7 +1788,7 @@ public class GameUtils
 		return transform;
 	}
 
-	// Token: 0x060092B1 RID: 37553 RVA: 0x003786A5 File Offset: 0x003768A5
+	// Token: 0x060093B5 RID: 37813 RVA: 0x0037D981 File Offset: 0x0037BB81
 	public static int GetViewDistance()
 	{
 		if (GamePrefs.GetString(EnumGamePrefs.GameWorld) == "Empty")
@@ -1798,7 +1798,7 @@ public class GameUtils
 		return GameStats.GetInt(EnumGameStats.AllowedViewDistance);
 	}
 
-	// Token: 0x060092B2 RID: 37554 RVA: 0x003786C4 File Offset: 0x003768C4
+	// Token: 0x060093B6 RID: 37814 RVA: 0x0037D9A0 File Offset: 0x0037BBA0
 	public static Vector3 GetUpdatedNormalAtPosition(Vector3i _worldPos, bool _saveNrmToChunk = false)
 	{
 		int terrainHeight = (int)GameManager.Instance.World.GetTerrainHeight(_worldPos.x, _worldPos.z);
@@ -1830,14 +1830,14 @@ public class GameUtils
 		return Vector3.Cross(vector, vector2).normalized;
 	}
 
-	// Token: 0x060092B3 RID: 37555 RVA: 0x003788CF File Offset: 0x00376ACF
+	// Token: 0x060093B7 RID: 37815 RVA: 0x0037DBAB File Offset: 0x0037BDAB
 	public static GameUtils.DirEightWay GetDirByNormal(Vector2 _normal)
 	{
 		_normal.Normalize();
 		return GameUtils.GetDirByNormal(new Vector2i(Mathf.RoundToInt(_normal.x), Mathf.RoundToInt(_normal.y)));
 	}
 
-	// Token: 0x060092B4 RID: 37556 RVA: 0x003788F8 File Offset: 0x00376AF8
+	// Token: 0x060093B8 RID: 37816 RVA: 0x0037DBD4 File Offset: 0x0037BDD4
 	public static GameUtils.DirEightWay GetDirByNormal(Vector2i _normal)
 	{
 		for (int i = 0; i < GameUtils.NeighborsEightWay.Count; i++)
@@ -1850,7 +1850,7 @@ public class GameUtils
 		return GameUtils.DirEightWay.None;
 	}
 
-	// Token: 0x060092B5 RID: 37557 RVA: 0x00378934 File Offset: 0x00376B34
+	// Token: 0x060093B9 RID: 37817 RVA: 0x0037DC10 File Offset: 0x0037BE10
 	public static GameUtils.DirEightWay GetClosestDirection(float _rotation, bool _limitTo90Degress = false)
 	{
 		_rotation = MathUtils.Mod(_rotation, 360f);
@@ -1904,7 +1904,7 @@ public class GameUtils
 		}
 	}
 
-	// Token: 0x060092B6 RID: 37558 RVA: 0x003789F0 File Offset: 0x00376BF0
+	// Token: 0x060093BA RID: 37818 RVA: 0x0037DCCC File Offset: 0x0037BECC
 	public static void DestroyAllChildrenBut(Transform t, string _excluded)
 	{
 		bool isPlaying = Application.isPlaying;
@@ -1929,7 +1929,7 @@ public class GameUtils
 		}
 	}
 
-	// Token: 0x060092B7 RID: 37559 RVA: 0x00378A60 File Offset: 0x00376C60
+	// Token: 0x060093BB RID: 37819 RVA: 0x0037DD3C File Offset: 0x0037BF3C
 	public static void DestroyAllChildrenBut(Transform t, List<string> _excluded)
 	{
 		bool isPlaying = Application.isPlaying;
@@ -1951,7 +1951,7 @@ public class GameUtils
 		}
 	}
 
-	// Token: 0x060092B8 RID: 37560 RVA: 0x00378AC0 File Offset: 0x00376CC0
+	// Token: 0x060093BC RID: 37820 RVA: 0x0037DD9C File Offset: 0x0037BF9C
 	public static void DestroyAllChildrenImmediatelyBut(Transform t, List<string> _excluded)
 	{
 		for (int i = t.childCount - 1; i >= 0; i--)
@@ -1964,7 +1964,7 @@ public class GameUtils
 		}
 	}
 
-	// Token: 0x060092B9 RID: 37561 RVA: 0x00378B01 File Offset: 0x00376D01
+	// Token: 0x060093BD RID: 37821 RVA: 0x0037DDDD File Offset: 0x0037BFDD
 	public static void NullThenDestroy<T>(ref T obj) where T : global::UnityEngine.Object
 	{
 		T t = obj;
@@ -1972,7 +1972,7 @@ public class GameUtils
 		global::UnityEngine.Object.Destroy(t);
 	}
 
-	// Token: 0x060092BA RID: 37562 RVA: 0x00378B1C File Offset: 0x00376D1C
+	// Token: 0x060093BE RID: 37822 RVA: 0x0037DDF8 File Offset: 0x0037BFF8
 	public static void SetMeshVertexAttributes(Mesh mesh, bool compressPosition = true)
 	{
 		VertexAttributeDescriptor[] vertexAttributes = mesh.GetVertexAttributes();
@@ -1980,7 +1980,7 @@ public class GameUtils
 		mesh.SetVertexBufferParams(mesh.vertexCount, vertexAttributes);
 	}
 
-	// Token: 0x060092BB RID: 37563 RVA: 0x00378B4C File Offset: 0x00376D4C
+	// Token: 0x060093BF RID: 37823 RVA: 0x0037DE28 File Offset: 0x0037C028
 	public unsafe static void ApplyCompressedVertexAttributes(Span<VertexAttributeDescriptor> attributes, bool compressPosition = true)
 	{
 		for (int i = 0; i < attributes.Length; i++)
@@ -2011,42 +2011,42 @@ public class GameUtils
 		}
 	}
 
-	// Token: 0x04006D9B RID: 28059
+	// Token: 0x04006E74 RID: 28276
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Collider[] overlapBoxHits = new Collider[50];
 
-	// Token: 0x04006D9C RID: 28060
+	// Token: 0x04006E75 RID: 28277
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static GameRandom random;
 
-	// Token: 0x04006D9D RID: 28061
+	// Token: 0x04006E76 RID: 28278
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static FastTags<TagGroup.Global> oreTag = FastTags<TagGroup.Global>.Parse("ore");
 
-	// Token: 0x04006D9E RID: 28062
+	// Token: 0x04006E77 RID: 28279
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static FastTags<TagGroup.Global> cropTag = FastTags<TagGroup.Global>.Parse("crops");
 
-	// Token: 0x04006D9F RID: 28063
+	// Token: 0x04006E78 RID: 28280
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static FastTags<TagGroup.Global> seedMultiTag = FastTags<TagGroup.Global>.Parse("seedMulti");
 
-	// Token: 0x04006DA0 RID: 28064
+	// Token: 0x04006E79 RID: 28281
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<Vector3> tempVertices = new List<Vector3>(16384);
 
-	// Token: 0x04006DA1 RID: 28065
+	// Token: 0x04006E7A RID: 28282
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static readonly List<int> tempTriangles = new List<int>(16384);
 
-	// Token: 0x04006DA2 RID: 28066
+	// Token: 0x04006E7B RID: 28283
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<string, string> arguments;
 
-	// Token: 0x04006DA3 RID: 28067
+	// Token: 0x04006E7C RID: 28284
 	public static string lastSavedScreenshotFilename;
 
-	// Token: 0x04006DA4 RID: 28068
+	// Token: 0x04006E7D RID: 28285
 	public static List<Vector2i> NeighborsEightWay = new List<Vector2i>
 	{
 		new Vector2i(0, 1),
@@ -2059,11 +2059,11 @@ public class GameUtils
 		new Vector2i(-1, 1)
 	};
 
-	// Token: 0x020011ED RID: 4589
+	// Token: 0x02001209 RID: 4617
 	public class WorldInfo
 	{
-		// Token: 0x17001152 RID: 4434
-		// (get) Token: 0x060092BE RID: 37566 RVA: 0x00378CD6 File Offset: 0x00376ED6
+		// Token: 0x1700118D RID: 4493
+		// (get) Token: 0x060093C2 RID: 37826 RVA: 0x0037DFB2 File Offset: 0x0037C1B2
 		public Vector2i WorldSize
 		{
 			get
@@ -2072,7 +2072,7 @@ public class GameUtils
 			}
 		}
 
-		// Token: 0x060092BF RID: 37567 RVA: 0x00378CEC File Offset: 0x00376EEC
+		// Token: 0x060093C3 RID: 37827 RVA: 0x0037DFC8 File Offset: 0x0037C1C8
 		public WorldInfo(string _name, string _description, string[] _modes, Vector2i _heightmapSize, int _scale, bool _fixedWaterLevel, bool _randomGeneratedWorld, VersionInformation _gameVersionCreated, DynamicProperties _dynamicProperties = null)
 		{
 			this.Valid = true;
@@ -2087,7 +2087,7 @@ public class GameUtils
 			this.DynamicProperties = _dynamicProperties;
 		}
 
-		// Token: 0x060092C0 RID: 37568 RVA: 0x00378D4C File Offset: 0x00376F4C
+		// Token: 0x060093C4 RID: 37828 RVA: 0x0037E028 File Offset: 0x0037C228
 		public void Save(PathAbstractions.AbstractedLocation _worldLocation)
 		{
 			if (_worldLocation.Type == PathAbstractions.EAbstractedLocationType.None)
@@ -2109,7 +2109,7 @@ public class GameUtils
 			xmlDocument.SdSave(_worldLocation.FullPath + "/map_info.xml");
 		}
 
-		// Token: 0x060092C1 RID: 37569 RVA: 0x00378F28 File Offset: 0x00377128
+		// Token: 0x060093C5 RID: 37829 RVA: 0x0037E204 File Offset: 0x0037C404
 		public static GameUtils.WorldInfo LoadWorldInfo(PathAbstractions.AbstractedLocation _worldLocation)
 		{
 			try
@@ -2216,120 +2216,120 @@ public class GameUtils
 			return null;
 		}
 
-		// Token: 0x04006DA5 RID: 28069
+		// Token: 0x04006E7E RID: 28286
 		public readonly bool Valid;
 
-		// Token: 0x04006DA6 RID: 28070
+		// Token: 0x04006E7F RID: 28287
 		public readonly string Name;
 
-		// Token: 0x04006DA7 RID: 28071
+		// Token: 0x04006E80 RID: 28288
 		public readonly string Description;
 
-		// Token: 0x04006DA8 RID: 28072
+		// Token: 0x04006E81 RID: 28289
 		public readonly string[] Modes;
 
-		// Token: 0x04006DA9 RID: 28073
+		// Token: 0x04006E82 RID: 28290
 		public readonly Vector2i HeightmapSize;
 
-		// Token: 0x04006DAA RID: 28074
+		// Token: 0x04006E83 RID: 28291
 		public readonly int Scale;
 
-		// Token: 0x04006DAB RID: 28075
+		// Token: 0x04006E84 RID: 28292
 		public readonly bool FixedWaterLevel;
 
-		// Token: 0x04006DAC RID: 28076
+		// Token: 0x04006E85 RID: 28293
 		public readonly bool RandomGeneratedWorld;
 
-		// Token: 0x04006DAD RID: 28077
+		// Token: 0x04006E86 RID: 28294
 		public readonly VersionInformation GameVersionCreated;
 
-		// Token: 0x04006DAE RID: 28078
+		// Token: 0x04006E87 RID: 28295
 		public readonly DynamicProperties DynamicProperties;
 	}
 
-	// Token: 0x020011EF RID: 4591
-	// (Invoke) Token: 0x060092C7 RID: 37575
+	// Token: 0x0200120B RID: 4619
+	// (Invoke) Token: 0x060093CB RID: 37835
 	public delegate void OutputDelegate(string _text);
 
-	// Token: 0x020011F0 RID: 4592
+	// Token: 0x0200120C RID: 4620
 	public enum EKickReason
 	{
-		// Token: 0x04006DB3 RID: 28083
+		// Token: 0x04006E8C RID: 28300
 		EmptyNameOrPlayerID,
-		// Token: 0x04006DB4 RID: 28084
+		// Token: 0x04006E8D RID: 28301
 		InvalidUserId,
-		// Token: 0x04006DB5 RID: 28085
+		// Token: 0x04006E8E RID: 28302
 		DuplicatePlayerID,
-		// Token: 0x04006DB6 RID: 28086
+		// Token: 0x04006E8F RID: 28303
 		InvalidAuthTicket,
-		// Token: 0x04006DB7 RID: 28087
+		// Token: 0x04006E90 RID: 28304
 		VersionMismatch,
-		// Token: 0x04006DB8 RID: 28088
+		// Token: 0x04006E91 RID: 28305
 		PlayerLimitExceeded,
-		// Token: 0x04006DB9 RID: 28089
+		// Token: 0x04006E92 RID: 28306
 		Banned,
-		// Token: 0x04006DBA RID: 28090
+		// Token: 0x04006E93 RID: 28307
 		NotOnWhitelist,
-		// Token: 0x04006DBB RID: 28091
+		// Token: 0x04006E94 RID: 28308
 		PlatformAuthenticationBeginFailed,
-		// Token: 0x04006DBC RID: 28092
+		// Token: 0x04006E95 RID: 28309
 		PlatformAuthenticationFailed,
-		// Token: 0x04006DBD RID: 28093
+		// Token: 0x04006E96 RID: 28310
 		ManualKick,
-		// Token: 0x04006DBE RID: 28094
+		// Token: 0x04006E97 RID: 28311
 		EacViolation,
-		// Token: 0x04006DBF RID: 28095
+		// Token: 0x04006E98 RID: 28312
 		EacBan,
-		// Token: 0x04006DC0 RID: 28096
+		// Token: 0x04006E99 RID: 28313
 		PlayerLimitExceededNonVIP,
-		// Token: 0x04006DC1 RID: 28097
+		// Token: 0x04006E9A RID: 28314
 		GameStillLoading,
-		// Token: 0x04006DC2 RID: 28098
+		// Token: 0x04006E9B RID: 28315
 		GamePaused,
-		// Token: 0x04006DC3 RID: 28099
+		// Token: 0x04006E9C RID: 28316
 		ModDecision,
-		// Token: 0x04006DC4 RID: 28100
+		// Token: 0x04006E9D RID: 28317
 		FriendsOnly,
-		// Token: 0x04006DC5 RID: 28101
+		// Token: 0x04006E9E RID: 28318
 		UnknownNetPackage,
-		// Token: 0x04006DC6 RID: 28102
+		// Token: 0x04006E9F RID: 28319
 		EncryptionFailure,
-		// Token: 0x04006DC7 RID: 28103
+		// Token: 0x04006EA0 RID: 28320
 		UnsupportedPlatform,
-		// Token: 0x04006DC8 RID: 28104
+		// Token: 0x04006EA1 RID: 28321
 		CrossPlatformAuthenticationBeginFailed,
-		// Token: 0x04006DC9 RID: 28105
+		// Token: 0x04006EA2 RID: 28322
 		CrossPlatformAuthenticationFailed,
-		// Token: 0x04006DCA RID: 28106
+		// Token: 0x04006EA3 RID: 28323
 		WrongCrossPlatform,
-		// Token: 0x04006DCB RID: 28107
+		// Token: 0x04006EA4 RID: 28324
 		EosEacViolation,
-		// Token: 0x04006DCC RID: 28108
+		// Token: 0x04006EA5 RID: 28325
 		MultiplayerBlockedForHostAccount,
-		// Token: 0x04006DCD RID: 28109
+		// Token: 0x04006EA6 RID: 28326
 		BadMTUPackets,
-		// Token: 0x04006DCE RID: 28110
+		// Token: 0x04006EA7 RID: 28327
 		CrossplayDisabled,
-		// Token: 0x04006DCF RID: 28111
+		// Token: 0x04006EA8 RID: 28328
 		InternalNetConnectionError,
-		// Token: 0x04006DD0 RID: 28112
+		// Token: 0x04006EA9 RID: 28329
 		InviteOnly,
-		// Token: 0x04006DD1 RID: 28113
+		// Token: 0x04006EAA RID: 28330
 		SessionClosed,
-		// Token: 0x04006DD2 RID: 28114
+		// Token: 0x04006EAB RID: 28331
 		PersistentPlayerDataExceeded,
-		// Token: 0x04006DD3 RID: 28115
+		// Token: 0x04006EAC RID: 28332
 		PlatformPlayerLimitExceeded,
-		// Token: 0x04006DD4 RID: 28116
+		// Token: 0x04006EAD RID: 28333
 		EncryptionAgreementInvalidSignature,
-		// Token: 0x04006DD5 RID: 28117
+		// Token: 0x04006EAE RID: 28334
 		EncryptionAgreementError
 	}
 
-	// Token: 0x020011F1 RID: 4593
+	// Token: 0x0200120D RID: 4621
 	public struct KickPlayerData
 	{
-		// Token: 0x060092CA RID: 37578 RVA: 0x0037934C File Offset: 0x0037754C
+		// Token: 0x060093CE RID: 37838 RVA: 0x0037E628 File Offset: 0x0037C828
 		public KickPlayerData(GameUtils.EKickReason _kickReason, int _apiResponseEnum = 0, DateTime _banUntil = default(DateTime), string _customReason = "")
 		{
 			this.reason = _kickReason;
@@ -2338,7 +2338,7 @@ public class GameUtils
 			this.customReason = _customReason ?? string.Empty;
 		}
 
-		// Token: 0x060092CB RID: 37579 RVA: 0x00379374 File Offset: 0x00377574
+		// Token: 0x060093CF RID: 37839 RVA: 0x0037E650 File Offset: 0x0037C850
 		public string LocalizedMessage()
 		{
 			switch (this.reason)
@@ -2467,7 +2467,7 @@ public class GameUtils
 			return Localization.Get("auth_unknown", false, null);
 		}
 
-		// Token: 0x060092CC RID: 37580 RVA: 0x00379958 File Offset: 0x00377B58
+		// Token: 0x060093D0 RID: 37840 RVA: 0x0037EC34 File Offset: 0x0037CE34
 		public override string ToString()
 		{
 			switch (this.reason)
@@ -2534,63 +2534,63 @@ public class GameUtils
 			return "Unknown reason";
 		}
 
-		// Token: 0x04006DD6 RID: 28118
+		// Token: 0x04006EAF RID: 28335
 		public GameUtils.EKickReason reason;
 
-		// Token: 0x04006DD7 RID: 28119
+		// Token: 0x04006EB0 RID: 28336
 		public int apiResponseEnum;
 
-		// Token: 0x04006DD8 RID: 28120
+		// Token: 0x04006EB1 RID: 28337
 		public DateTime banUntil;
 
-		// Token: 0x04006DD9 RID: 28121
+		// Token: 0x04006EB2 RID: 28338
 		public string customReason;
 	}
 
-	// Token: 0x020011F2 RID: 4594
+	// Token: 0x0200120E RID: 4622
 	public enum EScreenshotMode
 	{
-		// Token: 0x04006DDB RID: 28123
+		// Token: 0x04006EB4 RID: 28340
 		File,
-		// Token: 0x04006DDC RID: 28124
+		// Token: 0x04006EB5 RID: 28341
 		Clipboard,
-		// Token: 0x04006DDD RID: 28125
+		// Token: 0x04006EB6 RID: 28342
 		Both
 	}
 
-	// Token: 0x020011F3 RID: 4595
+	// Token: 0x0200120F RID: 4623
 	public enum EPlayerHomeType
 	{
-		// Token: 0x04006DDF RID: 28127
+		// Token: 0x04006EB8 RID: 28344
 		None,
-		// Token: 0x04006DE0 RID: 28128
+		// Token: 0x04006EB9 RID: 28345
 		Landclaim,
-		// Token: 0x04006DE1 RID: 28129
+		// Token: 0x04006EBA RID: 28346
 		Bedroll
 	}
 
-	// Token: 0x020011F4 RID: 4596
+	// Token: 0x02001210 RID: 4624
 	public enum DirEightWay : sbyte
 	{
-		// Token: 0x04006DE3 RID: 28131
+		// Token: 0x04006EBC RID: 28348
 		None = -1,
-		// Token: 0x04006DE4 RID: 28132
+		// Token: 0x04006EBD RID: 28349
 		N,
-		// Token: 0x04006DE5 RID: 28133
+		// Token: 0x04006EBE RID: 28350
 		NE,
-		// Token: 0x04006DE6 RID: 28134
+		// Token: 0x04006EBF RID: 28351
 		E,
-		// Token: 0x04006DE7 RID: 28135
+		// Token: 0x04006EC0 RID: 28352
 		SE,
-		// Token: 0x04006DE8 RID: 28136
+		// Token: 0x04006EC1 RID: 28353
 		S,
-		// Token: 0x04006DE9 RID: 28137
+		// Token: 0x04006EC2 RID: 28354
 		SW,
-		// Token: 0x04006DEA RID: 28138
+		// Token: 0x04006EC3 RID: 28355
 		W,
-		// Token: 0x04006DEB RID: 28139
+		// Token: 0x04006EC4 RID: 28356
 		NW,
-		// Token: 0x04006DEC RID: 28140
+		// Token: 0x04006EC5 RID: 28357
 		COUNT
 	}
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000606 RID: 1542
+// Token: 0x0200060F RID: 1551
 public abstract class LightState : MonoBehaviour
 {
-	// Token: 0x17000523 RID: 1315
-	// (get) Token: 0x0600322B RID: 12843 RVA: 0x00040D24 File Offset: 0x0003EF24
+	// Token: 0x1700052C RID: 1324
+	// (get) Token: 0x0600327E RID: 12926 RVA: 0x00040F84 File Offset: 0x0003F184
 	public virtual float LODThreshold
 	{
 		get
@@ -14,8 +14,8 @@ public abstract class LightState : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000524 RID: 1316
-	// (get) Token: 0x0600322C RID: 12844 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x1700052D RID: 1325
+	// (get) Token: 0x0600327F RID: 12927 RVA: 0x00020021 File Offset: 0x0001E221
 	public virtual bool CanBeOn
 	{
 		get
@@ -24,8 +24,8 @@ public abstract class LightState : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000525 RID: 1317
-	// (get) Token: 0x0600322D RID: 12845 RVA: 0x00040D24 File Offset: 0x0003EF24
+	// Token: 0x1700052E RID: 1326
+	// (get) Token: 0x06003280 RID: 12928 RVA: 0x00040F84 File Offset: 0x0003F184
 	public virtual float Intensity
 	{
 		get
@@ -34,8 +34,8 @@ public abstract class LightState : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000526 RID: 1318
-	// (get) Token: 0x0600322E RID: 12846 RVA: 0x00040D24 File Offset: 0x0003EF24
+	// Token: 0x1700052F RID: 1327
+	// (get) Token: 0x06003281 RID: 12929 RVA: 0x00040F84 File Offset: 0x0003F184
 	public virtual float Emissive
 	{
 		get
@@ -44,8 +44,8 @@ public abstract class LightState : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000527 RID: 1319
-	// (get) Token: 0x0600322F RID: 12847 RVA: 0x00146D6D File Offset: 0x00144F6D
+	// Token: 0x17000530 RID: 1328
+	// (get) Token: 0x06003282 RID: 12930 RVA: 0x00148E91 File Offset: 0x00147091
 	public virtual float AudioFrequency
 	{
 		get
@@ -58,26 +58,26 @@ public abstract class LightState : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06003230 RID: 12848 RVA: 0x00146D8D File Offset: 0x00144F8D
+	// Token: 0x06003283 RID: 12931 RVA: 0x00148EB1 File Offset: 0x001470B1
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public virtual void Awake()
 	{
 		this.lightLOD = base.gameObject.GetComponent<LightLOD>();
 	}
 
-	// Token: 0x06003231 RID: 12849 RVA: 0x00146DA0 File Offset: 0x00144FA0
+	// Token: 0x06003284 RID: 12932 RVA: 0x00148EC4 File Offset: 0x001470C4
 	public virtual void Kill()
 	{
 		global::UnityEngine.Object.Destroy(this);
 	}
 
-	// Token: 0x06003232 RID: 12850 RVA: 0x00002C47 File Offset: 0x00000E47
+	// Token: 0x06003285 RID: 12933 RVA: 0x00002C47 File Offset: 0x00000E47
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public LightState()
 	{
 	}
 
-	// Token: 0x040027AE RID: 10158
+	// Token: 0x04002821 RID: 10273
 	[PublicizedFrom(EAccessModifier.Protected)]
 	[NonSerialized]
 	public LightLOD lightLOD;

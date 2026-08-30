@@ -2,11 +2,11 @@
 using System.Xml.Linq;
 using UnityEngine;
 
-// Token: 0x02000D0B RID: 3339
+// Token: 0x02000D1D RID: 3357
 [PublicizedFrom(EAccessModifier.Internal)]
 public static class TriggerEffectXboxParsers
 {
-	// Token: 0x060065D6 RID: 26070 RVA: 0x002811B0 File Offset: 0x0027F3B0
+	// Token: 0x06006662 RID: 26210 RVA: 0x002840C0 File Offset: 0x002822C0
 	public static bool ParseStrength(string effectType, XElement elementTriggerEffect, string name, out float strength)
 	{
 		string text;
@@ -29,7 +29,7 @@ public static class TriggerEffectXboxParsers
 		return true;
 	}
 
-	// Token: 0x060065D7 RID: 26071 RVA: 0x00281278 File Offset: 0x0027F478
+	// Token: 0x06006663 RID: 26211 RVA: 0x00284188 File Offset: 0x00282388
 	public static bool ParseStartEndPosition(string effectType, XElement elementTriggerEffect, string name, out float startPosition, out float endPosition)
 	{
 		string text;
@@ -73,7 +73,7 @@ public static class TriggerEffectXboxParsers
 		return true;
 	}
 
-	// Token: 0x060065D8 RID: 26072 RVA: 0x00281454 File Offset: 0x0027F654
+	// Token: 0x06006664 RID: 26212 RVA: 0x00284364 File Offset: 0x00282564
 	public static bool ParseStartEndStrength(string effectType, XElement elementTriggerEffect, string name, out float startStrength, out float endStrength)
 	{
 		string text;
@@ -117,7 +117,7 @@ public static class TriggerEffectXboxParsers
 		return true;
 	}
 
-	// Token: 0x060065D9 RID: 26073 RVA: 0x00281630 File Offset: 0x0027F830
+	// Token: 0x06006665 RID: 26213 RVA: 0x00284540 File Offset: 0x00282740
 	public static bool ParseAmplitude(string effectType, XElement elementTriggerEffect, string name, out float amplitude)
 	{
 		string text;

@@ -3,18 +3,18 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceRequirements
 {
-	// Token: 0x02001906 RID: 6406
+	// Token: 0x0200192C RID: 6444
 	[Preserve]
 	public class RequirementHasBuff : BaseRequirement
 	{
-		// Token: 0x0600C568 RID: 50536 RVA: 0x0048AB25 File Offset: 0x00488D25
+		// Token: 0x0600C6EF RID: 50927 RVA: 0x00490E71 File Offset: 0x0048F071
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override void OnInit()
 		{
 			this.BuffList = this.BuffName.Split(',', StringSplitOptions.None);
 		}
 
-		// Token: 0x0600C569 RID: 50537 RVA: 0x0048AB3C File Offset: 0x00488D3C
+		// Token: 0x0600C6F0 RID: 50928 RVA: 0x00490E88 File Offset: 0x0048F088
 		public override bool CanPerform(Entity target)
 		{
 			EntityAlive entityAlive = target as EntityAlive;
@@ -32,7 +32,7 @@ namespace GameEvent.SequenceRequirements
 			return false;
 		}
 
-		// Token: 0x0600C56A RID: 50538 RVA: 0x0048AB7C File Offset: 0x00488D7C
+		// Token: 0x0600C6F1 RID: 50929 RVA: 0x00490EC8 File Offset: 0x0048F0C8
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool CheckBuff(EntityAlive player, string buffName)
 		{
@@ -43,7 +43,7 @@ namespace GameEvent.SequenceRequirements
 			return this.Invert;
 		}
 
-		// Token: 0x0600C56B RID: 50539 RVA: 0x0048AB9C File Offset: 0x00488D9C
+		// Token: 0x0600C6F2 RID: 50930 RVA: 0x00490EE8 File Offset: 0x0048F0E8
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -53,7 +53,7 @@ namespace GameEvent.SequenceRequirements
 			}
 		}
 
-		// Token: 0x0600C56C RID: 50540 RVA: 0x0048ABCD File Offset: 0x00488DCD
+		// Token: 0x0600C6F3 RID: 50931 RVA: 0x00490F19 File Offset: 0x0048F119
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseRequirement CloneChildSettings()
 		{
@@ -65,15 +65,15 @@ namespace GameEvent.SequenceRequirements
 			};
 		}
 
-		// Token: 0x040094BA RID: 38074
+		// Token: 0x040095E3 RID: 38371
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string BuffName = "";
 
-		// Token: 0x040094BB RID: 38075
+		// Token: 0x040095E4 RID: 38372
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string[] BuffList;
 
-		// Token: 0x040094BC RID: 38076
+		// Token: 0x040095E5 RID: 38373
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropBuffName = "buff_name";
 	}

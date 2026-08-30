@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001997 RID: 6551
+	// Token: 0x020019BD RID: 6589
 	[Preserve]
 	public class ActionSetScreenEffect : ActionBaseClientAction
 	{
-		// Token: 0x0600C7FD RID: 51197 RVA: 0x0049921C File Offset: 0x0049741C
+		// Token: 0x0600C984 RID: 51588 RVA: 0x0049F574 File Offset: 0x0049D774
 		public override void OnClientPerform(Entity target)
 		{
 			EntityPlayerLocal entityPlayerLocal = target as EntityPlayerLocal;
@@ -17,7 +17,7 @@ namespace GameEvent.SequenceActions
 			}
 		}
 
-		// Token: 0x0600C7FE RID: 51198 RVA: 0x00499266 File Offset: 0x00497466
+		// Token: 0x0600C985 RID: 51589 RVA: 0x0049F5BE File Offset: 0x0049D7BE
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -26,7 +26,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseString(ActionSetScreenEffect.PropFadeTime, ref this.fadeTimeText);
 		}
 
-		// Token: 0x0600C7FF RID: 51199 RVA: 0x004992A2 File Offset: 0x004974A2
+		// Token: 0x0600C986 RID: 51590 RVA: 0x0049F5FA File Offset: 0x0049D7FA
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -39,27 +39,27 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040097A9 RID: 38825
+		// Token: 0x040098D2 RID: 39122
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string screenEffect = "";
 
-		// Token: 0x040097AA RID: 38826
+		// Token: 0x040098D3 RID: 39123
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string intensityText;
 
-		// Token: 0x040097AB RID: 38827
+		// Token: 0x040098D4 RID: 39124
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string fadeTimeText;
 
-		// Token: 0x040097AC RID: 38828
+		// Token: 0x040098D5 RID: 39125
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropScreenEffect = "screen_effect";
 
-		// Token: 0x040097AD RID: 38829
+		// Token: 0x040098D6 RID: 39126
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropIntensity = "intensity";
 
-		// Token: 0x040097AE RID: 38830
+		// Token: 0x040098D7 RID: 39127
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropFadeTime = "fade_time";
 	}

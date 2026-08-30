@@ -2,73 +2,73 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020015E4 RID: 5604
+// Token: 0x020015FF RID: 5631
 [Preserve]
 public class vp_FPPlayerEventHandler : vp_PlayerEventHandler
 {
-	// Token: 0x040082FF RID: 33535
+	// Token: 0x040083D8 RID: 33752
 	public vp_Message<vp_DamageInfo> HUDDamageFlash;
 
-	// Token: 0x04008300 RID: 33536
+	// Token: 0x040083D9 RID: 33753
 	public vp_Message<string> HUDText;
 
-	// Token: 0x04008301 RID: 33537
+	// Token: 0x040083DA RID: 33754
 	public vp_Value<Texture> Crosshair;
 
-	// Token: 0x04008302 RID: 33538
+	// Token: 0x040083DB RID: 33755
 	public vp_Value<Texture2D> CurrentAmmoIcon;
 
-	// Token: 0x04008303 RID: 33539
+	// Token: 0x040083DC RID: 33756
 	public vp_Value<Vector2> InputSmoothLook;
 
-	// Token: 0x04008304 RID: 33540
+	// Token: 0x040083DD RID: 33757
 	public vp_Value<Vector2> InputRawLook;
 
-	// Token: 0x04008305 RID: 33541
+	// Token: 0x040083DE RID: 33758
 	public vp_Message<string, bool> InputGetButton;
 
-	// Token: 0x04008306 RID: 33542
+	// Token: 0x040083DF RID: 33759
 	public vp_Message<string, bool> InputGetButtonUp;
 
-	// Token: 0x04008307 RID: 33543
+	// Token: 0x040083E0 RID: 33760
 	public vp_Message<string, bool> InputGetButtonDown;
 
-	// Token: 0x04008308 RID: 33544
+	// Token: 0x040083E1 RID: 33761
 	public vp_Value<bool> InputAllowGameplay;
 
-	// Token: 0x04008309 RID: 33545
+	// Token: 0x040083E2 RID: 33762
 	public vp_Value<bool> Pause;
 
-	// Token: 0x0400830A RID: 33546
+	// Token: 0x040083E3 RID: 33763
 	public vp_Value<Vector3> CameraLookDirection;
 
-	// Token: 0x0400830B RID: 33547
+	// Token: 0x040083E4 RID: 33764
 	public vp_Message CameraToggle3rdPerson;
 
-	// Token: 0x0400830C RID: 33548
+	// Token: 0x040083E5 RID: 33765
 	public vp_Message<float> CameraGroundStomp;
 
-	// Token: 0x0400830D RID: 33549
+	// Token: 0x040083E6 RID: 33766
 	public vp_Message<float> CameraBombShake;
 
-	// Token: 0x0400830E RID: 33550
+	// Token: 0x040083E7 RID: 33767
 	public vp_Value<Vector3> CameraEarthQuakeForce;
 
-	// Token: 0x0400830F RID: 33551
+	// Token: 0x040083E8 RID: 33768
 	public vp_Activity<Vector3> CameraEarthQuake;
 
-	// Token: 0x04008310 RID: 33552
+	// Token: 0x040083E9 RID: 33769
 	public vp_Value<vp_Interactable> Interactable;
 
-	// Token: 0x04008311 RID: 33553
+	// Token: 0x040083EA RID: 33770
 	public vp_Value<bool> CanInteract;
 
-	// Token: 0x04008312 RID: 33554
+	// Token: 0x040083EB RID: 33771
 	public vp_Value<string> CurrentWeaponClipType;
 
-	// Token: 0x04008313 RID: 33555
+	// Token: 0x040083EC RID: 33772
 	public vp_Attempt<object> AddAmmo;
 
-	// Token: 0x04008314 RID: 33556
+	// Token: 0x040083ED RID: 33773
 	public vp_Attempt RemoveClip;
 }

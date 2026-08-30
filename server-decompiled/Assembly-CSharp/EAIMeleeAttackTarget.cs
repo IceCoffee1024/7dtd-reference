@@ -4,11 +4,11 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000447 RID: 1095
+// Token: 0x0200044B RID: 1099
 [Preserve]
 public class EAIMeleeAttackTarget : EAIBase
 {
-	// Token: 0x06002177 RID: 8567 RVA: 0x000CA41C File Offset: 0x000C861C
+	// Token: 0x06002194 RID: 8596 RVA: 0x000CAC28 File Offset: 0x000C8E28
 	public override void Init(EntityAlive _theEntity)
 	{
 		base.Init(_theEntity);
@@ -17,7 +17,7 @@ public class EAIMeleeAttackTarget : EAIBase
 		this.attackDuration = 20f;
 	}
 
-	// Token: 0x06002178 RID: 8568 RVA: 0x000CA444 File Offset: 0x000C8644
+	// Token: 0x06002195 RID: 8597 RVA: 0x000CAC50 File Offset: 0x000C8E50
 	public override void SetData(Dictionary<string, string> data)
 	{
 		base.SetData(data);
@@ -34,7 +34,7 @@ public class EAIMeleeAttackTarget : EAIBase
 		data.TryGetValue("sndRelease", out this.soundReleaseName);
 	}
 
-	// Token: 0x06002179 RID: 8569 RVA: 0x000CA520 File Offset: 0x000C8720
+	// Token: 0x06002196 RID: 8598 RVA: 0x000CAD2C File Offset: 0x000C8F2C
 	public override bool CanExecute()
 	{
 		if (this.theEntity.IsDancing)
@@ -54,7 +54,7 @@ public class EAIMeleeAttackTarget : EAIBase
 		return this.entityTarget && !this.entityTarget.IsDead() && !this.theEntity.bodyDamage.IsAnyLegMissing && (this.startAnimType < 0 || !this.theEntity.bodyDamage.IsAnyArmOrLegMissing) && this.InRange() && this.theEntity.CanSee(this.entityTarget);
 	}
 
-	// Token: 0x0600217A RID: 8570 RVA: 0x000CA5E8 File Offset: 0x000C87E8
+	// Token: 0x06002197 RID: 8599 RVA: 0x000CADF4 File Offset: 0x000C8FF4
 	public override void Start()
 	{
 		this.theEntity.emodel.avatarController.hitWeightMax = 0.5f;
@@ -74,13 +74,13 @@ public class EAIMeleeAttackTarget : EAIBase
 		this.theEntity.inventory.SetHoldingItemIdx(this.inventorySlot);
 	}
 
-	// Token: 0x0600217B RID: 8571 RVA: 0x000CA6A0 File Offset: 0x000C88A0
+	// Token: 0x06002198 RID: 8600 RVA: 0x000CAEAC File Offset: 0x000C90AC
 	public override bool Continue()
 	{
 		return this.entityTarget && !this.entityTarget.IsDead() && this.elapsedTime < this.attackDuration && this.theEntity.bodyDamage.CurrentStun == EnumEntityStunType.None && !this.theEntity.Electrocuted && (this.startAnimType < 0 || !this.theEntity.bodyDamage.IsAnyArmOrLegMissing) && this.InRange() && this.theEntity.painHitsFelt - this.painHitsFelt < 1f;
 	}
 
-	// Token: 0x0600217C RID: 8572 RVA: 0x000CA738 File Offset: 0x000C8938
+	// Token: 0x06002199 RID: 8601 RVA: 0x000CAF44 File Offset: 0x000C9144
 	public override void Update()
 	{
 		this.elapsedTime += 0.05f;
@@ -124,7 +124,7 @@ public class EAIMeleeAttackTarget : EAIBase
 		}
 	}
 
-	// Token: 0x0600217D RID: 8573 RVA: 0x000CA880 File Offset: 0x000C8A80
+	// Token: 0x0600219A RID: 8602 RVA: 0x000CB08C File Offset: 0x000C928C
 	public override void Reset()
 	{
 		this.theEntity.UseHoldingItem(this.itemActionType, true);
@@ -135,7 +135,7 @@ public class EAIMeleeAttackTarget : EAIBase
 		this.cooldown = this.baseCooldown + this.baseCooldown * 0.5f * base.RandomFloat;
 	}
 
-	// Token: 0x0600217E RID: 8574 RVA: 0x000CA904 File Offset: 0x000C8B04
+	// Token: 0x0600219B RID: 8603 RVA: 0x000CB110 File Offset: 0x000C9310
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool InRange()
 	{
@@ -151,7 +151,7 @@ public class EAIMeleeAttackTarget : EAIBase
 		return distanceSq >= this.minRange * this.minRange && distanceSq <= this.maxRange * this.maxRange;
 	}
 
-	// Token: 0x0600217F RID: 8575 RVA: 0x000CA988 File Offset: 0x000C8B88
+	// Token: 0x0600219C RID: 8604 RVA: 0x000CB194 File Offset: 0x000C9394
 	public override string ToString()
 	{
 		bool flag = this.entityTarget && this.InRange();
@@ -164,85 +164,85 @@ public class EAIMeleeAttackTarget : EAIBase
 		});
 	}
 
-	// Token: 0x04001702 RID: 5890
+	// Token: 0x04001717 RID: 5911
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int inventorySlot;
 
-	// Token: 0x04001703 RID: 5891
+	// Token: 0x04001718 RID: 5912
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int itemActionType;
 
-	// Token: 0x04001704 RID: 5892
+	// Token: 0x04001719 RID: 5913
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int startAnimType = -1;
 
-	// Token: 0x04001705 RID: 5893
+	// Token: 0x0400171A RID: 5914
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float releaseDelay = 0.5f;
 
-	// Token: 0x04001706 RID: 5894
+	// Token: 0x0400171B RID: 5915
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float baseCooldown;
 
-	// Token: 0x04001707 RID: 5895
+	// Token: 0x0400171C RID: 5916
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float cooldown;
 
-	// Token: 0x04001708 RID: 5896
+	// Token: 0x0400171D RID: 5917
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityAlive entityTarget;
 
-	// Token: 0x04001709 RID: 5897
+	// Token: 0x0400171E RID: 5918
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float attackDuration;
 
-	// Token: 0x0400170A RID: 5898
+	// Token: 0x0400171F RID: 5919
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float elapsedTime;
 
-	// Token: 0x0400170B RID: 5899
+	// Token: 0x04001720 RID: 5920
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float minRange = 4f;
 
-	// Token: 0x0400170C RID: 5900
+	// Token: 0x04001721 RID: 5921
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float maxRange = 25f;
 
-	// Token: 0x0400170D RID: 5901
+	// Token: 0x04001722 RID: 5922
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float unreachableRange;
 
-	// Token: 0x0400170E RID: 5902
+	// Token: 0x04001723 RID: 5923
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string soundStartName;
 
-	// Token: 0x0400170F RID: 5903
+	// Token: 0x04001724 RID: 5924
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string soundReleaseName;
 
-	// Token: 0x04001710 RID: 5904
+	// Token: 0x04001725 RID: 5925
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EAIMeleeAttackTarget.State state;
 
-	// Token: 0x04001711 RID: 5905
+	// Token: 0x04001726 RID: 5926
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float stateTime;
 
-	// Token: 0x04001712 RID: 5906
+	// Token: 0x04001727 RID: 5927
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float painHitsFelt;
 
-	// Token: 0x02000448 RID: 1096
+	// Token: 0x0200044C RID: 1100
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum State
 	{
-		// Token: 0x04001714 RID: 5908
+		// Token: 0x04001729 RID: 5929
 		StartAnim,
-		// Token: 0x04001715 RID: 5909
+		// Token: 0x0400172A RID: 5930
 		ReleaseAnim,
-		// Token: 0x04001716 RID: 5910
+		// Token: 0x0400172B RID: 5931
 		Attack,
-		// Token: 0x04001717 RID: 5911
+		// Token: 0x0400172C RID: 5932
 		Release
 	}
 }

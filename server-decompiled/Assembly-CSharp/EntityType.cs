@@ -1,16 +1,16 @@
 ﻿using System;
 
-// Token: 0x0200048B RID: 1163
+// Token: 0x0200048F RID: 1167
 public enum EntityType
 {
-	// Token: 0x04001999 RID: 6553
+	// Token: 0x040019B1 RID: 6577
 	Unknown,
-	// Token: 0x0400199A RID: 6554
+	// Token: 0x040019B2 RID: 6578
 	Player,
-	// Token: 0x0400199B RID: 6555
+	// Token: 0x040019B3 RID: 6579
 	Zombie,
-	// Token: 0x0400199C RID: 6556
+	// Token: 0x040019B4 RID: 6580
 	Animal,
-	// Token: 0x0400199D RID: 6557
+	// Token: 0x040019B5 RID: 6581
 	Bandit
 }

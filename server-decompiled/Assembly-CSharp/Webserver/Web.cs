@@ -14,15 +14,15 @@ using Webserver.WebAPI;
 
 namespace Webserver
 {
-	// Token: 0x02001A9D RID: 6813
+	// Token: 0x02001AC4 RID: 6852
 	public class Web : IConsoleServer
 	{
-		// Token: 0x1400011A RID: 282
-		// (add) Token: 0x0600CCE6 RID: 52454 RVA: 0x004AC434 File Offset: 0x004AA634
-		// (remove) Token: 0x0600CCE7 RID: 52455 RVA: 0x004AC468 File Offset: 0x004AA668
+		// Token: 0x1400011B RID: 283
+		// (add) Token: 0x0600CE6F RID: 52847 RVA: 0x004B2828 File Offset: 0x004B0A28
+		// (remove) Token: 0x0600CE70 RID: 52848 RVA: 0x004B285C File Offset: 0x004B0A5C
 		public static event Action<Web> ServerInitialized;
 
-		// Token: 0x0600CCE8 RID: 52456 RVA: 0x004AC49C File Offset: 0x004AA69C
+		// Token: 0x0600CE71 RID: 52849 RVA: 0x004B2890 File Offset: 0x004B0A90
 		public Web()
 		{
 			try
@@ -72,7 +72,7 @@ namespace Webserver
 			}
 		}
 
-		// Token: 0x0600CCE9 RID: 52457 RVA: 0x004AC668 File Offset: 0x004AA868
+		// Token: 0x0600CE72 RID: 52850 RVA: 0x004B2A5C File Offset: 0x004B0C5C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void RegisterDefaultHandlers()
 		{
@@ -89,7 +89,7 @@ namespace Webserver
 			this.RegisterPathHandler("/api/", new ApiHandler());
 		}
 
-		// Token: 0x0600CCEA RID: 52458 RVA: 0x004AC734 File Offset: 0x004AA934
+		// Token: 0x0600CE73 RID: 52851 RVA: 0x004B2B28 File Offset: 0x004B0D28
 		[PublicizedFrom(EAccessModifier.Private)]
 		public static string DetectWebserverFolder()
 		{
@@ -106,7 +106,7 @@ namespace Webserver
 			return text;
 		}
 
-		// Token: 0x0600CCEB RID: 52459 RVA: 0x004AC7C0 File Offset: 0x004AA9C0
+		// Token: 0x0600CE74 RID: 52852 RVA: 0x004B2BB4 File Offset: 0x004B0DB4
 		public void RegisterPathHandler(string _urlBasePath, AbsHandler _handler)
 		{
 			using (List<AbsHandler>.Enumerator enumerator = this.handlers.GetEnumerator())
@@ -124,7 +124,7 @@ namespace Webserver
 			_handler.SetBasePathAndParent(this, _urlBasePath);
 		}
 
-		// Token: 0x0600CCEC RID: 52460 RVA: 0x004AC844 File Offset: 0x004AAA44
+		// Token: 0x0600CE75 RID: 52853 RVA: 0x004B2C38 File Offset: 0x004B0E38
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void RegisterWebMods(bool _useStaticCache)
 		{
@@ -150,7 +150,7 @@ namespace Webserver
 			}
 		}
 
-		// Token: 0x0600CCED RID: 52461 RVA: 0x004AC900 File Offset: 0x004AAB00
+		// Token: 0x0600CE76 RID: 52854 RVA: 0x004B2CF4 File Offset: 0x004B0EF4
 		public void Disconnect()
 		{
 			if (this.shutdown)
@@ -173,18 +173,18 @@ namespace Webserver
 			}
 		}
 
-		// Token: 0x0600CCEE RID: 52462 RVA: 0x004AC998 File Offset: 0x004AAB98
+		// Token: 0x0600CE77 RID: 52855 RVA: 0x004B2D8C File Offset: 0x004B0F8C
 		public void SendLine(string _line)
 		{
 			this.ConnectionHandler.SendLine(_line);
 		}
 
-		// Token: 0x0600CCEF RID: 52463 RVA: 0x000027FC File Offset: 0x000009FC
+		// Token: 0x0600CE78 RID: 52856 RVA: 0x000027FC File Offset: 0x000009FC
 		public void SendLog(string _formattedMessage, string _plainMessage, string _trace, LogType _type, DateTime _timestamp, long _uptime)
 		{
 		}
 
-		// Token: 0x0600CCF0 RID: 52464 RVA: 0x004AC9A8 File Offset: 0x004AABA8
+		// Token: 0x0600CE79 RID: 52857 RVA: 0x004B2D9C File Offset: 0x004B0F9C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void HandleRequest(IAsyncResult _result)
 		{
@@ -269,7 +269,7 @@ namespace Webserver
 			}
 		}
 
-		// Token: 0x0600CCF1 RID: 52465 RVA: 0x004ACBA8 File Offset: 0x004AADA8
+		// Token: 0x0600CE7A RID: 52858 RVA: 0x004B2F9C File Offset: 0x004B119C
 		public void ApplyPathHandler(RequestContext _context)
 		{
 			int i = this.handlers.Count - 1;
@@ -295,7 +295,7 @@ namespace Webserver
 			_context.Response.StatusCode = 404;
 		}
 
-		// Token: 0x0600CCF2 RID: 52466 RVA: 0x004ACC28 File Offset: 0x004AAE28
+		// Token: 0x0600CE7B RID: 52859 RVA: 0x004B301C File Offset: 0x004B121C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public int DoAuthentication(SpaceWizards.HttpListener.HttpListenerRequest _req, out WebConnection _con)
 		{
@@ -337,51 +337,51 @@ namespace Webserver
 			return 2000;
 		}
 
-		// Token: 0x04009B36 RID: 39734
+		// Token: 0x04009C67 RID: 40039
 		public const string DataPath = "Data/Web";
 
-		// Token: 0x04009B37 RID: 39735
+		// Token: 0x04009C68 RID: 40040
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string indexPageUrl = "/app";
 
-		// Token: 0x04009B38 RID: 39736
+		// Token: 0x04009C69 RID: 40041
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly List<AbsHandler> handlers = new List<AbsHandler>();
 
-		// Token: 0x04009B39 RID: 39737
+		// Token: 0x04009C6A RID: 40042
 		public readonly List<WebMod> WebMods = new List<WebMod>();
 
-		// Token: 0x04009B3A RID: 39738
+		// Token: 0x04009C6B RID: 40043
 		public readonly ConnectionHandler ConnectionHandler;
 
-		// Token: 0x04009B3B RID: 39739
+		// Token: 0x04009C6C RID: 40044
 		public readonly OpenApiHelpers OpenApiHelpers;
 
-		// Token: 0x04009B3C RID: 39740
+		// Token: 0x04009C6D RID: 40045
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly SpaceWizards.HttpListener.HttpListener listener = new SpaceWizards.HttpListener.HttpListener();
 
-		// Token: 0x04009B3D RID: 39741
+		// Token: 0x04009C6E RID: 40046
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly Version httpProtocolVersion = new Version(1, 1);
 
-		// Token: 0x04009B3E RID: 39742
+		// Token: 0x04009C6F RID: 40047
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly AsyncCallback handleRequestDelegate;
 
-		// Token: 0x04009B3F RID: 39743
+		// Token: 0x04009C70 RID: 40048
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool shutdown;
 
-		// Token: 0x04009B40 RID: 39744
+		// Token: 0x04009C71 RID: 40049
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly CustomSampler authSampler = CustomSampler.Create("Auth", false);
 
-		// Token: 0x04009B41 RID: 39745
+		// Token: 0x04009C72 RID: 40050
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly CustomSampler cookieSampler = CustomSampler.Create("ConCookie", false);
 
-		// Token: 0x04009B42 RID: 39746
+		// Token: 0x04009C73 RID: 40051
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly CustomSampler handlerSampler = CustomSampler.Create("Handler", false);
 	}

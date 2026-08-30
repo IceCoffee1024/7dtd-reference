@@ -2,13 +2,13 @@
 
 namespace Platform
 {
-	// Token: 0x02001B41 RID: 6977
+	// Token: 0x02001B68 RID: 7016
 	public struct LobbyHostJoinResult
 	{
-		// Token: 0x04009F60 RID: 40800
+		// Token: 0x0400A091 RID: 41105
 		public bool success;
 
-		// Token: 0x04009F61 RID: 40801
+		// Token: 0x0400A092 RID: 41106
 		public string message;
 	}
 }

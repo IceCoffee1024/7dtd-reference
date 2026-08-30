@@ -1,11 +1,11 @@
 ﻿using System;
 
-// Token: 0x0200057F RID: 1407
+// Token: 0x02000584 RID: 1412
 public interface ILockContext
 {
-	// Token: 0x06002E0E RID: 11790
+	// Token: 0x06002E3C RID: 11836
 	void Write(PooledBinaryWriter _bw);
 
-	// Token: 0x06002E0F RID: 11791
+	// Token: 0x06002E3D RID: 11837
 	void Read(PooledBinaryReader _br);
 }

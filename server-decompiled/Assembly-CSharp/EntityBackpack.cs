@@ -4,11 +4,11 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000485 RID: 1157
+// Token: 0x02000489 RID: 1161
 [Preserve]
 public class EntityBackpack : EntityItem
 {
-	// Token: 0x060023EA RID: 9194 RVA: 0x000D93E4 File Offset: 0x000D75E4
+	// Token: 0x0600240B RID: 9227 RVA: 0x000D9EBC File Offset: 0x000D80BC
 	public override void CopyPropertiesFromEntityClass()
 	{
 		base.CopyPropertiesFromEntityClass();
@@ -18,7 +18,7 @@ public class EntityBackpack : EntityItem
 		this.ticksStayAfterDeath = (int)(num * 20f);
 	}
 
-	// Token: 0x060023EB RID: 9195 RVA: 0x000D942C File Offset: 0x000D762C
+	// Token: 0x0600240C RID: 9228 RVA: 0x000D9F04 File Offset: 0x000D8104
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Start()
 	{
@@ -34,7 +34,7 @@ public class EntityBackpack : EntityItem
 		this.SetDead();
 	}
 
-	// Token: 0x060023EC RID: 9196 RVA: 0x000D94AC File Offset: 0x000D76AC
+	// Token: 0x0600240D RID: 9229 RVA: 0x000D9F84 File Offset: 0x000D8184
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void Update()
 	{
@@ -49,7 +49,7 @@ public class EntityBackpack : EntityItem
 		}
 	}
 
-	// Token: 0x060023ED RID: 9197 RVA: 0x000D9538 File Offset: 0x000D7738
+	// Token: 0x0600240E RID: 9230 RVA: 0x000DA010 File Offset: 0x000D8210
 	public override void OnUpdateEntity()
 	{
 		base.OnUpdateEntity();
@@ -106,7 +106,7 @@ public class EntityBackpack : EntityItem
 		}
 	}
 
-	// Token: 0x060023EE RID: 9198 RVA: 0x000D978C File Offset: 0x000D798C
+	// Token: 0x0600240F RID: 9231 RVA: 0x000DA264 File Offset: 0x000D8464
 	public override bool AllowActivationCommand(ReadOnlySpan<char> _commandName, EntityPlayerLocal _playerFocusing)
 	{
 		if (base.CommandIs(_commandName, "search"))
@@ -116,7 +116,7 @@ public class EntityBackpack : EntityItem
 		return base.AllowActivationCommand(_commandName, _playerFocusing);
 	}
 
-	// Token: 0x060023EF RID: 9199 RVA: 0x000D97B0 File Offset: 0x000D79B0
+	// Token: 0x06002410 RID: 9232 RVA: 0x000DA288 File Offset: 0x000D8488
 	public override string GetActivationText()
 	{
 		if (this.bag == null)
@@ -144,7 +144,7 @@ public class EntityBackpack : EntityItem
 		return string.Format(Localization.Get("lootTooltipTouched", false, null), text, this.LocalizedEntityName);
 	}
 
-	// Token: 0x060023F0 RID: 9200 RVA: 0x000D9840 File Offset: 0x000D7A40
+	// Token: 0x06002411 RID: 9233 RVA: 0x000DA318 File Offset: 0x000D8518
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void RemoveBackpack(string reason)
 	{
@@ -183,7 +183,7 @@ public class EntityBackpack : EntityItem
 		this.MarkToUnload();
 	}
 
-	// Token: 0x060023F1 RID: 9201 RVA: 0x000D99C0 File Offset: 0x000D7BC0
+	// Token: 0x06002412 RID: 9234 RVA: 0x000DA498 File Offset: 0x000D8698
 	public override void OnEntityUnload()
 	{
 		this.LogBackpack("OnEntityUnload markedForUnload {0}, IsDead {1}, IsDespawned {2}", new object[]
@@ -195,13 +195,13 @@ public class EntityBackpack : EntityItem
 		base.OnEntityUnload();
 	}
 
-	// Token: 0x060023F2 RID: 9202 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002413 RID: 9235 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void createMesh()
 	{
 	}
 
-	// Token: 0x060023F3 RID: 9203 RVA: 0x000D9A0E File Offset: 0x000D7C0E
+	// Token: 0x06002414 RID: 9236 RVA: 0x000DA4E6 File Offset: 0x000D86E6
 	public override void Write(BinaryWriter _bw, bool _bNetworkWrite)
 	{
 		this.LogBackpack("Write", Array.Empty<object>());
@@ -210,7 +210,7 @@ public class EntityBackpack : EntityItem
 		this.bag.Write(_bw);
 	}
 
-	// Token: 0x060023F4 RID: 9204 RVA: 0x000D9A40 File Offset: 0x000D7C40
+	// Token: 0x06002415 RID: 9237 RVA: 0x000DA518 File Offset: 0x000D8718
 	public override void Read(byte _version, BinaryReader _br)
 	{
 		base.Read(_version, _br);
@@ -222,19 +222,19 @@ public class EntityBackpack : EntityItem
 		this.LogBackpack("Read", Array.Empty<object>());
 	}
 
-	// Token: 0x060023F5 RID: 9205 RVA: 0x000D9A78 File Offset: 0x000D7C78
+	// Token: 0x06002416 RID: 9238 RVA: 0x000DA550 File Offset: 0x000D8750
 	public override bool IsMarkedForUnload()
 	{
 		return base.IsMarkedForUnload() && this.bRemoved;
 	}
 
-	// Token: 0x060023F6 RID: 9206 RVA: 0x000BCDC3 File Offset: 0x000BAFC3
+	// Token: 0x06002417 RID: 9239 RVA: 0x000BD507 File Offset: 0x000BB707
 	public override string GetLootList()
 	{
 		return this.lootList;
 	}
 
-	// Token: 0x060023F7 RID: 9207 RVA: 0x000D9A8C File Offset: 0x000D7C8C
+	// Token: 0x06002418 RID: 9240 RVA: 0x000DA564 File Offset: 0x000D8764
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void HandleNavObject()
 	{
@@ -256,7 +256,7 @@ public class EntityBackpack : EntityItem
 		}
 	}
 
-	// Token: 0x060023F8 RID: 9208 RVA: 0x000D9B44 File Offset: 0x000D7D44
+	// Token: 0x06002419 RID: 9241 RVA: 0x000DA61C File Offset: 0x000D881C
 	public override void OnUnlockedServer(int _unlockingPlayerId, ushort _channel)
 	{
 		if (this.bag.IsEmpty())
@@ -265,7 +265,7 @@ public class EntityBackpack : EntityItem
 		}
 	}
 
-	// Token: 0x060023F9 RID: 9209 RVA: 0x000D9B5C File Offset: 0x000D7D5C
+	// Token: 0x0600241A RID: 9242 RVA: 0x000DA634 File Offset: 0x000D8834
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void LogBackpack(string format, params object[] args)
 	{
@@ -314,25 +314,25 @@ public class EntityBackpack : EntityItem
 		}
 	}
 
-	// Token: 0x0400197B RID: 6523
+	// Token: 0x04001992 RID: 6546
 	public int RefPlayerId = -1;
 
-	// Token: 0x0400197C RID: 6524
+	// Token: 0x04001993 RID: 6547
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int deathUpdateTicks;
 
-	// Token: 0x0400197D RID: 6525
+	// Token: 0x04001994 RID: 6548
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int ticksStayAfterDeath;
 
-	// Token: 0x0400197E RID: 6526
+	// Token: 0x04001995 RID: 6549
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool bRemoved;
 
-	// Token: 0x0400197F RID: 6527
+	// Token: 0x04001996 RID: 6550
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public int safetyCounter;

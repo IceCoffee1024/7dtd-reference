@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200082E RID: 2094
+// Token: 0x0200083A RID: 2106
 [Preserve]
 public class NetPackageQuestGotoPoint : NetPackage
 {
-	// Token: 0x06003D6D RID: 15725 RVA: 0x00185930 File Offset: 0x00183B30
+	// Token: 0x06003DD2 RID: 15826 RVA: 0x00187950 File Offset: 0x00185B50
 	public NetPackageQuestGotoPoint Setup(int _traderId, int _playerId, FastTags<TagGroup.Global> _questTags, int _questCode, NetPackageQuestGotoPoint.QuestGotoTypes _gotoType, byte _difficulty, int posX = 0, int posZ = -1, float sizeX = 0f, float sizeY = 0f, float sizeZ = 0f, float offset = -1f, BiomeFilterTypes _biomeFilterType = BiomeFilterTypes.SameBiome, string _biomeFilter = "")
 	{
 		this.traderId = _traderId;
@@ -22,7 +22,7 @@ public class NetPackageQuestGotoPoint : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003D6E RID: 15726 RVA: 0x001859A0 File Offset: 0x00183BA0
+	// Token: 0x06003DD3 RID: 15827 RVA: 0x001879C0 File Offset: 0x00185BC0
 	public override void read(PooledBinaryReader _br)
 	{
 		this.playerId = _br.ReadInt32();
@@ -36,7 +36,7 @@ public class NetPackageQuestGotoPoint : NetPackage
 		this.biomeFilter = _br.ReadString();
 	}
 
-	// Token: 0x06003D6F RID: 15727 RVA: 0x00185A2C File Offset: 0x00183C2C
+	// Token: 0x06003DD4 RID: 15828 RVA: 0x00187A4C File Offset: 0x00185C4C
 	public override void write(PooledBinaryWriter _bw)
 	{
 		base.write(_bw);
@@ -52,7 +52,7 @@ public class NetPackageQuestGotoPoint : NetPackage
 		_bw.Write(this.biomeFilter);
 	}
 
-	// Token: 0x06003D70 RID: 15728 RVA: 0x00185AD4 File Offset: 0x00183CD4
+	// Token: 0x06003DD5 RID: 15829 RVA: 0x00187AF4 File Offset: 0x00185CF4
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -112,59 +112,59 @@ public class NetPackageQuestGotoPoint : NetPackage
 		}
 	}
 
-	// Token: 0x06003D71 RID: 15729 RVA: 0x00080B69 File Offset: 0x0007ED69
+	// Token: 0x06003DD6 RID: 15830 RVA: 0x0008121D File Offset: 0x0007F41D
 	public override int GetLength()
 	{
 		return 8;
 	}
 
-	// Token: 0x04003196 RID: 12694
+	// Token: 0x04003215 RID: 12821
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int traderId;
 
-	// Token: 0x04003197 RID: 12695
+	// Token: 0x04003216 RID: 12822
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int playerId;
 
-	// Token: 0x04003198 RID: 12696
+	// Token: 0x04003217 RID: 12823
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int questCode;
 
-	// Token: 0x04003199 RID: 12697
+	// Token: 0x04003218 RID: 12824
 	[PublicizedFrom(EAccessModifier.Private)]
 	public FastTags<TagGroup.Global> questTags;
 
-	// Token: 0x0400319A RID: 12698
+	// Token: 0x04003219 RID: 12825
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 position;
 
-	// Token: 0x0400319B RID: 12699
+	// Token: 0x0400321A RID: 12826
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 size;
 
-	// Token: 0x0400319C RID: 12700
+	// Token: 0x0400321B RID: 12827
 	[PublicizedFrom(EAccessModifier.Private)]
 	public byte difficulty;
 
-	// Token: 0x0400319D RID: 12701
+	// Token: 0x0400321C RID: 12828
 	public NetPackageQuestGotoPoint.QuestGotoTypes GotoType;
 
-	// Token: 0x0400319E RID: 12702
+	// Token: 0x0400321D RID: 12829
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BiomeFilterTypes biomeFilterType = BiomeFilterTypes.SameBiome;
 
-	// Token: 0x0400319F RID: 12703
+	// Token: 0x0400321E RID: 12830
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string biomeFilter;
 
-	// Token: 0x0200082F RID: 2095
+	// Token: 0x0200083B RID: 2107
 	public enum QuestGotoTypes
 	{
-		// Token: 0x040031A1 RID: 12705
+		// Token: 0x04003220 RID: 12832
 		Trader,
-		// Token: 0x040031A2 RID: 12706
+		// Token: 0x04003221 RID: 12833
 		Closest,
-		// Token: 0x040031A3 RID: 12707
+		// Token: 0x04003222 RID: 12834
 		RandomPOI
 	}
 }

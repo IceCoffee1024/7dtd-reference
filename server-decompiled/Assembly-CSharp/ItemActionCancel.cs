@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000594 RID: 1428
+// Token: 0x02000599 RID: 1433
 [Preserve]
 public class ItemActionCancel : ItemAction
 {
-	// Token: 0x06002EE2 RID: 12002 RVA: 0x001296A0 File Offset: 0x001278A0
+	// Token: 0x06002F10 RID: 12048 RVA: 0x0012A710 File Offset: 0x00128910
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		if (_bReleased)

@@ -6,11 +6,11 @@ using Unity.Jobs;
 using Unity.Mathematics;
 using UnityEngine;
 
-// Token: 0x02000CC2 RID: 3266
+// Token: 0x02000CD4 RID: 3284
 [BurstCompile(CompileSynchronously = true)]
 public struct WaterSimulationPreProcess : IJob
 {
-	// Token: 0x06006444 RID: 25668 RVA: 0x0027407C File Offset: 0x0027227C
+	// Token: 0x060064D0 RID: 25808 RVA: 0x00276F78 File Offset: 0x00275178
 	public void Execute()
 	{
 		this.neighborCache = WaterNeighborCacheNative.InitializeCache(this.waterDataHandles);
@@ -63,7 +63,7 @@ public struct WaterSimulationPreProcess : IJob
 		}
 	}
 
-	// Token: 0x06006445 RID: 25669 RVA: 0x002742F0 File Offset: 0x002724F0
+	// Token: 0x060064D1 RID: 25809 RVA: 0x002771EC File Offset: 0x002753EC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WakeNeighbor(int _yOffset)
 	{
@@ -75,7 +75,7 @@ public struct WaterSimulationPreProcess : IJob
 		this.neighborCache.center.SetVoxelActive(this.neighborCache.voxelX, num, this.neighborCache.voxelZ);
 	}
 
-	// Token: 0x06006446 RID: 25670 RVA: 0x00274340 File Offset: 0x00272540
+	// Token: 0x060064D2 RID: 25810 RVA: 0x0027723C File Offset: 0x0027543C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void WakeNeighbor(int2 _xzOffset)
 	{
@@ -90,7 +90,7 @@ public struct WaterSimulationPreProcess : IJob
 		}
 	}
 
-	// Token: 0x06006447 RID: 25671 RVA: 0x00274370 File Offset: 0x00272570
+	// Token: 0x060064D3 RID: 25811 RVA: 0x0027726C File Offset: 0x0027546C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void TryTrackChunk(int _chunkX, int _chunkZ)
 	{
@@ -101,16 +101,16 @@ public struct WaterSimulationPreProcess : IJob
 		}
 	}
 
-	// Token: 0x04004DC8 RID: 19912
+	// Token: 0x04004E66 RID: 20070
 	public UnsafeParallelHashSet<ChunkKey> activeChunks;
 
-	// Token: 0x04004DC9 RID: 19913
+	// Token: 0x04004E67 RID: 20071
 	public UnsafeParallelHashMap<ChunkKey, WaterDataHandle> waterDataHandles;
 
-	// Token: 0x04004DCA RID: 19914
+	// Token: 0x04004E68 RID: 20072
 	public UnsafeParallelHashSet<ChunkKey> modifiedChunks;
 
-	// Token: 0x04004DCB RID: 19915
+	// Token: 0x04004E69 RID: 20073
 	[PublicizedFrom(EAccessModifier.Private)]
 	public WaterNeighborCacheNative neighborCache;
 }

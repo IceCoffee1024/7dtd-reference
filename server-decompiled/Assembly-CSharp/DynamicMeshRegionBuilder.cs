@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading;
 
-// Token: 0x02000395 RID: 917
+// Token: 0x02000399 RID: 921
 public class DynamicMeshRegionBuilder
 {
-	// Token: 0x17000341 RID: 833
-	// (get) Token: 0x06001B65 RID: 7013 RVA: 0x000A2937 File Offset: 0x000A0B37
+	// Token: 0x17000345 RID: 837
+	// (get) Token: 0x06001B82 RID: 7042 RVA: 0x000A3077 File Offset: 0x000A1277
 	public static World world
 	{
 		get
@@ -14,7 +14,7 @@ public class DynamicMeshRegionBuilder
 		}
 	}
 
-	// Token: 0x06001B66 RID: 7014 RVA: 0x000A2943 File Offset: 0x000A0B43
+	// Token: 0x06001B83 RID: 7043 RVA: 0x000A3083 File Offset: 0x000A1283
 	public bool AddNewItem(DynamicMeshRegion region)
 	{
 		if (this.Status != DynamicMeshBuilderStatus.Ready)
@@ -27,7 +27,7 @@ public class DynamicMeshRegionBuilder
 		return true;
 	}
 
-	// Token: 0x06001B67 RID: 7015 RVA: 0x000A2980 File Offset: 0x000A0B80
+	// Token: 0x06001B84 RID: 7044 RVA: 0x000A30C0 File Offset: 0x000A12C0
 	public void RequestStop(bool forceStop = false)
 	{
 		this.StopRequested = true;
@@ -48,7 +48,7 @@ public class DynamicMeshRegionBuilder
 		}
 	}
 
-	// Token: 0x06001B68 RID: 7016 RVA: 0x000A29C4 File Offset: 0x000A0BC4
+	// Token: 0x06001B85 RID: 7045 RVA: 0x000A3104 File Offset: 0x000A1304
 	public void StartThread()
 	{
 		this.thread = new Thread(delegate
@@ -91,22 +91,22 @@ public class DynamicMeshRegionBuilder
 		this.thread.Start();
 	}
 
-	// Token: 0x0400119C RID: 4508
+	// Token: 0x040011B1 RID: 4529
 	public string Error;
 
-	// Token: 0x0400119D RID: 4509
+	// Token: 0x040011B2 RID: 4530
 	public bool StopRequested;
 
-	// Token: 0x0400119E RID: 4510
+	// Token: 0x040011B3 RID: 4531
 	public DynamicMeshBuilderStatus Status;
 
-	// Token: 0x0400119F RID: 4511
+	// Token: 0x040011B4 RID: 4532
 	public ExportMeshResult Result = ExportMeshResult.Missing;
 
-	// Token: 0x040011A0 RID: 4512
+	// Token: 0x040011B5 RID: 4533
 	public DynamicMeshRegion Region;
 
-	// Token: 0x040011A1 RID: 4513
+	// Token: 0x040011B6 RID: 4534
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Thread thread;
 }

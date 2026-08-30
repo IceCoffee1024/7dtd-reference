@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020007F2 RID: 2034
+// Token: 0x020007FD RID: 2045
 [Preserve]
 public class NetPackageHordeEvent : NetPackage
 {
-	// Token: 0x06003BEC RID: 15340 RVA: 0x0017FCAF File Offset: 0x0017DEAF
+	// Token: 0x06003C4B RID: 15435 RVA: 0x00182087 File Offset: 0x00180287
 	public NetPackageHordeEvent Setup(AIDirector.HordeEvent _event, Vector3 pos, float maxDist)
 	{
 		this.m_event = _event;
@@ -15,7 +15,7 @@ public class NetPackageHordeEvent : NetPackage
 		return this;
 	}
 
-	// Token: 0x06003BED RID: 15341 RVA: 0x0017FCC8 File Offset: 0x0017DEC8
+	// Token: 0x06003C4C RID: 15436 RVA: 0x001820A0 File Offset: 0x001802A0
 	public override void read(PooledBinaryReader _reader)
 	{
 		int num = (int)_reader.ReadByte();
@@ -26,7 +26,7 @@ public class NetPackageHordeEvent : NetPackage
 		this.m_maxDist = _reader.ReadSingle();
 	}
 
-	// Token: 0x06003BEE RID: 15342 RVA: 0x0017FD28 File Offset: 0x0017DF28
+	// Token: 0x06003C4D RID: 15437 RVA: 0x00182100 File Offset: 0x00180300
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -37,7 +37,7 @@ public class NetPackageHordeEvent : NetPackage
 		_writer.Write(this.m_maxDist);
 	}
 
-	// Token: 0x06003BEF RID: 15343 RVA: 0x0017FD8C File Offset: 0x0017DF8C
+	// Token: 0x06003C4E RID: 15438 RVA: 0x00182164 File Offset: 0x00180364
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -55,21 +55,21 @@ public class NetPackageHordeEvent : NetPackage
 		}
 	}
 
-	// Token: 0x06003BF0 RID: 15344 RVA: 0x0005EFE1 File Offset: 0x0005D1E1
+	// Token: 0x06003C4F RID: 15439 RVA: 0x0005F529 File Offset: 0x0005D729
 	public override int GetLength()
 	{
 		return 21;
 	}
 
-	// Token: 0x04003090 RID: 12432
+	// Token: 0x0400310F RID: 12559
 	[PublicizedFrom(EAccessModifier.Private)]
 	public AIDirector.HordeEvent m_event;
 
-	// Token: 0x04003091 RID: 12433
+	// Token: 0x04003110 RID: 12560
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 m_pos;
 
-	// Token: 0x04003092 RID: 12434
+	// Token: 0x04003111 RID: 12561
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float m_maxDist;
 }

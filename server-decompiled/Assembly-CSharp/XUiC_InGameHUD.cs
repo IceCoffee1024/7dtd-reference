@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F2E RID: 3886
+// Token: 0x02000F45 RID: 3909
 [Preserve]
 public class XUiC_InGameHUD : XUiController
 {
-	// Token: 0x06007A06 RID: 31238 RVA: 0x002E0CA8 File Offset: 0x002DEEA8
+	// Token: 0x06007ABF RID: 31423 RVA: 0x002E4C5C File Offset: 0x002E2E5C
 	public override void Init()
 	{
 		base.Init();
@@ -14,7 +14,7 @@ public class XUiC_InGameHUD : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007A07 RID: 31239 RVA: 0x002E0CD1 File Offset: 0x002DEED1
+	// Token: 0x06007AC0 RID: 31424 RVA: 0x002E4C85 File Offset: 0x002E2E85
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -25,7 +25,7 @@ public class XUiC_InGameHUD : XUiController
 		}
 	}
 
-	// Token: 0x04005A38 RID: 23096
+	// Token: 0x04005AEB RID: 23275
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiController[] statBarList;
 }

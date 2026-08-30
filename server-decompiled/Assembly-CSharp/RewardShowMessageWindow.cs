@@ -1,29 +1,29 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020009E4 RID: 2532
+// Token: 0x020009F5 RID: 2549
 [Preserve]
 public class RewardShowMessageWindow : BaseReward
 {
-	// Token: 0x06004B92 RID: 19346 RVA: 0x001D5685 File Offset: 0x001D3885
+	// Token: 0x06004C18 RID: 19480 RVA: 0x001D7E6D File Offset: 0x001D606D
 	public RewardShowMessageWindow()
 	{
 		base.HiddenReward = true;
 	}
 
-	// Token: 0x06004B93 RID: 19347 RVA: 0x001D56AA File Offset: 0x001D38AA
+	// Token: 0x06004C19 RID: 19481 RVA: 0x001D7E92 File Offset: 0x001D6092
 	public override void SetupReward()
 	{
 		base.HiddenReward = true;
 	}
 
-	// Token: 0x06004B94 RID: 19348 RVA: 0x001D56B3 File Offset: 0x001D38B3
+	// Token: 0x06004C1A RID: 19482 RVA: 0x001D7E9B File Offset: 0x001D609B
 	public override void GiveReward(EntityPlayer player)
 	{
 		XUiC_MessageBoxWindowGroup.ShowOk(LocalPlayerUI.GetUIForPrimaryPlayer().xui, Localization.Get(this.title, false, null), Localization.Get(this.message, false, null), "ui_game_symbol_pen", null, true, true, false);
 	}
 
-	// Token: 0x06004B95 RID: 19349 RVA: 0x001D56E8 File Offset: 0x001D38E8
+	// Token: 0x06004C1B RID: 19483 RVA: 0x001D7ED0 File Offset: 0x001D60D0
 	public override BaseReward Clone()
 	{
 		RewardShowMessageWindow rewardShowMessageWindow = new RewardShowMessageWindow();
@@ -33,7 +33,7 @@ public class RewardShowMessageWindow : BaseReward
 		return rewardShowMessageWindow;
 	}
 
-	// Token: 0x06004B96 RID: 19350 RVA: 0x001D571B File Offset: 0x001D391B
+	// Token: 0x06004C1C RID: 19484 RVA: 0x001D7F03 File Offset: 0x001D6103
 	public override void ParseProperties(DynamicProperties properties)
 	{
 		base.ParseProperties(properties);
@@ -41,19 +41,19 @@ public class RewardShowMessageWindow : BaseReward
 		properties.ParseString(RewardShowMessageWindow.PropTitle, ref this.title);
 	}
 
-	// Token: 0x04003B3C RID: 15164
+	// Token: 0x04003BCD RID: 15309
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string PropMessage = "message";
 
-	// Token: 0x04003B3D RID: 15165
+	// Token: 0x04003BCE RID: 15310
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static string PropTitle = "title";
 
-	// Token: 0x04003B3E RID: 15166
+	// Token: 0x04003BCF RID: 15311
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string message = "";
 
-	// Token: 0x04003B3F RID: 15167
+	// Token: 0x04003BD0 RID: 15312
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string title = "";
 }

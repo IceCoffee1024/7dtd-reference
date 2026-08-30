@@ -7,10 +7,10 @@ using UnityEngine;
 
 namespace Platform.EOS
 {
-	// Token: 0x02001CEB RID: 7403
+	// Token: 0x02001D13 RID: 7443
 	public class SessionsHost : IMasterServerAnnouncer
 	{
-		// Token: 0x0600DB00 RID: 56064 RVA: 0x004E8608 File Offset: 0x004E6808
+		// Token: 0x0600DCA1 RID: 56481 RVA: 0x004EF07C File Offset: 0x004ED27C
 		public static string GetMatchmakingGroupTag(EMatchmakingGroup _matchmakingGroup)
 		{
 			if (_matchmakingGroup == EMatchmakingGroup.CertQA)
@@ -20,14 +20,14 @@ namespace Platform.EOS
 			return "<WeDontCare>";
 		}
 
-		// Token: 0x0600DB01 RID: 56065 RVA: 0x004E8619 File Offset: 0x004E6819
+		// Token: 0x0600DCA2 RID: 56482 RVA: 0x004EF08D File Offset: 0x004ED28D
 		public void Init(IPlatform _owner)
 		{
 			this.owner = _owner;
 			this.owner.Api.ClientApiInitialized += this.apiInitialized;
 		}
 
-		// Token: 0x0600DB02 RID: 56066 RVA: 0x004E8640 File Offset: 0x004E6840
+		// Token: 0x0600DCA3 RID: 56483 RVA: 0x004EF0B4 File Offset: 0x004ED2B4
 		public void Update()
 		{
 			if (!this.GameServerInitialized)
@@ -55,7 +55,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DB03 RID: 56067 RVA: 0x004E86EC File Offset: 0x004E68EC
+		// Token: 0x0600DCA4 RID: 56484 RVA: 0x004EF160 File Offset: 0x004ED360
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void apiInitialized()
 		{
@@ -66,8 +66,8 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x17001B13 RID: 6931
-		// (get) Token: 0x0600DB04 RID: 56068 RVA: 0x004E8748 File Offset: 0x004E6948
+		// Token: 0x17001B85 RID: 7045
+		// (get) Token: 0x0600DCA5 RID: 56485 RVA: 0x004EF1BC File Offset: 0x004ED3BC
 		public bool GameServerInitialized
 		{
 			get
@@ -76,13 +76,13 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DB05 RID: 56069 RVA: 0x0004E124 File Offset: 0x0004C324
+		// Token: 0x0600DCA6 RID: 56486 RVA: 0x0004E53C File Offset: 0x0004C73C
 		public string GetServerPorts()
 		{
 			return string.Empty;
 		}
 
-		// Token: 0x0600DB06 RID: 56070 RVA: 0x004E8754 File Offset: 0x004E6954
+		// Token: 0x0600DCA7 RID: 56487 RVA: 0x004EF1C8 File Offset: 0x004ED3C8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string GetBucketId()
 		{
@@ -99,7 +99,7 @@ namespace Platform.EOS
 			return "<WeDontCare>";
 		}
 
-		// Token: 0x0600DB07 RID: 56071 RVA: 0x004E87A8 File Offset: 0x004E69A8
+		// Token: 0x0600DCA8 RID: 56488 RVA: 0x004EF21C File Offset: 0x004ED41C
 		public void AdvertiseServer(Action _onServerRegistered)
 		{
 			Log.Out("[EOS] Registering server");
@@ -273,7 +273,7 @@ namespace Platform.EOS
 			this.commitSessionToBackend(true, sessionModification);
 		}
 
-		// Token: 0x0600DB08 RID: 56072 RVA: 0x004E8BE8 File Offset: 0x004E6DE8
+		// Token: 0x0600DCA9 RID: 56489 RVA: 0x004EF65C File Offset: 0x004ED85C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void sessionRegisteredCallback(ref UpdateSessionCallbackInfo _callbackData)
 		{
@@ -309,7 +309,7 @@ namespace Platform.EOS
 			this.onServerRegistered = null;
 		}
 
-		// Token: 0x0600DB09 RID: 56073 RVA: 0x004E8D00 File Offset: 0x004E6F00
+		// Token: 0x0600DCAA RID: 56490 RVA: 0x004EF774 File Offset: 0x004ED974
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string getPublicIpFromHostedSession()
 		{
@@ -356,7 +356,7 @@ namespace Platform.EOS
 			return text;
 		}
 
-		// Token: 0x0600DB0A RID: 56074 RVA: 0x004E8E88 File Offset: 0x004E7088
+		// Token: 0x0600DCAB RID: 56491 RVA: 0x004EF8FC File Offset: 0x004EDAFC
 		public void StopServer()
 		{
 			EosHelpers.AssertMainThread("SeHo.Stop");
@@ -393,7 +393,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DB0B RID: 56075 RVA: 0x004E8F90 File Offset: 0x004E7190
+		// Token: 0x0600DCAC RID: 56492 RVA: 0x004EFA04 File Offset: 0x004EDC04
 		public void RegisterUser(ClientInfo _cInfo)
 		{
 			EosHelpers.AssertMainThread("SeHo.Reg");
@@ -428,7 +428,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DB0C RID: 56076 RVA: 0x004E903C File Offset: 0x004E723C
+		// Token: 0x0600DCAD RID: 56493 RVA: 0x004EFAB0 File Offset: 0x004EDCB0
 		public void UnregisterUser(ClientInfo _cInfo)
 		{
 			if (((_cInfo != null) ? _cInfo.CrossplatformId : null) == null)
@@ -455,7 +455,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DB0D RID: 56077 RVA: 0x004E90F8 File Offset: 0x004E72F8
+		// Token: 0x0600DCAE RID: 56494 RVA: 0x004EFB6C File Offset: 0x004EDD6C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SessionModification getSessionModificationHandle()
 		{
@@ -483,7 +483,7 @@ namespace Platform.EOS
 			return sessionModification;
 		}
 
-		// Token: 0x0600DB0E RID: 56078 RVA: 0x004E91B0 File Offset: 0x004E73B0
+		// Token: 0x0600DCAF RID: 56495 RVA: 0x004EFC24 File Offset: 0x004EDE24
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool addAttribute(SessionModification _sessionModificationHandle, string _key, string _value)
 		{
@@ -498,7 +498,7 @@ namespace Platform.EOS
 			}, _value);
 		}
 
-		// Token: 0x0600DB0F RID: 56079 RVA: 0x004E91FC File Offset: 0x004E73FC
+		// Token: 0x0600DCB0 RID: 56496 RVA: 0x004EFC70 File Offset: 0x004EDE70
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool addAttribute(SessionModification _sessionModificationHandle, string _key, int _value)
 		{
@@ -508,7 +508,7 @@ namespace Platform.EOS
 			}, _value.ToString());
 		}
 
-		// Token: 0x0600DB10 RID: 56080 RVA: 0x004E9230 File Offset: 0x004E7430
+		// Token: 0x0600DCB1 RID: 56497 RVA: 0x004EFCA4 File Offset: 0x004EDEA4
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool addAttribute(SessionModification _sessionModificationHandle, string _key, bool _value)
 		{
@@ -518,7 +518,7 @@ namespace Platform.EOS
 			}, _value.ToString());
 		}
 
-		// Token: 0x0600DB11 RID: 56081 RVA: 0x004E9264 File Offset: 0x004E7464
+		// Token: 0x0600DCB2 RID: 56498 RVA: 0x004EFCD8 File Offset: 0x004EDED8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool addBoolsAttribute(SessionModification _sessionModificationHandle, string _values)
 		{
@@ -528,7 +528,7 @@ namespace Platform.EOS
 			}, _values);
 		}
 
-		// Token: 0x0600DB12 RID: 56082 RVA: 0x004E9294 File Offset: 0x004E7494
+		// Token: 0x0600DCB3 RID: 56499 RVA: 0x004EFD08 File Offset: 0x004EDF08
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool addAttributeInternal(SessionModification _sessionModificationHandle, string _key, AttributeDataValue _value, string _valueString)
 		{
@@ -562,7 +562,7 @@ namespace Platform.EOS
 			return false;
 		}
 
-		// Token: 0x0600DB13 RID: 56083 RVA: 0x004E9368 File Offset: 0x004E7568
+		// Token: 0x0600DCB4 RID: 56500 RVA: 0x004EFDDC File Offset: 0x004EDFDC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public bool setBaseAttributes(SessionModification _sessionModificationHandle, GameServerInfo _gameServerInfo)
 		{
@@ -587,7 +587,7 @@ namespace Platform.EOS
 			return true;
 		}
 
-		// Token: 0x0600DB14 RID: 56084 RVA: 0x004E93EB File Offset: 0x004E75EB
+		// Token: 0x0600DCB5 RID: 56501 RVA: 0x004EFE5F File Offset: 0x004EE05F
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SessionModification getUpdateSessionModification()
 		{
@@ -598,7 +598,7 @@ namespace Platform.EOS
 			return this.updatesSessionModification;
 		}
 
-		// Token: 0x0600DB15 RID: 56085 RVA: 0x004E9410 File Offset: 0x004E7610
+		// Token: 0x0600DCB6 RID: 56502 RVA: 0x004EFE84 File Offset: 0x004EE084
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void updateSessionString(GameServerInfo _gameServerInfo, GameInfoString _gameInfoKey)
 		{
@@ -621,7 +621,7 @@ namespace Platform.EOS
 			this.addAttribute(this.getUpdateSessionModification(), _gameInfoKey.ToStringCached<GameInfoString>(), _gameServerInfo.GetValue(_gameInfoKey));
 		}
 
-		// Token: 0x0600DB16 RID: 56086 RVA: 0x004E9484 File Offset: 0x004E7684
+		// Token: 0x0600DCB7 RID: 56503 RVA: 0x004EFEF8 File Offset: 0x004EE0F8
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void updateSessionInt(GameServerInfo _gameServerInfo, GameInfoInt _gameInfoKey)
 		{
@@ -640,7 +640,7 @@ namespace Platform.EOS
 			this.addAttribute(this.getUpdateSessionModification(), _gameInfoKey.ToStringCached<GameInfoInt>(), _gameServerInfo.GetValue(_gameInfoKey));
 		}
 
-		// Token: 0x0600DB17 RID: 56087 RVA: 0x004E94D5 File Offset: 0x004E76D5
+		// Token: 0x0600DCB8 RID: 56504 RVA: 0x004EFF49 File Offset: 0x004EE149
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void updateSessionBool(GameServerInfo _gameServerInfo, GameInfoBool _gameInfoKey)
 		{
@@ -659,7 +659,7 @@ namespace Platform.EOS
 			this.addBoolsAttribute(this.getUpdateSessionModification(), this.getBoolsString(_gameServerInfo));
 		}
 
-		// Token: 0x0600DB18 RID: 56088 RVA: 0x004E9518 File Offset: 0x004E7718
+		// Token: 0x0600DCB9 RID: 56505 RVA: 0x004EFF8C File Offset: 0x004EE18C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string getBoolsString(GameServerInfo _gameServerInfo)
 		{
@@ -675,7 +675,7 @@ namespace Platform.EOS
 			return stringBuilder.ToString();
 		}
 
-		// Token: 0x0600DB19 RID: 56089 RVA: 0x004E9588 File Offset: 0x004E7788
+		// Token: 0x0600DCBA RID: 56506 RVA: 0x004EFFFC File Offset: 0x004EE1FC
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void commitSessionToBackend(bool _initialRegistration, SessionModification _sessionModification)
 		{
@@ -690,7 +690,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DB1A RID: 56090 RVA: 0x004E9610 File Offset: 0x004E7810
+		// Token: 0x0600DCBB RID: 56507 RVA: 0x004F0084 File Offset: 0x004EE284
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void commitSessionCallbackWrapper(ref UpdateSessionCallbackInfo _callbackData)
 		{
@@ -708,7 +708,7 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0600DB1B RID: 56091 RVA: 0x004E966C File Offset: 0x004E786C
+		// Token: 0x0600DCBC RID: 56508 RVA: 0x004F00E0 File Offset: 0x004EE2E0
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void sessionUpdatedCallback(ref UpdateSessionCallbackInfo _callbackData)
 		{
@@ -720,63 +720,63 @@ namespace Platform.EOS
 			}
 		}
 
-		// Token: 0x0400A593 RID: 42387
+		// Token: 0x0400A6C8 RID: 42696
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float sessionUpdateIntervalSecsDefault = 30f;
 
-		// Token: 0x0400A594 RID: 42388
+		// Token: 0x0400A6C9 RID: 42697
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const float sessionUpdateIntervalSecsImportant = 5f;
 
-		// Token: 0x0400A595 RID: 42389
+		// Token: 0x0400A6CA RID: 42698
 		[PublicizedFrom(EAccessModifier.Private)]
 		public const string sessionName = "GameHost";
 
-		// Token: 0x0400A596 RID: 42390
+		// Token: 0x0400A6CB RID: 42699
 		public const string DefaultMatchmakingGroupTag = "<WeDontCare>";
 
-		// Token: 0x0400A597 RID: 42391
+		// Token: 0x0400A6CC RID: 42700
 		public const string EmptyStringAttributeValue = "##EMPTY##";
 
-		// Token: 0x0400A598 RID: 42392
+		// Token: 0x0400A6CD RID: 42701
 		public const string LowerCaseAttributeSeparator = "~$#$~";
 
-		// Token: 0x0400A599 RID: 42393
+		// Token: 0x0400A6CE RID: 42702
 		public const string BoolsAttributeName = "-BoolValues-";
 
-		// Token: 0x0400A59A RID: 42394
+		// Token: 0x0400A6CF RID: 42703
 		[PublicizedFrom(EAccessModifier.Private)]
 		public IPlatform owner;
 
-		// Token: 0x0400A59B RID: 42395
+		// Token: 0x0400A6D0 RID: 42704
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SessionsInterface sessionsInterface;
 
-		// Token: 0x0400A59C RID: 42396
+		// Token: 0x0400A6D1 RID: 42705
 		[PublicizedFrom(EAccessModifier.Private)]
 		public string sessionId;
 
-		// Token: 0x0400A59D RID: 42397
+		// Token: 0x0400A6D2 RID: 42706
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly CountdownTimer commitBackendCountdown = new CountdownTimer(30f, false);
 
-		// Token: 0x0400A59E RID: 42398
+		// Token: 0x0400A6D3 RID: 42707
 		[PublicizedFrom(EAccessModifier.Private)]
 		public SessionModification updatesSessionModification;
 
-		// Token: 0x0400A59F RID: 42399
+		// Token: 0x0400A6D4 RID: 42708
 		[PublicizedFrom(EAccessModifier.Private)]
 		public Action onServerRegistered;
 
-		// Token: 0x0400A5A0 RID: 42400
+		// Token: 0x0400A6D5 RID: 42709
 		[PublicizedFrom(EAccessModifier.Private)]
 		public readonly HashSet<string> registeredAttributes = new HashSet<string>();
 
-		// Token: 0x02001CEC RID: 7404
+		// Token: 0x02001D14 RID: 7444
 		[PublicizedFrom(EAccessModifier.Private)]
 		public class SessionModificationCallbackArgs
 		{
-			// Token: 0x0600DB1E RID: 56094 RVA: 0x004E971F File Offset: 0x004E791F
+			// Token: 0x0600DCBF RID: 56511 RVA: 0x004F0193 File Offset: 0x004EE393
 			public SessionModificationCallbackArgs(SessionModification _sessionModification, bool _isInitialRegistration, OnUpdateSessionCallback _callback)
 			{
 				this.SessionModification = _sessionModification;
@@ -784,13 +784,13 @@ namespace Platform.EOS
 				this.Callback = _callback;
 			}
 
-			// Token: 0x0400A5A1 RID: 42401
+			// Token: 0x0400A6D6 RID: 42710
 			public SessionModification SessionModification;
 
-			// Token: 0x0400A5A2 RID: 42402
+			// Token: 0x0400A6D7 RID: 42711
 			public readonly bool IsInitialRegistration;
 
-			// Token: 0x0400A5A3 RID: 42403
+			// Token: 0x0400A6D8 RID: 42712
 			public readonly OnUpdateSessionCallback Callback;
 		}
 	}

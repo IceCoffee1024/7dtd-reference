@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000546 RID: 1350
+// Token: 0x0200054B RID: 1355
 public class POIBoundsSideHelper : MonoBehaviour
 {
-	// Token: 0x06002C3E RID: 11326 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002C68 RID: 11368 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
 	}
 
-	// Token: 0x06002C3F RID: 11327 RVA: 0x001180E2 File Offset: 0x001162E2
+	// Token: 0x06002C69 RID: 11369 RVA: 0x00119156 File Offset: 0x00117356
 	public void Setup()
 	{
 		this.MeshRenderer = base.GetComponent<MeshRenderer>();
 	}
 
-	// Token: 0x06002C40 RID: 11328 RVA: 0x001180F0 File Offset: 0x001162F0
+	// Token: 0x06002C6A RID: 11370 RVA: 0x00119164 File Offset: 0x00117364
 	public void SetSize(Vector3 size)
 	{
 		switch (this.SideType)
@@ -42,7 +42,7 @@ public class POIBoundsSideHelper : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002C41 RID: 11329 RVA: 0x00118236 File Offset: 0x00116436
+	// Token: 0x06002C6B RID: 11371 RVA: 0x001192AA File Offset: 0x001174AA
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnTriggerEnter(Collider other)
 	{
@@ -52,7 +52,7 @@ public class POIBoundsSideHelper : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002C42 RID: 11330 RVA: 0x00118253 File Offset: 0x00116453
+	// Token: 0x06002C6C RID: 11372 RVA: 0x001192C7 File Offset: 0x001174C7
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnTriggerExit(Collider other)
 	{
@@ -62,25 +62,25 @@ public class POIBoundsSideHelper : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040021F7 RID: 8695
+	// Token: 0x04002229 RID: 8745
 	public POIBoundsSideHelper.SideTypes SideType;
 
-	// Token: 0x040021F8 RID: 8696
+	// Token: 0x0400222A RID: 8746
 	public POIBoundsHelper Owner;
 
-	// Token: 0x040021F9 RID: 8697
+	// Token: 0x0400222B RID: 8747
 	public MeshRenderer MeshRenderer;
 
-	// Token: 0x02000547 RID: 1351
+	// Token: 0x0200054C RID: 1356
 	public enum SideTypes
 	{
-		// Token: 0x040021FB RID: 8699
+		// Token: 0x0400222D RID: 8749
 		PositiveX,
-		// Token: 0x040021FC RID: 8700
+		// Token: 0x0400222E RID: 8750
 		NegativeX,
-		// Token: 0x040021FD RID: 8701
+		// Token: 0x0400222F RID: 8751
 		PositiveZ,
-		// Token: 0x040021FE RID: 8702
+		// Token: 0x04002230 RID: 8752
 		NegativeZ
 	}
 }

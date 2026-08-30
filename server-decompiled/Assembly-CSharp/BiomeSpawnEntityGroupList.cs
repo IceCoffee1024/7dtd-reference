@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000AC7 RID: 2759
+// Token: 0x02000AD8 RID: 2776
 public class BiomeSpawnEntityGroupList
 {
-	// Token: 0x06005297 RID: 21143 RVA: 0x001F969C File Offset: 0x001F789C
+	// Token: 0x0600531D RID: 21277 RVA: 0x001FC134 File Offset: 0x001FA334
 	public BiomeSpawnEntityGroupData Find(int _idHash)
 	{
 		for (int i = 0; i < this.list.Count; i++)
@@ -17,6 +17,6 @@ public class BiomeSpawnEntityGroupList
 		return null;
 	}
 
-	// Token: 0x04004030 RID: 16432
+	// Token: 0x040040C1 RID: 16577
 	public List<BiomeSpawnEntityGroupData> list = new List<BiomeSpawnEntityGroupData>();
 }

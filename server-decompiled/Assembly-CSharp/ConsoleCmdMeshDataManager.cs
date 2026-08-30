@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000244 RID: 580
+// Token: 0x02000248 RID: 584
 [Preserve]
 public class ConsoleCmdMeshDataManager : ConsoleCmdAbstract
 {
-	// Token: 0x170001BD RID: 445
-	// (get) Token: 0x06001168 RID: 4456 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x170001BE RID: 446
+	// (get) Token: 0x0600117A RID: 4474 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -17,8 +17,8 @@ public class ConsoleCmdMeshDataManager : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x170001BE RID: 446
-	// (get) Token: 0x06001169 RID: 4457 RVA: 0x0006110A File Offset: 0x0005F30A
+	// Token: 0x170001BF RID: 447
+	// (get) Token: 0x0600117B RID: 4475 RVA: 0x00061652 File Offset: 0x0005F852
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -27,8 +27,8 @@ public class ConsoleCmdMeshDataManager : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x170001BF RID: 447
-	// (get) Token: 0x0600116A RID: 4458 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x170001C0 RID: 448
+	// (get) Token: 0x0600117C RID: 4476 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -37,8 +37,8 @@ public class ConsoleCmdMeshDataManager : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x170001C0 RID: 448
-	// (get) Token: 0x0600116B RID: 4459 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// Token: 0x170001C1 RID: 449
+	// (get) Token: 0x0600117D RID: 4477 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -47,8 +47,8 @@ public class ConsoleCmdMeshDataManager : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x170001C1 RID: 449
-	// (get) Token: 0x0600116C RID: 4460 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// Token: 0x170001C2 RID: 450
+	// (get) Token: 0x0600117E RID: 4478 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -57,28 +57,28 @@ public class ConsoleCmdMeshDataManager : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600116D RID: 4461 RVA: 0x0006E604 File Offset: 0x0006C804
+	// Token: 0x0600117F RID: 4479 RVA: 0x0006EC60 File Offset: 0x0006CE60
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "meshdatamanager", "mdm" };
 	}
 
-	// Token: 0x0600116E RID: 4462 RVA: 0x0006E61C File Offset: 0x0006C81C
+	// Token: 0x06001180 RID: 4480 RVA: 0x0006EC78 File Offset: 0x0006CE78
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Toggle the MeshDataManager";
 	}
 
-	// Token: 0x0600116F RID: 4463 RVA: 0x0006E623 File Offset: 0x0006C823
+	// Token: 0x06001181 RID: 4481 RVA: 0x0006EC7F File Offset: 0x0006CE7F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "mdm";
 	}
 
-	// Token: 0x06001170 RID: 4464 RVA: 0x0006E62A File Offset: 0x0006C82A
+	// Token: 0x06001182 RID: 4482 RVA: 0x0006EC86 File Offset: 0x0006CE86
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		MeshDataManager.Enabled = !MeshDataManager.Enabled;

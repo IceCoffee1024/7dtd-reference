@@ -2,29 +2,29 @@
 using System.IO;
 using System.Runtime.CompilerServices;
 
-// Token: 0x02000585 RID: 1413
+// Token: 0x0200058A RID: 1418
 public class TransactionalInventory : ILockTarget
 {
-	// Token: 0x170004F2 RID: 1266
-	// (get) Token: 0x06002E4C RID: 11852 RVA: 0x001262D7 File Offset: 0x001244D7
-	// (set) Token: 0x06002E4D RID: 11853 RVA: 0x001262DF File Offset: 0x001244DF
+	// Token: 0x170004F8 RID: 1272
+	// (get) Token: 0x06002E7A RID: 11898 RVA: 0x001273C7 File Offset: 0x001255C7
+	// (set) Token: 0x06002E7B RID: 11899 RVA: 0x001273CF File Offset: 0x001255CF
 	public bool DataReadyLocally
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170004F3 RID: 1267
-	// (get) Token: 0x06002E4E RID: 11854 RVA: 0x001262E8 File Offset: 0x001244E8
-	// (set) Token: 0x06002E4F RID: 11855 RVA: 0x001262F0 File Offset: 0x001244F0
+	// Token: 0x170004F9 RID: 1273
+	// (get) Token: 0x06002E7C RID: 11900 RVA: 0x001273D8 File Offset: 0x001255D8
+	// (set) Token: 0x06002E7D RID: 11901 RVA: 0x001273E0 File Offset: 0x001255E0
 	public Guid Key
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170004F4 RID: 1268
-	// (get) Token: 0x06002E50 RID: 11856 RVA: 0x001262F9 File Offset: 0x001244F9
+	// Token: 0x170004FA RID: 1274
+	// (get) Token: 0x06002E7E RID: 11902 RVA: 0x001273E9 File Offset: 0x001255E9
 	public int Hash
 	{
 		get
@@ -38,8 +38,8 @@ public class TransactionalInventory : ILockTarget
 		}
 	}
 
-	// Token: 0x170004F5 RID: 1269
-	// (get) Token: 0x06002E51 RID: 11857 RVA: 0x00126321 File Offset: 0x00124521
+	// Token: 0x170004FB RID: 1275
+	// (get) Token: 0x06002E7F RID: 11903 RVA: 0x00127411 File Offset: 0x00125611
 	public TransactionalInventory.KeyHashPair KeyHash
 	{
 		get
@@ -48,8 +48,8 @@ public class TransactionalInventory : ILockTarget
 		}
 	}
 
-	// Token: 0x170004F6 RID: 1270
-	// (get) Token: 0x06002E52 RID: 11858 RVA: 0x00126334 File Offset: 0x00124534
+	// Token: 0x170004FC RID: 1276
+	// (get) Token: 0x06002E80 RID: 11904 RVA: 0x00127424 File Offset: 0x00125624
 	public bool NeedsSaving
 	{
 		get
@@ -58,8 +58,8 @@ public class TransactionalInventory : ILockTarget
 		}
 	}
 
-	// Token: 0x170004F7 RID: 1271
-	// (get) Token: 0x06002E53 RID: 11859 RVA: 0x0012633C File Offset: 0x0012453C
+	// Token: 0x170004FD RID: 1277
+	// (get) Token: 0x06002E81 RID: 11905 RVA: 0x0012742C File Offset: 0x0012562C
 	public int Length
 	{
 		get
@@ -68,8 +68,8 @@ public class TransactionalInventory : ILockTarget
 		}
 	}
 
-	// Token: 0x170004F8 RID: 1272
-	// (get) Token: 0x06002E54 RID: 11860 RVA: 0x00046C7A File Offset: 0x00044E7A
+	// Token: 0x170004FE RID: 1278
+	// (get) Token: 0x06002E82 RID: 11906 RVA: 0x00046EDA File Offset: 0x000450DA
 	public LockTargetType LockTargetType
 	{
 		get
@@ -78,13 +78,13 @@ public class TransactionalInventory : ILockTarget
 		}
 	}
 
-	// Token: 0x06002E55 RID: 11861 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x06002E83 RID: 11907 RVA: 0x00010E62 File Offset: 0x0000F062
 	public bool IsSharedLock(ushort _channel)
 	{
 		return false;
 	}
 
-	// Token: 0x06002E56 RID: 11862 RVA: 0x00126346 File Offset: 0x00124546
+	// Token: 0x06002E84 RID: 11908 RVA: 0x00127436 File Offset: 0x00125636
 	public TransactionalInventory(Guid _key, ItemStack[] _items, Guid _managerToken)
 	{
 		this.DataReadyLocally = true;
@@ -93,7 +93,7 @@ public class TransactionalInventory : ILockTarget
 		InventoryManager.Instance.ValidateToken(_managerToken);
 	}
 
-	// Token: 0x06002E57 RID: 11863 RVA: 0x0012637D File Offset: 0x0012457D
+	// Token: 0x06002E85 RID: 11909 RVA: 0x0012746D File Offset: 0x0012566D
 	public ItemStack GetItemReadonly(int _slot)
 	{
 		if (_slot > this.items.Length)
@@ -103,13 +103,13 @@ public class TransactionalInventory : ILockTarget
 		return this.items[_slot].Clone();
 	}
 
-	// Token: 0x06002E58 RID: 11864 RVA: 0x00126399 File Offset: 0x00124599
+	// Token: 0x06002E86 RID: 11910 RVA: 0x00127489 File Offset: 0x00125689
 	public ItemStack[] GetItemsReadonly()
 	{
 		return ItemStack.Clone(this.items);
 	}
 
-	// Token: 0x06002E59 RID: 11865 RVA: 0x001263A8 File Offset: 0x001245A8
+	// Token: 0x06002E87 RID: 11911 RVA: 0x00127498 File Offset: 0x00125698
 	public void ResizeInventory(int _size, Guid _managerToken)
 	{
 		if (!InventoryManager.Instance.ValidateToken(_managerToken))
@@ -123,7 +123,7 @@ public class TransactionalInventory : ILockTarget
 		Array.Copy(this.items, 0, this.items, 0, (_size > this.items.Length) ? this.items.Length : _size);
 	}
 
-	// Token: 0x06002E5A RID: 11866 RVA: 0x00126404 File Offset: 0x00124604
+	// Token: 0x06002E88 RID: 11912 RVA: 0x001274F4 File Offset: 0x001256F4
 	public void UpdateInventory(ItemStack[] _items, Guid _managerToken)
 	{
 		if (!InventoryManager.Instance.ValidateToken(_managerToken))
@@ -155,7 +155,7 @@ public class TransactionalInventory : ILockTarget
 		this.inventoryRequestComplete = null;
 	}
 
-	// Token: 0x06002E5B RID: 11867 RVA: 0x0012648B File Offset: 0x0012468B
+	// Token: 0x06002E89 RID: 11913 RVA: 0x0012757B File Offset: 0x0012577B
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool CheckInventoryReady()
 	{
@@ -172,7 +172,7 @@ public class TransactionalInventory : ILockTarget
 		return true;
 	}
 
-	// Token: 0x06002E5C RID: 11868 RVA: 0x001264BC File Offset: 0x001246BC
+	// Token: 0x06002E8A RID: 11914 RVA: 0x001275AC File Offset: 0x001257AC
 	public bool IsEmpty()
 	{
 		if (!this.CheckInventoryReady())
@@ -189,7 +189,7 @@ public class TransactionalInventory : ILockTarget
 		return true;
 	}
 
-	// Token: 0x06002E5D RID: 11869 RVA: 0x001264F8 File Offset: 0x001246F8
+	// Token: 0x06002E8B RID: 11915 RVA: 0x001275E8 File Offset: 0x001257E8
 	public int HasItem(ItemValue _itemValue)
 	{
 		if (!this.CheckInventoryReady())
@@ -210,7 +210,7 @@ public class TransactionalInventory : ILockTarget
 		return -1;
 	}
 
-	// Token: 0x06002E5E RID: 11870 RVA: 0x0012654C File Offset: 0x0012474C
+	// Token: 0x06002E8C RID: 11916 RVA: 0x0012763C File Offset: 0x0012583C
 	public bool TrySetItem(int _idx, ItemStack _stack)
 	{
 		if (!this.CheckInventoryReady())
@@ -227,7 +227,7 @@ public class TransactionalInventory : ILockTarget
 		return true;
 	}
 
-	// Token: 0x06002E5F RID: 11871 RVA: 0x00126598 File Offset: 0x00124798
+	// Token: 0x06002E8D RID: 11917 RVA: 0x00127688 File Offset: 0x00125888
 	public bool TryAddItem(ItemStack _stack)
 	{
 		if (!this.CheckInventoryReady())
@@ -246,7 +246,7 @@ public class TransactionalInventory : ILockTarget
 		return false;
 	}
 
-	// Token: 0x06002E60 RID: 11872 RVA: 0x001265F0 File Offset: 0x001247F0
+	// Token: 0x06002E8E RID: 11918 RVA: 0x001276E0 File Offset: 0x001258E0
 	[return: TupleElementNames(new string[] { "success", "stacked", "total" })]
 	public ValueTuple<bool, int, int> TryStackItem(int _startIndex, ItemStack _stack)
 	{
@@ -276,25 +276,25 @@ public class TransactionalInventory : ILockTarget
 		return new ValueTuple<bool, int, int>(true, count - _stack.count, count);
 	}
 
-	// Token: 0x06002E61 RID: 11873 RVA: 0x0012669B File Offset: 0x0012489B
+	// Token: 0x06002E8F RID: 11919 RVA: 0x0012778B File Offset: 0x0012598B
 	public bool TryClearItem(int _idx)
 	{
 		return this.TrySetItem(_idx, ItemStack.Empty);
 	}
 
-	// Token: 0x06002E62 RID: 11874 RVA: 0x000876FD File Offset: 0x000858FD
+	// Token: 0x06002E90 RID: 11920 RVA: 0x00087DB8 File Offset: 0x00085FB8
 	public bool ClearAllItems()
 	{
 		throw new NotImplementedException();
 	}
 
-	// Token: 0x06002E63 RID: 11875 RVA: 0x000876FD File Offset: 0x000858FD
+	// Token: 0x06002E91 RID: 11921 RVA: 0x00087DB8 File Offset: 0x00085FB8
 	public void Rollback()
 	{
 		throw new NotImplementedException();
 	}
 
-	// Token: 0x06002E64 RID: 11876 RVA: 0x001266A9 File Offset: 0x001248A9
+	// Token: 0x06002E92 RID: 11922 RVA: 0x00127799 File Offset: 0x00125999
 	public void StartTransaction(Guid _managerToken)
 	{
 		if (!InventoryManager.Instance.ValidateToken(_managerToken))
@@ -304,7 +304,7 @@ public class TransactionalInventory : ILockTarget
 		this.buffer = this.GetItemsReadonly();
 	}
 
-	// Token: 0x06002E65 RID: 11877 RVA: 0x001266C5 File Offset: 0x001248C5
+	// Token: 0x06002E93 RID: 11923 RVA: 0x001277B5 File Offset: 0x001259B5
 	public void FinalizeTransaction(bool _success, Guid _managerToken)
 	{
 		if (!InventoryManager.Instance.ValidateToken(_managerToken))
@@ -319,7 +319,7 @@ public class TransactionalInventory : ILockTarget
 		this.buffer = null;
 	}
 
-	// Token: 0x06002E66 RID: 11878 RVA: 0x001266F4 File Offset: 0x001248F4
+	// Token: 0x06002E94 RID: 11924 RVA: 0x001277E4 File Offset: 0x001259E4
 	public bool ProcessOperation(InventoryOperation _operation, Guid _managerToken)
 	{
 		if (!InventoryManager.Instance.ValidateToken(_managerToken))
@@ -339,7 +339,7 @@ public class TransactionalInventory : ILockTarget
 		}
 	}
 
-	// Token: 0x06002E67 RID: 11879 RVA: 0x00126744 File Offset: 0x00124944
+	// Token: 0x06002E95 RID: 11925 RVA: 0x00127834 File Offset: 0x00125A34
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool ProcessSetAbsolute(InventoryOperation _op)
 	{
@@ -359,7 +359,7 @@ public class TransactionalInventory : ILockTarget
 		return true;
 	}
 
-	// Token: 0x06002E68 RID: 11880 RVA: 0x001267A0 File Offset: 0x001249A0
+	// Token: 0x06002E96 RID: 11926 RVA: 0x00127890 File Offset: 0x00125A90
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool ProcessSetRelative(InventoryOperation _op)
 	{
@@ -403,7 +403,7 @@ public class TransactionalInventory : ILockTarget
 		return true;
 	}
 
-	// Token: 0x06002E69 RID: 11881 RVA: 0x00126898 File Offset: 0x00124A98
+	// Token: 0x06002E97 RID: 11927 RVA: 0x00127988 File Offset: 0x00125B88
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool ProcessSetAll(InventoryOperation _op)
 	{
@@ -426,35 +426,35 @@ public class TransactionalInventory : ILockTarget
 		return true;
 	}
 
-	// Token: 0x06002E6A RID: 11882 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x06002E98 RID: 11928 RVA: 0x00020021 File Offset: 0x0001E221
 	public bool CanLockOnServer(int _lockingPlayerID, ILockContext _context, ushort _channel)
 	{
 		return true;
 	}
 
-	// Token: 0x06002E6B RID: 11883 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x06002E99 RID: 11929 RVA: 0x00020021 File Offset: 0x0001E221
 	public bool CanLockLocally(ILockContext _context, ushort _channel)
 	{
 		return true;
 	}
 
-	// Token: 0x06002E6C RID: 11884 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002E9A RID: 11930 RVA: 0x000027FC File Offset: 0x000009FC
 	public void OnLockedServer(bool _success, int _lockingPlayerID, ILockContext _context, ushort _channel)
 	{
 	}
 
-	// Token: 0x06002E6D RID: 11885 RVA: 0x0012690D File Offset: 0x00124B0D
+	// Token: 0x06002E9B RID: 11931 RVA: 0x001279FD File Offset: 0x00125BFD
 	public void OnLockedLocal(bool _success, ILockContext _context, ushort _channel)
 	{
 		throw new NotImplementedException("[TransactionalInventory] This class is designed to be locked with the custom UI action RequestInventoryAndShowUI");
 	}
 
-	// Token: 0x06002E6E RID: 11886 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06002E9C RID: 11932 RVA: 0x000027FC File Offset: 0x000009FC
 	public void OnUnlockedServer(int _unlockingPlayerId, ushort _channel)
 	{
 	}
 
-	// Token: 0x06002E6F RID: 11887 RVA: 0x00126919 File Offset: 0x00124B19
+	// Token: 0x06002E9D RID: 11933 RVA: 0x00127A09 File Offset: 0x00125C09
 	public void RequestInventoryAndShowUI(bool _success, Action _showUi)
 	{
 		if (!_success)
@@ -471,41 +471,41 @@ public class TransactionalInventory : ILockTarget
 		_showUi();
 	}
 
-	// Token: 0x040023CE RID: 9166
+	// Token: 0x04002402 RID: 9218
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack[] items;
 
-	// Token: 0x040023CF RID: 9167
+	// Token: 0x04002403 RID: 9219
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Action inventoryRequestComplete;
 
-	// Token: 0x040023D0 RID: 9168
+	// Token: 0x04002404 RID: 9220
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemStack[] buffer;
 
-	// Token: 0x040023D1 RID: 9169
+	// Token: 0x04002405 RID: 9221
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool hashDirty = true;
 
-	// Token: 0x040023D2 RID: 9170
+	// Token: 0x04002406 RID: 9222
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int hash;
 
-	// Token: 0x040023D3 RID: 9171
+	// Token: 0x04002407 RID: 9223
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool needsSaving = true;
 
-	// Token: 0x02000586 RID: 1414
+	// Token: 0x0200058B RID: 1419
 	public struct KeyHashPair
 	{
-		// Token: 0x06002E70 RID: 11888 RVA: 0x00126950 File Offset: 0x00124B50
+		// Token: 0x06002E9E RID: 11934 RVA: 0x00127A40 File Offset: 0x00125C40
 		public KeyHashPair(Guid _key, int _hash)
 		{
 			this.Key = _key;
 			this.Hash = _hash;
 		}
 
-		// Token: 0x06002E71 RID: 11889 RVA: 0x00126960 File Offset: 0x00124B60
+		// Token: 0x06002E9F RID: 11935 RVA: 0x00127A50 File Offset: 0x00125C50
 		public static TransactionalInventory.KeyHashPair Read(BinaryReader _br)
 		{
 			Guid guid = StreamUtils.ReadGuid(_br);
@@ -513,17 +513,17 @@ public class TransactionalInventory : ILockTarget
 			return new TransactionalInventory.KeyHashPair(guid, num);
 		}
 
-		// Token: 0x06002E72 RID: 11890 RVA: 0x00126980 File Offset: 0x00124B80
+		// Token: 0x06002EA0 RID: 11936 RVA: 0x00127A70 File Offset: 0x00125C70
 		public void Write(BinaryWriter _bw)
 		{
 			StreamUtils.Write(_bw, this.Key);
 			_bw.Write(this.Hash);
 		}
 
-		// Token: 0x040023D4 RID: 9172
+		// Token: 0x04002408 RID: 9224
 		public Guid Key;
 
-		// Token: 0x040023D5 RID: 9173
+		// Token: 0x04002409 RID: 9225
 		public int Hash;
 	}
 }

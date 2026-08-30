@@ -1,11 +1,11 @@
 ﻿using System;
 
-// Token: 0x020013A4 RID: 5028
+// Token: 0x020013BF RID: 5055
 public class CountdownTimer
 {
-	// Token: 0x1700128D RID: 4749
-	// (get) Token: 0x06009E08 RID: 40456 RVA: 0x003BA04F File Offset: 0x003B824F
-	// (set) Token: 0x06009E09 RID: 40457 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x170012C6 RID: 4806
+	// (get) Token: 0x06009F05 RID: 40709 RVA: 0x003BF393 File Offset: 0x003BD593
+	// (set) Token: 0x06009F06 RID: 40710 RVA: 0x000027FC File Offset: 0x000009FC
 	public long ElapsedMilliseconds
 	{
 		get
@@ -18,7 +18,7 @@ public class CountdownTimer
 		}
 	}
 
-	// Token: 0x06009E0A RID: 40458 RVA: 0x003BA05D File Offset: 0x003B825D
+	// Token: 0x06009F07 RID: 40711 RVA: 0x003BF3A1 File Offset: 0x003BD5A1
 	public CountdownTimer(float _seconds, bool _start = true)
 	{
 		this.ms = (long)((int)(_seconds * 1000f));
@@ -32,13 +32,13 @@ public class CountdownTimer
 		this.Reset();
 	}
 
-	// Token: 0x06009E0B RID: 40459 RVA: 0x003BA098 File Offset: 0x003B8298
+	// Token: 0x06009F08 RID: 40712 RVA: 0x003BF3DC File Offset: 0x003BD5DC
 	public void SetTimeout(float _seconds)
 	{
 		this.ms = (long)((int)(_seconds * 1000f));
 	}
 
-	// Token: 0x06009E0C RID: 40460 RVA: 0x003BA0AC File Offset: 0x003B82AC
+	// Token: 0x06009F09 RID: 40713 RVA: 0x003BF3F0 File Offset: 0x003BD5F0
 	public bool HasPassed()
 	{
 		bool flag = false;
@@ -54,20 +54,20 @@ public class CountdownTimer
 		return flag;
 	}
 
-	// Token: 0x06009E0D RID: 40461 RVA: 0x003BA103 File Offset: 0x003B8303
+	// Token: 0x06009F0A RID: 40714 RVA: 0x003BF447 File Offset: 0x003BD647
 	public void SetPassedIn(float _seconds)
 	{
 		this.offset = (long)((float)this.ms - _seconds * 1000f) - this.ElapsedMilliseconds;
 	}
 
-	// Token: 0x06009E0E RID: 40462 RVA: 0x003BA124 File Offset: 0x003B8324
+	// Token: 0x06009F0B RID: 40715 RVA: 0x003BF468 File Offset: 0x003BD668
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
 		this.Elapsed = DateTime.Now.Subtract(this.StartTime);
 	}
 
-	// Token: 0x06009E0F RID: 40463 RVA: 0x003BA14A File Offset: 0x003B834A
+	// Token: 0x06009F0C RID: 40716 RVA: 0x003BF48E File Offset: 0x003BD68E
 	public void Reset()
 	{
 		this.Elapsed = TimeSpan.Zero;
@@ -75,34 +75,34 @@ public class CountdownTimer
 		this.IsRunning = false;
 	}
 
-	// Token: 0x06009E10 RID: 40464 RVA: 0x003BA169 File Offset: 0x003B8369
+	// Token: 0x06009F0D RID: 40717 RVA: 0x003BF4AD File Offset: 0x003BD6AD
 	public void ResetAndRestart()
 	{
 		this.Reset();
 		this.IsRunning = true;
 	}
 
-	// Token: 0x06009E11 RID: 40465 RVA: 0x003BA178 File Offset: 0x003B8378
+	// Token: 0x06009F0E RID: 40718 RVA: 0x003BF4BC File Offset: 0x003BD6BC
 	public void Stop()
 	{
 		this.IsRunning = false;
 	}
 
-	// Token: 0x040077A0 RID: 30624
+	// Token: 0x04007879 RID: 30841
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long ms;
 
-	// Token: 0x040077A1 RID: 30625
+	// Token: 0x0400787A RID: 30842
 	[PublicizedFrom(EAccessModifier.Private)]
 	public long offset;
 
-	// Token: 0x040077A2 RID: 30626
+	// Token: 0x0400787B RID: 30843
 	public TimeSpan Elapsed;
 
-	// Token: 0x040077A3 RID: 30627
+	// Token: 0x0400787C RID: 30844
 	public bool IsRunning;
 
-	// Token: 0x040077A4 RID: 30628
+	// Token: 0x0400787D RID: 30845
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DateTime StartTime;
 }

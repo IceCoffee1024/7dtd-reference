@@ -4,11 +4,11 @@ using Audio;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x0200059F RID: 1439
+// Token: 0x020005A4 RID: 1444
 [Preserve]
 public class ItemActionDynamicMelee : ItemActionDynamic
 {
-	// Token: 0x06002F2B RID: 12075 RVA: 0x0012D1D0 File Offset: 0x0012B3D0
+	// Token: 0x06002F59 RID: 12121 RVA: 0x0012E240 File Offset: 0x0012C440
 	public override void ExecuteAction(ItemActionData _actionData, bool _bReleased)
 	{
 		ItemActionDynamicMelee.ItemActionDynamicMeleeData itemActionDynamicMeleeData = _actionData as ItemActionDynamicMelee.ItemActionDynamicMeleeData;
@@ -93,7 +93,7 @@ public class ItemActionDynamicMelee : ItemActionDynamic
 		itemActionDynamicMeleeData.HasExecuted = true;
 	}
 
-	// Token: 0x06002F2C RID: 12076 RVA: 0x0012D430 File Offset: 0x0012B630
+	// Token: 0x06002F5A RID: 12122 RVA: 0x0012E4A0 File Offset: 0x0012C6A0
 	public override bool IsActionRunning(ItemActionData _actionData)
 	{
 		bool flag = false;
@@ -105,7 +105,7 @@ public class ItemActionDynamicMelee : ItemActionDynamic
 		return flag;
 	}
 
-	// Token: 0x06002F2D RID: 12077 RVA: 0x0012D4A0 File Offset: 0x0012B6A0
+	// Token: 0x06002F5B RID: 12123 RVA: 0x0012E510 File Offset: 0x0012C710
 	public override void OnHoldingUpdate(ItemActionData _actionData)
 	{
 		ItemActionDynamicMelee.ItemActionDynamicMeleeData itemActionDynamicMeleeData = _actionData as ItemActionDynamicMelee.ItemActionDynamicMeleeData;
@@ -152,7 +152,7 @@ public class ItemActionDynamicMelee : ItemActionDynamic
 		}
 	}
 
-	// Token: 0x06002F2E RID: 12078 RVA: 0x0012D630 File Offset: 0x0012B830
+	// Token: 0x06002F5C RID: 12124 RVA: 0x0012E6A0 File Offset: 0x0012C8A0
 	public void SetAttackFinished(ItemActionData _actionData)
 	{
 		ItemActionDynamicMelee.ItemActionDynamicMeleeData itemActionDynamicMeleeData = _actionData as ItemActionDynamicMelee.ItemActionDynamicMeleeData;
@@ -179,7 +179,7 @@ public class ItemActionDynamicMelee : ItemActionDynamic
 		}
 	}
 
-	// Token: 0x06002F2F RID: 12079 RVA: 0x0012D6D4 File Offset: 0x0012B8D4
+	// Token: 0x06002F5D RID: 12125 RVA: 0x0012E744 File Offset: 0x0012C944
 	public override bool GrazeCast(ItemActionDynamic.ItemActionDynamicData _actionData, float normalizedClipTime = -1f)
 	{
 		EntityAlive holdingEntity = _actionData.invData.holdingEntity;
@@ -205,7 +205,7 @@ public class ItemActionDynamicMelee : ItemActionDynamic
 		return flag;
 	}
 
-	// Token: 0x06002F30 RID: 12080 RVA: 0x0012D7C4 File Offset: 0x0012B9C4
+	// Token: 0x06002F5E RID: 12126 RVA: 0x0012E834 File Offset: 0x0012CA34
 	public override bool Raycast(ItemActionDynamic.ItemActionDynamicData _actionData)
 	{
 		EntityAlive holdingEntity = _actionData.invData.holdingEntity;
@@ -269,7 +269,7 @@ public class ItemActionDynamicMelee : ItemActionDynamic
 		return true;
 	}
 
-	// Token: 0x06002F31 RID: 12081 RVA: 0x0012DA08 File Offset: 0x0012BC08
+	// Token: 0x06002F5F RID: 12127 RVA: 0x0012EA78 File Offset: 0x0012CC78
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool checkHarvesting(ItemActionData _actionData, out ItemActionAttack.AttackHitInfo myAttackHitInfo)
 	{
@@ -340,7 +340,7 @@ public class ItemActionDynamicMelee : ItemActionDynamic
 		return false;
 	}
 
-	// Token: 0x06002F32 RID: 12082 RVA: 0x0012DC1C File Offset: 0x0012BE1C
+	// Token: 0x06002F60 RID: 12128 RVA: 0x0012EC8C File Offset: 0x0012CE8C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool canStartAttack(ItemActionDynamicMelee.ItemActionDynamicMeleeData _actionData)
 	{
@@ -405,20 +405,20 @@ public class ItemActionDynamicMelee : ItemActionDynamic
 		return true;
 	}
 
-	// Token: 0x06002F33 RID: 12083 RVA: 0x0012DE3C File Offset: 0x0012C03C
+	// Token: 0x06002F61 RID: 12129 RVA: 0x0012EEAC File Offset: 0x0012D0AC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool canContinueAttack(ItemActionDynamicMelee.ItemActionDynamicMeleeData _actionData)
 	{
 		return _actionData.invData.holdingEntity.IsAttackValid();
 	}
 
-	// Token: 0x06002F34 RID: 12084 RVA: 0x0012DE4E File Offset: 0x0012C04E
+	// Token: 0x06002F62 RID: 12130 RVA: 0x0012EEBE File Offset: 0x0012D0BE
 	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionDynamicMelee.ItemActionDynamicMeleeData(_invData, _indexInEntityOfAction);
 	}
 
-	// Token: 0x06002F35 RID: 12085 RVA: 0x0012DE58 File Offset: 0x0012C058
+	// Token: 0x06002F63 RID: 12131 RVA: 0x0012EEC8 File Offset: 0x0012D0C8
 	public override ItemClass.EnumCrosshairType GetCrosshairType(ItemActionData _actionData)
 	{
 		EntityPlayerLocal entityPlayerLocal = _actionData.invData.holdingEntity as EntityPlayerLocal;
@@ -433,7 +433,7 @@ public class ItemActionDynamicMelee : ItemActionDynamic
 		return ItemClass.EnumCrosshairType.Plus;
 	}
 
-	// Token: 0x06002F36 RID: 12086 RVA: 0x0012DE90 File Offset: 0x0012C090
+	// Token: 0x06002F64 RID: 12132 RVA: 0x0012EF00 File Offset: 0x0012D100
 	public override void StopHolding(ItemActionData _data)
 	{
 		base.StopHolding(_data);
@@ -446,32 +446,32 @@ public class ItemActionDynamicMelee : ItemActionDynamic
 		}
 	}
 
-	// Token: 0x06002F37 RID: 12087 RVA: 0x0012DEEA File Offset: 0x0012C0EA
+	// Token: 0x06002F65 RID: 12133 RVA: 0x0012EF5A File Offset: 0x0012D15A
 	public override void StartHolding(ItemActionData _data)
 	{
 		base.StartHolding(_data);
 		this.SetAttackFinished(_data);
 	}
 
-	// Token: 0x020005A0 RID: 1440
+	// Token: 0x020005A5 RID: 1445
 	public class ItemActionDynamicMeleeData : ItemActionDynamic.ItemActionDynamicData
 	{
-		// Token: 0x06002F39 RID: 12089 RVA: 0x0012DF02 File Offset: 0x0012C102
+		// Token: 0x06002F67 RID: 12135 RVA: 0x0012EF72 File Offset: 0x0012D172
 		public ItemActionDynamicMeleeData(ItemInventoryData _invData, int _indexInEntityOfAction)
 			: base(_invData, _indexInEntityOfAction)
 		{
 		}
 
-		// Token: 0x0400248E RID: 9358
+		// Token: 0x040024C2 RID: 9410
 		public float StaminaUsage;
 
-		// Token: 0x0400248F RID: 9359
+		// Token: 0x040024C3 RID: 9411
 		public bool Attacking;
 
-		// Token: 0x04002490 RID: 9360
+		// Token: 0x040024C4 RID: 9412
 		public bool HasReleased = true;
 
-		// Token: 0x04002491 RID: 9361
+		// Token: 0x040024C5 RID: 9413
 		public bool HasFinished = true;
 	}
 }

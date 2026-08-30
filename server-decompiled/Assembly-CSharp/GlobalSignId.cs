@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x02000A7A RID: 2682
+// Token: 0x02000A8B RID: 2699
 public readonly struct GlobalSignId : IEquatable<GlobalSignId>
 {
-	// Token: 0x0600511F RID: 20767 RVA: 0x001EF604 File Offset: 0x001ED804
+	// Token: 0x060051A5 RID: 20901 RVA: 0x001F209C File Offset: 0x001F029C
 	public GlobalSignId(string libraryId, Guid signGuid)
 	{
 		if (libraryId == null)
@@ -15,8 +15,8 @@ public readonly struct GlobalSignId : IEquatable<GlobalSignId>
 		this.signGuid = signGuid;
 	}
 
-	// Token: 0x170008C8 RID: 2248
-	// (get) Token: 0x06005120 RID: 20768 RVA: 0x001EF621 File Offset: 0x001ED821
+	// Token: 0x170008DA RID: 2266
+	// (get) Token: 0x060051A6 RID: 20902 RVA: 0x001F20B9 File Offset: 0x001F02B9
 	public static GlobalSignId InvalidId
 	{
 		get
@@ -25,8 +25,8 @@ public readonly struct GlobalSignId : IEquatable<GlobalSignId>
 		}
 	}
 
-	// Token: 0x170008C9 RID: 2249
-	// (get) Token: 0x06005121 RID: 20769 RVA: 0x001EF632 File Offset: 0x001ED832
+	// Token: 0x170008DB RID: 2267
+	// (get) Token: 0x060051A7 RID: 20903 RVA: 0x001F20CA File Offset: 0x001F02CA
 	public bool IsValid
 	{
 		get
@@ -35,13 +35,13 @@ public readonly struct GlobalSignId : IEquatable<GlobalSignId>
 		}
 	}
 
-	// Token: 0x06005122 RID: 20770 RVA: 0x001EF642 File Offset: 0x001ED842
+	// Token: 0x060051A8 RID: 20904 RVA: 0x001F20DA File Offset: 0x001F02DA
 	public bool Equals(GlobalSignId other)
 	{
 		return this.libraryId == other.libraryId && this.signGuid == other.signGuid;
 	}
 
-	// Token: 0x06005123 RID: 20771 RVA: 0x001EF66C File Offset: 0x001ED86C
+	// Token: 0x060051A9 RID: 20905 RVA: 0x001F2104 File Offset: 0x001F0304
 	public override bool Equals(object obj)
 	{
 		if (obj is GlobalSignId)
@@ -52,31 +52,31 @@ public readonly struct GlobalSignId : IEquatable<GlobalSignId>
 		return false;
 	}
 
-	// Token: 0x06005124 RID: 20772 RVA: 0x001EF691 File Offset: 0x001ED891
+	// Token: 0x060051AA RID: 20906 RVA: 0x001F2129 File Offset: 0x001F0329
 	public override int GetHashCode()
 	{
 		return HashCode.Combine<string, Guid>(this.libraryId, this.signGuid);
 	}
 
-	// Token: 0x06005125 RID: 20773 RVA: 0x001EF6A4 File Offset: 0x001ED8A4
+	// Token: 0x060051AB RID: 20907 RVA: 0x001F213C File Offset: 0x001F033C
 	public override string ToString()
 	{
 		return string.Format("{0}:{1}", this.libraryId ?? "NULL", this.signGuid);
 	}
 
-	// Token: 0x06005126 RID: 20774 RVA: 0x001EF6CA File Offset: 0x001ED8CA
+	// Token: 0x060051AC RID: 20908 RVA: 0x001F2162 File Offset: 0x001F0362
 	public static bool operator ==(GlobalSignId a, GlobalSignId b)
 	{
 		return a.Equals(b);
 	}
 
-	// Token: 0x06005127 RID: 20775 RVA: 0x001EF6D4 File Offset: 0x001ED8D4
+	// Token: 0x060051AD RID: 20909 RVA: 0x001F216C File Offset: 0x001F036C
 	public static bool operator !=(GlobalSignId a, GlobalSignId b)
 	{
 		return !a.Equals(b);
 	}
 
-	// Token: 0x06005128 RID: 20776 RVA: 0x001EF6E4 File Offset: 0x001ED8E4
+	// Token: 0x060051AE RID: 20910 RVA: 0x001F217C File Offset: 0x001F037C
 	public unsafe static GlobalSignId FromStream(BinaryReader _br)
 	{
 		string text = _br.ReadString();
@@ -89,7 +89,7 @@ public readonly struct GlobalSignId : IEquatable<GlobalSignId>
 		return new GlobalSignId(text, guid);
 	}
 
-	// Token: 0x06005129 RID: 20777 RVA: 0x001EF730 File Offset: 0x001ED930
+	// Token: 0x060051AF RID: 20911 RVA: 0x001F21C8 File Offset: 0x001F03C8
 	public unsafe void ToStream(BinaryWriter _bw)
 	{
 		_bw.Write(this.libraryId);
@@ -98,9 +98,9 @@ public readonly struct GlobalSignId : IEquatable<GlobalSignId>
 		_bw.Write(span);
 	}
 
-	// Token: 0x04003E27 RID: 15911
+	// Token: 0x04003EB8 RID: 16056
 	public readonly string libraryId;
 
-	// Token: 0x04003E28 RID: 15912
+	// Token: 0x04003EB9 RID: 16057
 	public readonly Guid signGuid;
 }

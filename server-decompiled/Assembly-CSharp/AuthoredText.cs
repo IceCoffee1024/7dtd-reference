@@ -1,47 +1,47 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x02000C42 RID: 3138
+// Token: 0x02000C54 RID: 3156
 public class AuthoredText
 {
-	// Token: 0x170009B0 RID: 2480
-	// (get) Token: 0x06005F89 RID: 24457 RVA: 0x0025DD2F File Offset: 0x0025BF2F
-	// (set) Token: 0x06005F8A RID: 24458 RVA: 0x0025DD37 File Offset: 0x0025BF37
+	// Token: 0x170009C3 RID: 2499
+	// (get) Token: 0x06006013 RID: 24595 RVA: 0x00260BCF File Offset: 0x0025EDCF
+	// (set) Token: 0x06006014 RID: 24596 RVA: 0x00260BD7 File Offset: 0x0025EDD7
 	public string Text
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x170009B1 RID: 2481
-	// (get) Token: 0x06005F8B RID: 24459 RVA: 0x0025DD40 File Offset: 0x0025BF40
-	// (set) Token: 0x06005F8C RID: 24460 RVA: 0x0025DD48 File Offset: 0x0025BF48
+	// Token: 0x170009C4 RID: 2500
+	// (get) Token: 0x06006015 RID: 24597 RVA: 0x00260BE0 File Offset: 0x0025EDE0
+	// (set) Token: 0x06006016 RID: 24598 RVA: 0x00260BE8 File Offset: 0x0025EDE8
 	public PlatformUserIdentifierAbs Author
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x06005F8D RID: 24461 RVA: 0x0025DD51 File Offset: 0x0025BF51
+	// Token: 0x06006017 RID: 24599 RVA: 0x00260BF1 File Offset: 0x0025EDF1
 	public AuthoredText()
 	{
 		this.Update(string.Empty, null);
 	}
 
-	// Token: 0x06005F8E RID: 24462 RVA: 0x0025DD65 File Offset: 0x0025BF65
+	// Token: 0x06006018 RID: 24600 RVA: 0x00260C05 File Offset: 0x0025EE05
 	public AuthoredText(string _text, PlatformUserIdentifierAbs _author)
 	{
 		this.Update(_text, _author);
 	}
 
-	// Token: 0x06005F8F RID: 24463 RVA: 0x0025DD75 File Offset: 0x0025BF75
+	// Token: 0x06006019 RID: 24601 RVA: 0x00260C15 File Offset: 0x0025EE15
 	public void Update(string _text, PlatformUserIdentifierAbs _author)
 	{
 		this.Author = _author;
 		this.Text = _text;
 	}
 
-	// Token: 0x06005F90 RID: 24464 RVA: 0x0025DD88 File Offset: 0x0025BF88
+	// Token: 0x0600601A RID: 24602 RVA: 0x00260C28 File Offset: 0x0025EE28
 	public static AuthoredText FromStream(BinaryReader _reader)
 	{
 		if (_reader == null)
@@ -59,7 +59,7 @@ public class AuthoredText
 		return authoredText;
 	}
 
-	// Token: 0x06005F91 RID: 24465 RVA: 0x0025DDC1 File Offset: 0x0025BFC1
+	// Token: 0x0600601B RID: 24603 RVA: 0x00260C61 File Offset: 0x0025EE61
 	public static void ToStream(AuthoredText _instance, BinaryWriter _writer)
 	{
 		if (_writer == null)
@@ -76,7 +76,7 @@ public class AuthoredText
 		_instance.Author.ToStream(_writer, false);
 	}
 
-	// Token: 0x06005F92 RID: 24466 RVA: 0x0025DDF2 File Offset: 0x0025BFF2
+	// Token: 0x0600601C RID: 24604 RVA: 0x00260C92 File Offset: 0x0025EE92
 	public AuthoredText Clone()
 	{
 		return new AuthoredText(this.Text, this.Author);

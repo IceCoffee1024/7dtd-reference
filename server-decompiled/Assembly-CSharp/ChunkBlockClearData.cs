@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x02000AFA RID: 2810
+// Token: 0x02000B0C RID: 2828
 public class ChunkBlockClearData : ChunkCustomData
 {
-	// Token: 0x060054AE RID: 21678 RVA: 0x002064D4 File Offset: 0x002046D4
+	// Token: 0x06005536 RID: 21814 RVA: 0x002091F0 File Offset: 0x002073F0
 	public ChunkBlockClearData()
 	{
 	}
 
-	// Token: 0x060054AF RID: 21679 RVA: 0x002064E7 File Offset: 0x002046E7
+	// Token: 0x06005537 RID: 21815 RVA: 0x00209203 File Offset: 0x00207403
 	public ChunkBlockClearData(string _key, ulong _expiresInWorldTime, bool _isSavedToNetwork, World _world)
 		: base(_key, _expiresInWorldTime, _isSavedToNetwork)
 	{
 		this.World = _world;
 	}
 
-	// Token: 0x060054B0 RID: 21680 RVA: 0x00206508 File Offset: 0x00204708
+	// Token: 0x06005538 RID: 21816 RVA: 0x00209224 File Offset: 0x00207424
 	public override void OnRemove(Chunk chunk)
 	{
 		for (int i = this.BlockList.Count - 1; i >= 0; i--)
@@ -26,9 +26,9 @@ public class ChunkBlockClearData : ChunkCustomData
 		}
 	}
 
-	// Token: 0x04004191 RID: 16785
+	// Token: 0x0400422C RID: 16940
 	public List<Vector3i> BlockList = new List<Vector3i>();
 
-	// Token: 0x04004192 RID: 16786
+	// Token: 0x0400422D RID: 16941
 	public World World;
 }

@@ -2,7 +2,7 @@
 
 namespace Platform
 {
-	// Token: 0x02001B62 RID: 7010
+	// Token: 0x02001B89 RID: 7049
 	public interface IPlatformNetworkServer : INetworkServer
 	{
 	}

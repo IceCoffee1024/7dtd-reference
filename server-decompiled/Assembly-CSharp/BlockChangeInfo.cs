@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
 
-// Token: 0x02000AE9 RID: 2793
+// Token: 0x02000AFB RID: 2811
 public sealed class BlockChangeInfo
 {
-	// Token: 0x06005335 RID: 21301 RVA: 0x001FDDE9 File Offset: 0x001FBFE9
+	// Token: 0x060053BD RID: 21437 RVA: 0x00200A59 File Offset: 0x001FEC59
 	public BlockChangeInfo()
 	{
 		this.blockValueRef = BlockValueRef.None;
@@ -13,7 +13,7 @@ public sealed class BlockChangeInfo
 		this.changedByEntityId = -1;
 	}
 
-	// Token: 0x06005336 RID: 21302 RVA: 0x001FDE20 File Offset: 0x001FC020
+	// Token: 0x060053BE RID: 21438 RVA: 0x00200A90 File Offset: 0x001FEC90
 	public BlockChangeInfo(BlockValueRef _bvRef, BlockValue _blockValue)
 	{
 		this.blockValueRef = _bvRef;
@@ -22,35 +22,35 @@ public sealed class BlockChangeInfo
 		this.bUpdateLight = false;
 	}
 
-	// Token: 0x06005337 RID: 21303 RVA: 0x001FDE4B File Offset: 0x001FC04B
+	// Token: 0x060053BF RID: 21439 RVA: 0x00200ABB File Offset: 0x001FECBB
 	public BlockChangeInfo(BlockValueRef _bvRef, BlockValue _blockValue, bool _updateLight, bool _bOnlyDamage = false)
 		: this(_bvRef, _blockValue, _updateLight)
 	{
 		this.bChangeDamage = _bOnlyDamage;
 	}
 
-	// Token: 0x06005338 RID: 21304 RVA: 0x001FDE5E File Offset: 0x001FC05E
+	// Token: 0x060053C0 RID: 21440 RVA: 0x00200ACE File Offset: 0x001FECCE
 	public BlockChangeInfo(BlockValueRef _bvRef, BlockValue _blockValue, int _changedEntityId)
 		: this(_bvRef, _blockValue)
 	{
 		this.changedByEntityId = _changedEntityId;
 	}
 
-	// Token: 0x06005339 RID: 21305 RVA: 0x001FDE6F File Offset: 0x001FC06F
+	// Token: 0x060053C1 RID: 21441 RVA: 0x00200ADF File Offset: 0x001FECDF
 	public BlockChangeInfo(BlockValueRef _bvRef, BlockValue _blockValue, bool _updateLight)
 		: this(_bvRef, _blockValue)
 	{
 		this.bUpdateLight = _updateLight;
 	}
 
-	// Token: 0x0600533A RID: 21306 RVA: 0x001FDE80 File Offset: 0x001FC080
+	// Token: 0x060053C2 RID: 21442 RVA: 0x00200AF0 File Offset: 0x001FECF0
 	public BlockChangeInfo(BlockValueRef _bvRef, BlockValue _blockValue, bool _updateLight, int _changingEntityId)
 		: this(_bvRef, _blockValue, _updateLight)
 	{
 		this.changedByEntityId = _changingEntityId;
 	}
 
-	// Token: 0x0600533B RID: 21307 RVA: 0x001FDE93 File Offset: 0x001FC093
+	// Token: 0x060053C3 RID: 21443 RVA: 0x00200B03 File Offset: 0x001FED03
 	public BlockChangeInfo(BlockValueRef _bvRef, sbyte _density, bool _bForceDensityChange = false)
 	{
 		this.blockValueRef = _bvRef;
@@ -60,7 +60,7 @@ public sealed class BlockChangeInfo
 		this.changedByEntityId = -1;
 	}
 
-	// Token: 0x0600533C RID: 21308 RVA: 0x001FDEC5 File Offset: 0x001FC0C5
+	// Token: 0x060053C4 RID: 21444 RVA: 0x00200B35 File Offset: 0x001FED35
 	public BlockChangeInfo(BlockValueRef _bvRef, BlockValue _blockValue, sbyte _density)
 	{
 		this.blockValueRef = _bvRef;
@@ -72,14 +72,14 @@ public sealed class BlockChangeInfo
 		this.changedByEntityId = -1;
 	}
 
-	// Token: 0x0600533D RID: 21309 RVA: 0x001FDF05 File Offset: 0x001FC105
+	// Token: 0x060053C5 RID: 21445 RVA: 0x00200B75 File Offset: 0x001FED75
 	public BlockChangeInfo(BlockValueRef _bvRef, BlockValue _blockValue, sbyte _density, int _changedByEntityId)
 		: this(_bvRef, _blockValue, _density)
 	{
 		this.changedByEntityId = _changedByEntityId;
 	}
 
-	// Token: 0x0600533E RID: 21310 RVA: 0x001FDF18 File Offset: 0x001FC118
+	// Token: 0x060053C6 RID: 21446 RVA: 0x00200B88 File Offset: 0x001FED88
 	public BlockChangeInfo(BlockValueRef _bvRef, BlockValue _blockValue, sbyte _density, TextureFullArray _tex)
 		: this(_bvRef, _blockValue, _density)
 	{
@@ -88,7 +88,7 @@ public sealed class BlockChangeInfo
 		this.changedByEntityId = -1;
 	}
 
-	// Token: 0x0600533F RID: 21311 RVA: 0x001FDF3C File Offset: 0x001FC13C
+	// Token: 0x060053C7 RID: 21447 RVA: 0x00200BAC File Offset: 0x001FEDAC
 	public void Read(BinaryReader _br)
 	{
 		this.blockValueRef = BlockValueRef.Read(_br);
@@ -114,7 +114,7 @@ public sealed class BlockChangeInfo
 		}
 	}
 
-	// Token: 0x06005340 RID: 21312 RVA: 0x001FDFF0 File Offset: 0x001FC1F0
+	// Token: 0x060053C8 RID: 21448 RVA: 0x00200C60 File Offset: 0x001FEE60
 	public void Write(BinaryWriter _bw)
 	{
 		this.blockValueRef.Write(_bw);
@@ -141,61 +141,61 @@ public sealed class BlockChangeInfo
 		}
 	}
 
-	// Token: 0x040040E6 RID: 16614
+	// Token: 0x0400417C RID: 16764
 	public static BlockChangeInfo Empty = new BlockChangeInfo
 	{
 		blockValueRef = BlockValueRef.None
 	};
 
-	// Token: 0x040040E7 RID: 16615
+	// Token: 0x0400417D RID: 16765
 	public BlockValueRef blockValueRef;
 
-	// Token: 0x040040E8 RID: 16616
+	// Token: 0x0400417E RID: 16766
 	public bool bChangeBlockValue;
 
-	// Token: 0x040040E9 RID: 16617
+	// Token: 0x0400417F RID: 16767
 	public bool bChangeDamage;
 
-	// Token: 0x040040EA RID: 16618
+	// Token: 0x04004180 RID: 16768
 	public BlockValue blockValue;
 
-	// Token: 0x040040EB RID: 16619
+	// Token: 0x04004181 RID: 16769
 	public bool bChangeDensity;
 
-	// Token: 0x040040EC RID: 16620
+	// Token: 0x04004182 RID: 16770
 	public bool bForceDensity;
 
-	// Token: 0x040040ED RID: 16621
+	// Token: 0x04004183 RID: 16771
 	public sbyte density;
 
-	// Token: 0x040040EE RID: 16622
+	// Token: 0x04004184 RID: 16772
 	public bool bUpdateLight;
 
-	// Token: 0x040040EF RID: 16623
+	// Token: 0x04004185 RID: 16773
 	public bool bChangeTexture;
 
-	// Token: 0x040040F0 RID: 16624
+	// Token: 0x04004186 RID: 16774
 	public TextureFullArray textureFull;
 
-	// Token: 0x040040F1 RID: 16625
+	// Token: 0x04004187 RID: 16775
 	public int changedByEntityId = -1;
 
-	// Token: 0x02000AEA RID: 2794
+	// Token: 0x02000AFC RID: 2812
 	[Flags]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public enum Flags : byte
 	{
-		// Token: 0x040040F3 RID: 16627
+		// Token: 0x04004189 RID: 16777
 		ChangeBlockValue = 1,
-		// Token: 0x040040F4 RID: 16628
+		// Token: 0x0400418A RID: 16778
 		ChangeDamage = 2,
-		// Token: 0x040040F5 RID: 16629
+		// Token: 0x0400418B RID: 16779
 		ChangeDensity = 4,
-		// Token: 0x040040F6 RID: 16630
+		// Token: 0x0400418C RID: 16780
 		ForceDensity = 8,
-		// Token: 0x040040F7 RID: 16631
+		// Token: 0x0400418D RID: 16781
 		UpdateLight = 16,
-		// Token: 0x040040F8 RID: 16632
+		// Token: 0x0400418E RID: 16782
 		ChangeTexture = 32
 	}
 }

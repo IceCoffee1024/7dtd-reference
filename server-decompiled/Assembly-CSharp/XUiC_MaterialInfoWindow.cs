@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F7C RID: 3964
+// Token: 0x02000F95 RID: 3989
 [Preserve]
 public class XUiC_MaterialInfoWindow : XUiController
 {
-	// Token: 0x06007D01 RID: 32001 RVA: 0x002F7065 File Offset: 0x002F5265
+	// Token: 0x06007DF3 RID: 32243 RVA: 0x002FB839 File Offset: 0x002F9A39
 	public override void Init()
 	{
 		base.Init();
@@ -14,7 +14,7 @@ public class XUiC_MaterialInfoWindow : XUiController
 		this.textMaterial.CreateMaterial("Unlit/Transparent Colored Emissive TextureArray");
 	}
 
-	// Token: 0x06007D02 RID: 32002 RVA: 0x002F7098 File Offset: 0x002F5298
+	// Token: 0x06007DF4 RID: 32244 RVA: 0x002FB86C File Offset: 0x002F9A6C
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -24,7 +24,7 @@ public class XUiC_MaterialInfoWindow : XUiController
 		}
 	}
 
-	// Token: 0x06007D03 RID: 32003 RVA: 0x002F70C0 File Offset: 0x002F52C0
+	// Token: 0x06007DF5 RID: 32245 RVA: 0x002FB894 File Offset: 0x002F9A94
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -126,7 +126,7 @@ public class XUiC_MaterialInfoWindow : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x06007D04 RID: 32004 RVA: 0x002F73EC File Offset: 0x002F55EC
+	// Token: 0x06007DF6 RID: 32246 RVA: 0x002FBBC0 File Offset: 0x002F9DC0
 	public void SetMaterial(BlockTextureData newTexture)
 	{
 		this.TextureData = newTexture;
@@ -160,19 +160,19 @@ public class XUiC_MaterialInfoWindow : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x04005C89 RID: 23689
+	// Token: 0x04005D50 RID: 23888
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockTextureData TextureData;
 
-	// Token: 0x04005C8A RID: 23690
+	// Token: 0x04005D51 RID: 23889
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Texture textMaterial;
 
-	// Token: 0x04005C8B RID: 23691
+	// Token: 0x04005D52 RID: 23890
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<ushort> paintcostFormatter = new CachedStringFormatter<ushort>((ushort _i) => _i.ToString());
 
-	// Token: 0x04005C8C RID: 23692
+	// Token: 0x04005D53 RID: 23891
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<ushort> perklevelFormatter = new CachedStringFormatter<ushort>((ushort _i) => _i.ToString());
 }

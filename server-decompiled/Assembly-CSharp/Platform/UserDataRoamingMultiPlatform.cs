@@ -2,11 +2,11 @@
 
 namespace Platform
 {
-	// Token: 0x02001B9F RID: 7071
+	// Token: 0x02001BC6 RID: 7110
 	public class UserDataRoamingMultiPlatform : UserDataRoamingAbs
 	{
-		// Token: 0x170019BC RID: 6588
-		// (get) Token: 0x0600D223 RID: 53795 RVA: 0x004C15FA File Offset: 0x004BF7FA
+		// Token: 0x17001A2E RID: 6702
+		// (get) Token: 0x0600D3B1 RID: 54193 RVA: 0x004C79EE File Offset: 0x004C5BEE
 		public override SaveRoamingMode SaveRoamingMode
 		{
 			get
@@ -24,8 +24,8 @@ namespace Platform
 			}
 		}
 
-		// Token: 0x170019BD RID: 6589
-		// (get) Token: 0x0600D224 RID: 53796 RVA: 0x004C161A File Offset: 0x004BF81A
+		// Token: 0x17001A2F RID: 6703
+		// (get) Token: 0x0600D3B2 RID: 54194 RVA: 0x004C7A0E File Offset: 0x004C5C0E
 		public override UserDataStorageType DefaultSaveStorage
 		{
 			get

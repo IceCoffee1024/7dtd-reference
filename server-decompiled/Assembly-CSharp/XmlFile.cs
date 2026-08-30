@@ -10,19 +10,19 @@ using System.Xml.Linq;
 using System.Xml.XPath;
 using UnityEngine;
 
-// Token: 0x020014E0 RID: 5344
+// Token: 0x020014FB RID: 5371
 public class XmlFile
 {
-	// Token: 0x1700137E RID: 4990
-	// (get) Token: 0x0600A819 RID: 43033 RVA: 0x003E83D0 File Offset: 0x003E65D0
-	// (set) Token: 0x0600A81A RID: 43034 RVA: 0x003E83D8 File Offset: 0x003E65D8
+	// Token: 0x170013B7 RID: 5047
+	// (get) Token: 0x0600A916 RID: 43286 RVA: 0x003ED710 File Offset: 0x003EB910
+	// (set) Token: 0x0600A917 RID: 43287 RVA: 0x003ED718 File Offset: 0x003EB918
 	public bool Loaded
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x0600A81B RID: 43035 RVA: 0x003E83E1 File Offset: 0x003E65E1
+	// Token: 0x0600A918 RID: 43288 RVA: 0x003ED721 File Offset: 0x003EB921
 	public XmlFile(XmlFile _orig)
 	{
 		this.Directory = _orig.Directory;
@@ -31,7 +31,7 @@ public class XmlFile
 		this.XmlDoc = new XDocument(_orig.XmlDoc);
 	}
 
-	// Token: 0x0600A81C RID: 43036 RVA: 0x003E8420 File Offset: 0x003E6620
+	// Token: 0x0600A919 RID: 43289 RVA: 0x003ED760 File Offset: 0x003EB960
 	public XmlFile(string _name)
 	{
 		this.Directory = GameIO.GetGameDir("Data/Config");
@@ -39,7 +39,7 @@ public class XmlFile
 		this.load(this.Directory, this.Filename, false);
 	}
 
-	// Token: 0x0600A81D RID: 43037 RVA: 0x003E8478 File Offset: 0x003E6678
+	// Token: 0x0600A91A RID: 43290 RVA: 0x003ED7B8 File Offset: 0x003EB9B8
 	public XmlFile(string _text, string _directory, string _filename, bool _throwExc = false)
 	{
 		this.Directory = _directory;
@@ -47,7 +47,7 @@ public class XmlFile
 		this.toXml(_text, _filename, _throwExc);
 	}
 
-	// Token: 0x0600A81E RID: 43038 RVA: 0x003E8498 File Offset: 0x003E6698
+	// Token: 0x0600A91B RID: 43291 RVA: 0x003ED7D8 File Offset: 0x003EB9D8
 	public XmlFile(TextAsset _ta)
 	{
 		using (MemoryStream memoryStream = new MemoryStream(_ta.bytes))
@@ -56,7 +56,7 @@ public class XmlFile
 		}
 	}
 
-	// Token: 0x0600A81F RID: 43039 RVA: 0x003E84E4 File Offset: 0x003E66E4
+	// Token: 0x0600A91C RID: 43292 RVA: 0x003ED824 File Offset: 0x003EBA24
 	public XmlFile(byte[] _data, bool _throwExc = false)
 	{
 		using (MemoryStream memoryStream = new MemoryStream(_data))
@@ -65,7 +65,7 @@ public class XmlFile
 		}
 	}
 
-	// Token: 0x0600A820 RID: 43040 RVA: 0x003E8524 File Offset: 0x003E6724
+	// Token: 0x0600A91D RID: 43293 RVA: 0x003ED864 File Offset: 0x003EBA64
 	public XmlFile(string _directory, string _file, bool _loadAsync = false, bool _throwExc = false)
 	{
 		XmlFile <>4__this = this;
@@ -82,7 +82,7 @@ public class XmlFile
 		}, null, null, true);
 	}
 
-	// Token: 0x0600A821 RID: 43041 RVA: 0x003E85A8 File Offset: 0x003E67A8
+	// Token: 0x0600A91E RID: 43294 RVA: 0x003ED8E8 File Offset: 0x003EBAE8
 	public XmlFile(string _directory, string _file, Action<Exception> _doneCallback)
 	{
 		XmlFile <>4__this = this;
@@ -102,13 +102,13 @@ public class XmlFile
 		}, null, null, true);
 	}
 
-	// Token: 0x0600A822 RID: 43042 RVA: 0x003E8619 File Offset: 0x003E6819
+	// Token: 0x0600A91F RID: 43295 RVA: 0x003ED959 File Offset: 0x003EBB59
 	public XmlFile(Stream _stream)
 	{
 		this.load(_stream, null, false);
 	}
 
-	// Token: 0x0600A823 RID: 43043 RVA: 0x003E862C File Offset: 0x003E682C
+	// Token: 0x0600A920 RID: 43296 RVA: 0x003ED96C File Offset: 0x003EBB6C
 	public string SerializeToString(bool _minified = false)
 	{
 		string text;
@@ -123,7 +123,7 @@ public class XmlFile
 		return text;
 	}
 
-	// Token: 0x0600A824 RID: 43044 RVA: 0x003E86A4 File Offset: 0x003E68A4
+	// Token: 0x0600A921 RID: 43297 RVA: 0x003ED9E4 File Offset: 0x003EBBE4
 	public byte[] SerializeToBytes(bool _minified = false, Encoding _encoding = null)
 	{
 		PooledExpandableMemoryStream pooledExpandableMemoryStream = MemoryPools.poolMemoryStream.AllocSync(true);
@@ -133,7 +133,7 @@ public class XmlFile
 		return array;
 	}
 
-	// Token: 0x0600A825 RID: 43045 RVA: 0x003E86D8 File Offset: 0x003E68D8
+	// Token: 0x0600A922 RID: 43298 RVA: 0x003EDA18 File Offset: 0x003EBC18
 	public void SerializeToFile(string _path, bool _minified = false, Encoding _encoding = null)
 	{
 		using (Stream stream = SdFile.Create(_path))
@@ -142,7 +142,7 @@ public class XmlFile
 		}
 	}
 
-	// Token: 0x0600A826 RID: 43046 RVA: 0x003E8714 File Offset: 0x003E6914
+	// Token: 0x0600A923 RID: 43299 RVA: 0x003EDA54 File Offset: 0x003EBC54
 	public void SerializeToStream(Stream _stream, bool _minified = false, Encoding _encoding = null)
 	{
 		if (_encoding == null)
@@ -155,7 +155,7 @@ public class XmlFile
 		}
 	}
 
-	// Token: 0x0600A827 RID: 43047 RVA: 0x003E8764 File Offset: 0x003E6964
+	// Token: 0x0600A924 RID: 43300 RVA: 0x003EDAA4 File Offset: 0x003EBCA4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static XmlWriterSettings GetWriterSettings(bool _indent, Encoding _encoding)
 	{
@@ -167,7 +167,7 @@ public class XmlFile
 		};
 	}
 
-	// Token: 0x0600A828 RID: 43048 RVA: 0x003E8780 File Offset: 0x003E6980
+	// Token: 0x0600A925 RID: 43301 RVA: 0x003EDAC0 File Offset: 0x003EBCC0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void toXml(string _data, string _filename = null, bool _throwExc = false)
 	{
@@ -187,7 +187,7 @@ public class XmlFile
 		}
 	}
 
-	// Token: 0x0600A829 RID: 43049 RVA: 0x003E87F4 File Offset: 0x003E69F4
+	// Token: 0x0600A926 RID: 43302 RVA: 0x003EDB34 File Offset: 0x003EBD34
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void load(byte[] _bytes, bool _throwExc = false)
 	{
@@ -197,7 +197,7 @@ public class XmlFile
 		}
 	}
 
-	// Token: 0x0600A82A RID: 43050 RVA: 0x003E8830 File Offset: 0x003E6A30
+	// Token: 0x0600A927 RID: 43303 RVA: 0x003EDB70 File Offset: 0x003EBD70
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void load(string _directory, string _file, bool _throwExc = false)
 	{
@@ -217,7 +217,7 @@ public class XmlFile
 		}
 	}
 
-	// Token: 0x0600A82B RID: 43051 RVA: 0x003E8894 File Offset: 0x003E6A94
+	// Token: 0x0600A928 RID: 43304 RVA: 0x003EDBD4 File Offset: 0x003EBDD4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void load(Stream _stream, string _name = null, bool _throwExc = false)
 	{
@@ -240,13 +240,13 @@ public class XmlFile
 		}
 	}
 
-	// Token: 0x0600A82C RID: 43052 RVA: 0x003E892C File Offset: 0x003E6B2C
+	// Token: 0x0600A929 RID: 43305 RVA: 0x003EDC6C File Offset: 0x003EBE6C
 	public void RemoveComments()
 	{
 		this.XmlDoc.DescendantNodes().OfType<XComment>().Remove<XComment>();
 	}
 
-	// Token: 0x0600A82D RID: 43053 RVA: 0x003E8943 File Offset: 0x003E6B43
+	// Token: 0x0600A92A RID: 43306 RVA: 0x003EDC83 File Offset: 0x003EBE83
 	public bool GetXpathResults(string _xpath, out List<XObject> _matchList)
 	{
 		if (this.tempXpathMatchList == null)
@@ -262,7 +262,7 @@ public class XmlFile
 		return false;
 	}
 
-	// Token: 0x0600A82E RID: 43054 RVA: 0x003E8975 File Offset: 0x003E6B75
+	// Token: 0x0600A92B RID: 43307 RVA: 0x003EDCB5 File Offset: 0x003EBEB5
 	public int ClearXpathResults()
 	{
 		int count = this.tempXpathMatchList.Count;
@@ -270,7 +270,7 @@ public class XmlFile
 		return count;
 	}
 
-	// Token: 0x0600A82F RID: 43055 RVA: 0x003E8990 File Offset: 0x003E6B90
+	// Token: 0x0600A92C RID: 43308 RVA: 0x003EDCD0 File Offset: 0x003EBED0
 	public bool GetXpathResultsInList(string _xpath, List<XObject> _matchList)
 	{
 		if (_matchList == null)
@@ -287,16 +287,16 @@ public class XmlFile
 		return _matchList.Count != 0;
 	}
 
-	// Token: 0x04007C3A RID: 31802
+	// Token: 0x04007D13 RID: 32019
 	public readonly string Directory;
 
-	// Token: 0x04007C3B RID: 31803
+	// Token: 0x04007D14 RID: 32020
 	public readonly string Filename;
 
-	// Token: 0x04007C3D RID: 31805
+	// Token: 0x04007D16 RID: 32022
 	public XDocument XmlDoc;
 
-	// Token: 0x04007C3E RID: 31806
+	// Token: 0x04007D17 RID: 32023
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<XObject> tempXpathMatchList;
 }

@@ -1,15 +1,15 @@
 ﻿using System;
 
-// Token: 0x02000500 RID: 1280
+// Token: 0x02000505 RID: 1285
 public class EntityBedrollPositionList
 {
-	// Token: 0x060029F6 RID: 10742 RVA: 0x00106C01 File Offset: 0x00104E01
+	// Token: 0x06002A20 RID: 10784 RVA: 0x00107C3D File Offset: 0x00105E3D
 	public EntityBedrollPositionList(EntityAlive _e)
 	{
 		this.theEntity = _e;
 	}
 
-	// Token: 0x060029F7 RID: 10743 RVA: 0x00106C10 File Offset: 0x00104E10
+	// Token: 0x06002A21 RID: 10785 RVA: 0x00107C4C File Offset: 0x00105E4C
 	public Vector3i GetPos()
 	{
 		PersistentPlayerData data = this.GetData();
@@ -20,7 +20,7 @@ public class EntityBedrollPositionList
 		return new Vector3i(0, int.MaxValue, 0);
 	}
 
-	// Token: 0x060029F8 RID: 10744 RVA: 0x00106C3C File Offset: 0x00104E3C
+	// Token: 0x06002A22 RID: 10786 RVA: 0x00107C78 File Offset: 0x00105E78
 	public void Set(Vector3i _pos)
 	{
 		PersistentPlayerData data = this.GetData();
@@ -31,7 +31,7 @@ public class EntityBedrollPositionList
 		}
 	}
 
-	// Token: 0x060029F9 RID: 10745 RVA: 0x00106C60 File Offset: 0x00104E60
+	// Token: 0x06002A23 RID: 10787 RVA: 0x00107C9C File Offset: 0x00105E9C
 	public void Clear()
 	{
 		PersistentPlayerData data = this.GetData();
@@ -41,8 +41,8 @@ public class EntityBedrollPositionList
 		}
 	}
 
-	// Token: 0x17000497 RID: 1175
-	// (get) Token: 0x060029FA RID: 10746 RVA: 0x00106C7D File Offset: 0x00104E7D
+	// Token: 0x1700049B RID: 1179
+	// (get) Token: 0x06002A24 RID: 10788 RVA: 0x00107CB9 File Offset: 0x00105EB9
 	public int Count
 	{
 		get
@@ -55,7 +55,7 @@ public class EntityBedrollPositionList
 		}
 	}
 
-	// Token: 0x17000498 RID: 1176
+	// Token: 0x1700049C RID: 1180
 	public Vector3i this[int _idx]
 	{
 		get
@@ -64,14 +64,14 @@ public class EntityBedrollPositionList
 		}
 	}
 
-	// Token: 0x060029FC RID: 10748 RVA: 0x00106C9C File Offset: 0x00104E9C
+	// Token: 0x06002A26 RID: 10790 RVA: 0x00107CD8 File Offset: 0x00105ED8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PersistentPlayerData GetData()
 	{
 		return GameManager.Instance.GetPersistentPlayerList().GetPlayerDataFromEntityID(this.theEntity.entityId);
 	}
 
-	// Token: 0x04001FC2 RID: 8130
+	// Token: 0x04001FF1 RID: 8177
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityAlive theEntity;
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02001027 RID: 4135
+// Token: 0x02001040 RID: 4160
 [Preserve]
 public class XUiC_SignTransformSettings : XUiC_SignLayerSettings
 {
-	// Token: 0x06008324 RID: 33572 RVA: 0x0031FD28 File Offset: 0x0031DF28
+	// Token: 0x06008416 RID: 33814 RVA: 0x00324550 File Offset: 0x00322750
 	public override void Init()
 	{
 		base.Init();
@@ -24,7 +24,7 @@ public class XUiC_SignTransformSettings : XUiC_SignLayerSettings
 		base.SetDefaultValue("txtScale", new ValueTuple<float, float>(SignData.SignTransform.Defaults.scale.x, SignData.SignTransform.Defaults.scale.y));
 	}
 
-	// Token: 0x06008325 RID: 33573 RVA: 0x0031FED0 File Offset: 0x0031E0D0
+	// Token: 0x06008417 RID: 33815 RVA: 0x003246F8 File Offset: 0x003228F8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnChangeHandler(XUiController _sender, string _text, bool _changeFromCode)
 	{
@@ -95,7 +95,7 @@ public class XUiC_SignTransformSettings : XUiC_SignLayerSettings
 		onLayerSettingsChanged();
 	}
 
-	// Token: 0x06008326 RID: 33574 RVA: 0x00320034 File Offset: 0x0031E234
+	// Token: 0x06008418 RID: 33816 RVA: 0x0032485C File Offset: 0x00322A5C
 	public override void SetLayer(SignData.SignLayer layer)
 	{
 		this.currentLayer = layer;
@@ -115,27 +115,27 @@ public class XUiC_SignTransformSettings : XUiC_SignLayerSettings
 		this.txtScaleB.Text = layer.transform.scale.y.ToString("F4");
 	}
 
-	// Token: 0x0400612E RID: 24878
+	// Token: 0x040061F5 RID: 25077
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtPositionA;
 
-	// Token: 0x0400612F RID: 24879
+	// Token: 0x040061F6 RID: 25078
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtPositionB;
 
-	// Token: 0x04006130 RID: 24880
+	// Token: 0x040061F7 RID: 25079
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtRotation;
 
-	// Token: 0x04006131 RID: 24881
+	// Token: 0x040061F8 RID: 25080
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtScaleA;
 
-	// Token: 0x04006132 RID: 24882
+	// Token: 0x040061F9 RID: 25081
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_TextInput txtScaleB;
 
-	// Token: 0x04006133 RID: 24883
+	// Token: 0x040061FA RID: 25082
 	[PublicizedFrom(EAccessModifier.Private)]
 	public SignData.SignLayer currentLayer;
 }

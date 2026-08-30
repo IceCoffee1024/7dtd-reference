@@ -2,7 +2,7 @@
 
 namespace XMLData
 {
-	// Token: 0x0200161C RID: 5660
+	// Token: 0x02001637 RID: 5687
 	[AttributeUsage(AttributeTargets.Class)]
 	public class XmlParserAttribute : Attribute
 	{

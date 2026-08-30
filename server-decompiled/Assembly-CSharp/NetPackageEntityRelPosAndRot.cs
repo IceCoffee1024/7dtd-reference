@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020007D9 RID: 2009
+// Token: 0x020007E4 RID: 2020
 [Preserve]
 public class NetPackageEntityRelPosAndRot : NetPackageEntityRotation
 {
-	// Token: 0x17000629 RID: 1577
-	// (get) Token: 0x06003B5A RID: 15194 RVA: 0x00010E62 File Offset: 0x0000F062
+	// Token: 0x17000634 RID: 1588
+	// (get) Token: 0x06003BB9 RID: 15289 RVA: 0x00010E62 File Offset: 0x0000F062
 	public override bool ReliableDelivery
 	{
 		get
@@ -16,7 +16,7 @@ public class NetPackageEntityRelPosAndRot : NetPackageEntityRotation
 		}
 	}
 
-	// Token: 0x06003B5B RID: 15195 RVA: 0x0017DA38 File Offset: 0x0017BC38
+	// Token: 0x06003BBA RID: 15290 RVA: 0x0017FE10 File Offset: 0x0017E010
 	public NetPackageEntityRelPosAndRot Setup(int _entityId, Vector3i _deltaPos, Vector3i _absRot, Quaternion _qrot, bool _onGround, bool _bUseQRot, int _updateSteps)
 	{
 		base.Setup(_entityId, _absRot, _qrot, _bUseQRot);
@@ -26,7 +26,7 @@ public class NetPackageEntityRelPosAndRot : NetPackageEntityRotation
 		return this;
 	}
 
-	// Token: 0x06003B5C RID: 15196 RVA: 0x0017DA60 File Offset: 0x0017BC60
+	// Token: 0x06003BBB RID: 15291 RVA: 0x0017FE38 File Offset: 0x0017E038
 	public override void read(PooledBinaryReader _reader)
 	{
 		base.read(_reader);
@@ -35,7 +35,7 @@ public class NetPackageEntityRelPosAndRot : NetPackageEntityRotation
 		this.updateSteps = _reader.ReadInt16();
 	}
 
-	// Token: 0x06003B5D RID: 15197 RVA: 0x0017DAA0 File Offset: 0x0017BCA0
+	// Token: 0x06003BBC RID: 15292 RVA: 0x0017FE78 File Offset: 0x0017E078
 	public override void write(PooledBinaryWriter _writer)
 	{
 		base.write(_writer);
@@ -46,7 +46,7 @@ public class NetPackageEntityRelPosAndRot : NetPackageEntityRotation
 		_writer.Write(this.updateSteps);
 	}
 
-	// Token: 0x06003B5E RID: 15198 RVA: 0x0017DB04 File Offset: 0x0017BD04
+	// Token: 0x06003BBD RID: 15293 RVA: 0x0017FEDC File Offset: 0x0017E0DC
 	public override void ProcessPackage(World _world, GameManager _callbacks)
 	{
 		if (_world == null)
@@ -81,21 +81,21 @@ public class NetPackageEntityRelPosAndRot : NetPackageEntityRotation
 		entity.onGround = this.onGround;
 	}
 
-	// Token: 0x06003B5F RID: 15199 RVA: 0x000B8CB1 File Offset: 0x000B6EB1
+	// Token: 0x06003BBE RID: 15294 RVA: 0x000B93F5 File Offset: 0x000B75F5
 	public override int GetLength()
 	{
 		return 20;
 	}
 
-	// Token: 0x0400302B RID: 12331
+	// Token: 0x040030AA RID: 12458
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i dPos;
 
-	// Token: 0x0400302C RID: 12332
+	// Token: 0x040030AB RID: 12459
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool onGround;
 
-	// Token: 0x0400302D RID: 12333
+	// Token: 0x040030AC RID: 12460
 	[PublicizedFrom(EAccessModifier.Private)]
 	public short updateSteps;
 }

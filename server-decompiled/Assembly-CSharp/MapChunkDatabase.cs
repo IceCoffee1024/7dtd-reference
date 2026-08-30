@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using System.IO;
 
-// Token: 0x02000B42 RID: 2882
+// Token: 0x02000B54 RID: 2900
 public class MapChunkDatabase : DatabaseWithFixedDS<int, ushort[]>, IMapChunkDatabase
 {
-	// Token: 0x06005769 RID: 22377 RVA: 0x002163F4 File Offset: 0x002145F4
+	// Token: 0x060057F1 RID: 22513 RVA: 0x00219110 File Offset: 0x00217310
 	public MapChunkDatabase(int _playerId)
 		: base(7364973, 4, GamePrefs.GetInt(EnumGamePrefs.MaxUncoveredMapChunksPerPlayer), 512, 0, 131072)
 	{
 		this.playerId = _playerId;
 	}
 
-	// Token: 0x0600576A RID: 22378 RVA: 0x00216460 File Offset: 0x00214660
+	// Token: 0x060057F2 RID: 22514 RVA: 0x0021917C File Offset: 0x0021737C
 	public void Add(int _chunkX, int _chunkZ, ushort[] _mapColors)
 	{
 		int num = IMapChunkDatabase.ToChunkDBKey(_chunkX, _chunkZ);
@@ -25,7 +25,7 @@ public class MapChunkDatabase : DatabaseWithFixedDS<int, ushort[]>, IMapChunkDat
 		base.SetDS(num, array);
 	}
 
-	// Token: 0x0600576B RID: 22379 RVA: 0x0021649B File Offset: 0x0021469B
+	// Token: 0x060057F3 RID: 22515 RVA: 0x002191B7 File Offset: 0x002173B7
 	public override void Clear()
 	{
 		base.Clear();
@@ -33,13 +33,13 @@ public class MapChunkDatabase : DatabaseWithFixedDS<int, ushort[]>, IMapChunkDat
 		this.bNetworkDataAvail = false;
 	}
 
-	// Token: 0x0600576C RID: 22380 RVA: 0x002164B5 File Offset: 0x002146B5
+	// Token: 0x060057F4 RID: 22516 RVA: 0x002191D1 File Offset: 0x002173D1
 	public ushort[] GetMapColors(long _chunkKey)
 	{
 		return base.GetDS(IMapChunkDatabase.ToChunkDBKey(_chunkKey));
 	}
 
-	// Token: 0x0600576D RID: 22381 RVA: 0x002164C4 File Offset: 0x002146C4
+	// Token: 0x060057F5 RID: 22517 RVA: 0x002191E0 File Offset: 0x002173E0
 	public void Add(List<int> _chunks, List<ushort[]> _mapPieces)
 	{
 		for (int i = 0; i < _chunks.Count; i++)
@@ -49,25 +49,25 @@ public class MapChunkDatabase : DatabaseWithFixedDS<int, ushort[]>, IMapChunkDat
 		this.bNetworkDataAvail = true;
 	}
 
-	// Token: 0x0600576E RID: 22382 RVA: 0x002164FD File Offset: 0x002146FD
+	// Token: 0x060057F6 RID: 22518 RVA: 0x00219219 File Offset: 0x00217419
 	public bool Contains(long _chunkKey)
 	{
 		return base.ContainsDS(IMapChunkDatabase.ToChunkDBKey(_chunkKey));
 	}
 
-	// Token: 0x0600576F RID: 22383 RVA: 0x0021650B File Offset: 0x0021470B
+	// Token: 0x060057F7 RID: 22519 RVA: 0x00219227 File Offset: 0x00217427
 	public bool IsNetworkDataAvail()
 	{
 		return this.bNetworkDataAvail;
 	}
 
-	// Token: 0x06005770 RID: 22384 RVA: 0x00216513 File Offset: 0x00214713
+	// Token: 0x060057F8 RID: 22520 RVA: 0x0021922F File Offset: 0x0021742F
 	public void ResetNetworkDataAvail()
 	{
 		this.bNetworkDataAvail = false;
 	}
 
-	// Token: 0x06005771 RID: 22385 RVA: 0x0021651C File Offset: 0x0021471C
+	// Token: 0x060057F9 RID: 22521 RVA: 0x00219238 File Offset: 0x00217438
 	public NetPackage GetMapChunkPackagesToSend()
 	{
 		if (!this.bClientMapMiddlePositionUpdated)
@@ -100,19 +100,19 @@ public class MapChunkDatabase : DatabaseWithFixedDS<int, ushort[]>, IMapChunkDat
 		return NetPackageManager.GetPackage<NetPackageMapChunks>().Setup(this.playerId, this.toSendList, this.mapPiecesList);
 	}
 
-	// Token: 0x06005772 RID: 22386 RVA: 0x00216617 File Offset: 0x00214817
+	// Token: 0x060057FA RID: 22522 RVA: 0x00219333 File Offset: 0x00217533
 	public void LoadAsync(ThreadManager.TaskInfo _taskInfo)
 	{
 		base.Load(((IMapChunkDatabase.DirectoryPlayerId)_taskInfo.parameter).dir, ((IMapChunkDatabase.DirectoryPlayerId)_taskInfo.parameter).file + ".map");
 	}
 
-	// Token: 0x06005773 RID: 22387 RVA: 0x00216649 File Offset: 0x00214849
+	// Token: 0x060057FB RID: 22523 RVA: 0x00219365 File Offset: 0x00217565
 	public void SaveAsync(ThreadManager.TaskInfo _taskInfo)
 	{
 		base.Save(((IMapChunkDatabase.DirectoryPlayerId)_taskInfo.parameter).dir, ((IMapChunkDatabase.DirectoryPlayerId)_taskInfo.parameter).file + ".map");
 	}
 
-	// Token: 0x06005774 RID: 22388 RVA: 0x0021667B File Offset: 0x0021487B
+	// Token: 0x060057FC RID: 22524 RVA: 0x00219397 File Offset: 0x00217597
 	public void SetClientMapMiddlePosition(Vector2i _pos)
 	{
 		if (!this.clientMapMiddlePosition.Equals(_pos))
@@ -122,21 +122,21 @@ public class MapChunkDatabase : DatabaseWithFixedDS<int, ushort[]>, IMapChunkDat
 		}
 	}
 
-	// Token: 0x06005775 RID: 22389 RVA: 0x001FA34F File Offset: 0x001F854F
+	// Token: 0x060057FD RID: 22525 RVA: 0x001FCFBF File Offset: 0x001FB1BF
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override int readKey(BinaryReader _br)
 	{
 		return _br.ReadInt32();
 	}
 
-	// Token: 0x06005776 RID: 22390 RVA: 0x001FA346 File Offset: 0x001F8546
+	// Token: 0x060057FE RID: 22526 RVA: 0x001FCFB6 File Offset: 0x001FB1B6
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void writeKey(BinaryWriter _bw, int _key)
 	{
 		_bw.Write(_key);
 	}
 
-	// Token: 0x06005777 RID: 22391 RVA: 0x0021669C File Offset: 0x0021489C
+	// Token: 0x060057FF RID: 22527 RVA: 0x002193B8 File Offset: 0x002175B8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void copyFromRead(byte[] _dataRead, ushort[] _data)
 	{
@@ -146,7 +146,7 @@ public class MapChunkDatabase : DatabaseWithFixedDS<int, ushort[]>, IMapChunkDat
 		}
 	}
 
-	// Token: 0x06005778 RID: 22392 RVA: 0x002166CC File Offset: 0x002148CC
+	// Token: 0x06005800 RID: 22528 RVA: 0x002193E8 File Offset: 0x002175E8
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void copyToWrite(ushort[] _data, byte[] _dataWrite)
 	{
@@ -157,46 +157,46 @@ public class MapChunkDatabase : DatabaseWithFixedDS<int, ushort[]>, IMapChunkDat
 		}
 	}
 
-	// Token: 0x06005779 RID: 22393 RVA: 0x00216709 File Offset: 0x00214909
+	// Token: 0x06005801 RID: 22529 RVA: 0x00219425 File Offset: 0x00217625
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override ushort[] allocateDataStorage()
 	{
 		return new ushort[256];
 	}
 
-	// Token: 0x0400434B RID: 17227
+	// Token: 0x040043E6 RID: 17382
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const int cMaxMapChunks = 131072;
 
-	// Token: 0x0400434C RID: 17228
+	// Token: 0x040043E7 RID: 17383
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string EXT = "map";
 
-	// Token: 0x0400434D RID: 17229
+	// Token: 0x040043E8 RID: 17384
 	[PublicizedFrom(EAccessModifier.Private)]
 	public HashSet<int> chunksSent = new HashSet<int>();
 
-	// Token: 0x0400434E RID: 17230
+	// Token: 0x040043E9 RID: 17385
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int playerId;
 
-	// Token: 0x0400434F RID: 17231
+	// Token: 0x040043EA RID: 17386
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2i clientMapMiddlePosition = new Vector2i(int.MaxValue, int.MaxValue);
 
-	// Token: 0x04004350 RID: 17232
+	// Token: 0x040043EB RID: 17387
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bClientMapMiddlePositionUpdated;
 
-	// Token: 0x04004351 RID: 17233
+	// Token: 0x040043EC RID: 17388
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bNetworkDataAvail;
 
-	// Token: 0x04004352 RID: 17234
+	// Token: 0x040043ED RID: 17389
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<int> toSendList = new List<int>();
 
-	// Token: 0x04004353 RID: 17235
+	// Token: 0x040043EE RID: 17390
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<ushort[]> mapPiecesList = new List<ushort[]>();
 }

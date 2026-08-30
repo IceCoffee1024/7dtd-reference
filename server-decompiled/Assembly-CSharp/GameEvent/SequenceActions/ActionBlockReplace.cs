@@ -3,11 +3,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019BF RID: 6591
+	// Token: 0x020019E6 RID: 6630
 	[Preserve]
 	public class ActionBlockReplace : ActionBaseBlockAction
 	{
-		// Token: 0x0600C8C6 RID: 51398 RVA: 0x0049C4EC File Offset: 0x0049A6EC
+		// Token: 0x0600CA4F RID: 51791 RVA: 0x004A28E0 File Offset: 0x004A0AE0
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override bool CheckValid(World world, Vector3i currentPos)
 		{
@@ -15,7 +15,7 @@ namespace GameEvent.SequenceActions
 			return !block.isair && !block.Block.IsTerrainDecoration;
 		}
 
-		// Token: 0x0600C8C7 RID: 51399 RVA: 0x0049C528 File Offset: 0x0049A728
+		// Token: 0x0600CA50 RID: 51792 RVA: 0x004A291C File Offset: 0x004A0B1C
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BlockChangeInfo UpdateBlock(World world, Vector3i currentPos, BlockValue blockValue)
 		{
@@ -39,7 +39,7 @@ namespace GameEvent.SequenceActions
 			return null;
 		}
 
-		// Token: 0x0600C8C8 RID: 51400 RVA: 0x0049C5A8 File Offset: 0x0049A7A8
+		// Token: 0x0600CA51 RID: 51793 RVA: 0x004A299C File Offset: 0x004A0B9C
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -52,7 +52,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseBool(ActionBlockReplace.PropEmptyOnly, ref this.emptyOnly);
 		}
 
-		// Token: 0x0600C8C9 RID: 51401 RVA: 0x0049C601 File Offset: 0x0049A801
+		// Token: 0x0600CA52 RID: 51794 RVA: 0x004A29F5 File Offset: 0x004A0BF5
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -63,19 +63,19 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x0400986B RID: 39019
+		// Token: 0x0400999C RID: 39324
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string[] blockTo;
 
-		// Token: 0x0400986C RID: 39020
+		// Token: 0x0400999D RID: 39325
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool emptyOnly;
 
-		// Token: 0x0400986D RID: 39021
+		// Token: 0x0400999E RID: 39326
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropBlockTo = "block_to";
 
-		// Token: 0x0400986E RID: 39022
+		// Token: 0x0400999F RID: 39327
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropEmptyOnly = "empty_only";
 	}

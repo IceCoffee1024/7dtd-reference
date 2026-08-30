@@ -4,20 +4,20 @@ using System.Collections.ObjectModel;
 using Platform;
 using UnityEngine;
 
-// Token: 0x0200060E RID: 1550
+// Token: 0x02000617 RID: 1559
 public class LocalPlayerUI : MonoBehaviour
 {
 	// Token: 0x1400003B RID: 59
-	// (add) Token: 0x06003265 RID: 12901 RVA: 0x00147460 File Offset: 0x00145660
-	// (remove) Token: 0x06003266 RID: 12902 RVA: 0x00147498 File Offset: 0x00145698
+	// (add) Token: 0x060032B8 RID: 12984 RVA: 0x00149584 File Offset: 0x00147784
+	// (remove) Token: 0x060032B9 RID: 12985 RVA: 0x001495BC File Offset: 0x001477BC
 	public event Action<EntityPlayerLocal> OnEntityPlayerLocalAssigned;
 
 	// Token: 0x1400003C RID: 60
-	// (add) Token: 0x06003267 RID: 12903 RVA: 0x001474D0 File Offset: 0x001456D0
-	// (remove) Token: 0x06003268 RID: 12904 RVA: 0x00147508 File Offset: 0x00145708
+	// (add) Token: 0x060032BA RID: 12986 RVA: 0x001495F4 File Offset: 0x001477F4
+	// (remove) Token: 0x060032BB RID: 12987 RVA: 0x0014962C File Offset: 0x0014782C
 	public event Action OnUIShutdown;
 
-	// Token: 0x06003269 RID: 12905 RVA: 0x0014753D File Offset: 0x0014573D
+	// Token: 0x060032BC RID: 12988 RVA: 0x00149661 File Offset: 0x00147861
 	public static void QueueUIForNewPlayerEntity(LocalPlayerUI _playerUI)
 	{
 		if (!LocalPlayerUI.playerUIQueueForPendingEntity.Contains(_playerUI))
@@ -26,7 +26,7 @@ public class LocalPlayerUI : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600326A RID: 12906 RVA: 0x00147557 File Offset: 0x00145757
+	// Token: 0x060032BD RID: 12989 RVA: 0x0014967B File Offset: 0x0014787B
 	public static LocalPlayerUI DispatchNewPlayerForUI(EntityPlayerLocal _entityPlayer)
 	{
 		LocalPlayerUI uiforPlayer = LocalPlayerUI.GetUIForPlayer(_entityPlayer);
@@ -34,7 +34,7 @@ public class LocalPlayerUI : MonoBehaviour
 		return uiforPlayer;
 	}
 
-	// Token: 0x0600326B RID: 12907 RVA: 0x00147568 File Offset: 0x00145768
+	// Token: 0x060032BE RID: 12990 RVA: 0x0014968C File Offset: 0x0014788C
 	public static LocalPlayerUI GetUIForPrimaryPlayer()
 	{
 		for (int i = 0; i < LocalPlayerUI.playerUIs.Count; i++)
@@ -48,7 +48,7 @@ public class LocalPlayerUI : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x0600326C RID: 12908 RVA: 0x001475A4 File Offset: 0x001457A4
+	// Token: 0x060032BF RID: 12991 RVA: 0x001496C8 File Offset: 0x001478C8
 	public static LocalPlayerUI GetUIForPlayer(EntityPlayerLocal _entityPlayer)
 	{
 		if (_entityPlayer == null)
@@ -80,7 +80,7 @@ public class LocalPlayerUI : MonoBehaviour
 		return localPlayerUI;
 	}
 
-	// Token: 0x0600326D RID: 12909 RVA: 0x00147634 File Offset: 0x00145834
+	// Token: 0x060032C0 RID: 12992 RVA: 0x00149758 File Offset: 0x00147958
 	public static LocalPlayerUI CreateUIForNewLocalPlayer()
 	{
 		if (!LocalPlayerUI.primaryUI)
@@ -115,7 +115,7 @@ public class LocalPlayerUI : MonoBehaviour
 		return component2;
 	}
 
-	// Token: 0x0600326E RID: 12910 RVA: 0x00147784 File Offset: 0x00145984
+	// Token: 0x060032C1 RID: 12993 RVA: 0x001498A8 File Offset: 0x00147AA8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static void PrepareUIForSplitScreen(Transform _uiTransform)
 	{
@@ -145,7 +145,7 @@ public class LocalPlayerUI : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600326F RID: 12911 RVA: 0x0014785C File Offset: 0x00145A5C
+	// Token: 0x060032C2 RID: 12994 RVA: 0x00149980 File Offset: 0x00147B80
 	public static bool AnyModalWindowOpen()
 	{
 		for (int i = 0; i < LocalPlayerUI.playerUIs.Count; i++)
@@ -158,7 +158,7 @@ public class LocalPlayerUI : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06003270 RID: 12912 RVA: 0x00147898 File Offset: 0x00145A98
+	// Token: 0x060032C3 RID: 12995 RVA: 0x001499BC File Offset: 0x00147BBC
 	public void UpdateChildCameraIndices()
 	{
 		int num = 0;
@@ -169,8 +169,8 @@ public class LocalPlayerUI : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700052F RID: 1327
-	// (get) Token: 0x06003271 RID: 12913 RVA: 0x001478CF File Offset: 0x00145ACF
+	// Token: 0x17000538 RID: 1336
+	// (get) Token: 0x060032C4 RID: 12996 RVA: 0x001499F3 File Offset: 0x00147BF3
 	public static LocalPlayerUI primaryUI
 	{
 		get
@@ -179,17 +179,17 @@ public class LocalPlayerUI : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000530 RID: 1328
-	// (get) Token: 0x06003272 RID: 12914 RVA: 0x001478D6 File Offset: 0x00145AD6
-	// (set) Token: 0x06003273 RID: 12915 RVA: 0x001478DE File Offset: 0x00145ADE
+	// Token: 0x17000539 RID: 1337
+	// (get) Token: 0x060032C5 RID: 12997 RVA: 0x001499FA File Offset: 0x00147BFA
+	// (set) Token: 0x060032C6 RID: 12998 RVA: 0x00149A02 File Offset: 0x00147C02
 	public int playerIndex
 	{
 		get; [PublicizedFrom(EAccessModifier.Private)]
 		set;
 	}
 
-	// Token: 0x17000531 RID: 1329
-	// (get) Token: 0x06003274 RID: 12916 RVA: 0x001478E7 File Offset: 0x00145AE7
+	// Token: 0x1700053A RID: 1338
+	// (get) Token: 0x060032C7 RID: 12999 RVA: 0x00149A0B File Offset: 0x00147C0B
 	public static int localPlayerCount
 	{
 		[PublicizedFrom(EAccessModifier.Private)]
@@ -199,8 +199,8 @@ public class LocalPlayerUI : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000532 RID: 1330
-	// (get) Token: 0x06003275 RID: 12917 RVA: 0x001478F5 File Offset: 0x00145AF5
+	// Token: 0x1700053B RID: 1339
+	// (get) Token: 0x060032C8 RID: 13000 RVA: 0x00149A19 File Offset: 0x00147C19
 	public PlayerActionsLocal playerInput
 	{
 		get
@@ -219,8 +219,8 @@ public class LocalPlayerUI : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000533 RID: 1331
-	// (get) Token: 0x06003276 RID: 12918 RVA: 0x00147912 File Offset: 0x00145B12
+	// Token: 0x1700053C RID: 1340
+	// (get) Token: 0x060032C9 RID: 13001 RVA: 0x00149A36 File Offset: 0x00147C36
 	public ActionSetManager ActionSetManager
 	{
 		get
@@ -239,9 +239,9 @@ public class LocalPlayerUI : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000534 RID: 1332
-	// (get) Token: 0x06003277 RID: 12919 RVA: 0x0014792F File Offset: 0x00145B2F
-	// (set) Token: 0x06003278 RID: 12920 RVA: 0x00147937 File Offset: 0x00145B37
+	// Token: 0x1700053D RID: 1341
+	// (get) Token: 0x060032CA RID: 13002 RVA: 0x00149A53 File Offset: 0x00147C53
+	// (set) Token: 0x060032CB RID: 13003 RVA: 0x00149A5B File Offset: 0x00147C5B
 	public EntityPlayerLocal entityPlayer
 	{
 		get
@@ -261,8 +261,8 @@ public class LocalPlayerUI : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000535 RID: 1333
-	// (get) Token: 0x06003279 RID: 12921 RVA: 0x00147956 File Offset: 0x00145B56
+	// Token: 0x1700053E RID: 1342
+	// (get) Token: 0x060032CC RID: 13004 RVA: 0x00149A7A File Offset: 0x00147C7A
 	public LocalPlayer localPlayer
 	{
 		get
@@ -275,8 +275,8 @@ public class LocalPlayerUI : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000536 RID: 1334
-	// (get) Token: 0x0600327A RID: 12922 RVA: 0x00147973 File Offset: 0x00145B73
+	// Token: 0x1700053F RID: 1343
+	// (get) Token: 0x060032CD RID: 13005 RVA: 0x00149A97 File Offset: 0x00147C97
 	public bool isPrimaryUI
 	{
 		get
@@ -285,9 +285,9 @@ public class LocalPlayerUI : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000537 RID: 1335
-	// (get) Token: 0x0600327B RID: 12923 RVA: 0x0014797B File Offset: 0x00145B7B
-	// (set) Token: 0x0600327C RID: 12924 RVA: 0x00147983 File Offset: 0x00145B83
+	// Token: 0x17000540 RID: 1344
+	// (get) Token: 0x060032CE RID: 13006 RVA: 0x00149A9F File Offset: 0x00147C9F
+	// (set) Token: 0x060032CF RID: 13007 RVA: 0x00149AA7 File Offset: 0x00147CA7
 	public bool IsCleanCopy
 	{
 		get
@@ -300,8 +300,8 @@ public class LocalPlayerUI : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000538 RID: 1336
-	// (get) Token: 0x0600327D RID: 12925 RVA: 0x0014798C File Offset: 0x00145B8C
+	// Token: 0x17000541 RID: 1345
+	// (get) Token: 0x060032D0 RID: 13008 RVA: 0x00149AB0 File Offset: 0x00147CB0
 	public GUIWindowManager windowManager
 	{
 		get
@@ -314,8 +314,8 @@ public class LocalPlayerUI : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000539 RID: 1337
-	// (get) Token: 0x0600327E RID: 12926 RVA: 0x001479C0 File Offset: 0x00145BC0
+	// Token: 0x17000542 RID: 1346
+	// (get) Token: 0x060032D1 RID: 13009 RVA: 0x00149AE4 File Offset: 0x00147CE4
 	public NGUIWindowManager nguiWindowManager
 	{
 		get
@@ -328,8 +328,8 @@ public class LocalPlayerUI : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700053A RID: 1338
-	// (get) Token: 0x0600327F RID: 12927 RVA: 0x001479F4 File Offset: 0x00145BF4
+	// Token: 0x17000543 RID: 1347
+	// (get) Token: 0x060032D2 RID: 13010 RVA: 0x00149B18 File Offset: 0x00147D18
 	public UICamera uiCamera
 	{
 		get
@@ -342,8 +342,8 @@ public class LocalPlayerUI : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700053B RID: 1339
-	// (get) Token: 0x06003280 RID: 12928 RVA: 0x00147A28 File Offset: 0x00145C28
+	// Token: 0x17000544 RID: 1348
+	// (get) Token: 0x060032D3 RID: 13011 RVA: 0x00149B4C File Offset: 0x00147D4C
 	public Camera camera
 	{
 		get
@@ -356,8 +356,8 @@ public class LocalPlayerUI : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700053C RID: 1340
-	// (get) Token: 0x06003281 RID: 12929 RVA: 0x00147A5C File Offset: 0x00145C5C
+	// Token: 0x17000545 RID: 1349
+	// (get) Token: 0x060032D4 RID: 13012 RVA: 0x00149B80 File Offset: 0x00147D80
 	public CursorControllerAbs CursorController
 	{
 		get
@@ -375,8 +375,8 @@ public class LocalPlayerUI : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700053D RID: 1341
-	// (get) Token: 0x06003282 RID: 12930 RVA: 0x00147A9F File Offset: 0x00145C9F
+	// Token: 0x17000546 RID: 1350
+	// (get) Token: 0x060032D5 RID: 13013 RVA: 0x00149BC3 File Offset: 0x00147DC3
 	public XUi xui
 	{
 		get
@@ -389,7 +389,7 @@ public class LocalPlayerUI : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06003283 RID: 12931 RVA: 0x00147AC4 File Offset: 0x00145CC4
+	// Token: 0x060032D6 RID: 13014 RVA: 0x00149BE8 File Offset: 0x00147DE8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Awake()
 	{
@@ -423,7 +423,7 @@ public class LocalPlayerUI : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06003284 RID: 12932 RVA: 0x00147BDF File Offset: 0x00145DDF
+	// Token: 0x060032D7 RID: 13015 RVA: 0x00149D03 File Offset: 0x00147F03
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Start()
 	{
@@ -437,7 +437,7 @@ public class LocalPlayerUI : MonoBehaviour
 		this.SetupMenuSoftCursor();
 	}
 
-	// Token: 0x06003285 RID: 12933 RVA: 0x00147C10 File Offset: 0x00145E10
+	// Token: 0x060032D8 RID: 13016 RVA: 0x00149D34 File Offset: 0x00147F34
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SetupMenuSoftCursor()
 	{
@@ -445,21 +445,21 @@ public class LocalPlayerUI : MonoBehaviour
 		this.CursorController.RefreshBounds();
 	}
 
-	// Token: 0x06003286 RID: 12934 RVA: 0x00147C43 File Offset: 0x00145E43
+	// Token: 0x060032D9 RID: 13017 RVA: 0x00149D67 File Offset: 0x00147F67
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnEnable()
 	{
 		LocalPlayerManager.OnLocalPlayersChanged += this.HandleLocalPlayersChanged;
 	}
 
-	// Token: 0x06003287 RID: 12935 RVA: 0x00147C56 File Offset: 0x00145E56
+	// Token: 0x060032DA RID: 13018 RVA: 0x00149D7A File Offset: 0x00147F7A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDisable()
 	{
 		LocalPlayerManager.OnLocalPlayersChanged -= this.HandleLocalPlayersChanged;
 	}
 
-	// Token: 0x06003288 RID: 12936 RVA: 0x00147C6C File Offset: 0x00145E6C
+	// Token: 0x060032DB RID: 13019 RVA: 0x00149D90 File Offset: 0x00147F90
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DispatchLocalPlayersChanged()
 	{
@@ -475,7 +475,7 @@ public class LocalPlayerUI : MonoBehaviour
 		LocalPlayerManager.LocalPlayersChanged();
 	}
 
-	// Token: 0x06003289 RID: 12937 RVA: 0x00147CB4 File Offset: 0x00145EB4
+	// Token: 0x060032DC RID: 13020 RVA: 0x00149DD8 File Offset: 0x00147FD8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void HandleLocalPlayersChanged()
 	{
@@ -489,7 +489,7 @@ public class LocalPlayerUI : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600328A RID: 12938 RVA: 0x00147D14 File Offset: 0x00145F14
+	// Token: 0x060032DD RID: 13021 RVA: 0x00149E38 File Offset: 0x00148038
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -867,7 +867,7 @@ public class LocalPlayerUI : MonoBehaviour
 		this.initialRepeat = false;
 	}
 
-	// Token: 0x0600328B RID: 12939 RVA: 0x0014893C File Offset: 0x00146B3C
+	// Token: 0x060032DE RID: 13022 RVA: 0x0014AA60 File Offset: 0x00148C60
 	public void RefreshNavigationTarget()
 	{
 		LocalPlayerUI.openWindows.Clear();
@@ -907,7 +907,7 @@ public class LocalPlayerUI : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600328C RID: 12940 RVA: 0x00148A90 File Offset: 0x00146C90
+	// Token: 0x060032DF RID: 13023 RVA: 0x0014ABB4 File Offset: 0x00148DB4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnDestroy()
 	{
@@ -922,7 +922,7 @@ public class LocalPlayerUI : MonoBehaviour
 		this.DispatchLocalPlayersChanged();
 	}
 
-	// Token: 0x0600328D RID: 12941 RVA: 0x00148AC9 File Offset: 0x00146CC9
+	// Token: 0x060032E0 RID: 13024 RVA: 0x0014ABED File Offset: 0x00148DED
 	public void RegisterItemStackGrid(XUiC_ItemStackGrid _grid)
 	{
 		if (this.activeItemStackGrids.Contains(_grid))
@@ -933,14 +933,14 @@ public class LocalPlayerUI : MonoBehaviour
 		this.SortItemStackGrids();
 	}
 
-	// Token: 0x0600328E RID: 12942 RVA: 0x00148AEC File Offset: 0x00146CEC
+	// Token: 0x060032E1 RID: 13025 RVA: 0x0014AC10 File Offset: 0x00148E10
 	public void UnregisterItemStackGrid(XUiC_ItemStackGrid _grid)
 	{
 		this.activeItemStackGrids.Remove(_grid);
 		this.SortItemStackGrids();
 	}
 
-	// Token: 0x0600328F RID: 12943 RVA: 0x00148B01 File Offset: 0x00146D01
+	// Token: 0x060032E2 RID: 13026 RVA: 0x0014AC25 File Offset: 0x00148E25
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void SortItemStackGrids()
 	{
@@ -954,7 +954,7 @@ public class LocalPlayerUI : MonoBehaviour
 		});
 	}
 
-	// Token: 0x06003290 RID: 12944 RVA: 0x00148B30 File Offset: 0x00146D30
+	// Token: 0x060032E3 RID: 13027 RVA: 0x0014AC54 File Offset: 0x00148E54
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool TryItemStackGridNavigation()
 	{
@@ -1016,127 +1016,127 @@ public class LocalPlayerUI : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x040027C7 RID: 10183
+	// Token: 0x0400283A RID: 10298
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static LocalPlayerUI mPrimaryUI;
 
-	// Token: 0x040027C8 RID: 10184
+	// Token: 0x0400283B RID: 10299
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static LocalPlayerUI mCleanCopy;
 
-	// Token: 0x040027CA RID: 10186
+	// Token: 0x0400283D RID: 10301
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public EntityPlayerLocal mEntityPlayer;
 
-	// Token: 0x040027CB RID: 10187
+	// Token: 0x0400283E RID: 10302
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool mIsPrimaryUI;
 
-	// Token: 0x040027CC RID: 10188
+	// Token: 0x0400283F RID: 10303
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool mIsCleanCopy;
 
-	// Token: 0x040027CD RID: 10189
+	// Token: 0x04002840 RID: 10304
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public GUIWindowManager mWindowManager;
 
-	// Token: 0x040027CE RID: 10190
+	// Token: 0x04002841 RID: 10305
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public NGUIWindowManager mNGUIWindowManager;
 
-	// Token: 0x040027CF RID: 10191
+	// Token: 0x04002842 RID: 10306
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public UICamera mUICamera;
 
-	// Token: 0x040027D0 RID: 10192
+	// Token: 0x04002843 RID: 10307
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Camera mCamera;
 
-	// Token: 0x040027D1 RID: 10193
+	// Token: 0x04002844 RID: 10308
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public CursorControllerAbs mCursorController;
 
-	// Token: 0x040027D2 RID: 10194
+	// Token: 0x04002845 RID: 10309
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public XUi mXUi;
 
-	// Token: 0x040027D3 RID: 10195
+	// Token: 0x04002846 RID: 10310
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly List<LocalPlayerUI> playerUIs = new List<LocalPlayerUI>();
 
-	// Token: 0x040027D4 RID: 10196
+	// Token: 0x04002847 RID: 10311
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static readonly Queue<LocalPlayerUI> playerUIQueueForPendingEntity = new Queue<LocalPlayerUI>();
 
-	// Token: 0x040027D5 RID: 10197
+	// Token: 0x04002848 RID: 10312
 	public static readonly ReadOnlyCollection<LocalPlayerUI> PlayerUIs = new ReadOnlyCollection<LocalPlayerUI>(LocalPlayerUI.playerUIs);
 
-	// Token: 0x040027D6 RID: 10198
+	// Token: 0x04002849 RID: 10313
 	public static bool CreatingCleanCopy;
 
-	// Token: 0x040027D7 RID: 10199
+	// Token: 0x0400284A RID: 10314
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static List<XUiView> navigationCandidates = new List<XUiView>();
 
-	// Token: 0x040027D8 RID: 10200
+	// Token: 0x0400284B RID: 10315
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static List<XUiView> navigationPrimeCandidates = new List<XUiView>();
 
-	// Token: 0x040027D9 RID: 10201
+	// Token: 0x0400284C RID: 10316
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static List<XUiView> navigationWrapAroundCandidates = new List<XUiView>();
 
-	// Token: 0x040027DA RID: 10202
+	// Token: 0x0400284D RID: 10317
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static List<XUiView> navigationWrapAroundPrimeCandidates = new List<XUiView>();
 
-	// Token: 0x040027DB RID: 10203
+	// Token: 0x0400284E RID: 10318
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static List<XUiV_Window> openWindows = new List<XUiV_Window>();
 
-	// Token: 0x040027DC RID: 10204
+	// Token: 0x0400284F RID: 10319
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public static List<XUiView> navViews = new List<XUiView>();
 
-	// Token: 0x040027DD RID: 10205
+	// Token: 0x04002850 RID: 10320
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public const float navigationAngleLimit = 78f;
 
-	// Token: 0x040027DE RID: 10206
+	// Token: 0x04002851 RID: 10321
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public Vector2 previousInputVector = Vector2.zero;
 
-	// Token: 0x040027DF RID: 10207
+	// Token: 0x04002852 RID: 10322
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public float inputRepeatTimer;
 
-	// Token: 0x040027E0 RID: 10208
+	// Token: 0x04002853 RID: 10323
 	[PublicizedFrom(EAccessModifier.Private)]
 	[NonSerialized]
 	public bool initialRepeat;
 
-	// Token: 0x040027E1 RID: 10209
+	// Token: 0x04002854 RID: 10324
 	public List<XUiC_ItemStackGrid> activeItemStackGrids = new List<XUiC_ItemStackGrid>();
 }

@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x020002BD RID: 701
+// Token: 0x020002C1 RID: 705
 [Preserve]
 public class ConsoleCmdWhitelist : ConsoleCmdAbstract
 {
-	// Token: 0x06001441 RID: 5185 RVA: 0x0007AD7A File Offset: 0x00078F7A
+	// Token: 0x06001453 RID: 5203 RVA: 0x0007B3D6 File Offset: 0x000795D6
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "whitelist" };
 	}
 
-	// Token: 0x1700023B RID: 571
-	// (get) Token: 0x06001442 RID: 5186 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x1700023C RID: 572
+	// (get) Token: 0x06001454 RID: 5204 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -24,8 +24,8 @@ public class ConsoleCmdWhitelist : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x1700023C RID: 572
-	// (get) Token: 0x06001443 RID: 5187 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// Token: 0x1700023D RID: 573
+	// (get) Token: 0x06001455 RID: 5205 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -34,21 +34,21 @@ public class ConsoleCmdWhitelist : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x06001444 RID: 5188 RVA: 0x0007AD8A File Offset: 0x00078F8A
+	// Token: 0x06001456 RID: 5206 RVA: 0x0007B3E6 File Offset: 0x000795E6
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Manage whitelist entries";
 	}
 
-	// Token: 0x06001445 RID: 5189 RVA: 0x0007AD91 File Offset: 0x00078F91
+	// Token: 0x06001457 RID: 5207 RVA: 0x0007B3ED File Offset: 0x000795ED
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Set/get whitelist entries. Note: If there is at least one entry on the list\nno user who is not on this list will be able to join the server!\nUsage:\n   whitelist add <name / entity id / platform + platform user id> [displayname]\n   whitelist remove <name / entity id / platform + platform user id>\n   whitelist addgroup <steam id> [displayname]\n   whitelist removegroup <steam id>\n   whitelist list\nTo use the add/remove sub commands with a name or entity ID the player has\nto be online, the variant with platform and platform ID can be used for currently offline\nusers too.\nDisplayname can be used to put a descriptive name to the ban list in addition\nto the user's platform ID. If used on an online user the player name is used by default.";
 	}
 
-	// Token: 0x06001446 RID: 5190 RVA: 0x0007AD98 File Offset: 0x00078F98
+	// Token: 0x06001458 RID: 5208 RVA: 0x0007B3F4 File Offset: 0x000795F4
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (GameManager.Instance.adminTools == null)
@@ -88,7 +88,7 @@ public class ConsoleCmdWhitelist : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Invalid sub command \"" + _params[0] + "\".");
 	}
 
-	// Token: 0x06001447 RID: 5191 RVA: 0x0007AE74 File Offset: 0x00079074
+	// Token: 0x06001459 RID: 5209 RVA: 0x0007B4D0 File Offset: 0x000796D0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteAdd(List<string> _params)
 	{
@@ -123,7 +123,7 @@ public class ConsoleCmdWhitelist : ConsoleCmdAbstract
 		this.WhitelistStateChangedMessage(flag);
 	}
 
-	// Token: 0x06001448 RID: 5192 RVA: 0x0007AF70 File Offset: 0x00079170
+	// Token: 0x0600145A RID: 5210 RVA: 0x0007B5CC File Offset: 0x000797CC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteRemove(List<string> _params)
 	{
@@ -155,7 +155,7 @@ public class ConsoleCmdWhitelist : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("\"" + _params[1] + "\" is not a valid entity id, player name or user id.");
 	}
 
-	// Token: 0x06001449 RID: 5193 RVA: 0x0007B0D0 File Offset: 0x000792D0
+	// Token: 0x0600145B RID: 5211 RVA: 0x0007B72C File Offset: 0x0007992C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteAddGroup(List<string> _params)
 	{
@@ -181,7 +181,7 @@ public class ConsoleCmdWhitelist : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("\"" + _params[1] + "\" is not a valid steam group id.");
 	}
 
-	// Token: 0x0600144A RID: 5194 RVA: 0x0007B1B0 File Offset: 0x000793B0
+	// Token: 0x0600145C RID: 5212 RVA: 0x0007B80C File Offset: 0x00079A0C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteRemoveGroup(List<string> _params)
 	{
@@ -208,7 +208,7 @@ public class ConsoleCmdWhitelist : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("\"" + _params[1] + "\" is not a valid steam group id.");
 	}
 
-	// Token: 0x0600144B RID: 5195 RVA: 0x0007B29C File Offset: 0x0007949C
+	// Token: 0x0600145D RID: 5213 RVA: 0x0007B8F8 File Offset: 0x00079AF8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ExecuteList()
 	{
@@ -240,7 +240,7 @@ public class ConsoleCmdWhitelist : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output("Whitelist only mode active.");
 	}
 
-	// Token: 0x0600144C RID: 5196 RVA: 0x0007B460 File Offset: 0x00079660
+	// Token: 0x0600145E RID: 5214 RVA: 0x0007BABC File Offset: 0x00079CBC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool WhitelistStateChangedMessage(bool _whitelistEnabledBefore)
 	{

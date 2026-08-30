@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine.Scripting;
 
-// Token: 0x0200021A RID: 538
+// Token: 0x0200021C RID: 540
 [Preserve]
 public class ConsoleCmdGetGameStats : ConsoleCmdAbstract
 {
-	// Token: 0x06001057 RID: 4183 RVA: 0x0006734C File Offset: 0x0006554C
+	// Token: 0x06001062 RID: 4194 RVA: 0x000678A4 File Offset: 0x00065AA4
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool prefAccessAllowed(EnumGameStats gp)
 	{
@@ -21,7 +21,7 @@ public class ConsoleCmdGetGameStats : ConsoleCmdAbstract
 		return true;
 	}
 
-	// Token: 0x06001058 RID: 4184 RVA: 0x00067387 File Offset: 0x00065587
+	// Token: 0x06001063 RID: 4195 RVA: 0x000678DF File Offset: 0x00065ADF
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
@@ -29,7 +29,7 @@ public class ConsoleCmdGetGameStats : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000188 RID: 392
-	// (get) Token: 0x06001059 RID: 4185 RVA: 0x0006110A File Offset: 0x0005F30A
+	// (get) Token: 0x06001064 RID: 4196 RVA: 0x00061652 File Offset: 0x0005F852
 	public override int DefaultPermissionLevel
 	{
 		get
@@ -39,7 +39,7 @@ public class ConsoleCmdGetGameStats : ConsoleCmdAbstract
 	}
 
 	// Token: 0x17000189 RID: 393
-	// (get) Token: 0x0600105A RID: 4186 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// (get) Token: 0x06001065 RID: 4197 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -48,21 +48,21 @@ public class ConsoleCmdGetGameStats : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600105B RID: 4187 RVA: 0x0006739F File Offset: 0x0006559F
+	// Token: 0x06001066 RID: 4198 RVA: 0x000678F7 File Offset: 0x00065AF7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Gets game stats";
 	}
 
-	// Token: 0x0600105C RID: 4188 RVA: 0x000673A6 File Offset: 0x000655A6
+	// Token: 0x06001067 RID: 4199 RVA: 0x000678FE File Offset: 0x00065AFE
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "Get all game stats or only those matching a given substring";
 	}
 
-	// Token: 0x0600105D RID: 4189 RVA: 0x000673B0 File Offset: 0x000655B0
+	// Token: 0x06001068 RID: 4200 RVA: 0x00067908 File Offset: 0x00065B08
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		string text = null;
@@ -84,7 +84,7 @@ public class ConsoleCmdGetGameStats : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x04000CA9 RID: 3241
+	// Token: 0x04000CB6 RID: 3254
 	[PublicizedFrom(EAccessModifier.Private)]
 	public string[] forbiddenPrefs = new string[] { "last" };
 }

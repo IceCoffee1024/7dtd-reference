@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x020008FE RID: 2302
+// Token: 0x0200090A RID: 2314
 public class PowerConsumerSingle : PowerItem
 {
-	// Token: 0x17000706 RID: 1798
-	// (get) Token: 0x06004297 RID: 17047 RVA: 0x0002EEAC File Offset: 0x0002D0AC
+	// Token: 0x17000712 RID: 1810
+	// (get) Token: 0x060042FC RID: 17148 RVA: 0x0002F168 File Offset: 0x0002D368
 	public override PowerItem.PowerItemTypes PowerItemType
 	{
 		get
@@ -13,7 +13,7 @@ public class PowerConsumerSingle : PowerItem
 		}
 	}
 
-	// Token: 0x06004298 RID: 17048 RVA: 0x001A042C File Offset: 0x0019E62C
+	// Token: 0x060042FD RID: 17149 RVA: 0x001A2504 File Offset: 0x001A0704
 	public override void HandlePowerUpdate(bool isOn)
 	{
 		bool isPowered = this.isPowered;
@@ -31,7 +31,7 @@ public class PowerConsumerSingle : PowerItem
 		}
 	}
 
-	// Token: 0x06004299 RID: 17049 RVA: 0x001A0498 File Offset: 0x0019E698
+	// Token: 0x060042FE RID: 17150 RVA: 0x001A2570 File Offset: 0x001A0770
 	public override void SetValuesFromBlock()
 	{
 		base.SetValuesFromBlock();
@@ -42,7 +42,7 @@ public class PowerConsumerSingle : PowerItem
 		}
 	}
 
-	// Token: 0x040035A5 RID: 13733
+	// Token: 0x04003626 RID: 13862
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool lastActivate;
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 // Token: 0x020000B6 RID: 182
 public class AudioPlayer : MonoBehaviour
 {
-	// Token: 0x0600037E RID: 894 RVA: 0x00019D48 File Offset: 0x00017F48
+	// Token: 0x0600037F RID: 895 RVA: 0x00019E0C File Offset: 0x0001800C
 	public void Play()
 	{
 		if (!this.refEntity)
@@ -52,7 +52,7 @@ public class AudioPlayer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600037F RID: 895 RVA: 0x00019E51 File Offset: 0x00018051
+	// Token: 0x06000380 RID: 896 RVA: 0x00019F15 File Offset: 0x00018115
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void PlayAtPos(Vector3 _pos)
 	{
@@ -62,7 +62,7 @@ public class AudioPlayer : MonoBehaviour
 		this.queuedForPlaying = false;
 	}
 
-	// Token: 0x06000380 RID: 896 RVA: 0x00019E8C File Offset: 0x0001808C
+	// Token: 0x06000381 RID: 897 RVA: 0x00019F50 File Offset: 0x00018150
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void Update()
 	{
@@ -81,7 +81,7 @@ public class AudioPlayer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000381 RID: 897 RVA: 0x00019EF8 File Offset: 0x000180F8
+	// Token: 0x06000382 RID: 898 RVA: 0x00019FBC File Offset: 0x000181BC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void StopAudio()
 	{
@@ -99,7 +99,7 @@ public class AudioPlayer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000382 RID: 898 RVA: 0x00019F4A File Offset: 0x0001814A
+	// Token: 0x06000383 RID: 899 RVA: 0x0001A00E File Offset: 0x0001820E
 	public void OnEnable()
 	{
 		if (!this.playOnDemand)
@@ -108,13 +108,13 @@ public class AudioPlayer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000383 RID: 899 RVA: 0x00019F5B File Offset: 0x0001815B
+	// Token: 0x06000384 RID: 900 RVA: 0x0001A01F File Offset: 0x0001821F
 	public void OnDisable()
 	{
 		this.StopAudio();
 	}
 
-	// Token: 0x06000384 RID: 900 RVA: 0x00019F5B File Offset: 0x0001815B
+	// Token: 0x06000385 RID: 901 RVA: 0x0001A01F File Offset: 0x0001821F
 	public void OnDestroy()
 	{
 		this.StopAudio();

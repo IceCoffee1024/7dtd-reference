@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000ABE RID: 2750
+// Token: 0x02000ACF RID: 2767
 public class ProgressionClass
 {
-	// Token: 0x170008E2 RID: 2274
-	// (get) Token: 0x06005242 RID: 21058 RVA: 0x001F7920 File Offset: 0x001F5B20
+	// Token: 0x170008F4 RID: 2292
+	// (get) Token: 0x060052C8 RID: 21192 RVA: 0x001FA3B8 File Offset: 0x001F85B8
 	public bool IsBookGroup
 	{
 		get
@@ -15,8 +15,8 @@ public class ProgressionClass
 		}
 	}
 
-	// Token: 0x170008E3 RID: 2275
-	// (get) Token: 0x06005243 RID: 21059 RVA: 0x001F792B File Offset: 0x001F5B2B
+	// Token: 0x170008F5 RID: 2293
+	// (get) Token: 0x060052C9 RID: 21193 RVA: 0x001FA3C3 File Offset: 0x001F85C3
 	public bool IsBook
 	{
 		get
@@ -25,7 +25,7 @@ public class ProgressionClass
 		}
 	}
 
-	// Token: 0x06005244 RID: 21060 RVA: 0x001F7938 File Offset: 0x001F5B38
+	// Token: 0x060052CA RID: 21194 RVA: 0x001FA3D0 File Offset: 0x001F85D0
 	public bool ValidDisplay(ProgressionClass.DisplayTypes displayType)
 	{
 		switch (displayType)
@@ -41,8 +41,8 @@ public class ProgressionClass
 		}
 	}
 
-	// Token: 0x170008E4 RID: 2276
-	// (get) Token: 0x06005245 RID: 21061 RVA: 0x001F7988 File Offset: 0x001F5B88
+	// Token: 0x170008F6 RID: 2294
+	// (get) Token: 0x060052CB RID: 21195 RVA: 0x001FA420 File Offset: 0x001F8620
 	public ProgressionCurrencyType CurrencyType
 	{
 		get
@@ -61,8 +61,8 @@ public class ProgressionClass
 		}
 	}
 
-	// Token: 0x170008E5 RID: 2277
-	// (get) Token: 0x06005246 RID: 21062 RVA: 0x001F79BC File Offset: 0x001F5BBC
+	// Token: 0x170008F7 RID: 2295
+	// (get) Token: 0x060052CC RID: 21196 RVA: 0x001FA454 File Offset: 0x001F8654
 	public ProgressionClass Parent
 	{
 		get
@@ -80,8 +80,8 @@ public class ProgressionClass
 		}
 	}
 
-	// Token: 0x170008E6 RID: 2278
-	// (get) Token: 0x06005247 RID: 21063 RVA: 0x001F79EA File Offset: 0x001F5BEA
+	// Token: 0x170008F8 RID: 2296
+	// (get) Token: 0x060052CD RID: 21197 RVA: 0x001FA482 File Offset: 0x001F8682
 	public bool IsPerk
 	{
 		get
@@ -90,8 +90,8 @@ public class ProgressionClass
 		}
 	}
 
-	// Token: 0x170008E7 RID: 2279
-	// (get) Token: 0x06005248 RID: 21064 RVA: 0x001F79F5 File Offset: 0x001F5BF5
+	// Token: 0x170008F9 RID: 2297
+	// (get) Token: 0x060052CE RID: 21198 RVA: 0x001FA48D File Offset: 0x001F868D
 	public bool IsSkill
 	{
 		get
@@ -100,8 +100,8 @@ public class ProgressionClass
 		}
 	}
 
-	// Token: 0x170008E8 RID: 2280
-	// (get) Token: 0x06005249 RID: 21065 RVA: 0x001F7A00 File Offset: 0x001F5C00
+	// Token: 0x170008FA RID: 2298
+	// (get) Token: 0x060052CF RID: 21199 RVA: 0x001FA498 File Offset: 0x001F8698
 	public bool IsAttribute
 	{
 		get
@@ -110,8 +110,8 @@ public class ProgressionClass
 		}
 	}
 
-	// Token: 0x170008E9 RID: 2281
-	// (get) Token: 0x0600524A RID: 21066 RVA: 0x001F7A0B File Offset: 0x001F5C0B
+	// Token: 0x170008FB RID: 2299
+	// (get) Token: 0x060052D0 RID: 21200 RVA: 0x001FA4A3 File Offset: 0x001F86A3
 	public bool IsCrafting
 	{
 		get
@@ -120,9 +120,9 @@ public class ProgressionClass
 		}
 	}
 
-	// Token: 0x170008EA RID: 2282
-	// (get) Token: 0x0600524B RID: 21067 RVA: 0x001F7A18 File Offset: 0x001F5C18
-	// (set) Token: 0x0600524C RID: 21068 RVA: 0x001F7A6D File Offset: 0x001F5C6D
+	// Token: 0x170008FC RID: 2300
+	// (get) Token: 0x060052D1 RID: 21201 RVA: 0x001FA4B0 File Offset: 0x001F86B0
+	// (set) Token: 0x060052D2 RID: 21202 RVA: 0x001FA505 File Offset: 0x001F8705
 	public float ListSortOrder
 	{
 		get
@@ -143,7 +143,7 @@ public class ProgressionClass
 		}
 	}
 
-	// Token: 0x0600524D RID: 21069 RVA: 0x001F7A78 File Offset: 0x001F5C78
+	// Token: 0x060052D3 RID: 21203 RVA: 0x001FA510 File Offset: 0x001F8710
 	public ProgressionClass.DisplayData AddDisplayData(string _item, int[] _qualityStarts, string[] _customIcon, string[] _customIconTint, string[] _customName, bool _customHasQuality)
 	{
 		if (this.DisplayDataList == null)
@@ -164,7 +164,7 @@ public class ProgressionClass
 		return displayData;
 	}
 
-	// Token: 0x0600524E RID: 21070 RVA: 0x001F7AE0 File Offset: 0x001F5CE0
+	// Token: 0x060052D4 RID: 21204 RVA: 0x001FA578 File Offset: 0x001F8778
 	public ProgressionClass(string _name)
 	{
 		this.Name = _name;
@@ -176,7 +176,7 @@ public class ProgressionClass
 		this.Type = ProgressionType.None;
 	}
 
-	// Token: 0x0600524F RID: 21071 RVA: 0x001F7B5E File Offset: 0x001F5D5E
+	// Token: 0x060052D5 RID: 21205 RVA: 0x001FA5F6 File Offset: 0x001F87F6
 	public void ModifyValue(EntityAlive _ea, ProgressionValue _pv, PassiveEffects _effect, ref float _base_value, ref float _perc_value, FastTags<TagGroup.Global> _tags = default(FastTags<TagGroup.Global>))
 	{
 		if (this.Effects == null)
@@ -186,7 +186,7 @@ public class ProgressionClass
 		this.Effects.ModifyValue(_ea, _effect, ref _base_value, ref _perc_value, _pv.GetCalculatedLevel(_ea), _tags, 1);
 	}
 
-	// Token: 0x06005250 RID: 21072 RVA: 0x001F7B84 File Offset: 0x001F5D84
+	// Token: 0x060052D6 RID: 21206 RVA: 0x001FA61C File Offset: 0x001F881C
 	public void GetModifiedValueData(List<EffectManager.ModifierValuesAndSources> _modValueSources, EffectManager.ModifierValuesAndSources.ValueSourceType _sourceType, EntityAlive _ea, ProgressionValue _pv, PassiveEffects _effect, ref float _base_value, ref float _perc_value, FastTags<TagGroup.Global> _tags = default(FastTags<TagGroup.Global>))
 	{
 		if (this.Effects == null)
@@ -196,13 +196,13 @@ public class ProgressionClass
 		this.Effects.GetModifiedValueData(_modValueSources, _sourceType, _ea, _effect, ref _base_value, ref _perc_value, _pv.GetCalculatedLevel(_ea), _tags, 1);
 	}
 
-	// Token: 0x06005251 RID: 21073 RVA: 0x001F7BB9 File Offset: 0x001F5DB9
+	// Token: 0x060052D7 RID: 21207 RVA: 0x001FA651 File Offset: 0x001F8851
 	public bool HasEvents()
 	{
 		return this.Effects != null && this.Effects.HasEvents();
 	}
 
-	// Token: 0x06005252 RID: 21074 RVA: 0x001F7BD0 File Offset: 0x001F5DD0
+	// Token: 0x060052D8 RID: 21208 RVA: 0x001FA668 File Offset: 0x001F8868
 	public void FireEvent(MinEventTypes _eventType, MinEventParams _params)
 	{
 		if (this.Effects != null)
@@ -211,14 +211,14 @@ public class ProgressionClass
 		}
 	}
 
-	// Token: 0x06005253 RID: 21075 RVA: 0x001F7BE7 File Offset: 0x001F5DE7
+	// Token: 0x060052D9 RID: 21209 RVA: 0x001FA67F File Offset: 0x001F887F
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static bool canRun(RequirementGroup Requirements, MinEventParams _params)
 	{
 		return Requirements == null || Requirements.IsValid(_params);
 	}
 
-	// Token: 0x06005254 RID: 21076 RVA: 0x001F7BF8 File Offset: 0x001F5DF8
+	// Token: 0x060052DA RID: 21210 RVA: 0x001FA690 File Offset: 0x001F8890
 	public LevelRequirement GetRequirementsForLevel(int _level)
 	{
 		if (this.LevelRequirements.Count <= 0)
@@ -233,19 +233,19 @@ public class ProgressionClass
 		return new LevelRequirement(_level);
 	}
 
-	// Token: 0x06005255 RID: 21077 RVA: 0x001F7C37 File Offset: 0x001F5E37
+	// Token: 0x060052DB RID: 21211 RVA: 0x001FA6CF File Offset: 0x001F88CF
 	public void AddLevelRequirement(LevelRequirement _lr)
 	{
 		this.LevelRequirements.Add(_lr.Level, _lr);
 	}
 
-	// Token: 0x06005256 RID: 21078 RVA: 0x001F7C4B File Offset: 0x001F5E4B
+	// Token: 0x060052DC RID: 21212 RVA: 0x001FA6E3 File Offset: 0x001F88E3
 	public void PostInit()
 	{
 		this.LevelRequirements.list.Sort((LevelRequirement a, LevelRequirement b) => a.Level - b.Level);
 	}
 
-	// Token: 0x06005257 RID: 21079 RVA: 0x001F7C7C File Offset: 0x001F5E7C
+	// Token: 0x060052DD RID: 21213 RVA: 0x001FA714 File Offset: 0x001F8914
 	public static int GetCalculatedMaxLevel(EntityAlive _ea, ProgressionValue _pv)
 	{
 		ProgressionClass progressionClass = _pv.ProgressionClass;
@@ -292,7 +292,7 @@ public class ProgressionClass
 		return num;
 	}
 
-	// Token: 0x06005258 RID: 21080 RVA: 0x001F7D38 File Offset: 0x001F5F38
+	// Token: 0x060052DE RID: 21214 RVA: 0x001FA7D0 File Offset: 0x001F89D0
 	public int CalculatedCostForLevel(int _level)
 	{
 		if (this.OverrideCost == null)
@@ -306,7 +306,7 @@ public class ProgressionClass
 		return 0;
 	}
 
-	// Token: 0x06005259 RID: 21081 RVA: 0x001F7D74 File Offset: 0x001F5F74
+	// Token: 0x060052DF RID: 21215 RVA: 0x001FA80C File Offset: 0x001F8A0C
 	public float GetPercentThisLevel(ProgressionValue _pv)
 	{
 		if (this.Type != ProgressionType.Skill)
@@ -325,7 +325,7 @@ public class ProgressionClass
 		return 0f;
 	}
 
-	// Token: 0x0600525A RID: 21082 RVA: 0x001F7DF4 File Offset: 0x001F5FF4
+	// Token: 0x060052E0 RID: 21216 RVA: 0x001FA88C File Offset: 0x001F8A8C
 	public void HandleCheckCrafting(EntityPlayerLocal _player, int _oldLevel, int _newLevel)
 	{
 		if (this.DisplayDataList != null)
@@ -341,7 +341,7 @@ public class ProgressionClass
 		}
 	}
 
-	// Token: 0x0600525B RID: 21083 RVA: 0x001F7E40 File Offset: 0x001F6040
+	// Token: 0x060052E1 RID: 21217 RVA: 0x001FA8D8 File Offset: 0x001F8AD8
 	public void UpdateForSandbox()
 	{
 		if (this.DisplayDataList != null)
@@ -368,7 +368,7 @@ public class ProgressionClass
 		}
 	}
 
-	// Token: 0x0600525C RID: 21084 RVA: 0x001F7EB2 File Offset: 0x001F60B2
+	// Token: 0x060052E2 RID: 21218 RVA: 0x001FA94A File Offset: 0x001F8B4A
 	public override string ToString()
 	{
 		return string.Format("{0}, {1}, lvl {2} to {3}", new object[]
@@ -380,109 +380,109 @@ public class ProgressionClass
 		});
 	}
 
-	// Token: 0x04003FF9 RID: 16377
+	// Token: 0x0400408A RID: 16522
 	public readonly string Name;
 
-	// Token: 0x04003FFA RID: 16378
+	// Token: 0x0400408B RID: 16523
 	public readonly FastTags<TagGroup.Global> NameTag;
 
-	// Token: 0x04003FFB RID: 16379
+	// Token: 0x0400408C RID: 16524
 	public float ParentMaxLevelRatio = 1f;
 
-	// Token: 0x04003FFC RID: 16380
+	// Token: 0x0400408D RID: 16525
 	public string NameKey;
 
-	// Token: 0x04003FFD RID: 16381
+	// Token: 0x0400408E RID: 16526
 	public string DescKey;
 
-	// Token: 0x04003FFE RID: 16382
+	// Token: 0x0400408F RID: 16527
 	public string LongDescKey;
 
-	// Token: 0x04003FFF RID: 16383
+	// Token: 0x04004090 RID: 16528
 	public string Icon;
 
-	// Token: 0x04004000 RID: 16384
+	// Token: 0x04004091 RID: 16529
 	public int MinLevel;
 
-	// Token: 0x04004001 RID: 16385
+	// Token: 0x04004092 RID: 16530
 	public int MaxLevel;
 
-	// Token: 0x04004002 RID: 16386
+	// Token: 0x04004093 RID: 16531
 	public int BaseCostToLevel;
 
-	// Token: 0x04004003 RID: 16387
+	// Token: 0x04004094 RID: 16532
 	public float CostMultiplier;
 
-	// Token: 0x04004004 RID: 16388
+	// Token: 0x04004095 RID: 16533
 	public bool Hidden;
 
-	// Token: 0x04004005 RID: 16389
+	// Token: 0x04004096 RID: 16534
 	public int[] OverrideCost;
 
-	// Token: 0x04004006 RID: 16390
+	// Token: 0x04004097 RID: 16535
 	public bool Enabled = true;
 
-	// Token: 0x04004007 RID: 16391
+	// Token: 0x04004098 RID: 16536
 	public ProgressionClass.DisplayTypes DisplayType;
 
-	// Token: 0x04004008 RID: 16392
+	// Token: 0x04004099 RID: 16537
 	public MinEffectController Effects;
 
-	// Token: 0x04004009 RID: 16393
+	// Token: 0x0400409A RID: 16538
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly DictionaryList<int, LevelRequirement> LevelRequirements = new DictionaryList<int, LevelRequirement>();
 
-	// Token: 0x0400400A RID: 16394
+	// Token: 0x0400409B RID: 16539
 	public readonly List<ProgressionClass> Children = new List<ProgressionClass>();
 
-	// Token: 0x0400400B RID: 16395
+	// Token: 0x0400409C RID: 16540
 	public string ParentName;
 
-	// Token: 0x0400400C RID: 16396
+	// Token: 0x0400409D RID: 16541
 	public ProgressionType Type;
 
-	// Token: 0x0400400D RID: 16397
+	// Token: 0x0400409E RID: 16542
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float listSortOrder;
 
-	// Token: 0x0400400E RID: 16398
+	// Token: 0x0400409F RID: 16543
 	public List<ProgressionClass.DisplayData> DisplayDataList;
 
-	// Token: 0x02000ABF RID: 2751
+	// Token: 0x02000AD0 RID: 2768
 	public enum DisplayTypes
 	{
-		// Token: 0x04004010 RID: 16400
+		// Token: 0x040040A1 RID: 16545
 		Standard,
-		// Token: 0x04004011 RID: 16401
+		// Token: 0x040040A2 RID: 16546
 		Book,
-		// Token: 0x04004012 RID: 16402
+		// Token: 0x040040A3 RID: 16547
 		Crafting
 	}
 
-	// Token: 0x02000AC0 RID: 2752
+	// Token: 0x02000AD1 RID: 2769
 	public class ListSortOrderComparer : IComparer<ProgressionValue>
 	{
-		// Token: 0x0600525D RID: 21085 RVA: 0x0000640C File Offset: 0x0000460C
+		// Token: 0x060052E3 RID: 21219 RVA: 0x0000640C File Offset: 0x0000460C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ListSortOrderComparer()
 		{
 		}
 
-		// Token: 0x0600525E RID: 21086 RVA: 0x001F7EF4 File Offset: 0x001F60F4
+		// Token: 0x060052E4 RID: 21220 RVA: 0x001FA98C File Offset: 0x001F8B8C
 		public int Compare(ProgressionValue _x, ProgressionValue _y)
 		{
 			return _x.ProgressionClass.ListSortOrder.CompareTo(_y.ProgressionClass.ListSortOrder);
 		}
 
-		// Token: 0x04004013 RID: 16403
+		// Token: 0x040040A4 RID: 16548
 		public static ProgressionClass.ListSortOrderComparer Instance = new ProgressionClass.ListSortOrderComparer();
 	}
 
-	// Token: 0x02000AC1 RID: 2753
+	// Token: 0x02000AD2 RID: 2770
 	public class DisplayData
 	{
-		// Token: 0x170008EB RID: 2283
-		// (get) Token: 0x06005260 RID: 21088 RVA: 0x001F7F2B File Offset: 0x001F612B
+		// Token: 0x170008FD RID: 2301
+		// (get) Token: 0x060052E6 RID: 21222 RVA: 0x001FA9C3 File Offset: 0x001F8BC3
 		public ItemClass Item
 		{
 			get
@@ -495,8 +495,8 @@ public class ProgressionClass
 			}
 		}
 
-		// Token: 0x170008EC RID: 2284
-		// (get) Token: 0x06005261 RID: 21089 RVA: 0x001F7F4D File Offset: 0x001F614D
+		// Token: 0x170008FE RID: 2302
+		// (get) Token: 0x060052E7 RID: 21223 RVA: 0x001FA9E5 File Offset: 0x001F8BE5
 		public bool HasQuality
 		{
 			get
@@ -509,7 +509,7 @@ public class ProgressionClass
 			}
 		}
 
-		// Token: 0x06005262 RID: 21090 RVA: 0x001F7F74 File Offset: 0x001F6174
+		// Token: 0x060052E8 RID: 21224 RVA: 0x001FAA0C File Offset: 0x001F8C0C
 		public string GetName(int level)
 		{
 			if (this.ItemName != "")
@@ -528,7 +528,7 @@ public class ProgressionClass
 			return this.CustomName[num];
 		}
 
-		// Token: 0x06005263 RID: 21091 RVA: 0x001F7FCC File Offset: 0x001F61CC
+		// Token: 0x060052E9 RID: 21225 RVA: 0x001FAA64 File Offset: 0x001F8C64
 		public string GetIcon(int level)
 		{
 			if (this.ItemName != "")
@@ -547,7 +547,7 @@ public class ProgressionClass
 			return this.CustomIcon[num];
 		}
 
-		// Token: 0x06005264 RID: 21092 RVA: 0x001F8024 File Offset: 0x001F6224
+		// Token: 0x060052EA RID: 21226 RVA: 0x001FAABC File Offset: 0x001F8CBC
 		public string GetIconTint(int level)
 		{
 			if (this.ItemName != "")
@@ -566,7 +566,7 @@ public class ProgressionClass
 			return this.CustomIconTint[num];
 		}
 
-		// Token: 0x06005265 RID: 21093 RVA: 0x001F8088 File Offset: 0x001F6288
+		// Token: 0x060052EB RID: 21227 RVA: 0x001FAB20 File Offset: 0x001F8D20
 		public int GetQualityLevel(int level)
 		{
 			for (int i = 0; i < this.QualityStarts.Length; i++)
@@ -579,7 +579,7 @@ public class ProgressionClass
 			return this.QualityStarts.Length;
 		}
 
-		// Token: 0x06005266 RID: 21094 RVA: 0x001F80C0 File Offset: 0x001F62C0
+		// Token: 0x060052EC RID: 21228 RVA: 0x001FAB58 File Offset: 0x001F8D58
 		public int GetNextPoints(int level)
 		{
 			for (int i = 0; i < this.QualityStarts.Length; i++)
@@ -592,7 +592,7 @@ public class ProgressionClass
 			return 0;
 		}
 
-		// Token: 0x06005267 RID: 21095 RVA: 0x001F80F8 File Offset: 0x001F62F8
+		// Token: 0x060052ED RID: 21229 RVA: 0x001FAB90 File Offset: 0x001F8D90
 		public bool IsComplete(int level)
 		{
 			for (int i = 0; i < this.QualityStarts.Length; i++)
@@ -605,7 +605,7 @@ public class ProgressionClass
 			return true;
 		}
 
-		// Token: 0x06005268 RID: 21096 RVA: 0x001F8126 File Offset: 0x001F6326
+		// Token: 0x060052EE RID: 21230 RVA: 0x001FABBE File Offset: 0x001F8DBE
 		public void AddUnlockData(string itemName, int unlockTier, string[] recipeList)
 		{
 			if (this.UnlockDataList == null)
@@ -620,7 +620,7 @@ public class ProgressionClass
 			});
 		}
 
-		// Token: 0x06005269 RID: 21097 RVA: 0x001F8160 File Offset: 0x001F6360
+		// Token: 0x060052EF RID: 21231 RVA: 0x001FABF8 File Offset: 0x001F8DF8
 		public ItemClass GetUnlockItem(int index)
 		{
 			if (this.UnlockDataList == null)
@@ -639,7 +639,7 @@ public class ProgressionClass
 			return unlockData.Item;
 		}
 
-		// Token: 0x0600526A RID: 21098 RVA: 0x001F81A4 File Offset: 0x001F63A4
+		// Token: 0x060052F0 RID: 21232 RVA: 0x001FAC3C File Offset: 0x001F8E3C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ProgressionClass.DisplayData.UnlockData GetUnlockData(int index)
 		{
@@ -659,7 +659,7 @@ public class ProgressionClass
 			return unlockData;
 		}
 
-		// Token: 0x0600526B RID: 21099 RVA: 0x001F81E4 File Offset: 0x001F63E4
+		// Token: 0x060052F1 RID: 21233 RVA: 0x001FAC7C File Offset: 0x001F8E7C
 		public string GetUnlockItemIconName(int index)
 		{
 			ItemClass unlockItem = this.GetUnlockItem(index);
@@ -670,7 +670,7 @@ public class ProgressionClass
 			return "";
 		}
 
-		// Token: 0x0600526C RID: 21100 RVA: 0x001F8208 File Offset: 0x001F6408
+		// Token: 0x060052F2 RID: 21234 RVA: 0x001FACA0 File Offset: 0x001F8EA0
 		public string GetUnlockItemName(int index)
 		{
 			ItemClass unlockItem = this.GetUnlockItem(index);
@@ -681,7 +681,7 @@ public class ProgressionClass
 			return "";
 		}
 
-		// Token: 0x0600526D RID: 21101 RVA: 0x001F822C File Offset: 0x001F642C
+		// Token: 0x060052F3 RID: 21235 RVA: 0x001FACC4 File Offset: 0x001F8EC4
 		public List<int> GetUnlockItemRecipes(int index)
 		{
 			if (this.UnlockDataList == null)
@@ -718,7 +718,7 @@ public class ProgressionClass
 			return list;
 		}
 
-		// Token: 0x0600526E RID: 21102 RVA: 0x001F82D4 File Offset: 0x001F64D4
+		// Token: 0x060052F4 RID: 21236 RVA: 0x001FAD6C File Offset: 0x001F8F6C
 		public string GetUnlockItemIconAtlas(EntityPlayerLocal player, int index)
 		{
 			ProgressionClass.DisplayData.UnlockData unlockData = this.GetUnlockData(index);
@@ -733,14 +733,14 @@ public class ProgressionClass
 			return "ItemIconAtlas";
 		}
 
-		// Token: 0x0600526F RID: 21103 RVA: 0x001F8328 File Offset: 0x001F6528
+		// Token: 0x060052F5 RID: 21237 RVA: 0x001FADC0 File Offset: 0x001F8FC0
 		public bool GetUnlockItemLocked(EntityPlayerLocal player, int index)
 		{
 			ProgressionClass.DisplayData.UnlockData unlockData = this.GetUnlockData(index);
 			return unlockData != null && this.GetQualityLevel(player.Progression.GetProgressionValue(this.Owner.Name).Level) <= unlockData.UnlockTier;
 		}
 
-		// Token: 0x06005270 RID: 21104 RVA: 0x001F8370 File Offset: 0x001F6570
+		// Token: 0x060052F6 RID: 21238 RVA: 0x001FAE08 File Offset: 0x001F9008
 		public void HandleCheckCrafting(EntityPlayerLocal _player, int _oldLevel, int _newLevel)
 		{
 			if (this.UnlockDataList == null)
@@ -773,7 +773,7 @@ public class ProgressionClass
 			}
 		}
 
-		// Token: 0x06005271 RID: 21105 RVA: 0x001F8458 File Offset: 0x001F6658
+		// Token: 0x060052F7 RID: 21239 RVA: 0x001FAEF0 File Offset: 0x001F90F0
 		public bool HandleCheckEnabled()
 		{
 			if (this.UnlockDataList == null)
@@ -795,45 +795,45 @@ public class ProgressionClass
 			return this.Enabled;
 		}
 
-		// Token: 0x04004014 RID: 16404
+		// Token: 0x040040A5 RID: 16549
 		[PublicizedFrom(EAccessModifier.Private)]
 		public ItemClass item;
 
-		// Token: 0x04004015 RID: 16405
+		// Token: 0x040040A6 RID: 16550
 		public string ItemName = "";
 
-		// Token: 0x04004016 RID: 16406
+		// Token: 0x040040A7 RID: 16551
 		public string[] CustomIcon;
 
-		// Token: 0x04004017 RID: 16407
+		// Token: 0x040040A8 RID: 16552
 		public string[] CustomIconTint;
 
-		// Token: 0x04004018 RID: 16408
+		// Token: 0x040040A9 RID: 16553
 		public string[] CustomName;
 
-		// Token: 0x04004019 RID: 16409
+		// Token: 0x040040AA RID: 16554
 		public bool CustomHasQuality;
 
-		// Token: 0x0400401A RID: 16410
+		// Token: 0x040040AB RID: 16555
 		public int[] QualityStarts;
 
-		// Token: 0x0400401B RID: 16411
+		// Token: 0x040040AC RID: 16556
 		public bool Enabled = true;
 
-		// Token: 0x0400401C RID: 16412
+		// Token: 0x040040AD RID: 16557
 		public List<ProgressionClass.DisplayData.UnlockData> UnlockDataList = new List<ProgressionClass.DisplayData.UnlockData>();
 
-		// Token: 0x0400401D RID: 16413
+		// Token: 0x040040AE RID: 16558
 		public static string CompletionSound = "";
 
-		// Token: 0x0400401E RID: 16414
+		// Token: 0x040040AF RID: 16559
 		public ProgressionClass Owner;
 
-		// Token: 0x02000AC2 RID: 2754
+		// Token: 0x02000AD3 RID: 2771
 		public class UnlockData
 		{
-			// Token: 0x170008ED RID: 2285
-			// (get) Token: 0x06005274 RID: 21108 RVA: 0x001F8509 File Offset: 0x001F6709
+			// Token: 0x170008FF RID: 2303
+			// (get) Token: 0x060052FA RID: 21242 RVA: 0x001FAFA1 File Offset: 0x001F91A1
 			public ItemClass Item
 			{
 				get
@@ -846,20 +846,20 @@ public class ProgressionClass
 				}
 			}
 
-			// Token: 0x0400401F RID: 16415
+			// Token: 0x040040B0 RID: 16560
 			[PublicizedFrom(EAccessModifier.Private)]
 			public ItemClass item;
 
-			// Token: 0x04004020 RID: 16416
+			// Token: 0x040040B1 RID: 16561
 			public string[] RecipeList;
 
-			// Token: 0x04004021 RID: 16417
+			// Token: 0x040040B2 RID: 16562
 			public string ItemName = "";
 
-			// Token: 0x04004022 RID: 16418
+			// Token: 0x040040B3 RID: 16563
 			public bool Enabled = true;
 
-			// Token: 0x04004023 RID: 16419
+			// Token: 0x040040B4 RID: 16564
 			public int UnlockTier;
 		}
 	}

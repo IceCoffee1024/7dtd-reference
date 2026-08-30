@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x0200040E RID: 1038
+// Token: 0x02000412 RID: 1042
 public abstract class AIDirectorData
 {
-	// Token: 0x0600201F RID: 8223 RVA: 0x000C26C2 File Offset: 0x000C08C2
+	// Token: 0x0600203C RID: 8252 RVA: 0x000C2E5E File Offset: 0x000C105E
 	public static void InitStatic()
 	{
 		AIDirectorData.noisySounds = new CaseInsensitiveStringDictionary<AIDirectorData.Noise>();
 	}
 
-	// Token: 0x06002020 RID: 8224 RVA: 0x000C26CE File Offset: 0x000C08CE
+	// Token: 0x0600203D RID: 8253 RVA: 0x000C2E6A File Offset: 0x000C106A
 	public static void Cleanup()
 	{
 		if (AIDirectorData.noisySounds != null)
@@ -19,13 +19,13 @@ public abstract class AIDirectorData
 		}
 	}
 
-	// Token: 0x06002021 RID: 8225 RVA: 0x000C26E1 File Offset: 0x000C08E1
+	// Token: 0x0600203E RID: 8254 RVA: 0x000C2E7D File Offset: 0x000C107D
 	public static void AddNoisySound(string _name, AIDirectorData.Noise _noise)
 	{
 		AIDirectorData.noisySounds.Add(_name, _noise);
 	}
 
-	// Token: 0x06002022 RID: 8226 RVA: 0x000C26EF File Offset: 0x000C08EF
+	// Token: 0x0600203F RID: 8255 RVA: 0x000C2E8B File Offset: 0x000C108B
 	public static bool FindNoise(string name, out AIDirectorData.Noise noise)
 	{
 		if (name == null)
@@ -36,20 +36,20 @@ public abstract class AIDirectorData
 		return AIDirectorData.noisySounds.TryGetValue(name, out noise);
 	}
 
-	// Token: 0x06002023 RID: 8227 RVA: 0x0000640C File Offset: 0x0000460C
+	// Token: 0x06002040 RID: 8256 RVA: 0x0000640C File Offset: 0x0000460C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public AIDirectorData()
 	{
 	}
 
-	// Token: 0x040015F4 RID: 5620
+	// Token: 0x04001609 RID: 5641
 	[PublicizedFrom(EAccessModifier.Private)]
 	public static Dictionary<string, AIDirectorData.Noise> noisySounds;
 
-	// Token: 0x0200040F RID: 1039
+	// Token: 0x02000413 RID: 1043
 	public struct Noise
 	{
-		// Token: 0x06002024 RID: 8228 RVA: 0x000C2709 File Offset: 0x000C0909
+		// Token: 0x06002041 RID: 8257 RVA: 0x000C2EA5 File Offset: 0x000C10A5
 		public Noise(string _source, float _volume, float _duration, float _muffledWhenCrouched, float _heatMapStrength, ulong _heatMapWorldTimeToLive)
 		{
 			this.volume = _volume;
@@ -59,19 +59,19 @@ public abstract class AIDirectorData
 			this.heatMapWorldTimeToLive = _heatMapWorldTimeToLive;
 		}
 
-		// Token: 0x040015F5 RID: 5621
+		// Token: 0x0400160A RID: 5642
 		public float volume;
 
-		// Token: 0x040015F6 RID: 5622
+		// Token: 0x0400160B RID: 5643
 		public float duration;
 
-		// Token: 0x040015F7 RID: 5623
+		// Token: 0x0400160C RID: 5644
 		public float muffledWhenCrouched;
 
-		// Token: 0x040015F8 RID: 5624
+		// Token: 0x0400160D RID: 5645
 		public float heatMapStrength;
 
-		// Token: 0x040015F9 RID: 5625
+		// Token: 0x0400160E RID: 5646
 		public ulong heatMapWorldTimeToLive;
 	}
 }

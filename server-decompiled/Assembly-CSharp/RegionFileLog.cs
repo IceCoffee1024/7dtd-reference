@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
 
-// Token: 0x02000B88 RID: 2952
+// Token: 0x02000B9A RID: 2970
 public static class RegionFileLog
 {
-	// Token: 0x0600593B RID: 22843 RVA: 0x00221FDF File Offset: 0x002201DF
+	// Token: 0x060059C3 RID: 22979 RVA: 0x00224CFB File Offset: 0x00222EFB
 	[Conditional("DEBUG_REGIONLOG")]
 	public static void Region(string _format = "", params object[] _args)
 	{

@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000DCC RID: 3532
+// Token: 0x02000DE1 RID: 3553
 [Preserve]
 public class XUiC_ServerFilters : XUiController
 {
-	// Token: 0x14000098 RID: 152
-	// (add) Token: 0x06006C0E RID: 27662 RVA: 0x002A20A8 File Offset: 0x002A02A8
-	// (remove) Token: 0x06006C0F RID: 27663 RVA: 0x002A20E0 File Offset: 0x002A02E0
+	// Token: 0x14000099 RID: 153
+	// (add) Token: 0x06006CAD RID: 27821 RVA: 0x002A553C File Offset: 0x002A373C
+	// (remove) Token: 0x06006CAE RID: 27822 RVA: 0x002A5574 File Offset: 0x002A3774
 	public event Action<IServerBrowserFilterControl> OnFilterChanged;
 
-	// Token: 0x17000BE6 RID: 3046
-	// (get) Token: 0x06006C10 RID: 27664 RVA: 0x002A2115 File Offset: 0x002A0315
-	// (set) Token: 0x06006C11 RID: 27665 RVA: 0x002A211D File Offset: 0x002A031D
+	// Token: 0x17000BFF RID: 3071
+	// (get) Token: 0x06006CAF RID: 27823 RVA: 0x002A55A9 File Offset: 0x002A37A9
+	// (set) Token: 0x06006CB0 RID: 27824 RVA: 0x002A55B1 File Offset: 0x002A37B1
 	[XuiXmlBinding("results")]
 	public int ResultCount
 	{
@@ -24,8 +24,8 @@ public class XUiC_ServerFilters : XUiController
 		set;
 	}
 
-	// Token: 0x17000BE7 RID: 3047
-	// (get) Token: 0x06006C12 RID: 27666 RVA: 0x002A2126 File Offset: 0x002A0326
+	// Token: 0x17000C00 RID: 3072
+	// (get) Token: 0x06006CB1 RID: 27825 RVA: 0x002A55BA File Offset: 0x002A37BA
 	[XuiXmlBinding("crossplaytooltip")]
 	public string CrossplayTooltip
 	{
@@ -36,7 +36,7 @@ public class XUiC_ServerFilters : XUiController
 		}
 	}
 
-	// Token: 0x06006C13 RID: 27667 RVA: 0x002A2140 File Offset: 0x002A0340
+	// Token: 0x06006CB2 RID: 27826 RVA: 0x002A55D4 File Offset: 0x002A37D4
 	public override void Init()
 	{
 		base.Init();
@@ -112,14 +112,14 @@ public class XUiC_ServerFilters : XUiController
 		base.OnVisiblity += this.OnVisibilityChanged;
 	}
 
-	// Token: 0x06006C14 RID: 27668 RVA: 0x002A230E File Offset: 0x002A050E
+	// Token: 0x06006CB3 RID: 27827 RVA: 0x002A57A2 File Offset: 0x002A39A2
 	public override void Cleanup()
 	{
 		base.Cleanup();
 		base.OnVisiblity -= this.OnVisibilityChanged;
 	}
 
-	// Token: 0x06006C15 RID: 27669 RVA: 0x002A2328 File Offset: 0x002A0528
+	// Token: 0x06006CB4 RID: 27828 RVA: 0x002A57BC File Offset: 0x002A39BC
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -137,7 +137,7 @@ public class XUiC_ServerFilters : XUiController
 		}
 	}
 
-	// Token: 0x06006C16 RID: 27670 RVA: 0x002A23B7 File Offset: 0x002A05B7
+	// Token: 0x06006CB5 RID: 27829 RVA: 0x002A584B File Offset: 0x002A3A4B
 	[XuiBindEvent("OnPress", "fullScreenCollider")]
 	[XuiBindEvent("OnPress", "btnCloseFilters")]
 	[PublicizedFrom(EAccessModifier.Private)]
@@ -146,7 +146,7 @@ public class XUiC_ServerFilters : XUiController
 		this.CloseFilters();
 	}
 
-	// Token: 0x06006C17 RID: 27671 RVA: 0x002A23BF File Offset: 0x002A05BF
+	// Token: 0x06006CB6 RID: 27830 RVA: 0x002A5853 File Offset: 0x002A3A53
 	[XuiBindEvent("OnPress", "btnResetFilters")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ResetFiltersButton_OnPress(XUiController _sender, int _mouseButton)
@@ -154,7 +154,7 @@ public class XUiC_ServerFilters : XUiController
 		this.resetFilters();
 	}
 
-	// Token: 0x06006C18 RID: 27672 RVA: 0x002A23C7 File Offset: 0x002A05C7
+	// Token: 0x06006CB7 RID: 27831 RVA: 0x002A585B File Offset: 0x002A3A5B
 	[XuiBindEvent("OnPress", "btnBack")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void BackButton_OnPress(XUiController _sender, int _mouseButton)
@@ -162,7 +162,7 @@ public class XUiC_ServerFilters : XUiController
 		this.parentBrowser.CloseBrowser();
 	}
 
-	// Token: 0x06006C19 RID: 27673 RVA: 0x002A23D4 File Offset: 0x002A05D4
+	// Token: 0x06006CB8 RID: 27832 RVA: 0x002A5868 File Offset: 0x002A3A68
 	[XuiBindEvent("OnPress", "btnStartSearch")]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void StartSearchButton_OnPress(XUiController _sender, int _mouseButton)
@@ -180,7 +180,7 @@ public class XUiC_ServerFilters : XUiController
 		ServerListManager.Instance.StartSearch(list);
 	}
 
-	// Token: 0x06006C1A RID: 27674 RVA: 0x002A244C File Offset: 0x002A064C
+	// Token: 0x06006CB9 RID: 27833 RVA: 0x002A58E0 File Offset: 0x002A3AE0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void backShortcutPressed()
 	{
@@ -192,7 +192,7 @@ public class XUiC_ServerFilters : XUiController
 		this.CloseFiltersButton_OnPress(null, 0);
 	}
 
-	// Token: 0x06006C1B RID: 27675 RVA: 0x002A2471 File Offset: 0x002A0671
+	// Token: 0x06006CBA RID: 27834 RVA: 0x002A5905 File Offset: 0x002A3B05
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void startShortcutPressed()
 	{
@@ -204,7 +204,7 @@ public class XUiC_ServerFilters : XUiController
 		this.CloseFiltersButton_OnPress(null, 0);
 	}
 
-	// Token: 0x06006C1C RID: 27676 RVA: 0x002A2498 File Offset: 0x002A0698
+	// Token: 0x06006CBB RID: 27835 RVA: 0x002A592C File Offset: 0x002A3B2C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void resetFilters()
 	{
@@ -225,7 +225,7 @@ public class XUiC_ServerFilters : XUiController
 		this.applyForcedSettings();
 	}
 
-	// Token: 0x06006C1D RID: 27677 RVA: 0x002A2544 File Offset: 0x002A0744
+	// Token: 0x06006CBC RID: 27836 RVA: 0x002A59D8 File Offset: 0x002A3BD8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void applyForcedSettings()
 	{
@@ -256,20 +256,20 @@ public class XUiC_ServerFilters : XUiController
 		this.ignoreSanctionsFilter.ViewComponent.IsVisible = false;
 	}
 
-	// Token: 0x06006C1E RID: 27678 RVA: 0x002A2622 File Offset: 0x002A0822
+	// Token: 0x06006CBD RID: 27837 RVA: 0x002A5AB6 File Offset: 0x002A3CB6
 	public void CloseFilters()
 	{
 		this.windowGroup.Controller.GetChildByType<XUiC_ServerBrowser>().ShowingFilters = false;
 		this.xui.playerUI.CursorController.SetNavigationLockView(null, null);
 	}
 
-	// Token: 0x06006C1F RID: 27679 RVA: 0x002A2651 File Offset: 0x002A0851
+	// Token: 0x06006CBE RID: 27838 RVA: 0x002A5AE5 File Offset: 0x002A3CE5
 	public void SetServersList(XUiC_ServersList _serversList)
 	{
 		_serversList.OnFilterResultsChanged += this.ServersList_OnFilterResultsChanged;
 	}
 
-	// Token: 0x06006C20 RID: 27680 RVA: 0x002A2665 File Offset: 0x002A0865
+	// Token: 0x06006CBF RID: 27839 RVA: 0x002A5AF9 File Offset: 0x002A3CF9
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ServersList_OnFilterResultsChanged(int _count)
 	{
@@ -277,7 +277,7 @@ public class XUiC_ServerFilters : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006C21 RID: 27681 RVA: 0x002A2675 File Offset: 0x002A0875
+	// Token: 0x06006CC0 RID: 27840 RVA: 0x002A5B09 File Offset: 0x002A3D09
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnFilterValueChanged(IServerBrowserFilterControl _sender)
 	{
@@ -289,7 +289,7 @@ public class XUiC_ServerFilters : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06006C22 RID: 27682 RVA: 0x002A2690 File Offset: 0x002A0890
+	// Token: 0x06006CC1 RID: 27841 RVA: 0x002A5B24 File Offset: 0x002A3D24
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void OnVisibilityChanged(XUiController _sender, bool _visibleSelf, bool _visibleInScene)
 	{
@@ -299,7 +299,7 @@ public class XUiC_ServerFilters : XUiController
 		}
 	}
 
-	// Token: 0x06006C23 RID: 27683 RVA: 0x002A269B File Offset: 0x002A089B
+	// Token: 0x06006CC2 RID: 27842 RVA: 0x002A5B2F File Offset: 0x002A3D2F
 	public override void OnOpen()
 	{
 		base.OnOpen();
@@ -315,20 +315,20 @@ public class XUiC_ServerFilters : XUiController
 		base.RefreshBindings();
 	}
 
-	// Token: 0x06006C24 RID: 27684 RVA: 0x002A26C6 File Offset: 0x002A08C6
+	// Token: 0x06006CC3 RID: 27843 RVA: 0x002A5B5A File Offset: 0x002A3D5A
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void selectInitialElement()
 	{
 		this.GetInitialSelectedElement().Controller.SelectCursorElement(true, false);
 	}
 
-	// Token: 0x06006C25 RID: 27685 RVA: 0x002A26DB File Offset: 0x002A08DB
+	// Token: 0x06006CC4 RID: 27844 RVA: 0x002A5B6F File Offset: 0x002A3D6F
 	public XUiView GetInitialSelectedElement()
 	{
 		return base.GetChildById(ServerListManager.Instance.IsPrefilteredSearch ? "btnStartSearch" : "btnResetFilters").ViewComponent;
 	}
 
-	// Token: 0x06006C26 RID: 27686 RVA: 0x002A2700 File Offset: 0x002A0900
+	// Token: 0x06006CC5 RID: 27845 RVA: 0x002A5B94 File Offset: 0x002A3D94
 	public override void OnClose()
 	{
 		base.OnClose();
@@ -348,68 +348,68 @@ public class XUiC_ServerFilters : XUiController
 		GamePrefs.Set(EnumGamePrefs.IgnoreEOSSanctions, false);
 	}
 
-	// Token: 0x04005241 RID: 21057
+	// Token: 0x040052E4 RID: 21220
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly List<IServerBrowserFilterControl> allFilterControls = new List<IServerBrowserFilterControl>();
 
-	// Token: 0x04005243 RID: 21059
+	// Token: 0x040052E6 RID: 21222
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ServerBrowserGamePrefSelectorCombo regionFilter;
 
-	// Token: 0x04005244 RID: 21060
+	// Token: 0x040052E7 RID: 21223
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ServerBrowserGamePrefString languageFilter;
 
-	// Token: 0x04005245 RID: 21061
+	// Token: 0x040052E8 RID: 21224
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ServerBrowserGamePrefSelectorCombo crossplayFilter;
 
-	// Token: 0x04005246 RID: 21062
+	// Token: 0x040052E9 RID: 21225
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ServerBrowserGamePrefSelectorCombo moddedConfigsFilter;
 
-	// Token: 0x04005247 RID: 21063
+	// Token: 0x040052EA RID: 21226
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ServerBrowserGamePrefSelectorCombo requiresModsFilter;
 
-	// Token: 0x04005248 RID: 21064
+	// Token: 0x040052EB RID: 21227
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ServerBrowserGamePrefSelectorCombo eacFilter;
 
-	// Token: 0x04005249 RID: 21065
+	// Token: 0x040052EC RID: 21228
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiC_ServerBrowserGamePrefSelectorCombo ignoreSanctionsFilter;
 
-	// Token: 0x0400524A RID: 21066
+	// Token: 0x040052ED RID: 21229
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool openedBefore;
 
-	// Token: 0x0400524B RID: 21067
+	// Token: 0x040052EE RID: 21230
 	[XuiBindParent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_ServerBrowser parentBrowser;
 
-	// Token: 0x0400524C RID: 21068
+	// Token: 0x040052EF RID: 21231
 	[XuiBindComponent(true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_FullScreenCollider fullScreenCollider;
 
-	// Token: 0x0400524D RID: 21069
+	// Token: 0x040052F0 RID: 21232
 	[XuiBindComponent("btnStartSearch", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnStartSearch;
 
-	// Token: 0x0400524E RID: 21070
+	// Token: 0x040052F1 RID: 21233
 	[XuiBindComponent("btnResetFilters", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnResetFilters;
 
-	// Token: 0x0400524F RID: 21071
+	// Token: 0x040052F2 RID: 21234
 	[XuiBindComponent("btnBack", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnBack;
 
-	// Token: 0x04005250 RID: 21072
+	// Token: 0x040052F3 RID: 21235
 	[XuiBindComponent("btnCloseFilters", true)]
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly XUiC_Button btnCloseFilters;

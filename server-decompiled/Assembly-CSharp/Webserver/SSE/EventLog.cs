@@ -6,18 +6,18 @@ using Webserver.WebAPI.APIs;
 
 namespace Webserver.SSE
 {
-	// Token: 0x02001AD4 RID: 6868
+	// Token: 0x02001AFB RID: 6907
 	[Preserve]
 	public class EventLog : AbsEvent
 	{
-		// Token: 0x0600CE2B RID: 52779 RVA: 0x004B3D26 File Offset: 0x004B1F26
+		// Token: 0x0600CFB4 RID: 53172 RVA: 0x004BA11A File Offset: 0x004B831A
 		public EventLog(SseHandler _parent)
 			: base(_parent, true, "log")
 		{
 			LogBuffer.EntryAdded += this.LogCallback;
 		}
 
-		// Token: 0x0600CE2C RID: 52780 RVA: 0x004B3D48 File Offset: 0x004B1F48
+		// Token: 0x0600CFB5 RID: 53173 RVA: 0x004BA13C File Offset: 0x004B833C
 		[PublicizedFrom(EAccessModifier.Private)]
 		public void LogCallback(LogBuffer.LogEntry _logEntry)
 		{

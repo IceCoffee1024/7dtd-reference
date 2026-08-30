@@ -5,7 +5,7 @@ using UnityEngine;
 // Token: 0x020000A1 RID: 161
 public class AnimatorRangedHoldState : StateMachineBehaviour
 {
-	// Token: 0x06000326 RID: 806 RVA: 0x00017BD8 File Offset: 0x00015DD8
+	// Token: 0x06000326 RID: 806 RVA: 0x00017BE8 File Offset: 0x00015DE8
 	public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 		EntityAlive componentInParent = animator.GetComponentInParent<EntityAlive>();
@@ -32,15 +32,17 @@ public class AnimatorRangedHoldState : StateMachineBehaviour
 		}
 	}
 
-	// Token: 0x06000327 RID: 807 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06000327 RID: 807 RVA: 0x00017D33 File Offset: 0x00015F33
 	public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
+		this.actionData = null;
+		this.itemClass = null;
 	}
 
-	// Token: 0x06000328 RID: 808 RVA: 0x00017D24 File Offset: 0x00015F24
+	// Token: 0x06000328 RID: 808 RVA: 0x00017D44 File Offset: 0x00015F44
 	public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
-		if (this.itemClass != null && this.itemClass.Properties.Values.ContainsKey(ItemClass.PropSoundIdle))
+		if (this.itemClass != null && this.actionData != null && this.actionData.invData.holdingEntity != null && this.itemClass.Properties.Values.ContainsKey(ItemClass.PropSoundIdle))
 		{
 			if (this.actionData.invData.holdingEntitySoundID != -1 && this.actionData.invData.itemValue.Meta == 0)
 			{

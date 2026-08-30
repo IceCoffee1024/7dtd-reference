@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace Audio
 {
-	// Token: 0x02001AFC RID: 6908
+	// Token: 0x02001B23 RID: 6947
 	[Preserve]
 	public class NetPackageAudio : NetPackageEntityTargeted
 	{
-		// Token: 0x0600CEF9 RID: 52985 RVA: 0x004BA1C6 File Offset: 0x004B83C6
+		// Token: 0x0600D082 RID: 53378 RVA: 0x004C05BA File Offset: 0x004BE7BA
 		public NetPackageAudio Setup(int _playOnEntityId, string _soundGroupName, float _occlusion, bool _play, bool _signalOnly = false, float _volumeScale = 1f)
 		{
 			base.Setup(_playOnEntityId);
@@ -21,7 +21,7 @@ namespace Audio
 			return this;
 		}
 
-		// Token: 0x0600CEFA RID: 52986 RVA: 0x004BA1FD File Offset: 0x004B83FD
+		// Token: 0x0600D083 RID: 53379 RVA: 0x004C05F1 File Offset: 0x004BE7F1
 		public NetPackageAudio Setup(Vector3 _position, string _soundGroupName, float _occlusion, bool _play, int _entityId = -1, float _volumeScale = 1f)
 		{
 			base.Setup(_entityId);
@@ -34,7 +34,7 @@ namespace Audio
 			return this;
 		}
 
-		// Token: 0x0600CEFB RID: 52987 RVA: 0x004BA234 File Offset: 0x004B8434
+		// Token: 0x0600D084 RID: 53380 RVA: 0x004C0628 File Offset: 0x004BE828
 		public override void read(PooledBinaryReader _reader)
 		{
 			base.read(_reader);
@@ -52,7 +52,7 @@ namespace Audio
 			this.signalOnly = _reader.ReadBoolean();
 		}
 
-		// Token: 0x0600CEFC RID: 52988 RVA: 0x004BA2CC File Offset: 0x004B84CC
+		// Token: 0x0600D085 RID: 53381 RVA: 0x004C06C0 File Offset: 0x004BE8C0
 		public override void write(PooledBinaryWriter _writer)
 		{
 			base.write(_writer);
@@ -67,7 +67,7 @@ namespace Audio
 			_writer.Write(this.signalOnly);
 		}
 
-		// Token: 0x0600CEFD RID: 52989 RVA: 0x004BA370 File Offset: 0x004B8570
+		// Token: 0x0600D086 RID: 53382 RVA: 0x004C0764 File Offset: 0x004BE964
 		public override void ProcessPackage(World _world, GameManager _callbacks)
 		{
 			if (_world == null)
@@ -154,31 +154,31 @@ namespace Audio
 			}
 		}
 
-		// Token: 0x0600CEFE RID: 52990 RVA: 0x00080B3A File Offset: 0x0007ED3A
+		// Token: 0x0600D087 RID: 53383 RVA: 0x000811EE File Offset: 0x0007F3EE
 		public override int GetLength()
 		{
 			return 10;
 		}
 
-		// Token: 0x04009DAF RID: 40367
+		// Token: 0x04009EE0 RID: 40672
 		public string soundGroupName;
 
-		// Token: 0x04009DB0 RID: 40368
+		// Token: 0x04009EE1 RID: 40673
 		public bool play;
 
-		// Token: 0x04009DB1 RID: 40369
+		// Token: 0x04009EE2 RID: 40674
 		public Vector3 position;
 
-		// Token: 0x04009DB2 RID: 40370
+		// Token: 0x04009EE3 RID: 40675
 		public bool playOnEntity;
 
-		// Token: 0x04009DB3 RID: 40371
+		// Token: 0x04009EE4 RID: 40676
 		public float occlusion;
 
-		// Token: 0x04009DB4 RID: 40372
+		// Token: 0x04009EE5 RID: 40677
 		public bool signalOnly;
 
-		// Token: 0x04009DB5 RID: 40373
+		// Token: 0x04009EE6 RID: 40678
 		public float volumeScale;
 	}
 }

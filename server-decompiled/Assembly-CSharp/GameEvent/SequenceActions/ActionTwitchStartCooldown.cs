@@ -4,11 +4,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x020019DA RID: 6618
+	// Token: 0x02001A01 RID: 6657
 	[Preserve]
 	public class ActionTwitchStartCooldown : ActionBaseClientAction
 	{
-		// Token: 0x0600C942 RID: 51522 RVA: 0x0049E954 File Offset: 0x0049CB54
+		// Token: 0x0600CACB RID: 51915 RVA: 0x004A4D48 File Offset: 0x004A2F48
 		public override void OnClientPerform(Entity target)
 		{
 			TwitchManager twitchManager = TwitchManager.Current;
@@ -20,14 +20,14 @@ namespace GameEvent.SequenceActions
 			twitchManager.SetCooldown(floatValue, TwitchManager.CooldownTypes.Time, false, true);
 		}
 
-		// Token: 0x0600C943 RID: 51523 RVA: 0x0049E991 File Offset: 0x0049CB91
+		// Token: 0x0600CACC RID: 51916 RVA: 0x004A4D85 File Offset: 0x004A2F85
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
 			properties.ParseString(ActionTwitchStartCooldown.PropTime, ref this.cooldownTimeLeft);
 		}
 
-		// Token: 0x0600C944 RID: 51524 RVA: 0x0049E9AB File Offset: 0x0049CBAB
+		// Token: 0x0600CACD RID: 51917 RVA: 0x004A4D9F File Offset: 0x004A2F9F
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -37,11 +37,11 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x040098D3 RID: 39123
+		// Token: 0x04009A04 RID: 39428
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string cooldownTimeLeft;
 
-		// Token: 0x040098D4 RID: 39124
+		// Token: 0x04009A05 RID: 39429
 		public static string PropTime = "time";
 	}
 }

@@ -3,16 +3,16 @@ using Platform;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F8A RID: 3978
+// Token: 0x02000FA3 RID: 4003
 [Preserve]
 public class XUiC_PartyEntry : XUiController
 {
-	// Token: 0x17000E87 RID: 3719
-	// (get) Token: 0x06007D74 RID: 32116 RVA: 0x002F9BBE File Offset: 0x002F7DBE
-	// (set) Token: 0x06007D75 RID: 32117 RVA: 0x002F9BC6 File Offset: 0x002F7DC6
+	// Token: 0x17000EC0 RID: 3776
+	// (get) Token: 0x06007E66 RID: 32358 RVA: 0x002FE392 File Offset: 0x002FC592
+	// (set) Token: 0x06007E67 RID: 32359 RVA: 0x002FE39A File Offset: 0x002FC59A
 	public EntityPlayer Player { get; set; }
 
-	// Token: 0x06007D76 RID: 32118 RVA: 0x002F9BD0 File Offset: 0x002F7DD0
+	// Token: 0x06007E68 RID: 32360 RVA: 0x002FE3A4 File Offset: 0x002FC5A4
 	public override void Init()
 	{
 		base.Init();
@@ -72,7 +72,7 @@ public class XUiC_PartyEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007D77 RID: 32119 RVA: 0x002F9DA0 File Offset: 0x002F7FA0
+	// Token: 0x06007E69 RID: 32361 RVA: 0x002FE574 File Offset: 0x002FC774
 	public override void Update(float _dt)
 	{
 		base.Update(_dt);
@@ -143,7 +143,7 @@ public class XUiC_PartyEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007D78 RID: 32120 RVA: 0x002FA008 File Offset: 0x002F8208
+	// Token: 0x06007E6A RID: 32362 RVA: 0x002FE7DC File Offset: 0x002FC9DC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void updateVoiceState()
 	{
@@ -155,7 +155,7 @@ public class XUiC_PartyEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007D79 RID: 32121 RVA: 0x002FA039 File Offset: 0x002F8239
+	// Token: 0x06007E6B RID: 32363 RVA: 0x002FE80D File Offset: 0x002FCA0D
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void SetPlayer(EntityPlayer player)
 	{
@@ -168,7 +168,7 @@ public class XUiC_PartyEntry : XUiController
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007D7A RID: 32122 RVA: 0x002FA060 File Offset: 0x002F8260
+	// Token: 0x06007E6C RID: 32364 RVA: 0x002FE834 File Offset: 0x002FCA34
 	public bool HasChanged()
 	{
 		EntityPlayer entityPlayer = this.xui.playerUI.entityPlayer;
@@ -182,7 +182,7 @@ public class XUiC_PartyEntry : XUiController
 		return flag;
 	}
 
-	// Token: 0x06007D7B RID: 32123 RVA: 0x002FA128 File Offset: 0x002F8328
+	// Token: 0x06007E6D RID: 32365 RVA: 0x002FE8FC File Offset: 0x002FCAFC
 	public void RefreshFill()
 	{
 		if (this.Player == null)
@@ -226,7 +226,7 @@ public class XUiC_PartyEntry : XUiController
 		}
 	}
 
-	// Token: 0x06007D7C RID: 32124 RVA: 0x002FA2E0 File Offset: 0x002F84E0
+	// Token: 0x06007E6E RID: 32366 RVA: 0x002FEAB4 File Offset: 0x002FCCB4
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override bool GetBindingValueInternal(ref string value, string bindingName)
 	{
@@ -516,13 +516,13 @@ public class XUiC_PartyEntry : XUiController
 		return base.GetBindingValueInternal(ref value, bindingName);
 	}
 
-	// Token: 0x06007D7D RID: 32125 RVA: 0x002FAA70 File Offset: 0x002F8C70
+	// Token: 0x06007E6F RID: 32367 RVA: 0x002FF244 File Offset: 0x002FD444
 	public XUiC_PartyEntry()
 	{
 		this.oldTwitch = false;
 	}
 
-	// Token: 0x06007D7E RID: 32126 RVA: 0x002FAB68 File Offset: 0x002F8D68
+	// Token: 0x06007E70 RID: 32368 RVA: 0x002FF33C File Offset: 0x002FD53C
 	public override bool ParseAttribute(string name, string value)
 	{
 		uint num = <PrivateImplementationDetails>.ComputeStringHash(name);
@@ -591,21 +591,21 @@ public class XUiC_PartyEntry : XUiController
 		return base.ParseAttribute(name, value);
 	}
 
-	// Token: 0x06007D7F RID: 32127 RVA: 0x00292E8D File Offset: 0x0029108D
+	// Token: 0x06007E71 RID: 32369 RVA: 0x00295FE1 File Offset: 0x002941E1
 	public override void OnOpen()
 	{
 		base.OnOpen();
 		this.IsDirty = true;
 	}
 
-	// Token: 0x06007D80 RID: 32128 RVA: 0x002FAC8B File Offset: 0x002F8E8B
+	// Token: 0x06007E72 RID: 32370 RVA: 0x002FF45F File Offset: 0x002FD65F
 	public override void OnClose()
 	{
 		base.OnClose();
 		this.SetPlayer(null);
 	}
 
-	// Token: 0x06007D81 RID: 32129 RVA: 0x002FAC9C File Offset: 0x002F8E9C
+	// Token: 0x06007E73 RID: 32371 RVA: 0x002FF470 File Offset: 0x002FD670
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float ReturnRotation(EntityAlive _self, EntityAlive _other)
 	{
@@ -623,136 +623,136 @@ public class XUiC_PartyEntry : XUiController
 		return num;
 	}
 
-	// Token: 0x04005CDA RID: 23770
+	// Token: 0x04005DA1 RID: 23969
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float ForcedRefreshTime = 0.5f;
 
-	// Token: 0x04005CDB RID: 23771
+	// Token: 0x04005DA2 RID: 23970
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lastHealthValue;
 
-	// Token: 0x04005CDC RID: 23772
+	// Token: 0x04005DA3 RID: 23971
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lastStaminaValue;
 
-	// Token: 0x04005CDE RID: 23774
+	// Token: 0x04005DA5 RID: 23973
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite arrowContent;
 
-	// Token: 0x04005CDF RID: 23775
+	// Token: 0x04005DA6 RID: 23974
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite[] barHealth;
 
-	// Token: 0x04005CE0 RID: 23776
+	// Token: 0x04005DA7 RID: 23975
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite[] barHealthModifiedMax;
 
-	// Token: 0x04005CE1 RID: 23777
+	// Token: 0x04005DA8 RID: 23976
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite[] barStamina;
 
-	// Token: 0x04005CE2 RID: 23778
+	// Token: 0x04005DA9 RID: 23977
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite[] barStaminaModifiedMax;
 
-	// Token: 0x04005CE3 RID: 23779
+	// Token: 0x04005DAA RID: 23978
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float distance;
 
-	// Token: 0x04005CE4 RID: 23780
+	// Token: 0x04005DAB RID: 23979
 	public string defaultHealthColor = "255,0,0,128";
 
-	// Token: 0x04005CE5 RID: 23781
+	// Token: 0x04005DAC RID: 23980
 	public string twitchHealthColor = "100,65,165,128";
 
-	// Token: 0x04005CE6 RID: 23782
+	// Token: 0x04005DAD RID: 23981
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite iconSprite1;
 
-	// Token: 0x04005CE7 RID: 23783
+	// Token: 0x04005DAE RID: 23982
 	[PublicizedFrom(EAccessModifier.Private)]
 	public XUiV_Sprite iconSprite2;
 
-	// Token: 0x04005CE8 RID: 23784
+	// Token: 0x04005DAF RID: 23983
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color defaultIconColor;
 
-	// Token: 0x04005CE9 RID: 23785
+	// Token: 0x04005DB0 RID: 23984
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2 iconSpriteSize;
 
-	// Token: 0x04005CEA RID: 23786
+	// Token: 0x04005DB1 RID: 23985
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Color iconBlinkColor = new Color32(byte.MaxValue, 180, 0, byte.MaxValue);
 
-	// Token: 0x04005CEB RID: 23787
+	// Token: 0x04005DB2 RID: 23986
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public float updateTime;
 
-	// Token: 0x04005CEC RID: 23788
+	// Token: 0x04005DB3 RID: 23987
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float arrowRotation;
 
-	// Token: 0x04005CED RID: 23789
+	// Token: 0x04005DB4 RID: 23988
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lastArrowRotation;
 
-	// Token: 0x04005CEE RID: 23790
+	// Token: 0x04005DB5 RID: 23989
 	[PublicizedFrom(EAccessModifier.Private)]
 	public IPartyVoice.EVoiceMemberState voiceState;
 
-	// Token: 0x04005CEF RID: 23791
+	// Token: 0x04005DB6 RID: 23990
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float oldValue;
 
-	// Token: 0x04005CF0 RID: 23792
+	// Token: 0x04005DB7 RID: 23991
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool oldTwitch;
 
-	// Token: 0x04005CF1 RID: 23793
+	// Token: 0x04005DB8 RID: 23992
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool oldSafe;
 
-	// Token: 0x04005CF2 RID: 23794
+	// Token: 0x04005DB9 RID: 23993
 	[PublicizedFrom(EAccessModifier.Private)]
 	public EntityPlayer.TwitchActionsStates oldTwitchActions;
 
-	// Token: 0x04005CF3 RID: 23795
+	// Token: 0x04005DBA RID: 23994
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterInt healthcurrentFormatter = new CachedStringFormatterInt();
 
-	// Token: 0x04005CF4 RID: 23796
+	// Token: 0x04005DBB RID: 23995
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<int, int> healthcurrentWMaxFormatter = new CachedStringFormatter<int, int>((int _i, int _i2) => string.Format("{0}/{1}", _i, _i2));
 
-	// Token: 0x04005CF5 RID: 23797
+	// Token: 0x04005DBC RID: 23996
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterFloat healthfillFormatter = new CachedStringFormatterFloat(null);
 
-	// Token: 0x04005CF6 RID: 23798
+	// Token: 0x04005DBD RID: 23997
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatter<float> distanceFormatter = new CachedStringFormatter<float>(new Func<float, string>(ValueDisplayFormatters.Distance));
 
-	// Token: 0x04005CF7 RID: 23799
+	// Token: 0x04005DBE RID: 23998
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor itemicontintcolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04005CF8 RID: 23800
+	// Token: 0x04005DBF RID: 23999
 	[PublicizedFrom(EAccessModifier.Private)]
 	public readonly CachedStringFormatterXuiRgbaColor arrowcolorFormatter = new CachedStringFormatterXuiRgbaColor();
 
-	// Token: 0x04005CF9 RID: 23801
+	// Token: 0x04005DC0 RID: 24000
 	public string deathIcon = "ui_game_symbol_death";
 
-	// Token: 0x04005CFA RID: 23802
+	// Token: 0x04005DC1 RID: 24001
 	public string leaderIcon = "server_favorite";
 
-	// Token: 0x04005CFB RID: 23803
+	// Token: 0x04005DC2 RID: 24002
 	public string twitchActiveIcon = "ui_game_symbol_twitch_actions";
 
-	// Token: 0x04005CFC RID: 23804
+	// Token: 0x04005DC3 RID: 24003
 	public string twitchDisabledIcon = "ui_game_symbol_twitch_action_disabled";
 
-	// Token: 0x04005CFD RID: 23805
+	// Token: 0x04005DC4 RID: 24004
 	public string twitchSafeIcon = "ui_game_symbol_brick";
 }

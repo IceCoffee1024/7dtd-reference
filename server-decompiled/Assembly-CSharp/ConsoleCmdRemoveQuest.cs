@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using Platform;
 using UnityEngine.Scripting;
 
-// Token: 0x02000274 RID: 628
+// Token: 0x02000278 RID: 632
 [Preserve]
 public class ConsoleCmdRemoveQuest : ConsoleCmdAbstract
 {
-	// Token: 0x0600129D RID: 4765 RVA: 0x000741E0 File Offset: 0x000723E0
+	// Token: 0x060012AF RID: 4783 RVA: 0x0007483C File Offset: 0x00072A3C
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "removequest" };
 	}
 
-	// Token: 0x170001F0 RID: 496
-	// (get) Token: 0x0600129E RID: 4766 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x170001F1 RID: 497
+	// (get) Token: 0x060012B0 RID: 4784 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -24,8 +24,8 @@ public class ConsoleCmdRemoveQuest : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x170001F1 RID: 497
-	// (get) Token: 0x0600129F RID: 4767 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// Token: 0x170001F2 RID: 498
+	// (get) Token: 0x060012B1 RID: 4785 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypes
 	{
 		get
@@ -34,8 +34,8 @@ public class ConsoleCmdRemoveQuest : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x170001F2 RID: 498
-	// (get) Token: 0x060012A0 RID: 4768 RVA: 0x0005FE4F File Offset: 0x0005E04F
+	// Token: 0x170001F3 RID: 499
+	// (get) Token: 0x060012B2 RID: 4786 RVA: 0x00060397 File Offset: 0x0005E597
 	public override DeviceFlag AllowedDeviceTypesClient
 	{
 		get
@@ -44,7 +44,7 @@ public class ConsoleCmdRemoveQuest : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060012A1 RID: 4769 RVA: 0x000741F0 File Offset: 0x000723F0
+	// Token: 0x060012B3 RID: 4787 RVA: 0x0007484C File Offset: 0x00072A4C
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (GameManager.IsDedicatedServer)
@@ -73,7 +73,7 @@ public class ConsoleCmdRemoveQuest : ConsoleCmdAbstract
 		XUiM_Player.GetPlayer().QuestJournal.ForceRemoveQuest(text);
 	}
 
-	// Token: 0x060012A2 RID: 4770 RVA: 0x000742BC File Offset: 0x000724BC
+	// Token: 0x060012B4 RID: 4788 RVA: 0x00074918 File Offset: 0x00072B18
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{

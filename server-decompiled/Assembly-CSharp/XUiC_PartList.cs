@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x02000F89 RID: 3977
+// Token: 0x02000FA2 RID: 4002
 [Preserve]
 public class XUiC_PartList : XUiC_ItemStackGrid
 {
-	// Token: 0x06007D6C RID: 32108 RVA: 0x002F99F8 File Offset: 0x002F7BF8
+	// Token: 0x06007E5E RID: 32350 RVA: 0x002FE1CC File Offset: 0x002FC3CC
 	public override void Init()
 	{
 		base.Init();
@@ -16,19 +16,19 @@ public class XUiC_PartList : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x06007D6D RID: 32109 RVA: 0x0001FF1E File Offset: 0x0001E11E
+	// Token: 0x06007E5F RID: 32351 RVA: 0x0001FFE2 File Offset: 0x0001E1E2
 	public override ItemStack[] GetSlots()
 	{
 		return null;
 	}
 
-	// Token: 0x06007D6E RID: 32110 RVA: 0x000027FC File Offset: 0x000009FC
+	// Token: 0x06007E60 RID: 32352 RVA: 0x000027FC File Offset: 0x000009FC
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override void UpdateBackend(ItemStack[] stackList)
 	{
 	}
 
-	// Token: 0x06007D6F RID: 32111 RVA: 0x002F9A38 File Offset: 0x002F7C38
+	// Token: 0x06007E61 RID: 32353 RVA: 0x002FE20C File Offset: 0x002FC40C
 	public void SetSlot(ItemValue part, int index)
 	{
 		XUiC_ItemStack xuiC_ItemStack = this.itemControllers[index];
@@ -47,7 +47,7 @@ public class XUiC_PartList : XUiC_ItemStackGrid
 		this.itemControllers[index].ViewComponent.EventOnHover = false;
 	}
 
-	// Token: 0x06007D70 RID: 32112 RVA: 0x002F9AB0 File Offset: 0x002F7CB0
+	// Token: 0x06007E62 RID: 32354 RVA: 0x002FE284 File Offset: 0x002FC484
 	public void SetSlots(ItemValue[] parts, int startIndex = 0)
 	{
 		for (int i = 0; i < this.itemControllers.Length - startIndex; i++)
@@ -70,7 +70,7 @@ public class XUiC_PartList : XUiC_ItemStackGrid
 		}
 	}
 
-	// Token: 0x06007D71 RID: 32113 RVA: 0x002F9B40 File Offset: 0x002F7D40
+	// Token: 0x06007E63 RID: 32355 RVA: 0x002FE314 File Offset: 0x002FC514
 	public void SetAmmoSlot(ItemValue ammo, int count)
 	{
 		int num = 5;
@@ -86,14 +86,14 @@ public class XUiC_PartList : XUiC_ItemStackGrid
 		this.itemControllers[num].GreyedOut = false;
 	}
 
-	// Token: 0x06007D72 RID: 32114 RVA: 0x002F9BAB File Offset: 0x002F7DAB
+	// Token: 0x06007E64 RID: 32356 RVA: 0x002FE37F File Offset: 0x002FC57F
 	[PublicizedFrom(EAccessModifier.Internal)]
 	public void SetMainItem(ItemStack itemStack)
 	{
 		this.itemClass = itemStack.itemValue.ItemClass;
 	}
 
-	// Token: 0x04005CD9 RID: 23769
+	// Token: 0x04005DA0 RID: 23968
 	[PublicizedFrom(EAccessModifier.Private)]
 	public ItemClass itemClass;
 }

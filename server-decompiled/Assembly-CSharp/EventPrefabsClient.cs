@@ -1,16 +1,16 @@
 ﻿using System;
 
-// Token: 0x02000918 RID: 2328
+// Token: 0x02000928 RID: 2344
 public class EventPrefabsClient
 {
-	// Token: 0x0600439E RID: 17310 RVA: 0x001A6490 File Offset: 0x001A4690
+	// Token: 0x0600441F RID: 17439 RVA: 0x001A8A64 File Offset: 0x001A6C64
 	public EventPrefabsClient(PrefabCache prefabCache, DynamicPrefabDecorator dynamicPrefabDecorator)
 	{
 		this.prefabCache = prefabCache;
 		this.dpd = dynamicPrefabDecorator;
 	}
 
-	// Token: 0x0600439F RID: 17311 RVA: 0x001A64A8 File Offset: 0x001A46A8
+	// Token: 0x06004420 RID: 17440 RVA: 0x001A8A7C File Offset: 0x001A6C7C
 	public void TryAdd(int id, string prefabName, byte rotation, Vector3i position)
 	{
 		if (this.dpd.GetPrefab(id) != null)
@@ -30,7 +30,7 @@ public class EventPrefabsClient
 		DecoManager.Instance.ClearDecoObjectsInArea(prefabInstance.boundingBoxPosition, prefabInstance.boundingBoxSize);
 	}
 
-	// Token: 0x060043A0 RID: 17312 RVA: 0x001A6554 File Offset: 0x001A4754
+	// Token: 0x06004421 RID: 17441 RVA: 0x001A8B28 File Offset: 0x001A6D28
 	public void Remove(int id, string prefabName, byte rotation, Vector3i position)
 	{
 		PrefabInstance prefab = this.dpd.GetPrefab(id);
@@ -64,11 +64,11 @@ public class EventPrefabsClient
 		this.dpd.RemoveEventPrefab(prefab);
 	}
 
-	// Token: 0x04003661 RID: 13921
+	// Token: 0x040036EA RID: 14058
 	[PublicizedFrom(EAccessModifier.Private)]
 	public PrefabCache prefabCache;
 
-	// Token: 0x04003662 RID: 13922
+	// Token: 0x040036EB RID: 14059
 	[PublicizedFrom(EAccessModifier.Private)]
 	public DynamicPrefabDecorator dpd;
 }

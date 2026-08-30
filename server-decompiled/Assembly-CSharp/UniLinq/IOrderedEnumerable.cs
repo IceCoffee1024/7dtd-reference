@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 namespace UniLinq
 {
-	// Token: 0x0200178D RID: 6029
+	// Token: 0x020017B3 RID: 6067
 	public interface IOrderedEnumerable<TElement> : IEnumerable<TElement>, IEnumerable
 	{
-		// Token: 0x0600BB37 RID: 47927
+		// Token: 0x0600BCBA RID: 48314
 		IOrderedEnumerable<TElement> CreateOrderedEnumerable<TKey>(Func<TElement, TKey> keySelector, IComparer<TKey> comparer, bool descending);
 	}
 }

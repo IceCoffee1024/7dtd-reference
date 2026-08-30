@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x020002B0 RID: 688
+// Token: 0x020002B4 RID: 692
 [Preserve]
 public class ConsoleCmdTransformDebug : ConsoleCmdAbstract
 {
-	// Token: 0x060013E1 RID: 5089 RVA: 0x000792ED File Offset: 0x000774ED
+	// Token: 0x060013F3 RID: 5107 RVA: 0x00079949 File Offset: 0x00077B49
 	public ConsoleCmdTransformDebug()
 	{
 		this.ToggleDebugging();
 	}
 
-	// Token: 0x17000226 RID: 550
-	// (get) Token: 0x060013E2 RID: 5090 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000227 RID: 551
+	// (get) Token: 0x060013F4 RID: 5108 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -23,8 +23,8 @@ public class ConsoleCmdTransformDebug : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x17000227 RID: 551
-	// (get) Token: 0x060013E3 RID: 5091 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// Token: 0x17000228 RID: 552
+	// (get) Token: 0x060013F5 RID: 5109 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -33,28 +33,28 @@ public class ConsoleCmdTransformDebug : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x060013E4 RID: 5092 RVA: 0x000792FB File Offset: 0x000774FB
+	// Token: 0x060013F6 RID: 5110 RVA: 0x00079957 File Offset: 0x00077B57
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "transformdebug", "tdbg" };
 	}
 
-	// Token: 0x060013E5 RID: 5093 RVA: 0x00079313 File Offset: 0x00077513
+	// Token: 0x060013F7 RID: 5111 RVA: 0x0007996F File Offset: 0x00077B6F
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "Transform Debugging";
 	}
 
-	// Token: 0x060013E6 RID: 5094 RVA: 0x0007931A File Offset: 0x0007751A
+	// Token: 0x060013F8 RID: 5112 RVA: 0x00079976 File Offset: 0x00077B76
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
 		return "tdbg - Toggle Transform Debugging";
 	}
 
-	// Token: 0x060013E7 RID: 5095 RVA: 0x00079321 File Offset: 0x00077521
+	// Token: 0x060013F9 RID: 5113 RVA: 0x0007997D File Offset: 0x00077B7D
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 0)
@@ -65,7 +65,7 @@ public class ConsoleCmdTransformDebug : ConsoleCmdAbstract
 		SingletonMonoBehaviour<SdtdConsole>.Instance.Output(this.getHelp());
 	}
 
-	// Token: 0x060013E8 RID: 5096 RVA: 0x00079344 File Offset: 0x00077544
+	// Token: 0x060013FA RID: 5114 RVA: 0x000799A0 File Offset: 0x00077BA0
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void ToggleDebugging()
 	{
@@ -81,11 +81,11 @@ public class ConsoleCmdTransformDebug : ConsoleCmdAbstract
 		global::UnityEngine.Object.Destroy(this.m_empty);
 	}
 
-	// Token: 0x04000D8A RID: 3466
+	// Token: 0x04000D9B RID: 3483
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const string EMPTY_NAME = "TransformDebug";
 
-	// Token: 0x04000D8B RID: 3467
+	// Token: 0x04000D9C RID: 3484
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject m_empty;
 }

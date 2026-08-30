@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine.Scripting;
 
-// Token: 0x020004B7 RID: 1207
+// Token: 0x020004BB RID: 1211
 [Preserve]
 public class EntityMinibike : EntityDriveable
 {

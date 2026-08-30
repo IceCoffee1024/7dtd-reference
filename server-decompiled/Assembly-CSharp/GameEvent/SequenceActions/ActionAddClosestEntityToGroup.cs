@@ -5,11 +5,11 @@ using UnityEngine.Scripting;
 
 namespace GameEvent.SequenceActions
 {
-	// Token: 0x02001933 RID: 6451
+	// Token: 0x02001959 RID: 6489
 	[Preserve]
 	public class ActionAddClosestEntityToGroup : BaseAction
 	{
-		// Token: 0x0600C641 RID: 50753 RVA: 0x0048DD34 File Offset: 0x0048BF34
+		// Token: 0x0600C7C8 RID: 51144 RVA: 0x00494080 File Offset: 0x00492280
 		public override BaseAction.ActionCompleteStates OnPerformAction()
 		{
 			FastTags<TagGroup.Global> fastTags = FastTags<TagGroup.Global>.Parse(this.tag);
@@ -74,7 +74,7 @@ namespace GameEvent.SequenceActions
 			return BaseAction.ActionCompleteStates.Complete;
 		}
 
-		// Token: 0x0600C642 RID: 50754 RVA: 0x0048DF3C File Offset: 0x0048C13C
+		// Token: 0x0600C7C9 RID: 51145 RVA: 0x00494288 File Offset: 0x00492488
 		public override void ParseProperties(DynamicProperties properties)
 		{
 			base.ParseProperties(properties);
@@ -86,7 +86,7 @@ namespace GameEvent.SequenceActions
 			properties.ParseBool(ActionAddClosestEntityToGroup.PropExcludeTarget, ref this.excludeTarget);
 		}
 
-		// Token: 0x0600C643 RID: 50755 RVA: 0x0048DFB8 File Offset: 0x0048C1B8
+		// Token: 0x0600C7CA RID: 51146 RVA: 0x00494304 File Offset: 0x00492504
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public override BaseAction CloneChildSettings()
 		{
@@ -101,51 +101,51 @@ namespace GameEvent.SequenceActions
 			};
 		}
 
-		// Token: 0x0400954F RID: 38223
+		// Token: 0x04009678 RID: 38520
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string groupName = "";
 
-		// Token: 0x04009550 RID: 38224
+		// Token: 0x04009679 RID: 38521
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public string tag;
 
-		// Token: 0x04009551 RID: 38225
+		// Token: 0x0400967A RID: 38522
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public float maxDistance = 10f;
 
-		// Token: 0x04009552 RID: 38226
+		// Token: 0x0400967B RID: 38523
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool twitchNegative = true;
 
-		// Token: 0x04009553 RID: 38227
+		// Token: 0x0400967C RID: 38524
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool targetIsOwner;
 
-		// Token: 0x04009554 RID: 38228
+		// Token: 0x0400967D RID: 38525
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public bool excludeTarget = true;
 
-		// Token: 0x04009555 RID: 38229
+		// Token: 0x0400967E RID: 38526
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropGroupName = "group_name";
 
-		// Token: 0x04009556 RID: 38230
+		// Token: 0x0400967F RID: 38527
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTag = "entity_tags";
 
-		// Token: 0x04009557 RID: 38231
+		// Token: 0x04009680 RID: 38528
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropMaxDistance = "max_distance";
 
-		// Token: 0x04009558 RID: 38232
+		// Token: 0x04009681 RID: 38529
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTwitchNegative = "twitch_negative";
 
-		// Token: 0x04009559 RID: 38233
+		// Token: 0x04009682 RID: 38530
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropTargetIsOwner = "target_is_owner";
 
-		// Token: 0x0400955A RID: 38234
+		// Token: 0x04009683 RID: 38531
 		[PublicizedFrom(EAccessModifier.Protected)]
 		public static string PropExcludeTarget = "exclude_target";
 	}

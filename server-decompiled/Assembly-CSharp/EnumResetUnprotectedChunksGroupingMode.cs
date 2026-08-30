@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x020011C9 RID: 4553
+// Token: 0x020011E5 RID: 4581
 public enum EnumResetUnprotectedChunksGroupingMode
 {
-	// Token: 0x04006C8F RID: 27791
+	// Token: 0x04006D68 RID: 28008
 	Disabled,
-	// Token: 0x04006C90 RID: 27792
+	// Token: 0x04006D69 RID: 28009
 	NoGrouping,
-	// Token: 0x04006C91 RID: 27793
+	// Token: 0x04006D6A RID: 28010
 	SeparatePOIs,
-	// Token: 0x04006C92 RID: 27794
+	// Token: 0x04006D6B RID: 28011
 	GroupedPOIs
 }

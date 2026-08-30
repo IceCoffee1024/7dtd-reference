@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000215 RID: 533
+// Token: 0x02000217 RID: 535
 [Preserve]
 public class ConsoleCmdFloatingOrigin : ConsoleCmdAbstract
 {
-	// Token: 0x06001035 RID: 4149 RVA: 0x00066D5F File Offset: 0x00064F5F
+	// Token: 0x06001040 RID: 4160 RVA: 0x000672A7 File Offset: 0x000654A7
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string[] getCommands()
 	{
 		return new string[] { "floatingorigin", "fo" };
 	}
 
-	// Token: 0x06001036 RID: 4150 RVA: 0x00031E8B File Offset: 0x0003008B
+	// Token: 0x06001041 RID: 4161 RVA: 0x00032147 File Offset: 0x00030347
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getDescription()
 	{
 		return "";
 	}
 
-	// Token: 0x06001037 RID: 4151 RVA: 0x00031E8B File Offset: 0x0003008B
+	// Token: 0x06001042 RID: 4162 RVA: 0x00032147 File Offset: 0x00030347
 	[PublicizedFrom(EAccessModifier.Protected)]
 	public override string getHelp()
 	{
@@ -29,7 +29,7 @@ public class ConsoleCmdFloatingOrigin : ConsoleCmdAbstract
 	}
 
 	// Token: 0x1700017E RID: 382
-	// (get) Token: 0x06001038 RID: 4152 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// (get) Token: 0x06001043 RID: 4163 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool IsExecuteOnClient
 	{
 		get
@@ -39,7 +39,7 @@ public class ConsoleCmdFloatingOrigin : ConsoleCmdAbstract
 	}
 
 	// Token: 0x1700017F RID: 383
-	// (get) Token: 0x06001039 RID: 4153 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	// (get) Token: 0x06001044 RID: 4164 RVA: 0x00020021 File Offset: 0x0001E221
 	public override bool AllowedInMainMenu
 	{
 		get
@@ -48,7 +48,7 @@ public class ConsoleCmdFloatingOrigin : ConsoleCmdAbstract
 		}
 	}
 
-	// Token: 0x0600103A RID: 4154 RVA: 0x00066D78 File Offset: 0x00064F78
+	// Token: 0x06001045 RID: 4165 RVA: 0x000672C0 File Offset: 0x000654C0
 	public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
 	{
 		if (_params.Count == 1 && _params[0] == "on")

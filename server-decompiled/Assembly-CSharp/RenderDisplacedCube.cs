@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x020012AA RID: 4778
+// Token: 0x020012C4 RID: 4804
 public class RenderDisplacedCube
 {
-	// Token: 0x0600976B RID: 38763 RVA: 0x00397454 File Offset: 0x00395654
+	// Token: 0x06009866 RID: 39014 RVA: 0x0039C698 File Offset: 0x0039A898
 	public RenderDisplacedCube(Transform _focusCubePrefab)
 	{
 		this.objectShader = GlobalAssets.FindShader("Game/Glow");
@@ -53,7 +53,7 @@ public class RenderDisplacedCube
 		}
 	}
 
-	// Token: 0x0600976C RID: 38764 RVA: 0x003978C4 File Offset: 0x00395AC4
+	// Token: 0x06009867 RID: 39015 RVA: 0x0039CB08 File Offset: 0x0039AD08
 	public void Cleanup()
 	{
 		if (this.previewMaterial != null)
@@ -69,7 +69,7 @@ public class RenderDisplacedCube
 		}
 	}
 
-	// Token: 0x0600976D RID: 38765 RVA: 0x00397924 File Offset: 0x00395B24
+	// Token: 0x06009868 RID: 39016 RVA: 0x0039CB68 File Offset: 0x0039AD68
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void calcVerticesForSide(int _idx, Vector3[] _cube, Vector3[] _offsets)
 	{
@@ -80,7 +80,7 @@ public class RenderDisplacedCube
 		this.meshFilters[_idx].mesh.vertices = this.vertices[_idx];
 	}
 
-	// Token: 0x0600976E RID: 38766 RVA: 0x003979A4 File Offset: 0x00395BA4
+	// Token: 0x06009869 RID: 39017 RVA: 0x0039CBE8 File Offset: 0x0039ADE8
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void rebuildCubeOnBounds(BlockValue _blockValue)
 	{
@@ -96,7 +96,7 @@ public class RenderDisplacedCube
 		this.localPos = blockPlacementBounds.center;
 	}
 
-	// Token: 0x0600976F RID: 38767 RVA: 0x00397A0C File Offset: 0x00395C0C
+	// Token: 0x0600986A RID: 39018 RVA: 0x0039CC50 File Offset: 0x0039AE50
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void setFocusType(RenderCubeType _focusType)
 	{
@@ -119,7 +119,7 @@ public class RenderDisplacedCube
 		}
 	}
 
-	// Token: 0x06009770 RID: 38768 RVA: 0x00397A68 File Offset: 0x00395C68
+	// Token: 0x0600986B RID: 39019 RVA: 0x0039CCAC File Offset: 0x0039AEAC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void GenerateLandClaimPreview(float scale)
 	{
@@ -139,7 +139,7 @@ public class RenderDisplacedCube
 		component.material = material;
 	}
 
-	// Token: 0x06009771 RID: 38769 RVA: 0x00397B78 File Offset: 0x00395D78
+	// Token: 0x0600986C RID: 39020 RVA: 0x0039CDBC File Offset: 0x0039AFBC
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool update0(World _world, WorldRayHitInfo _hitInfo, Vector3i _focusBlockPos, EntityAlive _player, PersistentPlayerData _ppLocal, bool _bAlternativeBlockPos, BlockValue _holdingBlockValue, TextureFullArray _texture)
 	{
@@ -508,7 +508,7 @@ public class RenderDisplacedCube
 		return flag2;
 	}
 
-	// Token: 0x06009772 RID: 38770 RVA: 0x003988D8 File Offset: 0x00396AD8
+	// Token: 0x0600986D RID: 39021 RVA: 0x0039DB1C File Offset: 0x0039BD1C
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void disableAllComponents(Transform _transform)
 	{
@@ -539,7 +539,7 @@ public class RenderDisplacedCube
 		}
 	}
 
-	// Token: 0x06009773 RID: 38771 RVA: 0x00398998 File Offset: 0x00396B98
+	// Token: 0x0600986E RID: 39022 RVA: 0x0039DBDC File Offset: 0x0039BDDC
 	public void Update(bool _bMeshSelected, World _world, WorldRayHitInfo _hitInfo, Vector3i _focusBlockPos, EntityAlive _player, PersistentPlayerData _ppLocal, bool _bAlternativeBlockPos)
 	{
 		bool flag = false;
@@ -581,7 +581,7 @@ public class RenderDisplacedCube
 		}
 	}
 
-	// Token: 0x06009774 RID: 38772 RVA: 0x00398B0C File Offset: 0x00396D0C
+	// Token: 0x0600986F RID: 39023 RVA: 0x0039DD50 File Offset: 0x0039BF50
 	[PublicizedFrom(EAccessModifier.Private)]
 	public void DestroyPreview()
 	{
@@ -605,31 +605,31 @@ public class RenderDisplacedCube
 		this.blockPreviewMats.Clear();
 	}
 
-	// Token: 0x040071AA RID: 29098
+	// Token: 0x04007281 RID: 29313
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cWireframeFadeMaxDistance = 1f;
 
-	// Token: 0x040071AB RID: 29099
+	// Token: 0x04007282 RID: 29314
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cTransparencyMax = 1f;
 
-	// Token: 0x040071AC RID: 29100
+	// Token: 0x04007283 RID: 29315
 	[PublicizedFrom(EAccessModifier.Private)]
 	public const float cCubeScale = 1f;
 
-	// Token: 0x040071AD RID: 29101
+	// Token: 0x04007284 RID: 29316
 	[PublicizedFrom(EAccessModifier.Private)]
 	public RenderCubeType focusType;
 
-	// Token: 0x040071AE RID: 29102
+	// Token: 0x04007285 RID: 29317
 	[PublicizedFrom(EAccessModifier.Private)]
 	public MeshFilter[] meshFilters = new MeshFilter[6];
 
-	// Token: 0x040071AF RID: 29103
+	// Token: 0x04007286 RID: 29318
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject[] goSides = new GameObject[6];
 
-	// Token: 0x040071B0 RID: 29104
+	// Token: 0x04007287 RID: 29319
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3[] cube = new Vector3[]
 	{
@@ -643,11 +643,11 @@ public class RenderDisplacedCube
 		new Vector3(1f, 0f, 1f)
 	};
 
-	// Token: 0x040071B1 RID: 29105
+	// Token: 0x04007288 RID: 29320
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3[] cubeCopy = new Vector3[8];
 
-	// Token: 0x040071B2 RID: 29106
+	// Token: 0x04007289 RID: 29321
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[,] sides = new int[,]
 	{
@@ -659,11 +659,11 @@ public class RenderDisplacedCube
 		{ 4, 7, 3, 0 }
 	};
 
-	// Token: 0x040071B3 RID: 29107
+	// Token: 0x0400728A RID: 29322
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Vector3[]> vertices = new List<Vector3[]>();
 
-	// Token: 0x040071B4 RID: 29108
+	// Token: 0x0400728B RID: 29323
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector2[] uvs = new Vector2[]
 	{
@@ -673,7 +673,7 @@ public class RenderDisplacedCube
 		new Vector2(0f, 1f)
 	};
 
-	// Token: 0x040071B5 RID: 29109
+	// Token: 0x0400728C RID: 29324
 	[PublicizedFrom(EAccessModifier.Private)]
 	public int[] indices = new int[]
 	{
@@ -681,107 +681,107 @@ public class RenderDisplacedCube
 		0, 2
 	};
 
-	// Token: 0x040071B6 RID: 29110
+	// Token: 0x0400728D RID: 29325
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform transformParent;
 
-	// Token: 0x040071B7 RID: 29111
+	// Token: 0x0400728E RID: 29326
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform transformWireframeCube;
 
-	// Token: 0x040071B8 RID: 29112
+	// Token: 0x0400728F RID: 29327
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform transformBlockPreview;
 
-	// Token: 0x040071B9 RID: 29113
+	// Token: 0x04007290 RID: 29328
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Transform transformFocusCubePrefab;
 
-	// Token: 0x040071BA RID: 29114
+	// Token: 0x04007291 RID: 29329
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Shader objectShader;
 
-	// Token: 0x040071BB RID: 29115
+	// Token: 0x04007292 RID: 29330
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Shader objectShader_TA;
 
-	// Token: 0x040071BC RID: 29116
+	// Token: 0x04007293 RID: 29331
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Shader terrainShader;
 
-	// Token: 0x040071BD RID: 29117
+	// Token: 0x04007294 RID: 29332
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Material> blockPreviewMats = new List<Material>();
 
-	// Token: 0x040071BE RID: 29118
+	// Token: 0x04007295 RID: 29333
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float lastTimeFocusTransformMoved;
 
-	// Token: 0x040071BF RID: 29119
+	// Token: 0x04007296 RID: 29334
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Material previewMaterial;
 
-	// Token: 0x040071C0 RID: 29120
+	// Token: 0x04007297 RID: 29335
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3[] arrFocusBoxDisplacedVertices = new Vector3[8];
 
-	// Token: 0x040071C1 RID: 29121
+	// Token: 0x04007298 RID: 29336
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockValue focusTransformBlockValue;
 
-	// Token: 0x040071C2 RID: 29122
+	// Token: 0x04007299 RID: 29337
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i focusTransformPosition;
 
-	// Token: 0x040071C3 RID: 29123
+	// Token: 0x0400729A RID: 29338
 	[PublicizedFrom(EAccessModifier.Private)]
 	public bool bUseFocusCubePrefab;
 
-	// Token: 0x040071C4 RID: 29124
+	// Token: 0x0400729B RID: 29339
 	[PublicizedFrom(EAccessModifier.Private)]
 	public TextureFullArray focusedTexture;
 
-	// Token: 0x040071C5 RID: 29125
+	// Token: 0x0400729C RID: 29340
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float transparencyFade;
 
-	// Token: 0x040071C6 RID: 29126
+	// Token: 0x0400729D RID: 29341
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 transformLastPos;
 
-	// Token: 0x040071C7 RID: 29127
+	// Token: 0x0400729E RID: 29342
 	[PublicizedFrom(EAccessModifier.Private)]
 	public float drawStability;
 
-	// Token: 0x040071C8 RID: 29128
+	// Token: 0x0400729F RID: 29343
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockFace focusedBlockFace;
 
-	// Token: 0x040071C9 RID: 29129
+	// Token: 0x040072A0 RID: 29344
 	[PublicizedFrom(EAccessModifier.Private)]
 	public BlockValue cachedFocusBlockValue;
 
-	// Token: 0x040071CA RID: 29130
+	// Token: 0x040072A1 RID: 29345
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3i cachedFocusBlockPos;
 
-	// Token: 0x040071CB RID: 29131
+	// Token: 0x040072A2 RID: 29346
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 multiDim;
 
-	// Token: 0x040071CC RID: 29132
+	// Token: 0x040072A3 RID: 29347
 	[PublicizedFrom(EAccessModifier.Private)]
 	public Vector3 localPos;
 
-	// Token: 0x040071CD RID: 29133
+	// Token: 0x040072A4 RID: 29348
 	[PublicizedFrom(EAccessModifier.Private)]
 	public GameObject cachedLandClaimBoundary;
 
-	// Token: 0x040071CE RID: 29134
+	// Token: 0x040072A5 RID: 29349
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<Renderer> renderers = new List<Renderer>();
 
-	// Token: 0x040071CF RID: 29135
+	// Token: 0x040072A6 RID: 29350
 	[PublicizedFrom(EAccessModifier.Private)]
 	public List<SignRenderer> signRenderers = new List<SignRenderer>();
 }
