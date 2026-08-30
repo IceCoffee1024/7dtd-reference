@@ -123,7 +123,7 @@ change the original game assemblies, prove that the 7DTD Mono runtime implements
 every .NET Framework 4.8 API, or make a dependency safe to ship inside a Mod.
 
 Code intended to run in the dedicated server must still be validated against the
-actual assemblies under `<game-version>/runtime/Managed` and tested in the game's
+actual assemblies under `runtime/7DaysToDieServer_Data/Managed` and tested in the game's
 Mono process. Avoid relying on APIs merely because they compile against the .NET
 Framework 4.8 reference assemblies.
 
