@@ -12,10 +12,9 @@ $metadataPath = Join-Path $resolvedRoot 'metadata.json'
 if (-not (Test-Path -LiteralPath $metadataPath -PathType Leaf)) { throw "metadata.json was not found under '$resolvedRoot'." }
 $metadata = Get-Content -LiteralPath $metadataPath -Raw | ConvertFrom-Json
 if ([string]::IsNullOrWhiteSpace($metadata.gameVersion)) { throw 'metadata.json must define gameVersion.' }
-$versionRoot = Join-Path $resolvedRoot $metadata.referenceDirectory
-if (-not (Test-Path -LiteralPath $versionRoot -PathType Container)) { throw "Reference directory '$($metadata.referenceDirectory)' was not found." }
-$projects = @(Get-ChildItem -LiteralPath $versionRoot -Recurse -File -Filter '*.csproj' | Where-Object { $_.FullName -match '[\\/]server-decompiled[\\/]' -and $_.FullName -notmatch '[\\/](bin|obj)[\\/]' })
-if ($projects.Count -eq 0) { throw "No decompiled projects were found under '$versionRoot'." }
+$versionRoot = $resolvedRoot
+$projects = @(Get-ChildItem -LiteralPath (Join-Path $resolvedRoot 'server-decompiled') -Recurse -File -Filter '*.csproj' | Where-Object { $_.FullName -notmatch '[\\/](bin|obj)[\\/]' })
+if ($projects.Count -eq 0) { throw "No decompiled projects were found under '$($resolvedRoot)\\server-decompiled'." }
 $errors = [System.Collections.Generic.List[string]]::new()
 foreach ($project in $projects) {
     [xml]$document = Get-Content -LiteralPath $project.FullName -Raw

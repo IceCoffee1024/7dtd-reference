@@ -147,9 +147,9 @@ game update.
 
 ## Latest-Version Repository and Release Archives
 
-This repository keeps only the latest reference under the version directory.
+This repository keeps only the latest reference at the repository root.
 Before replacing it, archive the current version as a Git hosting Release asset.
-The archive contains the complete version directory; the Git history is then
+The archive contains the complete reference directories; the Git history is then
 rewritten so old reference blobs do not remain in the repository.
 
 Create and verify an archive locally:
@@ -162,9 +162,10 @@ pwsh ./scripts/New-ReferenceRelease.ps1 -Version v3.0.1-b4
 Upload `dist/7dtd-reference-v3.0.1-b4.zip` and its `.sha256` file to a Release
 tag with the same version. Keep the Release immutable and retain the checksum.
 
-For a new game build, replace the old version directory, update `metadata.json`,
-run `Verify-Reference.ps1`, and commit the new latest version. Do not keep old
-version directories or tags in this repository; use Release assets for history.
+For a new game build, replace the root `server-decompiled/` and `runtime/`
+directories, update `metadata.json`, run `Verify-Reference.ps1`, and commit the
+new latest version. Do not keep old version directories or tags in this
+repository; use Release assets for history.
 
 Because removing files in a normal commit leaves their blobs in Git history, a
 one-time history rewrite is required when converting an existing repository to

@@ -1,7 +1,6 @@
 {
   "gameVersion": "v3.0.1-b4",
   "gameBuild": "3.0.1 build 4",
-  "referenceDirectory": "v3.0.1-b4",
   "targetFramework": "net48",
   "decompiler": "dnSpy-generated project",
   "extractedAt": "2026-08-30",
