@@ -45,7 +45,8 @@ if (-not $SkipReleasePrompt) {
 }
 
 if (-not $SkipDecompile -and [string]::IsNullOrWhiteSpace($DnSpyConsolePath)) { throw 'DnSpyConsolePath is required unless -SkipDecompile is used.' }
-& (Join-Path $PSScriptRoot 'Update-ReferenceRuntime.ps1') -ServerRoot $source -ReferenceRoot $root -SkipReleasePrompt:$SkipReleasePrompt -WhatIf:$WhatIfPreference
+# The unified entry point already performed the archive confirmation above.
+& (Join-Path $PSScriptRoot 'Update-ReferenceRuntime.ps1') -ServerRoot $source -ReferenceRoot $root -SkipReleasePrompt -WhatIf:$WhatIfPreference
 
 if (-not $SkipDecompile) {
     $manifest = Get-Content -LiteralPath (Join-Path $root 'decompile.manifest.json') -Raw | ConvertFrom-Json
@@ -82,4 +83,10 @@ if ($PSCmdlet.ShouldProcess($metadataPath, "Update metadata for $Version")) {
     $metadata | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $metadataPath -Encoding utf8
     & (Join-Path $PSScriptRoot 'Verify-Reference.ps1') -ReferenceRoot $root
 }
-if (-not $SkipRelease) { Write-Host "Update complete for $Version. Review changes, then create the Release with New-ReferenceRelease.ps1 and gh release create." }
+if (-not $SkipRelease) {
+    if ($WhatIfPreference) {
+        Write-Host "Preview complete for $Version. No runtime, source, or metadata files were changed."
+    } else {
+        Write-Host "Update complete for $Version. Review changes, then create the Release with New-ReferenceRelease.ps1 and gh release create."
+    }
+}
