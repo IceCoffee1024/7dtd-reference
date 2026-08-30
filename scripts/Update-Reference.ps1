@@ -66,6 +66,16 @@ if (-not $SkipReleasePrompt) {
 }
 
 if (-not $SkipDecompile -and [string]::IsNullOrWhiteSpace($DnSpyConsolePath)) { throw 'DnSpyConsolePath is required unless -SkipDecompile is used.' }
+$backupRoot = Join-Path ([System.IO.Path]::GetTempPath()) ("7dtd-update-backup-{0}" -f [Guid]::NewGuid().ToString('N'))
+$backupCreated = $false
+if (-not $WhatIfPreference) {
+    New-Item -ItemType Directory -Path $backupRoot -Force | Out-Null
+    Copy-Item -LiteralPath (Join-Path $root 'runtime') -Destination $backupRoot -Recurse -Force
+    Copy-Item -LiteralPath (Join-Path $root 'server-decompiled') -Destination $backupRoot -Recurse -Force
+    Copy-Item -LiteralPath $metadataPath -Destination $backupRoot -Force
+    $backupCreated = $true
+}
+try {
 # The unified entry point already performed the archive confirmation above.
 & (Join-Path $PSScriptRoot 'Update-ReferenceRuntime.ps1') -ServerRoot $source -ReferenceRoot $root -SkipReleasePrompt -WhatIf:$WhatIfPreference
 
@@ -109,6 +119,7 @@ if ($PSCmdlet.ShouldProcess($metadataPath, "Update metadata for $Version")) {
     $metadata.gameVersion = $Version
     if (-not [string]::IsNullOrWhiteSpace($GameBuild)) { $metadata.gameBuild = $GameBuild }
     $metadata.extractedAt = (Get-Date).ToString('yyyy-MM-dd')
+    $metadata.referenceCommit = "see Git tag $Version"
     $metadata.archive = $null
     $metadata | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $metadataPath -Encoding utf8
     & (Join-Path $PSScriptRoot 'Verify-Reference.ps1') -ReferenceRoot $root
@@ -119,4 +130,15 @@ if (-not $SkipRelease) {
     } else {
         Write-Host "Update complete for $Version. Review changes, then create the Release with New-ReferenceRelease.ps1 and gh release create."
     }
+}
+} catch {
+    if ($backupCreated) {
+        Write-Warning "Update failed. Restoring runtime and server-decompiled from the temporary backup."
+        Copy-Item -LiteralPath (Join-Path $backupRoot 'runtime') -Destination $root -Recurse -Force
+        Copy-Item -LiteralPath (Join-Path $backupRoot 'server-decompiled') -Destination $root -Recurse -Force
+        Copy-Item -LiteralPath (Join-Path $backupRoot 'metadata.json') -Destination $metadataPath -Force
+    }
+    throw
+} finally {
+    Remove-Item -LiteralPath $backupRoot -Recurse -Force -ErrorAction SilentlyContinue
 }

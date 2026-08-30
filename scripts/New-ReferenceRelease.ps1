@@ -19,7 +19,7 @@ if ($PSCmdlet.ShouldProcess($archivePath, 'Create reference archive')) {
     if (Test-Path -LiteralPath $archivePath) { Remove-Item -LiteralPath $archivePath -Force }
     $stagingPath = Join-Path $OutputDirectory (".reference-{0}-{1}" -f $Version, [Guid]::NewGuid().ToString('N'))
     New-Item -ItemType Directory -Path $stagingPath -Force | Out-Null
-    foreach ($entry in @('server-decompiled', 'runtime', 'assets', 'metadata.json', 'README.md', 'README.zh-CN.md')) {
+    foreach ($entry in @('server-decompiled', 'runtime', 'assets', 'metadata.json', 'runtime.manifest.json', 'decompile.manifest.json', 'README.md', 'README.zh-CN.md')) {
         $source = Join-Path $resolvedRoot $entry
         if (Test-Path -LiteralPath $source) { Copy-Item -LiteralPath $source -Destination $stagingPath -Recurse -Force }
     }
