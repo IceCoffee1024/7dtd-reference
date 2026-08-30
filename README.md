@@ -9,34 +9,33 @@ assets are visual references only.
 
 ## Directory Layout
 
-Source and runtime references are grouped by game version so that their metadata
-and analysis notes describe the same server build. Historical assets that are
-stable across the versions being studied are kept once at the repository root.
+The repository keeps only the latest source and runtime reference at the root.
+Historical versions are stored as immutable Git hosting Release assets.
 
 ```text
 7dtd-reference/
 |-- README.md
+|-- README.zh-CN.md
+|-- metadata.json
 |-- assets/
-|   `-- Sprites/
 |-- scripts/
-|   `-- Set-DecompiledTargetFramework.ps1
-`-- <game-version>/
-    |-- server-decompiled/
-    `-- runtime/
-        |-- 7DaysToDieServer_Data/
-        |-- Mods/
-        |-- MonoBleedingEdge/
-        |-- serverconfig.xml
-        `-- startdedicated.bat
+|-- server-decompiled/
+`-- runtime/
+    |-- 7DaysToDieServer_Data/
+    |-- Mods/
+    |-- MonoBleedingEdge/
+    |-- serverconfig.xml
+    `-- startdedicated.bat
 ```
 
 Do not mix files from different game builds. Record the exact game version and
-build number in the version directory name, for example `v3.0.1-b4`.
+build number in `metadata.json` and the corresponding Release tag, for example
+`v3.0.1-b4`.
 
 ## Versioned Runtime Files
 
-Files under `<game-version>/runtime/` are copied unchanged from the official
-7DTD Dedicated Server build named by the parent directory. In particular,
+Files under `runtime/` are copied unchanged from the official 7DTD Dedicated
+Server build named in `metadata.json`. In particular,
 `serverconfig.xml` and `startdedicated.bat` are the original distribution files,
 not configuration captured from a contributor's server.
 
