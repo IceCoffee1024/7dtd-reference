@@ -81,3 +81,11 @@ dnSpy output is generated from the assemblies in `decompile.manifest.json` and s
 Keep the repository private and `.env` untracked. UNC paths are accepted, but access is limited to the configured source directory. Game files may be subject to the [7 Days to Die EULA](https://7daystodie.com/eula/); confirm your rights before sharing, mirroring, or publishing any content.
 
 See [README.zh-CN.md](README.zh-CN.md) for the Chinese version.
+
+Before running the formal update, publish the current version with the archive commands above. After reviewing the new files, commit only the intended reference paths:
+
+```powershell
+git add server-decompiled runtime metadata.json runtime.manifest.json decompile.manifest.json
+git commit -m "chore: update reference to <version>"
+git push origin main
+```

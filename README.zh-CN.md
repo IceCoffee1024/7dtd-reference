@@ -81,3 +81,11 @@ dnSpy 源码来自 `decompile.manifest.json` 中的程序集，并先输出到�
 ## 安全与法律
 
 保持仓库私有，`.env` 不纳入 Git。脚本支持 UNC 路径，但只会读取配置的服务端目录。游戏文件可能受[《7 Days to Die》EULA](https://7daystodie.com/eula/)约束；分享、镜像或公开任何内容前请确认授权。
+
+执行正式更新前，必须先使用上方命令发布当前版本。审核新文件后，只提交预期的参考路径：
+
+```powershell
+git add server-decompiled runtime metadata.json runtime.manifest.json decompile.manifest.json
+git commit -m "chore: update reference to <version>"
+git push origin main
+```
