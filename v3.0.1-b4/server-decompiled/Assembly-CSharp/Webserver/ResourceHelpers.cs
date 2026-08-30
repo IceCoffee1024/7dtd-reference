@@ -1,0 +1,44 @@
+﻿using System;
+using System.IO;
+using System.Reflection;
+
+namespace Webserver
+{
+	// Token: 0x02001A99 RID: 6809
+	public static class ResourceHelpers
+	{
+		// Token: 0x0600CCDE RID: 52446 RVA: 0x004AC274 File Offset: 0x004AA474
+		public static Stream OpenManifestResource(Assembly _assembly, string _name, bool _ignoreCase = false)
+		{
+			foreach (string text in _assembly.GetManifestResourceNames())
+			{
+				if (text.EndsWith(_name, _ignoreCase ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal))
+				{
+					return _assembly.GetManifestResourceStream(text);
+				}
+			}
+			return null;
+		}
+
+		// Token: 0x0600CCDF RID: 52447 RVA: 0x004AC2B4 File Offset: 0x004AA4B4
+		public static string GetManifestResourceText(Assembly _assembly, string _name, bool _ignoreCase = false)
+		{
+			string text;
+			using (Stream stream = ResourceHelpers.OpenManifestResource(_assembly, _name, _ignoreCase))
+			{
+				if (stream == null)
+				{
+					text = null;
+				}
+				else
+				{
+					using (TextReader textReader = new StreamReader(stream))
+					{
+						text = textReader.ReadToEnd();
+					}
+				}
+			}
+			return text;
+		}
+	}
+}

@@ -1,0 +1,151 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProjectGuid>{B78A77E0-660F-4841-808D-9286E5408581}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>0Harmony</RootNamespace>
+    <AssemblyName>0Harmony</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <FileAlignment>512</FileAlignment>
+    <TargetFramework>net48</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <EnableDefaultItems>False</EnableDefaultItems>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Include="HarmonyLib\AccessCache.cs" />
+    <Compile Include="HarmonyLib\AccessTools.cs" />
+    <Compile Include="HarmonyLib\AccessToolsExtensions.cs" />
+    <Compile Include="HarmonyLib\ArgumentType.cs" />
+    <Compile Include="HarmonyLib\AttributePatch.cs" />
+    <Compile Include="HarmonyLib\Code.cs" />
+    <Compile Include="HarmonyLib\CodeInstruction.cs" />
+    <Compile Include="HarmonyLib\CodeInstructionExtensions.cs" />
+    <Compile Include="HarmonyLib\CodeInstructionsExtensions.cs" />
+    <Compile Include="HarmonyLib\CodeMatch.cs" />
+    <Compile Include="HarmonyLib\CodeMatcher.cs" />
+    <Compile Include="HarmonyLib\CollectionExtensions.cs" />
+    <Compile Include="HarmonyLib\DelegateTypeFactory.cs" />
+    <Compile Include="HarmonyLib\ExceptionBlock.cs" />
+    <Compile Include="HarmonyLib\ExceptionBlockType.cs" />
+    <Compile Include="HarmonyLib\FastAccess.cs" />
+    <Compile Include="HarmonyLib\FastInvokeHandler.cs" />
+    <Compile Include="HarmonyLib\FileLog.cs" />
+    <Compile Include="HarmonyLib\GeneralExtensions.cs" />
+    <Compile Include="HarmonyLib\GetterHandler.cs" />
+    <Compile Include="HarmonyLib\Harmony.cs" />
+    <Compile Include="HarmonyLib\HarmonyAfter.cs" />
+    <Compile Include="HarmonyLib\HarmonyArgument.cs" />
+    <Compile Include="HarmonyLib\HarmonyAttribute.cs" />
+    <Compile Include="HarmonyLib\HarmonyBefore.cs" />
+    <Compile Include="HarmonyLib\HarmonyCleanup.cs" />
+    <Compile Include="HarmonyLib\HarmonyDebug.cs" />
+    <Compile Include="HarmonyLib\HarmonyDelegate.cs" />
+    <Compile Include="HarmonyLib\HarmonyEmitIL.cs" />
+    <Compile Include="HarmonyLib\HarmonyException.cs" />
+    <Compile Include="HarmonyLib\HarmonyFinalizer.cs" />
+    <Compile Include="HarmonyLib\HarmonyGlobalSettings.cs" />
+    <Compile Include="HarmonyLib\HarmonyILManipulator.cs" />
+    <Compile Include="HarmonyLib\HarmonyMethod.cs" />
+    <Compile Include="HarmonyLib\HarmonyMethodExtensions.cs" />
+    <Compile Include="HarmonyLib\HarmonyOptional.cs" />
+    <Compile Include="HarmonyLib\HarmonyPatch.cs" />
+    <Compile Include="HarmonyLib\HarmonyPatchAll.cs" />
+    <Compile Include="HarmonyLib\HarmonyPatchCategory.cs" />
+    <Compile Include="HarmonyLib\HarmonyPatchType.cs" />
+    <Compile Include="HarmonyLib\HarmonyPostfix.cs" />
+    <Compile Include="HarmonyLib\HarmonyPrefix.cs" />
+    <Compile Include="HarmonyLib\HarmonyPrepare.cs" />
+    <Compile Include="HarmonyLib\HarmonyPriority.cs" />
+    <Compile Include="HarmonyLib\HarmonyReversePatch.cs" />
+    <Compile Include="HarmonyLib\HarmonyReversePatchType.cs" />
+    <Compile Include="HarmonyLib\HarmonyTargetMethod.cs" />
+    <Compile Include="HarmonyLib\HarmonyTargetMethods.cs" />
+    <Compile Include="HarmonyLib\HarmonyTranspiler.cs" />
+    <Compile Include="HarmonyLib\HarmonyWrapSafe.cs" />
+    <Compile Include="HarmonyLib\InstantiationHandler.cs" />
+    <Compile Include="HarmonyLib\Internal\Patching\ILManipulator.cs" />
+    <Compile Include="HarmonyLib\Internal\RuntimeFixes\StackTraceFixes.cs" />
+    <Compile Include="HarmonyLib\Internal\Util\CecilEmitter.cs" />
+    <Compile Include="HarmonyLib\Internal\Util\EmitterExtensions.cs" />
+    <Compile Include="HarmonyLib\Internal\Util\ILEmitter.cs" />
+    <Compile Include="HarmonyLib\Internal\Util\MethodBodyLogExtensions.cs" />
+    <Compile Include="HarmonyLib\Internal\Util\MonoModHacks.cs" />
+    <Compile Include="HarmonyLib\Internal\Util\ReflectionTools.cs" />
+    <Compile Include="HarmonyLib\InvalidHarmonyPatchArgumentException.cs" />
+    <Compile Include="HarmonyLib\MemberNotFoundException.cs" />
+    <Compile Include="HarmonyLib\MethodBaseExtensions.cs" />
+    <Compile Include="HarmonyLib\MethodDispatchType.cs" />
+    <Compile Include="HarmonyLib\MethodInvoker.cs" />
+    <Compile Include="HarmonyLib\MethodType.cs" />
+    <Compile Include="HarmonyLib\Patch.cs" />
+    <Compile Include="HarmonyLib\PatchArgumentExtensions.cs" />
+    <Compile Include="HarmonyLib\PatchClassProcessor.cs" />
+    <Compile Include="HarmonyLib\Patches.cs" />
+    <Compile Include="HarmonyLib\PatchFunctions.cs" />
+    <Compile Include="HarmonyLib\PatchInfo.cs" />
+    <Compile Include="HarmonyLib\PatchInfoSerialization.cs" />
+    <Compile Include="HarmonyLib\PatchJobs.cs" />
+    <Compile Include="HarmonyLib\PatchProcessor.cs" />
+    <Compile Include="HarmonyLib\PatchSorter.cs" />
+    <Compile Include="HarmonyLib\PatchTools.cs" />
+    <Compile Include="HarmonyLib\Priority.cs" />
+    <Compile Include="HarmonyLib\Public\Patching\HarmonyManipulator.cs" />
+    <Compile Include="HarmonyLib\Public\Patching\ManagedMethodPatcher.cs" />
+    <Compile Include="HarmonyLib\Public\Patching\MethodPatcher.cs" />
+    <Compile Include="HarmonyLib\Public\Patching\NativeDetourMethodPatcher.cs" />
+    <Compile Include="HarmonyLib\Public\Patching\PatchManager.cs" />
+    <Compile Include="HarmonyLib\RefResult.cs" />
+    <Compile Include="HarmonyLib\ReversePatcher.cs" />
+    <Compile Include="HarmonyLib\SetterHandler.cs" />
+    <Compile Include="HarmonyLib\SymbolExtensions.cs" />
+    <Compile Include="HarmonyLib\Tools\HarmonyFileLog.cs" />
+    <Compile Include="HarmonyLib\Tools\Logger.cs" />
+    <Compile Include="HarmonyLib\Tools\TypeNameHelper.cs" />
+    <Compile Include="HarmonyLib\Transpilers.cs" />
+    <Compile Include="HarmonyLib\Traverse.2.cs" />
+    <Compile Include="HarmonyLib\Traverse.cs" />
+    <Compile Include="JetBrains\Annotations\ImplicitUseKindFlags.cs" />
+    <Compile Include="JetBrains\Annotations\ImplicitUseTargetFlags.cs" />
+    <Compile Include="JetBrains\Annotations\MeansImplicitUseAttribute.cs" />
+    <Compile Include="JetBrains\Annotations\UsedImplicitlyAttribute.cs" />
+    <Compile Include="Microsoft\CodeAnalysis\EmbeddedAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System\Runtime\CompilerServices\NullableAttribute.cs" />
+    <Compile Include="System\Runtime\CompilerServices\NullableContextAttribute.cs" />
+    <Compile Include="System\Runtime\CompilerServices\RefSafetyRulesAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\..\runtime\Mods\0_TFP_Harmony\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb">
+      <HintPath>..\..\runtime\Mods\0_TFP_Harmony\Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb">
+      <HintPath>..\..\runtime\Mods\0_TFP_Harmony\Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks">
+      <HintPath>..\..\runtime\Mods\0_TFP_Harmony\Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.Backports">
+      <HintPath>..\..\runtime\Mods\0_TFP_Harmony\MonoMod.Backports.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.Core">
+      <HintPath>..\..\runtime\Mods\0_TFP_Harmony\MonoMod.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.RuntimeDetour">
+      <HintPath>..\..\runtime\Mods\0_TFP_Harmony\MonoMod.RuntimeDetour.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>..\..\runtime\Mods\0_TFP_Harmony\MonoMod.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>..\..\runtime\7DaysToDieServer_Data\Managed\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple">
+      <HintPath>..\..\runtime\Mods\0_TFP_Harmony\System.ValueTuple.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

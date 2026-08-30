@@ -1,0 +1,59 @@
+﻿using System;
+
+// Token: 0x02000BEB RID: 3051
+public class BiomeBlockDecoration
+{
+	// Token: 0x06005D22 RID: 23842 RVA: 0x00242C9C File Offset: 0x00240E9C
+	public BiomeBlockDecoration(string _name, float _prob, float _clusprob, bool _instantiateReferences, int _randomRotateMax, int _checkResource = 2147483647)
+	{
+		string[] array = _name.Split(',', StringSplitOptions.None);
+		if (_instantiateReferences)
+		{
+			this.blockValues = new BlockValue[array.Length];
+			for (int i = 0; i < array.Length; i++)
+			{
+				BlockValue blockValueForName = WorldBiomes.GetBlockValueForName(array[i]);
+				if (_randomRotateMax > 3 && !blockValueForName.isair)
+				{
+					Block block = blockValueForName.Block;
+					if (block.isMultiBlock && (block.multiBlockPos.dim.x > 1 || block.multiBlockPos.dim.z > 1))
+					{
+						Log.Error("Parsing biomes. Block with name '" + array[i] + "' supports only rotations 0-3, setting it to 3");
+						_randomRotateMax = 3;
+					}
+				}
+				this.blockValues[i] = blockValueForName;
+			}
+		}
+		this.prob = _prob;
+		this.clusterProb = _clusprob;
+		this.randomRotateMax = _randomRotateMax;
+		this.checkResourceOffsetY = _checkResource;
+	}
+
+	// Token: 0x06005D23 RID: 23843 RVA: 0x00242D70 File Offset: 0x00240F70
+	public static byte GetRandomRotation(float _rnd, int _randomRotateMax)
+	{
+		byte b = (byte)(_rnd * (float)_randomRotateMax + 0.5f);
+		if (b >= 4 && b <= 7)
+		{
+			b = b - 4 + 24;
+		}
+		return b;
+	}
+
+	// Token: 0x040047DF RID: 18399
+	public BlockValue[] blockValues;
+
+	// Token: 0x040047E0 RID: 18400
+	public float prob;
+
+	// Token: 0x040047E1 RID: 18401
+	public float clusterProb;
+
+	// Token: 0x040047E2 RID: 18402
+	public int randomRotateMax;
+
+	// Token: 0x040047E3 RID: 18403
+	public int checkResourceOffsetY;
+}

@@ -1,0 +1,293 @@
+﻿using System;
+using System.Collections.Generic;
+using Audio;
+using Platform;
+using UnityEngine;
+using UnityEngine.Scripting;
+
+// Token: 0x0200017C RID: 380
+[Preserve]
+public class TEFeatureLockable : TEFeatureAbs, ILockable, IFeatureTriggerCapability
+{
+	// Token: 0x170000E2 RID: 226
+	// (get) Token: 0x06000B36 RID: 2870 RVA: 0x0001FF5D File Offset: 0x0001E15D
+	public IFeatureTriggerCapability.ETriggerRole TriggerRole
+	{
+		get
+		{
+			return IFeatureTriggerCapability.ETriggerRole.TriggeredBy;
+		}
+	}
+
+	// Token: 0x06000B37 RID: 2871 RVA: 0x00047F49 File Offset: 0x00046149
+	public override void Init(TileEntityComposite _parent, TileEntityFeatureData _featureData)
+	{
+		base.Init(_parent, _featureData);
+	}
+
+	// Token: 0x06000B38 RID: 2872 RVA: 0x00047F54 File Offset: 0x00046154
+	[PublicizedFrom(EAccessModifier.Protected)]
+	public override void CopyFromInternal(TileEntityComposite _other)
+	{
+		TEFeatureLockable tefeatureLockable;
+		if (_other.TryGetSelfOrFeature<TEFeatureLockable>(out tefeatureLockable))
+		{
+			this.locked = tefeatureLockable.IsLocked();
+			this.allowedUserIds.AddRange(tefeatureLockable.GetUsers());
+			this.passwordHash = tefeatureLockable.GetPasswordHash();
+		}
+	}
+
+	// Token: 0x06000B39 RID: 2873 RVA: 0x00047F94 File Offset: 0x00046194
+	public override void UpgradeDowngradeFrom(TileEntityComposite _other)
+	{
+		base.UpgradeDowngradeFrom(_other);
+		TEFeatureLockable feature = _other.GetFeature<TEFeatureLockable>();
+		if (feature != null)
+		{
+			this.locked = feature.IsLocked();
+			this.allowedUserIds.AddRange(feature.GetUsers());
+			this.passwordHash = feature.GetPasswordHash();
+		}
+	}
+
+	// Token: 0x06000B3A RID: 2874 RVA: 0x00047FDB File Offset: 0x000461DB
+	public bool IsLocked()
+	{
+		return this.locked;
+	}
+
+	// Token: 0x06000B3B RID: 2875 RVA: 0x00047FE3 File Offset: 0x000461E3
+	public void SetLocked(bool _isLocked)
+	{
+		this.locked = _isLocked;
+		base.SetModified();
+	}
+
+	// Token: 0x06000B3C RID: 2876 RVA: 0x00047FF2 File Offset: 0x000461F2
+	public void OnBlockTriggered(EntityPlayer _player, Vector3i _blockPos, BlockValue _blockValue, List<BlockChangeInfo> _blockChanges, BlockTrigger _triggeredBy)
+	{
+		if (_triggeredBy == null)
+		{
+			return;
+		}
+		if (_triggeredBy.Unlock)
+		{
+			this.SetLocked(false);
+		}
+	}
+
+	// Token: 0x06000B3D RID: 2877 RVA: 0x00048009 File Offset: 0x00046209
+	public PlatformUserIdentifierAbs GetOwner()
+	{
+		return base.Parent.Owner;
+	}
+
+	// Token: 0x06000B3E RID: 2878 RVA: 0x00048016 File Offset: 0x00046216
+	public void SetOwner(PlatformUserIdentifierAbs _userIdentifier)
+	{
+		base.Parent.SetOwner(_userIdentifier);
+	}
+
+	// Token: 0x06000B3F RID: 2879 RVA: 0x00048024 File Offset: 0x00046224
+	public bool IsUserAllowed(PlatformUserIdentifierAbs _userIdentifier)
+	{
+		TEFeatureDoor tefeatureDoor;
+		return this.IsOwner(_userIdentifier) || this.allowedUserIds.Contains(_userIdentifier) || (_userIdentifier.Equals(PlatformManager.InternalLocalUserIdentifier) && (!base.Parent.TryGetSelfOrFeature<TEFeatureDoor>(out tefeatureDoor) && GamePrefs.GetBool(EnumGamePrefs.DebugMenuEnabled)));
+	}
+
+	// Token: 0x06000B40 RID: 2880 RVA: 0x00048074 File Offset: 0x00046274
+	public List<PlatformUserIdentifierAbs> GetUsers()
+	{
+		return this.allowedUserIds;
+	}
+
+	// Token: 0x06000B41 RID: 2881 RVA: 0x0004807C File Offset: 0x0004627C
+	public bool LocalPlayerIsOwner()
+	{
+		return this.IsOwner(PlatformManager.InternalLocalUserIdentifier);
+	}
+
+	// Token: 0x06000B42 RID: 2882 RVA: 0x00048089 File Offset: 0x00046289
+	public bool IsOwner(PlatformUserIdentifierAbs _userIdentifier)
+	{
+		return _userIdentifier != null && _userIdentifier.Equals(base.Parent.Owner);
+	}
+
+	// Token: 0x06000B43 RID: 2883 RVA: 0x000480A1 File Offset: 0x000462A1
+	public bool HasPassword()
+	{
+		return !string.IsNullOrEmpty(this.passwordHash);
+	}
+
+	// Token: 0x06000B44 RID: 2884 RVA: 0x000480B1 File Offset: 0x000462B1
+	public bool SetPasswordHash(string _passwordHash, PlatformUserIdentifierAbs _userIdentifier)
+	{
+		if (this.IsOwner(_userIdentifier) && _passwordHash != this.passwordHash)
+		{
+			this.passwordHash = _passwordHash;
+			this.allowedUserIds.Clear();
+			base.SetModified();
+			return true;
+		}
+		return false;
+	}
+
+	// Token: 0x06000B45 RID: 2885 RVA: 0x000480E5 File Offset: 0x000462E5
+	public bool CheckPasswordHash(string _passwordHash, PlatformUserIdentifierAbs _userIdentifier)
+	{
+		if (this.IsOwner(_userIdentifier) || !this.HasPassword())
+		{
+			return true;
+		}
+		if (_passwordHash == this.passwordHash)
+		{
+			this.allowedUserIds.Add(_userIdentifier);
+			base.SetModified();
+			return true;
+		}
+		return false;
+	}
+
+	// Token: 0x06000B46 RID: 2886 RVA: 0x0004811D File Offset: 0x0004631D
+	public string GetPasswordHash()
+	{
+		return this.passwordHash;
+	}
+
+	// Token: 0x06000B47 RID: 2887 RVA: 0x00048128 File Offset: 0x00046328
+	public override string GetActivationText(WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityAlive _entityFocusing, string _activateHotkeyMarkup, string _focusedTileEntityName)
+	{
+		base.GetActivationText(_world, _blockPos, _blockValue, _entityFocusing, _activateHotkeyMarkup, _focusedTileEntityName);
+		if (!this.IsLocked())
+		{
+			return string.Format(Localization.Get("tooltipUnlocked", false, null), _activateHotkeyMarkup, _focusedTileEntityName);
+		}
+		if (!this.IsUserAllowed(PlatformManager.InternalLocalUserIdentifier))
+		{
+			return string.Format(Localization.Get("tooltipJammed", false, null), _activateHotkeyMarkup, _focusedTileEntityName);
+		}
+		return string.Format(Localization.Get("tooltipLocked", false, null), _activateHotkeyMarkup, _focusedTileEntityName);
+	}
+
+	// Token: 0x06000B48 RID: 2888 RVA: 0x0004819C File Offset: 0x0004639C
+	public override void InitBlockActivationCommands(Action<BlockActivationCommand, TileEntityComposite.EBlockCommandOrder, TileEntityFeatureData> _addCallback)
+	{
+		base.InitBlockActivationCommands(_addCallback);
+		_addCallback(new BlockActivationCommand("lock", "lock", false, false, null), TileEntityComposite.EBlockCommandOrder.Normal, base.FeatureData);
+		_addCallback(new BlockActivationCommand("unlock", "unlock", false, false, null), TileEntityComposite.EBlockCommandOrder.Normal, base.FeatureData);
+		_addCallback(new BlockActivationCommand("keypad", "keypad", false, false, null), TileEntityComposite.EBlockCommandOrder.Normal, base.FeatureData);
+	}
+
+	// Token: 0x06000B49 RID: 2889 RVA: 0x00048210 File Offset: 0x00046410
+	public override bool AllowBlockActivationCommand(ITileEntityFeature _module, ReadOnlySpan<char> _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityAlive _entityFocusing)
+	{
+		if (!base.AllowBlockActivationCommand(_module, _commandName, _world, _blockPos, _blockValue, _entityFocusing))
+		{
+			return false;
+		}
+		if (!this.Equals(_module))
+		{
+			return true;
+		}
+		PlatformUserIdentifierAbs internalLocalUserIdentifier = PlatformManager.InternalLocalUserIdentifier;
+		bool flag = !this.LocalPlayerIsOwner() && GameManager.Instance.persistentPlayers.Allies.IsAlly(base.Parent.Owner, internalLocalUserIdentifier);
+		if (base.CommandIs(_commandName, "lock"))
+		{
+			return !this.IsLocked() && (this.LocalPlayerIsOwner() || flag || _world.IsEditor());
+		}
+		if (base.CommandIs(_commandName, "unlock"))
+		{
+			return this.IsLocked() && (this.LocalPlayerIsOwner() || _world.IsEditor());
+		}
+		return !base.CommandIs(_commandName, "keypad") || (!this.IsUserAllowed(internalLocalUserIdentifier) && this.HasPassword() && this.IsLocked()) || this.LocalPlayerIsOwner();
+	}
+
+	// Token: 0x06000B4A RID: 2890 RVA: 0x000482F4 File Offset: 0x000464F4
+	public override bool OnBlockActivated(ReadOnlySpan<char> _commandName, WorldBase _world, Vector3i _blockPos, BlockValue _blockValue, EntityPlayerLocal _player)
+	{
+		base.OnBlockActivated(_commandName, _world, _blockPos, _blockValue, _player);
+		if (base.CommandIs(_commandName, "lock"))
+		{
+			this.SetLocked(true);
+			Manager.BroadcastPlayByLocalPlayer(_blockPos.ToVector3() + Vector3.one * 0.5f, "Misc/locking");
+			GameManager.ShowTooltip(_player, "containerLocked", false, false, 0f);
+			return true;
+		}
+		if (base.CommandIs(_commandName, "unlock"))
+		{
+			this.SetLocked(false);
+			Manager.BroadcastPlayByLocalPlayer(_blockPos.ToVector3() + Vector3.one * 0.5f, "Misc/unlocking");
+			GameManager.ShowTooltip(_player, "containerUnlocked", false, false, 0f);
+			return true;
+		}
+		if (base.CommandIs(_commandName, "keypad"))
+		{
+			LocalPlayerUI uiforPlayer = LocalPlayerUI.GetUIForPlayer(_player);
+			if (uiforPlayer != null)
+			{
+				XUiC_KeypadWindow.Open(uiforPlayer, this, null, null);
+			}
+			return true;
+		}
+		return false;
+	}
+
+	// Token: 0x06000B4B RID: 2891 RVA: 0x000483D8 File Offset: 0x000465D8
+	public override void Read(PooledBinaryReader _br, TileEntity.StreamModeRead _eStreamMode)
+	{
+		base.Read(_br, _eStreamMode);
+		if (_eStreamMode == TileEntity.StreamModeRead.Persistency)
+		{
+			if (base.Parent.UseLocalVersioning())
+			{
+				_br.ReadUInt16();
+			}
+			else
+			{
+				base.Parent.GetLegacyForkVersion();
+			}
+		}
+		this.locked = _br.ReadBoolean();
+		int num = _br.ReadInt32();
+		this.allowedUserIds.Clear();
+		for (int i = 0; i < num; i++)
+		{
+			this.allowedUserIds.Add(PlatformUserIdentifierAbs.FromStream(_br, false, false));
+		}
+		this.passwordHash = _br.ReadString();
+	}
+
+	// Token: 0x06000B4C RID: 2892 RVA: 0x0004845C File Offset: 0x0004665C
+	public override void Write(PooledBinaryWriter _bw, TileEntity.StreamModeWrite _eStreamMode)
+	{
+		base.Write(_bw, _eStreamMode);
+		if (_eStreamMode == TileEntity.StreamModeWrite.Persistency)
+		{
+			_bw.Write(18);
+		}
+		_bw.Write(this.locked);
+		_bw.Write(this.allowedUserIds.Count);
+		for (int i = 0; i < this.allowedUserIds.Count; i++)
+		{
+			this.allowedUserIds[i].ToStream(_bw, false);
+		}
+		_bw.Write(this.passwordHash);
+	}
+
+	// Token: 0x04000A79 RID: 2681
+	[PublicizedFrom(EAccessModifier.Private)]
+	public const int Version = 18;
+
+	// Token: 0x04000A7A RID: 2682
+	[PublicizedFrom(EAccessModifier.Private)]
+	public bool locked;
+
+	// Token: 0x04000A7B RID: 2683
+	[PublicizedFrom(EAccessModifier.Private)]
+	public readonly List<PlatformUserIdentifierAbs> allowedUserIds = new List<PlatformUserIdentifierAbs>();
+
+	// Token: 0x04000A7C RID: 2684
+	[PublicizedFrom(EAccessModifier.Private)]
+	public string passwordHash = "";
+}

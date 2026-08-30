@@ -1,0 +1,258 @@
+﻿using System;
+using System.Text;
+using UnityEngine;
+
+// Token: 0x02001356 RID: 4950
+[RequireComponent(typeof(TextMesh))]
+public class SmartTextMesh : MonoBehaviour
+{
+	// Token: 0x1700125C RID: 4700
+	// (get) Token: 0x06009BF2 RID: 39922 RVA: 0x003AF263 File Offset: 0x003AD463
+	// (set) Token: 0x06009BF3 RID: 39923 RVA: 0x003AF26B File Offset: 0x003AD46B
+	public string UnwrappedText
+	{
+		get
+		{
+			return this.unwrappedText;
+		}
+		set
+		{
+			if (value != this.unwrappedText)
+			{
+				this.unwrappedText = value ?? "";
+				this.NeedsLayout = true;
+			}
+		}
+	}
+
+	// Token: 0x1700125D RID: 4701
+	// (get) Token: 0x06009BF4 RID: 39924 RVA: 0x003AF292 File Offset: 0x003AD492
+	// (set) Token: 0x06009BF5 RID: 39925 RVA: 0x003AF2A0 File Offset: 0x003AD4A0
+	public float MaxWidthReal
+	{
+		get
+		{
+			return this.MaxWidth * 2f;
+		}
+		set
+		{
+			this.MaxWidth = value / 2f;
+		}
+	}
+
+	// Token: 0x06009BF6 RID: 39926 RVA: 0x003AF2B0 File Offset: 0x003AD4B0
+	public void Start()
+	{
+		this.TheMesh = base.GetComponent<TextMesh>();
+		if (this.ConvertNewLines && this.UnwrappedText != null)
+		{
+			this.UnwrappedText = this.UnwrappedText.Replace("\\n", "\n");
+		}
+		if (this.UnwrappedText == null)
+		{
+			this.UnwrappedText = "";
+		}
+	}
+
+	// Token: 0x06009BF7 RID: 39927 RVA: 0x003AF30C File Offset: 0x003AD50C
+	[PublicizedFrom(EAccessModifier.Private)]
+	public void LateUpdate()
+	{
+		if (!this.NeedsLayout)
+		{
+			return;
+		}
+		this.NeedsLayout = false;
+		if (this.MaxWidth == 0f)
+		{
+			this.TheMesh.text = this.UnwrappedText;
+			return;
+		}
+		if (this.SeperatedLinesMode)
+		{
+			this.FormatSeparateLines();
+			return;
+		}
+		this.WrapTextToWidth();
+	}
+
+	// Token: 0x06009BF8 RID: 39928 RVA: 0x003AF360 File Offset: 0x003AD560
+	public bool CanRenderString(string _text)
+	{
+		foreach (char c in _text.Trim())
+		{
+			if (c != '\n' && !this.TheMesh.font.HasCharacter(c))
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
+	// Token: 0x06009BF9 RID: 39929 RVA: 0x003AF3A8 File Offset: 0x003AD5A8
+	public unsafe void WrapTextToWidth()
+	{
+		this.TheMesh.font.RequestCharactersInTexture(this.unwrappedText, this.TheMesh.fontSize, this.TheMesh.fontStyle);
+		float textWidth = this.GetTextWidth(this.TheMesh, " ");
+		ReadOnlySpan<char> readOnlySpan = this.unwrappedText;
+		readOnlySpan = readOnlySpan.Trim();
+		int num = 0;
+		int num2 = 1;
+		int num3 = 0;
+		float num4 = 0f;
+		this.wrappedText.Clear();
+		while (num < readOnlySpan.Length && num2 <= this.MaxLines)
+		{
+			int num5 = readOnlySpan.Slice(num).IndexOfAny(' ', '\n');
+			if (num5 < 0)
+			{
+				num5 = readOnlySpan.Length;
+			}
+			else
+			{
+				num5 += num;
+			}
+			ReadOnlySpan<char> readOnlySpan2 = readOnlySpan.Slice(num, num5 - num);
+			float textWidth2 = this.GetTextWidth(this.TheMesh, readOnlySpan2);
+			float num6 = ((num4 > 0f) ? (num4 + textWidth + textWidth2) : textWidth2);
+			if (num6 > this.MaxWidthReal)
+			{
+				if (num4 > 0f)
+				{
+					this.wrappedText.Append(readOnlySpan.Slice(num3, num - 1 - num3));
+					this.wrappedText.Append('\n');
+					num3 = (num = num);
+					num2++;
+					num4 = 0f;
+				}
+				else
+				{
+					float num7 = 1.2f * textWidth2 / this.MaxWidthReal;
+					int num8 = (int)((float)readOnlySpan2.Length / num7);
+					this.wrappedText.Append(readOnlySpan2.Slice(0, num8));
+					this.wrappedText.Append('…');
+					this.wrappedText.Append('\n');
+					num3 = (num = num5 + 1);
+					num2++;
+					num4 = 0f;
+				}
+			}
+			else if (num5 >= readOnlySpan.Length || *readOnlySpan[num5] == 10)
+			{
+				this.wrappedText.Append(readOnlySpan.Slice(num3, num5 - num3));
+				this.wrappedText.Append('\n');
+				num2++;
+				num3 = (num = num5 + 1);
+				num4 = 0f;
+			}
+			else
+			{
+				num4 = num6;
+				num = num5 + 1;
+			}
+		}
+		if (this.wrappedText.Length > 0 && this.wrappedText[this.wrappedText.Length - 1] == '\n')
+		{
+			num2--;
+			this.wrappedText.Length--;
+			if (num < readOnlySpan.Length)
+			{
+				this.wrappedText.Append('…');
+			}
+		}
+		this.TheMesh.text = this.wrappedText.ToString();
+	}
+
+	// Token: 0x06009BFA RID: 39930 RVA: 0x003AF634 File Offset: 0x003AD834
+	[PublicizedFrom(EAccessModifier.Private)]
+	public void FormatSeparateLines()
+	{
+		this.TheMesh.font.RequestCharactersInTexture(this.unwrappedText, this.TheMesh.fontSize, this.TheMesh.fontStyle);
+		float textWidth = this.GetTextWidth(this.TheMesh, " ");
+		ReadOnlySpan<char> readOnlySpan = this.unwrappedText;
+		readOnlySpan = readOnlySpan.Trim();
+		this.wrappedText.Clear();
+		string[] array = readOnlySpan.ToString().Split('\n', StringSplitOptions.None);
+		for (int i = 0; i < array.Length; i++)
+		{
+			string[] array2 = array[i].Split(' ', StringSplitOptions.None);
+			float num = 0f;
+			for (int j = 0; j < array2.Length; j++)
+			{
+				ReadOnlySpan<char> readOnlySpan2 = array2[j];
+				float textWidth2 = this.GetTextWidth(this.TheMesh, readOnlySpan2);
+				float num2 = ((num > 0f) ? (num + textWidth + textWidth2) : textWidth2);
+				if (num2 > this.MaxWidthReal)
+				{
+					this.wrappedText.Append('…');
+					break;
+				}
+				if (j != 0)
+				{
+					this.wrappedText.Append(' ');
+				}
+				this.wrappedText.Append(readOnlySpan2);
+				num = num2;
+			}
+			if (i < array.Length - 1)
+			{
+				this.wrappedText.Append('\n');
+			}
+		}
+		this.TheMesh.text = this.wrappedText.ToString();
+	}
+
+	// Token: 0x06009BFB RID: 39931 RVA: 0x003AF798 File Offset: 0x003AD998
+	[PublicizedFrom(EAccessModifier.Private)]
+	public unsafe float GetTextWidth(TextMesh _textMesh, ReadOnlySpan<char> _s)
+	{
+		Font font = _textMesh.font;
+		int fontSize = _textMesh.fontSize;
+		FontStyle fontStyle = _textMesh.fontStyle;
+		int num = 0;
+		ReadOnlySpan<char> readOnlySpan = _s;
+		for (int i = 0; i < readOnlySpan.Length; i++)
+		{
+			char c = (char)(*readOnlySpan[i]);
+			CharacterInfo characterInfo;
+			if (font.GetCharacterInfo(c, out characterInfo, fontSize, fontStyle))
+			{
+				num += characterInfo.advance;
+			}
+			else
+			{
+				Log.Warning(string.Format("No character info for symbol '{0}'", c));
+			}
+		}
+		return (float)num * _textMesh.characterSize * Mathf.Abs(_textMesh.transform.lossyScale.x) * 0.1f;
+	}
+
+	// Token: 0x040075F0 RID: 30192
+	public TextMesh TheMesh;
+
+	// Token: 0x040075F1 RID: 30193
+	[TextArea]
+	[SerializeField]
+	[PublicizedFrom(EAccessModifier.Private)]
+	public string unwrappedText;
+
+	// Token: 0x040075F2 RID: 30194
+	[PublicizedFrom(EAccessModifier.Private)]
+	[NonSerialized]
+	public readonly StringBuilder wrappedText = new StringBuilder();
+
+	// Token: 0x040075F3 RID: 30195
+	public float MaxWidth;
+
+	// Token: 0x040075F4 RID: 30196
+	public int MaxLines;
+
+	// Token: 0x040075F5 RID: 30197
+	public bool NeedsLayout = true;
+
+	// Token: 0x040075F6 RID: 30198
+	public bool ConvertNewLines;
+
+	// Token: 0x040075F7 RID: 30199
+	public bool SeperatedLinesMode;
+}

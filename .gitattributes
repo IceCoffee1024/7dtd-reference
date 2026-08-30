@@ -1,0 +1,2 @@
+# Preserve extracted reference material without line-ending normalization.
+* -text
