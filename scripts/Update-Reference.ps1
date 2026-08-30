@@ -13,6 +13,27 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 $root = (Resolve-Path -LiteralPath $ReferenceRoot).Path
 
+function Normalize-DecompiledHintPaths([string]$sourceRoot) {
+    $rootPrefix = ([System.IO.Path]::GetFullPath($sourceRoot)).TrimEnd('\') + '\'
+    $projects = @(Get-ChildItem -LiteralPath (Join-Path $sourceRoot 'server-decompiled') -Recurse -File -Filter '*.csproj')
+    foreach ($project in $projects) {
+        [xml]$document = Get-Content -LiteralPath $project.FullName -Raw
+        $changed = $false
+        foreach ($hint in @($document.SelectNodes("//*[local-name()='HintPath']"))) {
+            if (-not [System.IO.Path]::IsPathRooted($hint.InnerText)) { continue }
+            $resolvedHint = [System.IO.Path]::GetFullPath($hint.InnerText)
+            if (-not $resolvedHint.StartsWith($rootPrefix, [System.StringComparison]::OrdinalIgnoreCase)) { continue }
+            $relative = [System.IO.Path]::GetRelativePath($project.DirectoryName, $resolvedHint)
+            $hint.InnerText = $relative.Replace('\', '/')
+            $changed = $true
+        }
+        if ($changed) {
+            $document.Save($project.FullName)
+            Write-Host "Normalized HintPath values in $($project.FullName)."
+        }
+    }
+}
+
 function Read-DotEnv([string]$path) {
     $values = @{}
     if (-not (Test-Path -LiteralPath $path -PathType Leaf)) { return $values }
@@ -69,12 +90,16 @@ if (-not $SkipDecompile) {
             & robocopy $decompileStage $target /MIR /COPY:DAT /DCOPY:DAT /R:2 /W:1 /NFL /NDL /NJH /NJS | Out-Null
             if ($LASTEXITCODE -gt 7) { throw "robocopy failed with exit code $LASTEXITCODE." }
             Write-Host "Replaced server-decompiled with $($projects.Count) generated project(s)."
+            Normalize-DecompiledHintPaths $root
         }
     }
     finally { Remove-Item -LiteralPath $decompileStage -Recurse -Force -ErrorAction SilentlyContinue }
 }
 
 # Normalize dnSpy project targets after the newly generated source is in place.
+if (-not $WhatIfPreference) {
+    Normalize-DecompiledHintPaths $root
+}
 if (-not $WhatIfPreference -and -not $SkipDecompile) {
     & (Join-Path $PSScriptRoot 'Set-DecompiledTargetFramework.ps1') -ReferenceRoot $root
 }
