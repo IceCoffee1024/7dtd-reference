@@ -232,3 +232,31 @@ gh release create v3.0.1-b4 `
 4. Update `metadata.json` with the new version and Release checksum.
 5. Run `Verify-Reference.ps1` again.
 6. Commit and push `main`.
+
+### Runtime manifest and update scripts
+
+`runtime.manifest.json` is the allowlist of runtime-relative file paths. It
+prevents files present in a downloaded server package but not tracked by this
+reference from entering the repository.
+
+Generate a reviewed manifest after a game update changes the official file set:
+
+```powershell
+pwsh ./scripts/New-RuntimeManifest.ps1
+```
+
+Copy a downloaded server runtime from a local path or SMB path. The script
+requires confirmation that the current version has already been archived in a
+Release, copies only manifest entries, and mirrors the destination so stale
+files are removed. Use `-SkipReleasePrompt` only when that release check has
+already been handled manually.
+
+```powershell
+pwsh ./scripts/Update-ReferenceRuntime.ps1 -ServerRoot D:/downloads/7dtd
+pwsh ./scripts/Update-ReferenceRuntime.ps1 -ServerRoot '\\nas\games\7dtd' -SkipReleasePrompt
+pwsh ./scripts/Update-ReferenceRuntime.ps1 -ServerRoot D:/downloads/7dtd -WhatIf
+```
+
+Review changes to `runtime.manifest.json` before committing it. If the new
+server build adds or removes runtime files, regenerate the manifest, inspect
+the diff, and run `Verify-Reference.ps1` after copying.

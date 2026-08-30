@@ -147,3 +147,23 @@ gh release create v3.0.1-b4 `
 4. 更新 `metadata.json` 中的版本和 Release 校验值。
 5. 再次执行 `Verify-Reference.ps1`。
 6. 提交并推送 `main`。
+
+### runtime 清单与更新脚本
+
+`runtime.manifest.json` 是运行时相对路径的允许清单。它防止下载的服务端压缩包中存在、但当前参考仓库未跟踪的多余文件进入仓库。
+
+如果新游戏版本的官方文件集合发生变化，在审核后重新生成清单：
+
+```powershell
+pwsh ./scripts/New-RuntimeManifest.ps1
+```
+
+从本地目录或 SMB 路径复制下载好的服务端运行时。脚本会先要求确认当前版本已经归档到 Release，只复制清单中的文件，并以镜像方式同步目标目录，删除清单之外的旧文件。只有在你已手动完成 Release 检查时才使用 `-SkipReleasePrompt`。
+
+```powershell
+pwsh ./scripts/Update-ReferenceRuntime.ps1 -ServerRoot D:/downloads/7dtd
+pwsh ./scripts/Update-ReferenceRuntime.ps1 -ServerRoot '\\nas\games\7dtd' -SkipReleasePrompt
+pwsh ./scripts/Update-ReferenceRuntime.ps1 -ServerRoot D:/downloads/7dtd -WhatIf
+```
+
+提交 `runtime.manifest.json` 前请审核变更。如果新构建新增或删除了运行时文件，请重新生成清单、检查差异，复制完成后再执行 `Verify-Reference.ps1`。
