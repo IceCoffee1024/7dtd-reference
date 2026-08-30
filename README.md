@@ -54,7 +54,7 @@ Review the archive and checksum before publishing. The ZIP contains the current 
 
 | Script | Purpose |
 | --- | --- |
-| `Update-Reference.ps1` | Unified workflow: load `.env`, detect version, archive prompt, copy runtime, run dnSpy, replace source, update metadata, verify. |
+| `Update-Reference.ps1` | Unified workflow: load `.env`, detect version, archive prompt, copy runtime, run dnSpy, retarget projects to `net48`, replace source, update metadata, verify. |
 | `Update-ReferenceRuntime.ps1` | Mirror runtime from a local/UNC server using `runtime.manifest.json`; supports `-WhatIf` and `-SkipReleasePrompt`. |
 | `Get-ServerVersion.ps1` | Read version/build from the newest `output_log*.txt`. |
 | `New-ReferenceRelease.ps1` | Create ZIP and SHA-256 files; `-Version` must equal `metadata.json.gameVersion`. |

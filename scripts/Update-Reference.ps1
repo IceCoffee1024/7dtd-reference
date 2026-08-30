@@ -74,6 +74,11 @@ if (-not $SkipDecompile) {
     finally { Remove-Item -LiteralPath $decompileStage -Recurse -Force -ErrorAction SilentlyContinue }
 }
 
+# Normalize dnSpy project targets after the newly generated source is in place.
+if (-not $WhatIfPreference -and -not $SkipDecompile) {
+    & (Join-Path $PSScriptRoot 'Set-DecompiledTargetFramework.ps1') -ReferenceRoot $root
+}
+
 & (Join-Path $PSScriptRoot 'Verify-Reference.ps1') -ReferenceRoot $root
 if ($PSCmdlet.ShouldProcess($metadataPath, "Update metadata for $Version")) {
     $metadata.gameVersion = $Version

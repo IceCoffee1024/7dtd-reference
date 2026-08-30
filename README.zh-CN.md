@@ -56,7 +56,7 @@ gh release create $version `
 
 | 脚本 | 作用 |
 | --- | --- |
-| `Update-Reference.ps1` | 统一流程：读取 `.env`、探测版本、归档提示、同步 runtime、运行 dnSpy、替换源码、更新元数据、校验。 |
+| `Update-Reference.ps1` | 统一流程：读取 `.env`、探测版本、归档提示、同步 runtime、运行 dnSpy、将项目重定向到 `net48`、替换源码、更新元数据、校验。 |
 | `Update-ReferenceRuntime.ps1` | 根据 `runtime.manifest.json` 从本地/UNC 服务端镜像同步 runtime，支持 `-WhatIf`、`-SkipReleasePrompt`。 |
 | `Get-ServerVersion.ps1` | 从最新 `output_log*.txt` 读取版本和构建号。 |
 | `New-ReferenceRelease.ps1` | 生成 ZIP 和 SHA-256；`-Version` 必须等于 `metadata.json.gameVersion`。 |
