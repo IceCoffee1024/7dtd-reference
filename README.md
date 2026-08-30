@@ -1,310 +1,83 @@
 # 7DTD Reference
 
-## What This Is
+Private reference repository for 7 Days to Die dedicated-server analysis and 7DPanel development. The root contains only the latest runtime and decompiled source; older snapshots are immutable Release assets.
 
-This private repository contains reference material used to analyze the 7 Days
-to Die dedicated server and develop 7DPanel. Decompiled source and runtime files
-are versioned evidence for compatibility analysis. Shared historical game
-assets are visual references only.
-
-## Directory Layout
-
-The repository keeps only the latest source and runtime reference at the root.
-Historical versions are stored as immutable Git hosting Release assets.
+## Layout
 
 ```text
-7dtd-reference/
-|-- README.md
-|-- README.zh-CN.md
-|-- .env.example
-|-- metadata.json
-|-- runtime.manifest.json
-|-- decompile.manifest.json
-|-- assets/
-|-- scripts/
-|   |-- Set-DecompiledTargetFramework.ps1
-|   |-- Verify-Reference.ps1
-|   |-- Get-ServerVersion.ps1
-|   |-- Update-Reference.ps1
-|   |-- Update-ReferenceRuntime.ps1
-|   |-- New-RuntimeManifest.ps1
-|   `-- New-ReferenceRelease.ps1
-|-- server-decompiled/
-`-- runtime/
-    |-- 7DaysToDieServer_Data/
-    |-- Mods/
-    |-- MonoBleedingEdge/
-    |-- serverconfig.xml
-    `-- startdedicated.bat
+server-decompiled/       dnSpy-generated source (latest build)
+runtime/                 allowed server files (latest build)
+assets/                  shared visual references
+metadata.json            current version and archive metadata
+runtime.manifest.json    runtime directory/root-file allowlist
+decompile.manifest.json  assemblies passed to dnSpy.Console
+scripts/                 update, validation, archive, and helper scripts
 ```
 
-Do not mix files from different game builds. Record the exact game version and
-build number in `metadata.json` and the corresponding Release tag, for example
-`v3.0.1-b4`.
+Do not mix builds. `metadata.json` is the source of truth for the current version; use a Release tag and asset named with that value (for example, `<version>`), rather than creating version directories in Git.
 
-## Versioned Runtime Files
+## Quick Start
 
-Files under `runtime/` are copied unchanged from the official 7DTD Dedicated
-Server build named in `metadata.json`. In particular,
-`serverconfig.xml` and `startdedicated.bat` are the original distribution files,
-not configuration captured from a contributor's server.
-
-Keep these files unmodified so they remain reproducible compatibility evidence.
-For local or remote testing, copy `serverconfig.xml` outside this repository and
-apply machine-specific server names, paths, credentials, ports, and gameplay
-settings only to that working copy. Runtime reference files must never be
-included in a 7DPanel release.
-
-## Shared Assets
-
-`assets/` contains game resources extracted from historical releases and kept as
-cross-version visual references to avoid duplicating a large, generally stable
-asset set under every game version. These files do not identify or prove
-compatibility with a specific server build and must not be used as runtime or
-API compatibility evidence.
-
-Shared assets are not part of the 7DPanel release. If a future game version
-changes an asset in a way that matters to the project, store only the relevant
-version-specific difference and record its source version instead of copying the
-entire shared asset set.
-
-## Access Boundary
-
-This repository is intended to remain private and may track the shared assets,
-versioned runtime files, and decompiled source shown above. Restrict access to
-authorized project contributors and do not include repository content in a
-7DPanel release.
-
-Private repository visibility does not itself grant permission to copy, host,
-or redistribute game content. The current 7 Days to Die EULA restricts
-unauthorized copying, network distribution, reverse engineering, and
-decompilation. Confirm the applicable rights before adding collaborators,
-mirroring the repository, or making any part public. See the
-[official EULA](https://7daystodie.com/eula/).
-
-## Retarget Decompiled Projects
-
-dnSpy-generated projects may target `net40`, which has limited support in current
-C# tooling. The retargeting script updates projects under every
-`server-decompiled` directory to .NET Framework 4.8:
-
-- SDK-style projects use `<TargetFramework>net48</TargetFramework>`.
-- Legacy projects use `<TargetFrameworkVersion>v4.8</TargetFrameworkVersion>`.
-- Multi-target projects and projects without a recognized target element are
-  skipped with a warning.
-- `bin` and `obj` directories are ignored.
-
-Preview changes first:
-
-```powershell
-pwsh ./scripts/Set-DecompiledTargetFramework.ps1 -WhatIf
-```
-
-Apply changes:
-
-```powershell
-pwsh ./scripts/Set-DecompiledTargetFramework.ps1
-```
-
-Use `-ReferenceRoot` with an absolute or relative path when the reference root is
-not the script's parent directory. Paths are supplied by the caller and are not
-stored in this repository.
-
-The script is idempotent: projects already targeting .NET Framework 4.8 are not
-rewritten.
-
-## Prerequisites
-
-- PowerShell 7 is recommended for running the maintenance scripts.
-- Install the .NET Framework 4.8 Developer Pack to obtain its SDK and targeting
-  pack. Installing only the runtime is not sufficient for compilation.
-- Install a current .NET SDK and MSBuild tooling for C# Dev Kit project loading.
-- Windows is the supported environment for building .NET Framework 4.8 projects.
-
-Microsoft references:
-
-- [.NET Framework developer guide](https://learn.microsoft.com/en-us/dotnet/framework/install/guide-for-developers)
-- [C# extension for Visual Studio Code](https://github.com/dotnet/vscode-csharp)
-
-## Compatibility Boundary
-
-Retargeting changes editor and compiler reference behavior only. It does not
-change the original game assemblies, prove that the 7DTD Mono runtime implements
-every .NET Framework 4.8 API, or make a dependency safe to ship inside a Mod.
-
-Code intended to run in the dedicated server must still be validated against the
-actual assemblies under `runtime/7DaysToDieServer_Data/Managed` and tested in the game's
-Mono process. Avoid relying on APIs merely because they compile against the .NET
-Framework 4.8 reference assemblies.
-
-The generated project may also contain reference paths from the machine that ran
-the decompiler. Replace those paths with the matching game runtime assemblies;
-do not treat local .NET SDK paths as evidence of the server runtime profile.
-
-## Checks
-
-List target frameworks without modifying projects:
-
-```powershell
-Get-ChildItem -Recurse -Filter '*.csproj' | Select-String `
-  -Pattern '<TargetFramework(?:Version|s)?>'
-```
-
-Keep original binaries or a reproducible source record outside product
-repositories so the decompiled output can be regenerated and compared after a
-game update.
-
-## Latest-Version Repository and Release Archives
-
-This repository keeps only the latest reference at the repository root.
-Before replacing it, archive the current version as a Git hosting Release asset.
-The archive contains the complete reference directories; the Git history is then
-rewritten so old reference blobs do not remain in the repository.
-
-Create and verify an archive locally:
-
-```powershell
-pwsh ./scripts/Verify-Reference.ps1
-pwsh ./scripts/New-ReferenceRelease.ps1 -Version v3.0.1-b4
-```
-
-Upload `dist/7dtd-reference-v3.0.1-b4.zip` and its `.sha256` file to a Release
-tag with the same version. Keep the Release immutable and retain the checksum.
-
-For a new game build, replace the root `server-decompiled/` and `runtime/`
-directories, update `metadata.json`, run `Verify-Reference.ps1`, and commit the
-new latest version. Do not keep old version directories or tags in this
-repository; use Release assets for history.
-
-Because removing files in a normal commit leaves their blobs in Git history, a
-one-time history rewrite is required when converting an existing repository to
-this policy. Back up the original repository before force-pushing the rewritten
-`main` branch. Use `--force-with-lease` and coordinate with all contributors.
-
-## Maintenance Scripts
-
-### Set-DecompiledTargetFramework.ps1
-
-Retargets projects below `server-decompiled/` to .NET Framework 4.8. SDK-style
-projects become `net48`; legacy projects become `v4.8`. Multi-target projects and
-projects without a recognized target are skipped with warnings. The script is
-idempotent.
-
-```powershell
-# Preview only
-pwsh ./scripts/Set-DecompiledTargetFramework.ps1 -WhatIf
-
-# Apply changes
-pwsh ./scripts/Set-DecompiledTargetFramework.ps1
-
-# Use another reference root
-pwsh ./scripts/Set-DecompiledTargetFramework.ps1 -ReferenceRoot C:/refs/7dtd
-```
-
-### Verify-Reference.ps1
-
-Validates the current root reference. It checks `metadata.json`, the root
-`server-decompiled/` directory, project target frameworks, and every project
-`HintPath` file. It exits with code 1 and prints errors when validation fails.
-
-```powershell
-pwsh ./scripts/Verify-Reference.ps1
-pwsh ./scripts/Verify-Reference.ps1 -ReferenceRoot C:/refs/7dtd
-```
-
-### New-ReferenceRelease.ps1
-
-Creates a ZIP archive and SHA-256 file for the current reference. The archive
-contains `server-decompiled/`, `runtime/`, `assets/`, `metadata.json`, and both
-README files. `-Version` must match `metadata.json.gameVersion`.
-
-```powershell
-pwsh ./scripts/New-ReferenceRelease.ps1 -Version v3.0.1-b4
-pwsh ./scripts/New-ReferenceRelease.ps1 -Version v3.0.1-b4 -OutputDirectory ./dist
-pwsh ./scripts/New-ReferenceRelease.ps1 -Version v3.0.1-b4 -WhatIf
-```
-
-The default output is `dist/7dtd-reference-<version>.zip` and its `.sha256`
-companion. Upload both files to a matching GitHub Release:
-
-```powershell
-gh release create v3.0.1-b4 `
-  ./dist/7dtd-reference-v3.0.1-b4.zip `
-  ./dist/7dtd-reference-v3.0.1-b4.zip.sha256 `
-  --title '7DTD Reference v3.0.1-b4'
-```
-
-### Recommended Update Workflow
-
-1. Run `Verify-Reference.ps1` for the current version.
-2. Run `New-ReferenceRelease.ps1` and upload both generated files to a new Release.
-3. Replace the root `server-decompiled/` and `runtime/` directories with the new build.
-4. Update `metadata.json` with the new version and Release checksum.
-5. Run `Verify-Reference.ps1` again.
-6. Commit and push `main`.
-
-### Runtime manifest and update scripts
-
-`runtime.manifest.json` is an allowlist of runtime directories and required root
-files. All files inside an allowed directory are copied, so a game build can
-add or remove files without a per-file manifest update. Top-level paths outside
-the allowlist are never copied.
-
-Generate a reviewed manifest after a game update changes the official file set:
-
-```powershell
-pwsh ./scripts/New-RuntimeManifest.ps1
-```
-
-Copy a downloaded server runtime from a local path or SMB path. The script
-requires confirmation that the current version has already been archived in a
-Release, copies only allowed directories/root files, and mirrors the destination
-so stale files are removed. Use `-SkipReleasePrompt` only when that release check has
-already been handled manually.
-
-```powershell
-pwsh ./scripts/Update-ReferenceRuntime.ps1 -ServerRoot D:/downloads/7dtd
-pwsh ./scripts/Update-ReferenceRuntime.ps1 -ServerRoot '\\nas\games\7dtd' -SkipReleasePrompt
-pwsh ./scripts/Update-ReferenceRuntime.ps1 -ServerRoot D:/downloads/7dtd -WhatIf
-```
-
-Review changes to `runtime.manifest.json` before committing it. If the new
-server build adds or removes runtime files, regenerate the manifest, inspect
-the diff, and run `Verify-Reference.ps1` after copying.
-
-### Update-Reference.ps1 and `.env`
-
-`Update-Reference.ps1` is the unified local workflow. It reads
-`SEVEN_DAYS_SERVER_ROOT` and `DNSPY_CONSOLE_PATH` from an untracked `.env`,
-checks the current Release prompt, updates runtime, runs dnSpy.Console against
-the assemblies listed in `decompile.manifest.json`, replaces generated
-`server-decompiled/`, updates `metadata.json`, and verifies the result. It does
-not commit or push automatically.
+Prerequisites: Windows, PowerShell 7, .NET Framework 4.8 Developer Pack, MSBuild/.NET SDK, and an allowed `dnSpy.Console.exe`. Copy `.env.example` to `.env` and set the local or UNC paths:
 
 ```powershell
 Copy-Item .env.example .env
-# edit .env, then preview
-pwsh ./scripts/Update-Reference.ps1 -Version v3.1.0-b1 -GameBuild '3.1.0 build 1' -WhatIf
-
-# run the update
-pwsh ./scripts/Update-Reference.ps1 -Version v3.1.0-b1 -GameBuild '3.1.0 build 1'
+notepad .env
 ```
 
-After review, create and upload the Release with the commands above, then
-commit and push the generated source and metadata.
+Preview and then run the unified update (version/build can be detected from the newest server `output_log*.txt`):
 
-Use `Update-Reference.ps1` as the normal entry point. The other scripts remain
-independently testable building blocks: runtime copying, version probing,
-validation, manifest regeneration, Release archive creation, and framework
-retargeting respectively.
+```powershell
+pwsh ./scripts/Update-Reference.ps1 -WhatIf
+pwsh ./scripts/Update-Reference.ps1
+```
 
-`Get-ServerVersion.ps1` detects the version from the newest `output_log*.txt`
-line such as `Version: V 3.2.0 (b9)`. The unified script performs this detection
-when `-Version` is omitted; pass a version explicitly when no usable log exists.
+Pass `-Version <version>` and `-GameBuild '<build>'` when logs do not contain usable values. The update script asks you to archive the current version first, mirrors only allowed runtime paths, regenerates source in a temporary directory, replaces `server-decompiled/`, updates metadata, and validates the result. It never commits, pushes, or creates a Release automatically.
 
-For SMB input, use a complete quoted UNC path and verify that the share is
-readable first:
+## Release Before Replacement
+
+Always archive the current root before replacing it:
+
+```powershell
+$version = '<version>'
+pwsh ./scripts/Verify-Reference.ps1
+pwsh ./scripts/New-ReferenceRelease.ps1 -Version $version
+gh release create $version `
+  "./dist/7dtd-reference-$version.zip" `
+  "./dist/7dtd-reference-$version.zip.sha256" `
+  --title "7DTD Reference $version"
+```
+
+Review the archive and checksum before publishing. The ZIP contains the current source, runtime, assets, metadata, manifests, and both README files. Keep Release tags immutable and commit only the new latest root after an update. `dist/` is local output and is not committed.
+
+## Scripts
+
+| Script | Purpose |
+| --- | --- |
+| `Update-Reference.ps1` | Unified workflow: load `.env`, detect version, archive prompt, copy runtime, run dnSpy, replace source, update metadata, verify. |
+| `Update-ReferenceRuntime.ps1` | Mirror runtime from a local/UNC server using `runtime.manifest.json`; supports `-WhatIf` and `-SkipReleasePrompt`. |
+| `Get-ServerVersion.ps1` | Read version/build from the newest `output_log*.txt`. |
+| `New-ReferenceRelease.ps1` | Create ZIP and SHA-256 files; `-Version` must equal `metadata.json.gameVersion`. |
+| `Verify-Reference.ps1` | Check metadata, required directories, target frameworks, and project `HintPath` files. |
+| `New-RuntimeManifest.ps1` | Regenerate the reviewed runtime directory/root-file allowlist after an official file-set change. |
+| `Set-DecompiledTargetFramework.ps1` | Retarget dnSpy projects to .NET Framework 4.8; supports `-WhatIf`. |
+
+Run a helper directly when diagnosing or reviewing one stage, for example:
 
 ```powershell
 pwsh ./scripts/Get-ServerVersion.ps1 -ServerRoot '\\server\share\7dtd'
+pwsh ./scripts/Verify-Reference.ps1
+pwsh ./scripts/Set-DecompiledTargetFramework.ps1 -WhatIf
 ```
+
+## Runtime and Source Boundaries
+
+`runtime/` follows the official server distribution for the build in `metadata.json`. The manifest allows complete directories so additions/removals inside those directories are copied without a per-file update; top-level paths outside the manifest are ignored. Review regenerated manifest changes before committing. Keep machine-specific configuration outside the repository.
+
+dnSpy output is generated from the assemblies in `decompile.manifest.json` and staged outside `server-decompiled/` until validation succeeds. Retargeting affects project references only; compatibility still requires testing against `runtime/7DaysToDieServer_Data/Managed` in the game's Mono process. Do not ship this repository's runtime or decompiled reference as part of a 7DPanel release.
+
+## Security and Legal
+
+Keep the repository private and `.env` untracked. UNC paths are accepted, but access is limited to the configured source directory. Game files may be subject to the [7 Days to Die EULA](https://7daystodie.com/eula/); confirm your rights before sharing, mirroring, or publishing any content.
+
+See [README.zh-CN.md](README.zh-CN.md) for the Chinese version.
