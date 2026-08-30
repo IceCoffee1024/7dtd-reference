@@ -33,6 +33,7 @@ $source = (Resolve-Path -LiteralPath $ServerRoot).Path
 if ([string]::IsNullOrWhiteSpace($Version)) {
     $versionInfo = & (Join-Path $PSScriptRoot 'Get-ServerVersion.ps1') -ServerRoot $source -Json | ConvertFrom-Json
     $Version = $versionInfo.version
+    if ([string]::IsNullOrWhiteSpace($GameBuild)) { $GameBuild = $versionInfo.build }
     Write-Host "Detected server version $Version from $($versionInfo.source)."
 }
 $metadataPath = Join-Path $root 'metadata.json'

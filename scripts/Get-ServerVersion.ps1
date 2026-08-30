@@ -1,30 +1,30 @@
 [CmdletBinding()]
 param(
-    [Parameter(Mandatory)] [string]$ServerRoot,
+    [Parameter()] [string]$ServerRoot,
     [Parameter()] [switch]$Json
 )
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
+if ([string]::IsNullOrWhiteSpace($ServerRoot)) {
+    $envPath = Join-Path (Split-Path -Parent $PSScriptRoot) '.env'
+    if (Test-Path -LiteralPath $envPath -PathType Leaf) {
+        $entry = Get-Content -LiteralPath $envPath | Where-Object { $_ -match '^\s*SEVEN_DAYS_SERVER_ROOT\s*=\s*(.*?)\s*$' } | Select-Object -First 1
+        if ($entry -match '^\s*SEVEN_DAYS_SERVER_ROOT\s*=\s*(.*?)\s*$') { $ServerRoot = $Matches[1].Trim('"') }
+    }
+}
+if ([string]::IsNullOrWhiteSpace($ServerRoot)) { throw 'ServerRoot is required. Set SEVEN_DAYS_SERVER_ROOT in .env or pass -ServerRoot.' }
 if (-not (Test-Path -LiteralPath $ServerRoot -PathType Container)) {
     throw "Server path '$ServerRoot' does not exist or is not accessible. For SMB paths use the complete UNC path, for example '\\server\share\folder'."
 }
 $root = (Resolve-Path -LiteralPath $ServerRoot).Path
-$candidates = @('7DaysToDieServer.exe', '7DaysToDie.exe')
+$logs = @(Get-ChildItem -LiteralPath $root -File -Filter 'output_log*.txt' | Sort-Object LastWriteTime -Descending)
 $result = $null
-foreach ($name in $candidates) {
-    $path = Join-Path $root $name
-    if (Test-Path -LiteralPath $path -PathType Leaf) {
-        $info = [Diagnostics.FileVersionInfo]::GetVersionInfo($path)
-        $raw = @($info.ProductVersion, $info.FileVersion) | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | Select-Object -First 1
-        if ($raw -match '(\d+\.\d+\.\d+(?:\.\d+)?)') { $result = [ordered]@{ version = "v$($Matches[1])"; source = $name; raw = $raw }; break }
+foreach ($log in $logs) {
+    $line = Select-String -LiteralPath $log.FullName -Pattern 'Version:\s*V\s*(\d+\.\d+\.\d+)\s*\(([^)]+)\)' | Select-Object -First 1
+    if ($null -ne $line -and $line.Line -match 'Version:\s*V\s*(\d+\.\d+\.\d+)\s*\(([^)]+)\)') {
+        $result = [ordered]@{ version = "v$($Matches[1])-$($Matches[2])"; build = $Matches[2]; source = $log.Name; raw = $line.Line.Trim() }
+        break
     }
 }
-if ($null -eq $result) {
-    $assembly = Join-Path $root '7DaysToDieServer_Data/Managed/Assembly-CSharp.dll'
-    if (Test-Path -LiteralPath $assembly -PathType Leaf) {
-        $name = [Reflection.AssemblyName]::GetAssemblyName($assembly)
-        $result = [ordered]@{ version = "v$($name.Version.Major).$($name.Version.Minor).$($name.Version.Build)"; source = 'Assembly-CSharp.dll'; raw = $name.Version.ToString() }
-    }
-}
-if ($null -eq $result) { throw "Could not detect a version from server executables or Assembly-CSharp.dll under '$root'. Pass -Version explicitly." }
+if ($null -eq $result) { throw "Could not detect a version from output_log*.txt under '$root'. Pass -Version explicitly." }
 if ($Json) { $result | ConvertTo-Json -Compress } else { Write-Host "Detected $($result.version) from $($result.source) ($($result.raw))." }

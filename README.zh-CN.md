@@ -183,7 +183,7 @@ pwsh ./scripts/Update-Reference.ps1 -Version v3.1.0-b1 -GameBuild '3.1.0 build 1
 
 审核生成的源码和元数据后，再按前文命令创建并上传 Release，最后提交并推送。
 
-`Get-ServerVersion.ps1` 优先从 `7DaysToDieServer.exe` 或 `7DaysToDie.exe` 的文件版本信息读取游戏版本；如果没有，则回退到 `Assembly-CSharp.dll` 的程序集版本。省略 `Update-Reference.ps1` 的 `-Version` 时会自动执行探测；如果文件元数据不包含 build number，请显式传入版本号。
+`Get-ServerVersion.ps1` 从最新的 `output_log*.txt` 中读取类似 `Version: V 3.2.0 (b9)` 的日志行。省略 `Update-Reference.ps1` 的 `-Version` 时会自动执行探测；如果没有可用日志，请显式传入版本号。
 
 使用 SMB 路径时，请传入完整且加引号的 UNC 路径，并先确认共享目录可读：
 
