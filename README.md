@@ -235,9 +235,10 @@ gh release create v3.0.1-b4 `
 
 ### Runtime manifest and update scripts
 
-`runtime.manifest.json` is the allowlist of runtime-relative file paths. It
-prevents files present in a downloaded server package but not tracked by this
-reference from entering the repository.
+`runtime.manifest.json` is an allowlist of runtime directories and required root
+files. All files inside an allowed directory are copied, so a game build can
+add or remove files without a per-file manifest update. Top-level paths outside
+the allowlist are never copied.
 
 Generate a reviewed manifest after a game update changes the official file set:
 
@@ -247,8 +248,8 @@ pwsh ./scripts/New-RuntimeManifest.ps1
 
 Copy a downloaded server runtime from a local path or SMB path. The script
 requires confirmation that the current version has already been archived in a
-Release, copies only manifest entries, and mirrors the destination so stale
-files are removed. Use `-SkipReleasePrompt` only when that release check has
+Release, copies only allowed directories/root files, and mirrors the destination
+so stale files are removed. Use `-SkipReleasePrompt` only when that release check has
 already been handled manually.
 
 ```powershell

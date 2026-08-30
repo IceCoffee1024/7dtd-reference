@@ -158,7 +158,7 @@ gh release create v3.0.1-b4 `
 pwsh ./scripts/New-RuntimeManifest.ps1
 ```
 
-从本地目录或 SMB 路径复制下载好的服务端运行时。脚本会先要求确认当前版本已经归档到 Release，只复制清单中的文件，并以镜像方式同步目标目录，删除清单之外的旧文件。只有在你已手动完成 Release 检查时才使用 `-SkipReleasePrompt`。
+从本地目录或 SMB 路径复制下载好的服务端运行时。脚本会先要求确认当前版本已经归档到 Release，只复制清单允许的目录和根文件，并以镜像方式同步目标目录，删除旧文件。只有在你已手动完成 Release 检查时才使用 `-SkipReleasePrompt`。
 
 ```powershell
 pwsh ./scripts/Update-ReferenceRuntime.ps1 -ServerRoot D:/downloads/7dtd
