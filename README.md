@@ -170,3 +170,65 @@ Because removing files in a normal commit leaves their blobs in Git history, a
 one-time history rewrite is required when converting an existing repository to
 this policy. Back up the original repository before force-pushing the rewritten
 `main` branch. Use `--force-with-lease` and coordinate with all contributors.
+
+## Maintenance Scripts
+
+### Set-DecompiledTargetFramework.ps1
+
+Retargets projects below `server-decompiled/` to .NET Framework 4.8. SDK-style
+projects become `net48`; legacy projects become `v4.8`. Multi-target projects and
+projects without a recognized target are skipped with warnings. The script is
+idempotent.
+
+```powershell
+# Preview only
+pwsh ./scripts/Set-DecompiledTargetFramework.ps1 -WhatIf
+
+# Apply changes
+pwsh ./scripts/Set-DecompiledTargetFramework.ps1
+
+# Use another reference root
+pwsh ./scripts/Set-DecompiledTargetFramework.ps1 -ReferenceRoot C:/refs/7dtd
+```
+
+### Verify-Reference.ps1
+
+Validates the current root reference. It checks `metadata.json`, the root
+`server-decompiled/` directory, project target frameworks, and every project
+`HintPath` file. It exits with code 1 and prints errors when validation fails.
+
+```powershell
+pwsh ./scripts/Verify-Reference.ps1
+pwsh ./scripts/Verify-Reference.ps1 -ReferenceRoot C:/refs/7dtd
+```
+
+### New-ReferenceRelease.ps1
+
+Creates a ZIP archive and SHA-256 file for the current reference. The archive
+contains `server-decompiled/`, `runtime/`, `assets/`, `metadata.json`, and both
+README files. `-Version` must match `metadata.json.gameVersion`.
+
+```powershell
+pwsh ./scripts/New-ReferenceRelease.ps1 -Version v3.0.1-b4
+pwsh ./scripts/New-ReferenceRelease.ps1 -Version v3.0.1-b4 -OutputDirectory ./dist
+pwsh ./scripts/New-ReferenceRelease.ps1 -Version v3.0.1-b4 -WhatIf
+```
+
+The default output is `dist/7dtd-reference-<version>.zip` and its `.sha256`
+companion. Upload both files to a matching GitHub Release:
+
+```powershell
+gh release create v3.0.1-b4 `
+  ./dist/7dtd-reference-v3.0.1-b4.zip `
+  ./dist/7dtd-reference-v3.0.1-b4.zip.sha256 `
+  --title '7DTD Reference v3.0.1-b4'
+```
+
+### Recommended Update Workflow
+
+1. Run `Verify-Reference.ps1` for the current version.
+2. Run `New-ReferenceRelease.ps1` and upload both generated files to a new Release.
+3. Replace the root `server-decompiled/` and `runtime/` directories with the new build.
+4. Update `metadata.json` with the new version and Release checksum.
+5. Run `Verify-Reference.ps1` again.
+6. Commit and push `main`.

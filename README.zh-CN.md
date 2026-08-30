@@ -93,3 +93,57 @@ dist/7dtd-reference-v3.0.1-b4.zip.sha256
 更新新版本时，替换根目录的 `server-decompiled/` 和 `runtime/`，更新 `metadata.json`，执行校验后提交并推送 `main`。不要在 Git 中保留旧版本目录或 tag；历史版本通过 Release 资产保存。
 
 普通提交删除文件后，旧文件仍会存在于 Git 历史中。转换为本策略时需要一次性重写历史，并在推送重写后的 `main` 前备份原仓库。远程更新应使用 `--force-with-lease`，并提前通知所有贡献者。
+
+## 维护脚本
+
+### Set-DecompiledTargetFramework.ps1
+
+将根目录 `server-decompiled/` 下的项目重定向到 .NET Framework 4.8。SDK 风格项目使用 `net48`，旧式项目使用 `v4.8`。多目标项目和无法识别目标框架的项目会跳过并给出警告。脚本具有幂等性。
+
+```powershell
+# 仅预览，不修改文件
+pwsh ./scripts/Set-DecompiledTargetFramework.ps1 -WhatIf
+
+# 应用变更
+pwsh ./scripts/Set-DecompiledTargetFramework.ps1
+
+# 指定其他参考根目录
+pwsh ./scripts/Set-DecompiledTargetFramework.ps1 -ReferenceRoot C:/refs/7dtd
+```
+
+### Verify-Reference.ps1
+
+校验当前根目录参考资料。脚本检查 `metadata.json`、根目录 `server-decompiled/`、项目目标框架，以及所有项目 `HintPath` 指向的文件。校验失败时打印错误并以退出码 1 结束。
+
+```powershell
+pwsh ./scripts/Verify-Reference.ps1
+pwsh ./scripts/Verify-Reference.ps1 -ReferenceRoot C:/refs/7dtd
+```
+
+### New-ReferenceRelease.ps1
+
+为当前参考资料生成 ZIP 归档和 SHA-256 校验文件。归档包含 `server-decompiled/`、`runtime/`、`assets/`、`metadata.json` 以及中英文 README。`-Version` 必须与 `metadata.json.gameVersion` 一致。
+
+```powershell
+pwsh ./scripts/New-ReferenceRelease.ps1 -Version v3.0.1-b4
+pwsh ./scripts/New-ReferenceRelease.ps1 -Version v3.0.1-b4 -OutputDirectory ./dist
+pwsh ./scripts/New-ReferenceRelease.ps1 -Version v3.0.1-b4 -WhatIf
+```
+
+默认输出为 `dist/7dtd-reference-<version>.zip` 及对应的 `.sha256` 文件。将两个文件上传到同名 GitHub Release：
+
+```powershell
+gh release create v3.0.1-b4 `
+  ./dist/7dtd-reference-v3.0.1-b4.zip `
+  ./dist/7dtd-reference-v3.0.1-b4.zip.sha256 `
+  --title '7DTD Reference v3.0.1-b4'
+```
+
+### 推荐更新流程
+
+1. 对当前版本执行 `Verify-Reference.ps1`。
+2. 执行 `New-ReferenceRelease.ps1`，将生成的两个文件上传到新的 Release。
+3. 用新构建替换根目录的 `server-decompiled/` 和 `runtime/`。
+4. 更新 `metadata.json` 中的版本和 Release 校验值。
+5. 再次执行 `Verify-Reference.ps1`。
+6. 提交并推送 `main`。
