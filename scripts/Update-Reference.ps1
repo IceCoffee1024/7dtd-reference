@@ -59,7 +59,7 @@ if (-not $SkipDecompile) {
             if (-not (Test-Path -LiteralPath $assembly -PathType Leaf)) { throw "Manifest assembly not found: $relative" }
             $assemblies += $assembly
         }
-        $arguments = @('-o', $decompileStage, '-p') + $assemblies
+        $arguments = @('-o', $decompileStage, '--sdk-project') + $assemblies
         if ($PSCmdlet.ShouldProcess($decompileStage, 'Run dnSpy.Console to generate SDK-style projects')) {
             & $DnSpyConsolePath @arguments
             if ($LASTEXITCODE -ne 0) { throw "dnSpy.Console.exe failed with exit code $LASTEXITCODE." }

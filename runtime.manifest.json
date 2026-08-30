@@ -2,9 +2,10 @@
   "schemaVersion": 2,
   "generatedFrom": "runtime",
   "directories": [
-    "7DaysToDieServer_Data",
-    "Mods",
-    "MonoBleedingEdge"
+    "7DaysToDieServer_Data/Managed",
+    "Mods/0_TFP_Harmony",
+    "MonoBleedingEdge/EmbedRuntime",
+    "MonoBleedingEdge/etc"
   ],
   "files": [
     "serverconfig.xml",

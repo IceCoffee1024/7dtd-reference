@@ -22,7 +22,11 @@ foreach ($project in $projects) {
     if ($frameworks.Count -eq 0) { $errors.Add("$($project.FullName): target framework is missing") }
     foreach ($node in $frameworks) { if ($node.InnerText -notin @('net48', 'v4.8')) { $errors.Add("$($project.FullName): unsupported target '$($node.InnerText)'") } }
     foreach ($hint in @($document.SelectNodes("//*[local-name()='HintPath']"))) {
-        $hintPath = Join-Path $project.DirectoryName $hint.InnerText
+        $hintPath = if ([System.IO.Path]::IsPathRooted($hint.InnerText)) {
+            $hint.InnerText
+        } else {
+            Join-Path $project.DirectoryName $hint.InnerText
+        }
         if (-not (Test-Path -LiteralPath $hintPath -PathType Leaf)) { $errors.Add("$($project.FullName): missing HintPath '$($hint.InnerText)'") }
     }
 }
