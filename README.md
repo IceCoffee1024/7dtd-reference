@@ -283,6 +283,11 @@ pwsh ./scripts/Update-Reference.ps1 -Version v3.1.0-b1 -GameBuild '3.1.0 build 1
 After review, create and upload the Release with the commands above, then
 commit and push the generated source and metadata.
 
+Use `Update-Reference.ps1` as the normal entry point. The other scripts remain
+independently testable building blocks: runtime copying, version probing,
+validation, manifest regeneration, Release archive creation, and framework
+retargeting respectively.
+
 `Get-ServerVersion.ps1` detects the version from the newest `output_log*.txt`
 line such as `Version: V 3.2.0 (b9)`. The unified script performs this detection
 when `-Version` is omitted; pass a version explicitly when no usable log exists.
