@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "assemblies": [
+    "7DaysToDieServer_Data/Managed/Assembly-CSharp.dll",
+    "7DaysToDieServer_Data/Managed/UnityEngine.CoreModule.dll",
+    "7DaysToDieServer_Data/Managed/LogLibrary.dll",
+    "Mods/0_TFP_Harmony/0Harmony.dll"
+  ]
+}

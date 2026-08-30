@@ -261,3 +261,24 @@ pwsh ./scripts/Update-ReferenceRuntime.ps1 -ServerRoot D:/downloads/7dtd -WhatIf
 Review changes to `runtime.manifest.json` before committing it. If the new
 server build adds or removes runtime files, regenerate the manifest, inspect
 the diff, and run `Verify-Reference.ps1` after copying.
+
+### Update-Reference.ps1 and `.env`
+
+`Update-Reference.ps1` is the unified local workflow. It reads
+`SEVEN_DAYS_SERVER_ROOT` and `DNSPY_CONSOLE_PATH` from an untracked `.env`,
+checks the current Release prompt, updates runtime, runs dnSpy.Console against
+the assemblies listed in `decompile.manifest.json`, replaces generated
+`server-decompiled/`, updates `metadata.json`, and verifies the result. It does
+not commit or push automatically.
+
+```powershell
+Copy-Item .env.example .env
+# edit .env, then preview
+pwsh ./scripts/Update-Reference.ps1 -Version v3.1.0-b1 -GameBuild '3.1.0 build 1' -WhatIf
+
+# run the update
+pwsh ./scripts/Update-Reference.ps1 -Version v3.1.0-b1 -GameBuild '3.1.0 build 1'
+```
+
+After review, create and upload the Release with the commands above, then
+commit and push the generated source and metadata.

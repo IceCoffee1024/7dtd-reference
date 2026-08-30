@@ -4,3 +4,4 @@ obj/
 
 # Locally generated Release archives
 dist/
+.env

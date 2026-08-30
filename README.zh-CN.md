@@ -167,3 +167,18 @@ pwsh ./scripts/Update-ReferenceRuntime.ps1 -ServerRoot D:/downloads/7dtd -WhatIf
 ```
 
 提交 `runtime.manifest.json` 前请审核变更。如果新构建新增或删除了运行时文件，请重新生成清单、检查差异，复制完成后再执行 `Verify-Reference.ps1`。
+
+### Update-Reference.ps1 与 `.env`
+
+`Update-Reference.ps1` 是统一的本地更新入口。它从不纳入 Git 的 `.env` 读取 `SEVEN_DAYS_SERVER_ROOT` 和 `DNSPY_CONSOLE_PATH`，确认当前版本已经归档，按清单更新 runtime，调用 `decompile.manifest.json` 中列出的程序集运行 dnSpy.Console，替换生成的 `server-decompiled/`，更新 `metadata.json` 并执行校验。脚本不会自动提交或推送 Git。
+
+```powershell
+Copy-Item .env.example .env
+# 编辑 .env 后先预览
+pwsh ./scripts/Update-Reference.ps1 -Version v3.1.0-b1 -GameBuild '3.1.0 build 1' -WhatIf
+
+# 正式更新
+pwsh ./scripts/Update-Reference.ps1 -Version v3.1.0-b1 -GameBuild '3.1.0 build 1'
+```
+
+审核生成的源码和元数据后，再按前文命令创建并上传 Release，最后提交并推送。
